@@ -51,37 +51,30 @@ inputs:
     type: boolean?
     label: skip LongReadSum before filtering
     doc: Skip LongReadSum analyses of unfiltered input data, default is false.
-    default: false
   skip_qc_filtered:
     type: boolean?
     label: skip LongReadSum after filtering
     doc: Skip LongReadSum analyses of filter input data, default is false.
-    default: false
   include_reads:
     type: boolean
     label: include filtered reads
     doc:  Will include mapping and variant calling filtered reads in the pipeline, default is true.
-    default: true
   include_assembly:
     type: boolean
     label: include assembly
     doc:  Will include mapping and variant calling an assembly in the pipeline, default is true.
-    default: true
   include_strainy:
     type: boolean
     label: include strainy
     doc:  Will include strain level analysis on the filtered reads, default is false.
-    default: false
   include_snpeff:
     type: boolean
     label: include SnpEff
     doc:  Will include functional interpretation of variants with SnpEff in the pipeline, default is true.
-    default: true
   snpeff_database_exists:
     type: boolean?
     label: existing SnpEff database
     doc: The used genome has an existing database within SnpEff, instead of building a database, the existing database will be downloaded, default is false.
-    default: false
   ncbi_data_exists:
     type: boolean?
     label: existing NCBI data
@@ -90,7 +83,6 @@ inputs:
     type: boolean?
     label: transfer annotation
     doc: Whether the annotation of the reference should be carried over to the new assembly (use Liftoff), default is false.
-    default: false
 
 # Tool settings
 # LongReadSum parameters
@@ -109,7 +101,6 @@ inputs:
         bam     BAM file input
         rrms    RRMS BAM file input
       Defaults to FQ file in this workflow.
-    default: fq
   log_level:
     type: int?
     label: level of logging
@@ -130,12 +121,10 @@ inputs:
     type: float?
     label: Maximum read length threshold
     doc: Maximum read length threshold (default 90).
-    default: 90
   minimum_length:
     type: int?
     label: Minimum read length
     doc: Minimum read length threshold (default 1000).
-    default: 1000
   maximum_length:
     type: int?
     label: maximum length
@@ -144,7 +133,6 @@ inputs:
     type: float?
     label: Length weigth
     doc: Weight given to the length score (default 10).
-    default: 10
   min_mean_q:
     type: float?
     label: minimum mean quality
@@ -160,23 +148,19 @@ inputs:
         symbols: [ bigwig, bedgraph ]
     label: input file type
     doc: Input file type. Possible choices are bigwig or bedgraph. Defaults to bigwig in this workflow.
-    default: bigwig
 # Clair3 parameters
   model_path:
     type: string
     label: Clair3 Model Directory
     doc: Path to the Clair3 model inside the Docker container.
-    default: /models/r1041_e82_400bps_sup_v500 
   haploid_sensitive:
     type: boolean?
     label: haploid calling mode
     doc: Set to true to enable haploid calling mode, this is an experimental flag.
-    default: true
   no_phasing_for_fa: # as of now (07/05/25), this flag breaks the pipeline in downstream steps
     type: boolean?
     label: no phasing in full alignment
     doc: Set to true to skip whatshap phasing in full alignment, this is an experimental flag.
-    default: false
 # Flye parameters
   genome_size:
     type: string?
@@ -195,12 +179,10 @@ inputs:
     type: int?
     label: ploidy settings
     doc: Settings of the ploidy, for haploid organisms, set to 1 (default).
-    default: 1
   min_alt_count:
     type: int?
     label: min_alt_count
     doc: Require at least this count of observations supporting an alternate allele. Defaults to 1 in this pipeline.
-    default: 1
 # Bakta parameters
   bakta_db:
     type: Directory?
@@ -212,7 +194,6 @@ inputs:
     label: genome/database identifier
     doc: | 
       Identifier for the SnpEff database to download or build (e.g. 'GRCh37.75' for human, or a custom name for microbial strains). 
-    default: custom_db
   NCBI_identifier:
     type: string?
     label: NCBI genome identifier
@@ -222,12 +203,10 @@ inputs:
     type: boolean?
     label: no upstream changes
     doc: Set to true to omit upstream changes.
-    default: true
   no_downstream:
     type: boolean?
     label: no downstream changes
     doc: Set to true to omit downstream changes.
-    default: true
 # Liftoff inputs
   annotation_file:
     type: File?
@@ -238,7 +217,6 @@ inputs:
     type: File?
     label: merging script
     doc: Python script that merges input from both Clair3 and freebayes. Passed externally within the git structure to avoid having to host a new python docker.
-    default: 
       class: File
       path: ../tools/scripts/combine_variant_calling.py
   
@@ -247,22 +225,18 @@ inputs:
     type: int?
     doc: Number of threads to use for computational processes.
     label: Number of threads
-    default: 2
   provenance:
     type: boolean
     label: include provenance information
     doc:  Will include metadata on tool performance of LongReadSum, Filtlong, and Flye, default is true.
-    default: true
 
 # Dummy files, only used to prevent pipeline crashes before evaluation of conditionals, will never actually parse so actual file / folder is irrelevant.
   dummy_annotation_file:
     type: File?
-    default:
       class: File
       path: ../tools/scripts/combine_variant_calling.py
   dummy_database_folder:
     type: Directory?
-    default:
       class: Directory
       path: ../tools/scripts
 
@@ -712,7 +686,6 @@ steps:
         linkMerge: merge_flattened
         pickValue: all_non_null
       destination:
-        default: filtlong_output
     run: ../tools/expressions/files_to_folder.cwl
     out:
       [results]
@@ -731,7 +704,6 @@ steps:
         # source: [workflow_flye/00_assembly, workflow_flye/10_consensus, workflow_flye/20_repeat, workflow_flye/30_contigger, workflow_flye/40_polishing]
         # linkMerge: merge_flattened
       destination:
-        default: flye_output
     out:
       [results]
   snpeff_reads_files_to_folder:
@@ -747,7 +719,6 @@ steps:
         linkMerge: merge_flattened
         pickValue: all_non_null
       destination:
-        default: snpeff_reads_output
     out:
       [results]
   snpeff_assembly_files_to_folder:
@@ -763,7 +734,6 @@ steps:
         linkMerge: merge_flattened
         pickValue: all_non_null
       destination:
-        default: snpeff_assembly_output
     out:
       [results]
   snpeff_merged_files_to_folder:
@@ -779,7 +749,6 @@ steps:
         linkMerge: merge_flattened
         pickValue: all_non_null
       destination:
-        default: snpeff_merged_output
     out:
       [results]
   liftoff_files_to_folder:
@@ -797,7 +766,6 @@ steps:
       #  source:  [liftoff/intermediate_dir_out]
       #  linkMerge: merge_flattened
       destination:
-        default: liftoff_output
     out:
       [results]
   provenance_files_to_folder:
@@ -812,7 +780,6 @@ steps:
         linkMerge: merge_flattened
         pickValue: all_non_null
       destination:
-        default: logs
     out:
       [results]
 

@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Comma-delimited list of YAML fields to include
-    default: input_read_count, input_read_bases, input_read_n50, pass_cluster_count,
       fail_cluster_count, overall_clustering_score, untrimmed_cluster_size, untrimmed_cluster_distance,
       trimmed_cluster_size, trimmed_cluster_median, trimmed_cluster_mad, consensus_assembly_bases,
       consensus_assembly_unitigs, consensus_assembly_fully_resolved
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: Sample name
-    default: blank
     inputBinding:
       position: 101
       prefix: --name
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Significant figures to use for floating point numbers
-    default: 3
     inputBinding:
       position: 101
       prefix: --sigfigs

@@ -22,7 +22,6 @@ inputs:
     doc: "Whether to align residues marked as 'HETATM' in addition to 'ATOM  '. 0:
       (default) only align 'ATOM  ' residues, 1: align both 'ATOM  ' and 'HETATM'
       residues, 2: align both 'ATOM  ' and MSE residues."
-    default: 0
     inputBinding:
       position: 103
       prefix: -het
@@ -33,7 +32,6 @@ inputs:
     doc: "Whether to align the mirror image of input structure. 0: (default) do not
       align mirrored structure, 1: align mirror of Structure_1 to origin Structure_2,
       which usually requires the '-het 1' option."
-    default: 0
     inputBinding:
       position: 103
       prefix: -mirror
@@ -135,7 +133,6 @@ inputs:
       - int
     doc: 'Input format for structure_1. -1: (default) automatically detect PDB or
       PDBx/mmCIF format, 0: PDB format, 1: SPICKER format, 3: PDBx/mmCIF format.'
-    default: -1
     inputBinding:
       position: 103
       prefix: -infmt1
@@ -145,7 +142,6 @@ inputs:
       - int
     doc: 'Input format for structure_2. -1: (default) automatically detect PDB or
       PDBx/mmCIF format, 0: PDB format, 1: SPICKER format, 3: PDBx/mmCIF format.'
-    default: -1
     inputBinding:
       position: 103
       prefix: -infmt2
@@ -176,7 +172,6 @@ inputs:
     doc: 'Type of molecule(s) to align. auto: (default) align both protein and nucleic
       acids. prot: only align proteins in a structure. RNA : only align RNA and DNA
       in a structure.'
-    default: auto
     inputBinding:
       position: 103
       prefix: -mol
@@ -190,7 +185,6 @@ inputs:
       4: MSTA, i.e., alignment of multiple monomeric chains into a consensus alignment,
       5: fully non-sequential (fNS) alignment, 6: semi-non-sequential (sNS) alignment.
       To use -mm 1 or -mm 2, '-ter' option must be 0 or 1."
-    default: 0
     inputBinding:
       position: 103
       prefix: -mm
@@ -204,7 +198,6 @@ inputs:
       and -TMscore 2,6,7), 2: (default for other cases) only align the first chain,
       3: only align the first chain, or the first segment of the first chain as marked
       by the 'TER' string in PDB file."
-    default: 2
     inputBinding:
       position: 103
       prefix: -ter
@@ -215,7 +208,6 @@ inputs:
     doc: 'Output format. 0: (default) full output, 1: fasta format compact output,
       2: tabular format very compact output, -1: full output, but without version
       or citation information.'
-    default: 0
     inputBinding:
       position: 103
       prefix: -outfmt
@@ -235,7 +227,6 @@ inputs:
       with the same residue ID, 7: sequence dependent alignment of two complex structures:
       perform global sequence alignment of each chain pair, derive optimal chain mapping,
       and then superpose two complex structures by TM-score.'
-    default: 0
     inputBinding:
       position: 103
       prefix: -TMscore
@@ -272,7 +263,6 @@ inputs:
       - boolean
     doc: Whether to show full pairwise alignment of individual chains for -mm 2 
       or 4. T or F, (default F).
-    default: false
     inputBinding:
       position: 103
       prefix: -full
@@ -283,7 +273,6 @@ inputs:
     doc: 'Whether to split PDB file into multiple chains. 0: treat the whole structure
       as one single chain (default for -TMscore 2), 1: treat each MODEL as a separate
       chain, 2: (default for other cases) treat each chain as a separate chain.'
-    default: 2
     inputBinding:
       position: 103
       prefix: -split
@@ -296,7 +285,6 @@ inputs:
       is normalized as set by -a option: -2: normalized by longer structure length,
       -1: normalized by shorter structure length, 0: (default, same as F) normalized
       by second structure, 1: same as T, normalized by average structure length.'
-    default: -1
     inputBinding:
       position: 103
       prefix: -TMcut
@@ -306,7 +294,6 @@ inputs:
       - boolean
     doc: TM-score normalized by the average length of two structures. T or F, 
       (default F). -a does not change the final alignment.
-    default: false
     inputBinding:
       position: 103
       prefix: -a

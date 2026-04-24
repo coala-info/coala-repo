@@ -75,7 +75,6 @@ inputs:
       the best target (reference) range for each query path (default: 10000). Note:
       If we walked 9999 base pairs and **w, --jaccard-context** is **10000**, we will
       also include the next node, even if we overflow the actual limit.'
-    default: 10000
     inputBinding:
       position: 101
       prefix: --jaccard-context
@@ -145,7 +144,6 @@ inputs:
       - int
     doc: 'Limit coordinate conversion breadth-first search up to DISTANCE bp from
       each given position (default: 10000).'
-    default: 10000
     inputBinding:
       position: 101
       prefix: --search-radius

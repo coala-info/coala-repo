@@ -48,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum identity threshold for reference selection
-    default: 90.0
     inputBinding:
       position: 101
       prefix: --min_identity
@@ -58,7 +57,6 @@ inputs:
       - int
     doc: 'Number of reads to rarefy for reference selection step (default: 10,000).
       This is separate from --max_reads used in consensus generation.'
-    default: 10000
     inputBinding:
       position: 101
       prefix: --ref_reads

@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - float
     doc: call threshold for the log likelihood ratio. Default is 2.5.
-    default: 2.5
     inputBinding:
       position: 101
       prefix: -c

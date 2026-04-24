@@ -48,7 +48,6 @@ inputs:
       - boolean
     doc: infer nucleotides at ambiguous (N,W,R,..) sites on tip sequences and 
       replace with most likely state.
-    default: true
     inputBinding:
       position: 101
       prefix: --infer-ambiguous
@@ -58,7 +57,6 @@ inputs:
       - string
     doc: calculate joint or marginal maximum likelihood ancestral sequence 
       states
-    default: joint
     inputBinding:
       position: 101
       prefix: --inference
@@ -68,7 +66,6 @@ inputs:
       - boolean
     doc: do not infer nucleotides at ambiguous (N) sites on tip sequences (leave
       as N).
-    default: false
     inputBinding:
       position: 101
       prefix: --keep-ambiguous
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not infer nucleotides for gaps (-) on either side of the alignment
-    default: false
     inputBinding:
       position: 101
       prefix: --keep-overhangs
@@ -134,7 +130,6 @@ inputs:
       status if any validation checks failed, while 'warn' does not. 'skip' mode
       performs no validation. Note that some validation checks are non- optional
       and as such are not affected by this setting.
-    default: error
     inputBinding:
       position: 101
       prefix: --validation-mode

@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Interval to check for new jobs in milliseconds
-    default: 1000
     inputBinding:
       position: 102
       prefix: --poll
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: The number of workers to spawn
-    default: 1
     inputBinding:
       position: 102
       prefix: --workers

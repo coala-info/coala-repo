@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: maximum k value
-    default: 100
     inputBinding:
       position: 101
       prefix: --maxk
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: minimum size of contig
-    default: 200
     inputBinding:
       position: 101
       prefix: --min_contig
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: minimum multiplicity for filtering k-mer
-    default: 2
     inputBinding:
       position: 101
       prefix: --min_count
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: minimum support in each iteration
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_support
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: minimum k value
-    default: 20
     inputBinding:
       position: 101
       prefix: --mink
@@ -55,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 0
     inputBinding:
       position: 101
       prefix: --num_threads
@@ -64,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: prefix length used to build hash table
-    default: 10
     inputBinding:
       position: 101
       prefix: --prefix
@@ -79,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: seed kmer size for alignment
-    default: 30
     inputBinding:
       position: 101
       prefix: --seed_kmer
@@ -88,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: increment of k-mer of each iteration
-    default: 20
     inputBinding:
       position: 101
       prefix: --step

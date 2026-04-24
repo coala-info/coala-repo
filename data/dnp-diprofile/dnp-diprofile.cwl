@@ -26,7 +26,6 @@ inputs:
       - string
     doc: Dinucleotide to compute a frequency profile in fasta file. One of AA, 
       AC, AG, AT, CA, CC, CG, CT, GA, GC, GG, GT, TA, TC, TG, and TT.
-    default: AA
     inputBinding:
       position: 102
       prefix: --dinucleotide
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Sequence length in fasta file. In range [25..600].
-    default: 600
     inputBinding:
       position: 102
       prefix: --seqlength
@@ -53,7 +51,6 @@ inputs:
       - boolean
     doc: Turn this option off to disable version update notifications of the 
       application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO.
-    default: 1
     inputBinding:
       position: 102
       prefix: --version-check

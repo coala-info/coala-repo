@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: The coverage kind to count
-    default: coverage
     inputBinding:
       position: 101
       prefix: --count-kind
@@ -81,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: The window length
-    default: 1000
     inputBinding:
       position: 101
       prefix: --window-length

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Dimension Reduction Level or provide .shuf file
-    default: 2
     inputBinding:
       position: 102
       prefix: --DimRdcLevel
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: sketch the file by read
-    default: false
     inputBinding:
       position: 102
       prefix: --byread
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: perform correction for shared k-mer counts or not.
-    default: 0
     inputBinding:
       position: 102
       prefix: --correction
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: 'set half Kmer length: 2-15'
-    default: 8
     inputBinding:
       position: 102
       prefix: --halfKmerlength
@@ -76,7 +72,6 @@ inputs:
       - 'null'
       - boolean
     doc: turn on share_kmer_ct file keep mode.
-    default: false
     inputBinding:
       position: 102
       prefix: --keepskf
@@ -101,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: 'output metrics: 0: Jaccard/1: Containment'
-    default: 0
     inputBinding:
       position: 102
       prefix: --metric
@@ -110,7 +104,6 @@ inputs:
       - 'null'
       - float
     doc: max mutation allowed for distance output.
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --mutDist_max
@@ -119,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: max number of nearest reference genomes.
-    default: 1
     inputBinding:
       position: 102
       prefix: --neighborN_max
@@ -128,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: 'output fields(latter includes former): Distance/Q-values/Confidence Intervels.'
-    default: 2
     inputBinding:
       position: 102
       prefix: --outfields
@@ -145,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: Filter Kmer with lowest base quality < q (Phred).
-    default: 0
     inputBinding:
       position: 102
       prefix: --quality

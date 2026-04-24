@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: length
-    default: 25
     inputBinding:
       position: 101
       prefix: -k
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: min. non-unique consecutive kmers allowed in outgroup
-    default: 0
     inputBinding:
       position: 101
       prefix: -l
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: max. [% entries] in outgroup tolerated to have a reference kmer
-    default: 0 %
     inputBinding:
       position: 101
       prefix: -m
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: 'min. [-c 0:region average /-c 1: per position] proportion of ingroup entries'
-    default: 0 %
     inputBinding:
       position: 101
       prefix: -p
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: min. reference FASTA region [size] (bp) to output
-    default: 100 bp
     inputBinding:
       position: 101
       prefix: -s
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: min. [% unique] kmers in regions
-    default: 90 %
     inputBinding:
       position: 101
       prefix: -u
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - boolean
     doc: output conserved FASTA regions between reference and ingroup entries
-    default: '0'
     inputBinding:
       position: 101
       prefix: -c
@@ -84,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: print only first t bases in tsv output
-    default: '[k]'
     inputBinding:
       position: 101
       prefix: -t

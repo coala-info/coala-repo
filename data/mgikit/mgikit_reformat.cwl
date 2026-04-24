@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: The size of the buffer for data compression for each sample.
-    default: 131072
     inputBinding:
       position: 101
       prefix: --compression-buffer-size
@@ -31,7 +30,6 @@ inputs:
       - int
     doc: The level of compression (between 0 and 12). 0 is fast but no 
       compression, 12 is slow but high compression.
-    default: 1
     inputBinding:
       position: 101
       prefix: --compression-level
@@ -83,7 +81,6 @@ inputs:
       - string
     doc: 'log level for output messages. Expected values: [error, warn, info, debug,
       trace]. Default is info.'
-    default: info
     inputBinding:
       position: 101
       prefix: --log-level
@@ -93,7 +90,6 @@ inputs:
       - int
     doc: The requested maximum memory to be used (in giga byte). Default is 0 
       then the tool will use the available memory on the machine.
-    default: 0
     inputBinding:
       position: 101
       prefix: --memory
@@ -120,7 +116,6 @@ inputs:
     doc: 'The level of reporting. 0 no reports will be generated!, 1 data quality
       and demultipexing reports. 2: all reports (reports on data quality, demultipexing,
       undetermined and ambigouse barcodes).'
-    default: 2
     inputBinding:
       position: 101
       prefix: --report-level
@@ -137,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: The index of the sample in the sample sheet, needed for file naming.
-    default: 1
     inputBinding:
       position: 101
       prefix: --sample-index
@@ -156,7 +150,6 @@ inputs:
       - int
     doc: The length of UMI expected at the end of the read (r1 for single-end, 
       or r2 for paired-end).
-    default: 0
     inputBinding:
       position: 101
       prefix: --umi-length
@@ -174,7 +167,6 @@ inputs:
       - int
     doc: The size of the buffer for each sample to be filled with data then 
       written once to the disk.
-    default: 67108864
     inputBinding:
       position: 101
       prefix: --writing-buffer-size

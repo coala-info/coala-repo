@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: Fraction of read that needs to be mapped in order for it to be used.
-    default: 0.800000012
     inputBinding:
       position: 101
       prefix: --bad-align-frac
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer length for uniqueness check during read filtering.
-    default: 0
     inputBinding:
       position: 101
       prefix: --bad-align-uniq-kmer-len
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Enables smith waterman graph alignment
-    default: 1
     inputBinding:
       position: 101
       prefix: --graph-sequence-matching
@@ -54,7 +51,6 @@ inputs:
       - int
     doc: gzip-compress output files. If -O is used, output file names are appended
       with .gz
-    default: 0
     inputBinding:
       position: 101
       prefix: --gzip-output
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Infer haplotype paths using read and fragment information.
-    default: 0
     inputBinding:
       position: 101
       prefix: --infer-read-haplotypes
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Use klib smith-waterman aligner.
-    default: 0
     inputBinding:
       position: 101
       prefix: --klib-sequence-matching
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Use kmer aligner.
-    default: 0
     inputBinding:
       position: 101
       prefix: --kmer_sequence_matching
@@ -90,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Enable / disable async logging.
-    default: 0
     inputBinding:
       position: 101
       prefix: --log-async
@@ -107,7 +99,6 @@ inputs:
       - 'null'
       - string
     doc: Set log level (error, warning, info).
-    default: info
     inputBinding:
       position: 101
       prefix: --log-level
@@ -122,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of reads to process for a single event.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --max-reads-per-event
@@ -131,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Enables alignment to paths
-    default: 0
     inputBinding:
       position: 101
       prefix: --path-sequence-matching
@@ -140,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: Enable/disable progress reporting
-    default: 1
     inputBinding:
       position: 101
       prefix: --progress
@@ -163,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for parallel sample processing.
-    default: 40
     inputBinding:
       position: 101
       prefix: --sample-threads

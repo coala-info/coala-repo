@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality to consider a base covered. Defaults to 0.
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-base-quality
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth to consider a site covered. Defaults to 1.
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-depth
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality to consider a base covered. Defaults to 0.
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-mapping-quality
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use. Defaults to 1.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

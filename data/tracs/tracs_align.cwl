@@ -76,7 +76,6 @@ inputs:
       - 'null'
       - float
     doc: ignore queries with per-base divergence > max_div
-    default: 1
     inputBinding:
       position: 102
       prefix: --max_div
@@ -85,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base quality
-    default: 0
     inputBinding:
       position: 102
       prefix: --min_base_qual
@@ -94,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read coverage
-    default: 5
     inputBinding:
       position: 102
       prefix: --min-cov
@@ -103,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality
-    default: 0
     inputBinding:
       position: 102
       prefix: --min_map_qual
@@ -112,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: minimum query length
-    default: 0
     inputBinding:
       position: 102
       prefix: --min_query_len
@@ -121,7 +116,6 @@ inputs:
       - 'null'
       - string
     doc: minimap preset to use - one of 'sr' (default), 'map-ont' or 'map-pb'
-    default: sr
     inputBinding:
       position: 102
       prefix: --minimap_preset
@@ -130,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -155,7 +148,6 @@ inputs:
       - 'null'
       - int
     doc: ignore bases within TRIM-bp from either end of a read
-    default: 0
     inputBinding:
       position: 102
       prefix: --trim

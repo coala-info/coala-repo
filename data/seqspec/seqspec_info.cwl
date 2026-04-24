@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: The output format, [tab, json]
-    default: tab
     inputBinding:
       position: 102
       prefix: --format
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: Object to display, [modalities, meta, sequence_spec, library_spec]
-    default: meta
     inputBinding:
       position: 102
       prefix: --key

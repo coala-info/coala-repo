@@ -127,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: experiment name; to be used for folder and file naming; default is OUT
-    default: OUT
     inputBinding:
       position: 101
       prefix: --prefix

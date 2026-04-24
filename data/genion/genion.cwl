@@ -42,7 +42,6 @@ inputs:
       - float
     doc: Maximum ratio of a base type (AGTC) in an potential fusion exon (This 
       is used for low complexity filtering)
-    default: 0.65
     inputBinding:
       position: 101
       prefix: --max-base-percent-in-exon
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance between genes for read-through events
-    default: 500000
     inputBinding:
       position: 101
       prefix: --max-rt-distance
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum value of chimeric-count / normal-count for read-through events
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --max-rt-fin
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read support for fusion calls
-    default: 3
     inputBinding:
       position: 101
       prefix: --min-support

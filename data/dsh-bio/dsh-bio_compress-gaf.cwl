@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: input GAF path
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input-gaf-path

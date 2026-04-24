@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: term size (k-mer size)
-    default: 31
     inputBinding:
       position: 102
       prefix: --term-size

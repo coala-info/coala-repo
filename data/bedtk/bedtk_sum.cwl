@@ -15,7 +15,6 @@ inputs:
       - int
     doc: The column to use for interval lengths. Defaults to column 3 (end - 
       start).
-    default: 3
     inputBinding:
       position: 102
       prefix: --column

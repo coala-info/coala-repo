@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: step size for the jumping heuristic; 0 to disable
-    default: 5
     inputBinding:
       position: 103
       prefix: -s
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length; -1 for auto
-    default: -1
     inputBinding:
       position: 103
       prefix: -k
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: max fraction of corrected bases
-    default: 0.3
     inputBinding:
       position: 103
       prefix: -C
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: minimum (k+1)-mer occurrences
-    default: 3
     inputBinding:
       position: 103
       prefix: -O
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 103
       prefix: -t
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: trim read down to INT bp; 0 to disable
-    default: 0
     inputBinding:
       position: 103
       prefix: -l

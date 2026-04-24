@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: genome annotation file
-    default: not used
     inputBinding:
       position: 101
       prefix: -g
@@ -53,7 +52,6 @@ inputs:
       - 'null'
       - Directory
     doc: output folder
-    default: ./
     inputBinding:
       position: 101
       prefix: -o
@@ -71,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: gene name keyword
-    default: no filter
     inputBinding:
       position: 101
       prefix: --target

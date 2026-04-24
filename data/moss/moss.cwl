@@ -50,7 +50,6 @@ inputs:
       - int
     doc: number of grid points in [0, 1] for approximate integration, must be 
       non-negative
-    default: 20
     inputBinding:
       position: 101
       prefix: --grid-size
@@ -67,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: max depth of the dataset
-    default: 500
     inputBinding:
       position: 101
       prefix: --max_dep
@@ -76,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: minimum threshold for base quality
-    default: 13
     inputBinding:
       position: 101
       prefix: --min-base-qual
@@ -85,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: minimum threshold for mapping quality
-    default: 30
     inputBinding:
       position: 101
       prefix: --min-mapping-qual
@@ -123,7 +119,6 @@ inputs:
       - 'null'
       - float
     doc: set somatic mutation prior, 1-5x10^(-m)
-    default: 1-5e-4
     inputBinding:
       position: 101
       prefix: --mu
@@ -132,7 +127,6 @@ inputs:
       - 'null'
       - float
     doc: optional threshold for somatic score
-    default: 0
     inputBinding:
       position: 101
       prefix: --tau

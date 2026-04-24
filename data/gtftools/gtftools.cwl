@@ -15,7 +15,6 @@ inputs:
       - string
     doc: chromosome list to analyze. Chromosomes can be separated by comma(,) or
       dash(-). For example, '-c 1-5,X,Y' means chromosomes 1 to 5 plus X and Y.
-    default: 1-22,X,Y
     inputBinding:
       position: 102
       prefix: --chroms
@@ -58,7 +57,6 @@ inputs:
       1000 bases upstream of TSS and 300 bases downstream of TSS). This range is based
       on promoter regions used in the dbSNP database based on ref: Genome-wide promoter
       extraction and analysis in human, mouse, and rat, Genome Biology, 2005."
-    default: 1000-300
     inputBinding:
       position: 102
       prefix: --window

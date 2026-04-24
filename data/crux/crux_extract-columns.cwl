@@ -22,7 +22,6 @@ inputs:
     doc: Specify the input and output delimiter to use when processing the 
       delimited file. The argument can be either a single character or the 
       keyword 'tab.'
-    default: tab
     inputBinding:
       position: 103
       prefix: --delimiter
@@ -32,7 +31,6 @@ inputs:
       - boolean
     doc: Print the header line of the file, in addition to the columns that 
       match.
-    default: true
     inputBinding:
       position: 103
       prefix: --header
@@ -44,7 +42,6 @@ inputs:
       messages, including all those at lower verbosity levels: 0-fatal errors, 10-non-fatal
       errors, 20-warnings, 30-information on the progress of execution, 40-more progress
       information, 50-debug info, 60-detailed debug info.'
-    default: 30
     inputBinding:
       position: 103
       prefix: --verbosity

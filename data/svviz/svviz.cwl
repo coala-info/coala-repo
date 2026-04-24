@@ -44,8 +44,6 @@ inputs:
     doc: 'minimum difference in scores between ref alignment score and alt alignment
       score to be assigned to one allele (use an integer to specify a hard score difference
       threshold, or a float to specify a score difference relative to the read size;
-      default: 2)'
-    default: 2
     inputBinding:
       position: 104
       prefix: --aln-score-delta
@@ -123,7 +121,6 @@ inputs:
     doc: 'implements some optimizations designed to find exact sequence matches quickly;
       will substantially increase speed on Illumina data but may result in some inexact
       results; default: false'
-    default: false
     inputBinding:
       position: 104
       prefix: --fast
@@ -133,7 +130,6 @@ inputs:
       - boolean
     doc: 'Show reads in regions flanking the structural variant; these reads do not
       contribute to the ref or alt allele read counts (default: false)'
-    default: false
     inputBinding:
       position: 104
       prefix: --flanks
@@ -153,7 +149,6 @@ inputs:
       - boolean
     doc: 'include supplementary alignments (ie, those with the 0x800 bit set in the
       bam flags); default: false'
-    default: false
     inputBinding:
       position: 104
       prefix: --include-supplementary
@@ -192,7 +187,6 @@ inputs:
       - float
     doc: 'maximum ratio between best and second-best alignment scores within visualization
       region in order to retain read (default: 0.95)'
-    default: 0.95
     inputBinding:
       position: 104
       prefix: --max-multimapping-similarity
@@ -220,7 +214,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum mapping quality for reads (default: 0)'
-    default: 0
     inputBinding:
       position: 104
       prefix: --min-mapq
@@ -246,7 +239,6 @@ inputs:
       - int
     doc: 'include only read pairs where at least one read end both exceeds PAIR_MAPQ
       and falls near the variant being analyzed (default: 0)'
-    default: 0
     inputBinding:
       position: 104
       prefix: --pair-min-mapq

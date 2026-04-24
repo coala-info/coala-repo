@@ -198,7 +198,6 @@ inputs:
       - 'null'
       - string
     doc: 'Specify X chromosome label (default: 23,X'
-    default: 23,X
     inputBinding:
       position: 101
       prefix: --xLabel
@@ -208,7 +207,6 @@ inputs:
       - string
     doc: "Specify PAR region (default: hg19), can be build number e.g. hg38, b37;
       or specify region, e.g. '60001-2699520,154931044-155260560'"
-    default: hg19
     inputBinding:
       position: 101
       prefix: --xRegion

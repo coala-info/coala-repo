@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Capture all tags.
-    default: false
     inputBinding:
       position: 101
       prefix: --capture-all-tags
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Capture the tags listed, for example 'OQ:XA:XB'
-    default: ''
     inputBinding:
       position: 101
       prefix: --capture-tags
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Encrypt the CRAM file.
-    default: false
     inputBinding:
       position: 101
       prefix: --encrypt
@@ -37,7 +34,6 @@ inputs:
       - boolean
     doc: Fail on MD5 mismatch if true, or correct (overwrite) the checksums and continue
       if false.
-    default: false
     inputBinding:
       position: 101
       prefix: --ignore-md5-mismatch
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Ignore the tags listed, for example 'OQ:XA:XB'
-    default: ''
     inputBinding:
       position: 101
       prefix: --ignore-tags
@@ -55,7 +50,6 @@ inputs:
       - 'null'
       - boolean
     doc: Inject or change the @SQ:UR header fields to point to ENA reference service.
-    default: false
     inputBinding:
       position: 101
       prefix: --inject-sq-uri
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: Input is in SAM format.
-    default: false
     inputBinding:
       position: 101
       prefix: --input-is-sam
@@ -81,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: 'Change log level: DEBUG, INFO, WARNING, ERROR.'
-    default: ERROR
     inputBinding:
       position: 101
       prefix: --log-level
@@ -90,7 +82,6 @@ inputs:
       - 'null'
       - boolean
     doc: Preserve all quality scores. Overwrites '--lossless-quality-score'.
-    default: false
     inputBinding:
       position: 101
       prefix: --lossless-quality-score
@@ -99,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: A string specifying what quality scores should be preserved.
-    default: ''
     inputBinding:
       position: 101
       prefix: --lossy-quality-score-spec
@@ -108,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Stop after compressing this many records.
-    default: 9223372036854775807
     inputBinding:
       position: 101
       prefix: --max-records
@@ -117,7 +106,6 @@ inputs:
       - 'null'
       - boolean
     doc: Preserve all read names.
-    default: false
     inputBinding:
       position: 101
       prefix: --preserve-read-names

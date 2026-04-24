@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: 'Minimum value for color bar, default: 0'
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --bar-min
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: 'Color map for the heatmap, default: YlOrRd'
-    default: YlOrRd
     inputBinding:
       position: 101
       prefix: -cmap
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: 'Data type for Hi-C data or "oe" (observed/expected), default: observed'
-    default: observed
     inputBinding:
       position: 101
       prefix: --data-type
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: 'DPI for the output figure, default: 300'
-    default: 300
     inputBinding:
       position: 101
       prefix: -dpi
@@ -85,7 +81,6 @@ inputs:
       - 'null'
       - float
     doc: 'Figure size, default: 10'
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --fig-size
@@ -94,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output format for the figure, default: pdf'
-    default: pdf
     inputBinding:
       position: 101
       prefix: -format
@@ -111,7 +105,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Show grid in the heatmap, Default: True'
-    default: true
     inputBinding:
       position: 101
       prefix: -grid
@@ -152,8 +145,6 @@ inputs:
       - 'null'
       - string
     doc: 'Normalization method for Hi-C data (NONE, VC, VC_SQRT, KR, SCALE, etc.),
-      default: NONE'
-    default: NONE
     inputBinding:
       position: 101
       prefix: --normalization
@@ -162,7 +153,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Order the heatmap by specific order, for hic format, default: False'
-    default: false
     inputBinding:
       position: 101
       prefix: -order
@@ -171,7 +161,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Output directory, default: ./'
-    default: ./
     inputBinding:
       position: 101
       prefix: --output
@@ -188,7 +177,6 @@ inputs:
       - 'null'
       - int
     doc: 'Rotation for the x and y axis labels, default: 45'
-    default: 45
     inputBinding:
       position: 101
       prefix: -rotation
@@ -197,7 +185,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Show genome size at x-axis, Default: False'
-    default: false
     inputBinding:
       position: 101
       prefix: --x-axis

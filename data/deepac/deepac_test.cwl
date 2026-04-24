@@ -100,7 +100,6 @@ inputs:
       - 'null'
       - float
     doc: 'Generate s*1024 reads for testing (Default: s=1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: --scale

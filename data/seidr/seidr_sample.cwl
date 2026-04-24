@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Number of significant digits to report
-    default: 8
     inputBinding:
       position: 101
       prefix: --precision

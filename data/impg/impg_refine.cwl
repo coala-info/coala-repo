@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Step size for expanding flanks (bp)
-    default: 1000
     inputBinding:
       position: 101
       prefix: --extension-step
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum recursion depth for transitive overlaps (0 for no limit)
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-depth
@@ -46,7 +44,6 @@ inputs:
     doc: Maximum per-side extension explored when maximizing boundary support. 
       Values <= 1 are treated as fractions of the locus length; values > 1 as 
       absolute bp
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --max-extension
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance between regions to merge
-    default: 0
     inputBinding:
       position: 101
       prefix: --merge-distance
@@ -65,7 +61,6 @@ inputs:
       - int
     doc: Minimum distance between transitive ranges to consider on the same 
       sequence
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-distance-between-ranges
@@ -82,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum region size to consider for transitive queries
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-transitive-len
@@ -135,7 +129,6 @@ inputs:
       - int
     doc: Minimum number of bases that supporting samples must span at each 
       region boundary
-    default: 1000
     inputBinding:
       position: 101
       prefix: --span-bp
@@ -168,7 +161,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for parallel processing
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -194,7 +186,6 @@ inputs:
       - 'null'
       - int
     doc: Verbosity level (0 = error, 1 = info, 2 = debug)
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbose

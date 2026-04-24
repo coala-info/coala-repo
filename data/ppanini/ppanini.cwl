@@ -47,7 +47,6 @@ inputs:
       - 'null'
       - float
     doc: '[X] Percentile Cutoff for Abundance; Default=75th'
-    default: 75th
     inputBinding:
       position: 101
       prefix: --tshld-abund

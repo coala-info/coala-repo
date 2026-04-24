@@ -81,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cores to use.
-    default: all available processors
     inputBinding:
       position: 103
       prefix: -p
@@ -115,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads to take.
-    default: all
     inputBinding:
       position: 103
       prefix: -n
@@ -124,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: Threshold for average quality of mutations and N-regions of CDR3
-    default: 25
     inputBinding:
       position: 103
       prefix: -q

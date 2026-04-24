@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Classpath for Java classes
-    default: /usr/local/opt/bbmap-39.08-0/current/
     inputBinding:
       position: 102
   - id: ea
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Maximum heap size for the Java Virtual Machine
-    default: 34970m
     inputBinding:
       position: 102
 outputs:

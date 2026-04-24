@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length allowed after trimming
-    default: 18
     inputBinding:
       position: 103
       prefix: --min
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: Trimming mode; one of 'single', 'paired', or 'ap' (any paired)
-    default: pe
     inputBinding:
       position: 103
       prefix: --mode
@@ -72,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Number of concurrent threads
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

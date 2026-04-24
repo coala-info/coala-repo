@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Priority between gene window and enhancer annotations.
-    default: None
     inputBinding:
       position: 101
       prefix: --gene_window_enhancer_priority
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Gene window size in base pairs.
-    default: 50000
     inputBinding:
       position: 101
       prefix: --gene_window_size
@@ -70,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: Unit for LD window.
-    default: CM
     inputBinding:
       position: 101
       prefix: --ld_unit
@@ -79,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: LD window size.
-    default: 1
     inputBinding:
       position: 101
       prefix: --ld_wind
@@ -94,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: Strategy for handling multiple enhancers per SNP.
-    default: max_mkscore
     inputBinding:
       position: 101
       prefix: --snp_multiple_enhancer_strategy
@@ -103,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Number of spots per chunk.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --spots_per_chunk

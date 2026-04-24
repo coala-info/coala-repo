@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Number of upstream/downstream nucleotide bases to compute 5'-3' bias
-    default: 100
     inputBinding:
       position: 101
       prefix: --num-pr-bases
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Number of top highly expressed transcripts to compute 5'-3' bias
-    default: 1000
     inputBinding:
       position: 101
       prefix: --num-tr-bias
@@ -50,7 +48,6 @@ inputs:
       - string
     doc: Format of the output report (PDF, HTML or both PDF:HTML, default is 
       HTML).
-    default: HTML
     inputBinding:
       position: 101
       prefix: --outformat
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - File
     doc: Output file for PDF report
-    default: report.pdf
     inputBinding:
       position: 101
       prefix: --outfile

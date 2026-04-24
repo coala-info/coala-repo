@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: gap existence cost
-    default: 0
     inputBinding:
       position: 102
       prefix: -a
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: maximum tandem repeat period to consider (100, but -p selects 50)
-    default: 100
     inputBinding:
       position: 102
       prefix: -w
@@ -66,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: minimum copy number, affects -f4 only
-    default: 2
     inputBinding:
       position: 102
       prefix: -n
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: minimum repeat probability for masking
-    default: 0.5
     inputBinding:
       position: 102
       prefix: -s
@@ -93,7 +89,6 @@ inputs:
       - int
     doc: 'output type: 0=masked sequence, 1=repeat probabilities, 2=repeat counts,
       3=BED, 4=tandem repeats'
-    default: 0
     inputBinding:
       position: 102
       prefix: -f
@@ -102,7 +97,6 @@ inputs:
       - 'null'
       - float
     doc: probability decay per period
-    default: 0.9
     inputBinding:
       position: 102
       prefix: -d
@@ -119,7 +113,6 @@ inputs:
       - 'null'
       - float
     doc: probability of a repeat ending per position
-    default: 0.05
     inputBinding:
       position: 102
       prefix: -e
@@ -128,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: probability of a repeat starting per position
-    default: 0.005
     inputBinding:
       position: 102
       prefix: -r

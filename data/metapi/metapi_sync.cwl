@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: workflow. Allowed values are simulate_wf, mag_wf, gene_wf
-    default: mag_wf
     inputBinding:
       position: 1
   - id: task
@@ -17,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: pipeline end point
-    default: all
     inputBinding:
       position: 2
   - id: check_samples
@@ -25,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: check samples
-    default: false
     inputBinding:
       position: 103
       prefix: --check-samples
@@ -34,7 +31,6 @@ inputs:
       - 'null'
       - File
     doc: config.yaml
-    default: ./config.yaml
     inputBinding:
       position: 103
       prefix: --config
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: split project to sync directory
-    default: 1
     inputBinding:
       position: 103
       prefix: --split-num
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - Directory
     doc: project workdir
-    default: ./
     inputBinding:
       position: 103
       prefix: --workdir

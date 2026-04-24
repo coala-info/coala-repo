@@ -29,7 +29,6 @@ inputs:
       - float
     doc: Minimum percent query and subject alignment coverage threshold to use 
       for inferring homologs.
-    default: 95
     inputBinding:
       position: 103
       prefix: --blast-min-coverage
@@ -39,7 +38,6 @@ inputs:
       - float
     doc: Minimum percent sequence identity threshold to use for inferring 
       homologs.
-    default: 95
     inputBinding:
       position: 103
       prefix: --blast-min-identity
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't delete temporary files created by Hybran.
-    default: false
     inputBinding:
       position: 103
       prefix: --debug
@@ -60,7 +57,6 @@ inputs:
       name to all copies.This option is deprecated and has no effect.If name 
       unification is not desired, consider running `hybran standardize` 
       afterwards.
-    default: false
     inputBinding:
       position: 103
       prefix: --dedupe-references
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - float
     doc: Similarity e-value cut-off
-    default: '1e-09'
     inputBinding:
       position: 103
       prefix: --evalue
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enforce identity/coverage thresholds on RATT-transferred annotations.
-    default: false
     inputBinding:
       position: 103
       prefix: --filter-ratt
@@ -108,7 +102,6 @@ inputs:
       - boolean
     doc: Force overwrite intermediate files (does not overwrite annotation files
       already annotated using hybran.
-    default: false
     inputBinding:
       position: 103
       prefix: --force
@@ -141,7 +134,6 @@ inputs:
       - 'null'
       - string
     doc: Determines which UniProtKB databases Prokka searches against.
-    default: Bacteria
     inputBinding:
       position: 103
       prefix: --kingdom
@@ -152,7 +144,6 @@ inputs:
     doc: MCL inflation value. Higher value results in more fine-grained clusters
       (fewer genes in common). See <https://micans.org/mcl/man/mcl.html#opt-I> 
       for details.
-    default: 1.5
     inputBinding:
       position: 103
       prefix: --mcl-inflation
@@ -161,7 +152,6 @@ inputs:
       - 'null'
       - boolean
     doc: Improve gene predictions for highly fragmented genomes
-    default: false
     inputBinding:
       position: 103
       prefix: --metagenome
@@ -171,7 +161,6 @@ inputs:
       - boolean
     doc: whether RATT should attempt correction of reference pseudogenes in your
       samples
-    default: false
     inputBinding:
       position: 103
       prefix: --no-ratt-correct-pseudogenes
@@ -180,7 +169,6 @@ inputs:
       - 'null'
       - boolean
     doc: whether RATT should attempt splice site corrections
-    default: false
     inputBinding:
       position: 103
       prefix: --no-ratt-correct-splice
@@ -189,7 +177,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors/CPUs to use
-    default: 1
     inputBinding:
       position: 103
       prefix: --nproc
@@ -199,7 +186,6 @@ inputs:
       - float
     doc: Minimum percent sequence coverage threshold to use for identifying 
       redundant sequences.
-    default: 99
     inputBinding:
       position: 103
       prefix: --onegene-coverage-threshold
@@ -209,7 +195,6 @@ inputs:
       - float
     doc: Minimum percent sequence identity threshold to use for identifying 
       redundant sequences.
-    default: 99
     inputBinding:
       position: 103
       prefix: --onegene-identity-threshold
@@ -218,7 +203,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for generic gene names (*not* locus tags)
-    default: HYBRA
     inputBinding:
       position: 103
       prefix: --orf-prefix
@@ -235,7 +219,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to output all new annotation files.
-    default: .
     inputBinding:
       position: 103
       prefix: --output
@@ -260,7 +243,6 @@ inputs:
       - 'null'
       - boolean
     doc: No logging output when flagged
-    default: false
     inputBinding:
       position: 103
       prefix: --quiet
@@ -270,7 +252,6 @@ inputs:
       - boolean
     doc: whether RATT should attempt correction of reference pseudogenes in your
       samples
-    default: false
     inputBinding:
       position: 103
       prefix: --ratt-correct-pseudogenes
@@ -279,7 +260,6 @@ inputs:
       - 'null'
       - boolean
     doc: whether RATT should attempt splice site corrections
-    default: false
     inputBinding:
       position: 103
       prefix: --ratt-correct-splice
@@ -288,7 +268,6 @@ inputs:
       - 'null'
       - string
     doc: 'splice donor and acceptor sequences. example: GT..AG'
-    default: XX..XX
     inputBinding:
       position: 103
       prefix: --ratt-splice-sites
@@ -299,7 +278,6 @@ inputs:
     doc: Presets for nucmer alignment settings to determine 
       synteny.Automatically set to 'Multiple' when multiple references are 
       provided unless 'Free' is specified.
-    default: Strain
     inputBinding:
       position: 103
       prefix: --ratt-transfer-type
@@ -324,7 +302,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose output
-    default: false
     inputBinding:
       position: 103
       prefix: --verbose

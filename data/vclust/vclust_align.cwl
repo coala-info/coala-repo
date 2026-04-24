@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Max. no. of mismatches in approx. window
-    default: 7
     inputBinding:
       position: 101
       prefix: --am
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Min. length of run ending approx. extension
-    default: 3
     inputBinding:
       position: 101
       prefix: --ar
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Approx. window length
-    default: 15
     inputBinding:
       position: 101
       prefix: --aw
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Align genome pairs above the threshold (0-1)
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-threshold
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Min. anchor length
-    default: 11
     inputBinding:
       position: 101
       prefix: --mal
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Max. dist. between approx. matches in query
-    default: 40
     inputBinding:
       position: 101
       prefix: --mqd
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Max. dist. between approx. matches in reference
-    default: 40
     inputBinding:
       position: 101
       prefix: --mrd
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Min. seed length
-    default: 7
     inputBinding:
       position: 101
       prefix: --msl
@@ -95,7 +87,6 @@ inputs:
       - 'null'
       - float
     doc: Min. ANI to output (0-1)
-    default: 0
     inputBinding:
       position: 101
       prefix: --out-ani
@@ -104,7 +95,6 @@ inputs:
       - 'null'
       - float
     doc: Min. gANI to output (0-1)
-    default: 0
     inputBinding:
       position: 101
       prefix: --out-gani
@@ -113,7 +103,6 @@ inputs:
       - 'null'
       - float
     doc: Min. query coverage (aligned fraction) to output (0-1)
-    default: 0
     inputBinding:
       position: 101
       prefix: --out-qcov
@@ -122,7 +111,6 @@ inputs:
       - 'null'
       - float
     doc: Min. reference coverage (aligned fraction) to output (0-1)
-    default: 0
     inputBinding:
       position: 101
       prefix: --out-rcov
@@ -131,7 +119,6 @@ inputs:
       - 'null'
       - float
     doc: Min. tANI to output (0-1)
-    default: 0
     inputBinding:
       position: 101
       prefix: --out-tani
@@ -140,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: Output format
-    default: standard
     inputBinding:
       position: 101
       prefix: --outfmt
@@ -149,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: Min. considered region length
-    default: 35
     inputBinding:
       position: 101
       prefix: --reg
@@ -158,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -167,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: Verbosity level
-    default: 1
     inputBinding:
       position: 101
       prefix: -v

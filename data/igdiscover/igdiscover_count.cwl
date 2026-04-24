@@ -24,7 +24,6 @@ inputs:
       - float
     doc: 'Minimum D coverage (in percent). Default: 70 if --gene=D, no restriction
       otherwise.'
-    default: '70'
     inputBinding:
       position: 102
       prefix: --d-coverage
@@ -42,7 +41,6 @@ inputs:
       - float
     doc: 'Maximal allowed E-value for D gene match. Default: 1E-4 if --gene=D, no
       restriction otherwise.'
-    default: '1E-4'
     inputBinding:
       position: 102
       prefix: --d-evalue
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: 'Which gene type: Choose V, D or J. Default: Default: V'
-    default: V
     inputBinding:
       position: 102
       prefix: --gene

@@ -51,7 +51,6 @@ inputs:
       - int
     doc: 'The maxmimum number of groups to consider for any gene tree. Default: 8.
       Max value: 18.'
-    default: 8
     inputBinding:
       position: 101
       prefix: -c
@@ -122,7 +121,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Output directory name. Default: grampa-[current date]-[current time]'
-    default: grampa-[current date]-[current time]
     inputBinding:
       position: 101
       prefix: -o
@@ -131,7 +129,6 @@ inputs:
       - 'null'
       - string
     doc: 'A prefix to add to the beginning of all output files created. Default: grampa'
-    default: grampa
     inputBinding:
       position: 101
       prefix: -f
@@ -157,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: 'The number of processes GRAMPA should use. Default: 1.'
-    default: 1
     inputBinding:
       position: 101
       prefix: -p
@@ -184,7 +180,6 @@ inputs:
       - string
     doc: Use 'grampa.py --tests' the first time you run grampa to run through 
       all the options with pre-set input files.
-    default: bioconda
     inputBinding:
       position: 101
       prefix: --tests
@@ -196,7 +191,6 @@ inputs:
       nothing. 1: print only some info at the start. 2: print all log info to screen.
       3 (default): print all log info to the screen as well as progress updates for
       certain steps.'
-    default: 3
     inputBinding:
       position: 101
       prefix: -v

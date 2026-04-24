@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of the k-mers to be considered and resampled before twisting
-    default: '1.'
     inputBinding:
       position: 101
       prefix: --fraction
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: keep temporary files rather than deleting them in the end
-    default: 'false'
     inputBinding:
       position: 101
       prefix: --keep-temporaries
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: whether to normalize spectra after transformation and before twisting
-    default: 'true'
     inputBinding:
       position: 101
       prefix: --normalize
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: whether to normalize spectra after transformation and before twisting
-    default: 'true'
     inputBinding:
       position: 101
       prefix: --normalize-counts
@@ -63,7 +59,6 @@ inputs:
       - float
     doc: "raise counts to this power before transforming them.\n    A power of 0 when
       the 'pseudocounts' method is used\n    performs a logarithmic transformation"
-    default: '1.'
     inputBinding:
       position: 101
       prefix: --power
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of the k-mers to be considered and resampled before twisting
-    default: '1.'
     inputBinding:
       position: 101
       prefix: --sampling
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of the k-mers to be considered and resampled before twisting
-    default: '1.'
     inputBinding:
       position: 101
       prefix: --sampling-fraction
@@ -90,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: number of concurrent computing threads to be spawned
-    default: '20'
     inputBinding:
       position: 101
       prefix: --threads
@@ -101,7 +93,6 @@ inputs:
     doc: "set to zero all counts that are less than this threshold\n    before transforming
       them.\n    A fractional threshold between 0. and 1. is taken as a relative one\n\
       \    with respect to the sum of all counts in the spectrum"
-    default: '1.'
     inputBinding:
       position: 101
       prefix: --threshold-counts
@@ -113,7 +104,6 @@ inputs:
       \  for each k-mer, and eliminate k-mers such that the corresponding sum\n  \
       \  is less than the largest sum rescaled by this threshold.\n    This filters
       out k-mers having low frequencies across all spectra"
-    default: '0.'
     inputBinding:
       position: 101
       prefix: --threshold-kmers
@@ -122,7 +112,6 @@ inputs:
       - 'null'
       - string
     doc: transformation to apply to table elements
-    default: power
     inputBinding:
       position: 101
       prefix: --transform
@@ -131,7 +120,6 @@ inputs:
       - 'null'
       - string
     doc: transformation to apply to table elements
-    default: power
     inputBinding:
       position: 101
       prefix: --transformation
@@ -140,7 +128,6 @@ inputs:
       - 'null'
       - boolean
     doc: set verbose execution
-    default: 'false'
     inputBinding:
       position: 101
       prefix: --verbose

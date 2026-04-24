@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - float
     doc: extend locus interval by Δ bp in each direction; by default, Δ=0
-    default: 0
     inputBinding:
       position: 102
       prefix: --delta
@@ -26,7 +25,6 @@ inputs:
       - int
     doc: only group features together in the same locus if they overlap by at 
       least N bp; by default N=25
-    default: 25
     inputBinding:
       position: 102
       prefix: --min-bp
@@ -36,7 +34,6 @@ inputs:
       - float
     doc: only group features together in the same locus if they overlap by a 
       fraction of at least P of their overall length; by default P=0.25 (25%)
-    default: 0.25
     inputBinding:
       position: 102
       prefix: --min-perc

@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: '[debug] Choose log level from (DEBUG, INFO, WARNING, ERROR) (default: INFO).'
-    default: INFO
     inputBinding:
       position: 101
       prefix: --log
@@ -67,7 +66,6 @@ inputs:
       - int
     doc: Genetic Code ID. 1 by default, and 11 for bacteria. See 
       https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi
-    default: 1
     inputBinding:
       position: 101
       prefix: --transl_table

@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of pairwise alignments to include
-    default: 25
     inputBinding:
       position: 101
       prefix: --min_len
@@ -49,7 +48,6 @@ inputs:
       - boolean
     doc: if set, skip pairwise alignments between regions on identical chromosomes
       as input
-    default: false
     inputBinding:
       position: 101
       prefix: --no_self_alignments

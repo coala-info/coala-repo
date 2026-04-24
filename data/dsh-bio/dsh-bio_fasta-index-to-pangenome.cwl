@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: input FASTA index (.fai) path
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input-fasta-index-path

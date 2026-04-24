@@ -17,7 +17,6 @@ inputs:
       - string
     doc: 'The normalization mode (e.g., community: normalize all levels by the same
       sum, features: normalize each level independently)'
-    default: community
     inputBinding:
       position: 101
       prefix: --mode
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Whether to include special features (UNMAPPED, UNGROUPED, etc.) in the normalization
-    default: yes
     inputBinding:
       position: 101
       prefix: --special-features
@@ -36,7 +34,6 @@ inputs:
       - string
     doc: 'The units to normalize to (e.g., relab: relative abundance, cpm: copies
       per million)'
-    default: relab
     inputBinding:
       position: 101
       prefix: --units

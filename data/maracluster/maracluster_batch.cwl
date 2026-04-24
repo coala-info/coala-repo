@@ -27,7 +27,6 @@ inputs:
     doc: 'Set charge uncertainty, i.e. if set to 1, then for a spectrum with precursor
       ion charge C, also precursor ion charges C-1 and C+1 are considered (default:
       0).'
-    default: 0
     inputBinding:
       position: 102
       prefix: --chargeUncertainty
@@ -46,7 +45,6 @@ inputs:
       - string
     doc: 'Clustering thresholds at which to produce cluster files; listed as a comma
       separated list (default: -30.0,-25.0,-20.0,-15.0,-10.0,-5.0)'
-    default: -30.0,-25.0,-20.0,-15.0,-10.0,-5.0
     inputBinding:
       position: 102
       prefix: --clusterThresholds
@@ -90,7 +88,6 @@ inputs:
       - int
     doc: 'Set the minimum size for a cluster for producing consensus spectra (default:
       1).'
-    default: 1
     inputBinding:
       position: 102
       prefix: --minClusterSize
@@ -99,7 +96,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Writable folder for output files (default: ./maracluster_output).'
-    default: ./maracluster_output
     inputBinding:
       position: 102
       prefix: --output-folder
@@ -134,7 +130,6 @@ inputs:
       - string
     doc: 'Set precursor tolerance in units of ppm or Da. The units have to be "Da"
       or "ppm", case sensitive; if no unit is specified ppm is assumed (default: 20.0ppm).'
-    default: 20.0ppm
     inputBinding:
       position: 102
       prefix: --precursorTolerance
@@ -144,7 +139,6 @@ inputs:
       - string
     doc: "Output files will be prefixed as e.g. <prefix>.clusters_p10.tsv (default:
       'MaRaCluster')"
-    default: MaRaCluster
     inputBinding:
       position: 102
       prefix: --prefix
@@ -153,7 +147,6 @@ inputs:
       - 'null'
       - float
     doc: 'Set log(p-value) threshold (default: -5.0).'
-    default: -5.0
     inputBinding:
       position: 102
       prefix: --pvalThreshold
@@ -207,7 +200,6 @@ inputs:
       - 'null'
       - int
     doc: 'Set the verbatim level (lowest: 0, highest: 5, default: 3).'
-    default: 3
     inputBinding:
       position: 102
       prefix: --verbatim

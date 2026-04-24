@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Does not run entire demo, only pulls the reference files
-    default: false
     inputBinding:
       position: 101
       prefix: --refonly

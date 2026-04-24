@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: max. breakpoint offset
-    default: 1000
     inputBinding:
       position: 102
       prefix: --bp-offset
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: max. chunk size to merge groups of BCF files
-    default: 500
     inputBinding:
       position: 102
       prefix: --chunks
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: min. coverage
-    default: 5
     inputBinding:
       position: 102
       prefix: --coverage
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: max. SV size
-    default: 1000000
     inputBinding:
       position: 102
       prefix: --maxsize
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: min. SV size
-    default: 0
     inputBinding:
       position: 102
       prefix: --minsize
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: min. SV site quality
-    default: 200
     inputBinding:
       position: 102
       prefix: --quality
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - float
     doc: min. reciprocal overlap
-    default: 0.800000012
     inputBinding:
       position: 102
       prefix: --rec-overlap
@@ -105,7 +98,6 @@ inputs:
       - 'null'
       - float
     doc: min. fractional ALT support
-    default: 0.150000006
     inputBinding:
       position: 102
       prefix: --vaf

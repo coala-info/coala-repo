@@ -18,7 +18,6 @@ inputs:
       - int
     doc: Buffer size for incrementally increasing internal array size to store 
       reads alignment information.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --buffer-size
@@ -28,7 +27,6 @@ inputs:
       - int
     doc: Cutoff. Regions with SPP wtd score lower than cutoff will not be 
       considerred.
-    default: 5
     inputBinding:
       position: 101
       prefix: --cutoff
@@ -38,7 +36,6 @@ inputs:
       - string
     doc: Format of tag file, "AUTO", "BED" or "ELAND" or "ELANDMULTI" or 
       "ELANDEXPORT" or "SAM" or "BAM" or "BOWTIE".
-    default: AUTO
     inputBinding:
       position: 101
       prefix: --format
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: 'Scan window size on both side of the summit (default: 100bp)'
-    default: 100
     inputBinding:
       position: 101
       prefix: --window-size

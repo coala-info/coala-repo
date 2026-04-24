@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: Mute all warnings.
-    default: false
     inputBinding:
       position: 101
       prefix: --mute-warnings
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't add the current date to the output VCF header
-    default: false
     inputBinding:
       position: 101
       prefix: --nodate

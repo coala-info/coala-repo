@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: base quality threshold (Qscore)
-    default: 20
     inputBinding:
       position: 102
       prefix: --base_quality
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: how to calculate coverage (requires --coverages)
-    default: pmean
     inputBinding:
       position: 102
       prefix: --coverage_mode
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: minimum Q length
-    default: 50
     inputBinding:
       position: 102
       prefix: --length
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: maximum allowable edit distance from query to reference
-    default: 1000
     inputBinding:
       position: 102
       prefix: --max_distance
@@ -80,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

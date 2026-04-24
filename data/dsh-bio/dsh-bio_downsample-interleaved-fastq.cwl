@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: input interleaved FASTQ path, default stdin
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input-fastq-path
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: random number seed, default relates to current time
-    default: relates to current time
     inputBinding:
       position: 101
       prefix: --seed

@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: 'Database type: dna, prot, or dnax'
-    default: dna
     inputBinding:
       position: 103
       prefix: -t
@@ -69,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the size of maximum gap between tiles in a clump
-    default: 2
     inputBinding:
       position: 103
       prefix: -maxGap
@@ -78,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Sets maximum intron size
-    default: 750000
     inputBinding:
       position: 103
       prefix: -maxIntron
@@ -104,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum percent divergence of repeats to allow them to be unmasked
-    default: 15
     inputBinding:
       position: 103
       prefix: -minRepDivergence
@@ -113,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: Sets minimum score
-    default: 30
     inputBinding:
       position: 103
       prefix: -minScore
@@ -138,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: If set to 1, this allows one mismatch in tile and still triggers an alignment
-    default: 0
     inputBinding:
       position: 103
       prefix: -oneOff
@@ -156,7 +150,6 @@ inputs:
       - string
     doc: Controls output file format (psl, pslx, axt, maf, sim4, wublast, blast, blast8,
       blast9)
-    default: psl
     inputBinding:
       position: 103
       prefix: -out
@@ -181,7 +174,6 @@ inputs:
       - 'null'
       - string
     doc: 'Query type: dna, rna, prot, dnax, or rnax'
-    default: dna
     inputBinding:
       position: 103
       prefix: -q
@@ -190,7 +182,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the number of repetitions of a tile allowed before it is marked as overused
-    default: 1024
     inputBinding:
       position: 103
       prefix: -repMatch

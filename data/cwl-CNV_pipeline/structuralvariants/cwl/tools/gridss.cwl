@@ -44,13 +44,11 @@ inputs:
     type:
       - string?
       - "null"
-    default: "gridss.assembly.bam"
     inputBinding:
       prefix: '--assembly'
       position: 3
   threads:
     type: int?
-    default: 1
     inputBinding:
       prefix: '--threads'
       position: 4

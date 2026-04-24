@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Genomic resolution.
-    default: 2000
     inputBinding:
       position: 102
       prefix: --bins
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the chromosome to consider as circular.
-    default: ''
     inputBinding:
       position: 102
       prefix: --circular
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Threads to use for analysis.
-    default: 1
     inputBinding:
       position: 102
       prefix: --cpus
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: Standard deviation for contact density estimation.
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --deviation
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the gaussian kernel for contact density estimation.
-    default: 11
     inputBinding:
       position: 102
       prefix: --kernel-size
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: Statistical model to use for ambiguous reads assignment.
-    default: standard
     inputBinding:
       position: 102
       prefix: --mode
@@ -86,7 +80,6 @@ inputs:
       - 'null'
       - float
     doc: Rate to use for sub-sampling restriction map.
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --rate

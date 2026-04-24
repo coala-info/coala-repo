@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: threshold for high confidence chromosome node length
-    default: 10000
     inputBinding:
       position: 101
       prefix: --chromosome_len_thresh
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for high confidence chromosome node score
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --chromosome_score_thresh
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for classifying potential plasmid
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --classification_thresh
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for % identity and fraction of length to match plasmid genes
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --gene_match_thresh
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - float
     doc: 'threshold for # of mate-pairs off the cycle in dominated node'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --good_cyc_dominated_thresh
@@ -71,7 +66,6 @@ inputs:
       - float
     doc: 'Coefficient of variation used for pre-selection [default: 0.5, higher-->
       less restrictive]'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --max_CV
@@ -88,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length required for reporting
-    default: 1000
     inputBinding:
       position: 101
       prefix: --min_length
@@ -121,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: threshold for high confidence plasmid node length
-    default: 10000
     inputBinding:
       position: 101
       prefix: --plasmid_len_thresh
@@ -130,7 +122,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for high confidence plasmid node score
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --plasmid_score_thresh
@@ -155,7 +146,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for self-loop off loop mates
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --selfloop_mate_thresh
@@ -164,7 +154,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for self-loop plasmid score
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --selfloop_score_thresh

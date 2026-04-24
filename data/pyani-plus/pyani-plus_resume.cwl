@@ -14,7 +14,6 @@ inputs:
       - Directory
     doc: Cache location if required for a method (must be visible to cluster 
       workers).
-    default: .
     inputBinding:
       position: 101
       prefix: --cache
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: How should the internal tools be run?
-    default: local
     inputBinding:
       position: 101
       prefix: --executor
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Which run from the database (defaults to latest).
-    default: latest
     inputBinding:
       position: 101
       prefix: --run-id

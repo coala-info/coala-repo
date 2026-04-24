@@ -25,7 +25,6 @@ inputs:
     doc: Cap to limit the downstream sequence length for frameshifts when 
       creating the fasta file. Use 'full' to include the full downstream 
       sequence.
-    default: '1000'
     inputBinding:
       position: 103
       prefix: --downstream-sequence-length

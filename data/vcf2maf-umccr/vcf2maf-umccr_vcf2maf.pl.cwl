@@ -23,14 +23,12 @@ inputs:
       - 'null'
       - string
     doc: NCBI reference assembly of variants MAF (e.g. GRCm38 for mouse)
-    default: GRCh37
     inputBinding:
       position: 101
       prefix: --ncbi-build
   - id: normal_id
     type: string
     doc: Matched_Norm_Sample_Barcode to report in the MAF
-    default: NORMAL
     inputBinding:
       position: 101
       prefix: --normal-id
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - File
     doc: Reference FASTA file
-    default: 
       ~/.vep/homo_sapiens/102_GRCh37/Homo_sapiens.GRCh37.dna.toplevel.fa.gz
     inputBinding:
       position: 101
@@ -66,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: Ensembl-friendly name of species (e.g. mus_musculus for mouse)
-    default: homo_sapiens
     inputBinding:
       position: 101
       prefix: --species
@@ -81,7 +77,6 @@ inputs:
   - id: tumor_id
     type: string
     doc: Tumor_Sample_Barcode to report in the MAF
-    default: TUMOR
     inputBinding:
       position: 101
       prefix: --tumor-id

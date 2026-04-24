@@ -24,7 +24,6 @@ inputs:
       - string
     doc: 'Alternative to repeated -v/--verbose: set log level via key. Equivalence
       to -v/--verbose: => "Warn" => "Info" -vv => "Debug" -vvv => "Trace"'
-    default: Warn
     inputBinding:
       position: 101
       prefix: --log-level
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Analysis threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Overlap of the tiles
-    default: 0
     inputBinding:
       position: 102
       prefix: --overlap
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Width of the tile
-    default: 1000
     inputBinding:
       position: 102
       prefix: --width

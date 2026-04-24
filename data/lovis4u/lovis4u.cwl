@@ -110,7 +110,6 @@ inputs:
       - string
     doc: 'Path to a configuration file or name of a pre-made config file [default:
       standard]'
-    default: standard
     inputBinding:
       position: 101
       prefix: -c
@@ -138,7 +137,6 @@ inputs:
       - string
     doc: 'Choose which defence system database to use for hmmscan search [default:
       both (DefenseFinder and PADLOC)]'
-    default: both (DefenseFinder and PADLOC)
     inputBinding:
       position: 101
       prefix: --defence-models
@@ -236,7 +234,6 @@ inputs:
         items: string
     doc: "Space-separated list of feature names for which label won't be shown. [default:
       hypothetical protein, unknown protein]"
-    default: hypothetical protein, unknown protein
     inputBinding:
       position: 101
       prefix: --ignored-feature-labels
@@ -305,7 +302,6 @@ inputs:
       - 'null'
       - float
     doc: 'Scale which defines given space for each nt cell on canvas. [default: 0.05]'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --mm-per-nt
@@ -357,7 +353,6 @@ inputs:
       - string
     doc: 'Output dir name. It will be created if it does not exist. [default: lovis4u_{current_date};
       e.g. uorf4u_2022_07_25-20_41]'
-    default: lovis4u_{current_date}; e.g. uorf4u_2022_07_25-20_41
     inputBinding:
       position: 101
       prefix: -o
@@ -376,7 +371,6 @@ inputs:
       - string
     doc: 'Name of the output pdf file (will be saved in the output folder). [default:
       lovis4u.pdf]'
-    default: lovis4u.pdf
     inputBinding:
       position: 101
       prefix: --pdf-name
@@ -428,7 +422,6 @@ inputs:
         items: string
     doc: 'Space-separated list of feature groups for which colours should be set.
       [default: variable, labeled]'
-    default: variable, labeled
     inputBinding:
       position: 101
       prefix: --set-group-colour-for
@@ -466,7 +459,6 @@ inputs:
       - boolean
     doc: 'Force to show all labels for proteins that have hits to any database with
       hmmscan search. [default: False]'
-    default: false
     inputBinding:
       position: 101
       prefix: --show-all-labels-for-query
@@ -477,7 +469,6 @@ inputs:
         items: string
     doc: 'Space-separated list of feature groups for which label should be shown.
       [default: variable, labeled]'
-    default: variable, labeled
     inputBinding:
       position: 101
       prefix: --show-feature-label-for
@@ -488,7 +479,6 @@ inputs:
         items: string
     doc: 'Space-separated list of feature group types for which label will be displayed
       only for the first occurrence of feature homologues group. [default: shell/core]'
-    default: shell/core
     inputBinding:
       position: 101
       prefix: --show-first-feature-label-for
@@ -498,7 +488,6 @@ inputs:
       - boolean
     doc: 'Show labels only for the first occurrence for non-coding features. [default:
       False]'
-    default: false
     inputBinding:
       position: 101
       prefix: --show-first-noncoding-label
@@ -507,7 +496,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Show all labels for non-coding features. [default: False]'
-    default: false
     inputBinding:
       position: 101
       prefix: --show-noncoding-labels

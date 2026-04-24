@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: cutoff contig size
-    default: 500
     inputBinding:
       position: 102
       prefix: --cutoff
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: overwrite existing db file without prompting
-    default: false
     inputBinding:
       position: 102
       prefix: --force
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: make recruitment more or less inclusive
-    default: 2.5
     inputBinding:
       position: 102
       prefix: --inclusivity
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: step size for iterative recruitment
-    default: 200
     inputBinding:
       position: 102
       prefix: --step

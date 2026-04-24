@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable or disable colored logging.
-    default: true
     inputBinding:
       position: 101
       prefix: --logColors
@@ -60,7 +59,6 @@ inputs:
     doc: "Set the log level. Options: ['Critical', 'Error', 'Warning', 'Debug', 'Info',
       'critical', 'error', 'warning', 'debug', 'info', 'CRITICAL', 'ERROR', 'WARNING',
       'DEBUG', 'INFO']."
-    default: INFO
     inputBinding:
       position: 101
       prefix: --logLevel

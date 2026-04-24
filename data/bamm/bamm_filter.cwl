@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: maximum allowable edit distance from query to reference
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max_distance

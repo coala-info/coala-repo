@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: disables the progress bars
-    default: false
     inputBinding:
       position: 101
       prefix: --disable_prog_bar
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force writing in output directory and in pangenome output file.
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -47,7 +45,6 @@ inputs:
       - boolean
     doc: Keep the temporary files. Useful for debugging in sensitive or profile 
       mode.
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_tmp
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - File
     doc: log output file
-    default: stdout
     inputBinding:
       position: 101
       prefix: --log
@@ -68,7 +64,6 @@ inputs:
       align the reference sequence of gene family against HMM.Profile will 
       create an HMM profile for each gene family and this profile will be 
       aligned.Sensitive will align HMM to all genes in families.
-    default: None
     inputBinding:
       position: 101
       prefix: --mode
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - boolean
     doc: alias to keep only the best hit for each gene family.
-    default: false
     inputBinding:
       position: 101
       prefix: --only_best_hit
@@ -128,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: Number of available threads.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -137,7 +130,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to temporary directory, defaults path is /tmp/panorama
-    default: /tmp/panorama
     inputBinding:
       position: 101
       prefix: --tmp
@@ -147,7 +139,6 @@ inputs:
       - int
     doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
       for debug)
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbose

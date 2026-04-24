@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum proportion of reads required to call a SNP
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min_prop
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum phred quality to count a variant call vs CT18 as a true SNP
-    default: 20
     inputBinding:
       position: 101
       prefix: --phred

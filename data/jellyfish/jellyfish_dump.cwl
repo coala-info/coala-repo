@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Column format
-    default: false
     inputBinding:
       position: 102
       prefix: --column
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: Tab separator
-    default: false
     inputBinding:
       position: 102
       prefix: --tab

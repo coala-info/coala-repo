@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: External DB to import (default = 'refseq')
-    default: refseq
     inputBinding:
       position: 101
       prefix: --type

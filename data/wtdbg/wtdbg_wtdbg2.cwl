@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: 'Use best n hits for each read in build graph, 0: keep all'
-    default: 500
     inputBinding:
       position: 101
       prefix: --aln-bestn
@@ -20,7 +19,6 @@ inputs:
     doc: Retain dovetail overlaps only, the max overhang size is 
       <--aln-dovetail>, the value should be times of 256, -1 to disable 
       filtering
-    default: 256
     inputBinding:
       position: 101
       prefix: --aln-dovetail
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: Max length variation of two aligned fragments
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --aln-max-var
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Max n hits for each read in build graph
-    default: 1000
     inputBinding:
       position: 101
       prefix: --aln-maxhit
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Min length of alignment
-    default: 2048
     inputBinding:
       position: 101
       prefix: --aln-min-length
@@ -56,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Min matched length by kmer matching
-    default: 200
     inputBinding:
       position: 101
       prefix: --aln-min-match
@@ -65,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: Min similarity, calculated by kmer matched length / aligned length
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --aln-min-similarity
@@ -83,7 +76,6 @@ inputs:
       - int
     doc: "1: forward, 2: reverse, 3: both. Please don't change the deault vaule 3,
       unless you exactly know what you are doing"
-    default: 3
     inputBinding:
       position: 101
       prefix: --aln-strand
@@ -93,7 +85,6 @@ inputs:
       - int
     doc: Used in filtering BINs. If a BIN has less indexed valid kmers than 
       <--bin-complexity-cutoff 2>, masks it.
-    default: 2
     inputBinding:
       position: 101
   - id: bubble_step
@@ -102,7 +93,6 @@ inputs:
       - int
     doc: 'Max step to search a bubble, meaning the max step from the starting node
       to the ending node. Default: 40'
-    default: 40
     inputBinding:
       position: 101
   - id: ctg_min_length
@@ -110,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Min length of contigs to be output, 5000
-    default: 5000
     inputBinding:
       position: 101
   - id: ctg_min_nodes
@@ -118,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: Min num of nodes in a contig to be ouput, 3
-    default: 3
     inputBinding:
       position: 101
   - id: drop_low_cov_edges
@@ -148,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: Program will build edges of length no large than 1024
-    default: 1024
     inputBinding:
       position: 101
   - id: edge_min
@@ -156,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: Min read depth of a valid edge
-    default: 3
     inputBinding:
       position: 101
       prefix: --edge-min
@@ -190,7 +176,6 @@ inputs:
       - 'null'
       - string
     doc: Approximate genome size (k/m/g suffix allowed)
-    default: '0'
     inputBinding:
       position: 101
       prefix: --genome-size
@@ -222,7 +207,6 @@ inputs:
       - 'null'
       - float
     doc: Filter high frequency kmers, maybe repetitive
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --kmer-depth-max
@@ -231,7 +215,6 @@ inputs:
       - 'null'
       - int
     doc: Min kmer frequency
-    default: 2
     inputBinding:
       position: 101
       prefix: --kmer-depth-min
@@ -240,7 +223,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer fsize, 0 <= k <= 23
-    default: 0
     inputBinding:
       position: 101
       prefix: --kmer-fsize
@@ -249,7 +231,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer psize, 0 <= p <= 23
-    default: 21
     inputBinding:
       position: 101
       prefix: --kmer-psize
@@ -258,7 +239,6 @@ inputs:
       - 'null'
       - float
     doc: Subsampling kmers, 1/(<-S>) kmers are indexed
-    default: 4.0
     inputBinding:
       position: 101
       prefix: --kmer-subsampling
@@ -360,7 +340,6 @@ inputs:
       - float
     doc: Will discard an node when has more this ratio intervals are conflicted 
       with previous generated node
-    default: 0.25
     inputBinding:
       position: 101
   - id: node_len
@@ -370,7 +349,6 @@ inputs:
     doc: The default value is 1024, which is times of KBM_BIN_SIZE(always equals
       256 bp). It specifies the length of intervals (or call nodes after 
       selecting).
-    default: 1024
     inputBinding:
       position: 101
   - id: node_matched_bins
@@ -378,7 +356,6 @@ inputs:
       - 'null'
       - int
     doc: Min matched bins in a node, default:1
-    default: 1
     inputBinding:
       position: 101
   - id: node_max
@@ -387,7 +364,6 @@ inputs:
       - int
     doc: 'Nodes with too high depth will be regarded as repetitive, and be masked.
       Default: 200, more than 200 reads contain this node'
-    default: 200
     inputBinding:
       position: 101
   - id: node_min
@@ -404,7 +380,6 @@ inputs:
       - int
     doc: Max overlap size between two adjacent intervals in any read. It is used
       in selecting best nodes representing reads in graph
-    default: 256
     inputBinding:
       position: 101
   - id: output_prefix
@@ -435,7 +410,6 @@ inputs:
       - int
     doc: 'Strategy 0: retaining longest reads. Strategy 1: retaining medain length
       reads.'
-    default: 0
     inputBinding:
       position: 101
   - id: rdname_filter
@@ -458,7 +432,6 @@ inputs:
       - 'null'
       - float
     doc: Choose the best <float> depth from input reads(effective with -g)
-    default: 50.0
     inputBinding:
       position: 101
       prefix: --rdcov-cutoff
@@ -475,7 +448,6 @@ inputs:
       - 'null'
       - int
     doc: Set kmer-psize in realignment
-    default: 15
     inputBinding:
       position: 101
       prefix: --realn-kmer-psize
@@ -484,7 +456,6 @@ inputs:
       - 'null'
       - int
     doc: Set kmer-subsampling in realignment
-    default: 1
     inputBinding:
       position: 101
       prefix: --realn-kmer-subsampling
@@ -493,7 +464,6 @@ inputs:
       - 'null'
       - float
     doc: Set aln-max-var in realignment
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --realn-max-var
@@ -502,7 +472,6 @@ inputs:
       - 'null'
       - int
     doc: Set aln-min-length in realignment
-    default: 2048
     inputBinding:
       position: 101
       prefix: --realn-min-length
@@ -511,7 +480,6 @@ inputs:
       - 'null'
       - int
     doc: Set aln-min-match in realignment
-    default: 200
     inputBinding:
       position: 101
       prefix: --realn-min-match
@@ -520,7 +488,6 @@ inputs:
       - 'null'
       - float
     doc: Set aln-min-similarity in realignment
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --realn-min-similarity
@@ -529,7 +496,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads, 0 for all cores
-    default: 4
     inputBinding:
       position: 101
       prefix: --cpu
@@ -547,7 +513,6 @@ inputs:
       - int
     doc: Choose the longest subread and drop reads shorter than <int> (5000 
       recommended for PacBio)
-    default: 0
     inputBinding:
       position: 101
       prefix: --tidy-reads
@@ -556,7 +521,6 @@ inputs:
       - 'null'
       - int
     doc: Max step to search a tip, 10
-    default: 10
     inputBinding:
       position: 101
   - id: ttr_cutoff_depth
@@ -567,7 +531,6 @@ inputs:
       should be masked. The pattern of such nodes is: depth >= <--ttr-cutoff-depth>,
       and none of their edges have depth greater than depth * <--ttr-cutoff-ratio
       0.5>. set --ttr-cutoff-depth 0 to disable ttr masking'
-    default: 0
     inputBinding:
       position: 101
   - id: ttr_cutoff_ratio
@@ -578,7 +541,6 @@ inputs:
       should be masked. The pattern of such nodes is: depth >= <--ttr-cutoff-depth>,
       and none of their edges have depth greater than depth * <--ttr-cutoff-ratio
       0.5>. set --ttr-cutoff-depth 0 to disable ttr masking'
-    default: 0.5
     inputBinding:
       position: 101
   - id: verbose

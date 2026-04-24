@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: the ggd channel to use.
-    default: genomics
     inputBinding:
       position: 102
       prefix: --channel
@@ -109,7 +108,6 @@ inputs:
     doc: Whether to use noarch as the platform or the system platform. If set to
       'none' the system platform will be used. (Default = noarch. Noarch means 
       no architecture and is platform agnostic.)
-    default: noarch
     inputBinding:
       position: 102
       prefix: --platform

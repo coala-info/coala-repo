@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of categories for blob/cumulative plot
-    default: 10
     inputBinding:
       position: 101
       prefix: --cat-count
@@ -60,7 +59,6 @@ inputs:
       - int
     doc: '[experimental] Decimal precision (number of decimal places) to use when
       percentages for display'
-    default: 2
     inputBinding:
       position: 101
       prefix: --decimal-precision
@@ -116,7 +114,6 @@ inputs:
       - 'null'
       - string
     doc: Reducer function for blob plot
-    default: sum
     inputBinding:
       position: 101
       prefix: --reducer-function
@@ -125,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: Resolution for blob plot
-    default: 30
     inputBinding:
       position: 101
       prefix: --resolution
@@ -141,7 +137,6 @@ inputs:
       - 'null'
       - float
     doc: Scale factor for blob plot (0.2 - 5.0)
-    default: 1
     inputBinding:
       position: 101
       prefix: --scale-factor
@@ -150,7 +145,6 @@ inputs:
       - 'null'
       - string
     doc: Scale function for blob/snail plot
-    default: sqrt
     inputBinding:
       position: 101
       prefix: --scale-function
@@ -159,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: Segment count for snail plot
-    default: 1000
     inputBinding:
       position: 101
       prefix: --segments
@@ -176,7 +169,6 @@ inputs:
       - 'null'
       - string
     doc: Maximum number of categories for blob/cumulative plot
-    default: default
     inputBinding:
       position: 101
       prefix: --legend
@@ -194,7 +186,6 @@ inputs:
       - 'null'
       - int
     doc: '[experimental] Significant digits to use when rounding numbers for display'
-    default: 3
     inputBinding:
       position: 101
       prefix: --significant-digits

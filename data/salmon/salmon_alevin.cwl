@@ -143,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: define a close upper bound on expected number of cells
-    default: 0
     inputBinding:
       position: 101
       prefix: --expectCells
@@ -170,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: Explicitly specify the number of cells.
-    default: 0
     inputBinding:
       position: 101
       prefix: --forceCells
@@ -179,7 +177,6 @@ inputs:
       - 'null'
       - int
     doc: threshold for the frequency of the barcodes
-    default: 10
     inputBinding:
       position: 101
       prefix: --freqThreshold
@@ -214,7 +211,6 @@ inputs:
       - float
     doc: fraction of CB to keep, value must be in range (0,1], use 1 to quantify
       all CB.
-    default: 0
     inputBinding:
       position: 101
       prefix: --keepCBFraction
@@ -232,7 +228,6 @@ inputs:
       - int
     doc: 'Minimum Number of CB to use for learning Low confidence region (Default:
       200).'
-    default: 200
     inputBinding:
       position: 101
       prefix: --lowRegionMinNumBarcodes
@@ -257,7 +252,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum allowable limit to process the cell barcodes. (Default: 100000)'
-    default: 100000
     inputBinding:
       position: 101
       prefix: --maxNumBarcodes
@@ -291,7 +285,6 @@ inputs:
       - int
     doc: Generate mean and variance for cell x gene matrix quantification 
       estimates.
-    default: 0
     inputBinding:
       position: 101
       prefix: --numCellBootstraps
@@ -301,7 +294,6 @@ inputs:
       - int
     doc: Generate mean and variance for cell x gene matrix quantification by 
       running gibbs chain estimates.
-    default: 0
     inputBinding:
       position: 101
       prefix: --numCellGibbsSamples
@@ -386,7 +378,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads to use concurrently.
-    default: 5
     inputBinding:
       position: 101
       prefix: --threads
@@ -396,7 +387,6 @@ inputs:
       - int
     doc: Maximum allowble edit distance to collapse UMIs, Expect delay in 
       running time if != 1
-    default: 1
     inputBinding:
       position: 101
       prefix: --umiEditDistance

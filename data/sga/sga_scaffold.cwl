@@ -42,7 +42,6 @@ inputs:
       - int
     doc: collapse heterozygous structural variation if the event size is less 
       than N
-    default: 0
     inputBinding:
       position: 102
       prefix: --max-sv-size
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: remove vertices with estimated copy number less than FLOAT
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --min-copy-number
@@ -96,7 +94,6 @@ inputs:
       - 'null'
       - float
     doc: Contigs with an a-statitic value about FLOAT will be considered unique
-    default: 20.0
     inputBinding:
       position: 102
       prefix: --unique-astat

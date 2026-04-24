@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: drop an allele if the allele fraction is below FLOAT
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -p
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: drop alleles with depth<INT
-    default: 1
     inputBinding:
       position: 102
       prefix: -s
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: drop alleles with depth<INT on either strand
-    default: 0
     inputBinding:
       position: 102
       prefix: -a
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - File
     doc: BED or position list file to include
-    default: 'null'
     inputBinding:
       position: 102
       prefix: -b
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: minimum alignment length
-    default: 0
     inputBinding:
       position: 102
       prefix: -l
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base quality
-    default: 0
     inputBinding:
       position: 102
       prefix: -Q
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality
-    default: 0
     inputBinding:
       position: 102
       prefix: -q
@@ -80,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: minimum supplementary alignment length
-    default: 0
     inputBinding:
       position: 102
       prefix: -S
@@ -105,7 +97,6 @@ inputs:
       - 'null'
       - File
     doc: reference genome
-    default: 'null'
     inputBinding:
       position: 102
       prefix: -f
@@ -114,7 +105,6 @@ inputs:
       - 'null'
       - string
     doc: region in format of 'ctg:start-end'
-    default: 'null'
     inputBinding:
       position: 102
       prefix: -r
@@ -139,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: skip bases within INT-bp from either end of a read
-    default: 0
     inputBinding:
       position: 102
       prefix: -T

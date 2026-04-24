@@ -130,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: set the minimum length to count a segment as recombinant
-    default: 100
     inputBinding:
       position: 102
       prefix: -L
@@ -171,7 +170,6 @@ inputs:
       - 'null'
       - float
     doc: rejection threshold (e.g., -t0.01)
-    default: 0.05
     inputBinding:
       position: 102
       prefix: -t

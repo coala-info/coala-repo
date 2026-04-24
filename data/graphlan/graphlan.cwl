@@ -42,7 +42,6 @@ inputs:
       - string
     doc: set the format of the output image (default none meaning that the 
       format is guessed from the output file extension)
-    default: none
     inputBinding:
       position: 102
       prefix: --format
@@ -69,7 +68,6 @@ inputs:
       - 'null'
       - float
     doc: the size of the output image (in inches, default 7.0)
-    default: 7.0
     inputBinding:
       position: 102
       prefix: --size
@@ -78,7 +76,6 @@ inputs:
       - 'null'
       - boolean
     doc: set whether warning messages should be reported or not (default 1)
-    default: 1
     inputBinding:
       position: 102
       prefix: --warnings

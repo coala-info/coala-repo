@@ -88,7 +88,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_cpptraj_path
-    default: system.dat
 
   input_exp_path:
     label: Path to the experimental reference file (required if reference = experimental)
@@ -138,7 +137,6 @@ inputs:
     - edam:format_2033
     inputBinding:
       prefix: --output_traj_path
-    default: system.mdcrd
 
   config:
     label: Advanced configuration options for biobb_analysis CpptrajRms

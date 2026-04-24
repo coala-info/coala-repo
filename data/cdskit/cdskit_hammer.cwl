@@ -11,7 +11,6 @@ inputs:
     doc: "Codon table ID. The standard code is \"1\".\n                        See
       here for details: https://www.ncbi.nlm.nih.gov/Tax\n                       \
       \ onomy/Utils/wprintgc.cgi"
-    default: 1
     inputBinding:
       position: 101
       prefix: --codontable
@@ -21,7 +20,6 @@ inputs:
       - string
     doc: "Input sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --inseqformat
@@ -33,7 +31,6 @@ inputs:
       down. Codon columns are removed if there are no\n                        more
       than this number of non-missing sequences. \"all\"\n                       \
       \ generates a completely no-gap output."
-    default: '4'
     inputBinding:
       position: 101
       prefix: --nail
@@ -43,7 +40,6 @@ inputs:
       - string
     doc: "Output sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --outseqformat
@@ -53,7 +49,6 @@ inputs:
       - string
     doc: "Whether to relax (decrease) --nail when a\n                        gap-only
       sequence is generated."
-    default: yes
     inputBinding:
       position: 101
       prefix: --prevent_gap_only
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - File
     doc: Input sequence file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --seqfile

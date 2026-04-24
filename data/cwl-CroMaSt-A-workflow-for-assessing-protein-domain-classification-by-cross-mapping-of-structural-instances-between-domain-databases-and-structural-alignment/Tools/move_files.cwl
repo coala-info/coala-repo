@@ -38,7 +38,6 @@ inputs:
   dir_cp:
     type: [ Directory, string, "null"]
     label: The direcory name for storing avg_split PDB structures 
-    default: avg_split_PDB
 
 outputs:
   dir_unp_dom:

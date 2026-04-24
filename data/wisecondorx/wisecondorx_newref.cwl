@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: Scale samples to this binsize, multiples of existing binsize only
-    default: 100000.0
     inputBinding:
       position: 102
       prefix: --binsize
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Use multiple cores to find reference bins
-    default: 1
     inputBinding:
       position: 102
       prefix: --cpus
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use flag for NIPT (e.g. path/to/reference/*.npz)
-    default: false
     inputBinding:
       position: 102
       prefix: --nipt
@@ -47,7 +44,6 @@ inputs:
     doc: Path to yfrac .png plot for --yfrac optimization (e.g. 
       path/to/plot.png); software will stop after plotting after which --yfrac 
       can be set manually
-    default: None
     inputBinding:
       position: 102
       prefix: --plotyfrac
@@ -56,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Amount of reference locations per target
-    default: 300
     inputBinding:
       position: 102
       prefix: --refsize
@@ -65,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: Use to manually set the y read fraction cutoff, which defines gender
-    default: None
     inputBinding:
       position: 102
       prefix: --yfrac

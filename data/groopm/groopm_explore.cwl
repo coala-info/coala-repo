@@ -16,7 +16,6 @@ inputs:
       - type: array
         items: string
     doc: bin ids to plot (None for all)
-    default: None
     inputBinding:
       position: 102
       prefix: --bids
@@ -26,7 +25,6 @@ inputs:
       - string
     doc: set colormap [HSV, Accent, Blues, Spectral, Grayscale, Discrete, 
       DiscretePaired]
-    default: HSV
     inputBinding:
       position: 102
       prefix: --cm
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: cutoff contig size
-    default: 1000
     inputBinding:
       position: 102
       prefix: --cutoff
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: include kmers in figure [only used when mode == together]
-    default: false
     inputBinding:
       position: 102
       prefix: --kmers
@@ -54,7 +50,6 @@ inputs:
       - string
     doc: Exploration mode [binpoints, binids, allcontigs, unbinnedcontigs, 
       binnedcontigs, binassignments, compare, sidebyside, together]
-    default: binids
     inputBinding:
       position: 102
       prefix: --mode
@@ -63,7 +58,6 @@ inputs:
       - 'null'
       - boolean
     doc: skip data transformation (3 stoits only)
-    default: false
     inputBinding:
       position: 102
       prefix: --no_transform
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: ignore contig lengths when plotting
-    default: false
     inputBinding:
       position: 102
       prefix: --points

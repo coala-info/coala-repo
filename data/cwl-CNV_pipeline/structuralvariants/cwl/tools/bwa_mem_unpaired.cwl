@@ -34,13 +34,11 @@ inputs:
       - .sa
   threads:
     type: int?
-    default: 1
     inputBinding:
       position: 1
       prefix: '-t'
   read_group:
     type: string?
-    default: '@RG\tID:SRR709972\tSM:NA06985\tPL:ILLUMINA\tCN:CBRA\tLB:Fragment'
     inputBinding:
       position: 4
       prefix: '-R'

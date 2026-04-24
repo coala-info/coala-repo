@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads to process, all reads default
-    default: 0
     inputBinding:
       position: 101
       prefix: --limit
@@ -62,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Number of top ranked prediction to output
-    default: 1
     inputBinding:
       position: 101
       prefix: --top

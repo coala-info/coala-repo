@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: compute direct matches (default)
-    default: true
     inputBinding:
       position: 101
       prefix: --d

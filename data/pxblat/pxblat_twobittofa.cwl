@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: End at given position in sequence (non-inclusive).
-    default: 0
     inputBinding:
       position: 102
       prefix: --end
@@ -73,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Start at given position in sequence (zero-based).
-    default: 0
     inputBinding:
       position: 102
       prefix: --start

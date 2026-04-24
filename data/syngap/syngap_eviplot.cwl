@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: The size of output graph (LengthxWidth)
-    default: 10x5
     inputBinding:
       position: 101
       prefix: --figsize
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: The font size of output graph
-    default: 10
     inputBinding:
       position: 101
       prefix: --fontsize
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: The color for highlight label
-    default: red
     inputBinding:
       position: 101
       prefix: --highlightcolor

@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: created if not existing and --aa given
-    default: '[basename(aa).dmnd]'
     inputBinding:
       position: 103
       prefix: --db
@@ -60,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: one of fast,sensitive,{mid,more,very,ultra}-sensitive
-    default: more-sensitive
     inputBinding:
       position: 103
       prefix: --diamond-mode

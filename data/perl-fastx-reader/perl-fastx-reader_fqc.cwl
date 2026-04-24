@@ -82,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: "Sort by field: 'order', 'count', or 'name'"
-    default: order
     inputBinding:
       position: 102
       prefix: --sortby

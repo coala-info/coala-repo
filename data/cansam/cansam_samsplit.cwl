@@ -14,7 +14,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: '%*-%ID.%.'
     inputBinding:
       position: 2
   - id: compression_level

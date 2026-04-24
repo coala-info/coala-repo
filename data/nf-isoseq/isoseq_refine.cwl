@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL).'
-    default: WARN
     inputBinding:
       position: 103
       prefix: --log-level
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum poly(A) tail length.
-    default: 20
     inputBinding:
       position: 103
       prefix: --min-polya-length
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum CCS RQ. Default is -1, deactivated
-    default: -1
     inputBinding:
       position: 103
       prefix: --min-rq
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use, 0 means autodetection.
-    default: 0
     inputBinding:
       position: 103
       prefix: --num-threads

@@ -30,7 +30,6 @@ inputs:
       - boolean
     doc: Call the script as "batch_correction_all_loess_wrapper.R"; otherwise 
       call it as "batch_correction_wrapper.R" one
-    default: 'TRUE'
     inputBinding:
       position: 101
       prefix: --loess

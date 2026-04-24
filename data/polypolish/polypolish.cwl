@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum fraction of reads that must agree on a variant
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --fraction
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum mismatch/indel rate for a read to be used for polishing
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --max_i
@@ -50,7 +48,6 @@ inputs:
       - int
     doc: Minimum read depth for polishing; positions with fewer reads will not 
       be polished
-    default: 5
     inputBinding:
       position: 103
       prefix: --min_count
@@ -60,7 +57,6 @@ inputs:
       - float
     doc: Maximum variant frequency; if the most common variant is above this 
       threshold, it will be used to polish
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --v_max

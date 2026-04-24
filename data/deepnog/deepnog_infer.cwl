@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: Network architecture to use for classification.
-    default: deepnog
     inputBinding:
       position: 102
       prefix: --architecture
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Orthologous group/family database to use.
-    default: eggNOG5
     inputBinding:
       position: 102
       prefix: --database
@@ -53,7 +51,6 @@ inputs:
       - string
     doc: Define device for calculating protein sequence classification. Auto 
       chooses GPU if available, otherwise CPU.
-    default: auto
     inputBinding:
       position: 102
       prefix: --device
@@ -81,7 +78,6 @@ inputs:
       - 'null'
       - string
     doc: Output file format
-    default: csv
     inputBinding:
       position: 102
       prefix: --outformat

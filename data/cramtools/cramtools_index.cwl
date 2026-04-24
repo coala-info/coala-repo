@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Choose between BAM index (bai) and CRAM index (crai).
-    default: CRAI
     inputBinding:
       position: 101
       prefix: --index-format
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: 'Change log level: DEBUG, INFO, WARNING, ERROR.'
-    default: ERROR
     inputBinding:
       position: 101
       prefix: --log-level

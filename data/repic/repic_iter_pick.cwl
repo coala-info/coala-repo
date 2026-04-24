@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: sampling probability of initial training labels for 'semi_auto'
-    default: 1.0
     inputBinding:
       position: 104
       prefix: --sample_prob

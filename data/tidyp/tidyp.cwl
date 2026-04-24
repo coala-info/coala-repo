@@ -18,7 +18,6 @@ inputs:
       - int
     doc: do additional accessibility checks (<level> = 0, 1, 2, 3). 0 is assumed
       if <level> is missing.
-    default: 0
     inputBinding:
       position: 102
       prefix: -access

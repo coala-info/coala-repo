@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of sequences to extract
-    default: 100000
     inputBinding:
       position: 101
       prefix: --max-len
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of sequences to extract
-    default: 20
     inputBinding:
       position: 101
       prefix: --min-len
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory.
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir

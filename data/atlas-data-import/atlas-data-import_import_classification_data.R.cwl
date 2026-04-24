@@ -38,7 +38,6 @@ inputs:
       - boolean
     doc: If --get-sdrf is set to TRUE, import condensed SDRF? By default, a 
       normal version is imported.
-    default: false
     inputBinding:
       position: 101
       prefix: --condensed-sdrf
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - boolean
     doc: Should SDRF file(s) be downloaded?
-    default: false
     inputBinding:
       position: 101
       prefix: --get-sdrf
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - boolean
     doc: Should the tool performance table be imported?
-    default: false
     inputBinding:
       position: 101
       prefix: --get-tool-perf-table

@@ -57,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Default Set To 1000
-    default: 1000
     inputBinding:
       position: 101
       prefix: --Evalue
@@ -104,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Default Set To 100
-    default: 100
     inputBinding:
       position: 101
       prefix: --MaxSets
@@ -175,7 +173,6 @@ inputs:
       - 'null'
       - int
     doc: Default Set To 1
-    default: 1
     inputBinding:
       position: 101
       prefix: --Threads

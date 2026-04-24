@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: allele balance range for heterozygous informative sites
-    default: 0.2:0.8
     inputBinding:
       position: 101
       prefix: --ab-het
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: allele balance range for homozygous alternate informative sites
-    default: 0.8:1.0
     inputBinding:
       position: 101
       prefix: --ab-homalt
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: allele balance range for homozygous reference informative sites
-    default: 0.0:0.2
     inputBinding:
       position: 101
       prefix: --ab-homref
@@ -76,7 +73,6 @@ inputs:
       - float
     doc: minimum ratio of evidence for a parent to provide an unambiguous call. 
       Default 10:1
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --evidence-min-ratio
@@ -85,7 +81,6 @@ inputs:
       - 'null'
       - boolean
     doc: include ambiguous phasing results
-    default: false
     inputBinding:
       position: 101
       prefix: --include-ambiguous
@@ -95,7 +90,6 @@ inputs:
       - int
     doc: maximum number of read inserts to sample in order to estimate 
       concordant read insert size
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --insert-size-max-sample
@@ -104,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of reads to collect for phasing a single variant
-    default: 100
     inputBinding:
       position: 101
       prefix: --max-reads
@@ -113,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: min coverage for informative sites
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-depth
@@ -122,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: min genotype and base quality for informative sites
-    default: 20
     inputBinding:
       position: 101
       prefix: --min-gt-qual
@@ -131,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: minimum map quality for reads
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-map-qual
@@ -141,7 +131,6 @@ inputs:
       - int
     doc: min number of variants required to perform multiple parallel reads of 
       the sites file
-    default: 1000
     inputBinding:
       position: 101
       prefix: --multiread-proc-min
@@ -150,7 +139,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not perform extended read-based phasing
-    default: false
     inputBinding:
       position: 101
       prefix: --no-extended
@@ -174,7 +162,6 @@ inputs:
       - 'null'
       - boolean
     doc: no logging of variant processing data
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -183,7 +170,6 @@ inputs:
       - 'null'
       - int
     doc: expected length of input reads
-    default: 151
     inputBinding:
       position: 101
       prefix: --readlen
@@ -200,7 +186,6 @@ inputs:
       - 'null'
       - int
     doc: maximum search distance from variant for informative sites (in bases)
-    default: 5000
     inputBinding:
       position: 101
       prefix: --search-dist
@@ -216,7 +201,6 @@ inputs:
       - 'null'
       - int
     doc: margin of error for the location of split read clipping in bases
-    default: 5
     inputBinding:
       position: 101
       prefix: --split-error-margin
@@ -226,7 +210,6 @@ inputs:
       - int
     doc: number of standard deviations from the mean insert length to define a 
       discordant read
-    default: 3
     inputBinding:
       position: 101
       prefix: --stdevs
@@ -235,7 +218,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads
@@ -245,7 +227,6 @@ inputs:
       - boolean
     doc: print verbose output including sites and reads used for phasing. Only 
       applies to BED output
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

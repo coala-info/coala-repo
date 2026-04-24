@@ -12,7 +12,6 @@ inputs:
     doc: accumulate the stats over a number of chunks, can include multiple 
       values separated by comma, one summary file will be generated for each 
       value
-    default: 10,100
     inputBinding:
       position: 101
       prefix: -a
@@ -30,7 +29,6 @@ inputs:
       - int
     doc: "chunk size. Input reads/contigs will be broken into chunks\nprior to alignment,
       0 will not chunk"
-    default: 100000
     inputBinding:
       position: 101
       prefix: -c
@@ -71,7 +69,6 @@ inputs:
       - int
     doc: 'list all indels at least this long (default: 0, set to 0 to skip searching
       for indels).'
-    default: 0
     inputBinding:
       position: 101
       prefix: -l
@@ -80,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: set the minimap2 preset, e.g. map-ont, asm5, asm10, asm20
-    default: map-ont
     inputBinding:
       position: 101
       prefix: -d
@@ -89,7 +85,6 @@ inputs:
       - 'null'
       - string
     doc: output file prefix
-    default: assm
     inputBinding:
       position: 101
       prefix: -p
@@ -113,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: alignment threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

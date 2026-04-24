@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Option for minimap2 (quoted string)
-    default: -x splice -ub -k14 --secondary=no
     inputBinding:
       position: 101
       prefix: --mm2_option
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix of output BAM files
-    default: isorefiner_mapped
     inputBinding:
       position: 101
       prefix: --out_prefix
@@ -34,7 +32,6 @@ inputs:
       type: array
       items: File
     doc: Reads (FASTQ or FASTA, gzip allowed, mandatory)
-    default: None
     inputBinding:
       position: 101
       prefix: --reads
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: Option for samtools sort (quoted string)
-    default: -m 2G
     inputBinding:
       position: 101
       prefix: --sort_option
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - Directory
     doc: Working directory containing intermediate and log files
-    default: isorefiner_map_work
     inputBinding:
       position: 101
       prefix: --work_dir

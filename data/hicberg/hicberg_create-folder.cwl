@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the output folder to create. If not set, 'sample' is used.
-    default: sample
     inputBinding:
       position: 101
       prefix: --name

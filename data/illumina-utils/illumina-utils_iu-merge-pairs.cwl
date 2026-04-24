@@ -108,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: Overlap size must exceed this value.
-    default: 15
     inputBinding:
       position: 102
       prefix: --min-overlap-size
@@ -123,7 +122,6 @@ inputs:
       with this parameter, that base is being marked as an ambiguous base, which
       may result in the elimination of the merged sequence depending on the 
       --ignore-Ns paranmeter.
-    default: 15
     inputBinding:
       position: 102
       prefix: --min-qual-score
@@ -161,7 +159,6 @@ inputs:
       stringency. Stringency can also be adjusted using `--max-num-mismatches` 
       parameter, or can be done post-merging, using the program 
       `filter-merged-reads`.
-    default: 0.3
     inputBinding:
       position: 102
       prefix: --p-value-threshold

@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum Hamming distance between barcodes
-    default: 3
     inputBinding:
       position: 101
       prefix: --dist
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Barcode length
-    default: 8
     inputBinding:
       position: 101
       prefix: --len
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Number of barcodes to generate
-    default: 100
     inputBinding:
       position: 101
       prefix: --num

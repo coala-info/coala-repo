@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: keep logs containing output from pangraph and probetools
-    default: false
     inputBinding:
       position: 101
       prefix: --keeplogs
@@ -26,7 +25,6 @@ inputs:
       - float
     doc: proportion of Ns allowed in any given graph node to be included in 
       targets
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --nthresh
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - Directory
     doc: path to output folder
-    default: //
     inputBinding:
       position: 101
       prefix: --outputfolder
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for all output files and folders
-    default: probebench_run
     inputBinding:
       position: 101
       prefix: --outputprefix
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: length of output probes
-    default: 120
     inputBinding:
       position: 101
       prefix: --probelen
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

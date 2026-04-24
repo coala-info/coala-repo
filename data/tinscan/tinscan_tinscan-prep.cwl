@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - Directory
     doc: Write split directories within this directory.
-    default: cwd
     inputBinding:
       position: 101
       prefix: --outdir

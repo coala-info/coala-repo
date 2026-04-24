@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level to use for output files if applicable
-    default: 6
     inputBinding:
       position: 101
       prefix: --compression-level
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Compression threads to use for output files if applicable
-    default: 1
     inputBinding:
       position: 101
       prefix: --compression-threads
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - File
     doc: Input BED file to process
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -100,7 +97,6 @@ inputs:
     doc: "Follow strand specificity when applying growth\n          \n          i.e.
       if the strand is negative, apply growth to the right side of the interval when
       the left side is requested (and vice versa)"
-    default: false
     inputBinding:
       position: 101
       prefix: --stranded

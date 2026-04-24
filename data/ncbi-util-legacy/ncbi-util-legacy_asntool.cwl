@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: Bit twiddle for optional zero value base slots [T/F]
-    default: F
     inputBinding:
       position: 101
       prefix: -Z
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Buffer Size [Integer]
-    default: 1024
     inputBinding:
       position: 101
       prefix: -b
@@ -62,7 +60,6 @@ inputs:
       - int
     doc: During code generation, debugging level 0 - No debugging 1 - Shallow 
       debugging 2 - Deep [Integer]
-    default: 0
     inputBinding:
       position: 101
       prefix: -D
@@ -72,7 +69,6 @@ inputs:
       - int
     doc: 'Fix Non-Printing Characters 0 - Replace with #, post ERROR 1 - Replace with
       # silently 2 - Pass through silently 3 - Replace with #, post FATAL [Integer]'
-    default: 0
     inputBinding:
       position: 101
       prefix: -F
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force choice to use structure instead of ValNodePtr [T/F]
-    default: F
     inputBinding:
       position: 101
       prefix: -V
@@ -98,7 +93,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Generate object loader .c and .h files, if used, see below parameters: [T/F]'
-    default: F
     inputBinding:
       position: 101
       prefix: -G
@@ -139,7 +133,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use quoted syntax form for generated include files [T/F]
-    default: F
     inputBinding:
       position: 101
       prefix: -Q
@@ -150,7 +143,6 @@ inputs:
     doc: UTF8 Input Conversion 0 - Convert silently 1 - Convert, post WARNING 
       first time 2 - Convert, post WARNING each time 3 - Do not convert 
       [Integer]
-    default: 0
     inputBinding:
       position: 101
       prefix: -N
@@ -161,7 +153,6 @@ inputs:
     doc: UTF8 Output Conversion 0 - Convert silently 1 - Convert, post WARNING 
       first time 2 - Convert, post WARNING each time 3 - Do not convert 
       [Integer]
-    default: 0
     inputBinding:
       position: 101
       prefix: -U
@@ -170,7 +161,6 @@ inputs:
       - 'null'
       - int
     doc: 'Word length maximum for #defines [Integer]'
-    default: 31
     inputBinding:
       position: 101
       prefix: -w
@@ -179,7 +169,6 @@ inputs:
       - 'null'
       - string
     doc: XML module prefix for DOCTYPE [String]
-    default: ''
     inputBinding:
       position: 101
       prefix: -P

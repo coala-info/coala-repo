@@ -36,7 +36,6 @@ inputs:
       - int
     doc: provide the distace between barcodes to allow for barcode rescue 
       (default 2).
-    default: 2
     inputBinding:
       position: 101
       prefix: --barcode-dist
@@ -76,7 +75,6 @@ inputs:
       - string
     doc: specify how quality scores are encoded, 'phred33' (Illumina 
       1.8+/Sanger, default) or 'phred64' (Illumina 1.3-1.5).
-    default: phred33
     inputBinding:
       position: 101
       prefix: -E
@@ -157,7 +155,6 @@ inputs:
       - string
     doc: input file type, either 'bustard' for the Illumina BUSTARD format, 
       'bam', 'fastq' (default), or 'gzfastq' for gzipped FASTQ.
-    default: fastq
     inputBinding:
       position: 101
       prefix: -i
@@ -201,7 +198,6 @@ inputs:
       - int
     doc: when trimming sequences, specify the minimum length a sequence must be 
       to keep it (default 31bp).
-    default: 31bp
     inputBinding:
       position: 101
       prefix: --len-limit
@@ -235,7 +231,6 @@ inputs:
       - 'null'
       - string
     doc: output type, either 'fastq' or 'fasta' (default gzfastq).
-    default: gzfastq
     inputBinding:
       position: 101
       prefix: -y
@@ -277,7 +272,6 @@ inputs:
       - int
     doc: set the score limit. If the average score within the sliding window 
       drops below this value, the read is discarded (default 10).
-    default: 10
     inputBinding:
       position: 101
       prefix: -s
@@ -287,7 +281,6 @@ inputs:
       - float
     doc: set the size of the sliding window as a fraction of the read length, 
       between 0 and 1 (default 0.15).
-    default: 0.15
     inputBinding:
       position: 101
       prefix: -w

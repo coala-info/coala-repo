@@ -59,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: 'Read type [possible values: ont_r9, ont_r10, pacbio_clr, pacbio_hifi]'
-    default: ont_r10
     inputBinding:
       position: 102
       prefix: --read_type
@@ -74,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads
-    default: 8
     inputBinding:
       position: 102
       prefix: --threads

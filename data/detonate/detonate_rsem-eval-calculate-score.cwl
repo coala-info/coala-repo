@@ -60,7 +60,6 @@ inputs:
       - 'null'
       - boolean
     doc: Input file is in BAM format.
-    default: false
     inputBinding:
       position: 107
       prefix: --bam
@@ -77,7 +76,6 @@ inputs:
       This rate can be set by option '--bowtie2-mismatch-rate'. If reads are 
       paired-end, we additionally use options '--no-mixed' and 
       '--no-discordant'.
-    default: false
     inputBinding:
       position: 107
       prefix: --bowtie2
@@ -86,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: '(Bowtie 2 parameter) Find up to <int> alignments per read. (Default: 200)'
-    default: 200
     inputBinding:
       position: 107
       prefix: --bowtie2-k
@@ -95,7 +92,6 @@ inputs:
       - 'null'
       - float
     doc: (Bowtie 2 parameter) The maximum mismatch rate allowed.
-    default: 0.1
     inputBinding:
       position: 107
       prefix: --bowtie2-mismatch-rate
@@ -104,7 +100,6 @@ inputs:
       - 'null'
       - Directory
     doc: (Bowtie 2 parameter) The path to the Bowtie 2 executables.
-    default: the path to the Bowtie 2 executables is assumed to be in the user's
       PATH environment variable
     inputBinding:
       position: 107
@@ -119,7 +114,6 @@ inputs:
       four candidates correspond to Bowtie 2's \"--very-fast\", \"--fast\", \"--sensitive\"\
       \ and \"--very-sensitive\" options. (Default: \"sensitive\" - use Bowtie 2's
       default)"
-    default: sensitive
     inputBinding:
       position: 107
       prefix: --bowtie2-sensitivity-level
@@ -129,7 +123,6 @@ inputs:
       - int
     doc: "(Bowtie parameter) memory allocated for best first alignment calculation
       (Default: 0 - use Bowtie's default)"
-    default: 0
     inputBinding:
       position: 107
       prefix: --bowtie-chunkmbs
@@ -139,7 +132,6 @@ inputs:
       - int
     doc: '(Bowtie parameter) max sum of mismatch quality scores across the alignment.
       (Default: 99999999)'
-    default: 99999999
     inputBinding:
       position: 107
       prefix: --bowtie-e
@@ -149,7 +141,6 @@ inputs:
       - int
     doc: '(Bowtie parameter) suppress all alignments for a read if > <int> valid alignments
       exist. (Default: 200)'
-    default: 200
     inputBinding:
       position: 107
       prefix: --bowtie-m
@@ -159,7 +150,6 @@ inputs:
       - int
     doc: '(Bowtie parameter) max # of mismatches in the seed. (Range: 0-3, Default:
       2)'
-    default: 2
     inputBinding:
       position: 107
       prefix: --bowtie-n
@@ -168,7 +158,6 @@ inputs:
       - 'null'
       - Directory
     doc: The path to the Bowtie executables.
-    default: the path to the Bowtie executables is assumed to be in the user's 
       PATH environment variable
     inputBinding:
       position: 107
@@ -180,7 +169,6 @@ inputs:
     doc: Set this option if you want to estimate the read start position 
       distribution (RSPD) from data. Otherwise, RSEM-EVAL will use a uniform 
       RSPD.
-    default: false
     inputBinding:
       position: 107
       prefix: --estimate-rspd
@@ -193,7 +181,6 @@ inputs:
       reads are derived from the forward strand, 0 for a strand-specific 
       protocol where all (upstream) read are derived from the reverse strand, or
       0.5 for a non-strand-specific protocol.
-    default: 0.5
     inputBinding:
       position: 107
       prefix: --forward-prob
@@ -203,7 +190,6 @@ inputs:
       - int
     doc: Maximum read(SE)/fragment(PE) length allowed. This is also the value 
       for the Bowtie/Bowtie 2 -X option.
-    default: 1000
     inputBinding:
       position: 107
       prefix: --fragment-length-max
@@ -213,7 +199,6 @@ inputs:
       - int
     doc: Minimum read(SE)/fragment(PE) length allowed. This is also the value 
       for the Bowtie/Bowtie2 -I option.
-    default: 1
     inputBinding:
       position: 107
       prefix: --fragment-length-min
@@ -228,7 +213,6 @@ inputs:
       default, after RSEM-EVAL finishes, the temporary directory is deleted. Set
       this option to prevent the deletion of this directory and the intermediate
       files inside of it.
-    default: false
     inputBinding:
       position: 107
       prefix: --keep-intermediate-files
@@ -237,7 +221,6 @@ inputs:
       - 'null'
       - boolean
     doc: Input reads do not contain quality scores.
-    default: false
     inputBinding:
       position: 107
       prefix: --no-qualities
@@ -247,7 +230,6 @@ inputs:
       - int
     doc: Number of bins in the RSPD. Only relevant when '--estimate-rspd' is 
       specified. Use of the default setting is recommended.
-    default: 20
     inputBinding:
       position: 107
       prefix: --num-rspd-bins
@@ -257,7 +239,6 @@ inputs:
       - int
     doc: Number of threads to use. Both Bowtie/Bowtie2, expression estimation 
       and 'samtools sort' will use this many threads.
-    default: 1
     inputBinding:
       position: 107
       prefix: --num-threads
@@ -266,7 +247,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate BAM outputs.
-    default: false
     inputBinding:
       position: 107
       prefix: --output-bam
@@ -275,7 +255,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum overlap size required to join two reads together.
-    default: 0
     inputBinding:
       position: 107
       prefix: --overlap-size
@@ -284,7 +263,6 @@ inputs:
       - 'null'
       - boolean
     doc: Input reads are paired-end reads.
-    default: false
     inputBinding:
       position: 107
       prefix: --paired-end
@@ -293,7 +271,6 @@ inputs:
       - 'null'
       - boolean
     doc: Input quality scores are encoded as Phred+33.
-    default: true
     inputBinding:
       position: 107
       prefix: --phred33-quals
@@ -303,7 +280,6 @@ inputs:
       - boolean
     doc: Input quality scores are encoded as Phred+64 (default for GA Pipeline 
       ver. >= 1.3).
-    default: false
     inputBinding:
       position: 107
       prefix: --phred64-quals
@@ -312,7 +288,6 @@ inputs:
       - 'null'
       - boolean
     doc: Suppress the output of logging information.
-    default: false
     inputBinding:
       position: 107
       prefix: --quiet
@@ -321,7 +296,6 @@ inputs:
       - 'null'
       - boolean
     doc: Input file is in SAM format.
-    default: false
     inputBinding:
       position: 107
       prefix: --sam
@@ -332,7 +306,6 @@ inputs:
     doc: RSEM-EVAL reads header information from input by default. If this 
       option is on, header information is read from the specified file. For the 
       format of the file, please see SAM official website.
-    default: ''
     inputBinding:
       position: 107
       prefix: --sam-header-info
@@ -347,7 +320,6 @@ inputs:
       the BAM file. Only the sampled alignment has a weight of 1. All other 
       alignments have weight 0. If the "noise" transcript is sampled, all 
       alignments appeared in the BAM file should have weight 0.
-    default: false
     inputBinding:
       position: 107
       prefix: --sampling-for-bam
@@ -359,7 +331,6 @@ inputs:
       <string> represents the memory and accepts suffices 'K/M/G'. RSEM-EVAL 
       will pass <string> to the '-m' option of 'samtools sort'. Please note that
       the default used here is different from the default used by samtools.
-    default: 1G
     inputBinding:
       position: 107
       prefix: --samtools-sort-mem
@@ -385,7 +356,6 @@ inputs:
       is 5, otherwise, the minimum allowed value is 25. Note that this script 
       will only check if the value >= 5 and give a warning message if the value 
       < 25 but >= 5.
-    default: 25
     inputBinding:
       position: 107
       prefix: --seed-length
@@ -394,7 +364,6 @@ inputs:
       - 'null'
       - boolean
     doc: Input quality scores are solexa encoded (from GA Pipeline ver. < 1.3).
-    default: false
     inputBinding:
       position: 107
       prefix: --solexa-quals
@@ -408,7 +377,6 @@ inputs:
       RSEM-EVAL runs the Bowtie/Bowtie 2 aligner, the '--norc' Bowtie/Bowtie 2 
       option will be used, which disables alignment to the reverse strand of 
       transcripts.
-    default: false
     inputBinding:
       position: 107
       prefix: --strand-specific
@@ -420,7 +388,6 @@ inputs:
       read with too many valid alignments. The field should have the format 
       <tagName>:i:<value>, where a <value> bigger than 0 indicates a read with 
       too many alignments.
-    default: ''
     inputBinding:
       position: 107
       prefix: --tag
@@ -430,7 +397,6 @@ inputs:
       - string
     doc: Set where to put the temporary files generated by RSEM-EVAL. If the 
       folder specified does not exist, RSEM-EVAL will try to create it.
-    default: sample_name.temp
     inputBinding:
       position: 107
       prefix: --temporary-folder
@@ -439,7 +405,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output time consumed by each step of RSEM-EVAL to 'sample_name.time'.
-    default: false
     inputBinding:
       position: 107
       prefix: --time

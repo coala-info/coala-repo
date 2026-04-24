@@ -25,7 +25,6 @@ inputs:
       at junction boundary - suitable for cufflinks); "SOFT" (Soft clip reads at junction
       boundaries); "COMPLETE" (Remove reads associated exclusively with bad junctions,
       MSRs covering both good and bad junctions are kept)'
-    default: HARD
     inputBinding:
       position: 103
       prefix: --clip_mode

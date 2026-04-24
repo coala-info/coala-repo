@@ -29,7 +29,6 @@ inputs:
       - string
     doc: specify UMI deduplication method (powered by UMI-tools. Smith, T., et 
       al. 2017).
-    default: directional
     inputBinding:
       position: 101
       prefix: --umi_deduplication_method
@@ -40,7 +39,6 @@ inputs:
     doc: specify the length of UMIs on read 1. Reads with UMI length shorter 
       than this value will be discarded. Coordinate is 0-based, half-open. For 
       example, '-us 16 -ul 12' means UMI starts at 16 ends at 27.
-    default: 12
     inputBinding:
       position: 101
       prefix: --umi_length
@@ -50,7 +48,6 @@ inputs:
       - int
     doc: specify the maximun edit distance allowed for UMIs on read 1 for 
       deduplication.
-    default: 1
     inputBinding:
       position: 101
       prefix: --umi_mismatches
@@ -60,7 +57,6 @@ inputs:
       - int
     doc: specify expected UMI starting postion on read 1. Coordinate is 0-based,
       half-open.
-    default: 16
     inputBinding:
       position: 101
       prefix: --umi_start

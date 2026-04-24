@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Sequence name if coming as string
-    default: dna
     inputBinding:
       position: 102
       prefix: --seq-name

@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: 'use X to separate elements in collapse and unique lists (default: comma)'
-    default: comma
     inputBinding:
       position: 102
       prefix: --collapse-delimiter
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: fill missing values with X (default N/A)
-    default: N/A
     inputBinding:
       position: 102
       prefix: --filler
@@ -57,7 +55,6 @@ inputs:
     doc: 'print entire input line before op results (default: print only the grouped
       keys). This option is only sensible for linewise operations. Other uses are
       deprecated and will be removed in a future version of GNU Datamash.'
-    default: print only the grouped keys
     inputBinding:
       position: 102
       prefix: --full

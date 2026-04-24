@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: minimum allowed clean length
-    default: 0
     inputBinding:
       position: 101
       prefix: -clean-length
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: dust theshold for read suffix
-    default: 0
     inputBinding:
       position: 101
       prefix: -dust-suffix
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: l/e[/g[/o]] (default 0/0/0/2)
-    default: 0/0/0/2
     inputBinding:
       position: 101
       prefix: -5p-barcode
@@ -85,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: l/e[/g[/o]] (default 0/2/1/1)
-    default: 0/2/1/1
     inputBinding:
       position: 101
       prefix: -5p-sinsert
@@ -132,7 +128,6 @@ inputs:
       - 'null'
       - File
     doc: input stream (gzipped file allowed)
-    default: STDIN
     inputBinding:
       position: 101
       prefix: -i
@@ -159,7 +154,6 @@ inputs:
       - 'null'
       - string
     doc: l/e[/g[/o]] (default 16/2/1/0)
-    default: 16/2/1/0
     inputBinding:
       position: 101
       prefix: -mr-tabu
@@ -169,7 +163,6 @@ inputs:
       - string
     doc: "disregard read onwards from seeing <count> N's in <outof> bases (format:
       <count>/<outof>)"
-    default: 0/0
     inputBinding:
       position: 101
       prefix: -nnn-check
@@ -211,7 +204,6 @@ inputs:
       - 'null'
       - string
     doc: record format (record description, default @%I%A%n%R%n+%#%Q%n)
-    default: '@%I%A%n%R%n+%#%Q%n'
     inputBinding:
       position: 101
       prefix: -record-format
@@ -230,7 +222,6 @@ inputs:
       - int
     doc: only use the first <int> bases of adapter or tabu sequence. This is to 
       avoid false positive matches
-    default: 18
     inputBinding:
       position: 101
       prefix: -restrict
@@ -247,7 +238,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for complexity of suffix following prefix match
-    default: 0.25
     inputBinding:
       position: 101
       prefix: -sc-max
@@ -256,7 +246,6 @@ inputs:
       - 'null'
       - string
     doc: M/S/G match/substitution/gap gain/cost/cost (default 4/1/3)
-    default: 4/1/3
     inputBinding:
       position: 101
       prefix: -swp
@@ -281,7 +270,6 @@ inputs:
       - 'null'
       - string
     doc: l/e[/g[/o]] (default 0/6/1/0)
-    default: 0/6/1/0
     inputBinding:
       position: 101
       prefix: -3p-barcode
@@ -290,7 +278,6 @@ inputs:
       - 'null'
       - string
     doc: l/e[/g[/o]] (default 14/2/1/0)
-    default: 14/2/1/0
     inputBinding:
       position: 101
       prefix: -3p-global
@@ -299,7 +286,6 @@ inputs:
       - 'null'
       - int
     doc: minimal trailing perfect match length
-    default: 0
     inputBinding:
       position: 101
       prefix: -3p-head-to-tail
@@ -308,7 +294,6 @@ inputs:
       - 'null'
       - string
     doc: l/e[/g[/o]] (default 8/2/0/2)
-    default: 8/2/0/2
     inputBinding:
       position: 101
       prefix: -3p-prefix

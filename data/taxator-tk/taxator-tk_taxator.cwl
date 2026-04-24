@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: set the algorithm that is used to predict taxonomic ids from alignments
-    default: rpa
     inputBinding:
       position: 101
       prefix: --algorithm
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - File
     doc: specify name of file for logging (appending lines)
-    default: /dev/null
     inputBinding:
       position: 101
       prefix: --logfile
@@ -45,7 +43,6 @@ inputs:
       - int
     doc: sets number of threads, number > 2 will heavily profit from multi-core 
       architectures, set to 0 for max. performance
-    default: 1
     inputBinding:
       position: 101
       prefix: --processors

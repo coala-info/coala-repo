@@ -17,7 +17,6 @@ inputs:
       - float
     doc: Identity cutoff for usearch clustering between 0 and 1. Default is 
       0.97.
-    default: 0.97
     inputBinding:
       position: 102
   - id: control_condition
@@ -44,7 +43,6 @@ inputs:
       deconvolution. Coverage reductions greater than the threshold will result 
       in non-deconvoluted sequences. Default is 0.5 (i.e. less than 50% 
       reduction required for deconvolution).
-    default: 0.5
     inputBinding:
       position: 102
   - id: double_cca
@@ -61,7 +59,6 @@ inputs:
       - boolean
     doc: Keeps multi-mapping and unmapped bam files from GSNAP alignments. 
       Default is false.
-    default: false
     inputBinding:
       position: 102
       prefix: --keep-temp
@@ -94,7 +91,6 @@ inputs:
       can cause termination of mim-tRNAseq due to insufficient memory. If 
       mim-tRNAseq fails during coverage calculation, lower this number. Increase
       at your own discretion. Default is 3.
-    default: 3
     inputBinding:
       position: 102
       prefix: --max-multi
@@ -108,7 +104,6 @@ inputs:
       coverage. Any cluster not meeting the threshold in 1 or more sample will 
       be excluded. Note that all clusters are included for differential 
       expression analysis with DESeq2. Default = 0.0005 (0.05% mapped reads).
-    default: 0.0005 (0.05% mapped reads)
     inputBinding:
       position: 102
       prefix: --min-cov
@@ -119,7 +114,6 @@ inputs:
     doc: Threshold of total misincorporation rate at a position in a cluster 
       used to call unannotated modifications. Value between 0 and 1, default is 
       0.1 (10% misincorporation).
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --misinc-thresh
@@ -172,7 +166,6 @@ inputs:
       - Directory
     doc: Output directory. Default is current directory. Cannot be an existing 
       directory.
-    default: current directory
     inputBinding:
       position: 102
       prefix: --out-dir
@@ -184,7 +177,6 @@ inputs:
       epxression dot plots. tRNAs with DESeq2 adjusted p-values equal to or 
       below this value will be displayed as green or orange triangles for up- or
       down-regulated tRNAs, respectively. Default p-adj <= 0.05
-    default: 0.05
     inputBinding:
       position: 102
   - id: plastid_trnas

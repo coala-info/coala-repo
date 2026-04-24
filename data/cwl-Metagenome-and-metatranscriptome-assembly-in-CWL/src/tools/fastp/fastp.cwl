@@ -55,7 +55,6 @@ inputs:
       prefix: --in2
   minLength:
     type: int?
-    default: 50
     label: filter reads shorter than this value
     inputBinding:
       position: 3

@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: name of the consensus sequence
-    default: lamassembled
     inputBinding:
       position: 103
       prefix: --name
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: max change in alignment diagonal between pairwise alignments
-    default: 1000
     inputBinding:
       position: 103
       prefix: --diagonal-max
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: use pairwise restrictions with error probability <= P
-    default: 0.002
     inputBinding:
       position: 103
       prefix: --prob
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: use alignment columns with <= G% gaps
-    default: 50
     inputBinding:
       position: 103
       prefix: --gap-max
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: number of parallel threads
-    default: 1
     inputBinding:
       position: 103
       prefix: -P
@@ -96,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: max gap length
-    default: 30
     inputBinding:
       position: 103
       prefix: -z
@@ -105,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: max initial matches per query position
-    default: 5
     inputBinding:
       position: 103
       prefix: -m
@@ -122,7 +115,6 @@ inputs:
       - 'null'
       - string
     doc: 'output format: fasta/fa or fastq/fq'
-    default: fasta
     inputBinding:
       position: 103
       prefix: --format
@@ -139,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: omit consensus flanks with < S sequences
-    default: 1
     inputBinding:
       position: 103
       prefix: --seq-min
@@ -164,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: use minimum positions in length-W windows
-    default: 19
     inputBinding:
       position: 103
       prefix: -W

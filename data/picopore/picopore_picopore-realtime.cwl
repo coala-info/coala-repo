@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: retain FASTQ data (raw mode only)
-    default: true
     inputBinding:
       position: 102
       prefix: --no-fastq
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: print a dot every approximately INT files, or -1 to silence
-    default: 100
     inputBinding:
       position: 102
       prefix: --print-every
@@ -75,7 +73,6 @@ inputs:
       - 'null'
       - boolean
     doc: ignore files in root input directories for albacore realtime compression
-    default: false
     inputBinding:
       position: 102
       prefix: --no-skip-root
@@ -84,7 +81,6 @@ inputs:
       - 'null'
       - boolean
     doc: retain summary data (raw mode only)
-    default: false
     inputBinding:
       position: 102
       prefix: --no-summary
@@ -93,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

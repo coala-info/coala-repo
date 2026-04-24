@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: number of alignments to grab. Note - no duplicate checking is performed
-    default: 10000
     inputBinding:
       position: 101
       prefix: -n

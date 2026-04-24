@@ -107,7 +107,6 @@ inputs:
       - 'null'
       - string
     doc: Read organism info after this label (default OS)
-    default: OS
     inputBinding:
       position: 102
       prefix: -O

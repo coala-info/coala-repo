@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - File
     doc: Custom path to MMSeqs2 binary
-    default: mmseqs
     inputBinding:
       position: 101
       prefix: -mmseqs
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - File
     doc: Custom path to prodigal binary
-    default: prodigal
     inputBinding:
       position: 101
       prefix: -prodigal
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - Directory
     doc: Custom temporary directory
-    default: /tmp/ezaai
     inputBinding:
       position: 101
       prefix: -tmp
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - File
     doc: Custom path to ufasta binary
-    default: ufasta
     inputBinding:
       position: 101
       prefix: -ufasta

@@ -24,7 +24,6 @@ inputs:
       \     attribution score for the bases of a motif) that a\n                 \
       \         scanned motif needs to present in order to be shown\n            \
       \              in the plot (Default: 0.001)."
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --attribution_threshold
@@ -35,7 +34,6 @@ inputs:
     doc: "The minimum value of Pearson correlation that a\n                      \
       \    scanned motif needs to present in order to be shown\n                 \
       \         in the plot (Default: 0.75)."
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --correlation_threshold
@@ -58,7 +56,6 @@ inputs:
       \            motifs with mean attribution above this percentage\n          \
       \                of the highest attributed letter will be shown.\n         \
       \                 (Default: 0.15)."
-    default: 0.15
     inputBinding:
       position: 101
       prefix: --min_relative_attribution
@@ -78,7 +75,6 @@ inputs:
       - string
     doc: "Which format should the plots be saved? Available\n                    \
       \      formats are pdf, svg, jpg, and png. (Default: pdf)."
-    default: pdf
     inputBinding:
       position: 101
       prefix: --plot_format

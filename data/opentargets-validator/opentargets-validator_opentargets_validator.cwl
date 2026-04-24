@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: 'Log level. Default: INFO'
-    default: INFO
     inputBinding:
       position: 102
       prefix: --log-level

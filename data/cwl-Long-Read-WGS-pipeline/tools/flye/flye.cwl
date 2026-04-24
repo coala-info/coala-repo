@@ -32,7 +32,6 @@ inputs:
     doc: Output folder name
     inputBinding:
       prefix: --out-dir
-    default: "flye_output"
   nano_raw: # FASTQ read, not FAST5
     type: File?
     #format: edam:format_1930
@@ -78,13 +77,11 @@ inputs:
 
   threads:
     type: int?
-    default: 1
     inputBinding:
       prefix: --threads
   polishing_iterations:
     label: Flye will carry out polishing multiple times as determined here
     type: int?
-    default: 1
     inputBinding:
       prefix: --iterations
   min_overlap:
@@ -106,14 +103,12 @@ inputs:
     type: boolean?
     label: Metagenome
     doc: Set to true if assembling a metagenome
-    default: false
     inputBinding:
       prefix: --meta
   debug_mode:
     type: boolean?
     label: Debug mode
     doc: Set to true to display debug output while running
-    default: false
     inputBinding:
       prefix: --debug
   genome_size:

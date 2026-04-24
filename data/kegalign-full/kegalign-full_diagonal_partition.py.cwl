@@ -26,7 +26,6 @@ inputs:
       - float
     doc: The threshold for considering sequences as part of the same diagonal 
       block. Default is 0.9.
-    default: 0.9
     inputBinding:
       position: 104
       prefix: --diagonal-threshold
@@ -36,7 +35,6 @@ inputs:
       - int
     doc: The minimum number of sequences required to form a diagonal block. 
       Default is 100.
-    default: 100
     inputBinding:
       position: 104
       prefix: --min-diagonal-size

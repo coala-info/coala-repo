@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Input files are DNA (.fna); will be translated with Prodigal
-    default: false
     inputBinding:
       position: 101
       prefix: --dna
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force rerun of OrthoFinder even if results exist
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output supermatrix files
-    default: supermatrix
     inputBinding:
       position: 101
       prefix: --prefix
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

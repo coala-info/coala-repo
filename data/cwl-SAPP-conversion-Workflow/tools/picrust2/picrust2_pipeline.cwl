@@ -40,7 +40,6 @@ inputs:
     type: int?
     doc: number of threads to use for computational processes
     label: number of threads
-    default: 2
     inputBinding:
       prefix: -p
   identifier:
@@ -53,7 +52,6 @@ inputs:
     label: "Comma-delimited list of which gene families to predict from"
     inputBinding:
       prefix: "--in_traits"
-    default: "COG,EC,KO,PFAM,TIGRFAM"
   stratified:
     type: boolean?
     doc: Flag to indicate that stratified tables should be generated at all steps (will increase run-time).

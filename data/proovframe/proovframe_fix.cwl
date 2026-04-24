@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: genetic code table, sets stop codons
-    default: 11
     inputBinding:
       position: 103
       prefix: --genetic-code

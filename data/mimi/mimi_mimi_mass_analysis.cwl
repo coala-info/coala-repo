@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include isotope validation counts in output (adds 'iso_valid' column)
-    default: false
     inputBinding:
       position: 101
       prefix: --iso-validation

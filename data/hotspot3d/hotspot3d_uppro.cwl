@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum 3D distance (<= Angstroms)
-    default: 100
     inputBinding:
       position: 101
       prefix: --3d-distance-cutoff
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - File
     doc: Batch jobs file to run calpro step in parallel
-    default: cmd_list_submit_file
     inputBinding:
       position: 101
       prefix: --cmd-list-submit-file
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum linear distance (> peptides)
-    default: 0
     inputBinding:
       position: 101
       prefix: --linear-distance-cutoff

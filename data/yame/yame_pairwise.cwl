@@ -24,7 +24,6 @@ inputs:
       - float
     doc: 'Minimum absolute beta difference required to call a site differential (default:
       0).'
-    default: 0
     inputBinding:
       position: 103
       prefix: -d
@@ -35,7 +34,6 @@ inputs:
     doc: "Direction mode (default: 1):\n              1  beta1 > beta2  (hypermethylated
       in sample 1)\n              2  beta1 < beta2  (hypomethylated  in sample 1)\n\
       \              3  beta1 != beta2 (any difference; with -d uses |beta1-beta2|>delta)"
-    default: 1
     inputBinding:
       position: 103
       prefix: -H
@@ -45,7 +43,6 @@ inputs:
       - int
     doc: 'Minimum coverage (M+U) in BOTH samples to include site in universe (default:
       1).'
-    default: 1
     inputBinding:
       position: 103
       prefix: -c

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Choose peptide database (full, all, or partial).
-    default: full
     inputBinding:
       position: 102
       prefix: --database

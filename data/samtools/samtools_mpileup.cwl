@@ -24,7 +24,6 @@ inputs:
   - 'null'
   - int
   doc: adjust mapping quality; recommended:50, disable:0
-  default: 0
   inputBinding:
     position: 102
     prefix: --adjust-MQ
@@ -65,7 +64,6 @@ inputs:
   - 'null'
   - string
   doc: 'filter flags: skip reads with any of the mask bits set'
-  default: UNMAP,SECONDARY,QCFAIL,DUP
   inputBinding:
     position: 102
     prefix: --ff
@@ -123,7 +121,6 @@ inputs:
   - 'null'
   - int
   doc: max per-file depth; avoids excessive memory usage
-  default: 8000
   inputBinding:
     position: 102
     prefix: --max-depth
@@ -132,7 +129,6 @@ inputs:
   - 'null'
   - int
   doc: skip bases with baseQ/BAQ smaller than INT
-  default: 13
   inputBinding:
     position: 102
     prefix: --min-BQ
@@ -141,7 +137,6 @@ inputs:
   - 'null'
   - int
   doc: skip alignments with mapQ smaller than INT
-  default: 0
   inputBinding:
     position: 102
     prefix: --min-MQ
@@ -222,7 +217,6 @@ inputs:
   - 'null'
   - string
   doc: set the no value character for tag lists
-  default: '*'
   inputBinding:
     position: 102
     prefix: --output-empty
@@ -263,7 +257,6 @@ inputs:
   - 'null'
   - string
   doc: set the separator character for tag lists
-  default: ','
   inputBinding:
     position: 102
     prefix: --output-sep

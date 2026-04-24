@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: Use specified character as field separator.
-    default: tab
     inputBinding:
       position: 102
       prefix: -fs

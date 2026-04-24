@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Bins for cds profile
-    default: 20
     inputBinding:
       position: 101
       prefix: --bins
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: User specified Matplotlib accepted color codes for three frames
-    default: r,g,b
     inputBinding:
       position: 101
       prefix: --colors
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Position range near start codon or stop codon
-    default: -40,20
     inputBinding:
       position: 101
       prefix: -d
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: 'Gene annotation file format (gtf, bed, gpd, gff, default: auto)'
-    default: auto
     inputBinding:
       position: 101
       prefix: --geneformat
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: Range of tag length
-    default: 25,35
     inputBinding:
       position: 101
       prefix: -l
@@ -96,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Max NH value allowed for bam alignments
-    default: 1
     inputBinding:
       position: 101
       prefix: --maxNH
@@ -105,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Min MapQ value required for bam alignments
-    default: 1
     inputBinding:
       position: 101
       prefix: --minMapQ
@@ -122,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes
-    default: 1
     inputBinding:
       position: 101
       prefix: -p
@@ -153,7 +145,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for quality
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --th

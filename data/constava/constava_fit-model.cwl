@@ -31,7 +31,6 @@ inputs:
     doc: This flag controls how many grid points are used to describe the 
       probability density function. Only applies if `--model-type` is set to 
       `grid`.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --grid-points
@@ -53,7 +52,6 @@ inputs:
       - float
     doc: This flag controls the bandwidth of the Gaussian kernel density 
       estimator.
-    default: 0.13
     inputBinding:
       position: 101
       prefix: --kde-bandwidth
@@ -64,7 +62,6 @@ inputs:
     doc: "The probabilistic conformational state model used. The default is `kde`.
       The alternative `grid` runs significantly faster while slightly sacrificing
       accuracy: {'kde', 'grid'}"
-    default: kde
     inputBinding:
       position: 101
       prefix: --model-type

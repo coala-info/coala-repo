@@ -20,7 +20,6 @@ inputs:
       - string
     doc: "genetic code (default: universal; see Perl's Bio::Tools::CodonTable for
       others)"
-    default: universal
     inputBinding:
       position: 101
       prefix: -G
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum protein length (default: 100)'
-    default: 100
     inputBinding:
       position: 101
       prefix: -m

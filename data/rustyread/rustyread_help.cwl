@@ -10,7 +10,6 @@ inputs:
       - int
     doc: Number of thread use by rustyread, 0 use all avaible core, default 
       value 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --threads

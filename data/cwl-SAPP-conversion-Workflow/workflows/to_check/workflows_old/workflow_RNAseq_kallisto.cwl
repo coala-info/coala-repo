@@ -43,12 +43,10 @@ inputs:
     type: int?
     doc: Number of threads to use for computational processes
     label: Threads
-    default: 2
   memory:
     type: int?
     doc: Maximum memory usage in megabytes
     label: Maximum memory in MB
-    default: 40000
   filter_rrna:
     type: boolean    
     doc: Optionally remove rRNA sequences from the reads.
@@ -91,7 +89,6 @@ steps:
       identifier: identifier
       filter_rrna: filter_rrna
       step:
-        default: 1
     out: [QC_reverse_reads, QC_forward_reads, reports_folder]
   #########################################
   # kallisto transcript abundances

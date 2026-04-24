@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: max abundance threshold for solid kmers
-    default: 2147483647
     inputBinding:
       position: 101
       prefix: -abundance-max
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: min abundance threshold for solid kmers
-    default: 2
     inputBinding:
       position: 101
       prefix: -abundance-min
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: min abundance hard threshold (only used when min abundance is "auto")
-    default: 2
     inputBinding:
       position: 101
       prefix: -abundance-min-threshold
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: bloom type ('basic', 'cache', 'neighbor')
-    default: neighbor
     inputBinding:
       position: 101
       prefix: -bloom
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: branching type ('none' or 'stored')
-    default: stored
     inputBinding:
       position: 101
       prefix: -branching-nodes
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: bulges of coverage <= X*cov_altpath will be removed
-    default: 1.1
     inputBinding:
       position: 101
       prefix: -bulge-altpath-covmult
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: explore up to k+X nodes to find alternative path
-    default: 50
     inputBinding:
       position: 101
       prefix: -bulge-altpath-kadd
@@ -80,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: bulges shorter than k+X bp are candidate to be removed
-    default: 100
     inputBinding:
       position: 101
       prefix: -bulge-len-kadd
@@ -89,7 +81,6 @@ inputs:
       - 'null'
       - float
     doc: bulges shorter than k*X bp are candidate to be removed
-    default: 3.0
     inputBinding:
       position: 101
       prefix: -bulge-len-kmult
@@ -106,7 +97,6 @@ inputs:
       - 'null'
       - string
     doc: debloom type ('none', 'original' or 'cascading')
-    default: cascading
     inputBinding:
       position: 101
       prefix: -debloom
@@ -115,7 +105,6 @@ inputs:
       - 'null'
       - string
     doc: debloom impl ('basic', 'minimizer')
-    default: minimizer
     inputBinding:
       position: 101
       prefix: -debloom-impl
@@ -124,7 +113,6 @@ inputs:
       - 'null'
       - float
     doc: EC shorter than k*X bp are candidates to be removed
-    default: 9.0
     inputBinding:
       position: 101
       prefix: -ec-len-kmult
@@ -133,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: EC relative coverage coefficient (similar in spirit as tip)
-    default: 4.0
     inputBinding:
       position: 101
       prefix: -ec-rctc-cutoff
@@ -142,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: edge km representation
-    default: 0
     inputBinding:
       position: 101
       prefix: -edge-km
@@ -151,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: number of nucleotides per line in fasta output (0 means one line)
-    default: 0
     inputBinding:
       position: 101
       prefix: -fasta-line
@@ -160,7 +145,6 @@ inputs:
       - 'null'
       - boolean
     doc: output the kmer abundance histogram
-    default: false
     inputBinding:
       position: 101
       prefix: -histo
@@ -170,7 +154,6 @@ inputs:
       - boolean
     doc: compute the 2D histogram (with first file = genome, remaining files = 
       reads)
-    default: false
     inputBinding:
       position: 101
       prefix: -histo2D
@@ -179,7 +162,6 @@ inputs:
       - 'null'
       - int
     doc: max number of values in kmers histogram
-    default: 10000
     inputBinding:
       position: 101
       prefix: -histo-max
@@ -188,7 +170,6 @@ inputs:
       - 'null'
       - File
     doc: input reads (fasta/fastq/compressed) or hdf5 file
-    default: ''
     inputBinding:
       position: 101
       prefix: -in
@@ -197,7 +178,6 @@ inputs:
       - 'null'
       - int
     doc: integers precision (0 for optimized value)
-    default: 0
     inputBinding:
       position: 101
       prefix: -integer-precision
@@ -222,7 +202,6 @@ inputs:
       - 'null'
       - int
     doc: size of a kmer
-    default: 31
     inputBinding:
       position: 101
       prefix: -kmer-size
@@ -231,7 +210,6 @@ inputs:
       - 'null'
       - int
     doc: max disk   (in MBytes)
-    default: 0
     inputBinding:
       position: 101
       prefix: -max-disk
@@ -240,7 +218,6 @@ inputs:
       - 'null'
       - int
     doc: max memory (in MBytes)
-    default: 5000
     inputBinding:
       position: 101
       prefix: -max-memory
@@ -249,7 +226,6 @@ inputs:
       - 'null'
       - int
     doc: size of a minimizer
-    default: 10
     inputBinding:
       position: 101
       prefix: -minimizer-size
@@ -258,7 +234,6 @@ inputs:
       - 'null'
       - int
     doc: minimizer type (0=lexi, 1=freq)
-    default: 0
     inputBinding:
       position: 101
       prefix: -minimizer-type
@@ -267,7 +242,6 @@ inputs:
       - 'null'
       - int
     doc: number of cores
-    default: 0
     inputBinding:
       position: 101
       prefix: -nb-cores
@@ -276,7 +250,6 @@ inputs:
       - 'null'
       - int
     doc: number of glue partitions (automatically calculated by default)
-    default: 0
     inputBinding:
       position: 101
       prefix: -nb-glue-partitions
@@ -317,7 +290,6 @@ inputs:
       - 'null'
       - int
     doc: h5 compression level (0:none, 9:best)
-    default: 0
     inputBinding:
       position: 101
       prefix: -out-compress
@@ -351,7 +323,6 @@ inputs:
       - 'null'
       - int
     doc: minimizer repartition (0=unordered, 1=ordered)
-    default: 0
     inputBinding:
       position: 101
       prefix: -repartition-type
@@ -385,7 +356,6 @@ inputs:
       - string
     doc: when solidity-kind is custom, specifies list of files where kmer must 
       be present
-    default: ''
     inputBinding:
       position: 101
       prefix: -solidity-custom
@@ -395,7 +365,6 @@ inputs:
       - string
     doc: way to compute counts of several files (sum, min, max, one, all, 
       custom)
-    default: sum
     inputBinding:
       position: 101
       prefix: -solidity-kind
@@ -404,7 +373,6 @@ inputs:
       - 'null'
       - string
     doc: storage type of kmer counts ('hdf5' or 'file')
-    default: hdf5
     inputBinding:
       position: 101
       prefix: -storage-type
@@ -413,7 +381,6 @@ inputs:
       - 'null'
       - float
     doc: remove tips that pass coverage criteria, of length <= k * X bp
-    default: 10.0
     inputBinding:
       position: 101
       prefix: -tip-len-rctc-kmult
@@ -422,7 +389,6 @@ inputs:
       - 'null'
       - float
     doc: remove all tips of length <= k * X bp
-    default: 2.5
     inputBinding:
       position: 101
       prefix: -tip-len-topo-kmult
@@ -432,7 +398,6 @@ inputs:
       - float
     doc: 'tip relative coverage coefficient: mean coverage of neighbors >  X * tip
       coverage'
-    default: 2.0
     inputBinding:
       position: 101
       prefix: -tip-rctc-cutoff
@@ -441,7 +406,6 @@ inputs:
       - 'null'
       - int
     doc: topological information level (0 for none)
-    default: 0
     inputBinding:
       position: 101
       prefix: -topology-stats
@@ -450,7 +414,6 @@ inputs:
       - 'null'
       - string
     doc: traversal type ('contig', 'unitig')
-    default: contig
     inputBinding:
       position: 101
       prefix: -traversal
@@ -459,7 +422,6 @@ inputs:
       - 'null'
       - int
     doc: verbosity level
-    default: 1
     inputBinding:
       position: 101
       prefix: -verbose

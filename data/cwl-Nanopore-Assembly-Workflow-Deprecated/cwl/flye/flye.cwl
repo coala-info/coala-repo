@@ -36,13 +36,11 @@ inputs:
       prefix: --nano-hq
   threads:
     type: int
-    default: 1
     inputBinding:
       prefix: --threads
   polishing_iterations:
     label: Flye will carry out polishing multiple times as determined here
     type: int
-    default: 1
     inputBinding:
       prefix: --iterations
   metagenome:
@@ -54,7 +52,6 @@ inputs:
   debug_mode:
     label: Set to true to display debug output while running
     type: boolean
-    default: false
     inputBinding:
       prefix: --debug
 

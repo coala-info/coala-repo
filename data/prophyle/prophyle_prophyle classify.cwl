@@ -61,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length
-    default: detect automatically from the index
     inputBinding:
       position: 104
       prefix: -k
@@ -78,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: 'measure: h1=hit count, c1=coverage, h2=norm.hit count, c2=norm.coverage'
-    default: h1
     inputBinding:
       position: 104
       prefix: -m
@@ -95,7 +93,6 @@ inputs:
       - 'null'
       - string
     doc: output format
-    default: sam
     inputBinding:
       position: 104
       prefix: -f

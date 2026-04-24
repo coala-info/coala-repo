@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Minimum coverage
-    default: 50.0%
     inputBinding:
       position: 101
       prefix: --min_cov
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth
-    default: 15
     inputBinding:
       position: 101
       prefix: --min_depth
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum overlapping length
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_len

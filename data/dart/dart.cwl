@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - boolean
     doc: detect all splice junction regardless of mapq score
-    default: false
     inputBinding:
       position: 101
       prefix: -all_sj
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - File
     doc: splice junction output filename
-    default: junctions.tab
     inputBinding:
       position: 101
       prefix: -j
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: maximal number of repetitive fragments (between 100-10000)
-    default: 100
     inputBinding:
       position: 101
       prefix: -max_dup
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: the maximal intron size
-    default: 500000
     inputBinding:
       position: 101
       prefix: -max_intron
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: the minimal intron size
-    default: 10
     inputBinding:
       position: 101
       prefix: -min_intron
@@ -88,7 +83,6 @@ inputs:
       - 'null'
       - boolean
     doc: output multiple alignments
-    default: false
     inputBinding:
       position: 101
       prefix: -m
@@ -122,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: -t

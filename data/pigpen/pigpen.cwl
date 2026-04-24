@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage to call SNPs. Default = 20
-    default: 20
     inputBinding:
       position: 101
       prefix: --SNPcoverage
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum variant frequency to call SNPs. Default = 0.4
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --SNPfreq
@@ -91,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum phred quality score for a base to be considered. Default = 30
-    default: 30
     inputBinding:
       position: 101
       prefix: --minPhred
@@ -101,7 +98,6 @@ inputs:
       - int
     doc: Minimum number of required G->T and/or G->C conversions in a read pair 
       in order for those conversions to be counted. Default is 1.
-    default: 1
     inputBinding:
       position: 101
       prefix: --nConv
@@ -110,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors to use. Default is 1.
-    default: 1
     inputBinding:
       position: 101
       prefix: --nproc

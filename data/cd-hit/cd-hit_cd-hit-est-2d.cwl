@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Use global sequence identity, default 1 (yes)
-    default: 1
     inputBinding:
       position: 101
       prefix: -G
@@ -71,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads, default 1; with 0, all CPUs will be used
-    default: 1
     inputBinding:
       position: 101
       prefix: -T
@@ -80,7 +78,6 @@ inputs:
       - 'null'
       - float
     doc: Sequence identity threshold, default 0.9
-    default: 0.9
     inputBinding:
       position: 101
       prefix: -c

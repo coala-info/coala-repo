@@ -11,7 +11,6 @@ inputs:
       - int
     doc: length of sequence prefix of the first FASTA record based on which 
       seqkit guesses the sequence type (0 for whole seq)
-    default: 10000
     inputBinding:
       position: 101
       prefix: --alphabet-guess-seq-length
@@ -87,7 +86,6 @@ inputs:
       - int
     doc: compression level for gzip, zstd, xz and bzip2. type "seqkit -h" for 
       the range and default value for each format
-    default: -1
     inputBinding:
       position: 101
       prefix: --compress-level
@@ -128,7 +126,6 @@ inputs:
       - 'null'
       - string
     doc: regular expression for parsing ID
-    default: ^(\S+)\s?
     inputBinding:
       position: 101
       prefix: --id-regexp
@@ -163,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: line width when outputting FASTA format (0 for no wrap)
-    default: 60
     inputBinding:
       position: 101
       prefix: -w
@@ -172,7 +168,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory (default value is $infile.split)
-    default: $infile.split
     inputBinding:
       position: 101
       prefix: --out-dir
@@ -181,7 +176,6 @@ inputs:
       - 'null'
       - File
     doc: out file ("-" for stdout, suffix .gz for gzipped out)
-    default: '-'
     inputBinding:
       position: 101
       prefix: -o
@@ -199,7 +193,6 @@ inputs:
       - string
     doc: sequence type (dna|rna|protein|unlimit|auto) (for auto, it 
       automatically detect by the first sequence)
-    default: auto
     inputBinding:
       position: 101
       prefix: --seq-type
@@ -217,7 +210,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs. can also set with environment variable SEQKIT_THREADS)
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

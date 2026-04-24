@@ -50,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: 'How much to scale down exons. Default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --exon_s
@@ -76,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: 'Set the font size. Default: 8'
-    default: 8
     inputBinding:
       position: 101
       prefix: --font-size
@@ -104,7 +102,6 @@ inputs:
       - float
     doc: 'How much to scale down introns. For example, --intron_s 5 results in an
       intron with real length of 100 being plotted as 100/5 = 20. Default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --intron_s
@@ -138,7 +135,6 @@ inputs:
       - int
     doc: 'Individual junctions with read count below --min-counts will be omitted
       from the plot. Default: 0'
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-counts

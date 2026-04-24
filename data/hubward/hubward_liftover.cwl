@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Source assembly
-    default: '-'
     inputBinding:
       position: 102
       prefix: --from_assembly
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Destination assembly
-    default: '-'
     inputBinding:
       position: 102
       prefix: --to_assembly

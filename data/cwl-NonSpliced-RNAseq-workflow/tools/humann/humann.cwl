@@ -85,7 +85,6 @@ inputs:
 
   threads:
     type: int?
-    default: 2
     inputBinding:
       prefix: --threads
 

@@ -19,7 +19,6 @@ inputs:
       sequences `complete_novel`. Default is to exclude them from the summary. 
       Either way, they will be annotated as `unannotated_reference` in the 
       junctions file.
-    default: false
     inputBinding:
       position: 102
       prefix: --consider-unannotated-references-novel
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable DEBUG log level.
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable generating junction files.
-    default: false
     inputBinding:
       position: 102
       prefix: --disable-junction-files
@@ -47,14 +44,12 @@ inputs:
       - int
     doc: Consider found splices within `+-k` bases of a known splice event 
       annotated.
-    default: 0
     inputBinding:
       position: 102
       prefix: --fuzzy-junction-match-range
   - id: gene_model
     type: File
     doc: Gene model as a GFF/GTF file.
-    default: None
     inputBinding:
       position: 102
       prefix: --gene-model
@@ -63,7 +58,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to write annotated junction files to.
-    default: ./
     inputBinding:
       position: 102
       prefix: --junction-files-dir
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of intron to be considered a splice.
-    default: 50
     inputBinding:
       position: 102
       prefix: --min-intron
@@ -81,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum MAPQ to consider for supporting reads.
-    default: 30
     inputBinding:
       position: 102
       prefix: --min-mapq
@@ -90,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Filter any junctions that don't have at least `m` reads.
-    default: 2
     inputBinding:
       position: 102
       prefix: --min-reads
@@ -99,7 +90,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable INFO log level.
-    default: false
     inputBinding:
       position: 102
       prefix: --verbose

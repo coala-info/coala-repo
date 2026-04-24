@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: 'How to combine hits from multiple HMMs: any|all|threshold'
-    default: any
     inputBinding:
       position: 102
   - id: hmm_mode
@@ -28,7 +27,6 @@ inputs:
       - string
     doc: "HMM file type: 'pure' (one model per file) or 'mixed' (pressed/concatenated
       HMMs)"
-    default: pure
     inputBinding:
       position: 102
   - id: input_contigs
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum independent E-value to keep a domain hit
-    default: '1e-05'
     inputBinding:
       position: 102
   - id: min_bitscore
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum gene length for pyrodigal (nt)
-    default: 90
     inputBinding:
       position: 102
   - id: min_hmm_hits
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of HMMs that must hit a contig (for threshold mode)
-    default: 1
     inputBinding:
       position: 102
   - id: mode
@@ -89,7 +84,6 @@ inputs:
       - 'null'
       - string
     doc: 'pyrodigal mode: meta|single'
-    default: meta
     inputBinding:
       position: 102
   - id: no_keep_domtbl
@@ -130,7 +124,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: phu-screen
     inputBinding:
       position: 102
       prefix: -o
@@ -155,7 +148,6 @@ inputs:
       - 'null'
       - int
     doc: Threads for both pyrodigal and hmmsearch
-    default: 1
     inputBinding:
       position: 102
       prefix: -t
@@ -164,7 +156,6 @@ inputs:
       - 'null'
       - int
     doc: Keep top-N hits per contig (by bitscore)
-    default: 1
     inputBinding:
       position: 102
   - id: ttable
@@ -172,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: NCBI translation table for coding sequences
-    default: 11
     inputBinding:
       position: 102
 outputs:

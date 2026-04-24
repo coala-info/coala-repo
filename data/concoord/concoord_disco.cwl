@@ -20,7 +20,6 @@ inputs:
       - int
     doc: number of rounds of triangular bound smoothing (if >= 6, tetragonal BS is
       activated)
-    default: 0
     inputBinding:
       position: 101
       prefix: -bs
@@ -38,7 +37,6 @@ inputs:
       - int
     doc: 'chirality check. 0 : no chirality checks; 1: only check afterwards 2: check
       on the fly'
-    default: 2
     inputBinding:
       position: 101
       prefix: -c
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: consider convergence failed after n non-productive iterations.
-    default: 500
     inputBinding:
       position: 101
       prefix: -con
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: cut-off radius for pairlist (only valid together with -bump)
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -rc
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - float
     doc: damping factor for distance corrections.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -damp
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: nr of rounds to dynamically set tolerances.
-    default: 0
     inputBinding:
       position: 101
       prefix: -dyn
@@ -84,7 +78,6 @@ inputs:
       - File
     doc: file containing input distances. This file is usually the output of the program
       dist.
-    default: dist.dat
     inputBinding:
       position: 101
       prefix: -d
@@ -94,7 +87,6 @@ inputs:
       - File
     doc: file containing input structure in PDB file format. This file is usually
       the output of the program dist.
-    default: dist.pdb
     inputBinding:
       position: 101
       prefix: -p
@@ -103,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: maximum nr. of iterations per structure.
-    default: 2500
     inputBinding:
       position: 101
       prefix: -i
@@ -112,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: maximum nr. of trials per run.
-    default: 25
     inputBinding:
       position: 101
       prefix: -t
@@ -121,7 +111,6 @@ inputs:
       - 'null'
       - float
     doc: maximal acceptable sum of violations (in nm)
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -viol
@@ -138,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: nr. of structures to be generated.
-    default: 500
     inputBinding:
       position: 101
       prefix: -n
@@ -147,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: pairlist update frequency (only valid together with -bump)
-    default: 10
     inputBinding:
       position: 101
       prefix: -l
@@ -156,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: initial random seed
-    default: 741265
     inputBinding:
       position: 101
       prefix: -s
@@ -165,7 +151,6 @@ inputs:
       - 'null'
       - float
     doc: pre-scale coordinates with this factor.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -is

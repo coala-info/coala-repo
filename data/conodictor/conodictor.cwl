@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the number of threads.
-    default: 1
     inputBinding:
       position: 102
       prefix: --cpus
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: Create a fasta file of matched sequences.
-    default: false
     inputBinding:
       position: 102
       prefix: --faa
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: Display sequence without hits in output.
-    default: false
     inputBinding:
       position: 102
       prefix: --all
@@ -51,7 +48,6 @@ inputs:
       - boolean
     doc: Activate the removal of sequences that matches only the signal and/or 
       proregions.
-    default: false
     inputBinding:
       position: 102
       prefix: --filter
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force re-use output directory.
-    default: false
     inputBinding:
       position: 102
       prefix: --force

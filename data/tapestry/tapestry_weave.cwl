@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: number of parallel cores to use (default 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: genome coverage to subsample from FASTQ file
-    default: 50
     inputBinding:
       position: 101
       prefix: --depth
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: minimum read length to retain when subsampling (default 10000 bp)
-    default: 10000
     inputBinding:
       position: 101
       prefix: --length
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of contig alignment to keep (default 2000 bp)
-    default: 2000
     inputBinding:
       position: 101
       prefix: --mincontigalignment
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory to write output, default weave_output
-    default: weave_output
     inputBinding:
       position: 101
       prefix: --output

@@ -16,7 +16,6 @@ inputs:
       - string
     doc: 'Optional logging level: 0 for silent, 1 for verbose, 2 for default, 3 for
       warning, 4 for error; both numeric and text (case insensitive) value recognized.'
-    default: '2'
     inputBinding:
       position: 101
       prefix: --logging

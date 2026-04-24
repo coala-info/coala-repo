@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Range of cells to process, eg. 0-10000
-    default: all
     inputBinding:
       position: 101
       prefix: --cellRange
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Number of extra donor in pre-cluster, when GT needs to learn
-    default: 0
     inputBinding:
       position: 101
       prefix: --extraDonor
@@ -62,7 +60,6 @@ inputs:
       - string
     doc: 'Method for searching from extra donors. size: n_cell per donor; distance:
       GT distance between donors'
-    default: distance
     inputBinding:
       position: 101
       prefix: --extraDonorMode
@@ -79,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: 'The tag for donor genotype: GT, GP, PL'
-    default: PL
     inputBinding:
       position: 101
       prefix: --genoTag
@@ -97,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Number of random initializations, when GT needs to learn
-    default: 50
     inputBinding:
       position: 101
       prefix: --nInit
@@ -123,7 +118,6 @@ inputs:
       - int
     doc: Number of subprocesses for computing - this sacrifices memory for 
       speedups
-    default: 1
     inputBinding:
       position: 101
       prefix: --nproc
@@ -132,7 +126,6 @@ inputs:
       - 'null'
       - Directory
     doc: Dirtectory for output files
-    default: $cellFilePath/vireo
     inputBinding:
       position: 101
       prefix: --outDir

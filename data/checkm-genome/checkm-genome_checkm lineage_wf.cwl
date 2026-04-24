@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: AAI threshold used to identify strain heterogeneity
-    default: 0.9
     inputBinding:
       position: 103
       prefix: --aai_strain
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: extension of bins (other files in directory are ignored)
-    default: fna
     inputBinding:
       position: 103
       prefix: --extension
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: e-value cut off
-    default: '1e-10'
     inputBinding:
       position: 103
       prefix: --e_value
@@ -107,7 +104,6 @@ inputs:
       - 'null'
       - float
     doc: percent overlap between target and query
-    default: 0.7
     inputBinding:
       position: 103
       prefix: --length
@@ -117,7 +113,6 @@ inputs:
       - int
     doc: maximum number of multi-copy phylogenetic markers before defaulting to 
       domain-level marker set
-    default: 10
     inputBinding:
       position: 103
       prefix: --multi
@@ -143,7 +138,6 @@ inputs:
       - int
     doc: number of threads used by pplacer (memory usage increases linearly with
       additional threads)
-    default: 1
     inputBinding:
       position: 103
       prefix: --pplacer_threads
@@ -193,7 +187,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads
@@ -211,7 +204,6 @@ inputs:
       - int
     doc: minimum number of unique phylogenetic markers required to use 
       lineage-specific marker set
-    default: 10
     inputBinding:
       position: 103
       prefix: --unique

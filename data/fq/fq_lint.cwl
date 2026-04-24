@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Panic on first error or log all errors
-    default: panic
     inputBinding:
       position: 103
       prefix: --lint-mode
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: Only use paired read validators up to a given level
-    default: high
     inputBinding:
       position: 103
       prefix: --paired-read-validation-level
@@ -51,7 +49,6 @@ inputs:
       - string
     doc: "Define a record definition separator.\n          \n          This is used
       to strip the definition from a record name."
-    default: '/ and '
     inputBinding:
       position: 103
       prefix: --record-definition-separator
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Only use single read validators up to a given level
-    default: high
     inputBinding:
       position: 103
       prefix: --single-read-validation-level

@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: The name of the stain that will be used for the blue channel in images.
-    default: DAPI
     inputBinding:
       position: 101
       prefix: --blue-stain-name
@@ -22,7 +21,6 @@ inputs:
       - string
     doc: The name of the experiment to be used as the index in the output csv 
       and segmentation report.
-    default: Analysis Timestamp
     inputBinding:
       position: 101
       prefix: --experiment-name
@@ -31,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: The name of the stain that will be used for the red channel in images.
-    default: PolyT
     inputBinding:
       position: 101
       prefix: --green-stain-name
@@ -86,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: The Z plane of the mosaic tiff images to use for the patch.
-    default: 2
     inputBinding:
       position: 101
       prefix: --input-z-index
@@ -95,7 +91,6 @@ inputs:
       - 'null'
       - string
     doc: The name of the normalization method that will be used on each channel.
-    default: CLAHE
     inputBinding:
       position: 101
       prefix: --normalization
@@ -113,7 +108,6 @@ inputs:
       - 'null'
       - string
     doc: The name of the stain that will be used for the red channel in images.
-    default: None
     inputBinding:
       position: 101
       prefix: --red-stain-name
@@ -123,7 +117,6 @@ inputs:
       - int
     doc: The cell transcript count threshold used for computing metrics and 
       clustering.
-    default: 100
     inputBinding:
       position: 101
       prefix: --transcript-count-filter-threshold
@@ -132,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: The cell volume threshold used for computing metrics and clustering.
-    default: 200
     inputBinding:
       position: 101
       prefix: --volume-filter-threshold

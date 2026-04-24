@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: genome assembly entries
-    default: false
     inputBinding:
       position: 102
       prefix: -assembly
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: Additional Fix :Adds/Fixes DE line(optional)
-    default: false
     inputBinding:
       position: 102
       prefix: -de
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: File format(optional) Values:'embl','genbank','gff3','assembly'
-    default: embl
     inputBinding:
       position: 102
       prefix: -f
@@ -46,7 +43,6 @@ inputs:
       <prefix>_bad.txt files in the working directory. Entries with errors are 
       stored in the bad file and entries without errors are stored in the good 
       file. (optional)
-    default: false
     inputBinding:
       position: 102
       prefix: -filter
@@ -56,7 +52,6 @@ inputs:
       - boolean
     doc: Fixes entries in input files. Stores input files in 'original_files' 
       folder. (optional)
-    default: false
     inputBinding:
       position: 102
       prefix: -fix
@@ -68,7 +63,6 @@ inputs:
       entries in <filename>_origin file and the fixed entries in 
       <filename>_fixed file. Only fixed entries will be stored in these 
       files.(optional)
-    default: false
     inputBinding:
       position: 102
       prefix: -fix_diagnose
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: 'Log level(optional) Values : 0(Quiet), 1(Summary), 2(Verbose)'
-    default: 1
     inputBinding:
       position: 102
       prefix: -l
@@ -87,7 +80,6 @@ inputs:
       - boolean
     doc: Runs in low memory usage mode. Writes error logs but does not show 
       message summary(optional)
-    default: false
     inputBinding:
       position: 102
       prefix: -lowmemory
@@ -97,7 +89,6 @@ inputs:
       - int
     doc: minimum gap length to generate assembly_gap/gap features, use assembly 
       flag to add assembly_gap features
-    default: 0
     inputBinding:
       position: 102
       prefix: -min_gap_length
@@ -114,7 +105,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remote, is this being run outside the EBI(optional)
-    default: false
     inputBinding:
       position: 102
       prefix: -r
@@ -123,7 +113,6 @@ inputs:
       - 'null'
       - string
     doc: -skip <errorcode1>,<errorcode2>,... Ignore specified errors.(optional)
-    default: false
     inputBinding:
       position: 102
       prefix: -skip
@@ -132,7 +121,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turns on line wrapping in flat file writing (optional)
-    default: false
     inputBinding:
       position: 102
       prefix: -wrap

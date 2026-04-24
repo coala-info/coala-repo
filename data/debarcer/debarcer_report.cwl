@@ -18,7 +18,6 @@ inputs:
       - string
     doc: "Figure format. Does not generate a report if pdf, even\n               \
       \         with -r True. Default is png"
-    default: png
     inputBinding:
       position: 101
       prefix: --Extension

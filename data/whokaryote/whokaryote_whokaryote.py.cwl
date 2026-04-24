@@ -27,7 +27,6 @@ inputs:
       - int
     doc: Select a minimum contig size in bp, default = 5000. Accuracy on contigs
       below 5000 is lower.
-    default: 5000
     inputBinding:
       position: 101
       prefix: --minsize

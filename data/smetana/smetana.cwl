@@ -138,7 +138,6 @@ inputs:
     doc: "Number of random perturbation experiments per community (default: 1).\n\
       \                        Selecting n = 0 will test all single species/compound
       perturbations exactly once."
-    default: 1
     inputBinding:
       position: 102
       prefix: -n
@@ -147,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of components to perturb simultaneously (default: 1).'
-    default: 1
     inputBinding:
       position: 102
       prefix: -p

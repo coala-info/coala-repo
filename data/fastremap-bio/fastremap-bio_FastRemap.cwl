@@ -51,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Average insert size of pair-end sequencing (bp). In range [0..inf].
-    default: 200
     inputBinding:
       position: 101
       prefix: --mean
@@ -60,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Stanadard deviation of insert size. In range [0..inf].
-    default: 30
     inputBinding:
       position: 101
       prefix: --stdev
@@ -71,7 +69,6 @@ inputs:
     doc: A mapped pair is considered as proper pair if both ends mapped to 
       different strand and the distance between them is less then '-t' * stdev 
       from the mean. In range [0..inf].
-    default: 3
     inputBinding:
       position: 101
       prefix: --times

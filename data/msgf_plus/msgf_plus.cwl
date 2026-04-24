@@ -11,7 +11,6 @@ inputs:
     doc: "Include additional features in the output (enable this to post-process results
       with Percolator), Default: 0\n0 means Output basic scores only (Default)\n1
       means Output additional features"
-    default: 0
     inputBinding:
       position: 101
       prefix: -addFeatures
@@ -21,7 +20,6 @@ inputs:
       - int
     doc: "Allow centroid scans with dense peaks (Default: 0)\n(for mzML or mzXML files,
       the console output will tell you if you might want to use this), Default: 0"
-    default: 0
     inputBinding:
       position: 101
       prefix: -allowDenseCentroidedPeaks
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: 'Mass of charge carrier; Default: mass of proton (1.00727649)'
-    default: 1.00727649
     inputBinding:
       position: 101
       prefix: -ccm
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for decoy protein names
-    default: XXX
     inputBinding:
       position: 101
       prefix: -decoy
@@ -66,7 +62,6 @@ inputs:
       - int
     doc: '0: unspecific cleavage, 1: Trypsin (Default), 2: Chymotrypsin, 3: Lys-C,
       4: Lys-N, 5: glutamyl endopeptidase, 6: Arg-C, 7: Asp-N, 8: alphaLP, 9: no cleavage'
-    default: 1
     inputBinding:
       position: 101
       prefix: -e
@@ -76,7 +71,6 @@ inputs:
       - int
     doc: "Fragmentation Method, Default: 0\n0 means as written in the spectrum or
       CID if no info (Default)\n1 means CID\n2 means ETD\n3 means HCD"
-    default: 0
     inputBinding:
       position: 101
       prefix: -m
@@ -85,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: '0: Low-res LCQ/LTQ (Default), 1: Orbitrap/FTICR/Lumos, 2: TOF, 3: Q-Exactive'
-    default: 0
     inputBinding:
       position: 101
       prefix: -inst
@@ -98,7 +91,6 @@ inputs:
       combination of -t and -ti determines the precursor mass tolerance.\nE.g. \"\
       -t 20ppm -ti -1,2\" tests abs(ObservedPepMass - TheoreticalPepMass - n * 1.00335Da)
       < 20ppm for n = -1, 0, 1, 2."
-    default: 0,1
     inputBinding:
       position: 101
       prefix: -ti
@@ -108,7 +100,6 @@ inputs:
       - int
     doc: Maximum precursor charge to consider if charges are not specified in 
       the spectrum file
-    default: 3
     inputBinding:
       position: 101
       prefix: -maxCharge
@@ -118,7 +109,6 @@ inputs:
       - int
     doc: 'Exclude peptides with more than this number of missed cleavages from the
       search; Default: -1 (no limit)'
-    default: -1
     inputBinding:
       position: 101
       prefix: -maxMissedCleavages
@@ -127,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum peptide length to consider
-    default: 40
     inputBinding:
       position: 101
       prefix: -maxLength
@@ -137,7 +126,6 @@ inputs:
       - int
     doc: Minimum precursor charge to consider if charges are not specified in 
       the spectrum file
-    default: 2
     inputBinding:
       position: 101
       prefix: -minCharge
@@ -146,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum peptide length to consider
-    default: 6
     inputBinding:
       position: 101
       prefix: -minLength
@@ -165,7 +152,6 @@ inputs:
       - int
     doc: "Number of Tolerable Termini, Default: 2\nE.g. For trypsin, 0: non-tryptic,
       1: semi-tryptic, 2: fully-tryptic peptides only."
-    default: 2
     inputBinding:
       position: 101
       prefix: -ntt
@@ -174,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of dynamic (variable) modifications per peptide
-    default: 3
     inputBinding:
       position: 101
       prefix: -numMods
@@ -183,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: Number of matches per spectrum to be reported
-    default: 1
     inputBinding:
       position: 101
       prefix: -n
@@ -224,7 +208,6 @@ inputs:
     doc: "e.g. 2.5Da, 20ppm or 0.5Da,2.5Da; Default: 20ppm\nUse a comma to define
       asymmetric values. E.g. \"-t 0.5Da,2.5Da\" will set 0.5Da to the left (ObsMass
       < TheoMass) and 2.5Da to the right (ObsMass > TheoMass)"
-    default: 20ppm
     inputBinding:
       position: 101
       prefix: -t
@@ -234,7 +217,6 @@ inputs:
       - int
     doc: '0: Automatic (Default), 1: Phosphorylation, 2: iTRAQ, 3: iTRAQPhospho, 4:
       TMT, 5: Standard'
-    default: 0
     inputBinding:
       position: 101
       prefix: -protocol
@@ -253,7 +235,6 @@ inputs:
       - int
     doc: "Target decoy strategy, Default: 0\n0 means Don't search decoy database (Default)\n\
       1 means search the decoy database (forward + reverse proteins)"
-    default: 0
     inputBinding:
       position: 101
       prefix: -tda
@@ -263,7 +244,6 @@ inputs:
       - int
     doc: "Console output message verbosity, Default: 0\n0 means Report total progress
       only\n1 means Report total and per-thread progress/status"
-    default: 0
     inputBinding:
       position: 101
       prefix: -verbose

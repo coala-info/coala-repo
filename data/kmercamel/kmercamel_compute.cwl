@@ -15,7 +15,6 @@ inputs:
       - string
     doc: the algorithm to be run [global (default), streaming, local, globalAC 
       (experimental), localAC (experimental)]
-    default: global
     inputBinding:
       position: 102
       prefix: -a
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: d_max for local algorithm
-    default: 5
     inputBinding:
       position: 102
       prefix: -d
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: minimum frequency to represent a k-mer
-    default: 1
     inputBinding:
       position: 102
       prefix: -z

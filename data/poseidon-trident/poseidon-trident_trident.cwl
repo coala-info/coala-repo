@@ -25,7 +25,6 @@ inputs:
       - string
     doc: "After how many characters should a potential genotype\ndata parsing error
       message be truncated. \"Inf\" for no\ntruncation."
-    default: CharCount 1500
     inputBinding:
       position: 102
       prefix: --errLength
@@ -35,7 +34,6 @@ inputs:
       - string
     doc: "Where to read the population/group name from the FAM\nfile in Plink-format.
       Three options are possible:\nasFamily (default) | asPhenotype | asBoth."
-    default: asFamily
     inputBinding:
       position: 102
       prefix: --inPlinkPopName
@@ -45,7 +43,6 @@ inputs:
       - string
     doc: "How information should be reported: NoLog, SimpleLog,\nDefaultLog, ServerLog
       or VerboseLog."
-    default: DefaultLog
     inputBinding:
       position: 102
       prefix: --logMode

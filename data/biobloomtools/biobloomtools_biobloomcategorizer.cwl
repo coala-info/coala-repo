@@ -92,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Interval to report file processing status
-    default: 10000000
     inputBinding:
       position: 102
       prefix: --interval
@@ -135,7 +134,6 @@ inputs:
       - float
     doc: Score threshold for matching. N may be either a floating point score between
       0 and 1 or a positive integer representing the minimum match length in bases.
-    default: 0.15
     inputBinding:
       position: 102
       prefix: --score
@@ -144,7 +142,6 @@ inputs:
       - 'null'
       - string
     doc: Can be set to 'harmonic' scoring or 'binomial' scoring.
-    default: simple
     inputBinding:
       position: 102
       prefix: --score_type
@@ -162,7 +159,6 @@ inputs:
       - int
     doc: The number of hits tiling in second pass needed to jump several tiles upon
       a miss.
-    default: 3
     inputBinding:
       position: 102
       prefix: --streak
@@ -171,7 +167,6 @@ inputs:
       - 'null'
       - int
     doc: T parameter for dust.
-    default: 20
     inputBinding:
       position: 102
       prefix: --T_dust
@@ -180,7 +175,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads to use.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -197,7 +191,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for dust.
-    default: 64
     inputBinding:
       position: 102
       prefix: --window_dust

@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: alpha parameter for Gamma distribution, 'e' for estimating
-    default: '1.0'
     inputBinding:
       position: 103
       prefix: -a
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: number of bootstraps (slow)
-    default: 0
     inputBinding:
       position: 103
       prefix: -b
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: duplication probability
-    default: 0.15
     inputBinding:
       position: 103
       prefix: -d
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: prob. of the presence of an inconsistent branch
-    default: 0.01
     inputBinding:
       position: 103
       prefix: -p
@@ -76,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: proportion of invariable sites, 'e' for estimating
-    default: '0'
     inputBinding:
       position: 103
       prefix: -i
@@ -85,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: transversion/transition ratio, 'e' for estimating
-    default: e
     inputBinding:
       position: 103
       prefix: -k
@@ -94,7 +88,6 @@ inputs:
       - 'null'
       - float
     doc: probability of a loss following a duplication
-    default: 0.2
     inputBinding:
       position: 103
       prefix: -L
@@ -103,7 +96,6 @@ inputs:
       - 'null'
       - float
     doc: probability of a loss following a speciation
-    default: 0.1
     inputBinding:
       position: 103
       prefix: -l
@@ -145,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: quality cut-off
-    default: 15
     inputBinding:
       position: 103
       prefix: -F
@@ -162,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: number of relative substitution rate categories
-    default: 1
     inputBinding:
       position: 103
       prefix: -c
@@ -171,7 +161,6 @@ inputs:
       - 'null'
       - string
     doc: build | opt | loglk | dist
-    default: build
     inputBinding:
       position: 103
       prefix: -t

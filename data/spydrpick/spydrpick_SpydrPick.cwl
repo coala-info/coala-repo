@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Block size for graph processing.
-    default: 16384
     inputBinding:
       position: 102
       prefix: --aracne-block-size
@@ -25,7 +24,6 @@ inputs:
       - float
     doc: Equality tolerance threshold. Edges differing by less than this value 
       are considered equal in strength.
-    default: 2.220446049250313e-16
     inputBinding:
       position: 102
       prefix: --aracne-edge-threshold
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Grouping size for node processing.
-    default: 16
     inputBinding:
       position: 102
       prefix: --aracne-node-grouping-size
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: The first locus index to work on. Used to define a range.
-    default: 1
     inputBinding:
       position: 102
       prefix: --begin
@@ -53,7 +49,6 @@ inputs:
       - int
     doc: The last locus index to work on (-1=end of input). Used to define a 
       range.
-    default: -1
     inputBinding:
       position: 102
       prefix: --end
@@ -71,7 +66,6 @@ inputs:
       - float
     doc: Gap frequency threshold. Positions with a gap frequency above the 
       threshold are excluded from the pair-analysis.
-    default: 0.15
     inputBinding:
       position: 102
       prefix: --gap-threshold
@@ -80,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: 'Genome size, if different from input. Default = 0: detect size from input.'
-    default: 0
     inputBinding:
       position: 102
       prefix: --genome-size
@@ -97,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Base index for input.
-    default: 1
     inputBinding:
       position: 102
       prefix: --input-indexing-base
@@ -106,7 +98,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold distance for linkage disequilibrium (LD).
-    default: 0
     inputBinding:
       position: 102
       prefix: --ld-threshold
@@ -124,7 +115,6 @@ inputs:
       - float
     doc: Minor state frequency threshold. Loci with less than 2 states above 
       threshold are removed from alignment.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --maf-threshold
@@ -141,7 +131,6 @@ inputs:
       - 'null'
       - float
     doc: The MI pseudocount value.
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --mi-pseudocount
@@ -152,7 +141,6 @@ inputs:
     doc: The MI threshold value. Experience suggests that a value of 0.11 is 
       often reasonable. Zero indicates no threshold and negative values will 
       trigger auto-define heuristics.
-    default: -1
     inputBinding:
       position: 102
       prefix: --mi-threshold
@@ -161,7 +149,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations for estimating saving threshold.
-    default: 10
     inputBinding:
       position: 102
       prefix: --mi-threshold-iterations
@@ -171,7 +158,6 @@ inputs:
       - int
     doc: Number of sampled pairs for estimating saving threshold (0=determine 
       automatically).
-    default: 0
     inputBinding:
       position: 102
       prefix: --mi-threshold-pairs
@@ -181,7 +167,6 @@ inputs:
       - int
     doc: Approximate number of MI values to calculate from data 
       (default=#samples*100).
-    default: 0
     inputBinding:
       position: 102
       prefix: --mi-values
@@ -231,7 +216,6 @@ inputs:
       - 'null'
       - int
     doc: Base index for output.
-    default: 1
     inputBinding:
       position: 102
       prefix: --output-indexing-base
@@ -281,7 +265,6 @@ inputs:
       - float
     doc: Fraction of identical positions required for two samples to be 
       considered identical.
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --sample-reweighting-threshold
@@ -299,7 +282,6 @@ inputs:
       - int
     doc: Number of threads per MPI/shared memory node (-1=use all hardware 
       threads that the OS/environment exposes).
-    default: -1
     inputBinding:
       position: 102
       prefix: --threads

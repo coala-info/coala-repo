@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: A list of columns that you would like returned.
-    default: '*'
     inputBinding:
       position: 102
       prefix: --columns
@@ -67,7 +66,6 @@ inputs:
       - int
     doc: Default (1) is to show only confident compound hets. Set to 2 or higher
       to include pairs that are less likely true comp-hets
-    default: 1
     inputBinding:
       position: 102
       prefix: --max-priority
@@ -76,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum genotype quality required for each sample in a family
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-gq
@@ -94,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum aligned sequence depth required for each sample in a family
-    default: 0
     inputBinding:
       position: 102
       prefix: -d

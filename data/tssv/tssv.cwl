@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: fixed number of mismatches, overrides -m
-    default: None
     inputBinding:
       position: 103
       prefix: --fixed_mismatches
@@ -30,7 +29,6 @@ inputs:
       - int
     doc: insertions and deletions are penalised this number of times more 
       heavily than mismatches
-    default: 1
     inputBinding:
       position: 103
       prefix: --indel_penalty
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: minimum count per allele
-    default: 0
     inputBinding:
       position: 103
       prefix: --minimum_allele_count
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: mismatches per nucleotide
-    default: 0.08
     inputBinding:
       position: 103
       prefix: --mismatches_per_nucleotide

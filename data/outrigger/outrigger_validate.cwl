@@ -36,7 +36,6 @@ inputs:
       (default is ./outrigger_output/index, which is relative to the directory 
       where you called this program, assuming you have called "outrigger psi" in
       the same folder as you called "outrigger index").
-    default: ./outrigger_output/index
     inputBinding:
       position: 101
       prefix: --index
@@ -56,7 +55,6 @@ inputs:
       which is in the format 5'/3' of the intron, and separated by commas for 
       different types. Default is GT/AG,GC/AG,AT/AC, which are the major and 
       minor spliceosome splice sites in mammalian systems.
-    default: GT/AG,GC/AG,AT/AC
     inputBinding:
       position: 101
       prefix: --valid-splice-sites

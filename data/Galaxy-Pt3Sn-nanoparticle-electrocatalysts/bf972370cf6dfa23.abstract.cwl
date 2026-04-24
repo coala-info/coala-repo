@@ -8,7 +8,6 @@ inputs:
     id: Sn Foil
     type: File
   Sn foil Calibration:
-    default: 29200.0
     id: Sn foil Calibration
     type: float?
   SnO2:
@@ -17,7 +16,6 @@ inputs:
     id: SnO2
     type: File
   SnO2 Calibration:
-    default: 29219.73
     id: SnO2 Calibration
     type: float?
   Sn K edge H2 under H2:
@@ -26,7 +24,6 @@ inputs:
     id: Sn K edge H2 under H2
     type: File[]
   Sn K edge under H2 Calibration:
-    default: 29200.0
     id: Sn K edge under H2 Calibration
     type: float?
   Sn K edge H2:
@@ -45,7 +42,6 @@ inputs:
     id: Sn K edge Air
     type: File[]
   Sn3Pt Sn Calibration:
-    default: 29204.5
     id: Sn3Pt Sn Calibration
     type: float?
   Pt L3 edge H2 under H2:

@@ -31,7 +31,6 @@ inputs:
       For instance, a deletion gets two records in the VCF output: 1. the normal <DEL>
       record and 2. a <BND> record representing the novel adjacency between the deletion's
       start and end coordinate in the sample genome."
-    default: false
     inputBinding:
       position: 104
       prefix: --all_bnds
@@ -45,7 +44,6 @@ inputs:
       distances between its members. Choosing a small value leads to more but smaller
       clusters with smaller distances between its members. This parameter determines
       the height of the cut-off in the hierarchical clustering dendrogram.'
-    default: 0.5
     inputBinding:
       position: 104
       prefix: --cluster_max_distance
@@ -55,7 +53,6 @@ inputs:
       - float
     doc: 'Maximum span-position distance between the origin of an insertion and a
       deletion to be flagged as a potential cut&paste insertion (default: 1.0)'
-    default: 1.0
     inputBinding:
       position: 104
       prefix: --del_ins_dup_max_distance
@@ -75,7 +72,6 @@ inputs:
       process so that only insertions with very similar sequences are clustered together.
       A larger edit distance normalizer diminishes the importance of the insertion
       sequences in the clustering process.'
-    default: 1.0
     inputBinding:
       position: 104
       prefix: --edit_distance_normalizer
@@ -89,7 +85,6 @@ inputs:
       frequence greater than or equal to this threshold but lower than the homozygous
       threshold are called as heterozygous alternative. Variants with an allele frequence
       lower than this threshold are called as homozygous reference.'
-    default: 0.2
     inputBinding:
       position: 104
       prefix: --heterozygous_threshold
@@ -101,7 +96,6 @@ inputs:
       Allele frequency is computed as the fraction of reads supporting the variant
       over the total number of reads covering the variant. Variants with an allele
       frequence greater than or equal to this threshold are called as homozygous alternative.'
-    default: 0.8
     inputBinding:
       position: 104
       prefix: --homozygous_threshold
@@ -112,7 +106,6 @@ inputs:
     doc: 'Output insertion sequences in INFO tag of VCF (default: False). If enabled,
       the INFO/SEQS tag contains a list of insertion sequences from the supporting
       reads.'
-    default: false
     inputBinding:
       position: 104
       prefix: --insertion_sequences
@@ -125,7 +118,6 @@ inputs:
       and the genomic source is given by the POS and END tags. When enabling this
       option, duplications are instead represented by the SVTYPE=INS and POS and END
       both give the insertion point of the duplication.'
-    default: false
     inputBinding:
       position: 104
       prefix: --interspersed_duplications_as_insertions
@@ -136,7 +128,6 @@ inputs:
     doc: 'Maximum size of insertion sequences for consensus computation. (default:
       10000) For insertions longer than this threshold, no consensus is computed to
       save memory.'
-    default: 10000
     inputBinding:
       position: 104
       prefix: --max_consensus_length
@@ -150,7 +141,6 @@ inputs:
       could either indicate a very long deletion (inversion) or a translocation breakpoint.
       SVIM calls a translocation breakpoint if the mapping distance is larger than
       this parameter and a deletion (or inversion) if it is smaller or equal.'
-    default: 100000
     inputBinding:
       position: 104
       prefix: --max_sv_size
@@ -160,7 +150,6 @@ inputs:
       - int
     doc: 'Minimum mapping quality of reads to consider (default: 20). Reads with a
       lower mapping quality are ignored.'
-    default: 20
     inputBinding:
       position: 104
       prefix: --min_mapq
@@ -173,7 +162,6 @@ inputs:
       That means that more accurate reads and alignments enable the detection of smaller
       events. For current PacBio or Nanopore data, we would recommend a minimum size
       of 40bp or larger.'
-    default: 40
     inputBinding:
       position: 104
       prefix: --min_sv_size
@@ -184,7 +172,6 @@ inputs:
     doc: 'Minimum total read depth for genotyping (default: 4). Variants covered by
       a total number of reads lower than this value are not assigned a genotype (./.
       in the output VCF file).'
-    default: 4
     inputBinding:
       position: 104
       prefix: --minimum_depth
@@ -196,7 +183,6 @@ inputs:
       or equal score are genotyped. Depending on the score distribution among the
       SV candidates, decreasing this value increases the runtime. We recommend to
       choose a value close to the score threshold used for filtering the SV candidates.'
-    default: 3
     inputBinding:
       position: 104
       prefix: --minimum_score
@@ -209,7 +195,6 @@ inputs:
       determines the maximum distance between two subsequent signatures in the same
       partition. If the distance between two subsequent signatures is larger than
       this parameter, they are distributed into separate partitions.'
-    default: 1000
     inputBinding:
       position: 104
       prefix: --partition_max_distance
@@ -228,7 +213,6 @@ inputs:
       distance will be 2. A smaller distance normalizer leads to a higher position
       distance and as a consequence increases the importance of the position distance
       in the span-position distance relative to the span distance.'
-    default: 900
     inputBinding:
       position: 104
       prefix: --position_distance_normalizer
@@ -238,7 +222,6 @@ inputs:
       - boolean
     doc: 'Output names of supporting reads in INFO tag of VCF (default: False). If
       enabled, the INFO/READS tag contains the list of names of the supporting reads.'
-    default: false
     inputBinding:
       position: 104
       prefix: --read_names
@@ -247,7 +230,6 @@ inputs:
       - 'null'
       - string
     doc: 'Sample ID to include in output vcf file (default: Sample)'
-    default: Sample
     inputBinding:
       position: 104
       prefix: --sample
@@ -262,7 +244,6 @@ inputs:
       the maximum tolerated length of the read gap between both segments. If there
       is an unaligned read segment larger than this value between the two segments,
       no deletion is called.'
-    default: 10
     inputBinding:
       position: 104
       prefix: --segment_gap_tolerance
@@ -277,7 +258,6 @@ inputs:
       determines the maximum tolerated length of an overlap between both segments
       on the read. If the overlap between the two segments on the read is larger than
       this value, no deletion is called.'
-    default: 5
     inputBinding:
       position: 104
       prefix: --segment_overlap_tolerance
@@ -291,7 +271,6 @@ inputs:
       alleles (<INS>) instead of sequence alles in the output VCF. Consensus computation
       requires a modern CPU with the SSE 4.1 instruction set. For older CPUs missing
       this instruction set, consensus computation is automatically disabled.'
-    default: false
     inputBinding:
       position: 104
       prefix: --skip_consensus
@@ -300,7 +279,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Disable genotyping (default: False)'
-    default: false
     inputBinding:
       position: 104
       prefix: --skip_genotyping
@@ -310,7 +288,6 @@ inputs:
       - boolean
     doc: 'Use symbolic alleles, such as <DEL> or <INV> in output VCF (default: False).
       By default, all SV alleles are represented by nucleotide sequences.'
-    default: false
     inputBinding:
       position: 104
       prefix: --symbolic_alleles
@@ -323,7 +300,6 @@ inputs:
       the genomic source is given by the POS and END tags. When enabling this option,
       duplications are instead represented by the SVTYPE=INS and POS and END both
       give the insertion point of the duplication.'
-    default: false
     inputBinding:
       position: 104
       prefix: --tandem_duplications_as_insertions
@@ -333,7 +309,6 @@ inputs:
       - int
     doc: 'Maximum distance in bp between a translocation breakpoint and an SV signature
       to be combined (default: 500)'
-    default: 500
     inputBinding:
       position: 104
       prefix: --trans_sv_max_distance
@@ -345,7 +320,6 @@ inputs:
       Give a comma-separated list of SV types. The possible SV types are: DEL (deletions),
       INS (novel insertions), INV (inversions), DUP:TANDEM (tandem duplications),
       DUP:INT (interspersed duplications), BND (breakends).'
-    default: DEL,INS,INV,DUP:TANDEM,DUP:INT,BND
     inputBinding:
       position: 104
       prefix: --types
@@ -354,7 +328,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Enable more verbose logging (default: False)'
-    default: false
     inputBinding:
       position: 104
       prefix: --verbose
@@ -364,7 +337,6 @@ inputs:
       - boolean
     doc: 'look for information on ZMWs in PacBio read names (default: False). If enabled,
       the INFO/ZMWS tag contains the number of ZMWs that produced supporting reads.'
-    default: false
     inputBinding:
       position: 104
       prefix: --zmws

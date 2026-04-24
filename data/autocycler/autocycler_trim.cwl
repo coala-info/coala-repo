@@ -18,7 +18,6 @@ inputs:
       - float
     doc: Allowed variability in cluster length, measured in median absolute deviations,
       set to 0 to disable exclusion of length outliers
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --mad
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum unitigs used for overlap alignment, set to 0 to disable trimming
-    default: 5000
     inputBinding:
       position: 101
       prefix: --max_unitigs
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum alignment identity for trimming alignments
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --min_identity
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads

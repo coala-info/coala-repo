@@ -11,7 +11,6 @@ inputs:
     doc: "Number of replicates for rapid bootstrap analysis and search for the best-scoring
       ML tree\n                                    - requires \"--tree_inference\"\
       \ with RAxML"
-    default: 100
     inputBinding:
       position: 101
       prefix: --bootstrap_replicates
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of sequences in orthogroup alignments
-    default: 100
     inputBinding:
       position: 101
       prefix: --max_orthogroup_size
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of sequences in orthogroup alignments
-    default: 4
     inputBinding:
       position: 101
       prefix: --min_orthogroup_size
@@ -65,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads (CPUs) to assign to external utilities (RAxML)
-    default: 1
     inputBinding:
       position: 101
       prefix: --num_threads

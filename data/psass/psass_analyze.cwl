@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: Frequency of a sex-linked SNP in the heterogametic sex
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --freq-het
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Frequency of a sex-linked SNP in the homogametic sex
-    default: 1
     inputBinding:
       position: 102
       prefix: --freq-hom
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth to include a site in the analyses
-    default: 10
     inputBinding:
       position: 102
       prefix: --min-depth
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum FST to output a site in the FST positions file
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --min-fst
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Output resolution for sliding window metrics (in bp)
-    default: 10000
     inputBinding:
       position: 102
       prefix: --output-resolution
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the first pool (order in the pileup file)
-    default: females
     inputBinding:
       position: 102
       prefix: --pool1
@@ -87,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the second pool (order in the pileup file)
-    default: males
     inputBinding:
       position: 102
       prefix: --pool2
@@ -104,7 +97,6 @@ inputs:
       - 'null'
       - float
     doc: Range of frequency for a sex-linked SNP in the heterogametic sex
-    default: 0.15
     inputBinding:
       position: 102
       prefix: --range-het
@@ -113,7 +105,6 @@ inputs:
       - 'null'
       - float
     doc: Range of frequency for a sex-linked SNP in the homogametic sex
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --range-hom
@@ -122,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the sliding window (in bp)
-    default: 100000
     inputBinding:
       position: 102
       prefix: --window-size

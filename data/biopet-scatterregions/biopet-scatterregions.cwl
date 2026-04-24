@@ -66,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Approximately scatter size, tool will make all scatters the same size.
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --scatterSize

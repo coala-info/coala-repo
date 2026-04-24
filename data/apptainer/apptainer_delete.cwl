@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: specify requested image arch
-    default: amd64
     inputBinding:
       position: 102
       prefix: --arch

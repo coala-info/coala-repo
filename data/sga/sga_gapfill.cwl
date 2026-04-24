@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Last kmer size used to attempt to resolve each gap
-    default: 51
     inputBinding:
       position: 102
       prefix: --end-kmer
@@ -44,7 +43,6 @@ inputs:
     doc: use occurrence array sample rate of N in the FM-index. Higher values 
       use significantly less memory at the cost of higher runtime. This value 
       must be a power of 2
-    default: 128
     inputBinding:
       position: 102
       prefix: --sample-rate
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: First kmer size used to attempt to resolve each gap
-    default: 91
     inputBinding:
       position: 102
       prefix: --start-kmer

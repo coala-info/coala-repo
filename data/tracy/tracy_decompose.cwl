@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: gap extension
-    default: -4
     inputBinding:
       position: 102
       prefix: --gapext
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: gap open
-    default: -10
     inputBinding:
       position: 102
       prefix: --gapopen
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: kmer size
-    default: 15
     inputBinding:
       position: 102
       prefix: --kmer
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: alignment line length
-    default: 60
     inputBinding:
       position: 102
       prefix: --linelimit
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: match
-    default: 3
     inputBinding:
       position: 102
       prefix: --match
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: max. indel size in Sanger trace
-    default: 1000
     inputBinding:
       position: 102
       prefix: --maxindel
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: mismatch
-    default: -5
     inputBinding:
       position: 102
       prefix: --mismatch
@@ -105,7 +98,6 @@ inputs:
       - 'null'
       - float
     doc: peak ratio to call base
-    default: 0.330000013
     inputBinding:
       position: 102
       prefix: --pratio
@@ -114,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: min. kmer support
-    default: 3
     inputBinding:
       position: 102
       prefix: --support
@@ -123,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: 'trimming stringency [1:9], 0: use trimLeft and trimRight'
-    default: 0
     inputBinding:
       position: 102
       prefix: --trim
@@ -132,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: trim size left
-    default: 50
     inputBinding:
       position: 102
       prefix: --trimLeft
@@ -141,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: trim size right
-    default: 50
     inputBinding:
       position: 102
       prefix: --trimRight

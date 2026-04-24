@@ -23,7 +23,6 @@ inputs:
     doc: "controls consensus prediction\n                           '0' for off\n\
       \                           '1' for organism of interest based consensus\n \
       \                          '2' for overall consensus based prediction"
-    default: 0
     inputBinding:
       position: 101
       prefix: --cons
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: switch for CopraRNA1 prediction
-    default: off
     inputBinding:
       position: 101
       prefix: --cop1
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: amount of cores to use for parallel computation
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -51,7 +48,6 @@ inputs:
       - int
     doc: if entered then DAVID-WS functional enrichment is calculated with given
       amount of top predictions
-    default: off
     inputBinding:
       position: 101
       prefix: --enrich
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: IntaRNA target (--tAccL) maximum base pair distance parameter
-    default: 100
     inputBinding:
       position: 101
       prefix: --maxbpdist
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - boolean
     doc: switch to prevent removal of temporary files
-    default: off
     inputBinding:
       position: 101
       prefix: --noclean
@@ -79,7 +73,6 @@ inputs:
       - boolean
     doc: if set then the CopraRNA2 prediction mode is set not to focus on the 
       organism of interest
-    default: off
     inputBinding:
       position: 101
       prefix: --nooi
@@ -88,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: amount of nucleotides downstream of '--region' to parse for targeting
-    default: 100
     inputBinding:
       position: 101
       prefix: --ntdown
@@ -97,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: amount of nucleotides upstream of '--region' to parse for targeting
-    default: 200
     inputBinding:
       position: 101
       prefix: --ntup
@@ -106,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: post processing filter for organism of interest p-value 0=off
-    default: 0
     inputBinding:
       position: 101
       prefix: --ooifilt
@@ -117,7 +107,6 @@ inputs:
     doc: "minimum amount (%) of putative target homologs that need to be available\
       \ \n                           for a target cluster to be considered in the
       CopraRNA1 part (see --cop1) of the prediction"
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --rcsize
@@ -128,7 +117,6 @@ inputs:
     doc: "region to scan in whole genome target prediction\n                     \
       \      '5utr' for start codon\n                           '3utr' for stop codon\n\
       \                           'cds' for entire transcript"
-    default: 5utr
     inputBinding:
       position: 101
       prefix: --region
@@ -137,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: specifies root function to apply to the weights
-    default: 1
     inputBinding:
       position: 101
       prefix: --root
@@ -146,7 +133,6 @@ inputs:
       - 'null'
       - File
     doc: FASTA file with small RNA sequences
-    default: input_sRNA.fa
     inputBinding:
       position: 101
       prefix: --srnaseq
@@ -156,7 +142,6 @@ inputs:
       - int
     doc: specifies the amount of top predictions to return and use for the 
       extended regions plots
-    default: 200
     inputBinding:
       position: 101
       prefix: --topcount
@@ -165,7 +150,6 @@ inputs:
       - 'null'
       - boolean
     doc: switch to print verbose output to terminal during computation
-    default: off
     inputBinding:
       position: 101
       prefix: --verbose
@@ -174,7 +158,6 @@ inputs:
       - 'null'
       - boolean
     doc: switch to provide webserver output files
-    default: off
     inputBinding:
       position: 101
       prefix: --websrv
@@ -183,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: IntaRNA target (--tAccW) window size parameter
-    default: 150
     inputBinding:
       position: 101
       prefix: --winsize

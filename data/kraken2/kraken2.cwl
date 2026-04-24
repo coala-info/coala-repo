@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: 'Confidence score threshold (default: 0.0); must be in [0, 1].'
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --confidence
@@ -58,7 +57,6 @@ inputs:
       - int
     doc: 'Minimum base quality used in classification (def: 0, only effective with
       FASTQ input).'
-    default: 0
     inputBinding:
       position: 102
       prefix: --minimum-base-quality
@@ -68,7 +66,6 @@ inputs:
       - int
     doc: Minimum number of hit groups (overlapping k-mers sharing the same 
       minimizer) needed to make a call
-    default: 2
     inputBinding:
       position: 102
       prefix: --minimum-hit-groups
@@ -110,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

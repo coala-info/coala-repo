@@ -27,7 +27,6 @@ inputs:
       - int
     doc: 'For all --track-* options above, only include features (regions) of at least
       the given size. Default: 1.'
-    default: 1
     inputBinding:
       position: 102
       prefix: --track-min-size

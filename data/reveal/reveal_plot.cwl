@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Wheter to produce interactive plots which allow zooming on the dotplot
-    default: false
     inputBinding:
       position: 102
       prefix: -i
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of exact matches to vizualize
-    default: 100
     inputBinding:
       position: 102
       prefix: -m

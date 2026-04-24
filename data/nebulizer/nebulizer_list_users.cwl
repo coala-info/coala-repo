@@ -44,7 +44,6 @@ inputs:
       - string
     doc: comma-separated list of fields to output on; valid fields are 'email', 
       'disk_usage', 'quota', 'quota_usage'
-    default: email
     inputBinding:
       position: 102
       prefix: --sort
@@ -54,7 +53,6 @@ inputs:
       - string
     doc: list users with the specified status; can be one of 'active', 
       'deleted', 'purged', 'all'
-    default: active
     inputBinding:
       position: 102
       prefix: --status

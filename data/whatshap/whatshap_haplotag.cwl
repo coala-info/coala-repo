@@ -39,7 +39,6 @@ inputs:
       - int
     doc: 'Assume reads with identical BX tags belong to different read clouds if their
       distance is larger than LINKEDREADDISTANCE (default: 50000).'
-    default: 50000
     inputBinding:
       position: 103
       prefix: --linked-read-distance-cutoff
@@ -84,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: 'Ploidy (default: 2).'
-    default: 2
     inputBinding:
       position: 103
       prefix: --ploidy
@@ -134,7 +132,6 @@ inputs:
       - int
     doc: 'Maximum distance between supplementary alignment record and a primary one
       for the tag copying onto the supplementary to be attempted. (default: 100,000)'
-    default: 100000
     inputBinding:
       position: 103
       prefix: --supplementary-distance
@@ -146,7 +143,6 @@ inputs:
       or value omitted: tag same as primary; `independent-or-skip`: treat as independent
       alignment; `independent-or-copy-primary`: treat as independent alignment, but
       if fails, tag same as primary. Default: skip'
-    default: skip
     inputBinding:
       position: 103
       prefix: --tag-supplementary

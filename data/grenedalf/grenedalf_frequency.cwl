@@ -98,7 +98,6 @@ inputs:
       for the masked digits. All positions above that value are masked. The 
       default is 0, meaning that only exactly the positons with value 0 will not
       be masked.
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-mask-samples-fasta-min
@@ -165,7 +164,6 @@ inputs:
       the masked digits. All positions above that value are masked. The default 
       is 0, meaning that only exactly the positons with value 0 will not be 
       masked.
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-mask-total-fasta-min
@@ -229,7 +227,6 @@ inputs:
       the filtered digits. Only positions with that value or lower will be kept.
       The default is 0, meaning that all positions with digits greater than 0 
       will be removed.
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-region-fasta-min
@@ -279,7 +276,6 @@ inputs:
     doc: It is possible to provide multiple of the above region filter options, 
       even of different types. In that case, decide on how to combine the loci 
       of these filters.
-    default: union
     inputBinding:
       position: 101
       prefix: --filter-region-set
@@ -354,7 +350,6 @@ inputs:
       point frequency. This is of course above any typical read depth, but 
       allows for more accurate counts when using for instance 
       haplotype-corrected frequencies such as those from HAF-pipe.
-    default: 1000000.0
     inputBinding:
       position: 101
       prefix: --frequency-table-depth-factor
@@ -476,7 +471,6 @@ inputs:
       - 'null'
       - string
     doc: Separator char between fields of the frequency table input.
-    default: comma
     inputBinding:
       position: 101
       prefix: --frequency-table-separator-char
@@ -518,7 +512,6 @@ inputs:
       their union, input files that do not have data at a particular locus are 
       considered as missing at that locus. Note that we allow to use multiple 
       input files even with different file types.
-    default: union
     inputBinding:
       position: 101
       prefix: --multi-file-locus-set
@@ -529,7 +522,6 @@ inputs:
     doc: Set the text to use in the output for n/a and NaN entries (e.g., 
       resulting from positions with no counts, or windows with no variants). 
       This is useful to match formatting expectations of downstream software.
-    default: nan
     inputBinding:
       position: 101
       prefix: --na-entry
@@ -563,7 +555,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to write files to
-    default: .
     inputBinding:
       position: 101
       prefix: --out-dir
@@ -574,7 +565,6 @@ inputs:
     doc: Minimum phred quality score [0-90] for a base in (m)pileup files to be 
       considered. Bases below this are ignored when computing allele 
       frequencies. Default is 0, meaning no filtering by phred quality score.
-    default: 0
     inputBinding:
       position: 101
       prefix: --pileup-min-base-qual
@@ -601,7 +591,6 @@ inputs:
       identical with an ASCII offset of 64 (we provide different names for 
       completeness). Lastly, "solexa" has an offset of 64, but uses a different 
       equation (not phred score) for the encoding.
-    default: sanger
     inputBinding:
       position: 101
       prefix: --pileup-quality-encoding
@@ -713,7 +702,6 @@ inputs:
     doc: Minimum phred-scaled quality score [0-90] for a base in sam/bam/cram 
       files to be considered. Bases below this are ignored when computing allele
       frequencies. Default is 0, meaning no filtering by base quality.
-    default: 0
     inputBinding:
       position: 101
       prefix: --sam-min-base-qual
@@ -725,7 +713,6 @@ inputs:
       sam/bam/cram files to be considered. Any read that is below the given 
       value of mapping quality will be completely discarded, and its bases not 
       taken into account. Default is 0, meaning no filtering by base quality.
-    default: 0
     inputBinding:
       position: 101
       prefix: --sam-min-map-qual
@@ -777,7 +764,6 @@ inputs:
       - 'null'
       - string
     doc: Separator char between fields of output tabular data.
-    default: comma
     inputBinding:
       position: 101
       prefix: --separator-char
@@ -802,7 +788,6 @@ inputs:
       (1) `OMP_NUM_THREADS` (OpenMP) and (2) `SLURM_CPUS_PER_TASK` (slurm), as 
       well as (3) the hardware concurrency (number of CPU cores), taking 
       hyperthreads into account, in the given order of precedence.
-    default: 14
     inputBinding:
       position: 101
       prefix: --threads

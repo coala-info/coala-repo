@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the numbers of rows of each table per page. Default is 100
-    default: 100
     inputBinding:
       position: 102
       prefix: --rows-per-page
@@ -46,7 +45,6 @@ inputs:
       - string
     doc: Change the separator of the csv file to tab or anything else. Default 
       is ","
-    default: ','
     inputBinding:
       position: 102
       prefix: --separator
@@ -63,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: Order the data ascending or descending. Default is descending
-    default: descending
     inputBinding:
       position: 102
       prefix: --sort-order

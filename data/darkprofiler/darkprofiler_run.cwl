@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Hamming distance allowed for peptide search (0=exact, 1, or 2).
-    default: 0
     inputBinding:
       position: 104
       prefix: --hamming

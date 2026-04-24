@@ -27,7 +27,6 @@ inputs:
     type: int?
     doc: number of threads to use for computational processes
     label: number of threads
-    default: 2
 
   destination:
     type: string?
@@ -65,9 +64,7 @@ steps:
       input: prodigal/output
       threads: threads
       profile:
-        default: "/unlock/references/databases/KEGG/profiles/prokaryote.hal"
       ko-list: 
-        default: "/unlock/references/databases/KEGG/ko_list"
     out: [output]
 ############################
   interproscan:

@@ -33,7 +33,6 @@ inputs:
       random field model. Lower values will result in longer proviruses but will
       increase the probability of host genes being flagged as part of 
       proviruses.
-    default: 0.4
     inputBinding:
       position: 103
       prefix: --crf-threshold
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum accepted E-value in the MMseqs2 integrase search.
-    default: 0.001
     inputBinding:
       position: 103
       prefix: --evalue
@@ -75,7 +73,6 @@ inputs:
       encode integrases or are not located at scaffold edges. Lower values will 
       increase the sensitivity but reduce the precision of the provirus 
       identification procedure.
-    default: 12.0
     inputBinding:
       position: 103
       prefix: --marker-threshold
@@ -85,7 +82,6 @@ inputs:
       - float
     doc: Minimum total virus marker score allowed for proviruses that are 
       located at scaffold edges.
-    default: 8.0
     inputBinding:
       position: 103
       prefix: --marker-threshold-edge
@@ -95,7 +91,6 @@ inputs:
       - float
     doc: Minimum total virus marker score allowed for proviruses that encode 
       integrases.
-    default: 8.0
     inputBinding:
       position: 103
       prefix: --marker-threshold-integrase
@@ -105,7 +100,6 @@ inputs:
       - int
     doc: Maximum allowed distance between provirus boundaries and the integrases
       used for boundary extension.
-    default: 10000
     inputBinding:
       position: 103
       prefix: --max-integrase-distance
@@ -115,7 +109,6 @@ inputs:
       - int
     doc: Maximum allowed distance between provirus boundaries and the tRNAs used
       for boundary extension.
-    default: 5000
     inputBinding:
       position: 103
       prefix: --max-trna-distance
@@ -141,7 +134,6 @@ inputs:
       - float
     doc: MMseqs2 integrase search sensitivity. Higher values will identify more 
       integrases, but the search will be slower and consume more memory.
-    default: 8.2
     inputBinding:
       position: 103
       prefix: --sensitivity
@@ -166,7 +158,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 20
     inputBinding:
       position: 103
       prefix: --threads

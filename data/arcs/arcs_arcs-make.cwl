@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum AS/read length ratio for Tigmint
-    default: 0.65
     inputBinding:
       position: 102
       prefix: as
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Barcode multiplicity range
-    default: 50-10000
     inputBinding:
       position: 102
       prefix: m
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Cut length for long reads (for arcs-long and arks-long only)
-    default: 250
     inputBinding:
       position: 102
       prefix: cut
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Max dist between reads to be considered the same molecule for Tigmint
-    default: 50000
     inputBinding:
       position: 102
       prefix: dist
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use upper bound distance over median distance
-    default: false
     inputBinding:
       position: 102
       prefix: dist_upper
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - File
     doc: Draft name. File must have .fasta or .fa extension
-    default: draft
     inputBinding:
       position: 102
       prefix: draft
@@ -70,7 +64,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable distance estimation
-    default: false
     inputBinding:
       position: 102
       prefix: D
@@ -79,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Fixed gap size for dist.gv file
-    default: 100
     inputBinding:
       position: 102
       prefix: gap
@@ -88,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Estimate distance using N closest Jaccard scores
-    default: 20
     inputBinding:
       position: 102
       prefix: B
@@ -97,7 +88,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum fraction of read kmers matching a contigId (ARKS specific)
-    default: 0.55
     inputBinding:
       position: 102
       prefix: j
@@ -106,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Size of a k-mer (ARKS specific)
-    default: 30
     inputBinding:
       position: 102
       prefix: k
@@ -115,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Mapping quality threshold for Tigmint
-    default: 0
     inputBinding:
       position: 102
       prefix: mapq
@@ -124,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: Contig head/tail length for masking alignments
-    default: 30000
     inputBinding:
       position: 102
       prefix: e
@@ -133,7 +120,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum link ratio between two best contig pairs (LINKS specific)
-    default: 0.3
     inputBinding:
       position: 102
       prefix: a
@@ -142,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: Max node degree in scaffold graph
-    default: 0
     inputBinding:
       position: 102
       prefix: d
@@ -151,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum aligned read pairs per barcode mapping
-    default: 5
     inputBinding:
       position: 102
       prefix: c
@@ -160,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum contig length
-    default: 500
     inputBinding:
       position: 102
       prefix: z
@@ -169,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of links to compute scaffold (LINKS specific)
-    default: 5
     inputBinding:
       position: 102
       prefix: l
@@ -178,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequence identity (ARCS specific)
-    default: 98
     inputBinding:
       position: 102
       prefix: s
@@ -187,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum molecule size for Tigmint
-    default: 2000
     inputBinding:
       position: 102
       prefix: minsize
@@ -196,7 +176,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of mismatches for Tigmint
-    default: 5
     inputBinding:
       position: 102
       prefix: nm
@@ -205,7 +184,6 @@ inputs:
       - 'null'
       - float
     doc: p-value for head/tail assignment and link orientation
-    default: 0.05
     inputBinding:
       position: 102
       prefix: r
@@ -223,7 +201,6 @@ inputs:
       - File
     doc: Read name. File must have .fastq.gz or .fq.gz extension (or .fastq, .fq for
       long modes)
-    default: reads
     inputBinding:
       position: 102
       prefix: reads
@@ -232,7 +209,6 @@ inputs:
       - 'null'
       - int
     doc: Min number of spanning molecules to be considered assembled for Tigmint
-    default: 20
     inputBinding:
       position: 102
       prefix: span
@@ -241,7 +217,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads used for BWA or ARKS
-    default: 8
     inputBinding:
       position: 102
       prefix: t
@@ -258,7 +233,6 @@ inputs:
       - 'null'
       - int
     doc: bp of contigs to trim after cutting at error for Tigmint
-    default: 0
     inputBinding:
       position: 102
       prefix: trim
@@ -267,7 +241,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for checking spanning molecules for Tigmint
-    default: 1000
     inputBinding:
       position: 102
       prefix: window

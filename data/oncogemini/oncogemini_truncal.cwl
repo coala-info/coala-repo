@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: A list of columns that you would like returned
-    default: '*'
     inputBinding:
       position: 102
       prefix: --columns
@@ -43,7 +42,6 @@ inputs:
       - float
     doc: 'Optional: add amount to increase truncal AF filter between normal and tumor
       samples'
-    default: 0
     inputBinding:
       position: 102
       prefix: --increase
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: 'Optional: specify a maximum normal sample AF to allow'
-    default: 0
     inputBinding:
       position: 102
       prefix: --maxNorm
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth required in all samples
-    default: 0
     inputBinding:
       position: 102
       prefix: --minDP
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum genotype quality required in all samples
-    default: 0
     inputBinding:
       position: 102
       prefix: --minGQ
@@ -98,7 +93,6 @@ inputs:
       - string
     doc: 'Optional: rather than including all samples, a string of comma-separated
       specified samples to use'
-    default: All
     inputBinding:
       position: 102
       prefix: --samples

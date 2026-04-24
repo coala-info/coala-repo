@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -26,7 +25,6 @@ inputs:
       - int
     doc: Size flanking size to include on either side of invertable regions (in 
       bps)
-    default: 1000
     inputBinding:
       position: 101
       prefix: --flankSize
@@ -36,7 +34,6 @@ inputs:
       - boolean
     doc: Should the logging info be output to stdout? Otherwise, it will be 
       written to 'PhaVa.log'
-    default: false
     inputBinding:
       position: 101
       prefix: --log
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: Percent identity for the clustering
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --pident

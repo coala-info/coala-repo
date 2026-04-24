@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: Build the container images resolved by the inspect command
-    default: false
     inputBinding:
       position: 102
       prefix: -concretize
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: Inspect output format. Can be 'json' or 'config'
-    default: json
     inputBinding:
       position: 102
       prefix: -format
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ignore errors while inspecting the pipeline
-    default: false
     inputBinding:
       position: 102
       prefix: -ignore-errors

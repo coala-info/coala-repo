@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: kernel smooth band width, should >1
-    default: 200
     inputBinding:
       position: 101
       prefix: --bandwidth
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of hot spots
-    default: 5
     inputBinding:
       position: 101
       prefix: --minlength
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: whether out put bigwig file
-    default: false
     inputBinding:
       position: 101
       prefix: --bigwig
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: NH sample name
-    default: NH_sample
     inputBinding:
       position: 101
       prefix: --name
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: threads number or cpu number
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - float
     doc: Hot spots threshold
-    default: 4.0
     inputBinding:
       position: 101
       prefix: --threshold

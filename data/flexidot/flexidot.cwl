@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output file format: png, pdf, svg'
-    default: png
     inputBinding:
       position: 101
       prefix: --filetype
@@ -70,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Font size
-    default: 10
     inputBinding:
       position: 101
       prefix: --label_size
@@ -87,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Length of intervals for LCS shading (only if --lcs_shading_ref=2)
-    default: 50
     inputBinding:
       position: 101
       prefix: --lcs_shading_interval_len
@@ -96,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Number of shading intervals.
-    default: 5
     inputBinding:
       position: 101
       prefix: --lcs_shading_num
@@ -106,7 +102,6 @@ inputs:
       - int
     doc: Shade subdotplots based on LCS 0 = forward [default] 1 = reverse, or 2 =
       both strands
-    default: 0
     inputBinding:
       position: 101
       prefix: --lcs_shading_ori
@@ -116,7 +111,6 @@ inputs:
       - int
     doc: Reference for LCS shading. 0 = maximal LCS length [default] 1 = maximally
       possible length 2 = given interval sizes
-    default: 0
     inputBinding:
       position: 101
       prefix: --lcs_shading_ref
@@ -133,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: Line color
-    default: black
     inputBinding:
       position: 101
       prefix: --line_col_for
@@ -142,7 +135,6 @@ inputs:
       - 'null'
       - string
     doc: Reverse line color
-    default: green
     inputBinding:
       position: 101
       prefix: --line_col_rev
@@ -151,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: Line width
-    default: 1
     inputBinding:
       position: 101
       prefix: --line_width
@@ -160,7 +151,6 @@ inputs:
       - 'null'
       - string
     doc: "Set logging level. Default: 'INFO'"
-    default: INFO
     inputBinding:
       position: 101
       prefix: --loglevel
@@ -170,7 +160,6 @@ inputs:
       - int
     doc: Maximum percentage of Ns allowed in a kmer window. Applies only if --wobble_conversion
       is set, else kmers with Ns are skipped.
-    default: 10
     inputBinding:
       position: 101
       prefix: --max_n
@@ -179,7 +168,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percent identity for filtering alignments (0-100).
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min_identity
@@ -188,7 +176,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment length for filtering.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_length
@@ -214,7 +201,6 @@ inputs:
       - 'null'
       - int
     doc: Number of columns per page (if collage is ON.
-    default: 4
     inputBinding:
       position: 101
       prefix: --n_col
@@ -223,7 +209,6 @@ inputs:
       - 'null'
       - int
     doc: Number of rows per page (if collage is ON).
-    default: 5
     inputBinding:
       position: 101
       prefix: --n_row
@@ -248,7 +233,6 @@ inputs:
       - 'null'
       - int
     doc: Plot size
-    default: 10
     inputBinding:
       position: 101
       prefix: --plot_size
@@ -258,7 +242,6 @@ inputs:
       - int
     doc: 'Region of plot to display. Only if plotting mode is 2: polyplot 0 = full
       [default] 1 = upper 2 = lower'
-    default: 0
     inputBinding:
       position: 101
       prefix: --representation
@@ -275,7 +258,6 @@ inputs:
       - 'null'
       - float
     doc: Spacing between dotplots (if plotting mode=2 polyplot).
-    default: 0.04
     inputBinding:
       position: 101
       prefix: --spacing
@@ -284,7 +266,6 @@ inputs:
       - 'null'
       - int
     doc: Number of substitutions allowed per window.
-    default: 0
     inputBinding:
       position: 101
       prefix: --substitution_count
@@ -293,7 +274,6 @@ inputs:
       - 'null'
       - int
     doc: 'Limit title length for comparisons. Default: 50 characters'
-    default: 50
     inputBinding:
       position: 101
       prefix: --title_length
@@ -302,7 +282,6 @@ inputs:
       - 'null'
       - string
     doc: 'Biological sequence type: aa (amino acid) or nuc (nucleotide).'
-    default: nuc
     inputBinding:
       position: 101
       prefix: --type_seq
@@ -336,7 +315,6 @@ inputs:
       - 'null'
       - int
     doc: Wordsize (kmer length) for dotplot comparison.
-    default: 10
     inputBinding:
       position: 101
       prefix: --wordsize
@@ -345,7 +323,6 @@ inputs:
       - 'null'
       - string
     doc: "Position of the X-label. Default: 'top'"
-    default: top
     inputBinding:
       position: 101
       prefix: --x_label_pos

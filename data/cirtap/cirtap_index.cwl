@@ -21,7 +21,6 @@ inputs:
       - int
     doc: "Number of parallel reads to execute. Speeds things up\n                \
       \      when iterating over all the data dirs"
-    default: 1
     inputBinding:
       position: 102
       prefix: --jobs
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Define loglevel
-    default: INFO
     inputBinding:
       position: 102
       prefix: --loglevel

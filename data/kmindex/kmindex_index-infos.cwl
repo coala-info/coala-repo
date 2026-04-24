@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Verbosity level [debug|info|warning|error].
-    default: info
     inputBinding:
       position: 101
       prefix: --verbose

@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: gap extend penalty (positive)
-    default: 2
     inputBinding:
       position: 103
       prefix: --gap-extend
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: gap opening penalty (positive)
-    default: 5
     inputBinding:
       position: 103
       prefix: --gap-open
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: match score
-    default: 2
     inputBinding:
       position: 103
       prefix: --match-score
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: alignment score cutoff
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-alignment-score
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: mismatch penalty (positive)
-    default: 3
     inputBinding:
       position: 103
       prefix: --mismatch-penalty
@@ -89,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Number of alignments to report in SAM file
-    default: 10
     inputBinding:
       position: 103
       prefix: --num-alignments
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads from R1/R2 File to align
-    default: 4294967295
     inputBinding:
       position: 103
       prefix: --num-reads
@@ -108,7 +101,6 @@ inputs:
       - int
     doc: Reduce RAM usage by only analysing "arg" reads at once, this will 
       increase execution time
-    default: 10000000
     inputBinding:
       position: 103
       prefix: --num-reads-at-once
@@ -126,7 +118,6 @@ inputs:
       - 'null'
       - float
     doc: screen alignments with scores < this*top score
-    default: 0.95
     inputBinding:
       position: 103
       prefix: --score-fraction-threshold

@@ -62,7 +62,6 @@ inputs:
       - 'null'
       - float
     doc: if L <= x*alen, tag sequence as a fragment
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --fragthresh
@@ -103,7 +102,6 @@ inputs:
       - 'null'
       - string
     doc: output alignment in format <s>
-    default: Stockholm
     inputBinding:
       position: 102
       prefix: --outformat
@@ -120,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: 'set RNG seed to <n> (if 0: one-time arbitrary seed)'
-    default: 42
     inputBinding:
       position: 102
       prefix: --seed
@@ -129,7 +126,6 @@ inputs:
       - 'null'
       - float
     doc: sets sym fraction controlling --fast construction
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --symfrac
@@ -162,7 +158,6 @@ inputs:
       - 'null'
       - float
     doc: 'for --wblosum: set identity cutoff (0<=x<=1)'
-    default: 0.62
     inputBinding:
       position: 102
       prefix: --wid

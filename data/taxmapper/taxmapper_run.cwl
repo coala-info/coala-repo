@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: Reads also contain reverse read
-    default: true
     inputBinding:
       position: 101
       prefix: --reverse
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Suffix of paired end reads
-    default: _R1,_R2
     inputBinding:
       position: 101
       prefix: --suffix
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

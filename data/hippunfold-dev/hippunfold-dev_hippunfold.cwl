@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Select the atlas (unfolded space) to use for subfield labels.
-    default: multihist7
     inputBinding:
       position: 104
       prefix: --atlas
@@ -37,7 +36,6 @@ inputs:
       - type: array
         items: string
     doc: Run hipp (CA + subiculum) alone or include dentate
-    default:
       - hipp
       - dentate
     inputBinding:
@@ -50,7 +48,6 @@ inputs:
     doc: Sets the bounding box size for the crop native (e.g. cropT1w space). 
       Make this larger if your hippocampi in crop{T1w,T2w} space are getting 
       cut-off. This must be in voxels (vox) not millimeters (mm).
-    default: 256x256x256vox
     inputBinding:
       position: 104
       prefix: --crop-native-box
@@ -61,7 +58,6 @@ inputs:
     doc: Sets the bounding box resolution for the crop native (e.g. cropT1w 
       space). Under the hood, hippUnfold operates at higher resolution than the 
       native image, so this tries to preserve some of that detail.
-    default: 0.2x0.2x0.2mm
     inputBinding:
       position: 104
       prefix: --crop-native-res
@@ -148,7 +144,6 @@ inputs:
       - 'null'
       - string
     doc: Force nnunet model to use (expert option).
-    default: false
     inputBinding:
       position: 104
       prefix: --force-nnunet-model
@@ -166,7 +161,6 @@ inputs:
       - boolean
     doc: Generate myelin map using T1w divided by T2w, and map to surface with 
       ribbon approach. Requires both T1w and T2w images to be present.
-    default: false
     inputBinding:
       position: 104
       prefix: --generate-myelin-map
@@ -185,7 +179,6 @@ inputs:
       - type: array
         items: string
     doc: Hemisphere(s) to process
-    default:
       - L
       - R
     inputBinding:
@@ -196,7 +189,6 @@ inputs:
       - 'null'
       - string
     doc: Set the template to use for shape injection.
-    default: upenn
     inputBinding:
       position: 104
       prefix: --inject-template
@@ -209,7 +201,6 @@ inputs:
       greater capacity to patch larger holes in segmentations. Try setting to 2 if
       nnunet segmentations have large holes. Note: the better solution is to re-train
       network on the data you are using'
-    default: 1.0
     inputBinding:
       position: 104
       prefix: --inject-template-smoothing-factor
@@ -219,7 +210,6 @@ inputs:
       - string
     doc: Method to use for laminar coordinates. Equivol and equidist are from 
       the laynii LN2_LAYERS tool.
-    default: equidist
     inputBinding:
       position: 104
       prefix: --laminar-coords-method
@@ -230,7 +220,6 @@ inputs:
     doc: Set the resolution that the laminar (IO) coords will be computed with 
       for the dentate gyrus. This is implemented by resampling the segmentation 
       to this resolution prior to generating the coords.
-    default: 0.1x0.1x0.1mm
     inputBinding:
       position: 104
       prefix: --laminar-coords-res-dentate
@@ -241,7 +230,6 @@ inputs:
     doc: Set the resolution that the laminar (IO) coords will be computed with 
       for hippocampus. This is implemented by resampling the segmentation to 
       this resolution prior to generating the coords.
-    default: 0.3x0.3x0.3mm
     inputBinding:
       position: 104
       prefix: --laminar-coords-res-hipp
@@ -260,7 +248,6 @@ inputs:
       - boolean
     doc: Enable test-time augmentation for nn-net inference, slows down 
       inference by 8x, but potentially increases accuracy
-    default: false
     inputBinding:
       position: 104
       prefix: --nnunet-enable-tta
@@ -269,7 +256,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use if input data is already in space-CITI168
-    default: false
     inputBinding:
       position: 104
       prefix: --no-reg-template
@@ -280,7 +266,6 @@ inputs:
     doc: Do not perform unfolded space (2D) registration based on surface 
       metrics (e.g. thickness, curvature, and gyrification) for closer alignment
       to the reference atlas.
-    default: false
     inputBinding:
       position: 104
       prefix: --no-unfolded-reg
@@ -293,7 +278,6 @@ inputs:
       approximate vertex spacings of 0.5mm, 1.0mm, and 2.0mm, respectively, with
       the unfoldiso (32k hipp) vertices legacy option having unequal vertex 
       spacing.
-    default:
       - 0p5mm
     inputBinding:
       position: 104
@@ -304,7 +288,6 @@ inputs:
       - type: array
         items: string
     doc: Sets output spaces for results
-    default:
       - native
     inputBinding:
       position: 104
@@ -403,7 +386,6 @@ inputs:
       - boolean
     doc: Use rigid instead of affine for registration to template. Try this if 
       your images are reduced FOV
-    default: false
     inputBinding:
       position: 104
       prefix: --rigid-reg-template
@@ -413,7 +395,6 @@ inputs:
       - boolean
     doc: Set this flag if your inputs (e.g. T2w, dwi) are already registered to 
       T1w space
-    default: false
     inputBinding:
       position: 104
       prefix: --skip-coreg
@@ -423,7 +404,6 @@ inputs:
       - boolean
     doc: Set this flag to skip post-processing template injection into CNN 
       segmentation. Note this will disable generation of DG surfaces.
-    default: false
     inputBinding:
       position: 104
       prefix: --skip-inject-template-labels
@@ -432,7 +412,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set this flag if your inputs (e.g. T2w, dwi) are already pre-processed
-    default: false
     inputBinding:
       position: 104
       prefix: --skip-preproc
@@ -442,7 +421,6 @@ inputs:
       - boolean
     doc: 'Use T1w to register to template space, instead of the segmentation modality.
       Note: this was the default behavior prior to v1.0.0.'
-    default: false
     inputBinding:
       position: 104
       prefix: --t1-reg-template
@@ -456,7 +434,6 @@ inputs:
       data, MBMv2 is for ex vivo marmoset data, MBMv3 is for in vivo marmoset 
       data, CIVM is for in vivo macaque data, and ABAv3 is for mouse data. When 
       using a non-human template, consider using a corresponding atlas.
-    default: CITI168
     inputBinding:
       position: 104
       prefix: --template
@@ -467,7 +444,6 @@ inputs:
     doc: Scales the default smoothing sigma for gradient and warp in greedy 
       registration for template-based segmentation. Using a value higher than 1 
       will use result in a smoother warp.
-    default: 2.0
     inputBinding:
       position: 104
       prefix: --template-seg-smoothing-factor
@@ -477,7 +453,6 @@ inputs:
       - boolean
     doc: Enable gpu for inference by setting resource gpus=1 in run_inference 
       rule
-    default: false
     inputBinding:
       position: 104
       prefix: --use-gpu
@@ -490,7 +465,6 @@ inputs:
       not trained for the data you are using, e.g. for non-human primate data 
       with the MBMv2 (ex vivo marmoset), MBMv3 (in vivo marmoset), or CIVM (ex 
       vivo macaque) template.
-    default: false
     inputBinding:
       position: 104
       prefix: --use-template-seg

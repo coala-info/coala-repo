@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: 'Format of the output file: narrowPeak, broadPeak, bed.'
-    default: narrowPeak
     inputBinding:
       position: 101
       prefix: --output-file-type
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: 'Which method to use for merging peaks: sum, avg, min, max.'
-    default: sum
     inputBinding:
       position: 101
       prefix: --peak-merge-method
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: 'The column to use for ranking peaks: p.value, q.value, signal.value, score.'
-    default: p.value
     inputBinding:
       position: 101
       prefix: --peak-value-control
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: The random seed to use.
-    default: 0
     inputBinding:
       position: 101
       prefix: --random-seed

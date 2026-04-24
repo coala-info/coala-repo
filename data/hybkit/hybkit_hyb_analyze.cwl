@@ -40,7 +40,6 @@ inputs:
       reading and writing hyb records. As the preferred alternative to using 
       this setting, the --custom_flags argument can be be used to supply custom 
       allowed flags.
-    default: false
     inputBinding:
       position: 104
       prefix: --allow_undefined_flags
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow unknown segment types when assigning segment types.
-    default: false
     inputBinding:
       position: 104
       prefix: --allow_unknown_seg_types
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: For DynamicFoldRecords, allowed number of mismatches with a HybRecord.
-    default: 0
     inputBinding:
       position: 104
       prefix: --allowed_mismatches
@@ -76,7 +73,6 @@ inputs:
       - type: array
         items: string
     doc: Analysis to perform on input hyb and fold files.
-    default:
       - fold
     inputBinding:
       position: 104
@@ -88,7 +84,6 @@ inputs:
         items: string
     doc: Custom flags to allow in addition to those specified in the hybkit 
       specification.
-    default: []
     inputBinding:
       position: 104
       prefix: --custom_flags
@@ -104,7 +99,6 @@ inputs:
       between hybrecord and foldrecord sequences is greater than FoldRecord "allowed_mismatches"
       setting; "energy_mismatch": Error when a mismatch exists between HybRecord and
       FoldRecord energy values.'
-    default:
       - hybrecord_indel
       - foldrecord_nofold
       - max_mismatch
@@ -120,7 +114,6 @@ inputs:
       when using HybFoldIter). Options: \"raise\": Raise an error when encountered
       and exit program ; \"warn_return\": Print a warning and return the error_value
       ; \"return\": Return the error value with no program output. record is encountered."
-    default: raise
     inputBinding:
       position: 104
       prefix: --error_mode
@@ -130,7 +123,6 @@ inputs:
       - string
     doc: Placeholder character/string for missing data for reading/writing fold 
       records.
-    default: .
     inputBinding:
       position: 104
       prefix: --fold_placeholder
@@ -139,7 +131,6 @@ inputs:
       - 'null'
       - string
     doc: placeholder character/string for missing data in hyb files.
-    default: .
     inputBinding:
       position: 104
       prefix: --hyb_placeholder
@@ -150,7 +141,6 @@ inputs:
     doc: 'The Hyb Software Package places further information in the "id" field of
       the hybrid record that can be used to infer the number of contained read counts.
       When set to True, the identifiers will be parsed as: "<read_id>_<read_count>"'
-    default: false
     inputBinding:
       position: 104
       prefix: --hybformat_id
@@ -161,7 +151,6 @@ inputs:
     doc: 'The Hyb Software Package uses a reference database with identifiers that
       contain sequence type and other sequence information. When set to True, all
       hyb file identifiers will be parsed as: "<gene_id>_<transcript_id>_<gene_name>_<seg_type>"'
-    default: false
     inputBinding:
       position: 104
       prefix: --hybformat_ref
@@ -175,7 +164,6 @@ inputs:
       Print a warning and continue to the next iteration; "skip": Continue to the
       next iteration without any output; "return": return the value without any error
       output;'
-    default: warn_skip
     inputBinding:
       position: 104
       prefix: --iter_error_mode
@@ -184,7 +172,6 @@ inputs:
       - 'null'
       - boolean
     doc: Create plots of analysis output.
-    default: true
     inputBinding:
       position: 104
       prefix: --make_plots
@@ -195,7 +182,6 @@ inputs:
     doc: Maximum number of record(-pairs) to skip in a row. Limited as several 
       sequential skips usually indicates an issue with record formatting or a 
       desynchronization between files.
-    default: 100
     inputBinding:
       position: 104
       prefix: --max_sequential_skips
@@ -205,7 +191,6 @@ inputs:
       - type: array
         items: string
     doc: '"seg_type" fields identifying a miRNA'
-    default:
       - miRNA
       - microRNA
     inputBinding:
@@ -216,7 +201,6 @@ inputs:
       - 'null'
       - string
     doc: Delimiter-string to place between fields in analysis output.
-    default: ','
     inputBinding:
       position: 104
       prefix: --out_delim
@@ -226,7 +210,6 @@ inputs:
       - Directory
     doc: Path to directory for output of files. Defaults to the current working 
       directory.
-    default: $PWD
     inputBinding:
       position: 104
       prefix: --out_dir
@@ -248,7 +231,6 @@ inputs:
       entry; "reads": Use the number of reads per hyb record as the count (may contain
       PCR duplicates); "records": Count the number of records represented by each
       hyb record entry (1 for "unmerged" records, >= 1 for "merged" records)'
-    default: single
     inputBinding:
       position: 104
       prefix: --quant_mode
@@ -258,7 +240,6 @@ inputs:
       - boolean
     doc: Re-order flags to the hybkit-specification order when writing hyb 
       records.
-    default: true
     inputBinding:
       position: 104
       prefix: --reorder_flags
@@ -270,7 +251,6 @@ inputs:
       an exact sequence match to be paired with a HybRecord; "dynamic": DynamicFoldRecord,
       requires a sequence match to the "dynamic" annotated regions of a HybRecord,
       and may be shorter/longer than the original sequence.'
-    default: static
     inputBinding:
       position: 104
       prefix: --seq_type
@@ -279,7 +259,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print no output during run.
-    default: false
     inputBinding:
       position: 104
       prefix: --silent
@@ -288,7 +267,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print verbose output during run.
-    default: false
     inputBinding:
       position: 104
       prefix: --verbose

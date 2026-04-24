@@ -38,7 +38,6 @@ inputs:
     doc: 'specify a combination of two + or x symbols to indicate whether to clip
       low-quality bases from the front and back of reads respectively; default: clip
       from front and back (-C ++)'
-    default: ++
     inputBinding:
       position: 104
       prefix: -C
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: confidence adaptation threshold
-    default: 7
     inputBinding:
       position: 104
       prefix: --confadapt
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: confidence threshold
-    default: 2
     inputBinding:
       position: 104
       prefix: --confdiff
@@ -120,7 +117,6 @@ inputs:
       - int
     doc: factor (between 1 and 1000) to set the size of the index build overflow
       space
-    default: 40
     inputBinding:
       position: 104
       prefix: --idx-overflow
@@ -129,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: Seed size used in building the index
-    default: 20
     inputBinding:
       position: 104
       prefix: --idx-seedsize
@@ -138,7 +133,6 @@ inputs:
       - 'null'
       - float
     doc: Hash table slack for indexing
-    default: 0.3
     inputBinding:
       position: 104
       prefix: --idx-slack
@@ -155,7 +149,6 @@ inputs:
       - 'null'
       - string
     doc: input file format; must be fastq, gz, sam or bam
-    default: bam
     inputBinding:
       position: 104
       prefix: --iformat
@@ -164,7 +157,6 @@ inputs:
       - 'null'
       - int
     doc: maximum edit distance allowed per read or pair
-    default: 8
     inputBinding:
       position: 104
       prefix: --maxdist
@@ -173,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: maximum hits to consider per seed
-    default: 250
     inputBinding:
       position: 104
       prefix: --maxhits
@@ -182,7 +173,6 @@ inputs:
       - 'null'
       - int
     doc: number of seeds to use per read
-    default: 25
     inputBinding:
       position: 104
       prefix: --maxseeds
@@ -228,7 +218,6 @@ inputs:
       - 'null'
       - string
     doc: 'output file format (sam or bam; default: bam)'
-    default: bam
     inputBinding:
       position: 104
       prefix: --oformat
@@ -263,7 +252,6 @@ inputs:
       - type: array
         items: int
     doc: min and max spacing to allow between paired ends
-    default:
       - 100
       - 10000
     inputBinding:

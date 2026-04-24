@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Data layer for gene expression (e.g., "count", "counts", "log1p").
-    default: counts
     inputBinding:
       position: 102
       prefix: --data_layer
@@ -28,7 +27,6 @@ inputs:
         items: File
     doc: List of h5ad file paths corresponding to the sample names. Provide as a
       space-separated list.
-    default: None
     inputBinding:
       position: 102
       prefix: --h5ad_list
@@ -38,7 +36,6 @@ inputs:
       - File
     doc: Path to the YAML file containing sample names and associated h5ad file 
       paths
-    default: None
     inputBinding:
       position: 102
       prefix: --h5ad_yaml
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - File
     doc: Path to homologous gene conversion file (optional).
-    default: None
     inputBinding:
       position: 102
       prefix: --homolog_file

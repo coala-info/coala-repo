@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: Execute the workflow using DSL1 syntax
-    default: false
     inputBinding:
       position: 102
   - id: dsl2
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: Execute the workflow using DSL2 syntax
-    default: false
     inputBinding:
       position: 102
   - id: dump_channels
@@ -65,7 +63,6 @@ inputs:
       - 'null'
       - boolean
     doc: Dump task hash keys for debugging purpose
-    default: false
     inputBinding:
       position: 102
   - id: entry
@@ -80,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: Add the specified variable to execution environment
-    default: '{}'
     inputBinding:
       position: 102
       prefix: -e.
@@ -89,7 +85,6 @@ inputs:
       - 'null'
       - boolean
     doc: Exports all current system environment
-    default: false
     inputBinding:
       position: 102
       prefix: -E
@@ -105,7 +100,6 @@ inputs:
       - 'null'
       - boolean
     doc: Pull latest changes before run
-    default: false
     inputBinding:
       position: 102
   - id: lib
@@ -135,7 +129,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not check for remote project updates
-    default: false
     inputBinding:
       position: 102
   - id: params_file
@@ -158,7 +151,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run the workflow script skipping the execution of all processes
-    default: false
     inputBinding:
       position: 102
   - id: process_options
@@ -166,7 +158,6 @@ inputs:
       - 'null'
       - string
     doc: Set process options
-    default: '{}'
     inputBinding:
       position: 102
       prefix: -process.
@@ -208,7 +199,6 @@ inputs:
       - 'null'
       - boolean
     doc: Execute the workflow replacing process scripts with command stubs
-    default: false
     inputBinding:
       position: 102
       prefix: -stub
@@ -326,7 +316,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable process execution with Docker
-    default: false
     inputBinding:
       position: 102
   - id: without_podman

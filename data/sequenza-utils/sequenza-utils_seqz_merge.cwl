@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for merging.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

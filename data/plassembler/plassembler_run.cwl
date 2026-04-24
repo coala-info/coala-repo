@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Approximate lower-bound chromosome length of bacteria (in base pairs).
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --chromosome
@@ -95,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: minimum length for filtering long reads with chopper.
-    default: '500'
     inputBinding:
       position: 101
       prefix: --min_length
@@ -104,7 +102,6 @@ inputs:
       - 'null'
       - string
     doc: minimum quality q-score for filtering long reads with chopper.
-    default: '9'
     inputBinding:
       position: 101
       prefix: --min_quality
@@ -134,7 +131,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output files. This is not required.
-    default: plassembler
     inputBinding:
       position: 101
       prefix: --prefix
@@ -189,7 +185,6 @@ inputs:
       - 'null'
       - string
     doc: Number of threads.
-    default: '1'
     inputBinding:
       position: 101
       prefix: --threads

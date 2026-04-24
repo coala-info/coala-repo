@@ -17,7 +17,6 @@ inputs:
       - int
     doc: Process alignments in parallel using --cores for alignment. This is the
       number of PHYSICAL CPUs.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: The input alignment format.
-    default: fasta
     inputBinding:
       position: 101
       prefix: --input-format
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - Directory
     doc: The path to a directory to hold logs.
-    default: None
     inputBinding:
       position: 101
       prefix: --log-path
@@ -45,7 +42,6 @@ inputs:
       - float
     doc: The max proportion of sequence divergence allowed between any row of 
       the alignment and the alignment consensus.
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --max_divergence
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum length of alignments to keep.
-    default: 100
     inputBinding:
       position: 101
       prefix: --min-length
@@ -63,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: The output alignment format.
-    default: nexus
     inputBinding:
       position: 101
       prefix: --output-format
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: The proportion of taxa required to have sequence at alignment ends.
-    default: 0.65
     inputBinding:
       position: 101
       prefix: --proportion
@@ -82,7 +75,6 @@ inputs:
       - float
     doc: The proportion of residues required across the window in proportion of 
       taxa.
-    default: 0.65
     inputBinding:
       position: 101
       prefix: --threshold
@@ -91,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: The logging level to use.
-    default: INFO
     inputBinding:
       position: 101
       prefix: --verbosity
@@ -100,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Sliding window size for trimming.
-    default: 20
     inputBinding:
       position: 101
       prefix: --window

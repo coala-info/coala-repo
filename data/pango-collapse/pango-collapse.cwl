@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Column to use for the collapsed output.
-    default: Lineage_family
     inputBinding:
       position: 102
       prefix: --collapse-column
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Column to use for the expanded output.
-    default: Lineage_expanded
     inputBinding:
       position: 102
       prefix: --expand-column
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Column to use for the uncompressed output.
-    default: Lineage_full
     inputBinding:
       position: 102
       prefix: --full-column
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: Column to extract from input file for lineage.
-    default: Lineage
     inputBinding:
       position: 102
       prefix: --lineage-column

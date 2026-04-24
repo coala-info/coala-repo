@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: output if score at least FLOAT*bestScore
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --outs

@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Number of MCMC burn-in iterations
-    default: 50000
     inputBinding:
       position: 101
       prefix: --burnin
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU cores to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: ELOD frequency threshold
-    default: '1.0e-04'
     inputBinding:
       position: 101
       prefix: --frequency
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Number of MCMC iterations
-    default: 50000
     inputBinding:
       position: 101
       prefix: --iterations
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Number of LOD scores to calculate
-    default: 5
     inputBinding:
       position: 101
       prefix: --lodscores
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - float
     doc: L-sampler probability
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --lsamplerprobability
@@ -114,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations for Peel sequence
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --peelseqiter
@@ -124,7 +117,6 @@ inputs:
       - type: array
         items: float
     doc: ELOD penetrance values (three floats)
-    default:
       - 0.0
       - 0.0
       - 1.0
@@ -144,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: Number of ELOD replicates
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --replicates
@@ -153,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: Number of MCMC runs
-    default: 1
     inputBinding:
       position: 101
       prefix: --runs
@@ -162,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: Scoring period for MCMC
-    default: 10
     inputBinding:
       position: 101
       prefix: --scoringperiod
@@ -171,7 +160,6 @@ inputs:
       - 'null'
       - float
     doc: ELOD separation threshold
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --separation
@@ -180,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: Sequential imputation interval
-    default: 1000
     inputBinding:
       position: 101
       prefix: --sequentialimputation
@@ -205,7 +192,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for MCMC trace files
-    default: trace
     inputBinding:
       position: 101
       prefix: --traceprefix

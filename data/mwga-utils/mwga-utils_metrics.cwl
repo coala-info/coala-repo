@@ -15,7 +15,6 @@ inputs:
       - int
     doc: Manually specify the number of assemblies in the alignment; if not, it 
       is computed from the MAF
-    default: 0
     inputBinding:
       position: 102
       prefix: -n
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output wig files
-    default: no prefix
     inputBinding:
       position: 102
       prefix: -p
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: -t

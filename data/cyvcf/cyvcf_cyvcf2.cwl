@@ -144,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for reading/writing
-    default: 0
     inputBinding:
       position: 102
       prefix: --threads

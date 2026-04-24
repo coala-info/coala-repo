@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Batch size to use when converting .[m]cool to .hic.
-    default: 10000000
     inputBinding:
       position: 102
       prefix: --chunk-size
@@ -24,7 +23,6 @@ inputs:
       - int
     doc: Compression level used to compress interactions. Defaults to 6 and 10 
       for .cool and .hic files, respectively.
-    default: 6
     inputBinding:
       position: 102
       prefix: --compression-lvl
@@ -34,7 +32,6 @@ inputs:
       - string
     doc: 'Specify the strategy used to infer count types when converting .hic files
       to .[m]cool format. Can be one of: int, float, or auto.'
-    default: auto
     inputBinding:
       position: 102
       prefix: --count-type
@@ -80,7 +77,6 @@ inputs:
     doc: Name of one or more normalization methods to be copied. By default, 
       vectors for all known normalization methods are copied. Pass NONE to avoid
       copying the normalization vectors.
-    default: ALL
     inputBinding:
       position: 102
       prefix: --normalization-methods
@@ -90,7 +86,6 @@ inputs:
       - string
     doc: Output format (by default this is inferred from the output file 
       extension).
-    default: auto
     inputBinding:
       position: 102
       prefix: --output-fmt
@@ -119,7 +114,6 @@ inputs:
       - int
     doc: Maximum number of parallel threads to spawn. When converting from hic 
       to cool, only two threads will be used.
-    default: 2
     inputBinding:
       position: 102
       prefix: --threads
@@ -136,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: Set verbosity of output to the console.
-    default: 3
     inputBinding:
       position: 102
       prefix: --verbosity

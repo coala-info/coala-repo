@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Max intron length for GMAP (bp)
-    default: 100000
     inputBinding:
       position: 101
       prefix: --gmap_max_intron
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: Min alignment coverage for GMAP [0-1]
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --gmap_min_cov
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - float
     doc: Min identity for GMAP [0-1]
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --gmap_min_idt
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: Option for GMAP (quoted string)
-    default: -n 1 --no-chimeras
     inputBinding:
       position: 101
       prefix: --gmap_option
@@ -56,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: Max memory for RNA-Bloom (java -Xmx)
-    default: 400g
     inputBinding:
       position: 101
       prefix: --max_mem
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: Option for RNA-Bloom (quoted string)
-    default: ''
     inputBinding:
       position: 101
       prefix: --rnabloom_option
@@ -82,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -91,7 +84,6 @@ inputs:
       - 'null'
       - Directory
     doc: Working directory containing intermediate and log files
-    default: isorefiner_rnabloom_work
     inputBinding:
       position: 101
       prefix: --work_dir

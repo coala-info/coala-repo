@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - boolean
     doc: disable automatic index download (offline mode)
-    default: false
     inputBinding:
       position: 101
       prefix: --airplane
@@ -23,7 +22,6 @@ inputs:
     doc: alignment algorithm. Defaults to minimap2 (long read) given fastq1 only
       or bowtie2 (short read) given fastq1 and fastq2. Override with bowtie2 for
       single/unpaired short reads
-    default: auto
     inputBinding:
       position: 101
       prefix: --aligner
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - boolean
     doc: use Casava 1.8+ read header format
-    default: false
     inputBinding:
       position: 101
       prefix: --casava
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - boolean
     doc: show debug messages
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - boolean
     doc: overwrite existing output files
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -82,7 +77,6 @@ inputs:
       - string
     doc: name of standard index or path to custom genome (Minimap2) or Bowtie2 
       index
-    default: human-t2t-hla
     inputBinding:
       position: 101
       prefix: --index
@@ -91,7 +85,6 @@ inputs:
       - 'null'
       - boolean
     doc: keep only reads aligning to the index (and their mates if applicable)
-    default: false
     inputBinding:
       position: 101
       prefix: --invert
@@ -100,7 +93,6 @@ inputs:
       - 'null'
       - boolean
     doc: replace read names with incrementing integers
-    default: false
     inputBinding:
       position: 101
       prefix: --rename
@@ -109,7 +101,6 @@ inputs:
       - 'null'
       - boolean
     doc: ensure deterministic output order
-    default: false
     inputBinding:
       position: 101
       prefix: --reorder
@@ -118,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: number of alignment threads. A sensible default is chosen automatically
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads

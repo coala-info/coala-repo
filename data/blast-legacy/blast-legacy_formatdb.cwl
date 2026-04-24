@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: 'ASN.1 database in binary mode: T - binary, F - text mode.'
-    default: F
     inputBinding:
       position: 101
       prefix: -b
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Input file is database in ASN.1 format (otherwise FASTA is expected)
-    default: F
     inputBinding:
       position: 101
       prefix: -a
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: 'Type of file: T - protein, F - nucleotide'
-    default: T
     inputBinding:
       position: 101
       prefix: -p
@@ -61,7 +58,6 @@ inputs:
       - string
     doc: 'Parse options: T - True: Parse SeqId and create indexes, F - False: Do not
       parse SeqId. Do not create indexes.'
-    default: F
     inputBinding:
       position: 101
       prefix: -o
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: Input is a Seq-entry
-    default: F
     inputBinding:
       position: 101
       prefix: -e
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Create indexes limited only to accessions - sparse
-    default: F
     inputBinding:
       position: 101
       prefix: -s
@@ -104,7 +98,6 @@ inputs:
       - 'null'
       - string
     doc: 'Verbose: check for non-unique string ids in the database'
-    default: F
     inputBinding:
       position: 101
       prefix: -V
@@ -113,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: Database volume size in millions of letters
-    default: 4000
     inputBinding:
       position: 101
       prefix: -v

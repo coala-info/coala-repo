@@ -19,7 +19,6 @@ inputs:
       - string
     doc: 'the statistical approach for correlation measures (options: [pr, kt, bc]
       for pearsonr, kendalltau and bayesian correlation respectively. Default: pr)'
-    default: pr
     inputBinding:
       position: 101
       prefix: --corMethod
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - Directory
     doc: the directory of the outputs
-    default: brooklyn-date-hh-mm-ss
     inputBinding:
       position: 101
       prefix: --outDir
@@ -46,7 +44,6 @@ inputs:
       - string
     doc: the name of summarized brooklyn file as CSV file and a brooklyn plot in
       PDF
-    default: brooklyn
     inputBinding:
       position: 101
       prefix: --outFile
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: the number of processors to use for trimming, qc, and alignment
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

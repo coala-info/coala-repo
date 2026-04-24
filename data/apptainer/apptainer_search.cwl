@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: architecture to search for
-    default: amd64
     inputBinding:
       position: 102
       prefix: --arch

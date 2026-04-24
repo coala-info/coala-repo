@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Number of contigs to visualise. [0 plots all contigs]
-    default: 0
     inputBinding:
       position: 101
       prefix: --contig_display_num

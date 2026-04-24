@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum sequence identity for hits to be considered
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --identity
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads

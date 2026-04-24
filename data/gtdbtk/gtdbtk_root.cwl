@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: create intermediate files for debugging purposes
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - Directory
     doc: specify alternative directory for temporary files
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmpdir

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use this if you want to detect all events, also annotated ones
-    default: false
     inputBinding:
       position: 101
       prefix: --allevents
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add debug prints to stderr
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Error rate
-    default: 3
     inputBinding:
       position: 101
       prefix: --erate
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: MEMs length
-    default: 15
     inputBinding:
       position: 101
       prefix: --L
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use this to run ASGAL in genome-wide mode
-    default: false
     inputBinding:
       position: 101
       prefix: --multi
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - File
     doc: Path to sample (2)
-    default: '-'
     inputBinding:
       position: 101
       prefix: --sample2
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only split files per gene, do not run ASGAL
-    default: false
     inputBinding:
       position: 101
       prefix: --split-only
@@ -91,7 +84,6 @@ inputs:
       - int
     doc: Number of threads to use for salmon mapping and parallel gene 
       computation
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads
@@ -100,7 +92,6 @@ inputs:
       - 'null'
       - File
     doc: Path to transcripts
-    default: '-'
     inputBinding:
       position: 101
       prefix: --transcripts
@@ -109,7 +100,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add some prints to stderr
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose
@@ -118,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum intron coverage
-    default: 3
     inputBinding:
       position: 101
       prefix: --support

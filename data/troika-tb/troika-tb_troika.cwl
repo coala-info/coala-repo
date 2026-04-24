@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: The version of database being used.
-    default: TBProfiler-20190820
     inputBinding:
       position: 101
       prefix: --db_version
@@ -21,7 +20,6 @@ inputs:
       - boolean
     doc: Set if you would like to detect species - note if not set troika may 
       include non-tuberculosis species in the analysis.
-    default: false
     inputBinding:
       position: 101
       prefix: --detect_species
@@ -31,7 +29,6 @@ inputs:
       - File
     doc: Input file tab-delimited file 3 columns isolate_id path_to_r1 
       path_to_r2
-    default: ''
     inputBinding:
       position: 101
       prefix: --input_file
@@ -40,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Number of jobs to run in parallel.
-    default: 8
     inputBinding:
       position: 101
       prefix: --jobs
@@ -50,7 +46,6 @@ inputs:
       - string
     doc: 'Path to DB for use with kraken2, if no DB present speciation will not be
       performed. [env var: KRAKEN2_DEFAULT_DB]'
-    default: None
     inputBinding:
       position: 101
       prefix: --kraken_db
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for kraken
-    default: 4
     inputBinding:
       position: 101
       prefix: --kraken_threads
@@ -69,7 +63,6 @@ inputs:
       - int
     doc: Minimum alignment for phylogenetic analysis, alignments lower than this
       threshold will not be included in the calculation of core-genome.
-    default: 80
     inputBinding:
       position: 101
       prefix: --min_aln
@@ -79,7 +72,6 @@ inputs:
       - int
     doc: Minimum coverage for quality checks, isolates with coverage below this 
       threshold will not be used in the analysis.
-    default: 40
     inputBinding:
       position: 101
       prefix: --min_cov
@@ -88,14 +80,12 @@ inputs:
       - 'null'
       - string
     doc: If running for MDU service use 'mdu', else use 'normal'
-    default: normal
     inputBinding:
       position: 101
       prefix: --mode
   - id: positive_control
     type: File
     doc: Path to positive control - REQUIRED if running for MDU service
-    default: ''
     inputBinding:
       position: 101
       prefix: --positive_control
@@ -104,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: URL for TB-profiler singularity container.
-    default: docker://mduphl/mtbtools
     inputBinding:
       position: 101
       prefix: --profiler_singularity_path
@@ -113,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to run TB-profiler
-    default: 1
     inputBinding:
       position: 101
       prefix: --profiler_threads
@@ -123,7 +111,6 @@ inputs:
       - boolean
     doc: If detection of resistance mutations only is needed. Phylogeny will not
       be performed.
-    default: false
     inputBinding:
       position: 101
       prefix: --resistance_only
@@ -132,7 +119,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory where templates are stored
-    default: /usr/local/lib/python3.9/site-packages/troika_tb
     inputBinding:
       position: 101
       prefix: --resources
@@ -141,7 +127,6 @@ inputs:
       - 'null'
       - boolean
     doc: If singularity is to be used for troika.
-    default: false
     inputBinding:
       position: 101
       prefix: --Singularity
@@ -150,7 +135,6 @@ inputs:
       - 'null'
       - string
     doc: URL for Snippy singularity container.
-    default: docker://mduphl/snippy:v4.4.3
     inputBinding:
       position: 101
       prefix: --snippy_singularity_path
@@ -159,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for snippy
-    default: 8
     inputBinding:
       position: 101
       prefix: --snippy_threads
@@ -168,7 +151,6 @@ inputs:
       - 'null'
       - Directory
     doc: Working directory, default is current directory
-    default: /
     inputBinding:
       position: 101
       prefix: --workdir

@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Set regular expression to parse sequence name.
-    default: (?P<sample>.+)_(?P<segment>.+)
     inputBinding:
       position: 102
       prefix: --name-regex

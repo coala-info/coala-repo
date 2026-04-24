@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Set verbosity level.
-    default: 1
     inputBinding:
       position: 102
       prefix: -verbose

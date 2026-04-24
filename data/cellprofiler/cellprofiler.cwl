@@ -117,7 +117,6 @@ inputs:
     doc: For pipelines that do not use image grouping this option specifies the 
       number of images that should be processed in each batch if 
       --get-batch-commands is used. Defaults to 1.
-    default: 1
     inputBinding:
       position: 102
       prefix: --images-per-batch
@@ -253,7 +252,6 @@ inputs:
       - Directory
     doc: Temporary directory. CellProfiler uses this for downloaded image files 
       and for the measurements file, if not specified.
-    default: /tmp
     inputBinding:
       position: 102
       prefix: --temporary-directory

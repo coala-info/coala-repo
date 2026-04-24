@@ -70,7 +70,6 @@ inputs:
       - string
     doc: 'Default: 500M -- minimap2 K parameter for Number of bases loaded into memory
       to process in a mini-batch. Reducing this value lowers memory consumption'
-    default: 500M
     inputBinding:
       position: 101
       prefix: --minimap2-K
@@ -120,7 +119,6 @@ inputs:
       - float
     doc: 'Default: 0.90 -- minimum ANI of reads to reference to classify record at
       species level. There is no perfect metric for this.'
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --species-threshold
@@ -130,7 +128,6 @@ inputs:
       - float
     doc: 'Default: 0.95 -- minimum ANI of reads to reference to classify record at
       subspecies level. There is no perfect metric for this.'
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --subspecies-threshold
@@ -139,7 +136,6 @@ inputs:
       - 'null'
       - Directory
     doc: path of temporary directory. Default is {OUTPUT_DIR}/{SAMPLE}_temp/
-    default: '{OUTPUT_DIR}/{SAMPLE}_temp/'
     inputBinding:
       position: 101
       prefix: --temp
@@ -149,7 +145,6 @@ inputs:
       - Directory
     doc: 'Default: / -- Set working directory with absolute or relative path. Run
       directory will be created within.'
-    default: /
     inputBinding:
       position: 101
       prefix: --working_directory

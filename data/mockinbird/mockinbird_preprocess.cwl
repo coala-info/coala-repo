@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: verbosity level of the logger
-    default: info
     inputBinding:
       position: 105
       prefix: --log_level

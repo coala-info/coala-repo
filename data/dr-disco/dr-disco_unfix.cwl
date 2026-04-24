@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path in which temp files are stored
-    default: /tmp
     inputBinding:
       position: 102
       prefix: --temp-dir

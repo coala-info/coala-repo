@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Consider all possible peptides in the database in the confidence model
-    default: false
     inputBinding:
       position: 102
       prefix: --allpeps
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use the EM to compute probability given the confidence
-    default: false
     inputBinding:
       position: 102
       prefix: --confem
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do NOT use peptide degeneracy information when assessing proteins
-    default: false
     inputBinding:
       position: 102
       prefix: --delude
@@ -44,7 +41,6 @@ inputs:
       - boolean
     doc: Expect N-Glycosylation modifications as variable mod in a search or as 
       a parameter when building statistical models
-    default: false
     inputBinding:
       position: 102
       prefix: --glyco
@@ -54,7 +50,6 @@ inputs:
       - boolean
     doc: Check peptide's total weight (rather than actual weight) in the Protein
       Group against the threshold
-    default: false
     inputBinding:
       position: 102
       prefix: --group-wts
@@ -64,7 +59,6 @@ inputs:
       - boolean
     doc: Use Expected Number of Ion Instances to adjust the peptide 
       probabilities prior to NSP adjustment
-    default: false
     inputBinding:
       position: 102
       prefix: --instances
@@ -73,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: Inputs are from iProphet
-    default: false
     inputBinding:
       position: 102
       prefix: --iprophet-input
@@ -82,7 +75,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use the log of probability in the confidence calculations
-    default: false
     inputBinding:
       position: 102
       prefix: --log-prob
@@ -91,7 +83,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percentage of independent peptides required for a protein
-    default: 0
     inputBinding:
       position: 102
       prefix: --minindep
@@ -100,7 +91,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum peptide prophet probability for peptides to be considered
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --minprob
@@ -110,7 +100,6 @@ inputs:
       - boolean
     doc: Do not attempt to derive the simplest protein list explaining observed 
       peptides
-    default: false
     inputBinding:
       position: 102
       prefix: --no-occam
@@ -119,7 +108,6 @@ inputs:
       - 'null'
       - boolean
     doc: Normalize NSP using Protein Length
-    default: false
     inputBinding:
       position: 102
       prefix: --norm-protlen
@@ -136,7 +124,6 @@ inputs:
       - 'null'
       - boolean
     doc: Dont skip analyses for which the output file already exists
-    default: false
     inputBinding:
       position: 102
       prefix: --replace-output
@@ -145,7 +132,6 @@ inputs:
       - 'null'
       - boolean
     doc: Report results for unmapped proteins
-    default: false
     inputBinding:
       position: 102
       prefix: --unmapped

@@ -29,7 +29,6 @@ inputs:
     type: [string?, File?]
     inputBinding:
       prefix: --config
-    default: "go_summary-config.json"
 
   output_name:
     type: string

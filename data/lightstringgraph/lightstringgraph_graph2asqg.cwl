@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - File
     doc: read_filename
-    default: <basename>
     inputBinding:
       position: 101
       prefix: -r

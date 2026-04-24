@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - File
     doc: Name of input assembly file to be searched
-    default: None
     inputBinding:
       position: 101
       prefix: --fasta
@@ -26,7 +25,6 @@ inputs:
       - int
     doc: Size flanking size to include on either side of invertable regions (in 
       bps)
-    default: 1000
     inputBinding:
       position: 101
       prefix: --flankSize
@@ -36,7 +34,6 @@ inputs:
       - string
     doc: List of gene features in ncbi genbank format, for detecting 
       gene/inverton overlaps
-    default: None
     inputBinding:
       position: 101
       prefix: --genes
@@ -46,7 +43,6 @@ inputs:
       - string
     doc: File format of the list of gene features. Gff must be in prodigal gff 
       format
-    default: gbff
     inputBinding:
       position: 101
       prefix: --genesFormat
@@ -56,7 +52,6 @@ inputs:
       - string
     doc: Table of identified invertable repeats (eg. if locate command was never
       run)
-    default: None
     inputBinding:
       position: 101
       prefix: --irs
@@ -75,7 +70,6 @@ inputs:
       - boolean
     doc: Create a mock genome where all putative IRs are flipped to opposite of 
       the reference orientation
-    default: false
     inputBinding:
       position: 101
       prefix: --mockGenome
@@ -85,7 +79,6 @@ inputs:
       - int
     doc: If creating a mockGenome, the number of invertons to invert. A value of
       0 inverts all predicted inverton locations
-    default: 0
     inputBinding:
       position: 101
       prefix: --mockNumber
@@ -94,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus

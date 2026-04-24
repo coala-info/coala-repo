@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not remove gaps from alignment
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_gaps
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory.
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not write output to console (silence stdout and stderr)
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet

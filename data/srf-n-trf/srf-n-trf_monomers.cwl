@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - float
     doc: Percent coverage of srf motif required for a given trf monomer.
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --cov
@@ -22,7 +21,6 @@ inputs:
       - float
     doc: 'Percent difference in monomer period length allowed. ex. `0.02` results
       in valid periods for `170`: `167 < 170 < 173`'
-    default: 0.02
     inputBinding:
       position: 101
       prefix: --diff
@@ -32,7 +30,6 @@ inputs:
       - float
     doc: Maximum gap-compressed sequence divergence between aligned motif and 
       region
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --max-seq-div
@@ -57,7 +54,6 @@ inputs:
       - type: array
         items: int
     doc: Monomer size in base pairs to search for
-    default:
       - 170
       - 340
       - 510

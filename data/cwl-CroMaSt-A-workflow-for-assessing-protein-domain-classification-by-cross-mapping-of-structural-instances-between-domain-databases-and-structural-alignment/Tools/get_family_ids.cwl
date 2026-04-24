@@ -52,7 +52,6 @@ inputs:
   fam_tracker:
     type: [ File, string, "null" ]
     label: File to track family IDs per iteration
-    default: family_ids.json
     inputBinding:
       position: 4
       prefix: -f

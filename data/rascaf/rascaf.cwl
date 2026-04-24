@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: the least number of Ns to break a scaffold in the raw assembly
-    default: 1
     inputBinding:
       position: 101
       prefix: -breakN
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: the size of a kmer(<=32; <=0 if you do not want to use kmer.
-    default: 23
     inputBinding:
       position: 101
       prefix: -k
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: minimum support for connecting two contigs
-    default: 2
     inputBinding:
       position: 101
       prefix: -ms
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: minimum exonic length
-    default: 200
     inputBinding:
       position: 101
       prefix: -ml
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: prefix of the output file
-    default: rascaf
     inputBinding:
       position: 101
       prefix: -o
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - boolean
     doc: verbose mode
-    default: false
     inputBinding:
       position: 101
       prefix: -v

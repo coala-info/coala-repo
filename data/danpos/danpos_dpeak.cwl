@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - float
     doc: The FDR threshold for peak calling.
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --fdr

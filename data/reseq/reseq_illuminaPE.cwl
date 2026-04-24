@@ -33,7 +33,6 @@ inputs:
       - int
     doc: Reference sequences large then this are split for bias fitting to limit
       memory consumption
-    default: 100000000
     inputBinding:
       position: 101
       prefix: --binSizeBiasFit
@@ -43,7 +42,6 @@ inputs:
       - int
     doc: Approximate average read depth simulated (0 = Corrected original 
       coverage)
-    default: 0
     inputBinding:
       position: 101
       prefix: --coverage
@@ -53,7 +51,6 @@ inputs:
       - float
     doc: Divides the original probability of correct base calls(no substitution 
       error) by this value and renormalizes
-    default: 1
     inputBinding:
       position: 101
       prefix: --errorMutliplier
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of iterations for iterative proportional fitting
-    default: 200
     inputBinding:
       position: 101
       prefix: --ipfIterations
@@ -78,7 +74,6 @@ inputs:
       - int
     doc: Iterative proportional fitting procedure stops after reaching this 
       precision (%)
-    default: 5
     inputBinding:
       position: 101
       prefix: --ipfPrecision
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum fragment length to include pairs into statistics
-    default: 2000
     inputBinding:
       position: 101
       prefix: --maxFragLen
@@ -106,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality to include pairs into statistics
-    default: 2
     inputBinding:
       position: 101
       prefix: --minMapQ
@@ -147,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: Approximate number of read pairs simulated (0 = Use <coverage>)
-    default: 0
     inputBinding:
       position: 101
       prefix: --numReads
@@ -175,7 +167,6 @@ inputs:
       - string
     doc: Base Identifier for the simulated fastq records, followed by a count 
       and other information about the read
-    default: ReseqRead
     inputBinding:
       position: 101
       prefix: --recordBaseIdentifier
@@ -185,7 +176,6 @@ inputs:
       - string
     doc: Way to select the reference biases for simulation (keep [from refIn]/no
       [biases]/draw [with replacement from original biases]/file)
-    default: keep/no
     inputBinding:
       position: 101
       prefix: --refBias
@@ -254,7 +244,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads used (0=auto)
-    default: 0
     inputBinding:
       position: 101
       prefix: --threads
@@ -287,7 +276,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the level of verbosity (4=everything, 0=nothing)
-    default: 4
     inputBinding:
       position: 101
       prefix: --verbosity

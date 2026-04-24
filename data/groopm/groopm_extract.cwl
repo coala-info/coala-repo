@@ -22,7 +22,6 @@ inputs:
       - type: array
         items: string
     doc: bin ids to use (None for all)
-    default: None
     inputBinding:
       position: 103
       prefix: --bids
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: '>>CONTIG MODE ONLY<< cutoff contig size (0 for no cutoff)'
-    default: 0
     inputBinding:
       position: 103
       prefix: --cutoff
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - boolean
     doc: '>>READ MODE ONLY<< extract only (unique) headers'
-    default: false
     inputBinding:
       position: 103
       prefix: --headers_only
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - boolean
     doc: '>>READ MODE ONLY<< interleave paired reads in ouput files'
-    default: false
     inputBinding:
       position: 103
       prefix: --interleave
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: '>>READ MODE ONLY<< mapping quality threshold'
-    default: 0
     inputBinding:
       position: 103
       prefix: --mapping_quality
@@ -67,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: '>>READ MODE ONLY<< maximum allowable edit distance from query to reference'
-    default: 1000
     inputBinding:
       position: 103
       prefix: --max_distance
@@ -76,7 +70,6 @@ inputs:
       - 'null'
       - boolean
     doc: '>>READ MODE ONLY<< use the same file for multiple bam files'
-    default: false
     inputBinding:
       position: 103
       prefix: --mix_bams
@@ -85,7 +78,6 @@ inputs:
       - 'null'
       - boolean
     doc: '>>READ MODE ONLY<< use the same files for multiple group groups'
-    default: false
     inputBinding:
       position: 103
       prefix: --mix_groups
@@ -94,7 +86,6 @@ inputs:
       - 'null'
       - boolean
     doc: '>>READ MODE ONLY<< use the same files for paired/unpaired reads'
-    default: false
     inputBinding:
       position: 103
       prefix: --mix_reads
@@ -103,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: what to extract [reads, contigs]
-    default: contigs
     inputBinding:
       position: 103
       prefix: --mode
@@ -112,7 +102,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not gzip output files
-    default: false
     inputBinding:
       position: 103
       prefix: --no_gzip
@@ -121,7 +110,6 @@ inputs:
       - 'null'
       - Directory
     doc: write to this folder (None for current dir)
-    default: ''
     inputBinding:
       position: 103
       prefix: --out_folder
@@ -130,7 +118,6 @@ inputs:
       - 'null'
       - string
     doc: prefix to apply to output files
-    default: ''
     inputBinding:
       position: 103
       prefix: --prefix
@@ -139,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: '>>READ MODE ONLY<< maximum number of threads to use'
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads
@@ -148,7 +134,6 @@ inputs:
       - 'null'
       - boolean
     doc: '>>READ MODE ONLY<< use reads marked with the secondary flag'
-    default: false
     inputBinding:
       position: 103
       prefix: --use_secondary
@@ -157,7 +142,6 @@ inputs:
       - 'null'
       - boolean
     doc: '>>READ MODE ONLY<< use reads marked with the supplementary flag'
-    default: false
     inputBinding:
       position: 103
       prefix: --use_supplementary
@@ -166,7 +150,6 @@ inputs:
       - 'null'
       - boolean
     doc: '>>READ MODE ONLY<< be verbose'
-    default: false
     inputBinding:
       position: 103
       prefix: -v

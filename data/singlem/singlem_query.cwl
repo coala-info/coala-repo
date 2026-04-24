@@ -57,7 +57,6 @@ inputs:
       - string
     doc: How many entries (samples/genomes from DB with identical sequences) to 
       report for each distinct, matched sequence (arbitrarily chosen)
-    default: No limit
     inputBinding:
       position: 101
       prefix: --limit-per-sequence
@@ -76,7 +75,6 @@ inputs:
       - int
     doc: How many nearest neighbours to report. Each neighbour is a distinct 
       sequence from the DB.
-    default: 20
     inputBinding:
       position: 101
       prefix: --max-nearest-neighbours
@@ -87,7 +85,6 @@ inputs:
     doc: How many nearest neighbours to search for with approximate nearest 
       neighbours. Of these hits, only --max-nearest-neighbours will actually be 
       reported. Ignored for --search-method naive and scann-naive.
-    default: 100
     inputBinding:
       position: 101
       prefix: --max-search-nearest-neighbours
@@ -185,7 +182,6 @@ inputs:
       - 'null'
       - string
     doc: Algorithm to perform search
-    default: smafa-naive
     inputBinding:
       position: 101
       prefix: --search-method
@@ -195,7 +191,6 @@ inputs:
       - string
     doc: Which sequence types to compare (i.e. protein for blastp, nucleotide 
       for blastn)
-    default: nucleotide
     inputBinding:
       position: 101
       prefix: --sequence-type
@@ -212,7 +207,6 @@ inputs:
       - 'null'
       - int
     doc: Use this many threads where possible
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

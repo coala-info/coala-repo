@@ -46,7 +46,6 @@ inputs:
     inputBinding:
       prefix: --fasta
       position: 4
-    default: false
 
 outputs:
   merged_genbank:

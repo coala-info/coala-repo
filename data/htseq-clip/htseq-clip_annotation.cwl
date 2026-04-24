@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Gene id attribute in GFF file
-    default: gene_id for gencode gff files
     inputBinding:
       position: 101
       prefix: --geneid
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Gene name attribute in GFF file
-    default: gene_name for gencode gff files
     inputBinding:
       position: 101
       prefix: --genename
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Gene type attribute in GFF file
-    default: gene_type for gencode gff files
     inputBinding:
       position: 101
       prefix: --genetype
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Verbose level
-    default: info
     inputBinding:
       position: 101
       prefix: --verbose

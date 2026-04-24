@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Custom config file
-    default: (outputDir)/config.yaml
     inputBinding:
       position: 102
       prefix: --configfile
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use conda for Snakemake rules
-    default: true
     inputBinding:
       position: 102
       prefix: --no-use-conda
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: sequencing method
-    default: paired
     inputBinding:
       position: 102
       prefix: --sequencing
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: Customise Snakemake runtime args
-    default: --printshellcmds, --nolock, --show-failed-logs
     inputBinding:
       position: 102
       prefix: --snake-default
@@ -85,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -102,7 +97,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use containers for Snakemake rules
-    default: true
     inputBinding:
       position: 102
       prefix: --use-singularity

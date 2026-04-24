@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Print config using flat notation (deprecated: use `-o flat` instead)'
-    default: false
     inputBinding:
       position: 102
       prefix: -flat
@@ -40,7 +39,6 @@ inputs:
       - boolean
     doc: 'Prints config using Java properties notation (deprecated: use `-o properties`
       instead)'
-    default: false
     inputBinding:
       position: 102
       prefix: -properties
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show all configuration profiles
-    default: false
     inputBinding:
       position: 102
       prefix: -show-profiles
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - boolean
     doc: Sort config attributes
-    default: false
     inputBinding:
       position: 102
       prefix: -sort

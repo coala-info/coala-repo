@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: No. of bits to use from secondary strobe hash
-    default: 17
     inputBinding:
       position: 104
       prefix: --aux-len
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Bitcount length between 2 and 63.
-    default: 8
     inputBinding:
       position: 104
       prefix: -c
@@ -63,7 +61,6 @@ inputs:
       - 'null'
       - float
     doc: Collinear chaining best chain score threshold
-    default: 0.7
     inputBinding:
       position: 104
       prefix: --vp
@@ -72,7 +69,6 @@ inputs:
       - 'null'
       - float
     doc: Collinear chaining diagonal gap cost
-    default: 0.1
     inputBinding:
       position: 104
       prefix: --gd
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - float
     doc: Collinear chaining gap length cost
-    default: 0.05
     inputBinding:
       position: 104
       prefix: --gl
@@ -90,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Collinear chaining look back heuristic
-    default: 50
     inputBinding:
       position: 104
       prefix: -H
@@ -100,7 +94,6 @@ inputs:
       - int
     doc: Collinear chaining skip distance, how far on the reference do we allow 
       anchors to chain
-    default: 10000
     inputBinding:
       position: 104
       prefix: --sg
@@ -109,7 +102,6 @@ inputs:
       - 'null'
       - float
     doc: Weight given to the number of anchors for the final score of chains
-    default: 0.01
     inputBinding:
       position: 104
       prefix: --mw
@@ -143,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: Gap extension penalty
-    default: 1
     inputBinding:
       position: 104
       prefix: -E
@@ -152,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: Gap open penalty
-    default: 12
     inputBinding:
       position: 104
       prefix: -O
@@ -177,7 +167,6 @@ inputs:
       - 'null'
       - int
     doc: Matching score
-    default: 2
     inputBinding:
       position: 104
       prefix: -A
@@ -187,7 +176,6 @@ inputs:
       - int
     doc: Maximum distance (in nucleotides) that filtered seeds may span. The 
       lower the value, the more seeds are rescued. Use 0 to disable rescue.
-    default: 100
     inputBinding:
       position: 104
       prefix: -R
@@ -196,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of mapping sites to try
-    default: 20
     inputBinding:
       position: 104
       prefix: -M
@@ -206,7 +193,6 @@ inputs:
       - int
     doc: End of sampling window for second syncmer (i.e., second syncmer must be
       at most u syncmers downstream).
-    default: 11
     inputBinding:
       position: 104
       prefix: -u
@@ -237,7 +223,6 @@ inputs:
       - float
     doc: Try candidate sites with mapping score at least S of maximum mapping 
       score
-    default: 0.5
     inputBinding:
       position: 104
       prefix: -S
@@ -247,7 +232,6 @@ inputs:
       - int
     doc: Start of sampling window for second syncmer (i.e., second syncmer must 
       be at least l syncmers downstream).
-    default: 5
     inputBinding:
       position: 104
       prefix: -l
@@ -256,7 +240,6 @@ inputs:
       - 'null'
       - int
     doc: Mismatch penalty
-    default: 8
     inputBinding:
       position: 104
       prefix: -B
@@ -266,7 +249,6 @@ inputs:
       - string
     doc: "How multi-context seeds are used. Allowed: 'always' (default), 'rescue',
       'off', 'first-strobe'"
-    default: always
     inputBinding:
       position: 104
       prefix: --mcs
@@ -300,7 +282,6 @@ inputs:
       - int
     doc: Retain at most INT secondary alignments (is upper bounded by -M and 
       depends on -S)
-    default: 0
     inputBinding:
       position: 104
       prefix: -N
@@ -327,7 +308,6 @@ inputs:
       - 'null'
       - int
     doc: Soft clipping penalty
-    default: 10
     inputBinding:
       position: 104
       prefix: -L
@@ -348,7 +328,6 @@ inputs:
       - 'null'
       - int
     doc: Syncmer (strobe) length, has to be below 32.
-    default: 20
     inputBinding:
       position: 104
       prefix: -k
@@ -357,7 +336,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 104
       prefix: --threads
@@ -375,7 +353,6 @@ inputs:
       - 'null'
       - float
     doc: Top fraction of repetitive strobemers to filter out from sampling
-    default: 0.0002
     inputBinding:
       position: 104
       prefix: -f

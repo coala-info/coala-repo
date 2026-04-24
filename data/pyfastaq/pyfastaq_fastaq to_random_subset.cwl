@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Random seed for reproducibility
-    default: 0
     inputBinding:
       position: 102
       prefix: --seed

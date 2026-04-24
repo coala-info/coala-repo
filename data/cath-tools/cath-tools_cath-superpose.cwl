@@ -30,7 +30,6 @@ inputs:
       one more entry at a time, HEAVY - Perform heavy (slow) refining on the alignment,
       including when gluing alignments together. This can change the method of gluing
       alignments under --ssap-scores-infile and --do-the-ssaps"
-    default: NO
     inputBinding:
       position: 104
       prefix: --align-refining
@@ -124,7 +123,6 @@ inputs:
       - Directory
     doc: Do the required SSAPs in directory; use results as with 
       --ssap-scores-infile. Use a suitable temp directory if none is specified
-    default: ''
     inputBinding:
       position: 104
       prefix: --do-the-ssaps
@@ -195,7 +193,6 @@ inputs:
       - string
     doc: Use as the PyMOL executable for viewing; may optionally include the 
       full path
-    default: pymol
     inputBinding:
       position: 104
       prefix: --pymol-program
@@ -206,7 +203,6 @@ inputs:
     doc: 'Show the alignment regions in the context, one of available options: alone
       - alone, in_chain - within the chain(s) in which the regions appear, in_pdb
       - within the PDB in which the regions appear'
-    default: alone
     inputBinding:
       position: 104
       prefix: --regions-context
@@ -234,7 +230,6 @@ inputs:
       - 'null'
       - float
     doc: Show DNA within distance of the alignment regions
-    default: 4
     inputBinding:
       position: 104
       prefix: --show-dna-within-dist
@@ -243,7 +238,6 @@ inputs:
       - 'null'
       - float
     doc: Show organic molecules within distance of the alignment regions
-    default: 10
     inputBinding:
       position: 104
       prefix: --show-organic-within-dist

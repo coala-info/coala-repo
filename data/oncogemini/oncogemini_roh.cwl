@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of allowed hets in the run
-    default: 1
     inputBinding:
       position: 102
       prefix: --max-hets
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of allowed unknowns in the run
-    default: 3
     inputBinding:
       position: 102
       prefix: --max-unknowns
@@ -33,7 +31,6 @@ inputs:
       - int
     doc: The minimum required sequencing depth underlying a given sample's 
       genotypefor a SNP to be considered
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-gt-depth
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum run size in base pairs
-    default: 100000
     inputBinding:
       position: 102
       prefix: --min-size
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of homozygous snps expected in a run
-    default: 25
     inputBinding:
       position: 102
       prefix: --min-snps
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum overall sequencing depth requiredfor a SNP to be considered
-    default: 20
     inputBinding:
       position: 102
       prefix: --min-total-depth

@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Error masking
-    default: hpc
     inputBinding:
       position: 101
   - id: hpc_variant_onecopy_coverage
@@ -83,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum k-mer abundance
-    default: 1
     inputBinding:
       position: 101
       prefix: --kmer-abundance
@@ -165,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
   - id: unitig_abundance
@@ -173,7 +170,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum average unitig abundance
-    default: 2
     inputBinding:
       position: 101
       prefix: --unitig-abundance
@@ -182,7 +178,6 @@ inputs:
       - 'null'
       - int
     doc: Window size. Must be 1 <= w <= k-30
-    default: k-30
     inputBinding:
       position: 101
       prefix: -w

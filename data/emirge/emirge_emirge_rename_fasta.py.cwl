@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: Only include sequences in output with prior probability above PROB_MIN
-    default: include all sequences
     inputBinding:
       position: 102
       prefix: --prob_min

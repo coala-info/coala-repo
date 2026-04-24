@@ -73,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbosity level: 0=none, 1=progress bar, 2=once per epoch (default: 2)'
-    default: 2
     inputBinding:
       position: 102
       prefix: --verbose

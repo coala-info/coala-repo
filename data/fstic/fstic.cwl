@@ -11,7 +11,6 @@ inputs:
       - string
     doc: "The distance formula to use. [default: fst]  [possible values: fst, gst,
       nei,\nchord, bray-curtis, jost_d, reynolds, rogers]"
-    default: fst
     inputBinding:
       position: 101
       prefix: --formula
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: 'Minimum alternate allele frequency to keep a variant. [default: 0.05]'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --min-af
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum number of alternate allele reads to keep a variant. [default: 2]'
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-alt-reads
@@ -39,7 +36,6 @@ inputs:
       - int
     doc: 'Minimum number of alternate allele reverse reads to keep a variant. [default:
       2]'
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-alt-rev-reads
@@ -48,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum total read depth to keep a variant. [default: 30]'
-    default: 30
     inputBinding:
       position: 101
       prefix: --min-depth

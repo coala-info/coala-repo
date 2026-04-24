@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - File
     doc: name of database created using formatPro
-    default: profileDb
     inputBinding:
       position: 102
       prefix: -n
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: size of first step in ML estimation
-    default: '1.000e-04'
     inputBinding:
       position: 102
       prefix: -s
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - float
     doc: initial delta value
-    default: '1.000e-03'
     inputBinding:
       position: 102
       prefix: -D
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: initial epsilon value
-    default: '1.000e-03'
     inputBinding:
       position: 102
       prefix: -E
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: initial theta value
-    default: '1.000e-03'
     inputBinding:
       position: 102
       prefix: -P
@@ -80,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of likelihood weight included in LD analysis
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -f
@@ -97,7 +91,6 @@ inputs:
       - 'null'
       - float
     doc: maximum distance analyzed in rho computation
-    default: all
     inputBinding:
       position: 102
       prefix: -M
@@ -106,7 +99,6 @@ inputs:
       - 'null'
       - float
     doc: minimum distance analyzed in rho computation
-    default: 1
     inputBinding:
       position: 102
       prefix: -m
@@ -115,7 +107,6 @@ inputs:
       - 'null'
       - float
     doc: simplex size threshold
-    default: '1.000e-08'
     inputBinding:
       position: 102
       prefix: -t
@@ -124,7 +115,6 @@ inputs:
       - 'null'
       - float
     doc: step size in rho computation
-    default: 1
     inputBinding:
       position: 102
       prefix: -S

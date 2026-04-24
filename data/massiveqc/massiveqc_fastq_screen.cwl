@@ -214,7 +214,6 @@ inputs:
       Subsets will be taken evenly from throughout the whole original dataset. 
       By Default FastQ Screen runs with this parameter set to 100000. To process
       an entire dataset however, adjust --subset to 0.
-    default: 100000
     inputBinding:
       position: 102
       prefix: --subset

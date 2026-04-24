@@ -32,7 +32,6 @@ inputs:
         items: string
     doc: FAST5 subgroup(s) (under Analyses/[corrected-group]) containing 
       basecalls.
-    default: BaseCalled_template
     inputBinding:
       position: 101
       prefix: --basecall-subgroups
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: FAST5 group created by resquiggle command.
-    default: RawGenomeCorrected_000
     inputBinding:
       position: 101
       prefix: --corrected-group
@@ -69,7 +67,6 @@ inputs:
       - int
     doc: Number of context bases up and downstream over which to compute 
       Fisher's method combined p-values.
-    default: 1
     inputBinding:
       position: 101
       prefix: --fishers-method-context
@@ -79,7 +76,6 @@ inputs:
       - int
     doc: Number of reads required at a position to perform significance testing 
       or contribute to model estimation.
-    default: 5
     inputBinding:
       position: 101
       prefix: --minimum-test-reads
@@ -90,7 +86,6 @@ inputs:
     doc: Size of regions over which to multiprocesses statistic computation. For
       very deep samples a smaller value is recommmended in order to control 
       memory consumption.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --multiprocess-region-size
@@ -99,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes.
-    default: 1
     inputBinding:
       position: 101
       prefix: --processes
@@ -117,7 +111,6 @@ inputs:
       - string
     doc: P-value or log likelihood ratio threshold when computing fraction of 
       significant reads at each genomic position.
-    default: pvalue:0.01; likelihood ratio:2
     inputBinding:
       position: 101
       prefix: --single-read-threshold

@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for treating a taxon as common
-    default: 5.0
     inputBinding:
       position: 102
       prefix: --common_taxa
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for treating a scaffold as congruent
-    default: 10.0
     inputBinding:
       position: 102
       prefix: --congruent_scaffold
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: threshold of consensus taxon for filtering a scaffold
-    default: 50.0
     inputBinding:
       position: 102
       prefix: --consensus_scaffold
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for accepting a consensus taxon
-    default: 50.0
     inputBinding:
       position: 102
       prefix: --consensus_taxon
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --cpus
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of classified genes required to filter a scaffold
-    default: 5
     inputBinding:
       position: 102
       prefix: --min_classified
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - float
     doc: minimum percentage of genes with a classification to filter a scaffold
-    default: 25.0
     inputBinding:
       position: 102
       prefix: --min_classified_per
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for treating a scaffold as trusted
-    default: 50.0
     inputBinding:
       position: 102
       prefix: --trusted_scaffold

@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: bin size for coverage calculation
-    default: 50000
     inputBinding:
       position: 102
       prefix: --bin-size
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: bin size for LOH detection
-    default: 200000
     inputBinding:
       position: 102
       prefix: --bin-size-snps
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: SV minimum length to include
-    default: 10000
     inputBinding:
       position: 102
       prefix: --breakpoints-min-length
@@ -67,7 +64,6 @@ inputs:
       - boolean
     doc: use change point detection algo for more cna segmentation instead of 
       breakpoints
-    default: false
     inputBinding:
       position: 102
       prefix: --change-point-detection-for-cna
@@ -77,7 +73,6 @@ inputs:
       - float
     doc: user input p-value to detect if a segment is subclonal/off to integer 
       copynumber
-    default: 0.6
     inputBinding:
       position: 102
       prefix: --confidence-subclonal-score
@@ -88,7 +83,6 @@ inputs:
     doc: List of contigs to be included in the plots, default chr1-22,chrX 
       [e.g., chr1-22,X,Y], Must be consistent with chr/nochr notation in input 
       files
-    default: chr1-22,chrX
     inputBinding:
       position: 102
       prefix: --contigs
@@ -98,7 +92,6 @@ inputs:
       - boolean
     doc: change point detection algo for more precise segments after 
       breakpoint/cpd segments
-    default: false
     inputBinding:
       position: 102
       prefix: --cpd-internal-segments
@@ -107,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Plotting threshold for coverage
-    default: 100
     inputBinding:
       position: 102
       prefix: --cut-threshold
@@ -116,7 +108,6 @@ inputs:
       - 'null'
       - string
     doc: Genome sample/cell line name to be displayed on plots
-    default: Sample
     inputBinding:
       position: 102
       prefix: --genome-name
@@ -125,7 +116,6 @@ inputs:
       - 'null'
       - float
     doc: Hetrozygous SNPs ratio threshold for LOH detection
-    default: 0.15
     inputBinding:
       position: 102
       prefix: --hets-ratio
@@ -134,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: minimum phaseblock length for CNA estimation
-    default: 300000
     inputBinding:
       position: 102
       prefix: --min-phaseblock
@@ -157,7 +146,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enabling PDF output coverage plots
-    default: false
     inputBinding:
       position: 102
       prefix: --pdf-enable
@@ -166,7 +154,6 @@ inputs:
       - 'null'
       - string
     doc: Target tumor ploidy range
-    default: 1.0-5.5
     inputBinding:
       position: 102
       prefix: --ploidy-range
@@ -175,7 +162,6 @@ inputs:
       - 'null'
       - string
     doc: Target tumor purity range
-    default: 0.25-1.0
     inputBinding:
       position: 102
       prefix: --purity-range
@@ -190,7 +176,6 @@ inputs:
       - 'null'
       - string
     doc: Reference name
-    default: grch38
     inputBinding:
       position: 102
       prefix: --reference-name
@@ -207,7 +192,6 @@ inputs:
       - 'null'
       - int
     doc: number of parallel threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -224,7 +208,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable using phased SVs/breakpoints
-    default: false
     inputBinding:
       position: 102
       prefix: --use-sv-haplotypes
@@ -233,7 +216,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enabling coverage and copynumbers without phasing in plots
-    default: false
     inputBinding:
       position: 102
       prefix: --without-phasing

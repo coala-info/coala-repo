@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do per-sample analysis, default is per-marker analysis
-    default: false
     inputBinding:
       position: 101
       prefix: --persample
@@ -61,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele frequency for likelihood estimation
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --threshold

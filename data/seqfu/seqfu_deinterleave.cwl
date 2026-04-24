@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: extension for R1 file
-    default: _R1.fq
     inputBinding:
       position: 102
       prefix: --for-ext
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: extension for R2 file
-    default: _R2.fq
     inputBinding:
       position: 102
       prefix: --rev-ext

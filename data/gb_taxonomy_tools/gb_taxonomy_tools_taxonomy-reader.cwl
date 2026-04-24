@@ -23,7 +23,6 @@ inputs:
       - int
     doc: integer index (0-based) of the field containing tax ID in each 
       tab-separated input line; the default is field 1
-    default: 0
     inputBinding:
       position: 3
 outputs:

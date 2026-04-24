@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - File
     doc: Path to damage matrix (ancient)
-    default: ''
     inputBinding:
       position: 103
       prefix: --ancient-damage
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: 'Use float: 0.25 to 0.5 (ancient)'
-    default: 0.062
     inputBinding:
       position: 103
       prefix: --excess-penalty
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: 'Use either: 0.8 or 0.9 (ancient)'
-    default: 0.85
     inputBinding:
       position: 103
       prefix: --ext-random-align
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep target sequences
-    default: 1
     inputBinding:
       position: 103
       prefix: --keep-target
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: Min. odds ratio to accept read extension. Range 0-1 (ancient)
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --likelihood-ratio-threshold
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum sequence length
-    default: 65535
     inputBinding:
       position: 103
       prefix: --max-seq-len
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage of extending region (ancient)
-    default: 5
     inputBinding:
       position: 103
       prefix: --min-cov-safe
@@ -84,7 +77,6 @@ inputs:
       - 'null'
       - float
     doc: Min. seq. ident. of contig overlaps (ancient) (range 0.0-1.0)
-    default: 0.99
     inputBinding:
       position: 103
       prefix: --min-merge-seq-id
@@ -93,7 +85,6 @@ inputs:
       - 'null'
       - float
     doc: Min. RY-mer space seq. ident in correction phase. Range 0-1 (ancient)
-    default: 0.99
     inputBinding:
       position: 103
       prefix: --min-ryseq-id-corr-reads
@@ -103,7 +94,6 @@ inputs:
       - float
     doc: List matches above this sequence identity (for clustering) (range 
       0.0-1.0)
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --min-seq-id
@@ -112,7 +102,6 @@ inputs:
       - 'null'
       - float
     doc: Min. seq. ident. for contig correction (ancient) (range 0.0-1.0)
-    default: 0.9
     inputBinding:
       position: 103
       prefix: --min-seqid-corr-contigs
@@ -121,7 +110,6 @@ inputs:
       - 'null'
       - float
     doc: Min. seq. ident. in correction phase. Range 0-1 (ancient)
-    default: 0.9
     inputBinding:
       position: 103
       prefix: --min-seqid-corr-reads
@@ -132,7 +120,6 @@ inputs:
     doc: 'Rescore diagonals with: 0: Hamming distance, 1: local alignment (score only),
       2: local alignment, 3: global alignment, 4: longest alignment fulfilling window
       quality criterion'
-    default: 0
     inputBinding:
       position: 103
       prefix: --rescore-mode
@@ -141,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU-cores used (all by default)
-    default: 20
     inputBinding:
       position: 103
       prefix: --threads
@@ -150,7 +136,6 @@ inputs:
       - 'null'
       - boolean
     doc: Maximize the contig length, but higher misassembly rate (ancient)
-    default: 0
     inputBinding:
       position: 103
       prefix: --unsafe
@@ -159,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbosity level: 0: quiet, 1: +errors, 2: +warnings, 3: +info'
-    default: 3
     inputBinding:
       position: 103
       prefix: -v

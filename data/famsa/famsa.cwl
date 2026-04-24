@@ -54,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: Pairwise distance measure (indel_div_lcs | indel075_div_lcs)
-    default: indel_div_lcs
     inputBinding:
       position: 103
       prefix: -dist
@@ -63,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Gap cost scaler div-term
-    default: 7
     inputBinding:
       position: 103
       prefix: -gsd
@@ -72,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Gap cost scaler log-term
-    default: 45
     inputBinding:
       position: 103
       prefix: -gsl
@@ -81,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Gap extension cost
-    default: -1250
     inputBinding:
       position: 103
       prefix: -ge
@@ -90,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Gap open cost
-    default: -14850
     inputBinding:
       position: 103
       prefix: -go
@@ -107,7 +102,6 @@ inputs:
       - 'null'
       - string
     doc: 'Guide tree method: sl (single linkage), upgma, nj, or import <file>'
-    default: sl
     inputBinding:
       position: 103
       prefix: -gt
@@ -124,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: Gzip compression level [0-9]
-    default: 7
     inputBinding:
       position: 103
       prefix: -gz-lev
@@ -165,7 +158,6 @@ inputs:
       - 'null'
       - string
     doc: Refinement mode (on | off | auto)
-    default: auto
     inputBinding:
       position: 103
       prefix: -refine_mode
@@ -174,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: No. of refinement iterations
-    default: 100
     inputBinding:
       position: 103
       prefix: -r
@@ -192,7 +183,6 @@ inputs:
       - 'null'
       - string
     doc: Scoring matrix (MIQS | PFASUM31 | PFASUM43 | PFASUM60)
-    default: PFASUM43
     inputBinding:
       position: 103
       prefix: -sm
@@ -209,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: Terminal gap extension cost
-    default: -660
     inputBinding:
       position: 103
       prefix: -tge
@@ -218,7 +207,6 @@ inputs:
       - 'null'
       - int
     doc: Terminal gap open cost
-    default: -660
     inputBinding:
       position: 103
       prefix: -tgo
@@ -227,7 +215,6 @@ inputs:
       - 'null'
       - int
     doc: No. of threads. 0 indicates half of all logical cores.
-    default: 0
     inputBinding:
       position: 103
       prefix: -t

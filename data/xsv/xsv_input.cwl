@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: The field delimiter for reading CSV data. Must be a single character.
-    default: ','
     inputBinding:
       position: 102
       prefix: --delimiter
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: The quote character to use.
-    default: '"'
     inputBinding:
       position: 102
       prefix: --quote

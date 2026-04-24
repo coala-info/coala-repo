@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Dataset tag (BAM basename).
-    default: BAM basename
     inputBinding:
       position: 102
       prefix: -t
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Number of bins
-    default: None = auto
     inputBinding:
       position: 102
       prefix: -b
@@ -34,7 +32,6 @@ inputs:
       - File
     doc: Tab separated file with per-chromosome cov80 scores. Requires the -x 
       option to be specified.
-    default: None
     inputBinding:
       position: 102
       prefix: -l
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - File
     doc: Tab separated file with global cov80 score
-    default: None
     inputBinding:
       position: 102
       prefix: -g
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: Length intervals
-    default: ()
     inputBinding:
       position: 102
       prefix: -i
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment quality
-    default: 0
     inputBinding:
       position: 102
       prefix: -q
@@ -100,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: BAM region
-    default: None
     inputBinding:
       position: 102
       prefix: -c
@@ -109,7 +102,6 @@ inputs:
       - 'null'
       - File
     doc: Report PDF
-    default: bam_frag_coverage.pdf
     inputBinding:
       position: 102
       prefix: -r
@@ -118,7 +110,6 @@ inputs:
       - 'null'
       - File
     doc: Save pickled results in this file
-    default: None
     inputBinding:
       position: 102
       prefix: -p

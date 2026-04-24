@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: The length k of k-mers for k-mer counting.
-    default: 5
     inputBinding:
       position: 101
       prefix: --kmer

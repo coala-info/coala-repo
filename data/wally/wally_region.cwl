@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: insert size cutoff, median+m*MAD
-    default: 9
     inputBinding:
       position: 102
       prefix: --mad-cutoff
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: min. mapping quality
-    default: 1
     inputBinding:
       position: 102
       prefix: --map-qual
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: min. SNV coverage
-    default: 10
     inputBinding:
       position: 102
       prefix: --snv-cov
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: min. SNV VAF
-    default: 0.200000003
     inputBinding:
       position: 102
       prefix: --snv-vaf
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: number of horizontal images
-    default: 1
     inputBinding:
       position: 102
       prefix: --split
@@ -85,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: height of the plot
-    default: 1024
     inputBinding:
       position: 102
       prefix: --height
@@ -94,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: width of the plot
-    default: 1024
     inputBinding:
       position: 102
       prefix: --width
@@ -103,7 +96,6 @@ inputs:
       - 'null'
       - string
     doc: region to display
-    default: chrA:35-78
     inputBinding:
       position: 102
       prefix: --region

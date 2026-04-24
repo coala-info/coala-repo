@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Output assignments for each contig. Default: False'
-    default: false
     inputBinding:
       position: 101
       prefix: --contig_taxonomy_output
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Output scores for every taxlevel. Default: False'
-    default: false
     inputBinding:
       position: 101
       prefix: --detailed_output
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Suffix of files in input_dir.
-    default: .fa
     inputBinding:
       position: 101
       prefix: --file_suffix
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Input files are FASTA faa format. Default: False'
-    default: false
     inputBinding:
       position: 101
       prefix: --gene_calls
@@ -78,7 +74,6 @@ inputs:
       - int
     doc: 'Dont calculate GUNC score if number of mapped genes is below this value.
       Default: 11'
-    default: 11
     inputBinding:
       position: 101
       prefix: --min_mapped_genes
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Output dir. Default: cwd'
-    default: cwd
     inputBinding:
       position: 101
       prefix: --out_dir
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Run with high sensitivity. Default: False'
-    default: false
     inputBinding:
       position: 101
       prefix: --sensitive
@@ -105,7 +98,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Directory to store temp files. Default: cwd'
-    default: cwd
     inputBinding:
       position: 101
       prefix: --temp_dir
@@ -114,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of CPU threads. Default: 4'
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -123,7 +114,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Allow species level to be picked as maxCSS. Default: False'
-    default: false
     inputBinding:
       position: 101
       prefix: --use_species_level

@@ -9,7 +9,6 @@ inputs:
   - id: db_prefix
     type: string
     doc: Database output prefix
-    default: None
     inputBinding:
       position: 101
       prefix: --db-prefix
@@ -19,7 +18,6 @@ inputs:
       - int
     doc: Fixed size for filter in Megabytes (MB). Mutually exclusive --max-fp. 
       Only valid for --filter-type ibf.
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-size
@@ -31,7 +29,6 @@ inputs:
       v3.0.1 installed or binary path set with --raptor-path. --mode, 
       --filter-size and --min-length will be ignored with hibf. hibf will set 
       --max-fp 0.001 as default.
-    default: hibf
     inputBinding:
       position: 101
       prefix: --filter-type
@@ -42,7 +39,6 @@ inputs:
         items: File
     doc: Specific files for genome size estimation - otherwise files will be 
       downloaded
-    default: None
     inputBinding:
       position: 101
       prefix: --genome-size-files
@@ -52,7 +48,6 @@ inputs:
       - int
     doc: The number of hash functions for the interleaved bloom filter [1-5]. 
       With --filter-type ibf, 0 will try to set optimal value.
-    default: 4
     inputBinding:
       position: 101
       prefix: --hash-functions
@@ -62,7 +57,6 @@ inputs:
       - type: array
         items: string
     doc: Input file(s) and/or folder(s). Mutually exclusive --input-file.
-    default: None
     inputBinding:
       position: 101
       prefix: --input
@@ -91,7 +85,6 @@ inputs:
       - 'null'
       - boolean
     doc: Look for files recursively in folder(s) provided with --input
-    default: false
     inputBinding:
       position: 101
       prefix: --input-recursive
@@ -101,7 +94,6 @@ inputs:
       - string
     doc: Target to use [file, sequence]. Parse input by file or by sequence. 
       Using 'file' is recommended and will speed-up the building process
-    default: file
     inputBinding:
       position: 101
       prefix: --input-target
@@ -110,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: The k-mer size to split sequences.
-    default: 19
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -123,7 +114,6 @@ inputs:
       --taxonomy). Further specialization options [assembly, custom]. assembly will
       retrieve and use the assembly accession and name. custom requires and uses the
       specialization field in the --input-file."
-    default: None
     inputBinding:
       position: 101
       prefix: --level
@@ -134,7 +124,6 @@ inputs:
     doc: Max. false positive for bloom filters. Mutually exclusive 
       --filter-size. Defaults to 0.001 with --filter-type hibf or 0.05 with 
       --filter-type ibf.
-    default: None
     inputBinding:
       position: 101
       prefix: --max-fp
@@ -144,7 +133,6 @@ inputs:
       - int
     doc: Skip sequences smaller then value defined. 0 to not skip any sequence. 
       Only valid for --filter-type ibf.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-length
@@ -157,7 +145,6 @@ inputs:
       --filter-size is used, smaller/smallest refers to the false positive rate.
       By default, an average value is calculated to balance classification speed
       and database size. Only valid for --filter-type ibf.
-    default: avg
     inputBinding:
       position: 101
       prefix: --mode
@@ -169,7 +156,6 @@ inputs:
     doc: Downloads assembly_summary files to extract target information. 
       [refseq, genbank, refseq_historical, genbank_historical or one or more 
       assembly_summary files from https://ftp.ncbi.nlm.nih.gov/genomes/]
-    default:
       - refseq
       - genbank
     inputBinding:
@@ -187,7 +173,6 @@ inputs:
       https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/]. By default 
       uses e-utils up-to 50000 sequences or downloads nucl_gb nucl_wgs 
       otherwise.
-    default: []
     inputBinding:
       position: 101
       prefix: --ncbi-sequence-info
@@ -196,7 +181,6 @@ inputs:
       - 'null'
       - boolean
     doc: Quiet output mode
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -206,7 +190,6 @@ inputs:
       - boolean
     doc: Restart build/update from scratch, do not try to resume from the latest
       possible step. {db_prefix}_files/ will be deleted if present.
-    default: false
     inputBinding:
       position: 101
       prefix: --restart
@@ -216,7 +199,6 @@ inputs:
       - boolean
     doc: Do not attempt to get genome sizes. Activate this option when using 
       sequences not representing full genomes.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-genome-size
@@ -226,7 +208,6 @@ inputs:
       - string
     doc: Set taxonomy to enable taxonomic classification, lca and reports [ncbi,
       gtdb, skip]
-    default: ncbi
     inputBinding:
       position: 101
       prefix: --taxonomy
@@ -236,7 +217,6 @@ inputs:
       - type: array
         items: File
     doc: Specific files for taxonomy - otherwise files will be downloaded
-    default: None
     inputBinding:
       position: 101
       prefix: --taxonomy-files
@@ -253,7 +233,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose output mode
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose
@@ -262,7 +241,6 @@ inputs:
       - 'null'
       - int
     doc: The window-size to build filter with minimizers.
-    default: 31
     inputBinding:
       position: 101
       prefix: --window-size
@@ -272,7 +250,6 @@ inputs:
       - boolean
     doc: Save copy of target info generated to {db_prefix}.info.tsv. Can be 
       re-used as --input-file for further attempts.
-    default: false
     inputBinding:
       position: 101
       prefix: --write-info-file

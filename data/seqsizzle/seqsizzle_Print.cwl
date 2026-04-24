@@ -78,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Quality threshold for styling
-    default: 10
     inputBinding:
       position: 103
       prefix: --quality-threshold

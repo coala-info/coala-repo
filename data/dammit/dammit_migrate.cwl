@@ -40,7 +40,6 @@ inputs:
     doc: Directory to store databases. Existing databases will not be 
       overwritten. By default, the database directory is 
       $HOME/.dammit/databases.
-    default: $HOME/.dammit/databases
     inputBinding:
       position: 101
       prefix: --database-dir

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: number of iterations to find unrelated
-    default: 10
     inputBinding:
       position: 102
       prefix: --its
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for relatedness
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --kmin

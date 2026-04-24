@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: Containter the command runs in.
-    default: alpine
     inputBinding:
       position: 102
       prefix: --container
@@ -131,7 +130,6 @@ inputs:
       - 'null'
       - string
     doc: Address of Funnel server.
-    default: http://localhost:8000
     inputBinding:
       position: 102
       prefix: --server

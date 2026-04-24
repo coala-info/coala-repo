@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: Exclude duplications for which the expression is true
-    default: length < 500 && seq_sim < 0.97
     inputBinding:
       position: 101
       prefix: --exclude
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - File
     doc: Path to "tabix" executable
-    default: tabix
     inputBinding:
       position: 101
       prefix: --tabix
@@ -62,7 +60,6 @@ inputs:
       - string
     doc: Exclude duplications for which the expression is true and mark regions as
       "tangled". These regions will be discarded from downstream analysis.
-    default: sep < 5000 && av_mult > 2
     inputBinding:
       position: 101
       prefix: --tangled
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Use <int> threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

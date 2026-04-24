@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: summary function for dynamic smoothing
-    default: min
     inputBinding:
       position: 103
       prefix: --summary
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: threshold for the summary function
-    default: 0
     inputBinding:
       position: 103
       prefix: --threshold

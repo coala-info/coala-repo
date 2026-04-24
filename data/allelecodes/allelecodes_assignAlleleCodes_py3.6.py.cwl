@@ -34,7 +34,6 @@ inputs:
       - boolean
     doc: whether results of run will overwrite historical allele profiles and 
       nomenclature tree
-    default: false
     inputBinding:
       position: 101
       prefix: --nosave
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: output what's written to log file if provided
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

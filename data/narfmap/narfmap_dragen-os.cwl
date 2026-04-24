@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Generate a reference/hash table
-    default: 0
     inputBinding:
       position: 103
       prefix: --build-hash-table
@@ -37,7 +36,6 @@ inputs:
       - int
     doc: Automatically detect paired-end parameters by running a sample through 
       the mapper/aligner
-    default: 1
     inputBinding:
       position: 103
       prefix: --enable-sampling
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: FASTQ quality offset value. Set to 33 or 64
-    default: 33
     inputBinding:
       position: 103
       prefix: --fastq-offset
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - float
     doc: Ratio for controlling seed chain filtering
-    default: 4
     inputBinding:
       position: 103
       prefix: --Mapper.filter-len-ratio
@@ -89,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Bits defining reference bins for anchored seed search
-    default: 0
     inputBinding:
       position: 103
       prefix: --ht-anchor-bin-bits
@@ -98,7 +93,6 @@ inputs:
       - 'null'
       - float
     doc: Cost coefficient of extended seed frequency
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --ht-cost-coeff-seed-freq
@@ -107,7 +101,6 @@ inputs:
       - 'null'
       - float
     doc: Cost coefficient of extended seed length
-    default: 1
     inputBinding:
       position: 103
       prefix: --ht-cost-coeff-seed-len
@@ -116,7 +109,6 @@ inputs:
       - 'null'
       - float
     doc: Cost penalty to extend a seed by any number of bases
-    default: 0
     inputBinding:
       position: 103
       prefix: --ht-cost-penalty
@@ -125,7 +117,6 @@ inputs:
       - 'null'
       - float
     doc: Cost penalty to incrementally extend a seed another step
-    default: 0.7
     inputBinding:
       position: 103
       prefix: --ht-cost-penalty-incr
@@ -134,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: Index of CRC polynomial for hashing extended seeds
-    default: 0
     inputBinding:
       position: 103
       prefix: --ht-crc-extended
@@ -143,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: Index of CRC polynomial for hashing primary seeds
-    default: 0
     inputBinding:
       position: 103
       prefix: --ht-crc-primary
@@ -160,7 +149,6 @@ inputs:
       - 'null'
       - int
     doc: Testing - dump internal parameters
-    default: 0
     inputBinding:
       position: 103
       prefix: --ht-dump-int-params
@@ -169,7 +157,6 @@ inputs:
       - 'null'
       - int
     doc: Cost penalty for each EXTEND or INTERVAL record
-    default: 4
     inputBinding:
       position: 103
       prefix: --ht-ext-rec-cost
@@ -178,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: 8-byte records to reserve in extend_table.bin (0=automatic)
-    default: 0
     inputBinding:
       position: 103
       prefix: --ht-ext-table-alloc
@@ -195,7 +181,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum decimation factor for seed thinning
-    default: 1
     inputBinding:
       position: 103
       prefix: --ht-max-dec-factor
@@ -204,7 +189,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum bases to extend a seed by in one step
-    default: 12
     inputBinding:
       position: 103
       prefix: --ht-max-ext-incr
@@ -213,7 +197,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum extended seed length
-    default: 0
     inputBinding:
       position: 103
       prefix: --ht-max-ext-seed-len
@@ -230,7 +213,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum allowed frequency for a seed match after extension attempts
-    default: 16
     inputBinding:
       position: 103
       prefix: --ht-max-seed-freq
@@ -239,7 +221,6 @@ inputs:
       - 'null'
       - int
     doc: Ramp from priMaxSeedFreq reaches maxSeedFreq at this seed length
-    default: 98
     inputBinding:
       position: 103
       prefix: --ht-max-seed-freq-len
@@ -256,7 +237,6 @@ inputs:
       - 'null'
       - string
     doc: Memory limit (hash table + reference)
-    default: 0GB
     inputBinding:
       position: 103
       prefix: --ht-mem-limit
@@ -265,7 +245,6 @@ inputs:
       - 'null'
       - int
     doc: If set to true, generate C->T and G->A converted pair of hashtables
-    default: 0
     inputBinding:
       position: 103
       prefix: --ht-methylated
@@ -274,7 +253,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum probability of success to attempt extended seed repair
-    default: 0.2
     inputBinding:
       position: 103
       prefix: --ht-min-repair-prob
@@ -291,7 +269,6 @@ inputs:
       - 'null'
       - int
     doc: Override hash table size check
-    default: 0
     inputBinding:
       position: 103
       prefix: --ht-override-size-check
@@ -300,7 +277,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum frequency for a primary seed match (0 => use maxSeedFreq)
-    default: 0
     inputBinding:
       position: 103
       prefix: --ht-pri-max-seed-freq
@@ -309,7 +285,6 @@ inputs:
       - 'null'
       - int
     doc: Include a random hit with each EXTEND record of this frequency
-    default: 8
     inputBinding:
       position: 103
       prefix: --ht-rand-hit-extend
@@ -318,7 +293,6 @@ inputs:
       - 'null'
       - int
     doc: Include a random hit with each HIFREQ record
-    default: 1
     inputBinding:
       position: 103
       prefix: --ht-rand-hit-hifreq
@@ -343,7 +317,6 @@ inputs:
       - 'null'
       - int
     doc: 'Seed extension repair strategy: 0=none, 1=best, 2=rand'
-    default: 0
     inputBinding:
       position: 103
       prefix: --ht-repair-strategy
@@ -352,7 +325,6 @@ inputs:
       - 'null'
       - int
     doc: Initial seed length to store in hash table
-    default: 21
     inputBinding:
       position: 103
       prefix: --ht-seed-len
@@ -361,7 +333,6 @@ inputs:
       - 'null'
       - string
     doc: Size of hash table, units B|KB|MB|GB
-    default: 0GB
     inputBinding:
       position: 103
       prefix: --ht-size
@@ -378,7 +349,6 @@ inputs:
       - 'null'
       - int
     doc: Soft seed frequency cap for thinning
-    default: 12
     inputBinding:
       position: 103
       prefix: --ht-soft-seed-freq-cap
@@ -387,7 +357,6 @@ inputs:
       - 'null'
       - int
     doc: Target seed frequency for seed extension
-    default: 4
     inputBinding:
       position: 103
       prefix: --ht-target-seed-freq
@@ -396,7 +365,6 @@ inputs:
       - 'null'
       - int
     doc: Testing - show user parameters, but don't do anything
-    default: 0
     inputBinding:
       position: 103
       prefix: --ht-test-only
@@ -406,7 +374,6 @@ inputs:
       - int
     doc: Uncompress hash_table.cmp to hash_table.bin and extend_table.bin 
       (standalone option)
-    default: 0
     inputBinding:
       position: 103
       prefix: --ht-uncompress
@@ -415,7 +382,6 @@ inputs:
       - 'null'
       - int
     doc: Write decompressed hash_table.bin and extend_table.bin (0/1)
-    default: 0
     inputBinding:
       position: 103
       prefix: --ht-write-hash-bin
@@ -424,7 +390,6 @@ inputs:
       - 'null'
       - string
     doc: Character that delimits input qname suffixes, e.g. / for /1
-    default: ' '
     inputBinding:
       position: 103
       prefix: --input-qname-suffix-delimiter
@@ -433,7 +398,6 @@ inputs:
       - 'null'
       - boolean
     doc: Interleaved paired-end reads in single bam or FASTQ
-    default: false
     inputBinding:
       position: 103
       prefix: --interleaved
@@ -443,7 +407,6 @@ inputs:
       - int
     doc: no real alignment, produces alignment information based on seed chains 
       only
-    default: 0
     inputBinding:
       position: 103
       prefix: --map-only
@@ -453,7 +416,6 @@ inputs:
       - int
     doc: memory-map reference data instead of pre-loading. This allows for 
       quicker runs when only a handful of reads need to be aligned
-    default: 0
     inputBinding:
       position: 103
       prefix: --mmap-reference
@@ -463,7 +425,6 @@ inputs:
       - int
     doc: Worker threads for mapper/aligner (default = maximum available on 
       system)
-    default: 20
     inputBinding:
       position: 103
       prefix: --num-threads
@@ -496,7 +457,6 @@ inputs:
       - 'null'
       - float
     doc: Expected mean of the insert size
-    default: 0
     inputBinding:
       position: 103
       prefix: --Aligner.pe-stat-mean-insert
@@ -505,7 +465,6 @@ inputs:
       - 'null'
       - float
     doc: When setting paired-end insert stats, the expected mean read length
-    default: 0
     inputBinding:
       position: 103
       prefix: --Aligner.pe-stat-mean-read-len
@@ -522,7 +481,6 @@ inputs:
       - 'null'
       - float
     doc: Expected standard deviation of the insert size
-    default: 0
     inputBinding:
       position: 103
       prefix: --Aligner.pe-stat-stddev-insert
@@ -550,7 +508,6 @@ inputs:
       - int
     doc: Number of reads to include in each interval of updating paired-end 
       stats
-    default: 25000
     inputBinding:
       position: 103
       prefix: --pe-stats-interval-size
@@ -560,7 +517,6 @@ inputs:
       - int
     doc: Number of most recent pairs to include in each update of the paired-end
       stats
-    default: 100000
     inputBinding:
       position: 103
       prefix: --pe-stats-sample-size
@@ -570,7 +526,6 @@ inputs:
       - int
     doc: Preserve the order of mapper/aligner output to produce deterministic 
       results. Impacts performance
-    default: 0
     inputBinding:
       position: 103
       prefix: --preserve-map-align-order
@@ -588,7 +543,6 @@ inputs:
       - 'null'
       - int
     doc: Expect to find uncompressed hash table in the reference directory.
-    default: 0
     inputBinding:
       position: 103
       prefix: --ref-load-hash-bin
@@ -597,7 +551,6 @@ inputs:
       - 'null'
       - float
     doc: For tuning the rescue scan window maximum ceiling
-    default: 3
     inputBinding:
       position: 103
       prefix: --Aligner.rescue-ceil-factor
@@ -606,7 +559,6 @@ inputs:
       - 'null'
       - float
     doc: For tuning the rescue scan window
-    default: 0
     inputBinding:
       position: 103
       prefix: --Aligner.rescue-sigmas
@@ -623,7 +575,6 @@ inputs:
       - 'null'
       - int
     doc: Read Group ID
-    default: 1
     inputBinding:
       position: 103
       prefix: --RGID
@@ -632,7 +583,6 @@ inputs:
       - 'null'
       - string
     doc: Read Group Sample
-    default: none
     inputBinding:
       position: 103
       prefix: --RGSM
@@ -641,7 +591,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum secondary (suboptimal) alignments to report per read
-    default: 0
     inputBinding:
       position: 103
       prefix: --Aligner.sec-aligns
@@ -650,7 +599,6 @@ inputs:
       - 'null'
       - int
     doc: Set to force unmapped when not all secondary alignments can be output
-    default: 0
     inputBinding:
       position: 103
       prefix: --Aligner.sec-aligns-hard
@@ -660,7 +608,6 @@ inputs:
       - float
     doc: Only secondary alignments with likelihood within this phred of the 
       primary
-    default: 0
     inputBinding:
       position: 103
       prefix: --Aligner.sec-phred-delta
@@ -670,7 +617,6 @@ inputs:
       - float
     doc: Secondary aligns allowed with pair score no more than this far below 
       primary
-    default: 0
     inputBinding:
       position: 103
       prefix: --Aligner.sec-score-delta
@@ -679,7 +625,6 @@ inputs:
       - 'null'
       - string
     doc: SmithWaterman implementation (dragen / mengyao default = dragen)
-    default: dragen
     inputBinding:
       position: 103
       prefix: --Aligner.smith-waterman-method
@@ -688,7 +633,6 @@ inputs:
       - 'null'
       - int
     doc: Value of 1 forces smith waterman on all candidate alignments
-    default: 0
     inputBinding:
       position: 103
       prefix: --Aligner.sw-all

@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: Sample filename extension (fq, fastq, fastq.gz, sam)
-    default: fastq
     inputBinding:
       position: 101
       prefix: -e
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -n

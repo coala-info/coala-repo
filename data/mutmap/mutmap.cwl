@@ -19,7 +19,6 @@ inputs:
       - int
     doc: "Adjust the mapping quality for mpileup. The default\n                  \
       \   setting is optimized for BWA."
-    default: 50
     inputBinding:
       position: 101
       prefix: --adjust-MQ
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Color of the dots in plots.
-    default: '"#B3B8DD"'
     inputBinding:
       position: 101
       prefix: --dot-color
@@ -58,7 +56,6 @@ inputs:
       - string
     doc: "Colors for threshold lines in plots. Specify a\n                     comma-separated
       list in the order of SNP-index,\n                     p95, and p99."
-    default: '"#D55D00,#009E72,#FDB003"'
     inputBinding:
       position: 101
       prefix: --line-colors
@@ -68,7 +65,6 @@ inputs:
       - int
     doc: "Maximum depth of variants to be used. This cutoff\n                    \
       \ applies to both the cultivar and the bulk."
-    default: 250
     inputBinding:
       position: 101
       prefix: --max-depth
@@ -78,7 +74,6 @@ inputs:
       - string
     doc: Maximum memory per thread when sorting BAM files; suffixes K/M/G are 
       recognized.
-    default: 1G
     inputBinding:
       position: 101
       prefix: --mem
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality for mpileup.
-    default: 18
     inputBinding:
       position: 101
       prefix: --min-BQ
@@ -97,7 +91,6 @@ inputs:
       - int
     doc: "Minimum depth of variants to be used. This cutoff\n                    \
       \ applies to both the cultivar and the bulk."
-    default: 8
     inputBinding:
       position: 101
       prefix: --min-depth
@@ -106,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality for mpileup.
-    default: 40
     inputBinding:
       position: 101
       prefix: --min-MQ
@@ -122,7 +114,6 @@ inputs:
       - int
     doc: "Number of replicates for simulations to generate\n                     null
       distribution."
-    default: 5000
     inputBinding:
       position: 101
       prefix: --N-rep
@@ -146,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: Step size in kilobases (kb).
-    default: 100
     inputBinding:
       position: 101
       prefix: --step
@@ -156,7 +146,6 @@ inputs:
       - int
     doc: "Number of threads. If a value less than 1 is specified,\n              \
       \       MutMap will use the maximum available threads."
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads
@@ -178,7 +167,6 @@ inputs:
       To remove Illumina adapters,\n                     specify the adapter FASTA
       file with \"--adapter\".\n                     If not specified, adapter trimming
       will be skipped."
-    default: 33,<ADAPTER_FASTA>:2:30:10,20,20,4:15,75
     inputBinding:
       position: 101
       prefix: --trim-params
@@ -187,7 +175,6 @@ inputs:
       - 'null'
       - int
     doc: Window size in kilobases (kb).
-    default: 2000
     inputBinding:
       position: 101
       prefix: --window

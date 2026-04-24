@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: cram or bam file to check
-    default: '-'
     inputBinding:
       position: 1
   - id: format
@@ -17,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Output format (text, json, or tsv)
-    default: text
     inputBinding:
       position: 102
       prefix: --format
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal length of read to be considered
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-read-len
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel decompression threads to use
-    default: 4
     inputBinding:
       position: 102
       prefix: --threads

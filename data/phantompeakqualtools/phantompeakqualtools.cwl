@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Number of peaks to use for cross-correlation
-    default: 300000
     inputBinding:
       position: 101
       prefix: -npeak
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel processing threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -p

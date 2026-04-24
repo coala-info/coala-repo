@@ -10,7 +10,6 @@ inputs:
       - boolean
     doc: "Use a part of the training set as a test set to\nevaluate final model. Test
       set size is controlled by\n--val-size"
-    default: false
     inputBinding:
       position: 101
       prefix: --add-test
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Gradient descent batch size
-    default: 50
     inputBinding:
       position: 101
       prefix: --batch-size
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: BOHB maximum budget
-    default: 40
     inputBinding:
       position: 101
       prefix: --bohb-max-budget
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: BOHB minimum budget
-    default: 5
     inputBinding:
       position: 101
       prefix: --bohb-min-budget
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Number of BOHB iterations
-    default: 80
     inputBinding:
       position: 101
       prefix: --bohb-n
@@ -55,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: "Number of BOHB worker threads for local multi-core\nparallel computing"
-    default: 1
     inputBinding:
       position: 101
       prefix: --bohb-workers
@@ -65,7 +59,6 @@ inputs:
       - boolean
     doc: "Run cross validation in combination with set\nhyperparameters to evaluate
       model generalization\nperformance"
-    default: false
     inputBinding:
       position: 101
       prefix: --cv
@@ -75,7 +68,6 @@ inputs:
       - int
     doc: "Cross validation k for evaluating generalization\nperformance (use together
       with --cv)"
-    default: 10
     inputBinding:
       position: 101
       prefix: --cv-k
@@ -84,7 +76,6 @@ inputs:
       - 'null'
       - float
     doc: Rate of dropout applied after RNN layers
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --dr
@@ -93,7 +84,6 @@ inputs:
       - 'null'
       - boolean
     doc: "Use embedding layer for sequence feature, instead of\none-hot encoding"
-    default: false
     inputBinding:
       position: 101
       prefix: --embed
@@ -102,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Dimension of embedding layer
-    default: 10
     inputBinding:
       position: 101
       prefix: --embed-dim
@@ -111,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of training epochs
-    default: 200
     inputBinding:
       position: 101
       prefix: --epochs
@@ -120,7 +108,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run on CPU regardless of CUDA available or not
-    default: false
     inputBinding:
       position: 101
       prefix: --force-cpu
@@ -136,7 +123,6 @@ inputs:
       - boolean
     doc: "Use same train-validation(-test) split for each call\nto train final model.
       Test split only if --add-test or\n--test-ids"
-    default: false
     inputBinding:
       position: 101
       prefix: --keep-order
@@ -145,7 +131,6 @@ inputs:
       - 'null'
       - float
     doc: Learning rate of optimizer
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --lr
@@ -154,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: 'RNN model type to use. 1: GRU, 2: LSTM, 3: biGRU, 4: biLSTM'
-    default: 1
     inputBinding:
       position: 101
       prefix: --model-type
@@ -163,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: Number of fully connected layers following RNN layers
-    default: 1
     inputBinding:
       position: 101
       prefix: --n-fc-layers
@@ -172,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: Number of RNN layer dimensions
-    default: 32
     inputBinding:
       position: 101
       prefix: --n-hidden-dim
@@ -181,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: Number of RNN layers
-    default: 1
     inputBinding:
       position: 101
       prefix: --n-rnn-layers
@@ -191,7 +172,6 @@ inputs:
       - boolean
     doc: "Use only sequence feature. By default all features\npresent in --in are
       used"
-    default: false
     inputBinding:
       position: 101
       prefix: --only-seq
@@ -201,7 +181,6 @@ inputs:
       - int
     doc: "Number of epochs to wait for further improvement on\nvalidation set before
       stopping"
-    default: 30
     inputBinding:
       position: 101
       prefix: --patience
@@ -211,7 +190,6 @@ inputs:
       - boolean
     doc: "Plot learning curves (training vs validation loss) for\neach tested hyperparameter
       combination"
-    default: false
     inputBinding:
       position: 101
       prefix: --plot-lc
@@ -222,7 +200,6 @@ inputs:
     doc: "Use BOHB to run a hyperparameter optimization. NOTE\nthat this will overwrite
       set hyperparameters, and\ntrains the final model with the found best\nhyperparameter
       setting. ALSO NOTE that this will take\nsome time (!)"
-    default: false
     inputBinding:
       position: 101
       prefix: --run-bohb
@@ -243,7 +220,6 @@ inputs:
       of five structural elements\n(E,I,H,M,S) 2) same as 1) but encoded as one-hot\n\
       (element with highest probability gets 1, others 0) 3)\nuse unpaired probabilities
       4) same as 3) but encoded\nas one-hot"
-    default: 1
     inputBinding:
       position: 101
       prefix: --str-mode
@@ -329,7 +305,6 @@ inputs:
       sites. NOTE that if --add-\ntest is set, the test set will have the same size
       (so\nif --val-size 0.2, train on 60 percent, validate on 20\npercent, and test
       on 20 percent)"
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --val-size
@@ -339,7 +314,6 @@ inputs:
       - boolean
     doc: "Enable verbose output for BOHB hyperparameter\noptimization. By default
       only warnings are print out"
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose-bohb
@@ -348,7 +322,6 @@ inputs:
       - 'null'
       - boolean
     doc: "Enable verbose output during model training to show\nperformance over epochs"
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose-train
@@ -357,7 +330,6 @@ inputs:
       - 'null'
       - float
     doc: Weight decay of optimizer
-    default: 0.0005
     inputBinding:
       position: 101
       prefix: --weight-decay

@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: length of flanking sequences
-    default: 100
     inputBinding:
       position: 103
       prefix: -l
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of positive sites
-    default: 0.25
     inputBinding:
       position: 103
       prefix: -p

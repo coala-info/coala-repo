@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - boolean
     doc: Quiet output
-    default: false
     inputBinding:
       position: 102
       prefix: --quiet
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose output
-    default: false
     inputBinding:
       position: 102
       prefix: --verbose

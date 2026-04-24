@@ -65,7 +65,6 @@ inputs:
       transition costs by the inverse length of edge lengths. If 0, then edge lengths
       do not influence predictions. Must be a non-negative real-valued number (default:
       0.500000).'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --edge_exponent
@@ -78,7 +77,6 @@ inputs:
       "subtree_average": predict continuous traits using subtree averaging. "pic":
       predict continuous traits with phylogentic independent contrast. "scp": reconstruct
       continuous traits using squared-change parsimony (default: mp).'
-    default: mp
     inputBinding:
       position: 101
       prefix: --hsp_method
@@ -89,7 +87,6 @@ inputs:
     doc: 'Comma-delimited list (with no spaces) of which gene families to predict
       from this set: EC, KO, GO, PFAM, BIGG, CAZY, GENE_NAMES. Note that EC numbers
       will always be predicted unless --no_pathways is set (default: EC,KO).'
-    default: EC,KO
     inputBinding:
       position: 101
       prefix: --in_traits
@@ -123,7 +120,6 @@ inputs:
       - 'null'
       - float
     doc: 'Sequences with NSTI values above this value will be excluded (default: 2).'
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --max_nsti
@@ -135,7 +131,6 @@ inputs:
       with reference sequences. Any sequences with lengths below this value after
       making an alignment with reference sequences will be excluded from the placement
       and all subsequent steps. (default: 0).'
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min_align
@@ -146,7 +141,6 @@ inputs:
     doc: 'Minimum number of reads across all samples for each input ASV. ASVs below
       this cut-off will be counted as part of the "RARE" category in the stratified
       output (default: 1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_reads
@@ -157,7 +151,6 @@ inputs:
     doc: 'Minimum number of samples that an ASV needs to be identfied within. ASVs
       below this cut-off will be counted as part of the "RARE" category in the stratified
       output (default: 1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_samples
@@ -196,7 +189,6 @@ inputs:
       - File
     doc: 'MinPath mapfile. The default mapfile maps MetaCyc reactions to prokaryotic
       pathways (default: /usr/local/lib/python3.12/site-packages/picrust2/default_files/pathway_mapfiles/metacyc_pathways_structured_filtered_v24.txt).'
-    default: 
       /usr/local/lib/python3.12/site-packages/picrust2/default_files/pathway_mapfiles/metacyc_pathways_structured_filtered_v24.txt
     inputBinding:
       position: 101
@@ -221,7 +213,6 @@ inputs:
       - string
     doc: 'Placement tool to use when placing sequences into reference tree. One of
       "epa-ng" or "sepp" must be input (default: epa-ng)'
-    default: epa-ng
     inputBinding:
       position: 101
       prefix: --placement_tool
@@ -230,7 +221,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of processes to run in parallel (default: 1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: --processes
@@ -243,7 +233,6 @@ inputs:
       in --in_traits, or the path to the file as would be specified for --custom_trait_tables.
       Note that when functions besides the default EC numbers are used typically the
       --no_regroup option would also be set.'
-    default: EC
     inputBinding:
       position: 101
       prefix: --reaction_func
@@ -253,7 +242,6 @@ inputs:
       - Directory
     doc: 'Directory containing reference sequence files (default: /usr/local/lib/python3.12/site-packages/picrust2/default_files/bacteria/bac_ref).
       Please see the online documentation for how to name the files in this directory.'
-    default: 
       /usr/local/lib/python3.12/site-packages/picrust2/default_files/bacteria/bac_ref
     inputBinding:
       position: 101
@@ -264,7 +252,6 @@ inputs:
       - Directory
     doc: 'Directory containing reference sequence files (default: /usr/local/lib/python3.12/site-packages/picrust2/default_files/archaea/arc_ref).
       Please see the online documentation for how to name the files in this directory.'
-    default: 
       /usr/local/lib/python3.12/site-packages/picrust2/default_files/archaea/arc_ref
     inputBinding:
       position: 101
@@ -275,7 +262,6 @@ inputs:
       - File
     doc: 'Mapfile of ids to regroup gene families to before running MinPath. The default
       mapfile is for regrouping EC numbers to MetaCyc reactions (default: /usr/local/lib/python3.12/site-packages/picrust2/default_files/pathway_mapfiles/ec_level4_to_metacyc_rxn_new.tsv).'
-    default: 
       /usr/local/lib/python3.12/site-packages/picrust2/default_files/pathway_mapfiles/ec_level4_to_metacyc_rxn_new.tsv
     inputBinding:
       position: 101

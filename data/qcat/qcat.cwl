@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use EPI2ME's demultiplexing algorithm
-    default: true
     inputBinding:
       position: 101
       prefix: --epi2me
@@ -59,7 +58,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use Guppy's demultiplexing algorithm
-    default: false
     inputBinding:
       position: 101
       prefix: --guppy
@@ -69,7 +67,6 @@ inputs:
       - string
     doc: Sequencing kit. Specifying the correct kit will improve sensitivity and
       specificity and runtime
-    default: auto
     inputBinding:
       position: 101
       prefix: --kit
@@ -103,7 +100,6 @@ inputs:
       - int
     doc: Minimum barcode score. Barcode calls with a lower score will be 
       discarded. Must be between 0 and 100.
-    default: 60
     inputBinding:
       position: 101
       prefix: --min-score
@@ -112,7 +108,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't use information from multiple reads for kit detection
-    default: false
     inputBinding:
       position: 101
       prefix: --no-batch

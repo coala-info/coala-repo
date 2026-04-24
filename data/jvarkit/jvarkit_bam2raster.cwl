@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show clipping
-    default: false
     inputBinding:
       position: 102
       prefix: --clip
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Depth track height.
-    default: 100
     inputBinding:
       position: 102
       prefix: --depth
@@ -36,7 +34,6 @@ inputs:
     doc: Group Reads by. Data partitioning using the SAM Read Group (see 
       https://gatkforums.broadinstitute.org/gatk/discussion/6472/ ) . It can be 
       any combination of sample, library....
-    default: sample
     inputBinding:
       position: 102
       prefix: --groupby
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - boolean
     doc: hide bases
-    default: false
     inputBinding:
       position: 102
       prefix: --nobase
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: hightligth those positions.
-    default: '[]'
     inputBinding:
       position: 102
       prefix: --highlight
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: "Limit number of rows to 'N' lines. negative: no limit."
-    default: -1
     inputBinding:
       position: 102
       prefix: --maxrows
@@ -81,7 +75,6 @@ inputs:
       - string
     doc: 'How to handle the MAPQ/ opacity of the reads. all_opaque: no opacity, handler
       1: transparency under MAPQ=60'
-    default: handler1
     inputBinding:
       position: 102
       prefix: --mapqopacity
@@ -90,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Min. distance between two reads.
-    default: 2
     inputBinding:
       position: 102
       prefix: --minh
@@ -99,7 +91,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not use gradient for reads
-    default: false
     inputBinding:
       position: 102
       prefix: --noReadGradient
@@ -108,7 +99,6 @@ inputs:
       - 'null'
       - boolean
     doc: print read name instead of base
-    default: false
     inputBinding:
       position: 102
       prefix: --name
@@ -140,7 +130,6 @@ inputs:
       https://github.com/lindenb/jvarkit/blob/master/src/main/resources/javacc/com/github/lindenb/jvarkit/util/bio/samfilter/SamFilterParser.jj
       for a complete syntax. 'default' is 'mapqlt(1) || Duplicate() || 
       FailsVendorQuality() || NotPrimaryAlignment() || SupplementaryAlignment()'
-    default: mapqlt(1) || Duplicate() || FailsVendorQuality() || 
       NotPrimaryAlignment() || SupplementaryAlignment()
     inputBinding:
       position: 102
@@ -150,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: number of pixels between features
-    default: 4
     inputBinding:
       position: 102
       prefix: --spaceyfeature
@@ -160,7 +148,6 @@ inputs:
       - type: array
         items: File
     doc: VCF files used to fill the position to hightlight with POS
-    default: '[]'
     inputBinding:
       position: 102
       prefix: --variants
@@ -169,7 +156,6 @@ inputs:
       - 'null'
       - int
     doc: Image width
-    default: 1000
     inputBinding:
       position: 102
       prefix: --width

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum match ratio for long motifs
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --min_match_ratio_l
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: 'Sequencing platform / read type (default: CCS)'
-    default: CCS
     inputBinding:
       position: 101
       prefix: --reads_type

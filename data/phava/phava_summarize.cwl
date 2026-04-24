@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -26,7 +25,6 @@ inputs:
       - boolean
     doc: Should the logging info be output to stdout? Otherwise, it will be 
       written to 'PhaVa.log'
-    default: false
     inputBinding:
       position: 101
       prefix: --log

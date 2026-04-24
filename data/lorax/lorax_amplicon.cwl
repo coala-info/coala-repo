@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: breakpoint uncertainty (in bp)
-    default: 1000
     inputBinding:
       position: 102
       prefix: --uncertain
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: coverage window length
-    default: 1000
     inputBinding:
       position: 102
       prefix: --wincov
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: min. clipping length
-    default: 100
     inputBinding:
       position: 102
       prefix: --minclip
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: min. sequence quality
-    default: 10
     inputBinding:
       position: 102
       prefix: --quality
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: output prefix
-    default: out
     inputBinding:
       position: 102
       prefix: --outprefix
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: ploidy
-    default: 2
     inputBinding:
       position: 102
       prefix: --ploidy
@@ -82,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: sample name (as in VCF/BCF file)
-    default: NA12878
     inputBinding:
       position: 102
       prefix: --sample

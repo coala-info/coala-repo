@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: 'Do not show mutations that occur n times or less (default: Do not delete)'
-    default: None
     inputBinding:
       position: 102
       prefix: --delete-n
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: Length of the genome (needed if gff3 is not provided)
-    default: None
     inputBinding:
       position: 102
       prefix: --genome-length
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - File
     doc: Path to gff3 (needed if length is not provided)
-    default: None
     inputBinding:
       position: 102
       prefix: --gff3-path
@@ -68,7 +65,6 @@ inputs:
       - int
     doc: Display mutations covered at least x time (only if per base cov tsv 
       files are provided)
-    default: 20
     inputBinding:
       position: 102
       prefix: --min-cov
@@ -102,7 +98,6 @@ inputs:
       - 'null'
       - string
     doc: Plot name and file type (pdf, png, svg, jpg)
-    default: virHEAT_plot.pdf
     inputBinding:
       position: 102
       prefix: --name

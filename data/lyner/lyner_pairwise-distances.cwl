@@ -17,7 +17,6 @@ inputs:
       - string
     doc: 'Distance metric to use. Options: euclidean, manhattan, cosine, correlation,
       hamming, jaccard. Default: euclidean.'
-    default: euclidean
     inputBinding:
       position: 102
       prefix: --metric
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output format. Options: square, condensed. Default: square.'
-    default: square
     inputBinding:
       position: 102
       prefix: --output-format
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads to use. Default: 1.'
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

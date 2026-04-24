@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Format of the control file.
-    default: bed
     inputBinding:
       position: 101
       prefix: --cf
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: TSS downstream distance for promoters.
-    default: 2000
     inputBinding:
       position: 101
       prefix: --downstream
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: Format of the input file.
-    default: bed
     inputBinding:
       position: 101
       prefix: -f
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: "Generate N random control regions for each input\nregion."
-    default: 5
     inputBinding:
       position: 101
       prefix: --n-random
@@ -94,7 +90,6 @@ inputs:
       - 'null'
       - float
     doc: P value cutoff for motif scores.
-    default: '1e-4'
     inputBinding:
       position: 101
       prefix: -p
@@ -127,7 +122,6 @@ inputs:
       - 'null'
       - string
     doc: "Enable strand-specific scanning, defaults to scan both\nstrands."
-    default: both
     inputBinding:
       position: 101
       prefix: --strand
@@ -144,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: TSS upstream distance for promoters.
-    default: 4000
     inputBinding:
       position: 101
       prefix: --upstream
@@ -164,7 +157,6 @@ inputs:
       centers or summits of genomic\npeaks. Scanning a fixed-size window is often\n\
       sufficient to detect motif sites and unbiased for the\nenrichment analysis.
       If set to 0, the whole input\nregions are included for scanning."
-    default: 1000
     inputBinding:
       position: 101
       prefix: --window-size

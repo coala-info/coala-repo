@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip merging of paired-end reads.
-    default: true
     inputBinding:
       position: 101
       prefix: --no-skip-merge
@@ -80,7 +79,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip merging of paired-end reads.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-merge

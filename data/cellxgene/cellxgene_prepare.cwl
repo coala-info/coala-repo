@@ -20,7 +20,6 @@ inputs:
       - type: array
         items: string
     doc: Embedding algorithm(s). Repeat option for multiple embeddings.
-    default:
       - umap
       - tsne
     inputBinding:
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ensure obs index is unique.
-    default: true
     inputBinding:
       position: 102
       prefix: --make-obs-names-unique
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ensure var index is unique.
-    default: true
     inputBinding:
       position: 102
       prefix: --make-var-names-unique
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ensure obs index is unique.
-    default: false
     inputBinding:
       position: 102
       prefix: --no-make-obs-names-unique
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ensure var index is unique.
-    default: false
     inputBinding:
       position: 102
       prefix: --no-make-var-names-unique
@@ -82,7 +77,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: none
     inputBinding:
       position: 102
       prefix: --recipe

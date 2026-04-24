@@ -7,7 +7,6 @@ inputs:
   - id: workflow_name
     type: string
     doc: Name of the workflow to configure.
-    default: None
     inputBinding:
       position: 1
   - id: show_path

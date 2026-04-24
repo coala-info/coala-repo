@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: E-value cutoff for target sequences.
-    default: 1e-07
     inputBinding:
       position: 101
       prefix: --e
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: Identity cutoff (in percentage) for target sequences.
-    default: 80.0
     inputBinding:
       position: 101
       prefix: --id
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Aligned length cutoff (in amino acid) for target sequences.
-    default: 25
     inputBinding:
       position: 101
       prefix: --length
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: Query cover cutoff (in percentage) for target sequences.
-    default: 75.0
     inputBinding:
       position: 101
       prefix: --qcov
@@ -96,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 8
     inputBinding:
       position: 101
       prefix: --thread

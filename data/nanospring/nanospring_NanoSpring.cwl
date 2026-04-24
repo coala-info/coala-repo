@@ -30,7 +30,6 @@ inputs:
       large number of threads when another decompressor stage is the biggest 
       memory contributor. Very low values might lead to slight reduction in 
       speed.
-    default: 5
     inputBinding:
       position: 101
       prefix: --decompression-memory
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: the max number of edges allowed in a consensus graph
-    default: 4000000
     inputBinding:
       position: 101
       prefix: --edge-thr
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: kmer size for the minhash
-    default: 23
     inputBinding:
       position: 101
       prefix: --kmer
@@ -65,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: the max number of partial chains during chaining for minimap2
-    default: 400
     inputBinding:
       position: 101
       prefix: --max-chain-iter
@@ -74,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: kmer size for the minimap2
-    default: 20
     inputBinding:
       position: 101
       prefix: --minimap-k
@@ -83,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: window size for the minimap2
-    default: 50
     inputBinding:
       position: 101
       prefix: --minimap-w
@@ -92,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: number of hash functions for minhash
-    default: 60
     inputBinding:
       position: 101
       prefix: --num-hash
@@ -101,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 20
     inputBinding:
       position: 101
       prefix: --num-threads
@@ -110,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: the overlap sketch threshold for minhash
-    default: 6
     inputBinding:
       position: 101
       prefix: --overlap-sketch-thr
@@ -119,7 +110,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory to create temporary files
-    default: .
     inputBinding:
       position: 101
       prefix: --working-dir

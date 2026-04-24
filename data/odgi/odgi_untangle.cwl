@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: 'Start a segment boundary every Nbp of the sorted graph (default: 0/off).'
-    default: 0
     inputBinding:
       position: 101
       prefix: --cut-every
@@ -81,7 +80,6 @@ inputs:
       - float
     doc: 'Report target mappings >= the given jaccard threshold, with 0 <= F <= 1.0
       (default: 0.0).'
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min-jaccard
@@ -91,7 +89,6 @@ inputs:
       - int
     doc: 'Report up to the Nth best target (reference) mapping for each query segment
       (default: 1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: --n-best

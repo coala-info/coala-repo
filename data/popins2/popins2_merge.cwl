@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Specify a filename of contigs to search for in the sample directories.
-    default: assembly_final.contigs.fa.
     inputBinding:
       position: 101
       prefix: --contigs-filename
@@ -67,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer length for the dBG construction In range [1..63].
-    default: 63
     inputBinding:
       position: 101
       prefix: --kmer-length
@@ -77,7 +75,6 @@ inputs:
       - float
     doc: Minimum entropy for a unitig to not get flagged as low entropy In range
       [0.0..1.0].
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min-entropy
@@ -86,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: Specify a prefix for the output files.
-    default: supercontigs.
     inputBinding:
       position: 101
       prefix: --outputfile-prefix
@@ -95,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Amount of threads for parallel processing In range [1..inf].
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

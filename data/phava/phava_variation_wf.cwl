@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -51,7 +50,6 @@ inputs:
       - int
     doc: Size flanking size to include on either side of invertable regions (in 
       bps)
-    default: 1000
     inputBinding:
       position: 101
       prefix: --flankSize
@@ -70,7 +68,6 @@ inputs:
       - string
     doc: File format of the list of gene features. Gff must be in prodigal gff 
       format
-    default: gbff
     inputBinding:
       position: 101
       prefix: --genesFormat
@@ -97,7 +94,6 @@ inputs:
       - float
     doc: Maximum proportion of inverton sequence that can be mismatch before a 
       read is removed
-    default: 0.15
     inputBinding:
       position: 101
       prefix: --maxMismatch
@@ -107,7 +103,6 @@ inputs:
       - int
     doc: The minimum count of mapped reads to an 'inverted' inverton for it to 
       be reported in the output
-    default: 3
     inputBinding:
       position: 101
       prefix: --minRC
@@ -126,7 +121,6 @@ inputs:
       - int
     doc: If creating a mockGenome, the number of invertons to invert. A value of
       0 inverts all predicted inverton locations
-    default: 0
     inputBinding:
       position: 101
       prefix: --mockNumber

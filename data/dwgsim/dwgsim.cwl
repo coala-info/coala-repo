@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: standard deviation of the base quality scores
-    default: 2.0
     inputBinding:
       position: 103
       prefix: -Q
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: standard deviation of the distance for pairs
-    default: 50
     inputBinding:
       position: 103
       prefix: -s
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - float
     doc: per base/color/flow error rate of the first read
-    default: 0.02
     inputBinding:
       position: 103
       prefix: -e
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: per base/color/flow error rate of the second read
-    default: 0.02
     inputBinding:
       position: 103
       prefix: -E
@@ -72,7 +68,6 @@ inputs:
       - int
     doc: 'output type for the FASTQ files: 0: interleaved (bfast) and per-read-end
       (bwa), 1: per-read-end (bwa) only, 2: interleaved (bfast) only'
-    default: 0
     inputBinding:
       position: 103
       prefix: -o
@@ -89,7 +84,6 @@ inputs:
       - 'null'
       - boolean
     doc: generate a mutations file only
-    default: false
     inputBinding:
       position: 103
       prefix: -M
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - boolean
     doc: haploid mode
-    default: false
     inputBinding:
       position: 103
       prefix: -H
@@ -107,7 +100,6 @@ inputs:
       - 'null'
       - float
     doc: probability an indel is extended
-    default: 0.3
     inputBinding:
       position: 103
       prefix: -X
@@ -116,7 +108,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of mutations that are indels
-    default: 0.1
     inputBinding:
       position: 103
       prefix: -R
@@ -133,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of Ns allowed in a given read
-    default: 0
     inputBinding:
       position: 103
       prefix: -n
@@ -142,7 +132,6 @@ inputs:
       - 'null'
       - float
     doc: mean coverage across available positions (-1 to disable)
-    default: 100.0
     inputBinding:
       position: 103
       prefix: -C
@@ -151,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: the minimum length indel
-    default: 1
     inputBinding:
       position: 103
       prefix: -I
@@ -160,7 +148,6 @@ inputs:
       - 'null'
       - float
     doc: rate of mutations
-    default: 0.001
     inputBinding:
       position: 103
       prefix: -r
@@ -177,7 +164,6 @@ inputs:
       - 'null'
       - int
     doc: number of read pairs (-1 to disable)
-    default: -1
     inputBinding:
       position: 103
       prefix: -N
@@ -186,7 +172,6 @@ inputs:
       - 'null'
       - int
     doc: outer distance between the two ends for pairs
-    default: 500
     inputBinding:
       position: 103
       prefix: -d
@@ -196,7 +181,6 @@ inputs:
       - int
     doc: 'generate paired end reads with orientation: 0: default, 1: same strand,
       2: opposite strand'
-    default: 0
     inputBinding:
       position: 103
       prefix: -S
@@ -205,7 +189,6 @@ inputs:
       - 'null'
       - float
     doc: probability of a random DNA read
-    default: 0.05
     inputBinding:
       position: 103
       prefix: -y
@@ -214,7 +197,6 @@ inputs:
       - 'null'
       - int
     doc: random seed (-1 uses the current time)
-    default: -1
     inputBinding:
       position: 103
       prefix: -z
@@ -224,7 +206,6 @@ inputs:
       - int
     doc: 'generate paired end reads with read one: 0: default, 1: forward genomic
       strand, 2: reverse genomic strand'
-    default: 0
     inputBinding:
       position: 103
       prefix: -A
@@ -233,7 +214,6 @@ inputs:
       - 'null'
       - int
     doc: length of the first read
-    default: 70
     inputBinding:
       position: 103
       prefix: '-1'
@@ -242,7 +222,6 @@ inputs:
       - 'null'
       - int
     doc: length of the second read
-    default: 70
     inputBinding:
       position: 103
       prefix: '-2'
@@ -267,7 +246,6 @@ inputs:
       - 'null'
       - float
     doc: frequency of given mutation to simulate low fequency somatic mutations
-    default: 0.5
     inputBinding:
       position: 103
       prefix: -F
@@ -276,7 +254,6 @@ inputs:
       - 'null'
       - int
     doc: 'generate reads for: 0: Illumina, 1: SOLiD, 2: Ion Torrent'
-    default: 0
     inputBinding:
       position: 103
       prefix: -c
@@ -285,7 +262,6 @@ inputs:
       - 'null'
       - boolean
     doc: use the inner distance instead of the outer distance for pairs
-    default: false
     inputBinding:
       position: 103
       prefix: -i
@@ -294,7 +270,6 @@ inputs:
       - 'null'
       - boolean
     doc: use a per-base error rate for Ion Torrent data
-    default: false
     inputBinding:
       position: 103
       prefix: -B

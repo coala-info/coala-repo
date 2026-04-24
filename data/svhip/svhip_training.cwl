@@ -28,7 +28,6 @@ inputs:
       - int
     doc: 'Number of values to try out for EACH hyperparameter. Values will be evenly
       spaced. Default: 10'
-    default: 10
     inputBinding:
       position: 101
       prefix: --hyperparameter-steps
@@ -44,7 +43,6 @@ inputs:
       - float
     doc: 'The logarithmic base if a log scale is used in hyperparameter search. Default:
       10.'
-    default: 10
     inputBinding:
       position: 101
       prefix: --logbase
@@ -135,7 +133,6 @@ inputs:
       - string
     doc: 'The model type to be trained. You can choose LR (Logistic regression), SVM
       (Support vector machine) or RF (Random Forest). (Default: SVM)'
-    default: SVM
     inputBinding:
       position: 101
       prefix: --model
@@ -145,7 +142,6 @@ inputs:
       - boolean
     doc: Select if a parameter optimization should be performed for the ML 
       model. Default is on.
-    default: on
     inputBinding:
       position: 101
       prefix: --optimize-hyperparameters
@@ -156,7 +152,6 @@ inputs:
     doc: Select the optimizer for hyperparameter search. Search will be 
       conducted with 5-fold crossvalidation and either of 'gridsearch' (default,
       more precise) or 'randomwalk' (faster).
-    default: gridsearch
     inputBinding:
       position: 101
       prefix: --optimizer
@@ -166,7 +161,6 @@ inputs:
       - string
     doc: 'Flag determining if only secondary structure conservation features should
       be considered. If True, protein coding features will be included (Default: False).'
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --structure

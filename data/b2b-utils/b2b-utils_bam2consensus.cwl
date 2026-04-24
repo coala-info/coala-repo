@@ -19,7 +19,6 @@ inputs:
       depths in bedgraph output. If zero, no binning is applied. This option is 
       useful to reduce the size of bedgraph output by binning similar depth 
       values when high resolution is not important.
-    default: 0
     inputBinding:
       position: 101
       prefix: --bg_bin_figs
@@ -29,7 +28,6 @@ inputs:
       - int
     doc: Minimum read depth for consensus to be called (otherwise called as 
       "N").
-    default: 3
     inputBinding:
       position: 101
       prefix: --min_depth
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum quality for a base to be considered in consensus calling.
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_qual
@@ -54,7 +51,6 @@ inputs:
       - float
     doc: Fraction to trim from each end when calculating trimmed mean of error 
       window.
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --trim
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Size of sliding window used to calculate local error rates.
-    default: 30
     inputBinding:
       position: 101
       prefix: --window

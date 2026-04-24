@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: Base for the logarithmic function
-    default: 1.7
     inputBinding:
       position: 101
       prefix: -base
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Bin Size
-    default: 1000
     inputBinding:
       position: 101
       prefix: -binsize
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Collect stat
-    default: '0'
     inputBinding:
       position: 101
       prefix: -cs
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - File
     doc: Input File
-    default: ORNAERROR
     inputBinding:
       position: 101
       prefix: -input
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: kmer required
-    default: 21
     inputBinding:
       position: 101
       prefix: -kmer
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Kmer based Sorting
-    default: '0'
     inputBinding:
       position: 101
       prefix: -ksorting
@@ -63,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: number of cores
-    default: 0
     inputBinding:
       position: 101
       prefix: -nb-cores
@@ -72,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix of the output File
-    default: Normalized
     inputBinding:
       position: 101
       prefix: -output
@@ -81,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: Type for the output file (fasta/fastq)
-    default: fasta
     inputBinding:
       position: 101
       prefix: -type
@@ -90,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: First read of the pair
-    default: ORNAERROR
     inputBinding:
       position: 101
       prefix: -pair1
@@ -99,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: Second read of the pair
-    default: ORNAERROR
     inputBinding:
       position: 101
       prefix: -pair2
@@ -108,7 +97,6 @@ inputs:
       - 'null'
       - string
     doc: Quality Sorting
-    default: '0'
     inputBinding:
       position: 101
       prefix: -sorting
@@ -117,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: verbosity level
-    default: 1
     inputBinding:
       position: 101
       prefix: -verbose

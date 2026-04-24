@@ -12,7 +12,6 @@ inputs:
       - int
     doc: Loci with up to this number of alternative supporting reads in the bulk control
       sample will be skipped as germline.
-    default: 2
     inputBinding:
       position: 101
       prefix: --bns
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum required coverage of reads in the bulk control sample.
-    default: 6
     inputBinding:
       position: 101
       prefix: --bnc
@@ -32,7 +30,6 @@ inputs:
     doc: Data usage rate increment steps. In order to speed up the algorithm one can
       choose to iteratively add more and more of the candidate loci while learning
       the tree model.
-    default: 1
     inputBinding:
       position: 101
       prefix: --ur
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Estimate the sequencing error rate.
-    default: 1
     inputBinding:
       position: 101
       prefix: --ese
@@ -94,7 +90,6 @@ inputs:
       - int
     doc: Set to 1 if zygosity should be learned. The zygosity rate is the fraction
       of mutations which are homozygous in all cells.
-    default: 0
     inputBinding:
       position: 101
       prefix: --lz
@@ -104,7 +99,6 @@ inputs:
       - int
     doc: Maximal number of iterations before sampling form the posterior distribution
       of the mutation to cell assignment.
-    default: 1000000
     inputBinding:
       position: 101
       prefix: -l
@@ -113,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of control cells allowed to be mutated.
-    default: 0
     inputBinding:
       position: 101
       prefix: --mnc
@@ -122,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of mutations allowed per window.
-    default: 1
     inputBinding:
       position: 101
       prefix: --mmw
@@ -132,7 +124,6 @@ inputs:
       - float
     doc: Mean error rate. If the sequencing error rate should not be learned '--ese
       0' one can specify it.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --wildMean
@@ -142,7 +133,6 @@ inputs:
       - float
     doc: Mean of acceptable variant allele frequency across all cells for a specific
       locus.
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --mff
@@ -151,7 +141,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum required frequency of reads supporting the alternative per cell.
-    default: 0
     inputBinding:
       position: 101
       prefix: --mf
@@ -160,7 +149,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads required to support the alternative.
-    default: 3
     inputBinding:
       position: 101
       prefix: --ms
@@ -169,7 +157,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cells which need to pass the filters described below.
-    default: 2
     inputBinding:
       position: 101
       prefix: --mnp
@@ -178,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage required per cell.
-    default: 1
     inputBinding:
       position: 101
       prefix: --mc
@@ -187,7 +173,6 @@ inputs:
       - 'null'
       - int
     doc: Number of tumor cells required to have a mutation in order to be called.
-    default: 2
     inputBinding:
       position: 101
       prefix: --cwm
@@ -197,7 +182,6 @@ inputs:
       - float
     doc: Initial overdispersion for mutant type. The overdispersion is learned during
       the tree traversal.
-    default: 2
     inputBinding:
       position: 101
       prefix: --mutationOverDis
@@ -215,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: Normal cell filter scheme (0, 1, or 2).
-    default: 1
     inputBinding:
       position: 101
       prefix: --ncf
@@ -225,7 +208,6 @@ inputs:
       - float
     doc: Parameter estimation rate, i.e. the fraction of loops used to estimate the
       different parameters.
-    default: 0.2
     inputBinding:
       position: 101
       prefix: -e
@@ -235,7 +217,6 @@ inputs:
       - float
     doc: PCR substitution rate. An error early during the PCR amplification can result
       in high allele fractions.
-    default: 0
     inputBinding:
       position: 101
       prefix: --sub
@@ -244,7 +225,6 @@ inputs:
       - 'null'
       - float
     doc: Prior mutation rate.
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: --pr
@@ -253,7 +233,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations in which the mutation to cell assignment is sampled.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --ls
@@ -264,7 +243,6 @@ inputs:
     doc: Sampling step. If a value x different from 0 is specified, every x iteration,
       after the burn in phase, an index will be writen to disk to provide a posterior
       sampling.
-    default: 0
     inputBinding:
       position: 101
       prefix: --sa
@@ -273,7 +251,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for the random number generator.
-    default: 42
     inputBinding:
       position: 101
       prefix: --seed
@@ -282,7 +259,6 @@ inputs:
       - 'null'
       - string
     doc: Tree score type [m (max), s (sum)].
-    default: s
     inputBinding:
       position: 101
       prefix: -t
@@ -291,7 +267,6 @@ inputs:
       - 'null'
       - int
     doc: Mark loci with this number of cells being mutated as 'PASS'.
-    default: 1
     inputBinding:
       position: 101
       prefix: --uniq
@@ -300,7 +275,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use normal cells for tree reconstruction.
-    default: false
     inputBinding:
       position: 101
       prefix: --unc
@@ -310,7 +284,6 @@ inputs:
       - float
     doc: Initial overdispersion for wild type. The overdispersion is learned during
       the tree traversal.
-    default: 100
     inputBinding:
       position: 101
       prefix: --wildOverDis
@@ -320,7 +293,6 @@ inputs:
       - int
     doc: Window size in which only x (see option '--mmw') mutations are allowed to
       be present.
-    default: 1
     inputBinding:
       position: 101
       prefix: --md
@@ -329,7 +301,6 @@ inputs:
       - 'null'
       - float
     doc: Zygosity rate.
-    default: 0
     inputBinding:
       position: 101
       prefix: --zyg

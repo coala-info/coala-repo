@@ -49,7 +49,6 @@ inputs:
       - float
     doc: Maximum overhang size to alignment length ratio for internal overlap 
       filtering
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --max-overhang-ratio
@@ -66,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: Sequencing platform of the reads
-    default: ont
     inputBinding:
       position: 102
       prefix: --platform
@@ -75,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: The lower quantile to use for the estimate
-    default: 0.15
     inputBinding:
       position: 102
       prefix: --q1
@@ -84,7 +81,6 @@ inputs:
       - 'null'
       - float
     doc: The upper quantile to use for the estimate
-    default: 0.65
     inputBinding:
       position: 102
       prefix: --q3
@@ -93,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Query number of reads to use (for two-set strategy; default)
-    default: 5000
     inputBinding:
       position: 102
       prefix: --query
@@ -120,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: Target number of reads to use (for two-set strategy; default)
-    default: 10000
     inputBinding:
       position: 102
       prefix: --target
@@ -137,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

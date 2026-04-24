@@ -28,7 +28,6 @@ inputs:
       - int
     doc: maximum number of secondary mappings to consider when mapping reads to 
       the transcriptome
-    default: 100
     inputBinding:
       position: 101
       prefix: --best-n
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: width of the bins used in the coverage model
-    default: 100
     inputBinding:
       position: 101
       prefix: --bin-width
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - float
     doc: maximum number of iterations for which to run the EM algorithm
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --convergence-thresh
@@ -58,7 +55,6 @@ inputs:
       assignment to be written to the .prob file. Accepts a float value between 
       0.0 and 1.0, or the sentinel value 'none' to use the minimum machine 
       precision (f64::MIN_POSITIVE)
-    default: '0.000001'
     inputBinding:
       position: 101
       prefix: --display-thresh
@@ -76,7 +72,6 @@ inputs:
       - int
     doc: maximum allowable distance of the left-most end of an alignment from 
       the 5' transcript end
-    default: 4294967295
     inputBinding:
       position: 101
       prefix: --five-prime-clip
@@ -86,7 +81,6 @@ inputs:
       - int
     doc: if using the coverage model, use this as the value of `k` in the 
       logistic equation
-    default: 2
     inputBinding:
       position: 101
       prefix: --growth-rate
@@ -112,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of iterations for which to run the EM algorithm
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max-em-iter
@@ -122,7 +115,6 @@ inputs:
       - float
     doc: fraction of a query that must be mapped within an alignemnt to consider
       the alignemnt valid
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --min-aligned-fraction
@@ -131,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of nucleotides in the aligned portion of a read
-    default: 50
     inputBinding:
       position: 101
       prefix: --min-aligned-len
@@ -160,7 +151,6 @@ inputs:
       - int
     doc: number of bootstrap replicates to produce to assess quantification 
       uncertainty
-    default: 0
     inputBinding:
       position: 101
       prefix: --num-bootstraps
@@ -200,7 +190,6 @@ inputs:
       - float
     doc: fraction of the best possible alignment score that a secondary 
       alignment must have for consideration
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --score-threshold
@@ -236,7 +225,6 @@ inputs:
       - string
     doc: only alignments to this strand will be allowed; options are (fw /+, 
       rc/-, or both/.)
-    default: .
     inputBinding:
       position: 101
       prefix: --strand-filter
@@ -246,7 +234,6 @@ inputs:
       - string
     doc: 'total memory to allow for thread-local alignment buffers (each buffer will
       get this value / # of alignment threads)'
-    default: 1GB
     inputBinding:
       position: 101
       prefix: --thread-buff-size
@@ -257,7 +244,6 @@ inputs:
     doc: 'number of cores that oarfish will use during different phases of quantification.
       Note: This value will be at least 2 for bulk quantification and at least 3 for
       single-cell quantification due to the use of dedicated parsing threads'
-    default: 3
     inputBinding:
       position: 101
       prefix: --threads
@@ -267,7 +253,6 @@ inputs:
       - int
     doc: maximum allowable distance of the right-most end of an alignment from 
       the 3' transcript end
-    default: 4294967295
     inputBinding:
       position: 101
       prefix: --three-prime-clip

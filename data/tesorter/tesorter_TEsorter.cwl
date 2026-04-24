@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - File
     doc: the database HMM file used (prior to `-db`)
-    default: None
     inputBinding:
       position: 102
       prefix: --db-hmm
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: if False, will use the existed hmmscan outfile and skip hmmscan
-    default: false
     inputBinding:
       position: 102
       prefix: --force-write-hmmscan
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - boolean
     doc: input is genome sequences
-    default: false
     inputBinding:
       position: 102
       prefix: --genome
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: the database name used
-    default: rexdb
     inputBinding:
       position: 102
       prefix: --hmm-database
@@ -69,7 +65,6 @@ inputs:
         items: string
     doc: 'output masked sequences (soft: masking with lowercase; hard: masking with
       N)'
-    default: None
     inputBinding:
       position: 102
       prefix: -mask
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: 'maxinum E-value for protein domains in HMMScan output (ranging: 0-10)'
-    default: 0.001
     inputBinding:
       position: 102
       prefix: --max-evalue
@@ -87,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: 'mininum coverage for protein domains in HMMScan output (ranging: 0-100)'
-    default: 20
     inputBinding:
       position: 102
       prefix: --min-coverage
@@ -97,7 +90,6 @@ inputs:
       - float
     doc: 'mininum posterior probability for protein domains in HMMScan output (ranging:
       0-1)'
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --min-probability
@@ -106,7 +98,6 @@ inputs:
       - 'null'
       - float
     doc: 'mininum score for protein domains in HMMScan output (ranging: 0-2)'
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --min-score
@@ -115,7 +106,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not clean up the temporary directory
-    default: false
     inputBinding:
       position: 102
       prefix: --no-cleanup
@@ -124,7 +114,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not generate a library file for RepeatMasker
-    default: false
     inputBinding:
       position: 102
       prefix: --no-library
@@ -134,7 +123,6 @@ inputs:
       - boolean
     doc: do not reverse complement sequences if they are detected in minus 
       strand
-    default: false
     inputBinding:
       position: 102
       prefix: --no-reverse
@@ -144,7 +132,6 @@ inputs:
       - string
     doc: classifying rule [identity-coverage-length] in pass-2 based on 
       similarity
-    default: 80-80-80
     inputBinding:
       position: 102
       prefix: --pass2-rule
@@ -161,7 +148,6 @@ inputs:
       - 'null'
       - int
     doc: processors to use
-    default: 4
     inputBinding:
       position: 102
       prefix: --processors
@@ -170,7 +156,6 @@ inputs:
       - 'null'
       - string
     doc: "'nucl' for DNA or 'prot' for protein"
-    default: nucl
     inputBinding:
       position: 102
       prefix: --seq-type
@@ -187,7 +172,6 @@ inputs:
       - 'null'
       - int
     doc: overlap size of windows
-    default: 30000
     inputBinding:
       position: 102
       prefix: --win_ovl
@@ -196,7 +180,6 @@ inputs:
       - 'null'
       - int
     doc: window size of chunking genome sequences
-    default: 270000
     inputBinding:
       position: 102
       prefix: --win_size

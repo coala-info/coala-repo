@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: Bool, if rewrite output file
-    default: false
     inputBinding:
       position: 102
       prefix: --rewrite
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Threads, default 1
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

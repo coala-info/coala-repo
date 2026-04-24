@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads for MEME index building
-    default: 1
     inputBinding:
       position: 102
       prefix: -t

@@ -10,7 +10,6 @@ inputs:
       - string
     doc: Matplotlib color to use on bins filtered out (only used with normalized
       matrices, not raw).
-    default: white
     inputBinding:
       position: 101
       prefix: --bad_color
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: Matplotlib color map to use.
-    default: viridis
     inputBinding:
       position: 101
       prefix: --cmap
@@ -74,7 +72,6 @@ inputs:
     doc: Maximum number of CPU cores available in the execution host. If higher 
       than 1, tasks with multi-threading capabilities will enabled (if 0 all 
       available) cores will be used
-    default: 20
     inputBinding:
       position: 101
       prefix: --cpus
@@ -97,7 +94,6 @@ inputs:
       nothing, 1: self-circle, 2: dangling-end, 3: error, 4: extra dangling-end, 5:
       too close from RES, 6: too short, 7: too large, 8: over-represented, 9: duplicated,
       10: random breaks, 11: trans-chromosomic"
-    default:
       - 1
       - 2
       - 3
@@ -131,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: plot file format.
-    default: png
     inputBinding:
       position: 101
       prefix: --format
@@ -140,7 +135,6 @@ inputs:
       - 'null'
       - boolean
     doc: Open matplotlib interactive plot (nothing will be saved).
-    default: false
     inputBinding:
       position: 101
       prefix: --interactive
@@ -175,7 +169,6 @@ inputs:
       - type: array
         items: string
     doc: "[['raw']] normalization(s) to apply. Choices are: [norm, decay, raw, raw&decay]"
-    default:
       - raw
     inputBinding:
       position: 101
@@ -185,7 +178,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip writing matrix in text format.
-    default: false
     inputBinding:
       position: 101
       prefix: --only_plot
@@ -249,7 +241,6 @@ inputs:
       - 'null'
       - string
     doc: can be any of [log2, log, none]
-    default: log2
     inputBinding:
       position: 101
       prefix: --transform
@@ -259,7 +250,6 @@ inputs:
       - boolean
     doc: represents only half matrix. Note that this also results in truly 
       vectorial images of matrix.
-    default: false
     inputBinding:
       position: 101
       prefix: --triangular
@@ -292,7 +282,6 @@ inputs:
       - 'null'
       - float
     doc: x-tick rotation
-    default: -25
     inputBinding:
       position: 101
       prefix: --xtick_rotation

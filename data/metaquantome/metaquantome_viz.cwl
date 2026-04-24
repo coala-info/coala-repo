@@ -65,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Number of clusters 'k' to cut the feature dendrogram tree. Default = 2
-    default: 2
     inputBinding:
       position: 101
       prefix: --feature_cluster_size
@@ -149,7 +148,6 @@ inputs:
       - int
     doc: (Tax bar, FT dist, and stacked bar). Number of taxa or functional terms
       to display. The default is 5.
-    default: 5
     inputBinding:
       position: 101
       prefix: --nterms
@@ -173,7 +171,6 @@ inputs:
       - 'null'
       - int
     doc: Number of clusters 'k' to cut the sample dendrogram tree. Default = 2
-    default: 2
     inputBinding:
       position: 101
       prefix: --sample_cluster_size

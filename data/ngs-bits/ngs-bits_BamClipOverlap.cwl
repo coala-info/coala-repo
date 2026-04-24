@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn off indel detection in overlap.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: --ignore_indels
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set base to N if mismatch is found in overlapping reads.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: --overlap_mismatch_basen
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: Reduce base quality if mismatch is found in overlapping reads.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: --overlap_mismatch_baseq
@@ -43,7 +40,6 @@ inputs:
       - boolean
     doc: Set mapping quality of pair to 0 if mismatch is found in overlapping 
       reads.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: --overlap_mismatch_mapq
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove pair if mismatch is found in overlapping reads.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: --overlap_mismatch_remove
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - File
     doc: Reference genome for CRAM support (mandatory if CRAM is used).
-    default: ''
     inputBinding:
       position: 101
       prefix: -ref
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose mode.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -v

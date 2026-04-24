@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Minimum identity threshold for genus-level classification
-    default: 94.5%
     inputBinding:
       position: 101
       prefix: --genus-threshold
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: Logging verbosity level
-    default: debug
     inputBinding:
       position: 101
       prefix: --log-level
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory for classification results.
-    default: same as the input directory
     inputBinding:
       position: 101
       prefix: --output-dir
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: Minimum identity threshold for species-level classification
-    default: 99%
     inputBinding:
       position: 101
       prefix: --species-threshold
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for parallel processing
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads

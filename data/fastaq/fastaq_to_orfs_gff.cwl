@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of ORF, in nucleotides
-    default: 300
     inputBinding:
       position: 102
       prefix: --min_length

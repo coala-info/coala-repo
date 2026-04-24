@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: above family %id threshold
-    default: 90.0
     inputBinding:
       position: 101
       prefix: --AboveF
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: families blacklist (file with one taxid per line)
-    default: 'NULL'
     inputBinding:
       position: 101
       prefix: --FamilyBL
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: family %id threshold
-    default: 95.0
     inputBinding:
       position: 101
       prefix: --Family
@@ -37,7 +34,6 @@ inputs:
       - string
     doc: Column name to look for the values found the the file provided in the 
       --Filter parameter
-    default: sseqid
     inputBinding:
       position: 101
       prefix: --FilterCol
@@ -47,7 +43,6 @@ inputs:
       - File
     doc: file name with the entries from the input to exclude (on entry per 
       line)
-    default: 'NULL'
     inputBinding:
       position: 101
       prefix: --FilterFile
@@ -56,7 +51,6 @@ inputs:
       - 'null'
       - File
     doc: genera blacklist (file with one taxid per line)
-    default: 'NULL'
     inputBinding:
       position: 101
       prefix: --GenusBL
@@ -65,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: genus %id threshold
-    default: 97.0
     inputBinding:
       position: 101
       prefix: --Genus
@@ -82,7 +75,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include only the seqid and lineage information in the output table
-    default: false
     inputBinding:
       position: 101
       prefix: --minimal_cols
@@ -109,7 +101,6 @@ inputs:
       - string
     doc: Where to look (column name) for in-silico 'predicted' entries (XM_,XR_,
       and XP_). If no column is given then the filter is not applied.
-    default: 'NULL'
     inputBinding:
       position: 101
       prefix: --rm_predicted
@@ -142,7 +133,6 @@ inputs:
       - 'null'
       - File
     doc: species blacklist (file with one taxid per line)
-    default: 'NULL'
     inputBinding:
       position: 101
       prefix: --SpeciesBL
@@ -151,7 +141,6 @@ inputs:
       - 'null'
       - File
     doc: negative filter (file with one word per line)
-    default: 'NULL'
     inputBinding:
       position: 101
       prefix: --SpeciesNegFilter
@@ -160,7 +149,6 @@ inputs:
       - 'null'
       - float
     doc: species %id threshold
-    default: 99.0
     inputBinding:
       position: 101
       prefix: --Species
@@ -169,7 +157,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory containing the taxonomy db (nodes.dmp and names.dmp)
-    default: /usr/local/bin/../db/
     inputBinding:
       position: 101
       prefix: --db
@@ -178,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: above family?
-    default: 100
     inputBinding:
       position: 101
       prefix: --TopAF
@@ -186,7 +172,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 100
     inputBinding:
       position: 101
       prefix: --TopFamily
@@ -194,7 +179,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 100
     inputBinding:
       position: 101
       prefix: --TopGenus
@@ -202,7 +186,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 100
     inputBinding:
       position: 101
       prefix: --TopSpecies

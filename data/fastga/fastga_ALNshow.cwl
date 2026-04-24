@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: '# of bordering bp.s to show on each side of LA.'
-    default: 10
     inputBinding:
       position: 103
       prefix: -b
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Indent alignments by -i spaces.
-    default: 4
     inputBinding:
       position: 103
       prefix: -i
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Width of each row of alignment in symbols (-a) or bps (-r).
-    default: 100
     inputBinding:
       position: 103
       prefix: -w

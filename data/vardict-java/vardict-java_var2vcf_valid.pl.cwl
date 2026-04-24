@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: The buffer size for sorting
-    default: 0
     inputBinding:
       position: 102
       prefix: -b
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: The column for chromosome
-    default: 1
     inputBinding:
       position: 102
       prefix: -c
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum allele frequency
-    default: 0.02
     inputBinding:
       position: 102
       prefix: -f
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum total depth
-    default: 5
     inputBinding:
       position: 102
       prefix: -d
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum mean quality
-    default: 20
     inputBinding:
       position: 102
       prefix: -m
@@ -86,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum variant allele count
-    default: 2
     inputBinding:
       position: 102
       prefix: -v
@@ -95,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: The column for position
-    default: 2
     inputBinding:
       position: 102
       prefix: -p
@@ -104,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: The column for reference allele
-    default: 4
     inputBinding:
       position: 102
       prefix: -r
@@ -121,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: The column for variant allele
-    default: 5
     inputBinding:
       position: 102
       prefix: -a

@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: gap extension
-    default: -4
     inputBinding:
       position: 103
       prefix: --gapext
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: gap open
-    default: -10
     inputBinding:
       position: 103
       prefix: --gapopen
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: sample label
-    default: Consensus
     inputBinding:
       position: 103
       prefix: --label
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: alignment line length
-    default: 60
     inputBinding:
       position: 103
       prefix: --linelimit
@@ -73,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: match
-    default: 3
     inputBinding:
       position: 103
       prefix: --match
@@ -82,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: mismatch
-    default: -5
     inputBinding:
       position: 103
       prefix: --mismatch
@@ -91,7 +85,6 @@ inputs:
       - 'null'
       - float
     doc: peak ratio to call base
-    default: 0.330000013
     inputBinding:
       position: 103
       prefix: --pratio
@@ -100,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: 'trimming stringency [1:9], 0: use trimLeft and trimRight'
-    default: 0
     inputBinding:
       position: 103
       prefix: --trim
@@ -109,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: trim size left (1st trace)
-    default: 50
     inputBinding:
       position: 103
       prefix: --trimLeft1
@@ -118,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: trim size left (2nd trace)
-    default: 50
     inputBinding:
       position: 103
       prefix: --trimLeft2
@@ -127,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: trim size right (1st trace)
-    default: 50
     inputBinding:
       position: 103
       prefix: --trimRight1
@@ -136,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: trim size right (2nd trace)
-    default: 50
     inputBinding:
       position: 103
       prefix: --trimRight2

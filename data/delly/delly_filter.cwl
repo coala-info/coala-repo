@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: Filter mode (somatic, germline)
-    default: somatic
     inputBinding:
       position: 102
       prefix: --filter
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: max. fractional ALT support in control
-    default: 0
     inputBinding:
       position: 102
       prefix: --controlcontamination
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: max. read-depth ratio of carrier vs. non-carrier for a deletion
-    default: 0.800000012
     inputBinding:
       position: 102
       prefix: --rddel
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: max. SV size
-    default: 500000000
     inputBinding:
       position: 102
       prefix: --maxsize
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: min. read-depth ratio of carrier vs. non-carrier for a duplication
-    default: 1.20000005
     inputBinding:
       position: 102
       prefix: --rddup
@@ -67,7 +62,6 @@ inputs:
       - 'null'
       - float
     doc: min. fraction of genotyped samples
-    default: 0.75
     inputBinding:
       position: 102
       prefix: --ratiogeno
@@ -76,7 +70,6 @@ inputs:
       - 'null'
       - float
     doc: min. fractional ALT support
-    default: 0.0299999993
     inputBinding:
       position: 102
       prefix: --altaf
@@ -85,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: min. median GQ for carriers and non-carriers
-    default: 15
     inputBinding:
       position: 102
       prefix: --gq
@@ -94,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: min. SV site quality
-    default: 300
     inputBinding:
       position: 102
       prefix: --quality
@@ -103,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: min. SV size
-    default: 0
     inputBinding:
       position: 102
       prefix: --minsize
@@ -112,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: min. coverage in tumor
-    default: 10
     inputBinding:
       position: 102
       prefix: --coverage

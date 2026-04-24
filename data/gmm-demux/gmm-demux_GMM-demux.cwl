@@ -25,7 +25,6 @@ inputs:
     doc: The estimated chance of having a phony GEM getting included in a pure 
       type GEM cluster by the clustering algorithm. Requires a float in (0, 1). 
       Only executes if -e executes.
-    default: 0.05
     inputBinding:
       position: 103
       prefix: --ambiguous
@@ -114,7 +113,6 @@ inputs:
       - 'null'
       - float
     doc: Provide the confidence threshold value. Requires a float in (0,1).
-    default: 0.8
     inputBinding:
       position: 103
       prefix: --threshold

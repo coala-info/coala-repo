@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum graph size
-    default: 100000
     inputBinding:
       position: 101
       prefix: --big-graph
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the bubbles
-    default: 1000
     inputBinding:
       position: 101
       prefix: --bubble-size
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bytes read per thread
-    default: 10000000
     inputBinding:
       position: 101
       prefix: --bytes-per-thread
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Erosion strength
-    default: 100
     inputBinding:
       position: 101
       prefix: --erosion
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum k-mer frequency difference
-    default: 2.5
     inputBinding:
       position: 101
       prefix: --frequency-dif
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Indel penalty
-    default: 30
     inputBinding:
       position: 101
       prefix: --indel-pen
@@ -116,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum LTR size
-    default: 5000
     inputBinding:
       position: 101
       prefix: --max-ltr
@@ -125,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum overlap to merge TEs
-    default: 500
     inputBinding:
       position: 101
       prefix: --max-overlap
@@ -134,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum # paths, 0: never stop.'
-    default: 100
     inputBinding:
       position: 101
       prefix: --max-paths
@@ -143,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum penalty
-    default: 200
     inputBinding:
       position: 101
       prefix: --max-pen
@@ -152,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum number of reads read, 0: read all.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-reads
@@ -161,7 +150,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of evidences/scaff.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --max-scaffold
@@ -170,7 +158,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum TE size
-    default: 30000
     inputBinding:
       position: 101
       prefix: --max-te-size
@@ -179,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum number of repeats, 0: do not use.'
-    default: 10000
     inputBinding:
       position: 101
       prefix: --merge-max-nb
@@ -188,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum number of neighbor/node, 0: do not use.'
-    default: 10
     inputBinding:
       position: 101
       prefix: --merge-max-nodes
@@ -197,7 +182,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum k-mer frequency
-    default: 3
     inputBinding:
       position: 101
       prefix: --min-frequency
@@ -206,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum identity
-    default: 80
     inputBinding:
       position: 101
       prefix: --min-id
@@ -215,7 +198,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum LTR size
-    default: 50
     inputBinding:
       position: 101
       prefix: --min-ltr
@@ -224,7 +206,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum overlap to merge TEs
-    default: 20
     inputBinding:
       position: 101
       prefix: --min-overlap
@@ -233,7 +214,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of evidences/scaff.
-    default: 100
     inputBinding:
       position: 101
       prefix: --min-scaffold
@@ -242,7 +222,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum TE size
-    default: 500
     inputBinding:
       position: 101
       prefix: --min-te-size
@@ -251,7 +230,6 @@ inputs:
       - 'null'
       - int
     doc: Mismatch penalty
-    default: 10
     inputBinding:
       position: 101
       prefix: --mismatch-pen
@@ -260,7 +238,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors
-    default: 2
     inputBinding:
       position: 101
       prefix: --processors
@@ -269,7 +246,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of repetitions
-    default: 2
     inputBinding:
       position: 101
       prefix: --repeat-frequency
@@ -278,7 +254,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum number of neighbor/node, 0: do not use.'
-    default: 5
     inputBinding:
       position: 101
       prefix: --scaffold-max-nb
@@ -287,7 +262,6 @@ inputs:
       - 'null'
       - int
     doc: Small k-mer size
-    default: 15
     inputBinding:
       position: 101
       prefix: --short-kmer
@@ -296,7 +270,6 @@ inputs:
       - 'null'
       - int
     doc: Size penalty
-    default: 1
     inputBinding:
       position: 101
       prefix: --size-pen
@@ -305,7 +278,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum graph size
-    default: 300
     inputBinding:
       position: 101
       prefix: --small-graph
@@ -314,7 +286,6 @@ inputs:
       - 'null'
       - int
     doc: 'Stop after N small graphs, 0: never stop.'
-    default: 10000
     inputBinding:
       position: 101
       prefix: --small-graph-count

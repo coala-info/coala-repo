@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: 'Complexity measure type: "linguistic" or "entropy"'
-    default: linguistic
     inputBinding:
       position: 101
       prefix: --complexity
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Distance threshold for merging close ranges
-    default: 100
     inputBinding:
       position: 101
       prefix: --distance
@@ -35,7 +33,6 @@ inputs:
       - float
     doc: 'IQR multiplier for automatic threshold (default: 1.5, use with threshold
       "auto")'
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --iqr-multiplier
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size (used with linguistic complexity)
-    default: 16
     inputBinding:
       position: 101
       prefix: --k-mer
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Step size for sliding window (used with entropy complexity)
-    default: 50
     inputBinding:
       position: 101
       prefix: --step-size
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for parallel processing
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: Threshold for low-complexity regions (number or "auto")
-    default: auto
     inputBinding:
       position: 101
       prefix: --threshold
@@ -80,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbosity level (0: errors only, 1: errors and info, 2: debug, 3: trace)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbose
@@ -89,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for complexity calculation
-    default: 100
     inputBinding:
       position: 101
       prefix: --window-size

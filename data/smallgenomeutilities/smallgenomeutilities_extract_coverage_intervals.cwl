@@ -20,7 +20,6 @@ inputs:
       genetics, or in VCF files), and thus should be converted before outputing 
       the 0-based output.are interpreted using 0-based indexing, and a half-open
       interval is used, i.e, [start:end)
-    default: '0'
     inputBinding:
       position: 102
       prefix: --based
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read depth per window
-    default: 100
     inputBinding:
       position: 102
       prefix: --min-coverage
@@ -58,7 +56,6 @@ inputs:
       - boolean
     doc: Inidcate whether to report regions with sufficient coverage rather than
       windows for SNV calling using ShoRAH
-    default: false
     inputBinding:
       position: 102
       prefix: --no-shorah
@@ -78,7 +75,6 @@ inputs:
       - boolean
     doc: Indicate whether to apply a more liberal shift on intervals' 
       right-endpoint
-    default: false
     inputBinding:
       position: 102
       prefix: --right-offset
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -97,7 +92,6 @@ inputs:
       - type: array
         items: string
     doc: Window length used by ShoRAH
-    default: '201'
     inputBinding:
       position: 102
       prefix: --window-lenght
@@ -106,7 +100,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold on the overlap between each read and the window
-    default: 0.85
     inputBinding:
       position: 102
       prefix: --window-overlap
@@ -116,7 +109,6 @@ inputs:
       - type: array
         items: string
     doc: Window shifts used by ShoRAH
-    default: '67'
     inputBinding:
       position: 102
       prefix: --window-shift

@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output files will be saved in OUTPUT_DIR.
-    default: .
     inputBinding:
       position: 101
       prefix: --output-dir
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: reference genome version to use.
-    default: hs37d5
     inputBinding:
       position: 101
       prefix: --reference

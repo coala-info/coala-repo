@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum overlap length
-    default: 1000
     inputBinding:
       position: 103
       prefix: -l

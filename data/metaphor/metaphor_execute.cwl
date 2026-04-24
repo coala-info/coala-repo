@@ -11,7 +11,6 @@ inputs:
     doc: Conda prefix where conda environments will be installed. Default is 
       config directory, this way multiple runs of Metaphor will share the same 
       environments.
-    default: None
     inputBinding:
       position: 101
       prefix: --conda-prefix
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - File
     doc: Configuration file to run the workflow.
-    default: metaphor_settings.yaml
     inputBinding:
       position: 101
       prefix: --configfile
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't ask for confirmation when running tests.
-    default: false
     inputBinding:
       position: 101
       prefix: --confirm
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cores to be used.
-    default: 4
     inputBinding:
       position: 101
       prefix: --cores
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: String of extra arguments to be passed on to Snakemake.
-    default: ''
     inputBinding:
       position: 101
       prefix: --extras
@@ -56,7 +51,6 @@ inputs:
       - 'null'
       - Directory
     doc: Input directory containing FASTQ files.
-    default: None
     inputBinding:
       position: 101
       prefix: --input-dir
@@ -66,7 +60,6 @@ inputs:
       - boolean
     doc: Whether to join units (S001, S002) with the same preffix as the same 
       file.
-    default: false
     inputBinding:
       position: 101
       prefix: --join-units
@@ -75,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Max amount of MB RAM to be used. Can be set in config.
-    default: None
     inputBinding:
       position: 101
       prefix: --max_mb
@@ -84,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: Profile to be used to run Metaphor.
-    default: None
     inputBinding:
       position: 101
       prefix: --profile
@@ -93,7 +84,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't create report when run finishes.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-report
@@ -103,7 +93,6 @@ inputs:
       - boolean
     doc: Unlock the working directory. For more information, see the Snakemake 
       '--unlock' flag.
-    default: false
     inputBinding:
       position: 101
       prefix: --unlock

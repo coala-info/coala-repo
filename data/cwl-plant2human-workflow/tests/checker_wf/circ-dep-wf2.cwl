@@ -7,7 +7,6 @@ requirements:
 inputs:
   txt:
     type: File
-    default:
       class: File
       location: test.txt
 

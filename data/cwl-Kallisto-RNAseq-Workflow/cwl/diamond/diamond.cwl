@@ -36,28 +36,24 @@ inputs:
     type: string
     doc: Align amino acid (blastp) or DNA (blastx) sequences against a protein reference database
     label: Blast type
-    default: blastx
   blocksize:
     type: int
     doc: Block size in billions of sequence letters to be processed at a time. This is the main parameter for controlling the program’s memory and disk space usage. Bigger numbers will increase the use of memory and temporary disk space, but also improve performance. The program can be expected to use roughly six times this number of memory (in GB).
     label: Block size
     inputBinding:
       prefix: --block-size
-    default: 12
   maxtargetseq:
     type: int
     doc: maximum number of target sequences to report alignments for (default=25)
     label: Max target sequences
     inputBinding:
       prefix: --max-target-seqs
-    default: 25
   indexchunks:
     type: int
     doc: The number of chunks for processing the seed index. This option can be additionally used to tune the performance. The default value is -c4, while setting this parameter to -c1 instead will improve the performance at the cost of increased memory use. Note that the very-sensitive and ultra-sensitive modes use -c1 by default.
     label: The number of chunks
     inputBinding:
       prefix: --index-chunks
-    default: 1
   # taxonlist:
   #   type: File
   #   doc: Comma-separated list of NCBI taxonomic IDs to filter the database by.
@@ -70,7 +66,6 @@ inputs:
     label: scoring matrix
     inputBinding:
       prefix: --matrix
-    default: BLOSUM62
   output:
     type: string?
     doc: Path to the output file. If this parameter is omitted, the results will be written to the standard output and all other program output will be suppressed.
@@ -83,10 +78,8 @@ inputs:
     label: Output format
     inputBinding:
       prefix: --outfmt
-    default: "100" # Diamond format
   threads:
     type: int?
-    default: 3
     inputBinding:
       prefix: --threads
   identifier:

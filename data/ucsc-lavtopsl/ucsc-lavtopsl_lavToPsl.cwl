@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: set the target strand to c (default is no strand)
-    default: no strand
     inputBinding:
       position: 102
       prefix: -target-strand

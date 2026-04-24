@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: end of the selection
-    default: None
     inputBinding:
       position: 102
       prefix: -e
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: extract the barcodes from the read
-    default: false
     inputBinding:
       position: 102
       prefix: -r
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: provdide the header format
-    default: None
     inputBinding:
       position: 102
       prefix: --format
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: sample size
-    default: 1000000
     inputBinding:
       position: 102
       prefix: -n
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - boolean
     doc: select on frequency instead of a fixed amount
-    default: false
     inputBinding:
       position: 102
       prefix: -f
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: start of the selection
-    default: None
     inputBinding:
       position: 102
       prefix: -s
@@ -68,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: threshold for the selection method
-    default: 12
     inputBinding:
       position: 102
       prefix: -t

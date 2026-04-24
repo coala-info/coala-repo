@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: which clade does your species belong to?
-    default: Arthropoda
     inputBinding:
       position: 102
       prefix: --clade
@@ -47,7 +46,6 @@ inputs:
       - int
     doc: which genetic code table to use? 'auto' means determined by '--clade' 
       option.
-    default: auto
     inputBinding:
       position: 102
       prefix: --genetic_code
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory cotaining 'CDS_HMM/', 'MT_database/' and 'rRNA_CM/'.
-    default: /usr/local/lib/python3.8/site-packages/mitoz/profiles
     inputBinding:
       position: 102
       prefix: --profiles_dir
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: species name to use in output genbank file
-    default: Test sp.
     inputBinding:
       position: 102
       prefix: --species_name
@@ -82,7 +78,6 @@ inputs:
     doc: The sqn template to generate the resulting genbank file. Go to 
       https://www.ncbi.nlm.nih.gov/genbank/tbl2asn/#Template to generate your 
       own template file if you like.
-    default: 
       /usr/local/lib/python3.8/site-packages/mitoz/annotate/script/template.sbt
     inputBinding:
       position: 102
@@ -92,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: thread number
-    default: 8
     inputBinding:
       position: 102
       prefix: --thread_number
@@ -101,7 +95,6 @@ inputs:
       - 'null'
       - Directory
     doc: workdir
-    default: ./
     inputBinding:
       position: 102
       prefix: --workdir

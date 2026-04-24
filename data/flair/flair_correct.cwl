@@ -32,7 +32,6 @@ inputs:
     doc: if providing short-read junctions, minimum junction support required to keep
       junction. If your junctions file is in bed format, the score field will be used
       for read support.
-    default: 1
     inputBinding:
       position: 101
       prefix: --junction_support
@@ -65,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: window size for correcting splice sites
-    default: 15
     inputBinding:
       position: 101
       prefix: --ss_window
@@ -74,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

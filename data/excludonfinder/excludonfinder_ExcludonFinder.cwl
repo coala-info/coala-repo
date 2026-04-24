@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - float
     doc: Coverage threshold
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -t
@@ -68,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 8
     inputBinding:
       position: 101
       prefix: -j

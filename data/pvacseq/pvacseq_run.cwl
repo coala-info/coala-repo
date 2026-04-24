@@ -56,7 +56,6 @@ inputs:
       - int
     doc: Report only epitopes where the mutant allele has ic50 binding scores 
       below this value.
-    default: 500
     inputBinding:
       position: 105
       prefix: --binding-threshold
@@ -66,7 +65,6 @@ inputs:
       - string
     doc: Cap to limit the downstream sequence length for frameshifts when 
       creating the fasta file.
-    default: '1000'
     inputBinding:
       position: 105
       prefix: --downstream-sequence-length
@@ -85,7 +83,6 @@ inputs:
       - float
     doc: Gene and Transcript Expression cutoff. Sites above this cutoff will be 
       considered.
-    default: 1
     inputBinding:
       position: 105
       prefix: --expn-val
@@ -112,7 +109,6 @@ inputs:
       - int
     doc: Number of retries when making requests to the IEDB RESTful web 
       interface.
-    default: 5
     inputBinding:
       position: 105
       prefix: --iedb-retries
@@ -130,7 +126,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum fold change between mutant binding score and wild-type score.
-    default: 0
     inputBinding:
       position: 105
       prefix: --minimum-fold-change
@@ -148,7 +143,6 @@ inputs:
       - 'null'
       - float
     doc: NetChop prediction threshold.
-    default: 0.5
     inputBinding:
       position: 105
       prefix: --net-chop-threshold
@@ -166,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: Normal Coverage Cutoff. Sites above this cutoff will be considered.
-    default: 5
     inputBinding:
       position: 105
       prefix: --normal-cov
@@ -176,7 +169,6 @@ inputs:
       - float
     doc: Normal VAF Cutoff. Sites BELOW this cutoff in normal will be 
       considered.
-    default: 2
     inputBinding:
       position: 105
       prefix: --normal-vaf
@@ -185,7 +177,6 @@ inputs:
       - 'null'
       - int
     doc: Length of the peptide sequence to use when creating the FASTA.
-    default: 21
     inputBinding:
       position: 105
       prefix: --peptide-sequence-length
@@ -194,7 +185,6 @@ inputs:
       - 'null'
       - int
     doc: Tumor DNA Coverage Cutoff. Sites above this cutoff will be considered.
-    default: 10
     inputBinding:
       position: 105
       prefix: --tdna-cov
@@ -203,7 +193,6 @@ inputs:
       - 'null'
       - float
     doc: Tumor DNA VAF Cutoff. Sites above this cutoff will be considered.
-    default: 40
     inputBinding:
       position: 105
       prefix: --tdna-vaf
@@ -222,7 +211,6 @@ inputs:
       - string
     doc: The ic50 scoring metric to use when filtering epitopes by 
       binding-threshold or minimum fold change (lowest or median).
-    default: median
     inputBinding:
       position: 105
       prefix: --top-score-metric
@@ -231,7 +219,6 @@ inputs:
       - 'null'
       - int
     doc: Tumor RNA Coverage Cutoff. Sites above this cutoff will be considered.
-    default: 10
     inputBinding:
       position: 105
       prefix: --trna-cov
@@ -240,7 +227,6 @@ inputs:
       - 'null'
       - float
     doc: Tumor RNA VAF Cutoff. Sites above this cutoff will be considered.
-    default: 40
     inputBinding:
       position: 105
       prefix: --trna-vaf

@@ -18,7 +18,6 @@ inputs:
       - string
     doc: Distance measure type. Options are 'root', 'log', 'manhattan', and 
       'euclidean'. Defaults to root.
-    default: root
     inputBinding:
       position: 101
       prefix: --dist-type

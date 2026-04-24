@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - File
     doc: path to the file holding registry configurations
-    default: /user/qianghu/.apptainer/remote.yaml
     inputBinding:
       position: 102
       prefix: --config

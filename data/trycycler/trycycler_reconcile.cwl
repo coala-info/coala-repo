@@ -16,7 +16,6 @@ inputs:
       - boolean
     doc: 'The input contigs are not circular (default: assume the input contigs are
       circular)'
-    default: false
     inputBinding:
       position: 101
       prefix: --linear
@@ -26,7 +25,6 @@ inputs:
       - int
     doc: Maximum allowed sequence length to be added in order to fix 
       circularisation
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max_add_seq
@@ -36,7 +34,6 @@ inputs:
       - float
     doc: Maximum allowed percent relative sequence length to be added in order 
       to fix circularisation
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --max_add_seq_percent
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum allowed pairwise relative length difference
-    default: 1.1
     inputBinding:
       position: 101
       prefix: --max_length_diff
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum allowed pairwise Mash distance
-    default: 0.02
     inputBinding:
       position: 101
       prefix: --max_mash_dist
@@ -64,7 +59,6 @@ inputs:
       - int
     doc: Maximum allowed sequence length to be trimmed in order to fix 
       circularisation
-    default: 50000
     inputBinding:
       position: 101
       prefix: --max_trim_seq
@@ -74,7 +68,6 @@ inputs:
       - float
     doc: Maximum allowed percent relative sequence length to be trimmed in order
       to fix circularisation
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --max_trim_seq_percent
@@ -83,7 +76,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allowed pairwise 1kbp window identity
-    default: 25.0
     inputBinding:
       position: 101
       prefix: --min_1kbp_identity
@@ -92,7 +84,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allowed pairwise percent identity
-    default: 98.0
     inputBinding:
       position: 101
       prefix: --min_identity
@@ -107,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for alignment
-    default: 16
     inputBinding:
       position: 101
       prefix: --threads
@@ -116,7 +106,6 @@ inputs:
       - 'null'
       - boolean
     doc: Display extra output (for debugging)
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

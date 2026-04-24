@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: 'Iterate the normalization up to N many times (default: 10).'
-    default: 10
     inputBinding:
       position: 101
       prefix: --max-iterations

@@ -45,7 +45,6 @@ inputs:
       - string
     doc: Whether the training set is balanced or not (balanced by default, 
       optional)
-    default: balanced
     inputBinding:
       position: 101
       prefix: -sample_ratio

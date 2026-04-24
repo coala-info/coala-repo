@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to check that adata.X contains counts
-    default: true
     inputBinding:
       position: 102
       prefix: --check-counts
@@ -27,7 +26,6 @@ inputs:
       - boolean
     doc: Whether to compute highly variable genes before computing the UMAP and 
       clustering
-    default: false
     inputBinding:
       position: 102
       prefix: --hvg
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: Resolution parameter for the leiden clustering
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --resolution
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Key of the table in the `SpatialData` object to be preprocessed
-    default: table
     inputBinding:
       position: 102
       prefix: --table-key

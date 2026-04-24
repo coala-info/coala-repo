@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: max number of records to print. use -1 for all
-    default: -1
     inputBinding:
       position: 102
       prefix: --n

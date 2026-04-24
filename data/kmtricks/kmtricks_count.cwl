@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: min abundance to keep a k-mer/hash.
-    default: 2
     inputBinding:
       position: 101
       prefix: --hard-min
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: 'partition id (default: all partitions are processed.'
-    default: -1
     inputBinding:
       position: 101
       prefix: --partition-id
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads.
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: verbosity level [debug|info|warning|error].
-    default: info
     inputBinding:
       position: 101
       prefix: --verbose

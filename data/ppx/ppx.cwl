@@ -38,7 +38,6 @@ inputs:
     doc: The local directory where data will be downloaded. The default is 
       ~/.ppx/<identifier>. This can also be changed globally by setting the 
       PPX_DATA_DIR environment variable to your desired location.
-    default: ~/.ppx/<identifier>
     inputBinding:
       position: 103
       prefix: --local

@@ -19,7 +19,6 @@ inputs:
     doc: "Select the db API (sra, ena, or geo) to query, default = sra. Note: pysradb
       search works slightly differently when db = geo. Please refer to 'pysradb search
       --geo-info' for more details."
-    default: sra
     inputBinding:
       position: 101
       prefix: --db
@@ -96,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of entries to return, default = 20
-    default: 20
     inputBinding:
       position: 101
       prefix: --max
@@ -207,7 +205,6 @@ inputs:
       only 1: run accession and experiment title 2: accession numbers, titles and
       sequencing information 3: records in 2 and other information such as download
       url, sample attributes, etc'
-    default: 2
     inputBinding:
       position: 101
       prefix: --verbosity

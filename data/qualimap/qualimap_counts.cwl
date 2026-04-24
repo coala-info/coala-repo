@@ -44,7 +44,6 @@ inputs:
       - string
     doc: Format of the output report (PDF, HTML or both PDF:HTML, default is 
       HTML).
-    default: HTML
     inputBinding:
       position: 101
       prefix: --outformat

@@ -20,7 +20,6 @@ inputs:
       - int
     doc: 'calculation mode. 0: LL both ends of edge match; 1: -LL both ends of edge
       mismatch'
-    default: 0
     inputBinding:
       position: 103
       prefix: -C
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - float
     doc: print out suboptimal branches and clade
-    default: 0.0
     inputBinding:
       position: 103
       prefix: -p
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - float
     doc: site likelihood threshold, zero means no threshold
-    default: -10.0
     inputBinding:
       position: 103
       prefix: -T
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: transition rate
-    default: 1.33
     inputBinding:
       position: 103
       prefix: -ts
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - float
     doc: transversion rate
-    default: 0.33
     inputBinding:
       position: 103
       prefix: -tv

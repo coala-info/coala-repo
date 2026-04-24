@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: (optional) Ensembl server
-    default: ensembldb.ensembl.org
     inputBinding:
       position: 101
       prefix: --server

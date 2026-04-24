@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Choose 16S or ITS for primer trimming
-    default: 16S
     inputBinding:
       position: 102
       prefix: --amplicon
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Which classifiers to use for taxonomic assignment
-    default: RDP
     inputBinding:
       position: 102
       prefix: --classifier
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Custom config file
-    default: (outputDir)/config.yaml
     inputBinding:
       position: 102
       prefix: --configfile
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Choose dada2 or vsearch for denoising reads
-    default: DADA2
     inputBinding:
       position: 102
       prefix: --denoiser
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: Comma seperated list of ranks to exclude
-    default: Phylum
     inputBinding:
       position: 102
       prefix: --exclude-rank
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: Comma seperated list of taxa to exclude
-    default: Bacteria_phy
     inputBinding:
       position: 102
       prefix: --exclude-taxa
@@ -87,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum expected errors in R1 for DADA2 denoising
-    default: 10
     inputBinding:
       position: 102
       prefix: --fw-errors
@@ -102,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length to trim low quality ends of R1 for DADA2 denoising
-    default: 280
     inputBinding:
       position: 102
       prefix: --fw-trim
@@ -117,7 +109,6 @@ inputs:
       - 'null'
       - string
     doc: Rank to keep taxon
-    default: Kingdom
     inputBinding:
       position: 102
       prefix: --keep-rank
@@ -126,7 +117,6 @@ inputs:
       - 'null'
       - string
     doc: Comma seperated list of taxa to keep
-    default: Bacteria
     inputBinding:
       position: 102
       prefix: --keep-taxa
@@ -143,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum read length for merged reads
-    default: 480
     inputBinding:
       position: 102
       prefix: --maxlen
@@ -168,7 +157,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal reads to be kept
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-count
@@ -177,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum R1 and R2 overlap for reads merging
-    default: 10
     inputBinding:
       position: 102
       prefix: --min-overlap
@@ -187,7 +174,6 @@ inputs:
       - float
     doc: Proporition (in %) of samples in which the feature has to be found to 
       be kept
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-prev
@@ -196,7 +182,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length for merged reads
-    default: 390
     inputBinding:
       position: 102
       prefix: --minlen
@@ -261,7 +246,6 @@ inputs:
       - 'null'
       - string
     doc: Comma seperated list of values for counts normalization
-    default: NONE
     inputBinding:
       position: 102
       prefix: --normalization
@@ -270,7 +254,6 @@ inputs:
       - 'null'
       - string
     doc: Comma seperated list of ranks to collapse on in phyloseq output
-    default: OTU
     inputBinding:
       position: 102
       prefix: --physeq-rank
@@ -279,7 +262,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output QIIME visualisation
-    default: true
     inputBinding:
       position: 102
       prefix: --qiime-viz
@@ -288,7 +270,6 @@ inputs:
       - 'null'
       - string
     doc: Comma seperated list of number of reads for rarefaction
-    default: '50000'
     inputBinding:
       position: 102
       prefix: --rarefaction
@@ -305,7 +286,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum expected errors in R2 for DADA2 denoising
-    default: 10
     inputBinding:
       position: 102
       prefix: --rv-errors
@@ -320,7 +300,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length to trim low quality ends of R2 for DADA2 denoising
-    default: 255
     inputBinding:
       position: 102
       prefix: --rv-trim
@@ -353,7 +332,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

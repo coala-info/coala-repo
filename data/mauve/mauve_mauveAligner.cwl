@@ -124,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: Limit LCB extensions to this number of attempts, default is 4
-    default: 4
     inputBinding:
       position: 105
       prefix: --max-extension-iterations
@@ -143,7 +142,6 @@ inputs:
       - int
     doc: Minimum size of gaps that Mauve will perform recursive MUM anchoring on
       (Default is 200)
-    default: 200
     inputBinding:
       position: 105
       prefix: --min-recursive-gap-length

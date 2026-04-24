@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Field(s) containing class weights
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --classes
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: Input file
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Field containing cluster number
-    default: 3
     inputBinding:
       position: 101
       prefix: --key
@@ -37,7 +34,6 @@ inputs:
       - type: array
         items: string
     doc: Load on machines double[,double...]
-    default: '5'
     inputBinding:
       position: 101
       prefix: --loads
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Makespan initial method
-    default: DBF
     inputBinding:
       position: 101
       prefix: --method
@@ -63,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: Separator
-    default: \t
     inputBinding:
       position: 101
       prefix: --separator
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: Makespan tabu search method
-    default: BB
     inputBinding:
       position: 101
       prefix: --tabu
@@ -89,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: Weighing method
-    default: none
     inputBinding:
       position: 101
       prefix: --weight

@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: maximum peptide mass difference in ppm
-    default: 2000000
     inputBinding:
       position: 101
       prefix: --maxppmdiff
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: probability threshold
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --minprob
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Output name
-    default: interact
     inputBinding:
       position: 101
       prefix: --output

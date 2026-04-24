@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: The format of the input files (narrowPeak, broadPeak, or bed).
-    default: narrowPeak
     inputBinding:
       position: 101
       prefix: --input-file-type
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: The method used to merge peaks (sum, avg, or min).
-    default: sum
     inputBinding:
       position: 101
       prefix: --peak-merge-method

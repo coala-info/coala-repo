@@ -10,7 +10,6 @@ inputs:
       - string
     doc: Add additional columns found in the mutation database to the text and 
       csv results
-    default: None
     inputBinding:
       position: 101
       prefix: --add_columns
@@ -20,7 +19,6 @@ inputs:
       - string
     doc: Minimum allele frequency hard and soft cutoff specified as comma 
       separated values
-    default: 0,0.1
     inputBinding:
       position: 101
       prefix: --af
@@ -30,7 +28,6 @@ inputs:
       - File
     doc: BAM file. Make sure it has been generated using the H37Rv genome 
       (GCA_000195955.2)
-    default: None
     inputBinding:
       position: 101
       prefix: --bam
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: Variant calling tool to use
-    default: mpileup
     inputBinding:
       position: 101
       prefix: --barcode_caller
@@ -48,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: Dump barcoding mutations to a file
-    default: None
     inputBinding:
       position: 101
       prefix: --barcode_snps
@@ -57,7 +52,6 @@ inputs:
       - 'null'
       - boolean
     doc: Call whole genome
-    default: false
     inputBinding:
       position: 101
       prefix: --call_whole_genome
@@ -66,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: Variant calling tool to use
-    default: freebayes
     inputBinding:
       position: 101
       prefix: --caller
@@ -75,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: Override default parameters for variant calling
-    default: None
     inputBinding:
       position: 101
       prefix: --calling_params
@@ -84,7 +76,6 @@ inputs:
       - 'null'
       - boolean
     doc: Create consensus sequence
-    default: false
     inputBinding:
       position: 101
       prefix: --consensus
@@ -93,7 +84,6 @@ inputs:
       - 'null'
       - string
     doc: Coverage tool to use
-    default: samtools
     inputBinding:
       position: 101
       prefix: --coverage_tool
@@ -102,7 +92,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add CSV output
-    default: false
     inputBinding:
       position: 101
       prefix: --csv
@@ -111,7 +100,6 @@ inputs:
       - 'null'
       - Directory
     doc: Storage directory
-    default: /usr/local/share/ntm-profiler/
     inputBinding:
       position: 101
       prefix: --db_dir
@@ -120,7 +108,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable debug logging
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -129,7 +116,6 @@ inputs:
       - 'null'
       - string
     doc: Minimum depth hard and soft cutoff specified as comma separated values
-    default: 0,10
     inputBinding:
       position: 101
       prefix: --depth
@@ -138,7 +124,6 @@ inputs:
       - 'null'
       - Directory
     doc: Storage directory
-    default: .
     inputBinding:
       position: 101
       prefix: --dir
@@ -147,7 +132,6 @@ inputs:
       - 'null'
       - string
     doc: Default name for SNP-dist DB
-    default: ntm-profiler-dists.db
     inputBinding:
       position: 101
       prefix: --dist_db_name
@@ -156,7 +140,6 @@ inputs:
       - 'null'
       - File
     doc: Fasta file
-    default: None
     inputBinding:
       position: 101
       prefix: --fasta
@@ -165,7 +148,6 @@ inputs:
       - 'null'
       - string
     doc: Kmer counting tool to use
-    default: kmc
     inputBinding:
       position: 101
       prefix: --kmer_counter
@@ -174,7 +156,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level
-    default: INFO
     inputBinding:
       position: 101
       prefix: --logging
@@ -184,7 +165,6 @@ inputs:
       - string
     doc: Mapping tool to use. If you are using nanopore data it will default to 
       minimap2
-    default: bwa
     inputBinding:
       position: 101
       prefix: --mapper
@@ -194,7 +174,6 @@ inputs:
       - float
     doc: Minimum abundance (percent) for a species to be reported in the 
       collated output
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --min_species_relative_abundance
@@ -203,7 +182,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't remove temporary files after run
-    default: false
     inputBinding:
       position: 101
       prefix: --no_cleanup
@@ -212,7 +190,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't clip reads
-    default: true
     inputBinding:
       position: 101
       prefix: --no_clip
@@ -221,7 +198,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't collect coverage statistics
-    default: false
     inputBinding:
       position: 101
       prefix: --no_coverage_qc
@@ -230,7 +206,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't run delly
-    default: false
     inputBinding:
       position: 101
       prefix: --no_delly
@@ -239,7 +214,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't run mash if kmers speciation fails
-    default: false
     inputBinding:
       position: 101
       prefix: --no_mash
@@ -248,7 +222,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't run mash if kmers speciation fails
-    default: false
     inputBinding:
       position: 101
       prefix: --no_samclip
@@ -257,7 +230,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip species prediction
-    default: true
     inputBinding:
       position: 101
       prefix: --no_species
@@ -266,7 +238,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't trim files using trimmomatic
-    default: false
     inputBinding:
       position: 101
       prefix: --no_trim
@@ -275,7 +246,6 @@ inputs:
       - 'null'
       - string
     doc: NGS Platform used to generate data
-    default: illumina
     inputBinding:
       position: 101
       prefix: --platform
@@ -284,7 +254,6 @@ inputs:
       - 'null'
       - string
     doc: Sample prefix for all results generated
-    default: ntmprofiler
     inputBinding:
       position: 101
       prefix: --prefix
@@ -293,7 +262,6 @@ inputs:
       - 'null'
       - int
     doc: Max memory to use
-    default: 8
     inputBinding:
       position: 101
       prefix: --ram
@@ -302,7 +270,6 @@ inputs:
       - 'null'
       - File
     doc: First read file
-    default: None
     inputBinding:
       position: 101
       prefix: --read1
@@ -311,7 +278,6 @@ inputs:
       - 'null'
       - File
     doc: Second read file
-    default: None
     inputBinding:
       position: 101
       prefix: --read2
@@ -320,7 +286,6 @@ inputs:
       - 'null'
       - string
     doc: Mutation panel name
-    default: None
     inputBinding:
       position: 101
       prefix: --resistance_db
@@ -330,7 +295,6 @@ inputs:
       - string
     doc: Store variant set and get all samples with snp distance less than this 
       cutoff (experimental feature)
-    default: None
     inputBinding:
       position: 101
       prefix: --snp_dist
@@ -339,7 +303,6 @@ inputs:
       - 'null'
       - string
     doc: Mutation panel name
-    default: ntmdb
     inputBinding:
       position: 101
       prefix: --species_db
@@ -348,7 +311,6 @@ inputs:
       - 'null'
       - boolean
     doc: Predict species and quit
-    default: false
     inputBinding:
       position: 101
       prefix: --species_only
@@ -358,7 +320,6 @@ inputs:
       - string
     doc: Minimum read number per strand hard and soft cutoff specified as comma 
       separated values
-    default: 0,3
     inputBinding:
       position: 101
       prefix: --strand
@@ -368,7 +329,6 @@ inputs:
       - string
     doc: Structural variant minimum allele frequency hard cutoff specified as 
       comma separated values
-    default: 0.5,0.9
     inputBinding:
       position: 101
       prefix: --sv_af
@@ -378,7 +338,6 @@ inputs:
       - string
     doc: Structural variant minimum depth hard and soft cutoff specified as 
       comma separated values
-    default: 0,10
     inputBinding:
       position: 101
       prefix: --sv_depth
@@ -388,7 +347,6 @@ inputs:
       - string
     doc: Structural variant maximum size hard and soft cutoff specified as comma
       separated values
-    default: 100000,50000
     inputBinding:
       position: 101
       prefix: --sv_len
@@ -397,7 +355,6 @@ inputs:
       - 'null'
       - string
     doc: Variant calling tool to use
-    default: sylph
     inputBinding:
       position: 101
       prefix: --taxonomic_software
@@ -406,7 +363,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temp directory to process all files
-    default: .
     inputBinding:
       position: 101
       prefix: --temp
@@ -415,7 +371,6 @@ inputs:
       - 'null'
       - int
     doc: Threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -424,7 +379,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add text output
-    default: false
     inputBinding:
       position: 101
       prefix: --txt
@@ -433,7 +387,6 @@ inputs:
       - 'null'
       - File
     doc: VCF file
-    default: None
     inputBinding:
       position: 101
       prefix: --vcf

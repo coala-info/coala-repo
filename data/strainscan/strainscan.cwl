@@ -17,7 +17,6 @@ inputs:
     doc: If this parameter is set to 1, the intra-cluster searching process will
       search possible strains and return strains with extra regions (could be 
       different genes, SNVs or SVs to the possible strains) covered.
-    default: 0
     inputBinding:
       position: 101
       prefix: --extraRegion_mode
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: The size of kmer, should be odd number.
-    default: 31
     inputBinding:
       position: 101
       prefix: --kmer_size
@@ -50,7 +48,6 @@ inputs:
       - string
     doc: This parameter can be set to "1" if the sequencing depth of input data 
       is very low (e.g. < 10x). For super low depth ( < 1x ), you can use "-l 2"
-    default: 0
     inputBinding:
       position: 101
       prefix: --low_dep
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum number of SNV at Layer-2 identification.
-    default: 40
     inputBinding:
       position: 101
       prefix: --minimum_snv_num
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output dir
-    default: current dir/StrainVote_Result
     inputBinding:
       position: 101
       prefix: --output_dir
@@ -82,7 +77,6 @@ inputs:
       the intra-cluster searching process will search possible strains using 
       given reference genomes by "-r". Reference genome sequences (-r) are 
       required if this mode is used.
-    default: 0
     inputBinding:
       position: 101
       prefix: --plasmid_mode
@@ -102,7 +96,6 @@ inputs:
     doc: If this parameter is set to 1, then the algorithm will output the 
       probabolity of detecting a strain (or cluster) in low-depth (e.g. <1x) 
       samples.
-    default: 0
     inputBinding:
       position: 101
       prefix: --strain_prob

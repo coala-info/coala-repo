@@ -85,7 +85,6 @@ inputs:
       position: 1
   out_suffix:
     type: string
-    default: "tn5correct"
     inputBinding:
       position: 2
  

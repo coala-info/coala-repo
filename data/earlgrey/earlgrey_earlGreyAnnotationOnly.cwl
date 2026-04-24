@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Create soft-masked genome at the end?
-    default: no
     inputBinding:
       position: 101
       prefix: -d
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Remove putative spurious TE annotations <100bp?
-    default: no
     inputBinding:
       position: 101
       prefix: -m
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: RepeatMasker species for addition to custom library
-    default: None
     inputBinding:
       position: 101
       prefix: -r
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: Run HELIANO as an optional step to detect Helitrons
-    default: no
     inputBinding:
       position: 101
       prefix: -e

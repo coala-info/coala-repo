@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Set IO version
-    default: 4
     inputBinding:
       position: 102
       prefix: --io_version

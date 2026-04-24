@@ -10,7 +10,6 @@ inputs:
       - boolean
     doc: Indicates whether we use the output of isONclust (i.e. we have 
       uncorrected data)
-    default: false
     inputBinding:
       position: 101
       prefix: --clustered
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: diversity rate used to compare sequences
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --delta
@@ -29,7 +27,6 @@ inputs:
       - int
     doc: 'Cutoff parameter: maximum length difference at 3prime end, for which subisoforms
       are still merged into longer isoforms'
-    default: 30
     inputBinding:
       position: 101
       prefix: --delta_iso_len_3
@@ -39,7 +36,6 @@ inputs:
       - int
     doc: 'Cutoff parameter: maximum length difference at 5prime end, for which subisoforms
       are still merged into longer isoforms'
-    default: 50
     inputBinding:
       position: 101
       prefix: --delta_iso_len_5
@@ -49,7 +45,6 @@ inputs:
       - int
     doc: Maximum length difference between two reads intervals for which they 
       would still be merged
-    default: 5
     inputBinding:
       position: 101
       prefix: --delta_len
@@ -58,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Do exact correction for clusters under this threshold
-    default: 50
     inputBinding:
       position: 101
       prefix: --exact_instance_limit
@@ -67,7 +61,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to input fastq folder with reads in clusters
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --fastq_folder
@@ -77,7 +70,6 @@ inputs:
       - int
     doc: 'Cutoff parameter: abundance of reads that have to support an isoform to
       show in results'
-    default: 5
     inputBinding:
       position: 101
       prefix: --iso_abundance
@@ -86,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer size
-    default: 20
     inputBinding:
       position: 101
       prefix: --k
@@ -96,7 +87,6 @@ inputs:
       - boolean
     doc: Do not recompute previous results if corrected_reads.fq is found and 
       has the smae number of reads as input file (i.e., is complete).
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_old
@@ -106,7 +96,6 @@ inputs:
       - int
     doc: Maximum number of seqs to correct at a time (in case of large 
       clusters).
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max_seqs
@@ -115,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of seqs to spoa
-    default: 200
     inputBinding:
       position: 101
       prefix: --max_seqs_to_spoa
@@ -124,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cores allocated for clustering
-    default: 8
     inputBinding:
       position: 101
       prefix: --t
@@ -133,7 +120,6 @@ inputs:
       - 'null'
       - Directory
     doc: Outfolder with all corrected reads.
-    default: None
     inputBinding:
       position: 101
       prefix: --outfolder
@@ -142,7 +128,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set w = k + max(2*k, floor(cluster_size/1000)).
-    default: false
     inputBinding:
       position: 101
       prefix: --set_w_dynamically
@@ -153,7 +138,6 @@ inputs:
     doc: Process reads per batch (of max_seqs sequences) instead of per cluster.
       Significantly decrease runtime when few very large clusters are less than 
       the number of cores used.
-    default: false
     inputBinding:
       position: 101
       prefix: --split_wrt_batches
@@ -165,7 +149,6 @@ inputs:
       files. If tmpdir is not specified, isONform will attempt to write the temporary
       files into the tmp folder on your system. It is advised to only use this parameter
       if the symlinking does not work on your system.'
-    default: None
     inputBinding:
       position: 101
       prefix: --tmpdir
@@ -174,7 +157,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print various developer stats.
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose
@@ -183,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: Window size
-    default: 31
     inputBinding:
       position: 101
       prefix: --w
@@ -193,7 +174,6 @@ inputs:
       - boolean
     doc: 'Indicates that we want to ouptut the final output (transcriptome) as fastq
       file (New standard: fasta)'
-    default: false
     inputBinding:
       position: 101
       prefix: --write_fastq
@@ -202,7 +182,6 @@ inputs:
       - 'null'
       - int
     doc: Upper interval length
-    default: 80
     inputBinding:
       position: 101
       prefix: --xmax
@@ -211,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: Lower interval length
-    default: 18
     inputBinding:
       position: 101
       prefix: --xmin

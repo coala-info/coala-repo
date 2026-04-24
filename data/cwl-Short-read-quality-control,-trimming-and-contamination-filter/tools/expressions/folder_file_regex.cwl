@@ -27,17 +27,14 @@ inputs:
     type: boolean
     label: Reverse
     doc: Exclude files with regex. (default false)
-    default: false
   output_folder_name:
     type: string?
     label: Output folder name
     doc: Output folder name. When output folder is true. (default 'filtered')
-    default: "filtered"
   output_as_folder:
     type: boolean
     label: Output as folder
     doc: Output files in folder when true. (default false)
-    default: false
 
 expression: |
   ${

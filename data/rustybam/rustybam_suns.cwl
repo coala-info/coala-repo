@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - File
     doc: Input fasta file with the genome
-    default: '-'
     inputBinding:
       position: 101
       prefix: --fasta
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: The size of the required unique kmer
-    default: 21
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum size SUN interval to report
-    default: 18446744073709551615
     inputBinding:
       position: 101
       prefix: --max-size

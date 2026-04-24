@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Band width for banded alignment
-    default: 3
     inputBinding:
       position: 101
       prefix: --band
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer size [14..22]
-    default: 20
     inputBinding:
       position: 101
       prefix: --kmer
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of chained candidates to be processed
-    default: 30
     inputBinding:
       position: 101
       prefix: --max-chain-list
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Max allowed edit distance on each mate
-    default: 4
     inputBinding:
       position: 101
       prefix: --max-ed
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of an intron
-    default: 2000000
     inputBinding:
       position: 101
       prefix: --max-intron
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Max read length
-    default: 300
     inputBinding:
       position: 101
       prefix: --rlen
@@ -88,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Max allowed soft clipping on each mate
-    default: 7
     inputBinding:
       position: 101
       prefix: --max-sc
@@ -97,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum template length of concordant mapping. Paired-end mode only
-    default: 500
     inputBinding:
       position: 101
       prefix: --max-tlen
@@ -106,7 +98,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix of output files
-    default: output
     inputBinding:
       position: 101
       prefix: --output
@@ -140,7 +131,6 @@ inputs:
     doc: 'Transcriptome/Genome scan level: 0 to 2. 0: Report the first mapping. 1:
       Continue processing the read unless it is perfectly mapped to cDNA. 2: Report
       the best mapping.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --scan-lev
@@ -149,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: Skip seeds that have more than INT occurrences
-    default: 500
     inputBinding:
       position: 101
       prefix: --seed-lim
@@ -182,7 +171,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --thread
@@ -191,7 +179,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbosity mode: 0 or 1. Higher values output more information'
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbosity

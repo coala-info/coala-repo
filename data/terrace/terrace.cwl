@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: library type of the sample
-    default: empty
     inputBinding:
       position: 101
       prefix: --library_type

@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: field index
-    default: 1
     inputBinding:
       position: 102
       prefix: --field

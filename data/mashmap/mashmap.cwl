@@ -56,7 +56,6 @@ inputs:
     doc: "filter modes in mashmap: 'map', 'one-to-one' or 'none'. 'map' computes best
       mappings for each query sequence. 'one-to-one' computes best mappings for query
       as well as reference sequence. 'none' disables filtering"
-    default: map
     inputBinding:
       position: 101
       prefix: --filter_mode
@@ -65,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: Filter out mappings unlikely to be this ANI less than the best mapping
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --hgFilterAniDiff
@@ -74,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: Confidence value for the hypergeometric filtering
-    default: 99.9%
     inputBinding:
       position: 101
       prefix: --hgFilterConf
@@ -83,7 +80,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for kmer complexity [0, 1]
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --kmerComplexity
@@ -92,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: kmer size
-    default: 19
     inputBinding:
       position: 101
       prefix: --kmer
@@ -101,7 +96,6 @@ inputs:
       - 'null'
       - float
     doc: ignore the top % most-frequent kmer window
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --kmerThreshold
@@ -161,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: number of mappings to retain for each segment
-    default: 1
     inputBinding:
       position: 101
       prefix: --numMappingsForSegment
@@ -171,7 +164,6 @@ inputs:
       - int
     doc: number of mappings to retain for each sequence shorter than segment 
       length
-    default: 1
     inputBinding:
       position: 101
       prefix: --numMappingsForShortSeq
@@ -180,7 +172,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for identity
-    default: 85
     inputBinding:
       position: 101
       prefix: --perc_identity
@@ -240,7 +231,6 @@ inputs:
       - int
     doc: mapping segment length. sequences shorter than segment length will be 
       ignored
-    default: 5000
     inputBinding:
       position: 101
       prefix: --segLength
@@ -299,7 +289,6 @@ inputs:
       - 'null'
       - int
     doc: count of threads for parallel execution
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

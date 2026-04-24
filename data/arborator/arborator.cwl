@@ -64,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: cluster method [single, complete, average]
-    default: average
     inputBinding:
       position: 101
       prefix: --method
@@ -73,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of members to perform clustering
-    default: 2
     inputBinding:
       position: 101
       prefix: --min_members
@@ -90,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: CPU Threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --n_threads
@@ -107,7 +104,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold to flag outlier comparisons within a group
-    default: 100
     inputBinding:
       position: 101
       prefix: --outlier_thresh
@@ -148,7 +144,6 @@ inputs:
       - 'null'
       - string
     doc: thresholds delimited by ,
-    default: '100'
     inputBinding:
       position: 101
       prefix: --thresholds
@@ -162,7 +157,6 @@ inputs:
       leaves, and "cophenetic" to interpret distances in the matrix as the 
       minimum distance two clusters or leaves need to be in order to be grouped 
       into the same cluster.
-    default: patristic
     inputBinding:
       position: 101
       prefix: --tree_distances

@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - File
     doc: redirect stdout to a log file
-    default: None
     inputBinding:
       position: 101
       prefix: --log
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: level of logging to output
-    default: INFO
     inputBinding:
       position: 101
       prefix: --log_level

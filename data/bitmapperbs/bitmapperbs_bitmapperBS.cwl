@@ -27,7 +27,6 @@ inputs:
       - float
     doc: 'Set the edit distance rate of read length. This value is between 0 and 1
       (default: 0.08 = 8% of read length).'
-    default: 0.08
     inputBinding:
       position: 101
       prefix: -e
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: 'Gap extension penalty (default: 3).'
-    default: 3
     inputBinding:
       position: 101
       prefix: --gap_extension
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: 'Gap open penalty (default: 5).'
-    default: 5
     inputBinding:
       position: 101
       prefix: --gap_open
@@ -80,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: 'Max observed template length between a pair of end sequences (default: 500).'
-    default: 500
     inputBinding:
       position: 101
       prefix: --max
@@ -89,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: 'Min observed template length between a pair of end sequences (default: 0).'
-    default: 0
     inputBinding:
       position: 101
       prefix: --min
@@ -98,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum mismatch penalty (default: 6).'
-    default: 6
     inputBinding:
       position: 101
       prefix: --mp_max
@@ -107,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum mismatch penalty (default: 2).'
-    default: 2
     inputBinding:
       position: 101
       prefix: --mp_min
@@ -116,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: 'Ambiguous character (e.g., N) penalty (default: 1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: --np
@@ -202,7 +194,6 @@ inputs:
       - 'null'
       - int
     doc: 'Set the number of CPU threads (default: 1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

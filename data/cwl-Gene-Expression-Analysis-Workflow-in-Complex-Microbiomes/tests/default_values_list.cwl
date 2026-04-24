@@ -13,7 +13,6 @@ inputs:
     type: string[]?
     inputBinding:
         position: 1
-    default: ["/home/bart/cwl_test/test1"]
 
 outputs:
   output:

@@ -11,7 +11,6 @@ inputs:
     doc: "Maximum gap length to be adjusted. Ns\n                        will be shortened
       if the gap length is equal to or\n                        smaller than this
       value."
-    default: None
     inputBinding:
       position: 101
       prefix: --gap_just_max
@@ -22,7 +21,6 @@ inputs:
     doc: "Minimum gap length to be adjusted. Ns\n                        will be extended
       if the gap length is equal to or\n                        greater than this
       value."
-    default: None
     inputBinding:
       position: 101
       prefix: --gap_just_min
@@ -32,7 +30,6 @@ inputs:
       - int
     doc: "Gap length. Ns will be added or removed\n                        to make
       the gap length fixed."
-    default: 100
     inputBinding:
       position: 101
       prefix: --gap_len
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - File
     doc: Input gff file.
-    default: None
     inputBinding:
       position: 101
       prefix: --ingff
@@ -51,7 +47,6 @@ inputs:
       - string
     doc: "Input sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --inseqformat
@@ -61,7 +56,6 @@ inputs:
       - string
     doc: "Output sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --outseqformat
@@ -70,7 +64,6 @@ inputs:
       - 'null'
       - File
     doc: Input sequence file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --seqfile

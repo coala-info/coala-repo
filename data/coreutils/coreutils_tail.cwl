@@ -54,7 +54,6 @@ inputs:
       - int
     doc: with --follow=name, reopen a FILE which has not changed size after N (default
       5) iterations to see if it has been unlinked or renamed
-    default: 5
     inputBinding:
       position: 102
       prefix: --max-unchanged-stats
@@ -89,7 +88,6 @@ inputs:
       - 'null'
       - float
     doc: with -f, sleep for approximately N seconds (default 1.0) between iterations
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --sleep-interval

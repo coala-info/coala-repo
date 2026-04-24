@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPU cores to use (Default=0=All)
-    default: 0
     inputBinding:
       position: 101
       prefix: -c
@@ -119,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: tune threading of multi-threaded binaries (Default=2)
-    default: 2
     inputBinding:
       position: 101
       prefix: -t

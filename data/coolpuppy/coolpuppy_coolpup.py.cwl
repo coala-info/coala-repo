@@ -28,7 +28,6 @@ inputs:
       distance band. If empty, will use default (0,50000,100000,200000,...) 
       edges. Specify edges using multiple argument values, e.g. `--by_distance 
       1000000 2000000`
-    default: None
     inputBinding:
       position: 103
       prefix: --by_distance
@@ -38,7 +37,6 @@ inputs:
       - boolean
     doc: Perform by-strand pile-ups. Create a separate pile-up for each strand 
       combination in the features.
-    default: false
     inputBinding:
       position: 103
       prefix: --by_strand
@@ -50,7 +48,6 @@ inputs:
       features. Not compatible with --by_strand and --by_distance. Only works 
       with bed format features, and generates pairwise combinations of each 
       feature against the rest.
-    default: false
     inputBinding:
       position: 103
       prefix: --by_window
@@ -60,7 +57,6 @@ inputs:
       - string
     doc: Name of the norm to use for getting balanced data. Provide empty 
       argument to calculate pileups on raw data (no masking bad pixels).
-    default: weight
     inputBinding:
       position: 103
       prefix: --clr_weight_name
@@ -77,7 +73,6 @@ inputs:
       bin table, and will raise a ValueError if it does not exist. If no argument
       is given following the option string, will use "total". Only allowed when using
       empty --clr_weight_name'
-    default: ''
     inputBinding:
       position: 103
       prefix: --coverage_norm
@@ -87,7 +82,6 @@ inputs:
       - File
     doc: File with expected (output of ``cooltools compute-expected``). If None,
       don't use expected and use randomly shifted controls
-    default: None
     inputBinding:
       position: 103
       prefix: --expected
@@ -98,7 +92,6 @@ inputs:
     doc: 'Format of the features. Options: bed: chrom, start, end bedpe: chrom1, start1,
       end1, chrom2, start2, end2 auto (default): determined from the file name extension
       Has to be explicitly provided is features is piped through stdin'
-    default: auto
     inputBinding:
       position: 103
       prefix: --features_format
@@ -109,7 +102,6 @@ inputs:
     doc: Flanking of the windows around the centres of specified features i.e. 
       final size of the matrix is 2 × flank+res, in bp. Ignored with 
       ``--rescale``, use ``--rescale_flank`` instead
-    default: 100000
     inputBinding:
       position: 103
       prefix: --flank
@@ -120,7 +112,6 @@ inputs:
     doc: Flip snippets so the positive strand always points to bottom-right. 
       Requires strands to be annotated for each feature (or two strands for 
       bedpe format features)
-    default: false
     inputBinding:
       position: 103
       prefix: --flip_negative_strand
@@ -133,7 +124,6 @@ inputs:
       feature_format=='bed', each columns should be specified twice with 
       suffixes '1' and '2', i.e. if features have a column 'group', specify 
       'group1 group2'., e.g. --groupby chrom1 chrom2
-    default: None
     inputBinding:
       position: 103
       prefix: --groupby
@@ -142,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: How many diagonals to ignore
-    default: 2
     inputBinding:
       position: 103
       prefix: --ignore_diags
@@ -157,7 +146,6 @@ inputs:
       category1-category2), need to specify which grouping should be 
       prioritised, e.g. "group" or "group1 group2". For flip_negative_strand, +-
       and -+ strands will be combined
-    default: None
     inputBinding:
       position: 103
       prefix: --ignore_group_order
@@ -166,7 +154,6 @@ inputs:
       - 'null'
       - boolean
     doc: Create local pileups, i.e. along the diagonal
-    default: false
     inputBinding:
       position: 103
       prefix: --local
@@ -175,7 +162,6 @@ inputs:
       - 'null'
       - string
     doc: Set the logging level
-    default: INFO
     inputBinding:
       position: 103
       prefix: --log
@@ -184,7 +170,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal distance of interactions to use
-    default: None
     inputBinding:
       position: 103
       prefix: --maxdist
@@ -193,7 +178,6 @@ inputs:
       - 'null'
       - int
     doc: Longest shift for random controls, bp
-    default: 1000000
     inputBinding:
       position: 103
       prefix: --maxshift
@@ -203,7 +187,6 @@ inputs:
       - int
     doc: Minimal distance of interactions to use, bp. If not provided, uses 
       2*flank+2 (in bins) as mindist to avoid first two diagonals
-    default: None
     inputBinding:
       position: 103
       prefix: --mindist
@@ -212,7 +195,6 @@ inputs:
       - 'null'
       - int
     doc: Shortest shift for random controls, bp
-    default: 100000
     inputBinding:
       position: 103
       prefix: --minshift
@@ -223,7 +205,6 @@ inputs:
     doc: Number of processes to use. Each process works on a separate 
       chromosome, so might require quite a bit more memory, although the data 
       are always stored as sparse matrices. Set to 0 to use all available cores.
-    default: 1
     inputBinding:
       position: 103
       prefix: --nproc
@@ -234,7 +215,6 @@ inputs:
     doc: If expected is provided, will accumulate all expected snippets just 
       like for randomly shifted controls, instead of normalizing each snippet 
       individually
-    default: true
     inputBinding:
       position: 103
       prefix: --not_ooe
@@ -243,7 +223,6 @@ inputs:
       - 'null'
       - int
     doc: Number of control regions per averaged window
-    default: 10
     inputBinding:
       position: 103
       prefix: --nshifts
@@ -254,7 +233,6 @@ inputs:
     doc: Name of the output file. If not set, file is saved in the current 
       directory and the name is generated automatically to include important 
       information and avoid overwriting files generated with different settings.
-    default: auto
     inputBinding:
       position: 103
       prefix: --outname
@@ -263,7 +241,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enter debugger if there is an error
-    default: false
     inputBinding:
       position: 103
       prefix: --post_mortem
@@ -274,7 +251,6 @@ inputs:
     doc: Rescale all features to the same size. Do not use centres of features 
       and flank, and rather use the actual feature sizes and rescale pileups to 
       the same shape and size
-    default: false
     inputBinding:
       position: 103
       prefix: --rescale
@@ -283,7 +259,6 @@ inputs:
       - 'null'
       - float
     doc: If --rescale, flanking in fraction of feature length
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --rescale_flank
@@ -294,7 +269,6 @@ inputs:
     doc: Size to rescale to. If ``--rescale``, used to determine the final size 
       of the pileup, i.e. it will be size×size. Due to technical limitation in 
       the current implementation, has to be an odd number
-    default: 99
     inputBinding:
       position: 103
       prefix: --rescale_size
@@ -303,7 +277,6 @@ inputs:
       - 'null'
       - int
     doc: Set specific seed value to ensure reproducibility
-    default: None
     inputBinding:
       position: 103
       prefix: --seed
@@ -312,7 +285,6 @@ inputs:
       - 'null'
       - boolean
     doc: Store horizontal and vertical stripes in pileup output
-    default: false
     inputBinding:
       position: 103
       prefix: --store_stripes
@@ -323,7 +295,6 @@ inputs:
     doc: Take a random sample of the bed file. Useful for files with too many 
       featuers to run as is, i.e. some repetitive elements. Set to 0 or lower to
       keep all data
-    default: 0
     inputBinding:
       position: 103
       prefix: --subset
@@ -333,7 +304,6 @@ inputs:
       - boolean
     doc: Perform inter-chromosomal (trans) pileups. This ignores all contacts in
       cis.
-    default: false
     inputBinding:
       position: 103
       prefix: --trans
@@ -342,7 +312,6 @@ inputs:
       - 'null'
       - File
     doc: Path to a file which defines which regions of the chromosomes to use
-    default: None
     inputBinding:
       position: 103
       prefix: --view

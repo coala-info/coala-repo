@@ -52,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: Hash type used to identify kmers
-    default: Auto
     inputBinding:
       position: 103
       prefix: --hash-type
@@ -87,7 +86,6 @@ inputs:
       usage does not include the needed memory for the processing steps. GGCAT 
       can allocate extra memory for files if the current memory is not enough to
       complete the current operation
-    default: 2
     inputBinding:
       position: 103
       prefix: --memory
@@ -103,7 +101,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: output
     inputBinding:
       position: 103
       prefix: --output-file-prefix
@@ -119,7 +116,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: MinimizerBucketing
     inputBinding:
       position: 103
       prefix: --step
@@ -128,7 +124,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for temporary files
-    default: .temp_files
     inputBinding:
       position: 103
       prefix: --temp-dir
@@ -136,7 +131,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 16
     inputBinding:
       position: 103
       prefix: --threads-count

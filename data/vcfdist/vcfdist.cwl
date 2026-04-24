@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - float
     doc: minimum partial credit to consider variant a true positive
-    default: 0.7
     inputBinding:
       position: 104
       prefix: --credit-threshold
@@ -59,7 +58,6 @@ inputs:
       - type: array
         items: string
     doc: select just variants passing these FILTERs (OR operation)
-    default: ALL
     inputBinding:
       position: 104
       prefix: --filter
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Smith-Waterman gap extension penalty
-    default: 2
     inputBinding:
       position: 104
       prefix: --gap-extend-penalty
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Smith-Waterman gap opening penalty
-    default: 6
     inputBinding:
       position: 104
       prefix: --gap-open-penalty
@@ -94,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: maximum variant size, larger variants ignored
-    default: 5000
     inputBinding:
       position: 104
       prefix: --largest-variant
@@ -103,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: maximum variant quality, higher qualities kept but thresholded
-    default: 60
     inputBinding:
       position: 104
       prefix: --max-qual
@@ -112,7 +106,6 @@ inputs:
       - 'null'
       - string
     doc: (approximate) maximum RAM to use for precision/recall alignment
-    default: 64.000GB
     inputBinding:
       position: 104
       prefix: --max-ram
@@ -121,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: maximum threads to use for clustering and precision/recall alignment
-    default: 64
     inputBinding:
       position: 104
       prefix: --max-threads
@@ -130,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: minimum variant quality, lower qualities ignored
-    default: 0
     inputBinding:
       position: 104
       prefix: --min-qual
@@ -139,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: Smith-Waterman mismatch (substitution) penalty
-    default: 5
     inputBinding:
       position: 104
       prefix: --mismatch-penalty
@@ -156,7 +146,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for output files (directory needs a trailing slash)
-    default: ./
     inputBinding:
       position: 104
       prefix: --prefix
@@ -189,7 +178,6 @@ inputs:
       - 'null'
       - int
     doc: variants of this size or larger are considered SVs, not INDELs
-    default: 50
     inputBinding:
       position: 104
       prefix: --sv-threshold
@@ -198,7 +186,6 @@ inputs:
       - 'null'
       - int
     doc: 'printing verbosity (0: succinct, 1: default, 2:verbose)'
-    default: 1
     inputBinding:
       position: 104
       prefix: --verbosity

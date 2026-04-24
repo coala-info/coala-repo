@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - float
     doc: clash distance threshold in angstroms
-    default: 3.0
     inputBinding:
       position: 102
       prefix: --clash-distance
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: minimum residue sequence separation
-    default: 2
     inputBinding:
       position: 102
       prefix: --min-seq-sep

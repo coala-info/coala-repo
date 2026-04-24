@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: complain after INT seconds working on a read or read pair
-    default: 512
     inputBinding:
       position: 101
       prefix: --batch-size
@@ -39,7 +38,6 @@ inputs:
       - float
     doc: only align chains if their score is within this many points of the best
       score
-    default: 100
     inputBinding:
       position: 101
       prefix: --chain-score-threshold
@@ -89,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: cluster using this distance limit
-    default: 200
     inputBinding:
       position: 101
       prefix: --distance-limit
@@ -99,7 +96,6 @@ inputs:
       - int
     doc: downsample minimizers with windows of length read_length/INT, 0 for no 
       downsampling
-    default: 0
     inputBinding:
       position: 101
       prefix: --downsample-window-count
@@ -108,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: maximum window length for downsampling
-    default: 18446744073709551615
     inputBinding:
       position: 101
       prefix: --downsample-window-length
@@ -160,7 +155,6 @@ inputs:
       - 'null'
       - float
     doc: scale for gap scores when fragmenting
-    default: 1
     inputBinding:
       position: 101
       prefix: --fragment-gap-scale
@@ -169,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: maximum distance to look back in the graph when making fragments
-    default: 300
     inputBinding:
       position: 101
       prefix: --fragment-max-graph-lookback-bases
@@ -179,7 +172,6 @@ inputs:
       - float
     doc: maximum distance to look back in the graph when making fragments, per 
       base
-    default: 0.03
     inputBinding:
       position: 101
       prefix: --fragment-max-graph-lookback-bases-per-base
@@ -188,7 +180,6 @@ inputs:
       - 'null'
       - int
     doc: maximum indel length in a transition when making fragments
-    default: 2000
     inputBinding:
       position: 101
       prefix: --fragment-max-indel-bases
@@ -198,7 +189,6 @@ inputs:
       - float
     doc: maximum indel length in a transition when making fragments, per read 
       base
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --fragment-max-indel-bases-per-base
@@ -208,7 +198,6 @@ inputs:
       - float
     doc: maximum for fragment score threshold based on the score of the best 
       fragment
-    default: 1.79769e+308
     inputBinding:
       position: 101
       prefix: --fragment-max-min-score
@@ -217,7 +206,6 @@ inputs:
       - 'null'
       - int
     doc: maximum distance to look back in the read when making fragments
-    default: 18446744073709551615
     inputBinding:
       position: 101
       prefix: --fragment-max-read-lookback-bases
@@ -227,7 +215,6 @@ inputs:
       - float
     doc: maximum distance to look back in the read when making fragments, per 
       base
-    default: 1
     inputBinding:
       position: 101
       prefix: --fragment-max-read-lookback-bases-per-base
@@ -245,7 +232,6 @@ inputs:
       - 'null'
       - float
     doc: minimum score to retain a fragment
-    default: 60
     inputBinding:
       position: 101
       prefix: --fragment-min-score
@@ -254,7 +240,6 @@ inputs:
       - 'null'
       - float
     doc: points to award non-indel connecting bases when fragmenting
-    default: 0
     inputBinding:
       position: 101
       prefix: --fragment-points-per-possible-match
@@ -263,7 +248,6 @@ inputs:
       - 'null'
       - float
     doc: minimum fraction of best fragment score to retain a fragment
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --fragment-score-fraction
@@ -273,7 +257,6 @@ inputs:
       - float
     doc: only chain fragments in a tree if their overall score is within this 
       many points of the best tree
-    default: 0
     inputBinding:
       position: 101
       prefix: --fragment-set-score-threshold
@@ -291,7 +274,6 @@ inputs:
       - 'null'
       - int
     doc: the full-length alignment bonus
-    default: 5
     inputBinding:
       position: 101
       prefix: --full-l-bonus
@@ -308,7 +290,6 @@ inputs:
       - 'null'
       - int
     doc: use this gap extension penalty
-    default: 1
     inputBinding:
       position: 101
       prefix: --gap-extend
@@ -317,7 +298,6 @@ inputs:
       - 'null'
       - int
     doc: use this gap open penalty
-    default: 6
     inputBinding:
       position: 101
       prefix: --gap-open
@@ -326,7 +306,6 @@ inputs:
       - 'null'
       - float
     doc: scale for gap scores when chaining
-    default: 1
     inputBinding:
       position: 101
       prefix: --gap-scale
@@ -336,7 +315,6 @@ inputs:
       - int
     doc: do gapless extension to seeds in a tree before fragmenting if the read 
       length is less than this
-    default: 0
     inputBinding:
       position: 101
       prefix: --gapless-extension-limit
@@ -375,7 +353,6 @@ inputs:
       - 'null'
       - int
     doc: ignore all minimizers with more than INT hits
-    default: 500
     inputBinding:
       position: 101
       prefix: --hard-hit-cap
@@ -384,7 +361,6 @@ inputs:
       - 'null'
       - int
     doc: use all minimizers with at most INT hits
-    default: 10
     inputBinding:
       position: 101
       prefix: --hit-cap
@@ -409,7 +385,6 @@ inputs:
       - 'null'
       - int
     doc: bonus for taking each item when fragmenting or chaining
-    default: 0
     inputBinding:
       position: 101
       prefix: --item-bonus
@@ -418,7 +393,6 @@ inputs:
       - 'null'
       - float
     doc: scale for items' scores when fragmenting or chaining
-    default: 1
     inputBinding:
       position: 101
       prefix: --item-scale
@@ -443,7 +417,6 @@ inputs:
       - 'null'
       - float
     doc: scale scores for mapping quality
-    default: 1
     inputBinding:
       position: 101
       prefix: --mapq-score-scale
@@ -452,7 +425,6 @@ inputs:
       - 'null'
       - int
     doc: window to rescale score to for mapping quality, or 0 if not used
-    default: 0
     inputBinding:
       position: 101
       prefix: --mapq-score-window
@@ -461,7 +433,6 @@ inputs:
       - 'null'
       - int
     doc: use this match score
-    default: 1
     inputBinding:
       position: 101
       prefix: --match
@@ -470,7 +441,6 @@ inputs:
       - 'null'
       - int
     doc: align up to INT extensions
-    default: 8
     inputBinding:
       position: 101
       prefix: --max-alignments
@@ -480,7 +450,6 @@ inputs:
       - int
     doc: maximum distance across which to connect seeds with WFAExtender when 
       aligning a chain
-    default: 100
     inputBinding:
       position: 101
       prefix: --max-chain-connection
@@ -489,7 +458,6 @@ inputs:
       - 'null'
       - int
     doc: do no more than this many chaining problems
-    default: 2147483647
     inputBinding:
       position: 101
       prefix: --max-chaining-problems
@@ -498,7 +466,6 @@ inputs:
       - 'null'
       - int
     doc: align up to this many chains from each tree
-    default: 1
     inputBinding:
       position: 101
       prefix: --max-chains-per-tree
@@ -508,7 +475,6 @@ inputs:
       - int
     doc: take up to this many fragments per zipcode tree and turn them into 
       chains instead of chaining. If this is 0, do chaining.
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-direct-chain
@@ -517,7 +483,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of alignment cells to allow in a tail or BGA connection
-    default: 18446744073709551615
     inputBinding:
       position: 101
       prefix: --max-dp-cells
@@ -526,7 +491,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of mismatches to pass through in a gapless extension
-    default: 4
     inputBinding:
       position: 101
       prefix: --max-extension-mismatches
@@ -535,7 +499,6 @@ inputs:
       - 'null'
       - int
     doc: extend up to INT clusters
-    default: 800
     inputBinding:
       position: 101
       prefix: --max-extensions
@@ -545,7 +508,6 @@ inputs:
       - int
     doc: assume that fragment lengths should be smaller than INT when estimating
       the fragment length distribution
-    default: 2000
     inputBinding:
       position: 101
       prefix: --max-fragment-length
@@ -554,7 +516,6 @@ inputs:
       - 'null'
       - int
     doc: how many fragments should we try to make when fragmenting something
-    default: 18446744073709551615
     inputBinding:
       position: 101
       prefix: --max-fragments
@@ -563,7 +524,6 @@ inputs:
       - 'null'
       - int
     doc: maximum distance to look back in the graph when chaining
-    default: 3000
     inputBinding:
       position: 101
       prefix: --max-graph-lookback-bases
@@ -572,7 +532,6 @@ inputs:
       - 'null'
       - float
     doc: maximum distance to look back in the graph when chaining, per read base
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --max-graph-lookback-bases-per-base
@@ -581,7 +540,6 @@ inputs:
       - 'null'
       - int
     doc: maximum indel length in a transition when chaining
-    default: 2000
     inputBinding:
       position: 101
       prefix: --max-indel-bases
@@ -590,7 +548,6 @@ inputs:
       - 'null'
       - float
     doc: maximum indel length in a transition when chaining, per read base
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --max-indel-bases-per-base
@@ -600,7 +557,6 @@ inputs:
       - int
     doc: maximum number of bases in a middle connection to do DP for, before 
       making it a tail
-    default: 2147483647
     inputBinding:
       position: 101
       prefix: --max-middle-dp-length
@@ -609,7 +565,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of gap bases to allow in a middle connection
-    default: 2147483647
     inputBinding:
       position: 101
       prefix: --max-middle-gap
@@ -618,7 +573,6 @@ inputs:
       - 'null'
       - int
     doc: use at most INT minimizers, 0 for no limit
-    default: 500
     inputBinding:
       position: 101
       prefix: --max-min
@@ -627,7 +581,6 @@ inputs:
       - 'null'
       - int
     doc: accept chains with this score or more regardless of read length
-    default: 200
     inputBinding:
       position: 101
       prefix: --max-min-chain-score
@@ -636,7 +589,6 @@ inputs:
       - 'null'
       - int
     doc: produce up to INT alignments for each read
-    default: 1
     inputBinding:
       position: 101
       prefix: --max-multimaps
@@ -645,7 +597,6 @@ inputs:
       - 'null'
       - int
     doc: maximum distance to look back in the read when chaining
-    default: 18446744073709551615
     inputBinding:
       position: 101
       prefix: --max-read-lookback-bases
@@ -654,7 +605,6 @@ inputs:
       - 'null'
       - float
     doc: maximum distance to look back in the read when chaining, per read base
-    default: 1
     inputBinding:
       position: 101
       prefix: --max-read-lookback-bases-per-base
@@ -664,7 +614,6 @@ inputs:
       - int
     doc: when skipping seeds in a chain for alignment, allow a gap of at most 
       INT in the graph
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-skipped-bases
@@ -673,7 +622,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of bases in a tail to do DP for, to avoid score overflow
-    default: 30000
     inputBinding:
       position: 101
       prefix: --max-tail-dp-length
@@ -682,7 +630,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of gap bases to allow in a Dozeu tail
-    default: 18446744073709551615
     inputBinding:
       position: 101
       prefix: --max-tail-gap
@@ -692,7 +639,6 @@ inputs:
       - int
     doc: maximum length of a tail to align with WFAExtender when aligning a 
       chain
-    default: 100
     inputBinding:
       position: 101
       prefix: --max-tail-length
@@ -701,7 +647,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of fragmenting problems to run
-    default: 10
     inputBinding:
       position: 101
       prefix: --max-to-fragment
@@ -710,7 +655,6 @@ inputs:
       - 'null'
       - float
     doc: do not align chains with less than this score per read base
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --min-chain-score-per-base
@@ -719,7 +663,6 @@ inputs:
       - 'null'
       - int
     doc: ignore score threshold to get this many chaining problems
-    default: 4
     inputBinding:
       position: 101
       prefix: --min-chaining-problems
@@ -728,7 +671,6 @@ inputs:
       - 'null'
       - int
     doc: ignore score threshold to get this many chains aligned
-    default: 4
     inputBinding:
       position: 101
       prefix: --min-chains
@@ -738,7 +680,6 @@ inputs:
       - int
     doc: when trying to cover the read with minimizers, count INT towards the 
       coverage of each minimizer on each side
-    default: 250
     inputBinding:
       position: 101
       prefix: --min-coverage-flank
@@ -747,7 +688,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of fragmenting problems to run
-    default: 4
     inputBinding:
       position: 101
       prefix: --min-to-fragment
@@ -757,7 +697,6 @@ inputs:
       - float
     doc: minimum fraction of an alignment that must be from distinct oriented 
       nodes for the alignment to be distinct
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-unique-node-fraction
@@ -766,7 +705,6 @@ inputs:
       - 'null'
       - int
     doc: use this mismatch penalty
-    default: 4
     inputBinding:
       position: 101
       prefix: --mismatch
@@ -792,7 +730,6 @@ inputs:
       - int
     doc: use maximum of number minimizers calculated by READ_LENGTH / INT and 
       --max-min
-    default: 1000
     inputBinding:
       position: 101
       prefix: --num-bp-per-min
@@ -810,7 +747,6 @@ inputs:
       - 'null'
       - string
     doc: output the alignments in NAME format
-    default: gam
     inputBinding:
       position: 101
       prefix: --output-format
@@ -846,7 +782,6 @@ inputs:
       - 'null'
       - string
     doc: set computational parameters
-    default: '[default]'
     inputBinding:
       position: 101
       prefix: --parameter-preset
@@ -855,7 +790,6 @@ inputs:
       - 'null'
       - float
     doc: points to award non-indel connecting bases when chaining
-    default: 0
     inputBinding:
       position: 101
       prefix: --points-per-possible-match
@@ -896,7 +830,6 @@ inputs:
       - 'null'
       - int
     doc: penalty for a recombination when chaining, requires -E (ALPHA)
-    default: 0
     inputBinding:
       position: 101
       prefix: --rec-penalty-chain
@@ -905,7 +838,6 @@ inputs:
       - 'null'
       - int
     doc: penalty for a recombination when fragmenting, requires -E (ALPHA)
-    default: 0
     inputBinding:
       position: 101
       prefix: --rec-penalty-fragment
@@ -939,7 +871,6 @@ inputs:
       - 'null'
       - string
     doc: use this rescue algorithm
-    default: dozeu
     inputBinding:
       position: 101
       prefix: --rescue-algorithm
@@ -948,7 +879,6 @@ inputs:
       - 'null'
       - int
     doc: attempt up to INT rescues per read in a pair
-    default: 15
     inputBinding:
       position: 101
       prefix: --rescue-attempts
@@ -957,7 +887,6 @@ inputs:
       - 'null'
       - int
     doc: attempt rescue with at most INT seeds
-    default: 100
     inputBinding:
       position: 101
       prefix: --rescue-seed-limit
@@ -983,7 +912,6 @@ inputs:
       - 'null'
       - float
     doc: select minimizers between hit caps until score is FLOAT of total
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --score-fraction
@@ -1020,7 +948,6 @@ inputs:
       - float
     doc: penalize candidate alignment scores this many points per softclipped 
       base
-    default: 0
     inputBinding:
       position: 101
       prefix: --softclip-penalty
@@ -1079,7 +1006,6 @@ inputs:
       - 'null'
       - int
     doc: complain after INT seconds working on a read or read pair
-    default: 10
     inputBinding:
       position: 101
       prefix: --watchdog-timeout
@@ -1088,7 +1014,6 @@ inputs:
       - 'null'
       - int
     doc: band distance to allow in the shortest WFA connection or tail
-    default: 10
     inputBinding:
       position: 101
       prefix: --wfa-distance
@@ -1098,7 +1023,6 @@ inputs:
       - float
     doc: band distance to allow per involved read base in WFA connections or 
       tails
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --wfa-distance-per-base
@@ -1107,7 +1031,6 @@ inputs:
       - 'null'
       - int
     doc: band distance to allow in the longest WFA connection or tail
-    default: 200
     inputBinding:
       position: 101
       prefix: --wfa-max-distance
@@ -1117,7 +1040,6 @@ inputs:
       - int
     doc: maximum mismatches (or equivalent-scoring gaps) to allow in the longest
       WFA connection or tail
-    default: 20
     inputBinding:
       position: 101
       prefix: --wfa-max-max-mismatches
@@ -1127,7 +1049,6 @@ inputs:
       - int
     doc: maximum mismatches (or equivalent-scoring gaps) to allow in the 
       shortest WFA connection or tail
-    default: 2
     inputBinding:
       position: 101
       prefix: --wfa-max-mismatches
@@ -1137,7 +1058,6 @@ inputs:
       - float
     doc: maximum additional mismatches (or equivalent-scoring gaps) to allow per
       involved read base in WFA connections or tails
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --wfa-max-mismatches-per-base
@@ -1178,7 +1098,6 @@ inputs:
       - 'null'
       - float
     doc: at what fraction of the read length should zipcode trees be split up
-    default: 2
     inputBinding:
       position: 101
       prefix: --zipcode-tree-scale
@@ -1187,7 +1106,6 @@ inputs:
       - 'null'
       - float
     doc: only fragment trees if they are within INT of the best score
-    default: 50
     inputBinding:
       position: 101
       prefix: --zipcode-tree-score-threshold

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: assembly name
-    default: rnabloom
     inputBinding:
       position: 101
       prefix: --name
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: number of hash functions for k-mer counting Bloom filter
-    default: 2
     inputBinding:
       position: 101
       prefix: --cbf-hash
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: amount of memory (GB) for k-mer counting Bloom filter
-    default: auto
     inputBinding:
       position: 101
       prefix: --cbf-mem
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: number of hash functions for de Bruijn graph Bloom filter
-    default: 2
     inputBinding:
       position: 101
       prefix: --dbgbf-hash
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: amount of memory (GB) for de Bruijn graph Bloom filter
-    default: auto
     inputBinding:
       position: 101
       prefix: --dbgbf-mem
@@ -70,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: print debugging information
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -79,7 +73,6 @@ inputs:
       - 'null'
       - boolean
     doc: turn off assembly consistency with fragment paired k-mers
-    default: false
     inputBinding:
       position: 101
       prefix: --nofc
@@ -88,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: number of iterations of error-correction in reads
-    default: 1
     inputBinding:
       position: 101
       prefix: --errcorritr
@@ -105,7 +97,6 @@ inputs:
       - 'null'
       - boolean
     doc: extend fragments outward during fragment reconstruction
-    default: false
     inputBinding:
       position: 101
       prefix: --extend
@@ -114,7 +105,6 @@ inputs:
       - 'null'
       - boolean
     doc: force overwrite existing files
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -131,7 +121,6 @@ inputs:
       - 'null'
       - boolean
     doc: keep potential sequencing artifacts
-    default: false
     inputBinding:
       position: 101
       prefix: --artifact
@@ -140,7 +129,6 @@ inputs:
       - 'null'
       - boolean
     doc: keep potential chimeras
-    default: false
     inputBinding:
       position: 101
       prefix: --chimera
@@ -149,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size
-    default: 25
     inputBinding:
       position: 101
       prefix: --kmer
@@ -175,7 +162,6 @@ inputs:
       - 'null'
       - int
     doc: number of k-mers to look ahead during graph traversal
-    default: 3
     inputBinding:
       position: 101
       prefix: --lookahead
@@ -184,7 +170,6 @@ inputs:
       - 'null'
       - float
     doc: maximum k-mer coverage gradient for error correction
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --maxcovgrad
@@ -193,7 +178,6 @@ inputs:
       - 'null'
       - float
     doc: maximum allowable false-positive rate of Bloom filters
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --fpr
@@ -202,7 +186,6 @@ inputs:
       - 'null'
       - int
     doc: maximum size of indels to be collapsed
-    default: 1
     inputBinding:
       position: 101
       prefix: --indel
@@ -211,7 +194,6 @@ inputs:
       - 'null'
       - int
     doc: maximum distance between read mates
-    default: 500
     inputBinding:
       position: 101
       prefix: --bound
@@ -220,7 +202,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of bases in a tip
-    default: auto
     inputBinding:
       position: 101
       prefix: --tiplength
@@ -229,7 +210,6 @@ inputs:
       - 'null'
       - boolean
     doc: merge pooled assemblies
-    default: false
     inputBinding:
       position: 101
       prefix: --mergepool
@@ -238,7 +218,6 @@ inputs:
       - 'null'
       - int
     doc: minimum average base quality in reads
-    default: 0
     inputBinding:
       position: 101
       prefix: --qual-avg
@@ -247,7 +226,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base quality in reads
-    default: 3
     inputBinding:
       position: 101
       prefix: --qual
@@ -256,7 +234,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of consecutive k-mer pairs for assembling transcripts
-    default: 10
     inputBinding:
       position: 101
       prefix: --pair
@@ -265,7 +242,6 @@ inputs:
       - 'null'
       - int
     doc: minimum k-mer coverage
-    default: 1
     inputBinding:
       position: 101
       prefix: --mincov
@@ -274,7 +250,6 @@ inputs:
       - 'null'
       - int
     doc: min read depth required for long-read assembly
-    default: 3
     inputBinding:
       position: 101
       prefix: -lrrd
@@ -283,7 +258,6 @@ inputs:
       - 'null'
       - float
     doc: minimum proportion of matching bases within long-read overlaps
-    default: 0.8
     inputBinding:
       position: 101
       prefix: -lrop
@@ -292,7 +266,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of overlapping bases between reads
-    default: k-1
     inputBinding:
       position: 101
       prefix: --overlap
@@ -301,7 +274,6 @@ inputs:
       - 'null'
       - float
     doc: minimum percent identity of sequences to be collapsed
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --percent
@@ -310,7 +282,6 @@ inputs:
       - 'null'
       - int
     doc: minimum transcript length in output assembly
-    default: 200
     inputBinding:
       position: 101
       prefix: --length
@@ -319,7 +290,6 @@ inputs:
       - 'null'
       - string
     doc: options for minimap2
-    default: "\"'-K 250M -e 25 -f 0.0001 -c'\""
     inputBinding:
       position: 101
       prefix: -mmopt
@@ -328,7 +298,6 @@ inputs:
       - 'null'
       - int
     doc: number of hash functions for all Bloom filters
-    default: 2
     inputBinding:
       position: 101
       prefix: -hash
@@ -337,7 +306,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory
-    default: //rnabloom_assembly
     inputBinding:
       position: 101
       prefix: --outdir
@@ -346,7 +314,6 @@ inputs:
       - 'null'
       - int
     doc: number of hash functions for paired k-mers Bloom filter
-    default: 2
     inputBinding:
       position: 101
       prefix: --pkbf-hash
@@ -355,7 +322,6 @@ inputs:
       - 'null'
       - float
     doc: amount of memory (GB) for paired kmers Bloom filter
-    default: auto
     inputBinding:
       position: 101
       prefix: --pkbf-mem
@@ -365,7 +331,6 @@ inputs:
       - int
     doc: prioritize assembly of transcripts with poly-A tails of the minimum 
       length specified
-    default: 0
     inputBinding:
       position: 101
       prefix: --polya
@@ -389,7 +354,6 @@ inputs:
       - 'null'
       - boolean
     doc: reverse-complement left reads
-    default: false
     inputBinding:
       position: 101
       prefix: --revcomp-left
@@ -398,7 +362,6 @@ inputs:
       - 'null'
       - boolean
     doc: reverse-complement long reads
-    default: false
     inputBinding:
       position: 101
       prefix: --revcomp-long
@@ -407,7 +370,6 @@ inputs:
       - 'null'
       - boolean
     doc: reverse-complement right reads
-    default: false
     inputBinding:
       position: 101
       prefix: --revcomp-right
@@ -425,7 +387,6 @@ inputs:
       - 'null'
       - int
     doc: sample size for estimating read/fragment lengths
-    default: 10000
     inputBinding:
       position: 101
       prefix: --sample
@@ -434,7 +395,6 @@ inputs:
       - 'null'
       - boolean
     doc: save graph (Bloom filters) from stage 1 to disk
-    default: false
     inputBinding:
       position: 101
       prefix: --savebf
@@ -443,7 +403,6 @@ inputs:
       - 'null'
       - float
     doc: amount of memory (GB) for screening Bloom filter
-    default: auto
     inputBinding:
       position: 101
       prefix: --sbf-mem
@@ -452,7 +411,6 @@ inputs:
       - 'null'
       - int
     doc: number of hash functions for screening Bloom filter
-    default: 2
     inputBinding:
       position: 101
       prefix: --sbf-hash
@@ -461,7 +419,6 @@ inputs:
       - 'null'
       - boolean
     doc: assemble transcripts in sensitive mode
-    default: false
     inputBinding:
       position: 101
       prefix: --sensitive
@@ -486,7 +443,6 @@ inputs:
       - 'null'
       - boolean
     doc: skip redundancy reduction for assembled transcripts
-    default: false
     inputBinding:
       position: 101
       prefix: --norr
@@ -495,7 +451,6 @@ inputs:
       - 'null'
       - boolean
     doc: reads are strand specific
-    default: false
     inputBinding:
       position: 101
       prefix: --stranded
@@ -505,7 +460,6 @@ inputs:
       - string
     doc: fragments lower than the specified stratum are extended only if they 
       are branch-free in the graph
-    default: e0
     inputBinding:
       position: 101
       prefix: --stratum
@@ -515,7 +469,6 @@ inputs:
       - string
     doc: subsample long reads before assembly using strobemers 
       (depth,s,size,window) or k-mer pairs (depth,k,size)
-    default: '[3,s,11,50]'
     inputBinding:
       position: 101
       prefix: -lrsub
@@ -524,7 +477,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to run
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads
@@ -533,7 +485,6 @@ inputs:
       - 'null'
       - float
     doc: total amount of memory (GB) for all Bloom filters
-    default: auto
     inputBinding:
       position: 101
       prefix: --memory
@@ -542,7 +493,6 @@ inputs:
       - 'null'
       - boolean
     doc: output uracils (U) in place of thymines (T) in assembled transcripts
-    default: false
     inputBinding:
       position: 101
       prefix: --uracil
@@ -551,7 +501,6 @@ inputs:
       - 'null'
       - boolean
     doc: use PacBio presets
-    default: false
     inputBinding:
       position: 101
       prefix: -lrpb

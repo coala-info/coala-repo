@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Length bits of counting field
-    default: 7
     inputBinding:
       position: 102
       prefix: --counter-len
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of reprobes
-    default: 126
     inputBinding:
       position: 102
       prefix: --reprobes

@@ -93,7 +93,6 @@ inputs:
       - string
     doc: 'Gene identifier attribute in the GTF file (default: gene_id). This is used
       for feature counting.'
-    default: gene_id
     inputBinding:
       position: 101
       prefix: --identifier
@@ -103,7 +102,6 @@ inputs:
       - int
     doc: Remove bases with quality below this threshold from the start of the 
       read.
-    default: 3
     inputBinding:
       position: 101
       prefix: --leading
@@ -112,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: Discard reads shorter than this length after trimming.
-    default: 30
     inputBinding:
       position: 101
       prefix: --min-read-len
@@ -121,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: Discard reads shorter than this length after trimming.
-    default: 36
     inputBinding:
       position: 101
       prefix: --minlen
@@ -137,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: Trim bases with quality below this threshold.
-    default: 20
     inputBinding:
       position: 101
       prefix: --quality-cut
@@ -175,7 +170,6 @@ inputs:
       - string
     doc: 'Perform sliding window trimming with window size and average quality. Format:
       WINDOW_SIZE:QUALITY_THRESHOLD (e.g., 4:25).'
-    default: 4:25
     inputBinding:
       position: 101
       prefix: --sliding-win
@@ -201,7 +195,6 @@ inputs:
       - int
     doc: Remove bases with quality below this threshold from the end of the 
       read.
-    default: 3
     inputBinding:
       position: 101
       prefix: --trailing

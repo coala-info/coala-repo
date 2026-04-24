@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: smallest number of required lmers
-    default: 3
     inputBinding:
       position: 101
       prefix: -min
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: tandem distance window
-    default: 500
     inputBinding:
       position: 101
       prefix: -tandem

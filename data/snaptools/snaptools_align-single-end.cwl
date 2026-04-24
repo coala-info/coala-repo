@@ -10,7 +10,6 @@ inputs:
       - string
     doc: aligner to use. Currently, snaptools supports bwa, bowtie, bowtie2 and 
       minimap2.
-    default: bwa
     inputBinding:
       position: 101
       prefix: --aligner
@@ -22,7 +21,6 @@ inputs:
     doc: list of strings indicating options you would like passed to 
       alignerstrongly do not recommand to change unless you know what you are 
       doing.
-    default: None
     inputBinding:
       position: 101
       prefix: --aligner-options
@@ -31,7 +29,6 @@ inputs:
       - 'null'
       - boolean
     doc: weather to sort the bam file based on the read name
-    default: 'True'
     inputBinding:
       position: 101
       prefix: --if-sort
@@ -55,7 +52,6 @@ inputs:
     doc: 'min number of fragments per barcode. barcodes of total fragments less than
       --min-cov will be filreted before alingment. Note: though this feature is included,
       we found it barely speed up the process, so recommand to set it to be 0.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-cov
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: number of alignment threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-threads
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - boolean
     doc: whether to overwrite the output file if it already exists
-    default: false
     inputBinding:
       position: 101
       prefix: --overwrite
@@ -82,7 +76,6 @@ inputs:
       - 'null'
       - Directory
     doc: path to fold that contains bwa
-    default: None
     inputBinding:
       position: 101
       prefix: --path-to-aligner
@@ -92,7 +85,6 @@ inputs:
       - string
     doc: command line to execute for each of the input file. This commandshould 
       generate FASTA or FASTQ text and send it to stdout
-    default: None
     inputBinding:
       position: 101
       prefix: --read-fastq-command
@@ -102,7 +94,6 @@ inputs:
       - Directory
     doc: directory to store temporary files. If not given, snaptools will 
       automaticallygenerate a temporary location to store temporary files
-    default: None
     inputBinding:
       position: 101
       prefix: --tmp-folder

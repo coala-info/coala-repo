@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Max clip (unaligned) length for read mapping
-    default: 200
     inputBinding:
       position: 101
       prefix: --max_clip
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Max indel for read mapping
-    default: 20
     inputBinding:
       position: 101
       prefix: --max_indel
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: Min coverage for filtering [0-1]
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --min_cov
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: Min identity for read mapping [0-1]
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --min_idt
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: Min mean coverage depth for filtering
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --min_mean_depth
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -83,7 +77,6 @@ inputs:
       - 'null'
       - Directory
     doc: Working directory containing intermediate and log files
-    default: isorefiner_filter_work
     inputBinding:
       position: 101
       prefix: --work_dir

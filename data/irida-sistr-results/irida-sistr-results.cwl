@@ -97,7 +97,6 @@ inputs:
       - 'null'
       - File
     doc: The reportable serovars file
-    default: 
       /usr/local/lib/python3.6/site-packages/irida_sistr_results/data/reportable_serovars.tsv
     inputBinding:
       position: 101

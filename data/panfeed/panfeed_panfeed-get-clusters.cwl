@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: P-value column in the associations file
-    default: lrt-pvalue
     inputBinding:
       position: 101
       prefix: --column
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: Association p-value threshold
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --threshold

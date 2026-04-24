@@ -18,7 +18,6 @@ inputs:
       - boolean
     doc: chromosome level used for calculate bisulfite convertion rate, default,
       chrM and chrC
-    default: chrM and chrC
     inputBinding:
       position: 101
       prefix: --chr

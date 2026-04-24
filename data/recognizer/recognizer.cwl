@@ -12,7 +12,6 @@ inputs:
       databases of reCOGnizer (e.g., COG, TIGR, ...) can't be used 
       simultaneously with custom databases. Use together with the '--databases' 
       parameter.
-    default: false
     inputBinding:
       position: 101
       prefix: --custom-databases
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: Databases to include in functional annotation (comma-separated)
-    default: NCBI_Curated,Pfam,SMART,KOG,COG,PRK,TIGR
     inputBinding:
       position: 101
       prefix: --databases
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum e-value to report annotations for
-    default: '1e-3'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -72,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Number of maximum identifications for each protein
-    default: 1
     inputBinding:
       position: 101
       prefix: --max-target-seqs
@@ -98,7 +94,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: reCOGnizer_results
     inputBinding:
       position: 101
       prefix: --output
@@ -116,7 +111,6 @@ inputs:
       - 'null'
       - string
     doc: Name of column with protein headers as in supplied FASTA file
-    default: qseqid
     inputBinding:
       position: 101
       prefix: --protein-id-col
@@ -133,7 +127,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory for storing databases and other resources
-    default: ~/recognizer_resources
     inputBinding:
       position: 101
       prefix: --resources-directory
@@ -151,7 +144,6 @@ inputs:
       - 'null'
       - string
     doc: Name of column with tax IDs of proteins
-    default: Taxonomic identifier (SPECIES)
     inputBinding:
       position: 101
       prefix: --tax-col

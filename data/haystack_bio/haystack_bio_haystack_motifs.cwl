@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: 'Column in the bedfile that represents the score (default: 5)'
-    default: 5
     inputBinding:
       position: 103
       prefix: --bed_score_column
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - float
     doc: 'Background size/Target size ratio (default: 1.0)'
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --bg_target_ratio
@@ -47,7 +45,6 @@ inputs:
       - boolean
     doc: 'Enable the bootstrap if the target set or the background set are too small,
       choices: True, False (default: False)'
-    default: false
     inputBinding:
       position: 103
       prefix: --bootstrap
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of bins for the C+G density correction (default: 8)'
-    default: 8
     inputBinding:
       position: 103
       prefix: --c_g_bins
@@ -73,7 +69,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Dump all the intermediate data, choices: True, False (default: False)'
-    default: false
     inputBinding:
       position: 103
       prefix: --dump
@@ -125,7 +120,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum central enrichment to report a motif (default:>1.0)
-    default: '>1.0'
     inputBinding:
       position: 103
       prefix: --min_central_enrichment
@@ -184,7 +178,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Output directory (default: current directory)'
-    default: current directory
     inputBinding:
       position: 103
       prefix: --output_directory
@@ -193,7 +186,6 @@ inputs:
       - 'null'
       - float
     doc: 'FIMO p-value for calling a motif hit significant (deafult: 1e-4)'
-    default: '1e-4'
     inputBinding:
       position: 103
       prefix: --p_value
@@ -210,7 +202,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Directory to store temporary files (default: /tmp)'
-    default: /tmp
     inputBinding:
       position: 103
       prefix: --temp_directory

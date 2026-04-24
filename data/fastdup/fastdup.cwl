@@ -21,7 +21,6 @@ inputs:
       - string
     doc: 'The scoring strategy for choosing the non-duplicate among candidates. Possible
       values: {SUM_OF_BASE_QUALITIES, TOTAL_MAPPED_REFERENCE_LENGTH, RANDOM}'
-    default: SUM_OF_BASE_QUALITIES
     inputBinding:
       position: 101
       prefix: --duplicate-scoring-strategy
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: 'Format for bam index file. Possible values: {BAI, CSI}'
-    default: BAI
     inputBinding:
       position: 101
       prefix: --index-format
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-threads
@@ -72,7 +69,6 @@ inputs:
       versions of the Illumina platform.For the patterned flowcell models, 2500 
       is moreappropriate. For other platforms andmodels, users should experiment
       to find what works best.
-    default: 100
     inputBinding:
       position: 101
       prefix: --optical-duplicate-pixel-distance
@@ -98,7 +94,6 @@ inputs:
       x and y values.   For 7 element names (CASAVA 1.8), the 5th, 6th, and 7th elements
       are assumed to be tile, x and y values. Default value: <optimized capture of
       last three ':' separated fields as numeric values>."
-    default: (?:.*:)?([0-9]+)[^:]*:([0-9]+)[^:]*:([0-9]+)[^:]*$
     inputBinding:
       position: 101
       prefix: --read-name-regex
@@ -132,7 +127,6 @@ inputs:
       - string
     doc: 'Determines how duplicate types are recorded in the DT optional attribute.
       Possible values: {DontTag, OpticalOnly, All}.'
-    default: DontTag
     inputBinding:
       position: 101
       prefix: --tagging-policy

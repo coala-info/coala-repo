@@ -99,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: inflation factor for final gene category counts
-    default: 1000
     inputBinding:
       position: 101
       prefix: -inflation
@@ -125,7 +124,6 @@ inputs:
       'cluster'.This number should be an integer and should reflect the maximum 
       number of genes in between putative iron-related genes identified by the 
       HMM database
-    default: 5
     inputBinding:
       position: 101
       prefix: -d
@@ -173,7 +171,6 @@ inputs:
       - 'null'
       - Directory
     doc: name output directory
-    default: fegenie_out
     inputBinding:
       position: 101
       prefix: -out
@@ -210,7 +207,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use for DIAMOND BLAST and HMMSEARCH
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

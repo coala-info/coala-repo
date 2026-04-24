@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance between centres of two indels considered to match
-    default: 20
     inputBinding:
       position: 102
       prefix: --max-dist
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum difference between lengths of two indels
-    default: 10
     inputBinding:
       position: 102
       prefix: --max-len-diff

@@ -25,7 +25,6 @@ inputs:
       - string
     doc: input file is a distance matrix in phylip format (m) or an alignment in
       stockholm format* (a, default)
-    default: a
     inputBinding:
       position: 102
       prefix: -in

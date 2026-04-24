@@ -53,13 +53,11 @@ inputs:
   eighth: Directory
   ninth:
     type: Directory
-    default:
       class: Directory
       basename: foo
       listing: []
   tenth:
     type: Directory
-    default:
       class: Directory
       basename: bar
       listing: []

@@ -13,7 +13,6 @@ inputs:
       \     parameter is used to download the correct motif-to-TF\n              \
       \          data from the cisTarget webservers. Defaults to:\n              \
       \          v10nr_clust"
-    default: v10nr_clust
     inputBinding:
       position: 101
       prefix: --annotation_version
@@ -25,7 +24,6 @@ inputs:
     doc: "Which annotations to use for annotation motifs to TFs.\n               \
       \         Defaults to: Direct_annot Motif_similarity_annot\n               \
       \         Orthology_annot"
-    default:
       - Direct_annot
       - Motif_similarity_annot
       - Orthology_annot
@@ -38,7 +36,6 @@ inputs:
       - float
     doc: "Threshold on the AUC value for calling significant\n                   \
       \     motifs. Defaults to: 0.005"
-    default: 0.005
     inputBinding:
       position: 101
       prefix: --auc_threshold
@@ -63,7 +60,6 @@ inputs:
       \       that should overlap with regions in the cistarget\n                \
       \        database in order for them to be included in the\n                \
       \        analysis. Defaults to: 0.4"
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --fr_overlap_w_ctx_db
@@ -73,7 +69,6 @@ inputs:
       - float
     doc: "\" Threshold on motif similarity scores for calling\n                  \
       \      similar motifs. Defaults to: 0.001"
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --motif_similarity_fdr
@@ -94,7 +89,6 @@ inputs:
     doc: "Threshold on the NES value for calling significant\n                   \
       \     motifs. NES - Normalised Enrichment Score - is defined\n             \
       \           as (AUC - Avg(AUC)) / sd(AUC). Defaults to: 3.0"
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --nes_threshold
@@ -104,7 +98,6 @@ inputs:
       - float
     doc: "Threshold on the protein-protein orthology score for\n                 \
       \       calling orthologous motifs. Defaults to: 0.0"
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --orthologous_identity_threshold
@@ -118,7 +111,6 @@ inputs:
       \          containing the full results. hdf5+: an existing hdf5\n          \
       \              file will be appended with the full motifs enrichment\n     \
       \                   results. Defaults to 'hdf5'"
-    default: hdf5
     inputBinding:
       position: 101
       prefix: --output_mode
@@ -138,7 +130,6 @@ inputs:
     doc: "The total number of ranked regions to take into\n                      \
       \  account when creating a recovery curves. Defaults to:\n                 \
       \       0.05"
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --rank_threshold

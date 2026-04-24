@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Score is expressed in distance (default: score is expressed in similarity).'
-    default: false
     inputBinding:
       position: 103
       prefix: -d
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Score is normalized by reference sequence length (default).
-    default: true
     inputBinding:
       position: 103
       prefix: -n
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads used for computation
-    default: 1
     inputBinding:
       position: 103
       prefix: -p
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: Reference sequence length is the alignment length (default).
-    default: true
     inputBinding:
       position: 103
       prefix: -a
@@ -93,7 +89,6 @@ inputs:
       - 'null'
       - boolean
     doc: "n's are replaced with a's (default: sequences with n's are discarded)."
-    default: false
     inputBinding:
       position: 103
       prefix: -g
@@ -108,7 +103,6 @@ inputs:
       it is the length of the Longest Common Subsequence. If the score is not normalized
       and expressed in distance, it is (reference length - LCS length). Only sequence
       pairs with a similarity above ##.## are printed.'
-    default: 0.0
     inputBinding:
       position: 103
       prefix: -t

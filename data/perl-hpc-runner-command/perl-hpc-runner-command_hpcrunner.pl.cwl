@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Basename of config files [Default:".hpcrunner"]
-    default: '".hpcrunner"'
     inputBinding:
       position: 101
       prefix: --config_base

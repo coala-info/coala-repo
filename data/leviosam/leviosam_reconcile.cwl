@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set to perform merging in pairs
-    default: false
     inputBinding:
       position: 101
       prefix: -m
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Random seed used by the program
-    default: 0
     inputBinding:
       position: 101
       prefix: -r

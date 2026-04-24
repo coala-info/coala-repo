@@ -30,7 +30,6 @@ inputs:
       - boolean
     doc: If set, AmpliGone will always create the output files even if there is nothing
       to output.
-    default: false
     inputBinding:
       position: 101
       prefix: -to
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Define the amplicon-type, either being 'end-to-end', 'end-to-mid', or 'fragmented'.
-    default: end-to-end
     inputBinding:
       position: 101
       prefix: --amplicon-type
@@ -49,7 +47,6 @@ inputs:
       - float
     doc: The maximum allowed error rate (as a percentage) for the primer search. Use
       0 for exact primer matches.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --error-rate
@@ -59,7 +56,6 @@ inputs:
       - int
     doc: The number of bases to look around a primer-site to consider it part of a
       fragment. Only used if amplicon-type is 'fragmented'.
-    default: 10
     inputBinding:
       position: 101
       prefix: --fragment-lookaround-size
@@ -80,7 +76,6 @@ inputs:
       - 'null'
       - boolean
     doc: Prints less information, like only WARNING and ERROR statements, to the terminal
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -95,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads you wish to use.
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads
@@ -104,7 +98,6 @@ inputs:
       - 'null'
       - boolean
     doc: Prints more information, like DEBUG statements, to the terminal
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose
@@ -114,7 +107,6 @@ inputs:
       - boolean
     doc: If set, primers closely positioned to each other in the same orientation
       will be virtually combined into a single primer.
-    default: false
     inputBinding:
       position: 101
       prefix: --virtual-primers

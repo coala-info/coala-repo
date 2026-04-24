@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: Percentage threshold on genomes completeness.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --completeness
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: Percentage threshold on genomes contamination.
-    default: 100.0
     inputBinding:
       position: 101
       prefix: --contamination
@@ -35,7 +33,6 @@ inputs:
     doc: Dereplicate genomes based of their ANI distance according the specified
       threshold. The dereplication process is triggered in case of a threshold 
       >0.0.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --dereplicate
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Process the input genomes in parallel.
-    default: 20
     inputBinding:
       position: 101
       prefix: --nproc
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - boolean
     doc: Pack the database into a compressed tarball.
-    default: false
     inputBinding:
       position: 101
       prefix: --pack
@@ -75,7 +70,6 @@ inputs:
       - float
     doc: Threshold for pruning the Sequence Bloom Tree while profiling input 
       genomes.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --pruning-threshold
@@ -85,7 +79,6 @@ inputs:
       - float
     doc: Uncertainty percentage for considering multiple best hits while 
       profiling input genomes.
-    default: 20.0
     inputBinding:
       position: 101
       prefix: --uncertainty

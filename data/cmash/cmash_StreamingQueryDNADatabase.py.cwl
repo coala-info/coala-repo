@@ -29,7 +29,6 @@ inputs:
       - float
     doc: Only return results with containment index above this threshold at the 
       maximum k-mer size.
-    default: 0.1
     inputBinding:
       position: 104
       prefix: --containment_threshold
@@ -49,7 +48,6 @@ inputs:
     doc: Location in range to apply the threshold passed by the -c flag. -l 2 -c
       5-50-10 means the threshold will be applied at k-size 25. Default is 
       largest size.
-    default: -1
     inputBinding:
       position: 104
       prefix: --location_of_thresh
@@ -59,7 +57,6 @@ inputs:
       - boolean
     doc: Optional flag to specify that a plot of the k-mer curves should also be
       saved (same basenameas the out_file).
-    default: false
     inputBinding:
       position: 104
       prefix: --plot_file
@@ -69,7 +66,6 @@ inputs:
       - int
     doc: Number of reads per core in each chunk of parallelization. Set as high 
       as memory will allow (eg. 1M on 256GB, 48 core machine)
-    default: 100000
     inputBinding:
       position: 104
       prefix: --reads_per_core
@@ -79,7 +75,6 @@ inputs:
       - boolean
     doc: Operate in sensitive mode. Marginally more true positives with 
       significantly more false positives. Use with caution.
-    default: false
     inputBinding:
       position: 104
       prefix: --sensitive
@@ -88,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 20
     inputBinding:
       position: 104
       prefix: --threads
@@ -97,7 +91,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print out progress report/timing information
-    default: false
     inputBinding:
       position: 104
       prefix: --verbose

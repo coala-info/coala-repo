@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write raw report
-    default: false
     inputBinding:
       position: 102
       prefix: --raw

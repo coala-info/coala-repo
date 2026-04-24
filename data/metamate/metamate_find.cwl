@@ -44,7 +44,6 @@ inputs:
       - float
     doc: "confidence level for detection of reading frame\n                      \
       \  (default 0.95)"
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --detectionconfidence
@@ -54,7 +53,6 @@ inputs:
       - int
     doc: "minimum number of stops to encounter for detection\n                   \
       \     (default 100, may need to decrease for few input ASVs)"
-    default: 100
     inputBinding:
       position: 101
       prefix: --detectionminstops
@@ -64,7 +62,6 @@ inputs:
       - string
     doc: "substitution model for UPGMA tree estimation (passed\n                 \
       \       to R dist.dna, default F84)"
-    default: F84
     inputBinding:
       position: 101
       prefix: --distancemodel
@@ -74,7 +71,6 @@ inputs:
       - float
     doc: "divergence level to use for assigning clades (default\n                \
       \        0.2)"
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --divergence
@@ -95,7 +91,6 @@ inputs:
       sets: if no value is given, generate for top\n                        scoring
       set(s) only; otherwise generate for the given\n                        proportion
       of top scoring sets (default 0: no ASVs\n                        output)"
-    default: "0: no ASVs\n                        output)"
     inputBinding:
       position: 101
       prefix: --generateASVresults
@@ -251,7 +246,6 @@ inputs:
     doc: "which of the three calculated scoring metrics\n                        ('accuracy',
       'precision' or 'recall') to use for\n                        selecting the top
       scoring set(s) (default accuracy)"
-    default: accuracy
     inputBinding:
       position: 101
       prefix: --scoremetric
@@ -286,7 +280,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use (default 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

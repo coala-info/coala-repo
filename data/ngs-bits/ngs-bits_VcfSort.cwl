@@ -10,7 +10,6 @@ inputs:
       - int
     doc: Output VCF compression level from 1 (fastest) to 9 (best compression). 
       If unset, an unzipped VCF is written.
-    default: 10
     inputBinding:
       position: 101
       prefix: -compression_level
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: FAI file defining different chromosome order.
-    default: ''
     inputBinding:
       position: 101
       prefix: -fai
@@ -35,7 +33,6 @@ inputs:
       - boolean
     doc: Remove comment lines of contigs, i.e. chromosomes, that are not used in
       the output VCF.
-    default: false
     inputBinding:
       position: 101
       prefix: -remove_unused_contigs
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: Also sort according to variant quality. Ignored if 'fai' file is given.
-    default: false
     inputBinding:
       position: 101
       prefix: -qual

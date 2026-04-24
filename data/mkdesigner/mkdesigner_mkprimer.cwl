@@ -11,7 +11,6 @@ inputs:
     doc: "If the process of primer specificity checking by BLAST\n               \
       \         took time more than this parameter,\n                        the variants
       considered to be non-specific.\n                        default: 60.0 (sec)"
-    default: 60.0
     inputBinding:
       position: 101
   - id: cpu
@@ -38,7 +37,6 @@ inputs:
       - int
     doc: "Minimum distance from 3' terminal of primer to variant.\n              \
       \          default: 5"
-    default: 5
     inputBinding:
       position: 101
   - id: max_prodlen
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: "Maximam PCR product length.\n                        default: 280"
-    default: 280
     inputBinding:
       position: 101
   - id: maxdep
@@ -55,7 +52,6 @@ inputs:
       - int
     doc: "Variants with less depth than this\n                        are judged as
       valid mutations\n                        default: 200"
-    default: 200
     inputBinding:
       position: 101
   - id: min_prodlen
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum PCR product length.default: 150'
-    default: 150
     inputBinding:
       position: 101
   - id: mindep
@@ -72,7 +67,6 @@ inputs:
       - int
     doc: "Variants with more depth than this\n                        are judged as
       valid mutations\n                        default: 2"
-    default: 2
     inputBinding:
       position: 101
   - id: mismatch_allowed
@@ -81,7 +75,6 @@ inputs:
       - int
     doc: "Primers with more mismatch than this\n                        are ignored
       in specificity check.\n                        default: 5"
-    default: 5
     inputBinding:
       position: 101
   - id: mismatch_allowed_3_terminal
@@ -91,7 +84,6 @@ inputs:
     doc: "Primers with more mismatch than this\n                        in 5 bases
       of 3' terminal end\n                        are ignored in specificity check.\n\
       \                        default: 1"
-    default: 1
     inputBinding:
       position: 101
   - id: name1
@@ -119,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: "Optical PCR product length.\n                        default: 180"
-    default: 180
     inputBinding:
       position: 101
   - id: output_name
@@ -134,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: "Maximum primer size\n                        default: 26"
-    default: 26
     inputBinding:
       position: 101
   - id: primer_min_size
@@ -142,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: "Minimum primer size\n                        default: 18"
-    default: 18
     inputBinding:
       position: 101
   - id: primer_num_consider
@@ -151,7 +140,6 @@ inputs:
       - int
     doc: "Primer number considering in primer3 software.\n                       \
       \ default: 3"
-    default: 3
     inputBinding:
       position: 101
   - id: primer_opt_size
@@ -159,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: "Optical primer size\n                        default: 20"
-    default: 20
     inputBinding:
       position: 101
   - id: ref
@@ -174,7 +161,6 @@ inputs:
       - int
     doc: "Intervals to search for primers upstream and downstream variants.\n    \
       \                    default: 140"
-    default: 140
     inputBinding:
       position: 101
   - id: target_position
@@ -196,7 +182,6 @@ inputs:
     doc: "Primer pairs producing unintended PCR product which is shorter than this\n\
       \                        are ignored in specificity check.\n               \
       \         default: 4000"
-    default: 4000
     inputBinding:
       position: 101
   - id: variant_type

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not run the simulation, only write the files.
-    default: false
     inputBinding:
       position: 101
       prefix: --dryrun
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite existing files
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print header for trajectories.
-    default: false
     inputBinding:
       position: 101
       prefix: --header
@@ -45,7 +42,6 @@ inputs:
       - boolean
     doc: Symbolic calculation of Jacobi-Matrix. This may generate a very large 
       simulation file.
-    default: false
     inputBinding:
       position: 101
       prefix: --jacobian
@@ -56,7 +52,6 @@ inputs:
         items: string
     doc: Specify the (order of) species which should appear in the pyplot 
       legend, as well as the order of species for nxy output format.
-    default: []
     inputBinding:
       position: 101
       prefix: --labels
@@ -66,7 +61,6 @@ inputs:
       - boolean
     doc: When using pyplot, only plot tracjectories corresponding to labels, 
       when using nxy, only print the trajectories corresponding to labels.
-    default: false
     inputBinding:
       position: 101
       prefix: --labels-strict
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print all species and exit.
-    default: false
     inputBinding:
       position: 101
       prefix: --list-labels
@@ -84,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: Redirect logging information to a file.
-    default: ''
     inputBinding:
       position: 101
       prefix: --logfile
@@ -93,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of steps allowed for each integration point in t.
-    default: 0
     inputBinding:
       position: 101
       prefix: --mxstep
@@ -102,7 +93,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print time course to STDOUT in nxy format.
-    default: false
     inputBinding:
       position: 101
       prefix: --nxy
@@ -111,7 +101,6 @@ inputs:
       - 'null'
       - string
     doc: Name of ODE library files.
-    default: odesystem
     inputBinding:
       position: 101
       prefix: --output
@@ -131,7 +120,6 @@ inputs:
       - 'null'
       - string
     doc: Specify a filename to plot the ODE simulation.
-    default: ''
     inputBinding:
       position: 101
       prefix: --pyplot
@@ -166,7 +154,6 @@ inputs:
       - 'null'
       - float
     doc: First time point of the time-course.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --t0
@@ -175,7 +162,6 @@ inputs:
       - 'null'
       - float
     doc: End point of simulation time.
-    default: 100.0
     inputBinding:
       position: 101
       prefix: --t8
@@ -185,7 +171,6 @@ inputs:
       - int
     doc: Returns --t-lin evenly spaced numbers on a linear scale from --t0 to 
       --t8.
-    default: 500
     inputBinding:
       position: 101
       prefix: --t-lin

@@ -15,7 +15,6 @@ inputs:
       - int
     doc: report any position that is covered by at least this many alignments; 
       the maximum allowed depth is 255
-    default: 1
     inputBinding:
       position: 102
       prefix: --M
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: segment score threshold for high scoring pairs
-    default: 3000
     inputBinding:
       position: 102
       prefix: --hspthresh
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: LASTZ interval for ydrop - change only if you are a developer
-    default: 10000000
     inputBinding:
       position: 102
       prefix: --lastz_interval_size
@@ -66,7 +63,6 @@ inputs:
       - 'null'
       - float
     doc: proportion of neighbouring intervals to align the query interval to
-    default: 0.200000003
     inputBinding:
       position: 102
       prefix: --neighbor_proportion
@@ -92,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Specify number of GPUs to use - -1 if all the GPUs should be used
-    default: -1
     inputBinding:
       position: 102
       prefix: --num_gpu
@@ -110,7 +105,6 @@ inputs:
       - string
     doc: seed pattern-12of19(1110100110010101111)/14of22(1110101 
       100110010101111)/an arbitrary pattern of 1s, 0s, and Ts
-    default: 12of19
     inputBinding:
       position: 102
       prefix: --seed
@@ -119,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: LASTZ interval for ydrop - change only if you are a developer
-    default: 1000000000
     inputBinding:
       position: 102
       prefix: --seq_block_size
@@ -129,7 +122,6 @@ inputs:
       - int
     doc: Offset between the starting positions of successive target words 
       considered for generating seed table
-    default: 1
     inputBinding:
       position: 102
       prefix: --step
@@ -138,7 +130,6 @@ inputs:
       - 'null'
       - string
     doc: strand to search - plus/minus/both
-    default: both
     inputBinding:
       position: 102
       prefix: --strand
@@ -148,7 +139,6 @@ inputs:
       - int
     doc: chunk sizes for GPU calls for Xdrop - change only if you are a 
       developer
-    default: 250000
     inputBinding:
       position: 102
       prefix: --wga_chunk_size
@@ -157,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: x-drop value for gap-free extension
-    default: 910
     inputBinding:
       position: 102
       prefix: --xdrop

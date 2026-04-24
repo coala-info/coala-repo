@@ -47,5 +47,4 @@ steps:
         loop:
           i1:
             loopSource: o1
-            default: 5
         outputMethod: all

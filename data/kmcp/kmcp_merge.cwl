@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Field of hits.
-    default: 5
     inputBinding:
       position: 102
       prefix: --field-hits
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Field of queryIdx.
-    default: 15
     inputBinding:
       position: 102
       prefix: --field-queryIdx
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: Sort hits by "qcov", "tcov" or "jacc" (Jaccard Index).
-    default: qcov
     inputBinding:
       position: 102
       prefix: --sort-by
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs cores to use.
-    default: 20
     inputBinding:
       position: 102
       prefix: --threads

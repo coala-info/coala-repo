@@ -54,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: Set the data format of the read, reference and highlight data
-    default: json
     inputBinding:
       position: 101
       prefix: --data-format
@@ -82,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Set the maximum rows of reads that will be shown in the alignment plots
-    default: 500
     inputBinding:
       position: 101
       prefix: --max-read-depth
@@ -91,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the maximum width of the resulting plot
-    default: 1024
     inputBinding:
       position: 101
       prefix: --max-width
@@ -101,7 +98,6 @@ inputs:
       - float
     doc: The minimum percentage of mismatches compared to total read depth at 
       that point to display in the coverage plot
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --mismatch-display-min-percent

@@ -48,7 +48,6 @@ inputs:
       - string
     doc: 'Specifies the capacity of the created dataset: small (default, <100M records),
       medium (<500M), large (>=500M)'
-    default: small
     inputBinding:
       position: 103
       prefix: --capacity
@@ -58,7 +57,6 @@ inputs:
       - string
     doc: Commit mode to use when importing data. Options are "append" (default),
       "overwrite","upsert", or "delete"
-    default: append
     inputBinding:
       position: 103
       prefix: --commit-mode

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum depth to consider a site
-    default: 10000
     inputBinding:
       position: 102
       prefix: --max-depth
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele frequency to consider
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --min-allele-freq
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth to consider a site
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-depth
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Step size for summary statistics
-    default: 1000
     inputBinding:
       position: 102
       prefix: --step
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for summary statistics
-    default: 1000
     inputBinding:
       position: 102
       prefix: --window

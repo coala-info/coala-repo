@@ -88,7 +88,6 @@ inputs:
       - int
     doc: I a query interval of >= N bp aligns to a reference with sufficient coverage,
       cut it out. Disabled when 0.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-query-chunk

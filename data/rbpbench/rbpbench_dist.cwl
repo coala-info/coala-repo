@@ -10,7 +10,6 @@ inputs:
       - int
     doc: 'Define which position of --in genomic sites to use as zero position for
       plotting. 1: upstream end position, 2: center position, 3: downstream end position'
-    default: 1
     inputBinding:
       position: 101
       prefix: --cp-mode
@@ -20,7 +19,6 @@ inputs:
       - int
     doc: Up- and downstream extension of defined genomic positions (define via 
       --cp-mode) in nucleotides (nt). Set e.g. --ext 20 for 20 nt on both sides
-    default: 10
     inputBinding:
       position: 101
       prefix: --ext
@@ -46,7 +44,6 @@ inputs:
       --cp-mode). By default, duplicate input regions are removed, and 
       encountering identical genomic positions (defined by --cp-mode) for 
       plotting results in an assert error
-    default: false
     inputBinding:
       position: 101
       prefix: --no-uniq-check

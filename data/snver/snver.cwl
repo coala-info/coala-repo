@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: discard locus with ratio of alt/ref below the threshold
-    default: 0.25
     inputBinding:
       position: 101
       prefix: -b
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: base quality threshold
-    default: 17
     inputBinding:
       position: 101
       prefix: -bq
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: 'path for dbSNP, column number of chr, pos and snp_id (format: dbsnp,1,2,3)'
-    default: 'null'
     inputBinding:
       position: 101
       prefix: -db
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: fisher exact threshold
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: -f
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: heterozygosity
-    default: 0.001
     inputBinding:
       position: 101
       prefix: -het
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: inactivate -s and -f above this threshold
-    default: 30
     inputBinding:
       position: 101
       prefix: -u
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: mapping quality threshold
-    default: 20
     inputBinding:
       position: 101
       prefix: -mq
@@ -78,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: at least how many reads supporting each strand for alternative allele
-    default: 1
     inputBinding:
       position: 101
       prefix: -a
@@ -87,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: the number of haploids
-    default: 2
     inputBinding:
       position: 101
       prefix: -n
@@ -96,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: p-value threshold
-    default: bonferroni=0.05
     inputBinding:
       position: 101
       prefix: -p
@@ -105,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: prefix output file
-    default: input_file name
     inputBinding:
       position: 101
       prefix: -o
@@ -120,7 +109,6 @@ inputs:
       - 'null'
       - float
     doc: strand bias threshold
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: -s
@@ -129,7 +117,6 @@ inputs:
       - 'null'
       - File
     doc: target region bed file
-    default: 'null'
     inputBinding:
       position: 101
       prefix: -l

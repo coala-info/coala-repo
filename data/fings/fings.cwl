@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: absolute path to filtering parameters
-    default: filter_parameters.txt
     inputBinding:
       position: 101
       prefix: -p
@@ -28,7 +27,6 @@ inputs:
       - string
     doc: Set logging level (default is INFO, can be DEBUG for more detail or 
       NOTSET for silent)
-    default: INFO
     inputBinding:
       position: 101
       prefix: --logging
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: maximum read depth to process
-    default: 1000
     inputBinding:
       position: 101
       prefix: -m
@@ -53,7 +50,6 @@ inputs:
       - int
     doc: number of processors to use (default is -1, use all available 
       resources)
-    default: -1
     inputBinding:
       position: 101
       prefix: -j
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - Directory
     doc: absolute path to output directory
-    default: results
     inputBinding:
       position: 101
       prefix: -d
@@ -95,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: number of records to process per chunk
-    default: 100
     inputBinding:
       position: 101
       prefix: -c

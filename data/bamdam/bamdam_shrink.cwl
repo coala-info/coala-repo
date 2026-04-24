@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum DUST score threshold to keep a read (default: not set)'
-    default: not set
     inputBinding:
       position: 101
       prefix: --dust_max
@@ -28,7 +27,6 @@ inputs:
       - type: array
         items: int
     doc: 'Numeric tax ID(s) to exclude when filtering (default: none)'
-    default: none
     inputBinding:
       position: 101
       prefix: --exclude_tax
@@ -38,7 +36,6 @@ inputs:
       - File
     doc: 'File of numeric tax ID(s) to exclude when filtering, one per line (default:
       none)'
-    default: none
     inputBinding:
       position: 101
       prefix: --exclude_tax_file
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum read count to keep a node (default: 5)'
-    default: 5
     inputBinding:
       position: 101
       prefix: --mincount
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: 'Minimum similarity to reference to keep an alignment (default: 0.9)'
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --minsim
@@ -91,7 +86,6 @@ inputs:
       - 'null'
       - string
     doc: 'Keep nodes up to and including this tax threshold (default: family)'
-    default: family
     inputBinding:
       position: 101
       prefix: --upto

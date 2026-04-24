@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: 'Percentage at which separate fragments join together (default: 1)'
-    default: '1'
     inputBinding:
       position: 101
       prefix: --chimeras
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: 'Adapter parameters for read ends (rate and amount, default: 50,20)'
-    default: 50,20
     inputBinding:
       position: 101
       prefix: --end_adapter
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: 'Adapter sequence for read ends (default: GCAATACGTAACTGAACGAAGT)'
-    default: GCAATACGTAACTGAACGAAGT
     inputBinding:
       position: 101
       prefix: --end_adapter_seq
@@ -37,7 +34,6 @@ inputs:
       - string
     doc: 'Can be "nanopore2018", "nanopore2020", "nanopore2023", "pacbio2016", "pacbio2021",
       "random" or a model filename (default: nanopore2023)'
-    default: nanopore2023
     inputBinding:
       position: 101
       prefix: --error_model
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: 'Read glitch parameters (rate, size and skip, default: 10000,25,25)'
-    default: 10000,25,25
     inputBinding:
       position: 101
       prefix: --glitches
@@ -56,7 +51,6 @@ inputs:
       - string
     doc: 'Sequencing identity distribution (mean,max,stdev for beta distribution or
       mean,stdev for normal qscore distribution, default: 95,99,2.5)'
-    default: 95,99,2.5
     inputBinding:
       position: 101
       prefix: --identity
@@ -65,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: 'This percentage of reads will be low-complexity junk (default: 1)'
-    default: '1'
     inputBinding:
       position: 101
       prefix: --junk_reads
@@ -74,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: 'Fragment length distribution (mean and stdev, default: 15000,13000)'
-    default: 15000,13000
     inputBinding:
       position: 101
       prefix: --length
@@ -84,7 +76,6 @@ inputs:
       - string
     doc: 'Can be "nanopore2018", "nanopore2020", "nanopore2023", "pacbio2016", "pacbio2021",
       "random", "ideal" or a model filename (default: nanopore2023)'
-    default: nanopore2023
     inputBinding:
       position: 101
       prefix: --qscore_model
@@ -99,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: 'This percentage of reads will be random sequence (default: 1)'
-    default: '1'
     inputBinding:
       position: 101
       prefix: --random_reads
@@ -132,7 +122,6 @@ inputs:
       - 'null'
       - string
     doc: 'Adapter parameters for read starts (rate and amount, default: 90,60)'
-    default: 90,60
     inputBinding:
       position: 101
       prefix: --start_adapter
@@ -141,7 +130,6 @@ inputs:
       - 'null'
       - string
     doc: 'Adapter sequence for read starts (default: AATGTACTTCGTTCAGTTACGTATTGCT)'
-    default: AATGTACTTCGTTCAGTTACGTATTGCT
     inputBinding:
       position: 101
       prefix: --start_adapter_seq

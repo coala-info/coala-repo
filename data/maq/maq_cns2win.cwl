@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: Consensus type
-    default: 'null'
     inputBinding:
       position: 102
       prefix: -c
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality
-    default: 0
     inputBinding:
       position: 102
       prefix: -b
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum error rate
-    default: 0
     inputBinding:
       position: 102
       prefix: -e
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality
-    default: 0
     inputBinding:
       position: 102
       prefix: -q
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Window size
-    default: 1000
     inputBinding:
       position: 102
       prefix: -w

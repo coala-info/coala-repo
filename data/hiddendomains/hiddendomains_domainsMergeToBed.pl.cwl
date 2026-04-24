@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: The width of the bin.
-    default: 1000
     inputBinding:
       position: 102
       prefix: -b
@@ -44,7 +43,6 @@ inputs:
       - float
     doc: Toss out parts of domains that have posterior values that are less than
       MIN_POSTERIOR.
-    default: 0
     inputBinding:
       position: 102
       prefix: -p

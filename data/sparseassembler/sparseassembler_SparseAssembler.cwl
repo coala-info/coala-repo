@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: use 1 to call the error correction module. (default 0)
-    default: 0
     inputBinding:
       position: 101
       prefix: Denoise
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: coverage threshold for spurious links, support 0-16.
-    default: 0
     inputBinding:
       position: 101
       prefix: EdgeCovTh
@@ -83,7 +81,6 @@ inputs:
     doc: 'hybrid mode. 0 (Default): reads will be trimmed at the ends to ensure denoising
       accuracy (*MUST* set 0 for the last round). 1: reads will not be trimmed at
       the ends;'
-    default: 0
     inputBinding:
       position: 101
       prefix: H
@@ -171,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: coverage threshold for spurious paired-end links, support 0-100.
-    default: 5
     inputBinding:
       position: 101
       prefix: LinkCovTh
@@ -188,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: coverage threshold for spurious k-mers, support 0-16.
-    default: 1
     inputBinding:
       position: 101
       prefix: NodeCovTh
@@ -249,7 +244,6 @@ inputs:
       - string
     doc: "lowest quality score value (in ASCII value) in the current fastq scoring
       system, default: '!'."
-    default: '!'
     inputBinding:
       position: 101
       prefix: QualBase

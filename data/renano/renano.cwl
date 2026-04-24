@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Base call sequence context length. Default is 7 (max 13).
-    default: 7
     inputBinding:
       position: 103
       prefix: -k
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Length of the DNA neighborhood sequence. Default is 6.
-    default: 6
     inputBinding:
       position: 103
       prefix: -l
@@ -66,7 +64,6 @@ inputs:
       - int
     doc: Maximum number of threads allowed to use by the 
       compressor/decompressor. Default is 8.
-    default: 8
     inputBinding:
       position: 103
       prefix: -t

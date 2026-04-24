@@ -11,7 +11,6 @@ inputs:
       - string
     doc: 'classification model: RF – scikit-learn Random Forest, XGB – XGBoost, Torch
       – PyTorch neural network, default: RF]'
-    default: RF
     inputBinding:
       position: 101
       prefix: --estimator
@@ -28,7 +27,6 @@ inputs:
       - File
     doc: "tab-separated file with 2 values in each row: <sample>\t<category> to check
       accuracy of predictions"
-    default: None
     inputBinding:
       position: 101
       prefix: --metadata-file
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: name of output file with samples predicted labels in workDir
-    default: predictions
     inputBinding:
       position: 101
       prefix: --name
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - Directory
     doc: working directory
-    default: workDir/
     inputBinding:
       position: 101
       prefix: --work-dir

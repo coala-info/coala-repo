@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Records per batch
-    default: 50000
     inputBinding:
       position: 102
       prefix: --batch
@@ -153,7 +152,6 @@ inputs:
       - 'null'
       - string
     doc: Target schema
-    default: public
     inputBinding:
       position: 102
       prefix: --schema
@@ -178,7 +176,6 @@ inputs:
       - 'null'
       - int
     doc: Parallel workers
-    default: 8
     inputBinding:
       position: 102
       prefix: --workers

@@ -18,7 +18,6 @@ inputs:
   - 'null'
   - int
   doc: block length
-  default: 13
   inputBinding:
     position: 102
     prefix: -k
@@ -44,7 +43,6 @@ inputs:
   - 'null'
   - int
   doc: max read depth
-  default: 256
   inputBinding:
     position: 102
     prefix: -D
@@ -53,7 +51,6 @@ inputs:
   - 'null'
   - int
   doc: min base quality in het calling
-  default: 13
   inputBinding:
     position: 102
     prefix: --min-BQ
@@ -62,7 +59,6 @@ inputs:
   - 'null'
   - int
   doc: min het phred-LOD
-  default: 37
   inputBinding:
     position: 102
     prefix: -q

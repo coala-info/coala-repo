@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Overrides the author of the database in the version file
-    default: None
     inputBinding:
       position: 101
       prefix: --db-author
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Overrides the commit string of the database in the version file
-    default: None
     inputBinding:
       position: 101
       prefix: --db-commit
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Overrides the date of the database in the version file
-    default: None
     inputBinding:
       position: 101
       prefix: --db-date
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - Directory
     doc: Storage directory
-    default: /usr/local/share/ntm-profiler/
     inputBinding:
       position: 101
       prefix: --db_dir
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Overrides the name of the database in the version file
-    default: None
     inputBinding:
       position: 101
       prefix: --db-name
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable debug logging
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - Directory
     doc: Storage directory
-    default: .
     inputBinding:
       position: 101
       prefix: --dir
@@ -79,7 +72,6 @@ inputs:
       - boolean
     doc: Tells the script to force the creation of the database, even if it 
       already exists
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -88,7 +80,6 @@ inputs:
       - 'null'
       - boolean
     doc: Load the library after creating it
-    default: false
     inputBinding:
       position: 101
       prefix: --load
@@ -97,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level
-    default: INFO
     inputBinding:
       position: 101
       prefix: --logging
@@ -106,7 +96,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't remove temporary files after run
-    default: false
     inputBinding:
       position: 101
       prefix: --no_cleanup
@@ -143,7 +132,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temp directory to process all files
-    default: .
     inputBinding:
       position: 101
       prefix: --temp

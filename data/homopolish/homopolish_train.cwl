@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for the train model.
-    default: train
     inputBinding:
       position: 101
       prefix: --output_prefix
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

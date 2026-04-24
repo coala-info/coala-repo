@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: number of nucleotides downstream of the mature sequence to consider
-    default: 5
     inputBinding:
       position: 101
       prefix: -f
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: number of allowed mismatches when mapping reads to precursors
-    default: 1
     inputBinding:
       position: 101
       prefix: -g
@@ -79,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: number of nucleotides upstream of the mature sequence to consider
-    default: 2
     inputBinding:
       position: 101
       prefix: -e

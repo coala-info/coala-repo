@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Radius of the hexagons used to bin
-    default: 20
     inputBinding:
       position: 102
       prefix: --radius
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: 'Set the number of threads used (default: use all threads)'
-    default: 0
     inputBinding:
       position: 102
       prefix: -t

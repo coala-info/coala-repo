@@ -11,7 +11,6 @@ inputs:
       - boolean
     doc: 'Set the default environment to the first which passes check-setup. Checks
       run in the order: docker, native, aws-batch.'
-    default: false
     inputBinding:
       position: 101
       prefix: --set-default

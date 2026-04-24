@@ -35,7 +35,6 @@ inputs:
 
   threads: 
     type: int
-    default: 5
     doc: | 
         Number of threads to be used from each tool. User may set this to as many as the system can provide for faster performance.
 
@@ -45,62 +44,52 @@ inputs:
   # Steps
   qc_and_merge_step: 
     type: boolean
-    default: true 
     doc: | 
         metaGOflow will perform the sequence pre-processing step. 
 
   taxonomic_inventory: 
     type: boolean
-    default: true 
     doc: |
       metaGOflow will perform the taxonomic inventories step
 
   cgc_step:
     type: boolean
-    default: false
     doc: |
       metaGOflow will perform the gene calling step
 
   reads_functional_annotation: 
     type: boolean
-    default: false
     doc: |
       metaGOflow will perform the functional annotation step
 
   assemble: 
     type: boolean
-    default: false 
     doc: |
         metaGOflow will perform the assembly step using MEGAHIT
 
   # Pre-process
   overrepresentation_analysis: 
     type: boolean
-    default: false 
     doc: | 
         fastp may run an overrepresentation analysis, by default it will not. Overrepresented are considered sequences which appear more than expected in a .fastq file and are a result of certain sequencing artifacts such as PCR over-duplication, polyG tails and adapter contamination. 
 
   detect_adapter_for_pe:
     type: boolean
-    default: false
     doc: | 
         fastp argument for adapter sequence auto-detection. By default, it is disabled since the adapters can be trimmed by overlap analysis. however, it usually results in a slightly cleaner output, since the overlap analysis may fail due to sequencing errors or adapter dimers. You may use it only if your adapters are among Illumina TruSeq adapters; fastp contains a limited number of built-in known adapter sequences for better auto-detection. For more, see https://github.com/OpenGene/fastp.
 
   force_polyg_tail_trimming: 
     type: boolean
-    default: false 
     doc: |
         fastp argument that forces polyG tail trimming; a polyG tail is the result of the no light signal, suggesting for G, as the sequencing by synthesis proceeds to subsequent cycles and the signal strength of each DNA cluster becomes progressively weaker. By default trimming is automatically enabled for Illumina NextSeq/NovaSeq data. 
 
   disable_trim_poly_g: 
     type: boolean
-    default: true
     doc: | 
         fastp argument to disable polyG tail trimming. In fastp, by default, trimming is automatically enabled for Illumina NextSeq/NovaSeq data. In metaGOflow however, by default this is disabled, ie. set as True.
 
   overlap_len_require:
     type: int
-    default: 30
     doc: |
       fastp parameter setting the minimum length to detect overlapped region of PE reads. This will affect overlap analysis based PE merge, adapter trimming and correction. By default its value is set to 30. 
 
@@ -116,19 +105,16 @@ inputs:
 
   min_length_required:
     type: int
-    default: 100 
     doc: |
         fastp parameter setting a theshold where reads shorter than that will be discarded. In metaGOflow, default is 100.
 
   cut_right: 
     type: boolean
-    default: true 
     doc: |
         fastp parameter that moves a sliding window from front to tail, if meet one window with mean quality < threshold, drop the bases in the window and the right part, and then stop. Mean quality for this step is by default 20.
 
   base_correction:
     type: boolean 
-    default: false
     doc: |
         fastp parameter that enables base correction in overlapped regions, default is disabled (False)
 
@@ -146,7 +132,6 @@ inputs:
   # CGC
   cgc_chunk_size: 
     type: int
-    default: 50
     doc: | 
         Size of chunks to split reads into for the gene caller step.
 
@@ -169,19 +154,16 @@ inputs:
   # Variables to be used for partial run of the wf
   processed_reads:
     type: File?
-    default: pseudo_files/pseudo.merged.fasta
     doc: |
         Path to merged pre-processed reads (*.merged.fasta) file. It is mandatory to provide this if metaGOflow is about to run partially skipping the QC step. As default a pseudo merged file is set; look at 
 
   input_for_motus: 
     type: File?
-    default: pseudo_files/pseudo.merged.unfiltered.fasta
     doc: |
         Path to the merged file with the unfiltered sequences as derived from the sequsence pre-processing step. Mandatory for running the taxonomy inventory step.
 
   maskfile: 
     type: File?
-    default: pseudo_files/pseudo.merged.cmsearch.all.tblout.deoverlapped
     doc: |
         Path to the output of the gene caller step. Mandatory for running the functional annotation steps
 
@@ -190,7 +172,6 @@ inputs:
       - File?
       - type: array
         items: File
-    default: 
       - class: File
         path: pseudo_files/pseudo_1_clean.fastq.trimmed.fasta
       - class: File
@@ -201,13 +182,11 @@ inputs:
   predicted_faa_from_previous_run: 
     type: File?
     format: edam:format_1929
-    default: pseudo_files/pseudo.merged_CDS.faa
     doc: |
       Path to coding sequences as derived from the gene caller step. Mandatory for the functional annotation step.
 
   count_faa_from_previous_run: 
     type: int?
-    default: 1
     doc: |
       The number of the sequences included in the predicted_faa_from_previous_run file. You may get this by running: grep -c ">" <*..merged_CDS.faa>. Mandatory for the functional annotation step 
 

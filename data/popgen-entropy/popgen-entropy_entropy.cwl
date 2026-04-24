@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: +/- proposal for alpha
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -a
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: +/- proposal for ancestral allele frequency
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -p
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Discard the first n MCMC samples as a burn-in
-    default: 5000
     inputBinding:
       position: 101
       prefix: -b
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: flag to calculate DIC or WAIC estimates
-    default: false
     inputBinding:
       position: 101
       prefix: -D
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Scalar for Dirichlet init. of q, inversly prop. to variance
-    default: 1
     inputBinding:
       position: 101
       prefix: -s
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: estimate intra- and interspecific ancestry and marginal q
-    default: false
     inputBinding:
       position: 101
       prefix: -Q
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: +/- proposal for Fst
-    default: 0.01
     inputBinding:
       position: 101
       prefix: -f
@@ -80,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: +/- proposal for gamma
-    default: 0.2
     inputBinding:
       position: 101
       prefix: -y
@@ -89,7 +81,6 @@ inputs:
       - 'null'
       - boolean
     doc: infile is in genotype likelihood format
-    default: true
     inputBinding:
       position: 101
       prefix: -m
@@ -104,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Number of MCMC steps for the analysis
-    default: 10000
     inputBinding:
       position: 101
       prefix: -l
@@ -113,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Number of population clusters
-    default: 2
     inputBinding:
       position: 101
       prefix: -k
@@ -122,7 +111,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output includes population allele frequencies
-    default: false
     inputBinding:
       position: 101
       prefix: -w
@@ -140,7 +128,6 @@ inputs:
       - 'null'
       - string
     doc: seed for random number generator
-    default: clock
     inputBinding:
       position: 101
       prefix: -r
@@ -150,7 +137,6 @@ inputs:
       - float
     doc: Probability of sequence error, set to '9' for locus-specific error 
       rates (only required if infile is not in genotype likelihood format)
-    default: 0
     inputBinding:
       position: 101
       prefix: -e
@@ -159,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: Thin MCMC samples by recording every nth value
-    default: 5
     inputBinding:
       position: 101
       prefix: -t

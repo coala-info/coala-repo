@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow to chain converter when direct conversion is absent
-    default: false
     inputBinding:
       position: 102
       prefix: --allow-indirect-conversion
@@ -27,7 +26,6 @@ inputs:
       - boolean
     doc: "Allow conversion of a set of files using wildcards. You must use quotes
       to escape the wildcards. For instance: --batch 'test*fastq'"
-    default: false
     inputBinding:
       position: 102
       prefix: --batch
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Running all available methods
-    default: false
     inputBinding:
       position: 102
       prefix: --benchmark
@@ -47,7 +44,6 @@ inputs:
         items: string
     doc: Methods to include. Provide list as space-separated method names. Use 
       -s to get the full list.
-    default: all
     inputBinding:
       position: 102
       prefix: --benchmark-methods
@@ -57,7 +53,6 @@ inputs:
       - string
     doc: Set the mode of the benchmark, which can be time, CPU or memory. 
       Defaults to time)
-    default: time
     inputBinding:
       position: 102
       prefix: --benchmark-mode
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Number of trials for each methods
-    default: 5
     inputBinding:
       position: 102
       prefix: --benchmark-N
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - boolean
     doc: Save results as an image (using the same tag as from --benchmark-tag)
-    default: false
     inputBinding:
       position: 102
       prefix: --benchmark-save-image
@@ -85,7 +78,6 @@ inputs:
       - string
     doc: Save results (json and image) named after this tag. You may include sub
       directories
-    default: bioconvert
     inputBinding:
       position: 102
       prefix: --benchmark-tag
@@ -94,7 +86,6 @@ inputs:
       - 'null'
       - string
     doc: Any arguments accepted by the method's tool
-    default: ''
     inputBinding:
       position: 102
       prefix: --extra-arguments
@@ -103,7 +94,6 @@ inputs:
       - 'null'
       - boolean
     doc: if outfile exists, it is overwritten with this option
-    default: false
     inputBinding:
       position: 102
       prefix: --force
@@ -112,7 +102,6 @@ inputs:
       - 'null'
       - string
     doc: The method to use to do the conversion.
-    default: python
     inputBinding:
       position: 102
       prefix: --method
@@ -121,7 +110,6 @@ inputs:
       - 'null'
       - boolean
     doc: Let exception ending the execution be raised and displayed
-    default: false
     inputBinding:
       position: 102
       prefix: --raise-exception
@@ -130,7 +118,6 @@ inputs:
       - 'null'
       - boolean
     doc: A converter may have several methods
-    default: false
     inputBinding:
       position: 102
       prefix: --show-methods
@@ -139,7 +126,6 @@ inputs:
       - 'null'
       - string
     doc: Set the outpout verbosity.
-    default: ERROR
     inputBinding:
       position: 102
       prefix: --verbosity

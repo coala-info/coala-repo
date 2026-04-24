@@ -18,14 +18,12 @@ requirements:
 inputs:
   threads:
     type: int?
-    default: 1
     inputBinding:
       prefix: --threads
 
   prefix:
     type: string
     doc: prefix of the filename outputs      
-    default: "sampleX"
 
   indexfolder:
     type: Directory?

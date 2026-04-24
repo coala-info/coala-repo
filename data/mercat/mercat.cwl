@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: no of cores
-    default: all
     inputBinding:
       position: 101
       prefix: -n
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: minimum kmer count
-    default: 10
     inputBinding:
       position: 101
       prefix: -c
@@ -74,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: Split into x MB files. Default = 100MB
-    default: 100MB
     inputBinding:
       position: 101
       prefix: -s

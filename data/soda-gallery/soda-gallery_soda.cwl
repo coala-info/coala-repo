@@ -101,7 +101,6 @@ inputs:
       - 'null'
       - string
     doc: 'Gallery mode: blueimp or photoswipe [default: photoswipe]'
-    default: photoswipe
     inputBinding:
       position: 101
       prefix: --galleryMode

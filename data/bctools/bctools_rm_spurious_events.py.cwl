@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print lots of debugging information
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for spurious event removal.
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --threshold
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Be verbose.
-    default: false
     inputBinding:
       position: 102
       prefix: --verbose

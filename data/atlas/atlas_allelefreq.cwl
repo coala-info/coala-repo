@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum depth to consider for allele frequency calculation
-    default: 1000
     inputBinding:
       position: 102
       prefix: --maxDepth
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum allele count to consider an allele
-    default: 1
     inputBinding:
       position: 102
       prefix: --minAlleleCount
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele frequency to consider an allele
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --minAlleleFreq
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality to consider a base
-    default: 0
     inputBinding:
       position: 102
       prefix: --minBaseQ
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality to consider a read
-    default: 0
     inputBinding:
       position: 102
       prefix: --minMapQ
@@ -84,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

@@ -81,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbosity (0: quiet, 1: +errors, 2: +warnings, 3: +info, 4: +debug)'
-    default: 3
     inputBinding:
       position: 101
       prefix: --verbosity

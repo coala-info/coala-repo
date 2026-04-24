@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: Divergence Threshold.
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --div_threshold
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Signal file format
-    default: pod5
     inputBinding:
       position: 101
       prefix: --file_type
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length
-    default: 0
     inputBinding:
       position: 101
       prefix: --length_cutoff
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: Normalization method
-    default: mad
     inputBinding:
       position: 101
       prefix: --norm_type
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for the output files
-    default: output
     inputBinding:
       position: 101
       prefix: --prefix
@@ -81,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Reads per chunk
-    default: 100000
     inputBinding:
       position: 101
       prefix: --reads_per_chunk
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: Specify DNA sequencing only
-    default: dna
     inputBinding:
       position: 101
       prefix: --seq_type
@@ -105,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -115,7 +107,6 @@ inputs:
       - int
     doc: Number of bases before or after the base of interest to include in the 
       model. Total will be 2xwindow+1.
-    default: 10
     inputBinding:
       position: 101
       prefix: --window

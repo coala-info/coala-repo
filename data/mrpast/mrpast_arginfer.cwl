@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Number of jobs (threads) to use. Defaults to 1.
-    default: 1
     inputBinding:
       position: 104
       prefix: --jobs
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: Expected mutation rate.
-    default: '1.2e-08'
     inputBinding:
       position: 104
       prefix: --mut-rate
@@ -72,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: Expected recombination rate, or recombination map filename.
-    default: '1e-08'
     inputBinding:
       position: 104
       prefix: --recomb-rate
@@ -81,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: How many ARGS to sample.
-    default: 10
     inputBinding:
       position: 104
       prefix: --samples
@@ -107,7 +103,6 @@ inputs:
       - 'null'
       - string
     doc: 'Which ARG inference tool to run: "tsinfer" (default), "relate", or "singer"'
-    default: tsinfer
     inputBinding:
       position: 104
       prefix: --tool

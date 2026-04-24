@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: 'Hierarchical clustering method: UPGMA, SingleLinkage, CompleteLinkage, NJ.'
-    default: UPGMA
     inputBinding:
       position: 101
       prefix: --clustering
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Number of jackknife replicates to perform.
-    default: 0
     inputBinding:
       position: 101
       prefix: --jackknife
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of profiles (data vectors) to have in memory at once.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max-data-vecs
@@ -107,7 +104,6 @@ inputs:
       - 'null'
       - float
     doc: Correlation threshold for clustering calculators.
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --threshold

@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Number of paths to output
-    default: 1
     inputBinding:
       position: 102
       prefix: -n

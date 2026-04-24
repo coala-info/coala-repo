@@ -16,7 +16,6 @@ inputs:
       - float
     doc: Subset network to edges with at least this SD. 1.28, 1.64, and 2.32 
       correspond to ~P0.1, 0.05 and 0.01.
-    default: no filter
     inputBinding:
       position: 102
       prefix: --filter
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Score index to use
-    default: last index
     inputBinding:
       position: 102
       prefix: --index
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to store temporary data
-    default: auto
     inputBinding:
       position: 102
       prefix: --tempdir

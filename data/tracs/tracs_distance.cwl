@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: clock rate as defined in the transcluster paper (SNPs/genome/year)
-    default: '2.9903e-02'
     inputBinding:
       position: 102
       prefix: --clock_rate
@@ -61,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: The precision used to calculate E(K)
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --precision
@@ -78,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -88,7 +85,6 @@ inputs:
       - int
     doc: transmission rate as defined in the transcluster paper 
       (transmissions/year)
-    default: 73
     inputBinding:
       position: 102
       prefix: --trans_rate

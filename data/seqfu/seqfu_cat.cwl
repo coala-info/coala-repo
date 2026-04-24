@@ -82,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: Append this string to the sequence name
-    default: ''
     inputBinding:
       position: 102
       prefix: --append
@@ -99,7 +98,6 @@ inputs:
       - 'null'
       - string
     doc: Separate basename from the rest with this
-    default: _
     inputBinding:
       position: 102
       prefix: --basename-sep
@@ -108,7 +106,6 @@ inputs:
       - 'null'
       - string
     doc: Comment separator
-    default: ' '
     inputBinding:
       position: 102
       prefix: --comment-sep
@@ -141,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: FASTQ default quality
-    default: 33
     inputBinding:
       position: 102
       prefix: --fastq-qual
@@ -174,7 +170,6 @@ inputs:
       - 'null'
       - int
     doc: Stop printing after INT bases
-    default: 0
     inputBinding:
       position: 102
       prefix: --max-bp
@@ -183,7 +178,6 @@ inputs:
       - 'null'
       - float
     doc: Discard sequences with higher than FLOAT expected error
-    default: -1.0
     inputBinding:
       position: 102
       prefix: --max-ee
@@ -192,7 +186,6 @@ inputs:
       - 'null'
       - int
     doc: Discard sequences longer than INT, 0 to ignore
-    default: 0
     inputBinding:
       position: 102
       prefix: --max-len
@@ -201,7 +194,6 @@ inputs:
       - 'null'
       - int
     doc: Discard sequences with more than INT Ns
-    default: -1
     inputBinding:
       position: 102
       prefix: --max-ns
@@ -210,7 +202,6 @@ inputs:
       - 'null'
       - int
     doc: Discard sequences shorter than INT
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-len
@@ -219,7 +210,6 @@ inputs:
       - 'null'
       - int
     doc: After splitting the basename, take this part
-    default: 1
     inputBinding:
       position: 102
       prefix: --part
@@ -244,7 +234,6 @@ inputs:
       - 'null'
       - string
     doc: Sequence name fields separator
-    default: _
     inputBinding:
       position: 102
       prefix: --sep
@@ -253,7 +242,6 @@ inputs:
       - 'null'
       - int
     doc: Print one sequence every STEP
-    default: 0
     inputBinding:
       position: 102
       prefix: --skip
@@ -262,7 +250,6 @@ inputs:
       - 'null'
       - int
     doc: Skip the first INT records
-    default: -1
     inputBinding:
       position: 102
       prefix: --skip-first
@@ -271,7 +258,6 @@ inputs:
       - 'null'
       - string
     doc: Split basename at this char
-    default: .
     inputBinding:
       position: 102
       prefix: --split
@@ -296,7 +282,6 @@ inputs:
       - 'null'
       - int
     doc: Trim INT base from the start of the sequence
-    default: 0
     inputBinding:
       position: 102
       prefix: --trim-front
@@ -305,7 +290,6 @@ inputs:
       - 'null'
       - int
     doc: Trim INT base from the end of the sequence
-    default: 0
     inputBinding:
       position: 102
       prefix: --trim-tail
@@ -315,7 +299,6 @@ inputs:
       - int
     doc: Keep only the first INT bases, 0 to ignore. Negative values to print 
       the last INT bases
-    default: 0
     inputBinding:
       position: 102
       prefix: --truncate
@@ -332,7 +315,6 @@ inputs:
       - 'null'
       - int
     doc: Zero pad the counter to INT digits
-    default: 0
     inputBinding:
       position: 102
       prefix: --zero-pad

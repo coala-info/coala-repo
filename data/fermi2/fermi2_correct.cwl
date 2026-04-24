@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length
-    default: 17
     inputBinding:
       position: 103
       prefix: -k
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: no more than 4 corrections per INT-bp window
-    default: 8
     inputBinding:
       position: 103
       prefix: -w
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: min occurrence for a solid k-mer
-    default: 3
     inputBinding:
       position: 103
       prefix: -o
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: protect Q>INT bases unless they occur once
-    default: 30
     inputBinding:
       position: 103
       prefix: -q
@@ -73,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: correct singletons out of INT bases
-    default: 17
     inputBinding:
       position: 103
       prefix: -d
@@ -82,7 +77,6 @@ inputs:
       - 'null'
       - File
     doc: get solid k-mer list from FILE
-    default: 'null'
     inputBinding:
       position: 103
       prefix: -h
@@ -91,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 103
       prefix: -t

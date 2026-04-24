@@ -13,7 +13,6 @@ inputs:
       - int
     doc: 'Number of signature genes per species (MSP) used to estimate their respective
       abundance (default: 100).'
-    default: 100
     inputBinding:
       position: 101
       prefix: --core_size
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Keep consensus marker genes (default: False, set to True to recompute strain)'
-    default: false
     inputBinding:
       position: 101
       prefix: --kc
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum number of reads taken in account (default: 100).'
-    default: 100
     inputBinding:
       position: 101
       prefix: -d
@@ -47,7 +44,6 @@ inputs:
       - int
     doc: 'Minimum depth (default: >= 3). Values should be comprised between 1 and
       the maximum depth (10000 reads are taken in account).'
-    default: 3
     inputBinding:
       position: 101
       prefix: -p
@@ -56,7 +52,6 @@ inputs:
       - 'null'
       - float
     doc: 'Minimum frequency for alleles (default: >= 0.10).'
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -f
@@ -65,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: 'Minimum gene coverage from 0 to 1 (default: >= 0.5).'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -c
@@ -75,7 +69,6 @@ inputs:
       - int
     doc: 'Minimum percentage of signature genes from the MSP that are covered (default:
       >= 80%). Values should be comprised between 1% and 100%'
-    default: 80
     inputBinding:
       position: 101
       prefix: -m
@@ -86,7 +79,6 @@ inputs:
     doc: 'Minimum snp depth (default: >= 3). Values should be comprised between 1
       and the maximum depth (10000 reads are taken in account), take in account that
       s >= p.'
-    default: 3
     inputBinding:
       position: 101
       prefix: -s
@@ -95,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: 'Ploidy (default: 1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: -l
@@ -110,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads to perform variant calling (default: 1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

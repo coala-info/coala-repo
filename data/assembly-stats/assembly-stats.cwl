@@ -26,7 +26,6 @@ inputs:
       - int
     doc: Minimum length cutoff for each sequence. Sequences shorter than the cutoff
       will be ignored
-    default: 1
     inputBinding:
       position: 102
       prefix: -l

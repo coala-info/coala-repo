@@ -20,7 +20,6 @@ inputs:
       determines whether to filter matches with custom-threshold-name values 
       that are greater-than or equal (F) or less-than or equal (T) than the 
       threshold.
-    default: true
     inputBinding:
       position: 102
       prefix: --custom-threshold-min
@@ -32,7 +31,6 @@ inputs:
       threshold (<= or >=) is governed by --custom-threshold-min. By default, 
       the threshold applies to the q-value, specified by "percolator q-value", 
       "q-ranker q-value", "decoy q-value (xcorr)", or "barista q-value".
-    default: ''
     inputBinding:
       position: 102
       prefix: --custom-threshold-name
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: The fileroot string will be added as a prefix to all output file names.
-    default: ''
     inputBinding:
       position: 102
       prefix: --fileroot
@@ -51,7 +48,6 @@ inputs:
       - string
     doc: MS2 file corresponding to the psm file. Required to measure the SIN. 
       Ignored for NSAF, dNSAF and EMPAI.
-    default: ''
     inputBinding:
       position: 102
       prefix: --input-ms2
@@ -62,7 +58,6 @@ inputs:
     doc: 'Type of analysis to make on the match results: (RAW|NSAF|dNSAF|SIN|EMPAI).
       With exception of the RAW metric, the database of sequences need to be provided
       using --protein-database.'
-    default: NSAF
     inputBinding:
       position: 102
       prefix: --measure
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use mzid's passThreshold attribute to filter matches.
-    default: false
     inputBinding:
       position: 102
       prefix: --mzid-use-pass-threshold
@@ -80,7 +74,6 @@ inputs:
       - 'null'
       - Directory
     doc: The name of the directory where output files will be created.
-    default: crux-output
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -90,7 +83,6 @@ inputs:
       - boolean
     doc: Replace existing files if true or fail when trying to overwrite a file 
       if false.
-    default: false
     inputBinding:
       position: 102
       prefix: --overwrite
@@ -99,7 +91,6 @@ inputs:
       - 'null'
       - string
     doc: A file containing parameters.
-    default: ''
     inputBinding:
       position: 102
       prefix: --parameter-file
@@ -118,7 +109,6 @@ inputs:
       identified in protein B. The "greedy" parsimony algorithm does additional 
       merging, using the peptide q-values to greedily assign each peptide to a 
       single protein.
-    default: none
     inputBinding:
       position: 102
       prefix: --parsimony
@@ -127,7 +117,6 @@ inputs:
       - 'null'
       - File
     doc: The name of the file in FASTA format.
-    default: ''
     inputBinding:
       position: 102
       prefix: --protein-database
@@ -136,7 +125,6 @@ inputs:
       - 'null'
       - string
     doc: Quantification at protein or peptide level.
-    default: protein
     inputBinding:
       position: 102
       prefix: --quant-level
@@ -145,7 +133,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the parser to use for reading in MS/MS spectra.
-    default: pwiz
     inputBinding:
       position: 102
       prefix: --spectrum-parser
@@ -156,7 +143,6 @@ inputs:
     doc: Only consider PSMs with a threshold value. By default, q-values are 
       thresholded using a specified threshold value. This behavior can be 
       changed using the --custom-threshold and --threshold-min parameters.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --threshold
@@ -167,7 +153,6 @@ inputs:
     doc: 'Determines what type of threshold to use when filtering matches. none :
       read all matches, qvalue : use calculated q-value from percolator or q-ranker,
       custom : use --custom-threshold-name and --custom-threshold-min parameters.'
-    default: qvalue
     inputBinding:
       position: 102
       prefix: --threshold-type
@@ -176,7 +161,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ignore peptides that map to multiple proteins.
-    default: false
     inputBinding:
       position: 102
       prefix: --unique-mapping
@@ -188,7 +172,6 @@ inputs:
       messages, including all those at lower verbosity levels: 0-fatal errors, 10-non-fatal
       errors, 20-warnings, 30-information on the progress of execution, 40-more progress
       information, 50-debug info, 60-detailed debug info.'
-    default: 30
     inputBinding:
       position: 102
       prefix: --verbosity

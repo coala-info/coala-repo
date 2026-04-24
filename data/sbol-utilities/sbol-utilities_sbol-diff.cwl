@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable debug logging
-    default: false
     inputBinding:
       position: 103
       prefix: --debug

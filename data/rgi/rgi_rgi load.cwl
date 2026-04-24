@@ -83,7 +83,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'use local database (default: uses database in executable directory)'
-    default: false
     inputBinding:
       position: 101
       prefix: --local

@@ -8,7 +8,6 @@ inputs:
   - id: infile
     type: File
     doc: Name of the input kmer histogram file
-    default: kmer.hist
     inputBinding:
       position: 1
   - id: boundary

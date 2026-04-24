@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Number of blast hits to use
-    default: 250
     inputBinding:
       position: 102
       prefix: --blast-report-limit
@@ -27,7 +26,6 @@ inputs:
       - float
     doc: The max distance between polymer atoms and ligand atoms used in calculating
       clash scores
-    default: 4.0
     inputBinding:
       position: 102
       prefix: --clash-distance-cutoff
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - File
     doc: Configuration file to use
-    default: alphafill.conf
     inputBinding:
       position: 102
       prefix: --config
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Data source for input model
-    default: user
     inputBinding:
       position: 102
       prefix: --data-source
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - File
     doc: File in CIF format describing the ligands and their modifications
-    default: af-ligands.cif
     inputBinding:
       position: 102
       prefix: --ligands
@@ -64,7 +59,6 @@ inputs:
       - float
     doc: The max distance to use to find neighbouring backbone atoms for the ligand
       in the AF structure
-    default: 6.0
     inputBinding:
       position: 102
       prefix: --max-ligand-to-backbone-distance
@@ -74,7 +68,6 @@ inputs:
       - float
     doc: The max distance to use to find neighbouring polymer atoms for the ligand
       in the AF structure (for validation)
-    default: 6.0
     inputBinding:
       position: 102
       prefix: --max-ligand-to-polymer-atom-distance
@@ -83,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: The minimal length of an alignment
-    default: 85
     inputBinding:
       position: 102
       prefix: --min-alignment-length
@@ -92,7 +84,6 @@ inputs:
       - 'null'
       - float
     doc: The minimal identity for a high scoring pair (note, value between 0 and 1)
-    default: 0.25
     inputBinding:
       position: 102
       prefix: --min-hsp-identity
@@ -102,7 +93,6 @@ inputs:
       - float
     doc: The centroids of two identical ligands should be at least this far apart
       to count as separate occurrences
-    default: 3.5
     inputBinding:
       position: 102
       prefix: --min-separation-distance
@@ -144,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use, zero means all available cores
-    default: 64
     inputBinding:
       position: 102
       prefix: --threads

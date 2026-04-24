@@ -12,7 +12,6 @@ inputs:
       - int
     doc: To summarize results we uses "buckets", such that matches 100 and 103 from
       the start end up in the same bucket
-    default: 250
     inputBinding:
       position: 101
       prefix: --bucket-size
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Top N
-    default: 10
     inputBinding:
       position: 101
       prefix: --top-n

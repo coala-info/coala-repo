@@ -10,7 +10,6 @@ inputs:
       - int
     doc: Chromosome chunk size. Each chomosome will be cut into small chunks of 
       this size. Decrease chunk size will save more RAM.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --bin
@@ -38,7 +37,6 @@ inputs:
     doc: Kmer size [6,12] to correct nucleotide composition bias. kmerSize < 
       0.5*read_lenght. larger KmerSize might make program slower. Set kmerSize =
       0 to turn off nucleotide compsition bias correction.
-    default: 6
     inputBinding:
       position: 101
       prefix: --kmerSize
@@ -49,7 +47,6 @@ inputs:
     doc: methods ("EM", "AM", "GM", or "SNR") used to consolidate replicates and
       reduce noise. "EM" = Entropy weighted mean, "AM"=Arithmetic mean, 
       "GM"=Geometric mean, "SNR"=Signal-to-noise ratio.
-    default: EM
     inputBinding:
       position: 101
       prefix: --method
@@ -66,7 +63,6 @@ inputs:
       - int
     doc: phred scaled mapping quality threshhold to determine "uniqueness" of 
       alignments.
-    default: 30
     inputBinding:
       position: 101
       prefix: --qCut
@@ -77,7 +73,6 @@ inputs:
     doc: Reference reads count (default = 10 million). Sequencing depth will be 
       normailzed to this number, so that wig files are comparable between 
       replicates.
-    default: 10000000
     inputBinding:
       position: 101
       prefix: --depth

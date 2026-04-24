@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: random seed
-    default: current system time
     inputBinding:
       position: 102
       prefix: --seed

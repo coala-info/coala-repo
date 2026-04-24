@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to save downloaded files. Defaults to the current directory.
-    default: .
     inputBinding:
       position: 102
       prefix: --out-dir
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel download threads. Defaults to 1.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

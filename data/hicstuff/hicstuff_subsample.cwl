@@ -30,7 +30,6 @@ inputs:
       - float
     doc: Proportion of contacts to sample from the input matrix if between 0 and
       1. Raw number of contacts to keep if superior to 1.
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --prop

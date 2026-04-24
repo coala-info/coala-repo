@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: deep coalescence cost
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --coalcost
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: duplication cost
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --dupcost
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: input file extension
-    default: ''
     inputBinding:
       position: 102
       prefix: --inputext
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: loss cost
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --losscost
@@ -77,7 +73,6 @@ inputs:
       - int
     doc: 'maximum # of duplications (in each ancestral species), set to -1 for no
       limit'
-    default: 4
     inputBinding:
       position: 102
       prefix: --max_dups
@@ -87,7 +82,6 @@ inputs:
       - int
     doc: 'maximum # of co-existing loci (in each ancestral species), set to -1 for
       no limit'
-    default: -1
     inputBinding:
       position: 102
       prefix: --max_loci
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: 'maximum # of losses (in each ancestral species), set to -1 for no limit'
-    default: 4
     inputBinding:
       position: 102
       prefix: --max_losses
@@ -113,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: number of uniform samples
-    default: 1
     inputBinding:
       position: 102
       prefix: --nsamples
@@ -122,7 +114,6 @@ inputs:
       - 'null'
       - string
     doc: output file extension
-    default: .dlcpar
     inputBinding:
       position: 102
       prefix: --outputext
@@ -131,7 +122,6 @@ inputs:
       - 'null'
       - string
     doc: specify output format
-    default: dlcpar
     inputBinding:
       position: 102
       prefix: --output_format
@@ -141,7 +131,6 @@ inputs:
       - float
     doc: prescreen locus maps if (forward) cost exceeds this factor * min 
       (forward) cost
-    default: 10
     inputBinding:
       position: 102
       prefix: --prescreen_factor
@@ -150,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: prescreen locus maps if min (forward) cost exceeds this value
-    default: 50
     inputBinding:
       position: 102
       prefix: --prescreen_min

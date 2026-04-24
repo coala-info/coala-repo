@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: max base pairs in non-IBS gap
-    default: 1000
     inputBinding:
       position: 101
   - id: min_extend
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: minimum minor allele count filter
-    default: 2
     inputBinding:
       position: 101
   - id: min_markers
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: min markers in seed segment
-    default: 100
     inputBinding:
       position: 101
   - id: min_output
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: min cM length of output segment
-    default: 2.0
     inputBinding:
       position: 101
   - id: min_seed
@@ -66,7 +62,6 @@ inputs:
       - 'null'
       - float
     doc: min cM length of seed segment
-    default: 2.0
     inputBinding:
       position: 101
   - id: nthreads
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: number of computational threads
-    default: all CPU cores
     inputBinding:
       position: 101
   - id: out

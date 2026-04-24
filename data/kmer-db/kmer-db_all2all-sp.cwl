@@ -16,7 +16,6 @@ inputs:
       - int
     doc: "size of cache buffer in megabytes\n                      (use L3 size for
       Intel CPUs and L2 for AMD to maximize performance; default: 8)"
-    default: 8
     inputBinding:
       position: 102
       prefix: -buffer

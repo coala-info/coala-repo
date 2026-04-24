@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: use N doubling steps for GCSA2 construction
-    default: 4
     inputBinding:
       position: 102
       prefix: --doubling-steps
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: index kmers of size N in the graph
-    default: 16
     inputBinding:
       position: 102
       prefix: --kmer-size
@@ -85,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: limit temp disk space usage to N GB
-    default: 2048
     inputBinding:
       position: 102
       prefix: --size-limit
@@ -95,7 +92,6 @@ inputs:
       - int
     doc: don't store distances for snarls > N nodes [50000] if 0 then don't 
       store distances, only the snarl tree
-    default: 50000
     inputBinding:
       position: 102
       prefix: --snarl-limit

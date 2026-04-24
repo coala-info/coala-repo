@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Tree library to use
-    default: graph_tool
     inputBinding:
       position: 101
       prefix: --library

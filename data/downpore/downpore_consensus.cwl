@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of gap extensions allowed in alignments.
-    default: 5
     inputBinding:
       position: 102
       prefix: --max-gap-extend
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of gap openings allowed in alignments.
-    default: 5
     inputBinding:
       position: 102
       prefix: --max-gap-open
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum alignment score threshold for considering sequences.
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --min-score
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for computation.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

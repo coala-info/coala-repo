@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: false positive rate.
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --fal_pos_rate
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: kmer size, number or elements.
-    default: 25
     inputBinding:
       position: 101
       prefix: --kmersize

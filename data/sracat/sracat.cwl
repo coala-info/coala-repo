@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: output file *prefix*
-    default: stdout
     inputBinding:
       position: 102
       prefix: -o
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: zlib-based compression of file-based output; default is no compression
-    default: false
     inputBinding:
       position: 102
       prefix: -z

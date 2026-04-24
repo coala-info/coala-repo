@@ -73,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads to be used by Prokka and hmmscan
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

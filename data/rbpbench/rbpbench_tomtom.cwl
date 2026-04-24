@@ -22,7 +22,6 @@ inputs:
       - int
     doc: Define whether to calculate function enrichment on RBP or single motif 
       level. 1) RBP level 2) single motif level
-    default: 1
     inputBinding:
       position: 101
       prefix: --fe-mode
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: RBP function enrichment p-value threshold
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --fe-pval
@@ -51,7 +49,6 @@ inputs:
       RBP motifs (257 RBPs, 599 motifs, "catrapid_omics_v2.1_human_6plus_ext"), 2:
       human RBP motifs + 23 ucRBP motifs (277 RBPs, 622 motifs, "catrapid_omics_v2.1_human_6plus_ext_ucrbps"),
       3: human RBP motifs from Ray et al. 2013 (80 RBPs, 102 motifs, "ray2013_human_rbps_rnacompete")'
-    default: 1
     inputBinding:
       position: 101
       prefix: --motif-db
@@ -62,7 +59,6 @@ inputs:
     doc: 'If --in is regex/sequence with format e.g. AC[AT]A, define whether to split
       regex into single motifs (ACAA, ACTA), or to make one motif out of it. 1: convert
       to one motif. 2: convert to multiple single motifs'
-    default: 1
     inputBinding:
       position: 101
       prefix: --regex-mode
@@ -98,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum overlap between query and target (TOMTOM option: -min-overlap)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --tomtom-min-overlap
@@ -111,7 +106,6 @@ inputs:
       use frequencies from human ENSEMBL transcripts (including introns, resulting
       in lower G+C and T most prominent) 3: use uniform frequencies (same for every
       nucleotide)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --tomtom-ntf-mode
@@ -120,7 +114,6 @@ inputs:
       - 'null'
       - float
     doc: 'TOMTOM q-value threshold (TOMTOM option: -thresh)'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --tomtom-thresh

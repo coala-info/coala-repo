@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads per barcode to include in the output
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-barcode-reads
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to use for parallelization
-    default: 1
     inputBinding:
       position: 101
       prefix: --processes

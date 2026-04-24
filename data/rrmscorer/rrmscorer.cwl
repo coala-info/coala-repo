@@ -75,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum value for x-axis in plots
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --x_max
@@ -84,7 +83,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum value for x-axis in plots
-    default: -0.9
     inputBinding:
       position: 101
       prefix: --x_min

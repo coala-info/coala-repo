@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Use cooler balancing weight with this name.
-    default: weight
     inputBinding:
       position: 103
       prefix: --clr-weight-name
@@ -33,7 +32,6 @@ inputs:
       - int
     doc: Radius for clustering dots that have been called too close to each 
       other.Typically on order of 40 kilo-bases, and >= binsize.
-    default: 39000
     inputBinding:
       position: 103
       prefix: --clustering-radius
@@ -43,7 +41,6 @@ inputs:
       - float
     doc: False discovery rate (FDR) to control in the multiple hypothesis 
       testing BH-FDR procedure.
-    default: 0.02
     inputBinding:
       position: 103
       prefix: --fdr
@@ -54,7 +51,6 @@ inputs:
     doc: Limit loci separation for dot-calling, i.e., do not call dots for loci 
       that are further than max_loci_separation basepair apart. 2-20MB is 
       reasonable and would capture most of CTCF-dots.
-    default: 2000000
     inputBinding:
       position: 103
       prefix: --max-loci-separation
@@ -67,7 +63,6 @@ inputs:
       to pixels scored in the padding area of the tiles to "penetrate" to the 
       list of scored pixels for the statistical testing. [max-nans-tolerated <= 
       2*w ]
-    default: 1
     inputBinding:
       position: 103
       prefix: --max-nans-tolerated
@@ -77,7 +72,6 @@ inputs:
       - int
     doc: 'Number of processes to split the work between. [default: 1, i.e. no process
       pool]'
-    default: 1
     inputBinding:
       position: 103
       prefix: --nproc
@@ -87,7 +81,6 @@ inputs:
       - int
     doc: Number of log-spaced bins to divide your adjusted expected between. 
       Same as HiCCUPS_W1_MAX_INDX (40) in the original HiCCUPS.
-    default: 45
     inputBinding:
       position: 103
       prefix: --num-lambda-bins
@@ -108,7 +101,6 @@ inputs:
       - int
     doc: Tile size for the Hi-C heatmap tiling. Typically on order of several 
       mega-bases, and <= max_loci_separation.
-    default: 6000000
     inputBinding:
       position: 103
       prefix: --tile-size

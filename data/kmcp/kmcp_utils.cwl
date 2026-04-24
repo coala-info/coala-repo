@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs cores to use.
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads

@@ -28,7 +28,6 @@ inputs:
       marker * marker_ab_table: normalized marker counts (only when > 0.0 and normalized
       by metagenome size if --nreads is specified) * marker_pres_table: list of markers
       present in the sample (threshold at 1.0 if not differently specified with --pres_th'
-    default: rel_ab
     inputBinding:
       position: 102
       prefix: --analysis_type
@@ -56,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: Delimiter for metadata in the biom output format [default '|']
-    default: '|'
     inputBinding:
       position: 102
       prefix: --biom_mdelim
@@ -86,7 +84,6 @@ inputs:
     doc: 'Presets options for BowTie2 (applied only when a FASTA file is provided)
       The choices enabled in MetaPhlAn are: * sensitive * very-sensitive * sensitive-local
       * very-sensitive-local'
-    default: very-sensitive
     inputBinding:
       position: 102
       prefix: --bt2_ps
@@ -105,7 +102,6 @@ inputs:
     doc: Folder containing the MetaPhlAn database. You can specify the location 
       by exporting the DEFAULT_DB_FOLDER variable in the shell (old --bowtie2db 
       option).
-    default: 
       /usr/local/lib/python3.13/site-packages/metaphlan/metaphlan_databases
     inputBinding:
       position: 102
@@ -193,7 +189,6 @@ inputs:
       try to use it, if available, and skip the online check. If the database 
       files are not found on the local MetaPhlAn installation they will be 
       automatically downloaded
-    default: latest
     inputBinding:
       position: 102
       prefix: --index
@@ -244,7 +239,6 @@ inputs:
       - float
     doc: Specify the max gap-compressed sequence divergence (minimap2) allowed 
       between marker and read, default value is 0.10
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --max_gcsd
@@ -262,7 +256,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality value (MAPQ)
-    default: 5 for short reads, 50 for long reads
     inputBinding:
       position: 102
       prefix: --min_mapq_val
@@ -283,7 +276,6 @@ inputs:
     doc: "Presets options for Minimap2 (applied only when a FASTA/Q file is provided)
       Please refer to the minimap2 documentation and provide the options in a string
       such as: '-x asm20 -B 3 -O 3,12'"
-    default: "'-x asm20 -B 3 -O 3,12'"
     inputBinding:
       position: 102
       prefix: --minimap2_ps
@@ -310,7 +302,6 @@ inputs:
       - 'null'
       - int
     doc: The number of CPUs to use for parallelizing the mapping [default 4]
-    default: 4
     inputBinding:
       position: 102
       prefix: --nproc
@@ -337,7 +328,6 @@ inputs:
       - float
     doc: Percentage of markers with a non zero relative abundance for 
       misidentify a species
-    default: 0.33
     inputBinding:
       position: 102
       prefix: --perc_nonzero
@@ -364,7 +354,6 @@ inputs:
       - int
     doc: Specify the minimum length of the reads to be considered when parsing 
       the input file with 'read_fastx.py' script, default value is 70
-    default: 70
     inputBinding:
       position: 102
       prefix: --read_min_len
@@ -384,7 +373,6 @@ inputs:
       - string
     doc: Specify the sample ID for this analysis. Defaults to 
       'Metaphlan_Analysis'.
-    default: Metaphlan_Analysis
     inputBinding:
       position: 102
       prefix: --sample_id
@@ -393,7 +381,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the sample ID key for this analysis. Defaults to 'SampleID'.
-    default: SampleID
     inputBinding:
       position: 102
       prefix: --sample_id_key
@@ -411,7 +398,6 @@ inputs:
       - int
     doc: Specify length of the reads to be split into when using --split_reads, 
       default value is 150
-    default: 150
     inputBinding:
       position: 102
       prefix: --split_readlen
@@ -434,7 +420,6 @@ inputs:
       marker counts (at --stat_q) 'wavg_g' : winsorized clade global average (at --stat_q)
       'wavg_l' : winsorized average of length-normalized marker counts (at --stat_q)
       'med' : median of length-normalized marker counts"
-    default: tavg_g
     inputBinding:
       position: 102
       prefix: --stat
@@ -443,7 +428,6 @@ inputs:
       - 'null'
       - float
     doc: Quantile value for the robust average
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --stat_q
@@ -481,7 +465,6 @@ inputs:
     doc: "The taxonomic level for the relative abundance output: 'a' : all taxonomic
       levels 'k' : kingdoms 'p' : phyla only 'c' : classes only 'o' : orders only
       'f' : families only 'g' : genera only 's' : species only 't' : SGBs only"
-    default: a
     inputBinding:
       position: 102
       prefix: --tax_lev
@@ -516,7 +499,6 @@ inputs:
       - float
     doc: Minimum Breadth of Coverage for a Viral Group to be reported. Default 
       is 0.75 (at least 75 percent breadth to report), 0.5 for long reads
-    default: 0.75 for short reads, 0.5 for long reads
     inputBinding:
       position: 102
       prefix: --vsc_breadth

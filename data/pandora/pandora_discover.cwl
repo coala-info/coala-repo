@@ -47,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Positions with coverage less than this will be tagged for variant discovery
-    default: 3
     inputBinding:
       position: 103
       prefix: --covg-threshold
@@ -56,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size to use when discovering novel variants
-    default: 15
     inputBinding:
       position: 103
       prefix: --discover-k
@@ -65,7 +63,6 @@ inputs:
       - 'null'
       - float
     doc: Estimated error rate for reads
-    default: 0.11
     inputBinding:
       position: 103
       prefix: --error-rate
@@ -75,7 +72,6 @@ inputs:
       - string
     doc: Estimated length of the genome - used for coverage estimation. Can pass string
       such as 4.4m, 100k etc.
-    default: '5000000'
     inputBinding:
       position: 103
       prefix: --genome-size
@@ -93,7 +89,6 @@ inputs:
       - int
     doc: Maximum number of kmers to average over when selecting the maximum likelihood
       path
-    default: 100
     inputBinding:
       position: 103
       prefix: --kmer-avg
@@ -102,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size for (w,k)-minimizers
-    default: 15
     inputBinding:
       position: 103
       prefix: -k
@@ -119,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of candidate variants allowed for a candidate region
-    default: 25
     inputBinding:
       position: 103
       prefix: -N
@@ -128,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum coverage of reads to accept
-    default: 600
     inputBinding:
       position: 103
       prefix: --max-covg
@@ -137,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance (bp) between consecutive hits within a cluster
-    default: 250
     inputBinding:
       position: 103
       prefix: --max-diff
@@ -147,7 +138,6 @@ inputs:
       - int
     doc: 'Max. insertion size for novel variants. Warning: setting too long may impair
       performance'
-    default: 15
     inputBinding:
       position: 103
       prefix: --max-ins
@@ -157,7 +147,6 @@ inputs:
       - int
     doc: Max. length of consecutive positions below coverage threshold to trigger
       variant discovery
-    default: 30
     inputBinding:
       position: 103
       prefix: -L
@@ -166,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: Merge candidate variant intervals within distance
-    default: 15
     inputBinding:
       position: 103
       prefix: --merge
@@ -176,7 +164,6 @@ inputs:
       - int
     doc: Minimum size of a cluster of hits between a read and a loci to consider the
       loci present
-    default: 10
     inputBinding:
       position: 103
       prefix: --min-cluster-size
@@ -185,7 +172,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum node/kmer depth in the de Bruijn graph used for discovering variants
-    default: 2
     inputBinding:
       position: 103
       prefix: --min-dbg-dp
@@ -195,7 +181,6 @@ inputs:
       - int
     doc: Min. length of consecutive positions below coverage threshold to trigger
       variant discovery
-    default: 1
     inputBinding:
       position: 103
       prefix: -l
@@ -213,7 +198,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of threads to use
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads
@@ -231,7 +215,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for (w,k)-minimizers (must be <=k)
-    default: 14
     inputBinding:
       position: 103
       prefix: -w

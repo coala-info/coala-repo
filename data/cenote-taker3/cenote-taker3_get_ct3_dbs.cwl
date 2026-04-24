@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Default: False -- choose: True -or- False'
-    default: false
     inputBinding:
       position: 101
       prefix: --domain_list
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Default: False -- choose: True -or- False'
-    default: false
     inputBinding:
       position: 101
       prefix: --hallmark_tax
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Default: False -- choose: True -or- False'
-    default: false
     inputBinding:
       position: 101
       prefix: --hhCDD
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Default: False -- choose: True -or- False'
-    default: false
     inputBinding:
       position: 101
       prefix: --hhPDB
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Default: False -- choose: True -or- False'
-    default: false
     inputBinding:
       position: 101
       prefix: --hhPFAM
@@ -56,7 +51,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Default: False -- choose: True -or- False'
-    default: false
     inputBinding:
       position: 101
       prefix: --hmm
@@ -65,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Default: False -- choose: True -or- False'
-    default: false
     inputBinding:
       position: 101
       prefix: --mmseqs_cdd
@@ -80,7 +73,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Default: False -- choose: True -or- False'
-    default: false
     inputBinding:
       position: 101
       prefix: --refseq_tax

@@ -13,7 +13,6 @@ inputs:
       - boolean
     doc: Whether or not to save extended fragment pileup and local lambda tracks
       into bedGraph files.
-    default: false
     inputBinding:
       position: 101
       prefix: --bdg
@@ -23,7 +22,6 @@ inputs:
       - boolean
     doc: If set, MACS will try to call broad peaks using the --broad-cutoff 
       setting.
-    default: false
     inputBinding:
       position: 101
       prefix: --broad
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: Cutoff for broad region. Only available if --broad is set.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --broad-cutoff
@@ -42,7 +39,6 @@ inputs:
       - int
     doc: Buffer size for incrementally increasing internal array size to store 
       reads alignment information.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --buffer-size
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Band width for picking regions to compute fragment size.
-    default: 300
     inputBinding:
       position: 101
       prefix: --bw
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - boolean
     doc: If set, MACS will find subpeak summits in each enriched peak region.
-    default: false
     inputBinding:
       position: 101
       prefix: --call-summits
@@ -80,7 +74,6 @@ inputs:
       - boolean
     doc: While set, MACS2 will analyze number or total length of peaks called by
       different p-value cutoffs.
-    default: false
     inputBinding:
       position: 101
       prefix: --cutoff-analysis
@@ -89,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum fragment size in basepair.
-    default: 20
     inputBinding:
       position: 101
       prefix: --d-min
@@ -98,7 +90,6 @@ inputs:
       - 'null'
       - boolean
     doc: When set, random sampling method will scale down the bigger sample.
-    default: false
     inputBinding:
       position: 101
       prefix: --down-sample
@@ -107,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: The arbitrary extension size in bp. Used when NOMODEL is true.
-    default: 200
     inputBinding:
       position: 101
       prefix: --extsize
@@ -117,7 +107,6 @@ inputs:
       - float
     doc: When set, the value will be used to filter out peaks with low 
       fold-enrichment.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --fe-cutoff
@@ -126,7 +115,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether turn on the auto pair model process.
-    default: false
     inputBinding:
       position: 101
       prefix: --fix-bimodal
@@ -136,7 +124,6 @@ inputs:
       - string
     doc: Format of tag file (AUTO, BAM, SAM, BED, ELAND, ELANDMULTI, 
       ELANDEXPORT, BOWTIE, BAMPE, or BEDPE).
-    default: AUTO
     inputBinding:
       position: 101
       prefix: --format
@@ -146,7 +133,6 @@ inputs:
       - string
     doc: Effective genome size. Can be a number or shortcuts like 'hs', 'mm', 
       'ce', 'dm'.
-    default: hs
     inputBinding:
       position: 101
       prefix: --gsize
@@ -156,7 +142,6 @@ inputs:
       - string
     doc: Controls the behavior towards duplicate tags at the exact same 
       location.
-    default: '1'
     inputBinding:
       position: 101
       prefix: --keep-dup
@@ -165,7 +150,6 @@ inputs:
       - 'null'
       - int
     doc: The large nearby region in basepairs to calculate dynamic lambda.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --llocal
@@ -184,7 +168,6 @@ inputs:
         items: int
     doc: Select the regions within MFOLD range of high-confidence enrichment 
       ratio to build model.
-    default:
       - 5
       - 50
     inputBinding:
@@ -203,7 +186,6 @@ inputs:
       - 'null'
       - string
     doc: Experiment name, which will be used to generate output file names.
-    default: NA
     inputBinding:
       position: 101
       prefix: --name
@@ -221,7 +203,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether or not to build the shifting model.
-    default: false
     inputBinding:
       position: 101
       prefix: --nomodel
@@ -239,7 +220,6 @@ inputs:
       - float
     doc: Minimum FDR (q-value) cutoff for peak detection. Mutually exclusive 
       with -p.
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --qvalue
@@ -249,7 +229,6 @@ inputs:
       - string
     doc: When set to 'small', scale the larger sample down. When set to 'large',
       scale the smaller sample up.
-    default: small
     inputBinding:
       position: 101
       prefix: --scale-to
@@ -266,7 +245,6 @@ inputs:
       - 'null'
       - int
     doc: The arbitrary shift in bp. Used when NOMODEL is set.
-    default: 0
     inputBinding:
       position: 101
       prefix: --shift
@@ -275,7 +253,6 @@ inputs:
       - 'null'
       - int
     doc: The small nearby region in basepairs to calculate dynamic lambda.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --slocal
@@ -285,7 +262,6 @@ inputs:
       - boolean
     doc: If True, MACS will save signal per million reads for fragment pileup 
       profiles. Requires -B to be set.
-    default: false
     inputBinding:
       position: 101
       prefix: --SPMR
@@ -294,7 +270,6 @@ inputs:
       - 'null'
       - Directory
     doc: Optional directory to store temp files.
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tempdir

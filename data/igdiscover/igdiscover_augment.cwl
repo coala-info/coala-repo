@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Sequence type.
-    default: Ig
     inputBinding:
       position: 103
       prefix: --sequence-type

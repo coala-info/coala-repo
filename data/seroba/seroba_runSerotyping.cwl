@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: threshold for k-mer coverage of the reference sequence
-    default: 20
     inputBinding:
       position: 104
       prefix: --coverage
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - Directory
     doc: path to database directory
-    default: /usr/local/share/seroba-1.0.2/database
     inputBinding:
       position: 104
       prefix: --databases

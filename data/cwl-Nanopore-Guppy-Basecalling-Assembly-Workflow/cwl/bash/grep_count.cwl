@@ -15,13 +15,11 @@ stdout: "count.txt"
 inputs:
   binary:
     type: string
-    default: "grep"
     inputBinding:
       position: 2
       shellQuote: False
   count:
     type: string
-    default: "-c"
     inputBinding:
       position: 3
       shellQuote: False
@@ -36,13 +34,11 @@ inputs:
       position: 5
   pipe:
     type: string
-    default: "||"
     inputBinding:
       shellQuote: False 
       position: 6
   status:
     type: string
-    default: "true"
     inputBinding:
       shellQuote: False 
       position: 7

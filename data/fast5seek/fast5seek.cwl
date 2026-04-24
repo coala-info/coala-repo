@@ -20,7 +20,6 @@ inputs:
       - int
     doc: Level of logging. 0 is none, 5 is for debugging. Default is 4 which 
       will report info, warnings, errors, and critical information.
-    default: 4
     inputBinding:
       position: 101
       prefix: --log_level

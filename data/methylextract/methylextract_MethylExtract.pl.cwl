@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: methylation output in BED format
-    default: N
     inputBinding:
       position: 101
       prefix: bedOut=
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: number of chromosome divisions to sort reads
-    default: 400
     inputBinding:
       position: 101
       prefix: chromDiv=
@@ -31,7 +29,6 @@ inputs:
       - string
     doc: skip alignment chromosome splitting, files must be chromosome splitted 
       and named by chromosome
-    default: N
     inputBinding:
       position: 101
       prefix: chromSplitted=
@@ -40,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: 'methylation context to extract: CG, CHG, CHH or ALL'
-    default: CG
     inputBinding:
       position: 101
       prefix: context=
@@ -49,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: 'delete duplicated reads: Y or N'
-    default: N
     inputBinding:
       position: 101
       prefix: delDup=
@@ -58,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: number of first bases ignored (5' end)
-    default: 0
     inputBinding:
       position: 101
       prefix: FirstIgnor=
@@ -89,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: number of last bases ignored (3' end)
-    default: 0
     inputBinding:
       position: 101
       prefix: LastIgnor=
@@ -98,7 +91,6 @@ inputs:
       - 'null'
       - float
     doc: Variation p-value threshold
-    default: 0.05
     inputBinding:
       position: 101
       prefix: maxPval=
@@ -107,7 +99,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum strand bias (0 deactivates the threshold)
-    default: 0.7
     inputBinding:
       position: 101
       prefix: maxStrandBias=
@@ -116,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: number of lines kept on memory for each thread
-    default: 200000
     inputBinding:
       position: 101
       prefix: memNumReads=
@@ -126,7 +116,6 @@ inputs:
       - float
     doc: nonCpG contexts methylated to discard read (0 deactivates bisulfite 
       read check)
-    default: 0.9
     inputBinding:
       position: 101
       prefix: methNonCpGs=
@@ -136,7 +125,6 @@ inputs:
       - int
     doc: minimum number of reads requiered to consider a methylation value in a 
       certain position
-    default: 1
     inputBinding:
       position: 101
       prefix: minDepthMeth=
@@ -146,7 +134,6 @@ inputs:
       - int
     doc: minimum number of reads requiered to consider a SNV value in a certain 
       position
-    default: 1
     inputBinding:
       position: 101
       prefix: minDepthSNV=
@@ -155,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: minimun PHRED quality per sequenced nucleotide
-    default: 20
     inputBinding:
       position: 101
       prefix: minQ=
@@ -165,7 +151,6 @@ inputs:
       - string
     doc: 'discard second mate overlapping segment on pair-end alignment reads: Y or
       N'
-    default: N
     inputBinding:
       position: 101
       prefix: peOverlap=
@@ -175,7 +160,6 @@ inputs:
       - string
     doc: 'fastq quality score: phred33-quals, phred64-quals, solexa-quals, solexa1.3-quals
       or NA'
-    default: phred33-quals
     inputBinding:
       position: 101
       prefix: qscore=
@@ -190,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: number of similar nucleotides to detect a duplicated read
-    default: 32
     inputBinding:
       position: 101
       prefix: simDupPb=
@@ -199,7 +182,6 @@ inputs:
       - 'null'
       - int
     doc: threads number
-    default: 4
     inputBinding:
       position: 101
       prefix: p=
@@ -208,7 +190,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele frequency
-    default: 0.1
     inputBinding:
       position: 101
       prefix: varFraction=
@@ -217,7 +198,6 @@ inputs:
       - 'null'
       - string
     doc: methylation output in WIG format
-    default: N
     inputBinding:
       position: 101
       prefix: wigOut=

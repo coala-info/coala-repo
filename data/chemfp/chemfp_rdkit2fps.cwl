@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: How to report errors (ignore, report, strict)
-    default: ignore
     inputBinding:
       position: 102
       prefix: --errors

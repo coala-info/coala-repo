@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Annotate variant if sequence similarity > P%.
-    default: 60
     inputBinding:
       position: 103
       prefix: --annotation-min-perc-sim
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore BND calls supported by < N reads total across samples
-    default: 2
     inputBinding:
       position: 103
       prefix: --call-min-bnd-reads-all-samples
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore calls supported by < P% of reads in every sample.
-    default: 20
     inputBinding:
       position: 103
       prefix: --call-min-read-perc-one-sample
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore calls supported by < N reads total across samples.
-    default: 3
     inputBinding:
       position: 103
       prefix: --call-min-reads-all-samples
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore calls supported by < N reads in every sample.
-    default: 3
     inputBinding:
       position: 103
       prefix: --call-min-reads-one-sample
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore calls supported by < N reads per strand total across samples
-    default: 1
     inputBinding:
       position: 103
       prefix: --call-min-reads-per-strand-all-samples
@@ -93,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Do not cluster signatures with difference in length > P%.
-    default: 25
     inputBinding:
       position: 103
       prefix: --cluster-max-length-perc-diff
@@ -102,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: Do not cluster signatures > N bp apart in reference.
-    default: '200'
     inputBinding:
       position: 103
       prefix: --cluster-max-ref-pos-diff
@@ -111,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Do not cluster signatures with basepair identity < P%.
-    default: 10
     inputBinding:
       position: 103
       prefix: --cluster-min-basepair-perc-id
@@ -120,7 +111,6 @@ inputs:
       - 'null'
       - string
     doc: Flag variants < N bp from a contig end as "NearContigEnd".
-    default: 1K
     inputBinding:
       position: 103
       prefix: --filter-near-contig-end
@@ -129,7 +119,6 @@ inputs:
       - 'null'
       - string
     doc: Flag variants < N bp from a gap as "NearReferenceGap".
-    default: 1K
     inputBinding:
       position: 103
       prefix: --filter-near-reference-gap
@@ -138,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum supporting reads to assign a sample a non-reference genotype.
-    default: 1
     inputBinding:
       position: 103
       prefix: --gt-min-reads
@@ -163,7 +151,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL).'
-    default: WARN
     inputBinding:
       position: 103
       prefix: --log-level
@@ -172,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: Limit to N reads for variant consensus.
-    default: 20
     inputBinding:
       position: 103
       prefix: --max-consensus-coverage
@@ -181,7 +167,6 @@ inputs:
       - 'null'
       - string
     doc: Ignore duplications with length > N bp.
-    default: 1M
     inputBinding:
       position: 103
       prefix: --max-dup-length
@@ -190,7 +175,6 @@ inputs:
       - 'null'
       - string
     doc: Ignore insertions with length > N bp.
-    default: 15K
     inputBinding:
       position: 103
       prefix: --max-ins-length
@@ -199,7 +183,6 @@ inputs:
       - 'null'
       - string
     doc: Consider >= N consecutive "N" bp as a reference gap.
-    default: '50'
     inputBinding:
       position: 103
       prefix: --min-N-in-gap
@@ -208,7 +191,6 @@ inputs:
       - 'null'
       - string
     doc: Consider segments with > N length for re-alignment.
-    default: '100'
     inputBinding:
       position: 103
       prefix: --min-realign-length
@@ -217,7 +199,6 @@ inputs:
       - 'null'
       - string
     doc: Ignore variants with length < N bp.
-    default: '20'
     inputBinding:
       position: 103
       prefix: --min-sv-length
@@ -226,7 +207,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use, 0 means autodetection.
-    default: 0
     inputBinding:
       position: 103
       prefix: --num-threads
@@ -235,7 +215,6 @@ inputs:
       - 'null'
       - string
     doc: Score POA alignment with triplet match,mismatch,gap.
-    default: 1,-2,-2
     inputBinding:
       position: 103
       prefix: --poa-scores
@@ -260,7 +239,6 @@ inputs:
       - 'null'
       - string
     doc: 'Call these SV types: "DEL", "INS", "INV", "DUP", "BND".'
-    default: DEL,INS,INV,DUP,BND
     inputBinding:
       position: 103
       prefix: --types

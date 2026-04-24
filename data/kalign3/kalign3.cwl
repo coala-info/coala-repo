@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Output format (e.g., fasta, clustal, msf, phylip).
-    default: fasta
     inputBinding:
       position: 101
       prefix: --format

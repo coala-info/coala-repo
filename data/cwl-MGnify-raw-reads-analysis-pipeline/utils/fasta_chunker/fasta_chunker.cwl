@@ -8,7 +8,6 @@ baseCommand:
 inputs:
   - id: chunk_size
     type: int?
-    default: 10
   - id: seqs
     type: File
     format: 'edam:format_1929'

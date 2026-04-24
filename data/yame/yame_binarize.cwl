@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: Beta threshold
-    default: 0.5
     inputBinding:
       position: 102
       prefix: -t
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: M-count threshold (if >0 overrides -t)
-    default: 0
     inputBinding:
       position: 102
       prefix: -m
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage (M+U) to include a site in universe
-    default: 1
     inputBinding:
       position: 102
       prefix: -c

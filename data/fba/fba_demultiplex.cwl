@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: specify initial clustering method for demultiplexing method 1.
-    default: kmedoids
     inputBinding:
       position: 101
       prefix: --clustering_method
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: "specify demultiplexing method. '1': Stoeckius et al. 2018."
-    default: '1'
     inputBinding:
       position: 101
       prefix: -dm
@@ -35,7 +33,6 @@ inputs:
       - string
     doc: "specify normalization method. 'clr': centred log-ratio transformation. 'log':
       log10 transformation."
-    default: clr
     inputBinding:
       position: 101
       prefix: -nm
@@ -45,7 +42,6 @@ inputs:
       - int
     doc: specify minimal number of positive cells required for a feature to be 
       included for demultiplexing.
-    default: 200
     inputBinding:
       position: 101
       prefix: --num_cells
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - Directory
     doc: specify a output directory.
-    default: ./demultiplexed
     inputBinding:
       position: 101
       prefix: --output_directory
@@ -64,7 +59,6 @@ inputs:
       - float
     doc: specify quantile cutoff for the probability mass function for 
       demultiplexing method 1.
-    default: 0.9999
     inputBinding:
       position: 101
       prefix: --quantile
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: specify embedding method for visualization (works if '-v' is given).
-    default: tsne
     inputBinding:
       position: 101
       prefix: --visualization_method

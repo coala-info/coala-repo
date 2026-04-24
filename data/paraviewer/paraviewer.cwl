@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite output directory if it already exists
-    default: false
     inputBinding:
       position: 101
       prefix: --clobber
@@ -63,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of reads to show per haplotype.
-    default: 500
     inputBinding:
       position: 101
       prefix: --max-reads-per-haplotype
@@ -97,7 +95,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print verbose output for debugging purposes
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

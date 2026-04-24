@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use a end to end alignment algorithm for mapping.
-    default: false
     inputBinding:
       position: 102
       prefix: --endtoend
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of As at the 3' end of a read.
-    default: 4
     inputBinding:
       position: 102
       prefix: --max-polya
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run plain Quantseq alignment without SLAM-seq scoring
-    default: false
     inputBinding:
       position: 102
       prefix: --quantseq
@@ -51,7 +48,6 @@ inputs:
       - int
     doc: Run analysis only for sample <i>. Use for distributing slamdunk 
       analysis on a cluster (index is 1-based).
-    default: -1
     inputBinding:
       position: 102
       prefix: --sample-index
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: Use this sample name for all supplied samples
-    default: None
     inputBinding:
       position: 102
       prefix: --sampleName
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Use this sample time for all supplied samples
-    default: 0
     inputBinding:
       position: 102
       prefix: --sampleTime
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: Use this sample type for all supplied samples
-    default: pulse
     inputBinding:
       position: 102
       prefix: --sampleType
@@ -87,7 +80,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output BAM while mapping. Slower but, uses less hard disk.
-    default: false
     inputBinding:
       position: 102
       prefix: --skip-sam
@@ -96,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Thread number
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -105,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Max. number of alignments to report per read
-    default: 1
     inputBinding:
       position: 102
       prefix: --topn
@@ -114,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bp removed from 5' end of all reads.
-    default: 12
     inputBinding:
       position: 102
       prefix: --trim-5p

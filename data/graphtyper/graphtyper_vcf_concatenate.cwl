@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for concatenation.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

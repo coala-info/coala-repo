@@ -6,7 +6,6 @@ $namespaces:
 inputs:
   sleep_time:
     type: int
-    default: 3
     inputBinding: {}
 outputs: []
 requirements:

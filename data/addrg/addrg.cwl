@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: Sample name (defaults to the value of rg-name)
-    default: rg-name
     inputBinding:
       position: 3
   - id: platform
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Sequencing platform
-    default: ILLUMINA
     inputBinding:
       position: 4
 outputs:

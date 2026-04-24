@@ -21,7 +21,6 @@ inputs:
       - string
     doc: CDS/protein attribute in the genome GFF3 file that corresponds to the 
       protein identifier (column 1) of the protein GFF3 file.
-    default: ID
     inputBinding:
       position: 103
       prefix: --attr

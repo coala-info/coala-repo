@@ -10,7 +10,6 @@ inputs:
       - float
     doc: Automatically crop sequences longer than this factor times the average 
       length during training.
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --auto_crop_scale
@@ -99,7 +98,6 @@ inputs:
       fragmentary sequences. A global alignment counts flanks as deletions, 
       while a local alignment counts them as jumps into the profile using only a
       single edge.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --global_factor
@@ -130,7 +128,6 @@ inputs:
       - 'null'
       - string
     doc: 'Name of the language model to use. (default: protT5)'
-    default: protT5
     inputBinding:
       position: 101
       prefix: --language_model
@@ -139,7 +136,6 @@ inputs:
       - 'null'
       - float
     doc: Learning rate for gradient descent.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --learning_rate
@@ -202,7 +198,6 @@ inputs:
     doc: When inferring HMM parameters from an MSA, a column is considered a 
       match state if its occupancy (fraction of non-gap characters) is at least 
       this value.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --match_threshold
@@ -212,7 +207,6 @@ inputs:
       - int
     doc: Maximum number of training iterations. If greater than 2, modelsurgery 
       will be applied.
-    default: 2
     inputBinding:
       position: 101
       prefix: --max_iterations
@@ -229,7 +223,6 @@ inputs:
       - 'null'
       - string
     doc: Criterion for model selection.
-    default: AIC
     inputBinding:
       position: 101
       prefix: --model_criterion
@@ -255,7 +248,6 @@ inputs:
       - 'null'
       - int
     doc: Number of models to train.
-    default: 4
     inputBinding:
       position: 101
       prefix: --num_model
@@ -292,7 +284,6 @@ inputs:
       - float
     doc: When initializing from an MSA, the initial parameters are slightly 
       perturbed by random noise. This parameter controls the scale of the noise.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --random_scale
@@ -333,7 +324,6 @@ inputs:
       - 'null'
       - float
     doc: Discard match states expected less often than this fraction.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --surgery_del
@@ -342,7 +332,6 @@ inputs:
       - 'null'
       - float
     doc: Expand insertions expected more often than this fraction.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --surgery_ins
@@ -376,7 +365,6 @@ inputs:
       - boolean
     doc: 'Uses a large protein lanague model to generate per-token embeddings that
       guide the MSA step. (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --use_language_model
@@ -385,7 +373,6 @@ inputs:
       - 'null'
       - Directory
     doc: Working directory.
-    default: tmp
     inputBinding:
       position: 101
       prefix: --work_dir

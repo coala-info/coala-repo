@@ -28,7 +28,6 @@ inputs:
       - int
     doc: Density threshold before marking contig as repetive (CLUSTER_MAX_LINK_DENSITY
       in LACHESIS)
-    default: 2
     inputBinding:
       position: 104
       prefix: --maxLinkDensity
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of links for contig pair
-    default: 3
     inputBinding:
       position: 104
       prefix: --minLinks
@@ -47,7 +45,6 @@ inputs:
       - int
     doc: Minimum number of RE sites in a contig to be clustered (CLUSTER_MIN_RE_SITES
       in LACHESIS)
-    default: 10
     inputBinding:
       position: 104
       prefix: --minREs
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: Mutation prob in GA
-    default: 0.2
     inputBinding:
       position: 104
       prefix: --mutapb
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Number of generations for convergence
-    default: 5000
     inputBinding:
       position: 104
       prefix: --ngen
@@ -75,7 +70,6 @@ inputs:
       - int
     doc: cutoff for recovering skipped contigs back into the clusters (CLUSTER_NON-INFORMATIVE_RATIO
       in LACHESIS)
-    default: 3
     inputBinding:
       position: 104
       prefix: --nonInformativeRatio
@@ -84,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Population size
-    default: 100
     inputBinding:
       position: 104
       prefix: --npop
@@ -94,7 +87,6 @@ inputs:
       - string
     doc: Restriction site pattern, use comma to separate multiple patterns (N is considered
       as [ACGT]), e.g. 'GATCGATC,GANTGATC,GANTANTC,GATCANTC'
-    default: GATC
     inputBinding:
       position: 104
       prefix: --RE
@@ -111,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Random seed
-    default: 42
     inputBinding:
       position: 104
       prefix: --seed

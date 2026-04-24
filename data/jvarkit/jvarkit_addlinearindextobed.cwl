@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: What kind of help. One of [usage,markdown,xml].
-    default: usage
     inputBinding:
       position: 102
       prefix: --helpFormat

@@ -44,7 +44,6 @@ inputs:
     type: string
   delta:
     type: int?
-    default: 4
   aoi:
     type: File
     format: "iana:application/geo+json"

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Output file stem (default "output%").
-    default: output%
     inputBinding:
       position: 102
       prefix: -o

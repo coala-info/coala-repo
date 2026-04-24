@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: array of cut points (comma separator) for edges constrains
-    default: 0,10000
     inputBinding:
       position: 101
       prefix: -e
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable print output to file
-    default: false
     inputBinding:
       position: 101
       prefix: -print
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of bases to take an alignment
-    default: 70
     inputBinding:
       position: 101
       prefix: -b
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of reads to report a bin
-    default: 1000
     inputBinding:
       position: 101
       prefix: -sizeBin
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: name for the output-file if print option was selected
-    default: output
     inputBinding:
       position: 101
       prefix: -output
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: -nt

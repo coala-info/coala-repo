@@ -11,7 +11,6 @@ inputs:
       - boolean
     doc: Add additional information columns (gene ID, TSL, length) to output 
       file
-    default: false
     inputBinding:
       position: 101
       prefix: --add-infos
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Accept only transcripts with length >= --min-len
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --min-len
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: Accept only transcripts with transcript support level (TSL) 1-5
-    default: false
     inputBinding:
       position: 101
       prefix: --strict

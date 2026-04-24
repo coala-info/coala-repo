@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Length of K-mers to consider
-    default: 31
     inputBinding:
       position: 102
       prefix: --kmer-length
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum count for a K-mer to be considered
-    default: 2
     inputBinding:
       position: 102
       prefix: --min-count
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

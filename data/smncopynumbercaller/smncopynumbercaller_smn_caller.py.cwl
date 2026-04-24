@@ -50,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use. Default is 1
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

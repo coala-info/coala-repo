@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: Line join token
-    default: \
     inputBinding:
       position: 103
       prefix: -j
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - Directory
     doc: Search path for templates
-    default: .
     inputBinding:
       position: 103
       prefix: -s
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Token start
-    default: '@'
     inputBinding:
       position: 103
       prefix: -t

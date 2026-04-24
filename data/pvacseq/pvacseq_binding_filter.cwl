@@ -18,7 +18,6 @@ inputs:
       - int
     doc: Report only epitopes where the mutant allele has ic50 binding scores 
       below this value.
-    default: 500
     inputBinding:
       position: 102
       prefix: --binding-threshold
@@ -29,7 +28,6 @@ inputs:
     doc: Minimum fold change between mutant binding score and wild-type score. 
       The default is 0, which filters no results, but 1 is often a sensible 
       option (requiring that binding is better to the MT than WT).
-    default: 0
     inputBinding:
       position: 102
       prefix: --minimum-fold-change
@@ -40,7 +38,6 @@ inputs:
     doc: 'The ic50 scoring metric to use when filtering epitopes by binding-threshold
       or minimum fold change. lowest: Best MT Score/Corresponding Fold Change; median:
       Median MT Score/Median Fold Change.'
-    default: median
     inputBinding:
       position: 102
       prefix: --top-score-metric

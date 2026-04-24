@@ -17,7 +17,6 @@ inputs:
       - int
     doc: Process alignments in parallel using --cores for alignment. This is the
       number of PHYSICAL CPUs.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: The input alignment format.
-    default: nexus
     inputBinding:
       position: 101
       prefix: --input-format
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - Directory
     doc: The path to a directory to hold logs.
-    default: None
     inputBinding:
       position: 101
       prefix: --log-path
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: The percent of taxa to require
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --percent
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: The logging level to use.
-    default: INFO
     inputBinding:
       position: 101
       prefix: --verbosity

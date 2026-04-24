@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: ANI threshold for sylph query result filter.
-    default: 99.0
     inputBinding:
       position: 101
       prefix: --ani
@@ -36,7 +35,6 @@ inputs:
       - float
     doc: Coverage depth difference between the strain and its species, with only
       one strain.
-    default: 0.2
     inputBinding:
       position: 101
       prefix: -sd
@@ -122,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: Gurobi threads.
-    default: 1
     inputBinding:
       position: 101
       prefix: -gt
@@ -156,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: Graph nodes with sequence coverage depth more than <min_depth>.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_depth
@@ -165,7 +161,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage depth required per strain.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_cov
@@ -174,7 +169,6 @@ inputs:
       - 'null'
       - string
     doc: 'MLP solver. (options: gurobi, cbc, glpk, highs. default: gurobi)'
-    default: gurobi
     inputBinding:
       position: 101
       prefix: --solver
@@ -199,7 +193,6 @@ inputs:
       - 'null'
       - File
     doc: Path to pangenome building tool executable file.
-    default: pggb
     inputBinding:
       position: 101
       prefix: -e
@@ -208,7 +201,6 @@ inputs:
       - 'null'
       - Directory
     doc: Name for pantax DB
-    default: pantax_db
     inputBinding:
       position: 101
   - id: precise_clipping
@@ -217,7 +209,6 @@ inputs:
       - float
     doc: clip the alignment ends with arg as the identity cutoff between correct
       / wrong alignments.
-    default: 0.66
     inputBinding:
       position: 101
       prefix: --precise-clipping
@@ -226,7 +217,6 @@ inputs:
       - 'null'
       - float
     doc: Rescued strain retention score.
-    default: 0.85
     inputBinding:
       position: 101
       prefix: -sr
@@ -269,7 +259,6 @@ inputs:
       - float
     doc: Species with relative abundance above the threshold are used for strain
       abundance estimation.
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: -a
@@ -302,7 +291,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temporary directory
-    default: pantax_db_tmp
     inputBinding:
       position: 101
       prefix: -T

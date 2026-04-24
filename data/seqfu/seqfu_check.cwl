@@ -33,7 +33,6 @@ inputs:
       - boolean
     doc: "Perform a deep check of the file and will not \n                       \
       \        support multiline Sanger FASTQ"
-    default: false
     inputBinding:
       position: 103
       prefix: --deep

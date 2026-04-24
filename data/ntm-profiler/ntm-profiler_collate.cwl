@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - Directory
     doc: Storage directory
-    default: /usr/local/share/ntm-profiler/
     inputBinding:
       position: 101
       prefix: --db_dir
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable debug logging
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - Directory
     doc: Storage directory
-    default: .
     inputBinding:
       position: 101
       prefix: --dir
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Default name for SNP-dist DB
-    default: ntm-profiler-dists.db
     inputBinding:
       position: 101
       prefix: --dist_db_name
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Cutoff for SNP distance graph output (distance<=cutoff)
-    default: 10
     inputBinding:
       position: 101
       prefix: --distance_cutoff
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Output file type
-    default: txt
     inputBinding:
       position: 101
       prefix: --format
@@ -63,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level
-    default: INFO
     inputBinding:
       position: 101
       prefix: --logging
@@ -73,7 +66,6 @@ inputs:
       - float
     doc: Minimum abundance (percent) for a species to be reported in the 
       collated output
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --min_species_relative_abundance
@@ -82,7 +74,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't remove temporary files after run
-    default: false
     inputBinding:
       position: 101
       prefix: --no_cleanup
@@ -91,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: Sample prefix
-    default: ntmprofiler.collate.txt
     inputBinding:
       position: 101
       prefix: --outfile
@@ -100,7 +90,6 @@ inputs:
       - 'null'
       - File
     doc: File with samples (one per line)
-    default: None
     inputBinding:
       position: 101
       prefix: --samples
@@ -109,7 +98,6 @@ inputs:
       - 'null'
       - string
     doc: Input results files suffix
-    default: .results.json
     inputBinding:
       position: 101
       prefix: --suffix
@@ -118,7 +106,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temp directory to process all files
-    default: .
     inputBinding:
       position: 101
       prefix: --temp

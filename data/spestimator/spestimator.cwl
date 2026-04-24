@@ -34,7 +34,6 @@ inputs:
       - Directory
     doc: Download found genomes. Defaults to 'genomes/' if flag is used without 
       a path.
-    default: genomes/
     inputBinding:
       position: 101
       prefix: --download-genomes
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: 'BLAST: Hits to keep per read'
-    default: 10
     inputBinding:
       position: 101
       prefix: --max-target-seqs
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: 'Filter: Minimum Alignment Length in bp (Default: 0/No Filter)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-alignment-len
@@ -70,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: 'Filter: Minimum Query Coverage (0-100).'
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min-coverage
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - float
     doc: 'Filter: Minimum Percent Identity (0-100).'
-    default: 90.0
     inputBinding:
       position: 101
       prefix: --min-identity
@@ -104,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: 'Report: Only keep the top K unique organisms per file'
-    default: 10
     inputBinding:
       position: 101
       prefix: --top-k-taxa

@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Value of k. Only k = 21, 31 are currently supported
-    default: 31
     inputBinding:
       position: 101
       prefix: -k
@@ -89,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Subsampling rate
-    default: 50
     inputBinding:
       position: 101
       prefix: -c
@@ -98,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 3
     inputBinding:
       position: 101
       prefix: -t

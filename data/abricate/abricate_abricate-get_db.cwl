@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - Directory
     doc: Parent folder
-    default: /usr/local/db
     inputBinding:
       position: 101
       prefix: --dbdir
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose debug output
-    default: '0'
     inputBinding:
       position: 101
       prefix: --debug
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force download even if exists
-    default: '0'
     inputBinding:
       position: 101
       prefix: --force

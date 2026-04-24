@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: ASCII value for quality score 0
-    default: 33
     inputBinding:
       position: 101
       prefix: '-0'
@@ -21,7 +20,6 @@ inputs:
       - int
     doc: 'Filter status: 0 original file, 1 file filtered with trimFilter, 2 file
       filtered with another tool.'
-    default: 0
     inputBinding:
       position: 101
       prefix: -f
@@ -37,7 +35,6 @@ inputs:
       - string
     doc: quality values for low quality proportion plot. Format is either 
       <int>[,<int>]* or <min-int>:<max-int>
-    default: 27,33,37
     inputBinding:
       position: 101
       prefix: -Q
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum quality allowed
-    default: 27
     inputBinding:
       position: 101
       prefix: -q
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Number of different quality values allowed
-    default: 46
     inputBinding:
       position: 101
       prefix: -n
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Number of tiles
-    default: 96
     inputBinding:
       position: 101
       prefix: -t

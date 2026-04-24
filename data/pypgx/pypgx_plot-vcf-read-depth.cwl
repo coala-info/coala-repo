@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: "Reference genome assembly (default: 'GRCh37') (choices: 'GRCh37', 'GRCh38')."
-    default: GRCh37
     inputBinding:
       position: 103
       prefix: --assembly
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Create plots in this directory (default: current directory).'
-    default: current directory
     inputBinding:
       position: 103
       prefix: --path

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Reference channel number for image alignment. Numbering starts at 0.
-    default: 0
     inputBinding:
       position: 102
       prefix: --align-channel
@@ -88,7 +87,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum allowed per-tile corrective shift in microns
-    default: 15
     inputBinding:
       position: 102
       prefix: --maximum-shift
@@ -124,7 +122,6 @@ inputs:
     doc: Significance level for permutation testing during alignment error 
       quantification. Larger values include more tile pairs in the spanning tree
       at the cost of increased false positives.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --stitch-alpha
@@ -133,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: Pyramid tile size for OME-TIFF output
-    default: 1024
     inputBinding:
       position: 102
       prefix: --tile-size

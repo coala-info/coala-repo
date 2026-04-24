@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: 'Column name for sample IDs (default: first column)'
-    default: first column
     inputBinding:
       position: 101
       prefix: --id
@@ -99,7 +98,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Enable z-score scaling (default: True)'
-    default: true
     inputBinding:
       position: 101
       prefix: --scale

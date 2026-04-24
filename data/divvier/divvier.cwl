@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of characters tested in a split during divvying
-    default: 10
     inputBinding:
       position: 102
       prefix: -approx
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: do standard divvying
-    default: true
     inputBinding:
       position: 102
       prefix: -divvy
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do the pairHMM bounding approximation
-    default: true
     inputBinding:
       position: 102
       prefix: -HMMapprox
@@ -68,7 +65,6 @@ inputs:
       - int
     doc: Minimum number of characters in a column to output when 
       divvying/filtering
-    default: 2
     inputBinding:
       position: 102
       prefix: -mincol

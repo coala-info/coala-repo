@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory for results (defaults to input directory)
-    default: input directory
     inputBinding:
       position: 101
       prefix: --output

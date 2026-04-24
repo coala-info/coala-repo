@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum alignment ratio.
-    default: 0.93
     inputBinding:
       position: 102
       prefix: -minAli
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage to output.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -minCover
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of alignment that is near top for alignment to be kept.
-    default: 30
     inputBinding:
       position: 102
       prefix: -minNearTopSize
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: How much can deviate from top and be taken.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: -nearTop

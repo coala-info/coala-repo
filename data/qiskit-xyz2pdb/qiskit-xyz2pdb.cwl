@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add C(alpha) traces
-    default: false
     inputBinding:
       position: 101
       prefix: --alpha-c-traces
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add hetero atoms
-    default: false
     inputBinding:
       position: 101
       prefix: --hetero-atoms

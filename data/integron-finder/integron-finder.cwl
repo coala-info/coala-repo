@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use.
-    default: 1
     inputBinding:
       position: 102
       prefix: --cpu

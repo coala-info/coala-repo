@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: E-value cutoff for validation
-    default: '1e-3'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force to overwrite the existing files
-    default: false
     inputBinding:
       position: 101
       prefix: -f
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep the temporary products
-    default: false
     inputBinding:
       position: 101
       prefix: -k
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: Path to MMseqs2 binary
-    default: mmseqs
     inputBinding:
       position: 101
       prefix: --mmseqs
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to the directory containing gene sequences
-    default: ./config/seq
     inputBinding:
       position: 101
       prefix: --seqpath
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to write the temporary files
-    default: /tmp
     inputBinding:
       position: 101
       prefix: -w
@@ -102,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

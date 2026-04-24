@@ -30,7 +30,6 @@ inputs:
       - string
     doc: 'Type of differences to report. Options: all, added, removed, modified. Defaults
       to all.'
-    default: all
     inputBinding:
       position: 103
       prefix: --diff-type
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output format. Options: tsv, json, html. Defaults to tsv.'
-    default: tsv
     inputBinding:
       position: 103
       prefix: --format

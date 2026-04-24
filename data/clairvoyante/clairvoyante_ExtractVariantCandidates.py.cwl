@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: Prior of a site being a false positive
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --fprior
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality
-    default: 10
     inputBinding:
       position: 101
       prefix: --minBQ
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage
-    default: 2
     inputBinding:
       position: 101
       prefix: --minCoverage
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality
-    default: 10
     inputBinding:
       position: 101
       prefix: --minMQ
@@ -82,7 +78,6 @@ inputs:
       - 'null'
       - string
     doc: Path to samtools
-    default: samtools
     inputBinding:
       position: 101
       prefix: --samtools

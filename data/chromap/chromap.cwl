@@ -57,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Max Hamming distance allowed to correct a barcode
-    default: 1
     inputBinding:
       position: 101
       prefix: --bc-error-threshold
@@ -66,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: Min probability to correct a barcode
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --bc-probability-threshold
@@ -92,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: 'Max # errors allowed to map a read'
-    default: 8
     inputBinding:
       position: 101
       prefix: --error-threshold
@@ -117,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer length
-    default: 17
     inputBinding:
       position: 101
       prefix: --kmer
@@ -134,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: Min MAPQ in range [0, 60] for mappings to be output
-    default: 30
     inputBinding:
       position: 101
       prefix: --MAPQ-threshold
@@ -143,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: Max insert size, only for paired-end read mapping
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max-insert-size
@@ -153,7 +147,6 @@ inputs:
       - type: array
         items: int
     doc: Max seed frequencies for a seed to be selected
-    default:
       - 500
       - 1000
     inputBinding:
@@ -164,7 +157,6 @@ inputs:
       - 'null'
       - int
     doc: Min fragment length for choosing k and w automatically
-    default: 30
     inputBinding:
       position: 101
       prefix: --min-frag-length
@@ -173,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: 'Min # seeds to try to map a read'
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-num-seeds
@@ -182,7 +173,6 @@ inputs:
       - 'null'
       - int
     doc: Min read length
-    default: 30
     inputBinding:
       position: 101
       prefix: --min-read-length
@@ -191,7 +181,6 @@ inputs:
       - 'null'
       - int
     doc: '# threads for mapping'
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-threads
@@ -226,7 +215,6 @@ inputs:
       - string
     doc: Preset parameters for mapping reads (always applied before other 
       options)
-    default: ''
     inputBinding:
       position: 101
       prefix: --preset
@@ -251,7 +239,6 @@ inputs:
       - 'null'
       - string
     doc: Format for read files and barcode files
-    default: r1:0:-1,bc:0:-1
     inputBinding:
       position: 101
       prefix: --read-format
@@ -332,7 +319,6 @@ inputs:
       - 'null'
       - int
     doc: Window size
-    default: 7
     inputBinding:
       position: 101
       prefix: --window

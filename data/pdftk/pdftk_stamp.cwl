@@ -15,7 +15,6 @@ inputs:
   - id: operation
     type: string
     doc: The operation to perform (stamp).
-    default: stamp
     inputBinding:
       position: 2
   - id: stamp_pdf

@@ -114,12 +114,10 @@ inputs:
     type: int?
     doc: Number of threads to use for computational processes
     label: Threads
-    default: 2
   memory:
     type: int?
     doc: Maximum memory usage in megabytes
     label: memory usage (MB)
-    default: 4000
 
   gtdbtk_data:
     type: Directory?
@@ -136,7 +134,6 @@ inputs:
     type: boolean?
     doc: Run with SemiBin binner
     label: Run SemiBin
-    default: true
   # semibin_reference_database:
   #   type: Directory?
   #   doc: Reference database data directory (MMseqs2 GTDB)
@@ -146,17 +143,14 @@ inputs:
     type: string?
     doc: Semibin Built-in models (human_gut/dog_gut/ocean/soil/cat_gut/human_oral/mouse_gut/pig_gut/built_environment/wastewater/global/chicken_caecum)
     label: SemiBin Environment
-    default: global
   sub_workflow:
     type: boolean
     label: Sub workflow Run
     doc: Use this when you need the output bins as File[] for subsequent analysis workflow steps in another workflow.
-    default: false
   step:
     type: int?
     label: CWL base step number
     doc: Step number for order of steps
-    default: 1
   destination:
     type: string?
     label: Output destination (not used in the workflow itself)

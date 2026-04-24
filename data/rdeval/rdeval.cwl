@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: numbers of compression threads used by htslib for bam/cram (default:6).
-    default: 6
     inputBinding:
       position: 103
       prefix: --compression-threads
@@ -47,7 +46,6 @@ inputs:
       - int
     doc: numbers of decompression threads used by htslib for bam/cram 
       (default:4).
-    default: 4
     inputBinding:
       position: 103
       prefix: --decompression-threads
@@ -100,7 +98,6 @@ inputs:
     doc: max number of bases in a single buffer of the ring buffer 
       (default:1000000 bp or ~1MB). The total number of buffers is approximately
       consumer threads*2.
-    default: 1000000
     inputBinding:
       position: 103
       prefix: --max-memory
@@ -136,7 +133,6 @@ inputs:
       - int
     doc: numbers of files that can be opened and processed in parallel (producer
       threads, default:4).
-    default: 4
     inputBinding:
       position: 103
       prefix: --parallel-files
@@ -186,7 +182,6 @@ inputs:
       - 'null'
       - int
     doc: numbers of consumer threads (default:8).
-    default: 8
     inputBinding:
       position: 103
       prefix: --threads

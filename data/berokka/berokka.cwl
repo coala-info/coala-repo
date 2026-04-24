@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of contig to keep
-    default: 200
     inputBinding:
       position: 102
       prefix: --minlen

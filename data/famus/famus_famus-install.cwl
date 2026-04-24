@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to save logs.
-    default: /root/.famus/logs
     inputBinding:
       position: 101
       prefix: --log-dir
@@ -56,7 +55,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable logging.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-log

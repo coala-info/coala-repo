@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: index k-mer size
-    default: 40
     inputBinding:
       position: 103
       prefix: -k
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: adaptive seed count cutoff
-    default: 10
     inputBinding:
       position: 103
       prefix: -f
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to use for temporary files.
-    default: $TMPDIR
     inputBinding:
       position: 103
       prefix: -P
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 8
     inputBinding:
       position: 103
       prefix: -T

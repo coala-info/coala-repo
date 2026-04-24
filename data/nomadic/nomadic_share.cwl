@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to minknow output directory (default it usually sufficient)
-    default: (/var/lib/minknow/data)
     inputBinding:
       position: 101
       prefix: --minknow_dir
@@ -80,7 +79,6 @@ inputs:
       results) are stored. The workspace directory simplifies the use of nomadic
       in that many arguments don't need to be listed as they are predefined in 
       the workspace config or can be loaded from the workspace
-    default: (current directory)
     inputBinding:
       position: 101
       prefix: --workspace

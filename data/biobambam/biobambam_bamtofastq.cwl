@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: restore input taken by c18pe option
-    default: 0
     inputBinding:
       position: 101
       prefix: casava18
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: base 2 logarithm of hash table size used for collation
-    default: 18
     inputBinding:
       position: 101
       prefix: colhlog
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: collate pairs
-    default: 1
     inputBinding:
       position: 101
       prefix: collate
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: size of hash table overflow list in bytes
-    default: 33554432
     inputBinding:
       position: 101
       prefix: colsbs
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: print some counts after collation based processing
-    default: 0
     inputBinding:
       position: 101
       prefix: combs
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: 'compress output streams in gzip format (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: gz
@@ -64,7 +58,6 @@ inputs:
       - int
     doc: compression setting if gz=1 
       (1=fast,2=2,3=3,4=4,5=5,6=6,7=7,8=8,9=best,10=10,11=11,12=12)
-    default: -1
     inputBinding:
       position: 101
       prefix: level
@@ -73,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: disable validation of input data
-    default: 0
     inputBinding:
       position: 101
       prefix: disablevalidation
@@ -82,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: exclude alignments matching any of the given flags
-    default: SECONDARY,SUPPLEMENTARY
     inputBinding:
       position: 101
       prefix: exclude
@@ -91,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: size of input buffer
-    default: -1
     inputBinding:
       position: 101
       prefix: inputbuffersize
@@ -100,7 +90,6 @@ inputs:
       - 'null'
       - File
     doc: 'input filename (default: read file from standard input)'
-    default: stdin
     inputBinding:
       position: 101
       prefix: filename
@@ -109,7 +98,6 @@ inputs:
       - 'null'
       - string
     doc: 'input format: cram, bam or sam'
-    default: bam
     inputBinding:
       position: 101
       prefix: inputformat
@@ -118,7 +106,6 @@ inputs:
       - 'null'
       - File
     doc: matched pairs first mates
-    default: stdout
     inputBinding:
       position: 101
       prefix: F
@@ -127,7 +114,6 @@ inputs:
       - 'null'
       - File
     doc: matched pairs second mates
-    default: stdout
     inputBinding:
       position: 101
       prefix: F2
@@ -153,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: output FastA instead of FastQ
-    default: 0
     inputBinding:
       position: 101
       prefix: fasta
@@ -162,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: split output per read group (for collate=1 only)
-    default: 0
     inputBinding:
       position: 101
       prefix: outputperreadgroup
@@ -181,7 +165,6 @@ inputs:
       - int
     doc: add read group field SM ahead of read group id when 
       outputperreadgroup=1 (for collate=1 only)
-    default: 0
     inputBinding:
       position: 101
       prefix: outputperreadgrouprgsm
@@ -190,7 +173,6 @@ inputs:
       - 'null'
       - string
     doc: suffix for F category when outputperreadgroup=1
-    default: _1.fq
     inputBinding:
       position: 101
       prefix: outputperreadgroupsuffixF
@@ -199,7 +181,6 @@ inputs:
       - 'null'
       - string
     doc: suffix for F2 category when outputperreadgroup=1
-    default: _2.fq
     inputBinding:
       position: 101
       prefix: outputperreadgroupsuffixF2
@@ -208,7 +189,6 @@ inputs:
       - 'null'
       - string
     doc: suffix for O category when outputperreadgroup=1
-    default: _o1.fq
     inputBinding:
       position: 101
       prefix: outputperreadgroupsuffixO
@@ -217,7 +197,6 @@ inputs:
       - 'null'
       - string
     doc: suffix for O2 category when outputperreadgroup=1
-    default: _o2.fq
     inputBinding:
       position: 101
       prefix: outputperreadgroupsuffixO2
@@ -226,7 +205,6 @@ inputs:
       - 'null'
       - string
     doc: suffix for S category when outputperreadgroup=1
-    default: _s.fq
     inputBinding:
       position: 101
       prefix: outputperreadgroupsuffixS
@@ -251,7 +229,6 @@ inputs:
       - 'null'
       - File
     doc: single end
-    default: stdout
     inputBinding:
       position: 101
       prefix: S
@@ -261,7 +238,6 @@ inputs:
       - int
     doc: 'split named output files into chunks of this amount of reads (0: do not
       split)'
-    default: 0
     inputBinding:
       position: 101
       prefix: split
@@ -270,7 +246,6 @@ inputs:
       - 'null'
       - string
     doc: file name prefix if collate=0 and split>0
-    default: bamtofastq_split
     inputBinding:
       position: 101
       prefix: splitprefix
@@ -287,7 +262,6 @@ inputs:
       - 'null'
       - string
     doc: temporary file name
-    default: bamtofastq_20b15d712873_1_1772005324
     inputBinding:
       position: 101
       prefix: T
@@ -296,7 +270,6 @@ inputs:
       - 'null'
       - int
     doc: use OQ field instead of quality field if present (collate={0,1} only)
-    default: 0
     inputBinding:
       position: 101
       prefix: tryoq
@@ -305,7 +278,6 @@ inputs:
       - 'null'
       - File
     doc: unmatched pairs first mates
-    default: stdout
     inputBinding:
       position: 101
       prefix: O
@@ -314,7 +286,6 @@ inputs:
       - 'null'
       - File
     doc: unmatched pairs second mates
-    default: stdout
     inputBinding:
       position: 101
       prefix: O2

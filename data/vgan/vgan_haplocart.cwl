@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - float
     doc: Background error probability for FASTA input
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: -e
@@ -53,7 +52,6 @@ inputs:
       - 'null'
       - Directory
     doc: HaploCart graph directory location
-    default: ../share/vgan/hcfiles/
     inputBinding:
       position: 101
       prefix: --hc-files
@@ -86,7 +84,6 @@ inputs:
       - 'null'
       - string
     doc: Output file
-    default: stdout
     inputBinding:
       position: 101
       prefix: -o
@@ -103,7 +100,6 @@ inputs:
       - 'null'
       - string
     doc: Posterior output file
-    default: stdout
     inputBinding:
       position: 101
       prefix: -pf
@@ -128,7 +124,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temporary directory
-    default: /tmp/
     inputBinding:
       position: 101
       prefix: -z

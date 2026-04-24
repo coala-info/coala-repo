@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: Path to artifacts .joblib saved during training
-    default: None
     inputBinding:
       position: 101
       prefix: --artifacts
@@ -19,7 +18,6 @@ inputs:
       - File
     doc: Optional path to an external hyperparameter configuration file in YAML 
       format.
-    default: None
     inputBinding:
       position: 101
       prefix: --config_path
@@ -29,7 +27,6 @@ inputs:
       - float
     doc: Correlation threshold to drop highly redundant features (default is 
       0.8; set to 1 for no redundancy filtering)
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --correlation_threshold
@@ -39,7 +36,6 @@ inputs:
       - string
     doc: Which variables in 'clin.csv' to be used as feature covariates, 
       comma-separated if multiple
-    default: None
     inputBinding:
       position: 101
       prefix: --covariates
@@ -48,7 +44,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to the folder with train/test data files
-    default: None
     inputBinding:
       position: 101
       prefix: --data_path
@@ -57,7 +52,6 @@ inputs:
       - 'null'
       - Directory
     doc: Folder with test-only dataset for inference
-    default: None
     inputBinding:
       position: 101
       prefix: --data_path_test
@@ -66,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: "Which omic data matrices to work on, comma-separated: e.g. 'gex,cnv'"
-    default: None
     inputBinding:
       position: 101
       prefix: --data_types
@@ -76,7 +69,6 @@ inputs:
       - string
     doc: "Device type: 'auto' (automatic detection), 'cuda' (NVIDIA GPU), 'mps' (Apple
       Silicon), 'cpu'"
-    default: auto
     inputBinding:
       position: 101
       prefix: --device
@@ -94,7 +86,6 @@ inputs:
       - int
     doc: How many epochs to wait when no improvements in validation loss is 
       observed (default 10; set to -1 to disable early stopping)
-    default: 10
     inputBinding:
       position: 101
       prefix: --early_stop_patience
@@ -112,7 +103,6 @@ inputs:
       - 'null'
       - string
     doc: Choose feature importance score method
-    default: IntegratedGradients
     inputBinding:
       position: 101
       prefix: --feature_importance_method
@@ -121,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of features to retain after feature selection
-    default: 500
     inputBinding:
       position: 101
       prefix: --features_min
@@ -131,7 +120,6 @@ inputs:
       - int
     doc: Top percentile features (among the features remaining after variance 
       filtering and data cleanup) to retain after feature selection
-    default: 20
     inputBinding:
       position: 101
       prefix: --features_top_percentile
@@ -141,7 +129,6 @@ inputs:
       - int
     doc: Number of samples from the test dataset to use for fine-tuning the 
       model. Set to 0 to disable fine-tuning
-    default: 0
     inputBinding:
       position: 101
       prefix: --finetuning_samples
@@ -150,7 +137,6 @@ inputs:
       - 'null'
       - string
     doc: How to fuse the omics layers
-    default: intermediate
     inputBinding:
       position: 101
       prefix: --fusion_type
@@ -160,7 +146,6 @@ inputs:
       - string
     doc: If model_class is set to GNN, choose which graph convolution type to 
       use
-    default: None
     inputBinding:
       position: 101
       prefix: --gnn_conv_type
@@ -169,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations for hyperparameter optimisation
-    default: 100
     inputBinding:
       position: 101
       prefix: --hpo_iter
@@ -180,7 +164,6 @@ inputs:
     doc: How many hyperparamater optimisation iterations to wait for when no 
       improvements are observed (default is 10; set to 0 to disable early 
       stopping)
-    default: 20
     inputBinding:
       position: 101
       prefix: --hpo_patience
@@ -190,7 +173,6 @@ inputs:
       - string
     doc: If model_class is set to CrossModalPred, choose which data types to use
       as input/encoded layers. Comma- separated if multiple
-    default: None
     inputBinding:
       position: 101
       prefix: --input_layers
@@ -199,7 +181,6 @@ inputs:
       - 'null'
       - string
     doc: Column name in 'clin.csv' (test metadata) used to join sample IDs
-    default: JoinKey
     inputBinding:
       position: 101
       prefix: --join_key
@@ -208,7 +189,6 @@ inputs:
       - 'null'
       - boolean
     doc: whether to apply log-transformation to input data matrices
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --log_transform
@@ -217,7 +197,6 @@ inputs:
       - 'null'
       - string
     doc: The kind of model class to instantiate
-    default: None
     inputBinding:
       position: 101
       prefix: --model_class
@@ -226,7 +205,6 @@ inputs:
       - 'null'
       - int
     doc: (Optional) How many workers to use for model training (default is 0)
-    default: 0
     inputBinding:
       position: 101
       prefix: --num_workers
@@ -235,7 +213,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to the output folder to save the model outputs
-    default: /
     inputBinding:
       position: 101
       prefix: --outdir
@@ -245,7 +222,6 @@ inputs:
       - string
     doc: If model_class is set to CrossModalPred, choose which data types to use
       as output/decoded layers. Comma- separated if multiple
-    default: None
     inputBinding:
       position: 101
       prefix: --output_layers
@@ -254,7 +230,6 @@ inputs:
       - 'null'
       - string
     doc: Job prefix to use for output files
-    default: job
     inputBinding:
       position: 101
       prefix: --prefix
@@ -263,7 +238,6 @@ inputs:
       - 'null'
       - File
     doc: Path to a saved model (.pth) to use for inference
-    default: None
     inputBinding:
       position: 101
       prefix: --pretrained_model
@@ -273,7 +247,6 @@ inputs:
       - string
     doc: Restrict the analyis to the list of features provided by the user 
       (default is None)
-    default: None
     inputBinding:
       position: 101
       prefix: --restrict_to_features
@@ -283,7 +256,6 @@ inputs:
       - boolean
     doc: If set, the model will be saved in the SafeTensors format. Default is 
       False.
-    default: false
     inputBinding:
       position: 101
       prefix: --safetensors
@@ -292,7 +264,6 @@ inputs:
       - 'null'
       - string
     doc: Type of node name.
-    default: gene_name
     inputBinding:
       position: 101
       prefix: --string_node_name
@@ -301,7 +272,6 @@ inputs:
       - 'null'
       - string
     doc: STRING DB organism id.
-    default: '9606'
     inputBinding:
       position: 101
       prefix: --string_organism
@@ -311,7 +281,6 @@ inputs:
       - int
     doc: Downsample training set to randomly drawn N samples for training. 
       Disabled when set to 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --subsample
@@ -321,7 +290,6 @@ inputs:
       - string
     doc: Which column in 'clin.csv' to use as event/status indicator for 
       survival modeling
-    default: None
     inputBinding:
       position: 101
       prefix: --surv_event_var
@@ -331,7 +299,6 @@ inputs:
       - string
     doc: Which column in 'clin.csv' to use as time/duration indicator for 
       survival modeling
-    default: None
     inputBinding:
       position: 101
       prefix: --surv_time_var
@@ -341,7 +308,6 @@ inputs:
       - string
     doc: (Optional if survival variables are not set to None). Which variables 
       in 'clin.csv' to use for predictions, comma-separated if multiple
-    default: None
     inputBinding:
       position: 101
       prefix: --target_variables
@@ -350,7 +316,6 @@ inputs:
       - 'null'
       - int
     doc: (Optional) How many threads to use when using CPU (default is 4)
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -369,7 +334,6 @@ inputs:
       - boolean
     doc: '(Optional) DEPRECATED: Use --device instead. If set, attempts to use CUDA/GPU
       if available.'
-    default: false
     inputBinding:
       position: 101
       prefix: --use_gpu
@@ -378,7 +342,6 @@ inputs:
       - 'null'
       - boolean
     doc: whether to apply loss-balancing using uncertainty weights method
-    default: 'True'
     inputBinding:
       position: 101
       prefix: --use_loss_weighting
@@ -389,7 +352,6 @@ inputs:
     doc: 'Path to user-provided gene-gene interaction network file. Must have at least
       3 columns: GeneA, GeneB, Score. If provided, this will be used instead of STRING
       DB.'
-    default: None
     inputBinding:
       position: 101
       prefix: --user_graph
@@ -398,7 +360,6 @@ inputs:
       - 'null'
       - float
     doc: 'Proportion of training data to be used as validation split (default: 0.2)'
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --val_size
@@ -408,7 +369,6 @@ inputs:
       - float
     doc: Variance threshold (as percentile) to drop low variance features 
       (default is 1; set to 0 for no variance filtering)
-    default: 1
     inputBinding:
       position: 101
       prefix: --variance_threshold

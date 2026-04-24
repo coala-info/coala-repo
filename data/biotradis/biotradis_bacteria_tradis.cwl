@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: mapping quality cutoff score
-    default: 30
     inputBinding:
       position: 101
       prefix: -m
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: number of mismatches allowed when matching tag
-    default: 0
     inputBinding:
       position: 101
       prefix: -mm
@@ -65,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: custom r parameter for SMALT
-    default: -1
     inputBinding:
       position: 101
       prefix: --smalt_r
@@ -82,7 +79,6 @@ inputs:
       - 'null'
       - float
     doc: custom y parameter for SMALT
-    default: 0.96
     inputBinding:
       position: 101
       prefix: --smalt_y
@@ -100,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: tag direction - 3 or 5
-    default: 3
     inputBinding:
       position: 101
       prefix: -td
@@ -109,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use for SMALT and samtools sort
-    default: 1
     inputBinding:
       position: 101
       prefix: -n

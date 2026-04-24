@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: Input BED file. If unset, reads from STDIN.
-    default: ''
     inputBinding:
       position: 101
       prefix: -in
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: If set, entries with the same chr/start/end are removed after sorting.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -uniq
@@ -36,7 +34,6 @@ inputs:
       - boolean
     doc: Uses name column (i.e. the 4th column) to sort if chr/start/end are 
       equal.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -with_name

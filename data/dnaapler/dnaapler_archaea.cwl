@@ -10,7 +10,6 @@ inputs:
       - string
     doc: 'Choose an option to autocomplete reorientation if MMseqs2 based approach
       fails. Must be one of: none, mystery, largest, or nearest'
-    default: none
     inputBinding:
       position: 101
       prefix: --autocomplete
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: E-value for MMseqs2
-    default: '1e-10'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output files
-    default: dnaapler
     inputBinding:
       position: 101
       prefix: --prefix
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Random seed to ensure reproducibility.
-    default: 13
     inputBinding:
       position: 101
       prefix: --seed_value
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use with MMseqs2
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

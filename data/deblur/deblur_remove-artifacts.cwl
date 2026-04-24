@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - File
     doc: log file name
-    default: deblur.log
     inputBinding:
       position: 103
       prefix: --log-file
@@ -33,7 +32,6 @@ inputs:
       - int
     doc: "Level of messages for log file (range 1-debug\n                        \
       \          to 5-critical"
-    default: 2
     inputBinding:
       position: 103
       prefix: --log-level
@@ -88,7 +86,6 @@ inputs:
       - int
     doc: "Number of threads to use per sample (0 to\n                            \
       \      use all)"
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads-per-sample

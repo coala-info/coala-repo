@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: How should the internal tools be run?
-    default: local
     inputBinding:
       position: 102
   - id: fragsize
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Comparison method fragment size.
-    default: 1020
     inputBinding:
       position: 102
   - id: log

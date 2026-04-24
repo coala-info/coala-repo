@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate consensus instead of best replicate spectra.
-    default: true
     inputBinding:
       position: 102
       prefix: --consensus
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate DIA-NN2-compatible PQP library.
-    default: false
     inputBinding:
       position: 102
       prefix: --diannpqp
@@ -47,7 +45,6 @@ inputs:
       - float
     doc: Fraction of data points to use for IM lowess regression. If set to 0, 
       cross validation is used.
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --im_lowess_fraction
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: PSM FDR threshold used for IM alignment.
-    default: 0.001
     inputBinding:
       position: 102
       prefix: --im_psm_fdr_threshold
@@ -73,7 +69,6 @@ inputs:
       - 'null'
       - File
     doc: Writes reference run IM file, if IM reference file is not provided.
-    default: easypqp_im_reference_run.tsv
     inputBinding:
       position: 102
       prefix: --im_reference_run_path
@@ -82,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum peptides required for successful alignment.
-    default: 5
     inputBinding:
       position: 102
       prefix: --min_peptides
@@ -91,7 +85,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate consensus instead of best replicate spectra.
-    default: false
     inputBinding:
       position: 102
       prefix: --no-consensus
@@ -100,7 +93,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate DIA-NN2-compatible PQP library.
-    default: true
     inputBinding:
       position: 102
       prefix: --no-diann-pqp
@@ -110,7 +102,6 @@ inputs:
       - boolean
     doc: Do not reassess or filter by FDR, as library was already provided using
       customized FDR filtering.
-    default: true
     inputBinding:
       position: 102
       prefix: --no-fdr-filtering
@@ -119,7 +110,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use only proteotypic, unique, non-shared peptides.
-    default: false
     inputBinding:
       position: 102
       prefix: --no-proteotypic
@@ -129,7 +119,6 @@ inputs:
       - boolean
     doc: Do not reassess or filter by FDR, as library was already provided using
       customized FDR filtering.
-    default: false
     inputBinding:
       position: 102
       prefix: --nofdr
@@ -138,7 +127,6 @@ inputs:
       - 'null'
       - float
     doc: Peptide FDR threshold.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --peptide_fdr_threshold
@@ -155,7 +143,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to perform IM calibration
-    default: true
     inputBinding:
       position: 102
       prefix: --perform_im_calibration
@@ -164,7 +151,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to perform RT calibration
-    default: true
     inputBinding:
       position: 102
       prefix: --perform_rt_calibration
@@ -175,7 +161,6 @@ inputs:
         items: float
     doc: Use non-parametric estimation of p-values. Either use <START END 
       STEPS>, e.g. 0.1, 1.0, 0.1 or set to fixed value, e.g. 0.4, 0, 0.
-    default:
       - 0.1
       - 0.5
       - 0.05
@@ -187,7 +172,6 @@ inputs:
       - 'null'
       - float
     doc: Protein FDR threshold.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --protein_fdr_threshold
@@ -196,7 +180,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use only proteotypic, unique, non-shared peptides.
-    default: true
     inputBinding:
       position: 102
       prefix: --proteotypic
@@ -205,7 +188,6 @@ inputs:
       - 'null'
       - float
     doc: PSM FDR threshold.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --psm_fdr_threshold
@@ -231,7 +213,6 @@ inputs:
       - float
     doc: Fraction of data points to use for RT lowess regression. If set to 0, 
       cross validation is used.
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --rt_lowess_fraction
@@ -240,7 +221,6 @@ inputs:
       - 'null'
       - float
     doc: PSM FDR threshold used for RT alignment.
-    default: 0.001
     inputBinding:
       position: 102
       prefix: --rt_psm_fdr_threshold
@@ -257,7 +237,6 @@ inputs:
       - 'null'
       - File
     doc: Writes reference run RT file, if RT reference file is not provided.
-    default: easypqp_rt_reference_run.tsv
     inputBinding:
       position: 102
       prefix: --rt_reference_run_path

@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Output format [json|matrix|json_vec|jsonl|jsonl_vec]
-    default: json
     inputBinding:
       position: 101
       prefix: --format
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: Sub-indexes to query, comma separated.
-    default: all
     inputBinding:
       position: 101
       prefix: --names
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: Shared k-mers threshold. in [0.0, 1.0]
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --threshold
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: Verbosity level [debug|info|warning|error].
-    default: info
     inputBinding:
       position: 101
       prefix: --verbose
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Index s-mers and query (s+z)-mers (findere algorithm).
-    default: 0
     inputBinding:
       position: 101
       prefix: --zvalue

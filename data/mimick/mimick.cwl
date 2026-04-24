@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: FASTQ output format
-    default: standard:haplotagging
     inputBinding:
       position: 102
       prefix: --format
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: mean coverage (depth) target for simulated data
-    default: 30.0
     inputBinding:
       position: 102
       prefix: --genomic-coverage
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: outer distance between the two read ends in bp
-    default: 500
     inputBinding:
       position: 102
       prefix: --insert-size
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: standard deviation for --insert-size
-    default: 50
     inputBinding:
       position: 102
       prefix: --insert-stdev
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: how many tries to create a molecule with <70% ambiguous bases
-    default: 300
     inputBinding:
       position: 102
       prefix: --molecule-attempts
@@ -72,7 +67,6 @@ inputs:
       - float
     doc: mean percent coverage per molecule if <1, else mean number of reads per
       molecule
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --molecule-coverage
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: mean length of molecules in bp
-    default: 80000
     inputBinding:
       position: 102
       prefix: --molecule-length
@@ -92,7 +85,6 @@ inputs:
     doc: mean number of unrelated molecules per barcode per chromosome, where a 
       negative number (e.g. -2) will use a fixed number of unrelated molecules 
       and a positive one will draw from a distribution
-    default: 2
     inputBinding:
       position: 102
       prefix: --molecules-per
@@ -101,7 +93,6 @@ inputs:
       - 'null'
       - string
     doc: output file prefix
-    default: simulated/
     inputBinding:
       position: 102
       prefix: --output-prefix
@@ -118,7 +109,6 @@ inputs:
       - 'null'
       - string
     doc: length of R1,R2 sequences in bp
-    default: 150,150
     inputBinding:
       position: 102
       prefix: --read-lengths
@@ -135,7 +125,6 @@ inputs:
       - 'null'
       - float
     doc: proportion of barcodes that will only have one read pair
-    default: 0
     inputBinding:
       position: 102
       prefix: --singletons
@@ -144,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use for multi-sample simulation
-    default: 2
     inputBinding:
       position: 102
       prefix: --threads

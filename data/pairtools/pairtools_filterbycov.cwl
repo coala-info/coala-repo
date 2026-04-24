@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Chrom 1 column
-    default: 1
     inputBinding:
       position: 102
       prefix: --c1
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Chrom 2 column
-    default: 3
     inputBinding:
       position: 102
       prefix: --c2
@@ -94,7 +92,6 @@ inputs:
       - string
     doc: calculate the number of neighbouring pairs as either the sum or the max
       of the number of neighbours on the two sides
-    default: max
     inputBinding:
       position: 102
       prefix: --method
@@ -104,7 +101,6 @@ inputs:
       - int
     doc: Number of processes used by the auto-guessed input decompressing 
       command.
-    default: 3
     inputBinding:
       position: 102
       prefix: --nproc-in
@@ -114,7 +110,6 @@ inputs:
       - int
     doc: Number of processes used by the auto-guessed output compressing 
       command.
-    default: 8
     inputBinding:
       position: 102
       prefix: --nproc-out
@@ -123,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: Position 1 column
-    default: 2
     inputBinding:
       position: 102
       prefix: --p1
@@ -132,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: Position 2 column
-    default: 4
     inputBinding:
       position: 102
       prefix: --p2
@@ -141,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: Strand 1 column
-    default: 5
     inputBinding:
       position: 102
       prefix: --s1
@@ -150,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: Strand 2 column
-    default: 6
     inputBinding:
       position: 102
       prefix: --s2
@@ -175,7 +166,6 @@ inputs:
       - 'null'
       - string
     doc: Placeholder for a chromosome on an unmapped side
-    default: '!'
     inputBinding:
       position: 102
       prefix: --unmapped-chrom

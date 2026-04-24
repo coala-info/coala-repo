@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for parallelization.
-    default: 1
     inputBinding:
       position: 101
       prefix: --nthreads
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Number of neutral and sweep simulations to generate.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --num_simulations
@@ -84,7 +82,6 @@ inputs:
       - string
     doc: 'Adaptive mutation time range in generations. Two comma-separated values:
       start,end.'
-    default: 0,5000
     inputBinding:
       position: 101
       prefix: --time

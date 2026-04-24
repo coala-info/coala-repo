@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - Directory
     doc: Working directory for the workflow
-    default: .
     inputBinding:
       position: 102
       prefix: --wd

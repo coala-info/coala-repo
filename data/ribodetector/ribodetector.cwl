@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: Indices of GPUs to enable. Quotated comma-separated device ID numbers.
-    default: all
     inputBinding:
       position: 101
       prefix: --deviceid
@@ -74,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Amount (GB) of GPU RAM.
-    default: 12
     inputBinding:
       position: 101
       prefix: --memory
@@ -83,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: 'Model file path without extension (uses .pth). Default: packaged model_len70_101.'
-    default: model_len70_101
     inputBinding:
       position: 101
       prefix: --model-file
@@ -110,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 10
     inputBinding:
       position: 101
       prefix: --threads

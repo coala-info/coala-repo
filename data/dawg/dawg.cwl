@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: append output to file
-    default: on
     inputBinding:
       position: 102
       prefix: --append
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: label each simulation with a unique id
-    default: on
     inputBinding:
       position: 102
       prefix: --label
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: the number of alignments to generate
-    default: 0
     inputBinding:
       position: 102
       prefix: --reps
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: PRNG seed
-    default: 0
     inputBinding:
       position: 102
       prefix: --seed
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: split output into separate files
-    default: on
     inputBinding:
       position: 102
       prefix: --split

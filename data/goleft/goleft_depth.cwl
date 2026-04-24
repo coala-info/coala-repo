@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: minimum depth considered callable
-    default: 4
     inputBinding:
       position: 102
       prefix: --mincov
@@ -64,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: mapping quality cutoff
-    default: 1
     inputBinding:
       position: 102
       prefix: --q
@@ -89,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: window size in which to calculate high-depth regions
-    default: 250
     inputBinding:
       position: 102
       prefix: --windowsize

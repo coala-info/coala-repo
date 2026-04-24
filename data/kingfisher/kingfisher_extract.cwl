@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Re-download / extract files even if they already exist
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory to write to
-    default: current working directory
     inputBinding:
       position: 101
       prefix: --output-directory
@@ -54,7 +52,6 @@ inputs:
         items: string
     doc: Allowable output formats. If more than one is specified, downloaded 
       data will processed as little as possible
-    default: fastq fastq.gz
     inputBinding:
       position: 101
       prefix: --output-format-possibilities
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output sequences to STDOUT. Currently requires --unsorted
-    default: false
     inputBinding:
       position: 101
       prefix: --stdout
@@ -86,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for extraction
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads
@@ -99,7 +94,6 @@ inputs:
       but it is possible to tell which pair is which, and which is a forward and
       which is a reverse read from the name. Currently requires download from 
       NCBI rather than ENA.
-    default: false
     inputBinding:
       position: 101
       prefix: --unsorted

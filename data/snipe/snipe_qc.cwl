@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU cores to use for parallel processing.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores

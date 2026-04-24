@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Tree type to generate
-    default: both
     inputBinding:
       position: 101
       prefix: --tree

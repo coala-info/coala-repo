@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: expected error rate
-    default: 0.01
     inputBinding:
       position: 102
       prefix: -e
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: gap size
-    default: 3 35X:4 75X:8 140X:15 280X:25
     inputBinding:
       position: 102
       prefix: -g
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: genome size
-    default: 0
     inputBinding:
       position: 102
       prefix: -G
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: kmer size
-    default: 31
     inputBinding:
       position: 102
       prefix: -k
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: output file name
-    default: LightAssembler
     inputBinding:
       position: 102
       prefix: -o
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: -t

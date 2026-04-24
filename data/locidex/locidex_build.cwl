@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Author Name for Locidex Database.
-    default: root
     inputBinding:
       position: 101
       prefix: --author
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: Translation table to use
-    default: '11'
     inputBinding:
       position: 101
       prefix: --translation_table

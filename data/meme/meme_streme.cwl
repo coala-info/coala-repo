@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: align sequences left/center/right for site positional distribution plots
-    default: center
     inputBinding:
       position: 101
       prefix: --align
@@ -68,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of sequences in hold-out set
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --hofract
@@ -85,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: maximum width for motifs (must be <= 30)
-    default: 15
     inputBinding:
       position: 101
       prefix: --maxw
@@ -94,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: minimum width for motifs (must be >= 3)
-    default: 8
     inputBinding:
       position: 101
       prefix: --minw
@@ -103,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: evaluate <neval> seeds of each width
-    default: 25
     inputBinding:
       position: 101
       prefix: --neval
@@ -112,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: iterate refinement at most <niter> times per seed
-    default: 20
     inputBinding:
       position: 101
       prefix: --niter
@@ -147,7 +141,6 @@ inputs:
       - 'null'
       - int
     doc: refine <nref> evaluated seeds of each width
-    default: 4
     inputBinding:
       position: 101
       prefix: --nref
@@ -157,7 +150,6 @@ inputs:
       - string
     doc: 'objective function to optimize in motif discovery (de: Differential Enrichment,
       cd: Central Distance)'
-    default: de
     inputBinding:
       position: 101
       prefix: --objfun
@@ -175,7 +167,6 @@ inputs:
       - 'null'
       - int
     doc: quit after <patience> consecutive motifs exceed <thresh>
-    default: 3
     inputBinding:
       position: 101
       prefix: --patience
@@ -206,7 +197,6 @@ inputs:
       - 'null'
       - int
     doc: random seed for shuffling sequences
-    default: 0
     inputBinding:
       position: 101
       prefix: --seed
@@ -223,7 +213,6 @@ inputs:
       - 'null'
       - float
     doc: significance threshold for reporting enriched motifs
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --thresh
@@ -240,7 +229,6 @@ inputs:
       - 'null'
       - int
     doc: truncate each sequence set to length <len>; 0 means do not truncate
-    default: 0
     inputBinding:
       position: 101
       prefix: --totallength
@@ -257,7 +245,6 @@ inputs:
       - 'null'
       - int
     doc: level of diagnostic output (1-5)
-    default: 2
     inputBinding:
       position: 101
       prefix: --verbosity

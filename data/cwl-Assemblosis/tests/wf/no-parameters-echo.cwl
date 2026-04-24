@@ -6,7 +6,6 @@ baseCommand: [echo]
 inputs:
   in:
     type: string
-    default: "foo"
 outputs:
   e_out:
     type: stdout

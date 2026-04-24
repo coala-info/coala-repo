@@ -21,7 +21,6 @@ inputs:
       - int
     doc: "Number of pairs in each chunk. Reduce for\n                            \
       \      lower memory footprint."
-    default: 100000
     inputBinding:
       position: 102
   - id: cmd_in
@@ -53,7 +52,6 @@ inputs:
       - type: array
         items: int
     doc: Distance range.
-    default:
       - 1
       - 1000000000
     inputBinding:
@@ -65,7 +63,6 @@ inputs:
     doc: "Number of bins to split the distance range\n                           \
       \       in log10-space, specified per a factor of 10\n                     \
       \             difference."
-    default: 8
     inputBinding:
       position: 102
   - id: nproc_in
@@ -74,7 +71,6 @@ inputs:
       - int
     doc: "Number of processes used by the auto-guessed\n                         \
       \         input decompressing command."
-    default: 3
     inputBinding:
       position: 102
   - id: nproc_out
@@ -83,7 +79,6 @@ inputs:
       - int
     doc: "Number of processes used by the auto-guessed\n                         \
       \         output compressing command."
-    default: 8
     inputBinding:
       position: 102
   - id: regions_file

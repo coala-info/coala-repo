@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth after merging - applies to the maximum depth across samples
-    default: 0
     inputBinding:
       position: 103
       prefix: -k

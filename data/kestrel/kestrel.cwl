@@ -21,7 +21,6 @@ inputs:
       bases. At k bases from the left anchor, the threshold will have declined 
       to alpha * range. At every k bases, the threshold will continue to decline
       at this rate.
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --alpha
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow active regions to cover ambiguous bases, such as N.
-    default: true
     inputBinding:
       position: 102
       prefix: --ambiregions
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow variants over ambiguous bases, such as N.
-    default: true
     inputBinding:
       position: 102
       prefix: --ambivar
@@ -51,7 +48,6 @@ inputs:
       by unaltered k-mers or variants will not be called in it. This option may 
       miss variants near the ends of a reference sequence, but it forces 
       stronger evidence for the variants that are called.
-    default: true
     inputBinding:
       position: 102
       prefix: --anchorboth
@@ -64,7 +60,6 @@ inputs:
       Kestrel more bases for active region detection, but it does not otherwise 
       affect variant calls. This option tells Kestrel to pick the flank by 
       multiplying 3.50 with the k-mer size.
-    default: true
     inputBinding:
       position: 102
       prefix: --autoflank
@@ -74,7 +69,6 @@ inputs:
       - boolean
     doc: If variant call regions were defined, variant call locations are still 
       relative to the reference sequence and not the region.
-    default: true
     inputBinding:
       position: 102
       prefix: --byreference
@@ -95,7 +89,6 @@ inputs:
       character set of all files following it. The default, "UTF-8", properly 
       handles ASCII files, which is a safe assumption for most files. Latin-1 
       files with values greater than 127 will not be properly parsed.
-    default: UTF-8
     inputBinding:
       position: 102
       prefix: --charset
@@ -105,7 +98,6 @@ inputs:
       - boolean
     doc: Count reverse complement k-mers in region statistics. This should be 
       set for most sequencing protocols.
-    default: true
     inputBinding:
       position: 102
       prefix: --countrev
@@ -119,7 +111,6 @@ inputs:
       decline to 1. If this value is 1.0, the decay function is not used and the
       detector falls back to finding a k-mer with a count within the difference 
       threshold of the anchor k-mer count.
-    default: 0.55
     inputBinding:
       position: 102
       prefix: --decaymin
@@ -138,7 +129,6 @@ inputs:
       threshold. This value may not be 1.0 or greater, and it may not be 
       negative. If 0.0, the minimum count difference is always the minimum 
       threshold (--mindiff).
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --diffq
@@ -153,7 +143,6 @@ inputs:
       input files. If -s (--sample) is read on the command-line, this value is 
       set back to 0. Any sequence files found on the command-line before this 
       option are assigned to a group.
-    default: 0
     inputBinding:
       position: 102
       prefix: --filespersample
@@ -167,7 +156,6 @@ inputs:
       affect variant calls. Set to 0 to disable flanks. If this option is not 
       set, Kestrel will determine the appropriate length of flank by multiplying
       3.50 with the k-mer size.
-    default: k * 3.50
     inputBinding:
       position: 102
       prefix: --flank
@@ -187,7 +175,6 @@ inputs:
       - string
     doc: Set haplotype output format. Ignored if a haplotype output file is not 
       set.
-    default: sam
     inputBinding:
       position: 102
       prefix: --hapfmt
@@ -199,7 +186,6 @@ inputs:
       format files are read. This option may be set multiple times when reading 
       files with different formats. See "count -hreader" for a full list of 
       readers.
-    default: auto
     inputBinding:
       position: 102
       prefix: --format
@@ -225,7 +211,6 @@ inputs:
       or if the reference is very short, a small (e.g. a single short gene), 
       then a smaller k-mer size, such as 21, may be useful if the defalt value 
       does not produce meaningful results.
-    default: 31
     inputBinding:
       position: 102
       prefix: --ksize
@@ -254,7 +239,6 @@ inputs:
       - 'null'
       - File
     doc: Set log file name.
-    default: <STDERR>
     inputBinding:
       position: 102
       prefix: --logfile
@@ -264,7 +248,6 @@ inputs:
       - string
     doc: Set the log level. Valid levels are ALL, TRACE, DEBUG, INFO, WARN, 
       ERROR, and OFF.
-    default: WARN
     inputBinding:
       position: 102
       prefix: --loglevel
@@ -294,7 +277,6 @@ inputs:
       branches into more than one possible sequence, the state of one is saved 
       while another is built. When the maximum number of saved states reaches 
       this value, the least likely one is discarded.
-    default: 10
     inputBinding:
       position: 102
       prefix: --maxalignstates
@@ -306,7 +288,6 @@ inputs:
       can generate more than one haplotype, and with noisy sequence data or 
       paralogues, many haplotypes may be found. This options limits the amount 
       of memory that can be consumed in these cases.
-    default: 15
     inputBinding:
       position: 102
       prefix: --maxhapstates
@@ -320,7 +301,6 @@ inputs:
       recommended value. To attempt assemblies in reptitive regions, this value 
       can be increased, but the results may be variant calls on haplotypes that 
       do not exist in the sequence data.
-    default: 0
     inputBinding:
       position: 102
       prefix: --maxrepeat
@@ -343,7 +323,6 @@ inputs:
       less than this value will be discarded. Sequence read errors produce many 
       erroneous k-mers, and this slows the process of variant calling 
       significantly.
-    default: 5
     inputBinding:
       position: 102
       prefix: --mincount
@@ -354,7 +333,6 @@ inputs:
     doc: Set the minimum k-mer count difference for identifying active regions. 
       When the count between neighboring k-mer counts is this or greater, 
       Kestrel will treat it as a region where a variant may occur.
-    default: 5
     inputBinding:
       position: 102
       prefix: --mindiff
@@ -370,7 +348,6 @@ inputs:
       sub-k-mer of the original k-mer). This option can be used to break up 
       large minimizer groups due to low-complexity k-mers when minimizers are 
       used.
-    default: 0
     inputBinding:
       position: 102
       prefix: --minmask
@@ -381,7 +358,6 @@ inputs:
     doc: Minimizers group k-mers in the indexed k-mer count (IKC) file generated
       by Kestrel when reading sequences, and this parameter controls the size of
       the minimizer.
-    default: 15
     inputBinding:
       position: 102
       prefix: --minsize
@@ -428,7 +404,6 @@ inputs:
       - boolean
     doc: Retain resources between samples. This may use more memory, but it will
       avoid re-creating expensive resources between samples.
-    default: true
     inputBinding:
       position: 102
       prefix: --nofree
@@ -438,7 +413,6 @@ inputs:
       - boolean
     doc: K-mer counts for each sample are offloaded to an indexed k-mer count 
       file. This option reduces the memory demand of Kestrel.
-    default: true
     inputBinding:
       position: 102
       prefix: --nomemcount
@@ -480,7 +454,6 @@ inputs:
       --seqfilter or --quality was specified, this option disables sequence 
       filtering. These options together make it possible to specify filtering 
       for some files and disable filtering for others.
-    default: true
     inputBinding:
       position: 102
       prefix: --noseqfilter
@@ -489,7 +462,6 @@ inputs:
       - 'null'
       - string
     doc: Set output format.
-    default: vcf
     inputBinding:
       position: 102
       prefix: --outfmt
@@ -507,7 +479,6 @@ inputs:
       active-region scan is not performed. This keeps Kestrel from erroneously 
       searching large regions of the reference. Setting this value to 0 disables
       peak detection.
-    default: 7
     inputBinding:
       position: 102
       prefix: --peakscan
@@ -537,7 +508,6 @@ inputs:
       - boolean
     doc: Remove the indexed k-mer count (IKC) for each sample after kestrel 
       runs.
-    default: true
     inputBinding:
       position: 102
       prefix: --rmikc
@@ -550,7 +520,6 @@ inputs:
       character. FASTA files often have a sequence name and a long description 
       separated by whitespace. This option ensures that the sequence name 
       matches in the FASTA and an interval file, if used.
-    default: true
     inputBinding:
       position: 102
       prefix: --rmrefdesc
@@ -584,7 +553,6 @@ inputs:
       to a high value or "max" lifts the restrictions on active region lengths, 
       and this may cause the program to take an excessive amount of time and 
       memory trying to solve arbitrarily long active regions.
-    default: 7.0
     inputBinding:
       position: 102
       prefix: --scanlimitfactor
@@ -619,7 +587,6 @@ inputs:
       - boolean
     doc: Write output to standard output instead of a file. Unless redirected, 
       this output is written to the the screen.
-    default: true
     inputBinding:
       position: 102
       prefix: --stdout
@@ -630,7 +597,6 @@ inputs:
     doc: The location where segments are offloaded. This argument must be a 
       directory or the location for a new directory. Parent directories will be 
       created as needed.
-    default: Output location
     inputBinding:
       position: 102
       prefix: --temploc
@@ -655,7 +621,6 @@ inputs:
       floating-point number, and it may be represented in exponential form (e.g.
       1.0e2) or as an integer in hexadecimal or octal format. Optionally, the 
       list may be surrounded by parenthesis or braces (angle, square, or curly).
-    default: (10.0, -10.0, -40.0, -4.0, 0.0)
     inputBinding:
       position: 102
       prefix: --weight

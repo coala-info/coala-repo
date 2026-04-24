@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Skip entries smaller than INT
-    default: 1
     inputBinding:
       position: 103
       prefix: --min-len

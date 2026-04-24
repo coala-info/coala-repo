@@ -13,7 +13,6 @@ inputs:
     doc: 'Allow overlapping regex hits. By default, search continues +1 after regex
       hit end position (i.e., not overlapping). NOTE that if --regex is structure
       pattern, search is currently always overlapping (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --allow-overlaps
@@ -24,7 +23,6 @@ inputs:
     doc: 'Define to which chromosome ID style to convert chromosome IDs to. 1: do
       not change chromosome IDs. 2: convert to chr1,chr2,...,chrM style. 3: convert
       to 1,2,...,MT style (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --chr-id-style
@@ -64,7 +62,6 @@ inputs:
       - int
     doc: 'Minimum regex hit count for a transcript to be included in percentile calculation
       and output table (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-hit-count
@@ -74,7 +71,6 @@ inputs:
       - int
     doc: 'Minimum sequence length required for input transcript sequences to be included
       in search (default: False)'
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --min-seq-len
@@ -85,7 +81,6 @@ inputs:
     doc: Minimum spacer length between regex hits. By default 0, i.e., hits can 
       also be adjacent. Note that setting --min-spacer to > 0 also sets 
       --allow-overlaps
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-spacer-len
@@ -104,7 +99,6 @@ inputs:
       - float
     doc: 'Maximum GU (GT) base pair fraction to report structure pattern regex hits
       (default: 1.0)'
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --regex-max-gu
@@ -114,7 +108,6 @@ inputs:
       - float
     doc: 'Minimum GC base pair fraction to report structure pattern regex hits (default:
       0.0)'
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --regex-min-gc
@@ -123,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum spacer length for structure pattern regex search (default: 200)'
-    default: 200
     inputBinding:
       position: 101
       prefix: --regex-spacer-max
@@ -132,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum spacer length for structure pattern regex search (default: 5)'
-    default: 5
     inputBinding:
       position: 101
       prefix: --regex-spacer-min
@@ -144,7 +135,6 @@ inputs:
       of transcripts to extract sequences to use for sponge search. 1: use full transcripts
       from all genes (selecting one representative for each gene). 2: use only mRNA
       transcripts. 3: use only 3'UTR parts of mRNA transcripts (default: 1)"
-    default: 1
     inputBinding:
       position: 101
       prefix: --select-mode

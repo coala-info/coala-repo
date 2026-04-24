@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Minimal abundance of kmers used for assembly
-    default: auto
     inputBinding:
       position: 101
       prefix: -assembly-abundance-min
@@ -20,7 +19,6 @@ inputs:
       - int
     doc: Kmer size used for Minia assembly (should be given even if bypassing 
       minia assembly step, usefull knowledge for gap-filling)
-    default: 31
     inputBinding:
       position: 101
       prefix: -assembly-kmer-size
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Minimal abundance of kmers used for gap-filling
-    default: auto
     inputBinding:
       position: 101
       prefix: -gapfilling-abundance-min
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer size used for gap-filling
-    default: 31
     inputBinding:
       position: 101
       prefix: -gapfilling-kmer-size
@@ -111,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of gap-filling (nt)
-    default: 50000
     inputBinding:
       position: 101
       prefix: -max-length
@@ -120,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of nodes in contig graph
-    default: 300
     inputBinding:
       position: 101
       prefix: -max-nodes
@@ -129,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal size for a contig to be used in gap-filling
-    default: 400
     inputBinding:
       position: 101
       prefix: -min-contig-size
@@ -139,7 +132,6 @@ inputs:
       - int
     doc: Length of minimum prefix for node merging, default should work for most
       cases
-    default: 100
     inputBinding:
       position: 101
       prefix: -l
@@ -164,7 +156,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cores
-    default: 0
     inputBinding:
       position: 101
       prefix: -nb-cores

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bases to trim around each gap, and off ends of each sequence
-    default: 100
     inputBinding:
       position: 102
       prefix: --trim_number

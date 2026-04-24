@@ -12,7 +12,6 @@ inputs:
     doc: with these options you can set the alignment quality (Novoalign) or 
       mapping quality (SAM) threshold. Reads with qualities lower than the 
       threshold will be ignored.
-    default: 100
     inputBinding:
       position: 101
       prefix: --align_quality
@@ -22,7 +21,6 @@ inputs:
       - int
     doc: with this option you can set the alignment score threshold. Reads with 
       alignment scores lower than the threshold will be ignored.
-    default: 0
     inputBinding:
       position: 101
       prefix: --align_score
@@ -63,7 +61,6 @@ inputs:
       - int
     doc: this option allows you to set the maximum number of base-pairs allowed 
       between two non-overlapping paired reads.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --distance
@@ -73,7 +70,6 @@ inputs:
       - string
     doc: use this option to specify the file type (i.e. 'novo', 'sam', 'gtf'). 
       This will tell the program which parsers to use for processing the files.
-    default: "'novo'"
     inputBinding:
       position: 101
       prefix: --file_type
@@ -116,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: to set read length threshold.
-    default: 100
     inputBinding:
       position: 101
       prefix: --length
@@ -126,7 +121,6 @@ inputs:
       - int
     doc: with this option you can select how many reads mapped to a particular 
       gene/ORF/region you want to count.
-    default: 500
     inputBinding:
       position: 101
       prefix: --limit
@@ -137,7 +131,6 @@ inputs:
     doc: with these options you can set the alignment quality (Novoalign) or 
       mapping quality (SAM) threshold. Reads with qualities lower than the 
       threshold will be ignored.
-    default: 100
     inputBinding:
       position: 101
       prefix: --mapping_quality
@@ -146,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of mapped reads that will be analyzed.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --max
@@ -169,7 +161,6 @@ inputs:
       - int
     doc: sets the number of nucleotides a read has to overlap with a gene before
       it is considered a hit.
-    default: 1
     inputBinding:
       position: 101
       prefix: --overlap
@@ -180,7 +171,6 @@ inputs:
     doc: allows you to set the length of the UTR regions. If you set '-r 50' or 
       '--range=50', then the program will set a fixed length (50 bp) regardless 
       of whether the GTF file has genes with annotated UTRs.
-    default: 100
     inputBinding:
       position: 101
       prefix: --range
@@ -190,7 +180,6 @@ inputs:
       - string
     doc: with this option you can select whether you want the reads aligned to 
       the genomic or the coding sequence.
-    default: genomic
     inputBinding:
       position: 101
       prefix: --sequence

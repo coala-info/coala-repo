@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: invalid bnd prefixes
-    default: true
     inputBinding:
       position: 102
   - id: debug_format
@@ -96,7 +95,6 @@ inputs:
       - 'null'
       - boolean
     doc: treat warnings as errors
-    default: false
     inputBinding:
       position: 102
   - id: error_reporting_format
@@ -112,7 +110,6 @@ inputs:
       - 'null'
       - boolean
     doc: floating point denormal
-    default: false
     inputBinding:
       position: 102
   - id: float_overflow_warning
@@ -120,7 +117,6 @@ inputs:
       - 'null'
       - boolean
     doc: floating point overflow
-    default: true
     inputBinding:
       position: 102
   - id: float_toolong_warning
@@ -128,7 +124,6 @@ inputs:
       - 'null'
       - boolean
     doc: too many digits in floating-point number
-    default: true
     inputBinding:
       position: 102
   - id: float_underflow_warning
@@ -136,7 +131,6 @@ inputs:
       - 'null'
       - boolean
     doc: floating point underflow
-    default: false
     inputBinding:
       position: 102
   - id: format
@@ -152,7 +146,6 @@ inputs:
       - 'null'
       - boolean
     doc: using 8- or 16-bit relocation in ELF32, a GNU extension
-    default: false
     inputBinding:
       position: 102
   - id: hle_warning
@@ -160,7 +153,6 @@ inputs:
       - 'null'
       - boolean
     doc: invalid hle prefixes
-    default: true
     inputBinding:
       position: 102
   - id: include_path
@@ -185,7 +177,6 @@ inputs:
       - 'null'
       - boolean
     doc: lock prefix on unlockable instructions
-    default: true
     inputBinding:
       position: 102
   - id: macro_defaults_warning
@@ -193,7 +184,6 @@ inputs:
       - 'null'
       - boolean
     doc: macros with more default than optional parameters
-    default: true
     inputBinding:
       position: 102
   - id: macro_params_warning
@@ -201,7 +191,6 @@ inputs:
       - 'null'
       - boolean
     doc: macro calls with wrong parameter count
-    default: true
     inputBinding:
       position: 102
   - id: macro_selfref_warning
@@ -209,7 +198,6 @@ inputs:
       - 'null'
       - boolean
     doc: cyclic macro references
-    default: false
     inputBinding:
       position: 102
   - id: makefile_dependencies
@@ -241,7 +229,6 @@ inputs:
       - 'null'
       - boolean
     doc: numeric constant does not fit
-    default: true
     inputBinding:
       position: 102
   - id: optimize_branch_offsets
@@ -249,7 +236,6 @@ inputs:
       - 'null'
       - int
     doc: optimize branch offsets
-    default: x
     inputBinding:
       position: 102
       prefix: -O
@@ -258,7 +244,6 @@ inputs:
       - 'null'
       - boolean
     doc: labels alone on lines without trailing `:'
-    default: true
     inputBinding:
       position: 102
   - id: postfix
@@ -347,7 +332,6 @@ inputs:
       - 'null'
       - boolean
     doc: '%warning directives'
-    default: true
     inputBinding:
       position: 102
 outputs:

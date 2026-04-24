@@ -74,7 +74,6 @@ inputs:
     doc: | 
       Required. NCBI Identifier of a genome for SNPeff to extract a GenBank file and build a custom database out of.
       If a GenBank file is provided, this input only serves as the entry made in the config file, and as the folder name of the database.
-    default: custom_db
     inputBinding: 
       position: 1
   genbank_file:

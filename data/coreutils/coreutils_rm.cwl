@@ -60,7 +60,6 @@ inputs:
       - string
     doc: do not remove '/' (default); with 'all', reject any command line argument
       on a separate device from its parent
-    default: all
     inputBinding:
       position: 102
       prefix: --preserve-root

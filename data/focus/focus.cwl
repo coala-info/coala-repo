@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size (6 or 7)
-    default: 6
     inputBinding:
       position: 101
       prefix: --kmer_size
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - File
     doc: Path to log file
-    default: STDOUT
     inputBinding:
       position: 101
       prefix: --log
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: Output prefix
-    default: output
     inputBinding:
       position: 101
       prefix: --output_prefix
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Number Threads used in the k-mer counting
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

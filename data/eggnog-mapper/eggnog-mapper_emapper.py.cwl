@@ -14,7 +14,6 @@ inputs:
       reported or not, or if only those overlapping hits in a different strand 
       or frame are reported. Also, the degree of accepted overlap can be 
       controlled with --overlap_tol.
-    default: none
     inputBinding:
       position: 101
       prefix: --allow_overlaps
@@ -62,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to be used. --cpu 0 to run with all available CPUs.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpu
@@ -72,7 +70,6 @@ inputs:
       - boolean
     doc: Adds the --cut_ga to hmmer commands (useful for Pfam mappings, for 
       example). See hmmer documentation.
-    default: false
     inputBinding:
       position: 101
       prefix: --cut_ga
@@ -91,7 +88,6 @@ inputs:
       - int
     doc: Fixed database size used in phmmer/hmmscan (allows comparing e-values 
       among databases).
-    default: 40000000
     inputBinding:
       position: 101
       prefix: --Z
@@ -101,7 +97,6 @@ inputs:
       - boolean
     doc: Use this option to allocate the whole eggnog.db DB in memory. Database 
       will be unloaded after execution.
-    default: false
     inputBinding:
       position: 101
       prefix: --dbmem
@@ -110,7 +105,6 @@ inputs:
       - 'null'
       - string
     doc: Type of data in DB (-db).
-    default: hmmdb
     inputBinding:
       position: 101
       prefix: --dbtype
@@ -125,7 +119,6 @@ inputs:
       gene prediction. FILE = decorate the specified pre-existing GFF FILE. e.g.
       --decorage_gff myfile.gff You change the field interpreted as ID of the 
       feature with --decorate_gff_ID_field.
-    default: no
     inputBinding:
       position: 101
       prefix: --decorate_gff
@@ -134,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: Change the field used in GFF files as ID of the feature.
-    default: ID
     inputBinding:
       position: 101
       prefix: --decorate_gff_ID_field
@@ -146,7 +138,6 @@ inputs:
       By default, it is adjusted automatically. However, the ctg option should 
       be activated manually. If you plan to search a small input set of 
       sequences, use --dmnd_algo ctg to make it faster.
-    default: auto
     inputBinding:
       position: 101
       prefix: --dmnd_algo
@@ -173,7 +164,6 @@ inputs:
       - boolean
     doc: Diamond --ignore-warnings option. It avoids Diamond stopping due to 
       warnings (e.g. when a protein contains only ATGC symbols.
-    default: false
     inputBinding:
       position: 101
       prefix: --dmnd_ignore_warnings
@@ -185,7 +175,6 @@ inputs:
       iterative searches, from faster, less sensitive modes, up to the 
       sensitivity specified with --sensmode. Available since diamond 2.0.11. 
       --dmnd_iterate no --> disables the --iterate mode.
-    default: yes
     inputBinding:
       position: 101
       prefix: --dmnd_iterate
@@ -195,7 +184,6 @@ inputs:
       - int
     doc: Last port to be used to setup HMM server, when --usemem. Also used for 
       --pfam_realign modes.
-    default: 53200
     inputBinding:
       position: 101
       prefix: --end_port
@@ -204,7 +192,6 @@ inputs:
       - 'null'
       - float
     doc: Report only alignments below or equal the e-value threshold.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --evalue
@@ -213,7 +200,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output annotations also in .xlsx format.
-    default: false
     inputBinding:
       position: 101
       prefix: --excel
@@ -232,7 +218,6 @@ inputs:
       - 'null'
       - int
     doc: Final sensititivy step.
-    default: 7
     inputBinding:
       position: 101
       prefix: --final_sens
@@ -259,7 +244,6 @@ inputs:
     doc: 'This is applied when --itype genome or --itype metagenome. search: gene
       prediction is inferred from Diamond/MMseqs2 blastx hits. prodigal: gene prediction
       is performed using Prodigal.'
-    default: search
     inputBinding:
       position: 101
       prefix: --genepred
@@ -270,7 +254,6 @@ inputs:
     doc: Defines what type of GO terms should be used for annotation. 
       experimental = Use only terms inferred from experimental evidence. 
       non-electronic = Use only non-electronically curated terms
-    default: non-electronic
     inputBinding:
       position: 101
       prefix: --go_evidence
@@ -279,7 +262,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of hits to report (0 to report all).
-    default: 1
     inputBinding:
       position: 101
       prefix: --hmm_maxhits
@@ -288,7 +270,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore query sequences larger than `maxseqlen`.
-    default: 5000
     inputBinding:
       position: 101
       prefix: --hmm_maxseqlen
@@ -323,7 +304,6 @@ inputs:
       - 'null'
       - string
     doc: Type of data in the input (-i) file.
-    default: proteins
     inputBinding:
       position: 101
       prefix: --itype
@@ -349,7 +329,6 @@ inputs:
       - boolean
     doc: Adds the md5 hash of each query as an additional field in annotations 
       output files.
-    default: false
     inputBinding:
       position: 101
       prefix: --md5
@@ -377,7 +356,6 @@ inputs:
     doc: Sets the python multiprocessing start method. Check 
       https://docs.python.org/3/library/multiprocessing.html. Only use if the 
       default method is not working properly in your OS.
-    default: spawn
     inputBinding:
       position: 101
       prefix: --mp_start_method
@@ -386,7 +364,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip functional annotation, reporting only hits.
-    default: false
     inputBinding:
       position: 101
       prefix: --no_annot
@@ -395,7 +372,6 @@ inputs:
       - 'null'
       - boolean
     doc: No header lines nor stats are included in the output files
-    default: false
     inputBinding:
       position: 101
       prefix: --no_file_comments
@@ -406,7 +382,6 @@ inputs:
     doc: When using --usemem, specify the number of servers to fire up.Note that
       cpus specified with --cpu will be distributed among servers and workers. 
       Also used for --pfam_realign modes.
-    default: 1
     inputBinding:
       position: 101
       prefix: --num_servers
@@ -417,7 +392,6 @@ inputs:
     doc: When using --usemem, specify the number of workers per server 
       (--num_servers) to fire up. By default, cpus specified with --cpu will be 
       distributed among servers and workers. Also used for --pfam_realign modes.
-    default: 1
     inputBinding:
       position: 101
       prefix: --num_workers
@@ -429,7 +403,6 @@ inputs:
       could help obtain better performance, if also no --pident, --query_cover 
       or --subject_cover thresholds are used. This option is ignored when the 
       diamond search is run in blastx mode for gene prediction (see --genepred).
-    default: false
     inputBinding:
       position: 101
       prefix: --outfmt_short
@@ -438,7 +411,6 @@ inputs:
       - 'null'
       - Directory
     doc: Where output files should be written
-    default: /
     inputBinding:
       position: 101
       prefix: --output_dir
@@ -458,7 +430,6 @@ inputs:
       > overlap_tol, hits are considered to overlap. e.g: if overlap_tol is 0.0, any
       overlap is considered as such. e.g: if overlap_tol is 1.0, one of the hits must
       overlap entirely to consider that hits do overlap.'
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --overlap_tol
@@ -468,7 +439,6 @@ inputs:
       - boolean
     doc: Overwrites output files if they exist. By default, execution is aborted
       if conflicting files are detected.
-    default: false
     inputBinding:
       position: 101
       prefix: --override
@@ -483,7 +453,6 @@ inputs:
       will be realigned to the whole PFAM database, ignoring the --pfam_transfer
       option. Check hmmer options (--num_servers, --num_workers, --port, 
       --end_port) to change how the hmmpgmd server is run.
-    default: none
     inputBinding:
       position: 101
       prefix: --pfam_realign
@@ -502,7 +471,6 @@ inputs:
       - int
     doc: Port used to setup HMM server, when --usemem. Also used for 
       --pfam_realign modes.
-    default: 51700
     inputBinding:
       position: 101
       prefix: --port
@@ -511,7 +479,6 @@ inputs:
       - 'null'
       - string
     doc: Type of input data (-i).
-    default: seq
     inputBinding:
       position: 101
       prefix: --qtype
@@ -529,7 +496,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether queries without hits should be included in the output table.
-    default: false
     inputBinding:
       position: 101
       prefix: --report_no_hits
@@ -538,7 +504,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output the list of orthologs found for each query to a .orthologs file
-    default: false
     inputBinding:
       position: 101
       prefix: --report_orthologs
@@ -548,7 +513,6 @@ inputs:
       - boolean
     doc: Resumes a previous emapper run, skipping results in existing output 
       files.
-    default: false
     inputBinding:
       position: 101
       prefix: --resume
@@ -580,7 +544,6 @@ inputs:
       is required, unless --no_annot). cache: skip seed orthologs search and annotate
       based on cached results (-i and -c are required).novel_fams: search against
       the novel families database (-i is required).'
-    default: diamond
     inputBinding:
       position: 101
       prefix: --search_mode
@@ -590,7 +553,6 @@ inputs:
       - float
     doc: Min E-value expected when searching for seed eggNOG ortholog. Queries 
       not having a significant seed orthologs will not be annotated.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --seed_ortholog_evalue
@@ -608,7 +570,6 @@ inputs:
       - 'null'
       - int
     doc: Number of sensitivity steps.
-    default: 3
     inputBinding:
       position: 101
       prefix: --sens_steps
@@ -619,7 +580,6 @@ inputs:
     doc: Diamond's sensitivity mode. Note that emapper's default is sensitive, 
       which is different from diamond's default, which can be activated with 
       --sensmode default.
-    default: sensitive
     inputBinding:
       position: 101
       prefix: --sensmode
@@ -638,7 +598,6 @@ inputs:
       - 'null'
       - int
     doc: Starting sensitivity.
-    default: 3
     inputBinding:
       position: 101
       prefix: --start_sens
@@ -657,7 +616,6 @@ inputs:
       - string
     doc: defines what type of orthologs (in relation to the seed ortholog) 
       should be used for functional transfer
-    default: all
     inputBinding:
       position: 101
       prefix: --target_orthologs
@@ -690,7 +648,6 @@ inputs:
       An example of list of tax IDs would be 2759,2157,2,1 for Eukaryota, Archaea,
       Bacteria and root, in that order of preference. 4) 'none': do not filter out
       annotations based on taxonomic scope."
-    default: auto
     inputBinding:
       position: 101
       prefix: --tax_scope
@@ -706,7 +663,6 @@ inputs:
       use the narrowest clade. 5) A taxonomic scope as in --tax_scope: use this second
       list to intersect with seed ortholog clades and use the narrowest (as in inner_narrowest)
       from the intersection to annotate.'
-    default: inner_narrowest
     inputBinding:
       position: 101
       prefix: --tax_scope_mode
@@ -715,7 +671,6 @@ inputs:
       - 'null'
       - Directory
     doc: Where temporary files are created. Better if this is a local disk.
-    default: /
     inputBinding:
       position: 101
       prefix: --temp_dir
@@ -725,7 +680,6 @@ inputs:
       - int
     doc: Number of attempts to load a server on a specific port. If failed, the 
       next numerical port will be tried.
-    default: 10
     inputBinding:
       position: 101
       prefix: --timeout_load_server
@@ -771,7 +725,6 @@ inputs:
     doc: When --itype CDS, translate CDS to proteins before search. When --itype
       genome/metagenome and --genepred search, translate predicted CDS from 
       blastx hits to proteins.
-    default: false
     inputBinding:
       position: 101
       prefix: --translate
@@ -785,7 +738,6 @@ inputs:
       esl-reformat. Database will be unloaded after execution. Note that this 
       only works for HMMER based searches. To load the eggnog-mapper annotation 
       DB into memory use --dbmem.
-    default: false
     inputBinding:
       position: 101
       prefix: --usemem

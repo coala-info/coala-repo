@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel jobs to use.
-    default: 1
     inputBinding:
       position: 103
       prefix: --num_jobs

@@ -48,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality for de-novo CpGs
-    default: 15
     inputBinding:
       position: 102
       prefix: --cpg-novo-min-baseq
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum reads needed in support of de-novo CpG
-    default: 2
     inputBinding:
       position: 102
       prefix: --cpg-novo-min-depth
@@ -66,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality for de-novo CpGs
-    default: 50
     inputBinding:
       position: 102
       prefix: --cpg-novo-min-mapq
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum variant allele frequency for de-novo CpGs
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --cpg-novo-min-vaf
@@ -102,7 +98,6 @@ inputs:
       - hiseq2500:   HiSeq2500 <https://support.illumina.com/sequencing/sequencing_instruments/hiseq_2500.html>\n\
       - novaseq6000: NovaSeq6000 <https://support.illumina.com/sequencing/sequencing_instruments/novaseq-6000.html>\n\
       - hiseqxten:   HiSeq X Ten <https://support.illumina.com/sequencing/sequencing_instruments/hiseq-x.html>"
-    default: novaseq6000
     inputBinding:
       position: 102
       prefix: --error-model
@@ -111,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: Exclude reads that match any of these bit-flags
-    default: 3852
     inputBinding:
       position: 102
       prefix: --exclude-flags
@@ -127,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Include reads that match all of these bit-flags
-    default: 3
     inputBinding:
       position: 102
       prefix: --include-flags
@@ -144,7 +137,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum quality ratio `(ad_alt*bq_alt + 1) / (ad_ref*bq_ref + 1)`
-    default: 0.27
     inputBinding:
       position: 102
       prefix: --m-bq-ratio-min
@@ -153,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum coverage depth for methylation calling
-    default: 1000
     inputBinding:
       position: 102
       prefix: --m-max-coverage
@@ -162,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum number of reads to call a position as methylated
-    default: 3
     inputBinding:
       position: 102
       prefix: --m-min-depth
@@ -171,7 +161,6 @@ inputs:
       - 'null'
       - float
     doc: The maximum relative position in read for alt allele evidence
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --m-read-position-max
@@ -180,7 +169,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum relative position in read for alt allele evidence
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --m-read-position-min
@@ -189,7 +177,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum variant allele frequency
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --m-vaf-min
@@ -197,7 +184,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 1000
     inputBinding:
       position: 102
       prefix: --max-coverage
@@ -206,7 +192,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality to consider a base
-    default: 10
     inputBinding:
       position: 102
       prefix: --min-baseq
@@ -215,7 +200,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality to consider a read
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-mapq
@@ -228,7 +212,6 @@ inputs:
       a prediction score. Anything above this threshold is considered PASS.\n\nFor
       consistency with `--no-ml`, this option can be also be specified as `--ml` without
       a value, which will use the default threshold."
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --ml
@@ -251,7 +234,6 @@ inputs:
       which way around the read aligns to the reference.\n\nAlso note that the distance
       is relative to read length, not alignment length, so soft-clipped bases count,
       too!"
-    default: 0,0,0,0
     inputBinding:
       position: 102
       prefix: --nOB
@@ -265,7 +247,6 @@ inputs:
       which way around the read aligns to the reference.\n\nAlso note that the distance
       is relative to read length, not alignment length, so soft-clipped bases count,
       too!"
-    default: 0,0,0,0
     inputBinding:
       position: 102
       prefix: --nOT
@@ -295,7 +276,6 @@ inputs:
       - int
     doc: "Maximum length of a segment in bases\n\nUsed for splitting work between
       threads. Tweak this to adjust memory usage."
-    default: 100000
     inputBinding:
       position: 102
       prefix: --segment-max-length
@@ -305,7 +285,6 @@ inputs:
       - int
     doc: "Number of bases to overlap between segments\n\nHelpful to avoid missing
       variants at the edges of segments."
-    default: 200
     inputBinding:
       position: 102
       prefix: --segment-overlap
@@ -316,7 +295,6 @@ inputs:
     doc: "Number of threads to use for processing the BAM file. Will use all available
       threads when not specified.\n\nNote that VCF writing might use additional threads
       internally for compression. This can be overwritten with `--vcf-threads`."
-    default: 20
     inputBinding:
       position: 102
       prefix: --threads
@@ -324,7 +302,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 3
     inputBinding:
       position: 102
       prefix: --v-min-depth
@@ -356,7 +333,6 @@ inputs:
     doc: "Number of threads to use for writing (and compressing) VCF files\n\nThis
       is subtracted from `--threads` but never below 1. Adjust this if you think that
       VCF writing is a bottleneck, e.g. when the output files contain a lot of positions."
-    default: 1
     inputBinding:
       position: 102
       prefix: --vcf-threads

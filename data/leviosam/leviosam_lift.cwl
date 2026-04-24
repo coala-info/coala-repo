@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Verbose level
-    default: 0
     inputBinding:
       position: 102
       prefix: -V

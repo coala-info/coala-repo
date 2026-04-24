@@ -18,7 +18,6 @@ inputs:
     position: 1
 - id: output_filename
   type: string
-  default: "marked_duplicates.bam"
   doc: Name of the output BAM file
   inputBinding:
     position: 2
@@ -50,7 +49,6 @@ inputs:
   type: string?
   doc: Order of regex elements. txy (default). With t being a part of the read 
     names that must be equal and x/y being coordinates.
-  default: txy
   inputBinding:
     position: 102
     prefix: --coords-order
@@ -96,7 +94,6 @@ inputs:
 - id: max_read_length
   type: int?
   doc: Max read length
-  default: 300
   inputBinding:
     position: 102
     prefix: -l
@@ -105,7 +102,6 @@ inputs:
   doc: Duplicate decision method for paired reads. TYPE = t measure positions 
     based on template start/end (default); s measure positions based on sequence
     start.
-  default: t
   inputBinding:
     position: 102
     prefix: --mode
@@ -179,7 +175,6 @@ inputs:
 - id: threads
   type: int?
   doc: Number of additional threads to use
-  default: 0
   inputBinding:
     position: 102
     prefix: --threads

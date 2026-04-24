@@ -35,7 +35,6 @@ inputs:
       - int
     doc: Number of query sequences to be read in at a time. May influence 
       performance.
-    default: 5000
     inputBinding:
       position: 101
       prefix: --chunk-size
@@ -54,7 +53,6 @@ inputs:
       - float
     doc: Two-phase heuristic, determination of candidate edges using 
       accumulative threshold. Enabled by default! See --no-heur for disabling it
-    default: 0.99999
     inputBinding:
       position: 101
       prefix: --dyn-heur
@@ -72,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of placements per sequence to include in final output.
-    default: 7
     inputBinding:
       position: 101
       prefix: --filter-max
@@ -81,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of placements per sequence to include in final output.
-    default: 1
     inputBinding:
       position: 101
       prefix: --filter-min
@@ -90,7 +86,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum likelihood weight below which a placement is discarded.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --filter-min-lwr
@@ -109,7 +104,6 @@ inputs:
       - string
     doc: 'Description string of the model to be used, or a RAxML_info file. --model
       STRING | FILE See: https://github.com/amkozlov/raxml-ng/wiki/Input-data#evolutionary-model'
-    default: GTR+G
     inputBinding:
       position: 101
       prefix: --model
@@ -136,7 +130,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to output directory.
-    default: ./
     inputBinding:
       position: 101
       prefix: --outdir
@@ -145,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: Output decimal point precision for floating point numbers.
-    default: 10
     inputBinding:
       position: 101
       prefix: --precision
@@ -217,7 +209,6 @@ inputs:
       - int
     doc: Number of threads to use. If 0 is passed as argument,program will run 
       with the maximum number of threads available.
-    default: 0
     inputBinding:
       position: 101
       prefix: --threads

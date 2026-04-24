@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum length (nts) of ORF to include
-    default: 60
     inputBinding:
       position: 101
       prefix: --min_orf_length
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Comma separated list of start codons
-    default: ATG
     inputBinding:
       position: 101
       prefix: --start_codons
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Comma separated list of stop codons
-    default: TAG,TAA,TGA
     inputBinding:
       position: 101
       prefix: --stop_codons

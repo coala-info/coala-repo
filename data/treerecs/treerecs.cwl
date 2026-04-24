@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: specify gene duplication cost.
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --dupcost
@@ -82,7 +81,6 @@ inputs:
       - 'null'
       - float
     doc: specify gene loss cost.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --losscost
@@ -92,7 +90,6 @@ inputs:
       - type: array
         items: string
     doc: 'output format(s): newick, nhx, phyloxml, recphyloxml or svg.'
-    default: newick
     inputBinding:
       position: 101
       prefix: --output-format
@@ -117,7 +114,6 @@ inputs:
       - 'null'
       - string
     doc: specify whether the species_name is a prefix of gene_name (Y/N).
-    default: N
     inputBinding:
       position: 101
       prefix: --prefix
@@ -142,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: size of the tree sampling.
-    default: 1
     inputBinding:
       position: 101
       prefix: --sample-size
@@ -159,7 +154,6 @@ inputs:
       - 'null'
       - string
     doc: specify separator character for species names embedded in gene names.
-    default: _
     inputBinding:
       position: 101
       prefix: --sep

@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: TransformerEncoder input feature numbers
-    default: 256
     inputBinding:
       position: 101
       prefix: --d_model
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: TransformerEncoder dim_feedforward
-    default: 512
     inputBinding:
       position: 101
       prefix: --dim_ff
@@ -41,7 +39,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 0
     inputBinding:
       position: 101
       prefix: --dl_num_workers
@@ -65,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: BiRNN hidden_size
-    default: 256
     inputBinding:
       position: 101
       prefix: --hid_rnn
@@ -82,7 +78,6 @@ inputs:
       - 'null'
       - boolean
     doc: if using mapping features, yes or no
-    default: false
     inputBinding:
       position: 101
       prefix: --is_map
@@ -91,7 +86,6 @@ inputs:
       - 'null'
       - boolean
     doc: if using num_pass features, yes or no
-    default: true
     inputBinding:
       position: 101
       prefix: --is_npass
@@ -100,7 +94,6 @@ inputs:
       - 'null'
       - boolean
     doc: if using signal-to-noise-ratio features, yes or no
-    default: false
     inputBinding:
       position: 101
       prefix: --is_sn
@@ -109,7 +102,6 @@ inputs:
       - 'null'
       - boolean
     doc: if using std features, yes or no
-    default: false
     inputBinding:
       position: 101
       prefix: --is_stds
@@ -118,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: BiRNN layer num
-    default: 3
     inputBinding:
       position: 101
       prefix: --layer_rnn
@@ -127,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: TransformerEncoder nlayers
-    default: 6
     inputBinding:
       position: 101
       prefix: --layer_trans
@@ -135,7 +125,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --lr
@@ -143,7 +132,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --lr_decay
@@ -152,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: effective in StepLR
-    default: 1
     inputBinding:
       position: 101
       prefix: --lr_decay_step
@@ -161,7 +148,6 @@ inputs:
       - 'null'
       - string
     doc: effective in ReduceLROnPlateau. last, mean, or max
-    default: last
     inputBinding:
       position: 101
       prefix: --lr_mode_strategy
@@ -170,7 +156,6 @@ inputs:
       - 'null'
       - int
     doc: effective in ReduceLROnPlateau
-    default: 0
     inputBinding:
       position: 101
       prefix: --lr_patience
@@ -179,7 +164,6 @@ inputs:
       - 'null'
       - string
     doc: StepLR or ReduceLROnPlateau
-    default: StepLR
     inputBinding:
       position: 101
       prefix: --lr_scheduler
@@ -188,7 +172,6 @@ inputs:
       - 'null'
       - int
     doc: max epoch num
-    default: 50
     inputBinding:
       position: 101
       prefix: --max_epoch_num
@@ -197,7 +180,6 @@ inputs:
       - 'null'
       - int
     doc: min epoch num
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_epoch_num
@@ -213,7 +195,6 @@ inputs:
       - string
     doc: type of model to use, 'attbilstm2s', 'attbigru2s', 'transencoder2s', 
       'attbilstm2s2', 'attbigru2s2'
-    default: attbigru2s
     inputBinding:
       position: 101
       prefix: --model_type
@@ -222,7 +203,6 @@ inputs:
       - 'null'
       - int
     doc: TransformerEncoder nhead
-    default: 4
     inputBinding:
       position: 101
       prefix: --nhead
@@ -232,7 +212,6 @@ inputs:
       - string
     doc: type of optimizer to use, 'Adam', 'SGD', 'RMSprop', 'Ranger' or 
       'LookaheadAdam'
-    default: Adam
     inputBinding:
       position: 101
       prefix: --optim_type
@@ -248,7 +227,6 @@ inputs:
       - 'null'
       - int
     doc: length of kmer
-    default: 21
     inputBinding:
       position: 101
       prefix: --seq_len
@@ -278,7 +256,6 @@ inputs:
       - 'null'
       - boolean
     doc: if using torch.compile, yes or no ('yes' only works in pytorch>=2.0)
-    default: false
     inputBinding:
       position: 101
       prefix: --use_compile

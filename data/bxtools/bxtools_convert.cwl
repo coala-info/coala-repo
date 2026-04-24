@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Tag to flip for chromosome
-    default: BX
     inputBinding:
       position: 102
       prefix: --tag

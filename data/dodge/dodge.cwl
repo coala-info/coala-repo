@@ -11,7 +11,6 @@ inputs:
       - boolean
     doc: data in this input set / time window to be used for background (no 
       outbreak predictions)
-    default: false
     inputBinding:
       position: 101
       prefix: --background_data
@@ -21,7 +20,6 @@ inputs:
       - string
     doc: comma separated list of cluster cutoffs or range or both i.e 1,2,5 or 
       1-8 or 1,2,5-10
-    default: 1-5
     inputBinding:
       position: 101
       prefix: --dist_limits
@@ -50,7 +48,6 @@ inputs:
     doc: metadata and allele profiles downloaded from enterobase, if hierCC in 
       metadata table hierCC will be used for outbreak naming (i.e. column named 
       HCXXX)
-    default: false
     inputBinding:
       position: 101
       prefix: --enterobase_data
@@ -60,7 +57,6 @@ inputs:
       - boolean
     doc: When identifying clusters with one static threshold do not apply 
       temporal window for cluster, must be used with '--outbreakmethod static'
-    default: false
     inputBinding:
       position: 101
       prefix: --exclude_time_in_static
@@ -102,7 +98,6 @@ inputs:
       - int
     doc: maximum number of missmatches reported between 2 isolates (will default
       to max of --dist_limits + 1 if not set)
-    default: 1
     inputBinding:
       position: 101
       prefix: --max_missmatch
@@ -111,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: smallest cluster size for outbreak detection
-    default: 5
     inputBinding:
       position: 101
       prefix: --minsize
@@ -120,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: number cores to increase pairwise distance speed
-    default: 8
     inputBinding:
       position: 101
       prefix: --no_cores
@@ -129,7 +122,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not include MGT or HierCC nomenclature in investigation cluster ID
-    default: false
     inputBinding:
       position: 101
       prefix: --nonomenclatureinid
@@ -138,7 +130,6 @@ inputs:
       - 'null'
       - string
     doc: algorithm for outbreak detection dodge or static
-    default: dodge
     inputBinding:
       position: 101
       prefix: --outbreakmethod
@@ -153,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: minimum allowable SNP quality score
-    default: 1000
     inputBinding:
       position: 101
       prefix: --snpqual
@@ -188,7 +178,6 @@ inputs:
       - 'null'
       - string
     doc: time segment to perform analysis. every month or every week
-    default: week
     inputBinding:
       position: 101
       prefix: --timesegment
@@ -209,7 +198,6 @@ inputs:
     doc: use the consensus.fasta file from snippy to check for missing data when
       a snp is not called, include these genomes in the same folder as input vcf
       files
-    default: false
     inputBinding:
       position: 101
       prefix: --usegenomes
@@ -218,7 +206,6 @@ inputs:
       - 'null'
       - boolean
     doc: include reference in distances/clusters for snp inputtype
-    default: false
     inputBinding:
       position: 101
       prefix: --useref

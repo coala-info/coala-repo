@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Genome build (GRCh37, GRCh38)
-    default: GRCh37
     inputBinding:
       position: 101
       prefix: --build
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Encoding of the array file
-    default: UTF-8
     inputBinding:
       position: 101
       prefix: --encoding
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Set the verbosity of the logger (DEBUG, INFO, WARNING, ERROR)
-    default: INFO
     inputBinding:
       position: 101
       prefix: --log-level

@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: 'Annotation level: 0 (none), 1 (quartet support), 2 (full annotation).'
-    default: 0
     inputBinding:
       position: 101
       prefix: -t

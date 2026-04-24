@@ -73,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum fraction of gaps in a column
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -maxgapfract
@@ -82,7 +81,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum column confidence
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -minconf
@@ -91,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: 'Guide tree permutation: none, abc, acb, bca'
-    default: none
     inputBinding:
       position: 101
       prefix: -perm
@@ -100,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Perturbation seed
-    default: 0
     inputBinding:
       position: 101
       prefix: -perturb

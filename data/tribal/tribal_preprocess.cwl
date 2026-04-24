@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: number of cores to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: minimum clonotype size
-    default: 4
     inputBinding:
       position: 101
       prefix: --min-size

@@ -10,7 +10,6 @@ inputs:
       - int
     doc: "Kmer length used for finding adapters. Adapters\n                      \
       \      shorter than k will not be found."
-    default: 23
     inputBinding:
       position: 101
       prefix: --adapter_k
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: Illumina adapters to remove
-    default: BBmap adapters
     inputBinding:
       position: 101
       prefix: --adapters
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Reduce samples to a given coverage.
-    default: 100
     inputBinding:
       position: 101
       prefix: --coverage
@@ -47,7 +44,6 @@ inputs:
     doc: "Number of processors made available to a single process.\n             \
       \               If greater than \"--max_cpus\" it will be set equal to\n   \
       \                         \"--max_cpus\""
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -72,7 +68,6 @@ inputs:
       - int
     doc: "If positive, right-trim length to be equal to zero,\n                  \
       \          modulo this number."
-    default: 0
     inputBinding:
       position: 101
       prefix: --ftm
@@ -81,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Expected genome size (bp) for all samples.
-    default: 0
     inputBinding:
       position: 101
       prefix: --genome_size
@@ -91,7 +85,6 @@ inputs:
       - int
     doc: "Maximum Hamming distance for ref kmers (subs only).\n                  \
       \          Memory use is proportional to (3*K)^hdist."
-    default: 1
     inputBinding:
       position: 101
       prefix: --hdist
@@ -112,7 +105,6 @@ inputs:
       \           Values:\n                                f (do not trim)\n     \
       \                           r (trim to the right, Default)\n               \
       \                 l (trim to the left)"
-    default: r
     inputBinding:
       position: 101
       prefix: --ktrim
@@ -122,7 +114,6 @@ inputs:
       - int
     doc: "Reads with average quality (after trimming) below\n                    \
       \        this will be discarded."
-    default: 20
     inputBinding:
       position: 101
       prefix: --maq
@@ -132,7 +123,6 @@ inputs:
       - int
     doc: "The maximum number of processors this workflow should\n                \
       \             have access to at any given moment."
-    default: 1
     inputBinding:
       position: 101
       prefix: --max_cpus
@@ -141,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of corrections within a 20bp window
-    default: 1
     inputBinding:
       position: 101
       prefix: --maxcor
@@ -152,7 +141,6 @@ inputs:
     doc: "Look for shorter kmers at read tips down to this\n                     \
       \       length, when k-trimming or masking. 0 means\n                      \
       \      disabled. Enabling this will disable maskmiddle."
-    default: 11
     inputBinding:
       position: 101
       prefix: --mink
@@ -163,7 +151,6 @@ inputs:
     doc: "Reads shorter than this after trimming will be\n                       \
       \     discarded. Pairs will be discarded if both are\n                     \
       \       shorter."
-    default: 35
     inputBinding:
       position: 101
       prefix: --minlength
@@ -172,7 +159,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to write results to.
-    default: ./
     inputBinding:
       position: 101
       prefix: --outdir
@@ -181,7 +167,6 @@ inputs:
       - 'null'
       - File
     doc: phiX174 reference genome to remove
-    default: NC_001422
     inputBinding:
       position: 101
       prefix: --phix
@@ -191,7 +176,6 @@ inputs:
       - int
     doc: "Kmer length used for finding phiX174. Contaminants\n                   \
       \         shorter than k will not be found."
-    default: 31
     inputBinding:
       position: 101
       prefix: --phix_k
@@ -203,7 +187,6 @@ inputs:
       \                      33 (PHRED33 offset quality scores, Default)\n       \
       \                         64 (PHRED64 offset quality scores)\n             \
       \                   auto (keeps the current input offset)"
-    default: '33'
     inputBinding:
       position: 101
       prefix: --qout
@@ -217,7 +200,6 @@ inputs:
       \     f (neither end)\n                                r (right end only)\n\
       \                                l (left end only)\n                       \
       \         w (sliding window)"
-    default: rl
     inputBinding:
       position: 101
       prefix: --qtrim
@@ -227,7 +209,6 @@ inputs:
       - int
     doc: "Set to a positive number to use that prng seed for\n                   \
       \         sampling"
-    default: 42
     inputBinding:
       position: 101
       prefix: --sampleseed
@@ -238,7 +219,6 @@ inputs:
     doc: "Trim adapters based on where paired reads overlap.\n                   \
       \         Values:\n                                f (do not trim by overlap)\n\
       \                                t (trim by overlap, Default)"
-    default: true
     inputBinding:
       position: 101
       prefix: --tbo
@@ -249,7 +229,6 @@ inputs:
     doc: "Discard reads with invalid characters as bases.\n                      \
       \      Values:\n                                f (keep all reads)\n       \
       \                         t (toss reads with ambiguous bases, Default)"
-    default: true
     inputBinding:
       position: 101
       prefix: --tossjunk
@@ -261,7 +240,6 @@ inputs:
       \       minimum length of either.\n                            Values:\n   \
       \                             f (do not equally trim)\n                    \
       \            t (equally trim to the right, Default)"
-    default: true
     inputBinding:
       position: 101
       prefix: --tpe
@@ -271,7 +249,6 @@ inputs:
       - float
     doc: "Regions with average quality BELOW this will be\n                      \
       \      trimmed if qtrim is set to something other than f."
-    default: 6.0
     inputBinding:
       position: 101
       prefix: --trimq
@@ -283,7 +260,6 @@ inputs:
       \       Examples:\n                                8g will specify 8 gigs of
       RAM (Default)\n                                20g will specify 20 gigs of RAM\n\
       \                                200m will specify 200 megs of RAM"
-    default: 8g
     inputBinding:
       position: 101
       prefix: --xmx

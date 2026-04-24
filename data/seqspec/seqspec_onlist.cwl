@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Selector for ID, [read, region, region-type]
-    default: read
     inputBinding:
       position: 102
       prefix: --selector

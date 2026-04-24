@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: cpu usage for sge, 1 by default, max(--cpu, -num_threads) will be used
-    default: 1
     inputBinding:
       position: 102
       prefix: --cpu
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: memory (GB) usage for sge, 1 by default
-    default: 1
     inputBinding:
       position: 102
       prefix: --memory
@@ -66,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: split query into num of chunks, 10 by default
-    default: 10
     inputBinding:
       position: 102
       prefix: --split

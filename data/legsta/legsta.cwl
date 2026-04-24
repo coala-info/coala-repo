@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output CSV instead of TSV (default '0').
-    default: '0'
     inputBinding:
       position: 102
       prefix: --csv
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - Directory
     doc: SBT database folder (default '/usr/local/db').
-    default: /usr/local/db
     inputBinding:
       position: 102
       prefix: --dbdir=s
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Verbose debug output to stderr (default '0').
-    default: '0'
     inputBinding:
       position: 102
       prefix: --debug+
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't print header row (default '0').
-    default: '0'
     inputBinding:
       position: 102
       prefix: --noheader

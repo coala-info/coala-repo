@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Format for generated plots (png, pdf, svg)
-    default: png
     inputBinding:
       position: 102
       prefix: --format
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Taxonomic level to summarize (e.g., 3 for genus)
-    default: 3
     inputBinding:
       position: 102
       prefix: --level
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads for an OTU to be included in plots
-    default: 1
     inputBinding:
       position: 102
       prefix: --min_otu
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads to include a sample in plots
-    default: 100
     inputBinding:
       position: 102
       prefix: --min_reads
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: Type of plot to generate (bar, pie, stackedbar)
-    default: bar
     inputBinding:
       position: 102
       prefix: --plot

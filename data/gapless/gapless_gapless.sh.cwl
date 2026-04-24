@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations
-    default: 3
     inputBinding:
       position: 102
       prefix: -n
@@ -33,7 +32,6 @@ inputs:
       - Directory
     doc: Output directory (improved assembly is written to gapless.fa in this 
       directory)
-    default: gapless_run
     inputBinding:
       position: 102
       prefix: -o
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Start iteration (Previous runs must be present in output directory)
-    default: 1
     inputBinding:
       position: 102
       prefix: -s
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 4
     inputBinding:
       position: 102
       prefix: -j

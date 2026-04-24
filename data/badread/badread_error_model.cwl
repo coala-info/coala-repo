@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Error model k-mer size
-    default: 7
     inputBinding:
       position: 101
       prefix: --k_size
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Only save up to this many alternatives to each k-mer
-    default: 25
     inputBinding:
       position: 101
       prefix: --max_alt

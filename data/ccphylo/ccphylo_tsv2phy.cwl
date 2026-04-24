@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Byte precision on distance matrix
-    default: False / double / 1e0
     inputBinding:
       position: 101
       prefix: --byte_precision
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Distance method
-    default: cos
     inputBinding:
       position: 101
       prefix: --distance
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: Float precision on distance matrix
-    default: False / double
     inputBinding:
       position: 101
       prefix: --float_precision
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - File
     doc: Input file
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allocate matrix on the disk
-    default: false
     inputBinding:
       position: 101
       prefix: --mmap
@@ -70,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Output flags
-    default: 1
     inputBinding:
       position: 101
       prefix: --flag
@@ -79,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Floating point print precision
-    default: 9
     inputBinding:
       position: 101
       prefix: --print_precision
@@ -88,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: Separator
-    default: \t
     inputBinding:
       position: 101
       prefix: --separator
@@ -97,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: Short precision on distance matrix
-    default: False / double / 1e0
     inputBinding:
       position: 101
       prefix: --short_precision

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: Completeness cutoff for viralComplete
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --completeness
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: minimal limit on the viral length under study
-    default: 5k
     inputBinding:
       position: 101
       prefix: --min_viral_length
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory
-    default: the assembler's output dir
     inputBinding:
       position: 101
       prefix: --outdir
@@ -79,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Threads used
-    default: 10
     inputBinding:
       position: 101
       prefix: --threads

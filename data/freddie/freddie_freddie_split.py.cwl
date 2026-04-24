@@ -35,7 +35,6 @@ inputs:
       - int
     doc: 'Minimum contig size. Any contig with less size will not be processes. Default:
       1,000,000'
-    default: 1000000
     inputBinding:
       position: 102
       prefix: --contig-min-size
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Path to output directory. Default: freddie_split/'
-    default: freddie_split/
     inputBinding:
       position: 102
       prefix: --outdir
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads. Max # of threads used is # of contigs. Default: 1'
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

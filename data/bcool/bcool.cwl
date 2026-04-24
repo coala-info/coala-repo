@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: k-mer size
-    default: AUTO
     inputBinding:
       position: 101
       prefix: -k
@@ -27,7 +26,6 @@ inputs:
       - int
     doc: Maximum occurence of an anchor, better correction for repetitive genome
       but slower
-    default: 1
     inputBinding:
       position: 101
       prefix: -n
@@ -37,7 +35,6 @@ inputs:
       - int
     doc: k-mers present strictly less than this number of times in the dataset 
       will be discarded
-    default: 2
     inputBinding:
       position: 101
       prefix: -s
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of corrected bases
-    default: 10
     inputBinding:
       position: 101
       prefix: -m
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cores used
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to store the results
-    default: current directory
     inputBinding:
       position: 101
       prefix: -o
@@ -79,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: index one out of i anchors to reduce memory consumption
-    default: 1
     inputBinding:
       position: 101
       prefix: -i
@@ -88,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: Unitig Coverage for cleaning
-    default: AUTO
     inputBinding:
       position: 101
       prefix: -S

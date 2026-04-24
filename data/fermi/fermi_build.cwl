@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - File
     doc: append the FM-index to the existing FILE
-    default: 'null'
     inputBinding:
       position: 102
       prefix: -i
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: use a small marker per 2^(INT+3) bytes
-    default: 3
     inputBinding:
       position: 102
       prefix: -b
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: number of symbols to process at a time
-    default: 250000000
     inputBinding:
       position: 102
       prefix: -s
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: trim read down to INT bp
-    default: inf
     inputBinding:
       position: 102
       prefix: -l

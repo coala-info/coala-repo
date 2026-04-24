@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: Number of angle bins
-    default: 4
     inputBinding:
       position: 101
       prefix: --angle
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Number of distance bins
-    default: 16
     inputBinding:
       position: 101
       prefix: --distance
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Hash type to use
-    default: default
     inputBinding:
       position: 101
       prefix: --type
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: ID type to use (pdb, uniprot, afdb, relpath, abspath)
-    default: relpath
     inputBinding:
       position: 101
       prefix: --id
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of residues in a PDB file
-    default: 50000
     inputBinding:
       position: 101
       prefix: --max-residue
@@ -56,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Mode to index
-    default: id
     inputBinding:
       position: 101
       prefix: --mode
@@ -88,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

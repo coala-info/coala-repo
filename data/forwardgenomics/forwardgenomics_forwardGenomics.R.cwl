@@ -56,7 +56,6 @@ inputs:
       - string
     doc: Which method to run. GLS includes computing the margin of the 
       perfect-match method. Default is all.
-    default: all
     inputBinding:
       position: 101
       prefix: --method
@@ -67,7 +66,6 @@ inputs:
     doc: In case of missing data (no %id value for some species) only consider 
       elements where at least this many independent loss events are supported 
       with %id values. Can be used to exclude lineage-specific losses. Default 2
-    default: 2
     inputBinding:
       position: 101
       prefix: --minLosses
@@ -78,7 +76,6 @@ inputs:
     doc: If verbose==TRUE, this directory will be created and will contain 
       scatter plots for each element. If verbose==FALSE, this parameter has no 
       effect. Default directory '.'
-    default: .
     inputBinding:
       position: 101
       prefix: --outPath
@@ -90,7 +87,6 @@ inputs:
       branches are highly conserved. We reject genomic elements if a local %id value
       is lower than this threshold for a conserved branch. Set to 0 to ignore this.
       Default: 0.5'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --thresholdConserved
@@ -100,7 +96,6 @@ inputs:
       - string
     doc: Whether to use raw global %id values or normalize them for the 
       differences in evolutionary rates. Default normalized
-    default: normalized
     inputBinding:
       position: 101
       prefix: --transf
@@ -117,7 +112,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show much more info and create plots for each element. Default is FALSE
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

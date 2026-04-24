@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the output units for processed spectra.
-    default: bin
     inputBinding:
       position: 102
   - id: overwrite
@@ -25,7 +24,6 @@ inputs:
       - boolean
     doc: Replace existing files if true or fail when trying to overwrite a file 
       if false.
-    default: false
     inputBinding:
       position: 102
   - id: parameter_file
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: A file containing parameters.
-    default: ''
     inputBinding:
       position: 102
   - id: spectrum_parser
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the parser to use for reading in MS/MS spectra.
-    default: pwiz
     inputBinding:
       position: 102
   - id: stop_after
@@ -49,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: Stop after the specified pre-processing step.
-    default: xcorr
     inputBinding:
       position: 102
   - id: use_z_line
@@ -58,7 +53,6 @@ inputs:
       - boolean
     doc: Specify whether, when parsing an MS2 spectrum file, Crux obtains the 
       precursor mass information from the "S" line or the "Z" line.
-    default: true
     inputBinding:
       position: 102
   - id: verbosity
@@ -69,7 +63,6 @@ inputs:
       messages, including all those at lower verbosity levels: 0-fatal errors, 10-non-fatal
       errors, 20-warnings, 30-information on the progress of execution, 40-more progress
       information, 50-debug info, 60-detailed debug info.'
-    default: 30
     inputBinding:
       position: 102
 outputs:

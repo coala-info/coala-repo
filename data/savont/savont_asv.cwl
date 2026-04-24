@@ -19,7 +19,6 @@ inputs:
       - int
     doc: Allowable errors for bi-chimeric detection (higher = more sensitive, 
       slower)
-    default: 1
     inputBinding:
       position: 102
       prefix: --chimera-allowable-errors
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: Logging verbosity level
-    default: debug
     inputBinding:
       position: 102
       prefix: --log-level
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of reclustering iterations
-    default: 10
     inputBinding:
       position: 102
       prefix: --max-iterations-recluster
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum read length for reads
-    default: 2000
     inputBinding:
       position: 102
       prefix: --max-read-length
@@ -82,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads required to keep a cluster (ASV)
-    default: 12
     inputBinding:
       position: 102
       prefix: --min-cluster-size
@@ -91,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length for reads
-    default: 1100
     inputBinding:
       position: 102
       prefix: --min-read-length
@@ -101,7 +95,6 @@ inputs:
       - int
     doc: Minimum base quality to be considered high-quality for SNPmer 
       detection. Set lower for older reads (~18 for R9)
-    default: 25
     inputBinding:
       position: 102
       prefix: --minimum-base-quality
@@ -111,7 +104,6 @@ inputs:
       - int
     doc: Minimum depth required for sequences with ambiguous bases to be 
       included in output
-    default: 250
     inputBinding:
       position: 102
       prefix: --n-depth-cutoff
@@ -120,7 +112,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory for results (created if it does not exist)
-    default: savont-out
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -131,7 +122,6 @@ inputs:
     doc: Negative alternate posterior probability threshold (natural log scale) 
       for base consensus. Higher = more stringent for low-quality consensuses. 
       Do not set higher than min_depth * ln(error_rate)
-    default: 30
     inputBinding:
       position: 102
       prefix: --posterior-threshold-ln
@@ -140,7 +130,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum estimated read accuracy (%) to include in clustering
-    default: 98
     inputBinding:
       position: 102
       prefix: --quality-value-cutoff
@@ -166,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for parallel processing
-    default: 20
     inputBinding:
       position: 102
       prefix: --threads

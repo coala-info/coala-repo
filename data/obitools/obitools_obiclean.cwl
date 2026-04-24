@@ -20,7 +20,6 @@ inputs:
       - int
     doc: Maximum number of errors (distance) allowed between two sequences to consider
       one as a variant of the other.
-    default: 1
     inputBinding:
       position: 102
       prefix: --distance
@@ -47,7 +46,6 @@ inputs:
     doc: Threshold ratio between the count of a sequence and the count of its potential
       variant. If the ratio is higher than this threshold, the sequence is not considered
       a variant.
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --ratio

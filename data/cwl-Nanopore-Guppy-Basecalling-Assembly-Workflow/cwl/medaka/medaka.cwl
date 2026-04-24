@@ -47,13 +47,11 @@ inputs:
   threads:
     label: Number of CPU threads used by tool.
     type: int
-    default: 1
     inputBinding:
       prefix: -t # number of threads with which to create features (default: 1)
   bam_workers:
     label: number of workers for bam
     type: int
-    default: 2
     inputBinding:
       prefix: --bam_workers # number of workers used to prepare data from bam
   reads:
@@ -81,7 +79,6 @@ inputs:
       For test set (https://denbi-nanopore-training-course.readthedocs.io/en/latest/basecalling/basecalling.html?highlight=flowcell),
       use "r941_min_hac_g507" according to the list of available models.
     type: string
-    default: r941_min_hac_g507
     inputBinding:
       prefix: -m # medaka model, (test dataset: r941_min_hac_g507)
 

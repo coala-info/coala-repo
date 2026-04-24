@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer size for Abyss, Bifrost uses 31
-    default: 31
     inputBinding:
       position: 101
       prefix: --kmer
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Bowtie2 maximum number of hits
-    default: 1000
     inputBinding:
       position: 101
       prefix: --numhits
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: Output directory
-    default: output_yyyymmdd_hhmmss
     inputBinding:
       position: 101
       prefix: --output
@@ -69,14 +66,12 @@ inputs:
       - 'null'
       - int
     doc: Read Length (can be average)
-    default: 100
     inputBinding:
       position: 101
       prefix: --readlen
   - id: reads
     type: string
     doc: Paired-read file separated by ','
-    default: read1.fq,read2.fq
     inputBinding:
       position: 101
       prefix: --reads
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Threads
-    default: Max
     inputBinding:
       position: 101
       prefix: --threads

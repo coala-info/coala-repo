@@ -19,7 +19,6 @@ inputs:
       - boolean
     doc: Places each multi-genome anchor in exactly one LCB; the longest 
       spanning LCB
-    default: false
     inputBinding:
       position: 102
       prefix: --allownestedlcbs
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Detect and report duplications. 0 - Skip.
-    default: 0
     inputBinding:
       position: 102
       prefix: -duplications
@@ -57,7 +55,6 @@ inputs:
     doc: maximum distance along a single sequence (bp) for chaining anchors into
       locally colinear blocks (LCBs). This is used by the segmentation step 
       synchain-mugsy.
-    default: 1000
     inputBinding:
       position: 102
       prefix: --distance
@@ -67,7 +64,6 @@ inputs:
       - int
     doc: minimum span of an aligned region in a colinear block (bp). This is 
       used by the segmentation step synchain-mugsy.
-    default: 30
     inputBinding:
       position: 102
       prefix: --minlength
@@ -78,7 +74,6 @@ inputs:
     doc: options passed through to the Nucmer package. Eg. -nucmeropts "-l 15" 
       sets the minimum MUM length in NUCmer to 15. See the Nucmer documentation 
       at http://mummer.sf.net for more information.
-    default: -l 15
     inputBinding:
       position: 102
       prefix: -nucmeropts

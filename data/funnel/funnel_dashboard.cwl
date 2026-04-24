@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: The server address for the dashboard
-    default: http://localhost:8000
     inputBinding:
       position: 101
       prefix: --server

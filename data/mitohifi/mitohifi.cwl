@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of assembled contigs.
-    default: 20000
     inputBinding:
       position: 102
       prefix: --max-length
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of assembled contigs.
-    default: 1000
     inputBinding:
       position: 102
       prefix: --min-length
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output files.
-    default: mitohifi
     inputBinding:
       position: 102
       prefix: --output-prefix
@@ -65,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

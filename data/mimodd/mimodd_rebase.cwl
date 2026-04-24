@@ -24,7 +24,6 @@ inputs:
       mapped variants, "best": for ambiguously mapping variants, report the mapping
       with the highest score, "all": for ambiguously mapping variants, report all
       mappings'
-    default: unique
     inputBinding:
       position: 103
       prefix: --filter

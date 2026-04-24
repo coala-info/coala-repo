@@ -33,7 +33,6 @@ inputs:
       - int
     doc: Number of bases to trim off the end of every contig before extending 
       for the first time
-    default: 25
     inputBinding:
       position: 102
       prefix: --ctg_first_trim
@@ -43,7 +42,6 @@ inputs:
       - int
     doc: During iterative extension, number of bases to trim off the end of a 
       contig when extension fails (then try extending again)
-    default: 10
     inputBinding:
       position: 102
       prefix: --ctg_iter_trim
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of bases to try to extend on each iteration
-    default: 100
     inputBinding:
       position: 102
       prefix: --ext_max_bases
@@ -62,7 +59,6 @@ inputs:
       - int
     doc: Set minimum number of bases soft clipped off a read for those bases to 
       be used for extension
-    default: 3
     inputBinding:
       position: 102
       prefix: --ext_min_clip
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum kmer depth needed to use that kmer to extend a contig
-    default: 10
     inputBinding:
       position: 102
       prefix: --ext_min_cov
@@ -81,7 +76,6 @@ inputs:
       - float
     doc: Sets N, where kmer for extension must be at least N times more abundant
       than next most common kmer
-    default: 4.0
     inputBinding:
       position: 102
       prefix: --ext_min_ratio
@@ -99,7 +93,6 @@ inputs:
       - boolean
     doc: Keep intermediate files (could be many!). Default is to delete all 
       unnecessary files
-    default: false
     inputBinding:
       position: 102
       prefix: --keep_files
@@ -127,7 +120,6 @@ inputs:
       - int
     doc: Maximum number of contigs allowed in the assembly. No more seeds 
       generated if the cutoff is reached
-    default: 50
     inputBinding:
       position: 102
       prefix: --max_contigs
@@ -137,7 +129,6 @@ inputs:
       - int
     doc: Maximum insert size (includes read length). Reads with inferred insert 
       size more than the maximum will not be used to extend contigs
-    default: 800
     inputBinding:
       position: 102
       prefix: --max_insert
@@ -146,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of read after trimming
-    default: 50
     inputBinding:
       position: 102
       prefix: --min_trimmed_length
@@ -194,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of bases to try to extend on each iteration
-    default: 50
     inputBinding:
       position: 102
       prefix: --seed_ext_max_bases
@@ -203,7 +192,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum kmer depth needed to use that kmer to extend a contig
-    default: 10
     inputBinding:
       position: 102
       prefix: --seed_ext_min_cov
@@ -213,7 +201,6 @@ inputs:
       - float
     doc: Sets N, where kmer for extension must be at least N times more abundant
       than next most common kmer
-    default: 4.0
     inputBinding:
       position: 102
       prefix: --seed_ext_min_ratio
@@ -222,7 +209,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum kmer coverage of initial seed
-    default: 1000000
     inputBinding:
       position: 102
       prefix: --seed_max_kmer_cov
@@ -231,7 +217,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum kmer coverage of initial seed
-    default: 25
     inputBinding:
       position: 102
       prefix: --seed_min_kmer_cov
@@ -270,7 +255,6 @@ inputs:
       - float
     doc: Minimum identity threshold for mapping to be reported (the -y option in
       smalt map)
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --smalt_id
@@ -279,7 +263,6 @@ inputs:
       - 'null'
       - int
     doc: kmer hash length in SMALT (the -k option in smalt index)
-    default: 19
     inputBinding:
       position: 102
       prefix: --smalt_k
@@ -288,7 +271,6 @@ inputs:
       - 'null'
       - int
     doc: kmer hash step size in SMALT (the -s option in smalt index)
-    default: 11
     inputBinding:
       position: 102
       prefix: --smalt_s
@@ -302,7 +284,6 @@ inputs:
       libraries with overlapping reads (ie fragment length < 2*read length), and
       even then, it can make results worse. If used, try a low value like 0.1 
       first
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --strand_bias
@@ -321,7 +302,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -330,7 +310,6 @@ inputs:
       - 'null'
       - string
     doc: Trimmomatic options used to quality trim reads
-    default: LEADING:10 TRAILING:10 SLIDINGWINDOW:4:20
     inputBinding:
       position: 102
       prefix: --trimmo_qual

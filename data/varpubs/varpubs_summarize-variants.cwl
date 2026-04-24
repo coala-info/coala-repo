@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Hugging Face API token for model access.
-    default: ''
     inputBinding:
       position: 101
       prefix: --api_key
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: 'The LLM model used for summarization (default: medgemma-27b-it).'
-    default: medgemma-27b-it
     inputBinding:
       position: 101
       prefix: --model
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: 'The professional role or perspective the LLM should take (default: physician).'
-    default: physician
     inputBinding:
       position: 101
       prefix: --role
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: 'Species for variant annotation (default: human).'
-    default: human
     inputBinding:
       position: 101
       prefix: --species

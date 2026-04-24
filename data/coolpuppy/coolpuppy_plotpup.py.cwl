@@ -10,7 +10,6 @@ inputs:
       - int
     doc: How many central pixels to consider when calculating enrichment for 
       off-diagonal pileups.
-    default: 3
     inputBinding:
       position: 101
       prefix: --center
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Colormap to use (see https://matplotlib.org/users/colormaps.html)
-    default: coolwarm
     inputBinding:
       position: 101
       prefix: --cmap
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Order of columns to use, space separated inside quotes
-    default: None
     inputBinding:
       position: 101
       prefix: --col_order
@@ -38,7 +35,6 @@ inputs:
       - type: array
         items: string
     doc: Names to plot for columns, space separated.
-    default: None
     inputBinding:
       position: 101
       prefix: --colnames
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Which value to map as columns
-    default: None
     inputBinding:
       position: 101
       prefix: --cols
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: DPI of the output plot. Try increasing if heatmaps look blurry
-    default: 300
     inputBinding:
       position: 101
       prefix: --dpi
@@ -73,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: Font to use for plotting
-    default: DejaVu Sans
     inputBinding:
       position: 101
       prefix: --font
@@ -82,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: Font scale to use for plotting. Defaults to 1
-    default: 1
     inputBinding:
       position: 101
       prefix: --font_scale
@@ -91,7 +83,6 @@ inputs:
       - 'null'
       - float
     doc: Height of the plot
-    default: 1
     inputBinding:
       position: 101
       prefix: --height
@@ -101,7 +92,6 @@ inputs:
       - int
     doc: How many central bins to ignore when calculating insulation for local 
       (on-diagonal) non-rescaled pileups.
-    default: 3
     inputBinding:
       position: 101
       prefix: --ignore_central
@@ -111,7 +101,6 @@ inputs:
       - type: array
         items: File
     doc: All files to plot
-    default: None
     inputBinding:
       position: 101
       prefix: --input_pups
@@ -129,7 +118,6 @@ inputs:
       - 'null'
       - string
     doc: Set the logging level
-    default: INFO
     inputBinding:
       position: 101
       prefix: --log
@@ -148,7 +136,6 @@ inputs:
     doc: Whether to normalize pileups by their top left and bottom right 
       corners. 0 for no normalization, positive number to define the size of the
       corner squares whose values are averaged
-    default: 0
     inputBinding:
       position: 101
       prefix: --norm_corners
@@ -165,7 +152,6 @@ inputs:
       - 'null'
       - File
     doc: Output bedpe of sorted stripe regions
-    default: None
     inputBinding:
       position: 101
       prefix: --out_sorted_bedpe
@@ -202,7 +188,6 @@ inputs:
     doc: "Pandas query to select pups to plot from concatenated input files. Multiple
       query arguments can be used. Usage example: --query \"orientation == '+-' |
       orientation == '-+'\""
-    default: None
     inputBinding:
       position: 101
       prefix: --query
@@ -211,7 +196,6 @@ inputs:
       - 'null'
       - string
     doc: Order of rows to use, space separated inside quotes
-    default: None
     inputBinding:
       position: 101
       prefix: --row_order
@@ -221,7 +205,6 @@ inputs:
       - type: array
         items: string
     doc: Names to plot for rows, space separated.
-    default: None
     inputBinding:
       position: 101
       prefix: --rownames
@@ -230,7 +213,6 @@ inputs:
       - 'null'
       - string
     doc: Which value to map as rows
-    default: None
     inputBinding:
       position: 101
       prefix: --rows
@@ -239,7 +221,6 @@ inputs:
       - 'null'
       - string
     doc: Whether to use linear or log scaling for mapping colours
-    default: log
     inputBinding:
       position: 101
       prefix: --scale
@@ -248,7 +229,6 @@ inputs:
       - 'null'
       - string
     doc: For plotting stripe stackups
-    default: None
     inputBinding:
       position: 101
       prefix: --stripe
@@ -258,7 +238,6 @@ inputs:
       - string
     doc: Whether to sort stripe stackups by total signal (sum), central pixel 
       signal (center_pixel), or not at all (None)
-    default: sum
     inputBinding:
       position: 101
       prefix: --stripe_sort
@@ -267,7 +246,6 @@ inputs:
       - 'null'
       - float
     doc: Value for the highest colour
-    default: None
     inputBinding:
       position: 101
       prefix: --vmax
@@ -276,7 +254,6 @@ inputs:
       - 'null'
       - float
     doc: Value for the lowest colour
-    default: None
     inputBinding:
       position: 101
       prefix: --vmin

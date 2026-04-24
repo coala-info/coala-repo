@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size to use.
-    default: 32
     inputBinding:
       position: 102
       prefix: --ksize
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: Lower bound on tablesize to use.
-    default: 1000000.0
     inputBinding:
       position: 102
       prefix: --min-tablesize
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Number of tables to use for the count-graph.
-    default: 4
     inputBinding:
       position: 102
       prefix: --n_tables
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - File
     doc: Cas gene FASTA file (optionally gzipped), defaults to bundled
-    default: bundled
     inputBinding:
       position: 102
       prefix: --cas_fasta
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - Directory
     doc: Base directory for species databases, defaults to bundled
-    default: bundled
     inputBinding:
       position: 102
       prefix: --db_dir
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn on debugging and save intermediate files
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output extended results
-    default: false
     inputBinding:
       position: 102
       prefix: --extended_results
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Only count CRISPR reads which cover this base
-    default: 30
     inputBinding:
       position: 102
       prefix: --gene_start_offset
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum blast bitscore
-    default: 38
     inputBinding:
       position: 102
       prefix: --min_bitscore
@@ -68,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum blast identity
-    default: 95
     inputBinding:
       position: 102
       prefix: --min_identity
@@ -77,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality score
-    default: 10
     inputBinding:
       position: 102
       prefix: --min_mapping_quality
@@ -86,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum perc coverage difference between CRISPR and read
-    default: 100
     inputBinding:
       position: 102
       prefix: --qcov_margin
@@ -95,7 +86,6 @@ inputs:
       - 'null'
       - string
     doc: Species name, use galru_species to see all available
-    default: Mycobacterium_tuberculosis
     inputBinding:
       position: 102
       prefix: --species
@@ -104,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: Sequencing technology
-    default: map-ont
     inputBinding:
       position: 102
       prefix: --technology
@@ -113,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: No. of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -122,7 +110,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn on verbose output
-    default: false
     inputBinding:
       position: 102
       prefix: --verbose

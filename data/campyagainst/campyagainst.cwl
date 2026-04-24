@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: number of thread to run fastANI
-    default: 4
     inputBinding:
       position: 101
       prefix: --thread

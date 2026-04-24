@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Adaptive seed count cutoff.
-    default: 10
     inputBinding:
       position: 106
       prefix: -f
@@ -75,7 +74,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum alignment identity.
-    default: 0.7
     inputBinding:
       position: 106
       prefix: -i
@@ -84,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment length.
-    default: 100
     inputBinding:
       position: 106
       prefix: -l
@@ -93,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum seed chain coverage in both genomes.
-    default: 85
     inputBinding:
       position: 106
       prefix: -c
@@ -110,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: Threshold for starting a new seed chain.
-    default: 1000
     inputBinding:
       position: 106
       prefix: -s
@@ -175,7 +170,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to use for temporary files.
-    default: $TMPDIR
     inputBinding:
       position: 106
       prefix: -P
@@ -184,7 +178,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 8
     inputBinding:
       position: 106
       prefix: -T

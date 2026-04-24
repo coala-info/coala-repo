@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --nthreads

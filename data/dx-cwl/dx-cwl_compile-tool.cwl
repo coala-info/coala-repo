@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: VM instance provider
-    default: aws
     inputBinding:
       position: 102
       prefix: --instance-provider

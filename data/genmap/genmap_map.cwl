@@ -121,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -150,7 +149,6 @@ inputs:
       - boolean
     doc: Turn this option off to disable version update notifications of the 
       application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO.
-    default: true
     inputBinding:
       position: 101
       prefix: --version-check

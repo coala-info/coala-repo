@@ -24,7 +24,6 @@ inputs:
       (amino acid reduced to 11 symbols as in Diamond: KREDQN,C,G,H,ILV,M,F,Y,W,P,STA\n\
       \        * aa6_dayhoff (amino acid reduced to 6 symbols as proposed by Dayhoff:
       STPAG,NDEQ,HRK,MILV,FYW,C"
-    default: nt
     inputBinding:
       position: 102
       prefix: -alphabet
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of all k-mers to be accepted by the minhash filter
-    default: 0.01
     inputBinding:
       position: 102
       prefix: -f
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: length of k-mers
-    default: 18
     inputBinding:
       position: 102
       prefix: -k
@@ -67,8 +64,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'preserve strand instead of taking canonical k-mers (allowed only in nt alphabet;
-      default: off)'
-    default: false
     inputBinding:
       position: 102
       prefix: -preserve-strand

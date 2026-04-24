@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: 'Genome assembly version. Allowed values: hg18, hg19, hg38'
-    default: hg19
     inputBinding:
       position: 104
       prefix: -a

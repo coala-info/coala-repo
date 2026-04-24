@@ -12,7 +12,6 @@ inputs:
     doc: Chain file describing how the consensus is aligned to the reference 
       (e.g. `bcftools consensus --chain ...`); If not provided, mafft will be 
       used to align the consensus to the reference.
-    default: None
     inputBinding:
       position: 101
       prefix: --chain
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: If True writes english summary diagnosis.
-    default: true
     inputBinding:
       position: 101
       prefix: --english
@@ -58,7 +56,6 @@ inputs:
     doc: CDS ID for the full Orf1ab CDS, comprising the ribosomal shift. In the 
       GFF this CDS should consist of 2 entries with the same CDS ID due to the 
       partial overlap caused by the ribosomal shift at translation time
-    default: cds-YP_009724389.1
     inputBinding:
       position: 101
       prefix: --orf1ab
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use 0-based (python) instead of 1-based (standard) seq positions
-    default: false
     inputBinding:
       position: 101
       prefix: --zero-based

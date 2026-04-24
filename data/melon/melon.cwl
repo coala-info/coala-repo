@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: Terminal condition for EM - epsilon (precision).
-    default: '1e-10'
     inputBinding:
       position: 102
       prefix: -c
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Terminal condition for EM - max. iterations.
-    default: 1000
     inputBinding:
       position: 102
       prefix: -a
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: Max. expected value to report alignments (--evalue/-e in diamond).
-    default: '1e-15'
     inputBinding:
       position: 102
       prefix: -e
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Max. number of secondary alignments to report (-N in minimap2).
-    default: 2147483647
     inputBinding:
       position: 102
       prefix: -n
@@ -71,7 +67,6 @@ inputs:
       - int
     doc: Max. number of target sequences to report (--max-target-seqs/-k in 
       diamond).
-    default: 25
     inputBinding:
       position: 102
       prefix: -m
@@ -80,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: Min. identity in percentage to report alignments (--id in diamond).
-    default: 0
     inputBinding:
       position: 102
       prefix: -i
@@ -90,7 +84,6 @@ inputs:
       - int
     doc: Min. number of unique marker genes required for a species to report its
       genome copies.
-    default: 2
     inputBinding:
       position: 102
       prefix: -g
@@ -100,7 +93,6 @@ inputs:
       - float
     doc: Min. secondary-to-primary score ratio to report secondary alignments 
       (-p in minimap2).
-    default: 0.9
     inputBinding:
       position: 102
       prefix: -p
@@ -109,7 +101,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip cleaning, keep all temporary <*.tmp> files.
-    default: false
     inputBinding:
       position: 102
       prefix: --skip-clean
@@ -118,7 +109,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip profiling, output only total genome copies.
-    default: false
     inputBinding:
       position: 102
       prefix: --skip-profile
@@ -127,7 +117,6 @@ inputs:
       - 'null'
       - float
     doc: Min. subject cover to report alignments (--subject-cover in diamond).
-    default: 75
     inputBinding:
       position: 102
       prefix: -s
@@ -136,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 20
     inputBinding:
       position: 102
       prefix: --threads

@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - float
     doc: Filter reads by accuracy.
-    default: None
     inputBinding:
       position: 103
       prefix: --accuracy
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - boolean
     doc: Exit with an error if all regions have insufficient coverage.
-    default: false
     inputBinding:
       position: 103
   - id: any_fail
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - boolean
     doc: Exit with an error if any region has insufficient coverage.
-    default: false
     inputBinding:
       position: 103
   - id: coverage
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: Filter reads by coverage (what fraction of the read aligns).
-    default: None
     inputBinding:
       position: 103
       prefix: --coverage
@@ -56,7 +52,6 @@ inputs:
       - boolean
     doc: Force saving reads mapped to a sequence with coverage below the 
       expected value.
-    default: false
     inputBinding:
       position: 103
   - id: keep_supplementary
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include supplementary alignments.
-    default: false
     inputBinding:
       position: 103
   - id: keep_unmapped
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include unmapped reads.
-    default: false
     inputBinding:
       position: 103
   - id: length
@@ -80,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Filter reads by read length.
-    default: None
     inputBinding:
       position: 103
       prefix: --length
@@ -89,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: Sample only forward or reverse reads.
-    default: None
     inputBinding:
       position: 103
       prefix: --orientation
@@ -98,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: Output prefix
-    default: sub_sampled
     inputBinding:
       position: 103
       prefix: --output_prefix
@@ -107,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum iterations with no change in median coverage before aborting.
-    default: 5
     inputBinding:
       position: 103
       prefix: --patience
@@ -116,7 +105,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use only primary reads.
-    default: true
     inputBinding:
       position: 103
   - id: profile
@@ -124,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: Stride in genomic coordinates for depth profile.
-    default: 1000
     inputBinding:
       position: 103
       prefix: --profile
@@ -134,7 +121,6 @@ inputs:
       - boolean
     doc: Activate proportional sampling, thus keeping depth variations of the 
       pileup.
-    default: false
     inputBinding:
       position: 103
       prefix: --proportional
@@ -143,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: Filter reads by mean qscore.
-    default: None
     inputBinding:
       position: 103
       prefix: --quality
@@ -153,7 +138,6 @@ inputs:
       - type: array
         items: string
     doc: Only process given regions.
-    default: None
     inputBinding:
       position: 103
       prefix: --regions
@@ -162,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: Random seed for proportional downsampling of reads.
-    default: None
     inputBinding:
       position: 103
       prefix: --seed
@@ -172,7 +155,6 @@ inputs:
       - int
     doc: Stride in genomic coordinates when searching for new reads. Smaller can
       lead to more compact pileup.
-    default: 1000
     inputBinding:
       position: 103
       prefix: --stride
@@ -181,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: -1
     inputBinding:
       position: 103
       prefix: --threads

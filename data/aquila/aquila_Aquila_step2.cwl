@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: phase block len threshold
-    default: 100000
     inputBinding:
       position: 101
       prefix: --block_len_use
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: chromosome end by
-    default: 23
     inputBinding:
       position: 101
       prefix: --chr_end
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: chromosome start from
-    default: 1
     inputBinding:
       position: 101
       prefix: --chr_start
@@ -37,7 +34,6 @@ inputs:
       - int
     doc: number of threads, this correponds to number of small files get 
       assembled simulateoulsy
-    default: 30
     inputBinding:
       position: 101
       prefix: --num_threads
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads for spades
-    default: 5
     inputBinding:
       position: 101
       prefix: --num_threads_spades

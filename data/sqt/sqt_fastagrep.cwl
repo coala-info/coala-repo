@@ -29,7 +29,6 @@ inputs:
     doc: Search the description/comment fields of the FASTA file instead of the 
       sequences. If given, the pattern is interpreted as a regular expression, 
       not as a IUPAC pattern.
-    default: false
     inputBinding:
       position: 103
       prefix: --description

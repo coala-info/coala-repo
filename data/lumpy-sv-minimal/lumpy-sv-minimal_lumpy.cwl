@@ -114,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: File read windows size
-    default: 1000000
     inputBinding:
       position: 101
       prefix: -w

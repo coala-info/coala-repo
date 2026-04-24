@@ -18,7 +18,6 @@ inputs:
         items: string
     doc: FAST5 subgroup (under Analyses/[corrected-group]) where individual 
       template and/or complement reads are stored.
-    default:
       - BaseCalled_template
     inputBinding:
       position: 102
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: FAST5 group to access/plot created by genome_resquiggle script.
-    default: RawGenomeCorrected_000
     inputBinding:
       position: 102
       prefix: --corrected-group
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Downstream bases in k-mer. Should be one of {0,1,2,3}.
-    default: 2
     inputBinding:
       position: 102
       prefix: --downstream-bases
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Number of each kmer required to include a read in read level averages.
-    default: 4
     inputBinding:
       position: 102
       prefix: --num-kmer-threshold
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads to plot (one region per read).
-    default: 500
     inputBinding:
       position: 102
       prefix: --num-reads
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - File
     doc: PDF filename to store plot(s).
-    default: Nanopore_kmer_distribution.pdf
     inputBinding:
       position: 102
       prefix: --pdf-filename
@@ -115,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: Upstream bases in k-mer. Should be one of {0,1,2,3}.
-    default: 1
     inputBinding:
       position: 102
       prefix: --upstream-bases

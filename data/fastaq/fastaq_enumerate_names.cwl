@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Starting number
-    default: 1
     inputBinding:
       position: 102
       prefix: --start_index

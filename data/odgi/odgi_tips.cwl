@@ -22,7 +22,6 @@ inputs:
       the best target (reference) range for each query path (default: 10000). Note:
       If we walked 9999 base pairs and **w, --jaccard-context** is **10000**, we will
       also include the next node, even if we overflow the actual limit.'
-    default: 10000
     inputBinding:
       position: 101
       prefix: --jaccard-context
@@ -33,7 +32,6 @@ inputs:
     doc: "If for a target (reference) path several matches are possible, also report
       the additional jaccard indices (default: false). In the resulting BED, an '.'
       is added, if set to 'false'."
-    default: false
     inputBinding:
       position: 101
       prefix: --jaccards
@@ -43,7 +41,6 @@ inputs:
       - int
     doc: 'Report up to the Nth best target (reference) mapping for each query path
       (default: 1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: --n-best

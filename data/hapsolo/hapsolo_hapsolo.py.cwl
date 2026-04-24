@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: '# of best candidate assemblies to return using gradient descent.'
-    default: 1
     inputBinding:
       position: 101
       prefix: --Bestn
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: 'Max # of times cost function delta can consecutively be 0.'
-    default: 10
     inputBinding:
       position: 101
       prefix: --maxzeros
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of contigs for Primary assembly.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --min
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - float
     doc: Restrict values of PID to be >= the value set here.
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --minPID
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: Restrict values of Q to be >= the value set here.
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --minQ
@@ -67,7 +62,6 @@ inputs:
       - 'null'
       - float
     doc: Restrict values of QR to be >= the value set here. Cannot be 0.
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --minQR
@@ -77,7 +71,6 @@ inputs:
       - int
     doc: HapSolo run mode. 0 = Random walking, 1 = No optimization with 
       defaults, 2 = Optimized walking
-    default: 0
     inputBinding:
       position: 101
       prefix: --mode
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: '# of total iterations to run per gradient descent.'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --niterations
@@ -108,7 +100,6 @@ inputs:
       - 'null'
       - float
     doc: Weight for duplicate BUSCOs in linear fxn.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --thetaD
@@ -117,7 +108,6 @@ inputs:
       - 'null'
       - float
     doc: Weight for fragmented BUSCOs in linear fxn.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --thetaF
@@ -126,7 +116,6 @@ inputs:
       - 'null'
       - float
     doc: Weight for missing BUSCOs in linear fxn.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --thetaM
@@ -135,7 +124,6 @@ inputs:
       - 'null'
       - float
     doc: Weight for single BUSCOs in linear fxn.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --thetaS
@@ -144,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: '# of threads. Multiplies iterations by threads.'
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

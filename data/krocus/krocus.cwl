@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: Genes which are not divisible by 3 are excluded
-    default: false
     inputBinding:
       position: 103
       prefix: --divisible_by_3
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - File
     doc: Filename to save matching reads to
-    default: None
     inputBinding:
       position: 103
       prefix: --filtered_reads_file
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size
-    default: 11
     inputBinding:
       position: 103
       prefix: --kmer
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Flanking region around a block to use for mapping
-    default: 50
     inputBinding:
       position: 103
       prefix: --margin
@@ -59,7 +55,6 @@ inputs:
       - int
     doc: "Maximum gap for blocks to be contigous, measured in\nmultiples of the k-mer
       size"
-    default: 4
     inputBinding:
       position: 103
       prefix: --max_gap
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Dont count kmers occuring more than this many times
-    default: 10
     inputBinding:
       position: 103
       prefix: --max_kmers
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum block size in bases
-    default: 150
     inputBinding:
       position: 103
       prefix: --min_block_size
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum No. of kmers matching a read
-    default: 10
     inputBinding:
       position: 103
       prefix: --min_fasta_hits
@@ -95,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum No. of kmers matching a read in 1st pass
-    default: 10
     inputBinding:
       position: 103
       prefix: --min_kmers_for_onex_pass
@@ -104,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Print ST every this number of reads
-    default: 500
     inputBinding:
       position: 103
       prefix: --print_interval
@@ -113,7 +103,6 @@ inputs:
       - 'null'
       - string
     doc: For performance testing print time to find given ST
-    default: None
     inputBinding:
       position: 103
       prefix: --target_st
@@ -122,7 +111,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn on debugging
-    default: false
     inputBinding:
       position: 103
       prefix: --verbose

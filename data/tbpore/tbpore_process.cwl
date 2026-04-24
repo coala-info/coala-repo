@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to use for the cache
-    default: /root/.cache
     inputBinding:
       position: 102
       prefix: --cache
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the decontaminaton database
-    default: /root/.tbpore/decontamination_db/remove_contam.map-ont.mmi
     inputBinding:
       position: 102
       prefix: --db
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the decontaminaton database metadata file
-    default: 
       /usr/local/lib/python3.8/site-packages/data/decontamination_db/remove_contam.tsv.gz
     inputBinding:
       position: 102
@@ -100,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use in multithreaded tools
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -109,7 +105,6 @@ inputs:
       - 'null'
       - Directory
     doc: Specify where to write all (tbpore) temporary files.
-    default: <outdir>/.tbpore
     inputBinding:
       position: 102
       prefix: --tmp

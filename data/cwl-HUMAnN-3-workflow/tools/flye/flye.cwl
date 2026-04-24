@@ -72,27 +72,23 @@ inputs:
     type: int
     label: Threads
     doc: Maximum threads to use. Default 1
-    default: 1
     inputBinding:
       prefix: --threads
   polishing_iterations:
     label: Flye will carry out polishing multiple times as determined here. Default 1
     type: int
-    default: 1
     inputBinding:
       prefix: --iterations
   metagenome:
     type: boolean
     label: Metagenome
     doc: Set to true if assembling a metagenome. Default false
-    default: false
     inputBinding:
       prefix: --meta
   debug_mode:
     type: boolean
     label: Debug mode
     doc: Set to true to display debug output while running
-    default: false
     inputBinding:
       prefix: --debug
   genome_size:
@@ -107,21 +103,18 @@ inputs:
     doc: Perform disjointig assembly single-threaded. Default false
     inputBinding:
       prefix: --deterministic
-    default: false
   keep_haplotypes:
     type: boolean
     label: Keep haplotypes
     doc: do not collapse alternative haplotypes. Default false
     inputBinding:
       prefix: --keep-haplotypes
-    default: false
   no_alt_contigs:
     type: boolean
     label: No alternative contigs
     doc: Do not output contigs representing alternative haplotypes. Default false
     inputBinding:
       prefix: --no-alt-contigs
-    default: false
 
 outputs:
   00_assembly:

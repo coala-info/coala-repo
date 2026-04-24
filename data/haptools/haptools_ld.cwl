@@ -29,7 +29,6 @@ inputs:
       - int
     doc: If using a PGEN file, read genotypes in chunks of X variants; reduces 
       memory
-    default: (all variants)
     inputBinding:
       position: 104
       prefix: --chunk-size
@@ -59,7 +58,6 @@ inputs:
     doc: "A list of the haplotype IDs to use from the .hap file (ex: '-i H1 -i H2').
       Or, if --from-gts, a list of the variant IDs to use from the genotypes file.
       For this to work, the .hap file must be indexed"
-    default: (all haplotypes)
     inputBinding:
       position: 104
       prefix: --id
@@ -69,7 +67,6 @@ inputs:
       - File
     doc: A single column txt file containing a list of the haplotype (or 
       variant) IDs (one per line) to subset from the .hap (or genotype) file
-    default: (all haplotypes)
     inputBinding:
       position: 104
       prefix: --ids-file
@@ -80,7 +77,6 @@ inputs:
     doc: "The region from which to extract haplotypes; ex: 'chr1:1234-34566' or 'chr7'.
       For this to work, the VCF and .hap file must be indexed and the seqname provided
       must correspond with one in the files"
-    default: (all haplotypes)
     inputBinding:
       position: 104
       prefix: --region
@@ -91,7 +87,6 @@ inputs:
         items: string
     doc: "A list of the samples to subset from the genotypes file (ex: '-s sample1
       -s sample2')"
-    default: (all samples)
     inputBinding:
       position: 104
       prefix: --sample
@@ -101,7 +96,6 @@ inputs:
       - File
     doc: A single column txt file containing a list of the samples (one per 
       line) to subset from the genotypes file
-    default: (all samples)
     inputBinding:
       position: 104
       prefix: --samples-file
@@ -110,7 +104,6 @@ inputs:
       - 'null'
       - string
     doc: The level of verbosity desired
-    default: INFO
     inputBinding:
       position: 104
       prefix: --verbosity

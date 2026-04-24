@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Column of the annotation file (1-based, default=1).
-    default: 1
     inputBinding:
       position: 102
       prefix: --column
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: String to append to empty records (default ').
-    default: .
     inputBinding:
       position: 102
       prefix: --empty
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: Field separator for the annotation file (default tab)
-    default: tab
     inputBinding:
       position: 102
       prefix: --separator

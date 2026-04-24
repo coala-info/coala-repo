@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: '0: old output format of V1.0, 1: output the value of decision function (default)'
-    default: 1
     inputBinding:
       position: 103
       prefix: -f
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: verbosity level (default 2)
-    default: 2
     inputBinding:
       position: 103
       prefix: -v

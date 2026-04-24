@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: specify conserved J residues. Default is 'FVW'.
-    default: FVW
     inputBinding:
       position: 101
       prefix: --conserved_J_residues
@@ -221,7 +220,6 @@ inputs:
       - string
     doc: "declare sequence type for output sequences. Choices: 'all' [default], 'ntseq',
       'nucleotide', 'aaseq', 'amino_acid'"
-    default: all
     inputBinding:
       position: 101
       prefix: --seq_type
@@ -230,7 +228,6 @@ inputs:
       - 'null'
       - int
     doc: specify the number of sequences between time updates. Default is 1e5
-    default: '1e5'
     inputBinding:
       position: 101
       prefix: --seqs_per_time_update

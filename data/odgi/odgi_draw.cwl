@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - float
     doc: Image border (in approximate bp)
-    default: 100.0
     inputBinding:
       position: 101
       prefix: --border
@@ -53,7 +52,6 @@ inputs:
       - 'null'
       - float
     doc: Line width (in approximate bp)
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --line-width
@@ -70,7 +68,6 @@ inputs:
       - 'null'
       - float
     doc: Spacing between path lines in PNG layout (in approximate bp)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --path-line-spacing
@@ -79,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Size of PNG border in bp
-    default: 10
     inputBinding:
       position: 101
       prefix: --png-border
@@ -88,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Height of PNG rendering
-    default: 1000
     inputBinding:
       position: 101
       prefix: --png-height
@@ -105,7 +100,6 @@ inputs:
       - 'null'
       - float
     doc: SVG image scaling
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --scale
@@ -124,7 +118,6 @@ inputs:
       - float
     doc: Remove this fraction of nodes from the SVG output (to output smaller 
       files)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --svg-sparse-factor

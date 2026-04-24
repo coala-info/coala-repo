@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Canonicalize k-mers (default 1 = True
-    default: 1
     inputBinding:
       position: 101
       prefix: --collapse
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - File
     doc: File to write identifiers to
-    default: ids.txt
     inputBinding:
       position: 101
       prefix: --ids
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer length
-    default: 4
     inputBinding:
       position: 101
       prefix: --klength

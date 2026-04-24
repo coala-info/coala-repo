@@ -35,7 +35,6 @@ inputs:
       - int
     doc: wrap encoded lines after COLS character (default 76). Use 0 to disable line
       wrapping
-    default: 76
     inputBinding:
       position: 102
       prefix: --wrap

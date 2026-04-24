@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: the page size of the compact the index
-    default: 8192
     inputBinding:
       position: 102
       prefix: --page-size

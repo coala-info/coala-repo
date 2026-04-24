@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: print posterior allele probabilities
-    default: false
     inputBinding:
       position: 101
       prefix: --ap
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: max burnin iterations
-    default: 3
     inputBinding:
       position: 101
       prefix: --burnin
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: max cM in a marker cluster
-    default: 0.005
     inputBinding:
       position: 101
       prefix: --cluster
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: estimate ne and err parameters (true/false)
-    default: true
     inputBinding:
       position: 101
       prefix: --em
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - boolean
     doc: print posterior genotype probabilities
-    default: false
     inputBinding:
       position: 101
       prefix: --gp
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: model states for imputation
-    default: 1600
     inputBinding:
       position: 101
       prefix: --imp-states
@@ -102,7 +96,6 @@ inputs:
       - 'null'
       - boolean
     doc: impute ungenotyped markers (true/false)
-    default: true
     inputBinding:
       position: 101
       prefix: --impute
@@ -111,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: phasing iterations
-    default: 12
     inputBinding:
       position: 101
       prefix: --iterations
@@ -128,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: effective population size
-    default: 100000
     inputBinding:
       position: 101
       prefix: --ne
@@ -151,7 +142,6 @@ inputs:
       - 'null'
       - float
     doc: window overlap in cM
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --overlap
@@ -160,7 +150,6 @@ inputs:
       - 'null'
       - int
     doc: model states for phasing
-    default: 280
     inputBinding:
       position: 101
       prefix: --phase-states
@@ -177,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: random seed
-    default: -99999
     inputBinding:
       position: 101
       prefix: --seed
@@ -186,7 +174,6 @@ inputs:
       - 'null'
       - float
     doc: window length in cM
-    default: 40.0
     inputBinding:
       position: 101
       prefix: --window
@@ -195,7 +182,6 @@ inputs:
       - 'null'
       - int
     doc: maximum markers per window
-    default: 4000000
     inputBinding:
       position: 101
       prefix: --window-markers

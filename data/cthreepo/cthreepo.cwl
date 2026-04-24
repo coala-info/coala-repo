@@ -27,7 +27,6 @@ inputs:
       - string
     doc: input file format; can be `gff3`, `gtf`, `bedgraph`, `bed`, `sam`, 
       `vcf`, `wig` or `tsv`; default is `gff3`
-    default: gff3
     inputBinding:
       position: 101
       prefix: --format
@@ -37,7 +36,6 @@ inputs:
       - string
     doc: seq-id format in the input file; can be `any`, `ens`, `uc`, `gb`, or 
       `rs`; default is `any`
-    default: any
     inputBinding:
       position: 101
       prefix: --id_from
@@ -47,7 +45,6 @@ inputs:
       - string
     doc: seq-id format in the output file; can be `ens`, `uc`, `gb`, or `rs`; 
       default is `rs`
-    default: rs
     inputBinding:
       position: 101
       prefix: --id_to

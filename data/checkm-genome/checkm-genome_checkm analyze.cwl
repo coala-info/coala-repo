@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: extension of bins (other files in directory are ignored)
-    default: fna
     inputBinding:
       position: 104
       prefix: --extension
@@ -70,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 104
       prefix: --threads

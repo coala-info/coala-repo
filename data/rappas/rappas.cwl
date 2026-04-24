@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: Gammma shape parameter used in AR . (b phase)
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --alpha
@@ -72,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: '# categories used in AR . (b phase)'
-    default: 4
     inputBinding:
       position: 101
       prefix: --categories
@@ -139,7 +137,6 @@ inputs:
       - 'null'
       - float
     doc: Gap ratio above which gap jumps are activated.
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --gap-jump-thresh
@@ -148,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: '# ghost nodes injected per branches. (b phase)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --ghosts
@@ -173,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length used at DB build. (b mode)
-    default: 8
     inputBinding:
       position: 101
       prefix: --k
@@ -182,7 +177,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of placement per query kept in the jplace output. (p phase)
-    default: 7
     inputBinding:
       position: 101
       prefix: --keep-at-most
@@ -192,7 +186,6 @@ inputs:
       - float
     doc: Report placement with likelihood_ratio higher than (factor x 
       best_likelihood_ratio). (p phase)
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --keep-factor
@@ -228,7 +221,6 @@ inputs:
       - float
     doc: Modifier levelling the threshold used during phylo-kmer filtering, 
       T=(omega/#states)^k .(b phase)
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --omega
@@ -258,7 +250,6 @@ inputs:
       - float
     doc: Ratio for alignment reduction, e.g. sites holding >99% gaps are 
       ignored. (b phase)
-    default: 0.99
     inputBinding:
       position: 101
       prefix: --ratio-reduction
@@ -292,7 +283,6 @@ inputs:
       - 'null'
       - int
     doc: '#threads used in AR (if raxml-ng). (b phase)'
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -311,7 +301,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbosity level: -1=none ; 0=default ; 1=high'
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbosity

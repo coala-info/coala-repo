@@ -58,7 +58,6 @@ inputs:
   #     position: 102
   threads:
     type: int?
-    default: 1
     inputBinding:
       prefix: --threads
 

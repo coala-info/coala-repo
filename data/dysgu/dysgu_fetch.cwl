@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum soft-clip length, >= threshold are kept. Set to -1 to ignore
-    default: 15
     inputBinding:
       position: 103
       prefix: --clip-length
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: Set output bam compression level. Default is uncompressed
-    default: wb0
     inputBinding:
       position: 103
       prefix: --compression
@@ -49,7 +47,6 @@ inputs:
       - float
     doc: Genomic regions with coverage > max-cov are discarded. Set to -1 to 
       ignore.
-    default: 200
     inputBinding:
       position: 103
       prefix: --max-cov
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of SV to report
-    default: 30
     inputBinding:
       position: 103
       prefix: --min-size
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum map quality < threshold are discarded
-    default: 1
     inputBinding:
       position: 103
       prefix: --mq
@@ -92,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: Type of input reads
-    default: pe
     inputBinding:
       position: 103
       prefix: --pl
@@ -101,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Compression threads to use for writing bam
-    default: 1
     inputBinding:
       position: 103
       prefix: --procs

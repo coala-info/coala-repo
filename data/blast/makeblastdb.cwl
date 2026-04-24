@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Version of BLAST database to be created
-    default: 5
     inputBinding:
       position: 101
       prefix: -blastdb_version
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - File
     doc: Input file/database name
-    default: '-'
     inputBinding:
       position: 101
       prefix: -in
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: Type of the data specified in input_file (asn1_bin, asn1_txt, blastdb, fasta)
-    default: fasta
     inputBinding:
       position: 101
       prefix: -input_type
@@ -96,7 +93,6 @@ inputs:
       - 'null'
       - string
     doc: Maximum file size for BLAST database files
-    default: 3GB
     inputBinding:
       position: 101
       prefix: -max_file_sz

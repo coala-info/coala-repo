@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not delete temporary directory
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_tmp
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: Allele fraction to make unambiguous call
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --major
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth to call site
-    default: 5
     inputBinding:
       position: 101
       prefix: --min_dp
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: Allele fraction to make ambiguous call
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --minor
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not write output to console (silence stdout and stderr)
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -73,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Index for sample if multi-sample VCF
-    default: 0
     inputBinding:
       position: 101
       prefix: --sampidx

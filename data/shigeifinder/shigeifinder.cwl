@@ -19,7 +19,6 @@ inputs:
       - float
     doc: When using reads as input the minimum read depth for non ipaH/Oantigen 
       gene to be called (default 10.0).
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --depth
@@ -37,7 +36,6 @@ inputs:
       - float
     doc: When using reads as input the minimum depth percentage relative to 
       genome average for positive ipaH gene call (default 1.0).
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --ipaH_depth
@@ -55,7 +53,6 @@ inputs:
       - float
     doc: When using reads as input the minimum depth percentage relative to 
       genome average for positive O antigen gene call (default 1.0).
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --o_depth
@@ -97,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads.
-    default: 4
     inputBinding:
       position: 101
       prefix: -t

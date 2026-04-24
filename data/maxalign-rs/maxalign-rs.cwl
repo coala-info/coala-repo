@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - File
     doc: Input FASTA file
-    default: '-'
     inputBinding:
       position: 1
   - id: excluded_seqs_threshold
@@ -19,7 +18,6 @@ inputs:
       - float
     doc: Stop iterating if the fraction of excluded sequences is above this 
       threshold
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --excluded-seqs-threshold
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: 'Heuristic method: 1 (no synergy), 2 (pairwise synergy), 3 (three-way synergy)'
-    default: '2'
     inputBinding:
       position: 102
       prefix: --heuristic-method
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: Stop iterating if the relative improvement is below this threshold
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --improvement-threshold
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of iterations (-1 for unlimited iterations)
-    default: -1
     inputBinding:
       position: 102
       prefix: --max-iterations

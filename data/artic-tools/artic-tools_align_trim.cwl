@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: A minimum MAPQ threshold for processing alignments
-    default: 15
     inputBinding:
       position: 102
       prefix: --minMAPQ
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Subsample to N coverage per strand (deactivate with 0)
-    default: 100
     inputBinding:
       position: 102
       prefix: --normalise

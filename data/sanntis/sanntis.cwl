@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write results in antiSMASH 6.0 JSON specification output
-    default: false
     inputBinding:
       position: 102
       prefix: --antismash_output
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Level of greediness. 0,1,2
-    default: 1
     inputBinding:
       position: 102
       prefix: --greed
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - boolean
     doc: Prodigal option meta
-    default: true
     inputBinding:
       position: 102
       prefix: --meta
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - boolean
     doc: Minimal output in a gff3 file
-    default: true
     inputBinding:
       position: 102
       prefix: --minimal
@@ -80,7 +76,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: $PWD/SEQUENCE_FILE.sanntis
     inputBinding:
       position: 102
       prefix: --outdir
@@ -89,7 +84,6 @@ inputs:
       - 'null'
       - boolean
     doc: Annotate high probability borders
-    default: false
     inputBinding:
       position: 102
       prefix: --refined

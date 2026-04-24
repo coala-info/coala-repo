@@ -12,7 +12,6 @@ inputs:
       - string
     doc: "Specifies the valid alphabet for the sequences:\n        0 : Protein (default)\n\
       \        1 : RNA\n        2 : DNA"
-    default: '0'
     inputBinding:
       position: 101
       prefix: --alphabet
@@ -25,7 +24,6 @@ inputs:
       \      This parameter is required when --multimer_MSA=true and the --stoichiom
       value consists of multiple letters (indicating a heteromer).\n      (Default:
       0)"
-    default: 0
     inputBinding:
       position: 101
       prefix: --chain_length
@@ -35,7 +33,6 @@ inputs:
       - boolean
     doc: Whether to validate sequences to include only letters from the chosen 
       alphabet.
-    default: false
     inputBinding:
       position: 101
       prefix: --check_validation
@@ -72,7 +69,6 @@ inputs:
       - float
     doc: "Removes alignment positions where the fraction of gaps is greater than or
       equal to this value.\n      (Default: 1, meaning no positions are removed)"
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --gap_cutoff
@@ -82,7 +78,6 @@ inputs:
       - boolean
     doc: "Determines whether gap positions are considered in similarity cutoff computation
       (symmetric) or not (asymmetric).\n      (Default: true, meaning symmetric)"
-    default: true
     inputBinding:
       position: 101
       prefix: --is_symmetric
@@ -91,7 +86,6 @@ inputs:
       - 'null'
       - boolean
     doc: If true, computes NEFF for a multimeric MSA.
-    default: false
     inputBinding:
       position: 101
       prefix: --multimer_MSA
@@ -101,7 +95,6 @@ inputs:
       - string
     doc: "Determines how non-standard letters are handled:\n        0 : AsStandard
       (default)\n        1 : ConsiderGapInCutoff\n        2 : ConsiderGap"
-    default: '0'
     inputBinding:
       position: 101
       prefix: --non_standard_option
@@ -111,7 +104,6 @@ inputs:
       - string
     doc: "NEFF normalization option:\n        0 : Normalize by sqrt(Length of alignment)
       (default)\n        1 : Normalize by Length of alignment\n        2 : No normalization"
-    default: '0'
     inputBinding:
       position: 101
       prefix: --norm
@@ -121,7 +113,6 @@ inputs:
       - boolean
     doc: If true, gap positions in the query (first) sequence are omitted from 
       all sequences.
-    default: true
     inputBinding:
       position: 101
       prefix: --omit_query_gaps
@@ -131,7 +122,6 @@ inputs:
       - boolean
     doc: If true, the program returns only the sequence weights instead of the 
       final NEFF value.
-    default: false
     inputBinding:
       position: 101
       prefix: --only_weights
@@ -150,7 +140,6 @@ inputs:
       - int
     doc: "Start position (inclusive) in the alignment for NEFF computation.\n    \
       \  (Default: 1, meaning start of the sequences)"
-    default: 1
     inputBinding:
       position: 101
       prefix: --pos_start
@@ -159,7 +148,6 @@ inputs:
       - 'null'
       - boolean
     doc: If true, computes per-residue (column-wise) NEFF.
-    default: false
     inputBinding:
       position: 101
       prefix: --residue_neff
@@ -178,7 +166,6 @@ inputs:
       - float
     doc: Similarity threshold (Θ) used to decide if two sequences are considered
       similar.
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --threshold

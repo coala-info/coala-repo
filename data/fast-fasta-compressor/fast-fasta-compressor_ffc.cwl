@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Block size order
-    default: 22
     inputBinding:
       position: 102
       prefix: --block

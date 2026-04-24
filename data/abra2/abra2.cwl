@@ -12,7 +12,6 @@ inputs:
       - int
     doc: Set mapq for alignments that map equally well to reference and an ABRA 
       generated contig. default of -1 disables
-    default: -1
     inputBinding:
       position: 101
       prefix: --amq
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level of output bam file(s)
-    default: 5
     inputBinding:
       position: 101
       prefix: --cl
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Contig anchor [M_bases_at_contig_edge, max_mismatches_near_edge]
-    default: 10,2
     inputBinding:
       position: 101
       prefix: --ca
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Max read move distance
-    default: 1000
     inputBinding:
       position: 101
       prefix: --dist
@@ -134,7 +130,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level (trace,debug,info,warn,error)
-    default: info
     inputBinding:
       position: 101
       prefix: --log
@@ -143,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: Max assembled contigs
-    default: 64
     inputBinding:
       position: 101
       prefix: --mac
@@ -152,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: Regions with average depth exceeding this value will be downsampled
-    default: 1000
     inputBinding:
       position: 101
       prefix: --mad
@@ -161,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of cached reads per sample per thread
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --mcr
@@ -170,7 +162,6 @@ inputs:
       - 'null'
       - float
     doc: Max allowed mismatch rate when mapping reads back to contigs
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --mmr
@@ -179,7 +170,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum pre-pruned nodes in regional assembly
-    default: 150000
     inputBinding:
       position: 101
       prefix: --maxn
@@ -188,7 +178,6 @@ inputs:
       - 'null'
       - float
     doc: Reads with noise score exceeding this value are not remapped.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --mrn
@@ -198,7 +187,6 @@ inputs:
       - int
     doc: Regions containing more reads than this value are not processed. Use -1
       to disable.
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --mrr
@@ -208,7 +196,6 @@ inputs:
       - int
     doc: Max reads to keep in memory per sample during the sort phase. When this
       value is exceeded, sort spills to disk
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --msr
@@ -218,7 +205,6 @@ inputs:
       - int
     doc: Minimum base quality for inclusion in assembly. This value is compared 
       against the sum of base qualities per kmer position
-    default: 20
     inputBinding:
       position: 101
       prefix: --mbq
@@ -227,7 +213,6 @@ inputs:
       - 'null'
       - int
     doc: Assembly minimum contig length
-    default: -1
     inputBinding:
       position: 101
       prefix: --mcl
@@ -236,7 +221,6 @@ inputs:
       - 'null'
       - float
     doc: Min edge pruning ratio.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --mer
@@ -246,7 +230,6 @@ inputs:
       - int
     doc: Minimum mapping quality for a read to be used in assembly and be 
       eligible for realignment
-    default: 20
     inputBinding:
       position: 101
       prefix: --mapq
@@ -255,7 +238,6 @@ inputs:
       - 'null'
       - int
     doc: Assembly minimum node frequency
-    default: 1
     inputBinding:
       position: 101
       prefix: --mnf
@@ -289,7 +271,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum read candidate fraction for triggering assembly
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --rcf
@@ -307,7 +288,6 @@ inputs:
       - string
     doc: Scoring used for contig alignments (match, mismatch_penalty, 
       gap_open_penalty, gap_extend_penalty)
-    default: 8,32,48,1
     inputBinding:
       position: 101
       prefix: --sga
@@ -341,7 +321,6 @@ inputs:
       - string
     doc: If no target specified, skip realignment of chromosomes matching 
       specified regex.
-    default: 
       GL.*|hs37d5|chr.*random|chrUn.*|chrEBV|CMV|HBV|HCV.*|HIV.*|KSHV|HTLV.*|MCV|SV40|HPV.*
     inputBinding:
       position: 101
@@ -368,7 +347,6 @@ inputs:
       - string
     doc: Soft clip contig args [max_contigs, min_base_qual, 
       frac_high_qual_bases, min_soft_clip_len]
-    default: 16,13,80,15
     inputBinding:
       position: 101
       prefix: --sc
@@ -394,7 +372,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -427,7 +404,6 @@ inputs:
       - 'null'
       - string
     doc: Processing window size and overlap (size,overlap)
-    default: 400,200
     inputBinding:
       position: 101
       prefix: --ws

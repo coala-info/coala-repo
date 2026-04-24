@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - File
     doc: input fasta sequence
-    default: stdin
     inputBinding:
       position: 1
   - id: count
@@ -47,7 +46,6 @@ inputs:
       - string
     doc: set delimiting string for pack/unpack operations (SOH, 0x01, by 
       default)
-    default: SOH, 0x01
     inputBinding:
       position: 102
       prefix: --pack-sep

@@ -109,7 +109,6 @@ inputs:
       (secondbest). In the alphamedian/alphamean case, the number of sgRNAs 
       correspond to the "goodsgrna" column in the output, and the gene LFC will 
       be set to 0 if no sgRNA is in front of the alpha cutoff. Default median.
-    default: median
     inputBinding:
       position: 101
       prefix: --gene-lfc-method
@@ -119,7 +118,6 @@ inputs:
       - float
     doc: p value threshold to determine the alpha value of RRA in gene test (-p 
       option in RRA), default 0.25.
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --gene-test-fdr-threshold
@@ -139,7 +137,6 @@ inputs:
       (median normalization, default), "total" (normalization by total read 
       counts), "control" (normalization by control sgRNAs specified by the 
       --control-sgrna option).
-    default: median
     inputBinding:
       position: 101
       prefix: --norm-method
@@ -156,7 +153,6 @@ inputs:
       - 'null'
       - string
     doc: The prefix of the output file(s). Default sample1.
-    default: sample1
     inputBinding:
       position: 101
       prefix: --output-prefix
@@ -185,7 +181,6 @@ inputs:
     doc: 'Remove sgRNAs whose mean value is zero in control, treatment, both control/treatment,
       or any control/treatment sample. Default: both (remove those sgRNAs that are
       zero in both control and treatment samples).'
-    default: both
     inputBinding:
       position: 101
       prefix: --remove-zero
@@ -195,7 +190,6 @@ inputs:
       - float
     doc: sgRNA normalized count threshold to be considered removed in the 
       --remove-zero option. Default 0.
-    default: 0
     inputBinding:
       position: 101
       prefix: --remove-zero-threshold
@@ -214,7 +208,6 @@ inputs:
       - string
     doc: Sorting criteria, either by negative selection (neg) or positive 
       selection (pos). Default negative selection.
-    default: neg
     inputBinding:
       position: 101
       prefix: --sort-criteria

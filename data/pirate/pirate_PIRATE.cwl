@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: align all genes and produce core/pangenome alignments
-    default: off
     inputBinding:
       position: 101
       prefix: --align
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not classify paralogs, assumes this has been run previously
-    default: on
     inputBinding:
       position: 101
       prefix: --classify-off
@@ -45,7 +43,6 @@ inputs:
         items: string
     doc: choose features to use for pangenome construction. Multiple may be 
       entered, seperated by a comma
-    default: CDS
     inputBinding:
       position: 101
       prefix: --features
@@ -55,7 +52,6 @@ inputs:
       - type: array
         items: string
     doc: '% identity thresholds to use for pangenome construction'
-    default: 50,60,70,80,90,95,98
     inputBinding:
       position: 101
       prefix: --steps
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length for feature extraction
-    default: 120
     inputBinding:
       position: 101
       prefix: --min-len
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - boolean
     doc: CDS are not translated to AA sequence
-    default: off
     inputBinding:
       position: 101
       prefix: --nucl
@@ -105,7 +99,6 @@ inputs:
       - 'null'
       - string
     doc: options to pass to paralog splitting algorithm
-    default: none
     inputBinding:
       position: 101
       prefix: --para-args
@@ -114,7 +107,6 @@ inputs:
       - 'null'
       - boolean
     doc: switch off paralog identification
-    default: on
     inputBinding:
       position: 101
       prefix: --para-off
@@ -131,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: retain intermediate files
-    default: 0 = none, 1 = retain pangenome files (default - re-run using 
       --pan-off), 2 = all
     inputBinding:
       position: 101
@@ -149,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads/cores used by PIRATE
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads

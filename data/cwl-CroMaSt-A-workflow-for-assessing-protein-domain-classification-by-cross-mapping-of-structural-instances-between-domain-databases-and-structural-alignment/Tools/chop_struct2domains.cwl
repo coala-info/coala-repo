@@ -47,7 +47,6 @@ inputs:
   pdb_dir:
     type: Directory?
     label: The directory containing all the PDB files  
-    default: 
       class: Directory
       location: '../PDB_files/'
       basename: PDB_files
@@ -58,14 +57,12 @@ inputs:
   split_dir:
     type: [ Directory, string, "null"]
     label: The direcory name for storing splitted PDB structures 
-    default: split_PDB
     inputBinding:
       position: 3
       prefix: -s
 
   kpax_result:
     type: string?
-    default: KPAX_RESULTS
     inputBinding:
       position: 4
       prefix: -k

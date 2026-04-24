@@ -13,7 +13,6 @@ inputs:
       - string
     doc: The minimum and maximum Frames to convert. Useful to only convert a 
       part of a file.
-    default: '[-1, -1]'
     inputBinding:
       position: 101
       prefix: --framerange
@@ -39,7 +38,6 @@ inputs:
       - int
     doc: Number of consecutive frames to sum up (squash). This is useful to 
       boost S/N if exactly repeated frames are measured.
-    default: -1
     inputBinding:
       position: 101
       prefix: --merge
@@ -65,7 +63,6 @@ inputs:
       - int
     doc: How many overlapping windows were recorded for the same m/z window - 
       will split the output into N output files.
-    default: -1
     inputBinding:
       position: 101
       prefix: --overlap
@@ -74,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Verbosity.
-    default: -1
     inputBinding:
       position: 101
       prefix: --verbose

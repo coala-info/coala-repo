@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: CPUs.
-    default: 2
     inputBinding:
       position: 101
       prefix: --cpu
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: Inclusion E-value. May inflate low quality hits.
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --evalue
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: 'Model type: deutero, proto, combined'
-    default: combined
     inputBinding:
       position: 101
       prefix: --model

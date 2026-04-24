@@ -30,7 +30,6 @@ inputs:
       well to keep the output in a single file. If sorting is requested, the 
       result will be sorted but calls encountered out of order will be written 
       to extra files and NOT be included in the result.
-    default: 20
     inputBinding:
       position: 101
       prefix: --combine-max-inmemory-results
@@ -40,7 +39,6 @@ inputs:
       - float
     doc: Minimum alignment distance as percent of SV length to be merged. Set to
       0 to disable alignments for merging.
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --combine-pctseq
@@ -94,7 +92,6 @@ inputs:
       - int
     doc: Maximum deletion sequence length to be output. Deletion SVs longer than
       this value will be written to the output as symbolic SVs.
-    default: 50000
     inputBinding:
       position: 101
       prefix: --max-del-seq-len
@@ -103,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum SV length (in bp)
-    default: 50
     inputBinding:
       position: 101
       prefix: --minsvlen
@@ -120,7 +116,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele frequency for mosaic SVs to be output
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --mosaic-af-min
@@ -215,7 +210,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel threads to use (speed-up for multi-core CPUs)
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

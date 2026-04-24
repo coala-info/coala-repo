@@ -23,7 +23,6 @@ inputs:
       - float
     doc: Maximum absolute log2 fold change considered as no differential 
       expression
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --max-null-log2fc
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: Pseudocounts to add to means before fold change calculation
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --pseudocounts

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: Log file path
-    default: segul.log
     inputBinding:
       position: 102
       prefix: --log

@@ -108,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: set the number of threads additional to the controlling thread.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

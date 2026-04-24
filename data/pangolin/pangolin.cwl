@@ -83,7 +83,6 @@ inputs:
       - Directory
     doc: Data directory minimally containing the pangoLEARN model and header 
       files or UShER tree.
-    default: Installed pangolin-data package.
     inputBinding:
       position: 102
       prefix: --datadir
@@ -100,7 +99,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum proportion of Ns allowed for pangolin to attempt assignment.
-    default: 0.3
     inputBinding:
       position: 102
       prefix: --max-ambig
@@ -109,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum query length allowed for pangolin to attempt assignment.
-    default: 25000
     inputBinding:
       position: 102
       prefix: --min-length
@@ -126,7 +123,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory.
-    default: current working directory
     inputBinding:
       position: 102
       prefix: --outdir
@@ -135,7 +131,6 @@ inputs:
       - 'null'
       - string
     doc: Optional output file name.
-    default: lineage_report.csv
     inputBinding:
       position: 102
       prefix: --outfile
@@ -170,7 +165,6 @@ inputs:
       - 'null'
       - Directory
     doc: Specify where you want the temp stuff to go.
-    default: $TMPDIR
     inputBinding:
       position: 102
       prefix: --tempdir
@@ -218,7 +212,6 @@ inputs:
       - boolean
     doc: Use the data from data directory even if older than data installed via 
       Python packages.
-    default: false
     inputBinding:
       position: 102
       prefix: --use-old-datadir

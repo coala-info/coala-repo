@@ -15,20 +15,15 @@ inputs:
     ### FASTQ file split ###
     input_file_split:
         type: string?
-        default: "_R"
     input_file_split_fwd_single:
         type: string?
-        default: "R1"
     input_file_split_rev:
         type: string?
-        default: "R2"
     ### QC and trimming options ###
     input_qc_check: 
         type: boolean?
-        default: true
     input_trimming_check:
         type: boolean?
-        default: true
     ### Trim galore inputs ###
     tg_quality: int
     tg_length: int
@@ -50,31 +45,23 @@ inputs:
     ### BWA MEM inputs ###
     bwa_mem_sec_shorter_split_hits:
         type: boolean
-        default: true
     bwa_mem_num_threads:
         type: int
-        default: 16
     ### SAMtools inputs ###
     samtools_view_uncompressed:
         type: boolean
-        default: false
     samtools_view_collapsecigar:
         type: boolean
-        default: false
     samtools_view_readswithbits:
         type: int?
     samtools_view_readswithoutbits:
         type: int
-        default: 0 # 2308
     samtools_view_fastcompression:
         type: boolean
-        default: false
     samtools_view_samheader:
         type: boolean
-        default: false
     samtools_view_count:
         type: boolean
-        default: false
     samtools_view_readsingroup:
         type: string?
     samtools_view_readtagtostrip:
@@ -85,7 +72,6 @@ inputs:
         type: int?
     samtools_view_iscram:
         type: boolean
-        default: false
     samtools_view_threads:
         type: int?
     samtools_view_randomseed:
@@ -98,20 +84,16 @@ inputs:
         type: File?
     samtools_fixmate_threads:
         type: int
-        default: 16
     samtools_fixmate_output_format:
         type: string
-        default: bam
     samtools_sort_compression_level:
         type: int?
     samtools_sort_threads:
         type: int?
-        default: 16
     samtools_sort_memory:
         type: string?
     samtools_flagstat_threads:
         type: int?
-        default: 16
     ### Picard AddOrReplaceReadGroups inputs ###
     # picard_addorreplacereadgroups_rglb:
     #     type: string?
@@ -210,7 +192,6 @@ inputs:
         type: int?
     bcftools_norm_multiallelics: 
         type: string
-        default: "-both"
     ### ANNOVAR - table_annovar.pl inputs ###
     table_annovar_database_location:
         type: Directory
@@ -756,7 +737,6 @@ steps:
             fastcompression: samtools_view_fastcompression
             samheader: samtools_view_samheader
             count: 
-                default: true
             randomseed: samtools_view_randomseed
             region: samtools_view_region
             readsinlibrary: samtools_view_readsinlibrary

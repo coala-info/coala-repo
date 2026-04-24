@@ -54,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: Output parsed data in a different format.
-    default: tsv
     inputBinding:
       position: 102
       prefix: --data-format
@@ -262,7 +261,6 @@ inputs:
       - 'null'
       - string
     doc: Report template to use.
-    default: default
     inputBinding:
       position: 102
       prefix: --template

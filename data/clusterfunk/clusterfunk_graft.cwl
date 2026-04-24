@@ -31,7 +31,6 @@ inputs:
       - string
     doc: what format is the tree file. This is passed to dendropy. default is 
       'nexus'
-    default: nexus
     inputBinding:
       position: 101
       prefix: --format
@@ -65,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: 'the annotation name to be used in annotation each scion. default: scion_id'
-    default: scion_id
     inputBinding:
       position: 101
       prefix: --scion_annotation_name

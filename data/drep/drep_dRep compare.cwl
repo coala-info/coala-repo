@@ -18,7 +18,6 @@ inputs:
       - string
     doc: Algorithm used to cluster genomes (passed to 
       scipy.cluster.hierarchy.linkage
-    default: average
     inputBinding:
       position: 102
       prefix: --clusterAlg
@@ -28,7 +27,6 @@ inputs:
       - float
     doc: Minmum level of overlap between genomes when doing secondary 
       comparisons
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --cov_thresh
@@ -40,7 +38,6 @@ inputs:
       and fastANI can only do larger method) total   = 2*(aligned length) / (sum
       of total genome lengths) larger  = max((aligned length / genome 1), 
       (aligned_length / genome2))
-    default: larger
     inputBinding:
       position: 102
       prefix: --coverage_method
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - boolean
     doc: make extra debugging output
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate warnings
-    default: false
     inputBinding:
       position: 102
       prefix: --gen_warnings
@@ -80,7 +75,6 @@ inputs:
     doc: Use a heuristic to avoid pair-wise comparisons when doing secondary 
       clustering. Will be done with single linkage clustering. Only works for 
       fastANI S_algorithm option at the moment
-    default: false
     inputBinding:
       position: 102
       prefix: --greedy_secondary_clustering
@@ -90,7 +84,6 @@ inputs:
       - boolean
     doc: Use a memory-efficient algorithm for primary clustering. This only 
       affects primary clustering and not secondary clustering.
-    default: false
     inputBinding:
       position: 102
       prefix: --low_ram_primary_clustering
@@ -99,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: MASH sketch size
-    default: 1000
     inputBinding:
       position: 102
       prefix: --MASH_sketch
@@ -112,7 +104,6 @@ inputs:
       loss in precision and the inability to plot 
       primary_clustering_dendrograms. Especially helpful when clustering 5000+ 
       genomes. Will be done with single linkage clustering
-    default: false
     inputBinding:
       position: 102
       prefix: --multiround_primary_clustering
@@ -122,7 +113,6 @@ inputs:
       - string
     doc: Presets to pass to nucmer tight   = only align highly conserved regions
       normal  = default ANIn parameters
-    default: normal
     inputBinding:
       position: 102
       prefix: --n_PRESET
@@ -131,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: ANI threshold to form primary (MASH) clusters
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --P_ani
@@ -141,7 +130,6 @@ inputs:
       - int
     doc: Impacts multiround_primary_clustering. If you have more than this many 
       genomes, process them in chunks of this size.
-    default: 5000
     inputBinding:
       position: 102
       prefix: --primary_chunksize
@@ -150,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: threads
-    default: 6
     inputBinding:
       position: 102
       prefix: --processors
@@ -162,7 +149,6 @@ inputs:
       especially useful when greedy clustering is performed and/or to handle 
       cases where similar genomes end up in different primary clusters. Only 
       works with dereplicate, not compare.
-    default: false
     inputBinding:
       position: 102
       prefix: --run_tertiary_clustering
@@ -176,7 +162,6 @@ inputs:
       Align whole genomes with nucmer; compare aligned regions gANI    = Identify
       and align ORFs; compare aligned ORFS goANI   = Open source version of gANI;
       requires nsmimscan'
-    default: fastANI
     inputBinding:
       position: 102
       prefix: --S_algorithm
@@ -185,7 +170,6 @@ inputs:
       - 'null'
       - float
     doc: ANI threshold to form secondary clusters
-    default: 0.95
     inputBinding:
       position: 102
       prefix: --S_ani
@@ -194,7 +178,6 @@ inputs:
       - 'null'
       - string
     doc: Extra arguments to pass to skani triangle
-    default: ''
     inputBinding:
       position: 102
       prefix: --skani_extra
@@ -203,7 +186,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip MASH clustering, just do secondary clustering on all genomes
-    default: false
     inputBinding:
       position: 102
       prefix: --SkipMash
@@ -212,7 +194,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip secondary clustering, just perform MASH clustering
-    default: false
     inputBinding:
       position: 102
       prefix: --SkipSecondary
@@ -222,7 +203,6 @@ inputs:
       - float
     doc: Minimum aligned fraction for warnings between dereplicated genomes 
       (ANIn)
-    default: 0.25
     inputBinding:
       position: 102
       prefix: --warn_aln
@@ -231,7 +211,6 @@ inputs:
       - 'null'
       - float
     doc: How far from the threshold to throw cluster warnings
-    default: 0.25
     inputBinding:
       position: 102
       prefix: --warn_dist
@@ -240,7 +219,6 @@ inputs:
       - 'null'
       - float
     doc: Similarity threshold for warnings between dereplicated genomes
-    default: 0.98
     inputBinding:
       position: 102
       prefix: --warn_sim

@@ -18,7 +18,6 @@ inputs:
       - type: array
         items: string
     doc: prefixes to use for the saved k-mer profile names, one per INPUT
-    default: profile names are assumed to be disjoint and no prefix is used
     inputBinding:
       position: 102
       prefix: --prefixes
@@ -28,7 +27,6 @@ inputs:
       - type: array
         items: string
     doc: names of the k-mer profiles to consider
-    default: all profiles per INPUT, in alphabetical order
     inputBinding:
       position: 102
       prefix: --profiles

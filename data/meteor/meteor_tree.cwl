@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: 'Output image height (default: 500px).'
-    default: 500
     inputBinding:
       position: 101
       prefix: -H
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: 'Removes sites constitued of >= cutoff gap character (default: >= 1.0).'
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -g
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum number of informative sites in the alignment (default: >= 10).'
-    default: 10
     inputBinding:
       position: 101
       prefix: -s
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output image format (default: None).'
-    default: None
     inputBinding:
       position: 101
       prefix: -f
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads when infering each tree (default: 1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: 'Output image width (default: 500px).'
-    default: 500
     inputBinding:
       position: 101
       prefix: -w

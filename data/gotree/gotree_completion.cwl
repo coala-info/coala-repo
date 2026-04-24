@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: Input tree format (newick, nexus, phyloxml, or nextstrain)
-    default: newick
     inputBinding:
       position: 102
       prefix: --format
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: 'Random Seed: -1 = nano seconds since 1970/01/01 00:00:00'
-    default: -1
     inputBinding:
       position: 102
       prefix: --seed
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads (Max=20)
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

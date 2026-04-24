@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the cromshell configuration file.
-    default: /root/.cromshell/cromshell_config.json
     inputBinding:
       position: 102
       prefix: --config

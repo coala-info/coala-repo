@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: '[Fetch] The size of the genomic window (bp) to cache into memory at once.'
-    default: 10000
     inputBinding:
       position: 102
       prefix: --batch-size
@@ -48,7 +47,6 @@ inputs:
       - int
     doc: '[Fetch] When a region has less than the desired coverage, the step size
       to move along the chromosome to find more reads.'
-    default: 100
     inputBinding:
       position: 102
       prefix: --step-size
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: Subsampling strategy
-    default: stream
     inputBinding:
       position: 102
       prefix: --strategy
@@ -67,7 +64,6 @@ inputs:
       - int
     doc: "[Stream] A maximum distance (bp) allowed between start position of new read
       and the worst read in the heap to consider them to be 'swappable'."
-    default: 5
     inputBinding:
       position: 102
       prefix: --swap-distance

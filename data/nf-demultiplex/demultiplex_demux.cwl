@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: end of the selection
-    default: None
     inputBinding:
       position: 103
       prefix: -e
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: extract the barcodes from the read
-    default: false
     inputBinding:
       position: 103
       prefix: -r
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: provdide the header format
-    default: None
     inputBinding:
       position: 103
       prefix: --format
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: number of mismatches
-    default: 1
     inputBinding:
       position: 103
       prefix: -m
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory
-    default: .
     inputBinding:
       position: 103
       prefix: -p
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: start of the selection
-    default: None
     inputBinding:
       position: 103
       prefix: -s
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - boolean
     doc: use Levenshtein distance
-    default: false
     inputBinding:
       position: 103
       prefix: -d

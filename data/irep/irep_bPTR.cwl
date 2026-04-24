@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of scaffolds
-    default: 100
     inputBinding:
       position: 101
       prefix: -M
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of scaffold
-    default: 5000
     inputBinding:
       position: 101
       prefix: -L
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of reads
-    default: 5000
     inputBinding:
       position: 101
       prefix: -n
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: space for trace-back information
-    default: 80.0M
     inputBinding:
       position: 103
       prefix: --allocate:traceback
@@ -84,7 +83,6 @@ inputs:
       - string
     doc: specify output format; one of lav, axt, maf, cigar, rdotplot, text or 
       general
-    default: lav
     inputBinding:
       position: 103
       prefix: --format
@@ -93,7 +91,6 @@ inputs:
       - 'null'
       - string
     doc: set gap open and extend penalties
-    default: 400,30
     inputBinding:
       position: 103
       prefix: --gap
@@ -278,7 +275,6 @@ inputs:
       - 'null'
       - int
     doc: set step length
-    default: 1
     inputBinding:
       position: 103
       prefix: --step
@@ -287,7 +283,6 @@ inputs:
       - 'null'
       - string
     doc: search both strands
-    default: both
     inputBinding:
       position: 103
       prefix: --strand

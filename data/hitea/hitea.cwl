@@ -10,7 +10,6 @@ inputs:
       - int
     doc: 'Mapping quality threshold for repeat anchored mate on the reference genome
       (default: 28)'
-    default: 28
     inputBinding:
       position: 101
       prefix: -q
@@ -28,7 +27,6 @@ inputs:
       - int
     doc: 'Minimum clip length for detecting insertion (should be >=13bp) (default:
       20)'
-    default: 20
     inputBinding:
       position: 101
       prefix: -s
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: "Restriction endunuclease used for the assay (default: '', available:MboI,DpnII,HindIII,Arima,NcoI,NotI)"
-    default: ''
     inputBinding:
       position: 101
       prefix: -e
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: 'Genome build to be used (default:hg38, available: hg19)'
-    default: hg38
     inputBinding:
       position: 101
       prefix: -g
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output prefix while generating report files (default: project)'
-    default: project
     inputBinding:
       position: 101
       prefix: -o
@@ -88,7 +83,6 @@ inputs:
       - boolean
     doc: whether to remap unmapped clipped reads to the polymoprhic sequences 
       (default:F)
-    default: F
     inputBinding:
       position: 101
       prefix: -r
@@ -105,7 +99,6 @@ inputs:
       - 'null'
       - boolean
     doc: whether the file is a WGS experiment (default:F)
-    default: F
     inputBinding:
       position: 101
       prefix: -x

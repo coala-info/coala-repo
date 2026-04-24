@@ -50,7 +50,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip expression fraction filtering.
-    default: false
     inputBinding:
       position: 101
       prefix: --no_expression_fraction
@@ -59,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Number of neighbors.
-    default: 21
     inputBinding:
       position: 101
       prefix: --num_neighbour
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Number of spatial neighbors.
-    default: 101
     inputBinding:
       position: 101
       prefix: --num_neighbour_spatial

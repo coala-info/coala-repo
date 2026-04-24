@@ -22,7 +22,6 @@ inputs:
       - string
     doc: build database from this gene (SSU=Small Subunit rRNA; LSU=Large 
       Subunit rRNA)
-    default: SSU
     inputBinding:
       position: 101
       prefix: --gene
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: Cluster at this fractional identity level
-    default: 0.97
     inputBinding:
       position: 101
       prefix: --id
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: maximum reference sequence length
-    default: 2000
     inputBinding:
       position: 101
       prefix: --max-len
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: minimum reference sequence length
-    default: 1200
     inputBinding:
       position: 101
       prefix: --min-len
@@ -90,7 +86,6 @@ inputs:
       - 'null'
       - Directory
     doc: working directory for temporary files
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmpdir

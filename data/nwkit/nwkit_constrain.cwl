@@ -14,7 +14,6 @@ inputs:
       with the order-level angiosperm phylogeny in APG IV (https://doi.org/10.1111/boj.12385).
       ncbi_user: Infer NCBI Taxonomy ID from species name, and match the ranks with
       the labels of the user-provided tree. user: User-provided tree in --infile.'
-    default: ncbi
     inputBinding:
       position: 101
       prefix: --backbone
@@ -25,7 +24,6 @@ inputs:
     doc: For tip names of "GENUS_SPECIES_OTHERINFO", drop OTHERINFO and collapse
       clades if GENUS_SPECIES is identical. The output file may be used as a 
       species tree for phylogeny reconciliation.
-    default: no
     inputBinding:
       position: 101
       prefix: --collapse
@@ -35,7 +33,6 @@ inputs:
       - int
     doc: ETE tree format. See here 
       http://etetoolkit.org/docs/latest/tutorial/tutorial_trees.html
-    default: auto
     inputBinding:
       position: 101
       prefix: --format
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - File
     doc: Input newick file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --infile
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: Whether node names are quoted in the input file.
-    default: yes
     inputBinding:
       position: 101
       prefix: --quoted_node_names
@@ -73,7 +68,6 @@ inputs:
     doc: Constrain at a particular taxonomic rank and above. For example, if 
       "family" is specified, "genus" and "species" are not considered. This 
       option is currently compatible only with --backbone ncbi
-    default: no
     inputBinding:
       position: 101
       prefix: --rank
@@ -84,7 +78,6 @@ inputs:
     doc: Text file containing species names, one per line. Expected formats are 
       "GENUS SPECIES", "GENUS_SPECIES", or "GENUS_SPECIES_OTHERINFO". e.g., 
       "Arabidopsis thaliana" and "Arabidopsis_thaliana_TAIR10"
-    default: None
     inputBinding:
       position: 101
       prefix: --species_list
@@ -97,7 +90,6 @@ inputs:
       Taxonomy IDs are used instead of inferring them from species names. Either
       --species_list or --taxid_tsv must be specified, but not both. This option
       is currently compatible only with --backbone ncbi.
-    default: None
     inputBinding:
       position: 101
       prefix: --taxid_tsv

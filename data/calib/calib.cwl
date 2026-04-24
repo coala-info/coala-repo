@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Error tolerance for clustering
-    default: Depends on observed read length
     inputBinding:
       position: 101
       prefix: --error-tolerance
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Length of the prefix sequence to ignore
-    default: 0
     inputBinding:
       position: 101
       prefix: --ignored-sequence-prefix-length
@@ -72,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Size of k-mers
-    default: Depends on observed read length
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -81,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Number of minimizers to use
-    default: Depends on observed read length
     inputBinding:
       position: 101
       prefix: --minimizer-count
@@ -90,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Threshold for minimizers
-    default: Depends on observed read length
     inputBinding:
       position: 101
       prefix: --minimizer-threshold
@@ -121,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -33,7 +33,6 @@ inputs:
       - string
     doc: "set reporting mode: either 'repos' (repository-centric view, the default),
       'tools' (tool-centric view) or 'export' (tab-delimited format for use with 'install_tool')."
-    default: repos
     inputBinding:
       position: 102
       prefix: --mode

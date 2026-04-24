@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: Intervals
-    default: ''
     inputBinding:
       position: 103
       prefix: -i
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - File
     doc: File containing list of intervals
-    default: ''
     inputBinding:
       position: 103
       prefix: -I
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - File
     doc: Sample concordance text file
-    default: s.txt
     inputBinding:
       position: 103
       prefix: -s
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - File
     doc: Variant concordance text file
-    default: m.txt
     inputBinding:
       position: 103
       prefix: -m

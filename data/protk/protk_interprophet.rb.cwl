@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't use NRS (Number of Replicate Spectra) in Model
-    default: false
     inputBinding:
       position: 102
       prefix: --no-nrs
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't use NSE (Number of Sibling Experiments) in Model
-    default: false
     inputBinding:
       position: 102
       prefix: --no-nse
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't use NSE (Number of Sibling Ions) in Model
-    default: false
     inputBinding:
       position: 102
       prefix: --no-nsi
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't use NSE (Number of Sibling Modifications) in Model
-    default: false
     inputBinding:
       position: 102
       prefix: --no-nsm
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't use NSS (Number of Sibling Searches) in Model
-    default: false
     inputBinding:
       position: 102
       prefix: --no-nss
@@ -70,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: Probability threshold below which PSMs are discarded
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --p-thresh
@@ -79,7 +73,6 @@ inputs:
       - 'null'
       - boolean
     doc: Dont skip analyses for which the output file already exists
-    default: false
     inputBinding:
       position: 102
       prefix: --replace-output
@@ -89,7 +82,6 @@ inputs:
       - int
     doc: Number of processing threads to use. Set to 0 to autodetect an 
       appropriate value
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

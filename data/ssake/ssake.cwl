@@ -10,7 +10,6 @@ inputs:
       - boolean
     doc: Apply read space restriction to seeds while -s option in use (-u 1 = 
       yes, default = no, optional)
-    default: false
     inputBinding:
       position: 101
       prefix: -u
@@ -20,7 +19,6 @@ inputs:
       - boolean
     doc: Break tie when no consensus base at position, pick random base (-q 1 = 
       yes, default = no, optional)
-    default: false
     inputBinding:
       position: 101
       prefix: -q
@@ -30,7 +28,6 @@ inputs:
       - float
     doc: Error (%) allowed on mean distance e.g. -e 0.75 == distance +/- 75% 
       (default -e 0.75, optional)
-    default: 0.75
     inputBinding:
       position: 101
       prefix: -e
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ignore read mapping to consensus (-y 1 = yes, default = no, optional)
-    default: false
     inputBinding:
       position: 101
       prefix: -y
@@ -49,7 +45,6 @@ inputs:
       - boolean
     doc: Ignore read name/header *will use less RAM if set to -h 1* (-h 1 = yes,
       default = no, optional)
-    default: false
     inputBinding:
       position: 101
       prefix: -h
@@ -60,7 +55,6 @@ inputs:
     doc: Independent (de novo) assembly i.e Targets used to recruit reads for de
       novo assembly, not guide/seed reference-based assemblies (-i 1 = yes 
       (default), 0 = no, optional)
-    default: true
     inputBinding:
       position: 101
       prefix: -i
@@ -70,7 +64,6 @@ inputs:
       - float
     doc: Maximum link ratio between two best contig pairs *higher values lead to
       least accurate scaffolding* (default -a 0.3, optional)
-    default: 0.3
     inputBinding:
       position: 101
       prefix: -a
@@ -80,7 +73,6 @@ inputs:
       - int
     doc: Minimum contig size to track base coverage and read position (default 
       -z 100, optional)
-    default: 100
     inputBinding:
       position: 101
       prefix: -z
@@ -97,7 +89,6 @@ inputs:
       - int
     doc: Minimum number of links (read pairs) to compute scaffold (default -k 5,
       optional)
-    default: 5
     inputBinding:
       position: 101
       prefix: -l
@@ -107,7 +98,6 @@ inputs:
       - float
     doc: Minimum base ratio used to accept a overhang consensus base (default -r
       0.7)
-    default: 0.7
     inputBinding:
       position: 101
       prefix: -r
@@ -117,7 +107,6 @@ inputs:
       - int
     doc: Minimum number of overlapping bases with the seed/contig during 
       overhang consensus build up (default -m 20)
-    default: 20
     inputBinding:
       position: 101
       prefix: -m
@@ -127,7 +116,6 @@ inputs:
       - int
     doc: Minimum number of reads needed to call a base during an extension 
       (default -o 2)
-    default: 2
     inputBinding:
       position: 101
       prefix: -o
@@ -159,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: Target sequence word size to hash (default -j 15)
-    default: 15
     inputBinding:
       position: 101
       prefix: -j
@@ -169,7 +156,6 @@ inputs:
       - boolean
     doc: Track base coverage and read position for each contig (default -c 0, 
       optional)
-    default: false
     inputBinding:
       position: 101
       prefix: -c
@@ -179,7 +165,6 @@ inputs:
       - int
     doc: Trim up to -t base(s) on the contig end when all possibilities have 
       been exhausted for an extension (default -t 0, optional)
-    default: 0
     inputBinding:
       position: 101
       prefix: -t
@@ -196,7 +181,6 @@ inputs:
       - 'null'
       - boolean
     doc: Paired-end reads used? (-p 1 = yes, default = no, optional)
-    default: false
     inputBinding:
       position: 101
       prefix: -p
@@ -205,7 +189,6 @@ inputs:
       - 'null'
       - boolean
     doc: Runs in verbose mode (-v 1 = yes, default = no, optional)
-    default: false
     inputBinding:
       position: 101
       prefix: -v

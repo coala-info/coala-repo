@@ -42,7 +42,6 @@ inputs:
       - int
     doc: Release interned objects on python exit, for memory debugging. Level 
       indicates aggressiveness, default 0 releases nothing.
-    default: 0
     inputBinding:
       position: 102
       prefix: --cleanup

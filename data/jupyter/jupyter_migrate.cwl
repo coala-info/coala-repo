@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: Full path of a config file.
-    default: ''
     inputBinding:
       position: 101
       prefix: --config
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Set the log level by value or name.
-    default: 30
     inputBinding:
       position: 101
       prefix: --log-level

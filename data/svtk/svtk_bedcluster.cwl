@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum reciprocal overlap fraction to link variants.
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --frac
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temporary directory
-    default: /tmp
     inputBinding:
       position: 102
       prefix: --tmpdir

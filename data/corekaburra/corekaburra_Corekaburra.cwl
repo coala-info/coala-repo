@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: Percentage of isolates in which a core gene must be present
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --core_cutoff
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Give max number of CPUs
-    default: 1
     inputBinding:
       position: 103
       prefix: --cpu
@@ -59,7 +57,6 @@ inputs:
       - float
     doc: Percentage of isolates where genes found in less than these are seen as
       low-frequency genes
-    default: 0.05
     inputBinding:
       position: 103
       prefix: --low_cutoff

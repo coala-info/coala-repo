@@ -97,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: '[Cram] Max. bases per slice, default 5000000.'
-    default: 5000000
     inputBinding:
       position: 102
       prefix: -b
@@ -186,7 +185,6 @@ inputs:
       - 'null'
       - int
     doc: '[Cram] Sequences per slice, default 10000.'
-    default: 10000
     inputBinding:
       position: 102
       prefix: -s
@@ -195,7 +193,6 @@ inputs:
       - 'null'
       - int
     doc: '[Cram] Slices per container, default 1.'
-    default: 1
     inputBinding:
       position: 102
       prefix: -S

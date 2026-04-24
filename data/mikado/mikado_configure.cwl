@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel DIAMOND/BLAST jobs to run.
-    default: 10
     inputBinding:
       position: 102
       prefix: --blast-chunks
@@ -75,7 +74,6 @@ inputs:
       - int
     doc: 'Codon table to use. Default: 0 (ie Standard, NCBI #1, but only ATG is considered
       a valid start codon.'
-    default: 0
     inputBinding:
       position: 102
       prefix: --codon-table
@@ -373,7 +371,6 @@ inputs:
       - 'null'
       - int
     doc: Random seed number
-    default: 0
     inputBinding:
       position: 102
       prefix: --seed

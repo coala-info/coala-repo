@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - File
     doc: input fasta sequence
-    default: stdin
     inputBinding:
       position: 1
   - id: field_separator
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: The field separator
-    default: '|'
     inputBinding:
       position: 102
       prefix: --field-separator
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: The separator between a tag and value
-    default: '='
     inputBinding:
       position: 102
       prefix: --pair-separator

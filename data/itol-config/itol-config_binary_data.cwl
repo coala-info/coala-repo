@@ -33,7 +33,6 @@ inputs:
       - string
     doc: 'The symbol to use for the binary data (1: square, 2: circle, 3: star, 4:
       right triangle, 5: left triangle, 6: checkmark)'
-    default: '1'
     inputBinding:
       position: 101
       prefix: --symbol

@@ -40,7 +40,6 @@ inputs:
       - string
     doc: 'Alternative to repeated -v/--verbose: set log level via key. Equivalence
       to -v/--verbose: => "Warn" -v => "Info" -vv => "Debug" -vvv => "Trace"'
-    default: Warn
     inputBinding:
       position: 101
       prefix: --log-level
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum equivalent matches per query in report
-    default: 10
     inputBinding:
       position: 101
       prefix: --max_matches
@@ -74,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Analysis threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

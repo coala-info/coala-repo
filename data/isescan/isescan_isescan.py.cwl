@@ -25,14 +25,12 @@ inputs:
       - int
     doc: "Number of CPU cores used for FragGeneScan and hmmer, 1 by\n            \
       \         default."
-    default: 1
     inputBinding:
       position: 101
       prefix: --nthread
   - id: output
     type: Directory
     doc: Output directory, 'results' by default
-    default: results
     inputBinding:
       position: 101
       prefix: --output

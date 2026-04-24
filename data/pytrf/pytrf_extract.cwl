@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: flanking sequence length
-    default: 100
     inputBinding:
       position: 102
       prefix: --flank-length
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: output format, tsv, csv or fasta
-    default: tsv
     inputBinding:
       position: 102
       prefix: --out-format

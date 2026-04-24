@@ -19,7 +19,6 @@ inputs:
       - float
     doc: proportion threshold of the number of reads in frame0, defined by 
       f0/(f0+f1+f2)
-    default: 0.65
     inputBinding:
       position: 101
       prefix: --frame0_percent
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: maximum length of read to output
-    default: 36
     inputBinding:
       position: 101
       prefix: --maximum-length
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of read to output
-    default: 24
     inputBinding:
       position: 101
       prefix: --minimum-length
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: name of output pdf file
-    default: metaplots
     inputBinding:
       position: 101
       prefix: --outname
@@ -64,7 +60,6 @@ inputs:
       - float
     doc: pvalue cutoff of frame0 > frame2 for automatically predicting P-site 
       location
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --pvalue1_cutoff
@@ -74,7 +69,6 @@ inputs:
       - float
     doc: pvalue cutoff of frame0 > frame2 for automatically predicting P-site 
       location
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --pvalue2_cutoff
@@ -92,7 +86,6 @@ inputs:
       - string
     doc: whether the data is strand-specific, reverse means reversed strand 
       interpretation.
-    default: yes
     inputBinding:
       position: 101
       prefix: --stranded

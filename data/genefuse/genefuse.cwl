@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: specify the least deletion length of a intra-gene deletion to report
-    default: 50
     inputBinding:
       position: 101
       prefix: --deletion
@@ -63,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: worker thread number
-    default: 4
     inputBinding:
       position: 101
       prefix: --thread
@@ -72,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: specify the least supporting read number is required to report a fusion
-    default: 2
     inputBinding:
       position: 101
       prefix: --unique

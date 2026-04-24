@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the info annotation to search for.
-    default: 1000GAF
     inputBinding:
       position: 102
       prefix: --annotation
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for filter variants.
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --threshold

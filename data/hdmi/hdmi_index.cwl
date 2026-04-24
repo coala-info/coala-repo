@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for bowtie2-build
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

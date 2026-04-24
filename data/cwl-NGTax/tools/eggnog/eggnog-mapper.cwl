@@ -57,7 +57,6 @@ inputs:
           - hmmer
         inputBinding:
           prefix: -m
-    default: diamond
     doc: Run with hmmer or diamond. Default diamond
 
   go_evidence:
@@ -69,7 +68,6 @@ inputs:
           - all
         inputBinding:
           prefix: --go_evidence
-    default: non-electronic
     doc: | 
       Defines what type of GO terms should be used for annotation. 
       experimental = Use only terms inferred from experimental evidence. 
@@ -80,14 +78,12 @@ inputs:
     type: int?
     inputBinding:
       prefix: --cpu
-    default: 4
 
   dbmem:
     type: boolean
     inputBinding:
       prefix: --dbmem
     doc: Use this option to allocate the whole eggnog.db DB in memory. Database will be unloaded after execution. (default false)
-    default: false
 
 
 arguments: 

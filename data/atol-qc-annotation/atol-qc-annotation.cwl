@@ -45,7 +45,6 @@ inputs:
   - id: lineage_dataset
     type: string
     doc: Specify the name of the BUSCO lineage to be used.
-    default: eukaryota_odb10
     inputBinding:
       position: 101
       prefix: --lineage_dataset

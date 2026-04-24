@@ -35,7 +35,6 @@ inputs:
     doc: Set the --stdout flag to False if you do not want to have output 
       printed to screen as well. This feature is mostly for manual redirection 
       to files.
-    default: true
     inputBinding:
       position: 101
       prefix: --stdout

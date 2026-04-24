@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Set the precision for masses and m/z written to sqt and text files.
-    default: 4
     inputBinding:
       position: 103
       prefix: --mass-precision
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: The name of the directory where output files will be created.
-    default: crux-output
     inputBinding:
       position: 103
       prefix: --output-dir
@@ -39,7 +37,6 @@ inputs:
       - boolean
     doc: Replace existing files if true or fail when trying to overwrite a file 
       if false.
-    default: false
     inputBinding:
       position: 103
       prefix: --overwrite
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: A file containing parameters.
-    default: ''
     inputBinding:
       position: 103
       prefix: --parameter-file
@@ -61,7 +57,6 @@ inputs:
       are generated, then a second file will be created containing the decoy 
       peptides. Decoys that also appear in the target database are marked with 
       an asterisk in a third column.
-    default: false
     inputBinding:
       position: 103
       prefix: --peptide-list
@@ -73,7 +68,6 @@ inputs:
       messages, including all those at lower verbosity levels: 0-fatal errors, 10-non-fatal
       errors, 20-warnings, 30-information on the progress of execution, 40-more progress
       information, 50-debug info, 60-detailed debug info.'
-    default: 30
     inputBinding:
       position: 103
       prefix: --verbosity

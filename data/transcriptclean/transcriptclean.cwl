@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum size indel to correct (Default: 5 bp).'
-    default: 5
     inputBinding:
       position: 101
       prefix: --maxLenIndel
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum number of mismatches to correct (Default: 2).'
-    default: 2
     inputBinding:
       position: 101
       prefix: --maxNumMismatches

@@ -79,7 +79,6 @@ inputs:
     doc: Enable the credential lookup via the keyring library if user input is 
       allowed. Specify which mechanism to use [auto, disabled, import, 
       subprocess].
-    default: auto
     inputBinding:
       position: 102
       prefix: --keyring-provider
@@ -155,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum attempts to resume or restart an incomplete download.
-    default: 5
     inputBinding:
       position: 102
       prefix: --resume-retries
@@ -164,7 +162,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum attempts to establish a new HTTP connection.
-    default: 5
     inputBinding:
       position: 102
       prefix: --retries
@@ -173,7 +170,6 @@ inputs:
       - 'null'
       - int
     doc: Set the socket timeout (default 15 seconds).
-    default: 15
     inputBinding:
       position: 102
       prefix: --timeout

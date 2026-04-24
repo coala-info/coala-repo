@@ -25,7 +25,6 @@ inputs:
       - int
     doc: length to scan for a start codon before the first exon and in the same 
       frame. By default (0) no scan [0]
-    default: 0
     inputBinding:
       position: 104
       prefix: --len-scan-for-start
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum sequence length
-    default: 65535
     inputBinding:
       position: 104
       prefix: --max-seq-len
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: translate the joint exons coding sequence to amino acids [0,1]
-    default: 0
     inputBinding:
       position: 104
       prefix: --protein
@@ -53,7 +50,6 @@ inputs:
       - int
     doc: write the target key (internal DB identifier) instead of its accession.
       By default (0) target accession will be written [0,1]
-    default: 0
     inputBinding:
       position: 104
       prefix: --target-key
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU-cores used (all by default)
-    default: 20
     inputBinding:
       position: 104
       prefix: --threads
@@ -78,7 +73,6 @@ inputs:
       \                            23) THRAUSTOCHYTRIUM_MITOCHONDRIAL, 24) PTEROBRANCHIA_MITOCHONDRIAL,
       25) GRACILIBACTERIA, 26) PACHYSOLEN, 27) KARYORELICT, 28) CONDYLOSTOMA\n   \
       \                          29) MESODINIUM, 30) PERTRICH, 31) BLASTOCRITHIDIA"
-    default: 1
     inputBinding:
       position: 104
       prefix: --translation-table
@@ -87,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbosity level: 0: quiet, 1: +errors, 2: +warnings, 3: +info'
-    default: 3
     inputBinding:
       position: 104
       prefix: -v
@@ -97,7 +90,6 @@ inputs:
       - int
     doc: write the contig coords of the stop-to-stop fragment in which putative 
       exon lies. By default (0) only putative exon coords will be written [0,1]
-    default: 0
     inputBinding:
       position: 104
       prefix: --write-frag-coords

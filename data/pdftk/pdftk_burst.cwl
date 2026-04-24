@@ -14,7 +14,6 @@ inputs:
   - id: operation
     type: string
     doc: The operation to perform (burst)
-    default: burst
     inputBinding:
       position: 2
   - id: allow

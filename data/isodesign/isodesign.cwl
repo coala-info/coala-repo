@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - float
     doc: The salt concentration in molar for thermodynamic calculations.
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --salt
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: The temperature in Celsius for thermodynamic calculations.
-    default: 37.0
     inputBinding:
       position: 102
       prefix: --temperature

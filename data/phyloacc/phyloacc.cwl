@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: The number of loci to run per batch.
-    default: 50
     inputBinding:
       position: 101
       prefix: --batch-size
@@ -56,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: The number of steps to be discarded in the Markov chain as burnin.
-    default: 500
     inputBinding:
       position: 101
       prefix: --burnin
@@ -65,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: The number of chains.
-    default: 1
     inputBinding:
       position: 101
       prefix: --chain
@@ -74,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: The max memory for each job in MB.
-    default: 4
     inputBinding:
       position: 101
       prefix: --cluster-mem
@@ -83,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: The number of nodes on the specified partition to submit jobs to.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cluster-nodes
@@ -101,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: The time in minutes to give each job.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cluster-time
@@ -111,7 +105,6 @@ inputs:
       - string
     doc: 'The path to the program to estimate branch lengths in coalescent units with
       --theta (Supported programs: ASTRAL).'
-    default: java -jar astral.jar
     inputBinding:
       position: 101
       prefix: --coal-path
@@ -195,7 +188,6 @@ inputs:
       - 'null'
       - string
     doc: The path to the IQ-Tree executable for making gene trees with --theta.
-    default: iqtree
     inputBinding:
       position: 101
       prefix: --iqtree-path
@@ -222,7 +214,6 @@ inputs:
       - 'null'
       - int
     doc: The total number of steps in the Markov chain.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --mcmc
@@ -241,7 +232,6 @@ inputs:
       - int
     doc: The number of jobs (batches) to run in parallel. Must be less than or 
       equal to the total processes for PhyloAcc (-p).
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-jobs
@@ -250,7 +240,6 @@ inputs:
       - 'null'
       - int
     doc: The number of processes that this script should use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-procs
@@ -260,7 +249,6 @@ inputs:
       - Directory
     doc: Desired output directory. This will be created for you if it doesn't 
       exist.
-    default: phyloacc-[date]-[time]
     inputBinding:
       position: 101
       prefix: --out-dir
@@ -286,7 +274,6 @@ inputs:
       - 'null'
       - string
     doc: The path to the PhyloAcc-GT binary.
-    default: PhyloAcc-GT
     inputBinding:
       position: 101
       prefix: --gt-path
@@ -304,7 +291,6 @@ inputs:
       - 'null'
       - string
     doc: The path to the PhyloAcc-ST binary.
-    default: PhyloAcc-ST
     inputBinding:
       position: 101
       prefix: --st-path
@@ -313,7 +299,6 @@ inputs:
       - 'null'
       - int
     doc: The number of processes to use for each batch of PhyloAcc.
-    default: 1
     inputBinding:
       position: 101
       prefix: --procs-per-batch
@@ -334,7 +319,6 @@ inputs:
       model for all loci, st: use the species tree model for all loci, adaptive: use
       the gene tree model on loci with many branches with low sCF and species tree
       model on all other loci.'
-    default: st
     inputBinding:
       position: 101
       prefix: --run-mode
@@ -343,7 +327,6 @@ inputs:
       - 'null'
       - float
     doc: The value of sCF to consider as 'low' for any given branch in a locus.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --scf
@@ -354,7 +337,6 @@ inputs:
     doc: 'The proportion of branches to consider a locus for the gene tree model.
       Default: 0.3333, meaning if one-third of all branches for a given locus have
       low sCF, this locus will be run with the gene tree model.'
-    default: 0.3333
     inputBinding:
       position: 101
       prefix: --s
@@ -422,7 +404,6 @@ inputs:
     doc: For the gene tree model, the number of MCMC steps between gene tree 
       sampling. The total number of MCMC steps specified with -mcmc will be 
       scaled by this as mcmc*thin
-    default: 1
     inputBinding:
       position: 101
       prefix: --thin

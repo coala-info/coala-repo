@@ -29,7 +29,6 @@ inputs:
       - int
     doc: Do not write nucleotides if a length of reference or alternative sequence
       is longer than svlen
-    default: 50
     inputBinding:
       position: 102
       prefix: --svlen

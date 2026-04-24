@@ -91,7 +91,6 @@ inputs:
       - 'null'
       - float
     doc: 'Only write results with pvalue < cutoff. Default: 0.05'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --pvalue_cutoff

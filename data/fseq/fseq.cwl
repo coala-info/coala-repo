@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - Directory
     doc: background directory
-    default: none
     inputBinding:
       position: 102
       prefix: -b
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: feature length
-    default: 600
     inputBinding:
       position: 102
       prefix: -l
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: fragment size
-    default: estimated from data
     inputBinding:
       position: 102
       prefix: -f
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: genomic count of sequence reads
-    default: calculated
     inputBinding:
       position: 102
       prefix: -c
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - Directory
     doc: input directory
-    default: current directory
     inputBinding:
       position: 102
       prefix: -d
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory
-    default: current directory
     inputBinding:
       position: 102
       prefix: -o
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: output format
-    default: wig
     inputBinding:
       position: 102
       prefix: -of
@@ -80,7 +73,6 @@ inputs:
       - 'null'
       - Directory
     doc: ploidy/input directory
-    default: none
     inputBinding:
       position: 102
       prefix: -p
@@ -89,7 +81,6 @@ inputs:
       - 'null'
       - float
     doc: threshold (standard deviations)
-    default: 4.0
     inputBinding:
       position: 102
       prefix: -t
@@ -106,7 +97,6 @@ inputs:
       - 'null'
       - string
     doc: wg threshold set
-    default: calculated
     inputBinding:
       position: 102
       prefix: -wg
@@ -115,7 +105,6 @@ inputs:
       - 'null'
       - string
     doc: wiggle track step
-    default: 1
     inputBinding:
       position: 102
       prefix: -s

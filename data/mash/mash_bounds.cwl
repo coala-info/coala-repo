@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size
-    default: 21
     inputBinding:
       position: 101
   - id: p
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: Probability threshold
-    default: 0.99
     inputBinding:
       position: 101
 outputs:

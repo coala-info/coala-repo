@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Score threshold
-    default: 20
     inputBinding:
       position: 102
       prefix: -t
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Window size
-    default: 64
     inputBinding:
       position: 102
       prefix: -w

@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Maximum memory per thread for samtools sort; suffix K/M/G recognized.
-    default: 768M
     inputBinding:
       position: 102
       prefix: --memory
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to the sample directories.
-    default: .
     inputBinding:
       position: 102
       prefix: --prefix
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for BWA and samtools sort. In range [1..inf].
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

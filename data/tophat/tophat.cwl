@@ -86,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: The expected (mean) inner distance between mate pairs
-    default: 50
     inputBinding:
       position: 106
       prefix: --mate-inner-dist
@@ -95,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum deletion length
-    default: 3
     inputBinding:
       position: 106
       prefix: --max-deletion-length
@@ -104,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum insertion length
-    default: 3
     inputBinding:
       position: 106
       prefix: --max-insertion-length
@@ -113,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum intron length
-    default: 500000
     inputBinding:
       position: 106
       prefix: --max-intron-length
@@ -123,7 +119,6 @@ inputs:
       - int
     doc: Instructs TopHat to allow up to this many alignments to the reference 
       for a given read
-    default: 20
     inputBinding:
       position: 106
       prefix: --max-multihits
@@ -133,7 +128,6 @@ inputs:
       - int
     doc: TopHat will report junctions spanned by reads with at least this many 
       bases on each side of the junction
-    default: 8
     inputBinding:
       position: 106
       prefix: --min-anchor
@@ -142,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum intron length
-    default: 50
     inputBinding:
       position: 106
       prefix: --min-intron-length
@@ -175,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 106
       prefix: --num-threads
@@ -217,7 +209,6 @@ inputs:
       - int
     doc: Final read alignments having more than these many edit distance are 
       discarded
-    default: 2
     inputBinding:
       position: 106
       prefix: --read-edit-dist
@@ -227,7 +218,6 @@ inputs:
       - int
     doc: Final read alignments having more than these many total length of gaps 
       are discarded
-    default: 2
     inputBinding:
       position: 106
       prefix: --read-gap-length
@@ -237,7 +227,6 @@ inputs:
       - int
     doc: Final read alignments having more than these many mismatches are 
       discarded
-    default: 2
     inputBinding:
       position: 106
       prefix: --read-mismatches
@@ -279,7 +268,6 @@ inputs:
       - int
     doc: The maximum number of mismatches that may appear in the anchor region 
       of a spliced alignment
-    default: 0
     inputBinding:
       position: 106
       prefix: --splice-mismatches
@@ -312,7 +300,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum multihits for transcriptome
-    default: 60
     inputBinding:
       position: 106
       prefix: --transcriptome-max-hits

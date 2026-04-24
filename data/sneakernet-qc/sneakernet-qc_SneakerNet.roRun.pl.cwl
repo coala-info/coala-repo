@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use
-    default: 1
     inputBinding:
       position: 102
   - id: outdir
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: ''
     inputBinding:
       position: 102
   - id: tempdir
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temporary directory
-    default: ''
     inputBinding:
       position: 102
 outputs:

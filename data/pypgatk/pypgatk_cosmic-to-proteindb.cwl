@@ -52,7 +52,6 @@ inputs:
       - boolean
     doc: Use this flag to generate a proteinDB per group as specified in the 
       filter_column, default is False
-    default: false
     inputBinding:
       position: 101
       prefix: --split_by_filter_column

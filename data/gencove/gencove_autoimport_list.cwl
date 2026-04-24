@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output format. Supported formats: json, tsv.'
-    default: json
     inputBinding:
       position: 101
       prefix: --output-format
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Number of items to return per page.
-    default: 100
     inputBinding:
       position: 101
       prefix: --page-size

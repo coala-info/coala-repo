@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Assembler to be used.
-    default: megahit
     inputBinding:
       position: 101
       prefix: --assembler
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: which clade does your species belong to?
-    default: Arthropoda
     inputBinding:
       position: 101
       prefix: --clade
@@ -36,7 +34,6 @@ inputs:
       MitoZ even if you got very little clean data. If you got missing 
       mitochondrial genes, try (1) differnt kmers; (2)different assembler; (3) 
       increase <float1>,<float2>
-    default: 2,0
     inputBinding:
       position: 101
       prefix: --data_size_for_mt_assembly
@@ -46,7 +43,6 @@ inputs:
       - int
     doc: read length of fastq reads, used by the filter subcommand and 
       mitoAssemble.
-    default: 150
     inputBinding:
       position: 101
       prefix: --fastq_read_length
@@ -56,7 +52,6 @@ inputs:
       - boolean
     doc: filter out non-requiring_taxa sequences by mito-PCGs annotation to do 
       taxa assignment.
-    default: true
     inputBinding:
       position: 101
       prefix: --filter_by_taxa
@@ -65,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: other parameter for filtering.
-    default: ''
     inputBinding:
       position: 101
       prefix: --filter_other_para
@@ -89,7 +83,6 @@ inputs:
       - string
     doc: which genetic code table to use? 'auto' means determined by '--clade' 
       option.
-    default: auto
     inputBinding:
       position: 101
       prefix: --genetic_code
@@ -98,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: insert size of input fastq files
-    default: 250
     inputBinding:
       position: 101
       prefix: --insert_size
@@ -108,7 +100,6 @@ inputs:
       - type: array
         items: int
     doc: kmer size(s) to be used. Multiple kmers can be used, separated by space
-    default:
       - 71
     inputBinding:
       position: 101
@@ -120,7 +111,6 @@ inputs:
         items: int
     doc: kmer size(s) to be used. Multiple kmers can be used, separated by 
       space. Only for megahit
-    default:
       - 43
       - 71
       - 99
@@ -134,7 +124,6 @@ inputs:
         items: int
     doc: kmer size(s) to be used. Multiple kmers can be used, separated by 
       space. Only for spades
-    default:
       - auto
     inputBinding:
       position: 101
@@ -145,7 +134,6 @@ inputs:
       - int
     doc: memory size limit for spades/megahit, no enough memory will make the 
       two programs halt or exit
-    default: 50
     inputBinding:
       position: 101
       prefix: --memory
@@ -155,7 +143,6 @@ inputs:
       - float
     doc: the minimum abundance of sequence required. Set this to any value <= 0 
       if you do NOT want to filter sequences by abundance
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_abundance
@@ -164,7 +151,6 @@ inputs:
       - 'null'
       - string
     doc: output prefix
-    default: out
     inputBinding:
       position: 101
       prefix: --outprefix
@@ -173,7 +159,6 @@ inputs:
       - 'null'
       - boolean
     doc: Are the fastq phred64 encoded?
-    default: false
     inputBinding:
       position: 101
       prefix: --phred64
@@ -182,7 +167,6 @@ inputs:
       - 'null'
       - string
     doc: Directory cotaining 'CDS_HMM/', 'MT_database/' and 'rRNA_CM/'.
-    default: /usr/local/lib/python3.8/site-packages/mitoz/profiles
     inputBinding:
       position: 101
       prefix: --profiles_dir
@@ -192,7 +176,6 @@ inputs:
       - int
     doc: The relaxing threshold for filtering non-target-requiring_taxa. The 
       larger digital means more relaxing.
-    default: 0
     inputBinding:
       position: 101
       prefix: --requiring_relax
@@ -207,7 +190,6 @@ inputs:
       - 'null'
       - boolean
     doc: to resume previous assembly running
-    default: false
     inputBinding:
       position: 101
       prefix: --resume_assembly
@@ -219,7 +201,6 @@ inputs:
       To subsample such clean data, set <float2> of the 
       --data_size_for_mt_assembly option to be larger than 0 (using all input 
       clean data by default).
-    default: false
     inputBinding:
       position: 101
       prefix: --skip_filter
@@ -231,7 +212,6 @@ inputs:
       classification (100 times faster than usual!), however, it is valid only 
       when your mitochondrial sequences are >= 3000 bp. If you have missing 
       genes, set '--slow_search' to use the tradicitiona search mode.
-    default: false
     inputBinding:
       position: 101
       prefix: --slow_search
@@ -240,7 +220,6 @@ inputs:
       - 'null'
       - string
     doc: species name to use in output genbank file
-    default: Test sp.
     inputBinding:
       position: 101
       prefix: --species_name
@@ -259,7 +238,6 @@ inputs:
       - 'null'
       - int
     doc: thread number
-    default: 8
     inputBinding:
       position: 101
       prefix: --thread_number
@@ -277,7 +255,6 @@ inputs:
       - 'null'
       - Directory
     doc: working directory
-    default: ./
     inputBinding:
       position: 101
       prefix: --workdir

@@ -26,7 +26,6 @@ inputs:
         items: string
     doc: FAST5 subgroup (under Analyses/[corrected-group]) where individual 
       template and/or complement reads are stored.
-    default:
       - BaseCalled_template
     inputBinding:
       position: 103
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: FAST5 group to access/plot created by genome_resquiggle script.
-    default: RawGenomeCorrected_000
     inputBinding:
       position: 103
       prefix: --corrected-group
@@ -46,7 +44,6 @@ inputs:
       - int
     doc: Offset up and downstream over which to compute combined p-values using 
       Fisher's method.
-    default: 2
     inputBinding:
       position: 103
       prefix: --fishers-method-offset
@@ -56,7 +53,6 @@ inputs:
       - int
     doc: Number of reads required from both samples to test for significant 
       difference in signal level.
-    default: 5
     inputBinding:
       position: 103
       prefix: --minimum-test-reads
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bases to plot from region.
-    default: 51
     inputBinding:
       position: 103
       prefix: --num-bases
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Number of regions to plot.
-    default: 10
     inputBinding:
       position: 103
       prefix: --num-regions
@@ -96,7 +90,6 @@ inputs:
       - int
     doc: Number of reads to trigger alternative plot type instead of raw signal 
       due to overplotting.
-    default: 50
     inputBinding:
       position: 103
       prefix: --overplot-threshold
@@ -106,7 +99,6 @@ inputs:
       - string
     doc: 'Plot type for regions with higher coverage. Choices: Downsample (default),
       Boxplot , Quantile, Violin'
-    default: Downsample
     inputBinding:
       position: 103
       prefix: --overplot-type
@@ -115,7 +107,6 @@ inputs:
       - 'null'
       - File
     doc: PDF filename to store plot(s).
-    default: Nanopore_read_coverage.significant_difference.pdf
     inputBinding:
       position: 103
       prefix: --pdf-filename
@@ -161,7 +152,6 @@ inputs:
       - string
     doc: 'Type of significance test to apply. Choices are: mw_utest (default; mann-whitney
       u-test), ttest.'
-    default: mw_utest
     inputBinding:
       position: 103
       prefix: --test-type

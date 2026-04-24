@@ -65,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum DNA coverage
-    default: 10
     inputBinding:
       position: 102
       prefix: --mincov
@@ -74,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum DNA identity
-    default: 95
     inputBinding:
       position: 102
       prefix: --minid
@@ -99,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

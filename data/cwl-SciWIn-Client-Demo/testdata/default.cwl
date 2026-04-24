@@ -6,7 +6,6 @@ class: CommandLineTool
 inputs:
 - id: file1
   type: File
-  default:
     class: File
     path: file.txt
 

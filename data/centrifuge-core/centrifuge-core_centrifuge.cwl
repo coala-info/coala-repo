@@ -102,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: report internal counters & metrics every <int> secs (1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --met
@@ -151,7 +150,6 @@ inputs:
       - 'null'
       - string
     doc: define output format, either 'tab' or 'sam' (tab)
-    default: tab
     inputBinding:
       position: 101
       prefix: --out-fmt
@@ -216,7 +214,6 @@ inputs:
       - 'null'
       - int
     doc: seed for random number generator (0)
-    default: 0
     inputBinding:
       position: 101
       prefix: --seed
@@ -250,7 +247,6 @@ inputs:
       - 'null'
       - int
     doc: number of alignment threads to launch (1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -267,7 +263,6 @@ inputs:
       - 'null'
       - int
     doc: trim <int> bases from 3'/right end of reads (0)
-    default: 0
     inputBinding:
       position: 101
       prefix: --trim3
@@ -276,7 +271,6 @@ inputs:
       - 'null'
       - int
     doc: trim <int> bases from 5'/left end of reads (0)
-    default: 0
     inputBinding:
       position: 101
       prefix: --trim5

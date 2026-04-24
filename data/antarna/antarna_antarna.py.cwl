@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - float
     doc: Sets alpha, probability weight for terrain pheromone influence. [0,1]
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --alpha
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: best out of k ants.
-    default: 10
     inputBinding:
       position: 102
       prefix: --ants_per_selection
@@ -34,7 +32,6 @@ inputs:
       - int
     doc: Delimits the amount of internal ants for termination convergence criterion
       for a reset.
-    default: 50
     inputBinding:
       position: 102
       prefix: --antsTerConv
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: Sets beta, probability weight for terrain path influence. [0,1]
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --beta
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: GC content constraint quality weighting factor. [0,1]
-    default: 5.0
     inputBinding:
       position: 102
       prefix: --Cgcweight
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Delimits the convergence count criterion for a reset.
-    default: 130
     inputBinding:
       position: 102
       prefix: --ConvergenceCount
@@ -79,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: Sequence constraint quality weighting factor. [0,1]
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --Cseqweight
@@ -88,7 +81,6 @@ inputs:
       - 'null'
       - float
     doc: Structure constraint quality weighting factor. [0,1]
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --Cstrweight
@@ -97,7 +89,6 @@ inputs:
       - 'null'
       - float
     doc: Pheromone evaporation rate.
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --ER
@@ -106,7 +97,6 @@ inputs:
       - 'null'
       - string
     doc: Select the improving method. h=hierarchical, s=score_based.
-    default: s
     inputBinding:
       position: 102
       prefix: --improve_procedure
@@ -124,7 +114,6 @@ inputs:
       - 'null'
       - string
     doc: Defines a name which is used in the sequence output.
-    default: antaRNA
     inputBinding:
       position: 102
       prefix: --name
@@ -192,7 +181,6 @@ inputs:
       - 'null'
       - boolean
     doc: Switch on PYTHON compatible behavior.
-    default: false
     inputBinding:
       position: 102
       prefix: --py
@@ -201,7 +189,6 @@ inputs:
       - 'null'
       - int
     doc: Amount of maximal terrain resets, until the best solution is retuned as solution.
-    default: 5
     inputBinding:
       position: 102
       prefix: --Resets
@@ -218,7 +205,6 @@ inputs:
       - 'null'
       - float
     doc: Provides a temperature for the folding algorithms.
-    default: 37.0
     inputBinding:
       position: 102
       prefix: --temperature
@@ -234,7 +220,6 @@ inputs:
       - float
     doc: Provides a maximum tGC value [0,1] for the case of uniform distribution sampling.
       The regular tGC value serves as minimum value.
-    default: -1.0
     inputBinding:
       position: 102
       prefix: --tGCmax
@@ -244,7 +229,6 @@ inputs:
       - float
     doc: Provides a tGC variance (sigma square) for the case of normal distribution
       sampling. The regular tGC value serves as expectation value (mu).
-    default: -1.0
     inputBinding:
       position: 102
       prefix: --tGCvar
@@ -253,7 +237,6 @@ inputs:
       - 'null'
       - int
     doc: Limiting runtime [seconds]
-    default: 600
     inputBinding:
       position: 102
       prefix: --time

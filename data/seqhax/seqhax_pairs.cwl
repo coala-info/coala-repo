@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of each read
-    default: 1
     inputBinding:
       position: 103
       prefix: -l

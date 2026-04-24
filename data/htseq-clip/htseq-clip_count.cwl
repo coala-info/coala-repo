@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'temp. directory path to copy files (default: None, use system tmp directory)'
-    default: None
     inputBinding:
       position: 101
       prefix: --tmp
@@ -55,7 +54,6 @@ inputs:
       - string
     doc: "Verbose level\n                        Allowed choices: debug, info, warn,
       quiet (default: info)"
-    default: info
     inputBinding:
       position: 101
       prefix: --verbose

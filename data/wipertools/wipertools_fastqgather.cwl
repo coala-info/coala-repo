@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Underlying OS
-    default: cross_platform
     inputBinding:
       position: 102
       prefix: --os

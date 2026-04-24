@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - Directory
     doc: Data directory for settings.
-    default: /usr/share
     inputBinding:
       position: 101
 outputs:

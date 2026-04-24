@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Max cytosine retention in a read
-    default: 999999
     inputBinding:
       position: 103
       prefix: -t
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum NM tag
-    default: 999999
     inputBinding:
       position: 103
       prefix: -n
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: maximum read length (will need to be increased for long reads)
-    default: 302
     inputBinding:
       position: 103
       prefix: -L
@@ -65,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment score (from AS-tag)
-    default: 40
     inputBinding:
       position: 103
       prefix: -a
@@ -74,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality
-    default: 20
     inputBinding:
       position: 103
       prefix: -b
@@ -83,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum distance to 3' end of a read
-    default: 3
     inputBinding:
       position: 103
       prefix: '-3'
@@ -92,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum distance to 5' end of a read
-    default: 3
     inputBinding:
       position: 103
       prefix: '-5'
@@ -101,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality
-    default: 40
     inputBinding:
       position: 103
       prefix: -m
@@ -110,7 +102,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum probability a modification is correct (0.0 - 1.0)
-    default: 0.9
     inputBinding:
       position: 103
       prefix: -y
@@ -119,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length
-    default: 10
     inputBinding:
       position: 103
       prefix: -l
@@ -200,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: Step of window dispatching
-    default: 100000
     inputBinding:
       position: 103
       prefix: -s
@@ -209,7 +198,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 3
     inputBinding:
       position: 103
       prefix: -@

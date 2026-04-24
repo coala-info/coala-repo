@@ -90,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: 'Precision to use in displaying floating-point data (default: 7,15)'
-    default: 7,15
     inputBinding:
       position: 103
       prefix: --precision
@@ -198,7 +197,6 @@ inputs:
       - 'null'
       - float
     doc: 'Set the missing value of non NetCDF files (default: -9e+33)'
-    default: -9e+33
     inputBinding:
       position: 103
       prefix: -m

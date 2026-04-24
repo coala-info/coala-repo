@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Exclude bitflag as integer
-    default: 3852
     inputBinding:
       position: 102
       prefix: --exclude-flag
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Include bitflag as integer
-    default: 3
     inputBinding:
       position: 102
       prefix: --include-flag
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Output path prefix
-    default: .
     inputBinding:
       position: 102
       prefix: --output-prefix
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - File
     doc: Path to tabix executable
-    default: tabix
     inputBinding:
       position: 102
       prefix: --tabix-path

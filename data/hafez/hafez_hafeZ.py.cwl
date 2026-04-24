@@ -27,7 +27,6 @@ inputs:
       - int
     doc: set bin size in bp to use for coverage depth smoothing. Must be an odd 
       number.
-    default: 3001
     inputBinding:
       position: 101
       prefix: --bin_size
@@ -37,7 +36,6 @@ inputs:
       - float
     doc: set desired coverage of genome to be used for subsampling reads 
       (default = 100.0). N.B. Must be used with -S\--sub_sample flag
-    default: 100.0
     inputBinding:
       position: 101
       prefix: --coverage
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - float
     doc: set Z-score cutoff for initially detecting rois
-    default: 3.5
     inputBinding:
       position: 101
       prefix: --cutoff
@@ -85,7 +82,6 @@ inputs:
       - int
     doc: set threshold for number of best soft clip combinations to keep for 
       each roi
-    default: 50
     inputBinding:
       position: 101
       prefix: --keep_threshold
@@ -94,7 +90,6 @@ inputs:
       - 'null'
       - float
     doc: set minimum median Z-score for an roi to be retained
-    default: 3.5
     inputBinding:
       position: 101
       prefix: --median_z_cutoff
@@ -104,7 +99,6 @@ inputs:
       - string
     doc: set upper bound per thread memory limit for samtools, suffix K/M/G 
       recognized
-    default: 768M
     inputBinding:
       position: 101
       prefix: --memory_limit
@@ -113,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: set minimum number of ORFs needed in an roi
-    default: 6
     inputBinding:
       position: 101
       prefix: --min_orfs
@@ -139,7 +132,6 @@ inputs:
       - 'null'
       - float
     doc: set minimum fraction of ORFs in an roi showing homology to pVOGs
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --pvog_fract
@@ -169,7 +161,6 @@ inputs:
       - 'null'
       - int
     doc: set number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -179,7 +170,6 @@ inputs:
       - int
     doc: set minimum width (bp) of roi that passes Z-score cutoff for initially 
       detecting rois.
-    default: 4000
     inputBinding:
       position: 101
       prefix: --width

@@ -53,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: The identity threshold for valid mapping results. [0, 1]
-    default: '[0, 1]'
     inputBinding:
       position: 101
       prefix: --min_identity
@@ -81,7 +80,6 @@ inputs:
     doc: 'The mode of evaluation. dafault mode: busco. lite: Without using hmmsearch
       to filtering protein alignment. busco: Using hmmsearch on all candidate protein
       alignment to purify the miniprot alignment to imporve accuracy.'
-    default: busco
     inputBinding:
       position: 101
       prefix: --mode

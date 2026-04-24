@@ -86,7 +86,6 @@ inputs:
       \           data to transfer (100kb/s). Increasing this number can\n       \
       \                 reduce timeout errors when your transfer speed is very\n \
       \                       slow."
-    default: 10 second for every MB of data to transfer (100kb/s)
     inputBinding:
       position: 101
       prefix: --config_timeout
@@ -118,7 +117,6 @@ inputs:
       \              only upload if the given amount of minutes has passes\n     \
       \                   since it was set to delayed. Default = 0: When set to\n\
       \                        0, runs will not be given delayed status."
-    default: 0
     inputBinding:
       position: 101
       prefix: --delay
@@ -145,7 +143,6 @@ inputs:
     doc: "Accepts an Integer for the minimum file size in KB.\n                  \
       \      Default is 0 KB. Files that are too small will appear\n             \
       \           as an error during run validation."
-    default: 0
     inputBinding:
       position: 101
       prefix: --minimum_file_size

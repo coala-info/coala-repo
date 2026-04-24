@@ -108,7 +108,6 @@ inputs:
       - string
     doc: give tree format for output, nexus (nex or x for short) or newick (new or
       w for short), e.g --output x. (default w).
-    default: w
     inputBinding:
       position: 102
       prefix: --output

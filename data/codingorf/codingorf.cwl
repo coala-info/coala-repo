@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Reading frame to use (0, 1, or 2). 0 means all frames.
-    default: 0
     inputBinding:
       position: 102
       prefix: --frame
@@ -25,7 +24,6 @@ inputs:
       - string
     doc: The genetic code to use for translation (e.g., 'Standard', 'Vertebrate 
       Mitochondrial').
-    default: Standard
     inputBinding:
       position: 102
       prefix: --genetic-code
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of an Open Reading Frame (ORF) to consider.
-    default: 100
     inputBinding:
       position: 102
       prefix: --min-length
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: Strand to search for ORFs ('forward', 'reverse', or 'both').
-    default: both
     inputBinding:
       position: 102
       prefix: --strand

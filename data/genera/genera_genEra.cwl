@@ -78,7 +78,6 @@ inputs:
       - string
     doc: 'Modify the sensitivity parameter in DIAMOND for faster or more sensitive
       results in step 1 (default: sensitive)'
-    default: sensitive
     inputBinding:
       position: 101
       prefix: -y
@@ -87,7 +86,6 @@ inputs:
       - 'null'
       - float
     doc: 'E-value threshold for DIAMOND and Foldseek (default: 1e-5)'
-    default: '1e-5'
     inputBinding:
       position: 101
       prefix: -e
@@ -118,7 +116,6 @@ inputs:
       - int
     doc: 'Adjust the amount of prefilter made by Foldseek (i.e., the maximum number
       of hits that are reported) (default: 10000)'
-    default: 10000
     inputBinding:
       position: 101
       prefix: -M
@@ -142,7 +139,6 @@ inputs:
       - int
     doc: 'Starting taxonomic rank of genes that will be re-analyzed using jackhmmer
       (default: 2)'
-    default: 2
     inputBinding:
       position: 101
       prefix: -k
@@ -154,7 +150,6 @@ inputs:
       within a taxonomic level to consider it useful for the gene age assignment (i.e.,
       filtering taxonomic levels lacking complete genomes in the database) (default:
       10)'
-    default: 10
     inputBinding:
       position: 101
       prefix: -m
@@ -194,7 +189,6 @@ inputs:
       - boolean
     doc: 'When true, prints an additional output file with the best sequence hit responsible
       for the oldest gene age assignment for each of the query genes (default: true)'
-    default: true
     inputBinding:
       position: 101
       prefix: -i
@@ -230,7 +224,6 @@ inputs:
     doc: 'When true, run an additional search step using jackhmmer against the online
       Uniprot database (default: false) (warning 1: Only available when using FASTA
       sequences) (warning 2: this step requires internet connection)'
-    default: false
     inputBinding:
       position: 101
       prefix: -j
@@ -245,7 +238,6 @@ inputs:
       running times. Speed up of x ~ 5 times faster per 10,000 query genes (-F true
       vs -F false). Speed improvement will increase gradually with bigger queries.
       (default: true)'
-    default: true
     inputBinding:
       position: 101
       prefix: -F
@@ -263,7 +255,6 @@ inputs:
     doc: 'Taxonomic representativeness threshold below which a gene will be flagged
       as putative genome contamination or the product of a horizontal gene transfer
       (HGT) event (default: 30)'
-    default: 30
     inputBinding:
       position: 101
       prefix: -l

@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: number of residues per line
-    default: 0
     inputBinding:
       position: 102
       prefix: -l
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: masked bases converted to CHAR
-    default: N
     inputBinding:
       position: 102
       prefix: -n
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: mask bases with quality higher than INT
-    default: 255
     inputBinding:
       position: 102
       prefix: -X
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: mask bases with quality lower than INT
-    default: 0
     inputBinding:
       position: 102
       prefix: -q
@@ -93,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: drop sequences with length shorter than INT
-    default: 0
     inputBinding:
       position: 102
       prefix: -L
@@ -118,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: 'quality shift: ASCII-INT'
-    default: 33
     inputBinding:
       position: 102
       prefix: -Q
@@ -135,7 +129,6 @@ inputs:
       - 'null'
       - float
     doc: sample fraction
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -f
@@ -144,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: random seed
-    default: 11
     inputBinding:
       position: 102
       prefix: -s

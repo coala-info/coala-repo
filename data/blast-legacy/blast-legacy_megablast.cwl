@@ -14,7 +14,6 @@ inputs:
       4 = flat query-anchored, no identities, 5 = query-anchored no identities and
       blunt ends, 6 = flat query-anchored, no identities and blunt ends, 7 = XML Blast
       output, 8 = tabular, 9 tabular with comment lines, 10 ASN, text, 11 ASN, binary'
-    default: 0
     inputBinding:
       position: 101
       prefix: -m
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: Believe the query defline
-    default: false
     inputBinding:
       position: 101
       prefix: -J
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: Database
-    default: nr
     inputBinding:
       position: 101
       prefix: -d
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Length of a discontiguous word template (contiguous word if 0)
-    default: 0
     inputBinding:
       position: 101
       prefix: -t
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Type of a discontiguous word template (0 - coding, 1 - optimal, 2 - two simultaneous)
-    default: 0
     inputBinding:
       position: 101
       prefix: -N
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: Effective length of the database (use zero for the real size)
-    default: 0
     inputBinding:
       position: 101
       prefix: -z
@@ -68,7 +62,6 @@ inputs:
       - 'null'
       - float
     doc: Effective length of the search space (use zero for the real size)
-    default: 0
     inputBinding:
       position: 101
       prefix: -Y
@@ -77,7 +70,6 @@ inputs:
       - 'null'
       - float
     doc: Expectation value
-    default: 10.0
     inputBinding:
       position: 101
       prefix: -e
@@ -86,7 +78,6 @@ inputs:
       - 'null'
       - string
     doc: Filter query sequence
-    default: T
     inputBinding:
       position: 101
       prefix: -F
@@ -95,7 +86,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force use of the legacy BLAST engine
-    default: false
     inputBinding:
       position: 101
       prefix: -V
@@ -104,7 +94,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show full IDs in the output (default - only GIs or accessions)
-    default: false
     inputBinding:
       position: 101
       prefix: -f
@@ -113,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Cost to extend a gap (-1 invokes default behavior)
-    default: -1
     inputBinding:
       position: 101
       prefix: -E
@@ -122,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: Cost to open a gap (-1 invokes default behavior)
-    default: -1
     inputBinding:
       position: 101
       prefix: -G
@@ -131,7 +118,6 @@ inputs:
       - 'null'
       - boolean
     doc: Make discontiguous megablast generate words for every base of the database
-    default: true
     inputBinding:
       position: 101
       prefix: -g
@@ -148,7 +134,6 @@ inputs:
       - 'null'
       - boolean
     doc: Produce HTML output
-    default: false
     inputBinding:
       position: 101
       prefix: -T
@@ -157,7 +142,6 @@ inputs:
       - 'null'
       - float
     doc: Identity percentage cut-off
-    default: 0
     inputBinding:
       position: 101
       prefix: -p
@@ -166,7 +150,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use lower case filtering of FASTA sequence
-    default: false
     inputBinding:
       position: 101
       prefix: -U
@@ -175,7 +158,6 @@ inputs:
       - 'null'
       - int
     doc: Reward for a nucleotide match
-    default: 1
     inputBinding:
       position: 101
       prefix: -r
@@ -184,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal number of positions for a hash value (set to 0 to ignore)
-    default: 0
     inputBinding:
       position: 101
       prefix: -P
@@ -193,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal number of HSPs to save per database sequence (0 = unlimited)
-    default: 0
     inputBinding:
       position: 101
       prefix: -H
@@ -202,7 +182,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal total length of queries for a single search
-    default: 5000000
     inputBinding:
       position: 101
       prefix: -M
@@ -211,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal hit score to report (0 for default behavior)
-    default: 0
     inputBinding:
       position: 101
       prefix: -s
@@ -220,7 +198,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for a nucleotide mismatch
-    default: -3
     inputBinding:
       position: 101
       prefix: -q
@@ -230,7 +207,6 @@ inputs:
       - int
     doc: Multiple Hits window size; default is 0 (i.e. single-hit extensions) or 40
       for discontiguous template
-    default: 0
     inputBinding:
       position: 101
       prefix: -A
@@ -239,7 +215,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use non-greedy (dynamic programming) extension for affine gap scores
-    default: false
     inputBinding:
       position: 101
       prefix: -n
@@ -248,7 +223,6 @@ inputs:
       - 'null'
       - int
     doc: Number of database sequence to show alignments for (B)
-    default: 250
     inputBinding:
       position: 101
       prefix: -b
@@ -257,7 +231,6 @@ inputs:
       - 'null'
       - int
     doc: Number of database sequences to show one-line descriptions for (V)
-    default: 500
     inputBinding:
       position: 101
       prefix: -v
@@ -266,7 +239,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors to use
-    default: 1
     inputBinding:
       position: 101
       prefix: -a
@@ -277,7 +249,6 @@ inputs:
     doc: 'Type of output: 0 - alignment endpoints and score, 1 - all ungapped segments
       endpoints, 2 - traditional BLAST output, 3 - tab-delimited one line format,
       4 - incremental text ASN.1, 5 - incremental binary ASN.1'
-    default: 2
     inputBinding:
       position: 101
       prefix: -D
@@ -300,7 +271,6 @@ inputs:
       - 'null'
       - int
     doc: 'Query strands to search against database: 3 is both, 1 is top, 2 is bottom'
-    default: 3
     inputBinding:
       position: 101
       prefix: -S
@@ -309,7 +279,6 @@ inputs:
       - 'null'
       - boolean
     doc: Report the log information at the end of output
-    default: false
     inputBinding:
       position: 101
       prefix: -R
@@ -318,7 +287,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show GI's in deflines
-    default: false
     inputBinding:
       position: 101
       prefix: -I
@@ -327,7 +295,6 @@ inputs:
       - 'null'
       - int
     doc: Word size (length of best perfect match)
-    default: 28
     inputBinding:
       position: 101
       prefix: -W
@@ -336,7 +303,6 @@ inputs:
       - 'null'
       - int
     doc: X dropoff value for dynamic programming gapped extension
-    default: 50
     inputBinding:
       position: 101
       prefix: -Z
@@ -345,7 +311,6 @@ inputs:
       - 'null'
       - int
     doc: X dropoff value for gapped alignment (in bits)
-    default: 20
     inputBinding:
       position: 101
       prefix: -X
@@ -354,7 +319,6 @@ inputs:
       - 'null'
       - int
     doc: X dropoff value for ungapped extension
-    default: 10
     inputBinding:
       position: 101
       prefix: -y

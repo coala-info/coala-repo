@@ -71,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: Print output in the specified <format> (old, new (default), html)
-    default: new
     inputBinding:
       position: 102
       prefix: -O

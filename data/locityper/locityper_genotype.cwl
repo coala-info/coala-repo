@@ -73,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Output BAM files for INT best genotypes [0].
-    default: 0
     inputBinding:
       position: 101
       prefix: --out-bams
@@ -99,7 +98,6 @@ inputs:
       - string
     doc: Rerun mode [none]. Rerun all loci (all); do not rerun read recruitment 
       (part); do not rerun completed loci (none).
-    default: none
     inputBinding:
       position: 101
       prefix: --rerun
@@ -117,7 +115,6 @@ inputs:
       - 'null'
       - string
     doc: 'Stop after one of the steps: recruit, map or all (default).'
-    default: all
     inputBinding:
       position: 101
       prefix: --stop-after
@@ -126,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads [8].
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads

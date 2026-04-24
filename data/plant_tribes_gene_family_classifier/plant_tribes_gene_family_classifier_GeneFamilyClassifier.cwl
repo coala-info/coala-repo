@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads (CPUs) to used for HMMScan, BLASTP, and MAFFT
-    default: 1
     inputBinding:
       position: 101
       prefix: --num_threads

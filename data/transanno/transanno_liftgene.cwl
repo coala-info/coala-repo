@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: 'Input file format [possible values: auto, gff3, gtf]'
-    default: auto
     inputBinding:
       position: 102
       prefix: --format

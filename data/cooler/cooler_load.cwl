@@ -53,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: Comment character that indicates lines to ignore.
-    default: '#'
     inputBinding:
       position: 104
       prefix: --comment-char
@@ -99,7 +98,6 @@ inputs:
       All lower-triangle input elements will be discarded! | If you wish to treat
       lower- and upper-triangle input data as distinct, use the ``--no-symmetric-upper``
       option instead.'
-    default: unique
     inputBinding:
       position: 104
       prefix: --input-copy-status
@@ -108,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of chunks to merge in a single pass.
-    default: 200
     inputBinding:
       position: 104
       prefix: --max-merge

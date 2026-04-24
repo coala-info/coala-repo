@@ -58,7 +58,6 @@ inputs:
     doc: Optional method for parsing taxonomic information from the names of the protein
       sequences. This is an alternative to the "--meta" argument and will only work
       if the protein names contain "OXX" tags of the form "OXX=variableID,speciesID,genusID,familyID".
-    default: 1
     inputBinding:
       position: 101
       prefix: --tax_id_index

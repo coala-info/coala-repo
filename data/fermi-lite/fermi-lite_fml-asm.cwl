@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: range of k-mer & read count thresholds for ec and graph cleaning
-    default: 4,8
     inputBinding:
       position: 102
       prefix: -c
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length for error correction (0 for auto; -1 to disable)
-    default: 0
     inputBinding:
       position: 102
       prefix: -e
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: min overlap length during initial assembly
-    default: 33
     inputBinding:
       position: 102
       prefix: -l
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - float
     doc: drop an overlap if its length is below maxOvlpLen*FLOAT
-    default: 0.7
     inputBinding:
       position: 102
       prefix: -r
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads (don't use multi-threading for small data sets)
-    default: 1
     inputBinding:
       position: 102
       prefix: -t

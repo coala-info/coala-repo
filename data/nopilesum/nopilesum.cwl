@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: VCF records with INFO/AF fields above this threshold won't be used
-    default: 0.2
     inputBinding:
       position: 103
       prefix: --max-af
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: VCF records with INFO/AF fields below this threshold won't be used
-    default: 0.01
     inputBinding:
       position: 103
       prefix: --min-af

@@ -35,7 +35,6 @@ inputs:
       sum of the tension of all steps visiting that node. Results are written in TSV
       format to stdout. 1st col: node identifier. 2nd col: tension=(path_layout_dist/path_nuc_dist).
       3rd col: 2nd_col/#steps_on_node.'
-    default: ENABLED
     inputBinding:
       position: 101
       prefix: --pangenome-mode
@@ -60,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: window size in bases in which each tension is calculated
-    default: 1kb
     inputBinding:
       position: 101
       prefix: --window-size

@@ -14,7 +14,6 @@ inputs:
       - type: array
         items: string
     doc: 'List of aux tags to keep in file (default: NM)'
-    default: NM
     inputBinding:
       position: 101
       prefix: --keep

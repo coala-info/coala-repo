@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: Which remote database is used to list/install/search genome assemblies.
-    default: ucsc
     inputBinding:
       position: 101
       prefix: --database

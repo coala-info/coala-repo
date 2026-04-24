@@ -12,7 +12,6 @@ inputs:
     doc: 'the number of loci to process in a batch (default: 10,000 in de novo mode;
       in reference mode, one chromosome per batch). Increase to speed analysis, uses
       more memory, decrease to save memory).'
-    default: 10,000 in de novo mode; in reference mode, one chromosome per batch
     inputBinding:
       position: 101
       prefix: --batch-size
@@ -83,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: number of bootstrap resamplings to calculate (default 100).
-    default: 100
     inputBinding:
       position: 101
       prefix: --bootstrap-reps
@@ -136,7 +134,6 @@ inputs:
       - string
     doc: "specify a p-value correction to be applied to Fst values based on a Fisher's
       exact test. Default: off."
-    default: off
     inputBinding:
       position: 101
       prefix: --fst-correction
@@ -314,7 +311,6 @@ inputs:
       - 'null'
       - float
     doc: 'maximum p-value to keep an Fst measurement. Default: 0.05.'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --p-value-cutoff
@@ -375,7 +371,6 @@ inputs:
       - int
     doc: standard deviation of the kernel smoothing weight distribution. Sliding
       window size is defined as 3 x sigma; (default sigma = 150kbp).
-    default: 150kbp
     inputBinding:
       position: 101
       prefix: --sigma

@@ -10,7 +10,6 @@ inputs:
       - int
     doc: maximum allowed gap or overlap between two adjacent aligned exons for 
       building a valid transcript
-    default: 15
     inputBinding:
       position: 101
       prefix: --allowed_exon_gap_or_overlap
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: alignment K-mer size
-    default: 12
     inputBinding:
       position: 101
       prefix: --mer
@@ -49,7 +47,6 @@ inputs:
       - float
     doc: minimum (must be > than) intron junction coverage for detection of 
       known transcripts
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --known
@@ -59,7 +56,6 @@ inputs:
       - float
     doc: minimum (must be > than) intron junction coverage for detection of 
       novel transcripts
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --novel
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: minimum percentage of exon bases in matching K-mers
-    default: 35.0
     inputBinding:
       position: 101
       prefix: --bases
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: prefix of the output files
-    default: output
     inputBinding:
       position: 101
       prefix: --prefix
@@ -93,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 16
     inputBinding:
       position: 101
       prefix: --threads
@@ -102,7 +95,6 @@ inputs:
       - 'null'
       - boolean
     doc: verbose mode
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

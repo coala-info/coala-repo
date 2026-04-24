@@ -50,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: length of flanks to be used as pseudoreads
-    default: 100
     inputBinding:
       position: 103
       prefix: --flank-length
@@ -59,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: max mismatches between paths and flanks
-    default: nolimit
     inputBinding:
       position: 103
       prefix: --flank-mismatches
@@ -114,7 +112,6 @@ inputs:
       - 'null'
       - string
     doc: 'Deprecated: max branches in de Bruijn graph traversal'
-    default: nolimit
     inputBinding:
       position: 103
       prefix: --max-branches
@@ -123,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: max edges to traverse during each graph search
-    default: 100000
     inputBinding:
       position: 103
       prefix: --max-cost
@@ -140,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: max gap size to fill in bp
-    default: 800
     inputBinding:
       position: 103
       prefix: --max-gap-length
@@ -149,7 +144,6 @@ inputs:
       - 'null'
       - string
     doc: max mismatches between all alternate paths
-    default: nolimit
     inputBinding:
       position: 103
       prefix: --max-mismatches
@@ -158,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: merge at most N alternate paths
-    default: 2
     inputBinding:
       position: 103
       prefix: --max-paths
@@ -224,7 +217,6 @@ inputs:
       - 'null'
       - string
     doc: mem limit for graph searches
-    default: 500M
     inputBinding:
       position: 103
       prefix: --search-mem
@@ -241,7 +233,6 @@ inputs:
       - 'null'
       - int
     doc: use N parallel threads
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

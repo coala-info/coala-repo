@@ -71,7 +71,6 @@ inputs:
       'exon;intron;mito') will automatically enter hierarchical_assign mode. If 
       the user wants to assign independently for each feature type, please 
       specify '--assignIndependently'. Use -Z to check the details.
-    default: exon
     inputBinding:
       position: 102
       prefix: -t
@@ -81,7 +80,6 @@ inputs:
       - string
     doc: Specify the gene_identifier attribute, which is normally 'gene_id' or 
       'gene_name'. 'gene_id' by default.
-    default: gene_id
     inputBinding:
       position: 102
       prefix: -g
@@ -131,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum template(read pair) length, 600 by default.
-    default: 600
     inputBinding:
       position: 102
       prefix: -D
@@ -155,7 +152,6 @@ inputs:
     doc: The minimum mapping quality score a read must satisfy in order to be 
       counted. For paired-end reads, at least one end should satisfy this 
       criteria. 0 by default.
-    default: 0
     inputBinding:
       position: 102
       prefix: -Q
@@ -165,7 +161,6 @@ inputs:
       - int
     doc: Specify the minimum number of overlapped bases required to assign a 
       read to a feature. 1 by default.
-    default: 1
     inputBinding:
       position: 102
       prefix: --minReadOverlap
@@ -174,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum template(read pair) length, 50 by default.
-    default: 50
     inputBinding:
       position: 102
       prefix: -d
@@ -206,7 +200,6 @@ inputs:
       when running, VERSE will initiate one main thread and at least one helper 
       thread for read assignment. This option specifies the number of helper 
       threads.
-    default: 1
     inputBinding:
       position: 102
       prefix: -T
@@ -265,7 +258,6 @@ inputs:
     doc: "The Running Mode: 0 by default (featureCounts), 1 (HTSeq-Union), 2 (HTSeq-Intersection_strict),
       3 (HTSeq-Intersection_nonempty), 4 (Union_strict), 5 (Cover_length). Please
       refer to the manual or use '-Z' to check the details of each mode."
-    default: 0
     inputBinding:
       position: 102
       prefix: -z
@@ -298,7 +290,6 @@ inputs:
     doc: 'Indicate if strand-specific read counting should be performed. It has three
       possible values: 0 (unstranded), 1 (stranded) and 2 (reversely stranded). 0
       by default.'
-    default: 0
     inputBinding:
       position: 102
       prefix: -s

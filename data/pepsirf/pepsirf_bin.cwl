@@ -16,7 +16,6 @@ inputs:
     doc: The minimum number of peptides that a bin must contain. If a bin would be
       created with fewer than bin_size peptides, it will be combined with the next
       bin until at least bin_size peptides are found.
-    default: 300
     inputBinding:
       position: 101
       prefix: --bin_size
@@ -27,7 +26,6 @@ inputs:
     doc: The 'rounding factor' for the scores parsed from the score matrix prior to
       binning. Scores found in the matrix will be rounded to the nearest 1/10^x for
       a rounding factor x.
-    default: 0
     inputBinding:
       position: 101
       prefix: --round_to

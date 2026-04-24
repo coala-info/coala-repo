@@ -63,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: max candidates per seed (0 = use index estimate)
-    default: 0
     inputBinding:
       position: 103
       prefix: -max-candidates
@@ -72,7 +71,6 @@ inputs:
       - 'null'
       - float
     doc: max fractional edit distance
-    default: 0.1
     inputBinding:
       position: 103
       prefix: -max-distance
@@ -81,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: max fragment size (pe mode)
-    default: 3000
     inputBinding:
       position: 103
       prefix: -max-frag
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: min fragment size (pe mode)
-    default: 32
     inputBinding:
       position: 103
       prefix: -min-frag
@@ -115,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 103
       prefix: -threads

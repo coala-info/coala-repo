@@ -175,7 +175,6 @@ inputs:
     doc: If specified, will remove all genomes that are missing from the 
       FlexTaxD-database, regardless if they are distinct nodes or not in the 
       tree (default = FALSE)
-    default: false
     inputBinding:
       position: 101
       prefix: --purge_database_force
@@ -192,7 +191,6 @@ inputs:
       - 'null'
       - string
     doc: For download command, give value of expected source, default (refseq)
-    default: refseq
     inputBinding:
       position: 101
       prefix: --refdatabase
@@ -250,7 +248,6 @@ inputs:
       - int
     doc: The base for internal taxonomy ID numbers, when using NCBI as base 
       select base at minimum 3000000 (default = 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --taxid_base
@@ -299,7 +296,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum depth from node to visualise default 3, 0 = all levels
-    default: 3
     inputBinding:
       position: 101
       prefix: --vis_depth

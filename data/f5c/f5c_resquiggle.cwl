@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: batch size (max number of reads loaded at once)
-    default: 512
     inputBinding:
       position: 103
       prefix: -K
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: max number of bases loaded at once
-    default: 5.0M
     inputBinding:
       position: 103
       prefix: -B
@@ -81,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: number of processing threads
-    default: 8
     inputBinding:
       position: 103
       prefix: -t
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: verbosity level
-    default: 0
     inputBinding:
       position: 103
       prefix: --verbose

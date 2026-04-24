@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of internal SBT nodes to cache in memory (default: 0, cache all nodes)'
-    default: 0
     inputBinding:
       position: 103
       prefix: --cache-size
@@ -200,7 +199,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'choose a nucleotide signature (default: True)'
-    default: true
     inputBinding:
       position: 103
       prefix: --dna, --rna, --nucleotide
@@ -317,7 +315,6 @@ inputs:
       - float
     doc: reporting threshold (in bp) for estimated overlap with remaining query 
       (default=50kb)
-    default: 50kb
     inputBinding:
       position: 103
       prefix: --threshold-bp

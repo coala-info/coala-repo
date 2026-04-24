@@ -129,7 +129,6 @@ inputs:
       - string
     doc: print stats about the values on the internal nodes. Counts nodes with value
       above given value.
-    default: '1.0'
     inputBinding:
       position: 102
       prefix: --internal_node_stats
@@ -187,7 +186,6 @@ inputs:
       - 'null'
       - float
     doc: multiply each branch in the tree with the given value.
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --multiply_branch_lengths
@@ -263,7 +261,6 @@ inputs:
       - 'null'
       - string
     doc: 'give tree format for output: nexus (x), newick (w), or svg.'
-    default: w
     inputBinding:
       position: 102
       prefix: --output
@@ -280,7 +277,6 @@ inputs:
       - 'null'
       - string
     doc: get a random topology (no branch lengths) with given number of taxa.
-    default: '0'
     inputBinding:
       position: 102
       prefix: --random_tree
@@ -313,7 +309,6 @@ inputs:
       - 'null'
       - float
     doc: set all branches in the tree to the given value.
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --set_branch_lengths

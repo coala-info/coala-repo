@@ -249,7 +249,6 @@ inputs:
       - 'null'
       - string
     doc: File hierarchy strategy
-    default: large
     inputBinding:
       position: 101
       prefix: --file-hierarchy
@@ -349,7 +348,6 @@ inputs:
       - 'null'
       - string
     doc: Kmer preclustering strategy
-    default: large
     inputBinding:
       position: 101
       prefix: --kmer-precluster

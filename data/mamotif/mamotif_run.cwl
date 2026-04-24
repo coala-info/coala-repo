@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Method for multiple testing correction.
-    default: benjamin
     inputBinding:
       position: 101
       prefix: --correction
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: TSS downstream distance for promoters.
-    default: 2000
     inputBinding:
       position: 101
       prefix: --downstream
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Which sample to perform MAmotif on.
-    default: both
     inputBinding:
       position: 101
       prefix: --mode
@@ -72,7 +69,6 @@ inputs:
       - 'null'
       - float
     doc: P value cutoff for motif scores.
-    default: '1e-4'
     inputBinding:
       position: 101
       prefix: -p
@@ -105,7 +101,6 @@ inputs:
       - string
     doc: "Format of the peak files. Support ['bed',\n                        'bed3-summit',
       'macs', 'macs2', 'narrowpeak',\n                        'broadpeak']."
-    default: bed
     inputBinding:
       position: 101
       prefix: --peak-format
@@ -127,7 +122,6 @@ inputs:
       - string
     doc: "Format of the read files. Support ['bed', 'bedpe',\n                   \
       \     'sam', 'bam']."
-    default: bed
     inputBinding:
       position: 101
       prefix: --read-format
@@ -140,7 +134,6 @@ inputs:
       \           of each shifted read is used to represent the genomic\n        \
       \                locus of the DNA fragment. Set to 0.5 * fragment size\n   \
       \                     of the ChIP-seq library."
-    default: 100
     inputBinding:
       position: 101
       prefix: --shiftsize1
@@ -149,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: Single-end reads shift size for sample B.
-    default: 100
     inputBinding:
       position: 101
       prefix: --shiftsize2
@@ -175,7 +167,6 @@ inputs:
       - 'null'
       - int
     doc: TSS upstream distance for promoters.
-    default: 4000
     inputBinding:
       position: 101
       prefix: --upstream

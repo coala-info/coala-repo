@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Write compressed output
-    default: 0
     inputBinding:
       position: 106
       prefix: --compressed
@@ -49,7 +48,6 @@ inputs:
       - float
     doc: List matches above this fraction of aligned (covered) residues (see 
       --cov-mode)
-    default: 0.0
     inputBinding:
       position: 106
       prefix: -c
@@ -59,7 +57,6 @@ inputs:
       - int
     doc: 'Createdb mode 0: copy data, 1: soft link data and write new index (works
       only with single line fasta/q)'
-    default: 1
     inputBinding:
       position: 106
       prefix: --createdb-mode
@@ -69,7 +66,6 @@ inputs:
       - float
     doc: List matches above this sequence identity (for clustering) (range 
       0.0-1.0)
-    default: 0.3
     inputBinding:
       position: 106
       prefix: --min-seq-id
@@ -79,7 +75,6 @@ inputs:
       - boolean
     doc: Per default there is linclust of mmseqs performed for the redundancy 
       reduction. If you don't want it, provide this tag
-    default: false
     inputBinding:
       position: 106
       prefix: --no-run-clust
@@ -88,7 +83,6 @@ inputs:
       - 'null'
       - boolean
     doc: Delete temporary files
-    default: false
     inputBinding:
       position: 106
       prefix: --remove-tmp-files
@@ -97,7 +91,6 @@ inputs:
       - 'null'
       - float
     doc: 'Sensitivity: 1.0 faster; 4.0 fast; 7.5 sensitive'
-    default: 4.0
     inputBinding:
       position: 106
       prefix: -s
@@ -108,7 +101,6 @@ inputs:
     doc: Provide only query, target IDs and information from UniProt in the 
       output file. No information about alignment (eg. sequence identity and bit
       score)
-    default: false
     inputBinding:
       position: 106
       prefix: --simple-output
@@ -117,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU-cores used (all by default)
-    default: 20
     inputBinding:
       position: 106
       prefix: --threads
@@ -126,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbosity level: 0: quiet, 1: +errors, 2: +warnings, 3: +info'
-    default: 3
     inputBinding:
       position: 106
       prefix: -v

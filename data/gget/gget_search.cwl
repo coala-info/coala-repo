@@ -19,7 +19,6 @@ inputs:
     doc: "'or': Gene descriptions must include at least one of the searchwords (default).\n\
       \                        'and': Only return genes whose descriptions include
       all searchwords. (default: or)"
-    default: or
     inputBinding:
       position: 102
       prefix: --andor
@@ -38,7 +37,6 @@ inputs:
     doc: "'gene': Returns genes that match the searchwords. (default).\n         \
       \               'transcript': Returns transcripts that match the searchwords.
       (default: gene)"
-    default: gene
     inputBinding:
       position: 102
       prefix: --id_type

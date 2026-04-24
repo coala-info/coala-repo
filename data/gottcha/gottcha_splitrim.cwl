@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to write output files to
-    default: .
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output files
-    default: split
     inputBinding:
       position: 102
       prefix: --prefix

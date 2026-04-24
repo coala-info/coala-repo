@@ -26,7 +26,6 @@ inputs:
       - string
     doc: "Digestion mode. Either 's', 'sequential', 'c' or 'concurrent' (default:
       s)"
-    default: s
     inputBinding:
       position: 101
       prefix: --digest
@@ -64,7 +63,6 @@ inputs:
     doc: 'Percentage of miscleavage, between 0 and 100, by enzyme(s). It should be
       in the same order than -enzymes options (i.e. -m 15 5 10). Only for sequential
       digestion (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --miscleavage
@@ -83,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: "Output file format. Either 'fasta', 'csv', or 'tsv' (default: fasta)"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --fmt
@@ -92,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: "Define pKa values. Either 'ipc' or 'stryer' (default: ipc)"
-    default: ipc
     inputBinding:
       position: 101
       prefix: --pka

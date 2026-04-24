@@ -10,7 +10,6 @@ inputs:
       - float
     doc: The weight of evolutionary distance in functional orthology scoring 
       (0.0 for maximum weight, 1.0 for no weight, optional, default 0.10)
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -distw
@@ -29,7 +28,6 @@ inputs:
       - float
     doc: The support threshold for gene tree branch collapse (optional, default 
       80.0)
-    default: 80.0
     inputBinding:
       position: 101
       prefix: -gt
@@ -47,7 +45,6 @@ inputs:
       - float
     doc: The weight of intersection duplication in functional orthology scoring 
       (0.0 for maximum weight, 1.0 for no weight, optional, default 0.90)
-    default: 0.9
     inputBinding:
       position: 101
       prefix: -idupw
@@ -65,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: The k-level of the subtree-neighbor measure (optional, default 2)
-    default: 2
     inputBinding:
       position: 101
       prefix: -k
@@ -92,7 +88,6 @@ inputs:
       - float
     doc: The length depth threshold to deduce to polymorphism, allelism ... 
       (optional, default 0.05)
-    default: 0.05
     inputBinding:
       position: 101
       prefix: -pt
@@ -127,7 +122,6 @@ inputs:
       - float
     doc: The weight of speciation in functional orthology scoring (0.0 for 
       maximum weight, 1.0 for no weight, optional, default 0.99)
-    default: 0.99
     inputBinding:
       position: 101
       prefix: -specw
@@ -137,7 +131,6 @@ inputs:
       - float
     doc: The length threshold for species tree branch collapse (optional, 
       default 10.0)
-    default: 10.0
     inputBinding:
       position: 101
       prefix: -st
@@ -154,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: The starting index (0 default), if the gene tree input is a directory
-    default: 0
     inputBinding:
       position: 101
       prefix: -start
@@ -164,7 +156,6 @@ inputs:
       - float
     doc: The weight of topological duplication in functional orthology scoring 
       (0.0 for maximum weight, 1.0 for no weight, optional, default 0.95)
-    default: 0.95
     inputBinding:
       position: 101
       prefix: -tdupw
@@ -174,7 +165,6 @@ inputs:
       - float
     doc: The weight of an ultraparalogy node in functional orthology scoring 
       (0.0 for maximum weight, 1.0 for no weight, optional, default 0.99)
-    default: 0.99
     inputBinding:
       position: 101
       prefix: -ultraw

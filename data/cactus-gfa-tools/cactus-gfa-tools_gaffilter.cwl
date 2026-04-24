@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Ignore overlaps that constitute <N% of the length
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-overlap
@@ -53,7 +52,6 @@ inputs:
       1 query region with size >= N overlaps any regions of size <= N, ignore the
       smaller ones only. Works separate to -r/-m but can be used in conjunction with
       them to combine the two filters (0 = disable)
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-overlap-length
@@ -71,7 +69,6 @@ inputs:
       - float
     doc: If two query blocks overlap, and one is Nx bigger than the other, the bigger
       one is kept (otherwise both deleted)
-    default: 0
     inputBinding:
       position: 102
       prefix: --ratio

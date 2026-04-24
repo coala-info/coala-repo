@@ -11,7 +11,6 @@ inputs:
       - int
     doc: Number of sequences to process at once for classification or threshold 
       calculation.
-    default: 20000
     inputBinding:
       position: 101
       prefix: --chunksize
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Device to use (cpu or cuda).
-    default: cuda
     inputBinding:
       position: 101
       prefix: --device
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to save logs.
-    default: /root/.famus/logs
     inputBinding:
       position: 101
       prefix: --log-dir
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to save or load models.
-    default: /root/.famus/models
     inputBinding:
       position: 101
       prefix: --models-dir
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to use.
-    default: 4
     inputBinding:
       position: 101
       prefix: --n-processes
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable logging.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-log

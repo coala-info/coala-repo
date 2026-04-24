@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Size of ascii-signature
-    default: 30
     inputBinding:
       position: 102
       prefix: -S
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: File extension for handling multiple files
-    default: stats
     inputBinding:
       position: 102
       prefix: -x
@@ -92,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads to sample for per-base stats
-    default: 1M
     inputBinding:
       position: 102
       prefix: -b

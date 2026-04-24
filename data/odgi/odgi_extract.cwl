@@ -19,7 +19,6 @@ inputs:
       - int
     doc: The number of bases away from our initial subgraph that we should 
       collect
-    default: 0
     inputBinding:
       position: 101
       prefix: --context-bases
@@ -29,7 +28,6 @@ inputs:
       - int
     doc: The number of steps (nodes) away from our initial subgraph that we 
       should collect
-    default: 0
     inputBinding:
       position: 101
       prefix: --context-steps
@@ -78,7 +76,6 @@ inputs:
     doc: Maximum distance between subpaths allowed for merging them. It reduces 
       the fragmentation of unspecified paths in the input path ranges. Set 0 to 
       disable it
-    default: 300000
     inputBinding:
       position: 101
       prefix: --max-distance-subpaths
@@ -88,7 +85,6 @@ inputs:
       - int
     doc: Maximum number of iterations in attempting to merge close subpaths. It 
       stops early if during an iteration no subpaths were merged
-    default: 6
     inputBinding:
       position: 101
       prefix: --max-merging-iterations

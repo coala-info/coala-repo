@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - Directory
     doc: primer3 config directory
-    default: ./src/primer3_config/
     inputBinding:
       position: 102
       prefix: --config
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: min. primer melting temperature
-    default: 45
     inputBinding:
       position: 102
       prefix: --cutTemp
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: max. penalty for products (-1 = keep all)
-    default: -1
     inputBinding:
       position: 102
       prefix: --cutoffPenalty
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: neighborhood distance
-    default: 1
     inputBinding:
       position: 102
       prefix: --distance
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - float
     doc: concentration of divalent ions in mMol
-    default: 1.5
     inputBinding:
       position: 102
       prefix: --divalent
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: concentration of annealing(!) Oligos in nMol
-    default: 50
     inputBinding:
       position: 102
       prefix: --dna
@@ -68,7 +62,6 @@ inputs:
       - 'null'
       - float
     doc: the sum of all dNTPs in mMol
-    default: 0.6
     inputBinding:
       position: 102
       prefix: --dntp
@@ -77,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: temperature for entropie and entalpie calculation in Celsius
-    default: 37
     inputBinding:
       position: 102
       prefix: --enttemp
@@ -100,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size
-    default: 15
     inputBinding:
       position: 102
       prefix: --kmer
@@ -109,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: max. neighborhood size
-    default: 10000
     inputBinding:
       position: 102
       prefix: --maxNeighborhood
@@ -118,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: max. PCR Product size
-    default: 15000
     inputBinding:
       position: 102
       prefix: --maxProdSize
@@ -127,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: max. number of matches per k-mer
-    default: 10000
     inputBinding:
       position: 102
       prefix: --maxmatches
@@ -136,7 +124,6 @@ inputs:
       - 'null'
       - float
     doc: concentration of monovalent ions in mMol
-    default: 50
     inputBinding:
       position: 102
       prefix: --monovalent
@@ -145,7 +132,6 @@ inputs:
       - 'null'
       - float
     doc: multiplication factor for amplicon length penalty
-    default: 0.001
     inputBinding:
       position: 102
       prefix: --penaltyLength
@@ -154,7 +140,6 @@ inputs:
       - 'null'
       - float
     doc: multiplication factor for deviation of primer Tm penalty
-    default: 0.6
     inputBinding:
       position: 102
       prefix: --penaltyTmDiff
@@ -163,7 +148,6 @@ inputs:
       - 'null'
       - float
     doc: multiplication factor for Tm pair difference penalty
-    default: 0.4
     inputBinding:
       position: 102
       prefix: --penaltyTmMismatch

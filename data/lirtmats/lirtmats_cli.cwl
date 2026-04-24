@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Values in input or output file are separated by this character.
-    default: tab
     inputBinding:
       position: 101
       prefix: --input-sep
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Ion mode of data set.
-    default: pos
     inputBinding:
       position: 101
       prefix: --ion-mode
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Delimiter in retention time reference file
-    default: tab
     inputBinding:
       position: 101
       prefix: --rt-sep
@@ -74,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: Retention time matching result file format.
-    default: xlsx
     inputBinding:
       position: 101
       prefix: --summ-type

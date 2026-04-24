@@ -13,7 +13,6 @@ inputs:
       - int
     doc: Buffer when clustering adjacent potential breakpoints, excepting 
       insertions
-    default: 10
     inputBinding:
       position: 101
       prefix: --buffer
@@ -23,7 +22,6 @@ inputs:
       - int
     doc: Chunksize to use when splitting genome for parallel analysis - used to 
       optimise memory
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --chunksize
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Length used for coverage bins
-    default: 5
     inputBinding:
       position: 101
       prefix: --coverage_binsize
@@ -59,7 +56,6 @@ inputs:
       - int
     doc: Buffer when clustering alternate edge of potential breakpoints, 
       excepting insertions
-    default: 50
     inputBinding:
       position: 101
       prefix: --end_buffer
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Buffer when clustering adjacent potential insertion breakpoints
-    default: 250
     inputBinding:
       position: 101
       prefix: --insertion_buffer
@@ -78,7 +73,6 @@ inputs:
       - int
     doc: Maximum distance between alignment start/end to be considered an 
       artefact when --keep_inv_artefact is not set
-    default: 200
     inputBinding:
       position: 101
       prefix: --inv_artefact_distance
@@ -95,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length SV to consider
-    default: 30
     inputBinding:
       position: 101
       prefix: --length
@@ -104,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum MAPQ to consider a read mapped
-    default: 5
     inputBinding:
       position: 101
       prefix: --mapq
@@ -113,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: In clustering step, discard clusters with fewer than n supporting reads
-    default: 3
     inputBinding:
       position: 101
       prefix: --min_reads_per_cluster
@@ -122,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum supporting reads for a PASS variant
-    default: 3
     inputBinding:
       position: 101
       prefix: --min_support
@@ -175,7 +165,6 @@ inputs:
       - 'null'
       - boolean
     doc: Report single breakend variants in addition to standard types
-    default: false
     inputBinding:
       position: 101
       prefix: --single_bnd
@@ -185,7 +174,6 @@ inputs:
       - int
     doc: Convert supplementary alignments below this threshold to single 
       breakend (default=5, must not exceed --mapq argument)
-    default: 5
     inputBinding:
       position: 101
       prefix: --single_bnd_max_mapq
@@ -194,7 +182,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of single breakend to consider
-    default: 100
     inputBinding:
       position: 101
       prefix: --single_bnd_min_length
@@ -203,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: max
     inputBinding:
       position: 101
       prefix: --threads

@@ -10,7 +10,6 @@ inputs:
       items: File
     doc: Path to input SNV profiles. Should have .npy, .npz or .npy.gz 
       extension.
-    default: []
     inputBinding:
       position: 1
   - id: input_names
@@ -18,7 +17,6 @@ inputs:
       type: array
       items: File
     doc: Path to input name files.
-    default: []
     inputBinding:
       position: 2
   - id: dominant_variants
@@ -27,7 +25,6 @@ inputs:
       - boolean
     doc: Report statistics only for dominant variants as obtained from consensus
       call.
-    default: false
     inputBinding:
       position: 103
       prefix: --dominant-variants
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: The number of processing units to use.
-    default: 1
     inputBinding:
       position: 103
       prefix: --nprocs

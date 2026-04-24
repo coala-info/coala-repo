@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: 'Genetic code table (e.g., 1: Standard, 2: Vertebrate Mitochondrial)'
-    default: 1
     inputBinding:
       position: 101
       prefix: -c
@@ -26,7 +25,6 @@ inputs:
       - string
     doc: 'Method for calculating Ka and Ks: NG, LWL, LPB, MLWL, MLPB, GY, YN, MYN,
       MA, MS, GYN'
-    default: MA
     inputBinding:
       position: 101
       prefix: -m

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: Barcode to use for lineage calling and speciation.
-    default: 
       /usr/local/lib/python3.13/site-packages/tbtamr/db/tbtamr.barcode.bed
     inputBinding:
       position: 101
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use pathogen profiler to call lineage
-    default: false
     inputBinding:
       position: 101
       prefix: --call_lineage
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: If you would like to apply cascade reporting structure.
-    default: false
     inputBinding:
       position: 101
       prefix: --cascade
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - File
     doc: csv variant catalog
-    default: 
       /usr/local/lib/python3.13/site-packages/tbtamr/db/who_v2_catalog.csv
     inputBinding:
       position: 101
@@ -48,7 +44,6 @@ inputs:
       - File
     doc: json file indicating the relevant column settings for interpretation of
       the catalog file.
-    default: 
       /usr/local/lib/python3.13/site-packages/tbtamr/configs/db_config.json
     inputBinding:
       position: 101
@@ -59,7 +54,6 @@ inputs:
       - File
     doc: csv file with rules for predicting resistance profiles from genomic 
       data.
-    default: 
       /usr/local/lib/python3.13/site-packages/tbtamr/configs/classification_criteria.csv
     inputBinding:
       position: 101
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force replace an existing folder.
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -79,7 +72,6 @@ inputs:
       - File
     doc: csv file with rules for predicting resistance profiles from genomic 
       data.
-    default: 
       /usr/local/lib/python3.13/site-packages/tbtamr/configs/interpretation_criteria.csv
     inputBinding:
       position: 101
@@ -89,7 +81,6 @@ inputs:
       - 'null'
       - File
     doc: Reference file to use for calling lineage.
-    default: /usr/local/lib/python3.13/site-packages/tbtamr/db/tbtamr.fasta
     inputBinding:
       position: 101
       prefix: --reference_file
@@ -98,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: Sequence name.
-    default: tbtamr
     inputBinding:
       position: 101
       prefix: --seq_id
@@ -107,7 +97,6 @@ inputs:
       - 'null'
       - Directory
     doc: temp directory to use
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmp
@@ -116,7 +105,6 @@ inputs:
       - 'null'
       - File
     doc: VCF file generated using the H37rV v3 reference genome
-    default: ''
     inputBinding:
       position: 101
       prefix: --vcf

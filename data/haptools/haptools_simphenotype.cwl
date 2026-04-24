@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Trait heritability
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --heritability
@@ -77,7 +76,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to normalize the genotypes before using them for simulation
-    default: true
     inputBinding:
       position: 103
       prefix: --normalize
@@ -113,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Number of rounds of simulation to perform
-    default: 1
     inputBinding:
       position: 103
       prefix: --replications
@@ -149,7 +146,6 @@ inputs:
       - 'null'
       - string
     doc: The level of verbosity desired
-    default: INFO
     inputBinding:
       position: 103
       prefix: --verbosity

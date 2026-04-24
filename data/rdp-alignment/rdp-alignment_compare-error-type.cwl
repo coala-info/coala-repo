@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Output stem
-    default: <query_nucl.fasta>
     inputBinding:
       position: 104
       prefix: --stem

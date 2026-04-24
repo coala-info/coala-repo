@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Feature type to use
-    default: gene
     inputBinding:
       position: 101
       prefix: --feature-type
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Comma-separated list of output fields to retain
-    default: all
     inputBinding:
       position: 101
       prefix: --fields
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: Field to place first in output table
-    default: gene_id
     inputBinding:
       position: 101
       prefix: --first-field

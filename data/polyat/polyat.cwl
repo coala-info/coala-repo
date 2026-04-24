@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Number of worker threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

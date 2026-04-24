@@ -11,7 +11,6 @@ inputs:
       - boolean
     doc: If set the execution is not aborted if a INFO header is missing in the 
       source file.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -allow_missing_header
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Number of lines processed in one chunk.
-    default: '10000'
     inputBinding:
       position: 101
       prefix: -block_size
@@ -31,7 +29,6 @@ inputs:
     doc: 'TSV file for annotation from multiple source files. For each source file,
       these tab-separated columns have to be given: source file name, prefix, INFO
       keys, ID column.'
-    default: ''
     inputBinding:
       position: 101
       prefix: -config_file
@@ -40,7 +37,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enables debug output (use only with one thread).
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -debug
@@ -49,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: Defines the INFO key name.
-    default: EXISTS_IN_SOURCE
     inputBinding:
       position: 101
       prefix: -existence_key_name
@@ -58,7 +53,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only annotate if variant exists in source.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -existence_only
@@ -67,7 +61,6 @@ inputs:
       - 'null'
       - boolean
     doc: Prints used htlib version and exits.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -hts_version
@@ -78,7 +71,6 @@ inputs:
     doc: ID column in 'source' (must be 'ID'). If unset, the ID column is not 
       annotated. Alternative output name can be specified by using 
       'ID=new_name'.
-    default: ''
     inputBinding:
       position: 101
       prefix: -id_column
@@ -88,7 +80,6 @@ inputs:
       - string
     doc: "INFO key(s) in 'source' that should be annotated (Multiple keys are be separated
       by ',', optional keys can be renamed using this syntax: 'original_key=new_key')."
-    default: ''
     inputBinding:
       position: 101
       prefix: -info_keys
@@ -97,7 +88,6 @@ inputs:
       - 'null'
       - File
     doc: Input VCF(.GZ) file that is annotated. If unset, reads from STDIN.
-    default: ''
     inputBinding:
       position: 101
       prefix: -in
@@ -106,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of chunks that may be pre-fetched into memory.
-    default: '64'
     inputBinding:
       position: 101
       prefix: -prefetch
@@ -115,7 +104,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix added to all annotations in the output VCF file.
-    default: ''
     inputBinding:
       position: 101
       prefix: -prefix
@@ -132,7 +120,6 @@ inputs:
       - 'null'
       - File
     doc: Tabix indexed VCF.GZ file that is the source of the annotated data.
-    default: ''
     inputBinding:
       position: 101
       prefix: -source
@@ -150,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads used to process VCF lines.
-    default: '1'
     inputBinding:
       position: 101
       prefix: -threads

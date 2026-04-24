@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: 'Chunk size in rows (default: 1000000).'
-    default: 1000000
     inputBinding:
       position: 103
       prefix: -s
@@ -35,7 +34,6 @@ inputs:
     doc: "Coordinate print mode (default: 0):\n                0: chrm<tab>beg0<tab>end1\
       \   (cg-style)\n                1: chrm<tab>beg0<tab>end0   (allc-style)\n \
       \               else: chrm_beg1"
-    default: 0
     inputBinding:
       position: 103
       prefix: -r
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: 'Inflated unit-size override (0=auto; allowed: 1,2,4,6,8).'
-    default: 0
     inputBinding:
       position: 103
       prefix: -u
@@ -116,7 +113,6 @@ inputs:
       \                  N == 0 : print 0/1, NA coded as '2'\n                  N\
       \  < 0 : print value<tab>universe  (e.g., 1<tab>1, 0<tab>1, NA<tab>0)\n    \
       \              N  > 0 : print raw 2-bit code (FMT6_2BIT)"
-    default: 0
     inputBinding:
       position: 103
       prefix: -f

@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Intron distance threshold to exclude erroneous isoforms
-    default: 20
     inputBinding:
       position: 101
       prefix: --intron_dist_th
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Max clip (unaligned) length for read mapping
-    default: 200
     inputBinding:
       position: 101
       prefix: --max_clip
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Max indel for read mapping
-    default: 20
     inputBinding:
       position: 101
       prefix: --max_indel
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: Min identity for read mapping [0-1]
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --min_idt
@@ -74,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -83,7 +78,6 @@ inputs:
       - 'null'
       - Directory
     doc: Working directory containing intermediate and log files
-    default: isorefiner_refine_work
     inputBinding:
       position: 101
       prefix: --work_dir

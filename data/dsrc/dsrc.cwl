@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: 'DNA compression mode: 0-3'
-    default: 0
     inputBinding:
       position: 103
       prefix: -d
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: FASTQ input buffer size in MB
-    default: 8
     inputBinding:
       position: 103
       prefix: -b
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: 'Quality compression mode: 0-2'
-    default: 0
     inputBinding:
       position: 103
       prefix: -q
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Quality offset
-    default: 0
     inputBinding:
       position: 103
       prefix: -o
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Processing threads number
-    default: 20
     inputBinding:
       position: 103
       prefix: -t
@@ -104,7 +99,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose mode
-    default: false
     inputBinding:
       position: 103
       prefix: -v

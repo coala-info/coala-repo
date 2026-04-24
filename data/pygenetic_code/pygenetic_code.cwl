@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: minimum ORF length for the six frame translation (default=3)
-    default: 3
     inputBinding:
       position: 101
       prefix: --minlen
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use for the six frame translation (default=8)
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: translation table to use (default == 11)
-    default: 11
     inputBinding:
       position: 101
       prefix: --translationtable

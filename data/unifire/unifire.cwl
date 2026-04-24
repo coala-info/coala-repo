@@ -10,7 +10,6 @@ inputs:
       - int
     doc: "Chunk size (number of proteins) to be batch processed\n                \
       \                            simultaneously"
-    default: 1000
     inputBinding:
       position: 101
       prefix: --chunksize
@@ -30,7 +29,6 @@ inputs:
       \                      - InterProScan (InterProScan Output XML)\n          \
       \                                  - UniParc (UniParc XML)\n               \
       \                             - XML (Input Fact XML)"
-    default: InterProScan
     inputBinding:
       position: 101
       prefix: --input-source
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Max size of the memory allocation pool in MB (JVM -Xmx)
-    default: 4096 MB
     inputBinding:
       position: 101
       prefix: -m
@@ -50,7 +47,6 @@ inputs:
     doc: "Output file format. Supported formats are:\n                           \
       \                 - TSV (Tab-Separated Values)\n                           \
       \                 - XML (URML Fact XML)"
-    default: TSV
     inputBinding:
       position: 101
       prefix: --output-format

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Default is set in BioProv config (half of the CPUs).
-    default: 10
     inputBinding:
       position: 101
       prefix: --cpus
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - File
     doc: "Path to write log file to. If not set, will be defined\nautomatically."
-    default: None
     inputBinding:
       position: 101
       prefix: --log
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Separator for the tab-delimited file.
-    default: ''
     inputBinding:
       position: 101
       prefix: --sep
@@ -46,7 +43,6 @@ inputs:
       - string
     doc: "A comma-delimited string of which steps will be run in\nthe workflow. Possible
       steps: ['prodigal']"
-    default: "['prodigal']"
     inputBinding:
       position: 101
       prefix: --steps
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: A tag for the Project
-    default: None
     inputBinding:
       position: 101
       prefix: --tag
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to update the Project in the BioProvDB.
-    default: false
     inputBinding:
       position: 101
       prefix: --update_db
@@ -73,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: "Whether to upload the Project to ProvStore at the end\nof the execution."
-    default: false
     inputBinding:
       position: 101
       prefix: --upload_to_provstore
@@ -82,7 +75,6 @@ inputs:
       - 'null'
       - boolean
     doc: More verbose output
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose
@@ -91,7 +83,6 @@ inputs:
       - 'null'
       - boolean
     doc: "Whether to write graphical output at the end of the\nexecution."
-    default: false
     inputBinding:
       position: 101
       prefix: --write_pdf
@@ -100,7 +91,6 @@ inputs:
       - 'null'
       - boolean
     doc: "Whether to write PROVN output at the end of the\nexecution."
-    default: false
     inputBinding:
       position: 101
       prefix: --write_provn

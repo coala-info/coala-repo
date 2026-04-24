@@ -15,7 +15,6 @@ inputs:
       - string
     doc: Format of the results in the output file (RESULT_WITH_ALIGNMENT or 
       RESULT_NO_ALIGNMENT).
-    default: RESULT_NO_ALIGNMENT
     inputBinding:
       position: 101
       prefix: -f=
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: SMERFS Column Score algorithm (MID_SCORE or MAX_SCORE).
-    default: MID_SCORE
     inputBinding:
       position: 101
       prefix: -smerfsCS=
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: SMERFS Gap Threshold - a gap percentage cutoff (float > 0 and <= 1).
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -smerfsGT=
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: SMERFS Window Width parameter - must be an odd integer.
-    default: 7
     inputBinding:
       position: 101
       prefix: -smerfsWW=

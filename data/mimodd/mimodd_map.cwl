@@ -24,7 +24,6 @@ inputs:
         items: int
     doc: 'list of bin sizes to be used for histogram plots and linkage reports (default:
       1Mb and 500Kb)'
-    default: 1Mb and 500Kb
     inputBinding:
       position: 103
       prefix: --bin-sizes
@@ -62,7 +61,6 @@ inputs:
         items: string
     doc: 'list of colors to be used for plotting histogram bars of different width
       (default: darkgrey and red)'
-    default: darkgrey and red
     inputBinding:
       position: 103
       prefix: --hist-colors
@@ -92,7 +90,6 @@ inputs:
       - float
     doc: 'span parameter for the Loess regression line through the linkage data (default:
       0.1, specify 0 to skip calculation)'
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --loess-span
@@ -203,7 +200,6 @@ inputs:
       - 'null'
       - float
     doc: 'upper limit for histogram plot y-axis (default: auto)'
-    default: auto
     inputBinding:
       position: 103
       prefix: --ylim-hist
@@ -212,7 +208,6 @@ inputs:
       - 'null'
       - float
     doc: 'upper limit for scatter plot y-axis (default: 1)'
-    default: 1
     inputBinding:
       position: 103
       prefix: --ylim-scatter

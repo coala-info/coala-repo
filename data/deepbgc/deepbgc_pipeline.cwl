@@ -20,7 +20,6 @@ inputs:
       - float
     doc: 'DeepBGC classification score threshold for assigning classes to BGCs (default:
       0.5)'
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --classifier-score
@@ -77,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: 'Merge detected BGCs within given number of nucleotides (default: 0)'
-    default: 0
     inputBinding:
       position: 102
       prefix: --merge-max-nucl-gap
@@ -86,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: 'Merge detected BGCs within given number of proteins (default: 0)'
-    default: 0
     inputBinding:
       position: 102
       prefix: --merge-max-protein-gap
@@ -96,7 +93,6 @@ inputs:
       - int
     doc: 'Minimum number of known biosynthetic (as defined by antiSMASH) protein domains
       in a BGC (default: 0)'
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-bio-domains
@@ -105,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum number of protein domains in a BGC (default: 1)'
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-domains
@@ -114,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum BGC nucleotide length (default: 1)'
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-nucl
@@ -123,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum number of proteins in a BGC (default: 1)'
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-proteins
@@ -175,7 +168,6 @@ inputs:
       - float
     doc: 'Average protein-wise DeepBGC score threshold for extracting BGC regions
       from Pfam sequences (default: 0.5)'
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --score

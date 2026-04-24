@@ -26,28 +26,24 @@ inputs:
     type: string
     doc: Path to Rfam.clanin file
     label: clanin file
-    default: /unlock/references/databases/infernal/Rfam.clanin
     inputBinding:
       prefix: -clanin
   cm:
     type: string
     doc: Path to Rfam.cm file that is already indexed with cmpress
     label: cm file
-    default: /unlock/references/databases/infernal/Rfam.cm
     inputBinding:
       prefix: -cm
   cmscan:
     type: string
     doc: Path to cmscan binary
     label: cmscan path
-    default: /unlock/infrastructure/binaries/infernal/infernal-1.1.4-linux-intel-gcc/binaries/cmscan
     inputBinding:
       prefix: -cmscan
   threads:
     type: int?
     doc: number of threads to use for computational processes
     label: number of threads
-    default: 1
     inputBinding:
       prefix: -cpu
 

@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: Extended output. This will include transcript level TPM values.
-    default: false
     inputBinding:
       position: 101
       prefix: -e
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Gene key to use from GTF file
-    default: gene_id
     inputBinding:
       position: 101
       prefix: -k
@@ -53,7 +51,6 @@ inputs:
       - int
     doc: Smaller size allowed for an intron created for genes. We recommend to 
       use the reads length
-    default: 16
     inputBinding:
       position: 101
       prefix: -c
@@ -63,7 +60,6 @@ inputs:
       - int
     doc: Minimum MAPQ value to filter out reads. This value depends on the 
       aligner MAPQ value.
-    default: 0
     inputBinding:
       position: 101
       prefix: -q
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum overlap between a reads and a feature.
-    default: 8
     inputBinding:
       position: 101
       prefix: -o
@@ -81,7 +76,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print out all features with read counts equal to zero.
-    default: false
     inputBinding:
       position: 101
       prefix: -a
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use only properly paired reads. Recommended for paired-end reads.
-    default: false
     inputBinding:
       position: 101
       prefix: -p
@@ -107,7 +100,6 @@ inputs:
       - 'null'
       - string
     doc: Transcript key to use from GTF file
-    default: transcript_id
     inputBinding:
       position: 101
       prefix: -t

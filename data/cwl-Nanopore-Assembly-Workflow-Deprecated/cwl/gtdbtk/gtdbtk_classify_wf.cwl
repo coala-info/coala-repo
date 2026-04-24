@@ -35,7 +35,6 @@ inputs:
   threads:
     type: int?
     label: Number of threads to use
-    default: 8
     inputBinding:
       position: 0
       prefix: --cpus
@@ -54,7 +53,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --extension
-    default: "fa"
 
 arguments:
   - "--force"

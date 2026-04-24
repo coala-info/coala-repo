@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size for De Bruijn graph
-    default: 51
     inputBinding:
       position: 101
       prefix: --kmer
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: refuse to run if mean contigs per assembly exceeds this value
-    default: 25
     inputBinding:
       position: 101
       prefix: --max_contigs
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads

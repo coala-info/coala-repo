@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Number of markers in SAV compression block (0-65535)
-    default: 4096
     inputBinding:
       position: 103
       prefix: --block-size
@@ -35,7 +34,6 @@ inputs:
       - string
     doc: Determines the inclusion policy of indels during region queries (any, 
       all, beg or end)
-    default: beg
     inputBinding:
       position: 103
       prefix: --bounding-point
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Number (#) of compression level (1-19)
-    default: 6
     inputBinding:
       position: 103
       prefix: -#
@@ -130,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: Comma separated list of FORMAT fields to make sparse
-    default: GT,HDS,DS,EC
     inputBinding:
       position: 103
       prefix: --sparse-fields
@@ -140,7 +136,6 @@ inputs:
       - float
     doc: Non-zero frequency threshold for which sparse fields are encoded as 
       sparse vectors
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --sparse-threshold
@@ -150,7 +145,6 @@ inputs:
       - string
     doc: Specifies whether AC, MAC, AN, AF and MAF info fields should be updated
       (always, never or auto)
-    default: auto
     inputBinding:
       position: 103
       prefix: --update-info

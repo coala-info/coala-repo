@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: The figsize keyword argument need two parameters to define.
-    default: (6.5, 6)
     inputBinding:
       position: 101
       prefix: --fs
@@ -20,7 +19,6 @@ inputs:
       - string
     doc: File extensions supported by Matplotlib active backend, choose from 
       {'pdf', 'png', 'jpeg','ps', 'eps','svg'}.
-    default: "'pdf'"
     inputBinding:
       position: 101
       prefix: --format
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Numbers of top graphs produced.
-    default: 20
     inputBinding:
       position: 101
       prefix: --graph
@@ -46,7 +43,6 @@ inputs:
       - boolean
     doc: Speed up computing by suppressing the plot output.This is useful only 
       if data are interested.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-plot
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - Directory
     doc: The GSEApy output directory.
-    default: the current working directory
     inputBinding:
       position: 101
       prefix: --outdir
@@ -73,7 +68,6 @@ inputs:
       - float
     doc: Weighted_score of rank_metrics. Please Use the same value in GSEA. 
       Choose from (0, 1, 1.5, 2)
-    default: 1
     inputBinding:
       position: 101
       prefix: --weight

@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: number of polishing iterations
-    default: 1
     inputBinding:
       position: 103
       prefix: --iterations
@@ -60,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: minimum overlap between reads
-    default: 5000
     inputBinding:
       position: 103
       prefix: --min-overlap
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: sequencing platform (pacbio, nano, pacbio_hi_err)
-    default: pacbio
     inputBinding:
       position: 103
       prefix: --platform
@@ -86,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: number of parallel threads
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

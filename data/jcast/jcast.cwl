@@ -26,7 +26,6 @@ inputs:
       - boolean
     doc: write out canonical protein sequence even if transcriptslices are 
       untranslatable
-    default: false
     inputBinding:
       position: 104
       prefix: --canonical
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: models junction read count cutoff using a Gaussian mixture model
-    default: false
     inputBinding:
       position: 104
       prefix: --model
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: name of the output files
-    default: psq_out
     inputBinding:
       position: 104
       prefix: --out
@@ -63,7 +60,6 @@ inputs:
       - type: array
         items: float
     doc: take junctions with rMATS fdr within this threshold
-    default:
       - 0
       - 1
     inputBinding:
@@ -74,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: the lowest skipped junction read count for a junction to be translated
-    default: 1
     inputBinding:
       position: 104
       prefix: --read

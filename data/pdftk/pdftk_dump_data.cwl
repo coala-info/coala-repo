@@ -14,7 +14,6 @@ inputs:
   - id: operation
     type: string
     doc: The operation to perform (dump_data).
-    default: dump_data
     inputBinding:
       position: 2
   - id: allow

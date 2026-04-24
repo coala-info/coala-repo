@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to workflow directory containing .snakemake/.
-    default: .
     inputBinding:
       position: 1
   - id: merge
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: If output file exists, merge with existing data instead of replacing.
-    default: false
     inputBinding:
       position: 102
       prefix: --merge

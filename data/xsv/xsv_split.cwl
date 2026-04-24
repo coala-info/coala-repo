@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: The field delimiter for reading CSV data. Must be a single character.
-    default: ','
     inputBinding:
       position: 103
       prefix: --delimiter
@@ -33,7 +32,6 @@ inputs:
       the given CSV data has an index already created. Note that a file handle 
       is opened for each job. When set to '0', the number of jobs is set to the 
       number of CPUs detected.
-    default: 0
     inputBinding:
       position: 103
       prefix: --jobs
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: The number of records to write into each chunk.
-    default: 500
     inputBinding:
       position: 103
       prefix: --size

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cells per sample
-    default: 100
     inputBinding:
       position: 101
       prefix: --cells
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Data format of scRNA-seq data, can be 'txt' or 'h5ad'
-    default: txt
     inputBinding:
       position: 101
       prefix: --data-format
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Number of samples to simulate
-    default: 1000
     inputBinding:
       position: 101
       prefix: --n_samples
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix to append to training .h5ad file
-    default: data
     inputBinding:
       position: 101
       prefix: --prefix
@@ -64,7 +60,6 @@ inputs:
         items: string
     doc: Specifiy cell types to merge into the unknown category. Specify this 
       flag for every cell type you want to merge in unknown.
-    default: unknown
     inputBinding:
       position: 101
       prefix: --unknown

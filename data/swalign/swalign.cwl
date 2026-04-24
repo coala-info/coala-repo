@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: Decay the gap extension penalty
-    default: 0.0
     inputBinding:
       position: 103
       prefix: -gapdecay
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Gap extension penalty
-    default: 1
     inputBinding:
       position: 103
       prefix: -gapext
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Gap penalty
-    default: 1
     inputBinding:
       position: 103
       prefix: -gap
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Match score
-    default: 2
     inputBinding:
       position: 103
       prefix: -m
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Mismatch penalty
-    default: 1
     inputBinding:
       position: 103
       prefix: -mm

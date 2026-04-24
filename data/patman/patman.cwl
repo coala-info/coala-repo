@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Set maximum edit distance to N
-    default: 2
     inputBinding:
       position: 102
       prefix: --edits
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Set maximum number of gaps to N
-    default: 0
     inputBinding:
       position: 102
       prefix: --gaps
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Prefetch N nodes
-    default: 3
     inputBinding:
       position: 102
       prefix: --prefetch

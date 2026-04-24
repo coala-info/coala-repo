@@ -65,12 +65,10 @@ inputs:
     type: int?
     doc: number of threads to use for computational processes
     label: number of threads
-    default: 2
   memory:
     type: int?
     doc: maximum memory usage in megabytes
     label: memory usage (MB)
-    default: 4000
   pacbio_reads:
     type: File[]?
     doc: file with PacBio reads locally
@@ -83,7 +81,6 @@ inputs:
     type: boolean?
     label: Run binning workflow
     doc: Run with contig binning workflow
-    default: true
 
   destination:
     type: string?
@@ -106,7 +103,6 @@ steps:
       threads: threads
       identifier: identifier
       step: 
-        default: 1
     out: [QC_reverse_reads, QC_forward_reads, reports_folder]
 #############################################
 #### assembly using SPADES
@@ -123,7 +119,6 @@ steps:
         linkMerge: merge_nested
       pacbio_reads: pacbio_reads
       metagenomics:
-        default: true
       memory: memory
       threads: threads
     out: [contigs, scaffolds, assembly_graph, contigs_assembly_paths, scaffolds_assembly_paths, contigs_before_rr, params, log, internal_config, internal_dataset]
@@ -201,7 +196,6 @@ steps:
       threads: threads
       memory: memory
       step: 
-        default: 1
     out: [metabat2_output,checkm_output,gtdbtk_output]
 
 #############################################

@@ -12,7 +12,6 @@ inputs:
       \             Should either contain {}, which are then replaced with locus names,\n\
       \                            or direct to files located in INPUT/loci/<locus>/PATH.\n\
       \                            Alignments can be constructed using locityper align."
-    default: haplotypes.paf.gz
     inputBinding:
       position: 101
       prefix: --alignments
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: PAF field with divergence values [dv].
-    default: dv
     inputBinding:
       position: 101
       prefix: --field
@@ -53,7 +51,6 @@ inputs:
       - float
     doc: "Select cluster representative with the smallest\n                      \
       \      generalized mean of this power [2]."
-    default: 2
     inputBinding:
       position: 101
       prefix: --power
@@ -79,7 +76,6 @@ inputs:
       - 'null'
       - float
     doc: Divergence threshold for pruning [0.0002].
-    default: 0.0002
     inputBinding:
       position: 101
       prefix: --threshold

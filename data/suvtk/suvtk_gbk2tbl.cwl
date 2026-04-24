@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum contig length
-    default: 0
     inputBinding:
       position: 101
       prefix: --mincontigsize
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: The prefix of output filenames
-    default: seq
     inputBinding:
       position: 101
       prefix: --prefix

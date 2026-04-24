@@ -18,7 +18,6 @@ inputs:
     doc: Directory to save/load precomputed embeddings (prot_embedding.h5, 
       dna_embedding.h5). If embeddings already exist, they will be reused to 
       speed up prediction.
-    default: ./embeddings
     inputBinding:
       position: 101
       prefix: --embedding_dir
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: 'Taxonomic prediction level: "all", "family", "genus", or "species".'
-    default: all
     inputBinding:
       position: 101
       prefix: --level
@@ -61,7 +59,6 @@ inputs:
       - string
     doc: 'Phage source type: "gut" for intestinal phages or "environment" for environmental
       phages.'
-    default: gut
     inputBinding:
       position: 101
       prefix: --phage_type
@@ -78,7 +75,6 @@ inputs:
     doc: Path to a local ProtT5 model directory for offline embedding 
       generation. Use this option if the system cannot download the model from 
       the internet.
-    default: None
     inputBinding:
       position: 101
       prefix: --prott5_dir

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: alpha scaling factor
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --alphascale
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Preferred potential region length
-    default: 50000
     inputBinding:
       position: 101
       prefix: --bmanalysiswindowmax
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of fragments a nucleosome should have
-    default: 1
     inputBinding:
       position: 101
       prefix: --fixedalpha
@@ -92,7 +89,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of the genome that is mappable for these experiments
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --mappability
@@ -101,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: max. model update rounds
-    default: 3
     inputBinding:
       position: 101
       prefix: --r
@@ -168,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Report best N results per query
-    default: 0
     inputBinding:
       position: 101
       prefix: --bestn
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use compiled viterbi implementations
-    default: true
     inputBinding:
       position: 101
       prefix: --compiled
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cores/CPUs/threads for alignment computation
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: DNA substitution matrix
-    default: nucleic
     inputBinding:
       position: 101
       prefix: --dnasubmat
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum memory to use for DP tracebacks (Mb)
-    default: 32
     inputBinding:
       position: 101
       prefix: --dpmemory
@@ -86,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Gapped extension threshold
-    default: 50
     inputBinding:
       position: 101
       prefix: --extensionthreshold
@@ -95,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: Fasta file suffix filter (in subdirectories)
-    default: .fa
     inputBinding:
       position: 101
       prefix: --fastasuffix
@@ -104,7 +97,6 @@ inputs:
       - 'null'
       - string
     doc: Force FSM scan on query or target sequences
-    default: none
     inputBinding:
       position: 101
       prefix: --forcescan
@@ -113,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Frameshift creation penalty
-    default: -28
     inputBinding:
       position: 101
       prefix: --frameshift
@@ -122,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Memory limit for FSM scanning
-    default: 256
     inputBinding:
       position: 101
       prefix: --fsmmemory
@@ -131,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Affine gap extend penalty
-    default: -4
     inputBinding:
       position: 101
       prefix: --gapextend
@@ -140,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: Affine gap open penalty
-    default: -12
     inputBinding:
       position: 101
       prefix: --gapopen
@@ -149,7 +137,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use gapped extension (default is SDP)
-    default: true
     inputBinding:
       position: 101
       prefix: --gappedextension
@@ -158,7 +145,6 @@ inputs:
       - 'null'
       - string
     doc: Use built-in or custom genetic code
-    default: '1'
     inputBinding:
       position: 101
       prefix: --geneticcode
@@ -167,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: Intron Opening penalty
-    default: -30
     inputBinding:
       position: 101
       prefix: --intronpenalty
@@ -176,7 +161,6 @@ inputs:
       - 'null'
       - string
     doc: Specify alignment model type
-    default: ungapped
     inputBinding:
       position: 101
       prefix: --model
@@ -185,7 +169,6 @@ inputs:
       - 'null'
       - float
     doc: Percent self-score threshold
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --percent
@@ -194,7 +177,6 @@ inputs:
       - 'null'
       - string
     doc: Protein substitution matrix
-    default: blosum62
     inputBinding:
       position: 101
       prefix: --proteinsubmat
@@ -209,7 +191,6 @@ inputs:
       - 'null'
       - int
     doc: Specify query job number
-    default: 0
     inputBinding:
       position: 101
       prefix: --querychunkid
@@ -218,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: Specify total number of query jobs
-    default: 0
     inputBinding:
       position: 101
       prefix: --querychunktotal
@@ -227,7 +207,6 @@ inputs:
       - 'null'
       - string
     doc: Specify query alphabet type
-    default: unknown
     inputBinding:
       position: 101
       prefix: --querytype
@@ -236,7 +215,6 @@ inputs:
       - 'null'
       - string
     doc: Alignment refinement strategy [none|full|region]
-    default: none
     inputBinding:
       position: 101
       prefix: --refine
@@ -245,7 +223,6 @@ inputs:
       - 'null'
       - int
     doc: Refinement region boundary
-    default: 32
     inputBinding:
       position: 101
       prefix: --refineboundary
@@ -254,7 +231,6 @@ inputs:
       - 'null'
       - boolean
     doc: Also search reverse complement of query and target
-    default: true
     inputBinding:
       position: 101
       prefix: --revcomp
@@ -271,7 +247,6 @@ inputs:
       - 'null'
       - int
     doc: Word saturation threshold
-    default: 0
     inputBinding:
       position: 101
       prefix: --saturatethreshold
@@ -280,7 +255,6 @@ inputs:
       - 'null'
       - int
     doc: Score threshold for gapped alignment
-    default: 100
     inputBinding:
       position: 101
       prefix: --score
@@ -289,7 +263,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include (human readable) alignment in results
-    default: true
     inputBinding:
       position: 101
       prefix: --showalignment
@@ -298,7 +271,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include 'cigar' format output in results
-    default: false
     inputBinding:
       position: 101
       prefix: --showcigar
@@ -307,7 +279,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include GFF output on query in results
-    default: false
     inputBinding:
       position: 101
       prefix: --showquerygff
@@ -316,7 +287,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include 'sugar' format output in results
-    default: false
     inputBinding:
       position: 101
       prefix: --showsugar
@@ -325,7 +295,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include GFF output on target in results
-    default: false
     inputBinding:
       position: 101
       prefix: --showtargetgff
@@ -334,7 +303,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include 'vulgar' format output in results
-    default: true
     inputBinding:
       position: 101
       prefix: --showvulgar
@@ -343,7 +311,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate suboptimal alignment in a single pass
-    default: true
     inputBinding:
       position: 101
       prefix: --singlepass
@@ -352,7 +319,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow softmasking on the query sequence
-    default: false
     inputBinding:
       position: 101
       prefix: --softmaskquery
@@ -361,7 +327,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow softmasking on the target sequence
-    default: false
     inputBinding:
       position: 101
       prefix: --softmasktarget
@@ -370,7 +335,6 @@ inputs:
       - 'null'
       - boolean
     doc: Search for suboptimal alignments
-    default: true
     inputBinding:
       position: 101
       prefix: --subopt
@@ -385,7 +349,6 @@ inputs:
       - 'null'
       - int
     doc: Specify target job number
-    default: 0
     inputBinding:
       position: 101
       prefix: --targetchunkid
@@ -394,7 +357,6 @@ inputs:
       - 'null'
       - int
     doc: Specify total number of target jobs
-    default: 0
     inputBinding:
       position: 101
       prefix: --targetchunktotal
@@ -403,7 +365,6 @@ inputs:
       - 'null'
       - string
     doc: Specify target alphabet type
-    default: unknown
     inputBinding:
       position: 101
       prefix: --targettype
@@ -412,7 +373,6 @@ inputs:
       - 'null'
       - int
     doc: Show search progress
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbose

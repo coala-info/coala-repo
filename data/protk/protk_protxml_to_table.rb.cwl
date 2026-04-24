@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print output by groups rather than for each protein
-    default: false
     inputBinding:
       position: 102
       prefix: --groups
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output 1-p instead of p for all probability values
-    default: false
     inputBinding:
       position: 102
       prefix: --invert-probabilities

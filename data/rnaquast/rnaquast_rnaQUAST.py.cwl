@@ -113,7 +113,6 @@ inputs:
       - 'null'
       - float
     doc: 'Lower threshold for x-assembled/covered/matched metrics, default: 0.5'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --lower_threshold
@@ -130,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimal alignment length, default: 50'
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_alignment
@@ -222,7 +220,6 @@ inputs:
       - 'null'
       - float
     doc: 'Upper threshold for x-assembled/covered/matched metrics, default: 0.95'
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --upper_threshold

@@ -41,7 +41,6 @@ inputs:
       - string
     doc: 'Homopolymer run calc. to use: choose from "nochange" or "mean" (default).
       Not implemented for CRF.'
-    default: mean
     inputBinding:
       position: 102
       prefix: --homopolymer
@@ -64,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of reads to call (0 is unlimited)
-    default: 0
     inputBinding:
       position: 102
       prefix: --limit

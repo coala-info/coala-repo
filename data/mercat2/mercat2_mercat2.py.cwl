@@ -50,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: Flag to use incremental PCA when low memory is available.
-    default: auto
     inputBinding:
       position: 101
       prefix: -lowmem
@@ -59,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: minimum kmer count
-    default: 10
     inputBinding:
       position: 101
       prefix: -c
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: no of cores
-    default: auto detect
     inputBinding:
       position: 101
       prefix: -n
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output folder
-    default: "'mercat_results' in current directory"
     inputBinding:
       position: 101
       prefix: -o
@@ -86,7 +82,6 @@ inputs:
       - 'null'
       - boolean
     doc: Replace existing output directory
-    default: false
     inputBinding:
       position: 101
       prefix: -replace
@@ -119,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: Split into x MB files.
-    default: 100
     inputBinding:
       position: 101
       prefix: -s

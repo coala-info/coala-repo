@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: Use balancing weight with this name.
-    default: weight
     inputBinding:
       position: 104
       prefix: --clr-weight-name
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Name of matplotlib colormap
-    default: coolwarm
     inputBinding:
       position: 104
       prefix: --cmap
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: Type of the contacts to aggregate
-    default: cis
     inputBinding:
       position: 104
       prefix: --contact-type
@@ -83,7 +80,6 @@ inputs:
       - int
     doc: Maximal distance between bins to consider, bp. Ignored, if negative. 
       Ignored with --contact-type trans.
-    default: -1
     inputBinding:
       position: 104
       prefix: --max-dist
@@ -93,7 +89,6 @@ inputs:
       - int
     doc: Minimal distance between bins to consider, bp. If negative, removesthe 
       first two diagonals of the data. Ignored with --contact-type trans.
-    default: -1
     inputBinding:
       position: 104
       prefix: --min-dist
@@ -102,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bins for digitizing track values.
-    default: 50
     inputBinding:
       position: 104
       prefix: --n-bins
@@ -132,7 +126,6 @@ inputs:
       percentile and the upper bin would end at the 98th percentile of the 
       genome-wide signal. Use to prevent the extreme track values from exploding
       the bin range.
-    default:
       - None
       - None
     inputBinding:
@@ -154,7 +147,6 @@ inputs:
       - 'null'
       - string
     doc: Value scale for the heatmap
-    default: log
     inputBinding:
       position: 104
       prefix: --scale

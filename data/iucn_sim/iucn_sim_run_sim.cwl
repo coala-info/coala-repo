@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: Burn-in for MCMC for extinction rate estimation (default=1000).
-    default: 1000
     inputBinding:
       position: 101
       prefix: --burnin
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: 'Estimation of extinction rates from simulation results: 0=off, 1=on (default=1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: --extinction_rates
@@ -47,7 +45,6 @@ inputs:
       - int
     doc: Model new status for all DD and NE species as LC (best case scenario). 
       0=off, 1=on (default=0).
-    default: 0
     inputBinding:
       position: 101
       prefix: --model_unknown_as_lc
@@ -57,7 +54,6 @@ inputs:
       - int
     doc: Number of generations for MCMC for extinction rate estimation 
       (default=100000).
-    default: 100000
     inputBinding:
       position: 101
       prefix: --n_gen
@@ -70,7 +66,6 @@ inputs:
       simulation replicates exceeds the number of available transition rate 
       estimates (produced by the 'transition_rates' function), these rates will 
       be randomely resampled for the remaining simulations.
-    default: '10000'
     inputBinding:
       position: 101
       prefix: --n_sim
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: 'Plots the simulated diversity trajectory: 0=off, 1=on (default=1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: --plot_diversity_trajectory
@@ -103,7 +97,6 @@ inputs:
       - int
     doc: 'Plots histograms of simulated extinction times for each species: 0=off,
       1=on (default=0).'
-    default: 0
     inputBinding:
       position: 101
       prefix: --plot_histograms
@@ -113,7 +106,6 @@ inputs:
       - int
     doc: 'Plots histograms of posterior rate estimates for each species: 0=off, 1=on
       (default=0).'
-    default: 0
     inputBinding:
       position: 101
       prefix: --plot_posterior
@@ -122,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: 'Plots pie charts of status distribution: 0=off, 1=on (default=1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: --plot_status_piechart
@@ -131,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: 'Plots the simulated IUCN status trajectory: 0=off, 1=on (default=0).'
-    default: 0
     inputBinding:
       position: 101
       prefix: --plot_status_trajectories
@@ -149,7 +139,6 @@ inputs:
       - int
     doc: Model IUCN status changes in future simulations. 0=off, 1=on 
       (default=1).
-    default: 1
     inputBinding:
       position: 101
       prefix: --status_change
@@ -172,7 +161,6 @@ inputs:
       interpreted as the maximum possible time frame, so set it large enough to 
       cover a realistic time-frame for these extinctions to occur. Set to 0 to 
       disable this function (default=0).
-    default: 0
     inputBinding:
       position: 101
       prefix: --until_n_taxa_extinct

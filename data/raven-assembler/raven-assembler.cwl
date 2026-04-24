@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for ignoring most frequent kmers
-    default: 0.001
     inputBinding:
       position: 102
       prefix: --frequency
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: length of kmers used for error correction
-    default: 15
     inputBinding:
       position: 102
       prefix: --kmer-len
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: number of times polishing is performed
-    default: 2
     inputBinding:
       position: 102
       prefix: --polishing-rounds
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: length of window used for error correction
-    default: 5
     inputBinding:
       position: 102
       prefix: --window-len

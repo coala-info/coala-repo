@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: align sequences left/center/right for site positional distribution plots
-    default: center
     inputBinding:
       position: 101
       prefix: --align
@@ -70,7 +69,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of sequences in hold-out set
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --hofract
@@ -88,7 +86,6 @@ inputs:
       - 'null'
       - float
     doc: pseudocount for creating PWMs from motifs
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --motif-pseudo
@@ -146,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: random seed for shuffling sequences
-    default: 0
     inputBinding:
       position: 101
       prefix: --seed
@@ -188,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: level of diagnostic output
-    default: 2
     inputBinding:
       position: 101
       prefix: --verbosity

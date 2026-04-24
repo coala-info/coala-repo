@@ -16,7 +16,6 @@ inputs:
       - string
     doc: "Format of the output trees. Supported formats: newick, nexus, phyloxml,
       tnt. Defaults to 'newick'."
-    default: newick
     inputBinding:
       position: 102
       prefix: --format
@@ -26,7 +25,6 @@ inputs:
       - Directory
     doc: Directory where the new tree files will be saved. Defaults to the 
       current directory.
-    default: .
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for the output tree files. Defaults to 'tree'.
-    default: tree
     inputBinding:
       position: 102
       prefix: --prefix

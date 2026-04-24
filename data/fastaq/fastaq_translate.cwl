@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Frame to translate
-    default: 0
     inputBinding:
       position: 102
       prefix: --frame

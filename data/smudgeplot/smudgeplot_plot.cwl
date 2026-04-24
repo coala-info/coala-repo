@@ -27,7 +27,6 @@ inputs:
     doc: Palette used for the plot (default "viridis", other sensible options 
       are "magma", "mako" or "grey.colors" - recommended in combination with 
       --invert_cols).
-    default: viridis
     inputBinding:
       position: 104
       prefix: -col_ramp
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Output format for the plots (default png)
-    default: png
     inputBinding:
       position: 104
       prefix: --format
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: Invert the colour palette (default False).
-    default: false
     inputBinding:
       position: 104
       prefix: --invert_cols
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate a JSON format report alongside the plots (default False)
-    default: false
     inputBinding:
       position: 104
       prefix: --json_report

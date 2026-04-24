@@ -49,7 +49,6 @@ inputs:
         prefix: --effectiveGenomeSize
   bin_size:
     type: int
-    default: 10
     inputBinding:
       prefix: --binSize
       position: 10
@@ -60,7 +59,6 @@ inputs:
       Specify as space-delimited string. 
       Default: "chrX chrY chrM"
     type: string?
-    default: "chrX chrY chrM"
     inputBinding:
       prefix: --ignoreForNormalization
       position: 10

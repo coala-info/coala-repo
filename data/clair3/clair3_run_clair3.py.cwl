@@ -60,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum variant quality to be reported.
-    default: 2
     inputBinding:
       position: 101
       prefix: --qual
@@ -81,7 +80,6 @@ inputs:
   - id: threads
     type: int
     doc: Max threads to be used.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

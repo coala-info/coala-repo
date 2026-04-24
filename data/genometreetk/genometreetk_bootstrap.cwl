@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: indicates if bases are nucleotides or amino acids
-    default: prot
     inputBinding:
       position: 104
       prefix: --base_type
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: number of cpus
-    default: 1
     inputBinding:
       position: 104
       prefix: --cpus
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of alignment to subsample
-    default: 1.0
     inputBinding:
       position: 104
       prefix: --fraction
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: model of evolution to use
-    default: wag
     inputBinding:
       position: 104
       prefix: --model
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: number of bootstrap replicates to perform
-    default: 100
     inputBinding:
       position: 104
       prefix: --num_replicates

@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: The database name.
-    default: MetaSBT
     inputBinding:
       position: 101
       prefix: --database
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Process the input genomes in parallel.
-    default: 20
     inputBinding:
       position: 101
       prefix: --nproc
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for pruning the Sequence Bloom Tree.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --pruning-threshold
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - float
     doc: Uncertainty percentage for considering multiple best hits.
-    default: 20.0
     inputBinding:
       position: 101
       prefix: --uncertainty

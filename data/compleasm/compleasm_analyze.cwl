@@ -53,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: The identity threshold for valid mapping results.
-    default: '[0, 1]'
     inputBinding:
       position: 101
       prefix: --min_identity
@@ -79,7 +78,6 @@ inputs:
       - 'null'
       - string
     doc: OrthoDB version
-    default: odb12
     inputBinding:
       position: 101
       prefix: --odb

@@ -184,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum N (sample size). Default is (90th percentile N) / 2.
-    default: (90th percentile N) / 2
     inputBinding:
       position: 101
       prefix: --n-min

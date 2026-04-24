@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Width of alignment output.
-    default: 120
     inputBinding:
       position: 103
       prefix: --width
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Enumerate alignments better threshold t
-    default: -1000000
     inputBinding:
       position: 103
       prefix: --better
@@ -47,7 +45,6 @@ inputs:
     doc: Base pair weight for mea consensus computation. For MEA, base pairs are
       scored by their pair probability times 2 gamma; unpaired bases, by their 
       unpaired probability.
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --consensus-gamma
@@ -57,7 +54,6 @@ inputs:
       - string
     doc: 'Type of consensus structures written to screen and stockholm output [alifold|mea|none]
       (default: none).'
-    default: none
     inputBinding:
       position: 103
       prefix: --consensus-structure
@@ -67,7 +63,6 @@ inputs:
       - int
     doc: Score contribution per exclusion in structure local alignment. Set to 
       zero for unrestricted structure locality.
-    default: 0
     inputBinding:
       position: 103
       prefix: --exclusion
@@ -86,7 +81,6 @@ inputs:
       - boolean
     doc: Use extended precision for the computation of sequence envelopes. This 
       enables handling significantly larger instances. [default]
-    default: true
     inputBinding:
       position: 103
       prefix: --extended-pf
@@ -100,7 +94,6 @@ inputs:
       end of second sequence, right end of second sequence. For example, "+---" 
       allows free end gaps at the left end of the first alignment string; "----"
       forbids free end gaps [default].
-    default: '----'
     inputBinding:
       position: 103
       prefix: --free-endgaps
@@ -119,7 +112,6 @@ inputs:
     doc: Indel opening score. Score contribution of opening an insertion or 
       deletion, i.e. score for a consecutive run of deletions or insertions. 
       Indel opening score and indel score define the affine scoring of gaps.
-    default: -750
     inputBinding:
       position: 103
       prefix: --indel-opening
@@ -130,7 +122,6 @@ inputs:
     doc: Indel score. Score contribution of each single base insertion or 
       deletion. Indel opening score and indel score define the affine scoring of
       gaps.
-    default: -150
     inputBinding:
       position: 103
       prefix: --indel
@@ -139,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: Enumerate k-best alignments
-    default: -1
     inputBinding:
       position: 103
       prefix: --kbest
@@ -166,7 +156,6 @@ inputs:
     doc: 'Select method for computing sequence-based base match probablities (to be
       used for mea-type alignment scores). Methods: 1=probcons-style from HMM, 2=probalign-style
       from PFs, 3=from PFs, local'
-    default: 0
     inputBinding:
       position: 103
       prefix: --match-prob-method
@@ -175,7 +164,6 @@ inputs:
       - 'null'
       - int
     doc: Set score contribution of a base match (unless ribosum scoring).
-    default: 50
     inputBinding:
       position: 103
       prefix: --match
@@ -184,7 +172,6 @@ inputs:
       - 'null'
       - int
     doc: Limit maximum base pair span [default=off].
-    default: -1
     inputBinding:
       position: 103
       prefix: --maxBPspan
@@ -194,7 +181,6 @@ inputs:
       - float
     doc: 'Maximal ratio of #base pairs divided by sequence length. This serves as
       a second filter on the "significant" base pairs. [default: 0.0 = no effect].'
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --max-bps-length-ratio
@@ -204,7 +190,6 @@ inputs:
       - int
     doc: Maximal difference for positions of alignment traces (and aligned 
       bases). [-1=off]
-    default: -1
     inputBinding:
       position: 103
       prefix: --max-diff
@@ -222,7 +207,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal difference for sizes of matched arcs. [-1=off]
-    default: -1
     inputBinding:
       position: 103
       prefix: --max-diff-am
@@ -232,7 +216,6 @@ inputs:
       - int
     doc: Maximal difference for positions of alignment traces at arc match ends.
       [-1=off]
-    default: -1
     inputBinding:
       position: 103
       prefix: --max-diff-at-am
@@ -267,7 +250,6 @@ inputs:
       - 'null'
       - int
     doc: Weight alpha for MEA
-    default: 0
     inputBinding:
       position: 103
       prefix: --mea-alpha
@@ -276,7 +258,6 @@ inputs:
       - 'null'
       - int
     doc: Weight beta for MEA
-    default: 200
     inputBinding:
       position: 103
       prefix: --mea-beta
@@ -285,7 +266,6 @@ inputs:
       - 'null'
       - int
     doc: Weight gamma for MEA
-    default: 100
     inputBinding:
       position: 103
       prefix: --mea-gamma
@@ -303,7 +283,6 @@ inputs:
       - float
     doc: Minimal probability. Only base pairs of at least this probability are 
       taken into account.
-    default: 0.001
     inputBinding:
       position: 103
       prefix: --min-prob
@@ -313,7 +292,6 @@ inputs:
       - float
     doc: Minimal sequence alignment probability of potential traces 
       (probability-based sequence alignment envelope) [default=1e-4].
-    default: 0.0001
     inputBinding:
       position: 103
       prefix: --min-trace-probability
@@ -322,7 +300,6 @@ inputs:
       - 'null'
       - int
     doc: Set score contribution of a base mismatch (unless ribosum scoring).
-    default: 0
     inputBinding:
       position: 103
       prefix: --mismatch
@@ -352,7 +329,6 @@ inputs:
       aligned subsequences. Thus, the larger L, the larger the local alignment; 
       the size of value L is in the order of local alignment lengths. Verbose 
       yields info on the iterative optimizations.
-    default: 0
     inputBinding:
       position: 103
       prefix: --normalized
@@ -361,7 +337,6 @@ inputs:
       - 'null'
       - int
     doc: Penalized local alignment with penalty PP
-    default: 0
     inputBinding:
       position: 103
       prefix: --penalized
@@ -371,7 +346,6 @@ inputs:
       - int
     doc: Structure weight in PF computations (for the computation of 
       sequence-based match probabilties from partition functions).
-    default: 200
     inputBinding:
       position: 103
       prefix: --pf-struct-weight
@@ -388,7 +362,6 @@ inputs:
       - 'null'
       - int
     doc: Scale for probabilities/resolution of mea score
-    default: 10000
     inputBinding:
       position: 103
       prefix: --probability-scale
@@ -456,7 +429,6 @@ inputs:
       - File
     doc: 'File specifying the Ribosum base and base-pair similarities. [default: use
       RIBOSUM85_60 without requiring a Ribosum file.]'
-    default: RIBOSUM85_60
     inputBinding:
       position: 103
       prefix: --ribosum-file
@@ -474,7 +446,6 @@ inputs:
       - boolean
     doc: Turn on/off sequence locality. Find best alignment of arbitrary 
       subsequences of the input sequences.
-    default: false
     inputBinding:
       position: 103
       prefix: --sequ-local
@@ -500,7 +471,6 @@ inputs:
       - boolean
     doc: Turn on/off structure locality. Allow exclusions in alignments of 
       connected substructures.
-    default: false
     inputBinding:
       position: 103
       prefix: --struct-local
@@ -510,7 +480,6 @@ inputs:
       - int
     doc: Maximal weight of 1/2 arc match. Balances structure vs. sequence score 
       contributions.
-    default: 200
     inputBinding:
       position: 103
       prefix: --struct-weight
@@ -524,7 +493,6 @@ inputs:
       sequence similarity at ends of base matches (if a scoring matrix like 
       ribosum is used, this adds the contributions for base pair match from the 
       matrix). [default tau=0!]
-    default: 50
     inputBinding:
       position: 103
       prefix: --tau
@@ -535,7 +503,6 @@ inputs:
     doc: Temperature for the /sequence alignment/ partition functions used by 
       the probcons-like sequence-based match/trace probability computation (this
       temperature is different from the 'physical' temperature of RNA folding!).
-    default: 300
     inputBinding:
       position: 103
       prefix: --temperature-alipf
@@ -544,7 +511,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for unpaired bases
-    default: 0
     inputBinding:
       position: 103
       prefix: --unpaired-penalty
@@ -554,7 +520,6 @@ inputs:
       - boolean
     doc: Use ribosum scores for scoring base matches and base pair matches; note
       that tau=0 suppresses any effect on the latter.
-    default: true
     inputBinding:
       position: 103
       prefix: --use-ribosum

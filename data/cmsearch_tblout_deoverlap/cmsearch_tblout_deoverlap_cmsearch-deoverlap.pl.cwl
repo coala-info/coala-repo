@@ -116,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: define an overlap as >= <n> or more overlapping residues
-    default: 1
     inputBinding:
       position: 102
       prefix: --noverlap

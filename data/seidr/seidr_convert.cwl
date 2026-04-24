@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Fill value for missing data (Number, NaN, Inf, -Inf)
-    default: NaN
     inputBinding:
       position: 101
       prefix: --fill
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Input separator
-    default: \t
     inputBinding:
       position: 101
       prefix: --in-separator
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - File
     doc: Input file name ['-' for stdin]
-    default: '-'
     inputBinding:
       position: 101
       prefix: --infile
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: Output separator
-    default: \t
     inputBinding:
       position: 101
       prefix: --out-separator
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Number of decimals to print
-    default: 8
     inputBinding:
       position: 101
       prefix: --precision

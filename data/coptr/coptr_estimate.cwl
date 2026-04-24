@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: Fraction of nonzero bins required to compute a PTR
-    default: 0.75
     inputBinding:
       position: 103
       prefix: --min-cov
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads required to compute a PTR
-    default: 5000
     inputBinding:
       position: 103
       prefix: --min-reads
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: CoPTRContig only. Minimum number of samples required to reorder bins
-    default: 5
     inputBinding:
       position: 103
       prefix: --min-samples

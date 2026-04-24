@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - File
     doc: Path to BED6 file containing genomic coordinates
-    default: ''
     inputBinding:
       position: 102
       prefix: --bed
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Reference genome ID (e.g hg38, mm39)
-    default: ''
     inputBinding:
       position: 102
       prefix: --genome
@@ -72,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

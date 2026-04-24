@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: mid occurrence
-    default: 5
     inputBinding:
       position: 104
       prefix: -d
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: min occurrence
-    default: 2
     inputBinding:
       position: 104
       prefix: -c
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: min streak
-    default: 2
     inputBinding:
       position: 104
       prefix: -n
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 8
     inputBinding:
       position: 104
       prefix: -t

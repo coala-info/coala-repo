@@ -55,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: Scale conservation distances by this amount. Defaults to 0.5
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --conservation-distance-scale
@@ -105,7 +104,6 @@ inputs:
       - float
     doc: Expected level of sequence identity among pairs of sequences, ranging 
       between 0 and 1
-    default: 0.7
     inputBinding:
       position: 103
       prefix: --hmm-identity
@@ -114,7 +112,6 @@ inputs:
       - 'null'
       - float
     doc: Probability of transitioning from the unrelated to the homologous state
-    default: 1e-05
     inputBinding:
       position: 103
       prefix: --hmm-p-go-homologous
@@ -123,7 +120,6 @@ inputs:
       - 'null'
       - float
     doc: Probability of transitioning from the homologous to the unrelated state
-    default: 1e-09
     inputBinding:
       position: 103
       prefix: --hmm-p-go-unrelated
@@ -151,7 +147,6 @@ inputs:
       - int
     doc: Alignment gaps above this size in nucleotides are considered to be 
       islands
-    default: 20
     inputBinding:
       position: 103
       prefix: --island-gap-size
@@ -168,7 +163,6 @@ inputs:
       - 'null'
       - float
     doc: Set the maximum weight scaling by breakpoint distance. Defaults to 0.5
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --max-breakpoint-distance-scale
@@ -248,7 +242,6 @@ inputs:
       - string
     doc: Sets whether the repeat scores go negative or go to zero for highly 
       repetitive sequences. Default is negative.
-    default: negative
     inputBinding:
       position: 103
       prefix: --repeat-penalty
@@ -258,7 +251,6 @@ inputs:
       - string
     doc: Selects the anchoring score function. Default is extant sum-of-pairs 
       (sp).
-    default: sp
     inputBinding:
       position: 103
       prefix: --scoring-scheme

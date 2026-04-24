@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: number of cpus
-    default: 1
     inputBinding:
       position: 106
       prefix: --cpus
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: model of evolution to use
-    default: wag
     inputBinding:
       position: 106
       prefix: --model
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: number of jackknife replicates to perform
-    default: 100
     inputBinding:
       position: 106
       prefix: --num_replicates
@@ -70,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: percentage of markers to keep
-    default: 0.5
     inputBinding:
       position: 106
       prefix: --perc_markers

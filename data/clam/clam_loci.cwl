@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Chunk size for processing (base pairs)
-    default: 1000000
     inputBinding:
       position: 102
       prefix: --chunk-size
@@ -72,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum depth to consider a site callable for each individual
-    default: inf
     inputBinding:
       position: 102
       prefix: --max-depth
@@ -81,7 +79,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum mean depth across all samples allowed at a site
-    default: inf
     inputBinding:
       position: 102
       prefix: --max-mean-depth
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth to consider a site callable for each individual
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-depth
@@ -107,7 +103,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum mean depth across all samples required at a site
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-mean-depth
@@ -116,7 +111,6 @@ inputs:
       - 'null'
       - float
     doc: Proportion of samples that must pass thresholds at a site
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-proportion
@@ -155,7 +149,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for parallel processing
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

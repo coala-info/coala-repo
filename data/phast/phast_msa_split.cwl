@@ -21,7 +21,6 @@ inputs:
       - string
     doc: The format of the input MSA. Supported formats are 'fasta', 'phylip', 
       'nexus', and 'maf'. Defaults to 'fasta'.
-    default: fasta
     inputBinding:
       position: 103
       prefix: --format

@@ -15,7 +15,6 @@ inputs:
   - id: alignment
     type: File
     doc: FASTA format MSA of the same genomes (one sequence per genome)
-    default: None
     inputBinding:
       position: 102
   - id: create_db
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: How should the internal tools be run?
-    default: local
     inputBinding:
       position: 102
   - id: label
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: How are the sequences in the MSA labelled vs the FASTA genomes?
-    default: stem
     inputBinding:
       position: 102
   - id: log_file

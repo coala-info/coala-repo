@@ -61,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Expected haploid coverage. 0 if does not apply
-    default: 0
     inputBinding:
       position: 101
       prefix: --haploid-coverage
@@ -92,7 +91,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the executable medaka
-    default: medaka
     inputBinding:
       position: 101
       prefix: --path_to_medaka
@@ -101,7 +99,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the executable minigraph
-    default: minigraph
     inputBinding:
       position: 101
       prefix: --path_to_minigraph
@@ -110,7 +107,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the executable minimap2
-    default: minimap2
     inputBinding:
       position: 101
       prefix: --path_to_minimap2
@@ -119,7 +115,6 @@ inputs:
       - 'null'
       - File
     doc: Path to python
-    default: python
     inputBinding:
       position: 101
       prefix: --path_to_python
@@ -128,7 +123,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the executable racon
-    default: racon
     inputBinding:
       position: 101
       prefix: --path_to_racon
@@ -137,7 +131,6 @@ inputs:
       - 'null'
       - File
     doc: Path to raven
-    default: raven
     inputBinding:
       position: 101
       prefix: --path_to_raven
@@ -146,7 +139,6 @@ inputs:
       - 'null'
       - File
     doc: Path to samtools
-    default: samtools
     inputBinding:
       position: 101
       prefix: --path_to_samtools
@@ -164,7 +156,6 @@ inputs:
       - 'null'
       - string
     doc: '{racon,medaka} medaka is more accurate but much slower'
-    default: racon
     inputBinding:
       position: 101
       prefix: --polisher
@@ -174,7 +165,6 @@ inputs:
       - float
     doc: Limit on the relative abundance of the rarest strain to detect (0 might
       be slow for some datasets)
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --rarest-strain-abundance
@@ -191,7 +181,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -200,7 +189,6 @@ inputs:
       - 'null'
       - string
     doc: '{ont, pacbio, hifi,amplicon}'
-    default: ont
     inputBinding:
       position: 101
       prefix: --use-case

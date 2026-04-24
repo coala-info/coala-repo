@@ -10,7 +10,6 @@ inputs:
       type: array
       items: string
     doc: fields in fasta header
-    default: None
     inputBinding:
       position: 101
       prefix: --fields
@@ -20,7 +19,6 @@ inputs:
       - string
     doc: attempt to parse non-standard dates and output them in standard 
       YYYY-MM-DD format
-    default: None
     inputBinding:
       position: 101
       prefix: --fix-dates
@@ -42,7 +40,6 @@ inputs:
         items: string
     doc: apply string prettifying operations (underscores to spaces, 
       capitalization, etc) to specified metadata fields
-    default: None
     inputBinding:
       position: 101
       prefix: --prettify-fields
@@ -51,14 +48,12 @@ inputs:
       - 'null'
       - string
     doc: separator of fasta header
-    default: '|'
     inputBinding:
       position: 101
       prefix: --separator
   - id: sequences
     type: File
     doc: sequences in fasta or VCF format
-    default: None
     inputBinding:
       position: 101
       prefix: --sequences

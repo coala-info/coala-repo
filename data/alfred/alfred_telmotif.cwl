@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: min. sequence quality
-    default: 20
     inputBinding:
       position: 102
       prefix: --quality
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: window size
-    default: 1000
     inputBinding:
       position: 102
       prefix: --wsize

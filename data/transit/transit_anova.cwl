@@ -29,7 +29,6 @@ inputs:
       - float
     doc: Value added to MSE in F-test for moderated anova (makes genes with low 
       counts less significant)
-    default: 1000
     inputBinding:
       position: 104
       prefix: -alpha
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Comma-separated list of conditions to exclude
-    default: none
     inputBinding:
       position: 104
       prefix: --exclude-conditions
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore TAs within given percentage of C terminus
-    default: 0
     inputBinding:
       position: 104
       prefix: -iC
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore TAs within given percentage of N terminus
-    default: 0
     inputBinding:
       position: 104
       prefix: -iN
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: Comma-separated list of conditions to use for analysis
-    default: all
     inputBinding:
       position: 104
       prefix: --include-conditions
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: Normalization method
-    default: TTR
     inputBinding:
       position: 104
       prefix: -n
@@ -83,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Pseudocounts to use for calculating LFCs
-    default: 5
     inputBinding:
       position: 104
       prefix: -PC

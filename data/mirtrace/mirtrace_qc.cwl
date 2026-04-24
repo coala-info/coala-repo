@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: <DNA sequence>
-    default: none
     inputBinding:
       position: 103
       prefix: --adapter
@@ -88,7 +87,6 @@ inputs:
     doc: Amount of Java memory reserved for "housekeeping" tasks (in MB). 
       Increase only if OutOfMemoryErrors are occurring. Decrease only if 
       available system memory is very low.
-    default: 400 MB
     inputBinding:
       position: 103
       prefix: --global-mem-reserve
@@ -124,7 +122,6 @@ inputs:
       [DEFAULT] qiaseq (miRNA--3'-adapter--UMI--3'-adapter--index) NOTE: Only the
       first (leftmost) 3' adapter should be specified. cats (NNN--miRNA--poly-A--3'-adapter--index)
       NOTE: It's not possible to specify an adapter for -p cats. nextflex (NNNN--miRNA--NNNN--3'-adapter--index)"
-    default: illumina
     inputBinding:
       position: 103
       prefix: --protocol
@@ -158,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: Level of detail for debug messages.
-    default: 1
     inputBinding:
       position: 103
       prefix: --verbosity-level

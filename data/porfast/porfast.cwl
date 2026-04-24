@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum PE overlap
-    default: 200
     inputBinding:
       position: 101
       prefix: --max-overlap
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum sequence identity in overlap
-    default: 0.85
     inputBinding:
       position: 101
       prefix: --min-identity
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum PE overlap
-    default: 12
     inputBinding:
       position: 101
       prefix: --min-overlap
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum ORF size (aa)
-    default: 26
     inputBinding:
       position: 101
       prefix: --min-size
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the batch of reads to process per thread
-    default: 250
     inputBinding:
       position: 101
       prefix: --pool-size

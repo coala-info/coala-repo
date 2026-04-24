@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: gzip output fasta?
-    default: false
     inputBinding:
       position: 104
       prefix: --gzip
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep temporary output?
-    default: false
     inputBinding:
       position: 104
       prefix: --keep-temp
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: gtdb_to_diamond
     inputBinding:
       position: 104
       prefix: --outdir
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temporary directory
-    default: gtdb_to_diamond_TMP
     inputBinding:
       position: 104
       prefix: --tmpdir

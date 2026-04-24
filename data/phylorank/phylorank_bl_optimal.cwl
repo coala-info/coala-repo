@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: maximum mean branch length value to evaluate
-    default: 1.2
     inputBinding:
       position: 103
       prefix: --max_dist
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: minimum mean branch length value to evaluate
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --min_dist
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: step size of mean branch length values
-    default: 0.025
     inputBinding:
       position: 103
       prefix: --step_size

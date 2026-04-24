@@ -42,7 +42,6 @@ inputs:
       - int
     doc: The maximum number of bootstrap replicates RAxML-NG should perform 
       using the autoMRE algorithm.
-    default: 0
     inputBinding:
       position: 103
       prefix: --bootstraps
@@ -78,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: The stage(s) for TreeSAPP to execute
-    default: continue
     inputBinding:
       position: 103
       prefix: --stage
@@ -130,7 +128,6 @@ inputs:
       - string
     doc: The broad classification of marker gene type, either functional or 
       taxonomic.
-    default: functional
     inputBinding:
       position: 103
       prefix: --kind
@@ -139,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: Limits the number of examples used for training models.
-    default: 1000
     inputBinding:
       position: 103
       prefix: --max_examples
@@ -148,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: minimal sequence length after alignment trimming
-    default: 0
     inputBinding:
       position: 103
       prefix: --min_seq_length
@@ -157,7 +152,6 @@ inputs:
       - 'null'
       - string
     doc: The minimum taxonomic resolution for reference sequences
-    default: r
     inputBinding:
       position: 103
       prefix: --min_taxonomic_rank
@@ -177,7 +171,6 @@ inputs:
       - int
     doc: The number of CPU threads or parallel processes to use in various 
       pipeline steps
-    default: 2
     inputBinding:
       position: 103
       prefix: --num_procs
@@ -187,7 +180,6 @@ inputs:
       - boolean
     doc: Flag to activate outlier detection and removal from multiple sequence 
       alignments using OD-seq.
-    default: false
     inputBinding:
       position: 103
       prefix: --outdet_align
@@ -196,7 +188,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to an output directory
-    default: ./output/
     inputBinding:
       position: 103
       prefix: --output
@@ -256,7 +247,6 @@ inputs:
       - string
     doc: Specifies the kernel type to be used in the SVM algorithm. It must be 
       either 'lin' 'poly' or 'rbf'.
-    default: lin
     inputBinding:
       position: 103
       prefix: --svm_kernel
@@ -283,7 +273,6 @@ inputs:
       - 'null'
       - boolean
     doc: Flag to turn on position masking of the multiple sequence alignment
-    default: false
     inputBinding:
       position: 103
       prefix: --trim_align

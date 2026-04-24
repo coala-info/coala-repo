@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: database
-    default: ''
     inputBinding:
       position: 102
       prefix: --db
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: return format
-    default: ''
     inputBinding:
       position: 102
       prefix: --format
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: limit results
-    default: 100
     inputBinding:
       position: 102
       prefix: --limit
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: get CDS/CDNA (Ensembl only)
-    default: ''
     inputBinding:
       position: 102
       prefix: --type

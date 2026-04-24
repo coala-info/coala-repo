@@ -26,7 +26,6 @@ inputs:
       - float
     doc: The fraction of samples that must have a value for a site to be 
       included.
-    default: 0.3
     inputBinding:
       position: 102
       prefix: --fraction_samples
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: The number of IQRs to use for the outlier threshold.
-    default: 1.5
     inputBinding:
       position: 102
       prefix: --iqrs

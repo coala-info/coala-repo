@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: minimum contig length to consider
-    default: 500
     inputBinding:
       position: 102
       prefix: --min_length

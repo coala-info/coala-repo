@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: Set output
-    default: stdout
     inputBinding:
       position: 103
       prefix: -o
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: set number of threads.
-    default: 1
     inputBinding:
       position: 103
       prefix: -p

@@ -56,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: SQL WHERE clause to subset variants.
-    default: is_exonic = 1 AND impact_severity != 'LOW'
     inputBinding:
       position: 102
       prefix: --where

@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads (CPUs).
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

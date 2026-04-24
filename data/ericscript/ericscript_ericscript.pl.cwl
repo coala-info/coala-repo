@@ -55,7 +55,6 @@ inputs:
       - 'null'
       - Directory
     doc: where statistics file will be stored
-    default: HOME/ericscript_calcstats
     inputBinding:
       position: 103
       prefix: --outputfolder
@@ -90,7 +89,6 @@ inputs:
       - 'null'
       - Directory
     doc: where database is stored.
-    default: ERICSCRIPT_FOLDER/lib/
     inputBinding:
       position: 103
       prefix: --dbfolder
@@ -117,7 +115,6 @@ inputs:
       - int
     doc: minimum value of mapping quality to consider discordant reads. For MAPQ
       0 use a negative value
-    default: 20
     inputBinding:
       position: 103
       prefix: --MAPQ
@@ -126,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: minimum reads to consider discordant alignments
-    default: 3
     inputBinding:
       position: 103
       prefix: --minreads
@@ -135,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads for the bwa aln process
-    default: 4
     inputBinding:
       position: 103
       prefix: --nthreads
@@ -161,7 +156,6 @@ inputs:
       - string
     doc: Genome reference identification. Run ericscript.pl --printdb to see 
       available refid.
-    default: homo_sapiens
     inputBinding:
       position: 103
       prefix: --refid
@@ -195,7 +189,6 @@ inputs:
       - 'null'
       - string
     doc: what's the name of your sample?
-    default: MyEric
     inputBinding:
       position: 103
       prefix: --samplename
@@ -220,7 +213,6 @@ inputs:
       - 'null'
       - int
     doc: parameter of wgsym. Outer distance between the two ends
-    default: 200
     inputBinding:
       position: 103
       prefix: --insize
@@ -229,7 +221,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum coverage to simulate
-    default: 50
     inputBinding:
       position: 103
       prefix: --max_cov
@@ -238,7 +229,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage to simulate
-    default: 1
     inputBinding:
       position: 103
       prefix: --min_cov
@@ -247,7 +237,6 @@ inputs:
       - 'null'
       - int
     doc: The number of reads to extract from background data
-    default: 200000
     inputBinding:
       position: 103
       prefix: --nreads_background
@@ -256,7 +245,6 @@ inputs:
       - 'null'
       - int
     doc: The number of synthetic gene fusions per dataset?
-    default: 50
     inputBinding:
       position: 103
       prefix: --ngenefusion
@@ -265,7 +253,6 @@ inputs:
       - 'null'
       - int
     doc: The number of synthetic datasets to simulate
-    default: 10
     inputBinding:
       position: 103
       prefix: --nsims
@@ -274,7 +261,6 @@ inputs:
       - 'null'
       - int
     doc: length of synthetic reads
-    default: 75
     inputBinding:
       position: 103
       prefix: --readlength
@@ -283,7 +269,6 @@ inputs:
       - 'null'
       - int
     doc: parameter of wgsym. Standard deviation
-    default: 50
     inputBinding:
       position: 103
       prefix: --sd_insize
@@ -292,7 +277,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use --be to generate Broken Exons (BE) data
-    default: false
     inputBinding:
       position: 103
       prefix: --be
@@ -301,7 +285,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use --ie to generate Intact Exons (IE) data
-    default: true
     inputBinding:
       position: 103
       prefix: --ie

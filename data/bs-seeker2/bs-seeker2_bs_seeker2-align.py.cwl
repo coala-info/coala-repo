@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Number of mismatches allowed in adapter
-    default: 0
     inputBinding:
       position: 101
       prefix: --am
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: 'Aligner program for short reads mapping: bowtie, bowtie2, soap, rmap'
-    default: bowtie
     inputBinding:
       position: 101
       prefix: --aligner
@@ -64,7 +62,6 @@ inputs:
       - string
     doc: 'Cutting sites of restriction enzyme. Ex: MspI(C-CGG), Mael:(C-TAG), double-enzyme
       MspI&Mael:(C-CGG,C-TAG).'
-    default: C-CGG
     inputBinding:
       position: 101
       prefix: --cut-site
@@ -74,7 +71,6 @@ inputs:
       - Directory
     doc: Path to the reference genome library (generated in preprocessing 
       genome)
-    default: /usr/local/bin/bs_utils/reference_genomes
     inputBinding:
       position: 101
       prefix: --db
@@ -83,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: The last cycle of the read to be mapped
-    default: 200
     inputBinding:
       position: 101
       prefix: --end_base
@@ -124,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Lower bound of fragment length (excluding C-CGG ends)
-    default: 20
     inputBinding:
       position: 101
       prefix: --low
@@ -133,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum insert size for valid paired-end alignments
-    default: 500
     inputBinding:
       position: 101
       prefix: --maxins
@@ -142,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum insert size for valid paired-end alignments
-    default: 0
     inputBinding:
       position: 101
       prefix: --minins
@@ -152,7 +144,6 @@ inputs:
       - string
     doc: 'Number (>=1)/Percentage ([0, 1)) of mismatches in one read. Ex: 4 (allow
       4 mismatches) or 0.04 (allow 4% mismatches)'
-    default: '4'
     inputBinding:
       position: 101
       prefix: --mismatches
@@ -169,7 +160,6 @@ inputs:
       - 'null'
       - boolean
     doc: Suppress SAM header lines
-    default: false
     inputBinding:
       position: 101
       prefix: --no-header
@@ -178,7 +168,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output format: bam, sam, bs_seeker1'
-    default: bam
     inputBinding:
       position: 101
       prefix: --output-format
@@ -221,7 +210,6 @@ inputs:
       - int
     doc: Number of lines per split (the read file will be split into small files
       for mapping. The result will be merged.
-    default: 4000000
     inputBinding:
       position: 101
       prefix: --split_line
@@ -230,7 +218,6 @@ inputs:
       - 'null'
       - int
     doc: The first cycle of the read to be mapped
-    default: 1
     inputBinding:
       position: 101
       prefix: --start_base
@@ -239,7 +226,6 @@ inputs:
       - 'null'
       - string
     doc: '[Y]es for undirectional lib, [N]o for directional'
-    default: N
     inputBinding:
       position: 101
       prefix: --tag
@@ -248,7 +234,6 @@ inputs:
       - 'null'
       - Directory
     doc: The path to your temporary directory
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --temp_dir
@@ -265,7 +250,6 @@ inputs:
       - 'null'
       - int
     doc: Upper bound of fragment length (excluding C-CGG ends)
-    default: 500
     inputBinding:
       position: 101
       prefix: --up
@@ -276,7 +260,6 @@ inputs:
     doc: 'Filter definition for tag XS, format X,Y. X=0.8 and y=5 indicate that for
       one read, if #(mCH sites)/#(all CH sites)>0.8 and #(mCH sites)>5, then tag XS:i:1;
       or else tag XS:i:0.'
-    default: 0.5,5
     inputBinding:
       position: 101
       prefix: --XS

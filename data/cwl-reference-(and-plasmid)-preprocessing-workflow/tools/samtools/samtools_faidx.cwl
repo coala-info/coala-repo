@@ -43,7 +43,6 @@ inputs:
     type: boolean?
     label: Continue if region not found
     doc: If true, continue working if a non-existent region is requested.
-    default: false
     inputBinding:
       prefix: --continue
   region_file:
@@ -56,14 +55,12 @@ inputs:
     type: boolean?
     label: FASTQ mode
     doc: If true, treat the input as a FASTQ file and output in FASTQ format. This is the same as running samtools fqidx.
-    default: false
     inputBinding:
       prefix: --fastq
   reverse_complement:
     type: boolean?
     label: Reverse complement
     doc: If true, output the reverse complement of the sequence. When turned on, "/rc" will be appended to sequence names.
-    default: false
     inputBinding:
       prefix: --reverse-complement
   mark_strand:

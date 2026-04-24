@@ -12,7 +12,6 @@ inputs:
     doc: "Codon table ID. The standard code is \"1\".\n                        See
       here for details: https://www.ncbi.nlm.nih.gov/Tax\n                       \
       \ onomy/Utils/wprintgc.cgi"
-    default: 1
     inputBinding:
       position: 101
       prefix: --codontable
@@ -22,7 +21,6 @@ inputs:
       - string
     doc: "Input sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --inseqformat
@@ -32,7 +30,6 @@ inputs:
       - string
     doc: "Output sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --outseqformat
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - File
     doc: Input sequence file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --seqfile
@@ -50,7 +46,6 @@ inputs:
     doc: "PATH to the trimmed amino acid alignment. In\n                        addition
       to this, please specify the untrimmed CDS\n                        alignment
       by --seqfile."
-    default: ''
     inputBinding:
       position: 101
       prefix: --trimmed_aa_aln

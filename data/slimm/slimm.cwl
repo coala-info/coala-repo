@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: do not report abundances below this value In range [0.0..10.0].
-    default: 0.01
     inputBinding:
       position: 103
       prefix: --abundance-cut-off
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Set the width of a single bin in neuclotides.
-    default: 0
     inputBinding:
       position: 103
       prefix: --bin-width
@@ -39,7 +37,6 @@ inputs:
       - float
     doc: the quantile of coverages to use as a cutoff smaller value means bigger
       threshold. In range [0.0..1.0].
-    default: 0.95
     inputBinding:
       position: 103
       prefix: --cov-cut-off
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of matching reads to consider a reference present.
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-reads
@@ -74,7 +70,6 @@ inputs:
       - string
     doc: The taxonomic rank of identification One of strains, species, genus, 
       family, order, class, phylum, and superkingdom.
-    default: species
     inputBinding:
       position: 103
       prefix: --rank
@@ -100,7 +95,6 @@ inputs:
       - boolean
     doc: "Turn this option off to disable version update notifications of the\n  \
       \        application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO."
-    default: 1
     inputBinding:
       position: 103
       prefix: --version-check

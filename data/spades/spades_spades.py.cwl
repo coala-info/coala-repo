@@ -50,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: coverage cutoff value (a positive float number, or 'auto', or 'off')
-    default: "'off'"
     inputBinding:
       position: 101
       prefix: --cov-cutoff
@@ -59,7 +58,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory with custom hmms that replace default ones,
-    default: None
     inputBinding:
       position: 101
       prefix: --custom-hmms
@@ -108,7 +106,6 @@ inputs:
       - 'null'
       - string
     doc: run under grid control ('slurm', 'local', 'mpi', save_yaml')
-    default: "'local'"
     inputBinding:
       position: 101
       prefix: --grid-engine
@@ -230,7 +227,6 @@ inputs:
       - type: array
         items: int
     doc: list of k-mer sizes (must be odd and less than 128)
-    default: "'auto'"
     inputBinding:
       position: 101
       prefix: -k
@@ -239,7 +235,6 @@ inputs:
       - 'null'
       - int
     doc: RAM limit for SPAdes in Gb (terminates if exceeded).
-    default: 250
     inputBinding:
       position: 101
       prefix: --memory
@@ -420,7 +415,6 @@ inputs:
       - 'null'
       - int
     doc: PHRED quality offset in the input reads (33 or 64),
-    default: auto-detect
     inputBinding:
       position: 101
       prefix: --phred-offset
@@ -511,7 +505,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads.
-    default: 16
     inputBinding:
       position: 101
       prefix: --threads
@@ -520,7 +513,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory for temporary files.
-    default: <output_dir>/tmp
     inputBinding:
       position: 101
       prefix: --tmp-dir

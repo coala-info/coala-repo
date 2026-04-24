@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: minimal size (Kbp) of refined bin
-    default: 512
     inputBinding:
       position: 101
       prefix: -m
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: output prefix
-    default: Refined
     inputBinding:
       position: 101
       prefix: -p

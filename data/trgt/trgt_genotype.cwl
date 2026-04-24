@@ -12,7 +12,6 @@ inputs:
       - string
     doc: 'Enable or disable color output in logging [possible values: always, auto,
       never]'
-    default: auto
     inputBinding:
       position: 101
       prefix: --color
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of the flanking sequence
-    default: 250
     inputBinding:
       position: 101
       prefix: --flank-len
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Genotyping algorithm (size or cluster)
-    default: size
     inputBinding:
       position: 101
       prefix: --genotyper
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: Sample karyotype (XX or XY or file name)
-    default: XX
     inputBinding:
       position: 101
       prefix: --karyotype
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum locus depth
-    default: 250
     inputBinding:
       position: 101
       prefix: --max-depth
@@ -80,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Length of flanking sequence to report on output
-    default: 50
     inputBinding:
       position: 101
       prefix: --output-flank-len
@@ -89,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: Parameter preset (wgs or targeted)
-    default: wgs
     inputBinding:
       position: 101
       prefix: --preset
@@ -118,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

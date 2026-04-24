@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to save output files
-    default: current working directory
     inputBinding:
       position: 102
       prefix: --outdir

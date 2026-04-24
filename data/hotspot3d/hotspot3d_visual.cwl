@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: background color
-    default: white
     inputBinding:
       position: 101
       prefix: --bg-color
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: which clustering module created your clusters-file? network or density
-    default: network
     inputBinding:
       position: 101
       prefix: --clusters-file-type
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: compound color
-    default: util.cbag
     inputBinding:
       position: 101
       prefix: --compound-color
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: mutation color
-    default: red
     inputBinding:
       position: 101
       prefix: --mut-color
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: mutation style
-    default: spheres
     inputBinding:
       position: 101
       prefix: --mut-style
@@ -108,7 +103,6 @@ inputs:
       - 'null'
       - File
     doc: PyMoL program location
-    default: /usr/bin/pymol
     inputBinding:
       position: 101
       prefix: --pymol
@@ -117,7 +111,6 @@ inputs:
       - 'null'
       - boolean
     doc: If included (on), pymol is not run with new <output-file> when finished
-    default: false
     inputBinding:
       position: 101
       prefix: --script-only
@@ -126,7 +119,6 @@ inputs:
       - 'null'
       - string
     doc: site color
-    default: blue
     inputBinding:
       position: 101
       prefix: --site-color
@@ -135,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: site style
-    default: sticks
     inputBinding:
       position: 101
       prefix: --site-style

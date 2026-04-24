@@ -35,7 +35,6 @@ inputs:
       - int
     doc: when parsing interval loci, use the following delta to extend gene loci
       and include potential regulatory regions
-    default: 500
     inputBinding:
       position: 102
       prefix: --delta
@@ -53,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: comma-separated list of feature types to use in constructing loci/iLoci
-    default: gene
     inputBinding:
       position: 102
       prefix: --filter
@@ -63,7 +61,6 @@ inputs:
       - int
     doc: the minimum number of nucleotides two genes must overlap to be grouped 
       in the same iLocus
-    default: 1
     inputBinding:
       position: 102
       prefix: --minoverlap

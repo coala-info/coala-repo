@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Don't consider k-mer with count < lower-count
-    default: 0
     inputBinding:
       position: 102
       prefix: --lower-count
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Don't consider k-mer with count > upper-count
-    default: 2^64
     inputBinding:
       position: 102
       prefix: --upper-count
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose
-    default: false
     inputBinding:
       position: 102
       prefix: --verbose

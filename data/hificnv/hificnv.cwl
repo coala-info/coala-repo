@@ -18,7 +18,6 @@ inputs:
       - string
     doc: Regex used to select chromosomes for mean haploid coverage estimation. 
       All selected chromosomes are assumed diploid
-    default: ^(chr)?\d{1,2}$
     inputBinding:
       position: 101
       prefix: --cov-regex
@@ -69,7 +68,6 @@ inputs:
       - string
     doc: Prefix used for all file output. If the prefix includes a directory, 
       the directory must already exist
-    default: hificnv
     inputBinding:
       position: 101
       prefix: --output-prefix

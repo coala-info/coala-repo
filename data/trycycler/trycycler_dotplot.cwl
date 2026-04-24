@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size to use in dot plots
-    default: 32
     inputBinding:
       position: 101
       prefix: --kmer
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Size (in pixels) of each dot plot image
-    default: 2000
     inputBinding:
       position: 101
       prefix: --res

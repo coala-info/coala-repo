@@ -15,7 +15,6 @@ inputs:
       as in NAR 29:2994-3005, 2001; 2 or T or t : Composition-based score adjustment
       as in Bioinformatics 21:902-911, 2005, conditioned on sequence properties; 3:
       Composition-based score adjustment as in Bioinformatics 21:902-911, 2005, unconditionally'
-    default: '2'
     inputBinding:
       position: 101
       prefix: --comp_based_stats
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: Expectation value cutoff
-    default: '0.001'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -81,7 +79,6 @@ inputs:
       - int
     doc: Maximum number of aligned sequences to keep (value of 5 or more is 
       recommended) Default = 500
-    default: 500
     inputBinding:
       position: 101
       prefix: --max_target_seqs
@@ -91,7 +88,6 @@ inputs:
       - int
     doc: 'Number of database sequences to show alignments for. Default = 250 * Incompatible
       with: max_target_seqs'
-    default: 250
     inputBinding:
       position: 101
       prefix: --num_alignments
@@ -101,7 +97,6 @@ inputs:
       - int
     doc: 'Number of database sequences to show one-line descriptions for. Not applicable
       for outfmt > 4. Default = 500 * Incompatible with: max_target_seqs'
-    default: 500
     inputBinding:
       position: 101
       prefix: --num_descriptions
@@ -110,7 +105,6 @@ inputs:
       - 'null'
       - string
     doc: Output format
-    default: '6'
     inputBinding:
       position: 101
       prefix: --outfmt
@@ -129,7 +123,6 @@ inputs:
     doc: ID of the profile as defined in your config TOML. The profile consists 
       of Galaxy server credentials and a Galaxy Tool-ID to be used for your 
       BLAST call
-    default: default
     inputBinding:
       position: 101
       prefix: --profile
@@ -138,7 +131,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum query coverage per hsp (percentage, 0 to 100)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --qcov_hsp_perc
@@ -153,7 +145,6 @@ inputs:
       - 'null'
       - string
     doc: Filter out low complexity regions (with SEG)
-    default: yes
     inputBinding:
       position: 101
       prefix: --seg
@@ -162,7 +153,6 @@ inputs:
       - 'null'
       - string
     doc: Task type
-    default: blastp
     inputBinding:
       position: 101
       prefix: --task

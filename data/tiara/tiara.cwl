@@ -13,7 +13,6 @@ inputs:
     doc: Probability threshold needed for classification to a class. If two 
       floats are provided, the first is used in a first stage, the second in the
       second stage
-    default:
       - 0.65
       - 0.65
     inputBinding:
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length used in the first stage of classification.
-    default: 6
     inputBinding:
       position: 101
       prefix: --first_stage_kmer
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length used in the first stage of classification.
-    default: 6
     inputBinding:
       position: 101
       prefix: --k1
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length used in the second stage of classification.
-    default: 7
     inputBinding:
       position: 101
       prefix: --k2
@@ -74,7 +70,6 @@ inputs:
       - int
     doc: Minimum length of a sequence. Sequences shorter than min_len are 
       discarded.
-    default: 3000
     inputBinding:
       position: 101
       prefix: --min_len
@@ -101,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length used in the second stage of classification.
-    default: 7
     inputBinding:
       position: 101
       prefix: --second_stage_kmer

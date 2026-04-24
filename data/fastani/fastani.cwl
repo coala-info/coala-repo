@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: Fragment length
-    default: 3000
     inputBinding:
       position: 101
       prefix: --fragLen
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size <= 16
-    default: 16
     inputBinding:
       position: 101
       prefix: --kmer
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum fraction of genome that must be shared for trusting ANI
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --minFraction
@@ -70,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Thread count for parallel execution
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

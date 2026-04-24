@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: Define query coverage threshold (default = 75)
-    default: 75
     inputBinding:
       position: 101
       prefix: --min-cov
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: Define percent identity threshold (default = 90)
-    default: 90
     inputBinding:
       position: 101
       prefix: --min-perc
@@ -142,7 +140,6 @@ inputs:
       - 'null'
       - Directory
     doc: Specify a temporary directory (default = /tmp/)
-    default: /tmp/
     inputBinding:
       position: 101
       prefix: --temp-dir

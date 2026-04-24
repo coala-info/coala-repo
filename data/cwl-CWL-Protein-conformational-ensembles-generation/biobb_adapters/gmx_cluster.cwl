@@ -78,7 +78,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_pdb_path
-    default: system.xtc
 
   input_index_path:
     label: Path to the GROMACS index file
@@ -107,7 +106,6 @@ inputs:
     - edam:format_2330
     inputBinding:
       prefix: --output_cluster_log_path
-    default: system.log
 
   output_rmsd_cluster_xpm_path:
     label: Path to the output X PixMap compatible matrix file
@@ -122,7 +120,6 @@ inputs:
     - edam:format_3599
     inputBinding:
       prefix: --output_rmsd_cluster_xpm_path
-    default: system.xpm
 
   output_rmsd_dist_xvg_path:
     label: Path to xvgr/xmgr file
@@ -137,7 +134,6 @@ inputs:
     - edam:format_2330
     inputBinding:
       prefix: --output_rmsd_dist_xvg_path
-    default: system.xvg
 
   config:
     label: Advanced configuration options for biobb_analysis GMXCluster

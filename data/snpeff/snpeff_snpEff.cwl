@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - boolean
     doc: "Perform 'cancer' comparisons (Somatic vs Germline). Default: false"
-    default: false
     inputBinding:
       position: 104
       prefix: -cancer
@@ -121,7 +120,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Download reference genome if not available. Default: true'
-    default: true
     inputBinding:
       position: 104
       prefix: -download
@@ -139,7 +137,6 @@ inputs:
       - boolean
     doc: 'Do not add reference sequences to the output (only valid when -fastaProt).
       Default: false'
-    default: false
     inputBinding:
       position: 104
       prefix: -fastaProtNoRef
@@ -174,7 +171,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Use gene ID instead of gene name (VCF output). Default: false'
-    default: false
     inputBinding:
       position: 104
       prefix: -geneId
@@ -183,7 +179,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Use HGVS annotations for amino acid sub-field. Default: true'
-    default: true
     inputBinding:
       position: 104
       prefix: -hgvs
@@ -192,7 +187,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Use old HGVS notation. Default: false'
-    default: false
     inputBinding:
       position: 104
       prefix: -hgvsOld
@@ -201,7 +195,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Use one letter Amino acid codes in HGVS notation. Default: false'
-    default: false
     inputBinding:
       position: 104
       prefix: -hgvs1LetterAa
@@ -210,7 +203,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Use transcript ID in HGVS notation. Default: false'
-    default: false
     inputBinding:
       position: 104
       prefix: -hgvsTrId
@@ -219,7 +211,6 @@ inputs:
       - 'null'
       - File
     doc: Create HTML summary file. Default is 'snpEff_summary.html'
-    default: snpEff_summary.html
     inputBinding:
       position: 104
       prefix: -s
@@ -228,7 +219,6 @@ inputs:
       - 'null'
       - string
     doc: 'Input format [ vcf, bed ]. Default: VCF.'
-    default: VCF
     inputBinding:
       position: 104
       prefix: -i
@@ -237,7 +227,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Annotate using interactions (requires interaction database). Default: true'
-    default: true
     inputBinding:
       position: 104
       prefix: -interaction
@@ -263,7 +252,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Annotate using motifs (requires Motif database). Default: true'
-    default: true
     inputBinding:
       position: 104
       prefix: -motif
@@ -435,7 +423,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Add OICR tag in VCF file. Default: false'
-    default: false
     inputBinding:
       position: 104
       prefix: -oicr
@@ -444,7 +431,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Only use protein coding transcripts. Default: false'
-    default: false
     inputBinding:
       position: 104
       prefix: -onlyProtein
@@ -469,7 +455,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output format [ vcf, gatk, bed, bedAnn ]. Default: VCF.'
-    default: VCF
     inputBinding:
       position: 104
       prefix: -o
@@ -504,7 +489,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Use Sequence Ontology terms. Default: true'
-    default: true
     inputBinding:
       position: 104
       prefix: -sequenceOntology
@@ -513,7 +497,6 @@ inputs:
       - 'null'
       - int
     doc: 'Set size for splice site region within exons. Default: 3 bases'
-    default: 3
     inputBinding:
       position: 104
       prefix: -spliceRegionExonSize
@@ -523,7 +506,6 @@ inputs:
       - int
     doc: 'Set maximum number of bases for splice site region within intron. Default:
       8 bases'
-    default: 8
     inputBinding:
       position: 104
       prefix: -spliceRegionIntronMax
@@ -533,7 +515,6 @@ inputs:
       - int
     doc: 'Set minimum number of bases for splice site region within intron. Default:
       3 bases'
-    default: 3
     inputBinding:
       position: 104
       prefix: -spliceRegionIntronMin
@@ -542,7 +523,6 @@ inputs:
       - 'null'
       - int
     doc: 'Set size for splice sites (donor and acceptor) in bases. Default: 2'
-    default: 2
     inputBinding:
       position: 104
       prefix: -ss
@@ -552,7 +532,6 @@ inputs:
       - boolean
     doc: "Only use 'validated' transcripts (i.e. sequence has been checked). Default:
       false"
-    default: false
     inputBinding:
       position: 104
       prefix: -strict

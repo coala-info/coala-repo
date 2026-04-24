@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: Target acceptance rate for adaptive operators (default 0.234)
-    default: 0.234
     inputBinding:
       position: 102
       prefix: -adaptation_target
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use BEAGLE library if available (default on)
-    default: on
     inputBinding:
       position: 102
       prefix: -beagle
@@ -122,7 +120,6 @@ inputs:
       - 'null'
       - string
     doc: 'BEAGLE: use multipartition extensions if available (default auto)'
-    default: auto
     inputBinding:
       position: 102
       prefix: -beagle_multipartition
@@ -155,7 +152,6 @@ inputs:
       - 'null'
       - string
     doc: 'BEAGLE: specify scaling scheme to use'
-    default: default
     inputBinding:
       position: 102
       prefix: -beagle_scaling
@@ -348,7 +344,6 @@ inputs:
       - 'null'
       - int
     doc: The number of full evaluation tests to perform (default 1000)
-    default: 1000
     inputBinding:
       position: 102
       prefix: -tests
@@ -357,7 +352,6 @@ inputs:
       - 'null'
       - int
     doc: The number of computational threads to use (default auto)
-    default: auto
     inputBinding:
       position: 102
       prefix: -threads
@@ -366,7 +360,6 @@ inputs:
       - 'null'
       - float
     doc: Full evaluation test threshold (default 0.1)
-    default: 0.1
     inputBinding:
       position: 102
       prefix: -threshold

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: allowed deviation for full acceptance of MS/MS peak in ppm
-    default: 2
     inputBinding:
       position: 101
   - id: analyze
@@ -67,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: used chemical elements
-    default: CHBrClFINOPSSi
     inputBinding:
       position: 101
   - id: exist
@@ -113,7 +111,6 @@ inputs:
       - 'null'
       - string
     doc: type of ion measured
-    default: M+H
     inputBinding:
       position: 101
   - id: ivsm2ap2
@@ -135,7 +132,6 @@ inputs:
       - 'null'
       - float
     doc: experimental molecular mass
-    default: mass of MS basepeak
     inputBinding:
       position: 101
   - id: ms
@@ -156,7 +152,6 @@ inputs:
       - string
     doc: MS match value based on normalized dot product, normalized sum of 
       squared or absolute errors
-    default: nsae
     inputBinding:
       position: 101
   - id: noref
@@ -213,7 +208,6 @@ inputs:
       - 'null'
       - int
     doc: accuracy of measurement in parts per million
-    default: 5
     inputBinding:
       position: 101
   - id: rej
@@ -221,7 +215,6 @@ inputs:
       - 'null'
       - int
     doc: allowed deviation for total rejection of MS/MS peak in ppm
-    default: 4
     inputBinding:
       position: 101
   - id: sc

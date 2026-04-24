@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: type of image to generate
-    default: png
     inputBinding:
       position: 101
       prefix: --image-type
@@ -39,7 +38,6 @@ inputs:
       - boolean
     doc: does not skip simple single-breakpoint events, such as deletions, 
       duplications, and nonreciprocal translocations
-    default: false
     inputBinding:
       position: 101
       prefix: --include-simple-breakpoints
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - float
     doc: maximum gap size to show in one panel, in megabases.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --max-gap-size-mb
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - boolean
     doc: print verbose output for debugging purposes
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

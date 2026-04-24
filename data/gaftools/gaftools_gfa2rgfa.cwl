@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: The name of the reference genome given in the W-line.
-    default: CHM13
     inputBinding:
       position: 102
       prefix: --reference-name

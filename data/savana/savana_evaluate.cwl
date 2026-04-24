@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Comparison method: tie-break by min. distance'
-    default: true
     inputBinding:
       position: 101
       prefix: --by_distance
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Buffer for considering an overlap
-    default: 100
     inputBinding:
       position: 101
       prefix: --overlap_buffer
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Impose a quality filter on comparator variants
-    default: None
     inputBinding:
       position: 101
       prefix: --qual_filter

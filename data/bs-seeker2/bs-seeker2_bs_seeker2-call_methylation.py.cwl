@@ -10,7 +10,6 @@ inputs:
       - Directory
     doc: Path to the reference genome library (generated in preprocessing 
       genome)
-    default: /usr/local/bin/bs_utils/reference_genomes
     inputBinding:
       position: 101
       prefix: --db
@@ -28,7 +27,6 @@ inputs:
       - int
     doc: The max number of read depth can be called for each position. Parameter
       passing to pysam. Large number costs more time.
-    default: 8000
     inputBinding:
       position: 101
       prefix: --pileup-maxdepth
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: The least number of reads covering one site to be shown in wig file
-    default: 1
     inputBinding:
       position: 101
       prefix: --read-no
@@ -48,7 +45,6 @@ inputs:
     doc: Removed sites located in CCGG, avoiding the bias introduced by 
       artificial DNA methylation status 'XS:i:1', which would be considered as 
       not fully converted by bisulfite treatment
-    default: false
     inputBinding:
       position: 101
       prefix: --rm-CCGG
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - boolean
     doc: Removed one mate if two mates are overlapped, for paired-end data
-    default: false
     inputBinding:
       position: 101
       prefix: --rm-overlap
@@ -67,7 +62,6 @@ inputs:
       - boolean
     doc: Removed reads with tag 'XS:i:1', which would be considered as not fully
       converted by bisulfite treatment
-    default: false
     inputBinding:
       position: 101
       prefix: --rm-SX
@@ -77,7 +71,6 @@ inputs:
       - boolean
     doc: Specify when the input bam file is already sorted, the sorting step 
       will be skipped
-    default: false
     inputBinding:
       position: 101
       prefix: --sorted

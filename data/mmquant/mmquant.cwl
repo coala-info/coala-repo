@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: count threshold
-    default: 0
     inputBinding:
       position: 101
       prefix: -c
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: provide the first column name in the output file
-    default: Gene
     inputBinding:
       position: 101
       prefix: -G
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - float
     doc: merge threshold
-    default: 0.0
     inputBinding:
       position: 101
       prefix: -m
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: output file
-    default: stdout
     inputBinding:
       position: 101
       prefix: -o
@@ -68,7 +64,6 @@ inputs:
       - int
     doc: 'overlap type (<0: read is included, <1: % overlap, otherwise: # nt, default:
       -1)'
-    default: -1
     inputBinding:
       position: 101
       prefix: -l
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: number of overlapping bp between the best matches and the other matches
-    default: 30
     inputBinding:
       position: 101
       prefix: -d
@@ -102,7 +96,6 @@ inputs:
       - 'null'
       - float
     doc: ratio of overlapping bp between the best matches and the other matches
-    default: 2.0
     inputBinding:
       position: 101
       prefix: -D
@@ -129,7 +122,6 @@ inputs:
       - string
     doc: 'string (Y if reads are position-sorted, N otherwise, defaut: Y) (use several
       times if reads are not consistently (un)sorted)'
-    default: Y
     inputBinding:
       position: 101
       prefix: -e
@@ -147,7 +139,6 @@ inputs:
       - string
     doc: 'string (U, F, R, FR, RF, FF, defaut: U) (use several strand types if the
       library strategies differ)'
-    default: U
     inputBinding:
       position: 101
       prefix: -s
@@ -156,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: '# threads'
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

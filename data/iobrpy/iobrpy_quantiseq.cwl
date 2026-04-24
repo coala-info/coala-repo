@@ -50,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the signature set to use
-    default: TIL10
     inputBinding:
       position: 101
       prefix: --signame

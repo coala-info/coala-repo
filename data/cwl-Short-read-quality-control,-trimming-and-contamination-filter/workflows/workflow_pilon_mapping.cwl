@@ -51,17 +51,14 @@ inputs:
     type: string?
     label: Pilon fix list
     doc: A comma-separated list of categories of issues to try to fix
-    default: "all"
   threads:
     type: int?
     doc: number of threads to use for computational processes
     label: number of threads
-    default: 2
   memory:
     type: int?
     doc: Maximum memory usage in megabytes
     label: Maximum memory in MB
-    default: 40000
 
   destination:
     type: string?

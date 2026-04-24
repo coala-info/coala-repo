@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow other computers on the network to access the website
-    default: false
     inputBinding:
       position: 102
       prefix: --allow-remote-access
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Listen on the given port instead of the default port
-    default: 4000
     inputBinding:
       position: 102
       prefix: --port

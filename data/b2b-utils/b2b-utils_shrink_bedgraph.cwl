@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bins into which to divide each contig
-    default: 500
     inputBinding:
       position: 101
       prefix: --n_bins
@@ -31,7 +30,6 @@ inputs:
       - string
     doc: Summarization operation to apply to each bin. This is passed through 
       directly to the *bedtools map* call.
-    default: max
     inputBinding:
       position: 101
       prefix: --operation

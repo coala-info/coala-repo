@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include canonical system versions in the analysis output.
-    default: false
     inputBinding:
       position: 101
       prefix: --canonical
@@ -64,7 +63,6 @@ inputs:
       - int
     doc: 'Coverage mode: 0=query, 1=target, 2=shorter seq, 3=longer seq, 4=query and
       target, 5=shorter and longer seq.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --cluster_cov_mode
@@ -74,7 +72,6 @@ inputs:
       - int
     doc: 'Coverage mode: 0=query, 1=target, 2=shorter seq, 3=longer seq, 4=query and
       target, 5=shorter and longer seq.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --cluster_cov_mode
@@ -83,7 +80,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage threshold (0.0-1.0).
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --cluster_coverage
@@ -92,7 +88,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage threshold (0.0-1.0).
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --cluster_coverage
@@ -101,7 +96,6 @@ inputs:
       - 'null'
       - float
     doc: E-value threshold.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --cluster_eval
@@ -110,7 +104,6 @@ inputs:
       - 'null'
       - float
     doc: E-value threshold.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --cluster_eval
@@ -119,7 +112,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum sequence identity threshold (0.0-1.0).
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --cluster_identity
@@ -128,7 +120,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum sequence identity threshold (0.0-1.0).
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --cluster_identity
@@ -255,7 +246,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads to use for parallel processing.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -264,7 +254,6 @@ inputs:
       - 'null'
       - boolean
     doc: disables the progress bars
-    default: false
     inputBinding:
       position: 101
       prefix: --disable_prog_bar
@@ -273,7 +262,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force writing in output directory and in pangenome output file.
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -285,7 +273,6 @@ inputs:
     doc: FRR (Family Relatedness Relationship) cutoff values for similarity 
       assessment. min_gfrr = shared_families / min(families1, families2), 
       max_gfrr = shared_families / max(families1, families2)
-    default:
       - 0.5
       - 0.8
     inputBinding:
@@ -309,7 +296,6 @@ inputs:
     doc: GFRR cutoff thresholds for model gene families comparison. min_gfrr = 
       shared_families / min(families1, families2), max_gfrr = shared_families / 
       max(families1, families2).
-    default:
       - 0.4
       - 0.6
     inputBinding:
@@ -331,7 +317,6 @@ inputs:
       - boolean
     doc: Generate heatmaps showing normalized system presence distribution 
       across pangenomes
-    default: false
     inputBinding:
       position: 101
       prefix: --heatmap
@@ -341,7 +326,6 @@ inputs:
       - boolean
     doc: Keep temporary files after completion (useful for debugging and 
       inspection)
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_tmp
@@ -359,7 +343,6 @@ inputs:
       - string
     doc: "MMSeqs2 clustering method selection: 'linclust' - fast linear-time clustering
       (less sensitive), 'cluster' - slower but more sensitive clustering."
-    default: linclust
     inputBinding:
       position: 101
       prefix: --method
@@ -369,7 +352,6 @@ inputs:
       - string
     doc: "MMSeqs2 clustering method selection: 'linclust' - fast linear-time clustering
       (less sensitive), 'cluster' - slower but more sensitive clustering."
-    default: linclust
     inputBinding:
       position: 101
       prefix: --method
@@ -393,7 +375,6 @@ inputs:
       - 'null'
       - int
     doc: Random seed for reproducibility.
-    default: 42
     inputBinding:
       position: 101
       prefix: --seed
@@ -411,7 +392,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for temporary files.
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmpdir
@@ -421,7 +401,6 @@ inputs:
       - int
     doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
       for debug)
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbose

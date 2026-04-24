@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: image height
-    default: 600
     inputBinding:
       position: 103
       prefix: -H
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of lines to display (set '0' to force all)
-    default: 100000
     inputBinding:
       position: 103
       prefix: -n
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - float
     doc: minimum alignment identity
-    default: 0.7
     inputBinding:
       position: 103
       prefix: -i
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: minimum alignment length
-    default: 100
     inputBinding:
       position: 103
       prefix: -l
@@ -98,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: use -T threads
-    default: 4
     inputBinding:
       position: 103
       prefix: -T

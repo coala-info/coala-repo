@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: adaptive mode
-    default: false
     inputBinding:
       position: 103
       prefix: -a
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: 'batch size (min: 1; max: 1000000000)'
-    default: 50
     inputBinding:
       position: 103
       prefix: -b
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: concatenated genomes in a single file
-    default: false
     inputBinding:
       position: 103
       prefix: -c
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not store cmd-line
-    default: true
     inputBinding:
       position: 103
       prefix: -d
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: 'fraction of fall-back minimizers (min: 0.000000; max: 0.050000)'
-    default: 0.0
     inputBinding:
       position: 103
       prefix: -f
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: 'k-mer length (min: 17; max: 32)'
-    default: 31
     inputBinding:
       position: 103
       prefix: -k
@@ -88,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: 'min. match length (min: 15; max: 32)'
-    default: 20
     inputBinding:
       position: 103
       prefix: -l
@@ -97,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: 'expected segment size (min: 100; max: 1000000)'
-    default: 60000
     inputBinding:
       position: 103
       prefix: -s
@@ -106,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: 'no of threads (min: 1; max: 56)'
-    default: 28
     inputBinding:
       position: 103
       prefix: -t
@@ -115,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: 'verbosity level (min: 0; max: 2)'
-    default: 0
     inputBinding:
       position: 103
       prefix: -v

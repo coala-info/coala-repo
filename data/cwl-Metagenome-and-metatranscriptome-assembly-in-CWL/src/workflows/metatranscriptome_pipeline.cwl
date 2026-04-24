@@ -21,7 +21,6 @@ inputs:
   polya_length:
     type: int
     label: minium polyA tail length for trimming
-    default: 15
   host_genome:
     type: File?
     secondaryFiles:
@@ -32,19 +31,15 @@ inputs:
         - .sa
     format: edam:format_1929
     label: host genome fasta file
-    default: 'hg38.fa'
   memory:
     type: int
     label: memory for assembly in GB
-    default: 150
   min_contig_length:
     type: int
     label: minimum contig length
-    default: 200
   assembler:
     type: string
     label: assembler metaspades - spades used a defualt for single or megahit
-    default: 'metaspades'
 
 outputs:
   cleaned_reads1:
@@ -105,7 +100,6 @@ steps:
       reads1: reads1
       reads2: reads2
       minLength:
-        default: 50
       host_genome: host_genome
       polya_trim: polya_length
     out: [ reads_qc_html, reads_qc_json, qc_reads1, qc_reads2, qc_summary ]

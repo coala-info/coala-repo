@@ -61,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: Set verbosity level of console output
-    default: warn
     inputBinding:
       position: 102
       prefix: --verbosity

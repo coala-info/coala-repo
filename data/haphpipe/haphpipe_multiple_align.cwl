@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not separate files by region, align entire file
-    default: false
     inputBinding:
       position: 101
       prefix: --alignall
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Assume amino
-    default: false
     inputBinding:
       position: 101
       prefix: --amino
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: Automatically select algorithm
-    default: false
     inputBinding:
       position: 101
       prefix: --auto
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - boolean
     doc: Clustal output format
-    default: false
     inputBinding:
       position: 101
       prefix: --clustalout
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print commands but do not run
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -96,7 +91,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output fasta files separated by region but do not align
-    default: false
     inputBinding:
       position: 101
       prefix: --fastaonly
@@ -105,7 +99,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use FASTA for pairwise alignment
-    default: false
     inputBinding:
       position: 101
       prefix: --fastapair
@@ -130,7 +123,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use local algorithm with generalized affine gap cost
-    default: false
     inputBinding:
       position: 101
       prefix: --genafpair
@@ -139,7 +131,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use Needleman-Wunsch algorithm
-    default: false
     inputBinding:
       position: 101
       prefix: --globalpair
@@ -156,7 +147,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output order same as input
-    default: false
     inputBinding:
       position: 101
       prefix: --inputorder
@@ -197,7 +187,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use Smith-Waterman algorithm
-    default: false
     inputBinding:
       position: 101
       prefix: --localpair
@@ -238,7 +227,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --ncpu
@@ -247,7 +235,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not check alignment score in iterative alignment
-    default: false
     inputBinding:
       position: 101
       prefix: --noscore
@@ -256,7 +243,6 @@ inputs:
       - 'null'
       - boolean
     doc: Assume nucleotide
-    default: false
     inputBinding:
       position: 101
       prefix: --nuc
@@ -289,7 +275,6 @@ inputs:
       - 'null'
       - boolean
     doc: PHYLIP output format
-    default: false
     inputBinding:
       position: 101
       prefix: --phylipout
@@ -298,7 +283,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not write output to console (silence stdout and stderr)
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -307,7 +291,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not report progress
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet_mafft
@@ -324,7 +307,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output order aligned
-    default: false
     inputBinding:
       position: 101
       prefix: --reorder
@@ -349,7 +331,6 @@ inputs:
       - 'null'
       - boolean
     doc: Calculate distance based on shared 6mers, on by default
-    default: false
     inputBinding:
       position: 101
       prefix: --sixmerpair
@@ -366,7 +347,6 @@ inputs:
       - 'null'
       - boolean
     doc: Guide tree is output to the input.tree file
-    default: false
     inputBinding:
       position: 101
       prefix: --treeout

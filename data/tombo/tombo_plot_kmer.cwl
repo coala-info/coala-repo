@@ -13,7 +13,6 @@ inputs:
         items: string
     doc: FAST5 subgroup(s) (under Analyses/[corrected-group]) containing 
       basecalls.
-    default: BaseCalled_template
     inputBinding:
       position: 101
       prefix: --basecall-subgroups
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: FAST5 group created by resquiggle command.
-    default: RawGenomeCorrected_000
     inputBinding:
       position: 101
       prefix: --corrected-group
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Downstream bases in k-mer.
-    default: 2
     inputBinding:
       position: 101
       prefix: --downstream-bases
@@ -57,7 +54,6 @@ inputs:
       - int
     doc: Observations of each k-mer required to include a read in read level 
       averages.
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-kmer-threshold
@@ -66,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads to plot.
-    default: 100
     inputBinding:
       position: 101
       prefix: --num-reads
@@ -92,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Upstream bases in k-mer.
-    default: 1
     inputBinding:
       position: 101
       prefix: --upstream-bases

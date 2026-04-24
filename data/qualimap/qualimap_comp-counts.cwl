@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: 'Counting algorithm: uniquely-mapped-reads(default) or proportional'
-    default: uniquely-mapped-reads
     inputBinding:
       position: 101
       prefix: --algorithm
@@ -25,7 +24,6 @@ inputs:
       - string
     doc: 'GTF-specific. Attribute of the GTF to be used as feature ID. Regions with
       the same ID will be aggregated as part of the same feature. Default: gene_id.'
-    default: gene_id
     inputBinding:
       position: 101
       prefix: --id
@@ -35,7 +33,6 @@ inputs:
       - string
     doc: 'GTF-specific. Value of the third column of the GTF considered for counting.
       Other types will be ignored. Default: exon'
-    default: exon
     inputBinding:
       position: 101
       prefix: --type
@@ -61,7 +58,6 @@ inputs:
       - string
     doc: 'Sequencing library protocol: strand-specific-forward, strand-specific-reverse
       or non-strand-specific (default)'
-    default: non-strand-specific
     inputBinding:
       position: 101
       prefix: --sequencing-protocol

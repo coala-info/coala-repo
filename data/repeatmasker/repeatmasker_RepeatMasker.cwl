@@ -74,7 +74,6 @@ inputs:
     doc: Sets cutoff score for masking repeats when using -lib. Lowering it 
       below 200 will usually start to give you significant numbers of false 
       matches, raising it to 250 will guarantee that all matches are real.
-    default: 225
     inputBinding:
       position: 102
       prefix: -cutoff
@@ -118,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum sequence length masked without fragmenting.
-    default: 40000
     inputBinding:
       position: 102
       prefix: -frag

@@ -56,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of supporting reads for a fusion
-    default: 3
     inputBinding:
       position: 101
       prefix: --support
@@ -65,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: minimap2 number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

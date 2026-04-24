@@ -10,7 +10,6 @@ inputs:
       - string
     doc: Add column with filtered count/percentage with the chosen label. May be
       the same as --unclassified-label (e.g. unassigned)
-    default: None
     inputBinding:
       position: 101
       prefix: --filtered-label
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Header information [name, taxid, lineage]
-    default: name
     inputBinding:
       position: 101
       prefix: --header
@@ -44,7 +42,6 @@ inputs:
       - float
     doc: Maximum number/percentage of counts to keep an taxa [values between 0-1
       for percentage, >1 specific number]
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-count
@@ -54,7 +51,6 @@ inputs:
       - float
     doc: Minimum number/percentage of counts to keep an taxa [values between 0-1
       for percentage, >1 specific number]
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-count
@@ -64,7 +60,6 @@ inputs:
       - float
     doc: Minimum number/percentage of files containing an taxa to keep the taxa 
       [values between 0-1 for percentage, >1 specific number]
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-frequency
@@ -74,7 +69,6 @@ inputs:
       - type: array
         items: string
     doc: Show only entries matching exact names of the provided list
-    default: []
     inputBinding:
       position: 101
       prefix: --names
@@ -84,7 +78,6 @@ inputs:
       - type: array
         items: string
     doc: Show entries containing full or partial names of the provided list
-    default: []
     inputBinding:
       position: 101
       prefix: --names-with
@@ -94,7 +87,6 @@ inputs:
       - boolean
     doc: Do not report root node entry and lineage. Direct and shared matches to
       root will be accounted as unclassified
-    default: false
     inputBinding:
       position: 101
       prefix: --no-root
@@ -103,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: Output format [tsv, csv]
-    default: tsv
     inputBinding:
       position: 101
       prefix: --output-format
@@ -113,7 +104,6 @@ inputs:
       - string
     doc: Output value on the table [percentage, counts]. percentage values are 
       reported between [0-1]
-    default: counts
     inputBinding:
       position: 101
       prefix: --output-value
@@ -122,7 +112,6 @@ inputs:
       - 'null'
       - boolean
     doc: Quiet output mode
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -131,7 +120,6 @@ inputs:
       - 'null'
       - string
     doc: Define specific rank to report. Empty will report all ranks.
-    default: None
     inputBinding:
       position: 101
       prefix: --rank
@@ -140,7 +128,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not print lines with only zero count/percentage
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-zeros
@@ -150,7 +137,6 @@ inputs:
       - type: array
         items: int
     doc: One or more taxids to report (including children taxa)
-    default: []
     inputBinding:
       position: 101
       prefix: --taxids
@@ -159,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: Top hits of all samples (ranked by percentage)
-    default: 0
     inputBinding:
       position: 101
       prefix: --top-all
@@ -168,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: Top hits of each sample individually
-    default: 0
     inputBinding:
       position: 101
       prefix: --top-sample
@@ -177,7 +161,6 @@ inputs:
       - 'null'
       - boolean
     doc: Transpose output table (taxa as cols and files as rows)
-    default: false
     inputBinding:
       position: 101
       prefix: --transpose
@@ -187,7 +170,6 @@ inputs:
       - string
     doc: Add column with unclassified count/percentage with the chosen label. 
       May be the same as --filtered-label (e.g. unassigned)
-    default: None
     inputBinding:
       position: 101
       prefix: --unclassified-label
@@ -196,7 +178,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose output mode
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

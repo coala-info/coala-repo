@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for differential expression analysis
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --de_threshold
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequencing depth required
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_depth
@@ -74,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for calling structural variants
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --threshold

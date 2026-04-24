@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: The logger level.
-    default: INFO
     inputBinding:
       position: 101
       prefix: --logging-level
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - Directory
     doc: The path to the MPA installation folder.
-    default: /usr/local/bin
     inputBinding:
       position: 101
       prefix: --mpa-directory

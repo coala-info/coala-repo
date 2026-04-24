@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of mismatches allowed
-    default: 2
     inputBinding:
       position: 101
       prefix: --align-score
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum fragment size of library
-    default: 400
     inputBinding:
       position: 101
       prefix: --insert-size

@@ -12,7 +12,6 @@ inputs:
     doc: List of paths of per-read modification calls to merge. File paths 
       should be separated by space/whitespace. Use either --input or --list 
       argument, but not both.
-    default: None
     inputBinding:
       position: 101
       prefix: --input
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum cutoff for read length
-    default: 0
     inputBinding:
       position: 101
       prefix: --length_cutoff
@@ -31,7 +29,6 @@ inputs:
       - File
     doc: A file containing paths to per-read modification calls to merge (one 
       per line). Use either --input or --list argument, but not both.
-    default: None
     inputBinding:
       position: 101
       prefix: --list
@@ -41,7 +38,6 @@ inputs:
       - float
     doc: Probability threshold for a per-read prediction to be considered 
       modified.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --mod_t
@@ -51,7 +47,6 @@ inputs:
       - Directory
     doc: Path to folder where intermediate and final files will be stored, 
       default is current working directory
-    default: None
     inputBinding:
       position: 101
       prefix: --output
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for the output files
-    default: output
     inputBinding:
       position: 101
       prefix: --prefix
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum cutoff for mean quality score of a read
-    default: 0
     inputBinding:
       position: 101
       prefix: --qscore_cutoff
@@ -79,7 +72,6 @@ inputs:
       - float
     doc: Probability threshold for a per-read prediction to be considered 
       unmodified.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --unmod_t

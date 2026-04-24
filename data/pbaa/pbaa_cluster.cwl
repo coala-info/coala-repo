@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Variants with coverage lower than filter will be ignored.
-    default: 3
     inputBinding:
       position: 103
       prefix: --filter
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations to run k-means.
-    default: 9
     inputBinding:
       position: 103
       prefix: --iterations
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL).'
-    default: WARN
     inputBinding:
       position: 103
       prefix: --log-level
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: The number of random alignments, for each read, within a guide grouping
-    default: 1000
     inputBinding:
       position: 103
       prefix: --max-alignments-per-read
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Upper read length cutoff, longer reads will be skipped.
-    default: 15000
     inputBinding:
       position: 103
       prefix: --max-amplicon-size
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of reads to use per cluster consensus.
-    default: 100
     inputBinding:
       position: 103
       prefix: --max-consensus-reads
@@ -86,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: The number randomly selected reads to use within a guide grouping.
-    default: 500
     inputBinding:
       position: 103
       prefix: --max-reads-per-guide
@@ -95,7 +88,6 @@ inputs:
       - 'null'
       - float
     doc: High UCHIME score cutoff.
-    default: 1
     inputBinding:
       position: 103
       prefix: --max-uchime-score
@@ -104,7 +96,6 @@ inputs:
       - 'null'
       - float
     doc: Low frequency cluster cutoff.
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --min-cluster-frequency
@@ -113,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Low read count cluster cutoff.
-    default: 5
     inputBinding:
       position: 103
       prefix: --min-cluster-read-count
@@ -122,7 +112,6 @@ inputs:
       - 'null'
       - float
     doc: Low read QV cutoff.
-    default: 20
     inputBinding:
       position: 103
       prefix: --min-read-qv
@@ -131,7 +120,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage frequency within a pile.
-    default: 0.3
     inputBinding:
       position: 103
       prefix: --min-var-frequency
@@ -140,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use, 0 means autodetection.
-    default: 0
     inputBinding:
       position: 103
       prefix: --num-threads
@@ -157,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: The number of best alignments to keep for each read during error correction.
-    default: 30
     inputBinding:
       position: 103
       prefix: --pile-size
@@ -166,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: Randomization seed.
-    default: 1984
     inputBinding:
       position: 103
       prefix: --seed
@@ -176,7 +161,6 @@ inputs:
       - int
     doc: Number of bases to trim from both sides of reads during graph construction
       and variant detection.
-    default: 5
     inputBinding:
       position: 103
       prefix: --trim-ends

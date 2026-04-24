@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - File
     doc: Custom path to BLASTp+ binary
-    default: blastp
     inputBinding:
       position: 101
       prefix: -blastp
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum query coverage threshold for AAI calculations [0 - 1.0]
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -cov
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - File
     doc: Custom path to DIAMOND binary
-    default: diamond
     inputBinding:
       position: 101
       prefix: -diamond
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum identity threshold for AAI calculations [0 - 1.0]
-    default: 0.4
     inputBinding:
       position: 101
       prefix: -id
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - File
     doc: Custom path to makeblastdb binary
-    default: makeblastdb
     inputBinding:
       position: 101
       prefix: -blastdb
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - File
     doc: Custom path to MMSeqs2 binary
-    default: mmseqs
     inputBinding:
       position: 101
       prefix: -mmseqs
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: Customize calculation program [mmseqs / diamond / blastp]
-    default: mmseqs
     inputBinding:
       position: 101
       prefix: -p
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Assume self-comparison; -i and -j must be identical [0 / 1]
-    default: 0
     inputBinding:
       position: 101
       prefix: -self
@@ -95,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads to use
-    default: 10
     inputBinding:
       position: 101
       prefix: -t
@@ -104,7 +95,6 @@ inputs:
       - 'null'
       - Directory
     doc: Custom temporary directory
-    default: /tmp/ezaai
     inputBinding:
       position: 101
       prefix: -tmp

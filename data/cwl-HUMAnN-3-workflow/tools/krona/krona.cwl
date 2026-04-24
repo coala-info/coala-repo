@@ -48,7 +48,6 @@ inputs:
     type: int
     label: Taxon column
     doc: Column number for taxon information (default for kraken)
-    default: 5
     inputBinding:
       position: 1
       prefix: -t
@@ -56,7 +55,6 @@ inputs:
     type: int
     label: Counts column
     doc: Column number for count information (default for kraken)
-    default: 3
     inputBinding:
       position: 2
       prefix: -m

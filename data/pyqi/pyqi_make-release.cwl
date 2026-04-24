@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform a real run
-    default: false
     inputBinding:
       position: 101
       prefix: --real-run

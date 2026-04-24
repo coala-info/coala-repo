@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - Directory
     doc: output dir
-    default: ../data/raw_data/abs/
     inputBinding:
       position: 101
       prefix: --dir
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: PMID/PMCID list file input
-    default: ../data/test_download_pmid_list.csv
     inputBinding:
       position: 101
       prefix: --id_f
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - File
     doc: output hit id list f
-    default: ../data/hit_id_l.csv
     inputBinding:
       position: 101
       prefix: --tmp_hit_f
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: 'download text type: abstrcts or full-text'
-    default: abs
     inputBinding:
       position: 101
       prefix: --type

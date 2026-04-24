@@ -142,7 +142,6 @@ inputs:
       - string
     doc: If a TSS enrichment score is requested, it will be calculated for a 
       region of "size" bases to either side of transcription start sites.
-    default: 1000bp
     inputBinding:
       position: 103
       prefix: --tss-extension

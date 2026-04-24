@@ -11,7 +11,6 @@ inputs:
     doc: After seeding, anchor are sorted by quality passed to alignment. 
       <take_top> specifies how many anchors should be aligned starting with the 
       most promising anchor.
-    default: 3
     inputBinding:
       position: 101
       prefix: --align_top
@@ -55,7 +54,6 @@ inputs:
       - string
     doc: Comma separated list of reads. If paired-end, also specify second read 
       via -2/--second.
-    default: ''
     inputBinding:
       position: 101
       prefix: --first
@@ -73,7 +71,6 @@ inputs:
       - string
     doc: All marker genomes (not only representative ones) to check unique 
       k-mers during build process
-    default: ''
     inputBinding:
       position: 101
       prefix: --full_reference
@@ -83,7 +80,6 @@ inputs:
       - string
     doc: For larger datasets you can define parameters -1, -2, -3 and -o in a 
       tsv-file.
-    default: ''
     inputBinding:
       position: 101
       prefix: --map
@@ -103,7 +99,6 @@ inputs:
       to run protal only on a subset. The first entry is 1, the end is inclusive.
       e.g.: 1-10. If the end open or larger than the number of entries in the map
       file, the last entry in the map file is selected as end.'
-    default: 1-
     inputBinding:
       position: 101
       prefix: --map_range
@@ -121,7 +116,6 @@ inputs:
       - int
     doc: Max key ubiquity. Best matching Flexkey count for seed must be lower or
       equal
-    default: 256
     inputBinding:
       position: 101
       prefix: --max_key_ubiquity
@@ -130,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum alignments that should be outputted
-    default: 1
     inputBinding:
       position: 101
       prefix: --max_out
@@ -141,7 +134,6 @@ inputs:
     doc: 'A max score makes an alignment stop if the alignment diverges too much.
       This parameter estimates the score for a given ani and is a tradeoff between
       speed/accuracy. [ Default: 0.900000]'
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --max_score_ani
@@ -150,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: Max seed size after which seeding is stopped.
-    default: 128
     inputBinding:
       position: 101
       prefix: --max_seed_size
@@ -161,7 +152,6 @@ inputs:
     doc: If the number of seeds is >=max_seed_size and the number of successful 
       core-mer lookups is >= min_successful_lookups, stop looking for further 
       seeds.
-    default: 4
     inputBinding:
       position: 101
       prefix: --min_successful_lookups
@@ -172,7 +162,6 @@ inputs:
     doc: Protal outputs two MSAs. The processed MSA is condensed horizontally 
       such that each position in the MSA is covered by at least msa_min_cov 
       percent of the sequences with bases that are neither '-' nor 'N'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --msa_min_vcov
@@ -211,7 +200,6 @@ inputs:
     doc: After alignment, alignments are sorted by score. <output_top> specifies
       how many alignments should be reported starting with the highest scoring 
       alignment.
-    default: 3
     inputBinding:
       position: 101
       prefix: --output_top
@@ -223,7 +211,6 @@ inputs:
       output file prefixes are generated from the input file names by taking 
       their longest common prefix. Only works when both pairs of the read file 
       are in the same folder.
-    default: ''
     inputBinding:
       position: 101
       prefix: --prefix
@@ -243,7 +230,6 @@ inputs:
       - File
     doc: Provide profile filename (.sam) and only perform profiling based on sam
       file.
-    default: ''
     inputBinding:
       position: 101
       prefix: --profile_only
@@ -253,7 +239,6 @@ inputs:
       - string
     doc: Provide truth file and annotate profile taxa with TP/FP. Format is list
       of integers (internal ids)
-    default: ''
     inputBinding:
       position: 101
       prefix: --profile_truth
@@ -263,7 +248,6 @@ inputs:
       - string
     doc: Set of reference sequences to build the internal alignment database 
       from
-    default: ''
     inputBinding:
       position: 101
       prefix: --reference
@@ -274,7 +258,6 @@ inputs:
     doc: Comma separated list of reads. must have <-1/--first> specified. 
       Currently this must be specified -- single-end reads are not yet 
       supported.
-    default: ''
     inputBinding:
       position: 101
       prefix: --second
@@ -284,7 +267,6 @@ inputs:
       - int
     doc: Specify number of threads to use. Will be passed on to pigz for 
       compression of sam files.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -302,7 +284,6 @@ inputs:
       - int
     doc: 'Value determines when to cut of branches in the aligment process that are
       unpromising. [ Default: 1000]'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --x_drop

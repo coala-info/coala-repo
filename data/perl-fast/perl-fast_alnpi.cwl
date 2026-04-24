@@ -66,7 +66,6 @@ inputs:
       - 'null'
       - File
     doc: Use [string] as the name of the logfile.
-    default: FAST.log.txt
     inputBinding:
       position: 102
       prefix: --logname

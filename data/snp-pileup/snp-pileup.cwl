@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum depth.
-    default: 4000
     inputBinding:
       position: 103
       prefix: --max-depth
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality.
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-base-quality
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality.
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-map-quality

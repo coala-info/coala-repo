@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size, larger values are slower and use more space.
-    default: 51
     inputBinding:
       position: 102
       prefix: -k
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: Tolerance for errors in k-mer matching.
-    default: 1e-08
     inputBinding:
       position: 102
       prefix: --max-error-prob
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Length of precalculated prefixes included in the index.
-    default: 8
     inputBinding:
       position: 102
       prefix: --prefix-precalc
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: number of base pairs to expand the region to the left
-    default: 250
     inputBinding:
       position: 104
       prefix: --lexpand
@@ -56,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: number of base pairs to expand the region to the right
-    default: 250
     inputBinding:
       position: 104
       prefix: --rexpand
@@ -65,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: name for saving scores in object
-    default: snp_score
     inputBinding:
       position: 104
       prefix: --save-key

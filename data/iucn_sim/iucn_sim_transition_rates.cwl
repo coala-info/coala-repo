@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Burn-in for MCMC for transition rate estimation (default=1000).
-    default: 1000
     inputBinding:
       position: 101
       prefix: --burnin
@@ -39,7 +38,6 @@ inputs:
       - int
     doc: Number of generations for MCMC for transition rate estimation 
       (default=100000).
-    default: 100000
     inputBinding:
       position: 101
       prefix: --n_gen
@@ -68,7 +66,6 @@ inputs:
       randomely resample from the available q-matrices (default=100, this is 
       ususally sufficient, larger numbers can lead to very high output file size
       volumes).
-    default: 100
     inputBinding:
       position: 101
       prefix: --rate_samples

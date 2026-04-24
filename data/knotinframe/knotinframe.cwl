@@ -44,7 +44,6 @@ inputs:
       --minEnergyDifference < knotted energy) are ruled out. Theis et al. [5] 
       call this the "energy difference filter (EDF)" and the according parameter
       "beta". Default is -8.71 kcal/mol.
-    default: -8.71
     inputBinding:
       position: 102
       prefix: --minEnergyDifference
@@ -65,7 +64,6 @@ inputs:
     doc: Some sequences have a high amount of possible slippery site candidates,
       thus output is cut off after printing the best --numberOutputs results, 
       which is 10 by default.
-    default: 10
     inputBinding:
       position: 102
       prefix: --numberOutputs
@@ -86,7 +84,6 @@ inputs:
       - float
     doc: Rescale energy parameters to a temperature of temp C. <float> must be a
       floating point number. Default is 37 C.
-    default: 37.0
     inputBinding:
       position: 102
       prefix: --temperature
@@ -105,7 +102,6 @@ inputs:
     doc: The --windowSize bp long sub-string, downstream to the slippery site, 
       is analysed in different chunks sizes. These chunks grow with 
       --windowIncrement bp. Maximal size if --windowSize. Default value is 20.
-    default: 20
     inputBinding:
       position: 102
       prefix: --windowIncrement
@@ -116,7 +112,6 @@ inputs:
     doc: If a slippery site is detected a sub-string downstream is analysed. 
       --windowSize sets the maximal length of this sub-string, which is 120 by 
       default. Must be a multiple of --windowIncrement!
-    default: 120
     inputBinding:
       position: 102
       prefix: --windowSize

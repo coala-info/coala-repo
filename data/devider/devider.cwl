@@ -57,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Don't use primary mappings with < --mapq-cutoff
-    default: 5
     inputBinding:
       position: 101
       prefix: --mapq-cutoff
@@ -66,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of alignments per contig
-    default: 1000000000000
     inputBinding:
       position: 101
       prefix: --max-frags
@@ -75,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum abundance (in %) of a haplotype to be considered
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --min-abund
@@ -84,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage (depth) of a haplotype to be considered
-    default: 5
     inputBinding:
       position: 101
       prefix: --min-cov
@@ -93,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality to consider for fastq
-    default: 3
     inputBinding:
       position: 101
       prefix: --min-qual
@@ -102,7 +97,6 @@ inputs:
       - 'null'
       - float
     doc: '> this fraction supporting the major allele to call a non-N base'
-    default: 0.66
     inputBinding:
       position: 101
       prefix: --n-fraction
@@ -136,7 +130,6 @@ inputs:
       - string
     doc: Presets for different technologies. More accurate technologies use more
       aggressive parameters
-    default: nanopore-r9
     inputBinding:
       position: 101
       prefix: --preset
@@ -169,7 +162,6 @@ inputs:
       - 'null'
       - int
     doc: 'Only phase contigs with > this # of SNPs'
-    default: 1
     inputBinding:
       position: 101
       prefix: --snp-count-filter
@@ -178,7 +170,6 @@ inputs:
       - 'null'
       - float
     doc: FDR for strand bias filtering
-    default: 0.005
     inputBinding:
       position: 101
       prefix: --strand-bias-fdr
@@ -188,7 +179,6 @@ inputs:
       - int
     doc: Require supplementary alignments to be within this distance of the 
       primary alignment
-    default: 5000
     inputBinding:
       position: 101
       prefix: --supp-aln-dist-cutoff
@@ -197,7 +187,6 @@ inputs:
       - 'null'
       - int
     doc: Don't use supp. mappings with < --supp-mapq-cutoff
-    default: 30
     inputBinding:
       position: 101
       prefix: --supp-mapq-cutoff
@@ -206,7 +195,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 10
     inputBinding:
       position: 101
       prefix: --threads

@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: specify band expansion size N > 10
-    default: 20
     inputBinding:
       position: 102
       prefix: -a
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: specify base quality cutoff for clipping N > 5
-    default: 12
     inputBinding:
       position: 102
       prefix: -c
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: specify base quality cutoff for differences N > 15
-    default: 20
     inputBinding:
       position: 102
       prefix: -b
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: specify chain score cutoff N > 30
-    default: 80
     inputBinding:
       position: 102
       prefix: -j
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: specify clearance between no. of diff N > 10
-    default: 30
     inputBinding:
       position: 102
       prefix: -e
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: specify clipping range N > 5
-    default: 100
     inputBinding:
       position: 102
       prefix: -y
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: specify end clipping flag N >= 0
-    default: 1
     inputBinding:
       position: 102
       prefix: -k
@@ -78,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: specify gap penalty factor N > 0
-    default: 6
     inputBinding:
       position: 102
       prefix: -g
@@ -87,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: specify match score factor N > 0
-    default: 2
     inputBinding:
       position: 102
       prefix: -m
@@ -96,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: specify max gap length in any overlap N > 1
-    default: 20
     inputBinding:
       position: 102
       prefix: -f
@@ -105,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: specify max overhang percent length N > 2
-    default: 20
     inputBinding:
       position: 102
       prefix: -h
@@ -114,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: specify max qscore sum at differences N > 20
-    default: 200
     inputBinding:
       position: 102
       prefix: -d
@@ -123,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: specify max number of word matches N > 30
-    default: 300
     inputBinding:
       position: 102
       prefix: -t
@@ -132,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: specify min number of constraints for correction N > 0
-    default: 3
     inputBinding:
       position: 102
       prefix: -u
@@ -141,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: specify min number of constraints for linking N > 0
-    default: 2
     inputBinding:
       position: 102
       prefix: -v
@@ -150,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: specify min no. of good reads at clip pos N > 0
-    default: 3
     inputBinding:
       position: 102
       prefix: -z
@@ -159,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: specify mismatch score factor N < 0
-    default: -5
     inputBinding:
       position: 102
       prefix: -n
@@ -168,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: specify overlap length cutoff > 15
-    default: 40
     inputBinding:
       position: 102
       prefix: -o
@@ -177,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: specify overlap percent identity cutoff N > 65
-    default: 90
     inputBinding:
       position: 102
       prefix: -p
@@ -186,7 +167,6 @@ inputs:
       - 'null'
       - int
     doc: specify overlap similarity score cutoff N > 250
-    default: 900
     inputBinding:
       position: 102
       prefix: -s
@@ -195,7 +175,6 @@ inputs:
       - 'null'
       - int
     doc: specify reverse orientation value N >= 0
-    default: 1
     inputBinding:
       position: 102
       prefix: -r
@@ -204,7 +183,6 @@ inputs:
       - 'null'
       - int
     doc: specify segment pair score cutoff N > 20
-    default: 40
     inputBinding:
       position: 102
       prefix: -i

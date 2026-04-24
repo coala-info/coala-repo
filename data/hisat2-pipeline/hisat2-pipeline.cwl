@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - Directory
     doc: The folder where the genome fasta and gff file is located
-    default: ./genome
     inputBinding:
       position: 101
       prefix: --genome_folder
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - Directory
     doc: The folder where the reads are located
-    default: ./reads
     inputBinding:
       position: 101
       prefix: --reads_folder
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads used
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads

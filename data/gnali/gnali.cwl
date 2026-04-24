@@ -47,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: "Database to query. Options: ['gnomadv2.1.1', 'gnomadv3.1.1']"
-    default: gnomadv2.1.1
     inputBinding:
       position: 101
       prefix: --database
@@ -88,7 +87,6 @@ inputs:
       - 'null'
       - Directory
     doc: Name of output directory.
-    default: results-ID/
     inputBinding:
       position: 101
       prefix: --output_dir

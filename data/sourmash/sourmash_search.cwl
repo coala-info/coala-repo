@@ -190,7 +190,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'choose a nucleotide signature (default: True)'
-    default: true
     inputBinding:
       position: 103
       prefix: --nucleotide
@@ -263,7 +262,6 @@ inputs:
       - 'null'
       - float
     doc: minimum threshold for reporting matches
-    default: 0.08
     inputBinding:
       position: 103
       prefix: --threshold

@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Check file integrity by validating piece hashes or a hash of entire file.
-    default: false
     inputBinding:
       position: 102
       prefix: --check-integrity
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: Continue downloading a partially downloaded file.
-    default: false
     inputBinding:
       position: 102
       prefix: --continue
@@ -46,7 +44,6 @@ inputs:
       - type: array
         items: string
     doc: Set UDP listening port used by DHT(IPv4, IPv6) and UDP tracker.
-    default: 6881-6999
     inputBinding:
       position: 102
       prefix: --dht-listen-port
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable IPv4 DHT functionality. It also enables UDP tracker support.
-    default: true
     inputBinding:
       position: 102
       prefix: --enable-dht
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable IPv6 DHT functionality.
-    default: false
     inputBinding:
       position: 102
       prefix: --enable-dht6
@@ -81,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: Specify file allocation method (none, prealloc, trunc, falloc).
-    default: prealloc
     inputBinding:
       position: 102
       prefix: --file-allocation
@@ -91,7 +85,6 @@ inputs:
       - boolean
     doc: Fetch URIs in the command-line sequentially and download each URI in a separate
       session.
-    default: false
     inputBinding:
       position: 102
       prefix: --force-sequential
@@ -142,7 +135,6 @@ inputs:
         items: string
     doc: Set TCP port number for BitTorrent downloads. Multiple ports can be specified
       by using ',' or '-'.
-    default: 6881-6999
     inputBinding:
       position: 102
       prefix: --listen-port
@@ -169,7 +161,6 @@ inputs:
       - int
     doc: Set maximum number of parallel downloads for every static (HTTP/FTP) URL,
       torrent and metalink.
-    default: 5
     inputBinding:
       position: 102
       prefix: --max-concurrent-downloads
@@ -178,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum number of connections to one server for each download.
-    default: 1
     inputBinding:
       position: 102
       prefix: --max-connection-per-server
@@ -188,7 +178,6 @@ inputs:
       - string
     doc: Set max overall upload speed in bytes/sec. 0 means unrestricted. You can
       append K or M.
-    default: '0'
     inputBinding:
       position: 102
       prefix: --max-overall-upload-limit
@@ -198,7 +187,6 @@ inputs:
       - string
     doc: Set max upload speed per each torrent in bytes/sec. 0 means unrestricted.
       You can append K or M.
-    default: '0'
     inputBinding:
       position: 102
       prefix: --max-upload-limit
@@ -215,7 +203,6 @@ inputs:
       - 'null'
       - string
     doc: aria2 does not split less than 2*SIZE byte range. You can append K or M.
-    default: 20M
     inputBinding:
       position: 102
       prefix: --min-split-size
@@ -224,7 +211,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print file listing of .torrent, .meta4 and .metalink file and exit.
-    default: false
     inputBinding:
       position: 102
       prefix: --show-files
@@ -233,7 +219,6 @@ inputs:
       - 'null'
       - int
     doc: Download a file using N connections.
-    default: 5
     inputBinding:
       position: 102
       prefix: --split

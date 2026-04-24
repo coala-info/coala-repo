@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of supporting reads
-    default: 5
     inputBinding:
       position: 105
       prefix: -m
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 105
       prefix: -t

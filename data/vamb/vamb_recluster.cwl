@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: Which reclustering algorithm to use ('kmeans', 'dbscan')
-    default: kmeans
     inputBinding:
       position: 101
       prefix: --algorithm
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: Binsplit separator
-    default: C if present
     inputBinding:
       position: 101
       prefix: -o
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use GPU to train & cluster
-    default: false
     inputBinding:
       position: 101
       prefix: --cuda
@@ -106,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore contigs shorter than this
-    default: 2000
     inputBinding:
       position: 101
       prefix: -m
@@ -115,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum bin size to output as fasta
-    default: None = no files
     inputBinding:
       position: 101
       prefix: --minfasta
@@ -124,7 +119,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not complete input taxonomy with Taxometer
-    default: false
     inputBinding:
       position: 101
       prefix: --no_predictor
@@ -133,7 +127,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip reference name hashing check
-    default: false
     inputBinding:
       position: 101
       prefix: --norefcheck
@@ -162,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use where customizable
-    default: 8
     inputBinding:
       position: 101
       prefix: -p

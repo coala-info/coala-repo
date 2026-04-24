@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the merge buffer in number of pixel table rows.
-    default: 20000000
     inputBinding:
       position: 103
       prefix: --chunksize

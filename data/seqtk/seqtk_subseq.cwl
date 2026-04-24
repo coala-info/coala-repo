@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: sequence line length
-    default: 0
     inputBinding:
       position: 103
       prefix: -l

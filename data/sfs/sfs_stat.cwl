@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Delimiter between statistics
-    default: ','
     inputBinding:
       position: 102
       prefix: --delimiter
@@ -40,7 +39,6 @@ inputs:
       is calculated, the same number of precision specifiers may be provided, 
       and they will be applied in the same order. Use comma to separate 
       precision specifiers.
-    default: 6
     inputBinding:
       position: 102
       prefix: --precision

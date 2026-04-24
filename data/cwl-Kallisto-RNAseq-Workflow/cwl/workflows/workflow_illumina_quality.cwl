@@ -57,17 +57,14 @@ inputs:
     type: int?
     doc: Number of threads to use for computational processes
     label: Number of threads
-    default: 2
   memory:
     type: int?
     doc: Maximum memory usage in MegaBytes
     label: Maximum memory in MB
-    default: 4000
   filter_rrna:
     type: boolean    
     doc: Optionally remove rRNA sequences from the reads.
     label: filter rRNA
-    default: false
   forward_reads:
     # type: File[]
     type: string[]
@@ -87,24 +84,20 @@ inputs:
     type: boolean?
     doc: Remove exact duplicate reads with fastp
     label: Deduplicate reads
-    default: false
   kraken_database:
     type: string[]?
     doc: Kraken2 database location
     label: Kraken2 database
-    default: ["/unlock/references/databases/Kraken2/K2_PlusPF_20210517"]
   
   keep_reference_mapped_reads:
     type: boolean
     doc: Keep with reads mapped to the given reference
     label: Keep mapped reads
-    default: false
 
   step:
     type: int?
     doc: Step number for output folder numbering
     label: Output Step number
-    default: 1
 
 steps:
 #############################################
@@ -237,7 +230,6 @@ steps:
       forward_reads: phix_filter/out_forward_reads
       reverse_reads: phix_filter/out_reverse_reads
       paired_end: 
-        default: true
     out: [sample_report]
   
   illumina_quality_kraken2_krona:

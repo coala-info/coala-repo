@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - File
     doc: 'Name of supercontigs file. Valid filetypes are: fa, fna, and fasta.'
-    default: supercontigs.fa
     inputBinding:
       position: 101
       prefix: --contigs
@@ -20,7 +19,6 @@ inputs:
       - File
     doc: Name of file containing groups of contigs that can be placed at the 
       same position and whose prefixes/suffixes align.
-    default: groups.txt
     inputBinding:
       position: 101
       prefix: --groups
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - File
     doc: Name of merged locations file.
-    default: locations.txt
     inputBinding:
       position: 101
       prefix: --locations
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum expected insert size of the read pairs.
-    default: 800
     inputBinding:
       position: 101
       prefix: --maxInsertSize
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal number of anchoring read pairs for a location.
-    default: 2
     inputBinding:
       position: 101
       prefix: --minReads
@@ -56,7 +51,6 @@ inputs:
       - 'null'
       - float
     doc: Minimal anchoring score for a location. In range [0..1].
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --minScore
@@ -65,7 +59,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to the sample directories.
-    default: .
     inputBinding:
       position: 101
       prefix: --prefix
@@ -74,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: The length of the reads.
-    default: 100
     inputBinding:
       position: 101
       prefix: --readLength
@@ -83,7 +75,6 @@ inputs:
       - 'null'
       - File
     doc: 'Name of reference genome file. Valid filetypes are: fa, fna, and fasta.'
-    default: genome.fa
     inputBinding:
       position: 101
       prefix: --reference

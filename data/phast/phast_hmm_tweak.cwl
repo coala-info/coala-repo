@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of EM iterations (default: 10)'
-    default: 10
     inputBinding:
       position: 103
       prefix: --iterations
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: 'Learning rate for gradient descent (default: 0.01)'
-    default: 0.01
     inputBinding:
       position: 103
       prefix: --learning-rate
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - float
     doc: 'Convergence tolerance (default: 1e-4)'
-    default: 0.0001
     inputBinding:
       position: 103
       prefix: --tolerance

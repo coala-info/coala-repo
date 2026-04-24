@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: batch size, default 512
-    default: 512
     inputBinding:
       position: 101
       prefix: --batch_size
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: TransformerEncoder input feature numbers, default 256
-    default: 256
     inputBinding:
       position: 101
       prefix: --d_model
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: TransformerEncoder dim_feedforward, default 512
-    default: 512
     inputBinding:
       position: 101
       prefix: --dim_ff
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: BiRNN hidden_size, default 256
-    default: 256
     inputBinding:
       position: 101
       prefix: --hid_rnn
@@ -84,7 +80,6 @@ inputs:
       - int
     doc: number of holes/hifi-reads in an batch to get/put in queues, default 
       50. only used when --input is bam/sam
-    default: 50
     inputBinding:
       position: 101
       prefix: --holes_batch
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - float
     doc: identity cutoff for selecting alignment items, [0.0, 1.0], default 0.0
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --identity
@@ -110,7 +104,6 @@ inputs:
       - boolean
     doc: if using mapping features, yes or no, default no. Effects both MODEL 
       input and feature EXTRACTION, only works in EXTRACTION-ALIGN-MODE
-    default: false
     inputBinding:
       position: 101
       prefix: --is_map
@@ -119,7 +112,6 @@ inputs:
       - 'null'
       - boolean
     doc: if using num_pass features, yes or no, default yes
-    default: true
     inputBinding:
       position: 101
       prefix: --is_npass
@@ -129,7 +121,6 @@ inputs:
       - boolean
     doc: if using signal-to-noise-ratio features, yes or no, default no. Effects
       both MODEL input and feature EXTRACTION
-    default: false
     inputBinding:
       position: 101
       prefix: --is_sn
@@ -138,7 +129,6 @@ inputs:
       - 'null'
       - boolean
     doc: if using std features, yes or no, default no
-    default: false
     inputBinding:
       position: 101
       prefix: --is_stds
@@ -156,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: BiRNN layer num, default 3
-    default: 3
     inputBinding:
       position: 101
       prefix: --layer_rnn
@@ -165,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: TransformerEncoder nlayers, default 6
-    default: 6
     inputBinding:
       position: 101
       prefix: --layer_trans
@@ -174,7 +162,6 @@ inputs:
       - 'null'
       - int
     doc: MAPping Quality cutoff for selecting alignment items, default 1
-    default: 1
     inputBinding:
       position: 101
       prefix: --mapq
@@ -184,7 +171,6 @@ inputs:
       - string
     doc: the label of the interested modified bases, this is for training. 0 or 
       1, default 1
-    default: '1'
     inputBinding:
       position: 101
       prefix: --methy_label
@@ -193,7 +179,6 @@ inputs:
       - 'null'
       - int
     doc: 0-based location of the targeted base in the motif, default 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --mod_loc
@@ -204,7 +189,6 @@ inputs:
     doc: 'denovo mode: extract features from unaligned/aligned hifi.bam without reference
       position info; align mode: extract features from aligned hifi.bam with reference
       position info. default: denovo'
-    default: denovo
     inputBinding:
       position: 101
       prefix: --mode
@@ -220,7 +204,6 @@ inputs:
       - string
     doc: "type of model to use, 'attbilstm2s', 'attbigru2s', 'transencoder2s', 'attbilstm2s2',
       'attbigru2s2', default: attbigru2s"
-    default: attbigru2s
     inputBinding:
       position: 101
       prefix: --model_type
@@ -231,7 +214,6 @@ inputs:
     doc: 'motif seq to be extracted, default: CG. can be multi motifs splited by comma
       (no space allowed in the input str), or use IUPAC alphabet, the mod_loc of all
       motifs must be the same'
-    default: CG
     inputBinding:
       position: 101
       prefix: --motifs
@@ -240,7 +222,6 @@ inputs:
       - 'null'
       - int
     doc: TransformerEncoder nhead, default 4
-    default: 4
     inputBinding:
       position: 101
       prefix: --nhead
@@ -274,7 +255,6 @@ inputs:
       - string
     doc: method for normalizing ipd/pw in subread level. zscore, min-mean, 
       min-max, mad, or none. default zscore
-    default: zscore
     inputBinding:
       position: 101
       prefix: --norm
@@ -291,7 +271,6 @@ inputs:
       - 'null'
       - int
     doc: len of kmer. default 21
-    default: 21
     inputBinding:
       position: 101
       prefix: --seq_len
@@ -300,7 +279,6 @@ inputs:
       - 'null'
       - boolean
     doc: if skipping unmapped sites in reads, yes or no, default yes
-    default: true
     inputBinding:
       position: 101
       prefix: --skip_unmapped
@@ -309,7 +287,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to be used, default 10.
-    default: 10
     inputBinding:
       position: 101
       prefix: --threads
@@ -319,7 +296,6 @@ inputs:
       - int
     doc: number of threads used to call modifications with trained models, no 
       more than threads/3 is suggested. default 3.
-    default: 3
     inputBinding:
       position: 101
       prefix: --threads_call
@@ -337,7 +313,6 @@ inputs:
       - string
     doc: if using torch.compile, yes or no, default no ('yes' only works in 
       pytorch>=2.0)
-    default: no
     inputBinding:
       position: 101
       prefix: --use_compile

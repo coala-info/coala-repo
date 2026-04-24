@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Frequency at which the bootstrap progress bar will be updated.
-    default: 20
     inputBinding:
       position: 101
       prefix: --boot_progress_display
@@ -44,7 +43,6 @@ inputs:
       - int
     doc: 'Number of bootstrap replicates or type of branch support (0: none, -1: aLRT,
       -2: Chi2, -4: SH-like, -5: Bayes).'
-    default: -5
     inputBinding:
       position: 101
       prefix: --bootstrap
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: "Data type: 'nt' for nucleotide, 'aa' for amino-acid sequences, or 'generic'."
-    default: nt
     inputBinding:
       position: 101
       prefix: --datatype
@@ -125,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: Number of relative substitution rate categories.
-    default: 4
     inputBinding:
       position: 101
       prefix: --nclasses
@@ -198,7 +194,6 @@ inputs:
       - 'null'
       - string
     doc: Tree topology search operation option (NNI, SPR, or BEST).
-    default: NNI
     inputBinding:
       position: 101
       prefix: --search

@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add region-overlap 'kind' to vcf output
-    default: false
     inputBinding:
       position: 102
       prefix: --add-kind
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: Merges more aggressively by collapsing nearby SV
-    default: true
     inputBinding:
       position: 102
       prefix: --collapse-nearby
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Compare each event with up to --max-comparisons local SVs
-    default: 20
     inputBinding:
       position: 102
       prefix: --max-comparisons
@@ -70,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: Merge records across input samples
-    default: true
     inputBinding:
       position: 102
       prefix: --merge-across
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Distance threshold for merging
-    default: 500
     inputBinding:
       position: 102
       prefix: --merge-dist
@@ -89,7 +84,6 @@ inputs:
       - string
     doc: Method of merging using --merge-across. Progressive is suitable for 
       large cohorts. Auto will switch to progressive for >4 samples
-    default: auto
     inputBinding:
       position: 102
       prefix: --merge-method
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform additional merge within input samples, prior to --merge-across
-    default: false
     inputBinding:
       position: 102
       prefix: --merge-within
@@ -107,7 +100,6 @@ inputs:
       - 'null'
       - string
     doc: Output format
-    default: vcf
     inputBinding:
       position: 102
       prefix: --out-format
@@ -116,7 +108,6 @@ inputs:
       - 'null'
       - string
     doc: Adds --post-fix to file names, only if --separate is True
-    default: dysgu
     inputBinding:
       position: 102
       prefix: --post-fix
@@ -126,7 +117,6 @@ inputs:
       - int
     doc: Number of processors to use when merging, requires --wd option to be 
       supplied
-    default: 1
     inputBinding:
       position: 102
       prefix: --procs
@@ -144,7 +134,6 @@ inputs:
       - boolean
     doc: Keep merged tables separate, adds --post-fix to file names, csv format 
       only
-    default: false
     inputBinding:
       position: 102
       prefix: --separate
@@ -154,7 +143,6 @@ inputs:
       - int
     doc: 0 = no contigs in output, 1 = output contigs for variants without ALT 
       sequence called, 2 = output all contigs
-    default: 1
     inputBinding:
       position: 102
       prefix: --verbosity

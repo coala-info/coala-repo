@@ -27,7 +27,6 @@ inputs:
   min_length:
     type: int?
     label: Length filter for short reads
-    default: 50
   host_genome:
     type: File?
     secondaryFiles:
@@ -38,11 +37,9 @@ inputs:
         - .sa
     format: edam:format_1929
     label: host genome fasta file
-    default: hg38.fa
   polya_trim:
     type: int
     label: minimum length to trim polyA tails
-    default: 15
 
 #ADD rRNA removal to speed up assembly. Tool TBC
 

@@ -78,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Y axis tick frequency
-    default: 1000
     inputBinding:
       position: 101
       prefix: -t

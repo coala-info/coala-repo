@@ -63,7 +63,6 @@ inputs:
       - string
     doc: 'Metapackage containing genome lengths [default: Use genome lengths from
       the default metapackage]'
-    default: Use genome lengths from the default metapackage
     inputBinding:
       position: 101
       prefix: --metapackage
@@ -103,7 +102,6 @@ inputs:
       - File
     doc: "TSV file with 'rank' and 'genome_size' as headers [default: Use genome lengths
       from the default metapackage]"
-    default: Use genome lengths from the default metapackage
     inputBinding:
       position: 101
       prefix: --taxon-genome-lengths-file

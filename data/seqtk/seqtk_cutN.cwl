@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: min size of N tract
-    default: 1000
     inputBinding:
       position: 102
       prefix: -n
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: penalty for a non-N
-    default: 10
     inputBinding:
       position: 102
       prefix: -p

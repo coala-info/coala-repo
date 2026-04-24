@@ -64,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: Change the cutoff for logarithmic LDA score
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --effect
@@ -73,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Level for which to use for summarize_taxa.py.
-    default: 6
     inputBinding:
       position: 101
       prefix: --level
@@ -88,7 +86,6 @@ inputs:
       - 'null'
       - float
     doc: Change alpha value for the Anova test
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --pval
@@ -114,7 +111,6 @@ inputs:
       - int
     doc: Change the strictness of the comparisons. Can be changed to less strict
       (1).
-    default: 0
     inputBinding:
       position: 101
       prefix: --strict
@@ -131,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: Only change if your Sample-ID column names differs.
-    default: '#SampleID'
     inputBinding:
       position: 101
       prefix: --subject

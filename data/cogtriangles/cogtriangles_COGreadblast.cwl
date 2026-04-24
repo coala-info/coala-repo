@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory for converted data (must contain hash.csv)
-    default: ./conv
     inputBinding:
       position: 101
       prefix: -d
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: e-value threshold for BLAST hits
-    default: 10.0
     inputBinding:
       position: 101
       prefix: -e
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: index of the sequence ID field for the BLAST query
-    default: 2
     inputBinding:
       position: 101
       prefix: -q
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory with the self-BLAST results
-    default: ./blan
     inputBinding:
       position: 101
       prefix: -s
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: index of the sequence ID field for the BLAST target
-    default: 2
     inputBinding:
       position: 101
       prefix: -t
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory with the unfiltered BLAST results
-    default: ./blan
     inputBinding:
       position: 101
       prefix: -u

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Number of constant positions to keep from the in-bubble k-mer
-    default: 3
     inputBinding:
       position: 101
       prefix: --constant
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum traversal depth from each start node
-    default: 6
     inputBinding:
       position: 101
       prefix: --depth
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer length
-    default: 14
     inputBinding:
       position: 101
       prefix: --k
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Mask middle segments with long mismatch runs
-    default: 5
     inputBinding:
       position: 101
       prefix: --mask
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - float
     doc: Minimal fraction of samples with an amino-acid per position
-    default: 0.85
     inputBinding:
       position: 101
       prefix: --min-freq
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate a NJ tree from kamino alignment
-    default: false
     inputBinding:
       position: 101
       prefix: --nj
@@ -83,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: Output prefix
-    default: kamino
     inputBinding:
       position: 101
       prefix: --output
@@ -92,7 +85,6 @@ inputs:
       - 'null'
       - string
     doc: Recoding scheme
-    default: sr6
     inputBinding:
       position: 101
       prefix: --recode
@@ -101,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

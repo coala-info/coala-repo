@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: When bootstrapping, sample <Int> times from the input data.
-    default: 500
     inputBinding:
       position: 101
       prefix: --bootstrap-samples
@@ -66,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: "Format of the input file: {'auto', 'csv', 'xvg'}"
-    default: auto
     inputBinding:
       position: 101
       prefix: --input-format
@@ -84,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: "Format of output file: {'csv', 'json', 'tsv'}"
-    default: auto
     inputBinding:
       position: 101
       prefix: --output-format

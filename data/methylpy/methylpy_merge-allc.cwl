@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: Boolean indicating whether to compress (by gzip) the final output
-    default: true
     inputBinding:
       position: 101
       prefix: --compress-output
@@ -30,7 +29,6 @@ inputs:
     doc: The maximum number of allc files to be merged at the same time. Since 
       OS or python may limit the number of files that can be open at once, value
       larger than 200 is not recommended
-    default: 100
     inputBinding:
       position: 101
       prefix: --mini-batch
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-procs
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - boolean
     doc: Boolean indicating whether to skip the merging of SNP information
-    default: true
     inputBinding:
       position: 101
       prefix: --skip-snp-info

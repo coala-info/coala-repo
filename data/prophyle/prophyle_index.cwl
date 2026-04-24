@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length
-    default: 31
     inputBinding:
       position: 103
       prefix: --kmer-length
@@ -63,7 +62,6 @@ inputs:
       - 'null'
       - File
     doc: log file
-    default: <index.dir>/log.txt
     inputBinding:
       position: 103
       prefix: --log-file
@@ -128,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: auto (20)
     inputBinding:
       position: 103
       prefix: --threads

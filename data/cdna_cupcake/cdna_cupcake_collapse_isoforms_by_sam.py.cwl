@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Max fuzzy junction allowed
-    default: 5
     inputBinding:
       position: 101
       prefix: --max_fuzzy_junction
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum alignment coverage
-    default: 0.99
     inputBinding:
       position: 101
       prefix: --min-coverage
@@ -63,7 +61,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum alignment identity
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --min-identity

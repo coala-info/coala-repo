@@ -65,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: number of SNPs to consider spacers the same.
-    default: 0
     inputBinding:
       position: 101
       prefix: --snp-thresh

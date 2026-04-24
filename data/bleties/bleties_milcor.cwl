@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: BAM file containing mapping, must be sorted and indexed
-    default: None
     inputBinding:
       position: 101
       prefix: --bam
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Bin reads into likely MIC and MAC origin and output Fasta files
-    default: false
     inputBinding:
       position: 101
       prefix: --bin
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: IES retention/excision threshold for binning to MIC or MAC respecitvely
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --bin_threshold
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Only process alignments from this contig
-    default: None
     inputBinding:
       position: 101
       prefix: --contig
@@ -46,7 +42,6 @@ inputs:
       - boolean
     doc: Dump contents of IES correlation objects to JSON file, for 
       troubleshooting
-    default: false
     inputBinding:
       position: 101
       prefix: --dump
@@ -55,7 +50,6 @@ inputs:
       - 'null'
       - File
     doc: GFF3 file containing coordinates of IES junctions in MAC genome
-    default: None
     inputBinding:
       position: 101
       prefix: --ies
@@ -65,7 +59,6 @@ inputs:
       - float
     doc: Length threshold to count matching IES length, if option 
       --use_ies_lengths is applied
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --length_threshold
@@ -74,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: Output filename prefix
-    default: milcor.test
     inputBinding:
       position: 101
       prefix: --out
@@ -83,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Start coordinate (1-based, inclusive) from contig to process
-    default: None
     inputBinding:
       position: 101
       prefix: --start
@@ -92,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Stop coordinate (1-based, inclusive) from contig to process
-    default: None
     inputBinding:
       position: 101
       prefix: --stop
@@ -102,7 +92,6 @@ inputs:
       - boolean
     doc: Only count inserts that match IES lengths reported in the input GFF 
       file. This assumes that the input GFF file is produced by BleTIES MILRAA
-    default: false
     inputBinding:
       position: 101
       prefix: --use_ies_lengths

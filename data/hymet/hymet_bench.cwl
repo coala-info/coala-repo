@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - File
     doc: Manifest TSV
-    default: bench/cami_manifest.tsv
     inputBinding:
       position: 102
       prefix: --manifest

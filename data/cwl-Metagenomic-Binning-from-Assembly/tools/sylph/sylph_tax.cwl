@@ -83,7 +83,6 @@ inputs:
     type: boolean
     doc: Add additional column(s) by integrating viral-host information available (currently available for IMGVR4.1). Default false
     label: Annotate virus hosts
-    default: false
     inputBinding:
       prefix: --annotate-virus-hosts
       position: 99
@@ -92,7 +91,6 @@ inputs:
     type: boolean
     doc: Output in Pavian compatible format. Default false
     label: Pavian format
-    default: false
     inputBinding:
       prefix: --pavian
       position: 99

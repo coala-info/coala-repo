@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - boolean
     doc: Flag to rewrite the HMM in binary mode. Useful to speed up annotation
-    default: false
     inputBinding:
       position: 101
       prefix: --binary
@@ -23,7 +22,6 @@ inputs:
     doc: Set the coverage threshold for the hmm and the target. The same 
       threshold will be used for all HMM and target. It's Not recommended for 
       PADLOC. For defense finder and macsy finder see --hmm_coverage.
-    default: (None, None)
     inputBinding:
       position: 101
       prefix: --coverage
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: disables the progress bars
-    default: false
     inputBinding:
       position: 101
       prefix: --disable_prog_bar
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force writing in output directory and in pangenome output file.
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -51,7 +47,6 @@ inputs:
       - type: array
         items: File
     doc: Path to HMM files or directory containing HMM
-    default: None
     inputBinding:
       position: 101
       prefix: --hmm
@@ -63,7 +58,6 @@ inputs:
       for all HMM. It's Not recommended for PADLOC. For defense finders it's 
       correspond to --coverage arguments.For macsyfinder it's correspond to 
       --coverage-profile.
-    default: None
     inputBinding:
       position: 101
       prefix: --hmm_coverage
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - File
     doc: log output file
-    default: stdout
     inputBinding:
       position: 101
       prefix: --log
@@ -81,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Path to metadata file to add some to list file
-    default: None
     inputBinding:
       position: 101
       prefix: --meta
@@ -91,7 +83,6 @@ inputs:
       - type: array
         items: string
     doc: Create a models_list.tsv file from the given models and check them.
-    default: None
     inputBinding:
       position: 101
       prefix: --models
@@ -100,7 +91,6 @@ inputs:
       - 'null'
       - boolean
     doc: Flag to indicate if directories should be read recursively
-    default: false
     inputBinding:
       position: 101
       prefix: --recursive
@@ -110,7 +100,6 @@ inputs:
       - string
     doc: Available sources that we know how to translate.The directory will be 
       read recursively to catch all models.
-    default: None
     inputBinding:
       position: 101
       prefix: --source
@@ -121,7 +110,6 @@ inputs:
     doc: Set the coverage threshold on the target. The same threshold will be 
       used for all target. It's Not recommended for PADLOC, defensefinder or 
       macsyfinder.
-    default: None
     inputBinding:
       position: 101
       prefix: --target_coverage
@@ -132,7 +120,6 @@ inputs:
     doc: Path to models to be translated. Give the directory with models, hmms 
       and other files.PANORAMA will take care of everything it needs to 
       translate.
-    default: None
     inputBinding:
       position: 101
       prefix: --translate
@@ -142,7 +129,6 @@ inputs:
       - int
     doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
       for debug)
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbose

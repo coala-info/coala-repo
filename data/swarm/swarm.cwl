@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: bits used per Bloom filter entry
-    default: 16
     inputBinding:
       position: 102
       prefix: --bloom-bits
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: min mass of large clusters
-    default: 3
     inputBinding:
       position: 102
       prefix: --boundary
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: resolution
-    default: 1
     inputBinding:
       position: 102
       prefix: --differences
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: gap extension penalty
-    default: 4
     inputBinding:
       position: 102
       prefix: --gap-extension-penalty
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: gap open penalty
-    default: 12
     inputBinding:
       position: 102
       prefix: --gap-opening-penalty
@@ -109,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: reward for nucleotide match
-    default: 5
     inputBinding:
       position: 102
       prefix: --match-reward
@@ -118,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: penalty for nucleotide mismatch
-    default: 4
     inputBinding:
       position: 102
       prefix: --mismatch-penalty
@@ -167,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

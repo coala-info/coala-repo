@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: The number of nucleotides to extend for each segment
-    default: 0
     inputBinding:
       position: 102
       prefix: -x

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - File
     doc: configuration file
-    default: config.txt
     inputBinding:
       position: 101
       prefix: -c
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: downstream region size
-    default: 1000
     inputBinding:
       position: 101
       prefix: -D
@@ -53,7 +51,6 @@ inputs:
       - int
     doc: attribute a read to a feature if at least N% of the hits map to the 
       feature
-    default: 100
     inputBinding:
       position: 101
       prefix: -e
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: 'overlap type (<0: read is included, <1: % overlap, otherwise: # nt)'
-    default: -1
     inputBinding:
       position: 101
       prefix: -l
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: 'quantification strategy, valid values are: default, unique, random, ratio'
-    default: default
     inputBinding:
       position: 101
       prefix: -y
@@ -88,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: format of the read files (SAM or BAM)
-    default: guess from file extension
     inputBinding:
       position: 101
       prefix: -f
@@ -115,7 +109,6 @@ inputs:
       - string
     doc: 'strand (U, F, R, FR, RF, FF, defaut: F) (use several strand types if the
       library strategies differ)'
-    default: F
     inputBinding:
       position: 101
       prefix: -s
@@ -124,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: '# threads'
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -133,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: upstream region size
-    default: 1000
     inputBinding:
       position: 101
       prefix: -d

@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum probability for a variant to be considered in the graph
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --min-prob-present
@@ -25,7 +24,6 @@ inputs:
       - float
     doc: Minimum VAF for a variant to be kept. The maximum VAF across samples 
       must meet or exceed this threshold
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --min-vaf

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: if set then stop after sending COUNT requests
-    default: send requests forever
     inputBinding:
       position: 102
       prefix: --count
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: set the interval between sending requests in seconds
-    default: 5
     inputBinding:
       position: 102
       prefix: --interval

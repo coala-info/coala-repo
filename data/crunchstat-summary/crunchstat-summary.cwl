@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Output format (text, html, json)
-    default: text
     inputBinding:
       position: 101
       prefix: --format

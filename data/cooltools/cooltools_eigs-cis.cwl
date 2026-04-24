@@ -29,7 +29,6 @@ inputs:
       - string
     doc: Use balancing weight with this name. Using raw unbalanced data is not 
       currently supported for eigenvectors.
-    default: weight
     inputBinding:
       position: 102
       prefix: --clr-weight-name
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Number of eigenvectors to compute.
-    default: 3
     inputBinding:
       position: 102
       prefix: --n-eigs

@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: Interval for peptide lengths to be generated in the format `start-end`
-    default: 8-11
     inputBinding:
       position: 101
       prefix: --interval
@@ -51,7 +50,6 @@ inputs:
       - int
     doc: Maximum CDS length to consider for processing. Transcripts containing 
       longer CDSs will be ignored with a warning
-    default: 5000
     inputBinding:
       position: 101
       prefix: --max-cds-length

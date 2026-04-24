@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Gap sequence N length
-    default: 10
     inputBinding:
       position: 101
       prefix: --gap-sequence-length
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal contig coverage
-    default: 90
     inputBinding:
       position: 101
       prefix: --min-contig-coverage
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal contig identity
-    default: 90
     inputBinding:
       position: 101
       prefix: --min-contig-identity
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal plasmid coverage
-    default: 80
     inputBinding:
       position: 101
       prefix: --min-plasmid-coverage
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal plasmid identity
-    default: 90
     inputBinding:
       position: 101
       prefix: --min-plasmid-identity

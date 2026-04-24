@@ -22,7 +22,6 @@ inputs:
       - boolean
     doc: Add backtrace string (convert to alignments with mmseqs convertalis 
       module)
-    default: 0
     inputBinding:
       position: 103
       prefix: -a
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: Artificially add entries of queries with themselves (for clustering)
-    default: 0
     inputBinding:
       position: 103
       prefix: --add-self-matches
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - boolean
     doc: Adjust k-mer length based on specificity (only for nucleotides)
-    default: 0
     inputBinding:
       position: 103
       prefix: --adjust-kmer-len
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: Alphabet size (range 2-21)
-    default: nucl:5,aa:13
     inputBinding:
       position: 103
       prefix: --alph-size
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: Path to damage matrix (ancient)
-    default: ''
     inputBinding:
       position: 103
       prefix: --ancient-damage
@@ -67,7 +62,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove superfluous part of circular fragments (see --cycle-check)
-    default: 1
     inputBinding:
       position: 103
       prefix: --chop-cycle
@@ -77,7 +71,6 @@ inputs:
       - float
     doc: Coverage threshold passed to linclust algorithm to reduce redundancy in
       assembly (range 0.0-1.0)
-    default: 0.99
     inputBinding:
       position: 103
       prefix: --clust-min-cov
@@ -87,7 +80,6 @@ inputs:
       - float
     doc: Seq. id. threshold passed to linclust algorithm to reduce redundancy in
       assembly (range 0.0-1.0)
-    default: 0.97
     inputBinding:
       position: 103
       prefix: --clust-min-seq-id
@@ -97,7 +89,6 @@ inputs:
       - int
     doc: 'Clustering mode: 0: Set-Cover (greedy), 1: Connected component (BLASTclust),
       2,3: Greedy clustering by sequence length (CDHIT)'
-    default: 2
     inputBinding:
       position: 103
       prefix: --cluster-mode
@@ -106,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Write compressed output
-    default: 0
     inputBinding:
       position: 103
       prefix: --compressed
@@ -115,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: 'Type of contigs: 0: all, 1: only extended'
-    default: 1
     inputBinding:
       position: 103
       prefix: --contig-output-mode
@@ -124,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Coverage mode for alignment
-    default: 1
     inputBinding:
       position: 103
       prefix: --cov-mode
@@ -133,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Create database lookup file (can be very large)
-    default: 0
     inputBinding:
       position: 103
       prefix: --create-lookup
@@ -143,7 +130,6 @@ inputs:
       - int
     doc: 'Createdb mode 0: copy data, 1: soft link data and write new index (works
       only with single line fasta/q)'
-    default: 0
     inputBinding:
       position: 103
       prefix: --createdb-mode
@@ -153,7 +139,6 @@ inputs:
       - boolean
     doc: Check for circular sequences (avoid over extension of circular or long 
       repeated regions)
-    default: 1
     inputBinding:
       position: 103
       prefix: --cycle-check
@@ -162,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: 'Database preload mode 0: auto, 1: fread, 2: mmap, 3: mmap+touch'
-    default: 0
     inputBinding:
       position: 103
       prefix: --db-load-mode
@@ -171,7 +155,6 @@ inputs:
       - 'null'
       - boolean
     doc: Input is database
-    default: 0
     inputBinding:
       position: 103
       prefix: --db-mode
@@ -180,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: 'Database type 0: auto, 1: amino acid 2: nucleotides'
-    default: 0
     inputBinding:
       position: 103
       prefix: --dbtype
@@ -189,7 +171,6 @@ inputs:
       - 'null'
       - int
     doc: Delete temporary files incremental [0,1]
-    default: 1
     inputBinding:
       position: 103
       prefix: --delete-tmp-inc
@@ -198,7 +179,6 @@ inputs:
       - 'null'
       - float
     doc: 'Use float: 0.25 to 0.5 (ancient)'
-    default: 0.062
     inputBinding:
       position: 103
       prefix: --excess-penalty
@@ -207,7 +187,6 @@ inputs:
       - 'null'
       - float
     doc: 'Use either: 0.8 or 0.9 (ancient)'
-    default: 0.85
     inputBinding:
       position: 103
       prefix: --ext-random-align
@@ -216,7 +195,6 @@ inputs:
       - 'null'
       - float
     doc: Extend sequences if the E-value is below (range 0.0-inf)
-    default: '1.000E-03'
     inputBinding:
       position: 103
       prefix: -e
@@ -225,7 +203,6 @@ inputs:
       - 'null'
       - boolean
     doc: Filter hits by seq.id. and coverage
-    default: 0
     inputBinding:
       position: 103
       prefix: --filter-hits
@@ -234,7 +211,6 @@ inputs:
       - 'null'
       - string
     doc: Comma-separated list of frames on the forward strand to be extracted
-    default: 1,2,3
     inputBinding:
       position: 103
       prefix: --forward-frames
@@ -243,7 +219,6 @@ inputs:
       - 'null'
       - string
     doc: Gap extend cost (only for clustering)
-    default: '2'
     inputBinding:
       position: 103
       prefix: --gap-extend
@@ -252,7 +227,6 @@ inputs:
       - 'null'
       - string
     doc: Gap open cost (only for clustering)
-    default: '5'
     inputBinding:
       position: 103
       prefix: --gap-open
@@ -261,7 +235,6 @@ inputs:
       - 'null'
       - int
     doc: Shift k-mer hash initialization
-    default: 67
     inputBinding:
       position: 103
       prefix: --hash-shift
@@ -270,7 +243,6 @@ inputs:
       - 'null'
       - int
     doc: Numeric ids in index file are offset by this value
-    default: 0
     inputBinding:
       position: 103
       prefix: --id-offset
@@ -279,7 +251,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip k-mers occurring multiple times (>=2)
-    default: 1
     inputBinding:
       position: 103
       prefix: --ignore-multi-kmer
@@ -288,7 +259,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include only extendable
-    default: 1
     inputBinding:
       position: 103
       prefix: --include-only-extendable
@@ -297,7 +267,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length contig step (ancient)
-    default: 22
     inputBinding:
       position: 103
       prefix: --k-ancient-contigs
@@ -306,7 +275,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length read step (ancient)
-    default: 20
     inputBinding:
       position: 103
       prefix: --k-ancient-reads
@@ -315,7 +283,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep target sequences
-    default: 1
     inputBinding:
       position: 103
       prefix: --keep-target
@@ -324,7 +291,6 @@ inputs:
       - 'null'
       - string
     doc: 'k-mer length (0: automatically set to optimum)'
-    default: nucl:20,aa:14
     inputBinding:
       position: 103
       prefix: -k
@@ -333,7 +299,6 @@ inputs:
       - 'null'
       - int
     doc: k-mers per sequence
-    default: 200
     inputBinding:
       position: 103
       prefix: --kmer-per-seq
@@ -343,7 +308,6 @@ inputs:
       - string
     doc: Scale k-mer per sequence based on sequence length as kmer-per-seq val +
       scale x seqlen
-    default: '0.200'
     inputBinding:
       position: 103
       prefix: --kmer-per-seq-scale
@@ -352,7 +316,6 @@ inputs:
       - 'null'
       - float
     doc: Min. odds ratio to accept read extension. Range 0-1 (ancient)
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --likelihood-ratio-threshold
@@ -362,7 +325,6 @@ inputs:
       - int
     doc: 'Mask sequences in k-mer stage: 0: w/o low complexity masking, 1: with low
       complexity masking'
-    default: 0
     inputBinding:
       position: 103
       prefix: --mask
@@ -372,7 +334,6 @@ inputs:
       - int
     doc: 'Lowercase letters will be excluded from k-mer search 0: include region,
       1: exclude region'
-    default: 0
     inputBinding:
       position: 103
       prefix: --mask-lower-case
@@ -381,7 +342,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum codon number in open reading frames
-    default: 32734
     inputBinding:
       position: 103
       prefix: --max-length
@@ -390,7 +350,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum sequence length
-    default: 200000
     inputBinding:
       position: 103
       prefix: --max-seq-len
@@ -399,7 +358,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment length (range 0-INT_MAX)
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-aln-len
@@ -408,7 +366,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of assembled contig to output
-    default: 500
     inputBinding:
       position: 103
       prefix: --min-contig-len
@@ -417,7 +374,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage of extending region (ancient)
-    default: 5
     inputBinding:
       position: 103
       prefix: --min-cov-safe
@@ -426,7 +382,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum codon number in open reading frames
-    default: 45
     inputBinding:
       position: 103
       prefix: --min-length
@@ -435,7 +390,6 @@ inputs:
       - 'null'
       - float
     doc: Min. seq. ident. of contig overlaps (ancient) (range 0.0-1.0)
-    default: 0.99
     inputBinding:
       position: 103
       prefix: --min-merge-seq-id
@@ -445,7 +399,6 @@ inputs:
       - float
     doc: List matches above this sequence identity in RY-mer space (ancient) 
       (range 0.0-1.0)
-    default: 0.99
     inputBinding:
       position: 103
       prefix: --min-ryseq-id
@@ -454,7 +407,6 @@ inputs:
       - 'null'
       - float
     doc: Min. RY-mer space seq. ident in correction phase. Range 0-1 (ancient)
-    default: 0.99
     inputBinding:
       position: 103
       prefix: --min-ryseq-id-corr-reads
@@ -463,7 +415,6 @@ inputs:
       - 'null'
       - string
     doc: Overlap sequence identity threshold (range 0.0-1.0)
-    default: nucl:0.900,aa:0.970
     inputBinding:
       position: 103
       prefix: --min-seq-id
@@ -472,7 +423,6 @@ inputs:
       - 'null'
       - float
     doc: Min. seq. ident. for contig correction (ancient) (range 0.0-1.0)
-    default: 0.9
     inputBinding:
       position: 103
       prefix: --min-seqid-corr-contigs
@@ -481,7 +431,6 @@ inputs:
       - 'null'
       - float
     doc: Min. seq. ident. in correction phase. Range 0-1 (ancient)
-    default: 0.9
     inputBinding:
       position: 103
       prefix: --min-seqid-corr-reads
@@ -490,7 +439,6 @@ inputs:
       - 'null'
       - string
     doc: Use MPI on compute cluster with this MPI command (e.g. "mpirun -np 42")
-    default: ''
     inputBinding:
       position: 103
       prefix: --mpi-runner
@@ -500,7 +448,6 @@ inputs:
       - int
     doc: 'Raw reads only: Number of assembly iterations performed on nucleotide level
       (ancient)'
-    default: 5
     inputBinding:
       position: 103
       prefix: --num-iter-reads-only
@@ -510,7 +457,6 @@ inputs:
       - string
     doc: Number of assembly total iterations performed on nucleotide level 
       (ignore protein level for ancient) (range 1-inf)
-    default: nucl:10,aa:1
     inputBinding:
       position: 103
       prefix: --num-iterations
@@ -519,7 +465,6 @@ inputs:
       - 'null'
       - boolean
     doc: Delete temporary files
-    default: 0
     inputBinding:
       position: 103
       prefix: --remove-tmp-files
@@ -528,7 +473,6 @@ inputs:
       - 'null'
       - int
     doc: 'Rescore diagonals with:'
-    default: 3
     inputBinding:
       position: 103
       prefix: --rescore-mode
@@ -537,7 +481,6 @@ inputs:
       - 'null'
       - string
     doc: Comma-separated list of frames on the reverse strand to be extracted
-    default: 1,2,3
     inputBinding:
       position: 103
       prefix: --reverse-frames
@@ -546,7 +489,6 @@ inputs:
       - 'null'
       - int
     doc: 'Sequence identity mode: 0: alignment length 1: shorter, 2: longer sequence'
-    default: 0
     inputBinding:
       position: 103
       prefix: --seq-id-mode
@@ -555,7 +497,6 @@ inputs:
       - 'null'
       - boolean
     doc: Shuffle input database
-    default: 1
     inputBinding:
       position: 103
       prefix: --shuffle
@@ -564,7 +505,6 @@ inputs:
       - 'null'
       - int
     doc: 'Sort results: 0: no sorting, 1: sort by E-value (Alignment) or seq.id. (Hamming)'
-    default: 0
     inputBinding:
       position: 103
       prefix: --sort-results
@@ -573,7 +513,6 @@ inputs:
       - 'null'
       - int
     doc: '0: use consecutive positions in k-mers; 1: use spaced k-mers'
-    default: 0
     inputBinding:
       position: 103
       prefix: --spaced-kmer-mode
@@ -582,7 +521,6 @@ inputs:
       - 'null'
       - string
     doc: User-specified spaced k-mer pattern
-    default: ''
     inputBinding:
       position: 103
       prefix: --spaced-kmer-pattern
@@ -592,7 +530,6 @@ inputs:
       - string
     doc: Set max memory per split. E.g. 800B, 5K, 10M, 1G. Default (0) to all 
       available system memory
-    default: '0'
     inputBinding:
       position: 103
       prefix: --split-memory-limit
@@ -601,7 +538,6 @@ inputs:
       - 'null'
       - string
     doc: Substitution matrix file
-    default: nucl:nucleotide.out,aa:blosum62.out
     inputBinding:
       position: 103
       prefix: --sub-mat
@@ -610,7 +546,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU-cores used (all by default)
-    default: 20
     inputBinding:
       position: 103
       prefix: --threads
@@ -619,7 +554,6 @@ inputs:
       - 'null'
       - boolean
     doc: Translate ORF to amino acid
-    default: 0
     inputBinding:
       position: 103
       prefix: --translate
@@ -628,7 +562,6 @@ inputs:
       - 'null'
       - int
     doc: Genetic code table
-    default: 1
     inputBinding:
       position: 103
       prefix: --translation-table
@@ -637,7 +570,6 @@ inputs:
       - 'null'
       - boolean
     doc: Maximize the contig length, but higher misassembly rate (ancient)
-    default: 0
     inputBinding:
       position: 103
       prefix: --unsafe
@@ -647,7 +579,6 @@ inputs:
       - boolean
     doc: Use all alternatives for a start codon in the genetic table, if false -
       only ATG (AUG)
-    default: 0
     inputBinding:
       position: 103
       prefix: --use-all-table-starts
@@ -656,7 +587,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbosity level: 0: quiet, 1: +errors, 2: +warnings, 3: +info'
-    default: 3
     inputBinding:
       position: 103
       prefix: -v
@@ -666,7 +596,6 @@ inputs:
       - int
     doc: write .lookup file containing mapping from internal id, fasta id and 
       file number
-    default: 1
     inputBinding:
       position: 103
       prefix: --write-lookup
@@ -676,7 +605,6 @@ inputs:
       - int
     doc: Maximal allowed difference between score values before alignment is 
       truncated (only for clustering)
-    default: 200
     inputBinding:
       position: 103
       prefix: --zdrop

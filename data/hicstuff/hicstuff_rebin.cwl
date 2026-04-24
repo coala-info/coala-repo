@@ -22,7 +22,6 @@ inputs:
       - int
     doc: "Subsampling factor or fix value in\n                                   \
       \      basepairs to use for binning"
-    default: 1
     inputBinding:
       position: 103
       prefix: --binning

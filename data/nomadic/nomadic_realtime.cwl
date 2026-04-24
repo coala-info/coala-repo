@@ -46,7 +46,6 @@ inputs:
       - File
     doc: Path to metadata file (CSV or XLSX (Excel)) containing barcode and 
       sample information.
-    default: (<workspace>/metadata/<experiment_name>.csv)
     inputBinding:
       position: 102
       prefix: --metadata_path
@@ -57,7 +56,6 @@ inputs:
     doc: Path to the minknow output directory. Can be either the base directory,
       e.g. /var/lib/minknow/data, or the directory of the experiment, e.g. 
       /var/lib/minknow/data/<experiment_name>.
-    default: /var/lib/minknow/data
     inputBinding:
       position: 102
       prefix: --minknow_dir
@@ -126,7 +124,6 @@ inputs:
       results) are stored. The workspace directory simplifies the use of nomadic
       in that many arguments don't need to be listed as they are predefined in 
       the workspace config or can be loaded from the workspace
-    default: (current directory)
     inputBinding:
       position: 102
       prefix: --workspace

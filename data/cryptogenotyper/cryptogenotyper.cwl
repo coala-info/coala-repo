@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: Display header on tab-delimited file
-    default: false
     inputBinding:
       position: 101
       prefix: --noheaderline
@@ -85,7 +84,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn on verbose logging
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

@@ -24,7 +24,6 @@ inputs:
       - int
     doc: Ignore records with block length (GAF col 11) (only applies if query length
       > N) < N
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-block-length
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Filter so that reported minimizer matches have >=N bases between them
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-gap
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore records with MAPQ (GAF col 12) < N
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-mapq
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore minimizers on GAF nodes of length < N
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-node-length
@@ -71,7 +67,6 @@ inputs:
     doc: If >= query regions with size >= N overlap, ignore the query region. If 1
       query region with size >= N overlaps any regions of size <= N, ignore the smaller
       ones only. (0 = disable)
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-overlap-length
@@ -105,7 +100,6 @@ inputs:
       - float
     doc: Filter minimizers that appear in fewer than this fraction of alignments to
       target
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --universal-mz

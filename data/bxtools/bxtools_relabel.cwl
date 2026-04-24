@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: 'Select verbosity level (0-4). Default: 0'
-    default: 0
     inputBinding:
       position: 102
       prefix: --verbose

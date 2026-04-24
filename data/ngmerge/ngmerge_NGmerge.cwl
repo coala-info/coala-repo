@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: FASTQ quality offset
-    default: 33
     inputBinding:
       position: 101
       prefix: -q
@@ -72,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: Delimiter for headers of paired reads
-    default: ' '
     inputBinding:
       position: 101
       prefix: -t
@@ -97,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum input quality score (0-based)
-    default: 40
     inputBinding:
       position: 101
       prefix: -u
@@ -106,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum overlap of dovetailed alignments
-    default: 50
     inputBinding:
       position: 101
       prefix: -e
@@ -115,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of output reads
-    default: 1
     inputBinding:
       position: 101
       prefix: -x
@@ -124,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum overlap of the paired-end reads
-    default: 20
     inputBinding:
       position: 101
       prefix: -m
@@ -134,7 +128,6 @@ inputs:
       - float
     doc: Mismatches to allow in the overlapped region (a fraction of the overlap
       length)
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -p
@@ -165,7 +158,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: -n

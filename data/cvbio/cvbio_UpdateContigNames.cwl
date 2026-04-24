@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
-    default: false
     inputBinding:
       position: 101
       prefix: --async-io
@@ -22,7 +21,6 @@ inputs:
       - type: array
         items: int
     doc: The column names to convert, 0-indexed.
-    default: 0
     inputBinding:
       position: 101
       prefix: --columns
@@ -32,7 +30,6 @@ inputs:
       - type: array
         items: string
     doc: Directly write-out lines that start with these prefixes.
-    default: '#'
     inputBinding:
       position: 101
       prefix: --comment-chars
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Default GZIP compression level, BAM compression level.
-    default: 5
     inputBinding:
       position: 101
       prefix: --compression
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: The input file data delimiter.
-    default: ' '
     inputBinding:
       position: 101
       prefix: --delimiter
@@ -66,7 +61,6 @@ inputs:
       - string
     doc: 'Minimum severity log-level to emit. Options: Debug, Info, Warning, Error,
       Fatal.'
-    default: Info
     inputBinding:
       position: 101
       prefix: --log-level
@@ -91,7 +85,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip (ignore) records which do not have a mapping.
-    default: true
     inputBinding:
       position: 101
       prefix: --skip-missing
@@ -100,7 +93,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to use for temporary files.
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmp-dir

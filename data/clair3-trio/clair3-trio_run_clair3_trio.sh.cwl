@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: 'The size of each chuck for parallel processing, default: 5000000.'
-    default: 5000000
     inputBinding:
       position: 101
       prefix: --chunk_size
@@ -86,7 +85,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Call variants on all contigs, otherwise call in chr{1..22,X,Y} and {1..22,X,Y},
-      default: disable.'
     inputBinding:
       position: 101
       prefix: --include_all_ctgs
@@ -96,7 +94,6 @@ inputs:
       - float
     doc: 'Minimum Indel AF required for a candidate variant. Lowering the value might
       increase a bit of sensitivity in trade of speed and accuracy, default: ont:0.15,hifi:0.08,ilmn:0.08.'
-    default: ont:0.15,hifi:0.08,ilmn:0.08
     inputBinding:
       position: 101
       prefix: --indel_min_af
@@ -130,7 +127,6 @@ inputs:
       - string
     doc: 'EXPERIMENTAL: Model prefix in pileup calling, including $prefix.data-00000-of-00002,
       $prefix.data-00001-of-00002 $prefix.index. default: pileup.'
-    default: pileup
     inputBinding:
       position: 101
       prefix: --pileup_model_prefix
@@ -195,7 +191,6 @@ inputs:
       - float
     doc: 'EXPERIMENTAL: Specify an expected percentage of low quality 0/0 variants
       called in the pileup mode for full-alignment mode calling, default:  0.1 .'
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --ref_pct_full
@@ -204,7 +199,6 @@ inputs:
       - 'null'
       - string
     doc: Define the sample name for Child to be shown in the VCF file.
-    default: Child
     inputBinding:
       position: 101
       prefix: --sample_name_c
@@ -213,7 +207,6 @@ inputs:
       - 'null'
       - string
     doc: Define the sample name for Parent1 to be shown in the VCF file.
-    default: Parent1
     inputBinding:
       position: 101
       prefix: --sample_name_p1
@@ -222,7 +215,6 @@ inputs:
       - 'null'
       - string
     doc: Define the sample name for Parent2 to be shown in the VCF file.
-    default: Parent2
     inputBinding:
       position: 101
       prefix: --sample_name_p2
@@ -240,7 +232,6 @@ inputs:
       - float
     doc: 'Minimum SNP AF required for a candidate variant. Lowering the value might
       increase a bit of sensitivity in trade of speed and accuracy, default: ont:0.08,hifi:0.08,ilmn:0.08.'
-    default: ont:0.08,hifi:0.08,ilmn:0.08
     inputBinding:
       position: 101
       prefix: --snp_min_af
@@ -258,7 +249,6 @@ inputs:
       - string
     doc: 'Model prefix in trio calling, including $prefix.data-00000-of-00002, $prefix.data-00001-of-00002
       $prefix.index, default: trio.'
-    default: trio
     inputBinding:
       position: 101
       prefix: --trio_model_prefix
@@ -269,7 +259,6 @@ inputs:
     doc: 'EXPERIMENTAL: Specify an expected percentage of low quality 0/1 and 1/1
       variants called in the pileup mode for full-alignment mode calling, default:
       0.3.'
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --var_pct_full
@@ -279,7 +268,6 @@ inputs:
       - float
     doc: 'EXPERIMENTAL: Specify an expected percentage of high quality 0/1 variants
       used in WhatsHap phasing, default: 0.8 for ont guppy5 and 0.7 for other platforms.'
-    default: 0.8 for ont guppy5 and 0.7 for other platforms
     inputBinding:
       position: 101
       prefix: --var_pct_phasing

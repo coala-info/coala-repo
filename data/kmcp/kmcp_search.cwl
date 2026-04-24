@@ -82,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Remove duplicated kmers for a query with >= X k-mers.
-    default: 256
     inputBinding:
       position: 104
       prefix: --kmer-dedup-threshold
@@ -119,7 +118,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum false positive rate of a query.
-    default: 0.01
     inputBinding:
       position: 104
       prefix: --max-fpr
@@ -128,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of matched k-mers (sketches).
-    default: 10
     inputBinding:
       position: 104
       prefix: --min-kmers
@@ -138,7 +135,6 @@ inputs:
       - float
     doc: Minimum query coverage, i.e., proportion of matched k-mers and unique 
       k-mers of a query.
-    default: 0.55
     inputBinding:
       position: 104
       prefix: --min-query-cov
@@ -147,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum query length.
-    default: 30
     inputBinding:
       position: 104
       prefix: --min-query-len
@@ -226,7 +221,6 @@ inputs:
       - 'null'
       - string
     doc: Sort hits by "qcov", "tcov" or "jacc" (Jaccard Index).
-    default: qcov
     inputBinding:
       position: 104
       prefix: --sort-by
@@ -235,7 +229,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs cores to use.
-    default: 20
     inputBinding:
       position: 104
       prefix: --threads

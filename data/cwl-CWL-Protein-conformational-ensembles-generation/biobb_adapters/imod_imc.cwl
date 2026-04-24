@@ -60,7 +60,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_traj_path
-    default: system.pdb
 
   config:
     label: Advanced configuration options for biobb_flexdyn imod_imc

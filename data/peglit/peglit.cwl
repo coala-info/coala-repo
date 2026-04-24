@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allowed AC content in linker sequence.
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --ac-thresh
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Number of sequences to output.
-    default: 1
     inputBinding:
       position: 102
       prefix: --bottleneck
@@ -72,7 +70,6 @@ inputs:
       - float
     doc: Basepairing probabilities are considered equal if their difference is 
       less than this tolerance value.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --epsilon
@@ -89,7 +86,6 @@ inputs:
       - 'null'
       - string
     doc: Nucleotides allowed in linker.
-    default: NNNNNNNN
     inputBinding:
       position: 102
       prefix: --linker-pattern
@@ -108,7 +104,6 @@ inputs:
     doc: In verbose output, + indicates predicted structure contains motif that 
       interacts with the rest of the pegRNA with probability greater than 
       threshold.
-    default: 0.15
     inputBinding:
       position: 102
       prefix: --motif-thresh
@@ -125,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of consecutive any nucleotide allowed.
-    default: 3
     inputBinding:
       position: 102
       prefix: --n-thresh
@@ -142,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: Number of repeats.
-    default: 10
     inputBinding:
       position: 102
       prefix: --num-repeats
@@ -159,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: Number of steps.
-    default: 250
     inputBinding:
       position: 102
       prefix: --num-steps
@@ -178,7 +170,6 @@ inputs:
     doc: In verbose output, * indicates predicted structure contains scaffold 
       that interacts with the rest of the pegRNA with probability greater than 
       threshold.
-    default: 0.15
     inputBinding:
       position: 102
       prefix: --scaffold-thresh
@@ -195,7 +186,6 @@ inputs:
       - 'null'
       - int
     doc: Reproducibly initializes pseudorandom number generator.
-    default: 2020
     inputBinding:
       position: 102
       prefix: --seed
@@ -204,7 +194,6 @@ inputs:
       - 'null'
       - float
     doc: Multiplicative temperature decay per step.
-    default: 0.95
     inputBinding:
       position: 102
       prefix: --temp-decay
@@ -221,7 +210,6 @@ inputs:
       - 'null'
       - float
     doc: Initial temperature.
-    default: 0.15
     inputBinding:
       position: 102
       prefix: --temp-init
@@ -239,7 +227,6 @@ inputs:
       - int
     doc: Keep this many of the best linkers. Small value -> better linker 
       sequences. Large value -> potentially more diverse.
-    default: 100
     inputBinding:
       position: 102
       prefix: --topn
@@ -256,7 +243,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of consecutive Us allowed in linker sequence.
-    default: 3
     inputBinding:
       position: 102
       prefix: --u-thresh

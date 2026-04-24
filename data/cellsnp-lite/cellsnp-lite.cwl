@@ -51,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum total counts for a SNP to be output.
-    default: 20
     inputBinding:
       position: 101
       prefix: --minCOUNT
@@ -60,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum minor allele frequency for a SNP to be output.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --minMAF
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --nproc

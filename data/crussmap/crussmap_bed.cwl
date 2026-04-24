@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: rewrite output file, default is false
-    default: false
     inputBinding:
       position: 101
       prefix: --rewrite

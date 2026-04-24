@@ -51,7 +51,6 @@ inputs:
     doc: 'cluster redundant isoforms, including those that can be concatenated with
       no overhangs, and perform calculations with longest (min overlap, default: -i
       40, use -i 0 to disable)'
-    default: 40
     inputBinding:
       position: 101
       prefix: -i
@@ -98,7 +97,6 @@ inputs:
       - 'null'
       - float
     doc: 'max E-value (default: -E 1e-05 , max=0.01)'
-    default: '1e-05'
     inputBinding:
       position: 101
       prefix: -E
@@ -108,7 +106,6 @@ inputs:
       - int
     doc: 'min %coverage of shortest sequence in BLAST alignments (range [1-100],default:
       -C 75)'
-    default: 75
     inputBinding:
       position: 101
       prefix: -C
@@ -118,7 +115,6 @@ inputs:
       - int
     doc: 'min %sequence identity in BLAST query/subj pairs (range [1-100],default:
       -S 95 [BDBH|OMCL])'
-    default: 95
     inputBinding:
       position: 101
       prefix: -S
@@ -127,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: nb of threads for BLASTN/HMMER/MCL in 'local' runmode (default=2)
-    default: 2
     inputBinding:
       position: 101
       prefix: -n
@@ -144,7 +139,6 @@ inputs:
       - 'null'
       - float
     doc: 'orthoMCL inflation value (range [1-5], default: -F 1.5 [OMCL])'
-    default: 1.5
     inputBinding:
       position: 101
       prefix: -F
@@ -199,7 +193,6 @@ inputs:
       - string
     doc: 'runmode [local|cluster|dryrun|dryrun|/path/custom/HPC.conf] (def: local,
       path overrides ./HPC.conf)'
-    default: local
     inputBinding:
       position: 101
       prefix: -m

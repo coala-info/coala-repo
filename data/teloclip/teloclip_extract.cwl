@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of sequences to buffer before writing (default: 1000).'
-    default: 1000
     inputBinding:
       position: 102
       prefix: --buffer-size
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Write extracted reads to this directory. Default: cwd.'
-    default: cwd
     inputBinding:
       position: 102
       prefix: --extract-dir
@@ -73,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: 'Logging level (default: INFO).'
-    default: INFO
     inputBinding:
       position: 102
       prefix: --log-level
@@ -82,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: 'Tolerate max N unaligned bases before contig end. Default: 50'
-    default: 50
     inputBinding:
       position: 102
       prefix: --max-break
@@ -91,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum anchored alignment length required (default: 100).'
-    default: 100
     inputBinding:
       position: 102
       prefix: --min-anchor
@@ -101,7 +96,6 @@ inputs:
       - int
     doc: 'Require clip to extend past ref contig end by at least N bases. Default:
       1'
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-clip
@@ -110,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum mapping quality required (default: 0).'
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-mapq
@@ -127,7 +120,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output format for extracted sequences (default: fasta).'
-    default: fasta
     inputBinding:
       position: 102
       prefix: --output-format

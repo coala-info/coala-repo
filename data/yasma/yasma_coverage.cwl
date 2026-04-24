@@ -30,7 +30,6 @@ inputs:
     doc: "Directory name for annotation output.\n                                \
       \ Defaults to the current directory, with this\n                           \
       \      directory name as the project name."
-    default: current directory
     inputBinding:
       position: 101
       prefix: --output_directory
@@ -46,7 +45,6 @@ inputs:
       \                   without dash. Multiple peaks may be\n                  \
       \               identified, separated with spaces or by\n                  \
       \               calling the option again."
-    default: 20-25
     inputBinding:
       position: 101
       prefix: --peaks

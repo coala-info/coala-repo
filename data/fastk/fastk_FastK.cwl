@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size.
-    default: 40
     inputBinding:
       position: 102
       prefix: -k
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Use -M GB of memory in downstream sorting steps of KMcount.
-    default: 12
     inputBinding:
       position: 102
       prefix: -M
@@ -83,7 +81,6 @@ inputs:
       - 'null'
       - Directory
     doc: Place block level sorts in directory -P.
-    default: $TMPDIR
     inputBinding:
       position: 102
       prefix: -P
@@ -100,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Use -T threads.
-    default: 4
     inputBinding:
       position: 102
       prefix: -T

@@ -28,7 +28,6 @@ inputs:
     doc: If set to 1, then Hmmer will search SINE using the animal hmm files 
       from Dfam. If set to 2, then Hmmer will search SINE using both the plant 
       and animal hmm files.
-    default: 0
     inputBinding:
       position: 104
       prefix: --animal
@@ -38,7 +37,6 @@ inputs:
       - int
     doc: If set to 1, then the program will skip finished steps and continue 
       unifinished steps for a previously processed output dir.
-    default: 0
     inputBinding:
       position: 104
       prefix: --automatically_continue
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: Expectation value threshold for sequences alignment search
-    default: '1e-10'
     inputBinding:
       position: 104
       prefix: --blast_evalue
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: Output SINE seed boundaries based on TSD or MSA
-    default: msa
     inputBinding:
       position: 104
       prefix: --boundary
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum threshold of the copy number for each element
-    default: 20
     inputBinding:
       position: 104
       prefix: --copy_number
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold of the copy number that determines the SINE boundary
-    default: 0.15
     inputBinding:
       position: 104
       prefix: --copy_number_factor
@@ -84,7 +78,6 @@ inputs:
       - string
     doc: Output the SINE seed MSA figures and copy number profiles (y/n). Please
       note that this step may take a long time to process.
-    default: n
     inputBinding:
       position: 104
       prefix: --figure
@@ -93,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum threshold of the truncated gap
-    default: 10
     inputBinding:
       position: 104
       prefix: --gap
@@ -102,7 +94,6 @@ inputs:
       - 'null'
       - float
     doc: Expectation value threshold for saving hits of homology search
-    default: '1e-10'
     inputBinding:
       position: 104
       prefix: --hmmer_evalue
@@ -111,7 +102,6 @@ inputs:
       - 'null'
       - string
     doc: Path to the irf program
-    default: ''
     inputBinding:
       position: 104
       prefix: --irf_path
@@ -121,7 +111,6 @@ inputs:
       - float
     doc: Threshold of the local alignment length relative to the the BLAST query
       length
-    default: 0.3
     inputBinding:
       position: 104
       prefix: --length_factor
@@ -131,7 +120,6 @@ inputs:
       - string
     doc: Annotate SINE in the whole genome based on the non-redundant library 
       (y/n)
-    default: y
     inputBinding:
       position: 104
       prefix: --non_redundant
@@ -140,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: --num_alignments value for blast alignments
-    default: 50000
     inputBinding:
       position: 104
       prefix: --num_alignments
@@ -149,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: If set to 0, then will not run RepearMasker (Step 8 for the code).
-    default: 1
     inputBinding:
       position: 104
       prefix: --RepeatMasker_enable
@@ -158,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum threshold of the boundary shift
-    default: 50
     inputBinding:
       position: 104
       prefix: --shift
@@ -176,7 +161,6 @@ inputs:
       - 'null'
       - int
     doc: Threads for each tool in AnnoSINE
-    default: 36
     inputBinding:
       position: 104
       prefix: --threads

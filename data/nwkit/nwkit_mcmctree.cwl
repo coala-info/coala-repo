@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add the header required for mcmctree.
-    default: false
     inputBinding:
       position: 101
       prefix: --add_header
@@ -21,7 +20,6 @@ inputs:
       - int
     doc: ETE tree format. See here 
       http://etetoolkit.org/docs/latest/tutorial/tutorial_trees.html
-    default: auto
     inputBinding:
       position: 101
       prefix: --format
@@ -31,7 +29,6 @@ inputs:
       - string
     doc: Attempt to obtain timetree data using the taxids for higher taxonomic 
       ranks if the species-level search failed.
-    default: yes
     inputBinding:
       position: 101
       prefix: --higher_rank_search
@@ -40,7 +37,6 @@ inputs:
       - 'null'
       - File
     doc: Input newick file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --infile
@@ -51,7 +47,6 @@ inputs:
     doc: Any species in the left clade. If you want to set a bound on the node 
       splitting Homo_sapiens and Mus_musculus, specify one of them (e.g., 
       Homo_sapiens).
-    default: None
     inputBinding:
       position: 101
       prefix: --left_species
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: Lower bound of the calibration point.
-    default: None
     inputBinding:
       position: 101
       prefix: --lower_bound
@@ -68,7 +62,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --lower_offset
@@ -76,7 +69,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 1
     inputBinding:
       position: 101
       prefix: --lower_scale
@@ -85,7 +77,6 @@ inputs:
       - 'null'
       - float
     doc: Lower tail probability. Use 1e-300 for hard bound. Default=0.025
-    default: 0.025
     inputBinding:
       position: 101
       prefix: --lower_tailProb
@@ -96,7 +87,6 @@ inputs:
     doc: Minimum proportion of the clade size to the total number of species. If
       the clade proportion is smaller than this value, time constraints are 
       removed.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_clade_prop
@@ -114,7 +104,6 @@ inputs:
       - 'null'
       - string
     doc: Whether node names are quoted in the input file.
-    default: yes
     inputBinding:
       position: 101
       prefix: --quoted_node_names
@@ -126,7 +115,6 @@ inputs:
       you want to set a bound on the node splitting Homo_sapiens and 
       Mus_musculus, specify the other one that is not used as the left species 
       (e.g., Mus_musculus).
-    default: None
     inputBinding:
       position: 101
       prefix: --right_species
@@ -137,7 +125,6 @@ inputs:
     doc: 'Obtain the divergence time from timetree.org. Tip labels are expected to
       be GENUS_SPECIES. point: point estimate, ci: 95 percent confidence interval
       as upper and lower bounds. no: disable the function.'
-    default: no
     inputBinding:
       position: 101
       prefix: --timetree
@@ -148,7 +135,6 @@ inputs:
     doc: Upper bound of the calibration point. A point estimate can be specified
       by setting the same age in both lower and upper bounds (e.g., 
       --lower_bound 5.2 --upper_bound 5.2)
-    default: None
     inputBinding:
       position: 101
       prefix: --upper_bound
@@ -157,7 +143,6 @@ inputs:
       - 'null'
       - float
     doc: Upper tail probability. Use 1e-300 for hard bound. Default=0.025
-    default: 0.025
     inputBinding:
       position: 101
       prefix: --upper_tailProb

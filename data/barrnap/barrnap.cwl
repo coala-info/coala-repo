@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - float
     doc: E-value cutoff for nhmmer
-    default: '1e-06'
     inputBinding:
       position: 102
       prefix: --evalue
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Kingdom to use for database search (e.g., bac, arc, euk, mito, chloro)
-    default: bac
     inputBinding:
       position: 102
       prefix: --kingdom
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: Tag genes < this ratio of expected length
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --minlength
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - float
     doc: Reject genes < this ratio of expected length
-    default: 0.25
     inputBinding:
       position: 102
       prefix: --reject
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

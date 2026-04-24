@@ -53,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: Set the mode for coverage analysis for the package[s] being tested.
-    default: set
     inputBinding:
       position: 102
       prefix: -covermode
@@ -188,7 +187,6 @@ inputs:
       - 'null'
       - int
     doc: Run each test and benchmark n times (default 1).
-    default: 1
     inputBinding:
       position: 102
       prefix: -count
@@ -213,7 +211,6 @@ inputs:
       - 'null'
       - string
     doc: If a test binary runs longer than duration d, panic.
-    default: 10m
     inputBinding:
       position: 102
       prefix: -timeout

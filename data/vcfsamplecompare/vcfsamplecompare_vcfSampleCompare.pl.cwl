@@ -30,7 +30,6 @@ inputs:
       - float
     doc: Filter variants below this threshold for the BEST_GT_SCORE, 
       BEST_OR_SCORE, and BEST_DP_SCORE. Default is 0.0.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -f
@@ -40,7 +39,6 @@ inputs:
       - string
     doc: Method to measure the gap between observation ratios. Can be 'mean' or 
       'edge'.
-    default: mean
     inputBinding:
       position: 102
       prefix: -g
@@ -58,7 +56,6 @@ inputs:
       - float
     doc: Minimum depth score to consider a variant. See the usage for -x and -l 
       to see how the score is calculated.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -x
@@ -68,7 +65,6 @@ inputs:
       - int
     doc: Minimum read depth threshold for calculating the depth score. See the 
       usage for -x and -l to see how the score is calculated.
-    default: 0
     inputBinding:
       position: 102
       prefix: -l

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Url prefix for requesting interaction drugs by gene names
-    default: https://dgidb.org/api/v2/interactions.json?genes=
     inputBinding:
       position: 102
       prefix: --api-path
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: Info field name to be used for annotation
-    default: dgiDB_drugs
     inputBinding:
       position: 102
       prefix: --field
@@ -48,7 +46,6 @@ inputs:
     doc: Number of genes to submit per api request. A lower value increases the 
       number of api requests in return. Too many requests could be rejected by 
       the DGIdb server
-    default: 500
     inputBinding:
       position: 102
       prefix: --genes-per-request

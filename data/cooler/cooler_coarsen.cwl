@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Number of pixels allocated to each process
-    default: 10000000
     inputBinding:
       position: 102
       prefix: --chunksize
@@ -36,7 +35,6 @@ inputs:
     doc: "Gridding factor. The contact matrix is\n                           coarsegrained
       by grouping each chromosomal contact\n                           block into
       k-by-k element tiles"
-    default: 2
     inputBinding:
       position: 102
       prefix: --factor
@@ -59,7 +57,6 @@ inputs:
       - int
     doc: "Number of processes to use for batch processing\n                      \
       \     chunks of pixels"
-    default: 1
     inputBinding:
       position: 102
       prefix: --nproc

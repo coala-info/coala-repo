@@ -10,7 +10,6 @@ inputs:
       - string
     doc: Add additional columns found in the mutation database to the text and 
       csv results
-    default: None
     inputBinding:
       position: 101
       prefix: --add_columns
@@ -20,7 +19,6 @@ inputs:
       - string
     doc: Minimum allele frequency hard and soft cutoff specified as comma 
       separated values
-    default: 0,0.1
     inputBinding:
       position: 101
       prefix: --af
@@ -30,7 +28,6 @@ inputs:
       - File
     doc: BAM file (make sure it has been generated using the H37Rv genome 
       (GCA_000195955.2))
-    default: None
     inputBinding:
       position: 101
       prefix: --bam
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - boolean
     doc: Call variant across the whole genome
-    default: false
     inputBinding:
       position: 101
       prefix: --call_whole_genome
@@ -48,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: Variant calling tool to use.
-    default: freebayes
     inputBinding:
       position: 101
       prefix: --caller
@@ -57,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: Override default parameters for variant calling
-    default: None
     inputBinding:
       position: 101
       prefix: --calling_params
@@ -66,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: Kmer counter
-    default: samtools
     inputBinding:
       position: 101
       prefix: --coverage_tool
@@ -75,7 +68,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add CSV output
-    default: false
     inputBinding:
       position: 101
       prefix: --csv
@@ -84,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: Mutation panel name
-    default: tbdb
     inputBinding:
       position: 101
       prefix: --db
@@ -93,7 +84,6 @@ inputs:
       - 'null'
       - Directory
     doc: Database directory
-    default: /usr/local/share/tbprofiler
     inputBinding:
       position: 101
       prefix: --db_dir
@@ -102,7 +92,6 @@ inputs:
       - 'null'
       - string
     doc: Minimum depth hard and soft cutoff specified as comma separated values
-    default: 0,10
     inputBinding:
       position: 101
       prefix: --depth
@@ -111,7 +100,6 @@ inputs:
       - 'null'
       - Directory
     doc: Storage directory
-    default: .
     inputBinding:
       position: 101
       prefix: --dir
@@ -120,7 +108,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add docx output
-    default: false
     inputBinding:
       position: 101
       prefix: --docx
@@ -129,7 +116,6 @@ inputs:
       - 'null'
       - string
     doc: Use a plugin template for --docx output
-    default: None
     inputBinding:
       position: 101
       prefix: --docx_plugin
@@ -138,7 +124,6 @@ inputs:
       - 'null'
       - string
     doc: Supply custom template for --docx output
-    default: None
     inputBinding:
       position: 101
       prefix: --docx_template
@@ -147,7 +132,6 @@ inputs:
       - 'null'
       - string
     doc: Path to db files prefix (overrides --db parameter)
-    default: None
     inputBinding:
       position: 101
       prefix: --external_db
@@ -156,7 +140,6 @@ inputs:
       - 'null'
       - File
     doc: Fasta file
-    default: None
     inputBinding:
       position: 101
       prefix: --fasta
@@ -166,7 +149,6 @@ inputs:
       - boolean
     doc: Use rules implemented in the resistance library (by default only a note
       will be made)
-    default: false
     inputBinding:
       position: 101
       prefix: --implement_rules
@@ -175,7 +157,6 @@ inputs:
       - 'null'
       - string
     doc: Kmer counter
-    default: FastK
     inputBinding:
       position: 101
       prefix: --kmer_counter
@@ -184,7 +165,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level
-    default: INFO
     inputBinding:
       position: 101
       prefix: --logging
@@ -194,7 +174,6 @@ inputs:
       - string
     doc: Mapping tool to use. If you are using nanopore or pacbio data it will 
       default to minimap2
-    default: bwa
     inputBinding:
       position: 101
       prefix: --mapper
@@ -203,7 +182,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't collect flagstats
-    default: false
     inputBinding:
       position: 101
       prefix: --no_coverage_qc
@@ -212,7 +190,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't run delly
-    default: false
     inputBinding:
       position: 101
       prefix: --no_delly
@@ -221,7 +198,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't remove clipped reads from variant calling
-    default: false
     inputBinding:
       position: 101
       prefix: --no_samclip
@@ -230,7 +206,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't trim files using trimmomatic
-    default: false
     inputBinding:
       position: 101
       prefix: --no_trim
@@ -239,7 +214,6 @@ inputs:
       - 'null'
       - string
     doc: NGS Platform used to generate data
-    default: illumina
     inputBinding:
       position: 101
       prefix: --platform
@@ -248,7 +222,6 @@ inputs:
       - 'null'
       - string
     doc: Sample prefix for all results generated
-    default: tbprofiler
     inputBinding:
       position: 101
       prefix: --prefix
@@ -257,7 +230,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum memory to use
-    default: 2
     inputBinding:
       position: 101
       prefix: --ram
@@ -266,7 +238,6 @@ inputs:
       - 'null'
       - File
     doc: First read file
-    default: None
     inputBinding:
       position: 101
       prefix: --read1
@@ -275,7 +246,6 @@ inputs:
       - 'null'
       - File
     doc: Second read file
-    default: None
     inputBinding:
       position: 101
       prefix: --read2
@@ -285,7 +255,6 @@ inputs:
       - string
     doc: Store variant set and get all samples with snp distance less than this 
       cutoff (experimental feature)
-    default: None
     inputBinding:
       position: 101
       prefix: --snp_dist
@@ -294,7 +263,6 @@ inputs:
       - 'null'
       - string
     doc: Set the config filed used by snpEff
-    default: None
     inputBinding:
       position: 101
       prefix: --snpeff_config
@@ -303,7 +271,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform in-silico spoligotyping
-    default: false
     inputBinding:
       position: 101
       prefix: --spoligotype
@@ -313,7 +280,6 @@ inputs:
       - string
     doc: Minimum read number per strand hard and soft cutoff specified as comma 
       separated values
-    default: 0,3
     inputBinding:
       position: 101
       prefix: --strand
@@ -322,7 +288,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use the suspect suite of tools to add ML predictions
-    default: false
     inputBinding:
       position: 101
       prefix: --suspect
@@ -332,7 +297,6 @@ inputs:
       - string
     doc: Structural variant minimum allele frequency hard cutoff specified as 
       comma separated values
-    default: 0.5,0.9
     inputBinding:
       position: 101
       prefix: --sv_af
@@ -342,7 +306,6 @@ inputs:
       - string
     doc: Structural variant minimum depth hard and soft cutoff specified as 
       comma separated values
-    default: 0,10
     inputBinding:
       position: 101
       prefix: --sv_depth
@@ -352,7 +315,6 @@ inputs:
       - string
     doc: Structural variant maximum size hard and soft cutoff specified as comma
       separated values
-    default: 100000,50000
     inputBinding:
       position: 101
       prefix: --sv_len
@@ -361,7 +323,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temp firectory to process all files
-    default: .
     inputBinding:
       position: 101
       prefix: --temp
@@ -370,7 +331,6 @@ inputs:
       - 'null'
       - string
     doc: Jinja2 formatted template for output
-    default: None
     inputBinding:
       position: 101
       prefix: --text_template
@@ -379,7 +339,6 @@ inputs:
       - 'null'
       - int
     doc: Threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -388,7 +347,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add text output
-    default: false
     inputBinding:
       position: 101
       prefix: --txt
@@ -397,7 +355,6 @@ inputs:
       - 'null'
       - File
     doc: VCF file
-    default: None
     inputBinding:
       position: 101
       prefix: --vcf

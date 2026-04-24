@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: probability threshold for calling modified or unmodified base
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --minprob
@@ -36,7 +35,6 @@ inputs:
       - int
     doc: mod motif size (default is 2 as "CG" is most common use case, e.g. set 
       to 1 for 6mA)
-    default: 2
     inputBinding:
       position: 101
       prefix: --motifsize

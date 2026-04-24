@@ -18,7 +18,6 @@ inputs:
     label: bin size
     inputBinding:
       prefix: -bin
-    default: 10
   clazz:
     type: string?
     doc: Filtering by taxonomic class name
@@ -55,7 +54,6 @@ inputs:
     label: assembly_summary_genbank file
     inputBinding:
       prefix: -summary
-    default: assembly_summary_genbank.txt
   irods:
     type: boolean?
     doc: ensures obtained data is stored in irods
@@ -122,14 +120,12 @@ inputs:
     label: enaBrowserTools location
     inputBinding:
       prefix: -enaBrowserTools
-    default: /unlock/infrastructure/binaries/enaBrowserTools
   taxonomy:
     type: string
     doc: Path of the taxonomy.hdt lookup file
     label: Taxnomy RDF (HDT) file
     inputBinding:
       prefix: -taxonomy
-    default: /tempZone/References/Databases/UniProt/taxonomy.hdt
 
 arguments: ["java", "-Xmx3g", "-jar", "/unlock/infrastructure/binaries/GenomeSync.jar"]
 

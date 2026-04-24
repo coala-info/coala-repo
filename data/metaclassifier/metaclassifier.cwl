@@ -34,7 +34,6 @@ inputs:
       - string
     doc: "Specify the sequence fragment type in the input sample file, available options
       are:\npaired: single-end read fragments (default)\nsingle: paired-end read fragments"
-    default: paired
     inputBinding:
       position: 104
       prefix: --frag_type
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum missing markers allowed to retain a sample taxon (default = 0)
-    default: 0
     inputBinding:
       position: 104
       prefix: --max_markers
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Merge overlapping paired-end reads (default: False)'
-    default: false
     inputBinding:
       position: 104
       prefix: --merge
@@ -62,7 +59,6 @@ inputs:
       - float
     doc: "Minimum taxon read proportion allowed to retain a sample taxon, allowed
       proportion,\nranges from 0.00 to 0.01 (default = 0.00)"
-    default: 0.0
     inputBinding:
       position: 104
       prefix: --min_proportion
@@ -81,7 +77,6 @@ inputs:
       - File
     doc: 'Path to PEAR, the paired-end read merger if not in environmental variables
       (ENV) (default: read from ENV)'
-    default: read from ENV
     inputBinding:
       position: 104
       prefix: --pear_merger
@@ -91,7 +86,6 @@ inputs:
       - File
     doc: 'Path to seqtk, the sequence processing tool if not in environmental variables
       (ENV) (default: read from ENV)'
-    default: read from ENV
     inputBinding:
       position: 104
       prefix: --seqtk_converter
@@ -101,7 +95,6 @@ inputs:
       - string
     doc: 'Taxonomy class for quantify taxon level marker read abundance (default:
       genus)'
-    default: genus
     inputBinding:
       position: 104
       prefix: --tax_class
@@ -110,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: 'Specify the number of threads to use (default: 2)'
-    default: 2
     inputBinding:
       position: 104
       prefix: --threads
@@ -120,7 +112,6 @@ inputs:
       - File
     doc: 'Path to VSEARCH, the sequence analysis tool if not in environmental variables
       (ENV) (default: read from ENV)'
-    default: read from ENV
     inputBinding:
       position: 104
       prefix: --vsearch_aligner

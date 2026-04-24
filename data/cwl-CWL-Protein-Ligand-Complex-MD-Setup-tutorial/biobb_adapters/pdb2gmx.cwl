@@ -44,7 +44,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_gro_path
-    default: system.gro
 
   output_top_zip_path:
     label: Path the output TOP topology in zip format
@@ -60,7 +59,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_top_zip_path
-    default: system.zip
 
   config:
     label: Advanced configuration options for biobb_gromacs Pdb2gmx

@@ -56,7 +56,6 @@ inputs:
       - int
     doc: 'specify the minimum depth for a call. For sites with fewer reads than this
       number, declare Missing (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --minDepth

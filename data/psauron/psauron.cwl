@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: OPTIONAL set -a to output per-amino-acid predicted probabilities
-    default: false
     inputBinding:
       position: 101
       prefix: --all-prob
@@ -30,7 +29,6 @@ inputs:
     doc: OPTIONAL probability threshold used to determine final psauron score, 
       in-frame, higher number decreases sensitivity and increases specificity, 
       range=[0,1]
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --inframe
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: OPTIONAL exclude all proteins shorter than m amino acids
-    default: 5
     inputBinding:
       position: 101
       prefix: --minimum-length
@@ -58,7 +55,6 @@ inputs:
     doc: OPTIONAL probability threshold used to determine final psauron score, 
       out-of-frame, higher number increases sensitivity and decreases 
       specificity, range=[0,1]
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --outframe
@@ -68,7 +64,6 @@ inputs:
       - boolean
     doc: OPTIONAL set -p if your FASTA contains amino acid protein sequence, 
       which may lower accuracy of the model
-    default: false
     inputBinding:
       position: 101
       prefix: --protein
@@ -78,7 +73,6 @@ inputs:
       - boolean
     doc: OPTIONAL set -s to score only the in-frame CDS, which may lower 
       accuracy of the model
-    default: false
     inputBinding:
       position: 101
       prefix: --single-frame
@@ -87,7 +81,6 @@ inputs:
       - 'null'
       - boolean
     doc: OPTIONAL set -c to force usage of CPU instead of GPU
-    default: false
     inputBinding:
       position: 101
       prefix: --use-cpu
@@ -96,7 +89,6 @@ inputs:
       - 'null'
       - boolean
     doc: OPTIONAL set -v for verbose output with progress bars etc.
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

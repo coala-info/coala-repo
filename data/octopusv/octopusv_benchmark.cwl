@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable sequence similarity comparison if sequences available
-    default: false
     inputBinding:
       position: 103
       prefix: --enable-sequence-compari…
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only consider variants with FILTER == PASS
-    default: false
     inputBinding:
       position: 103
       prefix: --pass-only
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: Min pct reciprocal overlap
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --reciprocal-overlap
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Max reference location distance
-    default: 500
     inputBinding:
       position: 103
       prefix: --reference-distance
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: Min sequence similarity when sequence comparison enabled
-    default: 0.7
     inputBinding:
       position: 103
       prefix: --sequence-similarity
@@ -67,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum variant size to consider
-    default: 50000
     inputBinding:
       position: 103
       prefix: --size-max
@@ -76,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum variant size to consider from test calls
-    default: 50
     inputBinding:
       position: 103
       prefix: --size-min
@@ -85,7 +78,6 @@ inputs:
       - 'null'
       - float
     doc: Min pct size similarity (minsize/maxsize)
-    default: 0.7
     inputBinding:
       position: 103
       prefix: --size-similarity
@@ -94,7 +86,6 @@ inputs:
       - 'null'
       - boolean
     doc: Variant types don't need to match to compare
-    default: false
     inputBinding:
       position: 103
       prefix: --type-ignore

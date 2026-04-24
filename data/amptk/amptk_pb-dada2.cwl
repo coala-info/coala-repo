@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Barcode Quality threshold
-    default: 80
     inputBinding:
       position: 101
       prefix: --barcode_qual
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: bimera removal method
-    default: consensus
     inputBinding:
       position: 101
       prefix: --chimera_method
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: 'Number of CPUs. Default: auto'
-    default: auto
     inputBinding:
       position: 101
       prefix: --cpus
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep all intermediate files
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads after Q filtering to run DADA2 on
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_reads
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: Biological OTU Clustering Percent
-    default: 97
     inputBinding:
       position: 101
       prefix: --pct_otu
@@ -70,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: Sequencing platform
-    default: pacbio
     inputBinding:
       position: 101
       prefix: --platform
@@ -79,7 +72,6 @@ inputs:
       - 'null'
       - boolean
     doc: Pool all sequences together for DADA2
-    default: false
     inputBinding:
       position: 101
       prefix: --pool
@@ -88,7 +80,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use DADA2 pseudopooling
-    default: false
     inputBinding:
       position: 101
       prefix: --pseudopool
@@ -97,7 +88,6 @@ inputs:
       - 'null'
       - float
     doc: Read Quality threshold
-    default: 0.98
     inputBinding:
       position: 101
       prefix: --read_qual
@@ -106,7 +96,6 @@ inputs:
       - 'null'
       - string
     doc: Run UCHIME REF [ITS,16S,LSU,COI,custom]
-    default: None
     inputBinding:
       position: 101
       prefix: --uchime_ref
@@ -115,7 +104,6 @@ inputs:
       - 'null'
       - string
     doc: USEARCH9 EXE
-    default: usearch9
     inputBinding:
       position: 101
       prefix: --usearch

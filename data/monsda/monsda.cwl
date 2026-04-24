@@ -78,7 +78,6 @@ inputs:
       - 'null'
       - boolean
     doc: Wrap around Snakemake, default
-    default: true
     inputBinding:
       position: 101
       prefix: --snakemake
@@ -95,7 +94,6 @@ inputs:
       - 'null'
       - boolean
     doc: Should conda be used, default True
-    default: true
     inputBinding:
       position: 101
       prefix: --use-conda

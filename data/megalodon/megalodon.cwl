@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Guppy config.
-    default: dna_r9.4.1_450bps_modbases_5mc_hac.cfg
     inputBinding:
       position: 102
       prefix: --guppy-config
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Path to guppy server executable.
-    default: ./ont-guppy/bin/guppy_basecall_server
     inputBinding:
       position: 102
       prefix: --guppy-server-path
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Compute variant aggregation for haploid genotypes. Default: diploid'
-    default: false
     inputBinding:
       position: 102
       prefix: --haploid
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: Mappings output format.
-    default: bam
     inputBinding:
       position: 102
       prefix: --mappings-format
@@ -91,7 +87,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to store output results.
-    default: megalodon_results
     inputBinding:
       position: 102
       prefix: --output-directory
@@ -116,7 +111,6 @@ inputs:
       sequence for model training (FASTA)\n                        Default: ['basecalls']\n\
       \                        Note that all outputs are unsorted unless noted in
       the output filename."
-    default:
       - basecalls
     inputBinding:
       position: 102
@@ -134,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel processes.
-    default: 1
     inputBinding:
       position: 102
       prefix: --processes
@@ -161,7 +154,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'RNA input data. Requires RNA model. Default: DNA input data'
-    default: false
     inputBinding:
       position: 102
       prefix: --rna

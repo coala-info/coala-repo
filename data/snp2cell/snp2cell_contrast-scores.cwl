@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: number of cpus to use
-    default: None
     inputBinding:
       position: 104
       prefix: --n-cpu
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: 'name for saving scores in object; default: ` (score_key1 - score_key2)`'
-    default: '` (score_key1 - score_key2)`'
     inputBinding:
       position: 104
       prefix: --save-key

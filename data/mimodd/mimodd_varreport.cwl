@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: the format of the output file
-    default: html
     inputBinding:
       position: 102
       prefix: --oformat

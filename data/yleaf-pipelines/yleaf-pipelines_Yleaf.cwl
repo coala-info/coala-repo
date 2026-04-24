@@ -28,7 +28,6 @@ inputs:
       - int
     doc: The minimum percentage of a base result for acceptance, integer between
       50 and 99. [50-99]
-    default: 90
     inputBinding:
       position: 101
       prefix: --base_majority
@@ -95,7 +94,6 @@ inputs:
       - float
     doc: Maximum rate of minor allele for it to be considered as a private 
       mutation.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --minor_allele_frequency
@@ -111,7 +109,6 @@ inputs:
       - float
     doc: The minimum quality of the prediction (QC-scores) for it to be 
       accepted. [0-1]
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --prediction_quality
@@ -131,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum quality for each read, integer between 10 and 40. [10-40]
-    default: 20
     inputBinding:
       position: 101
       prefix: --quality_thresh
@@ -140,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum number of reads for each base.
-    default: 10
     inputBinding:
       position: 101
       prefix: --reads_treshold

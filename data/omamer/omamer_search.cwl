@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Number of queries to process at once.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --chunksize
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: Significance threshold used when filtering families.
-    default: '1e-06'
     inputBinding:
       position: 101
       prefix: --family_alpha
@@ -35,7 +33,6 @@ inputs:
       - boolean
     doc: 'Set to only place at family level. Note: subfamily_medianseqlen in results
       is for the family level.'
-    default: false
     inputBinding:
       position: 101
       prefix: --family_only
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include extant gene IDs as comma separated entry in results.
-    default: false
     inputBinding:
       position: 101
       prefix: --include_extant_genes
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level.
-    default: info
     inputBinding:
       position: 101
       prefix: --log_level
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --nthreads
@@ -78,7 +72,6 @@ inputs:
       - string
     doc: The placement is stopped when reaching the reference taxon (must exist 
       in the OMA database).
-    default: None
     inputBinding:
       position: 101
       prefix: --reference_taxon
@@ -87,7 +80,6 @@ inputs:
       - 'null'
       - boolean
     doc: Silence output
-    default: false
     inputBinding:
       position: 101
       prefix: --silent
@@ -98,7 +90,6 @@ inputs:
     doc: Threshold applied on the OMAmer-score that is used to vary the 
       specificity of predicted HOGs. The lower the theshold the more 
       (over-)specific predicted HOGs will be.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --threshold
@@ -108,7 +99,6 @@ inputs:
       - int
     doc: Number of top level families to place into. By default, placed into 
       only in the best scoring family.
-    default: 1
     inputBinding:
       position: 101
       prefix: --top_n_fams

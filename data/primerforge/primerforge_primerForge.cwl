@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: file format of the ingroup and outgroup
-    default: genbank
     inputBinding:
       position: 101
       prefix: --format
@@ -53,7 +52,6 @@ inputs:
       - type: array
         items: float
     doc: a min and max percent GC specified as a comma separated list
-    default: 40.0,60.0
     inputBinding:
       position: 101
       prefix: --gc_range
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: keep intermediate files
-    default: false
     inputBinding:
       position: 101
       prefix: --keep
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: the number of threads for parallel processing
-    default: 1
     inputBinding:
       position: 101
       prefix: --num_threads
@@ -95,7 +91,6 @@ inputs:
       - type: array
         items: int
     doc: a single PCR product length or a range specified as 'min,max'
-    default: 120,2400
     inputBinding:
       position: 101
       prefix: --pcr_prod
@@ -105,7 +100,6 @@ inputs:
       - type: array
         items: int
     doc: a single primer length or a range specified as 'min,max'; (minimum 10)
-    default: 16,20
     inputBinding:
       position: 101
       prefix: --primer_len
@@ -114,7 +108,6 @@ inputs:
       - 'null'
       - float
     doc: the maximum allowable Tm difference °C between a pair of primers
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --tm_diff
@@ -124,7 +117,6 @@ inputs:
       - type: array
         items: float
     doc: a min and max melting temp (°C) specified as a comma separated list
-    default: 55.0,68.0
     inputBinding:
       position: 101
       prefix: --tm_range

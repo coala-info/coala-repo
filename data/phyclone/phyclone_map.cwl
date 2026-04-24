@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Which measure to use as for MAP computation.
-    default: joint-likelihood
     inputBinding:
       position: 101
       prefix: --map-type

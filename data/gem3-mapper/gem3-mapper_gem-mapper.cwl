@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Minimum global alignment identity (number or percentage)
-    default: 80%
     inputBinding:
       position: 101
       prefix: --alignment-global-min-identity
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Minimum global alignment score (number or percentage)
-    default: '0.20'
     inputBinding:
       position: 101
       prefix: --alignment-global-min-score
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: "Local alignment strategy: 'never', 'if-unmapped'"
-    default: if-unmapped
     inputBinding:
       position: 101
       prefix: --alignment-local
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Minimum local alignment identity (number or percentage)
-    default: '40'
     inputBinding:
       position: 101
       prefix: --alignment-local-min-identity
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: Minimum local alignment score (number or percentage)
-    default: '20'
     inputBinding:
       position: 101
       prefix: --alignment-local-min-score
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Maximum alignment error (number or percentage, default=0.12, 12%)
-    default: '0.12'
     inputBinding:
       position: 101
       prefix: --alignment-max-error
@@ -63,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: "Bisulfite read type: 'inferred', '1', '2', 'interleaved', 'non-stranded'"
-    default: inferred
     inputBinding:
       position: 101
       prefix: --bisulfite-read
@@ -88,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: Control sequence name
-    default: NC_001422.1
     inputBinding:
       position: 101
       prefix: --control_sequence
@@ -97,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: "Discordant pair search strategy: 'always', 'if-no-concordant', 'never'"
-    default: if-no-concordant
     inputBinding:
       position: 101
       prefix: --discordant-pair-search
@@ -106,7 +97,6 @@ inputs:
       - 'null'
       - string
     doc: Gap affine penalties (A,B,O,X)
-    default: 1,4,6,1
     inputBinding:
       position: 101
       prefix: --gap-affine-penalties
@@ -153,7 +143,6 @@ inputs:
       - 'null'
       - File
     doc: Input FASTA/FASTQ file
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -162,7 +151,6 @@ inputs:
       - 'null'
       - string
     doc: "Mapping mode: 'fast', 'sensitive', or 'customed'"
-    default: fast
     inputBinding:
       position: 101
       prefix: --mapping-mode
@@ -171,7 +159,6 @@ inputs:
       - 'null'
       - string
     doc: Maximum reported matches (number or 'all')
-    default: '5'
     inputBinding:
       position: 101
       prefix: --max-reported-matches
@@ -180,7 +167,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum template length
-    default: 10000
     inputBinding:
       position: 101
       prefix: --max-template-length
@@ -189,7 +175,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum template length
-    default: disabled
     inputBinding:
       position: 101
       prefix: --min-template-length
@@ -198,7 +183,6 @@ inputs:
       - 'null'
       - string
     doc: "Output format: 'MAP' or 'SAM'"
-    default: SAM
     inputBinding:
       position: 101
       prefix: --output-format
@@ -207,7 +191,6 @@ inputs:
       - 'null'
       - string
     doc: Output prefix
-    default: stdout
     inputBinding:
       position: 101
       prefix: --output
@@ -216,7 +199,6 @@ inputs:
       - 'null'
       - string
     doc: Overconversion sequence name
-    default: NC_001604.1
     inputBinding:
       position: 101
       prefix: --overconversion_sequence
@@ -233,7 +215,6 @@ inputs:
       - 'null'
       - File
     doc: Report file name
-    default: disabled
     inputBinding:
       position: 101
       prefix: --report-file
@@ -242,7 +223,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use compact SAM format ('true' or 'false')
-    default: true
     inputBinding:
       position: 101
       prefix: --sam-compact
@@ -251,7 +231,6 @@ inputs:
       - 'null'
       - string
     doc: Read group header string (e.g., '@RG\tID:xx\tSM:yy')
-    default: 'NULL'
     inputBinding:
       position: 101
       prefix: --sam-read-group-header
@@ -260,7 +239,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: '#cores'
     inputBinding:
       position: 101
       prefix: --threads
@@ -269,7 +247,6 @@ inputs:
       - 'null'
       - string
     doc: Underconversion sequence name
-    default: NC_001416.1
     inputBinding:
       position: 101
       prefix: --underconversion_sequence
@@ -278,7 +255,6 @@ inputs:
       - 'null'
       - string
     doc: "Verbosity level: 'quiet', 'user', 'dev'"
-    default: user
     inputBinding:
       position: 101
       prefix: --verbose

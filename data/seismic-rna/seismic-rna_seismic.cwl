@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Log messages with color codes on stderr
-    default: true
     inputBinding:
       position: 103
       prefix: --log-color
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: If an error occurs, log a message
-    default: true
     inputBinding:
       position: 103
       prefix: --log-on-error
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: Log fewer messages (-q, -qq, -qqq, -qqqq) on stderr
-    default: 0
     inputBinding:
       position: 103
       prefix: --quiet
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - boolean
     doc: Log more messages (-v, -vv, -vvv, -vvvv) on stderr
-    default: 0
     inputBinding:
       position: 103
       prefix: --verbose

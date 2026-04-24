@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Number of ram units in a job has no specified ram usage.
-    default: 1
     inputBinding:
       position: 102
       prefix: -defaultJobRam
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Minutes between checking on job
-    default: 10
     inputBinding:
       position: 102
       prefix: -jobCheckPeriod
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: Log to the specified syslog facility
-    default: local0
     inputBinding:
       position: 102
       prefix: -logFacility
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: minimum syslog priority to log, also filters file logging.
-    default: warn
     inputBinding:
       position: 102
       prefix: -logMinPriority
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Minutes between checking on machine
-    default: 20
     inputBinding:
       position: 102
       prefix: -machineCheckPeriod
@@ -104,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes that feed jobs to nodes
-    default: 30
     inputBinding:
       position: 102
       prefix: -spokes

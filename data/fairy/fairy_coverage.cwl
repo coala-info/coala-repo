@@ -53,7 +53,6 @@ inputs:
       - int
     doc: Value of k. Only k = 21, 31 are currently supported. Does nothing for 
       pre-sketched files
-    default: 31
     inputBinding:
       position: 102
       prefix: -k
@@ -71,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Exclude genomes with less than this number of sampled k-mers
-    default: 8
     inputBinding:
       position: 102
       prefix: --min-number-kmers
@@ -80,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum spacing between selected k-mers on the contigs.
-    default: 30
     inputBinding:
       position: 102
       prefix: --min-spacing
@@ -90,7 +87,6 @@ inputs:
       - float
     doc: Minimum adjusted ANI to consider (0-100) for coverage calculation. 
       Default is 95. Don't lower this unless you know what you're doing
-    default: 95
     inputBinding:
       position: 102
       prefix: --minimum-ani
@@ -108,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Subsampling rate. Does nothing for pre-sketched files
-    default: 50
     inputBinding:
       position: 102
       prefix: -c
@@ -117,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 3
     inputBinding:
       position: 102
       prefix: -t

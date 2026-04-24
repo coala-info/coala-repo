@@ -59,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: (Optional) Fontsize (default 12).
-    default: 12
     inputBinding:
       position: 101
       prefix: --fontsize
@@ -68,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: (Optional) Image file height in inches (default 3).
-    default: 3
     inputBinding:
       position: 101
       prefix: --height
@@ -137,7 +135,6 @@ inputs:
       - 'null'
       - string
     doc: '(Optional) Image file type (png, jpeg, pdf). Default: png'
-    default: png
     inputBinding:
       position: 101
       prefix: --type
@@ -146,7 +143,6 @@ inputs:
       - 'null'
       - float
     doc: (Optional) Image width in inches (default 10).
-    default: 10
     inputBinding:
       position: 101
       prefix: --width

@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: mismatch score
-    default: -2
     inputBinding:
       position: 101
       prefix: --mismatch
@@ -49,7 +48,6 @@ inputs:
       - float
     doc: "fraction of positions that may overlap between\n                       \
       \ consecutive genes"
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --shrink
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: maximum matching score threshold
-    default: 7
     inputBinding:
       position: 101
       prefix: --tau_max
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: minimum matching score threshold
-    default: 2
     inputBinding:
       position: 101
       prefix: --tau_min
@@ -76,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: length of sliding window
-    default: 7
     inputBinding:
       position: 101
       prefix: --window

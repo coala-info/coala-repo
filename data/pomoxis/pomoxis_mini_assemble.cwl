@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: "minimap's -K option (default: 500M)."
-    default: 500M
     inputBinding:
       position: 101
       prefix: -K
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'output folder (default: assm).'
-    default: assm
     inputBinding:
       position: 101
       prefix: -o
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: 'output file prefix (default: reads).'
-    default: reads
     inputBinding:
       position: 101
       prefix: -p
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of racon rounds (default: 4).'
-    default: 4
     inputBinding:
       position: 101
       prefix: -m
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of racon shuffles (default: 1. If not 1, should be >10).'
-    default: 1
     inputBinding:
       position: 101
       prefix: -n
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: 'racon window length (default: 500).'
-    default: 500
     inputBinding:
       position: 101
       prefix: -w
@@ -114,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of minimap and racon threads (default: 1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for edge consensus
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --consensus-thresh
@@ -28,7 +27,6 @@ inputs:
       - int
     doc: number of threads to use when writing down the collapsed 
       quantifications
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads

@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Matplotlib color map to use for differential maps [viridis]
-    default: viridis
     inputBinding:
       position: 101
       prefix: --differential-colormap
@@ -153,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: Number of IDs to submit per request through the KEGG API [40]
-    default: 40
     inputBinding:
       position: 101
       prefix: --step
@@ -179,7 +177,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to run KEGGCharter with [max available]
-    default: max available
     inputBinding:
       position: 101
       prefix: --threads

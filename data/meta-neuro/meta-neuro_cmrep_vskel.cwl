@@ -101,7 +101,6 @@ inputs:
     doc: Tolerance for the inside/outside search algorithm (default 1e-6). Use 
       lower values if holes appear in the skeleton. Set to zero to disable 
       pruning of outside vertices
-    default: '1e-6'
     inputBinding:
       position: 102
       prefix: -t

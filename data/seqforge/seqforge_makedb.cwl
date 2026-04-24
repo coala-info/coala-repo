@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - Directory
     doc: Specify temporary directory
-    default: /tmp/
     inputBinding:
       position: 101
       prefix: --temp-dir

@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: "Renaming mode (default: 'MAP') (choices: 'MAP', 'INDEX', 'RANGE')."
-    default: MAP
     inputBinding:
       position: 103
       prefix: --mode
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: "Delimiter to use when reading the names file (default: '\\t')."
-    default: \t
     inputBinding:
       position: 103
       prefix: --sep

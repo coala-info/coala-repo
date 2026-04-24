@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: File extension to look for
-    default: .fastq.gz
     inputBinding:
       position: 102
       prefix: --ext
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: Forward read tag
-    default: _R1
     inputBinding:
       position: 102
       prefix: --tag-for
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Reverse read tag
-    default: _R2
     inputBinding:
       position: 102
       prefix: --tag-rev
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Safe character for sample names
-    default: _
     inputBinding:
       position: 102
       prefix: --safe-char

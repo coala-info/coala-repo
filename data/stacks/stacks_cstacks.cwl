@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of gaps allowed between stacks before merging (default: 2).'
-    default: 2
     inputBinding:
       position: 101
   - id: min_aln_len
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: 'minimum length of aligned sequence in a gapped alignment (default: 0.80).'
-    default: 0.8
     inputBinding:
       position: 101
   - id: num_mismatches
@@ -55,7 +53,6 @@ inputs:
       - int
     doc: 'number of mismatches allowed between sample loci when build the catalog
       (default 1; suggested: set to ustacks -M).'
-    default: 1
     inputBinding:
       position: 101
       prefix: -n

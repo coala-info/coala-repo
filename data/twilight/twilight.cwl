@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: 'BLOSUM matrix to use for protein sequences: 45, 62, or 80.'
-    default: '62'
     inputBinding:
       position: 101
       prefix: --blosum
@@ -99,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Gap-Extend penalty.
-    default: -5
     inputBinding:
       position: 101
       prefix: --gap-extend
@@ -108,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: Gap-Open penalty.
-    default: -50
     inputBinding:
       position: 101
       prefix: --gap-open
@@ -158,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: Match score.
-    default: 18
     inputBinding:
       position: 101
       prefix: --match
@@ -168,7 +164,6 @@ inputs:
       - float
     doc: Sequences with an ambiguous character proportion exceeding the 
       specified threshold will be deferred or excluded.
-    default: 0.100000001
     inputBinding:
       position: 101
       prefix: --max-ambig
@@ -208,7 +203,6 @@ inputs:
       - 'null'
       - int
     doc: Mismatch penalty for transversions.
-    default: -8
     inputBinding:
       position: 101
       prefix: --mismatch
@@ -243,7 +237,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for removing gappy columns. Set to 1 to disable this feature.
-    default: 0.949999988
     inputBinding:
       position: 101
       prefix: --remove-gappy
@@ -277,7 +270,6 @@ inputs:
       - 'null'
       - int
     doc: Score for transitions.
-    default: -4
     inputBinding:
       position: 101
       prefix: --transition
@@ -328,7 +320,6 @@ inputs:
       - int
     doc: X-drop value (scale). The actual X-drop will be multiplied by the 
       gap-extend penalty.
-    default: 600
     inputBinding:
       position: 101
       prefix: --xdrop

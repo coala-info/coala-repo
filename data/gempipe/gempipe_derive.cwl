@@ -13,7 +13,6 @@ inputs:
       - 'null'
       - boolean
     doc: Test auxotrophies for aminoacids and vitamins.
-    default: false
     inputBinding:
       position: 101
       prefix: --aux
@@ -23,7 +22,6 @@ inputs:
       - boolean
     doc: "Simulate Biolog's utilization tests on strain-specific\n               \
       \        models."
-    default: false
     inputBinding:
       position: 101
       prefix: --biolog
@@ -34,7 +32,6 @@ inputs:
     doc: "Check biosynthesis of each metabolite while granting\n                 \
       \      the specified minimum fraction of objective. If 0, this\n           \
       \            step will be skipped."
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --biosynth
@@ -44,7 +41,6 @@ inputs:
       - boolean
     doc: "Sistematically simulate growth on all the available\n                  \
       \     C-N-P-S sources."
-    default: false
     inputBinding:
       position: 101
       prefix: --cnps
@@ -55,7 +51,6 @@ inputs:
     doc: "Base the C-N-P-S simulations on a minimal medium\n                     \
       \  leading to the specified minimum objective value. If 0,\n               \
       \        user-defined medium will be used."
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --cnps_minmed
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: How many parallel processes to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -73,7 +67,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the input genes annotation file.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --ingannots
@@ -82,7 +75,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the input PAM.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --inpam
@@ -91,7 +83,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the input pan-model.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --inpanmodel
@@ -100,7 +91,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the input report file.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --inreport
@@ -111,7 +101,6 @@ inputs:
     doc: "Medium definition file or folder containing media\n                    \
       \   definitions, to be used during the automatic gap-\n                    \
       \   filling."
-    default: '-'
     inputBinding:
       position: 101
       prefix: --media
@@ -121,7 +110,6 @@ inputs:
       - float
     doc: "Minimum flux through the objective of strain-specific\n                \
       \       models."
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --minflux
@@ -130,7 +118,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip the generation of figures.
-    default: false
     inputBinding:
       position: 101
       prefix: --nofig
@@ -139,7 +126,6 @@ inputs:
       - 'null'
       - Directory
     doc: "Main output directory (will be created if not\n                       existing)."
-    default: ./
     inputBinding:
       position: 101
       prefix: --outdir
@@ -149,7 +135,6 @@ inputs:
       - boolean
     doc: "Save the output GSMMs in SBML format (L3V1 FBC2) in\n                  \
       \     addition to JSON."
-    default: false
     inputBinding:
       position: 101
       prefix: --sbml
@@ -159,7 +144,6 @@ inputs:
       - boolean
     doc: "Skip the gap-filling step applied to the strain-\n                     \
       \  specific models."
-    default: false
     inputBinding:
       position: 101
       prefix: --skipgf
@@ -169,7 +153,6 @@ inputs:
       - boolean
     doc: "Make stdout messages more verbose, including debug\n                   \
       \    messages."
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

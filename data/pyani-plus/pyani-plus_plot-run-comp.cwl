@@ -10,7 +10,6 @@ inputs:
       - int
     doc: How many columns to use when tiling plots of multiple runs. Default 0 
       means automatically tries for square tiling.
-    default: 0
     inputBinding:
       position: 101
       prefix: --columns
@@ -34,14 +33,12 @@ inputs:
       - 'null'
       - File
     doc: Where to record log(s). Use '-' for no logging.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --log
   - id: run_ids
     type: string
     doc: Which runs (comma separated list, reference first)?
-    default: None
     inputBinding:
       position: 101
       prefix: --run-ids

@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: shortest tandem interval to report.
-    default: 500
     inputBinding:
       position: 103
       prefix: -l

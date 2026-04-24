@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the column containing barcodes
-    default: Barcode
     inputBinding:
       position: 101
       prefix: --barcode-column
@@ -28,7 +27,6 @@ inputs:
       - int
     doc: Buffer size for the FASTQ reader (in Bytes). Must be large enough to 
       contain the largest entry.
-    default: 4000000
     inputBinding:
       position: 101
       prefix: --buffer-size
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: The alphabet that is used to created edited barcodes
-    default: ACGTN
     inputBinding:
       position: 101
       prefix: --edit-alphabet
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum allowed edit distance for barcodes
-    default: 1
     inputBinding:
       position: 101
       prefix: --edit-distance
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory to write individual fastq files to.
-    default: fastq
     inputBinding:
       position: 101
       prefix: --output
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: A suffix to append to individual fastq files.
-    default: .fastq.gz
     inputBinding:
       position: 101
       prefix: --output-file-suffix
@@ -102,7 +96,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the column containing sample names
-    default: Sample
     inputBinding:
       position: 101
       prefix: --sample-column
@@ -117,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for multiprocessing.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -134,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for writing
-    default: 2
     inputBinding:
       position: 101
       prefix: --writer-threads

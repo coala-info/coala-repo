@@ -29,7 +29,6 @@ inputs:
       for compatibility), 1: Display alignment positions + alignments + stats (default),
       2: Display blast-like tabular output, 3: Display light tabular output (better
       for post-processing), 4: Display BED file output, 5: Display PSL file output'
-    default: 1
     inputBinding:
       position: 102
       prefix: -d
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: E-value threshold
-    default: 10
     inputBinding:
       position: 102
       prefix: -E
@@ -48,7 +46,6 @@ inputs:
       - int
     doc: Forbid aligning too close regions (e.g. Tandem repeats). Valid for 
       single sequence comparison only. Default 16 bp
-    default: 16
     inputBinding:
       position: 102
       prefix: -T
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Indel rate (%)
-    default: 8
     inputBinding:
       position: 102
       prefix: -i
@@ -83,7 +79,6 @@ inputs:
       - float
     doc: 'Low complexity filter: minimal allowed Entropy of trinucleotide distribution,
       ranging between 0 (no filter) and 6'
-    default: 2.8
     inputBinding:
       position: 102
       prefix: -e
@@ -100,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Memory limit of the number of ungapped alignments
-    default: 1000000
     inputBinding:
       position: 102
       prefix: -O
@@ -109,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Mutation rate (%)
-    default: 25
     inputBinding:
       position: 102
       prefix: -m
@@ -120,7 +113,6 @@ inputs:
     doc: 'Select a scoring Matrix (default 3). Format: [Match,Transversion,Transition],(Gopen,Gext).
       0: [1, -3, -2],(-8, -2), 1: [2, -3, -2],(-12, -4), 2: [3, -3, -2],(-16, -4),
       3: [5, -4, -3],(-16, -4), 4: [5, -4, -2],(-16, -4)'
-    default: 3
     inputBinding:
       position: 102
       prefix: -M
@@ -129,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: 'Seed hit Criterion: 1 or 2 seeds to consider a hit'
-    default: 2
     inputBinding:
       position: 102
       prefix: -c
@@ -139,7 +130,6 @@ inputs:
       - string
     doc: "Seed Pattern(s). Use '#' for match, '@' for match or transition, '-' or
       '_' for joker, ',' for seed separator (max: 32 seeds)."
-    default: '###-#@-##@##,###--#-#--#-###'
     inputBinding:
       position: 102
       prefix: -p
@@ -149,7 +139,6 @@ inputs:
       - int
     doc: Select sequence from the first multi-fasta file. Use 0 to select the 
       full first multi-fasta file
-    default: 0
     inputBinding:
       position: 102
       prefix: -S
@@ -176,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: Statistical tolerance Alpha (%)
-    default: 5
     inputBinding:
       position: 102
       prefix: -a
@@ -186,7 +174,6 @@ inputs:
       - int
     doc: 'Strand to process. 0: process forward (query) strand, 1: process Reverse
       complement strand, 2: process both forward and Reverse complement strands (default)'
-    default: 2
     inputBinding:
       position: 102
       prefix: -r
@@ -196,7 +183,6 @@ inputs:
       - float
     doc: Trim out over-represented seeds codes, ranging between 0.0 (no trim) 
       and +inf
-    default: 0.001
     inputBinding:
       position: 102
       prefix: -t
@@ -205,7 +191,6 @@ inputs:
       - 'null'
       - string
     doc: Window <min,max> range for post-processing and grouping alignments
-    default: <64,65536>
     inputBinding:
       position: 102
       prefix: -W
@@ -215,7 +200,6 @@ inputs:
       - float
     doc: 'Window size coefficient for post-processing and grouping alignments. NOTE:
       -w 0 disables post-processing'
-    default: 16.0
     inputBinding:
       position: 102
       prefix: -w
@@ -224,7 +208,6 @@ inputs:
       - 'null'
       - int
     doc: Xdrop threshold score
-    default: 25
     inputBinding:
       position: 102
       prefix: -X

@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - Directory
     doc: database path
-    default: <platon_path>/db
     inputBinding:
       position: 102
       prefix: --db
@@ -42,7 +41,6 @@ inputs:
     doc: 'applied filter mode: sensitivity: RDS only (>= 95% sensitivity); specificity:
       RDS only (>=99.9% specificity); accuracy: RDS & characterization heuristics
       (highest accuracy)'
-    default: accuracy
     inputBinding:
       position: 102
       prefix: --mode
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: number of available CPUs
     inputBinding:
       position: 102
       prefix: --threads

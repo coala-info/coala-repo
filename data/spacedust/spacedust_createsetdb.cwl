@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add stop codon '*' at complete start and end.
-    default: 0
     inputBinding:
       position: 103
       prefix: --add-orf-stop
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Write compressed output.
-    default: 0
     inputBinding:
       position: 103
       prefix: --compressed
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: 'Contig end can be 0: incomplete, 1: complete, 2: both.'
-    default: 2
     inputBinding:
       position: 103
       prefix: --contig-end-mode
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: 'Contig start can be 0: incomplete, 1: complete, 2: both.'
-    default: 2
     inputBinding:
       position: 103
       prefix: --contig-start-mode
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Create database lookup file (can be very large).
-    default: 0
     inputBinding:
       position: 103
       prefix: --create-lookup
@@ -68,7 +63,6 @@ inputs:
       - int
     doc: 'Createdb mode: 0: copy data, 1: soft link data and write new index (works
       only with single line fasta/q).'
-    default: 0
     inputBinding:
       position: 103
       prefix: --createdb-mode
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: 'Database type: 0: auto, 1: amino acid, 2: nucleotides.'
-    default: 0
     inputBinding:
       position: 103
       prefix: --dbtype
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - string
     doc: Exclude file names based on this regex.
-    default: ^$
     inputBinding:
       position: 103
       prefix: --file-exclude
@@ -95,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: Include file names based on this regex.
-    default: .*
     inputBinding:
       position: 103
       prefix: --file-include
@@ -104,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: Comma-separated list of frames on the forward strand to be extracted.
-    default: 1,2,3
     inputBinding:
       position: 103
       prefix: --forward-frames
@@ -113,7 +103,6 @@ inputs:
       - 'null'
       - string
     doc: Path to gff dir file.
-    default: ''
     inputBinding:
       position: 103
       prefix: --gff-dir
@@ -122,7 +111,6 @@ inputs:
       - 'null'
       - string
     doc: Comma separated list of feature types in the GFF file to select.
-    default: ''
     inputBinding:
       position: 103
       prefix: --gff-type
@@ -131,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Numeric ids in index file are offset by this value.
-    default: 0
     inputBinding:
       position: 103
       prefix: --id-offset
@@ -141,7 +128,6 @@ inputs:
       - int
     doc: Maximum number of codons with gaps or unknown residues before an open 
       reading frame is rejected.
-    default: 2147483647
     inputBinding:
       position: 103
       prefix: --max-gaps
@@ -150,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum codon number in open reading frames.
-    default: 32734
     inputBinding:
       position: 103
       prefix: --max-length
@@ -159,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum codon number in open reading frames.
-    default: 30
     inputBinding:
       position: 103
       prefix: --min-length
@@ -169,7 +153,6 @@ inputs:
       - int
     doc: 'Orf fragment can be 0: from start to stop, 1: from any to stop, 2: from
       last encountered start to stop (no start in the middle).'
-    default: 1
     inputBinding:
       position: 103
       prefix: --orf-start-mode
@@ -178,7 +161,6 @@ inputs:
       - 'null'
       - string
     doc: Comma-separated list of frames on the reverse strand to be extracted.
-    default: 1,2,3
     inputBinding:
       position: 103
       prefix: --reverse-frames
@@ -187,7 +169,6 @@ inputs:
       - 'null'
       - boolean
     doc: Shuffle input database.
-    default: 0
     inputBinding:
       position: 103
       prefix: --shuffle
@@ -196,7 +177,6 @@ inputs:
       - 'null'
       - string
     doc: 'One of: linecount, mean, min, max, doolittle, charges, seqlen, firstline.'
-    default: ''
     inputBinding:
       position: 103
       prefix: --stat
@@ -205,7 +185,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU-cores used (all by default).
-    default: 20
     inputBinding:
       position: 103
       prefix: --threads
@@ -214,7 +193,6 @@ inputs:
       - 'null'
       - boolean
     doc: Translate ORF to amino acid.
-    default: 0
     inputBinding:
       position: 103
       prefix: --translate
@@ -223,7 +201,6 @@ inputs:
       - 'null'
       - int
     doc: Genetic code table. See help for full list of options.
-    default: 1
     inputBinding:
       position: 103
       prefix: --translation-table
@@ -232,7 +209,6 @@ inputs:
       - 'null'
       - boolean
     doc: Return output in TSV format.
-    default: 0
     inputBinding:
       position: 103
       prefix: --tsv
@@ -242,7 +218,6 @@ inputs:
       - boolean
     doc: Use all alternatives for a start codon in the genetic table, if false -
       only ATG (AUG).
-    default: 0
     inputBinding:
       position: 103
       prefix: --use-all-table-starts
@@ -251,7 +226,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbosity level: 0: quiet, 1: +errors, 2: +warnings, 3: +info.'
-    default: 3
     inputBinding:
       position: 103
       prefix: -v
@@ -261,7 +235,6 @@ inputs:
       - int
     doc: write .lookup file containing mapping from internal id, fasta id and 
       file number.
-    default: 1
     inputBinding:
       position: 103
       prefix: --write-lookup

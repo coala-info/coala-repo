@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: k-mer overabundance cut ratio. In range [0..1].
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --abundanceCut
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - float
     doc: Maximal error rate (max 0.25). In range [0.0000001..0.25].
-    default: 0.05
     inputBinding:
       position: 103
       prefix: --epsilon
@@ -77,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal length of epsilon-matches. In range [0..inf].
-    default: 100
     inputBinding:
       position: 103
       prefix: --minLength
@@ -87,7 +84,6 @@ inputs:
       - int
     doc: Maximal number of kept matches per query and database. If STELLAR finds
       more matches, only the longest ones are kept.
-    default: 50
     inputBinding:
       position: 103
       prefix: --numMatches
@@ -96,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal length of low complexity repeats to be filtered.
-    default: 1000
     inputBinding:
       position: 103
       prefix: --repeatLength
@@ -105,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal period of low complexity repeats to be filtered.
-    default: 1
     inputBinding:
       position: 103
       prefix: --repeatPeriod
@@ -123,7 +117,6 @@ inputs:
       - int
     doc: Number of matches triggering removal of duplicates. Choose a smaller 
       value for saving space.
-    default: 500
     inputBinding:
       position: 103
       prefix: --sortThresh
@@ -141,7 +134,6 @@ inputs:
       - string
     doc: 'Verification strategy: exact or bestLocal or bandedGlobal One of exact,
       bestLocal, and bandedGlobal.'
-    default: exact
     inputBinding:
       position: 103
       prefix: --verification
@@ -151,7 +143,6 @@ inputs:
       - boolean
     doc: Turn this option off to disable version update notifications of the 
       application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO.
-    default: true
     inputBinding:
       position: 103
       prefix: --version-check
@@ -160,7 +151,6 @@ inputs:
       - 'null'
       - float
     doc: Maximal x-drop for extension.
-    default: 5.0
     inputBinding:
       position: 103
       prefix: --xDrop

@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads to use (default: auto-detected)'
-    default: auto-detected
     inputBinding:
       position: 101
       prefix: --threads

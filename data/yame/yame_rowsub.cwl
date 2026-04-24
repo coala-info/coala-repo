@@ -18,7 +18,6 @@ inputs:
       - string
     doc: 'Keep rows: beg0 = blockIndex0 * blockSize, end0 = (blockIndex0+1)*blockSize
       - 1. If <blockSize> is omitted, default blockSize=1000000.'
-    default: '1000000'
     inputBinding:
       position: 102
       prefix: -I

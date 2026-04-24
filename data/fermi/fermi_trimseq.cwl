@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequence length after trimming.
-    default: 0
     inputBinding:
       position: 102
       prefix: -l
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum quality score for trimming.
-    default: 3
     inputBinding:
       position: 102
       prefix: -q

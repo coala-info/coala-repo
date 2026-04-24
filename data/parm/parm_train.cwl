@@ -11,7 +11,6 @@ inputs:
         items: string
     doc: "If not false, give adaptor in 5 and 3 prima to use\n                   \
       \       as padding. e.g. -adaptor CAGTGAT ACGACTG"
-    default:
       - CAGTGAT
       - ACGACTG
     inputBinding:
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Number of samples in ech batch to train the data to
-    default: 128
     inputBinding:
       position: 101
       prefix: --batch_size
@@ -32,7 +30,6 @@ inputs:
       - type: array
         items: float
     doc: L1 and L2 regularization terms respectively.
-    default:
       - 0.005
       - 0.005
     inputBinding:
@@ -61,7 +58,6 @@ inputs:
     doc: "If True, implement a cosine schedueler for learning\n                  \
       \        rate. Otherwise, learning rate will be constant\n                 \
       \         after warmup."
-    default: true
     inputBinding:
       position: 101
       prefix: --cosine_scheduler
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Number of filters in convolution layers
-    default: 125
     inputBinding:
       position: 101
       prefix: --filter_size
@@ -80,7 +75,6 @@ inputs:
       - File
     doc: "Path to initial weights file. If None, random\n                        \
       \  initialization is used."
-    default: None
     inputBinding:
       position: 101
       prefix: --initial_weights
@@ -101,7 +95,6 @@ inputs:
       - int
     doc: "Maximum length of fragments. Necessary if we want to\n                 \
       \         downsample."
-    default: 600
     inputBinding:
       position: 101
       prefix: --L_max
@@ -110,7 +103,6 @@ inputs:
       - 'null'
       - float
     doc: Learning rate
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --lr
@@ -119,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Number of convolution blocks.
-    default: 5
     inputBinding:
       position: 101
       prefix: --n_blocks
@@ -128,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Number of epochs to train the data to
-    default: 7
     inputBinding:
       position: 101
       prefix: --n_epochs
@@ -137,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: How many subprocesses to use for data loading
-    default: 0
     inputBinding:
       position: 101
       prefix: --n_workers
@@ -156,7 +145,6 @@ inputs:
       - 'null'
       - float
     doc: Weight decay
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --weight_decay

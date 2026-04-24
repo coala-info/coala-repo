@@ -109,14 +109,12 @@ inputs:
 
   - id: auto_kmer_choice
     type:  boolean
-    default: true
     doc: |
         Automatically choose k-mer values.
         K-mer choices can be chosen by SPAdes instead of being entered manually
 
   - id: kmers
     type:  string
-    default: "21,33,55"
     doc: |
         K-mers to use, separated by commas.
         Comma-separated list of k-mer sizes to be used 
@@ -145,20 +143,17 @@ inputs:
 
   - id: iontorrent
     type:  boolean
-    default: false
     doc: |
         true if Libraries are IonTorrent reads.
 
   - id: sc
     type:  boolean
-    default: false
     doc: |
         This option is required for MDA. 
         true if single-cell data. 
 
   - id: onlyassembler
     type: boolean
-    default: false
     doc: |
         Run only assembly if true
         (without read error correction)
@@ -166,7 +161,6 @@ inputs:
 
   - id: careful
     type: boolean
-    default: true
     doc: |
         Careful correction.
         Tries to reduce number of mismatches and short indels. 

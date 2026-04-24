@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum sequence length for extraction..
-    default: 800000
     inputBinding:
       position: 101
       prefix: -ML
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequence length for extraction..
-    default: 4000
     inputBinding:
       position: 101
       prefix: -ml
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

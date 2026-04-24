@@ -20,7 +20,6 @@ inputs:
       - float
     doc: Minimum average base depth for detection - calculated against regions 
       of the detected gene with at least one read hit
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --detection-min-base-depth
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage threshold in percent
-    default: 80.0
     inputBinding:
       position: 101
       prefix: --detection-min-coverage
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum identity threshold in percent
-    default: 80.0
     inputBinding:
       position: 101
       prefix: --detection-min-identity
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads required for detection
-    default: 1
     inputBinding:
       position: 101
       prefix: --detection-min-num-reads
@@ -75,7 +71,6 @@ inputs:
       - string
     doc: 'Minimap2 preset: sr=short reads, map-ont=Oxford Nanopore, map-pb=PacBio,
       map-hifi=PacBio HiFi'
-    default: sr
     inputBinding:
       position: 101
       prefix: --minimap2-preset
@@ -100,7 +95,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage threshold in percent
-    default: 40.0
     inputBinding:
       position: 101
       prefix: --query-min-coverage
@@ -112,7 +106,6 @@ inputs:
       should only be used for deep investigation/debugging. "detected" will 
       report the reads that passed detection thresholds for each detected gene. 
       "detected-all" will report all reads for each detected gene.
-    default: None
     inputBinding:
       position: 101
       prefix: --report-fasta
@@ -145,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

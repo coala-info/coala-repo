@@ -18,7 +18,6 @@ inputs:
     label: identifier used  
   threads:
     type: int?
-    default: 1
     inputBinding:
       position: 3
       prefix: --thread
@@ -42,7 +41,6 @@ inputs:
     inputBinding:
       position: 1
       prefix: "-F 4"
-    default: true
 
 outputs:
   out_forward_reads: 

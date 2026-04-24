@@ -38,7 +38,6 @@ inputs:
     doc: The directory where the default databases were placed. The default 
       value also can be changed by adding 'export GETORG_PATH=your_favor' to the
       shell script (e.g. ~/.bash_profile or ~/.bashrc)
-    default: /root/.GetOrganelle
     inputBinding:
       position: 101
       prefix: --config-dir
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: The database type (seed/label/both).
-    default: both
     inputBinding:
       position: 101
       prefix: --db-type
@@ -57,7 +55,6 @@ inputs:
       - string
     doc: The version of database to add. Find more versions at 
       github.com/Kinggerm/GetOrganelleDB.
-    default: latest
     inputBinding:
       position: 101
       prefix: --use-version
@@ -103,7 +100,6 @@ inputs:
       - 'null'
       - boolean
     doc: verbose output to the screen.
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

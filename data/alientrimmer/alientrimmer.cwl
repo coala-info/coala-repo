@@ -68,7 +68,6 @@ inputs:
       - int
     doc: k-mer length k for alien sequence occurence searching; must lie between
       5 and 15
-    default: 10
     inputBinding:
       position: 101
       prefix: -k
@@ -77,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: maximum allowed percentage of low-quality bases per read
-    default: 50
     inputBinding:
       position: 101
       prefix: -p
@@ -95,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: minimum allowed read length
-    default: 50
     inputBinding:
       position: 101
       prefix: -l
@@ -113,7 +110,6 @@ inputs:
       - int
     doc: Phred quality score cutoff to define low-quality bases; must lie 
       between 0 and 40
-    default: 13
     inputBinding:
       position: 101
       prefix: -q

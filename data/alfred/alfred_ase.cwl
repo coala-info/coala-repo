@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: min. base quality
-    default: 10
     inputBinding:
       position: 102
       prefix: --base-qual
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: min. mapping quality
-    default: 10
     inputBinding:
       position: 102
       prefix: --map-qual
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: sample name
-    default: NA12878
     inputBinding:
       position: 102
       prefix: --sample

@@ -50,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output files
-    default: <ogs_name>_<today's date>
     inputBinding:
       position: 107
       prefix: --out_prefix

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer size, <=31
-    default: 31
     inputBinding:
       position: 101
       prefix: -k
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum kmer count regarded as novo kmers
-    default: 3
     inputBinding:
       position: 101
       prefix: -m
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Output germline events
-    default: 0
     inputBinding:
       position: 101
       prefix: -g

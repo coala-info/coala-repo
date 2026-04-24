@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - File
     doc: specify special FASTQ path
-    default: none
     inputBinding:
       position: 102
       prefix: -s
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - File
     doc: first (preprocessed and sorted) FASTQ file
-    default: none
     inputBinding:
       position: 102
       prefix: '-1'
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - File
     doc: second (preprocessed and sorted) FASTQ file
-    default: none
     inputBinding:
       position: 102
       prefix: '-2'
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: apply fragment read density optimization
-    default: off
     inputBinding:
       position: 102
       prefix: -d
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: index to follow 'BX' tag in SAM output
-    default: 1
     inputBinding:
       position: 102
       prefix: -i
@@ -65,7 +60,6 @@ inputs:
       - boolean
     doc: multi-input mode; takes input files after flags and spawns a thread for
       each
-    default: off
     inputBinding:
       position: 102
       prefix: -x
@@ -74,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: full read group string (e.g. '@RG\tID:foo\tSM:bar')
-    default: none
     inputBinding:
       position: 102
       prefix: -R
@@ -89,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: sequencing platform (one of 'haplotag', '10x', 'tru', 'cpt')
-    default: 10x
     inputBinding:
       position: 102
       prefix: -p
@@ -98,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: set number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: -t

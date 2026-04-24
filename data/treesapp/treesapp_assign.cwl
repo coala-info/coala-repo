@@ -34,7 +34,6 @@ inputs:
       - float
     doc: Minimum percentage of a profile HMM that a query alignment must cover 
       for it to be considered.
-    default: 80
     inputBinding:
       position: 102
       prefix: --hmm_coverage
@@ -44,7 +43,6 @@ inputs:
       - float
     doc: The maximum total evolutionary distance between a query and 
       reference(s), beyond which EPA placements are unclassified.
-    default: Inf
     inputBinding:
       position: 102
       prefix: --max_evol_distance
@@ -54,7 +52,6 @@ inputs:
       - float
     doc: The maximum pendant length distance threshold, beyond which EPA 
       placements are unclassified.
-    default: Inf
     inputBinding:
       position: 102
       prefix: --max_pendant_length
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: Selects which normalization metric to use, FPKM or TPM.
-    default: tpm
     inputBinding:
       position: 102
       prefix: --metric
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum likelihood weight ratio required for an EPA placement.
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --min_like_weight_ratio
@@ -81,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: minimal sequence length after alignment trimming
-    default: 0
     inputBinding:
       position: 102
       prefix: --min_seq_length
@@ -101,7 +95,6 @@ inputs:
       - int
     doc: The number of CPU threads or parallel processes to use in various 
       pipeline steps
-    default: 2
     inputBinding:
       position: 102
       prefix: --num_procs
@@ -118,7 +111,6 @@ inputs:
       - 'null'
       - string
     doc: Indicating whether the reads are paired-end (pe) or single-end (se).
-    default: pe
     inputBinding:
       position: 102
       prefix: --pairing
@@ -138,7 +130,6 @@ inputs:
       - float
     doc: Minimum percentage of a query sequence that an alignment must cover to 
       be retained.
-    default: 80
     inputBinding:
       position: 102
       prefix: --query_coverage
@@ -156,7 +147,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to the directory containing reference package pickle (.pkl) files.
-    default: treesapp/data/
     inputBinding:
       position: 102
       prefix: --refpkg_dir
@@ -201,7 +191,6 @@ inputs:
       - 'null'
       - string
     doc: The stage(s) for TreeSAPP to execute
-    default: continue
     inputBinding:
       position: 102
       prefix: --stage
@@ -210,7 +199,6 @@ inputs:
       - 'null'
       - string
     doc: HMM-threshold mode affects the number of query sequences that advance
-    default: relaxed
     inputBinding:
       position: 102
       prefix: --stringency
@@ -229,7 +217,6 @@ inputs:
       - string
     doc: Specifies the kernel type to be used in the SVM algorithm. It must be 
       either 'lin' 'poly' or 'rbf'.
-    default: lin
     inputBinding:
       position: 102
       prefix: --svm_kernel
@@ -240,7 +227,6 @@ inputs:
     doc: A comma-separated list specifying which reference packages to use. They
       are to be referenced by their 'prefix' attribute. Use `treesapp info -v` 
       to get the available list
-    default: ALL
     inputBinding:
       position: 102
       prefix: --targets
@@ -249,7 +235,6 @@ inputs:
       - 'null'
       - boolean
     doc: Flag to turn on position masking of the multiple sequence alignment
-    default: false
     inputBinding:
       position: 102
       prefix: --trim_align

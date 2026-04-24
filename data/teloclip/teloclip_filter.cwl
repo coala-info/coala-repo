@@ -31,7 +31,6 @@ inputs:
     doc: "If set, include secondary alignments in\n                              \
       \    output. Default: Off (exclude secondary\n                             \
       \     alignments)."
-    default: false
     inputBinding:
       position: 102
       prefix: --keep-secondary
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: 'Logging level (default: INFO).'
-    default: INFO
     inputBinding:
       position: 102
       prefix: --log-level
@@ -59,7 +57,6 @@ inputs:
       - int
     doc: "Tolerate max N unaligned bases before contig\n                         \
       \         end."
-    default: 50
     inputBinding:
       position: 102
       prefix: --max-break
@@ -70,7 +67,6 @@ inputs:
     doc: "Minimum number of aligned bases (anchor)\n                             \
       \     required on the non-clipped portion of the\n                         \
       \         read."
-    default: 100
     inputBinding:
       position: 102
       prefix: --min-anchor
@@ -80,7 +76,6 @@ inputs:
       - int
     doc: "Require clip to extend past ref contig end\n                           \
       \       by at least N bases."
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-clip
@@ -90,7 +85,6 @@ inputs:
       - int
     doc: "Minimum number of sequential pattern matches\n                         \
       \         required for a hit to be reported."
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-repeats

@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: Release tag to download
-    default: v25.12.2
     inputBinding:
       position: 101
       prefix: --release
@@ -21,7 +20,6 @@ inputs:
       - string
     doc: AncientMetagenomeDir table to download 
       [ancientmetagenome-environmental|ancientmetagenome-hostassociated|ancientsinglegenome-hostassociated|test]
-    default: ancientmetagenome-hostassociated
     inputBinding:
       position: 101
       prefix: --table
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: Type of table to download [samples|libraries|dates]
-    default: samples
     inputBinding:
       position: 101
       prefix: --table_type

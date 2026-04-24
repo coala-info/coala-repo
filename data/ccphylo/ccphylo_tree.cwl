@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: Byte precision on distance matrix
-    default: false
     inputBinding:
       position: 101
       prefix: --byte_precision
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: Float precision on distance matrix
-    default: false
     inputBinding:
       position: 101
       prefix: --float_precision
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Gradually free up D
-    default: false
     inputBinding:
       position: 101
       prefix: --free
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - File
     doc: Input file
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: Tree construction method.
-    default: dnj
     inputBinding:
       position: 101
       prefix: --method
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allocate matrix on the disk
-    default: false
     inputBinding:
       position: 101
       prefix: --mmap
@@ -80,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Output flags
-    default: 0
     inputBinding:
       position: 101
       prefix: --flag
@@ -89,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Floating point print precision
-    default: 9
     inputBinding:
       position: 101
       prefix: --print_precision
@@ -98,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: Quote taxa
-    default: \0
     inputBinding:
       position: 101
       prefix: --quotes
@@ -107,7 +98,6 @@ inputs:
       - 'null'
       - string
     doc: Separator
-    default: \t
     inputBinding:
       position: 101
       prefix: --separator
@@ -116,7 +106,6 @@ inputs:
       - 'null'
       - boolean
     doc: Short precision on distance matrix
-    default: false
     inputBinding:
       position: 101
       prefix: --short_precision
@@ -125,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

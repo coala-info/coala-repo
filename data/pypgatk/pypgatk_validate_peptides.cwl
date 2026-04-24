@@ -60,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: Used to specify the number of processes. Default is 40.
-    default: '40'
     inputBinding:
       position: 101
       prefix: --number_of_processes

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: p-value threshold for initial chi squared test. Set to 1 to show all
-    default: 1e-05
     inputBinding:
       position: 101
       prefix: --chisq
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: minimum kmer frequency
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --maf
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: maximum kmer length
-    default: 100
     inputBinding:
       position: 101
       prefix: --max_length
@@ -89,7 +86,6 @@ inputs:
       - 'null'
       - float
     doc: p-value threshold for final logistic test. Set to 1 to show all
-    default: 1e-08
     inputBinding:
       position: 101
       prefix: --pval
@@ -106,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of threads. Suggested: 20'
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

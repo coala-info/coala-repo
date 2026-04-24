@@ -21,7 +21,6 @@ inputs:
   - 'null'
   - string
   doc: Tag to use with barcode sequences
-  default: BC
   inputBinding:
     position: 102
     prefix: --barcode-tag
@@ -113,7 +112,6 @@ inputs:
   - 'null'
   - string
   doc: Tag to use with barcode qualities
-  default: QT
   inputBinding:
     position: 102
     prefix: --quality-tag
@@ -170,7 +168,6 @@ inputs:
   - 'null'
   - int
   doc: Number of additional threads to use
-  default: 0
   inputBinding:
     position: 102
     prefix: --threads
@@ -179,7 +176,6 @@ inputs:
   - 'null'
   - string
   doc: Tag to use for UMI sequences
-  default: RX
   inputBinding:
     position: 102
     prefix: --UMI-tag

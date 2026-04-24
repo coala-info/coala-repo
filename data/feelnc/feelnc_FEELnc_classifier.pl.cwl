@@ -33,7 +33,6 @@ inputs:
       - int
     doc: Size of the window around the lncRNA to compute 
       interactions/classification
-    default: 100000
     inputBinding:
       position: 101
       prefix: --maxwindow
@@ -56,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the window during the expansion process
-    default: 10000
     inputBinding:
       position: 101
       prefix: --window

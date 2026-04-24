@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: The length of the kmer to use.
-    default: 27
     inputBinding:
       position: 102
       prefix: --kmer-size
@@ -60,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: use PREFIX for the names of the index files
-    default: prefix of the input file
     inputBinding:
       position: 102
       prefix: --prefix
@@ -79,7 +77,6 @@ inputs:
     doc: "use occurrence array sample rate of N in the FM-index. Higher values use
       significantly\nless memory at the cost of higher runtime. This value must be
       a power of 2"
-    default: 128
     inputBinding:
       position: 102
       prefix: --sample-rate
@@ -88,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: use NUM threads to compute the overlaps
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

@@ -18,7 +18,6 @@ inputs:
       - int
     doc: Cut-off value for masking. Lower values mask more, but might still be 
       useful sequence. Values > 64 will rarely mask poly-triplets.
-    default: 28
     inputBinding:
       position: 102
       prefix: -v
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum word size to consider for masking.
-    default: 3
     inputBinding:
       position: 102
       prefix: -w

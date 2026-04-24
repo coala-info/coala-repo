@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Number of best friends
-    default: 3
     inputBinding:
       position: 101
       prefix: -bestfriends
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Number of friends
-    default: 7
     inputBinding:
       position: 101
       prefix: -friends
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: kmer length
-    default: 31
     inputBinding:
       position: 101
       prefix: -k
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: number of cores
-    default: 1
     inputBinding:
       position: 101
       prefix: -nb-cores
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: verbosity level
-    default: 1
     inputBinding:
       position: 101
       prefix: -verbose

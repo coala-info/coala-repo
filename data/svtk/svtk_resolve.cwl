@@ -66,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: Variant prefix
-    default: CPX_
     inputBinding:
       position: 103
       prefix: --prefix

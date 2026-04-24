@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory
-    default: current directory
     inputBinding:
       position: 101
       prefix: -o
@@ -63,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 8
     inputBinding:
       position: 101
       prefix: -t

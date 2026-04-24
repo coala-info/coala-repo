@@ -25,7 +25,6 @@ inputs:
       decoy is skipped entirely. When set to "T", every decoy is added to the 
       database without checking for duplication. This option reduces the memory 
       requirements significantly.
-    default: false
     inputBinding:
       position: 103
       prefix: --allow-dups
@@ -36,7 +35,6 @@ inputs:
     doc: When set to T, for each protein that begins with methionine, tide-index
       will put two copies of the leading peptide into the index, with and 
       without the N-terminal methionine.
-    default: false
     inputBinding:
       position: 103
       prefix: --clip-nterm-methionine
@@ -47,7 +45,6 @@ inputs:
     doc: 'Specifies C-terminal static and variable mass modifications on peptides.
       Specify a comma-separated list of C-terminal modification sequences of the form:
       X+21.9819'
-    default: ''
     inputBinding:
       position: 103
       prefix: --cterm-peptide-mods-spec
@@ -66,7 +63,6 @@ inputs:
       not before P which is represented as [RK]|{P}. AspN cuts after any residue
       but only before D which is represented as [X]|[D]. To prevent the 
       sequences from being digested at all, use [Z]|[Z].
-    default: ''
     inputBinding:
       position: 103
       prefix: --custom-enzyme
@@ -85,7 +81,6 @@ inputs:
       will appear in both the target and decoy database. The protein-reverse 
       mode reverses the entire protein sequence, irrespective of the composite 
       peptides.
-    default: shuffle
     inputBinding:
       position: 103
       prefix: --decoy-format
@@ -94,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: Specifies the prefix of the protein names that indicate a decoy.
-    default: decoy_
     inputBinding:
       position: 103
       prefix: --decoy-prefix
@@ -105,7 +99,6 @@ inputs:
     doc: Specify whether every peptide in the database must have two enzymatic 
       termini (full-digest) or if peptides with only one enzymatic terminus are 
       also included (partial-digest).
-    default: full-digest
     inputBinding:
       position: 103
       prefix: --digestion
@@ -122,7 +115,6 @@ inputs:
       ([FL]|{P}), elastase-trypsin-chymotrypsin ([ALIVKRWFY]|{P}). Specifying --enzyme
       no-enzyme yields a non-enzymatic digest. Warning: the resulting index may be
       quite large.'
-    default: trypsin
     inputBinding:
       position: 103
       prefix: --enzyme
@@ -132,7 +124,6 @@ inputs:
       - string
     doc: Specify the type of isotopic masses to use when calculating the peptide
       mass.
-    default: mono
     inputBinding:
       position: 103
       prefix: --isotopic-mass
@@ -147,7 +138,6 @@ inputs:
       setting keep-terminal-aminos to "NC" will yield "EPMAK"; setting it to "C"
       will yield "PMAEK"; setting it to "N" will yield "EKPMA"; and setting it 
       to "none" will yield "KPMAE".
-    default: NC
     inputBinding:
       position: 103
       prefix: --keep-terminal-aminos
@@ -156,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: Set the precision for masses and m/z written to sqt and text files.
-    default: 4
     inputBinding:
       position: 103
       prefix: --mass-precision
@@ -165,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum length of peptides to consider.
-    default: 50
     inputBinding:
       position: 103
       prefix: --max-length
@@ -174,7 +162,6 @@ inputs:
       - 'null'
       - float
     doc: The maximum mass (in Da) of peptides to consider.
-    default: 7200.0
     inputBinding:
       position: 103
       prefix: --max-mass
@@ -184,7 +171,6 @@ inputs:
       - int
     doc: The maximum number of modifications that can be applied to a single 
       peptide.
-    default: 255
     inputBinding:
       position: 103
       prefix: --max-mods
@@ -193,7 +179,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum length of peptides to consider.
-    default: 6
     inputBinding:
       position: 103
       prefix: --min-length
@@ -202,7 +187,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum mass (in Da) of peptides to consider.
-    default: 200.0
     inputBinding:
       position: 103
       prefix: --min-mass
@@ -212,7 +196,6 @@ inputs:
       - int
     doc: The minimum number of modifications that can be applied to a single 
       peptide.
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-mods
@@ -222,7 +205,6 @@ inputs:
       - int
     doc: Maximum number of missed cleavages per peptide to allow in enzymatic 
       digestion.
-    default: 0
     inputBinding:
       position: 103
       prefix: --missed-cleavages
@@ -231,7 +213,6 @@ inputs:
       - 'null'
       - int
     doc: Set the precision for modifications as written to .txt files.
-    default: 2
     inputBinding:
       position: 103
       prefix: --mod-precision
@@ -241,7 +222,6 @@ inputs:
       - string
     doc: 'Expression for static and variable mass modifications to include. Specify
       a comma-separated list of modification sequences of the form: C+57.02146,2M+15.9949,1STY+79.966331,...'
-    default: C+57.02146,2M+15.9949,1STY+79.966331,...
     inputBinding:
       position: 103
       prefix: --mods-spec
@@ -252,7 +232,6 @@ inputs:
     doc: 'Specifies N-terminal static and variable mass modifications on peptides.
       Specify a comma-separated list of N-terminal modification sequences of the form:
       1E-18.0106,C-17.0265'
-    default: ''
     inputBinding:
       position: 103
       prefix: --nterm-peptide-mods-spec
@@ -261,7 +240,6 @@ inputs:
       - 'null'
       - string
     doc: The name of the directory where output files will be created.
-    default: crux-output
     inputBinding:
       position: 103
       prefix: --output-dir
@@ -271,7 +249,6 @@ inputs:
       - boolean
     doc: Replace existing files if true or fail when trying to overwrite a file 
       if false.
-    default: false
     inputBinding:
       position: 103
       prefix: --overwrite
@@ -280,7 +257,6 @@ inputs:
       - 'null'
       - string
     doc: A file containing parameters.
-    default: ''
     inputBinding:
       position: 103
       prefix: --parameter-file
@@ -293,7 +269,6 @@ inputs:
       are generated, then a second file will be created containing the decoy 
       peptides. Decoys that also appear in the target database are marked with 
       an asterisk in a third column.
-    default: false
     inputBinding:
       position: 103
       prefix: --peptide-list
@@ -304,7 +279,6 @@ inputs:
     doc: When given a unsigned integer value seeds the random number generator 
       with that value. When given the string "time" seeds the random number 
       generator with the system time.
-    default: '1'
     inputBinding:
       position: 103
       prefix: --seed
@@ -314,7 +288,6 @@ inputs:
       - string
     doc: The name of the directory where temporary files will be created. If 
       this parameter is blank, then the system temporary directory will be used
-    default: ''
     inputBinding:
       position: 103
       prefix: --temp-dir
@@ -326,7 +299,6 @@ inputs:
       messages, including all those at lower verbosity levels: 0-fatal errors, 10-non-fatal
       errors, 20-warnings, 30-information on the progress of execution, 40-more progress
       information, 50-debug info, 60-detailed debug info.'
-    default: 30
     inputBinding:
       position: 103
       prefix: --verbosity

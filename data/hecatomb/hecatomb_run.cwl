@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: 'Assembly method: [cross]-assembly or [merged]-assembly'
-    default: merged
     inputBinding:
       position: 102
       prefix: --assembly
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Custom config file
-    default: (outputDir)/hecatomb.config.yaml
     inputBinding:
       position: 102
       prefix: --configfile
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: Host genome name for filtering, or 'none' for no host removal.
-    default: human
     inputBinding:
       position: 102
       prefix: --host
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - boolean
     doc: Sequencing is longreads (PacBio, Nanopore, etc)
-    default: false
     inputBinding:
       position: 102
       prefix: --longreads
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate fastqc reports
-    default: false
     inputBinding:
       position: 102
       prefix: --no-fastqc
@@ -96,7 +91,6 @@ inputs:
       - 'null'
       - boolean
     doc: Sequencing is longreads (PacBio, Nanopore, etc)
-    default: true
     inputBinding:
       position: 102
       prefix: --no-longreads
@@ -105,7 +99,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use conda for Snakemake rules
-    default: true
     inputBinding:
       position: 102
       prefix: --no-use-conda
@@ -128,7 +121,6 @@ inputs:
       - 'null'
       - string
     doc: MMSeqs search speed settings
-    default: sensitive
     inputBinding:
       position: 102
       prefix: --search
@@ -137,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 32
     inputBinding:
       position: 102
       prefix: --threads
@@ -146,7 +137,6 @@ inputs:
       - 'null'
       - string
     doc: Trimming engine for trimnami
-    default: fastp
     inputBinding:
       position: 102
       prefix: --trim
@@ -155,7 +145,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use conda for Snakemake rules
-    default: false
     inputBinding:
       position: 102
       prefix: --use-conda
@@ -164,7 +153,6 @@ inputs:
       - 'null'
       - string
     doc: Custom config file
-    default: (outputDir)/hecatomb.profile/
     inputBinding:
       position: 102
       prefix: --workflow-profile

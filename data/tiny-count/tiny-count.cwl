@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality for a read to be counted
-    default: 10
     inputBinding:
       position: 103
       prefix: --min-qual
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: 'Strand specificity: 0 (unstranded), 1 (stranded), 2 (reversely stranded)'
-    default: 0
     inputBinding:
       position: 103
       prefix: --strand

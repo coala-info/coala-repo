@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: output a BED12 file of genes
-    default: false
     inputBinding:
       position: 103
       prefix: --genes
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: the missing tag value
-    default: NA
     inputBinding:
       position: 103
       prefix: --missing_value
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not check the order of GFF3 file records
-    default: false
     inputBinding:
       position: 103
       prefix: --no_order_check
@@ -65,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: an attribute tag of exon genes
-    default: Parent
     inputBinding:
       position: 103
       prefix: --parent_tag

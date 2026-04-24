@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - Directory
     doc: Working directory for the test run.
-    default: current working directory
     inputBinding:
       position: 101
       prefix: --wdir

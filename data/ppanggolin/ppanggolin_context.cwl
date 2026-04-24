@@ -69,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: Format of the context graph. Can be gexf or graphml.
-    default: gexf
     inputBinding:
       position: 101
       prefix: --graph_format
@@ -154,7 +153,6 @@ inputs:
       - int
     doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
       for debug)
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbose

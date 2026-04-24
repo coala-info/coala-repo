@@ -103,7 +103,6 @@ inputs:
       - boolean
     doc: DO NOT Realign gene families to link fragments withtheir non-fragmented
       gene family.
-    default: false
     inputBinding:
       position: 101
       prefix: --no_defrag

@@ -24,7 +24,6 @@ inputs:
       - boolean
     doc: predict high ambiguous errors using machine learning when set true, 
       defaut true
-    default: true
     inputBinding:
       position: 101
       prefix: --high_ambiguous
@@ -70,7 +69,6 @@ inputs:
       - string
     doc: use gpu for training and prediction, default auto, (options gpu_hist, 
       hist, auto)
-    default: auto
     inputBinding:
       position: 101
       prefix: --tree_method

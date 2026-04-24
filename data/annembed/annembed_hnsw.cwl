@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: Hierarchy scale modification factor in HNSW, must be in [0.2,1]
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --scale_modify_f

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: max_length
-    default: inf
     inputBinding:
       position: 1
   - id: class_prob_cutoff
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: class_prob_cutoff[range 0-1]
-    default: '0'
     inputBinding:
       position: 102
       prefix: -s
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: min_length
-    default: '0'
     inputBinding:
       position: 102
       prefix: -m
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: required label
-    default: '0'
     inputBinding:
       position: 102
       prefix: -l

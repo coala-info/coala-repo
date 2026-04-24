@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to folder containing recipes
-    default: recipes/
     inputBinding:
       position: 1
   - id: config
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: Path to Bioconda config
-    default: config.yml
     inputBinding:
       position: 2
   - id: cache
@@ -29,7 +27,6 @@ inputs:
     doc: 'To speed up debugging, use repodata cached locally in the provided filename.
       If the file does not exist, it will be created the first time. Caution: The
       cache will not be updated if exclude-channels is changed'
-    default: '-'
     inputBinding:
       position: 103
       prefix: --cache
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: Check if recipe has active branch
-    default: false
     inputBinding:
       position: 103
       prefix: --check-branch
@@ -48,7 +44,6 @@ inputs:
       - type: array
         items: string
     doc: Set user and email to use for committing. Takes exactly two arguments.
-    default: '-'
     inputBinding:
       position: 103
       prefix: --commit-as
@@ -57,7 +52,6 @@ inputs:
       - 'null'
       - boolean
     doc: Create branch for each update
-    default: false
     inputBinding:
       position: 103
       prefix: --create-branch
@@ -66,7 +60,6 @@ inputs:
       - 'null'
       - boolean
     doc: Create PR for each update. Implies create-branch.
-    default: false
     inputBinding:
       position: 103
       prefix: --create-pr
@@ -75,7 +68,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't update remote git or github
-    default: false
     inputBinding:
       position: 103
       prefix: --dry-run
@@ -86,7 +78,6 @@ inputs:
         items: string
     doc: Globs for package[s] to exclude from scan. Can be specified more than 
       once
-    default: '-'
     inputBinding:
       position: 103
       prefix: --exclude
@@ -97,7 +88,6 @@ inputs:
         items: string
     doc: Exclude recipes building packages present in other channels. Set to 
       'none' to disable check.
-    default: conda-forge
     inputBinding:
       position: 103
       prefix: --exclude-channels
@@ -108,7 +98,6 @@ inputs:
     doc: By default, only subrecipes explicitly enabled for watch in meta.yaml 
       are considered. Set to 'always' to exclude all subrecipes. Set to 'never' 
       to include all subrecipes
-    default: '-'
     inputBinding:
       position: 103
       prefix: --exclude-subrecipes
@@ -117,7 +106,6 @@ inputs:
       - 'null'
       - File
     doc: Write urls with permanent failure to this file
-    default: '-'
     inputBinding:
       position: 103
       prefix: --failed-urls
@@ -128,7 +116,6 @@ inputs:
     doc: Try to fetch python requirements. Please note that this requires 
       downloading packages and executing setup.py, so presents a potential 
       security problem.
-    default: false
     inputBinding:
       position: 103
       prefix: --fetch-requirements
@@ -137,7 +124,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not exclude skiplisted recipes
-    default: false
     inputBinding:
       position: 103
       prefix: --ignore-skiplists
@@ -146,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: Limit lines emitted for commands executed
-    default: '-'
     inputBinding:
       position: 103
       prefix: --log-command-max-lines
@@ -155,7 +140,6 @@ inputs:
       - 'null'
       - File
     doc: Write log to file
-    default: '-'
     inputBinding:
       position: 103
       prefix: --logfile
@@ -164,7 +148,6 @@ inputs:
       - 'null'
       - string
     doc: Log level for log file
-    default: debug
     inputBinding:
       position: 103
       prefix: --logfile-level
@@ -173,7 +156,6 @@ inputs:
       - 'null'
       - string
     doc: Set logging level (debug, info, warning, error, critical)
-    default: info
     inputBinding:
       position: 103
       prefix: --loglevel
@@ -182,7 +164,6 @@ inputs:
       - 'null'
       - int
     doc: Exit after ARG updates
-    default: 0
     inputBinding:
       position: 103
       prefix: --max-updates
@@ -192,7 +173,6 @@ inputs:
       - boolean
     doc: Don't check for recipes having a dependency with a pending update. 
       Update all recipes, including those having deps in need or rebuild.
-    default: false
     inputBinding:
       position: 103
       prefix: --no-check-pending-deps
@@ -201,7 +181,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't check for pinning updates
-    default: false
     inputBinding:
       position: 103
       prefix: --no-check-pinnings
@@ -210,7 +189,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't check for version updates to recipes
-    default: false
     inputBinding:
       position: 103
       prefix: --no-check-version-update
@@ -220,7 +198,6 @@ inputs:
       - boolean
     doc: Don't process recipes in graph order or add dependent recipes to 
       checks. Implies --no-skip-pending-deps.
-    default: false
     inputBinding:
       position: 103
       prefix: --no-follow-graph
@@ -229,7 +206,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not shuffle recipe order
-    default: false
     inputBinding:
       position: 103
       prefix: --no-shuffle
@@ -238,7 +214,6 @@ inputs:
       - 'null'
       - boolean
     doc: Check only recipes with active update
-    default: false
     inputBinding:
       position: 103
       prefix: --only-active
@@ -248,7 +223,6 @@ inputs:
       - type: array
         items: string
     doc: Glob(s) for package[s] to scan. Can be specified more than once
-    default: '*'
     inputBinding:
       position: 103
       prefix: --packages
@@ -257,7 +231,6 @@ inputs:
       - 'null'
       - boolean
     doc: Drop into debugger on exception
-    default: false
     inputBinding:
       position: 103
       prefix: -P
@@ -266,7 +239,6 @@ inputs:
       - 'null'
       - File
     doc: Write status for each recipe to this file
-    default: '-'
     inputBinding:
       position: 103
       prefix: --recipe-status
@@ -275,7 +247,6 @@ inputs:
       - 'null'
       - string
     doc: Enable signing. Optionally takes keyid.
-    default: '0'
     inputBinding:
       position: 103
       prefix: --sign
@@ -284,7 +255,6 @@ inputs:
       - 'null'
       - int
     doc: Limit maximum number of processes used.
-    default: 16
     inputBinding:
       position: 103
       prefix: --threads
@@ -293,7 +263,6 @@ inputs:
       - 'null'
       - File
     doc: Write unrecognized urls to this file
-    default: '-'
     inputBinding:
       position: 103
       prefix: --unparsed-urls

@@ -13,7 +13,6 @@ inputs:
       column from the metadata file if already present. Finds clusters by 
       following connectivity, assigns each cluster a distinct integer, based on 
       size rank, bigger clusters get smaller numbers.
-    default: false
     inputBinding:
       position: 101
       prefix: --cluster
@@ -23,7 +22,6 @@ inputs:
       - string
     doc: Color the points in the output image based on this column of the 
       metadata table.
-    default: None
     inputBinding:
       position: 101
       prefix: --color_by
@@ -33,7 +31,6 @@ inputs:
       - File
     doc: 'tab separated file with two columns and no header, columns are: annotation,
       hex color. For example: CCDB   cc0000'
-    default: None
     inputBinding:
       position: 101
       prefix: --color_table
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - File
     doc: Path to a configuration file.
-    default: None
     inputBinding:
       position: 101
       prefix: --config
@@ -61,7 +57,6 @@ inputs:
       - float
     doc: exclude all edges with weights less than or equal to this value. This 
       should be >= 0.
-    default: 0
     inputBinding:
       position: 101
       prefix: --lb
@@ -71,7 +66,6 @@ inputs:
       - type: array
         items: File
     doc: tab separated files of sequence metadata.
-    default: None
     inputBinding:
       position: 101
       prefix: --metadata
@@ -83,7 +77,6 @@ inputs:
       tree of the graph. The clusters will be the same as the full graph, but 
       the intra-cluster connections will be pruned to the minimum necessary to 
       preserve the clusters.
-    default: false
     inputBinding:
       position: 101
       prefix: --mst
@@ -93,7 +86,6 @@ inputs:
       - boolean
     doc: If set, then the tsv file will not have a header. Only relevant if 
       --cluster_tsv is set.
-    default: false
     inputBinding:
       position: 101
       prefix: --no_cluster_header

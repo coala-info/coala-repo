@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: API profile name
-    default: default
     inputBinding:
       position: 103
       prefix: --api-profile
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to put results in
-    default: ./
     inputBinding:
       position: 103
       prefix: --outdir
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Polling interval to check for job status (in min)
-    default: 1
     inputBinding:
       position: 103
       prefix: --poll-interval
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: Project to run tasks in
-    default: default-sbg-cwl-runner-project
     inputBinding:
       position: 103
       prefix: --project

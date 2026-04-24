@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Font to render with
-    default: standard
     inputBinding:
       position: 102
       prefix: --font
@@ -67,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Set terminal width
-    default: 80
     inputBinding:
       position: 102
       prefix: --width

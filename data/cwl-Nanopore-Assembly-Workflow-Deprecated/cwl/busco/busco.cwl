@@ -31,7 +31,6 @@ inputs:
   threads:
     type: int
     label: Number of threads
-    default: 1
     inputBinding:
       prefix: --cpu
 
@@ -52,7 +51,6 @@ inputs:
     type: boolean
     label: Offline
     doc: Run BUSCO in offline mode. Does not download datasets
-    default: true
     inputBinding:
       prefix: --offline
 
@@ -100,7 +98,6 @@ inputs:
     type: boolean
     label: Compress output
     doc: Compress some subdirectories with many files to save space
-    default: true
     inputBinding:
         prefix: --tar
 

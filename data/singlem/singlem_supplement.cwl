@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: maximum contamination for CheckM2
-    default: 10
     inputBinding:
       position: 101
       prefix: --checkm2-max-contamination
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: minimum completeness for CheckM2
-    default: 50
     inputBinding:
       position: 101
       prefix: --checkm2-min-completeness
@@ -85,7 +83,6 @@ inputs:
       - 'null'
       - float
     doc: evalue for hmmsearch run on proteins to gather markers
-    default: '1e-20'
     inputBinding:
       position: 101
       prefix: --hmmsearch-evalue
@@ -102,7 +99,6 @@ inputs:
       - 'null'
       - string
     doc: metapackage to build upon
-    default: Use default package
     inputBinding:
       position: 101
       prefix: --input-metapackage
@@ -140,7 +136,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the taxonomy database to record in the created metapackage
-    default: custom_taxonomy_database
     inputBinding:
       position: 101
       prefix: --new-taxonomy-database-name
@@ -149,7 +144,6 @@ inputs:
       - 'null'
       - string
     doc: Version of the taxonomy database to use
-    default: None
     inputBinding:
       position: 101
       prefix: --new-taxonomy-database-version

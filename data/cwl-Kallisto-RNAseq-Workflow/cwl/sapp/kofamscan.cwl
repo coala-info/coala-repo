@@ -33,7 +33,6 @@ inputs:
     label: Sample name
   threads:
     type: int?
-    default: 3
     inputBinding:
       prefix: -threads
   profile:

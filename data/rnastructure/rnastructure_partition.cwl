@@ -22,7 +22,6 @@ inputs:
       to\n    reside in the at the location indicated by environment variable DATAPATH.\n\
       \    The default is \"rna\" (i.e. use RNA parameters). This option overrides
       the\n    --DNA flag."
-    default: rna
     inputBinding:
       position: 102
       prefix: --alphabet
@@ -80,7 +79,6 @@ inputs:
       - float
     doc: "Specify an intercept (overall offset) to use with the 2D experimental pair\n\
       \    bonus file.\n    Default is 0.0 (no change to input bonuses)."
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -xo
@@ -90,7 +88,6 @@ inputs:
       - float
     doc: "Specify a number to multiply the experimental pair bonus matrix by.\n  \
       \  Default is 1.0 (no change to input bonuses)."
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -xs
@@ -134,7 +131,6 @@ inputs:
       - 'null'
       - float
     doc: "Specify an intercept used with SHAPE constraints.\n    Default is -0.6 kcal/mol."
-    default: -0.6
     inputBinding:
       position: 102
       prefix: --SHAPEintercept
@@ -143,7 +139,6 @@ inputs:
       - 'null'
       - float
     doc: "Specify a slope used with SHAPE constraints.\n    Default is 1.8 kcal/mol."
-    default: 1.8
     inputBinding:
       position: 102
       prefix: --SHAPEslope
@@ -153,7 +148,6 @@ inputs:
       - float
     doc: "Specify the temperature at which calculation takes place in Kelvin.\n  \
       \  Default is 310.15 K, which is 37 degrees C."
-    default: 310.15
     inputBinding:
       position: 102
       prefix: --temperature

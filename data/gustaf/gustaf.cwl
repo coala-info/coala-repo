@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: k-mer overabundance cut ratio. In range [0..1].
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --abundanceCut
@@ -43,7 +42,6 @@ inputs:
       - int
     doc: Allowed initial or ending gap length at begin and end of read that 
       creates a breakend/breakpoint (e.g. for reads extending into insertions)
-    default: 30
     inputBinding:
       position: 103
       prefix: --breakendThresh
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Allowed difference in breakpoint position
-    default: 5
     inputBinding:
       position: 103
       prefix: --breakpoint-pos-range
@@ -86,7 +83,6 @@ inputs:
       - 'null'
       - float
     doc: Maximal error rate (max 0.25). In range [0.0000001..0.25].
-    default: 0.05
     inputBinding:
       position: 103
       prefix: --epsilon
@@ -104,7 +100,6 @@ inputs:
       - int
     doc: Allowed gap length between matches, default value corresponse to 
       expected size of microindels (5 bp)
-    default: 5
     inputBinding:
       position: 103
       prefix: --gapThresh
@@ -114,7 +109,6 @@ inputs:
       - int
     doc: Allowed initial or ending gap length at begin and end of read with no 
       breakpoint (e.g. due to sequencing errors at the end)
-    default: 15
     inputBinding:
       position: 103
       prefix: --initGapThresh
@@ -123,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: Inversion penalty
-    default: 5
     inputBinding:
       position: 103
       prefix: --invPen
@@ -132,7 +125,6 @@ inputs:
       - 'null'
       - string
     doc: Job/Queue name
-    default: .
     inputBinding:
       position: 103
       prefix: --jobName
@@ -173,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: Number of supporting concordant mates
-    default: 2
     inputBinding:
       position: 103
       prefix: --mate-support
@@ -182,7 +173,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal length of epsilon-matches. In range [0..inf].
-    default: 100
     inputBinding:
       position: 103
       prefix: --minLength
@@ -192,7 +182,6 @@ inputs:
       - int
     doc: Maximal number of kept matches per query and database. If STELLAR finds
       more matches, only the longest ones are kept.
-    default: 50
     inputBinding:
       position: 103
       prefix: --numMatches
@@ -201,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for parallelization of I/O.
-    default: 1
     inputBinding:
       position: 103
       prefix: --numThreads
@@ -210,7 +198,6 @@ inputs:
       - 'null'
       - int
     doc: Intrachromosomal order change penalty
-    default: 0
     inputBinding:
       position: 103
       prefix: --orderPen
@@ -219,7 +206,6 @@ inputs:
       - 'null'
       - float
     doc: Allowed overlap between matches
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --overlapThresh
@@ -228,7 +214,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal length of low complexity repeats to be filtered.
-    default: 1000
     inputBinding:
       position: 103
       prefix: --repeatLength
@@ -237,7 +222,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal period of low complexity repeats to be filtered.
-    default: 1
     inputBinding:
       position: 103
       prefix: --repeatPeriod
@@ -263,7 +247,6 @@ inputs:
       - int
     doc: Number of matches triggering removal of duplicates. Choose a smaller 
       value for saving space.
-    default: 500
     inputBinding:
       position: 103
       prefix: --sortThresh
@@ -272,7 +255,6 @@ inputs:
       - 'null'
       - int
     doc: Number of supporting reads
-    default: 2
     inputBinding:
       position: 103
       prefix: --support
@@ -282,7 +264,6 @@ inputs:
       - int
     doc: Minimal length of (small) insertion/duplication with double overlap to 
       be considered tandem repeat
-    default: 50
     inputBinding:
       position: 103
       prefix: --tandemThresh
@@ -291,7 +272,6 @@ inputs:
       - 'null'
       - int
     doc: Interchromosomal translocation penalty
-    default: 5
     inputBinding:
       position: 103
       prefix: --transPen
@@ -309,7 +289,6 @@ inputs:
       - string
     doc: 'Verification strategy: exact or bestLocal or bandedGlobal One of exact,
       bestLocal, and bandedGlobal.'
-    default: exact
     inputBinding:
       position: 103
       prefix: --verification
@@ -319,7 +298,6 @@ inputs:
       - boolean
     doc: Turn this option off to disable version update notifications of the 
       application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO.
-    default: true
     inputBinding:
       position: 103
       prefix: --version-check
@@ -328,7 +306,6 @@ inputs:
       - 'null'
       - float
     doc: Maximal x-drop for extension.
-    default: 5.0
     inputBinding:
       position: 103
       prefix: --xDrop

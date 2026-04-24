@@ -61,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: Overlap between adjacent tiles.
-    default: 10% of tile size
     inputBinding:
       position: 101
       prefix: --tile-overlap
@@ -71,7 +70,6 @@ inputs:
       - int
     doc: Number of pixels for the width and height of each tile. Each tile is 
       created as a square.
-    default: 4096
     inputBinding:
       position: 101
       prefix: --tile-size

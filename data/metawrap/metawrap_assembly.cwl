@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: memory in GB
-    default: 24
     inputBinding:
       position: 101
       prefix: -m
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of assembled contigs
-    default: 1000
     inputBinding:
       position: 101
       prefix: -l
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - boolean
     doc: assemble with megahit (default)
-    default: true
     inputBinding:
       position: 101
       prefix: --megahit

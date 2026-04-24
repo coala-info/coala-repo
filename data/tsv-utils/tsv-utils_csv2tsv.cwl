@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: The field delimiter character.
-    default: ','
     inputBinding:
       position: 102
       prefix: --delimiter
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: The quote character.
-    default: '"'
     inputBinding:
       position: 102
       prefix: --quote

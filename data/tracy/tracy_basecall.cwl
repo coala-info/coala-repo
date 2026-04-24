@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: output format [json|tsv|fasta|fastq]
-    default: json
     inputBinding:
       position: 102
       prefix: --format
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: fasta/fastq sequence [primary|secondary|consensus]
-    default: primary
     inputBinding:
       position: 102
       prefix: --otype
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: peak ratio to call a base
-    default: 0.330000013
     inputBinding:
       position: 102
       prefix: --pratio
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: 'trimming stringency [1:9], 0: use trimLeft and trimRight'
-    default: 0
     inputBinding:
       position: 102
       prefix: --trim
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: trim size left
-    default: 0
     inputBinding:
       position: 102
       prefix: --trimLeft
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: trim size right
-    default: 0
     inputBinding:
       position: 102
       prefix: --trimRight

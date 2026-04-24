@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: the kmer length for indexing
-    default: 8
     inputBinding:
       position: 101
       prefix: --kmer
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: the minimum average quality to keep after trimming
-    default: 20
     inputBinding:
       position: 101
       prefix: --minqual
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: the maximum mismatch for primer seq
-    default: 3
     inputBinding:
       position: 101
       prefix: --mismatch

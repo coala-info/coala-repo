@@ -31,7 +31,6 @@ inputs:
       prefix to use for consolidated transcript_id values. Prefix must be 
       alphanumeric with no spaces. Underscore ("_") is the only allowed special 
       character.
-    default: "'tr'"
     inputBinding:
       position: 102
       prefix: --consolPrefix
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU cores to use for parallelization.
-    default: 1
     inputBinding:
       position: 102
       prefix: --cpus
@@ -61,7 +59,6 @@ inputs:
     doc: 'Specify type of within gene transcript comparison: pairwise - Used with
       1 or 2 GTF input files. Compare pairs of transcripts within a gene. gene - Used
       iwth 1 GTF input file. Compare all transcripts within a gene'
-    default: pairwise
     inputBinding:
       position: 102
       prefix: --ea
@@ -98,7 +95,6 @@ inputs:
       labeling output files related to the first GTF file. Name must be 
       alphanumeric, can only include "_" special character and not contain any 
       spaces.
-    default: d1
     inputBinding:
       position: 102
       prefix: --name1
@@ -110,7 +106,6 @@ inputs:
       labeling output files related to the second GTF file. Name must be 
       alphanumeric, can only include "_" special character and not contain any 
       spaces.
-    default: d2
     inputBinding:
       position: 102
       prefix: --name2
@@ -124,7 +119,6 @@ inputs:
       - TranD metrics for the minimum pairs in the first GTF file, second - TranD
       metrics for the minimum pairs in the second GTF file all - TranD metrics for
       all transcript pairs in both GTF files'
-    default: both
     inputBinding:
       position: 102
       prefix: --pairs

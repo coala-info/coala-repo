@@ -62,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: type of input read, default pb
-    default: pb
     inputBinding:
       position: 101
       prefix: --read-type

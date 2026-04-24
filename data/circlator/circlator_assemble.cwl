@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Assembler to use for reassemblies
-    default: spades
     inputBinding:
       position: 103
       prefix: --assembler
@@ -29,7 +28,6 @@ inputs:
       - string
     doc: String representing one of the 4 type of data analysed (only used for 
       Canu)
-    default: pacbio-corrected
     inputBinding:
       position: 103
       prefix: --data_type
@@ -55,7 +53,6 @@ inputs:
       - string
     doc: Comma separated list of kmers to use when running SPAdes. Max kmer is 
       127 and each kmer should be an odd integer
-    default: 127,117,107,97,87,77
     inputBinding:
       position: 103
       prefix: --spades_k
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

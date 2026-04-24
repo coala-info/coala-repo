@@ -41,8 +41,6 @@ inputs:
       - 'null'
       - string
     doc: 'Distance metric for scoring alignments (allr|ed|kullback|pearson|sandelin|blic1|blic5|llr1|llr5);
-      default: ed'
-    default: ed
     inputBinding:
       position: 103
       prefix: -dist
@@ -76,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum overlap between query and target; default: 1'
-    default: 1
     inputBinding:
       position: 103
       prefix: -min-overlap
@@ -104,7 +101,6 @@ inputs:
       - float
     doc: 'Apply the pseudocount to the query and target motifs; default: apply a pseudocount
       of 0.1'
-    default: 0.1
     inputBinding:
       position: 103
       prefix: -motif-pseudo
@@ -147,7 +143,6 @@ inputs:
       - 'null'
       - float
     doc: 'Significance threshold; default: 0.5'
-    default: 0.5
     inputBinding:
       position: 103
       prefix: -thresh
@@ -173,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: 'Set the verbosity of the program; default: 2 (normal)'
-    default: 2
     inputBinding:
       position: 103
       prefix: -verbosity

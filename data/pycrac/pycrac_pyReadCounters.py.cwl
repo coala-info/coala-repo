@@ -11,7 +11,6 @@ inputs:
     doc: with these options you can set the alignment quality (Novoalign) or 
       mapping quality (SAM) threshold. Reads with qualities lower than the 
       threshold will be ignored. Default = 0
-    default: 100
     inputBinding:
       position: 101
       prefix: --align_quality
@@ -21,7 +20,6 @@ inputs:
       - int
     doc: with this option you can set the alignment score threshold. Reads with 
       alignment scores lower than the threshold will be ignored. Default = 0
-    default: 100
     inputBinding:
       position: 101
       prefix: --align_score
@@ -31,7 +29,6 @@ inputs:
       - string
     doc: select which annotation (i.e. protein_coding, ncRNA, sRNA, rRNA, tRNA, 
       snoRNA) you would like to focus your search on. Default = all.
-    default: protein_coding
     inputBinding:
       position: 101
       prefix: --annotation
@@ -41,7 +38,6 @@ inputs:
       - boolean
     doc: this option instructs pyReadCounters to only consider reads overlapping
       anti-sense with genomic features. Default is False
-    default: false
     inputBinding:
       position: 101
       prefix: --anti_sense
@@ -51,7 +47,6 @@ inputs:
       - boolean
     doc: with this option reads with the same start and end coordinates on a 
       chromosome will be counted as one cDNA. Default = Off
-    default: false
     inputBinding:
       position: 101
       prefix: --blocks
@@ -61,7 +56,6 @@ inputs:
       - int
     doc: this option allows you to set the maximum number of base-pairs allowed 
       between two non-overlapping paired reads. Default = 1000
-    default: 1000
     inputBinding:
       position: 101
       prefix: --distance
@@ -71,7 +65,6 @@ inputs:
       - string
     doc: use this option to specify the file type (i.e. 'novo','sam' or 'gtf'). 
       This will tell the program which parsers to use for processing the files.
-    default: novo
     inputBinding:
       position: 101
       prefix: --file_type
@@ -81,7 +74,6 @@ inputs:
       - boolean
     doc: To consider all reads unpaired, even if it is paired end data.Default 
       is False.
-    default: false
     inputBinding:
       position: 101
       prefix: --force_single_end
@@ -133,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: to set read length threshold. Default = 1000
-    default: 100
     inputBinding:
       position: 101
       prefix: --length
@@ -144,7 +135,6 @@ inputs:
     doc: with these options you can set the alignment quality (Novoalign) or 
       mapping quality (SAM) threshold. Reads with qualities lower than the 
       threshold will be ignored. Default = 0
-    default: 100
     inputBinding:
       position: 101
       prefix: --mapping_quality
@@ -153,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of mapped reads that will be analyzed. Default = All
-    default: 100000
     inputBinding:
       position: 101
       prefix: --max
@@ -167,7 +156,6 @@ inputs:
       mutations: --mutations=nomuts. Only report specific base mutations, for example
       only in T's, C's and G's :--mutations=[TCG]. The brackets are essential. Other
       nucleotide combinations are also possible"
-    default: delsonly
     inputBinding:
       position: 101
       prefix: --mutations
@@ -177,7 +165,6 @@ inputs:
       - boolean
     doc: With this flag nucleotide densities are calculated (i.e. the total 
       number of nucleotides overlapping with a feature). Default is False.
-    default: false
     inputBinding:
       position: 101
       prefix: --nucdensities
@@ -187,7 +174,6 @@ inputs:
       - int
     doc: sets the number of nucleotides a read has to overlap with a gene before
       it is considered a hit. Default = 1 nucleotide
-    default: 1
     inputBinding:
       position: 101
       prefix: --overlap
@@ -197,7 +183,6 @@ inputs:
       - boolean
     doc: In case you have paired-end data, you can use this flag to analyze only
       properly paired reads. Default is False
-    default: false
     inputBinding:
       position: 101
       prefix: --properpairs
@@ -209,7 +194,6 @@ inputs:
       50' or '--range=50', then the program will add 50 nucleotides to each 
       feature on each side regardless of whether the GTF file has genes with 
       annotated UTRs.
-    default: 100
     inputBinding:
       position: 101
       prefix: --range
@@ -219,7 +203,6 @@ inputs:
       - boolean
     doc: to include a column showing reads per kilobase per 1 million mapped 
       reads for each gene. Default is False.
-    default: false
     inputBinding:
       position: 101
       prefix: --rpkm
@@ -229,7 +212,6 @@ inputs:
       - boolean
     doc: this option instructs pyReadCounters to only consider reads overlapping
       sense with genomic features. Default is False
-    default: false
     inputBinding:
       position: 101
       prefix: --sense
@@ -240,7 +222,6 @@ inputs:
     doc: with this option you can select whether you want to count reads 
       overlapping coding or genomic sequence or intron, exon, CDS, 5UTR or 3UTR 
       coordinates. Default = genomic.
-    default: intron
     inputBinding:
       position: 101
       prefix: --sequence
@@ -259,7 +240,6 @@ inputs:
       - boolean
     doc: with this option reads with multiple alignment locations will be 
       removed. Default = Off
-    default: false
     inputBinding:
       position: 101
       prefix: --unique

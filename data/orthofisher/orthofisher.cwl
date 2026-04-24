@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of a bitscore to be considered similar to top hit
-    default: 0.85
     inputBinding:
       position: 101
       prefix: --bitscore
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: CPU workers for multithreading
-    default: 2
     inputBinding:
       position: 101
       prefix: --cpu
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: e-value threshold used when conducting sequence similarity searches
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --evalue
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - Directory
     doc: name of the outputted directory
-    default: orthofisher_output
     inputBinding:
       position: 101
       prefix: --output_dir

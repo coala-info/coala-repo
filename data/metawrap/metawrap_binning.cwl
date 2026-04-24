@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: amount of RAM available
-    default: 4
     inputBinding:
       position: 103
       prefix: -m
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: minimum contig length to bin
-    default: 1000
     inputBinding:
       position: 103
       prefix: -l
@@ -75,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 103
       prefix: -t

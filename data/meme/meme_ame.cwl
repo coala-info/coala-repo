@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: motif significance reporting threshold
-    default: 10
     inputBinding:
       position: 103
       prefix: --evalue-report-threshold
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: maximum FASTA score for sequence to be positive (requires --poslist pwm)
-    default: 0.001
     inputBinding:
       position: 103
       prefix: --fasta-threshold
@@ -74,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of maximum log-odds for a hit
-    default: 0.25
     inputBinding:
       position: 103
       prefix: --hit-lo-fraction
@@ -92,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: preserve k-mer frequencies when shuffling
-    default: 2
     inputBinding:
       position: 103
       prefix: --kmer
@@ -125,7 +121,6 @@ inputs:
       - 'null'
       - string
     doc: statistical test (fisher|3dmhg|4dmhg|ranksum|pearson|spearman)
-    default: fisher
     inputBinding:
       position: 103
       prefix: --method
@@ -134,7 +129,6 @@ inputs:
       - 'null'
       - float
     doc: pseudocount for creating PWMs from motifs
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --motif-pseudo
@@ -143,7 +137,6 @@ inputs:
       - 'null'
       - string
     doc: partition on affinity (fasta) or motif (pwm) scores
-    default: fasta
     inputBinding:
       position: 103
       prefix: --poslist
@@ -152,7 +145,6 @@ inputs:
       - 'null'
       - string
     doc: sequence scoring method (avg|max|sum|totalhits)
-    default: avg
     inputBinding:
       position: 103
       prefix: --scoring
@@ -161,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: random number seed (integer)
-    default: 1
     inputBinding:
       position: 103
       prefix: --seed
@@ -178,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: controls program verbosity (1-5)
-    default: 2
     inputBinding:
       position: 103
       prefix: --verbose

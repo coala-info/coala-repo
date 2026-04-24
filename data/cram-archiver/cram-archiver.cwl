@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: CRAM version to use for CRAM conversion.
-    default: '3.0'
     inputBinding:
       position: 102
       prefix: --cram-version
@@ -75,7 +74,6 @@ inputs:
     doc: The minimum last modification of the BAM file in days prior. This assumes
       the system clock timezone matches that of the file while also assuming that
       every day has 24x60x60 seconds.
-    default: 0
     inputBinding:
       position: 102
       prefix: --minimum-age-days
@@ -101,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads used for conversion and checksumming.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

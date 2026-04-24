@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: 'definition of SVD matrix: 0=(G-mu) 1=(G-mu)/sqrt(p(1-p)) 2=diag-G(2-G) default(1)'
-    default: 1
     inputBinding:
       position: 102
       prefix: --covdef
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: number of power iterations (default 10 is sufficient)
-    default: 10
     inputBinding:
       position: 102
       prefix: --iterations

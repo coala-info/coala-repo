@@ -10,7 +10,6 @@ inputs:
       - string
     doc: Genome build used to generate the input (needed for WGS and 
       contamination only).
-    default: hg38
     inputBinding:
       position: 101
       prefix: -build
@@ -20,7 +19,6 @@ inputs:
       - boolean
     doc: Add additional QC parameters for cfDNA samples. Only supported mit 
       '-roi'.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -cfdna
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enables verbose debug outout.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -debug
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Support long reads (> 1kb).
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -long_read
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Minmum mapping quality to consider a read mapped.
-    default: '1'
     inputBinding:
       position: 101
       prefix: -min_mapq
@@ -63,7 +58,6 @@ inputs:
       - boolean
     doc: Disables sample contamination calculation, e.g. for tumor or non-human 
       samples.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -no_cont
@@ -73,7 +67,6 @@ inputs:
       - File
     doc: If set, a read QC file in qcML format is created (just like 
       ReadQC/SeqPurge).
-    default: ''
     inputBinding:
       position: 101
       prefix: -read_qc
@@ -83,7 +76,6 @@ inputs:
       - File
     doc: Reference genome FASTA file. If unset 'reference_genome' from the 
       'settings.ini' file is used.
-    default: ''
     inputBinding:
       position: 101
       prefix: -ref
@@ -93,7 +85,6 @@ inputs:
       - boolean
     doc: RNA mode without target region. Genome information is taken from the 
       BAM/CRAM file.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -rna
@@ -102,7 +93,6 @@ inputs:
       - 'null'
       - File
     doc: Input target region BED file (for panel, WES, etc.).
-    default: ''
     inputBinding:
       position: 101
       prefix: -roi
@@ -120,7 +110,6 @@ inputs:
       - File
     doc: Somatic custom region of interest (subpanel of actual roi). If 
       specified, additional depth metrics will be calculated.
-    default: ''
     inputBinding:
       position: 101
       prefix: -somatic_custom_bed
@@ -138,7 +127,6 @@ inputs:
       - 'null'
       - boolean
     doc: Writes TXT format instead of qcML.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -txt
@@ -148,7 +136,6 @@ inputs:
       - boolean
     doc: WGS mode without target region. Genome information is taken from the 
       BAM/CRAM file.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -wgs

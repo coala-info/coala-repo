@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: exclude reads with any of the bits in FLAG set
-    default: 1796
     inputBinding:
       position: 103
       prefix: --flag
@@ -30,7 +29,6 @@ inputs:
       - float
     doc: If the fraction of low mapping reads exceeds this value, the site is 
       considered poorly mapped
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --low-mapq-frac
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum read depth before a locus is considered high coverage
-    default: -1
     inputBinding:
       position: 103
       prefix: --max-depth
@@ -49,7 +46,6 @@ inputs:
       - int
     doc: The maximum value of MAPQ before a read is considered as problematic 
       mapped read.
-    default: 1
     inputBinding:
       position: 103
       prefix: --max-low-mapq
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum base quality for a base to contribute to QC depth
-    default: 10
     inputBinding:
       position: 103
       prefix: --min-base-qual
@@ -67,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum QC read depth before a read is considered callable
-    default: 20
     inputBinding:
       position: 103
       prefix: --min-depth
@@ -77,7 +71,6 @@ inputs:
       - int
     doc: Minimum read depth before a locus is considered candidate for poorly 
       mapped
-    default: 10
     inputBinding:
       position: 103
       prefix: --min-depth-low-mapq
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum mapping quality of reads to count as QC depth
-    default: 10
     inputBinding:
       position: 103
       prefix: --min-mapq
@@ -95,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Number of BAM decompression threads
-    default: 4
     inputBinding:
       position: 103
       prefix: --threads

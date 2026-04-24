@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Indicates if the user has an OakVar store account
-    default: N
     inputBinding:
       position: 101
       prefix: Do you already have an OakVar store account?

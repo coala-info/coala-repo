@@ -38,7 +38,6 @@ inputs:
       - int
     doc: a peak within this many bases of a gene's 5'-end should be assumed to 
       belong to it.
-    default: 0
     inputBinding:
       position: 103
       prefix: --five-prime-ext
@@ -71,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: maximum distance in bases that UTR can be from a transcript.
-    default: 200
     inputBinding:
       position: 103
       prefix: --max-distance
@@ -80,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of piled-up mapped reads for UTR cut-off.
-    default: 10
     inputBinding:
       position: 103
       prefix: --min-pileups
@@ -89,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of poly-A/T tail considered in soft-clipped reads.
-    default: 10
     inputBinding:
       position: 103
       prefix: --min-poly-tail
@@ -115,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: how many processor cores to use.
-    default: 1
     inputBinding:
       position: 103
       prefix: --processors

@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Option for StringTie (quoted string)
-    default: ''
     inputBinding:
       position: 103
       prefix: --tool_option
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - Directory
     doc: Working directory containing intermediate and log files
-    default: isorefiner_stringtie_work
     inputBinding:
       position: 103
       prefix: --work_dir

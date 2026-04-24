@@ -55,21 +55,18 @@ inputs:
     doc: Read length to get all classification. Default 100
     inputBinding:
       prefix: -r
-    default: 100
   threshold:
     type: int
     label: threshold
     doc: Number of reads required PRIOR to abundance estimation to perform reestimation. Default 0
     inputBinding:
       prefix: -t
-    default: 0
   level:
     type: string
     label: Level
     doc: Level to estimate abundance at. option [D,P,C,O,F,G,S,S1]. Default Species; 'S'
     inputBinding:
       prefix: -l
-    default: 'S'
 
 outputs:
   output_report:

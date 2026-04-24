@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads for classier
-    default: 20
     inputBinding:
       position: 102
       prefix: --jobs

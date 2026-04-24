@@ -79,7 +79,6 @@ arguments:
 inputs:
   threads:
     type: int?
-    default: 1
     inputBinding:
       prefix: --threads
       position: 1
@@ -107,7 +106,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: "--paired"
-    default: false
 
   single_end_reads:
     type: File?
@@ -120,7 +118,6 @@ inputs:
     type: boolean
     label: Keep human reads
     doc: Output human reads. Default false
-    default: false
 
   confidence:
     type: float?
@@ -137,7 +134,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: '--gzip-compressed'
-    default: false
   bzip2:
     type: boolean
     label: Bzip2 input
@@ -145,7 +141,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: '--bzip2-compressed'
-    default: false
   
   memory_mapping:
     type: boolean
@@ -154,7 +149,6 @@ inputs:
     inputBinding:
       position: 6
       prefix: '--memory-mapping'
-    default: false
 
 
 outputs:

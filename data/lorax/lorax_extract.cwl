@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - File
     doc: gzipped fasta/q file
-    default: out.fa.gz
     inputBinding:
       position: 102
       prefix: --fafile

@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: count number of unique inserts in BAM file
-    default: false
     inputBinding:
       position: 102
       prefix: --count
@@ -32,7 +31,6 @@ inputs:
       - int
     doc: ignore alignment if reads map to <num> bases at the edge of target 
       sequence
-    default: 0
     inputBinding:
       position: 102
       prefix: --edge
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: input is SAM
-    default: false
     inputBinding:
       position: 102
       prefix: -S
@@ -51,7 +48,6 @@ inputs:
       - string
     doc: '{mapped|unmapped|edit|score} only report readcount distribution for specified
       stats, not read-level stats'
-    default: none
     inputBinding:
       position: 102
       prefix: --stats

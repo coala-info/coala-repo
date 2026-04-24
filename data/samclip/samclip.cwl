@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum clip length to allow
-    default: 5
     inputBinding:
       position: 101
       prefix: --max
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Print progress every NUM records (default=100000,none=0)
-    default: 100000
     inputBinding:
       position: 101
       prefix: --progress

@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum coverage depth to consider for plotting.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max-coverage
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage depth to consider for plotting.
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-coverage
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to save the output plots.
-    default: .
     inputBinding:
       position: 101
       prefix: --output-dir
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: Format of the output plots (e.g., png, svg, pdf).
-    default: png
     inputBinding:
       position: 101
       prefix: --plot-format
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for processing.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

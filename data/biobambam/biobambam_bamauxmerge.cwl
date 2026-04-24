@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for the output BAM file (0-9)
-    default: 5
     inputBinding:
       position: 102
       prefix: --compression-level
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 0
     inputBinding:
       position: 102
       prefix: --threads

@@ -33,7 +33,6 @@ inputs:
     type: int?
     label: Threads
     doc: Number of threads for compression (default; 4)
-    default: 4
     inputBinding:
       prefix: -t
   
@@ -54,7 +53,6 @@ inputs:
     type: string?
     doc: Extension of bin files (default; fa)
     label: Bin file extension
-    default: "fa"
     inputBinding:
       prefix: -e
   compress:

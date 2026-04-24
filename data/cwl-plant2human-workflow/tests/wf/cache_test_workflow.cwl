@@ -11,11 +11,9 @@ steps:
     run: touch_tool.cwl
     in:
       message:
-         default: one
     out: []
   task2:
     run: touch_tool.cwl
     in:
       message:
-         default: two
     out: []

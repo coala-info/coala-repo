@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: Text fontsize
-    default: 25
     inputBinding:
       position: 102
       prefix: --fontsize
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - Directory
     doc: Create plots in this directory
-    default: current directory
     inputBinding:
       position: 102
       prefix: --path
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - float
     doc: Y-axis top
-    default: 6.3
     inputBinding:
       position: 102
       prefix: --ymax
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: Y-axis bottom
-    default: -0.3
     inputBinding:
       position: 102
       prefix: --ymin

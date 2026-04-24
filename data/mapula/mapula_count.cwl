@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: Input alignments in SAM format.
-    default: stdin
     inputBinding:
       position: 1
   - id: expected_counts_csv
@@ -26,7 +25,6 @@ inputs:
       - string
     doc: 'If aggregating [-a], output results in this format. [Choices: csv, json,
       all]'
-    default: csv
     inputBinding:
       position: 102
       prefix: -f
@@ -61,7 +59,6 @@ inputs:
         items: string
     doc: 'Change aggregation behaviour to split by these criteria, space separated.
       [Choices: source fasta run_id barcode read_group reference]'
-    default: all
     inputBinding:
       position: 102
       prefix: -s

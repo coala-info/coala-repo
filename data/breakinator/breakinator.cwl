@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum distance to be considered chimeric
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --chim
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Max distance to be considered foldback
-    default: 200
     inputBinding:
       position: 101
       prefix: --fold
@@ -43,7 +41,6 @@ inputs:
       - float
     doc: '[0-1], Proportion from center of read on either side to be considered sym
       foldback artifact'
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --margin
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment length (bps)
-    default: 200
     inputBinding:
       position: 101
       prefix: --min-map-len
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-mapq
@@ -104,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for BAM/CRAM I/O
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads

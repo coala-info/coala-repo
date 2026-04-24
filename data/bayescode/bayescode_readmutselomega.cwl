@@ -38,7 +38,6 @@ inputs:
     doc: Boundary for posterior credible interval of ω and ω₀ (per site and at 
       the gene level). Default value is 0.025 at each side, meaning computing 
       the 1-2*0.025=95% CI.
-    default: 0.025 at each side
     inputBinding:
       position: 102
       prefix: --confidence_interval
@@ -141,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of (saved) iterations (-1 means unlimited).
-    default: -1
     inputBinding:
       position: 102
       prefix: --until

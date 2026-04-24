@@ -11,7 +11,6 @@ inputs:
       - float
     doc: Collapse internal branches below specified bootstrap support value 
       (default -1 for no collapsing)
-    default: -1.0
     inputBinding:
       position: 101
       prefix: --collapse-support
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: Try to automatically fix metadata from reference Genbank file.
-    default: true
     inputBinding:
       position: 101
       prefix: --fix-metadata
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - boolean
     doc: Highlight user samples with metadata field in tree.
-    default: false
     inputBinding:
       position: 101
       prefix: --highlight-user-samples
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set midpoint root
-    default: false
     inputBinding:
       position: 101
       prefix: --midpoint-root
@@ -90,7 +86,6 @@ inputs:
       - 'null'
       - boolean
     doc: Try to automatically fix metadata from reference Genbank file.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-fix-metadata
@@ -99,7 +94,6 @@ inputs:
       - 'null'
       - boolean
     doc: Highlight user samples with metadata field in tree.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-highlight-user-samples
@@ -108,7 +102,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set midpoint root
-    default: false
     inputBinding:
       position: 101
       prefix: --no-midpoint-root
@@ -117,7 +110,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose logs
-    default: false
     inputBinding:
       position: 101
       prefix: --no-verbose
@@ -150,7 +142,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose logs
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

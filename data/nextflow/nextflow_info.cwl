@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: Check for remote updates
-    default: false
     inputBinding:
       position: 102
       prefix: -check-updates
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show detailed information
-    default: false
     inputBinding:
       position: 102
       prefix: -d
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output format, either: text (default), json, yaml'
-    default: text
     inputBinding:
       position: 102
       prefix: -o

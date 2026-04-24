@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: max traversal depth
-    default: -1
     inputBinding:
       position: 101
       prefix: -depth
@@ -28,7 +27,6 @@ inputs:
       - string
     doc: "the custom layout that you'd like your time to be set in, representative
       of the way 'Mon Jan 2 15:04:05 -0700 MST 2006' should be represented\nSee https://golang.org/pkg/time/#Parse"
-    default: '20060102150405'
     inputBinding:
       position: 101
       prefix: -format
@@ -85,7 +83,6 @@ inputs:
       - 'null'
       - boolean
     doc: show step by step information verbosely
-    default: true
     inputBinding:
       position: 101
       prefix: -verbose

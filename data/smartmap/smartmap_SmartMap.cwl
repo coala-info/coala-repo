@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Flag for continuous output bedgraphs. Default off.
-    default: false
     inputBinding:
       position: 102
       prefix: -c
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: N for N-fold cross-validation. Default 1 (no cross-validation).
-    default: 1
     inputBinding:
       position: 102
       prefix: -v
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations.
-    default: 1
     inputBinding:
       position: 102
       prefix: -i
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of alignments for a read to be processed.
-    default: 50
     inputBinding:
       position: 102
       prefix: -m
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum score for Bowtie2 display. Default 0 (unscored).
-    default: 0
     inputBinding:
       position: 102
       prefix: -s
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - boolean
     doc: Flag for read output mode with weights. Default off.
-    default: false
     inputBinding:
       position: 102
       prefix: -r
@@ -85,7 +79,6 @@ inputs:
       - 'null'
       - float
     doc: Rate of fitting in reweighting. Default 1.
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -l
@@ -94,7 +87,6 @@ inputs:
       - 'null'
       - boolean
     doc: Flag for strand-specific mode. Default off.
-    default: false
     inputBinding:
       position: 102
       prefix: -S

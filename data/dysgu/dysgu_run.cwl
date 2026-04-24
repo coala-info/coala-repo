@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Number of alignments to buffer
-    default: 0
     inputBinding:
       position: 104
       prefix: --buffer-size
@@ -61,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: Set temp file bam compression level. Default is uncompressed
-    default: wb0
     inputBinding:
       position: 104
       prefix: --compression
@@ -71,7 +69,6 @@ inputs:
       - boolean
     doc: Generate consensus contigs for each side of break and use 
       sequence-based metrics in model scoring
-    default: true
     inputBinding:
       position: 104
       prefix: --contigs
@@ -81,7 +78,6 @@ inputs:
       - boolean
     doc: Use diploid model for scoring variants. Use 'False' for non-diploid or 
       poly clonal samples
-    default: true
     inputBinding:
       position: 104
       prefix: --diploid
@@ -90,7 +86,6 @@ inputs:
       - 'null'
       - float
     doc: Distance normalizer
-    default: 100.0
     inputBinding:
       position: 104
       prefix: --dist-norm
@@ -100,7 +95,6 @@ inputs:
       - string
     doc: Threshold used for ignoring divergent ends of alignments. Ignored for 
       paired-end reads. Use 'auto' to try to infer for noisy reads
-    default: '0.02'
     inputBinding:
       position: 104
       prefix: --divergence
@@ -109,7 +103,6 @@ inputs:
       - 'null'
       - boolean
     doc: Drop SVs near gaps +/- 250 bp of Ns in reference
-    default: true
     inputBinding:
       position: 104
       prefix: --drop-gaps
@@ -128,7 +121,6 @@ inputs:
       - boolean
     doc: If --sites is multi-sample, ignore variants from the input file 
       SV-ALIGNS
-    default: true
     inputBinding:
       position: 104
       prefix: --ignore-sample-sites
@@ -146,7 +138,6 @@ inputs:
       - int
     doc: Extend SV length if any nearby gaps found with length >= length-extend.
       Ignored for paired-end reads
-    default: 15
     inputBinding:
       position: 104
       prefix: --length-extend
@@ -164,7 +155,6 @@ inputs:
       - string
     doc: Genomic regions with coverage > max-cov discarded. Use 'auto' to 
       estimate a value from the alignment index file. Set to -1 to ignore
-    default: '200'
     inputBinding:
       position: 104
       prefix: --max-cov
@@ -174,7 +164,6 @@ inputs:
       - int
     doc: Maximum template length to consider when calculating paired-end 
       template size
-    default: 1000
     inputBinding:
       position: 104
       prefix: --max-tlen
@@ -193,7 +182,6 @@ inputs:
       - 'null'
       - boolean
     doc: Try and merge similar events, recommended for most situations
-    default: true
     inputBinding:
       position: 104
       prefix: --merge-within
@@ -210,7 +198,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of SV to report
-    default: 30
     inputBinding:
       position: 104
       prefix: --min-size
@@ -219,7 +206,6 @@ inputs:
       - 'null'
       - string
     doc: Minimum number of reads per SV
-    default: '3'
     inputBinding:
       position: 104
       prefix: --min-support
@@ -236,7 +222,6 @@ inputs:
       False --sd 0.6 --divergence auto --compression wb3. | nanopore-r10: --mq 1 --paired
       False --min-support 'auto' --max-cov 150 --dist-norm 600 --trust-ins-len False
       --thresholds 0.35,0.35,0.35,0.35,0.35 --sd 0.35 --compression wb3"
-    default: pe
     inputBinding:
       position: 104
       prefix: --mode
@@ -245,7 +230,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum map quality < threshold are discarded
-    default: 1
     inputBinding:
       position: 104
       prefix: --mq
@@ -262,7 +246,6 @@ inputs:
       - 'null'
       - string
     doc: Output format
-    default: vcf
     inputBinding:
       position: 104
       prefix: --out-format
@@ -279,7 +262,6 @@ inputs:
       - 'null'
       - boolean
     doc: Paired-end reads or single
-    default: true
     inputBinding:
       position: 104
       prefix: --paired
@@ -288,7 +270,6 @@ inputs:
       - 'null'
       - boolean
     doc: Parse INFO:MeanPROB or FORMAT:PROB instead of using --sites-p
-    default: false
     inputBinding:
       position: 104
       prefix: --parse-probs
@@ -305,7 +286,6 @@ inputs:
       - 'null'
       - string
     doc: Type of input reads
-    default: pe
     inputBinding:
       position: 104
       prefix: --pl
@@ -314,7 +294,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cpu cores to use
-    default: 1
     inputBinding:
       position: 104
       prefix: --procs
@@ -332,7 +311,6 @@ inputs:
       - boolean
     doc: If --regions is provided, only use minimizer clustering within 
       --regions. Useful for high coverage targeted sequencing
-    default: false
     inputBinding:
       position: 104
       prefix: --regions-mm-only
@@ -341,7 +319,6 @@ inputs:
       - 'null'
       - string
     doc: Try and remap anomalous contigs to find additional small SVs
-    default: 'True'
     inputBinding:
       position: 104
       prefix: --remap
@@ -351,7 +328,6 @@ inputs:
       - float
     doc: Span distance, only SV span is considered, lower values separate 
       multi-allelic sites
-    default: 0.8
     inputBinding:
       position: 104
       prefix: --sd
@@ -369,7 +345,6 @@ inputs:
       - float
     doc: Search through this many local reads for matching SVs. Increase this to
       identify low frequency events
-    default: 20.0
     inputBinding:
       position: 104
       prefix: --search-depth
@@ -387,7 +362,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only add variants from sites that have PASS
-    default: true
     inputBinding:
       position: 104
       prefix: --sites-pass-only
@@ -396,7 +370,6 @@ inputs:
       - 'null'
       - float
     doc: Prior probability that a matching variant in --sites is true
-    default: 0.6
     inputBinding:
       position: 104
       prefix: --sites-prob
@@ -405,7 +378,6 @@ inputs:
       - 'null'
       - float
     doc: Span position distance
-    default: 0.3
     inputBinding:
       position: 104
       prefix: --spd
@@ -415,7 +387,6 @@ inputs:
       - int
     doc: Use symbolic representation if SV >= this size. Set to -1 to use 
       symbolic-only representation
-    default: 50000
     inputBinding:
       position: 104
       prefix: --symbolic-sv-size
@@ -432,7 +403,6 @@ inputs:
       - 'null'
       - string
     doc: Probability threshold to label as PASS for 'DEL,INS,INV,DUP,TRA'
-    default: 0.45,0.45,0.45,0.45,0.45
     inputBinding:
       position: 104
       prefix: --thresholds
@@ -441,7 +411,6 @@ inputs:
       - 'null'
       - string
     doc: Trust insertion length from cigar, for high error rate reads use False
-    default: 'True'
     inputBinding:
       position: 104
       prefix: --trust-ins-len
@@ -451,7 +420,6 @@ inputs:
       - int
     doc: 0 = no contigs in output, 1 = output contigs for variants without ALT 
       sequence called, 2 = output all contigs
-    default: 1
     inputBinding:
       position: 104
       prefix: --verbosity

@@ -51,7 +51,6 @@ inputs:
       - string
     doc: "Format of annotation_files (Default: GTF2). Note: GFF3\nassembly assumes
       SO v.2.5.2 feature ontologies, which\nmay or may not match your specific file."
-    default: GTF2
     inputBinding:
       position: 103
       prefix: --annotation_format
@@ -62,7 +61,6 @@ inputs:
         items: int
     doc: "Number of extra columns in BED file (e.g. in custom\nENCODE formats) or
       list of names for those columns.\n(Default: 0)."
-    default: 0
     inputBinding:
       position: 103
       prefix: --bed_extra_columns
@@ -80,7 +78,6 @@ inputs:
       - 'null'
       - string
     doc: "Matplotlib color map from which palette will be made (e.g. 'Blues','autumn','Set1';
-      default: use colors from `--stylesheet` if given, or color cycle in matplotlibrc)"
     inputBinding:
       position: 103
       prefix: --cmap
@@ -89,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: 'Codons before and after start codon to ignore (Default: 5)'
-    default: 5
     inputBinding:
       position: 103
       prefix: --codon_buffer
@@ -108,7 +104,6 @@ inputs:
       - 'null'
       - string
     doc: "Format of file containing alignments or counts\n(Default: BAM)"
-    default: BAM
     inputBinding:
       position: 103
       prefix: --countfile_format
@@ -117,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: 'Figure resolution (Default: 150)'
-    default: 150
     inputBinding:
       position: 103
       prefix: --dpi
@@ -126,7 +120,6 @@ inputs:
       - 'null'
       - string
     doc: 'File format for figure(s); Default: png)'
-    default: png
     inputBinding:
       position: 103
       prefix: --figformat
@@ -191,7 +184,6 @@ inputs:
       - int
     doc: "Maximum read length permitted to be included (BAM &\nbowtie files only.
       Default: 100)"
-    default: 100
     inputBinding:
       position: 103
       prefix: --max_length
@@ -201,7 +193,6 @@ inputs:
       - int
     doc: "Maximum desired memory footprint in MB to devote to\nBigBed/BigWig files.
       May be exceeded by large queries.\n(Default: 0, No maximum)"
-    default: 0
     inputBinding:
       position: 103
       prefix: --maxmem
@@ -211,7 +202,6 @@ inputs:
       - int
     doc: "Minimum read length required to be included (BAM &\nbowtie files only. Default:
       25)"
-    default: 25
     inputBinding:
       position: 103
       prefix: --min_length
@@ -221,7 +211,6 @@ inputs:
       - int
     doc: 'For use with `--center` only. nt to remove from each end of read before
       mapping (Default: 0)'
-    default: 0
     inputBinding:
       position: 103
       prefix: --nibble
@@ -236,7 +225,6 @@ inputs:
       special keyword 'default', and the second column represents the offset from
       the five prime end of that read length at which the read should be mapped. (Default:
       0)"
-    default: 0
     inputBinding:
       position: 103
       prefix: --offset
@@ -253,7 +241,6 @@ inputs:
       - 'null'
       - boolean
     doc: "annotation_files are sorted by chromosomal position\n(Default: False)"
-    default: false
     inputBinding:
       position: 103
       prefix: --sorted
@@ -280,7 +267,6 @@ inputs:
       - boolean
     doc: "annotation_files are tabix-compressed and indexed\n(Default: False). Ignored
       for BigBed files."
-    default: false
     inputBinding:
       position: 103
       prefix: --tabix

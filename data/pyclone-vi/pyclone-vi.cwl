@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Density model to use (e.g., binomial, beta-binomial).
-    default: beta-binomial
     inputBinding:
       position: 102
       prefix: --density
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of iterations for the optimization.
-    default: 1000
     inputBinding:
       position: 102
       prefix: --max-iters
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Number of clusters to use in the variational approximation.
-    default: 40
     inputBinding:
       position: 102
       prefix: --clusters
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Number of restarts for the optimization.
-    default: 10
     inputBinding:
       position: 102
       prefix: --num-restarts

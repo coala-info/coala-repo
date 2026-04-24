@@ -15,7 +15,6 @@ inputs:
       - string
     doc: 'Demasking function to determine k-mer presence; recognized functions: or,
       all, and, xor, INT-INT'
-    default: or
     inputBinding:
       position: 102
       prefix: -f
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - File
     doc: Path to FASTA/FASTQ with queries
-    default: stdin
     inputBinding:
       position: 102
       prefix: -q

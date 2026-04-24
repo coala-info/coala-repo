@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: Build indices for reference genome only.
-    default: false
     inputBinding:
       position: 101
       prefix: --build-indices
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: Formamide concentration as a percentage of the total buffer.
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --formamide-concentration
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: Is the probe endogenous?
-    default: true
     inputBinding:
       position: 101
       prefix: --is-endogenous
@@ -78,7 +75,6 @@ inputs:
       - boolean
     doc: "Is the probe targeting the plus strand? Note: Entrez downloads will download
       the gene 5'-3'. Specifying the strand is therefore not required."
-    default: true
     inputBinding:
       position: 101
       prefix: --is-plus-strand
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Length of k-mer used to filter probe sequences.
-    default: 15
     inputBinding:
       position: 101
       prefix: --kmer-length
@@ -97,7 +92,6 @@ inputs:
       - float
     doc: 'Maximum predicted deltaG in kcal/mol. Note: deltaGs range from 0 (no secondary
       structures) to increasingly negative values!'
-    default: -10.0
     inputBinding:
       position: 101
       prefix: --max-deltag
@@ -109,7 +103,6 @@ inputs:
       `max-expression-percentage` percentage of all genes. Genes to remove are 
       based on ENCODE RNAseq count table provided in `encode-count-table`. Only 
       used if `encode-count-table` and `reference-annotation` are provided.
-    default: 50.0
     inputBinding:
       position: 101
       prefix: --max-expression-percentage
@@ -118,7 +111,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum GC content in percentage.
-    default: 80.0
     inputBinding:
       position: 101
       prefix: --max-gc
@@ -127,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Highest count of sub-k-mers found in reference genome.
-    default: 5
     inputBinding:
       position: 101
       prefix: --max-kmers
@@ -136,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum probe length in nucleotides.
-    default: 25
     inputBinding:
       position: 101
       prefix: --max-length
@@ -146,7 +136,6 @@ inputs:
       - int
     doc: Maximum number of off-targets binding anywhere BUT the gene of interest
       in the genome.
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-off-targets
@@ -155,7 +144,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum melting temperature in degrees C (see minimum).
-    default: 60.0
     inputBinding:
       position: 101
       prefix: --max-tm
@@ -164,7 +152,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum GC content in percentage.
-    default: 20.0
     inputBinding:
       position: 101
       prefix: --min-gc
@@ -173,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum probe length in nucleotides.
-    default: 21
     inputBinding:
       position: 101
       prefix: --min-length
@@ -183,7 +169,6 @@ inputs:
       - float
     doc: Minimum melting temperature in degrees C. Formamide and Na 
       concentration will affect melting temperature!
-    default: 40.0
     inputBinding:
       position: 101
       prefix: --min-tm
@@ -192,7 +177,6 @@ inputs:
       - 'null'
       - float
     doc: Na concentration in mM.
-    default: 330.0
     inputBinding:
       position: 101
       prefix: --na-concentration
@@ -204,7 +188,6 @@ inputs:
       longest probe. Optimal will optimize probes for maximum gene coverage - 
       slow if many overlaps are present (typically with non-stringent parameter 
       settings).
-    default: greedy
     inputBinding:
       position: 101
       prefix: --optimization-method
@@ -214,7 +197,6 @@ inputs:
       - int
     doc: Time limit for optimization in seconds. Only used if optimization 
       method is set to 'optimal'.
-    default: 60
     inputBinding:
       position: 101
       prefix: --optimization-time-limit
@@ -255,7 +237,6 @@ inputs:
       - 'null'
       - boolean
     doc: Save intermediate files?
-    default: false
     inputBinding:
       position: 101
       prefix: --save-intermediates
@@ -276,7 +257,6 @@ inputs:
       and reverse complements only. Ensures probes don't falsely bind to 
       eachother. Setting any value above 0 could add multiple minute of runtime!
       The lower the value (above 0) the fewer potential probes.
-    default: 0
     inputBinding:
       position: 101
       prefix: --sequence-similarity
@@ -293,7 +273,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum distance in nucleotides between probes.
-    default: 2
     inputBinding:
       position: 101
       prefix: --spacing
@@ -302,7 +281,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to launch.
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads

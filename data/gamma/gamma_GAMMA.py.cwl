@@ -73,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: minimum nucleotide identity for blat search
-    default: 90
     inputBinding:
       position: 104
       prefix: --percent_identity

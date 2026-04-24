@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: N-percent maximum difference
-    default: 8
     inputBinding:
       position: 104
       prefix: -p
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: N-minimum overlap
-    default: 6
     inputBinding:
       position: 104
       prefix: -m

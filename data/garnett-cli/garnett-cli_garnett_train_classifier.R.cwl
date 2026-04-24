@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Format of the gene IDs in your CDS object. The default is "ENSEMBL".
-    default: ENSEMBL
     inputBinding:
       position: 101
       prefix: --cds-gene-id-type
@@ -28,7 +27,6 @@ inputs:
     doc: Optional. The type of gene ID that will be used in the classifier. If 
       possible for your organism, this should be 'ENSEMBL', which is the 
       default. Ignored if db = 'none'.
-    default: ENSEMBL
     inputBinding:
       position: 101
       prefix: --classifier-gene-id-type
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: Format of the gene IDs in your marker file. The default is "SYMBOL".
-    default: SYMBOL
     inputBinding:
       position: 101
       prefix: --marker-file-gene-id-type
@@ -85,7 +82,6 @@ inputs:
     doc: An integer. The maximum number of representative cells per cell type to
       be included in the model training. Decreasing this number increases speed,
       but may hurt performance of the model. Default is 500.
-    default: 500
     inputBinding:
       position: 101
       prefix: --max-training-samples
@@ -95,7 +91,6 @@ inputs:
       - int
     doc: An integer. The minimum number of representative cells per cell type 
       required to include the cell type in the predictive model. Default is 8.
-    default: 8
     inputBinding:
       position: 101
       prefix: --min-observations
@@ -104,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Number of outgroups to compare against. Default 500.
-    default: 500
     inputBinding:
       position: 101
       prefix: --num-unknown
@@ -114,7 +108,6 @@ inputs:
       - boolean
     doc: 'Optional. Should markers from child nodes of a cell type be used in finding
       representatives of the parent type? Default: TRUE.'
-    default: true
     inputBinding:
       position: 101
       prefix: --propogate-markers

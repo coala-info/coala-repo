@@ -50,7 +50,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Path to directory, where output files will be saved (default: current directory)'
-    default: current directory
     inputBinding:
       position: 101
       prefix: --output.dir
@@ -100,7 +99,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Verbose output and printing of debug messages. Default: FALSE'
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

@@ -25,7 +25,6 @@ inputs:
       - string
     doc: Do not collapse nodes on a given paths/walks ("P"/"W" lines) that match
       given regular expression
-    default: ''
     inputBinding:
       position: 102
       prefix: --dont_collapse
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Run in parallel on N threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

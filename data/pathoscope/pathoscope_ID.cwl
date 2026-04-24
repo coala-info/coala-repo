@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Experiment tag added to output file for easy identification
-    default: pathoid
     inputBinding:
       position: 101
       prefix: -expTag
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: 'Alignment Format: sam/bl8/gnu-sam'
-    default: sam
     inputBinding:
       position: 101
       prefix: -fileType
@@ -76,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: EM Algorithm Pi Prior equivalent to adding n unique reads
-    default: 0
     inputBinding:
       position: 101
       prefix: -piPrior
@@ -93,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: EM Algorithm Theta Prior equivalent to adding n non-unique reads
-    default: 0
     inputBinding:
       position: 101
       prefix: -thetaPrior

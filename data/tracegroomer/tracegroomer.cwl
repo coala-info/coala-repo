@@ -14,7 +14,6 @@ inputs:
       - boolean
     doc: When dividing values by the amount of material, also multiplies by 
       'mean(amountMaterial)' to stay in abundance units
-    default: true
     inputBinding:
       position: 101
       prefix: --alternative_div_amount_material
@@ -42,7 +41,6 @@ inputs:
     doc: Apply normalization by the amount of material, at the level of 
       isotopologue absolute values. After this, re-computes all derived metrics.
       If False, only total abundances are normalized
-    default: true
     inputBinding:
       position: 101
       prefix: --div_isotopologues_by_amount_material
@@ -52,7 +50,6 @@ inputs:
       - boolean
     doc: 'Stomps fractional contributions (synonym: mean enrichment), and isotopologue
       proportions, to max 1.0 and min 0.0'
-    default: true
     inputBinding:
       position: 101
       prefix: --fractions_stomp_values
@@ -62,7 +59,6 @@ inputs:
       - float
     doc: Metabolites whose isotopologues proportions are less or equal to this 
       cutoff, are removed
-    default: -0.5
     inputBinding:
       position: 101
       prefix: --isosprop_min_admitted
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: Plot isotopologue values, as given
-    default: false
     inputBinding:
       position: 101
       prefix: --isotopologues_preview
@@ -98,7 +93,6 @@ inputs:
       - boolean
     doc: On VIB results. From samples' abundances, subtracts the average of the 
       blanks
-    default: true
     inputBinding:
       position: 101
       prefix: --subtract_blankavg
@@ -115,7 +109,6 @@ inputs:
       - 'null'
       - boolean
     doc: On VIB results. Any abundance < LOD (Limit Of Detection), is set as NaN
-    default: true
     inputBinding:
       position: 101
       prefix: --under_detection_limit_set_nan

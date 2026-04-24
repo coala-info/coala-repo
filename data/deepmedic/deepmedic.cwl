@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: The device to run on (e.g., 'cpu', 'gpu', 'gpu0').
-    default: cpu
     inputBinding:
       position: 101
       prefix: -dev

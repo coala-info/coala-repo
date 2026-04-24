@@ -44,7 +44,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_pdb_path
-    default: system.pdb
 
   config:
     label: Advanced configuration options for biobb_model FixSSBonds

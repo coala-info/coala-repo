@@ -47,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Save top n markers per cluster
-    default: 10
     inputBinding:
       position: 101
       prefix: --nmarkers

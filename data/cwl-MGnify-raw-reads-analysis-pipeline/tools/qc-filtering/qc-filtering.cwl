@@ -32,13 +32,11 @@ inputs:
       submitted FASTQ file - single end FASTQ or pair end merged FASTQ file.
   stats_file_name:
     type: string
-    default: stats_summary
     label: 'Post QC stats output file name'
     doc: >
       Give a name for the file which will hold the stats after QC.
   min_length:
     type: int
-    default: 100 # For assemblies we need to set this in the input YAML to 500
     label: 'Minimum read or contig length'
     doc: >
       Specify the minimum read or contig length for sequences to pass QC filtering.

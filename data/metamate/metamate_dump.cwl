@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: substitution model for UPGMA tree estimation (passed to R dist.dna)
-    default: F84
     inputBinding:
       position: 101
       prefix: --distancemodel
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: divergence level to use for assigning clades
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --divergence
@@ -138,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

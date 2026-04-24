@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - File
     doc: Please provide one sequence file with minimizers to ignore.
-    default: ''
     inputBinding:
       position: 102
       prefix: --exclude
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - File
     doc: Please provide one sequence file with transcripts.
-    default: ''
     inputBinding:
       position: 102
       prefix: --genome
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Define k-mer size for the minimisers.
-    default: 20
     inputBinding:
       position: 102
       prefix: --kmer
@@ -70,7 +67,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory, where output files should be saved.
-    default: ./
     inputBinding:
       position: 102
       prefix: --out
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Define seed for the minimisers.
-    default: 0
     inputBinding:
       position: 102
       prefix: --seed
@@ -97,7 +92,6 @@ inputs:
       - int
     doc: Define a shape for the minimisers by the decimal of a bitvector, where 
       0 symbolizes a position to be ignored, 1 a position considered.
-    default: 0
     inputBinding:
       position: 102
       prefix: --shape
@@ -106,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -115,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: Define window size for the minimisers.
-    default: 60
     inputBinding:
       position: 102
       prefix: --window

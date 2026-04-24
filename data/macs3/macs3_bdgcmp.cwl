@@ -21,7 +21,6 @@ inputs:
     doc: 'Method to use while calculating a score in any bin by comparing treatment
       value and control value. Available choices are: ppois, qpois, subtract, logFE,
       FE, logLR, slogLR, and max.'
-    default: ppois
     inputBinding:
       position: 101
       prefix: --method
@@ -55,7 +54,6 @@ inputs:
       - float
     doc: The pseudocount used for calculating logLR, logFE or FE. The count will
       be applied after normalization of sequencing depth.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --pseudocount
@@ -66,7 +64,6 @@ inputs:
     doc: Scaling factor for treatment and control track. Keep it as 1.0 or 
       default in most cases. Set it ONLY while you have SPMR output from MACS3 
       callpeak, and plan to calculate scores as MACS3 callpeak module.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --scaling-factor

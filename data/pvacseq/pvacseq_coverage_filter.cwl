@@ -18,7 +18,6 @@ inputs:
       - float
     doc: Gene and Transcript Expression cutoff. Sites above this cutoff will be 
       considered
-    default: 1
     inputBinding:
       position: 102
       prefix: --expn-val
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Normal Coverage Cutoff. Sites above this cutoff will be considered.
-    default: 5
     inputBinding:
       position: 102
       prefix: --normal-cov
@@ -37,7 +35,6 @@ inputs:
       - float
     doc: Normal VAF Cutoff. Sites BELOW this cutoff in normal will be 
       considered.
-    default: 2
     inputBinding:
       position: 102
       prefix: --normal-vaf
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Tumor DNA Coverage Cutoff. Sites above this cutoff will be considered.
-    default: 10
     inputBinding:
       position: 102
       prefix: --tdna-cov
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - float
     doc: Tumor DNA VAF Cutoff. Sites above this cutoff will be considered.
-    default: 40
     inputBinding:
       position: 102
       prefix: --tdna-vaf
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Tumor RNA Coverage Cutoff. Sites above this cutoff will be considered.
-    default: 10
     inputBinding:
       position: 102
       prefix: --trna-cov
@@ -73,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: Tumor RNA VAF Cutoff. Sites above this cutoff will be considered.
-    default: 40
     inputBinding:
       position: 102
       prefix: --trna-vaf

@@ -25,7 +25,6 @@ inputs:
     doc: "Re-attach to a --detach'ed build to view output and\n                  \
       \      download results. Currently only supported when also using\n        \
       \                --aws-batch."
-    default: None
     inputBinding:
       position: 103
       prefix: --attach
@@ -45,7 +44,6 @@ inputs:
       \          this amount. Informs Snakemake's resource scheduler\n           \
       \             when applicable. Informs the AWS Batch instance size\n       \
       \                 selection."
-    default: None
     inputBinding:
       position: 103
       prefix: --cpus
@@ -56,7 +54,6 @@ inputs:
     doc: "Run the build in the background, detached from your\n                  \
       \      terminal. Re-attach later using --attach. Currently\n               \
       \         only supported when also using --aws-batch."
-    default: false
     inputBinding:
       position: 103
       prefix: --detach
@@ -85,7 +82,6 @@ inputs:
       \              amount. Informs Snakemake's resource scheduler when\n       \
       \                 applicable. Informs the AWS Batch instance size\n        \
       \                selection."
-    default: None
     inputBinding:
       position: 103
       prefix: --memory

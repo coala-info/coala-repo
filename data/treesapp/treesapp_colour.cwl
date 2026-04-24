@@ -18,7 +18,6 @@ inputs:
       - string
     doc: The reference package attribute to colour by. Either 'taxonomy' or a 
       reference package's layering annotation name.
-    default: taxonomy
     inputBinding:
       position: 102
       prefix: --attribute
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum proportion of sequences a group contains to be coloured
-    default: 0
     inputBinding:
       position: 102
       prefix: --min_proportion
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: The Seaborn colour palette to use
-    default: BrBG
     inputBinding:
       position: 102
       prefix: --palette
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: The rank to generate unique colours for
-    default: order
     inputBinding:
       position: 102
       prefix: --rank_level
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: Keywords for excluding specific taxa from the colour palette.
-    default: no filter
     inputBinding:
       position: 102
       prefix: --filter
@@ -81,7 +76,6 @@ inputs:
       - string
     doc: When multiple reference packages are provided, should the union (u) or 
       intersection (i) of all labelled taxa (post-filtering) be coloured?
-    default: u
     inputBinding:
       position: 102
       prefix: --taxa_set_operation
@@ -90,7 +84,6 @@ inputs:
       - 'null'
       - string
     doc: Colour of the 'Unknown' category.
-    default: None
     inputBinding:
       position: 102
       prefix: --unknown_colour

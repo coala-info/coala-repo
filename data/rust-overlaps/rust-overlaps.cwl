@@ -59,7 +59,6 @@ inputs:
       - string
     doc: Uses the filtering scheme mode given options {valimaki, kucherov}. 
       Modes can also be supplied string arguments i.e. 'kucherov_2'.
-    default: kucherov_2
     inputBinding:
       position: 104
       prefix: --mode

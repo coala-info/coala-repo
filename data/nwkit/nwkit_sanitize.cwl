@@ -10,7 +10,6 @@ inputs:
       - int
     doc: ETE tree format. See here 
       http://etetoolkit.org/docs/latest/tutorial/tutorial_trees.html
-    default: auto
     inputBinding:
       position: 101
       prefix: --format
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: Input newick file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --infile
@@ -29,7 +27,6 @@ inputs:
       - string
     doc: Quotation of node and leaf names.none = no quote, single = ', double = 
       "
-    default: none
     inputBinding:
       position: 101
       prefix: --name_quote
@@ -39,7 +36,6 @@ inputs:
       - int
     doc: ETE tree format for --outfile. "auto" indicates the same format as 
       --format.
-    default: auto
     inputBinding:
       position: 101
       prefix: --outformat
@@ -48,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: Whether node names are quoted in the input file.
-    default: yes
     inputBinding:
       position: 101
       prefix: --quoted_node_names
@@ -57,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: Remove singleton nodes represented as double brackets.
-    default: yes
     inputBinding:
       position: 101
       prefix: --remove_singleton
@@ -67,7 +61,6 @@ inputs:
       - string
     doc: Resolve multifurcation (polytomy) nodes into dichotomies with 
       zero-length branches.
-    default: no
     inputBinding:
       position: 101
       prefix: --resolve_polytomy

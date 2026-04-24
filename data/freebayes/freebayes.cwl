@@ -125,7 +125,6 @@ inputs:
       - string
     doc: 'Limit posterior integration to samples where the second-best genotype likelihood
       is no more than log(N) from the highest genotype likelihood for the sample.
-      default: ~unbounded'
     inputBinding:
       position: 102
       prefix: --genotype-variant-threshold
@@ -134,8 +133,6 @@ inputs:
       - 'null'
       - int
     doc: 'Integrate no deeper than the Nth best genotype by likelihood when genotyping.
-      default: 6.'
-    default: 6
     inputBinding:
       position: 102
       prefix: --genotyping-max-banddepth
@@ -144,7 +141,6 @@ inputs:
       - 'null'
       - int
     doc: 'Iterate no more than N times during genotyping step. default: 1000.'
-    default: 1000
     inputBinding:
       position: 102
       prefix: --genotyping-max-iterations
@@ -189,7 +185,6 @@ inputs:
       - int
     doc: 'Allow haplotype calls with contiguous embedded matches of up to this length.
       Set N=-1 to disable clumping. (default: 3)'
-    default: 3
     inputBinding:
       position: 102
       prefix: --haplotype-length
@@ -224,7 +219,6 @@ inputs:
       - 'null'
       - int
     doc: 'Downsample per-sample coverage to this level if greater than this coverage.
-      default: no limit'
     inputBinding:
       position: 102
       prefix: --limit-coverage
@@ -234,7 +228,6 @@ inputs:
       - int
     doc: 'Allow haplotype calls with contiguous embedded matches of up to this length.
       Set N=-1 to disable clumping. (default: 3)'
-    default: 3
     inputBinding:
       position: 102
       prefix: --max-complex-gap
@@ -244,7 +237,6 @@ inputs:
       - int
     doc: 'Require at least this count of observations supporting an alternate allele
       within a single individual in order to evaluate the position. default: 2'
-    default: 2
     inputBinding:
       position: 102
       prefix: --min-alternate-count
@@ -255,7 +247,6 @@ inputs:
     doc: 'Require at least this fraction of observations supporting an alternate allele
       within a single individual in the in order to evaluate the position. default:
       0.05'
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --min-alternate-fraction
@@ -266,7 +257,6 @@ inputs:
     doc: 'Require at least this sum of quality of observations supporting an alternate
       allele within a single individual in order to evaluate the position. default:
       0'
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-alternate-qsum
@@ -277,7 +267,6 @@ inputs:
     doc: 'Require at least this count of observations supporting an alternate allele
       within the total population in order to use the allele in analysis. default:
       1'
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-alternate-total
@@ -287,7 +276,6 @@ inputs:
       - int
     doc: 'Exclude alleles from analysis if their supporting base quality is less than
       Q. default: 0'
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-base-quality
@@ -296,7 +284,6 @@ inputs:
       - 'null'
       - int
     doc: 'Require at least this coverage to process a site. default: 0'
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-coverage
@@ -306,7 +293,6 @@ inputs:
       - int
     doc: 'Exclude alignments from analysis if they have a mapping quality less than
       Q. default: 1'
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-mapping-quality
@@ -316,7 +302,6 @@ inputs:
       - float
     doc: 'To detect interrupted repeats, build across sequence until it has entropy
       > N bits per bp. Set to 0 to turn off. (default: 1)'
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --min-repeat-entropy
@@ -326,7 +311,6 @@ inputs:
       - int
     doc: 'When assembling observations across repeats, require the total repeat length
       at least this many bp. (default: 5)'
-    default: 5
     inputBinding:
       position: 102
       prefix: --min-repeat-size
@@ -336,7 +320,6 @@ inputs:
       - int
     doc: 'Consider any allele in which the sum of qualities of supporting observations
       is at least Q. default: 0'
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-supporting-allele-qsum
@@ -346,7 +329,6 @@ inputs:
       - int
     doc: 'Consider any allele in which and the sum of mapping qualities of supporting
       reads is at least Q. default: 0'
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-supporting-mapping-qsum
@@ -356,7 +338,6 @@ inputs:
       - int
     doc: 'Count mismatches toward --read-mismatch-limit if the base quality of the
       mismatch is >= Q. default: 10'
-    default: 10
     inputBinding:
       position: 102
       prefix: --mismatch-base-quality-threshold
@@ -404,7 +385,6 @@ inputs:
       - 'null'
       - int
     doc: 'Sets the default ploidy for the analysis to N. default: 2'
-    default: 2
     inputBinding:
       position: 102
       prefix: --ploidy
@@ -444,7 +424,6 @@ inputs:
       - string
     doc: 'Integrate all genotype combinations in our posterior space which include
       no more than N samples with their Mth best data likelihood. default: 1,3.'
-    default: 1,3
     inputBinding:
       position: 102
       prefix: --posterior-integration-limits
@@ -453,7 +432,6 @@ inputs:
       - 'null'
       - float
     doc: 'An estimate of contamination to use for all samples. default: 10e-9'
-    default: '10e-9'
     inputBinding:
       position: 102
       prefix: --prob-contamination
@@ -464,7 +442,6 @@ inputs:
     doc: 'Report sites if the probability that there is a polymorphism at the site
       is greater than N. default: 0.0. Note that post-filtering is generally recommended
       over the use of this parameter.'
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --pvar
@@ -474,7 +451,6 @@ inputs:
       - float
     doc: 'Incorporate non-independence of reads by scaling successive observations
       by this factor during data likelihood calculations. default: 0.9'
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --read-dependence-factor
@@ -492,7 +468,6 @@ inputs:
       - float
     doc: 'Exclude reads with more than N [0,1] fraction of mismatches where each mismatch
       has base quality >= mismatch-base-quality-threshold default: 1.0'
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --read-max-mismatch-fraction
@@ -529,7 +504,6 @@ inputs:
       - string
     doc: 'Assign mapping quality of MQ to the reference allele at each site and base
       quality of BQ. default: 100,60'
-    default: 100,60
     inputBinding:
       position: 102
       prefix: --reference-quality
@@ -630,7 +604,6 @@ inputs:
     doc: 'The expected mutation rate or pairwise nucleotide diversity among the population
       under analysis. This serves as the single parameter to the Ewens Sampling Formula
       prior model default: 0.001'
-    default: 0.001
     inputBinding:
       position: 102
       prefix: --theta

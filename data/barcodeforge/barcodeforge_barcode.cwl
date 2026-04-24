@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: Value for --set-overlap in matUtils annotate.
-    default: 0.0
     inputBinding:
       position: 105
       prefix: --matutils-overlap
@@ -40,7 +39,6 @@ inputs:
       - int
     doc: Number of mutations to render in each plot chunk. Use -1 for no 
       chunking.
-    default: 100
     inputBinding:
       position: 105
       prefix: --plot-chunk-size
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix to add to lineage names in the barcode file.
-    default: ''
     inputBinding:
       position: 105
       prefix: --prefix
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs/threads to use.
-    default: 8
     inputBinding:
       position: 105
       prefix: --threads

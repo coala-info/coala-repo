@@ -13,7 +13,6 @@ inputs:
       - string
     doc: The amount of memory to be used by Java tools. This will be passed to 
       Javas '-Xmx' so for more info see '-Xmx' in java.Default is '18g'.
-    default: 18g
     inputBinding:
       position: 101
       prefix: --Xmx
@@ -123,7 +122,6 @@ inputs:
       - int
     doc: This option is passed diretly to STAR aligner For more info see STAR 
       aligner regarding this option. Default is '1000000'.
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --limitOutSJcollapsed
@@ -133,7 +131,6 @@ inputs:
       - int
     doc: This option is passed diretly to STAR aligner For more info see STAR 
       aligner regarding this option. Default is '2000000'.
-    default: 2000000
     inputBinding:
       position: 101
       prefix: --limitSjdbInsertNsj
@@ -171,7 +168,6 @@ inputs:
       usefull in situations where one server is shared between several users and
       in order to limit FusionCatcher using all the CPUs/resources. Default is 
       '0'.
-    default: 0
     inputBinding:
       position: 101
       prefix: --threads
@@ -181,7 +177,6 @@ inputs:
       - int
     doc: Only the first reads from the input FASTQ files will be used. Default 
       is '0'.
-    default: 0
     inputBinding:
       position: 101
       prefix: --reads
@@ -261,7 +256,6 @@ inputs:
       wants to re-run it from from the step where it stopped without re-running 
       from the beginning the entire pipeline. 0 is for restarting automatically 
       and 1 is the first step. Default is '0'.
-    default: 0
     inputBinding:
       position: 101
       prefix: --start

@@ -56,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: Type of tree to use for placement (epa-ng or sepp).
-    default: epa-ng
     inputBinding:
       position: 101
       prefix: --tree_type

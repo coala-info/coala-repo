@@ -73,7 +73,6 @@ inputs:
       - float
     doc: Minimal score difference between highest scoring taxonomies (otherwise 
       "unresolved")
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min_diff
@@ -83,7 +82,6 @@ inputs:
       - float
     doc: Minimal score necessary to be considered for taxonomy calculaton, 
       otherwise set to 'no-hit'
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min_score
@@ -102,7 +100,6 @@ inputs:
     doc: 'NodesDB file (default: $BLOBTOOLS/data/nodesDB.txt). If --nodes, --names
       and --db are all given and NODESDB does not exist, create it from NODES and
       NAMES.'
-    default: $BLOBTOOLS/data/nodesDB.txt
     inputBinding:
       position: 101
       prefix: --db
@@ -147,7 +144,6 @@ inputs:
       - 'null'
       - string
     doc: Title of BlobDB
-    default: output prefix
     inputBinding:
       position: 101
       prefix: --title

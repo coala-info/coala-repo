@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: max. breakpoint offset
-    default: 50
     inputBinding:
       position: 102
       prefix: --bpoffset
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: 'max. distance (0: overlapping features only)'
-    default: 1000
     inputBinding:
       position: 102
       prefix: --distance
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: gtf/gff3 feature
-    default: gene
     inputBinding:
       position: 102
       prefix: --feature
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: gtf/gff3 attribute
-    default: gene_name
     inputBinding:
       position: 102
       prefix: --id
@@ -93,7 +89,6 @@ inputs:
       - 'null'
       - float
     doc: min. reciprocal overlap
-    default: 0.800000012
     inputBinding:
       position: 102
       prefix: --ratio
@@ -102,7 +97,6 @@ inputs:
       - 'null'
       - string
     doc: matching strategy [best|all]
-    default: best
     inputBinding:
       position: 102
       prefix: --strategy

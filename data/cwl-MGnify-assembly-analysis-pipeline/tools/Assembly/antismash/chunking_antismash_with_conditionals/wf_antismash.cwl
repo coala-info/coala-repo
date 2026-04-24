@@ -18,7 +18,6 @@ inputs:
     final_folder_name: string
     contig_min_limit:
       type: int?
-      default: 5000
 
 outputs:
   antismash_folder:

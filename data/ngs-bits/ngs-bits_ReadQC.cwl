@@ -10,7 +10,6 @@ inputs:
       - int
     doc: Output FASTQ compression level from 1 (fastest) to 9 (best 
       compression).
-    default: '1'
     inputBinding:
       position: 101
       prefix: -compression_level
@@ -29,7 +28,6 @@ inputs:
         items: File
     doc: Reverse input gzipped FASTQ file(s) for paired-end mode (same number of
       cycles/reads as 'in1').
-    default: ''
     inputBinding:
       position: 101
       prefix: -in2
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - boolean
     doc: Support long reads (> 1kb).
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -long_read
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - boolean
     doc: Writes TXT format instead of qcML.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -txt

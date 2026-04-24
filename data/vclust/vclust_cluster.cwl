@@ -14,7 +14,6 @@ inputs:
       \                       * cd-hit: Greedy incremental\n                     \
       \          * set-cover: Greedy set-cover (MMseqs2)\n                       \
       \        * leiden: Leiden algorithm"
-    default: single
     inputBinding:
       position: 101
       prefix: --algorithm
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: Min. ANI (0-1) [0]
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --ani
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: Min. global ANI (0-1) [0]
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --gani
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: Beta parameter for the Leiden algorithm [0.01]
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --leiden-beta
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations for the Leiden algorithm [2]
-    default: 2
     inputBinding:
       position: 101
       prefix: --leiden-iterations
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: Resolution parameter for the Leiden algorithm [0.7]
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --leiden-resolution
@@ -80,7 +74,6 @@ inputs:
       - 'null'
       - float
     doc: Min. length ratio between shorter and longer sequence (0-1) [0]
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --len_ratio
@@ -90,7 +83,6 @@ inputs:
       - string
     doc: "Similarity metric for clustering [tani]\n                              \
       \ choices: tani,gani,ani"
-    default: tani
     inputBinding:
       position: 101
       prefix: --metric
@@ -100,7 +92,6 @@ inputs:
       - int
     doc: Max. number of local alignments between two genomes; 0 means all genome
       pairs are allowed. [0]
-    default: 0
     inputBinding:
       position: 101
       prefix: --num_alns
@@ -111,7 +102,6 @@ inputs:
     doc: Output a representative genome for each cluster instead of numerical 
       cluster identifiers. The representative genome is selected as the one with
       the longest sequence.
-    default: false
     inputBinding:
       position: 101
       prefix: --out-repr
@@ -120,7 +110,6 @@ inputs:
       - 'null'
       - float
     doc: Min. query coverage/aligned fraction (0-1) [0]
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --qcov
@@ -129,7 +118,6 @@ inputs:
       - 'null'
       - float
     doc: Min. reference coverage/aligned fraction (0-1) [0]
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --rcov
@@ -138,7 +126,6 @@ inputs:
       - 'null'
       - float
     doc: Min. total ANI (0-1) [0]
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --tani
@@ -148,7 +135,6 @@ inputs:
       - int
     doc: "Verbosity level [1]:\n                               0: Errors only\n  \
       \                             1: Info\n                               2: Debug"
-    default: 1
     inputBinding:
       position: 101
       prefix: -v

@@ -56,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum gap size for chaining fragmented hits
-    default: 10
     inputBinding:
       position: 101
       prefix: --max-gap
@@ -65,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum query coverage threshold as fraction 0.0-1.0
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --min-coverage
@@ -74,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum sequence identity threshold as percentage
-    default: 70.0
     inputBinding:
       position: 101
       prefix: --min-identity
@@ -122,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads to use for MAFFT alignment
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

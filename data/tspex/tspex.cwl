@@ -25,7 +25,6 @@ inputs:
       range from 0 (perfectly ubiquitous) to 1 (perfectly tissue-specific). If 
       this parameter is used, transformation will be disabled and each metric 
       will have have a diferent range of possible values.
-    default: false
     inputBinding:
       position: 103
       prefix: --disable_transformation
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Log-transform expression values.
-    default: false
     inputBinding:
       position: 103
       prefix: --log
@@ -44,7 +42,6 @@ inputs:
       - int
     doc: Threshold to be used with the "counts" metric. If another method is 
       chosen, this parameter will be ignored.
-    default: 0
     inputBinding:
       position: 103
       prefix: --threshold

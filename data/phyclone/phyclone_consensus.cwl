@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: Consensus threshold to keep an SNV.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --consensus-threshold
@@ -25,7 +24,6 @@ inputs:
       - string
     doc: Which measure to use as the consensus tree weights. Counts is the same 
       as an unweighted consensus.
-    default: joint-likelihood
     inputBinding:
       position: 101
       prefix: --weight-type

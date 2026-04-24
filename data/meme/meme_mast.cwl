@@ -84,7 +84,6 @@ inputs:
       - 'null'
       - float
     doc: print results for sequences with E-value < <ev>
-    default: 10
     inputBinding:
       position: 103
       prefix: -ev
@@ -184,7 +183,6 @@ inputs:
       - 'null'
       - float
     doc: show motif matches with p-value < mt
-    default: 0.0001
     inputBinding:
       position: 103
       prefix: -mt

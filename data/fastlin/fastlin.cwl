@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: kmer size
-    default: 25
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of kmer occurences
-    default: 4
     inputBinding:
       position: 101
       prefix: --min-count
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of barcodes
-    default: 3
     inputBinding:
       position: 101
       prefix: --n-barcodes
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --nb-threads

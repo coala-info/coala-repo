@@ -104,7 +104,6 @@ inputs:
     doc: Specifies the length of Kmer to look for in the Kmer content module. 
       Specified Kmer length must be between 2 and 10. Default length is 7 if not
       specified.
-    default: 7
     inputBinding:
       position: 102
       prefix: --kmers
@@ -127,7 +126,6 @@ inputs:
     doc: Sets the base amount of memory, in Megabytes, used to process each 
       file. Defaults to 512MB. You may need to increase this if you have a file 
       with very long sequences in it.
-    default: 512
     inputBinding:
       position: 102
       prefix: --memory

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: number of processes to use to parse hic file. default set to 1
-    default: 1
     inputBinding:
       position: 102
       prefix: --nproc
@@ -26,7 +25,6 @@ inputs:
       will use all resolutions. If all resolutions are used, a multi-res .cool 
       file will be created, which has a different hdf5 structure. See the README
       for more info
-    default: 0
     inputBinding:
       position: 102
       prefix: --resolution

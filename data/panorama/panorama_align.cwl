@@ -12,7 +12,6 @@ inputs:
       - int
     doc: 'Coverage mode: 0=query, 1=target, 2=shorter seq, 3=longer seq, 4=query and
       target, 5=shorter and longer seq.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --align_cov_mode
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage percentage threshold (0.0-1.0).
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --align_coverage
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum identity percentage threshold (0.0-1.0).
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --align_identity
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: disables the progress bars
-    default: false
     inputBinding:
       position: 101
       prefix: --disable_prog_bar
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force writing in output directory and in pangenome output file.
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep temporary files after completion (useful for debugging)
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_tmp
@@ -80,7 +74,6 @@ inputs:
       - 'null'
       - File
     doc: log output file
-    default: stdout
     inputBinding:
       position: 101
       prefix: --log
@@ -95,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for parallel processing.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -104,7 +96,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for temporary files.
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmpdir
@@ -114,7 +105,6 @@ inputs:
       - int
     doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
       for debug)
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbose

@@ -30,7 +30,6 @@ inputs:
       reading and writing hyb records. As the preferred alternative to using 
       this setting, the --custom_flags argument can be be used to supply custom 
       allowed flags.
-    default: false
     inputBinding:
       position: 103
       prefix: --allow_undefined_flags
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow unknown segment types when assigning segment types.
-    default: false
     inputBinding:
       position: 103
       prefix: --allow_unknown_seg_types
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: For DynamicFoldRecords, allowed number of mismatches with a HybRecord.
-    default: 0
     inputBinding:
       position: 103
       prefix: --allowed_mismatches
@@ -59,7 +56,6 @@ inputs:
         items: string
     doc: Custom flags to allow in addition to those specified in the hybkit 
       specification.
-    default: []
     inputBinding:
       position: 103
       prefix: --custom_flags
@@ -75,7 +71,6 @@ inputs:
       between hybrecord and foldrecord sequences is greater than FoldRecord "allowed_mismatches"
       setting; "energy_mismatch": Error when a mismatch exists between HybRecord and
       FoldRecord energy values.'
-    default:
       - hybrecord_indel
       - foldrecord_nofold
       - max_mismatch
@@ -91,7 +86,6 @@ inputs:
       when using HybFoldIter). Options: \"raise\": Raise an error when encountered
       and exit program ; \"warn_return\": Print a warning and return the error_value
       ; \"return\": Return the error value with no program output. record is encountered."
-    default: raise
     inputBinding:
       position: 103
       prefix: --error_mode
@@ -104,7 +98,6 @@ inputs:
       from output. Includes a filter type, Ex: "seg_name_contains", and an argument,
       Ex: "ENST00000340384". (Note: not all filter types require a second argument,
       for Example: "has_mirna_seg")'
-    default: None
     inputBinding:
       position: 103
       prefix: --exclude
@@ -117,7 +110,6 @@ inputs:
       from output. Includes a filter type, Ex: "seg_name_contains", and an argument,
       Ex: "ENST00000340384". (Note: not all filter types require a second argument,
       for Example: "has_mirna_seg")'
-    default: None
     inputBinding:
       position: 103
       prefix: --exclude_2
@@ -130,7 +122,6 @@ inputs:
       from output. Includes a filter type, Ex: "seg_name_contains", and an argument,
       Ex: "ENST00000340384". (Note: not all filter types require a second argument,
       for Example: "has_mirna_seg")'
-    default: None
     inputBinding:
       position: 103
       prefix: --exclude_3
@@ -142,7 +133,6 @@ inputs:
     doc: 'Filter criteria #1. Records matching the criteria will be included in output.
       Includes a filter type, Ex: "seg_name_contains", and an argument, Ex: "ENST00000340384".
       (Note: not all filter types require a second argument, for Example: "has_mirna_seg")'
-    default: None
     inputBinding:
       position: 103
       prefix: --filter
@@ -154,7 +144,6 @@ inputs:
     doc: 'Filter criteria #2. Records matching the criteria will be included in output.
       Includes a filter type, Ex: "seg_name_contains", and an argument, Ex: "ENST00000340384".
       (Note: not all filter types require a second argument, for Example: "has_mirna_seg")'
-    default: None
     inputBinding:
       position: 103
       prefix: --filter_2
@@ -166,7 +155,6 @@ inputs:
     doc: 'Filter criteria #3. Records matching the criteria will be included in output.
       Includes a filter type, Ex: "seg_name_contains", and an argument, Ex: "ENST00000340384".
       (Note: not all filter types require a second argument, for Example: "has_mirna_seg")'
-    default: None
     inputBinding:
       position: 103
       prefix: --filter_3
@@ -178,7 +166,6 @@ inputs:
       filters to be true for inclusion. The "any" mode requires only one provided
       filter to be true for inclusion. (Note: matching any exclusion filter is grounds
       for exclusion of record.)'
-    default: all
     inputBinding:
       position: 103
       prefix: --filter_mode
@@ -188,7 +175,6 @@ inputs:
       - string
     doc: Placeholder character/string for missing data for reading/writing fold 
       records.
-    default: .
     inputBinding:
       position: 103
       prefix: --fold_placeholder
@@ -197,7 +183,6 @@ inputs:
       - 'null'
       - string
     doc: placeholder character/string for missing data in hyb files.
-    default: .
     inputBinding:
       position: 103
       prefix: --hyb_placeholder
@@ -208,7 +193,6 @@ inputs:
     doc: 'The Hyb Software Package places further information in the "id" field of
       the hybrid record that can be used to infer the number of contained read counts.
       When set to True, the identifiers will be parsed as: "<read_id>_<read_count>"'
-    default: false
     inputBinding:
       position: 103
       prefix: --hybformat_id
@@ -219,7 +203,6 @@ inputs:
     doc: 'The Hyb Software Package uses a reference database with identifiers that
       contain sequence type and other sequence information. When set to True, all
       hyb file identifiers will be parsed as: "<gene_id>_<transcript_id>_<gene_name>_<seg_type>"'
-    default: false
     inputBinding:
       position: 103
       prefix: --hybformat_ref
@@ -233,7 +216,6 @@ inputs:
       Print a warning and continue to the next iteration; "skip": Continue to the
       next iteration without any output; "return": return the value without any error
       output;'
-    default: warn_skip
     inputBinding:
       position: 103
       prefix: --iter_error_mode
@@ -244,7 +226,6 @@ inputs:
     doc: Maximum number of record(-pairs) to skip in a row. Limited as several 
       sequential skips usually indicates an issue with record formatting or a 
       desynchronization between files.
-    default: 100
     inputBinding:
       position: 103
       prefix: --max_sequential_skips
@@ -254,7 +235,6 @@ inputs:
       - type: array
         items: string
     doc: '"seg_type" fields identifying a miRNA'
-    default:
       - miRNA
       - microRNA
     inputBinding:
@@ -266,7 +246,6 @@ inputs:
       - Directory
     doc: Path to directory for output of files. Defaults to the current working 
       directory.
-    default: $PWD
     inputBinding:
       position: 103
       prefix: --out_dir
@@ -277,7 +256,6 @@ inputs:
     doc: Suffix to add to the name of output files, before any file- or 
       analysis-specific suffixes. The file-type appropriate suffix will be added
       automatically.
-    default: _filtered
     inputBinding:
       position: 103
       prefix: --out_suffix
@@ -287,7 +265,6 @@ inputs:
       - boolean
     doc: Re-order flags to the hybkit-specification order when writing hyb 
       records.
-    default: true
     inputBinding:
       position: 103
       prefix: --reorder_flags
@@ -299,7 +276,6 @@ inputs:
       an exact sequence match to be paired with a HybRecord; "dynamic": DynamicFoldRecord,
       requires a sequence match to the "dynamic" annotated regions of a HybRecord,
       and may be shorter/longer than the original sequence.'
-    default: static
     inputBinding:
       position: 103
       prefix: --seq_type
@@ -308,7 +284,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set "dataset" flag to value of the input file name.
-    default: false
     inputBinding:
       position: 103
       prefix: --set_dataset
@@ -317,7 +292,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print no output during run.
-    default: false
     inputBinding:
       position: 103
       prefix: --silent
@@ -326,7 +300,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip sequential duplicate read IDs after filtering.
-    default: false
     inputBinding:
       position: 103
       prefix: --skip_dup_id_after
@@ -335,7 +308,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip sequential duplicate read IDs before filtering.
-    default: false
     inputBinding:
       position: 103
       prefix: --skip_dup_id_before
@@ -344,7 +316,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print verbose output during run.
-    default: false
     inputBinding:
       position: 103
       prefix: --verbose

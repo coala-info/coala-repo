@@ -15,7 +15,6 @@ inputs:
       - float
     doc: Compression ratio for suffix array to be sampled. Larger ratios reduce 
       file size and increase the average number of operations per query.
-    default: 8
     inputBinding:
       position: 102
       prefix: --compression-ratio
@@ -25,7 +24,6 @@ inputs:
       - int
     doc: Length of k-mers to memoize in a lookup table to speed up searches. 
       Each value increase multiplies memory usage of the index by 4.
-    default: 12
     inputBinding:
       position: 102
       prefix: --seed-length

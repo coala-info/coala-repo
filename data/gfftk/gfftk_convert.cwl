@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'write parsing errors to stderr (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: 'Filter gene models, keep matches. [key:value] (default: [])'
-    default: '[]'
     inputBinding:
       position: 101
       prefix: --grep
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: 'Filter gene models, remove matches [key:value] (default: [])'
-    default: '[]'
     inputBinding:
       position: 101
       prefix: --grepv
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: 'format of input file [gff3, gtf, tbl]. (default: auto)'
-    default: auto
     inputBinding:
       position: 101
       prefix: --input-format
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'for proteins output, do not write stop codons (*) (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --no-stop
@@ -78,7 +73,6 @@ inputs:
       - string
     doc: 'format of output file [gff3, gtf, tbl, gbff, proteins, transcripts, cds-transcripts,
       combined]. (default: auto)'
-    default: auto
     inputBinding:
       position: 101
       prefix: --output-format
@@ -95,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: 'Codon table. Default: 1 [1,11]'
-    default: 1
     inputBinding:
       position: 101
       prefix: --table
@@ -105,7 +98,6 @@ inputs:
       - boolean
     doc: 'URL encode attribute values in GFF3 output for downstream tool compatibility
       (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --url-encode

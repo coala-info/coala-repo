@@ -78,7 +78,6 @@ inputs:
       - 'null'
       - float
     doc: After sampling the first `offset_sample_size` reads, use offsets that
-    default: 0.0025
     inputBinding:
       position: 101
       prefix: --offset-min-fraction
@@ -88,7 +87,6 @@ inputs:
       - int
     doc: The number of reads to be examined when determining the offsets at 
       which guides may be found in the input reads
-    default: 100000
     inputBinding:
       position: 101
       prefix: --offset-sample-size

@@ -12,7 +12,6 @@ inputs:
       - string
     doc: Algorithm for suffix array construction (needed for the FM index). One 
       of divsufsort and skew.
-    default: divsufsort
     inputBinding:
       position: 101
       prefix: --algorithm
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Sampling rate of suffix array In range [1..64].
-    default: 10
     inputBinding:
       position: 101
       prefix: --sampling
@@ -57,7 +55,6 @@ inputs:
       - boolean
     doc: Turn this option off to disable version update notifications of the 
       application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO.
-    default: true
     inputBinding:
       position: 101
       prefix: --version-check

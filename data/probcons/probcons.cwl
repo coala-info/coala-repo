@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Use 0 <= REPS <= 5 passes of consistency transformation
-    default: 2
     inputBinding:
       position: 102
       prefix: --consistency
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Number of EM epochs
-    default: 10
     inputBinding:
       position: 102
       prefix: --epochs
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Use 0 <= REPS <= 1000 passes of iterative-refinement
-    default: 100
     inputBinding:
       position: 102
       prefix: --iterative-refinement
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Use 0 <= REPS <= 20 rounds of pre-training
-    default: 0
     inputBinding:
       position: 102
       prefix: --pre-training

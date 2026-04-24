@@ -62,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: 'Check for refseqs in downloaded files: one of: no, yes, smart'
-    default: smart
     inputBinding:
       position: 104
       prefix: --check-rs
@@ -80,7 +79,6 @@ inputs:
       - 'null'
       - string
     doc: Specify file type to download
-    default: sra
     inputBinding:
       position: 104
       prefix: --type
@@ -89,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: 'Force object download: one of: no, yes, all, ALL'
-    default: no
     inputBinding:
       position: 104
       prefix: --force
@@ -98,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Time period in minutes to display download progress
-    default: 1
     inputBinding:
       position: 104
       prefix: --heartbeat
@@ -139,7 +135,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level as number or enum string
-    default: warn
     inputBinding:
       position: 104
       prefix: --log-level
@@ -148,7 +143,6 @@ inputs:
       - 'null'
       - string
     doc: Maximum file size to download in KB (exclusive)
-    default: 20G
     inputBinding:
       position: 104
       prefix: --max-size
@@ -189,7 +183,6 @@ inputs:
       - 'null'
       - string
     doc: 'Kart prefetch order when downloading kart: one of: kart, size'
-    default: size
     inputBinding:
       position: 104
       prefix: --order
@@ -214,7 +207,6 @@ inputs:
       - 'null'
       - string
     doc: 'Resume partial downloads: one of: no, yes'
-    default: yes
     inputBinding:
       position: 104
       prefix: --resume
@@ -231,7 +223,6 @@ inputs:
       - 'null'
       - string
     doc: 'Transport: one of: fasp; http; both'
-    default: both
     inputBinding:
       position: 104
       prefix: --transport
@@ -248,7 +239,6 @@ inputs:
       - 'null'
       - string
     doc: 'Verify after download: one of: no, yes'
-    default: yes
     inputBinding:
       position: 104
       prefix: --verify

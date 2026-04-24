@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep temporary files to debug program.
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum number of CPUs used.
-    default: 1
     inputBinding:
       position: 101
       prefix: --nb-cpus
@@ -52,7 +50,6 @@ inputs:
       - type: array
         items: string
     doc: Reduce ITSx scan to specified organim groups.
-    default:
       - F
     inputBinding:
       position: 101

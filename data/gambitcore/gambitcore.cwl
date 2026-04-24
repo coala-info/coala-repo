@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: concise output
-    default: false
     inputBinding:
       position: 103
       prefix: --concise
@@ -32,7 +31,6 @@ inputs:
       - float
     doc: Proportion of genomes a kmer must be in for a species to be considered 
       core
-    default: 0.98
     inputBinding:
       position: 103
       prefix: --core_proportion
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cpus to use
-    default: 1
     inputBinding:
       position: 103
       prefix: --cpus
@@ -51,7 +48,6 @@ inputs:
       - int
     doc: Length of the k-mer to use. Dont change these, must match database 
       parameters.
-    default: 11
     inputBinding:
       position: 103
       prefix: --kmer
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: Kmer prefix. Dont change these, must match database parameters.
-    default: ATGAC
     inputBinding:
       position: 103
       prefix: --kmer_prefix
@@ -70,7 +65,6 @@ inputs:
       - int
     doc: Max number of genomes in a species to consider, ignore all others above
       this
-    default: 100000
     inputBinding:
       position: 103
       prefix: --max_species_genomes
@@ -80,7 +74,6 @@ inputs:
       - int
     doc: Number of genomes to keep for a species (0 means keep all). Dont change
       this.
-    default: 1
     inputBinding:
       position: 103
       prefix: --num_genomes_per_species
@@ -89,7 +82,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn on verbose output
-    default: false
     inputBinding:
       position: 103
       prefix: --verbose

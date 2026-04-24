@@ -11,7 +11,6 @@ inputs:
       - string
     doc: 'the attribute key in column 9 of the GFF/GTF file to use for filtering.
       Default: ID'
-    default: ID
     inputBinding:
       position: 101
       prefix: --attribute_key
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: 'keep guides this far in front of a feature. Default: 100.'
-    default: 100
     inputBinding:
       position: 101
       prefix: --before
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of random control RNAs to generate. Default: 1000.'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --controls
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum edit distance from any other potential guide. Default: 2.'
-    default: 2
     inputBinding:
       position: 101
       prefix: --dist
@@ -74,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: 'Select the distance type. Default: hamming.'
-    default: hamming
     inputBinding:
       position: 101
       prefix: --dtype
@@ -94,7 +89,6 @@ inputs:
       - type: array
         items: string
     doc: 'List of locus ids. Default: None.'
-    default: None
     inputBinding:
       position: 101
       prefix: --filter_by_attribute
@@ -124,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: 'Length of the guide sequence. Default: 20.'
-    default: 20
     inputBinding:
       position: 101
       prefix: --guidelength
@@ -134,7 +127,6 @@ inputs:
       - int
     doc: 'keep guides this far inside (past the start site)of a feature. Default:
       200.'
-    default: 200
     inputBinding:
       position: 101
       prefix: --into
@@ -151,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: 'how many sequences similar to the guide to report. Default: 5.'
-    default: 5
     inputBinding:
       position: 101
       prefix: --knum
@@ -169,7 +160,6 @@ inputs:
       - int
     doc: 'Length of a seed region near the PAM site required to be unique. Default:
       10.'
-    default: 10
     inputBinding:
       position: 101
       prefix: --lsr
@@ -185,7 +175,6 @@ inputs:
       - string
     doc: "The PAM position relative to the target: 5prime: [PAM][target], 3prime:
       [target][PAM]. For example, SpCas9 is 3prime. Default: '3prime'."
-    default: 3prime
     inputBinding:
       position: 101
       prefix: --pam_orientation
@@ -218,7 +207,6 @@ inputs:
       - type: array
         items: string
     doc: 'List of sequence representing restriction enzymes. Default: None.'
-    default: None
     inputBinding:
       position: 101
       prefix: --restriction_enzyme_list
@@ -235,7 +223,6 @@ inputs:
       - 'null'
       - int
     doc: 'The number of cpu threads to use. Default: 2'
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads

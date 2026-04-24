@@ -16,7 +16,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 57.021464
     inputBinding:
       position: 101
       prefix: --add_C_cysteine
@@ -195,7 +194,6 @@ inputs:
       - int
     doc: First enzyme's allowed number of missed cleavages per peptide. Maximum 
       value is 5.
-    default: 2
     inputBinding:
       position: 101
       prefix: --allowed_missed_cleavage_1
@@ -205,7 +203,6 @@ inputs:
       - int
     doc: Second enzyme's allowed number of missed cleavages per peptide. Maximum
       value is 5.
-    default: 2
     inputBinding:
       position: 101
       prefix: --allowed_missed_cleavage_2
@@ -221,7 +218,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 1
     inputBinding:
       position: 101
       prefix: --check the spectral files before searching
@@ -229,7 +225,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: 0.0 0.0
     inputBinding:
       position: 101
       prefix: --clear_mz_range
@@ -237,7 +232,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 1
     inputBinding:
       position: 101
       prefix: --clip_nTerm_M
@@ -262,7 +256,6 @@ inputs:
       - string
     doc: prefix added to the decoy protein ID (used for parameter optimization 
       only)
-    default: rev_
     inputBinding:
       position: 101
       prefix: --decoy_prefix
@@ -272,7 +265,6 @@ inputs:
       - int
     doc: Perform deisotoping or not (0=no, 1=yes and assume singleton peaks 
       single charged, 2=yes and assume singleton
-    default: 1
     inputBinding:
       position: 101
       prefix: --deisotope
@@ -308,7 +300,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: 500.0 5000.0
     inputBinding:
       position: 101
       prefix: --digest_mass_range
@@ -316,7 +307,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 50
     inputBinding:
       position: 101
       prefix: --digest_max_length
@@ -324,7 +314,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 7
     inputBinding:
       position: 101
       prefix: --digest_min_length
@@ -333,7 +322,6 @@ inputs:
       - 'null'
       - string
     doc: determine the input file extension (mzML, raw, RAW
-    default: mzML
     inputBinding:
       position: 101
       prefix: --extension
@@ -343,7 +331,6 @@ inputs:
       - string
     doc: Ion series used in search, specify any of a,b,c,x,y,z,b~,y~,Y,b-18,y-18
       (comma separated)
-    default: b,y
     inputBinding:
       position: 101
       prefix: --fragment_ion_series
@@ -351,7 +338,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 20
     inputBinding:
       position: 101
       prefix: --fragment_mass_tolerance
@@ -359,7 +345,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 1
     inputBinding:
       position: 101
       prefix: --fragment_mass_units
@@ -385,7 +370,6 @@ inputs:
       - 'null'
       - string
     doc: 0=off, 0/1/2 (standard C13 error)
-    default: 0/1/2
     inputBinding:
       position: 101
       prefix: --isotope_error
@@ -395,7 +379,6 @@ inputs:
       - string
     doc: type of search (nglycan, labile, or off). Off means non-labile/typical 
       search.
-    default: off
     inputBinding:
       position: 101
       prefix: --labile_search_mode
@@ -428,7 +411,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 2
     inputBinding:
       position: 101
       prefix: --max_fragment_charge
@@ -438,7 +420,6 @@ inputs:
       - int
     doc: maximum of 65534, limits number of modified peptides generated from 
       sequence
-    default: 5000
     inputBinding:
       position: 101
       prefix: --max_variable_mods_combinations
@@ -447,7 +428,6 @@ inputs:
       - 'null'
       - int
     doc: maximun of 5
-    default: 3
     inputBinding:
       position: 101
       prefix: --max_variable_mods_per_peptide
@@ -455,7 +435,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 8
     inputBinding:
       position: 101
       prefix: --memory
@@ -463,7 +442,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 2
     inputBinding:
       position: 101
       prefix: --min_fragments_modelling
@@ -471,7 +449,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 4
     inputBinding:
       position: 101
       prefix: --min_matched_fragments
@@ -480,7 +457,6 @@ inputs:
       - 'null'
       - int
     doc: required minimum number of peaks in spectrum to search
-    default: 15
     inputBinding:
       position: 101
       prefix: --minimum_peaks
@@ -488,7 +464,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --minimum_ratio
@@ -497,7 +472,6 @@ inputs:
       - 'null'
       - int
     doc: 2 for enzymatic, 1 for semi-enzymatic, 0 for nonspecific digestion
-    default: 2
     inputBinding:
       position: 101
       prefix: --num_enzyme_termini
@@ -513,7 +487,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: pepXML
     inputBinding:
       position: 101
       prefix: --output_format
@@ -521,7 +494,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 50
     inputBinding:
       position: 101
       prefix: --output_max_expect
@@ -529,7 +501,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 1
     inputBinding:
       position: 101
       prefix: --output_report_topN
@@ -560,7 +531,6 @@ inputs:
       - string
     doc: precursor charge range to analyze; does not override any existing 
       charge; 0 as 1st entry ignores parameter
-    default: 1 4
     inputBinding:
       position: 101
       prefix: --precursor_charge
@@ -568,7 +538,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: -20
     inputBinding:
       position: 101
       prefix: --precursor_mass_lower
@@ -576,7 +545,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: selected
     inputBinding:
       position: 101
       prefix: --precursor_mass_mode
@@ -585,7 +553,6 @@ inputs:
       - 'null'
       - int
     doc: 0=Daltons, 1=ppm
-    default: 1
     inputBinding:
       position: 101
       prefix: --precursor_mass_units
@@ -593,7 +560,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 20
     inputBinding:
       position: 101
       prefix: --precursor_mass_upper
@@ -601,7 +567,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 20
     inputBinding:
       position: 101
       prefix: --precursor_true_tolerance
@@ -610,7 +575,6 @@ inputs:
       - 'null'
       - int
     doc: 0=Daltons, 1=ppm
-    default: 1
     inputBinding:
       position: 101
       prefix: --precursor_true_units
@@ -628,7 +592,6 @@ inputs:
       - 'null'
       - string
     doc: 'm/z range in removing precursor peaks. Unit: Da.'
-    default: -1.5,1.5
     inputBinding:
       position: 101
       prefix: --remove_precursor_range
@@ -647,7 +610,6 @@ inputs:
     doc: Specify amino acids on which delta masses (mass offsets or search 
       modifications) can occur. Allowed values are single letter codes (e.g. 
       ACD)
-    default: all
     inputBinding:
       position: 101
       prefix: --restrict_deltamass_to
@@ -655,7 +617,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: KR
     inputBinding:
       position: 101
       prefix: --search_enzyme_cut_1
@@ -670,7 +631,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: Trypsin
     inputBinding:
       position: 101
       prefix: --search_enzyme_name_1
@@ -685,7 +645,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: P
     inputBinding:
       position: 101
       prefix: --search_enzyme_nocut_1
@@ -700,7 +659,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: C
     inputBinding:
       position: 101
       prefix: --search_enzyme_sense_1
@@ -708,7 +666,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: C
     inputBinding:
       position: 101
       prefix: --search_enzyme_sense_2
@@ -732,7 +689,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 150
     inputBinding:
       position: 101
       prefix: --use_topN_peaks
@@ -818,7 +774,6 @@ inputs:
       - int
     doc: disabled if above passes - multiply expect of zero bin for ordering 
       purposes (does not affect reported expect)
-    default: 1
     inputBinding:
       position: 101
       prefix: --zero_bin_mult_expect

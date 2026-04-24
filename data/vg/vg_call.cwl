@@ -26,7 +26,6 @@ inputs:
       - string
     doc: baseline error rates for Poisson model for small (X) and large (Y) 
       variants
-    default: '[0.005,0.01]'
     inputBinding:
       position: 102
       prefix: --baseline-error
@@ -79,7 +78,6 @@ inputs:
       - string
     doc: homozygous alt/ref allele must have >= M/N times more support than the 
       next best allele
-    default: '[6,6]'
     inputBinding:
       position: 102
       prefix: --het-bias
@@ -112,7 +110,6 @@ inputs:
       - 'null'
       - string
     doc: min allele (M) and site (N) support to call
-    default: '[2,4]'
     inputBinding:
       position: 102
       prefix: --min-support
@@ -153,7 +150,6 @@ inputs:
       - 'null'
       - int
     doc: ploidy of sample. {1, 2}
-    default: 2
     inputBinding:
       position: 102
       prefix: --ploidy
@@ -223,7 +219,6 @@ inputs:
       - 'null'
       - string
     doc: sample name
-    default: SAMPLE
     inputBinding:
       position: 102
       prefix: --sample

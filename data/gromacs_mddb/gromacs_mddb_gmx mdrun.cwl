@@ -18,7 +18,6 @@ inputs:
       - boolean
     doc: Append to previous output files when continuing from checkpoint instead
       of adding the simulation part number to all file names
-    default: true
     inputBinding:
       position: 101
       prefix: -noappend
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: 'Perform bonded calculations on: auto, cpu, gpu'
-    default: auto
     inputBinding:
       position: 101
       prefix: -bonded
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: Check for all bonded interactions with DD
-    default: true
     inputBinding:
       position: 101
       prefix: -nodddcheck
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: Checkpoint interval (minutes)
-    default: 15
     inputBinding:
       position: 101
       prefix: -cpt
@@ -88,7 +84,6 @@ inputs:
     doc: Fraction in (0,1) by whose reciprocal the initial DD cell size will be 
       increased in order to provide a margin in which dynamic load balancing can
       act while preserving the minimum cell size.
-    default: 0.8
     inputBinding:
       position: 101
       prefix: -dds
@@ -97,7 +92,6 @@ inputs:
       - 'null'
       - string
     doc: 'DD rank order: interleave, pp_pme, cartesian'
-    default: interleave
     inputBinding:
       position: 101
       prefix: -ddorder
@@ -122,7 +116,6 @@ inputs:
       - 'null'
       - string
     doc: Domain decomposition grid, 0 is optimize
-    default: 0 0 0
     inputBinding:
       position: 101
       prefix: -dd
@@ -131,7 +124,6 @@ inputs:
       - 'null'
       - string
     doc: 'Dynamic load balancing (with DD): auto, no, yes'
-    default: auto
     inputBinding:
       position: 101
       prefix: -dlb
@@ -212,7 +204,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep and number checkpoint files
-    default: false
     inputBinding:
       position: 101
       prefix: -nocpnum
@@ -230,7 +221,6 @@ inputs:
       - string
     doc: The maximum distance for bonded interactions with DD (nm), 0 is 
       determine from initial coordinates
-    default: 0
     inputBinding:
       position: 101
       prefix: -rdd
@@ -239,7 +229,6 @@ inputs:
       - 'null'
       - string
     doc: Maximum distance for P-LINCS (nm), 0 is estimate
-    default: 0
     inputBinding:
       position: 101
       prefix: -rcon
@@ -248,7 +237,6 @@ inputs:
       - 'null'
       - string
     doc: Terminate after 0.99 times this time (hours)
-    default: -1
     inputBinding:
       position: 101
       prefix: -maxh
@@ -281,7 +269,6 @@ inputs:
       - 'null'
       - string
     doc: 'Calculate non-bonded interactions on: auto, cpu, gpu'
-    default: auto
     inputBinding:
       position: 101
       prefix: -nb
@@ -290,7 +277,6 @@ inputs:
       - 'null'
       - int
     doc: Set nstlist when using a Verlet buffer tolerance (0 is guess)
-    default: 0
     inputBinding:
       position: 101
       prefix: -nstlist
@@ -299,7 +285,6 @@ inputs:
       - 'null'
       - int
     doc: Number of separate ranks to be used for PME, -1 is guess
-    default: -1
     inputBinding:
       position: 101
       prefix: -npme
@@ -310,7 +295,6 @@ inputs:
     doc: Number of random exchanges to carry out each exchange interval (N^3 is 
       one suggestion). -nex zero or not specified gives neighbor replica 
       exchange.
-    default: 0
     inputBinding:
       position: 101
       prefix: -nex
@@ -320,7 +304,6 @@ inputs:
       - int
     doc: Run this number of steps (-1 means infinite, -2 means use mdp option, 
       smaller is invalid)
-    default: -2
     inputBinding:
       position: 101
       prefix: -nsteps
@@ -329,7 +312,6 @@ inputs:
       - 'null'
       - int
     doc: Number of OpenMP threads per MPI rank to start (0 is guess)
-    default: 0
     inputBinding:
       position: 101
       prefix: -ntomp
@@ -338,7 +320,6 @@ inputs:
       - 'null'
       - int
     doc: Number of OpenMP threads per MPI rank to start (0 is -ntomp)
-    default: 0
     inputBinding:
       position: 101
       prefix: -ntomp_pme
@@ -348,7 +329,6 @@ inputs:
       - int
     doc: The lowest logical core number to which mdrun should pin the first 
       thread
-    default: 0
     inputBinding:
       position: 101
       prefix: -pinoffset
@@ -358,7 +338,6 @@ inputs:
       - int
     doc: Pinning distance in logical cores for threads, use 0 to minimize the 
       number of threads per physical core
-    default: 0
     inputBinding:
       position: 101
       prefix: -pinstride
@@ -367,7 +346,6 @@ inputs:
       - 'null'
       - string
     doc: 'Whether mdrun should try to set thread affinities: auto, on, off'
-    default: auto
     inputBinding:
       position: 101
       prefix: -pin
@@ -376,7 +354,6 @@ inputs:
       - 'null'
       - string
     doc: 'Perform PME calculations on: auto, cpu, gpu'
-    default: auto
     inputBinding:
       position: 101
       prefix: -pme
@@ -385,7 +362,6 @@ inputs:
       - 'null'
       - string
     doc: 'Perform PME FFT calculations on: auto, cpu, gpu'
-    default: auto
     inputBinding:
       position: 101
       prefix: -pmefft
@@ -394,7 +370,6 @@ inputs:
       - 'null'
       - string
     doc: Print all forces larger than this (kJ/mol nm)
-    default: -1
     inputBinding:
       position: 101
       prefix: -pforce
@@ -419,7 +394,6 @@ inputs:
       - 'null'
       - int
     doc: Attempt replica exchange periodically with this period (steps)
-    default: 0
     inputBinding:
       position: 101
       prefix: -replex
@@ -428,7 +402,6 @@ inputs:
       - 'null'
       - boolean
     doc: Try to avoid optimizations that affect binary reproducibility
-    default: false
     inputBinding:
       position: 101
       prefix: -noreprod
@@ -445,7 +418,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for replica exchange, -1 is generate a seed
-    default: -1
     inputBinding:
       position: 101
       prefix: -reseed
@@ -544,7 +516,6 @@ inputs:
       - 'null'
       - int
     doc: Number of thread-MPI ranks to start (0 is guess)
-    default: 0
     inputBinding:
       position: 101
       prefix: -ntmpi
@@ -553,7 +524,6 @@ inputs:
       - 'null'
       - int
     doc: Total number of threads to start (0 is guess)
-    default: 0
     inputBinding:
       position: 101
       prefix: -nt
@@ -578,7 +548,6 @@ inputs:
       - 'null'
       - boolean
     doc: Optimize PME load between PP/PME ranks or GPU/CPU
-    default: true
     inputBinding:
       position: 101
       prefix: -notunepme
@@ -587,7 +556,6 @@ inputs:
       - 'null'
       - string
     doc: 'Perform update and constraints on: auto, cpu, gpu'
-    default: auto
     inputBinding:
       position: 101
       prefix: -update
@@ -596,7 +564,6 @@ inputs:
       - 'null'
       - boolean
     doc: Be loud and noisy
-    default: false
     inputBinding:
       position: 101
       prefix: -nov
@@ -605,7 +572,6 @@ inputs:
       - 'null'
       - string
     doc: 'xvg plot formatting: xmgrace, xmgr, none'
-    default: xmgrace
     inputBinding:
       position: 101
       prefix: -xvg

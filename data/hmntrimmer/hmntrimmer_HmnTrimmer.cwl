@@ -78,7 +78,6 @@ inputs:
       - int
     doc: Specify the number of reads to process in one batch. In range 
       [100..50000000].
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --reads-batch
@@ -87,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the number of threads to use. In range [1..8].
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -96,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the log level to use In range [1..6].
-    default: 4
     inputBinding:
       position: 101
       prefix: --verbose
@@ -106,7 +103,6 @@ inputs:
       - boolean
     doc: Turn this option off to disable version update notifications of the 
       application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO.
-    default: true
     inputBinding:
       position: 101
       prefix: --version-check

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment quality
-    default: 0
     inputBinding:
       position: 102
       prefix: -q
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - File
     doc: Tab separated file to save global statistics
-    default: None
     inputBinding:
       position: 102
       prefix: -g
@@ -43,7 +41,6 @@ inputs:
       - boolean
     doc: Include hard and soft clipps in alignment length when calculating 
       accuracy
-    default: false
     inputBinding:
       position: 102
       prefix: -e
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: Be quiet and do not print progress bar
-    default: false
     inputBinding:
       position: 102
       prefix: -Q
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - File
     doc: Tab separated file to save per-read statistics
-    default: None
     inputBinding:
       position: 102
       prefix: -l
@@ -70,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: BAM region
-    default: None
     inputBinding:
       position: 102
       prefix: -c
@@ -79,7 +73,6 @@ inputs:
       - 'null'
       - File
     doc: Report PDF
-    default: bam_accuracy.pdf
     inputBinding:
       position: 102
       prefix: -r
@@ -88,7 +81,6 @@ inputs:
       - 'null'
       - File
     doc: Save pickled results in this file
-    default: None
     inputBinding:
       position: 102
       prefix: -p

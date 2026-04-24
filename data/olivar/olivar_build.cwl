@@ -63,7 +63,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory (output to current directory by default).
-    default: .
     inputBinding:
       position: 101
       prefix: --output
@@ -72,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads [1].
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

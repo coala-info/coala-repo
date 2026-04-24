@@ -68,7 +68,6 @@ inputs:
       - string
     doc: compute Multiple Sequence Alignment of the gene families in the given 
       partition
-    default: all
     inputBinding:
       position: 101
       prefix: --partition
@@ -136,7 +135,6 @@ inputs:
       - int
     doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
       for debug)
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbose

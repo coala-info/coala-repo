@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: Allowed error rate for barcode matching.
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --error-rate
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Set the logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL).
-    default: INFO
     inputBinding:
       position: 103
       prefix: --log-level
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of the barcode to consider.
-    default: 12
     inputBinding:
       position: 103
       prefix: --max-barcode-len
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of the barcode to consider.
-    default: 6
     inputBinding:
       position: 103
       prefix: --min-barcode-len
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to save the demultiplexed FASTQ files.
-    default: .
     inputBinding:
       position: 103
       prefix: --output-dir
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for processing.
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

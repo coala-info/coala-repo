@@ -20,7 +20,6 @@ inputs:
     type: string
     doc: Path of the local enaBrowserTools git repository
     label: enaBrowserTools location
-    default: /unlock/infrastructure/binaries/enaBrowserTools
   gca:
     type: string
     doc: Genome Accession number according to ENA
@@ -29,17 +28,14 @@ inputs:
     type: boolean?
     doc: When accession number corresponds to a bacteria
     label: bacteria
-    default: false
   threads:
     type: int?
     doc: number of threads to use for computational processes
     label: number of threads
-    default: 2
   memory:
     type: int?
     doc: maximum memory usage in megabytes
     label: memory usage (mb)
-    default: 4000
   codon:
     type: int
     doc: Codon table number for gene prediction and translation
@@ -93,7 +89,6 @@ steps:
       identifier: gca
       codon: codon
       single:
-        default: true
       threads: threads
     out: [output]
   workflow_sapp_others:

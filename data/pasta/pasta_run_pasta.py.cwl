@@ -60,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: The name of the alignment program to use for subproblems.
-    default: mafft
     inputBinding:
       position: 102
       prefix: --aligner
@@ -69,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: suffix for alignment name
-    default: .marker001.[input name].aln
     inputBinding:
       position: 102
       prefix: --alignment-suffix
@@ -104,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of iterations before switching to blind mode.
-    default: 0
     inputBinding:
       position: 102
       prefix: --blind-after-total-iter
@@ -121,7 +118,6 @@ inputs:
       - 'null'
       - string
     doc: The method for choosing an edge when bisecting the tree during decomposition
-    default: mincluster
     inputBinding:
       position: 102
       prefix: --break-strategy
@@ -130,7 +126,6 @@ inputs:
       - 'null'
       - boolean
     doc: Construct the spanning tree using minimum spanning tree algorithm
-    default: false
     inputBinding:
       position: 102
       prefix: --build-MST
@@ -139,7 +134,6 @@ inputs:
       - 'null'
       - string
     doc: Specify DNA, RNA, or Protein to indicate what type of data is specified.
-    default: dna
     inputBinding:
       position: 102
       prefix: --datatype
@@ -154,7 +148,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum number of iterations that the PASTA algorithm will run.
-    default: 3
     inputBinding:
       position: 102
       prefix: --iter-limit
@@ -171,7 +164,6 @@ inputs:
       - 'null'
       - string
     doc: job name
-    default: pastajob
     inputBinding:
       position: 102
       prefix: --job
@@ -229,7 +221,6 @@ inputs:
       - 'null'
       - float
     doc: The maximum diameter of each subtree.
-    default: 2.5
     inputBinding:
       position: 102
       prefix: --max-subtree-diameter
@@ -238,7 +229,6 @@ inputs:
       - 'null'
       - string
     doc: The name of the alignment program to use to merge subproblems.
-    default: OPAL
     inputBinding:
       position: 102
       prefix: --merger
@@ -247,7 +237,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum size (number of leaves) of subproblems.
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-subproblem-size
@@ -347,7 +336,6 @@ inputs:
       - 'null'
       - string
     doc: The name of the tree inference program to use to find trees on fixed alignments.
-    default: fasttree
     inputBinding:
       position: 102
       prefix: --tree-estimator

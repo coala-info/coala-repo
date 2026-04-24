@@ -164,7 +164,6 @@ inputs:
       - 'null'
       - string
     doc: Specify record separator (\0, if no argument)
-    default: \0
     inputBinding:
       position: 103
       prefix: '-0'
@@ -198,7 +197,6 @@ inputs:
       - 'null'
       - int
     doc: Turn on tainting checks
-    default: 1
     inputBinding:
       position: 103
       prefix: -T
@@ -223,7 +221,6 @@ inputs:
       - 'null'
       - int
     doc: Set warning level; 0=silence, 1=medium, 2=verbose
-    default: 2
     inputBinding:
       position: 103
       prefix: -W

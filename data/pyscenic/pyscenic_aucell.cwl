@@ -23,7 +23,6 @@ inputs:
       - float
     doc: The threshold used for calculating the AUC of a feature as fraction of 
       ranked genes
-    default: 0.05
     inputBinding:
       position: 103
       prefix: --auc_threshold
@@ -51,7 +50,6 @@ inputs:
       - float
     doc: The Normalized Enrichment Score (NES) threshold for finding enriched 
       features
-    default: 3.0
     inputBinding:
       position: 103
       prefix: --nes_threshold
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: The number of workers to use
-    default: 20
     inputBinding:
       position: 103
       prefix: --num_workers
@@ -70,7 +67,6 @@ inputs:
       - int
     doc: The rank threshold used for deriving the target genes of an enriched 
       motif
-    default: 5000
     inputBinding:
       position: 103
       prefix: --rank_threshold

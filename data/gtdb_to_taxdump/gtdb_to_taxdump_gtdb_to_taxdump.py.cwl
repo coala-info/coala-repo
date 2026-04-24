@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Column in --table that contains genome accessions
-    default: accession
     inputBinding:
       position: 102
       prefix: --column
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: embl code to use for all nodes
-    default: XX
     inputBinding:
       position: 102
       prefix: --embl-code
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: .
     inputBinding:
       position: 102
       prefix: --outdir
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - File
     doc: Table to append taxIDs to. Accessions used for table join
-    default: None
     inputBinding:
       position: 102
       prefix: --table

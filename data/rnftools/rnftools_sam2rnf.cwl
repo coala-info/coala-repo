@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Genome ID in RNF
-    default: 1
     inputBinding:
       position: 101
       prefix: --genome-id

@@ -54,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: E-value cutoff for report
-    default: '1e-5'
     inputBinding:
       position: 102
       prefix: -E
@@ -167,7 +166,6 @@ inputs:
       - 'null'
       - string
     doc: Pfam cutoff (DNC|DGC|DTC|SNC|SGC|STC)
-    default: DNC
     inputBinding:
       position: 102
       prefix: --pfam_cutoff

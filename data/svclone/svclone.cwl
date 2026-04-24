@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of clones to consider.
-    default: 10
     inputBinding:
       position: 102
       prefix: --max-clones
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of clones to consider.
-    default: 2
     inputBinding:
       position: 102
       prefix: --min-clones
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: Ploidy of the sample.
-    default: 2.0
     inputBinding:
       position: 102
       prefix: --ploidy
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

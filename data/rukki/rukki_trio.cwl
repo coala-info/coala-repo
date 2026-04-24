@@ -20,7 +20,6 @@ inputs:
       - int
     doc: Default gap size, which will be output in cases where reasonable 
       estimate is not possible or (more likely) hasn't been implemented yet
-    default: 5000
     inputBinding:
       position: 101
       prefix: --default-gap-size
@@ -30,7 +29,6 @@ inputs:
       - int
     doc: Bubbles with bigger difference between alternatives' lengths will not 
       be filled
-    default: 200
     inputBinding:
       position: 101
       prefix: --fillable-bubble-diff
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Bubbles including a longer alternative sequence will not be filled
-    default: 50000
     inputBinding:
       position: 101
       prefix: --fillable-bubble-len
@@ -57,7 +54,6 @@ inputs:
       - float
     doc: During bubble filling ignore simple sides of bubbles with coverage less
       than source/sink average divided by this value 0. disables check
-    default: 5
     inputBinding:
       position: 101
       prefix: --good-side-cov-gap
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: 'Comma separated haplotype names to be used in outputs (default: "mat,pat")'
-    default: mat,pat
     inputBinding:
       position: 101
       prefix: --hap-names
@@ -108,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal node length for assigning ISSUE label
-    default: 50000
     inputBinding:
       position: 101
       prefix: --issue-len
@@ -137,7 +131,6 @@ inputs:
       - int
     doc: Minimal number of parent-specific markers required for assigning 
       parental group to a node
-    default: 10
     inputBinding:
       position: 101
       prefix: --marker-cnt
@@ -146,7 +139,6 @@ inputs:
       - 'null'
       - float
     doc: Sets minimal marker excess for assigning a parental group to <value>:1
-    default: 5
     inputBinding:
       position: 101
       prefix: --marker-ratio
@@ -156,7 +148,6 @@ inputs:
       - int
     doc: Require at least (node_length / <value>) markers within the node for 
       parental group assignment
-    default: 10000
     inputBinding:
       position: 101
       prefix: --marker-sparsity
@@ -171,7 +162,6 @@ inputs:
       - 'null'
       - int
     doc: Longer nodes can not be classified as homozygous
-    default: 2000000
     inputBinding:
       position: 101
       prefix: --max-homozygous-len
@@ -182,7 +172,6 @@ inputs:
     doc: Do not fill bubble if source or sink is non-solid, non-homozygous and 
       has coverage above <coeff> * <weighted mean coverage of 'solid' nodes>. 
       Negative disables check, 0. makes it fail
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --max-unique-cov-coeff
@@ -192,7 +181,6 @@ inputs:
       - int
     doc: Minimal introducible gap size (number of Ns reported). If the gap size 
       estimate is smaller it will be artificially increased to this value
-    default: 1000
     inputBinding:
       position: 101
       prefix: --min-gap-size
@@ -210,7 +198,6 @@ inputs:
       - float
     doc: Solid nodes with coverage below <coeff> * <weighted mean coverage of 
       'solid' nodes> can not be classified as homozygous. 0. disables check
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --solid-homozygous-cov-coeff
@@ -220,7 +207,6 @@ inputs:
       - int
     doc: Longer nodes are unlikely to represent repeats, polymorphic variants, 
       etc (used to seed and guide the path search)
-    default: 500000
     inputBinding:
       position: 101
       prefix: --solid-len
@@ -240,7 +226,6 @@ inputs:
     doc: Nodes with coverage below <coeff> * <weighted mean coverage of 'solid' 
       nodes> can not be 'reclassified' as homozygous. Negative turns off 
       reclassification, 0. disables coverage check
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --suspect-homozygous-cov-coeff
@@ -275,7 +260,6 @@ inputs:
       - int
     doc: Longer nodes are unlikely to be spurious and likely to be reliably 
       assigned based on markers (used in HOMOZYGOUS node labeling)
-    default: 200000
     inputBinding:
       position: 101
       prefix: --trusted-len

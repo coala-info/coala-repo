@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: Are queries taxa or accessions
-    default: false
     inputBinding:
       position: 102
       prefix: --accession
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum amplicon coverage
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --ampcov
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Choose 16S or ITS for primer trimming
-    default: 16S
     inputBinding:
       position: 102
       prefix: --amplicon
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: Which classifiers to use for taxonomic assignment
-    default: RDP
     inputBinding:
       position: 102
       prefix: --classifier
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: Custom config file
-    default: (outputDir)/config.yaml
     inputBinding:
       position: 102
       prefix: --configfile
@@ -102,7 +97,6 @@ inputs:
       - 'null'
       - string
     doc: Choose dada2 or vsearch for denoising reads
-    default: DADA2
     inputBinding:
       position: 102
       prefix: --denoiser
@@ -111,7 +105,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum number of accepted primer mismatches, or float between 0 and 1
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --errors
@@ -140,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum amplicon length
-    default: 500
     inputBinding:
       position: 102
       prefix: --maxlen
@@ -149,7 +141,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum amplicon length
-    default: 300
     inputBinding:
       position: 102
       prefix: --minlen
@@ -158,7 +149,6 @@ inputs:
       - 'null'
       - int
     doc: Number of mismatches for simulate_PCR
-    default: 3
     inputBinding:
       position: 102
       prefix: --mismatch
@@ -167,7 +157,6 @@ inputs:
       - 'null'
       - boolean
     doc: Replace empty taxa by placeholders
-    default: true
     inputBinding:
       position: 102
       prefix: --no-replace-empty
@@ -176,7 +165,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use conda for Snakemake rules
-    default: true
     inputBinding:
       position: 102
       prefix: --no-use-conda
@@ -185,7 +173,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use singularity containers for Snakemake rules
-    default: false
     inputBinding:
       position: 102
       prefix: --no-use-singularity
@@ -194,7 +181,6 @@ inputs:
       - 'null'
       - boolean
     doc: Limit to reference and representative genomes
-    default: false
     inputBinding:
       position: 102
       prefix: --not-only-ref
@@ -211,7 +197,6 @@ inputs:
       - 'null'
       - boolean
     doc: Limit to reference and representative genomes
-    default: true
     inputBinding:
       position: 102
       prefix: --only-ref
@@ -220,7 +205,6 @@ inputs:
       - 'null'
       - string
     doc: Tool for in silico PCR
-    default: in-silico
     inputBinding:
       position: 102
       prefix: --pcr-tool
@@ -237,7 +221,6 @@ inputs:
       - 'null'
       - boolean
     doc: Replace empty taxa by placeholders
-    default: false
     inputBinding:
       position: 102
       prefix: --replace-empty
@@ -268,7 +251,6 @@ inputs:
       - 'null'
       - boolean
     doc: Are queries taxa or accessions
-    default: true
     inputBinding:
       position: 102
       prefix: --taxon
@@ -277,7 +259,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -287,7 +268,6 @@ inputs:
       - int
     doc: Number of match at the 3' end for a hit to be considered for 
       simulate_PCR
-    default: 2
     inputBinding:
       position: 102
       prefix: --threeprime
@@ -296,7 +276,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use conda for Snakemake rules
-    default: false
     inputBinding:
       position: 102
       prefix: --use-conda
@@ -305,7 +284,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use singularity containers for Snakemake rules
-    default: true
     inputBinding:
       position: 102
       prefix: --use-singularity

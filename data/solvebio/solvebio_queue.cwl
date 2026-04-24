@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Limit the number of tasks to display.
-    default: 100
     inputBinding:
       position: 101
       prefix: --limit
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Offset the task list by a specified number.
-    default: 0
     inputBinding:
       position: 101
       prefix: --offset
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Sort tasks by a specified field and direction (e.g., 'created_at:asc').
-    default: created_at:desc
     inputBinding:
       position: 101
       prefix: --sort

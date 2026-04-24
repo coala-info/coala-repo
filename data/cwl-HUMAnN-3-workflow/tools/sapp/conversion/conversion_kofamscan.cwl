@@ -42,7 +42,6 @@ inputs:
     doc: Limit the number of hits per locus tag (0=no limit) (optional). Default 0
     inputBinding:
       prefix: -limit
-    default: 0
   output_prefix:
     type: string
     label: Output prefix

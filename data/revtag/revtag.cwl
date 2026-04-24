@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - File
     doc: Input SAM/BAM/CRAM file or stream
-    default: /dev/stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Extra threads for BAM/CRAM compression/decompression
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

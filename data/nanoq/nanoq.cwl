@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for gzipped output (0-9)
-    default: 6
     inputBinding:
       position: 101
       prefix: --compress-level
@@ -59,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -13,21 +13,18 @@ inputs:
   - id: gaps_threshold
     type: float
     doc: Gaps threshold
-    default: 0.2
     inputBinding:
       position: 101
       prefix: -g
   - id: lddt_threshold
     type: float
     doc: LDDT threshold
-    default: 0.4
     inputBinding:
       position: 101
       prefix: -l
   - id: plddt_threshold
     type: float
     doc: PLDDT threshold
-    default: 60.0
     inputBinding:
       position: 101
       prefix: -q
@@ -46,7 +43,6 @@ inputs:
   - id: tm_threshold
     type: float
     doc: TM-score threshold
-    default: 0.4
     inputBinding:
       position: 101
       prefix: -t

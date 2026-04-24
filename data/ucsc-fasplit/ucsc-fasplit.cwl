@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Set verbosity level
-    default: 1
     inputBinding:
       position: 104
       prefix: -verbose

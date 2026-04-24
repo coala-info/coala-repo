@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Number of compute cores to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum length of reads to keep.
-    default: 40
     inputBinding:
       position: 101
       prefix: --min-len
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - boolean
     doc: When trimming PE reads, do not merge singleton files.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-merge
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: The type of fastq encoding used.
-    default: phred33
     inputBinding:
       position: 101
       prefix: --phred
@@ -89,7 +85,6 @@ inputs:
       - 'null'
       - boolean
     doc: Single-end reads.
-    default: false
     inputBinding:
       position: 101
       prefix: --se
@@ -98,7 +93,6 @@ inputs:
       - 'null'
       - File
     doc: The path to the trimmomatic-0.XX.jar file.
-    default: /usr/local/bin/trimmomatic
     inputBinding:
       position: 101
       prefix: --trimmomatic
@@ -107,7 +101,6 @@ inputs:
       - 'null'
       - string
     doc: The logging level to use.
-    default: INFO
     inputBinding:
       position: 101
       prefix: --verbosity

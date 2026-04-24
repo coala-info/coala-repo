@@ -11,7 +11,6 @@ inputs:
       type: array
       items: File
     doc: sequences to align
-    default: None
     inputBinding:
       position: 1
   - id: debug
@@ -20,7 +19,6 @@ inputs:
       - boolean
     doc: Produce extra files (e.g. pre- and post-aligner files) which can help 
       with debugging poor alignments.
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -30,7 +28,6 @@ inputs:
       - File
     doc: An existing alignment to which the sequences will be added. The ouput 
       alignment will be the same length as this existing alignment.
-    default: false
     inputBinding:
       position: 102
       prefix: --existing-alignment
@@ -40,7 +37,6 @@ inputs:
       - boolean
     doc: If gaps represent missing data rather than true indels, replace by N 
       after aligning.
-    default: false
     inputBinding:
       position: 102
       prefix: --fill-gaps
@@ -49,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: alignment program to use
-    default: mafft
     inputBinding:
       position: 102
       prefix: --method
@@ -59,7 +54,6 @@ inputs:
       - string
     doc: number of threads to use; specifying the value 'auto' will cause the 
       number of available CPU cores on your system, if determinable, to be used
-    default: '1'
     inputBinding:
       position: 102
       prefix: --nthreads
@@ -69,7 +63,6 @@ inputs:
       - string
     doc: strip insertions relative to reference sequence; use if the reference 
       is already in the input sequences
-    default: None
     inputBinding:
       position: 102
       prefix: --reference-name
@@ -79,7 +72,6 @@ inputs:
       - File
     doc: Add this reference sequence to the dataset & strip insertions relative 
       to this. Use if the reference is NOT already in the input sequences
-    default: None
     inputBinding:
       position: 102
       prefix: --reference-sequence
@@ -88,7 +80,6 @@ inputs:
       - 'null'
       - boolean
     doc: remove reference sequence from the alignment
-    default: false
     inputBinding:
       position: 102
       prefix: --remove-reference

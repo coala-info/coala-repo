@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: local sorting window size, set by default to 1000 under local mode.
-    default: 0
     inputBinding:
       position: 102
       prefix: -w
@@ -34,7 +33,6 @@ inputs:
       window.  Window size may be set by -w.\n              chrom : sort chromosomes
       based on order of contigs in header.\n                      input must be indexed\n\
       \              full  : full sort with no assumptions"
-    default: full
     inputBinding:
       position: 102
       prefix: -m

@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mRNA length (bp). mRNA that are shorter than this value will be skipped.
-    default: 100
     inputBinding:
       position: 101
       prefix: --minimum-length

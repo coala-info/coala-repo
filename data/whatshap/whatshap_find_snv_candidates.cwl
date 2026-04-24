@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum absolute ALT depth to call a SNP
-    default: 3
     inputBinding:
       position: 103
       prefix: --minabs
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum relative ALT depth to call a SNP
-    default: 0.25
     inputBinding:
       position: 103
       prefix: --minrel

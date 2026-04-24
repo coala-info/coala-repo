@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: How should the annotation file be used? (def. extract)
-    default: extract
     inputBinding:
       position: 102
       prefix: -a

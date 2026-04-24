@@ -99,7 +99,6 @@ inputs:
       - int
     doc: 'Number of CPU cores to use. Use 0 to auto-detect. Default: 0. To search
       motifs in a whole genome variation graph the default is 1 (avoid memory issues).'
-    default: 0
     inputBinding:
       position: 102
       prefix: --cores
@@ -220,7 +219,6 @@ inputs:
     doc: Statistical significance threshold value. By default the threshold is 
       applied on P-values. To apply the threshold on q-values use the 
       "--qvalueT" options.
-    default: 0.0001
     inputBinding:
       position: 102
       prefix: --threshold

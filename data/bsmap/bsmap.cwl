@@ -22,7 +22,6 @@ inputs:
       could be mapped to N2 in the reference sequences. default: -M TC, corresponds
       to C=>U(T) transition in bisulfite conversion. example: -M GA could be used
       to detect A=>I(G) transition in RNA editing.'
-    default: TC
     inputBinding:
       position: 101
       prefix: -M
@@ -32,7 +31,6 @@ inputs:
       - int
     doc: base quality, default=33 [Illumina is using 64, Sanger Institute is 
       using 33]
-    default: 33
     inputBinding:
       position: 101
       prefix: -z
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: 'end at the Nth read or read pair, default: 4,294,967,295'
-    default: 4,294,967,295
     inputBinding:
       position: 101
       prefix: -E
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: filter low-quality reads containing >n Ns, default=5
-    default: 5
     inputBinding:
       position: 101
       prefix: -f
@@ -60,7 +56,6 @@ inputs:
       - int
     doc: gap size, BSMAP only allow 1 continuous gap (insert or deletion) with 
       up to 3 nucleotides
-    default: 0
     inputBinding:
       position: 101
       prefix: -g
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: index interval, default=4
-    default: 4
     inputBinding:
       position: 101
       prefix: -I
@@ -79,7 +73,6 @@ inputs:
       - float
     doc: 'set the cut-off ratio for over-represented kmers, default=5e-07 example:
       -k 1e-6 means the top 0.0001% over-represented kmer will be skipped in alignment'
-    default: '5e-07'
     inputBinding:
       position: 101
       prefix: -k
@@ -89,7 +82,6 @@ inputs:
       - int
     doc: map the first N nucleotides of the read, default:160 (map the whole 
       read).
-    default: 160
     inputBinding:
       position: 101
       prefix: -L
@@ -100,7 +92,6 @@ inputs:
     doc: 'set mapping strand information. default: 0 -n 0: only map to 2 forward strands,
       i.e. BSW(++) and BSC(-+), for PE sequencing, map read#1 to ++ and -+, read#2
       to +- and --. -n 1: map SE or PE reads to all 4 strands, i.e. ++, +-, -+, --'
-    default: 0
     inputBinding:
       position: 101
       prefix: -n
@@ -117,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: maximal insert size allowed, default=1000
-    default: 1000
     inputBinding:
       position: 101
       prefix: -x
@@ -126,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: minimal insert size allowed, default=28
-    default: 28
     inputBinding:
       position: 101
       prefix: -m
@@ -138,7 +127,6 @@ inputs:
       w.r.t to the read length. otherwise it's interpreted as the maximum number of
       mismatches allowed on a read, <=15. example: -v 5 (max #mismatches = 5), -v
       0.1 (max #mismatches = read_length * 10%)"
-    default: 0.08
     inputBinding:
       position: 101
       prefix: -v
@@ -155,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: number of processors to use, default=8
-    default: 8
     inputBinding:
       position: 101
       prefix: -p
@@ -164,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: quality threshold in trimming, 0-40, default=0 (no trim)
-    default: 0
     inputBinding:
       position: 101
       prefix: -q
@@ -190,7 +176,6 @@ inputs:
       seed values generate pseudo random number based on read index number, to 
       allow reproducible mapping results. default=0. (get seed from system 
       clock, mapping results not resproducible.)
-    default: 0
     inputBinding:
       position: 101
       prefix: -S
@@ -214,7 +199,6 @@ inputs:
       - string
     doc: how to report repeat hits, 0=none(unique hit/pair); 1=random one; 
       2=all(slow), default:1.
-    default: 1
     inputBinding:
       position: 101
       prefix: -r
@@ -241,7 +225,6 @@ inputs:
       - 'null'
       - int
     doc: seed size, default=16(WGBS mode), 12(RRBS mode). min=8, max=16.
-    default: 16(WGBS mode), 12(RRBS mode)
     inputBinding:
       position: 101
       prefix: -s
@@ -250,7 +233,6 @@ inputs:
       - 'null'
       - int
     doc: 'start from the Nth read or read pair, default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: -B
@@ -268,7 +250,6 @@ inputs:
       - string
     doc: 'verbose level: 0=no message displayed (quiet mode); 1=major message (default);
       2=detailed message.'
-    default: 1
     inputBinding:
       position: 101
       prefix: -V

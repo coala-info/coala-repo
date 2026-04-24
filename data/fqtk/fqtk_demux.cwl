@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: The level of compression to use to compress outputs
-    default: 5
     inputBinding:
       position: 101
       prefix: --compression-level
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum mismatches for a barcode to be considered a match
-    default: 1
     inputBinding:
       position: 101
       prefix: --max-mismatches
@@ -37,7 +35,6 @@ inputs:
       - int
     doc: Minimum difference between number of mismatches in the best and second 
       best barcodes for a barcode to be considered a match
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-mismatch-delta
@@ -50,7 +47,6 @@ inputs:
       B, or M for template reads, sample barcode reads, and molecular barcode reads).\n\
       \          \n          Multiple output types may be specified as a space-delimited
       list."
-    default: T
     inputBinding:
       position: 101
       prefix: --output-types
@@ -86,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads to use. Cannot be less than 3
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads
@@ -96,7 +91,6 @@ inputs:
       - string
     doc: Output prefix for FASTQ file(s) for reads that cannot be matched to a 
       sample
-    default: unmatched
     inputBinding:
       position: 101
       prefix: --unmatched-prefix

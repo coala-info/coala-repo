@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Number of contigs to load and process at once
-    default: 100
     inputBinding:
       position: 104
       prefix: --batch-size
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage required to consider a position
-    default: 5
     inputBinding:
       position: 104
       prefix: --min-cov
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 5
     inputBinding:
       position: 104
       prefix: --threads
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: Verbosity level
-    default: normal
     inputBinding:
       position: 104
       prefix: --verbosity

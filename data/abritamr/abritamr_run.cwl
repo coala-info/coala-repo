@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to amrfinder DB to use
-    default: 
       /usr/local/lib/python3.14/site-packages/abritamr/db/amrfinderplus/data/2024-07-22.1
     inputBinding:
       position: 101
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Number of AMR finder jobs to run in parallel.
-    default: 16
     inputBinding:
       position: 101
       prefix: --jobs
@@ -51,7 +49,6 @@ inputs:
       - string
     doc: If running on a single sample, please provide a prefix for output 
       directory
-    default: abritamr
     inputBinding:
       position: 101
       prefix: --prefix

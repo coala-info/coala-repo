@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: Collapse sequences to haplotypes.
-    default: false
     inputBinding:
       position: 101
       prefix: --collapse
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Treat gaps as missing data when collapsing.
-    default: false
     inputBinding:
       position: 101
       prefix: --collapseGaps
@@ -29,7 +27,6 @@ inputs:
       - int
     doc: Connection limit (sequences differing at <= l sites will be collapsed) 
       (default is l=0).
-    default: 0
     inputBinding:
       position: 101
       prefix: --collapseLimit
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: Count missing data as differences when collapsing.
-    default: true
     inputBinding:
       position: 101
       prefix: --collapseMissing
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - boolean
     doc: Autodetect format (other input options are omitted).
-    default: false
     inputBinding:
       position: 101
       prefix: --inputAutodetect
@@ -96,7 +91,6 @@ inputs:
       - 'null'
       - boolean
     doc: Lowe case output.
-    default: false
     inputBinding:
       position: 101
       prefix: --outputLowerCase
@@ -105,7 +99,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output match characters.
-    default: false
     inputBinding:
       position: 101
       prefix: --outputMatch
@@ -133,7 +126,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output residue numbers (only ALN format).
-    default: false
     inputBinding:
       position: 101
       prefix: --outputResidueNumbers
@@ -142,7 +134,6 @@ inputs:
       - 'null'
       - boolean
     doc: Sequential output (only NEXUS and PHYLIP formats).
-    default: false
     inputBinding:
       position: 101
       prefix: --outputSequential

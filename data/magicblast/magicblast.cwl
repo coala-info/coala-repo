@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Cost to extend a gap
-    default: 4
     inputBinding:
       position: 101
       prefix: -gapextend
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Cost to open a gap
-    default: 0
     inputBinding:
       position: 101
       prefix: -gapopen
@@ -75,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: Input format for sequences
-    default: fasta
     inputBinding:
       position: 101
       prefix: -infmt
@@ -92,7 +89,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove word seeds with high frequency in the searched database
-    default: true
     inputBinding:
       position: 101
       prefix: -limit_lookup
@@ -102,7 +98,6 @@ inputs:
       - int
     doc: Number of words to skip after collecting one while creating a lookup 
       table
-    default: 0
     inputBinding:
       position: 101
       prefix: -lookup_stride
@@ -112,7 +107,6 @@ inputs:
       - int
     doc: Words that appear more than this number of times in the database will 
       be masked in the lookup table
-    default: 30
     inputBinding:
       position: 101
       prefix: -max_db_word_count
@@ -129,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum allowed intron length
-    default: 500000
     inputBinding:
       position: 101
       prefix: -max_intron_length
@@ -205,7 +198,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads (CPUs) to use in the BLAST search
-    default: 1
     inputBinding:
       position: 101
       prefix: -num_threads
@@ -215,7 +207,6 @@ inputs:
       - string
     doc: 'alignment view options: sam = SAM format, tabular = Tabular format, asn
       = text ASN.1'
-    default: sam
     inputBinding:
       position: 101
       prefix: -outfmt
@@ -232,7 +223,6 @@ inputs:
       - 'null'
       - boolean
     doc: Should the query and subject defline(s) be parsed?
-    default: true
     inputBinding:
       position: 101
       prefix: -parse_deflines
@@ -241,7 +231,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for a nucleotide mismatch
-    default: -4
     inputBinding:
       position: 101
       prefix: -penalty
@@ -250,7 +239,6 @@ inputs:
       - 'null'
       - float
     doc: Percent identity cutoff for alignments
-    default: 0.0
     inputBinding:
       position: 101
       prefix: -perc_identity
@@ -275,7 +263,6 @@ inputs:
       - 'null'
       - string
     doc: 'Type of the reference: genome or transcriptome'
-    default: genome
     inputBinding:
       position: 101
       prefix: -reftype
@@ -293,7 +280,6 @@ inputs:
       - string
     doc: 'Cutoff score for accepting alignments. Can be expressed as a number or a
       function of read length: L,b,a for a * length + b.'
-    default: '0'
     inputBinding:
       position: 101
       prefix: -score
@@ -310,7 +296,6 @@ inputs:
       - 'null'
       - boolean
     doc: Search for spliced alignments
-    default: true
     inputBinding:
       position: 101
       prefix: -splice
@@ -393,7 +378,6 @@ inputs:
       - 'null'
       - boolean
     doc: Reject low quality sequences
-    default: true
     inputBinding:
       position: 101
       prefix: -validate_seqs
@@ -402,7 +386,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of consecutive bases matching exactly
-    default: 18
     inputBinding:
       position: 101
       prefix: -word_size

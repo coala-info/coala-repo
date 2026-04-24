@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: The maximum Fisher's exact test p-value to consider ASM
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --max-asm-fishers-exact
@@ -34,7 +33,6 @@ inputs:
       - float
     doc: The maximum combined methylation fraction to consider unmethylated 
       status
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --max-unmethylated_combined
@@ -44,7 +42,6 @@ inputs:
       - float
     doc: The minimum absolute difference between mean haplotype methylation 
       fractions to consider ASM
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --min-asm-abs-delta-mean
@@ -54,7 +51,6 @@ inputs:
       - float
     doc: The minimum fraction of CpGs in a region that must be phased to 
       consider ASM
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --min-asm-phased-fraction
@@ -64,7 +60,6 @@ inputs:
       - int
     doc: The minimum coverage of a haplotype to consider it "normal" for QC 
       purposes
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-haplotype-coverage
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum combined methylation fraction to consider methylated status
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --min-methylated-combined
@@ -83,7 +77,6 @@ inputs:
       - float
     doc: The minimum absolute difference between mean haplotype methylation 
       fractions to consider Weak ASM
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --min-weakasm-abs-delta-mean

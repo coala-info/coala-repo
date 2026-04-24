@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: User specified Matplotlib accepted color codes for three frames
-    default: r,g,b
     inputBinding:
       position: 101
       prefix: --colors
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Missed bases allowed in reads compatibility check
-    default: 2
     inputBinding:
       position: 101
       prefix: --compatiblemis
@@ -63,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: 'Gene annotation file format (gtf, bed, gpd, gff, default: auto)'
-    default: auto
     inputBinding:
       position: 101
       prefix: --geneformat
@@ -180,7 +177,6 @@ inputs:
       - type: array
         items: string
     doc: Color for RNASeq tracks, comma seperated, matching --rna option
-    default: black
     inputBinding:
       position: 101
       prefix: --rnacol
@@ -189,7 +185,6 @@ inputs:
       - 'null'
       - int
     doc: Offset value for RNASeq reads
-    default: 12
     inputBinding:
       position: 101
       prefix: --rnaoffset
@@ -207,7 +202,6 @@ inputs:
       - 'null'
       - string
     doc: Figure size
-    default: 12,auto
     inputBinding:
       position: 101
       prefix: --s
@@ -223,7 +217,6 @@ inputs:
       - type: array
         items: string
     doc: Max y scale for tracks, comma seperated
-    default: auto
     inputBinding:
       position: 101
       prefix: --ymax

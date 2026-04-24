@@ -15,7 +15,6 @@ inputs:
   - id: operation
     type: string
     doc: The operation to perform
-    default: dump_data_fields_utf8
     inputBinding:
       position: 2
   - id: allow

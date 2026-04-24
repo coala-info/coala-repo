@@ -28,7 +28,6 @@ inputs:
       - float
     doc: 'Bins are scored as: completeness - weight * contamination. A lower weight
       favors completeness over low contamination.'
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --contamination_weight
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - boolean
     doc: Activate debug mode.
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -61,7 +59,6 @@ inputs:
       - string
     doc: FASTA file extensions to search for in bin directories (used with 
       --bin_dirs).
-    default: .fasta, .fa, .fna
     inputBinding:
       position: 101
       prefix: --fasta_extensions
@@ -79,7 +76,6 @@ inputs:
       - int
     doc: Maximum contamination allowed for intermediate bin creation and final 
       bin selection.
-    default: 10
     inputBinding:
       position: 101
       prefix: --max_contamination
@@ -89,7 +85,6 @@ inputs:
       - int
     doc: Maximum length (bp) allowed for intermediate bin creation and final bin
       selection.
-    default: 10000000
     inputBinding:
       position: 101
       prefix: --max_length
@@ -99,7 +94,6 @@ inputs:
       - int
     doc: Minimum completeness required for intermediate bin creation and final 
       bin selection.
-    default: 40
     inputBinding:
       position: 101
       prefix: --min_completeness
@@ -109,7 +103,6 @@ inputs:
       - int
     doc: Minimum length (bp) required for intermediate bin creation and final 
       bin selection.
-    default: 200000
     inputBinding:
       position: 101
       prefix: --min_length
@@ -153,7 +146,6 @@ inputs:
       - string
     doc: Prefix to add to final bin names (e.g. '--prefix sample1' will produce 
       'sample1_bin1.fa', 'sample1_bin2.fa').
-    default: binette
     inputBinding:
       position: 101
       prefix: --prefix
@@ -163,7 +155,6 @@ inputs:
       - boolean
     doc: Show progress bar while fetching pangenomes (disable with 
       --no-progress).
-    default: true
     inputBinding:
       position: 101
       prefix: --progress
@@ -189,7 +180,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Resume mode: reuse existing temporary files if possible.'
-    default: false
     inputBinding:
       position: 101
       prefix: --resume
@@ -198,7 +188,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -216,7 +205,6 @@ inputs:
       - boolean
     doc: Write final selected bins as FASTA files (disable with 
       --no-write-fasta-bins).
-    default: true
     inputBinding:
       position: 101
       prefix: --write-fasta-bins

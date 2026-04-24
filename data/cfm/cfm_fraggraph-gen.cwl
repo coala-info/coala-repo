@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Type of graph to generate (fullgraph or fragonly)
-    default: fullgraph
     inputBinding:
       position: 4
 outputs:

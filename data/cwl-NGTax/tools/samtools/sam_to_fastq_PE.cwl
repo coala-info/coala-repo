@@ -27,7 +27,6 @@ inputs:
     label: identifier used  
   threads:
     type: int?
-    default: 1
     inputBinding:
       position: 3
       prefix: --thread

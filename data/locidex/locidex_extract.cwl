@@ -60,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: Format of query file [genbank,fasta]
-    default: genbank
     inputBinding:
       position: 101
       prefix: --format

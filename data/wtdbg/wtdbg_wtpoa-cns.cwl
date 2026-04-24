@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Bonus for tri-bases match
-    default: 0
     inputBinding:
       position: 101
       prefix: -b
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: 'Consensus mode: 0, run-length; 1, dp-call-cns'
-    default: 0
     inputBinding:
       position: 101
       prefix: -c
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Deletion score
-    default: -4
     inputBinding:
       position: 101
       prefix: -D
@@ -46,7 +43,6 @@ inputs:
     doc: Expected max length of node, or say the overlap length of two adjacent 
       units in layout file, [1500] bp. overlap will be default to 1500(or 150 
       for sam-sr) when having -d/-p, block size will be 2.5 * overlap
-    default: 1500
     inputBinding:
       position: 101
       prefix: -j
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: Homopolymer merge score used in dp-call-cns mode
-    default: -3
     inputBinding:
       position: 101
       prefix: -H
@@ -82,7 +77,6 @@ inputs:
         items: File
     doc: Input file(s) *.ctg.lay from wtdbg, +, Or sorted SAM files when having 
       -d/-p
-    default: STDIN
     inputBinding:
       position: 101
       prefix: -i
@@ -91,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Insertion score
-    default: -2
     inputBinding:
       position: 101
       prefix: -I
@@ -100,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Match score
-    default: 2
     inputBinding:
       position: 101
       prefix: -M
@@ -110,7 +102,6 @@ inputs:
       - int
     doc: Max number of reads in PO-MSA. Keep in mind that I am not going to 
       generate high accurate consensus sequences here
-    default: 20
     inputBinding:
       position: 101
       prefix: -N
@@ -119,7 +110,6 @@ inputs:
       - 'null'
       - string
     doc: Min size of aligned size in window
-    default: $W * 0.5
     inputBinding:
       position: 101
       prefix: -w
@@ -128,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: Min count of bases to call a consensus base
-    default: 3
     inputBinding:
       position: 101
       prefix: -C
@@ -137,7 +126,6 @@ inputs:
       - 'null'
       - float
     doc: Min frequency of non-gap bases to call a consensus base
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -F
@@ -146,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: Mismatch score
-    default: -5
     inputBinding:
       position: 101
       prefix: -X
@@ -157,7 +144,6 @@ inputs:
     doc: Bandwidth in POA, [Wmin[,Wmax[,mat_rate]]], mat_rate = 
       matched_bases/total_bases. Program will double bandwidth from Wmin to Wmax
       when mat_rate is lower than setting
-    default: 64,1024,0.92
     inputBinding:
       position: 101
       prefix: -B
@@ -167,7 +153,6 @@ inputs:
       - string
     doc: "Presets, sam-sr: polishs contigs from short reads mapping, accepts sorted
       SAM files; shorted for '-j 50 -W 0 -R 0 -b 1 -c 1 -N 50 -rS 2'"
-    default: ''
     inputBinding:
       position: 101
       prefix: -x
@@ -184,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: 'Realignment bandwidth, 0: disable'
-    default: 16
     inputBinding:
       position: 101
       prefix: -R
@@ -201,7 +185,6 @@ inputs:
       - 'null'
       - int
     doc: "Shuffle mode, 0: don't shuffle reads, 1: by shared kmers, 2: subsampling."
-    default: 1
     inputBinding:
       position: 101
       prefix: -S
@@ -210,7 +193,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: -t
@@ -237,7 +219,6 @@ inputs:
     doc: Window size in the middle of the first read for fast align remaining 
       reads. If $W is negative, will disable fast align, but use the abs($W) as 
       Band align score cutoff
-    default: 200
     inputBinding:
       position: 101
       prefix: -W
@@ -248,7 +229,6 @@ inputs:
     doc: "XORed flags to handle SAM input. 0x1: Only process reference regions present
       in/between SAM alignments; 0x2: Don't fileter secondary/supplementary SAM records
       with flag (0x100 | 0x800)"
-    default: 0
     inputBinding:
       position: 101
       prefix: -u

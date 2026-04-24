@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: number of cores
-    default: 1
     inputBinding:
       position: 101
   - id: extension_length
@@ -17,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: extension length in nt
-    default: 10
     inputBinding:
       position: 101
 outputs:

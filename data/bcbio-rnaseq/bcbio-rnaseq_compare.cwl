@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cores
-    default: 1
     inputBinding:
       position: 103
       prefix: --cores

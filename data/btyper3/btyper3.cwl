@@ -11,7 +11,6 @@ inputs:
       - boolean
     doc: Optional argument; True or False; assign genome to a pseudo-gene flow 
       unit using the method described by Carroll, et al. using FastANI
-    default: false
     inputBinding:
       position: 101
       prefix: --ani_geneflow
@@ -21,7 +20,6 @@ inputs:
       - boolean
     doc: Optional argument; True or False; assign genome to a species using 
       FastANI
-    default: true
     inputBinding:
       position: 101
       prefix: --ani_species
@@ -31,7 +29,6 @@ inputs:
       - boolean
     doc: Optional argument; True or False; assign genome to a subspecies, if 
       relevant, using FastANI
-    default: true
     inputBinding:
       position: 101
       prefix: --ani_subspecies
@@ -43,7 +40,6 @@ inputs:
       query genome relative to all B. cereus s.l. species type strain genomes 
       using FastANI, and report the closest species type strain/highest ANI 
       value
-    default: true
     inputBinding:
       position: 101
       prefix: --ani_typestrains
@@ -54,7 +50,6 @@ inputs:
     doc: Optional argument; True or False; perform Bt toxin gene detection for 
       cry, cyt, and vip genes (required if one wants to assign genomes to biovar
       Thuringiensis)
-    default: true
     inputBinding:
       position: 101
       prefix: --bt
@@ -65,7 +60,6 @@ inputs:
     doc: Optional argument for use with --bt True; integer from 0 to 100; 
       minimum percent coverage threshold for a Bt toxin gene to be considered 
       present
-    default: 70
     inputBinding:
       position: 101
       prefix: --bt_coverage
@@ -76,7 +70,6 @@ inputs:
     doc: Optional argument for use with --bt True; integer from 0 to 100; 
       minimum percent amino acid identity threshold for a Bt toxin gene to be 
       considered present
-    default: 50
     inputBinding:
       position: 101
       prefix: --bt_identity
@@ -89,7 +82,6 @@ inputs:
       considered separate genes; Bt toxin genes below this threshold will be 
       considered separate, while those above it will be considered overlapping, 
       and only the top hit will be reported
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --bt_overlap
@@ -101,7 +93,6 @@ inputs:
       latest version of the seven-gene multi-locus sequence typing (MLST) scheme
       available in PubMLST; if this is False, BTyper3 will search for the 
       appropriate files in the seq_mlst_db directory
-    default: false
     inputBinding:
       position: 101
       prefix: --download_mlst_latest
@@ -113,7 +104,6 @@ inputs:
       >= 0; maximum blast e-value for a hit to be saved; note that if both 
       --virulence True and --bt True, this e-value threshold will be applied to 
       both analyses
-    default: '1e-5'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -130,7 +120,6 @@ inputs:
     doc: Optional argument; True or False; assign genome to a sequence type (ST)
       using the seven-gene multi-locus sequence typing (MLST) scheme available 
       in PubMLST
-    default: true
     inputBinding:
       position: 101
       prefix: --mlst
@@ -140,7 +129,6 @@ inputs:
       - boolean
     doc: Optional argument; True or False; assign genome to a phylogenetic group
       (Group I-VIII) using an adjusted, eight-group panC group assignment scheme
-    default: true
     inputBinding:
       position: 101
       prefix: --panC
@@ -150,7 +138,6 @@ inputs:
       - boolean
     doc: Optional argument; True or False; perform virulence gene detection 
       (required if one wants to assign genomes to biovars Anthracis or Emeticus)
-    default: true
     inputBinding:
       position: 101
       prefix: --virulence
@@ -161,7 +148,6 @@ inputs:
     doc: Optional argument for use with --virulence True; integer from 0 to 100;
       minimum percent coverage threshold for a virulence gene to be considered 
       present
-    default: 80
     inputBinding:
       position: 101
       prefix: --virulence_coverage
@@ -174,7 +160,6 @@ inputs:
       or nuc for the nucleotide sequence database; option aa uses translated nucleotide
       blast and allows for the detection of more remote homologs, but is slower than
       nuc, which uses blastn'
-    default: aa
     inputBinding:
       position: 101
       prefix: --virulence_db
@@ -186,7 +171,6 @@ inputs:
       minimum percent amino acid/nucleotide identity threshold for a virulence 
       gene to be considered present, depending on choice of --virulence_db aa or
       nuc, respectively
-    default: 70
     inputBinding:
       position: 101
       prefix: --virulence_identity

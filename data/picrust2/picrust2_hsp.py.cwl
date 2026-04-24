@@ -43,7 +43,6 @@ inputs:
       - string
     doc: 'Type of marker genes to use for functional prediction. Options include:
       16S, BIGG, CAZY, EC, GENE_NAMES, GO, KO, PFAM, COG, TIGRFAM, PHENO.'
-    default: 16S
     inputBinding:
       position: 101
       prefix: --marker_type
@@ -53,7 +52,6 @@ inputs:
       - string
     doc: 'Method for functional prediction. Options include: mp, emp_prob, pic, scp,
       subtree_average.'
-    default: mp
     inputBinding:
       position: 101
       prefix: --method

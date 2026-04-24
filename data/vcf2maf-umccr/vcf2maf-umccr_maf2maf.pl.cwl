@@ -19,7 +19,6 @@ inputs:
       - int
     doc: Number of variants VEP loads at a time; Reduce this for low memory 
       systems
-    default: 5000
     inputBinding:
       position: 101
       prefix: --buffer-size
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Version of offline cache to use with VEP (e.g. 75, 84, 91)
-    default: Installed version
     inputBinding:
       position: 101
       prefix: --cache-version
@@ -53,7 +51,6 @@ inputs:
       - float
     doc: Add FILTER tag common_variant if gnomAD reports any subpopulation AFs 
       greater than this
-    default: 0.0004
     inputBinding:
       position: 101
       prefix: --max-subpop-af
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: NCBI reference assembly of variants in MAF (e.g. GRCm38 for mouse)
-    default: GRCh37
     inputBinding:
       position: 101
       prefix: --ncbi-build
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: Name of MAF column for read depth in normal BAM
-    default: n_depth
     inputBinding:
       position: 101
       prefix: --nrm-depth-col
@@ -80,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: Name of MAF column for reference allele depth in normal BAM
-    default: n_ref_count
     inputBinding:
       position: 101
       prefix: --nrm-rad-col
@@ -89,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: Name of MAF column for variant allele depth in normal BAM
-    default: n_alt_count
     inputBinding:
       position: 101
       prefix: --nrm-vad-col
@@ -98,7 +91,6 @@ inputs:
       - 'null'
       - File
     doc: Reference FASTA file
-    default: 
       ~/.vep/homo_sapiens/102_GRCh37/Homo_sapiens.GRCh37.dna.toplevel.fa.gz
     inputBinding:
       position: 101
@@ -109,7 +101,6 @@ inputs:
       - type: array
         items: string
     doc: Comma-delimited list of columns to retain from the input MAF
-    default: 
       Center,Verification_Status,Validation_Status,Mutation_Status,Sequencing_Phase,Sequence_Source,Validation_Method,Score,BAM_file,Sequencer,Tumor_Sample_UUID,Matched_Norm_Sample_UUID
     inputBinding:
       position: 101
@@ -119,7 +110,6 @@ inputs:
       - 'null'
       - string
     doc: Ensembl-friendly name of species (e.g. mus_musculus for mouse)
-    default: homo_sapiens
     inputBinding:
       position: 101
       prefix: --species
@@ -128,7 +118,6 @@ inputs:
       - 'null'
       - Directory
     doc: Folder to retain intermediate VCFs/MAFs after runtime
-    default: usually /tmp
     inputBinding:
       position: 101
       prefix: --tmp-dir
@@ -137,7 +126,6 @@ inputs:
       - 'null'
       - string
     doc: Name of MAF column for read depth in tumor BAM
-    default: t_depth
     inputBinding:
       position: 101
       prefix: --tum-depth-col
@@ -146,7 +134,6 @@ inputs:
       - 'null'
       - string
     doc: Name of MAF column for reference allele depth in tumor BAM
-    default: t_ref_count
     inputBinding:
       position: 101
       prefix: --tum-rad-col
@@ -155,7 +142,6 @@ inputs:
       - 'null'
       - string
     doc: Name of MAF column for variant allele depth in tumor BAM
-    default: t_alt_count
     inputBinding:
       position: 101
       prefix: --tum-vad-col
@@ -164,7 +150,6 @@ inputs:
       - 'null'
       - Directory
     doc: VEP's base cache/plugin directory
-    default: ~/.vep
     inputBinding:
       position: 101
       prefix: --vep-data
@@ -173,7 +158,6 @@ inputs:
       - 'null'
       - int
     doc: Number of forked processes to use when running VEP
-    default: 4
     inputBinding:
       position: 101
       prefix: --vep-forks
@@ -182,7 +166,6 @@ inputs:
       - 'null'
       - Directory
     doc: Folder containing the vep script
-    default: ~/miniconda3/bin
     inputBinding:
       position: 101
       prefix: --vep-path

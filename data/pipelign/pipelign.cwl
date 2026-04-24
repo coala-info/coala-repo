@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Input sequences can be dna/rna/aa
-    default: dna
     inputBinding:
       position: 101
       prefix: --alphabet
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: Proportion of ambiguous characters allowed in the long sequences
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --ambigPer
@@ -66,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: Length threshold for full sequences
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --lenThr
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations to refine long alignments
-    default: 1
     inputBinding:
       position: 101
       prefix: --mIterateLong
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations to refine merged alignment
-    default: 1
     inputBinding:
       position: 101
       prefix: --mIterateMerge
@@ -101,7 +96,6 @@ inputs:
       - 'null'
       - string
     doc: Merge using (P)arallel/(C)onsensus strategy
-    default: P
     inputBinding:
       position: 101
       prefix: --merge
@@ -116,7 +110,6 @@ inputs:
       - 'null'
       - string
     doc: Run either (J)oblib/(G)NU parallel version
-    default: G
     inputBinding:
       position: 101
       prefix: --run
@@ -125,7 +118,6 @@ inputs:
       - 'null'
       - float
     doc: Percent sequence similarity for clustering
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --simPer
@@ -145,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU/threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --thread

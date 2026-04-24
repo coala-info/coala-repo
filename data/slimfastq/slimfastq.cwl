@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level 1 to 4 (default is 3)
-    default: 3
     inputBinding:
       position: 103
       prefix: -l
@@ -77,7 +76,6 @@ inputs:
       - 'null'
       - File
     doc: 'Input filename (default: stdin)'
-    default: stdin
     inputBinding:
       position: 103
       prefix: -u

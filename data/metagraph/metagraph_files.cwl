@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - boolean
     doc: show other advanced and legacy options
-    default: false
     inputBinding:
       position: 102
       prefix: --advanced

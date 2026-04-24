@@ -22,7 +22,6 @@ inputs:
       - int
     doc: "Number of burn-in iterations using\n                                  unconditional
       SMC sampler."
-    default: 1000
     inputBinding:
       position: 101
       prefix: --burnin
@@ -52,7 +51,6 @@ inputs:
       \         process. Higher values will encourage more\n                     \
       \             clusters,  lower values have the opposite\n                  \
       \                effect."
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --concentration-value
@@ -62,7 +60,6 @@ inputs:
       - string
     doc: "Allele count density in the PyClone model.\n                           \
       \       Use beta-binomial for most cases."
-    default: beta-binomial
     inputBinding:
       position: 101
       prefix: --density
@@ -75,7 +72,6 @@ inputs:
       \             fraction.  Higher values lead to more\n                      \
       \            accurate approximations at the expense of\n                   \
       \               run time."
-    default: 101
     inputBinding:
       position: 101
       prefix: --grid-size
@@ -86,7 +82,6 @@ inputs:
     doc: "Higher loss probability setting.  Used when\n                          \
       \        allowing PhyClone to assign loss prior\n                          \
       \        probability from cluster data."
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --high-loss-prob
@@ -103,7 +98,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum running time in seconds.
-    default: inf
     inputBinding:
       position: 101
       prefix: --max-time
@@ -145,7 +139,6 @@ inputs:
       - int
     doc: "Number of parallel chains for sampling.\n                              \
       \    Recommended to use at least 4."
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-chains
@@ -155,7 +148,6 @@ inputs:
       - int
     doc: "Number of iterations of the MCMC sampler to\n                          \
       \        perform."
-    default: 10000
     inputBinding:
       position: 101
       prefix: --num-iters
@@ -165,7 +157,6 @@ inputs:
       - int
     doc: "Number of particles to use during PG\n                                 \
       \ sampling."
-    default: 100
     inputBinding:
       position: 101
       prefix: --num-particles
@@ -175,7 +166,6 @@ inputs:
       - int
     doc: "Number of Gibbs updates to reassign data\n                             \
       \     points per SMC iteration."
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-samples-data-point
@@ -185,7 +175,6 @@ inputs:
       - int
     doc: "Number of prune-regraph updates per SMC\n                              \
       \    iteration."
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-samples-prune-regraph
@@ -195,7 +184,6 @@ inputs:
       - float
     doc: "Prior probability that data points are\n                               \
       \   outliers and don't fit tree."
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --outlier-prob
@@ -207,7 +195,6 @@ inputs:
       \     Beta-Binomial density.  The higher the value\n                       \
       \           the more similar the Beta-Binomial is to a\n                   \
       \               Binomial."
-    default: 400.0
     inputBinding:
       position: 101
       prefix: --precision
@@ -217,7 +204,6 @@ inputs:
       - int
     doc: "How frequently to print information about\n                            \
       \      fitting."
-    default: 100
     inputBinding:
       position: 101
       prefix: --print-freq
@@ -231,7 +217,6 @@ inputs:
       best performance per iteration.\n                                  For large
       datasets it may be necessary to\n                                  use one of
       the other proposals."
-    default: semi-adapted
     inputBinding:
       position: 101
       prefix: --proposal
@@ -240,7 +225,6 @@ inputs:
       - 'null'
       - float
     doc: ESS threshold to trigger resampling.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --resample-threshold
@@ -259,7 +243,6 @@ inputs:
       - float
     doc: "Probability of updating a subtree (instead\n                           \
       \       of whole tree) using PG sampler."
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --subtree-update-prob
@@ -269,7 +252,6 @@ inputs:
       - int
     doc: "Thinning parameter for storing entries in\n                            \
       \      trace."
-    default: 1
     inputBinding:
       position: 101
       prefix: --thin

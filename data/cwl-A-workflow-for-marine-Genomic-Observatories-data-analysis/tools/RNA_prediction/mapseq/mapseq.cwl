@@ -46,7 +46,6 @@ inputs:
 
   threads: 
     type: int?
-    default: 8
     inputBinding:
       prefix: "-nthreads"
       position: 5

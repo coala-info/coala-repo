@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Lower score cut-off for reference allele
-    default: 95.0
     inputBinding:
       position: 101
       prefix: --score_a
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - float
     doc: Lower score cut-off for alternate allele
-    default: 60.0
     inputBinding:
       position: 101
       prefix: --score_b
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: Score value for missing data
-    default: 30.0
     inputBinding:
       position: 101
       prefix: --score_n

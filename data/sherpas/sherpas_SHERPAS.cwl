@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Method (F or R)
-    default: F
     inputBinding:
       position: 101
       prefix: -m
@@ -61,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for unassigned regions
-    default: 100 [F] or 0.99 [R]
     inputBinding:
       position: 101
       prefix: -t
@@ -70,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Window size
-    default: 300
     inputBinding:
       position: 101
       prefix: -w

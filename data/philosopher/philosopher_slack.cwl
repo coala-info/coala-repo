@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: specify the name of the bot
-    default: Philosopher
     inputBinding:
       position: 101
       prefix: --username

@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - boolean
     doc: write some debug info to stderr
-    default: false
     inputBinding:
       position: 103
       prefix: --debug
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: max intron length, controls terminal search space
-    default: 500
     inputBinding:
       position: 103
       prefix: --max-intron
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: minimum map quality value
-    default: 1
     inputBinding:
       position: 103
       prefix: --min-mapq
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not refine mappy alignment with edlib
-    default: true
     inputBinding:
       position: 103
       prefix: --no-refine
@@ -56,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: output format [paf,gff3]
-    default: paf
     inputBinding:
       position: 103
       prefix: --out-format
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use with minimap2
-    default: 3
     inputBinding:
       position: 103
       prefix: --threads

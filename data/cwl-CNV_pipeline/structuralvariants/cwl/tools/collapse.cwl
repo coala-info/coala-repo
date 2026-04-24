@@ -21,7 +21,6 @@ inputs:
     type: string?
     inputBinding:
       position: 1
-    default: |
       INPUT_FILE=$0
       OUTPUT_NAME=${INPUT_FILE/bed/sorted.merged.bed}
       OUTPUT_FILE=$(echo "$OUTPUT_NAME" | sed "s/.*\///")

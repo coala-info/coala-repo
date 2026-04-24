@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: block size in number of SNPs
-    default: 5000
     inputBinding:
       position: 101
       prefix: -k
@@ -114,7 +113,6 @@ inputs:
       - 'null'
       - float
     doc: penalty on sum of squared lambdas, only relevant for -print
-    default: 0.2
     inputBinding:
       position: 101
       prefix: -p
@@ -133,7 +131,6 @@ inputs:
         items: float
     doc: variance of prior on normalized effect size. To average priors, 
       separate with commas
-    default:
       - 0.01
       - 0.1
       - 0.5

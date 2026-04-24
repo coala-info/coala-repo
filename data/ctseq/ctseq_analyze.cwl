@@ -10,7 +10,6 @@ inputs:
       - int
     doc: number of cores to use to align with Bismark. Default=1. Highly 
       recommended to run with more than 1 core, try starting with 6 cores
-    default: 1
     inputBinding:
       position: 101
       prefix: --bismarkCores
@@ -20,7 +19,6 @@ inputs:
       - float
     doc: cis-CG threshold to determine if a molecule is methylated 
       (default=0.75)
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --cisCG
@@ -30,7 +28,6 @@ inputs:
       - float
     doc: consensus threshold to make consensus methylation call from all the 
       reads with the same UMI (default=0.9)
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --consensus
@@ -40,7 +37,6 @@ inputs:
       - int
     doc: number of cores to use with Cutadapt. Default=1. Highly recommended to 
       run with more than 1 core, try starting with 18 cores
-    default: 1
     inputBinding:
       position: 101
       prefix: --cutadaptCores
@@ -49,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: adapter sequence to remove from FORWARD reads
-    default: AGTGTGGGAGGGTAGTTGGTGTT
     inputBinding:
       position: 101
       prefix: --forwardAdapter
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: number of reads needed to be counted as a unique molecule (default=5)
-    default: 5
     inputBinding:
       position: 101
       prefix: --moleculeThreshold
@@ -90,7 +84,6 @@ inputs:
       - int
     doc: number of processes (default=1; default settings could take a long time
       to run)
-    default: 1
     inputBinding:
       position: 101
       prefix: --processes
@@ -101,7 +94,6 @@ inputs:
     doc: number of reads to analyze per fastq file (should only adjust this if 
       you think you are too big of a file through bismark). Default=5000000 (5 
       million)
-    default: 5000000
     inputBinding:
       position: 101
       prefix: --readsPerFile
@@ -120,7 +112,6 @@ inputs:
       - 'null'
       - string
     doc: adapter sequence to remove from REVERSE reads
-    default: ACTCCCCACCTTCCTCATTCTCTAAGACGGTGT
     inputBinding:
       position: 101
       prefix: --reverseAdapter
@@ -136,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: 'algorithm used to collapse UMIs, options: default=directional'
-    default: directional
     inputBinding:
       position: 101
       prefix: --umiCollapseAlg
@@ -162,7 +152,6 @@ inputs:
       - int
     doc: UMIs with this edit distance will be collapsed together, default=0 
       (don't collapse)
-    default: 0
     inputBinding:
       position: 101
       prefix: --umiThreshold

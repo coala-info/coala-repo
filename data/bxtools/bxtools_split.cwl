@@ -15,7 +15,6 @@ inputs:
   - id: analysis_id
     type: string
     doc: ID to prefix output files with
-    default: foo
     inputBinding:
       position: 102
       prefix: --analysis-id
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Minumum reads of given tag to see before writing
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-reads
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Select verbosity level (0-4)
-    default: 0
     inputBinding:
       position: 102
       prefix: --verbose

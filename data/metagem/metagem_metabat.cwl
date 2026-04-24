@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of edges per node. The greater, the more sensitive.
-    default: 200
     inputBinding:
       position: 101
       prefix: --maxEdges
@@ -53,7 +52,6 @@ inputs:
       - int
     doc: Percentage of 'good' contigs considered for binning decided by 
       connection among contigs. The greater, the more sensitive.
-    default: 95
     inputBinding:
       position: 101
       prefix: --maxP
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of a bin as the output.
-    default: 200000
     inputBinding:
       position: 101
       prefix: --minClsSize
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of a contig for binning (should be >=1500)
-    default: 2500
     inputBinding:
       position: 101
       prefix: --minContig
@@ -80,7 +76,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum mean coverage of a contig in each library for binning.
-    default: 1
     inputBinding:
       position: 101
       prefix: --minCV
@@ -90,7 +85,6 @@ inputs:
       - float
     doc: Minimum total effective mean coverage of a contig (sum of depth over 
       minCV) for binning.
-    default: 1
     inputBinding:
       position: 101
       prefix: --minCVSum
@@ -100,7 +94,6 @@ inputs:
       - int
     doc: Minimum score of a edge for binning (should be between 1 and 99). The 
       greater, the more specific.
-    default: 60
     inputBinding:
       position: 101
       prefix: --minS
@@ -126,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads to use (0: use all cores).'
-    default: 0
     inputBinding:
       position: 101
       prefix: --numThreads
@@ -151,7 +143,6 @@ inputs:
       - int
     doc: 'TNF probability cutoff for building TNF graph. Use it to skip the preparation
       step. (0: auto)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --pTNF
@@ -168,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: 'For exact reproducibility. (0: use random seed)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --seed

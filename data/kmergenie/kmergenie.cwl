@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: interval between consecutive kmer sizes
-    default: 10
     inputBinding:
       position: 102
       prefix: -s
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: largest k-mer size to consider
-    default: 121
     inputBinding:
       position: 102
       prefix: -k
@@ -72,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: prefix of the output files
-    default: histograms
     inputBinding:
       position: 102
       prefix: -o
@@ -81,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: smallest k-mer size to consider
-    default: 15
     inputBinding:
       position: 102
       prefix: -l

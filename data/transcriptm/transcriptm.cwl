@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: Type of adapters to clip
-    default: truseq
     inputBinding:
       position: 104
   - id: crop
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Cut read to a specific length
-    default: 10000
     inputBinding:
       position: 104
   - id: db_path
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory which contains the TranscriptM databases
-    default: /usr/local/share/transcriptm-0.2-0/data/
     inputBinding:
       position: 104
   - id: headcrop
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Cut specified number of bases from start of read
-    default: 0
     inputBinding:
       position: 104
   - id: log_file
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum average quality score for 4 bp windows
-    default: 25
     inputBinding:
       position: 104
   - id: min_len
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum required length of read
-    default: 30
     inputBinding:
       position: 104
   - id: min_qc
@@ -84,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum quality score for leading and trailing bases
-    default: 20
     inputBinding:
       position: 104
   - id: no_mapping_filter
@@ -92,7 +85,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not adjust the mapping stringency by filtering alignments
-    default: false
     inputBinding:
       position: 104
   - id: output_dir
@@ -100,7 +92,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: TranscriptM_output
     inputBinding:
       position: 104
   - id: path_db_smr
@@ -108,7 +99,6 @@ inputs:
       - 'null'
       - string
     doc: Path to databases and index
-    default: rRNA and tRNA db
     inputBinding:
       position: 104
   - id: percentage_aln
@@ -116,7 +106,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allowable percentage read bases mapped
-    default: 0.95
     inputBinding:
       position: 104
   - id: percentage_id
@@ -124,7 +113,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allowable percentage base identity of a mapped read
-    default: 0.97
     inputBinding:
       position: 104
   - id: phred
@@ -132,7 +120,6 @@ inputs:
       - 'null'
       - string
     doc: Quality encoding
-    default: phred33
     inputBinding:
       position: 104
   - id: threads
@@ -140,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 20
     inputBinding:
       position: 104
   - id: verbose
@@ -156,7 +142,6 @@ inputs:
       - 'null'
       - Directory
     doc: Working directory
-    default: /tmp/tmpbrWiZh
     inputBinding:
       position: 104
 outputs:

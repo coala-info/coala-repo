@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Set canonical pattern.
-    default: TTAGGG
     inputBinding:
       position: 101
       prefix: --canonical
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Set edit distance for pattern matching (0-2).
-    default: 0
     inputBinding:
       position: 101
       prefix: --edit-distance
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Set maximum block distance for extension.
-    default: 200
     inputBinding:
       position: 101
       prefix: --max-block-distance
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Set maximum distance for merging matches.
-    default: 50
     inputBinding:
       position: 101
       prefix: --max-match-distance
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: Set minimum block density.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --min-block-density
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Set minimum block length.
-    default: 500
     inputBinding:
       position: 101
       prefix: --min-block-length
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output Shannon entropy for each window.
-    default: false
     inputBinding:
       position: 101
       prefix: --out-entropy
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output GC content for each window.
-    default: false
     inputBinding:
       position: 101
       prefix: --out-gc
@@ -95,7 +87,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output assembly interstitial telomere (ITSs) regions.
-    default: false
     inputBinding:
       position: 101
       prefix: --out-its
@@ -104,7 +95,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output all canonical and terminal non-canonical matches.
-    default: false
     inputBinding:
       position: 101
       prefix: --out-matches
@@ -113,7 +103,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output canonical/noncanonical repeats and density by window.
-    default: false
     inputBinding:
       position: 101
       prefix: --out-win-repeats
@@ -122,7 +111,6 @@ inputs:
       - 'null'
       - string
     doc: Set patterns to explore, separate them by commas
-    default: TTAGGG
     inputBinding:
       position: 101
       prefix: --patterns
@@ -131,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Set sliding window step.
-    default: 500
     inputBinding:
       position: 101
       prefix: --step
@@ -140,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Set terminal limit for exploring telomere variant regions (TVRs).
-    default: 50000
     inputBinding:
       position: 101
       prefix: --terminal-limit
@@ -149,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: Set maximum number of threads.
-    default: max. available
     inputBinding:
       position: 101
       prefix: --threads
@@ -158,7 +143,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ultra-fast mode. Only scans terminal telomeres at contig ends.
-    default: true
     inputBinding:
       position: 101
       prefix: --ultra-fast
@@ -175,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: Set sliding window size.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --window

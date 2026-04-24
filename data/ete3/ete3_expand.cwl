@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Output tree format (e.g., newick, nexus)
-    default: newick
     inputBinding:
       position: 103
       prefix: --format
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: Tree building method (e.g., nj, upgma)
-    default: nj
     inputBinding:
       position: 103
       prefix: --method

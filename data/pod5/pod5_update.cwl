@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite destination files
-    default: false
     inputBinding:
       position: 102
       prefix: --force-overwrite
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: Search for input files recursively matching `*.pod5`
-    default: false
     inputBinding:
       position: 102
       prefix: --recursive

@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: 'Classify using one of the tools: treesapp [DEFAULT], graftm, or diamond.'
-    default: treesapp
     inputBinding:
       position: 103
       prefix: --tool
@@ -60,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: The stage(s) for TreeSAPP to execute
-    default: continue
     inputBinding:
       position: 103
       prefix: --stage
@@ -80,7 +78,6 @@ inputs:
       - float
     doc: The maximum total evolutionary distance between a query and 
       reference(s), beyond which EPA placements are unclassified.
-    default: Inf
     inputBinding:
       position: 103
       prefix: --max_evol_distance
@@ -90,7 +87,6 @@ inputs:
       - float
     doc: The maximum pendant length distance threshold, beyond which EPA 
       placements are unclassified.
-    default: Inf
     inputBinding:
       position: 103
       prefix: --max_pendant_length
@@ -99,7 +95,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum likelihood weight ratio required for an EPA placement.
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --min_like_weight_ratio
@@ -108,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: minimal sequence length after alignment trimming
-    default: 0
     inputBinding:
       position: 103
       prefix: --min_seq_length
@@ -128,7 +122,6 @@ inputs:
       - int
     doc: The number of CPU threads or parallel processes to use in various 
       pipeline steps
-    default: 2
     inputBinding:
       position: 103
       prefix: --num_procs
@@ -165,7 +158,6 @@ inputs:
       - type: array
         items: string
     doc: A list of the taxonomic ranks (space-separated) to test.
-    default: class species
     inputBinding:
       position: 103
       prefix: --taxonomic_ranks
@@ -174,7 +166,6 @@ inputs:
       - 'null'
       - boolean
     doc: Flag to turn on position masking of the multiple sequence alignment
-    default: false
     inputBinding:
       position: 103
       prefix: --trim_align

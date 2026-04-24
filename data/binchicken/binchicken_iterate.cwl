@@ -67,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: Assembly strategy to use.
-    default: dynamic
     inputBinding:
       position: 101
       prefix: --assembly-strategy
@@ -175,7 +174,6 @@ inputs:
       - 'null'
       - string
     doc: Speed setting for Aviary.
-    default: comprehensive
     inputBinding:
       position: 101
       prefix: --aviary-speed
@@ -299,7 +297,6 @@ inputs:
       - 'null'
       - string
     doc: File hierarchy strategy.
-    default: large
     inputBinding:
       position: 101
       prefix: --file-hierarchy
@@ -407,7 +404,6 @@ inputs:
       - 'null'
       - string
     doc: K-mer preclustering strategy.
-    default: large
     inputBinding:
       position: 101
       prefix: --kmer-precluster

@@ -49,7 +49,6 @@ inputs:
   threads:
     type: int?
     label: Number of threads to use
-    default: 8
     inputBinding:
       position: 2
       prefix: --cpus
@@ -68,7 +67,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --extension
-    default: "fa"
   
   skip_ani_screen:
     type: boolean?
@@ -76,7 +74,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --skip_ani_screen
-    default: true
 
 arguments:
   - valueFrom: "--force"

@@ -104,7 +104,6 @@ inputs:
       - string
     doc: The column name in the sample sheet or metadata CSV for the sample 
       barcode.
-    default: Sample_Barcode
     inputBinding:
       position: 101
       prefix: --column-for-sample-barcode
@@ -122,7 +121,6 @@ inputs:
       - 'null'
       - boolean
     doc: Name the output files according to the Illumina file name standards.
-    default: false
     inputBinding:
       position: 101
       prefix: --illumina-file-names
@@ -133,7 +131,6 @@ inputs:
     doc: Output all bases (i.e. all sample barcode, molecular barcode, skipped, 
       and template bases) for every read with template bases (ex. read one and 
       read two) as defined by the corresponding read structure(s).
-    default: false
     inputBinding:
       position: 101
       prefix: --include-all-bases-in-fastqs
@@ -142,7 +139,6 @@ inputs:
       - 'null'
       - boolean
     doc: Insert the sample barcode into the FASTQ header.
-    default: false
     inputBinding:
       position: 101
       prefix: --include-sample-barcodes-in-fastq
@@ -160,7 +156,6 @@ inputs:
       - 'null'
       - int
     doc: Mask bases with a quality score below the specified threshold as Ns
-    default: 0
     inputBinding:
       position: 101
       prefix: --mask-bases-below-quality
@@ -169,7 +164,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum mismatches for a barcode to be considered a match.
-    default: 1
     inputBinding:
       position: 101
       prefix: --max-mismatches
@@ -179,7 +173,6 @@ inputs:
       - int
     doc: Maximum allowable number of no-calls in a barcode read before it is 
       considered unmatchable.
-    default: 2
     inputBinding:
       position: 101
       prefix: --max-no-calls
@@ -205,7 +198,6 @@ inputs:
       - int
     doc: Minimum difference between number of mismatches in the best and second 
       best barcodes for a barcode to be considered a match.
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-mismatch-delta
@@ -215,7 +207,6 @@ inputs:
       - boolean
     doc: Do not keep reads identified as control if true, otherwise keep all 
       reads. Control reads are determined from the comment in the FASTQ header.
-    default: false
     inputBinding:
       position: 101
       prefix: --omit-control-reads
@@ -225,7 +216,6 @@ inputs:
       - boolean
     doc: Keep only passing filter reads if true, otherwise keep all reads. 
       Passing filter reads are determined from the comment in the FASTQ header.
-    default: false
     inputBinding:
       position: 101
       prefix: --omit-failing-reads
@@ -234,7 +224,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not include trailing /1 or /2 for R1 and R2 in the FASTQ read name.
-    default: false
     inputBinding:
       position: 101
       prefix: --omit-fastq-read-numbers
@@ -257,7 +246,6 @@ inputs:
       - 'null'
       - string
     doc: Platform to insert into the read group header of BAMs (e.g Illumina)
-    default: Illumina
     inputBinding:
       position: 101
       prefix: --platform
@@ -329,7 +317,6 @@ inputs:
       - string
     doc: The sort order for the output sam/bam file (typically unsorted or 
       queryname).
-    default: queryname
     inputBinding:
       position: 101
       prefix: --sort-order
@@ -340,7 +327,6 @@ inputs:
     doc: 'The number of threads to use while de-multiplexing. The performance does
       not increase linearly with the # of threads and seems not to improve beyond
       2-4 threads.'
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -350,7 +336,6 @@ inputs:
       - string
     doc: The SAM tag for any molecular barcode. If multiple molecular barcodes 
       are specified, they will be concatenated and stored here.
-    default: RX
     inputBinding:
       position: 101
       prefix: --umi-tag
@@ -359,7 +344,6 @@ inputs:
       - 'null'
       - string
     doc: Output BAM file name for the unmatched records.
-    default: unmatched.bam
     inputBinding:
       position: 101
       prefix: --unmatched

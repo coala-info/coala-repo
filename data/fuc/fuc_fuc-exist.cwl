@@ -12,7 +12,6 @@ inputs:
       - type: array
         items: File
     doc: Files and directories to be tested
-    default: stdin
     inputBinding:
       position: 1
 outputs:

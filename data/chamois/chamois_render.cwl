@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use colored input in pager.
-    default: false
     inputBinding:
       position: 101
       prefix: --color
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: The path to an alternative predictor with classes metadata.
-    default: None
     inputBinding:
       position: 101
       prefix: --model
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use the given pager to display results.
-    default: false
     inputBinding:
       position: 101
       prefix: --pager

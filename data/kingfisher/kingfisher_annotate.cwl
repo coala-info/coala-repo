@@ -52,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: Output format
-    default: human
     inputBinding:
       position: 101
       prefix: --output-format

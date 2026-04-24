@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: max divergence in identity for monomeric-block
-    default: 25
     inputBinding:
       position: 101
       prefix: --max-divergence
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: max divergence in identity for resolve block
-    default: 5
     inputBinding:
       position: 101
       prefix: --max-resolved-divergence
@@ -36,7 +34,6 @@ inputs:
       - int
     doc: When maximum size of cluster will be less MIN_CLST the monomer 
       inferense will finished
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-cluster-size
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

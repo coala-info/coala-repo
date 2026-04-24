@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: 'Genes are allowed to overlap this number of nucleotides. Default: 30.'
-    default: 30
     inputBinding:
       position: 101
       prefix: --acq_overlap

@@ -18,7 +18,6 @@ inputs:
       - boolean
     doc: If input file is in BLAST TSV format (will consider one ID per line if 
       not set)
-    default: false
     inputBinding:
       position: 101
       prefix: --blast
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Billions of sequence letters to be processed at a time
-    default: memory / 20
     inputBinding:
       position: 101
       prefix: --block-size
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: Mode to run DIAMOND with
-    default: fast
     inputBinding:
       position: 101
       prefix: --diamond-mode
@@ -66,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: Maximum e-value to report annotations for
-    default: '1e-3'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -75,7 +71,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output will be generated in FASTA format
-    default: false
     inputBinding:
       position: 101
       prefix: --fasta
@@ -84,7 +79,6 @@ inputs:
       - 'null'
       - string
     doc: Which database are the IDs from. If from UniProt, default is fine
-    default: UniProtKB AC/ID
     inputBinding:
       position: 101
       prefix: --from-db
@@ -93,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: "If IDs in database are in 'full' format: tr|XXX|XXX"
-    default: auto
     inputBinding:
       position: 101
       prefix: --full-id
@@ -102,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: Number of chunks for processing the seed index
-    default: dependant on block size
     inputBinding:
       position: 101
       prefix: --index-chunks
@@ -124,7 +116,6 @@ inputs:
       - boolean
     doc: Perform local ID mapping of SwissProt IDs. Advisable if many IDs of 
       SwissProt are present
-    default: false
     inputBinding:
       position: 101
       prefix: --local-id-mapping
@@ -133,7 +124,6 @@ inputs:
       - 'null'
       - string
     doc: Maximum memory to use (in Gb)
-    default: all available
     inputBinding:
       position: 101
       prefix: --max-memory
@@ -142,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: Number of annotations to output per sequence inputed
-    default: 1
     inputBinding:
       position: 101
       prefix: --max-target-seqs
@@ -152,7 +141,6 @@ inputs:
       - int
     doc: How many times to try obtaining information from UniProt before giving 
       up
-    default: 3
     inputBinding:
       position: 101
       prefix: --max-tries
@@ -161,7 +149,6 @@ inputs:
       - 'null'
       - string
     doc: From where to download UniProt database
-    default: expasy
     inputBinding:
       position: 101
       prefix: --mirror
@@ -171,7 +158,6 @@ inputs:
       - boolean
     doc: Do not perform annotation - input must be in one of BLAST result or TXT
       IDs file or STDIN
-    default: false
     inputBinding:
       position: 101
       prefix: --no-annotation
@@ -196,7 +182,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to store resources of UPIMAPI
-    default: ~/upimapi_resources
     inputBinding:
       position: 101
       prefix: --resources-directory
@@ -213,7 +198,6 @@ inputs:
       - 'null'
       - boolean
     doc: So UPIMAPI doesn't check for (FASTA) database existence
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-db-check
@@ -222,7 +206,6 @@ inputs:
       - 'null'
       - boolean
     doc: If true, UPIMAPI will not check if IDs are valid before mapping
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-id-checking
@@ -231,7 +214,6 @@ inputs:
       - 'null'
       - boolean
     doc: If true, UPIMAPI will not perform ID mapping
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-id-mapping
@@ -240,7 +222,6 @@ inputs:
       - 'null'
       - float
     doc: Time between requests (in seconds)
-    default: 3
     inputBinding:
       position: 101
       prefix: --sleep
@@ -249,7 +230,6 @@ inputs:
       - 'null'
       - int
     doc: How many IDs to submit per request to the API
-    default: 1000
     inputBinding:
       position: 101
       prefix: --step
@@ -267,7 +247,6 @@ inputs:
       - 'null'
       - string
     doc: Number of threads to use in annotation steps
-    default: all available
     inputBinding:
       position: 101
       prefix: --threads
@@ -277,7 +256,6 @@ inputs:
       - string
     doc: To which database the IDs should be mapped. If only interested in 
       columns information (which include cross-references), default is fine
-    default: UniProtKB
     inputBinding:
       position: 101
       prefix: --to-db

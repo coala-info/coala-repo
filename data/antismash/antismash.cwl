@@ -83,7 +83,6 @@ inputs:
       - 'null'
       - Directory
     doc: Root directory of the databases
-    default: /usr/local/lib/python3.11/site-packages/antismash/databases
     inputBinding:
       position: 102
       prefix: --databases
@@ -110,7 +109,6 @@ inputs:
     doc: "Specify algorithm used for gene finding: Prodigal, Prodigal Metagenomic/Anonymous
       mode, or none. The 'error' option will raise an error if genefinding is attempted.
       The 'none' option will not run genefinding."
-    default: error
     inputBinding:
       position: 102
       prefix: --genefinding-tool
@@ -119,7 +117,6 @@ inputs:
       - 'null'
       - string
     doc: MITE database version number to use (e.g. 1.3)
-    default: latest
     inputBinding:
       position: 102
       prefix: --genefunctions-mite-version
@@ -136,7 +133,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show NCBI genomic context links for genes
-    default: false
     inputBinding:
       position: 102
       prefix: --html-ncbi-context
@@ -201,7 +197,6 @@ inputs:
       - 'null'
       - string
     doc: Taxonomic classification of input sequence.
-    default: bacteria
     inputBinding:
       position: 102
       prefix: --taxon
@@ -226,7 +221,6 @@ inputs:
       - 'null'
       - float
     doc: Lowest GC content to annotate TTA codons at
-    default: 0.65
     inputBinding:
       position: 102
       prefix: --tta-threshold

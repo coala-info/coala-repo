@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: distance threshold
-    default: 0.01
     inputBinding:
       position: 103
       prefix: --thr

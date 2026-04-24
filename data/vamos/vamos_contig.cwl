@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: Penalty of indel in dynamic programming (double)
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -d
@@ -56,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length locus to compute annotation for
-    default: 10000
     inputBinding:
       position: 102
       prefix: -L
@@ -81,7 +79,6 @@ inputs:
       - 'null'
       - float
     doc: Penalty of mismatch in dynamic programming (double)
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -c
@@ -124,7 +121,6 @@ inputs:
       - int
     doc: Phase flank- how many bases on each side of a VNTR to collect SNVs to 
       phase
-    default: 15000
     inputBinding:
       position: 102
       prefix: -p
@@ -150,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 1
     inputBinding:
       position: 102
       prefix: -t

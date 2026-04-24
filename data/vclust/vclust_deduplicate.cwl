@@ -15,7 +15,6 @@ inputs:
     doc: 'Add prefixes to sequence IDs. Without any values, prefixes are set to input
       file names. Provide space-separated prefixes to override. Default: prefixes
       are disabled [False]'
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --add-prefixes
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for gzip (1-9) [4]
-    default: 4
     inputBinding:
       position: 101
       prefix: --gzip-level
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: Compress the output FASTA file with gzip [False]
-    default: false
     inputBinding:
       position: 101
       prefix: --gzip-output
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads [20]
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbosity level [1]: 0: Errors only 1: Info 2: Debug'
-    default: 1
     inputBinding:
       position: 101
       prefix: -v

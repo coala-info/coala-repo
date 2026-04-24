@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum chi-square value for filtering SNPs.
-    default: None
     inputBinding:
       position: 101
       prefix: --chisq_max
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Number of blocks for jackknife resampling.
-    default: 200
     inputBinding:
       position: 101
       prefix: --n_blocks
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes for parallel computing.
-    default: 4
     inputBinding:
       position: 101
       prefix: --num_processes
@@ -72,7 +69,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use additional baseline annotations when provided
-    default: true
     inputBinding:
       position: 101
       prefix: --use_additional_baseline_annotation

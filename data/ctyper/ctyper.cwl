@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Enable NGS k-mer bias correction (0/1).
-    default: 1
     inputBinding:
       position: 101
       prefix: --corr
@@ -92,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to run different samples in parallel.
-    default: 1
     inputBinding:
       position: 101
       prefix: --nthreads
@@ -135,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to run each sample.
-    default: 1
     inputBinding:
       position: 101
       prefix: --subthreads
@@ -152,7 +149,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for k-mer coverage report.
-    default: 30
     inputBinding:
       position: 101
       prefix: --window

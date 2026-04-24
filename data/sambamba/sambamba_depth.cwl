@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Set custom filter for alignments.
-    default: "'mapping_quality > 0 and not duplicate and not failed_quality_control'"
     inputBinding:
       position: 103
       prefix: --filter
@@ -82,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mean coverage for output.
-    default: 0 for region/window, 1 for base
     inputBinding:
       position: 103
       prefix: --min-coverage
@@ -99,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Overlap of successive windows, in bp.
-    default: 0
     inputBinding:
       position: 103
       prefix: --overlap

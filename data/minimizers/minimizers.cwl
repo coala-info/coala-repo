@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Aggregate record results
-    default: false
     inputBinding:
       position: 101
       prefix: --aggregate
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Make it parallel
-    default: 1
     inputBinding:
       position: 101
       prefix: --nproc
@@ -35,7 +33,6 @@ inputs:
       - string
     doc: "The output can be formatted as a list of kmers or as a\n               \
       \         fasta file"
-    default: list
     inputBinding:
       position: 101
       prefix: --output-type
@@ -45,7 +42,6 @@ inputs:
       - boolean
     doc: "Report the frequencies of the minimizers. This is\n                    \
       \    compatible with \"--output-type list\" only"
-    default: false
     inputBinding:
       position: 101
       prefix: --report-counts
@@ -80,7 +76,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print messages on the stdout
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

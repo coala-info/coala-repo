@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cores to use
-    default: 1
     inputBinding:
       position: 106
       prefix: --cores
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Memory in GB to use
-    default: 1
     inputBinding:
       position: 106
       prefix: --mem

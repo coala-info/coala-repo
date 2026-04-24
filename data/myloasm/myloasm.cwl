@@ -53,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Compression ratio (1/c k-mers selected). Must be <= 15
-    default: 11
     inputBinding:
       position: 102
       prefix: --c
@@ -63,7 +62,6 @@ inputs:
       - int
     doc: Mark contigs with >= this average nucleotide identity (ANI) to a larger
       contig as alternate
-    default: 99
     inputBinding:
       position: 102
       prefix: --dereplication-ani
@@ -73,7 +71,6 @@ inputs:
       - int
     doc: Mark contigs with > 90% aligned, < this length, and >= 
       --dereplication-ani as alternate
-    default: 500000
     inputBinding:
       position: 102
       prefix: --dereplication-length
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: 'Verbosity level. Warning: trace is very verbose'
-    default: debug
     inputBinding:
       position: 102
       prefix: --log-level
@@ -99,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum overlap length for graph construction
-    default: 500
     inputBinding:
       position: 102
       prefix: --min-ol
@@ -108,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Output contigs with >= this number of reads
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-reads-contig
@@ -136,7 +130,6 @@ inputs:
       - int
     doc: Disallow reads with < % identity for graph building (estimated from 
       base qualities)
-    default: 90
     inputBinding:
       position: 102
       prefix: --quality-value-cutoff
@@ -146,7 +139,6 @@ inputs:
       - int
     doc: Remove contigs with <= this estimated coverage depth and <= 2 reads 
       (DP1 coverage; 99% identity coverage)
-    default: 1
     inputBinding:
       position: 102
       prefix: --secondary-coverage-threshold
@@ -156,7 +148,6 @@ inputs:
       - int
     doc: Remove singleton contigs with <= this estimated coverage depth (DP1 
       coverage; 99% identity coverage)
-    default: 3
     inputBinding:
       position: 102
       prefix: --singleton-coverage-threshold
@@ -165,7 +156,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for processing
-    default: 20
     inputBinding:
       position: 102
       prefix: --threads

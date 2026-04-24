@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: Fixed dispersion parameter value during burn-in
-    default: 1
     inputBinding:
       position: 102
       prefix: --burnin-dispersion
@@ -61,7 +60,6 @@ inputs:
     doc: Target number of cells per chunk in the parallelization scheme Smaller 
       number enabled more parallelization, but too small a number risks 
       inconsistent updates
-    default: 100
     inputBinding:
       position: 102
       prefix: --cells-per-chunk
@@ -119,7 +117,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --count-pr-cutoff
@@ -136,7 +133,6 @@ inputs:
       - 'null'
       - float
     doc: Probability of transcript diffusion
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --diffusion-probability
@@ -145,7 +141,6 @@ inputs:
       - 'null'
       - float
     doc: Stddev of the proposal distribution for transcript repositioning
-    default: 4
     inputBinding:
       position: 102
       prefix: --diffusion-proposal-sigma
@@ -154,7 +149,6 @@ inputs:
       - 'null'
       - float
     doc: Stddev parameter for repositioning of diffused transcripts
-    default: 4
     inputBinding:
       position: 102
       prefix: --diffusion-sigma-far
@@ -163,7 +157,6 @@ inputs:
       - 'null'
       - float
     doc: Stddev parameter for repositioning of non-diffused transcripts
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --diffusion-sigma-near
@@ -196,7 +189,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --foreground-pr-cutoff
@@ -220,7 +212,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 1
     inputBinding:
       position: 102
       prefix: --hyperparam-e-phi
@@ -228,7 +219,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 1
     inputBinding:
       position: 102
       prefix: --hyperparam-f-phi
@@ -236,7 +226,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 1
     inputBinding:
       position: 102
       prefix: --hyperparam-neg-mu-phi
@@ -244,7 +233,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --hyperparam-tau-phi
@@ -277,7 +265,6 @@ inputs:
       - 'null'
       - int
     doc: Exclude transcripts that are more than this distance from any nucleus
-    default: 60
     inputBinding:
       position: 102
       prefix: --max-transcript-nucleus-distance
@@ -310,7 +297,6 @@ inputs:
       - 'null'
       - int
     doc: How frequently to output cell polygons during monitoring
-    default: 10
     inputBinding:
       position: 102
       prefix: --monitor-cell-polygons-freq
@@ -319,7 +305,6 @@ inputs:
       - 'null'
       - int
     doc: Number of sub-iterations sampling cell morphology per overall iteration
-    default: 1000
     inputBinding:
       position: 102
       prefix: --morphology-steps-per-iter
@@ -328,7 +313,6 @@ inputs:
       - 'null'
       - int
     doc: Number of z-axis layers used to model background expression
-    default: 4
     inputBinding:
       position: 102
       prefix: --nbglayers
@@ -337,7 +321,6 @@ inputs:
       - 'null'
       - int
     doc: Number of components in the mixture model of cellular gene expression
-    default: 10
     inputBinding:
       position: 102
       prefix: --ncomponents
@@ -346,7 +329,6 @@ inputs:
       - 'null'
       - int
     doc: Dimenionality of the latent space
-    default: 100
     inputBinding:
       position: 102
       prefix: --nhidden
@@ -386,7 +368,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --nuclear-reassignment-prob
@@ -394,7 +375,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 300
     inputBinding:
       position: 102
       prefix: --nunfactored
@@ -402,7 +382,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: infer
     inputBinding:
       position: 102
       prefix: --output-cell-metadata-fmt
@@ -410,7 +389,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: infer
     inputBinding:
       position: 102
       prefix: --output-cell-voxels-fmt
@@ -418,7 +396,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: infer
     inputBinding:
       position: 102
       prefix: --output-component-params-fmt
@@ -426,7 +403,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: infer
     inputBinding:
       position: 102
       prefix: --output-expected-counts-fmt
@@ -434,7 +410,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: infer
     inputBinding:
       position: 102
       prefix: --output-gene-metadata-fmt
@@ -442,7 +417,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: infer
     inputBinding:
       position: 102
       prefix: --output-maxpost-counts-fmt
@@ -450,7 +424,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: infer
     inputBinding:
       position: 102
       prefix: --output-metagene-loadings-fmt
@@ -458,7 +431,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: infer
     inputBinding:
       position: 102
       prefix: --output-metagene-rates-fmt
@@ -474,7 +446,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: infer
     inputBinding:
       position: 102
       prefix: --output-rates-fmt
@@ -482,7 +453,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: infer
     inputBinding:
       position: 102
       prefix: --output-transcript-metadata-fmt
@@ -490,7 +460,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 1.3
     inputBinding:
       position: 102
       prefix: --perimeter-bound
@@ -498,7 +467,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --prior-seg-reassignment-prob
@@ -516,7 +484,6 @@ inputs:
       - int
     doc: Number of samples at the end of the schedule used to compute 
       expectations and uncertainty
-    default: 100
     inputBinding:
       position: 102
       prefix: --recorded-samples
@@ -527,7 +494,6 @@ inputs:
         items: int
     doc: Sampler schedule, indicating the number of iterations between doubling 
       resolution
-    default:
       - 150
       - 150
       - 300
@@ -579,7 +545,6 @@ inputs:
       - 'null'
       - int
     doc: Number of layers of voxels in the z-axis used for segmentation
-    default: 1
     inputBinding:
       position: 102
       prefix: --voxel-layers

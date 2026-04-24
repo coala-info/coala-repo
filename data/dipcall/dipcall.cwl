@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment length
-    default: 10000
     inputBinding:
       position: 104
       prefix: -z
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment score
-    default: 5000
     inputBinding:
       position: 104
       prefix: -m
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: 'Preset: hsr (human) or sam (small genome)'
-    default: hsr
     inputBinding:
       position: 104
       prefix: -x
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 104
       prefix: -t

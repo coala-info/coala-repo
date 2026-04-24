@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: The column indicating the charge state of the ion.
-    default: Charge
     inputBinding:
       position: 101
       prefix: --charge
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: This will output debug information.
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -30,7 +28,6 @@ inputs:
       - boolean
     doc: This will disable smoothing of data prior to peak finding. If you have 
       very good LC, this may be used to identify small peaks.
-    default: false
     inputBinding:
       position: 101
       prefix: --disable-peak-filtering
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable confidence statistics on data.
-    default: false
     inputBinding:
       position: 101
       prefix: --disable-stats
@@ -50,7 +46,6 @@ inputs:
     doc: 'How to export the scans. per-peak: A mzML per peak identified. per-id: A
       mzML per ion identified (each row of the output gets an mzML). per-file: All
       scans matched per raw file.'
-    default: per-peak
     inputBinding:
       position: 101
       prefix: --export-mode
@@ -60,7 +55,6 @@ inputs:
       - boolean
     doc: This will export spectra of a given MSN that were used to provide the 
       quantification.
-    default: true
     inputBinding:
       position: 101
       prefix: --export-msn
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - boolean
     doc: Create an mzml file of spectra contained within each peak.
-    default: false
     inputBinding:
       position: 101
       prefix: --export-mzml
@@ -78,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: 'The window size for snr/zscore filtering. Default: entire scan'
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-width
@@ -87,7 +79,6 @@ inputs:
       - 'null'
       - boolean
     doc: Fit a separate line for the baseline of each peak.
-    default: false
     inputBinding:
       position: 101
       prefix: --fit-baseline
@@ -98,7 +89,6 @@ inputs:
     doc: This interpolates missing data in scans. The parameter should be a 
       number that is the maximal gap size to fill (ie 2 means a gap of 2 scans).
       Can be useful for low intensity LC-MS data.
-    default: 0
     inputBinding:
       position: 101
       prefix: --gap-interpolation
@@ -108,7 +98,6 @@ inputs:
       - boolean
     doc: This will select parameters specific for ion identification and 
       quantification in GCMS experiments.
-    default: false
     inputBinding:
       position: 101
       prefix: --gcms
@@ -117,7 +106,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output a HTML table summary.
-    default: false
     inputBinding:
       position: 101
       prefix: --html
@@ -126,7 +114,6 @@ inputs:
       - 'null'
       - float
     doc: Filter peaks whose peak are below a given intensity.
-    default: 0
     inputBinding:
       position: 101
       prefix: --intensity-filter
@@ -136,7 +123,6 @@ inputs:
       - boolean
     doc: This will select parameters specific for isobaric tag based labeling 
       (TMT/iTRAQ).
-    default: false
     inputBinding:
       position: 101
       prefix: --isobaric-tags
@@ -145,7 +131,6 @@ inputs:
       - 'null'
       - float
     doc: The mass accuracy for the isotopic cluster.
-    default: 2.5
     inputBinding:
       position: 101
       prefix: --isotope-ppm
@@ -154,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: How many isotopologues to quantify
-    default: -1
     inputBinding:
       position: 101
       prefix: --isotopologue-limit
@@ -164,7 +148,6 @@ inputs:
       - string
     doc: The column indicating the label state of the peptide. If not found, 
       entry assumed to be light variant.
-    default: Labeling State
     inputBinding:
       position: 101
       prefix: --label
@@ -173,7 +156,6 @@ inputs:
       - 'null'
       - string
     doc: Predefined labeling schemes to use.
-    default: None
     inputBinding:
       position: 101
       prefix: --label-method
@@ -182,7 +164,6 @@ inputs:
       - 'null'
       - File
     doc: The file corresponding to the labeling scheme utilized.
-    default: None
     inputBinding:
       position: 101
       prefix: --label-scheme
@@ -193,7 +174,6 @@ inputs:
     doc: How many labels need to be detected to quantify a scan (ie if you have 
       a 2 state experiment and set this to 2, it will only quantify scans where 
       both occur.
-    default: 1
     inputBinding:
       position: 101
       prefix: --labels-needed
@@ -203,7 +183,6 @@ inputs:
       - int
     doc: The maximal number of peaks to detect per scan. A lower value can help 
       with very noisy data.
-    default: -1
     inputBinding:
       position: 101
       prefix: --max-peaks
@@ -212,7 +191,6 @@ inputs:
       - 'null'
       - boolean
     doc: This will select parameters specific for a MaxQuant evidence file.
-    default: false
     inputBinding:
       position: 101
       prefix: --maxquant
@@ -221,7 +199,6 @@ inputs:
       - 'null'
       - boolean
     doc: Merge Isotopologues together prior to fitting.
-    default: false
     inputBinding:
       position: 101
       prefix: --merge-isotopes
@@ -230,7 +207,6 @@ inputs:
       - 'null'
       - boolean
     doc: Merge labels together to a single XIC.
-    default: false
     inputBinding:
       position: 101
       prefix: --merge-labels
@@ -240,7 +216,6 @@ inputs:
       - int
     doc: Peaks separated by less than this distance will be combined. For very 
       crisp data, set this to a lower number. (minimal value is 1)
-    default: 5
     inputBinding:
       position: 101
       prefix: --min-peak-separation
@@ -250,7 +225,6 @@ inputs:
       - int
     doc: The minimal resolving power of a scan to consider for quantification. 
       Useful for skipping low-res scans
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-resolution
@@ -259,7 +233,6 @@ inputs:
       - 'null'
       - int
     doc: How many quantification scans are needed to quantify a scan.
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-scans
@@ -268,7 +241,6 @@ inputs:
       - 'null'
       - boolean
     doc: This will select parameters specific for ms3 based quantification.
-    default: false
     inputBinding:
       position: 101
       prefix: --ms3
@@ -278,7 +250,6 @@ inputs:
       - boolean
     doc: Search for the ion across all scans (ie if you have 3 ions, you will 
       have 3 results with one long XIC)
-    default: false
     inputBinding:
       position: 101
       prefix: --msn-all-scans
@@ -287,7 +258,6 @@ inputs:
       - 'null'
       - int
     doc: 'The ms level to search for the ion in. Default: 2 (ms2)'
-    default: 2
     inputBinding:
       position: 101
       prefix: --msn-id
@@ -298,7 +268,6 @@ inputs:
         items: string
     doc: M/Z values to search for in the scans. To search for multiple m/z 
       values for a given ion, separate m/z values with a comma.
-    default: None
     inputBinding:
       position: 101
       prefix: --msn-ion
@@ -308,7 +277,6 @@ inputs:
       - type: array
         items: string
     doc: RT values each ion is expected at.
-    default: None
     inputBinding:
       position: 101
       prefix: --msn-ion-rt
@@ -317,7 +285,6 @@ inputs:
       - 'null'
       - File
     doc: A file containing peaks to search for in the scans.
-    default: None
     inputBinding:
       position: 101
       prefix: --msn-peaklist
@@ -326,7 +293,6 @@ inputs:
       - 'null'
       - int
     doc: The error tolerance for identifying the ion(s).
-    default: 200
     inputBinding:
       position: 101
       prefix: --msn-ppm
@@ -336,7 +302,6 @@ inputs:
       - string
     doc: 'The ms level to quantify values from. i.e. if we are identifying an ion
       in ms2, we can quantify it in ms1 (or ms2). Default: msn value-1'
-    default: None
     inputBinding:
       position: 101
       prefix: --msn-quant-from
@@ -346,7 +311,6 @@ inputs:
       - type: array
         items: string
     doc: 'The range of retention times for identifying the ion(s). (ex: 7.54-9.43)'
-    default: None
     inputBinding:
       position: 101
       prefix: --msn-rt-window
@@ -355,7 +319,6 @@ inputs:
       - 'null'
       - boolean
     doc: Analyze files in 'missing value' mode.
-    default: false
     inputBinding:
       position: 101
       prefix: --mva
@@ -365,7 +328,6 @@ inputs:
       - string
     doc: The column indicating the MZ value of the precursor ion. This is not 
       the MH+.
-    default: Light Precursor
     inputBinding:
       position: 101
       prefix: --mz
@@ -375,7 +337,6 @@ inputs:
       - boolean
     doc: 'This will select parameters specific for neucode. Note: You still must define
       a labeling scheme.'
-    default: false
     inputBinding:
       position: 101
       prefix: --neucode
@@ -385,7 +346,6 @@ inputs:
       - boolean
     doc: Disables routine to check if an ion is a contaminant of a nearby 
       peptide (checks if its a likely isotopologue).
-    default: false
     inputBinding:
       position: 101
       prefix: --no-contaminant-detection
@@ -394,7 +354,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disables the mass accuracy correction.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-mass-accuracy-correction
@@ -403,7 +362,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable reporting of ratios in output.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-ratios
@@ -413,7 +371,6 @@ inputs:
       - boolean
     doc: Do not use the retention time to bias for peaks containing the MS 
       trigger time.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-rt-guide
@@ -422,7 +379,6 @@ inputs:
       - 'null'
       - string
     doc: The prefix for the file output
-    default: None
     inputBinding:
       position: 101
       prefix: --out
@@ -432,7 +388,6 @@ inputs:
       - boolean
     doc: This declares the mz values of labels will overlap. It is useful for 
       data such as neucode, but not needed for only SILAC labeling.
-    default: false
     inputBinding:
       position: 101
       prefix: --overlapping-labels
@@ -442,7 +397,6 @@ inputs:
       - float
     doc: The threshold from the initial retention time a peak can fall by before
       being discarded
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --peak-cutoff
@@ -452,7 +406,6 @@ inputs:
       - string
     doc: The method to use to identify peaks within data. For LC-MS, 
       relative-max is usually best. For smooth data, derivative is better.
-    default: relative-max
     inputBinding:
       position: 101
       prefix: --peak-find-method
@@ -463,7 +416,6 @@ inputs:
     doc: This picks some predefined parameters for various use cases. Fast is 
       good for robust data with few peaks, slow is good for complex data with 
       overlapping peaks of very different size.
-    default: average
     inputBinding:
       position: 101
       prefix: --peak-find-mode
@@ -472,7 +424,6 @@ inputs:
       - 'null'
       - string
     doc: The method to use to resolve peaks across multiple XICs
-    default: common-peak
     inputBinding:
       position: 101
       prefix: --peak-resolution-mode
@@ -482,7 +433,6 @@ inputs:
       - int
     doc: The number of peaks to report per scan. Useful for ions with multiple 
       elution times.
-    default: 1
     inputBinding:
       position: 101
       prefix: --peaks-n
@@ -492,7 +442,6 @@ inputs:
       - type: array
         items: string
     doc: The peptide(s) to limit quantification to.
-    default: None
     inputBinding:
       position: 101
       prefix: --peptide
@@ -501,7 +450,6 @@ inputs:
       - 'null'
       - string
     doc: The column indicating the peptide.
-    default: Peptide
     inputBinding:
       position: 101
       prefix: --peptide-col
@@ -510,7 +458,6 @@ inputs:
       - 'null'
       - File
     doc: A file of peptide(s) to limit quantification to.
-    default: None
     inputBinding:
       position: 101
       prefix: --peptide-file
@@ -519,7 +466,6 @@ inputs:
       - 'null'
       - float
     doc: Filter peaks whose peak are below a given percentile of the data.
-    default: 0
     inputBinding:
       position: 101
       prefix: --percentile-filter
@@ -528,7 +474,6 @@ inputs:
       - 'null'
       - int
     doc: The precision for storing m/z values. Defaults to 6 decimal places.
-    default: 6
     inputBinding:
       position: 101
       prefix: --precision
@@ -537,7 +482,6 @@ inputs:
       - 'null'
       - float
     doc: The mass accuracy for the first monoisotopic peak in ppm.
-    default: 5
     inputBinding:
       position: 101
       prefix: --precursor-ppm
@@ -547,7 +491,6 @@ inputs:
       - string
     doc: 'The process to use for quantification. Default: Integrate for ms1, sum for
       ms2+.'
-    default: None
     inputBinding:
       position: 101
       prefix: --quant-method
@@ -557,7 +500,6 @@ inputs:
       - float
     doc: The minimal R^2 for a peak to be kept. Should be a value between 0 and 
       1
-    default: None
     inputBinding:
       position: 101
       prefix: --r2-cutoff
@@ -566,7 +508,6 @@ inputs:
       - 'null'
       - string
     doc: The label to use as a reference (by default all comparisons are taken).
-    default: None
     inputBinding:
       position: 101
       prefix: --reference-label
@@ -576,7 +517,6 @@ inputs:
       - boolean
     doc: Indicates that reporter ions are being used. As such, we only analyze a
       single scan.
-    default: false
     inputBinding:
       position: 101
       prefix: --reporter-ion
@@ -586,7 +526,6 @@ inputs:
       - boolean
     doc: If multiple ions are set (in the style of 93.15,105.15), all ions must 
       be found in a scan.
-    default: false
     inputBinding:
       position: 101
       prefix: --require-all-ions
@@ -596,7 +535,6 @@ inputs:
       - boolean
     doc: Will resume from the last run. Only works if not directing output to 
       stdout.
-    default: false
     inputBinding:
       position: 101
       prefix: --resume
@@ -605,7 +543,6 @@ inputs:
       - 'null'
       - string
     doc: The column indicating the retention time.
-    default: Retention time
     inputBinding:
       position: 101
       prefix: --rt
@@ -615,7 +552,6 @@ inputs:
       - float
     doc: The maximal deviation of a scan's retention time to be considered for 
       analysis.
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --rt-window
@@ -625,7 +561,6 @@ inputs:
       - float
     doc: How much of the data to sample. Enter as a decimal (ie 1.0 for 
       everything, 0.1 for 10%)
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --sample
@@ -635,7 +570,6 @@ inputs:
       - type: array
         items: string
     doc: The scan(s) to limit quantification to.
-    default: None
     inputBinding:
       position: 101
       prefix: --scan
@@ -644,7 +578,6 @@ inputs:
       - 'null'
       - string
     doc: The column indicating the scan corresponding to the ion.
-    default: MS2 Spectrum ID
     inputBinding:
       position: 101
       prefix: --scan-col
@@ -655,7 +588,6 @@ inputs:
         items: File
     doc: The scan file(s) for the raw data. If not provided, assumed to be in 
       the directory of the processed/tabbed/peaklist file.
-    default: None
     inputBinding:
       position: 101
       prefix: --scan-file
@@ -664,7 +596,6 @@ inputs:
       - 'null'
       - Directory
     doc: The directory containing raw data.
-    default: None
     inputBinding:
       position: 101
       prefix: --scan-file-dir
@@ -673,7 +604,6 @@ inputs:
       - 'null'
       - File
     doc: A search output or Proteome Discoverer msf file
-    default: None
     inputBinding:
       position: 101
       prefix: --search-file
@@ -682,7 +612,6 @@ inputs:
       - 'null'
       - boolean
     doc: If true, skip scans with missing files in the mapping.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip
@@ -691,7 +620,6 @@ inputs:
       - 'null'
       - float
     doc: Filter peaks below a given SNR.
-    default: 0
     inputBinding:
       position: 101
       prefix: --snr-filter
@@ -700,7 +628,6 @@ inputs:
       - 'null'
       - string
     doc: The column indicating the raw file the scan is contained in.
-    default: Raw file
     inputBinding:
       position: 101
       prefix: --source
@@ -709,7 +636,6 @@ inputs:
       - 'null'
       - boolean
     doc: Assume there is spread of the isotopic label.
-    default: false
     inputBinding:
       position: 101
       prefix: --spread
@@ -718,7 +644,6 @@ inputs:
       - 'null'
       - int
     doc: Threads to run
-    default: 1
     inputBinding:
       position: 101
       prefix: -p
@@ -727,7 +652,6 @@ inputs:
       - 'null'
       - File
     doc: A delimited file containing scan information.
-    default: None
     inputBinding:
       position: 101
       prefix: --tsv
@@ -737,7 +661,6 @@ inputs:
       - int
     doc: This specifies how many consequtive scans an ion can be missing for 
       until it is no longer considered.
-    default: 1
     inputBinding:
       position: 101
       prefix: --xic-missing-ion-count
@@ -746,7 +669,6 @@ inputs:
       - 'null'
       - boolean
     doc: Prior to fitting, smooth data with a Gaussian filter.
-    default: false
     inputBinding:
       position: 101
       prefix: --xic-smooth
@@ -756,7 +678,6 @@ inputs:
       - float
     doc: When the SNR of the XIC falls below this, stop searching for more data.
       Useful for escaping from noisy shoulders and contaminants.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --xic-snr
@@ -767,7 +688,6 @@ inputs:
     doc: When the number of scans in a given direction from the initial 
       datapoint of an XIC passes this, stop. Default is -1 (disabled). Useful 
       for removing contaminants
-    default: -1
     inputBinding:
       position: 101
       prefix: --xic-window-size
@@ -776,7 +696,6 @@ inputs:
       - 'null'
       - float
     doc: Peaks below a given z-score are excluded.
-    default: 0
     inputBinding:
       position: 101
       prefix: --zscore-filter

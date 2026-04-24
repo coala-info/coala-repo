@@ -38,7 +38,6 @@ inputs:
     doc: "Zero-based column of qseqid in similarity search result [default: 0]\n \
       \                                               Change if different format than
       (-outfmt '6')"
-    default: 0
     inputBinding:
       position: 101
       prefix: --hit_column_qseqid
@@ -49,7 +48,6 @@ inputs:
     doc: "Zero-based column of (bit)score in similarity search result [default: 11]\n\
       \                                                Change if different format
       than (-outfmt '6')"
-    default: 11
     inputBinding:
       position: 101
       prefix: --hit_column_score
@@ -60,7 +58,6 @@ inputs:
     doc: "Zero-based column of sseqid in similarity search result [default: 1]\n \
       \                                               Change if different format than
       (-outfmt '6')"
-    default: 1
     inputBinding:
       position: 101
       prefix: --hit_column_sseqid

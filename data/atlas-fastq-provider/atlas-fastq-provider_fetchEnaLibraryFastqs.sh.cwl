@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Access type (public or private)
-    default: public
     inputBinding:
       position: 101
       prefix: -p
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: Read pairing type (SINGLE or PAIRED)
-    default: PAIRED
     inputBinding:
       position: 101
       prefix: -n
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Retrieval method (e.g., 'wget', 'dir')
-    default: wget
     inputBinding:
       position: 101
       prefix: -m

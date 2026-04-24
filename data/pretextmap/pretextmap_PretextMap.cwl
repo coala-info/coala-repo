@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality
-    default: 10
     inputBinding:
       position: 102
   - id: sortby
@@ -53,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: Sort by length, name, or nosort
-    default: nosort
     inputBinding:
       position: 102
   - id: sortorder
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: 'Sort order: descend or ascend'
-    default: ascend
     inputBinding:
       position: 102
   - id: thirdparty

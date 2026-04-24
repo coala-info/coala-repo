@@ -16,7 +16,6 @@ inputs:
         items: string
     doc: Outgroup(s) to root the tree with, separated by comma. Defaults to the 
       midpoint outgroup.
-    default: the midpoint outgroup
     inputBinding:
       position: 2
 outputs:

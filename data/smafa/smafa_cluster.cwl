@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum divergence to report hits for, for each sequence
-    default: not used
     inputBinding:
       position: 101
       prefix: --max-divergence

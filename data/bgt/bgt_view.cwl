@@ -114,7 +114,6 @@ inputs:
       - 'null'
       - string
     doc: Region
-    default: all
     inputBinding:
       position: 102
       prefix: -r
@@ -123,7 +122,6 @@ inputs:
       - 'null'
       - string
     doc: Samples list (,sample1,sample2 or a file or expr; see Notes below)
-    default: all
     inputBinding:
       position: 102
       prefix: -s

@@ -32,7 +32,6 @@ inputs:
       - string
     doc: "if converting a generic file you can specify what a comment line starts
       with (default: '#')"
-    default: '#'
     inputBinding:
       position: 102
       prefix: --comment
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: "if converting a generic file you can specify a delimiter (default: '\\t')"
-    default: \t
     inputBinding:
       position: 102
       prefix: --delimiter
@@ -82,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: name of file out (default is - for stdout)
-    default: '-'
     inputBinding:
       position: 102
       prefix: --output

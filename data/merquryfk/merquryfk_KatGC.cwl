@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: height in inches of plots
-    default: 4.5
     inputBinding:
       position: 102
       prefix: -h
@@ -56,7 +55,6 @@ inputs:
       - float
     doc: max x as a real-valued multiple of x* with max count 'peak' away from 
       the origin
-    default: x2.1
     inputBinding:
       position: 102
       prefix: -x
@@ -73,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 4
     inputBinding:
       position: 102
       prefix: -T
@@ -82,7 +79,6 @@ inputs:
       - 'null'
       - float
     doc: width in inches of plots
-    default: 6.0
     inputBinding:
       position: 102
       prefix: -w

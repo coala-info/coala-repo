@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Controls use of Affine Gap Scoring (Y|N)
-    default: Y
     inputBinding:
       position: 101
       prefix: -AGS
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Bandwidth
-    default: 5
     inputBinding:
       position: 101
       prefix: -BW
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Breakpoint penalty
-    default: 5
     inputBinding:
       position: 101
       prefix: -BP
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Gap extension cost
-    default: 2
     inputBinding:
       position: 101
       prefix: -GEC
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Gap open cost
-    default: 5
     inputBinding:
       position: 101
       prefix: -GOC
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: Controls inclusion of "secondary" alignments (Y|N)
-    default: N
     inputBinding:
       position: 101
       prefix: -FBS
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Match score
-    default: 1
     inputBinding:
       position: 101
       prefix: -MS
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum desert length
-    default: 50
     inputBinding:
       position: 101
       prefix: -MD
@@ -95,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum gap size
-    default: 50
     inputBinding:
       position: 101
       prefix: -G
@@ -104,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum genomic distance penalty
-    default: 5
     inputBinding:
       position: 101
       prefix: -MGDP
@@ -113,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of hits for alignment
-    default: 650
     inputBinding:
       position: 101
       prefix: -H
@@ -122,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of hits for indexing
-    default: 65525
     inputBinding:
       position: 101
       prefix: -H
@@ -131,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum match length
-    default: 25
     inputBinding:
       position: 101
       prefix: -M
@@ -148,7 +135,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percent identity
-    default: 0.9
     inputBinding:
       position: 101
       prefix: -P
@@ -157,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -166,7 +151,6 @@ inputs:
       - 'null'
       - string
     doc: Controls use of the Optimal Query Coverage Algorithm (Y|N)
-    default: N
     inputBinding:
       position: 101
       prefix: -OQC
@@ -199,7 +183,6 @@ inputs:
       - 'null'
       - float
     doc: Percent reciprocal length for secondary alignments
-    default: 0.9
     inputBinding:
       position: 101
       prefix: -PRL
@@ -208,7 +191,6 @@ inputs:
       - 'null'
       - float
     doc: Percent similar score for secondary alignments
-    default: 0.9
     inputBinding:
       position: 101
       prefix: -PSS
@@ -225,7 +207,6 @@ inputs:
       - 'null'
       - int
     doc: Replacement cost
-    default: 3
     inputBinding:
       position: 101
       prefix: -RC
@@ -234,7 +215,6 @@ inputs:
       - 'null'
       - int
     doc: Skip-distance for indexing
-    default: 1
     inputBinding:
       position: 101
       prefix: -S
@@ -243,7 +223,6 @@ inputs:
       - 'null'
       - int
     doc: Word length for indexing
-    default: 15
     inputBinding:
       position: 101
       prefix: -L
@@ -252,7 +231,6 @@ inputs:
       - 'null'
       - int
     doc: X-dropoff value
-    default: 25
     inputBinding:
       position: 101
       prefix: -X

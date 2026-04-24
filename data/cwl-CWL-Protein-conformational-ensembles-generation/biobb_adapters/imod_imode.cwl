@@ -45,7 +45,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_dat_path
-    default: system.dat
 
   config:
     label: Advanced configuration options for biobb_flexdyn imod_imode

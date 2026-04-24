@@ -88,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: DPI for the reconstruction plot pdf. Default is 90.
-    default: 90
     inputBinding:
       position: 103
       prefix: --dpi_rec
@@ -155,7 +154,6 @@ inputs:
     doc: "Determines the minimum evidence level for the\nCRISPRCasFinder results to
       be included in the\nreconstruction. The evidence level is given in the\nCRISPRCasFinder
       output. The default (4) is the highest\npossible value."
-    default: 4
     inputBinding:
       position: 103
       prefix: --min_evidence_level
@@ -205,7 +203,6 @@ inputs:
       Otherwise, the orientation is set to\nthe orientation with the higher likelihood.
       The\ndecision boundary is given in logscale.The default\nvalue 5 was determined
       empirically and works well for\nthe tested datasets."
-    default: 5
     inputBinding:
       position: 103
       prefix: --orientation_decision_boundary
@@ -335,7 +332,6 @@ inputs:
       - int
     doc: "Verbosity level: 0: no output, 1: minimal output, 2:\nmaximal output (default
       1)."
-    default: 1
     inputBinding:
       position: 103
       prefix: --verbosity

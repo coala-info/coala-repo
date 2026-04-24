@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: font scale
-    default: 0.400000006
     inputBinding:
       position: 102
       prefix: --ftscale
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: min. number of matches per region
-    default: 1
     inputBinding:
       position: 102
       prefix: --matches
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: min. sequence size to include
-    default: 0
     inputBinding:
       position: 102
       prefix: --size
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: 'height of the plot [0: best fit]'
-    default: 0
     inputBinding:
       position: 102
       prefix: --height
@@ -66,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: 'width of the plot [0: best fit]'
-    default: 0
     inputBinding:
       position: 102
       prefix: --width
@@ -75,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: read to display
-    default: read_name
     inputBinding:
       position: 102
       prefix: --read
@@ -100,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: track height in pixels
-    default: 15
     inputBinding:
       position: 102
       prefix: --trackheight
@@ -109,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: window size to cluster nearby matches
-    default: 10000
     inputBinding:
       position: 102
       prefix: --winsize

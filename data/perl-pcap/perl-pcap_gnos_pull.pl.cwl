@@ -62,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: The base URL to retrieve jsonl file from
-    default: http://pancancer.info/gnos_metadata/latest/
     inputBinding:
       position: 101
       prefix: --url

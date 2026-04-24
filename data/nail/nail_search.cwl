@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: 'Cloud search parameter α: local score pruning threshold'
-    default: 10
     inputBinding:
       position: 103
       prefix: -A
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: 'Cloud search parameter β: global score pruning threshold'
-    default: 16
     inputBinding:
       position: 103
       prefix: -B
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: 'Cloud search parameter γ: at minimum, compute N anti-diagonals'
-    default: 5
     inputBinding:
       position: 103
       prefix: -G
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - float
     doc: 'Cloud search threshold: filter hits with P-value > X'
-    default: 0.001
     inputBinding:
       position: 103
       prefix: -C
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: 'Final reporting threshold: filter hits with E-value > X'
-    default: 10
     inputBinding:
       position: 103
       prefix: -E
@@ -80,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: 'Forward filter threshold: filter hits with P-value > X'
-    default: 0.0001
     inputBinding:
       position: 103
       prefix: -F
@@ -89,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: 'MMseqs2 prefilter: k-mer length (0: automatically set to optimum)'
-    default: 0
     inputBinding:
       position: 103
       prefix: --mmseqs-k
@@ -98,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: 'MMseqs2 prefilter: k-mer threshold for generating similar k-mer lists'
-    default: 80
     inputBinding:
       position: 103
       prefix: --mmseqs-k-score
@@ -108,7 +100,6 @@ inputs:
       - int
     doc: 'MMseqs2 prefilter: Maximum results per query sequence allowed to pass the
       prefilter'
-    default: 1000
     inputBinding:
       position: 103
       prefix: --mmseqs-max-seqs
@@ -118,7 +109,6 @@ inputs:
       - int
     doc: 'MMseqs2 prefilter: Accept only matches with ungapped alignment score above
       threshold'
-    default: 15
     inputBinding:
       position: 103
       prefix: --mmseqs-min-ungapped-score
@@ -167,7 +157,6 @@ inputs:
       - 'null'
       - float
     doc: 'Seeding filter threshold: filter hits with P-value > X'
-    default: 0.01
     inputBinding:
       position: 103
       prefix: -S
@@ -184,7 +173,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads that nail will use
-    default: 8
     inputBinding:
       position: 103
       prefix: -t
@@ -193,7 +181,6 @@ inputs:
       - 'null'
       - Directory
     doc: The directory where intermediate files will be placed
-    default: tmp/
     inputBinding:
       position: 103
       prefix: --tmp-dir

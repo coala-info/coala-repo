@@ -58,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: countthreshold replicatethreshold
-    default: 2,5
     inputBinding:
       position: 102
       prefix: -Nr
@@ -67,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads used for computation
-    default: 2
     inputBinding:
       position: 102
       prefix: --threads
@@ -76,7 +74,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable circRNA detection from Chimeric.out.junction files
-    default: false
     inputBinding:
       position: 102
       prefix: --detect
@@ -85,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum base pair tolerance of reads extending over junction sites
-    default: 5
     inputBinding:
       position: 102
       prefix: --endTol
@@ -115,7 +111,6 @@ inputs:
       - boolean
     doc: If specified, filter also by gene annotation (candidates are not 
       allowed to span more than one gene)
-    default: false
     inputBinding:
       position: 102
       prefix: --filterbygene
@@ -125,7 +120,6 @@ inputs:
       - boolean
     doc: If specified, the program will count host gene expression given circRNA
       coordinates
-    default: false
     inputBinding:
       position: 102
       prefix: --gene
@@ -134,7 +128,6 @@ inputs:
       - 'null'
       - boolean
     doc: Temporary files will not be deleted
-    default: false
     inputBinding:
       position: 102
       prefix: --keep-temp
@@ -143,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length in base pairs to check for repetitive regions
-    default: 50
     inputBinding:
       position: 102
       prefix: --Ln
@@ -172,7 +164,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum length of candidate circRNAs (including introns)
-    default: 1000000
     inputBinding:
       position: 102
       prefix: --maximum
@@ -181,7 +172,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum length of candidate circRNAs (including introns)
-    default: 30
     inputBinding:
       position: 102
       prefix: --minimum
@@ -198,7 +188,6 @@ inputs:
       - 'null'
       - Directory
     doc: DCC output directory
-    default: .
     inputBinding:
       position: 102
       prefix: --output
@@ -208,7 +197,6 @@ inputs:
       - boolean
     doc: Has to be specified if the paired end mates have also been mapped 
       separately.If specified, -mt1 and -mt2 must also be provided
-    default: false
     inputBinding:
       position: 102
       prefix: --PE-independent
@@ -234,7 +222,6 @@ inputs:
       - 'null'
       - boolean
     doc: Must be enabled for stranded libraries, aka 'fr-secondstrand'
-    default: false
     inputBinding:
       position: 102
       prefix: -ss
@@ -243,7 +230,6 @@ inputs:
       - 'null'
       - Directory
     doc: DCC temporary directory
-    default: _tmp_DCC/
     inputBinding:
       position: 102
       prefix: --temp

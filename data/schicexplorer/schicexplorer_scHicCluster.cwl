@@ -13,7 +13,6 @@ inputs:
       - 'null'
       - boolean
     doc: Computes PCA on top of a k-nn. Can improve the cluster result.
-    default: false
     inputBinding:
       position: 101
       prefix: --additionalPCA
@@ -23,7 +22,6 @@ inputs:
       - string
     doc: A two column list, first colum the cell names as stored in the scool 
       file, second column the associated coloring for the scatter plot
-    default: None
     inputBinding:
       position: 101
       prefix: --cell_coloring_batch
@@ -33,7 +31,6 @@ inputs:
       - string
     doc: A two column list, first colum the cell names as stored in the scool 
       file, second column the associated coloring for the scatter plot
-    default: None
     inputBinding:
       position: 101
       prefix: --cell_coloring_type
@@ -43,7 +40,6 @@ inputs:
       - type: array
         items: string
     doc: List of to be plotted chromosomes
-    default: None
     inputBinding:
       position: 101
       prefix: --chromosomes
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: Algorithm to cluster the Hi-C matrices
-    default: spectral
     inputBinding:
       position: 101
       prefix: --clusterMethod
@@ -62,7 +57,6 @@ inputs:
       - string
     doc: 'Color map to use for the heatmap, supported are the categorical colormaps
       from holoviews: http://holoviews.org/user_guide/Colormaps.html'
-    default: glasbey_dark
     inputBinding:
       position: 101
       prefix: --colorMap
@@ -72,7 +66,6 @@ inputs:
       - string
     doc: Create a scatter plot for the clustering, the x and y are the first and
       second principal component of the computed k-nn graph.
-    default: None
     inputBinding:
       position: 101
       prefix: --createScatterPlot
@@ -81,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Dimension reduction methods, knn with euclidean distance, pca
-    default: none
     inputBinding:
       position: 101
       prefix: --dimensionReductionMethod
@@ -91,7 +83,6 @@ inputs:
       - int
     doc: The number of dimensions from the PCA matrix that should be considered 
       for clustering. Can improve the cluster result.
-    default: 20
     inputBinding:
       position: 101
       prefix: --dimensionsPCA
@@ -100,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: The dpi of the scatter plot.
-    default: 300
     inputBinding:
       position: 101
       prefix: --dpi
@@ -109,7 +99,6 @@ inputs:
       - 'null'
       - string
     doc: Fontsize in the plot for x and y axis.
-    default: (15, 6)
     inputBinding:
       position: 101
       prefix: --figuresize
@@ -118,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: Fontsize in the plot for x and y axis.
-    default: 15
     inputBinding:
       position: 101
       prefix: --fontsize
@@ -128,7 +116,6 @@ inputs:
       - boolean
     doc: This option loads only the intra-chromosomal contacts. Can improve the 
       cluster result if data is very noisy.
-    default: false
     inputBinding:
       position: 101
       prefix: --intraChromosomalContactsOnly
@@ -138,7 +125,6 @@ inputs:
       - string
     doc: Return the overlap statistics if --cell_coloring_type is given as a 
       latex table.
-    default: None
     inputBinding:
       position: 101
       prefix: --latexTable
@@ -154,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: Number of to be computed clusters
-    default: 12
     inputBinding:
       position: 101
       prefix: --numberOfClusters
@@ -165,7 +150,6 @@ inputs:
     doc: Number of to be used computed nearest neighbors for the knn graph. 
       Default is either the default value or the number of the provided cells, 
       whatever is smaller.
-    default: 100
     inputBinding:
       position: 101
       prefix: --numberOfNearestNeighbors
@@ -174,7 +158,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads. Using the python multiprocessing module.
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads

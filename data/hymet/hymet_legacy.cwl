@@ -9,7 +9,6 @@ inputs:
   - id: input_directory
     type: Directory
     doc: Please enter the path to the input directory (containing .fna files)
-    default: /usr/local/share/hymet
     inputBinding:
       position: 1
 outputs:

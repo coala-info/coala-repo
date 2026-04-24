@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: number of records loaded to the memory at once
-    default: 4096
     inputBinding:
       position: 102
       prefix: --batchsize
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 8
     inputBinding:
       position: 102
       prefix: --threads

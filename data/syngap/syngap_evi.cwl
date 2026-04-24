@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: The weight of three indexes in EVI calulating (ML:FC:PCC)
-    default: 1:1:4
     inputBinding:
       position: 101
       prefix: --weight

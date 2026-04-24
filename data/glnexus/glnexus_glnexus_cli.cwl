@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: 'configuration preset name or .yml filename (default: gatk)'
-    default: gatk
     inputBinding:
       position: 102
       prefix: --config
@@ -59,7 +58,6 @@ inputs:
       - 'null'
       - Directory
     doc: "scratch directory path (mustn't already exist; default: ./GLnexus.DB)"
-    default: ./GLnexus.DB
     inputBinding:
       position: 102
       prefix: --dir

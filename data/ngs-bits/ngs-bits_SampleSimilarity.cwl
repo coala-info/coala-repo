@@ -11,7 +11,6 @@ inputs:
       - string
     doc: "Genome build used to generate the input (BAM mode).\n                  \
       \    Valid: 'hg19,hg38'"
-    default: hg38
     inputBinding:
       position: 101
       prefix: -build
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print debug output.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -debug
@@ -30,7 +28,6 @@ inputs:
       - boolean
     doc: Includes gonosomes into calculation (by default only variants on 
       autosomes are considered).
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -include_gonosomes
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - boolean
     doc: Support long reads (BAM mode).
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -long_read
@@ -58,7 +54,6 @@ inputs:
       - int
     doc: The maximum number of high-coverage SNPs to extract from BAM/CRAM. 0 
       means unlimited (BAM mode).
-    default: 5000
     inputBinding:
       position: 101
       prefix: -max_snps
@@ -67,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage to consider a SNP for the analysis (BAM mode).
-    default: 30
     inputBinding:
       position: 101
       prefix: -min_cov
@@ -76,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: "Mode (input format).\n                      Valid: 'vcf,gsvar,bam'"
-    default: vcf
     inputBinding:
       position: 101
       prefix: -mode
@@ -85,7 +78,6 @@ inputs:
       - 'null'
       - File
     doc: Reference genome for CRAM support (mandatory if CRAM is used).
-    default: ''
     inputBinding:
       position: 101
       prefix: -ref
@@ -94,7 +86,6 @@ inputs:
       - 'null'
       - File
     doc: Restrict similarity calculation to variants in target region.
-    default: ''
     inputBinding:
       position: 101
       prefix: -roi
@@ -105,7 +96,6 @@ inputs:
     doc: Used pre-defined high-confidence coding region of hg38. Speeds up 
       calculations, especially for WGS. Also makes scores comparable when mixing
       WES and WGS or different WES kits.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -roi_hg38_wes_wgs

@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: filters variants by negative binomial loge likelihood
-    default: 3.84
     inputBinding:
       position: 102
       prefix: --filter_variants
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - float
     doc: specifies q value cut-off for variant detection
-    default: '1.0e-3'
     inputBinding:
       position: 102
       prefix: --max_qvalue
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - float
     doc: specifies minimum variant frequency
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --min_variant_freq
@@ -89,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: specifies seed for numpy random number generator
-    default: 23724839 applied after random filtering
     inputBinding:
       position: 102
       prefix: --random_seed

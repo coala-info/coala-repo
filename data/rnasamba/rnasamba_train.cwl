@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: number of samples per gradient update.
-    default: 128
     inputBinding:
       position: 104
       prefix: --batch_size
@@ -36,7 +35,6 @@ inputs:
     doc: number of epochs after lowest validation loss before stopping training 
       (a fraction of 0.1 of the training set is set apart for validation and the
       model with the lowest validation loss will be saved).
-    default: 0
     inputBinding:
       position: 104
       prefix: --early_stopping
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: number of epochs to train the model.
-    default: 40
     inputBinding:
       position: 104
       prefix: --epochs
@@ -55,7 +52,6 @@ inputs:
       - int
     doc: print the progress of the training. 0 = silent, 1 = current step, 2 = 
       progress bar, 3 = one line per epoch.
-    default: 0
     inputBinding:
       position: 104
       prefix: --verbose

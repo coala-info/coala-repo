@@ -50,7 +50,6 @@ inputs:
       - int
     doc: Maximum number of median absolute deviations below the median of the 
       bin sums distribution allowed to consider detectable bins.
-    default: 5
     inputBinding:
       position: 104
       prefix: --n-mads
@@ -69,7 +68,6 @@ inputs:
     doc: 'Normalization / balancing behaviour. auto: weights present in the cool file
       are used. raw: raw contact values are used. force: recompute weights and overwrite
       existing values. raw[default: auto]'
-    default: auto
     inputBinding:
       position: 104
       prefix: --norm
@@ -79,7 +77,6 @@ inputs:
       - string
     doc: 'Which pattern to detect. This will use preset configurations for the given
       pattern. Possible values are: loops, loops_small, borders, hairpins and centromeres.'
-    default: loops
     inputBinding:
       position: 104
       prefix: --pattern
@@ -89,7 +86,6 @@ inputs:
       - string
     doc: Maximum percentage of non-detectable pixels (nan) in windows allowed to
       report patterns.
-    default: auto
     inputBinding:
       position: 104
       prefix: --perc-undetected
@@ -99,7 +95,6 @@ inputs:
       - string
     doc: Maximum percentage of empty (0) pixels in windows allowed to report 
       patterns.
-    default: auto
     inputBinding:
       position: 104
       prefix: --perc-zero
@@ -110,7 +105,6 @@ inputs:
     doc: If greater than 1, subsample INT contacts from the matrix. If between 0
       and 1, subsample a proportion of contacts instead. Useful when comparing 
       matrices with different coverages.
-    default: no
     inputBinding:
       position: 104
       prefix: --subsample
@@ -119,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use in parallel.
-    default: 1
     inputBinding:
       position: 104
       prefix: --threads
@@ -140,7 +133,6 @@ inputs:
     doc: File format used to store individual windows around each pattern. 
       Window order matches patterns inside the associated text file. Possible 
       formats are json and npy.
-    default: json
     inputBinding:
       position: 104
       prefix: --win-fmt
@@ -152,7 +144,6 @@ inputs:
       correlations. The pattern kernel will be resized to match this size. 
       Linear linear interpolation is used to fill between pixels. If not 
       specified, the default kernel size will be used instead.
-    default: auto
     inputBinding:
       position: 104
       prefix: --win-size

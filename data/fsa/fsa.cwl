@@ -17,7 +17,6 @@ inputs:
       - float
     doc: randomized fraction of all (n choose 2) pairs of sequences to consider 
       during alignment inference (default is 1)
-    default: 1
     inputBinding:
       position: 102
       prefix: --alignment-fraction
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: 'Tamura-Nei rate alpha_R (transition: purine) (default is 1.3)'
-    default: 1.3
     inputBinding:
       position: 102
       prefix: --alphar
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: 'Tamura-Nei rate alpha_Y (transition: pyrimidine) (default is 1.3)'
-    default: 1.3
     inputBinding:
       position: 102
       prefix: --alphay
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: Tamura-Nei rate beta (transversion) (default is 1)
-    default: 1
     inputBinding:
       position: 102
       prefix: --beta
@@ -71,7 +67,6 @@ inputs:
       - int
     doc: use --degree number of pairwise comparisons between closest sequences 
       (default is 0)
-    default: 0
     inputBinding:
       position: 102
       prefix: --degree
@@ -81,7 +76,6 @@ inputs:
       - boolean
     doc: (default) enable dynamic edge re-weighting (--nodynamicweights to 
       disable)
-    default: true
     inputBinding:
       position: 102
       prefix: --dynamicweights
@@ -116,7 +110,6 @@ inputs:
       - float
     doc: gap factor; 0 for highest sensitivity (the internal effective minimum 
       is 0.01); >1 for higher specificity (default is 1)
-    default: 1
     inputBinding:
       position: 102
       prefix: --gapfactor
@@ -150,7 +143,6 @@ inputs:
       - boolean
     doc: use two sets of indel states in Pair HMM (use --noindel2 to use 1 set 
       only)
-    default: true
     inputBinding:
       position: 102
       prefix: --indel2
@@ -168,7 +160,6 @@ inputs:
       - boolean
     doc: (default for proteins) estimate emission probabilities averaged over 
       all sequences (--nolearnemit-all to disable)
-    default: true
     inputBinding:
       position: 102
       prefix: --learnemit-all
@@ -178,7 +169,6 @@ inputs:
       - boolean
     doc: (default for DNA and RNA) estimate emission probabilities for each pair
       of sequences (--nolearnemit-bypair to disable)
-    default: true
     inputBinding:
       position: 102
       prefix: --learnemit-bypair
@@ -221,7 +211,6 @@ inputs:
       - 'null'
       - boolean
     doc: log on standard error (default)
-    default: true
     inputBinding:
       position: 102
       prefix: --logerr
@@ -246,7 +235,6 @@ inputs:
       - 'null'
       - boolean
     doc: add XML timestamps (--nologxml to disable)
-    default: true
     inputBinding:
       position: 102
       prefix: --logxml
@@ -255,7 +243,6 @@ inputs:
       - 'null'
       - int
     doc: maximum RAM to use (in megabytes) (default is 51188)
-    default: 51188
     inputBinding:
       position: 102
       prefix: --maxram
@@ -264,7 +251,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of iterations of EM (default is 3)
-    default: 3
     inputBinding:
       position: 102
       prefix: --maxrounds
@@ -308,7 +294,6 @@ inputs:
       - float
     doc: minimum fractional increase in log-likelihood per round of EM (default 
       is 0.1)
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --mininc
@@ -317,7 +302,6 @@ inputs:
       - 'null'
       - float
     doc: minimum posterior probability to store (default is 0.01)
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --minprob
@@ -327,7 +311,6 @@ inputs:
       - int
     doc: 'initial substitution model: 0 = Jukes-Cantor, 1 = Tamura-Nei / BLOSUM62-like
       (proteins) (default is 1)'
-    default: 1
     inputBinding:
       position: 102
       prefix: --model
@@ -337,7 +320,6 @@ inputs:
       - int
     doc: build --mst-max maximum spanning trees on input sequences for pairwise 
       comparisons (default is 0)
-    default: 0
     inputBinding:
       position: 102
       prefix: --mst-max
@@ -347,7 +329,6 @@ inputs:
       - int
     doc: build --mst-min minimum spanning trees on input sequences for pairwise 
       comparisons (default is 3)
-    default: 3
     inputBinding:
       position: 102
       prefix: --mst-min
@@ -357,7 +338,6 @@ inputs:
       - int
     doc: build --mst-palm minimum spanning palm trees on input sequences for 
       pairwise comparisons (default is 0)
-    default: 0
     inputBinding:
       position: 102
       prefix: --mst-palm
@@ -448,7 +428,6 @@ inputs:
       - 'null'
       - int
     doc: number of iterative refinement steps (default is unlimited; 0 for none)
-    default: unlimited
     inputBinding:
       position: 102
       prefix: --refinement
@@ -474,7 +453,6 @@ inputs:
       - boolean
     doc: (default) regularize learned emission and gap probabilities with 
       Dirichlet prior (--noregularize to disable)
-    default: true
     inputBinding:
       position: 102
       prefix: --regularize
@@ -500,7 +478,6 @@ inputs:
       - 'null'
       - float
     doc: Jukes-Cantor/Tamura-Nei evolutionary time parameter (default is 0.4)
-    default: 0.4
     inputBinding:
       position: 102
       prefix: --time

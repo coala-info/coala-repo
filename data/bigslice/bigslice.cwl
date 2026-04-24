@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: 'Split features extraction into chunks of N BGCs (default: 100)'
-    default: 100
     inputBinding:
       position: 102
       prefix: --extraction_chunk_size
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: 'Split biosyn_pfam scanning into chunks of N BGCs (default: 100)'
-    default: 100
     inputBinding:
       position: 102
       prefix: --hmmscan_chunk_size
@@ -62,7 +60,6 @@ inputs:
       - int
     doc: "Takes N-best GCF hits for each BGC's membership assignment procedure (default:
       1)."
-    default: 1
     inputBinding:
       position: 102
       prefix: --n_ranks
@@ -81,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: 'The number of parallel jobs to run (default: 20).'
-    default: 20
     inputBinding:
       position: 102
       prefix: --num_threads
@@ -90,7 +86,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Path to the HMM libraries (default: /usr/local/bin/bigslice-models).'
-    default: /usr/local/bin/bigslice-models
     inputBinding:
       position: 102
       prefix: --program_db_folder
@@ -146,7 +141,6 @@ inputs:
       - 'null'
       - int
     doc: 'Split sub_pfam scanning into chunks of N BGCs (default: 100)'
-    default: 100
     inputBinding:
       position: 102
       prefix: --subpfam_chunk_size
@@ -157,7 +151,6 @@ inputs:
     doc: "Clustering threshold (T) used in GCF models building (BIRCH algorithm) and
       membership assignment [0-1.2]. Mutually exclusive with --threshold_pct, use
       '-1' to turn off this parameter (default: 0.4)."
-    default: 0.4
     inputBinding:
       position: 102
       prefix: --threshold
@@ -169,7 +162,6 @@ inputs:
       distances between the data, taking the N-th percentile value as the threshold.
       Mutually exclusive with --threshold, use '-1' to turn off this parameter (default:
       -1)."
-    default: -1
     inputBinding:
       position: 102
       prefix: --threshold_pct

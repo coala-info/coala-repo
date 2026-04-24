@@ -48,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Sample name column in PED
-    default: 2
     inputBinding:
       position: 102
       prefix: -c
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - Directory
     doc: Tmp working directory
-    default: ./
     inputBinding:
       position: 102
       prefix: -t

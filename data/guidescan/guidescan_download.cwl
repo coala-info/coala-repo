@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: Endpoint for Download API
-    default: http://guidescan.com:8000/download
     inputBinding:
       position: 101
       prefix: --download-url
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output Directory
-    default: .
     inputBinding:
       position: 101
       prefix: --output-directory

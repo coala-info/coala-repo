@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: The NCBI database to query (e.g., nr, nt, pdb, sw,瞽).
-    default: nr
     inputBinding:
       position: 102
       prefix: --database
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Output format (newick, fasta, phylip).
-    default: newick
     inputBinding:
       position: 102
       prefix: --format

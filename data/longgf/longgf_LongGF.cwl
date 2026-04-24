@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: 'Pseudogene filter: 0 (default)/1/other (no filter)'
-    default: '0'
     inputBinding:
       position: 6
   - id: secondary_alignment
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: 'Secondary alignment filter: 0 (default)'
-    default: '0'
     inputBinding:
       position: 7
   - id: min_sup_read
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum supporting read count
-    default: 2
     inputBinding:
       position: 8
   - id: output_flag
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Output flag
-    default: 0
     inputBinding:
       position: 9
 outputs:

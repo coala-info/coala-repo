@@ -37,7 +37,6 @@ inputs:
       - int
     doc: Minimum size of partition to be considered. Attempts to merge 
       partitions that are too small with adjecent larger ones.
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-size
@@ -47,7 +46,6 @@ inputs:
       - int
     doc: Number of iterations for Leiden clustering. Negative values will run 
       the algorithm until a stable iteration is reached
-    default: -1
     inputBinding:
       position: 101
       prefix: --n-iterations
@@ -57,7 +55,6 @@ inputs:
       - string
     doc: Name used to format fasta header and first column of the result table. 
       Will be parsed from the structure file (if available) if set to 'auto'.
-    default: auto
     inputBinding:
       position: 101
       prefix: --name
@@ -76,7 +73,6 @@ inputs:
       - string
     doc: Objective function for Leiden clustering (not case sensitive) 
       [modularity|cpm]
-    default: modularity
     inputBinding:
       position: 101
       prefix: --objective-function
@@ -104,7 +100,6 @@ inputs:
       - float
     doc: Contrast thresold for the PAE values. This is a soft cut-off point to 
       increase the contrast between low and high PAE values.
-    default: 2
     inputBinding:
       position: 101
       prefix: --threshold

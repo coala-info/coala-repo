@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum false positive rate to use in filter.
-    default: 0.0075
     inputBinding:
       position: 102
       prefix: --fal_pos_rate
@@ -68,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: the interval to report file processing status
-    default: 10000000
     inputBinding:
       position: 102
       prefix: --interval
@@ -85,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size to use to create filter.
-    default: 25
     inputBinding:
       position: 102
       prefix: --kmer_size
@@ -103,7 +100,6 @@ inputs:
       - int
     doc: Set the number of expected elements. If set to 0 number is determined from
       sequences sizes within files.
-    default: 0
     inputBinding:
       position: 102
       prefix: --num_ele
@@ -131,7 +127,6 @@ inputs:
       - int
     doc: The number of hits tiling in second pass needed to jump Several tiles upon
       a miss. Progressive mode only.
-    default: 3
     inputBinding:
       position: 102
       prefix: --streak

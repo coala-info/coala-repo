@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - float
     doc: The probability to accept a proposal in Metropolis Hasting.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --acceptance-rate
@@ -24,7 +23,6 @@ inputs:
       - float
     doc: The Alpha in Beta-splitting model. Specify a value between [0, 1]. The 
       closer Alpha and Beta, the more balanced the tree.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --Alpha
@@ -34,7 +32,6 @@ inputs:
       - float
     doc: 'Whole amplification copy number distribution (geometric distribution parameter:
       the smaller, the more evenly distributed).'
-    default: 1
     inputBinding:
       position: 101
       prefix: --amp-num-geo-par
@@ -44,7 +41,6 @@ inputs:
       - float
     doc: The parameter for the Genometric distribution for the number of copies 
       amplified.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --amp-p
@@ -54,7 +50,6 @@ inputs:
       - float
     doc: The program uses the Beta-splitting model to generate the phylogenetic 
       tree. Specify a value between [0, 1].
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --Beta
@@ -75,7 +70,6 @@ inputs:
     doc: Number of the cells on a level of interest. Always greater than -F 
       treewidth. Treewidth controls the total number of clones whereas cell-num 
       controls the total number of cells sequenced at a certain tree depth.
-    default: 8
     inputBinding:
       position: 101
       prefix: --cell-num
@@ -84,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: The average number of copy number variations to be added on a branch.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cn-num
@@ -94,7 +87,6 @@ inputs:
       - int
     doc: The coverage of the bulk sequencing. The same for all levels. This 
       parameter is needed when -U is identified.
-    default: 30
     inputBinding:
       position: 101
       prefix: --cov-bulk
@@ -103,7 +95,6 @@ inputs:
       - 'null'
       - float
     doc: The average coverage of the sequence.
-    default: 0.02
     inputBinding:
       position: 101
       prefix: --coverage
@@ -112,7 +103,6 @@ inputs:
       - 'null'
       - float
     doc: The rate of deletion as compared to amplification.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --del-rate
@@ -122,7 +112,6 @@ inputs:
       - float
     doc: The rate of a node to disappear. Specify a value between [0, 1]. If all
       nodes have daughter nodes, take 0.
-    default: 0
     inputBinding:
       position: 101
       prefix: --Delta
@@ -132,7 +121,6 @@ inputs:
       - Directory
     doc: Location of simulated data. The program will remove the whole directory
       if it already exists. Otherwise it will create one.
-    default: test
     inputBinding:
       position: 101
       prefix: --directory
@@ -142,7 +130,6 @@ inputs:
       - float
     doc: The parameter for the Exponential distribution for copy number size, 
       beyond the minimum one.
-    default: 1e-06
     inputBinding:
       position: 101
       prefix: --exp-theta
@@ -151,7 +138,6 @@ inputs:
       - 'null'
       - string
     doc: The prefix of the alleles and read names.
-    default: ref
     inputBinding:
       position: 101
       prefix: --fa-prefix
@@ -161,7 +147,6 @@ inputs:
       - string
     doc: For parallele job submission. >= min, < max leaf index will be 
       processed. min.max. This counts leaf nodes from 0.
-    default: '-1'
     inputBinding:
       position: 101
       prefix: --leaf-index-range
@@ -178,7 +163,6 @@ inputs:
       can specify desired levels according to -G to know which levels are 
       available. If that is the case, use a very small -K to make sure the depth
       is not smaller than the biggest level you specify.
-    default: '-1'
     inputBinding:
       position: 101
       prefix: --levels
@@ -188,7 +172,6 @@ inputs:
       - float
     doc: The value on the x-axis of the point furthest from the diagonal on the 
       Lorenz curve imitating the real coverage uneveness.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --Lorenz-x
@@ -199,7 +182,6 @@ inputs:
     doc: The value on the y-axis of the Lorenz curve imitating the real coverage
       unevenness. x > y. The closer (x, y) to the diagonal, the better the 
       coverage evenness.
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --Lorenz-y
@@ -208,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum copy number size.
-    default: 200000
     inputBinding:
       position: 101
       prefix: --min-cn-size
@@ -217,7 +198,6 @@ inputs:
       - 'null'
       - int
     doc: The multiplier of the mean CNV on root.
-    default: 4
     inputBinding:
       position: 101
       prefix: --multi-root
@@ -227,7 +207,6 @@ inputs:
       - string
     doc: The standard output file, will be saved in output folder, just give the
       file name.
-    default: std.out
     inputBinding:
       position: 101
       prefix: --outfile
@@ -244,7 +223,6 @@ inputs:
       - 'null'
       - int
     doc: Read length for each read sequenced.
-    default: 35
     inputBinding:
       position: 101
       prefix: --readlen
@@ -255,7 +233,6 @@ inputs:
     doc: If this is on, each node represents one cell and there is no clonality 
       in the node. In this case tree_width will be the same as n (leaf num). 1 
       is on.
-    default: 0
     inputBinding:
       position: 101
       prefix: --single-cell-per-node
@@ -265,7 +242,6 @@ inputs:
       - int
     doc: If the alleles for all nodes have been made, the step can be skipped. 
       Make it 1 then.
-    default: 0
     inputBinding:
       position: 101
       prefix: --skip-first-step
@@ -274,7 +250,6 @@ inputs:
       - 'null'
       - float
     doc: 'The rate of the snv. snv-rate * branch-length = # snvs.'
-    default: 1
     inputBinding:
       position: 101
       prefix: --snv-rate
@@ -290,7 +265,6 @@ inputs:
       - int
     doc: The mean of the tree depth distribution. The final tree depth will be 
       sampled from a Gaussian with this mean and a fixed standard deviation.
-    default: 4
     inputBinding:
       position: 101
       prefix: --treedepth
@@ -301,7 +275,6 @@ inputs:
     doc: The standard deviation of the tree depth distribution. To get exactly 
       the tree depth defined by -F, use a very small standard deviation, e.g., 
       0.0001.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --treedepthsigma
@@ -311,7 +284,6 @@ inputs:
       - int
     doc: The mean of the tree width distribution. The final tree width will be 
       sampled from a Gaussian with this mean and a fixed standard deviation.
-    default: 8
     inputBinding:
       position: 101
       prefix: --treewidth
@@ -322,7 +294,6 @@ inputs:
     doc: The standard deviation of the tree width distribution. To get exactly 
       the tree width defined by -F, use a very small standard deviation, e.g., 
       0.0001.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --treewidthsigma
@@ -338,7 +309,6 @@ inputs:
       - 'null'
       - int
     doc: If there is whole chromosome amplification, 1 as yes.
-    default: 1
     inputBinding:
       position: 101
       prefix: --whole-amp
@@ -348,7 +318,6 @@ inputs:
       - int
     doc: Whole amplification copy number addition, which occurs to one allele at
       a time.
-    default: 1
     inputBinding:
       position: 101
       prefix: --whole-amp-num
@@ -357,7 +326,6 @@ inputs:
       - 'null'
       - float
     doc: 'Whole amplification rate: rate of an allele chosen to be amplified'
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --whole-amp-rate
@@ -368,7 +336,6 @@ inputs:
     doc: Within a window, the coverage is according to a Gaussian distribution. 
       Neighboring windows' read coverage is according to a Metropolis Hasting 
       process.
-    default: 200000
     inputBinding:
       position: 101
       prefix: --window-size

@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: The path to the bcftools progam.
-    default: bcftools
     inputBinding:
       position: 101
       prefix: -bcftools
@@ -40,7 +39,6 @@ inputs:
       With 'regions', each entry in the bed file will be run with it's own 
       instance of gatk. With 'file', a single instance of gatk will be run for 
       all regions.
-    default: file
     inputBinding:
       position: 101
       prefix: -bedmode
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: The path to the bedtools progam.
-    default: bedtools
     inputBinding:
       position: 101
       prefix: -bedtools
@@ -85,7 +82,6 @@ inputs:
       - string
     doc: The expression to filter variants. Must conform to VCF INFO field 
       standards.
-    default: MQ < 30.0 || DP < 5 || DP > 60
     inputBinding:
       position: 101
       prefix: -f
@@ -94,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: The path to the GATK progam.
-    default: gatk
     inputBinding:
       position: 101
       prefix: -gatk
@@ -103,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads for GATK's Haplotype caller to use.
-    default: 4
     inputBinding:
       position: 101
       prefix: -gatk-t
@@ -128,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads for the mapper to use for each read type.
-    default: 1
     inputBinding:
       position: 101
       prefix: -map-t
@@ -145,7 +138,6 @@ inputs:
       - 'null'
       - string
     doc: 'The name of the mapping progam. One of: bwa, hisat2.'
-    default: bwa
     inputBinding:
       position: 101
       prefix: -mapper
@@ -164,7 +156,6 @@ inputs:
       - string
     doc: The type of masking to perform on the final consensus sequence for 
       sites without genotypes called. 'hard', 'soft', or 'none'.
-    default: soft
     inputBinding:
       position: 101
       prefix: -mask
@@ -189,7 +180,6 @@ inputs:
       - 'null'
       - int
     doc: The number of iterations Pseudo-it will run.
-    default: 4
     inputBinding:
       position: 101
       prefix: -i
@@ -235,7 +225,6 @@ inputs:
     doc: 'The exact command used to run picard. For a jar file: java -jar <full path
       to jar file>. For an alias or conda install: picard. Include heap size in command,
       i.e. -Xmx6g.'
-    default: picard
     inputBinding:
       position: 101
       prefix: -picard
@@ -244,7 +233,6 @@ inputs:
       - 'null'
       - int
     doc: The MAX number of processes Pseudo-it can use.
-    default: 1
     inputBinding:
       position: 101
       prefix: -p
@@ -279,7 +267,6 @@ inputs:
       - 'null'
       - string
     doc: The path to the samtools progam.
-    default: samtools
     inputBinding:
       position: 101
       prefix: -samtools

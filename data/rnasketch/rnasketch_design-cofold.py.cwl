@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Timeout value of graph construction in seconds.
-    default: infinite
     inputBinding:
       position: 101
       prefix: --kill
@@ -66,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: 'Chose the calculation package: hotknots, pkiss, nupack, or vrna/ViennaRNA'
-    default: vrna
     inputBinding:
       position: 101
       prefix: --package
@@ -84,7 +82,6 @@ inputs:
       - string
     doc: The coding sequence context, excluding the start codon that should be 
       part of the sequence constraint.
-    default: the first 66 nucleotides of eGFP
     inputBinding:
       position: 101
       prefix: --reporter

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Base input url
-    default: working directory
     inputBinding:
       position: 101
       prefix: --base-input
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Base output url
-    default: working directory
     inputBinding:
       position: 101
       prefix: --base-output
@@ -92,7 +90,6 @@ inputs:
       - type: array
         items: File
     doc: Path to an input file. May be repeated.
-    default: /dev/stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -142,7 +139,6 @@ inputs:
       - type: array
         items: File
     doc: Path to an output file. May be repeated.
-    default: /dev/stdout
     inputBinding:
       position: 101
       prefix: --output

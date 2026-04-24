@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: number of days for growth calculation
-    default: 56
     inputBinding:
       position: 103
       prefix: --days
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - float
     doc: minimum prevalence to calculate relative growth rate for
-    default: 0.001
     inputBinding:
       position: 103
       prefix: --grthresh
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: lineage hierarchy file
-    default: ''
     inputBinding:
       position: 103
       prefix: --lineageyml
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - float
     doc: min genome coverage included
-    default: 60.0
     inputBinding:
       position: 103
       prefix: --mincov
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Bootstrap iterations
-    default: 1000
     inputBinding:
       position: 103
       prefix: --nboots
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: Pathogen of interest.Not used if using --lineageyml option.
-    default: SARS-CoV-2
     inputBinding:
       position: 103
       prefix: --pathogen
@@ -90,7 +84,6 @@ inputs:
       - 'null'
       - float
     doc: Serial Interval
-    default: 5.5
     inputBinding:
       position: 103
       prefix: --serial_interval
@@ -99,7 +92,6 @@ inputs:
       - 'null'
       - float
     doc: min lineage abundance in plot
-    default: 0.01
     inputBinding:
       position: 103
       prefix: --thresh

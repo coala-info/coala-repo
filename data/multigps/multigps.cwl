@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - float
     doc: alpha scaling factor
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --alphascale
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: minimum p-value for reporting differential enrichment
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --diffp
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - float
     doc: EdgeR overdispersion parameter
-    default: 0.15
     inputBinding:
       position: 101
       prefix: --edgerod
@@ -154,7 +151,6 @@ inputs:
       - 'null'
       - float
     doc: Gaussian smoothing std dev
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --gausssmoothparam
@@ -179,7 +175,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of the genome that is mappable for these experiments
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --mappability
@@ -188,7 +183,6 @@ inputs:
       - 'null'
       - int
     doc: max. model update rounds
-    default: 3
     inputBinding:
       position: 101
       prefix: -r
@@ -213,7 +207,6 @@ inputs:
       - 'null'
       - string
     doc: additional args for MEME
-    default: ' -dna -mod zoops -revcomp -nostatus'
     inputBinding:
       position: 101
       prefix: --memeargs
@@ -222,7 +215,6 @@ inputs:
       - 'null'
       - int
     doc: maxw arg for MEME
-    default: 18
     inputBinding:
       position: 101
       prefix: --mememaxw
@@ -231,7 +223,6 @@ inputs:
       - 'null'
       - int
     doc: minw arg for MEME
-    default: 6
     inputBinding:
       position: 101
       prefix: --mememinw
@@ -240,7 +231,6 @@ inputs:
       - 'null'
       - int
     doc: number of motifs MEME should find for each condition
-    default: 3
     inputBinding:
       position: 101
       prefix: --memenmotifs
@@ -257,7 +247,6 @@ inputs:
       - 'null'
       - float
     doc: minimum event fold-change vs scaled control
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --minfold
@@ -266,7 +255,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of events to support an update
-    default: 500
     inputBinding:
       position: 101
       prefix: --minmodelupdateevents
@@ -381,7 +369,6 @@ inputs:
       - 'null'
       - float
     doc: Poisson log threshold for potential region scanning
-    default: -6.0
     inputBinding:
       position: 101
       prefix: --prlogconf
@@ -390,7 +377,6 @@ inputs:
       - 'null'
       - float
     doc: probability that events are shared across conditions
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --probshared
@@ -399,7 +385,6 @@ inputs:
       - 'null'
       - float
     doc: Q-value minimum
-    default: 0.001
     inputBinding:
       position: 101
       prefix: -q
@@ -425,7 +410,6 @@ inputs:
       - 'null'
       - int
     doc: window size for scaling procedure
-    default: 10000
     inputBinding:
       position: 101
       prefix: --scalewin
@@ -442,7 +426,6 @@ inputs:
       - 'null'
       - string
     doc: spline smoothing parameter
-    default: '30'
     inputBinding:
       position: 101
       prefix: --splinesmoothparam
@@ -451,7 +434,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

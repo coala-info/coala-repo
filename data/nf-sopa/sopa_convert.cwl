@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Dictionary provided to the reader function as kwargs
-    default: '{}'
     inputBinding:
       position: 102
       prefix: --kwargs
@@ -35,7 +34,6 @@ inputs:
       - boolean
     doc: Whether to overwrite the existing SpatialData object if already 
       existing
-    default: true
     inputBinding:
       position: 102
       prefix: --no-overwrite

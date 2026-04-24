@@ -18,7 +18,6 @@ inputs:
     doc: Flag to determine if prodigal should bypass Shine-Dalgarno trainer and 
       force a full motif scan (default = N). (Y = yes, N = no) Valid only for 
       -pg 1
-    default: N
     inputBinding:
       position: 101
       prefix: -by
@@ -42,7 +41,6 @@ inputs:
       - int
     doc: Genetic code to use for initail positive set generation. Valid when -pg
       is 1. (default = 11, takes value between 1-25)
-    default: 11
     inputBinding:
       position: 101
       prefix: -gcode
@@ -66,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: maximum e-vlaue for BLAST protein sequence search (default = 1e-5)
-    default: '1e-5'
     inputBinding:
       position: 101
       prefix: -ev
@@ -85,7 +82,6 @@ inputs:
       - float
     doc: Online-Ticket UNI STUTT Minimum identify score for BLAST protein 
       sequence search (default = 0.75)
-    default: 0.75
     inputBinding:
       position: 101
       prefix: -id
@@ -95,7 +91,6 @@ inputs:
       - int
     doc: Minimum length of open reading frame considered for prediction (default
       = 30 value in nucleotides)
-    default: 30
     inputBinding:
       position: 101
       prefix: -mo
@@ -105,7 +100,6 @@ inputs:
       - int
     doc: Open reading frames with less than these number of ribosome profiling 
       reads are eliminated from analysis (default = 3)
-    default: 3
     inputBinding:
       position: 101
       prefix: -mr
@@ -123,7 +117,6 @@ inputs:
       - 'null'
       - string
     doc: Start codon for negative set (default = CTG)
-    default: CTG
     inputBinding:
       position: 101
       prefix: -ncdn
@@ -133,7 +126,6 @@ inputs:
       - float
     doc: Random forest classification probability score threshold to define as 
       ORF are protein coding, the minimum (defualt is 0.5)
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -score
@@ -143,7 +135,6 @@ inputs:
       - string
     doc: Ribosome profiling read p site assignment strategy, 1 = plastid P-site 
       estimation ((default), 3 = 3 prime of read, 5 prime of the read
-    default: '1'
     inputBinding:
       position: 101
       prefix: -p
@@ -153,7 +144,6 @@ inputs:
       - int
     doc: program for initial positive set generation (1 = prodigal (default), 2 
       = glimmer)
-    default: 1
     inputBinding:
       position: 101
       prefix: -pg
@@ -163,7 +153,6 @@ inputs:
       - string
     doc: Start codon for positive set (default = ATG,GTG,TTG). Should be a 
       subset of the standard genetic code for bacteria
-    default: ATG,GTG,TTG
     inputBinding:
       position: 101
       prefix: -pcdn
@@ -179,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: Distance of Shine dalgarno sequence from start codon (defualt = 5nts).
-    default: 5
     inputBinding:
       position: 101
       prefix: -osd
@@ -189,7 +177,6 @@ inputs:
       - string
     doc: Shine dalgarno sequence (default = GGAGG). The shine dalgarno sequence 
       used for Ribosome binind site energy calculation.
-    default: GGAGG
     inputBinding:
       position: 101
       prefix: -seed
@@ -198,7 +185,6 @@ inputs:
       - 'null'
       - string
     doc: Comma separted list of start codons (default = ATG,GTG,TTG)
-    default: ATG,GTG,TTG
     inputBinding:
       position: 101
       prefix: -cdn
@@ -208,7 +194,6 @@ inputs:
       - int
     doc: Start region length in nucleotides (default = 45nts). This value is 
       used to calculate features specific to the start region.
-    default: 45
     inputBinding:
       position: 101
       prefix: -ost
@@ -218,7 +203,6 @@ inputs:
       - int
     doc: Stop region length in nucleotides (default = 21nts). This value is used
       to calculate features specific to the stop region.
-    default: 21
     inputBinding:
       position: 101
       prefix: -osp
@@ -228,7 +212,6 @@ inputs:
       - string
     doc: Use ribosome binding site (RBS) energy in the open reading frame 
       prediction (Y = use RBS energy (default), N = donot use RBS engergy)
-    default: Y
     inputBinding:
       position: 101
       prefix: -sd
@@ -237,7 +220,6 @@ inputs:
       - 'null'
       - Directory
     doc: working directory (defaults to current directory)
-    default: current directory
     inputBinding:
       position: 101
       prefix: -wdir

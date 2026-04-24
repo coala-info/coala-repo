@@ -368,7 +368,6 @@ inputs:
       - float
     doc: "Difference (no. of times) in apparent abundance to\n                   \
       \     trigger similar region filter with 80% similarity"
-    default: 160
     inputBinding:
       position: 102
       prefix: --microbe_repetitive_region_filter_abundance_threshold_80
@@ -378,7 +377,6 @@ inputs:
       - float
     doc: "Difference (no. of times) in apparent abundance to\n                   \
       \     trigger similar region filter with 90% similarity"
-    default: 80
     inputBinding:
       position: 102
       prefix: --microbe_repetitive_region_filter_abundance_threshold_90
@@ -388,7 +386,6 @@ inputs:
       - float
     doc: "Difference (no. of times) in apparent abundance to\n                   \
       \     trigger similar region filter with 95% similarity"
-    default: 40
     inputBinding:
       position: 102
       prefix: --microbe_repetitive_region_filter_abundance_threshold_95
@@ -398,7 +395,6 @@ inputs:
       - float
     doc: "Difference (no. of times) in apparent abundance to\n                   \
       \     trigger similar region filter with 98% similarity"
-    default: 16
     inputBinding:
       position: 102
       prefix: --microbe_repetitive_region_filter_abundance_threshold_98
@@ -408,7 +404,6 @@ inputs:
       - float
     doc: "Difference (no. of times) in apparent abundance to\n                   \
       \     trigger similar region filter with 99% similarity"
-    default: 8
     inputBinding:
       position: 102
       prefix: --microbe_repetitive_region_filter_abundance_threshold_99
@@ -418,7 +413,6 @@ inputs:
       - float
     doc: "Difference (no. of times) in apparent abundance to\n                   \
       \     trigger similar region filter with 99.2% similarity"
-    default: 6.4
     inputBinding:
       position: 102
       prefix: --microbe_repetitive_region_filter_abundance_threshold_99_2

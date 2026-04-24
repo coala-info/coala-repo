@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: PATH to the accession-per-line text file.
-    default: ''
     inputBinding:
       position: 101
       prefix: --accession_file
@@ -19,7 +18,6 @@ inputs:
       - string
     doc: "Your email address. This is passed to the NCBI's E-utilities. For details,
       see here:\n                        https://biopython.org/docs/1.75/api/Bio.Entrez.html"
-    default: aaa@bbb.com
     inputBinding:
       position: 101
       prefix: --email
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Whether to extract the CDS feature.
-    default: yes
     inputBinding:
       position: 101
       prefix: --extract_cds
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Listing the keys (and values) available for --seqnamefmt.
-    default: no
     inputBinding:
       position: 101
       prefix: --list_seqname_keys
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: NCBI database to search.
-    default: nucleotide
     inputBinding:
       position: 101
       prefix: --ncbi_database
@@ -56,7 +51,6 @@ inputs:
       - string
     doc: "Output sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --outseqformat
@@ -66,7 +60,6 @@ inputs:
       - string
     doc: "Underline-separated list of output sequence name elements. Try\n       \
       \                 --list_seqname_keys to check available values."
-    default: organism_accessions
     inputBinding:
       position: 101
       prefix: --seqnamefmt

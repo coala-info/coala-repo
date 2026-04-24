@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: kmer size <= 16
-    default: 16
     inputBinding:
       position: 101
       prefix: --kmer
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: minimum read length to map
-    default: 1000
     inputBinding:
       position: 101
       prefix: --minReadLen
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: threshold for identity
-    default: 80
     inputBinding:
       position: 101
       prefix: --perc_identity
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: p-value cutoff, used to determine window/sketch sizes
-    default: e-03
     inputBinding:
       position: 101
       prefix: --pval
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: count of threads for parallel execution
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

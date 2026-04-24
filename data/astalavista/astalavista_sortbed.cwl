@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Log level (NONE|INFO|ERROR|DEBUG)
-    default: INFO
     inputBinding:
       position: 102
       prefix: --log
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of threads to use.
-    default: 2
     inputBinding:
       position: 102
       prefix: --threads

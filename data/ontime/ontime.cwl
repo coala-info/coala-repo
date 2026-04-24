@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level to use if compressing fastq output
-    default: 6
     inputBinding:
       position: 102
       prefix: --compress-level

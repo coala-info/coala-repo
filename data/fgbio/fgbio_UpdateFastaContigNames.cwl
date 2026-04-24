@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
-    default: false
     inputBinding:
       position: 101
       prefix: --async-io
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Default GZIP compression level, BAM compression level.
-    default: 5
     inputBinding:
       position: 101
       prefix: --compression
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Line length or sequence lines.
-    default: 100
     inputBinding:
       position: 101
       prefix: --line-length
@@ -78,7 +75,6 @@ inputs:
       - string
     doc: 'Minimum severity log-level to emit. Options: Debug, Info, Warning, Error,
       Fatal.'
-    default: Info
     inputBinding:
       position: 101
       prefix: --log-level
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: 'Validation stringency for SAM/BAM reading. Options: STRICT, LENIENT, SILENT.'
-    default: SILENT
     inputBinding:
       position: 101
       prefix: --sam-validation-stringency
@@ -97,7 +92,6 @@ inputs:
       - boolean
     doc: Skip contigs in the FASTA that are not found in the sequence 
       dictionary.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-missing
@@ -106,7 +100,6 @@ inputs:
       - 'null'
       - boolean
     doc: Sort the contigs based on the input sequence dictionary.
-    default: false
     inputBinding:
       position: 101
       prefix: --sort-by-dict
@@ -115,7 +108,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to use for temporary files.
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmp-dir

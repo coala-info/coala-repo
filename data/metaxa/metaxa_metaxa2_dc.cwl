@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Column containing count data
-    default: 1
     inputBinding:
       position: 102
       prefix: -c
@@ -27,7 +26,6 @@ inputs:
       - string
     doc: String to be removed from the file name for use as sample name. Regular
       expressions can be used.
-    default: .level_[0-9].txt
     inputBinding:
       position: 102
       prefix: -r
@@ -37,7 +35,6 @@ inputs:
       - string
     doc: Regular expression pattern for selecting the sample name from the file 
       name.
-    default: .*
     inputBinding:
       position: 102
       prefix: -p
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Column containing taxon data
-    default: 0
     inputBinding:
       position: 102
       prefix: -t

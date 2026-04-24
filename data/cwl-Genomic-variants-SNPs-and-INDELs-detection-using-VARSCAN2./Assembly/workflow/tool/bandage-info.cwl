@@ -15,7 +15,6 @@ inputs:
 
   - id: tsv
     type:  boolean
-    default: false
     doc: |
         If true, output the information in a single tab-delimited line 
         starting with the graph file

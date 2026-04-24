@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: use alternative configuration file
-    default: None
     inputBinding:
       position: 102
       prefix: --config
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: sleep time in msec between sync runs when in daemon mode
-    default: 15000
     inputBinding:
       position: 102
       prefix: --daemon-period
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory for storing dumps
-    default: ~/.galileo
     inputBinding:
       position: 102
       prefix: --dump-dir
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: server used for synchronisation
-    default: client.fitbit.com
     inputBinding:
       position: 102
       prefix: --fitbit-server
@@ -102,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Amount of communication to display in case of error
-    default: 10
     inputBinding:
       position: 102
       prefix: --log-size

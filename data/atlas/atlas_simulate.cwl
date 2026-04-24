@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Base frequencies
-    default: 'A: 0.25, C: 0.25, G: 0.25, T: 0.25'
     inputBinding:
       position: 102
   - id: base_n
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: Base = N probability for reads
-    default: 0.001
     inputBinding:
       position: 102
   - id: base_quality
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: Base quality distribution for read groups
-    default: normal(30,10)[0,93]
     inputBinding:
       position: 102
   - id: chr_length
@@ -41,7 +38,6 @@ inputs:
       - type: array
         items: int
     doc: Chromosome lengths
-    default:
       - 10000
     inputBinding:
       position: 102
@@ -51,7 +47,6 @@ inputs:
       - type: array
         items: int
     doc: Sequencing depths
-    default:
       - 5
     inputBinding:
       position: 102
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: Duplication rate for read groups
-    default: 0.0
     inputBinding:
       position: 102
   - id: fragment_length
@@ -68,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: Fragment length distribution for read groups
-    default: gamma(10,0.2)[30,200]
     inputBinding:
       position: 102
   - id: frequency
@@ -76,7 +69,6 @@ inputs:
       - 'null'
       - float
     doc: Read group frequency
-    default: 1.0
     inputBinding:
       position: 102
   - id: mapping_quality
@@ -84,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: Mapping quality distribution for read groups
-    default: normal(60,10)[1,255]
     inputBinding:
       position: 102
   - id: num_read_groups
@@ -92,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Number of read groups to initialize
-    default: 1
     inputBinding:
       position: 102
   - id: out
@@ -100,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: Output files tag
-    default: ATLAS_simulations
     inputBinding:
       position: 102
   - id: out_qual
@@ -116,7 +105,6 @@ inputs:
       - type: array
         items: int
     doc: Ploidys
-    default:
       - 2
     inputBinding:
       position: 102
@@ -125,7 +113,6 @@ inputs:
       - 'null'
       - string
     doc: Postmortem damage model for read groups
-    default: '-'
     inputBinding:
       position: 102
   - id: recal
@@ -133,7 +120,6 @@ inputs:
       - 'null'
       - string
     doc: Base quality score recalibration model for read groups
-    default: '-'
     inputBinding:
       position: 102
   - id: ref_bias
@@ -141,7 +127,6 @@ inputs:
       - 'null'
       - float
     doc: Reference bias for reads
-    default: 0.5
     inputBinding:
       position: 102
   - id: ref_div
@@ -149,7 +134,6 @@ inputs:
       - 'null'
       - float
     doc: Reference divergence
-    default: 0.01
     inputBinding:
       position: 102
   - id: ref_n
@@ -157,7 +141,6 @@ inputs:
       - 'null'
       - float
     doc: Reference Ref = N probability
-    default: 0.001
     inputBinding:
       position: 102
   - id: seed
@@ -172,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: Number of sequencing cycles for read groups
-    default: 100
     inputBinding:
       position: 102
   - id: seq_type
@@ -180,7 +162,6 @@ inputs:
       - 'null'
       - string
     doc: Sequencing type for read groups
-    default: single
     inputBinding:
       position: 102
   - id: soft_clipping
@@ -188,7 +169,6 @@ inputs:
       - 'null'
       - string
     doc: Soft clipping distribution for read groups
-    default: poisson(0.5)[0,20]
     inputBinding:
       position: 102
   - id: theta
@@ -196,7 +176,6 @@ inputs:
       - 'null'
       - float
     doc: Theta for single individual simulation
-    default: 0.001
     inputBinding:
       position: 102
   - id: type
@@ -204,7 +183,6 @@ inputs:
       - 'null'
       - string
     doc: Type of simulation (e.g., 'one' for single individual)
-    default: one
     inputBinding:
       position: 102
   - id: write_binned_qualities

@@ -26,7 +26,6 @@ inputs:
     doc: 'Choose a type of tree representation and neural networks. You can choose
       either CNN_FULL_TREE: CNN trained on full tree representation or FFNN_SUMSTATS:
       FFNN trained on summary statistics. By default set to CNN_FULL_TREE.'
-    default: CNN_FULL_TREE
     inputBinding:
       position: 101
       prefix: --vector_representation

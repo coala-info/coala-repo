@@ -47,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Defines SNP distance for the single linkage clustering in TBgroups.
-    default: 12
     inputBinding:
       position: 101
       prefix: --distance
@@ -75,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Defines minimum positional mapping quality during variant calling.
-    default: 13
     inputBinding:
       position: 101
       prefix: --minbqual
@@ -84,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Defines minimum forward read coverage for a putative variant position.
-    default: 4
     inputBinding:
       position: 101
       prefix: --mincovf
@@ -93,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Defines minimum reverse read coverage for a putative variant position.
-    default: 4
     inputBinding:
       position: 101
       prefix: --mincovr
@@ -102,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Defines minimum allele frequency for majority allele.
-    default: 75
     inputBinding:
       position: 101
       prefix: --minfreq
@@ -112,7 +107,6 @@ inputs:
       - int
     doc: Defines the minimum number of reads having a phred score above or equal
       20 to be considered as a putative variant.
-    default: 4
     inputBinding:
       position: 101
       prefix: --minphred20
@@ -138,7 +132,6 @@ inputs:
       - 'null'
       - string
     doc: Reference genome for mapping without .fasta extension.
-    default: M._tuberculosis_H37Rv_2015-11-13
     inputBinding:
       position: 101
       prefix: --ref
@@ -185,7 +178,6 @@ inputs:
       - 'null'
       - int
     doc: Defines number of CPUs to use. The usage of 8 CPUs is maximum.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -195,7 +187,6 @@ inputs:
       - int
     doc: Defines minimum percentage of samples having unambigous base call in 
       TBamend analysis.
-    default: 95
     inputBinding:
       position: 101
       prefix: --unambig
@@ -205,7 +196,6 @@ inputs:
       - int
     doc: Defines window for SNP cluster look up. Reduces putative false 
       positives in TBamend.
-    default: 12
     inputBinding:
       position: 101
       prefix: --window

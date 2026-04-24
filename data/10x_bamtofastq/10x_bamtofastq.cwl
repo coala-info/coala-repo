@@ -58,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Threads to use for reading BAM file
-    default: 4
     inputBinding:
       position: 102
       prefix: --nthreads
@@ -67,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads per FASTQ chunk
-    default: 50000000
     inputBinding:
       position: 102
       prefix: --reads-per-fastq

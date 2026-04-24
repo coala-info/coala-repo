@@ -62,7 +62,6 @@ inputs:
     type: int?
     doc: number of threads to use for computational processes
     label: number of threads
-    default: 2
   metadata:
     type: File?
     doc: UNLOCK assay metadata file

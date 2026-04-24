@@ -22,7 +22,6 @@ inputs:
       - string
     doc: "Specify analysis mode to run, for preconfigured\n                      \
       \  defaults. Options: `vp1`, `wg`. Default: `vp1`"
-    default: '`vp1`'
     inputBinding:
       position: 101
       prefix: --analysis-mode
@@ -41,7 +40,6 @@ inputs:
       - Directory
     doc: "Configure where to put the fastq_pass files, default\n                 \
       \       in the output directory."
-    default: in the output directory
     inputBinding:
       position: 101
       prefix: --archivedir
@@ -65,7 +63,6 @@ inputs:
       - string
     doc: "Append datestamp to directory name when using\n                        <-o/--outdir>.
       Default: <-o/--outdir> without a\n                        datestamp"
-    default: <-o/--outdir> without a datestamp
     inputBinding:
       position: 101
       prefix: --datestamp
@@ -84,7 +81,6 @@ inputs:
       - int
     doc: "Number of reads to downsample to for haplotype\n                       \
       \ calling. Default: 3000"
-    default: 3000
     inputBinding:
       position: 101
       prefix: --haplotype-sample-size
@@ -94,7 +90,6 @@ inputs:
       - string
     doc: "Institute name to appear in report. Default: no\n                      \
       \  institute name"
-    default: no institute name
     inputBinding:
       position: 101
       prefix: --institute
@@ -103,7 +98,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output report language. Options: English, French. Default: English'
-    default: English
     inputBinding:
       position: 101
       prefix: --language
@@ -114,7 +108,6 @@ inputs:
     doc: "The threshold beyond which Sabin-related sequences are\n               \
       \         added to the supplementary data directory if update\n            \
       \            local database flag used. Default: 6"
-    default: '6'
     inputBinding:
       position: 101
       prefix: --local-database-threshold
@@ -124,7 +117,6 @@ inputs:
       - int
     doc: "Maximum number of haplotypes callable within reference\n               \
       \         group. Default: 4"
-    default: 4
     inputBinding:
       position: 101
       prefix: --max-haplotypes
@@ -133,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum read length. Default: 1300'
-    default: 1300
     inputBinding:
       position: 101
       prefix: --max-read-length
@@ -150,7 +141,6 @@ inputs:
       - 'null'
       - string
     doc: "Medaka model to run analysis using. Default:\n                        r941_min_hac_variant_g507"
-    default: r941_min_hac_variant_g507
     inputBinding:
       position: 101
       prefix: --medaka-model
@@ -160,7 +150,6 @@ inputs:
       - float
     doc: "Minimum allele frequency to call. Note: setting this\n                 \
       \       below 0.07 may significantly increase run time. Default: 0.07"
-    default: 0.07
     inputBinding:
       position: 101
       prefix: --min-allele-frequency
@@ -169,7 +158,6 @@ inputs:
       - 'null'
       - string
     doc: "Minimum alignment block length. Default:\n                        0.6*MIN_READ_LENGTH"
-    default: 0.6*MIN_READ_LENGTH
     inputBinding:
       position: 101
       prefix: --min-aln-block
@@ -178,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum number of reads in a given haplotype. Default: 20'
-    default: 20
     inputBinding:
       position: 101
       prefix: --min-haplotype-depth
@@ -187,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum number of SNPs between haplotypes. Default: 2'
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-haplotype-distance
@@ -197,7 +183,6 @@ inputs:
       - int
     doc: "Minimum mapping quality. Range 0 to 60, however 0 can\n                \
       \        imply a multimapper. Default: 0"
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-map-quality
@@ -206,7 +191,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum read depth required for consensus generation. Default: 50'
-    default: 50
     inputBinding:
       position: 101
       prefix: --min-read-depth
@@ -215,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum read length. Default: 1000'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --min-read-length
@@ -225,7 +208,6 @@ inputs:
       - float
     doc: "Minimum percentage of sample required for consensus\n                  \
       \      generation. Default: 0"
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-read-pcent
@@ -241,7 +223,6 @@ inputs:
       \           short reads of a sample diverged from the reference,\n         \
       \               we suggest using `-mo k=5 w=4`, which overwrites the\n     \
       \                   minimap2 option `-x asm20`."
-    default: -x asm20
     inputBinding:
       position: 101
       prefix: --minimap2-options
@@ -252,7 +233,6 @@ inputs:
     doc: "Sample name of negative control. If multiple samples,\n                \
       \        supply as comma-separated string of sample names. E.g.\n          \
       \              `sample01,sample02` Default: `negative`"
-    default: '`negative`'
     inputBinding:
       position: 101
       prefix: --negative-control
@@ -270,7 +250,6 @@ inputs:
       - 'null'
       - string
     doc: 'Miscellaneous notes to appear at top of report. Default: no notes'
-    default: no notes
     inputBinding:
       position: 101
       prefix: --notes
@@ -282,7 +261,6 @@ inputs:
       \       If `well` is supplied as a column in the barcode.csv,\n            \
       \            this default orientation will be overwritten. Default:\n      \
       \                  `vertical`. Options: `vertical` or `horizontal`."
-    default: '`vertical`'
     inputBinding:
       position: 101
       prefix: --orientation
@@ -291,7 +269,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Output directory. Default: `analysis-2022-XX-YY`'
-    default: '`analysis-2022-XX-YY`'
     inputBinding:
       position: 101
       prefix: --outdir
@@ -301,7 +278,6 @@ inputs:
       - string
     doc: "Prefix of output directory & report name: Default:\n                   \
       \     `analysis`"
-    default: '`analysis`'
     inputBinding:
       position: 101
       prefix: --output-prefix
@@ -311,7 +287,6 @@ inputs:
       - boolean
     doc: "Overwrite output directory. Default: append an\n                       \
       \ incrementing number if <-o/--outdir> already exists"
-    default: "append an\n                        incrementing number if <-o/--outdir>
       already exists"
     inputBinding:
       position: 101
@@ -323,7 +298,6 @@ inputs:
     doc: "Columns in the barcodes.csv file to annotate the\n                     \
       \   phylogeny with. Default: ['call', 'sample_date',\n                     \
       \   'EPID']"
-    default: "['call', 'sample_date', 'EPID']"
     inputBinding:
       position: 101
       prefix: --phylo-metadata-columns
@@ -334,7 +308,6 @@ inputs:
     doc: "Sample name of positive control. If multiple samples,\n                \
       \        supply as comma-separated string of sample names. E.g.\n          \
       \              `sample01,sample02`. Default: `positive`"
-    default: '`positive`'
     inputBinding:
       position: 101
       prefix: --positive-control
@@ -353,7 +326,6 @@ inputs:
       - int
     doc: "Length of primer sequences to trim off start and end\n                 \
       \       of reads. Default: 30"
-    default: 30
     inputBinding:
       position: 101
       prefix: --primer-length
@@ -363,7 +335,6 @@ inputs:
       - Directory
     doc: "Output publish directory. Default: `analysis-2022-XX-\n                \
       \        YY`"
-    default: '`analysis-2022-XX-YY`'
     inputBinding:
       position: 101
       prefix: --publishdir
@@ -379,7 +350,6 @@ inputs:
       - string
     doc: "Specify reference description field to group\n                        references
       by. Default: `ddns_group`"
-    default: '`ddns_group`'
     inputBinding:
       position: 101
       prefix: --reference-group-field
@@ -414,7 +384,6 @@ inputs:
       - 'null'
       - string
     doc: 'Run name to appear in report. Default: polioDDNS'
-    default: polioDDNS
     inputBinding:
       position: 101
       prefix: --runname
@@ -424,7 +393,6 @@ inputs:
       - string
     doc: "Specify sample type. Options: `stool`,\n                        `environmental`,
       `isolate`. Default: `stool`"
-    default: '`stool`'
     inputBinding:
       position: 101
       prefix: --sample-type
@@ -452,7 +420,6 @@ inputs:
       - string
     doc: "Columns in the supplementary metadata to annotate the\n                \
       \        phylogeny with. Default: ['location', 'lineage']"
-    default: "['location', 'lineage']"
     inputBinding:
       position: 101
       prefix: --supplementary-metadata-columns
@@ -462,7 +429,6 @@ inputs:
       - string
     doc: "Column in the supplementary metadata files to match\n                  \
       \      with the supplementary sequences. Default:\n                        sequence_name"
-    default: sequence_name
     inputBinding:
       position: 101
       prefix: --supplementary-metadata-id-column
@@ -472,7 +438,6 @@ inputs:
       - Directory
     doc: "Specify where you want the temp stuff to go. Default:\n                \
       \        `$TMPDIR`"
-    default: '`$TMPDIR`'
     inputBinding:
       position: 101
       prefix: --tempdir
@@ -481,7 +446,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads. Default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -502,7 +466,6 @@ inputs:
       - 'null'
       - string
     doc: 'Username to appear in report. Default: no user name'
-    default: no user name
     inputBinding:
       position: 101
       prefix: --username

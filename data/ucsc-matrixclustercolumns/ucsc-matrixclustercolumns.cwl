@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum correlation to cluster
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -threshold

@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Weight for gap extension
-    default: 1
     inputBinding:
       position: 103
       prefix: -e
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Weight for gap opening
-    default: 3
     inputBinding:
       position: 103
       prefix: -o
@@ -88,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Weight for match in genome sequence alignment
-    default: 2
     inputBinding:
       position: 103
       prefix: -m
@@ -97,7 +94,6 @@ inputs:
       - 'null'
       - File
     doc: FILE is either the Blosum or Pam weight matrix
-    default: Blosum50
     inputBinding:
       position: 103
       prefix: -a
@@ -106,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Weight for mismatch in genome sequence alignment
-    default: 2
     inputBinding:
       position: 103
       prefix: -x

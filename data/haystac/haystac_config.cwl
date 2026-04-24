@@ -19,7 +19,6 @@ inputs:
       - Directory
     doc: Cache folder for storing genomes downloaded from NCBI and other shared 
       data
-    default: /root/haystac/cache
     inputBinding:
       position: 101
       prefix: --cache
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - boolean
     doc: Clear the contents of the cache folder, and delete the folder itself
-    default: false
     inputBinding:
       position: 101
       prefix: --clear-cache
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use conda as a package manger
-    default: true
     inputBinding:
       position: 101
       prefix: --use-conda

@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: Exclude duplications for which the expression is true
-    default: length < 500
     inputBinding:
       position: 101
       prefix: --exclude
@@ -61,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Number of basepairs per line
-    default: 60
     inputBinding:
       position: 101
       prefix: --width

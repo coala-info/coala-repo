@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level to use when compressing; 0 to 9, or -1 for default
-    default: -1
     inputBinding:
       position: 102
       prefix: --compress-level
@@ -125,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: number of compression threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

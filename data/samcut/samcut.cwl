@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Character to use as delimiter for output
-    default: \t
     inputBinding:
       position: 102
       prefix: --delim
@@ -29,7 +28,6 @@ inputs:
       - string
     doc: String to fill missing values with (tags are optional and can be 
       missing)
-    default: .
     inputBinding:
       position: 102
       prefix: --fill

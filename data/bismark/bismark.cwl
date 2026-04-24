@@ -86,7 +86,6 @@ inputs:
       assumes that raw sequence data is adapter and/or quality trimmed where 
       appropriate. Both small (.bt2) and large (.bt2l) Bowtie 2 indexes are 
       supported. To use HISAT2 instead of Bowtie 2 please see option --hisat2.
-    default: ON
     inputBinding:
       position: 103
       prefix: --bowtie2
@@ -100,7 +99,6 @@ inputs:
       offsets and searches for more alignments. A read is considered to have 
       repetitive seeds if the total number of seed hits divided by the number of
       seeds that aligned at least once is greater than 300.
-    default: 2
     inputBinding:
       position: 103
       prefix: -R
@@ -111,7 +109,6 @@ inputs:
     doc: Up to <int> consecutive seed extension attempts can "fail" before 
       Bowtie 2 moves on, using the alignments found so far. A seed extension 
       "fails" if it does not yield a new best or a new second-best alignment.
-    default: 15
     inputBinding:
       position: 103
       prefix: -D
@@ -134,7 +131,6 @@ inputs:
       somewhat more memory then if --reorder were not specified. Has no effect if
       -p is set to 1, since output order will naturally correspond to input order
       in that case."
-    default: 1
     inputBinding:
       position: 103
       prefix: -p
@@ -195,7 +191,6 @@ inputs:
       and/or quality trimmed where appropriate. From v0.22.0 onwards, Bismark 
       also supports the local alignment mode of HISAT2 (please see --local). 
       Both small (.ht2) and large (.ht2l) HISAT2 indexes are supported.
-    default: OFF
     inputBinding:
       position: 103
       prefix: --hisat2
@@ -224,7 +219,6 @@ inputs:
       actual value. I.e. input is treated as though all quality values are high.
       This is also the default behavior when the input doesn't specify quality 
       values (e.g. in -f mode). This option is invariable and on by default.
-    default: ON
     inputBinding:
       position: 103
       prefix: --ignore-quals
@@ -247,7 +241,6 @@ inputs:
       alignment score is equal to the match bonus (--ma) times the length of the read.
       This is mutually exclusive with end-to-end alignments. For HISAT2, it is currently
       not exactly known how the best alignment is calculated.'
-    default: OFF
     inputBinding:
       position: 103
       prefix: --local
@@ -285,7 +278,6 @@ inputs:
       in the proper orientation with a 60-bp gap between them, that alignment is
       considered valid (as long as -I is also satisfied). A 61-bp gap would not 
       be valid in that case.
-    default: 500
     inputBinding:
       position: 103
       prefix: --maxins
@@ -298,7 +290,6 @@ inputs:
       in the appropriate orientation with a 20-bp gap between them, that 
       alignment is considered valid (as long as -X is also satisfied). A 19-bp 
       gap would not be valid in that case.
-    default: 0
     inputBinding:
       position: 103
       prefix: --minins
@@ -311,7 +302,6 @@ inputs:
       default mapping mode is --nanopore (preset '-x map-ont' (Nanopore reads)). Currently,
       there are no plans to support PacBio reads. Internally, minimap2 is run with
       the options -a --MD. More information here: https://lh3.github.io/minimap2/minimap2.html."
-    default: OFF
     inputBinding:
       position: 103
       prefix: --minimap2
@@ -321,7 +311,6 @@ inputs:
       - int
     doc: Maximum length cutoff for very long sequences (currently allowed 
       100-100,000 bp).
-    default: 10000
     inputBinding:
       position: 103
       prefix: --mm2_maximum_length
@@ -331,7 +320,6 @@ inputs:
       - boolean
     doc: Using the minimap2 preset for Oxford Nanopore (ONT) vs reference 
       mapping (-x map-ont). Only works in conjuntion with --minimap2.
-    default: Default mode when --minimap2 is specified without additional 
       qualifiers.
     inputBinding:
       position: 103
@@ -342,7 +330,6 @@ inputs:
       - boolean
     doc: Using the minimap2 preset for PacBio vs reference mapping (-x map-pb). 
       Only works in conjuntion with --minimap2.
-    default: OFF
     inputBinding:
       position: 103
       prefix: --mm2_pacbio
@@ -356,7 +343,6 @@ inputs:
       single-end reads without splicing) uses the following options: -k21 -w11 --sr
       --frag=yes -A2 -B8 -O12,32 -E2,1 -r50 -p.5 -N20 -f1000,5000 -n2 -m20 -s40 -g200
       -2K50m --heap-sort=yes --secondary=no"
-    default: OFF
     inputBinding:
       position: 103
       prefix: --mm2_short_reads
@@ -389,7 +375,6 @@ inputs:
       alignment where both mates align uniquely, but that does not satisfy the 
       paired-end constraints (--fr/--rf/--ff, -I, -X). This option disables that
       behavior and it is on by default.
-    default: ON
     inputBinding:
       position: 103
       prefix: --no-discordant
@@ -405,7 +390,6 @@ inputs:
       dovetailing alignments as concordant. This becomes relevant whenever reads are
       clipped from their 5' end prior to mapping, e.g. because of quality or bias
       issues. Specify --no_dovetail to turn off this behaviour for paired-end libraries."
-    default: OFF
     inputBinding:
       position: 103
       prefix: --no_dovetail
@@ -416,7 +400,6 @@ inputs:
     doc: This option disables the behavior to try to find alignments for the 
       individual mates if it cannot find a concordant or discordant alignment 
       for a pair. This option is invariably on by default.
-    default: ON
     inputBinding:
       position: 103
       prefix: --no-mixed
@@ -425,7 +408,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable spliced alignment.
-    default: spliced-alignments are performed
     inputBinding:
       position: 103
       prefix: --no-spliced-alignment
@@ -455,7 +437,6 @@ inputs:
       default) will only run 2 alignment threads to the original top (OT) or 
       bottom (OB) strands in parallel and report these alignments. This is the 
       recommended option for sprand-specific libraries).
-    default: OFF
     inputBinding:
       position: 103
       prefix: --non_directional
@@ -497,7 +478,6 @@ inputs:
       Samtools in the PATH. If no installation of Samtools can be found, the SAM
       output will be compressed with GZIP instead (yielding a .sam.gz output 
       file).
-    default: ON
     inputBinding:
       position: 103
       prefix: --bam
@@ -604,7 +584,6 @@ inputs:
       - 'null'
       - boolean
     doc: FASTQ qualities are ASCII chars equal to the Phred quality plus 33.
-    default: ON
     inputBinding:
       position: 103
       prefix: --phred33-quals
@@ -613,7 +592,6 @@ inputs:
       - 'null'
       - boolean
     doc: FASTQ qualities are ASCII chars equal to the Phred quality plus 64.
-    default: off
     inputBinding:
       position: 103
       prefix: --phred64-quals
@@ -623,7 +601,6 @@ inputs:
       - string
     doc: Sets the read gap open (<int1>) and extend (<int2>) penalties. A read 
       gap of length N gets a penalty of <int1> + N * <int2>.
-    default: 5, 3
     inputBinding:
       position: 103
       prefix: --rdg
@@ -632,7 +609,6 @@ inputs:
       - 'null'
       - string
     doc: Sets the ID field in the @RG header line.
-    default: SAMPLE
     inputBinding:
       position: 103
       prefix: --rg_id
@@ -642,7 +618,6 @@ inputs:
       - string
     doc: Sets the SM field in the @RG header line; can't be set without setting 
       --rg_id as well.
-    default: SAMPLE
     inputBinding:
       position: 103
       prefix: --rg_sample
@@ -654,7 +629,6 @@ inputs:
       the following line to the SAM header: @RG PL: ILLUMINA ID:SAMPLE SM:SAMPLE ;
       to set ID and SM see --rg_id and --rg_sample. In addition each read receives
       an RG:Z:RG-ID tag.'
-    default: OFF
     inputBinding:
       position: 103
       prefix: --rg_tag
@@ -664,7 +638,6 @@ inputs:
       - string
     doc: Sets the reference gap open (<int1>) and extend (<int2>) penalties. A 
       reference gap of length N gets a penalty of <int1> + N * <int2>.
-    default: 5, 3
     inputBinding:
       position: 103
       prefix: --rfg
@@ -755,7 +728,6 @@ inputs:
       difficult to determine the alignment strand identity. This option adds an optional
       tag, e.g. 'YS:Z:OT' or 'YS:Z:CTOB' to preserve this information. See also this
       thread for more details: https://github.com/FelixKrueger/Bismark/issues/455."
-    default: OFF
     inputBinding:
       position: 103
       prefix: --strandID
@@ -790,7 +762,6 @@ inputs:
       - 'null'
       - int
     doc: Only aligns the first <int> reads or read pairs from the input.
-    default: no limit
     inputBinding:
       position: 103
       prefix: --upto

@@ -63,7 +63,6 @@ inputs:
     type: int?
     doc: number of threads to use
     label: threads
-    default: 2
   memory:
     type: int
     doc: Memory used in megabytes
@@ -111,7 +110,6 @@ steps:
       files: 
         source: [spades/stdout, spades/stderr, spades/contigs, spades/scaffolds, spades/assembly_graph, spades/contigs_assembly_graph, spades/scaffolds_assembly_graph, spades/contigs_before_rr, spades/params, spades/log, spades/internal_config]
       folder: 
-        default: "1_Assembly"
     out:
       [results]
 ############################
@@ -121,7 +119,6 @@ steps:
       files: 
         source: [prodigal/predicted_proteins_out, prodigal/predicted_proteins_ffn, prodigal/predicted_proteins_faa, prodigal/stdout, prodigal/stderr]
       folder: 
-        default: "2_GenePrediction"
     out:
       [results]
 

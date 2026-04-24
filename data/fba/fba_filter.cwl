@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: specify an extra constant sequence to filter on read 1. Default (None)
-    default: None
     inputBinding:
       position: 101
       prefix: --cb_extra_seq
@@ -21,7 +20,6 @@ inputs:
       - string
     doc: specify the maximun edit distance allowed for the extra constant 
       sequence on read 1 for filtering. Default (None)
-    default: None
     inputBinding:
       position: 101
       prefix: --cb_extra_seq_mismatches
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: specify the maximum left shift allowed for cell barcode. Default (1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --cb_left_shift
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: specify cell barcode mismatching threshold. Default (1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --cb_mismatches
@@ -48,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: specify the maximum right shift allowed for cell barcode. Default (1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --cb_right_shift
@@ -57,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: specify expected cell barcode starting postion on read 1. Default (0)
-    default: 0
     inputBinding:
       position: 101
       prefix: --cb_start
@@ -66,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: specify an extra constant sequence to filter on read 2. Default (None)
-    default: None
     inputBinding:
       position: 101
       prefix: --fb_extra_seq
@@ -76,7 +69,6 @@ inputs:
       - string
     doc: specify the maximun edit distance allowed for the extra constant 
       sequence on read 2. Default (None)
-    default: None
     inputBinding:
       position: 101
       prefix: --fb_extra_seq_mismatches
@@ -85,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: specify the maximum left shift allowed for feature barcode. Default (1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --fb_left_shift
@@ -94,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: specify feature barcode mismatching threshold. Default (1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --fb_mismatches
@@ -104,7 +94,6 @@ inputs:
       - int
     doc: specify the maximum right shift allowed for feature barcode. Default 
       (1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --fb_right_shift
@@ -114,7 +103,6 @@ inputs:
       - int
     doc: specify expected feature barcode starting postion on read 2. Default 
       (10)
-    default: 10
     inputBinding:
       position: 101
       prefix: --fb_start

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Number of burn-in MCMC iterations.
-    default: 7
     inputBinding:
       position: 101
       prefix: --burn
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Effective size of the population.
-    default: 15000
     inputBinding:
       position: 101
       prefix: --effective-size
@@ -117,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: First physical position to consider in input files.
-    default: 0
     inputBinding:
       position: 101
       prefix: --input-from
@@ -173,7 +170,6 @@ inputs:
       - 'null'
       - float
     doc: Probability threshold used to call genotypes in GEN file.
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --input-thr
@@ -182,7 +178,6 @@ inputs:
       - 'null'
       - int
     doc: Last physical position to consider in input file.
-    default: 1000000000
     inputBinding:
       position: 101
       prefix: --input-to
@@ -199,7 +194,6 @@ inputs:
       - 'null'
       - int
     doc: Number of main MCMC iterations.
-    default: 20
     inputBinding:
       position: 101
       prefix: --main
@@ -208,7 +202,6 @@ inputs:
       - 'null'
       - string
     doc: Missing data character in PED/MAP format.
-    default: '0'
     inputBinding:
       position: 101
       prefix: --missing-code
@@ -250,7 +243,6 @@ inputs:
       - 'null'
       - int
     doc: First physical position to output.
-    default: 0
     inputBinding:
       position: 101
       prefix: --output-from
@@ -267,7 +259,6 @@ inputs:
       - 'null'
       - string
     doc: Log file containing a copy of the screen output.
-    default: shapeit_date_time_UUID.log
     inputBinding:
       position: 101
       prefix: --output-log
@@ -284,7 +275,6 @@ inputs:
       - 'null'
       - int
     doc: Last physical position to output.
-    default: 1000000000
     inputBinding:
       position: 101
       prefix: --output-to
@@ -293,7 +283,6 @@ inputs:
       - 'null'
       - int
     doc: Number of pruning MCMC iterations.
-    default: 8
     inputBinding:
       position: 101
       prefix: --prune
@@ -302,7 +291,6 @@ inputs:
       - 'null'
       - float
     doc: Constant recombination rate.
-    default: 0.0004
     inputBinding:
       position: 101
       prefix: --rho
@@ -311,7 +299,6 @@ inputs:
       - 'null'
       - int
     doc: Number of pruning stages
-    default: 1
     inputBinding:
       position: 101
       prefix: --run
@@ -320,7 +307,6 @@ inputs:
       - 'null'
       - int
     doc: Seed of the random number generator.
-    default: 1771980220
     inputBinding:
       position: 101
       prefix: --seed
@@ -330,7 +316,6 @@ inputs:
       - int
     doc: Number of hidden states used for phasing (selected using Hamming 
       distance minimisation).
-    default: 100
     inputBinding:
       position: 101
       prefix: --states
@@ -340,7 +325,6 @@ inputs:
       - int
     doc: Number of hidden states used for phasing (selected using perfect match 
       that maximise coverage of the region).
-    default: 0
     inputBinding:
       position: 101
       prefix: --states-cov
@@ -350,7 +334,6 @@ inputs:
       - int
     doc: Number of hidden states used for phasing (selected using perfect match 
       maximisation).
-    default: 0
     inputBinding:
       position: 101
       prefix: --states-pmatch
@@ -359,7 +342,6 @@ inputs:
       - 'null'
       - int
     doc: Number of hidden states used for phasing (selected at random).
-    default: 0
     inputBinding:
       position: 101
       prefix: --states-random
@@ -368,7 +350,6 @@ inputs:
       - 'null'
       - int
     doc: Number of thread used for phasing.
-    default: 1
     inputBinding:
       position: 101
       prefix: --thread
@@ -377,7 +358,6 @@ inputs:
       - 'null'
       - int
     doc: Mean size of the windows in which conditioning haplotypes are defined.
-    default: 2
     inputBinding:
       position: 101
       prefix: --window

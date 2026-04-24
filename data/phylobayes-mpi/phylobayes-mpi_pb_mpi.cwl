@@ -29,7 +29,6 @@ inputs:
       - type: array
         items: int
     doc: 'chain length (until = -1 : forever)'
-    default: -1
     inputBinding:
       position: 103
       prefix: -x
@@ -39,7 +38,6 @@ inputs:
       - int
     doc: discrete gamma. ncat = number of categories (4 by default, 1 = uniform 
       rates model)
-    default: 4
     inputBinding:
       position: 103
       prefix: -dgam

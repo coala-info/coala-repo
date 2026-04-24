@@ -69,7 +69,6 @@ inputs:
     type: int
     doc: The codon table used for gene prediction
     label: Codon table
-    default: 11
 
   # prodigal_faa:
   #   type: File?
@@ -99,7 +98,6 @@ inputs:
 
   threads:
     type: int?
-    default: 4
 
   destination:
     type: string?

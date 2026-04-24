@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer value (default -k 25, optional)
-    default: 25
     inputBinding:
       position: 101
       prefix: -k

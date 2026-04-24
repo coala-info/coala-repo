@@ -36,7 +36,6 @@ inputs:
       - int
     doc: Minimum number of distinct alignments found by bowtie2 for a junction 
       to be considered spurious.
-    default: 10
     inputBinding:
       position: 101
       prefix: --bt2_k
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: Suffix added to the name of the output BAM files.
-    default: _EASTR_filtered
     inputBinding:
       position: 101
       prefix: --filtered_bam_suffix
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum required anchor length in each of the two exons
-    default: 7
     inputBinding:
       position: 101
       prefix: -a
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of the duplicated exon.
-    default: 27
     inputBinding:
       position: 101
       prefix: --min_duplicate_exon_length
@@ -82,7 +78,6 @@ inputs:
     doc: Minimum number of supporting spliced reads required per junction. 
       Junctions with fewer supporting reads in all samples are filtered out if 
       the flanking regions are similar (based on mappy scoring matrix).
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_junc_score
@@ -91,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Discard chains with chaining score.
-    default: 25
     inputBinding:
       position: 101
       prefix: -m
@@ -100,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: Gap extension penalty. A gap of length k costs min(O1+k*E1, O2+k*E2).
-    default: '[2, 1]'
     inputBinding:
       position: 101
       prefix: -E
@@ -109,7 +102,6 @@ inputs:
       - 'null'
       - string
     doc: Gap open penalty.
-    default: '[12, 32]'
     inputBinding:
       position: 101
       prefix: -O
@@ -118,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer length for alignment.
-    default: 3
     inputBinding:
       position: 101
       prefix: -k
@@ -127,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: Matching score.
-    default: 3
     inputBinding:
       position: 101
       prefix: -A
@@ -136,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: Minimizer window size.
-    default: 2
     inputBinding:
       position: 101
       prefix: -w
@@ -145,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: Mismatching penalty.
-    default: 4
     inputBinding:
       position: 101
       prefix: -B
@@ -154,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: Score of a mismatch involving ambiguous bases.
-    default: 1
     inputBinding:
       position: 101
       prefix: --scoreN
@@ -163,7 +150,6 @@ inputs:
       - 'null'
       - int
     doc: Length of the overhang on either side of the splice junction.
-    default: 50
     inputBinding:
       position: 101
       prefix: -o
@@ -186,7 +172,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel processes
-    default: 1
     inputBinding:
       position: 101
       prefix: -p

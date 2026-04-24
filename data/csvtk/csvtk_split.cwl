@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: buffering N groups before writing to file
-    default: 100
     inputBinding:
       position: 101
       prefix: --buf-groups
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: buffering N rows for every group before writing to file
-    default: 100000
     inputBinding:
       position: 101
       prefix: --buf-rows
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: lines starting with commment-character will be ignored.
-    default: '#'
     inputBinding:
       position: 101
       prefix: --comment-char
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: delimiting character of the input CSV file
-    default: ','
     inputBinding:
       position: 101
       prefix: --delimiter
@@ -57,7 +53,6 @@ inputs:
       - string
     doc: comma separated key fields, column name or index. e.g. -f 1-3 or -f id,id2
       or -F -f "group*"
-    default: '1'
     inputBinding:
       position: 101
       prefix: --fields
@@ -132,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs to use
-    default: 4
     inputBinding:
       position: 101
       prefix: --num-cpus
@@ -141,7 +135,6 @@ inputs:
       - 'null'
       - string
     doc: delimiting character of the output CSV file
-    default: ','
     inputBinding:
       position: 101
       prefix: --out-delimiter

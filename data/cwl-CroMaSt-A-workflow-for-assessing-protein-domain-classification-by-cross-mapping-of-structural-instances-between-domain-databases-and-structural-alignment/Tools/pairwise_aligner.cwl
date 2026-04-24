@@ -73,14 +73,12 @@ inputs:
   result_file:
     type: [ File?, string?]
     label: The output file
-    default: "align_Struct_analysis.csv" 
     inputBinding:
       position: 5
       prefix: -r
 
   iteration:
     type: int
-    default: 0
 
 outputs:
   alignment_out:

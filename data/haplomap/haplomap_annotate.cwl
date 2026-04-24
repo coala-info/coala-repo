@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether aggregate variant annotation by max impact score.
-    default: false
     inputBinding:
       position: 102
       prefix: --prioritize
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: 'Select variant type: [snp|indel|sv|all].'
-    default: all
     inputBinding:
       position: 102
       prefix: --type

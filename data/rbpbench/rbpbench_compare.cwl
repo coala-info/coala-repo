@@ -24,7 +24,6 @@ inputs:
       - boolean
     doc: Store plot files with absolute paths in HTML files. Default is relative
       paths
-    default: false
     inputBinding:
       position: 103
       prefix: --plot-abs-paths
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: Also output .png plots as .pdf in plotting subfolder
-    default: false
     inputBinding:
       position: 103
       prefix: --plot-pdf
@@ -43,7 +41,6 @@ inputs:
       - string
     doc: 'Define how to provide sorttable.js file. 1: link to packaged .js file. 2:
       copy .js file to plots output folder. 3: include .js code in HTML'
-    default: 1
     inputBinding:
       position: 103
       prefix: --sort-js-mode

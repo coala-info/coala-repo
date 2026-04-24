@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the column containing gene identifiers (optional).
-    default: gene
     inputBinding:
       position: 102
       prefix: --gene-col
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of co-occurrences required for a mutation pair.
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-cooccurrence
@@ -34,7 +32,6 @@ inputs:
       - int
     doc: Minimum number of samples required for a mutation pair to be 
       considered.
-    default: 2
     inputBinding:
       position: 102
       prefix: --min-samples
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the column containing mutation identifiers.
-    default: mutation
     inputBinding:
       position: 102
       prefix: --mutation-col
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to save the output files.
-    default: .
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the column containing sample identifiers.
-    default: sample_id
     inputBinding:
       position: 102
       prefix: --sample-col

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: genetic code translation table id
-    default: 1
     inputBinding:
       position: 101
       prefix: -c
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: length
-    default: 90
     inputBinding:
       position: 101
       prefix: -k
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: min. reference FASTA region [size] (bp) to output
-    default: 270
     inputBinding:
       position: 101
       prefix: -s

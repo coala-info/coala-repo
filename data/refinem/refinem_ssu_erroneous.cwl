@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for defining a taxon as common
-    default: 10.0
     inputBinding:
       position: 106
       prefix: --common_taxon
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: concatenate hits within the specified number of base pairs
-    default: 200
     inputBinding:
       position: 106
       prefix: --concatenate
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs to use
-    default: 1
     inputBinding:
       position: 106
       prefix: --cpus
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: e-value threshold for identifying and classifying 16S rRNA genes
-    default: '1e-05'
     inputBinding:
       position: 106
       prefix: --evalue
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: extension of genomes (other files in directory are ignored)
-    default: fna
     inputBinding:
       position: 106
       prefix: --genome_ext
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: percent identity threshold for accepting class classification of SSU
-    default: 89.2
     inputBinding:
       position: 106
       prefix: --ssu_class
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - float
     doc: percent identity threshold for accepting domain classification of SSU
-    default: 83.68
     inputBinding:
       position: 106
       prefix: --ssu_domain
@@ -105,7 +98,6 @@ inputs:
       - 'null'
       - float
     doc: percent identity threshold for accepting family classification of SSU
-    default: 96.4
     inputBinding:
       position: 106
       prefix: --ssu_family
@@ -114,7 +106,6 @@ inputs:
       - 'null'
       - float
     doc: percent identity threshold for accepting genus classification of SSU
-    default: 98.7
     inputBinding:
       position: 106
       prefix: --ssu_genus
@@ -123,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of SSU 16S gene fragment to consider for classification
-    default: 600
     inputBinding:
       position: 106
       prefix: --ssu_min_len
@@ -132,7 +122,6 @@ inputs:
       - 'null'
       - float
     doc: percent identity threshold for accepting order classification of SSU
-    default: 92.25
     inputBinding:
       position: 106
       prefix: --ssu_order
@@ -141,7 +130,6 @@ inputs:
       - 'null'
       - float
     doc: percent identity threshold for accepting phylum classification of SSU
-    default: 86.35
     inputBinding:
       position: 106
       prefix: --ssu_phylum

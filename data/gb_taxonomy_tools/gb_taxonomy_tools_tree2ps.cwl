@@ -17,7 +17,6 @@ inputs:
   - id: font_size
     type: int
     doc: Font size (in 2-255, 8 is a good default)
-    default: 8
     inputBinding:
       position: 3
   - id: nmax_leaves

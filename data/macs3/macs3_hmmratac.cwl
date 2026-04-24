@@ -21,7 +21,6 @@ inputs:
       - int
     doc: Size of the bins to split the pileup signals for training and decoding 
       with Hidden Markov Model.
-    default: 10
     inputBinding:
       position: 101
       prefix: --binsize
@@ -37,7 +36,6 @@ inputs:
       - int
     doc: Buffer size for incrementally increasing internal array size to store 
       reads alignment information.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --buffer-size
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum cutoff score for performing cutoff analysis.
-    default: 100
     inputBinding:
       position: 101
       prefix: --cutoff-analysis-max
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Steps for performing cutoff analysis.
-    default: 100
     inputBinding:
       position: 101
       prefix: --cutoff-analysis-steps
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Number of candidate regions to be decoded at a time.
-    default: 5000
     inputBinding:
       position: 101
       prefix: --decoding-steps
@@ -81,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: Format of input files, 'BAMPE', 'BEDPE', or 'FRAG'.
-    default: BAMPE
     inputBinding:
       position: 101
       prefix: --format
@@ -91,7 +85,6 @@ inputs:
       - string
     doc: Select a Gaussian ('gaussian') or Poisson ('poisson') model for the 
       hidden markov model.
-    default: gaussian
     inputBinding:
       position: 101
       prefix: --hmm-type
@@ -109,7 +102,6 @@ inputs:
       - 'null'
       - float
     doc: Lower limit on fold change range for choosing training sites.
-    default: 10
     inputBinding:
       position: 101
       prefix: --lower
@@ -127,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of training regions to use.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --maxTrain
@@ -138,7 +129,6 @@ inputs:
         items: float
     doc: Initial mean values for the fragment distribution for short fragments, 
       mono-, di-, and tri-nucleosomal fragments.
-    default:
       - 50
       - 200
       - 400
@@ -151,7 +141,6 @@ inputs:
       - 'null'
       - float
     doc: Probability threshold to exclude abnormal fragments.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --min-frag-p
@@ -160,7 +149,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of open region to call accessible regions.
-    default: 100
     inputBinding:
       position: 101
       prefix: --minlen
@@ -185,7 +173,6 @@ inputs:
       - string
     doc: Name for this experiment, which will be used as a prefix to generate 
       output file names.
-    default: NA
     inputBinding:
       position: 101
       prefix: --name
@@ -218,7 +205,6 @@ inputs:
       - float
     doc: The fold change cutoff for prescanning candidate regions in the whole 
       dataset.
-    default: 1.2
     inputBinding:
       position: 101
       prefix: --prescan-cutoff
@@ -227,7 +213,6 @@ inputs:
       - 'null'
       - int
     doc: Seed to set for random sampling of training regions.
-    default: 10151
     inputBinding:
       position: 101
       prefix: --randomSeed
@@ -279,7 +264,6 @@ inputs:
         items: float
     doc: Initial standard deviation values for fragment distribution for short 
       fragments, mono-, di-, and tri-nucleosomal fragments.
-    default:
       - 20
       - 20
       - 20
@@ -293,7 +277,6 @@ inputs:
       - int
     doc: Training regions will be expanded to both side with this number of 
       basepairs.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --training-flanking
@@ -308,7 +291,6 @@ inputs:
       - 'null'
       - float
     doc: Upper limit on fold change range for choosing training sites.
-    default: 20
     inputBinding:
       position: 101
       prefix: --upper

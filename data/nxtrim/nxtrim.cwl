@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum read length to output (smaller reads will be filtered)
-    default: 21
     inputBinding:
       position: 101
       prefix: --minlength
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum overlap to be considered for matching
-    default: 12
     inputBinding:
       position: 101
       prefix: --minoverlap
@@ -99,7 +97,6 @@ inputs:
       - float
     doc: The minimum similarity between strings to be considered a match 
       (Hamming distance divided by string length)
-    default: 0.85
     inputBinding:
       position: 101
       prefix: --similarity

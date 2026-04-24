@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: GTF/GFF feature type (col. 3) to add to graph
-    default: exon
     inputBinding:
       position: 101
       prefix: --gff-feature
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: GTF/GFF tag (in col. 9) for ID
-    default: transcript_id
     inputBinding:
       position: 101
       prefix: --gff-tx-tag
@@ -72,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: prefix to use for all output
-    default: index
     inputBinding:
       position: 101
       prefix: --prefix
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: target max memory usage (not exact, formatted INT[kMG])
-    default: 1/2 of available
     inputBinding:
       position: 101
       prefix: --target-mem
@@ -99,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: all available
     inputBinding:
       position: 101
       prefix: --threads
@@ -134,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: log to stderr {0 = none, 1 = basic, 2 = debug}
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbosity
@@ -144,7 +138,6 @@ inputs:
       - type: array
         items: string
     doc: workflow to produce indexes for (may repeat)
-    default: map
     inputBinding:
       position: 101
       prefix: --workflow

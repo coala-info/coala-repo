@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Hash modulus used for pfp
-    default: 100
     inputBinding:
       position: 102
       prefix: --modulus
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include the reverse complement of the sequences
-    default: true
     inputBinding:
       position: 102
       prefix: --no-revcomp
@@ -93,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum MUM or MEM length
-    default: 20
     inputBinding:
       position: 102
       prefix: --min-match-len
@@ -128,7 +125,6 @@ inputs:
       - int
     doc: Maximum number of occurrences per sequence (set to 0 for no upper 
       limit)
-    default: 1
     inputBinding:
       position: 102
       prefix: --per-seq-freq
@@ -161,7 +157,6 @@ inputs:
       - 'null'
       - int
     doc: Window size used for pfp
-    default: 10
     inputBinding:
       position: 102
       prefix: --window

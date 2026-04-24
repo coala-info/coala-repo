@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Call unmethylated if beta < beta0 (for binasum with fmt3 input)
-    default: 0.4
     inputBinding:
       position: 103
       prefix: -p
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: Call methylated if beta > beta1 (for binasum with fmt3 input)
-    default: 0.6
     inputBinding:
       position: 103
       prefix: -q
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Call methylated if beta > threshold (for binstring operation)
-    default: 0.5
     inputBinding:
       position: 103
       prefix: -b
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage (M+U) for a sample/row to contribute
-    default: 1
     inputBinding:
       position: 103
       prefix: -c
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Neighbor window size (for cometh operation)
-    default: 5
     inputBinding:
       position: 103
       prefix: -w
@@ -70,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: Operation name
-    default: binasum
     inputBinding:
       position: 103
       prefix: -o
@@ -79,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for tie breaking (for binstring operation)
-    default: current time
     inputBinding:
       position: 103
       prefix: -s

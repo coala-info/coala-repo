@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: input FASTA alphabet { dna, protein }
-    default: dna
     inputBinding:
       position: 101
       prefix: --alphabet
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: flush appender after each rows
-    default: 1228800
     inputBinding:
       position: 101
       prefix: --flush-after
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - File
     doc: input FASTA path
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input-fasta-path
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: row group size
-    default: 122880
     inputBinding:
       position: 101
       prefix: --row-group-size

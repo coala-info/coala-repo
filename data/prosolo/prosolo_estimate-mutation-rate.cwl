@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum allele frequency to consider
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --max-af
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele frequency to consider
-    default: 0.12
     inputBinding:
       position: 101
       prefix: --min-af

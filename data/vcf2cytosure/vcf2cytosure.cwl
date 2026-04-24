@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: the number of coverage bins per probes
-    default: 20
     inputBinding:
       position: 101
       prefix: --bins
@@ -45,7 +44,6 @@ inputs:
     doc: read depth tag of snv vcf file. This option is only used if you use snv
       to set the heigth of the probes. The dp tag is a tag which is used to 
       retrieve the depth of coverage across the snv (default=DP)
-    default: DP
     inputBinding:
       position: 101
       prefix: --dp
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum frequency.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --frequency
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: Frequency tag of the info field.
-    default: FRQ
     inputBinding:
       position: 101
       prefix: --frequency_tag
@@ -96,7 +92,6 @@ inputs:
       - 'null'
       - string
     doc: Sample sex male/female.
-    default: female
     inputBinding:
       position: 101
       prefix: --sex
@@ -105,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum variant size.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --size

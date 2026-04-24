@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel ITSx *processes* to run
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -25,7 +24,6 @@ inputs:
       - int
     doc: Number of threads *per* ITSx process. Total threads used = -t * 
       --itsx-threads.
-    default: 1
     inputBinding:
       position: 101
       prefix: --itsx-threads

@@ -23,7 +23,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: refined_1
     inputBinding:
       position: 101
       prefix: --bin-tag
@@ -45,7 +44,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 75
     inputBinding:
       position: 101
       prefix: --contig-end-exclusion
@@ -82,7 +80,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: fna
     inputBinding:
       position: 101
       prefix: --genome-fasta-extension
@@ -130,7 +127,6 @@ inputs:
       - string
     doc: 'Mapper to use for long reads. Possible values: minimap2-ont, minimap2-pb,
       minimap2-hifi'
-    default: minimap2-ont
     inputBinding:
       position: 101
       prefix: --longread-mapper
@@ -148,7 +144,6 @@ inputs:
       - string
     doc: 'Mapper to use for short reads. Possible values: bwa-mem, bwa-mem2, minimap2-sr,
       minimap2-ont, minimap2-pb, minimap2-hifi, minimap2-no-preset'
-    default: minimap2-sr
     inputBinding:
       position: 101
       prefix: --mapper
@@ -156,7 +151,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 15.0
     inputBinding:
       position: 101
       prefix: --max-contamination
@@ -164,7 +158,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 5
     inputBinding:
       position: 101
       prefix: --max-retries
@@ -172,7 +165,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 200000
     inputBinding:
       position: 101
       prefix: --min-bin-size
@@ -180,7 +172,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-contig-count
@@ -188,7 +179,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 1500
     inputBinding:
       position: 101
       prefix: --min-contig-size
@@ -196,7 +186,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min-covered-fraction
@@ -218,7 +207,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min-read-aligned-percent
@@ -261,7 +249,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 100
     inputBinding:
       position: 101
       prefix: --n-neighbours
@@ -299,7 +286,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 42
     inputBinding:
       position: 101
       prefix: --seed
@@ -315,7 +301,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 10
     inputBinding:
       position: 101
       prefix: --threads
@@ -323,7 +308,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 95.0
     inputBinding:
       position: 101
       prefix: --trim-max
@@ -331,7 +315,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --trim-min

@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Amplitude linear factor to scale motion
-    default: 2.0
     inputBinding:
       position: 104
       prefix: --amp
@@ -98,7 +97,6 @@ inputs:
       - int
     doc: Number of conformations generated (default=11). It should be an odd 
       number!
-    default: 11
     inputBinding:
       position: 104
       prefix: --frames
@@ -131,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: 'Input modes Coarse-Graining model: 0=CA, 1=C5, 2=Heavy-Atom, 3=NCAC, 4=CA-only'
-    default: 2
     inputBinding:
       position: 104
       prefix: --model
@@ -150,7 +147,6 @@ inputs:
       - int
     doc: 'Motion Type (default=2): 0=K-matrix, 1=V/W-arrays, 2=Simple-Rotations ,
       3=Linear (if Cartesian modes).'
-    default: 2
     inputBinding:
       position: 104
       prefix: --mov
@@ -185,7 +181,6 @@ inputs:
       - 'null'
       - double
     doc: Temperature [K]
-    default: 300.0
     inputBinding:
       position: 104
       prefix: --temperature

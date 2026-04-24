@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - File
     doc: Medium CSV file
-    default: medium.csv
     inputBinding:
       position: 102
       prefix: --medium
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: Metabolic model database
-    default: dbs
     inputBinding:
       position: 102
       prefix: --model
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: Percentage of species removed
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --percentage
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold of interaction strength
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --strength

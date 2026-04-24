@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Chunk size for processing (base pairs)
-    default: 1000000
     inputBinding:
       position: 102
       prefix: --chunk-size
@@ -99,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for parallel processing
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

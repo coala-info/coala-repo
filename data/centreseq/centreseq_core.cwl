@@ -16,7 +16,6 @@ inputs:
       - float
     doc: Sets the mmseqs cluster coverage parameter "-c" directly. Defaults to 
       0.95, which is the recommended setting.
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --coverage-length
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: Sets the mmseqs cluster parameter "--min-seq-id".
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --min-seq-id

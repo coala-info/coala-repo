@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: base quality threshold for a base to be used for counting
-    default: 13
     inputBinding:
       position: 105
       prefix: --baseq
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: the cell barcode tag, by default it is CB
-    default: CB
     inputBinding:
       position: 105
       prefix: --cellbarcode
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - float
     doc: the average centiMorgan distances per megabases default 0.1 cm per Mb
-    default: 0.1
     inputBinding:
       position: 105
       prefix: --cmPmb
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: the maximum DP for a SNP to be included in the output file
-    default: 5
     inputBinding:
       position: 105
       prefix: --maxDP
@@ -83,7 +79,6 @@ inputs:
       - int
     doc: the maximum DP across all barcodes for a SNP to be included in the 
       output file
-    default: 25
     inputBinding:
       position: 105
       prefix: --maxTotalDP
@@ -92,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: the minimum DP for a SNP to be included in the output file
-    default: 1
     inputBinding:
       position: 105
       prefix: --minDP
@@ -101,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum MAPQ for read filtering
-    default: 20
     inputBinding:
       position: 105
       prefix: --minMAPQ
@@ -111,7 +104,6 @@ inputs:
       - int
     doc: the minimum DP across all barcodes for a SNP to be included in the 
       output file
-    default: 10
     inputBinding:
       position: 105
       prefix: --minTotalDP
@@ -121,7 +113,6 @@ inputs:
       - float
     doc: the theta for the binomial distribution conditioning on hidden state 
       being ALT
-    default: 0.9
     inputBinding:
       position: 105
       prefix: --thetaALT
@@ -131,7 +122,6 @@ inputs:
       - float
     doc: the theta for the binomial distribution conditioning on hidden state 
       being REF
-    default: 0.1
     inputBinding:
       position: 105
       prefix: --thetaREF
@@ -140,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: number of BAM decompression threads
-    default: 4
     inputBinding:
       position: 105
       prefix: --threads

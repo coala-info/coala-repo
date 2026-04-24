@@ -66,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not remove query sequences without any similarity from the plot
-    default: false
     inputBinding:
       position: 101
       prefix: --filterq
@@ -75,7 +74,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not remove reference sequences without any similarity from the plot
-    default: false
     inputBinding:
       position: 101
       prefix: --filterr
@@ -175,7 +173,6 @@ inputs:
       - 'null'
       - int
     doc: window size
-    default: 1000
     inputBinding:
       position: 101
       prefix: --window

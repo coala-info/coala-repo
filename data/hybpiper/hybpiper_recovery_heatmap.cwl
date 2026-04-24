@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Dot per inch (DPI) for the output heatmap image. Default is 100
-    default: 100
     inputBinding:
       position: 102
       prefix: --heatmap_dpi
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Filename for the output heatmap, saved by default as a *.png file.
-    default: recovery_heatmap
     inputBinding:
       position: 102
       prefix: --heatmap_filename
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: File type to save the output heatmap image as. Default is *.png
-    default: png
     inputBinding:
       position: 102
       prefix: --heatmap_filetype

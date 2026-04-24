@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Max memory in GB
-    default: 6
     inputBinding:
       position: 101
       prefix: --memory
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Thread count for computations 0=auto
-    default: 0
     inputBinding:
       position: 101
       prefix: --threads

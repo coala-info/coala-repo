@@ -32,7 +32,6 @@ inputs:
       forward read versus the fragments of the reverse reads. The second one "all"
       consist two make all pairs of fragments possible. The third one "pile" will
       make the contacts only with the adjacent fragments.'
-    default: for_vs_rev
     inputBinding:
       position: 101
       prefix: --mode
@@ -55,7 +54,6 @@ inputs:
       - int
     doc: Minimum size of a read. (i.e. seed size used in mapping as reads 
       smaller won't be mapped.)
-    default: 20
     inputBinding:
       position: 101
       prefix: --seed-size
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel threads allocated for the alignement.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

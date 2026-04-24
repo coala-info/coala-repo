@@ -82,7 +82,6 @@ inputs:
     doc: "Minimum sequence pairwise coverage length between homologous pairs\n   \
       \                                         Default: 0.5 (50% coverage) - [0.3
       to 1.0]"
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --min_coverage
@@ -112,7 +111,6 @@ inputs:
       - int
     doc: "number of threads (CPUs)\n                                            Default:
       1"
-    default: 1
     inputBinding:
       position: 101
       prefix: --num_threads

@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Extension used by assemblies.
-    default: fna
     inputBinding:
       position: 101
       prefix: --ext
@@ -59,7 +58,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Report the output as JSON (Default: tab-delimited)'
-    default: tab-delimited
     inputBinding:
       position: 101
       prefix: --json
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory where SCCmec reference data is stored
-    default: /usr/local/share/staphopia-sccmec/data
     inputBinding:
       position: 101
       prefix: --sccmec

@@ -34,7 +34,6 @@ inputs:
     type: string?
     doc: Name of the output file. (_1/_2).fq.gz will be appended to the reads. Default "hostile_clean"
     label: Output filename (base)
-    default: "hostile_clean"
 
   forward_reads:
     type: File?
@@ -70,7 +69,6 @@ inputs:
     type: boolean
     doc:  Keep only reads aligning to the index (and their mates if applicable) (default false)
     label: Invert
-    default: false
     inputBinding:
       prefix: --invert
 
@@ -78,7 +76,6 @@ inputs:
     type: int
     doc: Number of parallel threads to use. Default 4
     label: Threads
-    default: 4
     inputBinding:
       prefix: --threads
 

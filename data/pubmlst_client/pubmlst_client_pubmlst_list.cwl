@@ -11,7 +11,6 @@ inputs:
       - string
     doc: 'Base URL for the API. Suggested values are: http://rest.pubmlst.org/db (default),
       https://bigsdb.pasteur.fr/api/db'
-    default: http://rest.pubmlst.org/db
     inputBinding:
       position: 101
       prefix: --base-url

@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: Identity threshold
-    default: 0.9
     inputBinding:
       position: 103
       prefix: --id

@@ -65,14 +65,12 @@ inputs:
     type: string?
     label: output directory
     doc: Output directory (default = current working directory).
-    default: bakta_output
     inputBinding:
       prefix: --output
   force_overwrite:
     type: boolean?
     label: force overwrite
     doc: Force overwriting existing output folder (except for current working directory).
-    default: true
     inputBinding:
       prefix: --force
   genus:
@@ -247,7 +245,6 @@ inputs:
     type: boolean?
     label: print verbose information
     doc: Print verbose information.
-    default: true
     inputBinding:
       prefix: --verbose
   debug:

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Sequence characters per line
-    default: 50
     inputBinding:
       position: 101
       prefix: --length

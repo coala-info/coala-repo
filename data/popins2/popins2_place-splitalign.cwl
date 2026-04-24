@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum expected insert size of the read pairs.
-    default: 800
     inputBinding:
       position: 102
       prefix: --maxInsertSize
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to the sample directories.
-    default: .
     inputBinding:
       position: 102
       prefix: --prefix
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: The length of the reads.
-    default: 100
     inputBinding:
       position: 102
       prefix: --readLength

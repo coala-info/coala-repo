@@ -40,7 +40,6 @@ inputs:
       - int
     doc: "Hierarchical level that will be considered in the GTF file: (1) gene,intergenic;
       (2) intron,exon,intergenic; (3) 5'UTR,CDS,3'UTR,intron,intergenic; (4) start_codon,5'UTR,CDS,3'UTR,stop_codon,intron,intergenic."
-    default: 3
     inputBinding:
       position: 101
       prefix: --categories_depth
@@ -101,7 +100,6 @@ inputs:
       - string
     doc: "Library orientation. Choose within: 'unstranded', 'forward'/'fr-firststrand'
       or 'reverse'/'fr-secondstrand'."
-    default: unstranded
     inputBinding:
       position: 101
       prefix: --strandness
@@ -110,7 +108,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temp directory to store pybedtools files.
-    default: /tmp/
     inputBinding:
       position: 101
       prefix: --temp_dir

@@ -38,7 +38,6 @@ inputs:
   #     Give a name for the file which will hold the stats after QC.
   min_length:
     type: int
-    default: 100 # For assemblies we need to set this in the input YAML to 500
     label: 'Minimum read or contig length'
     doc: >
       Specify the minimum read or contig length for sequences to pass QC filtering.

@@ -49,7 +49,6 @@ inputs:
       - Directory
     doc: "The directory in which to write the result files.\nDefaults to the current
       working directory"
-    default: current working directory
     inputBinding:
       position: 102
       prefix: --dest_dir
@@ -70,7 +69,6 @@ inputs:
     doc: "A regular expression defining the enzyme specificity.\nThe cleavage site
       is interpreted as the end of the\nmatch. The default is trypsin, without proline\n\
       suppression: [KR]"
-    default: 'trypsin, without proline suppression: [KR]'
     inputBinding:
       position: 102
       prefix: --enzyme

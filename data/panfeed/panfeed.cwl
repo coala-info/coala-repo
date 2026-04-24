@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: 'Threads (default: 1, at least 3 are needed for parallelization)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -37,7 +36,6 @@ inputs:
       - int
     doc: "How many bases to include downstream of the actual gene sequences (e.g.
       to include the 3' region, default: 0)"
-    default: 0
     inputBinding:
       position: 101
       prefix: --downstream
@@ -82,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer length
-    default: 31
     inputBinding:
       position: 101
       prefix: --kmer-length
@@ -93,7 +90,6 @@ inputs:
     doc: 'Minor allele frequency threshold; patterns whose frequency is below this
       value or above 1-MAF are excluded (default: 0.01, does not apply to the kmers.tsv
       file)'
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --maf
@@ -135,7 +131,6 @@ inputs:
     doc: 'limit on items that may be put into the readingand writing queues. (default:
       3)this option is only relevant for cores > 1reading queue limit = ql * coreswriting
       queue limit = ql'
-    default: 3
     inputBinding:
       position: 101
       prefix: --queue-limit
@@ -162,7 +157,6 @@ inputs:
       - int
     doc: "How many bases to include upstream of the actual gene sequences (e.g. to
       include the 5' region, default: 0)"
-    default: 0
     inputBinding:
       position: 101
       prefix: --upstream

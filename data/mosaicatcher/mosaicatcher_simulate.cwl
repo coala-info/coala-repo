@@ -15,7 +15,6 @@ inputs:
       - float
     doc: 'noise added to all bins: mostly 0, but for a fraction alpha drawn from geometrix
       distribution'
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --alpha
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: max. read coverage per bin
-    default: 60
     inputBinding:
       position: 102
       prefix: --maxCoverage
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: min. read coverage per bin
-    default: 10
     inputBinding:
       position: 102
       prefix: --minCoverage
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - float
     doc: p parameter of the NB distirbution
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --nbinom_p
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: number of cells to simulate
-    default: 10
     inputBinding:
       position: 102
       prefix: --numcells
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - float
     doc: Average number of SCEs per cell
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --phasedFraction
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: Use this sample name in the output
-    default: simulated
     inputBinding:
       position: 102
       prefix: --sample-name
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Average number of SCEs per cell
-    default: 4
     inputBinding:
       position: 102
       prefix: --scesPerCell
@@ -111,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: window size of fixed windows
-    default: 100000
     inputBinding:
       position: 102
       prefix: --window

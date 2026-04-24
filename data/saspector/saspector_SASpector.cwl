@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Add flanking regions
-    default: 100
     inputBinding:
       position: 101
       prefix: --flanking

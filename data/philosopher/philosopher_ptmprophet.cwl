@@ -38,7 +38,6 @@ inputs:
       - int
     doc: set EM models to 0 (no EM), 1 (Intensity EM Model Applied) or 2 
       (Intensity and Matched Peaks EM Models Applied)
-    default: 2
     inputBinding:
       position: 101
       prefix: --em
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - float
     doc: Maximun mass difference excluded for MASSDIFFFMODE analysis
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --excludemassdiffmax
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum mass difference excluded for MASSDIFFFMODE analysis
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --excludemassdiffmin
@@ -66,7 +63,6 @@ inputs:
       - int
     doc: when computing PSM-specific mass_offset and mass_tolerance, use 
       specified default +/- MS2 mz tolerance on fragment ions
-    default: 15
     inputBinding:
       position: 101
       prefix: --fragppmtol
@@ -124,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: use specified number of threads for processing
-    default: 1
     inputBinding:
       position: 101
       prefix: --maxthreads
@@ -141,7 +136,6 @@ inputs:
       - 'null'
       - float
     doc: use specified minimum probability to evaluate peptides
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --minprob
@@ -179,7 +173,6 @@ inputs:
       - 'null'
       - string
     doc: output name prefix
-    default: interact
     inputBinding:
       position: 101
       prefix: --output
@@ -189,7 +182,6 @@ inputs:
       - float
     doc: use specified +/- MS1 ppm tolerance on peptides which may have a slight
       offset depending on search parameters
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --ppmtol

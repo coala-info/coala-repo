@@ -37,7 +37,6 @@ inputs:
       - float
     doc: Minimum percent identity of promer match between contigs and gene(s) to
       use as start point
-    default: 70
     inputBinding:
       position: 103
       prefix: --min_id

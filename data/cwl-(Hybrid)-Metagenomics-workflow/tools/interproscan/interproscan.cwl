@@ -86,7 +86,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: '--applications'
-    default: 'Pfam,SFLD,SMART,AntiFam,NCBIfam'
 
 outputs:
   tsv_annotations:

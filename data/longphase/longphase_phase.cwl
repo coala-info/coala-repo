@@ -22,7 +22,6 @@ inputs:
       - int
     doc: Change edge's weight to --edgeWeight if base quality is lower than the 
       threshold
-    default: 12
     inputBinding:
       position: 102
       prefix: --baseQuality
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Connect adjacent N SNPs
-    default: 35
     inputBinding:
       position: 102
       prefix: --connectAdjacent
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Phase two variants if distance is less than threshold
-    default: 300000
     inputBinding:
       position: 102
       prefix: --distance
@@ -58,7 +55,6 @@ inputs:
       - float
     doc: Give up SNP-SNP phasing pair if the number of reads of the two 
       combinations are similar
-    default: 0.7
     inputBinding:
       position: 102
       prefix: --edgeThreshold
@@ -68,7 +64,6 @@ inputs:
       - float
     doc: If one of the bases connected by the edge has a quality lower than 
       --baseQuality, its weight is reduced from the normal 1
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --edgeWeight
@@ -78,7 +73,6 @@ inputs:
       - int
     doc: Filter indels with QUAL less than threshold (only effective when 
       --indels is enabled)
-    default: 0
     inputBinding:
       position: 102
       prefix: --indelQuality
@@ -87,7 +81,6 @@ inputs:
       - 'null'
       - boolean
     doc: Phase small indels
-    default: false
     inputBinding:
       position: 102
       prefix: --indels
@@ -96,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Filter alignment if mapping quality is lower than threshold
-    default: 1
     inputBinding:
       position: 102
       prefix: --mappingQuality
@@ -105,7 +97,6 @@ inputs:
       - 'null'
       - float
     doc: Mark reads as false if mismatch rate of them are higher than threshold
-    default: 3
     inputBinding:
       position: 102
       prefix: --mismatchRate
@@ -130,7 +121,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix of phasing result
-    default: result
     inputBinding:
       position: 102
       prefix: --out-prefix
@@ -139,7 +129,6 @@ inputs:
       - 'null'
       - float
     doc: Filter different alignments of the same read if there is overlap
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --overlapThreshold
@@ -156,7 +145,6 @@ inputs:
       - 'null'
       - float
     doc: The confidence of a read being assigned to any haplotype
-    default: 0.65
     inputBinding:
       position: 102
       prefix: --readConfidence
@@ -172,7 +160,6 @@ inputs:
       - float
     doc: The confidence of assigning two alleles of a SNP to different 
       haplotypes
-    default: 0.75
     inputBinding:
       position: 102
       prefix: --snpConfidence
@@ -195,7 +182,6 @@ inputs:
       - 'null'
       - float
     doc: Relative difference threshold for read to support a SV
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --sv-threshold
@@ -204,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for evaluating surrounding CIGAR operations
-    default: 20
     inputBinding:
       position: 102
       prefix: --sv-window
@@ -213,7 +198,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

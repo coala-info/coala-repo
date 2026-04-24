@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: DNA or amino acid
-    default: dna
     inputBinding:
       position: 102
       prefix: --sequence-type

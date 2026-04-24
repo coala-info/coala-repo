@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output the given input path using attribute "uri".
-    default: false
     inputBinding:
       position: 102
       prefix: --exclude-file-path
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output the given input path using attribute "uri".
-    default: false
     inputBinding:
       position: 102
       prefix: --include-file-path
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: 'Format used to return file metadata. Should be one of: json, toml, or yaml.'
-    default: json
     inputBinding:
       position: 102
       prefix: --output-format

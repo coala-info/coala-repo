@@ -14,7 +14,6 @@ inputs:
         items: string
     doc: FAST5 subgroup(s) (under Analyses/[corrected-group]) containing 
       basecalls.
-    default:
       - BaseCalled_template
     inputBinding:
       position: 101
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: FAST5 group created by resquiggle command.
-    default: RawGenomeCorrected_000
     inputBinding:
       position: 101
       prefix: --corrected-group
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Number of observations to plot.
-    default: 500
     inputBinding:
       position: 101
       prefix: --num-obs
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads to plot.
-    default: 10
     inputBinding:
       position: 101
       prefix: --num-reads
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: 'Region to plot within each read. Options: {random,start,end}'
-    default: random
     inputBinding:
       position: 101
       prefix: --region-type

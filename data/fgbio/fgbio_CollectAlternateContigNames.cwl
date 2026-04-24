@@ -24,7 +24,6 @@ inputs:
       - boolean
     doc: Allow mismatching sequence lengths when using an existing sequence 
       dictionary file.
-    default: false
     inputBinding:
       position: 101
       prefix: --allow-mismatching-lengths
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
-    default: false
     inputBinding:
       position: 101
       prefix: --async-io
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Default GZIP compression level, BAM compression level.
-    default: 5
     inputBinding:
       position: 101
       prefix: --compression
@@ -83,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: Minimum severity log-level to emit.
-    default: Info
     inputBinding:
       position: 101
       prefix: --log-level
@@ -92,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: The assembly report column for the primary contig name.
-    default: RefSeqAccession
     inputBinding:
       position: 101
       prefix: --primary
@@ -101,7 +96,6 @@ inputs:
       - 'null'
       - string
     doc: Validation stringency for SAM/BAM reading.
-    default: SILENT
     inputBinding:
       position: 101
       prefix: --sam-validation-stringency
@@ -120,7 +114,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip contigs that have no alternates
-    default: true
     inputBinding:
       position: 101
       prefix: --skip-missing-alternates
@@ -130,7 +123,6 @@ inputs:
       - boolean
     doc: "Sort by the sequencing role (only when not updating an existing sequence
       dictionary\nfile). Uses the order from '--sequence-roles' if provided."
-    default: false
     inputBinding:
       position: 101
       prefix: --sort-by-sequencing-role
@@ -139,7 +131,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to use for temporary files.
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmp-dir

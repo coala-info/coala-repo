@@ -13,7 +13,6 @@ inputs:
       - int
     doc: Enter the length of the aa sequences required. Any hits below that cutoff
       will be removed
-    default: 100
     inputBinding:
       position: 101
       prefix: --aminoacid_length
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - float
     doc: Enter the probability cutoff for AMPs for all tools except for HMMsearch
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --amp_cutoff
@@ -32,7 +30,6 @@ inputs:
       - string
     doc: Enter the name of the database to be used to classify the AMPs. Can either
       be APD, DRAMP, or UniRef100
-    default: DRAMP
     inputBinding:
       position: 101
       prefix: --amp_database
@@ -51,7 +48,6 @@ inputs:
       - Directory
     doc: Enter the path to the folder that contains the different tool's output files
       in sub-folders named by sample name.
-    default: ./test_files/
     inputBinding:
       position: 101
       prefix: --amp_results
@@ -100,7 +96,6 @@ inputs:
       - 'null'
       - float
     doc: Enter the E-value cutoff for AMPs for the database diamond alignment.
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --db_evalue
@@ -118,7 +113,6 @@ inputs:
       - Directory
     doc: Enter the path to the folder containing the reference .faa files or to one
       .faa file.
-    default: ./test_faa/
     inputBinding:
       position: 101
       prefix: --faa
@@ -128,7 +122,6 @@ inputs:
       - Directory
     doc: Enter the path to the folder containing the reference .gbk/.gbff files or
       to one .gbk/.gbff file.
-    default: ./test_gbff/
     inputBinding:
       position: 101
       prefix: --gbk
@@ -154,7 +147,6 @@ inputs:
       - string
     doc: Enter a comma seperated list of all keywords that describes the protein that
       is not required in the analysis.
-    default: ribosomal protein,ribosomal proteins,ribosome protein,ribosomal rna,Ribosomal
       protein,RIBOSOMAL PROTEIN
     inputBinding:
       position: 101
@@ -199,7 +191,6 @@ inputs:
       - boolean
     doc: Removes any hits/CDSs that don't have a stop codon found in the window below
       or upstream of the CDS assigned by '--window_size_stop_codon'.
-    default: false
     inputBinding:
       position: 101
       prefix: --remove_stop_codons
@@ -225,7 +216,6 @@ inputs:
       - 'null'
       - int
     doc: Changes the threads used for DIAMOND alignment
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -235,7 +225,6 @@ inputs:
       - int
     doc: Enter the length of the window size required to look for stop codons downstream
       and upstream of the CDS hits.
-    default: 60
     inputBinding:
       position: 101
       prefix: --window_size_stop_codon
@@ -245,7 +234,6 @@ inputs:
       - int
     doc: Enter the length of the window size required to look for a 'transporter'
       e.g. ABC transporter downstream and upstream of the CDS hits.
-    default: 11
     inputBinding:
       position: 101
       prefix: --window_size_transporter

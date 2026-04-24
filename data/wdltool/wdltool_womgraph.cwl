@@ -49,7 +49,6 @@ inputs:
       - string
     doc: Graphviz layout engine to use (e.g., dot, neato, fdp, sfdp, twopi, 
       circo). Defaults to 'dot'.
-    default: dot
     inputBinding:
       position: 102
       prefix: --layout
@@ -475,7 +474,6 @@ inputs:
       - 'null'
       - string
     doc: The type of input file ('wdl' or 'cwl'). Defaults to 'wdl'.
-    default: wdl
     inputBinding:
       position: 102
       prefix: --type

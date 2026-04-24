@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Do not create a backup file (default: backup is created)'
-    default: false
     inputBinding:
       position: 101
       prefix: --no-backup

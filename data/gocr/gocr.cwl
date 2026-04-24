@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: value of certainty (in percent, 0..100, default=95)
-    default: 95
     inputBinding:
       position: 102
       prefix: -a
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - Directory
     doc: database path including final slash
-    default: ./db/
     inputBinding:
       position: 102
       prefix: -p

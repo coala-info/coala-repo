@@ -91,7 +91,6 @@ inputs:
       - 'null'
       - float
     doc: Additive shift applied to all ω (0.0 for the general case).
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --omegashift

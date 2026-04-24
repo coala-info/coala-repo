@@ -25,7 +25,6 @@ inputs:
     doc: the files type to add to the table 
       (default='.trim.derep.no_artifacts.msa.deblur.no_chimeras', can be 
       '.fasta' or '.fa' if needed)
-    default: .trim.derep.no_artifacts.msa.deblur.no_chimeras
     inputBinding:
       position: 103
   - id: file_type_option
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: ending of files to be added to the biom table
-    default: .fasta.trim.derep.no_artifacts.msa.deblur.no_chimeras
     inputBinding:
       position: 103
       prefix: --file_type
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - File
     doc: log file name
-    default: deblur.log
     inputBinding:
       position: 103
       prefix: --log-file
@@ -52,7 +49,6 @@ inputs:
       - int
     doc: 'Level of messages for log file (range 1-debug to 5-critical [default: 2;
       1<=x<=5]'
-    default: 2
     inputBinding:
       position: 103
       prefix: --log-level
@@ -62,7 +58,6 @@ inputs:
       - int
     doc: In output biom table - keep only sequences appearing at least min-reads
       in all samples combined.
-    default: 10
     inputBinding:
       position: 103
       prefix: --min-reads

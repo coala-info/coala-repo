@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of alignments reported
-    default: 51
     inputBinding:
       position: 101
       prefix: -k
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads to be used for multithreaded alignment
-    default: 1
     inputBinding:
       position: 101
       prefix: -p

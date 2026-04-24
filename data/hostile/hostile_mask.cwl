@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: length of target genome k-mers
-    default: 150
     inputBinding:
       position: 103
       prefix: --kmer-length
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: interval between target genome k-mer start positions
-    default: 10
     inputBinding:
       position: 103
       prefix: --kmer-step
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 20
     inputBinding:
       position: 103
       prefix: --threads

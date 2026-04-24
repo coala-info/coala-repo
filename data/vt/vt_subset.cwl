@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: filter expression
-    default: ''
     inputBinding:
       position: 102
       prefix: -f

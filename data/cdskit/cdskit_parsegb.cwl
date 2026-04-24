@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Whether to extract the CDS feature.
-    default: yes
     inputBinding:
       position: 101
       prefix: --extract_cds
@@ -19,7 +18,6 @@ inputs:
       - string
     doc: "Input sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --inseqformat
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Listing the keys (and values) available for --seqnamefmt.
-    default: no
     inputBinding:
       position: 101
       prefix: --list_seqname_keys
@@ -38,7 +35,6 @@ inputs:
       - string
     doc: "Output sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --outseqformat
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - File
     doc: Input sequence file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --seqfile
@@ -57,7 +52,6 @@ inputs:
       - string
     doc: Underline-separated list of sequence name elements. Use 
       --list_seqname_keys to browse available values.
-    default: organism_accessions
     inputBinding:
       position: 101
       prefix: --seqnamefmt

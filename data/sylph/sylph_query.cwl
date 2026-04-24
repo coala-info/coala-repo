@@ -74,7 +74,6 @@ inputs:
       - int
     doc: Value of k. Only k = 21, 31 are currently supported. Does nothing for 
       pre-sketched files
-    default: 31
     inputBinding:
       position: 102
       prefix: -k
@@ -93,7 +92,6 @@ inputs:
       - int
     doc: Minimum k-mer multiplicity needed for coverage correction. Higher 
       values gives more precision but lower sensitivity
-    default: 3
     inputBinding:
       position: 102
       prefix: --min-count-correct
@@ -102,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Exclude genomes with less than this number of sampled k-mers
-    default: 50
     inputBinding:
       position: 102
       prefix: --min-number-kmers
@@ -112,7 +109,6 @@ inputs:
       - int
     doc: Minimum spacing between selected k-mers on the database genomes. Does 
       nothing for pre-sketched files
-    default: 30
     inputBinding:
       position: 102
       prefix: --min-spacing
@@ -122,7 +118,6 @@ inputs:
       - float
     doc: Minimum adjusted ANI to consider (0-100). Default is 90 for query and 
       95 for profile. Smaller than 95 for profile will give inaccurate results.
-    default: 90
     inputBinding:
       position: 102
       prefix: --minimum-ani
@@ -167,7 +162,6 @@ inputs:
       - 'null'
       - int
     doc: Subsampling rate. Does nothing for pre-sketched files
-    default: 200
     inputBinding:
       position: 102
       prefix: -c
@@ -176,7 +170,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 3
     inputBinding:
       position: 102
       prefix: -t

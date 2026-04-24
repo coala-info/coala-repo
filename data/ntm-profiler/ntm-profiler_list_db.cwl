@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - Directory
     doc: Storage directory
-    default: /usr/local/share/ntm-profiler/
     inputBinding:
       position: 101
       prefix: --db_dir
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable debug logging
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - Directory
     doc: Storage directory
-    default: .
     inputBinding:
       position: 101
       prefix: --dir
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level
-    default: INFO
     inputBinding:
       position: 101
       prefix: --logging
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't remove temporary files after run
-    default: false
     inputBinding:
       position: 101
       prefix: --no_cleanup
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temp directory to process all files
-    default: .
     inputBinding:
       position: 101
       prefix: --temp

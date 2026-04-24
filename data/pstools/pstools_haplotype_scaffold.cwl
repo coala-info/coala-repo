@@ -23,7 +23,6 @@ inputs:
       - boolean
     doc: enable identity check on contigs, exclude identical ones while 
       scaffolding
-    default: false
     inputBinding:
       position: 103
       prefix: -i
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 8
     inputBinding:
       position: 103
       prefix: -t

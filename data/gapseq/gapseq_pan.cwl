@@ -11,7 +11,6 @@ inputs:
       - float
     doc: minimum reaction frequency (mrf) to include the reactions in the 
       pan-Draft.
-    default: 0.06
     inputBinding:
       position: 101
       prefix: --min.rxn.freq.in.mods
@@ -32,7 +31,6 @@ inputs:
       - boolean
     doc: perform only models comparison to get a binary table summarizing rxn 
       presence/absence.
-    default: false
     inputBinding:
       position: 101
       prefix: --only.binary.rxn.tbl
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - Directory
     doc: path to directory, where output files will be saved
-    default: current directory
     inputBinding:
       position: 101
       prefix: --output.dir
@@ -82,7 +79,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not save model as sbml file.
-    default: Save as SBML
     inputBinding:
       position: 101
       prefix: --sbml.no.output

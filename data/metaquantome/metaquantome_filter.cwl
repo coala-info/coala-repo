@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to data directory.
-    default: <metaquantome_pkg_dir>/data
     inputBinding:
       position: 101
       prefix: --data_dir
@@ -39,7 +38,6 @@ inputs:
       - int
     doc: Used for filtering to informative annotations. A term is retained if it
       has a number of children greater than or equal to min_children_non_leaf.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_children_non_leaf
@@ -61,7 +59,6 @@ inputs:
       annotated with that term plus the number of peptides annotated with any of
       its descendants. Terms with a number of peptides greater than or equal to 
       min_peptides are retained.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_peptides
@@ -89,7 +86,6 @@ inputs:
       functional/taxonomic term with lower number of per-group intensities will 
       be filtered out. The default is 3, because this is the minimum number for 
       t-tests.
-    default: 3
     inputBinding:
       position: 101
       prefix: --qthreshold

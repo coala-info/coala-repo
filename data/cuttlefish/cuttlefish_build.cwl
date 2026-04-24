@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: frequency cutoff for (k + 1)-mers
-    default: 'refs: 1, reads: 2'
     inputBinding:
       position: 101
       prefix: --cutoff
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: set of edges, i.e. (k + 1)-mers (KMC database) prefix
-    default: ''
     inputBinding:
       position: 101
       prefix: --edge-set
@@ -73,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length
-    default: 27
     inputBinding:
       position: 101
       prefix: --kmer-len
@@ -82,7 +79,6 @@ inputs:
       - 'null'
       - float
     doc: soft maximum memory limit in GB
-    default: 3
     inputBinding:
       position: 101
       prefix: --max-memory
@@ -139,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 5
     inputBinding:
       position: 101
       prefix: --threads
@@ -164,7 +159,6 @@ inputs:
       - 'null'
       - string
     doc: set of vertices, i.e. k-mers (KMC database) prefix
-    default: ''
     inputBinding:
       position: 101
       prefix: --vertex-set
@@ -173,7 +167,6 @@ inputs:
       - 'null'
       - Directory
     doc: working directory
-    default: .
     inputBinding:
       position: 101
       prefix: --work-dir

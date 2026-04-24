@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum ORF length (AA).
-    default: 100
     inputBinding:
       position: 102
       prefix: --orf_length
@@ -56,7 +55,6 @@ inputs:
       - int
     doc: Minimum length (AA) of uninterupted sequence upstream of ORF to be 
       included for incomplete_5prime transcripts
-    default: 50
     inputBinding:
       position: 102
       prefix: --upstream_incomplete_length

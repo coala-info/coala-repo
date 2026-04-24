@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Restart from base POS, where 1 is the first base
-    default: 1
     inputBinding:
       position: 102
       prefix: --start-pos

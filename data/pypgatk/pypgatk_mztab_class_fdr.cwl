@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: PSM peptide class-fdr cutoff or threshold. Default is 0.01
-    default: '0.01'
     inputBinding:
       position: 101
       prefix: --class_fdr_cutoff
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Default is "decoy"
-    default: decoy
     inputBinding:
       position: 101
       prefix: --decoy_prefix
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: PSM peptide global-fdr cutoff or threshold. Default is 0.01
-    default: '0.01'
     inputBinding:
       position: 101
       prefix: --global_fdr_cutoff

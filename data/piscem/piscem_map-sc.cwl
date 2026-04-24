@@ -35,7 +35,6 @@ inputs:
       - int
     doc: determines the maximum cardinality equivalence class (number of (txp, orientation
       status) pairs) to examine (cannot be used with --ignore-ambig-hits)
-    default: 4096
     inputBinding:
       position: 101
       prefix: --max-ec-card
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: in the first pass, consider only k-mers having <= --max-hit-occ hits
-    default: 256
     inputBinding:
       position: 101
       prefix: --max-hit-occ
@@ -54,7 +52,6 @@ inputs:
       - int
     doc: if all k-mers have > --max-hit-occ hits, then make a second pass and consider
       k-mers having <= --max-hit-occ-recover hits
-    default: 1024
     inputBinding:
       position: 101
       prefix: --max-hit-occ-recover
@@ -64,7 +61,6 @@ inputs:
       - int
     doc: reads with more than this number of mappings will not have their mappings
       reported
-    default: 2500
     inputBinding:
       position: 101
       prefix: --max-read-occ
@@ -100,7 +96,6 @@ inputs:
       - string
     doc: 'the skipping strategy to use for k-mer collection [possible values: permissive,
       strict]'
-    default: permissive
     inputBinding:
       position: 101
       prefix: --skipping-strategy
@@ -117,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 16
     inputBinding:
       position: 101
       prefix: --threads

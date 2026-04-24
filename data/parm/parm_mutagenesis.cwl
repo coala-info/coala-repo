@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: The model size that torch expects
-    default: 125
     inputBinding:
       position: 101
       prefix: --filter_size
@@ -27,7 +26,6 @@ inputs:
     doc: The maximum length of the sequences allowed by the model. All 
       pre-trained models have `--L_max 600`. However, if you trained your own 
       PARM model with a different L_max value, you should specify it here.
-    default: 600
     inputBinding:
       position: 101
       prefix: --L_max
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - File
     doc: Path or url to the motif databae (JASPAR format).
-    default: 'HOCOMOCOv11: https://hocomoco11.autosome.org/final_bundle/hocomoco11/core/HUMAN/mono/HOCOMOCO
       v11_core_HUMAN_mono_jaspar_format.txt'
     inputBinding:
       position: 101

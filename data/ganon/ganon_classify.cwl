@@ -11,7 +11,6 @@ inputs:
     doc: Optimized parameters for binning (--rel-cutoff 0.25 --rel-filter 0 
       --min-count 0 --report-type reads). Will report sequence abundances (.tre)
       instead of tax. abundance.
-    default: false
     inputBinding:
       position: 101
       prefix: --binning
@@ -20,7 +19,6 @@ inputs:
       type: array
       items: string
     doc: Database input prefix[es]
-    default: None
     inputBinding:
       position: 101
       prefix: --db-prefix
@@ -33,7 +31,6 @@ inputs:
       --rel-cutoff and --rel-filter. Generally used to remove false positives 
       matches querying a database build with large --max-fp. Single value or one
       per hierarchy (e.g. 0.1 0). 1 for no filter
-    default:
       - 1e-05
     inputBinding:
       position: 101
@@ -46,7 +43,6 @@ inputs:
     doc: Hierarchy definition of --db-prefix files to be classified. Can also be
       a string, but input will be sorted to define order (e.g. 1 1 2 3). The 
       default value reported without hierarchy is 'H1'
-    default: None
     inputBinding:
       position: 101
       prefix: --hierarchy-labels
@@ -56,7 +52,6 @@ inputs:
       - float
     doc: Minimum percentage/counts to report an taxa (.tre) [use values between 
       0-1 for percentage, >1 for counts]
-    default: 5e-05
     inputBinding:
       position: 101
       prefix: --min-count
@@ -68,7 +63,6 @@ inputs:
       expectation maximization algorithm based on unique matches. lca -> lowest 
       common ancestor based on taxonomy. The EM algorithm can be executed later 
       with 'ganon reassign' using the .all file (--output-all).
-    default: em
     inputBinding:
       position: 101
       prefix: --multiple-matches
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output a file with all unique and multiple matches (.all)
-    default: false
     inputBinding:
       position: 101
       prefix: --output-all
@@ -87,7 +80,6 @@ inputs:
       - boolean
     doc: Output a file with one match for each read (.one) either an unique 
       match or a result from the EM or a LCA algorithm (--multiple-matches)
-    default: false
     inputBinding:
       position: 101
       prefix: --output-one
@@ -97,7 +89,6 @@ inputs:
       - string
     doc: Output prefix for output (.rep) and tree-like report (.tre). Empty to 
       output to STDOUT (only .rep)
-    default: None
     inputBinding:
       position: 101
       prefix: --output-prefix
@@ -107,7 +98,6 @@ inputs:
       - boolean
     doc: When using multiple hierarchical levels, output everything in one file 
       instead of one per hierarchy
-    default: false
     inputBinding:
       position: 101
       prefix: --output-single
@@ -116,7 +106,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output a file with unclassified read headers (.unc)
-    default: false
     inputBinding:
       position: 101
       prefix: --output-unclassified
@@ -126,7 +115,6 @@ inputs:
       - type: array
         items: File
     doc: Multi-fastq[.gz] pairs of file[s] to classify
-    default: None
     inputBinding:
       position: 101
       prefix: --paired-reads
@@ -135,7 +123,6 @@ inputs:
       - 'null'
       - boolean
     doc: Quiet output mode
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -146,7 +133,6 @@ inputs:
         items: string
     doc: Ranks to report taxonomic abundances (.tre). empty will report default 
       ranks [domain phylum class order family genus species assembly].
-    default: []
     inputBinding:
       position: 101
       prefix: --ranks
@@ -159,7 +145,6 @@ inputs:
       necessary to consider a match. Generally used to remove low similarity 
       matches. Single value or one per database (e.g. 0.7 1 0.25). 0 for no 
       cutoff
-    default:
       - 0.75
     inputBinding:
       position: 101
@@ -172,7 +157,6 @@ inputs:
     doc: Additional relative percentage of matches (relative to the best match) 
       to keep. Generally used to keep top matches above cutoff. Single value or 
       one per hierarchy (e.g. 0.1 0). 1 for no filter
-    default:
       - 0.1
     inputBinding:
       position: 101
@@ -183,7 +167,6 @@ inputs:
       - string
     doc: Type of report (.tre) [abundance, reads, matches, dist, corr]. More 
       info in 'ganon report'.
-    default: abundance
     inputBinding:
       position: 101
       prefix: --report-type
@@ -193,7 +176,6 @@ inputs:
       - type: array
         items: File
     doc: Multi-fastq[.gz] file[s] to classify
-    default: None
     inputBinding:
       position: 101
       prefix: --single-reads
@@ -203,7 +185,6 @@ inputs:
       - boolean
     doc: Disable tree-like report (.tre) at the end of classification. Can be 
       done later with 'ganon report'.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-report
@@ -212,7 +193,6 @@ inputs:
       - 'null'
       - int
     doc: Number of sub-processes/threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -221,7 +201,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose output mode
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

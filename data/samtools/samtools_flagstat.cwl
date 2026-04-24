@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Number of additional threads to use
-    default: 0
     inputBinding:
       position: 102
       prefix: --threads

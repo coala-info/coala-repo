@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Percentage of samples that must fail for an amplicon to be flagged
-    default: 50
     inputBinding:
       position: 101
       prefix: --fail-percentage
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth to consider an amplicon 'passed'
-    default: 10
     inputBinding:
       position: 101
       prefix: --fail-threshold
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
-    default: INFO
     inputBinding:
       position: 101
       prefix: --loglevel
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: specifies number of threads to use for sorting and counting
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

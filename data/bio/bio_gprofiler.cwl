@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - File
     doc: input counts
-    default: edger.csv
     inputBinding:
       position: 101
       prefix: --counts
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: gene id column name
-    default: gene
     inputBinding:
       position: 101
       prefix: --colname
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: input counts
-    default: mmusculus
     inputBinding:
       position: 101
       prefix: --organism
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: pvalue column name
-    default: FDR
     inputBinding:
       position: 101
       prefix: --pval-column
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: pvalue cutoff
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --pval-cutoff

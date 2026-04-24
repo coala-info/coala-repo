@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory.
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: CPU threads for IQTREE.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

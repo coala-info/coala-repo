@@ -10,7 +10,6 @@ inputs:
       - string
     doc: "Input sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --inseqformat
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: Input sequence file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --seqfile

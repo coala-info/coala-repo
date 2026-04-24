@@ -13,7 +13,6 @@ inputs:
           fourth: long
           fifth: double
           sixth: File
-    default:
       first: y
       second: 23
       third: 2.3

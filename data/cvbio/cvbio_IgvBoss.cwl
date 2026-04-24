@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
-    default: false
     inputBinding:
       position: 101
       prefix: --async-io
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: Close the IGV application after execution.
-    default: false
     inputBinding:
       position: 101
       prefix: --close-on-exit
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Default GZIP compression level, BAM compression level.
-    default: 5
     inputBinding:
       position: 101
       prefix: --compression
@@ -92,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: The host the IGV server is running on.
-    default: 127.0.0.1
     inputBinding:
       position: 101
       prefix: --host
@@ -128,7 +124,6 @@ inputs:
       - string
     doc: 'Minimum severity log-level to emit. Options: Debug, Info, Warning, Error,
       Fatal.'
-    default: Info
     inputBinding:
       position: 101
       prefix: --log-level
@@ -137,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: The heap size (Gb) given to the JVM, if we initialize.
-    default: 5
     inputBinding:
       position: 101
       prefix: --memory
@@ -146,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: The port to the IGV server.
-    default: 60151
     inputBinding:
       position: 101
       prefix: --port
@@ -163,7 +156,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to use for temporary files.
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmp-dir

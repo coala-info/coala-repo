@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Cache Length for bwt lookups
-    default: 10
     inputBinding:
       position: 103
       prefix: --cache-length
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: The length of the kmer to use.
-    default: 27
     inputBinding:
       position: 103
       prefix: --kmer-size
@@ -48,7 +46,6 @@ inputs:
     doc: "use occurrence array sample rate of N in the FM-index. Higher values use
       significantly\nless memory at the cost of higher runtime. This value must be
       a power of 2"
-    default: 128
     inputBinding:
       position: 103
       prefix: --sample-rate

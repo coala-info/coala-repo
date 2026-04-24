@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Hue (0-360) for "bad" scores.
-    default: 0
     inputBinding:
       position: 102
       prefix: -x
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Hue (0-360) for "good" scores.
-    default: 120
     inputBinding:
       position: 102
       prefix: -y
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the highest level.
-    default: Root
     inputBinding:
       position: 102
       prefix: -n
@@ -101,7 +98,6 @@ inputs:
       - 'null'
       - string
     doc: Output file name.
-    default: taxonomy.krona.html
     inputBinding:
       position: 102
       prefix: -o
@@ -111,7 +107,6 @@ inputs:
       - int
     doc: Column of input files to use as query ID. Required if magnitude files 
       are specified.
-    default: 1
     inputBinding:
       position: 102
       prefix: -q
@@ -131,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: Column of input files to use as score.
-    default: 3
     inputBinding:
       position: 102
       prefix: -s
@@ -148,7 +142,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to directory containing a taxonomy database to use.
-    default: /usr/local/opt/krona/taxonomy
     inputBinding:
       position: 102
       prefix: -tax
@@ -157,7 +150,6 @@ inputs:
       - 'null'
       - int
     doc: Column of input files to use as taxonomy ID.
-    default: 2
     inputBinding:
       position: 102
       prefix: -t

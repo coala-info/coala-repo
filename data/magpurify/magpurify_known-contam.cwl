@@ -16,7 +16,6 @@ inputs:
       - File
     doc: "Path to reference database. By default, the IMAGEN_DB\n                \
       \     environmental variable is used"
-    default: IMAGEN_DB environmental variable
     inputBinding:
       position: 102
       prefix: --db
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum evalue
-    default: '1e-05'
     inputBinding:
       position: 102
       prefix: --evalue
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum % identity to reference
-    default: 98
     inputBinding:
       position: 102
       prefix: --pid
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percent query coverage
-    default: 25
     inputBinding:
       position: 102
       prefix: --qcov
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

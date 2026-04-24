@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: apply variant filters (under test)
-    default: false
     inputBinding:
       position: 101
       prefix: -filter
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: BAM output filename
-    default: 'NULL'
     inputBinding:
       position: 101
       prefix: -bam
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: detect somatic mutations
-    default: false
     inputBinding:
       position: 101
       prefix: -somatic
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: sequencing fragment size
-    default: 500
     inputBinding:
       position: 101
       prefix: -size
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: GVCF mode
-    default: false
     inputBinding:
       position: 101
       prefix: -gvcf
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - File
     doc: log filename
-    default: job.log
     inputBinding:
       position: 101
       prefix: -log
@@ -85,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: maximal clip size at either ends
-    default: 5
     inputBinding:
       position: 101
       prefix: -maxclip
@@ -94,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: maximal indel size
-    default: 30
     inputBinding:
       position: 101
       prefix: -indel
@@ -103,7 +95,6 @@ inputs:
       - 'null'
       - float
     doc: maximal mismatch rate in read alignment
-    default: 0.05
     inputBinding:
       position: 101
       prefix: -maxmm
@@ -112,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: maximal PCR duplicates
-    default: 5
     inputBinding:
       position: 101
       prefix: -dup
@@ -121,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: minimal ALT allele count
-    default: 5
     inputBinding:
       position: 101
       prefix: -ad
@@ -130,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: the minimal cnv size to be reported
-    default: 50
     inputBinding:
       position: 101
       prefix: -min_cnv
@@ -139,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: the minimal gap(unmapped) size to be reported
-    default: 50
     inputBinding:
       position: 101
       prefix: -min_gap
@@ -148,7 +135,6 @@ inputs:
       - 'null'
       - boolean
     doc: No VCF output
-    default: false
     inputBinding:
       position: 101
       prefix: -no_vcf
@@ -165,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: number of sets of chromosomes in a cell (1:monoploid, 2:diploid)
-    default: 2
     inputBinding:
       position: 101
       prefix: -ploidy
@@ -207,7 +192,6 @@ inputs:
       - 'null'
       - File
     doc: SAM output filename
-    default: 'NULL'
     inputBinding:
       position: 101
       prefix: -sam
@@ -224,7 +208,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 16
     inputBinding:
       position: 101
       prefix: -t
@@ -233,7 +216,6 @@ inputs:
       - 'null'
       - File
     doc: VCF output filename
-    default: output.vcf
     inputBinding:
       position: 101
       prefix: -vcf

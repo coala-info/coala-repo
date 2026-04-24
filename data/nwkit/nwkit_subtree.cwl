@@ -11,7 +11,6 @@ inputs:
     doc: The threshold of duplication-confidence score for orthogroup 
       delimitation. 0 = most stringent, 1 = most relaxed. For the score, see 
       https://www.ensembl.org/info/genome/compara/homology_types.html
-    default: 0
     inputBinding:
       position: 101
       prefix: --dup_conf_score_threshold
@@ -21,7 +20,6 @@ inputs:
       - int
     doc: ETE tree format. See here 
       http://etetoolkit.org/docs/latest/tutorial/tutorial_trees.html
-    default: auto
     inputBinding:
       position: 101
       prefix: --format
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - File
     doc: Input newick file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --infile
@@ -43,7 +40,6 @@ inputs:
       most-recent common ancestor as the root. --left_leaf and --right_leaf are 
       ignored if this option is specified. Single leaf name may be specified in 
       combination with --orthogroup yes.
-    default: None
     inputBinding:
       position: 101
       prefix: --leaves
@@ -54,7 +50,6 @@ inputs:
     doc: Any leaf names in the left clade. For example, to extract the subtree 
       with the root node splitting Homo_sapiens and Mus_musculus, specify one of
       them (e.g., Homo_sapiens).
-    default: None
     inputBinding:
       position: 101
       prefix: --left_leaf
@@ -64,7 +59,6 @@ inputs:
       - string
     doc: The output subtree represents orthogroup(s) that contain all specified 
       leaves. The expected format of leaf names is "GENUS_SPECIES_OTHERINFO".
-    default: no
     inputBinding:
       position: 101
       prefix: --orthogroup
@@ -82,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: Whether node names are quoted in the input file.
-    default: yes
     inputBinding:
       position: 101
       prefix: --quoted_node_names
@@ -93,7 +86,6 @@ inputs:
     doc: Any leaf names in the right clade. For example, to extract the subtree 
       with the root node splitting Homo_sapiens and Mus_musculus, specify the 
       other one that is not used as --left_leaf (e.g., Mus_musculus).
-    default: None
     inputBinding:
       position: 101
       prefix: --right_leaf

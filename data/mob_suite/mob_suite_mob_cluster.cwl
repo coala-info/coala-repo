@@ -11,7 +11,6 @@ inputs:
       - Directory
     doc: Directory you want to use for your databases. If the databases are not 
       already downloaded, they will be downloaded automatically.
-    default: /usr/local/lib/python3.11/site-packages/mob_suite/databases
     inputBinding:
       position: 101
       prefix: --database_directory
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show debug information
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to be used
-    default: 1
     inputBinding:
       position: 101
       prefix: --num_threads
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: Mash distance for assigning primary cluster id 0 - 1
-    default: 0.06
     inputBinding:
       position: 101
       prefix: --primary_cluster_dist
@@ -89,7 +85,6 @@ inputs:
       - 'null'
       - float
     doc: Mash distance for assigning primary cluster id 0 - 1
-    default: 0.025
     inputBinding:
       position: 101
       prefix: --secondary_cluster_dist

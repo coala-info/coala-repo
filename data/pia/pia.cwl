@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of used threads for compilation (0 for use all)
-    default: 0
     inputBinding:
       position: 102
       prefix: --threads

@@ -53,7 +53,6 @@ inputs:
       everything will be q = 1 and no DMRs will be obtained in any case. This 
       option will substantially increase RAM use and slow execution. 'Hommel' is
       so slow I strongly recommend against it.
-    default: Holm
     inputBinding:
       position: 102
       prefix: -fdr
@@ -107,7 +106,6 @@ inputs:
       - int
     doc: Maximum allowed consecutive similar CpN, default is 5 CpN. This accepts
       non-negative integers, e.g. "-s 3".
-    default: 5
     inputBinding:
       position: 102
       prefix: -s
@@ -117,7 +115,6 @@ inputs:
       - int
     doc: Allow some number of consecutive skips of low coverage, default is 0. 
       This accepts positive integers, e.g. "-S 1".
-    default: 0
     inputBinding:
       position: 102
       prefix: -S
@@ -135,7 +132,6 @@ inputs:
       - float
     doc: Maximum p-value, which is 0<=p<=1. This option can be parallelized to 
       test multiple options.
-    default: 0.05
     inputBinding:
       position: 102
       prefix: -p
@@ -180,7 +176,6 @@ inputs:
       - int
     doc: Minimum nucleotide range, which accepts a non-negative integer. Default
       range is 1 nucleotide.
-    default: 1
     inputBinding:
       position: 102
       prefix: -r
@@ -190,7 +185,6 @@ inputs:
       - float
     doc: Minimum Percent methylation difference (0 <= P <= 100). This option can
       be parallelized to test multiple options (default 10%).
-    default: 10.0
     inputBinding:
       position: 102
       prefix: -P
@@ -234,7 +228,6 @@ inputs:
       - int
     doc: Promoter cutoff for gene assignment of intergenic DMRs (default 10,000 
       nucleotides). This option accepts positive integers, e.g. "-q 15000".
-    default: 10000
     inputBinding:
       position: 102
       prefix: -q

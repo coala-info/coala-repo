@@ -58,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: sequences to download from NCBI per chunk
-    default: 5000
     inputBinding:
       position: 101
       prefix: --batchsize
@@ -125,7 +124,6 @@ inputs:
       - 'null'
       - string
     doc: 'dereplication method: "strict", "single_species", and "unique_species"'
-    default: unique_species
     inputBinding:
       position: 101
       prefix: --dereplication-method
@@ -383,7 +381,6 @@ inputs:
       - 'null'
       - float
     doc: number of mismatches allowed in the primer-binding site
-    default: 4
     inputBinding:
       position: 101
       prefix: --mismatch
@@ -532,7 +529,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads used to compute the in silico PCR
-    default: autodetection
     inputBinding:
       position: 101
       prefix: --threads

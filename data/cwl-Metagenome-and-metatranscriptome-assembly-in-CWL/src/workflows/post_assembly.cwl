@@ -18,7 +18,6 @@ inputs:
     type: string
   min_contig_length:
     type: int
-    default: 500
   reads:
     type: File[]
   assembly_log:

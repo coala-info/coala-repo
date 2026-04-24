@@ -75,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: False positive rate for Bloom filter creation
-    default: 0.025
     inputBinding:
       position: 102
       prefix: --fpr
@@ -92,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Minimizer k-mer size
-    default: 24
     inputBinding:
       position: 102
       prefix: -k
@@ -118,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 12
     inputBinding:
       position: 102
       prefix: -t
@@ -127,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: Minimizer window size
-    default: 1000
     inputBinding:
       position: 102
       prefix: -w

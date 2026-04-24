@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: Path to bedtools. Default is 'bedtools'
-    default: bedtools
     inputBinding:
       position: 101
       prefix: --bedtools_path
@@ -48,7 +47,6 @@ inputs:
       - boolean
     doc: If True, index with BWA during PREPARE_REFERENCE. Only relevantwhen 
       running the PREPARE_REFERENCE module by itself. Default is False.
-    default: false
     inputBinding:
       position: 101
       prefix: --bwa_index
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: Path to bwa. Default is 'bwa'
-    default: bwa
     inputBinding:
       position: 101
       prefix: --bwa_path
@@ -98,7 +95,6 @@ inputs:
       - float
     doc: For genome-wide scatter plots, divide all coordinates by this 
       value.Default is 1000000, which will plot everything in megabases.
-    default: 1000000.0
     inputBinding:
       position: 101
       prefix: --coordinate_scale
@@ -107,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cores/threads to use. Default is 1
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -128,7 +123,6 @@ inputs:
       - boolean
     doc: Calculate exact depth within windows, else use much faster 
       approximation. *Currently exact is not implemented*. Default is False.
-    default: false
     inputBinding:
       position: 101
       prefix: --exact_depth
@@ -139,7 +133,6 @@ inputs:
     doc: Compression level for fastqs output from repair.sh. Between (inclusive)
       0 and 9. Default is 3. 1 through 9 indicate compression levels. If 0, 
       fastqs will be uncompressed.
-    default: 3
     inputBinding:
       position: 101
       prefix: --fastq_compression
@@ -150,7 +143,6 @@ inputs:
     doc: Compression level for fastqs output from repair.sh. Between (inclusive)
       0 and 9. Default is 3. 1 through 9 indicate compression levels. If 0, 
       fastqs will be uncompressed.
-    default: 3
     inputBinding:
       position: 101
       prefix: --fastq_compression
@@ -161,7 +153,6 @@ inputs:
     doc: If True, read balance values will be transformed by subtracting each 
       value from 1. For example, 0.25 and 0.75 would be treated equivalently. 
       Default is False.
-    default: false
     inputBinding:
       position: 101
       prefix: --homogenize_read_balance
@@ -171,7 +162,6 @@ inputs:
       - boolean
     doc: Ignore duplicate reads in bam analyses. Default is to include 
       duplicates.
-    default: false
     inputBinding:
       position: 101
       prefix: --ignore_duplicates
@@ -183,7 +173,6 @@ inputs:
       0.05 and equal to 1.0 for histogram plotting. True will include all 
       values. Extreme values removed by default because they often swamp out the
       signal of the rest of the distribution.
-    default: false
     inputBinding:
       position: 101
       prefix: --include_fixed
@@ -193,7 +182,6 @@ inputs:
       - File
     doc: Name of logfile. Will overwrite if exists. Default is 
       sample_xyalign.log
-    default: sample_xyalign.log
     inputBinding:
       position: 101
       prefix: --logfile
@@ -203,7 +191,6 @@ inputs:
       - int
     doc: Minimum mean mapq threshold for a window to be considered high quality.
       Default is 20.
-    default: 20
     inputBinding:
       position: 101
       prefix: --mapq_cutoff
@@ -212,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: Marker size for genome-wide plots in matplotlib. Default is 10.
-    default: 10
     inputBinding:
       position: 101
       prefix: --marker_size
@@ -222,7 +208,6 @@ inputs:
       - float
     doc: Transparency of markers in genome-wide plots. Alpha in matplotlib. 
       Default is 0.5
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --marker_transparency
@@ -234,7 +219,6 @@ inputs:
       Calculated as mean depth * max_depth_filter. So, a max_depth_filter of 4 
       would require depths to be less than or equal to 40 if the mean depth was 
       10. Default is 10000.0 to consider all windows.
-    default: 10000.0
     inputBinding:
       position: 101
       prefix: --max_depth_filter
@@ -246,7 +230,6 @@ inputs:
       Calculated as mean depth * min_depth_filter. So, a min_depth_filter of 0.2
       would require at least a minimum depth of 2 if the mean depth was 10. 
       Default is 0.0 to consider all windows.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min_depth_filter
@@ -258,7 +241,6 @@ inputs:
       window to be plotted. Note that this does not affect plotting of variant 
       counts. Default is 1, though we note that many window averages will be 
       meaningless at this setting.
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_variant_count
@@ -319,7 +301,6 @@ inputs:
       - int
     doc: Number of bootstrap replicates to use when bootstrapping mean depth 
       ratios among chromosomes. Default is 10000
-    default: 10000
     inputBinding:
       position: 101
       prefix: --num_bootstraps
@@ -329,7 +310,6 @@ inputs:
       - int
     doc: Number of permutations to use for permutation analyses. Default is 
       10000
-    default: 10000
     inputBinding:
       position: 101
       prefix: --num_permutations
@@ -339,7 +319,6 @@ inputs:
       - string
     doc: 'Platypus calling withing the pipeline (before processing, after processing,
       both, or neither). Options: both, none, before, after.'
-    default: both
     inputBinding:
       position: 101
       prefix: --platypus_calling
@@ -362,7 +341,6 @@ inputs:
       /path/to/platypus'). In addition, be sure provided python is version 2. 
       See the documentation for more information about setting up an anaconda 
       environment.
-    default: platypus
     inputBinding:
       position: 101
       prefix: --platypus_path
@@ -386,7 +364,6 @@ inputs:
       (case sensitive), then no read groups will be used in subsequent mapping 
       steps. Otherwise, any other string provided to this flag will be used as a
       read group ID. Default is '--read_group_id xyalign'
-    default: xyalign
     inputBinding:
       position: 101
       prefix: --read_group_id
@@ -423,7 +400,6 @@ inputs:
       - 'null'
       - string
     doc: Path to bbmap's repair.sh script. Default is 'repair.sh'
-    default: repair.sh
     inputBinding:
       position: 101
       prefix: --repairsh_path
@@ -433,7 +409,6 @@ inputs:
       - string
     doc: Set level of messages printed to console. Default is 'INFO'. Choose 
       from (in decreasing amount of reporting) DEBUG, INFO, ERROR or CRITICAL
-    default: INFO
     inputBinding:
       position: 101
       prefix: --reporting_level
@@ -453,7 +428,6 @@ inputs:
       - 'null'
       - string
     doc: Path to sambamba. Default is 'sambamba'
-    default: sambamba
     inputBinding:
       position: 101
       prefix: --sambamba_path
@@ -471,7 +445,6 @@ inputs:
       - 'null'
       - string
     doc: Path to samtools. Default is 'samtools'
-    default: samtools
     inputBinding:
       position: 101
       prefix: --samtools_path
@@ -499,7 +472,6 @@ inputs:
       documentation for more detail. Default is 2.0, which we found to be 
       reasonable for exome, low-coverage whole-genome, and high-coverage 
       whole-genome human data.
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --sex_chrom_calling_threshold
@@ -508,7 +480,6 @@ inputs:
       - 'null'
       - string
     doc: Path to bbmap's shuffle.sh script. Default is 'shuffle.sh'
-    default: shuffle.sh
     inputBinding:
       position: 101
       prefix: --shufflesh_path
@@ -559,7 +530,6 @@ inputs:
     doc: If True, get counts of reads per chromosome for CHROM_STATS, rather 
       than calculating mean depth and mapq. Much faster, but provides less 
       information. Default is False
-    default: false
     inputBinding:
       position: 101
       prefix: --use_counts
@@ -569,7 +539,6 @@ inputs:
       - int
     doc: Consider all SNPs with a sample depth greater than or equal to this 
       value. Default is 4.
-    default: 4
     inputBinding:
       position: 101
       prefix: --variant_depth
@@ -579,7 +548,6 @@ inputs:
       - int
     doc: Consider all SNPs with a sample genotype quality greater than or equal 
       to this value. Default is 30.
-    default: 30
     inputBinding:
       position: 101
       prefix: --variant_genotype_quality
@@ -589,7 +557,6 @@ inputs:
       - int
     doc: Consider all SNPs with a site quality (QUAL) greater than or equal to 
       this value. Default is 30.
-    default: 30
     inputBinding:
       position: 101
       prefix: --variant_site_quality
@@ -666,7 +633,6 @@ inputs:
     doc: Desired name for masked output fasta for samples WITHOUT a Y chromosome
       (e.g., XX, XXX, XO, etc.). Defaults to 'xyalign_noY.masked.fa'. Will be 
       output in the XYalign reference directory.
-    default: xyalign_noY.masked.fa
     inputBinding:
       position: 101
       prefix: --xx_ref_out_name
@@ -698,7 +664,6 @@ inputs:
     doc: Desired name for masked output fasta for samples WITH a Y chromosome 
       (e.g., XY, XXY, etc.). Defaults to 'xyalign_withY.masked.fa'. Will be 
       output in the XYalign reference directory.
-    default: xyalign_withY.masked.fa
     inputBinding:
       position: 101
       prefix: --xy_ref_out_name

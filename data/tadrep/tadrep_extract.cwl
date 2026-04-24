@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Max sequence length (default = 1000000 bp)
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --max-length
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: Type of input files
-    default: genome
     inputBinding:
       position: 101
       prefix: --type

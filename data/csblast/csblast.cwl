@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Number of sequences to show alignments for (def=250)
-    default: 250
     inputBinding:
       position: 101
       prefix: --alis
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: Protein database to search against (def=nr)
-    default: nr
     inputBinding:
       position: 101
       prefix: --database
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Number of sequences to show one-line descriptions for (def=500)
-    default: 500
     inputBinding:
       position: 101
       prefix: --descr
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - float
     doc: E-value threshold for inclusion in CSI-BLAST (def=0.0020)
-    default: 0.002
     inputBinding:
       position: 101
       prefix: --incl-evalue
@@ -88,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of iterations to use in CSI-BLAST (def=1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --iters
@@ -97,7 +92,6 @@ inputs:
       - 'null'
       - float
     doc: Pseudocount admix for context-specific pseudocounts (def=0.90)
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --pc-admix
@@ -106,7 +100,6 @@ inputs:
       - 'null'
       - float
     doc: Constant for alignment pseudocounts in CSI-BLAST (def=12.0)
-    default: 12.0
     inputBinding:
       position: 101
       prefix: --pc-ali
@@ -115,7 +108,6 @@ inputs:
       - 'null'
       - string
     doc: Specify engine for pseudocount generation (def=auto)
-    default: auto
     inputBinding:
       position: 101
       prefix: --pc-engine
@@ -124,7 +116,6 @@ inputs:
       - 'null'
       - float
     doc: Target Neff for pseudocounts admixture (def=0.00)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --pc-neff
@@ -133,7 +124,6 @@ inputs:
       - 'null'
       - float
     doc: Substitution score offset (def=-0.005)
-    default: -0.005
     inputBinding:
       position: 101
       prefix: --shift
@@ -142,7 +132,6 @@ inputs:
       - 'null'
       - float
     doc: Weight of central profile column (def=1.60)
-    default: 1.6
     inputBinding:
       position: 101
       prefix: --weight-center
@@ -151,7 +140,6 @@ inputs:
       - 'null'
       - float
     doc: Parameter for exponential decay of window weights (def=0.85)
-    default: 0.85
     inputBinding:
       position: 101
       prefix: --weight-decay

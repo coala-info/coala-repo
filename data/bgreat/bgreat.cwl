@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: anchor fraction to be indexed
-    default: 1=all, 5 for one out of 5
     inputBinding:
       position: 101
       prefix: -i
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: anchors length
-    default: 31
     inputBinding:
       position: 101
       prefix: -a
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: effort put in mapping
-    default: 1000
     inputBinding:
       position: 101
       prefix: -e
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: maximal occurence of an anchor
-    default: 1
     inputBinding:
       position: 101
       prefix: -o
@@ -76,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: number of missmatch allowed
-    default: 5
     inputBinding:
       position: 101
       prefix: -m
@@ -147,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads used
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

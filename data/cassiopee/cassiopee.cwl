@@ -97,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: 'output format: 0:tsv (default), 1:json'
-    default: 0
     inputBinding:
       position: 101
       prefix: -t

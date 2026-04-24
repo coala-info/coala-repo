@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: length threshold
-    default: 25
     inputBinding:
       position: 103
       prefix: -l

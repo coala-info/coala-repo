@@ -54,12 +54,10 @@ inputs:
     type: int
     doc: Number of threads to use for computational processes. (default 2)
     label: Number of threads
-    default: 2
   memory:
     type: int
     doc: Maximum memory usage in MegaBytes. (default 8000)
     label: Maximum memory in MB
-    default: 8000
 
   forward_reads:
     type: File[]
@@ -76,29 +74,24 @@ inputs:
     type: boolean
     label: Don't output reads.
     doc: Do not output filtered reads. (default false)
-    default: false
 
   skip_qc_unfiltered:
     type: boolean
     doc: Skip FastQC analyses of raw input reads (default false)
     label: Skip QC unfiltered
-    default: false
   skip_qc_filtered:
     type: boolean
     doc: Skip FastQC analyses of filtered input reads (default false)
     label: Skip QC filtered
-    default: false
 
   filter_rrna:
     type: boolean
     doc: Optionally remove rRNA sequences from the reads (default false)
     label: filter rRNA
-    default: false
   deduplicate:
     type: boolean
     doc: Remove exact duplicate reads with fastp. (default false)
     label: Deduplicate reads
-    default: false
   
   humandb:
     type: Directory?
@@ -117,7 +110,6 @@ inputs:
     type: boolean
     doc: Discard unmapped and keep reads mapped to the given reference. Default false (discard mapped)
     label: Keep mapped reads
-    default: false
 
   # Input provenance (used in cwl-prov)
   destination:
@@ -307,7 +299,6 @@ steps:
         linkMerge: merge_flattened
         pickValue: all_non_null
       destination:
-        default: "illumina_quality_filter_reports"
     out:
       [results]
 

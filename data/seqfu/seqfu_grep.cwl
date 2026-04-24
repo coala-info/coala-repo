@@ -50,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum mismatches allowed
-    default: 0
     inputBinding:
       position: 102
       prefix: --max-mismatches

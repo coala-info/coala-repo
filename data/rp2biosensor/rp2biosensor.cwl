@@ -21,7 +21,6 @@ inputs:
       - string
     doc: Path to the cache directory. If not specified, None is passed to 
       rrCache.
-    default: None
     inputBinding:
       position: 103
       prefix: --cache-dir
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: Output the graph as json file if the path is not None.
-    default: None
     inputBinding:
       position: 103
       prefix: --ojson
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Output path.
-    default: /biosensor.html
     inputBinding:
       position: 103
       prefix: --opath
@@ -50,7 +47,6 @@ inputs:
     doc: Output type. This could be either (i) "dir" which means ouput files 
       will outputted into this directory, or (ii) "file" which means that all 
       files will be embedded into a single HTML page.
-    default: file
     inputBinding:
       position: 103
       prefix: --otype

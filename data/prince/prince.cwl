@@ -74,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: VNTR templates. Default is for M.TB
-    default: for M.TB
     inputBinding:
       position: 101
       prefix: --templates

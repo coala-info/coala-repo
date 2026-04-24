@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: Bin Size
-    default: estimated
     inputBinding:
       position: 101
       prefix: -b
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: Fragment length(s)
-    default: estimated
     inputBinding:
       position: 101
       prefix: -f
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: clustering Initialization window selection, deterministic or stochastic
-    default: deterministic
     inputBinding:
       position: 101
       prefix: -i
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: keep PCR Dupicates in single-end mode, y or n
-    default: n --- if -t is "paired", this option has no effect
     inputBinding:
       position: 101
       prefix: -d
@@ -63,7 +59,6 @@ inputs:
       - int
     doc: 'minimum Window size (default: 2 --- Note: this means minimum_window_size
       = bin_size x the_value_of_-w)'
-    default: 2
     inputBinding:
       position: 101
       prefix: -w
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: Mode, normal or narrow
-    default: normal
     inputBinding:
       position: 101
       prefix: -m
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors used by R scripts
-    default: 1
     inputBinding:
       position: 101
       prefix: -p
@@ -90,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: Resolution, peak or region or window
-    default: peak
     inputBinding:
       position: 101
       prefix: -r
@@ -106,7 +98,6 @@ inputs:
       - Directory
     doc: Directory where the temporary working repository will be created. This 
       directory will be deleted after JAMM is done
-    default: a new directory is created in /tmp folder
     inputBinding:
       position: 101
       prefix: -T
@@ -115,7 +106,6 @@ inputs:
       - 'null'
       - string
     doc: Type, single or paired
-    default: single, requires BED files. paired requires BEDPE files
     inputBinding:
       position: 101
       prefix: -t
@@ -124,7 +114,6 @@ inputs:
       - 'null'
       - string
     doc: window Enrichment cutoff, auto or any numeric value
-    default: 1 --- Set this to "auto" to estimate the window enrichment cutoff
     inputBinding:
       position: 101
       prefix: -e

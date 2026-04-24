@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: 'counts tag (default: AD)'
-    default: AD
     inputBinding:
       position: 101
       prefix: --ad_tag
@@ -53,7 +52,6 @@ inputs:
       - 'null'
       - float
     doc: likelihood width used in processing SNP data (default=0.8)
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --baf_likelihood_width
@@ -130,7 +128,6 @@ inputs:
       - 'null'
       - string
     doc: 'read depth tag (default: DP)'
-    default: DP
     inputBinding:
       position: 101
       prefix: --dp_tag
@@ -223,7 +220,6 @@ inputs:
       - 'null'
       - string
     doc: 'genotype tag (default: GT)'
-    default: GT
     inputBinding:
       position: 101
       prefix: --gt_tag

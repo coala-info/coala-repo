@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Number of transcript file lines to be loaded in memory at once.
-    default: 10000000
     inputBinding:
       position: 101
       prefix: --chunk-size

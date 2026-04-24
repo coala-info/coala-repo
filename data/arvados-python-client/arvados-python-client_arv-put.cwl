@@ -228,7 +228,6 @@ inputs:
       - int
     doc: Maximum number of times to retry server requests that encounter temporary
       failures (e.g., server down). Default 10.
-    default: 10
     inputBinding:
       position: 102
       prefix: --retries
@@ -266,7 +265,6 @@ inputs:
     doc: Set the number of upload threads to be used. Take into account that using
       lots of threads will increase the RAM requirements. Default is to use 2 threads.
       On high latency installations, using a greater number will improve overall throughput.
-    default: 2
     inputBinding:
       position: 102
       prefix: --threads

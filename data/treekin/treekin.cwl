@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Assume binary rates input
-    default: false
     inputBinding:
       position: 102
       prefix: --bin
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: Consider degeneracy in transition rates
-    default: false
     inputBinding:
       position: 102
       prefix: --degeneracy
@@ -53,7 +51,6 @@ inputs:
       - boolean
     doc: Dump eigenvalues and eigenvectors to a binary recovery file and 
       continue with iteration
-    default: false
     inputBinding:
       position: 102
       prefix: --dumpE
@@ -63,7 +60,6 @@ inputs:
       - boolean
     doc: Dump transition matrix U to file mx.txt (and to binary mx.bin - not 
       fixed yet)
-    default: false
     inputBinding:
       position: 102
       prefix: --dumpU
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - boolean
     doc: Dump eigenvalues to ASCII file and exit (do not iterate)
-    default: false
     inputBinding:
       position: 102
       prefix: --dumpX
@@ -89,7 +84,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use matrix-expontent routines, rather than diagonalization
-    default: false
     inputBinding:
       position: 102
       prefix: --exponent
@@ -100,7 +94,6 @@ inputs:
     doc: Machine precision used by LAPACK routines (and matrix aritmetic) -- if 
       set to negative number, the lapack suggested value is used (2*DLAMCH("S") 
       )
-    default: '1E-15'
     inputBinding:
       position: 102
       prefix: --feps
@@ -135,7 +128,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show settings
-    default: false
     inputBinding:
       position: 102
       prefix: --info
@@ -145,7 +137,6 @@ inputs:
       - boolean
     doc: Do not diagonalize and iterate, just shorten input (meaningfull only 
       with -n X option or -fpt option or --visualize option)
-    default: false
     inputBinding:
       position: 102
       prefix: --just-shorten
@@ -154,7 +145,6 @@ inputs:
       - 'null'
       - boolean
     doc: Dump transition matrix U to Mathematica-readable file mxMat.txt
-    default: false
     inputBinding:
       position: 102
       prefix: --mathematicamatrix
@@ -163,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal decrease in dimension in one step
-    default: 1000000
     inputBinding:
       position: 102
       prefix: --max-decrease
@@ -173,7 +162,6 @@ inputs:
       - string
     doc: 'Select method to build transition matrix: A ==> Arrhenius-like kinetics,
       I ==> use input as a rate matrix'
-    default: I
     inputBinding:
       position: 102
       prefix: --method
@@ -223,7 +211,6 @@ inputs:
       - string
     doc: 'Specify how to treat issues with numerical errors in probability: I ==>
       Ignore, H ==> Halt the program, R ==> Rescale the probability'
-    default: H
     inputBinding:
       position: 102
       prefix: --num-err
@@ -242,7 +229,6 @@ inputs:
       - 'null'
       - boolean
     doc: Be silent (do not print out the output)
-    default: false
     inputBinding:
       position: 102
       prefix: --quiet
@@ -259,7 +245,6 @@ inputs:
       - 'null'
       - boolean
     doc: Recover from pre-ccomputes eigenvalues and eigenvectors
-    default: false
     inputBinding:
       position: 102
       prefix: --recoverE
@@ -268,7 +253,6 @@ inputs:
       - 'null'
       - float
     doc: Start time
-    default: '0.1'
     inputBinding:
       position: 102
       prefix: --t0
@@ -277,7 +261,6 @@ inputs:
       - 'null'
       - float
     doc: Stop time
-    default: '1E12'
     inputBinding:
       position: 102
       prefix: --t8
@@ -286,7 +269,6 @@ inputs:
       - 'null'
       - float
     doc: Temperature in Celsius
-    default: '37.0'
     inputBinding:
       position: 102
       prefix: --Temp
@@ -303,7 +285,6 @@ inputs:
       - 'null'
       - float
     doc: Time scaling factor (for log time-scale)
-    default: '1.02'
     inputBinding:
       position: 102
       prefix: --tinc
@@ -314,7 +295,6 @@ inputs:
     doc: Use old treekin computation where we add identity matrix to transition 
       matrix. Sometimes less precise (maybe sometimes also more precise), in 
       normal case it should not affect results at all.
-    default: false
     inputBinding:
       position: 102
       prefix: --useplusI
@@ -323,7 +303,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose output
-    default: false
     inputBinding:
       position: 102
       prefix: --verbose
@@ -342,7 +321,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn all the warnings about underflow on.
-    default: false
     inputBinding:
       position: 102
       prefix: --warnings

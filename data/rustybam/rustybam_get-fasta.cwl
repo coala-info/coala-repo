@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: Fasta file to extract sequences from
-    default: '-'
     inputBinding:
       position: 101
       prefix: --fasta

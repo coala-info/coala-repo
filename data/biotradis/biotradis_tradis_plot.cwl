@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: mapping quality must be greater than X
-    default: 30
     inputBinding:
       position: 101
       prefix: -m

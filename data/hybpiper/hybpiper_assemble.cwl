@@ -11,7 +11,6 @@ inputs:
       - int
     doc: 'MB memory (RAM) to use for bbmap.sh if a chimera check is performed during
       step extract_contigs. Default: is 1000.'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --bbmap_memory
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: 'Ban alignments with more than this many substitutions. Default is: 7.'
-    default: 7
     inputBinding:
       position: 101
       prefix: --bbmap_subfilter
@@ -30,7 +28,6 @@ inputs:
       - int
     doc: 'Number of threads to use for BBmap when searching for chimeric stitched
       contig. Default is: 1.'
-    default: 1
     inputBinding:
       position: 101
       prefix: --bbmap_threads
@@ -59,7 +56,6 @@ inputs:
     doc: Minimum number of discordant reads pairs required to flag a stitched 
       contig as a potential chimera of contigs from multiple paralogs. Default 
       is 5.
-    default: 5
     inputBinding:
       position: 101
       prefix: --chimeric_stitched_contig_discordant_reads_cutoff
@@ -69,7 +65,6 @@ inputs:
       - int
     doc: 'Minimum number of differences between one read of a read pair vs the stitched
       contig reference for a read pair to be flagged as discordant. Default is: 5.'
-    default: 5
     inputBinding:
       position: 101
       prefix: --chimeric_stitched_contig_edit_distance
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: 'Coverage cutoff for SPAdes. Default is: 8'
-    default: 8
     inputBinding:
       position: 101
       prefix: --cov_cutoff
@@ -107,7 +101,6 @@ inputs:
     doc: 'Assign a long paralog as the "main" sequence if it has a coverage depth
       <depth_multiplier> times all other long paralogs. Set to zero to not use depth.
       Default is: 10'
-    default: 10
     inputBinding:
       position: 101
       prefix: --depth_multiplier
@@ -142,7 +135,6 @@ inputs:
       - 'null'
       - string
     doc: 'End the pipeline at the given step. Default is: extract_contigs'
-    default: extract_contigs
     inputBinding:
       position: 101
       prefix: --end_with
@@ -151,7 +143,6 @@ inputs:
       - 'null'
       - float
     doc: 'e-value threshold for mapping blastx hits. Default is: 0.0001'
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: --evalue
@@ -212,7 +203,6 @@ inputs:
       - 'null'
       - float
     doc: 'Expectation value (E) threshold for saving hits. Default is: 10'
-    default: 10
     inputBinding:
       position: 101
       prefix: --extract_contigs_blast_evalue
@@ -238,7 +228,6 @@ inputs:
       - int
     doc: 'Maximum number of aligned sequences to keep (value of 5 or more is recommended).
       Default is: 500'
-    default: 500
     inputBinding:
       position: 101
       prefix: --extract_contigs_blast_max_target_seqs
@@ -274,7 +263,6 @@ inputs:
     doc: 'Task to use for BLASTn searches during the extract_contigs step of the assembly
       pipeline. See https://www.ncbi.nlm.nih.gov/books/NBK569839/ for a description
       of tasks. Default is: blastn'
-    default: blastn
     inputBinding:
       position: 101
       prefix: --extract_contigs_blast_task
@@ -328,7 +316,6 @@ inputs:
       - 'null'
       - int
     doc: 'Max target seqs to save in BLASTx search. Default is: 10'
-    default: 10
     inputBinding:
       position: 101
       prefix: --max_target_seqs
@@ -358,7 +345,6 @@ inputs:
       respect to the "best" protein reference) with a number of Ns corresponding to
       the reference gap multiplied by 3 (Exonerate) or reference gap (BLASTn). Default
       is: True.'
-    default: true
     inputBinding:
       position: 101
       prefix: --no_pad_stitched_contig_gaps_with_n
@@ -406,7 +392,6 @@ inputs:
       - float
     doc: 'Minimum length percentage of a contig Exonerate hit vs reference protein
       length for a paralog warning and sequence to be generated. Default is: 0.75'
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --paralog_min_length_percentage
@@ -462,7 +447,6 @@ inputs:
     doc: 'Start the pipeline from the given step. Note that this relies on the presence
       of output files for previous steps, produced by a previous run attempt. Default
       is: map_reads'
-    default: map_reads
     inputBinding:
       position: 101
       prefix: --start_from
@@ -499,7 +483,6 @@ inputs:
       is 55, but increase this if you are worried about contaminant sequences. 
       Exonerate hit identity is calculated using amino-acids, BLASTn hit 
       identity is calculated using nucleotides.
-    default: 55
     inputBinding:
       position: 101
       prefix: --thresh
@@ -518,7 +501,6 @@ inputs:
       - int
     doc: 'Kill long-running processes if they take longer than X seconds. Default
       is: 120'
-    default: 120
     inputBinding:
       position: 101
       prefix: --timeout_extract_contigs

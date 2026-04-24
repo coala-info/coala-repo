@@ -38,7 +38,6 @@ inputs:
       - float
     doc: Sensitivity threshold (minimal absolute score to classify sequence, 
       default = 7)
-    default: 7
     inputBinding:
       position: 101
       prefix: --thr

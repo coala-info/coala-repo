@@ -170,7 +170,6 @@ inputs:
     doc: "specify the number of permutations to be conducted for the bootstopping/bootstrap
       convergence test.\n                  The allowed minimum number is 100!\n\n\
       \                  DEFAULT: 100"
-    default: 100
     inputBinding:
       position: 101
       prefix: --bootstop-perms
@@ -305,7 +304,6 @@ inputs:
       in the EPA algorithm.\n                  Note that, the actual values printed
       will also depend on the settings for --epa-prob-threshold=threshold !\n\n  \
       \                DEFAULT: 7"
-    default: 7
     inputBinding:
       position: 101
       prefix: --epa-keep-placements
@@ -319,7 +317,6 @@ inputs:
       cent of\n                  the maximum placement will still be printed to file
       if the setting of --epa-keep-placements allows for it\n\n                  DEFAULT:
       0.01"
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --epa-prob-threshold
@@ -440,7 +437,6 @@ inputs:
       is set to CAT\n              Individual per-site rates are categorized into
       numberOfCategories rate \n              categories to accelerate computations.\
       \ \n\n              DEFAULT: 25"
-    default: 25
     inputBinding:
       position: 101
       prefix: -c
@@ -646,7 +642,6 @@ inputs:
     doc: "Sliding window size for leave-one-out site-specific placement bias algorithm\n\
       \              only effective when used in combination with \"-f S\" \n\n  \
       \            DEFAULT: 100 sites"
-    default: 100
     inputBinding:
       position: 101
       prefix: -W

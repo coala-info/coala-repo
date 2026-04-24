@@ -11,7 +11,6 @@ inputs:
       - int
     doc: Specify the upper bound for the resulting quality score. If set to zero,
       capping is disabled.
-    default: 40
     inputBinding:
       position: 101
       prefix: --cap
@@ -36,7 +35,6 @@ inputs:
     doc: Specify the maximum possible length of the assembled sequences. Setting this
       value to 0 disables the restriction and assembled sequences may be arbitrary
       long.
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-assembly-length
@@ -48,7 +46,6 @@ inputs:
       value to 0 will cause PEAR to discard all reads containing uncalled bases. The
       other extreme setting is 1 which causes PEAR to process all reads independent
       on the number of uncalled bases.
-    default: 1
     inputBinding:
       position: 101
       prefix: --max-uncalled-base
@@ -68,7 +65,6 @@ inputs:
     doc: Specify the minimum possible length of the assembled sequences. Setting this
       value to 0 disables the restriction and assembled sequences may be arbitrary
       short.
-    default: 50
     inputBinding:
       position: 101
       prefix: --min-assembly-length
@@ -79,7 +75,6 @@ inputs:
     doc: Specify the minimum overlap size. The minimum overlap may be set to 1 when
       the statistical test is used. However, further restricting the minimum overlap
       size to a proper value may reduce false-positive assembles.
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-overlap
@@ -89,7 +84,6 @@ inputs:
       - int
     doc: Specify the minimum length of reads after trimming the low quality part (see
       option -q).
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-trim-length
@@ -111,7 +105,6 @@ inputs:
       possible assembly exceeds the specified p-value then paired-end read will not
       be assembled. Valid options are: 0.0001, 0.001, 0.01, 0.05 and 1.0. Setting
       1.0 disables the test.'
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --p-value
@@ -120,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Base PHRED quality score.
-    default: 33
     inputBinding:
       position: 101
       prefix: --phred-base
@@ -131,7 +123,6 @@ inputs:
     doc: Specify the quality score threshold for trimming the low quality part of
       a read. If the quality scores of two consecutive bases are strictly less than
       the specified threshold, the rest of the read will be trimmed.
-    default: 0
     inputBinding:
       position: 101
       prefix: --quality-threshold
@@ -148,7 +139,6 @@ inputs:
     doc: 'Specify the scoring method. 1. OES with +1 for match and -1 for mismatch.
       2: Assembly score (AS). 3: Ignore quality scores and use +1 for a match and
       -1 for a mismatch.'
-    default: 2
     inputBinding:
       position: 101
       prefix: --score-method
@@ -159,7 +149,6 @@ inputs:
     doc: 'Specify the type of statistical test. Two options are available. 1: Given
       the minimum allowed overlap, test using the highest OES. 2. Use the acceptance
       probability (m.a.p).'
-    default: 1
     inputBinding:
       position: 101
       prefix: --test-method

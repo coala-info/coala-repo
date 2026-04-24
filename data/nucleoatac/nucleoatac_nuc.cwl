@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - float
     doc: Log likelihood ratio threshold for nucleosome calls. Default is 0
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min_lr
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: Z-score threshold for nucleosome calls. Default is 3
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --min_z
@@ -72,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum separation between non-redundant nucleosomes. Default is 120
-    default: 120
     inputBinding:
       position: 101
       prefix: --nuc_sep
@@ -99,7 +96,6 @@ inputs:
       - int
     doc: "Minimum separation between redundant nucleosomes. Not\nrecommended to be
       below 15. Default is 25"
-    default: 25
     inputBinding:
       position: 101
       prefix: --redundant_sep
@@ -110,7 +106,6 @@ inputs:
     doc: "Standard deviation for smoothing. Affect the\nresolution at which nucleosomes
       can be positioned. Not\nrecommended to exceed 25 or to be smaller than 10.\n\
       Default is 10"
-    default: 10
     inputBinding:
       position: 101
       prefix: --sd
@@ -119,7 +114,6 @@ inputs:
       - 'null'
       - File
     doc: "PWM descriptor file. Default is Human.PWM.txt included\nin package"
-    default: Human.PWM.txt
     inputBinding:
       position: 101
       prefix: --pwm

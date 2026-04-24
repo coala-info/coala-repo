@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length read to output. Default is 1, i.e. keep all reads.
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-length

@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: "Enter Alignment Software: 'bwa', 'bowtie'."
-    default: bowtie
     inputBinding:
       position: 104
       prefix: --Aligner
@@ -86,7 +85,6 @@ inputs:
       - int
     doc: Number of nucleotides not allowed to have mismatches at 5' end of 
       segment.
-    default: 5
     inputBinding:
       position: 104
       prefix: --FivePad
@@ -122,7 +120,6 @@ inputs:
       - int
     doc: Size of MicroInDels - these are common artifacts of cDNA preparation. 
       See Routh et al JMB 2012. Default size is 0)
-    default: 0
     inputBinding:
       position: 104
       prefix: --MicroInDel_Length
@@ -131,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: Number of mismatches tolerated in mapped seed and in mapped segments.
-    default: 1
     inputBinding:
       position: 104
       prefix: --N
@@ -157,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: Enter number of available processors.
-    default: 1
     inputBinding:
       position: 104
       prefix: --p
@@ -174,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: Number of nucleotides in the Seed region.
-    default: 25
     inputBinding:
       position: 104
       prefix: --Seed
@@ -184,7 +178,6 @@ inputs:
       - int
     doc: Number of nucleotides not allowed to have mismatches at 3' end of 
       segment.
-    default: 5
     inputBinding:
       position: 104
       prefix: --ThreePad
@@ -202,7 +195,6 @@ inputs:
       - int
     doc: Number of nucleotides not allowed to have mismatches at 3' end and 5' 
       of segment. Overrides seperate ThreePad and FivePad settings.
-    default: 5
     inputBinding:
       position: 104
       prefix: --X

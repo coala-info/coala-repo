@@ -11,7 +11,6 @@ inputs:
       - type: array
         items: File
     doc: input file
-    default: stdin
     inputBinding:
       position: 1
   - id: profiles
@@ -20,7 +19,6 @@ inputs:
       - type: array
         items: string
     doc: names for the saved k-mer profiles, one per INPUT
-    default: profiles are named according to the input filenames, or numbered 
       consecutively from 1 if no filenames are available
     inputBinding:
       position: 102

@@ -10,7 +10,6 @@ inputs:
       - string
     doc: 'Enable autocorrelation for basecalling mode prediction HAC/SUP(hs) or FAST/HAC/SUP
       (fhs) (Options: hs, fhs, off)'
-    default: fhs
     inputBinding:
       position: 101
       prefix: --ar
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Path to the trained model
-    default: '{longbow_code_base}/model'
     inputBinding:
       position: 101
       prefix: --model
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read QV to filter reads
-    default: 0
     inputBinding:
       position: 101
       prefix: --qscore
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Enable read QV cutoff for mode correction in Guppy5/6
-    default: on
     inputBinding:
       position: 101
       prefix: --rc
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel threads to use
-    default: 12
     inputBinding:
       position: 101
       prefix: --threads

@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: stop contig extension at N bp
-    default: 50000
     inputBinding:
       position: 102
       prefix: --max-contig-length
@@ -60,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: use NUM threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Display only the command line
-    default: false
     inputBinding:
       position: 102
       prefix: --cmd
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: Dump full header in JSON format
-    default: false
     inputBinding:
       position: 102
       prefix: --json
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip header and dump remainder of file
-    default: false
     inputBinding:
       position: 102
       prefix: --skip

@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality
-    default: 20
     inputBinding:
       position: 101
       prefix: -q
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sample weight
-    default: 4
     inputBinding:
       position: 101
       prefix: -m
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: Phred threshold
-    default: 0.9
     inputBinding:
       position: 101
       prefix: -P
@@ -65,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Read length
-    default: 101
     inputBinding:
       position: 101
       prefix: -r

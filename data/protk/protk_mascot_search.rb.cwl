@@ -15,7 +15,6 @@ inputs:
       - boolean
     doc: Expect N-terminal acetylation as a variable mod in a search or as a 
       parameter when building statistical models
-    default: false
     inputBinding:
       position: 102
       prefix: --acetyl-nterm
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Allowed precursor ion charges.
-    default: 1+,2+,3+
     inputBinding:
       position: 102
       prefix: --allowed-charges
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: Expect Carbamidomethyl C modifications as fixed mod in a search
-    default: false
     inputBinding:
       position: 102
       prefix: --carbamidomethyl
@@ -43,7 +40,6 @@ inputs:
       - string
     doc: Specify the database to use for this search. Can be a named protk 
       database or the path to a fasta file
-    default: sphuman
     inputBinding:
       position: 102
       prefix: --database
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: Enzyme
-    default: Trypsin
     inputBinding:
       position: 102
       prefix: --enzyme
@@ -86,7 +81,6 @@ inputs:
       - 'null'
       - float
     doc: Fragment ion mass tolerance (unit dependent).
-    default: 0.65
     inputBinding:
       position: 102
       prefix: --fragment-ion-tol
@@ -95,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: Fragment ion mass tolerance units (Da or mmu).
-    default: Da
     inputBinding:
       position: 102
       prefix: --fragment-ion-tol-units
@@ -105,7 +98,6 @@ inputs:
       - boolean
     doc: Expect N-Glycosylation modifications as variable mod in a search or as 
       a parameter when building statistical models
-    default: false
     inputBinding:
       position: 102
       prefix: --glyco
@@ -114,7 +106,6 @@ inputs:
       - 'null'
       - string
     doc: Instrument
-    default: ESI-QUAD-TOF
     inputBinding:
       position: 102
       prefix: --instrument
@@ -123,7 +114,6 @@ inputs:
       - 'null'
       - boolean
     doc: Expect Oxidised Methionine modifications as variable mod in a search
-    default: false
     inputBinding:
       position: 102
       prefix: --methionineo
@@ -132,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: Number of missed cleavages allowed
-    default: 2
     inputBinding:
       position: 102
       prefix: --num-missed-cleavages
@@ -149,7 +138,6 @@ inputs:
       - 'null'
       - float
     doc: Precursor ion mass tolerance.
-    default: 200
     inputBinding:
       position: 102
       prefix: --precursor-ion-tol
@@ -158,7 +146,6 @@ inputs:
       - 'null'
       - string
     doc: Precursor ion mass tolerance units (ppm or Da).
-    default: ppm
     inputBinding:
       position: 102
       prefix: --precursor_ion_tol-units
@@ -183,7 +170,6 @@ inputs:
       - 'null'
       - boolean
     doc: Dont skip analyses for which the output file already exists
-    default: false
     inputBinding:
       position: 102
       prefix: --replace-output
@@ -192,7 +178,6 @@ inputs:
       - 'null'
       - string
     doc: Use monoisotopic or average precursor masses. (monoisotopic or average)
-    default: monoisotopic
     inputBinding:
       position: 102
       prefix: --search-type
@@ -201,7 +186,6 @@ inputs:
       - 'null'
       - string
     doc: The url to the cgi directory of the mascot server
-    default: www.matrixscience.com/mascot/cgi
     inputBinding:
       position: 102
       prefix: --server
@@ -210,7 +194,6 @@ inputs:
       - 'null'
       - int
     doc: Timeout for sending data file to mascot in seconds
-    default: 200
     inputBinding:
       position: 102
       prefix: --timeout
@@ -219,7 +202,6 @@ inputs:
       - 'null'
       - boolean
     doc: When Mascot security is enabled this is required
-    default: false
     inputBinding:
       position: 102
       prefix: --use-security

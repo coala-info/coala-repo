@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: "algorithm bwa uses for alignment 'mem', 'bwasw' or 'aln' (default: mem)"
-    default: mem
     inputBinding:
       position: 101
       prefix: --alignment_algorithm
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: algorithm bwa uses for indexing 'bwtsw' or 'is' [None for auto]
-    default: auto
     inputBinding:
       position: 101
       prefix: --index_algorithm
@@ -96,7 +94,6 @@ inputs:
       - string
     doc: maximum amount of memory to use per samtools sort thread (default 2GB).
       Suffix K/M/G recognized
-    default: 2GB
     inputBinding:
       position: 101
       prefix: --memory
@@ -105,7 +102,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'write to this folder (default: .)'
-    default: .
     inputBinding:
       position: 101
       prefix: --out_folder
@@ -172,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: 'maximum number of threads to use (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

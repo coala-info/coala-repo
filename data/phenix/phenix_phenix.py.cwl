@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'More verbose logging (default: turned off).'
-    default: false
     inputBinding:
       position: 103
       prefix: --debug

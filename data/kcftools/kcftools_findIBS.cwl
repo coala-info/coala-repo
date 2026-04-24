@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write bed file
-    default: false
     inputBinding:
       position: 101
       prefix: --bed
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Detect Variable Regions instead of IBS
-    default: false
     inputBinding:
       position: 101
       prefix: --var
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of consecutive windows
-    default: 4
     inputBinding:
       position: 101
       prefix: --min
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: Score cut-off
-    default: 95.0
     inputBinding:
       position: 101
       prefix: --score
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write summary tsv file
-    default: false
     inputBinding:
       position: 101
       prefix: --summary

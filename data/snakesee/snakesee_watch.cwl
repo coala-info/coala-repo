@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to workflow directory containing .snakemake/.
-    default: .
     inputBinding:
       position: 1
   - id: half_life_days
@@ -19,7 +18,6 @@ inputs:
       - float
     doc: "Half-life in days for time-based weighting. After this many days, a run's
       weight is halved. Default: 7.0. Only used when weighting_strategy=\"time\"."
-    default: 7.0
     inputBinding:
       position: 102
       prefix: --half-life-days
@@ -30,7 +28,6 @@ inputs:
     doc: "Half-life in number of runs for index-based weighting. After this many runs,
       a run's weight is halved. Default: 10. Only used when weighting_strategy=\"\
       index\"."
-    default: 10
     inputBinding:
       position: 102
       prefix: --half-life-logs
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable time estimation from historical data.
-    default: false
     inputBinding:
       position: 102
       prefix: --no-estimate
@@ -49,7 +45,6 @@ inputs:
       - boolean
     doc: Use wildcard conditioning for estimates (estimate per sample/batch). 
       Enabled by default. Toggle with 'w' key in TUI.
-    default: false
     inputBinding:
       position: 102
       prefix: --no-wildcard-timing
@@ -59,7 +54,6 @@ inputs:
       - string
     doc: Optional path to a timing profile (.snakesee-profile.json) for 
       bootstrapping estimates. If not specified, will auto-discover.
-    default: None
     inputBinding:
       position: 102
       prefix: --profile
@@ -68,7 +62,6 @@ inputs:
       - 'null'
       - float
     doc: Refresh interval in seconds (0.5 to 60.0).
-    default: 2.0
     inputBinding:
       position: 102
       prefix: --refresh
@@ -79,7 +72,6 @@ inputs:
     doc: Strategy for weighting historical timing data. "index" (default) - 
       weight by run index, ideal for active development where each run may fix 
       issues. "time" - weight by wall-clock time, better for stable pipelines.
-    default: index
     inputBinding:
       position: 102
       prefix: --weighting-strategy
@@ -89,7 +81,6 @@ inputs:
       - boolean
     doc: Use wildcard conditioning for estimates (estimate per sample/batch). 
       Enabled by default. Toggle with 'w' key in TUI.
-    default: true
     inputBinding:
       position: 102
       prefix: --wildcard-timing

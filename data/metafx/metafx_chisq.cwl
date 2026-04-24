@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: maximal frequency for a k-mer to be assumed erroneous
-    default: 1
     inputBinding:
       position: 101
       prefix: --bad-frequency
@@ -22,7 +21,6 @@ inputs:
       - int
     doc: Depth of de Bruijn graph traversal from pivot k-mers in number of 
       branches
-    default: 1
     inputBinding:
       position: 101
       prefix: --depth
@@ -65,7 +63,6 @@ inputs:
       - 'null'
       - boolean
     doc: if TRUE skip de Bruijn graph and fasta construction from components
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-graph

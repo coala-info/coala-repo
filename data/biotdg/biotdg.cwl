@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: 'Random seed for dwgsim (default: 1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: --random-seed

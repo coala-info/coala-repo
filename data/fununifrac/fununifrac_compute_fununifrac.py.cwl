@@ -12,7 +12,6 @@ inputs:
       - string
     doc: "Key in the gather results to use for abundance.\n                      \
       \  Default is `f_unique_weighted`"
-    default: '`f_unique_weighted`'
     inputBinding:
       position: 101
       prefix: --abundance_key
@@ -52,7 +51,6 @@ inputs:
       - string
     doc: "Pattern to match files in the directory. Default is\n                  \
       \      '*_gather.csv'"
-    default: "'*_gather.csv'"
     inputBinding:
       position: 101
       prefix: --file_pattern

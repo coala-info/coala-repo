@@ -36,7 +36,6 @@ inputs:
       - string
     doc: 'Format of annotation_files (Default: GTF2). Note: GFF3 assembly assumes
       SO v.2.5.2 feature ontologies, which may or may not match your specific file.'
-    default: GTF2
     inputBinding:
       position: 102
       prefix: --annotation_format
@@ -47,7 +46,6 @@ inputs:
         items: int
     doc: 'Number of extra columns in BED file (e.g. in custom ENCODE formats) or list
       of names for those columns. (Default: 0).'
-    default: 0
     inputBinding:
       position: 102
       prefix: --bed_extra_columns
@@ -84,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: Format of file containing alignments or counts
-    default: BAM
     inputBinding:
       position: 102
       prefix: --countfile_format
@@ -160,7 +157,6 @@ inputs:
       - string
     doc: 'Format of mask_annotation_files (Default: GTF2). Note: GFF3 assembly assumes
       SO v.2.5.2 feature ontologies, which may or may not match your specific file.'
-    default: GTF2
     inputBinding:
       position: 102
       prefix: --mask_annotation_format
@@ -171,7 +167,6 @@ inputs:
         items: int
     doc: 'Number of extra columns in BED file (e.g. in custom ENCODE formats) or list
       of names for those columns. (Default: 0).'
-    default: 0
     inputBinding:
       position: 102
       prefix: --mask_bed_extra_columns
@@ -211,7 +206,6 @@ inputs:
       - int
     doc: 'Maximum desired memory footprint in MB to devote to BigBed/BigWig files.
       May be exceeded by large queries. (Default: 0, No maximum)'
-    default: 0
     inputBinding:
       position: 102
       prefix: --mask_maxmem
@@ -220,7 +214,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'mask_annotation_files are sorted by chromosomal position (Default: False)'
-    default: false
     inputBinding:
       position: 102
       prefix: --mask_sorted
@@ -230,7 +223,6 @@ inputs:
       - boolean
     doc: 'mask_annotation_files are tabix-compressed and indexed (Default: False).
       Ignored for BigBed files.'
-    default: false
     inputBinding:
       position: 102
       prefix: --mask_tabix
@@ -240,7 +232,6 @@ inputs:
       - int
     doc: 'Maximum read length permitted to be included (BAM & bowtie files only. Default:
       100)'
-    default: 100
     inputBinding:
       position: 102
       prefix: --max_length
@@ -250,7 +241,6 @@ inputs:
       - int
     doc: 'Maximum desired memory footprint in MB to devote to BigBed/BigWig files.
       May be exceeded by large queries. (Default: 0, No maximum)'
-    default: 0
     inputBinding:
       position: 102
       prefix: --maxmem
@@ -260,7 +250,6 @@ inputs:
       - int
     doc: 'Minimum read length required to be included (BAM & bowtie files only. Default:
       25)'
-    default: 25
     inputBinding:
       position: 102
       prefix: --min_length
@@ -270,7 +259,6 @@ inputs:
       - int
     doc: 'For use with `--center` only. nt to remove from each end of read before
       mapping (Default: 0)'
-    default: 0
     inputBinding:
       position: 102
       prefix: --nibble
@@ -285,7 +273,6 @@ inputs:
       special keyword 'default', and the second column represents the offset from
       the five prime end of that read length at which the read should be mapped. (Default:
       0)"
-    default: 0
     inputBinding:
       position: 102
       prefix: --offset
@@ -302,7 +289,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'annotation_files are sorted by chromosomal position (Default: False)'
-    default: false
     inputBinding:
       position: 102
       prefix: --sorted
@@ -321,7 +307,6 @@ inputs:
       - boolean
     doc: 'annotation_files are tabix-compressed and indexed (Default: False). Ignored
       for BigBed files.'
-    default: false
     inputBinding:
       position: 102
       prefix: --tabix

@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - boolean
     doc: omit header, this option is honored only for STDOUT
-    default: false
     inputBinding:
       position: 102
       prefix: -h
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - boolean
     doc: print header only, this option is honored only for STDOUT
-    default: false
     inputBinding:
       position: 102
       prefix: -H
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - boolean
     doc: print site information only without genotypes
-    default: false
     inputBinding:
       position: 102
       prefix: -s
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: local sorting window size
-    default: 0
     inputBinding:
       position: 102
       prefix: -w

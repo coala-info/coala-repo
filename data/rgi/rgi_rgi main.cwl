@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: specify alignment tool
-    default: BLAST
     inputBinding:
       position: 101
       prefix: --alignment_tool
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: removes temporary files
-    default: false
     inputBinding:
       position: 101
       prefix: --clean
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: specify a data-type
-    default: NA
     inputBinding:
       position: 101
       prefix: --data
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: debug mode
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: include loose hits in addition to strict and perfect hits
-    default: false
     inputBinding:
       position: 101
       prefix: --include_loose
@@ -56,7 +51,6 @@ inputs:
       - 'null'
       - boolean
     doc: include hits nudged from loose to strict hits
-    default: false
     inputBinding:
       position: 101
       prefix: --include_nudge
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: specify data input type
-    default: contig
     inputBinding:
       position: 101
       prefix: --input_type
@@ -81,7 +74,6 @@ inputs:
       - 'null'
       - boolean
     doc: keeps Prodigal CDS when used with --clean
-    default: false
     inputBinding:
       position: 101
       prefix: --keep
@@ -90,7 +82,6 @@ inputs:
       - 'null'
       - boolean
     doc: use local database
-    default: false
     inputBinding:
       position: 101
       prefix: --local
@@ -99,7 +90,6 @@ inputs:
       - 'null'
       - boolean
     doc: use for short contigs to predict partial genes
-    default: false
     inputBinding:
       position: 101
       prefix: --low_quality
@@ -108,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads (CPUs) to use in the BLAST search
-    default: 20
     inputBinding:
       position: 101
       prefix: --num_threads
@@ -117,7 +106,6 @@ inputs:
       - 'null'
       - string
     doc: specify ORF finding tool
-    default: PRODIGAL
     inputBinding:
       position: 101
       prefix: --orf_finder
@@ -126,7 +114,6 @@ inputs:
       - 'null'
       - boolean
     doc: run multiple prodigal jobs simultaneously for contigs in a fasta file
-    default: false
     inputBinding:
       position: 101
       prefix: --split_prodigal_jobs

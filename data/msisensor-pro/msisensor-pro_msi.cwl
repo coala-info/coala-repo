@@ -13,7 +13,6 @@ inputs:
       - 'null'
       - int
     doc: 'coverage normalization for paired tumor and normal data, 0: no; 1: yes'
-    default: 0
     inputBinding:
       position: 101
       prefix: -z
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: 'coverage threshold for msi analysis, WXS: 20; WGS: 15'
-    default: 15
     inputBinding:
       position: 101
       prefix: -c
@@ -31,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: FDR threshold for somatic sites detection
-    default: 0.05
     inputBinding:
       position: 101
       prefix: -f
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: maximal homopolymer size for distribution analysis
-    default: 50
     inputBinding:
       position: 101
       prefix: -m
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: maximal microsatellite size for distribution analysis
-    default: 40
     inputBinding:
       position: 101
       prefix: -w
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: minimal homopolymer size for distribution analysis
-    default: 8
     inputBinding:
       position: 101
       prefix: -p
@@ -73,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: minimal microsatellite size for distribution analysis
-    default: 5
     inputBinding:
       position: 101
       prefix: -s
@@ -88,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: 'output homopolymer only, 0: no; 1: yes'
-    default: 0
     inputBinding:
       position: 101
       prefix: -x
@@ -97,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: 'output microsatellites only, 0: no; 1: yes'
-    default: 0
     inputBinding:
       position: 101
       prefix: -y
@@ -112,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: 'output site have no read coverage, 1: no; 0: yes'
-    default: 1
     inputBinding:
       position: 101
       prefix: '-0'
@@ -129,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: span size around window for extracting reads
-    default: 500
     inputBinding:
       position: 101
       prefix: -u
@@ -138,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: threads number for parallel computing
-    default: 1
     inputBinding:
       position: 101
       prefix: -b

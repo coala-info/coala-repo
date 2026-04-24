@@ -26,7 +26,6 @@ inputs:
     doc: A factor used to control the number of jobs given to a thread at a 
       time. A larger number reduces the number of jobs per chunk. Only increase 
       if you experience crashes
-    default: 16
     inputBinding:
       position: 101
       prefix: --chunksize_factor
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: downstream extension added to gene models
-    default: 0
     inputBinding:
       position: 101
       prefix: --downstream_extension
@@ -71,7 +69,6 @@ inputs:
       parameter is the threshold number of summed cDNA counts required to 
       include a region. If set to zero, the default, no intergenic peaks will be
       called.
-    default: 0
     inputBinding:
       position: 101
       prefix: --intergenic_peak_threshold
@@ -80,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: minimum cDNA counts per gene to look for peaks
-    default: 5
     inputBinding:
       position: 101
       prefix: --min_gene_counts
@@ -90,7 +86,6 @@ inputs:
       - float
     doc: adjustment for the minimum height threshold, calculated as this value 
       multiplied by the mean
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --min_height_adjust
@@ -99,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: minimum cDNA counts per broad peak
-    default: 5
     inputBinding:
       position: 101
       prefix: --min_peak_counts
@@ -109,7 +103,6 @@ inputs:
       - float
     doc: adjustment for minimum prominence threshold, calculated as this value 
       multiplied by the mean
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --min_prom_adjust
@@ -126,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -135,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: upstream extension added to gene models
-    default: 0
     inputBinding:
       position: 101
       prefix: --upstream_extension
@@ -145,7 +136,6 @@ inputs:
       - float
     doc: proportion of prominence to calculate peak widths at. Smaller values 
       will give narrow peaks and large values will give wider peaks
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --width
@@ -154,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: rolling mean window size
-    default: 10
     inputBinding:
       position: 101
       prefix: --window_size

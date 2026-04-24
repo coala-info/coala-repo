@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to use for the cache
-    default: /root/.cache
     inputBinding:
       position: 102
       prefix: --cache
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to place output files
-    default: .
     inputBinding:
       position: 102
       prefix: --outdir
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use in multithreaded tools
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Clustering threshold
-    default: 6
     inputBinding:
       position: 102
       prefix: --threshold
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - Directory
     doc: Specify where to write all (tbpore) temporary files.
-    default: <outdir>/.tbpore
     inputBinding:
       position: 102
       prefix: --tmp

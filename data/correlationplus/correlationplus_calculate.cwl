@@ -22,7 +22,6 @@ inputs:
       dynamical cross-correlations), tlndcc (time-lagged normalized dynamical 
       cross-correlations), lmi or nlmi (normalized lmi). Default value is ndcc. 
       (Optional)
-    default: ndcc
     inputBinding:
       position: 101
       prefix: -t
@@ -42,7 +41,6 @@ inputs:
     doc: Elastic network model to calculate the correlations. It can be ANM or 
       GNM. Default is ANM. (Optional) (Valid only when you don't have a 
       trajectory file.)
-    default: ANM
     inputBinding:
       position: 101
       prefix: -m
@@ -62,7 +60,6 @@ inputs:
     doc: Number of non-zero modes, when ANM or GNM is used. Default is 100. 
       (Optional) (It can not exceed 3N-6 in ANM and N-1 in GNM, where N is 
       number of Calpha atoms.)
-    default: 100
     inputBinding:
       position: 101
       prefix: -n

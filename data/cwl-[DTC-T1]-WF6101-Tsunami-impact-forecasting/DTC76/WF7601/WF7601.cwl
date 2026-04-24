@@ -17,7 +17,6 @@ inputs:
   useMLStep:
     doc: "Whether to run the optional ML based prediction step (ST760103)."
     type: boolean
-    default: false
   PretrainedMlModel:
     doc: "Pretrained machine learning model to be used in ML step."
     type: File

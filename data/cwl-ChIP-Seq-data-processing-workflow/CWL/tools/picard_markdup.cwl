@@ -46,7 +46,6 @@ inputs:
       position: 11
   path_to_picards:
     type: string
-    default: "/bin/picard.jar"
     inputBinding:
       position: 1
       

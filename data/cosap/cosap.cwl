@@ -90,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: Sample name of germline to write in bam. Default is 'normal'
-    default: normal
     inputBinding:
       position: 101
       prefix: --normal_sample_name
@@ -108,7 +107,6 @@ inputs:
       - 'null'
       - string
     doc: Sample name of tumor to write in bam. Default is 'tumor'
-    default: tumor
     inputBinding:
       position: 101
       prefix: --tumor_sample_name

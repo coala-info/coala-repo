@@ -59,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: Set of SingleM packages to use
-    default: use the default set
     inputBinding:
       position: 101
       prefix: --metapackage
@@ -68,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: Set taxons with less coverage to coverage=0.
-    default: 0.35
     inputBinding:
       position: 101
       prefix: --min-taxon-coverage
@@ -85,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: percentage of markers to be trimmed for each taxonomy
-    default: 10
     inputBinding:
       position: 101
       prefix: --trim-percent

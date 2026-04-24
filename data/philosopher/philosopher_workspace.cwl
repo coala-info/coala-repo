@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: reports when a workspace is created for usage estimation
-    default: true
     inputBinding:
       position: 101
       prefix: --analytics

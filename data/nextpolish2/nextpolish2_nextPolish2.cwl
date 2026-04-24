@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: number of iterations to attempt phasing.
-    default: 2
     inputBinding:
       position: 104
       prefix: --iter_count
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: filter alignments with unaligned length >= INT.
-    default: 100
     inputBinding:
       position: 104
       prefix: --max_clip_len
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: ignore indel errors with length > INT.
-    default: 20
     inputBinding:
       position: 104
       prefix: --max_indel_len
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: don't correct reference sequences with length <= INT.
-    default: 1000000
     inputBinding:
       position: 104
       prefix: --min_ctg_len
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: filter kmers in k-mer dataset with count <= INT.
-    default: 5
     inputBinding:
       position: 104
       prefix: --min_kmer_count
@@ -73,7 +68,6 @@ inputs:
       - float
     doc: filter alignments with alignment length <= min(INT, FLOAT * 
       read_length).
-    default: '500.5'
     inputBinding:
       position: 104
       prefix: --min_map_len
@@ -82,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: filter alignments with mapping quality <= INT.
-    default: 1
     inputBinding:
       position: 104
       prefix: --min_map_qual
@@ -91,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: filter reads with length <= INT.
-    default: 1000
     inputBinding:
       position: 104
       prefix: --min_read_len
@@ -102,7 +94,6 @@ inputs:
     doc: "phasing model.\n\n          Possible values:\n          - ref: output the
       same haplotype phase blocks as the reference\n          - len: output longer
       haplotype phase blocks"
-    default: ref
     inputBinding:
       position: 104
       prefix: --model
@@ -119,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads.
-    default: 1
     inputBinding:
       position: 104
       prefix: --thread

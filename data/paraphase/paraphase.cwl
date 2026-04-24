@@ -46,7 +46,6 @@ inputs:
       - string
     doc: Optionally specify which genome reference build the input BAM files are aligned
       against. Accepted values are 19, 37, chm13, and 38.
-    default: '38'
     inputBinding:
       position: 101
       prefix: --genome
@@ -64,7 +63,6 @@ inputs:
       - float
     doc: Optional. Minimum frequency of unique supporting reads for a haplotype. Works
       with the targeted mode.
-    default: 0.03
     inputBinding:
       position: 101
       prefix: --min-haplotype-frequency
@@ -74,7 +72,6 @@ inputs:
       - float
     doc: Optional. Minimum frequency for a variant to be used for phasing. Works with
       the targeted mode.
-    default: 0.11
     inputBinding:
       position: 101
       prefix: --min-variant-frequency

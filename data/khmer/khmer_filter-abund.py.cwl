@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Cutoff at which to filter.
-    default: 2
     inputBinding:
       position: 103
       prefix: --cutoff
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

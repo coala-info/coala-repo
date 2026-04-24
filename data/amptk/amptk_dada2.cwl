@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: bimera removal method
-    default: consensus
     inputBinding:
       position: 101
       prefix: --chimera_method
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep all intermediate files
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: MaxEE quality filtering
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --maxee
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads after Q filtering to run DADA2 on
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_reads
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: Biological OTU Clustering Percent
-    default: 97
     inputBinding:
       position: 101
       prefix: --pct_otu
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: Sequencing platform
-    default: ion
     inputBinding:
       position: 101
       prefix: --platform
@@ -86,7 +80,6 @@ inputs:
       - 'null'
       - boolean
     doc: Pool all sequences together for DADA2
-    default: false
     inputBinding:
       position: 101
       prefix: --pool
@@ -95,7 +88,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use DADA2 pseudopooling
-    default: false
     inputBinding:
       position: 101
       prefix: --pseudopool
@@ -112,7 +104,6 @@ inputs:
       - 'null'
       - string
     doc: USEARCH9 EXE
-    default: usearch9
     inputBinding:
       position: 101
       prefix: --usearch

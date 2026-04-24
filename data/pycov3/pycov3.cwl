@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the log level, default is info, 10 for debug
-    default: 20
     inputBinding:
       position: 101
       prefix: --log_level
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: cutoff of mapping length when calculating coverages
-    default: 50
     inputBinding:
       position: 101
       prefix: --mapl_cutoff
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: cutoff of mapping quality when calculating coverages
-    default: 5
     inputBinding:
       position: 101
       prefix: --mapq_cutoff
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: maximum of mismatch ratio for each read as a hit
-    default: 0.03
     inputBinding:
       position: 101
       prefix: --max_mismatch_ratio
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: set number of threads for parallel running
-    default: 1
     inputBinding:
       position: 101
       prefix: --thread_num
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: size (nt) of window for calculation of coverage
-    default: 5000
     inputBinding:
       position: 101
       prefix: --window_size
@@ -83,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: step (nt) of window for calculation of coverage
-    default: 100
     inputBinding:
       position: 101
       prefix: --window_step

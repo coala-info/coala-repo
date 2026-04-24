@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors to use for alignment and analysis.
-    default: 1
     inputBinding:
       position: 101
       prefix: --nproc

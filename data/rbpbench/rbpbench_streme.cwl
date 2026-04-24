@@ -43,7 +43,6 @@ inputs:
     doc: 'Estimates an m-order background model for scoring sites and uses an m-order
       shuffle if creating control sequences from primary sequences. Default for RNA/DNA:
       2 (STREME option: --order) (default: 2)'
-    default: 2
     inputBinding:
       position: 101
       prefix: --streme-order
@@ -53,7 +52,6 @@ inputs:
       - int
     doc: 'Maximum width for motifs (must be <= 30) (STREME option: --maxw) (default:
       15)'
-    default: 15
     inputBinding:
       position: 101
       prefix: --streme-maxw
@@ -63,7 +61,6 @@ inputs:
       - int
     doc: 'Minimum width for motifs (must be >= 3) (STREME option: --minw) (default:
       6)'
-    default: 6
     inputBinding:
       position: 101
       prefix: --streme-minw
@@ -76,7 +73,6 @@ inputs:
       use frequencies from human ENSEMBL transcripts (including introns, resulting
       in lower G+C and T most prominent) 3: use uniform frequencies (same for every
       nucleotide) (default: 1)'
-    default: '1'
     inputBinding:
       position: 101
       prefix: --streme-ntf-mode
@@ -85,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: 'Random seed for shuffling sequences (STREME option: --seed) (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --streme-seed
@@ -95,7 +90,6 @@ inputs:
       - float
     doc: 'STREME significance threshold (p-value) for reporting enriched motifs (STREME
       option --thresh) (default: 0.05)'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --streme-thresh
@@ -105,7 +99,6 @@ inputs:
       - boolean
     doc: 'Use E-value threshold instead of p-value (STREME option: --evalue) (default:
       False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --streme-evalue

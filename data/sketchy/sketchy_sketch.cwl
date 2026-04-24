@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size
-    default: 16
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: Hash scaler for finch format
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --scale
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for hashing k-mers
-    default: 0
     inputBinding:
       position: 101
       prefix: --seed
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Sketch size
-    default: 1000
     inputBinding:
       position: 101
       prefix: --sketch-size

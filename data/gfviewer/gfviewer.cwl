@@ -52,7 +52,6 @@ inputs:
       - string
     doc: "Specify the location (upper/lower/left/right) of\n                     \
       \   legends only when adding them to each page (default: lower)"
-    default: lower
     inputBinding:
       position: 101
       prefix: --legend_location
@@ -63,7 +62,6 @@ inputs:
     doc: "Specify the orientation (horizontal/vertical) of\n                     \
       \   legends only when plotting legends separately\n                        (default:
       horizontal)"
-    default: horizontal
     inputBinding:
       position: 101
       prefix: --legend_orientation
@@ -81,7 +79,6 @@ inputs:
       - int
     doc: "Number of chromosomes to be plotted per page (default:\n               \
       \         3)"
-    default: 3
     inputBinding:
       position: 101
       prefix: --number_of_chromosomes_per_page
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of rows in the legends (default: 2)'
-    default: 2
     inputBinding:
       position: 101
       prefix: --number_of_rows_in_legends
@@ -100,7 +96,6 @@ inputs:
       - int
     doc: "The length of telomeres in bp used in the plot\n                       \
       \ (default: 10000)"
-    default: 10000
     inputBinding:
       position: 101
       prefix: --telomere_length

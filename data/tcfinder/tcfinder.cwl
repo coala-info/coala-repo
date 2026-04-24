@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum proportion of targets in cluster
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --minimum-prop
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of tips (cluster size)
-    default: 2
     inputBinding:
       position: 101
       prefix: --minimum-size

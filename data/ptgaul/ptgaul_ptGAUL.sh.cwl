@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: a rough coverage of data used for plastome assembly
-    default: 50
     inputBinding:
       position: 101
       prefix: --coverage
@@ -20,7 +19,6 @@ inputs:
       - int
     doc: the raw long reads will be filtered if the lengths are less than this 
       number (bp)
-    default: 3000
     inputBinding:
       position: 101
       prefix: --filtered
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: expected genome size of plastome (bp)
-    default: 160000
     inputBinding:
       position: 101
       prefix: --genomesize
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

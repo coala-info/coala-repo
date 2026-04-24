@@ -32,7 +32,6 @@ inputs:
       - int
     doc: "Control the number of pixels handled by each worker\n                  \
       \         process at a time."
-    default: 10000000
     inputBinding:
       position: 102
       prefix: --chunksize
@@ -43,7 +42,6 @@ inputs:
     doc: "Use balancing weight with this name stored in\n                        \
       \   cooler.Provide empty argument to calculate cis-\n                      \
       \     expected on raw data"
-    default: weight
     inputBinding:
       position: 102
       prefix: --clr-weight-name
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Number of diagonals to neglect for cis contact type
-    default: 2
     inputBinding:
       position: 102
       prefix: --ignore-diags
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: "Number of processes to split the work\n                           between."
-    default: 1
     inputBinding:
       position: 102
       prefix: --nproc
@@ -95,7 +91,6 @@ inputs:
     doc: "Control smoothing with the standard deviation of\n                     \
       \      the smoothing Gaussian kernel, ignored without\n                    \
       \       smoothing."
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --smooth-sigma

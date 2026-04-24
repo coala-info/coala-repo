@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: The format of the input file
-    default: fasta
     inputBinding:
       position: 102
       prefix: --input-format
@@ -24,7 +23,6 @@ inputs:
       - string
     doc: The separator character for the input file. Relevant for tabular input 
       files
-    default: \t
     inputBinding:
       position: 102
       prefix: --input-sep
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: The format of the output file
-    default: tabular
     inputBinding:
       position: 102
       prefix: --output-format
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: The output mode
-    default: lower-triangle
     inputBinding:
       position: 102
       prefix: --output-mode
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: The separator character for the output file
-    default: \t
     inputBinding:
       position: 102
       prefix: --output-sep

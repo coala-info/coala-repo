@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the k-mers to generate. Defaults to 31.
-    default: 31
     inputBinding:
       position: 103
       prefix: --kmer_size
@@ -29,7 +28,6 @@ inputs:
       - int
     doc: Minimum frequency for a k-mer to be included in the output. Defaults to
       1.
-    default: 1
     inputBinding:
       position: 103
       prefix: --min_freq

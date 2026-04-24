@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Number of simultaneous connections
-    default: 10
     inputBinding:
       position: 104
       prefix: -maxConnections

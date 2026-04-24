@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: min. mapping quality
-    default: 1
     inputBinding:
       position: 104
       prefix: --qual
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: window offset (step size)
-    default: 1000
     inputBinding:
       position: 104
       prefix: --step
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: sliding window size
-    default: 50000
     inputBinding:
       position: 104
       prefix: --window

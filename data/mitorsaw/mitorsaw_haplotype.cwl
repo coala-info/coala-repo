@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele frequency to consider a heteroplasmic variant
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --minimum-maf
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum fraction of read that must map to pass filters
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --minimum-map-frac
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read count to consider a heteroplasmic variant
-    default: 3
     inputBinding:
       position: 101
       prefix: --minimum-read-count
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: 'Sample name to use in VCF output (default: BAM RG tag or "SAMPLE")'
-    default: BAM RG tag or "SAMPLE"
     inputBinding:
       position: 101
       prefix: --sample-name

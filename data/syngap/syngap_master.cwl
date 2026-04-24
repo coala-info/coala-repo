@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Key in the attributes to extract for species1
-    default: ID
     inputBinding:
       position: 101
       prefix: --annoKey1
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Parent gene key to group with --primary_only in jcvi
-    default: Parent
     inputBinding:
       position: 101
       prefix: --annoparentKey1
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Feature type to extract for species1
-    default: mRNA
     inputBinding:
       position: 101
       prefix: --annoType1
@@ -38,7 +35,6 @@ inputs:
       - float
     doc: Minimum percentage of query gene coverage of the HSP group in the 
       genBlast output
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --coverage
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: C-score cutoff for jcvi
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --cscore
@@ -56,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: The type of squences for jcvi, nucl|prot
-    default: nucl
     inputBinding:
       position: 101
       prefix: --datatype
@@ -65,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: Threshold for evalue in genBlast
-    default: '1e-5'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -74,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size for Indexing in miniprot
-    default: 5
     inputBinding:
       position: 101
       prefix: --kmer1
@@ -83,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size for the second round of chaining in miniprot
-    default: 4
     inputBinding:
       position: 101
       prefix: --kmer2
@@ -92,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: Max intron size allowed for miniprot output
-    default: 40k
     inputBinding:
       position: 101
       prefix: --intron
@@ -101,7 +91,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold of Score for miniprot output
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --outs
@@ -110,7 +99,6 @@ inputs:
       - 'null'
       - string
     doc: Process for gapanno, genblastg|miniprot
-    default: genblastg
     inputBinding:
       position: 101
       prefix: --process
@@ -119,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: The number of ranks in genBlast output
-    default: 5
     inputBinding:
       position: 101
       prefix: --rank
@@ -140,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: The short name for species1, e.g. Ath
-    default: sp1
     inputBinding:
       position: 101
       prefix: --sp1
@@ -155,7 +141,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads

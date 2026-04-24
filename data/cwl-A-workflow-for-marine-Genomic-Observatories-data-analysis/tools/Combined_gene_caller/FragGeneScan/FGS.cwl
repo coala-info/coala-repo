@@ -40,7 +40,6 @@ inputs:
     inputBinding:
       separate: true
       prefix: "-t"
-    default: "illumina_10"
 
 
 # stdout: stdout.txt

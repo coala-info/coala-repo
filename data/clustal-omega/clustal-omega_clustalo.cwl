@@ -239,7 +239,6 @@ inputs:
       - 'null'
       - int
     doc: use transitivity
-    default: 0
     inputBinding:
       position: 101
       prefix: --trans

@@ -35,7 +35,6 @@ inputs:
       - int
     doc: 'Optional: Limit of the number of sample characters.Any attribute with more
       than X characters will truncate to the first X, where X is a number of characters'
-    default: 500
     inputBinding:
       position: 101
       prefix: --attr-limit-truncate
@@ -45,7 +44,6 @@ inputs:
       - Directory
     doc: 'Optional: Specify folder of bam files. Geofetch will not download sra files
       when corresponding bam files already exist.'
-    default: '$SRABAM:'
     inputBinding:
       position: 101
       prefix: --bam-folder
@@ -63,7 +61,6 @@ inputs:
       - int
     doc: 'Optional: Limit of the number of the constant sample characters that should
       not be discarded'
-    default: 250
     inputBinding:
       position: 101
       prefix: --const-limit-discard
@@ -73,7 +70,6 @@ inputs:
       - int
     doc: 'Optional: Limit of the number of the constant sample characters that should
       not be in project yaml.'
-    default: 50
     inputBinding:
       position: 101
       prefix: --const-limit-project
@@ -85,7 +81,6 @@ inputs:
       data, which may be attached to the collective series entity, or to individual
       samples. Allowable values are: samples, series or both (all). Ignored unless
       'processed' flag is set."
-    default: samples
     inputBinding:
       position: 101
       prefix: --data-source
@@ -111,7 +106,6 @@ inputs:
       - string
     doc: "Optional: Filter regex for processed filenames. Ignored unless 'processed'
       flag is set."
-    default: None
     inputBinding:
       position: 101
       prefix: --filter
@@ -122,7 +116,6 @@ inputs:
     doc: "Optional: Filter size for processed files that are stored as sample repository.
       Works only for sample data. Supported input formats : 12B, 12KB, 12MB, 12GB.
       Ignored unless 'processed' flag is set."
-    default: None
     inputBinding:
       position: 101
       prefix: --filter-size
@@ -132,7 +125,6 @@ inputs:
       - Directory
     doc: 'Optional: Specify folder of fastq files. Geofetch will not download sra
       files when corresponding fastq files already exist.'
-    default: '$SRAFQ:'
     inputBinding:
       position: 101
       prefix: --fq-folder
@@ -142,7 +134,6 @@ inputs:
       - Directory
     doc: "Optional: Specify a location to store processed GEO files. Ignored unless
       'processed' flag is set."
-    default: '$GEODATA:'
     inputBinding:
       position: 101
       prefix: --geo-folder
@@ -183,7 +174,6 @@ inputs:
       - string
     doc: 'Optional: Max size of soft file. Supported input formats : 12B, 12KB, 12MB,
       12GB.'
-    default: 1GB
     inputBinding:
       position: 101
       prefix: --max-soft-size
@@ -202,7 +192,6 @@ inputs:
       - Directory
     doc: Specify a parent folder location to store metadata. The project name 
       will be added as a subfolder
-    default: '$SRAMETA:'
     inputBinding:
       position: 101
       prefix: --metadata-root
@@ -222,7 +211,6 @@ inputs:
     doc: 'Optional: Specify one or more filepaths to PROJECT pipeline interface yaml
       files. These will be added to the project config file to make it immediately
       compatible with looper.'
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --pipeline-project
@@ -234,7 +222,6 @@ inputs:
     doc: 'Optional: Specify one or more filepaths to SAMPLES pipeline interface yaml
       files. These will be added to the project config file to make it immediately
       compatible with looper.'
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --pipeline-samples
@@ -267,7 +254,6 @@ inputs:
       - 'null'
       - string
     doc: Skip some accessions.
-    default: no skip
     inputBinding:
       position: 101
       prefix: --skip

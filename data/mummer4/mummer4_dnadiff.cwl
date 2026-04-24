@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: Set the prefix of the output files
-    default: out
     inputBinding:
       position: 103
       prefix: prefix

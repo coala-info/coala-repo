@@ -76,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: verbose level
-    default: 2
     inputBinding:
       position: 102
       prefix: -v

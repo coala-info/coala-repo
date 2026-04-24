@@ -10,7 +10,6 @@ inputs:
       - string
     doc: The type of batch system to run the job(s) with, currently can be 
       'singleMachine'/'parasol'/'acidTest'/'gridEngine'/'lsf'.
-    default: singleMachine
     inputBinding:
       position: 101
       prefix: --batchSystem
@@ -20,7 +19,6 @@ inputs:
       - string
     doc: The batch system to run for jobs with larger memory/cpus requests, 
       currently can be 'singleMachine'/'parasol'/'acidTest'/'gridEngine'.
-    default: none
     inputBinding:
       position: 101
       prefix: --bigBatchSystem
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: The cpu threshold above which to submit to the big queue.
-    default: 9223372036854775807
     inputBinding:
       position: 101
       prefix: --bigCpuThreshold
@@ -39,7 +36,6 @@ inputs:
       - int
     doc: The maximum number of big batch system cpus to allow at one time on the
       big queue.
-    default: 9223372036854775807
     inputBinding:
       position: 101
       prefix: --bigMaxCpus
@@ -49,7 +45,6 @@ inputs:
       - int
     doc: The maximum amount of memory to request from the big batch system at 
       any one time.
-    default: 9223372036854775807
     inputBinding:
       position: 101
       prefix: --bigMaxMemory
@@ -58,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: The memory threshold above which to submit to the big queue.
-    default: 9223372036854775807
     inputBinding:
       position: 101
       prefix: --bigMemoryThreshold
@@ -76,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: The default the number of cpus to dedicate a job.
-    default: 1
     inputBinding:
       position: 101
       prefix: --defaultCpu
@@ -86,7 +79,6 @@ inputs:
       - int
     doc: The default amount of memory to request for a job (in bytes), by 
       default is 2^31 = 2 gigabytes
-    default: 2147483648
     inputBinding:
       position: 101
       prefix: --defaultMemory
@@ -99,7 +91,6 @@ inputs:
       avoid over parallelizing tiny jobs, and therefore paying significant 
       scheduling overhead, by running tiny jobs in series on a single node/core 
       of the cluster.
-    default: 30
     inputBinding:
       position: 101
       prefix: --jobTime
@@ -112,7 +103,6 @@ inputs:
       by all machines running jobs). If you pass an existing directory it will 
       check if it's a valid existing job tree, then try and restart the jobs in 
       it.
-    default: ./jobTree
     inputBinding:
       position: 101
       prefix: --jobTree
@@ -145,7 +135,6 @@ inputs:
       - 'null'
       - string
     doc: Log at level (may be either OFF/INFO/DEBUG/CRITICAL).
-    default: CRITICAL
     inputBinding:
       position: 101
       prefix: --logLevel
@@ -163,7 +152,6 @@ inputs:
       - int
     doc: The maximum number of cpus to request from the batch system at any one 
       time.
-    default: 9223372036854775807
     inputBinding:
       position: 101
       prefix: --maxCpus
@@ -173,7 +161,6 @@ inputs:
       - int
     doc: Maximum runtime of a job (in seconds) before we kill it (this is a 
       lower bound, and the actual time before killing the job may be longer).
-    default: 9223372036854775807
     inputBinding:
       position: 101
       prefix: --maxJobDuration
@@ -183,7 +170,6 @@ inputs:
       - int
     doc: The maximum size of a job log file to keep (in bytes), log files larger
       than this will be truncated to the last X bytes. Default is 50 kilobytes
-    default: 50120
     inputBinding:
       position: 101
       prefix: --maxLogFileSize
@@ -193,7 +179,6 @@ inputs:
       - int
     doc: The maximum amount of memory to request from the batch system at any 
       one time.
-    default: 9223372036854775807
     inputBinding:
       position: 101
       prefix: --maxMemory
@@ -204,7 +189,6 @@ inputs:
     doc: The maximum number of threads (technically processes at this point) to 
       use when running in single machine mode. Increasing this will allow more 
       jobs to run concurrently when running on a single machine.
-    default: 4
     inputBinding:
       position: 101
       prefix: --maxThreads
@@ -213,7 +197,6 @@ inputs:
       - 'null'
       - string
     doc: The command to run the parasol program
-    default: parasol
     inputBinding:
       position: 101
       prefix: --parasolCommand
@@ -233,7 +216,6 @@ inputs:
       - int
     doc: Number of times to retry a failing job before giving up and labeling 
       job failed.
-    default: 0
     inputBinding:
       position: 101
       prefix: --retryCount
@@ -250,7 +232,6 @@ inputs:
       - 'null'
       - boolean
     doc: Records statistics about the job-tree to be used by jobTreeStats.
-    default: false
     inputBinding:
       position: 101
       prefix: --stats

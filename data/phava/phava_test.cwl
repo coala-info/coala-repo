@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Gap penalty for einverted.
-    default: 100
     inputBinding:
       position: 104
       prefix: --gap
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Match score for einverted.
-    default: 5
     inputBinding:
       position: 104
       prefix: --match
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum repeat length for einverted.
-    default: 750
     inputBinding:
       position: 104
       prefix: --maxrepeat
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for minimap2.
-    default: 1
     inputBinding:
       position: 104
       prefix: -t

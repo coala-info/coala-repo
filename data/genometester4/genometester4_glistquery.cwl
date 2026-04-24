@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum frequency of the printed words.
-    default: MAX_UINT
     inputBinding:
       position: 102
       prefix: --maxfreq
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum frequency of the printed words.
-    default: 0
     inputBinding:
       position: 102
       prefix: --minfreq
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Specify number of mismatches.
-    default: 0
     inputBinding:
       position: 102
       prefix: --mismatch
@@ -65,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Specify number of 3' perfect matches.
-    default: 0
     inputBinding:
       position: 102
       prefix: --perfectmatch

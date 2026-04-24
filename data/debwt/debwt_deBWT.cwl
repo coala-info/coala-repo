@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length (from 12 to 32)
-    default: 32
     inputBinding:
       position: 102
       prefix: -k
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: maximum thread number
-    default: 8
     inputBinding:
       position: 102
       prefix: -t

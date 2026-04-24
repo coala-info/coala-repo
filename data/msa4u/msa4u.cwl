@@ -11,7 +11,6 @@ inputs:
       - string
     doc: "Path to a configuration file or name of a premade config file\n[default:
       standard]."
-    default: standard
     inputBinding:
       position: 101
       prefix: -c
@@ -53,7 +52,6 @@ inputs:
     doc: "Label style based on input fasta file.\nid: sequence id from header (after
       > and before first space)\ndescription: after first space on header\nall: both
       (all header string)"
-    default: id
     inputBinding:
       position: 101
       prefix: -label
@@ -79,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: "Sequence type\n[default: auto; detected by used alphabet]"
-    default: auto
     inputBinding:
       position: 101
       prefix: -st

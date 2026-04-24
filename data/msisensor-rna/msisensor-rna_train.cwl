@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: The author who trained the model.
-    default: None
     inputBinding:
       position: 101
       prefix: --author
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: The machine learning classifier for MSI detection.
-    default: SVM
     inputBinding:
       position: 101
       prefix: --classifier
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: The email of the author.
-    default: None
     inputBinding:
       position: 101
       prefix: --email
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: The description of the input file.
-    default: None
     inputBinding:
       position: 101
       prefix: --input_description
@@ -74,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum positive sample of MSI for training.
-    default: 10
     inputBinding:
       position: 101
       prefix: --positive_num

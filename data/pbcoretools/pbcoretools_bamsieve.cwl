@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Randomize sequences for privacy
-    default: false
     inputBinding:
       position: 102
       prefix: --anonymize
@@ -26,7 +25,6 @@ inputs:
       - boolean
     doc: Indicates that the whitelist or blacklist contains barcode indices instead
       of ZMW numbers
-    default: false
     inputBinding:
       position: 102
       prefix: --barcodes
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: Alias for setting log level to DEBUG
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: Discard input DataSet metadata
-    default: false
     inputBinding:
       position: 102
       prefix: --ignore-metadata
@@ -70,7 +66,6 @@ inputs:
       - boolean
     doc: If enabled, the UUID from the input dataset will be used for the output as
       well.
-    default: false
     inputBinding:
       position: 102
       prefix: --keep-uuid
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: Set log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
-    default: WARN
     inputBinding:
       position: 102
       prefix: --log-level
@@ -113,7 +107,6 @@ inputs:
       - 'null'
       - boolean
     doc: Alias for setting log level to CRITICAL to suppress output.
-    default: false
     inputBinding:
       position: 102
       prefix: --quiet
@@ -122,7 +115,6 @@ inputs:
       - 'null'
       - boolean
     doc: Make external resource paths relative
-    default: false
     inputBinding:
       position: 102
       prefix: --relative
@@ -133,7 +125,6 @@ inputs:
     doc: If enabled, --percentage and --count will include hole numbers from scraps
       BAM files when picking a random sample (default is to sample only ZMWs present
       in subreads BAM).
-    default: false
     inputBinding:
       position: 102
       prefix: --sample-scraps
@@ -150,7 +141,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print a list of ZMWs and exit
-    default: false
     inputBinding:
       position: 102
       prefix: --show-zmws
@@ -160,7 +150,6 @@ inputs:
       - boolean
     doc: If set, the whitelist or blacklist will be assumed to contain one subread
       name per line, or a BAM/DataSet file from which to extract subreads
-    default: false
     inputBinding:
       position: 102
       prefix: --subreads

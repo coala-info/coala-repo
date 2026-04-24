@@ -70,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: number of runs
-    default: 1
     inputBinding:
       position: 101
       prefix: -n

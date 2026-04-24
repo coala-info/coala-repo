@@ -44,7 +44,6 @@ inputs:
     doc: "Parameter for the peak profile classification. Set\nlambda for the smoothing
       of the peak profiles. A\nhigher value (> default) will underfit. A lower value\n\
       (< default) will overfit."
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --lam
@@ -72,7 +71,6 @@ inputs:
     doc: "Maximal number of clusters of the kmeans clustering of\nthe peak profiles.
       The algorithm will be optimized,\ni.e., the parameter is just a constraint and
       not\nabsolute."
-    default: 15
     inputBinding:
       position: 101
       prefix: --maxcl
@@ -124,7 +122,6 @@ inputs:
       - float
     doc: "Set a normalized CV threshold to divide the peak\nprofiles into more specific
       (0) and more unspecific\n(1)."
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --thresh

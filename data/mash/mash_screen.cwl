@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum p-value to report.
-    default: 1.0
     inputBinding:
       position: 103
       prefix: -v
@@ -43,7 +42,6 @@ inputs:
     doc: Minimum identity to report. Inclusive unless set to zero, in which case
       only identities greater than zero (i.e. with at least one shared hash) 
       will be reported. Set to -1 to output everything.
-    default: 0
     inputBinding:
       position: 103
       prefix: -i
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Parallelism. This many threads will be spawned for processing.
-    default: 1
     inputBinding:
       position: 103
       prefix: -p

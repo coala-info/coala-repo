@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: print base quality histogram at end of a successful run
-    default: 0
     inputBinding:
       position: 101
       prefix: basequalhist
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'create BAM index (default: 0, passthrough=1 only)'
-    default: 0
     inputBinding:
       position: 101
       prefix: index
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - File
     doc: input filename (standard input if unset)
-    default: stdin
     inputBinding:
       position: 101
       prefix: I
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: input format (bam,cram,maussam,sam,sbam)
-    default: bam
     inputBinding:
       position: 101
       prefix: inputformat
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: 'input helper threads (for inputformat=bam only, default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: inputthreads
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'create md5 check sum (default: 0, passthrough=1 only)'
-    default: 0
     inputBinding:
       position: 101
       prefix: md5
@@ -79,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: output format (bam,cram,sam, passthrough=1 only)
-    default: bam
     inputBinding:
       position: 101
       prefix: outputformat
@@ -89,7 +82,6 @@ inputs:
       - int
     doc: 'output helper threads (for outputformat=bam only, default: 1, passthrough=1
       only)'
-    default: 1
     inputBinding:
       position: 101
       prefix: outputthreads
@@ -98,7 +90,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'write alignments to standard output (default: do not pass through)'
-    default: 0
     inputBinding:
       position: 101
       prefix: passthrough
@@ -133,7 +124,6 @@ inputs:
       - 'null'
       - boolean
     doc: print stats at the end of a successful run
-    default: 0
     inputBinding:
       position: 101
       prefix: verbose

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: motif1 name
-    default: Heptamer
     inputBinding:
       position: 102
       prefix: --motif1
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: motif2 name
-    default: Nonamer
     inputBinding:
       position: 102
       prefix: --motif2
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: max. spacer length
-    default: 13
     inputBinding:
       position: 102
       prefix: --spacer-high
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: min. spacer length
-    default: 11
     inputBinding:
       position: 102
       prefix: --spacer-low

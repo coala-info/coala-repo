@@ -41,7 +41,6 @@ inputs:
       - boolean
     doc: Whether to normalize the response values to [0, 1] for CurveCurator. 
       Default is False.
-    default: false
     inputBinding:
       position: 101
       prefix: --curve_curator_normalize
@@ -93,7 +92,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to use multiprocessing for the evaluation. Default is False
-    default: false
     inputBinding:
       position: 101
       prefix: --multiprocessing
@@ -113,7 +111,6 @@ inputs:
       means no robustness test is run. The robustness test is a test where the 
       model is trained with varying seeds. This is done multiple times to see 
       how stable the model is.
-    default: 0
     inputBinding:
       position: 101
       prefix: --n_trials_robustness
@@ -140,7 +137,6 @@ inputs:
       - string
     doc: Metric for hyperparameter tuning choose from ['MSE', 'RMSE', 'MAE', 
       'R^2', 'Pearson', 'Spearman', 'Kendall'] Default is RMSE.
-    default: RMSE
     inputBinding:
       position: 101
       prefix: --optim_metric
@@ -181,7 +177,6 @@ inputs:
       is done for every drug view the model uses (e.g. gene expression, target_information,
       ..). For each experiment one drug view is randomized while the others are held
       constant."
-    default: None
     inputBinding:
       position: 101
       prefix: --randomization_mode
@@ -196,7 +191,6 @@ inputs:
       of the feature is preserved. In case of matrices, this is the mean and standard
       deviation of the feature view for this instance, for networks it is the degree
       distribution.'
-    default: permutation
     inputBinding:
       position: 101
       prefix: --randomization_type
@@ -226,7 +220,6 @@ inputs:
     doc: Which tests to run (LPO=Leave-random-Pairs-Out, 
       LCO=Leave-Cell-line-Out, LDO=Leave-Drug-Out). Can be a list of test runs 
       e.g. 'LPO LCO LDO' to run all tests. Default is LPO
-    default: LPO
     inputBinding:
       position: 101
       prefix: --test_mode

@@ -57,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: only write clusters with at least N reads
-    default: 2
     inputBinding:
       position: 102
       prefix: --min-cluster-size
@@ -66,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: require an overlap of at least N bases between reads
-    default: 45
     inputBinding:
       position: 102
       prefix: --min-overlap

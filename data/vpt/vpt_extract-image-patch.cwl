@@ -14,7 +14,6 @@ inputs:
       - string
     doc: The name of the stain that will be used for the blue channel of the 
       patch.
-    default: None
     inputBinding:
       position: 101
       prefix: --blue-stain-name
@@ -64,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: The Z plane of the mosaic tiff images to use for the patch.
-    default: 2
     inputBinding:
       position: 101
       prefix: --input-z-index
@@ -74,7 +72,6 @@ inputs:
       - string
     doc: The name of the normalization method that will be used on each channel 
       of the patch.
-    default: None
     inputBinding:
       position: 101
       prefix: --normalization
@@ -93,7 +90,6 @@ inputs:
       - string
     doc: The name of the stain that will be used for the red channel of the 
       patch.
-    default: None
     inputBinding:
       position: 101
       prefix: --red-stain-name
@@ -102,7 +98,6 @@ inputs:
       - 'null'
       - float
     doc: Number of microns for the width of the patch.
-    default: 108.0
     inputBinding:
       position: 101
       prefix: --size-x
@@ -111,7 +106,6 @@ inputs:
       - 'null'
       - float
     doc: Number of microns for the height of the patch.
-    default: 108.0
     inputBinding:
       position: 101
       prefix: --size-y

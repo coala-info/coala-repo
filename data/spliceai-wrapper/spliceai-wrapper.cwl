@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum delta score to consider a variant as splice-altering.
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --delta-score
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance from splice site to consider a variant.
-    default: 500
     inputBinding:
       position: 102
       prefix: --max-distance
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum distance from splice site to consider a variant.
-    default: 10
     inputBinding:
       position: 102
       prefix: --min-distance
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for processing.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

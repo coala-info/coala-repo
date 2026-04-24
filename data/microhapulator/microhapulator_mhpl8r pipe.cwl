@@ -34,7 +34,6 @@ inputs:
       - float
     doc: filter out reads with more than AT percent of ambiguous characters 
       ('N'); AT=0.2 by default
-    default: 0.2
     inputBinding:
       position: 105
       prefix: --ambiguous-thresh
@@ -64,7 +63,6 @@ inputs:
     doc: issue an alert in the final report for each marker whose read discard 
       rate (proportion of reads that could not be typed) exceeds DA; by default 
       DA=0.25
-    default: 0.25
     inputBinding:
       position: 105
       prefix: --discard-alert
@@ -82,7 +80,6 @@ inputs:
       - float
     doc: global percentage of total read count threshold; e.g. use 
       --dynamic=0.02 to apply a 2% analytical threshold; DT=0.02 by default
-    default: 0.02
     inputBinding:
       position: 105
       prefix: --dynamic
@@ -93,7 +90,6 @@ inputs:
     doc: issue an alert in the final report for each marker whose gap rate 
       (proportion of reads containing one or more gap alleles) exceeds DA; by 
       default DA=0.05
-    default: 0.05
     inputBinding:
       position: 105
       prefix: --gap-alert
@@ -104,7 +100,6 @@ inputs:
     doc: horizontal spacing between samples in the read distribution length 
       ridge plots; negative value for this parameter enables overlapping plots; 
       HS=-0.7 by default
-    default: -0.7
     inputBinding:
       position: 105
       prefix: --hspace
@@ -113,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: filter out reads that are less than LT bp long; LT=50 by default
-    default: 50
     inputBinding:
       position: 105
       prefix: --length-thresh
@@ -131,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: global fixed read count threshold; ST=5 by default
-    default: 5
     inputBinding:
       position: 105
       prefix: --static
@@ -149,7 +142,6 @@ inputs:
       - 'null'
       - Directory
     doc: pipeline working directory; default is current directory
-    default: .
     inputBinding:
       position: 105
       prefix: --workdir

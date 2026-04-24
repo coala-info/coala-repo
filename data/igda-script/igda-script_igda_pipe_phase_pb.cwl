@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: maximal number of nearest neighbors
-    default: 50
     inputBinding:
       position: 104
       prefix: -m
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: minimal coverage of each contig
-    default: 10
     inputBinding:
       position: 104
       prefix: -c
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: minimal jaccard index for find_nccontigs and tred
-    default: 2.0
     inputBinding:
       position: 104
       prefix: -j
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: minimal number of nearest neighbors
-    default: 25
     inputBinding:
       position: 104
       prefix: -t
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: maximal number of iteration in ANN
-    default: 1
     inputBinding:
       position: 104
       prefix: -b
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 104
       prefix: -n

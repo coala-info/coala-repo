@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: "Locate aspera key. Default\n                        $HOME/.aspera/connect/etc/asperaweb_id_dsa.openssh"
-    default: $HOME/.aspera/connect/etc/asperaweb_id_dsa.openssh
     inputBinding:
       position: 101
       prefix: --ascp_key
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - Directory
     doc: "Path to SRA fastq files. The default is\n                        $OUTDIR/download"
-    default: $OUTDIR/download
     inputBinding:
       position: 101
       prefix: --download

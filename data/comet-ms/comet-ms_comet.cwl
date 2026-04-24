@@ -51,7 +51,6 @@ inputs:
       - 'null'
       - File
     doc: Specify an alternate parameters file
-    default: comet.params
     inputBinding:
       position: 102
       prefix: -P

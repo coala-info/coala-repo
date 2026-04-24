@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: Scale factor for the number of reads to keep
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --scale

@@ -21,7 +21,6 @@ inputs:
       - boolean
     doc: Flag to indicate that only the base names (not the full path) should be
       saved in the output CSV file
-    default: false
     inputBinding:
       position: 103
       prefix: --base_name
@@ -31,7 +30,6 @@ inputs:
       - float
     doc: Desired probability that all results were returned with containment 
       index above threshold [-ct]
-    default: 0.95
     inputBinding:
       position: 103
       prefix: --confidence
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: Only return results with containment index above this value
-    default: 0.02
     inputBinding:
       position: 103
       prefix: --containment_threshold
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force creation of new NodeGraph.
-    default: false
     inputBinding:
       position: 103
       prefix: --force
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: False positive rate.
-    default: 0.0001
     inputBinding:
       position: 103
       prefix: --fp_rate
@@ -68,7 +63,6 @@ inputs:
       - boolean
     doc: Option to only insert query k-mers in bloom filter if they appear 
       anywhere in the training database.
-    default: false
     inputBinding:
       position: 103
       prefix: --intersect_nodegraph
@@ -86,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 20
     inputBinding:
       position: 103
       prefix: --threads

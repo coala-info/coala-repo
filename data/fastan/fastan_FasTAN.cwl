@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 8
     inputBinding:
       position: 103
       prefix: -T

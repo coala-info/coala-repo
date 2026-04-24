@@ -10,7 +10,6 @@ inputs:
       - type: array
         items: File
     doc: input file
-    default: stdin
     inputBinding:
       position: 1
   - id: by_record
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size
-    default: 9
     inputBinding:
       position: 102
       prefix: -k

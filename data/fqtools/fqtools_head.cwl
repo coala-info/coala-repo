@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: The number of reads to display
-    default: 10
     inputBinding:
       position: 102
       prefix: -n
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Output file stem (default "output%").
-    default: output%
     inputBinding:
       position: 102
       prefix: -o

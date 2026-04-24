@@ -21,7 +21,6 @@ inputs:
       - float
     doc: Fraction of total target genomes that any given Class must contribute 
       in order for that class to be randomly subset
-    default: 0.0005
     inputBinding:
       position: 101
       prefix: --cutoff-fraction
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: Fraction those that are filtered should be randomly subset down to
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --fraction-to-subset
@@ -65,7 +63,6 @@ inputs:
       - string
     doc: output prefix for output subset accessions (*.txt) and GTDB taxonomy 
       files (*.tsv)
-    default: '"subset-accessions"'
     inputBinding:
       position: 101
       prefix: --output-prefix
@@ -74,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the seed for random subsampling
-    default: 1
     inputBinding:
       position: 101
       prefix: --seed

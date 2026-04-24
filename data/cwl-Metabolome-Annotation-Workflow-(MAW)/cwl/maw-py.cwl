@@ -21,7 +21,6 @@ inputs:
   ms1data: File
   score_thresh:
     type: float
-    default: 0.75
     
 arguments: 
     - $(inputs.workflow_script.path)

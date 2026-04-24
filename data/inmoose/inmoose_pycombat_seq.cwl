@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: Use STRING to separate numbers
-    default: \n
     inputBinding:
       position: 104
       prefix: --separator

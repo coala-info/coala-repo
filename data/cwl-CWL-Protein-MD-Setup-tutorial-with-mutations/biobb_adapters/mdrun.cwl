@@ -44,7 +44,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_gro_path
-    default: system.gro
 
   output_edr_path:
     label: Path to the output GROMACS portable energy file EDR
@@ -60,7 +59,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_edr_path
-    default: system.edr
 
   output_log_path:
     label: Path to the output GROMACS trajectory log file LOG
@@ -76,7 +74,6 @@ inputs:
     inputBinding:
       position: 4
       prefix: --output_log_path
-    default: system.log
 
   output_trr_path:
     label: Path to the GROMACS uncompressed raw trajectory file TRR
@@ -91,7 +88,6 @@ inputs:
     - edam:format_3910
     inputBinding:
       prefix: --output_trr_path
-    default: system.trr
 
   input_cpt_path:
     label: Path to the input GROMACS checkpoint file CPT
@@ -120,7 +116,6 @@ inputs:
     - edam:format_3875
     inputBinding:
       prefix: --output_xtc_path
-    default: system.xtc
 
   output_cpt_path:
     label: Path to the output GROMACS checkpoint file CPT
@@ -135,7 +130,6 @@ inputs:
     - edam:format_2333
     inputBinding:
       prefix: --output_cpt_path
-    default: system.cpt
 
   output_dhdl_path:
     label: Path to the output dhdl.xvg file only used when free energy calculation
@@ -151,7 +145,6 @@ inputs:
     - edam:format_2033
     inputBinding:
       prefix: --output_dhdl_path
-    default: system.xvg
 
   config:
     label: Advanced configuration options for biobb_gromacs Mdrun

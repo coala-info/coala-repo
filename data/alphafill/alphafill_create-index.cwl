@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - File
     doc: Configuration file to use
-    default: alphafill.conf
     inputBinding:
       position: 101
       prefix: --config
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use, zero means all available cores
-    default: 64
     inputBinding:
       position: 101
       prefix: --threads

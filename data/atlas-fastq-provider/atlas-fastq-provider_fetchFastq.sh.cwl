@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: Public or private access
-    default: public
     inputBinding:
       position: 101
       prefix: -p
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Retrieval method
-    default: wget
     inputBinding:
       position: 101
       prefix: -m
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Source resource or directory
-    default: auto
     inputBinding:
       position: 101
       prefix: -s

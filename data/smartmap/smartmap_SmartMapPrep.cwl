@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of alignments reported
-    default: 51
     inputBinding:
       position: 101
       prefix: -k
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum insert length
-    default: 250
     inputBinding:
       position: 101
       prefix: -L
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum insert length
-    default: 100
     inputBinding:
       position: 101
       prefix: -I
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads to be used for multithreaded alignment
-    default: 1
     inputBinding:
       position: 101
       prefix: -p

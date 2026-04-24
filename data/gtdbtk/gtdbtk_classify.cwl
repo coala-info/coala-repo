@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: create intermediate files for debugging purposes
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: extension of files to process, gz = gzipped
-    default: fna
     inputBinding:
       position: 101
       prefix: --extension
@@ -51,7 +48,6 @@ inputs:
     doc: use the unsplit bacterial tree for the classify step; this is the 
       original GTDB-Tk approach (version < 2) and requires more than 320 GB of 
       RAM to load the reference tree
-    default: false
     inputBinding:
       position: 101
       prefix: --full_tree
@@ -62,7 +58,6 @@ inputs:
     doc: 'indicates input files contain predicted proteins as amino acids (skip gene
       calling).Warning: This flag will skip the ANI comparison steps (ANI screen and
       classification).'
-    default: false
     inputBinding:
       position: 101
       prefix: --genes
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: minimum alignment fraction to assign genome to a species cluster
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --min_af
@@ -100,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for all output files
-    default: gtdbtk
     inputBinding:
       position: 101
       prefix: --prefix
@@ -117,7 +110,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip the skani ANI screening step to classify genomes.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip_ani_screen
@@ -126,7 +118,6 @@ inputs:
       - 'null'
       - Directory
     doc: specify alternative directory for temporary files
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmpdir

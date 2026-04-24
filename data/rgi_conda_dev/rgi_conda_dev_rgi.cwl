@@ -10,7 +10,6 @@ inputs:
       - string
     doc: choose between BLAST and DIAMOND. Options are BLAST or DIAMOND (default
       = BLAST)
-    default: BLAST
     inputBinding:
       position: 101
       prefix: --alignment_tool
@@ -20,7 +19,6 @@ inputs:
       - string
     doc: This removes temporary files in the results directory after run. 
       Options are NO or YES (default=YES for remove)
-    default: YES for remove
     inputBinding:
       position: 101
       prefix: --clean
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Specify a data-type, i.e. wgs, chromosome, plasmid, etc. (default = NA)
-    default: NA
     inputBinding:
       position: 101
       prefix: --data
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: 'specify path to CARD blast databases (default: None)'
-    default: None
     inputBinding:
       position: 101
       prefix: --db
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: 'must be one of contig, orf, protein, read (default: contig)'
-    default: contig
     inputBinding:
       position: 101
       prefix: --input_type
@@ -74,7 +69,6 @@ inputs:
       - string
     doc: The options are YES to include loose hits and NO to exclude loose hits.
       (default=NO to exclude loose hits)
-    default: NO to exclude loose hits
     inputBinding:
       position: 101
       prefix: --loose_criteria
@@ -83,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads (CPUs) to use in the BLAST search (default=32)
-    default: 32
     inputBinding:
       position: 101
       prefix: --num_threads
@@ -101,7 +94,6 @@ inputs:
       - string
     doc: log progress to file. Options are OFF or ON (default = OFF for no 
       logging)
-    default: OFF for no logging
     inputBinding:
       position: 101
       prefix: --verbose

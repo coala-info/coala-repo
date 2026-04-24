@@ -76,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of reads that a cluster should have
-    default: 1
     inputBinding:
       position: 101
       prefix: -C

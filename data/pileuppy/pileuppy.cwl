@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: 'Filter flags: skip reads with mask bits set [1796].'
-    default: 1796
     inputBinding:
       position: 102
       prefix: --filt-flags
@@ -60,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Print ? instead of base pairs with quality less than INT [0].
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-bq
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Skip alignments with mapQ less than INT [0].
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-mapq
@@ -101,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: 'Required flags: skip reads with mask bits unset [0].'
-    default: 0
     inputBinding:
       position: 102
       prefix: --req-flags
@@ -136,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: Split region longer than INT [150].
-    default: 150
     inputBinding:
       position: 102
       prefix: --size

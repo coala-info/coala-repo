@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of mismatches
-    default: 7
     inputBinding:
       position: 103
       prefix: -m
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: maximum sum of errors
-    default: 60
     inputBinding:
       position: 103
       prefix: -Q
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality
-    default: 41
     inputBinding:
       position: 103
       prefix: -q
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - File
     doc: polymorphic sites
-    default: 'null'
     inputBinding:
       position: 103
       prefix: -P
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: quality scale
-    default: 10
     inputBinding:
       position: 103
       prefix: -S

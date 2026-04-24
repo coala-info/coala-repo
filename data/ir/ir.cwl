@@ -57,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: proportion of random shustrings considered
-    default: 1
     inputBinding:
       position: 101
       prefix: -P

@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum SV size to report [50].
-    default: 50
     inputBinding:
       position: 103
       prefix: --min-size

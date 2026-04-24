@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Assembler to use in shovill, choose from megahit velvet skesa spades
-    default: spades
     inputBinding:
       position: 101
       prefix: --assembler
@@ -38,7 +37,6 @@ inputs:
       - Directory
     doc: Path of default conda environment, enables recycling of built 
       environments
-    default: /usr/local/opt/aquamis/conda_env
     inputBinding:
       position: 101
       prefix: --condaprefix
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to ConFindR databases
-    default: /usr/local/opt/aquamis/reference_db/confindr
     inputBinding:
       position: 101
       prefix: --confindr_database
@@ -57,7 +54,6 @@ inputs:
       - boolean
     doc: Restrict ConFindR to use only rMLST-derived databases, even when 
       cgMLST-derived exist
-    default: false
     inputBinding:
       position: 101
       prefix: --confindr_use_rmlst
@@ -133,7 +129,6 @@ inputs:
       - 'null'
       - File
     doc: Definition of thresholds in JSON file
-    default: 
       /usr/local/opt/aquamis/thresholds/AQUAMIS_schema_filter_v20230906.json
     inputBinding:
       position: 101
@@ -143,7 +138,6 @@ inputs:
       - 'null'
       - File
     doc: JSON schema used for validation
-    default: /usr/local/opt/aquamis/resources/AQUAMIS_schema_v20230906.json
     inputBinding:
       position: 101
       prefix: --json_schema
@@ -152,7 +146,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to kraken2 database
-    default: /usr/local/opt/aquamis/reference_db/kraken2
     inputBinding:
       position: 101
       prefix: --kraken2db
@@ -169,7 +162,6 @@ inputs:
       - 'null'
       - int
     doc: kmer size for mash, must match size of database
-    default: 21
     inputBinding:
       position: 101
       prefix: --mash_kmersize
@@ -178,7 +170,6 @@ inputs:
       - 'null'
       - string
     doc: Transfer protocol for reference retrieval, choose between https or ftp
-    default: https
     inputBinding:
       position: 101
       prefix: --mash_protocol
@@ -187,7 +178,6 @@ inputs:
       - 'null'
       - int
     doc: sketch size for mash, must match size of database
-    default: 1000
     inputBinding:
       position: 101
       prefix: --mash_sketchsize
@@ -196,7 +186,6 @@ inputs:
       - 'null'
       - File
     doc: Path to reference mash database
-    default: /usr/local/opt/aquamis/reference_db/mash/mashDB.msh
     inputBinding:
       position: 101
       prefix: --mashdb
@@ -205,7 +194,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of a read to keep
-    default: 15
     inputBinding:
       position: 101
       prefix: --min_trimmed_length
@@ -214,7 +202,6 @@ inputs:
       - 'null'
       - string
     doc: Extra option for MLST
-    default: ''
     inputBinding:
       position: 101
       prefix: --mlst_scheme
@@ -233,7 +220,6 @@ inputs:
     doc: (A) Full path or (B) directory name under "<AQUAMIS>/profiles" of a 
       Snakemake config.yaml with Snakemake parameters, e.g. available CPUs and 
       RAM.
-    default: bfr.hpc
     inputBinding:
       position: 101
       prefix: --profile
@@ -242,7 +228,6 @@ inputs:
       - 'null'
       - File
     doc: Definition of thresholds in JSON file
-    default: /usr/local/opt/aquamis/resources/AQUAMIS_thresholds.json
     inputBinding:
       position: 101
       prefix: --qc_thresholds
@@ -251,7 +236,6 @@ inputs:
       - 'null'
       - int
     doc: Extra option for QUAST
-    default: 500
     inputBinding:
       position: 101
       prefix: --quast_min_contig
@@ -260,7 +244,6 @@ inputs:
       - 'null'
       - int
     doc: Extra option for QUAST
-    default: 80
     inputBinding:
       position: 101
       prefix: --quast_min_identity
@@ -269,7 +252,6 @@ inputs:
       - 'null'
       - int
     doc: Read length to be used in bracken abundance estimation
-    default: 150
     inputBinding:
       position: 101
       prefix: --read_length
@@ -288,7 +270,6 @@ inputs:
       - File
     doc: Process DAG with rule grouping and/or rule prioritization via Snakemake
       rule directives YAML
-    default: /usr/local/opt/aquamis/profiles/smk_directives.yaml equals no 
       directives
     inputBinding:
       position: 101
@@ -315,7 +296,6 @@ inputs:
       - 'null'
       - int
     doc: Sub-sample --R1/--R2 to this depth. Disable with --depth 0
-    default: 100
     inputBinding:
       position: 101
       prefix: --shovill_depth
@@ -324,7 +304,6 @@ inputs:
       - 'null'
       - string
     doc: 'Extra assembler options in quotes and equal sign notation e.g. spades: --shovill_extraopts="--iontorrent"'
-    default: ''
     inputBinding:
       position: 101
       prefix: --shovill_extraopts
@@ -333,7 +312,6 @@ inputs:
       - 'null'
       - string
     doc: K-mers to use <blank=AUTO>
-    default: ''
     inputBinding:
       position: 101
       prefix: --shovill_kmers
@@ -343,7 +321,6 @@ inputs:
       - string
     doc: 'Module options for shovill; choose from --noreadcorr --trim --nostitch --nocorr;
       Note: add choices as string in quotation marks'
-    default: --noreadcorr
     inputBinding:
       position: 101
       prefix: --shovill_modules
@@ -352,7 +329,6 @@ inputs:
       - 'null'
       - string
     doc: Extra options for shovill
-    default: ''
     inputBinding:
       position: 101
       prefix: --shovill_output_options
@@ -361,7 +337,6 @@ inputs:
       - 'null'
       - int
     doc: Limit amount of RAM (in GB, integer) provided to shovill
-    default: 16
     inputBinding:
       position: 101
       prefix: --shovill_ram
@@ -370,7 +345,6 @@ inputs:
       - 'null'
       - Directory
     doc: Fast temporary directory
-    default: /tmp/shovill_$USER
     inputBinding:
       position: 101
       prefix: --shovill_tmpdir
@@ -387,7 +361,6 @@ inputs:
       - 'null'
       - File
     doc: Path to Snakefile of AQUAMIS
-    default: /usr/local/opt/aquamis/Snakefile
     inputBinding:
       position: 101
       prefix: --snakefile
@@ -397,7 +370,6 @@ inputs:
       - string
     doc: Taxonomic level for kraken2 classification quality control. Choose S 
       for species or G for genus
-    default: G
     inputBinding:
       position: 101
       prefix: --taxlevel_qc
@@ -406,7 +378,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to taxonkit_db
-    default: /usr/local/opt/aquamis/reference_db/taxonkit
     inputBinding:
       position: 101
       prefix: --taxonkit_db
@@ -415,7 +386,6 @@ inputs:
       - 'null'
       - float
     doc: Factor to increase threads_sample for shovill and quast
-    default: 3
     inputBinding:
       position: 101
       prefix: --thread_factor
@@ -433,7 +403,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Threads to use per sample in multi-threaded rules
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads_sample

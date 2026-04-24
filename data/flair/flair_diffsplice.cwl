@@ -45,7 +45,6 @@ inputs:
     doc: The minimum number of samples that have coverage over an AS event inclusion/exclusion
       for DRIMSeq testing; events with too few samples are filtered out and not tested
       (6)
-    default: 6
     inputBinding:
       position: 101
       prefix: --drim1
@@ -55,7 +54,6 @@ inputs:
       - int
     doc: The minimum number of samples expressing the inclusion of an AS event; events
       with too few samples are filtered out and not tested (3)
-    default: 3
     inputBinding:
       position: 101
       prefix: --drim2
@@ -66,7 +64,6 @@ inputs:
     doc: The minimum number of reads covering an AS event inclusion/exclusion for
       DRIMSeq testing, events with too few samples are filtered out and not tested
       (15)
-    default: 15
     inputBinding:
       position: 101
       prefix: --drim3
@@ -76,7 +73,6 @@ inputs:
       - int
     doc: The minimum number of reads covering an AS event inclusion for DRIMSeq testing,
       events with too few samples are filtered out and not tested (5)
-    default: 5
     inputBinding:
       position: 101
       prefix: --drim4
@@ -108,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for parallel DRIMSeq (4)
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

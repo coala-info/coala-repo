@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Output file (defaults to stdout)
-    default: stdout
     inputBinding:
       position: 102
       prefix: --out

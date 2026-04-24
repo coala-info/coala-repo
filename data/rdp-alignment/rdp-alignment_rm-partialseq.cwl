@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: 'Alignment mode: overlap, glocal, local or global.'
-    default: overlap
     inputBinding:
       position: 103
       prefix: --alignment-mode
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: The top k closest targets using a heuristic method.
-    default: 20
     inputBinding:
       position: 103
       prefix: --knn
@@ -39,7 +37,6 @@ inputs:
       - int
     doc: The minimum number of continuous gaps in the beginning or end of the 
       query alignment. If above the cutoff, the query is marked as partial.
-    default: 50
     inputBinding:
       position: 103
       prefix: --min_gaps

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - File
     doc: Configuration file to use
-    default: alphafill.conf
     inputBinding:
       position: 102
       prefix: --config

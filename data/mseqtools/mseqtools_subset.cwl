@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: exclude sequences in this list
-    default: false
     inputBinding:
       position: 101
       prefix: --exclude
@@ -32,7 +31,6 @@ inputs:
       - boolean
     doc: get both reads from a pair corresponding to the entry; needs pairs to 
       be marked with /1 and /2
-    default: false
     inputBinding:
       position: 101
       prefix: --paired
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: write uncompressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --uncompressed
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: number of chars per line in fasta file
-    default: 80
     inputBinding:
       position: 101
       prefix: --window

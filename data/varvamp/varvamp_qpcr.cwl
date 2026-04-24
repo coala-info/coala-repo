@@ -20,7 +20,6 @@ inputs:
       - File
     doc: FASTA primer file with which new primers should not form dimers. 
       Sequences >40 nt are ignored. Can significantly increase runtime.
-    default: None
     inputBinding:
       position: 103
       prefix: --compatible-primers
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: location of the BLAST db
-    default: None
     inputBinding:
       position: 103
       prefix: --database
@@ -39,7 +37,6 @@ inputs:
       - float
     doc: minimum free energy (kcal/mol/K) cutoff at the lowest primer melting 
       temperature
-    default: -3
     inputBinding:
       position: 103
       prefix: --deltaG
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: max number of ambiguous characters in a primer
-    default: 2
     inputBinding:
       position: 103
       prefix: --n-ambig
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: max number of ambiguous characters in a probe
-    default: 1
     inputBinding:
       position: 103
       prefix: --pn-ambig
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: name of the scheme
-    default: varVAMP
     inputBinding:
       position: 103
       prefix: --name
@@ -76,7 +70,6 @@ inputs:
       - int
     doc: test the top n qPCR amplicons for secondary structures at the minimal 
       primer temperature
-    default: 50
     inputBinding:
       position: 103
       prefix: --test-n
@@ -85,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 103
       prefix: --th

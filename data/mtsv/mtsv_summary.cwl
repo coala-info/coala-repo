@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - File
     doc: Set log file path, absolute or relative to working dir.
-    default: ./Logs/mtsv_{COMMAND}_{TIMESTAMP}.log
     inputBinding:
       position: 101
       prefix: --log_file
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - File
     doc: Merged binning output file.
-    default: ./Binning/merged.clp
     inputBinding:
       position: 101
       prefix: --merge_file
@@ -41,7 +39,6 @@ inputs:
       signature hits. (Takes priority over LCA search when family or genus exist
       for a taxonomic ID.) More roll up options comming soon. Choices are 
       ['family', 'genus', 'species']
-    default: species
     inputBinding:
       position: 101
       prefix: --tax_level
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Number of worker threads to spawn.
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - Directory
     doc: Specify working directory to place output.
-    default: /
     inputBinding:
       position: 101
       prefix: --wd

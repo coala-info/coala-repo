@@ -60,7 +60,6 @@ inputs:
       - int
     doc: 0-based location of the targeted base in the motif, default 0. [Only 
       useful when --refsites_only is True]
-    default: 0
     inputBinding:
       position: 101
       prefix: --mod_loc
@@ -81,7 +80,6 @@ inputs:
     doc: this is to remove ambiguous calls. if abs(prob1-prob0)>=prob_cf, then 
       we use the call. e.g., proc_cf=0 means use all calls. range [0, 1], 
       default 0.0.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --prob_cf
@@ -124,7 +122,6 @@ inputs:
       - int
     doc: number of subprocesses used when --contigs is set. i.e., number of 
       contigs processed in parallel. default 1
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of callers to support a variant
-    default: 1
     inputBinding:
       position: 101
       prefix: --callers
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: distance between variants to merge
-    default: 200
     inputBinding:
       position: 101
       prefix: --distance
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Estimate distance between calls
-    default: false
     inputBinding:
       position: 101
       prefix: --estimate_distance
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ignore the type of the structural variant
-    default: false
     inputBinding:
       position: 101
       prefix: --ignore_type
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of variants to consider
-    default: 50
     inputBinding:
       position: 101
       prefix: --minlength
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: name of sample in output VCF
-    default: stdout
     inputBinding:
       position: 101
       prefix: --name
@@ -63,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: Take strand into account
-    default: false
     inputBinding:
       position: 101
       prefix: --strand
@@ -72,7 +65,6 @@ inputs:
       type: array
       items: File
     doc: vcf files to merge
-    default: None
     inputBinding:
       position: 101
       prefix: --variants
@@ -81,7 +73,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print out more information while running.
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

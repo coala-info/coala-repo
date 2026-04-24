@@ -41,12 +41,10 @@ inputs:
     type: [ string?, Directory? ]
     inputBinding:
       prefix: "-gpdir"
-    default: "/genome-properties/flatfiles"
   GP_txt:
     type: string?
     inputBinding:
       prefix: "-gpff"
-    default: "genomeProperties.txt"
 
   out_dir:
     type: string?

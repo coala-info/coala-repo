@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: height in inches of plots
-    default: 4.5
     inputBinding:
       position: 103
       prefix: -h
@@ -69,7 +68,6 @@ inputs:
       - float
     doc: max x as a real-valued multiple of x* with max count 'peak' away from 
       the origin
-    default: 2.1
     inputBinding:
       position: 103
       prefix: -x
@@ -87,7 +85,6 @@ inputs:
       - float
     doc: max y as a real-valued multiple of max count 'peak' away from the 
       origin
-    default: 1.1
     inputBinding:
       position: 103
       prefix: -y
@@ -112,7 +109,6 @@ inputs:
       - 'null'
       - Directory
     doc: Place all temporary files in directory -P.
-    default: $TMPDIR
     inputBinding:
       position: 103
       prefix: -P
@@ -121,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 4
     inputBinding:
       position: 103
       prefix: -T
@@ -138,7 +133,6 @@ inputs:
       - 'null'
       - float
     doc: width in inches of plots
-    default: 6.0
     inputBinding:
       position: 103
       prefix: -w

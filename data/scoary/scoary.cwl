@@ -38,7 +38,6 @@ inputs:
       \"-c P -p\n0.05\" will apply an alpha of 0.05 to the empirical\n(permuted) p-values,
       i.e. it will filter everything\nexcept the upper and lower 2.5 percent of the\n\
       distribution. Default = Individual p-value. (I)"
-    default: I
     inputBinding:
       position: 101
       prefix: --correction
@@ -114,7 +113,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to place output files. Default = .
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir
@@ -130,7 +128,6 @@ inputs:
       -p 1.0\" to report all genes. Accepts standard\nform (e.g. 1E-8). Provide a
       single value (applied to\nall) or exactly as many values as correction criteria\n\
       and in corresponding order. (See example under\ncorrection). Default = 0.05"
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --p_value_cutoff
@@ -161,7 +158,6 @@ inputs:
       - int
     doc: "On which column in the gene presence/absence file do\nindividual strain
       info start. Default=15. (1-based\nindexing)"
-    default: 15
     inputBinding:
       position: 101
       prefix: --start_col
@@ -178,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use. Default = 1
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

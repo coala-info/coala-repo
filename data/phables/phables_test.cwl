@@ -65,7 +65,6 @@ inputs:
       - int
     doc: 'Internal use only: define the initial value of the attempt parameter (default:
       1).'
-    default: 1
     inputBinding:
       position: 102
       prefix: --attempt
@@ -190,7 +189,6 @@ inputs:
       - int
     doc: Specify maximal number of job ids to pass to --cluster-cancel command, 
       defaults to 1000.
-    default: 1000
     inputBinding:
       position: 102
       prefix: --cluster-cancel-nargs
@@ -286,7 +284,6 @@ inputs:
       - string
     doc: Choose the conda frontend for installing environments. Mamba is much 
       faster and highly recommended.
-    default: mamba
     inputBinding:
       position: 102
       prefix: --conda-frontend
@@ -415,7 +412,6 @@ inputs:
       - 'null'
       - string
     doc: Specify prefix for default remote provider. E.g. a bucket name.
-    default: ''
     inputBinding:
       position: 102
       prefix: --default-remote-prefix
@@ -712,7 +708,6 @@ inputs:
       - type: array
         items: string
     doc: Specify one or more valid instance regions (defaults to US)
-    default: "['us-east1', 'us-west1', 'us-central1']"
     inputBinding:
       position: 102
       prefix: --google-lifesciences-regions
@@ -805,7 +800,6 @@ inputs:
     doc: Provide a custom name for the jobscript that is submitted to the 
       cluster (see --cluster). NAME is "snakejob.{name}.{jobid}.sh" per default.
       The wildcard {jobid} has to be present in the name.
-    default: snakejob.{name}.{jobid}.sh
     inputBinding:
       position: 102
       prefix: --jobname
@@ -840,7 +834,6 @@ inputs:
       will request 7600m CPUs from k8s, allowing it to utilise one entire node. N.B:
       the job itself would still see the original value, i.e. as the value substituted
       in {threads}."
-    default: 0.95
     inputBinding:
       position: 102
       prefix: --k8s-cpu-scalar
@@ -907,7 +900,6 @@ inputs:
     doc: Wait given seconds if an output file of a job is not present after the 
       job finished. This helps if your filesystem suffers from latency (default 
       5).
-    default: 5
     inputBinding:
       position: 102
       prefix: --latency-wait
@@ -1001,7 +993,6 @@ inputs:
     doc: 'In cluster/cloud mode, use at most N cores of the host machine in parallel
       (default: number of CPU cores of the host). The cores are used to execute local
       rules. This option is ignored when not in cluster/cloud mode.'
-    default: '20'
     inputBinding:
       position: 102
       prefix: --local-cores
@@ -1010,7 +1001,6 @@ inputs:
       - 'null'
       - string
     doc: Name for local groupid, meant for internal use only.
-    default: local
     inputBinding:
       position: 102
       prefix: --local-groupid
@@ -1032,7 +1022,6 @@ inputs:
     doc: Set a specific messaging service for logging output. Snakemake will 
       notify the service on errors and completed execution. Currently slack and 
       workflow management system (wms) are supported.
-    default: none
     inputBinding:
       position: 102
       prefix: --log-service
@@ -1046,7 +1035,6 @@ inputs:
       creating the inventory itself can be slow, e.g. on network file systems. 
       Hence, we do not spend more than a given amount of time and fall back to 
       individual checks for the rest.
-    default: 20
     inputBinding:
       position: 102
       prefix: --max-inventory-time
@@ -1056,7 +1044,6 @@ inputs:
       - float
     doc: Maximal number of cluster/drmaa jobs per second, default is 10, 
       fractions allowed.
-    default: 10
     inputBinding:
       position: 102
       prefix: --max-jobs-per-second
@@ -1066,7 +1053,6 @@ inputs:
       - float
     doc: Maximal number of job status checks per second, default is 10, 
       fractions allowed.
-    default: 10
     inputBinding:
       position: 102
       prefix: --max-status-checks-per-second
@@ -1087,7 +1073,6 @@ inputs:
       - 'null'
       - int
     doc: Set execution mode of Snakemake (internal use only).
-    default: 0
     inputBinding:
       position: 102
       prefix: --mode
@@ -1145,7 +1130,6 @@ inputs:
       - string
     doc: The IP address and PORT the notebook server used for editing the 
       notebook (--edit-notebook) will listen on.
-    default: localhost:8888
     inputBinding:
       position: 102
       prefix: --notebook-listen
@@ -1322,7 +1306,6 @@ inputs:
       are used, which guarantees that results are consistent with the workflow 
       code and configuration. If you rather prefer the traditional way of just 
       considering file modification dates, use '--rerun-trigger mtime'.
-    default: "['mtime', 'params', 'input', 'software-env', 'code']"
     inputBinding:
       position: 102
       prefix: --rerun-triggers
@@ -1347,7 +1330,6 @@ inputs:
       - 'null'
       - int
     doc: Number of times to restart failing jobs (defaults to 0).
-    default: 0
     inputBinding:
       position: 102
       prefix: --retries
@@ -1381,7 +1363,6 @@ inputs:
     doc: Specifies if jobs are selected by a greedy algorithm or by solving an 
       ilp. The ilp scheduler aims to reduce runtime and hdd usage by best 
       possible use of resources.
-    default: ilp
     inputBinding:
       position: 102
       prefix: --scheduler
@@ -1390,7 +1371,6 @@ inputs:
       - 'null'
       - string
     doc: Specifies solver to be utilized when selecting ilp-scheduler.
-    default: COIN_CMD
     inputBinding:
       position: 102
       prefix: --scheduler-ilp-solver
@@ -1753,7 +1733,6 @@ inputs:
     doc: "Prefix for URL created from wrapper directive (default: https://github.com/snakemake/snakemake-wrappers/raw/).
       Set this to a different URL to use your fork or a local clone of the repository,
       e.g., use a git URL like 'git+file://path/to/your/local/clone@'."
-    default: https://github.com/snakemake/snakemake-wrappers/raw/
     inputBinding:
       position: 102
       prefix: --wrapper-prefix

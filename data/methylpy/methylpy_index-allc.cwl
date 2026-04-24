@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-procs
@@ -29,7 +28,6 @@ inputs:
       - boolean
     doc: Boolean indicating whether to index allc files whose index files 
       already exist.
-    default: true
     inputBinding:
       position: 101
       prefix: --reindex

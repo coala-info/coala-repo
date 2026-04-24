@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: False positive rate for the Bloom filter used by ABySS
-    default: 0.005
     inputBinding:
       position: 101
       prefix: --abyss_fpr
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run gene annotation on the final assembly output
-    default: false
     inputBinding:
       position: 101
       prefix: --annotate
@@ -29,7 +27,6 @@ inputs:
       - boolean
     doc: Delete intermediate subdirectories/files once mtGrasp reaches 
       completion
-    default: false
     inputBinding:
       position: 101
       prefix: --delete
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Merge at most N alternate paths during Sealer flanking end recovery
-    default: 5
     inputBinding:
       position: 101
       prefix: --end_recov_p
@@ -56,7 +52,6 @@ inputs:
       - float
     doc: False positive rate for the Bloom filter used by Sealer during flanking
       end recovery
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --end_recov_sealer_fpr
@@ -65,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: k-mer size used in Sealer flanking end recovery
-    default: 60,80,100,120
     inputBinding:
       position: 101
       prefix: --end_recov_sealer_k
@@ -74,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Merge at most N alternate paths during sealer gap filling step
-    default: 5
     inputBinding:
       position: 101
       prefix: --gap_filling_p
@@ -83,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: minimum k-mer multiplicity for ABySS
-    default: 3
     inputBinding:
       position: 101
       prefix: --kc
@@ -92,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size used in ABySS de novo assembly
-    default: 91
     inputBinding:
       position: 101
       prefix: --kmer
@@ -102,7 +93,6 @@ inputs:
       - int
     doc: Maximum number of mismatches allowed in overlaps between the two ends 
       of the mitochondrial assembly
-    default: 1
     inputBinding:
       position: 101
       prefix: --mismatch_allowed
@@ -125,7 +115,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run mtGrasp using the entire read dataset without subsampling
-    default: false
     inputBinding:
       position: 101
       prefix: --nosubsample
@@ -159,7 +148,6 @@ inputs:
       - float
     doc: False positive rate for the Bloom filter used by Sealer during gap 
       filling
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --sealer_fpr
@@ -168,7 +156,6 @@ inputs:
       - 'null'
       - string
     doc: k-mer size used in sealer gap filling
-    default: 60,80,100,120
     inputBinding:
       position: 101
       prefix: --sealer_k
@@ -177,7 +164,6 @@ inputs:
       - 'null'
       - int
     doc: Subsample N read pairs from two paired FASTQ files
-    default: 2000000
     inputBinding:
       position: 101
       prefix: --subsample
@@ -194,7 +180,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads

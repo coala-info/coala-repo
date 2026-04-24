@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum cycle length at which to break
-    default: 0
     inputBinding:
       position: 101
       prefix: --cycle-max-bp
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum search space of each BFS given in number of base pairs
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-search-bp

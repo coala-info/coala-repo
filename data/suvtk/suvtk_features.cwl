@@ -52,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -63,7 +62,6 @@ inputs:
     doc: Translation table to use. Only genetic codes from 
       https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi are allowed (1-6,
       9-16, 21-31).
-    default: 1
     inputBinding:
       position: 101
       prefix: --translation-table

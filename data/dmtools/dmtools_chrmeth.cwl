@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: chromosome for cal.
-    default: all
     inputBinding:
       position: 101
       prefix: --chr

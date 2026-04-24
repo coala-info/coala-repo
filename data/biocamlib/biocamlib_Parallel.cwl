@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - File
     doc: name of input file
-    default: stdin
     inputBinding:
       position: 102
       prefix: --input
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: number of lines to be processed per block
-    default: 10000
     inputBinding:
       position: 102
       prefix: --lines-per-block
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: number of concurrent computing threads to be spawned
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

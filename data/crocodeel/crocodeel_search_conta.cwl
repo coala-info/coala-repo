@@ -14,7 +14,6 @@ inputs:
       each sample, set the abundance of species to zero if they are up to AB_THRESHOLD_FACTOR
       times more abundant than the least abundant species. Recommended value for MetaPhlAn4:
       20'
-    default: None
     inputBinding:
       position: 101
       prefix: --filter-low-ab
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel processes to search contaminations
-    default: 20
     inputBinding:
       position: 101
       prefix: --nproc
@@ -33,7 +31,6 @@ inputs:
       - float
     doc: Only report contamination events with a probability greater than 
       PROBABILITY_CUTOFF
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --probability-cutoff
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: Only report events with a contamination rate greater than RATE_CUTOFF
-    default: 0
     inputBinding:
       position: 101
       prefix: --rate-cutoff
@@ -52,7 +48,6 @@ inputs:
       - File
     doc: Joblib file containing the pre-trained Random Forest model used to 
       detect contamination events
-    default: 
       /usr/local/lib/python3.14/site-packages/crocodeel/models/crocodeel_rf_Feb2026.joblib
     inputBinding:
       position: 101

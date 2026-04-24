@@ -136,7 +136,6 @@ inputs:
       - string
     doc: Output RDF serialization format used by --print-rdf (one of turtle 
       (default), n3, nt, xml)
-    default: turtle
     inputBinding:
       position: 103
       prefix: --rdf-serializer

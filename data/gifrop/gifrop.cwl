@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: output this many bases of DNA on either side of each island
-    default: 0
     inputBinding:
       position: 101
       prefix: --flank_dna
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Only return islands with greater than this many genes
-    default: 4
     inputBinding:
       position: 101
       prefix: --min_genes
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: prune edges with jaccard sim less than qcut before quat cluster
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --qcut
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: prune edges with OC less than scut before secondary cluster
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --scut
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: prune edges with OC less than tcut before tertiary cluster
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --tcut

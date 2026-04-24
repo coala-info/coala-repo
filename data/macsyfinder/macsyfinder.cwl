@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: the weight of a accessory component in cluster scoring
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --accessory-weight
@@ -29,7 +28,6 @@ inputs:
       - float
     doc: Minimal profile coverage required for the hit alignment with the 
       profile to allow the hit selection for systems detection.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --coverage-profile
@@ -44,7 +42,6 @@ inputs:
       use cut_ga but --e-value-search instead (-E in hmmsearch). The user can 
       reestablish the general MSF behavior, be sure the profiles contain the GA 
       bit score.
-    default: true
     inputBinding:
       position: 101
       prefix: --cut-ga
@@ -69,7 +66,6 @@ inputs:
       profile does not contains the GA bit score the --e-value-search (-E in 
       hmmsearch) is applied to this profile. To applied the --e-value-search to 
       all profiles use the --no-cut-ga option.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --e-value-search
@@ -79,7 +75,6 @@ inputs:
       - float
     doc: the weight modifier for a component which code for exchangeable cluster
       scoring
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --exchangeable-weight
@@ -98,7 +93,6 @@ inputs:
       - File
     doc: Path to the hmmsearch program. If not specified, rely on the 
       environment variable PATH
-    default: /usr/local/bin/hmmsearch
     inputBinding:
       position: 101
       prefix: --hmmer
@@ -108,7 +102,6 @@ inputs:
       - float
     doc: Maximal independent e-value for Hmmer hits to be selected for systems 
       detection.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --i-evalue-sel
@@ -118,7 +111,6 @@ inputs:
       - boolean
     doc: Forces to build the indexes for the sequence dataset even if they were 
       previously computed and present at the dataset location.
-    default: false
     inputBinding:
       position: 101
       prefix: --idx
@@ -158,7 +150,6 @@ inputs:
       - 'null'
       - float
     doc: the weight of a mandatory component in cluster scoring
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --mandatory-weight
@@ -245,7 +236,6 @@ inputs:
       - 'null'
       - boolean
     doc: Mute the log on stdout. (continue to log on macsyfinder.log)
-    default: false
     inputBinding:
       position: 101
       prefix: --mute
@@ -259,7 +249,6 @@ inputs:
       hmmsearch). If this option is set the --e-value-search option is used for 
       all profiles regardless the presence of the a GA bit score in the 
       profiles.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-cut-ga
@@ -269,7 +258,6 @@ inputs:
       - float
     doc: the weight modifier for a hit which is a - true loner (not in cluster) 
       - or multi-system (from an other system)
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --out-of-cluster
@@ -294,7 +282,6 @@ inputs:
       the Gene name + the profile suffix. For instance, if the Gene is named 
       'gspG' and the suffix is '.hmm3', then the profile should be placed at the
       specified location under the name 'gspG.hmm3'
-    default: .hmm
     inputBinding:
       position: 101
       prefix: --profile-suffix
@@ -304,7 +291,6 @@ inputs:
       - float
     doc: the weight modifier for cluster which bring a component already 
       presents in other clusters
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --redundancy-penalty
@@ -314,7 +300,6 @@ inputs:
       - string
     doc: The topology of the replicons (this option is meaningful only if the 
       db_type is 'ordered_replicon' or 'gembase').
-    default: circular
     inputBinding:
       position: 101
       prefix: --replicon-topology
@@ -323,7 +308,6 @@ inputs:
       - 'null'
       - string
     doc: The suffix to give to filtered hits output files.
-    default: .res_hmm_extract
     inputBinding:
       position: 101
       prefix: --res-extract-suffix
@@ -332,7 +316,6 @@ inputs:
       - 'null'
       - string
     doc: The suffix to give to Hmmer raw output files.
-    default: .search_hmm.out
     inputBinding:
       position: 101
       prefix: --res-search-suffix
@@ -387,7 +370,6 @@ inputs:
     doc: Number of workers to be used by MacSyFinder. In the case the user wants
       to run MacSyFinder in a multi-thread mode. 0 mean that all threads 
       available will be used.
-    default: 1
     inputBinding:
       position: 101
       prefix: --worker

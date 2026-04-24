@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: HNSW ef parameter
-    default: 1600
     inputBinding:
       position: 101
       prefix: --hnsw-ef
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Size of k-mers, must be ≤14
-    default: 8
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: HNSW max_nb_conn parameter
-    default: 255
     inputBinding:
       position: 101
       prefix: --max_nb_connection
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: scale modification factor in HNSW or HubNSW, must be in [0.2,1]
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --scale_modify_f
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the sketch
-    default: 512
     inputBinding:
       position: 101
       prefix: --sketch-size
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for sketching
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

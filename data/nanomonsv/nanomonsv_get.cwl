@@ -26,7 +26,6 @@ inputs:
       - int
     doc: The maximum number of reads to check per breakpoint in the phase of 
       realignment validation
-    default: 500
     inputBinding:
       position: 104
       prefix: --check_read_max_num
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Two breakpoints are margined if they are within this threshould value
-    default: 100
     inputBinding:
       position: 104
       prefix: --cluster_margin_size
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: keep intermediate files
-    default: false
     inputBinding:
       position: 104
       prefix: --debug
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum allowed variant allele frequeycy for a control sample
-    default: 0.03
     inputBinding:
       position: 104
       prefix: --max_control_VAF
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum allowed supporting read number for a control sample
-    default: 1
     inputBinding:
       position: 104
       prefix: --max_control_variant_read_num
@@ -96,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum memory size (Gbyte) for minimap2
-    default: 2
     inputBinding:
       position: 104
       prefix: --max_memory_minimap2
@@ -105,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Threshould for maximum overhang size
-    default: 100
     inputBinding:
       position: 104
       prefix: --max_overhang_size_thres
@@ -114,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum allowed supporting read number for a nonmatched control sample
-    default: 1
     inputBinding:
       position: 104
       prefix: --max_panel_read_num
@@ -123,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum allowed sample number for a nonmatched control sample
-    default: 0
     inputBinding:
       position: 104
       prefix: --max_panel_sample_num
@@ -132,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: Threshould for median mapping quality
-    default: 20
     inputBinding:
       position: 104
       prefix: --median_mapQ_thres
@@ -141,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum indel size for the output
-    default: 50
     inputBinding:
       position: 104
       prefix: --min_indel_size
@@ -150,7 +139,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum required variant allele frequency for a tumor sample
-    default: 0.05
     inputBinding:
       position: 104
       prefix: --min_tumor_VAF
@@ -159,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum required supporting read number for a tumor sample
-    default: 3
     inputBinding:
       position: 104
       prefix: --min_tumor_variant_read_num
@@ -168,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel processes to use
-    default: 1
     inputBinding:
       position: 104
       prefix: --processes
@@ -221,7 +207,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate single end breakpoints
-    default: false
     inputBinding:
       position: 104
       prefix: --single_bnd
@@ -230,7 +215,6 @@ inputs:
       - 'null'
       - string
     doc: Options for Linux sort command
-    default: -S 1G
     inputBinding:
       position: 104
       prefix: --sort_option
@@ -241,7 +225,6 @@ inputs:
         items: string
     doc: Parameters (match score, mismatch penalty, gap penalty, insertion 
       penalty) for one-time smith-waterman algorithm
-    default: '[1, 3, 3, 2]'
     inputBinding:
       position: 104
       prefix: --sw_jump_params
@@ -250,7 +233,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use racon for error correction of clustered putative supporting reads
-    default: false
     inputBinding:
       position: 104
       prefix: --use_racon
@@ -267,7 +249,6 @@ inputs:
       - 'null'
       - int
     doc: Threshould for mapping quality in validate step
-    default: 0
     inputBinding:
       position: 104
       prefix: --var_read_min_mapq

@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: Dup handling method
-    default: mean
     inputBinding:
       position: 101
       prefix: --method

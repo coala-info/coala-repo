@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the average length of external recombinant interval
-    default: 500
     inputBinding:
       position: 101
       prefix: -e
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the value of delta
-    default: 500
     inputBinding:
       position: 101
       prefix: -D
@@ -28,7 +26,6 @@ inputs:
       - type: array
         items: string
     doc: Sets the number and length of the fragments
-    default: '10000'
     inputBinding:
       position: 101
       prefix: -B
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the gap between each fragment
-    default: 0
     inputBinding:
       position: 101
       prefix: -G
@@ -55,7 +51,6 @@ inputs:
       - float
     doc: Sets the maximum probability of mutation in an interval of external 
       recombination between 0 & 1
-    default: 0
     inputBinding:
       position: 101
       prefix: -M
@@ -65,7 +60,6 @@ inputs:
       - float
     doc: Sets the minimum probability of mutation in an interval of external 
       recombination between 0 & 1
-    default: 0
     inputBinding:
       position: 101
       prefix: -m
@@ -74,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the number of isolates
-    default: 100
     inputBinding:
       position: 101
       prefix: -N
@@ -92,7 +85,6 @@ inputs:
       - float
     doc: Sets the rate of R external, the site-specific rate of external 
       recombination
-    default: 0
     inputBinding:
       position: 101
       prefix: -r
@@ -101,7 +93,6 @@ inputs:
       - 'null'
       - float
     doc: Sets the value of R, the site-specific internal recombination rate
-    default: 0.01
     inputBinding:
       position: 101
       prefix: -R
@@ -110,7 +101,6 @@ inputs:
       - 'null'
       - float
     doc: Sets the value of theta, between 0 and 1
-    default: 0.01
     inputBinding:
       position: 101
       prefix: -T

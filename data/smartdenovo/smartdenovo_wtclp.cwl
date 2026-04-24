@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Bin size
-    default: 50
     inputBinding:
       position: 101
       prefix: -k
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Window size used in chimera detection
-    default: 1000
     inputBinding:
       position: 101
       prefix: -w
@@ -28,7 +26,6 @@ inputs:
       - int
     doc: 'For debug. 1: chimera checking; 2: conntection checking; 4: clip high error
       ending'
-    default: 7
     inputBinding:
       position: 101
       prefix: -x
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Max turns of iterations
-    default: 5
     inputBinding:
       position: 101
       prefix: -n
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of alignment
-    default: 1000
     inputBinding:
       position: 101
       prefix: -s
@@ -81,7 +76,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum identity of alignment
-    default: 0.6
     inputBinding:
       position: 101
       prefix: -m
@@ -90,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Min number of solid overlaps in a suspecting region to reject chimeric
-    default: 3
     inputBinding:
       position: 101
       prefix: -d

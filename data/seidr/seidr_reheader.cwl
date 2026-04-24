@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to store temporary data
-    default: auto
     inputBinding:
       position: 102
       prefix: --tempdir

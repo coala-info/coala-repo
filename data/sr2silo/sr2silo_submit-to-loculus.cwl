@@ -10,7 +10,6 @@ inputs:
       - boolean
     doc: Automatically release/approve sequences after submission. Falls back to
       AUTO_RELEASE environment variable.
-    default: false
     inputBinding:
       position: 101
       prefix: --auto-release
@@ -76,7 +75,6 @@ inputs:
       - int
     doc: Seconds to wait before releasing sequences (to allow backend 
       processing). Only used when --auto-release is enabled.
-    default: 180
     inputBinding:
       position: 101
       prefix: --release-delay

@@ -13,7 +13,6 @@ inputs:
       - int
     doc: Minimum number of overlapping positions which have to be covered in 
       both alignments in order to evaluate alignment similarity.
-    default: 5000
     inputBinding:
       position: 101
       prefix: --aln-pair-min-overlap
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum pairwise alignment similarity to call shared strains.
-    default: 0.999
     inputBinding:
       position: 101
       prefix: --aln-pair-min-similarity
@@ -36,7 +34,6 @@ inputs:
   - id: marker_dir
     type: Directory
     doc: Path to MetaPhlAn or mOTUs clade marker database.
-    default: None
     inputBinding:
       position: 101
       prefix: --marker-dir
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: File extension of taxonomic profiles.
-    default: .profile.txt
     inputBinding:
       position: 101
       prefix: --tax-profiles-extension

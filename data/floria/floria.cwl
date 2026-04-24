@@ -85,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Primary MAPQ cutoff.
-    default: 15
     inputBinding:
       position: 101
       prefix: --mapq-cutoff
@@ -94,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum ploidy (i.e. strain count) to try to phase up to.
-    default: 5
     inputBinding:
       position: 101
       prefix: --max-ploidy
@@ -154,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: Skip contigs with less than --snp-count-filter SNPs.
-    default: 100
     inputBinding:
       position: 101
       prefix: --snp-count-filter
@@ -163,7 +160,6 @@ inputs:
       - 'null'
       - float
     doc: Blocks with fraction of SNPs per base less than -d won't be phased.
-    default: 0.0005
     inputBinding:
       position: 101
       prefix: --snp-density
@@ -172,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum allowed distance between supp. alignments.
-    default: 40000
     inputBinding:
       position: 101
       prefix: --supp-aln-dist-cutoff
@@ -181,7 +176,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 10
     inputBinding:
       position: 101
       prefix: --threads

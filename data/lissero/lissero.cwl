@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage of the gene to accept a match. [0-100]
-    default: 95.0
     inputBinding:
       position: 102
       prefix: --min_cov
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percent identity to accept a match. [0-100]
-    default: 95.0
     inputBinding:
       position: 102
       prefix: --min_id
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - Directory
     doc: Serotype database path
-    default: /usr/local/lib/python3.14/site-packages/lissero/db
     inputBinding:
       position: 102
       prefix: --serotype_db

@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Expected AT content
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --at
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Probability of consecutive deletions occurring
-    default: 0.02
     inputBinding:
       position: 102
       prefix: --dd
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - float
     doc: Decay penalty applied to repetitive states
-    default: 0.85
     inputBinding:
       position: 102
       prefix: --decay
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of deletion states
-    default: 10
     inputBinding:
       position: 102
       prefix: --deletes
@@ -102,7 +98,6 @@ inputs:
       - 'null'
       - float
     doc: Probability of consecutive insertions occurring
-    default: 0.02
     inputBinding:
       position: 102
       prefix: --ii
@@ -111,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of insertion states
-    default: 10
     inputBinding:
       position: 102
       prefix: --inserts
@@ -128,7 +122,6 @@ inputs:
       - 'null'
       - float
     doc: Expected conservation in repeats
-    default: 0.7
     inputBinding:
       position: 102
       prefix: --match
@@ -137,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum length of consensus pattern to include in output
-    default: 1000000
     inputBinding:
       position: 102
       prefix: --max_consensus
@@ -146,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum repeat period to perform repeat splitting
-    default: 10
     inputBinding:
       position: 102
       prefix: --max_split
@@ -163,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum reportable repeat length
-    default: 10
     inputBinding:
       position: 102
       prefix: --min_length
@@ -172,7 +162,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum repeat split window size
-    default: 15
     inputBinding:
       position: 102
       prefix: --min_split_window
@@ -181,7 +170,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum reportable number of repeat units
-    default: 2
     inputBinding:
       position: 102
       prefix: --min_unit
@@ -206,7 +194,6 @@ inputs:
       - 'null'
       - float
     doc: Probability of a repeat starting
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --nr
@@ -223,7 +210,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum detectable repeat period
-    default: 100
     inputBinding:
       position: 102
       prefix: --period
@@ -256,7 +242,6 @@ inputs:
       - 'null'
       - float
     doc: Probability of a deletion occurring
-    default: 0.02
     inputBinding:
       position: 102
       prefix: --rd
@@ -273,7 +258,6 @@ inputs:
       - 'null'
       - float
     doc: Probability of an insertion occurring
-    default: 0.02
     inputBinding:
       position: 102
       prefix: --ri
@@ -282,7 +266,6 @@ inputs:
       - 'null'
       - float
     doc: Probability of a repeat stopping
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --rn
@@ -291,7 +274,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum reportable repeat score
-    default: -100.0
     inputBinding:
       position: 102
       prefix: --score
@@ -348,7 +330,6 @@ inputs:
       - 'null'
       - int
     doc: Number of repeat units to use in repeat splitting
-    default: 5
     inputBinding:
       position: 102
       prefix: --split_depth
@@ -357,7 +338,6 @@ inputs:
       - 'null'
       - float
     doc: Split threshold value
-    default: 3.5
     inputBinding:
       position: 102
       prefix: --split_threshold
@@ -374,7 +354,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -399,7 +378,6 @@ inputs:
       - 'null'
       - float
     doc: FDR to be tuned against (see README)
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --tune_fdr
@@ -456,7 +434,6 @@ inputs:
       - 'null'
       - int
     doc: Number of sequence windows to store at once
-    default: 1024
     inputBinding:
       position: 102
       prefix: --windows

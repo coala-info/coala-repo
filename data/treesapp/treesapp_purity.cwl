@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: minimal sequence length after alignment trimming
-    default: 0
     inputBinding:
       position: 103
       prefix: --min_seq_length
@@ -60,7 +59,6 @@ inputs:
       - int
     doc: The number of CPU threads or parallel processes to use in various 
       pipeline steps
-    default: 2
     inputBinding:
       position: 103
       prefix: --num_procs
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to an output directory
-    default: ./output/
     inputBinding:
       position: 103
       prefix: --output
@@ -86,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: The stage(s) for TreeSAPP to execute
-    default: continue
     inputBinding:
       position: 103
       prefix: --stage
@@ -95,7 +91,6 @@ inputs:
       - 'null'
       - boolean
     doc: Flag to turn on position masking of the multiple sequence alignment
-    default: false
     inputBinding:
       position: 103
       prefix: --trim_align

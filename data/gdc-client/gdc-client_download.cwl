@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to download files to. Defaults to current directory
-    default: current directory
     inputBinding:
       position: 102
       prefix: --dir

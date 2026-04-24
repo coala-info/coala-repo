@@ -16,7 +16,6 @@ inputs:
       - boolean
     doc: ignore scaffold specification and just output contigs. useful when only
       trying to obtain a fasta reflecting juicebox breaks.
-    default: false
     inputBinding:
       position: 101
       prefix: --contig_mode
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: the prefix to use for writing outputs.
-    default: the assembly file, minus the file extension
     inputBinding:
       position: 101
       prefix: --prefix
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: print summary of processing steps to stdout, otherwise silent.
-    default: true
     inputBinding:
       position: 101
       prefix: --verbose

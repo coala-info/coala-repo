@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Filter (drop) reads with length < nt after any trimming.
-    default: 500
     inputBinding:
       position: 102
       prefix: --filter
@@ -46,7 +45,6 @@ inputs:
     doc: Hide the composition tail by a fraction of total bases. Significantly 
       improves speed, removes end-tail (3') distortion for variable length read 
       sets.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --hide
@@ -81,7 +79,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output files
-    default: fastqNoExtension
     inputBinding:
       position: 102
       prefix: --out
@@ -92,7 +89,6 @@ inputs:
     doc: Use top num reads for pre- or no-trim graphs. This improves speed. No 
       effect on post-trim graphs. Use 0 to disable skimming and utilize all 
       reads.
-    default: 10000
     inputBinding:
       position: 102
       prefix: --skim
@@ -101,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Trim nt bases from aligned 3' side.
-    default: interactive
     inputBinding:
       position: 102
       prefix: --trim3
@@ -110,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Trim nt bases from aligned 5' side.
-    default: interactive
     inputBinding:
       position: 102
       prefix: --trim5
@@ -127,7 +121,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to generate QC file and report.
-    default: ./
     inputBinding:
       position: 102
       prefix: --workdir
@@ -138,7 +131,6 @@ inputs:
     doc: Suggest number of ticks/breaks on x-axis in all graphs. Can be set if 
       the breaks or gridlines are too sparse or dense to determine appropriate 
       trimming. Internal algorithm adjusts ticks.
-    default: 6
     inputBinding:
       position: 102
       prefix: --xbreaks
@@ -147,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: Zoom-in from aligned 3' ending to nt bases.
-    default: 100
     inputBinding:
       position: 102
       prefix: --zoom3
@@ -156,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: Zoom-in from aligned 5' beginning to nt bases.
-    default: 300
     inputBinding:
       position: 102
       prefix: --zoom5

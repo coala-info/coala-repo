@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - float
     doc: cis-CG threshold to determine if a molecule is methylated
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --cisCG
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: number of reads needed to be counted as a unique molecule
-    default: 5
     inputBinding:
       position: 101
       prefix: --moleculeThreshold
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: number of processes
-    default: 1
     inputBinding:
       position: 101
       prefix: --processes

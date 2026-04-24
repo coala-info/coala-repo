@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - File
     doc: "Set log file path, absolute or relative to working\ndir."
-    default: ./Logs/mtsv_{COMMAND}_{TIMESTAMP}.log
     inputBinding:
       position: 101
       prefix: --log_file
@@ -38,7 +37,6 @@ inputs:
       - int
     doc: "Up to N_KMERS random kmers will be generated for each\nof the candidate
       taxa. These will be used to estimate\nexpected values."
-    default: 100000
     inputBinding:
       position: 101
       prefix: --n_kmers
@@ -48,7 +46,6 @@ inputs:
       - int
     doc: "Run analysis only for taxa with unique signature hits\nthat are greater
       than SIGNATURE_CUTOFF."
-    default: 20
     inputBinding:
       position: 101
       prefix: --signature_cutoff
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Number of worker threads to spawn.
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -67,7 +63,6 @@ inputs:
       - boolean
     doc: "If (T)rue, use previously calculated expected values\nwhere available. If
       (F)alse, all expected values will\nbe recalculated and used to update the database."
-    default: T
     inputBinding:
       position: 101
       prefix: --use_database
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - Directory
     doc: Specify working directory to place output.
-    default: /
     inputBinding:
       position: 101
       prefix: --wd

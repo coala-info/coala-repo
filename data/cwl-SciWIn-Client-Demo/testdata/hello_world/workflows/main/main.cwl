@@ -6,12 +6,10 @@ class: Workflow
 inputs:
 - id: population
   type: File
-  default:
     class: File
     location: ../../data/population.csv
 - id: speakers
   type: File
-  default:
     class: File
     location: ../../data/speakers_revised.csv
 

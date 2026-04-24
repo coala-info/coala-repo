@@ -119,7 +119,6 @@ inputs:
       - 'null'
       - string
     doc: 'Impute missing genotype (default:mean): mean, hwe, and drop'
-    default: mean
     inputBinding:
       position: 101
       prefix: --impute
@@ -247,7 +246,6 @@ inputs:
       - 'null'
       - int
     doc: 'Specify which phenotype column to read (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --mpheno
@@ -280,7 +278,6 @@ inputs:
       - 'null'
       - int
     doc: Specify number of threads (default:1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --numThread
@@ -498,7 +495,6 @@ inputs:
       - 'null'
       - string
     doc: 'Specify X chromosome label (default: 23|X)'
-    default: 23|X
     inputBinding:
       position: 101
       prefix: --xLabel
@@ -508,7 +504,6 @@ inputs:
       - string
     doc: "Specify PAR region (default: hg19);, can be build number e.g. hg38, b37;
       or specify region, e.g. '60001-2699520,154931044-155260560'"
-    default: hg19
     inputBinding:
       position: 101
       prefix: --xParRegion

@@ -46,7 +46,6 @@ inputs:
     doc: Maximum number of CPU cores available in the execution host. If higher 
       than 1, tasks with multi-threading capabilities will enabled (if 0 all 
       available) cores will be used
-    default: 20
     inputBinding:
       position: 101
       prefix: --cpus
@@ -60,7 +59,6 @@ inputs:
       self-circle, 2: dangling-end, 3: error, 4: extra dangling-end, 5: too close
       from RES, 6: too short, 7: too large, 8: over-represented, 9: duplicated, 10:
       random breaks, 11: trans-chromosomic"
-    default:
       - 1
       - 2
       - 3
@@ -142,7 +140,6 @@ inputs:
       - type: array
         items: string
     doc: save genomic or chromosomic matrix.
-    default: genome
     inputBinding:
       position: 101
       prefix: --save

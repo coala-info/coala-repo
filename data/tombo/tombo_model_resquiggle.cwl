@@ -13,7 +13,6 @@ inputs:
       - int
     doc: Number of iterations through each read to perform (computationally 
       expensive) base space model re-squiggle algorithm.
-    default: 2
     inputBinding:
       position: 101
       prefix: --base-score-iterations
@@ -23,7 +22,6 @@ inputs:
       - int
     doc: Maximum bases to shift raw signal from first round of model 
       re-squiggle.
-    default: 4
     inputBinding:
       position: 101
       prefix: --base-score-max-bases-shift
@@ -33,7 +31,6 @@ inputs:
       - int
     doc: Number of context bases up and downstream of poorly fit regions to 
       perform iterative base-score model re-squiggle.
-    default: 4
     inputBinding:
       position: 101
       prefix: --base-score-region-context
@@ -44,7 +41,6 @@ inputs:
         items: string
     doc: FAST5 subgroup(s) (under Analyses/[corrected-group]) containing 
       basecalls.
-    default: BaseCalled_template
     inputBinding:
       position: 101
       prefix: --basecall-subgroups
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: FAST5 group created by resquiggle command.
-    default: RawGenomeCorrected_000
     inputBinding:
       position: 101
       prefix: --corrected-group
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum bases to shift raw signal from event_resquiggle assignment.
-    default: 3
     inputBinding:
       position: 101
       prefix: --max-bases-shift
@@ -87,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum raw observations to assign to a genomic base.
-    default: 3
     inputBinding:
       position: 101
       prefix: --min-obs-per-base
@@ -96,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: FAST5 group created by resquiggle command.
-    default: RawModelCorrected_000
     inputBinding:
       position: 101
       prefix: --new-corrected-group
@@ -115,7 +107,6 @@ inputs:
       - float
     doc: P-value threshold to identify regions to apply model re-squiggle 
       algorithm.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --p-value-threshold
@@ -124,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes.
-    default: 1
     inputBinding:
       position: 101
       prefix: --processes
@@ -142,7 +132,6 @@ inputs:
       - int
     doc: Number of context bases up and downstream of poorly fit regions to 
       perform model re-squiggle.
-    default: 1
     inputBinding:
       position: 101
       prefix: --region-context
@@ -152,7 +141,6 @@ inputs:
       - int
     doc: Number of context bases up and downstream over which to compute 
       Stouffer's Z combined z-scores.
-    default: 1
     inputBinding:
       position: 101
       prefix: --stouffer-z-context

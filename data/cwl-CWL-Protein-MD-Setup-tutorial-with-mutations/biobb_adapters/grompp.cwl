@@ -59,7 +59,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_tpr_path
-    default: system.tpr
 
   input_cpt_path:
     label: Path to the input GROMACS checkpoint file CPT

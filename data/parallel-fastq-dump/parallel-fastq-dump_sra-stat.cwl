@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: print alignment info (on | off)
-    default: on
     inputBinding:
       position: 102
       prefix: --alignment
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: output archive info, default is off
-    default: false
     inputBinding:
       position: 102
       prefix: --archive-info
@@ -33,7 +31,6 @@ inputs:
       - string
     doc: Logging level as number or enum string. One of (fatal|sys|int|err|warn|info|debug)
       or (0-6)
-    default: warn
     inputBinding:
       position: 102
       prefix: --log-level
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: print member stats (on | off)
-    default: on
     inputBinding:
       position: 102
       prefix: --member-stats
@@ -99,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: starting spot id
-    default: 1
     inputBinding:
       position: 102
       prefix: --start

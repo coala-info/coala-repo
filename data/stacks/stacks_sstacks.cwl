@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'disable gapped alignments between stacks (default: enable gapped alignments).'
-    default: false
     inputBinding:
       position: 101
       prefix: --disable-gapped

@@ -55,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: number of taxa to sample from dereplicated lineages
-    default: 2
     inputBinding:
       position: 105
       prefix: --taxa_to_retain

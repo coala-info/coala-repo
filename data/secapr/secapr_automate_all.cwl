@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: The assembler to use for de-novo assembly (default=spades).
-    default: spades
     inputBinding:
       position: 101
       prefix: --assembler

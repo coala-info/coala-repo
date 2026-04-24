@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size for (w,k)-minimizers
-    default: 15
     inputBinding:
       position: 102
       prefix: -k
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for (w,k)-minimizers (must be <=k)
-    default: 14
     inputBinding:
       position: 102
       prefix: -w

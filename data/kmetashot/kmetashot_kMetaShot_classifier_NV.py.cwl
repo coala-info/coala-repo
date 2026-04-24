@@ -11,7 +11,6 @@ inputs:
       - float
     doc: Classification filtering based on ass2ref parameter ranging between 0 
       and 1.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --ass2ref

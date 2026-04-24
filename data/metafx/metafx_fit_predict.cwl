@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: name of output files in workDir
-    default: model
     inputBinding:
       position: 101
       prefix: --name
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - Directory
     doc: working directory
-    default: workDir/
     inputBinding:
       position: 101
       prefix: --work-dir

@@ -13,7 +13,6 @@ inputs:
       and reverse complement are hashed.\n    'DNA-ss' prevents automatic matching
       of reverse-complemented sequences;\n    use it only when comparing a set of
       single, homogeneus sequences"
-    default: DNA-ds
     inputBinding:
       position: 101
       prefix: --content
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: "k-mer length\n    (must be positive, and <= 30 for DNA or <= 12 for protein)"
-    default: 12
     inputBinding:
       position: 101
       prefix: --k-mer-size
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: "k-mer length\n    (must be positive, and <= 30 for DNA or <= 12 for protein)"
-    default: 12
     inputBinding:
       position: 101
       prefix: --k-mer-length
@@ -53,7 +50,6 @@ inputs:
       \    If more are present, the ones corresponding to the lowest cardinality\n\
       \    will be removed from memory and printed out, and there will be\n    repeated
       hashes in the output"
-    default: 16777216
     inputBinding:
       position: 101
       prefix: --max-results-size
@@ -110,7 +106,6 @@ inputs:
       - 'null'
       - boolean
     doc: set verbose execution
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

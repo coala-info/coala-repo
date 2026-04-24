@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs available for Marker-MAGu.
-    default: 20
     inputBinding:
       position: 101
       prefix: --cpu
@@ -32,7 +31,6 @@ inputs:
       marker genes with at least 1 read mapped. "relaxed" setting requires >= 
       33.3 percent of marker genes with at least 1 read mapped AND at least 3 
       marker genes detected.
-    default: default
     inputBinding:
       position: 101
       prefix: --detection
@@ -94,7 +92,6 @@ inputs:
       - 'null'
       - Directory
     doc: path of temporary directory.
-    default: '{OUTPUT_DIR}/{SAMPLE}_temp/'
     inputBinding:
       position: 101
       prefix: --temp

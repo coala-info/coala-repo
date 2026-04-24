@@ -39,7 +39,6 @@ inputs:
       - string
     doc: Maximum memory that can be used by GUESSmyLT in GB. E.g. '10G'. Default
       value is 8G.
-    default: 8G
     inputBinding:
       position: 101
       prefix: --memory
@@ -50,7 +49,6 @@ inputs:
     doc: Mode can be genome or transcriptome (default genome). It defines how 
       the reference fasta file will be handled by BUSCO. This option is used 
       when no annotation is provided (--annotation).
-    default: genome
     inputBinding:
       position: 101
       prefix: --mode
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - Directory
     doc: Full path to output directory. Default is working directory.
-    default: working directory
     inputBinding:
       position: 101
       prefix: --output
@@ -108,7 +105,6 @@ inputs:
       - int
     doc: The number of threads that can be used by GUESSmyLT. Needs to be an 
       integer. Defualt value is 2.
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads

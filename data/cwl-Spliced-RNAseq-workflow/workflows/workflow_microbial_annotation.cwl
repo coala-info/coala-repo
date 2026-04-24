@@ -36,7 +36,6 @@ outputs:
 inputs:
   threads:
     type: int?
-    default: 4
     doc: Number of threads to use for computational processes. Default 4
     label: Number of threads
   genome_fasta:
@@ -45,7 +44,6 @@ inputs:
     doc: Genome fasta file used for annotation (required)
   codon_table:
     type: int
-    default: 11
     doc: Codon table 11/4. Default = 11
     label: Codon table
   bakta_db:
@@ -57,17 +55,14 @@ inputs:
     type: boolean
     label: metagenome
     doc: Run in metagenome mode. Affects only protein prediction. Default false
-    default: false
   skip_bakta_plot:
     type: boolean
     label: Skip plot
     doc: Skip Bakta plotting
-    default: false
   skip_bakta_crispr:
     type: boolean
     label: Skip bakta CRISPR array prediction using PILER-CR
     doc: Skip CRISPR prediction
-    default: false
   interproscan_directory:
     type: Directory?
     label: InterProScan 5 directory
@@ -75,7 +70,6 @@ inputs:
   
   interproscan_applications:
     type: string
-    default: 'Pfam'
       # SFLD,SMART,AntiFam,NCBIfam not available yet
     label: Interproscan applications
     doc: |
@@ -103,31 +97,25 @@ inputs:
     type: boolean
     label: Run kofamscan
     doc: Run with KEGG KO KoFamKOALA annotation. Default false
-    default: false
   kofamscan_limit_sapp:
     type: int?
     label: SAPP kofamscan filter
     doc: Limit max number of entries of kofamscan hits per locus in SAPP. Default 5
-    default: 5
   run_eggnog:
     type: boolean
     label: Run eggNOG-mapper
     doc: Run with eggNOG-mapper annotation. Requires eggnog database files. Default false
-    default: false
   run_interproscan:
     type: boolean
     label: Run InterProScan
     doc: Run with eggNOG-mapper annotation. Requires InterProScan v5 program files. Default false
-    default: false
 
   compress_output:
     type: boolean
     doc: Compress output files. Default false
-    default: false
   sapp_conversion:
     type: boolean
     doc: Run SAPP (Semantic Annotation Platform with Provenance) on the annotations. Default true
-    default: true
   destination:
     type: string?
     label: Output Destination (prov only)
@@ -146,7 +134,6 @@ steps:
       skip_crispr: skip_bakta_crispr
       meta: metagenome
       keep_contig_headers:
-        default: true
       skip_plot: skip_bakta_plot
       threads: threads
     out: [hypo_sequences_cds,hypo_annotation_tsv,annotation_tsv,summary_txt,annotation_json,annotation_gff3,annotation_gbff,annotation_embl,sequences_fna,sequences_ffn,sequences_cds,plot_png,plot_svg]

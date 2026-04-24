@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Alignment alphabet
-    default: prot
     inputBinding:
       position: 101
       prefix: -aln-alphabet
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Alignment missing indicator
-    default: '-'
     inputBinding:
       position: 101
       prefix: -aln-gapchar
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Alignment missing indicator
-    default: ''
     inputBinding:
       position: 101
       prefix: -aln-missing
@@ -108,7 +105,6 @@ inputs:
       - 'null'
       - File
     doc: Program's configuration (registry) data file
-    default: table2asn.conf
     inputBinding:
       position: 101
       prefix: -conffile
@@ -165,7 +161,6 @@ inputs:
       - 'null'
       - string
     doc: File Type
-    default: a
     inputBinding:
       position: 101
       prefix: -a
@@ -364,7 +359,6 @@ inputs:
       - 'null'
       - string
     doc: ASN.1 files suffix
-    default: .sqn
     inputBinding:
       position: 101
       prefix: -out-suffix
@@ -533,7 +527,6 @@ inputs:
       - 'null'
       - string
     doc: Suffix
-    default: .fsa
     inputBinding:
       position: 101
       prefix: -x

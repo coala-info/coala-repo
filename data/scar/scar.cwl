@@ -120,7 +120,6 @@ inputs:
       - int
     doc: Whether to get native frequencies, 0 or 1, by default 0, not to get 
       native frequencies
-    default: 0
     inputBinding:
       position: 102
       prefix: --get_native_frequencies

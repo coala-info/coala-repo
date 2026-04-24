@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: pipeline starting point
-    default: trimming
     inputBinding:
       position: 101
       prefix: --begin
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: check samples
-    default: false
     inputBinding:
       position: 101
       prefix: --check-samples
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: which rmhoster used
-    default: bowtie2
     inputBinding:
       position: 101
       prefix: --rmhoster
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: which trimmer used
-    default: fastp
     inputBinding:
       position: 101
       prefix: --trimmer
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - Directory
     doc: project workdir
-    default: ./
     inputBinding:
       position: 101
       prefix: --workdir

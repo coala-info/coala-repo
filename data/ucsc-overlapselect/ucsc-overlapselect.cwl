@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: 'Input file format: genePred, psl, bed, or chain.'
-    default: genePred
     inputBinding:
       position: 103
       prefix: -inFmt
@@ -70,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: 'Select file format: genePred, psl, bed, or chain.'
-    default: genePred
     inputBinding:
       position: 103
       prefix: -selectFmt

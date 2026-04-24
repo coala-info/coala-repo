@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Verbosity of the logging messages
-    default: wrn
     inputBinding:
       position: 102
       prefix: --loglevel
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum accepted sequence coverage for each gene segment
-    default: 0.7
     inputBinding:
       position: 102
       prefix: --min-seq-cov

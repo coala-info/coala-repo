@@ -18,7 +18,6 @@ inputs:
   - id: operation
     type: string
     doc: The operation to perform (cat).
-    default: cat
     inputBinding:
       position: 2
   - id: page_ranges

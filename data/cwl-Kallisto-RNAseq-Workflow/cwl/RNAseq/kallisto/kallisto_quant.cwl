@@ -16,7 +16,6 @@ requirements:
 inputs:
   threads:
     type: int?
-    default: 1
     inputBinding:
       position: 0
       prefix: "--threads="
@@ -25,7 +24,6 @@ inputs:
   prefix:
     type: string
     doc: prefix of the filename outputs
-    default: "sampleX"
 
   indexfolder:
     type: Directory
@@ -54,7 +52,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: "--single"
-    default: false
 
   #Optional Inputs
 
@@ -89,7 +86,6 @@ inputs:
     inputBinding:
       separate: false
       prefix: "--bootstrap-samples="
-    default: 100
   
   Seed:
     type: int?

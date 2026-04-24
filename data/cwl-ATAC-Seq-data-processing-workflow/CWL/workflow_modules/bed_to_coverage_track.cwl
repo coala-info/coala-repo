@@ -19,7 +19,6 @@ inputs:
       Specify as space-delimited string. 
       Default: "chrX chrY chrM"
     type: string?
-    default: "chrX chrY chrM"
 
 ### WORKFLOW STEPS:
 ##################################################

@@ -20,14 +20,12 @@ inputs:
   - id: level
     type: string
     doc: 'level to estimate abundance at [options: D,P,C,O,F,G,S,S1,etc]'
-    default: S
     inputBinding:
       position: 101
       prefix: -l
   - id: read_length
     type: int
     doc: read length to get all classifications for
-    default: 100
     inputBinding:
       position: 101
       prefix: -r
@@ -35,7 +33,6 @@ inputs:
     type: int
     doc: number of reads required PRIOR to abundance estimation to perform 
       reestimation
-    default: 0
     inputBinding:
       position: 101
       prefix: -t

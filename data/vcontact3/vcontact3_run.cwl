@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: Number of breaks for output chunking.
-    default: 1
     inputBinding:
       position: 101
       prefix: --breaks
@@ -21,7 +20,6 @@ inputs:
       - boolean
     doc: Calculate Silhouette scores for Newick. Slightly increases processing 
       time.
-    default: false
     inputBinding:
       position: 101
       prefix: --calc-silhouette
@@ -31,7 +29,6 @@ inputs:
       - int
     doc: Minimum members for completeness calculation. Moderately increases 
       processing time.Uses genus to estimate completeness.
-    default: 5
     inputBinding:
       position: 101
       prefix: --completeness-members
@@ -40,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Database domain to use.
-    default: prokaryotes
     inputBinding:
       position: 101
       prefix: --db-domain
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: Default realm fallback if no PC similarity found.
-    default: Duplodnaviria
     inputBinding:
       position: 101
       prefix: --default-realm
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: Distance metric between genomes.
-    default: SqRoot
     inputBinding:
       position: 101
       prefix: --distance-metric
@@ -84,7 +78,6 @@ inputs:
       - boolean
     doc: For "ani", "newick" and "profiles", include ALL genomes, not just 
       user-supplied.
-    default: false
     inputBinding:
       position: 101
       prefix: --export-all
@@ -94,7 +87,6 @@ inputs:
       - type: array
         items: string
     doc: Export formats to generate.
-    default:
       - ''
     inputBinding:
       position: 101
@@ -104,7 +96,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite existing files.
-    default: false
     inputBinding:
       position: 101
       prefix: --force-overwrite
@@ -121,7 +112,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep family-level nucleotide files when --export ani.
-    default: false
     inputBinding:
       position: 101
       prefix: --keep-fna
@@ -130,7 +120,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep intermediate files.
-    default: false
     inputBinding:
       position: 101
       prefix: --keep-temp
@@ -149,7 +138,6 @@ inputs:
     doc: Max number of iterations to run when resolving mixed- realm components.
       Increase to to remove or reduce large hetero-realm clusters (e.g. 
       Adnaviria|Duplornaviria)
-    default: 3
     inputBinding:
       position: 101
       prefix: --max-iterations
@@ -166,7 +154,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable progress bars (useful for batch jobs).
-    default: false
     inputBinding:
       position: 101
       prefix: --no-progress
@@ -184,7 +171,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory.
-    default: vConTACT3_results
     inputBinding:
       position: 101
       prefix: --output
@@ -201,7 +187,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable pyrodigal-gv models (giant viruses, alternative codes).
-    default: false
     inputBinding:
       position: 101
       prefix: --pyrodigal-gv
@@ -210,7 +195,6 @@ inputs:
       - 'null'
       - boolean
     doc: Suppress progress messages; only show warnings and errors.
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -219,7 +203,6 @@ inputs:
       - 'null'
       - boolean
     doc: Reduce memory usage with float16 arrays.
-    default: false
     inputBinding:
       position: 101
       prefix: --reduce-memory
@@ -228,7 +211,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum members for profile rendering.
-    default: 5
     inputBinding:
       position: 101
       prefix: --target-members
@@ -238,7 +220,6 @@ inputs:
       - type: array
         items: string
     doc: Target rank(s) for protein cluster profiles.
-    default: []
     inputBinding:
       position: 101
       prefix: --target-rank
@@ -247,7 +228,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use.
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -264,7 +244,6 @@ inputs:
       - 'null'
       - int
     doc: 'Increase verbosity: default=INFO, -v=DEBUG. Use --quiet to show only warnings/errors.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbose
@@ -273,7 +252,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run only virus models in pyrodigal-gv.
-    default: false
     inputBinding:
       position: 101
       prefix: --virus-only

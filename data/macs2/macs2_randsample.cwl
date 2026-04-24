@@ -13,7 +13,6 @@ inputs:
       - int
     doc: Buffer size for incrementally increasing internal array size to store 
       reads alignment information.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --buffer-size
@@ -23,7 +22,6 @@ inputs:
       - string
     doc: Format of tag file, "AUTO", "BED" or "ELAND" or "ELANDMULTI" or 
       "ELANDEXPORT" or "SAM" or "BAM" or "BOWTIE" or "BAMPE" or "BEDPE".
-    default: AUTO
     inputBinding:
       position: 101
       prefix: --format

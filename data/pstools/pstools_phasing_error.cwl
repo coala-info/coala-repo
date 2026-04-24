@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: chunk size
-    default: 100m
     inputBinding:
       position: 105
       prefix: -K
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size
-    default: 31
     inputBinding:
       position: 105
       prefix: -k
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: number of worker threads
-    default: 4
     inputBinding:
       position: 105
       prefix: -t

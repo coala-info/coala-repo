@@ -5,7 +5,6 @@ inputs:
   r: string
   script:
     type: string
-    default: |
       import sys
       print(sys.argv[1])
       if sys.argv[1] == "2":

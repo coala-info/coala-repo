@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: length of kmer
-    default: 25
     inputBinding:
       position: 101
       prefix: --kmer_length
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the output file
-    default: paths.fasta
     inputBinding:
       position: 101
       prefix: --output_filename

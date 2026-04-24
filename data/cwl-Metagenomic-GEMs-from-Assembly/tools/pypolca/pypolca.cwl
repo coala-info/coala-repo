@@ -25,7 +25,6 @@ inputs:
     label: Identifier
     inputBinding:
       prefix: -p
-    default: "polca"
 
   assembly:
     type: File
@@ -54,17 +53,14 @@ inputs:
     label: Threads
     inputBinding:
       prefix: --threads
-    default: 4
   min_alt:
     type: int
-    default: 2
     doc: Minimum alt allele count to make a change. Default 2
     label: Minimum Alt Allele Count
     inputBinding:
       prefix: --min_alt
   min_ratio:
     type: float
-    default: 2.0
     doc: Minimum alt allele to ref allele ratio to make a change.
     label: Minimum Alt Allele to Ref Allele Ratio
     inputBinding:
@@ -75,21 +71,18 @@ inputs:
     label: Careful mode
     inputBinding:
       prefix: --careful
-    default: true # author recommends to use this option always
   no_polish:
     type: boolean
     doc: Do not polish, just create vcf file, evaluate the assembly and exit.
     label: Skip polishing
     inputBinding:
       prefix: -n
-    default: false
   memory_limit:
     type: string
     doc: Memory per thread to use in samtools sort, set to 2G or more for large genomes. default 2G
     label: Memory limit per thread
     inputBinding:
       prefix: -m
-    default: "4G"
 
 outputs:
   polished_genome:

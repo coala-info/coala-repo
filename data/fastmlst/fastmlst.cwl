@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for downloading schemes.
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads

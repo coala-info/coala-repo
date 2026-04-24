@@ -11,7 +11,6 @@ inputs:
       - int
     doc: Non-negative integer n, creates a fasta file in the current working 
       directory containing randomly chosen n suboptimal alignments.
-    default: 0
     inputBinding:
       position: 101
       prefix: --alignments
@@ -21,7 +20,6 @@ inputs:
       - float
     doc: Floating value, choose edges that appear in (alpha*100)% of all 
       (sub-)optimal paths to be safe.
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --alpha
@@ -46,7 +44,6 @@ inputs:
       - File
     doc: Reads the aligning score of two symbols from a text file. The text file
       is a lower triangular matrix with 20 lines.
-    default: BLOSUM62
     inputBinding:
       position: 101
       prefix: --costmat
@@ -56,7 +53,6 @@ inputs:
       - int
     doc: Integer value, defines suboptimal paths to be in the delta neighborhood
       of the optimal.
-    default: 0
     inputBinding:
       position: 101
       prefix: --delta
@@ -74,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Integer, set the score of aligning a character to a gap.
-    default: 1
     inputBinding:
       position: 101
       prefix: --gapcost
@@ -93,7 +88,6 @@ inputs:
       - int
     doc: Integer, sets the score of aligning symbols with special characters. 
       INF value ignores these characters.
-    default: 1
     inputBinding:
       position: 101
       prefix: --special
@@ -102,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Integer, set the score of starting a gap alignment.
-    default: 11
     inputBinding:
       position: 101
       prefix: --startgap
@@ -111,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Integer, specifies the number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

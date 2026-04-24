@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: canonical base threshold (default=0.8)
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --can_thresh
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: max overlap between distributions (default = 0.0)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --dmr_maxoverlap
@@ -66,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: minimum difference between means (default = 0.4)
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --dmr_mindiff
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: minimum motif count for DMR prediction (default = 20)
-    default: 20
     inputBinding:
       position: 101
       prefix: --dmr_minmotifs
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - float
     doc: minimum reads ratio for DMR prediction (default=0.3)
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --dmr_minratio
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: minimum reads per group for DMR prediction (default=8)
-    default: 8
     inputBinding:
       position: 101
       prefix: --dmr_minreads
@@ -110,7 +104,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for high-methylated read count column (default = 0.95)
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --highmeth_thresh
@@ -125,7 +118,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for low-methylated read count column (default = 0.05)
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --lowmeth_thresh
@@ -143,7 +135,6 @@ inputs:
       - 'null'
       - float
     doc: modified base threshold (default=0.8)
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --meth_thresh
@@ -152,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality (mapq), default = 10
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_mapq

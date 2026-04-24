@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: set the maximum number of locations on the reference index
-    default: 300
     inputBinding:
       position: 101
       prefix: --max-locs
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: set the number of worker threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --nb-threads

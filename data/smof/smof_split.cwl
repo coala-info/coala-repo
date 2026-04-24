@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for output files (default="xxx")
-    default: xxx
     inputBinding:
       position: 102
       prefix: --prefix

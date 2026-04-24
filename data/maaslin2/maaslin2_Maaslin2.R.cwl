@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: The analysis method to apply
-    default: LM
     inputBinding:
       position: 104
       prefix: --analysis_method
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: The number of R processes to run in parallel
-    default: 1
     inputBinding:
       position: 104
       prefix: --cores
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: The correction method for computing the q-value
-    default: BH
     inputBinding:
       position: 104
       prefix: --correction
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: The fixed effects for the model, comma-delimited for multiple effects
-    default: all
     inputBinding:
       position: 104
       prefix: --fixed_effects
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: In heatmap, plot top N features with significant associations
-    default: 50
     inputBinding:
       position: 104
       prefix: --heatmap_first_n
@@ -71,7 +66,6 @@ inputs:
       - int
     doc: The maximum number of scatterplots for signficant associations to save 
       as png files
-    default: 10
     inputBinding:
       position: 104
       prefix: --max_pngs
@@ -80,7 +74,6 @@ inputs:
       - 'null'
       - float
     doc: The q-value threshold for significance
-    default: 0.25
     inputBinding:
       position: 104
       prefix: --max_significance
@@ -89,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum abundance for each feature
-    default: 0
     inputBinding:
       position: 104
       prefix: --min_abundance
@@ -99,7 +91,6 @@ inputs:
       - float
     doc: The minimum percent of samples for which a feature is detected at 
       minimum abundance
-    default: 0.1
     inputBinding:
       position: 104
       prefix: --min_prevalence
@@ -108,7 +99,6 @@ inputs:
       - 'null'
       - float
     doc: Keep features with variances greater than value
-    default: 0
     inputBinding:
       position: 104
       prefix: --min_variance
@@ -117,7 +107,6 @@ inputs:
       - 'null'
       - string
     doc: The normalization method to apply
-    default: TSS
     inputBinding:
       position: 104
       prefix: --normalization
@@ -126,7 +115,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate a heatmap for the significant associations
-    default: true
     inputBinding:
       position: 104
       prefix: --plot_heatmap
@@ -135,7 +123,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate scatter plots for the significant associations
-    default: true
     inputBinding:
       position: 104
       prefix: --plot_scatter
@@ -144,7 +131,6 @@ inputs:
       - 'null'
       - string
     doc: The random effects for the model, comma-delimited for multiple effects
-    default: none
     inputBinding:
       position: 104
       prefix: --random_effects
@@ -155,7 +141,6 @@ inputs:
     doc: The factor to use as a reference for a variable with more than two 
       levels provided as a string of 'variable,reference' semi-colon delimited 
       for multiple variables
-    default: NA
     inputBinding:
       position: 104
       prefix: --reference
@@ -164,7 +149,6 @@ inputs:
       - 'null'
       - boolean
     doc: Return the full model outputs and save to an RData file
-    default: false
     inputBinding:
       position: 104
       prefix: --save_models
@@ -173,7 +157,6 @@ inputs:
       - 'null'
       - boolean
     doc: Save all scatter plot ggplot objects to an RData file
-    default: false
     inputBinding:
       position: 104
       prefix: --save_scatter
@@ -182,7 +165,6 @@ inputs:
       - 'null'
       - boolean
     doc: Apply z-score so continuous metadata are on the same scale
-    default: true
     inputBinding:
       position: 104
       prefix: --standardize
@@ -191,7 +173,6 @@ inputs:
       - 'null'
       - string
     doc: The transform to apply
-    default: LOG
     inputBinding:
       position: 104
       prefix: --transform

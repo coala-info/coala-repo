@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: maximum read depth
-    default: 255
     inputBinding:
       position: 102
       prefix: -D
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality
-    default: 40
     inputBinding:
       position: 102
       prefix: -Q
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: minimum neighbouring quality
-    default: 20
     inputBinding:
       position: 102
       prefix: -n
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: minimum read depth
-    default: 3
     inputBinding:
       position: 102
       prefix: -d

@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cores to use (default all)
-    default: 0
     inputBinding:
       position: 101
       prefix: --cores
@@ -36,7 +35,6 @@ inputs:
       - int
     doc: Estimated number of distinct kmers for bloom filter (millions, only for
       hash counter)
-    default: 100
     inputBinding:
       position: 101
       prefix: --estimated_kmers
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum noise to signal ratio acceptable for extension
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --fraction
@@ -79,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal kmer length for assembly
-    default: 21
     inputBinding:
       position: 101
       prefix: --kmer
@@ -105,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal snp length
-    default: 150
     inputBinding:
       position: 101
       prefix: --max_snp_len
@@ -114,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: Memory available (GB, only for sorted counter)
-    default: 32
     inputBinding:
       position: 101
       prefix: --memory
@@ -123,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal contig length reported in output
-    default: 200
     inputBinding:
       position: 101
       prefix: --min_contig
@@ -168,7 +161,6 @@ inputs:
       - int
     doc: Number of assembly iterations from minimal to maximal kmer length in 
       reads
-    default: 11
     inputBinding:
       position: 101
       prefix: --steps
@@ -187,7 +179,6 @@ inputs:
       - float
     doc: Percentage of reads containing 19-mer for the 19-mer to be considered a
       vector (1. disables)
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --vector_percent

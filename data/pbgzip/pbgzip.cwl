@@ -18,7 +18,6 @@ inputs:
       - int
     doc: the block size when reading uncompressed data (must be less than or equal
       to 65536; -1 is auto)
-    default: -1
     inputBinding:
       position: 102
       prefix: -S
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: the compress type (0 - gz, 1 - bz2)
-    default: 0
     inputBinding:
       position: 102
       prefix: -t
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: the compression level (-1 to -9)
-    default: -1
     inputBinding:
       position: 102
       prefix: '-1'
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 40
     inputBinding:
       position: 102
       prefix: -n

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Batch size for training.
-    default: 32
     inputBinding:
       position: 102
       prefix: --batch-size
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Number of training epochs.
-    default: 100
     inputBinding:
       position: 102
       prefix: --epochs
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: Learning rate for the optimizer.
-    default: 0.001
     inputBinding:
       position: 102
       prefix: --learning-rate
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Type of model to use (e.g., resnet18, vgg16).
-    default: resnet18
     inputBinding:
       position: 102
       prefix: --model-type

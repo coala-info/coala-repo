@@ -58,7 +58,6 @@ inputs:
       - string
     doc: Set to True if only features for conservation of secondary structure 
       should be used. Depends on type of model.
-    default: NCRNA
     inputBinding:
       position: 101
       prefix: --structure

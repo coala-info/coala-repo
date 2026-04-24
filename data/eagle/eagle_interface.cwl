@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: port
-    default: 8000
     inputBinding:
       position: 101
       prefix: --port
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: use up to M parallel processes to serve HTTP requests
-    default: 1
     inputBinding:
       position: 101
       prefix: --processes

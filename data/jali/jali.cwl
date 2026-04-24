@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: 0:ASCII (default) 1:HTML 2:double-spaced HTML
-    default: 0
     inputBinding:
       position: 103
       prefix: -f

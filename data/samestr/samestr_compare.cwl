@@ -10,7 +10,6 @@ inputs:
       items: File
     doc: Path to input SNV Profiles. Should have .npy, .npz or .npy.gz 
       extension.
-    default: []
     inputBinding:
       position: 1
   - id: input_names
@@ -18,7 +17,6 @@ inputs:
       type: array
       items: File
     doc: Path to input name files.
-    default: []
     inputBinding:
       position: 2
   - id: dominant_variants
@@ -26,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: Compare only dominant variants as obtained from consensus call.
-    default: false
     inputBinding:
       position: 103
       prefix: --dominant-variants
@@ -35,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add dominant variants as additional entries to data.
-    default: false
     inputBinding:
       position: 103
       prefix: --dominant-variants-added
@@ -44,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output alignment of dominant variants as fasta.
-    default: false
     inputBinding:
       position: 103
       prefix: --dominant-variants-msa
@@ -53,7 +48,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to MetaPhlAn or mOTUs clade marker database.
-    default: None
     inputBinding:
       position: 103
       prefix: --marker-dir
@@ -62,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: The number of processing units to use.
-    default: 1
     inputBinding:
       position: 103
       prefix: --nprocs

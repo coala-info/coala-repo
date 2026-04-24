@@ -14,7 +14,6 @@ inputs:
         items: string
     doc: FAST5 subgroup(s) (under Analyses/[corrected-group]) containing 
       basecalls.
-    default: BaseCalled_template
     inputBinding:
       position: 101
       prefix: --basecall-subgroups
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: FAST5 group created by resquiggle command.
-    default: RawGenomeCorrected_000
     inputBinding:
       position: 101
       prefix: --corrected-group
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bases to plot/output.
-    default: 21
     inputBinding:
       position: 101
       prefix: --num-bases
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Number of regions to plot.
-    default: 10
     inputBinding:
       position: 101
       prefix: --num-regions
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Coverage level to trigger alternative plot type instead of raw signal.
-    default: 50
     inputBinding:
       position: 101
       prefix: --overplot-threshold
@@ -77,7 +72,6 @@ inputs:
       - string
     doc: 'Plot type for regions with higher coverage. Options: Downsample, Boxplot,
       Quantile, Density'
-    default: Downsample
     inputBinding:
       position: 101
       prefix: --overplot-type

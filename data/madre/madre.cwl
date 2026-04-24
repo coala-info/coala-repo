@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Overhead for collapsed strains during database reduction.
-    default: 2
     inputBinding:
       position: 101
       prefix: --collapsed_strains_overhead
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the configuration file.
-    default: ./config.ini
     inputBinding:
       position: 101
       prefix: --config
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum contig length for database reduction.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --min_contig_len
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: Reads technology.
-    default: ont
     inputBinding:
       position: 101
       prefix: --reads_flag
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: Database reduction strictness level.
-    default: very-strict
     inputBinding:
       position: 101
       prefix: --strictness
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 32
     inputBinding:
       position: 101
       prefix: --threads
@@ -83,7 +77,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use Myloasm assembler tool instead of metaFlye/metaMDBG.
-    default: false
     inputBinding:
       position: 101
       prefix: --use-myloasm

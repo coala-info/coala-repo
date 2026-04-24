@@ -54,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: minimum frequency
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-freq
@@ -63,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: output format (ascii or binary)
-    default: ascii
     inputBinding:
       position: 102
       prefix: --output-format
@@ -80,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

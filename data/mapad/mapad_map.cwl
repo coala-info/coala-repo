@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: The number of reads that are processed in parallel
-    default: 250000
     inputBinding:
       position: 101
       prefix: --batch_size
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - float
     doc: Divergence / base error rate
-    default: 0.02
     inputBinding:
       position: 101
       prefix: -D
@@ -70,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Disallow gaps at read ends (configurable range)
-    default: 5
     inputBinding:
       position: 101
       prefix: --gap_dist_ends
@@ -80,7 +77,6 @@ inputs:
       - float
     doc: Gap extension penalty as a fraction of the representative mismatch 
       penalty
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -x
@@ -103,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Max. number of opened gaps
-    default: 2
     inputBinding:
       position: 101
       prefix: --max_num_gaps_open
@@ -148,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: TCP port to communicate over
-    default: 3130
     inputBinding:
       position: 101
       prefix: --port
@@ -166,7 +160,6 @@ inputs:
       - 'null'
       - float
     doc: Exponent to be applied to the read length (ignored if `-c` is not used)
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -e
@@ -189,7 +182,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for the random number generator
-    default: 1234
     inputBinding:
       position: 101
       prefix: --seed
@@ -199,7 +191,6 @@ inputs:
       - int
     doc: Maximum number of threads. If 0, mapAD will select the number of 
       threads automatically.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

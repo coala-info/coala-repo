@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - File
     doc: 'Using database: /usr/local/lib/barrnap/bin/../db/bac.hmm'
-    default: /usr/local/lib/barrnap/bin/../db/bac.hmm
     inputBinding:
       position: 102
   - id: evalue_cutoff
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: Setting evalue cutoff to 1e-06
-    default: 1e-06
     inputBinding:
       position: 102
   - id: reject_genes_short
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: Will reject genes < 0.25 of expected length.
-    default: 0.25
     inputBinding:
       position: 102
   - id: tag_genes_short
@@ -40,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: Will tag genes < 0.8 of expected length.
-    default: 0.8
     inputBinding:
       position: 102
   - id: threads
@@ -48,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Will use 1 threads
-    default: 1
     inputBinding:
       position: 102
 outputs:

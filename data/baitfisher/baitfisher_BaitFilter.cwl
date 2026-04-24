@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Name of or path to the blast executable.
-    default: blastn
     inputBinding:
       position: 101
       prefix: --blast-executable
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum E-value for the best hit of the bait against the genome.
-    default: 1e-06
     inputBinding:
       position: 101
       prefix: --blast-first-hit-evalue
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum E-value for the second best hit. Threshold for ambiguous binding.
-    default: 1e-06
     inputBinding:
       position: 101
       prefix: --blast-second-hit-evalue

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: minibatch size for minimap2 mapping [500M]
-    default: 500M
     inputBinding:
       position: 102
       prefix: --K
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: minimap max number of secondary alignments per read [50]
-    default: 50
     inputBinding:
       position: 102
       prefix: --N
@@ -35,7 +33,6 @@ inputs:
       - Directory
     doc: 'path to emu database containing: names_df.tsv, nodes_df.tsv, species_taxid.fasta,
       unqiue_taxids.tsv [$EMU_DATABASE_DIR]'
-    default: $EMU_DATABASE_DIR
     inputBinding:
       position: 102
       prefix: --db
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum aligned query length (excludes soft/hard clipping) [2000]
-    default: 2000
     inputBinding:
       position: 102
       prefix: --max-align-len
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: min species abundance in results [0.0001]
-    default: 0.0001
     inputBinding:
       position: 102
       prefix: --min-abundance
@@ -86,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum aligned query length (excludes soft/hard clipping [0]
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-align-len
@@ -95,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: Minimum percent identity (PID) based on NM tag [0%]
-    default: 0%
     inputBinding:
       position: 102
       prefix: --min-pid
@@ -112,7 +105,6 @@ inputs:
       - 'null'
       - string
     doc: basename for all emu output files [{input_file}]
-    default: '{input_file}'
     inputBinding:
       position: 102
       prefix: --output-basename
@@ -121,7 +113,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory name [./results]
-    default: ./results
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -138,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: threads utilized by minimap [3]
-    default: 3
     inputBinding:
       position: 102
       prefix: --threads
@@ -147,7 +137,6 @@ inputs:
       - 'null'
       - string
     doc: 'short-read: sr, Pac-Bio:map-pb, ONT:map-ont, ... [map-ont]'
-    default: map-ont
     inputBinding:
       position: 102
       prefix: --type

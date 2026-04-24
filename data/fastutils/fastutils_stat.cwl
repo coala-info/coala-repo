@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: input file in fasta/q format
-    default: stdin
     inputBinding:
       position: 101
       prefix: --in
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: max read length
-    default: INT64_MAX
     inputBinding:
       position: 101
       prefix: --maxLen
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: min read length
-    default: 0
     inputBinding:
       position: 101
       prefix: --minLen

@@ -20,7 +20,6 @@ arguments:
 inputs:
   memory:
     type: int
-    default: 150
     label: memory in gb
     inputBinding:
       prefix: -m

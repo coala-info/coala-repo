@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bootstrap samples
-    default: 0
     inputBinding:
       position: 102
       prefix: --bootstrap-samples
@@ -74,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

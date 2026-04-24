@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Set length to chop short sequences to
-    default: 32
     inputBinding:
       position: 101
       prefix: --chop-length
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Set step by which to chop short sequences
-    default: 4
     inputBinding:
       position: 101
       prefix: --chop-step
@@ -36,7 +34,6 @@ inputs:
       - int
     doc: Clip sequence head or tail as long as it has at least one N per this long
       window
-    default: 0
     inputBinding:
       position: 101
       prefix: --clip-N-win
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Clip sequence head or tail with quality lower then this (for fastq input)
-    default: 0
     inputBinding:
       position: 101
       prefix: --clip-quality
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Set complexity filter cutoff
-    default: 2
     inputBinding:
       position: 101
       prefix: --complexity
@@ -63,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: Set watermarks for matched word count for long sequences, int % of good words
-    default: 20:60
     inputBinding:
       position: 101
       prefix: --heur-count-long-pct
@@ -73,7 +67,6 @@ inputs:
       - string
     doc: Set watermarks for matched word count for short sequences, int % of good
       words
-    default: 20:80
     inputBinding:
       position: 101
       prefix: --heur-count-short-pct
@@ -82,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Set number of good words which switches watermarks (long/short)
-    default: 200
     inputBinding:
       position: 101
       prefix: --heur-many-words
@@ -91,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Set minimal word count to apply heuristics
-    default: 10
     inputBinding:
       position: 101
       prefix: --heur-min-words
@@ -101,7 +92,6 @@ inputs:
       - int
     doc: Set cutoff for sequences to consider - these and shorter (after clipping)
       will be marked as foreign
-    default: 15
     inputBinding:
       position: 101
       prefix: --heur-negligible-length
@@ -110,7 +100,6 @@ inputs:
       - 'null'
       - string
     doc: Set watermarks for longest match run for long sequences, int % of good words
-    default: 10:20
     inputBinding:
       position: 101
       prefix: --heur-run-long-pct
@@ -119,7 +108,6 @@ inputs:
       - 'null'
       - string
     doc: Set watermarks for longest match run for short sequences, int % of good words
-    default: 10:40
     inputBinding:
       position: 101
       prefix: --heur-run-short-pct
@@ -128,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Set mask low complexity before applying heuristics
-    default: 0
     inputBinding:
       position: 101
       prefix: --mask-early
@@ -137,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal number of ambiguities per word
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-ambiguities
@@ -146,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: Set longest sequence length to ignore postprocessing
-    default: 25
     inputBinding:
       position: 101
       prefix: --no-post-len
@@ -171,7 +156,6 @@ inputs:
       - 'null'
       - int
     doc: Should 'unknown' low complexity reads be sent to post processing
-    default: 0
     inputBinding:
       position: 101
       prefix: --post-low-complexity
@@ -180,7 +164,6 @@ inputs:
       - 'null'
       - int
     doc: Number of quality channers for reads (0|1)
-    default: 0
     inputBinding:
       position: 101
       prefix: --quality-channels
@@ -216,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: Set sequence length to consider it as short for postprocessing
-    default: 1073741823
     inputBinding:
       position: 101
       prefix: --short-seq

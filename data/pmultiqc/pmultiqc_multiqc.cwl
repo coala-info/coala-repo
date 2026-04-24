@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Custom context window to use with OpenAI API
-    default: 128000
     inputBinding:
       position: 102
       prefix: --ai-custom-context-window
@@ -62,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: Select AI provider for report summarization.
-    default: seqera
     inputBinding:
       position: 102
       prefix: --ai-provider
@@ -136,7 +134,6 @@ inputs:
       - 'null'
       - string
     doc: The contaminant prefix or suffix used or to be used
-    default: CONT
     inputBinding:
       position: 102
       prefix: --contaminant-affix
@@ -169,7 +166,6 @@ inputs:
       - 'null'
       - string
     doc: The decoy prefix or suffix used or to be used
-    default: DECOY_
     inputBinding:
       position: 102
       prefix: --decoy-affix
@@ -425,7 +421,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove decoy peptides when counting
-    default: false
     inputBinding:
       position: 102
       prefix: --no-remove-decoy
@@ -508,7 +503,6 @@ inputs:
       - 'null'
       - string
     doc: The quantification method for LFQ experiment
-    default: feature_intensity
     inputBinding:
       position: 102
       prefix: --quantification-method
@@ -533,7 +527,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove decoy peptides when counting
-    default: true
     inputBinding:
       position: 102
       prefix: --remove-decoy
@@ -584,7 +577,6 @@ inputs:
       - 'null'
       - string
     doc: Report template to use.
-    default: default
     inputBinding:
       position: 102
       prefix: --template

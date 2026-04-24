@@ -22,7 +22,6 @@ inputs:
     doc: When testing for open reading frames, do not allow a translated frame 
       to have a single stop codon at the C-terminus of the translated protein 
       sequence. Default is False.
-    default: false
     inputBinding:
       position: 101
       prefix: --no_terminal_stop_codons

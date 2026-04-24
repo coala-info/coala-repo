@@ -125,7 +125,6 @@ inputs:
       - 'null'
       - float
     doc: Randomly substitute bases at probability PROB.
-    default: 0
     inputBinding:
       position: 102
       prefix: --substitute
@@ -151,7 +150,6 @@ inputs:
       - int
     doc: 'Characters per line in output FASTA (default: 80). Set to 0 to disallow
       line breaks entirely. This is ignored for FASTQ files.'
-    default: 80
     inputBinding:
       position: 102
       prefix: --width

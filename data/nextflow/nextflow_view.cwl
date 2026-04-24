@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: Hide header line
-    default: false
     inputBinding:
       position: 102
       prefix: -q
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: List repository content
-    default: false
     inputBinding:
       position: 102
       prefix: -l

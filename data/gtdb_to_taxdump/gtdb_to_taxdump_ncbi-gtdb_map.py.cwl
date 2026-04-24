@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Column containing the queries; assuming a tab-delim table
-    default: 1
     inputBinding:
       position: 103
       prefix: --column
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: Only include GTDB genomes w/ >=X CheckM completeness
-    default: 50.0
     inputBinding:
       position: 103
       prefix: --completeness
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: Only include GTDB genomes w/ <X CheckM contamination
-    default: 5.0
     inputBinding:
       position: 103
       prefix: --contamination
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: Homogeneity of LCA (fraction) in order to be used
-    default: 0.9
     inputBinding:
       position: 103
       prefix: --fraction
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - boolean
     doc: Header in table of queries
-    default: false
     inputBinding:
       position: 103
       prefix: --header
@@ -67,7 +62,6 @@ inputs:
       - int
     doc: Max no. of tips used for LCA determination. If more, subsampling w/out 
       replacement
-    default: 100
     inputBinding:
       position: 103
       prefix: --max-tips
@@ -76,7 +70,6 @@ inputs:
       - 'null'
       - File
     doc: NCBI names.dmp file. Only needed if providing NCBI taxids
-    default: None
     inputBinding:
       position: 103
       prefix: --names-dmp
@@ -85,7 +78,6 @@ inputs:
       - 'null'
       - boolean
     doc: Strip off any [dpcofgs]__ taxonomic prefixes?
-    default: false
     inputBinding:
       position: 103
       prefix: --no-prefix
@@ -94,7 +86,6 @@ inputs:
       - 'null'
       - File
     doc: NCBI nodes.dmp file. Only needed if providing NCBI taxids
-    default: None
     inputBinding:
       position: 103
       prefix: --nodes-dmp
@@ -103,7 +94,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output file directory
-    default: ncbi-gtdb
     inputBinding:
       position: 103
       prefix: --outdir
@@ -112,7 +102,6 @@ inputs:
       - 'null'
       - string
     doc: Add prefix to all queries such as "s__"
-    default: ''
     inputBinding:
       position: 103
       prefix: --prefix
@@ -121,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: No. of parallel processes
-    default: 1
     inputBinding:
       position: 103
       prefix: --procs
@@ -130,7 +118,6 @@ inputs:
       - 'null'
       - string
     doc: Taxonomy of the query list
-    default: ncbi_taxonomy
     inputBinding:
       position: 103
       prefix: --query-taxonomy
@@ -139,7 +126,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write query file with queries renamed?
-    default: false
     inputBinding:
       position: 103
       prefix: --rename
@@ -148,7 +134,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose output
-    default: false
     inputBinding:
       position: 103
       prefix: --verbose

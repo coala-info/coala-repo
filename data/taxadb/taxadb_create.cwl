@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Number of sequences to insert in bulk
-    default: 500
     inputBinding:
       position: 101
       prefix: --chunk
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: name of the database
-    default: taxadb
     inputBinding:
       position: 101
       prefix: --dbname
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: type of the database
-    default: sqlite
     inputBinding:
       position: 101
       prefix: --dbtype
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: division to build
-    default: full
     inputBinding:
       position: 101
       prefix: --division
@@ -54,7 +50,6 @@ inputs:
       - string
     doc: Database connection host (Optional, for MySQLdatabase and 
       PostgreSQLdatabase)
-    default: localhost
     inputBinding:
       position: 101
       prefix: --hostname
@@ -85,7 +80,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable info logging.
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -103,7 +97,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable debug logging.
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

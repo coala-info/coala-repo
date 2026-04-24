@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: correlation for identifying scaffolds with divergent coverage profiles
-    default: -2
     inputBinding:
       position: 103
       prefix: --cov_corr
@@ -30,7 +29,6 @@ inputs:
       - int
     doc: mean absolute percent error for identifying scaffolds with divergent 
       coverage profiles
-    default: 50
     inputBinding:
       position: 103
       prefix: --cov_perc
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: desired DPI of output image
-    default: 96
     inputBinding:
       position: 103
       prefix: --dpi
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: percentile for identify scaffolds with divergent GC content
-    default: 98
     inputBinding:
       position: 103
       prefix: --gc_perc
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: height of output image
-    default: 6
     inputBinding:
       position: 103
       prefix: --height
@@ -82,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: desired image type
-    default: png
     inputBinding:
       position: 103
       prefix: --image_type
@@ -99,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: desired font size for labels
-    default: 12
     inputBinding:
       position: 103
       prefix: --label_font_size
@@ -116,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: desired size of points in scatterplot
-    default: 36
     inputBinding:
       position: 103
       prefix: --point_size
@@ -126,7 +118,6 @@ inputs:
       - string
     doc: report sequences that are outliers in 'all' or 'any' reference 
       distribution
-    default: any
     inputBinding:
       position: 103
       prefix: --report_type
@@ -144,7 +135,6 @@ inputs:
       - int
     doc: percentile for identify scaffolds with divergent tetranucleotide 
       signatures
-    default: 98
     inputBinding:
       position: 103
       prefix: --td_perc
@@ -153,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: desired font size for tick markers
-    default: 10
     inputBinding:
       position: 103
       prefix: --tick_font_size
@@ -162,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: width of output image
-    default: 12
     inputBinding:
       position: 103
       prefix: --width

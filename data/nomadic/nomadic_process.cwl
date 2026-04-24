@@ -17,7 +17,6 @@ inputs:
       - string
     doc: Call biallelic SNPs in real-time with the indicated variant caller. If 
       this flag is omitted, no variant calling is performed.
-    default: '[bcftools|delve]'
     inputBinding:
       position: 102
       prefix: --caller
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - File
     doc: Path to metadata CSV file containing barcode and sample information.
-    default: (<workspace>/metadata/<experiment_name>.csv)
     inputBinding:
       position: 102
       prefix: --metadata_csv
@@ -48,7 +46,6 @@ inputs:
     doc: Path to the minknow output directory. Can be either the base directory,
       e.g. /var/lib/minknow/data, or the directory of the experiment, e.g. 
       /var/lib/minknow/data/<experiment_name>.
-    default: /var/lib/minknow/data
     inputBinding:
       position: 102
       prefix: --minknow_dir
@@ -63,7 +60,6 @@ inputs:
   - id: reference_name
     type: string
     doc: Choose a reference genome to be used in real-time analysis.
-    default: '[Pf3D7|PfDd2|Pv|Poc|Pm|AgPEST|AaDONGOLA2021|AcolN3|AfunGA1|AsUCISS2018|Hs]'
     inputBinding:
       position: 102
       prefix: --reference_name
@@ -100,7 +96,6 @@ inputs:
       results) are stored. The workspace directory simplifies the use of nomadic
       in that many arguments don't need to be listed as they are predefined in 
       the workspace config or can be loaded from the workspace
-    default: (current directory)
     inputBinding:
       position: 102
       prefix: --workspace

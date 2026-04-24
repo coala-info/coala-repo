@@ -27,14 +27,12 @@ hints:
 inputs:
   threads:
     type: int?
-    default: 1
     inputBinding:
       prefix: --threads
 
   identifier:
     type: string
     doc: prefix of the filename outputs      
-    default: "out"
 
   indexfolder:
     type: Directory?

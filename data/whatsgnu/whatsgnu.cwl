@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum query coverage for BLAST hits
-    default: 50.0
     inputBinding:
       position: 101
       prefix: --coverage
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: E-value threshold for BLAST hits
-    default: 1e-05
     inputBinding:
       position: 101
       prefix: --evalue
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of target sequences to keep
-    default: 10
     inputBinding:
       position: 101
       prefix: --max_target_seqs
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percent identity for BLAST hits
-    default: 40.0
     inputBinding:
       position: 101
       prefix: --percent_identity
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for BLAST
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -17,7 +17,6 @@ inputs:
       \    ~/.kipoi/config.yaml under model_sources. When 'dir'\n                \
       \        is used, use the local directory path when specifying\n           \
       \             the model/dataloader."
-    default: kipoi
     inputBinding:
       position: 102
       prefix: --source

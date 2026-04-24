@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: number of parallel CPU workers to use for multithreads
-    default: 2
     inputBinding:
       position: 103
       prefix: --cpu
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: report domains <= this E-value threshold in output
-    default: 10.0
     inputBinding:
       position: 103
       prefix: --domE
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: report sequences <= this E-value threshold in output
-    default: 10.0
     inputBinding:
       position: 103
       prefix: -E
@@ -70,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: length of sequences for Forward exp tail tau fit
-    default: 100
     inputBinding:
       position: 103
       prefix: --EfL
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: number of sequences for Forward exp tail tau fit
-    default: 200
     inputBinding:
       position: 103
       prefix: --EfN
@@ -88,7 +83,6 @@ inputs:
       - 'null'
       - float
     doc: tail mass for Forward exponential tail tau fit
-    default: 0.04
     inputBinding:
       position: 103
       prefix: --Eft
@@ -97,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: length of sequences for MSV Gumbel mu fit
-    default: 200
     inputBinding:
       position: 103
       prefix: --EmL
@@ -106,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: number of sequences for MSV Gumbel mu fit
-    default: 200
     inputBinding:
       position: 103
       prefix: --EmN
@@ -115,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: length of sequences for Viterbi Gumbel mu fit
-    default: 200
     inputBinding:
       position: 103
       prefix: --EvL
@@ -124,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: number of sequences for Viterbi Gumbel mu fit
-    default: 200
     inputBinding:
       position: 103
       prefix: --EvN
@@ -133,7 +123,6 @@ inputs:
       - 'null'
       - float
     doc: 'Stage 1 (MSV) threshold: promote hits w/ P <= F1'
-    default: 0.02
     inputBinding:
       position: 103
       prefix: --F1
@@ -142,7 +131,6 @@ inputs:
       - 'null'
       - float
     doc: 'Stage 2 (Vit) threshold: promote hits w/ P <= F2'
-    default: 0.001
     inputBinding:
       position: 103
       prefix: --F2
@@ -151,7 +139,6 @@ inputs:
       - 'null'
       - float
     doc: 'Stage 3 (Fwd) threshold: promote hits w/ P <= F3'
-    default: 1e-05
     inputBinding:
       position: 103
       prefix: --F3
@@ -288,7 +275,6 @@ inputs:
       - 'null'
       - int
     doc: 'set RNG seed to <n> (if 0: one-time arbitrary seed)'
-    default: 42
     inputBinding:
       position: 103
       prefix: --seed
@@ -305,7 +291,6 @@ inputs:
       - 'null'
       - int
     doc: set max width of ASCII text output lines
-    default: 120
     inputBinding:
       position: 103
       prefix: --textw

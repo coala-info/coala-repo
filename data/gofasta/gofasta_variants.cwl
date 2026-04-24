@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Only report variants before (and including) this position
-    default: -1
     inputBinding:
       position: 101
       prefix: --end
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - File
     doc: Multiple sequence alignment in fasta format
-    default: stdin
     inputBinding:
       position: 101
       prefix: --msa
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Only report variants after (and including) this position
-    default: -1
     inputBinding:
       position: 101
       prefix: --start
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

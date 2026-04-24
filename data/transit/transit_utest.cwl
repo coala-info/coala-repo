@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: Ignore TAs occuring at given fraction (as integer) of the C terminus
-    default: 0.0
     inputBinding:
       position: 104
       prefix: -iC
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: Ignore TAs occuring at given fraction (as integer) of the N terminus
-    default: 0.0
     inputBinding:
       position: 104
       prefix: -iN
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: Normalization method
-    default: TTR
     inputBinding:
       position: 104
       prefix: -n
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform LOESS Correction; Helps remove possible genomic position bias
-    default: false
     inputBinding:
       position: 104
       prefix: -l

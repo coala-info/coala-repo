@@ -118,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: CPU shares for container
-    default: -1
     inputBinding:
       position: 103
       prefix: --cpu-shares

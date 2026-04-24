@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: chunk size (in bytes)
-    default: 64000000
     inputBinding:
       position: 102
       prefix: --buffer-size
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: output buffer size (in bytes)
-    default: 512000000
     inputBinding:
       position: 102
       prefix: --output-buffer-size

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: Contig overlap cutoff
-    default: 1.5
     inputBinding:
       position: 101
       prefix: -c
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: Hybrid contig overlap cutoff
-    default: 5.0
     inputBinding:
       position: 101
       prefix: -hco

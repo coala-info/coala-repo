@@ -10,7 +10,6 @@ inputs:
       - string
     doc: sequencing adapter to trim [DEFAULT Illumina AGATCGGAAGAGCACACGTCTGAA 
       p7]. Specify 'p3' or AGATCGGAAGAGCGGTTCAG to trim legacy p3 sequence
-    default: Illumina AGATCGGAAGAGCACACGTCTGAA p7
     inputBinding:
       position: 101
       prefix: --adapter
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: sequencing adaptor to trim for the reverse read
-    default: AGATCGGAAGAGCGTCGTG
     inputBinding:
       position: 101
       prefix: --adapter2
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: number of mismatches allowed for 5prime barcode
-    default: 0
     inputBinding:
       position: 101
       prefix: --fiveprimemismatches
@@ -100,7 +97,6 @@ inputs:
       - int
     doc: When using single end reads for 3' demultiplexing, this is the minimum 
       adapter trimming amount for a 3'barcode to be detected. Default = 3
-    default: 3
     inputBinding:
       position: 101
       prefix: --min_trim
@@ -117,7 +113,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for output sequences
-    default: demux
     inputBinding:
       position: 101
       prefix: --outputprefix
@@ -150,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -159,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: number of mismatches allowed for 3prime barcode
-    default: 0
     inputBinding:
       position: 101
       prefix: --threeprimemismatches

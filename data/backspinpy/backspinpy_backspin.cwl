@@ -11,7 +11,6 @@ inputs:
     doc: "If the difference between the average expression of two groups is lower
       than threshold the algorythm \n              uses higly correlated genes to
       assign the gene to one of the two groups"
-    default: 0.2
     inputBinding:
       position: 101
       prefix: -r
@@ -46,7 +45,6 @@ inputs:
       - int
     doc: Minimal number of cells that a group must contain for splitting to be 
       allowed.
-    default: 2
     inputBinding:
       position: 101
       prefix: -c
@@ -56,7 +54,6 @@ inputs:
       - int
     doc: Minimal number of genes that a group must contain for splitting to be 
       allowed.
-    default: 2
     inputBinding:
       position: 101
       prefix: -g
@@ -66,7 +63,6 @@ inputs:
       - float
     doc: Minimum score that a breaking point has to reach to be suitable for 
       splitting.
-    default: 1.15
     inputBinding:
       position: 101
       prefix: -k
@@ -75,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Number of the iterations used in the preparatory SPIN.
-    default: 10
     inputBinding:
       position: 101
       prefix: -t
@@ -87,7 +82,6 @@ inputs:
       SPIN.\n              Smaller values will increase the number of SPIN iterations
       and result in higher \n              precision in the first step but longer
       execution time."
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -s
@@ -107,7 +101,6 @@ inputs:
       - int
     doc: "Number of the iterations used for every width parameter.\n             \
       \ Does not apply on the first run (use -t instead)"
-    default: 8
     inputBinding:
       position: 101
       prefix: -T
@@ -119,7 +112,6 @@ inputs:
       values will increase the number of SPIN iterations and result in higher \n \
       \             precision but longer execution time.\n              Does not apply
       on the first run (use -s instead)"
-    default: 0.3
     inputBinding:
       position: 101
       prefix: -S

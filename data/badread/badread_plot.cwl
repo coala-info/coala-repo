@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not display plots (for testing purposes)
-    default: false
     inputBinding:
       position: 101
       prefix: --no_plot
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Window size in bp
-    default: 100
     inputBinding:
       position: 101
       prefix: --window

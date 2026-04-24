@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: ani identity
-    default: 99
     inputBinding:
       position: 101
       prefix: --ani
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Difference of structure (counted by ani).
-    default: 5
     inputBinding:
       position: 101
       prefix: --distance
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: How much contig to download from NCBI.
-    default: 20
     inputBinding:
       position: 101
       prefix: --download_contig_nums
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: Mash output threshold.
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --mash_threshold
@@ -95,7 +91,6 @@ inputs:
       - 'null'
       - string
     doc: Minimap2 -x argument.
-    default: asm5
     inputBinding:
       position: 101
       prefix: --minimap_args
@@ -118,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

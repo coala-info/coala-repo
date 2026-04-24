@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer length for clustering
-    default: 10
     inputBinding:
       position: 102
       prefix: -K
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer length for seed
-    default: 4
     inputBinding:
       position: 102
       prefix: -k
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of clones
-    default: 1000
     inputBinding:
       position: 102
       prefix: -M
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum fraction of mismatches
-    default: 0.2
     inputBinding:
       position: 102
       prefix: -f
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of clones
-    default: 2
     inputBinding:
       position: 102
       prefix: -m
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads to form a cluster
-    default: 5
     inputBinding:
       position: 102
       prefix: -r

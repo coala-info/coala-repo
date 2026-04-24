@@ -25,7 +25,6 @@ inputs:
       - int
     doc: The maximum number of unbalanced gaps allowed. Half the bandwidth of 
       the banded Smith-Waterman algorithm.
-    default: 14
     inputBinding:
       position: 101
       prefix: -bandwidth
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Cap on penalty for exiting alignment of a sequence
-    default: -20
     inputBinding:
       position: 101
       prefix: -cappenalty
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Size of region to extend left or right
-    default: 10000
     inputBinding:
       position: 101
       prefix: -L
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: If '-matrix repeatscout' used, apply this penalty for a gap
-    default: -5
     inputBinding:
       position: 101
       prefix: -gap
@@ -85,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: If '-matrix repeatscout' used, apply this reward for match
-    default: 1
     inputBinding:
       position: 101
       prefix: -match
@@ -135,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: Cap on the number of sequences to align
-    default: 10000
     inputBinding:
       position: 101
       prefix: -maxoccurrences
@@ -145,7 +139,6 @@ inputs:
       - int
     doc: Amount that a the alignment score needs to improve each step to be 
       considered progress
-    default: 3
     inputBinding:
       position: 101
       prefix: -minimprovement
@@ -154,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum required length for a sequence to be reported
-    default: 50
     inputBinding:
       position: 101
       prefix: -minlength
@@ -163,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: If '-matrix repeatscout' used, apply this penalty for a mismatch
-    default: -1
     inputBinding:
       position: 101
       prefix: -mismatch
@@ -184,7 +175,6 @@ inputs:
       - 'null'
       - int
     doc: Stop the alignment after this number of no-progress columns
-    default: 100
     inputBinding:
       position: 101
       prefix: -stopafter

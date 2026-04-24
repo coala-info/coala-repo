@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Debug mode: also keep intermediate results'
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: Taxonomic domain name
-    default: Bacteria
     inputBinding:
       position: 102
       prefix: --domain
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite output directory
-    default: false
     inputBinding:
       position: 102
       prefix: --force
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: '[auto]'
     inputBinding:
       position: 102
       prefix: --outdir
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: 'Output verbosity. Levels: 0 (silent), 1 (warnings), 2 (verbose)'
-    default: 2
     inputBinding:
       position: 102
       prefix: --verbose

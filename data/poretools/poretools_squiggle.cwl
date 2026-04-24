@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: The number of plot facets (sub-plots). More is better for long reads.
-    default: 6
     inputBinding:
       position: 102
       prefix: --num-facets

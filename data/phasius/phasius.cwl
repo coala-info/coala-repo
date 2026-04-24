@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Number of decompression threads to use per cram/bam
-    default: 1
     inputBinding:
       position: 102
       prefix: --decompression
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Number of crams/bams to parse in parallel
-    default: 4
     inputBinding:
       position: 102
       prefix: --threads

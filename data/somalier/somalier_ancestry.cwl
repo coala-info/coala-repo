@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: number of principal components to use in the reduced dataset
-    default: 5
     inputBinding:
       position: 102
       prefix: --n-pcs
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: batch size fo training neural network
-    default: 32
     inputBinding:
       position: 102
       prefix: --nn-batch-size
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: shape of hidden layer in neural network
-    default: 16
     inputBinding:
       position: 102
       prefix: --nn-hidden-size
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: number of labeled samples to test for NN convergence
-    default: 101
     inputBinding:
       position: 102
       prefix: --nn-test-samples

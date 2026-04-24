@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum allowed distance for merging events.
-    default: 50
     inputBinding:
       position: 101
       prefix: --max-distance
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum allowed ratio between event lengths.
-    default: 1.3
     inputBinding:
       position: 101
       prefix: --max-length-ratio
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum required Jaccard index for overlap.
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --min-jaccard

@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Logging verbosity level
-    default: debug
     inputBinding:
       position: 101
       prefix: --log-level

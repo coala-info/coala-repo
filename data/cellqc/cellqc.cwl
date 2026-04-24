@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - File
     doc: Path to a configuration file
-    default: None
     inputBinding:
       position: 101
       prefix: --config configfile
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: Timestamp string
-    default: '260225_205103'
     inputBinding:
       position: 101
       prefix: --config nowtimestr
@@ -63,7 +61,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: /
     inputBinding:
       position: 101
       prefix: --config outdir
@@ -80,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: Path to the sample file
-    default: None
     inputBinding:
       position: 101
       prefix: --config samplefile

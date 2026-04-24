@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: Path to MMseqs2 database
-    default: auto-download from Zenodo on first run
     inputBinding:
       position: 101
       prefix: --bifdb
@@ -59,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: Color scheme for heatmap and annotations
-    default: blue
     inputBinding:
       position: 101
       prefix: --heatmap_col
@@ -74,7 +72,6 @@ inputs:
       - 'null'
       - File
     doc: Path to mapping file
-    default: packaged or downloaded with database
     inputBinding:
       position: 101
       prefix: --mapping_file
@@ -83,7 +80,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: bifidoAnnotator_output
     inputBinding:
       position: 101
       prefix: --output_dir
@@ -100,7 +96,6 @@ inputs:
       - 'null'
       - float
     doc: MMseqs2 sensitivity
-    default: 7.5
     inputBinding:
       position: 101
       prefix: --sensitivity
@@ -109,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for MMseqs2
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

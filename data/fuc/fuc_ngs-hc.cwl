@@ -44,7 +44,6 @@ inputs:
       samples for which readers are open at once and therefore provides a way to
       minimize memory consumption. The size of 0 means no batching (i.e. readers
       for all samples will be opened at once).
-    default: 0
     inputBinding:
       position: 107
       prefix: --batch
@@ -106,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 107
       prefix: --thread

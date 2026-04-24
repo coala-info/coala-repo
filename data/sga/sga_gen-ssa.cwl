@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: use NUM threads to construct the index
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

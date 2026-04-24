@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Number of allowed gaps for an interval.
-    default: 500
     inputBinding:
       position: 101
       prefix: --allowed_gaps
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Verbose level
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbose_level

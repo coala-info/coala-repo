@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: input FASTQ path, default stdin
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input-fastq-path

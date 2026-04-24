@@ -13,7 +13,6 @@ inputs:
       - boolean
     doc: Optional flag to set output as TSV regardless whether running as CGI. 
       This is only available when running under CGI.
-    default: false
     inputBinding:
       position: 101
       prefix: -astsv
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - boolean
     doc: Optional flag to treat square brackets as opaque strings, not comments.
-    default: true
     inputBinding:
       position: 101
       prefix: -comments
@@ -32,7 +30,6 @@ inputs:
       - string
     doc: Optional argument to specify the tree file format 
       (newick|nexus|nexml|phyloxml).
-    default: newick
     inputBinding:
       position: 101
       prefix: -format
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - boolean
     doc: Optional flag to treat quotes as opaque strings.
-    default: true
     inputBinding:
       position: 101
       prefix: -quotes
@@ -66,7 +62,6 @@ inputs:
       - string
     doc: Optional argument to specific the character that separates the taxon 
       name from any additional metdata in leaf labels.
-    default: '|'
     inputBinding:
       position: 101
       prefix: -separator
@@ -75,7 +70,6 @@ inputs:
       - 'null'
       - boolean
     doc: Optional flag to include subspecific epithets in taxa.
-    default: false
     inputBinding:
       position: 101
       prefix: -trinomials
@@ -94,7 +88,6 @@ inputs:
       - 'null'
       - boolean
     doc: Optional flag to treat whitespace as opaque strings.
-    default: true
     inputBinding:
       position: 101
       prefix: -whitespace

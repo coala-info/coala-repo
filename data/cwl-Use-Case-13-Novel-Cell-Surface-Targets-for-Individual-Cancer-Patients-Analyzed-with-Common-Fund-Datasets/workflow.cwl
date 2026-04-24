@@ -121,7 +121,6 @@ steps:
       data:
         source: step-1-data
       outputFilename:
-        default: step-1-output.json
     out:
       - output
   step-2:
@@ -133,7 +132,6 @@ steps:
         label: File URL
         source: step-1/output
       outputFilename:
-        default: step-2-output.json
     out:
       - output
   step-3:
@@ -146,7 +144,6 @@ steps:
         label: Gene Count Matrix
         source: step-2/output
       outputFilename:
-        default: step-3-output.json
     out:
       - output
   step-4:
@@ -160,7 +157,6 @@ steps:
         label: Scored Genes
         source: step-3/output
       outputFilename:
-        default: step-4-output.json
     out:
       - output
   step-5:
@@ -173,7 +169,6 @@ steps:
         label: Gene
         source: step-4/output
       outputFilename:
-        default: step-5-output.json
     out:
       - output
   step-6:
@@ -186,7 +181,6 @@ steps:
         label: LINCS L1000 Reverse Search Dashboard
         source: step-5/output
       outputFilename:
-        default: step-6-output.json
     out:
       - output
   step-7:
@@ -199,7 +193,6 @@ steps:
         label: LINCS L1000 Reverse Search Dashboard
         source: step-5/output
       outputFilename:
-        default: step-7-output.json
     out:
       - output
   step-8:
@@ -211,7 +204,6 @@ steps:
         label: Scored Genes
         source: step-7/output
       outputFilename:
-        default: step-8-output.json
     out:
       - output
   step-9:
@@ -223,7 +215,6 @@ steps:
         label: Gene
         source: step-4/output
       outputFilename:
-        default: step-9-output.json
     out:
       - output
   step-10:
@@ -235,7 +226,6 @@ steps:
         label: MetGENE Summary
         source: step-9/output
       outputFilename:
-        default: step-10-output.json
     out:
       - output
   step-11:
@@ -247,7 +237,6 @@ steps:
         label: MetGENE Summary
         source: step-9/output
       outputFilename:
-        default: step-11-output.json
     out:
       - output
   step-12:
@@ -259,7 +248,6 @@ steps:
         label: Gene
         source: step-4/output
       outputFilename:
-        default: step-12-output.json
     out:
       - output
   step-13:
@@ -271,6 +259,5 @@ steps:
         label: Gene
         source: step-4/output
       outputFilename:
-        default: step-13-output.json
     out:
       - output

@@ -59,14 +59,12 @@ inputs:
 - id: threads
   type: int?
   doc: Number of additional threads to use
-  default: 0
   inputBinding:
     position: 101
     prefix: --threads
 - id: output_filename
   type: string?
   doc: Name of the output file
-  default: reset.bam
   inputBinding:
     position: 101
     prefix: -o

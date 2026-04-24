@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: Generalized UniFrac alpha, default is 1.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -a
@@ -81,7 +80,6 @@ inputs:
       UniFrac over a subset of stripes. partial-report : Start and stop suggestions
       for partial compute. merge-partial : Merge partial UniFrac results. check-partial
       : Check partial UniFrac results. multi : compute UniFrac multiple times.'
-    default: one-off
     inputBinding:
       position: 101
       prefix: --mode
@@ -98,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: 'if mode==multi, number of subsampled UniFracs to compute (default: 100)'
-    default: 100
     inputBinding:
       position: 101
       prefix: --n-subsamples
@@ -108,7 +105,6 @@ inputs:
       - int
     doc: Internally split the problem in n substeps for reduced memory 
       footprint, default is 1.
-    default: 1
     inputBinding:
       position: 101
       prefix: --n-substeps
@@ -124,7 +120,6 @@ inputs:
       - boolean
     doc: 'Should it normalize sample counts?: true : [DEFAULT] Do normalize, i.e.
       standard unifrac. false : Do not normalize, i.e. absolute quant mode.'
-    default: true
     inputBinding:
       position: 101
       prefix: --normalize-sample-counts
@@ -153,7 +148,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of PCoA dimensions to compute (default: 10, do not compute if 0)'
-    default: 10
     inputBinding:
       position: 101
       prefix: --pcoa
@@ -163,7 +157,6 @@ inputs:
       - int
     doc: 'Number of PERMANOVA permutations to compute (default: 999 with -g, do not
       compute if 0)'
-    default: 999
     inputBinding:
       position: 101
       prefix: --permanova
@@ -213,7 +206,6 @@ inputs:
       - 'null'
       - boolean
     doc: Subsample with or without replacement (default is with)
-    default: true
     inputBinding:
       position: 101
       prefix: --subsample-replacement

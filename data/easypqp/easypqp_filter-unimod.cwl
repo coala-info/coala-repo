@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum peptide length to keep.
-    default: 9999
     inputBinding:
       position: 102
       prefix: --max_length
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum intensity to keep a peptide.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --min_intensity
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum peptide length to keep.
-    default: 0
     inputBinding:
       position: 102
       prefix: --min_length
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum score to keep a peptide.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --min_score

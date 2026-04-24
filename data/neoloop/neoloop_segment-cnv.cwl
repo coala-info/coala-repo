@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Bin size in base pairs.
-    default: None
     inputBinding:
       position: 101
       prefix: --binsize
@@ -20,7 +19,6 @@ inputs:
       - float
     doc: The P-value cutoff used in the circular binary segmentation (CBS) 
       algorithm.
-    default: '1e-05'
     inputBinding:
       position: 101
       prefix: --cbs-pvalue
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - File
     doc: Copy number profile in bedGraph format.
-    default: None
     inputBinding:
       position: 101
       prefix: --cnv-file
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - File
     doc: Logging file name.
-    default: cnv-seg.log
     inputBinding:
       position: 101
       prefix: --logFile
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum allowed distance between HMM and CBS breakpoints.
-    default: 4
     inputBinding:
       position: 101
       prefix: --max-dist
@@ -58,7 +53,6 @@ inputs:
     doc: Minimum copy number difference between neighboring segments. Two 
       neighboring segments will be merged together if the difference of their 
       copy number ratio is less than this value.
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --min-diff
@@ -68,7 +62,6 @@ inputs:
       - int
     doc: Minimum segment size. Small segments with a size less than this number 
       of bins will be merged with nearby larger segments.
-    default: 3
     inputBinding:
       position: 101
       prefix: --min-segment-size
@@ -77,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Number of worker processes.
-    default: 1
     inputBinding:
       position: 101
       prefix: --nproc
@@ -87,7 +79,6 @@ inputs:
       - int
     doc: The number of states to initialize. By default, this number is 
       estimated using a Gaussian Mixture model and the AIC criterion.
-    default: None
     inputBinding:
       position: 101
       prefix: --num-of-states
@@ -96,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Ploidy of the cell.
-    default: 2
     inputBinding:
       position: 101
       prefix: --ploidy

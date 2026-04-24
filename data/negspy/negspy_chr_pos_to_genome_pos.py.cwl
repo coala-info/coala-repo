@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Genome assembly to use (e.g., hg19, hg38, mm10)
-    default: hg19
     inputBinding:
       position: 103
       prefix: --assembly

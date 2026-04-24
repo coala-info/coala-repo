@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Read count below which ambiguous base 'n' is reported
-    default: None
     inputBinding:
       position: 101
       prefix: -n
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: Fasta file containing the reference sequence
-    default: None
     inputBinding:
       position: 101
       prefix: -f
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum frequency for an ambiguous nucleotide
-    default: 0.05
     inputBinding:
       position: 101
       prefix: -a
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum phred quality score a base has to reach to be counted
-    default: 15
     inputBinding:
       position: 101
       prefix: -q
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read depth for reporting variants per locus
-    default: 50
     inputBinding:
       position: 101
       prefix: -c
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: Patient/sample identifier
-    default: CONSENSUS
     inputBinding:
       position: 101
       prefix: -N
@@ -71,7 +65,6 @@ inputs:
     doc: Region of interested in BED format, e.g. HXB2:2253-3869. Loci are 
       interpreted using 0-based indexing, and a half-open interval is used, i.e,
       [start:end)
-    default: None
     inputBinding:
       position: 101
       prefix: -r

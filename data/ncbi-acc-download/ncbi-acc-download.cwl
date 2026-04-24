@@ -27,7 +27,6 @@ inputs:
     doc: "Perform extended validation. Possible options are 'none' to skip validation,
       'loads' to check if the sequence file loads in Biopython, or 'all' to run all
       checks. Default: none"
-    default: none
     inputBinding:
       position: 102
       prefix: --extended-validation
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: 'File format to download nucleotide sequences in. Default: genbank'
-    default: genbank
     inputBinding:
       position: 102
       prefix: --format
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: 'Molecule type to download. Default: nucleotide'
-    default: nucleotide
     inputBinding:
       position: 102
       prefix: --molecule

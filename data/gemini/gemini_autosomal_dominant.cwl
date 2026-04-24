@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: A list of columns that you would like returned.
-    default: '*'
     inputBinding:
       position: 102
       prefix: --columns
@@ -68,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum genotype quality required for each sample in a family
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-gq
@@ -86,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum aligned sequence depth required for each sample in a family
-    default: 0
     inputBinding:
       position: 102
       prefix: -d

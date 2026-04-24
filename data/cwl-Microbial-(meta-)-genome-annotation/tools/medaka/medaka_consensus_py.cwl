@@ -48,7 +48,6 @@ inputs:
   threads: #### CHECK
     label: Number of CPU threads used by tool.
     type: int?
-    default: 1
     inputBinding:
       prefix: -t # number of threads with which to create features (default: 1)
   reads: #### CHECK

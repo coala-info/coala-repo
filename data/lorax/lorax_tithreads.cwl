@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: max. fractional tumor-in-normal contamination
-    default: 0
     inputBinding:
       position: 102
       prefix: --contam
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: max. segment size
-    default: 10000
     inputBinding:
       position: 102
       prefix: --maxsize
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: min. chromosome length
-    default: 40000000
     inputBinding:
       position: 102
       prefix: --chrlen
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: min. clipping length
-    default: 25
     inputBinding:
       position: 102
       prefix: --clip
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: min. mapping quality
-    default: 1
     inputBinding:
       position: 102
       prefix: --qual
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: min. segment size
-    default: 100
     inputBinding:
       position: 102
       prefix: --minsize
@@ -83,7 +77,6 @@ inputs:
       - 'null'
       - float
     doc: min. sequence entropy
-    default: 1.79999995
     inputBinding:
       position: 102
       prefix: --entropy
@@ -92,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: min. split-read support
-    default: 3
     inputBinding:
       position: 102
       prefix: --split
@@ -101,7 +93,6 @@ inputs:
       - 'null'
       - string
     doc: output prefix
-    default: out
     inputBinding:
       position: 102
       prefix: --outprefix
@@ -110,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: ploidy
-    default: 2
     inputBinding:
       position: 102
       prefix: --ploidy
@@ -119,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: SD for coverage deviation
-    default: 3
     inputBinding:
       position: 102
       prefix: --sd

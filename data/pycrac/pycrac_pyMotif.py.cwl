@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: this option allows you to set the longest k-mer length.
-    default: 6
     inputBinding:
       position: 101
       prefix: --k_max
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: this option allows you to set the shortest k-mer length.
-    default: 4
     inputBinding:
       position: 101
       prefix: --k_min
@@ -55,7 +53,6 @@ inputs:
       - int
     doc: choose the maximum number of enriched k-mer sequences you want to have 
       reported in output files.
-    default: 100
     inputBinding:
       position: 101
       prefix: --numberofkmers
@@ -65,7 +62,6 @@ inputs:
       - int
     doc: sets the number of nucleotides a motif has to overlap with a genomic 
       feature before it is considered a hit.
-    default: 1
     inputBinding:
       position: 101
       prefix: --overlap
@@ -77,7 +73,6 @@ inputs:
       50' or '--range=50', then the program will add 50 nucleotides to each 
       feature on each side regardless of whether the GTF file has genes with 
       annotated UTRs.
-    default: 100
     inputBinding:
       position: 101
       prefix: --range

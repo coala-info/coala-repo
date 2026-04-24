@@ -56,7 +56,6 @@ inputs:
     doc: Output filename, defaults to output_file, advisable to use sample name here.
     inputBinding:
       prefix: --outFileName
-    default: output_file.bw
 
 
 outputs:

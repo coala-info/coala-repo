@@ -12,7 +12,6 @@ inputs:
       - int
     doc: filter MSA by selecting most diverse set of sequences, keeping at least
       this many seqs in each MSA block of length 50
-    default: 0
     inputBinding:
       position: 101
       prefix: -diff
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: max number of HMM columns
-    default: 20001
     inputBinding:
       position: 101
       prefix: -maxres
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: max number of input rows
-    default: 65535
     inputBinding:
       position: 101
       prefix: -maxseq
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: maximum pairwise sequence identity (%)
-    default: 90
     inputBinding:
       position: 101
       prefix: -id
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: minimum coverage with query (%)
-    default: 0
     inputBinding:
       position: 101
       prefix: -cov
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: minimum score per column with query
-    default: -20.0
     inputBinding:
       position: 101
       prefix: -qsc
@@ -80,7 +74,6 @@ inputs:
       - 'null'
       - float
     doc: minimum sequence identity with query (%)
-    default: 0
     inputBinding:
       position: 101
       prefix: -qid

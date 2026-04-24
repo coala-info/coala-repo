@@ -72,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: Set logging level.
-    default: INFO
     inputBinding:
       position: 101
       prefix: --loglevel
@@ -89,7 +88,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum e-value allowed for valid hit.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --maxeval
@@ -98,7 +96,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum hit coverage as proportion of model length.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --mincov
@@ -125,7 +122,6 @@ inputs:
       - string
     doc: 'Orientation pattern for pairing. F=Forward(+), R=Reverse(-). Options: F,R
       (TIR), F,F (LTR), R,R, R,F.'
-    default: F,R
     inputBinding:
       position: 101
       prefix: --orientation
@@ -134,7 +130,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory.
-    default: current directory
     inputBinding:
       position: 101
       prefix: --outdir
@@ -183,7 +178,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations when no new pairs found.
-    default: 0
     inputBinding:
       position: 101
       prefix: --stableReps

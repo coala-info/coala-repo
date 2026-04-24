@@ -50,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: kmer size flanking each side of homopolymer
-    default: 25
     inputBinding:
       position: 102
       prefix: --kmer
@@ -69,7 +68,6 @@ inputs:
       - int
     doc: maximum distance between kmers of a flanking region to merge them into 
       one context
-    default: 1
     inputBinding:
       position: 102
       prefix: --maxdist
@@ -78,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: minimum homopolymer tract length to be compared
-    default: 4
     inputBinding:
       position: 102
       prefix: --minsize
@@ -87,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of reads for tract+context to be considered
-    default: 5
     inputBinding:
       position: 102
       prefix: --minreads
@@ -105,7 +101,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory, or 'random' for generating random dir name
-    default: .
     inputBinding:
       position: 102
       prefix: --outdir

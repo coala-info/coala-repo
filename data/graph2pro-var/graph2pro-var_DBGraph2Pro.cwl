@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: default kmer size
-    default: 31
     inputBinding:
       position: 101
       prefix: -k
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: default max_depth
-    default: 10
     inputBinding:
       position: 101
       prefix: -d
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: maximum peptide length to be output
-    default: 50
     inputBinding:
       position: 101
       prefix: -m
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: maximum sequence length (for memory allocation)
-    default: 3000
     inputBinding:
       position: 101
       prefix: -L
@@ -82,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: minimum peptide length to be output
-    default: 6
     inputBinding:
       position: 101
       prefix: -p
@@ -91,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: default mis-cleavage
-    default: 0
     inputBinding:
       position: 101
       prefix: -c

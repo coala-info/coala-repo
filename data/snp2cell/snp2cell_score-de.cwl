@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: method for DE calculation
-    default: wilcoxon
     inputBinding:
       position: 104
   - id: n_cpu
@@ -71,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: 'rank DE scores by absolute value, up- or downregulation; default: upregulation'
-    default: up
     inputBinding:
       position: 104
       prefix: -r
@@ -96,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: key for accessing saved snp scores in object
-    default: snp_score
     inputBinding:
       position: 104
       prefix: -k

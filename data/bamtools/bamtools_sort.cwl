@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: max number of alignments per tempfile
-    default: 500000
     inputBinding:
       position: 101
       prefix: -n
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: max memory to use (in Mb)
-    default: 1024
     inputBinding:
       position: 101
       prefix: -mem

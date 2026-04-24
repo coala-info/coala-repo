@@ -10,7 +10,6 @@ inputs:
       - string
     doc: 'The annotation text file output from Seshat. Available options: (short,
       long).'
-    default: long
     inputBinding:
       position: 101
       prefix: --annotation-type
@@ -20,7 +19,6 @@ inputs:
       - string
     doc: 'The human genome assembly of the input VCF. Available options: (hg17, hg19,
       hg38).'
-    default: hg38
     inputBinding:
       position: 101
       prefix: --assembly
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Only consider emails that arrived <= hours.
-    default: 10
     inputBinding:
       position: 101
       prefix: --newer-than-email
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: The Seshat batch annotation URL.
-    default: http://vps338341.ovh.net/batch_analysis
     inputBinding:
       position: 101
       prefix: --url
@@ -73,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: How long to wait for Seshat to email in seconds.
-    default: 200
     inputBinding:
       position: 101
       prefix: --wait-for-email
@@ -82,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Seconds to wait before raising an exception.
-    default: 200
     inputBinding:
       position: 101
       prefix: --wait-for-upload

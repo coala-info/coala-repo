@@ -84,7 +84,6 @@ inputs:
       - 'null'
       - float
     doc: Abundance factor
-    default: 10
     inputBinding:
       position: 107
       prefix: -Xa
@@ -125,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: Weight for branch point signal
-    default: 0
     inputBinding:
       position: 107
       prefix: -yB
@@ -134,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: Number of characters per line in alignment
-    default: 60
     inputBinding:
       position: 107
       prefix: -l
@@ -143,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: Weight for coding potential
-    default: 2
     inputBinding:
       position: 107
       prefix: -yz
@@ -160,7 +156,6 @@ inputs:
       - 'null'
       - int
     doc: Band width for DP matrix scan
-    default: 100
     inputBinding:
       position: 107
       prefix: -w
@@ -177,7 +172,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for a frame shift error
-    default: 100
     inputBinding:
       position: 107
       prefix: -yx
@@ -186,7 +180,6 @@ inputs:
       - 'null'
       - int
     doc: Gap-extension penalty
-    default: 3
     inputBinding:
       position: 107
       prefix: -u
@@ -195,7 +188,6 @@ inputs:
       - 'null'
       - int
     doc: Gap-open penalty
-    default: 8
     inputBinding:
       position: 107
       prefix: -v
@@ -268,7 +260,6 @@ inputs:
       - 'null'
       - int
     doc: '0:DP; 1-3:HSP-Search; 4-7: Block-Search'
-    default: 3
     inputBinding:
       position: 107
       prefix: -Q
@@ -285,7 +276,6 @@ inputs:
       - 'null'
       - int
     doc: Weight for intron potential
-    default: 0
     inputBinding:
       position: 107
       prefix: -yZ
@@ -294,7 +284,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of candidate loci (effective only for map-and-align modes)
-    default: 4
     inputBinding:
       position: 107
       prefix: -M
@@ -319,7 +308,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum expected length of intron
-    default: 30
     inputBinding:
       position: 107
       prefix: -yL
@@ -328,7 +316,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum ORF length with -KP
-    default: 30
     inputBinding:
       position: 107
       prefix: -Xr
@@ -337,7 +324,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum score for report
-    default: 35
     inputBinding:
       position: 107
       prefix: -H
@@ -362,7 +348,6 @@ inputs:
       - 'null'
       - int
     doc: Nucleotide match score
-    default: 2
     inputBinding:
       position: 107
       prefix: -ym
@@ -371,7 +356,6 @@ inputs:
       - 'null'
       - int
     doc: Nucleotide mismatch score
-    default: -6
     inputBinding:
       position: 107
       prefix: -yn
@@ -380,7 +364,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bit patterns
-    default: 1
     inputBinding:
       position: 107
       prefix: -XC
@@ -389,7 +372,6 @@ inputs:
       - 'null'
       - string
     doc: Number of outputs per query
-    default: '1'
     inputBinding:
       position: 107
       prefix: -M
@@ -398,7 +380,6 @@ inputs:
       - 'null'
       - int
     doc: Orientation. 0:annotation; 1:forward; 2:reverse; 3:both
-    default: 3
     inputBinding:
       position: 107
       prefix: -S
@@ -410,7 +391,6 @@ inputs:
       intron-inf, cDNA, translated, block-only, SAM, binary, query+GS for GvsA; 
       statistics, alignment, Sugar, Psl, XYL, srat+XYL, Cigar, Vulgar, SAM for 
       AvsA)
-    default: '4'
     inputBinding:
       position: 107
       prefix: -O
@@ -435,7 +415,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for a premature termination codon
-    default: 100
     inputBinding:
       position: 107
       prefix: -yo
@@ -444,7 +423,6 @@ inputs:
       - 'null'
       - int
     doc: "Remove 3' poly A >= # (0: don't remove)"
-    default: 0
     inputBinding:
       position: 107
       prefix: -pa
@@ -509,7 +487,6 @@ inputs:
       - 'null'
       - int
     doc: Weight for splice site signal
-    default: 8
     inputBinding:
       position: 107
       prefix: -yy
@@ -542,7 +519,6 @@ inputs:
       - 'null'
       - string
     doc: Use species-specific parameter set
-    default: 0.0/0.5
     inputBinding:
       position: 107
       prefix: -yS

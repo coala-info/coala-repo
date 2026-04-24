@@ -31,7 +31,6 @@ inputs:
       prefix: --contig_file
   min_length:
     type: int?
-    default: 500
     label: contig length threshold
     inputBinding:
       position: 3

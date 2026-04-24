@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform test clade branch-level testing
-    default: No
     inputBinding:
       position: 101
       prefix: --branch-level-analysis
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: Fit the full unconstrained model
-    default: Yes
     inputBinding:
       position: 101
       prefix: --full-model
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Labeling strategy for internal nodes
-    default: all-descendants
     inputBinding:
       position: 101
       prefix: --labeling-strategy
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: The substitution model to use
-    default: WAG
     inputBinding:
       position: 101
       prefix: --model
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: How many site rate classes to use
-    default: 4
     inputBinding:
       position: 101
       prefix: --rate-classes
@@ -67,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: Site to site rate variation
-    default: None
     inputBinding:
       position: 101
       prefix: --rv
@@ -82,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: The type of data to perform screening on
-    default: protein
     inputBinding:
       position: 101
       prefix: --type

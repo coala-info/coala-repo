@@ -10,7 +10,6 @@ inputs:
       - int
     doc: "Compression level to use for output files if applicable\n          \n  \
       \        [default: 6]"
-    default: 6
     inputBinding:
       position: 101
       prefix: --compression-level
@@ -20,7 +19,6 @@ inputs:
       - int
     doc: "Compression threads to use for output files if applicable\n          \n\
       \          [default: 1]"
-    default: 1
     inputBinding:
       position: 101
       prefix: --compression-threads
@@ -56,7 +54,6 @@ inputs:
       even if no match is found in right\n          - right: Return all records in
       the right input even if no match is found in left\n          - inner: Return
       only records that have a match in both inputs"
-    default: inner
     inputBinding:
       position: 101
       prefix: --how
@@ -65,7 +62,6 @@ inputs:
       - 'null'
       - File
     doc: Primary BED file to use
-    default: stdin
     inputBinding:
       position: 101
       prefix: --a
@@ -104,7 +100,6 @@ inputs:
       \   i: Ignore strand (default)\n          \n          m: Match strand (+/+ or
       -/- only)\n          \n          o: Opposite strand (+/- or -/+ only)\n    \
       \      \n          [default: i]\n          [possible values: i, m, o]"
-    default: i
     inputBinding:
       position: 101
       prefix: --strandedness

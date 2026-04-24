@@ -68,7 +68,6 @@ inputs:
       - string
     doc: sets linter for sequence ('none'|'DNA'|'dna'|'protein'). All non-base/non-AA
       characters are converted to unknowns
-    default: none
     inputBinding:
       position: 101
       prefix: --linter
@@ -78,7 +77,6 @@ inputs:
       - boolean
     doc: sets whether the linter should keep dashes appearing in sequences rather
       than convert them to unknowns
-    default: false
     inputBinding:
       position: 101
       prefix: --linter-keep-dashes
@@ -88,7 +86,6 @@ inputs:
       - boolean
     doc: sets whether the linter should keep lowercase DNA/protein characters appearing
       in sequences rather than capitalise them
-    default: false
     inputBinding:
       position: 101
       prefix: --linter-keep-lowercase
@@ -156,7 +153,6 @@ inputs:
       - 'null'
       - boolean
     doc: set verbose execution (global option)
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

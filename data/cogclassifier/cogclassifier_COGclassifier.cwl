@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - Directory
     doc: Download COG & CDD resources directory
-    default: /root/.cache/cogclassifier_v2
     inputBinding:
       position: 101
       prefix: --download_dir
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: RPS-BLAST e-value parameter
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --evalue
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: RPS-BLAST num_thread parameter
-    default: 19
     inputBinding:
       position: 101
       prefix: --thread_num

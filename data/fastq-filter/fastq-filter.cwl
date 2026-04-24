@@ -26,7 +26,6 @@ inputs:
       - int
     doc: Compression level for the output files. Relevant when output files have
       a .gz extension.
-    default: 2
     inputBinding:
       position: 102
       prefix: --compression-level

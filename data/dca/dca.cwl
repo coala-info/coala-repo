@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Activation function of hidden units
-    default: relu
     inputBinding:
       position: 103
       prefix: --activation
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Batch size
-    default: 32
     inputBinding:
       position: 103
       prefix: --batchsize
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: Batchnorm
-    default: true
     inputBinding:
       position: 103
       prefix: --batchnorm
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - boolean
     doc: Check if the expression matrix has raw (unnormalized) counts
-    default: true
     inputBinding:
       position: 103
       prefix: --checkcounts
@@ -60,7 +56,6 @@ inputs:
       - boolean
     doc: Enable debugging. Checks whether every term in loss functions is 
       finite.
-    default: false
     inputBinding:
       position: 103
       prefix: --debug
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: Dropout rate
-    default: 0
     inputBinding:
       position: 103
       prefix: --dropoutrate
@@ -87,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Number of epochs to stop training if no improvement in loss occurs
-    default: 15
     inputBinding:
       position: 103
       prefix: --earlystop
@@ -97,7 +90,6 @@ inputs:
       - int
     doc: Max number of epochs to continue training in case of no improvement on 
       validation loss
-    default: 300
     inputBinding:
       position: 103
       prefix: --epochs
@@ -106,7 +98,6 @@ inputs:
       - 'null'
       - float
     doc: Clip grad values
-    default: 5.0
     inputBinding:
       position: 103
       prefix: --gradclip
@@ -115,7 +106,6 @@ inputs:
       - 'null'
       - string
     doc: Size of hidden layers
-    default: 64,32,64
     inputBinding:
       position: 103
       prefix: --hiddensize
@@ -124,7 +114,6 @@ inputs:
       - 'null'
       - boolean
     doc: Optimizer hyperparameters
-    default: false
     inputBinding:
       position: 103
       prefix: --hyper
@@ -133,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: Number of epochs used in each hyperpar optimization iteration.
-    default: 100
     inputBinding:
       position: 103
       prefix: --hyperepoch
@@ -143,7 +131,6 @@ inputs:
       - int
     doc: Number of samples drawn from hyperparameter distributions during 
       optimization.
-    default: 1000
     inputBinding:
       position: 103
       prefix: --hypern
@@ -152,7 +139,6 @@ inputs:
       - 'null'
       - string
     doc: Initialization method for weights
-    default: glorot_uniform
     inputBinding:
       position: 103
       prefix: --init
@@ -169,7 +155,6 @@ inputs:
       - 'null'
       - float
     doc: L1 regularization coefficient
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --l1
@@ -178,7 +163,6 @@ inputs:
       - 'null'
       - float
     doc: Encoder-specific L1 regularization coefficient
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --l1enc
@@ -187,7 +171,6 @@ inputs:
       - 'null'
       - float
     doc: L2 regularization coefficient
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --l2
@@ -196,7 +179,6 @@ inputs:
       - 'null'
       - float
     doc: Encoder-specific L2 regularization coefficient
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --l2enc
@@ -205,7 +187,6 @@ inputs:
       - 'null'
       - float
     doc: Learning rate
-    default: 0.001
     inputBinding:
       position: 103
       prefix: --learningrate
@@ -214,7 +195,6 @@ inputs:
       - 'null'
       - boolean
     doc: Log-transform input
-    default: true
     inputBinding:
       position: 103
       prefix: --loginput
@@ -263,7 +243,6 @@ inputs:
       - 'null'
       - boolean
     doc: Zero-mean normalize input
-    default: true
     inputBinding:
       position: 103
       prefix: --norminput
@@ -272,7 +251,6 @@ inputs:
       - 'null'
       - string
     doc: 'Type of size factor estimation. Possible values: deseq, zheng.'
-    default: zheng
     inputBinding:
       position: 103
       prefix: --normtype
@@ -289,7 +267,6 @@ inputs:
       - 'null'
       - string
     doc: Optimization method
-    default: RMSprop
     inputBinding:
       position: 103
       prefix: --optimizer
@@ -299,7 +276,6 @@ inputs:
       - int
     doc: Number of epochs to reduce learning rate if no improvement in loss 
       occurs
-    default: 10
     inputBinding:
       position: 103
       prefix: --reducelr
@@ -308,7 +284,6 @@ inputs:
       - 'null'
       - float
     doc: L2 regularization coefficient for dropout probabilities
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --ridge
@@ -317,7 +292,6 @@ inputs:
       - 'null'
       - boolean
     doc: Save weights
-    default: false
     inputBinding:
       position: 103
       prefix: --saveweights
@@ -326,7 +300,6 @@ inputs:
       - 'null'
       - boolean
     doc: Normalize means by library size
-    default: true
     inputBinding:
       position: 103
       prefix: --sizefactors
@@ -335,7 +308,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use tensorboard for saving weight distributions and visualization.
-    default: false
     inputBinding:
       position: 103
       prefix: --tensorboard
@@ -344,7 +316,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use one fold as a test set
-    default: false
     inputBinding:
       position: 103
       prefix: --testsplit
@@ -353,7 +324,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for training
-    default: all cores
     inputBinding:
       position: 103
       prefix: --threads
@@ -362,7 +332,6 @@ inputs:
       - 'null'
       - boolean
     doc: Transpose input matrix
-    default: false
     inputBinding:
       position: 103
       prefix: --transpose
@@ -372,7 +341,6 @@ inputs:
       - string
     doc: 'Type of autoencoder. Possible values: normal, poisson, nb, nb-shared, nb-conddisp
       (default), nb-fork, zinb, zinb-shared, zinb-conddisp( zinb-fork'
-    default: nb-conddisp
     inputBinding:
       position: 103
       prefix: --type

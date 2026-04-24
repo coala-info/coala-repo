@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: The position toggling for the indexes (1 for true, 0 for false).
-    default: 1
     inputBinding:
       position: 101
       prefix: --include_toggle
@@ -95,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for analyses.
-    default: 2
     inputBinding:
       position: 101
       prefix: --num_threads
@@ -104,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Phred base to use when parsing fastq quality scores (33 or 64).
-    default: 33
     inputBinding:
       position: 101
       prefix: --phred_base
@@ -114,7 +111,6 @@ inputs:
       - int
     doc: The minimum average phred-scaled quality score for the DNA tag portion of
       a read.
-    default: 0
     inputBinding:
       position: 101
       prefix: --phred_min_score
@@ -123,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: The number of fastq records read at a time.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --read_per_loop
@@ -149,7 +144,6 @@ inputs:
       - string
     doc: Header for the index 1 and additional optional index column names in the
       samplelist.
-    default: Index1,Index2
     inputBinding:
       position: 101
       prefix: --sindex
@@ -158,7 +152,6 @@ inputs:
       - 'null'
       - string
     doc: Header for the sample name column in the samplelist.
-    default: SampleName
     inputBinding:
       position: 101
       prefix: --sname

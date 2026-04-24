@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: Output format ['m','lm']
-    default: m
     inputBinding:
       position: 102
       prefix: --fmt
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Score index to use
-    default: last index
     inputBinding:
       position: 102
       prefix: --index
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: Fill character for missing edges
-    default: '0'
     inputBinding:
       position: 102
       prefix: --missing
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Number of significant digits to report
-    default: 8
     inputBinding:
       position: 102
       prefix: --precision

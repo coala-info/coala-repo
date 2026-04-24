@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Annotate VCF using basic information (locus, pathogenicity, etc.)
-    default: false
     inputBinding:
       position: 102
       prefix: --basic
@@ -26,7 +25,6 @@ inputs:
       - boolean
     doc: Annotate VCF using cross-reference information (Clinvar and dbSNP IDs, 
       etc.)
-    default: false
     inputBinding:
       position: 102
       prefix: --crossref
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Annotate VCF using previously downloaded databases (offline mode)
-    default: false
     inputBinding:
       position: 102
       prefix: --offline
@@ -45,7 +42,6 @@ inputs:
       - boolean
     doc: Annotate VCF using predictions information (from MutPred, Panther, 
       Polyphen and other resources)
-    default: false
     inputBinding:
       position: 102
       prefix: --predict
@@ -55,7 +51,6 @@ inputs:
       - boolean
     doc: Annotate VCF using variability information (nucleotide and aminoacid 
       variability, allele frequencies)
-    default: false
     inputBinding:
       position: 102
       prefix: --variab

@@ -76,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: order of Markov model to use
-    default: 0
     inputBinding:
       position: 102
       prefix: -m
@@ -93,7 +92,6 @@ inputs:
       - 'null'
       - float
     doc: pseudocount added to avoid probabilities of zero
-    default: 0.1
     inputBinding:
       position: 102
       prefix: -pseudo

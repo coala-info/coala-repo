@@ -129,7 +129,6 @@ inputs:
       - int
     doc: Max. number of threads to use. Note that it is not possible to utilize 
       more threads than input BAM/CRAMs.
-    default: 20
     inputBinding:
       position: 102
       prefix: --threads

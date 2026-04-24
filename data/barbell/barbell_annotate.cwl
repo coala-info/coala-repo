@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - float
     doc: Edit cost beyond read boundaries
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --alpha
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: 'Barcode types (comma-separated: Ftag,Rtag) matching your query file (-q)'
-    default: Ftag
     inputBinding:
       position: 101
       prefix: --barcode-types
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: "Barcode: fraction compared to 'perfect' match score for top candidate"
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --min-score
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: 'Barcode: fraction difference between top 2 candidates'
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min-score-diff
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 10
     inputBinding:
       position: 101
       prefix: --threads

@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: "criteria for filtering: 'verified_removed' (default) or 'estimated_removed'"
-    default: verified_removed
     inputBinding:
       position: 101
       prefix: --criteria
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: confidence level for detection of reading frame
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --detectionconfidence
@@ -61,7 +59,6 @@ inputs:
       - int
     doc: minimum number of stops to encounter for detection (default 100, may 
       need to decrease for few input ASVs)
-    default: 100
     inputBinding:
       position: 101
       prefix: --detectionminstops
@@ -71,7 +68,6 @@ inputs:
       - string
     doc: substitution model for UPGMA tree estimation (passed to R dist.dna, 
       default F84)
-    default: F84
     inputBinding:
       position: 101
       prefix: --distancemodel
@@ -80,7 +76,6 @@ inputs:
       - 'null'
       - float
     doc: divergence level to use for assigning clades
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --divergence
@@ -182,7 +177,6 @@ inputs:
       - 'null'
       - float
     doc: percentile of non-authentic ASVs to filter out
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --percentile
@@ -251,7 +245,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

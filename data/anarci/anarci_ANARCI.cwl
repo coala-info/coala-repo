@@ -47,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel processes to use. Default is 1.
-    default: 1
     inputBinding:
       position: 101
       prefix: --ncpu
@@ -69,7 +68,6 @@ inputs:
       \       and a are shorthand for IMGT, Kabat, Chothia, Martin\n             \
       \           (Extended Chothia), Wolfguy and Aho respectively.\n            \
       \            Default IMGT"
-    default: IMGT
     inputBinding:
       position: 101
       prefix: --scheme

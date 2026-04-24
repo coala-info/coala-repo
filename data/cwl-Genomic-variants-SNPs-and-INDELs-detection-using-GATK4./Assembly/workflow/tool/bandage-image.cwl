@@ -14,14 +14,12 @@ inputs:
 
   - id: format
     type:  string
-    default: jpg
     doc: |
         Produce jpg, png or svg file
 
 
   - id: height
     type:  int
-    default: 1000
     doc: |
         Image height.If only height or width is set, 
         the other will be determined automatically.
@@ -37,13 +35,11 @@ inputs:
 
   - id: node_name
     type:  boolean
-    default: true
     doc: |
         If true, define Node labels as name 
 
   - id: node_length
     type:  boolean
-    default: true
     doc: |
         If true, define Node labels as length 
 

@@ -52,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: 'ploidy level (default: 2)'
-    default: 2
     inputBinding:
       position: 101
       prefix: --ploidy

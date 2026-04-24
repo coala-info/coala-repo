@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Depth or multiple comma seperated depths to rarefy to.
-    default: 0.95 times the minimal column sum
     inputBinding:
       position: 102
       prefix: -d
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Number of times to create diversity measures.
-    default: 10
     inputBinding:
       position: 102
       prefix: -r
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 102
       prefix: -t

@@ -41,7 +41,6 @@ inputs:
       - string
     doc: 'Specifies the capacity of the dataset: small (default, <100M records), medium
       (<500M), large (>=500M)'
-    default: small
     inputBinding:
       position: 102
       prefix: --capacity

@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'input fasta is gziped. Default: False'
-    default: false
     inputBinding:
       position: 101
       prefix: --gzip
@@ -68,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'input is a folder with several fasta files. Default: False'
-    default: false
     inputBinding:
       position: 101
       prefix: --single

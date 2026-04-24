@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: First base to keep. Default is 1 (=first base).
-    default: 1
     inputBinding:
       position: 101
       prefix: -f

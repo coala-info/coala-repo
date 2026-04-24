@@ -83,7 +83,6 @@ inputs:
       separate: false
   optical_duplicate_pixel_distance:
     type: int?
-    default: 100
     doc: '(0;500)'
     inputBinding:
       prefix: OPTICAL_DUPLICATE_PIXEL_DISTANCE=

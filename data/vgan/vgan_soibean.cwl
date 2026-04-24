@@ -16,7 +16,6 @@ inputs:
       - boolean
     doc: Additional TSV file with all match alignment information to identify 
       SNPs
-    default: false
     inputBinding:
       position: 101
       prefix: --alignment-detail
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - File
     doc: 3p deamination frequency for eukaryotic species
-    default: no damage
     inputBinding:
       position: 101
       prefix: --deam3p
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - File
     doc: 5p deamination frequency for eukaryotic species
-    default: no damage
     inputBinding:
       position: 101
       prefix: --deam5p
@@ -87,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Define the burn-in period for the MCMC
-    default: 75000
     inputBinding:
       position: 101
       prefix: --burnin
@@ -96,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Define the number of chains for the MCMC
-    default: 4
     inputBinding:
       position: 101
       prefix: --chains
@@ -105,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Define the number of iterations for the MCMC
-    default: 500000
     inputBinding:
       position: 101
       prefix: --iter
@@ -122,7 +116,6 @@ inputs:
       - 'null'
       - boolean
     doc: The MCMC does not run
-    default: false
     inputBinding:
       position: 101
       prefix: --no-mcmc
@@ -131,7 +124,6 @@ inputs:
       - 'null'
       - string
     doc: Output file prefix
-    default: beanOut
     inputBinding:
       position: 101
       prefix: -o
@@ -141,7 +133,6 @@ inputs:
       - int
     doc: Reports all matches in additional TSV file for nodes with a number of 
       paths less or equal to the threshold set
-    default: all paths
     inputBinding:
       position: 101
       prefix: --pathThres
@@ -150,7 +141,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for unsupported paths
-    default: 7
     inputBinding:
       position: 101
       prefix: -P
@@ -160,7 +150,6 @@ inputs:
       - boolean
     doc: Set to get random starting nodes in the tree instead of the signature 
       nodes
-    default: false
     inputBinding:
       position: 101
       prefix: --randStart
@@ -177,7 +166,6 @@ inputs:
       - 'null'
       - Directory
     doc: Specify the temporary directory for intermediate files
-    default: /tmp/
     inputBinding:
       position: 101
       prefix: -z
@@ -186,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

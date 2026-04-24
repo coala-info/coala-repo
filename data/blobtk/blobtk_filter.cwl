@@ -73,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: Suffix to use for output filtered files
-    default: filtered
     inputBinding:
       position: 101
       prefix: --suffix

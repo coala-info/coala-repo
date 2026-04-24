@@ -66,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: name of output file (do not add extension).
-    default: input file name
     inputBinding:
       position: 101
       prefix: --file_name
@@ -75,7 +74,6 @@ inputs:
       - 'null'
       - Directory
     doc: location of output folder.
-    default: current dir
     inputBinding:
       position: 101
       prefix: --output
@@ -84,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: suffix appended to output files. Use '' for no suffix.
-    default: _pLann
     inputBinding:
       position: 101
       prefix: --suffix
@@ -93,7 +90,6 @@ inputs:
       - 'null'
       - File
     doc: path to YAML file for custom databases.
-    default: builtin
     inputBinding:
       position: 101
       prefix: --yaml_file

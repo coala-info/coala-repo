@@ -55,7 +55,6 @@ inputs:
 - id: sample_tag
   type: string?
   doc: provide the sample tag name from the @RG line [SM].
-  default: SM
   inputBinding:
     position: 102
     prefix: -T

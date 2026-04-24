@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: '[prepare] Loss function for NMF (default frobenius)'
-    default: frobenius
     inputBinding:
       position: 101
       prefix: --beta-loss
@@ -64,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: '[prepare] Initialization algorithm for NMF (default random)'
-    default: random
     inputBinding:
       position: 101
       prefix: --init
@@ -91,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: '[prepare] Max number of iterations per individual NMF run (default 1000)'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max-nmf-iter

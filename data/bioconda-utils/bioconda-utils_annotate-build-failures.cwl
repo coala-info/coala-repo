@@ -19,7 +19,6 @@ inputs:
       - string
     doc: Category of build failure. If omitted, will fail if there is no 
       existing build failure record with a log entry.
-    default: '-'
     inputBinding:
       position: 102
       prefix: --category
@@ -29,7 +28,6 @@ inputs:
       - boolean
     doc: Only annotate already existing build failure records. The platform 
       setting is ignored in this case.
-    default: false
     inputBinding:
       position: 102
       prefix: --existing-only
@@ -39,7 +37,6 @@ inputs:
       - type: array
         items: string
     doc: Platforms to annotate
-    default:
       - linux-64
       - osx-64
     inputBinding:
@@ -51,7 +48,6 @@ inputs:
       - string
     doc: Reason for skiplisting. If omitted, will fail if there is no existing 
       build failure record with a log entry.
-    default: '-'
     inputBinding:
       position: 102
       prefix: --reason
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skiplist recipes.
-    default: false
     inputBinding:
       position: 102
       prefix: --skiplist

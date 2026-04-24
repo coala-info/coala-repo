@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Debug query
-    default: all reads
     inputBinding:
       position: 101
       prefix: --debug_query
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer Length [5 > int > 30, default=21]
-    default: 21
     inputBinding:
       position: 101
       prefix: --k
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage kmer culling
-    default: 5
     inputBinding:
       position: 101
       prefix: --min_kmer_cov
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum proportion of matched kmers allowed for queries
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min_kmer_prop
@@ -102,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads to subsample
-    default: all reads
     inputBinding:
       position: 101
       prefix: --subsample
@@ -111,7 +106,6 @@ inputs:
       - 'null'
       - float
     doc: Read kmer filtering threshold [0 > float > 1, default=0.2]
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --threshold
@@ -120,7 +114,6 @@ inputs:
       - 'null'
       - float
     doc: Fraction of best seeds to extend
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --top_seed_frac

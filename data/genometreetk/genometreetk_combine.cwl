@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: type of support values to compute
-    default: average
     inputBinding:
       position: 105
       prefix: --support_type

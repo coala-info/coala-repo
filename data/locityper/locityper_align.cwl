@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Alignment accuracy level (1-9)
-    default: 9
     inputBinding:
       position: 101
       prefix: --accuracy
@@ -28,7 +27,6 @@ inputs:
         items: int
     doc: One or more k-mer sizes (5 <= k <= 127) for backbone alignment, 
       separated by comma
-    default:
       - 25
       - 51
       - 101
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Gap extend penalty
-    default: 1
     inputBinding:
       position: 101
       prefix: --gap-extend
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Gap open penalty
-    default: 6
     inputBinding:
       position: 101
       prefix: --gap-open
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Do not complete gaps over this size
-    default: 500
     inputBinding:
       position: 101
       prefix: --max-gap
@@ -74,7 +69,6 @@ inputs:
       - type: array
         items: int
     doc: (k,w)-minimizers for sequence divergence calculation
-    default:
       - 15
       - 15
     inputBinding:
@@ -85,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for mismatch
-    default: 4
     inputBinding:
       position: 101
       prefix: --mismatch
@@ -128,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads
@@ -138,7 +130,6 @@ inputs:
       - float
     doc: Do not align sequences with minimizer divergence >= NUM [0.5]. Use -D 1
       to align everything.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --thresh-div

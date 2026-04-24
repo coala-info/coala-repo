@@ -721,7 +721,6 @@ inputs:
     doc: "Minimum genotype depth threshold. Sample genotype\n                    \
       \    calls with a read depth lower than this threshold\n                   \
       \     will be treated as no-calls. Default = 0."
-    default: 0
     inputBinding:
       position: 101
       prefix: --dp
@@ -732,7 +731,6 @@ inputs:
     doc: "Minimum genotype depth threshold. Sample genotype\n                    \
       \    calls with a read depth lower than this threshold\n                   \
       \     will be treated as no-calls. Default = 0."
-    default: 0
     inputBinding:
       position: 101
       prefix: -dp
@@ -926,7 +924,6 @@ inputs:
       If AN field is missing from a\n                        record and this value
       is > 0, --af/--min_af\n                        filtering will not occur for
       that record.\n                        Default=0."
-    default: 0
     inputBinding:
       position: 101
       prefix: --filtering_an
@@ -1055,7 +1052,6 @@ inputs:
     doc: "Minimum genotype quality score threshold. Sample\n                     \
       \   genotype calls with a score lower than this\n                        threshold
       will be treated as no-calls.\n                        Default = 20."
-    default: 20
     inputBinding:
       position: 101
       prefix: --gq
@@ -1066,7 +1062,6 @@ inputs:
     doc: "Minimum genotype quality score threshold. Sample\n                     \
       \   genotype calls with a score lower than this\n                        threshold
       will be treated as no-calls.\n                        Default = 20."
-    default: 20
     inputBinding:
       position: 101
       prefix: -gq
@@ -1079,7 +1074,6 @@ inputs:
       a ratio of the alternate allele vs total\n                        depth lower
       than this threshold will be treated as\n                        no-calls. Default
       = 0."
-    default: 0
     inputBinding:
       position: 101
       prefix: --het_ab
@@ -1092,7 +1086,6 @@ inputs:
       a ratio of the alternate allele vs total\n                        depth lower
       than this threshold will be treated as\n                        no-calls. Default
       = 0."
-    default: 0
     inputBinding:
       position: 101
       prefix: -het_ab
@@ -1105,7 +1098,6 @@ inputs:
       a ratio of the alternate allele vs total\n                        depth lower
       than this threshold will be treated as\n                        no-calls. Default
       = 0."
-    default: 0
     inputBinding:
       position: 101
       prefix: --hom_ab
@@ -1118,7 +1110,6 @@ inputs:
       a ratio of the alternate allele vs total\n                        depth lower
       than this threshold will be treated as\n                        no-calls. Default
       = 0."
-    default: 0
     inputBinding:
       position: 101
       prefix: -hom_ab
@@ -1299,7 +1290,6 @@ inputs:
       \    calls with a read depth higher than this threshold\n                  \
       \      will be treated as no-calls. Default = 0 (i.e. not\n                \
       \        used)."
-    default: 0
     inputBinding:
       position: 101
       prefix: --max_dp
@@ -1311,7 +1301,6 @@ inputs:
       \    calls with a read depth higher than this threshold\n                  \
       \      will be treated as no-calls. Default = 0 (i.e. not\n                \
       \        used)."
-    default: 0
     inputBinding:
       position: 101
       prefix: -max_dp
@@ -1377,7 +1366,6 @@ inputs:
       \ 'AN' INFO field. Variants with an AN value below\n                       \
       \ this threshold or a missing AN field will be\n                        filtered.
       Default=0."
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_an
@@ -1389,7 +1377,6 @@ inputs:
       \    required to contain a qualifying dominant/de novo\n                   \
       \     or biallelic combination of variants in a feature\n                  \
       \      before they are output. Default = 1."
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_families
@@ -1401,7 +1388,6 @@ inputs:
       \    required to contain a qualifying dominant/de novo\n                   \
       \     or biallelic combination of variants in a feature\n                  \
       \      before they are output. Default = 1."
-    default: 1
     inputBinding:
       position: 101
       prefix: -min_families
@@ -1718,7 +1704,6 @@ inputs:
       - 'null'
       - int
     doc: "Report progress information every N variants.\n                        Default=1000."
-    default: 1000
     inputBinding:
       position: 101
       prefix: --prog_interval
@@ -1727,7 +1712,6 @@ inputs:
       - 'null'
       - int
     doc: "Report progress information every N variants.\n                        Default=1000."
-    default: 1000
     inputBinding:
       position: 101
       prefix: --prog_interval
@@ -2273,7 +2257,6 @@ inputs:
       \    variants. Sample genotype calls with fewer than\n                     \
       \   this nunmber of supporting reads will be treated\n                     \
       \   as no-calls. Default = 0."
-    default: 0
     inputBinding:
       position: 101
       prefix: --sv_dp
@@ -2285,7 +2268,6 @@ inputs:
       \    variants. Sample genotype calls with fewer than\n                     \
       \   this nunmber of supporting reads will be treated\n                     \
       \   as no-calls. Default = 0."
-    default: 0
     inputBinding:
       position: 101
       prefix: -sv_dp
@@ -2297,7 +2279,6 @@ inputs:
       variants. Sample genotype calls with a\n                        score lower
       than this threshold will be treated as\n                        no-calls. Default
       = 20."
-    default: 20
     inputBinding:
       position: 101
       prefix: --sv_gq
@@ -2309,7 +2290,6 @@ inputs:
       variants. Sample genotype calls with a\n                        score lower
       than this threshold will be treated as\n                        no-calls. Default
       = 20."
-    default: 20
     inputBinding:
       position: 101
       prefix: -sv_gq
@@ -2323,7 +2303,6 @@ inputs:
       the alternate allele vs total\n                        supporting reads lower
       than this threshold will\n                        be treated as no-calls. Default
       = 0."
-    default: 0
     inputBinding:
       position: 101
       prefix: --sv_het_ab
@@ -2337,7 +2316,6 @@ inputs:
       the alternate allele vs total\n                        supporting reads lower
       than this threshold will\n                        be treated as no-calls. Default
       = 0."
-    default: 0
     inputBinding:
       position: 101
       prefix: -sv_het_ab
@@ -2351,7 +2329,6 @@ inputs:
       alternate allele vs total\n                        supporting reads lower than
       this threshold will\n                        be treated as no-calls. Default
       = 0."
-    default: 0
     inputBinding:
       position: 101
       prefix: --sv_hom_ab
@@ -2365,7 +2342,6 @@ inputs:
       alternate allele vs total\n                        supporting reads lower than
       this threshold will\n                        be treated as no-calls. Default
       = 0."
-    default: 0
     inputBinding:
       position: 101
       prefix: -sv_hom_ab
@@ -2377,7 +2353,6 @@ inputs:
       \    variants. Sample genotype calls with more than\n                      \
       \  this nunmber of supporting reads will be treated\n                      \
       \  as no-calls. Default = 0 (i.e. not used)."
-    default: 0
     inputBinding:
       position: 101
       prefix: --sv_max_dp
@@ -2389,7 +2364,6 @@ inputs:
       \    variants. Sample genotype calls with more than\n                      \
       \  this nunmber of supporting reads will be treated\n                      \
       \  as no-calls. Default = 0 (i.e. not used)."
-    default: 0
     inputBinding:
       position: 101
       prefix: -sv_max_dp

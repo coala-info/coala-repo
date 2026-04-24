@@ -66,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: Use alternative format for input (e.g., fasta, fastq).
-    default: fasta
     inputBinding:
       position: 102
       prefix: --format
@@ -75,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the frame for translation [0,1,2].
-    default: 0
     inputBinding:
       position: 102
       prefix: --frame
@@ -92,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: Use a <string> to join data in the description. Default is a space character.
-    default: ' '
     inputBinding:
       position: 102
       prefix: --join
@@ -118,7 +115,6 @@ inputs:
       - 'null'
       - string
     doc: Use [string] as the name of the logfile.
-    default: FAST.log.txt
     inputBinding:
       position: 102
       prefix: --logname
@@ -127,7 +123,6 @@ inputs:
       - 'null'
       - string
     doc: Specify a string representing stop codons.
-    default: '*'
     inputBinding:
       position: 102
       prefix: --stop
@@ -160,7 +155,6 @@ inputs:
       - 'null'
       - string
     doc: Specify a string representing unknown amino acids.
-    default: X
     inputBinding:
       position: 102
       prefix: --unknown

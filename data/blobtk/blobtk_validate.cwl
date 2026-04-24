@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: List of name_classes to use during taxon lookup
-    default: scientific name
     inputBinding:
       position: 101
       prefix: --name-classes

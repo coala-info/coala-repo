@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: Boxplot color (hex vlaue or name, e.g. blue). Default is "#53cfff".
-    default: '#53cfff'
     inputBinding:
       position: 101
       prefix: --barcolor
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: x-axis label of boxplot if --htype=tribar. Default is "Set size"
-    default: Set size
     inputBinding:
       position: 101
       prefix: --barlabel
@@ -44,7 +42,6 @@ inputs:
       (Default) jaccard: calculate the Jaccard statistic. reldist: calculate the distribution
       of relative distances. fisher: calculate Fisher`s statistic. Note: For jaccard
       and reldist regions should be pre-shorted or set --sort.'
-    default: frac
     inputBinding:
       position: 101
       prefix: --compute
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - boolean
     doc: Compute the correlation. Default is "False".
-    default: false
     inputBinding:
       position: 101
       prefix: --corr
@@ -64,7 +60,6 @@ inputs:
     doc: 'Select the type of correlation. pearson: computes the Pearson correlation.
       (Default) kendall: computes the Kendall correlation. spearman: computes the
       Spearman correlation. Note: This only works if --corr is set.'
-    default: pearson
     inputBinding:
       position: 101
       prefix: --corrtype
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: 'Dots-per-inch (DPI) for the output. Default is: "300".'
-    default: '300'
     inputBinding:
       position: 101
       prefix: --dpi
@@ -91,7 +85,6 @@ inputs:
       - 'null'
       - string
     doc: Figure type for the plot. e.g. --figtype svg. Default is "pdf"
-    default: pdf
     inputBinding:
       position: 101
       prefix: --figtype
@@ -100,7 +93,6 @@ inputs:
       - 'null'
       - string
     doc: Label font size. Default is "8".
-    default: '8'
     inputBinding:
       position: 101
       prefix: --fontsize
@@ -118,7 +110,6 @@ inputs:
       - 'null'
       - string
     doc: Heatmap plot type. Default is "tribar".
-    default: tribar
     inputBinding:
       position: 101
       prefix: --htype
@@ -147,7 +138,6 @@ inputs:
       - 'null'
       - string
     doc: 'Project name for the output. Default is: "Intervene"'
-    default: Intervene
     inputBinding:
       position: 101
       prefix: --project
@@ -165,7 +155,6 @@ inputs:
       - boolean
     doc: Set to generate Rscript only, if R/Corrplot package are not installed. 
       Default is "False".
-    default: false
     inputBinding:
       position: 101
       prefix: --scriptonly
@@ -174,7 +163,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show the diagonal values in the heatmap. Default is "False".
-    default: false
     inputBinding:
       position: 101
       prefix: --diagonal
@@ -183,7 +171,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set this only if your files are not sorted. Default is "False".
-    default: false
     inputBinding:
       position: 101
       prefix: --sort
@@ -193,7 +180,6 @@ inputs:
       - string
     doc: White space between barplt and heatmap, if --htype=tribar. Default is 
       "1.3".
-    default: '1.3'
     inputBinding:
       position: 101
       prefix: --space
@@ -202,7 +188,6 @@ inputs:
       - 'null'
       - string
     doc: Heatmap main title. Default is "Pairwise intersection".
-    default: Pairwise intersection
     inputBinding:
       position: 101
       prefix: --title
@@ -212,7 +197,6 @@ inputs:
       - string
     doc: Show lower/upper triangle of the matrix as heatmap if --htype=tribar. 
       Default is "lower".
-    default: lower
     inputBinding:
       position: 101
       prefix: --triangle
@@ -222,7 +206,6 @@ inputs:
       - string
     doc: Type of input sets. Genomic regions or lists of genes/SNPs sets. 
       Default is "genomic".
-    default: genomic
     inputBinding:
       position: 101
       prefix: --type
@@ -231,7 +214,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use file names as labels instead. Default is "False".
-    default: false
     inputBinding:
       position: 101
       prefix: --filenames

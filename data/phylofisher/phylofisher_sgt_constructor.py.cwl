@@ -11,7 +11,6 @@ inputs:
       - string
     doc: 'Format of the input files. Options: fasta, phylip (names truncated at 10
       characters), phylip-relaxed (names are not truncated), or nexus.'
-    default: fasta
     inputBinding:
       position: 101
       prefix: --in_format
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Desired number of threads to be utilized.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

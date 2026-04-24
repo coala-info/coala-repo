@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: gfflu-outdir
     inputBinding:
       position: 102
       prefix: --outdir
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: Output file prefix
-    default: None
     inputBinding:
       position: 102
       prefix: --prefix

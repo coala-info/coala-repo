@@ -23,7 +23,6 @@ inputs:
       Equivalent to "--snakemake-cmds '--conda-create-envs-only True ' ". Other 
       inputs should be specified as if running normally so that the right set of
       conda environments is built.
-    default: no
     inputBinding:
       position: 101
       prefix: --build
@@ -45,7 +44,6 @@ inputs:
       workflow as it avoids deleting files that would likely be needed in later parts
       of the workflow. NOTE: Not cleaning makes reruns faster but will incur the wrath
       of your sysadmin'
-    default: true
     inputBinding:
       position: 101
       prefix: --clean
@@ -74,7 +72,6 @@ inputs:
       - string
     doc: 'Snakemake resources used as is found at: https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html?highlight=resources#standard-resources
       NOTE: tmpdir is handled by the `tmpdir` command line parameter.'
-    default: ''
     inputBinding:
       position: 101
       prefix: --default-resources
@@ -126,7 +123,6 @@ inputs:
       - 'null'
       - string
     doc: File extension of fasta files in --genome-fasta-directory
-    default: fna
     inputBinding:
       position: 101
       prefix: --fasta-extension
@@ -145,7 +141,6 @@ inputs:
         items: File
     doc: Gold standard assembly to compare either the Aviary assembly or a given
       input assembly against
-    default:
       - none
     inputBinding:
       position: 101
@@ -155,7 +150,6 @@ inputs:
       - 'null'
       - File
     doc: CAMI I & II GSA mappings
-    default: none
     inputBinding:
       position: 101
       prefix: --gsa-mappings
@@ -172,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: 'DEPRECATED: Percentage of reads passing quality thresholds kept by filtlong'
-    default: 100
     inputBinding:
       position: 101
       prefix: --keep-percent
@@ -183,7 +176,6 @@ inputs:
     doc: Maximum number of cores available for use locally. Only relevant if 
       jobs are being submitted to a cluster (e.g. see `--snakemake-profile`), in
       which case `--n-cores` will restrict requested cores in submitted jobs.
-    default: 16
     inputBinding:
       position: 101
       prefix: --local-cores
@@ -192,7 +184,6 @@ inputs:
       - 'null'
       - string
     doc: Maximum memory for available usage in Gigabytes
-    default: '250'
     inputBinding:
       position: 101
       prefix: --max-memory
@@ -201,7 +192,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of short reads to be kept, 0 = no maximum
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-short-read-length
@@ -213,7 +203,6 @@ inputs:
       max_threads > n_cores then n_cores will be bumped up to max_threads. 
       Useful if you want more fine grain control over the number of threads used
       by each process.
-    default: 8
     inputBinding:
       position: 101
       prefix: --max-threads
@@ -222,7 +211,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum long read mean quality threshold
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-mean-q
@@ -231,7 +219,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum long read size when filtering using Filtlong
-    default: 100
     inputBinding:
       position: 101
       prefix: --min-read-size
@@ -240,7 +227,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of short reads to be kept
-    default: 15
     inputBinding:
       position: 101
       prefix: --min-short-read-length
@@ -250,7 +236,6 @@ inputs:
       - int
     doc: Maximum number of cores available for use. Setting to multiples of 
       max_threads will allow for multiple processes to be run in parallel.
-    default: 16
     inputBinding:
       position: 101
       prefix: --n-cores
@@ -259,7 +244,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: ./
     inputBinding:
       position: 101
       prefix: --output
@@ -269,7 +253,6 @@ inputs:
       - int
     doc: The number of threads given to pplacer, values above `--max-threads` 
       will be scaled to equal `--max-threads`
-    default: 8
     inputBinding:
       position: 101
       prefix: --pplacer-threads
@@ -279,7 +262,6 @@ inputs:
       - int
     doc: The short read quality value that a base is qualified. Default 15 means
       phred quality >=Q15 is qualified.
-    default: 15
     inputBinding:
       position: 101
       prefix: --quality-cutoff
@@ -290,7 +272,6 @@ inputs:
         items: File
     doc: One or more reference filter files to aid in the assembly. Remove 
       contaminant reads from the assembly.
-    default:
       - none
     inputBinding:
       position: 101
@@ -310,7 +291,6 @@ inputs:
       - type: array
         items: string
     doc: Specify which kinds of modifications will trigger rules to rerun
-    default:
       - mtime
     inputBinding:
       position: 101
@@ -371,7 +351,6 @@ inputs:
       - int
     doc: how many percents of bases are allowed to be unqualified. Default 40 
       means 40 percent
-    default: 40
     inputBinding:
       position: 101
       prefix: --unqualified-percent-limit
@@ -381,7 +360,6 @@ inputs:
       - type: array
         items: string
     doc: Main workflow to run. This is the snakemake target rule to run.
-    default:
       - annotate
     inputBinding:
       position: 101

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: output debugging information (repeat for more)
-    default: 0
     inputBinding:
       position: 102
       prefix: --debug

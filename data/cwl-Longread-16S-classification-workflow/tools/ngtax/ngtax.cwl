@@ -72,7 +72,6 @@ inputs:
     type: float?
     doc: Minimum threshold detectable, expressed in percentage
     label: Minimum threshold
-    default: 0.1
     inputBinding:
       prefix: -minimumThreshold
   rejected_asv_annotation:
@@ -81,7 +80,6 @@ inputs:
     label: Number rejected ASV annotation
     inputBinding:
       prefix: -rejectedASVAnnotation
-    default: 100
   mock3:
     type: string?
     doc: Mock3 reference selection

@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: specify the file extentention of the input like.
-    default: txt
     inputBinding:
       position: 101
       prefix: --ext
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: a label name to use for the log file.
-    default: moFF
     inputBinding:
       position: 101
       prefix: --log_label
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - boolean
     doc: If set, filtering on the matched peak is activated.
-    default: false
     inputBinding:
       position: 101
       prefix: --match_filter
@@ -62,7 +59,6 @@ inputs:
       - string
     doc: 'select the moFF workflow: on to run mbr + apex , off to run only apex, only
       to run obnly mbr.'
-    default: on
     inputBinding:
       position: 101
       prefix: --mbr
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: if set, outliers for rt time allignment are filtered.
-    default: true
     inputBinding:
       position: 101
       prefix: --out_flag
@@ -80,7 +75,6 @@ inputs:
       - 'null'
       - boolean
     doc: if set, export a peptide intesity summary tab-delited file.
-    default: false
     inputBinding:
       position: 101
       prefix: --peptide_summary
@@ -98,7 +92,6 @@ inputs:
       - float
     doc: quantile value used to compute the filtering threshold for the matched 
       peak .
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --quantile_thr_filtering
@@ -133,7 +126,6 @@ inputs:
       - 'null'
       - float
     doc: specify the time windows for the peak (minutes).
-    default: 1
     inputBinding:
       position: 101
       prefix: --rt_peak_win
@@ -142,7 +134,6 @@ inputs:
       - 'null'
       - float
     doc: specify the time windows for the matched peptide peak (minutes).
-    default: 1.2
     inputBinding:
       position: 101
       prefix: --rt_peak_win_match
@@ -159,7 +150,6 @@ inputs:
       - 'null'
       - float
     doc: percentage of MS2 peptide used to estimated the threshold.
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --sample_size
@@ -169,7 +159,6 @@ inputs:
       - string
     doc: a tag text used for peptide summary file name 
       (peptide_summary_intensity_ + tag + .tab ).
-    default: moFF_run
     inputBinding:
       position: 101
       prefix: --tag_pepsum
@@ -178,7 +167,6 @@ inputs:
       - 'null'
       - int
     doc: specify the tollerance parameter in ppm.
-    default: 10
     inputBinding:
       position: 101
       prefix: --tol
@@ -196,7 +184,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'if set, RT model combination is weighted using traing model errors:'
-    default: false
     inputBinding:
       position: 101
       prefix: --w_comb
@@ -205,7 +192,6 @@ inputs:
       - 'null'
       - float
     doc: width value of the filter k * mean(Dist_Malahobis).
-    default: 2
     inputBinding:
       position: 101
       prefix: --w_filt
@@ -214,7 +200,6 @@ inputs:
       - 'null'
       - float
     doc: specify rt window for xic (minutes).
-    default: 3
     inputBinding:
       position: 101
       prefix: --xic_length

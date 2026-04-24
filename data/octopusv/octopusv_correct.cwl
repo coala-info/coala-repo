@@ -115,7 +115,6 @@ inputs:
       - int
     doc: Position tolerance for identifying mate BND events, default=3, 
       recommend not to set larger than 5
-    default: 3
     inputBinding:
       position: 102
       prefix: --pos-tolerance

@@ -84,7 +84,6 @@ inputs:
       - float
     doc: remove sequences from the alignment which do not cover this percentage 
       of the HMM
-    default: 10
     inputBinding:
       position: 103
       prefix: --min-aligned-percent
@@ -127,7 +126,6 @@ inputs:
       - 'null'
       - string
     doc: change window position of output package
-    default: do not change
     inputBinding:
       position: 103
       prefix: --window-position

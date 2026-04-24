@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of bases required after barcode to keep read
-    default: 18
     inputBinding:
       position: 102
       prefix: --keep
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bases at the start of each read used for random barcode
-    default: 5
     inputBinding:
       position: 102
       prefix: --randombarcode
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Pre-trim all reads by this length before processing
-    default: 0
     inputBinding:
       position: 102
       prefix: --trim

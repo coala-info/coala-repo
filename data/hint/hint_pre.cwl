@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: 'Specify your species, choose from hg38, hg19, and mm10. DEFAULT: hg19'
-    default: hg19
     inputBinding:
       position: 101
       prefix: --genome
@@ -53,7 +52,6 @@ inputs:
       - string
     doc: "Format for the Hi-C input data, choose from 'fastq' and 'bam', DEFAULT:
       fastq"
-    default: fastq
     inputBinding:
       position: 101
       prefix: --informat
@@ -70,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for the result files. If not set, 'NA' will be used instead
-    default: NA
     inputBinding:
       position: 101
       prefix: --name
@@ -89,7 +86,6 @@ inputs:
       - string
     doc: "Format for the output contact matrix, choose from 'cooler' and 'juicer',
       DEFAULT: cooler"
-    default: cooler
     inputBinding:
       position: 101
       prefix: --outformat
@@ -126,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads for running BWA, DEFAULT: 16'
-    default: 16
     inputBinding:
       position: 101
       prefix: --threads

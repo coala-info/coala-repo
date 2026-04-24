@@ -57,14 +57,12 @@ inputs:
   qual_trim_cutoff:
     doc: trim all base with a phred score lower than this valueFrom
     type: int
-    default: 20
     inputBinding:
       prefix: --quality
       position: 1
   min_read_length:
     doc: discard reads that get shorter than this value
     type: int
-    default: 20
     inputBinding:
       prefix: --length
       position: 1
@@ -73,11 +71,9 @@ inputs:
       if only one read of a pair passes the qc and adapter trimming,
       it needs at least this length to be rescued
     type: int
-    default: 35
   min_adapter_overlap:
     doc: minimum overlap with adapter seq in bp needed to trim
     type: int
-    default: 1
     inputBinding:
       prefix: --stringency 
       position: 1

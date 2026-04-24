@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: minimum peptide probability
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --pepProb
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: number of channels
-    default: '10'
     inputBinding:
       position: 101
       prefix: --plex
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: minimum protein probability
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --prtProb
@@ -94,7 +91,6 @@ inputs:
       - 'null'
       - string
     doc: decoy tag
-    default: rev_
     inputBinding:
       position: 101
       prefix: --tag

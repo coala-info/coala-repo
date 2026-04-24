@@ -70,7 +70,6 @@ inputs:
       - string
     doc: 'The method for PCA prediction. oadp: most accurate. adp: accurate but slow.
       sp: fast but inaccurate. Default is odap.'
-    default: oadp
     inputBinding:
       position: 102
       prefix: --method
@@ -79,7 +78,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix of output file(s). Default is stu_filepref
-    default: stu_filepref
     inputBinding:
       position: 102
       prefix: --out

@@ -43,7 +43,6 @@ inputs:
       \       element that is used to build repeat psuedogeneomes.\n             \
       \           The flanking length should be set according to the\n           \
       \             length of your reads."
-    default: 25
     inputBinding:
       position: 104
       prefix: --flankinglength
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: "Length of the spacer used to build repeat\n                        psuedogeneomes."
-    default: 200
     inputBinding:
       position: 104
       prefix: --gaplength
@@ -66,7 +64,6 @@ inputs:
       \   start end Name_element class family. The class and\n                   \
       \     family should identical to name_element if not\n                     \
       \   applicable."
-    default: 'FALSE'
     inputBinding:
       position: 104
       prefix: --is_bed

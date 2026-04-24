@@ -25,7 +25,6 @@ inputs:
       - int
     doc: Algorithm method for LD calculation. 1 is faster, 2 may use more 
       memory.
-    default: 1
     inputBinding:
       position: 101
       prefix: -Method
@@ -35,7 +34,6 @@ inputs:
       - int
     doc: Type of output statistics. Can be 1-8. (1-3) are recommended. See 
       manual for details.
-    default: 1
     inputBinding:
       position: 101
       prefix: -OutType

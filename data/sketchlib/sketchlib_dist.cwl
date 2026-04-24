@@ -32,7 +32,6 @@ inputs:
       - float
     doc: minimum completeness for a sample to be corrected but the completeness 
       correction
-    default: 0.64
     inputBinding:
       position: 103
       prefix: --completeness-cutoff
@@ -81,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

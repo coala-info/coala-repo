@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - Directory
     doc: CCNE database root folders
-    default: /usr/local/db
     inputBinding:
       position: 101
       prefix: --dbdir
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - boolean
     doc: No screen output (default OFF)
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet

@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: maximum % contamination of bins that is acceptable
-    default: 10
     inputBinding:
       position: 101
       prefix: -x
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: memory available
-    default: 40
     inputBinding:
       position: 101
       prefix: -m
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: minimum % completion of bins [should be >50%]
-    default: 70
     inputBinding:
       position: 101
       prefix: -c
@@ -118,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

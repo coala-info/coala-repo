@@ -10,7 +10,6 @@ inputs:
       - int
     doc: Value for adjust mapping quality at variant detection in bcftools 
       mpileup. Specify 0, to disable this function.
-    default: 60
     inputBinding:
       position: 101
       prefix: --adjustMQ
@@ -45,7 +44,6 @@ inputs:
       - int
     doc: Threshold for length of chromosomes to be analyzed. Chromosomes with a 
       length more than this value are analyzed.
-    default: 10000000
     inputBinding:
       position: 101
       prefix: --chrSize
@@ -55,7 +53,6 @@ inputs:
       - string
     doc: Annotation Impact to be included in the SNP-index file. Separate 
       multiple items with commas.
-    default: HIGH,MODERATE
     inputBinding:
       position: 101
       prefix: --displayImpacts
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Height (pixel) of the graph images.
-    default: 300
     inputBinding:
       position: 101
       prefix: --figHeight
@@ -73,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Width (pixel) of the graph images.
-    default: 1200
     inputBinding:
       position: 101
       prefix: --figWidth
@@ -83,7 +78,6 @@ inputs:
       - float
     doc: Maximum threshold for SNP-index for the Bulk samples. Variants with a 
       SNP-index exceeding this value are excluded.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --maxBulkSnpIndex
@@ -92,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality at variant detection in bcftools mpileup.
-    default: 13
     inputBinding:
       position: 101
       prefix: --minBQ
@@ -102,7 +95,6 @@ inputs:
       - int
     doc: Minimum Depth threshold. The variants with even one sample below this 
       threshold are excluded for QTL analysis.
-    default: 40
     inputBinding:
       position: 101
       prefix: --minDepth
@@ -111,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality at variant detection in bcftools mpileup.
-    default: 40
     inputBinding:
       position: 101
       prefix: --minMQ
@@ -120,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Individuals in bulk1.
-    default: 20
     inputBinding:
       position: 101
       prefix: --NBulk1
@@ -129,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Individuals in bulk2.
-    default: 20
     inputBinding:
       position: 101
       prefix: --NBulk2
@@ -139,7 +128,6 @@ inputs:
       - int
     doc: Number of simulation replicates to generate a null distribution which 
       is free from QTLs.
-    default: 5000
     inputBinding:
       position: 101
       prefix: --NRep
@@ -148,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the plexity of Parent2 used for QTL analysis.
-    default: 1
     inputBinding:
       position: 101
       prefix: --NPlex
@@ -158,7 +145,6 @@ inputs:
       - float
     doc: Most allele frequency for Parent1. Variants exceeding this threshold is
       considered homozygous.
-    default: 0.99
     inputBinding:
       position: 101
       prefix: --p1MostAlleleRate
@@ -167,7 +153,6 @@ inputs:
       - 'null'
       - string
     doc: SNP-index range for parent2.
-    default: 0.15-0.375
     inputBinding:
       position: 101
       prefix: --p2SnpIndexRange
@@ -200,7 +185,6 @@ inputs:
       - 'null'
       - int
     doc: Ploidy.
-    default: 4
     inputBinding:
       position: 101
       prefix: --ploidy
@@ -233,7 +217,6 @@ inputs:
       - 'null'
       - string
     doc: SnpEff maximum heap size (GB).
-    default: '6'
     inputBinding:
       position: 101
       prefix: --snpEffMaxHeap
@@ -242,7 +225,6 @@ inputs:
       - 'null'
       - int
     doc: Step size (kbp) of the sliding window analysis.
-    default: 20
     inputBinding:
       position: 101
       prefix: --step
@@ -251,7 +233,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 20
     inputBinding:
       position: 101
       prefix: --thread
@@ -260,7 +241,6 @@ inputs:
       - 'null'
       - int
     doc: Window size (kbp) of the sliding window analysis.
-    default: 100
     inputBinding:
       position: 101
       prefix: --window
@@ -269,7 +249,6 @@ inputs:
       - 'null'
       - int
     doc: X-axis scale interval (Mbp) of the graphs.
-    default: 5
     inputBinding:
       position: 101
       prefix: --xStep

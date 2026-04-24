@@ -24,7 +24,6 @@ inputs:
       as you wish by separating them with a space. e.g. '-d archaea bacteria' is a
       valid domain argument which will include cazyme sequences from organisms in
       both the archaea and bacteria domains."
-    default: all
     inputBinding:
       position: 101
       prefix: --domain
@@ -103,7 +102,6 @@ inputs:
       (CWD)>/output. If you specify an absolute file path the end directory will
       be used. If you specify a relative file path(e.g. just a folder name), it 
       will be a subdirectory of the CWD.
-    default: ./output
     inputBinding:
       position: 101
       prefix: --directory

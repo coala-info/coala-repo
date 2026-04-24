@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output results in directory called 'cc-chp' under out-dir.
-    default: false
     inputBinding:
       position: 102
       prefix: --cc-chp-output
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output resulting calls in directory called 'cc-md-chp' under out-dir.
-    default: false
     inputBinding:
       position: 102
       prefix: --cc-md-chp-output
@@ -94,7 +92,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn off the default messages to the console but not logging or sockets.
-    default: false
     inputBinding:
       position: 102
       prefix: --console-off
@@ -103,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Size of intensity memory cache in millions of intensities.
-    default: 50
     inputBinding:
       position: 102
       prefix: --disk-cache
@@ -120,7 +116,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output probe by chip specific details (often residuals) when available.
-    default: false
     inputBinding:
       position: 102
       prefix: --feat-details
@@ -129,7 +124,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output feature effects when available.
-    default: false
     inputBinding:
       position: 102
       prefix: --feat-effects
@@ -138,7 +132,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable various checks including chip types.
-    default: false
     inputBinding:
       position: 102
       prefix: --force
@@ -171,7 +164,6 @@ inputs:
       - 'null'
       - int
     doc: How many digits of precision to use after decimal.
-    default: 5
     inputBinding:
       position: 102
       prefix: --precision
@@ -220,7 +212,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output subsamples of the data intensities, summaries and residuals.
-    default: false
     inputBinding:
       position: 102
       prefix: --subsample-report
@@ -229,7 +220,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output expression summaries in text table format.
-    default: true
     inputBinding:
       position: 102
       prefix: --summaries
@@ -254,7 +244,6 @@ inputs:
       - 'null'
       - boolean
     doc: Throw an exception rather than calling exit() on error.
-    default: false
     inputBinding:
       position: 102
       prefix: --throw-exception
@@ -263,7 +252,6 @@ inputs:
       - 'null'
       - boolean
     doc: Store CEL intensities to be analyzed on disk.
-    default: true
     inputBinding:
       position: 102
       prefix: --use-disk
@@ -281,7 +269,6 @@ inputs:
       - boolean
     doc: Use the probeset_names instead of probeset_id column in the PGF file for
       output.
-    default: false
     inputBinding:
       position: 102
       prefix: --use-pgf-names
@@ -299,7 +286,6 @@ inputs:
       - int
     doc: How verbose to be with status messages 0 - quiet, 1 - usual messages, 2 -
       more messages.
-    default: 1
     inputBinding:
       position: 102
       prefix: --verbose
@@ -308,7 +294,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write the quantile normalization distribution (or sketch) to a file.
-    default: false
     inputBinding:
       position: 102
       prefix: --write-sketch
@@ -317,7 +302,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output resulting calls in directory called 'chp' under out-dir.
-    default: false
     inputBinding:
       position: 102
       prefix: --xda-chp-output

@@ -62,7 +62,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_traj_path
-    default: system.pdb
 
   output_rmsd_path:
     label: Output rmsd file
@@ -78,7 +77,6 @@ inputs:
     inputBinding:
       position: 4
       prefix: --output_rmsd_path
-    default: system.dat
 
   output_bfactor_path:
     label: Output B-factor file
@@ -94,7 +92,6 @@ inputs:
     inputBinding:
       position: 5
       prefix: --output_bfactor_path
-    default: system.pdb
 
   config:
     label: Advanced configuration options for biobb_flexdyn ConcoordDisco

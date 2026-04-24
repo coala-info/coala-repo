@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: perform MLST, porA, fetA, porB, BAST typing
-    default: false
     inputBinding:
       position: 102
       prefix: --all
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: perform Bexsero antigen sequence typing (BAST)
-    default: false
     inputBinding:
       position: 102
       prefix: --bast
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: number of cpus to use in BLAST search
-    default: 1
     inputBinding:
       position: 102
       prefix: --cpus
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: perform porA and fetA fine typing
-    default: false
     inputBinding:
       position: 102
       prefix: --finetype
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: perform MLST
-    default: false
     inputBinding:
       position: 102
       prefix: --mlst
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - boolean
     doc: perform porB sequence typing (NEIS2020)
-    default: false
     inputBinding:
       position: 102
       prefix: --porB

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: index of the read to output, starting from 0
-    default: 'null'
     inputBinding:
       position: 102
       prefix: -i

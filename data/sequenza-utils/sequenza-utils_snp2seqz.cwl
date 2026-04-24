@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum alternative allele frequency to consider a variant
-    default: 0.95
     inputBinding:
       position: 102
       prefix: --max-alt-freq
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum alternative allele frequency to consider a variant
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --min-alt-freq
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequencing depth to consider a variant
-    default: 10
     inputBinding:
       position: 102
       prefix: --min-depth
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for processing
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

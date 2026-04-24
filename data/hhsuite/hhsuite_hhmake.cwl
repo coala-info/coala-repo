@@ -11,7 +11,6 @@ inputs:
       - string
     doc: "use A2M/A3M (default): upper case = Match; lower case = Insert; '-' = Delete;
       '.' = gaps aligned to inserts (may be omitted)"
-    default: a2m
     inputBinding:
       position: 101
       prefix: -M
@@ -53,7 +52,6 @@ inputs:
       - int
     doc: filter MSA by selecting most diverse set of sequences, keeping at least
       this many seqs in each MSA block of length 50
-    default: 100
     inputBinding:
       position: 101
       prefix: -diff
@@ -84,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: max number of HMM columns
-    default: 20001
     inputBinding:
       position: 101
       prefix: -maxres
@@ -93,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: max number of input rows
-    default: 65535
     inputBinding:
       position: 101
       prefix: -maxseq
@@ -102,7 +98,6 @@ inputs:
       - 'null'
       - float
     doc: maximum pairwise sequence identity (%)
-    default: 90
     inputBinding:
       position: 101
       prefix: -id
@@ -111,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: max. number of query/template sequences displayed
-    default: 10
     inputBinding:
       position: 101
       prefix: -seq
@@ -120,7 +114,6 @@ inputs:
       - 'null'
       - float
     doc: minimum coverage with query (%)
-    default: 0
     inputBinding:
       position: 101
       prefix: -cov
@@ -129,7 +122,6 @@ inputs:
       - 'null'
       - float
     doc: minimum score per column with query
-    default: -20.0
     inputBinding:
       position: 101
       prefix: -qsc
@@ -138,7 +130,6 @@ inputs:
       - 'null'
       - float
     doc: minimum sequence identity with query (%)
-    default: 0
     inputBinding:
       position: 101
       prefix: -qid
@@ -147,7 +138,6 @@ inputs:
       - 'null'
       - float
     doc: overall pseudocount admixture (def=0.9)
-    default: 0.9
     inputBinding:
       position: 101
       prefix: -pc_hhm_contxt_a
@@ -156,7 +146,6 @@ inputs:
       - 'null'
       - float
     doc: Neff threshold value for mode 2 (def=4.0)
-    default: 4.0
     inputBinding:
       position: 101
       prefix: -pc_hhm_contxt_b
@@ -165,7 +154,6 @@ inputs:
       - 'null'
       - float
     doc: extinction exponent c for mode 2 (def=1.0)
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -pc_hhm_contxt_c
@@ -174,7 +162,6 @@ inputs:
       - 'null'
       - int
     doc: position dependence of pc admixture 'tau' (pc mode, default=0)
-    default: 0
     inputBinding:
       position: 101
       prefix: -pc_hhm_contxt_mode
@@ -183,7 +170,6 @@ inputs:
       - 'null'
       - float
     doc: overall pseudocount admixture (def=1.0)
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -pc_hhm_nocontxt_a
@@ -192,7 +178,6 @@ inputs:
       - 'null'
       - float
     doc: Neff threshold value for mode 2 (def=1.5)
-    default: 1.5
     inputBinding:
       position: 101
       prefix: -pc_hhm_nocontxt_b
@@ -201,7 +186,6 @@ inputs:
       - 'null'
       - float
     doc: extinction exponent c for mode 2 (def=1.0)
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -pc_hhm_nocontxt_c
@@ -210,7 +194,6 @@ inputs:
       - 'null'
       - int
     doc: position dependence of pc admixture 'tau' (pc mode, default=2)
-    default: 2
     inputBinding:
       position: 101
       prefix: -pc_hhm_nocontxt_mode

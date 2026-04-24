@@ -13,7 +13,6 @@ inputs:
     type: string?
     inputBinding:
       position: 1
-    default: |
       INPUT_FILE=$0
       SAMPLE_FILE=$1
       MIN_LEN=$2

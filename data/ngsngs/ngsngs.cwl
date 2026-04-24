@@ -62,7 +62,6 @@ inputs:
       - int
     doc: Buffer length for generated sequence reads stored in the output files, 
       default = 30000000.
-    default: 30000000
     inputBinding:
       position: 101
       prefix: --bufferlength
@@ -239,7 +238,6 @@ inputs:
       - int
     doc: Number of PCR duplicates, used in conjunction with briggs modern 
       library prep -m <b,nv,Lambda,Delta_s,Delta_d>
-    default: 1
     inputBinding:
       position: 101
       prefix: --duplicates
@@ -333,7 +331,6 @@ inputs:
     doc: Integer value (0 - index) for the number of a specific individual 
       defined in bcf header from -vcf/-bcf input file, default = -1 (no 
       individual selected).
-    default: -1
     inputBinding:
       position: 101
       prefix: --indiv
@@ -416,7 +413,6 @@ inputs:
       - int
     doc: Lower fragment length limit, default = 30. The minimum fragment length 
       for deamination is 30, so simulated fragments below will be fixed at 30.
-    default: 30
     inputBinding:
       position: 101
       prefix: --lowerlimit
@@ -779,7 +775,6 @@ inputs:
       - 'null'
       - int
     doc: Number of sampling threads, default = 1.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -788,7 +783,6 @@ inputs:
       - 'null'
       - int
     doc: Number of compression threads, default = 0.
-    default: 0
     inputBinding:
       position: 101
       prefix: --threads2

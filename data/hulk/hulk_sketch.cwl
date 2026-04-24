@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: adds a label to the sketch object, for use with BANNER
-    default: blank
     inputBinding:
       position: 101
       prefix: --bannerLabel
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: decay ratio used for concept drift (1.0 = concept drift disabled)
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --decayRatio
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: size of k-mer sampling interval (default 0 (= no interval))
-    default: 0
     inputBinding:
       position: 101
       prefix: --interval
@@ -65,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: minimizer k-mer length
-    default: 21
     inputBinding:
       position: 101
       prefix: --kmerSize
@@ -82,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: number of processors to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --processors
@@ -99,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: size of sketch
-    default: 50
     inputBinding:
       position: 101
       prefix: --sketchSize
@@ -117,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: minimizer window size
-    default: 9
     inputBinding:
       position: 101
       prefix: --windowSize

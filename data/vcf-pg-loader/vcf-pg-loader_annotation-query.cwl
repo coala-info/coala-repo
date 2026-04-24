@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Output format (tsv, json)
-    default: tsv
     inputBinding:
       position: 101
       prefix: --format

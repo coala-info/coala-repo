@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Output VCF paternal sample name
-    default: PAT
     inputBinding:
       position: 101
       prefix: --father-sample
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: Scoring penalty for FNs
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --fpenalty
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: Scoring penalty for gaps
-    default: 0.02
     inputBinding:
       position: 101
       prefix: --gpenalty
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: Clustering weight for haplotagged reads (off=0.0, full=1.0)
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --hps-weight
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - float
     doc: Clustering weight for haplotype lengths (off=0.0, full=1.0)
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --len-weight
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore alignments matching flag
-    default: 3840
     inputBinding:
       position: 101
       prefix: --mapflag
@@ -99,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer size for featurization
-    default: 4
     inputBinding:
       position: 101
       prefix: --kmer
@@ -108,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: Max clusters
-    default: 5
     inputBinding:
       position: 101
       prefix: --maxclust
@@ -117,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum coverage of a region to analyze
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max-coverage
@@ -126,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum FNs allowed in a path
-    default: 3
     inputBinding:
       position: 101
       prefix: --fnmax
@@ -135,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum graph size to search; otherwise perform 1-to-1
-    default: 5000
     inputBinding:
       position: 101
       prefix: --maxnodes
@@ -144,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum coverage to attempt building haplotypes
-    default: 1000
     inputBinding:
       position: 101
       prefix: --maxcoverage
@@ -153,7 +141,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum pileups allowed for partials matching
-    default: 100
     inputBinding:
       position: 101
       prefix: --pileupmax
@@ -162,7 +149,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum paths to traverse per graph
-    default: 5000
     inputBinding:
       position: 101
       prefix: --maxpaths
@@ -171,7 +157,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum variant distance within graphs
-    default: 1000
     inputBinding:
       position: 101
       prefix: --neighdist
@@ -180,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum size of variant to analyze
-    default: 10000
     inputBinding:
       position: 101
       prefix: --sizemax
@@ -189,7 +173,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage of a region to analyze
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-coverage
@@ -198,7 +181,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage to attempt building haplotypes
-    default: 1
     inputBinding:
       position: 101
       prefix: --mincoverage
@@ -207,7 +189,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum frequency of kmers
-    default: 2
     inputBinding:
       position: 101
       prefix: --minkfreq
@@ -216,7 +197,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapq score for reads
-    default: 5
     inputBinding:
       position: 101
       prefix: --mapq
@@ -225,7 +205,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads in a cluster
-    default: 5
     inputBinding:
       position: 101
       prefix: --msmin
@@ -234,7 +213,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum sequence similarity for paths
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --seqsim
@@ -243,7 +221,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum size similarity for paths
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --sizesim
@@ -252,7 +229,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of variant to analyze
-    default: 50
     inputBinding:
       position: 101
       prefix: --sizemin
@@ -267,7 +243,6 @@ inputs:
       - 'null'
       - string
     doc: Output VCF maternal sample name
-    default: MAT
     inputBinding:
       position: 101
       prefix: --mother-sample
@@ -298,7 +273,6 @@ inputs:
       - 'null'
       - string
     doc: Output VCF proband sample name
-    default: PRO
     inputBinding:
       position: 101
       prefix: --proband-sample
@@ -337,7 +311,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

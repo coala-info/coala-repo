@@ -25,7 +25,6 @@ inputs:
       sequence; retain: trim, but retain adapter; mask: replace with 'N' characters;
       lowercase: convert to lowercase; crop: trim up and downstream sequence; none:
       leave unchanged."
-    default: trim
     inputBinding:
       position: 103
       prefix: --action
@@ -91,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: 'Compression level for compressed output files. Default: 1'
-    default: 1
     inputBinding:
       position: 103
       prefix: --compression-level
@@ -100,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU cores to use. Use 0 to auto-detect.
-    default: 1
     inputBinding:
       position: 103
       prefix: --cores
@@ -172,7 +169,6 @@ inputs:
     doc: Maximum allowed error rate (if 0 <= E < 1), or absolute number of 
       errors for full-length adapter match (if E is an integer >= 1). Error rate
       = no. of errors divided by length of matching region.
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --error-rate
@@ -183,7 +179,6 @@ inputs:
     doc: Maximum allowed error rate (if 0 <= E < 1), or absolute number of 
       errors for full-length adapter match (if E is an integer >= 1). Error rate
       = no. of errors divided by length of matching region.
-    default: 0
     inputBinding:
       position: 103
       prefix: --errors
@@ -237,7 +232,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Interpret IUPAC wildcards in reads. Default: False'
-    default: false
     inputBinding:
       position: 103
       prefix: --match-read-wildcards
@@ -299,7 +293,6 @@ inputs:
       - 'null'
       - string
     doc: 'Discard reads shorter than LEN. Default: 0'
-    default: '0'
     inputBinding:
       position: 103
       prefix: --minimum-length
@@ -335,7 +328,6 @@ inputs:
       - int
     doc: Require MINLENGTH overlap between read and adapter for an adapter to be
       found.
-    default: 3
     inputBinding:
       position: 103
       prefix: --overlap
@@ -354,7 +346,6 @@ inputs:
       - string
     doc: 'Which of the reads in a paired-end read have to match the filtering criterion
       in order for the pair to be filtered. Default: any'
-    default: any
     inputBinding:
       position: 103
       prefix: --pair-filter
@@ -381,7 +372,6 @@ inputs:
       - int
     doc: 'Assume that quality values in FASTQ are encoded as ascii(quality + N). This
       needs to be set to 64 for some old Illumina FASTQ files. Default: 33'
-    default: 33
     inputBinding:
       position: 103
       prefix: --quality-base
@@ -427,7 +417,6 @@ inputs:
       - 'null'
       - string
     doc: "Which type of report to print: 'full' or 'minimal'."
-    default: full
     inputBinding:
       position: 103
       prefix: --report
@@ -463,7 +452,6 @@ inputs:
       - 'null'
       - int
     doc: Remove up to COUNT adapters from each read.
-    default: 1
     inputBinding:
       position: 103
       prefix: --times

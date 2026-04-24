@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: Report both C->T and G->A
-    default: false
     inputBinding:
       position: 102
       prefix: -both
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: One Profile per bam file
-    default: false
     inputBinding:
       position: 102
       prefix: -classic
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output in damage-patterns format
-    default: false
     inputBinding:
       position: 102
       prefix: -dp
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - boolean
     doc: Double strand library
-    default: false
     inputBinding:
       position: 102
       prefix: -double
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Endo flag
-    default: 0
     inputBinding:
       position: 102
       prefix: -endo
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: Error rate
-    default: 0
     inputBinding:
       position: 102
       prefix: -err
@@ -86,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Length
-    default: 5
     inputBinding:
       position: 102
       prefix: -length
@@ -95,7 +88,6 @@ inputs:
       - 'null'
       - boolean
     doc: Logarithmic scale
-    default: false
     inputBinding:
       position: 102
       prefix: -log
@@ -112,7 +104,6 @@ inputs:
       - 'null'
       - boolean
     doc: One Profile per unique reference
-    default: false
     inputBinding:
       position: 102
       prefix: -meta
@@ -122,7 +113,6 @@ inputs:
       - int
     doc: Number of aligned sequences after which substitution patterns are 
       checked if frequencies converge
-    default: 10000000
     inputBinding:
       position: 102
       prefix: -minAligned
@@ -131,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: Set minimum threshold for substitution frequency convergence
-    default: 0.01
     inputBinding:
       position: 102
       prefix: -minConverge
@@ -140,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum fragment/read length
-    default: 35
     inputBinding:
       position: 102
       prefix: -minl
@@ -149,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality
-    default: 0
     inputBinding:
       position: 102
       prefix: -minq
@@ -158,7 +145,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow paired reads
-    default: false
     inputBinding:
       position: 102
       prefix: -paired
@@ -167,7 +153,6 @@ inputs:
       - 'null'
       - float
     doc: Set minimum decimal precision for substitution frequency computation
-    default: 0
     inputBinding:
       position: 102
       prefix: -precision
@@ -176,7 +161,6 @@ inputs:
       - 'null'
       - int
     doc: Do not print why reads are skipped
-    default: 1
     inputBinding:
       position: 102
       prefix: -q
@@ -193,7 +177,6 @@ inputs:
       - 'null'
       - boolean
     doc: Single strand library
-    default: false
     inputBinding:
       position: 102
       prefix: -single
@@ -202,7 +185,6 @@ inputs:
       - 'null'
       - int
     doc: Check every step-size number of aligned fragments for convergence
-    default: 500
     inputBinding:
       position: 102
       prefix: -stepsConverge
@@ -211,7 +193,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads. One file per thread
-    default: 1
     inputBinding:
       position: 102
       prefix: -threads

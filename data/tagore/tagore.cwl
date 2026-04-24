@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Human genome build to use
-    default: hg38
     inputBinding:
       position: 101
       prefix: --build
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: Output prefix
-    default: out
     inputBinding:
       position: 101
       prefix: --prefix

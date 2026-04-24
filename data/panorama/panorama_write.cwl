@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write all the annotations from families for the given sources
-    default: false
     inputBinding:
       position: 101
       prefix: --annotations
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: disables the progress bars
-    default: false
     inputBinding:
       position: 101
       prefix: --disable_prog_bar
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force writing in output directory and in pangenome output file.
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write an hmm for each gene families in pangenomes
-    default: false
     inputBinding:
       position: 101
       prefix: --hmm
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - File
     doc: log output file
-    default: stdout
     inputBinding:
       position: 101
       prefix: --log
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: Format of the input MSA.
-    default: afa
     inputBinding:
       position: 101
       prefix: --msa_format
@@ -100,7 +94,6 @@ inputs:
       - int
     doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
       for debug)
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbose

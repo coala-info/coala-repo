@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum gap length to fill
-    default: 50000
     inputBinding:
       position: 101
       prefix: --max_len
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum identity
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --min_id
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum matching length
-    default: 1000
     inputBinding:
       position: 101
       prefix: --min_match
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Arguments for minimap2
-    default: -x map-ont
     inputBinding:
       position: 101
       prefix: --minmap_arg
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: 'Type of long reads: pb (PacBio) or ont (Nanopore)'
-    default: ont
     inputBinding:
       position: 101
       prefix: --tgstype
@@ -67,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --thread

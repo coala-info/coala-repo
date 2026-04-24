@@ -47,7 +47,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_crd_path
-    default: system.crd
 
   config:
     label: Advanced configuration options for biobb_flexserv PCZanimate

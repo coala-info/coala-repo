@@ -84,7 +84,6 @@ inputs:
       - int
     doc: Number of retries of failed tasks during distributed processing. 
       Default 0 (no retries)
-    default: 0
     inputBinding:
       position: 104
       prefix: --retries
@@ -117,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Number of minutes before cluster startup times out.
-    default: 15
     inputBinding:
       position: 104
       prefix: --timeout

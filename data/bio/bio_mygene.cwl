@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: fields
-    default: ''
     inputBinding:
       position: 102
       prefix: --fields
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: download limit
-    default: 5
     inputBinding:
       position: 102
       prefix: --limit
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: species
-    default: ''
     inputBinding:
       position: 102
       prefix: --species

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Breakdown extracted queries by sample.
-    default: T
     inputBinding:
       position: 102
       prefix: --by_sample
@@ -38,7 +37,6 @@ inputs:
       extracted before roll up, so by default, descendant taxa will be included 
       in search if a higher level taxid is provided. If False (F), only exact 
       matches to taxid will be returned.
-    default: T
     inputBinding:
       position: 102
       prefix: --descendants
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to place extracted reads.
-    default: ./Extracted_Reads/
     inputBinding:
       position: 102
       prefix: --extract_path
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - File
     doc: Set log file path, absolute or relative to working dir.
-    default: ./Logs/mtsv_{COMMAND}_{TIMESTAMP}.log
     inputBinding:
       position: 102
       prefix: --log_file
@@ -76,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Number of worker threads to spawn.
-    default: 4
     inputBinding:
       position: 102
       prefix: --threads
@@ -85,7 +80,6 @@ inputs:
       - 'null'
       - Directory
     doc: Specify working directory to place output.
-    default: /
     inputBinding:
       position: 102
       prefix: --working_dir

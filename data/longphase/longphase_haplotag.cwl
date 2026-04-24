@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - boolean
     doc: an additional log file records the result of each read.
-    default: false
     inputBinding:
       position: 102
       prefix: --log
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: prefix of phasing result.
-    default: result
     inputBinding:
       position: 102
       prefix: --out-prefix
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - boolean
     doc: the output file will be in the cram format.
-    default: false
     inputBinding:
       position: 102
       prefix: --cram
@@ -59,7 +56,6 @@ inputs:
     doc: the alignment will be tagged according to the haplotype corresponding 
       to most alleles. if the alignment has no obvious corresponding haplotype, 
       it will not be tagged.
-    default: 0.6
     inputBinding:
       position: 102
       prefix: --percentageThreshold
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: not tag alignment if the mapping quality less than threshold.
-    default: 1
     inputBinding:
       position: 102
       prefix: --qualityThreshold
@@ -85,7 +80,6 @@ inputs:
     doc: tagging include only reads/variants overlapping those regions. input 
       format:chrom (consider entire chromosome) chrom:start (consider region 
       from this start to end of chromosome) chrom:start-end
-    default: ''
     inputBinding:
       position: 102
       prefix: --region
@@ -108,7 +102,6 @@ inputs:
       - 'null'
       - float
     doc: relative difference threshold for read to support a SV.
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --sv-threshold
@@ -117,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: window size for evaluating surrounding CIGAR operations.
-    default: 20
     inputBinding:
       position: 102
       prefix: --sv-window
@@ -126,7 +118,6 @@ inputs:
       - 'null'
       - boolean
     doc: tag supplementary alignment.
-    default: false
     inputBinding:
       position: 102
       prefix: --tagSupplementary
@@ -135,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: number of thread.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: 'start locus tag numbering (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --numbering

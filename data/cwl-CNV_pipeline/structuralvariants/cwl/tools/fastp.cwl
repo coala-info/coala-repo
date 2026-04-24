@@ -65,33 +65,27 @@ inputs:
       prefix: -I
   threads:
     type: int?
-    default: 1
     inputBinding:
       position: 1
       prefix: '--thread'
   cut_right:
     type: boolean?
-    default: true
     inputBinding:
       prefix: '--cut_right'
   cut_right_window_size:
     type: int?
-    default: 5
     inputBinding:
       prefix: '--cut_right_window_size'
   cut_right_mean_quality:
     type: int?
-    default: 24
     inputBinding:
       prefix: '--cut_right_mean_quality'
   trim_tail1:
     type: int?
-    default: 1
     inputBinding:
       prefix: '--trim_tail1'
   length_required:
     type: int?
-    default: 70
     inputBinding:
       prefix: '--length_required'
 

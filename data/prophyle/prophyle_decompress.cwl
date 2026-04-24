@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory
-    default: ./
     inputBinding:
       position: 2
   - id: configuration

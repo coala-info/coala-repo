@@ -7,14 +7,12 @@ inputs:
   - id: in_names
     type: File
     doc: Tab delimited file of (node, name)
-    default: None
     inputBinding:
       position: 101
       prefix: --in_names
   - id: in_scheme
     type: File
     doc: Cladeomatic scheme file
-    default: None
     inputBinding:
       position: 101
       prefix: --in_scheme

@@ -80,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: -1
     inputBinding:
       position: 103
       prefix: --t
@@ -89,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Time limit in seconds
-    default: -1
     inputBinding:
       position: 103
       prefix: --l
@@ -98,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Upper bound on the comigration number
-    default: -1
     inputBinding:
       position: 103
       prefix: --UB_gamma
@@ -107,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Upper bound on the migration number
-    default: -1
     inputBinding:
       position: 103
       prefix: --UB_mu
@@ -116,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: Upper bound on the seeding site number
-    default: -1
     inputBinding:
       position: 103
       prefix: --UB_sigma

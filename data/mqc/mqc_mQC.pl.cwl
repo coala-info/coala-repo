@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: 'the amount of cores to run the script on (integer, default: 5)'
-    default: 5
     inputBinding:
       position: 101
       prefix: --cores
@@ -48,7 +47,6 @@ inputs:
       - string
     doc: 'the mapper you used to generate the SAM file (STAR, TopHat2, HiSat2) (default:
       STAR)'
-    default: STAR
     inputBinding:
       position: 101
       prefix: --mapper
@@ -58,7 +56,6 @@ inputs:
       - int
     doc: 'maximum RPF length used for gene distributions and metagenic classification
       (default: 34).'
-    default: 34
     inputBinding:
       position: 101
       prefix: --max_length_gd
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: the maximum RPF length for Plastid offset generation (default 34)
-    default: 34
     inputBinding:
       position: 101
       prefix: --max_length_plastid
@@ -77,7 +73,6 @@ inputs:
       - int
     doc: 'the maximum amount of multimapped positions used for filtering the reads
       (default: 16)'
-    default: 16
     inputBinding:
       position: 101
       prefix: --maxmultimap
@@ -87,7 +82,6 @@ inputs:
       - int
     doc: 'minimum RPF length used for gene distributions and metagenic classification
       (default: 26).'
-    default: 26
     inputBinding:
       position: 101
       prefix: --min_length_gd
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: the minimum RPF length for Plastid offset generation (default 22)
-    default: 22
     inputBinding:
       position: 101
       prefix: --min_length_plastid
@@ -108,7 +101,6 @@ inputs:
       the offsets with Plastid (Dunn et al. 2016) - standard: use the standard offsets
       from the paper of Ingolia et al. (2012) (default option) - from_file: use offsets
       from an input file'
-    default: standard
     inputBinding:
       position: 101
       prefix: --offset
@@ -125,7 +117,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'the folder to store the output files (default: work_dir/mQC_output)'
-    default: work_dir/mQC_output
     inputBinding:
       position: 101
       prefix: --outfolder
@@ -134,7 +125,6 @@ inputs:
       - 'null'
       - string
     doc: 'custom name for the output HTML file (default: work_dir/mQC_experiment_name.html)'
-    default: work_dir/mQC_experiment_name.html
     inputBinding:
       position: 101
       prefix: --outhtml
@@ -143,7 +133,6 @@ inputs:
       - 'null'
       - string
     doc: 'custom name for output ZIP file (default: work_dir/mQC_experiment_name.zip)'
-    default: work_dir/mQC_experiment_name.zip
     inputBinding:
       position: 101
       prefix: --outzip
@@ -152,7 +141,6 @@ inputs:
       - 'null'
       - File
     doc: 'the mapping bam file for Plastid offset generation (default: convert)'
-    default: convert
     inputBinding:
       position: 101
       prefix: --plastid_bam
@@ -166,7 +154,6 @@ inputs:
       from Escher effects, as it tries to plot a 3D plot with the 2D software of pyplot
       and matplotlib. - mayavi: use the mayavi package to plot a 3D bar chart. This
       tool only works on local systems with graphical cards.'
-    default: grouped2D
     inputBinding:
       position: 101
       prefix: --plotrpftool
@@ -188,7 +175,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'temporary folder for storing temporary files of mappingQC (default: work_dir/tmp)'
-    default: work_dir/tmp
     inputBinding:
       position: 101
       prefix: --tmp
@@ -208,7 +194,6 @@ inputs:
       - string
     doc: 'whether to use only the unique alignments. Possible options: Y, N (default
       Y)'
-    default: Y
     inputBinding:
       position: 101
       prefix: --unique

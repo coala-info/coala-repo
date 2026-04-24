@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Field delimiter character.
-    default: TAB
     inputBinding:
       position: 102
       prefix: --delimiter

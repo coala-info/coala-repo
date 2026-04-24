@@ -12,7 +12,6 @@ inputs:
       - boolean
     doc: 'Rank metric sorting order. If the -a flag was chosen, then ascending equals
       to True. Default: False.'
-    default: false
     inputBinding:
       position: 101
       prefix: --ascending
@@ -35,7 +34,6 @@ inputs:
         items: string
     doc: 'The figsize keyword argument need two parameters to define. Default: (6.5,
       6)'
-    default: (6.5, 6)
     inputBinding:
       position: 101
       prefix: --figsize
@@ -45,7 +43,6 @@ inputs:
       - string
     doc: "File extensions supported by Matplotlib active backend, choose from {'pdf',
       'png', 'jpeg','ps', 'eps','svg'}. Default: 'pdf'."
-    default: "'pdf'"
     inputBinding:
       position: 101
       prefix: --format
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: 'Numbers of top graphs produced. Default: 20'
-    default: 20
     inputBinding:
       position: 101
       prefix: --graph
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: 'Max size of input genes presented in Gene Sets. Default: 500'
-    default: 500
     inputBinding:
       position: 101
       prefix: --max-size
@@ -80,7 +75,6 @@ inputs:
     doc: "Methods to calculate correlations of ranking metrics. Choose from {'signal_to_noise',
       'abs_signal_to_noise', 't_test', 'ratio_of_classes', 'diff_of_classes','log2_ratio_of_classes'}.
       Default: 'signal_to_noise'"
-    default: "'signal_to_noise'"
     inputBinding:
       position: 101
       prefix: --method
@@ -89,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: 'Min size of input genes presented in Gene Sets. Default: 15'
-    default: 15
     inputBinding:
       position: 101
       prefix: --min-size
@@ -99,7 +92,6 @@ inputs:
       - boolean
     doc: 'Speed up computing by suppressing the plot output.This is useful only if
       data are interested. Default: False.'
-    default: false
     inputBinding:
       position: 101
       prefix: --no-plot
@@ -108,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of random permutations. For calculating esnulls. Default: 1000'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --permu-num
@@ -118,7 +109,6 @@ inputs:
       - string
     doc: "Type of permutation reshuffling, Choose from {'phenotype': 'sample.labels'
       , 'gene_set' : gene.labels}. Default: phenotype"
-    default: phenotype
     inputBinding:
       position: 101
       prefix: --permu-type
@@ -127,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of random seed. Default: 123'
-    default: 123
     inputBinding:
       position: 101
       prefix: --seed
@@ -136,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads you are going to use. Default: 4'
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -154,7 +142,6 @@ inputs:
       - float
     doc: 'Weighted_score of rank_metrics. For weighting input genes. Choose from {0,
       1, 1.5, 2}. Default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --weight

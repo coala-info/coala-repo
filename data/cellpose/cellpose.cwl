@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: 'inference batch size. Default: 8'
-    default: 8
     inputBinding:
       position: 101
       prefix: --batch_size
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: 'block size for tiles. Default: 256'
-    default: 256
     inputBinding:
       position: 101
       prefix: --bsize
@@ -62,7 +60,6 @@ inputs:
       - float
     doc: cellprob threshold, default is 0, decrease to find more and larger 
       masks
-    default: 0
     inputBinding:
       position: 101
       prefix: --cellprob_threshold
@@ -162,7 +159,6 @@ inputs:
       - float
     doc: stddev of gaussian for smoothing of dP for dynamics in 3D, default of 0
       means no smoothing
-    default: 0
     inputBinding:
       position: 101
       prefix: --flow3D_smooth
@@ -171,7 +167,6 @@ inputs:
       - 'null'
       - float
     doc: 'flow error threshold, 0 turns off this optional QC step. Default: 0.4'
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --flow_threshold
@@ -221,7 +216,6 @@ inputs:
       - 'null'
       - float
     doc: 'learning rate. Default: 1e-05'
-    default: '1e-05'
     inputBinding:
       position: 101
       prefix: --learning_rate
@@ -239,7 +233,6 @@ inputs:
       - string
     doc: "end string for masks to run on. use '_seg.npy' for manual annotations from
       the GUI. Default: _masks"
-    default: _masks
     inputBinding:
       position: 101
       prefix: --mask_filter
@@ -248,7 +241,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of pixels per mask, can turn off with -1
-    default: -1
     inputBinding:
       position: 101
       prefix: --min_size
@@ -258,7 +250,6 @@ inputs:
       - int
     doc: 'minimum number of masks a training image must have to be used. Default:
       5'
-    default: 5
     inputBinding:
       position: 101
       prefix: --min_train_masks
@@ -277,7 +268,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of epochs. Default: 100'
-    default: 100
     inputBinding:
       position: 101
       prefix: --n_epochs
@@ -304,7 +294,6 @@ inputs:
     doc: niter, number of iterations for dynamics for mask creation, default of 
       0 means it is proportional to diameter, set to a larger number like 2000 
       for very long ROIs
-    default: 0
     inputBinding:
       position: 101
       prefix: --niter
@@ -391,7 +380,6 @@ inputs:
       - boolean
     doc: 'wether or not to save each epoch. Must also use --save_every. (default:
       False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --save_each
@@ -400,7 +388,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of epochs to skip between saves. Default: 100'
-    default: 100
     inputBinding:
       position: 101
       prefix: --save_every
@@ -511,7 +498,6 @@ inputs:
       - 'null'
       - int
     doc: 'training batch size. Default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --train_batch_size
@@ -545,7 +531,6 @@ inputs:
       - 'null'
       - float
     doc: 'weight decay. Default: 0.1'
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --weight_decay

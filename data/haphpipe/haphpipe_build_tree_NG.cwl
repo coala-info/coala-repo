@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run bootstrap search and find best ML tree
-    default: false
     inputBinding:
       position: 101
       prefix: --all
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run non-parametric bootstrap analysis
-    default: false
     inputBinding:
       position: 101
       prefix: --bootstrap
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate bootstrap replicate alignments
-    default: false
     inputBinding:
       position: 101
       prefix: --bs_msa
@@ -70,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: A posteriori bootstrap convergence test
-    default: false
     inputBinding:
       position: 101
       prefix: --bsconverge
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - boolean
     doc: Check alignment file and remove any columns consisting entirely of gaps
-    default: false
     inputBinding:
       position: 101
       prefix: --check
@@ -104,7 +99,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print commands but do not run
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -113,7 +107,6 @@ inputs:
       - 'null'
       - string
     doc: 'File format: FASTA or PHYLIP'
-    default: FASTA
     inputBinding:
       position: 101
       prefix: --in_type
@@ -122,7 +115,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep temporary directory
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_tmp
@@ -148,7 +140,6 @@ inputs:
       - 'null'
       - boolean
     doc: Compute log-likelihood of a given tree without any optimization
-    default: false
     inputBinding:
       position: 101
       prefix: --loglh
@@ -165,7 +156,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --ncpu
@@ -174,7 +164,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir
@@ -208,7 +197,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not write output to console (silence stdout and stderr)
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -226,7 +214,6 @@ inputs:
       - boolean
     doc: Run even if there are existing files with the same name (use with 
       caution!)
-    default: false
     inputBinding:
       position: 101
       prefix: --redo
@@ -235,7 +222,6 @@ inputs:
       - 'null'
       - boolean
     doc: Find best scoring ML tree (default)
-    default: false
     inputBinding:
       position: 101
       prefix: --search
@@ -244,7 +230,6 @@ inputs:
       - 'null'
       - boolean
     doc: Find best scoring ML tree with 1 random tree
-    default: false
     inputBinding:
       position: 101
       prefix: --search_1random
@@ -253,7 +238,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for random numbers
-    default: 12345
     inputBinding:
       position: 101
       prefix: --seed
@@ -270,7 +254,6 @@ inputs:
       - 'null'
       - boolean
     doc: Check whether a tree lies on a phylogenetic terrace
-    default: false
     inputBinding:
       position: 101
       prefix: --terrace

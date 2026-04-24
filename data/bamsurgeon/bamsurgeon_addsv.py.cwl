@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Aligner to use (e.g., mem, backtrace)
-    default: mem
     inputBinding:
       position: 101
       prefix: --aligner
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum fraction of shared reads
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --minshared
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --procs

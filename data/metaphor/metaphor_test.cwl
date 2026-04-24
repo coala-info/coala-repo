@@ -10,7 +10,6 @@ inputs:
       - boolean
     doc: Whether to run tests in coassembly mode, i.e. all samples are pooled 
       together and assembled.
-    default: false
     inputBinding:
       position: 101
       prefix: --coassembly
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't ask for confirmation when running tests.
-    default: false
     inputBinding:
       position: 101
       prefix: --confirm
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors to use in tests.
-    default: 3
     inputBinding:
       position: 101
       prefix: --cores
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to run tests.
-    default: test_data_metaphor
     inputBinding:
       position: 101
       prefix: --directory
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to run tests as a dry-run only (used for CI).
-    default: false
     inputBinding:
       position: 101
       prefix: --dry-run
@@ -55,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: String of extra arguments to be passed on to Snakemake.
-    default: ''
     inputBinding:
       position: 101
       prefix: --extras
@@ -68,7 +62,6 @@ inputs:
       filenames will be treated as different units of the same sample, i.e. they
       will be joined into a single file. This is useful for multiple sequencing 
       lanes for the same sample.
-    default: false
     inputBinding:
       position: 101
       prefix: --join-units
@@ -77,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Amount of RAM to use in tests.
-    default: 8192
     inputBinding:
       position: 101
       prefix: --max_mb
@@ -86,7 +78,6 @@ inputs:
       - 'null'
       - string
     doc: Profile to be used to run Metaphor.
-    default: None
     inputBinding:
       position: 101
       prefix: --profile

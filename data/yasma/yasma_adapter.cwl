@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - float
     doc: Min proportion of reads containing the adapter, 0.0 to 1.0.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min_adapter_content
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads to check for adapter
-    default: 10000
     inputBinding:
       position: 101
       prefix: -n
@@ -31,7 +29,6 @@ inputs:
       - Directory
     doc: Directory name for annotation output. Defaults to the current 
       directory, with this directory name as the project name.
-    default: current directory
     inputBinding:
       position: 101
       prefix: --output_directory

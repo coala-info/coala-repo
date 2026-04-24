@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: 'P-value for branch length Erlang test. Default: 0=off'
-    default: 0=off
     inputBinding:
       position: 101
       prefix: --brlen_pv
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: 'Confidence cut-off between 0 and 1. Default: 0'
-    default: 0
     inputBinding:
       position: 101
       prefix: --conf_cutoff
@@ -83,7 +81,6 @@ inputs:
       RAxML tree search (default) fast\nuse RF distance as search convergence criterion
       (RAxML\n-D option) ultrafast optimize model+branch lengths\nonly (RAxML -f e
       option)"
-    default: thorough
     inputBinding:
       position: 101
       prefix: --method
@@ -95,7 +92,6 @@ inputs:
       to a specific rank. This value\nrepresents a confidence measure of the assignment,\n\
       assignments below this value will be discarded.\nDefault: 0 to output all possbile
       assignments."
-    default: 0 to output all possbile assignments
     inputBinding:
       position: 101
       prefix: --min_lhw
@@ -104,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: 'Specify the number of CPUs (default: 20)'
-    default: 20
     inputBinding:
       position: 101
       prefix: --num_threads
@@ -113,7 +108,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Output directory (default: current).'
-    default: current
     inputBinding:
       position: 101
       prefix: --output_dir
@@ -123,7 +117,6 @@ inputs:
       - string
     doc: "Job name, will be used as a prefix for output file\nnames (default: taxonomy
       file name without extension)"
-    default: taxonomy file name without extension
     inputBinding:
       position: 101
       prefix: --output_name
@@ -132,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: 'Random seed to be used with RAxML. Default: 12345'
-    default: 12345
     inputBinding:
       position: 101
       prefix: --rand_seed
@@ -158,7 +150,6 @@ inputs:
       - int
     doc: "Number of RAxML tree searches (with distinct random\nseeds) to resolve multifurcation.
       Default: 1"
-    default: 1
     inputBinding:
       position: 101
       prefix: --rep_num

@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: 'DPI of the output figure. Default: 300'
-    default: 300
     inputBinding:
       position: 101
       prefix: --dpi
@@ -41,7 +40,6 @@ inputs:
       - int
     doc: 'Extend the plot downstream. Only used when not providing coordinates. Default:
       500'
-    default: 500
     inputBinding:
       position: 101
       prefix: --extend_down
@@ -51,7 +49,6 @@ inputs:
       - int
     doc: 'Extend the plot upstream. Only used when not providing coordinates. Default:
       500'
-    default: 500
     inputBinding:
       position: 101
       prefix: --extend_up
@@ -85,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum number of reads to plot a junction arc. Default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --minimum_junc_reads
@@ -126,7 +122,6 @@ inputs:
       - int
     doc: 'Window size for median filter to smooth coverage plot. Greater value gives
       smoother plot. Default: 21'
-    default: 21
     inputBinding:
       position: 101
       prefix: --smoothing_window_size
@@ -143,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: 'Width of the output figure. Default: 8'
-    default: 8
     inputBinding:
       position: 101
       prefix: --width

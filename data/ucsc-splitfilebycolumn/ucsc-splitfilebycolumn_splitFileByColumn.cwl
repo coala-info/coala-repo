@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Use the Nth column value
-    default: 1
     inputBinding:
       position: 103
       prefix: -col

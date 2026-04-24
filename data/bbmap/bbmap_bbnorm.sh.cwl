@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: Bits per cell in bloom filter; must be 2, 4, 8, 16, or 32.
-    default: 32
     inputBinding:
       position: 101
       prefix: bits
@@ -21,7 +20,6 @@ inputs:
       - int
     doc: More passes can sometimes increase accuracy by iteratively removing low-depth
       kmers
-    default: 1
     inputBinding:
       position: 101
       prefix: buildpasses
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set to true to correct errors.
-    default: false
     inputBinding:
       position: 101
       prefix: ecc
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Break up FASTA reads longer than this
-    default: 2147483648
     inputBinding:
       position: 101
       prefix: fastareadlen
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Number of times each kmer is hashed and stored.
-    default: 3
     inputBinding:
       position: 101
       prefix: hashes
@@ -89,7 +84,6 @@ inputs:
       - string
     doc: May be set to true or false to force the input read file to override autodetection
       of the input file as paired interleaved.
-    default: auto
     inputBinding:
       position: 101
       prefix: interleaved
@@ -106,7 +100,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set to true to keep all reads (e.g. if you just want error correction).
-    default: false
     inputBinding:
       position: 101
       prefix: keepall
@@ -115,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer length
-    default: 31
     inputBinding:
       position: 101
       prefix: k
@@ -124,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Process every nth kmer, and skip the rest
-    default: 1
     inputBinding:
       position: 101
       prefix: kmersample
@@ -133,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: Reads will not be downsampled when below this depth
-    default: -1
     inputBinding:
       position: 101
       prefix: maxdepth
@@ -143,7 +133,6 @@ inputs:
       - int
     doc: Kmers with depth below this number will not be included when calculating
       the depth of a read.
-    default: 5
     inputBinding:
       position: 101
       prefix: mindepth
@@ -152,7 +141,6 @@ inputs:
       - 'null'
       - int
     doc: Reads must have at least this many kmers over min depth to be retained.
-    default: 15
     inputBinding:
       position: 101
       prefix: minkmers
@@ -161,7 +149,6 @@ inputs:
       - 'null'
       - float
     doc: Ignore kmers with overall probability of correctness below this
-    default: 0.5
     inputBinding:
       position: 101
       prefix: minprob
@@ -170,7 +157,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore kmers containing bases with quality below this
-    default: 6
     inputBinding:
       position: 101
       prefix: minq
@@ -179,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: 1 pass is the basic mode. 2 passes (default) allows greater accuracy.
-    default: 2
     inputBinding:
       position: 101
       prefix: passes
@@ -188,7 +173,6 @@ inputs:
       - 'null'
       - float
     doc: Read depth is by default inferred from the 54th percentile of kmer depth
-    default: 54.0
     inputBinding:
       position: 101
       prefix: percentile
@@ -197,7 +181,6 @@ inputs:
       - 'null'
       - boolean
     doc: Filters out low-depth kmers from the main hashtable.
-    default: false
     inputBinding:
       position: 101
       prefix: prefilter
@@ -206,7 +189,6 @@ inputs:
       - 'null'
       - int
     doc: Bits per cell in prefilter.
-    default: 2
     inputBinding:
       position: 101
       prefix: prefilterbits
@@ -215,7 +197,6 @@ inputs:
       - 'null'
       - float
     doc: Fraction of memory to allocate to prefilter.
-    default: 0.35
     inputBinding:
       position: 101
       prefix: prefiltersize
@@ -224,7 +205,6 @@ inputs:
       - 'null'
       - int
     doc: Number of hashes for prefilter.
-    default: 2
     inputBinding:
       position: 101
       prefix: prehashes
@@ -233,7 +213,6 @@ inputs:
       - 'null'
       - string
     doc: ASCII offset for input quality. May be 33 (Sanger), 64 (Illumina), or auto.
-    default: auto
     inputBinding:
       position: 101
       prefix: qin
@@ -242,7 +221,6 @@ inputs:
       - 'null'
       - string
     doc: ASCII offset for output quality. May be 33 (Sanger), 64 (Illumina), or auto.
-    default: auto
     inputBinding:
       position: 101
       prefix: qout
@@ -251,7 +229,6 @@ inputs:
       - 'null'
       - int
     doc: Process every nth read, and skip the rest
-    default: 1
     inputBinding:
       position: 101
       prefix: readsample
@@ -260,7 +237,6 @@ inputs:
       - 'null'
       - int
     doc: Only process this number of reads, then quit (-1 means all)
-    default: -1
     inputBinding:
       position: 101
       prefix: reads
@@ -269,7 +245,6 @@ inputs:
       - 'null'
       - boolean
     doc: When true, a kmer's count will only be incremented once per read pair
-    default: true
     inputBinding:
       position: 101
       prefix: rdk
@@ -278,7 +253,6 @@ inputs:
       - 'null'
       - boolean
     doc: Rename reads based on their kmer depth.
-    default: false
     inputBinding:
       position: 101
       prefix: rename
@@ -287,7 +261,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use sampling on output as well as input
-    default: true
     inputBinding:
       position: 101
       prefix: sampleoutput
@@ -296,7 +269,6 @@ inputs:
       - 'null'
       - int
     doc: Use at most this many reads when building the hashtable (-1 means all)
-    default: -1
     inputBinding:
       position: 101
       prefix: tablereads
@@ -305,7 +277,6 @@ inputs:
       - 'null'
       - int
     doc: Target normalization depth.
-    default: 100
     inputBinding:
       position: 101
       prefix: target
@@ -330,7 +301,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allows enabling/disabling of temporary directory
-    default: true
     inputBinding:
       position: 101
       prefix: usetempdir
@@ -340,7 +310,6 @@ inputs:
       - boolean
     doc: Set to true if you want kmers with a count of 0 to go in the 0 bin instead
       of the 1 bin in histograms.
-    default: false
     inputBinding:
       position: 101
       prefix: zerobin

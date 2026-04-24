@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: 'Phasing algorithm to use (default: whatshap)'
-    default: whatshap
     inputBinding:
       position: 103
       prefix: --algorithm
@@ -50,7 +49,6 @@ inputs:
       - int
     doc: Default genotype quality used as cost of changing a genotype when no 
       genotype likelihoods are available (default 30)
-    default: 30
     inputBinding:
       position: 103
       prefix: --default-gq
@@ -69,7 +67,6 @@ inputs:
       - float
     doc: 'The probability that a nucleotide is wrong in read merging model (default:
       0.15).'
-    default: 0.15
     inputBinding:
       position: 103
       prefix: --error-rate
@@ -124,7 +121,6 @@ inputs:
     doc: 'Coverage reduction parameter in the internal core phasing algorithm. Higher
       values increase runtime *exponentially* while possibly improving phasing quality
       marginally. Avoid using this in the normal case! (default: 15)'
-    default: 15
     inputBinding:
       position: 103
       prefix: --internal-downsampling
@@ -133,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum mapping quality (default: 20)'
-    default: 20
     inputBinding:
       position: 103
       prefix: --mapping-quality
@@ -143,7 +138,6 @@ inputs:
       - float
     doc: 'The maximum error rate of any edge of the read merging graph before discarding
       it (default: 0.25).'
-    default: 0.25
     inputBinding:
       position: 103
       prefix: --maximum-error-rate
@@ -163,7 +157,6 @@ inputs:
     doc: 'The threshold of the ratio between the probabilities that a pair of reads
       come from different haplotypes and the same haplotype in the read merging model
       (default: 1000).'
-    default: 1000.0
     inputBinding:
       position: 103
       prefix: --negative-threshold
@@ -226,7 +219,6 @@ inputs:
       - string
     doc: 'Recombination rate in cM/Mb (used with --ped). If given, a constant recombination
       rate is assumed (default: 1.26cM/Mb).'
-    default: 1.26cM/Mb
     inputBinding:
       position: 103
       prefix: --recombrate
@@ -265,7 +257,6 @@ inputs:
       - int
     doc: 'Skip supplementary alignments further than DIST bp away from the primary
       alignment (default: 100000)'
-    default: 100000
     inputBinding:
       position: 103
       prefix: --supplementary-distance
@@ -275,7 +266,6 @@ inputs:
       - string
     doc: 'Store phasing information with PS tag (standardized) or HP tag (used by
       GATK ReadBackedPhasing) (default: PS)'
-    default: PS
     inputBinding:
       position: 103
       prefix: --tag
@@ -286,7 +276,6 @@ inputs:
     doc: 'The threshold of the ratio between the probabilities that a pair of reads
       come from the same haplotype and different haplotypes in the read merging model
       (default: 1000000).'
-    default: 1000000.0
     inputBinding:
       position: 103
       prefix: --threshold

@@ -262,7 +262,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the number of LSH tables.
-    default: 2
     inputBinding:
       position: 102
       prefix: --nlsh
@@ -428,7 +427,6 @@ inputs:
       - 'null'
       - int
     doc: Set sketchsize.
-    default: 1024
     inputBinding:
       position: 102
       prefix: --sketchsize

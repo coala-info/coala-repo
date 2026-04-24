@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: autocompletion file
-    default: /root/.bash_completion.d/lexicmap.sh
     inputBinding:
       position: 101
       prefix: --file
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: autocompletion type (bash|zsh|fish|powershell)
-    default: bash
     inputBinding:
       position: 101
       prefix: --shell
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU cores to use. By default, it uses all available cores.
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads

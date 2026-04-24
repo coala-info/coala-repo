@@ -17,7 +17,6 @@ inputs:
       - float
     doc: default theta (bias) for SNVs whose theta cannot be estimated. 
       Default=0.75
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --bias
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: 'min. reads for bulk. Default: 20'
-    default: 20
     inputBinding:
       position: 101
       prefix: --bulk_min_depth
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: 'min mapQ for bulk. Default: 20'
-    default: 20
     inputBinding:
       position: 101
       prefix: --bulk_min_mapq
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: 'min. num. variant supporting reads for bulk. Default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --bulk_min_var
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: 'num. processes. Default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpu_num
@@ -85,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: lambda for bias estimation. Default=10000
-    default: 10000
     inputBinding:
       position: 101
       prefix: --lamb
@@ -103,7 +97,6 @@ inputs:
       - 'null'
       - float
     doc: min. allelic fraction considered. Default=0.03
-    default: 0.03
     inputBinding:
       position: 101
       prefix: --null
@@ -112,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: 'min. reads. Default: 10'
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_depth
@@ -121,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: 'min. mapQ. Default: 40'
-    default: 40
     inputBinding:
       position: 101
       prefix: --mapq
@@ -131,7 +122,6 @@ inputs:
       - int
     doc: 'min. read depth of known heterogous SNP called from bulk when choosing -t
       dbsnp. Default: 20. Recommand: 10,15,20, depending on average read depth'
-    default: 20
     inputBinding:
       position: 101
       prefix: --RD
@@ -140,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: 'min. num. variant supporting reads. Default: 4'
-    default: 4
     inputBinding:
       position: 101
       prefix: --minvar
@@ -149,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: 'num. splits per chromosome for multi-process computing. Default: 100'
-    default: 100
     inputBinding:
       position: 101
       prefix: --work_num
@@ -158,7 +146,6 @@ inputs:
       - 'null'
       - string
     doc: 'output file format. bed or vcf. Default: vcf'
-    default: vcf
     inputBinding:
       position: 101
       prefix: --format
@@ -167,7 +154,6 @@ inputs:
       - 'null'
       - string
     doc: 'pileup engine. samtools or pysam. Default: pysam'
-    default: pysam
     inputBinding:
       position: 101
       prefix: --engine
@@ -190,7 +176,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'work dir. Default: ./'
-    default: ./
     inputBinding:
       position: 101
       prefix: --wkdir

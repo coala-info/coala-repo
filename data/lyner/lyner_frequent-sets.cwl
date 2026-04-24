@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum support threshold for itemsets (0.0 to 1.0).
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --min-support

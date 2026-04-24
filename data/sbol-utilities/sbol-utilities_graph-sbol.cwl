@@ -15,7 +15,6 @@ inputs:
       - string
     doc: 'The format of the output graph. Supported formats: turtle, jsonld, rdfxml,
       ntriples.'
-    default: turtle
     inputBinding:
       position: 102
       prefix: --format

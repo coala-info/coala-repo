@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Indel opening score
-    default: -500
     inputBinding:
       position: 103
       prefix: --indel-opening
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Indel score
-    default: -350
     inputBinding:
       position: 103
       prefix: --indel
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Match score
-    default: 50
     inputBinding:
       position: 103
       prefix: --match
@@ -70,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Limit maximum base pair span (default=off)
-    default: -1
     inputBinding:
       position: 103
       prefix: --maxBPspan
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: 'Maximal ratio of #base pairs divided by sequence length (default: no effect)'
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --max-bps-length-ratio
@@ -88,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal difference for alignment cuts
-    default: -1
     inputBinding:
       position: 103
       prefix: --max-diff
@@ -97,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal difference for sizes of matched arcs
-    default: -1
     inputBinding:
       position: 103
       prefix: --max-diff-am
@@ -106,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal difference for alignment traces, only at arc match positions
-    default: -1
     inputBinding:
       position: 103
       prefix: --max-diff-at-am
@@ -115,7 +107,6 @@ inputs:
       - 'null'
       - float
     doc: Minimal probability
-    default: 0.01
     inputBinding:
       position: 103
       prefix: --min-prob
@@ -124,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: Mismatch score
-    default: 0
     inputBinding:
       position: 103
       prefix: --mismatch
@@ -142,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: Output width
-    default: 120
     inputBinding:
       position: 103
       prefix: --width
@@ -151,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: Recomputation distance
-    default: 1
     inputBinding:
       position: 103
       prefix: --c_d
@@ -168,7 +156,6 @@ inputs:
       - 'null'
       - File
     doc: Ribosum file
-    default: RIBOSUM85_60
     inputBinding:
       position: 103
       prefix: --ribosum-file
@@ -177,7 +164,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal weight of 1/2 arc match
-    default: 200
     inputBinding:
       position: 103
       prefix: --struct-weight
@@ -186,7 +172,6 @@ inputs:
       - 'null'
       - float
     doc: Tau factor in percent
-    default: 0
     inputBinding:
       position: 103
       prefix: --tau
@@ -195,7 +180,6 @@ inputs:
       - 'null'
       - int
     doc: Time limit in ms (always search first solution; turn off by 0).
-    default: 300000
     inputBinding:
       position: 103
       prefix: --time-limit
@@ -221,7 +205,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use ribosum scores
-    default: true
     inputBinding:
       position: 103
       prefix: --use-ribosum

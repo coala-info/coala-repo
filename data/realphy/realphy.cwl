@@ -58,7 +58,6 @@ inputs:
       - float
     doc: Specifies the proportion of input sequences that are allowed to contain
       gaps in the final sequence alignment.
-    default: 0
     inputBinding:
       position: 103
       prefix: -gapThreshold
@@ -95,7 +94,6 @@ inputs:
       - int
     doc: Polymorphisms will only be extracted for regions covered by more than 
       this threshold of reads.
-    default: 10
     inputBinding:
       position: 103
       prefix: -perBaseCov
@@ -105,7 +103,6 @@ inputs:
       - float
     doc: Polymorphisms occurring at a frequency lower than this threshold at any
       given alignment position will not be considered.
-    default: 0.95
     inputBinding:
       position: 103
       prefix: -polyThreshold
@@ -116,7 +113,6 @@ inputs:
     doc: Quality threshold for fastq files (PHRED+33). Bases below this 
       threshold will not be considered. Fasta files are converted to fastq with 
       quality 20.
-    default: 20
     inputBinding:
       position: 103
       prefix: -quality
@@ -134,7 +130,6 @@ inputs:
       - int
     doc: Size of fragments to be produced from input sequences. Larger values 
       increase mapping time but can map more divergent sequences.
-    default: 50
     inputBinding:
       position: 103
       prefix: -readLength
@@ -144,7 +139,6 @@ inputs:
       - string
     doc: The file name of a sequence data set without the extension. Sets the 
       reference sequence.
-    default: random
     inputBinding:
       position: 103
       prefix: -ref
@@ -163,7 +157,6 @@ inputs:
       - string
     doc: The file name of a sequence data set without the extension. Specifies 
       the root of the tree.
-    default: random
     inputBinding:
       position: 103
       prefix: -root
@@ -172,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: Specifies k-mer length in bowtie2.
-    default: 22
     inputBinding:
       position: 103
       prefix: -seedLength
@@ -181,7 +173,6 @@ inputs:
       - 'null'
       - string
     doc: Appends a suffix to the reference output folder.
-    default: not set
     inputBinding:
       position: 103
       prefix: -suffix
@@ -191,7 +182,6 @@ inputs:
       - int
     doc: 'Specifies the tree building method: 0=Do not build a tree, 1=treepuzzle,
       2=raxml, 3=max. parsimony (dnapars), 4=PhyML (default).'
-    default: 4
     inputBinding:
       position: 103
       prefix: -treeBuilder

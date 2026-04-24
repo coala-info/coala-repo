@@ -22,7 +22,6 @@ inputs:
     doc: Size of chunks sent to process pool. For large input files using a 
       large chunksize can make the job complete much faster than using the 
       default value of 1.
-    default: 1
     inputBinding:
       position: 103
       prefix: --chunksize

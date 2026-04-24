@@ -17,7 +17,6 @@ inputs:
       - File
     doc: Report minority aminoacids - a .config file specifying reading frames 
       expected
-    default: None
     inputBinding:
       position: 102
       prefix: --config
@@ -27,7 +26,6 @@ inputs:
       - int
     doc: Ending position of the region of interest, 0-based indexing. Note a 
       half-open interval is used, i.e, [start:end)
-    default: None
     inputBinding:
       position: 102
       prefix: --end
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read depth for reporting variants per locus and sample
-    default: 100
     inputBinding:
       position: 102
       prefix: -c
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: Patient/sample identifiers as comma separated strings
-    default: None
     inputBinding:
       position: 102
       prefix: -N
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Starting position of the region of interest, 0-based indexing
-    default: None
     inputBinding:
       position: 102
       prefix: --start
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: Indicates whether or not all frequencies should be stored
-    default: false
     inputBinding:
       position: 102
       prefix: --freqs
@@ -80,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: -t
@@ -89,7 +82,6 @@ inputs:
       - 'null'
       - boolean
     doc: Indicates whether coverage per locus should be written to output file
-    default: false
     inputBinding:
       position: 102
       prefix: -d

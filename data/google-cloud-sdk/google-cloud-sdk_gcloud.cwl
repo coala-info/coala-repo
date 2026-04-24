@@ -116,7 +116,6 @@ inputs:
       - string
     doc: 'Override the default verbosity for this command. VERBOSITY must be one of:
       debug, info, warning, error, critical, none.'
-    default: warning
     inputBinding:
       position: 101
       prefix: --verbosity

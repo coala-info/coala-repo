@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: print index statistics to stdout
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

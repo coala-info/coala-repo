@@ -56,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: 'Specify the maximum #substitutions per site that CMAPLE is effective.'
-    default: 0.067
     inputBinding:
       position: 101
       prefix: --max-subs
@@ -65,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: 'Specify the mean #substitutions per site that CMAPLE is effective.'
-    default: 0.02
     inputBinding:
       position: 101
       prefix: --mean-subs

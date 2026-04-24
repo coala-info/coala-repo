@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Enable more verbose output (default: False).'
-    default: false
     inputBinding:
       position: 103
       prefix: --debug
@@ -53,7 +52,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Whether to infer copy-number events (default: False).'
-    default: false
     inputBinding:
       position: 103
       prefix: --events
@@ -87,7 +85,6 @@ inputs:
       - string
     doc: 'Expert option: character used to separate chromosomes in the FST (default:
       "X").'
-    default: X
     inputBinding:
       position: 103
       prefix: --fst-chr-separator
@@ -98,7 +95,6 @@ inputs:
     doc: "Name of the CN columns (comma separated) if using TSV input format (default:
       'cn_a, cn_b'). This also adjusts the number of alleles considered (min. 1, max.
       2)."
-    default: cn_a, cn_b
     inputBinding:
       position: 103
       prefix: --input-allele-columns
@@ -108,7 +104,6 @@ inputs:
       - string
     doc: 'Character used to separate chromosomes in the input data (condensed FASTA
       only, default: "X").'
-    default: X
     inputBinding:
       position: 103
       prefix: --input-chr-separator
@@ -117,7 +112,6 @@ inputs:
       - 'null'
       - string
     doc: 'Choose the type of input: f for FASTA, t for TSV'
-    default: tsv
     inputBinding:
       position: 103
       prefix: --input-type
@@ -127,7 +121,6 @@ inputs:
       - int
     doc: 'Expert option: maximum CN at which the input is capped. Does not change
       FST. The maximum possible value is 8. Default: 8'
-    default: 8
     inputBinding:
       position: 103
       prefix: --maxcn
@@ -144,7 +137,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Disable plotting of tree (default: False).'
-    default: false
     inputBinding:
       position: 103
       prefix: --no-plot-tree
@@ -153,7 +145,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Enable whole-genome doubling events (default: False).'
-    default: false
     inputBinding:
       position: 103
       prefix: --no-wgd
@@ -165,7 +156,6 @@ inputs:
       this sample for ancestral reconstruction (default: "diploid"). If the sample
       ID is not found, an artificial normal sample of the same name is created with
       CN states = 1 for each allele.'
-    default: diploid
     inputBinding:
       position: 103
       prefix: --normal-name
@@ -176,7 +166,6 @@ inputs:
     doc: "'bars' is recommended for <50 samples, heatmap for more samples, 'auto'
       will decide based on the number of samples, 'both' will plot both and 'none'
       will plot neither. (default: auto)."
-    default: auto
     inputBinding:
       position: 103
       prefix: --plot
@@ -195,7 +184,6 @@ inputs:
     doc: 'Expert option: Prune weight in ancestor reconstruction. Values >0 might
       result in more accurate ancestors but will require more time and memory. Default:
       0'
-    default: 0
     inputBinding:
       position: 103
       prefix: --prune-weight
@@ -212,7 +200,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Hide all output (default: False).'
-    default: false
     inputBinding:
       position: 103
       prefix: --silent
@@ -221,7 +208,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Output only tree topology, without reconstructing ancestors (default: False).'
-    default: false
     inputBinding:
       position: 103
       prefix: --topology-only
@@ -231,7 +217,6 @@ inputs:
       - boolean
     doc: 'Run for total copy number data instead of allele-specific data (default:
       False).'
-    default: false
     inputBinding:
       position: 103
       prefix: --total-copy-numbers
@@ -249,7 +234,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Enable verbose output (default: False).'
-    default: false
     inputBinding:
       position: 103
       prefix: --verbose
@@ -258,7 +242,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Expert option: Treat WGD as a x2 operation (default: False).'
-    default: false
     inputBinding:
       position: 103
       prefix: --wgd-x2

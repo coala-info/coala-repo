@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Quality score to assign to all bases
-    default: 40
     inputBinding:
       position: 102
       prefix: --qual

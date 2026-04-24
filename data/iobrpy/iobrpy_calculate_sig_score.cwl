@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Scoring method to apply
-    default: pca
     inputBinding:
       position: 101
       prefix: --method

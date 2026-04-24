@@ -193,7 +193,6 @@ inputs:
       - int
     doc: Number of threads to use when running permutation tests in parallel, 
       default=4
-    default: 4
     inputBinding:
       position: 101
       prefix: --num_threads

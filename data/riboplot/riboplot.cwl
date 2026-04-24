@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: 'Color scheme to use (default: default)'
-    default: default
     inputBinding:
       position: 101
       prefix: --color_scheme
@@ -29,7 +28,6 @@ inputs:
       by commas. If multiple read lengths are specified, corresponding read offsets
       should also be specified. If you do not wish to apply an offset, please input
       0 for the corresponding read length'
-    default: '0'
     inputBinding:
       position: 101
       prefix: --read_lengths
@@ -39,7 +37,6 @@ inputs:
       - string
     doc: 'Read offsets (default: 0). Multiple read offsets should be separated by
       commas'
-    default: '0'
     inputBinding:
       position: 101
       prefix: --read_offsets

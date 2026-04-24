@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum gap size is N
-    default: 100
     inputBinding:
       position: 102
       prefix: -maxGap
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage is N.N (0.0 to 1.0)
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -minCover
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum identity is N.N (0.0 to 1.0)
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -minId
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum score is N
-    default: 0
     inputBinding:
       position: 102
       prefix: -minScore
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size is N
-    default: 0
     inputBinding:
       position: 102
       prefix: -minSize
@@ -84,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of non-gap is N
-    default: 0
     inputBinding:
       position: 102
       prefix: -nonSize

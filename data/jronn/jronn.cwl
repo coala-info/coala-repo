@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - float
     doc: the value of disorder
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -d
@@ -30,7 +29,6 @@ inputs:
       corresponding disorder values are output in two column layout. H for 
       horizontal, where the disorder values are provided under the letters of 
       the sequence. Letters and values separated by tabulation in this case.
-    default: V
     inputBinding:
       position: 101
       prefix: -f

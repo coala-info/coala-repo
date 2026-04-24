@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: Set the mixing between l1 and l2 penalties
-    default: 0.0069
     inputBinding:
       position: 101
       prefix: --alpha
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Number of variants per core
-    default: 3000
     inputBinding:
       position: 101
       prefix: --block_size
@@ -45,7 +43,6 @@ inputs:
       - float
     doc: Correlation filter for elastic net (phenotype/variant correlation 
       quantile at which to start keeping variants)
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --cor-filter
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Processes
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpu
@@ -80,7 +76,6 @@ inputs:
       - 'null'
       - float
     doc: Prefiltering t-test pvalue threshold
-    default: 1
     inputBinding:
       position: 101
       prefix: --filter-pvalue
@@ -113,7 +108,6 @@ inputs:
       - 'null'
       - File
     doc: File to write lineage association to
-    default: lineage_effects.txt
     inputBinding:
       position: 101
       prefix: --lineage-file
@@ -155,7 +149,6 @@ inputs:
       - 'null'
       - float
     doc: Likelihood ratio test pvalue threshold
-    default: 1
     inputBinding:
       position: 101
       prefix: --lrt-pvalue
@@ -164,7 +157,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum AF
-    default: 0.99
     inputBinding:
       position: 101
       prefix: --max-af
@@ -173,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of dimensions to consider after MDS
-    default: 10
     inputBinding:
       position: 101
       prefix: --max-dimensions
@@ -182,7 +173,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum missing (vcf/Rtab)
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --max-missing
@@ -191,7 +181,6 @@ inputs:
       - 'null'
       - string
     doc: Type of multidimensional scaling
-    default: classic
     inputBinding:
       position: 101
       prefix: --mds
@@ -200,7 +189,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum AF
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --min-af
@@ -209,7 +197,6 @@ inputs:
       - 'null'
       - int
     doc: Number of folds cross-validation to perform
-    default: 10
     inputBinding:
       position: 101
       prefix: --n-folds
@@ -235,7 +222,6 @@ inputs:
       - 'null'
       - string
     doc: Phenotype file column to use
-    default: last column
     inputBinding:
       position: 101
       prefix: --phenotype-column
@@ -299,7 +285,6 @@ inputs:
       - 'null'
       - File
     doc: File to save predictions to in TSV format
-    default: do not save predictions
     inputBinding:
       position: 101
       prefix: --save-predictions
@@ -341,7 +326,6 @@ inputs:
       - type: array
         items: string
     doc: Covariates to use. Format is "2 3q 4" (q for quantitative)
-    default: load covariates but don't use them
     inputBinding:
       position: 101
       prefix: --use-covariates

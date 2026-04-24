@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: megabytes of memory to use before writing to temp files.
-    default: 2800
     inputBinding:
       position: 103
       prefix: --memory

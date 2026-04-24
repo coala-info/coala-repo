@@ -34,7 +34,6 @@ inputs:
   threads:
     type: int
     label: Number of threads to use
-    default: 1
     inputBinding:
       position: 0
       prefix: --numThreads

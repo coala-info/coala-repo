@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: dbkey to assign to files
-    default: '?'
     inputBinding:
       position: 103
       prefix: --dbkey
@@ -33,7 +32,6 @@ inputs:
       - string
     doc: Galaxy data type to assign the files to. Must be a valid Galaxy data 
       type. If not 'auto' then all files will be assigned the same type.
-    default: auto
     inputBinding:
       position: 103
       prefix: --file-type

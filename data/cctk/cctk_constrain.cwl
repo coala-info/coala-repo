@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: parsimony cost of a spacer acquisition event.
-    default: 1
     inputBinding:
       position: 101
       prefix: --acquisition
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: parsimony cost of a deletion event.
-    default: 10
     inputBinding:
       position: 101
       prefix: --deletion
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: resolution of the output image.
-    default: 600
     inputBinding:
       position: 101
       prefix: --dpi
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: parsimony cost of a duplication event.
-    default: 1
     inputBinding:
       position: 101
       prefix: --duplication
@@ -121,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: parsimony cost of an insertion event.
-    default: 30
     inputBinding:
       position: 101
       prefix: --insertion
@@ -162,7 +157,6 @@ inputs:
       - 'null'
       - int
     doc: parsimony cost of an array having no identity with its ancestor.
-    default: 100
     inputBinding:
       position: 101
       prefix: --no-ident
@@ -171,7 +165,6 @@ inputs:
       - 'null'
       - float
     doc: height of plot in inches.
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --plot-height
@@ -180,7 +173,6 @@ inputs:
       - 'null'
       - float
     doc: width of plot in inches.
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --plot-width
@@ -197,7 +189,6 @@ inputs:
       - 'null'
       - int
     doc: parsimony cost independently acquiring spacers.
-    default: 50
     inputBinding:
       position: 101
       prefix: --rep-indel
@@ -222,7 +213,6 @@ inputs:
       - 'null'
       - int
     doc: parsimony cost of trailer spacer loss.
-    default: 1
     inputBinding:
       position: 101
       prefix: --trailer-loss

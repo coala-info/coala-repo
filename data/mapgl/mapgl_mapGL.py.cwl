@@ -57,7 +57,6 @@ inputs:
       bnMapper. By default, mapGL.pys will follow the mapping convention used by
       liftOver, whereas the longest mapped alignment is reported for split 
       elements.
-    default: false
     inputBinding:
       position: 106
       prefix: --drop_split
@@ -68,7 +67,6 @@ inputs:
     doc: Attempt to predict gain/loss events on all branches of the tree, not 
       just query/target branches. Output will include a comma-delimited list of 
       gain/loss events from any/all affected branches.
-    default: false
     inputBinding:
       position: 106
       prefix: --full_labels
@@ -78,7 +76,6 @@ inputs:
       - int
     doc: Ignore elements with an insertion/deletion of this or bigger size. 
       Using the default value (-1) will allow gaps of any size.
-    default: -1
     inputBinding:
       position: 106
       prefix: --gap
@@ -87,7 +84,6 @@ inputs:
       - 'null'
       - string
     doc: Input file format.
-    default: BED
     inputBinding:
       position: 106
       prefix: --in_format
@@ -97,7 +93,6 @@ inputs:
       - boolean
     doc: Do not attempt to disambiguate the root state to resolve ambiguous 
       gain/loss predictions. Instead, label affected features as 'ambiguous'.
-    default: false
     inputBinding:
       position: 106
       prefix: --no_prune
@@ -113,7 +108,6 @@ inputs:
       When priority='loss', ambiguity is resolved by asssigning state 1 to the 
       root node, such that sequence absence in a descendant node is interpreted 
       as a sequence loss. Default=gain
-    default: gain
     inputBinding:
       position: 106
       prefix: --priority
@@ -125,7 +119,6 @@ inputs:
       0.0 -- equivalent to accepting a single-base overlap. On the other end of 
       the spectrum, setting this value to 1 is equivalent to only accepting 
       full-length overlaps.
-    default: 0.0
     inputBinding:
       position: 106
       prefix: --threshold
@@ -134,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: Verbosity level
-    default: info
     inputBinding:
       position: 106
       prefix: --verbose

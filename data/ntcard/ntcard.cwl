@@ -19,7 +19,6 @@ inputs:
       - int
     doc: the length of gap in the gap seed [0]. g mod 2 must equal k mod 2 
       unless g == 0. -g does not support multiple k currently.
-    default: 0
     inputBinding:
       position: 102
       prefix: --gap
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: the maximum coverage of kmer in output [1000]
-    default: 1000
     inputBinding:
       position: 102
       prefix: --cov
@@ -63,7 +61,6 @@ inputs:
       - int
     doc: use N parallel threads [1] (N>=2 should be used when input files are 
       >=2)
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

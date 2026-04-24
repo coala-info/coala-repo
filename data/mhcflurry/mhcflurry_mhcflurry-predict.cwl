@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Input column name for alleles.
-    default: allele
     inputBinding:
       position: 102
       prefix: --allele-column
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: Column giving C-terminal flanking sequence.
-    default: c_flank
     inputBinding:
       position: 102
       prefix: --c-flank-column
@@ -77,7 +75,6 @@ inputs:
       - Directory
     doc: Directory containing models. Either a binding affinity predictor or a 
       presentation predictor can be used.
-    default: 
       /root/.local/share/mhcflurry/4/2.2.0/models_class1_presentation/models
     inputBinding:
       position: 102
@@ -87,7 +84,6 @@ inputs:
       - 'null'
       - string
     doc: Column giving N-terminal flanking sequence.
-    default: n_flank
     inputBinding:
       position: 102
       prefix: --n-flank-column
@@ -120,7 +116,6 @@ inputs:
       - 'null'
       - string
     doc: Delimiter character for results.
-    default: ','
     inputBinding:
       position: 102
       prefix: --output-delimiter
@@ -129,7 +124,6 @@ inputs:
       - 'null'
       - string
     doc: Input column name for peptides.
-    default: peptide
     inputBinding:
       position: 102
       prefix: --peptide-column
@@ -147,7 +141,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output column names.
-    default: mhcflurry_
     inputBinding:
       position: 102
       prefix: --prediction-column-prefix

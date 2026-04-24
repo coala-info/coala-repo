@@ -11,7 +11,6 @@ inputs:
     doc: Number of bases necessary to support a multiple allele call, and 
       automatically increments based upon gene-specific quality score, length 
       and depth of coverage. Default is 3.
-    default: 3
     inputBinding:
       position: 101
       prefix: --base_cutoff
@@ -22,7 +21,6 @@ inputs:
     doc: Fraction of bases necessary to support a multiple allele call. 
       Particularly useful when dealing with very high coverage samples. Default 
       is 0.05.
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --base_fraction_cutoff
@@ -45,7 +43,6 @@ inputs:
       - string
     doc: Type of input data. Default is Illumina, but can be used for Nanopore 
       too. No PacBio support (yet).
-    default: Illumina
     inputBinding:
       position: 101
       prefix: --data_type
@@ -65,7 +62,6 @@ inputs:
       - float
     doc: Value to use for the calculated error cutoff when setting the base 
       cutoff value. Default is 1.0%.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --error_cutoff
@@ -112,7 +108,6 @@ inputs:
       - int
     doc: Minimum number of matching hashes in a MASH screen in order for a genus
       to be considered present in a sample. Default is 150
-    default: 150
     inputBinding:
       position: 101
       prefix: --min_matching_hashes
@@ -137,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: Base quality needed to support a multiple allele call. Defaults to 20.
-    default: 20
     inputBinding:
       position: 101
       prefix: --quality_cutoff
@@ -182,7 +176,6 @@ inputs:
       - string
     doc: Amount of output you want printed to the screen. Defaults to info, 
       which should be good for most users.
-    default: info
     inputBinding:
       position: 101
       prefix: --verbosity

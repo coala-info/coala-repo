@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - boolean
     doc: include empty nodes; 0 or 1; default 0
-    default: 0
     inputBinding:
       position: 103
 outputs:

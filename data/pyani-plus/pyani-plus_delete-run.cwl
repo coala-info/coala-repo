@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - File
     doc: Where to record log(s). Use '-' for no logging.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --log

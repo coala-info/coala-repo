@@ -16,7 +16,6 @@ inputs:
       : total kmers per window\n                             - winlen     : effective
       window length\n                             - inDist     : inner distance\n\
       \                             - tailDist   : tail distance"
-    default: all
     inputBinding:
       position: 101
       prefix: --attributes

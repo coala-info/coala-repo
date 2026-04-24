@@ -10,7 +10,6 @@ inputs:
       - float
     doc: Chi-square value for statistical distinguishability test, default 
       correspons to alpha=90%.
-    default: 2.706
     inputBinding:
       position: 101
       prefix: --chisq
@@ -20,7 +19,6 @@ inputs:
       - float
     doc: Maximum distance to report for matching references, overrides --filter 
       if given.
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --dist-max
@@ -30,7 +28,6 @@ inputs:
       - boolean
     doc: Filter a hit if its distance is too high compared to the best hit 
       (based on the statistical significance).
-    default: false
     inputBinding:
       position: 101
       prefix: --filter
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum Hamming distance for a k-mer to match.
-    default: 4
     inputBinding:
       position: 101
       prefix: --hdist-th
@@ -55,7 +51,6 @@ inputs:
       - boolean
     doc: Output all distances satisfying the filters (not just the closest 
       reference).
-    default: true
     inputBinding:
       position: 101
       prefix: --multi
@@ -65,7 +60,6 @@ inputs:
       - boolean
     doc: Filter a hit if its distance is too high compared to the best hit 
       (based on the statistical significance).
-    default: true
     inputBinding:
       position: 101
       prefix: --no-filter
@@ -75,7 +69,6 @@ inputs:
       - boolean
     doc: Output all distances satisfying the filters (not just the closest 
       reference).
-    default: false
     inputBinding:
       position: 101
       prefix: --no-multi
@@ -86,7 +79,6 @@ inputs:
     doc: Summarize results into a table of read counts. If a read is 
       mapped/placed to n references/edges, each gets 1/n. Overrides --no-multi 
       and --no-filter.
-    default: true
     inputBinding:
       position: 101
       prefix: --no-summarize
@@ -103,7 +95,6 @@ inputs:
     doc: Summarize results into a table of read counts. If a read is 
       mapped/placed to n references/edges, each gets 1/n. Overrides --no-multi 
       and --no-filter.
-    default: false
     inputBinding:
       position: 101
       prefix: --summarize

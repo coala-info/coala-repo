@@ -42,7 +42,6 @@ inputs:
     doc: Set this flag to save the qbed and qc data as pickle files. This is 
       useful when processing split files in parallel and then combining later. 
       Defaults to False, which saves as qbed/tsv
-    default: false
     inputBinding:
       position: 103
       prefix: --pickle

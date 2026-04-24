@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: false positive rate
-    default: 0.3
     inputBinding:
       position: 102
       prefix: --false-positive-rate
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: memory in bytes to use
-    default: 49.989 Gi
     inputBinding:
       position: 102
       prefix: --memory
@@ -66,7 +64,6 @@ inputs:
       - 'null'
       - boolean
     doc: don't canonicalize DNA k-mers
-    default: false
     inputBinding:
       position: 102
       prefix: --no-canonicalize
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: number of hash functions
-    default: 1
     inputBinding:
       position: 102
       prefix: --num-hashes
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: signature size
-    default: 0
     inputBinding:
       position: 102
       prefix: --sig-size
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: term size (k-mer size)
-    default: 31
     inputBinding:
       position: 102
       prefix: --term-size
@@ -102,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: max cores
     inputBinding:
       position: 102
       prefix: --threads
@@ -111,7 +104,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory for intermediate index files
-    default: out_file + ".tmp")
     inputBinding:
       position: 102
       prefix: --tmp-path

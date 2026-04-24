@@ -13,7 +13,6 @@ inputs:
       - 'null'
       - string
     doc: author/maintainer name
-    default: none
     inputBinding:
       position: 101
       prefix: --author
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: version (e.g., 0.1)
-    default: none
     inputBinding:
       position: 101
       prefix: --command-version
@@ -31,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: copyright (e.g., Copyright 2013, The pyqi project)
-    default: none
     inputBinding:
       position: 101
       prefix: --copyright
@@ -41,7 +38,6 @@ inputs:
       - type: array
         items: string
     doc: comma-separated list of other authors
-    default: none
     inputBinding:
       position: 101
       prefix: --credits
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: maintainer email address
-    default: none
     inputBinding:
       position: 101
       prefix: --email
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: license (e.g., BSD)
-    default: none
     inputBinding:
       position: 101
       prefix: --license
@@ -74,7 +68,6 @@ inputs:
       - 'null'
       - boolean
     doc: create stubbed out unit test code
-    default: false
     inputBinding:
       position: 101
       prefix: --test-code

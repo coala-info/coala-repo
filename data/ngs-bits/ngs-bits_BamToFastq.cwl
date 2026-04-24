@@ -10,7 +10,6 @@ inputs:
       - int
     doc: Output FASTQ compression level from 1 (fastest) to 9 (best 
       compression).
-    default: '1'
     inputBinding:
       position: 101
       prefix: -compression_level
@@ -20,7 +19,6 @@ inputs:
       - int
     doc: Extend all reads to the given length. Base 'N' and base qualiy '2' are 
       used for extension.
-    default: '0'
     inputBinding:
       position: 101
       prefix: -extend
@@ -30,7 +28,6 @@ inputs:
       - boolean
     doc: 'Keep only one read pair if several have the same name (note: needs much
       memory as read names are kept in memory).'
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -fix
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - File
     doc: Reference genome for CRAM support (mandatory if CRAM is used).
-    default: ''
     inputBinding:
       position: 101
       prefix: -ref
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: 'Export only reads in the given region. Format: chr:start-end.'
-    default: ''
     inputBinding:
       position: 101
       prefix: -reg
@@ -64,7 +59,6 @@ inputs:
       - boolean
     doc: Does not export reads marked as duplicates in SAM flags into the FASTQ 
       file.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -remove_duplicates
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Output write buffer size (number of FASTQ entry pairs).
-    default: '100'
     inputBinding:
       position: 101
       prefix: -write_buffer_size

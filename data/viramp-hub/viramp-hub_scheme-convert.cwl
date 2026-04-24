@@ -43,7 +43,6 @@ inputs:
       - string
     doc: 'For amplicons formed by nested primers, report all primers, or just inner
       or outer ones. Applied only when writing amplicon info files (default: "full").'
-    default: full
     inputBinding:
       position: 102
       prefix: --report-nested

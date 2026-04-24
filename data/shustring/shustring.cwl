@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - File
     doc: input file
-    default: stdin
     inputBinding:
       position: 101
       prefix: -i

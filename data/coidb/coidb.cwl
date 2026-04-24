@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cores to use for job execution.
-    default: 4
     inputBinding:
       position: 101
       prefix: --cores

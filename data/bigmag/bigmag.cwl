@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: Host to run the app.
-    default: 127.0.0.1
     inputBinding:
       position: 102
       prefix: --host
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Port to run the app.
-    default: 8050
     inputBinding:
       position: 102
       prefix: --port

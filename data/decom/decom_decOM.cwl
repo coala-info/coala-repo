@@ -46,7 +46,6 @@ inputs:
       - boolean
     doc: True if you want a plot (in pdf and html format) with the source 
       proportions of the sink, else False
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --plot

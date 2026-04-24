@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: Hit attribute used when generating binary table cell values.
-    default: identity
     inputBinding:
       position: 101
       prefix: --binary_attr
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Key function used when generating binary table cell values.
-    default: len
     inputBinding:
       position: 101
       prefix: --binary_key
@@ -66,7 +64,6 @@ inputs:
       local search mode: path to DIAMOND database; HMM search mode: path to FASTA
       file. In local/hmm/combined modes, must have cblaster database in same location
       with same name and .sqlite3 extension."
-    default: nr
     inputBinding:
       position: 101
       prefix: --database
@@ -86,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: Level of sensitivity to use in local DIAMOND searches (def. 'fast')
-    default: fast
     inputBinding:
       position: 101
       prefix: --dmnd_sensitivity
@@ -106,7 +102,6 @@ inputs:
       - int
     doc: Maximum allowed intergenic distance (bp) between conserved hits to be 
       considered in the same block (def. 20000)
-    default: 20000
     inputBinding:
       position: 101
       prefix: --gap
@@ -116,7 +111,6 @@ inputs:
       - int
     doc: Maximum total hits to save from a local or remote BLAST search (def. 
       500). Setting this value too low may result in missed hits/clusters.
-    default: 500
     inputBinding:
       position: 101
       prefix: --hitlist_size
@@ -135,7 +129,6 @@ inputs:
       - int
     doc: The maximum distance between the start/end of a cluster and an 
       intermediate gene (def. 5000)
-    default: 5000
     inputBinding:
       position: 101
       prefix: --max_distance
@@ -144,7 +137,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum e-value for a BLAST hit to be saved (def. 0.01)
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --max_evalue
@@ -155,7 +147,6 @@ inputs:
     doc: The maximum amount of clusters included in the plot when sorting 
       clusters on score, meaning -osc has to be used for this argument to take 
       effect. (def 50)
-    default: 50
     inputBinding:
       position: 101
       prefix: --max_plot_clusters
@@ -165,7 +156,6 @@ inputs:
       - int
     doc: The maximum amount of clusters will get intermediate genes assigned. 
       Ordered on score (def. 100)
-    default: 100
     inputBinding:
       position: 101
       prefix: --maximum_clusters
@@ -174,7 +164,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percent query coverage for a BLAST hit to be saved (def. 50)
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_coverage
@@ -183,7 +172,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of hits in a cluster (def. 3)
-    default: 3
     inputBinding:
       position: 101
       prefix: --min_hits
@@ -192,7 +180,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percent identity for a BLAST hit to be saved (def. 30)
-    default: 30
     inputBinding:
       position: 101
       prefix: --min_identity
@@ -201,7 +188,6 @@ inputs:
       - 'null'
       - string
     doc: cblaster search mode
-    default: local
     inputBinding:
       position: 101
       prefix: --mode
@@ -309,7 +295,6 @@ inputs:
       - int
     doc: Minimum number of unique query sequences that must be conserved in a 
       hit cluster (def. 3)
-    default: 3
     inputBinding:
       position: 101
       prefix: --unique

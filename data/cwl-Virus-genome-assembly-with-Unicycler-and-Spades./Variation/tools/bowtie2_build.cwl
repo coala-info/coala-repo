@@ -37,7 +37,6 @@ inputs:
     inputBinding:
       position: 26
       shellQuote: false
-    default: bowtie2_indices
 
   f:
     type:

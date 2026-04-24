@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth to consider a marker
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-depth
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

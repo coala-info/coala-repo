@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: input msa format
-    default: fasta
     inputBinding:
       position: 101
       prefix: -p
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Molecule types
-    default: DNA
     inputBinding:
       position: 101
       prefix: -t
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: input msa format
-    default: phylip-relaxed
     inputBinding:
       position: 101
       prefix: -q

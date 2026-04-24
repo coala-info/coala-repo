@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality of read (integer)
-    default: 35
     inputBinding:
       position: 101
       prefix: -mapqual
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality to include (integer)
-    default: 30
     inputBinding:
       position: 101
       prefix: -minqual

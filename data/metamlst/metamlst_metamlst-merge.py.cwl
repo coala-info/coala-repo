@@ -65,7 +65,6 @@ inputs:
       - int
     doc: Maximum Edit Distance from the closest reference to call a new MLST 
       allele.
-    default: 5
     inputBinding:
       position: 102
       prefix: --ed
@@ -84,7 +83,6 @@ inputs:
     doc: "A  : Concatenated Fasta (Only Detected STs)\nA+ : Concatenated Fasta (All
       STs)\nB  : Single loci (Only New Loci)\nB+ : Single loci (All loci)\nC  : CSV
       STs Table [default]"
-    default: C
     inputBinding:
       position: 102
       prefix: --outseqformat

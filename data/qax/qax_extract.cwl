@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep original file names instead of using artifact's basename
-    default: false
     inputBinding:
       position: 102
       prefix: --keepname
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: .
     inputBinding:
       position: 102
       prefix: --outdir

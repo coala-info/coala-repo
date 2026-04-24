@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: quality threshold
-    default: 0
     inputBinding:
       position: 103
       prefix: -q

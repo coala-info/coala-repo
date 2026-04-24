@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: 'Maximum prevanece allowed for a trait to be analyzed (recommended: 0.95)'
-    default: 0.95
     inputBinding:
       position: 102
       prefix: --max_prev
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: 'Minimum prevanece required by a trait to be analyzed (recommended: 0.05)'
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --min_prev
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Main output directory (Default: simphyni_outs)'
-    default: simphyni_outs
     inputBinding:
       position: 102
       prefix: --outdir
@@ -94,7 +91,6 @@ inputs:
     doc: "Comma-separated list of column indices (0 is first trait) in traits CSV
       specifying traits for a traits against all comparison (Default: 'ALL' for all
       agianst all)"
-    default: ALL
     inputBinding:
       position: 102
       prefix: --run-traits
@@ -128,7 +124,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Temporary directory for intermediate files (Default: tmp)'
-    default: tmp
     inputBinding:
       position: 102
       prefix: --temp-dir

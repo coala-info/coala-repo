@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'choose a nucleotide signature (default: True)'
-    default: true
     inputBinding:
       position: 102
       prefix: --dna
@@ -85,7 +84,6 @@ inputs:
       - 'null'
       - string
     doc: comma-separated list of k-mer sizes; default=21,31,51
-    default: 21,31,51
     inputBinding:
       position: 102
       prefix: --ksizes
@@ -215,7 +213,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'choose a nucleotide signature (default: True)'
-    default: true
     inputBinding:
       position: 102
       prefix: --nucleotide
@@ -264,7 +261,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'choose a nucleotide signature (default: True)'
-    default: true
     inputBinding:
       position: 102
       prefix: --rna
@@ -281,7 +277,6 @@ inputs:
       - 'null'
       - int
     doc: seed used by MurmurHash; default=42
-    default: 42
     inputBinding:
       position: 102
       prefix: --seed
@@ -330,7 +325,6 @@ inputs:
       - 'null'
       - boolean
     doc: track k-mer abundances in the generated signature
-    default: false
     inputBinding:
       position: 102
       prefix: --track-abundance

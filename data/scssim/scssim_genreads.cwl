@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - float
     doc: sequencing coverage
-    default: 5
     inputBinding:
       position: 101
       prefix: --coverage
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: a parameter controlling the number of primers used in each cycle
-    default: 1e-09
     inputBinding:
       position: 101
       prefix: --gamma
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: mean insert size for paired-end sequencing
-    default: 260
     inputBinding:
       position: 101
       prefix: --isize
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: read layout (SE for single end, PE for paired-end)
-    default: PE
     inputBinding:
       position: 101
       prefix: --layout
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: the number of primers
-    default: 100000
     inputBinding:
       position: 101
       prefix: --primers
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

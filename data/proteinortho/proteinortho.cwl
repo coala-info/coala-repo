@@ -17,7 +17,6 @@ inputs:
       - float
     doc: 'PoFF: weight of adjacencies vs. sequence similarity α[FF-adj score]+(1−α)[BLAST
       score]'
-    default: 0.5
     inputBinding:
       position: 102
       prefix: -alpha
@@ -50,7 +49,6 @@ inputs:
       blatp : for protein files! blatn : for dna files! http://hgdownload.soe.ucsc.edu/admin/
       mmseqs* : mmseqs family. mmseqsp : For protein files! mmseqsn : For dna files!
       https://github.com/soedinglab/MMseqs2"
-    default: diamond
     inputBinding:
       position: 102
       prefix: -p
@@ -81,7 +79,6 @@ inputs:
       option below). special values: 0 : search only connected components and calculate
       the connectivity but no split is made -1 : same as 0 but the connectivity is
       not calculated'
-    default: 0.1 / 1e-1
     inputBinding:
       position: 102
       prefix: -conn
@@ -100,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: sets the maximal number of proteins per species for the -core option
-    default: 10
     inputBinding:
       position: 102
       prefix: -coreMaxProt
@@ -111,7 +107,6 @@ inputs:
     doc: min. coverage of best blast alignments in %. coverage between protein A
       and B = min (alignment_length_A_B/length_A, alignment_length_A_B/length_B)
       where alignment_length_A_B = column 4 of blast outfmt 6 output
-    default: 50
     inputBinding:
       position: 102
       prefix: -cov
@@ -120,7 +115,6 @@ inputs:
       - 'null'
       - string
     doc: number of processors to use
-    default: auto
     inputBinding:
       position: 102
       prefix: -cpus
@@ -129,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: 'PoFF: Size of a maximum common substring (MCS) for adjacency matches'
-    default: 3
     inputBinding:
       position: 102
       prefix: -cs
@@ -155,7 +148,6 @@ inputs:
       - int
     doc: 'PoFF: number of reiterations for adjacencies heuristic, to determine duplicated
       regions'
-    default: 0
     inputBinding:
       position: 102
       prefix: -dups
@@ -164,7 +156,6 @@ inputs:
       - 'null'
       - float
     doc: E-value for blast (column 11 of blast outfmt 6 output)
-    default: '1e-05'
     inputBinding:
       position: 102
       prefix: -e
@@ -200,7 +191,6 @@ inputs:
       - int
     doc: min. percent identity of best blast hits (column 3 (pident) of blast 
       outfmt 6 output)
-    default: 25
     inputBinding:
       position: 102
       prefix: -identity
@@ -260,7 +250,6 @@ inputs:
       exceeded, remove outlying edges accoring to the Smirnov-Grubb test or 
       greedily the worst 10 percent of edges (by weight) until satisfied. 
       Disable with 0
-    default: 5000
     inputBinding:
       position: 102
       prefix: -maxnodes
@@ -295,7 +284,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for all result file names
-    default: myproject
     inputBinding:
       position: 102
       prefix: -project
@@ -340,7 +328,6 @@ inputs:
     doc: 'min. reciprocal similarity for additional hits (0..1). 1 : only the best
       reciprocal hits are reported. 0 : all possible reciprocal blast matches (within
       boundaries of -e, -cov, ...) are reported'
-    default: 0.95
     inputBinding:
       position: 102
       prefix: -sim
@@ -358,7 +345,6 @@ inputs:
       - int
     doc: "1 -> generate indices\n                2 -> run blast (and ff-adj, if -synteny
       is set)\n                3 -> clustering\n                0 -> all"
-    default: 0
     inputBinding:
       position: 102
       prefix: -step
@@ -396,7 +382,6 @@ inputs:
       - 'null'
       - Directory
     doc: path for temporary files
-    default: working directory
     inputBinding:
       position: 102
       prefix: -temp
@@ -407,7 +392,6 @@ inputs:
     doc: number of threads per process, e.g. using -cpus=4 and 
       -threads_per_process=2 will spawn 4 workerthreads using 2 cpu cores each =
       total of 8 cores.
-    default: 1
     inputBinding:
       position: 102
       prefix: -threads_per_process

@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: The initial learning rate used for SGD.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --learning-rate
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Metric to use for distance computation.
-    default: cosine
     inputBinding:
       position: 101
       prefix: --metric
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: The effective minimum distance between embedded points.
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --min-dist
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: The dimension of the space to embed into.
-    default: 2
     inputBinding:
       position: 101
       prefix: --n-components
@@ -72,7 +68,6 @@ inputs:
       - int
     doc: This determines the number of neighboring points used in local approximations
       of manifold structure.
-    default: 30
     inputBinding:
       position: 101
       prefix: --n-neighbors
@@ -81,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: Which dimensional reduction to use.
-    default: pca
     inputBinding:
       position: 101
       prefix: --reduction
@@ -90,7 +84,6 @@ inputs:
       - 'null'
       - float
     doc: The effective scale of embedded points.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --spread

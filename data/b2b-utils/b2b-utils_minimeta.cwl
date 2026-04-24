@@ -12,7 +12,6 @@ inputs:
       - File
     doc: Path to existing assembly. If provided, assembly is skipped and only 
       polishing is performed
-    default: none
     inputBinding:
       position: 101
       prefix: --assembly
@@ -41,7 +40,6 @@ inputs:
       - File
     doc: Path to reference FASTA file used by homopolish. Providing this 
       filename also triggers polishing using homopolish
-    default: none
     inputBinding:
       position: 101
       prefix: --homopolish
@@ -51,7 +49,6 @@ inputs:
       - string
     doc: Name of model to be used by homopolish. Has no effect if --homopolish 
       not used.
-    default: R9.4.pkl
     inputBinding:
       position: 101
       prefix: --hp_model
@@ -76,7 +73,6 @@ inputs:
       - int
     doc: Batch size (medaka_consensus parameter -b) for medaka to use; using a 
       smaller value should reduce memory consumption
-    default: 100
     inputBinding:
       position: 101
       prefix: --medaka_batch_size
@@ -94,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read coverage required by assembler to keep position
-    default: 2
     inputBinding:
       position: 101
       prefix: --min_cov
@@ -104,7 +99,6 @@ inputs:
       - float
     doc: Minimum identity (0 to 1) between contigs required to remove shorter 
       contig during redundancy reduction.
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --min_ident
@@ -113,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum contig length to keep
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_len
@@ -134,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Medaka polishing rounds to perform
-    default: 1
     inputBinding:
       position: 101
       prefix: --n_medaka
@@ -143,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Racon polishing rounds to perform
-    default: 3
     inputBinding:
       position: 101
       prefix: --n_racon
@@ -200,7 +191,6 @@ inputs:
     doc: For re-assemblies, the maximum length of pseudo-reads to generate as an
       absolute value; the actual value will be the minimum of this and the value
       of --shred_max_frac times the actual contig length
-    default: 2000
     inputBinding:
       position: 101
       prefix: --shred_len
@@ -211,7 +201,6 @@ inputs:
     doc: For re-assemblies, the maximum length of pseudo-reads to generate as a 
       fraction of the contig length; the actual value will be the minimum of 
       this and the value of --shred_len
-    default: 0.66
     inputBinding:
       position: 101
       prefix: --shred_max_frac
@@ -221,7 +210,6 @@ inputs:
       - int
     doc: For re-assemblies, the target depth of the pseudoreads on each contig; 
       this is used to calculate how many reads to generate
-    default: 10
     inputBinding:
       position: 101
       prefix: --shred_tgt_depth
@@ -239,7 +227,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processsing threads to use for mapping and polishing
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

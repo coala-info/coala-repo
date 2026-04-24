@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Speed at which Aspera Connect will download.
-    default: 100M
     inputBinding:
       position: 102
       prefix: --aspera_speed
@@ -96,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum times to retry downloads
-    default: 10
     inputBinding:
       position: 102
       prefix: --max_retry
@@ -105,7 +103,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to output downloads to.
-    default: ./
     inputBinding:
       position: 102
       prefix: --outdir

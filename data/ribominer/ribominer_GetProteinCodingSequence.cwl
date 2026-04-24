@@ -18,7 +18,6 @@ inputs:
       - string
     doc: 'Which genetic code to use. default is the standard code. table = 1, is the
       standard table, ref: https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi'
-    default: the standard code
     inputBinding:
       position: 101
       prefix: --table
@@ -28,7 +27,6 @@ inputs:
       - string
     doc: define the id type users input. the default is transcript id, if not, 
       will be transformed into transcript id.
-    default: transcript_id
     inputBinding:
       position: 101
       prefix: --id-type
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: Mode for sequence extraction.
-    default: whole or local
     inputBinding:
       position: 101
       prefix: --mode

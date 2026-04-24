@@ -82,7 +82,6 @@ inputs:
       - 'null'
       - boolean
     doc: Modify sequence headers by adding sample name, False by default.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip_modify_assemblies
@@ -91,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use (default = 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

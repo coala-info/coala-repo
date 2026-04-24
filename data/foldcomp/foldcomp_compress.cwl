@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: use alternative atom order
-    default: false
     inputBinding:
       position: 104
       prefix: --alt
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: interval size to save absolute atom coordinates
-    default: 25
     inputBinding:
       position: 104
       prefix: --break
@@ -77,7 +75,6 @@ inputs:
       - 'null'
       - boolean
     doc: input is a list of files
-    default: false
     inputBinding:
       position: 104
       prefix: --file
@@ -94,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: 'id mode for database input. 0: database keys, 1: names (.lookup)'
-    default: 1
     inputBinding:
       position: 104
       prefix: --id-mode
@@ -119,7 +115,6 @@ inputs:
       - 'null'
       - boolean
     doc: overwrite existing files
-    default: false
     inputBinding:
       position: 104
       prefix: --overwrite
@@ -138,7 +133,6 @@ inputs:
       - 'null'
       - boolean
     doc: recursively look for files in directory
-    default: false
     inputBinding:
       position: 104
       prefix: --recursive
@@ -147,7 +141,6 @@ inputs:
       - 'null'
       - boolean
     doc: save as database
-    default: false
     inputBinding:
       position: 104
       prefix: --db
@@ -156,7 +149,6 @@ inputs:
       - 'null'
       - boolean
     doc: save as tar file
-    default: false
     inputBinding:
       position: 104
       prefix: --tar
@@ -173,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: threads for (de)compression of folders/tar files
-    default: 1
     inputBinding:
       position: 104
       prefix: --threads
@@ -182,7 +173,6 @@ inputs:
       - 'null'
       - boolean
     doc: use cached index for database input
-    default: false
     inputBinding:
       position: 104
       prefix: --use-cache

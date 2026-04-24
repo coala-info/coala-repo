@@ -20,7 +20,6 @@ inputs:
       - int
     doc: length of sequence prefix of the first FASTA record based on which 
       seqkit guesses the sequence type (0 for whole seq) (default 10000)
-    default: 10000
     inputBinding:
       position: 101
       prefix: --alphabet-guess-seq-length
@@ -47,7 +46,6 @@ inputs:
       - int
     doc: compression level for gzip, zstd, xz and bzip2. type "seqkit -h" for 
       the range and default value for each format (default -1)
-    default: -1
     inputBinding:
       position: 101
       prefix: --compress-level
@@ -57,7 +55,6 @@ inputs:
       - string
     doc: 'frame(s) to translate, available value: 1, 2, 3, -1, -2, -3, and 6 for all
       six frames (default [1])'
-    default: '1'
     inputBinding:
       position: 101
       prefix: --frame
@@ -74,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: regular expression for parsing ID (default "^(\\S+)\\s?")
-    default: ^(\S+)\s?
     inputBinding:
       position: 101
       prefix: --id-regexp
@@ -100,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: line width when outputting FASTA format (0 for no wrap) (default 60)
-    default: 60
     inputBinding:
       position: 101
       prefix: --line-width
@@ -118,7 +113,6 @@ inputs:
       - int
     doc: show details of translate table N (including ambigugous codons), 0 for 
       all.  (default -1)
-    default: -1
     inputBinding:
       position: 101
       prefix: --list-transl-table-with-amb-codons
@@ -153,7 +147,6 @@ inputs:
       - string
     doc: sequence type (dna|rna|protein|unlimit|auto) (for auto, it 
       automatically detect by the first sequence) (default "auto")
-    default: auto
     inputBinding:
       position: 101
       prefix: --seq-type
@@ -180,7 +173,6 @@ inputs:
       - int
     doc: number of CPUs. can also set with environment variable SEQKIT_THREADS) 
       (default 4)
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -190,7 +182,6 @@ inputs:
       - int
     doc: translate table/genetic code, type 'seqkit translate --help' for more 
       details (default 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --transl-table

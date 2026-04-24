@@ -56,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: A variant must have at least this VAF to be included in the report.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --min_vaf
@@ -65,7 +64,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output files will be saved in OUTPUT_DIR.
-    default: .
     inputBinding:
       position: 102
       prefix: --output-dir

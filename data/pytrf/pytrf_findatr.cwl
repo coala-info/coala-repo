@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of continuous alignment errors
-    default: 3
     inputBinding:
       position: 102
       prefix: --max-errors
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: maximum length allowed to extend
-    default: 2000
     inputBinding:
       position: 102
       prefix: --max-extend
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: maximum motif length
-    default: 6
     inputBinding:
       position: 102
       prefix: --max-motif
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: minimum identity for extending, 0 to 100
-    default: 70
     inputBinding:
       position: 102
       prefix: --min-identity
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: minimum motif length
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-motif
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length for seed
-    default: 10
     inputBinding:
       position: 102
       prefix: --min-seedlen
@@ -68,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: minimum repeat number for seed
-    default: 3
     inputBinding:
       position: 102
       prefix: --min-seedrep
@@ -77,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: output format, tsv, csv, bed or gff
-    default: tsv
     inputBinding:
       position: 102
       prefix: --out-format

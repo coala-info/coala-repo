@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Number of simulations
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --simulations

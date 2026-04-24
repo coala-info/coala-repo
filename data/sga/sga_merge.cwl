@@ -24,7 +24,6 @@ inputs:
       of memory required at the cost of less predictable memory usage. When this
       value is set to 32, the memory requirement is essentially deterministic 
       and requires ~5N bytes where N is the size of the FM-index of READS2.
-    default: 4
     inputBinding:
       position: 103
       prefix: --gap-array
@@ -77,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: use NUM threads to merge the indices
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

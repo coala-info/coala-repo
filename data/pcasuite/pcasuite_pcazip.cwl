@@ -55,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Include enough eigenvectors to capture qual% (1<=qual<=99) of the total variance
-    default: 90
     inputBinding:
       position: 101
       prefix: -q

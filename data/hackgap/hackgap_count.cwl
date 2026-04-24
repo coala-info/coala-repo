@@ -91,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: maximum count value [65535]; should be 2**N - 1 for some N
-    default: 65535
     inputBinding:
       position: 101
       prefix: --maxcount
@@ -100,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: continue even after this many failures [default:0; forever:-1]
-    default: 0
     inputBinding:
       position: 101
       prefix: --maxfailures
@@ -109,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: maximum length of random walk through hash table before failing [500]
-    default: 500
     inputBinding:
       position: 101
       prefix: --maxwalk
@@ -133,7 +130,6 @@ inputs:
       - string
     doc: statistics level of detail (none, *summary*, details, full (all 
       subtables))
-    default: summary
     inputBinding:
       position: 101
       prefix: --statistics
@@ -174,7 +170,6 @@ inputs:
       - 'null'
       - int
     doc: seed for random walks while inserting elements [7]
-    default: 7
     inputBinding:
       position: 101
       prefix: --walkseed

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Shuffle branch length. Automatically activated when --topology yes.
-    default: no
     inputBinding:
       position: 101
       prefix: --branch_length
@@ -19,7 +18,6 @@ inputs:
       - int
     doc: ETE tree format. See here 
       http://etetoolkit.org/docs/latest/tutorial/tutorial_trees.html
-    default: auto
     inputBinding:
       position: 101
       prefix: --format
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - File
     doc: Input newick file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --infile
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Shuffle leaf labels.
-    default: no
     inputBinding:
       position: 101
       prefix: --label
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Whether node names are quoted in the input file.
-    default: yes
     inputBinding:
       position: 101
       prefix: --quoted_node_names
@@ -66,7 +61,6 @@ inputs:
     doc: Randomize entire tree topology and branch length. Without --label yes, 
       new topology preserve the leaf label orders and is not completely 
       randomized.
-    default: no
     inputBinding:
       position: 101
       prefix: --topology

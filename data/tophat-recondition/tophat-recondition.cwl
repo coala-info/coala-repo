@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - File
     doc: Name of the file containing mapped reads
-    default: accepted_hits.bam
     inputBinding:
       position: 102
       prefix: --mapped-file
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - File
     doc: Name of the file containing unmapped reads
-    default: unmapped.bam
     inputBinding:
       position: 102
       prefix: --unmapped-file

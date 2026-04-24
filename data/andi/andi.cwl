@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Pick an evolutionary model of 'Raw', 'JC', 'Kimura', 'LogDet'
-    default: JC
     inputBinding:
       position: 102
       prefix: --model
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Print a progress bar 'always', 'never', or 'auto'
-    default: auto
     inputBinding:
       position: 102
       prefix: --progress
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: Significance of an anchor
-    default: 0.025
     inputBinding:
       position: 102
       prefix: -p

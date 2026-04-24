@@ -20,7 +20,6 @@ inputs:
     doc: "Format of the input files.\n                                 Options: fasta,
       phylip (names truncated at 10 characters), \n                              \
       \   phylip-relaxed (names are not truncated), or nexus."
-    default: fasta
     inputBinding:
       position: 101
       prefix: --in_format
@@ -44,7 +43,6 @@ inputs:
     doc: "Desired format of the output matrix.\n                                 Options:
       fasta, phylip (names truncated at 10 characters), \n                       \
       \          phylip-relaxed (names are not truncated), or nexus."
-    default: fasta
     inputBinding:
       position: 101
       prefix: --out_format
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Desired number of threads to be utilized.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

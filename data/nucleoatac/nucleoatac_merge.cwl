@@ -10,7 +10,6 @@ inputs:
       - float
     doc: minimum lower bound occupancy of nucleosomes to be considered for 
       excluding NFR.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min_occ

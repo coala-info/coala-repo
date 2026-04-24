@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bins in the plot.
-    default: 50
     inputBinding:
       position: 102
       prefix: --bins
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: Plot title. {} is replaced with the input file name.
-    default: Read length histogram of {}
     inputBinding:
       position: 102
       prefix: --title

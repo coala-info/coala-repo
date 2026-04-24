@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - File
     doc: log file name
-    default: deblur.log
     inputBinding:
       position: 102
       prefix: --log-file
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Level of messages for log file (range 1-debug to 5-critical)
-    default: 2
     inputBinding:
       position: 102
       prefix: --log-level

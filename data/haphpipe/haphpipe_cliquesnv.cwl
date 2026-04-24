@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print commands but do not run
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -35,7 +34,6 @@ inputs:
       - string
     doc: 'Fasta defline format: short or extended, add number at end to adjust precision
       of frequency'
-    default: extended4
     inputBinding:
       position: 101
       prefix: --fasta_format
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to clique-snv.jar (existing)
-    default: .
     inputBinding:
       position: 101
       prefix: --jardir
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not delete temporary directory
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_tmp
@@ -102,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --ncpu
@@ -111,7 +106,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir
@@ -136,7 +130,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print log data to console
-    default: false
     inputBinding:
       position: 101
       prefix: --printlog
@@ -145,7 +138,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not write output to console (silence stdout and stderr)
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet

@@ -16,7 +16,6 @@ inputs:
       - string
     doc: type of file, uncompressed (fasta or fastq) or compressed (fasta.gz or 
       fastq.gz, gzip/gunzip compressed). Default is fastq
-    default: fastq
     inputBinding:
       position: 101
       prefix: --file_type
@@ -60,7 +59,6 @@ inputs:
       - int
     doc: to set the number of allowed mismatches in a barcode. Only one mismatch
       is allowed. Default = 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --mismatches
@@ -78,7 +76,6 @@ inputs:
       - string
     doc: use this flag if barcode sequences need to be removed from the forward 
       or the reverse reads. The tool assumes. Default=forward
-    default: forward
     inputBinding:
       position: 101
       prefix: --search

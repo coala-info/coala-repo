@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory
-    default: compare_assm
     inputBinding:
       position: 101
       prefix: -o
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: alignment threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

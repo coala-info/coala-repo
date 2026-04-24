@@ -23,7 +23,6 @@ inputs:
   - id: kmer_size
     type: int
     doc: K-mer size
-    default: 3
     inputBinding:
       position: 102
       prefix: -k
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: -t

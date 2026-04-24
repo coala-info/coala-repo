@@ -17,7 +17,6 @@ inputs:
       position: 2
   output_suffix:
     type: string
-    default: .flagStat
     
 outputs:
   flagstat_output:

@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Gap between transcripts to merge together
-    default: 250
     inputBinding:
       position: 102
       prefix: -g
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: Name prefix for output transcripts
-    default: MSTRG
     inputBinding:
       position: 102
       prefix: -l
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum input transcript coverage to include in the merge
-    default: 0
     inputBinding:
       position: 102
       prefix: -c
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum input transcript FPKM to include in the merge
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -F
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum isoform fraction
-    default: 0.01
     inputBinding:
       position: 102
       prefix: -f
@@ -81,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum input transcript length to include in the merge
-    default: 50
     inputBinding:
       position: 102
       prefix: -m
@@ -90,7 +84,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum input transcript TPM to include in the merge
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -T

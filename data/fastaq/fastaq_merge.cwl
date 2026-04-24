@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: Name of sequence in output file
-    default: union
     inputBinding:
       position: 102
       prefix: --name

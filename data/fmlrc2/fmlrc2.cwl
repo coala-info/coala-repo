@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: index of read to start with
-    default: 0
     inputBinding:
       position: 103
       prefix: --begin_index
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: branching factor for correction, scaled by k
-    default: 4.0
     inputBinding:
       position: 103
       prefix: --branch_factor
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: the length of k-mer to precompute in cache
-    default: 8
     inputBinding:
       position: 103
       prefix: --cache_size
@@ -55,7 +52,6 @@ inputs:
       - type: array
         items: int
     doc: k-mer sizes for correction, can be specified multiple times
-    default:
       - 21
       - 59
     inputBinding:
@@ -66,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: absolute minimum k-mer count to consisder a path
-    default: 5
     inputBinding:
       position: 103
       prefix: --min_count
@@ -75,7 +70,6 @@ inputs:
       - 'null'
       - float
     doc: dynamic minimum k-mer count fraction of median to consider a path
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --min_dynamic_count
@@ -84,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: number of correction threads
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

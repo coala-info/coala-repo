@@ -51,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Jellyfish executable [jellyfish].
-    default: jellyfish
     inputBinding:
       position: 101
       prefix: --jellyfish
@@ -96,7 +95,6 @@ inputs:
       - type: array
         items: int
     doc: (k,w)-minimizers for sequence divergence calculation [15 15].
-    default:
       - 15
       - 15
     inputBinding:
@@ -113,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads [8].
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads
@@ -124,7 +121,6 @@ inputs:
     doc: Allow this fraction of unknown nucleotides per allele [0.0001] 
       (relative to the allele length). Variants that have no known variation in 
       the input VCF pangenome are ignored.
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: --unknown
@@ -142,7 +138,6 @@ inputs:
       - int
     doc: Select best locus boundary based on k-mer frequencies in moving windows
       of size INT bp [500].
-    default: 500
     inputBinding:
       position: 101
       prefix: --window

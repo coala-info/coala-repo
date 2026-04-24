@@ -11,7 +11,6 @@ inputs:
       - boolean
     doc: for sequences where only one read is available, fall back to 
       single-ended classification.
-    default: drop these sequences.
     inputBinding:
       position: 101
       prefix: -f
@@ -21,7 +20,6 @@ inputs:
       - string
     doc: regular expression used to select part of the fasta header to use as 
       the sequence id.
-    default: (\S+)
     inputBinding:
       position: 101
       prefix: -i
@@ -39,7 +37,6 @@ inputs:
       - boolean
     doc: for sequences where one read is overly generic, do not fall back to 
       single-ended classification.
-    default: classify these sequences based on only the more specific read.
     inputBinding:
       position: 101
       prefix: -g

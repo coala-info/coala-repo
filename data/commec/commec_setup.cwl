@@ -13,7 +13,6 @@ inputs:
       - Directory
     doc: The absolute or relative filepath to where you would like the Commec 
       databases to be located.
-    default: commec-dbs/
     inputBinding:
       position: 1
 outputs:

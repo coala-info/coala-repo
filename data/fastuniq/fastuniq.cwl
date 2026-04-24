@@ -12,7 +12,6 @@ inputs:
       - int
     doc: 'Compression type for output files: 0 for no compression, 1 for gzip, 2 for
       bzip2.'
-    default: 0
     inputBinding:
       position: 101
       prefix: -c
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: Whether to output in FASTQ format ('t' for true, 'f' for false).
-    default: t
     inputBinding:
       position: 101
       prefix: -t

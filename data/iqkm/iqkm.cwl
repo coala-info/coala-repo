@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: Apply KM minimum distance threshold (default = True)
-    default: true
     inputBinding:
       position: 101
       prefix: --dist
@@ -20,7 +19,6 @@ inputs:
       - float
     doc: KM completeness threshold on contig basis (only KM with completeness 
       above the threshold will be considered present), default = 66.67
-    default: 66.67
     inputBinding:
       position: 101
       prefix: --com
@@ -47,7 +45,6 @@ inputs:
       - boolean
     doc: Force reruning the whole pipeline, don't resume previous run (default =
       False)
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -57,7 +54,6 @@ inputs:
       - string
     doc: 'Genome equivalent output generated from microbe-census, can be used for
       library-size normalization when doing quantification. Optional (default: None)'
-    default: None
     inputBinding:
       position: 101
       prefix: --genome_equivalent
@@ -74,7 +70,6 @@ inputs:
       - File
     doc: Kofam HMM database for KO assignment, default 
       path='/help_dir/db/kofam.hmm', you can change it to your customised db
-    default: /help_dir/db/kofam.hmm
     inputBinding:
       position: 101
       prefix: --db
@@ -83,7 +78,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include weights of each KO when doing KM assignment (default = True)
-    default: true
     inputBinding:
       position: 101
       prefix: --include_weights
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - boolean
     doc: Running in metagenome mode (prodigal -p meta; default = False)
-    default: false
     inputBinding:
       position: 101
       prefix: --meta
@@ -114,7 +107,6 @@ inputs:
       - string
     doc: 'Prefix of output files, default: your input genome/metagenome file name
       without postfix'
-    default: your input genome/metagenome file name without postfix
     inputBinding:
       position: 101
       prefix: --prefix
@@ -124,7 +116,6 @@ inputs:
       - boolean
     doc: Run both KM assignment and quantification (default = False, add '-q' or
       '--quantify' to enable)
-    default: false
     inputBinding:
       position: 101
       prefix: --quantify
@@ -135,7 +126,6 @@ inputs:
     doc: Force skip steps if relevant output files have been found under 
       designated directories, not recommanded if your input file is newer 
       (default = False)
-    default: false
     inputBinding:
       position: 101
       prefix: --skip
@@ -144,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads used for computation (default = 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

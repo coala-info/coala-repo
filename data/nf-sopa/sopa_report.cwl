@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: Key of the table in the `SpatialData` object to be used for the report
-    default: table
     inputBinding:
       position: 103
       prefix: --table-key

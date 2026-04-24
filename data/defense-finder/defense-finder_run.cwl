@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: Minimal percentage of coverage for each profiles.
-    default: 0.4
     inputBinding:
       position: 102
       prefix: --coverage
@@ -44,7 +43,6 @@ inputs:
     doc: The macsyfinder --db-type option. Run macsyfinder --help for more 
       details. Possible values are ordered_replicon, gembase, unordered, 
       defaults to ordered_replicon.
-    default: ordered_replicon
     inputBinding:
       position: 102
       prefix: --db-type
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: set the logging level among DEBUG, [INFO], WARNING, ERROR, CRITICAL
-    default: INFO
     inputBinding:
       position: 102
       prefix: --log-level
@@ -88,7 +85,6 @@ inputs:
       - 'null'
       - Directory
     doc: The target directory where to store the results.
-    default: current directory
     inputBinding:
       position: 102
       prefix: --out-dir
@@ -114,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: The workers count.
-    default: all cores will be used (w=0)
     inputBinding:
       position: 102
       prefix: --workers

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele balance for compound het lower VAF (off=0)
-    default: 0
     inputBinding:
       position: 101
       prefix: --ab
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum FNs allowed in a path
-    default: 3
     inputBinding:
       position: 101
       prefix: --fnmax
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Scoring penalty for FNs
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --fpenalty
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - float
     doc: Scoring penalty for gaps
-    default: 0.02
     inputBinding:
       position: 101
       prefix: --gpenalty
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: Collapse haplotypes of similar size (off=1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --hapsim
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: Clustering weight for haplotagged reads (off=0.0, full=1.0)
-    default: 1
     inputBinding:
       position: 101
       prefix: --hps-weight
@@ -93,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer size for featurization
-    default: 4
     inputBinding:
       position: 101
       prefix: --kmer
@@ -102,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore alignments matching flag
-    default: 3840
     inputBinding:
       position: 101
       prefix: --mapflag
@@ -111,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapq score for reads
-    default: 5
     inputBinding:
       position: 101
       prefix: --mapq
@@ -120,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum coverage to attempt building haplotypes
-    default: 1000
     inputBinding:
       position: 101
       prefix: --maxcoverage
@@ -129,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum graph size to search; otherwise perform 1-to-1
-    default: 5000
     inputBinding:
       position: 101
       prefix: --maxnodes
@@ -138,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum paths to traverse per graph
-    default: 5000
     inputBinding:
       position: 101
       prefix: --maxpaths
@@ -147,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage to attempt building haplotypes
-    default: 1
     inputBinding:
       position: 101
       prefix: --mincoverage
@@ -156,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum frequency of kmers
-    default: 2
     inputBinding:
       position: 101
       prefix: --minkfreq
@@ -165,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum variant distance within graphs
-    default: 1000
     inputBinding:
       position: 101
       prefix: --neighdist
@@ -190,7 +175,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum pileups allowed for partials matching
-    default: 100
     inputBinding:
       position: 101
       prefix: --pileupmax
@@ -235,7 +219,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum sequence similarity for paths
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --seqsim
@@ -244,7 +227,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum size of variant to analyze
-    default: 10000
     inputBinding:
       position: 101
       prefix: --sizemax
@@ -253,7 +235,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of variant to analyze
-    default: 50
     inputBinding:
       position: 101
       prefix: --sizemin
@@ -262,7 +243,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum size similarity for paths
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --sizesim
@@ -279,7 +259,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

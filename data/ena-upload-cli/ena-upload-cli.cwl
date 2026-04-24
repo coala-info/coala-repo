@@ -36,7 +36,6 @@ inputs:
       - string
     doc: "specify the sample checklist with following pattern:\n                 \
       \       ERC0000XX, Default: ERC000011"
-    default: ERC000011
     inputBinding:
       position: 101
       prefix: --checklist
@@ -138,7 +137,6 @@ inputs:
       - string
     doc: "specify the name of the tool this submission is done\n                 \
       \       with. Default: ena-upload-cli"
-    default: ena-upload-cli
     inputBinding:
       position: 101
       prefix: --tool

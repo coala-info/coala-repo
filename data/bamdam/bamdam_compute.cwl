@@ -22,7 +22,6 @@ inputs:
       - int
     doc: 'Value of k for per-node counts of unique k-mers and duplicity (default:
       29)'
-    default: 29
     inputBinding:
       position: 101
       prefix: --k
@@ -32,7 +31,6 @@ inputs:
       - int
     doc: 'Mode to calculate stats. 1: use best alignment (recommended), 2: average
       over reads, 3: average over alignments (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --mode
@@ -65,7 +63,6 @@ inputs:
       - string
     doc: 'Keep nodes up to and including this tax threshold; use root to disable (default:
       family)'
-    default: family
     inputBinding:
       position: 101
       prefix: --upto

@@ -117,7 +117,6 @@ inputs:
     doc: "Guide tree for subset decomposition. fasttree\n                        (default),
       fasttree-noml, clustal, parttree, or path\n                        to user guide
       tree"
-    default: fasttree
     inputBinding:
       position: 101
       prefix: --guidetree
@@ -201,7 +200,6 @@ inputs:
       - string
     doc: "If recursing, passes this argument as the guide tree\n                 \
       \       option to the lower levels. (Default fasttree)"
-    default: fasttree
     inputBinding:
       position: 101
       prefix: --recurseguidetree

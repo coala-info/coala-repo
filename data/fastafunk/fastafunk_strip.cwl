@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove ambiguous sites from sequences ("N")
-    default: false
     inputBinding:
       position: 101
       prefix: --ambiguity
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove only from the back of the sequence
-    default: false
     inputBinding:
       position: 101
       prefix: --back
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove only from the front of the sequence
-    default: false
     inputBinding:
       position: 101
       prefix: --front
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove gaps from sequences
-    default: false
     inputBinding:
       position: 101
       prefix: --gap
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove gaps shared by all sequences at the same site
-    default: false
     inputBinding:
       position: 101
       prefix: --keep-alignment
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove missing sites from sequences ("?")
-    default: false
     inputBinding:
       position: 101
       prefix: --missing

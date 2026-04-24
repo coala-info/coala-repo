@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL).'
-    default: INFO
     inputBinding:
       position: 102
       prefix: --log-level
@@ -34,7 +33,6 @@ inputs:
       - int
     doc: Specifies the minimum number of passes per strand (fn/rn) for creating a
       strand-specific read.
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-coverage
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use, 0 means autodetection.
-    default: 0
     inputBinding:
       position: 102
       prefix: --num-threads

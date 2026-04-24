@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: Build of the genome assembly used for the segmentation
-    default: hg38
     inputBinding:
       position: 102
       prefix: --build
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cores to use
-    default: 1
     inputBinding:
       position: 102
       prefix: -j
@@ -39,7 +37,6 @@ inputs:
       - boolean
     doc: If set, perform hierarchical clustering of GMTK parameters table 
       row-wise
-    default: false
     inputBinding:
       position: 102
       prefix: --dendrogram
@@ -49,7 +46,6 @@ inputs:
       - boolean
     doc: Execute only the rules that need internet connection, which store data 
       in a shared directory
-    default: false
     inputBinding:
       position: 102
       prefix: --download-only
@@ -59,7 +55,6 @@ inputs:
       - string
     doc: Allows specify an mne file to translate segment labels and track names 
       on the shown on the figure
-    default: None
     inputBinding:
       position: 102
       prefix: --mne
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory to store all the results
-    default: outdir
     inputBinding:
       position: 102
       prefix: --outdir
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - File
     doc: The params.params file used to obtain the gmtk-parameters
-    default: 'False'
     inputBinding:
       position: 102
       prefix: --parameters
@@ -87,7 +80,6 @@ inputs:
       - string
     doc: Prefix where all the external data is going to be downloaded, followed 
       by /share/ggd/SPECIES/BUILD
-    default: /usr/local
     inputBinding:
       position: 102
       prefix: --prefix
@@ -96,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: Species of the genome used for the segmentation
-    default: Homo_sapiens
     inputBinding:
       position: 102
       prefix: --species
@@ -105,7 +96,6 @@ inputs:
       - 'null'
       - boolean
     doc: unlock directory (see snakemake doc)
-    default: false
     inputBinding:
       position: 102
       prefix: --unlock

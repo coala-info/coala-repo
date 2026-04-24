@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: Delimiter used in the input files. Defaults to comma.
-    default: ','
     inputBinding:
       position: 102
       prefix: --delimiter

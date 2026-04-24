@@ -72,7 +72,6 @@ inputs:
       - string
     doc: Data class of the sample. Default value 'XXX'. This option is used to 
       set up the 5th token of the ID line.
-    default: XXX
     inputBinding:
       position: 103
       prefix: --data_class
@@ -81,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: Description. Default value 'XXX'.
-    default: XXX
     inputBinding:
       position: 103
       prefix: --de
@@ -91,7 +89,6 @@ inputs:
       - string
     doc: Email used to fetch information from NCBI taxonomy database. Default 
       value 'EMBLmyGFF3@tool.org'.
-    default: EMBLmyGFF3@tool.org
     inputBinding:
       position: 103
       prefix: --email
@@ -261,7 +258,6 @@ inputs:
       - 'null'
       - string
     doc: Project ID. Default is 'XXX' (This is used to set up the PR line).
-    default: XXX
     inputBinding:
       position: 103
       prefix: --project_id
@@ -287,7 +283,6 @@ inputs:
       - string
     doc: Reference Group, the working groups/consortia that produced the record.
       Default value 'XXX'.
-    default: XXX
     inputBinding:
       position: 103
       prefix: --rg
@@ -347,7 +342,6 @@ inputs:
       - string
     doc: Source taxonomy. Default value 'XXX'. This option is used to set the 
       taxonomic division within ID line (6th token).
-    default: XXX
     inputBinding:
       position: 103
       prefix: --taxonomy

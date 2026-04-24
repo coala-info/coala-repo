@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Peaks located closely within this window will be merged. (bp)
-    default: 5
     inputBinding:
       position: 101
       prefix: --fz-window
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance allowed for border pairing.
-    default: 100
     inputBinding:
       position: 101
       prefix: --max-dist
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: Pvalue cutoff for border detection and subsequent border pairing.
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --pvalue
@@ -76,7 +73,6 @@ inputs:
       - float
     doc: Minmum coverage signal used to build model (i.e. estimate optimal peak 
       pair size).
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --fold
@@ -85,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Background window size used to determine background signal level. (bp)
-    default: 100
     inputBinding:
       position: 101
       prefix: --bg-window

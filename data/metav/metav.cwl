@@ -18,7 +18,6 @@ inputs:
       - float
     doc: 'threshold of identity(%) of alignment aa for diamond output filtering, default:
       20.'
-    default: 20
     inputBinding:
       position: 101
       prefix: -s
@@ -28,7 +27,6 @@ inputs:
       - int
     doc: 'threshold of length of aa alignment for diamond output filtering, default:
       10.'
-    default: 10
     inputBinding:
       position: 101
       prefix: -len
@@ -38,7 +36,6 @@ inputs:
       - float
     doc: 'specify two e-values threshold used to retain viral hits and exclude non-viral
       hits using nr database, default: 0.1,1e-5.'
-    default: 0.1,1e-5
     inputBinding:
       position: 101
       prefix: -ne
@@ -47,8 +44,6 @@ inputs:
       - 'null'
       - float
     doc: 'specify three e-values threshold used to output the viral reads (or contigs),
-      default: 1e-10,1e-5,1e-1.'
-    default: 1e-10,1e-5,1e-1
     inputBinding:
       position: 101
       prefix: -oe
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: 'the qualities (phred33 or phred64) of sequenced reads, default: phred33.'
-    default: phred33
     inputBinding:
       position: 101
       prefix: -q
@@ -114,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of used threads, default: 10.'
-    default: 10
     inputBinding:
       position: 101
       prefix: -t

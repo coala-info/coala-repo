@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Upstream limit for targeted per-bin coverage histogram
-    default: 50X
     inputBinding:
       position: 101
       prefix: --cov-hist-lim
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Upstream limit for duplication rate histogram
-    default: '50'
     inputBinding:
       position: 101
       prefix: --dup-rate-lim
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of a homopolymer to be considered in indel analysis
-    default: 3
     inputBinding:
       position: 101
       prefix: -hm
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: Format of the output report (PDF, HTML or both PDF:HTML)
-    default: HTML
     inputBinding:
       position: 101
       prefix: -outformat
@@ -94,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads analyzed in a chunk
-    default: 1000
     inputBinding:
       position: 101
       prefix: -nr
@@ -114,7 +109,6 @@ inputs:
     doc: 'Specific type of duplicated alignments to skip (if this option is activated).
       0 : only flagged duplicates (default); 1 : only estimated by Qualimap; 2 : both
       flagged and estimated'
-    default: '0'
     inputBinding:
       position: 101
       prefix: --skip-dup-mode
@@ -133,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 20
     inputBinding:
       position: 101
       prefix: -nt
@@ -142,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: Number of windows
-    default: 400
     inputBinding:
       position: 101
       prefix: -nw

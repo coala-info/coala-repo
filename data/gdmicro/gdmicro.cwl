@@ -11,7 +11,6 @@ inputs:
       - string
     doc: If set to 1, then will apply node importance calculation, which may 
       take a long time.
-    default: not use
     inputBinding:
       position: 101
       prefix: --apply_node
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: The batch size during the training process.
-    default: 64
     inputBinding:
       position: 101
       prefix: --batchsize
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: The value of k in k-fold cross validation.
-    default: 10
     inputBinding:
       position: 101
       prefix: --cvfold
@@ -47,7 +44,6 @@ inputs:
       - string
     doc: Whether apply domain adaptation to the test dataset. If set to 0, then 
       will use MLP rather than domain adaptation.
-    default: use
     inputBinding:
       position: 101
       prefix: --domain_adapt
@@ -57,7 +53,6 @@ inputs:
       - string
     doc: How many features (top x features) will be analyzed during the feature 
       influence score calculation process.
-    default: x=10
     inputBinding:
       position: 101
       prefix: --feature_num
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: The number of neighborhoods in the knn graph.
-    default: 5
     inputBinding:
       position: 101
       prefix: --kneighbor
@@ -84,7 +78,6 @@ inputs:
       - int
     doc: How many nodes will be output during the node importance calculation 
       process.
-    default: 20
     inputBinding:
       position: 101
       prefix: --node_num
@@ -93,7 +86,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory of test results.
-    default: GDmicro_res
     inputBinding:
       position: 101
       prefix: --outdir
@@ -102,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: The random seed used to reproduce the result.
-    default: not use
     inputBinding:
       position: 101
       prefix: --randomseed
@@ -112,7 +103,6 @@ inputs:
       - int
     doc: Whether run feature importance calculation process. If set to 0, then 
       will not calculate the feature importance and contribution score.
-    default: 1
     inputBinding:
       position: 101
       prefix: --run_fi

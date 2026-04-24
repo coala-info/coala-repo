@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: the maximum number of read records to keep in memory at once
-    default: 30000000
     inputBinding:
       position: 101
       prefix: --max-records
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use for processing
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads

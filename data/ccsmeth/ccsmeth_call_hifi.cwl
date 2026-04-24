@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: 'CCS: Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL). [WARN]'
-    default: WARN
     inputBinding:
       position: 101
       prefix: --log-level

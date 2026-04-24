@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: Mash distance complete-linkage clustering threshold
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --distance
@@ -28,7 +27,6 @@ inputs:
       - float
     doc: "Exclude contigs with less than this much read depth\n                  \
       \        relative to the mean read depth"
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min_contig_depth
@@ -38,7 +36,6 @@ inputs:
       - int
     doc: "Exclude contigs shorter than this many base pairs in\n                 \
       \         length"
-    default: 1000
     inputBinding:
       position: 101
       prefix: --min_contig_len
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for alignment
-    default: 16
     inputBinding:
       position: 101
       prefix: --threads

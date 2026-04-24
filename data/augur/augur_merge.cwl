@@ -28,7 +28,6 @@ inputs:
       metadata tables by default. Table-specific delimiters may be given using 
       the same names assigned in --metadata. Only one delimiter will be inferred
       for each table.
-    default: ", $'\t'"
     inputBinding:
       position: 101
       prefix: --metadata-delimiters
@@ -42,7 +41,6 @@ inputs:
       default. Table-specific column names may be given using the same names 
       assigned in --metadata. Only one ID column will be inferred for each 
       table.
-    default: strain name
     inputBinding:
       position: 101
       prefix: --metadata-id-columns
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs/cores/threads/jobs to utilize at once.
-    default: 1
     inputBinding:
       position: 101
       prefix: --nthreads
@@ -70,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: Suppress informational and warning messages normally written to stderr.
-    default: disabled
     inputBinding:
       position: 101
       prefix: --quiet
@@ -90,7 +86,6 @@ inputs:
     doc: Skip validation of --sequences (checking for no duplicates) to improve 
       run time. Note that this may result in unexpected behavior in cases where 
       validation would fail.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-input-sequences-validation
@@ -102,7 +97,6 @@ inputs:
       identifying the source of each row's data. Must contain a literal 
       placeholder, {NAME}, which stands in for the metadata table names assigned
       in --metadata.
-    default: disabled
     inputBinding:
       position: 101
       prefix: --source-columns

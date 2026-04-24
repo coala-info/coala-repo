@@ -62,7 +62,6 @@ inputs:
       - File
     doc: path to the initial data table, default is the configured path 
       (JASS_DATA_DIR/initTable.hdf5)
-    default: JASS_DATA_DIR/initTable.hdf5
     inputBinding:
       position: 103
       prefix: --init-table-path

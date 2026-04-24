@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level (CRITICAL, ERROR, WARNING, INFO, DEBUG, NOTSET). Default INFO
-    default: INFO
     inputBinding:
       position: 102
       prefix: --logLevel
@@ -59,7 +58,6 @@ inputs:
       - string
     doc: Calling mode by HiFi input type (wgs, amplicon, capture, consensus). Default
       wgs
-    default: wgs
     inputBinding:
       position: 102
       prefix: --mode
@@ -76,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for random generator. Default 42
-    default: 42
     inputBinding:
       position: 102
       prefix: --seed

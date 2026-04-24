@@ -68,7 +68,6 @@ inputs:
       - int
     doc: 'Execution mode (0: efficient, 1: brute force, 2: compute weighted quartets,
       3: compute good/bad edges)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --execution
@@ -123,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: Seeds random number generator prior to calling the max cut heuristic
-    default: 1
     inputBinding:
       position: 101
       prefix: --maxcutseed
@@ -140,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: 'Normalization scheme for artificial taxa (0: none, 1: uniform, 2: non-uniform)'
-    default: 2
     inputBinding:
       position: 101
       prefix: --norm_atax
@@ -158,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: Seeds random number generator prior to arbitrarily resolving polytomies
-    default: 12345
     inputBinding:
       position: 101
       prefix: --polyseed
@@ -209,7 +205,6 @@ inputs:
       - 'null'
       - int
     doc: Verbose mode for subproblem information
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbose
@@ -219,7 +214,6 @@ inputs:
       - string
     doc: 'Weighting scheme for quartets (n: none, h: hybrid, s: support, l: length,
       f: none fast)'
-    default: n
     inputBinding:
       position: 101
       prefix: --weight

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: The name/path of the index to download
-    default: all
     inputBinding:
       position: 1
   - id: download
@@ -42,7 +41,6 @@ inputs:
       - Directory
     doc: "Index directory\n          \n          Use this if your indices are not
       in a default location, or you want to download them to a non-default location"
-    default: /root/.drprg/
     inputBinding:
       position: 102
       prefix: --outdir
@@ -52,7 +50,6 @@ inputs:
       - int
     doc: "Maximum number of threads to use\n          \n          Use 0 to select
       the number automatically"
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

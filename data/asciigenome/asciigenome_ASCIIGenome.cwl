@@ -38,7 +38,6 @@ inputs:
       - int
     doc: 'Set debugging mode. 0: off; 1: print exception stack traces; 2: print stack
       traces and exit.'
-    default: 0
     inputBinding:
       position: 102
       prefix: --debug
@@ -66,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not format output with non ascii chars (colour, bold, etc.)
-    default: false
     inputBinding:
       position: 102
       prefix: --noFormat
@@ -75,7 +73,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Non interactive mode: Exit after having processed cmd line args'
-    default: false
     inputBinding:
       position: 102
       prefix: --nonInteractive
@@ -94,7 +91,6 @@ inputs:
       - boolean
     doc: Show memory usage and time spent to process input. Typically used for 
       debugging only
-    default: false
     inputBinding:
       position: 102
       prefix: --showMemTime

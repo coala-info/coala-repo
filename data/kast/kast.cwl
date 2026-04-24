@@ -30,7 +30,6 @@ inputs:
       descriptions of distance please refer to the wiki. One of d2, euclid, d2s,
       d2star, manhattan, chebyshev, dai, bc, ngd, all, canberra, 
       normalised_canberra, and cosine.
-    default: d2
     inputBinding:
       position: 101
       prefix: --distance-type
@@ -65,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer Length.
-    default: 3
     inputBinding:
       position: 101
       prefix: --klen
@@ -74,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Markov Order
-    default: 0
     inputBinding:
       position: 101
       prefix: --markov-order
@@ -99,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Cores.
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-cores
@@ -109,7 +105,6 @@ inputs:
       - int
     doc: Number of top hits to return when running a Ref/Query search. If you 
       want all the result, enter 0.
-    default: 10
     inputBinding:
       position: 101
       prefix: --num-hits
@@ -119,7 +114,6 @@ inputs:
       - string
     doc: For Reference/query based usage you can select your output type. One of
       default, tabular, and blastlike.
-    default: default
     inputBinding:
       position: 101
       prefix: --output-format
@@ -161,7 +155,6 @@ inputs:
       - 'null'
       - string
     doc: Define the type of sequence data to work with. One of dna, aa, and raa.
-    default: dna
     inputBinding:
       position: 101
       prefix: --sequence-type

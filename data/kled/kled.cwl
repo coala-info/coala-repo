@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: Calling contig by contig, cost less memory.
-    default: false
     inputBinding:
       position: 102
       prefix: --BC
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: CigarMergeType, 0 for Omni.B, 1 for simple, 2 for simple regional.
-    default: 0
     inputBinding:
       position: 102
       prefix: --CigarMerge
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Batch size of multihreading when clustering.
-    default: 10000
     inputBinding:
       position: 102
       prefix: --ClusteringBatchSize
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Coverage window size.
-    default: 100
     inputBinding:
       position: 102
       prefix: -c
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Fixed distance clustering parameter for deletions.
-    default: 50
     inputBinding:
       position: 102
       prefix: --DelClusterFixed
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Fixed distance 2 clustering parameter for deletions.
-    default: 10
     inputBinding:
       position: 102
       prefix: --DelClusterFixed2
@@ -87,7 +81,6 @@ inputs:
       - 'null'
       - float
     doc: Length ratio clustering parameter for deletions.
-    default: 0.3
     inputBinding:
       position: 102
       prefix: --DelClusterLengthRatio
@@ -96,7 +89,6 @@ inputs:
       - 'null'
       - float
     doc: Length ratio 2 clustering parameter for deletions.
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --DelClusterLengthRatio2
@@ -105,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Min length endurance clustering parameter for deletions.
-    default: 10
     inputBinding:
       position: 102
       prefix: --DelClusterMinLengthEndurance
@@ -114,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Near range clustering parameter for deletions.
-    default: -1
     inputBinding:
       position: 102
       prefix: --DelClusterNearRange
@@ -124,7 +114,6 @@ inputs:
       - string
     doc: Custom clustering parameters for deletions, if later 3 not given or 
       NearRange=-1 use single layer clustering. Value * for defaults.
-    default: ''
     inputBinding:
       position: 102
       prefix: --DelClusterParas
@@ -133,7 +122,6 @@ inputs:
       - 'null'
       - float
     doc: Distance ratio clustering parameter for deletions.
-    default: 1.5
     inputBinding:
       position: 102
       prefix: --DelClusterRatio
@@ -142,7 +130,6 @@ inputs:
       - 'null'
       - string
     doc: Custom filter parameters for deletions. Value * for defaults.
-    default: ''
     inputBinding:
       position: 102
       prefix: --DelFilterParas
@@ -151,7 +138,6 @@ inputs:
       - 'null'
       - float
     doc: Homo Minus for deletions.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --DelHomoM
@@ -160,7 +146,6 @@ inputs:
       - 'null'
       - float
     doc: Homo Minus Ratio for deletions.
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --DelHomoMR
@@ -169,7 +154,6 @@ inputs:
       - 'null'
       - float
     doc: HomoRatio for deletions.
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --DelHomoR
@@ -178,7 +162,6 @@ inputs:
       - 'null'
       - float
     doc: HP diff compare ratio for deletions
-    default: 1.4
     inputBinding:
       position: 102
       prefix: --DelHPDCR
@@ -187,7 +170,6 @@ inputs:
       - 'null'
       - float
     doc: HPRatio for deletions
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --DelHPR
@@ -196,7 +178,6 @@ inputs:
       - 'null'
       - float
     doc: HP same compare ratio for deletions
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --DelHPSCR
@@ -205,7 +186,6 @@ inputs:
       - 'null'
       - float
     doc: Low HP Plus for deletions.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --DelLowHPP
@@ -214,7 +194,6 @@ inputs:
       - 'null'
       - float
     doc: Low HP Plus Ratio for deletions.
-    default: 0.25
     inputBinding:
       position: 102
       prefix: --DelLowHPPR
@@ -223,7 +202,6 @@ inputs:
       - 'null'
       - int
     doc: "Filter out clusters that have position stds > MinPosSTD, -1: don't filter."
-    default: -1
     inputBinding:
       position: 102
       prefix: --DelMinPosSTD
@@ -232,7 +210,6 @@ inputs:
       - 'null'
       - float
     doc: Non Homo Minus for deletions.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --DelNonHomoM
@@ -241,7 +218,6 @@ inputs:
       - 'null'
       - float
     doc: Non Homo Minus Ratio for deletions.
-    default: -0.05
     inputBinding:
       position: 102
       prefix: --DelNonHomoMR
@@ -250,7 +226,6 @@ inputs:
       - 'null'
       - int
     doc: Fixed distance clustering parameter for duplications.
-    default: 0
     inputBinding:
       position: 102
       prefix: --DupClusterFixed
@@ -259,7 +234,6 @@ inputs:
       - 'null'
       - int
     doc: Fixed distance 2 clustering parameter for duplications.
-    default: 500
     inputBinding:
       position: 102
       prefix: --DupClusterFixed2
@@ -268,7 +242,6 @@ inputs:
       - 'null'
       - float
     doc: Length ratio clustering parameter for duplications.
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --DupClusterLengthRatio
@@ -277,7 +250,6 @@ inputs:
       - 'null'
       - float
     doc: Length ratio 2 clustering parameter for duplications.
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --DupClusterLengthRatio2
@@ -286,7 +258,6 @@ inputs:
       - 'null'
       - int
     doc: Min length endurance clustering parameter for duplications.
-    default: 0
     inputBinding:
       position: 102
       prefix: --DupClusterMinLengthEndurance
@@ -295,7 +266,6 @@ inputs:
       - 'null'
       - int
     doc: Near range clustering parameter for duplications.
-    default: -1
     inputBinding:
       position: 102
       prefix: --DupClusterNearRange
@@ -305,7 +275,6 @@ inputs:
       - string
     doc: Custom clustering parameters for duplications, if later 3 not given or 
       NearRange=-1 use single layer clustering. Value * for defaults.
-    default: ''
     inputBinding:
       position: 102
       prefix: --DupClusterParas
@@ -314,7 +283,6 @@ inputs:
       - 'null'
       - float
     doc: Distance ratio clustering parameter for duplications.
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --DupClusterRatio
@@ -323,7 +291,6 @@ inputs:
       - 'null'
       - string
     doc: Custom filter parameters for duplications. Value * for defaults.
-    default: ''
     inputBinding:
       position: 102
       prefix: --DupFilterParas
@@ -332,7 +299,6 @@ inputs:
       - 'null'
       - float
     doc: Homo Minus for duplications.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --DupHomoM
@@ -341,7 +307,6 @@ inputs:
       - 'null'
       - float
     doc: Homo Minus Ratio for duplications.
-    default: 0.6
     inputBinding:
       position: 102
       prefix: --DupHomoMR
@@ -350,7 +315,6 @@ inputs:
       - 'null'
       - float
     doc: HomoRatio for duplications.
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --DupHomoR
@@ -359,7 +323,6 @@ inputs:
       - 'null'
       - float
     doc: HP diff compare ratio for duplications
-    default: 1.4
     inputBinding:
       position: 102
       prefix: --DupHPDCR
@@ -368,7 +331,6 @@ inputs:
       - 'null'
       - float
     doc: HPRatio for duplications
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --DupHPR
@@ -377,7 +339,6 @@ inputs:
       - 'null'
       - float
     doc: HP same compare ratio for duplications
-    default: 0.4
     inputBinding:
       position: 102
       prefix: --DupHPSCR
@@ -386,7 +347,6 @@ inputs:
       - 'null'
       - float
     doc: Low HP Plus for duplications.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --DupLowHPP
@@ -395,7 +355,6 @@ inputs:
       - 'null'
       - float
     doc: Low HP Plus Ratio for duplications.
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --DupLowHPPR
@@ -404,7 +363,6 @@ inputs:
       - 'null'
       - int
     doc: "Filter out clusters that have position stds > MinPosSTD, -1: don't filter."
-    default: -1
     inputBinding:
       position: 102
       prefix: --DupMinPosSTD
@@ -413,7 +371,6 @@ inputs:
       - 'null'
       - float
     doc: Non Homo Minus for duplications.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --DupNonHomoM
@@ -422,7 +379,6 @@ inputs:
       - 'null'
       - float
     doc: Non Homo Minus Ratio for duplications.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --DupNonHomoMR
@@ -433,7 +389,6 @@ inputs:
     doc: Filter out insertions within duplication range that have large PSTD 
       when number of duplication/number of insertion is large(>1/20). Implicates
       --PSTD.
-    default: true
     inputBinding:
       position: 102
       prefix: --FID
@@ -442,7 +397,6 @@ inputs:
       - 'null'
       - int
     doc: Fixed distance clustering parameter for insertions.
-    default: 150
     inputBinding:
       position: 102
       prefix: --InsClusterFixed
@@ -451,7 +405,6 @@ inputs:
       - 'null'
       - int
     doc: Fixed distance 2 clustering parameter for insertions.
-    default: 50
     inputBinding:
       position: 102
       prefix: --InsClusterFixed2
@@ -460,7 +413,6 @@ inputs:
       - 'null'
       - float
     doc: Length ratio clustering parameter for insertions.
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --InsClusterLengthRatio
@@ -469,7 +421,6 @@ inputs:
       - 'null'
       - float
     doc: Length ratio 2 clustering parameter for insertions.
-    default: 0.3
     inputBinding:
       position: 102
       prefix: --InsClusterLengthRatio2
@@ -478,7 +429,6 @@ inputs:
       - 'null'
       - int
     doc: Min length endurance clustering parameter for insertions.
-    default: 20
     inputBinding:
       position: 102
       prefix: --InsClusterMinLengthEndurance
@@ -487,7 +437,6 @@ inputs:
       - 'null'
       - int
     doc: Near range clustering parameter for insertions.
-    default: -1
     inputBinding:
       position: 102
       prefix: --InsClusterNearRange
@@ -497,7 +446,6 @@ inputs:
       - string
     doc: Custom clustering parameters for insertions, if later 3 not given or 
       NearRange=-1 use single layer clustering. Value * for defaults.
-    default: ''
     inputBinding:
       position: 102
       prefix: --InsClusterParas
@@ -506,7 +454,6 @@ inputs:
       - 'null'
       - float
     doc: Distance ratio clustering parameter for insertions.
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --InsClusterRatio
@@ -515,7 +462,6 @@ inputs:
       - 'null'
       - string
     doc: Custom filter parameters for insertions. Value * for defaults.
-    default: ''
     inputBinding:
       position: 102
       prefix: --InsFilterParas
@@ -524,7 +470,6 @@ inputs:
       - 'null'
       - float
     doc: Homo Minus for insertions.
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --InsHomoM
@@ -533,7 +478,6 @@ inputs:
       - 'null'
       - float
     doc: Homo Minus Ratio for insertions.
-    default: 0.25
     inputBinding:
       position: 102
       prefix: --InsHomoMR
@@ -542,7 +486,6 @@ inputs:
       - 'null'
       - float
     doc: HomoRatio for insertions.
-    default: 0.75
     inputBinding:
       position: 102
       prefix: --InsHomoR
@@ -551,7 +494,6 @@ inputs:
       - 'null'
       - float
     doc: HP diff compare ratio for insertions
-    default: 1.5
     inputBinding:
       position: 102
       prefix: --InsHPDCR
@@ -560,7 +502,6 @@ inputs:
       - 'null'
       - float
     doc: HPRatio for insertions
-    default: 0.7
     inputBinding:
       position: 102
       prefix: --InsHPR
@@ -569,7 +510,6 @@ inputs:
       - 'null'
       - float
     doc: HP same compare ratio for insertions
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --InsHPSCR
@@ -578,7 +518,6 @@ inputs:
       - 'null'
       - float
     doc: Low HP Plus for insertions.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --InsLowHPP
@@ -587,7 +526,6 @@ inputs:
       - 'null'
       - float
     doc: Low HP Plus Ratio for insertions.
-    default: 0.25
     inputBinding:
       position: 102
       prefix: --InsLowHPPR
@@ -596,7 +534,6 @@ inputs:
       - 'null'
       - int
     doc: "Filter out clusters that have position stds > MinPosSTD, -1: don't filter."
-    default: -1
     inputBinding:
       position: 102
       prefix: --InsMinPosSTD
@@ -605,7 +542,6 @@ inputs:
       - 'null'
       - float
     doc: Non Homo Minus for insertions.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --InsNonHomoM
@@ -614,7 +550,6 @@ inputs:
       - 'null'
       - float
     doc: Non Homo Minus Ratio for insertions.
-    default: 0.3
     inputBinding:
       position: 102
       prefix: --InsNonHomoMR
@@ -623,7 +558,6 @@ inputs:
       - 'null'
       - int
     doc: Insertion clip signature distance tolerance.
-    default: 10
     inputBinding:
       position: 102
       prefix: --InsClipTolerance
@@ -632,7 +566,6 @@ inputs:
       - 'null'
       - int
     doc: Insertion clip signature max gap size.
-    default: 50000
     inputBinding:
       position: 102
       prefix: --InsMaxGapSize
@@ -641,7 +574,6 @@ inputs:
       - 'null'
       - int
     doc: Fixed distance clustering parameter for inversions.
-    default: 100
     inputBinding:
       position: 102
       prefix: --InvClusterFixed
@@ -650,7 +582,6 @@ inputs:
       - 'null'
       - int
     doc: Fixed distance 2 clustering parameter for inversions.
-    default: 100
     inputBinding:
       position: 102
       prefix: --InvClusterFixed2
@@ -659,7 +590,6 @@ inputs:
       - 'null'
       - float
     doc: Length ratio clustering parameter for inversions.
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --InvClusterLengthRatio
@@ -668,7 +598,6 @@ inputs:
       - 'null'
       - float
     doc: Length ratio 2 clustering parameter for inversions.
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --InvClusterLengthRatio2
@@ -677,7 +606,6 @@ inputs:
       - 'null'
       - int
     doc: Min length endurance clustering parameter for inversions.
-    default: 0
     inputBinding:
       position: 102
       prefix: --InvClusterMinLengthEndurance
@@ -686,7 +614,6 @@ inputs:
       - 'null'
       - int
     doc: Near range clustering parameter for inversions.
-    default: -1
     inputBinding:
       position: 102
       prefix: --InvClusterNearRange
@@ -696,7 +623,6 @@ inputs:
       - string
     doc: Custom clustering parameters for inversions, if later 3 not given or 
       NearRange=-1 use single layer clustering. Value * for defaults.
-    default: ''
     inputBinding:
       position: 102
       prefix: --InvClusterParas
@@ -705,7 +631,6 @@ inputs:
       - 'null'
       - float
     doc: Distance ratio clustering parameter for inversions.
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --InvClusterRatio
@@ -714,7 +639,6 @@ inputs:
       - 'null'
       - string
     doc: Custom filter parameters for inversions. Value * for defaults.
-    default: ''
     inputBinding:
       position: 102
       prefix: --InvFilterParas
@@ -723,7 +647,6 @@ inputs:
       - 'null'
       - float
     doc: Homo Minus for inversions.
-    default: 0.7
     inputBinding:
       position: 102
       prefix: --InvHomoM
@@ -732,7 +655,6 @@ inputs:
       - 'null'
       - float
     doc: Homo Minus Ratio for inversions.
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --InvHomoMR
@@ -741,7 +663,6 @@ inputs:
       - 'null'
       - float
     doc: HomoRatio for inversions.
-    default: 0.65
     inputBinding:
       position: 102
       prefix: --InvHomoR
@@ -750,7 +671,6 @@ inputs:
       - 'null'
       - float
     doc: HP diff compare ratio for inversions
-    default: 1.3
     inputBinding:
       position: 102
       prefix: --InvHPDCR
@@ -759,7 +679,6 @@ inputs:
       - 'null'
       - float
     doc: HPRatio for inversions
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --InvHPR
@@ -768,7 +687,6 @@ inputs:
       - 'null'
       - float
     doc: HP same compare ratio for inversions
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --InvHPSCR
@@ -777,7 +695,6 @@ inputs:
       - 'null'
       - float
     doc: Low HP Plus for inversions.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --InvLowHPP
@@ -786,7 +703,6 @@ inputs:
       - 'null'
       - float
     doc: Low HP Plus Ratio for inversions.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --InvLowHPPR
@@ -795,7 +711,6 @@ inputs:
       - 'null'
       - int
     doc: "Filter out clusters that have position stds > MinPosSTD, -1: don't filter."
-    default: -1
     inputBinding:
       position: 102
       prefix: --InvMinPosSTD
@@ -804,7 +719,6 @@ inputs:
       - 'null'
       - float
     doc: Non Homo Minus for inversions.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --InvNonHomoM
@@ -813,7 +727,6 @@ inputs:
       - 'null'
       - float
     doc: Non Homo Minus Ratio for inversions.
-    default: 0.4
     inputBinding:
       position: 102
       prefix: --InvNonHomoMR
@@ -823,7 +736,6 @@ inputs:
       - int
     doc: Max cluster size, will resize to this value if a cluster is larger than
       this.
-    default: 1000
     inputBinding:
       position: 102
       prefix: -M
@@ -833,7 +745,6 @@ inputs:
       - int
     doc: Maximum max merge distance of signature merging during CIGAR signature 
       collection for simple merge.
-    default: 50000
     inputBinding:
       position: 102
       prefix: -D
@@ -843,7 +754,6 @@ inputs:
       - float
     doc: Max merge portion of signature merging during CIGAR signature 
       collection for simple merge.
-    default: 0.2
     inputBinding:
       position: 102
       prefix: -p
@@ -852,7 +762,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality.
-    default: 20
     inputBinding:
       position: 102
       prefix: -q
@@ -862,7 +771,6 @@ inputs:
       - int
     doc: Minimum max merge distance of signature merging during CIGAR signature 
       collection for simple merge.
-    default: 500
     inputBinding:
       position: 102
       prefix: -d
@@ -871,7 +779,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum SV length.
-    default: 30
     inputBinding:
       position: 102
       prefix: -m
@@ -880,7 +787,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum template length.
-    default: 500
     inputBinding:
       position: 102
       prefix: -l
@@ -889,7 +795,6 @@ inputs:
       - 'null'
       - boolean
     doc: No filter, output all results.
-    default: false
     inputBinding:
       position: 102
       prefix: --NOF
@@ -898,7 +803,6 @@ inputs:
       - 'null'
       - int
     doc: A for omni.b merge.
-    default: 800
     inputBinding:
       position: 102
       prefix: --OmniA
@@ -907,7 +811,6 @@ inputs:
       - 'null'
       - int
     doc: B for omni.b merge.
-    default: 800
     inputBinding:
       position: 102
       prefix: --OmniB
@@ -916,7 +819,6 @@ inputs:
       - 'null'
       - int
     doc: Relevant alignments count limit for omni.b merge.
-    default: 20
     inputBinding:
       position: 102
       prefix: --OCountLimit
@@ -926,7 +828,6 @@ inputs:
       - int
     doc: Max edges(depth) for omni.b merge. This will grow complexity 
       exponentially.
-    default: 8
     inputBinding:
       position: 102
       prefix: --OMaxE
@@ -935,7 +836,6 @@ inputs:
       - 'null'
       - float
     doc: ScoreB ratio for omni.b merge.
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --OScoreBRatio
@@ -944,7 +844,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output all results with ST>=2.
-    default: false
     inputBinding:
       position: 102
       prefix: --F2
@@ -968,7 +867,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 8
     inputBinding:
       position: 102
       prefix: --threads
@@ -978,7 +876,6 @@ inputs:
       - boolean
     doc: Use default parameters for CCS data (will overwrite previous cluster 
       and filter parameters).
-    default: false
     inputBinding:
       position: 102
       prefix: --CCS
@@ -988,7 +885,6 @@ inputs:
       - boolean
     doc: Use default parameters for CLR data (will overwrite previous cluster 
       and filter parameters).
-    default: false
     inputBinding:
       position: 102
       prefix: --CLR
@@ -997,7 +893,6 @@ inputs:
       - 'null'
       - int
     doc: 'Set the logging verbosity, <=0: info, 1: verbose, >=2: debug.'
-    default: 0
     inputBinding:
       position: 102
       prefix: --verbosity

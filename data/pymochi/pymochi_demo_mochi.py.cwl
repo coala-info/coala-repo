@@ -10,7 +10,6 @@ inputs:
       - string
     doc: "comma-separated list of minibatch sizes to consider\n                  \
       \      during grid search"
-    default: 512,1024,2048
     inputBinding:
       position: 101
       prefix: --batch_size
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: path to custom transformations file
-    default: None
     inputBinding:
       position: 101
       prefix: --custom_transformations
@@ -49,7 +47,6 @@ inputs:
       - boolean
     doc: "whether or not to stop training early if validation\n                  \
       \      loss not decreasing"
-    default: true
     inputBinding:
       position: 101
       prefix: --early_stopping
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'use ensemble feature encoding (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --ensemble
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - File
     doc: path to features file
-    default: None
     inputBinding:
       position: 101
       prefix: --features
@@ -86,7 +81,6 @@ inputs:
       - int
     doc: "minimum number of observations of additive trait\n                     \
       \   weights to be held out"
-    default: 0
     inputBinding:
       position: 101
       prefix: --holdout_minobs
@@ -105,7 +99,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'WT variant can be held out (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --holdout_WT
@@ -123,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: task identifier to use for model weight initialization
-    default: 1
     inputBinding:
       position: 101
       prefix: --init_weights_task_id
@@ -133,7 +125,6 @@ inputs:
       - int
     doc: "number of cross-validation folds where test set% =\n                   \
       \     100/k_folds"
-    default: 10
     inputBinding:
       position: 101
       prefix: --k_folds
@@ -142,7 +133,6 @@ inputs:
       - 'null'
       - float
     doc: lambda factor applied to L1 norm
-    default: 0
     inputBinding:
       position: 101
       prefix: --l1_regularization_factor
@@ -151,7 +141,6 @@ inputs:
       - 'null'
       - float
     doc: lambda factor applied to L2 norm
-    default: 1e-06
     inputBinding:
       position: 101
       prefix: --l2_regularization_factor
@@ -161,7 +150,6 @@ inputs:
       - string
     doc: "comma-separated list of learning rates to consider\n                   \
       \     during grid search"
-    default: '0.05'
     inputBinding:
       position: 101
       prefix: --learn_rate
@@ -170,7 +158,6 @@ inputs:
       - 'null'
       - string
     doc: "loss function name: one of 'WeightedL1', 'GaussianNLL'"
-    default: WeightedL1
     inputBinding:
       position: 101
       prefix: --loss_function_name
@@ -179,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: maximum interaction order
-    default: 1
     inputBinding:
       position: 101
       prefix: --max_interaction_order
@@ -189,7 +175,6 @@ inputs:
       - int
     doc: "minimum number of observations required to include\n                   \
       \     interaction term"
-    default: 2
     inputBinding:
       position: 101
       prefix: --min_observed
@@ -198,7 +183,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of training epochs
-    default: 1000
     inputBinding:
       position: 101
       prefix: --num_epochs
@@ -207,7 +191,6 @@ inputs:
       - 'null'
       - int
     doc: number of grid search epochs
-    default: 100
     inputBinding:
       position: 101
       prefix: --num_epochs_grid
@@ -233,7 +216,6 @@ inputs:
       - 'null'
       - File
     doc: path to supplementary variants file for prediction
-    default: None
     inputBinding:
       position: 101
       prefix: --predict
@@ -242,7 +224,6 @@ inputs:
       - 'null'
       - string
     doc: "project name (output will be saved to\n                        output_directory/project_name)"
-    default: mochi_project
     inputBinding:
       position: 101
       prefix: --project_name
@@ -251,7 +232,6 @@ inputs:
       - 'null'
       - float
     doc: multiplicative factor of learning rate decay
-    default: 0.98
     inputBinding:
       position: 101
       prefix: --scheduler_gamma
@@ -260,7 +240,6 @@ inputs:
       - 'null'
       - int
     doc: random seed for training target data resampling
-    default: 1
     inputBinding:
       position: 101
       prefix: --seed
@@ -269,7 +248,6 @@ inputs:
       - 'null'
       - int
     doc: sequence position offset
-    default: 0
     inputBinding:
       position: 101
       prefix: --seq_position_offset
@@ -280,7 +258,6 @@ inputs:
     doc: "comma-separated list of integers corresponding to\n                    \
       \    number of neurons per fully-connected sumOfSigmoids\n                 \
       \       hidden layer"
-    default: '20'
     inputBinding:
       position: 101
       prefix: --sos_architecture
@@ -290,7 +267,6 @@ inputs:
       - boolean
     doc: "final sumOfSigmoids should be linear rather than\n                     \
       \   sigmoidal (default:False)"
-    default: false
     inputBinding:
       position: 101
       prefix: --sos_outputlinear
@@ -308,7 +284,6 @@ inputs:
       - 'null'
       - float
     doc: temperature in degrees celsius
-    default: 30.0
     inputBinding:
       position: 101
       prefix: --temperature
@@ -318,7 +293,6 @@ inputs:
       - boolean
     doc: "whether or not to add random noise to training target\n                \
       \        data proportional to target error"
-    default: true
     inputBinding:
       position: 101
       prefix: --training_resample
@@ -328,7 +302,6 @@ inputs:
       - int
     doc: "validation factor where validation set% =\n                        100/k_folds*validation_factor
       (default: 2 i.e. 20%)"
-    default: 2
     inputBinding:
       position: 101
       prefix: --validation_factor

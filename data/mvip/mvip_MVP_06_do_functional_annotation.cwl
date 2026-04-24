@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: Significance e-value of match between target sequences and query
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --ADS_evalue
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Significant score of match between target sequences and query
-    default: 60
     inputBinding:
       position: 101
       prefix: --ADS_score
@@ -52,7 +50,6 @@ inputs:
       - string
     doc: Sequence and protein FASTA files (representative or all sequences) to 
       use for functional annotation.
-    default: representative
     inputBinding:
       position: 101
   - id: force_ads
@@ -114,7 +111,6 @@ inputs:
       - 'null'
       - float
     doc: Significance e-value of match between target sequences and query
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --PFAM_evalue
@@ -123,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Significant score of match between target sequences and query
-    default: 50
     inputBinding:
       position: 101
       prefix: --PFAM_score
@@ -132,7 +127,6 @@ inputs:
       - 'null'
       - float
     doc: Significance e-value of match between target sequences and query
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --PHROGS_evalue
@@ -141,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: Significant score of match between target sequences and query
-    default: 50
     inputBinding:
       position: 101
       prefix: --PHROGS_score
@@ -159,7 +152,6 @@ inputs:
       - 'null'
       - float
     doc: Significance e-value of match between target sequences and query
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --RdRP_evalue
@@ -168,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: Significant score of match between target sequences and query
-    default: 50
     inputBinding:
       position: 101
       prefix: --RdRP_score
@@ -177,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

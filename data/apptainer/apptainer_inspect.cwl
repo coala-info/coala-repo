@@ -66,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: show the labels for the image (default)
-    default: true
     inputBinding:
       position: 102
       prefix: --labels

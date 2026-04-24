@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: Delimiting character for the output table
-    default: ','
     inputBinding:
       position: 102
       prefix: --delim
@@ -38,7 +37,6 @@ inputs:
       - string
     doc: String of characters to ignore - e.g., `-e N-` -> dist(A, N) = 0 and 
       dist(A, -) = 0
-    default: N-
     inputBinding:
       position: 102
       prefix: --ignored-chars
@@ -79,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use. Setting to 0 will use all available
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

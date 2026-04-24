@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Input FASTA elements larger than this will be processed in smaller pieces.
-    default: 10000000
     inputBinding:
       position: 101
       prefix: --chunksize
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Assumes bases are of this quality if quals are no present in input BAMs.
-    default: 10
     inputBinding:
       position: 101
       prefix: --defaultqual
@@ -69,7 +67,6 @@ inputs:
       - string
     doc: A comma-separated list of categories of issues to try to fix (snps, indels,
       gaps, local, all, bases, none, amb, breaks, circles, novel).
-    default: all
     inputBinding:
       position: 101
       prefix: --fix
@@ -79,7 +76,6 @@ inputs:
       - int
     doc: Controls how much of the well-aligned reads will be used; bases at each end
       of the good reads will be ignored.
-    default: 10
     inputBinding:
       position: 101
       prefix: --flank
@@ -98,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Closed gaps must be within this number of bases of true size to be closed.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --gapmargin
@@ -132,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer size used by internal assembler.
-    default: 47
     inputBinding:
       position: 101
       prefix: --K
@@ -141,7 +135,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage depth required to call variants.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --mindepth
@@ -150,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size for unclosed gaps.
-    default: 10
     inputBinding:
       position: 101
       prefix: --mingap
@@ -159,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment mapping quality for a read to count in pileups.
-    default: 0
     inputBinding:
       position: 101
       prefix: --minmq
@@ -168,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality to consider for pileups.
-    default: 0
     inputBinding:
       position: 101
       prefix: --minqual

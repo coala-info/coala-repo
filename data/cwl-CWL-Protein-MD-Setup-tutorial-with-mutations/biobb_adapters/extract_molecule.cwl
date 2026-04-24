@@ -47,7 +47,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_molecule_path
-    default: system.pdb
 
   config:
     label: Advanced configuration options for biobb_structure_utils ExtractMolecule

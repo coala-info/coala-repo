@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Calculate MD tag.
-    default: false
     inputBinding:
       position: 102
       prefix: --calculate-md-tag
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: Calculate NM tag.
-    default: false
     inputBinding:
       position: 102
       prefix: --calculate-nm-tag
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Count number of records.
-    default: false
     inputBinding:
       position: 102
       prefix: --count-only
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: Decrypt the file.
-    default: false
     inputBinding:
       position: 102
       prefix: --decrypt
@@ -56,7 +52,6 @@ inputs:
     doc: Use this quality score (decimal representation of ASCII symbol) as a default
       value when the original quality score was lost due to compression. Minimum is
       33.
-    default: 63
     inputBinding:
       position: 102
       prefix: --default-quality-score
@@ -65,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Filtering flags.
-    default: 0
     inputBinding:
       position: 102
       prefix: --filter-flags
@@ -74,7 +68,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print SAM header and quit.
-    default: false
     inputBinding:
       position: 102
       prefix: -H
@@ -84,7 +77,6 @@ inputs:
       - boolean
     doc: Issue a warning on sequence MD5 mismatch and continue. This does not garantee
       the data will be read succesfully.
-    default: false
     inputBinding:
       position: 102
       prefix: --ignore-md5-mismatch
@@ -93,7 +85,6 @@ inputs:
       - 'null'
       - boolean
     doc: Inject or change the @SQ:UR header fields to point to ENA reference service.
-    default: false
     inputBinding:
       position: 102
       prefix: --inject-sq-uri
@@ -111,7 +102,6 @@ inputs:
       - 'null'
       - string
     doc: 'Change log level: DEBUG, INFO, WARNING, ERROR.'
-    default: ERROR
     inputBinding:
       position: 102
       prefix: --log-level
@@ -120,7 +110,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output in BAM format.
-    default: false
     inputBinding:
       position: 102
       prefix: --output-bam-format
@@ -137,7 +126,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print SAM header when writing SAM format.
-    default: false
     inputBinding:
       position: 102
       prefix: --print-sam-header
@@ -155,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: Required flags.
-    default: 0
     inputBinding:
       position: 102
       prefix: --required-flags
@@ -164,7 +151,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip MD5 checks when reading the header.
-    default: false
     inputBinding:
       position: 102
       prefix: --skip-md5-check
@@ -173,7 +159,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write BAM output in the same thread.
-    default: false
     inputBinding:
       position: 102
       prefix: --sync-bam-output

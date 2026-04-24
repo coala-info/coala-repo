@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: number of I/O processes to use during conversion of multiple files
-    default: 4
     inputBinding:
       position: 102
       prefix: --iop
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - Directory
     doc: output to directory
-    default: None
     inputBinding:
       position: 102
       prefix: --out-dir
@@ -37,7 +35,6 @@ inputs:
       - boolean
     doc: retain the same directory structure in the converted output as the 
       input (experimental)
-    default: false
     inputBinding:
       position: 102
       prefix: --retain

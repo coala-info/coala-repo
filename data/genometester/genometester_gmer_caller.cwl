@@ -78,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Use NUM threads (min 1, max 32)
-    default: 16
     inputBinding:
       position: 102
       prefix: --num_threads
@@ -95,7 +94,6 @@ inputs:
       - 'null'
       - float
     doc: probability cutoff for calling genotype
-    default: 0
     inputBinding:
       position: 102
       prefix: --prob_cutoff
@@ -112,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: Use NUM markers for training
-    default: 100000
     inputBinding:
       position: 102
       prefix: --training_size

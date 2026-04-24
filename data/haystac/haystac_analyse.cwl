@@ -10,7 +10,6 @@ inputs:
       - boolean
     doc: 'Set new flag defaults for aDNA sample analysis: mismatch-probability=0.20,
       min-prob=0.5, mapdamage=True'
-    default: false
     inputBinding:
       position: 101
       prefix: --aDNA
@@ -30,7 +29,6 @@ inputs:
       - int
     doc: Number of threads bowtie2 will use to align a sample against every 
       individual genome in the database
-    default: 4
     inputBinding:
       position: 101
       prefix: --bowtie2-threads
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of CPU cores to use
-    default: 20
     inputBinding:
       position: 101
       prefix: --cores
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable debugging mode
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -64,7 +60,6 @@ inputs:
       - type: array
         items: string
     doc: List of genera to restrict the abundance calculations
-    default: '[]'
     inputBinding:
       position: 101
       prefix: --genera
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform mapdamage analysis for ancient samples
-    default: false
     inputBinding:
       position: 101
       prefix: --mapdamage
@@ -82,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum memory (MB) to use
-    default: 63985
     inputBinding:
       position: 101
       prefix: --mem
@@ -92,7 +85,6 @@ inputs:
       - float
     doc: Minimum posterior probability to assign an aligned read to a given 
       species
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --min-prob
@@ -101,7 +93,6 @@ inputs:
       - 'null'
       - float
     doc: Base mismatch probability
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --mismatch-probability
@@ -131,7 +122,6 @@ inputs:
       - 'null'
       - boolean
     doc: Unlock the output directory following a crash or hard restart
-    default: false
     inputBinding:
       position: 101
       prefix: --unlock

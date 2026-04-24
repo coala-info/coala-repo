@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: maximum size of extracted components (features) in k-mers
-    default: 10000
     inputBinding:
       position: 101
       prefix: --max-comp-size
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: minimum size of extracted components (features) in k-mers
-    default: 1000
     inputBinding:
       position: 101
       prefix: --min-comp-size
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: minimal sequence length to be added to a component (in nucleotides)
-    default: 100
     inputBinding:
       position: 101
       prefix: --min-seq-len
@@ -72,7 +69,6 @@ inputs:
       - boolean
     doc: if TRUE use every spades contig as a separate feature (do not combine 
       them in components; -l, -b1, -b2 ignored)
-    default: false
     inputBinding:
       position: 101
       prefix: --separate
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - boolean
     doc: if TRUE skip de Bruijn graph and fasta construction from components
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-graph

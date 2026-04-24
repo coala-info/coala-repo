@@ -14,7 +14,6 @@ inputs:
   - id: operation
     type: string
     doc: The operation to perform (unpack_files).
-    default: unpack_files
     inputBinding:
       position: 2
   - id: do_ask

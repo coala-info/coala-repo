@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Create an tar.gz archive of the RELEASE_NOTES files in the DB_DIR
-    default: false
     inputBinding:
       position: 102
       prefix: --archive-notes
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force update the genomes directory regardless of RELEASE_NOTES outcome
-    default: false
     inputBinding:
       position: 102
       prefix: --force-check
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel processes to start for downloading
-    default: 1
     inputBinding:
       position: 102
       prefix: --jobs
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: Define loglevel
-    default: INFO
     inputBinding:
       position: 102
       prefix: --loglevel
@@ -82,7 +78,6 @@ inputs:
       option cannot be set with `--loglevel debug`. If they are both supplied, 
       progress will not be shown and the more descriptive debugging messages 
       will be printed to stderr instead
-    default: false
     inputBinding:
       position: 102
       prefix: --progress
@@ -92,7 +87,6 @@ inputs:
       - boolean
     doc: Use this to set both --skip-release-check and --skip-processed-genomes 
       on. Useful for resuming a failed run
-    default: false
     inputBinding:
       position: 102
       prefix: --resume
@@ -101,7 +95,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip checks for already processed genomes as found in the cache.
-    default: false
     inputBinding:
       position: 102
       prefix: --skip-processed-genomes
@@ -110,7 +103,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip checking for RELEASE_NOTES based updates
-    default: false
     inputBinding:
       position: 102
       prefix: --skip-release-check

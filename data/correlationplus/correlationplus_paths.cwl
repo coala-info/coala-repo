@@ -17,7 +17,6 @@ inputs:
       - float
     doc: Distance filter. The residues with distances higher than this value 
       will be considered as zero.
-    default: 7.0
     inputBinding:
       position: 101
       prefix: -d
@@ -36,7 +35,6 @@ inputs:
       coeviz and evcouplings are also some options to analyze sequence 
       correlations. If your data is any other coupling data in full matrix 
       format, you can select 'generic' as your data type.
-    default: ndcc
     inputBinding:
       position: 101
       prefix: -t
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Number of shortest paths to write to tcl or pml files.
-    default: 1
     inputBinding:
       position: 101
       prefix: -n
@@ -67,7 +64,6 @@ inputs:
       - float
     doc: Value filter. The values lower than this value in the map will be 
       considered as zero.
-    default: 0.3
     inputBinding:
       position: 101
       prefix: -v

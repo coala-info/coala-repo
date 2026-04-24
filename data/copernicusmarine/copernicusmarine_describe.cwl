@@ -55,7 +55,6 @@ inputs:
       - int
     doc: Maximum number of concurrent requests (>=1). Default 15. The command 
       uses a thread pool executor to manage concurrent requests.
-    default: 15
     inputBinding:
       position: 101
       prefix: --max-concurrent-requests
@@ -74,7 +73,6 @@ inputs:
       - boolean
     doc: If set to True, the function will raise at the first error encountered 
       during the parsing and fetching of the catalogue. Default, False.
-    default: false
     inputBinding:
       position: 101
       prefix: --raise-on-error

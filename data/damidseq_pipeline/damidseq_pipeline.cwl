@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output files at GATC resolution
-    default: true
     inputBinding:
       position: 101
       prefix: --as_gatc
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Width of bins to use for mapping reads
-    default: 75
     inputBinding:
       position: 101
       prefix: --bins
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform bowtie2 alignment [1/0]
-    default: true
     inputBinding:
       position: 101
       prefix: --bowtie
@@ -118,7 +115,6 @@ inputs:
       - string
     doc: Common text string immediately preceding experiment name (e.g. if 
       filename is Dam_Exp1_n1.fq.gz, use _ as the prefix)
-    default: _
     inputBinding:
       position: 101
       prefix: --exp_prefix
@@ -137,7 +133,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform read extension [1/0]
-    default: true
     inputBinding:
       position: 101
       prefix: --extend_reads
@@ -149,7 +144,6 @@ inputs:
       1.3 and earlier. Extends all reads to the value set with --len. gatc: Default
       for version 1.4 and above. Extends reads to --len or to the next GATC site,
       whichever is shorter. Using this option increases peak resolution.'
-    default: gatc
     inputBinding:
       position: 101
       prefix: --extension_method
@@ -190,7 +184,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use Inline::C for KDE normalisation calculations
-    default: true
     inputBinding:
       position: 101
       prefix: --kde_inline
@@ -216,7 +209,6 @@ inputs:
       - 'null'
       - int
     doc: Length to extend reads to
-    default: 300
     inputBinding:
       position: 101
       prefix: --len
@@ -243,7 +235,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum log2 value to limit normalisation search at (default = +5)
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --max_norm_value
@@ -261,7 +252,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum log2 value to limit normalisation search at (default = -5)
-    default: -5.0
     inputBinding:
       position: 101
       prefix: --min_norm_value
@@ -286,7 +276,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not trim filenames for output
-    default: true
     inputBinding:
       position: 101
       prefix: --no_file_filters
@@ -307,7 +296,6 @@ inputs:
       of log2 GATC fragment ratio (default) rpm: use readcounts per million reads
       (not recommended for most use cases) rawbins: process raw counts with external
       normalisation command (set with --rawbins_cmd)'
-    default: kde
     inputBinding:
       position: 101
       prefix: --norm_method
@@ -324,7 +312,6 @@ inputs:
       - 'null'
       - int
     doc: Number of points in normalisation routine (default = 300)
-    default: 300
     inputBinding:
       position: 101
       prefix: --norm_steps
@@ -341,7 +328,6 @@ inputs:
       - 'null'
       - string
     doc: Output tracks in this format [gff/bedgraph]
-    default: bedgraph
     inputBinding:
       position: 101
       prefix: --output_format
@@ -359,7 +345,6 @@ inputs:
       - string
     doc: characters to search for that, directly in front of [1|2], that marks 
       paired-reads (regex format)
-    default: R|_
     inputBinding:
       position: 101
       prefix: --paired_match
@@ -377,7 +362,6 @@ inputs:
       - float
     doc: Value of c in c*(reads/bins) formula for calculating pseudocounts 
       (default = 10)
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --ps_factor
@@ -395,7 +379,6 @@ inputs:
       - 'null'
       - int
     doc: Cutoff average Q score for aligned reads
-    default: 30
     inputBinding:
       position: 101
       prefix: --q
@@ -404,7 +387,6 @@ inputs:
       - 'null'
       - float
     doc: max decile for normalising from Dam array
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --qscore1max
@@ -413,7 +395,6 @@ inputs:
       - 'null'
       - float
     doc: min decile for normalising from Dam array
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --qscore1min
@@ -422,7 +403,6 @@ inputs:
       - 'null'
       - float
     doc: max decile for normalising from fusion-protein array
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --qscore2max
@@ -450,7 +430,6 @@ inputs:
       - string
     doc: Common text string denoting replicates (e.g. if filename is 
       Dam_Exp1_n1.fq.gz, use _n as the rep_prefix)
-    default: _n
     inputBinding:
       position: 101
       prefix: --rep_prefix
@@ -485,7 +464,6 @@ inputs:
       - boolean
     doc: Calculate coverage scores (before normalisation) as reads per million 
       (RPM)
-    default: true
     inputBinding:
       position: 101
       prefix: --scores_as_rpm
@@ -494,7 +472,6 @@ inputs:
       - 'null'
       - int
     doc: threads for bowtie2 to use
-    default: 7
     inputBinding:
       position: 101
       prefix: --threads

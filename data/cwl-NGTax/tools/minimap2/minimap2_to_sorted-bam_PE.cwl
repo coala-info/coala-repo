@@ -47,7 +47,6 @@ inputs:
     type: int?
     doc: Maximum threads to use
     label: Threads
-    default: 4
     inputBinding:
       position: 4
   identifier:

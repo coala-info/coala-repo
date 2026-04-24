@@ -16,7 +16,6 @@ inputs:
       - type: array
         items: float
     doc: Ratio(s) between l1 and l2 regularization for regression model.
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --alphas
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of genes detected to keep cell.
-    default: 50
     inputBinding:
       position: 102
       prefix: --min-genes
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Number of top genes by dropout rate to use for ambient profile.
-    default: 10
     inputBinding:
       position: 102
       prefix: --n-ambient
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Number of highly variable genes for training model.
-    default: 2000
     inputBinding:
       position: 102
       prefix: --n-hvgs
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of iterations for optimization.
-    default: 2000
     inputBinding:
       position: 102
       prefix: --n-iter
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of threads for cross validation.
-    default: 2
     inputBinding:
       position: 102
       prefix: --n-jobs

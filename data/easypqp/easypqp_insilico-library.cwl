@@ -10,7 +10,6 @@ inputs:
       - string
     doc: Allowed fragment types. Current MS2 prediction model only supports b 
       and y ions.
-    default: b,y
     inputBinding:
       position: 101
       prefix: --allowed_fragment_types
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Batch size used for peptide property inferece.
-    default: 10
     inputBinding:
       position: 101
       prefix: --batch_size
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Decoy tag to be used for decoy generation.
-    default: rev_
     inputBinding:
       position: 101
       prefix: --decoy_tag
@@ -73,7 +70,6 @@ inputs:
     doc: 'Fragmentation model to be used for theoretical fragmentaton generation.
       Options are (etd/td_etd/ethcd/etcad/eacid/ead/hcd/cid/all/none). See: `[FragmentationModel](https://docs.rs/rustyms/latest/rustyms/model/struct.FragmentationModel.html#method.etd)`
       for more details.'
-    default: hcd
     inputBinding:
       position: 101
       prefix: --fragmentation_model
@@ -90,7 +86,6 @@ inputs:
       - 'null'
       - string
     doc: Instrument type. Options are (QE).
-    default: QE/Lumos/timsTOF/SciexTOF/ThermoTOF
     inputBinding:
       position: 101
       prefix: --instrument
@@ -100,7 +95,6 @@ inputs:
       - float
     doc: Maximum delta mass tolerance (in Da) for matching modifications to 
       UniMod entries.
-    default: 0.02
     inputBinding:
       position: 101
       prefix: --max_delta_unimod
@@ -109,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum fragment charge state.
-    default: 2
     inputBinding:
       position: 101
       prefix: --max_fragment_charge
@@ -118,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of transitions per peptide.
-    default: 6
     inputBinding:
       position: 101
       prefix: --max_transitions
@@ -127,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of transitions per peptide.
-    default: 6
     inputBinding:
       position: 101
       prefix: --min_transitions
@@ -137,7 +128,6 @@ inputs:
       - int
     doc: Normalized collision energy (NCE) to be used for MS2 intensity 
       prediction.
-    default: 20
     inputBinding:
       position: 101
       prefix: --nce
@@ -212,7 +202,6 @@ inputs:
       - 'null'
       - string
     doc: Precursor charge states to be used for library generation.
-    default: 2,3
     inputBinding:
       position: 101
       prefix: --precursor_charge
@@ -221,7 +210,6 @@ inputs:
       - 'null'
       - float
     doc: RT output scaling factor (e.g., 100.0 to convert 0-1 range to 0-100).
-    default: 100.0
     inputBinding:
       position: 101
       prefix: --rt_scale
@@ -257,7 +245,6 @@ inputs:
       - 'null'
       - File
     doc: Custom UniMod XML database file for modification annotation.
-    default: /usr/local/lib/python3.12/site-packages/easypqp/data/unimod.xml
     inputBinding:
       position: 101
       prefix: --unimod

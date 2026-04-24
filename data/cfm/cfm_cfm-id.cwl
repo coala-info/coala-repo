@@ -34,7 +34,6 @@ inputs:
       - int
     doc: The number of (ranked) candidates to return or -1 for all (if not 
       given, returns all in ranked order)
-    default: -1
     inputBinding:
       position: 4
   - id: ppm_mass_tol
@@ -44,7 +43,6 @@ inputs:
     doc: The mass tolerance in ppm to use when matching peaks within the dot 
       product comparison - will use higher resulting tolerance of ppm and abs 
       (if not given defaults to 10ppm)
-    default: 10.0
     inputBinding:
       position: 5
   - id: abs_mass_tol
@@ -54,7 +52,6 @@ inputs:
     doc: The mass tolerance in abs Da to use when matching peaks within the dot 
       product comparison - will use higher resulting tolerance of ppm and abs ( 
       if not given defaults to 0.01Da)
-    default: 0.01
     inputBinding:
       position: 6
   - id: prob_thresh_for_prune
@@ -63,7 +60,6 @@ inputs:
       - float
     doc: The probabiltiy threshold at which to prune unlikely fragmnetations 
       (default 0.001)
-    default: 0.001
     inputBinding:
       position: 7
   - id: param_filename
@@ -72,7 +68,6 @@ inputs:
       - File
     doc: The filename where the parameters of a trained cfm model can be found 
       (if not given, assumes param_output.log in current directory)
-    default: param_output.log
     inputBinding:
       position: 8
   - id: config_filename
@@ -81,7 +76,6 @@ inputs:
       - File
     doc: The filename where the configuration parameters of the cfm model can be
       found (if not given, assumes param_config.txt in current directory)
-    default: param_config.txt
     inputBinding:
       position: 9
   - id: score_type
@@ -90,7 +84,6 @@ inputs:
       - string
     doc: 'The type of scoring function to use when comparing spectra. Options: Jaccard
       (default for ESI-MS/MS), DotProduct (default for EI-MS)'
-    default: Jaccard
     inputBinding:
       position: 10
   - id: apply_postprocessing
@@ -100,7 +93,6 @@ inputs:
     doc: Whether or not to post-process predicted spectra to take the top 80% of
       energy (at least 5 peaks), or the highest 30 peaks (whichever comes first)
       (0 = OFF (default for EI-MS), 1 = ON (default for ESI-MS/MS)).
-    default: false
     inputBinding:
       position: 11
 outputs:

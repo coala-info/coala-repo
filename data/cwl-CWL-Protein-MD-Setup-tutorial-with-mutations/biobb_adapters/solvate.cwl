@@ -46,7 +46,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_gro_path
-    default: system.gro
 
   input_top_zip_path:
     label: Path the input TOP topology in zip format
@@ -77,7 +76,6 @@ inputs:
     inputBinding:
       position: 4
       prefix: --output_top_zip_path
-    default: system.zip
 
   input_solvent_gro_path:
     label: (spc216.gro) Path to the GRO file containing the structure of the solvent

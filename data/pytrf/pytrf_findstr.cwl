@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: output format, tsv, csv, bed or gff
-    default: tsv
     inputBinding:
       position: 102
       prefix: --out-format
@@ -24,7 +23,6 @@ inputs:
       - type: array
         items: string
     doc: minimum repeats for each STR type (mono di tri tetra penta hexa)
-    default: 12 7 5 4 4 4
     inputBinding:
       position: 102
       prefix: --repeats

@@ -560,7 +560,6 @@ inputs:
       - 'null'
       - string
     doc: change stderr output mode (errors, all, or client)
-    default: errors
     inputBinding:
       position: 103
       prefix: --stderr

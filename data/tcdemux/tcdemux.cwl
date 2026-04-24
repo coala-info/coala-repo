@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Amount of RAM in GB.
-    default: 31
     inputBinding:
       position: 101
   - id: no_keep_intermediate_files
@@ -70,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: number of times to restart failing jobs
-    default: 0
     inputBinding:
       position: 101
   - id: sample_data
@@ -83,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 4
     inputBinding:
       position: 101
   - id: trimq

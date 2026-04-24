@@ -121,7 +121,6 @@ inputs:
       - int
     doc: Wait given seconds if an output file of a job is not present after the 
       job finished.
-    default: 5
     inputBinding:
       position: 102
       prefix: --latency-wait

@@ -44,7 +44,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_pdb_path
-    default: system.pdb
 
   output_top_path:
     label: Output topology file (AMBER ParmTop)
@@ -62,7 +61,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_top_path
-    default: system.top
 
   output_crd_path:
     label: Output coordinates file (AMBER crd)
@@ -80,7 +78,6 @@ inputs:
     inputBinding:
       position: 4
       prefix: --output_crd_path
-    default: system.crd
 
   input_lib_path:
     label: Input ligand library parameters file

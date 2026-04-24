@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Alignment method {nucleotide, codon, codon12, protein}
-    default: protein
     inputBinding:
       position: 101
       prefix: -a
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Gap-rich filter percentage threshold {0 - 100}
-    default: 50
     inputBinding:
       position: 101
       prefix: -f
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: Path to MAFFT binary
-    default: mafft-linsi
     inputBinding:
       position: 101
       prefix: -m
@@ -92,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: Name of this run
-    default: align
     inputBinding:
       position: 101
       prefix: -n
@@ -101,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

@@ -24,7 +24,6 @@ inputs:
       - string
     doc: "Maximum amount of memory to commit per batch of reads\nwhile processing.
       Optional, default = 8 Gb"
-    default: 8 Gb
     inputBinding:
       position: 101
       prefix: --memlimit
@@ -34,7 +33,6 @@ inputs:
       - int
     doc: "Minimum read length to consider (Default: 1000 for\ntelomere capture, use
       4000 for WGS)."
-    default: 1000 for telomere capture, use 4000 for WGS
     inputBinding:
       position: 101
       prefix: --minreadlen

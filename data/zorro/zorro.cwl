@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ignore pair-gaps in columns when calculating column confidences
-    default: false
     inputBinding:
       position: 102
       prefix: -ignoregaps
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: No Sampling i.e. using every pair to calculate alignment reliabilty
-    default: true
     inputBinding:
       position: 102
       prefix: -nosample
@@ -41,7 +39,6 @@ inputs:
       - boolean
     doc: Using sum of pairs instead of weighted sum of pairs to calculate column
       confidence
-    default: false
     inputBinding:
       position: 102
       prefix: -noweighting
@@ -51,7 +48,6 @@ inputs:
       - int
     doc: 'Tells ZORRO to sample #NUMBER pairs when sampling, automatically turns on
       -sample option'
-    default: 10*Nseq
     inputBinding:
       position: 102
       prefix: -Nsample
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - boolean
     doc: Sampling pairs to calculate alignment reliabilty
-    default: false
     inputBinding:
       position: 102
       prefix: -sample
@@ -70,7 +65,6 @@ inputs:
       - string
     doc: Tells ZORRO to use PROGRAM instead of the default FastTree to create 
       guide tree
-    default: FastTree
     inputBinding:
       position: 102
       prefix: -treeprog

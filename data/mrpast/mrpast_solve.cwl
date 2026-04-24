@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Number of jobs (threads) to use. Defaults to 1.
-    default: 1
     inputBinding:
       position: 102
       prefix: --jobs

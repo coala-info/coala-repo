@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for parallel operations
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

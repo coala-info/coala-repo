@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: 'coverage type (0: sequencing coverage, 1: spanning coverage, 2: footprinting)'
-    default: 0
     inputBinding:
       position: 102
       prefix: --covtype
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: output format [bedgraph|bed|wiggle|raw]
-    default: bedgraph
     inputBinding:
       position: 102
       prefix: --format
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: min. mapping quality
-    default: 10
     inputBinding:
       position: 102
       prefix: --map-qual
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: '#pairs to normalize to (0: no normalization)'
-    default: 30000000
     inputBinding:
       position: 102
       prefix: --normalize
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: fractional resolution ]0,1]
-    default: 0.200000003
     inputBinding:
       position: 102
       prefix: --resolution

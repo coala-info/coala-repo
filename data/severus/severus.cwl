@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: maximum distance in bp cluster
-    default: 50
     inputBinding:
       position: 101
       prefix: --bp-cluster-size
@@ -94,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: maximum length of genomic segment to form connected components
-    default: 2000000
     inputBinding:
       position: 101
       prefix: --max-genomic-len
@@ -103,7 +101,6 @@ inputs:
       - 'null'
       - float
     doc: maximum base alignment error
-    default: 0.005
     inputBinding:
       position: 101
       prefix: --max-read-error
@@ -122,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality for aligned segment
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-mapq
@@ -131,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: minimum distance between a breakpoint and reference ends
-    default: 10000
     inputBinding:
       position: 101
       prefix: --min-reference-flank
@@ -140,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: minimum reads supporting double breakpoint
-    default: 3
     inputBinding:
       position: 101
       prefix: --min-support
@@ -149,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: minimim size for sv
-    default: 50
     inputBinding:
       position: 101
       prefix: --min-sv-size
@@ -189,7 +182,6 @@ inputs:
       - File
     doc: path to vcf file used for phasing (if using haplotype specific SV 
       calling)
-    default: None
     inputBinding:
       position: 101
       prefix: --phasing-vcf
@@ -198,7 +190,6 @@ inputs:
       - 'null'
       - boolean
     doc: draw reference adjacencies
-    default: false
     inputBinding:
       position: 101
       prefix: --reference-adjacencies
@@ -214,7 +205,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add hagning breakpoints
-    default: false
     inputBinding:
       position: 101
       prefix: --single-bp
@@ -240,7 +230,6 @@ inputs:
       - 'null'
       - int
     doc: number of parallel threads
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads
@@ -265,7 +254,6 @@ inputs:
       - 'null'
       - File
     doc: bed file with tandem repeat locations
-    default: None
     inputBinding:
       position: 101
       prefix: --vntr-bed
@@ -282,7 +270,6 @@ inputs:
       - 'null'
       - boolean
     doc: write read alignments to file
-    default: false
     inputBinding:
       position: 101
       prefix: --write-alignments

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Genomic resolution.
-    default: 2000
     inputBinding:
       position: 102
       prefix: --bins

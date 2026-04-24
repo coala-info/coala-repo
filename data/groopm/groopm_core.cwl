@@ -15,7 +15,6 @@ inputs:
       - int
     doc: cumulative size of contigs which define a core regardless of number of 
       contigs
-    default: 1000000
     inputBinding:
       position: 102
       prefix: --bp
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: cutoff contig size for core creation
-    default: 1500
     inputBinding:
       position: 102
       prefix: --cutoff
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: overwrite existing DB file without prompting
-    default: false
     inputBinding:
       position: 102
       prefix: --force
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - File
     doc: output graph of micro bin mergers
-    default: None
     inputBinding:
       position: 102
       prefix: --graphfile
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: create plots during core creation - (0-3) MAKES MANY IMAGES!
-    default: 0
     inputBinding:
       position: 102
       prefix: --multiplot
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - boolean
     doc: create plots of bins after basic refinement
-    default: false
     inputBinding:
       position: 102
       prefix: --plot
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of contigs which define a core
-    default: 10
     inputBinding:
       position: 102
       prefix: --size

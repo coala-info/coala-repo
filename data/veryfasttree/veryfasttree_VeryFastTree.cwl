@@ -126,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: to specify the number of rate categories of sites (default 20)
-    default: 20
     inputBinding:
       position: 103
       prefix: -cat
@@ -235,7 +234,6 @@ inputs:
       - string
     doc: 'to speed up computations enabling the vector extensions. Available: AUTO(default),
       NONE, SSE, SSE3 , AVX, AVX2, AVX512 or CUDA'
-    default: AUTO
     inputBinding:
       position: 103
       prefix: -ext

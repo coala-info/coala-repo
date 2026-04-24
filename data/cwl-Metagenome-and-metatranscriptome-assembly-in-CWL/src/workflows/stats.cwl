@@ -68,11 +68,8 @@ steps:
       coassembly: coassembly
       input: bwa_mem/alignment
       uncompressed:
-        default: true
       unselected_output_reads:
-        default: true
       output_name:
-        default: "unsorted.bam"
     out: [ unsorted_bam ]
   samtools_sort:
     run: ../tools/stats/samtools-sort.cwl
@@ -81,7 +78,6 @@ steps:
       coassembly: coassembly
       input: samtools_view/unsorted_bam
       output_name:
-        default: "sorted.bam"
     out: [ sorted_bam ]
   metabat_jgi:
     run: ../tools/stats/metabat-jgi-summarise.cwl
@@ -90,7 +86,6 @@ steps:
       coassembly: coassembly
       input: samtools_sort/sorted_bam
       outputDepth:
-        default: "coverage.tab"
     out: [ cov_depth ]
   stats_report:
     run: ../tools/stats/stats-report.cwl
@@ -98,7 +93,6 @@ steps:
       assembler: assembler
       sequences: sequences
       output:
-        default: "assembly_stats.json"
       coverage_file: metabat_jgi/cov_depth
       base_count: base_count/base_counts
       assembly_log: assembly_log

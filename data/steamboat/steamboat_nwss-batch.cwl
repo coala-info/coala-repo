@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to write output
-    default: ./
     inputBinding:
       position: 101
       prefix: --outdir
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix to use for output files
-    default: nwss-batch
     inputBinding:
       position: 101
       prefix: --prefix

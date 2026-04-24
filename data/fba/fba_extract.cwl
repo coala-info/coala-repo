@@ -12,7 +12,6 @@ inputs:
       - int
     doc: specify maximum number of ambiguous nucleotides allowed for read 1. 
       Default (3)
-    default: 3
     inputBinding:
       position: 101
       prefix: --cb_num_n_threshold
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: specify cell barcode mismatching threshold. Default (1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --cb_mismatches
@@ -40,7 +38,6 @@ inputs:
       - int
     doc: specify maximum number of ambiguous nucleotides allowed for read 2. 
       Default (3)
-    default: 3
     inputBinding:
       position: 101
       prefix: --fb_num_n_threshold
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: specify feature barcode mismatching threshold. Default (1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --fb_mismatches
@@ -72,7 +68,6 @@ inputs:
     doc: "specify coordinate 'start,end' of read 1 to search. For example, '0,16':
       starts at 0, stops at 15. Nucleotide bases outside the range will be masked
       as lowercase in the output. Default (0,16)"
-    default: 0,16
     inputBinding:
       position: 101
       prefix: --read1_coordinate

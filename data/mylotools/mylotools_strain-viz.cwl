@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the GFA file containing contig information
-    default: final_contig_graph.gfa
     inputBinding:
       position: 102
       prefix: --gfa
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of reads to display per contig
-    default: 20
     inputBinding:
       position: 102
       prefix: --max-reads
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the overlaps file
-    default: 0-cleaning_and_unitigs/overlaps.txt.gz
     inputBinding:
       position: 102
       prefix: --overlaps

@@ -64,7 +64,6 @@ inputs:
   threads:
     type: int?
     label: Number of threads to use
-    default: 8
     inputBinding:
       position: 4
       prefix: -t
@@ -75,7 +74,6 @@ inputs:
     inputBinding:
       position: 5
       prefix: -x
-    default: "fa"
 
 outputs:
   checkm_out_folder:

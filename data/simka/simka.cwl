@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: max abundance a kmer can have to be considered
-    default: 999999999
     inputBinding:
       position: 101
       prefix: -abundance-max
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: min abundance a kmer need to be considered
-    default: 2
     inputBinding:
       position: 101
       prefix: -abundance-min
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: command to submit counting job
-    default: ''
     inputBinding:
       position: 101
       prefix: -count-cmd
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - File
     doc: filename to the couting job template
-    default: ''
     inputBinding:
       position: 101
       prefix: -count-file
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: minimal Shannon index a kmer should have to be kept. Float in [0,2]
-    default: 0.0
     inputBinding:
       position: 101
       prefix: -kmer-shannon-index
@@ -86,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: size of a kmer
-    default: 21
     inputBinding:
       position: 101
       prefix: -kmer-size
@@ -96,7 +90,6 @@ inputs:
       - string
     doc: maximum number of simultaneous counting jobs (a higher value improve 
       execution time but increase temporary disk usage)
-    default: ''
     inputBinding:
       position: 101
       prefix: -max-count
@@ -105,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: max memory (MB)
-    default: 5000
     inputBinding:
       position: 101
       prefix: -max-memory
@@ -114,7 +106,6 @@ inputs:
       - 'null'
       - string
     doc: maximum number of simultaneous merging jobs (1 job = 1 core)
-    default: ''
     inputBinding:
       position: 101
       prefix: -max-merge
@@ -124,7 +115,6 @@ inputs:
       - int
     doc: 'maximum number of reads per sample to process. Can be -1: use all reads.
       Can be 0: estimate it'
-    default: -1
     inputBinding:
       position: 101
       prefix: -max-reads
@@ -133,7 +123,6 @@ inputs:
       - 'null'
       - string
     doc: command to submit merging job
-    default: ''
     inputBinding:
       position: 101
       prefix: -merge-cmd
@@ -142,7 +131,6 @@ inputs:
       - 'null'
       - File
     doc: filename to the merging job template
-    default: ''
     inputBinding:
       position: 101
       prefix: -merge-file
@@ -151,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: minimal size a read should have to be kept
-    default: 0
     inputBinding:
       position: 101
       prefix: -min-read-size
@@ -160,7 +147,6 @@ inputs:
       - 'null'
       - float
     doc: minimal Shannon index a read should have to be kept. Float in [0,2]
-    default: 0.0
     inputBinding:
       position: 101
       prefix: -min-shannon-index
@@ -169,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: number of cores
-    default: 0
     inputBinding:
       position: 101
       prefix: -nb-cores
@@ -192,7 +177,6 @@ inputs:
       - 'null'
       - int
     doc: verbosity level
-    default: 1
     inputBinding:
       position: 101
       prefix: -verbose

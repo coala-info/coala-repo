@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: 'Alignment mode that will be used. [default: NW]'
-    default: NW
     inputBinding:
       position: 103
       prefix: -m
@@ -30,7 +29,6 @@ inputs:
     doc: 'Format that will be used to print alignment path, can be used only with
       -p. NICE will give visually attractive format, CIG_STD will give standard cigar
       format and CIG_EXT will give extended cigar format. [default: NICE]'
-    default: NICE
     inputBinding:
       position: 103
       prefix: -f
@@ -40,7 +38,6 @@ inputs:
       - int
     doc: 'Sequences with score > K will be discarded. Smaller k, faster calculation.
       If -1, no sequences will be discarded. [default: -1]'
-    default: -1
     inputBinding:
       position: 103
       prefix: -k
@@ -71,7 +68,6 @@ inputs:
     doc: 'Score will be calculated only for N best sequences (best = with smallest
       score). If N = 0 then all sequences will be calculated. Specifying small N can
       make total calculation much faster. [default: 0]'
-    default: 0
     inputBinding:
       position: 103
       prefix: -n
@@ -82,7 +78,6 @@ inputs:
     doc: 'Core part of calculation will be repeated N times. This is useful only for
       performance measurement, when single execution is too short to measure. [default:
       1]'
-    default: 1
     inputBinding:
       position: 103
       prefix: -r

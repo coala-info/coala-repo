@@ -52,7 +52,6 @@ inputs:
       - 'null'
       - float
     doc: Match line width
-    default: 1.5
     inputBinding:
       position: 103
       prefix: --linewidth
@@ -61,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Default match length
-    default: 11
     inputBinding:
       position: 103
       prefix: --matchlen
@@ -70,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequence size to include
-    default: 0
     inputBinding:
       position: 103
       prefix: --size
@@ -79,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: 'Height of the plot [0: best fit]'
-    default: 0
     inputBinding:
       position: 103
       prefix: --height
@@ -88,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: 'Width of the plot [0: best fit]'
-    default: 0
     inputBinding:
       position: 103
       prefix: --width

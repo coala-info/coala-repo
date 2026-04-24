@@ -10,7 +10,6 @@ inputs:
       - string
     doc: "please provide the path for bowtie2 [OPTIONAL];\n                      \
       \  defaults to bowtie2"
-    default: bowtie2
     inputBinding:
       position: 101
       prefix: --bowtie
@@ -58,7 +57,6 @@ inputs:
       - string
     doc: "please provide the path for samtools [OPTIONAL];\n                     \
       \   defaults to samtools"
-    default: samtools
     inputBinding:
       position: 101
       prefix: --samtools
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use [OPTIONAL]; default=4
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -77,7 +74,6 @@ inputs:
       - string
     doc: "variant database [OPTIONAL]; defaults to\n                        streptococcus-pneumoniae-ctvdb
       in the github directory"
-    default: streptococcus-pneumoniae-ctvdb in the github directory
     inputBinding:
       position: 101
       prefix: --variant_database

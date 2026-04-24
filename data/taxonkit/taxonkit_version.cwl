@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory containing nodes.dmp and names.dmp
-    default: /root/.taxonkit
     inputBinding:
       position: 101
       prefix: --data-dir
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs. 4 is enough
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

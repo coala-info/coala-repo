@@ -48,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: sets the verbosity level
-    default: 2
     inputBinding:
       position: 105
       prefix: --verbosity_level

@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for coverage
-    default: 1
     inputBinding:
       position: 105
       prefix: --n-threads

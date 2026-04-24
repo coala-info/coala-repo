@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: The message to print.
-    default: Hello World!
     inputBinding:
       position: 101
       prefix: --message

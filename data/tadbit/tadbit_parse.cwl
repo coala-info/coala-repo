@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: regexp to consider only chromosome names passing
-    default: '"^(chr)?[A-Za-z]?[0-9]{0,3}[XVI]{0,3}(?:ito)?[A-Z-a-z]?(_dna)?$"'
     inputBinding:
       position: 101
       prefix: --filter_chrom

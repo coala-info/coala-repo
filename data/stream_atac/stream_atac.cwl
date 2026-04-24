@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Features used to have the analysis. Choose from {{'kmer', 'motif'}}
-    default: kmer
     inputBinding:
       position: 101
       prefix: --feature
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: "File format of file_count. Currently supported file formats: 'tsv','txt','csv','mtx'."
-    default: tsv
     inputBinding:
       position: 101
       prefix: --file_format
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Reference genome. Choose from {{'mm9', 'mm10', 'hg38', 'hg19'}}
-    default: hg19
     inputBinding:
       position: 101
       prefix: --genome
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length for scATAC-seq analysis
-    default: 7
     inputBinding:
       position: 101
       prefix: -k
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: The number of parallel jobs to run.
-    default: 1
     inputBinding:
       position: 101
       prefix: --n_jobs
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output folder
-    default: None
     inputBinding:
       position: 101
       prefix: --output_folder
@@ -82,7 +76,6 @@ inputs:
       - int
     doc: Specify the width of peak when resizing them. Only valid when 
       resize_peak is True.
-    default: 450
     inputBinding:
       position: 101
       prefix: --peak_width
@@ -91,7 +84,6 @@ inputs:
       - 'null'
       - boolean
     doc: Resize peaks when peaks have different widths.
-    default: false
     inputBinding:
       position: 101
       prefix: --resize_peak

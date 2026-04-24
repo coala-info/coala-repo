@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: How to label the genomes.
-    default: stem
     inputBinding:
       position: 101
       prefix: --label
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - File
     doc: Where to record log(s). Use '-' for no logging.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --log
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Which run from the database (defaults to latest).
-    default: latest
     inputBinding:
       position: 101
       prefix: --run-id

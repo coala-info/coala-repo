@@ -125,7 +125,6 @@ inputs:
       - float
     doc: the evalue cutoff for domain annotations to be put onto the new genbank
       file
-    default: 100000000.0
     inputBinding:
       position: 101
       prefix: --evalue
@@ -145,7 +144,6 @@ inputs:
     doc: Invert the CDS selection criteria. i.e. return CDSs that don't match 
       the CDS selection criteria. (only applies to CDS selection, not 
       neighborhoods or contigs).
-    default: false
     inputBinding:
       position: 101
       prefix: --invert
@@ -183,7 +181,6 @@ inputs:
     doc: by default extracted regions will be flipped so that the focus cds is 
       on the forward strand. Setting this option will keep the focus cds on 
       whatever strand it started on.
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_direction
@@ -195,7 +192,6 @@ inputs:
       1, then no overlap filtering will be done. Regions are output in a greedy 
       fashion based on CDS start site. New regions are output if less than this 
       fraction of them overlaps with any previously output region.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --max_region_overlap
@@ -205,7 +201,6 @@ inputs:
       - boolean
     doc: If set, then ends of sequences will be padded so that the focus CDS 
       aligns.
-    default: false
     inputBinding:
       position: 101
       prefix: --pad
@@ -224,7 +219,6 @@ inputs:
       - 'null'
       - boolean
     doc: Select CDSs that are marked as search hits (from domain_search.py).
-    default: false
     inputBinding:
       position: 101
       prefix: --search_hits
@@ -236,7 +230,6 @@ inputs:
       one will be kept. Set this option to retain redundancies (which might be 
       useful if you are counting hits), but will result in duplicated contig 
       names, which could be a problem for downstream domainator applications.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip_deduplicate
@@ -253,7 +246,6 @@ inputs:
       - 'null'
       - boolean
     doc: Select contigs with no domain annotations.
-    default: false
     inputBinding:
       position: 101
       prefix: --unannotated
@@ -262,7 +254,6 @@ inputs:
       - 'null'
       - boolean
     doc: If set, then return the entire matching contigs.
-    default: false
     inputBinding:
       position: 101
       prefix: --whole_contig

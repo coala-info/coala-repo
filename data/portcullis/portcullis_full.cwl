@@ -37,7 +37,6 @@ inputs:
       Where C = Canonical junctions (GT-AG), S = Semi-canonical junctions (AT-AC,
       or GC-AG), N = Non-canonical. OFF means, keep all junctions (i.e. don't filter
       by canonical status). User can separate options by a comma to keep two categories."
-    default: OFF
     inputBinding:
       position: 103
       prefix: --canonical
@@ -101,7 +100,6 @@ inputs:
       - int
     doc: Filter junctions longer than this value. Default (0) is to not filter 
       based on length.
-    default: 0
     inputBinding:
       position: 103
       prefix: --max_length
@@ -111,7 +109,6 @@ inputs:
       - int
     doc: Only keep junctions with a number of split reads greater than or equal 
       to this number
-    default: 1
     inputBinding:
       position: 103
       prefix: --min_cov
@@ -127,7 +124,6 @@ inputs:
       in forward orientation); "RR" (paired-end, reads both sequenced in reverse orientation);
       "UNKNOWN" (default, portcullis will workaround any calculations requiring orientation
       information)'
-    default: UNKNOWN
     inputBinding:
       position: 103
       prefix: --orientation
@@ -136,7 +132,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory.
-    default: portcullis_out
     inputBinding:
       position: 103
       prefix: --output
@@ -174,7 +169,6 @@ inputs:
       - 'null'
       - string
     doc: The value to enter into the "source" field in GFF files.
-    default: portcullis
     inputBinding:
       position: 103
       prefix: --source
@@ -186,7 +180,6 @@ inputs:
       library: "unstranded" (Standard Illumina); "firststrand" (dUTP, NSR, NNSR);
       "secondstrand" (Ligation, Standard SOLiD, flux sim reads); "UNKNOWN" (default,
       portcullis will workaround any calculations requiring strandedness information)'
-    default: UNKNOWN
     inputBinding:
       position: 103
       prefix: --strandedness
@@ -196,7 +189,6 @@ inputs:
       - int
     doc: The number of threads to use. Note that increasing the number of 
       threads will also increase memory requirements.
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads
@@ -206,7 +198,6 @@ inputs:
       - string
     doc: 'Pre-set to use for the self-training. Currently supported: balanced, precise.
       Default: balanced.'
-    default: balanced
     inputBinding:
       position: 103
       prefix: --training_rule

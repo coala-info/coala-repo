@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Chunk ID to focus on. By default, it runs across all chunks
-    default: -1
     inputBinding:
       position: 101
       prefix: --chunk-id

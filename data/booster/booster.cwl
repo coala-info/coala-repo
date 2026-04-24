@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: tbe or fbp
-    default: tbe
     inputBinding:
       position: 101
       prefix: --algo
@@ -35,7 +34,6 @@ inputs:
       - float
     doc: Distance cutoff to consider a branch for taxa transfer index computation
       (-a tbe only)
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --dist-cutoff
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-threads

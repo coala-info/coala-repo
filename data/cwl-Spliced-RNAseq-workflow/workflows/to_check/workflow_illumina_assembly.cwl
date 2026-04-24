@@ -68,39 +68,32 @@ inputs:
     type: boolean
     doc: Continue with mapped reads the reference
     label: Keep mapped reads
-    default: false
   deduplicate:
     type: boolean?
     doc: Remove exact duplicate reads with fastp
     label: Deduplicate reads
-    default: false
   threads:
     type: int?
     doc: Number of threads to use for computational processes
     label: number of threads
-    default: 2
   memory:
     type: int?
     doc: Maximum memory usage in megabytes
     label: memory usage (MB)
-    default: 4000
   filter_references:
     type: string[]
     doc: Reference fasta file for contamination filtering
     label: Reference files (filter)
   busco_prok:
     type: boolean?
-    default: false
     label: BUSCO prokaryote
     doc: Run BUSCO with auto prokaryote lineage
   busco_euk:
     type: boolean?
-    default: false
     label: BUSCO eukaryote
     doc: run BUSCO with auto eukaryote lineage
   busco_dataset:
     type: string
-    default: "/unlock/references/databases/BUSCO/BUSCO_odb10"
     label: BUSCO dataset
     doc: Path to the BUSCO dataset download location
 
@@ -121,7 +114,6 @@ steps:
       threads: threads
       identifier: identifier
       step: 
-        default: 1
     out: [QC_reverse_reads, QC_forward_reads, reports_folder]
 #############################################
 #### SPADes assembly
@@ -139,7 +131,6 @@ steps:
       memory: memory
       threads: threads
       isolate:
-        default: true
     out: [contigs, scaffolds, assembly_graph, contigs_assembly_paths, scaffolds_assembly_paths, contigs_before_rr, params, log, internal_config, internal_dataset]
 #############################################
 #### BBamp read mapping

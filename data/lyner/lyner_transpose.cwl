@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Delimiter for input and output files.
-    default: ','
     inputBinding:
       position: 102
       prefix: --delimiter

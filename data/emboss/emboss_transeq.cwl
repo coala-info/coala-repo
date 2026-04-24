@@ -33,7 +33,6 @@ inputs:
       - string
     doc: 'Frame(s) to translate. Possible values: 1, 2, 3, F (forward frames), -1,
       -2, -3, R (reverse frames), 6 (all six frames)'
-    default: '1'
     inputBinding:
       position: 102
       prefix: -frame
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Code table to use (0-23)
-    default: 0
     inputBinding:
       position: 102
       prefix: -table

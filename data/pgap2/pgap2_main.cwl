@@ -10,7 +10,6 @@ inputs:
       - boolean
     doc: Apply bidirection check for paralogous gene partition (useless if 
       exhaust_orth asigned).
-    default: false
     inputBinding:
       position: 101
       prefix: --accurate
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: Coverage for the longer sequence.
-    default: 0.6
     inputBinding:
       position: 101
       prefix: --AL
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: The aligner used to pairwise alignment.
-    default: diamond
     inputBinding:
       position: 101
       prefix: --aligner
@@ -38,7 +35,6 @@ inputs:
       - boolean
     doc: Discard original annotation, and re-annote the genome privately using 
       prodigal
-    default: false
     inputBinding:
       position: 101
       prefix: --annot
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: Coverage for the shorter sequence.
-    default: 0.6
     inputBinding:
       position: 101
       prefix: --AS
@@ -56,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: The method used to cluster the genes.
-    default: mmseqs2
     inputBinding:
       position: 101
       prefix: --clust_method
@@ -65,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Debug mode. Note: very verbose'
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -74,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable progress bar
-    default: false
     inputBinding:
       position: 101
       prefix: --disable
@@ -83,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: The maximum identity between the most recent duplication envent.
-    default: 0.99
     inputBinding:
       position: 101
       prefix: --dup_id
@@ -92,7 +83,6 @@ inputs:
       - 'null'
       - float
     doc: The evalue of aligner.
-    default: '1e-05'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -101,7 +91,6 @@ inputs:
       - 'null'
       - boolean
     doc: Try to split every paralogs gene exhausted
-    default: false
     inputBinding:
       position: 101
       prefix: --exhaust_orth
@@ -111,7 +100,6 @@ inputs:
       - boolean
     doc: Do not apply fine feature analysis just partition according to the gene
       identity and synteny.
-    default: false
     inputBinding:
       position: 101
       prefix: --fast
@@ -120,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: The genetic code of your species.
-    default: 11
     inputBinding:
       position: 101
       prefix: --gcode
@@ -131,7 +118,6 @@ inputs:
     doc: The threshold to define high confidence cluster which is used to 
       evaluate the cluster diversity. Loose this value when your input is too 
       large or too diverse, such as 0.95.
-    default: 1
     inputBinding:
       position: 101
       prefix: --hconf_thre
@@ -141,7 +127,6 @@ inputs:
       - string
     doc: Only for gff file as input, Attribute key to extract from the 9th 
       column as the record ID (e.g., 'ID', 'gene', 'locus_tag').
-    default: ID
     inputBinding:
       position: 101
       prefix: --id-attr-key
@@ -156,7 +141,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ignore the influence of insertion sequence.
-    default: false
     inputBinding:
       position: 101
       prefix: --ins
@@ -165,7 +149,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum gene length difference proportion between two genes.
-    default: 0.6
     inputBinding:
       position: 101
       prefix: --LD
@@ -175,7 +158,6 @@ inputs:
       - int
     doc: The maximum targets for each query in alignment. Improves accuracy for 
       large-scale analyses, but increases runtime and memory usage.
-    default: 2000
     inputBinding:
       position: 101
       prefix: --max_targets
@@ -184,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: protein length of throw_away_sequences, at least 11
-    default: 20
     inputBinding:
       position: 101
       prefix: --min_falen
@@ -193,7 +174,6 @@ inputs:
       - 'null'
       - float
     doc: The maximum identity between the most similar panclusters.
-    default: 0.98
     inputBinding:
       position: 101
       prefix: --orth_id
@@ -202,7 +182,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir
@@ -211,7 +190,6 @@ inputs:
       - 'null'
       - float
     doc: Use this identity as the paralogous identity.
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --para_id
@@ -220,7 +198,6 @@ inputs:
       - 'null'
       - int
     doc: The radius of search region.
-    default: 3
     inputBinding:
       position: 101
       prefix: --radius
@@ -229,7 +206,6 @@ inputs:
       - 'null'
       - boolean
     doc: Retrieve gene that may lost with annotations
-    default: false
     inputBinding:
       position: 101
       prefix: --retrieve
@@ -238,7 +214,6 @@ inputs:
       - 'null'
       - string
     doc: The degree of connectedness between each node of clust.
-    default: strict
     inputBinding:
       position: 101
       prefix: --sensitivity
@@ -247,7 +222,6 @@ inputs:
       - 'null'
       - int
     doc: threads used in parallel
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -257,7 +231,6 @@ inputs:
       - string
     doc: Only for gff file as input, feature type (3rd column) to include, Only 
       lines matching these types will be processed.
-    default: CDS
     inputBinding:
       position: 101
       prefix: --type-filter
@@ -266,7 +239,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose output
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

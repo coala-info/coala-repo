@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size.
-    default: 31
     inputBinding:
       position: 101
       prefix: -k
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: number of cores
-    default: 0
     inputBinding:
       position: 101
       prefix: -nb-cores
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to the folder where the final and temporary files will be stored.
-    default: output
     inputBinding:
       position: 101
       prefix: -output
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: verbosity level
-    default: 1
     inputBinding:
       position: 101
       prefix: -verbose

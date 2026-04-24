@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: Quantiles to calculate
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --quantiles
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 4
     inputBinding:
       position: 102
       prefix: --threads

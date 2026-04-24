@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of reads required for consensus
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --called
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: input format [bam|fasta]
-    default: bam
     inputBinding:
       position: 102
       prefix: --format
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: gap extension
-    default: -1
     inputBinding:
       position: 102
       prefix: --gapext
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: gap open
-    default: -10
     inputBinding:
       position: 102
       prefix: --gapopen
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: min. mapping quality
-    default: 10
     inputBinding:
       position: 102
       prefix: --mapqual
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: match
-    default: 5
     inputBinding:
       position: 102
       prefix: --match
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: mismatch
-    default: -4
     inputBinding:
       position: 102
       prefix: --mismatch
@@ -87,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: output format [v|h]
-    default: v
     inputBinding:
       position: 102
       prefix: --outformat
@@ -96,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: position to generate consensus
-    default: chr4:500500
     inputBinding:
       position: 102
       prefix: --position
@@ -113,7 +104,6 @@ inputs:
       - 'null'
       - string
     doc: seq. type [ill|ont|pacbio|custom]
-    default: ill
     inputBinding:
       position: 102
       prefix: --seqtype

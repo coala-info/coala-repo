@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: The width of the bin.
-    default: 1000
     inputBinding:
       position: 102
       prefix: -b

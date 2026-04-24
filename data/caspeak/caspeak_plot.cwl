@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: color for pixels between sequences
-    default: black
     inputBinding:
       position: 101
       prefix: --border-color
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: number of pixels between sequences
-    default: 1
     inputBinding:
       position: 101
       prefix: --border-pixels
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: color for bridged gaps
-    default: yellow
     inputBinding:
       position: 101
       prefix: --bridged-color
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: color for protein-coding regions
-    default: LimeGreen
     inputBinding:
       position: 101
       prefix: --cds-color
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: color for exons
-    default: PaleGreen
     inputBinding:
       position: 101
       prefix: --exon-color
@@ -86,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: TrueType or OpenType font size
-    default: '14'
     inputBinding:
       position: 101
       prefix: --fontsize
@@ -95,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: color for forward alignments
-    default: red
     inputBinding:
       position: 101
       prefix: --forwardcolor
@@ -136,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: maximum height in pixels
-    default: 1000
     inputBinding:
       position: 101
       prefix: --height
@@ -146,7 +138,6 @@ inputs:
       - int
     doc: 'join: 0=nothing, 1=alignments adjacent in genome1, 2=alignments adjacent
       in genome2'
-    default: 0
     inputBinding:
       position: 101
       prefix: --join
@@ -155,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: 'genome1 labels: 0=name, 1=name:length, 2=name:start:length, 3=name:start-end'
-    default: 0
     inputBinding:
       position: 101
       prefix: --labels1
@@ -164,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: 'genome2 labels: 0=name, 1=name:length, 2=name:start:length, 3=name:start-end'
-    default: 0
     inputBinding:
       position: 101
       prefix: --labels2
@@ -187,7 +176,6 @@ inputs:
       - 'null'
       - float
     doc: 'maximum unaligned (end,mid) gap in genome1: fraction of aligned length'
-    default: 1,4
     inputBinding:
       position: 101
       prefix: --max-gap1
@@ -196,7 +184,6 @@ inputs:
       - 'null'
       - float
     doc: 'maximum unaligned (end,mid) gap in genome2: fraction of aligned length'
-    default: 1,4
     inputBinding:
       position: 101
       prefix: --max-gap2
@@ -205,7 +192,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of horizontal or vertical sequences
-    default: 100
     inputBinding:
       position: 101
       prefix: --maxseqs
@@ -214,7 +200,6 @@ inputs:
       - 'null'
       - float
     doc: 'pad length when cutting unaligned gaps: fraction of aligned length'
-    default: 0.04
     inputBinding:
       position: 101
       prefix: --pad
@@ -223,7 +208,6 @@ inputs:
       - 'null'
       - string
     doc: prefix of the output figure name
-    default: fig/peak
     inputBinding:
       position: 101
       prefix: --prefix
@@ -232,7 +216,6 @@ inputs:
       - 'null'
       - string
     doc: color for reverse alignments
-    default: blue
     inputBinding:
       position: 101
       prefix: --reversecolor
@@ -257,7 +240,6 @@ inputs:
       - 'null'
       - string
     doc: text rotation for the 1st genome
-    default: h
     inputBinding:
       position: 101
       prefix: --rot1
@@ -266,7 +248,6 @@ inputs:
       - 'null'
       - string
     doc: text rotation for the 2nd genome
-    default: v
     inputBinding:
       position: 101
       prefix: --rot2
@@ -292,7 +273,6 @@ inputs:
       - int
     doc: 'genome1 sequence order: 0=input order, 1=name order, 2=length order, 3=alignment
       order'
-    default: 1
     inputBinding:
       position: 101
       prefix: --sort1
@@ -302,7 +282,6 @@ inputs:
       - int
     doc: 'genome2 sequence order: 0=input order, 1=name order, 2=length order, 3=alignment
       order'
-    default: 1
     inputBinding:
       position: 101
       prefix: --sort2
@@ -311,7 +290,6 @@ inputs:
       - 'null'
       - int
     doc: 'genome1 sequence orientation: 0=forward orientation, 1=alignment orientation'
-    default: 0
     inputBinding:
       position: 101
       prefix: --strands1
@@ -320,7 +298,6 @@ inputs:
       - 'null'
       - int
     doc: 'genome2 sequence orientation: 0=forward orientation, 1=alignment orientation'
-    default: 0
     inputBinding:
       position: 101
       prefix: --strands2
@@ -329,7 +306,6 @@ inputs:
       - 'null'
       - string
     doc: color for unbridged gaps
-    default: orange
     inputBinding:
       position: 101
       prefix: --unbridged-color
@@ -346,7 +322,6 @@ inputs:
       - 'null'
       - int
     doc: maximum width in pixels
-    default: 1000
     inputBinding:
       position: 101
       prefix: --width

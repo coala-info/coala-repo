@@ -12,7 +12,6 @@ inputs:
       - boolean
     doc: Rank metric sorting order. If the -a flag was chosen, then ascending 
       equals to True.
-    default: false
     inputBinding:
       position: 101
       prefix: --ascending
@@ -22,7 +21,6 @@ inputs:
       - string
     doc: Input data transformation after sample normalization. Choose from 
       {'rank','symrank', 'zscore'}.
-    default: rank
     inputBinding:
       position: 101
       prefix: --correl-type
@@ -38,7 +36,6 @@ inputs:
       - type: array
         items: string
     doc: The figsize keyword argument need two parameters to define.
-    default: (6.5, 6)
     inputBinding:
       position: 101
       prefix: --figsize
@@ -48,7 +45,6 @@ inputs:
       - string
     doc: File extensions supported by Matplotlib active backend, choose from 
       {'pdf', 'png', 'jpeg','ps', 'eps','svg'}.
-    default: "'pdf'"
     inputBinding:
       position: 101
       prefix: --format
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Numbers of top graphs produced.
-    default: 20
     inputBinding:
       position: 101
       prefix: --graph
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Max size of input genes presented in Gene Sets.
-    default: 2000
     inputBinding:
       position: 101
       prefix: --max-size
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Min size of input genes presented in Gene Sets.
-    default: 15
     inputBinding:
       position: 101
       prefix: --min-size
@@ -91,7 +84,6 @@ inputs:
       - boolean
     doc: Speed up computing by suppressing the plot output.This is useful only 
       if data are interested.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-plot
@@ -109,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: Number of random permutations. For calculating esnulls.
-    default: 0
     inputBinding:
       position: 101
       prefix: --permu-num
@@ -119,7 +110,6 @@ inputs:
       - string
     doc: Sample normalization method. Choose from {'rank', 'log', 
       'log_rank','custom'}.
-    default: rank
     inputBinding:
       position: 101
       prefix: --sample-norm
@@ -128,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: Number of random seed.
-    default: 123
     inputBinding:
       position: 101
       prefix: --seed
@@ -137,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Processes you are going to use.
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -154,7 +142,6 @@ inputs:
       - 'null'
       - float
     doc: Weighted_score of rank_metrics. For weighting input genes.
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --weight

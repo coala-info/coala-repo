@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Number of records loaded to the memory at once
-    default: 4096
     inputBinding:
       position: 103
       prefix: --batchsize
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - File
     doc: Save the downloaded index to the specified file path
-    default: 'false'
     inputBinding:
       position: 103
       prefix: --cache
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: Record compression method (only for blow5 format)
-    default: zlib
     inputBinding:
       position: 103
       prefix: --compress
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Number of retries on a fetch before aborting the batch
-    default: 1
     inputBinding:
       position: 103
       prefix: --retry
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: Signal compression method (only for blow5 format)
-    default: svb-zd
     inputBinding:
       position: 103
       prefix: --sig-compress
@@ -104,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 128
     inputBinding:
       position: 103
       prefix: --threads

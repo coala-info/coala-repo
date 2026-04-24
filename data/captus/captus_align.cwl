@@ -11,7 +11,6 @@ inputs:
       - string
     doc: "For MAFFT's algorithms see: https://mafft.cbrc.jp/alignment/software/algorithms/algorithms.html
       For MUSCLE's algorithms see: https://drive5.com/muscle5/manual/commands.html"
-    default: mafft_auto
     inputBinding:
       position: 101
       prefix: --align_method
@@ -32,7 +31,6 @@ inputs:
       argument is ignored when using the 'kpi' and 'kpic' algorithms or 
       intermediate steps that use 'smart-gap', the higher the value the more 
       columns are preserved
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --clipkit_gaps
@@ -42,7 +40,6 @@ inputs:
       - string
     doc: ClipKIT's algorithm, see 
       https://jlsteenwyk.com/ClipKIT/advanced/index.html#modes
-    default: gappy
     inputBinding:
       position: 101
       prefix: --clipkit_method
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: Path to ClipKIT
-    default: clipkit
     inputBinding:
       position: 101
       prefix: --clipkit_path
@@ -61,7 +57,6 @@ inputs:
       - boolean
     doc: Only collect the markers from the extraction folder and exit (skips 
       addition of reference target sequences and subsequent steps)
-    default: false
     inputBinding:
       position: 101
       prefix: --collect_only
@@ -73,7 +68,6 @@ inputs:
       will be divided by this value for each individual process. If set to 
       'auto', Captus will set as many processes as to at least have 2 threads 
       available for each MAFFT or MUSCLE process
-    default: auto
     inputBinding:
       position: 101
       prefix: --concurrent
@@ -83,7 +77,6 @@ inputs:
       - boolean
     doc: Enable debugging mode, parallelization is disabled so errors are logged
       to screen
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -93,7 +86,6 @@ inputs:
       - boolean
     doc: Do not align nucleotide coding sequences based on their protein 
       alignment
-    default: false
     inputBinding:
       position: 101
       prefix: --disable_codon_align
@@ -103,7 +95,6 @@ inputs:
       - boolean
     doc: Disable the TAPER algorithm for masking for erroneous regions in 
       alignments, see https://doi.org/10.1111/2041-210X.13696
-    default: false
     inputBinding:
       position: 101
       prefix: --disable_taper
@@ -112,7 +103,6 @@ inputs:
       - 'null'
       - boolean
     doc: Trim only the ends of the alignments (do not trim internal gaps)
-    default: false
     inputBinding:
       position: 101
       prefix: --ends_only
@@ -121,7 +111,6 @@ inputs:
       - 'null'
       - string
     doc: Methods for filtering paralogous sequences
-    default: both
     inputBinding:
       position: 101
       prefix: --filter_method
@@ -131,7 +120,6 @@ inputs:
       - string
     doc: Which alignment format(s) to prepare for each marker category, you can 
       provide a comma-separated list, no spaces
-    default: AA,NT,GE,MA
     inputBinding:
       position: 101
       prefix: --formats
@@ -140,7 +128,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not delete any intermediate files
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_all
@@ -153,7 +140,6 @@ inputs:
       alignments are filtered for paralogs and before trimming. Enable if you 
       plan to repeat the paralog filtering in the future with '--redo_from 
       filtering'
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_w_refs
@@ -163,7 +149,6 @@ inputs:
       - boolean
     doc: Do not align gappy regions, will only be used if a MAFFT algorithm is 
       selected
-    default: false
     inputBinding:
       position: 101
       prefix: --mafft_leavegappyregion
@@ -172,7 +157,6 @@ inputs:
       - 'null'
       - string
     doc: Path to MAFFT
-    default: mafft/mafft.bat
     inputBinding:
       position: 101
       prefix: --mafft_path
@@ -185,7 +169,6 @@ inputs:
       by unrelated segments. When value is different than 0, the method 
       '--mafft_globalpair' will be used. Consider also enabling 
       '--mafft_leavegappyregion'
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --mafft_unalignlevel
@@ -195,7 +178,6 @@ inputs:
       - string
     doc: Which markers to align, you can provide a comma-separated list, no 
       spaces
-    default: all
     inputBinding:
       position: 101
       prefix: --markers
@@ -208,7 +190,6 @@ inputs:
       alignment times. Hits (copies) are ranked from best to worst during the 
       'extract' step. -1 disables the removal of paralogs and aligns them all, 
       which might be useful if you expect very high ploidy levels for example
-    default: 5
     inputBinding:
       position: 101
       prefix: --max_paralogs
@@ -220,7 +201,6 @@ inputs:
       lengths in the alignment, ignoring gaps. Accepted values between 0 and 1. 
       After ClipKIT finishes trimming columns, Captus will also remove short 
       sequences below this threshold
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --min_coverage
@@ -231,7 +211,6 @@ inputs:
     doc: Minimum number of non-missing sites per column. When this parameter is 
       > 0, Captus will dynamically calculate a '--clipkit_gaps' threshold per 
       alignment to keep this minimum amount of data per column
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_data_per_column
@@ -241,7 +220,6 @@ inputs:
       - int
     doc: Minimum number of samples in a marker to proceed with alignment. 
       Markers with fewer samples will be skipped
-    default: 4
     inputBinding:
       position: 101
       prefix: --min_samples
@@ -250,7 +228,6 @@ inputs:
       - 'null'
       - string
     doc: Path to MUSCLE
-    default: muscle
     inputBinding:
       position: 101
       prefix: --muscle_path
@@ -270,7 +247,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite previous results
-    default: false
     inputBinding:
       position: 101
       prefix: --overwrite
@@ -280,7 +256,6 @@ inputs:
       - string
     doc: "Maximum RAM in GB (e.g.: 4.5) dedicated to Captus, 'auto' uses 99% of available
       RAM"
-    default: auto
     inputBinding:
       position: 101
       prefix: --ram
@@ -298,7 +273,6 @@ inputs:
       - boolean
     doc: Show individual alignment information during the run. Detailed 
       information is written regardless to the log
-    default: false
     inputBinding:
       position: 101
       prefix: --show_more
@@ -319,7 +293,6 @@ inputs:
     doc: TAPER cutoff threshold, values greater than 1.0 are recommended, the 
       lower the value the more aggressive the correction, 3.0 recommended by 
       TAPER's authors
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --taper_cutoff
@@ -331,7 +304,6 @@ inputs:
       paralog-filtered, TAPER is only able to distinguish error when an 
       unfiltered alignment contains copies of the locus that are not extremely 
       divergent
-    default: false
     inputBinding:
       position: 101
       prefix: --taper_unfiltered
@@ -341,7 +313,6 @@ inputs:
       - string
     doc: Maximum number of CPUs dedicated to Captus, 'auto' uses all available 
       CPUs
-    default: auto
     inputBinding:
       position: 101
       prefix: --threads
@@ -350,7 +321,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum allowed time in seconds for a single alignment
-    default: 21600
     inputBinding:
       position: 101
       prefix: --timeout

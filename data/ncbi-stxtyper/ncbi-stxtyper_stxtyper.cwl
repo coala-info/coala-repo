@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for BLAST.
-    default: $BLAST_BIN
     inputBinding:
       position: 101
       prefix: --blast_bin
@@ -75,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Max. number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

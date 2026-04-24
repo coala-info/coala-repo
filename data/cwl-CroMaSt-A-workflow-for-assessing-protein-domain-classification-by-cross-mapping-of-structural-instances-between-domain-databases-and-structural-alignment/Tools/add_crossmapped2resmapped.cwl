@@ -65,7 +65,6 @@ inputs:
   pfam_result:
     type: [ File?, string?]
     label: Filename to merge cross-mapped and residue-mapped domain StIs from Pfam
-    default: 'pfam_res_crossMapped.csv'
     inputBinding:
       position: 5
       prefix: -pr
@@ -73,7 +72,6 @@ inputs:
   cath_result:
     type: [ File?, string?]
     label: Filename to merge cross-mapped and residue-mapped domain StIs from CATH
-    default: 'cath_res_crossMapped.csv'
     inputBinding:
       position: 6
       prefix: -cr

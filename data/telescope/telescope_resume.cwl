@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum probability for high confidence assignment.
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --conf_prob
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print debug messages.
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: EM Algorithm Epsilon cutoff
-    default: '1e-7'
     inputBinding:
       position: 102
       prefix: --em_epsilon
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Experiment tag
-    default: telescope
     inputBinding:
       position: 102
       prefix: --exp_tag
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - File
     doc: Log output to this file.
-    default: None
     inputBinding:
       position: 102
       prefix: --logfile
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: EM Algorithm maximum iterations
-    default: 100
     inputBinding:
       position: 102
       prefix: --max_iter
@@ -68,7 +62,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory.
-    default: .
     inputBinding:
       position: 102
       prefix: --outdir
@@ -77,7 +70,6 @@ inputs:
       - 'null'
       - float
     doc: Prior on π. Equivalent to adding n unique reads.
-    default: 0
     inputBinding:
       position: 102
       prefix: --pi_prior
@@ -86,7 +78,6 @@ inputs:
       - 'null'
       - boolean
     doc: Silence (most) output.
-    default: false
     inputBinding:
       position: 102
       prefix: --quiet
@@ -106,7 +97,6 @@ inputs:
       Results using all assignment modes are\nincluded in the Telescope report by
       default. This\nargument determines what mode will be used for the\n\"final counts\"\
       \ column."
-    default: exclude
     inputBinding:
       position: 102
       prefix: --reassign_mode
@@ -117,7 +107,6 @@ inputs:
     doc: "Prior on θ. Equivalent to adding n non-unique reads.\nNOTE: It is recommended
       to set this prior to a large\nvalue. This increases the penalty for non-unique
       reads\nand improves accuracy."
-    default: 200000
     inputBinding:
       position: 102
       prefix: --theta_prior
@@ -126,7 +115,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use difference in log-likelihood as convergence criteria.
-    default: false
     inputBinding:
       position: 102
       prefix: --use_likelihood

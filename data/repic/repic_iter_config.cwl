@@ -47,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Conda environment name or prefix for SPHIRE-crYOLO installation
-    default: cryolo
     inputBinding:
       position: 108
       prefix: --cryolo_env
@@ -56,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: Conda environment name or prefix for DeepPicker installation
-    default: deep
     inputBinding:
       position: 108
       prefix: --deep_env
@@ -65,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: path to pre-trained DeepPicker model
-    default: out-of-the-box model
     inputBinding:
       position: 108
       prefix: --deep_model
@@ -74,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: Conda environment name or prefix for Topaz installation
-    default: topaz
     inputBinding:
       position: 108
       prefix: --topaz_env
@@ -83,7 +79,6 @@ inputs:
       - 'null'
       - string
     doc: path to pre-trained Topaz model
-    default: out-of-the-box model
     inputBinding:
       position: 108
       prefix: --topaz_model

@@ -19,7 +19,6 @@ inputs:
     doc: Specify the approximate distribution of X matrix values. 'auto' will 
       use a heuristic to determine the approximate distribution. Mode 'auto' is 
       incompatible with --backed.
-    default: auto
     inputBinding:
       position: 102
       prefix: --X-approximate-distribution
@@ -82,7 +81,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum log fold change threshold for differential expression.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --diffexp-lfc-cutoff
@@ -160,7 +158,6 @@ inputs:
       - 'null'
       - int
     doc: Will not display categories with more distinct values than specified.
-    default: 1000
     inputBinding:
       position: 102
       prefix: --max-category-items

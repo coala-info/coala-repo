@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - boolean
     doc: The BED file contains a header line
-    default: false
     inputBinding:
       position: 101
       prefix: --header
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: The amount of lines to skip in the BED file
-    default: 0
     inputBinding:
       position: 101
       prefix: --skip

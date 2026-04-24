@@ -10,7 +10,6 @@ inputs:
       - string
     doc: qualifier containing gene information (default product). Also note that
       all CDS features MUST have a locus_tag
-    default: product
     inputBinding:
       position: 101
       prefix: --cds
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: distance between regions to call overlapping, default is 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --gap
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: Binary value for imprecise (*) hit (can be 1, 0 or 0.5), default is 1
-    default: 1
     inputBinding:
       position: 101
       prefix: --imprecise
@@ -56,7 +53,6 @@ inputs:
       - string
     doc: qualifier containing gene information (default product). Also note that
       all rRNA features MUST have a locus_tag
-    default: product
     inputBinding:
       position: 101
       prefix: --rrna
@@ -74,7 +70,6 @@ inputs:
       - string
     doc: qualifier containing gene information (default product). Also note that
       all tRNA features MUST have a locus_tag
-    default: product
     inputBinding:
       position: 101
       prefix: --trna
@@ -84,7 +79,6 @@ inputs:
       - float
     doc: Binary value for questionable (?) hit (can be 1, 0 or 0.5), default is 
       0
-    default: 0
     inputBinding:
       position: 101
       prefix: --unconfident

@@ -24,7 +24,6 @@ inputs:
       - string
     doc: change distance type to Euclidean, Jensen-Shannon, evolutionary 
       distance
-    default: JS
     inputBinding:
       position: 102
       prefix: -d
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: number of patterns
-    default: 5
     inputBinding:
       position: 102
       prefix: -n
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: pattern don't care positions
-    default: 15
     inputBinding:
       position: 102
       prefix: -l
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: pattern weight
-    default: 14
     inputBinding:
       position: 102
       prefix: -k
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: numer of threads
-    default: 25
     inputBinding:
       position: 102
       prefix: -t

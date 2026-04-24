@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level to use for output files if applicable
-    default: 6
     inputBinding:
       position: 101
       prefix: --compression-level
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Compression threads to use for output files if applicable
-    default: 1
     inputBinding:
       position: 101
       prefix: --compression-threads
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - File
     doc: Input BED file to process
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - boolean
     doc: Assume input is sorted
-    default: false
     inputBinding:
       position: 101
       prefix: --sorted

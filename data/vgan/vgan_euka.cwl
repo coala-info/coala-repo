@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: database prefix name
-    default: euka_db
     inputBinding:
       position: 101
       prefix: --dbprefix
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - File
     doc: 3p deamination frequency for eukaryotic species
-    default: no damage
     inputBinding:
       position: 101
       prefix: --deam3p
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - File
     doc: 5p deamination frequency for eukaryotic species
-    default: no damage
     inputBinding:
       position: 101
       prefix: --deam5p
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum entropy score for a bin to be considered
-    default: 1.17
     inputBinding:
       position: 101
       prefix: --entropy
@@ -48,7 +44,6 @@ inputs:
       - 'null'
       - Directory
     doc: euka database location
-    default: current wroking directory
     inputBinding:
       position: 101
       prefix: --euka_dir
@@ -81,7 +76,6 @@ inputs:
       - 'null'
       - boolean
     doc: Paired-end reads are interleaved
-    default: false
     inputBinding:
       position: 101
       prefix: -i
@@ -90,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of bins without coverage
-    default: 0
     inputBinding:
       position: 101
       prefix: --maxBins
@@ -99,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Define the burnin period for the MCMC
-    default: 100
     inputBinding:
       position: 101
       prefix: --burnin
@@ -108,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Define the number of iterartions for the MCMC
-    default: 10000
     inputBinding:
       position: 101
       prefix: --iter
@@ -117,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of bins with an entropy higher than the thresold
-    default: 6
     inputBinding:
       position: 101
       prefix: --minBins
@@ -126,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum amount of fragments that need to map to a group
-    default: 10
     inputBinding:
       position: 101
       prefix: --minFrag
@@ -135,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: Set the mapping quality minimum for a fragment
-    default: 29
     inputBinding:
       position: 101
       prefix: --minMQ
@@ -144,7 +132,6 @@ inputs:
       - 'null'
       - string
     doc: Alternative minimizer prefix input
-    default: euka_db
     inputBinding:
       position: 101
       prefix: -M
@@ -153,7 +140,6 @@ inputs:
       - 'null'
       - boolean
     doc: The MCMC does not run
-    default: false
     inputBinding:
       position: 101
       prefix: --no-mcmc
@@ -162,7 +148,6 @@ inputs:
       - 'null'
       - boolean
     doc: Outputs a file with all read names per taxonomic group
-    default: false
     inputBinding:
       position: 101
       prefix: --outFrag
@@ -171,7 +156,6 @@ inputs:
       - 'null'
       - string
     doc: Outputs all information about a taxonmic group of interest
-    default: ''
     inputBinding:
       position: 101
       prefix: --outGroup
@@ -180,7 +164,6 @@ inputs:
       - 'null'
       - string
     doc: Output file prefix
-    default: euka_output
     inputBinding:
       position: 101
       prefix: -o
@@ -189,7 +172,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path for output prof-file
-    default: current wroking directory
     inputBinding:
       position: 101
       prefix: --out_dir
@@ -198,7 +180,6 @@ inputs:
       - 'null'
       - int
     doc: Set length for substitution matrix
-    default: 5
     inputBinding:
       position: 101
       prefix: -l
@@ -207,7 +188,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temporary directory
-    default: /tmp
     inputBinding:
       position: 101
       prefix: -Z

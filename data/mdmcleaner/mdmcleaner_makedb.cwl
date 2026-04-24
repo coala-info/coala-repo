@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - File
     doc: "provide a local config file with the target location to store database-files.
-      default: looks for config files named 'mdmcleaner.config' in current working
       directory. settings in the local config file will override settings in the global
       config file '/usr/local/lib/python3.11/site-packages/mdmcleaner/mdmcleaner.config'"
     inputBinding:
@@ -33,7 +32,6 @@ inputs:
       - Directory
     doc: target base directory for reference-data. may not be the current 
       working directory. Needs >100GB space!
-    default: ./db
     inputBinding:
       position: 101
       prefix: --outdir

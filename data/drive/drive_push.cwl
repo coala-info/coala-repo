@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: max traversal depth
-    default: -1
     inputBinding:
       position: 101
       prefix: --depth
@@ -172,7 +171,6 @@ inputs:
       - 'null'
       - boolean
     doc: performs the push action recursively (default true)
-    default: true
     inputBinding:
       position: 101
       prefix: --recursive
@@ -181,7 +179,6 @@ inputs:
       - 'null'
       - int
     doc: max number of retries for exponential backoff
-    default: 20
     inputBinding:
       position: 101
       prefix: --retry-count

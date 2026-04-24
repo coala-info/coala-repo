@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum free energy change of a primer in kcal/mol
-    default: -11.8
     inputBinding:
       position: 102
       prefix: --dg-max
@@ -60,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum amplicon length
-    default: 420
     inputBinding:
       position: 102
       prefix: --max-amp-len
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum GC content of a primer
-    default: 0.75
     inputBinding:
       position: 102
       prefix: --max-gc
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of a primer
-    default: 36
     inputBinding:
       position: 102
       prefix: --max-len
@@ -96,7 +92,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum sequence complexity of a primer
-    default: 0.4
     inputBinding:
       position: 102
       prefix: --min-complexity
@@ -105,7 +100,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum GC content of a primer
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --min-gc
@@ -122,7 +116,6 @@ inputs:
       - 'null'
       - float
     doc: Concentration of monovalent ions in units of molar
-    default: 0.18
     inputBinding:
       position: 102
       prefix: --salinity
@@ -131,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: Random seed for optimizing primer design regions and primer dimer
-    default: 10
     inputBinding:
       position: 102
       prefix: --seed
@@ -140,7 +132,6 @@ inputs:
       - 'null'
       - float
     doc: PCR annealing temperature
-    default: 60.0
     inputBinding:
       position: 102
       prefix: --temperature
@@ -149,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -158,7 +148,6 @@ inputs:
       - 'null'
       - string
     doc: Name of design
-    default: olivar-design
     inputBinding:
       position: 102
       prefix: --title
@@ -167,7 +156,6 @@ inputs:
       - 'null'
       - float
     doc: Weight for combinations
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --w-combi
@@ -176,7 +164,6 @@ inputs:
       - 'null'
       - float
     doc: Weight for extreme GC content
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --w-egc
@@ -185,7 +172,6 @@ inputs:
       - 'null'
       - float
     doc: Weight for low sequence complexity
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --w-lc
@@ -194,7 +180,6 @@ inputs:
       - 'null'
       - float
     doc: Weight for non-specificity
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --w-ns
@@ -203,7 +188,6 @@ inputs:
       - 'null'
       - float
     doc: Weight for sensitivity
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --w-sensi
@@ -212,7 +196,6 @@ inputs:
       - 'null'
       - float
     doc: Weight for variations
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --w-var

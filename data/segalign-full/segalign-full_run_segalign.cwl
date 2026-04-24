@@ -38,7 +38,6 @@ inputs:
       \      LASTZ) - lav, lav+text, axt, axt+, maf, maf+, maf-, \n              \
       \          sam, softsam, sam-, softsam-, cigar, BLASTN, \n                 \
       \       differences, rdotplot, text"
-    default: maf-
     inputBinding:
       position: 103
       prefix: --format
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: segment score threshold for high scoring pairs
-    default: 3000
     inputBinding:
       position: 103
       prefix: --hspthresh
@@ -65,7 +63,6 @@ inputs:
       - int
     doc: "LASTZ interval for ydrop - change only \n                              \
       \          if you are a developer"
-    default: 10000000
     inputBinding:
       position: 103
       prefix: --lastz_interval_size
@@ -117,7 +114,6 @@ inputs:
       - int
     doc: "Specify number of GPUs to use - -1 if \n                               \
       \         all the GPUs should be used"
-    default: -1
     inputBinding:
       position: 103
       prefix: --num_gpu
@@ -128,7 +124,6 @@ inputs:
     doc: "Specify number of CPU threads to use - \n                              \
       \          -1 if all the CPU threads should be \n                          \
       \              used"
-    default: -1
     inputBinding:
       position: 103
       prefix: --num_threads
@@ -146,7 +141,6 @@ inputs:
       - string
     doc: "seed pattern-12of19(1110100110010101111)/14of22(1110101\n              \
       \          100110010101111)/an arbitrary pattern of 1s, 0s, and Ts"
-    default: 12of19
     inputBinding:
       position: 103
       prefix: --seed
@@ -156,7 +150,6 @@ inputs:
       - int
     doc: "LASTZ interval for ydrop - change only \n                              \
       \          if you are a developer"
-    default: 500000000
     inputBinding:
       position: 103
       prefix: --seq_block_size
@@ -166,7 +159,6 @@ inputs:
       - int
     doc: "Offset between the starting positions of successive \n                 \
       \       target words considered for generating seed table"
-    default: 1
     inputBinding:
       position: 103
       prefix: --step
@@ -175,7 +167,6 @@ inputs:
       - 'null'
       - string
     doc: strand to search - plus/minus/both
-    default: both
     inputBinding:
       position: 103
       prefix: --strand
@@ -185,7 +176,6 @@ inputs:
       - int
     doc: "chunk sizes for GPU calls for Xdrop - \n                               \
       \         change only if you are a developer"
-    default: 250000
     inputBinding:
       position: 103
       prefix: --wga_chunk_size
@@ -194,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: x-drop value for gap-free extension
-    default: 910
     inputBinding:
       position: 103
       prefix: --xdrop
@@ -203,7 +192,6 @@ inputs:
       - 'null'
       - int
     doc: y-drop value for gapped extension
-    default: 9430
     inputBinding:
       position: 103
       prefix: --ydrop

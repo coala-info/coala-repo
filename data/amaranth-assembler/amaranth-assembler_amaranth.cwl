@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: require satisfactory UMI support for [both/either] condition
-    default: 'false'
     inputBinding:
       position: 101
       prefix: --both-umi-support
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: library type of the sample (first, second, unstranded)
-    default: unstranded
     inputBinding:
       position: 101
       prefix: --library_type
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: ratio threshold of retained edge to skip edge (full)
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --max-ir-full-ratio-e
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: ratio threshold of retained node to its own edge (full)
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --max-ir-full-ratio-i
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: ratio threshold of retained node to skip edge (full)
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --max-ir-full-ratio-v
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: ratio threshold of retained edge to skip edge (partial)
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --max-ir-part-ratio-e
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: ratio threshold of retained node to skip edge (partial)
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --max-ir-part-ratio-v
@@ -87,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: max UMI reads to support full intron retention
-    default: 3
     inputBinding:
       position: 101
       prefix: --max-ir-umi-support-full
@@ -96,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: max UMI reads to support partial intron retention
-    default: 5
     inputBinding:
       position: 101
       prefix: --max-ir-umi-support-part
@@ -105,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: ignore reads with CIGAR size larger than this value
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max_num_cigar
@@ -122,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: minimum distances required to start a new bundle
-    default: 100
     inputBinding:
       position: 101
       prefix: --min_bundle_gap
@@ -131,7 +120,6 @@ inputs:
       - 'null'
       - float
     doc: minimum ratio of exons supported by cell barcode
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --min-cb-ratio
@@ -140,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: minimum match length in each side for a spliced read
-    default: 3
     inputBinding:
       position: 101
       prefix: --min_flank_length
@@ -149,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: ignore reads with mapping quality less than this value
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_mapping_quality
@@ -158,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of reads required in a gene locus
-    default: 5
     inputBinding:
       position: 101
       prefix: --min_num_hits_in_bundle
@@ -167,7 +152,6 @@ inputs:
       - 'null'
       - float
     doc: minimum coverage required for a single-exon transcript
-    default: 20
     inputBinding:
       position: 101
       prefix: --min_single_exon_coverage
@@ -176,7 +160,6 @@ inputs:
       - 'null'
       - float
     doc: minimum coverage required for a multi-exon transcript
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --min_transcript_coverage
@@ -186,7 +169,6 @@ inputs:
       - int
     doc: minimum length of a transcript would be --min_transcript_length_base + --min_transcript_length_increase
       * num-of-exons
-    default: 150
     inputBinding:
       position: 101
       prefix: --min_transcript_length_base
@@ -195,7 +177,6 @@ inputs:
       - 'null'
       - int
     doc: length increase factor per exon
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_transcript_length_increase
@@ -204,7 +185,6 @@ inputs:
       - 'null'
       - float
     doc: minimum ratio of UMI reads required in a bundle
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-umi-ratio-bundle
@@ -213,7 +193,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of UMI reads required in a bundle
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-umi-reads-bundle
@@ -222,7 +201,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of UMI reads supporting the first exon
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-umi-reads-start-exon
@@ -263,7 +241,6 @@ inputs:
       - 'null'
       - int
     doc: 'remove PCR duplicates using strategy: 0,1, or 2'
-    default: 1
     inputBinding:
       position: 101
       prefix: --remove-pcr-duplicates
@@ -288,7 +265,6 @@ inputs:
       - 'null'
       - int
     doc: '0: quiet; 1: one line for each graph; 2: with details'
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbose

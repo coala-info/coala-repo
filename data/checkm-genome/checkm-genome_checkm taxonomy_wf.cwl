@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: 'AAI threshold used to identify strain heterogeneity (default: 0.9)'
-    default: 0.9
     inputBinding:
       position: 105
       prefix: --aai_strain
@@ -68,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: 'e-value cut off (default: 1e-10)'
-    default: '1e-10'
     inputBinding:
       position: 105
       prefix: --e_value
@@ -77,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: 'extension of bins (other files in directory are ignored) (default: fna)'
-    default: fna
     inputBinding:
       position: 105
       prefix: --extension
@@ -118,7 +115,6 @@ inputs:
       - 'null'
       - float
     doc: 'percent overlap between target and query (default: 0.7)'
-    default: 0.7
     inputBinding:
       position: 105
       prefix: --length
@@ -127,7 +123,6 @@ inputs:
       - 'null'
       - File
     doc: 'print results to file (default: stdout)'
-    default: stdout
     inputBinding:
       position: 105
       prefix: --file
@@ -168,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of threads (default: 1)'
-    default: 1
     inputBinding:
       position: 105
       prefix: --threads

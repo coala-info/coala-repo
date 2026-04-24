@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: current
     inputBinding:
       position: 101
       prefix: --output

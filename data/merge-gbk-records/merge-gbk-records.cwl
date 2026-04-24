@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Length of the spacer in kbp
-    default: '20'
     inputBinding:
       position: 102
       prefix: --length
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Spacer sequence to use, can be Ns or all-frame stop codons
-    default: n
     inputBinding:
       position: 102
       prefix: --spacer

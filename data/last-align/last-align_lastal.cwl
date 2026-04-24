@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: 'type of alignment: 0=local, 1=overlap'
-    default: 0
     inputBinding:
       position: 103
       prefix: -T
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: "'gamma' parameter for gamma-centroid and LAMA"
-    default: 1
     inputBinding:
       position: 103
       prefix: -g
@@ -79,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: use initial matches starting at every k-th position in each query
-    default: 1
     inputBinding:
       position: 103
       prefix: -k
@@ -89,7 +86,6 @@ inputs:
       - int
     doc: "input format: 0=fasta or fastq-ignore, 1=fastq-sanger, 2=fastq-solexa,\n\
       \                  3=fastq-illumina, 4=prb, 5=PSSM (fasta)"
-    default: 0
     inputBinding:
       position: 103
       prefix: -Q
@@ -148,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: maximum initial matches per query position
-    default: 10
     inputBinding:
       position: 103
       prefix: -m
@@ -189,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length for initial matches
-    default: 1
     inputBinding:
       position: 103
       prefix: -l
@@ -247,7 +241,6 @@ inputs:
       - 'null'
       - string
     doc: 'output format: TAB, MAF, BlastTab, BlastTab+ (default=MAF)'
-    default: MAF
     inputBinding:
       position: 103
       prefix: -f
@@ -258,7 +251,6 @@ inputs:
     doc: "output type: 0=match counts, 1=gapless, 2=redundant gapped, 3=gapped,\n\
       \                 4=column ambiguity estimates, 5=gamma-centroid, 6=LAMA, 7=expected
       counts"
-    default: 3
     inputBinding:
       position: 103
       prefix: -j
@@ -267,7 +259,6 @@ inputs:
       - 'null'
       - int
     doc: number of parallel threads
-    default: 1
     inputBinding:
       position: 103
       prefix: -P
@@ -276,7 +267,6 @@ inputs:
       - 'null'
       - string
     doc: query batch size (8 KiB, unless there is > 1 thread or lastdb volume)
-    default: 8 KiB
     inputBinding:
       position: 103
       prefix: -i
@@ -285,7 +275,6 @@ inputs:
       - 'null'
       - float
     doc: query letters per random alignment
-    default: '1e+06'
     inputBinding:
       position: 103
       prefix: -D
@@ -310,7 +299,6 @@ inputs:
       - 'null'
       - int
     doc: 'score matrix applies to forward strand of: 0=reference, 1=query'
-    default: 0
     inputBinding:
       position: 103
       prefix: -S
@@ -327,7 +315,6 @@ inputs:
       - 'null'
       - string
     doc: 'strand: 0=reverse, 1=forward, 2=both (2 for DNA, 1 for protein)'
-    default: '2'
     inputBinding:
       position: 103
       prefix: -s
@@ -336,7 +323,6 @@ inputs:
       - 'null'
       - int
     doc: suppress repeats inside exact matches, offset by <= this distance
-    default: 1000
     inputBinding:
       position: 103
       prefix: -w

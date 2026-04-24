@@ -54,7 +54,6 @@ inputs:
       - boolean
     doc: Input file contains alignments in SAM/BAM/CRAM format. The exact file 
       format will be determined automatically.
-    default: false
     inputBinding:
       position: 106
       prefix: --alignments
@@ -65,7 +64,6 @@ inputs:
     doc: If gene_name/transcript_name is available, append it to the end of 
       gene_id/transcript_id (separated by '_') in files 
       'sample_name.isoforms.results' and 'sample_name.genes.results'.
-    default: false
     inputBinding:
       position: 106
       prefix: --append-names
@@ -74,7 +72,6 @@ inputs:
       - 'null'
       - boolean
     doc: Inputs are alignments in BAM format.
-    default: false
     inputBinding:
       position: 106
       prefix: --bam
@@ -90,7 +87,6 @@ inputs:
       '-0.1', is the negative of maximum mismatch rate. This rate can be set by 
       option '--bowtie2-mismatch-rate'. If reads are paired-end, we additionally
       use options '--no-mixed' and '--no-discordant'.
-    default: false
     inputBinding:
       position: 106
       prefix: --bowtie2
@@ -99,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: '(Bowtie 2 parameter) Find up to <int> alignments per read. (Default: 200)'
-    default: 200
     inputBinding:
       position: 106
       prefix: --bowtie2-k
@@ -108,7 +103,6 @@ inputs:
       - 'null'
       - float
     doc: '(Bowtie 2 parameter) The maximum mismatch rate allowed. (Default: 0.1)'
-    default: 0.1
     inputBinding:
       position: 106
       prefix: --bowtie2-mismatch-rate
@@ -132,7 +126,6 @@ inputs:
       four candidates correspond to Bowtie 2's \"--very-fast\", \"--fast\", \"--sensitive\"\
       \ and \"--very-sensitive\" options. (Default: \"sensitive\" - use Bowtie 2's
       default)"
-    default: sensitive
     inputBinding:
       position: 106
       prefix: --bowtie2-sensitivity-level
@@ -142,7 +135,6 @@ inputs:
       - int
     doc: "(Bowtie parameter) memory allocated for best first alignment calculation
       (Default: 0 - use Bowtie's default)"
-    default: 0
     inputBinding:
       position: 106
       prefix: --bowtie-chunkmbs
@@ -152,7 +144,6 @@ inputs:
       - int
     doc: '(Bowtie parameter) max sum of mismatch quality scores across the alignment.
       (Default: 99999999)'
-    default: 99999999
     inputBinding:
       position: 106
       prefix: --bowtie-e
@@ -162,7 +153,6 @@ inputs:
       - int
     doc: '(Bowtie parameter) suppress all alignments for a read if > <int> valid alignments
       exist. (Default: 200)'
-    default: 200
     inputBinding:
       position: 106
       prefix: --bowtie-m
@@ -172,7 +162,6 @@ inputs:
       - int
     doc: '(Bowtie parameter) max # of mismatches in the seed. (Range: 0-3, Default:
       2)'
-    default: 2
     inputBinding:
       position: 106
       prefix: --bowtie-n
@@ -191,7 +180,6 @@ inputs:
       - boolean
     doc: Calculate 95% credibility intervals and posterior mean estimates. The 
       credibility level can be changed by setting '--ci-credibility-level'.
-    default: false
     inputBinding:
       position: 106
       prefix: --calc-ci
@@ -201,7 +189,6 @@ inputs:
       - boolean
     doc: Run RSEM's collapsed Gibbs sampler to calculate posterior mean 
       estimates.
-    default: false
     inputBinding:
       position: 106
       prefix: --calc-pme
@@ -214,7 +201,6 @@ inputs:
       where prior is learned from multiple complementary data sets. This option 
       is only in use when either '--chipseq-read-files-multi-targets <string>' 
       or '--chipseq-bed-files-multi-targets <string>' is specified.
-    default: false
     inputBinding:
       position: 106
       prefix: --cap-stacked-chipseq-reads
@@ -229,7 +215,6 @@ inputs:
       files can be either ungzipped or gzipped with a suffix '.gz' or '.gzip'. 
       When this option is specified, the option '--partition-model <string>' 
       will be set to 'cmb_lgt' automatically.
-    default: ''
     inputBinding:
       position: 106
       prefix: --chipseq-bed-files-multi-targets
@@ -243,7 +228,6 @@ inputs:
       gzipped with a suffix '.gz' or '.gzip'. The options '--bowtie-path <path>'
       and '--chipseq-target-read-files <string>' must be defined when this 
       option is specified.
-    default: ''
     inputBinding:
       position: 106
       prefix: --chipseq-control-read-files
@@ -257,7 +241,6 @@ inputs:
       overlapping with their transcription start site region or not. Each 
       partition will have its own prior parameter learned from a training set. 
       This file can be either gzipped or ungzipped.
-    default: ''
     inputBinding:
       position: 106
       prefix: --chipseq-peak-file
@@ -272,7 +255,6 @@ inputs:
       gzipped with a suffix '.gz' or '.gzip'. When this option is specified, the
       option '--bowtie-path <path>' must be defined and the option 
       '--partition-model <string>' will be set to 'cmb_lgt' automatically.
-    default: ''
     inputBinding:
       position: 106
       prefix: --chipseq-read-files-multi-targets
@@ -286,7 +268,6 @@ inputs:
       either ungzipped or gzipped with a suffix '.gz' or '.gzip'. The options 
       '--bowtie-path <path>' and '--chipseq-control-read-files <string>' must be
       defined when this option is specified.
-    default: ''
     inputBinding:
       position: 106
       prefix: --chipseq-target-read-files
@@ -295,7 +276,6 @@ inputs:
       - 'null'
       - float
     doc: The credibility level for credibility intervals.
-    default: 0.95
     inputBinding:
       position: 106
       prefix: --ci-credibility-level
@@ -305,7 +285,6 @@ inputs:
       - int
     doc: Maximum size (in memory, MB) of the auxiliary buffer used for computing
       credibility intervals (CI).
-    default: 1024
     inputBinding:
       position: 106
       prefix: --ci-memory
@@ -318,7 +297,6 @@ inputs:
       | D) and then sampling P(Theta | C) for each sampled count vector. This 
       option controls how many Theta vectors are sampled per sampled count 
       vector.
-    default: 50
     inputBinding:
       position: 106
       prefix: --ci-number-of-samples-per-count-vector
@@ -328,7 +306,6 @@ inputs:
       - boolean
     doc: Set this option if you want to estimate the read start position 
       distribution (RSPD) from data. Otherwise, RSEM will use a uniform RSPD.
-    default: false
     inputBinding:
       position: 106
       prefix: --estimate-rspd
@@ -361,7 +338,6 @@ inputs:
       - int
     doc: Maximum read/insert length allowed. This is also the value for the 
       Bowtie/Bowtie 2 -X option.
-    default: 1000
     inputBinding:
       position: 106
       prefix: --fragment-length-max
@@ -372,7 +348,6 @@ inputs:
     doc: '(single-end data only) The mean of the fragment length distribution, which
       is assumed to be a Gaussian. (Default: -1, which disables use of the fragment
       length distribution)'
-    default: -1
     inputBinding:
       position: 106
       prefix: --fragment-length-mean
@@ -382,7 +357,6 @@ inputs:
       - int
     doc: Minimum read/insert length allowed. This is also the value for the 
       Bowtie/Bowtie2 -I option.
-    default: 1
     inputBinding:
       position: 106
       prefix: --fragment-length-min
@@ -393,7 +367,6 @@ inputs:
     doc: '(single-end data only) The standard deviation of the fragment length distribution,
       which is assumed to be a Gaussian. (Default: 0, which assumes that all fragments
       are of the same length, given by the rounded value of --fragment-length-mean)'
-    default: 0
     inputBinding:
       position: 106
       prefix: --fragment-length-sd
@@ -405,7 +378,6 @@ inputs:
       passes over the entire data set once. If RSEM can use multiple threads, 
       multiple Gibbs samplers will start at the same time and all samplers share
       the same burn-in number.
-    default: 200
     inputBinding:
       position: 106
       prefix: --gibbs-burnin
@@ -415,7 +387,6 @@ inputs:
       - int
     doc: The total number of count vectors RSEM will collect from its Gibbs 
       samplers.
-    default: 1000
     inputBinding:
       position: 106
       prefix: --gibbs-number-of-samples
@@ -426,7 +397,6 @@ inputs:
     doc: The number of rounds between two succinct count vectors RSEM collects. 
       If the count vector after round N is collected, the count vector after 
       round N + <int> will also be collected.
-    default: 1
     inputBinding:
       position: 106
       prefix: --gibbs-sampling-gap
@@ -443,7 +413,6 @@ inputs:
       99999999,99999999 --no-spliced-alignment --no-softclip --seed 12345". If 
       inputs are paired-end reads, we additionally use parameters "--no-mixed 
       --no-discordant".
-    default: false
     inputBinding:
       position: 106
       prefix: --hisat2-hca
@@ -466,7 +435,6 @@ inputs:
       generated by previous RSEM runs inside of it. By default, after RSEM 
       finishes, the temporary directory is deleted. Set this option to prevent 
       the deletion of this directory and the intermediate files inside of it.
-    default: false
     inputBinding:
       position: 106
       prefix: --keep-intermediate-files
@@ -478,7 +446,6 @@ inputs:
       used when running prior-enhanced RSEM, where prior is learned from 
       multiple complementary data sets. This option is only in use when the 
       option '--cap-stacked-chipseq-reads' is set.
-    default: 5
     inputBinding:
       position: 106
       prefix: --n-max-stacked-chipseq-reads
@@ -487,7 +454,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not output any BAM file.
-    default: false
     inputBinding:
       position: 106
       prefix: --no-bam-output
@@ -496,7 +462,6 @@ inputs:
       - 'null'
       - boolean
     doc: Input reads do not contain quality scores.
-    default: false
     inputBinding:
       position: 106
       prefix: --no-qualities
@@ -506,7 +471,6 @@ inputs:
       - int
     doc: Number of bins in the RSPD. Only relevant when '--estimate-rspd' is 
       specified. Use of the default setting is recommended.
-    default: 20
     inputBinding:
       position: 106
       prefix: --num-rspd-bins
@@ -516,7 +480,6 @@ inputs:
       - int
     doc: Number of threads to use. Both Bowtie/Bowtie2, expression estimation 
       and 'samtools sort' will use this many threads.
-    default: 1
     inputBinding:
       position: 106
       prefix: --num-threads
@@ -529,7 +492,6 @@ inputs:
       In addition, RSEM will call samtools (included in RSEM package) to sort 
       and index the bam file. 'sample_name.genome.sorted.bam' and 
       'sample_name.genome.sorted.bam.bai' will be generated.
-    default: false
     inputBinding:
       position: 106
       prefix: --output-genome-bam
@@ -538,7 +500,6 @@ inputs:
       - 'null'
       - boolean
     doc: Input reads are paired-end reads.
-    default: false
     inputBinding:
       position: 106
       prefix: --paired-end
@@ -571,7 +532,6 @@ inputs:
       \        Parameters for all the above models are learned from a training set.\n\
       \        For detailed explanations, please see prior-enhanced RSEM's paper.\n\
       \        (Default: 'pk')"
-    default: pk
     inputBinding:
       position: 106
       prefix: --partition-model
@@ -581,7 +541,6 @@ inputs:
       - boolean
     doc: Input quality scores are encoded as Phred+33. This option is used by 
       Bowtie, Bowtie 2 and HISAT2.
-    default: true
     inputBinding:
       position: 106
       prefix: --phred33-quals
@@ -591,7 +550,6 @@ inputs:
       - boolean
     doc: Input quality scores are encoded as Phred+64 (default for GA Pipeline 
       ver. >= 1.3). This option is used by Bowtie, Bowtie 2 and HISAT2.
-    default: false
     inputBinding:
       position: 106
       prefix: --phred64-quals
@@ -600,7 +558,6 @@ inputs:
       - 'null'
       - boolean
     doc: Suppress the output of logging information.
-    default: false
     inputBinding:
       position: 106
       prefix: --quiet
@@ -619,7 +576,6 @@ inputs:
       <string>', and '--bowtie-path <path>' options), otherwise, ChIP-seq FASTQ 
       files for target and control and the path to Bowtie executables are 
       required.
-    default: false
     inputBinding:
       position: 106
       prefix: --run-pRSEM
@@ -628,7 +584,6 @@ inputs:
       - 'null'
       - boolean
     doc: Inputs are alignments in SAM format.
-    default: false
     inputBinding:
       position: 106
       prefix: --sam
@@ -643,7 +598,6 @@ inputs:
       file. Only the sampled alignment has a weight of 1. All other alignments 
       have weight 0. If the "noise" transcript is sampled, all alignments 
       appeared in the BAM file should have weight 0.
-    default: false
     inputBinding:
       position: 106
       prefix: --sampling-for-bam
@@ -669,7 +623,6 @@ inputs:
       otherwise, the minimum allowed value is 25. Note that this script will 
       only check if the value >= 5 and give a warning message if the value < 25 
       but >= 5.
-    default: 25
     inputBinding:
       position: 106
       prefix: --seed-length
@@ -684,7 +637,6 @@ inputs:
       single-cell RNA-Seq data, you are recommended to turn on this option. Then
       RSEM will use Dirichlet(0.1) as the prior which encourage the sparsity of 
       the expression levels.
-    default: false
     inputBinding:
       position: 106
       prefix: --single-cell-prior
@@ -694,7 +646,6 @@ inputs:
       - boolean
     doc: Input quality scores are solexa encoded (from GA Pipeline ver. < 1.3). 
       This option is used by Bowtie, Bowtie 2 and HISAT2.
-    default: false
     inputBinding:
       position: 106
       prefix: --solexa-quals
@@ -704,7 +655,6 @@ inputs:
       - boolean
     doc: Sort RSEM generated transcript and genome BAM files by coordinates and 
       build associated indices.
-    default: false
     inputBinding:
       position: 106
       prefix: --sort-bam-by-coordinate
@@ -716,7 +666,6 @@ inputs:
       this option on will produce deterministic maximum likelihood estimations 
       from independent runs. Note that sorting will take long time and lots of 
       memory.
-    default: false
     inputBinding:
       position: 106
       prefix: --sort-bam-by-read-name
@@ -728,7 +677,6 @@ inputs:
       <string> represents the memory and accepts suffices 'K/M/G'. RSEM will 
       pass <string> to the '-m' option of 'samtools sort'. Note that the default
       used here is different from the default used by samtools.
-    default: 1G
     inputBinding:
       position: 106
       prefix: --sort-bam-memory-per-thread
@@ -741,7 +689,6 @@ inputs:
       STAR's Output BAM file is unsorted. It is stored in RSEM's temporary 
       directory with name as 'sample_name.bam'. Each STAR job will have its own 
       private copy of the genome in memory.
-    default: false
     inputBinding:
       position: 106
       prefix: --star
@@ -750,7 +697,6 @@ inputs:
       - 'null'
       - boolean
     doc: (STAR parameter) Input read file(s) is compressed by bzip2.
-    default: false
     inputBinding:
       position: 106
       prefix: --star-bzipped-read-file
@@ -759,7 +705,6 @@ inputs:
       - 'null'
       - boolean
     doc: (STAR parameter) Input read file(s) is compressed by gzip.
-    default: false
     inputBinding:
       position: 106
       prefix: --star-gzipped-read-file
@@ -772,7 +717,6 @@ inputs:
       genomic coordinate. In this file, according to STAR's manual, 'paired ends
       of an alignment are always adjacent, and multiple alignments of a read are
       adjacent as well'.
-    default: false
     inputBinding:
       position: 106
       prefix: --star-output-genome-bam
@@ -790,7 +734,6 @@ inputs:
       - 'null'
       - boolean
     doc: Equivalent to '--strandedness forward'.
-    default: false
     inputBinding:
       position: 106
       prefix: --strand-specific
@@ -805,7 +748,6 @@ inputs:
       If 'forward'/'reverse' is set, the '--norc'/'--nofw' Bowtie/Bowtie 2 option
       will also be enabled to avoid aligning reads to the opposite strand. For Illumina
       TruSeq Stranded protocols, please use 'reverse'."
-    default: none
     inputBinding:
       position: 106
       prefix: --strandedness
@@ -817,7 +759,6 @@ inputs:
       read with too many valid alignments. The field should have the format 
       <tagName>:i:<value>, where a <value> bigger than 0 indicates a read with 
       too many alignments.
-    default: ''
     inputBinding:
       position: 106
       prefix: --tag
@@ -827,7 +768,6 @@ inputs:
       - string
     doc: Set where to put the temporary files generated by RSEM. If the folder 
       specified does not exist, RSEM will try to create it.
-    default: sample_name.temp
     inputBinding:
       position: 106
       prefix: --temporary-folder
@@ -836,7 +776,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output time consumed by each step of RSEM to 'sample_name.time'.
-    default: false
     inputBinding:
       position: 106
       prefix: --time

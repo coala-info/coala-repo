@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: 'Size of bins. Example: Format 10,20,30 -> (0-10, 11-20, 30+)'
-    default: 1,50,100,1000
     inputBinding:
       position: 101
       prefix: --bins
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Separator for Pan-SN spec
-    default: \n
     inputBinding:
       position: 101
       prefix: --pansn
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

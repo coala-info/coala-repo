@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: Score for intergenic mutations
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --anno-score-1
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: Score for nonstop mutations
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --anno-score-10
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: Score for missense mutations not predicted damaging
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --anno-score-11
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: Score for missense mutations damaging by 1/3 algorithms
-    default: 0.95
     inputBinding:
       position: 102
       prefix: --anno-score-12
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: Score for missense mutations damaging by 2/3 algorithms
-    default: 0.95
     inputBinding:
       position: 102
       prefix: --anno-score-13
@@ -63,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: Score for missense mutations damaging by 3/3 algorithms
-    default: 0.95
     inputBinding:
       position: 102
       prefix: --anno-score-14
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: Score for essential splice site mutations
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --anno-score-15
@@ -81,7 +74,6 @@ inputs:
       - 'null'
       - float
     doc: Score for frameshift mutations
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --anno-score-16
@@ -90,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: Score for nonsense mutations
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --anno-score-17
@@ -99,7 +90,6 @@ inputs:
       - 'null'
       - float
     doc: Score for intronic mutations
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --anno-score-2
@@ -108,7 +98,6 @@ inputs:
       - 'null'
       - float
     doc: Score for downstream mutations
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --anno-score-3
@@ -117,7 +106,6 @@ inputs:
       - 'null'
       - float
     doc: Score for upstream mutations
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --anno-score-4
@@ -126,7 +114,6 @@ inputs:
       - 'null'
       - float
     doc: Score for UTR mutations
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --anno-score-5
@@ -135,7 +122,6 @@ inputs:
       - 'null'
       - float
     doc: Score for ncRNA mutations
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --anno-score-6
@@ -144,7 +130,6 @@ inputs:
       - 'null'
       - float
     doc: Score for miRNA mutations
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --anno-score-7
@@ -153,7 +138,6 @@ inputs:
       - 'null'
       - float
     doc: Score for synonymous coding mutations
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --anno-score-8
@@ -162,7 +146,6 @@ inputs:
       - 'null'
       - float
     doc: Score for splice region mutations
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --anno-score-9
@@ -179,7 +162,6 @@ inputs:
       - 'null'
       - string
     doc: 'Presumed model of inheritance: dominant, recessive, x-linked'
-    default: dominant
     inputBinding:
       position: 102
       prefix: --inheritance
@@ -188,7 +170,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum non-ref (variant) allele frequency at ref site to count as ref
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --max-vaf-for-ref
@@ -197,7 +178,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read depth to consider a confident genotype call
-    default: 20
     inputBinding:
       position: 102
       prefix: --min-read-depth
@@ -207,7 +187,6 @@ inputs:
       - float
     doc: Minimum VAF at which a reference genotype will be considered het. To 
       disable recall, set to 1.01
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --min-vaf-to-recall
@@ -224,7 +203,6 @@ inputs:
       - 'null'
       - float
     doc: Variant in dbSNP with GMAF >= 0.05
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --pop-score-common
@@ -233,7 +211,6 @@ inputs:
       - 'null'
       - float
     doc: Variant known to dbSNP but no mutation or GMAF info
-    default: 0.6
     inputBinding:
       position: 102
       prefix: --pop-score-known
@@ -242,7 +219,6 @@ inputs:
       - 'null'
       - float
     doc: Variant from mutation (OMIM) or locus-specific databases
-    default: 0.95
     inputBinding:
       position: 102
       prefix: --pop-score-mutation
@@ -251,7 +227,6 @@ inputs:
       - 'null'
       - float
     doc: Variant is not present in dbSNP according to VCF
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --pop-score-novel
@@ -260,7 +235,6 @@ inputs:
       - 'null'
       - float
     doc: Variant in dbSNP with GMAF < 0.01
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --pop-score-rare
@@ -269,7 +243,6 @@ inputs:
       - 'null'
       - float
     doc: Variant in dbSNP with GMAF 0.01-0.05
-    default: 0.02
     inputBinding:
       position: 102
       prefix: --pop-score-uncommon
@@ -278,7 +251,6 @@ inputs:
       - 'null'
       - float
     doc: A case sample was called heterozygous (NA/0.50)
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --seg-score-case-het
@@ -287,7 +259,6 @@ inputs:
       - 'null'
       - float
     doc: A case sample was called homozygous variant (0.80/NA)
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --seg-score-case-hom
@@ -296,7 +267,6 @@ inputs:
       - 'null'
       - float
     doc: A case sample was called reference/wild-type (0.50/0.10)
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --seg-score-case-ref
@@ -305,7 +275,6 @@ inputs:
       - 'null'
       - float
     doc: A case sample was called heterozygous (0.10/NA)
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --seg-score-control-het
@@ -314,7 +283,6 @@ inputs:
       - 'null'
       - float
     doc: A case sample was called homozygous variant (0.01/0.10)
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --seg-score-control-hom

@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: number of I/O processes
-    default: 8
     inputBinding:
       position: 102
       prefix: --iop
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - boolean
     doc: retain information in auxiliary fields during the conversion
-    default: true
     inputBinding:
       position: 102
       prefix: --lossless
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: record compression method [zlib] (only for blow5 format)
-    default: zlib
     inputBinding:
       position: 102
       prefix: --compress
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: signal compression method [svb-zd] (only for blow5 format)
-    default: svb-zd
     inputBinding:
       position: 102
       prefix: --sig-compress

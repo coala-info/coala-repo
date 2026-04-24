@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Set minimum interval size for CSI indices to 2^INT
-    default: 14
     inputBinding:
       position: 103
       prefix: --min-shift

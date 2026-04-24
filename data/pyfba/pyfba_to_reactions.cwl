@@ -37,7 +37,6 @@ inputs:
     doc: "organism type for the model (currently allowed are\n                   \
       \     ['gramnegative', 'grampositive', 'microbial',\n                      \
       \  'mycobacteria', 'plant']). Default=gramnegative"
-    default: gramnegative
     inputBinding:
       position: 101
       prefix: --type

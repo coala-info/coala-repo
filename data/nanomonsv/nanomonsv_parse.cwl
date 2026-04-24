@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Sizes of ambiguities of breakpoint positions from the observed ones
-    default: 20
     inputBinding:
       position: 103
       prefix: --minimum_breakpoint_ambiguity
@@ -45,7 +44,6 @@ inputs:
       - int
     doc: Two split alignments whose margin sizes are no more than this value is 
       counted as candidate breakpoint
-    default: 50
     inputBinding:
       position: 103
       prefix: --split_alignment_check_margin

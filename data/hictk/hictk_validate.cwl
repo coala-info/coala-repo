@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output the given input path using attribute "uri".
-    default: false
     inputBinding:
       position: 102
       prefix: --exclude-file-path
@@ -33,7 +32,6 @@ inputs:
       - boolean
     doc: When processing multi-resolution or single-cell files, do not fail as 
       soon as the first error is detected.
-    default: false
     inputBinding:
       position: 102
       prefix: --fail-fast
@@ -51,7 +49,6 @@ inputs:
       - string
     doc: 'Format used to report the outcome of file validation. Should be one of:
       json, toml, or yaml.'
-    default: json
     inputBinding:
       position: 102
       prefix: --output-format

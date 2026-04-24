@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: gtf/gff3 feature
-    default: exon
     inputBinding:
       position: 102
       prefix: --feature
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: gtf/gff3 attribute
-    default: gene_id
     inputBinding:
       position: 102
       prefix: --id
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: min. mapping quality
-    default: 10
     inputBinding:
       position: 102
       prefix: --map-qual
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: 'strand-specific counting (0: unstranded, 1: stranded, 2: reverse stranded)'
-    default: 0
     inputBinding:
       position: 102
       prefix: --stranded

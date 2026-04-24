@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - float
     doc: reference sequence block size in billions of letters
-    default: 4
     inputBinding:
       position: 101
       prefix: --block-size
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: number of cpu threads
-    default: 0
     inputBinding:
       position: 101
       prefix: --threads

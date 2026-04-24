@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: minimum genomic length to plot on either side of the target gene
-    default: 0
     inputBinding:
       position: 102
   - id: config
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - File
     doc: redirect stdout to a log file
-    default: None
     inputBinding:
       position: 102
       prefix: --log
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: level of logging to output
-    default: INFO
     inputBinding:
       position: 102
       prefix: --log_level
@@ -50,7 +47,6 @@ inputs:
     doc: Marker on the diagram given by genomic position, May be a single 
       position or a range. The label should be a short descriptor to avoid 
       overlapping labels on the diagram
-    default: '[]'
     inputBinding:
       position: 102
       prefix: --marker
@@ -60,7 +56,6 @@ inputs:
       - type: array
         items: string
     doc: bam file to use as data for plotting read_depth
-    default: '[]'
     inputBinding:
       position: 102
       prefix: --read_depth_plot

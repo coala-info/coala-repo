@@ -21,7 +21,6 @@ inputs:
     doc: 'Number of processes to use for aligning and parsing original basecalls.
       Each process will independently load the genome into memory, so use caution
       with larger genomes (e.g. human). Default: 1'
-    default: 1
     inputBinding:
       position: 103
       prefix: --align-processes
@@ -41,7 +40,6 @@ inputs:
     doc: 'Batch size (number of reads) for each alignment call. Note that a new system
       call to the mapper is made for each batch (including loading of the genome),
       so it is advised to use larger values for larger genomes. Default: 500'
-    default: 500
     inputBinding:
       position: 103
       prefix: --alignment-batch-size
@@ -51,7 +49,6 @@ inputs:
       - string
     doc: 'FAST5 group to use for obtaining original basecalls (under Analyses group).
       Default: Basecall_1D_000'
-    default: Basecall_1D_000
     inputBinding:
       position: 103
       prefix: --basecall-group
@@ -62,7 +59,6 @@ inputs:
         items: string
     doc: "FAST5 subgroup (under Analyses/[corrected-group]) where individual template
       and/or complement reads are stored. Default: ['BaseCalled_template']"
-    default: "['BaseCalled_template']"
     inputBinding:
       position: 103
       prefix: --basecall-subgroups
@@ -81,7 +77,6 @@ inputs:
       - string
     doc: 'FAST5 group to access/plot created by genome_resquiggle script. Default:
       RawGenomeCorrected_000'
-    default: RawGenomeCorrected_000
     inputBinding:
       position: 103
       prefix: --corrected-group
@@ -92,7 +87,6 @@ inputs:
     doc: Maximum number of changepoints to find within a single indel group. 
       (Not setting this option can cause a process to stall and cannot be 
       controlled by the timeout option).
-    default: No limit
     inputBinding:
       position: 103
       prefix: --cpts-limit
@@ -138,7 +132,6 @@ inputs:
       methylation manuscript (this option requires the [--pore-model-filename] 
       option). "median" will shift by the median of each reads' raw signal and 
       scale by the MAD.
-    default: median
     inputBinding:
       position: 103
       prefix: --normalization-type
@@ -149,7 +142,6 @@ inputs:
     doc: Number of median absolute deviation (MAD) values at which to clip the 
       raw signal. This can help avoid strong re-segmentation artifacts from 
       spikes in signal. Set to negative value to disable outlier clipping.
-    default: 5
     inputBinding:
       position: 103
       prefix: --outlier-threshold
@@ -177,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of processes. Default: 2'
-    default: 2
     inputBinding:
       position: 103
       prefix: --processes
@@ -222,7 +213,6 @@ inputs:
       - 'null'
       - int
     doc: Timeout in seconds for the processing of a single read.
-    default: No timeout
     inputBinding:
       position: 103
       prefix: --timeout

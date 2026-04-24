@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: Full histo. Don't skip count 0.
-    default: false
     inputBinding:
       position: 102
       prefix: --full
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: High count value of histogram
-    default: 10000
     inputBinding:
       position: 102
       prefix: --high
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Increment value for buckets
-    default: 1
     inputBinding:
       position: 102
       prefix: --increment
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Low count value of histogram
-    default: 1
     inputBinding:
       position: 102
       prefix: --low
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output information
-    default: false
     inputBinding:
       position: 102
       prefix: --verbose

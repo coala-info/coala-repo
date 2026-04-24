@@ -55,7 +55,6 @@ inputs:
       - 'null'
       - File
     doc: Input sam file
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -66,7 +65,6 @@ inputs:
     doc: Maximum allowed length of the SEQ/QUAL string in the input file. 
       Primarily useful for marking duplicates in files containing singleton long
       reads.
-    default: 500
     inputBinding:
       position: 101
       prefix: --maxReadLength
@@ -76,7 +74,6 @@ inputs:
       - int
     doc: Maximum number of split alignments for a read to be included in 
       splitter file.
-    default: 2
     inputBinding:
       position: 101
       prefix: --maxSplitCount
@@ -86,7 +83,6 @@ inputs:
       - int
     doc: Maximum number of un-aligned bases between two alignments to be 
       included in splitter file.
-    default: 50
     inputBinding:
       position: 101
       prefix: --maxUnmappedBases
@@ -96,7 +92,6 @@ inputs:
       - int
     doc: Minumum number of bases a mapped read must be clipped to be included in
       unmapped file.
-    default: 20
     inputBinding:
       position: 101
       prefix: --minClipSize
@@ -106,7 +101,6 @@ inputs:
       - int
     doc: Minimum structural variant feature size for split alignments to be 
       included in splitter file.
-    default: 50
     inputBinding:
       position: 101
       prefix: --minIndelSize
@@ -116,7 +110,6 @@ inputs:
       - int
     doc: Minimum non-overlaping base pairs between two alignments for a read to 
       be included in splitter file.
-    default: 20
     inputBinding:
       position: 101
       prefix: --minNonOverlap

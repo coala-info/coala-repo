@@ -40,35 +40,30 @@ inputs:
         By default, this is disabled and the output will be reported in BED format.
     inputBinding:
       prefix: -bedpe
-    default: false
   mate_one:
     type: boolean?
     label: mate one
     doc: When writing BEDPE (-bedpe) format, always report mate one as the first BEDPE “block”.
     inputBinding:
       prefix: -mate1
-    default: false
   bed_twelve:
     type: boolean?
     label: bed twelve
     doc: Write “blocked” BED (a.k.a. BED12) format. This will convert “spliced” BAM alignments (denoted by the “N” CIGAR operation) to BED12. Forces -split.
     inputBinding:
       prefix: -bed12
-    default: false
   split:
     type: boolean?
     label: split
     doc: Report each portion of a “split” BAM (i.e., having an “N” CIGAR operation) alignment as a distinct BED intervals.
     inputBinding:
       prefix: -split
-    default: false
   split_d:
     type: boolean?
     label: split and d operation
     doc: Report each portion of a “split” BAM while obeying both “N” CIGAR and “D” operation. Forces -split.
     inputBinding:
       prefix: -splitD
-    default: false
   edit_distance:
     type: boolean?
     label: edit distance
@@ -77,28 +72,24 @@ inputs:
       When -ed is used with -bedpe, the total edit distance from the two mates is reported.
     inputBinding:
       prefix: -ed
-    default: false
   tag:
     type: boolean?
     label: use other tag
     doc: Use other numeric BAM alignment tag for BED score. Default for BED is to use mapping quality. Disallowed with BEDPE output.
     inputBinding:
       prefix: -tag
-    default: false
   color:
     type: boolean?
     label: set color
     doc: An R,G,B string for the color used with BED12 format. Default is (255,0,0).
     inputBinding:
       prefix: -color
-    default: false
   cigar:
     type: boolean?
     label: add cigar string
     doc: Add the CIGAR string to the BED entry as a 7th column.
     inputBinding:
       prefix: -cigar
-    default: false
 
 outputs:
   bed_file:

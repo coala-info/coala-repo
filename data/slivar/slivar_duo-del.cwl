@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - File
     doc: input SNP/indel VCF
-    default: /dev/stdin
     inputBinding:
       position: 1
   - id: affected_only
@@ -45,7 +44,6 @@ inputs:
       - int
     doc: minimum number of variants required to define a region (use 1 to output
       all putative deletions)
-    default: 3
     inputBinding:
       position: 102
       prefix: --min-sites
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: minimum size in base-pairs of a region
-    default: 50
     inputBinding:
       position: 102
       prefix: --min-size

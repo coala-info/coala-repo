@@ -54,7 +54,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for temporary files
-    default: $TEMP or /tmp or ./
     inputBinding:
       position: 101
       prefix: --tmp

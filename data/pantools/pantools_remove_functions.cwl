@@ -19,7 +19,6 @@ inputs:
       all).\nnodes: 'GO', 'pfam', 'tigrfam' and 'interpro' nodes.\nproperties: 'COG',
       'phobius' and 'signalp' properties.\nall: combine the 'nodes' and 'properties'
       modes.\nCOG|phobius|signalp: Only remove a specific property."
-    default: all
     inputBinding:
       position: 102
       prefix: --mode

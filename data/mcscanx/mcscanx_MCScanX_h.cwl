@@ -23,7 +23,6 @@ inputs:
       - int
     doc: patterns of collinear blocks. 0:intra- and inter-species (default); 
       1:intra-species; 2:inter-species
-    default: 0
     inputBinding:
       position: 102
       prefix: -b
@@ -33,7 +32,6 @@ inputs:
       - int
     doc: 'whether to consider homology scores. 0:not consider (default); 1: lower
       preferred; 2: higher preferred'
-    default: 0
     inputBinding:
       position: 102
       prefix: -c
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: E_VALUE, alignment significance
-    default: '1e-05'
     inputBinding:
       position: 102
       prefix: -e
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: GAP_PENALTY, gap penalty
-    default: -1
     inputBinding:
       position: 102
       prefix: -g
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: MATCH_SCORE, final score=MATCH_SCORE+NUM_GAPS*GAP_PENALTY
-    default: '50'
     inputBinding:
       position: 102
       prefix: -k
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: MATCH_SIZE, number of genes required to call collinear blocks
-    default: 5
     inputBinding:
       position: 102
       prefix: -s
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: MAX_GAPS, maximum gaps allowed
-    default: 25
     inputBinding:
       position: 102
       prefix: -m
@@ -87,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: OVERLAP_WINDOW, maximum distance (# of genes) to collapse BLAST matches
-    default: 5
     inputBinding:
       position: 102
       prefix: -w

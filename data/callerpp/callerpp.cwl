@@ -19,7 +19,6 @@ inputs:
     doc: "The type of alignment to perform\n                             0 - local
       (Smith-Waterman\n                             1 - global (Needleman-Wunsch)\n\
       \                             2 - semi-global (glocal)"
-    default: 0
     inputBinding:
       position: 102
       prefix: --algorithm
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: The penalty for a gap
-    default: -8
     inputBinding:
       position: 102
       prefix: --gap
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - File
     doc: Read from this input file, stdin otherwise
-    default: stdin
     inputBinding:
       position: 102
       prefix: --input
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: Left align the sequences in the multiple sequence alignment
-    default: false
     inputBinding:
       position: 102
       prefix: --left-align
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: The score for a sequence match
-    default: 5
     inputBinding:
       position: 102
       prefix: --match
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: The penalty for a sequence mismatch
-    default: -4
     inputBinding:
       position: 102
       prefix: --mismatch
@@ -73,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output the per-base coverage for the consensus
-    default: false
     inputBinding:
       position: 102
       prefix: --coverage
@@ -82,7 +75,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output multiple sequence alignment
-    default: false
     inputBinding:
       position: 102
       prefix: --msa
@@ -91,7 +83,6 @@ inputs:
       - 'null'
       - boolean
     doc: Re-compute the MSA by adding in the consensus first
-    default: false
     inputBinding:
       position: 102
       prefix: --pairwise-msa
@@ -102,7 +93,6 @@ inputs:
     doc: "Resort the input sequences prior to POA/MSA\n                          \
       \   0 - do not sort\n                             1 - by length sequence (shortest
       first)\n                             2 - by length sequence (longest first)"
-    default: 0
     inputBinding:
       position: 102
       prefix: --resort

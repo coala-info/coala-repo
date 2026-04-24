@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Number of pixels allocated to each process
-    default: 10000000
     inputBinding:
       position: 102
       prefix: --chunksize
@@ -71,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to use for batch processing chunks of pixels
-    default: 1
     inputBinding:
       position: 102
       prefix: --nproc
@@ -84,7 +82,6 @@ inputs:
       steps of factor 10 interleaved with steps of 2 and 5). Examples: 1000B=1000,2000,4000,8000,...
       1000N=1000,2000,5000,10000,... 5000N=5000,10000,25000,50000,... 4DN is an alias
       for 1000,2000,5000N'
-    default: B
     inputBinding:
       position: 102
       prefix: --resolutions

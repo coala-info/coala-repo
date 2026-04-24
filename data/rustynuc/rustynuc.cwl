@@ -15,7 +15,6 @@ inputs:
       - float
     doc: AF on both the ff and fr at which point a call in the VCF will excluded
       from the OxoAF filter
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --af-both-pass
@@ -25,7 +24,6 @@ inputs:
       - float
     doc: AF above this cutoff in EITHER read orientation will be excluded from 
       OxoAF filter
-    default: 0.25
     inputBinding:
       position: 102
       prefix: --af-either-pass
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: FDR threshold
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --alpha
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: Significance threshold for Fisher's test
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --fishers-sig
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum pileup depth to use
-    default: 1000
     inputBinding:
       position: 102
       prefix: --max-depth
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality to consider
-    default: 20
     inputBinding:
       position: 102
       prefix: --quality
@@ -87,7 +81,6 @@ inputs:
       - int
     doc: Minimum number of aligned reads in ff or fr orientation for a position 
       to be considered
-    default: 4
     inputBinding:
       position: 102
       prefix: --min-reads
@@ -147,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 4
     inputBinding:
       position: 102
       prefix: --threads

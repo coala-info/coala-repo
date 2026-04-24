@@ -27,7 +27,6 @@ inputs:
       - type: array
         items: string
     doc: Species to install data for
-    default: human
     inputBinding:
       position: 101
       prefix: --species

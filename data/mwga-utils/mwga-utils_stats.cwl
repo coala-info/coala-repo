@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output stats files
-    default: stats
     inputBinding:
       position: 102
       prefix: -p

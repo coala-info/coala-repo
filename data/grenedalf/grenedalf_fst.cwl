@@ -119,7 +119,6 @@ inputs:
       for the masked digits. All positions above that value are masked. The 
       default is 0, meaning that only exactly the positons with value 0 will not
       be masked.
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-mask-samples-fasta-min
@@ -186,7 +185,6 @@ inputs:
       the masked digits. All positions above that value are masked. The default 
       is 0, meaning that only exactly the positons with value 0 will not be 
       masked.
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-mask-total-fasta-min
@@ -250,7 +248,6 @@ inputs:
       the filtered digits. Only positions with that value or lower will be kept.
       The default is 0, meaning that all positions with digits greater than 0 
       will be removed.
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-region-fasta-min
@@ -300,7 +297,6 @@ inputs:
     doc: It is possible to provide multiple of the above region filter options, 
       even of different types. In that case, decide on how to combine the loci 
       of these filters.
-    default: union
     inputBinding:
       position: 101
       prefix: --filter-region-set
@@ -324,7 +320,6 @@ inputs:
       this is set to a value greater than 0, and the number of deletions at the 
       position is equal to or greater than this value, the sample is filtered 
       out.
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-sample-deletions-limit
@@ -336,7 +331,6 @@ inputs:
       allele. Counts above that are set to zero, and hence ignored as an 
       allele/variant. For example, spuriously high read counts can be filtered 
       out this way.
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-sample-max-count
@@ -349,7 +343,6 @@ inputs:
       in a sample is greater than the provided value, the sample is ignored at 
       this position. This can for example be used to filter spuriously high read
       depth positions.
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-sample-max-read-depth
@@ -361,7 +354,6 @@ inputs:
       allele. Counts below that are set to zero, and hence ignored as an 
       allele/variant. For example, singleton read sequencing errors can be 
       filtered out this way.
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-sample-min-count
@@ -373,7 +365,6 @@ inputs:
       covered. If the sum of nucleotide counts (in `ACGT`) at a given position 
       in a sample is less than the provided value, the sample is ignored at this
       position.
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-sample-min-read-depth
@@ -411,7 +402,6 @@ inputs:
       summed across all samples. If this is set to a value greater than 0, and 
       the number of deletions at the position is equal to or greater than this 
       value, the position is filtered out.
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-total-deletions-limit
@@ -424,7 +414,6 @@ inputs:
       in total (across all samples) is greater than the provided value, the 
       position is ignored. This can for example be used to filter spuriously 
       high read depth positions.
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-total-max-read-depth
@@ -436,7 +425,6 @@ inputs:
       covered. If the sum of nucleotide counts (in `ACGT`) at a given position 
       in total (across all samples) is less than the provided value, the 
       position is ignored.
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-total-min-read-depth
@@ -461,7 +449,6 @@ inputs:
       (summed across all samples) to identify what is considered a SNP. 
       Positions where the counts are above this are filtered out; probably not 
       relevant in practice, but offered for completeness.
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-total-snp-max-count
@@ -472,7 +459,6 @@ inputs:
     doc: When filtering for positions that are SNPs, use this minimum count 
       (summed across all samples) to identify what is considered a SNP. 
       Positions where the counts are below this are filtered out.
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-total-snp-min-count
@@ -487,7 +473,6 @@ inputs:
       those; if only the reference base is known, the most frequent 
       non-reference base is used as the alternative; if neither is known, the 
       first and second most frequent bases are used to compute the frequency.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --filter-total-snp-min-frequency
@@ -524,7 +509,6 @@ inputs:
       point frequency. This is of course above any typical read depth, but 
       allows for more accurate counts when using for instance 
       haplotype-corrected frequencies such as those from HAF-pipe.
-    default: 1000000.0
     inputBinding:
       position: 101
       prefix: --frequency-table-depth-factor
@@ -646,7 +630,6 @@ inputs:
       - 'null'
       - string
     doc: Separator char between fields of the frequency table input.
-    default: comma
     inputBinding:
       position: 101
       prefix: --frequency-table-separator-char
@@ -699,7 +682,6 @@ inputs:
       their union, input files that do not have data at a particular locus are 
       considered as missing at that locus. Note that we allow to use multiple 
       input files even with different file types.
-    default: union
     inputBinding:
       position: 101
       prefix: --multi-file-locus-set
@@ -710,7 +692,6 @@ inputs:
     doc: Set the text to use in the output for n/a and NaN entries (e.g., 
       resulting from positions with no counts, or windows with no variants). 
       This is useful to match formatting expectations of downstream software.
-    default: nan
     inputBinding:
       position: 101
       prefix: --na-entry
@@ -739,7 +720,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to write files to
-    default: .
     inputBinding:
       position: 101
       prefix: --out-dir
@@ -750,7 +730,6 @@ inputs:
     doc: Minimum phred quality score [0-90] for a base in (m)pileup files to be 
       considered. Bases below this are ignored when computing allele 
       frequencies. Default is 0, meaning no filtering by phred quality score.
-    default: 0
     inputBinding:
       position: 101
       prefix: --pileup-min-base-qual
@@ -777,7 +756,6 @@ inputs:
       identical with an ASCII offset of 64 (we provide different names for 
       completeness). Lastly, "solexa" has an offset of 64, but uses a different 
       equation (not phred score) for the encoding.
-    default: sanger
     inputBinding:
       position: 101
       prefix: --pileup-quality-encoding
@@ -902,7 +880,6 @@ inputs:
     doc: Minimum phred-scaled quality score [0-90] for a base in sam/bam/cram 
       files to be considered. Bases below this are ignored when computing allele
       frequencies. Default is 0, meaning no filtering by base quality.
-    default: 0
     inputBinding:
       position: 101
       prefix: --sam-min-base-qual
@@ -914,7 +891,6 @@ inputs:
       sam/bam/cram files to be considered. Any read that is below the given 
       value of mapping quality will be completely discarded, and its bases not 
       taken into account. Default is 0, meaning no filtering by base quality.
-    default: 0
     inputBinding:
       position: 101
       prefix: --sam-min-map-qual
@@ -975,7 +951,6 @@ inputs:
       - 'null'
       - string
     doc: Separator char between fields of output tabular data.
-    default: comma
     inputBinding:
       position: 101
       prefix: --separator-char
@@ -1000,7 +975,6 @@ inputs:
       (1) `OMP_NUM_THREADS` (OpenMP) and (2) `SLURM_CPUS_PER_TASK` (slurm), as 
       well as (3) the hardware concurrency (number of CPU cores), taking 
       hyperthreads into account, in the given order of precedence.
-    default: 14
     inputBinding:
       position: 101
       prefix: --threads
@@ -1086,7 +1060,6 @@ inputs:
       the counted digits. All positions above that value are counted. The 
       default is 0, meaning that only exactly the positons with value 0 will not
       be counted.
-    default: 0
     inputBinding:
       position: 101
       prefix: --window-average-loci-fasta-min
@@ -1120,7 +1093,6 @@ inputs:
       that is how far to move to get to the next window. If set to 0 (default), this
       is set to the same value as the `--window-interval-width`, in which case windows
       do not overlap.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --window-interval-stride
@@ -1130,7 +1102,6 @@ inputs:
       - int
     doc: 'Required when using `--window-type interval`: Width of each window along
       the chromosome, in bases.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --window-interval-width
@@ -1143,7 +1114,6 @@ inputs:
       such as (biallelic) SNPs (which most commands do implicitly), so that each window
       of the analysis conists of a fixed number of SNPs, instead of a fixed length
       along the genome.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --window-queue-count
@@ -1155,7 +1125,6 @@ inputs:
       the chromosome, that is how many positions does the window move forward each
       time. If set to 0 (default), this is set to the same value as the `--window-queue-count`,
       meaning that each new window consists of new positions.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --window-queue-stride

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - float
     doc: Confidence interval used for clustering
-    default: 0.001
     inputBinding:
       position: 102
       prefix: -a
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of variant reads
-    default: 3
     inputBinding:
       position: 102
       prefix: -varLB
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: Confidence interval used for pooled frequency matrix
-    default: 0.01
     inputBinding:
       position: 102
       prefix: -b

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for output files (0-9).
-    default: 6
     inputBinding:
       position: 101
       prefix: --compression
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for compression.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn on debugging mode
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -28,7 +27,6 @@ inputs:
     doc: Quality (phred quality score) cutoff for UMI.Default is 13, that is UMI
       with qualities >= 13 willbe kept. This program assumes the phred quality 
       scoresin the fastq file are using sanger format
-    default: 13
     inputBinding:
       position: 101
       prefix: --quality
@@ -44,7 +42,6 @@ inputs:
       - string
     doc: Set the UMI locators. If you have multiple, separate them by comma. 
       e.g. GGG,TCA,ATC
-    default: GGG,TCA,ATC
     inputBinding:
       position: 101
       prefix: --umi-locator
@@ -56,7 +53,6 @@ inputs:
       locators. If you have multiple, separate them by comma. e.g. A,C,G,T. The 
       quality for this nt is sometimes low, so the default is all possible four 
       nucleotides
-    default: A,C,G,T,N
     inputBinding:
       position: 101
       prefix: --umi-padding
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: Set the UMI patterns.
-    default: None
     inputBinding:
       position: 101
       prefix: --umi-pattern
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - boolean
     doc: Also include detailed stats for UMI and padding usage
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Stop calculating beyond this distance
-    default: 9999
     inputBinding:
       position: 102
       prefix: -x
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: 'Output: 1=lower-tri 2=upper-tri 3=full'
-    default: 3
     inputBinding:
       position: 102
       prefix: -m

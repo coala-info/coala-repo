@@ -22,7 +22,6 @@ inputs:
       - int
     doc: 'Define type of preprocessing for read-in --bam files. 1: none, 2: R2 only
       (eCLIP), 3: R1 only (iCLIP)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --bam-pp-mode
@@ -48,7 +47,6 @@ inputs:
       - int
     doc: Width of exon-intron border regions (EIB) to calculate coverage drops from
       exon to intron region
-    default: 20
     inputBinding:
       position: 101
       prefix: --eib-width
@@ -58,7 +56,6 @@ inputs:
       - int
     doc: 'How to extract the exon-intron border ratio of an exon. 1: higher coverage,
       2: average'
-    default: 1
     inputBinding:
       position: 101
       prefix: --eibr-mode
@@ -68,7 +65,6 @@ inputs:
       - type: array
         items: string
     doc: Define F1 filters to be applied for F1 transcript selection filtering
-    default: TSC
     inputBinding:
       position: 101
       prefix: --f1-filter
@@ -78,7 +74,6 @@ inputs:
       - type: array
         items: string
     doc: Define F2 filters to be applied for F2 transcript selection filtering
-    default: EIR ISRN ISR ISRFC SEO FUCO TCOV
     inputBinding:
       position: 101
       prefix: --f2-filter
@@ -88,7 +83,6 @@ inputs:
       - int
     doc: Define transcript selection strategy for a given exonic site during F2 filtering.
       (1) majority vote, (2) sequential
-    default: 1
     inputBinding:
       position: 101
       prefix: --f2-mode
@@ -116,7 +110,6 @@ inputs:
       - int
     doc: 'Define which portions of intron-spanning reads to use for overlap calculations.
       1: whole matching region, 2: end positions only'
-    default: 1
     inputBinding:
       position: 101
       prefix: --isr-ext-mode
@@ -125,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: Set maximum region length for intron-spanning read matches
-    default: 10
     inputBinding:
       position: 101
       prefix: --isr-max-reg-len
@@ -150,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of --in sites
-    default: 250
     inputBinding:
       position: 101
       prefix: --max-len
@@ -159,7 +150,6 @@ inputs:
       - 'null'
       - int
     doc: Extend regions by --merge-ext before merging overlapping regions
-    default: 0
     inputBinding:
       position: 101
       prefix: --merge-ext
@@ -169,7 +159,6 @@ inputs:
       - int
     doc: Defines whether or how to merge nearby sites before applying --seq-ext. (1)
       No merge, (2) merge overlapping/adjacent
-    default: 1
     inputBinding:
       position: 101
       prefix: --merge-mode
@@ -179,7 +168,6 @@ inputs:
       - float
     doc: Minimum exon to neighboring intron coverage for exonic site to be reported
       as exonic site with transcript context
-    default: 4.0
     inputBinding:
       position: 101
       prefix: --min-ei-ratio
@@ -189,7 +177,6 @@ inputs:
       - float
     doc: Minimum exon border to neighboring intron border region coverage for an exon
       to be considered for transcript context selection
-    default: 4.0
     inputBinding:
       position: 101
       prefix: --min-eib-ratio
@@ -199,7 +186,6 @@ inputs:
       - int
     doc: Minimum intron-spanning read count to connect two sites at adjacent exon
       borders
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-exbs-isr-c
@@ -208,7 +194,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum exon overlap of a site to be considered for transcript context extraction
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --min-exon-overlap
@@ -218,7 +203,6 @@ inputs:
       - int
     doc: Minimum number of intronic sites needed per transcript to assign all sites
       on the transcript to genomic context
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-tis-sites
@@ -311,7 +295,6 @@ inputs:
       - int
     doc: "Define which BAM read part to take for overlap and coverage calculations.
       1: full-length, 2: 5' end, 3: center"
-    default: 1
     inputBinding:
       position: 101
       prefix: --read-pos-mode
@@ -344,7 +327,6 @@ inputs:
       - 'null'
       - int
     doc: Up- and downstream sequence extension length of sites
-    default: 0
     inputBinding:
       position: 101
       prefix: --seq-ext
@@ -354,7 +336,6 @@ inputs:
       - int
     doc: Define mode for site context sequence extraction after determining context.
       (1) Complete site, (2) Center, (3) Upstream end
-    default: 1
     inputBinding:
       position: 101
       prefix: --seq-ext-mode

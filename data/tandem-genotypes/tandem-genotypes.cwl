@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: require alignment >= BP beyond both sides of a repeat
-    default: 100
     inputBinding:
       position: 103
       prefix: --far
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: count insertions <= BP beyond a repeat
-    default: 60
     inputBinding:
       position: 103
       prefix: --near
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: ignore repeats with unit shorter than BP
-    default: 2
     inputBinding:
       position: 103
       prefix: --min-unit
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - float
     doc: ignore any alignment with mismap probability > PROB
-    default: '1e-06'
     inputBinding:
       position: 103
       prefix: --mismap
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: L=lenient, S=strict
-    default: L
     inputBinding:
       position: 103
       prefix: --mode
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: 'output format: 1=original, 2=alleles'
-    default: 1
     inputBinding:
       position: 103
       prefix: --output
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: ignore mostly-lowercase alignments
-    default: 1
     inputBinding:
       position: 103
       prefix: --postmask
@@ -90,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: promoter length
-    default: 300
     inputBinding:
       position: 103
       prefix: --promoter
@@ -108,7 +100,6 @@ inputs:
       - int
     doc: 'select: all repeats (0), non-intergenic repeats (1), non-intergenic non-intronic
       repeats (2)'
-    default: 0
     inputBinding:
       position: 103
       prefix: --select

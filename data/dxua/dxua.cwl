@@ -26,7 +26,6 @@ inputs:
     doc: Size of chunks in which the file should be uploaded. Specify an integer
       size in bytes or append optional units (B, K, M, G). E.g., '50M' sets 
       chunk size to 50 megabytes.
-    default: 75M
     inputBinding:
       position: 102
       prefix: --chunk-size
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel compression threads
-    default: 8
     inputBinding:
       position: 102
       prefix: --compress-threads
@@ -76,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the destination folder
-    default: /
     inputBinding:
       position: 102
       prefix: --folder
@@ -128,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel disk read threads
-    default: 2
     inputBinding:
       position: 102
       prefix: --read-threads
@@ -173,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: Number of tries to upload each chunk
-    default: 3
     inputBinding:
       position: 102
       prefix: --tries
@@ -192,7 +187,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel upload threads
-    default: 8
     inputBinding:
       position: 102
       prefix: --upload-threads
@@ -209,7 +203,6 @@ inputs:
       - 'null'
       - string
     doc: Use "--visibility hidden" to set the file's visibility as hidden.
-    default: visible
     inputBinding:
       position: 102
       prefix: --visibility

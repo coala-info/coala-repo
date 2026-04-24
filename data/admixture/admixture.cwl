@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: set method (em or block). block is default
-    default: block
     inputBinding:
       position: 103
       prefix: --method

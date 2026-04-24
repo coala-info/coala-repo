@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: A list of columns that you would like returned
-    default: '*'
     inputBinding:
       position: 102
       prefix: --columns
@@ -35,7 +34,6 @@ inputs:
       - float
     doc: Minimum required AF difference between the samples representing the 
       first and final timepoints
-    default: 0
     inputBinding:
       position: 102
       prefix: --endDiff
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a maximum normal sample AF to allow
-    default: 0
     inputBinding:
       position: 102
       prefix: --maxNorm
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth required in all samples
-    default: 0
     inputBinding:
       position: 102
       prefix: --minDP
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum AF required of the sample representing the final timepoint
-    default: 0
     inputBinding:
       position: 102
       prefix: --minEnd
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum genotype quality required in all samples
-    default: 0
     inputBinding:
       position: 102
       prefix: --minGQ
@@ -88,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum r correlation coefficient required for AFs
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --minR
@@ -97,7 +90,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum slope required for the AFs across samples
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --minSlope
@@ -125,7 +117,6 @@ inputs:
       - string
     doc: Rather than including all samples, a string of comma-separated 
       specified samples to use
-    default: All
     inputBinding:
       position: 102
       prefix: --samples

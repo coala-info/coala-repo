@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overlap; identify groups that tend to associate/co-occur (default).
-    default: true
     inputBinding:
       position: 101
       prefix: --associate
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - boolean
     doc: Bonferroni correction multiple correction (recommended & default)
-    default: true
     inputBinding:
       position: 101
       prefix: --bonferroni
@@ -54,7 +52,6 @@ inputs:
       - float
     doc: 'Threshold for low-abundance data filtering (default: 0.05 i.e. any gene
       in <=5% of genomes.'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --filthreshold
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - boolean
     doc: Greater (recommended & default)
-    default: true
     inputBinding:
       position: 101
       prefix: --greater
@@ -105,7 +101,6 @@ inputs:
       - 'null'
       - float
     doc: 'Specify the significnace level cutoff (default: 0.05)'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --level
@@ -122,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: 'The number of cores to use (default: 2)'
-    default: 2
     inputBinding:
       position: 101
       prefix: --num_cores
@@ -131,7 +125,6 @@ inputs:
       - 'null'
       - string
     doc: 'The prefix of all output files (default: coincident).'
-    default: coincident
     inputBinding:
       position: 101
       prefix: --output
@@ -172,7 +165,6 @@ inputs:
       - float
     doc: 'Upper filter threshold for high-abundance data filtering (default: 1.0 i.e.
       any gene in >=100/% of genomes.'
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --upfilthreshold

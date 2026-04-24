@@ -62,12 +62,10 @@ inputs:
     type: int?
     doc: number of threads to use for computational processes
     label: number of threads
-    default: 2
   memory:
     type: int?
     doc: maximum memory usage in megabytes
     label: maximum memory usage in megabytes
-    default: 4000
   inputFile:
     label: Input File
     doc: Annotated genome in GBOL turtle file (.ttl) format
@@ -76,7 +74,6 @@ inputs:
     label: Run STAR
     doc: create STAR index for genome if true. (For genomes with exons)
     type: boolean
-    default: false
 
   genomeSAindexNbases:
   # TODO calculate genomeSAindexNbases automatically per genome

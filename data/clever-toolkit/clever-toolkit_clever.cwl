@@ -52,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: 'Only process given chromosome (default: all).'
-    default: all
     inputBinding:
       position: 104
       prefix: --chromosome
@@ -117,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use (default=1).
-    default: 1
     inputBinding:
       position: 104
       prefix: -T

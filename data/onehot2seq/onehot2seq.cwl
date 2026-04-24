@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: FASTA or text file
-    default: txt
     inputBinding:
       position: 101
       prefix: --format

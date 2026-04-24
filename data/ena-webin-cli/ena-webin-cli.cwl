@@ -43,7 +43,6 @@ inputs:
       - Directory
     doc: Root directory for the files declared in the manifest file. By default 
       the current working directory is used as the input directory.
-    default: current working directory
     inputBinding:
       position: 101
       prefix: --inputDir
@@ -62,7 +61,6 @@ inputs:
       the manifest file directory is used as the output directory. The <name> is
       the unique name from the manifest file. The validation reports are written
       in the <validate> sub-directory.
-    default: manifest file directory
     inputBinding:
       position: 101
       prefix: --outputDir

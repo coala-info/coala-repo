@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force to overwrite the existing files
-    default: false
     inputBinding:
       position: 101
       prefix: -f
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include multiple copied genes (tag with numerical suffix)
-    default: false
     inputBinding:
       position: 101
       prefix: -c

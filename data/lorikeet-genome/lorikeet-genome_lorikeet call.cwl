@@ -47,7 +47,6 @@ inputs:
       - type: array
         items: int
     doc: K-mer sizes for local reassembly
-    default:
       - 17
       - 25
     inputBinding:
@@ -75,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 10
     inputBinding:
       position: 101
       prefix: --threads

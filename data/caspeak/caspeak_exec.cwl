@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: 'genome data for bedtools (default: hg38 file in bedtools)'
-    default: hg38 file in bedtools
     inputBinding:
       position: 101
       prefix: --bedtools-genome
@@ -53,7 +52,6 @@ inputs:
       - float
     doc: 'maximum proportion of the read aligned to the reference genome (default:
       1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --max-prop
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: 'maximum length of the adaptor to be trimmed (default: 100)'
-    default: 100
     inputBinding:
       position: 101
       prefix: --max-trim-length
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum number of assembled sequences (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-asb-seq
@@ -80,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum coverage for a peak (default: 2)'
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-cov
@@ -89,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum length of the MEI in the insert sequence (default: 80)'
-    default: 80
     inputBinding:
       position: 101
       prefix: --min-inslen
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - float
     doc: 'minimum proportion of the MEI in the insert sequence (default: 0.2)'
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --min-insprop
@@ -108,7 +101,6 @@ inputs:
       - float
     doc: 'minimum proportion of the read aligned to the reference genome (default:
       0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-prop
@@ -117,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum read length (default: 500)'
-    default: 500
     inputBinding:
       position: 101
       prefix: --min-read-length
@@ -142,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: 'padding for the target region (default: 20)'
-    default: 20
     inputBinding:
       position: 101
       prefix: --padding
@@ -163,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: 'at most N reads are selected for assembly (default: 20)'
-    default: 20
     inputBinding:
       position: 101
       prefix: --sample
@@ -184,7 +173,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of threads (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --thread
@@ -209,7 +197,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'working directory (default: current directory)'
-    default: current directory
     inputBinding:
       position: 101
       prefix: --workdir

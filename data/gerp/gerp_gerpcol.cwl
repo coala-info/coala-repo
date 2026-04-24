@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: alignment in mfa format
-    default: false
     inputBinding:
       position: 101
       prefix: -a
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: force start at position 0
-    default: false
     inputBinding:
       position: 101
       prefix: -z
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: suffix for naming output files
-    default: .rates
     inputBinding:
       position: 101
       prefix: -x
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: tolerance for rate estimation
-    default: 0.001
     inputBinding:
       position: 101
       prefix: -p
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: Tr/Tv ratio
-    default: 2.0
     inputBinding:
       position: 101
       prefix: -r
@@ -86,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: tree neutral rate
-    default: compute from tree
     inputBinding:
       position: 101
       prefix: -n
@@ -95,7 +89,6 @@ inputs:
       - 'null'
       - float
     doc: tree scaling factor
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -s

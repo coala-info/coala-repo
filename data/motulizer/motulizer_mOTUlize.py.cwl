@@ -61,7 +61,6 @@ inputs:
       - 'null'
       - float
     doc: 'completeness cutoff for seed MAGs, default : 40'
-    default: 40
     inputBinding:
       position: 101
       prefix: --MAG-completeness
@@ -70,7 +69,6 @@ inputs:
       - 'null'
       - float
     doc: 'contamination cutoff for seed MAGs, default : 5'
-    default: 5
     inputBinding:
       position: 101
       prefix: --MAG-contamination
@@ -79,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: 'prefix for the mOTU names, default : mOTU_'
-    default: mOTU_
     inputBinding:
       position: 101
       prefix: --prefix
@@ -97,7 +94,6 @@ inputs:
       - 'null'
       - float
     doc: 'distance cutoff for making the graph, default : 95'
-    default: 95
     inputBinding:
       position: 101
       prefix: --similarity-cutoff
@@ -106,7 +102,6 @@ inputs:
       - 'null'
       - float
     doc: 'completeness cutoff for recruited SUBs, default : 0'
-    default: 0
     inputBinding:
       position: 101
       prefix: --SUB-completeness
@@ -115,7 +110,6 @@ inputs:
       - 'null'
       - float
     doc: 'contamination cutoff for recruited SUBs, default : 100'
-    default: 100
     inputBinding:
       position: 101
       prefix: --SUB-contamination

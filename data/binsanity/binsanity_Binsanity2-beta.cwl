@@ -13,7 +13,6 @@ inputs:
       - int
     doc: 'Indicate how many threads you want dedicated to the subprocess CheckM [Default:
       1]'
-    default: 1
     inputBinding:
       position: 101
       prefix: --checkm_threads
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Indicate a number of initial clusters for kmean [Default:25]
-    default: 25
     inputBinding:
       position: 101
       prefix: -C
@@ -33,7 +31,6 @@ inputs:
     doc: "Specify the convergence iteration number [Default:400]\n               \
       \             e.g Number of iterations with no change in the number \n     \
       \                       of estimated clusters that stops the convergence."
-    default: 400
     inputBinding:
       position: 101
       prefix: -v
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: 'Specify a damping factor between 0.5 and 1 [Default: 0.95]'
-    default: 0.95
     inputBinding:
       position: 101
       prefix: -d
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: 'Indicate a number for the kmer calculation [Default: 4]'
-    default: 4
     inputBinding:
       position: 101
       prefix: --kmer
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: 'Specify a max number of iterations [Default: 4000]'
-    default: 4000
     inputBinding:
       position: 101
       prefix: -m
@@ -86,7 +80,6 @@ inputs:
     type: Directory
     doc: "Give a name to the directory BinSanity results will be output in \n    \
       \                        [Default:'BINSANITY-RESULTS']"
-    default: BINSANITY-RESULTS
     inputBinding:
       position: 101
       prefix: -o
@@ -100,7 +93,6 @@ inputs:
       are low you will want to decrease the\n                            preference,
       if you have 10 or less replicates increasing\n                            the
       preference could benefit you."
-    default: '-3'
     inputBinding:
       position: 101
       prefix: -p
@@ -118,7 +110,6 @@ inputs:
       - 'null'
       - string
     doc: 'Specify a preference for refinement [Default: -25]'
-    default: '-25'
     inputBinding:
       position: 101
       prefix: --refine-preference
@@ -127,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the contig size cut-off [Default:1000 bp]
-    default: 1000
     inputBinding:
       position: 101
       prefix: -x

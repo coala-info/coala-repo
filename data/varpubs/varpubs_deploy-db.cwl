@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Species for variant annotation
-    default: human
     inputBinding:
       position: 101
       prefix: --species

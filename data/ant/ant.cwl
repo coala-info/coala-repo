@@ -154,7 +154,6 @@ inputs:
       - int
     doc: 'A niceness value for the main thread: 1 (lowest) to 10 (highest); 5 is the
       default'
-    default: 5
     inputBinding:
       position: 102
       prefix: -nice

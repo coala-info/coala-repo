@@ -25,7 +25,6 @@ inputs:
       powerlaw, logarithmic or exponential. The uniform and linear models do not require
       a parameter, but the other models take a parameter in the range [0, infinity).
       If this parameter is not specified, then it is randomly chosen.'
-    default: uniform 1
     inputBinding:
       position: 101
       prefix: -abundance_model
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix of the output files.
-    default: grinder
     inputBinding:
       position: 101
       prefix: -base_name
@@ -48,7 +46,6 @@ inputs:
       al. 2011: '314 38 1', which corresponds to 89% of bimeras, 11% of trimeras and
       0.3% of quadrameras. Note that this option only takes effect when you request
       the generation of chimeras with the <chimera_perc> option."
-    default: 314 38 1
     inputBinding:
       position: 101
       prefix: -chimera_dist
@@ -70,7 +67,6 @@ inputs:
       chimeras with the <chimera_perc> option. Also, this options is quite 
       memory intensive, so you should probably limit yourself to a relatively 
       small number of reference sequences if you want to use it.
-    default: 10
     inputBinding:
       position: 101
       prefix: -chimera_kmer
@@ -83,7 +79,6 @@ inputs:
       reads will contain the ID of all the reference sequences forming the 
       chimeric template. A typical value is 10% for amplicons. This option can 
       be used to generate chimeric shotgun reads as well.
-    default: 0
     inputBinding:
       position: 101
       prefix: -chimera_perc
@@ -95,7 +90,6 @@ inputs:
       proportionally to the number of copies of the target gene: at equal relative
       abundance, genomes that have multiple copies of the target gene contribute more
       amplicon reads than genomes that have a single copy. 0 = no, 1 = yes.'
-    default: 1
     inputBinding:
       position: 101
       prefix: -copy_bias
@@ -118,7 +112,6 @@ inputs:
       Removing these characters is done once, when reading the reference 
       sequences, prior to taking reads. Hence it is more efficient than 
       <exclude_chars>.
-    default: ''
     inputBinding:
       position: 101
       prefix: -delete_chars
@@ -128,7 +121,6 @@ inputs:
       - int
     doc: Track read information (reference sequence, position, errors, ...) by 
       writing it in the read description.
-    default: 1
     inputBinding:
       position: 101
       prefix: -desc_track
@@ -142,7 +134,6 @@ inputs:
       library. Use 0 for the maximum richness possible (based on the number of 
       reference sequences available). Provide one value to make all libraries 
       have the same diversity, or one richness value per library otherwise.
-    default: '0'
     inputBinding:
       position: 101
       prefix: -diversity
@@ -155,7 +146,6 @@ inputs:
       or X). Grinder will error if it fails to find a suitable read (or pair of 
       reads) after 10 attempts. Consider using <delete_chars>, which may be more
       appropriate for your case.
-    default: ''
     inputBinding:
       position: 101
       prefix: -exclude_chars
@@ -166,7 +156,6 @@ inputs:
     doc: 'Whether to write the generated reads in FASTQ format (with Sanger-encoded
       quality scores) instead of FASTA and QUAL or not (1: yes, 0: no). <qual_levels>
       need to be specified for this option to be effective.'
-    default: false
     inputBinding:
       position: 101
       prefix: -fastq_output
@@ -197,7 +186,6 @@ inputs:
       homopolymeric stretches (e.g. AAA, CCCCC) using a specified model where 
       the homopolymer length follows a normal distribution N(mean, standard 
       deviation) that is function of the homopolymer length n
-    default: 0
     inputBinding:
       position: 101
       prefix: -homopolymer_dist
@@ -211,7 +199,6 @@ inputs:
       length of both reads and of the stretch of DNA between them: 0 : off, or: insert
       size distribution in bp, in the same format as the read length distribution
       (a typical value is 2,500 bp for mate pairs)'
-    default: '0'
     inputBinding:
       position: 101
       prefix: -insert_dist
@@ -224,7 +211,6 @@ inputs:
       that at the same relative abundance, larger genomes contribute more reads 
       than smaller genomes (and all genomes have the same fold coverage). 0 = 
       no, 1 = yes.
-    default: 1
     inputBinding:
       position: 101
       prefix: -length_bias
@@ -236,7 +222,6 @@ inputs:
       the orientation of the reads (F: forward, R: reverse): FR: ---> <--- e.g. Sanger,
       Illumina paired-end, IonTorrent mate-pair FF: ---> ---> e.g. 454 RF: <--- --->
       e.g. Illumina mate-pair RR: <--- <---'
-    default: FR
     inputBinding:
       position: 101
       prefix: -mate_orientation
@@ -260,7 +245,6 @@ inputs:
     doc: 'Introduce sequencing errors in the reads, under the form of mutations (substitutions,
       insertions and deletions) at positions that follow a specified distribution
       (with replacement): model (uniform, linear, poly4), model parameters.'
-    default: uniform 0 0
     inputBinding:
       position: 101
       prefix: -mutation_dist
@@ -273,7 +257,6 @@ inputs:
       (insertions and deletions). For example, use '80 20' (4 substitutions for 
       each indel) for Sanger reads. Note that this parameter has no effect 
       unless you specify the <mutation_dist> option.
-    default: 80 20
     inputBinding:
       position: 101
       prefix: -mutation_ratio
@@ -284,7 +267,6 @@ inputs:
     doc: Number of independent libraries to create. Specify how diverse and 
       similar they should be with <diversity>, <shared_perc> and 
       <permuted_perc>. Assign them different MID tags with <multiplex_mids>.
-    default: 1
     inputBinding:
       position: 101
       prefix: -num_libraries
@@ -294,7 +276,6 @@ inputs:
       - Directory
     doc: Directory where the results should be written. This folder will be 
       created if needed.
-    default: .
     inputBinding:
       position: 101
       prefix: -output_dir
@@ -305,7 +286,6 @@ inputs:
     doc: This option controls another aspect of beta-diversity. For multiple 
       libraries, choose the percent of the most-abundant reference sequences to 
       permute (randomly shuffle) the rank-abundance of.
-    default: 100
     inputBinding:
       position: 101
       prefix: -permuted_perc
@@ -346,7 +326,6 @@ inputs:
         items: string
     doc: "Desired shotgun or amplicon read length distribution specified as: average
       length, distribution ('uniform' or 'normal') and standard deviation."
-    default: '100'
     inputBinding:
       position: 101
       prefix: -read_dist
@@ -373,7 +352,6 @@ inputs:
     doc: This option controls an aspect of beta-diversity. When creating 
       multiple libraries, specify the percent of reference sequences they should
       have in common (relative to the diversity of the least diverse library).
-    default: 0
     inputBinding:
       position: 101
       prefix: -shared_perc
@@ -383,7 +361,6 @@ inputs:
       - int
     doc: Number of shotgun or amplicon reads to generate for each library. Do 
       not specify this if you specify the fold coverage.
-    default: 100
     inputBinding:
       position: 101
       prefix: -total_reads
@@ -396,7 +373,6 @@ inputs:
       or reverse). Values: 0 (off, i.e. bidirectional), 1 (forward), -1 (reverse).
       Use <unidirectional> = 1 for amplicon and strand-specific transcriptomic or
       proteomic datasets.'
-    default: 0
     inputBinding:
       position: 101
       prefix: -unidirectional

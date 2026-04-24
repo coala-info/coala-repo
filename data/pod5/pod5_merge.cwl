@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow duplicate read_ids
-    default: false
     inputBinding:
       position: 102
       prefix: --duplicate-ok
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite destination files
-    default: false
     inputBinding:
       position: 102
       prefix: --force-overwrite
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: number of merge readers TESTING ONLY
-    default: 20
     inputBinding:
       position: 102
       prefix: --readers
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: Search for input files recursively matching `*.pod5`
-    default: false
     inputBinding:
       position: 102
       prefix: --recursive
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Number of workers
-    default: 4
     inputBinding:
       position: 102
       prefix: --threads

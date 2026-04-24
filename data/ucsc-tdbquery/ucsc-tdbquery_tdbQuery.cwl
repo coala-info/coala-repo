@@ -55,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: Include trackDb entries with this release tag only.
-    default: alpha
     inputBinding:
       position: 102
       prefix: -release

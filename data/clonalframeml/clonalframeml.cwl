@@ -37,7 +37,6 @@ inputs:
       - boolean
     doc: Whether or not to use the Expectation-Maximization algorithm to estimate
       parameters
-    default: false
     inputBinding:
       position: 103
       prefix: -ems
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ignore user-provided parameters even if they are specified
-    default: false
     inputBinding:
       position: 103
       prefix: -ignore_user_parameters
@@ -71,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of recombination events
-    default: 10000
     inputBinding:
       position: 103
       prefix: -max_recombination_length
@@ -80,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of recombination events
-    default: 1
     inputBinding:
       position: 103
       prefix: -min_recombination_length
@@ -97,7 +93,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to output the likelihood of recombination at each site
-    default: false
     inputBinding:
       position: 103
       prefix: -recombination_likelihood
@@ -106,7 +101,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to show progress of the algorithm
-    default: false
     inputBinding:
       position: 103
       prefix: -show_progress

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Number of subsampled read sets to output
-    default: 12
     inputBinding:
       position: 101
       prefix: --count
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Approximate genome size
-    default: auto
     inputBinding:
       position: 101
       prefix: --genome_size
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allowed read depth
-    default: 25.0
     inputBinding:
       position: 101
       prefix: --min_read_depth
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for alignment
-    default: 16
     inputBinding:
       position: 101
       prefix: --threads

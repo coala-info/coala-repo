@@ -12,7 +12,6 @@ inputs:
     doc: 'Style of the aminoacid sequence track: tics (suitable for long regions e.g.
       > 160 nts, shows only start and stop codons with colored tics) or codons (show
       each aminoacid as labeled block) (default: auto)'
-    default: auto
     inputBinding:
       position: 101
       prefix: -aas
@@ -23,7 +22,6 @@ inputs:
     doc: "This parameter sets the function to aggregate bedGraph signal values for
       a single bar of the bedGraph tracks. Default: 'mean'. Alternatives: 'median',
       'max', 'min'. 'none' forces plotting the raw signal at 1nt resolution."
-    default: mean
     inputBinding:
       position: 101
       prefix: -bgb
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: 'Text label position for the bedGraph tracks (default: center)'
-    default: center
     inputBinding:
       position: 101
       prefix: -blp
@@ -107,7 +104,6 @@ inputs:
         items: string
     doc: 'Y axis tics levels for a bedGraph track, a space-separated list of values,
       a separate value for each bedGraph track (default: auto)'
-    default: auto
     inputBinding:
       position: 101
       prefix: -lb
@@ -118,7 +114,6 @@ inputs:
         items: string
     doc: 'Step between axis tics a the bedgraph track Y-axis, a space-separated list
       of values, a separate value for each bedGraph track (default: auto)'
-    default: auto
     inputBinding:
       position: 101
       prefix: -ys
@@ -211,7 +206,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Hide intronic segments (default: false)'
-    default: false
     inputBinding:
       position: 101
       prefix: -hi
@@ -270,7 +264,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Reverse-complement transformation of the genomic window (default: off)'
-    default: false
     inputBinding:
       position: 101
       prefix: -rc
@@ -339,7 +332,6 @@ inputs:
       gene_id respectively as a transcript_label), 'both' (show annotated 
       transcript_name and transcript_id) and 'auto' (hide name if it is included
       in the ID)
-    default: auto
     inputBinding:
       position: 101
       prefix: -tls
@@ -380,7 +372,6 @@ inputs:
       - 'null'
       - int
     doc: 'X axis tics step (nt) (default: auto)'
-    default: auto
     inputBinding:
       position: 101
       prefix: -xs

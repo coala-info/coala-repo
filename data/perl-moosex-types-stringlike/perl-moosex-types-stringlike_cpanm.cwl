@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Number of days that cpanm's work directories expire in.
-    default: 7
     inputBinding:
       position: 102
       prefix: --auto-cleanup

@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of files to load and search in parallel (default = # of CPUs/2)'
-    default: '# of CPUs/2'
     inputBinding:
       position: 103
       prefix: --batch-size

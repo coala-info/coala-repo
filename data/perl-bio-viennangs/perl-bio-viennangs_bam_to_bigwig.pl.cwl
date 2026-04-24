@@ -27,7 +27,6 @@ inputs:
       - File
     doc: Name of the log file. Unless specified, the default log file will be 
       'bam_to_bigwig.log' in the given output directory.
-    default: bam_to_bigwig.log
     inputBinding:
       position: 101
       prefix: --log
@@ -39,7 +38,6 @@ inputs:
       Possible values are either '+' or '-'. If '+', interim bedGraph will have 
       positive values. If '-', interim bedGraph will have negative values 
       (required for UCSC negative strand visualization).
-    default: +
     inputBinding:
       position: 101
       prefix: --strand

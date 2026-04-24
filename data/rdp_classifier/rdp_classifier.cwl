@@ -25,7 +25,6 @@ inputs:
       fixrank, results below the\n                             confidence cutoff were
       bin to a higher rank unclassified_node\n                             db: outputs
       the seqname, trainset_no, tax_id, conf."
-    default: allrank
     inputBinding:
       position: 102
       prefix: --format
@@ -35,7 +34,6 @@ inputs:
       - string
     doc: "16srrna, fungallsu, fungalits_warcup, fungalits_unite. Default is 16srrna.
       This option can\n                             be overwritten by -t option"
-    default: 16srrna
     inputBinding:
       position: 102
       prefix: --gene
@@ -45,7 +43,6 @@ inputs:
       - int
     doc: "minimum number of words for each bootstrap trial. Default(maximum) is 1/8
       of the words of\n                             each sequence. Minimum is 5"
-    default: 1/8 of the words of each sequence. Minimum is 5
     inputBinding:
       position: 102
       prefix: --minWords

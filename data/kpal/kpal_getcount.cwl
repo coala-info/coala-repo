@@ -21,7 +21,6 @@ inputs:
       - type: array
         items: string
     doc: names of the k-mer profiles to consider
-    default: all profiles in INPUT, in alphabetical order
     inputBinding:
       position: 103
       prefix: --profiles

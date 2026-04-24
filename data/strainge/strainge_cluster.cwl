@@ -64,7 +64,6 @@ inputs:
       - float
     doc: 'Warn when including references that that seem too distantly related, which
       could indicate a mislabeled reference genome. Default: 85% ANI.'
-    default: 85.0
     inputBinding:
       position: 102
       prefix: --warn-too-distant

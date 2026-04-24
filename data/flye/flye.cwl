@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Number of polishing iterations
-    default: 1
     inputBinding:
       position: 101
       prefix: --iterations
@@ -105,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

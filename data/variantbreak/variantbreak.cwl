@@ -60,7 +60,6 @@ inputs:
       deletions. Note that the value to be set is an absolute deletion size, do 
       not use minus '-'. Use value '-1' to disable this threshold and annotate 
       all deleted regions despite of size.
-    default: 20000
     inputBinding:
       position: 103
       prefix: --del_annotate_size
@@ -69,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: File name prefix of output files
-    default: output
     inputBinding:
       position: 103
       prefix: --filename
@@ -88,7 +86,6 @@ inputs:
       - int
     doc: maximum number of annotation entries to be recorded in the dataframe 
       for each SV
-    default: 3
     inputBinding:
       position: 103
       prefix: --max_annotation
@@ -97,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: nucleotide length buffer for SV breakend clustering
-    default: 400
     inputBinding:
       position: 103
       prefix: --merge_buffer
@@ -106,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: length in base-pairs upstream of TSS to define promoter region
-    default: 1000
     inputBinding:
       position: 103
       prefix: --promoter_size
@@ -124,7 +119,6 @@ inputs:
       - string
     doc: single character field delimiter for output dataframe CSV file (e.g. 
       '\t' for tab or ',' for comma)
-    default: ','
     inputBinding:
       position: 103
       prefix: --sep

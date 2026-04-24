@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Threshold to keep a read based on length after trimming
-    default: 20
     inputBinding:
       position: 102
       prefix: --length-threshold
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Threshold for trimming based on average quality in a window
-    default: 20
     inputBinding:
       position: 102
       prefix: --qual-threshold

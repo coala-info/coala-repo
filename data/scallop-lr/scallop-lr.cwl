@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: 'library type of the sample, default: unstranded'
-    default: unstranded
     inputBinding:
       position: 101
       prefix: --library_type
@@ -32,7 +31,6 @@ inputs:
       - int
     doc: "minimum number of reads with 5'/3' primes required for a boundary, default:
       3"
-    default: 3
     inputBinding:
       position: 101
       prefix: --min_boundary_hits
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum distances required to start a new bundle, default: 50'
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_bundle_gap
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: 'ignore reads with mapping quality less than this value, default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_mapping_quality
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum number of reads required in a bundle, default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_num_hits_in_bundle
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - float
     doc: 'minimum coverage required for a single-exon transcript, default: 10'
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_single_exon_coverage
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum number of spliced reads required for a junction, default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_splice_hits
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - float
     doc: 'minimum coverage required for a multi-exon transcript, default: 1.01'
-    default: 1.01
     inputBinding:
       position: 101
       prefix: --min_transcript_coverage
@@ -97,7 +89,6 @@ inputs:
     doc: "default: 100, minimum length of a transcript would be\n                \
       \                             --min_transcript_length_base + --min_transcript_length_increase
       * num-of-exons"
-    default: 100
     inputBinding:
       position: 101
       prefix: --min_transcript_length_base
@@ -106,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: 'default: 50'
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_transcript_length_increase
@@ -115,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: '0: quiet; 1: one line for each graph; 2: with details, default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbose

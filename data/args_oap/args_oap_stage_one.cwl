@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: E-value cutoff for GreenGenes.
-    default: 1e-10
     inputBinding:
       position: 101
       prefix: --e1
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: E-value cutoff for Essential Single Copy Marker Genes.
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --e2
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: File format in input folder (--indir), gzipped (*.gz) optional.
-    default: fq
     inputBinding:
       position: 101
       prefix: --format
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - float
     doc: Identity cutoff (in percentage) for Essential Single Copy Marker Genes.
-    default: 45.0
     inputBinding:
       position: 101
       prefix: --id
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: Query cover cutoff (in percentage) for Essential Single Copy Marker Genes.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --qcov
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 8
     inputBinding:
       position: 101
       prefix: --thread

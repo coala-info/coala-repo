@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: perform N bubble removal steps
-    default: 3
     inputBinding:
       position: 102
       prefix: --bubble
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: cut off terminal branches in N rounds
-    default: 10
     inputBinding:
       position: 102
       prefix: --cut-terminal
@@ -35,7 +33,6 @@ inputs:
       - float
     doc: only remove variation if the divergence between sequences is less than 
       F
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --max-divergence
@@ -46,7 +43,6 @@ inputs:
     doc: limit each vertex to a maximum of N edges. For highly repetitive 
       regions this helps save memory by culling excessive edges around 
       unresolvable repeats
-    default: 128
     inputBinding:
       position: 102
       prefix: --max-edges
@@ -57,7 +53,6 @@ inputs:
     doc: only remove variation if the divergence between sequences when only 
       counting indels is less than F. Setting this to 0.0 will suppress removing
       indel variation
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --max-gap-divergence
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: do not remove variation that is an indel of length greater than D
-    default: 20
     inputBinding:
       position: 102
       prefix: --max-indel
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: remove terminal branches only if they are less than LEN bases in length
-    default: 150
     inputBinding:
       position: 102
       prefix: --min-branch-length
@@ -111,7 +104,6 @@ inputs:
       - 'null'
       - boolean
     doc: remove transitive edges from the graph. Off by default.
-    default: false
     inputBinding:
       position: 102
       prefix: --transitive-reduction

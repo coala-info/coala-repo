@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: minimun identity percentage aligned for a contig to annotate
-    default: 90
     inputBinding:
       position: 101
       prefix: --alignment-identity
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: minimun length percentage aligned for a contig to annotate
-    default: 20
     inputBinding:
       position: 101
       prefix: --alignment-percentage
@@ -37,7 +35,6 @@ inputs:
       - float
     doc: kmer identity to cluster plasmids into the same representative sequence
       (0 means identical) (0-1)
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --cluster
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory holding config files
-    default: config_files/
     inputBinding:
       position: 101
       prefix: --config-directory
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: minimun coverage percentage to select a plasmid as scafold (0-100)
-    default: 80
     inputBinding:
       position: 101
       prefix: --coverage-cutoff
@@ -81,7 +76,6 @@ inputs:
       - int
     doc: minimun coverage percentage to include plasmids in summary image 
       (0-100)
-    default: 90
     inputBinding:
       position: 101
       prefix: --coverage-summary
@@ -105,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: look for annotation over regions with no homology found (base pairs)
-    default: 500
     inputBinding:
       position: 101
       prefix: --extend-annotation
@@ -123,7 +116,6 @@ inputs:
       - 'null'
       - float
     doc: identity to filter plasmids from the database with kmer approach (0-1)
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --kmer

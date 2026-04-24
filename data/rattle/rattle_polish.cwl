@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'output folder for fastx files (default: .)'
-    default: .
     inputBinding:
       position: 101
       prefix: --output-folder
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of threads to use (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

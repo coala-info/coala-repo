@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - float
     doc: aggressive overlap drop ratio in the end
-    default: 0.8
     inputBinding:
       position: 102
       prefix: -F
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: max distance for bubble popping
-    default: 50000
     inputBinding:
       position: 102
       prefix: -d
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: max gap differences between reads for trans-reduction
-    default: 1000
     inputBinding:
       position: 102
       prefix: -g
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: max over hang length
-    default: 1000
     inputBinding:
       position: 102
       prefix: -h
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: min coverage
-    default: 3
     inputBinding:
       position: 102
       prefix: -c
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - float
     doc: min end-to-end match ratio
-    default: 0.8
     inputBinding:
       position: 102
       prefix: -I
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - float
     doc: min identity
-    default: 0.05
     inputBinding:
       position: 102
       prefix: -i
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: min match length
-    default: 100
     inputBinding:
       position: 102
       prefix: -m
@@ -103,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: min span
-    default: 2000
     inputBinding:
       position: 102
       prefix: -s
@@ -112,7 +103,6 @@ inputs:
       - 'null'
       - string
     doc: 'output information: bed, paf, sg or ug'
-    default: ug
     inputBinding:
       position: 102
       prefix: -p
@@ -122,7 +112,6 @@ inputs:
       - type: array
         items: float
     doc: max and min overlap drop ratio
-    default: '[0.7,0.5]'
     inputBinding:
       position: 102
       prefix: -r
@@ -139,7 +128,6 @@ inputs:
       - 'null'
       - File
     doc: read sequences
-    default: '[]'
     inputBinding:
       position: 102
       prefix: -f
@@ -148,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: rounds of short overlap removal
-    default: 3
     inputBinding:
       position: 102
       prefix: -n
@@ -173,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: small unitig threshold
-    default: 4
     inputBinding:
       position: 102
       prefix: -e

@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: number of parallel jobs/cores used for the SNP calling
-    default: 10
     inputBinding:
       position: 101
       prefix: --jobs

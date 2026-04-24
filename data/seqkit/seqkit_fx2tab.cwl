@@ -20,7 +20,6 @@ inputs:
     doc: "length of sequence prefix of the first FASTA record based on\n         \
       \                               which seqkit guesses the sequence type (0 for
       whole seq)"
-    default: 10000
     inputBinding:
       position: 101
   - id: avg_qual
@@ -106,7 +105,6 @@ inputs:
       - 'null'
       - string
     doc: regular expression for parsing ID
-    default: ^(\S+)\s?
     inputBinding:
       position: 101
   - id: infile_list
@@ -131,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: line width when outputting FASTA format (0 for no wrap)
-    default: 60
     inputBinding:
       position: 101
       prefix: -w
@@ -164,7 +161,6 @@ inputs:
       - 'null'
       - int
     doc: ASCII BASE, 33 for Phred+33 (default 33)
-    default: 33
     inputBinding:
       position: 101
       prefix: --qual-ascii-base
@@ -189,7 +185,6 @@ inputs:
       - string
     doc: "sequence type (dna|rna|protein|unlimit|auto) (for auto, it\n           \
       \                             automatically detect by the first sequence)"
-    default: auto
     inputBinding:
       position: 101
       prefix: -t
@@ -208,7 +203,6 @@ inputs:
       - int
     doc: "number of CPUs. can also set with environment variable\n               \
       \                         SEQKIT_THREADS)"
-    default: 4
     inputBinding:
       position: 101
       prefix: -j

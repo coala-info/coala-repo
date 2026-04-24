@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: extension of genomes (other files in directory are ignored)
-    default: fna
     inputBinding:
       position: 103
       prefix: --genome_ext

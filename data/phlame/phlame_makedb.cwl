@@ -10,7 +10,6 @@ inputs:
       - float
     doc: Minimum percent of samples a position must be found in (non-N) to be 
       considered.
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --core
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum fraction of ambiguous (N) calls to include a sample.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --max_frac_ambiguous
@@ -50,7 +48,6 @@ inputs:
       - float
     doc: Maximum percent of outgroup samples a position can be found in (non-N) 
       to be considered.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --max_outgroup
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum percentage of Ns for a position to be considered.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --maxn
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - boolean
     doc: Root the input tree at the midpoint.
-    default: false
     inputBinding:
       position: 101
       prefix: --midpoint
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum branch length leading up to a clade.
-    default: 100.0
     inputBinding:
       position: 101
       prefix: --min_branchlen
@@ -86,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of samples in a clade.
-    default: 3
     inputBinding:
       position: 101
       prefix: --min_leaves
@@ -95,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of SNPs to include a candidate clade.
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_snps
@@ -104,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum per-strand coverage across a position to make a base call.
-    default: 2
     inputBinding:
       position: 101
       prefix: --min_strand_cov
@@ -113,7 +104,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum bootstrap support for a clade.
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --min_support
@@ -122,7 +112,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele frequency to make a base call.
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --minAF
@@ -140,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum MAPQ score to make a base call.
-    default: -30
     inputBinding:
       position: 101
       prefix: --qual

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of sequence labels. Longer labels are truncated.
-    default: 0
     inputBinding:
       position: 101
       prefix: --clip_len
@@ -19,7 +18,6 @@ inputs:
       - string
     doc: "Input sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --inseqformat
@@ -29,7 +27,6 @@ inputs:
       - string
     doc: "Output sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --outseqformat
@@ -39,7 +36,6 @@ inputs:
       - string
     doc: Replace sequence label characters. For example, "!@#$%^&*+=/?<>|--_" 
       replaces various characters with underbar ("_").
-    default: ''
     inputBinding:
       position: 101
       prefix: --replace_chars
@@ -48,7 +44,6 @@ inputs:
       - 'null'
       - File
     doc: Input sequence file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --seqfile
@@ -57,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: Make sequence labels unique by adding suffix (_1, _2, ...).
-    default: no
     inputBinding:
       position: 101
       prefix: --unique

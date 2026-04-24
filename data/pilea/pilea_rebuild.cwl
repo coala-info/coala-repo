@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size.
-    default: 31
     inputBinding:
       position: 101
       prefix: --kmer
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Scale for downsampling.
-    default: 250
     inputBinding:
       position: 101
       prefix: --scale
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for k-mer grouping.
-    default: 25000
     inputBinding:
       position: 101
       prefix: --window

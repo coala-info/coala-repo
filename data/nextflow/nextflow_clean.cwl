@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print names of file to be removed without deleting them
-    default: false
     inputBinding:
       position: 101
       prefix: -dry-run
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force clean command
-    default: false
     inputBinding:
       position: 101
       prefix: -force
@@ -52,7 +50,6 @@ inputs:
       - boolean
     doc: "Removes only temporary files but retains execution log entries and\n   \
       \    metadata"
-    default: false
     inputBinding:
       position: 101
       prefix: -keep-logs
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not print names of files removed
-    default: false
     inputBinding:
       position: 101
       prefix: -quiet

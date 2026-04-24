@@ -44,7 +44,6 @@ inputs:
       - boolean
     doc: when on (by default) the wrapping element get a 'date' attribute that gives
       the date the tool was run.
-    default: true
     inputBinding:
       position: 102
       prefix: --date
@@ -61,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: encoding of the xml output
-    default: utf-8
     inputBinding:
       position: 102
       prefix: --encoding
@@ -159,7 +157,6 @@ inputs:
       - 'null'
       - string
     doc: wrap the xml result in the provided tag
-    default: xml_grep
     inputBinding:
       position: 102
       prefix: --wrap

@@ -47,7 +47,6 @@ inputs:
     doc: 'character scalar, choice indicate whether outliers should be looked for
       at both tails (default: "both") or only at the lower end ("lower") or the higher
       end ("higher").'
-    default: both
     inputBinding:
       position: 101
       prefix: --type

@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - float
     doc: Percentage threshold on genomes completeness.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --completeness
@@ -20,14 +19,12 @@ inputs:
       - 'null'
       - float
     doc: Percentage threshold on genomes contamination.
-    default: 100.0
     inputBinding:
       position: 101
       prefix: --contamination
   - id: database
     type: string
     doc: The database name.
-    default: None
     inputBinding:
       position: 101
       prefix: --database
@@ -38,7 +35,6 @@ inputs:
     doc: Dereplicate genomes based of their ANI distance according the specified
       threshold. The dereplication process is triggered in case of a threshold 
       >0.0.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --dereplicate
@@ -48,7 +44,6 @@ inputs:
       - int
     doc: This is the size of the bloom filters. It automatically estimates a 
       proper bloom filter size if not provided.
-    default: None
     inputBinding:
       position: 101
       prefix: --filter-size
@@ -59,7 +54,6 @@ inputs:
     doc: Increase the estimated filter size by the specified percentage. It is 
       highly recommended to increase the filter size by a good percentage in 
       case you are planning to update the index with new genomes.
-    default: 50.0
     inputBinding:
       position: 101
       prefix: --increase-filter-size
@@ -69,7 +63,6 @@ inputs:
       - int
     doc: The kmer size. It automatically estimates a proper bloom filter size if
       not provided.
-    default: None
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -79,7 +72,6 @@ inputs:
       - int
     doc: Limit the estimation of the optimal kmer size with kitsune to this size
       at most.
-    default: 32
     inputBinding:
       position: 101
       prefix: --limit-kmer-size
@@ -89,7 +81,6 @@ inputs:
       - int
     doc: Minimum number of occurrences of kmers to be considered for estimating 
       the bloom filter size and for building the bloom filter files.
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-kmer-occurrences
@@ -98,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Process the input genomes in parallel.
-    default: 20
     inputBinding:
       position: 101
       prefix: --nproc
@@ -107,7 +97,6 @@ inputs:
       - 'null'
       - boolean
     doc: Pack the database into a compressed tarball.
-    default: false
     inputBinding:
       position: 101
       prefix: --pack
@@ -123,7 +112,6 @@ inputs:
   - id: workdir
     type: Directory
     doc: Path to the working directory.
-    default: None
     inputBinding:
       position: 101
       prefix: --workdir

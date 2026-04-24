@@ -34,7 +34,6 @@ inputs:
     doc: Indicates what level of genotype complexity is allowed for phased 
       variants. 0 = simplex-nulliplex only, 1 = simplex-simplex on top, 2 = 
       duplex-nulliplex on top. Default is 0.
-    default: 0
     inputBinding:
       position: 103
       prefix: --complexity-support
@@ -102,7 +101,6 @@ inputs:
       - string
     doc: 'Store phasing information with PS tag (standardized) or HP tag (used by
       GATK ReadBackedPhasing) (default: PS)'
-    default: PS
     inputBinding:
       position: 103
       prefix: --tag

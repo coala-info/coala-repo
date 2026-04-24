@@ -17,7 +17,6 @@ inputs:
       - File
     doc: Specifies a non-default file which contains the list of adapter 
       sequences which will be explicity searched against the library.
-    default: /usr/local/opt/falco/Configuration/adapter_list.txt
     inputBinding:
       position: 102
       prefix: --adapters
@@ -61,7 +60,6 @@ inputs:
       - File
     doc: Specifies a non-default file which contains the list of contaminants to
       screen overrepresented sequences against.
-    default: /usr/local/opt/falco/Configuration/contaminant_list.txt
     inputBinding:
       position: 102
       prefix: --contaminants
@@ -107,7 +105,6 @@ inputs:
       - int
     doc: '[IGNORED BY FALCO AND ALWAYS SET TO 7] Specifies the length of Kmer to look
       for.'
-    default: 7
     inputBinding:
       position: 102
       prefix: --kmers
@@ -117,7 +114,6 @@ inputs:
       - File
     doc: Specifies a non-default file which contains a set of criteria which 
       will be used to determine the warn/error limits.
-    default: /usr/local/opt/falco/Configuration/limits.txt
     inputBinding:
       position: 102
       prefix: --limits
@@ -210,7 +206,6 @@ inputs:
       - int
     doc: '[Falco only] makes falco faster by only processing reads that are multiple
       of this value.'
-    default: 1
     inputBinding:
       position: 102
       prefix: -subsample
@@ -220,7 +215,6 @@ inputs:
       - int
     doc: '[NOT YET IMPLEMENTED IN FALCO] Specifies the number of files which can be
       processed simultaneously.'
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

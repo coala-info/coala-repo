@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance between read-pairs in a linked-read.
-    default: 10000
     inputBinding:
       position: 102
   - id: debug
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run in debug mode.
-    default: false
     inputBinding:
       position: 102
   - id: k
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of barcode overlaps supporting a candidate NA.
-    default: 3
     inputBinding:
       position: 102
   - id: max_len
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: TO_BE_ADDED.
-    default: 200000
     inputBinding:
       position: 102
   - id: min_discs
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of discordant reads.
-    default: 2
     inputBinding:
       position: 102
   - id: min_len
@@ -83,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality to evaluate reads.
-    default: 40
     inputBinding:
       position: 102
   - id: min_reads
@@ -91,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum reads in linked read fragment.
-    default: 2
     inputBinding:
       position: 102
   - id: min_sv
@@ -99,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of structural variant.
-    default: 1000
     inputBinding:
       position: 102
   - id: outdir
@@ -107,7 +99,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to output directory.
-    default: CWD
     inputBinding:
       position: 102
   - id: prefix
@@ -115,7 +106,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output files.
-    default: NAIBR_SVs
     inputBinding:
       position: 102
   - id: sd_mult
@@ -123,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Stddev multiplier for max/min insert size (LMAX/LMIN) calculcation.
-    default: 2
     inputBinding:
       position: 102
   - id: threads
@@ -131,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: Threads to use.
-    default: 1
     inputBinding:
       position: 102
 outputs:

@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Distance metric
-    default: raupcrick
     inputBinding:
       position: 101
       prefix: --distance
@@ -25,7 +24,6 @@ inputs:
       - type: array
         items: string
     doc: OTUs to drop from table and run stats
-    default: None
     inputBinding:
       position: 101
       prefix: --ignore_otus
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run indicator species analysis
-    default: false
     inputBinding:
       position: 101
       prefix: --indicator_species
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add ellipses on NMDS instead of centroids & error bars
-    default: false
     inputBinding:
       position: 101
       prefix: --ord_ellipse
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: Ordination method
-    default: NMDS
     inputBinding:
       position: 101
       prefix: --ord_method
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output folder basename
-    default: amptk_stats
     inputBinding:
       position: 101
       prefix: --out

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Output format (hdf5, json, or tsv)
-    default: hdf5
     inputBinding:
       position: 102
       prefix: --fmt
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum count to include a taxon
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-count
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum relative abundance to include a taxon
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-relative-abundance

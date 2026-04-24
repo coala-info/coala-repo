@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for building the database.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

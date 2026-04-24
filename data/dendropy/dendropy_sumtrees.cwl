@@ -40,7 +40,6 @@ inputs:
       - int
     doc: 'Number of trees to skip from the beginning of *each* tree file when counting
       support (default: 0).'
-    default: 0
     inputBinding:
       position: 102
       prefix: --burnin
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of decimal places in indication of support values (default: 8).'
-    default: 8
     inputBinding:
       position: 102
       prefix: --decimals
@@ -130,7 +128,6 @@ inputs:
       will be set to the support value for the clade represented by the node. This
       is the DEFAULT. - 'keep' Do not change the existing node labels. - 'clear' Node
       labels will be cleared from the target trees if they are present."
-    default: support
     inputBinding:
       position: 102
       prefix: -l
@@ -139,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: 'Tree processing progress logging frequency (default: 500; set to 0 to suppress).'
-    default: 500
     inputBinding:
       position: 102
       prefix: --log-frequency
@@ -325,7 +321,6 @@ inputs:
       maximizes the *product* of clade posterior probabilities. - 'msct' The maximum
       sum of clade credibilities tree. The tree from the source set that maximizes
       the *sum* of clade posterior probabilities."
-    default: consensus
     inputBinding:
       position: 102
       prefix: --summary-target
@@ -393,7 +388,6 @@ inputs:
       file. This should specify a single dictionary at the top-level with keys being
       taxon labels (matching the taxon labels of the input trees EXACTLY) and values
       being the ages of the corresponding tips."
-    default: tsv
     inputBinding:
       position: 102
       prefix: --tip-ages-format
@@ -403,7 +397,6 @@ inputs:
       - float
     doc: "Precision to use when validating ultrametricity (default: 1e-05; specify
       '0' to disable validation)."
-    default: 1e-05
     inputBinding:
       position: 102
       prefix: --ultrametricity-precision, --edge-weight-epsilon, 

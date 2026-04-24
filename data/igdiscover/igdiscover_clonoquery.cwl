@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Discard all rows with count less than N.
-    default: 1
     inputBinding:
       position: 103
       prefix: --minimum-count
@@ -51,7 +50,6 @@ inputs:
     doc: No. of allowed mismatches between CDR3 sequences. Can also be a 
       fraction between 0 and 1 (such as 0.15), interpreted relative to the 
       length of the CDR3 (minus the front non-core).
-    default: 1
     inputBinding:
       position: 103
       prefix: --mismatches

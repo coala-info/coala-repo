@@ -8,7 +8,6 @@ inputs:
   - id: path
     type: Directory
     doc: Path to create the snk.yaml project
-    default: None
     inputBinding:
       position: 1
   - id: force

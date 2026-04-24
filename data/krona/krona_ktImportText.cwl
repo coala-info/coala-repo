@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the highest level.
-    default: all
     inputBinding:
       position: 102
       prefix: -n

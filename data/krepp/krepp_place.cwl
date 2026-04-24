@@ -10,7 +10,6 @@ inputs:
       - float
     doc: Chi-square value for statistical distinguishability test, default 
       correspons to alpha=90%.
-    default: 2.706
     inputBinding:
       position: 101
       prefix: --chisq
@@ -20,7 +19,6 @@ inputs:
       - boolean
     doc: Filter a placement when there is not enough k-mer matches below 
       threshold tau.
-    default: true
     inputBinding:
       position: 101
       prefix: --filter
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum Hamming distance for a k-mer to match.
-    default: 4
     inputBinding:
       position: 101
       prefix: --hdist-th
@@ -55,7 +52,6 @@ inputs:
       - boolean
     doc: Output all candidate placements satisfying the filters (not just the 
       largest clade).
-    default: true
     inputBinding:
       position: 101
       prefix: --multi
@@ -65,7 +61,6 @@ inputs:
       - boolean
     doc: Filter a placement when there is not enough k-mer matches below 
       threshold tau.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-filter
@@ -75,7 +70,6 @@ inputs:
       - boolean
     doc: Output all candidate placements satisfying the filters (not just the 
       largest clade).
-    default: false
     inputBinding:
       position: 101
       prefix: --no-multi
@@ -86,7 +80,6 @@ inputs:
     doc: Summarize results into a table of read counts. If a read is 
       mapped/placed to n references/edges, each gets 1/n. Overrides --no-multi 
       and --no-filter.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-summarize
@@ -96,7 +89,6 @@ inputs:
       - boolean
     doc: Output the per query sequence placements (taxonomic/phylogenetic) in a 
       tab-separated format.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-tabular
@@ -122,7 +114,6 @@ inputs:
     doc: Summarize results into a table of read counts. If a read is 
       mapped/placed to n references/edges, each gets 1/n. Overrides --no-multi 
       and --no-filter.
-    default: false
     inputBinding:
       position: 101
       prefix: --summarize
@@ -132,7 +123,6 @@ inputs:
       - boolean
     doc: Output the per query sequence placements (taxonomic/phylogenetic) in a 
       tab-separated format.
-    default: false
     inputBinding:
       position: 101
       prefix: --tabular
@@ -141,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: Highest Hamming distance for placement threshold (increase to relax).
-    default: 2
     inputBinding:
       position: 101
       prefix: --tau

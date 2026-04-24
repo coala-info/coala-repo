@@ -60,7 +60,6 @@ inputs:
   unmapped_out:
     label: Output filename for either Domain-like or failed domain StIs
     type: [ File, string, "null" ]
-    default: domain_StIs_f.json
     inputBinding:
       position: 3
       prefix: -o

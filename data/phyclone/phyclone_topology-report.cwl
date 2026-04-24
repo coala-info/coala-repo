@@ -16,7 +16,6 @@ inputs:
       - int
     doc: Number of uniquely sampled topologies to archive. Default is to produce
       an archive of all unique topologies.
-    default: all unique topologies
     inputBinding:
       position: 101
       prefix: --top-trees

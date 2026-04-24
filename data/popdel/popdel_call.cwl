@@ -27,7 +27,6 @@ inputs:
       for all read groups that are not listed in 'active-coverage-file'. Setting
       it to 0 disables the filter for all read groups that are not specified in 
       'active-coverage-file'. In range [0..inf].
-    default: 100
     inputBinding:
       position: 103
       prefix: --active-coverage
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum size of deletions.
-    default: 10000
     inputBinding:
       position: 103
       prefix: --max-deletion-size
@@ -75,7 +73,6 @@ inputs:
       - float
     doc: Minimum fraction of samples which is required to have enough data in 
       the window. In range [0.0..1.0].
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --min-sample-fraction

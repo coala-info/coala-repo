@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: 'filter out reads that have a dust score higher than FLOAT (default: 4.0).'
-    default: 4.0
     inputBinding:
       position: 103
       prefix: --dust-threshold
@@ -58,7 +57,6 @@ inputs:
     doc: "discard sequences that are shorter than INT\n                          \
       \             this is most useful when used in conjunction with --quality-trim.
       Default: 40"
-    default: 40
     inputBinding:
       position: 103
       prefix: --min-length
@@ -79,7 +77,6 @@ inputs:
       \                                       read in READS2. The paired reads will
       be interleaved in the output file\n                                       2
       - reads are paired and the records are interleaved within a single file."
-    default: 0
     inputBinding:
       position: 103
       prefix: --pe-mode

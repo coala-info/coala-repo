@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: name of the sample (will be used in the output VCFs)
-    default: sample
     inputBinding:
       position: 101
       prefix: -s

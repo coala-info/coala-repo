@@ -25,7 +25,6 @@ inputs:
       - int
     doc: Set line length in output file. See section Line Length for details. In
       range [-1..inf].
-    default: -1
     inputBinding:
       position: 102
       prefix: --line-length
@@ -78,7 +77,6 @@ inputs:
       - boolean
     doc: Turn this option off to disable version update notifications of the 
       application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO.
-    default: true
     inputBinding:
       position: 102
       prefix: --version-check

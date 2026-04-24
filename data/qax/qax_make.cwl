@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Artifact archive version
-    default: '5'
     inputBinding:
       position: 102
       prefix: --archive
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Artifact format
-    default: HTML[Report]
     inputBinding:
       position: 102
       prefix: --format
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Artifact type
-    default: Visualization
     inputBinding:
       position: 102
       prefix: --type
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite output artifact
-    default: true
     inputBinding:
       position: 102
       prefix: --force
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temporary directory
-    default: /tmp/
     inputBinding:
       position: 102
       prefix: --tempdir

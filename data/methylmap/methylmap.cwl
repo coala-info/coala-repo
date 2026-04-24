@@ -79,7 +79,6 @@ inputs:
       - string
     doc: 'modified base of interest when BAM/CRAM files as input. Options are: m,
       h, default = m'
-    default: m
     inputBinding:
       position: 101
       prefix: --mod

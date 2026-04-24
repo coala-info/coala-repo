@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix of output file
-    default: data
     inputBinding:
       position: 101
       prefix: --prefix

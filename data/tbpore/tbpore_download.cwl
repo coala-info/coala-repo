@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to download the decontamination database to.
-    default: /root/.tbpore/decontamination_db
     inputBinding:
       position: 101
       prefix: --download-dir

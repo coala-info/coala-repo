@@ -18,7 +18,6 @@ inputs:
     doc: Ambiguous base calls at a specific position in a family are transformed
       to either majority base call, or N if the majority percentage is below 
       this threshold. (Higher threshold results in more Ns in consensus.)
-    default: 0.6
     inputBinding:
       position: 102
       prefix: --consensus_freq_threshold
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: determines how filters will be ordered in the log results
-    default: count
     inputBinding:
       position: 102
       prefix: --filter_order
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Override validation warnings
-    default: false
     inputBinding:
       position: 102
       prefix: --force
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - File
     doc: Path to verbose log file
-    default: '{output_filename}.log'
     inputBinding:
       position: 102
       prefix: --log_file
@@ -55,7 +51,6 @@ inputs:
       - int
     doc: families with count of original reads < threshold are excluded from the
       deduplicated output. (Higher threshold is more stringent.)
-    default: 3
     inputBinding:
       position: 102
       prefix: --min_family_size_threshold
@@ -66,7 +61,6 @@ inputs:
     doc: UMTs equal to or closer than this Hamming distance will be combined 
       into a single family. Lower threshold make more families with more 
       consistent UMTs; 0 implies UMI must match exactly.
-    default: 1
     inputBinding:
       position: 102
       prefix: --umt_distance_threshold
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: length of UMT
-    default: 6
     inputBinding:
       position: 102
       prefix: --umt_length

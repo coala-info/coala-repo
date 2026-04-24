@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: set Bloom filter size to 2**INT bits; 0 to disable
-    default: 0
     inputBinding:
       position: 104
       prefix: -b
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: chunk size
-    default: 100m
     inputBinding:
       position: 104
       prefix: -K
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size
-    default: 31
     inputBinding:
       position: 104
       prefix: -k
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: prefix length
-    default: 20
     inputBinding:
       position: 104
       prefix: -p
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: number of worker threads
-    default: 32
     inputBinding:
       position: 104
       prefix: -t

@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Number of mis-matches in barcode
-    default: 0
     inputBinding:
       position: 102
       prefix: --barcode_mismatch
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: Reverse complement barcode sequences
-    default: false
     inputBinding:
       position: 102
       prefix: --barcode_rev_comp
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: remove intermediate files
-    default: false
     inputBinding:
       position: 102
       prefix: --cleanup
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: 'Number of CPUs. Default: auto'
-    default: auto
     inputBinding:
       position: 102
       prefix: --cpus
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: Forward Primer
-    default: 515FB
     inputBinding:
       position: 102
       prefix: --fwd_primer
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: Software to use for PE read merging
-    default: vsearch
     inputBinding:
       position: 102
       prefix: --merge_method
@@ -102,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length to keep
-    default: 100
     inputBinding:
       position: 102
       prefix: --min_len
@@ -111,7 +104,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not trim primers
-    default: true
     inputBinding:
       position: 102
       prefix: --no-primer-trim
@@ -120,7 +112,6 @@ inputs:
       - 'null'
       - string
     doc: Base name for output
-    default: illumina_out
     inputBinding:
       position: 102
       prefix: --out
@@ -129,7 +120,6 @@ inputs:
       - 'null'
       - string
     doc: Pad with Ns to a set length
-    default: off
     inputBinding:
       position: 102
       prefix: --pad
@@ -138,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: Number of mis-matches in primer
-    default: 2
     inputBinding:
       position: 102
       prefix: --primer_mismatch
@@ -155,7 +144,6 @@ inputs:
       - 'null'
       - string
     doc: Rescue Not-merged forward reads
-    default: on
     inputBinding:
       position: 102
       prefix: --rescue_forward
@@ -164,7 +152,6 @@ inputs:
       - 'null'
       - string
     doc: Reverse Primer
-    default: 806RB
     inputBinding:
       position: 102
       prefix: --rev_primer
@@ -181,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: Trim length for reads
-    default: 300
     inputBinding:
       position: 102
       prefix: --trim_len
@@ -190,7 +176,6 @@ inputs:
       - 'null'
       - string
     doc: USEARCH9 EXE
-    default: usearch9
     inputBinding:
       position: 102
       prefix: --usearch

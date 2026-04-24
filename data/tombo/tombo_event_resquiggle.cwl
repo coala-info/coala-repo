@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to use for parsing and aligning original basecalls.
-    default: 1
     inputBinding:
       position: 103
       prefix: --align-processes
@@ -42,7 +41,6 @@ inputs:
     doc: 'Number of reads included in each alignment call. Note: A new system mapping
       call is made for each batch (including loading of the genome), so it is advised
       to use larger values for larger genomes.'
-    default: 1000
     inputBinding:
       position: 103
       prefix: --alignment-batch-size
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: FAST5 group obtain original basecalls (under Analyses group).
-    default: Basecall_1D_000
     inputBinding:
       position: 103
       prefix: --basecall-group
@@ -62,7 +59,6 @@ inputs:
         items: string
     doc: FAST5 subgroup(s) (under Analyses/[corrected-group]) containing 
       basecalls.
-    default: BaseCalled_template
     inputBinding:
       position: 103
       prefix: --basecall-subgroups
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: FAST5 group created by resquiggle command.
-    default: RawGenomeCorrected_000
     inputBinding:
       position: 103
       prefix: --corrected-group
@@ -131,7 +126,6 @@ inputs:
     doc: 'Choices: "none": raw 16-bit DAQ values, "pA_raw": pA as in the ONT events,
       "pA": k-mer-based correction for pA drift, "median": median and MAD from raw
       signal.'
-    default: median
     inputBinding:
       position: 103
       prefix: --normalization-type
@@ -152,7 +146,6 @@ inputs:
       - float
     doc: Windosrize the signal at this number of scale values. Negative value 
       disables outlier clipping.
-    default: 5.0
     inputBinding:
       position: 103
       prefix: --outlier-threshold
@@ -178,7 +171,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes.
-    default: 2
     inputBinding:
       position: 103
       prefix: --processes

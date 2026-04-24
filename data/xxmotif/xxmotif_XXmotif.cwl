@@ -20,7 +20,6 @@ inputs:
       - type: array
         items: int
     doc: Add columns to the left and/or right of models. <INTEGER> >= 0
-    default: 0 0
     inputBinding:
       position: 103
       prefix: --addColumns
@@ -31,7 +30,6 @@ inputs:
         items: float
     doc: Markov model pseudo-counts factor(s). Markov model order k fixes vector
       size to k+1. <FLOAT> >= 0
-    default: 10
     inputBinding:
       position: 103
       prefix: --alpha
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: Background model pseudo-counts factor. <FLOAT> >= 0
-    default: 10
     inputBinding:
       position: 103
       prefix: --Alpha
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: order of background distribution
-    default: 2
     inputBinding:
       position: 103
       prefix: --background-model-order
@@ -78,7 +74,6 @@ inputs:
     doc: Quantile to estimate the background intensity value (or rank). 
       Sequences having their intensity value (rank) below (above) the background
       intensity value (rank) get assigned to weight zero. 0 <= <FLOAT> <= 1
-    default: 0
     inputBinding:
       position: 103
       prefix: --backgroundQuantile
@@ -117,7 +112,6 @@ inputs:
     doc: Quantile to estimate the background intensity value (or rank). Binding 
       sites having their intensity value (rank) below (below) the background 
       intensity value (rank) get assigned to weight zero. 0 <= <FLOAT> <= 1
-    default: 0
     inputBinding:
       position: 103
       prefix: --bindingSiteBackgroundQuantile
@@ -164,7 +158,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Binding site rank-based weighting (default: intensity-based weighting).'
-    default: false
     inputBinding:
       position: 103
       prefix: --bindingSiteRankWeighting
@@ -173,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: number of residues in positive set downstream of anchor point
-    default: 0
     inputBinding:
       position: 103
       prefix: --downstream
@@ -198,7 +190,6 @@ inputs:
       - 'null'
       - float
     doc: EM convergence parameter. <FLOAT> > 0
-    default: 0.001
     inputBinding:
       position: 103
       prefix: --epsilon
@@ -210,7 +201,6 @@ inputs:
     doc: Markov model pseudo-counts factor(s) defined by --alpha and -q. Markov 
       model order k fixes vector size to k+1. Specify either --eta or --alpha. 
       <FLOAT> >= 0
-    default: 10
     inputBinding:
       position: 103
       prefix: --eta
@@ -228,7 +218,6 @@ inputs:
       - 'null'
       - string
     doc: defines what kind of format the input sequences have
-    default: FASTA
     inputBinding:
       position: 103
       prefix: --format
@@ -237,7 +226,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of gaps used for start seeds
-    default: 0
     inputBinding:
       position: 103
       prefix: --gaps
@@ -290,7 +278,6 @@ inputs:
       - 'null'
       - int
     doc: Markov model order. <INTEGER> >= 0
-    default: 0
     inputBinding:
       position: 103
       prefix: -k
@@ -307,7 +294,6 @@ inputs:
       - 'null'
       - int
     doc: max number of positions per motif
-    default: 17
     inputBinding:
       position: 103
       prefix: --max-match-positions
@@ -325,7 +311,6 @@ inputs:
       - 'null'
       - float
     doc: maximum number of sequences used in an alignment
-    default: all
     inputBinding:
       position: 103
       prefix: --maxMultipleSequences
@@ -334,7 +319,6 @@ inputs:
       - 'null'
       - float
     doc: maximum number of sequences from the positive set used
-    default: all
     inputBinding:
       position: 103
       prefix: --maxPosSetSize
@@ -344,7 +328,6 @@ inputs:
       - float
     doc: Max. p-value of XXmotif models used to initialize Markov models. Not 
       applied to min. number of models.
-    default: 1
     inputBinding:
       position: 103
       prefix: --maxPvalue
@@ -353,7 +336,6 @@ inputs:
       - 'null'
       - string
     doc: defines the similarity threshold for merging motifs
-    default: HIGH
     inputBinding:
       position: 103
       prefix: --merge-motif-threshold
@@ -363,7 +345,6 @@ inputs:
       - int
     doc: Min. number of XXmotif models used to initialize Markov models. 
       Independent on options --maxPvalue and --minOccurrence. <INTEGER> > 0
-    default: 1
     inputBinding:
       position: 103
       prefix: --minModels
@@ -373,7 +354,6 @@ inputs:
       - float
     doc: Min. percentage of sequences containing a binding site instance. Not 
       applied to min. number of models.
-    default: 0
     inputBinding:
       position: 103
       prefix: --minOccurrence
@@ -450,7 +430,6 @@ inputs:
       - 'null'
       - float
     doc: percentage of pseudocounts used
-    default: 10
     inputBinding:
       position: 103
       prefix: --pseudo
@@ -459,7 +438,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Rank-based weighting (default: intensity-based weighting).'
-    default: false
     inputBinding:
       position: 103
       prefix: --rankWeighting
@@ -468,7 +446,6 @@ inputs:
       - 'null'
       - boolean
     doc: search in reverse complement of sequences as well
-    default: false
     inputBinding:
       position: 103
       prefix: --revcomp
@@ -519,7 +496,6 @@ inputs:
       - float
     doc: Specificity factor approximates the percentage of sequences 
       contributing to the Markov model. 0 < <FLOAT> < 1
-    default: 0.1
     inputBinding:
       position: 103
       prefix: -q
@@ -570,7 +546,6 @@ inputs:
       - 'null'
       - string
     doc: inspect extensions and refinement of a given seed
-    default: not used
     inputBinding:
       position: 103
       prefix: --trackedMotif
@@ -579,7 +554,6 @@ inputs:
       - 'null'
       - string
     doc: defines what kind of start seeds are used
-    default: ALL
     inputBinding:
       position: 103
       prefix: --type
@@ -596,7 +570,6 @@ inputs:
       - 'null'
       - boolean
     doc: use zero-or-one occurrence per sequence model
-    default: true
     inputBinding:
       position: 103
       prefix: --zoops

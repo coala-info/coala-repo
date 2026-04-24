@@ -12,7 +12,6 @@ inputs:
       - float
     doc: 'Cutoff depends on which method you used for score track. If the file contains
       pvalue scores from MACS2, score 5 means pvalue 1e-5. DEFAULT: 5'
-    default: 5
     inputBinding:
       position: 101
       prefix: --cutoff
@@ -23,7 +22,6 @@ inputs:
     doc: 'While set, bdgpeakcall will analyze number or total length of peaks that
       can be called by different cutoff then output a summary table to help user decide
       a better cutoff. Note, minlen and maxgap may affect the results. DEFAULT: False'
-    default: false
     inputBinding:
       position: 101
       prefix: --cutoff-analysis
@@ -39,7 +37,6 @@ inputs:
       - int
     doc: 'maximum gap between significant points in a peak, better to set it as tag
       size. DEFAULT: 30'
-    default: 30
     inputBinding:
       position: 101
       prefix: --max-gap
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum length of peak, better to set it as d value. DEFAULT: 200'
-    default: 200
     inputBinding:
       position: 101
       prefix: --min-length

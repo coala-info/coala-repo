@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: A comma-separated list of columns that you would like returned
-    default: '*'
     inputBinding:
       position: 102
       prefix: --columns
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a maximum normal sample AF to allow
-    default: 0.7
     inputBinding:
       position: 102
       prefix: --maxNorm
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth required in all samples
-    default: 0
     inputBinding:
       position: 102
       prefix: --minDP
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum genotype quality required in all samples
-    default: 0
     inputBinding:
       position: 102
       prefix: --minGQ
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a minimum normal sample AF to allow
-    default: 0.3
     inputBinding:
       position: 102
       prefix: --minNorm
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a minimum AF for tumor samples to require
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --minTumor
@@ -106,7 +100,6 @@ inputs:
       - string
     doc: Rather than including all samples, enter a string of comma-separated 
       specified samples to use
-    default: All
     inputBinding:
       position: 102
       prefix: --samples

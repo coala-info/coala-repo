@@ -65,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Maxiumum allowed size for a trimmed read.
-    default: 50
     inputBinding:
       position: 101
       prefix: --max_length
@@ -74,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum allowed size for a trimmed read.
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_length

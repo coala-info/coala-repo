@@ -19,7 +19,6 @@ inputs:
       - int
     doc: Number of clusters to be considered in each iteration, a higher number means
       faster execution but higher memory usage
-    default: 15
     inputBinding:
       position: 101
       prefix: --clusters-per-iteration
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: P-value column in the associations file
-    default: lrt-pvalue
     inputBinding:
       position: 101
       prefix: --column
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: Association p-value threshold
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --threshold

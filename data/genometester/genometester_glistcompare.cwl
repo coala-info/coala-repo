@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: specify frequency cut-off (default 1)
-    default: 1
     inputBinding:
       position: 104
       prefix: --cutoff
@@ -94,7 +93,6 @@ inputs:
       - int
     doc: specify number of mismatches (default 0, can be used with -diff and 
       -ddiff)
-    default: 0
     inputBinding:
       position: 104
       prefix: --mismatch
@@ -103,7 +101,6 @@ inputs:
       - 'null'
       - string
     doc: specify output name (default "out")
-    default: out
     inputBinding:
       position: 104
       prefix: --outputname
@@ -114,7 +111,6 @@ inputs:
     doc: "specify rule how final frequencies are calculated (default, add, subtract,
       min, max, first, second, 1, 2)\nNOTE: rules min, subtract, first and second
       can only be used with finding the intersection."
-    default: default
     inputBinding:
       position: 104
       prefix: --rule

@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Value to add to each score to prevent negative values.
-    default: 0
     inputBinding:
       position: 103
       prefix: -v
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - File
     doc: Optional anchor file.
-    default: none
     inputBinding:
       position: 103
       prefix: -A
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: 'Whether overlap weights are calculated or not. 0: no, 1: yes.'
-    default: 0
     inputBinding:
       position: 103
       prefix: -o
@@ -57,7 +54,6 @@ inputs:
       - int
     doc: 'Debug mode level. 0: no debug, 1: current phase, 2: very loquacious, 5:
       hardcore debugging.'
-    default: 0
     inputBinding:
       position: 103
       prefix: -d
@@ -93,7 +89,6 @@ inputs:
       - int
     doc: 'Global minimum fragment length for stop criterion. Defaults to PROTEIN:
       40, DNA: 40.'
-    default: 40
     inputBinding:
       position: 103
       prefix: -g
@@ -110,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of characters per line in an input FASTA file.
-    default: 100
     inputBinding:
       position: 103
       prefix: -a
@@ -119,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of characters per line when printing a sequence.
-    default: 80
     inputBinding:
       position: 103
       prefix: -c
@@ -137,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum amount of input sequences.
-    default: 5000
     inputBinding:
       position: 103
       prefix: -s
@@ -155,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum fragment length.
-    default: 1
     inputBinding:
       position: 103
       prefix: -f
@@ -165,7 +156,6 @@ inputs:
       - float
     doc: Defines the minimum weight when the weight formula is changed to 
       1-pow(1-prob, factor).
-    default: 6.5e-08
     inputBinding:
       position: 103
       prefix: -w
@@ -176,7 +166,6 @@ inputs:
     doc: 'Neighbor stripe mode. 1: only use a sqrt(amount_of_seqs) stripe of neighbor
       sequences to calculate pairwise alignments (increase performance), 0: all pairwise
       alignments will be calculated.'
-    default: 0
     inputBinding:
       position: 103
       prefix: -u
@@ -213,7 +202,6 @@ inputs:
       - int
     doc: 'Sensitivity mode. Higher level means less likely spurious random fragments
       are aligned in local alignments. 0: switched off, 1: level-1, 2: level-2.'
-    default: 0
     inputBinding:
       position: 103
       prefix: -l
@@ -222,7 +210,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold weight to consider the fragment at all.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: -r

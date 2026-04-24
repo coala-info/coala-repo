@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size.
-    default: 23
     inputBinding:
       position: 101
       prefix: -K
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use.
-    default: 8
     inputBinding:
       position: 101
       prefix: -p

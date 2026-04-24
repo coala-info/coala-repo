@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: Ani identity
-    default: 99
     inputBinding:
       position: 101
       prefix: --ani
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Difference of structure (counted by ani).
-    default: 5
     inputBinding:
       position: 101
       prefix: --distance
@@ -83,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

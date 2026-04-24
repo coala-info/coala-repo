@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Colour blobs by 'c index'
-    default: false
     inputBinding:
       position: 101
       prefix: --cindex
@@ -72,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: Figure format for plot (png, pdf, eps, jpeg, ps, svg, svgz, tiff)
-    default: png
     inputBinding:
       position: 101
       prefix: --format
@@ -81,7 +79,6 @@ inputs:
       - 'null'
       - boolean
     doc: Hide sequences without taxonomic annotation
-    default: false
     inputBinding:
       position: 101
       prefix: --nohit
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: 'Data for histograms (span: span-weighted histograms, count: count histograms)'
-    default: span
     inputBinding:
       position: 101
       prefix: --hist
@@ -99,7 +95,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum values for x/y-axis
-    default: '1e10'
     inputBinding:
       position: 101
       prefix: --max
@@ -108,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequence length considered for plotting
-    default: 100
     inputBinding:
       position: 101
       prefix: --length
@@ -125,7 +119,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not scale sequences by length
-    default: false
     inputBinding:
       position: 101
       prefix: --noscale
@@ -142,7 +135,6 @@ inputs:
       - 'null'
       - boolean
     doc: Omit blobplot
-    default: false
     inputBinding:
       position: 101
       prefix: --noblobs
@@ -151,7 +143,6 @@ inputs:
       - 'null'
       - boolean
     doc: Omit plot of reads mapping
-    default: false
     inputBinding:
       position: 101
       prefix: --noreads
@@ -177,7 +168,6 @@ inputs:
       - int
     doc: Number of (taxonomic) groups to plot, remaining groups are placed in 
       'other'
-    default: 7
     inputBinding:
       position: 101
       prefix: --plotgroups
@@ -214,7 +204,6 @@ inputs:
       - string
     doc: 'Sort order for plotting (span: plot with decreasing span, count: plot with
       decreasing count)'
-    default: span
     inputBinding:
       position: 101
       prefix: --sort
@@ -223,7 +212,6 @@ inputs:
       - 'null'
       - string
     doc: Taxonomic rank used for colouring of blobs
-    default: phylum
     inputBinding:
       position: 101
       prefix: --rank
@@ -232,7 +220,6 @@ inputs:
       - 'null'
       - string
     doc: Taxrule which has been used for computing taxonomy
-    default: bestsum
     inputBinding:
       position: 101
       prefix: --taxrule

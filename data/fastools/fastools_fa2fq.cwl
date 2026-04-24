@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: quality score
-    default: 40
     inputBinding:
       position: 102
       prefix: -q

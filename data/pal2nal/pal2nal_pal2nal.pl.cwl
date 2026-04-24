@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Genetic code table (1-23, e.g., 1 for Universal, 2 for Vertebrate mitochondrial)
-    default: 1
     inputBinding:
       position: 103
       prefix: -codontable
@@ -72,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: Output format (clustal|paml|fasta|codon)
-    default: clustal
     inputBinding:
       position: 103
       prefix: -output

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep temporary files
-    default: false
     inputBinding:
       position: 101
       prefix: --keeptmp
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum bp overlap between read and feature
-    default: 1
     inputBinding:
       position: 101
       prefix: --overlap
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: current directory
     inputBinding:
       position: 101
       prefix: --outdir
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output file names
-    default: no prefix
     inputBinding:
       position: 101
       prefix: --prefix
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: 'Strandness of the library. One of: "unstranded" (default), "forward", "reverse".'
-    default: unstranded
     inputBinding:
       position: 101
       prefix: --strandness
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cpus to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temporary files directory
-    default: ./tmp
     inputBinding:
       position: 101
       prefix: --tmpdir

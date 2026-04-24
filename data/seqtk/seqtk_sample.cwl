@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: RNG seed
-    default: 11
     inputBinding:
       position: 103
       prefix: -s

@@ -185,7 +185,6 @@ inputs:
       - 'null'
       - string
     doc: User who is creating this report. Default is default.
-    default: default
     inputBinding:
       position: 102
       prefix: --user

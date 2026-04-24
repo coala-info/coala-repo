@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: specify the time windows for the peak (minute)
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --ptw
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: m/z tolerance in ppm
-    default: 10
     inputBinding:
       position: 101
       prefix: --tol

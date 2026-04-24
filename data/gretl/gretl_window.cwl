@@ -16,7 +16,6 @@ inputs:
       - string
     doc: "Which metric do you wanna have reported? Example: 'similarity', 'nodesize',
       'depth'"
-    default: similarity
     inputBinding:
       position: 101
       prefix: --metric
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Separate by first entry in Pan-SN spec
-    default: \n
     inputBinding:
       position: 101
       prefix: --pansn
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Step size
-    default: 100000
     inputBinding:
       position: 101
       prefix: --step-size
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Size of a single window
-    default: 100000
     inputBinding:
       position: 101
       prefix: --window-size

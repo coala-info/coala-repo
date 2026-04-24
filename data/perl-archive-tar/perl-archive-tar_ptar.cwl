@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: Name of the ARCHIVE_FILE to use. Default is './default.tar'
-    default: ./default.tar
     inputBinding:
       position: 102
       prefix: -f

@@ -18,7 +18,6 @@ inputs:
       - int
     doc: "Compression level (integer).\n           It defines compressibility in balance
       with computational\n           resources (RAM & time). Use -s for levels perception."
-    default: 7
     inputBinding:
       position: 102
       prefix: --level
@@ -61,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Hidden size of the neural network (integer).
-    default: 40
     inputBinding:
       position: 102
       prefix: --hidden-size
@@ -71,7 +69,6 @@ inputs:
       - float
     doc: "Neural Network leaning rate (double).\n           The 0 value turns the
       Neural Network off."
-    default: 0.03
     inputBinding:
       position: 102
       prefix: --learning-rate
@@ -96,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Pseudo-random seed.
-    default: 0
     inputBinding:
       position: 102
       prefix: --seed

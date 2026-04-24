@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Genome build (37 or 38), defaults to 38 or according to --release input
-    default: 38
     inputBinding:
       position: 101
       prefix: --grch
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Linear distance cutoff (> peptides) for prior
-    default: 0
     inputBinding:
       position: 101
       prefix: --linear-cutoff
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - float
     doc: p_value cutoff(<=) for prior
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --p-value-cutoff
@@ -49,7 +46,6 @@ inputs:
     doc: Ensembl release verion (55-87), defaults to 87 or to the latest release
       according to --grch input. Note that releases 55-75 correspond to GRCh37 &
       76-87 correspond to GRCh38
-    default: 87
     inputBinding:
       position: 101
       prefix: --release
@@ -59,7 +55,6 @@ inputs:
       - string
     doc: What step to start on ( calroi , statis , anno , trans , cosmic , prior
       )
-    default: calroi
     inputBinding:
       position: 101
       prefix: --start
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: 3D distance cutoff (<= Angstroms) for prior
-    default: 20
     inputBinding:
       position: 101
       prefix: --3d-distance-cutoff

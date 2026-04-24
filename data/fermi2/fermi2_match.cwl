@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Batch size.
-    default: 10000000
     inputBinding:
       position: 103
       prefix: -b
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length in the discovery mode (forces -d).
-    default: 61
     inputBinding:
       position: 103
       prefix: -k
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Show coordinate if the number of hits is no more than INT.
-    default: 10
     inputBinding:
       position: 103
       prefix: -m
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum occurrences.
-    default: 1
     inputBinding:
       position: 103
       prefix: -s
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - File
     doc: Sampled suffix array.
-    default: 'null'
     inputBinding:
       position: 103
       prefix: -s
@@ -81,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 1
     inputBinding:
       position: 103
       prefix: -t

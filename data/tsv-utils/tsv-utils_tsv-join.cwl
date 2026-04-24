@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Field delimiter.
-    default: \t
     inputBinding:
       position: 102
       prefix: --delimiter

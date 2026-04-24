@@ -47,7 +47,6 @@ inputs:
       - 'null'
       - float
     doc: subject coverage cutoff for BLAST
-    default: 0
     inputBinding:
       position: 101
       prefix: --coverage
@@ -56,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: expect threshold for BLAST
-    default: '1e-5'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -72,7 +70,6 @@ inputs:
       - string
     doc: input type (fasta:pro, fasta:nuc, blastout:xml, blastout:tab, 
       id:refseqpro, id:uniprot, id:ensembl, id:ncbigene)
-    default: fasta:pro
     inputBinding:
       position: 101
       prefix: --intype
@@ -113,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs to be used by BLAST
-    default: 1
     inputBinding:
       position: 101
       prefix: --nCPUs
@@ -124,7 +120,6 @@ inputs:
     doc: whether only use orthologs for cross-species annotation or not, default
       NO (if only use orthologs, please provide the species abbreviation of your
       input)
-    default: NO
     inputBinding:
       position: 101
       prefix: --ortholog
@@ -133,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: rank cutoff for valid hits from BLAST result
-    default: 5
     inputBinding:
       position: 101
       prefix: --rank

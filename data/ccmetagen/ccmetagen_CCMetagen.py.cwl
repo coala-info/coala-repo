@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum abundance threshold for reporting
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min_abundance
@@ -52,7 +51,6 @@ inputs:
       - string
     doc: Taxonomy level for classification (e.g., kingdom, phylum, class, order, family,
       genus, species)
-    default: species
     inputBinding:
       position: 101
       prefix: --tax_level

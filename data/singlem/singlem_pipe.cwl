@@ -14,7 +14,6 @@ inputs:
       algorithm (using the smafa implementation) over all window sequences in 
       the database, and if none are found use DIAMOND blastx of all reads from 
       each OTU.
-    default: smafa_naive_then_diamond
     inputBinding:
       position: 101
       prefix: --assignment-method
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Use this many processes in parallel while assigning taxonomy
-    default: 1
     inputBinding:
       position: 101
       prefix: --assignment-threads
@@ -75,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: HMMSEARCH e-value cutoff to use for sequence gathering
-    default: '1e-05'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -93,7 +90,6 @@ inputs:
       - int
     doc: Ignore reads aligning in less than this many positions to each 
       nucleotide HMM
-    default: 72
     inputBinding:
       position: 101
       prefix: --filter-minimum-nucleotide
@@ -103,7 +99,6 @@ inputs:
       - int
     doc: Ignore reads aligning in less than this many positions to each protein 
       HMM when using --no-diamond-prefilter
-    default: 24
     inputBinding:
       position: 101
       prefix: --filter-minimum-protein
@@ -158,7 +153,6 @@ inputs:
       - string
     doc: File extension of genomes in the directory specified with 
       -d/--genome-fasta-directory.
-    default: fna
     inputBinding:
       position: 101
       prefix: --genome-fasta-extension
@@ -226,7 +220,6 @@ inputs:
       - int
     doc: Maximum number of different bases acids to allow between a sequence and
       the best hit in the database so that it is assigned to the species level.
-    default: 2
     inputBinding:
       position: 101
       prefix: --max-species-divergence
@@ -244,7 +237,6 @@ inputs:
       - int
     doc: When predicting ORFs require this many base pairs uninterrupted by a 
       stop codon
-    default: 72 for reads, 300 for genomes
     inputBinding:
       position: 101
       prefix: --min-orf-length
@@ -253,7 +245,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage to report in a taxonomic profile.
-    default: 0.35 for reads, 0.1 for genomes
     inputBinding:
       position: 101
       prefix: --min-taxon-coverage
@@ -359,7 +350,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUS to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -375,7 +365,6 @@ inputs:
       bacteria and archaea that use table 11. See 
       http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=tgencodes
       for details on specific tables.
-    default: 4
     inputBinding:
       position: 101
       prefix: --translation-table

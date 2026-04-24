@@ -30,7 +30,6 @@ inputs:
       - float
     doc: "Maximum error rate between reads in order to be merged based on\n      \
       \    barcode sequence In range [0..1]."
-    default: 0.05
     inputBinding:
       position: 104
       prefix: --barcode-err-rate
@@ -40,7 +39,6 @@ inputs:
       - float
     doc: "Inclusive maximum frequency ratio between smaller and larger cluster\n \
       \         during barcode clustering In range [0..1]."
-    default: 0.2
     inputBinding:
       position: 104
       prefix: --barcode-freq-rate
@@ -50,7 +48,6 @@ inputs:
       - int
     doc: "Length of random barcode at the beginning of the read. A value of\n    \
       \      '0' disables barcode based correction. In range [0..inf]."
-    default: 0
     inputBinding:
       position: 104
       prefix: --barcode-length
@@ -69,7 +66,6 @@ inputs:
       - int
     doc: "Minimum per base quality in molecular barcode region In range\n        \
       \  [0..60]."
-    default: 30
     inputBinding:
       position: 104
       prefix: --bc-min-qual
@@ -79,7 +75,6 @@ inputs:
       - int
     doc: "Maximum number of errors allowed in the barcode sequence In range\n    \
       \      [0..inf]."
-    default: 1
     inputBinding:
       position: 104
       prefix: --bcseq-max-err
@@ -89,7 +84,6 @@ inputs:
       - int
     doc: "Maximum number of errors when matching the J core fragments. In\n      \
       \    range [0..inf]."
-    default: 2
     inputBinding:
       position: 104
       prefix: --j-core-errors
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Length of the J core fragment. In range [5..20].
-    default: 12
     inputBinding:
       position: 104
       prefix: --j-core-length
@@ -107,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Offset of the V core fragment.
-    default: -6
     inputBinding:
       position: 104
       prefix: --j-core-offset
@@ -117,7 +109,6 @@ inputs:
       - float
     doc: "Maximum error rate allowed within the J segment alignment In range\n   \
       \       [0..inf]."
-    default: 0.15
     inputBinding:
       position: 104
       prefix: --j-err-rate
@@ -126,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel jobs (threads).
-    default: 1
     inputBinding:
       position: 104
       prefix: --jobs
@@ -136,7 +126,6 @@ inputs:
       - float
     doc: "Maximum abundance ratio for two clonotypes to be clustered In range\n  \
       \        [0..1]."
-    default: 1.0
     inputBinding:
       position: 104
       prefix: --max-clust-ratio
@@ -146,7 +135,6 @@ inputs:
       - int
     doc: "Maximum edit-distance for two clusters to be clustered without low\n   \
       \       quality correlation In range [0..inf]."
-    default: 4
     inputBinding:
       position: 104
       prefix: --max-err-hq
@@ -156,7 +144,6 @@ inputs:
       - int
     doc: "Maximum edit-distance for two clusters to be potentially clustered\n   \
       \       without low quality correlation In range [0..inf]."
-    default: 2
     inputBinding:
       position: 104
       prefix: --max-err-lq
@@ -174,7 +161,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum CDR3 length in amino acids. In range [0..inf].
-    default: 5
     inputBinding:
       position: 104
       prefix: --min-cdr3-length
@@ -183,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum average cluster phred score. In range [0..60].
-    default: 30
     inputBinding:
       position: 104
       prefix: --min-clust-qual
@@ -193,7 +178,6 @@ inputs:
       - int
     doc: "Minimum average read phred score. In paired end mode, this is\n        \
       \  applied to both reads. See '-sfb'. In range [0..60]."
-    default: 30
     inputBinding:
       position: 104
       prefix: --min-qual
@@ -203,7 +187,6 @@ inputs:
       - int
     doc: "Minimum read length. In paired end mode, this is applied to both\n     \
       \     reads. See '-sfb'. In range [0..inf]."
-    default: 75
     inputBinding:
       position: 104
       prefix: --min-read-length
@@ -213,7 +196,6 @@ inputs:
       - int
     doc: "How many standard deviations must an error positions quality value\n   \
       \       be below the mean to be considered for clustering."
-    default: 1
     inputBinding:
       position: 104
       prefix: --min-sd-diff
@@ -281,7 +263,6 @@ inputs:
       - int
     doc: "Truncate reads to the specified length. 0 leaves them at their\n       \
       \   original lengths."
-    default: 0
     inputBinding:
       position: 104
       prefix: --truncate-reads
@@ -291,7 +272,6 @@ inputs:
       - int
     doc: "Maximum number of errors when matching the V core fragments. In\n      \
       \    range [0..inf]."
-    default: 1
     inputBinding:
       position: 104
       prefix: --v-core-errors
@@ -310,7 +290,6 @@ inputs:
       - 'null'
       - int
     doc: Offset of the V core fragment.
-    default: 0
     inputBinding:
       position: 104
       prefix: --v-core-offset
@@ -320,7 +299,6 @@ inputs:
       - float
     doc: "Maximum error rate allowed within the V segment alignment In range\n   \
       \       [0..inf]."
-    default: 0.05
     inputBinding:
       position: 104
       prefix: --v-err-rate
@@ -330,7 +308,6 @@ inputs:
       - int
     doc: "Crop NUM bases from the beginning of the V read before processing it\n \
       \         In range [0..inf]."
-    default: 0
     inputBinding:
       position: 104
       prefix: --v-read-crop

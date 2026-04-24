@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: The alignment tool to use (e.g., bwa, bowtie2).
-    default: bwa
     inputBinding:
       position: 103
       prefix: --aligner
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Set the logging level (e.g., DEBUG, INFO, WARNING, ERROR).
-    default: INFO
     inputBinding:
       position: 103
       prefix: --log-level
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads to use for alignment.
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

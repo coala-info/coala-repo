@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum delta mass (Dalton) for UniMod annotation.
-    default: 0.02
     inputBinding:
       position: 101
       prefix: --max_delta_unimod
@@ -22,7 +21,6 @@ inputs:
       the downstream consumer of the spectral library. Lowering this number will
       collapse (more) identical fragment ions of the same precursor to a single 
       value.
-    default: 6
     inputBinding:
       position: 101
       prefix: --precision_digits
@@ -53,7 +51,6 @@ inputs:
       - int
     doc: 'Auto-switch to streaming when combined input size (bytes) >= this threshold.
       Default: 2GB.'
-    default: 2000000000
     inputBinding:
       position: 101
       prefix: --streaming-threshold-bytes

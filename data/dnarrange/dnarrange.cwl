@@ -26,7 +26,6 @@ inputs:
       - int
     doc: discard case reads sharing any (0) or "strongest" (1) rearrangements 
       with control reads
-    default: 1
     inputBinding:
       position: 103
       prefix: --filter
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: maximum query-length difference for shared rearrangement
-    default: 500
     inputBinding:
       position: 103
       prefix: --max-diff
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: discard any alignment with mismap probability > PROB
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --max-mismap
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: minimum forward jump in the reference sequence counted as a "big gap"
-    default: 10000
     inputBinding:
       position: 103
       prefix: --min-gap
@@ -79,7 +75,6 @@ inputs:
       - int
     doc: minimum reverse jump in the reference sequence counted as 
       "non-colinear"
-    default: 1000
     inputBinding:
       position: 103
       prefix: --min-rev
@@ -88,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: minimum query sequences per group
-    default: 2
     inputBinding:
       position: 103
       prefix: --min-seqs
@@ -106,7 +100,6 @@ inputs:
       - string
     doc: 'rearrangement types: C=inter-chromosome, S=inter-strand, N=non-colinear,
       G=big gap'
-    default: CSNG
     inputBinding:
       position: 103
       prefix: --types
@@ -123,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: line-wrap width of group summary lines
-    default: 79
     inputBinding:
       position: 103
       prefix: --width

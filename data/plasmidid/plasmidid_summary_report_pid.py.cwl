@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: Creates a group report instead of individual
-    default: true
     inputBinding:
       position: 101
       prefix: --group

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: Format, [paired, interleaved, index, list, json]
-    default: paired
     inputBinding:
       position: 102
       prefix: --format
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Key, [file_id, filename, filetype, filesize, url, urltype, md5, all]
-    default: file_id
     inputBinding:
       position: 102
       prefix: --key
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: Selector for ID, [read, region, file, region-type]
-    default: read
     inputBinding:
       position: 102
       prefix: --selector

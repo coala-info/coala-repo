@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: maximum read length for paired end duplicate-marking
-    default: 10000
     inputBinding:
       position: 103
       prefix: --max-read-length
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base quality
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-base-qual

@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: number of allowed mismatches per index
-    default: 0
     inputBinding:
       position: 102
   - id: delay
@@ -29,7 +28,6 @@ inputs:
     doc: "number of seconds to sleep after finding\n                             \
       \   RTAComplete.txt -- applies only when waiting\n                         \
       \       for a run to complete"
-    default: 14400
     inputBinding:
       position: 102
   - id: determine
@@ -39,7 +37,6 @@ inputs:
     doc: "use barcodes in samplesheet as well as the\n                           \
       \     reverse complement of index 2, then\n                                demultiplex
       with best"
-    default: false
     inputBinding:
       position: 102
   - id: input_dir
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - boolean
     doc: save Undetermined reads
-    default: false
     inputBinding:
       position: 102
   - id: loading
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads used for loading BCL data
-    default: 12
     inputBinding:
       position: 102
   - id: no_cleanup
@@ -73,7 +68,6 @@ inputs:
       - boolean
     doc: "skip all cleaning up -- do not rename fastq\n                          \
       \      output and do not delete undetermined files"
-    default: false
     inputBinding:
       position: 102
   - id: no_wait
@@ -82,7 +76,6 @@ inputs:
       - boolean
     doc: "process the run without checking its\n                                completion
       status"
-    default: false
     inputBinding:
       position: 102
   - id: output_dir
@@ -100,7 +93,6 @@ inputs:
       - boolean
     doc: "overwrite existing fastq files in the output\n                         \
       \       directory"
-    default: false
     inputBinding:
       position: 102
   - id: processing
@@ -109,7 +101,6 @@ inputs:
       - int
     doc: "number of threads used for processing\n                                demultiplexed
       data"
-    default: 24
     inputBinding:
       position: 102
   - id: reverse_complement
@@ -117,7 +108,6 @@ inputs:
       - 'null'
       - boolean
     doc: reverse complement index 2 of the sample sheet
-    default: false
     inputBinding:
       position: 102
   - id: runfolder_dir
@@ -125,7 +115,6 @@ inputs:
       - 'null'
       - Directory
     doc: path to directory containing run data
-    default: /
     inputBinding:
       position: 102
       prefix: --runfolder-dir
@@ -141,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads used for writing FASTQ data
-    default: 12
     inputBinding:
       position: 102
 outputs:

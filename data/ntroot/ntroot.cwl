@@ -59,7 +59,6 @@ inputs:
       - float
     doc: Ratio of number of k-mers in the k subset that should be present to 
       accept an edit (higher=stringent)
-    default: 0.55
     inputBinding:
       position: 101
       prefix: -Y
@@ -69,7 +68,6 @@ inputs:
       - int
     doc: controls size of k-mer subset. When checking subset of k-mers, check 
       every jth k-mer
-    default: 3
     inputBinding:
       position: 101
       prefix: -j
@@ -78,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum contig length
-    default: 100
     inputBinding:
       position: 101
       prefix: -z
@@ -122,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: -t
@@ -131,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Tile size for ancestry fraction inference (bp)
-    default: 5000000
     inputBinding:
       position: 101
       prefix: --tile
@@ -140,7 +135,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose mode
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

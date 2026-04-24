@@ -16,7 +16,6 @@ inputs:
     doc: When set to T, for each protein that begins with methionine, tide-index
       will put two copies of the leading peptide into the index, with and 
       without the N-terminal methionine.
-    default: 'false'
     inputBinding:
       position: 102
       prefix: --clip-nterm-methionine
@@ -35,7 +34,6 @@ inputs:
       not before P which is represented as [RK]|{P}. AspN cuts after any residue
       but only before D which is represented as [X]|[D]. To prevent the 
       sequences from being digested at all, use [Z]|[Z].
-    default: ''
     inputBinding:
       position: 102
       prefix: --custom-enzyme
@@ -54,7 +52,6 @@ inputs:
       will appear in both the target and decoy database. The protein-reverse 
       mode reverses the entire protein sequence, irrespective of the composite 
       peptides.
-    default: shuffle
     inputBinding:
       position: 102
       prefix: --decoy-format
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: Specifies the prefix of the protein names that indicate a decoy.
-    default: decoy_
     inputBinding:
       position: 102
       prefix: --decoy-prefix
@@ -74,7 +70,6 @@ inputs:
     doc: Specify whether every peptide in the database must have two enzymatic 
       termini (full-digest) or if peptides with only one enzymatic terminus are 
       also included (partial-digest).
-    default: full-digest
     inputBinding:
       position: 102
       prefix: --digestion
@@ -91,7 +86,6 @@ inputs:
       ([FL]|{P}), elastase-trypsin-chymotrypsin ([ALIVKRWFY]|{P}). Specifying --enzyme
       no-enzyme yields a non-enzymatic digest. Warning: the resulting index may be
       quite large.'
-    default: trypsin
     inputBinding:
       position: 102
       prefix: --enzyme
@@ -100,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: The fileroot string will be added as a prefix to all output file names.
-    default: ''
     inputBinding:
       position: 102
       prefix: --fileroot
@@ -110,7 +103,6 @@ inputs:
       - string
     doc: Specify the type of isotopic masses to use when calculating the peptide
       mass.
-    default: mono
     inputBinding:
       position: 102
       prefix: --isotopic-mass
@@ -125,7 +117,6 @@ inputs:
       setting keep-terminal-aminos to "NC" will yield "EPMAK"; setting it to "C"
       will yield "PMAEK"; setting it to "N" will yield "EKPMA"; and setting it 
       to "none" will yield "KPMAE".
-    default: NC
     inputBinding:
       position: 102
       prefix: --keep-terminal-aminos
@@ -134,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum length of peptides to consider.
-    default: 50
     inputBinding:
       position: 102
       prefix: --max-length
@@ -143,7 +133,6 @@ inputs:
       - 'null'
       - float
     doc: The maximum mass (in Da) of peptides to consider.
-    default: 7200.0
     inputBinding:
       position: 102
       prefix: --max-mass
@@ -152,7 +141,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum length of peptides to consider.
-    default: 6
     inputBinding:
       position: 102
       prefix: --min-length
@@ -161,7 +149,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum mass (in Da) of peptides to consider.
-    default: 200.0
     inputBinding:
       position: 102
       prefix: --min-mass
@@ -171,7 +158,6 @@ inputs:
       - int
     doc: Maximum number of missed cleavages per peptide to allow in enzymatic 
       digestion.
-    default: 0
     inputBinding:
       position: 102
       prefix: --missed-cleavages
@@ -180,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: Set the precision for modifications as written to .txt files.
-    default: 2
     inputBinding:
       position: 102
       prefix: --mod-precision
@@ -189,7 +174,6 @@ inputs:
       - 'null'
       - string
     doc: The name of the directory where output files will be created.
-    default: crux-output
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -199,7 +183,6 @@ inputs:
       - string
     doc: Replace existing files if true or fail when trying to overwrite a file 
       if false.
-    default: 'false'
     inputBinding:
       position: 102
       prefix: --overwrite
@@ -208,7 +191,6 @@ inputs:
       - 'null'
       - string
     doc: A file containing parameters.
-    default: ''
     inputBinding:
       position: 102
       prefix: --parameter-file
@@ -219,7 +201,6 @@ inputs:
     doc: When given a unsigned integer value seeds the random number generator 
       with that value. When given the string "time" seeds the random number 
       generator with the system time.
-    default: '1'
     inputBinding:
       position: 102
       prefix: --seed
@@ -231,7 +212,6 @@ inputs:
       messages, including all those at lower verbosity levels: 0-fatal errors, 10-non-fatal
       errors, 20-warnings, 30-information on the progress of execution, 40-more progress
       information, 50-debug info, 60-detailed debug info.'
-    default: 30
     inputBinding:
       position: 102
       prefix: --verbosity

@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: Kmer depth for kmer stats
-    default: 4.0
     inputBinding:
       position: 103
       prefix: --kmer
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: the minimum log Likelihood
-    default: -120
     inputBinding:
       position: 103
       prefix: --minLL
@@ -55,7 +53,6 @@ inputs:
       - int
     doc: Minimum quality score to use in Z-normalization. Illumina quality 
       scores can be unreliable below this threshold
-    default: 3
     inputBinding:
       position: 103
       prefix: --minQual
@@ -80,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Quality ascii offset (illumina) 33 or 64 (or 0)
-    default: 33
     inputBinding:
       position: 103
       prefix: --qOff
@@ -90,7 +86,6 @@ inputs:
       - string
     doc: 'Realign reads with Striped-Smith-Waterman honoring ambiguous reference bases
       and stacking homo-polymer indels. Format: matchScore,misMatchPenalty,gapOpenPenalty,gapExtPenalty,minimumSoftClip'
-    default: 1,3,11,4,8
     inputBinding:
       position: 103
       prefix: --realign

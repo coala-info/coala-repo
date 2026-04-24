@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Quality value to use if an entry does not have qualities
-    default: 40
     inputBinding:
       position: 103
       prefix: --missing-quality

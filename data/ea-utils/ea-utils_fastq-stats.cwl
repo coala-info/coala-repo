@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: max cycles for which following quality stats are produced
-    default: 35
     inputBinding:
       position: 102
       prefix: -c
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: max window size for generating duplicate read statistics
-    default: 2000000
     inputBinding:
       position: 102
       prefix: -w

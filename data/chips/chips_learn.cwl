@@ -11,7 +11,6 @@ inputs:
     doc: Absolute threshold for peak scores. Only consider peaks with at least 
       this score. ChIPs applies `--thres` or `--thres-scale` whichever is 
       stricter.
-    default: 100.0
     inputBinding:
       position: 101
       prefix: --thres
@@ -29,7 +28,6 @@ inputs:
     doc: The estimated fragment length. Please set this number as the loose 
       upper-bound of your estimated fragment length. This can result in more 
       robust estimates especially for data with narrow peaks.
-    default: 300
     inputBinding:
       position: 101
       prefix: --est
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - float
     doc: Ratio of high score peaks to ignore
-    default: 0.0
     inputBinding:
       position: 101
       prefix: -r
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - boolean
     doc: Loading paired-end reads
-    default: false
     inputBinding:
       position: 101
       prefix: --paired
@@ -56,7 +52,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't scale peak scores by the max score.
-    default: false
     inputBinding:
       position: 101
       prefix: --noscale
@@ -89,7 +84,6 @@ inputs:
       - 'null'
       - string
     doc: Only consider peaks from this region chrom:start-end
-    default: genome-wide
     inputBinding:
       position: 101
       prefix: --region
@@ -99,7 +93,6 @@ inputs:
       - boolean
     doc: Set all peaks with scores >2*median score to have binding prob 1. 
       Recommended with real data.
-    default: false
     inputBinding:
       position: 101
       prefix: --scale-outliers
@@ -110,7 +103,6 @@ inputs:
     doc: Scale threshold for peak scores. Only consider peaks with at least this
       score. after scaling scores to be between 0-1. ChIPs applies `--thres` or 
       `--thres-scale` whichever is stricter.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --thres-scale

@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use cmscan instead of pyhmmer.nhmmer
-    default: false
     inputBinding:
       position: 102
       prefix: --accurate
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: E-value cutoff
-    default: '1e-06'
     inputBinding:
       position: 102
       prefix: --evalue
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include FASTA input sequences in GFF output
-    default: false
     inputBinding:
       position: 102
       prefix: --incseq
@@ -43,7 +40,6 @@ inputs:
       - string
     doc: "Target kingdom [bac|arc|euk|all]\n                     kingdom='all' is
       available only when set with `--accurate` option"
-    default: bac
     inputBinding:
       position: 102
       prefix: --kingdom
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: Proportional length threshold to label as partial
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --lencutoff
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - File
     doc: Output rRNA hit seqs as fasta file
-    default: None
     inputBinding:
       position: 102
       prefix: --outseq
@@ -70,7 +64,6 @@ inputs:
       - 'null'
       - boolean
     doc: No print log on screen
-    default: false
     inputBinding:
       position: 102
       prefix: --quiet
@@ -79,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: Proportional length threshold to reject prediction
-    default: 0.25
     inputBinding:
       position: 102
       prefix: --reject
@@ -88,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

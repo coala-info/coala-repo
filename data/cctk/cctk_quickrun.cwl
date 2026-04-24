@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Largest cluster size to plot.
-    default: 15
     inputBinding:
       position: 101
       prefix: --max-cluster

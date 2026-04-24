@@ -16,7 +16,6 @@ inputs:
     doc: 'BWT construction algorithm. STR can be: sais - induced sort algorithm, slower
       but works for very long sequences (default); ropebwt - very fast and memory
       efficient. use this for short (<200bp) reads'
-    default: sais
     inputBinding:
       position: 102
       prefix: --algorithm
@@ -49,7 +48,6 @@ inputs:
       value is set to 32, the memory requirement is essentially deterministic 
       and requires ~5N bytes where N is the size of the FM-index of READS2. The 
       default value is 8.
-    default: 8
     inputBinding:
       position: 102
       prefix: --gap-array
@@ -94,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: 'use NUM threads to construct the index (default: 1)'
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

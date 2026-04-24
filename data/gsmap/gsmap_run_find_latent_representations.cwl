@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the annotation in adata.obs to use.
-    default: None
     inputBinding:
       position: 101
       prefix: --annotation
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for convergence.
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: --convergence_threshold
@@ -26,7 +24,6 @@ inputs:
     type: string
     doc: "Data layer for gene expression (e.g., \"count\",\n                     \
       \   \"counts\", \"log1p\")."
-    default: counts
     inputBinding:
       position: 101
       prefix: --data_layer
@@ -35,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Number of training epochs.
-    default: 300
     inputBinding:
       position: 101
       prefix: --epochs
@@ -44,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Neurons in the first hidden layer.
-    default: 256
     inputBinding:
       position: 101
       prefix: --feat_hidden1
@@ -53,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Neurons in the second hidden layer.
-    default: 128
     inputBinding:
       position: 101
       prefix: --feat_hidden2
@@ -62,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Units in the first GAT hidden layer.
-    default: 64
     inputBinding:
       position: 101
       prefix: --gat_hidden1
@@ -71,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Units in the second GAT hidden layer.
-    default: 30
     inputBinding:
       position: 101
       prefix: --gat_hidden2
@@ -80,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: Learning rate for the GAT.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --gat_lr
@@ -89,7 +80,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable hierarchical latent representation finding.
-    default: false
     inputBinding:
       position: 101
       prefix: --hierarchically
@@ -104,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Number of principal components for PCA.
-    default: 300
     inputBinding:
       position: 101
       prefix: --n_comps
@@ -113,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Number of neighbors for GAT.
-    default: 11
     inputBinding:
       position: 101
       prefix: --n_neighbors
@@ -122,7 +110,6 @@ inputs:
       - 'null'
       - float
     doc: Dropout rate.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --p_drop
@@ -131,7 +118,6 @@ inputs:
       - 'null'
       - boolean
     doc: Using the pearson residuals.
-    default: false
     inputBinding:
       position: 101
       prefix: --pearson_residuals
@@ -146,7 +132,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use weighted adjacency in GAT.
-    default: false
     inputBinding:
       position: 101
       prefix: --weighted_adj

@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: minimum fuzzy kmer match ratio to extract a reference fragment.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --hit_ratio
@@ -33,7 +32,6 @@ inputs:
       - boolean
     doc: 1 indicates including reads info, 0 indicates not (just for 
       evaluation).
-    default: 1
     inputBinding:
       position: 101
       prefix: --read_info
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: kmer length.
-    default: 32
     inputBinding:
       position: 101
       prefix: -k
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: minimum exact kmer match ratio to extract a reference fragment.
-    default: 0.08
     inputBinding:
       position: 101
       prefix: --match_ratio
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: maximum candidate BKP count.
-    default: 300000000
     inputBinding:
       position: 101
       prefix: --max_peak
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: minimum read mapping quality in BAM.
-    default: 20
     inputBinding:
       position: 101
       prefix: -q
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: number of hash functions (1-9).
-    default: 3
     inputBinding:
       position: 101
       prefix: -e
@@ -94,7 +87,6 @@ inputs:
       - 'null'
       - boolean
     doc: 1 indicates refine the input fastq file using fastp (recommended).
-    default: 0
     inputBinding:
       position: 101
       prefix: --refine_fq
@@ -103,14 +95,12 @@ inputs:
       - 'null'
       - boolean
     doc: 1 indicates retain reads with XA tag.
-    default: 1
     inputBinding:
       position: 101
       prefix: -a
   - id: sample_name
     type: string
     doc: Sample name.
-    default: sample
     inputBinding:
       position: 101
       prefix: -s
@@ -120,7 +110,6 @@ inputs:
       - float
     doc: 'down-sample in kmer counting: (0-1) means sampling proportion, (>1) means
       sampling base count (bp).'
-    default: 2000000000
     inputBinding:
       position: 101
       prefix: --sample
@@ -129,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: seed to initialize a pseudorandom number generator.
-    default: 1
     inputBinding:
       position: 101
       prefix: --seed
@@ -138,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads.
-    default: 10
     inputBinding:
       position: 101
       prefix: -t
@@ -148,7 +135,6 @@ inputs:
       - boolean
     doc: 1 means using kmer to extract HGT-related segment, 0 means using 
       original reference.
-    default: 1
     inputBinding:
       position: 101
       prefix: --use_kmer

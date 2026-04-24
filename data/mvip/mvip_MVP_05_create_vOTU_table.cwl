@@ -12,7 +12,6 @@ inputs:
       - type: array
         items: float
     doc: minimum covered fraction for filtering
-    default: 0.1 0.5 0.9
     inputBinding:
       position: 101
       prefix: --covered_fraction
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: Filtration level (relaxed or conservative).
-    default: conservative
     inputBinding:
       position: 101
       prefix: --filtration
@@ -31,7 +29,6 @@ inputs:
       - float
     doc: the maximum ratio of host genes to viral genes required to consider a 
       row as a virus prediction
-    default: 1
     inputBinding:
       position: 101
       prefix: --host_viral_genes_ratio
@@ -55,7 +52,6 @@ inputs:
       - int
     doc: the minimum number of viral genes required to consider a row as a virus
       prediction
-    default: 1
     inputBinding:
       position: 101
       prefix: --viral_min_genes

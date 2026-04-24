@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: limit RAM usage to LIMIT MiB
-    default: 3072
     inputBinding:
       position: 102
       prefix: --mem

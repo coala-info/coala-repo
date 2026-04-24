@@ -24,7 +24,6 @@ inputs:
       - int
     doc: Sets max-k to arg. Scelestial considers all k-subsets of samples for 
       min-k <= k <= max-k.
-    default: 4
     inputBinding:
       position: 102
       prefix: -max-k
@@ -34,7 +33,6 @@ inputs:
       - int
     doc: Sets min-k to arg. Scelestial considers all k-subsets of samples for 
       min-k <= k <= max-k.
-    default: 3
     inputBinding:
       position: 102
       prefix: -min-k

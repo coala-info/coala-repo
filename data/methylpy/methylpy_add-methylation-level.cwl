@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: size of buffer for reads to be written on hard drive.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --buffer-line-number
@@ -30,7 +29,6 @@ inputs:
       - boolean
     doc: Boolean to indicate whether to generate two output extra files with the
       total basecalls and covered sites in each of the regions.
-    default: false
     inputBinding:
       position: 101
       prefix: --extra-info
@@ -40,7 +38,6 @@ inputs:
       - boolean
     doc: Indicating whether input tsv file contains a header. If this is set to 
       True, a header will be automatically generated in the output file.
-    default: false
     inputBinding:
       position: 101
       prefix: --input-no-header
@@ -69,7 +66,6 @@ inputs:
     doc: List of space separated mc nucleotide contexts for which you want to 
       look for DMRs. These classifications may use the wildcards H (indicating 
       anything but a G) and N (indicating any nucleotide).
-    default:
       - CGN
     inputBinding:
       position: 101
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage for a site to be included
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-cov
@@ -88,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors you wish to use to parallelize this function
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-procs

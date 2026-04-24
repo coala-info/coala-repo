@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: Method for multiple testing correction.
-    default: benjamin
     inputBinding:
       position: 101
       prefix: --correction
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: TSS downstream distance for promoters.
-    default: 2000
     inputBinding:
       position: 101
       prefix: --downstream
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: TSS upstream distance for promoters.
-    default: 4000
     inputBinding:
       position: 101
       prefix: --upstream

@@ -11,7 +11,6 @@ inputs:
       - type: array
         items: File
     doc: Reads to be mapped to reference. If paired end add separated by space.
-    default: none
     inputBinding:
       position: 1
   - id: coverage
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: coverage in X. Only considered if --sample reads is selected.
-    default: 10
     inputBinding:
       position: 102
       prefix: --coverage
@@ -29,7 +27,6 @@ inputs:
       - boolean
     doc: 'Changes to debug mode: * bam files are saved!* reads are saved by mapping
       to OG'
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -40,7 +37,6 @@ inputs:
     doc: 'Reference file that contains nucleotide sequences (fasta, hdf5). If not
       given it will usethe RESTapi and retrieve sequences from http://omabrowser.org
       directly. NOTE: internet connection required!'
-    default: None
     inputBinding:
       position: 102
       prefix: --dna_reference
@@ -49,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Genome size in bp.
-    default: 2000000
     inputBinding:
       position: 102
       prefix: --genome_len
@@ -59,7 +54,6 @@ inputs:
       - string
     doc: Ignores species part of the OMA standalone pipeline. Input is comma 
       separated list without spaces, e.g. XXX,YYY,AAA.
-    default: none
     inputBinding:
       position: 102
       prefix: --ignore_species
@@ -70,7 +64,6 @@ inputs:
     doc: Keep all orthologs after addition of mapped seq, which means also the 
       OGs that have no mapped sequence. Otherwise only OGs are used that have 
       the mapped sequence for alignment and tree inference.
-    default: true
     inputBinding:
       position: 102
       prefix: --keep_all_ogs
@@ -79,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of nucleotides at column.
-    default: 1
     inputBinding:
       position: 102
       prefix: --min_cons_coverage
@@ -97,7 +89,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to output directory.
-    default: current directory
     inputBinding:
       position: 102
       prefix: --output_path
@@ -107,7 +98,6 @@ inputs:
       - string
     doc: 'Minimap2 command-line options for mapping reads to reference. Examples:
       -ax sr , -ax map-hifi , -ax map-pb or -ax map-ont'
-    default: -ax sr
     inputBinding:
       position: 102
       prefix: --read_type
@@ -118,7 +108,6 @@ inputs:
     doc: Remove species present in data set after mapping step completed and 
       only do analysis on subset. Input is comma separated list without spaces, 
       e.g. XXX,YYY,AAA.
-    default: none
     inputBinding:
       position: 102
       prefix: --remove_species_mapping
@@ -128,7 +117,6 @@ inputs:
       - string
     doc: Remove species present in data set after mapping step completed to 
       build OGs. Input is comma separated list without spaces, e.g. XXX,YYY,AAA.
-    default: none
     inputBinding:
       position: 102
       prefix: --remove_species_ogs
@@ -138,7 +126,6 @@ inputs:
       - boolean
     doc: Splits reads as defined by split_len (200) and split_overlap (0) 
       parameters.
-    default: false
     inputBinding:
       position: 102
       prefix: --sample_reads
@@ -149,7 +136,6 @@ inputs:
     doc: Parameter for selection of sequences from mapping by completeness 
       compared to its reference sequence (number of ACGT basepairs vs length of 
       sequence). By default, all sequences are selected.
-    default: 0.25
     inputBinding:
       position: 102
       prefix: --sc_threshold
@@ -158,7 +144,6 @@ inputs:
       - 'null'
       - string
     doc: Possibilities are cov and cov_sc for mapped sequence.
-    default: sc
     inputBinding:
       position: 102
       prefix: --sequence_selection_mode
@@ -167,7 +152,6 @@ inputs:
       - 'null'
       - string
     doc: Name of species for mapped sequence.
-    default: name of read 1st file
     inputBinding:
       position: 102
       prefix: --species_name
@@ -176,7 +160,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to oma standalone directory.
-    default: current directory
     inputBinding:
       position: 102
       prefix: --standalone_path
@@ -185,7 +168,6 @@ inputs:
       - 'null'
       - string
     doc: Step of the pipeline
-    default: all 1marker 2map 3combine
     inputBinding:
       position: 102
       prefix: --step
@@ -195,7 +177,6 @@ inputs:
       - int
     doc: Number of threads for gene marker alignment (mafft) and read mapping 
       (minimap2) and tree inference (iqtree)
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -204,7 +185,6 @@ inputs:
       - 'null'
       - boolean
     doc: Compute tree, otherwise just output concatenated alignment!
-    default: false
     inputBinding:
       position: 102
       prefix: --tree

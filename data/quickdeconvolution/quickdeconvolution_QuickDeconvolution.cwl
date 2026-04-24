@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: on average 1/2^d kmers are sparse kmers
-    default: 3
     inputBinding:
       position: 101
       prefix: --density
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: QD does not try to deconvolve clouds smaller than this value
-    default: 0
     inputBinding:
       position: 101
       prefix: --dropout
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: size of kmers
-    default: 20
     inputBinding:
       position: 101
       prefix: --kmers-length
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: size of window guaranteed to contain at least one minimizing kmer
-    default: 40
     inputBinding:
       position: 101
       prefix: --window-size

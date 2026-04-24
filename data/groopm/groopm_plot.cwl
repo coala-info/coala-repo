@@ -15,7 +15,6 @@ inputs:
       - type: array
         items: string
     doc: bin ids to plot (None for all)
-    default: None
     inputBinding:
       position: 102
       prefix: --bids
@@ -25,7 +24,6 @@ inputs:
       - string
     doc: set colormap [HSV, Accent, Blues, Spectral, Grayscale, Discrete, 
       DiscretePaired]
-    default: HSV
     inputBinding:
       position: 102
       prefix: --cm
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - Directory
     doc: save plots in folder
-    default: ''
     inputBinding:
       position: 102
       prefix: --folder
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: ignore contig lengths when plotting
-    default: false
     inputBinding:
       position: 102
       prefix: --points
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: tag to add to output filename
-    default: BIN
     inputBinding:
       position: 102
       prefix: --tag

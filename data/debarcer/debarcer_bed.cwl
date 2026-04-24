@@ -17,7 +17,6 @@ inputs:
       - boolean
     doc: Ignore orphans (paired reads that are not in a proper pair). Default is
       False, becomes True if used
-    default: false
     inputBinding:
       position: 101
       prefix: --IgnoreOrphans
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum read depth.
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --MaxDepth

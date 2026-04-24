@@ -23,7 +23,6 @@ inputs:
       - string
     doc: 'Content to print, ","-delimited. Options: QNAME, QPAIR, STRAND, BSSTRAND,
       MAPQ, QBEG, QEND, CHRM, CRPOS, CGRPOS, CQPOS, CRBASE, CCTXT, CQBASE, CRETENTION'
-    default: QNAME,QPAIR,BSSTRAND,CRBASE,CQBASE
     inputBinding:
       position: 103
       prefix: -p
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: Consider secondary mapping
-    default: false
     inputBinding:
       position: 103
       prefix: -s
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Target (c, cg, ch, hcg, gch, hch)
-    default: cg
     inputBinding:
       position: 103
       prefix: -t

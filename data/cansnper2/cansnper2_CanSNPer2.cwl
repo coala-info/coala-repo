@@ -96,7 +96,6 @@ inputs:
       - 'null'
       - boolean
     doc: Save tree as PDF using ETE3
-    default: false
     inputBinding:
       position: 102
       prefix: --save_tree
@@ -113,7 +112,6 @@ inputs:
       - 'null'
       - float
     doc: Percent of snps in path reqired for calling SNP
-    default: 0.7
     inputBinding:
       position: 102
       prefix: --strictness

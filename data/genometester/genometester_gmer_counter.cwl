@@ -77,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: number of worker threads (default 24)
-    default: 24
     inputBinding:
       position: 103
       prefix: --num_threads
@@ -119,7 +118,6 @@ inputs:
       - 'null'
       - boolean
     doc: use 32-bit integeres for counts (default 16-bit)
-    default: false
     inputBinding:
       position: 103
       prefix: '-32'

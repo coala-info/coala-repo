@@ -25,7 +25,6 @@ inputs:
       - float
     doc: minimum SNP frequency to consider when calculating diversity measures; 
       useful if SNPs below a certain frequency are likely to be errors.
-    default: 0
     inputBinding:
       position: 101
       prefix: --minfreq

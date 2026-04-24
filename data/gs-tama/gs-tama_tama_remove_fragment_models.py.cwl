@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Exon ends threshold/ splice junction threshold
-    default: 10
     inputBinding:
       position: 101
       prefix: -m
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Pull CDS option
-    default: tama_cds where CDS regions matching TSS and TTS are ignored if 
       another CDS is found. Use longest_cds to pick the longest CDS
     inputBinding:
       position: 101
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Single exon overlap percent threshold
-    default: 20
     inputBinding:
       position: 101
       prefix: -s
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Trans ends wobble threshold
-    default: 500
     inputBinding:
       position: 101
       prefix: -e
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: Use original ID line original_id
-    default: tama_id line based on gene_id;transcript_id structure
     inputBinding:
       position: 101
       prefix: -id

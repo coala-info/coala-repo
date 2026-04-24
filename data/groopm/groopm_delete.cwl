@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - boolean
     doc: delete without prompting
-    default: false
     inputBinding:
       position: 103
       prefix: --force

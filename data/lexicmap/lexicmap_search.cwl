@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Band size in backtracking the score matrix (pseudo alignment phase).
-    default: 100
     inputBinding:
       position: 102
       prefix: --align-band
@@ -27,7 +26,6 @@ inputs:
     doc: Extend length of upstream and downstream of seed regions, for 
       extracting query and target sequences for alignment. It should be <= 
       contig interval length in database.
-    default: 1000
     inputBinding:
       position: 102
       prefix: --align-ext-len
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum gap in a HSP segment.
-    default: 20
     inputBinding:
       position: 102
       prefix: --align-max-gap
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum aligned length in a HSP segment.
-    default: 50
     inputBinding:
       position: 102
       prefix: --align-min-match-len
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum base identity (percentage) in a HSP segment.
-    default: 70
     inputBinding:
       position: 102
       prefix: --align-min-match-pident
@@ -73,7 +68,6 @@ inputs:
       - int
     doc: Force garbage collection every N queries (0 for disable). The value 
       can't be too small.
-    default: 64
     inputBinding:
       position: 102
       prefix: --gc-interval
@@ -133,7 +127,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum evalue of a HSP segment.
-    default: 10
     inputBinding:
       position: 102
       prefix: --max-evalue
@@ -145,7 +138,6 @@ inputs:
       extraction. Increase this value if you have hundreds of genome batches or 
       have multiple queries, and do not forgot to set a bigger "ulimit -n" in 
       shell if the value is > 1024.
-    default: 1024
     inputBinding:
       position: 102
       prefix: --max-open-files
@@ -155,7 +147,6 @@ inputs:
       - int
     doc: Maximum number of concurrent queries. Bigger values do not improve the 
       batch searching speed and consume much memory.
-    default: 8
     inputBinding:
       position: 102
       prefix: --max-query-conc
@@ -199,7 +190,6 @@ inputs:
       - int
     doc: Minimum distance between seeds in seed chaining. It should be <= contig
       interval length in database.
-    default: 1000
     inputBinding:
       position: 102
       prefix: --seed-max-dist
@@ -208,7 +198,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum gap in seed chaining.
-    default: 50
     inputBinding:
       position: 102
       prefix: --seed-max-gap
@@ -217,7 +206,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum (prefix/suffix) length of matched seeds (anchors).
-    default: 15
     inputBinding:
       position: 102
       prefix: --seed-min-prefix
@@ -227,7 +215,6 @@ inputs:
       - int
     doc: Minimum (prefix/suffix) length of matched seeds (anchors) if there's 
       only one pair of seeds matched.
-    default: 17
     inputBinding:
       position: 102
       prefix: --seed-min-single-prefix
@@ -267,7 +254,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU cores to use. By default, it uses all available cores.
-    default: 20
     inputBinding:
       position: 102
       prefix: --threads
@@ -278,7 +264,6 @@ inputs:
     doc: Keep top N genome matches for a query (0 for all) in chaining phase. 
       Value 1 is not recommended as the best chaining result does not always 
       bring the best alignment, so it better be >= 100.
-    default: 0
     inputBinding:
       position: 102
       prefix: --top-n-genomes

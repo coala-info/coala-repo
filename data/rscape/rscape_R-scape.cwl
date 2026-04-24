@@ -119,7 +119,6 @@ inputs:
       - 'null'
       - float
     doc: max distance for contact definition
-    default: 8.0
     inputBinding:
       position: 102
       prefix: --cntmaxD
@@ -128,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: min (j-i+1) for contact definition
-    default: 1
     inputBinding:
       position: 102
       prefix: --cntmind
@@ -146,7 +144,6 @@ inputs:
       - int
     doc: min distance between covarying pairs to report the pair. Default 1 
       (contiguous)
-    default: 1
     inputBinding:
       position: 102
       prefix: --covmin
@@ -155,7 +152,6 @@ inputs:
       - 'null'
       - boolean
     doc: use C2 if nseq <= nseqthresh otherwise use C16
-    default: true
     inputBinding:
       position: 102
       prefix: --CSELECT
@@ -172,7 +168,6 @@ inputs:
       - 'null'
       - boolean
     doc: folding algorithm is cyk (default). Options are [cyk,decoding]
-    default: true
     inputBinding:
       position: 102
       prefix: --cyk
@@ -215,7 +210,6 @@ inputs:
       - 'null'
       - float
     doc: E-value target for Helix significance
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --E_hlx
@@ -224,7 +218,6 @@ inputs:
       - 'null'
       - float
     doc: Evalue thresholds for negative pairs. Negative pairs require eval > <x>
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --E_neg
@@ -234,7 +227,6 @@ inputs:
       - float
     doc: E-value target for base pair significance. E > 1000 means report all 
       E-values
-    default: 0.05
     inputBinding:
       position: 102
       prefix: -E
@@ -259,7 +251,6 @@ inputs:
       - 'null'
       - float
     doc: keep columns with < <x> fraction of gaps
-    default: 0.75
     inputBinding:
       position: 102
       prefix: --gapthresh
@@ -292,7 +283,6 @@ inputs:
       - 'null'
       - boolean
     doc: GT APC corrected statistic
-    default: true
     inputBinding:
       position: 102
       prefix: --GTp
@@ -406,7 +396,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum hairpin loop length. If i-j is the closing pair: minhloop = j-1-1.'
-    default: 0
     inputBinding:
       position: 102
       prefix: --minhloop
@@ -463,7 +452,6 @@ inputs:
       - 'null'
       - boolean
     doc: non parameteric correlate
-    default: true
     inputBinding:
       position: 102
       prefix: --nonparam
@@ -489,7 +477,6 @@ inputs:
       - int
     doc: number of trees obtained by sequence rearrangements. Default is one 
       from msa as is
-    default: 1
     inputBinding:
       position: 102
       prefix: --ntree
@@ -498,7 +485,6 @@ inputs:
       - 'null'
       - boolean
     doc: nullphylo statistics
-    default: true
     inputBinding:
       position: 102
       prefix: --nullphylo
@@ -635,7 +621,6 @@ inputs:
       - 'null'
       - float
     doc: pmass for censored histogram of cov scores
-    default: 0.0005
     inputBinding:
       position: 102
       prefix: --pmass
@@ -710,7 +695,6 @@ inputs:
       - 'null'
       - float
     doc: potts regularization parameters for training eij's
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --ptmue
@@ -719,7 +703,6 @@ inputs:
       - 'null'
       - float
     doc: potts regularization parameters for training hi's
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --ptmuh
@@ -817,7 +800,6 @@ inputs:
       - 'null'
       - float
     doc: require seqs to have < <x> id
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -I
@@ -891,7 +873,6 @@ inputs:
       - 'null'
       - int
     doc: set RNG seed to <n>. Use 0 for a random seed.
-    default: 42
     inputBinding:
       position: 102
       prefix: --seed
@@ -917,7 +898,6 @@ inputs:
       - boolean
     doc: calculate power using double substitutions, default is single 
       substitutions
-    default: true
     inputBinding:
       position: 102
       prefix: --singlesubs
@@ -926,7 +906,6 @@ inputs:
       - 'null'
       - int
     doc: window slide
-    default: 50
     inputBinding:
       position: 102
       prefix: --slide
@@ -951,7 +930,6 @@ inputs:
       - 'null'
       - float
     doc: tolerance
-    default: 1e-06
     inputBinding:
       position: 102
       prefix: --tol

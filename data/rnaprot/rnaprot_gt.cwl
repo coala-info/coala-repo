@@ -159,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of --in sites
-    default: 300
     inputBinding:
       position: 101
       prefix: --max-len
@@ -170,7 +169,6 @@ inputs:
     doc: Minimum length of --in sites (only effective for --mode 2). If length <
       --min-len, take center and extend to --min-len. Use uneven numbers for 
       equal up- and downstream extension
-    default: 21
     inputBinding:
       position: 101
       prefix: --min-len
@@ -181,7 +179,6 @@ inputs:
     doc: Define mode for --in BED site extraction. (1) Take the center of each 
       site, (2) Take the complete site, (3) Take the upstream end for each site.
       Note that --min-len applies only for --mode 2
-    default: 1
     inputBinding:
       position: 101
       prefix: --mode
@@ -191,7 +188,6 @@ inputs:
       - float
     doc: Sequence complexity (Shannon entropy) threshold for filtering random 
       negative regions
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --neg-comp-thr
@@ -201,7 +197,6 @@ inputs:
       - string
     doc: 'Determines number of initial random negatives to be extracted (== --neg-factor
       n times # positives)'
-    default: 2
     inputBinding:
       position: 101
       prefix: --neg-factor
@@ -254,7 +249,6 @@ inputs:
       - 'null'
       - int
     doc: RNAplfold -L parameter value
-    default: 50
     inputBinding:
       position: 101
       prefix: --plfold-l
@@ -263,7 +257,6 @@ inputs:
       - 'null'
       - int
     doc: RNAplfold -u parameter value
-    default: 3
     inputBinding:
       position: 101
       prefix: --plfold-u
@@ -272,7 +265,6 @@ inputs:
       - 'null'
       - int
     doc: RNAplfold -W parameter value
-    default: 70
     inputBinding:
       position: 101
       prefix: --plfold-w
@@ -290,7 +282,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set theme for .html report (1: palm beach, 2: midnight sunset)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --theme
@@ -317,7 +308,6 @@ inputs:
       - int
     doc: Up- and downstream sequence extension length of sites (site definition 
       by --mode)
-    default: 40
     inputBinding:
       position: 101
       prefix: --seq-ext
@@ -327,7 +317,6 @@ inputs:
       - string
     doc: Supply k for k-nucleotide shuffling of --in sequences to generate 
       negative sequences (if no --neg-in supplied)
-    default: 2
     inputBinding:
       position: 101
       prefix: --shuffle-k

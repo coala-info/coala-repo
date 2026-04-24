@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: Batch size
-    default: 400M
     inputBinding:
       position: 102
       prefix: -B
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Gap extension score
-    default: 1
     inputBinding:
       position: 102
       prefix: -e
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Gap open score
-    default: 3
     inputBinding:
       position: 102
       prefix: -o
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Match score
-    default: 2
     inputBinding:
       position: 102
       prefix: -m
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Mismatch score
-    default: 2
     inputBinding:
       position: 102
       prefix: -x
@@ -98,7 +93,6 @@ inputs:
       - 'null'
       - string
     doc: Output mode, fastq or fasta
-    default: fastq
     inputBinding:
       position: 102
       prefix: -M
@@ -113,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: Target length for detecting barcode
-    default: 150
     inputBinding:
       position: 102
       prefix: -L
@@ -122,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 3
     inputBinding:
       position: 102
       prefix: -t

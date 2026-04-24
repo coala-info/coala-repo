@@ -13,7 +13,6 @@ inputs:
       protein clusters. If provided alongside --proteins-fn, vConTACT will start
       from the PC- generation step. If raw proteins are provided, THIS WILL BE 
       SKIPPED. Reference DBs CANNOT BE USED IF THIS OPTION IS ENABLED!!
-    default: None
     inputBinding:
       position: 101
       prefix: --blast-fp
@@ -23,7 +22,6 @@ inputs:
       - File
     doc: Location for BLASTP executable. Path only used if vConTACT cant find in
       $PATH.
-    default: None
     inputBinding:
       position: 101
       prefix: --blastp-bin
@@ -33,7 +31,6 @@ inputs:
       - File
     doc: Location for clusterONE file. Path only used if vConTACT cant find in 
       $PATH.
-    default: None
     inputBinding:
       position: 101
       prefix: --c1-bin
@@ -43,7 +40,6 @@ inputs:
       - type: array
         items: string
     doc: Id of the clusters to export (Cytoscape export only).
-    default:
       - '0'
     inputBinding:
       position: 101
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - File
     doc: Contig info file (tsv or csv)
-    default: None
     inputBinding:
       position: 101
       prefix: --contigs
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Pooling criterion for cluster export (Cytoscape export only).
-    default: predicted_family
     inputBinding:
       position: 101
       prefix: --criterion
@@ -73,7 +67,6 @@ inputs:
     doc: Select a reference database to de novo cluster proteins against. If 
       'None' selected, be aware that there will be no references included in the
       analysis.
-    default: ProkaryoticViralRefSeq85-ICTV
     inputBinding:
       position: 101
       prefix: --db
@@ -83,7 +76,6 @@ inputs:
       - File
     doc: Location for DIAMOND executable. Path only used if vConTACT cant find 
       in $PATH.
-    default: None
     inputBinding:
       position: 101
       prefix: --diamond-bin
@@ -93,7 +85,6 @@ inputs:
       - type: array
         items: string
     doc: Export backend. Suported values are "csv", "krona" and "cytoscape"
-    default:
       - csv
     inputBinding:
       position: 101
@@ -103,7 +94,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite existing files
-    default: false
     inputBinding:
       position: 101
       prefix: --force-overwrite
@@ -114,7 +104,6 @@ inputs:
     doc: Apply a haircut transformation as a post-processing step on the 
       detected clusters. A haircut transformation removes dangling nodes from a 
       cluster. (ClusterONE only)
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --haircut
@@ -124,7 +113,6 @@ inputs:
       - float
     doc: Proportion of a module's PC a contig must have to be considered as 
       displaying this module.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --link-prop
@@ -133,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: Significitaivity threshold to link a cluster and a module
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --link-sig
@@ -143,7 +130,6 @@ inputs:
       - float
     doc: Specifies the maximum allowed overlap between two clusters. (ClusterONE
       only)
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --max-overlap
@@ -152,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: Significance threshold in the contig similarity network.
-    default: 300
     inputBinding:
       position: 101
       prefix: --max-sig
@@ -162,7 +147,6 @@ inputs:
       - string
     doc: Specifies the method to be used to merge highly overlapping complexes. 
       (ClusterONE only)
-    default: single
     inputBinding:
       position: 101
       prefix: --merge-method
@@ -171,7 +155,6 @@ inputs:
       - 'null'
       - float
     doc: Sets the minimum density of predicted complexes. (ClusterONE only)
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --min-density
@@ -180,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size for the Viral Cluster.
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-size
@@ -189,7 +171,6 @@ inputs:
       - 'null'
       - float
     doc: Inflation parameter to define protein modules with MCL.
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --mod-inflation
@@ -199,7 +180,6 @@ inputs:
       - int
     doc: Minimal number (inclusive) of contigs a PC must appear into to be taken
       into account in the modules computing.
-    default: 3
     inputBinding:
       position: 101
       prefix: --mod-shared-min
@@ -208,7 +188,6 @@ inputs:
       - 'null'
       - float
     doc: Significance threshold in the protein cluster similarity network.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --mod-sig
@@ -218,7 +197,6 @@ inputs:
       - boolean
     doc: Optimize hierarchical distances during second-pass of the viral 
       clusters
-    default: false
     inputBinding:
       position: 101
       prefix: --optimize
@@ -227,7 +205,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: vContact_Output
     inputBinding:
       position: 101
       prefix: --output-dir
@@ -237,7 +214,6 @@ inputs:
       - float
     doc: E-value used by BLASTP or Diamond when creating the protein-protein 
       similarity network.
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: --pc-evalue
@@ -247,7 +223,6 @@ inputs:
       - float
     doc: 'Inflation value to define proteins clusters with MCL. (default: 2.0) (MCL
       only)'
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --pc-inflation
@@ -256,7 +231,6 @@ inputs:
       - 'null'
       - File
     doc: Protein cluster profiles of the contigs (tsv or csv)
-    default: None
     inputBinding:
       position: 101
       prefix: --pc-profiles
@@ -265,7 +239,6 @@ inputs:
       - 'null'
       - File
     doc: Protein clusters info file (tsv or csv)
-    default: None
     inputBinding:
       position: 101
       prefix: --pcs
@@ -274,7 +247,6 @@ inputs:
       - 'null'
       - string
     doc: Whether to use ClusterONE or MCL for Protein Cluster (PC) generation.
-    default: MCL
     inputBinding:
       position: 101
       prefix: --pcs-mode
@@ -287,7 +259,6 @@ inputs:
       with only a single weak connection to a cluster will not be added to the 
       cluster as the penalty value will outweigh the benefits of adding the 
       node. (ClusterONE only)
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --penalty
@@ -297,7 +268,6 @@ inputs:
       - boolean
     doc: Use permissive affiliation for associating VCs with reference 
       sequences.
-    default: false
     inputBinding:
       position: 101
       prefix: --permissive
@@ -310,7 +280,6 @@ inputs:
       from the PC-generation step. If provided alongside --raw-proteins, 
       vConTACT will start from creating the all-verses-all protein comparison 
       and then generate protein clusters.
-    default: None
     inputBinding:
       position: 101
       prefix: --proteins-fp
@@ -320,7 +289,6 @@ inputs:
       - File
     doc: FASTA-formatted proteins file. If provided alongside --proteins-fn, 
       vConTACT will start prior to PC generation.
-    default: None
     inputBinding:
       position: 101
       prefix: --raw-proteins
@@ -330,7 +298,6 @@ inputs:
       - string
     doc: Method to use to create the protein-protein similarity edge file. This 
       is what the PC clustering is applied against.
-    default: Diamond
     inputBinding:
       position: 101
       prefix: --rel-mode
@@ -340,7 +307,6 @@ inputs:
       - int
     doc: Maximum number of target sequences per query to report alignments for 
       in Diamond.
-    default: 25
     inputBinding:
       position: 101
       prefix: --reported-alignments
@@ -349,7 +315,6 @@ inputs:
       - 'null'
       - string
     doc: Specifies the seed generation method to use. (ClusterONE only)
-    default: nodes
     inputBinding:
       position: 101
       prefix: --seed-method
@@ -358,7 +323,6 @@ inputs:
       - 'null'
       - float
     doc: Significance threshold in the contig similarity network.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --sig
@@ -368,7 +332,6 @@ inputs:
       - string
     doc: Specifies the similarity function to be used in the merging step. 
       (ClusterONE only)
-    default: match
     inputBinding:
       position: 101
       prefix: --similarity
@@ -378,7 +341,6 @@ inputs:
       - int
     doc: Number of CPUs to use. If nothing is provided, vConTACT will attempt to
       identify the number of available CPUs.
-    default: 14
     inputBinding:
       position: 101
       prefix: --threads
@@ -389,7 +351,6 @@ inputs:
     doc: Apply a haircut transformation as a post-processing step on the 
       detected clusters. A haircut transformation removes dangling nodes from a 
       cluster. (ClusterONE only)
-    default: 0.55
     inputBinding:
       position: 101
       prefix: --vc-haircut
@@ -398,7 +359,6 @@ inputs:
       - 'null'
       - float
     doc: Inflation parameter to define contig clusters with MCL. (MCL only)
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --vc-inflation
@@ -408,7 +368,6 @@ inputs:
       - float
     doc: Specifies the maximum allowed overlap between two clusters. (ClusterONE
       only)
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --vc-overlap
@@ -421,7 +380,6 @@ inputs:
       with only a single weak connection to a cluster will not be added to the 
       cluster as the penalty value will outweigh the benefits of adding the 
       node. (ClusterONE only)
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --vc-penalty
@@ -430,7 +388,6 @@ inputs:
       - 'null'
       - string
     doc: Whether to use ClusterONE or MCL for Viral Cluster (VC) generation.
-    default: ClusterONE
     inputBinding:
       position: 101
       prefix: --vcs-mode
@@ -439,7 +396,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Verbosity level : -v warning, -vv info, -vvv debug, (default info)'
-    default: -2
     inputBinding:
       position: 101
       prefix: --verbose

@@ -49,7 +49,6 @@ inputs:
       - float
     doc: minimal relative abundance of feature in sample to include sample for 
       further analysis
-    default: 0.1
     inputBinding:
       position: 101
   - id: threads

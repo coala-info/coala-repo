@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Optional - number of threads to be used
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpu
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Optional - used in the "-qcov_hsp_perc" option of blastx
-    default: 80
     inputBinding:
       position: 101
       prefix: --HSP
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: Optional - strand of sequence to predict genes (plus, minus or both)
-    default: plus
     inputBinding:
       position: 101
       prefix: --strand

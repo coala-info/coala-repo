@@ -45,7 +45,6 @@ inputs:
       - string
     doc: semi-supervised mode, protein name prefix to identify decoy entries 
       (default "rev_")
-    default: rev_
     inputBinding:
       position: 101
       prefix: --decoy
@@ -96,7 +95,6 @@ inputs:
       - 'null'
       - float
     doc: model mass width (default 5)
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --masswidth
@@ -105,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: minimum peptide length not rejected (default 7)
-    default: 7
     inputBinding:
       position: 101
       prefix: --minpeplen
@@ -114,7 +111,6 @@ inputs:
       - 'null'
       - float
     doc: report results with minimum probability (default 0.05)
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --minprob
@@ -156,7 +152,6 @@ inputs:
       - 'null'
       - string
     doc: output name prefix (default "interact")
-    default: interact
     inputBinding:
       position: 101
       prefix: --output

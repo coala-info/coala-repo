@@ -62,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: You can use this option to specify java arguments required by GATK
-    default: --JAVA-OPTIONS "-Xmx4G"
     inputBinding:
       position: 101
       prefix: --JAVA_OPTIONS

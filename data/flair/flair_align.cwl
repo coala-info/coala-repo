@@ -15,7 +15,6 @@ inputs:
       removesup (default), separate (required for downstream work with fusions), keepsup
       (keeps supplementary alignments for isoform detection, does not allow gene fusion
       detection)'
-    default: removesup
     inputBinding:
       position: 101
       prefix: --filtertype
@@ -135,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: minimum MAPQ of read alignment to the genome
-    default: 0
     inputBinding:
       position: 101
       prefix: --quality
@@ -176,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: minimap2 number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

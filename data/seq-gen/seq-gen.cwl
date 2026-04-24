@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Branch length scaling factor
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -s
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Simulated datasets per tree
-    default: 1
     inputBinding:
       position: 102
       prefix: -n
@@ -96,7 +94,6 @@ inputs:
       - 'null'
       - float
     doc: Proportion of invariable sites
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -i
@@ -114,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Number of partitions (and trees) per sequence
-    default: 1
     inputBinding:
       position: 102
       prefix: -p
@@ -139,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: Sequence length
-    default: 1000
     inputBinding:
       position: 102
       prefix: -l

@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum STR unit length
-    default: 50
     inputBinding:
       position: 103
       prefix: --max_str_len
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum insertion size to consider
-    default: 50
     inputBinding:
       position: 103
       prefix: --min_ins_size
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of supporting reads
-    default: 2
     inputBinding:
       position: 103
       prefix: --min_support
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors to use
-    default: 1
     inputBinding:
       position: 103
       prefix: --nprocs

@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Base calling group serial number to extract, default 000
-    default: '000'
     inputBinding:
       position: 102
       prefix: --group
@@ -83,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: Which type of FASTQ entries should be reported?
-    default: all
     inputBinding:
       position: 102
       prefix: --type

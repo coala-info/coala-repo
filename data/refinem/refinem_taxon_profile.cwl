@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs to use
-    default: 1
     inputBinding:
       position: 106
       prefix: --cpus
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: e-value of valid hits
-    default: 0.001
     inputBinding:
       position: 106
       prefix: --evalue
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - float
     doc: minimum percent coverage of query sequence for reporting an alignment
-    default: 50.0
     inputBinding:
       position: 106
       prefix: --per_aln_len
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: percent identity of valid hits
-    default: 30.0
     inputBinding:
       position: 106
       prefix: --per_identity
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: minimum percentage of genes to assign a scaffold to a taxonomic group
-    default: 20.0
     inputBinding:
       position: 106
       prefix: --per_to_classify
@@ -81,7 +76,6 @@ inputs:
       - string
     doc: extension of amino acid gene files (other files in directory are 
       ignored)
-    default: faa
     inputBinding:
       position: 106
       prefix: --protein_ext
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - Directory
     doc: specify alternative directory for temporary files
-    default: /tmp
     inputBinding:
       position: 106
       prefix: --tmpdir

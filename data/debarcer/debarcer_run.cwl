@@ -26,7 +26,6 @@ inputs:
       - int
     doc: Base quality score threshold. Bases with quality scores below the 
       threshold are not used in the consensus.
-    default: 25
     inputBinding:
       position: 101
       prefix: --Quality
@@ -42,7 +41,6 @@ inputs:
       - boolean
     doc: Convert consensus files to VCF format. Default is True, becomes False 
       if used
-    default: true
     inputBinding:
       position: 101
       prefix: --Call
@@ -75,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: Figure format. Does not generate a report if pdf, even with -r True.
-    default: png
     inputBinding:
       position: 101
       prefix: --Extension
@@ -118,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum read depth.
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --MaxDepth
@@ -127,7 +123,6 @@ inputs:
       - 'null'
       - string
     doc: Requested memory for submitting jobs to SGE.
-    default: 20g
     inputBinding:
       position: 101
       prefix: --Memory
@@ -137,7 +132,6 @@ inputs:
       - boolean
     doc: Merge data, json and consensus files respectively into a 1 single file.
       Default is True, becomes False if used
-    default: true
     inputBinding:
       position: 101
       prefix: --Merge
@@ -194,7 +188,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate figure plots. Default is True, becomes False if used
-    default: true
     inputBinding:
       position: 101
       prefix: --Plot
@@ -219,7 +212,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads in region required for grouping.
-    default: 0
     inputBinding:
       position: 101
       prefix: --ReadCount
@@ -245,7 +237,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate report. Default is True, becomes False if used
-    default: true
     inputBinding:
       position: 101
       prefix: --Report

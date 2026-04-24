@@ -32,7 +32,6 @@ inputs:
     doc: Determines how many fingerprints are maximally stored to estimate the 
       duplication rate. More fingerprints leads to a more accurate estimate, but
       also more memory usage.
-    default: 1000000
     inputBinding:
       position: 103
       prefix: --duplication-max-stored-fingerprints
@@ -42,7 +41,6 @@ inputs:
       - int
     doc: Set the number of bases to be taken for the deduplication fingerprint 
       from the back of the sequence.
-    default: 8
     inputBinding:
       position: 103
       prefix: --fingerprint-back-length
@@ -52,7 +50,6 @@ inputs:
       - int
     doc: Set the offset for the back part of the deduplication fingerprint. 
       Useful for avoiding adapter sequences.
-    default: 64 for single end, 0 for paired sequences
     inputBinding:
       position: 103
       prefix: --fingerprint-back-offset
@@ -62,7 +59,6 @@ inputs:
       - int
     doc: Set the number of bases to be taken for the deduplication fingerprint 
       from the front of the sequence.
-    default: 8
     inputBinding:
       position: 103
       prefix: --fingerprint-front-length
@@ -72,7 +68,6 @@ inputs:
       - int
     doc: Set the offset for the front part of the deduplication fingerprint. 
       Useful for avoiding adapter sequences.
-    default: 64 for single end, 0 for paired sequences
     inputBinding:
       position: 103
       prefix: --fingerprint-front-offset
@@ -83,7 +78,6 @@ inputs:
     doc: The minimum amount of bases sampled from the end of the read. There 
       might be slight overshoot depending on the fragment length. Set to a 
       negative value to sample the entire read.
-    default: 100
     inputBinding:
       position: 103
       prefix: --overrepresentation-bases-from-end
@@ -94,7 +88,6 @@ inputs:
     doc: The minimum amount of bases sampled from the start of the read. There 
       might be slight overshoot depending on the fragment length. Set to a 
       negative value to sample the entire read.
-    default: 100
     inputBinding:
       position: 103
       prefix: --overrepresentation-bases-from-start
@@ -103,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: The length of the fragments to sample. The maximum is 31.
-    default: 21
     inputBinding:
       position: 103
       prefix: --overrepresentation-fragment-length
@@ -114,7 +106,6 @@ inputs:
     doc: The amount of occurrences for a sequence to be considered 
       overrepresented, regardless of the bound set by the threshold fraction. 
       Useful for very large files.
-    default: unlimited
     inputBinding:
       position: 103
       prefix: --overrepresentation-max-threshold
@@ -125,7 +116,6 @@ inputs:
     doc: The maximum amount of unique fragments to store. Larger amounts 
       increase the sensitivity of finding overrepresented sequences at the cost 
       of increasing memory usage.
-    default: 5000000
     inputBinding:
       position: 103
       prefix: --overrepresentation-max-unique-fragments
@@ -136,7 +126,6 @@ inputs:
     doc: The minimum amount of occurrences for a sequence to be considered 
       overrepresented, regardless of the bound set by the threshold fraction. 
       Useful for smaller files.
-    default: 100
     inputBinding:
       position: 103
       prefix: --overrepresentation-min-threshold
@@ -148,7 +137,6 @@ inputs:
       precision, lower speed, and also towards more bias towards the beginning 
       of the file as the fragment store gets filled up with more sequences from 
       the beginning.
-    default: 1 in 8
     inputBinding:
       position: 103
       prefix: --overrepresentation-sample-every
@@ -158,7 +146,6 @@ inputs:
       - float
     doc: At what fraction a sequence is determined to be overrepresented. The 
       threshold is calculated as fraction times the number of sampled sequences.
-    default: 0.001
     inputBinding:
       position: 103
       prefix: --overrepresentation-threshold-fraction
@@ -168,7 +155,6 @@ inputs:
       - int
     doc: Number of threads to use. If greater than one an additional thread for 
       gzip decompression will be used.
-    default: 2
     inputBinding:
       position: 103
       prefix: --threads

@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: Select output format (gbk, gff, or sco).
-    default: gbk
     inputBinding:
       position: 101
       prefix: -f
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: Select procedure (single or meta).
-    default: single
     inputBinding:
       position: 101
       prefix: -p

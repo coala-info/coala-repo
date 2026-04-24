@@ -27,7 +27,6 @@ inputs:
       - float
     doc: 'Fraction of k-mers to keep for a minhash sketch. Default: 0.01. No fingerprint
       will be created if set to zero.'
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --fingerprint-fraction
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size
-    default: 23
     inputBinding:
       position: 102
       prefix: --k

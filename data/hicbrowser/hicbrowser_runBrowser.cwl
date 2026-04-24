@@ -7,7 +7,6 @@ inputs:
   - id: config
     type: File
     doc: Configuration file with genomic tracks.
-    default: None
     inputBinding:
       position: 101
       prefix: --config
@@ -17,7 +16,6 @@ inputs:
       - boolean
     doc: Set to run the server in debug mode which will print useful 
       information.
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -28,7 +26,6 @@ inputs:
     doc: File where the template index.html file is located. The default isfine 
       unless the contents wants to be personalized. The full path has to be 
       given.
-    default: None
     inputBinding:
       position: 101
       prefix: --htmlFolder
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --numProcessors
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Local browser port to use.
-    default: 8000
     inputBinding:
       position: 101
       prefix: --port

@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Boolean: Are prediction scores available for the given method?'
-    default: false
     inputBinding:
       position: 101
       prefix: --scores

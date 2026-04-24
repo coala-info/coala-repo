@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: format for the output
-    default: txt
     inputBinding:
       position: 102
       prefix: --oformat

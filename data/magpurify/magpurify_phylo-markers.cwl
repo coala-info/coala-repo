@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow a bin to be unclassfied and flag any classified contigs
-    default: false
     inputBinding:
       position: 103
       prefix: --allow_noclass
@@ -30,7 +29,6 @@ inputs:
       - float
     doc: Min fraction of genes in bin that agree with consensus taxonomy for bin
       annotation
-    default: 0.7
     inputBinding:
       position: 103
       prefix: --bin_fract
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: Min fraction of genes in that disagree with bin taxonomy for filtering
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --contig_fract
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - boolean
     doc: Go straight to quality estimation and skip all previous steps
-    default: false
     inputBinding:
       position: 103
       prefix: --continue
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: Use strict or sensitive %ID cutoff for taxonomically annotating genes
-    default: strict
     inputBinding:
       position: 103
       prefix: --cutoff_type
@@ -67,7 +62,6 @@ inputs:
       - File
     doc: Path to reference database. By default, the MAGPURIFYDB environmental 
       variable is used
-    default: MAGPURIFYDB environmental variable
     inputBinding:
       position: 103
       prefix: --db
@@ -77,7 +71,6 @@ inputs:
       - type: array
         items: string
     doc: 'List of clades to exclude (ex: s__1300164.4)'
-    default: None
     inputBinding:
       position: 103
       prefix: --exclude_clades
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - string
     doc: Transfer taxonomy of all hits or top hit per gene
-    default: top_hit
     inputBinding:
       position: 103
       prefix: --hit_type
@@ -95,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of targets reported in BLAST table
-    default: 1
     inputBinding:
       position: 103
       prefix: --max_target_seqs
@@ -104,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: Choose to search genes versus DNA or protein database
-    default: protein
     inputBinding:
       position: 103
       prefix: --seq_type
@@ -113,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

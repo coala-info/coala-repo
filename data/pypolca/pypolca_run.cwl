@@ -43,7 +43,6 @@ inputs:
       - string
     doc: Memory per thread to use in samtools sort, set to 2G or more for large 
       genomes
-    default: 2G
     inputBinding:
       position: 101
       prefix: --memory_limit
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alt allele count to make a change
-    default: 2
     inputBinding:
       position: 101
       prefix: --min_alt
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum alt allele to ref allele ratio to make a change
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --min_ratio
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for output files
-    default: pypolca
     inputBinding:
       position: 101
       prefix: --prefix
@@ -103,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

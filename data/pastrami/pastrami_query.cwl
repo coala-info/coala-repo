@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Number of concurrent threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

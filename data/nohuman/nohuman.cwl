@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Kraken2 minimum confidence score
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --conf
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to the database
-    default: /root/.nohuman/db
     inputBinding:
       position: 102
       prefix: --db
@@ -105,7 +103,6 @@ inputs:
       - int
     doc: Number of threads to use in kraken2 and optional output compression. 
       Cannot be 0
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

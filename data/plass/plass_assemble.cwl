@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add backtrace string
-    default: false
     inputBinding:
       position: 103
       prefix: -a
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: Artificially add entries of queries with themselves (for clustering)
-    default: false
     inputBinding:
       position: 103
       prefix: --add-self-matches
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: Adjust k-mer length based on specificity (only for nucleotides)
-    default: false
     inputBinding:
       position: 103
       prefix: --adjust-kmer-len
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Alphabet size (range 2-21)
-    default: '13'
     inputBinding:
       position: 103
       prefix: --alph-size
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Write compressed output
-    default: 0
     inputBinding:
       position: 103
       prefix: --compressed
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: 'Contig end can be 0: incomplete, 1: complete, 2: both'
-    default: 2
     inputBinding:
       position: 103
       prefix: --contig-end-mode
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: 'Contig start can be 0: incomplete, 1: complete, 2: both'
-    default: 2
     inputBinding:
       position: 103
       prefix: --contig-start-mode
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Coverage mode (0-5)
-    default: 0
     inputBinding:
       position: 103
       prefix: --cov-mode
@@ -95,7 +87,6 @@ inputs:
       - 'null'
       - float
     doc: List matches above this fraction of aligned (covered) residues
-    default: 0.0
     inputBinding:
       position: 103
       prefix: -c
@@ -104,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Create database lookup file
-    default: 0
     inputBinding:
       position: 103
       prefix: --create-lookup
@@ -113,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: 'Createdb mode 0: copy data, 1: soft link data'
-    default: 0
     inputBinding:
       position: 103
       prefix: --createdb-mode
@@ -122,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: 'Database preload mode 0: auto, 1: fread, 2: mmap, 3: mmap+touch'
-    default: 0
     inputBinding:
       position: 103
       prefix: --db-load-mode
@@ -131,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: 'Database type 0: auto, 1: amino acid 2: nucleotides'
-    default: 0
     inputBinding:
       position: 103
       prefix: --dbtype
@@ -140,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Delete temporary files incremental
-    default: 1
     inputBinding:
       position: 103
       prefix: --delete-tmp-inc
@@ -149,7 +135,6 @@ inputs:
       - 'null'
       - float
     doc: Extend sequences if the E-value is below
-    default: 1e-05
     inputBinding:
       position: 103
       prefix: -e
@@ -158,7 +143,6 @@ inputs:
       - 'null'
       - boolean
     doc: Filter hits by seq.id. and coverage
-    default: false
     inputBinding:
       position: 103
       prefix: --filter-hits
@@ -167,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: filter proteins by a neural network
-    default: 1
     inputBinding:
       position: 103
       prefix: --filter-proteins
@@ -176,7 +159,6 @@ inputs:
       - 'null'
       - string
     doc: Comma-separated list of frames on the forward strand
-    default: 1,2,3
     inputBinding:
       position: 103
       prefix: --forward-frames
@@ -185,7 +167,6 @@ inputs:
       - 'null'
       - int
     doc: Shift k-mer hash initialization
-    default: 67
     inputBinding:
       position: 103
       prefix: --hash-shift
@@ -194,7 +175,6 @@ inputs:
       - 'null'
       - int
     doc: Numeric ids in index file are offset by this value
-    default: 0
     inputBinding:
       position: 103
       prefix: --id-offset
@@ -203,7 +183,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip k-mers occurring multiple times (>=2)
-    default: true
     inputBinding:
       position: 103
       prefix: --ignore-multi-kmer
@@ -212,7 +191,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include only extendable
-    default: true
     inputBinding:
       position: 103
       prefix: --include-only-extendable
@@ -221,7 +199,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep target sequences
-    default: true
     inputBinding:
       position: 103
       prefix: --keep-target
@@ -230,7 +207,6 @@ inputs:
       - 'null'
       - int
     doc: 'k-mer length (0: automatically set to optimum)'
-    default: 14
     inputBinding:
       position: 103
       prefix: -k
@@ -239,7 +215,6 @@ inputs:
       - 'null'
       - int
     doc: k-mers per sequence
-    default: 60
     inputBinding:
       position: 103
       prefix: --kmer-per-seq
@@ -257,7 +232,6 @@ inputs:
       - int
     doc: 'Mask sequences in k-mer stage: 0: w/o low complexity masking, 1: with low
       complexity masking'
-    default: 0
     inputBinding:
       position: 103
       prefix: --mask
@@ -267,7 +241,6 @@ inputs:
       - int
     doc: 'Lowercase letters will be excluded from k-mer search 0: include region,
       1: exclude region'
-    default: 0
     inputBinding:
       position: 103
       prefix: --mask-lower-case
@@ -276,7 +249,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of codons with gaps or unknown residues
-    default: 2147483647
     inputBinding:
       position: 103
       prefix: --max-gaps
@@ -285,7 +257,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum codon number in open reading frames
-    default: 32734
     inputBinding:
       position: 103
       prefix: --max-length
@@ -294,7 +265,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum sequence length
-    default: 65535
     inputBinding:
       position: 103
       prefix: --max-seq-len
@@ -303,7 +273,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment length
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-aln-len
@@ -312,7 +281,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum codon number in open reading frames
-    default: 45
     inputBinding:
       position: 103
       prefix: --min-length
@@ -321,7 +289,6 @@ inputs:
       - 'null'
       - float
     doc: Overlap sequence identity threshold [0.0, 1.0]
-    default: 0.9
     inputBinding:
       position: 103
       prefix: --min-seq-id
@@ -338,7 +305,6 @@ inputs:
       - 'null'
       - int
     doc: Number of assembly iterations
-    default: 12
     inputBinding:
       position: 103
       prefix: --num-iterations
@@ -347,7 +313,6 @@ inputs:
       - 'null'
       - int
     doc: Orf fragment start mode (0-2)
-    default: 1
     inputBinding:
       position: 103
       prefix: --orf-start-mode
@@ -356,7 +321,6 @@ inputs:
       - 'null'
       - float
     doc: filter proteins lower than threshold
-    default: 0.2
     inputBinding:
       position: 103
       prefix: --protein-filter-threshold
@@ -365,7 +329,6 @@ inputs:
       - 'null'
       - boolean
     doc: Delete temporary files
-    default: false
     inputBinding:
       position: 103
       prefix: --remove-tmp-files
@@ -374,7 +337,6 @@ inputs:
       - 'null'
       - int
     doc: Rescore diagonals mode (0-4)
-    default: 3
     inputBinding:
       position: 103
       prefix: --rescore-mode
@@ -383,7 +345,6 @@ inputs:
       - 'null'
       - string
     doc: Comma-separated list of frames on the reverse strand
-    default: 1,2,3
     inputBinding:
       position: 103
       prefix: --reverse-frames
@@ -392,7 +353,6 @@ inputs:
       - 'null'
       - int
     doc: '0: alignment length 1: shorter, 2: longer sequence'
-    default: 0
     inputBinding:
       position: 103
       prefix: --seq-id-mode
@@ -401,7 +361,6 @@ inputs:
       - 'null'
       - boolean
     doc: Shuffle input database
-    default: true
     inputBinding:
       position: 103
       prefix: --shuffle
@@ -410,7 +369,6 @@ inputs:
       - 'null'
       - int
     doc: 'Sort results: 0: no sorting, 1: sort by E-value or seq.id.'
-    default: 0
     inputBinding:
       position: 103
       prefix: --sort-results
@@ -419,7 +377,6 @@ inputs:
       - 'null'
       - int
     doc: '0: use consecutive positions in k-mers; 1: use spaced k-mers'
-    default: 0
     inputBinding:
       position: 103
       prefix: --spaced-kmer-mode
@@ -436,7 +393,6 @@ inputs:
       - 'null'
       - string
     doc: Set max memory per split. E.g. 800B, 5K, 10M, 1G
-    default: '0'
     inputBinding:
       position: 103
       prefix: --split-memory-limit
@@ -453,7 +409,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU-cores used
-    default: 40
     inputBinding:
       position: 103
       prefix: --threads
@@ -462,7 +417,6 @@ inputs:
       - 'null'
       - int
     doc: Translate ORF to amino acid
-    default: 0
     inputBinding:
       position: 103
       prefix: --translate
@@ -471,7 +425,6 @@ inputs:
       - 'null'
       - int
     doc: Genetic code translation table
-    default: 1
     inputBinding:
       position: 103
       prefix: --translation-table
@@ -480,7 +433,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use all alternatives for a start codon in the genetic table
-    default: false
     inputBinding:
       position: 103
       prefix: --use-all-table-starts
@@ -489,7 +441,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbosity level: 0: quiet, 1: +errors, 2: +warnings, 3: +info'
-    default: 3
     inputBinding:
       position: 103
       prefix: -v
@@ -499,7 +450,6 @@ inputs:
       - boolean
     doc: Double the (nucleotide) query sequence during the scoring process to allow
       wrapped diagonal scoring
-    default: false
     inputBinding:
       position: 103
       prefix: --wrapped-scoring
@@ -509,7 +459,6 @@ inputs:
       - int
     doc: write .lookup file containing mapping from internal id, fasta id and file
       number
-    default: 1
     inputBinding:
       position: 103
       prefix: --write-lookup

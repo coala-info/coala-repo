@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cells
-    default: 10
     inputBinding:
       position: 101
       prefix: --cells
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Number of genes
-    default: 100
     inputBinding:
       position: 101
       prefix: --genes
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: ./
     inputBinding:
       position: 101
       prefix: --out
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bulk samples
-    default: 10
     inputBinding:
       position: 101
       prefix: --samples
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cell types
-    default: 5
     inputBinding:
       position: 101
       prefix: --types

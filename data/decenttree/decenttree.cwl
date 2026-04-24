@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: is a compression level between 1 and 9 (default 5)
-    default: 5
     inputBinding:
       position: 101
       prefix: -c
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: is a precision (default 6)
-    default: 6
     inputBinding:
       position: 101
       prefix: -f

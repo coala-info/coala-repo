@@ -23,7 +23,6 @@ inputs:
         symbols:
           - vcf
           - bed
-    default: vcf
   - id: outputFormat
     type:
       - 'null'
@@ -33,7 +32,6 @@ inputs:
           - bed
           - gatk
           - bedAnn
-    default: vcf
 
   - id: udLength
     type: int
@@ -60,7 +58,6 @@ inputs:
     doc: "Override classic and use Sequence Ontolgy terms for effects (missense_variant vs NON_SYNONYMOUS_CODING)"
   - id: hgvs
     type: boolean?
-    default: true
     doc: "Override classic and use HGVS annotations for amino acid annotations (p.Gly180Arg/c.538G>C vs G180R)"
   - id: noShiftHgvs
     type: boolean?
@@ -125,16 +122,12 @@ inputs:
     doc: 'Use a custom intervals in TXT/BED/BigBed/VCF/GFF file (you may use this option many times).'
   - id: spliceRegionExonSize
     type: int?
-    default: 3
   - id: spliceRegionIntronMax
     type: int?
-    default: 8
   - id: spliceRegionIntronMin
     type: int?
-    default: 8
   - id: spliceSiteSize
     type: int?
-    default: 2
   - id: onlyReg
     type: boolean?
     doc: "Only use regulation tracks."

@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: If the analysis use one of the known setups, please specify which one (ped|alt|cmms|mip).
-    default: ped
     inputBinding:
       position: 102
       prefix: --family_type

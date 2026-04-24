@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to output directory.
-    default: freddie_segment/
     inputBinding:
       position: 101
       prefix: --outdir
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for multiprocessing.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -68,7 +66,6 @@ inputs:
     doc: 'Threshold rate above which the read will be considered as covering a segment.
       Low threshold is 1-threshold_rate. Anything in between is considered ambigious.
       Note: the stricter threshold for a given segment length will be used.'
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --threshold-rate
@@ -79,7 +76,6 @@ inputs:
     doc: The stdev factor to fix a candidate peak. The threshold is set as > 
       mean(non-zero support for splicing 
       postions)+variance_factor*stdev(non-zero support for splicing postions).
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --variance-factor

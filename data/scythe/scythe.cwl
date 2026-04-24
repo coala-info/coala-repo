@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum match length
-    default: 5
     inputBinding:
       position: 102
       prefix: --min-match
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - float
     doc: Prior contamination rate
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --prior

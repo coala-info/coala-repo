@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Path to folder containing recipes (default: recipes/)'
-    default: recipes/
     inputBinding:
       position: 1
   - id: config
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - File
     doc: 'Path to Bioconda config (default: config.yml)'
-    default: config.yml
     inputBinding:
       position: 2
   - id: format
@@ -32,7 +30,6 @@ inputs:
       recipes grouped by independent subdags, largest subdag first, each in 
       topologically sorted order. Singleton subdags (if not hidden with 
       --hide-singletons) are reported as one large group at the end.
-    default: gml
     inputBinding:
       position: 103
       prefix: --format
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - boolean
     doc: Hide singletons in the printed graph.
-    default: false
     inputBinding:
       position: 103
       prefix: --hide-singletons
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Limit lines emitted for commands executed
-    default: '-'
     inputBinding:
       position: 103
       prefix: --log-command-max-lines
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - File
     doc: Write log to file
-    default: '-'
     inputBinding:
       position: 103
       prefix: --logfile
@@ -68,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: Log level for log file
-    default: debug
     inputBinding:
       position: 103
       prefix: --logfile-level
@@ -77,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: Set logging level (debug, info, warning, error, critical)
-    default: info
     inputBinding:
       position: 103
       prefix: --loglevel
@@ -88,7 +80,6 @@ inputs:
         items: string
     doc: Glob for package[s] to show in DAG. Default is to show all packages. 
       Can be specified more than once
-    default: '*'
     inputBinding:
       position: 103
       prefix: --packages

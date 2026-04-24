@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory where the model and feature files are stored.
-    default: /usr/share/reprof.
     inputBinding:
       position: 101
       prefix: --modeldir
@@ -29,7 +28,6 @@ inputs:
       \n C30Y\n R31W\n G48D\n\nThis mutation code is also attached to the output filename
       using\n\"_\". An additional file ending \"_ORI\" contains the prediction using\n\
       no evolutionary information even if a BLAST PSSM matrix was\nprovided."
-    default: all
     inputBinding:
       position: 101
       prefix: --mutations

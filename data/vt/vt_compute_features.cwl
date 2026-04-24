@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: filter expression
-    default: ''
     inputBinding:
       position: 102
       prefix: -f
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - boolean
     doc: print site information only without genotypes
-    default: false
     inputBinding:
       position: 102
       prefix: -s

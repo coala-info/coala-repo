@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Connection timeout duration in seconds
-    default: 60
     inputBinding:
       position: 101
       prefix: --connect_timeout
@@ -108,7 +107,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite file if it exists
-    default: false
     inputBinding:
       position: 101
       prefix: --file_overwrite
@@ -183,7 +181,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Send email to users about a shared collection (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --notify
@@ -200,7 +197,6 @@ inputs:
       - 'null'
       - string
     doc: Overide post method
-    default: requests
     inputBinding:
       position: 101
       prefix: -post
@@ -209,7 +205,6 @@ inputs:
       - 'null'
       - string
     doc: 'Specify privacy to access the collection (default: private)'
-    default: private
     inputBinding:
       position: 101
       prefix: --privacy
@@ -251,7 +246,6 @@ inputs:
       - 'null'
       - float
     doc: Specify sequence frame rate for video encoding
-    default: 30.0
     inputBinding:
       position: 101
       prefix: --sequence_frame_rate
@@ -260,7 +254,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite sequence if it exists (default:False)
-    default: false
     inputBinding:
       position: 101
       prefix: --sequence_overwrite
@@ -392,7 +385,6 @@ inputs:
       - 'null'
       - string
     doc: verbosity level
-    default: ERROR
     inputBinding:
       position: 101
       prefix: --verbose

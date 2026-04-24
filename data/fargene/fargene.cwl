@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Overwrite output directory if it exists (default: False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set logging level (default: INFO).'
-    default: INFO
     inputBinding:
       position: 101
       prefix: --loglevel
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'If the input data is paired end metagenomic data (default: False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --meta
@@ -89,7 +86,6 @@ inputs:
       - boolean
     doc: 'Use if you want to skip the assembly and retrieval of contigs for metagenomic
       data (default: False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --no-assembly
@@ -107,7 +103,6 @@ inputs:
       - boolean
     doc: 'Use if no quality control should be performed on the metagenomic data (default:
       False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --no-quality-filtering
@@ -117,7 +112,6 @@ inputs:
       - boolean
     doc: 'Use NCBI ORFfinder instead of prodigal for ORF prediction of genomes/contigs
       (default: False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --orf-finder
@@ -127,7 +121,6 @@ inputs:
       - int
     doc: 'Number of processes to be used when processing metagenomic data (default:
       1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: --processes
@@ -136,7 +129,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'If the input sequence(s) is amino acids (default: False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --protein
@@ -147,7 +139,6 @@ inputs:
     doc: 'Use of you want to redo the analysis or do the analysis using a different
       model and have kept either the nucletide or amino acid sequences. Please note
       that this only works if the input data is the same for both runs (default: False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --rerun
@@ -157,7 +148,6 @@ inputs:
       - boolean
     doc: 'Use this flag if the whole sequence where a hit is detected should be retrieved
       (default: False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --retrieve-whole
@@ -176,7 +166,6 @@ inputs:
       - boolean
     doc: 'Store the translated sequences. Useful if you plan to redo the analysis
       using a different model and want to skip the preprocessing steps (default: False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --store-peptides
@@ -193,7 +182,6 @@ inputs:
       - 'null'
       - string
     doc: 'The translation format that transeq should use. (default: pearson)'
-    default: pearson
     inputBinding:
       position: 101
       prefix: --translation-format

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: use this if the input file has database names on the first line
-    default: false
     inputBinding:
       position: 101
   - id: in_db

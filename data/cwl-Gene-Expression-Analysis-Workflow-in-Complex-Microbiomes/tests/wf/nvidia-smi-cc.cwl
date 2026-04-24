@@ -11,7 +11,6 @@ requirements:
 inputs:
   gpus:
     type: int
-    default: 1
 outputs: []
 # Assume this will exit non-zero (resulting in a failing test case) if
 # nvidia-smi doesn't detect any devices.

@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: 'Color used for background [possible values: black, white]'
-    default: black
     inputBinding:
       position: 102
       prefix: --background
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel decompression threads to use
-    default: 4
     inputBinding:
       position: 102
       prefix: --threads

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mean quality for reads [9]
-    default: 9
     inputBinding:
       position: 101
       prefix: -Q
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: it trims sequences at 3' end [0]
-    default: 0
     inputBinding:
       position: 101
       prefix: -T2
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Set the directory path where binaries are located [bin/]
-    default: bin/
     inputBinding:
       position: 101
       prefix: -bin
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage considered to erode contig ends [2]
-    default: 2
     inputBinding:
       position: 101
       prefix: -erode
@@ -75,7 +71,6 @@ inputs:
       - type: array
         items: int
     doc: Set the kmer to be considered. [23 25 27 29 31]
-    default:
       - 23
       - 25
       - 27
@@ -89,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum contig length [100]
-    default: 100
     inputBinding:
       position: 101
       prefix: -l
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: minimum read size after trimming [30]
-    default: 30
     inputBinding:
       position: 101
       prefix: -len
@@ -116,7 +109,6 @@ inputs:
       - 'null'
       - float
     doc: Max number of reads per analyzed file or files [10]
-    default: 10
     inputBinding:
       position: 101
       prefix: -max_reads
@@ -130,7 +122,6 @@ inputs:
       \                                     consequence of this fact Ns will be introduced
       around color\n                                       incoherence not supported
       by enough sequence coverage."
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -n
@@ -147,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: Oases kmer parameter [27]
-    default: 27
     inputBinding:
       position: 101
       prefix: -oases_kmer
@@ -164,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mean quality tolerated for paired_end sequences [15]
-    default: 15
     inputBinding:
       position: 101
       prefix: -q
@@ -201,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: it trims the first sequenced end at 3' (if paired-end) [0]
-    default: 0
     inputBinding:
       position: 101
       prefix: -t1
@@ -210,7 +198,6 @@ inputs:
       - 'null'
       - int
     doc: it trims the second sequenced end at 3' [0]
-    default: 0
     inputBinding:
       position: 101
       prefix: -t2
@@ -230,7 +217,6 @@ inputs:
       - 'null'
       - Directory
     doc: Set the temporary directory where results will be saved [tmp/].
-    default: tmp/
     inputBinding:
       position: 101
       prefix: -tmp_dir
@@ -253,7 +239,6 @@ inputs:
       \      consequence of this fact Ns will be introduced around color\n       \
       \                                incoherence not supported by enough sequence
       coverage."
-    default: 3.0
     inputBinding:
       position: 101
       prefix: -z

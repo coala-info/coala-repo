@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: maximum motif length
-    default: 100
     inputBinding:
       position: 102
       prefix: --max-motif
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: minimum repeat length
-    default: 10
     inputBinding:
       position: 102
       prefix: --min-length
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: minimum motif length
-    default: 10
     inputBinding:
       position: 102
       prefix: --min-motif
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: minimum repeat number
-    default: 3
     inputBinding:
       position: 102
       prefix: --min-repeat
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: output format, tsv, csv, bed or gff
-    default: tsv
     inputBinding:
       position: 102
       prefix: --out-format

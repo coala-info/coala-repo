@@ -26,7 +26,6 @@ inputs:
       - string
     doc: Rebin the matrix. If no unit is given, bins will be merged by groups of
       INT. If a unit is given, bins of that size will be generated.
-    default: '1'
     inputBinding:
       position: 103
       prefix: --binning
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: The name of a matplotlib colormap to use for the matrix.
-    default: Reds
     inputBinding:
       position: 103
       prefix: --cmap
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Map resolution in DPI (dots per inch).
-    default: 300
     inputBinding:
       position: 103
       prefix: --dpi
@@ -90,7 +87,6 @@ inputs:
       - string
     doc: Saturation threshold. Maximum pixel value is set to this number. Can be
       followed by % to use a percentile of nonzero pixels in the contact map.
-    default: 99%
     inputBinding:
       position: 103
       prefix: --max
@@ -99,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: Minimum of the colorscale, works identically to --max.
-    default: '0'
     inputBinding:
       position: 103
       prefix: --min
@@ -109,7 +104,6 @@ inputs:
       - float
     doc: Number of median absolute deviations (MAD) from the median of log bin 
       sums allowed to keep bins in the normalization procedure
-    default: 3.0
     inputBinding:
       position: 103
       prefix: --n-mad

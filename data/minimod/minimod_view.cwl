@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: max number of reads loaded at once
-    default: 512
     inputBinding:
       position: 103
       prefix: -K
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: max number of bases loaded at once
-    default: 20.0M
     inputBinding:
       position: 103
       prefix: -B
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: modification code(s) (eg. m, h or mh or as ChEBI)
-    default: m
     inputBinding:
       position: 103
       prefix: -c
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: 'print progress every INT seconds (0: per batch)'
-    default: 0
     inputBinding:
       position: 103
       prefix: -p
@@ -90,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: number of processing threads
-    default: 8
     inputBinding:
       position: 103
       prefix: -t
@@ -99,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: verbosity level
-    default: 4
     inputBinding:
       position: 103
       prefix: --verbose

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Firecloud API root URL
-    default: https://api.firecloud.org/api/
     inputBinding:
       position: 102
       prefix: --url

@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Collection cache size (in MiB)
-    default: 256
     inputBinding:
       position: 103
       prefix: --collection-cache-size
@@ -168,7 +167,6 @@ inputs:
       - 'null'
       - float
     doc: Time to wait for a Javascript expression to evaluate before giving an error
-    default: 20.0
     inputBinding:
       position: 103
       prefix: --eval-timeout
@@ -177,7 +175,6 @@ inputs:
       - 'null'
       - int
     doc: API request timeout in seconds.
-    default: 300
     inputBinding:
       position: 103
       prefix: --http-timeout
@@ -195,7 +192,6 @@ inputs:
       - int
     doc: If N > 0, intermediate output collections will be trashed N seconds after
       creation.
-    default: 0
     inputBinding:
       position: 103
       prefix: --intermediate-output-ttl
@@ -286,7 +282,6 @@ inputs:
       - 'null'
       - string
     doc: Desired workflow behavior when a step fails (stop, continue).
-    default: continue
     inputBinding:
       position: 103
       prefix: --on-error
@@ -361,7 +356,6 @@ inputs:
       - int
     doc: Maximum number of times to retry server requests that encounter temporary
       failures (e.g., server down).
-    default: 10
     inputBinding:
       position: 103
       prefix: --retries
@@ -412,7 +406,6 @@ inputs:
       - 'null'
       - string
     doc: Docker image for workflow runner job
-    default: arvados/jobs:3.1.2
     inputBinding:
       position: 103
       prefix: --submit-runner-image
@@ -421,7 +414,6 @@ inputs:
       - 'null'
       - int
     doc: RAM (in MiB) required for the workflow runner job
-    default: 1024
     inputBinding:
       position: 103
       prefix: --submit-runner-ram

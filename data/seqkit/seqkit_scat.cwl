@@ -19,7 +19,6 @@ inputs:
       - int
     doc: length of sequence prefix of the first FASTA record based on which 
       seqkit guesses the sequence type (0 for whole seq)
-    default: 10000
     inputBinding:
       position: 101
       prefix: --alphabet-guess-seq-length
@@ -29,7 +28,6 @@ inputs:
       - int
     doc: compression level for gzip, zstd, xz and bzip2. type "seqkit -h" for 
       the range and default value for each format
-    default: -1
     inputBinding:
       position: 101
       prefix: --compress-level
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: minimum size increase in kilobytes to trigger parsing
-    default: 5
     inputBinding:
       position: 101
       prefix: --delta
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: Notification drop interval
-    default: 500ms
     inputBinding:
       position: 101
       prefix: --drop-time
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: 'input and output format: fastq or fasta'
-    default: fastq
     inputBinding:
       position: 101
       prefix: --format
@@ -89,7 +84,6 @@ inputs:
       - 'null'
       - string
     doc: regular expression for parsing ID
-    default: ^(\S+)\s?
     inputBinding:
       position: 101
       prefix: --id-regexp
@@ -115,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: line width when outputting FASTA format (0 for no wrap)
-    default: 60
     inputBinding:
       position: 101
       prefix: --line-width
@@ -132,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: ASCII BASE, 33 for Phred+33
-    default: 33
     inputBinding:
       position: 101
       prefix: --qual-ascii-base
@@ -158,7 +150,6 @@ inputs:
       - string
     doc: sequence type (dna|rna|protein|unlimit|auto) (for auto, it 
       automatically detect by the first sequence)
-    default: auto
     inputBinding:
       position: 101
       prefix: --seq-type
@@ -176,7 +167,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs. can also set with environment variable SEQKIT_THREADS)
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -193,7 +183,6 @@ inputs:
       - 'null'
       - int
     doc: after process with this PID exited
-    default: -1
     inputBinding:
       position: 101
       prefix: --wait-pid

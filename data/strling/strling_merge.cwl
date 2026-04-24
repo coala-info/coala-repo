@@ -27,7 +27,6 @@ inputs:
       - string
     doc: chromosome to restrict parsing. helps with memory/parallelization for 
       large cohorts
-    default: '-2'
     inputBinding:
       position: 102
       prefix: --chromosome
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of supporting clipped reads for each side of a locus
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-clip
@@ -63,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: minimum total number of supporting clipped reads for a locus
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-clip-total
@@ -72,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality (does not apply to STR reads)
-    default: 40
     inputBinding:
       position: 102
       prefix: --min-mapq
@@ -82,7 +78,6 @@ inputs:
       - int
     doc: minimum number of supporting reads required in at least one individual 
       for a locus to be reported
-    default: 5
     inputBinding:
       position: 102
       prefix: --min-support
@@ -91,7 +86,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for output files. Suffix will be -bounds.txt
-    default: strling
     inputBinding:
       position: 102
       prefix: --output-prefix
@@ -108,7 +102,6 @@ inputs:
       - int
     doc: Number of bp within which to search for reads supporting the other side
       of a bound. Estimated from the insert size distribution by default.
-    default: -1
     inputBinding:
       position: 102
       prefix: --window

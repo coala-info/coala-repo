@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: 'Analysis frame: default=starts from M'
-    default: starts from M
     inputBinding:
       position: 101
       prefix: -c

@@ -10,7 +10,6 @@ inputs:
       - int
     doc: allow a number of SNPs to be wrong, i.e.continue moving down the tree 
       even if none of the SNPs of the lower level are present
-    default: 0
     inputBinding:
       position: 101
       prefix: --allow_differences
@@ -101,7 +100,6 @@ inputs:
     doc: maximum number of threads CanSNPer is allowed to use, the default [0] 
       is no limit, CanSNPer will start one process per reference genome while 
       aligning
-    default: 0
     inputBinding:
       position: 101
       prefix: --num_threads

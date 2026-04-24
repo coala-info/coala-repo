@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: the maximum quality score that appears in the data
-    default: 41
     inputBinding:
       position: 102
       prefix: --maxqual
@@ -70,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: 'type of read_file (one of: sam [default], bam, solexa-export, fastq, solexa-fastq)'
-    default: sam
     inputBinding:
       position: 102
       prefix: --type

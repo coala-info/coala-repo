@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of CPU threads for parallel processing (default: 16).'
-    default: 16
     inputBinding:
       position: 101
       prefix: --threads

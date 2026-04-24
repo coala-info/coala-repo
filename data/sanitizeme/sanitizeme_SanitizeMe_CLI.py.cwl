@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output Folder. Default is ~/dehost_output/dehost_2026-02-25
-    default: ~/dehost_output/dehost_2026-02-25
     inputBinding:
       position: 101
       prefix: --OutputFolder
@@ -72,7 +71,6 @@ inputs:
       - int
     doc: Number of threads. Default is 4. More is faster if your computer 
       supports it
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

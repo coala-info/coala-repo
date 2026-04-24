@@ -65,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: 'Format options (png, jpg, pdf, svg, tiff) Default: png'
-    default: png
     inputBinding:
       position: 102
       prefix: --format
@@ -84,7 +83,6 @@ inputs:
     doc: "If sorted by mutation number is selected, show the\n                   \
       \     sequences with the fewest SNPs closest to the\n                      \
       \  reference. Default: False"
-    default: false
     inputBinding:
       position: 102
       prefix: --high-to-low
@@ -123,7 +121,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory.
-    default: current working directory
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -132,7 +129,6 @@ inputs:
       - 'null'
       - string
     doc: Output file name stem.
-    default: snp_plot
     inputBinding:
       position: 102
       prefix: --output-file
@@ -215,7 +211,6 @@ inputs:
       - boolean
     doc: "Sort sequences alphabetically by sequence id. Default:\n               \
       \         False"
-    default: false
     inputBinding:
       position: 102
       prefix: --sort-by-id
@@ -226,7 +221,6 @@ inputs:
     doc: "Render the graph with sequences sorted by the number\n                 \
       \       of SNPs relative to the reference (fewest to most).\n              \
       \          Default: False"
-    default: false
     inputBinding:
       position: 102
       prefix: --sort-by-mutation-number

@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Initiate scan at <position> in sequence
-    default: 1
     inputBinding:
       position: 103
       prefix: -i
@@ -61,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: set max distance to known meth site
-    default: 0
     inputBinding:
       position: 103
       prefix: -M
@@ -86,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: set minimim length for snoRNA-rRNA pairing
-    default: 9
     inputBinding:
       position: 103
       prefix: -l
@@ -95,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: set min distance between rRNA match & D box when D prime box is present
-    default: 10
     inputBinding:
       position: 103
       prefix: -p

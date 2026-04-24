@@ -10,7 +10,6 @@ inputs:
       - int
     doc: ETE tree format. See here 
       http://etetoolkit.org/docs/latest/tutorial/tutorial_trees.html
-    default: auto
     inputBinding:
       position: 101
       prefix: --format
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: ETE tree format for --infile2.
-    default: auto
     inputBinding:
       position: 101
       prefix: --format2
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - File
     doc: Input newick file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --infile
@@ -38,7 +35,6 @@ inputs:
       - File
     doc: Input newick file 2. Used when --method "transfer". Leaf labels should 
       be matched to those in --infile.
-    default: ''
     inputBinding:
       position: 101
       prefix: --infile2
@@ -50,7 +46,6 @@ inputs:
       transfer: Transfer the root position from --infile2 to --infile. The two trees
       should have the same bipartitions at the root node. mad: Minimal Ancestor Deviation
       rooting (Tria et al. 2017). mv: Minimum Variance rooting (Mai et al. 2017).'
-    default: midpoint
     inputBinding:
       position: 101
       prefix: --method
@@ -60,7 +55,6 @@ inputs:
       - int
     doc: ETE tree format for --outfile. "auto" indicates the same format as 
       --format.
-    default: auto
     inputBinding:
       position: 101
       prefix: --outformat
@@ -71,7 +65,6 @@ inputs:
     doc: An outgroup label or a comma-separated list of outgroup labels. For the
       latter, the clade containing all specified labels are used as an outgroup,
       so all labels do not have to be specified for a large clade.
-    default: ''
     inputBinding:
       position: 101
       prefix: --outgroup
@@ -80,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: Whether node names are quoted in the input file.
-    default: yes
     inputBinding:
       position: 101
       prefix: --quoted_node_names

@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Logic to use when multiple fields are specified (any or all).
-    default: any
     inputBinding:
       position: 102
       prefix: --logic

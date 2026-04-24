@@ -18,7 +18,6 @@ inputs:
       - type: array
         items: string
     doc: Names of --summary / --table columns to subset on
-    default: None
     inputBinding:
       position: 102
       prefix: --columns
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - File
     doc: CSV file mapping output filename to read ids
-    default: None
     inputBinding:
       position: 102
       prefix: --csv
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow duplicate read_ids
-    default: false
     inputBinding:
       position: 102
       prefix: --duplicate-ok
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite destination files
-    default: false
     inputBinding:
       position: 102
       prefix: --force-overwrite
@@ -55,7 +51,6 @@ inputs:
       - boolean
     doc: Suppress the exception raised if the --template string does not contain
       every --columns key
-    default: None
     inputBinding:
       position: 102
       prefix: --ignore-incomplete-template
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow missing read_ids
-    default: false
     inputBinding:
       position: 102
       prefix: --missing-ok
@@ -73,7 +67,6 @@ inputs:
       - 'null'
       - Directory
     doc: Destination directory to write outputs
-    default: /
     inputBinding:
       position: 102
       prefix: --output
@@ -82,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the read_id column in the summary
-    default: read_id
     inputBinding:
       position: 102
       prefix: --read-id-column
@@ -91,7 +83,6 @@ inputs:
       - 'null'
       - boolean
     doc: Search for input files recursively matching `*.pod5`
-    default: false
     inputBinding:
       position: 102
       prefix: --recursive
@@ -100,7 +91,6 @@ inputs:
       - 'null'
       - File
     doc: Table filepath (csv or tsv)
-    default: None
     inputBinding:
       position: 102
       prefix: --summary
@@ -109,7 +99,6 @@ inputs:
       - 'null'
       - File
     doc: Table filepath (csv or tsv)
-    default: None
     inputBinding:
       position: 102
       prefix: --table
@@ -120,7 +109,6 @@ inputs:
     doc: template string to generate output filenames (e.g. 
       "mux-{mux}_barcode-{barcode}.pod5"). default is to concatenate all columns
       to values as shown in the example.
-    default: None
     inputBinding:
       position: 102
       prefix: --template
@@ -129,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: Number of subsetting workers
-    default: 4
     inputBinding:
       position: 102
       prefix: --threads

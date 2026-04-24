@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level (integer).
-    default: 1
     inputBinding:
       position: 102
       prefix: --level
@@ -67,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the context selection model (integer).
-    default: 12
     inputBinding:
       position: 102
       prefix: --selection

@@ -63,7 +63,6 @@ inputs:
       nt, application/n-triples, ttl, text/n3, nquads, application/rdf+xml, xml, ntriples,
       trix. Default format is: 'n3'. Keywords to serializer can be given after format
       like: FORMAT:(+)KW1,-KW2,KW3=VALUE."
-    default: n3
     inputBinding:
       position: 102
       prefix: --output-format

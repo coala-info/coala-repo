@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set the logging level. Options: critical, error, warning, info, debug'
-    default: info
     inputBinding:
       position: 103
       prefix: --log_level
@@ -32,7 +31,6 @@ inputs:
       - Directory
     doc: a path to a directory where the output files will be output. Defaults 
       to the current directory
-    default: .
     inputBinding:
       position: 103
       prefix: --output_dirpath
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: filename prefix for output files. Defaults to barcode_qc
-    default: barcode_qc
     inputBinding:
       position: 103
       prefix: --prefix

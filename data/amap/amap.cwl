@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: 'use 0 <= REPS <= 5 (default: 0) passes of consistency transformation'
-    default: 0
     inputBinding:
       position: 102
       prefix: --consistency
@@ -45,7 +44,6 @@ inputs:
     doc: 'stop the sequence annealing process when best edge has lower weight than
       W, set to 0 for best sensitivity, higher values for better specificity (default:
       0)'
-    default: 0
     inputBinding:
       position: 102
       prefix: --edge-weight-threshold
@@ -63,7 +61,6 @@ inputs:
       - float
     doc: 'use GF as the gap-factor parameter, set to 0 for best sensitivity, higher
       values for better specificity (default: 1)'
-    default: 1
     inputBinding:
       position: 102
       prefix: --gap-factor
@@ -82,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: 'use 0 <= REPS <= 1000 (default: 0) passes of iterative-refinement'
-    default: 0
     inputBinding:
       position: 102
       prefix: --iterative-refinement
@@ -116,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: 'use 0 <= REPS <= 20 (default: 0) rounds of pretraining'
-    default: 0
     inputBinding:
       position: 102
       prefix: --pre-training

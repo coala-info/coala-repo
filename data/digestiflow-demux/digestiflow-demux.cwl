@@ -140,7 +140,6 @@ inputs:
       - 'null'
       - float
     doc: Max jobs per second to submit, default is 10.
-    default: 10.0
     inputBinding:
       position: 103
       prefix: --max-jobs-per-second

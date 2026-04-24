@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output binned/filtered files even if empty.
-    default: false
     inputBinding:
       position: 101
       prefix: --force-output
@@ -51,7 +50,6 @@ inputs:
       - string
     doc: Delimiters to use when searching for key:value pairs in FASTA/FASTQ 
       header.
-    default: '='
     inputBinding:
       position: 101
       prefix: --header-delimiters
@@ -83,7 +81,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output a report along with FASTA/FASTQ.
-    default: false
     inputBinding:
       position: 101
       prefix: --out-report
@@ -99,7 +96,6 @@ inputs:
       - boolean
     doc: The metadata tables are not in the same order as the reads - they will 
       all beloaded and then looked up as needed (slower).
-    default: false
     inputBinding:
       position: 101
       prefix: --unordered_data
@@ -108,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: 'Level of output information: 0 = none, 1 = some, 2 = lots'
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbosity

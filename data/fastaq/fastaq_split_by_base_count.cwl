@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of sequences in each output split file
-    default: no limit
     inputBinding:
       position: 104
       prefix: --max_seqs

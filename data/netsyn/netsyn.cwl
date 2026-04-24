@@ -19,7 +19,6 @@ inputs:
       - string
     doc: 'Clustering method choices: MCL (small graph), Infomap (medium graph), Louvain
       (medium graph) or WalkTrap (big  graph).'
-    default: MCL
     inputBinding:
       position: 101
       prefix: --ClusteringMethod
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: Minimal coverage allowed.
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --Coverage
@@ -73,7 +71,6 @@ inputs:
       - 'null'
       - float
     doc: Sequence identity.
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --Identity
@@ -141,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: Number of genes allowed between two genes in synteny.
-    default: 3
     inputBinding:
       position: 101
       prefix: --SyntenyGap
@@ -150,7 +146,6 @@ inputs:
       - 'null'
       - float
     doc: Define the Synteny Score Cutoff to conserved.
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --SyntenyScoreCutoff
@@ -167,7 +162,6 @@ inputs:
       - 'null'
       - int
     doc: Window size of genomic contexts to compare (target gene included).
-    default: 11
     inputBinding:
       position: 101
       prefix: --WindowSize

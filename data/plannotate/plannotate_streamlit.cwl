@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to send usage statistics to Streamlit.
-    default: true
     inputBinding:
       position: 101
       prefix: --browser.gatherUsageStats
@@ -24,7 +23,6 @@ inputs:
       \            \n                                  This is used to: - Set the
       correct URL for CORS and XSRF protection purposes. - Show the URL on the terminal
       - Open the browser"
-    default: localhost
     inputBinding:
       position: 101
       prefix: --browser.serverAddress
@@ -137,7 +135,6 @@ inputs:
       - 'null'
       - string
     doc: "Level of logging: 'error', 'warning', 'info', or 'debug'."
-    default: info
     inputBinding:
       position: 101
       prefix: --global.logLevel
@@ -182,7 +179,6 @@ inputs:
       - boolean
     doc: "Are we in a unit test?\n                                  \n           \
       \                       This option defaults to False."
-    default: false
     inputBinding:
       position: 101
       prefix: --global.unitTest
@@ -191,7 +187,6 @@ inputs:
       - 'null'
       - string
     doc: "Level of logging: 'error', 'warning', 'info', or 'debug'."
-    default: info
     inputBinding:
       position: 101
       prefix: --logger.level
@@ -204,7 +199,6 @@ inputs:
       [Python's 
       documentation](https://docs.python.org/2.6/library/logging.html#formatter-objects)
       for available attributes.
-    default: '%(asctime)s %(message)s'
     inputBinding:
       position: 101
       prefix: --logger.messageFormat
@@ -273,7 +267,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allows users to automatically rerun when app is updated.
-    default: true
     inputBinding:
       position: 101
       prefix: --server.allowRunOnSave
@@ -304,7 +297,6 @@ inputs:
       added security.\n                                  \n                      \
       \            Due to conflicts between CORS and XSRF, if `server.enableXsrfProtection`
       is on and `server.enableCORS` is off at the same time, we will prioritize `server.enableXsrfProtection`."
-    default: true
     inputBinding:
       position: 101
       prefix: --server.enableCORS
@@ -313,7 +305,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enables support for websocket compression.
-    default: false
     inputBinding:
       position: 101
       prefix: --server.enableWebsocketCompression
@@ -325,7 +316,6 @@ inputs:
       security.\n                                  \n                            \
       \      Due to conflicts between CORS and XSRF, if `server.enableXsrfProtection`
       is on and `server.enableCORS` is off at the same time, we will prioritize `server.enableXsrfProtection`."
-    default: true
     inputBinding:
       position: 101
       prefix: --server.enableXsrfProtection
@@ -372,7 +362,6 @@ inputs:
       - int
     doc: Max size, in megabytes, of messages that can be sent via the WebSocket 
       connection.
-    default: 200
     inputBinding:
       position: 101
       prefix: --server.maxMessageSize
@@ -381,7 +370,6 @@ inputs:
       - 'null'
       - int
     doc: Max size, in megabytes, for files uploaded with the file_uploader.
-    default: 200
     inputBinding:
       position: 101
       prefix: --server.maxUploadSize
@@ -390,7 +378,6 @@ inputs:
       - 'null'
       - int
     doc: The port where the server will listen for browser connections.
-    default: 8501
     inputBinding:
       position: 101
       prefix: --server.port
@@ -399,7 +386,6 @@ inputs:
       - 'null'
       - boolean
     doc: Automatically rerun script when the file is modified on disk.
-    default: false
     inputBinding:
       position: 101
       prefix: --server.runOnSave

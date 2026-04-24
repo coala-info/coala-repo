@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - File
     doc: Alignment of sequences to find snps in, in fasta format
-    default: stdin
     inputBinding:
       position: 101
       prefix: --query

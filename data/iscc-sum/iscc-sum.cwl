@@ -75,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum hamming distance for similarity matching
-    default: 12
     inputBinding:
       position: 102
       prefix: --threshold

@@ -21,7 +21,6 @@ inputs:
     doc: 'A comma separated list of distance thresholds. The range must be between
       0 and 1. e.g -d 0.4,0.5. If more than one distance threshold is supplied, the
       output filenames will be of the form: counts-<threshold>.txt and clusters-<threshold>.txt'
-    default: '0.3'
     inputBinding:
       position: 102
       prefix: -d
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: 'The input file type. Options: bam, corset, salmon_eq_classes.'
-    default: bam
     inputBinding:
       position: 102
       prefix: -i
@@ -68,7 +66,6 @@ inputs:
       - int
     doc: If running with -i corset or salmon_eq_classes, this will filter out a link
       between contigs if the link is supported by less than this many reads.
-    default: 1
     inputBinding:
       position: 102
       prefix: -l
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Filter out any transcripts with fewer than this many reads aligning.
-    default: 10
     inputBinding:
       position: 102
       prefix: -m
@@ -87,7 +83,6 @@ inputs:
       - string
     doc: Specifies whether the output files should be overwritten if they already
       exist.
-    default: 'false'
     inputBinding:
       position: 102
       prefix: -f
@@ -106,7 +101,6 @@ inputs:
       - string
     doc: 'Output a file summarising the read alignments. Options: true, true-stop,
       false.'
-    default: 'false'
     inputBinding:
       position: 102
       prefix: -r

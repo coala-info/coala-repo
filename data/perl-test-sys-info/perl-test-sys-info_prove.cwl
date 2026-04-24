@@ -121,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Run N test jobs in parallel (try 9.)
-    default: 9
     inputBinding:
       position: 102
       prefix: --jobs
@@ -283,7 +282,6 @@ inputs:
       - 'null'
       - string
     doc: Set the extension for tests (default '.t')
-    default: .t
     inputBinding:
       position: 102
       prefix: --ext

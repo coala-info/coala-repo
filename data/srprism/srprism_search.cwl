@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Search for alignments with at most this many errors.
-    default: 0
     inputBinding:
       position: 102
       prefix: --errors
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: String (normally fixed extra tags) to add to each SAM output record.
-    default: ''
     inputBinding:
       position: 102
       prefix: --extra-tags
@@ -75,7 +73,6 @@ inputs:
     doc: Compression type used for input. The possible values are "auto" 
       (default), "none", "gzip", and "bzip2". If the value given is "auto" then 
       the type of compression is guessed from the file extension.
-    default: auto
     inputBinding:
       position: 102
       prefix: --input-compression
@@ -86,7 +83,6 @@ inputs:
     doc: The input format name. The possible values are "fasta", "fastq", 
       "cfasta", "cfastq", "sam". See the software documentation for the details 
       of different supported input formats.
-    default: fasta
     inputBinding:
       position: 102
       prefix: --input-format
@@ -104,7 +100,6 @@ inputs:
       - int
     doc: Maximum query length. Queries longer than the value specified by this 
       parameter will be truncated.
-    default: 112
     inputBinding:
       position: 102
       prefix: --max-query-length
@@ -115,7 +110,6 @@ inputs:
     doc: Do not use more than this many megabytes of memory for internal dynamic
       data structures. This number does not include the footprint of the 
       executable code, static data, or stack.
-    default: 2048
     inputBinding:
       position: 102
       prefix: --memory
@@ -125,7 +119,6 @@ inputs:
       - string
     doc: Search mode; possible values are "min-err", "bound-err", "sum-err", 
       "partial".
-    default: min-err
     inputBinding:
       position: 102
       prefix: --mode
@@ -153,7 +146,6 @@ inputs:
     doc: The output format name. The possible values are "tabular", "sam". See 
       the software documentation for the details of different supported output 
       formats.
-    default: tabular
     inputBinding:
       position: 102
       prefix: --output-format
@@ -163,7 +155,6 @@ inputs:
       - int
     doc: For paired search, the target distance between pair alignments in 
       bases.
-    default: 200
     inputBinding:
       position: 102
       prefix: --pair-distance
@@ -176,7 +167,6 @@ inputs:
       the value of the "--pair-distance-fuzz" option than the distance between 
       the alignments in a pair should be in the interval [d-f,d+f] for the pair 
       to be reported.
-    default: 100
     inputBinding:
       position: 102
       prefix: --pair-distance-fuzz
@@ -201,7 +191,6 @@ inputs:
       - int
     doc: Process queries that start with 16-mers that appear at most this many 
       times in the database.
-    default: 0
     inputBinding:
       position: 102
       prefix: --repeat-threshold
@@ -214,7 +203,6 @@ inputs:
       if the i-th configuration is selected. Configurations are encoded by the 
       second mate direction and position in the result relative to the first 
       mate, assuming that the first mate is matched in forward direction.
-    default: '0100'
     inputBinding:
       position: 102
       prefix: --result-conf
@@ -223,7 +211,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of results to report per query.
-    default: 10
     inputBinding:
       position: 102
       prefix: --results
@@ -233,7 +220,6 @@ inputs:
       - int
     doc: Make sure that the seeding area is selected so that it ends at or 
       before this query position.
-    default: 8096
     inputBinding:
       position: 102
       prefix: --sa-end
@@ -243,7 +229,6 @@ inputs:
       - int
     doc: Make sure that the seeding area is selected so that it starts at or 
       after this query position.
-    default: 1
     inputBinding:
       position: 102
       prefix: --sa-start
@@ -252,7 +237,6 @@ inputs:
       - 'null'
       - File
     doc: Append the content of the file as header to SAM output.
-    default: ''
     inputBinding:
       position: 102
       prefix: --sam-header
@@ -261,7 +245,6 @@ inputs:
       - 'null'
       - boolean
     doc: If "true", do not generate records for unmapped queries in SAM output.
-    default: true
     inputBinding:
       position: 102
       prefix: --skip-unmapped
@@ -270,7 +253,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to store temporary files.
-    default: .
     inputBinding:
       position: 102
       prefix: --tmpdir
@@ -280,7 +262,6 @@ inputs:
       - string
     doc: Minimum message level to report to the log stream. Possible values are 
       "debug", "info", "warning", "error", "quiet".
-    default: warning
     inputBinding:
       position: 102
       prefix: --trace-level

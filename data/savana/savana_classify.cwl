@@ -77,7 +77,6 @@ inputs:
       - boolean
     doc: Use the Oxford Nanopore (ONT) trained model to classify variants 
       (default)
-    default: true
     inputBinding:
       position: 101
       prefix: --ont

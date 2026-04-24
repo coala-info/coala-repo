@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: Core threshold for calling core SNPs.
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --core
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Exclude SNPs that are within this proximity to indels.
-    default: 0
     inputBinding:
       position: 101
       prefix: --indel-window
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory.
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir
@@ -66,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Exclude SNPs that are within this proximity to another SNP.
-    default: 0
     inputBinding:
       position: 101
       prefix: --snp-window

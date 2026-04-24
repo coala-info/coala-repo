@@ -59,7 +59,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_top_zip_path
-    default: system.zip
 
   input_posres_itp_path:
     label: Path to the position restriction ITP file

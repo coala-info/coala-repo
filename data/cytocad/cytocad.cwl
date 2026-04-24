@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: buffer window size of each point, in bp
-    default: 10
     inputBinding:
       position: 103
       prefix: --buffer
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: build version of human reference genome assembly
-    default: hg38
     inputBinding:
       position: 103
       prefix: --build
@@ -54,7 +52,6 @@ inputs:
         items: string
     doc: "hex color for neutral, gain, and loss CNVs on chromosome\n             \
       \           ideograms respectively separated by space"
-    default:
       - '#a6a6a6'
       - '#990000'
       - '#000099'
@@ -74,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: Output format of chromosome illustration figure
-    default: png
     inputBinding:
       position: 103
       prefix: --format
@@ -85,7 +81,6 @@ inputs:
     doc: "spread between each point in a chromosome where \"\n                   \
       \     coverage is enquired, in bp. Minimum CNV sensitive \n                \
       \        detection size ~= interval*rolling"
-    default: 50000
     inputBinding:
       position: 103
       prefix: --interval
@@ -95,7 +90,6 @@ inputs:
       - int
     doc: "Linear kernel penalty value for change \n                        point detection
       using Ruptures"
-    default: 500
     inputBinding:
       position: 103
       prefix: --penalty
@@ -112,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: rolling mean window size
-    default: 10
     inputBinding:
       position: 103
       prefix: --rolling
@@ -124,7 +117,6 @@ inputs:
       to call hetero- and homozygous CNVs \n                        (E.g. a heterozygous
       loss is where a coverage (c) \n                        satisfies: mean-mean*scale
       <= c < mean+mean*scale"
-    default: 0.25
     inputBinding:
       position: 103
       prefix: --scale

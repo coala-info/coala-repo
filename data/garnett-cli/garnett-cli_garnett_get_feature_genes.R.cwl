@@ -17,7 +17,6 @@ inputs:
       - boolean
     doc: 'Boolean that indicates whether the gene IDs should be converted into SYMBOL
       notation. Default: FALSE'
-    default: false
     inputBinding:
       position: 101
       prefix: --convert-ids
@@ -37,7 +36,6 @@ inputs:
     doc: In case a hierarchical marker tree was used to train the classifier, 
       specify which node features should be shown. Default is 'root'. For other 
       nodes, use the corresponding parent cell type name
-    default: root
     inputBinding:
       position: 101
       prefix: --node

@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality
-    default: 13
     inputBinding:
       position: 101
       prefix: --min_bq
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality
-    default: 20
     inputBinding:
       position: 101
       prefix: --min_mq
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for the probability of being a variant
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --prob_threshold
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

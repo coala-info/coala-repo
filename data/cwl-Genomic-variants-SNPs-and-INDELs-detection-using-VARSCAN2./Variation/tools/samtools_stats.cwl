@@ -42,7 +42,6 @@ inputs:
       - string
       - int
       - "null"
-    default: 0
     doc: " STR|INT Required flag, 0 for unset. See also `samtools flags` [0] "
     inputBinding:
       prefix: -f
@@ -52,7 +51,6 @@ inputs:
       - string
       - int
       - "null"
-    default: 0
     doc: "STR|INT Filtering flag, 0 for unset. See also `samtools flags` [0] "
     inputBinding:
       prefix: -F

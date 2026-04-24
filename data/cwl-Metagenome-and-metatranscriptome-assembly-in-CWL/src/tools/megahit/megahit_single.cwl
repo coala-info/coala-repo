@@ -21,7 +21,6 @@ inputs:
   memory:
     type: [ int?, string? ]
     label: Memory to run assembly. When 0 < -m < 1, fraction of all available memory of the machine is used, otherwise it specifies the memory in BYTE.
-    default: '5000000000'
     inputBinding:
       position: 4
       prefix: "--memory"

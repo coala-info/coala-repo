@@ -30,7 +30,6 @@ inputs:
     doc: '-k INT        minimum seed length [19]'
   output_filename:
     type: string?
-    default: 'aln-se.sam'
   reads:
     type: File[]
     inputBinding:

@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - File
     doc: list of contig IDs to specify the output order
-    default: '[]'
     inputBinding:
       position: 103
       prefix: -s

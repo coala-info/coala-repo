@@ -11,7 +11,6 @@ inputs:
       - float
     doc: The maximum ratio of bad k-mers out of total number of kmers in a 
       window of a read.
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --bad_kmer_ratio
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: The larger threshold used to group buckets of different sizes.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --bin_size_max
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: The size for minimiser.
-    default: 4
     inputBinding:
       position: 101
       prefix: --k_size
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum edit distance for constructing edges between reads
-    default: 2
     inputBinding:
       position: 101
       prefix: --max_edit_dis
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum edit distance for constructing edges between reads.
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_edit_dis
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: The number of expected processes.
-    default: 26
     inputBinding:
       position: 101
       prefix: --num_process
@@ -84,7 +78,6 @@ inputs:
     doc: Do not set this flag by yourself. When the permutation_times larger 
       than the number of k-mer candidates and the kmer size are the same one, 
       bucketing the reads using each kmer candidate.
-    default: false
     inputBinding:
       position: 101
       prefix: --omh_flag
@@ -93,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size used in order min hashing.
-    default: 4
     inputBinding:
       position: 101
       prefix: --omh_k
@@ -102,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: The seed to generate a series of seeds for OMH bucketing.
-    default: 2024
     inputBinding:
       position: 101
       prefix: --omh_seed
@@ -111,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: The number of times to perform permutation in order min hashing.
-    default: 3
     inputBinding:
       position: 101
       prefix: --omh_times
@@ -120,7 +110,6 @@ inputs:
       - 'null'
       - boolean
     doc: Brute Force calcualte the pairwise edit distance.
-    default: false
     inputBinding:
       position: 101
       prefix: --pair_wise
@@ -130,7 +119,6 @@ inputs:
       - float
     doc: The expected probability P for grouping two similar reads into same 
       bucket by at least one minimiser that does not include the different bases
-    default: 0.86
     inputBinding:
       position: 101
       prefix: --probability
@@ -140,7 +128,6 @@ inputs:
       - int
     doc: No need to input this parameter, reads2graph will calculate the minimum
       read length.
-    default: 0
     inputBinding:
       position: 101
       prefix: --read_length
@@ -149,7 +136,6 @@ inputs:
       - 'null'
       - boolean
     doc: If ture, reads2graph will save graph to file in graphviz dot format.
-    default: false
     inputBinding:
       position: 101
       prefix: --save_graph
@@ -159,7 +145,6 @@ inputs:
       - int
     doc: The maximum distance of nodes from the give node for updating more 
       potential edges.
-    default: 15
     inputBinding:
       position: 101
       prefix: --visit_depth
@@ -168,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: The window number for minimiser.
-    default: 3
     inputBinding:
       position: 101
       prefix: --window_number

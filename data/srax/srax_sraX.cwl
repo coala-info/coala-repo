@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of the query which must align to the reference sequence.
-    default: 60
     inputBinding:
       position: 101
       prefix: --aln_cov
@@ -30,7 +29,6 @@ inputs:
       of multiple AMR DBs) and 'BACMET' (biocides and metal resistance) repositories.
       Note: In operational terms, the extensive search ('ext' option) takes much longer
       computing times."
-    default: basic
     inputBinding:
       position: 101
       prefix: --dbsearch
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum evalue cut-off to filter false positives.
-    default: '1e-05'
     inputBinding:
       position: 101
       prefix: --eval
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum identity cut-off to filter false positives.
-    default: 85
     inputBinding:
       position: 101
       prefix: --id
@@ -75,7 +71,6 @@ inputs:
       sequences (multiple-sequence files). The possible choices are: 'muscle', 'clustalo'
       or 'mafft'. Note: The accuracy and computing times are both dependent on the
       selected algorithm."
-    default: muscle
     inputBinding:
       position: 101
       prefix: --msa
@@ -87,7 +82,6 @@ inputs:
       compiled AMR DB. The possible choices are: 'dblastx' (DIAMOND blastx) or 'blastx'
       (NCBI blastx). In any case, the process is parallelized (up to 100 genome files
       are run simultaneously) for reducing computing times."
-    default: dblastx
     inputBinding:
       position: 101
       prefix: --seqal
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads when running sraX.
-    default: 6
     inputBinding:
       position: 101
       prefix: --threads

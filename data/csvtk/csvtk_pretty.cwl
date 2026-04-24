@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: the number of rows to determine the min and max widths (0 for all rows)
-    default: 1024
     inputBinding:
       position: 101
       prefix: --buf-rows
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: clip mark
-    default: '...'
     inputBinding:
       position: 101
       prefix: --clip-mark
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: lines starting with commment-character will be ignored
-    default: '#'
     inputBinding:
       position: 101
       prefix: --comment-char
@@ -72,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: delimiting character of the input CSV file
-    default: ','
     inputBinding:
       position: 101
       prefix: --delimiter
@@ -138,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs to use
-    default: 4
     inputBinding:
       position: 101
       prefix: --num-cpus
@@ -147,7 +142,6 @@ inputs:
       - 'null'
       - string
     doc: delimiting character of the output CSV file
-    default: ','
     inputBinding:
       position: 101
       prefix: --out-delimiter
@@ -172,7 +166,6 @@ inputs:
       - 'null'
       - string
     doc: fields/columns separator
-    default: '   '
     inputBinding:
       position: 101
       prefix: --separator
@@ -206,7 +199,6 @@ inputs:
       - 'null'
       - string
     doc: delimiter for wrapping cells
-    default: ' '
     inputBinding:
       position: 101
       prefix: --wrap-delimiter

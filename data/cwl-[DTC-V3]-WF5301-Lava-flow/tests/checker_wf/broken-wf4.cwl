@@ -4,7 +4,6 @@ cwlVersion: v1.0
 inputs:
   letters0:
     type: string
-    default: "a0"
 
 outputs:
   all:

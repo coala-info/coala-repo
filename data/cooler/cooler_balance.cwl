@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Control the number of pixels handled by each worker process at a time.
-    default: 10000000
     inputBinding:
       position: 102
       prefix: --chunksize
@@ -56,7 +55,6 @@ inputs:
       specified tolerance; 'store_nan': Store a vector of NaN values to indicate that
       the matrix failed to converge; 'discard': Store nothing and exit gracefully;
       'error': Abort with non-zero exit status."
-    default: store_final
     inputBinding:
       position: 102
       prefix: --convergence-policy
@@ -74,7 +72,6 @@ inputs:
       - int
     doc: Number of diagonals of the contact matrix to ignore, including the main
       diagonal.
-    default: 2
     inputBinding:
       position: 102
       prefix: --ignore-diags
@@ -94,7 +91,6 @@ inputs:
     doc: "Ignore bins from the contact matrix using the 'MAD-max' filter: bins whose
       log marginal sum is less than ``mad-max`` median absolute deviations below the
       median log marginal sum of all the bins in the same chromosome."
-    default: 5
     inputBinding:
       position: 102
       prefix: --mad-max
@@ -103,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of iterations to perform if convergence is not achieved.
-    default: 200
     inputBinding:
       position: 102
       prefix: --max-iters
@@ -113,7 +108,6 @@ inputs:
       - int
     doc: Ignore bins from the contact matrix whose marginal count is less than 
       this number.
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-count
@@ -123,7 +117,6 @@ inputs:
       - int
     doc: Ignore bins from the contact matrix whose marginal number of nonzeros 
       is less than this number.
-    default: 10
     inputBinding:
       position: 102
       prefix: --min-nnz
@@ -132,7 +125,6 @@ inputs:
       - 'null'
       - string
     doc: Name of column to write to.
-    default: weight
     inputBinding:
       position: 102
       prefix: --name
@@ -141,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to split the work between.
-    default: 8
     inputBinding:
       position: 102
       prefix: --nproc
@@ -159,7 +150,6 @@ inputs:
       - float
     doc: Threshold value of variance of the marginals for the algorithm to 
       converge.
-    default: 1e-05
     inputBinding:
       position: 102
       prefix: --tol

@@ -37,7 +37,6 @@ inputs:
     doc: Set the kmer value. Provide a list of kmers for Spades, e.g. "--kmer 
       21,33,55". Default is 21,33,55,77,99,127. Note that Spades only accepts 
       uneven kmer values.
-    default: 21,33,55,77,99,127
     inputBinding:
       position: 101
       prefix: --kmer

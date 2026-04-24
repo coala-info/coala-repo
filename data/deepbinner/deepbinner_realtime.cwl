@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Neural network batch size
-    default: 256
     inputBinding:
       position: 101
       prefix: --batch_size
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: TensorFlow's device_count config option
-    default: 1
     inputBinding:
       position: 101
       prefix: --device_count
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: TensorFlow's inter_op_parallelism_threads config option
-    default: 1
     inputBinding:
       position: 101
       prefix: --inter_op_parallelism_threads
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: TensorFlow's intra_op_parallelism_threads config option
-    default: 12
     inputBinding:
       position: 101
       prefix: --intra_op_parallelism_threads
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: OMP_NUM_THREADS environment variable value
-    default: 12
     inputBinding:
       position: 101
       prefix: --omp_num_threads
@@ -112,7 +107,6 @@ inputs:
       - int
     doc: This much of a read's start/end signal will examined for barcode 
       signals
-    default: 6144
     inputBinding:
       position: 101
       prefix: --scan_size
@@ -122,7 +116,6 @@ inputs:
       - float
     doc: For a read to be classified, there must be this much difference between
       the best and second-best barcode scores
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --score_diff

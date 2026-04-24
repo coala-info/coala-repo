@@ -57,7 +57,6 @@ inputs:
       - float
     doc: minimum TPM to include non-coding transcript into the annotation as 
       lncRNA
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --lncrnamintpm
@@ -75,7 +74,6 @@ inputs:
       - int
     doc: minimum protein length (in amino-acids) for ab initio ORF detection 
       without homology evidence
-    default: 75
     inputBinding:
       position: 101
       prefix: --min_prot
@@ -102,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: set ploidy for the genome, used in estimating the maximum intron size
-    default: 2
     inputBinding:
       position: 101
       prefix: -d
@@ -129,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

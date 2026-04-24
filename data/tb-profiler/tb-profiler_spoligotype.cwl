@@ -10,7 +10,6 @@ inputs:
       - File
     doc: BAM file. Make sure it has been generated using the H37Rv genome 
       (GCA_000195955.2)
-    default: None
     inputBinding:
       position: 101
       prefix: --bam
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add CSV output
-    default: false
     inputBinding:
       position: 101
       prefix: --csv
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Mutation panel name
-    default: tbdb
     inputBinding:
       position: 101
       prefix: --db
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - Directory
     doc: Database directory
-    default: /usr/local/share/tbprofiler
     inputBinding:
       position: 101
       prefix: --db_dir
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - Directory
     doc: Storage directory
-    default: .
     inputBinding:
       position: 101
       prefix: --dir
@@ -55,7 +50,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add docx output. This requires docxtpl to be installed
-    default: false
     inputBinding:
       position: 101
       prefix: --docx
@@ -64,7 +58,6 @@ inputs:
       - 'null'
       - File
     doc: Path to db files prefix (overrides "--db" parameter)
-    default: None
     inputBinding:
       position: 101
       prefix: --external-db
@@ -73,7 +66,6 @@ inputs:
       - 'null'
       - File
     doc: Fasta file
-    default: None
     inputBinding:
       position: 101
       prefix: --fasta
@@ -82,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Kmer counter
-    default: FastK
     inputBinding:
       position: 101
       prefix: --kmer_counter
@@ -91,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level
-    default: INFO
     inputBinding:
       position: 101
       prefix: --logging
@@ -100,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: NGS Platform used to generate data
-    default: illumina
     inputBinding:
       position: 101
       prefix: --platform
@@ -109,7 +98,6 @@ inputs:
       - 'null'
       - string
     doc: Sample prefix
-    default: tbprofiler
     inputBinding:
       position: 101
       prefix: --prefix
@@ -118,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum memory to use in Gb
-    default: 2
     inputBinding:
       position: 101
       prefix: --ram
@@ -127,7 +114,6 @@ inputs:
       - 'null'
       - File
     doc: First read file
-    default: None
     inputBinding:
       position: 101
       prefix: --read1
@@ -136,7 +122,6 @@ inputs:
       - 'null'
       - File
     doc: Second read file
-    default: None
     inputBinding:
       position: 101
       prefix: --read2
@@ -145,7 +130,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temp firectory to process all files
-    default: .
     inputBinding:
       position: 101
       prefix: --temp
@@ -154,7 +138,6 @@ inputs:
       - 'null'
       - string
     doc: Jinja2 formatted template for output
-    default: None
     inputBinding:
       position: 101
       prefix: --text_template
@@ -163,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: Threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -172,7 +154,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add text output
-    default: false
     inputBinding:
       position: 101
       prefix: --txt

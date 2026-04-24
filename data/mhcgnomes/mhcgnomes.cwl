@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Default species prefix used when the input is missing one
-    default: HLA
     inputBinding:
       position: 102
       prefix: --default-species
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Output format
-    default: table
     inputBinding:
       position: 102
       prefix: --format

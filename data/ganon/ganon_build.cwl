@@ -35,7 +35,6 @@ inputs:
       installed or binary path set with --raptor-path. --mode, --filter-size and --min-length
       will be ignored with hibf. hibf will set --max-fp 0.001 as default. (default:
       hibf)'
-    default: hibf
     inputBinding:
       position: 101
       prefix: --filter-type
@@ -64,7 +63,6 @@ inputs:
       - int
     doc: 'The number of hash functions for the interleaved bloom filter [1-5]. With
       --filter-type ibf, 0 will try to set optimal value. (default: 4)'
-    default: 4
     inputBinding:
       position: 101
       prefix: --hash-functions
@@ -73,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: 'The k-mer size to split sequences. (default: 19)'
-    default: 19
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -103,7 +100,6 @@ inputs:
       - int
     doc: 'Skip sequences smaller then value defined. 0 to not skip any sequence. Only
       valid for --filter-type ibf. (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-length
@@ -170,7 +166,6 @@ inputs:
       - type: array
         items: string
     doc: "Source to download [refseq, genbank] (default: ['refseq'])"
-    default:
       - refseq
     inputBinding:
       position: 101
@@ -217,7 +212,6 @@ inputs:
       - 'null'
       - int
     doc: 'Download limited assemblies for each taxa. 0 for all. (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --top
@@ -234,7 +228,6 @@ inputs:
       - 'null'
       - int
     doc: 'The window-size to build filter with minimizers. (default: 31)'
-    default: 31
     inputBinding:
       position: 101
       prefix: --window-size

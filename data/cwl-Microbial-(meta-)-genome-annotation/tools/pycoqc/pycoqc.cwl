@@ -52,7 +52,6 @@ inputs:
   report_title:
     type: string?
     doc: Title to use in the html report
-    default: "PycoQC_report"
     inputBinding:
       prefix: --report_title
 

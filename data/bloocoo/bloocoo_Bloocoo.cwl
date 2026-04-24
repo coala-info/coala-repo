@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: max abundance threshold for solid kmers
-    default: 2147483647
     inputBinding:
       position: 101
       prefix: -abundance-max
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: min abundance threshold for solid kmers
-    default: '3'
     inputBinding:
       position: 101
       prefix: -abundance-min
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: min abundance hard threshold (only used when min abundance is "auto")
-    default: 3
     inputBinding:
       position: 101
       prefix: -abundance-min-threshold
@@ -83,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: max number of values in kmers histogram
-    default: 10000
     inputBinding:
       position: 101
       prefix: -histo-max
@@ -100,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: size of a kmer
-    default: 31
     inputBinding:
       position: 101
       prefix: -kmer-size
@@ -109,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: max disk (in MBytes)
-    default: 0
     inputBinding:
       position: 101
       prefix: -max-disk
@@ -118,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: max memory (in MBytes)
-    default: 5000
     inputBinding:
       position: 101
       prefix: -max-memory
@@ -135,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: size of a minimizer
-    default: 8
     inputBinding:
       position: 101
       prefix: -minimizer-size
@@ -144,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: minimizer type (0=lexi, 1=freq)
-    default: 0
     inputBinding:
       position: 101
       prefix: -minimizer-type
@@ -153,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: number of cores
-    default: 0
     inputBinding:
       position: 101
       prefix: -nb-cores
@@ -162,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: output compression level (0:none, 9:best)
-    default: 0
     inputBinding:
       position: 101
       prefix: -out-compress
@@ -171,7 +160,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory for temporary files
-    default: .
     inputBinding:
       position: 101
       prefix: -out-tmp
@@ -180,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: minimizer repartition (0=unordered, 1=ordered)
-    default: 0
     inputBinding:
       position: 101
       prefix: -repartition-type
@@ -197,7 +184,6 @@ inputs:
       - 'null'
       - string
     doc: way to compute counts of several files (sum, min, max, one, all)
-    default: sum
     inputBinding:
       position: 101
       prefix: -solidity-kind
@@ -206,7 +192,6 @@ inputs:
       - 'null'
       - int
     doc: verbosity level
-    default: 1
     inputBinding:
       position: 101
       prefix: -verbose

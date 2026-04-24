@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the contig size cut-off (Default 1000 bp)
-    default: 1000
     inputBinding:
       position: 101
       prefix: -x
@@ -29,7 +28,6 @@ inputs:
     doc: "Specify the convergence iteration number (default is 200)\n            \
       \               e.g Number of iterations with no change in the number\n    \
       \                       of estimated clusters that stops the convergence."
-    default: 200
     inputBinding:
       position: 101
       prefix: -v
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a damping factor between 0.5 and 1, default is 0.9
-    default: 0.9
     inputBinding:
       position: 101
       prefix: -d
@@ -62,7 +59,6 @@ inputs:
       - string
     doc: "Specify a number for kmer calculation. Default is 4.\n                 \
       \          Tetramer frequencies are recommended"
-    default: '4'
     inputBinding:
       position: 101
       prefix: -kmer
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - File
     doc: 'Specify an output name for the log file. [Default: binsanity-refine.log]'
-    default: binsanity-refine.log
     inputBinding:
       position: 101
       prefix: --log
@@ -80,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Specify a max number of iterations (default is 4000)
-    default: 4000
     inputBinding:
       position: 101
       prefix: -m
@@ -90,7 +84,6 @@ inputs:
       - Directory
     doc: "Give a name to the directory BinSanity results will be output in\n     \
       \                      [Default is 'BINSANITY-REFINEMENT']"
-    default: BINSANITY-REFINEMENT
     inputBinding:
       position: 101
       prefix: -o
@@ -114,7 +107,6 @@ inputs:
       \                          the preference could benefit you. For complex datasets\n\
       \                           with low abundance organisms a preference\n    \
       \                       of -25 was found to be optimal"
-    default: '-25'
     inputBinding:
       position: 101
       prefix: -p

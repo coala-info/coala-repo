@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Input file is a set of aligned sequences.
-    default: OFF
     inputBinding:
       position: 101
       prefix: --alignment
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Input file is a distance matrix.
-    default: ON
     inputBinding:
       position: 101
       prefix: --distance
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Exponential notation for branch lengths.
-    default: OFF
     inputBinding:
       position: 101
       prefix: --expblen
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Exponential notation in distance output.
-    default: OFF
     inputBinding:
       position: 101
       prefix: --expdist
@@ -75,7 +71,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use traditional Neighbor-Joining algorithm.
-    default: OFF
     inputBinding:
       position: 101
       prefix: --neighbor
@@ -84,7 +79,6 @@ inputs:
       - 'null'
       - boolean
     doc: Attempt joins deterministically.
-    default: OFF
     inputBinding:
       position: 101
       prefix: --norandom
@@ -93,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Output n trees.
-    default: 1
     inputBinding:
       position: 101
       prefix: --ntrees
@@ -110,7 +103,6 @@ inputs:
       - 'null'
       - boolean
     doc: Silent operation.
-    default: ON
     inputBinding:
       position: 101
       prefix: --quiet
@@ -127,7 +119,6 @@ inputs:
       - 'null'
       - boolean
     doc: Randomly shuffle the distance matrix.
-    default: OFF
     inputBinding:
       position: 101
       prefix: --shuffle
@@ -152,7 +143,6 @@ inputs:
       - 'null'
       - boolean
     doc: More output.
-    default: OFF
     inputBinding:
       position: 101
       prefix: --verbose

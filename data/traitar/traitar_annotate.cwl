@@ -30,7 +30,6 @@ inputs:
   - id: output_dir
     type: Directory
     doc: 'Output directory (default: phenolyzer_output)'
-    default: phenolyzer_output
     inputBinding:
       position: 5
   - id: cpus
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: 'CPUs used for running hmmsearch & other executables (default: 1)'
-    default: 1
     inputBinding:
       position: 106
       prefix: --cpus
@@ -48,7 +46,6 @@ inputs:
       - string
     doc: 'If the input is amino acids the type of gene prediction GFF file can be
       specified for mapping the phenotype predictions to the genes (default: None)'
-    default: None
     inputBinding:
       position: 106
       prefix: --gene_gff_type
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Overwrite output directories (default: False)'
-    default: false
     inputBinding:
       position: 106
       prefix: --overwrite
@@ -66,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of samples to process in parallel (default: 1)'
-    default: 1
     inputBinding:
       position: 106
       prefix: --parallel

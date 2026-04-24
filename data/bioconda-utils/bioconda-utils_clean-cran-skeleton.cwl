@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Limit lines emitted for commands executed
-    default: '-'
     inputBinding:
       position: 102
       prefix: --log-command-max-lines
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Write log to file
-    default: '-'
     inputBinding:
       position: 102
       prefix: --logfile
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Log level for log file
-    default: debug
     inputBinding:
       position: 102
       prefix: --logfile-level
@@ -47,7 +44,6 @@ inputs:
       - string
     doc: "Set logging level (debug, info, warning, error,\n                      \
       \  critical)"
-    default: info
     inputBinding:
       position: 102
       prefix: --loglevel
@@ -59,7 +55,6 @@ inputs:
       \     After a CRAN skeleton is created, any Windows-related\n              \
       \          lines will be removed and the bld.bat file will be\n            \
       \            removed."
-    default: false
     inputBinding:
       position: 102
       prefix: --no-windows

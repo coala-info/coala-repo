@@ -47,7 +47,6 @@ inputs:
       - string
     doc: what format is the tree file. This is passed to dendropy. default is 
       'nexus'
-    default: nexus
     inputBinding:
       position: 101
       prefix: --format
@@ -64,7 +63,6 @@ inputs:
     doc: A Boolean flag. In first stage of the Fitch algorithm, at a polytomy, 
       when there is no intersection of traits from all children should the trait
       that appears most in the children be assigned.
-    default: false
     inputBinding:
       position: 101
       prefix: --majority_rule

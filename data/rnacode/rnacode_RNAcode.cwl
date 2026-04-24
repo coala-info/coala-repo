@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: p-value cutoff
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -p
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: Create plots only if p better than this cutoff
-    default: 0.05
     inputBinding:
       position: 102
       prefix: -i
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to put eps-files
-    default: eps
     inputBinding:
       position: 102
       prefix: -d
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Number of samples to calculate p-value
-    default: 100
     inputBinding:
       position: 102
       prefix: -n
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: Output file
-    default: stdout
     inputBinding:
       position: 102
       prefix: -o

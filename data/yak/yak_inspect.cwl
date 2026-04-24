@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: max count (effective with in2.yak)
-    default: 20
     inputBinding:
       position: 103
       prefix: -m

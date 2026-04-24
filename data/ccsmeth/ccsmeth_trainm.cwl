@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: TransformerEncoder input feature numbers
-    default: 256
     inputBinding:
       position: 101
       prefix: --d_model
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: TransformerEncoder dim_feedforward
-    default: 512
     inputBinding:
       position: 101
       prefix: --dim_ff
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: default 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --dl_num_workers
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: BiRNN hidden_size
-    default: 256
     inputBinding:
       position: 101
       prefix: --hid_rnn
@@ -90,7 +86,6 @@ inputs:
       - 'null'
       - string
     doc: if using mapping features, yes or no
-    default: no
     inputBinding:
       position: 101
       prefix: --is_map
@@ -99,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: if using num_pass features, yes or no
-    default: yes
     inputBinding:
       position: 101
       prefix: --is_npass
@@ -108,7 +102,6 @@ inputs:
       - 'null'
       - string
     doc: if using signal-to-noise-ratio features, yes or no
-    default: no
     inputBinding:
       position: 101
       prefix: --is_sn
@@ -117,7 +110,6 @@ inputs:
       - 'null'
       - string
     doc: if using std features, yes or no
-    default: no
     inputBinding:
       position: 101
       prefix: --is_stds
@@ -126,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: BiRNN layer num
-    default: 3
     inputBinding:
       position: 101
       prefix: --layer_rnn
@@ -135,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: TransformerEncoder nlayers
-    default: 6
     inputBinding:
       position: 101
       prefix: --layer_trans
@@ -145,7 +135,6 @@ inputs:
       - float
     doc: default 0.001. [lr should be lr*world_size when using multi gpus? or 
       lower batch_size?]
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --lr
@@ -154,7 +143,6 @@ inputs:
       - 'null'
       - float
     doc: default 0.1
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --lr_decay
@@ -163,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: effective in StepLR. default 1
-    default: 1
     inputBinding:
       position: 101
       prefix: --lr_decay_step
@@ -172,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: effective in ReduceLROnPlateau. default 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --lr_patience
@@ -181,7 +167,6 @@ inputs:
       - 'null'
       - string
     doc: StepLR or ReduceLROnPlateau
-    default: StepLR
     inputBinding:
       position: 101
       prefix: --lr_scheduler
@@ -190,7 +175,6 @@ inputs:
       - 'null'
       - int
     doc: max epoch num, default 50
-    default: 50
     inputBinding:
       position: 101
       prefix: --max_epoch_num
@@ -199,7 +183,6 @@ inputs:
       - 'null'
       - int
     doc: min epoch num, default 10
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_epoch_num
@@ -215,7 +198,6 @@ inputs:
       - string
     doc: type of model to use, 'attbilstm2s', 'attbigru2s', 'transencoder2s', 
       'attbilstm2s2', 'attbigru2s2'
-    default: attbigru2s
     inputBinding:
       position: 101
       prefix: --model_type
@@ -224,7 +206,6 @@ inputs:
       - 'null'
       - int
     doc: number of GPUs per node for distributed training, default 2
-    default: 2
     inputBinding:
       position: 101
       prefix: --ngpus_per_node
@@ -233,7 +214,6 @@ inputs:
       - 'null'
       - int
     doc: TransformerEncoder nhead
-    default: 4
     inputBinding:
       position: 101
       prefix: --nhead
@@ -242,7 +222,6 @@ inputs:
       - 'null'
       - int
     doc: node rank for distributed training, default 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --node_rank
@@ -251,7 +230,6 @@ inputs:
       - 'null'
       - int
     doc: number of nodes for distributed training, default 1
-    default: 1
     inputBinding:
       position: 101
       prefix: --nodes
@@ -261,7 +239,6 @@ inputs:
       - string
     doc: type of optimizer to use, 'Adam', 'SGD', 'RMSprop', 'Ranger' or 
       'LookaheadAdam'
-    default: Adam
     inputBinding:
       position: 101
       prefix: --optim_type
@@ -277,7 +254,6 @@ inputs:
       - 'null'
       - int
     doc: len of kmer.
-    default: 21
     inputBinding:
       position: 101
       prefix: --seq_len
@@ -308,7 +284,6 @@ inputs:
       - string
     doc: if using torch.compile, yes or no, default no ('yes' only works in 
       pytorch>=2.0)
-    default: no
     inputBinding:
       position: 101
       prefix: --use_compile

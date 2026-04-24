@@ -17,7 +17,6 @@ inputs:
       - string
     doc: the file format for the CDS alignment. Anything accepted by BioPython 
       is fine
-    default: fasta
     inputBinding:
       position: 101
       prefix: --aln_format
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Codon position(s) to be extracted
-    default: '12'
     inputBinding:
       position: 101
       prefix: --codonPoses

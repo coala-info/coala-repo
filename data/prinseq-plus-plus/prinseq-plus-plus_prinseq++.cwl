@@ -48,7 +48,6 @@ inputs:
       - float
     doc: Filter sequences with dust_score lower than [float]. [float] should be 
       in the 0-1 interval.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -lc_dust
@@ -58,7 +57,6 @@ inputs:
       - float
     doc: Filter sequences with entropy lower than [float]. [float] should be in 
       the 0-1 interval.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -lc_entropy
@@ -132,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: Set output format. 0 FASTQ, 1 FASTA.
-    default: 0
     inputBinding:
       position: 101
       prefix: -out_format
@@ -181,7 +178,6 @@ inputs:
       - int
     doc: Nuber of threads to use. Note that if more than one thread is used, 
       output sequences might not be in the same order as input sequences.
-    default: 1
     inputBinding:
       position: 101
       prefix: -threads
@@ -200,7 +196,6 @@ inputs:
     doc: Trim recursively from the 3'-end chunks of length -trim_qual_step if 
       the mean quality of the first -trim_qual_window bases is less than 
       [float].
-    default: 20
     inputBinding:
       position: 101
       prefix: -trim_qual_left
@@ -210,7 +205,6 @@ inputs:
       - float
     doc: Trim recursively from the 5'-end chunks of length -trim_qual_step if 
       the mean quality of the last -trim_qual_window bases is less than [float].
-    default: 20
     inputBinding:
       position: 101
       prefix: -trim_qual_right
@@ -220,7 +214,6 @@ inputs:
       - string
     doc: Rule to use to compare quality score to calculated value. Allowed 
       options are lt (less than), gt (greater than) and et (equal to).
-    default: lt
     inputBinding:
       position: 101
       prefix: -trim_qual_rule
@@ -229,7 +222,6 @@ inputs:
       - 'null'
       - int
     doc: Step size used by trim_qual_left and trim_qual_right
-    default: 2
     inputBinding:
       position: 101
       prefix: -trim_qual_step
@@ -239,7 +231,6 @@ inputs:
       - string
     doc: Type of quality score calculation to use. Allowed options are min, 
       mean, max and sum.
-    default: min
     inputBinding:
       position: 101
       prefix: -trim_qual_type
@@ -248,7 +239,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the window used by trim_qual_left and trim_qual_right
-    default: 5
     inputBinding:
       position: 101
       prefix: -trim_qual_window
@@ -287,7 +277,6 @@ inputs:
       trim_tail_left, trim_tail_right, trim_qual_left, trim_qual_right, 
       trim_left, trim_right) to compare stats of diferent files. VERBOSE=0 
       prints nothing.
-    default: 1
     inputBinding:
       position: 101
       prefix: -VERBOSE

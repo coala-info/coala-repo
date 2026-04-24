@@ -43,7 +43,6 @@ inputs:
     doc: Sets the URL of the webview host. Note that when using the link the row
       data can temporarily occur (in base64-encoded form) in the server logs of 
       the given webview host
-    default: https://datavzrd.github.io/view/
     inputBinding:
       position: 102
       prefix: --webview-url

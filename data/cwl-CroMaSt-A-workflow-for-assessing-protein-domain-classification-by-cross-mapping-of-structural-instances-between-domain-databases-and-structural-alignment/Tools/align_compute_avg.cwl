@@ -39,7 +39,6 @@ inputs:
   split_dir:
     type: [ Directory?, string?]
     label: The direcory with PDB structures to compute average
-    default: 
       class: Directory
       location: split_PDB
       listing: [] 
@@ -49,7 +48,6 @@ inputs:
 
   kpax_result:
     type: string?
-    default: KPAX_RESULTS
     inputBinding:
       position: 4
       prefix: -k

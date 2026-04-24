@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations for the estimation algorithm.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --iters
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

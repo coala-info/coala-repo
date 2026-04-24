@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - File
     doc: path to lumpyexpress.config file
-    default: '(default: same directory as lumpyexpress)'
     inputBinding:
       position: 101
       prefix: -K
@@ -61,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: minimum sample weight for a call
-    default: 4
     inputBinding:
       position: 101
       prefix: -m
@@ -95,7 +93,6 @@ inputs:
       - 'null'
       - Directory
     doc: temp directory
-    default: '[./output_prefix.XXXXXXXXXXXX]'
     inputBinding:
       position: 101
       prefix: -T
@@ -104,7 +101,6 @@ inputs:
       - 'null'
       - float
     doc: trim threshold
-    default: 0
     inputBinding:
       position: 101
       prefix: -r

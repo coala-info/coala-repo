@@ -22,7 +22,6 @@ inputs:
       - string
     doc: Name of the chromosome. This is simply used as the first column in the 
       output file. At the moment, only one chromosome is supported.
-    default: A
     inputBinding:
       position: 101
       prefix: --chromosome
@@ -60,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: Select the output file format, either (m)pileup, or PoPoolation2 sync.
-    default: pileup
     inputBinding:
       position: 101
       prefix: --format
@@ -86,7 +84,6 @@ inputs:
       - int
     doc: Maximum phred score to use when simulating an (m)pileup file. Ignored 
       otherwise.
-    default: 40
     inputBinding:
       position: 101
       prefix: --max-phred-score
@@ -96,7 +93,6 @@ inputs:
       - int
     doc: Minimum phred score to use when simulating an (m)pileup file. Ignored 
       otherwise.
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-phred-score
@@ -106,7 +102,6 @@ inputs:
       - int
     doc: Number of mutations to simulate in total across the chromosome, spread 
       across the `--length`.
-    default: 0
     inputBinding:
       position: 101
       prefix: --mutation-count
@@ -117,7 +112,6 @@ inputs:
     doc: Mutation rate to simulate. This rate times the `--length` is used as 
       the number of mutations to generate in total (which can alternatively be 
       directly provided via `--mutation-count`).
-    default: '1e-08'
     inputBinding:
       position: 101
       prefix: --mutation-rate
@@ -136,7 +130,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to write files to
-    default: .
     inputBinding:
       position: 101
       prefix: --out-dir
@@ -147,7 +140,6 @@ inputs:
     doc: Set the random seed for generating values, which allows reproducible 
       results. If not provided, the system clock is used to obtain a random 
       seed.
-    default: 0
     inputBinding:
       position: 101
       prefix: --random-seed
@@ -173,7 +165,6 @@ inputs:
       (1) `OMP_NUM_THREADS` (OpenMP) and (2) `SLURM_CPUS_PER_TASK` (slurm), as 
       well as (3) the hardware concurrency (number of CPU cores), taking 
       hyperthreads into account, in the given order of precedence.
-    default: 14
     inputBinding:
       position: 101
       prefix: --threads

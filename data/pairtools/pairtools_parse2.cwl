@@ -85,7 +85,6 @@ inputs:
     doc: Allowed mismatch between intramolecular alignments to detect 
       readthrough duplicates. Pairs with both sides mapped within this distance 
       (bp) from each other are considered duplicates.
-    default: 3
     inputBinding:
       position: 102
       prefix: --dedup-max-mismatch
@@ -190,7 +189,6 @@ inputs:
       Note that unsequenced insert is *terra incognita* and might contain 
       unsequenced DNA (including ligations) in it. This parameter is ignored in 
       --single-end mode.
-    default: 500
     inputBinding:
       position: 102
       prefix: --max-insert-size
@@ -202,7 +200,6 @@ inputs:
       specified value are treated as "null" alignments. These null alignments 
       convert otherwise linear alignments into walks, and affect how they get 
       reported as a Hi-C pair.
-    default: 20
     inputBinding:
       position: 102
       prefix: --max-inter-align-gap
@@ -211,7 +208,6 @@ inputs:
       - 'null'
       - string
     doc: The minimal MAPQ score to consider a read as uniquely mapped.
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-mapq
@@ -245,7 +241,6 @@ inputs:
       - string
     doc: Number of processes used by the auto-guessed input decompressing 
       command.
-    default: 3
     inputBinding:
       position: 102
       prefix: --nproc-in
@@ -255,7 +250,6 @@ inputs:
       - string
     doc: Number of processes used by the auto-guessed output compressing 
       command.
-    default: 8
     inputBinding:
       position: 102
       prefix: --nproc-out

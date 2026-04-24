@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: Exclude duplications for which the expression is true
-    default: length < 500
     inputBinding:
       position: 101
       prefix: --exclude
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Do not output entries shorter that the minimal length
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-length

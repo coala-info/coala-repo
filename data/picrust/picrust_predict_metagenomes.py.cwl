@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - boolean
     doc: output the predicted metagenome table in tab-delimited format
-    default: false
     inputBinding:
       position: 101
       prefix: --format_tab_delimited
@@ -31,7 +30,6 @@ inputs:
       - string
     doc: 'Version of GreenGenes that was used for OTU picking. Valid choices are:
       13_5, 18may2012'
-    default: '13_5'
     inputBinding:
       position: 101
       prefix: --gg_version
@@ -41,7 +39,6 @@ inputs:
       - File
     doc: 'Precalculated function predictions on per otu basis in biom format (can
       be gzipped). Note: using this option overrides --type_of_prediction and --gg_version.'
-    default: none
     inputBinding:
       position: 101
       prefix: --input_count_table
@@ -59,7 +56,6 @@ inputs:
       of function predictions. As with the count table, these are on a per otu basis
       and in BIOM format (can be gzipped). Note: using this option overrides --type_of_prediction
       and --gg_version.'
-    default: none
     inputBinding:
       position: 101
       prefix: --input_variance_table
@@ -70,7 +66,6 @@ inputs:
     doc: Instead of loading the precalculated file in tab- delimited format 
       (with otu ids as row ids and traits as columns) load the data in biom 
       format (with otu as SampleIds and traits as ObservationIds)
-    default: false
     inputBinding:
       position: 101
       prefix: --load_precalc_file_in_biom
@@ -81,7 +76,6 @@ inputs:
     doc: Disable rounding number of predicted functions to the the nearest whole
       number. This option is important if you are inputting abundances as 
       proportions
-    default: false
     inputBinding:
       position: 101
       prefix: --no_round
@@ -121,7 +115,6 @@ inputs:
       - 'null'
       - string
     doc: 'Type of functional predictions. Valid choices are: ko, cog, rfam'
-    default: ko
     inputBinding:
       position: 101
       prefix: --type_of_prediction
@@ -130,7 +123,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print information during execution -- useful for debugging
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose
@@ -148,7 +140,6 @@ inputs:
       output files will be generated, named the same as the metagenome 
       prediction output, but with .variance .upper_CI or .lower_CI appended 
       immediately before the file extension
-    default: false
     inputBinding:
       position: 101
       prefix: --with_confidence

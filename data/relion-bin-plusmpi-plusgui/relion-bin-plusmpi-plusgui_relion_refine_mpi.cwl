@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Number of MPI processes
-    default: 1
     inputBinding:
       position: 101
 outputs:

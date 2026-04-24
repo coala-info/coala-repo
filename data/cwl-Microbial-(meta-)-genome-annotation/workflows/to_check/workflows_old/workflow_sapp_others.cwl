@@ -27,7 +27,6 @@ inputs:
     type: int
     doc: Codon table used for gene prediction
     label: Codon table
-    default: 1
   genome:
     type: boolean?
     doc: FASTA to RDF conversion with genome data
@@ -36,7 +35,6 @@ inputs:
     type: int?
     doc: number of threads to use for computational processes
     label: number of threads
-    default: 2
 
   destination:
     type: string?
@@ -59,7 +57,6 @@ steps:
     run: ../bash/grep_count.cwl
     in:
       grep: 
-        default: "/Gene>"
       infile: conversion/output
     out: [matches]
 ############################

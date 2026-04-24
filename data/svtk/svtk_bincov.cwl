@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Bin size (bp)
-    default: 1000
     inputBinding:
       position: 103
       prefix: --binsize
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: Type of coverage to calculate
-    default: nucleotide
     inputBinding:
       position: 103
       prefix: --mode
@@ -65,7 +63,6 @@ inputs:
       - float
     doc: "Maximum fraction of each bin permitted to overlap with\n               \
       \         blacklist regions."
-    default: 0.05
     inputBinding:
       position: 103
       prefix: --overlap

@@ -16,7 +16,6 @@ inputs:
       - string
     doc: Barcoding design. Specifies which bases to use as cell/molecular 
       barcodes.
-    default: T-8U-10B
     inputBinding:
       position: 102
       prefix: --design
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL).'
-    default: WARN
     inputBinding:
       position: 102
       prefix: --log-level
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length after trimming.
-    default: 50
     inputBinding:
       position: 102
       prefix: --min-read-length
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use, 0 means autodetection.
-    default: 0
     inputBinding:
       position: 102
       prefix: --num-threads

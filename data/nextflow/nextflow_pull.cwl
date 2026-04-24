@@ -47,7 +47,6 @@ inputs:
       - 'null'
       - boolean
     doc: Update all downloaded projects
-    default: false
     inputBinding:
       position: 102
       prefix: -all

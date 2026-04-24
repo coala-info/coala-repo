@@ -43,7 +43,6 @@ inputs:
       - boolean
     doc: If the input table is reversed, T(rue) or F(alse), default is false 
       [Optional for -T and -t]
-    default: false
     inputBinding:
       position: 101
       prefix: -R
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - File
     doc: Output mode file
-    default: meta-apo.model
     inputBinding:
       position: 101
       prefix: -o

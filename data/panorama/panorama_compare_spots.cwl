@@ -14,7 +14,6 @@ inputs:
     doc: Include canonical versions of systems in the analysis. This provides 
       additional system representations that may be useful for comprehensive 
       systems analysis.
-    default: false
     inputBinding:
       position: 101
       prefix: --canonical
@@ -51,7 +50,6 @@ inputs:
       - int
     doc: 'Coverage mode: 0=query, 1=target, 2=shorter seq, 3=longer seq, 4=query and
       target, 5=shorter and longer seq. Default: 0'
-    default: 0
     inputBinding:
       position: 101
       prefix: --cluster_cov_mode
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage threshold (0.0-1.0).
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --cluster_coverage
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: 'E-value threshold. Default: 0.001'
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --cluster_eval
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum sequence identity threshold (0.0-1.0).
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --cluster_identity
@@ -146,7 +141,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of CPU threads to use for parallel processing. Default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -155,7 +149,6 @@ inputs:
       - 'null'
       - boolean
     doc: disables the progress bars
-    default: false
     inputBinding:
       position: 101
       prefix: --disable_prog_bar
@@ -166,7 +159,6 @@ inputs:
     doc: "Minimum ratio of genomes in which a gene family must have multiple copies
       to be considered 'duplicated'. This affects multigenic family detection for
       spot border analysis. Range: 0.0-1.0. Default: 0.05 (5%)"
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --dup_margin
@@ -175,7 +167,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force writing in output directory and in pangenome output file.
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -185,7 +176,6 @@ inputs:
       - string
     doc: "GFRR metric used for spots clustering. 'min_gfrr': conservative metric (shared/smaller_set),
       'max_gfrr': liberal metric (shared/larger_set). Default: min_gfrr"
-    default: min_gfrr
     inputBinding:
       position: 101
       prefix: --gfrr_metrics
@@ -205,7 +195,6 @@ inputs:
       - boolean
     doc: Keep temporary files after completion (useful for debugging and 
       inspection)
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_tmp
@@ -224,7 +213,6 @@ inputs:
     doc: "MMSeqs2 clustering method selection: 'linclust' - fast linear-time clustering
       (less sensitive), 'cluster' - slower but more sensitive clustering. Default:
       linclust"
-    default: linclust
     inputBinding:
       position: 101
       prefix: --method
@@ -236,7 +224,6 @@ inputs:
     doc: FRR (Family Relatedness Relationship) cutoff values for similarity 
       assessment. min_gfrr = shared_families / min(families1, families2), 
       max_gfrr = shared_families / max(families1, families2)
-    default:
       - 0.5
       - 0.8
     inputBinding:
@@ -264,7 +251,6 @@ inputs:
       - 'null'
       - int
     doc: 'Random seed for reproducibility. Default: 42'
-    default: 42
     inputBinding:
       position: 101
       prefix: --seed
@@ -286,7 +272,6 @@ inputs:
     doc: Enable systems analysis to examine relationships between conserved 
       spots and detected biological systems. This adds systems linkage graphs 
       and enriched annotations to the output.
-    default: false
     inputBinding:
       position: 101
       prefix: --systems
@@ -295,7 +280,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Directory for temporary files. Default: /tmp'
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmpdir
@@ -305,7 +289,6 @@ inputs:
       - int
     doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
       for debug)
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbose

@@ -46,7 +46,6 @@ inputs:
     doc: load compressed reads information. You can set to 1 if you have run the
       algorithm for one round and just want to fine tune the following 
       parameters.
-    default: 1
     inputBinding:
       position: 103
   - id: min_len

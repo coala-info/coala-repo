@@ -149,7 +149,6 @@ inputs:
       - float
     doc: Minimum overlap required as a fraction from input BED file to consider 
       2 features as overlapping. Default is 1E-9 (i.e. 1bp)
-    default: '1E-9'
     inputBinding:
       position: 101
       prefix: --ov_fraction
@@ -158,7 +157,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of randomization, default: 100'
-    default: 100
     inputBinding:
       position: 101
       prefix: --randomization
@@ -212,7 +210,6 @@ inputs:
       - Directory
     doc: Temporary directory for storing intermediate files. Default is current 
       working directory
-    default: current working directory
     inputBinding:
       position: 101
       prefix: --tmp

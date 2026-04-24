@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: String separating sequence name and its comment
-    default: TAB
     inputBinding:
       position: 102
       prefix: --comment-separator
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: File extension
-    default: .fastq
     inputBinding:
       position: 102
       prefix: --extension
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Field separator in filenames
-    default: _
     inputBinding:
       position: 102
       prefix: --file-separator

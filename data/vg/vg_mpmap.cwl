@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: 'error rate preset: {low, high} (approx. PHRED >20 and <20) [low]'
-    default: low
     inputBinding:
       position: 101
       prefix: --error-rate
@@ -66,7 +65,6 @@ inputs:
       - int
     doc: look for INT unambiguous mappings to estimate the fragment length 
       distribution [1000]
-    default: 1000
     inputBinding:
       position: 101
       prefix: --frag-sample
@@ -101,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: use INT gap extension penalty [1]
-    default: 1
     inputBinding:
       position: 101
       prefix: --gap-extend
@@ -166,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: use INT match score [1]
-    default: 1
     inputBinding:
       position: 101
       prefix: --match
@@ -191,7 +187,6 @@ inputs:
       - 'null'
       - int
     doc: cap mapping quality estimates at this much [60]
-    default: 60
     inputBinding:
       position: 101
       prefix: --mq-max
@@ -218,7 +213,6 @@ inputs:
       - string
     doc: "sequence type preset: 'DNA' for genomic data, 'RNA' for transcriptomic data
       [RNA]"
-    default: RNA
     inputBinding:
       position: 101
       prefix: --nt-type
@@ -229,7 +223,6 @@ inputs:
     doc: "format to output alignments in: 'GAMP' for multipath alignments, 'GAM'/'GAF'
       for single-path alignments, 'SAM'/'BAM'/'CRAM' for linear reference alignments
       (may also require -S) [GAMP]"
-    default: GAMP
     inputBinding:
       position: 101
       prefix: --output-fmt
@@ -247,7 +240,6 @@ inputs:
       - string
     doc: 'read length preset: {very-short, short, long} (approx. <50bp, 50-500bp,
       and >500bp) [short]'
-    default: short
     inputBinding:
       position: 101
       prefix: --read-length

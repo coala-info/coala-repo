@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Gzip compression level (1-9)
-    default: 6
     inputBinding:
       position: 101
       prefix: --compress-level
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum Hamming distance
-    default: 1
     inputBinding:
       position: 101
       prefix: --hamming-dist
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Index file
-    default: kfilt.idx
     inputBinding:
       position: 101
       prefix: --index
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum matching k-mers required
-    default: 5
     inputBinding:
       position: 101
       prefix: --min-matches
@@ -86,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output format: fasta or fastq'
-    default: fastq
     inputBinding:
       position: 101
       prefix: --output-format
@@ -95,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads

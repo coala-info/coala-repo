@@ -14,7 +14,6 @@ inputs:
         items: string
     doc: FAST5 subgroup(s) (under Analyses/[corrected-group]) containing 
       basecalls.
-    default: BaseCalled_template
     inputBinding:
       position: 101
       prefix: --basecall-subgroups
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: FAST5 group created by resquiggle command.
-    default: RawGenomeCorrected_000
     inputBinding:
       position: 101
       prefix: --corrected-group
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Number of context bases around motif.
-    default: 2
     inputBinding:
       position: 101
       prefix: --num-context
@@ -66,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Number of regions to plot.
-    default: 3
     inputBinding:
       position: 101
       prefix: --num-regions
@@ -75,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Number of motif centered regions to include in statistic distributions.
-    default: 200
     inputBinding:
       position: 101
       prefix: --num-statistics
@@ -84,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Coverage level to trigger alternative plot type instead of raw signal.
-    default: 50
     inputBinding:
       position: 101
       prefix: --overplot-threshold

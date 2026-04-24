@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: acc2tax database to use
-    default: nucl
     inputBinding:
       position: 102
       prefix: --acc2tax
@@ -44,7 +43,6 @@ inputs:
       - int
     doc: Minimum numbers of reads to write BAM split by TAXID. To use in 
       combination with -b/--bam_out
-    default: 50
     inputBinding:
       position: 102
       prefix: --bam_split_read
@@ -79,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment length
-    default: 30
     inputBinding:
       position: 102
       prefix: --length
@@ -88,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Number of process for parallelization
-    default: 2
     inputBinding:
       position: 102
       prefix: --process
@@ -97,7 +93,6 @@ inputs:
       - 'null'
       - string
     doc: Taxonomy database to use
-    default: ncbi
     inputBinding:
       position: 102
       prefix: --taxonomy

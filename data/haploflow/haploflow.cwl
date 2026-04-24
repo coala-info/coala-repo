@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Report all temporary graphs and coverage histograms
-    default: 0
     inputBinding:
       position: 101
       prefix: --debug
@@ -35,7 +34,6 @@ inputs:
       - float
     doc: percentage filter for erroneous kmers - kmers appearing less than 
       relatively e% will be ignored
-    default: 0.0199999996
     inputBinding:
       position: 101
       prefix: --error-rate
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: filter contigs shorter than value
-    default: 500
     inputBinding:
       position: 101
       prefix: --filter
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size, default 41, please use an odd number
-    default: 41
     inputBinding:
       position: 101
       prefix: --k
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: 'log file (default: standard out)'
-    default: standard out
     inputBinding:
       position: 101
       prefix: --log
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Try to maximise contig lengths (might introduce errors)
-    default: 0
     inputBinding:
       position: 101
       prefix: --long
@@ -98,7 +92,6 @@ inputs:
     doc: more strict error correction, should be set to 5 in first run on new 
       data set to reduce run time. Set to 0 if low abundant strains are expected
       to be present
-    default: 5
     inputBinding:
       position: 101
       prefix: --strict
@@ -107,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Provide a custom threshold for complex/bad data
-    default: -1
     inputBinding:
       position: 101
       prefix: --thresh
@@ -116,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: Do not perform flow correction, assume perfect flows
-    default: 0
     inputBinding:
       position: 101
       prefix: --true-flow
@@ -125,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: mode for known two-strain mixtures
-    default: 0
     inputBinding:
       position: 101
       prefix: --two-strain

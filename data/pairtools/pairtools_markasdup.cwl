@@ -40,7 +40,6 @@ inputs:
       - int
     doc: "Number of processes used by the auto-guessed input\n                   \
       \    decompressing command."
-    default: 3
     inputBinding:
       position: 102
       prefix: --nproc-in
@@ -50,7 +49,6 @@ inputs:
       - int
     doc: "Number of processes used by the auto-guessed output\n                  \
       \     compressing command."
-    default: 8
     inputBinding:
       position: 102
       prefix: --nproc-out

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Provide path to the bowtie2 index builder binary
-    default: from $PATH
     inputBinding:
       position: 101
       prefix: --bowtie2_build
@@ -19,7 +18,6 @@ inputs:
       - File
     doc: Path to the reference library containing miRNAs and pri-miRNAs 
       coordinates
-    default: miRBase v21, GRCh38 coordinates
     inputBinding:
       position: 101
       prefix: --gff3
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the reference library containing pri-miRNAs sequences
-    default: miRBase 21
     inputBinding:
       position: 101
       prefix: --hairpinsFasta
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the reference library containing mature miRNAs sequences
-    default: miRBase 21
     inputBinding:
       position: 101
       prefix: --maturesFasta
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - Directory
     doc: Full path of the directory where output files are generated
-    default: ./OptimiR_Results_Dir/
     inputBinding:
       position: 101
       prefix: --dirOutput

@@ -21,7 +21,6 @@ inputs:
     doc: 'minimap2 preset to use: "map-ont" for Oxford Nanopore reads with <Q20 accuracy,
       "lr:hq" for Oxford Nanopore reads with Q20+ accuracy, "map-pb" for PacBio CLR
       or "map-hifi" for PacBio HiFi/CCS'
-    default: map-ont
     inputBinding:
       position: 103
       prefix: --minimap2-preset
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Number of full Racon polishing rounds
-    default: 2
     inputBinding:
       position: 103
       prefix: --rounds
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for alignment and polishing
-    default: 16
     inputBinding:
       position: 103
       prefix: --threads

@@ -95,7 +95,6 @@ inputs:
   debug:
     # use with 'cwltool --leave-tmp-dir' to inspect temp file contents
     type: boolean?
-    default: false
     inputBinding:
       prefix: -d
 

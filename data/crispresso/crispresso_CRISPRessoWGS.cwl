@@ -19,7 +19,6 @@ inputs:
       the PAM. The default is -3 and is suitable for the SpCas9 system. For 
       alternate nucleases, other cleavage offsets may be appropriate, for 
       example, if using Cpf1 this parameter would be set to 1.
-    default: -3
     inputBinding:
       position: 101
       prefix: --cleavage_offset
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - boolean
     doc: Dump numpy arrays and pandas dataframes to file for debugging purposes
-    default: false
     inputBinding:
       position: 101
       prefix: --dump
@@ -38,7 +36,6 @@ inputs:
       - int
     doc: Exclude bp from the left side of the amplicon sequence for the 
       quantification of the indels
-    default: 5
     inputBinding:
       position: 101
       prefix: --exclude_bp_from_left
@@ -48,7 +45,6 @@ inputs:
       - int
     doc: Exclude bp from the right side of the amplicon sequence for the 
       quantification of the indels
-    default: 5
     inputBinding:
       position: 101
       prefix: --exclude_bp_from_right
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: Sequence homology % for an HDR occurrence
-    default: 98.0
     inputBinding:
       position: 101
       prefix: --hdr_perfect_alignment_threshold
@@ -81,7 +76,6 @@ inputs:
       effect on the quanitification of the NHEJ. It may be helpful to mask a 
       pre-existing and known mutations or sequencing errors outside the window 
       used for quantification of NHEJ events.
-    default: false
     inputBinding:
       position: 101
       prefix: --hide_mutations_outside_window_NHEJ
@@ -90,7 +84,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ignore deletions events for the quantification and visualization
-    default: false
     inputBinding:
       position: 101
       prefix: --ignore_deletions
@@ -99,7 +92,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ignore insertions events for the quantification and visualization
-    default: false
     inputBinding:
       position: 101
       prefix: --ignore_insertions
@@ -108,7 +100,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ignore substitutions events for the quantification and visualization
-    default: false
     inputBinding:
       position: 101
       prefix: --ignore_substitutions
@@ -117,7 +108,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep all the intermediate files
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_intermediate
@@ -126,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum average quality score (phred33) to keep a read
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_average_read_quality
@@ -135,7 +124,6 @@ inputs:
       - 'null'
       - float
     doc: Min identity score for the alignment
-    default: 60.0
     inputBinding:
       position: 101
       prefix: --min_identity_score
@@ -145,7 +133,6 @@ inputs:
       - int
     doc: Minimum required overlap length between two reads to provide a 
       confident overlap.
-    default: 4
     inputBinding:
       position: 101
       prefix: --min_paired_end_reads_overlap
@@ -155,7 +142,6 @@ inputs:
       - int
     doc: Minimum number of reads that align to a region to perform the 
       CRISPResso analysis
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_reads_to_use_region
@@ -164,7 +150,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum single bp score (phred33) to keep a read
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_single_bp_quality
@@ -175,7 +160,6 @@ inputs:
     doc: Specify the number of processes to use for the quantification. Please 
       use with caution since increasing this parameter will increase 
       significantly the memory required to run CRISPResso.
-    default: 1
     inputBinding:
       position: 101
       prefix: --n_processes
@@ -192,7 +176,6 @@ inputs:
       - 'null'
       - string
     doc: Override options for the Needle aligner
-    default: -gapopen=10 -gapextend=0.5 -awidth3=5000
     inputBinding:
       position: 101
       prefix: --needle_options_string
@@ -222,7 +205,6 @@ inputs:
       - 'null'
       - boolean
     doc: Save also .png images additionally to .pdf files
-    default: false
     inputBinding:
       position: 101
       prefix: --save_also_png
@@ -231,7 +213,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable the trimming of Illumina adapters with Trimmomatic
-    default: false
     inputBinding:
       position: 101
       prefix: --trim_sequences
@@ -240,7 +221,6 @@ inputs:
       - 'null'
       - string
     doc: Override options for Trimmomatic
-    default: 
       ILLUMINACLIP:/usr/local/lib/python2.7/site-packages/CRISPResso/data/NexteraPE-PE.fa:0:90:10:0:true
       MINLEN:40
     inputBinding:
@@ -254,7 +234,6 @@ inputs:
       determined by the provide guide RNA sequence to quantify the indels. Any 
       indels outside this window are excluded. A value of 0 disables this 
       filter.
-    default: 1
     inputBinding:
       position: 101
       prefix: --window_around_sgrna

@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: directory containing nodes.dmp and names.dmp
-    default: /root/.taxonkit
     inputBinding:
       position: 101
       prefix: --data-dir
@@ -107,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: root taxid
-    default: 1
     inputBinding:
       position: 101
       prefix: --root-taxid
@@ -125,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: field index of taxid. input data should be tab-separated
-    default: 1
     inputBinding:
       position: 101
       prefix: --taxid-field
@@ -134,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs. 4 is enough
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

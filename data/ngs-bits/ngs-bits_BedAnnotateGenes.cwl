@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Clear all annotations present in the input file.
-    default: false
     inputBinding:
       position: 101
       prefix: -clear
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: The number of bases to extend the gene regions before annotation.
-    default: 0
     inputBinding:
       position: 101
       prefix: -extend
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - File
     doc: Input BED file. If unset, reads from STDIN.
-    default: ''
     inputBinding:
       position: 101
       prefix: -in
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Uses the test database instead of on the production database.
-    default: false
     inputBinding:
       position: 101
       prefix: -test

@@ -124,18 +124,15 @@ inputs:
     type: int
     doc: Number of threads to use for computational processes
     label: Threads
-    default: 2
 
   min_completeness:
     type: int
     doc: Minimum completeness for Binette bin refinement. Default 40
     label: Minimum completeness
-    default: 40
   contamination_weight:
     type: float
     doc: Score metric used in Binette bin refinement. Bin are scored as follow; completeness - weight * contamination. A low contamination_weight favor complete bins over low contaminated bins. Default 2.0
     label: Contamination weight
-    default: 2.0
 
   gtdbtk_data:
     type: Directory?
@@ -156,7 +153,6 @@ inputs:
     type: boolean
     label: Skip CRISPR
     doc: Skip CRISPR array prediction using PILER-CR
-    default: false
 
   interproscan_directory:
     type: Directory?
@@ -185,22 +181,18 @@ inputs:
     type: boolean
     label: Run kofamscan
     doc: Run with KEGG KO KoFamKOALA annotation. Default false
-    default: false
   kofamscan_limit_sapp:
     type: int?
     label: SAPP kofamscan limit
     doc: Limit max number of entries of kofamscan hits per locus in SAPP. Default 5
-    default: 5
   run_eggnog:
     type: boolean
     label: Run eggNOG-mapper
     doc: Run with eggNOG-mapper annotation. Requires eggnog database files. Default false
-    default: false
   run_interproscan:
     type: boolean
     label: Run InterProScan
     doc: Run with eggNOG-mapper annotation. Requires InterProScan v5 program files. Default false
-    default: false
   interproscan_applications:
     type: string
     label: InterProScan applications
@@ -208,19 +200,16 @@ inputs:
           Comma separated list of analyses:
           FunFam,SFLD,PANTHER,Gene3D,Hamap,PRINTS,ProSiteProfiles,Coils,SUPERFAMILY,SMART,CDD,PIRSR,ProSitePatterns,AntiFam,Pfam,MobiDBLite,PIRSF,NCBIfam
           default Pfam,SFLD,SMART,AntiFam,NCBIfam
-    default: 'Pfam'
   
   run_maxbin2:
     type: boolean
     doc: Run with MaxBin2 binner. Default true
     label: Run Maxbin2
-    default: true
 
   run_semibin2:
     type: boolean
     doc: Run with SemiBin2 binner. Default true
     label: Run SemiBin
-    default: true
   semibin2_environment:
     doc: |
           Semibin2 Built-in models (none/global/human_gut/dog_gut/ocean/soil/cat_gut/human_oral/mouse_gut/pig_gut/built_environment/wastewater/chicken_caecum). 
@@ -243,7 +232,6 @@ inputs:
         - built_environment
         - wastewater
         - chicken_caecum
-    default: global
 
   # bin refiner
   # run_binspreader:
@@ -259,18 +247,15 @@ inputs:
     type: boolean
     doc: Run with BUSCO bin completeness assessment. Default false
     label: Run BUSCO
-    default: false
 
   annotate_bins:
     type: boolean
     label: Annotate bins
     doc: Annotate bins. Default false
-    default: false
   annotate_unbinned:
     type: boolean
     label: Annotate unbinned
     doc: Annotate unbinned contigs. Will be treated as metagenome. Default false
-    default: false
   
   destination:
     type: string?
@@ -330,7 +315,6 @@ steps:
     in:
       folder: metabat2/bin_dir
       output_as_folder:
-        default: true
       regex:
         valueFrom: "bin\\.[0-9]+\\.fa"
       output_folder_name:
@@ -412,7 +396,6 @@ steps:
         linkMerge: merge_flattened
         pickValue: all_non_null
       verbose:
-        default: true
     out: [final_bins, final_bins_quality_report, input_bins_quality_reports]
   binette_bins:
     doc: Binette bins folder to File array for further analysis
@@ -544,7 +527,6 @@ steps:
       annotate_bins: annotate_bins
       genome_fasta: 
         source: binette_bins/files
-        default: []
       bakta_db: bakta_db
       skip_bakta_crispr: skip_bakta_crispr
       interproscan_directory: interproscan_directory
@@ -556,10 +538,8 @@ steps:
       kofamscan_limit_sapp: kofamscan_limit_sapp
      
       sapp_conversion:
-        default: true
       threads: threads
       compress_output:
-        default: true
     out: [bakta_folder_compressed, compressed_other_files, sapp_hdt_file]
 
   workflow_microbial_annotation_unbinned:
@@ -580,14 +560,10 @@ steps:
       run_kofamscan: run_kofamscan
       kofamscan_limit_sapp: kofamscan_limit_sapp
       metagenome:
-        default: true
       skip_bakta_plot:
-        default: true
       sapp_conversion:
-        default: true
       threads: threads
       compress_output:
-        default: true
     out: [bakta_folder_compressed, compressed_other_files, sapp_hdt_file]
 
   # extract_proteins:

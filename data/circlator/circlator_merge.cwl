@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Assembler to use for reassemblies
-    default: spades
     inputBinding:
       position: 104
       prefix: --assembler
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: All reads mapped to contigs shorter than this will be kept
-    default: 100000
     inputBinding:
       position: 104
       prefix: --b2r_length_cutoff
@@ -71,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: breaklen option used by nucmer
-    default: 500
     inputBinding:
       position: 104
       prefix: --breaklen
@@ -81,7 +78,6 @@ inputs:
       - string
     doc: String representing one of the 4 type of data analysed (only used for 
       Canu)
-    default: pacbio-corrected
     inputBinding:
       position: 104
       prefix: --data_type
@@ -90,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Nucmer diagdiff option
-    default: 25
     inputBinding:
       position: 104
       prefix: --diagdiff
@@ -99,7 +94,6 @@ inputs:
       - 'null'
       - float
     doc: Nucmer minimum percent identity
-    default: 95
     inputBinding:
       position: 104
       prefix: --min_id
@@ -108,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of hit for nucmer to report
-    default: 500
     inputBinding:
       position: 104
       prefix: --min_length
@@ -117,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of nucmer hit to use when merging
-    default: 4000
     inputBinding:
       position: 104
       prefix: --min_length_merge
@@ -127,7 +119,6 @@ inputs:
       - float
     doc: Min percent of contigs needed to be covered by nucmer hits to spades 
       circular contigs
-    default: 95
     inputBinding:
       position: 104
       prefix: --min_spades_circ_pc
@@ -145,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: max distance allowed between nucmer hit and end of reassembly contig
-    default: 1000
     inputBinding:
       position: 104
       prefix: --reassemble_end
@@ -155,7 +145,6 @@ inputs:
       - int
     doc: max distance allowed between nucmer hit and end of input assembly 
       contig
-    default: 15000
     inputBinding:
       position: 104
       prefix: --ref_end
@@ -165,7 +154,6 @@ inputs:
       - string
     doc: Comma separated list of kmers to use when running SPAdes. Max kmer is 
       127 and each kmer should be an odd integer
-    default: 127,117,107,97,87,77
     inputBinding:
       position: 104
       prefix: --spades_k
@@ -184,7 +172,6 @@ inputs:
       - int
     doc: Number of threads for remapping/assembly (only applies if --reads is 
       used)
-    default: 1
     inputBinding:
       position: 104
       prefix: --threads

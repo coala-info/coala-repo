@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: neighborhood distance
-    default: 1
     inputBinding:
       position: 102
       prefix: --distance
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: max. number of matches
-    default: 1000
     inputBinding:
       position: 102
       prefix: --maxmatches
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: max. neighborhood size
-    default: 10000
     inputBinding:
       position: 102
       prefix: --maxNeighborhood

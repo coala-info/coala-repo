@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads to use (default: 0, meaning auto-detect).'
-    default: 0
     inputBinding:
       position: 7
 outputs:

@@ -20,7 +20,6 @@ inputs:
       - Directory
     doc: Directory to store blast nucleotide databases for each sequence in 
       genome directory. By default write to current folder 'blastn_db'
-    default: blastn_db
     inputBinding:
       position: 101
       prefix: --database
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Blastn gap extend penalty, default 2
-    default: 2
     inputBinding:
       position: 101
       prefix: --gapextend
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Blastn gap open penalty, default 5
-    default: 5
     inputBinding:
       position: 101
       prefix: --gapopen
@@ -54,7 +51,6 @@ inputs:
       - Directory
     doc: Output folder storing all blastn queries in xml format. By defualt 
       write to current folder 'blastn_against_bank'
-    default: blastn_against_bank
     inputBinding:
       position: 101
       prefix: --query
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Blastn thread number, default 1
-    default: 1
     inputBinding:
       position: 101
       prefix: --thread
@@ -80,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Blastn word size, default 28
-    default: 28
     inputBinding:
       position: 101
       prefix: --word_size

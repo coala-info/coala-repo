@@ -10,7 +10,6 @@ inputs:
       - float
     doc: Fraction of the weights to be considered in the first pass of adaptive 
       oversampling
-    default: 0.999
     inputBinding:
       position: 101
       prefix: --adaptive_fraction
@@ -20,7 +19,6 @@ inputs:
       - boolean
     doc: In 2D/3D classification, allow coarser angular and translational 
       samplings if accuracies are bad (typically in earlier iterations.
-    default: false
     inputBinding:
       position: 101
       prefix: --allow_coarser_sampling
@@ -30,7 +28,6 @@ inputs:
       - boolean
     doc: Perform CC-calculation in all iterations (useful for faster denovo 
       model generation?)
-    default: false
     inputBinding:
       position: 101
       prefix: --always_cc
@@ -40,7 +37,6 @@ inputs:
       - boolean
     doc: In auto-refinement, update angular sampling regardless of changes in 
       orientations for convergence. This makes convergence faster.
-    default: false
     inputBinding:
       position: 101
       prefix: --auto_ignore_angles
@@ -50,7 +46,6 @@ inputs:
       - int
     doc: Minimum healpix order (before oversampling) from which autosampling 
       procedure will use local searches
-    default: 4
     inputBinding:
       position: 101
       prefix: --auto_local_healpix_order
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform 3D auto-refine procedure?
-    default: false
     inputBinding:
       position: 101
       prefix: --auto_refine
@@ -68,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: In auto-refinement, stop at this iteration.
-    default: 999
     inputBinding:
       position: 101
       prefix: --auto_iter_max
@@ -78,7 +71,6 @@ inputs:
       - boolean
     doc: In auto-refinement, update angular sampling based on resolution-based 
       required sampling. This makes convergence faster.
-    default: false
     inputBinding:
       position: 101
       prefix: --auto_resol_angles
@@ -87,7 +79,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform auto-sampling (outside the 3D auto-refine procedure)?
-    default: false
     inputBinding:
       position: 101
       prefix: --auto_sampling
@@ -96,7 +87,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do bimodal searches of psi angle?
-    default: false
     inputBinding:
       position: 101
       prefix: --bimodal_psi
@@ -106,7 +96,6 @@ inputs:
       - boolean
     doc: 'Skip spectral trailing during Blush reconstruction (WARNING: This may inflate
       resolution estimates)'
-    default: false
     inputBinding:
       position: 101
       prefix: --blush_skip_spectral_trailing
@@ -115,7 +104,6 @@ inputs:
       - 'null'
       - boolean
     doc: Re-center classes based on their center-of-mass?
-    default: false
     inputBinding:
       position: 101
       prefix: --center_classes
@@ -125,7 +113,6 @@ inputs:
       - int
     doc: Replace classes with little activity during gradient based 
       classification.
-    default: 0
     inputBinding:
       position: 101
       prefix: --class_inactivity_threshold
@@ -134,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum image size for the first pass of the adaptive sampling approach
-    default: -1
     inputBinding:
       position: 101
       prefix: --coarse_size
@@ -143,7 +129,6 @@ inputs:
       - 'null'
       - boolean
     doc: CTF3D files contain sqrt(CTF^2) patterns
-    default: false
     inputBinding:
       position: 101
       prefix: --ctf3d_not_squared
@@ -152,7 +137,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform CTF correction?
-    default: false
     inputBinding:
       position: 101
       prefix: --ctf
@@ -161,7 +145,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ignore CTFs until their first peak?
-    default: false
     inputBinding:
       position: 101
       prefix: --ctf_intact_first_peak
@@ -170,7 +153,6 @@ inputs:
       - 'null'
       - boolean
     doc: Have the data been CTF phase-flipped?
-    default: false
     inputBinding:
       position: 101
       prefix: --ctf_phase_flipped
@@ -179,7 +161,6 @@ inputs:
       - 'null'
       - boolean
     doc: Have the input references not been CTF-amplitude corrected?
-    default: false
     inputBinding:
       position: 101
       prefix: --ctf_uncorrected_ref
@@ -188,7 +169,6 @@ inputs:
       - 'null'
       - boolean
     doc: Make an initial 3D model from randomly oriented 2D particles
-    default: false
     inputBinding:
       position: 101
       prefix: --denovo_3dref
@@ -197,7 +177,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip the check whether the images are normalised correctly
-    default: false
     inputBinding:
       position: 101
       prefix: --dont_check_norm
@@ -207,7 +186,6 @@ inputs:
       - boolean
     doc: Send the large arrays of summed weights through the MPI network, 
       instead of writing large files to disc
-    default: false
     inputBinding:
       position: 101
       prefix: --dont_combine_weights_via_disc
@@ -216,7 +194,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform gridding in the reconstruction step (obsolete?)
-    default: false
     inputBinding:
       position: 101
       prefix: --dont_skip_gridding
@@ -226,7 +203,6 @@ inputs:
       - boolean
     doc: Perform the reconstruction step outside relion_refine, e.g. for learned
       priors?)
-    default: false
     inputBinding:
       position: 101
       prefix: --external_reconstruct
@@ -236,7 +212,6 @@ inputs:
       - int
     doc: Maximum number of particles permitted to be handled by fail-safe mode, 
       due to zero sum of weights, before exiting with an error (GPU only).
-    default: 40
     inputBinding:
       position: 101
       prefix: --failsafe_threshold
@@ -246,7 +221,6 @@ inputs:
       - boolean
     doc: Use faster optimisation by using subsets of the data in the first 15 
       iterations
-    default: false
     inputBinding:
       position: 101
       prefix: --fast_subsets
@@ -256,7 +230,6 @@ inputs:
       - boolean
     doc: Perform CC-calculation in the first iteration (use this if references 
       are not on the absolute intensity scale)
-    default: false
     inputBinding:
       position: 101
       prefix: --firstiter_cc
@@ -265,7 +238,6 @@ inputs:
       - 'null'
       - boolean
     doc: Fix the experimental noise spectra?
-    default: false
     inputBinding:
       position: 101
       prefix: --fix_sigma_noise
@@ -274,7 +246,6 @@ inputs:
       - 'null'
       - boolean
     doc: Fix the stddev in the origin offsets?
-    default: false
     inputBinding:
       position: 101
       prefix: --fix_sigma_offset
@@ -283,7 +254,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform masking on the references as well?
-    default: false
     inputBinding:
       position: 101
       prefix: --flatten_solvent
@@ -292,7 +262,6 @@ inputs:
       - 'null'
       - File
     doc: Originally-sized, FFTW-centred image with Fourier mask for Projector
-    default: None
     inputBinding:
       position: 101
       prefix: --fourier_mask
@@ -301,7 +270,6 @@ inputs:
       - 'null'
       - int
     doc: Oversampling factor for the Fourier transforms of the references
-    default: 2
     inputBinding:
       position: 101
       prefix: --pad
@@ -310,7 +278,6 @@ inputs:
       - 'null'
       - int
     doc: GPU device memory (in Mb) to leave free after allocation.
-    default: 0
     inputBinding:
       position: 101
       prefix: --free_gpu_memory
@@ -320,7 +287,6 @@ inputs:
       - int
     doc: Number of iterations at the end of a gradient refinement using 
       Expectation-Maximization
-    default: 0
     inputBinding:
       position: 101
       prefix: --grad_em_iters
@@ -329,7 +295,6 @@ inputs:
       - 'null'
       - float
     doc: Fraction of iterations in the final phase of refinement
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --grad_fin_frac
@@ -338,7 +303,6 @@ inputs:
       - 'null'
       - float
     doc: Resolution cutoff during the final gradient refinement iterations (A)
-    default: -1
     inputBinding:
       position: 101
       prefix: --grad_fin_resol
@@ -347,7 +311,6 @@ inputs:
       - 'null'
       - int
     doc: Mini-batch size during the final gradient refinement iterations
-    default: -1
     inputBinding:
       position: 101
       prefix: --grad_fin_subset
@@ -356,7 +319,6 @@ inputs:
       - 'null'
       - float
     doc: Fraction of iterations in the initial phase of refinement
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --grad_ini_frac
@@ -365,7 +327,6 @@ inputs:
       - 'null'
       - float
     doc: Resolution cutoff during the initial gradient refinement iterations (A)
-    default: -1
     inputBinding:
       position: 101
       prefix: --grad_ini_resol
@@ -374,7 +335,6 @@ inputs:
       - 'null'
       - int
     doc: Mini-batch size during the initial gradient refinement iterations
-    default: -1
     inputBinding:
       position: 101
       prefix: --grad_ini_subset
@@ -384,7 +344,6 @@ inputs:
       - float
     doc: Adjusting the signal under-estimation during gradient optimization to 
       this resolution.
-    default: 20
     inputBinding:
       position: 101
       prefix: --grad_min_resol
@@ -393,7 +352,6 @@ inputs:
       - 'null'
       - float
     doc: Step size parameter for gradient optimisation.
-    default: -1
     inputBinding:
       position: 101
       prefix: --grad_stepsize
@@ -412,7 +370,6 @@ inputs:
       - int
     doc: Write out model every so many iterations in SGD (default is writing out
       all iters)
-    default: 10
     inputBinding:
       position: 101
       prefix: --grad_write_iter
@@ -422,7 +379,6 @@ inputs:
       - boolean
     doc: Perform gradient based optimisation (instead of default 
       expectation-maximization)
-    default: false
     inputBinding:
       position: 101
       prefix: --grad
@@ -432,7 +388,6 @@ inputs:
       - int
     doc: 'Healpix order for the angular sampling (before oversampling) on the (3D)
       sphere: hp2=15deg, hp3=7.5deg, etc'
-    default: 2
     inputBinding:
       position: 101
       prefix: --healpix_order
@@ -451,7 +406,6 @@ inputs:
       - float
     doc: Inner diameter of helical tubes in Angstroms (for masks of helical 
       references and particles)
-    default: -1.0
     inputBinding:
       position: 101
       prefix: --helical_inner_diameter
@@ -461,7 +415,6 @@ inputs:
       - boolean
     doc: Keep helical tilt priors fixed (at 90 degrees) in global angular 
       searches?
-    default: false
     inputBinding:
       position: 101
       prefix: --helical_keep_tilt_prior_fixed
@@ -470,7 +423,6 @@ inputs:
       - 'null'
       - int
     doc: N-number for the N-start helix (only useful for rotational priors)
-    default: 1
     inputBinding:
       position: 101
       prefix: --helical_nstart
@@ -480,7 +432,6 @@ inputs:
       - int
     doc: Number of new helical asymmetric units (asu) per box (1 means no 
       helical symmetry is present)
-    default: 1
     inputBinding:
       position: 101
       prefix: --helical_nr_asu
@@ -490,7 +441,6 @@ inputs:
       - float
     doc: Sampling rate (before oversampling) for offsets along helical axis (in 
       Angstroms)
-    default: -1
     inputBinding:
       position: 101
       prefix: --helical_offset_step
@@ -500,7 +450,6 @@ inputs:
       - float
     doc: Outer diameter of helical tubes in Angstroms (for masks of helical 
       references and particles)
-    default: -1.0
     inputBinding:
       position: 101
       prefix: --helical_outer_diameter
@@ -509,7 +458,6 @@ inputs:
       - 'null'
       - float
     doc: Helical rise (in Angstroms)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --helical_rise_initial
@@ -518,7 +466,6 @@ inputs:
       - 'null'
       - float
     doc: Initial step of helical rise search (in Angstroms)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --helical_rise_inistep
@@ -527,7 +474,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum helical rise (in Angstroms)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --helical_rise_max
@@ -536,7 +482,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum helical rise (in Angstroms)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --helical_rise_min
@@ -545,7 +490,6 @@ inputs:
       - 'null'
       - float
     doc: Sigma of distance along the helical tracks
-    default: -1.0
     inputBinding:
       position: 101
       prefix: --helical_sigma_distance
@@ -554,7 +498,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform local refinement of helical symmetry?
-    default: false
     inputBinding:
       position: 101
       prefix: --helical_symmetry_search
@@ -563,7 +506,6 @@ inputs:
       - 'null'
       - float
     doc: Helical twist (in degrees, positive values for right-handedness)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --helical_twist_initial
@@ -572,7 +514,6 @@ inputs:
       - 'null'
       - float
     doc: Initial step of helical twist search (in degrees)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --helical_twist_inistep
@@ -582,7 +523,6 @@ inputs:
       - float
     doc: Maximum helical twist (in degrees, positive values for 
       right-handedness)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --helical_twist_max
@@ -592,7 +532,6 @@ inputs:
       - float
     doc: Minimum helical twist (in degrees, positive values for 
       right-handedness)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --helical_twist_min
@@ -602,7 +541,6 @@ inputs:
       - float
     doc: This box length along the center of Z axis contains good information of
       the helix. Important in imposing and refining symmetry
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --helical_z_percentage
@@ -611,7 +549,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ignore helical symmetry?
-    default: false
     inputBinding:
       position: 101
       prefix: --ignore_helical_symmetry
@@ -621,7 +558,6 @@ inputs:
       - int
     doc: Number of Fourier shells beyond the current resolution to be included 
       in refinement
-    default: 10
     inputBinding:
       position: 101
       prefix: --incr_size
@@ -631,7 +567,6 @@ inputs:
       - float
     doc: Resolution (in Angstroms) to which to limit refinement in the first 
       iteration
-    default: -1
     inputBinding:
       position: 101
       prefix: --ini_high
@@ -640,7 +575,6 @@ inputs:
       - 'null'
       - float
     doc: Initial estimated stddev for the origin offsets (in Angstroms)
-    default: 10
     inputBinding:
       position: 101
       prefix: --offset
@@ -667,7 +601,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform intensity-scale corrections on image groups?
-    default: false
     inputBinding:
       position: 101
       prefix: --scale
@@ -676,7 +609,6 @@ inputs:
       - 'null'
       - int
     doc: Space available for copying particle stacks (in Gb)
-    default: 10
     inputBinding:
       position: 101
       prefix: --keep_free_scratch
@@ -686,7 +618,6 @@ inputs:
       - boolean
     doc: Don't remove scratch after convergence. Following jobs that use EXACTLY
       the same particles should use --reuse_scratch.
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_scratch
@@ -696,7 +627,6 @@ inputs:
       - float
     doc: 'Limited tilt angle: positive for keeping side views, negative for keeping
       top views'
-    default: -91
     inputBinding:
       position: 101
       prefix: --limit_tilt
@@ -706,7 +636,6 @@ inputs:
       - File
     doc: Local symmetry description file containing list of masks and their 
       operators
-    default: None
     inputBinding:
       position: 101
       prefix: --local_symmetry
@@ -717,7 +646,6 @@ inputs:
     doc: Resolution (in Angstrom) up to which the two random 
       half-reconstructions will not be independent to prevent diverging 
       orientations
-    default: -1
     inputBinding:
       position: 101
       prefix: --low_resol_join_halves
@@ -726,7 +654,6 @@ inputs:
       - 'null'
       - float
     doc: User-provided cutoff for region specified above
-    default: 0
     inputBinding:
       position: 101
       prefix: --lowpass
@@ -735,7 +662,6 @@ inputs:
       - 'null'
       - File
     doc: User-provided mask for low-pass filtering
-    default: None
     inputBinding:
       position: 101
       prefix: --lowpass_mask
@@ -744,7 +670,6 @@ inputs:
       - 'null'
       - int
     doc: Width of the soft edge of the spherical mask (in pixels)
-    default: 5
     inputBinding:
       position: 101
       prefix: --maskedge
@@ -753,7 +678,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of iterations to perform
-    default: -1
     inputBinding:
       position: 101
       prefix: --iter
@@ -762,7 +686,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of most significant poses & translations to consider
-    default: -1
     inputBinding:
       position: 101
       prefix: --maxsig
@@ -772,7 +695,6 @@ inputs:
       - int
     doc: Minimum number of Fourier shells to perform linear Fourier-space 
       interpolation
-    default: 10
     inputBinding:
       position: 101
       prefix: --r_min_nn
@@ -781,7 +703,6 @@ inputs:
       - 'null'
       - float
     doc: Momentum parameter for gradient refinement updates
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --mu
@@ -791,7 +712,6 @@ inputs:
       - boolean
     doc: Perform nearest-neighbour instead of linear Fourier-space 
       interpolation?
-    default: false
     inputBinding:
       position: 101
       prefix: --NN
@@ -801,7 +721,6 @@ inputs:
       - boolean
     doc: Use this to switch off initializing models with random Gaussians (which
       is new in relion-4.0).
-    default: false
     inputBinding:
       position: 101
       prefix: --no_init_blobs
@@ -810,7 +729,6 @@ inputs:
       - 'null'
       - boolean
     doc: Switch off intensity-scale corrections on image groups?
-    default: false
     inputBinding:
       position: 101
       prefix: --no_scale
@@ -819,7 +737,6 @@ inputs:
       - 'null'
       - boolean
     doc: Switch off normalisation-error correction?
-    default: false
     inputBinding:
       position: 101
       prefix: --no_norm
@@ -829,7 +746,6 @@ inputs:
       - boolean
     doc: Do NOT let parallel (MPI) processes access the disc simultaneously (use
       this option with NFS)
-    default: false
     inputBinding:
       position: 101
       prefix: --no_parallel_disc_io
@@ -838,7 +754,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform normalisation-error correction?
-    default: false
     inputBinding:
       position: 101
       prefix: --norm
@@ -847,7 +762,6 @@ inputs:
       - 'null'
       - boolean
     doc: Have subtomograms been multiplicity normalised? (Default=False)
-    default: false
     inputBinding:
       position: 101
       prefix: --normalised_subtomo
@@ -857,7 +771,6 @@ inputs:
       - int
     doc: Number of particles (per optics group) for initial noise spectra 
       estimation (default 1000 for SPA and 100 for STA).
-    default: -1
     inputBinding:
       position: 101
       prefix: --nr_parts_sigma2noise
@@ -866,7 +779,6 @@ inputs:
       - 'null'
       - int
     doc: Number of references to be refined
-    default: 1
     inputBinding:
       position: 101
       prefix: --K
@@ -876,7 +788,6 @@ inputs:
       - int
     doc: Number of threads to run in parallel (only useful on multi-core 
       machines)
-    default: 1
     inputBinding:
       position: 101
       prefix: -j
@@ -885,7 +796,6 @@ inputs:
       - 'null'
       - float
     doc: Search range for origin offsets (in pixels)
-    default: 6
     inputBinding:
       position: 101
       prefix: --offset_range
@@ -894,7 +804,6 @@ inputs:
       - 'null'
       - float
     doc: Range for sampling offsets in X-direction (in Angstrom; default=auto)
-    default: -1
     inputBinding:
       position: 101
       prefix: --offset_range_x
@@ -903,7 +812,6 @@ inputs:
       - 'null'
       - float
     doc: Range for sampling offsets in Y-direction (in Angstrom; default=auto)
-    default: -1
     inputBinding:
       position: 101
       prefix: --offset_range_y
@@ -912,7 +820,6 @@ inputs:
       - 'null'
       - float
     doc: Range for sampling offsets in Z-direction (in Angstrom; default=auto)
-    default: -1
     inputBinding:
       position: 101
       prefix: --offset_range_z
@@ -921,7 +828,6 @@ inputs:
       - 'null'
       - float
     doc: Sampling rate (before oversampling) for origin offsets (in pixels)
-    default: 2
     inputBinding:
       position: 101
       prefix: --offset_step
@@ -930,7 +836,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only perform CTF phase-flipping? (default is full amplitude-correction)
-    default: false
     inputBinding:
       position: 101
       prefix: --only_flip_phases
@@ -940,7 +845,6 @@ inputs:
       - boolean
     doc: Calculate shifted images on-the-fly, do not store precalculated ones in
       memory
-    default: false
     inputBinding:
       position: 101
       prefix: --onthefly_shifts
@@ -958,7 +862,6 @@ inputs:
       - int
     doc: Adaptive oversampling order to speed-up calculations (0=no 
       oversampling, 1=2x, 2=4x, etc)
-    default: 1
     inputBinding:
       position: 101
       prefix: --oversampling
@@ -967,7 +870,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform CTF padding to treat CTF aliaising better?
-    default: false
     inputBinding:
       position: 101
       prefix: --pad_ctf
@@ -977,7 +879,6 @@ inputs:
       - float
     doc: Diameter of the circular mask that will be applied to the experimental 
       images (in Angstroms)
-    default: -1
     inputBinding:
       position: 101
       prefix: --particle_diameter
@@ -986,7 +887,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform 3D classification or refinement for helices?
-    default: false
     inputBinding:
       position: 101
       prefix: --helix
@@ -996,7 +896,6 @@ inputs:
       - float
     doc: Perturbation factor for the angular sampling (0=no perturb; 
       0.5=perturb)
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --perturb
@@ -1005,7 +904,6 @@ inputs:
       - 'null'
       - int
     doc: Number of images to pool for each thread task
-    default: 1
     inputBinding:
       position: 101
       prefix: --pool
@@ -1015,7 +913,6 @@ inputs:
       - boolean
     doc: Use this to let the leader process read all particles into memory. Be 
       careful you have enough RAM for large data sets!
-    default: false
     inputBinding:
       position: 101
       prefix: --preread_images
@@ -1024,7 +921,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print a table with definitions of all metadata labels, and exit
-    default: false
     inputBinding:
       position: 101
       prefix: --print_metadata_labels
@@ -1033,7 +929,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print all symmetry transformation matrices, and exit
-    default: false
     inputBinding:
       position: 101
       prefix: --print_symmetry_ops
@@ -1043,7 +938,6 @@ inputs:
       - float
     doc: Sampling rate (before oversampling) for the in-plane angle 
       (default=10deg for 2D, hp sampling for 3D)
-    default: -1
     inputBinding:
       position: 101
       prefix: --psi_step
@@ -1052,7 +946,6 @@ inputs:
       - 'null'
       - int
     doc: Number for the random seed generator
-    default: -1
     inputBinding:
       position: 101
       prefix: --random_seed
@@ -1062,7 +955,6 @@ inputs:
       - File
     doc: Image, stack or star-file with the reference(s). (Compulsory for 3D 
       refinement!)
-    default: None
     inputBinding:
       position: 101
       prefix: --ref
@@ -1072,7 +964,6 @@ inputs:
       - float
     doc: Pixel size (in A) for the input reference (default is to read from 
       header)
-    default: -1.0
     inputBinding:
       position: 101
       prefix: --ref_angpix
@@ -1090,7 +981,6 @@ inputs:
       - boolean
     doc: Re-use data on scratchdir, instead of wiping it and re-copying all 
       data.
-    default: false
     inputBinding:
       position: 101
       prefix: --reuse_scratch
@@ -1108,7 +998,6 @@ inputs:
       - 'null'
       - boolean
     doc: Calculate self-organizing map instead of classification.
-    default: false
     inputBinding:
       position: 101
       prefix: --som
@@ -1118,7 +1007,6 @@ inputs:
       - float
     doc: Stddev on all three Euler angles for local angular searches (of +/- 3 
       stddev)
-    default: -1
     inputBinding:
       position: 101
       prefix: --sigma_ang
@@ -1128,7 +1016,6 @@ inputs:
       - float
     doc: Stddev on the in-plane angle for local angular searches (of +/- 3 
       stddev)
-    default: -1
     inputBinding:
       position: 101
       prefix: --sigma_psi
@@ -1138,7 +1025,6 @@ inputs:
       - float
     doc: Stddev on the first Euler angle for local angular searches (of +/- 3 
       stddev)
-    default: -1
     inputBinding:
       position: 101
       prefix: --sigma_rot
@@ -1148,7 +1034,6 @@ inputs:
       - float
     doc: Stddev on the second Euler angle for local angular searches (of +/- 3 
       stddev)
-    default: -1
     inputBinding:
       position: 101
       prefix: --sigma_tilt
@@ -1157,7 +1042,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip orientational assignment (only classify)?
-    default: false
     inputBinding:
       position: 101
       prefix: --skip_align
@@ -1166,7 +1050,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip maximization step (only write out data.star file)?
-    default: false
     inputBinding:
       position: 101
       prefix: --skip_maximize
@@ -1175,7 +1058,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip rotational assignment (only translate and classify)?
-    default: false
     inputBinding:
       position: 101
       prefix: --skip_rotate
@@ -1184,7 +1066,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip subtomo multiplicity correction
-    default: false
     inputBinding:
       position: 101
       prefix: --skip_subtomo_multi
@@ -1193,7 +1074,6 @@ inputs:
       - 'null'
       - boolean
     doc: Correct FSC curve for the effects of the solvent mask?
-    default: false
     inputBinding:
       position: 101
       prefix: --solvent_correct_fsc
@@ -1203,7 +1083,6 @@ inputs:
       - File
     doc: User-provided mask for the references (default is to use spherical mask
       with particle_diameter)
-    default: None
     inputBinding:
       position: 101
       prefix: --solvent_mask
@@ -1212,7 +1091,6 @@ inputs:
       - 'null'
       - File
     doc: User-provided secondary mask (with its own average density)
-    default: None
     inputBinding:
       position: 101
       prefix: --solvent_mask2
@@ -1221,7 +1099,6 @@ inputs:
       - 'null'
       - float
     doc: Number of average active neighbour connections.
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --som_connectivity
@@ -1230,7 +1107,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for inactivity before node is dropped.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --som_inactivity_threshold
@@ -1239,7 +1115,6 @@ inputs:
       - 'null'
       - int
     doc: Number of initial SOM nodes.
-    default: 2
     inputBinding:
       position: 101
       prefix: --som_ini_nodes
@@ -1248,7 +1123,6 @@ inputs:
       - 'null'
       - float
     doc: Portion of gradient applied to connected nodes.
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --som_neighbour_pull
@@ -1257,7 +1131,6 @@ inputs:
       - 'null'
       - boolean
     doc: Refine two random halves of the data completely separately
-    default: false
     inputBinding:
       position: 101
       prefix: --split_random_halves
@@ -1267,7 +1140,6 @@ inputs:
       - float
     doc: High resolution limit (in Angstrom) to restrict probability 
       calculations in the expectation step
-    default: -1
     inputBinding:
       position: 101
       prefix: --strict_highres_exp
@@ -1277,7 +1149,6 @@ inputs:
       - float
     doc: Low resolution limit (in Angstrom) to restrict probability calculations
       in the expectation step
-    default: -1
     inputBinding:
       position: 101
       prefix: --strict_lowres_exp
@@ -1286,7 +1157,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold to remove marginal voxels during expectation
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --subtomo_multi_thr
@@ -1295,7 +1165,6 @@ inputs:
       - 'null'
       - string
     doc: Symmetry group
-    default: c1
     inputBinding:
       position: 101
       prefix: --sym
@@ -1305,7 +1174,6 @@ inputs:
       - float
     doc: Regularisation parameter (values higher than 1 give more weight to the 
       data)
-    default: -1
     inputBinding:
       position: 101
       prefix: --tau2_fudge
@@ -1324,7 +1192,6 @@ inputs:
       - 'null'
       - File
     doc: STAR file with input tau2-spectrum (to be kept constant)
-    default: None
     inputBinding:
       position: 101
       prefix: --tau
@@ -1351,7 +1218,6 @@ inputs:
     doc: Trust the pixel and box size of the input reference; by default the 
       program will die if these are different from the first optics group of the
       data
-    default: false
     inputBinding:
       position: 101
       prefix: --trust_ref_size
@@ -1360,7 +1226,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform the reconstruction with the Blush algorithm.
-    default: false
     inputBinding:
       position: 101
       prefix: --blush
@@ -1369,7 +1234,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use intel vectorisation implementation for CPU
-    default: false
     inputBinding:
       position: 101
       prefix: --cpu
@@ -1378,7 +1242,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use available gpu resources for some calculations
-    default: false
     inputBinding:
       position: 101
       prefix: --gpu
@@ -1387,7 +1250,6 @@ inputs:
       - 'null'
       - int
     doc: Verbosity (1=normal, 0=silent)
-    default: 1
     inputBinding:
       position: 101
       prefix: --verb
@@ -1397,7 +1259,6 @@ inputs:
       - boolean
     doc: Mask surrounding background in particles to zero (by default the 
       solvent area is filled with random noise)
-    default: false
     inputBinding:
       position: 101
       prefix: --zero_mask

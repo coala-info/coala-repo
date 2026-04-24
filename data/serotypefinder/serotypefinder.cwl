@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage (0.00-1.00).
-    default: 0.6
     inputBinding:
       position: 101
       prefix: --mincov
@@ -59,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for identity (0.00-1.00).
-    default: 0.85
     inputBinding:
       position: 101
       prefix: --threshold

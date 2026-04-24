@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: The min variant quality (VCF QUAL)
-    default: None
     inputBinding:
       position: 102
       prefix: --min_qual

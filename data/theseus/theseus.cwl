@@ -33,7 +33,6 @@ inputs:
       - string
     doc: "Atoms to include in superposition. Can be an integer (0-4) or a colon-delimited
       string specifying atom-types PDB-style (e.g., ' CA  : N  ')."
-    default: '0'
     inputBinding:
       position: 102
       prefix: -a
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum iterations for superposition
-    default: 200
     inputBinding:
       position: 102
       prefix: -i
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Number of principal components to calculate
-    default: 0
     inputBinding:
       position: 102
       prefix: -P
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: Root name for output files
-    default: theseus
     inputBinding:
       position: 102
       prefix: -r
@@ -109,7 +105,6 @@ inputs:
       - 'null'
       - string
     doc: Residues to exclude (e.g., -S15-45:50-55)
-    default: none
     inputBinding:
       position: 102
       prefix: -S
@@ -118,7 +113,6 @@ inputs:
       - 'null'
       - string
     doc: Residues to select (e.g., -s15-45:50-55)
-    default: all
     inputBinding:
       position: 102
       prefix: -s

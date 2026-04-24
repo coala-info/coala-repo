@@ -72,7 +72,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory
-    default: current directory
     inputBinding:
       position: 101
       prefix: --dir
@@ -81,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: filename prefix
-    default: output
     inputBinding:
       position: 101
       prefix: --output
@@ -98,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

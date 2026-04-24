@@ -36,12 +36,9 @@ steps:
       covariance_model_database: covariance_models
       cpu: threads
       omit_alignment_section:
-        default: true
       only_hmm:
-        default: true
       query_sequences: query_sequences
       search_space_size:
-        default: 1000
     scatter: covariance_model_database
     out: [ matches, programOutput ]
 

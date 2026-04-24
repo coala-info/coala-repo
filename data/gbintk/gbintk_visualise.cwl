@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: delimiter for input/output results. Supports a comma and a tab.
-    default: comma
     inputBinding:
       position: 101
       prefix: --delimiter
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: dpi value
-    default: 300
     inputBinding:
       position: 101
       prefix: --dpi
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: height of the image in pixels
-    default: 2000
     inputBinding:
       position: 101
       prefix: --height
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: type of the image (png, eps, pdf, svg)
-    default: png
     inputBinding:
       position: 101
       prefix: --imgtype
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: size of the vertex labels
-    default: 8
     inputBinding:
       position: 101
       prefix: --lsize
@@ -86,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: margin of the figure
-    default: 50
     inputBinding:
       position: 101
       prefix: --margin
@@ -103,7 +97,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for the output file
-    default: '""'
     inputBinding:
       position: 101
       prefix: --prefix
@@ -112,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: size of the vertices
-    default: 50
     inputBinding:
       position: 101
       prefix: --vsize
@@ -121,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: width of the image in pixels
-    default: 2000
     inputBinding:
       position: 101
       prefix: --width

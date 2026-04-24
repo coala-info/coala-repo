@@ -19,7 +19,6 @@ inputs:
     doc: Threshold for algorithm of clustering, default is 0.025.Can be 
       increased for getting larger clusters or decreased for getting smaller and
       more grouped clusters.
-    default: 0.025
     inputBinding:
       position: 101
       prefix: --clustering_threshold
@@ -40,7 +39,6 @@ inputs:
       - int
     doc: Minimal percentage of block occurrences in genomes for balanced 
       rearrangements. All blocks with lower occurrences rate will be removed.
-    default: 80
     inputBinding:
       position: 101
       prefix: --filter_for_balanced
@@ -50,7 +48,6 @@ inputs:
       - boolean
     doc: Keep rearrangements that are not parallel in result (consistent with 
       phylogenetic tree).
-    default: true
     inputBinding:
       position: 101
       prefix: --keep_non_parallel
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show branch support while tree rendering (ete3 parameter).
-    default: false
     inputBinding:
       position: 101
       prefix: --show_branch_support
@@ -85,7 +81,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use module for visualizing neighbours.
-    default: true
     inputBinding:
       position: 101
       prefix: --visualize_neighbours
@@ -94,7 +89,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use information about in which chromosome block is located.
-    default: false
     inputBinding:
       position: 101
       prefix: --which_chr

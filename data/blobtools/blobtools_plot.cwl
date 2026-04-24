@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Colour blobs by 'c index'
-    default: false
     inputBinding:
       position: 101
       prefix: --cindex
@@ -67,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: Figure format for plot (png, pdf, eps, jpeg, ps, svg, svgz, tiff)
-    default: png
     inputBinding:
       position: 101
       prefix: --format
@@ -76,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Data for histograms
-    default: span
     inputBinding:
       position: 101
       prefix: --hist
@@ -109,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequence length considered for plotting
-    default: 100
     inputBinding:
       position: 101
       prefix: --length
@@ -134,7 +130,6 @@ inputs:
       - 'null'
       - boolean
     doc: Omit blobplot
-    default: false
     inputBinding:
       position: 101
       prefix: --noblobs
@@ -143,7 +138,6 @@ inputs:
       - 'null'
       - boolean
     doc: Hide sequences without taxonomic annotation
-    default: false
     inputBinding:
       position: 101
       prefix: --nohit
@@ -152,7 +146,6 @@ inputs:
       - 'null'
       - boolean
     doc: Omit plot of reads mapping
-    default: false
     inputBinding:
       position: 101
       prefix: --noreads
@@ -161,7 +154,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not scale sequences by length
-    default: false
     inputBinding:
       position: 101
       prefix: --noscale
@@ -179,7 +171,6 @@ inputs:
       - int
     doc: Number of (taxonomic) groups to plot, remaining groups are placed in 
       'other'
-    default: 8
     inputBinding:
       position: 101
       prefix: --plotgroups
@@ -188,7 +179,6 @@ inputs:
       - 'null'
       - string
     doc: Taxonomic rank used for colouring of blobs
-    default: phylum
     inputBinding:
       position: 101
       prefix: --rank
@@ -206,7 +196,6 @@ inputs:
       - 'null'
       - string
     doc: Sort order for plotting
-    default: span
     inputBinding:
       position: 101
       prefix: --sort
@@ -223,7 +212,6 @@ inputs:
       - 'null'
       - string
     doc: Taxrule which has been used for computing taxonomy
-    default: bestsum
     inputBinding:
       position: 101
       prefix: --taxrule

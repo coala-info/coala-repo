@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: number of parallel processes allowed (default 16)
-    default: 16
     inputBinding:
       position: 101
       prefix: --cpu
@@ -74,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: max memory usage allowed (default 8GB)
-    default: 8GB
     inputBinding:
       position: 101
       prefix: --mem
@@ -84,7 +82,6 @@ inputs:
       - string
     doc: "run name (defaults to the name given by nextflow)\nthe latest completed
       run is also named latest"
-    default: the name given by nextflow
     inputBinding:
       position: 101
       prefix: --name
@@ -94,7 +91,6 @@ inputs:
       - int
     doc: allows for missing genomes for the determination of core orthogroups 
       (default 0)
-    default: 0
     inputBinding:
       position: 101
       prefix: --num_missing
@@ -104,7 +100,6 @@ inputs:
       - string
     doc: the sequence aligner to use for orthogroup prediction (blast or 
       diamond, defaults to diamond)
-    default: diamond
     inputBinding:
       position: 101
       prefix: --og_seq_aligner
@@ -121,7 +116,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory where the reference databases were setup up (default zdb_ref)
-    default: zdb_ref
     inputBinding:
       position: 101
       prefix: --ref_dir
@@ -148,7 +142,6 @@ inputs:
       - Directory
     doc: the directory where the singularity images are downloaded (default 
       singularity in current directory)
-    default: singularity in current directory
     inputBinding:
       position: 101
       prefix: --singularity_dir
@@ -166,7 +159,6 @@ inputs:
       - float
     doc: coverage cutoff for query in blast against the VF database. Defaults to
       60%.
-    default: 60%
     inputBinding:
       position: 101
       prefix: --vf_coverage
@@ -175,7 +167,6 @@ inputs:
       - 'null'
       - float
     doc: evalue cutoff for the blast against the VF database. Defaults to 1e-10.
-    default: '1e-10'
     inputBinding:
       position: 101
       prefix: --vf_evalue
@@ -184,7 +175,6 @@ inputs:
       - 'null'
       - float
     doc: sequence id cutoff for filtering VF blast results. Defaults to 60%.
-    default: 60%
     inputBinding:
       position: 101
       prefix: --vf_seqid

@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - Directory
     doc: Prefix directory to find HDF5 lib/ and include/ subdirectories
-    default: /usr/local
     inputBinding:
       position: 102
       prefix: -prefix

@@ -54,7 +54,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to write temporary files
-    default: /tmp
     inputBinding:
       position: 101
       prefix: -w
@@ -63,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -72,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Number of training iteration; 0 to iterate until convergence
-    default: 0
     inputBinding:
       position: 101
       prefix: -n

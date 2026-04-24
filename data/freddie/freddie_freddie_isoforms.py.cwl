@@ -18,7 +18,6 @@ inputs:
     doc: "The +/- window around segment boundary to look for\n                   \
       \     read alignment boundaries to use for correcting the\n                \
       \        exon boundaries. Value of 0 means no correction."
-    default: 8
     inputBinding:
       position: 101
       prefix: --correction-window
@@ -28,7 +27,6 @@ inputs:
       - float
     doc: "Majority threshold of reads to adjust exon boundary\n                  \
       \      using the original alignments."
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --majority-threshold

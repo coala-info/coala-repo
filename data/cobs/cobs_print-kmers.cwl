@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: the size of one kmer
-    default: 31
     inputBinding:
       position: 102
       prefix: --kmer-size

@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: Ignore TAs occurring at given fraction of the C terminus
-    default: 0.0
     inputBinding:
       position: 104
       prefix: -iC
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: Ignore TAs occurring at given fraction of the N terminus
-    default: 0.0
     inputBinding:
       position: 104
       prefix: -iN
@@ -63,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: Normalization method
-    default: TTR
     inputBinding:
       position: 104
       prefix: -n
@@ -72,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Number of samples for permutation
-    default: 100
     inputBinding:
       position: 104
       prefix: -s

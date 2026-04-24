@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: Ignore TAs occurring within given percentage of the C terminus.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: -iC
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: Ignore TAs occurring within given percentage of the N terminus.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: -iN
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Smallest read-count to consider.
-    default: 1
     inputBinding:
       position: 103
       prefix: -m
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: How to handle replicates. Sum or Mean.
-    default: Sum
     inputBinding:
       position: 103
       prefix: -r

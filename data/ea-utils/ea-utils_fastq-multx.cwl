@@ -53,7 +53,6 @@ inputs:
       - float
     doc: Divide threshold for auto-determine by factor NUM (1), > 1 = more 
       sensitive
-    default: 1
     inputBinding:
       position: 104
       prefix: -t
@@ -94,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Allow up to N mismatches, as long as they are unique
-    default: 1
     inputBinding:
       position: 104
       prefix: -m
@@ -103,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: Require a minimum distance of N between the best and next best
-    default: 2
     inputBinding:
       position: 104
       prefix: -d
@@ -112,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: Require a minimum phred quality of N to accept a barcode base
-    default: 0
     inputBinding:
       position: 104
       prefix: -q

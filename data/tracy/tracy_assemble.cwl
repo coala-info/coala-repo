@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of traces required for consensus
-    default: 0.100000001
     inputBinding:
       position: 102
       prefix: --called
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: consensus output format [fasta|fastq]
-    default: fasta
     inputBinding:
       position: 102
       prefix: --format
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: min. fraction of matches [0:1]
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --fracmatch
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: gap extension
-    default: -4
     inputBinding:
       position: 102
       prefix: --gapext
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: gap open
-    default: -10
     inputBinding:
       position: 102
       prefix: --gapopen
@@ -80,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: match
-    default: 3
     inputBinding:
       position: 102
       prefix: --match
@@ -89,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: mismatch
-    default: -5
     inputBinding:
       position: 102
       prefix: --mismatch
@@ -98,7 +91,6 @@ inputs:
       - 'null'
       - float
     doc: peak ratio to call base
-    default: 0.330000013
     inputBinding:
       position: 102
       prefix: --pratio
@@ -115,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: 'trimming stringency [1:9], 0: disable trimming'
-    default: 4
     inputBinding:
       position: 102
       prefix: --trim

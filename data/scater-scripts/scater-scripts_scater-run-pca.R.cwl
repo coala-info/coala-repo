@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: String specifying how the PCA should be performed.
-    default: prcomp
     inputBinding:
       position: 101
       prefix: --method

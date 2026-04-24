@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for sketching
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

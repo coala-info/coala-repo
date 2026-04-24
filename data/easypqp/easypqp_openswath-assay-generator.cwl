@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Allowed fragment charge states
-    default: 1,2,3,4
     inputBinding:
       position: 101
       prefix: --allowed_fragment_charges
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Allowed fragment types
-    default: b,y
     inputBinding:
       position: 101
       prefix: --allowed_fragment_types
@@ -108,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: 'IPF: maximum number of site-localization permutations'
-    default: 10000
     inputBinding:
       position: 101
       prefix: --max_num_alternative_localizations
@@ -117,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal number of transitions
-    default: 6
     inputBinding:
       position: 101
       prefix: --max_transitions
@@ -126,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal number of transitions
-    default: 6
     inputBinding:
       position: 101
       prefix: --min_transitions
@@ -144,7 +139,6 @@ inputs:
       - 'null'
       - float
     doc: Lower MZ limit for precursor ions
-    default: 400.0
     inputBinding:
       position: 101
       prefix: --precursor_lower_mz_limit
@@ -153,7 +147,6 @@ inputs:
       - 'null'
       - float
     doc: MZ threshold in Thomson for precursor ion selection
-    default: 0.025
     inputBinding:
       position: 101
       prefix: --precursor_mz_threshold
@@ -162,7 +155,6 @@ inputs:
       - 'null'
       - float
     doc: Upper MZ limit for precursor ions
-    default: 1200.0
     inputBinding:
       position: 101
       prefix: --precursor_upper_mz_limit
@@ -171,7 +163,6 @@ inputs:
       - 'null'
       - float
     doc: Lower MZ limit for fragment ions
-    default: 350.0
     inputBinding:
       position: 101
       prefix: --product_lower_mz_limit
@@ -180,7 +171,6 @@ inputs:
       - 'null'
       - float
     doc: MZ threshold in Thomson for fragment ion annotation
-    default: 0.025
     inputBinding:
       position: 101
       prefix: --product_mz_threshold
@@ -189,7 +179,6 @@ inputs:
       - 'null'
       - float
     doc: Upper MZ limit for fragment ions
-    default: 2000.0
     inputBinding:
       position: 101
       prefix: --product_upper_mz_limit

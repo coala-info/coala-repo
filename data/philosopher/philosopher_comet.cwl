@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: comet parameter file
-    default: comet.params.txt
     inputBinding:
       position: 101
       prefix: --param

@@ -12,7 +12,6 @@ inputs:
       - string
     doc: The baseline category to compare against, all outputs are relative to 
       baseline
-    default: ALL
     inputBinding:
       position: 101
       prefix: --baseline-category
@@ -34,7 +33,6 @@ inputs:
       - float
     doc: The minimum absolute delta between the baseline and comparator to 
       assign a label
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --min-delta
@@ -44,7 +42,6 @@ inputs:
       - int
     doc: The minimum sample count required in both baseline and comparator to 
       assign a label
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-samples
@@ -54,7 +51,6 @@ inputs:
       - float
     doc: The minimum absolute Z-score deviation between the baseline and 
       comparator to assign a label
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --min-zscore

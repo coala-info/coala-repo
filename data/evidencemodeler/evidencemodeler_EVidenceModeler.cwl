@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: number of parallel computes
-    default: 4
     inputBinding:
       position: 101
       prefix: --CPU
@@ -56,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length for an intron
-    default: 20
     inputBinding:
       position: 101
       prefix: --min_intron_length
@@ -79,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: when set, reexamines intergenic regions of minimum length (can add FPs)
-    default: 0
     inputBinding:
       position: 101
       prefix: --re_search_intergenic
@@ -119,7 +116,6 @@ inputs:
       - int
     doc: when set, reexamines long introns (can find nested genes, but also can 
       result in FPs)
-    default: 0
     inputBinding:
       position: 101
       prefix: --search_long_introns
@@ -134,7 +130,6 @@ inputs:
       - 'null'
       - string
     doc: list of stop codons
-    default: TAA,TGA,TAG
     inputBinding:
       position: 101
       prefix: --stop_codons
@@ -152,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: reexamines genomic regions outside of the span of all predicted genes
-    default: 10000
     inputBinding:
       position: 101
       prefix: --terminal_intergenic_re_search

@@ -33,7 +33,6 @@ inputs:
       - int
     doc: Set the distance an alignment extension will attempt to extend poor 
       scoring regions before giving up
-    default: 200
     inputBinding:
       position: 103
       prefix: --breaklen
@@ -43,7 +42,6 @@ inputs:
       - int
     doc: Set the maximum diagonal difference between two adjacent anchors in a 
       cluster
-    default: 5
     inputBinding:
       position: 103
       prefix: --diagdiff
@@ -53,7 +51,6 @@ inputs:
       - float
     doc: Set the maximum diagonal difference between two adjacent anchors in a 
       cluster as a differential fraction of the gap length
-    default: 0.12
     inputBinding:
       position: 103
       prefix: --diagfactor
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use only the forward strand of the Query sequences
-    default: false
     inputBinding:
       position: 103
       prefix: --forward
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Set the maximum gap between two adjacent matches in a cluster
-    default: 90
     inputBinding:
       position: 103
       prefix: --maxgap
@@ -88,7 +83,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use all anchor matches regardless of their uniqueness
-    default: false
     inputBinding:
       position: 103
       prefix: --maxmatch
@@ -97,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of an alignment, after clustering and extension
-    default: 0
     inputBinding:
       position: 103
       prefix: --minalign
@@ -106,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the minimum length of a cluster of matches
-    default: 65
     inputBinding:
       position: 103
       prefix: --mincluster
@@ -115,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: Set the minimum length of a single exact match
-    default: 20
     inputBinding:
       position: 103
       prefix: --minmatch
@@ -124,7 +115,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use anchor matches that are unique in both the reference and query
-    default: false
     inputBinding:
       position: 103
       prefix: --mum
@@ -133,7 +123,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not perform cluster extension step
-    default: false
     inputBinding:
       position: 103
       prefix: --noextend
@@ -144,7 +133,6 @@ inputs:
     doc: No alignment score optimization, i.e. if an alignment extension reaches
       the end of a sequence, it will not backtrack to optimize the alignment 
       score and instead terminate the alignment at the end of the sequence
-    default: false
     inputBinding:
       position: 103
       prefix: --nooptimize
@@ -154,7 +142,6 @@ inputs:
       - boolean
     doc: Don't simplify alignments by removing shadowed clusters. Use this 
       option when aligning a sequence to itself to look for repeats
-    default: false
     inputBinding:
       position: 103
       prefix: --nosimplify
@@ -163,7 +150,6 @@ inputs:
       - 'null'
       - string
     doc: Write output to PREFIX.delta
-    default: out
     inputBinding:
       position: 103
       prefix: --prefix
@@ -172,7 +158,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use only the reverse complement of the Query sequences
-    default: false
     inputBinding:
       position: 103
       prefix: --reverse
@@ -189,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: Use NUM threads
-    default: 2
     inputBinding:
       position: 103
       prefix: --threads

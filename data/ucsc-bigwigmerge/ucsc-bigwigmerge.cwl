@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - float
     doc: Multiply all values by this factor
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -adjust
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: Only output values above this threshold
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -threshold

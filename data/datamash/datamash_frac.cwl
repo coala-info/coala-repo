@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: fill missing values with X (default N/A)
-    default: N/A
     inputBinding:
       position: 103
       prefix: --filler

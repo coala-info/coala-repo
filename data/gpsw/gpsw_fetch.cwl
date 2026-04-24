@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to download the code to target directory
-    default: current directory
     inputBinding:
       position: 101
       prefix: --directory
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Release tag of the code to download
-    default: latest
     inputBinding:
       position: 101
       prefix: --tag

@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Resolution of output file.
-    default: 200
     inputBinding:
       position: 103
       prefix: --dpi
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Do not plot if there are less than N sequences for a gene.
-    default: 200
     inputBinding:
       position: 103
       prefix: --minimum-group-size
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Show at most N sequences (with a matrix of size N x N).
-    default: 300
     inputBinding:
       position: 103
       prefix: --size
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: Gene type.
-    default: V
     inputBinding:
       position: 103
       prefix: --type

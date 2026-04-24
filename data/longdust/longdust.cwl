@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: extension X-drop length (0 to disable)
-    default: 50
     inputBinding:
       position: 102
       prefix: -e
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: genome-wide GC content
-    default: 0.5
     inputBinding:
       position: 102
       prefix: -g
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length
-    default: 7
     inputBinding:
       position: 102
       prefix: -k
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: min start k-mer count (2 or 3)
-    default: 3
     inputBinding:
       position: 102
       prefix: -s
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - float
     doc: score threshold
-    default: 0.6
     inputBinding:
       position: 102
       prefix: -t
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: window size
-    default: 5000
     inputBinding:
       position: 102
       prefix: -w

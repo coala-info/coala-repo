@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: The window size for calculating GC content.
-    default: 1000
     inputBinding:
       position: 102
       prefix: --window

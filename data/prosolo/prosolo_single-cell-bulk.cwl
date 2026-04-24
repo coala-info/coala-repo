@@ -32,7 +32,6 @@ inputs:
       here). The code will work with any number above bulk-min-n, but we use the
       cap of the currently used Lodato amplification bias model for the single 
       cell sample as the default.
-    default: 100
     inputBinding:
       position: 104
       prefix: --bulk-max-n
@@ -46,7 +45,6 @@ inputs:
       frequencies allowed by the minimum read count provided here). The code 
       will work with a minimum of 2, but for a more even sampling of Event 
       spaces, the default is at 8.
-    default: 8
     inputBinding:
       position: 104
       prefix: --bulk-min-n
@@ -74,7 +72,6 @@ inputs:
     doc: Number of bases to consider left and right of indel breakpoint when 
       calculating read support. This number should not be too large in order to 
       avoid biases caused by other close variants.
-    default: 100
     inputBinding:
       position: 104
       prefix: --indel-window
@@ -83,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Omit longer indels when calling
-    default: 1000
     inputBinding:
       position: 104
       prefix: --max-indel-len
@@ -127,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: Window to investigate for evidence left and right of each variant.
-    default: 2500
     inputBinding:
       position: 104
       prefix: --pileup-window
@@ -136,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: General ploidy of sampled individual.
-    default: 2
     inputBinding:
       position: 104
       prefix: --ploidy
@@ -146,7 +140,6 @@ inputs:
       - float
     doc: 'Rate of spuriosly deleted bases by the sequencer (Illumina: 5.1e-6, see
       Schirmer et al. BMC Bioinformatics 2016).'
-    default: '5.1e-6'
     inputBinding:
       position: 104
       prefix: --spurious-del-rate
@@ -156,7 +149,6 @@ inputs:
       - float
     doc: 'Extension rate of spurious insertions by the sequencer (Illumina: 0.0, see
       Schirmer et al. BMC Bioinformatics 2016).'
-    default: 0.0
     inputBinding:
       position: 104
       prefix: --spurious-delext-rate
@@ -166,7 +158,6 @@ inputs:
       - float
     doc: 'Rate of spuriously inserted bases by the sequencer (Illumina: 2.8e-6, see
       Schirmer et al. BMC Bioinformatics 2016).'
-    default: '2.8e-6'
     inputBinding:
       position: 104
       prefix: --spurious-ins-rate
@@ -176,7 +167,6 @@ inputs:
       - float
     doc: 'Extension rate of spurious insertions by the sequencer (Illumina: 0.0, see
       Schirmer et al. BMC Bioinformatics 2016)'
-    default: 0.0
     inputBinding:
       position: 104
       prefix: --spurious-insext-rate

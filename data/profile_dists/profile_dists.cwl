@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - boolean
     doc: Count missing as differences
-    default: false
     inputBinding:
       position: 101
       prefix: --count_missing
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Count missing as differences
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -47,7 +45,6 @@ inputs:
       - string
     doc: "Distance method raw hamming or scaled difference\n                     \
       \   [hamming, scaled]"
-    default: scaled
     inputBinding:
       position: 101
       prefix: --distm
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: Out format [text, parquet]
-    default: text
     inputBinding:
       position: 101
       prefix: --file_type
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite existing directory
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -83,7 +78,6 @@ inputs:
       - float
     doc: "Either a integer or float depending on what distance\n                 \
       \       method is used (only used with pairwise format"
-    default: -1
     inputBinding:
       position: 101
       prefix: --match_threshold
@@ -101,7 +95,6 @@ inputs:
       - float
     doc: "Maximum percentage of missing data allowed per locus\n                 \
       \       (0 - 1)"
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --missing_thresh
@@ -110,7 +103,6 @@ inputs:
       - 'null'
       - string
     doc: Out format [matrix, pairwise]
-    default: matrix
     inputBinding:
       position: 101
       prefix: --outfmt
@@ -132,7 +124,6 @@ inputs:
       - float
     doc: "Maximum percentage of missing data allowed per sample\n                \
       \        (0 - 1)"
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --sample_qual_thresh
@@ -141,7 +132,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip QA/QC steps
-    default: false
     inputBinding:
       position: 101
       prefix: --skip

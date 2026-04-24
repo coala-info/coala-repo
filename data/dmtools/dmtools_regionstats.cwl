@@ -55,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: min cytosines in region will used for calculate
-    default: 2
     inputBinding:
       position: 101
       prefix: --minC
@@ -64,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: output prefix
-    default: stdout
     inputBinding:
       position: 101
       prefix: -o
@@ -73,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: '[0/1] print countC and coverage instead of methratio.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --printcoverage
@@ -84,7 +81,6 @@ inputs:
     doc: '[int] print all the countC and coverage results of C/CG/CHG/CHH context
       methylation to same file, only valid when --printcoverage 1. 0 for no, 1 for
       yes.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --print2one

@@ -12,7 +12,6 @@ inputs:
       - File
     doc: 'Configuration file for the barseqcount analyze program (default: barseqcount_analyze.conf),
       will be created if absent'
-    default: barseqcount_analyze.conf
     inputBinding:
       position: 101
       prefix: --configuration_file

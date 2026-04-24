@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write an AntiSMASH v6 sideload JSON file next to the output files.
-    default: false
     inputBinding:
       position: 101
       prefix: --antismash-sideload
@@ -27,7 +26,6 @@ inputs:
       - int
     doc: The minimum number of coding sequences a valid cluster must contain to 
       be retained.
-    default: 3
     inputBinding:
       position: 101
       prefix: --cds
@@ -56,7 +54,6 @@ inputs:
     doc: The minimum number of annotated genes that must separate a cluster from
       the edge. Edge clusters will still be included if they are longer. A lower
       number will increase the number of false positives on small contigs.
-    default: 0
     inputBinding:
       position: 101
       prefix: --edge-distance
@@ -66,7 +63,6 @@ inputs:
       - boolean
     doc: Always write TSV output files even when they are empty (e.g. because no
       genes or no clusters were found).
-    default: false
     inputBinding:
       position: 101
       prefix: --force-tsv
@@ -110,7 +106,6 @@ inputs:
       - string
     doc: The name of the feature qualifier to use for naming extracted genes 
       when using the ``--cds-feature`` flag.
-    default: locus_tag
     inputBinding:
       position: 101
       prefix: --locus-tag
@@ -120,7 +115,6 @@ inputs:
       - boolean
     doc: Enable unknown region masking to prevent genes from stretching across 
       ambiguous nucleotides.
-    default: false
     inputBinding:
       position: 101
       prefix: --mask
@@ -130,7 +124,6 @@ inputs:
       - boolean
     doc: Output a single GenBank file containing every detected cluster instead 
       of writing one file per cluster.
-    default: false
     inputBinding:
       position: 101
       prefix: --merge-gbk
@@ -148,7 +141,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable the console color
-    default: true
     inputBinding:
       position: 101
       prefix: --no-color
@@ -157,7 +149,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable the console markup
-    default: true
     inputBinding:
       position: 101
       prefix: --no-markup
@@ -167,7 +158,6 @@ inputs:
       - boolean
     doc: Disable padding of gene sequences (used to predict gene clusters in 
       contigs smaller than the CRF window length).
-    default: true
     inputBinding:
       position: 101
       prefix: --no-pad
@@ -176,7 +166,6 @@ inputs:
       - 'null'
       - Directory
     doc: The directory in which to write the output files.
-    default: .
     inputBinding:
       position: 101
       prefix: --output-dir
@@ -185,7 +174,6 @@ inputs:
       - 'null'
       - float
     doc: The p-value cutoff for protein domains to be included.
-    default: '1e-09'
     inputBinding:
       position: 101
       prefix: --p-filter
@@ -202,7 +190,6 @@ inputs:
       - 'null'
       - float
     doc: The probability threshold for cluster detection.
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --threshold

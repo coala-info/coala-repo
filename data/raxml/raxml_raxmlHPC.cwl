@@ -28,7 +28,6 @@ inputs:
       - string
     doc: When using automatic protein model selection you can chose the 
       criterion for selecting these models.
-    default: ml
     inputBinding:
       position: 101
       prefix: --auto-prot
@@ -56,7 +55,6 @@ inputs:
       - int
     doc: specify the number of permutations to be conducted for the 
       bootstopping/bootstrap convergence test.
-    default: 100
     inputBinding:
       position: 101
       prefix: --bootstop-perms
@@ -165,7 +163,6 @@ inputs:
       - int
     doc: specify the number of potential placements you want to keep for each 
       read in the EPA algorithm.
-    default: 7
     inputBinding:
       position: 101
       prefix: --epa-keep-placements
@@ -175,7 +172,6 @@ inputs:
       - float
     doc: specify a percent threshold for including potential placements of a 
       read depending on the maximum placement weight for this read.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --epa-prob-threshold
@@ -284,7 +280,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the number of alternative runs on distinct starting trees
-    default: '1'
     inputBinding:
       position: 101
       prefix: -#
@@ -294,7 +289,6 @@ inputs:
       - int
     doc: Specify number of distinct rate catgories for RAxML when model of rate 
       heterogeneity is set to CAT
-    default: 25
     inputBinding:
       position: 101
       prefix: -c
@@ -303,7 +297,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the number of alternative runs on distinct starting trees
-    default: '1'
     inputBinding:
       position: 101
       prefix: -N
@@ -469,7 +462,6 @@ inputs:
       - int
     doc: Sliding window size for leave-one-out site-specific placement bias 
       algorithm
-    default: 100
     inputBinding:
       position: 101
       prefix: -W
@@ -556,7 +548,6 @@ inputs:
       - float
     doc: specify a floating point number between 0.0 and 1.0 that will be used 
       as cutoff threshold for the MR-based bootstopping criteria.
-    default: 0.03
     inputBinding:
       position: 101
       prefix: -B

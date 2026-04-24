@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - File
     doc: Myloasm fasta file
-    default: assembly_primary.fa
     inputBinding:
       position: 101
       prefix: --fasta
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum contig length to extract
-    default: 300000
     inputBinding:
       position: 101
       prefix: --min-contig-length

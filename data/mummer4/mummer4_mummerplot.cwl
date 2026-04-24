@@ -130,7 +130,6 @@ inputs:
       - 'null'
       - string
     doc: Set the prefix of the output files (default 'out')
-    default: out
     inputBinding:
       position: 102
       prefix: --prefix
@@ -178,7 +177,6 @@ inputs:
       - string
     doc: "Set the output size to small, medium or large\n                    --small
       --medium --large (default 'small')"
-    default: small
     inputBinding:
       position: 102
       prefix: --size

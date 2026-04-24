@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum variants per block.
-    default: 3
     inputBinding:
       position: 101
       prefix: --minblock-variant
@@ -49,7 +48,6 @@ inputs:
       - string
     doc: 'Input one of the strain names from the header of (-a) input. Default: C57BL/6J.
       Only affect the pattern output of (-p).'
-    default: C57BL/6J
     inputBinding:
       position: 101
       prefix: --reference

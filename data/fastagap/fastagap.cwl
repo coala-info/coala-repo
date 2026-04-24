@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Use <nr> decimals for ratios in output. Default is 4.
-    default: 4
     inputBinding:
       position: 102
       prefix: --decimals
@@ -248,7 +247,6 @@ inputs:
       - 'null'
       - int
     doc: Wrap fasta sequence to max length <nr>. Default is 60.
-    default: 60
     inputBinding:
       position: 102
       prefix: --wrap

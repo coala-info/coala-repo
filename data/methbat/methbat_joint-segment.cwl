@@ -37,7 +37,6 @@ inputs:
       - int
     doc: The maximum gap allowed between CpGs before they are automatically 
       segmented
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max-gap
@@ -47,7 +46,6 @@ inputs:
       - float
     doc: The maximum combined methylation fraction to consider unmethylated 
       status
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --max-unmethylated-combined
@@ -66,7 +64,6 @@ inputs:
       - float
     doc: The minimum absolute difference between mean haplotype methylation 
       fractions to consider ASM
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --min-asm-abs-delta-mean
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum haplotagged fraction required to include ASM for a CpG
-    default: 0.6
     inputBinding:
       position: 101
       prefix: --min-asm-frac
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum number of CpGs that can form a segment
-    default: 20
     inputBinding:
       position: 101
       prefix: --min-cpgs
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum combined methylation fraction to consider methylated status
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --min-methylated-combined
@@ -102,7 +96,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum sample fraction required to include a CpG
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --min-sample-frac
@@ -111,7 +104,6 @@ inputs:
       - 'null'
       - float
     doc: The target confidence level
-    default: 0.99
     inputBinding:
       position: 101
       prefix: --target-confidence
@@ -120,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for signature building
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

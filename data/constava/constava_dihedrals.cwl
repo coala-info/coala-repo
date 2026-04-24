@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Defines the number of decimals written for the dihedrals.
-    default: 5
     inputBinding:
       position: 101
       prefix: --precision
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Selection for the dihedral calculation.
-    default: "'protein'"
     inputBinding:
       position: 101
       prefix: --selection

@@ -12,7 +12,6 @@ inputs:
       - string
     doc: Whether to output attention scores, on or off (off by default, 
       optional)
-    default: off
     inputBinding:
       position: 101
       prefix: --attention
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: Balanced or imbalanced model (balanced by default, optional)
-    default: balanced
     inputBinding:
       position: 101
       prefix: --model
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: Output format, txt or tsv (tsv by default, optional)
-    default: tsv
     inputBinding:
       position: 101
       prefix: --out_format
@@ -46,7 +43,6 @@ inputs:
       - string
     doc: Whether to output sub-model results, on or off (off by default, 
       optional)
-    default: off
     inputBinding:
       position: 101
       prefix: --sub_model

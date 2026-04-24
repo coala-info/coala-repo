@@ -40,7 +40,6 @@ inputs:
     doc: only output standard levels [D,P,C,O,F,G,S]. Default true
     inputBinding:
       prefix: --no-intermediate-ranks
-    default: true
 
   intermediate-ranks:
     type: boolean
@@ -48,7 +47,6 @@ inputs:
     doc: Include non-standard levels. Default false
     inputBinding:
       prefix: --intermediate-ranks
-    default: false
 
 outputs:
   krona_txt: 

@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable/disable segment functionality
-    default: 1
     inputBinding:
       position: 101
       prefix: -p
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum hairpin size
-    default: 3
     inputBinding:
       position: 101
       prefix: -H
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads; 0 = maximum available
-    default: 3
     inputBinding:
       position: 101
       prefix: -t

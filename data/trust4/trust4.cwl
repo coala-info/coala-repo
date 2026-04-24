@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: the path to the barcode file
-    default: not used
     inputBinding:
       position: 101
       prefix: --barcode
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: skipping reads mapped to C gene coordinate greater than INT
-    default: 200
     inputBinding:
       position: 101
       prefix: --cgeneEnd
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: ignore contigs that have bases covered by fewer than INT reads
-    default: 0
     inputBinding:
       position: 101
       prefix: --contigMinCov
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: the minimal hit length for a valid overlap
-    default: auto
     inputBinding:
       position: 101
       prefix: --minHitLen
@@ -76,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: prefix of the output file
-    default: trust
     inputBinding:
       position: 101
       prefix: -o
@@ -117,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: the starting k-mer size for indexing contigs
-    default: 9
     inputBinding:
       position: 101
       prefix: -k
@@ -126,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -135,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: '0: no trim; 1: trim low quality; 2: trim unmatched'
-    default: 1
     inputBinding:
       position: 101
       prefix: --trimLevel
@@ -144,7 +136,6 @@ inputs:
       - 'null'
       - File
     doc: the path to the UMI file
-    default: not used
     inputBinding:
       position: 101
       prefix: --UMI

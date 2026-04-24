@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Resize image on output
-    default: 300x400
     inputBinding:
       position: 102
       prefix: --size
@@ -121,7 +120,6 @@ inputs:
       - 'null'
       - string
     doc: Resolution in dots per inch
-    default: auto
     inputBinding:
       position: 102
       prefix: --resolution
@@ -187,7 +185,6 @@ inputs:
       - 'null'
       - int
     doc: Pre-process image with unpaper algorithm, rounds
-    default: 0
     inputBinding:
       position: 102
       prefix: --unpaper

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to valid project directory
-    default: current directory
     inputBinding:
       position: 1
   - id: configfile
@@ -17,7 +16,6 @@ inputs:
       - 'null'
       - File
     doc: Path to assembly configuration file
-    default: config.yaml
     inputBinding:
       position: 102
       prefix: --configfile
@@ -26,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: deliminator to extract sample name from file name
-    default: _
     inputBinding:
       position: 102
       prefix: --delim
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: index of sample name after splitting file name by delim
-    default: 0
     inputBinding:
       position: 102
       prefix: --index
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to skip quality assessment of assemblies
-    default: false
     inputBinding:
       position: 102
       prefix: --no-qa
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - File
     doc: Path to file detailing raw sequencing reads for all samples
-    default: sample_data.csv
     inputBinding:
       position: 102
       prefix: --samples
@@ -70,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads available for assembly
-    default: all
     inputBinding:
       position: 102
       prefix: --threads

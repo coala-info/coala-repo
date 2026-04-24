@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Limit the number of CPUs.
-    default: use all cores available minus one
     inputBinding:
       position: 103
       prefix: --cpu
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Height dimension (in inches) for the output heatmap file.
-    default: automatically calculated based on the number of samples
     inputBinding:
       position: 103
       prefix: --figure_height
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Length dimension (in inches) for the output heatmap file.
-    default: automatically calculated based on the number of genes
     inputBinding:
       position: 103
       prefix: --figure_length
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - File
     doc: File name for the gene read counts *.tsv file.
-    default: <gene_read_counts.tsv>
     inputBinding:
       position: 103
       prefix: --gene_read_counts_filename
@@ -56,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Size (in points) for the gene text labels in the output heatmap file.
-    default: automatically calculated based on the number of genes
     inputBinding:
       position: 103
       prefix: --gene_text_size
@@ -65,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Dots per inch (DPI) for the output heatmap image.
-    default: 300
     inputBinding:
       position: 103
       prefix: --heatmap_dpi
@@ -74,7 +68,6 @@ inputs:
       - 'null'
       - File
     doc: Filename for the output heatmap, saved by default as a *.png file.
-    default: gene_read_counts_all_heatmap
     inputBinding:
       position: 103
       prefix: --heatmap_filename
@@ -83,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: File type to save the output heatmap image as.
-    default: png
     inputBinding:
       position: 103
       prefix: --heatmap_filetype
@@ -92,7 +84,6 @@ inputs:
       - 'null'
       - Directory
     doc: Specify directory containing HybPiper output sample folders.
-    default: the current working directory
     inputBinding:
       position: 103
       prefix: --hybpiper_dir
@@ -101,7 +92,6 @@ inputs:
       - 'null'
       - boolean
     doc: If supplied, do not create a gene read counts heatmap.
-    default: false
     inputBinding:
       position: 103
       prefix: --no_heatmap
@@ -111,7 +101,6 @@ inputs:
       - boolean
     doc: If supplied, do not render labels for x-axis (loci) in the saved 
       heatmap figure.
-    default: false
     inputBinding:
       position: 103
       prefix: --no_xlabels
@@ -121,7 +110,6 @@ inputs:
       - boolean
     doc: If supplied, do not render labels for y-axis (samples) in the saved 
       heatmap figure.
-    default: false
     inputBinding:
       position: 103
       prefix: --no_ylabels
@@ -139,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Size (in points) for the sample text labels in the output heatmap file.
-    default: automatically calculated based on the number of samples
     inputBinding:
       position: 103
       prefix: --sample_text_size
@@ -148,7 +135,6 @@ inputs:
       - 'null'
       - File
     doc: File name for the sequence lengths *.tsv file.
-    default: <seq_lengths.tsv>
     inputBinding:
       position: 103
       prefix: --seq_lengths_filename
@@ -157,7 +143,6 @@ inputs:
       - 'null'
       - File
     doc: File name for the stats *.tsv file.
-    default: <hybpiper_stats.tsv>
     inputBinding:
       position: 103
       prefix: --stats_filename

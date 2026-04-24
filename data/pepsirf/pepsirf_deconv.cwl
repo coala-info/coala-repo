@@ -30,7 +30,6 @@ inputs:
       - string
     doc: Optional flag that specifies what string is expected at the end of each file
       containing enriched peptides.
-    default: _enriched.txt
     inputBinding:
       position: 101
       prefix: --enriched_file_ending
@@ -92,7 +91,6 @@ inputs:
       - float
     doc: Threshold for evaluating ties. Values [1, inf) for integer evaluation, (0,1)
       for ratio evaluation.
-    default: 1
     inputBinding:
       position: 101
       prefix: --score_overlap_threshold
@@ -102,7 +100,6 @@ inputs:
       - float
     doc: Threshold for two species to be evaluated as a tie. Can be an integer or
       a ratio in (0,1).
-    default: 0
     inputBinding:
       position: 101
       prefix: --score_tie_threshold
@@ -111,7 +108,6 @@ inputs:
       - 'null'
       - string
     doc: Scoring strategies "summation", "integer", or "fraction" can be specified.
-    default: summation
     inputBinding:
       position: 101
       prefix: --scoring_strategy

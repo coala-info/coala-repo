@@ -12,7 +12,6 @@ inputs:
       - int
     doc: Radius around insert site to cut for collecting clippings. Set to -1 to consider
       all records with >= 15 clipped bases. In range [-1..inf].
-    default: -1
     inputBinding:
       position: 101
       prefix: --assembly-site-fringe-radius
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Radius around insert site to cut for initial contigs. In range [100..inf].
-    default: 1000
     inputBinding:
       position: 101
       prefix: --assembly-site-window-radius
@@ -31,7 +29,6 @@ inputs:
       - int
     doc: Number of records to use for automatic library evaluation. Set to 0 to evaluate
       all. In range [0..inf].
-    default: 100000
     inputBinding:
       position: 101
       prefix: --auto-library-num-records
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal base support for non-N call in consensus calling.
-    default: 2
     inputBinding:
       position: 101
       prefix: --consensus-min-base-support
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal contig length in percent of average read length.
-    default: 150
     inputBinding:
       position: 101
       prefix: --consensus-min-contig-length-rate
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Debug site ID (-1 to disable). In range [-1..inf].
-    default: -1
     inputBinding:
       position: 101
       prefix: --debug-site-id
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Debug step no (-1 to disable). In range [-1..inf].
-    default: -1
     inputBinding:
       position: 101
       prefix: --debug-step_no
@@ -84,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: Default orientation. One of F+, F-, R+, and R-.
-    default: R+
     inputBinding:
       position: 101
       prefix: --fragment-default-orientation
@@ -94,7 +86,6 @@ inputs:
       - float
     doc: Factor to multiple fragment size stddev with to get allowed error. In range
       [0..inf].
-    default: 8.0
     inputBinding:
       position: 101
       prefix: --fragment-size-factor
@@ -103,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Median fragment size. In range [0..inf].
-    default: 250
     inputBinding:
       position: 101
       prefix: --fragment-size-median
@@ -112,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Fragment size standard deviation. In range [0..inf].
-    default: 30
     inputBinding:
       position: 101
       prefix: --fragment-size-std-dev
@@ -139,7 +128,6 @@ inputs:
       - 'null'
       - float
     doc: Factor to use for the maximal read computation. In range [1..inf].
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --max-reads-factor
@@ -148,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: PW gap extension score in MSA.
-    default: -9
     inputBinding:
       position: 101
       prefix: --msa-score-gap-extend
@@ -157,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: PW gap open score in MSA.
-    default: -4
     inputBinding:
       position: 101
       prefix: --msa-score-gap-open
@@ -166,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: PW match score in MSA.
-    default: 2
     inputBinding:
       position: 101
       prefix: --msa-score-match
@@ -175,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: PW mismatch score in MSA.
-    default: -6
     inputBinding:
       position: 101
       prefix: --msa-score-mismatch
@@ -216,7 +200,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use. In range [1..inf].
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-threads
@@ -225,7 +208,6 @@ inputs:
       - 'null'
       - int
     doc: Overlapper maximum error rate in percent. In range [0..30].
-    default: 5
     inputBinding:
       position: 101
       prefix: --overlapper-max-error-rate
@@ -234,7 +216,6 @@ inputs:
       - 'null'
       - int
     doc: Overlapper min overlap rate in percent of the longer read. In range [0..inf].
-    default: 40
     inputBinding:
       position: 101
       prefix: --overlapper-min-overlap-ratio
@@ -251,7 +232,6 @@ inputs:
       - 'null'
       - int
     doc: Batch size for read mapping. In range [1..inf].
-    default: 10000
     inputBinding:
       position: 101
       prefix: --read-mapping-batch-size
@@ -260,7 +240,6 @@ inputs:
       - 'null'
       - int
     doc: Error rate of internal read mapping step in percent. In range [0..20].
-    default: 5
     inputBinding:
       position: 101
       prefix: --read-mapping-error-rate
@@ -269,7 +248,6 @@ inputs:
       - 'null'
       - int
     doc: The bandwidth to use in the realignment step. In range [0..inf].
-    default: 40
     inputBinding:
       position: 101
       prefix: --realignment-bandwidth
@@ -278,7 +256,6 @@ inputs:
       - 'null'
       - int
     doc: The border from the profile to extract around alignments. In range [0..inf].
-    default: 30
     inputBinding:
       position: 101
       prefix: --realignment-border
@@ -287,7 +264,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal recursion depth. 0 for infinity. In range [0..inf].
-    default: 50
     inputBinding:
       position: 101
       prefix: --recursion-max-steps
@@ -296,7 +272,6 @@ inputs:
       - 'null'
       - float
     doc: Repeat separation maximal random correlation. In range [0.0..1.0].
-    default: 1e-05
     inputBinding:
       position: 101
       prefix: --repsep-max-random-correlation
@@ -305,7 +280,6 @@ inputs:
       - 'null'
       - int
     doc: Repeat separation minimal overlap value. In range [0..inf].
-    default: 2
     inputBinding:
       position: 101
       prefix: --repsep-min-overlap
@@ -314,7 +288,6 @@ inputs:
       - 'null'
       - float
     doc: Repeat separation per-base error for simple Tammi method. In range [0.0..1.0].
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --repsep-p-err
@@ -323,7 +296,6 @@ inputs:
       - 'null'
       - int
     doc: Repeat separation r_min value. In range [0..inf].
-    default: 100000
     inputBinding:
       position: 101
       prefix: --repsep-r-min
@@ -340,7 +312,6 @@ inputs:
       - 'null'
       - int
     doc: Repeat separation start compression. In range [2..inf].
-    default: 100
     inputBinding:
       position: 101
       prefix: --repsep-start-compression-at
@@ -350,7 +321,6 @@ inputs:
       - string
     doc: Variant of the Tammi method to use for repeat separation (simple or phred).
       One of phred and simple.
-    default: simple
     inputBinding:
       position: 101
       prefix: --repsep-tammi-method
@@ -359,7 +329,6 @@ inputs:
       - 'null'
       - int
     doc: Repeat separation tau_min value. In range [0..inf].
-    default: 100000
     inputBinding:
       position: 101
       prefix: --repsep-tau-min
@@ -370,7 +339,6 @@ inputs:
     doc: If the length sum of all reads for a site divided by the length sum of its
       contigs is higher than this value before assembly then the site is deactivated.
       In range [0..inf].
-    default: 100
     inputBinding:
       position: 101
       prefix: --stop-coverage
@@ -380,7 +348,6 @@ inputs:
       - int
     doc: If there are more than this number of reads for a site in the initial round
       then no assembly is performed. In range [0..inf].
-    default: 4000
     inputBinding:
       position: 101
       prefix: --stop-initial-read-count
@@ -390,7 +357,6 @@ inputs:
       - int
     doc: If there are more than this number of reads for a site in a later round then
       no assembly is performed. In range [0..inf].
-    default: 30000
     inputBinding:
       position: 101
       prefix: --stop-read-count
@@ -400,7 +366,6 @@ inputs:
       - int
     doc: If there are more than this number of reads for a site in a later round then
       no triplet library extension is performed. In range [0..inf].
-    default: 3000
     inputBinding:
       position: 101
       prefix: --stop-tex-read-count

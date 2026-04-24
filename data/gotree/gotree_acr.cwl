@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: 'Parsimony algorithm for resolving ambiguities: acctran, deltran, or downpass'
-    default: acctran
     inputBinding:
       position: 101
       prefix: --algo
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Input tree
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Input tree format (newick, nexus, phyloxml, or nextstrain)
-    default: newick
     inputBinding:
       position: 101
       prefix: --format
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Output file
-    default: stdout
     inputBinding:
       position: 101
       prefix: --output
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Output mapping file between node names and states
-    default: none
     inputBinding:
       position: 101
       prefix: --out-states
@@ -56,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Output file with number of parsimony steps
-    default: stdout
     inputBinding:
       position: 101
       prefix: --out-steps
@@ -74,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: 'Random Seed: -1 = nano seconds since 1970/01/01 00:00:00'
-    default: -1
     inputBinding:
       position: 101
       prefix: --seed
@@ -83,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: 'Tip state file (One line per tip, tab separated: tipname\ttstate)'
-    default: stdin
     inputBinding:
       position: 101
       prefix: --states
@@ -92,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads (Max=20)
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

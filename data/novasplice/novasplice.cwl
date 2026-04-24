@@ -41,7 +41,6 @@ inputs:
       - Directory
     doc: Path to the output folder to dump simdigree's output to. Default is 
       working directory under /novasplice_output
-    default: /novasplice_output
     inputBinding:
       position: 101
       prefix: --output
@@ -67,7 +66,6 @@ inputs:
       - Directory
     doc: Full path to an alternative directory to use for temp files. Default is
       /tmp
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --temp

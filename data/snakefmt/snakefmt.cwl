@@ -51,7 +51,6 @@ inputs:
       - string
     doc: A regular expression that matches files and directories that should be excluded
       on recursive searches.
-    default: (\.snakemake|\.git|\.venv)
     inputBinding:
       position: 102
       prefix: --exclude
@@ -61,7 +60,6 @@ inputs:
       - string
     doc: A regular expression that matches files and directories that should be included
       on recursive searches.
-    default: \.smk$|^Snakefile
     inputBinding:
       position: 102
       prefix: --include
@@ -70,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum line length.
-    default: 88
     inputBinding:
       position: 102
       prefix: --line-length

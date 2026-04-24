@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum mapping quality of a read alignment to be included
-    default: 0
     inputBinding:
       position: 102
       prefix: --minMQ
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum end-to-end % identity of a read alignment to be included
-    default: 97
     inputBinding:
       position: 102
       prefix: --percentIdentity

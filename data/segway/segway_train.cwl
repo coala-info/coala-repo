@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: Use DIST distribution
-    default: asinh_norm
     inputBinding:
       position: 103
       prefix: --distribution
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - File
     doc: Use FILE as list of parameters not to train
-    default: WORKDIR/auxiliary/dont_train.list
     inputBinding:
       position: 103
       prefix: --dont-train
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - File
     doc: Filter out genomic coordinates in FILE
-    default: none
     inputBinding:
       position: 103
       prefix: --exclude-coords
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - File
     doc: Limit to genomic coordinates in FILE
-    default: all
     inputBinding:
       position: 103
       prefix: --include-coords
@@ -66,7 +62,6 @@ inputs:
       - 'null'
       - File
     doc: Use or create input master in FILE
-    default: WORKDIR/params/input.master
     inputBinding:
       position: 103
       prefix: --input-master
@@ -75,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Each training instance runs a maximum of NUM rounds
-    default: 100
     inputBinding:
       position: 103
       prefix: --max-train-rounds
@@ -92,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Gaussian mixture components
-    default: 1
     inputBinding:
       position: 103
       prefix: --mixture-components
@@ -101,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Run NUM training instances, randomizing start parameters NUM times
-    default: 1
     inputBinding:
       position: 103
       prefix: --num-instances
@@ -110,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Make SLICE segment labels
-    default: 2
     inputBinding:
       position: 103
       prefix: --num-labels
@@ -119,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: Make NUM segment sublabels
-    default: 1
     inputBinding:
       position: 103
       prefix: --num-sublabels
@@ -129,7 +119,6 @@ inputs:
       - Directory
     doc: DEPRECATED - temp files are now used and recommended. Previously would 
       use or create observations in DIR
-    default: WORKDIR/observations
     inputBinding:
       position: 103
       prefix: --observations
@@ -139,7 +128,6 @@ inputs:
       - float
     doc: Use RATIO times the number of data counts as the number of pseudocounts
       for the segment length prior
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --prior-strength
@@ -156,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: Downsample to every RES bp
-    default: 1
     inputBinding:
       position: 103
       prefix: --resolution
@@ -173,7 +160,6 @@ inputs:
       - 'null'
       - float
     doc: Ruler marking every SCALE bp
-    default: the resolution multiplied by 10
     inputBinding:
       position: 103
       prefix: --ruler-scale
@@ -182,7 +168,6 @@ inputs:
       - 'null'
       - File
     doc: Load segment hyperparameters from FILE
-    default: none
     inputBinding:
       position: 103
       prefix: --seg-table
@@ -191,7 +176,6 @@ inputs:
       - 'null'
       - float
     doc: Exponent for segment transition probability
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --segtransition-weight-scale
@@ -200,7 +184,6 @@ inputs:
       - 'null'
       - File
     doc: Semisupervised segmentation with labels in FILE
-    default: none
     inputBinding:
       position: 103
       prefix: --semisupervised
@@ -209,7 +192,6 @@ inputs:
       - 'null'
       - File
     doc: Use or create structure in FILE
-    default: WORKDIR/segway.str
     inputBinding:
       position: 103
       prefix: --structure
@@ -219,7 +201,6 @@ inputs:
       - type: array
         items: string
     doc: Append track to list of tracks to use
-    default: all
     inputBinding:
       position: 103
       prefix: --track
@@ -228,7 +209,6 @@ inputs:
       - 'null'
       - float
     doc: Exponent for all input track probabilities
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --track-weight
@@ -245,7 +225,6 @@ inputs:
       - 'null'
       - File
     doc: Use or create trainable parameters in FILE
-    default: WORKDIR/params/params.params
     inputBinding:
       position: 103
       prefix: --trainable-params
@@ -254,7 +233,6 @@ inputs:
       - 'null'
       - File
     doc: Use genomic coordinates in FILE as a validation set
-    default: none
     inputBinding:
       position: 103
       prefix: --validation-coords
@@ -272,7 +250,6 @@ inputs:
       - 'null'
       - float
     doc: Sets the variance floor
-    default: 1e-05
     inputBinding:
       position: 103
       prefix: --var-floor
@@ -281,7 +258,6 @@ inputs:
       - 'null'
       - File
     doc: Virtual evidence with priors for labels at each position in FILE
-    default: none
     inputBinding:
       position: 103
       prefix: --virtual-evidence
@@ -290,7 +266,6 @@ inputs:
       - 'null'
       - float
     doc: Exponent for virtual evidence probability
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --virtual-evidence-weight

@@ -35,7 +35,6 @@ inputs:
     doc: "Enable annotation of INS with NanoINSight, \n                        please
       specify species of sample [None]\n                        Currently supported
       species are:\n                        'human', 'mouse', and 'rattus'."
-    default: None
     inputBinding:
       position: 104
       prefix: --annotate_ins
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Nucleotide length buffer for SV breakend clustering
-    default: 50
     inputBinding:
       position: 104
       prefix: --buffer
@@ -55,7 +53,6 @@ inputs:
     doc: "Type of long-read data [ont]\n                        ont - Oxford Nanopore
       Technologies\n                        pacbio-clr - Pacific Biosciences CLR\n\
       \                        pacbio-ccs - Pacific Biosciences CCS"
-    default: ont
     inputBinding:
       position: 104
       prefix: --data_type
@@ -75,7 +72,6 @@ inputs:
       \      (e.g. telomeres and centromeres) Either specify name of in-built \n \
       \                       reference genome filter (i.e. hg38, hg19, mm10) or provide
       full \n                        path to own BED file."
-    default: None
     inputBinding:
       position: 104
       prefix: --filter_bed
@@ -86,7 +82,6 @@ inputs:
     doc: "Lower limit of a breakend read ratio to classify a heterozygous state [0.35]\n\
       \                        (i.e. Any breakend with hetero<=ratio<homo is classified
       as heterozygous)"
-    default: 0.35
     inputBinding:
       position: 104
       prefix: --hetero
@@ -97,7 +92,6 @@ inputs:
     doc: "Lower limit of a breakend read ratio to classify a homozygous state [0.75]\n\
       \                        (i.e. Any breakend with homo<=ratio<=1.00 is classified
       as homozygous)"
-    default: 0.75
     inputBinding:
       position: 104
       prefix: --homo
@@ -114,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment length for single alignment reads
-    default: 200
     inputBinding:
       position: 104
       prefix: --minalign
@@ -123,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads required to call a breakend
-    default: 4
     inputBinding:
       position: 104
       prefix: --mincov
@@ -140,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of SV to be detected
-    default: 25
     inputBinding:
       position: 104
       prefix: --minlen
@@ -182,7 +173,6 @@ inputs:
       - float
     doc: "Score threshold for defining PASS/FAIL SVs in VCF [1.0]\n              \
       \          Default score 1.0 was estimated from simulated analysis."
-    default: 1.0
     inputBinding:
       position: 104
       prefix: --score
@@ -192,7 +182,6 @@ inputs:
       - float
     doc: "Minimum percentage of unmapped bases within a long read \n             \
       \           to be considered as a split-read. 0.05<=p<=0.50"
-    default: 0.05
     inputBinding:
       position: 104
       prefix: --splitpct
@@ -211,7 +200,6 @@ inputs:
       - 'null'
       - int
     doc: Number of available threads for use
-    default: 1
     inputBinding:
       position: 104
       prefix: --threads

@@ -37,7 +37,6 @@ inputs:
     type: Directory
   threads: 
     type: int?
-    default: 1
 
 outputs:
   outfile:

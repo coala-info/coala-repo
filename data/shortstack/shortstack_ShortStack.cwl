@@ -58,7 +58,6 @@ inputs:
       3-prime adapter sequence. Has no effect unless --autotrim is specified. 
       Defaults to TCGGACCAGGCTTCATTCCCC (miR166). Can be upper or lower-case, T 
       or U and must be 20-30 bases long.
-    default: TCGGACCAGGCTTCATTCCCC
     inputBinding:
       position: 103
       prefix: --autotrim_key
@@ -75,7 +74,6 @@ inputs:
       - int
     doc: 'Maximum size of a valid Dicer-processed small RNA. Must be integer >= 15
       and <= dicermax. Default: 24.'
-    default: 24
     inputBinding:
       position: 103
       prefix: --dicermax
@@ -85,7 +83,6 @@ inputs:
       - int
     doc: 'Minimum size of a valid Dicer-processed small RNA. Must be integer >= 15
       and <= dicermax. Default: 20.'
-    default: 20
     inputBinding:
       position: 103
       prefix: --dicermin
@@ -150,7 +147,6 @@ inputs:
     doc: 'Minimum alignment depth required to nucleate a small RNA cluster during
       de novo cluster search. In units of reads per million. Must be a floating point
       number. Default: 0.5'
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --mincov
@@ -159,7 +155,6 @@ inputs:
       - 'null'
       - string
     doc: 'Protocol for multi-mapped reads: u, f, or r - default: u'
-    default: u
     inputBinding:
       position: 103
       prefix: --mmap
@@ -177,7 +172,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory name. Defaults to ShortStack_time
-    default: ShortStack_time
     inputBinding:
       position: 103
       prefix: --outdir
@@ -188,7 +182,6 @@ inputs:
     doc: 'Initial peaks (continuous regions with depth exceeding argument mincov are
       merged if they are this distance or less from each other. Must be an integer
       >= 1. Default: 200'
-    default: 200
     inputBinding:
       position: 103
       prefix: --pad
@@ -198,7 +191,6 @@ inputs:
       - float
     doc: 'Cutoff for calling the strandedness of a small RNA locus. Must be a floating
       point > 0.5 and < 1. Default: 0.8.'
-    default: 0.8
     inputBinding:
       position: 103
       prefix: --strand_cutoff
@@ -207,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads to use (integer) - default: 1'
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: base quality cutoff for bases
-    default: 13
     inputBinding:
       position: 101
       prefix: -q
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: evidence count cutoff for candidate allele
-    default: 2
     inputBinding:
       position: 101
       prefix: -e
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: fractional evidence cutoff for candidate allele
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -f
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: intervals
-    default: ''
     inputBinding:
       position: 101
       prefix: -i
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - File
     doc: file containing list of intervals
-    default: ''
     inputBinding:
       position: 101
       prefix: -I
@@ -60,14 +55,12 @@ inputs:
       - 'null'
       - int
     doc: MAPQ cutoff for alignments
-    default: 20
     inputBinding:
       position: 101
       prefix: -m
   - id: reference_fasta
     type: File
     doc: reference sequence fasta file
-    default: ''
     inputBinding:
       position: 101
       prefix: -r
@@ -82,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: variant types
-    default: snps,mnps,indels
     inputBinding:
       position: 101
       prefix: -v

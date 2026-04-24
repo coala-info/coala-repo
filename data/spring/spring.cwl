@@ -61,7 +61,6 @@ inputs:
       - int
     doc: "gzip level (0-9) to use during decompression \n                        \
       \          if -g flag is specified (default: 6)"
-    default: 6
     inputBinding:
       position: 101
       prefix: --gzip-level
@@ -119,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads (default 8)
-    default: 8
     inputBinding:
       position: 101
       prefix: --num-threads
@@ -144,7 +142,6 @@ inputs:
       - Directory
     doc: "directory to create temporary files (default \n                        \
       \          current directory)"
-    default: .
     inputBinding:
       position: 101
       prefix: --working-dir

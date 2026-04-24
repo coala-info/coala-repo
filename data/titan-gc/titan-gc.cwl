@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Path to cromwell.jar (Default use conda install)
-    default: use conda install
     inputBinding:
       position: 101
       prefix: --cromwell_jar

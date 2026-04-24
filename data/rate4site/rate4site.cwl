@@ -21,7 +21,6 @@ inputs:
       - string
     doc: "The rate inference method: 'ML' (Maximum Likelihood) or 'EB' (Empirical
       Bayes)."
-    default: EB
     inputBinding:
       position: 101
       prefix: -i
@@ -31,7 +30,6 @@ inputs:
       - string
     doc: The evolutionary model to use (e.g., JC, HKY, REV for nucleotides; JTT,
       LG, WAG for proteins).
-    default: JC
     inputBinding:
       position: 101
       prefix: -m
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: The number of categories for the discrete Gamma distribution.
-    default: 16
     inputBinding:
       position: 101
       prefix: -k

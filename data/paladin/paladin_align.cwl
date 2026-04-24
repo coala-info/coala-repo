@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: penalty for 5'- and 3'-end clipping
-    default: 0,0
     inputBinding:
       position: 103
       prefix: -L
@@ -63,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: discard a chain if seeded bases shorter than INT
-    default: 0
     inputBinding:
       position: 103
       prefix: -W
@@ -80,7 +78,6 @@ inputs:
       - 'null'
       - float
     doc: drop chains shorter than FLOAT fraction of the longest overlapping chain
-    default: 0.5
     inputBinding:
       position: 103
       prefix: -D
@@ -89,7 +86,6 @@ inputs:
       - 'null'
       - string
     doc: gap extension penalty; a gap of size k cost '{-O} + {-E}*k'
-    default: 1,1
     inputBinding:
       position: 103
       prefix: -E
@@ -98,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: gap open penalties for deletions and insertions
-    default: 0,0
     inputBinding:
       position: 103
       prefix: -O
@@ -115,7 +110,6 @@ inputs:
       - 'null'
       - string
     doc: Genetic code used for translation (-z ? for full list)
-    default: '1'
     inputBinding:
       position: 103
       prefix: -z
@@ -149,7 +143,6 @@ inputs:
       - 'null'
       - float
     doc: look for internal seeds inside a seed longer than {-k} * FLOAT
-    default: 1.5
     inputBinding:
       position: 103
       prefix: -r
@@ -174,7 +167,6 @@ inputs:
       - 'null'
       - int
     doc: score for a sequence match, which scales options -TdBOELU unless overridden
-    default: 1
     inputBinding:
       position: 103
       prefix: -A
@@ -183,7 +175,6 @@ inputs:
       - 'null'
       - int
     doc: perform at most INT rounds of mate rescues for each read
-    default: 50
     inputBinding:
       position: 103
       prefix: -m
@@ -192,7 +183,6 @@ inputs:
       - 'null'
       - int
     doc: minimum ORF length accepted (as constant value)
-    default: 250
     inputBinding:
       position: 103
       prefix: -f
@@ -201,7 +191,6 @@ inputs:
       - 'null'
       - float
     doc: minimum ORF length accepted (as percentage of read length)
-    default: 0.0
     inputBinding:
       position: 103
       prefix: -F
@@ -210,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: minimum score to output
-    default: 15
     inputBinding:
       position: 103
       prefix: -T
@@ -219,7 +207,6 @@ inputs:
       - 'null'
       - int
     doc: minimum seed length
-    default: 11
     inputBinding:
       position: 103
       prefix: -k
@@ -228,7 +215,6 @@ inputs:
       - 'null'
       - int
     doc: penalty for a mismatch
-    default: 3
     inputBinding:
       position: 103
       prefix: -B
@@ -245,7 +231,6 @@ inputs:
       - 'null'
       - int
     doc: off-diagonal X-dropoff
-    default: 100
     inputBinding:
       position: 103
       prefix: -d
@@ -296,7 +281,6 @@ inputs:
       - int
     doc: 'report type generated when using reporting and a UniProt reference (0: Simple,
       1: Detailed)'
-    default: 1
     inputBinding:
       position: 103
       prefix: -u
@@ -305,7 +289,6 @@ inputs:
       - 'null'
       - int
     doc: seed occurrence for the 3rd round seeding
-    default: 20
     inputBinding:
       position: 103
       prefix: -y
@@ -314,7 +297,6 @@ inputs:
       - 'null'
       - int
     doc: skip seeds with more than INT occurrences
-    default: 500
     inputBinding:
       position: 103
       prefix: -c
@@ -331,7 +313,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 103
       prefix: -t
@@ -340,7 +321,6 @@ inputs:
       - 'null'
       - int
     doc: penalty for an unpaired read pair
-    default: 17
     inputBinding:
       position: 103
       prefix: -U
@@ -349,7 +329,6 @@ inputs:
       - 'null'
       - int
     doc: 'verbose level: 1=error, 2=warning, 3=message, 4+=debugging'
-    default: 3
     inputBinding:
       position: 103
       prefix: -v
@@ -358,7 +337,6 @@ inputs:
       - 'null'
       - string
     doc: if there are <INT hits with score >80% of the max score, output all in XA
-    default: 5,200
     inputBinding:
       position: 103
       prefix: -h

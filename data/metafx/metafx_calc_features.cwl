@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: maximal frequency for a k-mer to be assumed erroneous
-    default: 1
     inputBinding:
       position: 101
       prefix: --bad-frequency

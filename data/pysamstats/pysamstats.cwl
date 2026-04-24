@@ -48,7 +48,6 @@ inputs:
       - string
     doc: Output format, one of {tsv, csv, hdf5} (defaults to tsv). N.B., hdf5 
       requires PyTables to be installed.
-    default: tsv
     inputBinding:
       position: 102
       prefix: --format
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Size of chunks in number of bytes (defaults to 2**20).
-    default: 1048576
     inputBinding:
       position: 102
       prefix: --hdf5-chunksize
@@ -66,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: HDF5 compression level (defaults to 5).
-    default: 5
     inputBinding:
       position: 102
       prefix: --hdf5-complevel
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: HDF5 compression library (defaults to zlib).
-    default: zlib
     inputBinding:
       position: 102
       prefix: --hdf5-complib
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: Name of HDF5 dataset to create (defaults to "data").
-    default: data
     inputBinding:
       position: 102
       prefix: --hdf5-dataset
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: Name of HDF5 group to write to (defaults to the root group).
-    default: /
     inputBinding:
       position: 102
       prefix: --hdf5-group
@@ -103,7 +97,6 @@ inputs:
       - int
     doc: Maximum read depth permitted in pileup-based statistics. The default 
       limit is 8000.
-    default: 8000
     inputBinding:
       position: 102
       prefix: --max-depth
@@ -113,7 +106,6 @@ inputs:
       - int
     doc: Only reads with base quality equal to or greater than this value will 
       be counted (0 by default). Only applies to pileup-based statistics.
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-baseq
@@ -123,7 +115,6 @@ inputs:
       - int
     doc: Only reads with mapping quality equal to or greater than this value 
       will be counted (0 by default).
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-mapq
@@ -186,7 +177,6 @@ inputs:
       BAM_FDUP set; "nofilter" applies no filter to returned reads; "samtools": filter
       & read processing as in _csamtools_ pileup. This requires a fasta file. For
       complete details see the pysam documentation.'
-    default: all
     inputBinding:
       position: 102
       prefix: --stepper
@@ -217,7 +207,6 @@ inputs:
     doc: Window offset to use for deciding which genome position to report 
       binned statistics against. The default is 150, i.e., the middle of 300bp 
       window.
-    default: 150
     inputBinding:
       position: 102
       prefix: --window-offset
@@ -226,7 +215,6 @@ inputs:
       - 'null'
       - int
     doc: Size of window for binned statistics (default is 300).
-    default: 300
     inputBinding:
       position: 102
       prefix: --window-size
@@ -236,7 +224,6 @@ inputs:
       - boolean
     doc: Use zero-based coordinates (default is false, i.e., use one-based 
       coords).
-    default: false
     inputBinding:
       position: 102
       prefix: --zero-based

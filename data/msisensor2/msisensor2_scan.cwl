@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: context length
-    default: 5
     inputBinding:
       position: 101
       prefix: -c
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: maximal homopolymer size
-    default: 50
     inputBinding:
       position: 101
       prefix: -m
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: maximal length of microsate
-    default: 5
     inputBinding:
       position: 101
       prefix: -s
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: minimal homopolymer size
-    default: 5
     inputBinding:
       position: 101
       prefix: -l
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: minimal repeat times of microsate
-    default: 3
     inputBinding:
       position: 101
       prefix: -r
@@ -55,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: 'output homopolymer only, 0: no; 1: yes'
-    default: 0
     inputBinding:
       position: 101
       prefix: -p

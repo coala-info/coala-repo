@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: create intermediate files for debugging purposes
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: rescale branch lengths to optimize the Gamma20 likelihood
-    default: false
     inputBinding:
       position: 101
       prefix: --gamma
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not compute local support values using the Shimodaira-Hasegawa test
-    default: false
     inputBinding:
       position: 101
       prefix: --no_support
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for all output files
-    default: gtdbtk
     inputBinding:
       position: 101
       prefix: --prefix
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: protein substitution model for tree inference
-    default: WAG
     inputBinding:
       position: 101
       prefix: --prot_model
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - Directory
     doc: specify alternative directory for temporary files
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmpdir

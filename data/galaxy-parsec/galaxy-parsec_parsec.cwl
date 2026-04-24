@@ -31,7 +31,6 @@ inputs:
     type: string
     doc: Name of instance in /root/.parsec.yml. This parameter can also be set 
       via the environment variable PARSEC_GALAXY_INSTANCE
-    default: __default
     inputBinding:
       position: 103
       prefix: --galaxy_instance

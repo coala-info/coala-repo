@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: (N/-) Character to print in regions with less than minimum coverage
-    default: N
     inputBinding:
       position: 101
       prefix: -n
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth to call consensus
-    default: 10
     inputBinding:
       position: 101
       prefix: -m
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum frequency threshold(0 - 1) to call consensus.
-    default: 0
     inputBinding:
       position: 101
       prefix: -t
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum insertion frequency threshold(0 - 1) to call consensus.
-    default: 0.8
     inputBinding:
       position: 101
       prefix: -c
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum quality score threshold to count base
-    default: 20
     inputBinding:
       position: 101
       prefix: -q

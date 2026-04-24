@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance to consider closest neighbors.
-    default: 500
     inputBinding:
       position: 101
       prefix: --distance
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: Fraction of closest neighbors that need to agree to perform change.
-    default: 0.6
     inputBinding:
       position: 101
       prefix: --fraction

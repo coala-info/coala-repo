@@ -22,7 +22,6 @@ inputs:
   - id: extractFields
     #type: string?
     type: string[]?
-    default: "CHROM POS ID REF ALT FILTER"
     doc: "Separated by spaces"
     inputBinding:
       position: 2

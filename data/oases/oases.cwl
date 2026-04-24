@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: export a summary of contig alignment to the reference sequences
-    default: no
     inputBinding:
       position: 102
       prefix: -alignments
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: export assembly to AMOS file
-    default: no export
     inputBinding:
       position: 102
       prefix: -amos_file
@@ -33,7 +31,6 @@ inputs:
       - float
     doc: removal of low coverage nodes AFTER tour bus or allow the system to 
       infer it
-    default: 3
     inputBinding:
       position: 102
       prefix: -cov_cutoff
@@ -43,7 +40,6 @@ inputs:
       - int
     doc: Maximum allowed degree on either end of a contigg to consider it 
       'unique'
-    default: 3
     inputBinding:
       position: 102
       prefix: -degree_cutoff
@@ -53,7 +49,6 @@ inputs:
       - float
     doc: Remove edges which represent less than that fraction of a nodes 
       outgoing flow
-    default: 0.01
     inputBinding:
       position: 102
       prefix: -edgeFractionCutoff
@@ -63,7 +58,6 @@ inputs:
       - int
     doc: expected distance between two paired-end reads in the second short-read
       dataset
-    default: no read pairing
     inputBinding:
       position: 102
       prefix: -ins_length2
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: est. standard deviation of respective dataset
-    default: 10% of corresponding length
     inputBinding:
       position: 102
       prefix: -ins_length2_sd
@@ -81,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: expected distance between two long paired-end reads
-    default: no read pairing
     inputBinding:
       position: 102
       prefix: -ins_length_long
@@ -90,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: est. standard deviation of respective dataset
-    default: 10% of corresponding length
     inputBinding:
       position: 102
       prefix: -ins_length_long_sd
@@ -100,7 +91,6 @@ inputs:
       - string
     doc: Preserve contigs mapping onto long sequences to be preserved from 
       coverage cutoff
-    default: no
     inputBinding:
       position: 102
       prefix: -merge
@@ -110,7 +100,6 @@ inputs:
       - int
     doc: minimum number of paired end connections to justify the scaffolding of 
       two long contigs
-    default: 4
     inputBinding:
       position: 102
       prefix: -min_pair_count
@@ -119,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of output transcripts
-    default: hash-length
     inputBinding:
       position: 102
       prefix: -min_trans_lgth
@@ -129,7 +117,6 @@ inputs:
       - float
     doc: minimum ratio allowed between the numbers of observed and estimated 
       connecting read pairs
-    default: 0.1
     inputBinding:
       position: 102
       prefix: -paired_cutoff
@@ -138,7 +125,6 @@ inputs:
       - 'null'
       - string
     doc: Allow gaps in transcripts
-    default: no
     inputBinding:
       position: 102
       prefix: -scaffolding
@@ -147,7 +133,6 @@ inputs:
       - 'null'
       - string
     doc: export unused reads in UnusedReads.fa file
-    default: no
     inputBinding:
       position: 102
       prefix: -unused_reads

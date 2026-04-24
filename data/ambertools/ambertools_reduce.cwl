@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - boolean
     doc: process adjustments for all conformations (default)
-    default: true
     inputBinding:
       position: 102
       prefix: -ALLALT
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: at this gap a bump is 'bad'
-    default: 0.4
     inputBinding:
       position: 102
       prefix: -BADBumpcut
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - File
     doc: file to search for het info
-    default: /usr/local//dat/reduce_wwPDB_het_dict.txt
     inputBinding:
       position: 102
       prefix: -DB
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: dot density (in dots/A^2) for VDW calculations
-    default: 16.0
     inputBinding:
       position: 102
       prefix: -DENSity
@@ -100,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: B-factor cutoff for water atoms
-    default: 40
     inputBinding:
       position: 102
       prefix: -H2OBcutoff
@@ -109,7 +104,6 @@ inputs:
       - 'null'
       - float
     doc: occupancy cutoff for water atoms
-    default: 0.66
     inputBinding:
       position: 102
       prefix: -H2OOCCcutoff
@@ -118,7 +112,6 @@ inputs:
       - 'null'
       - float
     doc: over this gap charged HBonds bump
-    default: 0.8
     inputBinding:
       position: 102
       prefix: -HBCHargedcut
@@ -127,7 +120,6 @@ inputs:
       - 'null'
       - float
     doc: over this gap regular HBonds bump
-    default: 0.6
     inputBinding:
       position: 102
       prefix: -HBREGcutoff
@@ -152,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: max seconds to spend in exhaustive search
-    default: 600
     inputBinding:
       position: 102
       prefix: -LIMIT
@@ -161,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: dihedral angle cutoff for aromatic ring planarity check
-    default: 10
     inputBinding:
       position: 102
       prefix: -MAXAromdih
@@ -170,7 +160,6 @@ inputs:
       - 'null'
       - float
     doc: H 'bumps' metals at radius plus this
-    default: 0.865
     inputBinding:
       position: 102
       prefix: -METALBump
@@ -179,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: which model to process
-    default: 1
     inputBinding:
       position: 102
       prefix: -Model
@@ -188,7 +176,6 @@ inputs:
       - 'null'
       - int
     doc: remove dots if cause within n bonds
-    default: 3
     inputBinding:
       position: 102
       prefix: -NBonds
@@ -197,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: max number of nterm residue
-    default: 1
     inputBinding:
       position: 102
       prefix: -Nterm
@@ -270,7 +256,6 @@ inputs:
       - 'null'
       - float
     doc: "'bumps' nonmetal at radius plus this"
-    default: 0.125
     inputBinding:
       position: 102
       prefix: -NONMETALBump
@@ -287,7 +272,6 @@ inputs:
       - 'null'
       - float
     doc: occupancy cutoff for adjustments
-    default: 0.01
     inputBinding:
       position: 102
       prefix: -OCCcutoff
@@ -296,7 +280,6 @@ inputs:
       - 'null'
       - boolean
     doc: add hydrogens on OH and SH groups (default)
-    default: true
     inputBinding:
       position: 102
       prefix: -OH
@@ -321,7 +304,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of std. bias towards original orientation
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -PENalty
@@ -338,7 +320,6 @@ inputs:
       - 'null'
       - float
     doc: probe radius (in A) for VDW calculations
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -RADius
@@ -363,7 +344,6 @@ inputs:
       - 'null'
       - boolean
     doc: allow lysine NH3 to rotate (default)
-    default: true
     inputBinding:
       position: 102
       prefix: -ROTNH3

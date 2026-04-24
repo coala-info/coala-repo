@@ -32,27 +32,21 @@ inputs:
   length_sum:
     label: Prefix for the files assocaited with sequence length distribution
     type: string
-    default: seq-length.out
   gc_sum:
     label: Prefix for the files associated with GC distribution
     type: string
-    default: GC-distribution.out
   nucleotide_distribution:
     label: Prefix for the files associated with nucleotide distribution
     type: string
-    default: nucleotide-distribution.out
   summary:
     label: File names for summary of sequences, e.g. number, min/max length etc.
     type: string
-    default: summary.out
   max_seq:
     label: Maximum number of sequences to sub-sample 
     type: int?
-    default: 2000000
   out_dir_name:
     label: Specifies output subdirectory
     type: string
-    default: qc-statistics
   sequence_count:
     label: Specifies the number of sequences in the input read file (FASTA formatted)
     type: int

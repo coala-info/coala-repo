@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: max length for tips to be removed. -1 for 2k
-    default: -1
     inputBinding:
       position: 101
       prefix: --max_tip_len
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: min length of contig to output
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_contig
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: min length of a standalone contig to output to final.contigs.fa
-    default: 400
     inputBinding:
       position: 101
       prefix: --min_standalone
@@ -44,14 +41,12 @@ inputs:
       - 'null'
       - int
     doc: number of cpu threads
-    default: 0
     inputBinding:
       position: 101
       prefix: --num_cpu_threads
   - id: output_prefix
     type: string
     doc: output prefix
-    default: out
     inputBinding:
       position: 101
       prefix: --output_prefix

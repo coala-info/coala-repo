@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Specify which assay values to use.
-    default: logcounts
     inputBinding:
       position: 101
       prefix: --assay-type

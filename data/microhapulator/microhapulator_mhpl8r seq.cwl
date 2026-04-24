@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: number of reads to simulate
-    default: 500000
     inputBinding:
       position: 104
       prefix: --num-reads

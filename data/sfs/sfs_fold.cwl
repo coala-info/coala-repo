@@ -22,7 +22,6 @@ inputs:
       \       Set folded value to nan\n          - zero:      Set folded value to
       0\n          - minus-one: Set folded value to -1\n          - inf:       Set
       folded value to Inf"
-    default: nan
     inputBinding:
       position: 102
       prefix: --fill
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Precision to use when printing SFS
-    default: 6
     inputBinding:
       position: 102
       prefix: --precision

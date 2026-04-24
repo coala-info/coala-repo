@@ -44,7 +44,6 @@ inputs:
       - float
     doc: INFO threshold on Oxford BGEN-format genotypes; lower-INFO SNPs will be
       ignored
-    default: 0
     inputBinding:
       position: 101
       prefix: --bgenMinINFO
@@ -54,7 +53,6 @@ inputs:
       - int
     doc: minimum MAC threshold (in samples included in association tests) on 
       BGEN v1.2+ genotypes
-    default: 1
     inputBinding:
       position: 101
       prefix: --bgenMinMAC
@@ -64,7 +62,6 @@ inputs:
       - float
     doc: MAF threshold on Oxford BGEN-format genotypes; lower-MAF SNPs will be 
       ignored
-    default: 0
     inputBinding:
       position: 101
       prefix: --bgenMinMAF
@@ -215,7 +212,6 @@ inputs:
       - 'null'
       - float
     doc: MAF threshold on IMPUTE2 genotypes; lower-MAF SNPs will be ignored
-    default: 0
     inputBinding:
       position: 101
       prefix: --impute2MinMAF
@@ -257,7 +253,6 @@ inputs:
       - 'null'
       - float
     doc: 'QC filter: max missing rate per person'
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --maxMissingPerIndiv
@@ -266,7 +261,6 @@ inputs:
       - 'null'
       - float
     doc: 'QC filter: max missing rate per SNP'
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --maxMissingPerSnp
@@ -285,7 +279,6 @@ inputs:
       - 'null'
       - int
     doc: number of computational threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --numThreads

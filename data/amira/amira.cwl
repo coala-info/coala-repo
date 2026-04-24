@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs (default=1).
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum alignment coverage of a reference allele to keep an AMR gene (default=0.9).
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --coverage
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum relative threshold to remove all instances of a gene (default=0.2).
-    default: 0.2
     inputBinding:
       position: 101
       prefix: -g
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum identity to a reference allele needed to report an AMR gene (default=0.9).
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --identity
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum length threshold to filter a gene from a read (default=1.5).
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --maximum-length-proportion
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum relative read depth to keep an AMR gene (default=0.2).
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --min-relative-depth
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - File
     doc: Path to minimap2 binary (default=minimap2).
-    default: minimap2
     inputBinding:
       position: 101
       prefix: --minimap2-path
@@ -105,7 +98,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum length threshold to filter a gene from a read (default=0.5).
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --minimum-length-proportion
@@ -130,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum threshold for gene-mer coverage in the graph (default=3).
-    default: 3
     inputBinding:
       position: 101
       prefix: -n
@@ -147,7 +138,6 @@ inputs:
       - 'null'
       - File
     doc: Path to pandora binary (default=pandora).
-    default: pandora
     inputBinding:
       position: 101
       prefix: --pandora-path
@@ -178,7 +168,6 @@ inputs:
       - 'null'
       - File
     doc: Path to racon binary (default=racon).
-    default: racon
     inputBinding:
       position: 101
       prefix: --racon-path
@@ -195,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads to subsample to (default=500,000).
-    default: 500000
     inputBinding:
       position: 101
       prefix: --sample-size
@@ -204,7 +192,6 @@ inputs:
       - 'null'
       - File
     doc: Path to samtools binary (default=samtools).
-    default: samtools
     inputBinding:
       position: 101
       prefix: --samtools-path
@@ -213,7 +200,6 @@ inputs:
       - 'null'
       - int
     doc: Set the seed (default=2025).
-    default: 2025
     inputBinding:
       position: 101
       prefix: --seed

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Threshold defining the minimum breadth of coverage for the markers
-    default: 80
     inputBinding:
       position: 101
       prefix: --breadth_thres
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: The clade to investigate
-    default: None
     inputBinding:
       position: 101
       prefix: --clade
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - File
     doc: The clade markers as FASTA file
-    default: None
     inputBinding:
       position: 101
       prefix: --clade_markers
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: The input MetaPhlAn 4.2.4 database
-    default: latest
     inputBinding:
       position: 101
       prefix: --database
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: If specified, StrainPhlAn will not remove the temporary folders
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -56,7 +51,6 @@ inputs:
       - float
     doc: Threshold defining the minimum percentage of primary samples to keep a 
       marker
-    default: 50
     inputBinding:
       position: 101
       prefix: --marker_in_n_samples_perc
@@ -67,7 +61,6 @@ inputs:
     doc: If specified, StrainPhlAn will produce a mutation rates table for each 
       of the aligned markers and a summary table for the concatenated MSA. This 
       operation can take long time to finish
-    default: false
     inputBinding:
       position: 101
       prefix: --mutation_rates
@@ -77,7 +70,6 @@ inputs:
       - boolean
     doc: If specified, StrainPhlAn will select the first SGB available when the 
       clade is specified at the species level
-    default: false
     inputBinding:
       position: 101
       prefix: --non_interactive
@@ -86,14 +78,12 @@ inputs:
       - 'null'
       - int
     doc: The number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --nprocs
   - id: output_dir
     type: Directory
     doc: The output directory
-    default: None
     inputBinding:
       position: 101
       prefix: --output_dir
@@ -102,7 +92,6 @@ inputs:
       - 'null'
       - File
     doc: The PhyloPhlAn configuration file
-    default: None
     inputBinding:
       position: 101
       prefix: --phylophlan_configuration
@@ -111,7 +100,6 @@ inputs:
       - 'null'
       - string
     doc: The presets for fast or accurate phylogenetic analysis
-    default: fast
     inputBinding:
       position: 101
       prefix: --phylophlan_mode
@@ -120,7 +108,6 @@ inputs:
       - 'null'
       - string
     doc: Additional phylophlan parameters
-    default: None
     inputBinding:
       position: 101
       prefix: --phylophlan_params
@@ -130,7 +117,6 @@ inputs:
       - float
     doc: Threshold defining the maximum percentage of polymorphic sites in a 
       marker to be considered
-    default: None
     inputBinding:
       position: 101
       prefix: --polymorphism_perc
@@ -140,7 +126,6 @@ inputs:
       - boolean
     doc: If specified, StrainPhlAn will only print the potential clades and stop
       the execution
-    default: false
     inputBinding:
       position: 101
       prefix: --print_clades_only
@@ -150,7 +135,6 @@ inputs:
       - type: array
         items: File
     doc: The reference genomes
-    default: '[]'
     inputBinding:
       position: 101
       prefix: --references
@@ -161,7 +145,6 @@ inputs:
     doc: Threshold defining the minimum absolute number of markers for a sample 
       to be primary. This rule is combined with AND logic with 
       --sample_with_n_markers_perc
-    default: 20
     inputBinding:
       position: 101
       prefix: --sample_with_n_markers
@@ -172,7 +155,6 @@ inputs:
     doc: Threshold defining the minimum absolute number of markers after 
       filtering to keep a sample. This rule is combined with AND logic with 
       --sample_with_n_markers_after_filt_perc
-    default: 20
     inputBinding:
       position: 101
       prefix: --sample_with_n_markers_after_filt
@@ -183,7 +165,6 @@ inputs:
     doc: Threshold defining the minimum percentage of markers kept after 
       filtering to keep a sample. This rule is combined with AND logic with 
       --sample_with_n_markers_after_filt
-    default: 25
     inputBinding:
       position: 101
       prefix: --sample_with_n_markers_after_filt_perc
@@ -194,7 +175,6 @@ inputs:
     doc: Threshold defining the minimum percentage of markers to for a sample to
       be primary. This rule is combined with AND logic with 
       --sample_with_n_markers
-    default: 25
     inputBinding:
       position: 101
       prefix: --sample_with_n_markers_perc
@@ -204,7 +184,6 @@ inputs:
       - type: array
         items: File
     doc: The reconstructed markers for each sample
-    default: None
     inputBinding:
       position: 101
       prefix: --samples
@@ -213,7 +192,6 @@ inputs:
       - 'null'
       - Directory
     doc: If specified, the directory where to store the temporary files.
-    default: None
     inputBinding:
       position: 101
       prefix: --tmp
@@ -223,7 +201,6 @@ inputs:
       - boolean
     doc: If specified, StrainPhlAn will execute TreeShrink after building the 
       tree
-    default: false
     inputBinding:
       position: 101
       prefix: --treeshrink
@@ -232,7 +209,6 @@ inputs:
       - 'null'
       - int
     doc: The number of bases to remove from both ends when trimming markers
-    default: 50
     inputBinding:
       position: 101
       prefix: --trim_sequences

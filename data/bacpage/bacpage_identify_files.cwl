@@ -10,7 +10,6 @@ inputs:
   - id: directory
     type: Directory
     doc: location of FASTQ files
-    default: .
     inputBinding:
       position: 1
   - id: delim
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: deliminator to extract sample name from file name
-    default: _
     inputBinding:
       position: 102
       prefix: --delim
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: index of sample name after splitting file name by delim
-    default: 0
     inputBinding:
       position: 102
       prefix: --index

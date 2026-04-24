@@ -29,7 +29,6 @@ inputs:
         items: string
     doc: Add a GA4GH tool registry endpoint to use for resolution, default 
       ['https://dockstore.org:8443']
-    default: "['https://dockstore.org:8443']"
     inputBinding:
       position: 103
       prefix: --add-ga4gh-tool-registry
@@ -55,7 +54,6 @@ inputs:
       - Directory
     doc: Directory for storing the Docker container ID file. The default is the 
       current directory
-    default: current directory
     inputBinding:
       position: 103
       prefix: --cidfile-dir
@@ -65,7 +63,6 @@ inputs:
       - string
     doc: Specify a prefix to the container ID filename. Final file name will be 
       followed by a timestamp. The default is no prefix.
-    default: no prefix
     inputBinding:
       position: 103
       prefix: --cidfile-prefix
@@ -175,7 +172,6 @@ inputs:
       - string
     doc: Time to wait for a Javascript expression to evaluate before giving an 
       error, default 20s.
-    default: 20s
     inputBinding:
       position: 103
       prefix: --eval-timeout
@@ -233,7 +229,6 @@ inputs:
       - boolean
     doc: Move output files to the workflow output directory and delete 
       intermediate output directories (default).
-    default: true
     inputBinding:
       position: 103
       prefix: --move-outputs
@@ -284,7 +279,6 @@ inputs:
       - string
     doc: Desired workflow behavior when a step fails. One of 'stop' or 
       'continue'. Default is 'stop'.
-    default: stop
     inputBinding:
       position: 103
       prefix: --on-error
@@ -293,7 +287,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory, default current directory
-    default: current directory
     inputBinding:
       position: 103
       prefix: --outdir
@@ -402,7 +395,6 @@ inputs:
       - string
     doc: Output RDF serialization format used by --print-rdf (one of turtle 
       (default), n3, nt, xml)
-    default: turtle
     inputBinding:
       position: 103
       prefix: --rdf-serializer
@@ -437,7 +429,6 @@ inputs:
       - 'null'
       - boolean
     doc: Delete Docker container used by jobs after they exit (default)
-    default: true
     inputBinding:
       position: 103
       prefix: --rm-container
@@ -446,7 +437,6 @@ inputs:
       - 'null'
       - boolean
     doc: Delete intermediate temporary directories (default)
-    default: true
     inputBinding:
       position: 103
       prefix: --rm-tmpdir

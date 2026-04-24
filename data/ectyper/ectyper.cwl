@@ -44,7 +44,6 @@ inputs:
       - boolean
     doc: Enable for raw long reads FASTQ inputs (ONT, PacBio, other sequencing 
       platforms).
-    default: false
     inputBinding:
       position: 102
       prefix: --longreads
@@ -54,7 +53,6 @@ inputs:
       - int
     doc: Maximum number of directories to descend when searching an input 
       directory of files. Only works on path inputs not containing '*' wildcard
-    default: 0
     inputBinding:
       position: 102
       prefix: --maxdirdepth
@@ -71,7 +69,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percent coverage required for an H antigen allele match
-    default: 50
     inputBinding:
       position: 102
       prefix: --percentCoverageHtype
@@ -80,7 +77,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percent coverage required for an O antigen allele match
-    default: 90
     inputBinding:
       position: 102
       prefix: --percentCoverageOtype
@@ -90,7 +86,6 @@ inputs:
       - float
     doc: Minimum percent coverage required for a pathotype reference allele 
       match
-    default: 50
     inputBinding:
       position: 102
       prefix: --percentCoveragePathotype
@@ -99,7 +94,6 @@ inputs:
       - 'null'
       - float
     doc: Percent identity required for an H antigen allele match
-    default: 95
     inputBinding:
       position: 102
       prefix: --percentIdentityHtype
@@ -108,7 +102,6 @@ inputs:
       - 'null'
       - float
     doc: Percent identity required for an O antigen allele match
-    default: 95
     inputBinding:
       position: 102
       prefix: --percentIdentityOtype
@@ -118,7 +111,6 @@ inputs:
       - float
     doc: Minimum percent identity required for a pathotype reference allele 
       match
-    default: 90
     inputBinding:
       position: 102
       prefix: --percentIdentityPathotype
@@ -146,7 +138,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable E. coli species verification and additional QC checks
-    default: false
     inputBinding:
       position: 102
       prefix: --verify

@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow [tr]RNA to overlap CDS (default OFF)
-    default: false
     inputBinding:
       position: 102
       prefix: --cdsrnaolap
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage on query protein
-    default: 80
     inputBinding:
       position: 102
       prefix: --coverage
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use [0=all]
-    default: 0
     inputBinding:
       position: 102
       prefix: --cpus
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - Directory
     doc: Prokka database root folders
-    default: /usr/local/db
     inputBinding:
       position: 102
       prefix: --dbdir
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Debug mode: keep all temporary files (default OFF)'
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run tbl2asn (default OFF)
-    default: false
     inputBinding:
       position: 102
       prefix: --dotbl2asn
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run tRNA search (default OFF)
-    default: false
     inputBinding:
       position: 102
       prefix: --dotrna
@@ -78,7 +71,6 @@ inputs:
       - 'null'
       - float
     doc: Similarity e-value cut-off
-    default: '1e-09'
     inputBinding:
       position: 102
       prefix: --evalue
@@ -87,7 +79,6 @@ inputs:
       - 'null'
       - boolean
     doc: Fast mode - only use basic BLASTP databases (default OFF)
-    default: false
     inputBinding:
       position: 102
       prefix: --fast
@@ -96,7 +87,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force overwriting existing output folder (default OFF)
-    default: false
     inputBinding:
       position: 102
       prefix: --force
@@ -105,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: GFF version
-    default: 3
     inputBinding:
       position: 102
       prefix: --gffver
@@ -114,7 +103,6 @@ inputs:
       - 'null'
       - File
     doc: Trusted HMM to first annotate from
-    default: ''
     inputBinding:
       position: 102
       prefix: --hmms
@@ -123,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Locus tag counter increment
-    default: 1
     inputBinding:
       position: 102
       prefix: --increment
@@ -140,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: Locus tag prefix
-    default: auto
     inputBinding:
       position: 102
       prefix: --locustag
@@ -149,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum contig size [NCBI needs 200]
-    default: 1
     inputBinding:
       position: 102
       prefix: --mincontiglen
@@ -158,7 +143,6 @@ inputs:
       - 'null'
       - boolean
     doc: For CDS just set /product="unannotated protein" (default OFF)
-    default: false
     inputBinding:
       position: 102
       prefix: --noanno
@@ -167,7 +151,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't run rRNA search (default OFF)
-    default: false
     inputBinding:
       position: 102
       prefix: --norrna
@@ -176,7 +159,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output folder
-    default: auto
     inputBinding:
       position: 102
       prefix: --outdir
@@ -185,7 +167,6 @@ inputs:
       - 'null'
       - string
     doc: Filename output prefix
-    default: auto
     inputBinding:
       position: 102
       prefix: --prefix
@@ -194,7 +175,6 @@ inputs:
       - 'null'
       - File
     doc: Prodigal training file
-    default: ''
     inputBinding:
       position: 102
       prefix: --prodigaltf
@@ -203,7 +183,6 @@ inputs:
       - 'null'
       - File
     doc: FASTA or GBK file to use as 1st priority
-    default: ''
     inputBinding:
       position: 102
       prefix: --proteins
@@ -212,7 +191,6 @@ inputs:
       - 'null'
       - boolean
     doc: No screen output (default OFF)
-    default: false
     inputBinding:
       position: 102
       prefix: --quiet
@@ -221,7 +199,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not clean up /product annotation (default OFF)
-    default: false
     inputBinding:
       position: 102
       prefix: --rawproduct
@@ -230,7 +207,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable searching for ncRNAs with Infernal+Rfam (SLOW!)
-    default: false
     inputBinding:
       position: 102
       prefix: --rfam
@@ -239,7 +215,6 @@ inputs:
       - 'null'
       - boolean
     doc: Prefer RNAmmer over Barrnap for rRNA prediction (default OFF)
-    default: false
     inputBinding:
       position: 102
       prefix: --rnammer

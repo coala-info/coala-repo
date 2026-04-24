@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment quality to include read in genotype.
-    default: 0
     inputBinding:
       position: 101
       prefix: --alignment-quality
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality for inclusion in the genotype count.
-    default: 0
     inputBinding:
       position: 101
       prefix: --base-qual
@@ -72,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: Comma separated list of sample names to ignore.
-    default: NONE
     inputBinding:
       position: 101
       prefix: --ignore-samples
@@ -112,7 +109,6 @@ inputs:
       - 'null'
       - string
     doc: Comma separated list of sample names to keep.
-    default: ALL
     inputBinding:
       position: 101
       prefix: --keep-samples
@@ -138,7 +134,6 @@ inputs:
       - 'null'
       - string
     doc: Maximum memory for java for running duplicate removal per core.
-    default: 8000m
     inputBinding:
       position: 101
       prefix: --max-javamem
@@ -148,7 +143,6 @@ inputs:
       - int
     doc: Minimum number of mitochondrial reads for a barcode to be genotyped; 
       useful only in `bcall` mode.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --min-barcode-reads
@@ -156,7 +150,6 @@ inputs:
     type: string
     doc: mitochondrial genome configuration. Choose hg19, hg38, mm10, (etc.) or 
       a custom .fasta file.
-    default: rCRS
     inputBinding:
       position: 101
       prefix: --mito-genome
@@ -165,7 +158,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for project name.
-    default: mgatk
     inputBinding:
       position: 101
       prefix: --name
@@ -174,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: number of "background" cells to use for CellBender.
-    default: 20000
     inputBinding:
       position: 101
       prefix: --ncells_bg
@@ -183,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: number of "foreground" cells to use for CellBender.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --ncells_fg
@@ -200,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of read alignments allowed as governed by the NH flag.
-    default: 1
     inputBinding:
       position: 101
       prefix: --NHmax
@@ -210,7 +199,6 @@ inputs:
       - int
     doc: Maximum number of paired mismatches allowed represented by the NM/nM 
       tags.
-    default: 4
     inputBinding:
       position: 101
       prefix: --NMmax
@@ -220,7 +208,6 @@ inputs:
       - int
     doc: The number of samples / cells to be processed per iteration; Supply 0 
       to try all.
-    default: 7000
     inputBinding:
       position: 101
       prefix: --nsamples

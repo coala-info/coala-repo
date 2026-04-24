@@ -15,7 +15,6 @@ inputs:
       - int
     doc: Amplicon size target. Pass twice to set an exact range, otherwise 
       expect +/- 5.0%.
-    default:
       - 380
       - 420
     inputBinding:
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix name for your outputs.
-    default: scheme
     inputBinding:
       position: 102
       prefix: --name
@@ -91,7 +89,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to output directory.
-    default: ./output
     inputBinding:
       position: 102
       prefix: --outpath
@@ -108,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Target insert overlap size.
-    default: 0
     inputBinding:
       position: 102
       prefix: --target-overlap

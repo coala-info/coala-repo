@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: Interactive, queries from stdin
-    default: false
     inputBinding:
       position: 103
       prefix: --interactive
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force pre-loading of database file into memory
-    default: false
     inputBinding:
       position: 103
       prefix: --load
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable pre-loading of database file into memory
-    default: false
     inputBinding:
       position: 103
       prefix: --no-load

@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: 'Label to use for additional regions in HTML report (default: "custom")'
-    default: custom
     inputBinding:
       position: 101
       prefix: --add-annot-id
@@ -55,7 +54,6 @@ inputs:
       - int
     doc: '--in BED score column used for p-value calculations. BED score can be e.g.
       log2 fold change or -log10 p-value of the region (default: 5)'
-    default: 5
     inputBinding:
       position: 101
       prefix: --bed-score-col
@@ -76,7 +74,6 @@ inputs:
       (CMSEARCH option: --default). 2: max setting (CMSEARCH option: --max), i.e.,
       turn all heuristic filters off, slower and more sensitive / more hits) (default:
       1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --cmsearch-mode
@@ -86,7 +83,6 @@ inputs:
       - int
     doc: 'Defines multiple testing correction mode for co-occurrence p-values. 1:
       Benjamini-Hochberg (BH), 2: Bonferroni, 3: no correction (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --cooc-pval-mode
@@ -99,7 +95,6 @@ inputs:
       adjusted by Bonferroni correction (i.e. divided by number of tests). Threshold
       applies unchanged for BH corrected p-values as well as for disabled correction
       (default: 0.005)'
-    default: 0.005
     inputBinding:
       position: 101
       prefix: --cooc-pval-thr
@@ -127,7 +122,6 @@ inputs:
       - string
     doc: 'Set ID/name for provided custom motif database via --custom-db (default:
       "custom")'
-    default: custom
     inputBinding:
       position: 101
       prefix: --custom-db-id
@@ -227,7 +221,6 @@ inputs:
     doc: 'Define --exp-gene-filter behavior. 1: filter out --in regions NOT OVERLAPPING
       with --exp-gene-list gene regions. 2: filter out --in regions OVERLAPPING with
       --exp-gene-list gene regions (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --exp-gene-filter-mode
@@ -249,7 +242,6 @@ inputs:
     doc: 'Up- and downstream extension of --in sites in nucleotides (nt). Set e.g.
       --ext 30 for 30 nt on both sides, or --ext 20,10 for different up- and downstream
       extension (default: 0)'
-    default: '0'
     inputBinding:
       position: 101
       prefix: --ext
@@ -271,7 +263,6 @@ inputs:
       2: use frequencies from human ENSEMBL transcripts (including introns, resulting
       in lower G+C and T most prominent) 3: use uniform frequencies (same for every
       nucleotide) (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --fimo-ntf-mode
@@ -280,7 +271,6 @@ inputs:
       - 'null'
       - float
     doc: 'FIMO p-value threshold (FIMO option: --thresh) (default: 0.0005)'
-    default: 0.0005
     inputBinding:
       position: 101
       prefix: --fimo-pval
@@ -290,7 +280,6 @@ inputs:
       - int
     doc: 'Defines Fisher exact test alternative hypothesis for testing co-occurrences
       of RBP motifs. 1: greater, 2: two-sided, 3: less (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --fisher-mode
@@ -340,7 +329,6 @@ inputs:
       perform GOA only on input regions with motif hits from ANY specified RBP. 3:
       perform GOA only on input regions with motif hits from ALL specified RBPs. GOA
       on input regions translates to GOA on the underlying genes (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --goa-cooc-mode
@@ -397,7 +385,6 @@ inputs:
     doc: 'Define how to obtain GO DAG (directed acyclic graph) obo file. 1: download
       most recent file from internet, 2: use local file, 3: provide file via --goa-obo-file
       (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --goa-obo-mode
@@ -407,7 +394,6 @@ inputs:
       - float
     doc: 'GO enrichment analysis p-value threshold (applied on corrected p-value)
       (default: 0.05)'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --goa-pval
@@ -442,7 +428,6 @@ inputs:
       feature (if less or no overlap, region will be assigned to "intergenic"). If
       there is overlap with several features, assign the one with highest overlap
       (default: 0.1)'
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --gtf-feat-min-overlap
@@ -452,7 +437,6 @@ inputs:
       - int
     doc: 'Set intron border region length (up- + downstream ends) for exon intron
       overlap statistics (default: 250)'
-    default: 250
     inputBinding:
       position: 101
       prefix: --gtf-intron-border-len
@@ -462,7 +446,6 @@ inputs:
       - float
     doc: 'Minimum amount of overlap required for a region to be considered in mRNA
       region site coverage profile (i.e., overlap with mRNA exons) (default: 0.5)'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --gtf-min-mrna-overlap
@@ -478,7 +461,6 @@ inputs:
       - int
     doc: 'Set k for sequence complexity (Shannon entropy) calculation. 1 == mono-nucleotides,
       2 == di-nucleotides (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --kmer-pca-plot-comp-k
@@ -487,7 +469,6 @@ inputs:
       - 'null'
       - int
     doc: 'Set k for k-mer usage in sequences by k-mer content PCA plot (default: 3)'
-    default: 3
     inputBinding:
       position: 101
       prefix: --kmer-pca-plot-k
@@ -515,7 +496,6 @@ inputs:
       - int
     doc: 'Define k for k-mer distribution plots, including top k-mers plot, top vs
       bottom scoring sites plot, and k-mer variation plot (default: 4)'
-    default: 4
     inputBinding:
       position: 101
       prefix: --kmer-plot-k
@@ -545,7 +525,6 @@ inputs:
     doc: 'Define which attribute to use for coloring sequence k-mer variation plot.
       1: correlation (Spearman) between k-mer ratios and site scores. 2: k-mer percentage
       in dataset (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --kmer-var-color-mode
@@ -555,7 +534,6 @@ inputs:
       - int
     doc: 'Set maximum motif distance for RBP co-occurrence plot statistic inside hover
       boxes (default: 20)'
-    default: 20
     inputBinding:
       position: 101
       prefix: --max-motif-dist
@@ -597,7 +575,6 @@ inputs:
       second filter to show only RBP pairs with signficiant p-values as significant
       if there is the specified minimum average distance between their motifs (default:
       0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-motif-dist
@@ -610,7 +587,6 @@ inputs:
       (277 RBPs, 622 motifs, "catrapid_omics_v2.1_human_6plus_ext_ucrbps"), 3: human
       RBP motifs from Ray et al 2013 (80 RBPs, 102 motifs, "ray2013_human_rbps_rnacompete")
       (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --motif-db
@@ -621,7 +597,6 @@ inputs:
     doc: 'Set range of motif distance plot. I.e., centered on the set RBP (--set-rbp-id)
       motifs, motifs within minus and plus --motif-distance-plot-range will be plotted
       (default: 50)'
-    default: 50
     inputBinding:
       position: 101
       prefix: --motif-distance-plot-range
@@ -649,7 +624,6 @@ inputs:
       - int
     doc: 'On single motif level, minimum count of co-occurrences of a motif with set
       RBP ID (--set-rbp-id) motif to be reported and plotted (default: 10)'
-    default: 10
     inputBinding:
       position: 101
       prefix: --motif-min-pair-count
@@ -678,7 +652,6 @@ inputs:
       - int
     doc: 'Define whether to use median or mean mRNA region lengths for plotting. 1:
       median. 2: mean (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --mrna-norm-mode
@@ -724,7 +697,6 @@ inputs:
       web version link and plotly plot codes into main HTML. 6: put local version
       link and plotly plot codes in main HTML. 7: put plotly js and plotly plot codes
       into main HTML! (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --plotly-js-mode
@@ -744,7 +716,6 @@ inputs:
     doc: 'Up- and downstream extension of transcript start site (TSS) to define putative
       promoter regions, e.g. --prom-ext 500,0 for 500 upstream and 0 downstream extension
       (default: 1000,100)'
-    default: 1000,100
     inputBinding:
       position: 101
       prefix: --prom-ext
@@ -771,7 +742,6 @@ inputs:
       - int
     doc: 'On RBP level, minimum amount of co-occurrences of motifs for an RBP ID compared
       to set RBP ID (--set-rbp-id) motifs to be reported and plotted (default: 10)'
-    default: 10
     inputBinding:
       position: 101
       prefix: --rbp-min-pair-count
@@ -812,7 +782,6 @@ inputs:
       - float
     doc: 'Maximum GU (GT) base pair fraction to report structure pattern regex hits
       (default: 1.0)'
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --regex-max-gu
@@ -822,7 +791,6 @@ inputs:
       - float
     doc: 'Minimum GC base pair fraction to report structure pattern regex hits (default:
       0.0)'
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --regex-min-gc
@@ -834,7 +802,6 @@ inputs:
       motif hit start position, 2: when motif hit encountered, continue +1 after motif
       hit end position. NOTE that structure pattern regex currently always uses mode
       1 (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --regex-search-mode
@@ -843,7 +810,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum spacer length for structure pattern regex search (default: 200)'
-    default: 200
     inputBinding:
       position: 101
       prefix: --regex-spacer-max
@@ -852,7 +818,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum spacer length for structure pattern regex search (default: 5)'
-    default: 5
     inputBinding:
       position: 101
       prefix: --regex-spacer-min
@@ -864,7 +829,6 @@ inputs:
       or structure pattern). 2: given --regex string is standard regex, e.g. AC[AG]T.
       3: given --regex string is structure pattern string, e.g. ((AA(((...)))AA))
       (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --regex-type
@@ -894,7 +858,6 @@ inputs:
     doc: 'Define how to provide sorttable.js file. 1: link to packaged .js file. 2:
       copy .js file to plots output folder. 3: include .js code in HTML (default:
       1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --sort-js-mode
@@ -904,7 +867,6 @@ inputs:
       - int
     doc: 'Set top n matched sequences to be displayed in motif hit statistics HTML
       report (create via --plot-motifs) (default: 10)'
-    default: 10
     inputBinding:
       position: 101
       prefix: --top-n-matched
@@ -976,7 +938,6 @@ inputs:
       - int
     doc: 'Upset plot maximum subset rank to plot. All tied subsets are included (default:
       25)'
-    default: 25
     inputBinding:
       position: 101
       prefix: --upset-plot-max-subset-rank
@@ -985,7 +946,6 @@ inputs:
       - 'null'
       - int
     doc: 'Upset plot minimum degree parameter (default: 2)'
-    default: 2
     inputBinding:
       position: 101
       prefix: --upset-plot-min-degree
@@ -996,7 +956,6 @@ inputs:
     doc: 'Minimum amount of input sites containing motifs for an RBP in order for
       the RBP to be included in upset plot (+ statistic !). By default, all RBPs are
       included, also RBPs without hit regions (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --upset-plot-min-rbp-count
@@ -1005,7 +964,6 @@ inputs:
       - 'null'
       - int
     doc: 'Upset plot minimum subset size (default: 5)'
-    default: 5
     inputBinding:
       position: 101
       prefix: --upset-plot-min-subset-size
@@ -1043,7 +1001,6 @@ inputs:
     doc: 'Defines Wilcoxon rank-sum test alternative hypothesis for testing whether
       motif-containing regions have significantly different scores. 1: test for higher
       (greater) scores, 2: test for lower (less) scores (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --wrs-mode

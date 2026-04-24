@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Tag in which to store the cellular barcodes.
-    default: CB
     inputBinding:
       position: 101
       prefix: --cell-tag
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - boolean
     doc: Extract UMI(s) from read names and prepend to UMIs from reads.
-    default: false
     inputBinding:
       position: 101
       prefix: --extract-umis-from-read-names
@@ -82,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: Sequencing Platform.
-    default: illumina
     inputBinding:
       position: 101
       prefix: --platform
@@ -116,7 +113,6 @@ inputs:
       - 'null'
       - string
     doc: Read group ID to use in the file header.
-    default: A
     inputBinding:
       position: 101
       prefix: --read-group-id
@@ -158,7 +154,6 @@ inputs:
       - 'null'
       - boolean
     doc: If true, queryname sort the BAM file, otherwise preserve input order.
-    default: false
     inputBinding:
       position: 101
       prefix: --sort
@@ -167,7 +162,6 @@ inputs:
       - 'null'
       - boolean
     doc: Store the sample barcode qualities in the QT Tag.
-    default: false
     inputBinding:
       position: 101
       prefix: --store-sample-barcode-qualities
@@ -184,7 +178,6 @@ inputs:
       - 'null'
       - string
     doc: Tag in which to store molecular barcodes/UMIs.
-    default: RX
     inputBinding:
       position: 101
       prefix: --umi-tag

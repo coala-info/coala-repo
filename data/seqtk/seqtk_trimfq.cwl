@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - float
     doc: error rate threshold (disabled by -b/-e)
-    default: 0.05
     inputBinding:
       position: 102
       prefix: -q
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: maximally trim down to INT bp (disabled by -b/-e)
-    default: 30
     inputBinding:
       position: 102
       prefix: -l
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: retain at most INT bp from the 5'-end (non-zero to disable -q/-l)
-    default: 0
     inputBinding:
       position: 102
       prefix: -L
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: trim INT bp from left (non-zero to disable -q/-l)
-    default: 0
     inputBinding:
       position: 102
       prefix: -b
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: trim INT bp from right (non-zero to disable -q/-l)
-    default: 0
     inputBinding:
       position: 102
       prefix: -e

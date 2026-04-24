@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the number of burn-in iterations
-    default: 100000
     inputBinding:
       position: 103
       prefix: -x
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the number of iterations after burn-in
-    default: 100000
     inputBinding:
       position: 103
       prefix: -y
@@ -63,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the number of iterations between samples
-    default: 100
     inputBinding:
       position: 103
       prefix: -z
@@ -82,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the number of pre burn-in iterations
-    default: 100000
     inputBinding:
       position: 103
       prefix: -w
@@ -125,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: Tempered at 'temperature' t for topological updates
-    default: 1.0
     inputBinding:
       position: 103
       prefix: -t
@@ -134,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: Perform r tempered steps between topological updates
-    default: 0
     inputBinding:
       position: 103
       prefix: -r

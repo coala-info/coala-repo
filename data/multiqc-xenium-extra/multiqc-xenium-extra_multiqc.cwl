@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Custom context window to use with OpenAI API
-    default: 128000
     inputBinding:
       position: 102
       prefix: --ai-custom-context-window
@@ -55,7 +54,6 @@ inputs:
       - string
     doc: Select AI provider for report summarization. 
       (seqera|openai|anthropic|aws_bedrock|custom)
-    default: seqera
     inputBinding:
       position: 102
       prefix: --ai-provider
@@ -438,7 +436,6 @@ inputs:
       - string
     doc: Report template to use. 
       (default|disco|gathered|geo|original|sections|simple)
-    default: default
     inputBinding:
       position: 102
       prefix: --template

@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: Key in the attributes to extract for species1
-    default: ID
     inputBinding:
       position: 101
       prefix: --annoKey1
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Key in the attributes to extract for species2
-    default: ID
     inputBinding:
       position: 101
       prefix: --annoKey2
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Feature type to extract for species1
-    default: mRNA
     inputBinding:
       position: 101
       prefix: --annoType1
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Feature type to extract for species2
-    default: mRNA
     inputBinding:
       position: 101
       prefix: --annoType2
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Parent gene key to group with --primary_only in jcvi
-    default: Parent
     inputBinding:
       position: 101
       prefix: --annoparentKey1
@@ -56,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Parent gene key to group with --primary_only in jcvi
-    default: Parent
     inputBinding:
       position: 101
       prefix: --annoparentKey2
@@ -65,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: C-score cutoff for jcvi
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --cscore
@@ -74,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: The type of squences for jcvi, nucl|prot
-    default: nucl
     inputBinding:
       position: 101
       prefix: --datatype
@@ -83,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: Threshold for evalue in two-way blast
-    default: '1e-2'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -92,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: Perform iTAK to identify TFs and kinases (only for plants), yse|no
-    default: no
     inputBinding:
       position: 101
       prefix: --iTAK
@@ -101,7 +91,6 @@ inputs:
       - 'null'
       - string
     doc: The short name for species1, e.g. Ath
-    default: sp1
     inputBinding:
       position: 101
       prefix: --sp1
@@ -122,7 +111,6 @@ inputs:
       - 'null'
       - string
     doc: The short name for species2, e.g. Ath
-    default: sp2
     inputBinding:
       position: 101
       prefix: --sp2
@@ -143,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads

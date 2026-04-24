@@ -60,7 +60,6 @@ inputs:
       - float
     doc: Maximum energy difference between the best binding mode and the worst 
       one displayed (kcal/mol)
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --energy_range
@@ -69,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Exhaustiveness of the global search (roughly proportional to time)
-    default: 8
     inputBinding:
       position: 101
       prefix: --exhaustiveness
@@ -100,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of binding modes to generate
-    default: 9
     inputBinding:
       position: 101
       prefix: --num_modes

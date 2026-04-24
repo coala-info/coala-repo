@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: 'workflow. Allowed values are profiling_wf (default: profiling_wf)'
-    default: profiling_wf
     inputBinding:
       position: 1
   - id: task
@@ -17,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: 'pipeline end point (default: all)'
-    default: all
     inputBinding:
       position: 2
   - id: check_samples
@@ -25,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'check samples, default: False'
-    default: false
     inputBinding:
       position: 103
       prefix: --check-samples
@@ -34,7 +31,6 @@ inputs:
       - 'null'
       - File
     doc: 'config.yaml (default: ./config.yaml)'
-    default: ./config.yaml
     inputBinding:
       position: 103
       prefix: --config
@@ -49,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: 'split project to sync directory (default: 1)'
-    default: 1
     inputBinding:
       position: 103
       prefix: --split-num
@@ -58,7 +53,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'project workdir (default: ./) '
-    default: ./
     inputBinding:
       position: 103
       prefix: --workdir

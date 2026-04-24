@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output files
-    default: dnaapler
     inputBinding:
       position: 101
       prefix: --prefix
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Random seed to ensure reproducibility.
-    default: 13
     inputBinding:
       position: 101
       prefix: --seed_value
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use with MMseqs2
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: How many times failed requests are retried
-    default: 3
     inputBinding:
       position: 101
       prefix: --max_tries

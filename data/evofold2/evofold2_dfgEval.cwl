@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - Directory
     doc: Prefix of DFG specification files..
-    default: ./dfgSpec/
     inputBinding:
       position: 103
       prefix: --dfgSpecPrefix
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - File
     doc: Specification of factor potentials.
-    default: factorPotentials.txt
     inputBinding:
       position: 103
       prefix: --facPotFile
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - File
     doc: Specification of the factor graph structure.
-    default: factorGraph.txt
     inputBinding:
       position: 103
       prefix: --factorGraphFile
@@ -86,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Output precision of real numbers.
-    default: 5
     inputBinding:
       position: 103
       prefix: --precision
@@ -95,7 +91,6 @@ inputs:
       - 'null'
       - File
     doc: Specification of state maps.
-    default: stateMaps.txt
     inputBinding:
       position: 103
       prefix: --stateMapFile
@@ -113,7 +108,6 @@ inputs:
       - 'null'
       - File
     doc: Specification of the state map used by each variable.
-    default: variables.txt
     inputBinding:
       position: 103
       prefix: --variablesFile

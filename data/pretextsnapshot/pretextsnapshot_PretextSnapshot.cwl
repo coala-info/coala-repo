@@ -12,7 +12,6 @@ inputs:
       \                          Or, the name of the colour map to use.\n        \
       \                        Defaults to \"Three Wave Blue-Green-Yellow\" i.e. \"\
       8\"."
-    default: '8'
     inputBinding:
       position: 101
       prefix: --colourMap
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: Image format, one of "png"(default) "bmp" or "jpeg".
-    default: png
     inputBinding:
       position: 101
       prefix: --format
@@ -33,7 +31,6 @@ inputs:
       \  Either, one of: \"black\"(default), \"white\", \"red\", \"green\", \"blue\"\
       , \"yellow\", \"cyan\" or \"magenta\".\n                                Or,
       a sRGBA 32-bit hex code in RRGGBBAA format, e.g. \"ff00ff80\" (magenta at half-occupancy)."
-    default: black
     inputBinding:
       position: 101
       prefix: --gridColour
@@ -43,7 +40,6 @@ inputs:
       - int
     doc: "Width in pixels of the sequence separation grid, a non-negative integer,
       default 1.\n                                Set to 0 to not overlay a grid."
-    default: 1
     inputBinding:
       position: 101
       prefix: --gridSize
@@ -54,7 +50,6 @@ inputs:
     doc: "JPEG quality factor, an integer between 1 and 100, default 80.\n       \
       \                         Larger values result in increased image quality and
       file size.\n                                Only applicable to JPEG images."
-    default: 80
     inputBinding:
       position: 101
       prefix: --jpegQuality
@@ -79,7 +74,6 @@ inputs:
     doc: "Minimum map texels per image (along a single dimension), a positive integer,
       default 64.\n                                Output images over too small a
       range that violate this minimum will not be created."
-    default: 64
     inputBinding:
       position: 101
       prefix: --minTexels
@@ -116,7 +110,6 @@ inputs:
     doc: "Image resolution, a positive integer, default 1080.\n                  \
       \              For non-square images this will be the resolution\n         \
       \                       of the longest dimension."
-    default: 1080
     inputBinding:
       position: 101
       prefix: --resolution
@@ -135,7 +128,6 @@ inputs:
     doc: "Sequence specification string. Each entry, except for \"=all\", corresponds
       to one output image.\n                                Defaults to \"=full, =all\"\
       ."
-    default: =full, =all
     inputBinding:
       position: 101
       prefix: --sequences
@@ -156,7 +148,6 @@ inputs:
       \t\t\t\t \"2\" for error and warning messages.\n\t\t\t\t \"1\" for error messages.\n\
       \t\t\t\t \"0\" for no messages.\n                                Warning and
       status messages are printed to stdout, error messages to stderr."
-    default: '3'
     inputBinding:
       position: 101
       prefix: --verbose

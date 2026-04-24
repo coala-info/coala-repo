@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Max cytosine retention in a read
-    default: 999999
     inputBinding:
       position: 104
       prefix: -t
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum NM tag
-    default: 999999
     inputBinding:
       position: 104
       prefix: -n
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment score (from AS-tag)
-    default: 40
     inputBinding:
       position: 104
       prefix: -a
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality
-    default: 20
     inputBinding:
       position: 104
       prefix: -b
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length
-    default: 10
     inputBinding:
       position: 104
       prefix: -l
@@ -96,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Step size of windows
-    default: 100000
     inputBinding:
       position: 104
       prefix: -s
@@ -105,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 3
     inputBinding:
       position: 104
       prefix: -@

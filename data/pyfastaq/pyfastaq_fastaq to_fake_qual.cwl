@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: 'Quality score to use for all bases [default: 40]'
-    default: 40
     inputBinding:
       position: 102
 outputs:

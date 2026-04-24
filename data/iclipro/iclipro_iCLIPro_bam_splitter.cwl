@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: use only reads with minimum mapping quality (mapq) (0..100)
-    default: 10
     inputBinding:
       position: 102
       prefix: -q
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - Directory
     doc: output folder
-    default: cwd - current working directory
     inputBinding:
       position: 102
       prefix: -o
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: read len groups
-    default: '"A:16-39,A1:16-25,A2:26-32,A3:33-39,B:42"'
     inputBinding:
       position: 102
       prefix: -g

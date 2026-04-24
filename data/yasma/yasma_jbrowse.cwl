@@ -68,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum read size for specific coverage treatment
-    default: 25
     inputBinding:
       position: 101
       prefix: --max_size
@@ -77,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read size for specific coverage treatment
-    default: 20
     inputBinding:
       position: 101
       prefix: --min_size

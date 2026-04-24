@@ -48,7 +48,6 @@ inputs:
       - 'null'
       - Directory
     doc: Location for all output files (default is current directory).
-    default: current directory
     inputBinding:
       position: 104
       prefix: --output_dir

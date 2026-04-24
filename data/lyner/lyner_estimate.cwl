@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of counts for a gene to be considered.
-    default: 10
     inputBinding:
       position: 102
       prefix: --min-counts
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for computation.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

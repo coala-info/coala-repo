@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: 'graphical: transparency value for blastn hit (0-1)'
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --alpha
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: 'graphical: manual override for y lims (default: TRUE; otherwise: -y NUM)'
-    default: 'TRUE'
     inputBinding:
       position: 101
       prefix: --auto-y
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - float
     doc: 'genome blastn: e-value threshold to keep hit'
-    default: '10e-8'
     inputBinding:
       position: 101
       prefix: --e-value
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - float
     doc: 'graphical: transparency value for full-length blastn hits (0-1)'
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --full-length-alpha
@@ -65,7 +61,6 @@ inputs:
       - float
     doc: 'genome blastn: min. proportion (hit_size)/(consensus_size) to be considered
       "full length" (0-1)'
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --full-length-threshold
@@ -96,7 +91,6 @@ inputs:
       - 'null'
       - Directory
     doc: output folder
-    default: ./
     inputBinding:
       position: 101
       prefix: --output

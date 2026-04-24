@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to launch.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpu-core
@@ -19,7 +18,6 @@ inputs:
       - type: array
         items: string
     doc: List of chromosomes to exclude.
-    default:
       - chrY
       - chrM
     inputBinding:
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: Logging file name.
-    default: domaincaller.log
     inputBinding:
       position: 101
       prefix: --logFile
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove cache data before exiting.
-    default: false
     inputBinding:
       position: 101
       prefix: --removeCache
@@ -55,7 +51,6 @@ inputs:
       - string
     doc: "Name of the column in .cool to be used to construct\nthe normalized matrix.
       Specify \"-W RAW\" if you want to\nrun with the raw matrix."
-    default: weight
     inputBinding:
       position: 101
       prefix: --weight-col

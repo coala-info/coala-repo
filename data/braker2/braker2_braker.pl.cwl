@@ -31,7 +31,6 @@ inputs:
       - boolean
     doc: Output alternative transcripts based on explicit evidence from hints 
       (default is true).
-    default: true
     inputBinding:
       position: 101
       prefix: --alternatives-from-evidence
@@ -200,7 +199,6 @@ inputs:
       their number of introns distribution, i.e. genes with none or few exons 
       will be downsampled, genes with many exons will be kept. Default value is 
       2. If you want to avoid downsampling, you have to specify 0.
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --downsampling_lambda
@@ -297,7 +295,6 @@ inputs:
       - float
     doc: Probablity for donor splice site pattern GC for gene prediction with 
       GeneMark-EX, default value is 0.001
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --gc_probability
@@ -546,7 +543,6 @@ inputs:
       - int
     doc: The number of optimization rounds used in optimize_augustus.pl (default
       5)
-    default: 5
     inputBinding:
       position: 101
       prefix: --rounds

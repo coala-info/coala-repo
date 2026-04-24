@@ -18,7 +18,6 @@ inputs:
       detected, the rest of the exon boundary is scored (still using the 
       weighted score) by this penlalty, regardless of the actual matches in the 
       alignment.
-    default: 4
     inputBinding:
       position: 102
       prefix: -f
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for frameshifts and read-through stop codons in exons.
-    default: 20
     inputBinding:
       position: 102
       prefix: -F
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for gaps, both in exons and around intron boundaries.
-    default: 4
     inputBinding:
       position: 102
       prefix: -g
@@ -47,7 +44,6 @@ inputs:
     doc: Specify type of weighting kernel used. Available options are 
       "triangular", "box", "parabolic" and "triweight". Triangular kernel is the
       default option.
-    default: triangular
     inputBinding:
       position: 102
       prefix: -k
@@ -95,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Width of a scoring window around introns.
-    default: 10
     inputBinding:
       position: 102
       prefix: -w

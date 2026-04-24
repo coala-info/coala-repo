@@ -63,7 +63,6 @@ inputs:
       - int
     doc: Number of processes used by the auto-guessed input decompressing 
       command.
-    default: 3
     inputBinding:
       position: 103
       prefix: --nproc-in
@@ -73,7 +72,6 @@ inputs:
       - int
     doc: Number of processes used by the auto-guessed output compressing 
       command.
-    default: 8
     inputBinding:
       position: 103
       prefix: --nproc-out

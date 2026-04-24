@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Number of k-nearest-neighbors to extract
-    default: 32
     inputBinding:
       position: 101
       prefix: --k-nearest-neighbors

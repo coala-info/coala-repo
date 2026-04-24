@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: The database name.
-    default: MetaSBT
     inputBinding:
       position: 101
       prefix: --database
@@ -18,14 +17,12 @@ inputs:
       - 'null'
       - File
     doc: Path to the MetaSBT tarball database.
-    default: None
     inputBinding:
       position: 101
       prefix: --tarball
   - id: workdir
     type: Directory
     doc: Path to the working directory.
-    default: None
     inputBinding:
       position: 101
       prefix: --workdir

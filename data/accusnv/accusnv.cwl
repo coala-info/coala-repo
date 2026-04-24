@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: If not generate html report and other related files, set to 0.
-    default: 1
     inputBinding:
       position: 101
       prefix: --generate_report
@@ -45,7 +44,6 @@ inputs:
     doc: 'For the filter module: on individual samples, calls must have at least this
       many reads on the fwd/rev strands individually. If many samples have low coverage
       (e.g. <5), then you can set this parameter to smaller value. (e.g. -v 2).'
-    default: 5
     inputBinding:
       position: 101
       prefix: --min_cov_for_filter_pos
@@ -56,7 +54,6 @@ inputs:
     doc: Before running the CNN model, low-quality samples with more than 45% of
       positions having zero aligned reads will be filtered out. You can adjust 
       this threshold with this parameter; to include all samples, set "-s 100".
-    default: 45
     inputBinding:
       position: 101
       prefix: --min_cov_for_filter_sample

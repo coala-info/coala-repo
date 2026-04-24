@@ -27,7 +27,6 @@ inputs:
       - float
     doc: Contigs with coverage greater than [max-deviation * mean coverage] or 
       less than [(1/max-deviation) * mean coverage] will be flagged as outliers
-    default: 5.0
     inputBinding:
       position: 104
       prefix: --max-deviation
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use
-    default: 1
     inputBinding:
       position: 104
       prefix: --threads
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: Compute the mean weighted by the contig length
-    default: false
     inputBinding:
       position: 104
       prefix: --weighted-mean

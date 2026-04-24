@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: automatically refine bins
-    default: false
     inputBinding:
       position: 102
       prefix: --auto
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: skip data transformation (3 stoits only)
-    default: false
     inputBinding:
       position: 102
       prefix: --no_transform
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: create plots of bins after refinement
-    default: false
     inputBinding:
       position: 102
       prefix: --plot

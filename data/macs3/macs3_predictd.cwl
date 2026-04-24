@@ -12,7 +12,6 @@ inputs:
       - int
     doc: Buffer size for incrementally increasing internal array size to store 
       reads alignment information.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --buffer-size
@@ -22,7 +21,6 @@ inputs:
       - int
     doc: Band width for picking regions to compute fragment size. This value is 
       only used while building the shifting model.
-    default: 300
     inputBinding:
       position: 101
       prefix: --bw
@@ -32,7 +30,6 @@ inputs:
       - int
     doc: Minimum fragment size in basepair. Any predicted fragment size less 
       than this will be excluded.
-    default: 20
     inputBinding:
       position: 101
       prefix: --d-min
@@ -42,7 +39,6 @@ inputs:
       - string
     doc: Format of tag file, "AUTO", "BED" or "ELAND" or "ELANDMULTI" or 
       "ELANDEXPORT" or "SAM" or "BAM" or "BOWTIE" or "BAMPE" or "BEDPE".
-    default: AUTO
     inputBinding:
       position: 101
       prefix: --format
@@ -53,7 +49,6 @@ inputs:
     doc: Effective genome size. It can be 1.0e+9 or 1000000000, or 
       shortcuts:'hs' for human, 'mm' for mouse, 'ce' for C. elegans and 'dm' for
       fruitfly.
-    default: hs
     inputBinding:
       position: 101
       prefix: --gsize
@@ -73,7 +68,6 @@ inputs:
         items: int
     doc: Select the regions within MFOLD range of high-confidence enrichment 
       ratio against background to build model. Use as "-m 10 30".
-    default:
       - 5
       - 50
     inputBinding:

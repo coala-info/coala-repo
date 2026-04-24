@@ -10,7 +10,6 @@ inputs:
       - type: array
         items: string
     doc: Output format, either 'concise' or 'verbose'
-    default: concise
     inputBinding:
       position: 101
       prefix: --format
@@ -20,7 +19,6 @@ inputs:
       - type: array
         items: string
     doc: Loss function L_i(.) to use for optimization
-    default: l2
     inputBinding:
       position: 101
       prefix: --loss
@@ -30,7 +28,6 @@ inputs:
       - type: array
         items: int
     doc: Precision parameter, only used when loss function is 'beta_binomial*'
-    default: 10
     inputBinding:
       position: 101
       prefix: --precision
@@ -40,7 +37,6 @@ inputs:
       - type: array
         items: int
     doc: Number of segments, only used when loss function is '*_pla' or '*_ppla'
-    default: 10
     inputBinding:
       position: 101
       prefix: --segments
@@ -68,7 +64,6 @@ inputs:
       - type: array
         items: File
     doc: Path to the weights matrix file
-    default: ''
     inputBinding:
       position: 101
       prefix: --weights

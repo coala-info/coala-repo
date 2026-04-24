@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bins to select from a genomic coordinates.
-    default: 1
     inputBinding:
       position: 102
       prefix: --bins
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Threads to use for analysis.
-    default: 1
     inputBinding:
       position: 102
       prefix: --cpus
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - float
     doc: Standard deviation for contact density estimation.
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --deviation
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Set the number of iterations for benchmarking.
-    default: 3
     inputBinding:
       position: 102
       prefix: --iterations
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Set jitter for pattern detection interval overlapping
-    default: 0
     inputBinding:
       position: 102
       prefix: --jitter
@@ -86,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the gaussian kernel for contact density estimation.
-    default: 11
     inputBinding:
       position: 102
       prefix: --kernel-size
@@ -97,7 +91,6 @@ inputs:
         items: string
     doc: Statistical model to use for ambiguous reads assignment. Multiple modes
       must be coma separated.
-    default: full
     inputBinding:
       position: 102
       prefix: --mode
@@ -132,7 +125,6 @@ inputs:
       - 'null'
       - float
     doc: Set pattern score threshold under which pattern are discarded.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --threshold
@@ -141,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: Set the top k % of patterns to retain.
-    default: 100
     inputBinding:
       position: 102
       prefix: --top

@@ -14,7 +14,6 @@ inputs:
       - string
     doc: A character or string to use to join replicate sample names in order to create
       output file names.
-    default: '~'
     inputBinding:
       position: 101
       prefix: --join_on

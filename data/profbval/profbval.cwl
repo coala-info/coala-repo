@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Smoothing window size.
-    default: 9
     inputBinding:
       position: 3
   - id: method
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Prediction method/mode to use.
-    default: 1
     inputBinding:
       position: 4
 outputs:

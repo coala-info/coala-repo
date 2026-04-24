@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: E-value threshold
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --evalue
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --n_jobs
@@ -76,7 +74,6 @@ inputs:
       - float
     doc: Multiplier for the curated thresholds. Higher values will make the 
       annotation more strict
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --threshold_scale
@@ -85,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: Verbosity of missing KOfams
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbosity

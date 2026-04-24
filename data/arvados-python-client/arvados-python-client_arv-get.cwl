@@ -81,7 +81,6 @@ inputs:
       - int
     doc: Maximum number of times to retry server requests that encounter temporary
       failures (e.g., server down).
-    default: 10
     inputBinding:
       position: 102
       prefix: --retries
@@ -107,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: Set the number of download threads to be used.
-    default: 4
     inputBinding:
       position: 102
       prefix: --threads

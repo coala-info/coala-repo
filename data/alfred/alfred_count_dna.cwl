@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: min. mapping quality
-    default: 10
     inputBinding:
       position: 102
       prefix: --map-qual
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: '#windows per chr, used if #n>0'
-    default: 0
     inputBinding:
       position: 102
       prefix: --window-num
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: window offset
-    default: 10000
     inputBinding:
       position: 102
       prefix: --window-offset
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: window size
-    default: 10000
     inputBinding:
       position: 102
       prefix: --window-size

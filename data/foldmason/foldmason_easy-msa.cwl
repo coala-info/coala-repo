@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: 3Di matrix bit factor
-    default: 2.1
     inputBinding:
       position: 104
       prefix: --bitfactor-3di
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: AA matrix bit factor
-    default: 1.1
     inputBinding:
       position: 104
       prefix: --bitfactor-aa
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: 'Add chain to name: 0: auto, 1: always add'
-    default: 0
     inputBinding:
       position: 104
       prefix: --chain-name-mode
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Correct for locally biased amino acid composition (range 0-1)
-    default: 1
     inputBinding:
       position: 104
       prefix: --comp-bias-corr
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: 'Coordinate storage mode: 1: C-alpha as float, 2: C-alpha as difference (uint16_t)'
-    default: 2
     inputBinding:
       position: 104
       prefix: --coord-store-mode
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: 'createdb extraction mode: 0: chain 1: interface'
-    default: 0
     inputBinding:
       position: 104
       prefix: --db-extraction-mode
@@ -92,7 +86,6 @@ inputs:
       - 'null'
       - float
     doc: Residues with C-beta below this threshold will be part of interface
-    default: 8.0
     inputBinding:
       position: 104
       prefix: --distance-threshold
@@ -101,7 +94,6 @@ inputs:
       - 'null'
       - boolean
     doc: Fast mode, disable residue neighbourhood similarity scoring
-    default: 0
     inputBinding:
       position: 104
       prefix: --fast
@@ -110,7 +102,6 @@ inputs:
       - 'null'
       - string
     doc: Exclude file names based on this regex
-    default: ^$
     inputBinding:
       position: 104
       prefix: --file-exclude
@@ -119,7 +110,6 @@ inputs:
       - 'null'
       - string
     doc: Include file names based on this regex
-    default: .*
     inputBinding:
       position: 104
       prefix: --file-include
@@ -128,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: 'Filter msa: 0: do not filter, 1: filter'
-    default: 1
     inputBinding:
       position: 104
       prefix: --filter-msa
@@ -137,7 +126,6 @@ inputs:
       - 'null'
       - string
     doc: Gap extension cost
-    default: aa:2,nucl:2
     inputBinding:
       position: 104
       prefix: --gap-extend
@@ -146,7 +134,6 @@ inputs:
       - 'null'
       - string
     doc: Gap open cost
-    default: aa:25,nucl:25
     inputBinding:
       position: 104
       prefix: --gap-open
@@ -155,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: Use GPU (CUDA) if possible
-    default: 0
     inputBinding:
       position: 104
       prefix: --gpu
@@ -164,7 +150,6 @@ inputs:
       - 'null'
       - string
     doc: Guide tree in Newick format
-    default: ''
     inputBinding:
       position: 104
       prefix: --guide-tree
@@ -174,7 +159,6 @@ inputs:
       - int
     doc: 'Format of input structures: 0: Auto-detect by extension, 1: PDB, 2: mmCIF,
       3: mmJSON, 4: ChemComp, 5: Foldcomp'
-    default: 0
     inputBinding:
       position: 104
       prefix: --input-format
@@ -183,7 +167,6 @@ inputs:
       - 'null'
       - float
     doc: mask residues for seeding if b-factor < thr
-    default: 0.0
     inputBinding:
       position: 104
       prefix: --mask-bfactor-threshold
@@ -192,7 +175,6 @@ inputs:
       - 'null'
       - int
     doc: Mask query sequence of profile using tantan
-    default: 1
     inputBinding:
       position: 104
       prefix: --mask-profile
@@ -201,7 +183,6 @@ inputs:
       - 'null'
       - float
     doc: Columns that have a residue in this ratio of all sequences are kept
-    default: 0.9
     inputBinding:
       position: 104
       prefix: --match-ratio
@@ -210,7 +191,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum sequence length
-    default: 65535
     inputBinding:
       position: 104
       prefix: --max-seq-len
@@ -219,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: 'Add model to name: 0: auto, 1: always add'
-    default: 0
     inputBinding:
       position: 104
       prefix: --model-name-mode
@@ -228,7 +207,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum distance cutoff (angstrom) for neighboring residues
-    default: 45.0
     inputBinding:
       position: 104
       prefix: --nb-ang-cut
@@ -237,7 +215,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum neighborhood score threshold
-    default: 0.02
     inputBinding:
       position: 104
       prefix: --nb-low-cut
@@ -246,7 +223,6 @@ inputs:
       - 'null'
       - float
     doc: Neighborhood score multiplier
-    default: 13.0
     inputBinding:
       position: 104
       prefix: --nb-multiplier
@@ -255,7 +231,6 @@ inputs:
       - 'null'
       - float
     doc: Neighborhood score decay constant
-    default: 3.841
     inputBinding:
       position: 104
       prefix: --nb-sigma
@@ -264,7 +239,6 @@ inputs:
       - 'null'
       - boolean
     doc: Normalise LDDT by no. scoring columns
-    default: 0
     inputBinding:
       position: 104
       prefix: --only-scoring-cols
@@ -273,7 +247,6 @@ inputs:
       - 'null'
       - float
     doc: '% of pair subalignments with LDDT information'
-    default: 0.0
     inputBinding:
       position: 104
       prefix: --pair-threshold
@@ -282,7 +255,6 @@ inputs:
       - 'null'
       - boolean
     doc: Pre-cluster structures before constructing MSA
-    default: 0
     inputBinding:
       position: 104
       prefix: --precluster
@@ -291,7 +263,6 @@ inputs:
       - 'null'
       - string
     doc: Path to ProstT5 model
-    default: ''
     inputBinding:
       position: 104
       prefix: --prostt5-model
@@ -300,7 +271,6 @@ inputs:
       - 'null'
       - int
     doc: 'use 0: substitution-matrix or 1: context-specific pseudocounts'
-    default: 0
     inputBinding:
       position: 104
       prefix: --pseudo-cnt-mode
@@ -310,7 +280,6 @@ inputs:
       - float
     doc: Reduce diversity of output MSAs using min. score per aligned residue 
       with query sequences
-    default: -20.0
     inputBinding:
       position: 104
       prefix: --qsc
@@ -319,7 +288,6 @@ inputs:
       - 'null'
       - boolean
     doc: Recompute all-vs-all alignment scores every iteration
-    default: 0
     inputBinding:
       position: 104
       prefix: --recompute-scores
@@ -328,7 +296,6 @@ inputs:
       - 'null'
       - int
     doc: Number of alignment refinement iterations
-    default: 0
     inputBinding:
       position: 104
       prefix: --refine-iters
@@ -337,7 +304,6 @@ inputs:
       - 'null'
       - int
     doc: Random number generator seed
-    default: -1
     inputBinding:
       position: 104
       prefix: --refine-seed
@@ -346,7 +312,6 @@ inputs:
       - 'null'
       - string
     doc: Report command
-    default: ''
     inputBinding:
       position: 104
       prefix: --report-command
@@ -356,7 +321,6 @@ inputs:
       - int
     doc: 'MSA report mode 0: AA/3Di FASTA files only, 1: Compute LDDT and generate
       HTML report, 2: Compute LDDT and generate JSON'
-    default: 0
     inputBinding:
       position: 104
       prefix: --report-mode
@@ -365,7 +329,6 @@ inputs:
       - 'null'
       - boolean
     doc: Report paths
-    default: 1
     inputBinding:
       position: 104
       prefix: --report-paths
@@ -374,7 +337,6 @@ inputs:
       - 'null'
       - float
     doc: PSSM score bias
-    default: -0.6
     inputBinding:
       position: 104
       prefix: --score-bias-pssm
@@ -383,7 +345,6 @@ inputs:
       - 'null'
       - string
     doc: Substitution matrix file
-    default: aa:3di.out,nucl:3di.out
     inputBinding:
       position: 104
       prefix: --sub-mat
@@ -392,7 +353,6 @@ inputs:
       - 'null'
       - int
     doc: Gap extension cost for all-vs-all Smith-Waterman alignment
-    default: 8
     inputBinding:
       position: 104
       prefix: --sw-gap-extend
@@ -401,7 +361,6 @@ inputs:
       - 'null'
       - int
     doc: Gap open cost for all-vs-all Smith-Waterman alignment
-    default: 9
     inputBinding:
       position: 104
       prefix: --sw-gap-open
@@ -410,7 +369,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU-cores used (all by default)
-    default: 20
     inputBinding:
       position: 104
       prefix: --threads
@@ -419,7 +377,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbosity level: 0: quiet, 1: +errors, 2: +warnings, 3: +info'
-    default: 3
     inputBinding:
       position: 104
       prefix: -v
@@ -428,7 +385,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use global sequence weighting for profile calculation
-    default: 1
     inputBinding:
       position: 104
       prefix: --wg
@@ -438,7 +394,6 @@ inputs:
       - int
     doc: write .lookup file containing mapping from internal id, fasta id and 
       file number
-    default: 1
     inputBinding:
       position: 104
       prefix: --write-lookup
@@ -448,7 +403,6 @@ inputs:
       - int
     doc: write _mapping file containing mapping from internal id to taxonomic 
       identifier
-    default: 0
     inputBinding:
       position: 104
       prefix: --write-mapping

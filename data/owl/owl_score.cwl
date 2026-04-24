@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - float
     doc: Coefficient of variance cutoff
-    default: 5
     inputBinding:
       position: 101
       prefix: --cov
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Min depth
-    default: 5
     inputBinding:
       position: 101
       prefix: -m
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Min percentage sites for QC
-    default: 50
     inputBinding:
       position: 101
       prefix: --min-pass

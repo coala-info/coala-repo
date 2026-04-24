@@ -24,7 +24,6 @@ inputs:
     doc: By default map all reads in the BAM file, write all the fragments, 
       either chimeric ro single to the output file (stdout). If this option is 
       selected don't wirte the single reads.
-    default: true
     inputBinding:
       position: 103
       prefix: --add_all_reads
@@ -35,7 +34,6 @@ inputs:
     doc: Map all reads in the BAM file, write all the fragments that are not 
       chimeric to the file specified here e.g. -a single_fragments_mapping.txt. 
       By default these reads will be written to the standard output.
-    default: None
     inputBinding:
       position: 103
       prefix: --all_reads
@@ -46,7 +44,6 @@ inputs:
     doc: This number of mismatches is allowed between the a match and the 
       genome. If there are mapped reads with less than --max_mismatches 
       mismatches but more than this number the read will be ignored.
-    default: 1
     inputBinding:
       position: 103
       prefix: --allowed_mismatches
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: bwa command
-    default: bwa
     inputBinding:
       position: 103
       prefix: --bwa_exec
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory, default is this directory.
-    default: ./remapped-data/
     inputBinding:
       position: 103
       prefix: --dirout
@@ -75,7 +70,6 @@ inputs:
     doc: Maximal distance between concordant reads. If they are generated from 
       the same strand but larger than this distance they will be considered as 
       chimeric.
-    default: 1000
     inputBinding:
       position: 103
       prefix: --distance
@@ -84,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Threshold for dust filter. If 0 skip.
-    default: 10
     inputBinding:
       position: 103
       prefix: --dust_thr
@@ -93,7 +86,6 @@ inputs:
       - 'null'
       - string
     doc: Name of features to count on the GTF file (column 2).
-    default: exon
     inputBinding:
       position: 103
       prefix: --feature
@@ -102,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: Name of identifier to print (in column 8 of the GTF file).
-    default: gene_id
     inputBinding:
       position: 103
       prefix: --identifier
@@ -113,7 +104,6 @@ inputs:
     doc: Remove reads that are probably a result of circular RNAs by default. If
       the reads are close but in opposite order they will be removed unless this
       argument is set.
-    default: false
     inputBinding:
       position: 103
       prefix: --keep_circular
@@ -123,7 +113,6 @@ inputs:
       - int
     doc: Length of sequence to map. Take the ends of the fragment and map each 
       to the genome. The length of the region will be this length.
-    default: 25
     inputBinding:
       position: 103
       prefix: --length
@@ -135,7 +124,6 @@ inputs:
       than one match with this number of mismatches the read will be treated as 
       if it might match all of them and if there is one scenario in which the 
       two ends are concordant it will be removed.
-    default: 3
     inputBinding:
       position: 103
       prefix: --max_mismatches
@@ -147,7 +135,6 @@ inputs:
       screen. This is due to nextseq technology which puts G where there is no 
       signal, the poly G might just be noise. When using other sequencing 
       technologies set to 1.
-    default: 0.8
     inputBinding:
       position: 103
       prefix: --maxG
@@ -156,7 +143,6 @@ inputs:
       - 'null'
       - string
     doc: Additional parameters for aln function of bwa.
-    default: -t 8 -N -M 0
     inputBinding:
       position: 103
       prefix: --params_aln
@@ -167,7 +153,6 @@ inputs:
     doc: Treat the reads as reverse complement. This means that the first read 
       is actually the 3' end of the fragment. Use this when using Jonathan 
       Livny's protocol for library construction
-    default: false
     inputBinding:
       position: 103
       prefix: --reverse_complement
@@ -176,7 +161,6 @@ inputs:
       - 'null'
       - string
     doc: Additional parameters for samse function of bwa.
-    default: -n 1000
     inputBinding:
       position: 103
       prefix: --samse_params
@@ -185,7 +169,6 @@ inputs:
       - 'null'
       - string
     doc: Samtools executable.
-    default: samtools
     inputBinding:
       position: 103
       prefix: --samtools_cmd
@@ -194,7 +177,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip the mapping step, use previously mapped files.
-    default: false
     inputBinding:
       position: 103
       prefix: --skip_mapping
@@ -205,7 +187,6 @@ inputs:
     doc: A gff file of transcripts. If given, screen reads that might reside 
       from the same transcript. Very useful for screening ribosomal RNAs. 
       Otherwise use only the size limit.
-    default: None
     inputBinding:
       position: 103
       prefix: --transcripts

@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum minimizer frequency
-    default: 250 for CLR and ONT reads; 150 for CCS reads, 30 for CONTIG.
     inputBinding:
       position: 102
       prefix: -F
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Minimizer window size
-    default: 10
     inputBinding:
       position: 102
       prefix: -W

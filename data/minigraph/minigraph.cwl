@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer length
-    default: 17
     inputBinding:
       position: 103
       prefix: -k
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum chaining score
-    default: 100
     inputBinding:
       position: 103
       prefix: -m
@@ -65,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 4
     inputBinding:
       position: 103
       prefix: -t
@@ -74,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Minimizer window size
-    default: 11
     inputBinding:
       position: 103
       prefix: -w

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - float
     doc: breaking edge density
-    default: 0.1
     inputBinding:
       position: 102
       prefix: -b
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: maximum size
-    default: 500
     inputBinding:
       position: 102
       prefix: -m
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: minimum edge density between a join
-    default: 0.5
     inputBinding:
       position: 102
       prefix: -s
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: minimum edge weight
-    default: 20
     inputBinding:
       position: 102
       prefix: -w
@@ -76,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: stringent level ('3' is the strictest)
-    default: 2
     inputBinding:
       position: 102
       prefix: -L
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: weight resolution for '-O'
-    default: 5
     inputBinding:
       position: 102
       prefix: -r

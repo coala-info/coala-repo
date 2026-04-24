@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bases to get to left of gap
-    default: 25
     inputBinding:
       position: 102
       prefix: --left
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bases to get to right of gap
-    default: 25
     inputBinding:
       position: 102
       prefix: --right

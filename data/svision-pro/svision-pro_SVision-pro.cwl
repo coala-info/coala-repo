@@ -96,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: 'The sliding interval/window size in segment collection (default: 10000000)'
-    default: 10000000
     inputBinding:
       position: 101
       prefix: --interval_size
@@ -105,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum read coverage to detect (default: 500)'
-    default: 500
     inputBinding:
       position: 101
       prefix: --max_coverage
@@ -114,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum SV size to detect (default: 50000)'
-    default: 50000
     inputBinding:
       position: 101
       prefix: --max_sv_size
@@ -123,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum mapping quality of reads to consider (default: 20)'
-    default: 20
     inputBinding:
       position: 101
       prefix: --min_mapq
@@ -132,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum support read number required for SV calling (default: 5)'
-    default: 5
     inputBinding:
       position: 101
       prefix: --min_supp
@@ -141,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum SV size to detect (default: 50)'
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_sv_size
@@ -169,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: 'Thread numbers (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --process_num

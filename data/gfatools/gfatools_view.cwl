@@ -54,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: subset radius (effective with -l)
-    default: 0
     inputBinding:
       position: 102
       prefix: -r
@@ -63,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: verbose level
-    default: 2
     inputBinding:
       position: 102
       prefix: -v

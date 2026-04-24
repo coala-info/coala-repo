@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: apply Hamming-2 correction [off]
-    default: false
     inputBinding:
       position: 102
       prefix: -h
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: number of barcode buckets to make
-    default: 500
     inputBinding:
       position: 102
       prefix: -n
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: output BX:Z-formatted FASTQs [off]
-    default: false
     inputBinding:
       position: 102
       prefix: -b
@@ -65,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: set number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: -t

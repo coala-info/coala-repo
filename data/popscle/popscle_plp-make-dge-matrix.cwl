@@ -10,7 +10,6 @@ inputs:
       - boolean
     doc: Load only common gene types, searching for specific gene types - 
       protein_coding, lincRNA, antisense, IG_ and TR_ genes
-    default: false
     inputBinding:
       position: 101
       prefix: --common-gene-types
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Create genes and transcripts if not exist in GTF
-    default: false
     inputBinding:
       position: 101
       prefix: --create-gene-transcript
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add 'chr' prefix from input GTF file
-    default: false
     inputBinding:
       position: 101
       prefix: --gtf-add-chr
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove 'chr' prefix from input GTF file
-    default: false
     inputBinding:
       position: 101
       prefix: --gtf-remove-chr
@@ -72,7 +68,6 @@ inputs:
       - int
     doc: Minimum number of SNPs with coverage for a droplet/cell to be 
       considered
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-snp
@@ -81,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of total reads for a droplet/cell to be considered
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-total
@@ -91,7 +85,6 @@ inputs:
       - int
     doc: Minimum number of unique reads (determined by UMI/SNP pair) for a 
       droplet/cell to be considered
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-uniq
@@ -108,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: Bin size to uniquely count a UMI into a single gene
-    default: 1000000000
     inputBinding:
       position: 101
       prefix: --uniq-bin
@@ -118,7 +110,6 @@ inputs:
       - int
     doc: 'Turn on verbose mode with specific verbosity threshold. 0: fully verbose,
       100 : no verbose messages'
-    default: 100
     inputBinding:
       position: 101
       prefix: --verbose

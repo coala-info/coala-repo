@@ -39,7 +39,6 @@ inputs:
       - type: array
         items: string
     doc: The reference assembly names.
-    default: first assembly in the BAM headers
     inputBinding:
       position: 103
       prefix: --names

@@ -29,7 +29,6 @@ inputs:
       - double
     doc: microsatellite sites with support from fewer than -d samples will not 
       pass quality control
-    default: 10
     inputBinding:
       position: 101
       prefix: -s

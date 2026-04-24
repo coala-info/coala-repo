@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Distance (bp) threshold to connect Cas operons and CRISPR arrays
-    default: 10000
     inputBinding:
       position: 103
       prefix: --ccd
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Max allowed number of unknown genes between cas genes in operon
-    default: 3
     inputBinding:
       position: 103
       prefix: --dist
@@ -73,7 +71,6 @@ inputs:
       - int
     doc: Expand operons with un-annotated genes. The value determines by how 
       many bp in each end to expand. 0 only fills gaps
-    default: 0
     inputBinding:
       position: 103
       prefix: --expand
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: kmer size. Has to match training kmer size!
-    default: 4
     inputBinding:
       position: 103
       prefix: --kmer
@@ -99,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level
-    default: INFO
     inputBinding:
       position: 103
       prefix: --log_lvl
@@ -108,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: MinCED option - Maximum repeat length
-    default: 47
     inputBinding:
       position: 103
       prefix: --maxRL
@@ -117,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: MinCED option - Maximum spacer length
-    default: 50
     inputBinding:
       position: 103
       prefix: --maxSL
@@ -126,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: MinCED option - Minimum number of repeats
-    default: 3
     inputBinding:
       position: 103
       prefix: --minNR
@@ -135,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: MinCED option - Minimum repeat length
-    default: 23
     inputBinding:
       position: 103
       prefix: --minRL
@@ -144,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: MinCED option - Minimum spacer length
-    default: 26
     inputBinding:
       position: 103
       prefix: --minSL
@@ -169,7 +159,6 @@ inputs:
       - 'null'
       - float
     doc: Overall HMM coverage threshold
-    default: 0.3
     inputBinding:
       position: 103
       prefix: --overall_cov_hmm
@@ -178,7 +167,6 @@ inputs:
       - 'null'
       - float
     doc: Overall sequence coverage threshold
-    default: 0.3
     inputBinding:
       position: 103
       prefix: --overall_cov_seq
@@ -187,7 +175,6 @@ inputs:
       - 'null'
       - float
     doc: Overall E-value threshold
-    default: 0.01
     inputBinding:
       position: 103
       prefix: --overall_eval
@@ -196,7 +183,6 @@ inputs:
       - 'null'
       - float
     doc: Prediction probability cut-off for assigning subtype to CRISPR repeats
-    default: 0.75
     inputBinding:
       position: 103
       prefix: --pred_prob
@@ -205,7 +191,6 @@ inputs:
       - 'null'
       - string
     doc: Which mode to run prodigal in
-    default: single
     inputBinding:
       position: 103
       prefix: --prodigal
@@ -223,7 +208,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum average sequence identity between repeats for trusted arrays
-    default: 70
     inputBinding:
       position: 103
       prefix: --repeat_id
@@ -232,7 +216,6 @@ inputs:
       - 'null'
       - int
     doc: 'MinCED option - Length of search window. Range: 6-9'
-    default: 8
     inputBinding:
       position: 103
       prefix: --searchWL
@@ -241,7 +224,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for sampling when estimating CRISPR stats (see argument above)
-    default: 42
     inputBinding:
       position: 103
       prefix: --seed
@@ -266,7 +248,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum average sequence identity between spacers for trusted arrays
-    default: 55
     inputBinding:
       position: 103
       prefix: --spacer_id
@@ -275,7 +256,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum spacer length standard error of the mean for trusted arrays
-    default: 3.5
     inputBinding:
       position: 103
       prefix: --spacer_sem
@@ -284,7 +264,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel processes
-    default: 4
     inputBinding:
       position: 103
       prefix: --threads

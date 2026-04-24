@@ -56,7 +56,6 @@ inputs:
       - Directory
     doc: Path to the directory the FTPs will be saved in, e.g. 
       path/to/directory.
-    default: Current working directory.
     inputBinding:
       position: 102
       prefix: --out_dir
@@ -74,7 +73,6 @@ inputs:
       - int
     doc: 'Ensembl release the FTPs will be fetched from, e.g. 104 (default: latest
       Ensembl release).'
-    default: latest Ensembl release
     inputBinding:
       position: 102
       prefix: --release
@@ -102,7 +100,6 @@ inputs:
       corresponding to non-coding RNA genes (ncRNA).\n                        'pep'
       - Returns the protein translations of Ensembl genes.\n                     \
       \   Example: '-w dna,gtf' (default: all)"
-    default: all
     inputBinding:
       position: 102
       prefix: --which

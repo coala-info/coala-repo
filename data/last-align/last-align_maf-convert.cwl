@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: line length for blast and html formats
-    default: 60
     inputBinding:
       position: 103
       prefix: --linesize

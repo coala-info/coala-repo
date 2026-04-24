@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: Weight for length
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --length_weight
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: Weight for mean quality
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --mean_q_weight
@@ -104,7 +102,6 @@ inputs:
       - 'null'
       - float
     doc: Weight for window quality
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --window_q_weight

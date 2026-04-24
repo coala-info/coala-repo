@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: Action to take on ambiguous base in sequence (N's).
-    default: no action
     inputBinding:
       position: 103
       prefix: --ambiguous-action
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: Barcodes have a header row
-    default: false
     inputBinding:
       position: 103
       prefix: --barcode-header
@@ -68,7 +66,6 @@ inputs:
       - int
     doc: Maximum length to keep before truncating. This operation occurs before 
       --max-ambiguous
-    default: 1000
     inputBinding:
       position: 103
       prefix: --max-length
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length to keep sequence
-    default: 200
     inputBinding:
       position: 103
       prefix: --min-length
@@ -86,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum mean quality score for each read
-    default: 25.0
     inputBinding:
       position: 103
       prefix: --min-mean-quality
@@ -130,7 +125,6 @@ inputs:
     doc: Window size for truncating sequences. When set to a non-zero value, 
       sequences are truncated where the mean mean quality within the window 
       drops below --min-mean-quality.
-    default: 0
     inputBinding:
       position: 103
       prefix: --quality-window
@@ -147,7 +141,6 @@ inputs:
       - 'null'
       - float
     doc: Proportion of reads within quality window to that must pass filter.
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --quality-window-prop
@@ -157,7 +150,6 @@ inputs:
       - string
     doc: A string naming an attribute of the csv module defining the quoting 
       behavior for `SAMPLE_MAP`.
-    default: QUOTE_MINIMAL
     inputBinding:
       position: 103
       prefix: --quoting

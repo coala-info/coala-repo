@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include k-mers with r <= LSH(x) mod m.
-    default: true
     inputBinding:
       position: 101
       prefix: --frac
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Length of k-mers.
-    default: 29
     inputBinding:
       position: 101
       prefix: --kmer-len
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Mudulo value to partition LSH space.
-    default: 4
     inputBinding:
       position: 101
       prefix: --modulo-lsh
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include k-mers with r <= LSH(x) mod m.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-frac
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Number of positions for the LSH.
-    default: k-16
     inputBinding:
       position: 101
       prefix: --num-positions
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: A k-mer x will be included only if r = LSH(x) mod m.
-    default: 1
     inputBinding:
       position: 101
       prefix: --residue-lsh
@@ -83,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: 'SDUST threshold (NCBI dustmasker: 20).'
-    default: 0
     inputBinding:
       position: 101
       prefix: --sdust-t
@@ -92,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: 'SDUST window (NCBI dustmasker: 64).'
-    default: 0
     inputBinding:
       position: 101
       prefix: --sdust-w
@@ -101,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Length of minimizer window (w>k).
-    default: k+6
     inputBinding:
       position: 101
       prefix: --win-len

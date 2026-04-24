@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Whether output should be colored.
-    default: auto
     inputBinding:
       position: 102
       prefix: --color
@@ -55,7 +54,6 @@ inputs:
       with zero occupancy - hyd - Remove hydrogen atoms - oxt - Remove terminal oxygens
       - nonstd - Remove all residues not one of the 20 standard amino acids - unk
       - Remove unknown atoms not following the nomenclature'
-    default: hyd
     inputBinding:
       position: 102
       prefix: --rm

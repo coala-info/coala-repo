@@ -79,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: n = no of iterations to compute the global maximum
-    default: 10
     inputBinding:
       position: 103
   - id: iterations_before_plateau
@@ -96,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: n = no of iterations to compute the local maximum
-    default: 500
     inputBinding:
       position: 103
   - id: markov_chain_degree
@@ -105,7 +103,6 @@ inputs:
       - int
     doc: degree of Markov chain used to generate the random file used to test 
       the significance of the motif
-    default: 2
     inputBinding:
       position: 103
       prefix: -n
@@ -155,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: n = no of iterations to compute significance of motif
-    default: 1000
     inputBinding:
       position: 103
   - id: test_matrix_file

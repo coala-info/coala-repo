@@ -13,7 +13,6 @@ inputs:
     doc: A comma separated list of error probabilities for each Hamming 
       distance. The length of the list determines the number of Hamming 
       distances taken into account.
-    default: 1, 0.06, 0.02, 0.02, 0.01, 0.005, 0.005, 0.005, 0.001, 0.001, 
       0.001, 0.0005
     inputBinding:
       position: 101
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of allowed indels.
-    default: 3
     inputBinding:
       position: 101
       prefix: --indel-max
@@ -33,7 +31,6 @@ inputs:
       - float
     doc: Insertion/deletion (indel) probability. This probability consistent for
       multiple indels; there is not an added elongation penalty.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --indel-prob
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Number of jobs to start (if to run in parallel)
-    default: 1
     inputBinding:
       position: 101
       prefix: --jobs-to-start
@@ -69,7 +65,6 @@ inputs:
       - int
     doc: Trim the first N bases from every sequence. A value of 0 disables this 
       trim.
-    default: 0
     inputBinding:
       position: 101
       prefix: --left-trim-length
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - File
     doc: log file name
-    default: deblur.log
     inputBinding:
       position: 101
       prefix: --log-file
@@ -87,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Level of messages for log file(range 1-debug to 5-critical
-    default: 2
     inputBinding:
       position: 101
       prefix: --log-level
@@ -97,7 +90,6 @@ inputs:
       - float
     doc: The mean per nucleotide error rate, used for original sequence 
       estimate. If not passed typical illumina error rate is used.
-    default: 0.005
     inputBinding:
       position: 101
       prefix: --mean-error
@@ -107,7 +99,6 @@ inputs:
       - int
     doc: Keep only the sequences which appear at least min-reads study wide (as 
       opposed to per-sample).
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-reads
@@ -117,7 +108,6 @@ inputs:
       - int
     doc: Keep only sequences which appear at least min-size times per-sample (as
       opposed to study wide).
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-size
@@ -195,7 +185,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use per sample (0 to use all)
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads-per-sample

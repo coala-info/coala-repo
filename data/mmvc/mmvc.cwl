@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - float
     doc: Fraction of the MCMC chain to discard as burn-in
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --burnin-fraction
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Length of the MCMC chain
-    default: 2000000
     inputBinding:
       position: 102
       prefix: --chain-length
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Grid density for the multinomial model
-    default: 10
     inputBinding:
       position: 102
       prefix: --grid-density
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum posterior probability for a variant call
-    default: 0.95
     inputBinding:
       position: 102
       prefix: --posterior-threshold
@@ -66,7 +62,6 @@ inputs:
       - 'null'
       - float
     doc: Target variant rate
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --target-rate

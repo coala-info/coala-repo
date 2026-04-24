@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: minimum overlap required between two reads
-    default: 45
     inputBinding:
       position: 102
       prefix: --min-overlap
@@ -61,7 +60,6 @@ inputs:
     doc: sample the symbol counts every N symbols in the FM-index. Higher values
       use significantly less memory at the cost of higher runtime. This value 
       must be a power of 2
-    default: 128
     inputBinding:
       position: 102
       prefix: --sample-rate

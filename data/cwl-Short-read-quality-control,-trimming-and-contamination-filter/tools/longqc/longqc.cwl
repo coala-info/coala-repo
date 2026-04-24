@@ -43,7 +43,6 @@ arguments:
 inputs:
   threads:
     type: int?
-    default: 4 #or it complains about needing 4 or higher
     inputBinding:
       prefix: --ncpu
   output_dir:

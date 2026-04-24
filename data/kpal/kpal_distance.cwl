@@ -52,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: choose distance function
-    default: default
     inputBinding:
       position: 103
       prefix: --distance
@@ -61,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: paiwise distance function for the multiset distance
-    default: prod
     inputBinding:
       position: 103
       prefix: --pairwise-distance
@@ -78,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: precision in number of decimals
-    default: 10
     inputBinding:
       position: 103
       prefix: -n
@@ -131,7 +128,6 @@ inputs:
       - 'null'
       - string
     doc: summary function for dynamic smoothing
-    default: min
     inputBinding:
       position: 103
       prefix: -s
@@ -140,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: threshold for the summary function
-    default: 0
     inputBinding:
       position: 103
       prefix: -t

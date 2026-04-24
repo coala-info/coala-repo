@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Dots-per-inch (DPI) for the output.
-    default: 300
     inputBinding:
       position: 101
       prefix: --dpi
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: Figure type for the plot. e.g. --figtype svg.
-    default: pdf
     inputBinding:
       position: 101
       prefix: --figtype
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use file names as labels instead.
-    default: false
     inputBinding:
       position: 101
       prefix: --filenames
@@ -65,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: Color of the main bar plot.
-    default: '#ea5d4e'
     inputBinding:
       position: 101
       prefix: --mbcolor
@@ -74,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: The y-axis label of the intersection size bars.
-    default: No. of Intersections
     inputBinding:
       position: 101
       prefix: --mblabel
@@ -92,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Number of top intersections to show in plot.
-    default: 30
     inputBinding:
       position: 101
       prefix: --ninter
@@ -101,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: The order of intersections of sets. e.g. --order degree.
-    default: freq
     inputBinding:
       position: 101
       prefix: --order
@@ -110,7 +103,6 @@ inputs:
       - 'null'
       - string
     doc: Minimum threshold to save the overlapping regions/names as bed/txt.
-    default: '1'
     inputBinding:
       position: 101
       prefix: --overlap-thresh
@@ -119,7 +111,6 @@ inputs:
       - 'null'
       - string
     doc: Project name for the output.
-    default: Intervene
     inputBinding:
       position: 101
       prefix: --project
@@ -128,7 +119,6 @@ inputs:
       - 'null'
       - boolean
     doc: Save overlapping regions/names for all the combinations as bed/txt.
-    default: false
     inputBinding:
       position: 101
       prefix: --save-overlaps
@@ -137,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: Color of the set size bar plot.
-    default: '#317eab'
     inputBinding:
       position: 101
       prefix: --sbcolor
@@ -146,7 +135,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set to generate Rscript only, if R/UpSetR package is not installed.
-    default: false
     inputBinding:
       position: 101
       prefix: --scriptonly
@@ -155,7 +143,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print the combinations of intersections to input to Shiny App.
-    default: false
     inputBinding:
       position: 101
       prefix: --showshiny
@@ -164,7 +151,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show intersection sizes above bars.
-    default: true
     inputBinding:
       position: 101
       prefix: --showsize
@@ -173,7 +159,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show empty intersection combinations.
-    default: false
     inputBinding:
       position: 101
       prefix: --showzero
@@ -182,7 +167,6 @@ inputs:
       - 'null'
       - string
     doc: The x-axis label of the set size bars.
-    default: Set size
     inputBinding:
       position: 101
       prefix: --sxlabel
@@ -199,7 +183,6 @@ inputs:
       - 'null'
       - string
     doc: Type of input sets. Genomic regions or lists of genes/SNPs sets.
-    default: genomic
     inputBinding:
       position: 101
       prefix: --type

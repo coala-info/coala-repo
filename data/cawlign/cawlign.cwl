@@ -21,7 +21,6 @@ inputs:
       align sequences in the protein space;\n                           codon: align
       sequences in the codon space (reference must be in frame; stop codons are defined
       in the scoring file);"
-    default: nucleotide
     inputBinding:
       position: 102
       prefix: -t
@@ -39,7 +38,6 @@ inputs:
       to the reference and DOES retain instertions relative to the reference;\n  \
       \                                    no MSA is generated, but rather pair-wise
       alignments are all reported (2x the number of sequences);"
-    default: refmap
     inputBinding:
       position: 102
       prefix: -f
@@ -60,7 +58,6 @@ inputs:
       : full string alignment; all gaps in the alignments are scored the same\n  \
       \                         local  : partial string local (smith-waterman type)
       alignment which maximizes the alignment score"
-    default: trim
     inputBinding:
       position: 102
       prefix: -l
@@ -96,7 +93,6 @@ inputs:
       the reference, select the one with the highest score and report it\n       \
       \                                 annotate sequences whose reverse complements
       were reported in the FASTA by appending '|RC' to the sequence name;"
-    default: none
     inputBinding:
       position: 102
       prefix: -R
@@ -122,7 +118,6 @@ inputs:
       matrix (NxM);\n                           linear    : use the divide and conquer
       recursion to keep only 6 columns in memory (~ max (N,M));\n                \
       \                       NOT IMPLEMENTED FOR CODON DATA"
-    default: quadratic
     inputBinding:
       position: 102
       prefix: -S

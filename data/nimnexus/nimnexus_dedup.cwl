@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: number of BAM decompression threads
-    default: 2
     inputBinding:
       position: 102
       prefix: --threads

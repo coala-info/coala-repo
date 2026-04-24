@@ -67,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bases from the ends of the DNA fragments to consider for PMD analysis.
-    default: 25
     inputBinding:
       position: 101
       prefix: --range
@@ -85,7 +84,6 @@ inputs:
       - float
     doc: PMD score threshold for filtering. Only reads with a score above this value
       will be output.
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --threshold

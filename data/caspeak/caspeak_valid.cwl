@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of assembled sequences
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-asb-seq
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of the MEI in the insert sequence
-    default: 80
     inputBinding:
       position: 101
       prefix: --min-inslen
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: minimum proportion of the MEI in the insert sequence
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --min-insprop
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - File
     doc: peak BED file
-    default: ./peak/peaks.bed
     inputBinding:
       position: 101
       prefix: --peak-bed
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: at most N reads are selected for assembly
-    default: 20
     inputBinding:
       position: 101
       prefix: --sample
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --thread
@@ -88,7 +82,6 @@ inputs:
       - 'null'
       - File
     doc: read FASTA file after trimming
-    default: ./peak/trimmed_reads.fasta
     inputBinding:
       position: 101
       prefix: --trim-read
@@ -113,7 +106,6 @@ inputs:
       - 'null'
       - Directory
     doc: working directory
-    default: current directory
     inputBinding:
       position: 101
       prefix: --workdir

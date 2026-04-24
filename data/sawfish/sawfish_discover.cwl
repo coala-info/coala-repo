@@ -33,7 +33,6 @@ inputs:
       - string
     doc: Regex used to select chromosomes for mean haploid coverage estimation. 
       All selected chromosomes are assumed diploid
-    default: ^(chr)?\d{1,2}$
     inputBinding:
       position: 101
       prefix: --cov-regex
@@ -130,7 +129,6 @@ inputs:
       greater to be included in the output. All other SV evidence patterns such 
       as those consistent with duplications, inversions and translocations will 
       always be included in the output
-    default: 35
     inputBinding:
       position: 101
       prefix: --min-indel-size
@@ -140,7 +138,6 @@ inputs:
       - int
     doc: Minimum MAPQ value for reads to be used in SV breakend finding. This 
       does not change depth analysis
-    default: 5
     inputBinding:
       position: 101
       prefix: --min-sv-mapq
@@ -149,7 +146,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for all discover command output (must not already exist)
-    default: sawfish_discover_output
     inputBinding:
       position: 101
       prefix: --output-dir

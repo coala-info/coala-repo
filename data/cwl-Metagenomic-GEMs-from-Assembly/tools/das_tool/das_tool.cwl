@@ -29,7 +29,6 @@ inputs:
   threads:
     type: int?
     label: Number of threads to use
-    default: 1
     inputBinding:
       position: 0
       prefix: --threads
@@ -59,14 +58,12 @@ inputs:
     label: Write bins
     inputBinding:
       prefix: --write_bins
-    default: true
   write_unbinned:
     type: boolean?
     doc: Export unbinned contigs as fasta file
     label: Write unbinned
     inputBinding:
       prefix: --write_unbinned
-    default: true
 
 arguments:
   - prefix: "-o"

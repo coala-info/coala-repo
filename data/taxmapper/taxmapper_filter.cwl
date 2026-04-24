@@ -11,7 +11,6 @@ inputs:
       - float
     doc: 'Automatic filter with probability threshold, if automatic filter is chosen
       all other thresholds will be ignored [nan or 0 - 1, default: 0.4]'
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --auto
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: 'Threshold for absolute difference in e-values [0 - 100, default: nan]'
-    default: nan
     inputBinding:
       position: 101
       prefix: --evalue-diff
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for log e-values of best hit
-    default: nan
     inputBinding:
       position: 101
       prefix: --evalue
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: 'Threshold for identity ratio [1 - 10, default: nan]'
-    default: nan
     inputBinding:
       position: 101
       prefix: --identity-ratio
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for identity of best hit
-    default: nan
     inputBinding:
       position: 101
       prefix: --identity

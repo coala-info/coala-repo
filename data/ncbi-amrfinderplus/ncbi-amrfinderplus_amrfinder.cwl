@@ -11,7 +11,6 @@ inputs:
       - string
     doc: 'Type of GFF file: bakta, genbank, microscope, patric, pgap, prodigal, prokka,
       pseudomonasdb, rast, standard'
-    default: genbank
     inputBinding:
       position: 101
       prefix: --annotation_format
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Directory for BLAST. Deafult: $BLAST_BIN'
-    default: $BLAST_BIN
     inputBinding:
       position: 101
       prefix: --blast_bin
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage of the reference protein (0..1)
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --coverage_min
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - Directory
     doc: Alternative directory with AMRFinder database.
-    default: $AMRFINDER_DB
     inputBinding:
       position: 101
       prefix: --database
@@ -98,7 +94,6 @@ inputs:
       - float
     doc: Minimum proportion of identical amino acids in alignment for hit 
       (0..1). -1 means use a curated threshold if it exists and 0.9 otherwise
-    default: -1
     inputBinding:
       position: 101
       prefix: --ident_min
@@ -149,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: 5' flanking sequence size for NUC_FLANK5_FASTA_OUT
-    default: 0
     inputBinding:
       position: 101
       prefix: --nucleotide_flank5_size
@@ -232,7 +226,6 @@ inputs:
       - 'null'
       - int
     doc: Max. number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -241,7 +234,6 @@ inputs:
       - 'null'
       - int
     doc: NCBI genetic code for translated BLAST
-    default: 11
     inputBinding:
       position: 101
       prefix: --translation_table

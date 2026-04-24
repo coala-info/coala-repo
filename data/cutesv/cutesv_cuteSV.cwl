@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Batch of genome segmentation interval.
-    default: 10000000
     inputBinding:
       position: 104
       prefix: --batches
@@ -37,7 +36,6 @@ inputs:
       - float
     doc: Filter breakpoints with basepair identity less than [0.6] for 
       translocation.
-    default: 0.6
     inputBinding:
       position: 104
       prefix: --diff_ratio_filtering_TRA
@@ -47,7 +45,6 @@ inputs:
       - float
     doc: Do not merge breakpoints with basepair identity more than [0.5] for 
       deletion.
-    default: 0.5
     inputBinding:
       position: 104
       prefix: --diff_ratio_merging_DEL
@@ -57,7 +54,6 @@ inputs:
       - float
     doc: Do not merge breakpoints with basepair identity more than [0.3] for 
       insertion.
-    default: 0.3
     inputBinding:
       position: 104
       prefix: --diff_ratio_merging_INS
@@ -75,7 +71,6 @@ inputs:
       - int
     doc: Maximum round of iteration for alignments searching if perform 
       genotyping.
-    default: 500
     inputBinding:
       position: 104
       prefix: --gt_round
@@ -92,7 +87,6 @@ inputs:
       - 'null'
       - File
     doc: Optional given bed file. Only detect SVs in regions in the BED file.
-    default: 'NULL'
     inputBinding:
       position: 104
       prefix: -include_bed
@@ -111,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance to cluster read together for deletion.
-    default: 200
     inputBinding:
       position: 104
       prefix: --max_cluster_bias_DEL
@@ -120,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance to cluster read together for duplication.
-    default: 500
     inputBinding:
       position: 104
       prefix: --max_cluster_bias_DUP
@@ -129,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance to cluster read together for insertion.
-    default: 100
     inputBinding:
       position: 104
       prefix: --max_cluster_bias_INS
@@ -138,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance to cluster read together for inversion.
-    default: 500
     inputBinding:
       position: 104
       prefix: --max_cluster_bias_INV
@@ -147,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance to cluster read together for translocation.
-    default: 50
     inputBinding:
       position: 104
       prefix: --max_cluster_bias_TRA
@@ -156,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum size of SV to be reported. All SVs are reported when using -1.
-    default: 100000
     inputBinding:
       position: 104
       prefix: --max_size
@@ -167,7 +155,6 @@ inputs:
     doc: Maximum number of split segments a read may be aligned before it is 
       ignored. All split segments are considered when using -1. (Recommand -1 
       when applying assembly-based alignment.)
-    default: 7
     inputBinding:
       position: 104
       prefix: --max_split_parts
@@ -177,7 +164,6 @@ inputs:
       - int
     doc: Maximum distance of deletion signals to be merged. In our paper, I used
       -md 500 to process HG002 real human sample data.
-    default: 0
     inputBinding:
       position: 104
       prefix: --merge_del_threshold
@@ -187,7 +173,6 @@ inputs:
       - int
     doc: Maximum distance of insertion signals to be merged. In our paper, I 
       used -mi 500 to process HG002 real human sample data.
-    default: 100
     inputBinding:
       position: 104
       prefix: --merge_ins_threshold
@@ -196,7 +181,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality value of alignment to be taken into account.
-    default: 20
     inputBinding:
       position: 104
       prefix: --min_mapq
@@ -205,7 +189,6 @@ inputs:
       - 'null'
       - int
     doc: Ignores reads that only report alignments with not longer than bp.
-    default: 500
     inputBinding:
       position: 104
       prefix: --min_read_len
@@ -214,7 +197,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of SV signal to be extracted.
-    default: 10
     inputBinding:
       position: 104
       prefix: --min_siglength
@@ -223,7 +205,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of SV to be reported.
-    default: 30
     inputBinding:
       position: 104
       prefix: --min_size
@@ -232,7 +213,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads that support a SV to be reported.
-    default: 10
     inputBinding:
       position: 104
       prefix: --min_support
@@ -241,7 +221,6 @@ inputs:
       - 'null'
       - int
     doc: The interval range for counting reads distribution.
-    default: 1000
     inputBinding:
       position: 104
       prefix: --read_range
@@ -251,7 +230,6 @@ inputs:
       - float
     doc: The ratio of reads remained in cluster. Set lower when the alignment 
       data have high quality but recommand over 0.5.
-    default: 1.0
     inputBinding:
       position: 104
       prefix: --remain_reads_ratio
@@ -284,7 +262,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 16
     inputBinding:
       position: 104
       prefix: --threads

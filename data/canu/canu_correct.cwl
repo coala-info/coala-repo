@@ -116,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore read-to-read overlaps shorter than 'number' bases long.
-    default: 500
     inputBinding:
       position: 103
   - id: min_read_length
@@ -124,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore reads shorter than 'number' bases long.
-    default: 1000
     inputBinding:
       position: 103
   - id: nanopore
@@ -190,7 +188,6 @@ inputs:
       - string
     doc: Run under grid control (true), locally (false), or set up for grid 
       control but don't submit any jobs (remote)
-    default: 'false'
     inputBinding:
       position: 103
 outputs:

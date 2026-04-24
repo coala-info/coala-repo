@@ -23,7 +23,6 @@ inputs:
     doc: Alternative approach for discarding outliers prior to calculating mean and
       stdev. If provided, this argument will override --trim. User should provide
       the high density interval (e.g., 0.95).
-    default: 0
     inputBinding:
       position: 101
       prefix: --hdi
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads to use for analyses.
-    default: 2
     inputBinding:
       position: 101
       prefix: --num_threads
@@ -50,7 +48,6 @@ inputs:
       - float
     doc: Percentile of lowest and highest counts within a bin to ignore when calculating
       the mean and standard deviation. This value must be in the range [0.00,100.0].
-    default: 2.5
     inputBinding:
       position: 101
       prefix: --trim

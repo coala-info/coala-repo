@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Custom config file
-    default: config.yaml
     inputBinding:
       position: 102
       prefix: --configfile
@@ -86,7 +85,6 @@ inputs:
       - 'null'
       - string
     doc: Flye Assembly Parameter
-    default: --nano-hq
     inputBinding:
       position: 102
       prefix: --flyeModel
@@ -104,7 +102,6 @@ inputs:
       - 'null'
       - string
     doc: Medaka Model.
-    default: r1041_e82_400bps_sup_v5.0.0
     inputBinding:
       position: 102
       prefix: --medakaModel
@@ -125,7 +122,6 @@ inputs:
       Hybracter will error and exit if a sample has less than 
       min_depth*chromosome_size bases of long-reads left AFTER filtlong and 
       porechop-ABI steps are run.
-    default: 0
     inputBinding:
       position: 102
       prefix: --min_depth
@@ -134,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: min read length for long reads
-    default: 1000
     inputBinding:
       position: 102
       prefix: --min_length
@@ -143,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: min read quality score for long reads in bp.
-    default: 9
     inputBinding:
       position: 102
       prefix: --min_quality
@@ -168,7 +162,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: hybracter_out
     inputBinding:
       position: 102
       prefix: --output
@@ -185,7 +178,6 @@ inputs:
       - 'null'
       - string
     doc: Customise Snakemake runtime args
-    default: --rerun-incomplete, --printshellcmds, --nolock, --show-failed-logs,
       --conda-frontend conda
     inputBinding:
       position: 102
@@ -196,7 +188,6 @@ inputs:
       - int
     doc: subsampled long read depth to subsample with Filtlong. By default is 
       100x.
-    default: 100
     inputBinding:
       position: 102
       prefix: --subsample_depth
@@ -205,7 +196,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -214,7 +204,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use conda for Snakemake rules
-    default: true
     inputBinding:
       position: 102
       prefix: --use-conda

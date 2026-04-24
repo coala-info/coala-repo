@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: Set the logging level (e.g., DEBUG, INFO, WARNING, ERROR).
-    default: INFO
     inputBinding:
       position: 102
       prefix: --log-level
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use the new parser for ISA-Tab files.
-    default: true
     inputBinding:
       position: 102
       prefix: --new-parser
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: Validate ISA-Tab files before conversion.
-    default: false
     inputBinding:
       position: 102
       prefix: --validate

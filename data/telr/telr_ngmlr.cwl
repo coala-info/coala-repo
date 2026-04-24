@@ -11,7 +11,6 @@ inputs:
       - boolean
     doc: Report reads with > 64k CIGAR operations as unmapped. Required to be 
       compatibel to BAM format
-    default: false
     inputBinding:
       position: 101
       prefix: --bam-fix
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the size of the grid used during candidate search
-    default: 4
     inputBinding:
       position: 101
       prefix: --bin-size
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: Gap extend decay
-    default: 0.15
     inputBinding:
       position: 101
       prefix: --gap-decay
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: Gap open extend max
-    default: -5
     inputBinding:
       position: 101
       prefix: --gap-extend-max
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: Gap open extend min
-    default: -1
     inputBinding:
       position: 101
       prefix: --gap-extend-min
@@ -56,7 +51,6 @@ inputs:
       - 'null'
       - float
     doc: Gap open score
-    default: -5
     inputBinding:
       position: 101
       prefix: --gap-open
@@ -65,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer length in bases
-    default: 13
     inputBinding:
       position: 101
       prefix: --kmer-length
@@ -75,7 +68,6 @@ inputs:
       - int
     doc: Number of k-mers to skip when building the lookup table from the 
       reference
-    default: 2
     inputBinding:
       position: 101
       prefix: --kmer-skip
@@ -84,7 +76,6 @@ inputs:
       - 'null'
       - float
     doc: Match score
-    default: 2
     inputBinding:
       position: 101
       prefix: --match
@@ -93,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of segments allowed for a read per kb
-    default: 1
     inputBinding:
       position: 101
       prefix: --max-segments
@@ -102,7 +92,6 @@ inputs:
       - 'null'
       - float
     doc: Alignments with an identity lower than this threshold will be discarded
-    default: 0.65
     inputBinding:
       position: 101
       prefix: --min-identity
@@ -112,7 +101,6 @@ inputs:
       - float
     doc: Alignments containing less than <int> or (<float> * read length) 
       residues will be discarded
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --min-residues
@@ -121,7 +109,6 @@ inputs:
       - 'null'
       - float
     doc: Mismatch score
-    default: -5
     inputBinding:
       position: 101
       prefix: --mismatch
@@ -130,7 +117,6 @@ inputs:
       - 'null'
       - boolean
     doc: Split alignments with poor quality
-    default: false
     inputBinding:
       position: 101
       prefix: --no-lowqualitysplit
@@ -139,7 +125,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't print progress info while mapping
-    default: false
     inputBinding:
       position: 101
       prefix: --no-progress
@@ -148,7 +133,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't detect small inversions
-    default: false
     inputBinding:
       position: 101
       prefix: --no-smallinv
@@ -157,7 +141,6 @@ inputs:
       - 'null'
       - string
     doc: Parameter presets for different sequencing technologies
-    default: pacbio
     inputBinding:
       position: 101
       prefix: --presets
@@ -166,7 +149,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the read file (FASTA/Q)
-    default: /dev/stdin
     inputBinding:
       position: 101
       prefix: --query
@@ -181,7 +163,6 @@ inputs:
       - 'null'
       - string
     doc: 'RG header: sequencing center'
-    default: none
     inputBinding:
       position: 101
       prefix: --rg-cn
@@ -190,7 +171,6 @@ inputs:
       - 'null'
       - string
     doc: 'RG header: Description'
-    default: none
     inputBinding:
       position: 101
       prefix: --rg-ds
@@ -199,7 +179,6 @@ inputs:
       - 'null'
       - string
     doc: 'RG header: Date (format: YYYY-MM-DD)'
-    default: none
     inputBinding:
       position: 101
       prefix: --rg-dt
@@ -208,7 +187,6 @@ inputs:
       - 'null'
       - string
     doc: 'RG header: Flow order'
-    default: none
     inputBinding:
       position: 101
       prefix: --rg-fo
@@ -217,7 +195,6 @@ inputs:
       - 'null'
       - string
     doc: Adds RG:Z:<string> to all alignments in SAM/BAM
-    default: none
     inputBinding:
       position: 101
       prefix: --rg-id
@@ -226,7 +203,6 @@ inputs:
       - 'null'
       - string
     doc: 'RG header: Key sequence'
-    default: none
     inputBinding:
       position: 101
       prefix: --rg-ks
@@ -235,7 +211,6 @@ inputs:
       - 'null'
       - string
     doc: 'RG header: Library'
-    default: none
     inputBinding:
       position: 101
       prefix: --rg-lb
@@ -244,7 +219,6 @@ inputs:
       - 'null'
       - string
     doc: 'RG header: Programs'
-    default: none
     inputBinding:
       position: 101
       prefix: --rg-pg
@@ -253,7 +227,6 @@ inputs:
       - 'null'
       - string
     doc: 'RG header: Median insert size'
-    default: none
     inputBinding:
       position: 101
       prefix: --rg-pi
@@ -262,7 +235,6 @@ inputs:
       - 'null'
       - string
     doc: 'RG header: Platform'
-    default: none
     inputBinding:
       position: 101
       prefix: --rg-pl
@@ -271,7 +243,6 @@ inputs:
       - 'null'
       - string
     doc: 'RG header: Platform unit'
-    default: none
     inputBinding:
       position: 101
       prefix: --rg-pu
@@ -280,7 +251,6 @@ inputs:
       - 'null'
       - string
     doc: 'RG header: Sample'
-    default: none
     inputBinding:
       position: 101
       prefix: --rg-sm
@@ -289,7 +259,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't write reference index to disk
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-write
@@ -298,7 +267,6 @@ inputs:
       - 'null'
       - int
     doc: Length of corridor sub-reads are aligned with
-    default: 40
     inputBinding:
       position: 101
       prefix: --subread-corridor
@@ -307,7 +275,6 @@ inputs:
       - 'null'
       - int
     doc: Length of fragments reads are split into
-    default: 256
     inputBinding:
       position: 101
       prefix: --subread-length
@@ -316,7 +283,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -325,7 +291,6 @@ inputs:
       - 'null'
       - boolean
     doc: Debug output
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

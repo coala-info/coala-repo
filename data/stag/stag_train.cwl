@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: threshold for the number of features per sequence (percentage)
-    default: 0
     inputBinding:
       position: 101
       prefix: -m
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: penalty for the logistic regression
-    default: l1
     inputBinding:
       position: 101
       prefix: -e
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: solver for the logistic regression
-    default: liblinear
     inputBinding:
       position: 101
       prefix: -E
@@ -88,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -105,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: 'verbose level: 1=error, 2=warning, 3=message, 4+=debugging'
-    default: 3
     inputBinding:
       position: 101
       prefix: -v

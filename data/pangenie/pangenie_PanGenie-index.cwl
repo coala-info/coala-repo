@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: size of hash used by jellyfish
-    default: 3000000000
     inputBinding:
       position: 101
       prefix: -e
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: kmer size
-    default: 31
     inputBinding:
       position: 101
       prefix: -k
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use for kmer-counting
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

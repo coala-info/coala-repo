@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Set Bloom filter size to pow(2,INT) bits.
-    default: 33
     inputBinding:
       position: 103
       prefix: -b
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - File
     doc: Dump hash table to FILE.
-    default: 'null'
     inputBinding:
       position: 103
       prefix: -d
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: Approximate genome size (k/m/g allowed; change -k and -b).
-    default: unset
     inputBinding:
       position: 103
       prefix: -s
@@ -65,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Use INT hash functions for Bloom filter.
-    default: 4
     inputBinding:
       position: 103
       prefix: -H
@@ -74,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length.
-    default: 33
     inputBinding:
       position: 103
       prefix: -k
@@ -83,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum k-mer coverage.
-    default: 3
     inputBinding:
       position: 103
       prefix: -c
@@ -100,7 +94,6 @@ inputs:
       - 'null'
       - File
     doc: Restore hash table from FILE.
-    default: 'null'
     inputBinding:
       position: 103
       prefix: -r
@@ -117,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 1
     inputBinding:
       position: 103
       prefix: -t
@@ -126,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: No more than 5 ec or 2 highQ ec in INT-bp window.
-    default: 10
     inputBinding:
       position: 103
       prefix: -w

@@ -54,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: 'desert size (default: 20000)'
-    default: 20000
     inputBinding:
       position: 102
       prefix: -desert
@@ -63,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: 'expected domain size (default: 20000)'
-    default: 20000
     inputBinding:
       position: 102
       prefix: -domain-size

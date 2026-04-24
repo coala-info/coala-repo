@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory
-    default: running directory
     inputBinding:
       position: 103
       prefix: --outdir
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: basename of output files
-    default: RD-Analyzer
     inputBinding:
       position: 103
       prefix: --output

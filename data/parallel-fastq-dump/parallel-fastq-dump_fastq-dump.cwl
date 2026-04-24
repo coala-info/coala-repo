@@ -156,7 +156,6 @@ inputs:
       - string
     doc: Logging level as number or enum string. One of (fatal|sys|int|err|warn|info|debug)
       or (0-6)
-    default: warn
     inputBinding:
       position: 102
       prefix: --log-level
@@ -206,7 +205,6 @@ inputs:
       - 'null'
       - int
     doc: Offset to use for quality conversion
-    default: 33
     inputBinding:
       position: 102
       prefix: --offset
@@ -339,7 +337,6 @@ inputs:
       - 'null'
       - string
     doc: Table name within cSRA object
-    default: SEQUENCE
     inputBinding:
       position: 102
       prefix: --table

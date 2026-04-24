@@ -58,7 +58,6 @@ inputs:
       - int
     doc: "Provide threshold for maximum read-depth per amplicon\nas integer value.
       [default=200]"
-    default: 200
     inputBinding:
       position: 101
       prefix: --max_cov
@@ -68,7 +67,6 @@ inputs:
       - File
     doc: "Provide path to json-file containing a naming scheme\nwhich is consistently
       used for all\nprimers.[default=artic_nCoV_scheme_v5.3.2]"
-    default: artic_nCoV_scheme_v5.3.2
     inputBinding:
       position: 101
       prefix: --name_scheme
@@ -106,7 +104,6 @@ inputs:
       - 'null'
       - string
     doc: "Specify long-read sequencing technology (ont/pb).\n[default=ont]"
-    default: ont
     inputBinding:
       position: 101
       prefix: --seq_tec
@@ -115,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: "Set length of tolerance margins for sorting of\nmappings to amplicons. [default=5]"
-    default: 5
     inputBinding:
       position: 101
       prefix: --set_margins

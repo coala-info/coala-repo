@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Split sequences into N-bp windows (0=no chunking)
-    default: 0
     inputBinding:
       position: 101
       prefix: --chunk-size
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Treat each FASTA record as circular
-    default: false
     inputBinding:
       position: 101
       prefix: --circular
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Emit product sequences
-    default: false
     inputBinding:
       position: 101
       prefix: --products
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Max matches stored per primer/window (0=unlimited)
-    default: 10000
     inputBinding:
       position: 101
       prefix: --hit-cap
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum product length
-    default: 2000
     inputBinding:
       position: 101
       prefix: --max-length
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum product length
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-length
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Max mismatches allowed per primer
-    default: 0
     inputBinding:
       position: 101
       prefix: --mismatches
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - boolean
     doc: Suppress header line
-    default: false
     inputBinding:
       position: 101
       prefix: --no-header
@@ -95,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Exit code when no amplicons found
-    default: 0
     inputBinding:
       position: 101
       prefix: --no-match-exit-code
@@ -104,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output: text | json | jsonl | fasta'
-    default: text
     inputBinding:
       position: 101
       prefix: --output
@@ -113,7 +103,6 @@ inputs:
       - 'null'
       - boolean
     doc: Pretty ASCII alignment block (text)
-    default: false
     inputBinding:
       position: 101
       prefix: --pretty
@@ -130,7 +119,6 @@ inputs:
       - 'null'
       - boolean
     doc: Suppress non-essential warnings
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -145,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: Seed length for multi-pattern scan (0=auto)
-    default: 12
     inputBinding:
       position: 101
       prefix: --seed-length
@@ -154,7 +141,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow single-oligo amplification (A×rc(A), B×rc(B))
-    default: true
     inputBinding:
       position: 101
       prefix: --self
@@ -172,7 +158,6 @@ inputs:
       - 'null'
       - boolean
     doc: Sort outputs deterministically
-    default: false
     inputBinding:
       position: 101
       prefix: --sort
@@ -181,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: 3' terminal window (N<1 disables)
-    default: 3
     inputBinding:
       position: 101
       prefix: --terminal-window
@@ -190,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: Worker threads (0=all CPUs)
-    default: 0
     inputBinding:
       position: 101
       prefix: --threads

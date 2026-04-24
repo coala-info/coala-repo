@@ -20,7 +20,6 @@ inputs:
     doc: '[DEPRECATED; not supported for BAM input] Align native reads to reference
       to avoid real SNP positions. Only use when expecting sequence heterogeneity
       in sample (i.e. mtDNA).'
-    default: false
     inputBinding:
       position: 102
       prefix: --align
@@ -38,7 +37,6 @@ inputs:
       - int
     doc: Number of bases 3' of a CCS-detected, molecule-level SNP to skip in 
       analysis (only when using --align)
-    default: 10
     inputBinding:
       position: 102
       prefix: --downstreamSkip
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Number of left bp to exclude around subread-level alignment errors
-    default: 1
     inputBinding:
       position: 102
       prefix: --leftAnchor
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: Write logging to file
-    default: log.out
     inputBinding:
       position: 102
       prefix: --logFile
@@ -73,7 +69,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum accuracy of a subread to analyze
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --minAcc
@@ -82,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of a subread to analyze
-    default: 100
     inputBinding:
       position: 102
       prefix: --minSubreadLen
@@ -112,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: Per mol/strand coverage threshold below which to ignore molecules
-    default: 10
     inputBinding:
       position: 102
       prefix: --nativeCovThresh
@@ -129,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors to use
-    default: 4
     inputBinding:
       position: 102
       prefix: --procs
@@ -138,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: Number of right bp to exclude around subread-level alignment errors
-    default: 1
     inputBinding:
       position: 102
       prefix: --rightAnchor
@@ -148,7 +139,6 @@ inputs:
       - boolean
     doc: Use long-library epigenetic phasing protocol (pool IPDs from each 
       subread).
-    default: false
     inputBinding:
       position: 102
       prefix: --SMp
@@ -157,7 +147,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use short-library, single-nucleotide detection protocol.
-    default: false
     inputBinding:
       position: 102
       prefix: --SMsn
@@ -167,7 +156,6 @@ inputs:
       - int
     doc: Number of bases 5' of a CCS-detected, molecule-level SNP to skip in 
       analysis (only when using --align)
-    default: 10
     inputBinding:
       position: 102
       prefix: --upstreamSkip
@@ -177,7 +165,6 @@ inputs:
       - boolean
     doc: Index molecules using ZMW/movie ID's instead of molecule IDs (if all 
       alignments all have unique molecule IDs)
-    default: false
     inputBinding:
       position: 102
       prefix: --useZMW
@@ -187,7 +174,6 @@ inputs:
       - int
     doc: Aggregate WGA coverage threshold below which to skip analysis at that 
       position
-    default: 10
     inputBinding:
       position: 102
       prefix: --wgaCovThresh

@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: Number of targets to print downstream of CNV in 'auxOutput' file
-    default: 2
     inputBinding:
       position: 101
       prefix: --auxDownstreamPrintTargs
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Number of targets to print upstream of CNV in 'auxOutput' file
-    default: 2
     inputBinding:
       position: 101
       prefix: --auxUpstreamPrintTargs
@@ -38,7 +36,6 @@ inputs:
       - boolean
     doc: Output sample- or target- centered read-depth matrix (as per 
       --centerType)
-    default: off
     inputBinding:
       position: 101
       prefix: --centerData
@@ -56,7 +53,6 @@ inputs:
       - string
     doc: 'Suffix of columns to be used for merging [where columns are in the form:
       SAMPLE + columnSuffix]'
-    default: _mean_cvg
     inputBinding:
       position: 101
       prefix: --columnSuffix
@@ -74,7 +70,6 @@ inputs:
       - 'null'
       - float
     doc: Quality threshold for discovering a CNV in a sample
-    default: 30.0
     inputBinding:
       position: 101
       prefix: --discoverSomeQualThresh
@@ -107,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Column number of OLD sample IDs to map
-    default: 1
     inputBinding:
       position: 101
       prefix: --fromID
@@ -144,7 +138,6 @@ inputs:
       - float
     doc: Quality threshold for calling a genotype, used *ONLY* when 'gxcnv' does
       not contain the 'Q_EXACT' field for the interval being genotyped
-    default: 20.0
     inputBinding:
       position: 101
       prefix: --genotypeQualThresholdWhenNoExact
@@ -210,7 +203,6 @@ inputs:
       - float
     doc: Value at which to cap the absolute value of *normalized* input read 
       depth values ('readDepths')
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --maxNormalizedReadDepthVal
@@ -219,7 +211,6 @@ inputs:
       - 'null'
       - float
     doc: Value at which to cap the calculated quality scores
-    default: 99.0
     inputBinding:
       position: 101
       prefix: --maxQualScore
@@ -255,7 +246,6 @@ inputs:
       - int
     doc: When genotyping sub-segments of input intervals, only consider 
       sub-segments consisting of this number of targets or fewer
-    default: 30
     inputBinding:
       position: 101
       prefix: --maxTargetsInSubsegment
@@ -299,7 +289,6 @@ inputs:
       - 'null'
       - string
     doc: Output targets list
-    default: '-'
     inputBinding:
       position: 101
       prefix: --mergedTargets
@@ -325,7 +314,6 @@ inputs:
       - float
     doc: Minimum per-sample standard deviation of RD to require for sample to be
       processed
-    default: 0
     inputBinding:
       position: 101
       prefix: --minSdSampleRD
@@ -335,7 +323,6 @@ inputs:
       - float
     doc: Minimum per-target standard deviation of RD to require for target to be
       processed
-    default: 0
     inputBinding:
       position: 101
       prefix: --minSdTargetRD
@@ -344,7 +331,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of target (in bp) to process
-    default: 0
     inputBinding:
       position: 101
       prefix: --minTargetSize
@@ -363,7 +349,6 @@ inputs:
       - 'null'
       - int
     doc: Number of highest principal components to filter out
-    default: 20
     inputBinding:
       position: 101
       prefix: --numPCtoRemove
@@ -397,7 +382,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output targets x samples (instead of samples x targets)
-    default: off
     inputBinding:
       position: 101
       prefix: --outputTargetsBySamples
@@ -415,7 +399,6 @@ inputs:
       - string
     doc: Method to choose which principal components are removed for data 
       normalization
-    default: PVE_mean
     inputBinding:
       position: 101
       prefix: --PCnormalizeMethod
@@ -443,7 +426,6 @@ inputs:
       - string
     doc: Should XHMM save memory by storing some of the intermediate PCA 
       matrices as temporary files on disk?
-    default: ''
     inputBinding:
       position: 101
       prefix: --PCA_saveMemory
@@ -479,7 +461,6 @@ inputs:
       - float
     doc: Remove the smallest number of principal components that explain this 
       percent of the variance (in the original PCA-ed data)
-    default: 50.0
     inputBinding:
       position: 101
       prefix: --pve_contrib
@@ -489,7 +470,6 @@ inputs:
       - float
     doc: Remove all principal components that individually explain more variance
       than this factor times the average (in the original PCA-ed data)
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --PVE_mean_factor
@@ -498,7 +478,6 @@ inputs:
       - 'null'
       - int
     doc: Decimal precision of read depths output
-    default: 2
     inputBinding:
       position: 101
       prefix: --rdPrecision
@@ -508,7 +487,6 @@ inputs:
       - string
     doc: Matrix of *input* read-depths, where rows (samples) and columns 
       (targets) are labeled
-    default: '-'
     inputBinding:
       position: 101
       prefix: --readDepths
@@ -536,7 +514,6 @@ inputs:
     doc: After any filtering, scale read-depth matrix values by sample- or 
       target- sums (as per --scaleDataBySumType) [i.e., divide by row or column 
       sums], but multiply by factor specificied by --scaleDataBySumFactor
-    default: off
     inputBinding:
       position: 101
       prefix: --scaleDataBySum
@@ -546,7 +523,6 @@ inputs:
       - float
     doc: If --scaleDataBySum given, then divide by appropriate sum (but multiply
       by this factor)
-    default: 1000000.0
     inputBinding:
       position: 101
       prefix: --scaleDataBySumFactor
@@ -563,7 +539,6 @@ inputs:
       - 'null'
       - int
     doc: Decimal precision of quality scores
-    default: 0
     inputBinding:
       position: 101
       prefix: --scorePrecision
@@ -574,7 +549,6 @@ inputs:
     doc: In addition to genotyping the intervals specified in gxcnv, genotype 
       all sub-segments of these intervals (with maxTargetsInSubsegment or fewer 
       targets)
-    default: off
     inputBinding:
       position: 101
       prefix: --subsegments
@@ -591,7 +565,6 @@ inputs:
       - 'null'
       - int
     doc: Column number of NEW sample IDs to map
-    default: 2
     inputBinding:
       position: 101
       prefix: --toID
@@ -608,7 +581,6 @@ inputs:
       - 'null'
       - string
     doc: CNV output file
-    default: '-'
     inputBinding:
       position: 101
       prefix: --xcnv
@@ -618,7 +590,6 @@ inputs:
       - boolean
     doc: If --centerData given, then additionally normalize by standard 
       deviation (outputting z-scores)
-    default: off
     inputBinding:
       position: 101
       prefix: --zScoreData

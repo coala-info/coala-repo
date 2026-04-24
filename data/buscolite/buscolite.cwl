@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the number (N=integer) of threads/cores to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -20,7 +19,6 @@ inputs:
       - int
     doc: "Length of flanking region to use for augustus prediction\n             \
       \     from miniprot hits."
-    default: 2000
     inputBinding:
       position: 101
       prefix: --flanks
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: Name of existing Augustus species gene finding parameters.
-    default: anidulans
     inputBinding:
       position: 101
       prefix: --species

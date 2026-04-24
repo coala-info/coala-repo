@@ -11,7 +11,6 @@ inputs:
     doc: Defines the maximum number of eigenvectors used for kmeans clustering 
       as a fraction of the total number of cells. Default is 0.07. See SC3 paper
       for more details.
-    default: '0.07'
     inputBinding:
       position: 101
       prefix: --d-region-max
@@ -22,7 +21,6 @@ inputs:
     doc: Defines the minimum number of eigenvectors used for kmeans clustering 
       as a fraction of the total number of cells. Default is 0.04. See SC3 paper
       for more details.
-    default: '0.04'
     inputBinding:
       position: 101
       prefix: --d-region-min
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: iter.max parameter passed to kmeans function. Default is 1e+09.
-    default: '1e+09'
     inputBinding:
       position: 101
       prefix: --kmeans-iter-max
@@ -59,7 +56,6 @@ inputs:
       - int
     doc: nstart parameter passed to kmeans function. Default is 1000 for up to 
       2000 cells and 50 for more than 2000 cells.
-    default: 1000 for up to 2000 cells and 50 for more than 2000 cells
     inputBinding:
       position: 101
       prefix: --kmeans-nstart
@@ -113,7 +109,6 @@ inputs:
       - int
     doc: Number of randomly selected training cells to be used for SVM 
       prediction. Default is NULL.
-    default: 'NULL'
     inputBinding:
       position: 101
       prefix: --svm-num-cells
@@ -124,7 +119,6 @@ inputs:
     doc: Text file with one integer per line. Will be used to create a numeric 
       vector defining indices of training cells that should be used for SVM 
       training. The default is NULL.
-    default: 'NULL'
     inputBinding:
       position: 101
       prefix: --svm-train-inds

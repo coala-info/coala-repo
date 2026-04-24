@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Random seed for reproducibility
-    default: 42
     inputBinding:
       position: 101
       prefix: --seed
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Read span threshold
-    default: 2
     inputBinding:
       position: 101
       prefix: --sth
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

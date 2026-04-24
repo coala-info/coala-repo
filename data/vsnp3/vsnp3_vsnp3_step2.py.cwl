@@ -48,7 +48,6 @@ inputs:
       - int
     doc: 'Optional: Minimum number of SNPs required to trigger density filtering (default:
       3)'
-    default: 3
     inputBinding:
       position: 101
       prefix: --density_threshold
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: 'Optional: Window size in base pairs for density filtering (default: 20)'
-    default: 20
     inputBinding:
       position: 101
       prefix: --density_window

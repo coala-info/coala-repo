@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: The threshold of length of ENV protein in HMMER search
-    default: 250 aa
     inputBinding:
       position: 101
       prefix: --env
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: Specify threshold of e-value for BLAST search
-    default: '1e-5'
     inputBinding:
       position: 101
       prefix: -eb
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: Specify threshold of e-value using for HMMER search
-    default: '1e-6'
     inputBinding:
       position: 101
       prefix: -ed
@@ -38,7 +35,6 @@ inputs:
       - int
     doc: The length of extended flank sequence on either side of the blast 
       hit-site
-    default: 15000
     inputBinding:
       position: 101
       prefix: -f
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: The threshold of length of GAG protein in HMMER search
-    default: 250 aa
     inputBinding:
       position: 101
       prefix: --gag
@@ -63,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: The threshold of length of INT protein in HMMER search
-    default: 150 aa
     inputBinding:
       position: 101
       prefix: --int
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: Specify threshold(%) of the similarity of paired LTRs
-    default: 80
     inputBinding:
       position: 101
       prefix: -s
@@ -81,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum interval of paired-LTRs start-positions
-    default: 15000
     inputBinding:
       position: 101
       prefix: -d2
@@ -90,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Specify maximum length of LTR
-    default: 1000
     inputBinding:
       position: 101
       prefix: -l2
@@ -99,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum length for each TSD site
-    default: 6
     inputBinding:
       position: 101
       prefix: -t2
@@ -108,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum interval of paired-LTRs start-positions
-    default: 1000
     inputBinding:
       position: 101
       prefix: -d1
@@ -117,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: Specify minimum length of LTR
-    default: 100
     inputBinding:
       position: 101
       prefix: -l1
@@ -126,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum length for each TSD site
-    default: 4
     inputBinding:
       position: 101
       prefix: -t1
@@ -135,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum number of mismatches nucleotides in motif
-    default: 1
     inputBinding:
       position: 101
       prefix: -mis
@@ -144,7 +130,6 @@ inputs:
       - 'null'
       - string
     doc: Specify start-motif (2 nucleotides) and end-motif (2 nucleotides)
-    default: TGCA
     inputBinding:
       position: 101
       prefix: -motif
@@ -153,7 +138,6 @@ inputs:
       - 'null'
       - string
     doc: The prefix of output file
-    default: host
     inputBinding:
       position: 101
       prefix: -p
@@ -162,7 +146,6 @@ inputs:
       - 'null'
       - string
     doc: The threshold of length of PRO protein in HMMER search
-    default: 50 aa
     inputBinding:
       position: 101
       prefix: --pro
@@ -171,7 +154,6 @@ inputs:
       - 'null'
       - string
     doc: The threshold of length of RNaseH protein in HMMER search
-    default: 65 aa
     inputBinding:
       position: 101
       prefix: --rh
@@ -180,7 +162,6 @@ inputs:
       - 'null'
       - string
     doc: The threshold of length of RT protein in HMMER search
-    default: 150 aa
     inputBinding:
       position: 101
       prefix: --rt
@@ -189,7 +170,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the number of threads used
-    default: 1
     inputBinding:
       position: 101
       prefix: -n

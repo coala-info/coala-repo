@@ -23,7 +23,6 @@ inputs:
       - string
     doc: 'Celltypist model to use. [default: Immune_All_Low.pkl] #refer to Celltypist
       for another model'
-    default: Immune_All_Low.pkl
     inputBinding:
       position: 103
       prefix: --celltypist_model
@@ -33,7 +32,6 @@ inputs:
       - double
     doc: 'Confidence threshold for Kraken2 classification. [default: 0.05] #see kraken2
       manual'
-    default: 0.05
     inputBinding:
       position: 103
       prefix: --confidence
@@ -52,7 +50,6 @@ inputs:
       - int
     doc: 'Number of dimensions for integration. [default: 30] #refer to Seurat for
       more details'
-    default: 30
     inputBinding:
       position: 103
       prefix: --dims
@@ -62,7 +59,6 @@ inputs:
       - boolean
     doc: 'Enable or disable doublet filtering. [default: True] #this may fail on some
       samples and on low memory. If you have a problem, try False.'
-    default: true
     inputBinding:
       position: 103
       prefix: --doublet_filter
@@ -98,7 +94,6 @@ inputs:
       - int
     doc: 'Number of highly variable features to identify. [default: 2000] #seurat
       defaults, recommended'
-    default: 2000
     inputBinding:
       position: 103
       prefix: --highly_variable_features
@@ -115,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: Total CPUs.
-    default: 1
     inputBinding:
       position: 103
       prefix: --jobs
@@ -133,7 +127,6 @@ inputs:
       - 'null'
       - double
     doc: 'Log fold change threshold for differential expression. [default: 0.25]'
-    default: 0.25
     inputBinding:
       position: 103
       prefix: --logfc_threshold
@@ -143,7 +136,6 @@ inputs:
       - string
     doc: 'Gene annotation mapping package. [default: org.Hs.eg.db] #you may install
       others from Bioconductor, this is for human'
-    default: org.Hs.eg.db
     inputBinding:
       position: 103
       prefix: --mapping
@@ -153,7 +145,6 @@ inputs:
       - int
     doc: 'Number of top marker plots to generate per cluster. [default: 20] #plot
       summary marker plots for top markers'
-    default: 20
     inputBinding:
       position: 103
       prefix: --marker_plots_per_cluster_n
@@ -163,7 +154,6 @@ inputs:
       - int
     doc: 'Maximum features per cell cutoff. [default: Inf] #seurat default, nFeature_RNA,
       5000 can be a good cutoff'
-    default: Inf
     inputBinding:
       position: 103
       prefix: --max_features
@@ -174,7 +164,6 @@ inputs:
     doc: 'Maximum molecules per cell cutoff. [default: Inf] #seurat default, nCount_RNA,
       to filter potential doublets, doublet filtering is already default, so keep
       this Inf'
-    default: Inf
     inputBinding:
       position: 103
       prefix: --max_molecules
@@ -193,7 +182,6 @@ inputs:
       - 'null'
       - string
     doc: Metadata column for differential expression analysis
-    default: condition
     inputBinding:
       position: 103
       prefix: --metadata_column
@@ -202,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum cells for microbiome analysis. [default: 1]'
-    default: 1
     inputBinding:
       position: 103
       prefix: --microbiome_min_cells
@@ -211,7 +198,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum features for microbiome analysis. [default: 3]'
-    default: 3
     inputBinding:
       position: 103
       prefix: --microbiome_min_features
@@ -220,7 +206,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum cells per feature cutoff. [default: 3] #seurat default, recommended'
-    default: 3
     inputBinding:
       position: 103
       prefix: --min_cells
@@ -230,7 +215,6 @@ inputs:
       - int
     doc: 'Minimum features per cell cutoff. [default: 200] #seurat default, recommended,
       nFeature_RNA'
-    default: 200
     inputBinding:
       position: 103
       prefix: --min_features
@@ -240,7 +224,6 @@ inputs:
       - int
     doc: 'Minimum hit groups for Kraken2 classification. [default: 4] #see kraken2
       manual'
-    default: 4
     inputBinding:
       position: 103
       prefix: --min_hit_groups
@@ -250,7 +233,6 @@ inputs:
       - int
     doc: 'Minimum molecules per cell cutoff. [default: 0] #seurat default, nCount_RNA,
       min_features usually handles this so keep it 0'
-    default: 0
     inputBinding:
       position: 103
       prefix: --min_molecules
@@ -260,7 +242,6 @@ inputs:
       - double
     doc: 'Minimum percentage of cells for a cluster to be shown on the legend. [default:
       5]'
-    default: 5
     inputBinding:
       position: 103
       prefix: --min_percentage_to_plot
@@ -269,7 +250,6 @@ inputs:
       - 'null'
       - string
     doc: 'Normalization method to use. [default: LogNormalize]'
-    default: LogNormalize
     inputBinding:
       position: 103
       prefix: --normalization_method
@@ -278,7 +258,6 @@ inputs:
       - 'null'
       - string
     doc: 'Organism identifier. [default: hsa] #alternatives https://www.genome.jp/kegg/catalog/org_list.html'
-    default: hsa
     inputBinding:
       position: 103
       prefix: --organism
@@ -288,7 +267,6 @@ inputs:
       - double
     doc: Maximum mitochondrial gene percentage cutoff, for example, 5 or 10, 
       write "auto" for auto detection
-    default: 10
     inputBinding:
       position: 103
       prefix: --percent_mt
@@ -297,7 +275,6 @@ inputs:
       - 'null'
       - double
     doc: Ribosomal genes minimum percentage (0-100), default no filtering
-    default: 0
     inputBinding:
       position: 103
       prefix: --percent_rp
@@ -307,7 +284,6 @@ inputs:
       - string
     doc: 'Reduction method for integration. [default: cca] #refer to Seurat for more
       details'
-    default: cca
     inputBinding:
       position: 103
       prefix: --reduction
@@ -324,7 +300,6 @@ inputs:
       - 'null'
       - double
     doc: Resolution for cluster detection, write "auto" for auto detection
-    default: 0.8
     inputBinding:
       position: 103
       prefix: --resolution
@@ -333,7 +308,6 @@ inputs:
       - 'null'
       - int
     doc: 'Scale factor for normalization. [default: 10000]'
-    default: 10000
     inputBinding:
       position: 103
       prefix: --scale_factor
@@ -342,7 +316,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Whether to show cluster labels. [default: True] #'
-    default: true
     inputBinding:
       position: 103
       prefix: --show_labels
@@ -351,7 +324,6 @@ inputs:
       - 'null'
       - string
     doc: 'SingleR reference dataset. [default: BlueprintEncodeData] # https://bioconductor.org/packages/release/data/experiment/vignettes/celldex/inst/doc/userguide.html#1_Overview'
-    default: BlueprintEncodeData
     inputBinding:
       position: 103
       prefix: --singler_ref
@@ -361,7 +333,6 @@ inputs:
       - string
     doc: 'Species for cellchat analysis. [default: human] #only human or mouse is
       accepted'
-    default: human
     inputBinding:
       position: 103
       prefix: --species
@@ -371,7 +342,6 @@ inputs:
       - string
     doc: 'Taxonomic level for microbiome analysis. [default: genus] # available options
       "domain", "kingdom", "phylum", "class", "order", "family", "genus", "species"'
-    default: genus
     inputBinding:
       position: 103
       prefix: --taxa
@@ -380,7 +350,6 @@ inputs:
       - 'null'
       - string
     doc: 'Statistical test to use for differential expression. [default: wilcox]'
-    default: wilcox
     inputBinding:
       position: 103
       prefix: --test_use
@@ -389,7 +358,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Whether to generate marker plots on t-SNE. [default: False]'
-    default: false
     inputBinding:
       position: 103
       prefix: --tsne_markers_plot
@@ -398,7 +366,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Whether to generate marker plots on UMAP. [default: True]'
-    default: true
     inputBinding:
       position: 103
       prefix: --umap_markers_plot
@@ -417,7 +384,6 @@ inputs:
       - string
     doc: 'Method for selecting variable features. [default: vst] #seurat defaults,
       recommended'
-    default: vst
     inputBinding:
       position: 103
       prefix: --variable_selection_method

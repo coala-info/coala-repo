@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Add 'N's between the reads
-    default: 0
     inputBinding:
       position: 102
       prefix: --fill

@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: 'Change log level: DEBUG, INFO, WARNING, ERROR.'
-    default: ERROR
     inputBinding:
       position: 102
       prefix: --log-level
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output in SAM rather than BAM format.
-    default: false
     inputBinding:
       position: 102
       prefix: --sam-format
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print SAM file header when output format is text SAM.
-    default: false
     inputBinding:
       position: 102
       prefix: --sam-header
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: 'Change validation stringency level: STRICT, LENIENT, SILENT.'
-    default: STRICT
     inputBinding:
       position: 102
       prefix: --validation-level

@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: Input format of matrix
-    default: fasta
     inputBinding:
       position: 101
       prefix: --in_format
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Desired format of the output steps.
-    default: fasta
     inputBinding:
       position: 101
       prefix: --out_format
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Size of removal step (i.e., 1000 sites removed) to exhaustion
-    default: 3000
     inputBinding:
       position: 101
       prefix: --step_size

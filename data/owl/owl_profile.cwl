@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Filter flag
-    default: 0
     inputBinding:
       position: 101
       prefix: --flag
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: Max fraction of filtered reads
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --max-filt-frac
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Min region avg base qual
-    default: 25
     inputBinding:
       position: 101
       prefix: --min-bq
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Min coverage
-    default: 5
     inputBinding:
       position: 101
       prefix: --min-cov
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Min motif alignment identity
-    default: 90
     inputBinding:
       position: 101
       prefix: --min-idt
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Min mapQ
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-mapq
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - float
     doc: Min MG
-    default: 0.98
     inputBinding:
       position: 101
       prefix: --min-mg

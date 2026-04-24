@@ -19,7 +19,6 @@ inputs:
         items: int
     doc: Expected most common CN value in the graph (background ploidy of the 
       dataset).
-    default: '[1, 2]'
     inputBinding:
       position: 101
       prefix: --bg-ploidy
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Set the bin size to use for the NB parameters estimation.
-    default: 100
     inputBinding:
       position: 101
       prefix: --bin-size
@@ -38,7 +36,6 @@ inputs:
       - float
     doc: Probability for using the super edges when there is no other edge 
       available.
-    default: -25
     inputBinding:
       position: 101
       prefix: --cheap-pen
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: 'Model complexity (1-3): larger = slower and more accurate.'
-    default: 2
     inputBinding:
       position: 101
       prefix: --complexity
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: Epsilon value for adjusting CN0 counts to probabilities
-    default: 0.02
     inputBinding:
       position: 101
       prefix: --epsilon
@@ -74,7 +69,6 @@ inputs:
       - float
     doc: Probability for using the super edges when there are other edges 
       available.
-    default: -10000
     inputBinding:
       position: 101
       prefix: --expen-pen

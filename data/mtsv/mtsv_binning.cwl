@@ -14,7 +14,6 @@ inputs:
       sensitive=11,3,1. Passing values for the SEED_SIZE, MIN_SEEDS or SEED_GAP 
       parameters will override these settings. Choices are ['fast', 'efficient',
       'sensitive']
-    default: efficient
     inputBinding:
       position: 101
       prefix: --binning_mode
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Edit distance to tolerate in matched reference sites
-    default: 3
     inputBinding:
       position: 101
       prefix: --edits
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - File
     doc: Path to FASTA query file produced by readprep.
-    default: ./QueryFastas/queries.fasta
     inputBinding:
       position: 101
       prefix: --fasta
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - File
     doc: Set log file path, absolute or relative to working dir.
-    default: ./Logs/mtsv_{COMMAND}_{TIMESTAMP}.log
     inputBinding:
       position: 101
       prefix: --log_file
@@ -93,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Number of worker threads to spawn.
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -102,7 +97,6 @@ inputs:
       - 'null'
       - Directory
     doc: Specify working directory to place output.
-    default: /
     inputBinding:
       position: 101
       prefix: --working_dir

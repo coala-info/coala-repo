@@ -21,7 +21,6 @@ inputs:
       - float
     doc: Only output ANI values where both genomes have aligned fraction > than 
       this value.
-    default: disabled
     inputBinding:
       position: 102
       prefix: --both-min-af
@@ -62,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of results to show for each query.
-    default: unlimited
     inputBinding:
       position: 102
       prefix: -n
@@ -80,7 +78,6 @@ inputs:
       - float
     doc: Only output ANI values where one genome has aligned fraction > than 
       this value.
-    default: 15
     inputBinding:
       position: 102
       prefix: --min-af
@@ -142,7 +139,6 @@ inputs:
       - int
     doc: Screen out pairs with *approximately* < % identity using k-mer 
       sketching.
-    default: 80
     inputBinding:
       position: 102
       prefix: -s
@@ -159,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 3
     inputBinding:
       position: 102
       prefix: -t

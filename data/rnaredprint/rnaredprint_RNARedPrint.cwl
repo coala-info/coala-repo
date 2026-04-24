@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Set energy model used for stochastic sampling
-    default: 2
     inputBinding:
       position: 104
       prefix: --model
@@ -53,7 +52,6 @@ inputs:
       - 'null'
       - float
     doc: Assigns custom weight to each occurrence of GC, to control GC%
-    default: 1.0
     inputBinding:
       position: 104
       prefix: --gcw
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Sets number of generated sequences
-    default: 10
     inputBinding:
       position: 104
       prefix: --num

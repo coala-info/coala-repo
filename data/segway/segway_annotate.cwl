@@ -53,7 +53,6 @@ inputs:
       - string
     doc: in the segmentation file, for each coordinate print only its superlabel
       ("seg"), only its sublabel ("subseg"), or both ("full") (default seg)
-    default: seg
     inputBinding:
       position: 104
       prefix: --output-label

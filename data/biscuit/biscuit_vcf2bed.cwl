@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Extract type {c, cg, ch, hcg, gch, snp}
-    default: CG
     inputBinding:
       position: 102
       prefix: -t
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage (see Note 1)
-    default: 1
     inputBinding:
       position: 102
       prefix: -k
@@ -44,7 +42,6 @@ inputs:
       - string
     doc: Sample, (takes "FIRST", "LAST", "ALL", or specific sample names separated
       by ",")
-    default: FIRST
     inputBinding:
       position: 102
       prefix: -s

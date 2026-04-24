@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum indel length.
-    default: 3
     inputBinding:
       position: 101
       prefix: --min-indel-len
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum variant length.
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-len
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory.
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir

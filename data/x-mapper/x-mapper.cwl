@@ -45,7 +45,6 @@ inputs:
       - float
     doc: In the output vcf file, we separately display which queries aligned at 
       each position with <fraction> of the end of the query and which didn't.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --distinguish-query-ends
@@ -55,7 +54,6 @@ inputs:
       - float
     doc: When detecting indels, only consider the middle <fraction> of each 
       query
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --distinguish-query-ends
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - float
     doc: the penalty of an extension to an existing insertion or deletion
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --extend-indel-penalty
@@ -75,7 +72,6 @@ inputs:
     doc: The minimum total (middle) depth and minimum supporting depth fraction 
       required at a position to report support for a continuation of an 
       insertion or deletion
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --indel-continue-threshold
@@ -86,7 +82,6 @@ inputs:
     doc: The minimum total (middle) depth and minimum supporting depth fraction 
       required at a position to report it as a continuation of an insertion or 
       deletion
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --indel-continue-threshold
@@ -97,7 +92,6 @@ inputs:
     doc: The minimum total (middle) depth and minimum supporting depth fraction 
       required at a position to report support for a continuation of an 
       insertion or deletion
-    default: 0
     inputBinding:
       position: 101
       prefix: --indel-continue-threshold
@@ -108,7 +102,6 @@ inputs:
     doc: The minimum total (middle) depth and minimum supporting depth fraction 
       required at a position to report it as a continuation of an insertion or 
       deletion
-    default: 1
     inputBinding:
       position: 101
       prefix: --indel-continue-threshold
@@ -119,7 +112,6 @@ inputs:
     doc: The minimum total (middle) depth and minimum supporting depth fraction 
       required at a position to report support for the start of an insertion or 
       deletion
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --indel-start-threshold
@@ -130,7 +122,6 @@ inputs:
     doc: The minimum total (middle) depth and minimum supporting depth fraction 
       required at a position to report it as the start of an insertion or 
       deletion
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --indel-start-threshold
@@ -141,7 +132,6 @@ inputs:
     doc: The minimum total (middle) depth and minimum supporting depth fraction 
       required at a position to report support for the start of an insertion or 
       deletion
-    default: 0
     inputBinding:
       position: 101
       prefix: --indel-start-threshold
@@ -152,7 +142,6 @@ inputs:
     doc: The minimum total (middle) depth and minimum supporting depth fraction 
       required at a position to report it as the start of an insertion or 
       deletion
-    default: 1
     inputBinding:
       position: 101
       prefix: --indel-start-threshold
@@ -213,7 +202,6 @@ inputs:
       - int
     doc: the maximum number of positions on the reference that any query may 
       match.
-    default: unlimited
     inputBinding:
       position: 101
       prefix: --max-num-matches
@@ -223,7 +211,6 @@ inputs:
       - float
     doc: for a match to be reported, its penalty must be no larger than this 
       value times its length
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --max-penalty
@@ -242,7 +229,6 @@ inputs:
       - 'null'
       - float
     doc: the penalty of a new insertion or deletion of length 0
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --new-indel-penalty
@@ -333,7 +319,6 @@ inputs:
       - 'null'
       - float
     doc: the penalty of a point mutation
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --snp-penalty
@@ -343,7 +328,6 @@ inputs:
       - float
     doc: The minimum total depth and minimum supporting depth fraction required 
       at a position to report the support for the mutation
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --snp-threshold
@@ -353,7 +337,6 @@ inputs:
       - float
     doc: The minimum total depth and minimum supporting depth fraction required 
       at a position to report it as a point mutation
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --snp-threshold
@@ -363,7 +346,6 @@ inputs:
       - int
     doc: The minimum total depth and minimum supporting depth fraction required 
       at a position to report the support for the mutation
-    default: 0
     inputBinding:
       position: 101
       prefix: --snp-threshold
@@ -373,7 +355,6 @@ inputs:
       - int
     doc: The minimum total depth and minimum supporting depth fraction required 
       at a position to report it as a point mutation
-    default: 5
     inputBinding:
       position: 101
       prefix: --snp-threshold
@@ -385,7 +366,6 @@ inputs:
       distance and <expected>) divided by <distancePerPenalty>, unless the two 
       query sequence alignments would overlap, in which case the additional 
       penalty is 0.
-    default: 50
     inputBinding:
       position: 101
       prefix: --spacing
@@ -395,7 +375,6 @@ inputs:
       - int
     doc: Any query alignment whose inner distance deviates from <expected> has 
       an additional penalty added.
-    default: 100
     inputBinding:
       position: 101
       prefix: --spacing

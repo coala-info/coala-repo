@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to output directory (defaults to current directory)
-    default: current directory
     inputBinding:
       position: 101
       prefix: --output
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Output tab-delimited files (default: comma-delimited).'
-    default: false
     inputBinding:
       position: 101
       prefix: --tabular

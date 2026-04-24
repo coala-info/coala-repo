@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Cleaning Step
-    default: '1'
     inputBinding:
       position: 101
       prefix: -T
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Core used
-    default: '1'
     inputBinding:
       position: 101
       prefix: -c
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Hash size, use 2^h files (8 for 256 files)
-    default: '8'
     inputBinding:
       position: 101
       prefix: -h

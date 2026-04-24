@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Interval size for searching normal-vcf/normal-bams
-    default: 1000
     inputBinding:
       position: 103
       prefix: --interval-size
@@ -54,7 +53,6 @@ inputs:
       - float
     doc: Remove SV if normal_bam displays divergence > max-divergence at same 
       location
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --max-divergence
@@ -63,7 +61,6 @@ inputs:
       - 'null'
       - float
     doc: Remove SV with mean mapqq < min-mapq
-    default: 10
     inputBinding:
       position: 103
       prefix: --min-mapq
@@ -72,7 +69,6 @@ inputs:
       - 'null'
       - float
     doc: Remove SV with PROB value < min-prob
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --min-prob
@@ -90,7 +86,6 @@ inputs:
       - 'null'
       - float
     doc: Re-label SV as PASS if PROB value >= pass-prob
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --pass-prob
@@ -99,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Reading threads for normal_bams
-    default: 1
     inputBinding:
       position: 103
       prefix: --procs
@@ -108,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Choose N random normal-bams to search. Use -1 to ignore
-    default: -1
     inputBinding:
       position: 103
       prefix: --random-bam-sample
@@ -125,7 +118,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum threshold support fraction / coverage (SU/COV)
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --support-fraction

@@ -31,7 +31,6 @@ inputs:
       - Directory
     doc: the directory where the results (should contain a zdb subfolder) can be
       found
-    default: current directory
     inputBinding:
       position: 101
       prefix: --dir
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: the web server will listen on a different port
-    default: 8080
     inputBinding:
       position: 101
       prefix: --port
@@ -66,7 +64,6 @@ inputs:
       - 'null'
       - Directory
     doc: the directory where the singularity images are downloaded
-    default: singularity in current directory
     inputBinding:
       position: 101
       prefix: --singularity_dir

@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: massdiff in this range will not be mapped to UniMod.
-    default: -1.5,3.5
     inputBinding:
       position: 101
       prefix: --exclude-range
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Allowed fragment ion charges.
-    default: '[1,2,3,4]'
     inputBinding:
       position: 101
       prefix: --fragment_charges
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: Allowed fragment ion types (a,b,c,x,y,z).
-    default: "['b','y']"
     inputBinding:
       position: 101
       prefix: --fragment_types
@@ -70,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum delta mass (PPM) for annotation.
-    default: 15
     inputBinding:
       position: 101
       prefix: --max_delta_ppm
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum delta mass (Dalton) for UniMod annotation.
-    default: 0.02
     inputBinding:
       position: 101
       prefix: --max_delta_unimod
@@ -88,7 +83,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum posterior error probability (PEP) for a PSM
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --max_psm_pep
@@ -140,7 +134,6 @@ inputs:
       the downstream consumer of the spectral library. Lowering this number will
       collapse (more) identical fragment ions of the same precursor to a single 
       value.
-    default: 6
     inputBinding:
       position: 101
       prefix: --precision_digits

@@ -15,7 +15,6 @@ inputs:
       - int
     doc: Number of reference bases by which an alternate locus is extended to 
       the left (right) in the case of non-fuzzy left (right) end.
-    default: 2000
     inputBinding:
       position: 102
       prefix: --al-extend
@@ -44,7 +43,6 @@ inputs:
     doc: Compression type used for input. The possible values are "auto" 
       (default), "none", "gzip", and "bzip2". If the value given is "auto" then 
       the type of compression is guessed from the file extension.
-    default: auto
     inputBinding:
       position: 102
       prefix: --input-compression
@@ -54,7 +52,6 @@ inputs:
       - string
     doc: The input format name. The possible values are "fasta", "fastq", 
       "cfasta", "cfastq".
-    default: fasta
     inputBinding:
       position: 102
       prefix: --input-format
@@ -82,7 +79,6 @@ inputs:
     doc: Do not use more than this many megabytes of memory for internal dynamic
       data structures. This number does not include the footprint of the 
       executable code, static data, or stack.
-    default: 2048
     inputBinding:
       position: 102
       prefix: --memory
@@ -97,7 +93,6 @@ inputs:
       - 'null'
       - string
     doc: The output format name. The possible values are "standard".
-    default: standard
     inputBinding:
       position: 102
       prefix: --output-format
@@ -111,7 +106,6 @@ inputs:
       and the sequence store can store at most 2^32 - 1 bases. If the reference 
       has a large number of very short sequence, decreasing this value can help 
       to pack more sequences into the sequence store and optimize memory usage.
-    default: 8192
     inputBinding:
       position: 102
       prefix: --seg-letters
@@ -121,7 +115,6 @@ inputs:
       - string
     doc: Minimum message level to report to the log stream. Possible values are 
       "debug", "info", "warning", "error", "quiet".
-    default: warning
     inputBinding:
       position: 102
       prefix: --trace-level

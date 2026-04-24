@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - float
     doc: minimum match ratio of adapter sequence
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --ada-mat-rat
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: 5' adapter sequence (sense strand)
-    default: 'NULL'
     inputBinding:
       position: 102
       prefix: --five-prime
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: only output full-length consensus sequence.
-    default: false
     inputBinding:
       position: 102
       prefix: --full-len
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: gap extension penalty (E1,E2)
-    default: 2,1
     inputBinding:
       position: 102
       prefix: --gap-ext
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: gap opening penalty (O1,O2)
-    default: 4,24
     inputBinding:
       position: 102
       prefix: --gap-open
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - boolean
     doc: use homopolymer-compressed k-mer
-    default: false
     inputBinding:
       position: 102
       prefix: --HPC-kmer
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length (no larger than 16)
-    default: 8
     inputBinding:
       position: 102
       prefix: --kmer-length
@@ -87,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: match score
-    default: 2
     inputBinding:
       position: 102
       prefix: --match
@@ -96,7 +88,6 @@ inputs:
       - 'null'
       - float
     doc: maximum allowed divergence rate between two consecutive repeats
-    default: 0.25
     inputBinding:
       position: 102
       prefix: --max-diverg
@@ -105,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: maximum period size of tandem repeat (<=4294967295)
-    default: 10K
     inputBinding:
       position: 102
       prefix: --max-period
@@ -114,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: minimum copy number of tandem repeat (>=2)
-    default: 2
     inputBinding:
       position: 102
       prefix: --min-copy
@@ -124,7 +113,6 @@ inputs:
       - string
     doc: only output consensus sequence with at least R supporting units for all
       bases
-    default: '0.00'
     inputBinding:
       position: 102
       prefix: --min-cov
@@ -133,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: only output consensus sequence with min. length of
-    default: 30
     inputBinding:
       position: 102
       prefix: --min-len
@@ -142,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: minimum period size of tandem repeat (>=2)
-    default: 30
     inputBinding:
       position: 102
       prefix: --min-period
@@ -151,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: mismatch penalty
-    default: 4
     inputBinding:
       position: 102
       prefix: --mismatch
@@ -160,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: output format
-    default: 1
     inputBinding:
       position: 102
       prefix: --out-fmt
@@ -169,7 +153,6 @@ inputs:
       - 'null'
       - boolean
     doc: output additional single-copy full-length consensus sequence.
-    default: false
     inputBinding:
       position: 102
       prefix: --single-copy
@@ -178,7 +161,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 4
     inputBinding:
       position: 102
       prefix: --thread
@@ -187,7 +169,6 @@ inputs:
       - 'null'
       - string
     doc: 3' adapter sequence (anti-sense strand)
-    default: 'NULL'
     inputBinding:
       position: 102
       prefix: --three-prime
@@ -204,7 +185,6 @@ inputs:
       - 'null'
       - int
     doc: window size, set as >1 to enable minimizer seeding
-    default: 1
     inputBinding:
       position: 102
       prefix: --window-size

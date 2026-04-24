@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: index of column containing SNP distances (default=1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --column

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: input FASTA alphabet { dna, protein }
-    default: dna
     inputBinding:
       position: 101
       prefix: --alphabet
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - File
     doc: input FASTA path
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input-fasta-path
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: row group size
-    default: 122880
     inputBinding:
       position: 101
       prefix: --row-group-size

@@ -37,7 +37,6 @@ inputs:
       - boolean
     doc: List the atoms and bonded interactions for the whole system instead of 
       for each molecule type
-    default: no
     inputBinding:
       position: 101
       prefix: -nosys
@@ -55,7 +54,6 @@ inputs:
       - boolean
     doc: Show index numbers in output (leaving them out makes comparison easier,
       but creates a useless topology)
-    default: yes
     inputBinding:
       position: 101
       prefix: -nonr
@@ -65,7 +63,6 @@ inputs:
       - boolean
     doc: Show input parameters from tpr as they were written by the version that
       produced the file, instead of how the current version reads them
-    default: no
     inputBinding:
       position: 101
       prefix: -noorgir
@@ -75,7 +72,6 @@ inputs:
       - boolean
     doc: Show parameters for each bonded interaction (for comparing dumps, it is
       useful to combine this with -nonr)
-    default: no
     inputBinding:
       position: 101
       prefix: -noparam

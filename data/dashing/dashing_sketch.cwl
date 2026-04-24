@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: 'Set count-min sketch size (log2). Default: 20'
-    default: 20
     inputBinding:
       position: 102
       prefix: --cm-sketch-size
@@ -76,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Set kmer size [31], max 32
-    default: 31
     inputBinding:
       position: 102
       prefix: --kmer-length
@@ -94,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: 'Set count-min number of hashes. Default: [1]'
-    default: 1
     inputBinding:
       position: 102
       prefix: --nhashes
@@ -128,7 +125,6 @@ inputs:
       - 'null'
       - string
     doc: Set prefix for sketch file locations [empty]
-    default: ''
     inputBinding:
       position: 102
       prefix: --prefix
@@ -154,7 +150,6 @@ inputs:
       - 'null'
       - int
     doc: Set log2 sketch size in bytes [10, for 2**10 bytes each]
-    default: 10
     inputBinding:
       position: 102
       prefix: --sketch-size
@@ -182,7 +177,6 @@ inputs:
       - 'null'
       - string
     doc: Set suffix in sketch file names [empty]
-    default: ''
     inputBinding:
       position: 102
       prefix: --suffix
@@ -191,7 +185,6 @@ inputs:
       - 'null'
       - int
     doc: Set number of threads [1]
-    default: 1
     inputBinding:
       position: 102
       prefix: --nthreads
@@ -268,7 +261,6 @@ inputs:
       - int
     doc: Set count-min sketch number of hashes for count-min streaming weighted 
       jaccard [8]
-    default: 8
     inputBinding:
       position: 102
       prefix: --wj-cm-nhashes
@@ -277,7 +269,6 @@ inputs:
       - 'null'
       - int
     doc: Set count-min sketch size for count-min streaming weighted jaccard [16]
-    default: 16
     inputBinding:
       position: 102
       prefix: --wj-cm-sketch-size

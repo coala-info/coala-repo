@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Split input into fragments of X million repairs
-    default: 10
     inputBinding:
       position: 102
       prefix: -fragment
@@ -78,7 +77,6 @@ inputs:
       - int
     doc: Number of cores applied to each parallel BWA job when '-t' exceeds this
       value and '-i' is not in use
-    default: 6
     inputBinding:
       position: 102
       prefix: -map_threads
@@ -121,7 +119,6 @@ inputs:
   - id: threads
     type: int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 102
       prefix: -threads

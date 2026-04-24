@@ -50,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum alternate allele fraction in the normal sample.
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --max-normal-alt-fraction
@@ -60,7 +59,6 @@ inputs:
       - float
     doc: Maximum allele fraction in the normal sample to consider a variant 
       somatic.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --min-normal-allele-fraction
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum alternate allele count in the normal sample.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-normal-alt-count
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth in the normal sample to consider a variant.
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-normal-depth
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele fraction in the tumor sample to consider a variant.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min-tumor-allele-fraction
@@ -96,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alternate allele count in the tumor sample.
-    default: 3
     inputBinding:
       position: 101
       prefix: --min-tumor-alt-count
@@ -105,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth in the tumor sample to consider a variant.
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-tumor-depth

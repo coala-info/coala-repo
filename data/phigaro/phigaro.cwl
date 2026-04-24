@@ -11,7 +11,6 @@ inputs:
       - File
     doc: "Path to the config file, not required. The deafult is\n                \
       \        /root/.phigaro/config.yml"
-    default: /root/.phigaro/config.yml
     inputBinding:
       position: 101
       prefix: --config
@@ -32,7 +31,6 @@ inputs:
       \     Default is html. You can specify several file formats\n              \
       \          with a space as a separator. Example: -e tsv html\n             \
       \           stdout."
-    default: html
     inputBinding:
       position: 101
       prefix: --extension
@@ -49,7 +47,6 @@ inputs:
     doc: "You can launch Phigaro at one of 3 modes: basic, abs,\n                \
       \        without_gc. Default is basic. Read more about modes at\n          \
       \              https://github.com/bobeobibo/phigaro/"
-    default: basic
     inputBinding:
       position: 101
       prefix: --mode
@@ -114,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Num of threads (default is num of CPUs=20)
-    default: num of CPUs=20
     inputBinding:
       position: 101
       prefix: --threads

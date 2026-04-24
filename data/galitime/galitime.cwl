@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - File
     doc: output (filename/stderr/stdout)
-    default: stderr
     inputBinding:
       position: 102
       prefix: --log

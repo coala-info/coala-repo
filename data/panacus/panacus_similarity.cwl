@@ -17,7 +17,6 @@ inputs:
       - string
     doc: "Graph quantity to be counted [default: node] [possible values:\n       \
       \                          node, bp, edge]"
-    default: node
     inputBinding:
       position: 102
       prefix: --count
@@ -65,7 +64,6 @@ inputs:
     doc: "Method for clustering results [default: centroid] [possible values:\n  \
       \                               single, complete, average, weighted, ward, centroid,
       median]"
-    default: centroid
     inputBinding:
       position: 102
       prefix: --method
@@ -84,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: 'Set the number of threads used (default: use all threads)'
-    default: 0
     inputBinding:
       position: 102
       prefix: -t

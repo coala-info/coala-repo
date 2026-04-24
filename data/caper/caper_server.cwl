@@ -213,7 +213,6 @@ inputs:
     doc: 'File hashing strategy for call caching. For local backends (local/slurm/sge/pbs)
       only. file: use md5sum hash (slow), path: use path only, path+modtime (default):
       use path + mtime.'
-    default: path+modtime
     inputBinding:
       position: 101
       prefix: --local-hash-strat

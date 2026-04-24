@@ -54,7 +54,6 @@ inputs:
       - type: array
         items: string
     doc: Type of methylation to consider (e.g., CG, CHG, CHH).
-    default: CG
     inputBinding:
       position: 101
       prefix: --mc-type
@@ -87,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-procs

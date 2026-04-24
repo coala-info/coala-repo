@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of threads (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --thread
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'working directory (default: current directory)'
-    default: current directory
     inputBinding:
       position: 101
       prefix: --workdir

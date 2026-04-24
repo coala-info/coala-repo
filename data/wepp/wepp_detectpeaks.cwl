@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Index used for inferring lineage proportions from haplotypes.
-    default: 1
     inputBinding:
       position: 101
       prefix: --clade-idx
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of reads.
-    default: 1000000000
     inputBinding:
       position: 101
       prefix: --max-reads
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - float
     doc: Allele Frequency threshold for masking erroneous alleles.
-    default: 0.005
     inputBinding:
       position: 101
       prefix: --min-af
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Depth threshold for masking low coverage sites.
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-depth
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Phred score threshold for masking low quality alleles.
-    default: 20
     inputBinding:
       position: 101
       prefix: --min-phred
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum haplotype abundance.
-    default: 0.005
     inputBinding:
       position: 101
       prefix: --min-prop
@@ -96,7 +90,6 @@ inputs:
       - int
     doc: Number of threads to use when possible [DEFAULT uses all available 
       cores, 20 detected on this machine]
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -105,7 +98,6 @@ inputs:
       - 'null'
       - Directory
     doc: WEPP's working directory.
-    default: ./
     inputBinding:
       position: 101
       prefix: --working-directory

@@ -23,7 +23,6 @@ inputs:
       - type: array
         items: string
     doc: genes to translate (list or file containing list)
-    default: None
     inputBinding:
       position: 101
       prefix: --genes
@@ -39,7 +38,6 @@ inputs:
       - boolean
     doc: Skip validation of input/output files, equivalent to 
       --validation-mode=skip. Use at your own risk!
-    default: None
     inputBinding:
       position: 101
       prefix: --skip-validation
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - File
     doc: prebuilt Newick -- no tree will be built if provided
-    default: None
     inputBinding:
       position: 101
       prefix: --tree
@@ -62,7 +59,6 @@ inputs:
       status if any validation checks failed, while 'warn' does not. 'skip' mode
       performs no validation. Note that some validation checks are non- optional
       and as such are not affected by this setting.
-    default: error
     inputBinding:
       position: 101
       prefix: --validation-mode
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - File
     doc: fasta file of the sequence the VCF was mapped to
-    default: None
     inputBinding:
       position: 101
       prefix: --vcf-reference

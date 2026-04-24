@@ -134,7 +134,6 @@ inputs:
     label: threads
     inputBinding:
       prefix: --threads
-    default: 10
   memory:
     type: int?
     doc: Memory used in megabytes

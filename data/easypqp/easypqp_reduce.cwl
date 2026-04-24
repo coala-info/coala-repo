@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bins to fill along gradient.
-    default: 10
     inputBinding:
       position: 101
       prefix: --bins
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Number of peptides to sample.
-    default: 5
     inputBinding:
       position: 101
       prefix: --peptides

@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: Batch size
-    default: 1g
     inputBinding:
       position: 103
       prefix: -K
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: False positive rate
-    default: '4e-05'
     inputBinding:
       position: 103
       prefix: -e
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum k-mer fraction
-    default: 0.5
     inputBinding:
       position: 103
       prefix: -f
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequence length
-    default: 0
     inputBinding:
       position: 103
       prefix: -l
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 4
     inputBinding:
       position: 103
       prefix: -t

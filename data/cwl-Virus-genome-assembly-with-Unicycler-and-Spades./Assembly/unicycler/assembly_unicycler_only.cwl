@@ -31,7 +31,6 @@ inputs:
         - fastqsanger
         - fastqsanger.gz
     doc: "Type of the First set of reads. Only when fastq_file_type = single  or  paired"  
-    default: fastqsanger
 
   - id: fastq1
     type: File
@@ -45,7 +44,6 @@ inputs:
         symbols:
          - fastqsanger
          - fastqsanger.gz
-    default: "null"
     doc: "Type of the Second set of reads. Only when fastq_file_type=paired"  
 
     

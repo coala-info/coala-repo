@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the output format of the plots (png, jpg, svg, pdf, html, etc.)
-    default: html
     inputBinding:
       position: 101
       prefix: --format
@@ -103,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Set the allowed number of threads to be used by the script
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Identity ratio threshold
-    default: mean + 2*std
     inputBinding:
       position: 101
       prefix: --conservedness
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: DPI for all generated PDF files
-    default: 300
     inputBinding:
       position: 101
       prefix: --dpi
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: FDR cutoff
-    default: 0.05 / num_records
     inputBinding:
       position: 101
       prefix: --fdr
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

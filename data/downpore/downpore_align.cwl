@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for a gap.
-    default: -2
     inputBinding:
       position: 103
       prefix: --gap
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Score for a match.
-    default: 1
     inputBinding:
       position: 103
       prefix: --match
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for a mismatch.
-    default: -1
     inputBinding:
       position: 103
       prefix: --mismatch

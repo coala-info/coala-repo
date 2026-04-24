@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: minimum read count threshold; only used with --unfiltered-pl
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-reads
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use for the first phase of permit-list generation
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads

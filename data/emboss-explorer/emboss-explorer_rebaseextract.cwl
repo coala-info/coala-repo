@@ -11,7 +11,6 @@ inputs:
       - boolean
     doc: This option calculates an embossre.equ file using restriction enzyme 
       prototypes in the withrefm file.
-    default: Y
     inputBinding:
       position: 101
       prefix: --equivalences

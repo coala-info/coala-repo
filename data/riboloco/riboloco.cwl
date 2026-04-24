@@ -21,7 +21,6 @@ inputs:
       for an offset to be confidently assigned. Default = 0.8, i.e. the r value 
       of second best offset must be less than 0.8x the value of the best offset.
       Lower values are more stringent. Should be less than 1, and more than 0
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --ambiguity
@@ -51,7 +50,6 @@ inputs:
     doc: The level of enrichment near the start codon versus downstream for a 
       read type to be reported as potentially having strong bias towards out of 
       frame ribosomes. Default = 1.2 i.e. 20percent
-    default: 1.2
     inputBinding:
       position: 101
       prefix: --frameness_ratio
@@ -110,7 +108,6 @@ inputs:
       - int
     doc: The number of codons to use for KL-based determination of offsets. By 
       default = 2 i.e. the P and A sites.
-    default: 2
     inputBinding:
       position: 101
       prefix: --kl_length
@@ -120,7 +117,6 @@ inputs:
       - int
     doc: The maximum offset length from the 3' end of the E site (not the A 
       site). Length is measured in nt. Default = -22
-    default: -22
     inputBinding:
       position: 101
       prefix: --max_A_offset
@@ -130,7 +126,6 @@ inputs:
       - int
     doc: Maximum distance in nucleotides around start and stop codons for which 
       offsets are attempted to be calculated. Default is 20. Twenty is plenty.
-    default: 20
     inputBinding:
       position: 101
       prefix: --max_distance
@@ -140,7 +135,6 @@ inputs:
       - int
     doc: The maximum offset which is analysed when plotting. Length is measured 
       in nt. Default = -40
-    default: -40
     inputBinding:
       position: 101
       prefix: --max_offset
@@ -150,7 +144,6 @@ inputs:
       - int
     doc: The miniumum offset length from the 3' end of the E site. (Not the A 
       site) Length is measured in nt. Default = 3
-    default: 3
     inputBinding:
       position: 101
       prefix: --min_A_offset
@@ -163,7 +156,6 @@ inputs:
       --min_abundance_ref, the rationale being that you want to use abundant 
       read lengths to build the reference, but any read length that matches the 
       reference well should be included in the final file.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --min_abundance
@@ -177,7 +169,6 @@ inputs:
       promote inclusion of reads which are primarily out of frame. Recommended 
       to keep above 0.05. Read fractions are calculated for reads within the 
       annotated CDS - UTRs are ignored.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min_abundance_ref
@@ -187,7 +178,6 @@ inputs:
       - int
     doc: The minimum number of counts of a given read type at the start codon 
       for a read's offset to be confidently assigned. Default=25
-    default: 25
     inputBinding:
       position: 101
       prefix: --min_counts_start
@@ -198,7 +188,6 @@ inputs:
     doc: The minimum number of counts of a given read type at the stop codon for
       a read's offset to be confidently assigned. Default=25. To block stop 
       offsets being used, set to large number eg 100000
-    default: 25
     inputBinding:
       position: 101
       prefix: --min_counts_stop
@@ -208,7 +197,6 @@ inputs:
       - int
     doc: The miniumum which is analysed when plotting Length is measured in nt. 
       Default = 10
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_offset
@@ -219,7 +207,6 @@ inputs:
     doc: The minimum ratio of the start codon counts of a given read type versus
       the previous position for an offset based on the start codon to be 
       confidently assigned. Default=4
-    default: 4
     inputBinding:
       position: 101
       prefix: --min_ratio_start
@@ -230,7 +217,6 @@ inputs:
     doc: The minimum ratio of the stop codon counts of a given read type versus 
       the next position for an offset based on the stop codon to be confidently 
       assigned. Default=4
-    default: 4
     inputBinding:
       position: 101
       prefix: --min_ratio_stop
@@ -240,7 +226,6 @@ inputs:
       - float
     doc: The minimum correlation between the reference and the RUST ratios for 
       the assigned offset for the file to be written. Default = 0.7
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --min_score
@@ -279,7 +264,6 @@ inputs:
       - int
     doc: How far downstream of the annotated start to look for out of frame 
       reads. Default=2000.
-    default: 2000
     inputBinding:
       position: 101
       prefix: --oof_plot_end
@@ -289,7 +273,6 @@ inputs:
       - int
     doc: How far downstream of the annotated start to look for out of frame 
       reads. Default=0. Set to negative values to search for uORFs
-    default: 0
     inputBinding:
       position: 101
       prefix: --oof_plot_start
@@ -299,7 +282,6 @@ inputs:
       - int
     doc: How wide each of the windows in the oof heatmap should be in 
       nucleotides. Default=50nt
-    default: 50
     inputBinding:
       position: 101
       prefix: --oof_plot_stride
@@ -327,7 +309,6 @@ inputs:
     doc: Periodicity filter - the minimum ratio of reads in the major frame to 
       the minor frame for a given read length to pass filtering. Default is 2; 
       higher numbers are more stringent. Set to 1 to remove filtering
-    default: 2
     inputBinding:
       position: 101
       prefix: --periodicity

@@ -18,7 +18,6 @@ inputs:
     doc: Minimum number of reads for a fragment length to consider it in the 
       model. The default is 2, to handle smaller datasets. Set to 0 to turn off 
       filtering. For a larger dataset, try 100 and adjust from there.
-    default: 2
     inputBinding:
       position: 101
       prefix: --min_reads

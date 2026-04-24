@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: 'Qscore model k-mer size (must be odd, default: 9)'
-    default: 9
     inputBinding:
       position: 101
       prefix: --k_size
@@ -34,7 +33,6 @@ inputs:
       - int
     doc: 'Deletion runs longer than this will be collapsed to reduce the number of
       possible alignments (default: 6)'
-    default: 6
     inputBinding:
       position: 101
       prefix: --max_del
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: 'The outputted model will be limited to this many lines (default: 10000)'
-    default: 10000
     inputBinding:
       position: 101
       prefix: --max_output
@@ -53,7 +50,6 @@ inputs:
       - int
     doc: 'CIGARs which occur less than this many times will not be included in the
       model (default: 100)'
-    default: 100
     inputBinding:
       position: 101
       prefix: --min_occur

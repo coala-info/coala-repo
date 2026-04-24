@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: Consider anchoring positions on the long read.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --anchorCount
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: Chaining algorithm to use. Options are "dp-n2" and "clasp".
-    default: dp-n2
     inputBinding:
       position: 101
       prefix: --chainAlg
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore anchoring positions with more than reference hits.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --maxRefHit
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum required length of anchors to be considered.
-    default: 14
     inputBinding:
       position: 101
       prefix: --minAnchorLen
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Do not try to map any read shorter than bp and report them as unmapped.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --minReadLen
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Perform alignment for at most candidates.
-    default: 10
     inputBinding:
       position: 101
       prefix: --numMap
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: SAM read group line in a format like '@RGID:fooSM:bar'.
-    default: ''
     inputBinding:
       position: 101
       prefix: --readGroup
@@ -102,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Use number of CPU cores. Pass 0 to use all the available cores.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

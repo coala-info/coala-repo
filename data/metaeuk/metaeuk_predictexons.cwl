@@ -25,7 +25,6 @@ inputs:
       - boolean
     doc: Add backtrace string (convert to alignments with mmseqs convertalis 
       module)
-    default: 0
     inputBinding:
       position: 104
       prefix: -a
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Artificially add entries of queries with themselves (for clustering)
-    default: 0
     inputBinding:
       position: 104
       prefix: --add-self-matches
@@ -47,7 +45,6 @@ inputs:
       \                     2: also start_pos and cov\n                          \
       \        3: also seq.id\n                                  4: only ungapped
       alignment"
-    default: 2
     inputBinding:
       position: 104
       prefix: --alignment-mode
@@ -61,7 +58,6 @@ inputs:
       \        3: also seq.id\n                                  4: only ungapped
       alignment\n                                  5: score only (output) cluster
       format"
-    default: 0
     inputBinding:
       position: 104
       prefix: --alignment-output-mode
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow deletions in a MSA
-    default: 0
     inputBinding:
       position: 104
       prefix: --allow-deletion
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Alphabet size (range 2-21)
-    default: aa:21,nucl:5
     inputBinding:
       position: 104
       prefix: --alph-size
@@ -88,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Show up to this many alternative alignments
-    default: 0
     inputBinding:
       position: 104
       prefix: --alt-ali
@@ -97,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Chain overlapping alignments
-    default: 0
     inputBinding:
       position: 104
       prefix: --chain-alignments
@@ -106,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Correct for locally biased amino acid composition (range 0-1)
-    default: 1
     inputBinding:
       position: 104
       prefix: --comp-bias-corr
@@ -115,7 +106,6 @@ inputs:
       - 'null'
       - float
     doc: Correct for locally biased amino acid composition (range 0-1)
-    default: 1.0
     inputBinding:
       position: 104
       prefix: --comp-bias-corr-scale
@@ -124,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: Write compressed output
-    default: 0
     inputBinding:
       position: 104
       prefix: --compressed
@@ -133,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: 'Contig end can be 0: incomplete, 1: complete, 2: both'
-    default: 2
     inputBinding:
       position: 104
       prefix: --contig-end-mode
@@ -142,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: 'Contig start can be 0: incomplete, 1: complete, 2: both'
-    default: 2
     inputBinding:
       position: 104
       prefix: --contig-start-mode
@@ -152,7 +139,6 @@ inputs:
       - float
     doc: Weight of backtrace correlation score that is added to the alignment 
       score
-    default: 0.0
     inputBinding:
       position: 104
       prefix: --corr-score-weight
@@ -162,7 +148,6 @@ inputs:
       - float
     doc: Filter output MSAs using min. fraction of query residues covered by 
       matched sequences [0.0,1.0]
-    default: 0.0
     inputBinding:
       position: 104
       prefix: --cov
@@ -176,7 +161,6 @@ inputs:
       length\n                                  4: query seq. length has to be at
       least x% of target length\n                                  5: short seq. needs
       to be at least x% of the other seq. length"
-    default: 0
     inputBinding:
       position: 104
       prefix: --cov-mode
@@ -186,7 +170,6 @@ inputs:
       - float
     doc: List matches above this fraction of aligned (covered) residues (see 
       --cov-mode)
-    default: 0.0
     inputBinding:
       position: 104
       prefix: -c
@@ -195,7 +178,6 @@ inputs:
       - 'null'
       - int
     doc: Create database lookup file (can be very large)
-    default: 0
     inputBinding:
       position: 104
       prefix: --create-lookup
@@ -204,7 +186,6 @@ inputs:
       - 'null'
       - int
     doc: 'Database preload mode 0: auto, 1: fread, 2: mmap, 3: mmap+touch'
-    default: 0
     inputBinding:
       position: 104
       prefix: --db-load-mode
@@ -213,7 +194,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use ungapped diagonal scoring during prefilter
-    default: 1
     inputBinding:
       position: 104
       prefix: --diag-score
@@ -223,7 +203,6 @@ inputs:
       - int
     doc: Filter MSAs by selecting most diverse set of sequences, keeping at 
       least this many seqs in each MSA block of length 50
-    default: 1000
     inputBinding:
       position: 104
       prefix: --diff
@@ -233,7 +212,6 @@ inputs:
       - string
     doc: Set max disk space to use for reverse profile searches. E.g. 800B, 5K, 
       10M, 1G. Default (0) to all available disk space in the temp folder
-    default: '0'
     inputBinding:
       position: 104
       prefix: --disk-space-limit
@@ -242,7 +220,6 @@ inputs:
       - 'null'
       - double
     doc: Include sequences matches with < E-value thr. into the profile (>=0.0)
-    default: 0.001
     inputBinding:
       position: 104
       prefix: --e-profile
@@ -251,7 +228,6 @@ inputs:
       - 'null'
       - double
     doc: List matches below this E-value (range 0.0-inf)
-    default: 100.0
     inputBinding:
       position: 104
       prefix: -e
@@ -260,7 +236,6 @@ inputs:
       - 'null'
       - int
     doc: Extract only exact k-mers for matching (range 0-1)
-    default: 0
     inputBinding:
       position: 104
       prefix: --exact-kmer-matching
@@ -270,7 +245,6 @@ inputs:
       - boolean
     doc: For bigger profile DB, run iteratively the search by greedily swapping 
       the search results
-    default: 0
     inputBinding:
       position: 104
       prefix: --exhaustive-search
@@ -279,7 +253,6 @@ inputs:
       - 'null'
       - int
     doc: 'Filter result during search: 0: do not filter, 1: filter'
-    default: 0
     inputBinding:
       position: 104
       prefix: --exhaustive-search-filter
@@ -288,7 +261,6 @@ inputs:
       - 'null'
       - boolean
     doc: Filter hits by seq.id. and coverage
-    default: 0
     inputBinding:
       position: 104
       prefix: --filter-hits
@@ -297,7 +269,6 @@ inputs:
       - 'null'
       - int
     doc: Only filter MSAs with more than N sequences, 0 always filters
-    default: 0
     inputBinding:
       position: 104
       prefix: --filter-min-enable
@@ -306,7 +277,6 @@ inputs:
       - 'null'
       - int
     doc: 'Filter msa: 0: do not filter, 1: filter'
-    default: 1
     inputBinding:
       position: 104
       prefix: --filter-msa
@@ -316,7 +286,6 @@ inputs:
       - boolean
     doc: Reuse tmp filse in tmp/latest folder ignoring parameters and version 
       changes
-    default: 0
     inputBinding:
       position: 104
       prefix: --force-reuse
@@ -325,7 +294,6 @@ inputs:
       - 'null'
       - string
     doc: Comma-separated list of frames on the forward strand to be extracted
-    default: 1,2,3
     inputBinding:
       position: 104
       prefix: --forward-frames
@@ -334,7 +302,6 @@ inputs:
       - 'null'
       - string
     doc: Gap extension cost
-    default: aa:1,nucl:2
     inputBinding:
       position: 104
       prefix: --gap-extend
@@ -343,7 +310,6 @@ inputs:
       - 'null'
       - string
     doc: Gap open cost
-    default: aa:11,nucl:5
     inputBinding:
       position: 104
       prefix: --gap-open
@@ -352,7 +318,6 @@ inputs:
       - 'null'
       - int
     doc: 'Header split mode: 0: split position, 1: original header'
-    default: 0
     inputBinding:
       position: 104
       prefix: --headers-split-mode
@@ -361,7 +326,6 @@ inputs:
       - 'null'
       - int
     doc: Numeric ids in index file are offset by this value
-    default: 0
     inputBinding:
       position: 104
       prefix: --id-offset
@@ -370,7 +334,6 @@ inputs:
       - 'null'
       - string
     doc: k-mer threshold for generating similar k-mer lists
-    default: seq:2147483647,prof:2147483647
     inputBinding:
       position: 104
       prefix: --k-score
@@ -379,7 +342,6 @@ inputs:
       - 'null'
       - int
     doc: 'k-mer length (0: automatically set to optimum)'
-    default: 0
     inputBinding:
       position: 104
       prefix: -k
@@ -388,7 +350,6 @@ inputs:
       - 'null'
       - boolean
     doc: Efficient search for LCA candidates
-    default: 0
     inputBinding:
       position: 104
       prefix: --lca-search
@@ -397,7 +358,6 @@ inputs:
       - 'null'
       - string
     doc: Path where some of the temporary files will be created
-    default: ''
     inputBinding:
       position: 104
       prefix: --local-tmp
@@ -407,7 +367,6 @@ inputs:
       - int
     doc: 'Mask sequences in k-mer stage: 0: w/o low complexity masking, 1: with low
       complexity masking'
-    default: 1
     inputBinding:
       position: 104
       prefix: --mask
@@ -417,7 +376,6 @@ inputs:
       - int
     doc: 'Lowercase letters will be excluded from k-mer search 0: include region,
       1: exclude region'
-    default: 0
     inputBinding:
       position: 104
       prefix: --mask-lower-case
@@ -426,7 +384,6 @@ inputs:
       - 'null'
       - float
     doc: Mask sequences is probablity is above threshold
-    default: 0.9
     inputBinding:
       position: 104
       prefix: --mask-prob
@@ -435,7 +392,6 @@ inputs:
       - 'null'
       - int
     doc: Mask query sequence of profile using tantan [0,1]
-    default: 1
     inputBinding:
       position: 104
       prefix: --mask-profile
@@ -445,7 +401,6 @@ inputs:
       - int
     doc: Maximum accepted alignments before alignment calculation for a query is
       stopped
-    default: 2147483647
     inputBinding:
       position: 104
       prefix: --max-accept
@@ -455,7 +410,6 @@ inputs:
       - int
     doc: Maximal number of exons sets that match a given target. If >1 
       suboptimal solutions will be reported
-    default: 1
     inputBinding:
       position: 104
       prefix: --max-exon-sets
@@ -465,7 +419,6 @@ inputs:
       - int
     doc: Maximum number of codons with gaps or unknown residues before an open 
       reading frame is rejected
-    default: 2147483647
     inputBinding:
       position: 104
       prefix: --max-gaps
@@ -474,7 +427,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal allowed intron length
-    default: 10000
     inputBinding:
       position: 104
       prefix: --max-intron
@@ -483,7 +435,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum codon number in open reading frames
-    default: 32734
     inputBinding:
       position: 104
       prefix: --max-length
@@ -492,7 +443,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal allowed overlap of consecutive exons in amino acids
-    default: 10
     inputBinding:
       position: 104
       prefix: --max-overlap
@@ -502,7 +452,6 @@ inputs:
       - int
     doc: Maximum rejected alignments before alignment calculation for a query is
       stopped
-    default: 2147483647
     inputBinding:
       position: 104
       prefix: --max-rejected
@@ -512,7 +461,6 @@ inputs:
       - float
     doc: Reduce redundancy of output MSA using max. pairwise sequence identity 
       [0.0,1.0]
-    default: 0.9
     inputBinding:
       position: 104
       prefix: --max-seq-id
@@ -521,7 +469,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum sequence length
-    default: 65535
     inputBinding:
       position: 104
       prefix: --max-seq-len
@@ -531,7 +478,6 @@ inputs:
       - int
     doc: Maximum results per query sequence allowed to pass the prefilter 
       (affects sensitivity)
-    default: 300
     inputBinding:
       position: 104
       prefix: --max-seqs
@@ -540,7 +486,6 @@ inputs:
       - 'null'
       - int
     doc: Combine ORFs/split sequences to a single entry
-    default: 1
     inputBinding:
       position: 104
       prefix: --merge-query
@@ -549,7 +494,6 @@ inputs:
       - 'null'
       - float
     doc: maximal combined evalue of an optimal set [0.0, inf]
-    default: 0.001
     inputBinding:
       position: 104
       prefix: --metaeuk-eval
@@ -558,7 +502,6 @@ inputs:
       - 'null'
       - float
     doc: minimal length ratio of combined set to target [0.0, 1.0]
-    default: 0.5
     inputBinding:
       position: 104
       prefix: --metaeuk-tcov
@@ -567,7 +510,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment length (range 0-INT_MAX)
-    default: 0
     inputBinding:
       position: 104
       prefix: --min-aln-len
@@ -576,7 +518,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal allowed exon length in amino acids
-    default: 11
     inputBinding:
       position: 104
       prefix: --min-exon-aa
@@ -585,7 +526,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal allowed intron length
-    default: 15
     inputBinding:
       position: 104
       prefix: --min-intron
@@ -594,7 +534,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum codon number in open reading frames
-    default: 15
     inputBinding:
       position: 104
       prefix: --min-length
@@ -604,7 +543,6 @@ inputs:
       - float
     doc: List matches above this sequence identity (for clustering) (range 
       0.0-1.0)
-    default: 0.0
     inputBinding:
       position: 104
       prefix: --min-seq-id
@@ -613,7 +551,6 @@ inputs:
       - 'null'
       - int
     doc: Accept only matches with ungapped alignment score above threshold
-    default: 15
     inputBinding:
       position: 104
       prefix: --min-ungapped-score
@@ -622,7 +559,6 @@ inputs:
       - 'null'
       - string
     doc: Use MPI on compute cluster with this MPI command (e.g. "mpirun -np 42")
-    default: ''
     inputBinding:
       position: 104
       prefix: --mpi-runner
@@ -632,7 +568,6 @@ inputs:
       - int
     doc: 'Orf fragment can be 0: from start to stop, 1: from any to stop, 2: from
       last encountered start to stop (no start in the middle)'
-    default: 1
     inputBinding:
       position: 104
       prefix: --orf-start-mode
@@ -657,7 +592,6 @@ inputs:
       - 'null'
       - int
     doc: 'prefilter mode: 0: kmer/ungapped 1: ungapped, 2: nofilter'
-    default: 0
     inputBinding:
       position: 104
       prefix: --prefilter-mode
@@ -666,7 +600,6 @@ inputs:
       - 'null'
       - int
     doc: 'use 0: substitution-matrix or 1: context-specific pseudocounts'
-    default: 0
     inputBinding:
       position: 104
       prefix: --pseudo-cnt-mode
@@ -678,7 +611,6 @@ inputs:
       [0.0,1.0]\n                                  Alternatively, can be a list of
       multiple thresholds:\n                                  E.g.: 0.15,0.30,0.50
       to defines filter buckets of ]0.15-0.30] and ]0.30-0.50]"
-    default: '0.0'
     inputBinding:
       position: 104
       prefix: --qid
@@ -688,7 +620,6 @@ inputs:
       - float
     doc: Reduce diversity of output MSAs using min. score per aligned residue 
       with query sequences [-50.0,100.0]
-    default: -20.0
     inputBinding:
       position: 104
       prefix: --qsc
@@ -698,7 +629,6 @@ inputs:
       - boolean
     doc: Compute more conservative, shorter alignments (scores and E-values not 
       changed)
-    default: 0
     inputBinding:
       position: 104
       prefix: --realign
@@ -707,7 +637,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of results to return in realignment
-    default: 2147483647
     inputBinding:
       position: 104
       prefix: --realign-max-seqs
@@ -716,7 +645,6 @@ inputs:
       - 'null'
       - float
     doc: Additional bias when computing realignment
-    default: -0.2
     inputBinding:
       position: 104
       prefix: --realign-score-bias
@@ -725,7 +653,6 @@ inputs:
       - 'null'
       - boolean
     doc: Delete temporary files
-    default: 0
     inputBinding:
       position: 104
       prefix: --remove-tmp-files
@@ -738,7 +665,6 @@ inputs:
       \                           2: local alignment\n                           \
       \       3: global alignment\n                                  4: longest alignment
       fulfilling window quality criterion"
-    default: 0
     inputBinding:
       position: 104
       prefix: --rescore-mode
@@ -747,7 +673,6 @@ inputs:
       - 'null'
       - int
     doc: reverse AA fragments to compute under null [0,1]
-    default: 0
     inputBinding:
       position: 104
       prefix: --reverse-fragments
@@ -756,7 +681,6 @@ inputs:
       - 'null'
       - string
     doc: Comma-separated list of frames on the reverse strand to be extracted
-    default: 1,2,3
     inputBinding:
       position: 104
       prefix: --reverse-frames
@@ -765,7 +689,6 @@ inputs:
       - 'null'
       - float
     doc: Score bias when computing SW alignment (in bits)
-    default: 0.0
     inputBinding:
       position: 104
       prefix: --score-bias
@@ -775,7 +698,6 @@ inputs:
       - int
     doc: 'Search type 0: auto 1: amino acid, 2: translated, 3: nucleotide, 4: translated
       nucleotide alignment'
-    default: 0
     inputBinding:
       position: 104
       prefix: --search-type
@@ -784,7 +706,6 @@ inputs:
       - 'null'
       - string
     doc: Substitution matrix file for k-mer generation
-    default: aa:VTML80.out,nucl:nucleotide.out
     inputBinding:
       position: 104
       prefix: --seed-sub-mat
@@ -793,7 +714,6 @@ inputs:
       - 'null'
       - int
     doc: Number of search steps performed from --start-sens to -s
-    default: 1
     inputBinding:
       position: 104
       prefix: --sens-steps
@@ -802,7 +722,6 @@ inputs:
       - 'null'
       - float
     doc: 'Sensitivity: 1.0 faster; 4.0 fast; 7.5 sensitive'
-    default: 4.0
     inputBinding:
       position: 104
       prefix: -s
@@ -811,7 +730,6 @@ inputs:
       - 'null'
       - int
     doc: '0: alignment length 1: shorter, 2: longer sequence'
-    default: 0
     inputBinding:
       position: 104
       prefix: --seq-id-mode
@@ -820,7 +738,6 @@ inputs:
       - 'null'
       - int
     doc: Overlap between sequences
-    default: 0
     inputBinding:
       position: 104
       prefix: --sequence-overlap
@@ -829,7 +746,6 @@ inputs:
       - 'null'
       - int
     doc: 'Sequence split mode 0: copy data, 1: soft link data and write new index'
-    default: 1
     inputBinding:
       position: 104
       prefix: --sequence-split-mode
@@ -839,7 +755,6 @@ inputs:
       - int
     doc: Gap extend penalty (negative) for missed target amino acids between 
       exons
-    default: -1
     inputBinding:
       position: 104
       prefix: --set-gap-extend
@@ -848,7 +763,6 @@ inputs:
       - 'null'
       - int
     doc: Gap open penalty (negative) for missed target amino acids between exons
-    default: -1
     inputBinding:
       position: 104
       prefix: --set-gap-open
@@ -857,7 +771,6 @@ inputs:
       - 'null'
       - int
     doc: 'Sort results: 0: no sorting, 1: sort by E-value (Alignment) or seq.id. (Hamming)'
-    default: 0
     inputBinding:
       position: 104
       prefix: --sort-results
@@ -866,7 +779,6 @@ inputs:
       - 'null'
       - int
     doc: '0: use consecutive positions in k-mers; 1: use spaced k-mers'
-    default: 1
     inputBinding:
       position: 104
       prefix: --spaced-kmer-mode
@@ -875,7 +787,6 @@ inputs:
       - 'null'
       - string
     doc: User-specified spaced k-mer pattern
-    default: ''
     inputBinding:
       position: 104
       prefix: --spaced-kmer-pattern
@@ -884,7 +795,6 @@ inputs:
       - 'null'
       - int
     doc: 'Split input into N equally distributed chunks. 0: set the best split automatically'
-    default: 0
     inputBinding:
       position: 104
       prefix: --split
@@ -894,7 +804,6 @@ inputs:
       - string
     doc: Set max memory per split. E.g. 800B, 5K, 10M, 1G. Default (0) to all 
       available system memory
-    default: '0'
     inputBinding:
       position: 104
       prefix: --split-memory-limit
@@ -903,7 +812,6 @@ inputs:
       - 'null'
       - int
     doc: '0: split target db; 1: split query db; 2: auto, depending on main memory'
-    default: 2
     inputBinding:
       position: 104
       prefix: --split-mode
@@ -912,7 +820,6 @@ inputs:
       - 'null'
       - float
     doc: Start sensitivity
-    default: 4.0
     inputBinding:
       position: 104
       prefix: --start-sens
@@ -922,7 +829,6 @@ inputs:
       - int
     doc: 'Strand selection only works for DNA/DNA search 0: reverse, 1: forward, 2:
       both'
-    default: 1
     inputBinding:
       position: 104
       prefix: --strand
@@ -931,7 +837,6 @@ inputs:
       - 'null'
       - string
     doc: Substitution matrix file
-    default: aa:blosum62.out,nucl:nucleotide.out
     inputBinding:
       position: 104
       prefix: --sub-mat
@@ -940,7 +845,6 @@ inputs:
       - 'null'
       - int
     doc: 'target search mode (0: regular k-mer, 1: similar k-mer)'
-    default: 0
     inputBinding:
       position: 104
       prefix: --target-search-mode
@@ -949,7 +853,6 @@ inputs:
       - 'null'
       - string
     doc: Taxonomy ID, possibly multiple values separated by ','
-    default: ''
     inputBinding:
       position: 104
       prefix: --taxon-list
@@ -958,7 +861,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU-cores used (all by default)
-    default: 20
     inputBinding:
       position: 104
       prefix: --threads
@@ -967,7 +869,6 @@ inputs:
       - 'null'
       - int
     doc: Translate ORF to amino acid
-    default: 0
     inputBinding:
       position: 104
       prefix: --translate
@@ -983,7 +884,6 @@ inputs:
       \                                  23) THRAUSTOCHYTRIUM_MITOCHONDRIAL, 24) PTEROBRANCHIA_MITOCHONDRIAL,
       25) GRACILIBACTERIA, 26) PACHYSOLEN, 27) KARYORELICT, 28) CONDYLOSTOMA\n   \
       \                                29) MESODINIUM, 30) PERTRICH, 31) BLASTOCRITHIDIA"
-    default: 1
     inputBinding:
       position: 104
       prefix: --translation-table
@@ -993,7 +893,6 @@ inputs:
       - boolean
     doc: Use all alternatives for a start codon in the genetic table, if false -
       only ATG (AUG)
-    default: 0
     inputBinding:
       position: 104
       prefix: --use-all-table-starts
@@ -1002,7 +901,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbosity level: 0: quiet, 1: +errors, 2: +warnings, 3: +info'
-    default: 3
     inputBinding:
       position: 104
       prefix: -v
@@ -1011,7 +909,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use global sequence weighting for profile calculation
-    default: 0
     inputBinding:
       position: 104
       prefix: --wg
@@ -1021,7 +918,6 @@ inputs:
       - boolean
     doc: Double the (nucleotide) query sequence during the scoring process to 
       allow wrapped diagonal scoring around end and start
-    default: 0
     inputBinding:
       position: 104
       prefix: --wrapped-scoring
@@ -1031,7 +927,6 @@ inputs:
       - int
     doc: Maximal allowed difference between score values before alignment is 
       truncated  (nucleotide alignment only)
-    default: 40
     inputBinding:
       position: 104
       prefix: --zdrop

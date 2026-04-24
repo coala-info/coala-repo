@@ -46,7 +46,6 @@ inputs:
           - relab
     doc: Normalization scheme, copies per million [cpm], relative abundance [relab] default=[cpm]
     label: Units
-    default: cpm
     inputBinding:
       prefix: --units
   mode:
@@ -57,7 +56,6 @@ inputs:
           - levelwise
     doc: Normalize all levels by [community] total or [levelwise] totals; default=[community]
     label: Mode
-    default: community
     inputBinding:
       prefix: --mode    
   special:
@@ -68,7 +66,6 @@ inputs:
           - n
     doc: Include the special features UNMAPPED, UNINTEGRATED, and UNGROUPED; default=[y]
     label: Special
-    default: y
     inputBinding:
       prefix: --special
   update-sname:

@@ -13,7 +13,6 @@ inputs:
       - int
     doc: "number of random DNA fragments collected from\n                        \
       \      each genome"
-    default: 5
     inputBinding:
       position: 101
       prefix: --frags-per-genome
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: 'max # of jobs in parallel'
-    default: 20
     inputBinding:
       position: 101
       prefix: --jobs
@@ -64,7 +62,6 @@ inputs:
       \  features; if # of orf in a seq exceeds the max\n                        \
       \      limit, it is sub-sampled to this # to reduce\n                      \
       \        computation; to turn off this, set it to -1"
-    default: 20
     inputBinding:
       position: 101
       prefix: --max-orf-per-seq
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: minimum size of random DNA fragment for training
-    default: 1000
     inputBinding:
       position: 101
       prefix: --min-length

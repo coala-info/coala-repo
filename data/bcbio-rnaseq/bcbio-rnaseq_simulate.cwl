@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Library size in millions of reads
-    default: 20
     inputBinding:
       position: 101
       prefix: --library-size
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Number of genes to simulate.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --num-genes
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Sample size of each group
-    default: 3
     inputBinding:
       position: 101
       prefix: --sample-size

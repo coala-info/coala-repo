@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: number of records loaded to the memory at once
-    default: 4096
     inputBinding:
       position: 102
       prefix: --batchsize
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: specify categories column name ['barcode_arrangement']
-    default: barcode_arrangement
     inputBinding:
       position: 102
       prefix: --demux-code
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: specify read IDs column name ['parent_read_id']
-    default: parent_read_id
     inputBinding:
       position: 102
       prefix: --demux-rid
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: retain information in auxiliary fields during the conversion
-    default: true
     inputBinding:
       position: 102
       prefix: --lossless
@@ -95,7 +91,6 @@ inputs:
       - string
     doc: specify output file format [blow5, auto detected using extension if -o 
       FILE is provided]
-    default: auto detected using extension if -o FILE is provided
     inputBinding:
       position: 102
       prefix: --to
@@ -112,7 +107,6 @@ inputs:
       - 'null'
       - string
     doc: record compression method [zlib] (only for blow5 format)
-    default: zlib
     inputBinding:
       position: 102
       prefix: --compress
@@ -121,7 +115,6 @@ inputs:
       - 'null'
       - string
     doc: signal compression method [svb-zd] (only for blow5 format)
-    default: svb-zd
     inputBinding:
       position: 102
       prefix: --sig-compress
@@ -138,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 8
     inputBinding:
       position: 102
       prefix: --threads

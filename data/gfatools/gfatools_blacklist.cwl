@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: min region length
-    default: 100
     inputBinding:
       position: 102
       prefix: -l

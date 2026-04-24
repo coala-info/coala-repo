@@ -10,7 +10,6 @@ inputs:
   - id: s2c_obj
     type: File
     doc: path to SNP2CELL object
-    default: None
     inputBinding:
       position: 1
   - id: groupby
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: '`ad.obs` column with annotation used for DE scores'
-    default: annot
     inputBinding:
       position: 2
   - id: snp_score_key
@@ -26,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: key for accessing saved snp scores in object
-    default: snp_score
     inputBinding:
       position: 3
 outputs:

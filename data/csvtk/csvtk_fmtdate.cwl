@@ -12,7 +12,6 @@ inputs:
       - string
     doc: lines starting with commment-character will be ignored. if your header row
       starts with '#', please assign "-C" another rare symbol, e.g. '$'
-    default: '#'
     inputBinding:
       position: 101
       prefix: --comment-char
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: delimiting character of the input CSV file
-    default: ','
     inputBinding:
       position: 101
       prefix: --delimiter
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: select only these fields. e.g -f 1,2 or -f columnA,columnB
-    default: '1'
     inputBinding:
       position: 101
       prefix: --fields
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: output date format in MS Excel (TM) syntax
-    default: YYYY-MM-DD hh:mm:ss
     inputBinding:
       position: 101
       prefix: --format
@@ -115,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs to use
-    default: 4
     inputBinding:
       position: 101
       prefix: --num-cpus
@@ -124,7 +119,6 @@ inputs:
       - 'null'
       - string
     doc: delimiting character of the output CSV file, e.g., -D $'\t' for tab
-    default: ','
     inputBinding:
       position: 101
       prefix: --out-delimiter

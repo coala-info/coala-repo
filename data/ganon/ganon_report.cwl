@@ -58,7 +58,6 @@ inputs:
       - float
     doc: Maximum number/percentage of counts to keep an taxa [values between 0-1
       for percentage, >1 specific number]
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-count
@@ -68,7 +67,6 @@ inputs:
       - float
     doc: Minimum number/percentage of counts to keep an taxa [values between 0-1
       for percentage, >1 specific number]
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-count
@@ -116,7 +114,6 @@ inputs:
     doc: Output format [text, tsv, csv, bioboxes]. text outputs a tabulated 
       formatted text file for better visualization. bioboxes is the the CAMI 
       challenge profiling format (only percentage/abundances are reported).
-    default: tsv
     inputBinding:
       position: 101
       prefix: --output-format
@@ -144,7 +141,6 @@ inputs:
     doc: Ranks to report ['', 'all', custom list]. 'all' for all possible ranks.
       empty for default ranks [domain phylum class order family genus species 
       assembly].
-    default: []
     inputBinding:
       position: 101
       prefix: --ranks
@@ -158,7 +154,6 @@ inputs:
       matches, 'dist' -> like reads with re-distribution of shared read counts 
       only, 'corr' -> like abundance without re-distribution of shared read 
       counts
-    default: abundance
     inputBinding:
       position: 101
       prefix: --report-type
@@ -234,7 +229,6 @@ inputs:
     doc: Top percentile filter, based on percentage/relative abundance. Applied 
       only at default ranks [domain phylum class order family genus species 
       assembly]
-    default: 0
     inputBinding:
       position: 101
       prefix: --top-percentile

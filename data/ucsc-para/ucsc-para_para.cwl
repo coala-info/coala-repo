@@ -54,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs used by the jobs.
-    default: 1
     inputBinding:
       position: 106
       prefix: -cpu
@@ -64,7 +63,6 @@ inputs:
       - int
     doc: Number of seconds to delay before submitting next job to minimize i/o 
       load at startup.
-    default: 0
     inputBinding:
       position: 106
       prefix: -delayTime
@@ -91,7 +89,6 @@ inputs:
       - string
     doc: Limit the number of jobs the batch can run. Specify number of jobs, for
       example 10 or 'unlimited'. Default unlimited displays as -1.
-    default: unlimited
     inputBinding:
       position: 106
       prefix: -maxJob
@@ -100,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of jobs to queue.
-    default: 100000
     inputBinding:
       position: 106
       prefix: -maxPush
@@ -109,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Number of jobs to allow on parasol queue.
-    default: 2000000
     inputBinding:
       position: 106
       prefix: -maxQueue
@@ -118,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of jobs to queue. Overrides maxQueue.
-    default: 1
     inputBinding:
       position: 106
       prefix: -minPush
@@ -128,7 +122,6 @@ inputs:
       - string
     doc: Set batch priority to high, medium, or low. Default medium. Or, set 
       batch priority to a specific numeric value - default 10.
-    default: medium
     inputBinding:
       position: 106
       prefix: -priority
@@ -146,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: Number of retries per job.
-    default: 4
     inputBinding:
       position: 106
       prefix: -retries
@@ -163,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: Number of minutes job runs before hang warning.
-    default: 4320
     inputBinding:
       position: 106
       prefix: -warnTime

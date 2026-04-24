@@ -19,7 +19,6 @@ inputs:
     doc: Path to an alternative BUSCO config file; otherwise, BUSCO will attempt
       to use its default installation which will likely only work on bioconda. 
       Advanced use only!
-    default: None
     inputBinding:
       position: 102
       prefix: --busco-config-file
@@ -29,7 +28,6 @@ inputs:
       - string
     doc: Which BUSCO group to use. Should be chosen based on the organism being 
       annotated. Full list of options is below.
-    default: metazoa
     inputBinding:
       position: 102
       prefix: --busco-group
@@ -39,7 +37,6 @@ inputs:
       - File
     doc: A JSON file providing values to override built-in config. Advanced use 
       only!
-    default: None
     inputBinding:
       position: 102
       prefix: --config-file
@@ -50,7 +47,6 @@ inputs:
     doc: Directory to store databases. Existing databases will not be 
       overwritten. By default, the database directory is 
       $HOME/.dammit/databases.
-    default: $HOME/.dammit/databases
     inputBinding:
       position: 102
       prefix: --database-dir
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: e-value cutoff for similarity searches.
-    default: '1e-05'
     inputBinding:
       position: 102
       prefix: --evalue
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ignore missing database tasks.
-    default: false
     inputBinding:
       position: 102
       prefix: --force
@@ -79,7 +73,6 @@ inputs:
     doc: Run a "complete" annotation; includes uniref90, which is left out of 
       the default pipeline because it is huge and homology searches take a long 
       time.
-    default: false
     inputBinding:
       position: 102
       prefix: --full
@@ -89,7 +82,6 @@ inputs:
       - int
     doc: For annotate, number of threads to pass to programs supporting 
       multithreading. For databases, number of simultaneous tasks to execute.
-    default: 1
     inputBinding:
       position: 102
       prefix: --n_threads
@@ -100,7 +92,6 @@ inputs:
     doc: Base name to use for renaming the input transcripts. The new names will
       be of the form <name>_<X>. It should not have spaces, pipes, ampersands, 
       or other characters with special meaning to BASH.
-    default: Transcript
     inputBinding:
       position: 102
       prefix: --name
@@ -110,7 +101,6 @@ inputs:
       - boolean
     doc: 'Keep original transcript names. Note: make sure your transcript names do
       not contain unusual characters.'
-    default: false
     inputBinding:
       position: 102
       prefix: --no-rename
@@ -121,7 +111,6 @@ inputs:
     doc: Also include annotation to NR database, which is left out of the 
       default and "full" pipelines because it is huge and homology searches take
       a long time.
-    default: false
     inputBinding:
       position: 102
       prefix: --nr
@@ -131,7 +120,6 @@ inputs:
       - Directory
     doc: Output directory. By default this will be the name of the transcriptome
       file with `.dammit` appended
-    default: None
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -140,7 +128,6 @@ inputs:
       - 'null'
       - boolean
     doc: Profile task execution.
-    default: false
     inputBinding:
       position: 102
       prefix: --profile
@@ -152,7 +139,6 @@ inputs:
       Pfam tasks, and the LAST OrthoDB and uniref90 tasks. Best for users just 
       looking to get basic stats and conditional reciprocal best LAST from a 
       protein database.
-    default: false
     inputBinding:
       position: 102
       prefix: --quick
@@ -161,7 +147,6 @@ inputs:
       - 'null'
       - File
     doc: Distribute execution across the specified nodes.
-    default: None
     inputBinding:
       position: 102
       prefix: --sshloginfile
@@ -172,7 +157,6 @@ inputs:
         items: File
     doc: Optional additional protein databases. These will be searched with 
       CRB-blast.
-    default: '[]'
     inputBinding:
       position: 102
       prefix: --user-databases
@@ -181,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: Verbosity level for doit tasks.
-    default: 0
     inputBinding:
       position: 102
       prefix: --verbosity

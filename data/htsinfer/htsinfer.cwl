@@ -22,7 +22,6 @@ inputs:
       temporary data and results are kept when '--verbosity' is set to 'DEBUG', 
       no data is kept when all metadata could be successfully determined, and 
       only results are kept otherwise
-    default: DEFAULT
     inputBinding:
       position: 102
       prefix: --cleanup-regime
@@ -32,7 +31,6 @@ inputs:
       - float
     doc: minimum frequency ratio between the first and second most frequent 
       source in order for the former to be considered the library's source
-    default: 2.0
     inputBinding:
       position: 102
       prefix: --library-source-min-frequency-ratio
@@ -42,7 +40,6 @@ inputs:
       - float
     doc: minimum percentage of reads that are consistent with a given source in 
       order for it to be considered the library's source
-    default: 5.0
     inputBinding:
       position: 102
       prefix: --library-source-min-match-percentage
@@ -52,7 +49,6 @@ inputs:
       - float
     doc: minimum fraction of mates that can be mapped to compatible loci and are
       considered concordant pairs / all mates
-    default: 0.85
     inputBinding:
       position: 102
       prefix: --library-type-mates-cutoff
@@ -62,7 +58,6 @@ inputs:
       - int
     doc: upper limit on the difference in the reference sequence coordinates 
       between the two mates to be considered as coming from a single fragment
-    default: 1000
     inputBinding:
       position: 102
       prefix: --library-type-max-distance
@@ -72,7 +67,6 @@ inputs:
       - File
     doc: path to text file containing 3' adapter sequences to scan for (one 
       sequence per line)
-    default: /usr/local/lib/python3.10/site-packages/data/adapter_fragments.txt
     inputBinding:
       position: 102
       prefix: --read-layout-adapters
@@ -83,7 +77,6 @@ inputs:
     doc: minimum frequency ratio between the first and second most frequent 
       adapter in order for the former to be considered as the library's 3'-end 
       adapter
-    default: 2.0
     inputBinding:
       position: 102
       prefix: --read-layout-min_frequency_ratio
@@ -93,7 +86,6 @@ inputs:
       - float
     doc: minimum percentage of reads that contain a given adapter sequence in 
       order for it to be considered as the library's 3'-end adapter
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --read-layout-min-match-percentage
@@ -104,7 +96,6 @@ inputs:
     doc: minimum fraction of mapped reads required to be consistent with a given
       read orientation state in order for that orientation to be reported. Must 
       be above 0.5
-    default: 0.75
     inputBinding:
       position: 102
       prefix: --read-orientation-min-fraction
@@ -114,7 +105,6 @@ inputs:
       - int
     doc: minimum number of mapped reads for deeming the read orientation result 
       reliable
-    default: 20
     inputBinding:
       position: 102
       prefix: --read-orientation-min-mapped-reads
@@ -125,7 +115,6 @@ inputs:
     doc: number of records to process; if set to ``0`` or if the specified value
       equals or exceeds the number of available records, all records will be 
       processed
-    default: 1000000
     inputBinding:
       position: 102
       prefix: --records
@@ -143,7 +132,6 @@ inputs:
       - 'null'
       - Directory
     doc: path to directory where temporary output is written to
-    default: /tmp/tmp_htsinfer
     inputBinding:
       position: 102
       prefix: --temporary-directory
@@ -152,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to run STAR with
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -163,7 +150,6 @@ inputs:
     doc: FASTA file containing transcripts to be used for mapping files 
       `--file-1` and `--file-2` for inferring library source and read 
       orientation.
-    default: /usr/local/lib/python3.10/site-packages/data/transcripts.fasta.gz
     inputBinding:
       position: 102
       prefix: --transcripts
@@ -172,7 +158,6 @@ inputs:
       - 'null'
       - string
     doc: logging verbosity level
-    default: INFO
     inputBinding:
       position: 102
       prefix: --verbosity

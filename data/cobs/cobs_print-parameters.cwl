@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: false positive rate
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --false-positive-rate
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: number of hash functions
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-hashes

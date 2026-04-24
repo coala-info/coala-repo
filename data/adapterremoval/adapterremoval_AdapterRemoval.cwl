@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Adapter sequence expected to be found in mate 1 reads
-    default: AGATCGGAAGAGCACACGTCTGAACTCCAGTCACNNNNNNATCTCGTATGCCGTCTTCTGCTTG
     inputBinding:
       position: 101
       prefix: --adapter1
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Adapter sequence expected to be found in mate 2 reads
-    default: AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATT
     inputBinding:
       position: 101
       prefix: --adapter2
@@ -46,7 +44,6 @@ inputs:
       - int
     doc: Maximum number of mismatches allowed in both mate 1 and mate 2 
       barcodes.
-    default: 0
     inputBinding:
       position: 101
       prefix: --barcode-mm
@@ -72,7 +69,6 @@ inputs:
       - string
     doc: Default prefix for all output files for which no filename was 
       explicitly set
-    default: your_output
     inputBinding:
       position: 101
       prefix: --basename
@@ -89,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level, 0 - 9
-    default: 9
     inputBinding:
       position: 101
       prefix: --bzip2-level
@@ -177,7 +172,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level, 0 - 9
-    default: 6
     inputBinding:
       position: 101
       prefix: --gzip-level
@@ -232,7 +226,6 @@ inputs:
       - string
     doc: Character separating the mate number (1 or 2) from the read name in 
       FASTQ records
-    default: /
     inputBinding:
       position: 101
       prefix: --mate-separator
@@ -241,7 +234,6 @@ inputs:
       - 'null'
       - int
     doc: Reads longer than this length are discarded following trimming
-    default: 4294967295
     inputBinding:
       position: 101
       prefix: --maxlength
@@ -251,7 +243,6 @@ inputs:
       - int
     doc: Reads containing more ambiguous bases (N) than this number after 
       trimming are discarded
-    default: 1000
     inputBinding:
       position: 101
       prefix: --maxns
@@ -261,7 +252,6 @@ inputs:
       - int
     doc: In single-end mode, reads are only trimmed if the overlap between read 
       and the adapter is at least X bases long.
-    default: 0
     inputBinding:
       position: 101
       prefix: --minadapteroverlap
@@ -271,7 +261,6 @@ inputs:
       - int
     doc: Minimum overlap length for collapsing paired reads or identifying 
       complete SE template molecules.
-    default: 11
     inputBinding:
       position: 101
       prefix: --minalignmentlength
@@ -280,7 +269,6 @@ inputs:
       - 'null'
       - int
     doc: Reads shorter than this length are discarded following trimming
-    default: 15
     inputBinding:
       position: 101
       prefix: --minlength
@@ -289,7 +277,6 @@ inputs:
       - 'null'
       - int
     doc: Inclusive minimum quality score for trimming.
-    default: 2
     inputBinding:
       position: 101
       prefix: --minquality
@@ -316,7 +303,6 @@ inputs:
       - string
     doc: Quality base used to encode Phred scores in input; either 33, 64, or 
       solexa
-    default: '33'
     inputBinding:
       position: 101
       prefix: --qualitybase
@@ -335,7 +321,6 @@ inputs:
       - int
     doc: Specifies the maximum Phred score expected in input files, and used 
       when writing output.
-    default: 41
     inputBinding:
       position: 101
       prefix: --qualitymax
@@ -354,7 +339,6 @@ inputs:
       - int
     doc: Consider alignments where up to N nucleotides are missing from the 5' 
       termini
-    default: 2
     inputBinding:
       position: 101
       prefix: --shift
@@ -363,7 +347,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

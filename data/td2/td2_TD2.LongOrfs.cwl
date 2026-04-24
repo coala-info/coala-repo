@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: minimum protein length for proteins in short transcripts, default=90
-    default: 90
     inputBinding:
       position: 101
       prefix: --absolute-min-length
@@ -19,7 +18,6 @@ inputs:
       - boolean
     doc: report stopless sequences rather than ORFs, i.e. never require a start 
       codon, default=False
-    default: false
     inputBinding:
       position: 101
       prefix: --all-stopless
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: include alternative initiator codons, default=False
-    default: false
     inputBinding:
       position: 101
       prefix: --alt-start
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: ignore all ORFs without both a stop and start codon, default=False
-    default: false
     inputBinding:
       position: 101
       prefix: --complete-orfs-only
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: genetic code (NCBI integer code), default=1 (universal)
-    default: 1
     inputBinding:
       position: 101
       prefix: --genetic-code
@@ -65,7 +60,6 @@ inputs:
     doc: allow short ORFs in short transcripts if the ORF is at least a fraction
       of the total transcript length, default=1.1 (essentially off by default). 
       You must also specify -M to a lower minimum ORF length to work with -L
-    default: 1.1
     inputBinding:
       position: 101
       prefix: --length-scale
@@ -74,7 +68,6 @@ inputs:
       - 'null'
       - float
     doc: percent of available memory to use per batch, default=None
-    default: None
     inputBinding:
       position: 101
       prefix: --memory-threshold
@@ -83,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: minimum protein length for proteins in long transcripts, default=90
-    default: 90
     inputBinding:
       position: 101
       prefix: --min-length
@@ -92,7 +84,6 @@ inputs:
       - 'null'
       - Directory
     doc: path to output results, default=./{transcripts}
-    default: ./{transcripts}
     inputBinding:
       position: 101
       prefix: --output-dir
@@ -102,7 +93,6 @@ inputs:
       - boolean
     doc: set --precise to enable precise mode. Equivalent to -m 98 -M 98 for 
       TD2.LongOrfs, default=False
-    default: false
     inputBinding:
       position: 101
       prefix: --precise
@@ -112,7 +102,6 @@ inputs:
       - boolean
     doc: set -S for strand-specific ORFs (only analyzes top strand), 
       default=False
-    default: false
     inputBinding:
       position: 101
       prefix: --strand-specific
@@ -121,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use, default=20
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -130,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: record the top N CDS transcripts by length, default=0
-    default: 0
     inputBinding:
       position: 101
       prefix: --top
@@ -145,7 +132,6 @@ inputs:
       - 'null'
       - boolean
     doc: set -v for verbose output, default=False
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

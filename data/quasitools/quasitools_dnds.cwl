@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Codon table to use (e.g., standard, vertebrate_mito).
-    default: standard
     inputBinding:
       position: 104
       prefix: --codon-table
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coding sequence length to consider.
-    default: 100
     inputBinding:
       position: 104
       prefix: --min-length
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 104
       prefix: --threads

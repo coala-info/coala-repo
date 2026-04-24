@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum msp abundance
-    default: 0.0
     inputBinding:
       position: 101
       prefix: -a
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Report only species (MSPs) occuring in at least n samples
-    default: 1
     inputBinding:
       position: 101
       prefix: -n
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix added to output filenames
-    default: output
     inputBinding:
       position: 101
       prefix: -p
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove samples with no detected species (MSPs)
-    default: false
     inputBinding:
       position: 101
       prefix: -s
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: Save the merged species abundance table in biom format
-    default: false
     inputBinding:
       position: 101
       prefix: -b

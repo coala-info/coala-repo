@@ -38,7 +38,6 @@ inputs:
     doc: Annotate genes using diamond default (fast), diamond sensitive 
       (sensitive) or diamond and HMMscan (ultrasensitive). Specify 'none' if 
       annotation not required.
-    default: fast
     inputBinding:
       position: 101
       prefix: --annotation
@@ -88,7 +87,6 @@ inputs:
       - 'null'
       - float
     doc: Core-genome sample threshold.
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --core-threshold
@@ -116,7 +114,6 @@ inputs:
       - float
     doc: Maximum e-value to return for DIAMOND and HMMER searches during 
       annotation
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --evalue
@@ -125,7 +122,6 @@ inputs:
       - 'null'
       - float
     doc: protein family sequence identity threshold
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --family-threshold
@@ -160,7 +156,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum identity at amino acid level between two ORFs for clustering.
-    default: 0.98
     inputBinding:
       position: 101
       prefix: --identity-cutoff
@@ -169,7 +164,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ignore ORFs annotated as 'potential pseudogenes' in alignment
-    default: false
     inputBinding:
       position: 101
       prefix: --ignore-pseduogenes
@@ -178,7 +172,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size used in Bifrost build (bp).
-    default: 31
     inputBinding:
       position: 101
       prefix: --kmer
@@ -187,7 +180,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum ratio of length between two ORFs for clustering.
-    default: 0.98
     inputBinding:
       position: 101
       prefix: --len-diff-cutoff
@@ -198,7 +190,6 @@ inputs:
     doc: proportion of genomes supporting a gene with a length more than 1.5x 
       outside the interquatile range for genes in the same cluster.Genes failing
       this test will be re-annotated at the shorter length
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --length-outlier-support-proportion
@@ -207,7 +198,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance for graph traversal during ORF connection (bp).
-    default: 10000
     inputBinding:
       position: 101
       prefix: --max-orf-orf-distance
@@ -216,7 +206,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum overlap allowed between overlapping ORFs.
-    default: 60
     inputBinding:
       position: 101
       prefix: --max-ORF-overlap
@@ -225,7 +214,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum path length during ORF finding (bp).
-    default: 20000
     inputBinding:
       position: 101
       prefix: --max-path-length
@@ -234,7 +222,6 @@ inputs:
       - 'null'
       - boolean
     doc: don't split paralogs
-    default: false
     inputBinding:
       position: 101
       prefix: --merge-paralogs
@@ -252,7 +239,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum ORF length to return (bp).
-    default: 90
     inputBinding:
       position: 101
       prefix: --min-orf-length
@@ -261,7 +247,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum individual Balrog score for an ORF to be returned.
-    default: 100
     inputBinding:
       position: 101
       prefix: --min-orf-score
@@ -270,7 +255,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum total Balrog score for a path of ORFs to be returned.
-    default: 100
     inputBinding:
       position: 101
       prefix: --min-path-score
@@ -287,7 +271,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn off edge filtering in the final output graph.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-clean-edges
@@ -296,7 +279,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not cluster ORFs.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-clustering
@@ -305,7 +287,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not filter ORF calls using Balrog. Will return all ORF calls.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-filter
@@ -314,7 +295,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not refind uncalled genes
-    default: false
     inputBinding:
       position: 101
       prefix: --no-refind
@@ -323,7 +303,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not call variants using SNP-sites after alignment.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-variants
@@ -332,7 +311,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not write Bifrost GFA and colours to file.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-write-graph
@@ -341,7 +319,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not write FMIndexes to file.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-write-idx
@@ -351,7 +328,6 @@ inputs:
       - boolean
     doc: If using existing graph, was not graph built exclusively with assembled
       genomes.
-    default: false
     inputBinding:
       position: 101
       prefix: --not-ref
@@ -379,7 +355,6 @@ inputs:
       - 'null'
       - float
     doc: Ratio of query-kmers to required to match in graph.
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --query-id
@@ -388,7 +363,6 @@ inputs:
       - 'null'
       - boolean
     doc: suppress additional output
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -407,7 +381,6 @@ inputs:
       - float
     doc: the proportion of an accessory gene that must be found in order to 
       consider it a match
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --refind-prop-match
@@ -425,7 +398,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable traversal of nodes multiple times.
-    default: false
     inputBinding:
       position: 101
       prefix: --repeat
@@ -434,7 +406,6 @@ inputs:
       - 'null'
       - boolean
     doc: Save graph objects for sequence querying.
-    default: false
     inputBinding:
       position: 101
       prefix: --save
@@ -445,7 +416,6 @@ inputs:
     doc: Length probability tolerance for shorter alternative start sites. If 
       within tolerance,ggCaller will check if start coverage and BALROG score 
       are both higher in shorter ORF.
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --score-tolerance
@@ -463,7 +433,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -482,7 +451,6 @@ inputs:
       - float
     doc: Sequences in a gene family cluster below this proportion of the length 
       of thecentroid will be annotated as 'potential pseudogene'
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --truncation-threshold

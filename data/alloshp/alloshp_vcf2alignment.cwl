@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: max missing samples
-    default: 10
     inputBinding:
       position: 101
       prefix: -m
@@ -40,7 +39,6 @@ inputs:
       - int
     doc: min read depth at each position for each sample (use -d 0 if VCF file 
       lacks DP)
-    default: 3
     inputBinding:
       position: 101
       prefix: -d
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: output format (e.g., nexus, fasta)
-    default: fasta
     inputBinding:
       position: 101
       prefix: -f

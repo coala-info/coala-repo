@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - boolean
     doc: Plot bottom profiles as well
-    default: false
     inputBinding:
       position: 101
       prefix: --bottom-up
@@ -48,7 +47,6 @@ inputs:
         items: int
     doc: Motif size(s) (widths) for extracting and plotting motifs. Provide 
       multiple sizes (e.g. --motif-size 5 7 9) to extract a motif for each size
-    default: 7
     inputBinding:
       position: 101
       prefix: --motif-size
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Specify number of top predicted sites to plot profiles for
-    default: 25
     inputBinding:
       position: 101
       prefix: --nr-top-profiles
@@ -69,7 +66,6 @@ inputs:
     doc: Specify number(s) of top-predicted sites used for motif extraction. 
       Provide multiple numbers (e.g. --nr- top-sites 100 200 500) to extract one
       motif plot from each site set
-    default: 200
     inputBinding:
       position: 101
       prefix: --nr-top-sites
@@ -79,7 +75,6 @@ inputs:
       - string
     doc: 'Plotting format of motifs and profiles (does not affect plots generated
       for --report). 1: png, 2: pdf'
-    default: 1
     inputBinding:
       position: 101
       prefix: --plot-format
@@ -89,7 +84,6 @@ inputs:
       - boolean
     doc: Generate an .html report containing various additional statistics and 
       plots
-    default: false
     inputBinding:
       position: 101
       prefix: --report
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set theme for .html report (1: palm beach, 2: midnight sunset)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --theme

@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: The field delimiter for reading CSV data. Must be a single character.
-    default: ','
     inputBinding:
       position: 102
       prefix: --delimiter
@@ -50,7 +49,6 @@ inputs:
       - string
     doc: A string of characters to write after each record. When non-empty, a 
       new line is automatically appended to the separator.
-    default: '#'
     inputBinding:
       position: 102
       prefix: --separator

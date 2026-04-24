@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: 'Variability cut-off value Default: 0.2 (Only required in pana option).'
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --cutoff
@@ -45,7 +44,6 @@ inputs:
       - string
     doc: "criterion to select components. One of 'accum', 'single', 'abs.val' or 'rel.abs'
       Default: 'single'. (Only required in pana option)."
-    default: "'single'"
     inputBinding:
       position: 101
       prefix: --facSel
@@ -210,7 +208,6 @@ inputs:
       - 'null'
       - float
     doc: 'High value of sigma (Default: 0.50).'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --sigmaHigh
@@ -219,7 +216,6 @@ inputs:
       - 'null'
       - float
     doc: 'Low value of sigma (Default: 0.05).'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --sigmaLow
@@ -228,7 +224,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of values of sigma to search (Default: 451).'
-    default: 451
     inputBinding:
       position: 101
       prefix: --sigmaNum

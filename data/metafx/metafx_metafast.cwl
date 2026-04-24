@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: maximal frequency for a k-mer to be assumed erroneous
-    default: 1
     inputBinding:
       position: 101
       prefix: --bad-frequency
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: maximum size of extracted components (features) in k-mers
-    default: 10000
     inputBinding:
       position: 101
       prefix: --max-comp-size
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: minimum size of extracted components (features) in k-mers
-    default: 1000
     inputBinding:
       position: 101
       prefix: --min-comp-size
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: minimal sequence length to be added to a component (in nucleotides)
-    default: 100
     inputBinding:
       position: 101
       prefix: --min-seq-len

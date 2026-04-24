@@ -52,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: Specify which isotopes to use in calculating fragment ion mass.
-    default: mono
     inputBinding:
       position: 109
       prefix: --fragment-mass
@@ -64,7 +63,6 @@ inputs:
       the charge state of the peptide ("peptide"). If the max-ion-charge is 
       greater than the charge state of the peptide, then the maximum is the 
       peptide charge.
-    default: peptide
     inputBinding:
       position: 109
       prefix: --max-ion-charge
@@ -78,7 +76,6 @@ inputs:
       floor((x/mz-bin-width) + 1.0 - mz-bin-offset), where x is the observed m/z
       value. For low resolution ion trap ms/ms data 1.0005079 and for high 
       resolution ms/ms 0.02 is recommended.
-    default: 1.0005079
     inputBinding:
       position: 109
       prefix: --mz-bin-width
@@ -87,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Set the precision for scores written to sqt and text files.
-    default: 8
     inputBinding:
       position: 109
       prefix: --precision
@@ -96,7 +92,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the parser to use for reading in MS/MS spectra.
-    default: pwiz
     inputBinding:
       position: 109
       prefix: --spectrum-parser
@@ -108,7 +103,6 @@ inputs:
       messages, including all those at lower verbosity levels: 0-fatal errors, 10-non-fatal
       errors, 20-warnings, 30-information on the progress of execution, 40-more progress
       information, 50-debug info, 60-detailed debug info.'
-    default: 30
     inputBinding:
       position: 109
       prefix: --verbosity

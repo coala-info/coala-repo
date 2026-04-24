@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: 'The output format: json or gff3 (default)'
-    default: gff3
     inputBinding:
       position: 101
       prefix: --outfmt

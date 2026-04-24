@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Database to use (pubmlst or pasteur)
-    default: pubmlst
     inputBinding:
       position: 101
       prefix: --db
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Scheme name must not include provided term
-    default: cgMLST
     inputBinding:
       position: 101
       prefix: --exclude
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Scheme name must include provided term
-    default: MLST
     inputBinding:
       position: 101
       prefix: --match

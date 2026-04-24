@@ -14,7 +14,6 @@ inputs:
       - string
     doc: Defines what should be done when sample or peptide names are not unique across
       files being joined (combine, include, or ignore).
-    default: include
     inputBinding:
       position: 101
       prefix: --duplicate_evaluation

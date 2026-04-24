@@ -13,7 +13,6 @@ inputs:
       - File
     doc: Enter a file path corresponding to the Ampcombi_summary.tsv that can be generated
       by running --ampcombi complete.
-    default: ./Ampcombi_summary.tsv
     inputBinding:
       position: 101
       prefix: --ampcombi_summary
@@ -94,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Changes the threads used for DIAMOND alignment
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

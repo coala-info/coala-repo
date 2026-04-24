@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: Coverage cutoff (>= 0.2)
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -c
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: Sample filename extension (fq, fastq, fastq.gz)
-    default: fastq
     inputBinding:
       position: 101
       prefix: -e
@@ -70,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Theta prior for reads reassignment. Requires the -p flag
-    default: 0
     inputBinding:
       position: 101
       prefix: -t
@@ -79,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -n

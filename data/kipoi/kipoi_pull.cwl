@@ -18,7 +18,6 @@ inputs:
     doc: Model source to use (default=kipoi). Specified in ~/.kipoi/config.yaml 
       under model_sources. When 'dir' is used, use the local directory path when
       specifying the model/dataloader.
-    default: kipoi
     inputBinding:
       position: 102
       prefix: --source

@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: number of reads in the input FASTQ file (or a much larger number)
-    default: 500000
     inputBinding:
       position: 104
 outputs:

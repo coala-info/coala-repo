@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of alignments to genotype a SV
-    default: 3>=
     inputBinding:
       position: 101
       prefix: --minsupport

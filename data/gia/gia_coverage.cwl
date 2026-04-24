@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Batch size used when writing to the output in parallel
-    default: 5000
     inputBinding:
       position: 101
       prefix: --chunk-size
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level to use for output files if applicable
-    default: 6
     inputBinding:
       position: 101
       prefix: --compression-level
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Compression threads to use for output files if applicable
-    default: 1
     inputBinding:
       position: 101
       prefix: --compression-threads
@@ -99,7 +96,6 @@ inputs:
     doc: "Strand-specificity to use when comparing intervals\n\n          i: Ignore
       strand (default)\n          \n          m: Match strand (+/+ or -/- only)\n\
       \          \n          o: Opposite strand (+/- or -/+ only)"
-    default: i
     inputBinding:
       position: 101
       prefix: --strandedness

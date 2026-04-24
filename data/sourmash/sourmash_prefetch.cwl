@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'choose a nucleotide signature (default: True)'
-    default: true
     inputBinding:
       position: 103
       prefix: --dna
@@ -225,7 +224,6 @@ inputs:
       - float
     doc: reporting threshold (in bp) for estimated overlap with remaining query 
       hashes
-    default: 50kb
     inputBinding:
       position: 103
       prefix: --threshold-bp

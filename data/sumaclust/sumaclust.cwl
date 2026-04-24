@@ -45,7 +45,6 @@ inputs:
       - float
     doc: Maximum ratio between the counts of two sequences so that the less 
       abundant one can be considered as a variant of the more abundant one.
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -R
@@ -125,7 +124,6 @@ inputs:
       is not normalized and expressed in distance, it is (reference length - LCS length).
       Only sequences with a similarity above ##.## with the center sequence of a cluster
       are assigned to that cluster.'
-    default: 0.97
     inputBinding:
       position: 102
       prefix: -t
@@ -136,7 +134,6 @@ inputs:
     doc: "Sorting by ####. Must be 'None' for no sorting, or a key in the fasta header
       of each sequence, except for the count that can be computed (default : sorting
       by count)."
-    default: count
     inputBinding:
       position: 102
       prefix: -s

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Assembler to use (spades or velvet)
-    default: spades
     inputBinding:
       position: 101
       prefix: --assembler
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size for analysis
-    default: 51
     inputBinding:
       position: 101
       prefix: --kmer
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of times a k-mer must occur in the trait samples
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_kmer_occurrence
@@ -70,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

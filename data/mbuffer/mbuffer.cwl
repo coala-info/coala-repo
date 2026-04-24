@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: use blocks of <size> bytes for processing
-    default: 4096
     inputBinding:
       position: 101
       prefix: -s
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: use <num> blocks for buffer
-    default: 39955
     inputBinding:
       position: 101
       prefix: -b
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: memory <size> of buffer in b,k,M,G,%
-    default: 2% = 156M
     inputBinding:
       position: 101
       prefix: -m
@@ -161,7 +158,6 @@ inputs:
       - 'null'
       - string
     doc: assumed output device size
-    default: infinite/auto-detect
     inputBinding:
       position: 101
       prefix: -D

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Indicate if the input is a list of FASTA files (0 for no, 1 for yes)
-    default: 0
     inputBinding:
       position: 101
       prefix: -is_list
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of sequences to be predicted
-    default: 200
     inputBinding:
       position: 101
       prefix: -minlength
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 10
     inputBinding:
       position: 101
       prefix: -thread

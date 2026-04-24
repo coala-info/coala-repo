@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Percent alignment length, must be 0 <= AOL <= 100
-    default: 80
     inputBinding:
       position: 101
       prefix: -l
@@ -35,7 +34,6 @@ inputs:
       - int
     doc: How many alignments before writing output (0 to calculate based on memory
       budget)
-    default: 0
     inputBinding:
       position: 101
       prefix: -b
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Exact match length cutoff, must be >= 1
-    default: 7
     inputBinding:
       position: 101
       prefix: -c
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: The parasail function name to use for alignment
-    default: sw_stats_striped_16
     inputBinding:
       position: 101
       prefix: -a
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Gap extension penalty, must be >= 0
-    default: 1
     inputBinding:
       position: 101
       prefix: -e
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Gap open penalty, must be >= 0
-    default: 10
     inputBinding:
       position: 101
       prefix: -o
@@ -102,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Match score, must be >= 0
-    default: 1
     inputBinding:
       position: 101
       prefix: -M
@@ -111,7 +104,6 @@ inputs:
       - 'null'
       - string
     doc: Substitution matrix
-    default: blosum62
     inputBinding:
       position: 101
       prefix: -m
@@ -128,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: Mismatch penalty, must be >= 0
-    default: 0
     inputBinding:
       position: 101
       prefix: -X
@@ -145,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: Percent optimal score over self score, must be 0 <= OS <= 100
-    default: 30
     inputBinding:
       position: 101
       prefix: -i
@@ -170,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: Percent exact matches, must be 0 <= SIM <= 100
-    default: 40
     inputBinding:
       position: 101
       prefix: -s

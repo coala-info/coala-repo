@@ -12,7 +12,6 @@ inputs:
       - type: array
         items: File
     doc: Input FASTQ files (compressed or uncompressed)
-    default: stdin
     inputBinding:
       position: 1
 outputs:

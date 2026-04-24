@@ -12,7 +12,6 @@ inputs:
     doc: 'Type of the centrality that you want to calculate. If you want only a particular
       centrality, you can select one of the following options: degree, betweenness,
       closeness, current_flow_betweenness, current_flow_closeness, eigenvector, community'
-    default: all
     inputBinding:
       position: 101
       prefix: -c
@@ -22,7 +21,6 @@ inputs:
       - float
     doc: Distance filter. The residues with distances higher than this value 
       will be considered as zero.
-    default: 7.0
     inputBinding:
       position: 101
       prefix: -d
@@ -41,7 +39,6 @@ inputs:
       coeviz and evcouplings are also some options to analyze sequence 
       correlations. If your data any other coupling data in full matrix format, 
       you can select generic as your data type.
-    default: ndcc
     inputBinding:
       position: 101
       prefix: -t
@@ -57,7 +54,6 @@ inputs:
       - float
     doc: Value filter. The values lower than this value in the map will be 
       considered as zero.
-    default: 0.3
     inputBinding:
       position: 101
       prefix: -v

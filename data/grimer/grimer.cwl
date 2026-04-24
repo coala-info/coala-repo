@@ -20,7 +20,6 @@ inputs:
       - boolean
     doc: Activate if input table has already cummulative values on parent 
       taxonomic levels.
-    default: false
     inputBinding:
       position: 101
       prefix: --cumm-levels
@@ -30,7 +29,6 @@ inputs:
       - boolean
     doc: Run DECONTAM and generate plots. requires --config file with DECONTAM 
       configuration.
-    default: false
     inputBinding:
       position: 101
       prefix: --decontam
@@ -41,7 +39,6 @@ inputs:
     doc: Embed Bokeh javascript library in the output file. Output will be 
       around 1.5MB bigger but it will work without internet connection. ~your 
       report will live forever~
-    default: false
     inputBinding:
       position: 101
       prefix: --full-offline
@@ -107,7 +104,6 @@ inputs:
       - int
     doc: Available metadata cols to be selected on the Heatmap panel. Higher 
       values will slow down the report navigation.
-    default: 3
     inputBinding:
       position: 101
       prefix: --metadata-cols
@@ -127,7 +123,6 @@ inputs:
       - 'null'
       - boolean
     doc: Plot MGnify, requires --config file with parsed MGnify database.
-    default: false
     inputBinding:
       position: 101
       prefix: --mgnify
@@ -158,7 +153,6 @@ inputs:
     doc: "Replace values on observations labels/headers (supports regex). Example:
       '_' ' ' will replace underscore with spaces, '^.+__' '' will remove the matching
       regex. Several pairs of instructions are supported."
-    default: []
     inputBinding:
       position: 101
       prefix: --obs-replace
@@ -168,7 +162,6 @@ inputs:
       - boolean
     doc: Activate optimal_ordering on scipy linkage method, takes longer for 
       large number of samples.
-    default: false
     inputBinding:
       position: 101
       prefix: --optimal-ordering
@@ -178,7 +171,6 @@ inputs:
       - type: array
         items: string
     doc: Plots to generate.
-    default:
       - overview
       - samples
       - heatmap
@@ -193,7 +185,6 @@ inputs:
         items: string
     doc: Taxonomic ranks to generate visualizations. Use 'default' to use 
       entries from the table directly.
-    default:
       - default
     inputBinding:
       position: 101
@@ -204,7 +195,6 @@ inputs:
       - string
     doc: "Treat zeros in the input table. INT (add 'smallest count' divided by INT
       to every value), FLOAT (add FLOAT to every value). Default: 1000"
-    default: '1000'
     inputBinding:
       position: 101
       prefix: --replace-zeros
@@ -216,7 +206,6 @@ inputs:
     doc: "Replace values on sample labels/headers (supports regex). Example: '_' '
       ' will replace underscore with spaces, '^.+__' '' will remove the matching regex.
       Several pairs of instructions are supported."
-    default: []
     inputBinding:
       position: 101
       prefix: --sample-replace
@@ -226,7 +215,6 @@ inputs:
       - boolean
     doc: Do not skip zeros on heatmap plot. File will be bigger and iteraction 
       with heatmap slower. By default, zeros will be omitted.
-    default: false
     inputBinding:
       position: 101
       prefix: --show-zeros
@@ -235,7 +223,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable dendogram plots for clustering.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-dendrogram
@@ -246,7 +233,6 @@ inputs:
     doc: Enable taxonomic analysis, convert entries and annotate samples. Files 
       will be automatically downloaded and parsed. Optionally, stored files can 
       be provided with --taxonomy-files.
-    default: None
     inputBinding:
       position: 101
       prefix: --taxonomy
@@ -256,7 +242,6 @@ inputs:
       - type: array
         items: File
     doc: Specific taxonomy files to use with --taxonomy.
-    default: []
     inputBinding:
       position: 101
       prefix: --taxonomy-files
@@ -265,7 +250,6 @@ inputs:
       - 'null'
       - string
     doc: Title to display on the top of the report.
-    default: ''
     inputBinding:
       position: 101
       prefix: --title
@@ -275,7 +259,6 @@ inputs:
       - int
     doc: Number of top abundant observations to show in the Samples panel, based
       on the avg. percentage counts/sample.
-    default: 20
     inputBinding:
       position: 101
       prefix: --top-obs-bars
@@ -285,7 +268,6 @@ inputs:
       - int
     doc: Number of top abundant observations to build the correlationn matrix, 
       based on the avg. percentage counts/sample. 0 for all
-    default: 50
     inputBinding:
       position: 101
       prefix: --top-obs-corr
@@ -295,7 +277,6 @@ inputs:
       - string
     doc: Transformation of counts for Heatmap. none (counts), norm (percentage),
       log (log10), clr (centre log ratio).
-    default: log
     inputBinding:
       position: 101
       prefix: --transformation
@@ -305,7 +286,6 @@ inputs:
       - boolean
     doc: Transpose --input-table before parsing (if samples are listed on 
       columns and observations on rows)
-    default: false
     inputBinding:
       position: 101
       prefix: --transpose

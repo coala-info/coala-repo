@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: 'Assembler: spades skesa megahit velvet'
-    default: spades
     inputBinding:
       position: 101
   - id: cpus
@@ -17,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use (0=ALL)
-    default: 8
     inputBinding:
       position: 101
   - id: depth
@@ -25,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Sub-sample --R1/--R2 to this depth. Disable with --depth 0
-    default: 150
     inputBinding:
       position: 101
   - id: force
@@ -33,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force overwite of existing output folder
-    default: OFF
     inputBinding:
       position: 101
   - id: genome_size
@@ -41,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Estimated genome size eg. 3.2M <blank=AUTODETECT>
-    default: ''
     inputBinding:
       position: 101
   - id: keepfiles
@@ -49,7 +44,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep intermediate files
-    default: OFF
     inputBinding:
       position: 101
   - id: kmers
@@ -57,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: K-mers to use <blank=AUTO>
-    default: ''
     inputBinding:
       position: 101
   - id: mincov
@@ -65,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum contig coverage <0=AUTO>
-    default: 2
     inputBinding:
       position: 101
   - id: minlen
@@ -73,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum contig length <0=AUTO>
-    default: 0
     inputBinding:
       position: 101
   - id: namefmt
@@ -81,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: Format of contig FASTA IDs in 'printf' style
-    default: contig%05d
     inputBinding:
       position: 101
   - id: nocorr
@@ -89,7 +79,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable post-assembly correction
-    default: OFF
     inputBinding:
       position: 101
   - id: noreadcorr
@@ -97,7 +86,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable read error correction
-    default: OFF
     inputBinding:
       position: 101
   - id: opts
@@ -105,7 +93,6 @@ inputs:
       - 'null'
       - string
     doc: "Extra assembler options in quotes eg. spades: '--sc' ..."
-    default: ''
     inputBinding:
       position: 101
   - id: outdir
@@ -118,7 +105,6 @@ inputs:
       - 'null'
       - float
     doc: Try to keep RAM usage below this many GB
-    default: 16
     inputBinding:
       position: 101
   - id: single_end_reads
@@ -132,7 +118,6 @@ inputs:
       - 'null'
       - Directory
     doc: Fast temporary directory
-    default: ''
     inputBinding:
       position: 101
   - id: trim
@@ -140,7 +125,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable adaptor trimming
-    default: OFF
     inputBinding:
       position: 101
 outputs:

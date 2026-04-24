@@ -21,7 +21,6 @@ inputs:
       nucleotides must be mapped to each end of a given splice junction. The 
       minimum value is 1 and the default value is set to 1 to make use of all 
       possible splice junction reads.
-    default: 1
     inputBinding:
       position: 101
       prefix: --anchorLength
@@ -59,7 +58,6 @@ inputs:
     doc: 'The cutoff splicing difference. The cutoff used in the null hypothesis test
       for differential alternative splicing. The default is 0.0001 for 0.01% difference.
       Valid: 0 <= cutoff < 1. Does not apply to the paired stats model'
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: --cstat
@@ -69,7 +67,6 @@ inputs:
       - float
     doc: The cutoff of delta-PSI in the DARTS model. The output posterior 
       probability is P(abs(delta_psi) > cutoff). The default is 0.05
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --darts-cutoff
@@ -113,7 +110,6 @@ inputs:
       - string
     doc: Library type. Use fr-firststrand or fr-secondstrand for strand-specific
       data. Only relevant to the prep step, not the post step.
-    default: fr-unstranded
     inputBinding:
       position: 101
       prefix: --libType
@@ -122,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum Exon Length. Only impacts --novelSS behavior.
-    default: 500
     inputBinding:
       position: 101
       prefix: --mel
@@ -131,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum Intron Length. Only impacts --novelSS behavior.
-    default: 50
     inputBinding:
       position: 101
       prefix: --mil
@@ -141,7 +135,6 @@ inputs:
       - boolean
     doc: Enable detection of novel splice sites (unannotated splice sites). 
       Default is no detection of novel splice sites
-    default: false
     inputBinding:
       position: 101
       prefix: --novelSS
@@ -151,7 +144,6 @@ inputs:
       - int
     doc: The number of threads. The optimal number of threads should be equal to
       the number of CPU cores.
-    default: 1
     inputBinding:
       position: 101
       prefix: --nthread
@@ -186,7 +178,6 @@ inputs:
       - string
     doc: 'Type of read used in the analysis: either "paired" for paired-end data or
       "single" for single-end data.'
-    default: paired
     inputBinding:
       position: 101
       prefix: -t
@@ -228,7 +219,6 @@ inputs:
       both: prep + post. inte (integrity): check that the BAM filenames recorded by
       the prep task(s) match the BAM filenames for the current command line. stat:
       run statistical test on existing output files'
-    default: both
     inputBinding:
       position: 101
       prefix: --task
@@ -248,7 +238,6 @@ inputs:
     doc: The "anchor length" or "overhang length" used in the aligner. At least 
       "anchor length" nucleotides must be mapped to each end of a given splice 
       junction. The default is 1. (Only if using fastq)
-    default: 1
     inputBinding:
       position: 101
       prefix: --tophatAnchor

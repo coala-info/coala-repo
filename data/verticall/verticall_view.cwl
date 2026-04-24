@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Minimap2 options for assembly-to-assembly alignment
-    default: -x asm20
     inputBinding:
       position: 101
       prefix: --align_options
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Allow this much overlap between alignments
-    default: 100
     inputBinding:
       position: 101
       prefix: --allowed_overlap
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Hex colour for ambiguous inheritance
-    default: '#c9c9c9'
     inputBinding:
       position: 101
       prefix: --ambiguous_colour
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Hex colour for horizontal inheritance
-    default: '#c47e7e'
     inputBinding:
       position: 101
       prefix: --horizontal_colour
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: Minimap2 options for assembly indexing
-    default: -k15 -w10
     inputBinding:
       position: 101
       prefix: --index_options
@@ -75,7 +70,6 @@ inputs:
       - int
     doc: "Number of result to plot (used when there are\nmultiple possible results
       for the pair)"
-    default: 1
     inputBinding:
       position: 101
       prefix: --result
@@ -85,7 +79,6 @@ inputs:
       - float
     doc: "Peaks with a mass of at least this fraction of the\nmost massive peak will
       be used to produce secondary\ndistances"
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --secondary
@@ -94,7 +87,6 @@ inputs:
       - 'null'
       - float
     doc: "Degree to which the distance distribution is\nsmoothed"
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --smoothing_factor
@@ -127,7 +119,6 @@ inputs:
       - 'null'
       - string
     doc: Hex colour for vertical inheritance
-    default: '#4859a0'
     inputBinding:
       position: 101
       prefix: --vertical_colour
@@ -136,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: "Aim to have at least this many comparison windows\nbetween assemblies"
-    default: 50000
     inputBinding:
       position: 101
       prefix: --window_count

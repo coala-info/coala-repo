@@ -33,13 +33,11 @@ inputs:
       separate: false
   output_mapped:
     type: boolean?
-    default: false
 
   memory:
     type: int?
     doc: maximum memory usage in megabytes
     label: memory usage (mb)
-    default: 8000
   threads:
     type: int?
     doc: number of threads to use for computational processes
@@ -47,7 +45,6 @@ inputs:
     inputBinding:
       prefix: 'threads='
       separate: false
-    default: 2
 
 stderr: "$(inputs.identifier)_BBMap_log.txt"
 

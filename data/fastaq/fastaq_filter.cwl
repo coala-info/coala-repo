@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of sequence to keep
-    default: inf
     inputBinding:
       position: 102
       prefix: --max_length
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of sequence to keep
-    default: 0
     inputBinding:
       position: 102
       prefix: --min_length

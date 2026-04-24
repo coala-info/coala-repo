@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: size of file-buffer
-    default: 1MB
     inputBinding:
       position: 102
       prefix: --bufsize
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: size of cursor-cache
-    default: 10MB
     inputBinding:
       position: 102
       prefix: --curcache
@@ -96,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: format (special, fastq, default=fastq)
-    default: fastq
     inputBinding:
       position: 102
       prefix: --format
@@ -122,7 +119,6 @@ inputs:
       - string
     doc: Logging level as number or enum string. One of 
       (fatal|sys|int|err|warn|info|debug) or (0-6) Current/default is warn.
-    default: warn
     inputBinding:
       position: 102
       prefix: --log-level
@@ -131,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: memory limit for sorting
-    default: 100MB
     inputBinding:
       position: 102
       prefix: --mem
@@ -270,7 +265,6 @@ inputs:
       - string
     doc: 'switch to control: on=perform size-check (default),  off=do not perform
       size-check,  only=perform size-check only'
-    default: on=perform size-check (default), off=do not perform size-check, 
       only=perform size-check only
     inputBinding:
       position: 102
@@ -320,7 +314,6 @@ inputs:
       - 'null'
       - Directory
     doc: where to put temp. files
-    default: curr dir
     inputBinding:
       position: 102
       prefix: --temp
@@ -329,7 +322,6 @@ inputs:
       - 'null'
       - int
     doc: how many thread
-    default: 6
     inputBinding:
       position: 102
       prefix: --threads

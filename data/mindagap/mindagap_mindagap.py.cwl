@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print version number.
-    default: false
     inputBinding:
       position: 104
       prefix: --no-version

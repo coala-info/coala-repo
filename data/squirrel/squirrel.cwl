@@ -93,7 +93,6 @@ inputs:
       will determine reference used for alignment, mask file and background set 
       used if `--include-background` flag used in conjunction with the 
       `--run-phylo` option.
-    default: '`cladeii`'
     inputBinding:
       position: 102
       prefix: --clade
@@ -102,7 +101,6 @@ inputs:
       - 'null'
       - boolean
     doc: Concatenate coding sequences for each genome, separated by `NNN`.
-    default: write out as separate records
     inputBinding:
       position: 102
       prefix: --concatenate
@@ -169,7 +167,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip masking of end ITR.
-    default: masks ITR
     inputBinding:
       position: 102
       prefix: --no-itr-mask
@@ -178,7 +175,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip masking of repetitive regions.
-    default: masks repeat regions
     inputBinding:
       position: 102
       prefix: --no-mask
@@ -195,7 +191,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory.
-    default: current working directory
     inputBinding:
       position: 102
       prefix: --outdir
@@ -204,7 +199,6 @@ inputs:
       - 'null'
       - string
     doc: Optional output file name.
-    default: <input>.aln.fasta
     inputBinding:
       position: 102
       prefix: --outfile
@@ -223,7 +217,6 @@ inputs:
       - string
     doc: 'Justification of points for apobec3 reconstruction figure. Options: left,
       right.'
-    default: left
     inputBinding:
       position: 102
       prefix: --point-justify
@@ -232,7 +225,6 @@ inputs:
       - 'null'
       - string
     doc: 'Shape of points for apobec3 reconstruction figure. Options: circle, square.'
-    default: circle
     inputBinding:
       position: 102
       prefix: --point-style
@@ -257,7 +249,6 @@ inputs:
       - 'null'
       - boolean
     doc: Flag potentially problematic SNPs and sequences.
-    default: don't run QC
     inputBinding:
       position: 102
       prefix: --seq-qc
@@ -275,7 +266,6 @@ inputs:
       - 'null'
       - Directory
     doc: Specify where you want the temp stuff to go.
-    default: $TMPDIR
     inputBinding:
       position: 102
       prefix: --tempdir

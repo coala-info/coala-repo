@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: bandwidth to use (default 0, or non-banded algorithm)
-    default: 0
     inputBinding:
       position: 103
       prefix: --bandwidth
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: the gap extend penalty
-    default: 6.66
     inputBinding:
       position: 103
       prefix: --gap-extend-penalty
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: the gap open penalty
-    default: 15.0
     inputBinding:
       position: 103
       prefix: --gap-open-penalty
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: the match score
-    default: 10.0
     inputBinding:
       position: 103
       prefix: --match-score
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - float
     doc: the mismatch score
-    default: -9.0
     inputBinding:
       position: 103
       prefix: --mismatch-score

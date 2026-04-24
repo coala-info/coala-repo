@@ -30,7 +30,6 @@ inputs:
       - int
     doc: '--in BED score column used for p-value calculations. BED score can be e.g.
       log2 fold change or -log10 p-value of the region (default: 5)'
-    default: 5
     inputBinding:
       position: 101
       prefix: --bed-score-col
@@ -84,7 +83,6 @@ inputs:
       If size <= --in set size, use --in set size. If size > --in set size, double
       the --in set until it is <= size. Only applies for --bg-mode 1. For --bg-mode
       2, you can use --bg-shuff-factor (default: 5000)'
-    default: 5000
     inputBinding:
       position: 101
       prefix: --bg-min-size
@@ -97,7 +95,6 @@ inputs:
       distribution from transcript or gene regions (based on given --gtf), 2: shuffle
       --in site sequences (di- nucleotide shuffling) and use these as background (default:
       1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --bg-mode
@@ -107,7 +104,6 @@ inputs:
       - int
     doc: 'Define number of times the size of the shuffled set (--bg-mode 2 set) should
       be compared to --in set (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --bg-shuff-factor
@@ -117,7 +113,6 @@ inputs:
       - int
     doc: 'Define k for k-nt shuffling --in set to create background set (default:
       2)'
-    default: 2
     inputBinding:
       position: 101
       prefix: --bg-shuff-k
@@ -127,7 +122,6 @@ inputs:
       - float
     doc: 'CMSEARCH bit score threshold (CMSEARCH options: -T --incT). The higher the
       more strict (default: 1.0)'
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --cmsearch-bs
@@ -139,7 +133,6 @@ inputs:
       (CMSEARCH option: --default). 2: max setting (CMSEARCH option: --max), i.e.,
       turn all heuristic filters off, slower and more sensitive / more hits) (default:
       1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --cmsearch-mode
@@ -149,7 +142,6 @@ inputs:
       - int
     doc: 'Defines multiple testing correction mode for co- occurrence p-values. 1:
       Benjamini-Hochberg (BH), 2: Bonferroni, 3: no correction (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --cooc-pval-mode
@@ -162,7 +154,6 @@ inputs:
       adjusted by Bonferroni correction (i.e. divided by number of tests). Threshold
       applies unchanged for BH corrected p-values as well as for disabled correction
       (default: 0.005)'
-    default: 0.005
     inputBinding:
       position: 101
       prefix: --cooc-pval-thr
@@ -190,7 +181,6 @@ inputs:
       - string
     doc: 'Set ID/name for provided custom motif database via --custom-db (default:
       "custom")'
-    default: custom
     inputBinding:
       position: 101
       prefix: --custom-db-id
@@ -218,7 +208,6 @@ inputs:
       - int
     doc: 'Defines multiple testing correction mode for motif enrichment p-values.
       1: Benjamini-Hochberg (BH), 2: Bonferroni, 3: no correction (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --enmo-pval-mode
@@ -231,7 +220,6 @@ inputs:
       by Bonferroni correction (i.e. divided by number of tests). Threshold applies
       unchanged for BH corrected p-values as well as for disabled correction (default:
       0.001)'
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --enmo-pval-thr
@@ -242,7 +230,6 @@ inputs:
     doc: 'Up- and downstream extension of --in sites in nucleotides (nt). Set e.g.
       --ext 30 for 30 nt on both sides, or --ext 20,10 for different up- and downstream
       extension (default: 0)'
-    default: '0'
     inputBinding:
       position: 101
       prefix: --ext
@@ -264,7 +251,6 @@ inputs:
       2: use frequencies from human ENSEMBL transcripts (including introns, resulting
       in lower G+C and T most prominent) 3: use uniform frequencies (same for every
       nucleotide) (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --fimo-ntf-mode
@@ -273,7 +259,6 @@ inputs:
       - 'null'
       - float
     doc: 'FIMO p-value threshold (FIMO option: --thresh) (default: 0.0005)'
-    default: 0.0005
     inputBinding:
       position: 101
       prefix: --fimo-pval
@@ -285,7 +270,6 @@ inputs:
       in --in sites compared to generated background / control sites. 1: greater,
       2: two-sided, 3: less. Setting is used both for motif enrichment and co-occurrence
       Fisher test (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --fisher-mode
@@ -324,7 +308,6 @@ inputs:
       - float
     doc: 'Minimum amount of overlap required for a region to be assigned to a GTF
       feature (default: 0.1)'
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --gtf-feat-min-overlap
@@ -351,7 +334,6 @@ inputs:
       - int
     doc: 'Set maximum motif distance for motif co-occurrence plot statistic inside
       hover boxes (default: 20)'
-    default: 20
     inputBinding:
       position: 101
       prefix: --max-motif-dist
@@ -383,7 +365,6 @@ inputs:
       as a second filter to show only motif pairs with signficiant p-values as significant
       if there is the specified minimum average distance between their motif hits
       (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-motif-dist
@@ -396,7 +377,6 @@ inputs:
       (277 RBPs, 622 motifs, "catrapid_omics_v2.1_human_6plus_ext_ucrbps"), 3: human
       RBP motifs from Ray et al. 2013 (80 RBPs, 102 motifs, "ray2013_human_rbps_rnacompete")
       (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --motif-db
@@ -442,7 +422,6 @@ inputs:
       - 'null'
       - float
     doc: 'Cap maximum motif similarity value to given value (default: 50)'
-    default: 50.0
     inputBinding:
       position: 101
       prefix: --motif-sim-cap
@@ -500,7 +479,6 @@ inputs:
       web version link and plotly plot codes into main HTML. 6: put local version
       link and plotly plot codes in main HTML. 7: put plotly js and plotly plot codes
       into main HTML! (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --plotly-js-mode
@@ -541,7 +519,6 @@ inputs:
       - string
     doc: 'Set regex ID used as RBP ID and database ID associated to -regex hits (default:
       "regex")'
-    default: regex
     inputBinding:
       position: 101
       prefix: --regex-id
@@ -551,7 +528,6 @@ inputs:
       - float
     doc: 'Maximum GU (GT) base pair fraction to report structure pattern regex hits
       (default: 1.0)'
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --regex-max-gu
@@ -561,7 +537,6 @@ inputs:
       - float
     doc: 'Minimum GC base pair fraction to report structure pattern regex hits (default:
       0.0)'
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --regex-min-gc
@@ -573,7 +548,6 @@ inputs:
       motif hit start position, 2: when motif hit encountered, continue +1 after motif
       hit end position. NOTE that structure pattern regex currently always uses mode
       1 (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --regex-search-mode
@@ -582,7 +556,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum spacer length for structure pattern regex search (default: 200)'
-    default: 200
     inputBinding:
       position: 101
       prefix: --regex-spacer-max
@@ -591,7 +564,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum spacer length for structure pattern regex search (default: 5)'
-    default: 5
     inputBinding:
       position: 101
       prefix: --regex-spacer-min
@@ -603,7 +575,6 @@ inputs:
       or structure pattern). 2: given --regex string is standard regex, e.g. AC[AG]T.
       3: given --regex string is structure pattern string, e.g. ((AA(((...)))AA))
       (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --regex-type
@@ -614,7 +585,6 @@ inputs:
     doc: 'Define how to provide sorttable.js file. 1: link to packaged .js file. 2:
       copy .js file to plots output folder. 3: include .js code in HTML (default:
       1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --sort-js-mode

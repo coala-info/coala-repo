@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - File
     doc: Input fasta file
-    default: '-'
     inputBinding:
       position: 1
   - id: min_repeat_length
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: The smallest repeat length to report
-    default: 21
     inputBinding:
       position: 102
       prefix: --min

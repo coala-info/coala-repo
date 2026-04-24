@@ -62,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Exclude reads that match any of these bit-flags
-    default: 3852
     inputBinding:
       position: 102
       prefix: --exclude-flags
@@ -78,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Include reads that match all of these bit-flags
-    default: 3
     inputBinding:
       position: 102
       prefix: --include-flags
@@ -89,7 +87,6 @@ inputs:
     doc: expected maximum read length. If set too short, some read positions 
       might not get counted. Safest to set this a bit higher than the actual 
       read length, to allow for indels in reads
-    default: 200
     inputBinding:
       position: 102
       prefix: --max-read-length
@@ -98,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality per aligned read
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-mapq
@@ -118,7 +114,6 @@ inputs:
       - int
     doc: "Maximum length of a segment in bases\nUsed for splitting work between threads.
       Tweak this to adjust memory usage."
-    default: 100000
     inputBinding:
       position: 102
       prefix: --segment-max-length
@@ -128,7 +123,6 @@ inputs:
       - int
     doc: "Number of bases to overlap between segments\nHelpful to avoid missing variants
       at the edges of segments."
-    default: 500
     inputBinding:
       position: 102
       prefix: --segment-overlap
@@ -139,7 +133,6 @@ inputs:
     doc: "Number of threads to use for processing the BAM file. Will use all available
       threads when not specified.\nNote that VCF writing might use additional threads
       internally for compression. This can be overwritten with `--vcf-threads`."
-    default: 20
     inputBinding:
       position: 102
       prefix: --threads

@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: what to run <script|object|jar|guess>
-    default: guess
     inputBinding:
       position: 103
   - id: java_arg

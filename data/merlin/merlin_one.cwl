@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Allele Frequencies (a|e|f|m|file)
-    default: a
     inputBinding:
       position: 101
       prefix: -f
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: 'Limits: bits'
-    default: 24
     inputBinding:
       position: 101
       prefix: --bits
@@ -288,7 +286,6 @@ inputs:
       - 'null'
       - float
     doc: Missing Value Code
-    default: -99.999
     inputBinding:
       position: 101
       prefix: -xname
@@ -329,7 +326,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output: prefix'
-    default: merlin
     inputBinding:
       position: 101
       prefix: --prefix
@@ -376,7 +372,6 @@ inputs:
       - 'null'
       - int
     doc: Random Seed
-    default: 123456
     inputBinding:
       position: 101
       prefix: -r9999
@@ -522,7 +517,6 @@ inputs:
       - 'null'
       - float
     doc: 'VC Linkage: unlinked'
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --unlinked

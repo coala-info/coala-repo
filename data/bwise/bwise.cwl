@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Anchors size
-    default: 31
     inputBinding:
       position: 101
       prefix: -a
@@ -19,7 +18,6 @@ inputs:
       - float
     doc: Fraction of the anchor that are indexed (default all, put 10 to index 
       one out of 10 anchors)
-    default: all
     inputBinding:
       position: 101
       prefix: -i
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: an integer, largest k-mer size
-    default: 201
     inputBinding:
       position: 101
       prefix: -K
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: an integer, smallest k-mer size
-    default: 63
     inputBinding:
       position: 101
       prefix: -k
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: an integer, minimal unitig coverage for first cleaning
-    default: 5
     inputBinding:
       position: 101
       prefix: -S
@@ -72,7 +67,6 @@ inputs:
       - int
     doc: an integer, k-mers present strictly less than this number of times in 
       the dataset will be discarded
-    default: 2
     inputBinding:
       position: 101
       prefix: -s
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Anchors to test for mapping
-    default: 1000
     inputBinding:
       position: 101
       prefix: -e
@@ -90,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: maximal ccurence for an indexed anchor
-    default: 1
     inputBinding:
       position: 101
       prefix: -A
@@ -99,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: missmatch allowed in mapping
-    default: 10
     inputBinding:
       position: 101
       prefix: -m
@@ -116,7 +107,6 @@ inputs:
       - 'null'
       - Directory
     doc: path to store the results
-    default: current directory
     inputBinding:
       position: 101
       prefix: -o
@@ -145,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: an integer, unitigs with less than S reads mapped is filtred
-    default: 3
     inputBinding:
       position: 101
       prefix: -P
@@ -155,7 +144,6 @@ inputs:
       - int
     doc: an integer, super-reads present strictly less than this number of times
       will be discarded
-    default: 3
     inputBinding:
       position: 101
       prefix: -p

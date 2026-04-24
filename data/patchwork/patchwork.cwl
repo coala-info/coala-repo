@@ -91,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Set level of message suppression
-    default: 1
     inputBinding:
       position: 102
       prefix: -q
@@ -100,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: No layout mode 'v'
-    default: 1
     inputBinding:
       position: 102
       prefix: -n
@@ -141,7 +139,6 @@ inputs:
       - 'null'
       - float
     doc: Scale input by 'v'
-    default: 72
     inputBinding:
       position: 102
       prefix: -s

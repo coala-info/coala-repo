@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: 'Format to download matrix in: loom or mtx (Matrix Market). Defaults to loom.'
-    default: loom
     inputBinding:
       position: 101
       prefix: --format

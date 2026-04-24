@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - boolean
     doc: Is sequence circularised
-    default: false
     inputBinding:
       position: 101
       prefix: --circ
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - boolean
     doc: Find closest match to query
-    default: false
     inputBinding:
       position: 101
       prefix: --closest_match
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn on clustering mode?
-    default: false
     inputBinding:
       position: 101
       prefix: --cluster
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: Choose Abricate database e.g. NCBI, resfinder
-    default: ncbi
     inputBinding:
       position: 101
       prefix: --database
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: Choose which side(s) of the gene to extract (upstream/downstream/both)
-    default: both
     inputBinding:
       position: 101
       prefix: --flank
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include the gene of interest
-    default: false
     inputBinding:
       position: 101
       prefix: --include_gene
@@ -82,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: kmer length for Mash
-    default: 21
     inputBinding:
       position: 101
       prefix: --kmer_length
@@ -100,7 +93,6 @@ inputs:
       - string
     doc: One of "default" - normal mode, "mm" - multi-allelic cluster, or "sm" -
       salami-mode
-    default: default
     inputBinding:
       position: 101
       prefix: --mode
@@ -109,7 +101,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for the clustering file
-    default: out
     inputBinding:
       position: 101
       prefix: --outfile
@@ -118,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: sketch size for mash
-    default: 1000
     inputBinding:
       position: 101
       prefix: --sketch_size
@@ -127,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: threads for mash to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -136,7 +125,6 @@ inputs:
       - 'null'
       - float
     doc: mash distance threshold for clustering
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --threshold
@@ -146,7 +134,6 @@ inputs:
       - int
     doc: 'Increase verbosity: 0 = only warnings, 1 = info, 2 = debug. No number means
       info. Default is no verbosity.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbose
@@ -155,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: Length of flanking sequence/first window length
-    default: 1000
     inputBinding:
       position: 101
       prefix: --window

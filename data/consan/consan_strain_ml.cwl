@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Use grammar <string>, defaults to STA
-    default: STA
     inputBinding:
       position: 102
       prefix: -g
@@ -74,7 +73,6 @@ inputs:
       - int
     doc: Setup Tying Type [No tying = 0; NT counts = 1; Gap Open/Extend counts = 2;
       Gap Open/Extend probs = 3; LR Symmetry 4 (default)]
-    default: 4
     inputBinding:
       position: 102
       prefix: -T

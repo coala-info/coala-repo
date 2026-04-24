@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum length of contigs to be considered
-    default: '2000'
     inputBinding:
       position: 102
       prefix: --contiglength
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output folder
-    default: mgc_screen
     inputBinding:
       position: 102
       prefix: --outdir
@@ -39,7 +37,6 @@ inputs:
       - int
     doc: The minimum number of magnetosome genes in a given contig and a given 
       length of screening window
-    default: 3
     inputBinding:
       position: 102
       prefix: --threshold
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: The length of MGCs screening window
-    default: '10000'
     inputBinding:
       position: 102
       prefix: --windowsize

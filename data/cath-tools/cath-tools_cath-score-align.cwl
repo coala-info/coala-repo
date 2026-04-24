@@ -31,7 +31,6 @@ inputs:
       one more entry at a time, HEAVY - Perform heavy (slow) refining on the alignment,
       including when gluing alignments together. This can change the method of gluing
       alignments under --ssap-scores-infile and --do-the-ssaps"
-    default: NO
     inputBinding:
       position: 104
       prefix: --align-refining
@@ -49,7 +48,6 @@ inputs:
       - Directory
     doc: Do the required SSAPs in directory; use results as with 
       --ssap-scores-infile. Use a suitable temp directory if none is specified
-    default: '""'
     inputBinding:
       position: 104
       prefix: --do-the-ssaps

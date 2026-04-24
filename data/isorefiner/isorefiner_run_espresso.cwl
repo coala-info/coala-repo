@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Option for ESPRESSO_C.pl (quoted string)
-    default: ''
     inputBinding:
       position: 101
       prefix: --tool_c_option
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: Option for ESPRESSO_Q.pl (quoted string)
-    default: ''
     inputBinding:
       position: 101
       prefix: --tool_q_option
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: Option for ESPRESSO_S.pl (quoted string)
-    default: ''
     inputBinding:
       position: 101
       prefix: --tool_s_option
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - Directory
     doc: Working directory containing intermediate and log files
-    default: isorefiner_espresso_work
     inputBinding:
       position: 101
       prefix: --work_dir

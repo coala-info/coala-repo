@@ -54,7 +54,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ignore the default blacklist
-    default: false
     inputBinding:
       position: 102
       prefix: --ignore_default_blacklist
@@ -63,7 +62,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not write filtered contigs to final output fastas
-    default: false
     inputBinding:
       position: 102
       prefix: --no_filterfasta
@@ -81,7 +79,6 @@ inputs:
       - 'null'
       - Directory
     doc: output-folder for MDMcleaner results.
-    default: mdmcleaner_output
     inputBinding:
       position: 102
       prefix: --output_folder
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: basename for overviewfiles
-    default: overview
     inputBinding:
       position: 102
       prefix: --overview_files_basename

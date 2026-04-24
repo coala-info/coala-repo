@@ -46,7 +46,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_itp_path
-    default: system.itp
 
   input_ndx_path:
     label: Path to the input GROMACS index file, NDX format

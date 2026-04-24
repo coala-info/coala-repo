@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: default TRYPSIN
-    default: TRYPSIN
     inputBinding:
       position: 101
       prefix: -digest
@@ -85,7 +84,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory where model files are kept (default ./Models)
-    default: ./Models
     inputBinding:
       position: 101
       prefix: -model_dir
@@ -111,7 +109,6 @@ inputs:
       - 'null'
       - float
     doc: the minimal MS-Blast score to be included in the query, default X=4.0 .
-    default: 4.0
     inputBinding:
       position: 101
       prefix: -msb_min_score
@@ -120,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: number of sequences to generate per spectrum (default X=7).
-    default: 7
     inputBinding:
       position: 101
       prefix: -msb_num_solutions
@@ -137,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: max size of MSB query allowed (default X=1000000).
-    default: 1000000
     inputBinding:
       position: 101
       prefix: -msb_query_size
@@ -162,7 +157,6 @@ inputs:
       - 'null'
       - int
     doc: default 20
-    default: 2000
     inputBinding:
       position: 101
       prefix: -num_solutions

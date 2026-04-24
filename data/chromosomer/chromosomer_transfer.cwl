@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: the format of a file of annotated features (bed, gff3 or vcf)
-    default: bed
     inputBinding:
       position: 103
       prefix: --format

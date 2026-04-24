@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum accepted E-value in the MMseqs2 search.
-    default: 0.001
     inputBinding:
       position: 103
       prefix: --evalue
@@ -76,7 +75,6 @@ inputs:
       - float
     doc: MMseqs2 marker search sensitivity. Higher values will annotate more 
       proteins, but the search will be slower and consume more memory.
-    default: 4.2
     inputBinding:
       position: 103
       prefix: --sensitivity
@@ -87,7 +85,6 @@ inputs:
     doc: Split the data for the MMseqs2 search. Higher values will reduce memory
       usage, but will make the search slower. If the MMseqs2 search is failing, 
       try to increase the number of splits.
-    default: 0
     inputBinding:
       position: 103
       prefix: --splits
@@ -96,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 20
     inputBinding:
       position: 103
       prefix: --threads
@@ -114,7 +110,6 @@ inputs:
       - 'null'
       - boolean
     doc: Display the execution log.
-    default: verbose
     inputBinding:
       position: 103
       prefix: --verbose

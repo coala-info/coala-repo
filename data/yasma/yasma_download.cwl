@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: Download libraries as .fastq format (default is only .fasta)
-    default: false
     inputBinding:
       position: 101
       prefix: --include_quals
@@ -20,7 +19,6 @@ inputs:
       - Directory
     doc: Directory name for annotation output. Defaults to the current 
       directory, with this directory name as the project name.
-    default: current directory, with this directory name as the project name
     inputBinding:
       position: 101
       prefix: --output_directory
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to compress downloaded files (default is uncompressed)
-    default: true
     inputBinding:
       position: 101
       prefix: --unzipped
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to compress downloaded files (default is uncompressed)
-    default: false
     inputBinding:
       position: 101
       prefix: --zipped

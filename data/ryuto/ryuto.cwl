@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum intron size
-    default: 500000
     inputBinding:
       position: 102
       prefix: --max-isize
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads supporting a junction
-    default: 2
     inputBinding:
       position: 102
       prefix: --min-junction-count
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality for a read to be considered
-    default: 10
     inputBinding:
       position: 102
       prefix: --min-mapq
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: composition len
-    default: 20
     inputBinding:
       position: 101
       prefix: -kmer_len

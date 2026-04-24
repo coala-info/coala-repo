@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: a table description
-    default: Description
     inputBinding:
       position: 102
       prefix: --description
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: the number of lines to analyzefrom the input file
-    default: 100
     inputBinding:
       position: 102
       prefix: --lines
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: a table name
-    default: Table
     inputBinding:
       position: 102
       prefix: --name

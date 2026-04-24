@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - float
     doc: the coverage threshold to select high-quality alignments
-    default: 0.8
     inputBinding:
       position: 101
       prefix: -c
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: the deviation between gap length and filled sequence length
-    default: 0.2
     inputBinding:
       position: 101
       prefix: -a
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: number of iteration
-    default: 3
     inputBinding:
       position: 101
       prefix: -r
@@ -44,7 +41,6 @@ inputs:
       - int
     doc: to select the reliable tags for gap-closure, the maximal allowed 
       distance from alignment region to gap boundary (bp)
-    default: 600
     inputBinding:
       position: 101
       prefix: -m
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: the minimal tag alignment length around each boundary of a gap (bp)
-    default: 300
     inputBinding:
       position: 101
       prefix: -v
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: the number of files that all tags were divided into
-    default: 5
     inputBinding:
       position: 101
       prefix: -n
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - Directory
     doc: name of output directory
-    default: ./Output
     inputBinding:
       position: 101
       prefix: -o
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - string
     doc: 'sequencing platform: pacbio [p] or nanopore [n]'
-    default: p
     inputBinding:
       position: 101
       prefix: -s
@@ -95,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: the length of tags that a long read would be divided into (bp)
-    default: 300
     inputBinding:
       position: 101
       prefix: -g
@@ -105,7 +96,6 @@ inputs:
       - int
     doc: number of threads (for machines with multiple processors), used in the 
       bwa mem alignment processes and the following coverage filteration.
-    default: 5
     inputBinding:
       position: 101
       prefix: -t

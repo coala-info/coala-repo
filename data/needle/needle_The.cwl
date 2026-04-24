@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to check for the newest app version.
-    default: true
     inputBinding:
       position: 101
       prefix: --version-check

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: input FASTA path
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input-fasta-path

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of input sequences to process within a chunk (default: 2000)'
-    default: 2000
     inputBinding:
       position: 101
       prefix: --chunksize
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Select output format (gbk, gff, or sco). Default is gbk.
-    default: gbk
     inputBinding:
       position: 101
       prefix: --format
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Specify a translation table to use (default 11).
-    default: 11
     inputBinding:
       position: 101
       prefix: --gencode
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: Select procedure (single or meta). Default is single.
-    default: single
     inputBinding:
       position: 101
       prefix: --procedure
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of prodigal processes to start in parallel (default: 20)'
-    default: 20
     inputBinding:
       position: 101
       prefix: --tasks

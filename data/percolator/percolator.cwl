@@ -69,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal number of iterations.
-    default: 10
     inputBinding:
       position: 102
       prefix: --maxiter
@@ -78,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Number of nested cross validation bins within each cross validation bin.
-    default: 1
     inputBinding:
       position: 102
       prefix: --nested-xval-bins
@@ -111,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: Number of total parallel threads for SVM training during cross validation.
-    default: 3
     inputBinding:
       position: 102
       prefix: --num-threads
@@ -180,7 +177,6 @@ inputs:
       - string
     doc: Define the prefix to identify decoy proteins in the database for the picked-protein
       algorithm.
-    default: auto
     inputBinding:
       position: 102
       prefix: --protein-decoy-pattern
@@ -190,7 +186,6 @@ inputs:
       - string
     doc: Type of enzyme used for in silico protein digestion for picked protein-level
       FDR estimation.
-    default: trypsin
     inputBinding:
       position: 102
       prefix: --protein-enzyme
@@ -240,7 +235,6 @@ inputs:
       - 'null'
       - string
     doc: 'Specify the type of target-decoy search: "auto", "concatenated" or "separate".'
-    default: auto
     inputBinding:
       position: 102
       prefix: --search-input
@@ -249,7 +243,6 @@ inputs:
       - 'null'
       - int
     doc: Set seed of the random number generator.
-    default: 1
     inputBinding:
       position: 102
       prefix: --seed
@@ -293,7 +286,6 @@ inputs:
       - int
     doc: Only train an SVM on a subset of <x> PSMs, and use the resulting score vector
       to evaluate the other PSMs.
-    default: 0
     inputBinding:
       position: 102
       prefix: --subset-max-train
@@ -319,7 +311,6 @@ inputs:
       - float
     doc: False discovery rate threshold for evaluating best cross validation result
       and reported end result.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --testFDR
@@ -338,7 +329,6 @@ inputs:
       - float
     doc: False discovery rate threshold to define positive examples in training. Set
       to testFDR if 0.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --trainFDR
@@ -363,7 +353,6 @@ inputs:
       - 'null'
       - int
     doc: 'Set verbosity of output: 0=no processing info, 5=all.'
-    default: 2
     inputBinding:
       position: 102
       prefix: --verbose

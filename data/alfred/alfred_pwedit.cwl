@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: output format [v|h]
-    default: h
     inputBinding:
       position: 103
       prefix: --format
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: alignment mode [global|prefix|infix]
-    default: infix
     inputBinding:
       position: 103
       prefix: --mode

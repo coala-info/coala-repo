@@ -50,15 +50,12 @@ inputs:
     type: int?
     doc: number of threads to use for computational processes
     label: number of threads
-    default: 2
   memory:
     type: int?
     doc: maximum memory usage in megabytes
     label: maximum memory usage in megabytes
-    default: 4000
   filter_rrna:
     type: boolean
-    default: true
   forward_reads:
     type: string[]
     doc: forward sequence file locally
@@ -115,7 +112,6 @@ steps:
       identifier: identifier
       filter_rrna: filter_rrna
       step: 
-        default: 1
     out: [QC_reverse_reads, QC_forward_reads, reports_folder]
   #########################################
   # STAR alignment
@@ -177,7 +173,6 @@ steps:
         linkMerge: merge_flattened
         pickValue: all_non_null
       destination: 
-        default: "3_STAR-alignment"
     run: ../expressions/files_to_folder.cwl
     out:
       [results]
@@ -191,7 +186,6 @@ steps:
         linkMerge: merge_flattened
         pickValue: all_non_null
       destination: 
-        default: "4_FeatureCounts"
     run: ../expressions/files_to_folder.cwl
     out:
       [results]
@@ -205,7 +199,6 @@ steps:
         linkMerge: merge_flattened
         pickValue: all_non_null
       destination: 
-        default: "5_Kallisto"
     run: ../expressions/files_to_folder.cwl
     out:
       [results]

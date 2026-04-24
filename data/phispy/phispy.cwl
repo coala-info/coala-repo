@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum length of a prophage region in base pairs.
-    default: 2000
     inputBinding:
       position: 102
       prefix: --min_length
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: The number of non-prophage genes to allow in a prophage region.
-    default: 40
     inputBinding:
       position: 102
       prefix: --non_prophage_gene_window
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: The number of consecutive genes to be considered a prophage.
-    default: 5
     inputBinding:
       position: 102
       prefix: --number
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: The window size to use for the sliding window.
-    default: 30
     inputBinding:
       position: 102
       prefix: --window_size

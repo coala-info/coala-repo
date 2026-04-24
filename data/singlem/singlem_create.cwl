@@ -27,7 +27,6 @@ inputs:
       - boolean
     doc: "Overwrite output path if it already exists [default:\n                 \
       \       false]"
-    default: false
     inputBinding:
       position: 102
       prefix: --force
@@ -80,7 +79,6 @@ inputs:
       - int
     doc: "Length of NUCLEOTIDE residues in the window, counting\n                \
       \        only those that match the HMM [default: 60]"
-    default: 60
     inputBinding:
       position: 102
       prefix: --window-size

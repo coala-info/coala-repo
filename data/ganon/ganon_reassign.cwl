@@ -19,7 +19,6 @@ inputs:
       - int
     doc: Max. number of iterations for the EM algorithm. If 0, will run until 
       convergence (check --threshold)
-    default: 10
     inputBinding:
       position: 101
       prefix: --max-iter
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: Quiet output mode
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove input file (.all) after processing.
-    default: false
     inputBinding:
       position: 101
       prefix: --remove-all
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not write output file (.one) after processing.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-one
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: Convergence threshold limit to stop the EM algorithm.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --threshold
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose output mode
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

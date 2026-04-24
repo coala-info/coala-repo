@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: connect adjacent N METHs.
-    default: 6
     inputBinding:
       position: 102
       prefix: --connectAdjacent
@@ -38,7 +37,6 @@ inputs:
       - float
     doc: determine the confidence of phasing two ASMs. higher threshold requires
       greater consistency in the reads.
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --connectConfidence
@@ -48,7 +46,6 @@ inputs:
       - float
     doc: modified and unmodified scales. a higher threshold means that the two 
       quantities need to be closer.
-    default: 0.7
     inputBinding:
       position: 102
       prefix: --heterRatio
@@ -58,7 +55,6 @@ inputs:
       - float
     doc: value extracted from MM tag and ML tag. above the threshold means 
       modification occurred.
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --modThreshold
@@ -68,7 +64,6 @@ inputs:
       - float
     doc: not being judged as modified and unmodified is noise. higher threshold 
       means lower noise needs.
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --noiseRatio
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: prefix of phasing result.
-    default: modcall_result
     inputBinding:
       position: 102
       prefix: --out-prefix
@@ -100,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: number of thread.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -110,7 +103,6 @@ inputs:
       - float
     doc: value extracted from MM tag and ML tag. above the threshold means no 
       modification occurred.
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --unModThreshold

@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: blastp executable
-    default: blastp
     inputBinding:
       position: 102
       prefix: -b
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: clusters output filename
-    default: clustered_proteins
     inputBinding:
       position: 102
       prefix: -o
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: percentage of isolates a gene must be in to be core
-    default: 99.0
     inputBinding:
       position: 102
       prefix: -cd
@@ -123,7 +120,6 @@ inputs:
       - 'null'
       - string
     doc: makeblastdb executable
-    default: makeblastdb
     inputBinding:
       position: 102
       prefix: -m
@@ -132,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of clusters
-    default: 50000
     inputBinding:
       position: 102
       prefix: -g
@@ -141,7 +136,6 @@ inputs:
       - 'null'
       - string
     doc: mcl executable
-    default: mcl
     inputBinding:
       position: 102
       prefix: -c
@@ -150,7 +144,6 @@ inputs:
       - 'null'
       - string
     doc: Change the MCL inflation value
-    default: '1.5'
     inputBinding:
       position: 102
       prefix: -iv
@@ -159,7 +152,6 @@ inputs:
       - 'null'
       - string
     doc: mcxdeblast executable
-    default: mcxdeblast
     inputBinding:
       position: 102
       prefix: -d
@@ -168,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: minimum percentage identity for blastp
-    default: 95
     inputBinding:
       position: 102
       prefix: -i
@@ -177,7 +168,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory
-    default: .
     inputBinding:
       position: 102
       prefix: -f
@@ -194,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: -p
@@ -203,7 +192,6 @@ inputs:
       - 'null'
       - int
     doc: translation table
-    default: 11
     inputBinding:
       position: 102
       prefix: -t

@@ -51,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: output alignment in format <s>
-    default: Stockholm
     inputBinding:
       position: 103
       prefix: --outformat

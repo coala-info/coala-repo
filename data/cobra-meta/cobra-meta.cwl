@@ -30,7 +30,6 @@ inputs:
       - int
     doc: the max read mapping mismatches for determining if two contigs are 
       spanned by paired reads.
-    default: 2
     inputBinding:
       position: 101
       prefix: --linkage_mismatch
@@ -64,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: the number of threads for blastn.
-    default: 16
     inputBinding:
       position: 101
       prefix: --threads

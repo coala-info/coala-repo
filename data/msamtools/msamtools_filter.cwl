@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: print header for the SAM output
-    default: false
     inputBinding:
       position: 102
       prefix: -h
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: input is SAM
-    default: false
     inputBinding:
       position: 102
       prefix: -S
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: invert the effect of the filter
-    default: false
     inputBinding:
       position: 102
       prefix: --invert
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - boolean
     doc: keep all highest scoring hit(s) per read
-    default: false
     inputBinding:
       position: 102
       prefix: --besthit
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - boolean
     doc: keep only one highest scoring hit per read, only if it is unique
-    default: false
     inputBinding:
       position: 102
       prefix: --uniqhit
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - boolean
     doc: report unmapped reads, when filtering using upper-limit thresholds
-    default: false
     inputBinding:
       position: 102
       prefix: --keep_unmapped
@@ -68,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: min. length of alignment
-    default: 0
     inputBinding:
       position: 102
       prefix: -l
@@ -77,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: min. percent of the query that must be aligned, between 0 and 100
-    default: 0
     inputBinding:
       position: 102
       prefix: -z
@@ -87,7 +79,6 @@ inputs:
       - int
     doc: min. sequence identity of alignment, in percentage, integer between 0 
       and 100; requires NM field to be present
-    default: 0
     inputBinding:
       position: 102
       prefix: -p
@@ -96,7 +87,6 @@ inputs:
       - 'null'
       - boolean
     doc: output BAM
-    default: false
     inputBinding:
       position: 102
       prefix: -b
@@ -105,7 +95,6 @@ inputs:
       - 'null'
       - boolean
     doc: rescore alignments using MD or NM fields, in that order
-    default: false
     inputBinding:
       position: 102
       prefix: --rescore
@@ -116,7 +105,6 @@ inputs:
     doc: min/max sequence identity of alignment, in parts per thousand, integer 
       between -1000 and 1000; requires NM field to be present. +ve values mean 
       minimum ppt and -ve values mean maximum ppt.
-    default: 0
     inputBinding:
       position: 102
       prefix: --ppt
@@ -125,7 +113,6 @@ inputs:
       - 'null'
       - boolean
     doc: uncompressed BAM output (force -b)
-    default: false
     inputBinding:
       position: 102
       prefix: -u

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: 'BWT construction algorithm: bwtsw, is or rb2'
-    default: auto
     inputBinding:
       position: 102
       prefix: -a
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: block size for the bwtsw algorithm (effective with -a bwtsw)
-    default: 10000000
     inputBinding:
       position: 102
       prefix: -b

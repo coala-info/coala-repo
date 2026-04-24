@@ -16,7 +16,6 @@ inputs:
       - string
     doc: The read alignment software to use. Can be either bowtie2, minimap2 or 
       bwa. minimap2 should only be used for reads > 100 bp.
-    default: bowtie2
     inputBinding:
       position: 102
       prefix: --aligner
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Resolution to use to preview the Hi-C map.
-    default: 5000
     inputBinding:
       position: 102
       prefix: --binning
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use in parallel.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

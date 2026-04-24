@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: quality score offset
-    default: 33
     inputBinding:
       position: 102
       prefix: -q
@@ -56,7 +55,6 @@ inputs:
     doc: Quality score max. The default 42. The lowest possible score is 1. To 
       used binnedscoring, enter a space separated list of scores, e.g., -Q 2 15 
       23 37
-    default: 42
     inputBinding:
       position: 102
       prefix: -Q

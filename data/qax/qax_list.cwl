@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show absolute paths
-    default: false
     inputBinding:
       position: 102
       prefix: --abs
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use basename instead of path
-    default: false
     inputBinding:
       position: 102
       prefix: --basename
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print header
-    default: false
     inputBinding:
       position: 102
       prefix: --header
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print a CSV table (-s) with all fields
-    default: false
     inputBinding:
       position: 102
       prefix: --rawtable
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Separator when using --rawtable
-    default: tab
     inputBinding:
       position: 102
       prefix: --separator
@@ -70,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show all fields
-    default: false
     inputBinding:
       position: 102
       prefix: --all
@@ -79,7 +73,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show artifact's date time
-    default: false
     inputBinding:
       position: 102
       prefix: --datetime
@@ -88,7 +81,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show uuid
-    default: false
     inputBinding:
       position: 102
       prefix: --uuid
@@ -97,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: Column to sort (uuid, type, format, date)
-    default: type
     inputBinding:
       position: 102
       prefix: --sortby

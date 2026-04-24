@@ -33,7 +33,6 @@ inputs:
     type: File
     inputBinding:
       position: 1
-    default:
         class: File
         basename: "batch_parser.R"
         contents: |-

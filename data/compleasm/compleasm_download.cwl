@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: OrthoDB version
-    default: odb12
     inputBinding:
       position: 102
       prefix: --odb

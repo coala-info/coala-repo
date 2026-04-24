@@ -23,7 +23,6 @@ inputs:
       - type: array
         items: File
     doc: read one or more arguments files and add them to the command line
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --arguments_file
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -42,7 +40,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -69,7 +65,6 @@ inputs:
       - string
     doc: "Gene Function tag. For a given gene name <GENE_NAME_TAG>, this is the function
       of the gene at this read's position: UTR/CODING/INTRONIC/..."
-    default: gf
     inputBinding:
       position: 101
       prefix: --GENE_FUNCTION_TAG
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: Gene Name tag. Takes on the gene name this read overlaps (if any)
-    default: gn
     inputBinding:
       position: 101
       prefix: --GENE_NAME_TAG
@@ -88,7 +82,6 @@ inputs:
       - string
     doc: Gene Strand tag. For a given gene name <GENE_NAME_TAG>, this is the 
       strand of the gene.
-    default: gs
     inputBinding:
       position: 101
       prefix: --GENE_STRAND_TAG
@@ -103,7 +96,6 @@ inputs:
       - 'null'
       - string
     doc: Heap size to allocate for the JVM.
-    default: 4g
     inputBinding:
       position: 101
       prefix: -m
@@ -115,7 +107,6 @@ inputs:
       of records stored in RAM before spilling to disk. Increasing this number 
       reduces the number of file handles needed to sort the file, and increases 
       the amount of RAM needed.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -131,7 +122,6 @@ inputs:
       annotation (coding, intronic, etc) instead of multiple annotations (coding
       + intronic). Set to 0 to reproduce the DropSeq standard, or 50 to emulate 
       StarSolo.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --PCT_REQUIRED_OVERLAP
@@ -140,7 +130,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -151,7 +140,6 @@ inputs:
     doc: READ functional annotation tag. For this read, what is the function? 
       This only looks at reads on the right strand, and prioritizes coding over 
       intron over intergenic. There is only 1 value for this tag.
-    default: XF
     inputBinding:
       position: 101
       prefix: --READ_FUNCTION_TAG
@@ -160,7 +148,6 @@ inputs:
       - 'null'
       - File
     doc: Reference sequence file.
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
@@ -169,7 +156,6 @@ inputs:
       - 'null'
       - boolean
     doc: display hidden arguments
-    default: false
     inputBinding:
       position: 101
       prefix: --showHidden
@@ -178,7 +164,6 @@ inputs:
       - 'null'
       - File
     doc: The strand specific summary info
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --SUMMARY
@@ -189,7 +174,6 @@ inputs:
         items: File
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --TMP_DIR
@@ -199,7 +183,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -209,7 +192,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -220,7 +202,6 @@ inputs:
     doc: Use strand info to determine what gene to assign the read to. If this 
       is on, reads can be assigned to a maximum one one gene. This is used for 
       the READ_FUNCTION_TAG output only.
-    default: true
     inputBinding:
       position: 101
       prefix: --USE_STRAND_INFO
@@ -232,7 +213,6 @@ inputs:
       stringency to SILENT can improve performance when processing a BAM file in
       which variable-length data (read, qualities, tags) do not otherwise need 
       to be decoded.
-    default: LENIENT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
@@ -241,7 +221,6 @@ inputs:
       - 'null'
       - string
     doc: Control verbosity of logging.
-    default: INFO
     inputBinding:
       position: 101
       prefix: --VERBOSITY

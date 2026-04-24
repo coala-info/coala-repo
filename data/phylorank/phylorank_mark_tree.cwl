@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: only mark nodes with a parent branch above the specified length (default=0)
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --min_length
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: only mark nodes above the specified support value (default=0)
-    default: 0
     inputBinding:
       position: 102
       prefix: --min_support
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: relative divergence thresholds for taxonomic ranks
-    default: '{"d": 0.33, "p": 0.56, "c": 0.65, "o": 0.78, "f": 0.92, "g": 0.99}'
     inputBinding:
       position: 102
       prefix: --thresholds

@@ -88,7 +88,6 @@ inputs:
       - 'null'
       - boolean
     doc: Exports all current system environment
-    default: false
     inputBinding:
       position: 102
       prefix: -E
@@ -105,7 +104,6 @@ inputs:
       - 'null'
       - boolean
     doc: Pull latest changes before run
-    default: false
     inputBinding:
       position: 102
       prefix: -latest
@@ -139,7 +137,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not check for remote project updates
-    default: false
     inputBinding:
       position: 102
       prefix: -offline
@@ -165,7 +162,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run the workflow script skipping the execution of all processes
-    default: false
     inputBinding:
       position: 102
       prefix: -preview
@@ -217,7 +213,6 @@ inputs:
       - 'null'
       - boolean
     doc: Execute the workflow replacing process scripts with command stubs
-    default: false
     inputBinding:
       position: 102
       prefix: -stub-run
@@ -373,7 +368,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable process execution with Docker
-    default: false
     inputBinding:
       position: 102
       prefix: -without-docker

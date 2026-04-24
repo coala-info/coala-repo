@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: band width
-    default: 50
     inputBinding:
       position: 104
       prefix: -w
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: gap extension penalty
-    default: 2
     inputBinding:
       position: 104
       prefix: -r
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: gap open penalty
-    default: 5
     inputBinding:
       position: 104
       prefix: -q
@@ -72,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: ignore pairs with insert >=INT for inferring the size distr
-    default: 20000
     inputBinding:
       position: 104
       prefix: -I
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - float
     doc: coefficient of length-threshold adjustment
-    default: 5.5
     inputBinding:
       position: 104
       prefix: -c
@@ -98,7 +93,6 @@ inputs:
       - 'null'
       - float
     doc: mask level
-    default: 0.5
     inputBinding:
       position: 104
       prefix: -m
@@ -107,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: score for a match
-    default: 1
     inputBinding:
       position: 104
       prefix: -a
@@ -116,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: maximum gap size during chaining
-    default: 10000
     inputBinding:
       position: 104
       prefix: -G
@@ -125,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: maximum seeding interval size
-    default: 3
     inputBinding:
       position: 104
       prefix: -s
@@ -134,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: mismatch penalty
-    default: 3
     inputBinding:
       position: 104
       prefix: -b
@@ -143,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: '# seeds to trigger rev aln; 2*INT is also the chaining threshold'
-    default: 5
     inputBinding:
       position: 104
       prefix: -N
@@ -152,7 +141,6 @@ inputs:
       - 'null'
       - int
     doc: score threshold divided by a
-    default: 30
     inputBinding:
       position: 104
       prefix: -T
@@ -169,7 +157,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 104
       prefix: -t
@@ -178,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: Z-best
-    default: 1
     inputBinding:
       position: 104
       prefix: -z

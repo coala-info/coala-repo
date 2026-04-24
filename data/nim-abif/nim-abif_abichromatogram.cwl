@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Downsample factor for smoother visualization
-    default: 1
     inputBinding:
       position: 102
       prefix: --downsample
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: SVG height in pixels
-    default: 600
     inputBinding:
       position: 102
       prefix: --height
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Start position
-    default: 0
     inputBinding:
       position: 102
       prefix: --start
@@ -66,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: SVG width in pixels
-    default: 1200
     inputBinding:
       position: 102
       prefix: --width

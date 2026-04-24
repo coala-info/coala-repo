@@ -28,7 +28,6 @@ inputs:
       - File
     doc: The VCF/BCF file containing the variants. If not specified, reads from 
       STDIN.
-    default: '-'
     inputBinding:
       position: 2
   - id: annotation_key
@@ -38,7 +37,6 @@ inputs:
     doc: The INFO key for the annotation field. This defaults to 'ANN', but 
       tools might use other field names. For example, default VEP annotations 
       can be parsed by setting 'CSQ' here.
-    default: ANN
     inputBinding:
       position: 103
       prefix: --annotation-key
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: Set the backend library.
-    default: cyvcf2
     inputBinding:
       position: 103
       prefix: --backend
@@ -89,7 +86,6 @@ inputs:
       - int
     doc: Number of VCF/BCF records to sort in memory. If the VCF/BCF file 
       exceeds this number of records, external sorting is used.
-    default: 100000
     inputBinding:
       position: 103
       prefix: --max-in-mem-records
@@ -107,7 +103,6 @@ inputs:
       - 'null'
       - string
     doc: Output format.
-    default: vcf
     inputBinding:
       position: 103
       prefix: --output-fmt

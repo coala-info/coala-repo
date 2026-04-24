@@ -27,14 +27,12 @@ inputs:
     label: cpu limit
     inputBinding:
       prefix: -cpu
-    default: 2
   applications:
     type: string
     doc: Which applications to use (e.g. TIGRFAM,SFLD,SUPERFAMILY,Gene3D,Hamap,Coils,ProSiteProfiles,SMART,PRINTS,ProSitePatterns,Pfam,ProDom,MobiDBLite,PIRSF)
     label: applications
     inputBinding:
       prefix: -a
-    default: Pfam
   identifier:
     type: string
     doc: Name of the sample being analysed
@@ -45,7 +43,6 @@ inputs:
     label: InterProScan folder
     inputBinding:
       prefix: -path
-    default: /unlock/infrastructure/binaries/interproscan/interproscan-5.53-87.0
 
 baseCommand: ["java", "-Xmx5g", "-jar", "/unlock/infrastructure/binaries/sapp/SAPP-2.0.jar", "-interpro"]
 

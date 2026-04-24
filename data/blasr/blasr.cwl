@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Trick for speeding up alignments with match - E fewer anchors.
-    default: 0
     inputBinding:
       position: 103
       prefix: --advanceExactMatches
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - boolean
     doc: Refine alignment using affine guided align.
-    default: false
     inputBinding:
       position: 103
       prefix: --affineAlign
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Change affine (extension) gap penalty.
-    default: 0
     inputBinding:
       position: 103
       prefix: --affineExtend
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Set the penalty for opening an affine alignment.
-    default: 10
     inputBinding:
       position: 103
       prefix: --affineOpen
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - boolean
     doc: Aggressively filter out non-promising alignment candidates.
-    default: false
     inputBinding:
       position: 103
       prefix: --aggressiveIntervalCut
@@ -82,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Report the top 'n' alignments.
-    default: 10
     inputBinding:
       position: 103
       prefix: --bestn
@@ -91,7 +85,6 @@ inputs:
       - 'null'
       - string
     doc: Use no/hard/subread/soft clipping, ONLY for SAM/BAM output.
-    default: none
     inputBinding:
       position: 103
       prefix: --clipping
@@ -100,7 +93,6 @@ inputs:
       - 'null'
       - boolean
     doc: Map all subreads of a zmw to where the longest full pass subread aligned.
-    default: false
     inputBinding:
       position: 103
       prefix: --concordant
@@ -109,7 +101,6 @@ inputs:
       - 'null'
       - boolean
     doc: Fast search maximum increasing intervals as alignment candidates.
-    default: false
     inputBinding:
       position: 103
       prefix: --fastMaxInterval
@@ -118,7 +109,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use a fast heuristic algorithm to speed up sparse dynamic programming.
-    default: false
     inputBinding:
       position: 103
       prefix: --fastSDP
@@ -136,7 +126,6 @@ inputs:
       - string
     doc: Specify a policy to treat multiple hits from [all, allbest, random, randombest,
       leftmost]
-    default: all
     inputBinding:
       position: 103
       prefix: --hitPolicy
@@ -153,7 +142,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ignore any hq regions in the region table.
-    default: false
     inputBinding:
       position: 103
       prefix: --ignoreHQRegions
@@ -162,7 +150,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ignore any information in the region table.
-    default: false
     inputBinding:
       position: 103
       prefix: --ignoreRegions
@@ -172,7 +159,6 @@ inputs:
       - int
     doc: Do not add anchors from a position if it matches to more than 'm' locations
       in the target.
-    default: 10000
     inputBinding:
       position: 103
       prefix: --maxAnchorsPerPosition
@@ -197,7 +183,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum score to output (high is bad, negative good).
-    default: -200
     inputBinding:
       position: 103
       prefix: --maxScore
@@ -206,7 +191,6 @@ inputs:
       - 'null'
       - int
     doc: Report alignments only if their lengths are greater than minAlnLength.
-    default: 0
     inputBinding:
       position: 103
       prefix: --minAlnLength
@@ -215,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum seed length.
-    default: 12
     inputBinding:
       position: 103
       prefix: --minMatch
@@ -224,7 +207,6 @@ inputs:
       - 'null'
       - float
     doc: Report alignments only if their percentage accuracy is greater than minAccuracy.
-    default: 0
     inputBinding:
       position: 103
       prefix: --minPctAccuracy
@@ -233,7 +215,6 @@ inputs:
       - 'null'
       - float
     doc: Report alignments only if their percentage similarity is greater than minPctSimilarity.
-    default: 0
     inputBinding:
       position: 103
       prefix: --minPctSimilarity
@@ -242,7 +223,6 @@ inputs:
       - 'null'
       - int
     doc: Do not align subreads whose quality score in region table is less than m.
-    default: 0
     inputBinding:
       position: 103
       prefix: --minRawSubreadScore
@@ -251,7 +231,6 @@ inputs:
       - 'null'
       - int
     doc: Skip reads that have a full length less than l.
-    default: 50
     inputBinding:
       position: 103
       prefix: --minReadLength
@@ -260,7 +239,6 @@ inputs:
       - 'null'
       - int
     doc: Do not align subreads of length less than l.
-    default: 0
     inputBinding:
       position: 103
       prefix: --minSubreadLength
@@ -269,7 +247,6 @@ inputs:
       - 'null'
       - int
     doc: Keep up to 'n' candidates for the best alignment.
-    default: 10
     inputBinding:
       position: 103
       prefix: --nCandidates
@@ -286,7 +263,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not resort based on local alignment.
-    default: false
     inputBinding:
       position: 103
       prefix: --noSortRefinedAlignments
@@ -303,7 +279,6 @@ inputs:
       - 'null'
       - int
     doc: Align using N processes.
-    default: 1
     inputBinding:
       position: 103
       prefix: --nproc
@@ -321,7 +296,6 @@ inputs:
       - boolean
     doc: Place gaps consistently in alignments of a read as alignments of its reverse
       complementary sequence.
-    default: false
     inputBinding:
       position: 103
       prefix: --placeGapConsistently
@@ -330,7 +304,6 @@ inputs:
       - 'null'
       - boolean
     doc: DEPRECATED! If true, equivalent to --hitPolicy randombest.
-    default: false
     inputBinding:
       position: 103
       prefix: --placeRepeatsRandomly
@@ -347,7 +320,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print quality values to SAM output.
-    default: false
     inputBinding:
       position: 103
       prefix: --printSAMQV
@@ -356,7 +328,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for random number generator.
-    default: 0
     inputBinding:
       position: 103
       prefix: --randomSeed
@@ -365,7 +336,6 @@ inputs:
       - 'null'
       - boolean
     doc: Refine concordant alignments.
-    default: false
     inputBinding:
       position: 103
       prefix: --refineConcordantAlignments
@@ -398,7 +368,6 @@ inputs:
       - 'null'
       - int
     doc: Use matches of length K to speed dynamic programming alignments.
-    default: 11
     inputBinding:
       position: 103
       prefix: --sdpTupleSize
@@ -407,7 +376,6 @@ inputs:
       - 'null'
       - int
     doc: Index of the first read to begin aligning.
-    default: 0
     inputBinding:
       position: 103
       prefix: --start
@@ -416,7 +384,6 @@ inputs:
       - 'null'
       - int
     doc: Align one read every 'S' reads.
-    default: 1
     inputBinding:
       position: 103
       prefix: --stride
@@ -425,7 +392,6 @@ inputs:
       - 'null'
       - float
     doc: Proportion of reads to randomly subsample (expressed as a decimal) and align.
-    default: 0
     inputBinding:
       position: 103
       prefix: --subsample
@@ -483,7 +449,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use quality values to score gap and mismatch penalties.
-    default: false
     inputBinding:
       position: 103
       prefix: --useQuality

@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: field name in the VCF INFO column to use for filtering on AF
-    default: None
     inputBinding:
       position: 101
       prefix: --af_field
@@ -98,7 +97,6 @@ inputs:
       variants that have not failed any filters will be processed (FILTER column
       is PASS, None, .) or if the filters are subset of the accepted filters. 
       (default is False)
-    default: false
     inputBinding:
       position: 101
       prefix: --ignore_filters
@@ -131,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: Mito_trans_table
-    default: 2
     inputBinding:
       position: 101
       prefix: --mito_translation_table
@@ -173,7 +170,6 @@ inputs:
       - 'null'
       - int
     doc: Translation table
-    default: 1
     inputBinding:
       position: 101
       prefix: --translation_table

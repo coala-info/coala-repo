@@ -11,7 +11,6 @@ inputs:
     doc: (Expert setting) Number of states used for initialization (positive 
       number). Can be set to zero only when –state-list is set, to skip the 
       selection for the initialization step
-    default: 1000
     inputBinding:
       position: 101
       prefix: --Kinit
@@ -22,7 +21,6 @@ inputs:
     doc: (Expert setting) Maximum number of states selected from the sparse PBWT
       (positive number). Can be set to zero only when –state-list is set, to 
       skip the selection for during the Gibbs iterations
-    default: 2000
     inputBinding:
       position: 101
       prefix: --Kpbwt
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum phred-scalde based quality to be considered
-    default: 10
     inputBinding:
       position: 101
       prefix: --baseq
@@ -63,7 +60,6 @@ inputs:
       Specifies the number of bits to be used for the encoding probabilities of the
       output BGEN file. If the output is in the .vcf[.gz]/.bcf format, this value
       is ignored. Accepted values: 1-32'
-    default: 8
     inputBinding:
       position: 101
       prefix: --bgen-bits
@@ -74,7 +70,6 @@ inputs:
     doc: '(Expert setting) Only used toghether when the output is in BGEN file format.
       Specifies the compression of the output BGEN file. If the output is in the .vcf[.gz]/.bcf
       format, this value is ignored. Accepted values: [no,zlib,zstd]'
-    default: zstd
     inputBinding:
       position: 101
       prefix: --bgen-compr
@@ -83,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: (Expert setting) Number of burn-in iterations of the Gibbs sampler
-    default: 5
     inputBinding:
       position: 101
       prefix: --burnin
@@ -104,7 +98,6 @@ inputs:
       - string
     doc: Model to use to call the data. Only the standard model is available at 
       the moment.
-    default: standard
     inputBinding:
       position: 101
       prefix: --call-model
@@ -132,7 +125,6 @@ inputs:
       - 'null'
       - float
     doc: (Expert setting) Imputation HMM error rate
-    default: 9.99999996e-13
     inputBinding:
       position: 101
       prefix: --err-imp
@@ -141,7 +133,6 @@ inputs:
       - 'null'
       - float
     doc: (Expert setting) Phasing HMM error rate
-    default: 9.99999975e-05
     inputBinding:
       position: 101
       prefix: --err-phase
@@ -267,7 +258,6 @@ inputs:
       - 'null'
       - int
     doc: (Expert setting) Number of main iterations of the Gibbs sampler
-    default: 15
     inputBinding:
       position: 101
       prefix: --main
@@ -284,7 +274,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality for a read to be considered
-    default: 10
     inputBinding:
       position: 101
       prefix: --mapq
@@ -295,7 +284,6 @@ inputs:
     doc: (Expert setting) Max read depth at a site. If the number of reads 
       exceeds this number, the reads at the sites are downsampled (e.g. to avoid
       artifactual coverage increases)
-    default: 40
     inputBinding:
       position: 101
       prefix: --max-depth
@@ -304,7 +292,6 @@ inputs:
       - 'null'
       - float
     doc: (Expert setting) Minimim haploid likelihood
-    default: 1.00000001e-10
     inputBinding:
       position: 101
       prefix: --min-gl
@@ -314,7 +301,6 @@ inputs:
       - int
     doc: (Expert setting) Effective diploid population size modelling 
       recombination frequency
-    default: 100000
     inputBinding:
       position: 101
       prefix: --ne
@@ -332,7 +318,6 @@ inputs:
       - int
     doc: (Expert setting) Number of neighbors in the sparse PBWT selection step 
       (positive number)
-    default: 12
     inputBinding:
       position: 101
       prefix: --pbwt-depth
@@ -343,7 +328,6 @@ inputs:
     doc: (Expert setting) Frequency of PBWT selection in cM (positive number). 
       This parameter is automatically adjusted in case of small imputation 
       regions
-    default: 0.100000001
     inputBinding:
       position: 101
       prefix: --pbwt-modulo-cm
@@ -372,7 +356,6 @@ inputs:
       - 'null'
       - int
     doc: Seed of the random number generator
-    default: 15052011
     inputBinding:
       position: 101
       prefix: --seed
@@ -381,7 +364,6 @@ inputs:
       - 'null'
       - float
     doc: (Expert setting) Rare variant threshold
-    default: 0.00100000005
     inputBinding:
       position: 101
       prefix: --sparse-maf
@@ -404,7 +386,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Boolean indicating whether to compress (by gzip) the final output
-    default: true
     inputBinding:
       position: 101
       prefix: --compress-output
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads that must cover a site for it to be tested.
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-cov
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors you wish to use to parallelize this function
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-procs
@@ -46,7 +43,6 @@ inputs:
       - boolean
     doc: Boolean indicates whether to remove in the final output the "chr" 
       prefix in the chromosome name
-    default: true
     inputBinding:
       position: 101
       prefix: --remove-chr-prefix
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: Float indicating at what FDR you want to consider a result significant.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --sig-cutoff
@@ -70,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: Parameter to pass to unix sort with -S/--buffer-size command
-    default: 500M
     inputBinding:
       position: 101
       prefix: --sort-mem

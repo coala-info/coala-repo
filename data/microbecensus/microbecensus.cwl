@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads to sample from the input files
-    default: 100000000
     inputBinding:
       position: 102
       prefix: -n
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: -t

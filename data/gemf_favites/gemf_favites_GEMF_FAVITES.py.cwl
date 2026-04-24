@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: Path to GEMF Executable
-    default: GEMF
     inputBinding:
       position: 101
       prefix: --gemf_path
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Max Number of Events
-    default: 4294967295
     inputBinding:
       position: 101
       prefix: --max_events
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output All Transition Events (slower)
-    default: false
     inputBinding:
       position: 101
       prefix: --output_all_transitions
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - boolean
     doc: Suppress log messages
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet

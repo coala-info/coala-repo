@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - File
     doc: File where to store valid SV candidates
-    default: candidates.bedpe
     inputBinding:
       position: 101
       prefix: --candidates
@@ -32,7 +31,6 @@ inputs:
       - int
     doc: Consider SV as duplicates if they have the same type and if their 
       breakpoints are within this distance
-    default: 10
     inputBinding:
       position: 101
       prefix: --duplicates
@@ -48,7 +46,6 @@ inputs:
       - float
     doc: Percentile to chose as a threshold in the distribution of the number of
       shared barcodes for large variants
-    default: 99
     inputBinding:
       position: 101
       prefix: --largeRate
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of large variants
-    default: 10000
     inputBinding:
       position: 101
       prefix: --largeSize
@@ -67,7 +63,6 @@ inputs:
       - int
     doc: Remove from candidates list all candidates which have a region involved
       in that much candidates
-    default: 1000
     inputBinding:
       position: 101
       prefix: --maxLinks
@@ -77,7 +72,6 @@ inputs:
       - float
     doc: Percentile to chose as a threshold in the distribution of the number of
       shared barcodes for medium variants
-    default: 99
     inputBinding:
       position: 101
       prefix: --mediumRate
@@ -86,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of medium variants
-    default: 2000
     inputBinding:
       position: 101
       prefix: --mediumSize
@@ -95,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Always remove candidates that share less than this number of barcodes
-    default: 1
     inputBinding:
       position: 101
       prefix: --minBarcodes
@@ -112,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations to perform through the barcode index
-    default: 10
     inputBinding:
       position: 101
       prefix: --nbBins
@@ -121,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the thread pool
-    default: 100000
     inputBinding:
       position: 101
       prefix: --poolSize
@@ -130,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the regions on the reference genome to consider
-    default: 1000
     inputBinding:
       position: 101
       prefix: --regionSize
@@ -139,7 +128,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not process SVs which are translocations
-    default: false
     inputBinding:
       position: 101
       prefix: --skipTranslocations
@@ -149,7 +137,6 @@ inputs:
       - float
     doc: Percentile to chose as a threshold in the distribution of the number of
       shared barcodes for small variants
-    default: 99
     inputBinding:
       position: 101
       prefix: --smallRate
@@ -158,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads

@@ -19,7 +19,6 @@ inputs:
       - int
     doc: "Maximum beam width (default: -1, limited only by\n                     \
       \   --rho)"
-    default: -1
     inputBinding:
       position: 101
       prefix: --beam_width
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: 'Ell parameter, minimum number of mutations (default: -1, unlimited)'
-    default: -1
     inputBinding:
       position: 101
       prefix: --ell
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: Regression method
-    default: fastppm
     inputBinding:
       position: 101
       prefix: --L
@@ -79,7 +76,6 @@ inputs:
     doc: "Rho parameter, minimum deviation allowed from max\n                    \
       \    likelihood (default: 0.9, ignored when beam_width\n                   \
       \     specified)"
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --rho
@@ -88,7 +84,6 @@ inputs:
       - 'null'
       - string
     doc: Input/output column separator
-    default: \t
     inputBinding:
       position: 101
       prefix: --sep
@@ -98,7 +93,6 @@ inputs:
       - int
     doc: "Tau parameter, maximum number of backbone trees\n                      \
       \  (default: 5)"
-    default: 5
     inputBinding:
       position: 101
       prefix: --tau

@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: 'Correlation method to use. Options: pearson, kendall, spearman.'
-    default: pearson
     inputBinding:
       position: 101
       prefix: --method

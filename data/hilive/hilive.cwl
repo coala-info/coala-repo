@@ -31,7 +31,6 @@ inputs:
         items: int
     doc: Enumerate the number of tolerated errors (only SNPs) for each barcode 
       fragment, e.g. -E 2 2
-    default: 1
     inputBinding:
       position: 105
       prefix: --barcode-errors
@@ -78,7 +77,6 @@ inputs:
       - 'null'
       - boolean
     doc: Create BAM files instead of SAM files
-    default: false
     inputBinding:
       position: 105
       prefix: --bam
@@ -87,7 +85,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable the One-Hit Wonder filter
-    default: false
     inputBinding:
       position: 105
       prefix: --disable-ohw-filter
@@ -97,7 +94,6 @@ inputs:
       - boolean
     doc: Activate extended CIGAR format (= and X instead of only M) in output 
       files
-    default: false
     inputBinding:
       position: 105
       prefix: --extended-cigar
@@ -107,7 +103,6 @@ inputs:
       - boolean
     doc: If set, the align files are always sorted before output. Existing 
       sorted align files are overwritten
-    default: false
     inputBinding:
       position: 105
       prefix: --force-resort
@@ -116,7 +111,6 @@ inputs:
       - 'null'
       - boolean
     doc: Align and output all barcodes
-    default: false
     inputBinding:
       position: 105
       prefix: --keep-all-barcodes
@@ -125,7 +119,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep all intermediate alignment files
-    default: false
     inputBinding:
       position: 105
       prefix: --keep-all-files
@@ -152,7 +145,6 @@ inputs:
       - float
     doc: Minimum alignment score (relative to the current read length) for 
       alignments to be reported (0-1)
-    default: 0
     inputBinding:
       position: 105
       prefix: --min-as-ratio
@@ -161,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: Number of errors tolerated in read alignment
-    default: 2
     inputBinding:
       position: 105
       prefix: --min-errors
@@ -170,7 +161,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum allowed basecall quality
-    default: 1
     inputBinding:
       position: 105
       prefix: --min-quality
@@ -224,7 +214,6 @@ inputs:
       - 'null'
       - File
     doc: Path to runInfo.xml for parsing read and index lengths
-    default: BC_DIR/../../RunInfo.xml
     inputBinding:
       position: 105
       prefix: --runinfo
@@ -242,7 +231,6 @@ inputs:
       - 'null'
       - int
     doc: First cycle to apply One-Hit Wonder filter
-    default: 20
     inputBinding:
       position: 105
       prefix: --start-ohw
@@ -251,7 +239,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temporary directory for the alignment files
-    default: ./temp
     inputBinding:
       position: 105
       prefix: --temp
@@ -269,7 +256,6 @@ inputs:
       - int
     doc: Set the window size to search for alignment extension, i.e. maximum 
       total insertion/deletion size
-    default: 5
     inputBinding:
       position: 105
       prefix: --window

@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Memory available when building on temp disk space (in gigabytes).
-    default: 4
     inputBinding:
       position: 102
       prefix: --mem-gb
@@ -56,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Length of precalculated prefixes included in the index.
-    default: 8
     inputBinding:
       position: 102
       prefix: --prefix-precalc
@@ -73,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

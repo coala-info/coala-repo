@@ -93,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Processes for classifying/plotting.
-    default: 4
     inputBinding:
       position: 101
       prefix: --processes
@@ -102,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: Threads for reading bam file.
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -112,7 +110,6 @@ inputs:
       - float
     doc: Plot y-axis limit. If float, used as a scaling factor from mean. (ex. 
       3.0 is mean times 3)
-    default: 100
     inputBinding:
       position: 101
       prefix: --ylim

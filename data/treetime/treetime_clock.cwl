@@ -32,7 +32,6 @@ inputs:
       interquartile ranges from regression (method=`residual`)' or z-score of 
       local clock deviation (method=`local`). Default=4.0, set to 0 to switch 
       off.
-    default: 4.0
     inputBinding:
       position: 101
       prefix: --clock-filter
@@ -42,7 +41,6 @@ inputs:
       - string
     doc: Use residuals from global clock (`residual`, default) or local clock 
       deviation (`clock`) to filter out tips that don't follow the clock
-    default: residual
     inputBinding:
       position: 101
       prefix: --clock-filter-method
@@ -52,7 +50,6 @@ inputs:
       - boolean
     doc: Account for covariation when estimating rates or rerooting using 
       root-to-tip regression, default False.
-    default: false
     inputBinding:
       position: 101
       prefix: --covariation

@@ -10,7 +10,6 @@ inputs:
       - type: array
         items: File
     doc: read one or more arguments files and add them to the command line
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --arguments_file
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -29,7 +27,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Heap size to allocate for the JVM.
-    default: 4g
     inputBinding:
       position: 101
       prefix: -m
@@ -72,7 +67,6 @@ inputs:
     doc: Enable the old trim algorithm (release <= 2.4.0), which did not match 
       if bases precede the sequence, and had bugs if sequence was longer than 
       read length.
-    default: false
     inputBinding:
       position: 101
       prefix: --LEGACY
@@ -84,7 +78,6 @@ inputs:
       algorithm, this will be the same value as stored in TRIM_TAG. If using 
       MISMATCH_RATE, full-length sequence will match even if something precedes 
       it, so this may be different than TRIM_TAG value. Not stored if not set.
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --LENGTH_TAG
@@ -96,7 +89,6 @@ inputs:
       of records stored in RAM before spilling to disk. Increasing this number 
       reduces the number of file handles needed to sort the file, and increases 
       the amount of RAM needed.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -107,7 +99,6 @@ inputs:
     doc: What fraction of bases the matched sequence can mismatch. Must be >=0 
       and <1. In contrast to MISMATCHES, this matcher will match the full 
       sequence even if it is preceded by something else in the read.
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --MISMATCH_RATE
@@ -118,7 +109,6 @@ inputs:
     doc: How many mismatches are acceptable in the sequence. If neither 
       MISMATCHES nor MISMATCH_RATE is specified, default behavior is 
       MISMATCHES=0
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --MISMATCHES
@@ -128,7 +118,6 @@ inputs:
       - int
     doc: How many bases at the beginning of the sequence must match before 
       trimming occurs.
-    default: 0
     inputBinding:
       position: 101
       prefix: --NUM_BASES
@@ -137,7 +126,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -146,7 +134,6 @@ inputs:
       - 'null'
       - File
     doc: Reference sequence file.
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
@@ -161,7 +148,6 @@ inputs:
       - 'null'
       - boolean
     doc: display hidden arguments
-    default: false
     inputBinding:
       position: 101
       prefix: --showHidden
@@ -172,7 +158,6 @@ inputs:
         items: Directory
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --TMP_DIR
@@ -182,7 +167,6 @@ inputs:
       - string
     doc: The tag to set for trimmed reads. This tags the first base to keep in 
       the read. 6 would mean to trim the first 5 bases.
-    default: ZS
     inputBinding:
       position: 101
       prefix: --TRIM_TAG
@@ -192,7 +176,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -202,7 +185,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -214,7 +196,6 @@ inputs:
       stringency to SILENT can improve performance when processing a BAM file in
       which variable-length data (read, qualities, tags) do not otherwise need 
       to be decoded.
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
@@ -223,7 +204,6 @@ inputs:
       - 'null'
       - string
     doc: Control verbosity of logging.
-    default: INFO
     inputBinding:
       position: 101
       prefix: --VERBOSITY

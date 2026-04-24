@@ -7,7 +7,6 @@ inputs:
   - id: db_prefix
     type: string
     doc: Existing database input prefix
-    default: None
     inputBinding:
       position: 101
       prefix: --db-prefix
@@ -17,7 +16,6 @@ inputs:
       - string
     doc: Output database prefix. By default will be the same as --db-prefix and 
       overwrite files
-    default: None
     inputBinding:
       position: 101
       prefix: --output-db-prefix
@@ -26,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: Quiet output mode
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -36,7 +33,6 @@ inputs:
       - boolean
     doc: Restart build/update from scratch, do not try to resume from the latest
       possible step. {db_prefix}_files/ will be deleted if present.
-    default: false
     inputBinding:
       position: 101
       prefix: --restart
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose output mode
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose
@@ -62,7 +57,6 @@ inputs:
       - boolean
     doc: Save copy of target info generated to {db_prefix}.info.tsv. Can be 
       re-used as --input-file for further attempts.
-    default: false
     inputBinding:
       position: 101
       prefix: --write-info-file

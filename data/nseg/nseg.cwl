@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: window size
-    default: 21
     inputBinding:
       position: 2
   - id: locut
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: low (trigger) complexity
-    default: 1.4
     inputBinding:
       position: 3
   - id: hicut
@@ -31,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: high (extension) complexity
-    default: locut + 0.2
     inputBinding:
       position: 4
   - id: chars_per_line
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: number of sequence characters/line
-    default: 60
     inputBinding:
       position: 105
       prefix: -c
@@ -48,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: maximum trimming of raw segment
-    default: 100
     inputBinding:
       position: 105
       prefix: -t
@@ -58,7 +53,6 @@ inputs:
       - int
     doc: minimum length for a high-complexity segment. Shorter segments are 
       merged with adjacent low-complexity segments
-    default: 0
     inputBinding:
       position: 105
       prefix: -m

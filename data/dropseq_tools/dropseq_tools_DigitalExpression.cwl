@@ -20,7 +20,6 @@ inputs:
       - type: array
         items: File
     doc: read one or more arguments files and add them to the command line
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --arguments_file
@@ -31,7 +30,6 @@ inputs:
     doc: The cell barcode tag. If there are no reads with this tag, the program 
       will assume that all reads belong to the same cell and process in single 
       sample mode.
-    default: XC
     inputBinding:
       position: 101
       prefix: --CELL_BARCODE_TAG
@@ -42,7 +40,6 @@ inputs:
     doc: Override CELL_BARCODE and MIN_NUM_READS_PER_CELL, and process reads 
       that have the cell barcodes in this file instead. The file has 1 column 
       with no header.
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --CELL_BC_FILE
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -61,7 +57,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -70,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -88,7 +82,6 @@ inputs:
       - int
     doc: The edit distance that molecular barcodes should be combined at within 
       a gene.
-    default: 1
     inputBinding:
       position: 101
       prefix: --EDIT_DISTANCE
@@ -103,7 +96,6 @@ inputs:
       favors the intronic interpretation, while STARSolo interprets this as a 
       technical artifact and labels the read as coming from the antisense coding
       gene, and the read does not contribute to the expression counts matrix.
-    default: DROPSEQ
     inputBinding:
       position: 101
       prefix: --FUNCTIONAL_STRATEGY
@@ -113,7 +105,6 @@ inputs:
       - string
     doc: "Gene Function tag. For a given gene name <GENE_NAME_TAG>, this is the function
       of the gene at this read's position: UTR/CODING/INTRONIC/..."
-    default: gf
     inputBinding:
       position: 101
       prefix: --GENE_FUNCTION_TAG
@@ -122,7 +113,6 @@ inputs:
       - 'null'
       - string
     doc: Gene Name tag. Takes on the gene name this read overlaps (if any)
-    default: gn
     inputBinding:
       position: 101
       prefix: --GENE_NAME_TAG
@@ -132,7 +122,6 @@ inputs:
       - string
     doc: Gene Strand tag. For a given gene name <GENE_NAME_TAG>, this is the 
       strand of the gene.
-    default: gs
     inputBinding:
       position: 101
       prefix: --GENE_STRAND_TAG
@@ -147,7 +136,6 @@ inputs:
       - 'null'
       - string
     doc: Heap size to allocate for the JVM.
-    default: 4g
     inputBinding:
       position: 101
       prefix: -m
@@ -158,7 +146,6 @@ inputs:
         items: string
     doc: A list of functional annotations that reads need to be completely 
       contained by to be considered for analysis.
-    default: '[CODING, UTR]'
     inputBinding:
       position: 101
       prefix: --LOCUS_FUNCTION_LIST
@@ -170,7 +157,6 @@ inputs:
       of records stored in RAM before spilling to disk. Increasing this number 
       reduces the number of file handles needed to sort the file, and increases 
       the amount of RAM needed.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -180,7 +166,6 @@ inputs:
       - int
     doc: The minimum number of reads a molecular barcode should have to be 
       considered. This is done AFTER edit distance collapse of barcodes.
-    default: 0
     inputBinding:
       position: 101
       prefix: --MIN_BC_READ_THRESHOLD
@@ -189,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: The minumum number of genes for a cell barcode to be reported.
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --MIN_NUM_GENES_PER_CELL
@@ -198,7 +182,6 @@ inputs:
       - 'null'
       - int
     doc: Gather up all cell barcodes that have more than some number of reads.
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --MIN_NUM_READS_PER_CELL
@@ -207,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: The minumum number of transcripts for a cell barcode to be reported.
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --MIN_NUM_TRANSCRIPTS_PER_CELL
@@ -217,7 +199,6 @@ inputs:
       - int
     doc: Output only genes with at least this total expression level, after 
       summing across all cells
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --MIN_SUM_EXPRESSION
@@ -226,7 +207,6 @@ inputs:
       - 'null'
       - string
     doc: The molecular barcode tag.
-    default: XM
     inputBinding:
       position: 101
       prefix: --MOLECULAR_BARCODE_TAG
@@ -236,7 +216,6 @@ inputs:
       - int
     doc: Number of cells that you think are in the library. The largest <X> 
       barcodes are used.
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --NUM_CORE_BARCODES
@@ -246,7 +225,6 @@ inputs:
       - boolean
     doc: When using CELL_BC_FILE, do not emit a column for a cell barcode that 
       appears in CELL_BC_FILE if it does not appear in the input BAM.
-    default: false
     inputBinding:
       position: 101
       prefix: --OMIT_MISSING_CELLS
@@ -258,7 +236,6 @@ inputs:
       specified, it is set to true. REFERENCE_SEQUENCE only used to write to 
       header. If it is not present, it is extracted from INPUT header if 
       possible.
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --OUTPUT_HEADER
@@ -268,7 +245,6 @@ inputs:
       - File
     doc: An alternate output of expression where each row represents a cell, 
       gene, and count of UMIs. Cell/Gene pairings with 0 UMIs are not emitted.
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --OUTPUT_LONG_FORMAT
@@ -277,7 +253,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output number of reads instead of number of unique molecular barcodes.
-    default: false
     inputBinding:
       position: 101
       prefix: --OUTPUT_READS_INSTEAD
@@ -286,7 +261,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -299,7 +273,6 @@ inputs:
       example, if you had on average 1000 reads per UMI and a UMI with 1-10 
       reads, those small UMIs would be removed when this frequency was set to 
       0.01.This is off by default. A sensible value might be 0.01.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --RARE_UMI_FILTER_THRESHOLD
@@ -314,7 +287,6 @@ inputs:
       downstream analysis if the read maps consistently to a single gene given all
       other thresholds (functional annotations, strand). To reproduce STARSolo's expression
       output of these reads, set this value to 0 to include all reads."
-    default: 10
     inputBinding:
       position: 101
       prefix: --READ_MQ
@@ -323,7 +295,6 @@ inputs:
       - 'null'
       - File
     doc: Reference sequence file.
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
@@ -332,7 +303,6 @@ inputs:
       - 'null'
       - boolean
     doc: display hidden arguments
-    default: false
     inputBinding:
       position: 101
       prefix: --showHidden
@@ -345,7 +315,6 @@ inputs:
       The ANTISENSE strategy requires the read and annotation to be on opposite 
       strands. The BOTH strategy is permissive, and allows the read to be on 
       either strand.
-    default: SENSE
     inputBinding:
       position: 101
       prefix: --STRAND_STRATEGY
@@ -355,7 +324,6 @@ inputs:
       - File
     doc: 'A summary of the digital expression output, containing 3 columns - the cell
       barcode, the #genes, and the #transcripts.'
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --SUMMARY
@@ -366,7 +334,6 @@ inputs:
         items: File
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --TMP_DIR
@@ -375,7 +342,6 @@ inputs:
       - 'null'
       - string
     doc: If OUTPUT_HEADER=true, this is required
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --UNIQUE_EXPERIMENT_ID
@@ -385,7 +351,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -395,7 +360,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -407,7 +371,6 @@ inputs:
       stringency to SILENT can improve performance when processing a BAM file in
       which variable-length data (read, qualities, tags) do not otherwise need 
       to be decoded.
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
@@ -416,7 +379,6 @@ inputs:
       - 'null'
       - string
     doc: Control verbosity of logging.
-    default: INFO
     inputBinding:
       position: 101
       prefix: --VERBOSITY

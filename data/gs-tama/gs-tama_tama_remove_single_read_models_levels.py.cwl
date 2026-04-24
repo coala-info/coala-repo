@@ -37,7 +37,6 @@ inputs:
       - int
     doc: Requires models to have support from at least this number of reads. 
       Default is 2
-    default: 2
     inputBinding:
       position: 101
       prefix: -n
@@ -47,7 +46,6 @@ inputs:
       - int
     doc: Requires models to have support from at least this number of sources. 
       Default is 1
-    default: 1
     inputBinding:
       position: 101
       prefix: -s

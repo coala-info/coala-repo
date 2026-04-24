@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum batch size to test
-    default: 251
     inputBinding:
       position: 101
       prefix: --max_batch
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum batch size to test
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_batch
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Number of proteins to subsample from input.
-    default: 500
     inputBinding:
       position: 101
       prefix: --sample_seqs
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Controls batch size step increment
-    default: 10
     inputBinding:
       position: 101
       prefix: --step
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

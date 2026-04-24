@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance from splice sites to consider
-    default: 500
     inputBinding:
       position: 101
       prefix: --distance

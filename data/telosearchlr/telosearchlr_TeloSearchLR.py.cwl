@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use for TideHunter
-    default: 4
     inputBinding:
       position: 101
       prefix: --cores
@@ -71,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: terminal number of nucleotides to consider for ranking motif occupancy
-    default: 1000
     inputBinding:
       position: 101
       prefix: --terminal

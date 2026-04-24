@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Format (library-ascii, seqspec-html, seqspec-png, seqspec-ascii)
-    default: library-ascii
     inputBinding:
       position: 102
       prefix: --format

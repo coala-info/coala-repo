@@ -17,7 +17,6 @@ inputs:
       - int
     doc: "The axis to concatenate along (default: 0) (choices:\n              0, 1
       where 0 is index and 1 is columns)."
-    default: 0
     inputBinding:
       position: 102
       prefix: --axis

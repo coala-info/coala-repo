@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Bonus for alignment reaching 3' end of read
-    default: 7
     inputBinding:
       position: 103
       prefix: -g3
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Bonus for alignment reaching 5' end of read
-    default: 10
     inputBinding:
       position: 103
       prefix: -g5
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Cost for extending a gap
-    default: 1
     inputBinding:
       position: 103
       prefix: -ge
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Cost for match
-    default: 1
     inputBinding:
       position: 103
       prefix: -gm
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Cost for opening a gap
-    default: 6
     inputBinding:
       position: 103
       prefix: -go
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Cost for substitution
-    default: 4
     inputBinding:
       position: 103
       prefix: -gs
@@ -94,7 +88,6 @@ inputs:
       - 'null'
       - float
     doc: Increase expansion factor for BAM and GZ files
-    default: 1.0
     inputBinding:
       position: 103
       prefix: -xf
@@ -223,7 +216,6 @@ inputs:
       - 'null'
       - int
     doc: Specifies the extra search depth
-    default: 1
     inputBinding:
       position: 103
       prefix: -D
@@ -249,7 +241,6 @@ inputs:
       - 'null'
       - int
     doc: Force MAPQ below this value to zero
-    default: 3
     inputBinding:
       position: 103
       prefix: -fmb
@@ -325,7 +316,6 @@ inputs:
       - 'null'
       - int
     doc: Specifies the maximum candidate pool size
-    default: 1000000
     inputBinding:
       position: 103
       prefix: -mcp
@@ -334,7 +324,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum edit distance allowed per read or pair absent indels
-    default: 27
     inputBinding:
       position: 103
       prefix: -d
@@ -343,7 +332,6 @@ inputs:
       - 'null'
       - int
     doc: Max hits for intersecting aligner
-    default: 4000
     inputBinding:
       position: 103
       prefix: -H
@@ -352,7 +340,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum hits to consider per seed
-    default: 300
     inputBinding:
       position: 103
       prefix: -h
@@ -361,7 +348,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance allowed per read for indels
-    default: 40
     inputBinding:
       position: 103
       prefix: -i
@@ -370,7 +356,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum score gap to prefer a non-ALT alignment
-    default: 64
     inputBinding:
       position: 103
       prefix: -asg
@@ -388,7 +373,6 @@ inputs:
       - int
     doc: Max seeds when falling back to the single-end mode when doing 
       paired-end
-    default: 25
     inputBinding:
       position: 103
       prefix: -N
@@ -398,7 +382,6 @@ inputs:
       - int
     doc: Min affine gap score improvement needed for single-end alignments to be
       considered over paired-end alignments
-    default: 24
     inputBinding:
       position: 103
       prefix: -eg
@@ -409,7 +392,6 @@ inputs:
     doc: Min edit distance for a read aligned as non-ALT by the paired-end 
       aligner to be reconsidered for a better alignment by the single-end 
       aligner
-    default: 3
     inputBinding:
       position: 103
       prefix: -en
@@ -418,7 +400,6 @@ inputs:
       - 'null'
       - string
     doc: Min and max spacing to allow between paired ends
-    default: 0 1000
     inputBinding:
       position: 103
       prefix: -s
@@ -427,7 +408,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the minimum read length to align
-    default: 50
     inputBinding:
       position: 103
       prefix: -mrl
@@ -436,7 +416,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum seed matches per location
-    default: 1
     inputBinding:
       position: 103
       prefix: -ms
@@ -446,7 +425,6 @@ inputs:
       - int
     doc: Min total edit distance by which a read pair aligned as ALT needs to be
       better than non-ALT alignments to skip single-end realignment
-    default: 3
     inputBinding:
       position: 103
       prefix: -es
@@ -693,7 +671,6 @@ inputs:
       - 'null'
       - int
     doc: Write buffer size in megabytes
-    default: 16
     inputBinding:
       position: 103
       prefix: -wbs

@@ -69,7 +69,6 @@ inputs:
       - int
     doc: 'The iteration where the learning rate is max for path guided linear 1D SGD
       model (default: *0*).'
-    default: 0
     inputBinding:
       position: 101
       prefix: --iteration-max-learning-rate
@@ -120,7 +119,6 @@ inputs:
       - 'null'
       - float
     doc: 'Use this fraction of the iterations for layout annealing (default: 0.5).'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --path-sgd-cooling
@@ -130,7 +128,6 @@ inputs:
       - float
     doc: 'The threshold of maximum displacement approximately in bp at which to stop
       path guided linear 1D SGD (default: *0.0*).'
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --path-sgd-delta
@@ -139,7 +136,6 @@ inputs:
       - 'null'
       - float
     doc: 'The final learning rate for path guided linear 1D SGD model (default: *0.01*).'
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --path-sgd-eps
@@ -158,7 +154,6 @@ inputs:
       - int
     doc: 'The maximum number of iterations for path guided linear 1D SGD model (default:
       100).'
-    default: 100
     inputBinding:
       position: 101
       prefix: --path-sgd-iter-max
@@ -189,7 +184,6 @@ inputs:
     doc: 'The minimum number of terms to be updated before a new path guided linear
       1D SGD iteration with adjusted learning rate eta starts, expressed as a multiple
       of total path steps (default: *1.0*). Can be overwritten by *-U, -path-sgd-min-term-updates-nodes=N*.'
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --path-sgd-min-term-updates-paths
@@ -199,7 +193,6 @@ inputs:
       - string
     doc: 'Set the seed for the deterministic 1-threaded path guided linear 1D SGD
       model (default: *pangenomic!*).'
-    default: pangenomic!
     inputBinding:
       position: 101
       prefix: --path-sgd-seed
@@ -230,7 +223,6 @@ inputs:
       - int
     doc: 'Approximate maximum number of Zipfian distributions to calculate (default:
       *100*).'
-    default: 100
     inputBinding:
       position: 101
       prefix: --path-sgd-zipf-max-num-distributions
@@ -250,7 +242,6 @@ inputs:
       - int
     doc: 'The maximum space size of the Zipfian distribution beyond which quantization
       occurs (default: *100*).'
-    default: 100
     inputBinding:
       position: 101
       prefix: --path-sgd-zipf-space-max
@@ -260,7 +251,6 @@ inputs:
       - int
     doc: 'Quantization step size when the maximum space size of the Zipfian distribution
       is exceeded (default: *100*).'
-    default: 100
     inputBinding:
       position: 101
       prefix: --path-sgd-zipf-space-quantization-step
@@ -271,7 +261,6 @@ inputs:
     doc: 'The theta value for the Zipfian distribution which is used as the sampling
       method for the second node of one term in the path guided linear 1D SGD model
       (default: *0.99*).'
-    default: 0.99
     inputBinding:
       position: 101
       prefix: --path-sgd-zipf-theta
@@ -317,7 +306,6 @@ inputs:
       sort. *b*: Breadth first topological sort. *z*: Depth first topological sort.
       *w*: Two-way topological sort. *r*: Random sort. *Y*: PG-SGD 1D sort. *f*: Reverse
       order. *g*: Groom the graph. An example could be *Ygs*.'
-    default: NONE
     inputBinding:
       position: 101
       prefix: --pipeline

@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Length of adapters that should be removed
-    default: 0
     inputBinding:
       position: 104
       prefix: -z
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Round of assembly cleaning
-    default: 4
     inputBinding:
       position: 104
       prefix: -a
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Lower bound of the binned k-mer's frequency
-    default: 2
     inputBinding:
       position: 104
       prefix: -c
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Upper bound of the binned k-mer's frequency
-    default: 5
     inputBinding:
       position: 104
       prefix: -d
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bits for bloom filter; 0 to disable
-    default: 37
     inputBinding:
       position: 104
       prefix: -f
@@ -73,7 +68,6 @@ inputs:
       - int
     doc: Break contigs at positions with >INT-fold coverage; work with 
       '--m-rate'; -1 to disable
-    default: -1
     inputBinding:
       position: 104
       prefix: --h-cov
@@ -83,7 +77,6 @@ inputs:
       - int
     doc: Break contigs at positions with <INT-fold coverage; work with 
       '--m-rate'; 0 to disable
-    default: 0
     inputBinding:
       position: 104
       prefix: --b-cov
@@ -93,7 +86,6 @@ inputs:
       - float
     doc: Break contigs at positions with <=FLOAT*coverage exact overlaps; only 
       work with '--b-cov' or '--h-cov'
-    default: 0.75
     inputBinding:
       position: 104
       prefix: --m-rate
@@ -102,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Length of flanking regions for chimeric read detection
-    default: 256
     inputBinding:
       position: 104
       prefix: --chem-f
@@ -111,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Detect chimeric reads with <=INT other reads support
-    default: 1
     inputBinding:
       position: 104
       prefix: --chem-c
@@ -120,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: Round of correction
-    default: 3
     inputBinding:
       position: 104
       prefix: -r
@@ -129,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: Detect misjoined unitigs of >=INT in size; 0 to disable
-    default: 500000
     inputBinding:
       position: 104
       prefix: --l-msjoin
@@ -139,7 +127,6 @@ inputs:
       - boolean
     doc: Post-join step for contigs which may improve N50; 0 to disable; 1 to 
       enable
-    default: true
     inputBinding:
       position: 104
       prefix: -u
@@ -148,7 +135,6 @@ inputs:
       - 'null'
       - string
     doc: Estimated haploid genome size used for inferring read coverage
-    default: auto
     inputBinding:
       position: 104
       prefix: --hg-size
@@ -157,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: Filter out ONT simplex reads with a mean base quality score below <INT>
-    default: 10
     inputBinding:
       position: 104
       prefix: --sc-cut
@@ -166,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: Filter out ONT simplex reads shorter than <INT> for assembly
-    default: 1000
     inputBinding:
       position: 104
       prefix: --rl-cut
@@ -175,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: Filter out <INT UL reads during the UL assembly
-    default: 0
     inputBinding:
       position: 104
       prefix: --ul-cut
@@ -185,7 +168,6 @@ inputs:
       - int
     doc: Forcedly remove unitigs with >INT unexpected haplotype-specific reads; 
       ignore graph topology
-    default: 60
     inputBinding:
       position: 104
       prefix: --t-occ
@@ -226,7 +208,6 @@ inputs:
       - 'null'
       - int
     doc: Rounds of reweighting Hi-C links
-    default: 3
     inputBinding:
       position: 104
       prefix: --n-weight
@@ -235,7 +216,6 @@ inputs:
       - 'null'
       - float
     doc: Fraction to flip for perturbation
-    default: 0.1
     inputBinding:
       position: 104
       prefix: --f-perturb
@@ -244,7 +224,6 @@ inputs:
       - 'null'
       - int
     doc: Rounds of perturbation
-    default: 10000
     inputBinding:
       position: 104
       prefix: --n-perturb
@@ -272,7 +251,6 @@ inputs:
       - float
     doc: Similarity threshold for homology detection in base-level; -1 to 
       disable
-    default: 0.5
     inputBinding:
       position: 104
       prefix: --s-base
@@ -281,7 +259,6 @@ inputs:
       - 'null'
       - string
     doc: Homozygous read coverage
-    default: auto
     inputBinding:
       position: 104
       prefix: --hom-cov
@@ -307,7 +284,6 @@ inputs:
       - int
     doc: Output contig regions with >=INT% inconsistency in BED format; 0 to 
       disable
-    default: 70
     inputBinding:
       position: 104
       prefix: --lowQ
@@ -316,7 +292,6 @@ inputs:
       - 'null'
       - float
     doc: Drop k-mers occurring >FLOAT*coverage times
-    default: 5.0
     inputBinding:
       position: 104
       prefix: -D
@@ -325,7 +300,6 @@ inputs:
       - 'null'
       - float
     doc: Max overlap drop ratio
-    default: 0.8
     inputBinding:
       position: 104
       prefix: -x
@@ -334,7 +308,6 @@ inputs:
       - 'null'
       - int
     doc: Consider up to max(-D*coverage,-N) overlaps for each oriented read
-    default: 100
     inputBinding:
       position: 104
       prefix: -N
@@ -344,7 +317,6 @@ inputs:
       - float
     doc: Max path drop ratio; higher number may make the assembly cleaner but 
       may lead to more misassemblies
-    default: 0.6
     inputBinding:
       position: 104
       prefix: --path-max
@@ -353,7 +325,6 @@ inputs:
       - 'null'
       - int
     doc: Remove tip unitigs composed of <=INT reads
-    default: 3
     inputBinding:
       position: 104
       prefix: -n
@@ -362,7 +333,6 @@ inputs:
       - 'null'
       - float
     doc: Min overlap drop ratio
-    default: 0.2
     inputBinding:
       position: 104
       prefix: -y
@@ -371,7 +341,6 @@ inputs:
       - 'null'
       - int
     doc: Min number of overlapped reads for duplicate haplotigs
-    default: 1
     inputBinding:
       position: 104
       prefix: -O
@@ -381,7 +350,6 @@ inputs:
       - float
     doc: Min path drop ratio; higher number may make the assembly cleaner but 
       may lead to more misassemblies
-    default: 0.2
     inputBinding:
       position: 104
       prefix: --path-min
@@ -390,7 +358,6 @@ inputs:
       - 'null'
       - int
     doc: Minimizer window size
-    default: 51
     inputBinding:
       position: 104
       prefix: -w
@@ -399,7 +366,6 @@ inputs:
       - 'null'
       - int
     doc: Non-telomeric penalty
-    default: 1
     inputBinding:
       position: 104
       prefix: --telo-p
@@ -408,7 +374,6 @@ inputs:
       - 'null'
       - int
     doc: Number of haplotypes
-    default: 2
     inputBinding:
       position: 104
       prefix: --n-hap
@@ -425,7 +390,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix of output files
-    default: hifiasm.asm
     inputBinding:
       position: 104
       prefix: -o
@@ -450,7 +414,6 @@ inputs:
       - 'null'
       - int
     doc: Pop bubbles of <INT in size in contig graphs
-    default: 10000000
     inputBinding:
       position: 104
       prefix: -m
@@ -459,7 +422,6 @@ inputs:
       - 'null'
       - int
     doc: Pop bubbles of <INT in size in unitig graphs
-    default: 0
     inputBinding:
       position: 104
       prefix: -p
@@ -468,7 +430,6 @@ inputs:
       - 'null'
       - string
     doc: Coverage upper bound of Purge-dups
-    default: auto
     inputBinding:
       position: 104
       prefix: --purge-max
@@ -477,7 +438,6 @@ inputs:
       - 'null'
       - int
     doc: 'Purge level. 0: no purging; 1: light; 2/3: aggressive'
-    default: 0
     inputBinding:
       position: 104
       prefix: -l
@@ -486,7 +446,6 @@ inputs:
       - 'null'
       - int
     doc: Remove tip contigs composed of <=INT reads
-    default: 3
     inputBinding:
       position: 104
       prefix: --ctg-n
@@ -495,7 +454,6 @@ inputs:
       - 'null'
       - int
     doc: Remove tip unitigs composed of <=INT reads for the UL assembly
-    default: 6
     inputBinding:
       position: 104
       prefix: --ul-tip
@@ -504,7 +462,6 @@ inputs:
       - 'null'
       - int
     doc: Employ k-mers occurring <INT times to rescue repetitive overlaps
-    default: 2000
     inputBinding:
       position: 104
       prefix: --max-kocc
@@ -513,7 +470,6 @@ inputs:
       - 'null'
       - int
     doc: RNG seed
-    default: 11
     inputBinding:
       position: 104
       prefix: --seed
@@ -522,7 +478,6 @@ inputs:
       - 'null'
       - int
     doc: Max gap size for scaffolding
-    default: 3000000
     inputBinding:
       position: 104
       prefix: --scaf-gap
@@ -539,7 +494,6 @@ inputs:
       - 'null'
       - int
     doc: Max drop
-    default: 2000
     inputBinding:
       position: 104
       prefix: --telo-d
@@ -548,7 +502,6 @@ inputs:
       - 'null'
       - int
     doc: Min score for telomere reads
-    default: 500
     inputBinding:
       position: 104
       prefix: --telo-s
@@ -565,7 +518,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 104
       prefix: -t
@@ -574,7 +526,6 @@ inputs:
       - 'null'
       - float
     doc: Error rate of Ultra-Long reads
-    default: 0.2
     inputBinding:
       position: 104
       prefix: --ul-rate

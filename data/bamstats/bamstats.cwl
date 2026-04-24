@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: number of cpus to be used
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpu
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: logging level
-    default: warn
     inputBinding:
       position: 101
       prefix: --loglevel
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of buffered records
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --max-buf
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: number of records to process
-    default: -1
     inputBinding:
       position: 101
       prefix: --reads

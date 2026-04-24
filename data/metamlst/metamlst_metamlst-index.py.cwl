@@ -10,7 +10,6 @@ inputs:
       - string
     doc: Full path to the bowtie2-build command to use, deafult assumes that 
       'bowtie2-build is present in the system path
-    default: bowtie2-build
     inputBinding:
       position: 101
       prefix: --bowtie2_build
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Threads to use with bowtie2-build
-    default: 4
     inputBinding:
       position: 101
       prefix: --bowtie2_threads

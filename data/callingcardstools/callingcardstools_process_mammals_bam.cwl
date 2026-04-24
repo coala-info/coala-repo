@@ -57,7 +57,6 @@ inputs:
       - boolean
     doc: If set, save qbed and qc data as pickle files. Useful for parallel 
       processing and later combining. Defaults to False, saving as qbed/tsv.
-    default: false
     inputBinding:
       position: 101
       prefix: --pickle

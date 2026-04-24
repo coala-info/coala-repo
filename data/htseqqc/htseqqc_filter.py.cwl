@@ -11,7 +11,6 @@ inputs:
       - float
     doc: Truncate the read sequence if it matches to adapter sequence equal or 
       more than given percent (0.0-1.0)
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --per
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU
-    default: 2
     inputBinding:
       position: 101
       prefix: --cpu
@@ -83,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: Output file format (fastq/fasta)
-    default: fastq
     inputBinding:
       position: 101
       prefix: --ofmt
@@ -103,7 +100,6 @@ inputs:
       - int
     doc: Filter the read sequence if average quality of bases in reads is lower 
       than threshold (1-40)
-    default: 20
     inputBinding:
       position: 101
       prefix: --qthr
@@ -113,7 +109,6 @@ inputs:
       - boolean
     doc: If trim option set to True, the reads with low quality (as defined by 
       option --qthr) will be trimmed instead of discarding [True|False]
-    default: false
     inputBinding:
       position: 101
       prefix: --trim
@@ -122,7 +117,6 @@ inputs:
       - 'null'
       - boolean
     doc: No figures will be produced [True|False]
-    default: false
     inputBinding:
       position: 101
       prefix: --no-vis
@@ -132,7 +126,6 @@ inputs:
       - int
     doc: The window size for trimming (5->3) the reads. This option should 
       always set when -trim option is defined
-    default: 5
     inputBinding:
       position: 101
       prefix: --wsz

@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: Percentage at which separate fragments join together
-    default: '1'
     inputBinding:
       position: 101
       prefix: --chimera
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Adapter parameters for read ends (rate and amount)
-    default: 50,20
     inputBinding:
       position: 101
       prefix: --end_adapter
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Adapter parameters for read ends
-    default: GCAATACGTAACTGAACGAAGT
     inputBinding:
       position: 101
       prefix: --end_adapter_seq
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Path to an error model file
-    default: nanopore2020
     inputBinding:
       position: 101
       prefix: --error_model
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Read glitch parameters (rate, size and skip)
-    default: 10000,25,25
     inputBinding:
       position: 101
       prefix: --glitches
@@ -56,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Sequencing identity distribution (mean, max and stdev)
-    default: 85,95,5
     inputBinding:
       position: 101
       prefix: --identity
@@ -65,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: This percentage of reads wil be low complexity junk
-    default: '1'
     inputBinding:
       position: 101
       prefix: --junk_reads
@@ -74,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: Fragment length distribution (mean and stdev)
-    default: 15000,13000
     inputBinding:
       position: 101
       prefix: --length
@@ -92,7 +84,6 @@ inputs:
       - 'null'
       - string
     doc: Path to an quality score model file
-    default: nanopore2020
     inputBinding:
       position: 101
       prefix: --qscore_model
@@ -107,7 +98,6 @@ inputs:
       - 'null'
       - string
     doc: This percentage of reads wil be random sequence
-    default: '1'
     inputBinding:
       position: 101
       prefix: --random_reads
@@ -141,7 +131,6 @@ inputs:
       - 'null'
       - string
     doc: Adapter parameters for read starts (rate and amount)
-    default: 90,60
     inputBinding:
       position: 101
       prefix: --start_adapter
@@ -150,7 +139,6 @@ inputs:
       - 'null'
       - string
     doc: Adapter parameters for read starts
-    default: AATGTACTTCGTTCAGTTACGTATTGCT
     inputBinding:
       position: 101
       prefix: --start_adapter_seq

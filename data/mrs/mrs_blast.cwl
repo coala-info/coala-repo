@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: Expectation value, default is 10.0
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --expect
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: Matrix (default is BLOSUM62)
-    default: BLOSUM62
     inputBinding:
       position: 101
       prefix: --matrix

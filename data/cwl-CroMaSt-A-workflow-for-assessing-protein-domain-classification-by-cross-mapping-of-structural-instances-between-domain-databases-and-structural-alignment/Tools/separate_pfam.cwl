@@ -50,7 +50,6 @@ inputs:
   obs_pdb:
     type: File?
     label: All obsolete (deleted) PDB IDs 
-    default: 
       class: File
       location: '../Data/obsolete_PDB_entry_ids.txt'
       basename: obsolete_PDB_entry_ids.txt
@@ -60,7 +59,6 @@ inputs:
   raw_pfam:
     type: File?
     label: Raw file from Pfam with all domain instances
-    default: 
       class: File
       location: '../Data/pdbmap'
       basename: pdbmap
@@ -70,28 +68,24 @@ inputs:
   separate_pfam:
     type: string?
     label: Filename for filtered structures from Pfam
-    default: Filtered_Pfam.csv
     inputBinding:
       prefix: -n
   
   obsolete_pfam:
     type: string?
     label: Filename for obsolete pfam structures 
-    default: obsolete_pfam.txt
     inputBinding:
       prefix: -o
 
   split_suffix:
     type: string?
     label: Suffix for splitted files (.csv) used to parallelize task
-    default: part.csv
     inputBinding:
       prefix: -s
 
   min_dom_len:
     type: int
     label: Minimum domain length criteria to filter structural instances
-    default: 31
     inputBinding:
       prefix: -l
 

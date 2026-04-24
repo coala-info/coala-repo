@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Register mode [symlink|copy|move]
-    default: symlink
     inputBinding:
       position: 101
       prefix: --mode
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Verbosity level [debug|info|warning|error]
-    default: info
     inputBinding:
       position: 101
       prefix: --verbose

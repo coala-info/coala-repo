@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Aligner to use
-    default: ghostx
     inputBinding:
       position: 101
       prefix: --aligner
@@ -102,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: Genetic code
-    default: 11
     inputBinding:
       position: 101
       prefix: --gcode
@@ -150,7 +148,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequence length
-    default: 200
     inputBinding:
       position: 101
       prefix: --minimum_length
@@ -215,7 +212,6 @@ inputs:
       - 'null'
       - int
     doc: Offset from the start codon of the dnaA gene. (for --fix_origin option)
-    default: 0
     inputBinding:
       position: 101
       prefix: --offset
@@ -232,7 +228,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: OUT
     inputBinding:
       position: 101
       prefix: --out
@@ -293,7 +288,6 @@ inputs:
       - 'null'
       - int
     doc: Increment step of locus tag
-    default: 10
     inputBinding:
       position: 101
       prefix: --step
@@ -310,7 +304,6 @@ inputs:
       - 'null'
       - string
     doc: 'Thresholds for default database search (format: "pident,q_cov,s_cov,e_value")'
-    default: 0,75,75,1e-6
     inputBinding:
       position: 101
       prefix: --threshold

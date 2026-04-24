@@ -27,7 +27,6 @@ inputs:
       position: 1
   outputFileName:
     type: string?
-    default: 'contaminants.blast'
 
 stdout: $(inputs.outputFileName)
 

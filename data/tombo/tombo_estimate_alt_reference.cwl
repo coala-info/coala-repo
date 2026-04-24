@@ -34,7 +34,6 @@ inputs:
         items: string
     doc: FAST5 subgroup(s) (under Analyses/[corrected-group]) containing 
       basecalls.
-    default: BaseCalled_template
     inputBinding:
       position: 101
       prefix: --basecall-subgroups
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: FAST5 group created by resquiggle command.
-    default: RawGenomeCorrected_000
     inputBinding:
       position: 101
       prefix: --corrected-group
@@ -61,7 +59,6 @@ inputs:
       - float
     doc: Minimum estimated percent of non-standard base distribution for 
       inclusion of k-mer in non-standard model.
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --min-alt-base-percentage
@@ -72,7 +69,6 @@ inputs:
     doc: Number of each k-mer observations required in order to produce a 
       reference (genomic locations for standard reference and per-read for 
       alternative reference).
-    default: 1000
     inputBinding:
       position: 101
       prefix: --minimum-kmer-observations
@@ -91,7 +87,6 @@ inputs:
     doc: Minimum level standard deviation difference between estimated 
       non-standard distribution mean and standard model mean for inclusion of 
       k-mer in non-standard model.
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --sd-threshold

@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality
-    default: 20
     inputBinding:
       position: 103
       prefix: --quality
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: window size in bp
-    default: 300
     inputBinding:
       position: 103
       prefix: --window

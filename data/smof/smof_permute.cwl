@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - File
     doc: input fasta sequence (default = stdin)
-    default: stdin
     inputBinding:
       position: 1
   - id: end_offset
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: number of letters to ignore at end (default=0)
-    default: 0
     inputBinding:
       position: 102
       prefix: --end-offset
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: number of letters to ignore at beginning (default=0)
-    default: 0
     inputBinding:
       position: 102
       prefix: --start-offset
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: size of each word (default=1)
-    default: 1
     inputBinding:
       position: 102
       prefix: --word-size

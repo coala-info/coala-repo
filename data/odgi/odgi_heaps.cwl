@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: 'Exclude nodes with less than this path depth (default: 0).'
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-node-depth

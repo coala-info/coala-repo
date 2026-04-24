@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Penalize segments shorter that this number of bins
-    default: 1
     inputBinding:
       position: 102
       prefix: --forbid-small-segments
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: max. number of cp, add this constant
-    default: 15
     inputBinding:
       position: 102
       prefix: --max_bp_intercept
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: max. number of change points per Mb
-    default: 0.25
     inputBinding:
       position: 102
       prefix: --max_bp_per_Mb
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: maximum segment length
-    default: 100000000
     inputBinding:
       position: 102
       prefix: --max_segment
@@ -69,7 +65,6 @@ inputs:
       - int
     doc: Penalize segments through removed bins (which are marked by 'None' in 
       the counts table).
-    default: 100
     inputBinding:
       position: 102
       prefix: --penalize-none

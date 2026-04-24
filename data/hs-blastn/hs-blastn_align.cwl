@@ -20,7 +20,6 @@ inputs:
       - string
     doc: "Filter query sequence with DUST (Format: 'yes', 'level window linker', or
       'no' to disable)"
-    default: 20 64 1
     inputBinding:
       position: 101
       prefix: -dust
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: Expectation value (E) threshold for saving hits
-    default: '10'
     inputBinding:
       position: 101
       prefix: -evalue
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Maxinum number of aligned sequences to keep
-    default: 500
     inputBinding:
       position: 101
       prefix: -max_target_seqs
@@ -72,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Number of database sequences to show alignments for
-    default: 250
     inputBinding:
       position: 101
       prefix: -num_alignments
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Number of database sequences to show one-line descriptions for
-    default: 500
     inputBinding:
       position: 101
       prefix: -num_descriptions
@@ -90,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads (CPUs) to use in the search
-    default: 1
     inputBinding:
       position: 101
       prefix: -num_threads

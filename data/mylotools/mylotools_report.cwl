@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: Myloasm fasta file
-    default: assembly_primary.fa
     inputBinding:
       position: 101
       prefix: --fasta
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the GFA file
-    default: final_contig_graph.gfa
     inputBinding:
       position: 101
       prefix: --gfa
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum contig length to include
-    default: 300000
     inputBinding:
       position: 101
       prefix: --min-length
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for GC content calculation
-    default: 1000
     inputBinding:
       position: 101
       prefix: --window-size
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel workers for plot generation
-    default: 5
     inputBinding:
       position: 101
       prefix: --workers
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: 'X-axis for summary plot: gc (GC content) or length (contig length)'
-    default: gc
     inputBinding:
       position: 101
       prefix: --x-axis

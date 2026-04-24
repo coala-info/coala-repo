@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: the length of kmer sequence
-    default: 3
     inputBinding:
       position: 101
       prefix: --kmer
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - File
     doc: the path of samtools
-    default: samtools
     inputBinding:
       position: 101
       prefix: --samtools
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - File
     doc: exome target file (.bed) for whole-exome sequencing
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --target
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: the length of windows used to infer GC-content bias
-    default: 1000
     inputBinding:
       position: 101
       prefix: --wsize

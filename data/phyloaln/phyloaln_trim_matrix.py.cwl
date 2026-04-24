@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Symbol representing unknown characters.
-    default: X
     inputBinding:
       position: 102
   - id: known_number_or_percent_for_columns
@@ -24,7 +23,6 @@ inputs:
       - float
     doc: 'Threshold for columns: either a number of known sites (>=1) or a percentage
       (<1) to keep.'
-    default: 0.5
     inputBinding:
       position: 102
   - id: known_number_or_percent_for_rows
@@ -33,7 +31,6 @@ inputs:
       - float
     doc: 'Threshold for rows: either a number of known sites (>=1) or a percentage
       (<1) to keep.'
-    default: 0
     inputBinding:
       position: 102
   - id: fasta_suffix
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Suffix for FASTA files.
-    default: .fa
     inputBinding:
       position: 102
 outputs:

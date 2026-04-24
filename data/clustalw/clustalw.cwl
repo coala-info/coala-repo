@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: bootstrap a NJ tree (n= number of bootstraps; def. = 1000).
-    default: 1000
     inputBinding:
       position: 101
       prefix: -BOOTSTRAP
@@ -266,7 +265,6 @@ inputs:
       - 'null'
       - string
     doc: CLUSTAL(default), GCG, GDE, PHYLIP, PIR, NEXUS and FASTA
-    default: CLUSTAL
     inputBinding:
       position: 101
       prefix: -OUTPUT

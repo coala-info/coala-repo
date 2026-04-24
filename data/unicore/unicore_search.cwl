@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Arguments for foldseek options in string e.g. -s "-c 0.8"
-    default: -c 0.8
     inputBinding:
       position: 105
       prefix: --search-options
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use; 0 to use all
-    default: 0
     inputBinding:
       position: 105
       prefix: --threads
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbosity (0: quiet, 1: +errors, 2: +warnings, 3: +info, 4: +debug)'
-    default: 3
     inputBinding:
       position: 105
       prefix: --verbosity

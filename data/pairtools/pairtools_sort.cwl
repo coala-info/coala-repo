@@ -58,7 +58,6 @@ inputs:
     doc: 'A binary to compress temporary sorted chunks. Must decompress input when
       the flag -d is provided. Suggested alternatives: gzip, lzop, lz4c, snzip. If
       "auto", then use lz4c if available, and gzip otherwise.'
-    default: auto
     inputBinding:
       position: 102
       prefix: --compress-program
@@ -78,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: The amount of memory used by default.
-    default: 2G
     inputBinding:
       position: 102
       prefix: --memory
@@ -87,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to split the sorting work between.
-    default: 8
     inputBinding:
       position: 102
       prefix: --nproc
@@ -97,7 +94,6 @@ inputs:
       - int
     doc: Number of processes used by the auto-guessed input decompressing 
       command.
-    default: 3
     inputBinding:
       position: 102
       prefix: --nproc-in
@@ -107,7 +103,6 @@ inputs:
       - int
     doc: Number of processes used by the auto-guessed output compressing 
       command.
-    default: 8
     inputBinding:
       position: 102
       prefix: --nproc-out

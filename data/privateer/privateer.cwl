@@ -66,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: Run mode (def:normal). ccp4i2 mode produces XML and CSV files
-    default: normal
     inputBinding:
       position: 101
       prefix: -mode
@@ -90,7 +89,6 @@ inputs:
       - float
     doc: A radius (def:2.5)for the calculation of a mask around the target 
       monosaccharide
-    default: 2.5
     inputBinding:
       position: 101
       prefix: -radiusin

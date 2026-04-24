@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Assign a local port to be used for the Grafana dashboard.
-    default: 3000
     inputBinding:
       position: 103
       prefix: --grafana_port
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable or disable colored logging.
-    default: true
     inputBinding:
       position: 103
       prefix: --logColors
@@ -93,7 +91,6 @@ inputs:
     doc: "Set the log level. Options: ['Critical', 'Error', 'Warning', 'Debug', 'Info',
       'critical', 'error', 'warning', 'debug', 'info', 'CRITICAL', 'ERROR', 'WARNING',
       'DEBUG', 'INFO']."
-    default: INFO
     inputBinding:
       position: 103
       prefix: --logLevel
@@ -118,7 +115,6 @@ inputs:
       - 'null'
       - string
     doc: "The provisioner for cluster auto-scaling. Choices: ['aws', 'gce']."
-    default: aws
     inputBinding:
       position: 103
       prefix: --provisioner
@@ -146,7 +142,6 @@ inputs:
       - Directory
     doc: Path to where temporary directory containing all temp files are 
       created.
-    default: /tmp
     inputBinding:
       position: 103
       prefix: --tempDirRoot

@@ -66,7 +66,6 @@ inputs:
   - doc: Force overwriting existing output folder (except for current working directory)
     id: force
     inputBinding: {prefix: --force}
-    default: true
     type: boolean?
   - doc: Genus name
     id: genus
@@ -183,7 +182,6 @@ inputs:
   - doc: Print verbose information
     id: verbose
     inputBinding: {prefix: --verbose}
-    default: true
     type: boolean?
   - doc: Run Bakta in debug mode
     id: debug

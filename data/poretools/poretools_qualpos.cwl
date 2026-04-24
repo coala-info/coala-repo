@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: 'The width of bins (default: 1000 bp).'
-    default: 1000
     inputBinding:
       position: 102
       prefix: --bin-width

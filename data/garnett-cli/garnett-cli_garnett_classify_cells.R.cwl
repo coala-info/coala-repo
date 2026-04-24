@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Format of the gene IDs in your CDS object. The default is "ENSEMBL".
-    default: ENSEMBL
     inputBinding:
       position: 101
       prefix: --cds-gene-id-type
@@ -37,7 +36,6 @@ inputs:
       - boolean
     doc: 'Boolean, tells Garnett whether to create a second set of assignments that
       expands classifications to cells in the same cluster. Default: TRUE'
-    default: true
     inputBinding:
       position: 101
       prefix: --cluster-extend
@@ -68,7 +66,6 @@ inputs:
       the probability of the most likely cell type to the second most likely 
       cell type to allow assignment. Default is 1.5. Higher values are more 
       conservative.
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --rank-prob-ratio
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Logical. Should progress messages be printed. Default: FASLE.'
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

@@ -61,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: fast or extensive
-    default: fast or extensive
     inputBinding:
       position: 101
       prefix: --mode

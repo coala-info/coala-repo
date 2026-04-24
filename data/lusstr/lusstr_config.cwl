@@ -10,7 +10,6 @@ inputs:
       - string
     doc: Analysis software program used prior to lusSTR. Choices are uas, 
       straitrazor or genemarker.
-    default: uas
     inputBinding:
       position: 101
       prefix: --analysis-software
@@ -80,7 +79,6 @@ inputs:
       - string
     doc: Specify the probabilistic genotyping software package of choice. The 
       final output files will be in the correct format for direct use.
-    default: strmix
     inputBinding:
       position: 101
       prefix: --software
@@ -127,7 +125,6 @@ inputs:
       include only the Phenotype SNPs; 'a' will include only the Ancestry SNPs; 
       'i' will include only the Identity SNPs; and 'all' will include all SNPs. 
       More than one type can be specified (e.g. 'p, a').
-    default: all
     inputBinding:
       position: 101
       prefix: --snp-type
@@ -145,7 +142,6 @@ inputs:
       - string
     doc: "Data type for STRs. Options are: CE allele ('ce'), sequence or bracketed
       sequence form('ngs'), or LUS+ allele ('lusplus')."
-    default: ngs
     inputBinding:
       position: 101
       prefix: --str-type
@@ -163,7 +159,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory to add config file; default is current working directory
-    default: .
     inputBinding:
       position: 101
       prefix: --workdir

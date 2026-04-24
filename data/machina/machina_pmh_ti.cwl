@@ -11,7 +11,6 @@ inputs:
       - string
     doc: 'Allowed migration patterns: 0 : PS, 1 : PS, S, 2 : PS, S, M, 3 : PS, S,
       M, R. If no pattern is specified, all allowed patterns will be enumerated'
-    default: 0,1,2,3
     inputBinding:
       position: 101
       prefix: -m
@@ -64,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Mutation tree index
-    default: -1
     inputBinding:
       position: 101
       prefix: -mutTreeIdx
@@ -79,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Number of mutation trees to consider
-    default: -1
     inputBinding:
       position: 101
       prefix: -N
@@ -88,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: -1
     inputBinding:
       position: 101
       prefix: -t
@@ -119,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: Random number generator seed
-    default: 0
     inputBinding:
       position: 101
       prefix: -s
@@ -136,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: Time limit in seconds for the ILP
-    default: -1
     inputBinding:
       position: 101
       prefix: -l
@@ -145,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: Upper bound on the comigration number
-    default: -1
     inputBinding:
       position: 101
       prefix: -UB_gamma
@@ -154,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: Upper bound on the migration number
-    default: -1
     inputBinding:
       position: 101
       prefix: -UB_mu
@@ -163,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: Upper bound on the seeding site number
-    default: -1
     inputBinding:
       position: 101
       prefix: -UB_sigma

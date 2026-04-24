@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: Output reference name
-    default: tree.dms
     inputBinding:
       position: 101
       prefix: -o

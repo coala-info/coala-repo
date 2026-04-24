@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: The number of neighbors for each study sample.
-    default: 20
     inputBinding:
       position: 103
       prefix: --nneighbors
@@ -31,7 +30,6 @@ inputs:
     doc: 'The method for calculating the weights in the nearest neighbor method. uniform:
       each neighbor receives the same weight; distance: the weight of each neighbor
       is inversely proportional to its distance from the study sample.'
-    default: uniform
     inputBinding:
       position: 103
       prefix: --weights

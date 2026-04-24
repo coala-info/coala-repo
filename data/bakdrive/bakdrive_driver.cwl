@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output file folder
-    default: output_driver
     inputBinding:
       position: 102
       prefix: --output
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: Output file prefix
-    default: driver_nodes
     inputBinding:
       position: 102
       prefix: --prefix
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold of interaction strength
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --strength

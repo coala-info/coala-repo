@@ -36,7 +36,6 @@ inputs:
       - int
     doc: number of nucleotides around exons boundaries where to find start and 
       stop codons, default is 30.
-    default: 30
     inputBinding:
       position: 101
       prefix: -b
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: genetic code (1, 6 or 23), default is 1.
-    default: 1
     inputBinding:
       position: 101
       prefix: -y
@@ -71,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: maximal size of introns, default is 50.000 nucleotides.
-    default: 50000
     inputBinding:
       position: 101
       prefix: -m
@@ -81,7 +78,6 @@ inputs:
       - int
     doc: maximal number of paths inside a connected component, default is 
       10,000.
-    default: 10000
     inputBinding:
       position: 101
       prefix: -P
@@ -90,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: min size CDS, by default 100
-    default: 100
     inputBinding:
       position: 101
       prefix: --cds
@@ -99,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: minimal size of exons, default is 9 nucleotides.
-    default: 9
     inputBinding:
       position: 101
       prefix: -e
@@ -108,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: minimal size of introns, default is 9 nucleotides.
-    default: 9
     inputBinding:
       position: 101
       prefix: -i
@@ -125,7 +118,6 @@ inputs:
       - 'null'
       - Directory
     doc: output folder, by default ./out
-    default: ./out
     inputBinding:
       position: 101
       prefix: -o
@@ -182,7 +174,6 @@ inputs:
       - int
     doc: size of regions where to find splice site around covtigs boundaries, 
       default is 0.
-    default: 0
     inputBinding:
       position: 101
       prefix: -x

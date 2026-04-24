@@ -50,7 +50,6 @@ inputs:
       - boolean
     doc: "turn the sequence display off (only applies in write-\n                \
       \        to-file mode). Default is on."
-    default: on
     inputBinding:
       position: 101
       prefix: --display_off
@@ -161,7 +160,6 @@ inputs:
       - int
     doc: "specifies J_masks are found in column INDEX in the\n                   \
       \     input file. Default is no J mask."
-    default: no J mask
     inputBinding:
       position: 101
       prefix: --j_in
@@ -180,7 +178,6 @@ inputs:
       - int
     doc: "specifies J_masks are found in column INDEX in the\n                   \
       \     input file. Default is no J mask."
-    default: no J mask
     inputBinding:
       position: 101
       prefix: --j_mask_index
@@ -189,7 +186,6 @@ inputs:
       - 'null'
       - int
     doc: skip the first N lines of the file. Default is 0.
-    default: 0
     inputBinding:
       position: 101
       prefix: --lines_to_skip
@@ -324,7 +320,6 @@ inputs:
       - int
     doc: "specifies sequences to be read in are in column INDEX.\n               \
       \         Default is index 0 (the first column)."
-    default: 0
     inputBinding:
       position: 101
       prefix: --seq_in
@@ -334,7 +329,6 @@ inputs:
       - int
     doc: "specifies sequences to be read in are in column INDEX.\n               \
       \         Default is index 0 (the first column)."
-    default: 0
     inputBinding:
       position: 101
       prefix: --seq_index
@@ -345,7 +339,6 @@ inputs:
     doc: "if read in sequences are ntseqs, declare what type of\n                \
       \        sequence to compute pgen for. Default is all. Choices:\n          \
       \              'all', 'ntseq', 'nucleotide', 'aaseq', 'amino_acid'"
-    default: all
     inputBinding:
       position: 101
       prefix: --seq_type_out
@@ -355,7 +348,6 @@ inputs:
       - int
     doc: "specify the number of sequences between time updates.\n                \
       \        Default is 1e5."
-    default: '1e5'
     inputBinding:
       position: 101
       prefix: --seqs_per_time_update
@@ -421,7 +413,6 @@ inputs:
       - int
     doc: "specifies V_masks are found in column INDEX in the\n                   \
       \     input file. Default is no V mask."
-    default: no V mask
     inputBinding:
       position: 101
       prefix: --v_in
@@ -440,7 +431,6 @@ inputs:
       - int
     doc: "specifies V_masks are found in column INDEX in the\n                   \
       \     input file. Default is no V mask."
-    default: no V mask
     inputBinding:
       position: 101
       prefix: --v_mask_index

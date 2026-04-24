@@ -14,7 +14,6 @@ inputs:
   - id: operation
     type: string
     doc: The operation to perform (fill_form)
-    default: fill_form
     inputBinding:
       position: 2
   - id: fdf_data_file

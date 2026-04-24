@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: At this gap a bump is 'bad'
-    default: 0.4
     inputBinding:
       position: 103
       prefix: -BADBumpcut#.#
@@ -75,7 +74,6 @@ inputs:
       - 'null'
       - File
     doc: File to search for het info
-    default: /usr/local/share/reduce/reduce_wwPDB_het_dict.txt
     inputBinding:
       position: 103
       prefix: -DB "filename"
@@ -84,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: Dot density (in dots/A^2) for VDW calculations
-    default: 16.0
     inputBinding:
       position: 103
       prefix: -DENSity#.#
@@ -125,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: B-factor cutoff for water atoms
-    default: 40
     inputBinding:
       position: 103
       prefix: -H2OBcutoff#
@@ -134,7 +130,6 @@ inputs:
       - 'null'
       - float
     doc: Occupancy cutoff for water atoms
-    default: 0.66
     inputBinding:
       position: 103
       prefix: -H2OOCCcutoff#.#
@@ -143,7 +138,6 @@ inputs:
       - 'null'
       - float
     doc: Over this gap charged HBonds bump
-    default: 0.8
     inputBinding:
       position: 103
       prefix: -HBCHargedcut#.#
@@ -152,7 +146,6 @@ inputs:
       - 'null'
       - float
     doc: Over this gap regular HBonds bump
-    default: 0.6
     inputBinding:
       position: 103
       prefix: -HBREGcutoff#.#
@@ -177,7 +170,6 @@ inputs:
       - 'null'
       - int
     doc: Max seconds to spend in exhaustive search
-    default: 600
     inputBinding:
       position: 103
       prefix: -LIMIT#
@@ -186,7 +178,6 @@ inputs:
       - 'null'
       - int
     doc: Dihedral angle cutoff for aromatic ring planarity check
-    default: 10
     inputBinding:
       position: 103
       prefix: -MAXAromdih#
@@ -195,7 +186,6 @@ inputs:
       - 'null'
       - float
     doc: H 'bumps' metals at radius plus this
-    default: 0.865
     inputBinding:
       position: 103
       prefix: -METALBump#.#
@@ -204,7 +194,6 @@ inputs:
       - 'null'
       - int
     doc: Remove dots if cause within n bonds
-    default: 3
     inputBinding:
       position: 103
       prefix: -NBonds#
@@ -269,7 +258,6 @@ inputs:
       - 'null'
       - float
     doc: "'Bumps' nonmetal at radius plus this"
-    default: 0.125
     inputBinding:
       position: 103
       prefix: -NONMETALBump#.#
@@ -326,7 +314,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of nterm residue
-    default: 1
     inputBinding:
       position: 103
       prefix: -Nterm#
@@ -343,7 +330,6 @@ inputs:
       - 'null'
       - float
     doc: Occupancy cutoff for adjustments
-    default: 0.01
     inputBinding:
       position: 103
       prefix: -OCCcutoff#.#
@@ -376,7 +362,6 @@ inputs:
       - 'null'
       - float
     doc: Fraction of std. bias towards original orientation
-    default: 1.0
     inputBinding:
       position: 103
       prefix: -PENalty#.#
@@ -393,7 +378,6 @@ inputs:
       - 'null'
       - float
     doc: Probe radius (in A) for VDW calculations
-    default: 0.25
     inputBinding:
       position: 103
       prefix: -RADius#.#

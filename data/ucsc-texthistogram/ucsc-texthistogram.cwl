@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bins.
-    default: 10
     inputBinding:
       position: 102
       prefix: -binCount
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Which column to use (1-based).
-    default: 1
     inputBinding:
       position: 102
       prefix: -col

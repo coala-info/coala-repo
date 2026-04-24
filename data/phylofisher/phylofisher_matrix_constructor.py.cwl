@@ -29,7 +29,6 @@ inputs:
     doc: "Format of the input files.\n                                 Options: fasta,
       phylip (names truncated at 10 characters), \n                              \
       \   phylip-relaxed (names are not truncated), or nexus."
-    default: fasta
     inputBinding:
       position: 101
       prefix: --in_format
@@ -46,7 +45,6 @@ inputs:
     doc: "Desired format of the output matrix.\n                                 Options:
       fasta, phylip (names truncated at 10 characters), \n                       \
       \          phylip-relaxed (names are not truncated), or nexus."
-    default: fasta
     inputBinding:
       position: 101
       prefix: --out_format
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: "Prefix of input files\n                                 Example: path/to/input/prefix*"
-    default: NONE
     inputBinding:
       position: 101
       prefix: --prefix
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: "Suffix of input files.\n                                 Example: path/to/input/*suffix"
-    default: NONE
     inputBinding:
       position: 101
       prefix: --suffix
@@ -73,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Desired number of threads to be utilized.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -83,7 +78,6 @@ inputs:
       - float
     doc: "trimaAL gt parameter. Fraction of sequences with a gap allowed.\n      \
       \                           Options: 0.0 - 1.0"
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --trimal_gt

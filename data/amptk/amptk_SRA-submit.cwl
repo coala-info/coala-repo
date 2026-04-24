@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Number of mis-matches in barcode
-    default: 0
     inputBinding:
       position: 101
       prefix: --barcode_mismatch
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - boolean
     doc: Reverse complement barcode sequences
-    default: false
     inputBinding:
       position: 101
       prefix: --barcode_rev_comp
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite existing directory
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: Forward Primer (fITS7)
-    default: fITS7
     inputBinding:
       position: 101
       prefix: --fwd_primer
@@ -94,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of read to keep
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_len
@@ -119,7 +114,6 @@ inputs:
       - 'null'
       - string
     doc: Sequencing platform
-    default: ion
     inputBinding:
       position: 101
       prefix: --platform
@@ -128,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: Number of mis-matches in primer
-    default: 2
     inputBinding:
       position: 101
       prefix: --primer_mismatch
@@ -161,7 +154,6 @@ inputs:
       - 'null'
       - string
     doc: Require Primers to be present
-    default: off
     inputBinding:
       position: 101
       prefix: --require_primer
@@ -170,7 +162,6 @@ inputs:
       - 'null'
       - string
     doc: Reverse Primer (ITS4)
-    default: ITS4
     inputBinding:
       position: 101
       prefix: --rev_primer
@@ -187,7 +178,6 @@ inputs:
       - 'null'
       - string
     doc: Start of title for SRA submission, name it according to amplicon
-    default: Fungal ITS
     inputBinding:
       position: 101
       prefix: --title

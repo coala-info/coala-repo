@@ -13,7 +13,6 @@ inputs:
       each sample, set the abundance of species to zero if they are up to AB_THRESHOLD_FACTOR
       times more abundant than the least abundant species. Recommended value for MetaPhlAn4:
       20'
-    default: None
     inputBinding:
       position: 101
       prefix: --filter-low-ab
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel processes to search contaminations
-    default: 20
     inputBinding:
       position: 101
       prefix: --nproc

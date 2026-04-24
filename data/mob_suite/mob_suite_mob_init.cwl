@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to download databases to.
-    default: /usr/local/lib/python3.11/site-packages/mob_suite/databases
     inputBinding:
       position: 101
       prefix: --database_directory

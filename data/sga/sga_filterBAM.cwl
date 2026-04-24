@@ -67,7 +67,6 @@ inputs:
       - float
     doc: 'filter out pairs where one read has mapping quality less than F (default:
       10)'
-    default: 10
     inputBinding:
       position: 103
       prefix: --min-quality

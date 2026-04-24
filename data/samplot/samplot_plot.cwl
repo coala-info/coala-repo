@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Font size for annotation labels (default 6)
-    default: 6
     inputBinding:
       position: 101
       prefix: --annotation_fontsize
@@ -93,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Dots per inches (pixel count, default 300)
-    default: 300
     inputBinding:
       position: 101
       prefix: --dpi
@@ -137,7 +135,6 @@ inputs:
       - int
     doc: "Min mapping quality of reads to be included in plot\n                  \
       \      (default 1)"
-    default: 1
     inputBinding:
       position: 101
       prefix: --include_mqual
@@ -154,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: Font size for legend labels (default 6)
-    default: 6
     inputBinding:
       position: 101
       prefix: --legend_fontsize
@@ -164,7 +160,6 @@ inputs:
       - int
     doc: "Min length of a read to be treated as a long-read\n                    \
       \    (default 1000)"
-    default: 1000
     inputBinding:
       position: 101
       prefix: --long_read
@@ -173,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: Size of marks on pairs and splits (default 3)
-    default: 3
     inputBinding:
       position: 101
       prefix: --marker_size
@@ -208,7 +202,6 @@ inputs:
       - int
     doc: "Min size of an event in long-read CIGAR to include\n                   \
       \     (default 20)"
-    default: 20
     inputBinding:
       position: 101
       prefix: --min_event_size
@@ -337,7 +330,6 @@ inputs:
       - 'null'
       - int
     doc: Font size for X-axis labels (default 6)
-    default: 6
     inputBinding:
       position: 101
       prefix: --xaxis_label_fontsize
@@ -346,7 +338,6 @@ inputs:
       - 'null'
       - int
     doc: Font size for Y-axis labels (default 6)
-    default: 6
     inputBinding:
       position: 101
       prefix: --yaxis_label_fontsize
@@ -355,7 +346,6 @@ inputs:
       - 'null'
       - float
     doc: Number of stdevs from the mean (default 4)
-    default: 4
     inputBinding:
       position: 101
       prefix: --z
@@ -366,7 +356,6 @@ inputs:
     doc: "Only show +- zoom amount around breakpoints, much\n                    \
       \    faster for large regions. Ignored if region smaller\n                 \
       \       than --zoom (default 500000)"
-    default: 500000
     inputBinding:
       position: 101
       prefix: --zoom

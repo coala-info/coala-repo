@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer size
-    default: 21
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: Name of index file (.bkdb will be added)
-    default: bronko
     inputBinding:
       position: 101
       prefix: --output
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

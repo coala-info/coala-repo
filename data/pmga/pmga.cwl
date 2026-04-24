@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory containing BLAST DBs built by pmga-build
-    default: ./pubmlst_dbs_all
     inputBinding:
       position: 102
       prefix: --blastdir
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to output results to
-    default: ./pmga
     inputBinding:
       position: 102
       prefix: --outdir
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for outputs
-    default: Use basename of input FASTA file
     inputBinding:
       position: 102
       prefix: --prefix
@@ -59,7 +56,6 @@ inputs:
       - string
     doc: 'Use this as the input species (Default: use Mash distance). Available Choices:
       neisseria, hinfluenzae'
-    default: use Mash distance
     inputBinding:
       position: 102
       prefix: --species
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cores to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Number of fast5 files to batch into a single multi-read file
-    default: 4000
     inputBinding:
       position: 101
       prefix: --n_fast5
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Compression type (gzip or vbz)
-    default: gzip
     inputBinding:
       position: 101
       prefix: --compression
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Root of output filename
-    default: batch
     inputBinding:
       position: 101
       prefix: --filename_base
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

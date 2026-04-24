@@ -74,7 +74,6 @@ inputs:
       - string
     doc: method used for reconstructing ancestral sequences, default is 
       'probabilistic'
-    default: probabilistic
     inputBinding:
       position: 101
       prefix: --method-anc

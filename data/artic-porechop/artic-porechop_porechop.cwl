@@ -11,7 +11,6 @@ inputs:
       - float
     doc: 'An adapter set has to have at least this percent identity to be labelled
       as present and trimmed off (0 to 100) (default: 90.0)'
-    default: 90.0
     inputBinding:
       position: 101
       prefix: --adapter_threshold
@@ -21,7 +20,6 @@ inputs:
       - float
     doc: If the difference between a read's best barcode identity and its second-best
       barcode identity is less than this value, it will not be put in a barcode bin
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --barcode_diff
@@ -49,7 +47,6 @@ inputs:
       - float
     doc: 'A read must have at least this percent identity to a barcode to be binned
       (default: 75.0)'
-    default: 75.0
     inputBinding:
       position: 101
       prefix: --barcode_threshold
@@ -59,7 +56,6 @@ inputs:
       - int
     doc: 'This many reads will be aligned to all possible adapters to determine which
       adapter sets are present (default: 10000)'
-    default: 10000
     inputBinding:
       position: 101
       prefix: --check_reads
@@ -94,7 +90,6 @@ inputs:
       - int
     doc: 'The number of base pairs at each end of the read which will be searched
       for adapter sequences (default: 150)'
-    default: 150
     inputBinding:
       position: 101
       prefix: --end_size
@@ -104,7 +99,6 @@ inputs:
       - float
     doc: 'Adapters at the ends of reads must have at least this percent identity to
       be removed (0 to 100) (default: 75.0)'
-    default: 75.0
     inputBinding:
       position: 101
       prefix: --end_threshold
@@ -124,7 +118,6 @@ inputs:
       - int
     doc: 'This many additional bases will be removed next to adapters found at the
       ends of reads (default: 2)'
-    default: 2
     inputBinding:
       position: 101
       prefix: --extra_end_trim
@@ -134,7 +127,6 @@ inputs:
       - int
     doc: 'This many additional bases will be removed next to middle adapters on their
       "bad" side (default: 100)'
-    default: 100
     inputBinding:
       position: 101
       prefix: --extra_middle_trim_bad_side
@@ -144,7 +136,6 @@ inputs:
       - int
     doc: 'This many additional bases will be removed next to middle adapters on their
       "good" side (default: 10)'
-    default: 10
     inputBinding:
       position: 101
       prefix: --extra_middle_trim_good_side
@@ -154,7 +145,6 @@ inputs:
       - string
     doc: 'Output format for the reads - if auto, the format will be chosen based on
       the output filename or the input read format (default: auto)'
-    default: auto
     inputBinding:
       position: 101
       prefix: --format
@@ -180,7 +170,6 @@ inputs:
       - float
     doc: 'Adapters in the middle of reads must have at least this percent identity
       to be found (0 to 100) (default: 85.0)'
-    default: 85.0
     inputBinding:
       position: 101
       prefix: --middle_threshold
@@ -190,7 +179,6 @@ inputs:
       - int
     doc: 'Post-split read pieces smaller than this many base pairs will not be outputted
       (default: 1000)'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --min_split_read_size
@@ -199,7 +187,6 @@ inputs:
       - 'null'
       - int
     doc: 'Adapter alignments smaller than this will be ignored (default: 4)'
-    default: 4
     inputBinding:
       position: 101
       prefix: --min_trim_size
@@ -251,7 +238,6 @@ inputs:
       - string
     doc: 'Comma-delimited string of alignment scores: match, mismatch, gap open, gap
       extend'
-    default: 3,-6,-5,-2
     inputBinding:
       position: 101
       prefix: --scoring_scheme
@@ -260,7 +246,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads to use for adapter alignment (default: 16)'
-    default: 16
     inputBinding:
       position: 101
       prefix: --threads
@@ -277,7 +262,6 @@ inputs:
       - 'null'
       - int
     doc: 'Level of progress information: 0 = none, 1 = some, 2 = lots, 3 = full'
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbosity

@@ -13,7 +13,6 @@ inputs:
       - File
     doc: "PAF file from minimap2 or unimap. Must have the cg tag, and n matches will
       be zero\n            unless the cigar uses =X"
-    default: '-'
     inputBinding:
       position: 1
   - id: diff_score
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Value subtracted for a mismatching base
-    default: 1
     inputBinding:
       position: 102
       prefix: --diff-score
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Value subtracted for an insertion or deletion
-    default: 1
     inputBinding:
       position: 102
       prefix: --indel-score
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Value added for a matching base
-    default: 1
     inputBinding:
       position: 102
       prefix: --match-score

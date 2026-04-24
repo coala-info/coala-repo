@@ -29,7 +29,6 @@ inputs:
       - File
     doc: Filepath to the pickle object, needed to enter directly to the 
       interactive plots generation step
-    default: None
     inputBinding:
       position: 101
       prefix: --pickle
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix of the header of each conting representing a vOTU
-    default: vOTU
     inputBinding:
       position: 101
       prefix: --prefix
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: Suffix to append to every file produced in the output directory
-    default: assemblerX
     inputBinding:
       position: 101
       prefix: --suffix
@@ -57,7 +54,6 @@ inputs:
       - int
     doc: Define how many threads to use for the generation of the interactive 
       subgraphs
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -67,7 +63,6 @@ inputs:
       - string
     doc: Whether to produce interactive subgraphs in 2 ('2d') or 3 dimensions 
       ('3d')
-    default: 2d
     inputBinding:
       position: 101
       prefix: --view

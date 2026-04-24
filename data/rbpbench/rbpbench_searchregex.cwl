@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: Also add regions with 0 hits to output BED file (hit count in column 5)
-    default: false
     inputBinding:
       position: 101
       prefix: --add-zero-hits
@@ -21,7 +20,6 @@ inputs:
     doc: Up- and downstream extension of --in sites in nucleotides (nt), if --in
       are genomic regions in BED format. Set e.g. --ext 30 for 30 nt on both 
       sides, or --ext 20,10 for different up- and downstream extension
-    default: '0'
     inputBinding:
       position: 101
       prefix: --ext
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: Constant header ID part used if --make-uniq-headers set
-    default: reg
     inputBinding:
       position: 101
       prefix: --header-id
@@ -57,7 +54,6 @@ inputs:
       - boolean
     doc: Make sequence IDs (FASTA header or BED column 4 IDs) unique. By 
       default, an error is thrown if identical IDs are encountered
-    default: false
     inputBinding:
       position: 101
       prefix: --make-uniq-headers
@@ -78,7 +74,6 @@ inputs:
       - float
     doc: Maximum GU (GT) base pair fraction to report structure pattern regex 
       hits
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --regex-max-gu
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum GC base pair fraction to report structure pattern regex hits
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --regex-min-gc
@@ -99,7 +93,6 @@ inputs:
       motif hit start position, 2: when motif hit encountered, continue +1 after motif
       hit end position. NOTE that structure pattern regex currently always uses mode
       1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --regex-search-mode
@@ -108,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum spacer length for structure pattern regex search
-    default: 200
     inputBinding:
       position: 101
       prefix: --regex-spacer-max
@@ -117,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum spacer length for structure pattern regex search
-    default: 5
     inputBinding:
       position: 101
       prefix: --regex-spacer-min

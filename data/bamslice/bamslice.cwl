@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Log level (off, error, warn, info, debug, trace)
-    default: info
     inputBinding:
       position: 101
       prefix: --log-level

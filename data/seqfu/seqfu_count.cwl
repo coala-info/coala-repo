@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Forward tag
-    default: auto
     inputBinding:
       position: 102
       prefix: --for-tag
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: Reverse tag
-    default: auto
     inputBinding:
       position: 102
       prefix: --rev-tag
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Working threads
-    default: 4
     inputBinding:
       position: 102
       prefix: --threads

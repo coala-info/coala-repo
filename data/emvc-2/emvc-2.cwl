@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - boolean
     doc: Bypass Decision Tree filter
-    default: false
     inputBinding:
       position: 101
       prefix: --bypass_dt
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: The number of EM iterations
-    default: 5
     inputBinding:
       position: 101
       prefix: --iterations
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: The number of learners
-    default: 7
     inputBinding:
       position: 101
       prefix: --learners
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: The number of parallel threads
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Make output verbose
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbose

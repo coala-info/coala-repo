@@ -12,7 +12,6 @@ inputs:
       - string
     doc: 'Enable or disable color output in logging [possible values: always, auto,
       never]'
-    default: auto
     inputBinding:
       position: 101
       prefix: --color
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Length of flanking regions
-    default: 50
     inputBinding:
       position: 101
       prefix: --flank-len
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: Font family to use for text elements
-    default: Roboto Mono
     inputBinding:
       position: 101
       prefix: --font-family
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: 'Type of plot to generate [possible values: allele, waterfall]'
-    default: allele
     inputBinding:
       position: 101
       prefix: --plot-type
@@ -74,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: 'What to show in the plot [possible values: motifs, meth]'
-    default: motifs
     inputBinding:
       position: 101
       prefix: --show

@@ -37,7 +37,6 @@ inputs:
       - int
     doc: "Compression level to use for output files if applicable\n\n          [default:
       6]"
-    default: 6
     inputBinding:
       position: 101
       prefix: --compression-level
@@ -47,7 +46,6 @@ inputs:
       - int
     doc: "Compression threads to use for output files if applicable\n\n          [default:
       1]"
-    default: 1
     inputBinding:
       position: 101
       prefix: --compression-threads

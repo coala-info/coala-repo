@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: concatenate hits that are within the specified number of base pairs
-    default: 200
     inputBinding:
       position: 104
       prefix: --concatenate
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - float
     doc: e-value threshold for identifying hits
-    default: '1e-05'
     inputBinding:
       position: 104
       prefix: --evalue
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: extension of bins (other files in directory are ignored)
-    default: fna
     inputBinding:
       position: 104
       prefix: --extension
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 104
       prefix: --threads

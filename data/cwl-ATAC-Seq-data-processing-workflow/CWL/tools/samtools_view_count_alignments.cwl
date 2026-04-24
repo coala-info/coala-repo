@@ -20,7 +20,6 @@ inputs:
   is_spaired_end:
     doc: if paired end, only properly paired reads pass
     type: boolean
-    default: true
   
 
 arguments:

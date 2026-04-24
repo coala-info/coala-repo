@@ -30,7 +30,6 @@ inputs:
     doc: Convert genetic similarity estimates into genetic distances (default = 
       no conversion to distances). Type 'd' for normal distance and 'i' for 
       inversed distance
-    default: no conversion to distances
     inputBinding:
       position: 101
       prefix: --distance
@@ -56,7 +55,6 @@ inputs:
       - Directory
     doc: Input directory containing the haplotypes table, the --samples text 
       file, and/or the --loci text file
-    default: current directory
     inputBinding:
       position: 101
       prefix: --input_directory
@@ -86,7 +84,6 @@ inputs:
     doc: 'Mask values on the main diagonal of each matrix and above (upper) or below
       (lower) the main diagonal (default = Lower, other options are: upper (mask upper
       half) and None (No masking).'
-    default: Lower
     inputBinding:
       position: 101
       prefix: --mask
@@ -95,7 +92,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory (default = current directory).
-    default: current directory
     inputBinding:
       position: 101
       prefix: --output_directory
@@ -105,7 +101,6 @@ inputs:
       - string
     doc: File format of plots (default = pdf, other options are png, svg, jpg, 
       jpeg, tif, and tiff).
-    default: pdf
     inputBinding:
       position: 101
       prefix: --plot_format
@@ -122,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes used by the script (default = 1).
-    default: 1
     inputBinding:
       position: 101
       prefix: --processes

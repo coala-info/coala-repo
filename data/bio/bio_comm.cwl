@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: column index for file 1
-    default: 1
     inputBinding:
       position: 103
       prefix: --col1
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: column index for file 2
-    default: 1
     inputBinding:
       position: 103
       prefix: --col2
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - boolean
     doc: tab delimited (default is csv)
-    default: csv
     inputBinding:
       position: 103
       prefix: --tab

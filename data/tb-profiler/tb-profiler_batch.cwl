@@ -10,14 +10,12 @@ inputs:
       - 'null'
       - string
     doc: Arguments to use with tb-profiler
-    default: None
     inputBinding:
       position: 101
       prefix: --args
   - id: csv
     type: File
     doc: CSV with samples and files
-    default: None
     inputBinding:
       position: 101
       prefix: --csv
@@ -26,7 +24,6 @@ inputs:
       - 'null'
       - Directory
     doc: Database directory
-    default: /usr/local/share/tbprofiler
     inputBinding:
       position: 101
       prefix: --db_dir
@@ -35,7 +32,6 @@ inputs:
       - 'null'
       - Directory
     doc: Storage directory
-    default: .
     inputBinding:
       position: 101
       prefix: --dir
@@ -44,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --jobs
@@ -53,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level
-    default: INFO
     inputBinding:
       position: 101
       prefix: --logging
@@ -62,7 +56,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temp firectory to process all files
-    default: .
     inputBinding:
       position: 101
       prefix: --temp
@@ -71,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads_per_job

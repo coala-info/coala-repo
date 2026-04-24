@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number alignments to report for each read
-    default: 100
     inputBinding:
       position: 101
       prefix: --align
@@ -22,7 +21,6 @@ inputs:
       - int
     doc: Number of signature genes per species (MSP) used to estimate their 
       respective abundance
-    default: 100
     inputBinding:
       position: 101
       prefix: --core_size
@@ -31,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: Strategy to calculate raw gene counts (total, smart_shared, or unique).
-    default: smart_shared
     inputBinding:
       position: 101
       prefix: -c
@@ -48,7 +45,6 @@ inputs:
       - string
     doc: Select only read alignments with a nucleotide identity >= 
       IDENTITY_THRESHOLD. If 0.0, no filtering.
-    default: auto
     inputBinding:
       position: 101
       prefix: --id
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: Strategy to map reads against the catalogue (end-to-end or local).
-    default: end-to-end
     inputBinding:
       position: 101
       prefix: -p
@@ -90,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Number of alignment threads to launch
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -107,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: Trim reads exceeding TRIM bases before mapping. If 0, no trim.
-    default: 80
     inputBinding:
       position: 101
       prefix: --trim

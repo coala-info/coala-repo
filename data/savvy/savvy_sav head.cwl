@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: 'Specifies output format for header lines (vcf or tsv; default: tsv)'
-    default: tsv
     inputBinding:
       position: 102
       prefix: --output-format

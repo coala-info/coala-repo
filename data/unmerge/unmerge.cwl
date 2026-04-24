@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: extract only n reads
-    default: all
     inputBinding:
       position: 3
 outputs:

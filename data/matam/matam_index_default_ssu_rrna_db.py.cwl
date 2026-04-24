@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum memory to use (in MBi).
-    default: 10000 MBi
     inputBinding:
       position: 101
       prefix: --max_memory
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output dir.
-    default: $MATAM_DIR/db/
     inputBinding:
       position: 101
       prefix: --ref_dir

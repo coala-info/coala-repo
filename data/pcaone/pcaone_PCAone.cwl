@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: the number of mini-batches used by --svd 2
-    default: 64
     inputBinding:
       position: 101
       prefix: --batches
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: memory buffer in GB unit for permuting the data
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --buffer
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: physical distance threshold in bases for clumping
-    default: 250000
     inputBinding:
       position: 101
       prefix: --clump-bp
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: column names in assoc-like file for locating chr, pos and pvalue
-    default: CHR,BP,P
     inputBinding:
       position: 101
       prefix: --clump-names
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - float
     doc: significance threshold for index SNPs
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: --clump-p1
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: secondary significance threshold for clumped SNPs
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --clump-p2
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - float
     doc: r2 cutoff for LD-based clumping
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --clump-r2
@@ -113,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of EM iterations
-    default: 100
     inputBinding:
       position: 101
       prefix: --maxiter
@@ -138,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: compute the inbreeding coefficient accounting for population structure
-    default: 0
     inputBinding:
       position: 101
       prefix: --inbreed
@@ -147,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of IRAM iterations
-    default: 1000
     inputBinding:
       position: 101
       prefix: --imaxiter
@@ -156,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: the number of Lanzcos basis vectors for IRAM
-    default: 20
     inputBinding:
       position: 101
       prefix: --ncv
@@ -165,7 +154,6 @@ inputs:
       - 'null'
       - float
     doc: stopping tolerance for IRAM algorithm
-    default: 1e-06
     inputBinding:
       position: 101
       prefix: --itol
@@ -182,7 +170,6 @@ inputs:
       - 'null'
       - int
     doc: physical distance threshold in bases for LD window
-    default: 0
     inputBinding:
       position: 101
       prefix: --ld-bp
@@ -191,7 +178,6 @@ inputs:
       - 'null'
       - float
     doc: R2 cutoff for LD-based pruning
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --ld-r2
@@ -200,7 +186,6 @@ inputs:
       - 'null'
       - int
     doc: 'statistics to compute LD R2 (0: ancestry adjusted, 1: standard)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --ld-stats
@@ -209,7 +194,6 @@ inputs:
       - 'null'
       - float
     doc: exclude variants with MAF lower than this value
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --maf
@@ -226,7 +210,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of power iterations for RSVD algorithm
-    default: 20
     inputBinding:
       position: 101
       prefix: --maxp
@@ -235,7 +218,6 @@ inputs:
       - 'null'
       - int
     doc: RAM usage in GB unit for out-of-core mode. default is in-core mode
-    default: 0
     inputBinding:
       position: 101
       prefix: --memory
@@ -252,7 +234,6 @@ inputs:
       - 'null'
       - int
     doc: the number of features (eg. SNPs) if already known
-    default: 0
     inputBinding:
       position: 101
       prefix: --M
@@ -261,7 +242,6 @@ inputs:
       - 'null'
       - int
     doc: the number of samples if already known
-    default: 0
     inputBinding:
       position: 101
       prefix: --N
@@ -270,7 +250,6 @@ inputs:
       - 'null'
       - int
     doc: the number of oversampling columns for RSVD
-    default: 10
     inputBinding:
       position: 101
       prefix: --oversamples
@@ -279,7 +258,6 @@ inputs:
       - 'null'
       - int
     doc: top k principal components (PCs) to be calculated
-    default: 10
     inputBinding:
       position: 101
       prefix: --pc
@@ -321,7 +299,6 @@ inputs:
       - int
     doc: 'project the new samples onto the existing PCs (0: disabled, 1: mean imputation,
       2: least squares, 3: Augmentation)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --project
@@ -330,7 +307,6 @@ inputs:
       - 'null'
       - int
     doc: 'the random matrix type. 0: uniform; 1: guassian'
-    default: 1
     inputBinding:
       position: 101
       prefix: --rand
@@ -340,7 +316,6 @@ inputs:
       - int
     doc: 'scaling for input file (0: none, 1: standardization, 2: CPMED, 3: log1p,
       4: relative counts)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --scale
@@ -349,7 +324,6 @@ inputs:
       - 'null'
       - float
     doc: feature counts for each sample are normalized and multiplied by this value
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --scale-factor
@@ -358,7 +332,6 @@ inputs:
       - 'null'
       - int
     doc: seeds for reproducing results
-    default: 101
     inputBinding:
       position: 101
       prefix: --seed
@@ -368,7 +341,6 @@ inputs:
       - int
     doc: 'SVD method to be applied (0: IRAM, 1: Randomized SVD, 2: window-based RSVD,
       3: full SVD)'
-    default: 2
     inputBinding:
       position: 101
       prefix: --svd
@@ -377,7 +349,6 @@ inputs:
       - 'null'
       - int
     doc: the number of threads to be used
-    default: 12
     inputBinding:
       position: 101
       prefix: --threads
@@ -386,7 +357,6 @@ inputs:
       - 'null'
       - float
     doc: tolerance for EMU/PCAngsd algorithm
-    default: 1e-05
     inputBinding:
       position: 101
       prefix: --tol-em
@@ -395,7 +365,6 @@ inputs:
       - 'null'
       - float
     doc: tolerance for MAF estimation by EM
-    default: 1e-06
     inputBinding:
       position: 101
       prefix: --tol-maf
@@ -404,7 +373,6 @@ inputs:
       - 'null'
       - float
     doc: tolerance for RSVD algorithm
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: --tol-rsvd
@@ -421,7 +389,6 @@ inputs:
       - 'null'
       - int
     doc: 'verbosity level for logs (0: silent, 1: concise, 2: verbose, 3: debug)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbose

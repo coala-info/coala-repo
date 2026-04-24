@@ -58,7 +58,6 @@ inputs:
       - string
     doc: "Output format\n          \n          [default: text]\n          [possible
       values: npy, text]"
-    default: text
     inputBinding:
       position: 102
       prefix: --output-format
@@ -69,7 +68,6 @@ inputs:
     doc: "Print precision.\n          \n          This is only used for printing SFS
       to plain text format, and will be ignored otherwise.\n          \n         \
       \ [default: 6]"
-    default: 6
     inputBinding:
       position: 102
       prefix: --precision

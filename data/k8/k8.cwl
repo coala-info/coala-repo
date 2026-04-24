@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disallow flags or implications overriding each other.
-    default: false
     inputBinding:
       position: 101
       prefix: --abort-on-contradictory-flags
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: abort program (dump core) when an uncaught exception is thrown
-    default: false
     inputBinding:
       position: 101
       prefix: --abort-on-uncaught-exception
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: adjust OS specific scheduling params for the isolate
-    default: false
     inputBinding:
       position: 101
       prefix: --adjust-os-scheduling-parameters
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: allocation buffer parking
-    default: false
     inputBinding:
       position: 101
       prefix: --allocation-buffer-parking
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: pretenure with allocation sites
-    default: false
     inputBinding:
       position: 101
       prefix: --allocation-site-pretenuring
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: allow only natives explicitly allowlisted for differential fuzzers
-    default: false
     inputBinding:
       position: 101
       prefix: --allow-natives-for-differential-fuzzing
@@ -63,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: allow natives syntax
-    default: false
     inputBinding:
       position: 101
       prefix: --allow-natives-syntax
@@ -73,7 +66,6 @@ inputs:
       - boolean
     doc: temporary disable flag contradiction to allow overwriting just the next
       flag
-    default: false
     inputBinding:
       position: 101
       prefix: --allow-overwriting-for-next-flag
@@ -82,7 +74,6 @@ inputs:
       - 'null'
       - boolean
     doc: allow invoking the function constructor without security checks
-    default: false
     inputBinding:
       position: 101
       prefix: --allow-unsafe-function-constructor
@@ -91,7 +82,6 @@ inputs:
       - 'null'
       - boolean
     doc: always try to optimize functions
-    default: false
     inputBinding:
       position: 101
       prefix: --always-opt
@@ -100,7 +90,6 @@ inputs:
       - 'null'
       - boolean
     doc: always try to OSR functions
-    default: false
     inputBinding:
       position: 101
       prefix: --always-osr
@@ -109,7 +98,6 @@ inputs:
       - 'null'
       - boolean
     doc: directly tier up to Sparkplug code
-    default: false
     inputBinding:
       position: 101
       prefix: --always-sparkplug
@@ -118,7 +106,6 @@ inputs:
       - 'null'
       - boolean
     doc: analyze liveness of environment slots and zap dead values
-    default: false
     inputBinding:
       position: 101
       prefix: --analyze-environment-liveness
@@ -128,7 +115,6 @@ inputs:
       - string
     doc: 'generate instructions for the selected ARM architecture if available: armv6,
       armv7, armv7+sudiv or armv8'
-    default: armv8
     inputBinding:
       position: 101
       prefix: --arm-arch
@@ -137,7 +123,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable lazy compilation for asm-wasm modules
-    default: false
     inputBinding:
       position: 101
       prefix: --asm-wasm-lazy-compilation
@@ -146,7 +131,6 @@ inputs:
       - 'null'
       - boolean
     doc: generate runtime type assertions to test the typer
-    default: false
     inputBinding:
       position: 101
       prefix: --assert-types
@@ -155,7 +139,6 @@ inputs:
       - 'null'
       - boolean
     doc: include async stack traces in Error.stack
-    default: false
     inputBinding:
       position: 101
       prefix: --async-stack-traces
@@ -164,7 +147,6 @@ inputs:
       - 'null'
       - boolean
     doc: batch compile Sparkplug code
-    default: false
     inputBinding:
       position: 101
       prefix: --baseline-batch-compilation
@@ -173,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: the estimated instruction size of a batch to trigger compilation
-    default: 4096
     inputBinding:
       position: 101
       prefix: --baseline-batch-compilation-threshold
@@ -182,7 +163,6 @@ inputs:
       - 'null'
       - boolean
     doc: subclassing support in built-in methods
-    default: false
     inputBinding:
       position: 101
       prefix: --builtin-subclassing
@@ -191,7 +171,6 @@ inputs:
       - 'null'
       - boolean
     doc: show built-in functions in stack traces
-    default: false
     inputBinding:
       position: 101
       prefix: --builtins-in-stack-traces
@@ -201,7 +180,6 @@ inputs:
       - int
     doc: increases the number of ticks required for optimization by 
       bytecode.length/X
-    default: 1100
     inputBinding:
       position: 101
       prefix: --bytecode-size-allowance-per-tick
@@ -210,7 +188,6 @@ inputs:
       - 'null'
       - boolean
     doc: cache prototype transitions
-    default: false
     inputBinding:
       position: 101
       prefix: --cache-prototype-transitions
@@ -219,7 +196,6 @@ inputs:
       - 'null'
       - boolean
     doc: clear pending exceptions when entering JavaScript
-    default: false
     inputBinding:
       position: 101
       prefix: --clear-exceptions-on-js-entry
@@ -228,7 +204,6 @@ inputs:
       - 'null'
       - boolean
     doc: initialize free memory with 0
-    default: false
     inputBinding:
       position: 101
       prefix: --clear-free-memory
@@ -237,7 +212,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform compaction on full GCs based on V8's default heuristics
-    default: false
     inputBinding:
       position: 101
       prefix: --compact
@@ -246,7 +220,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform code space compaction on full collections.
-    default: false
     inputBinding:
       position: 101
       prefix: --compact-code-space
@@ -255,7 +228,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform code space compaction when finalizing a full GC with stack
-    default: false
     inputBinding:
       position: 101
       prefix: --compact-code-space-with-stack
@@ -264,7 +236,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform compaction on maps on full collections.
-    default: false
     inputBinding:
       position: 101
       prefix: --compact-maps
@@ -273,7 +244,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform compaction on every full GC
-    default: false
     inputBinding:
       position: 101
       prefix: --compact-on-every-full-gc
@@ -282,7 +252,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform compaction when finalizing a full GC with stack
-    default: false
     inputBinding:
       position: 101
       prefix: --compact-with-stack
@@ -291,7 +260,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable compilation cache
-    default: false
     inputBinding:
       position: 101
       prefix: --compilation-cache
@@ -300,7 +268,6 @@ inputs:
       - 'null'
       - boolean
     doc: concurrently sweep array buffers
-    default: false
     inputBinding:
       position: 101
       prefix: --concurrent-array-buffer-sweeping
@@ -309,7 +276,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable deserializing code caches on background
-    default: false
     inputBinding:
       position: 101
       prefix: --concurrent-cache-deserialization
@@ -318,7 +284,6 @@ inputs:
       - 'null'
       - boolean
     doc: use concurrent marking
-    default: false
     inputBinding:
       position: 101
       prefix: --concurrent-marking
@@ -327,7 +292,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable concurrent OSR
-    default: false
     inputBinding:
       position: 101
       prefix: --concurrent-osr
@@ -336,7 +300,6 @@ inputs:
       - 'null'
       - boolean
     doc: optimizing hot functions asynchronously on a separate thread
-    default: false
     inputBinding:
       position: 101
       prefix: --concurrent-recompilation
@@ -345,7 +308,6 @@ inputs:
       - 'null'
       - int
     doc: artificial compilation delay in ms
-    default: 0
     inputBinding:
       position: 101
       prefix: --concurrent-recompilation-delay
@@ -354,7 +316,6 @@ inputs:
       - 'null'
       - int
     doc: the length of the concurrent compilation queue
-    default: 8
     inputBinding:
       position: 101
       prefix: --concurrent-recompilation-queue-length
@@ -363,7 +324,6 @@ inputs:
       - 'null'
       - boolean
     doc: compile Sparkplug code in a background thread
-    default: false
     inputBinding:
       position: 101
       prefix: --concurrent-sparkplug
@@ -373,7 +333,6 @@ inputs:
       - string
     doc: max number of threads that concurrent Sparkplug can use (0 for 
       unbounded)
-    default: 0
     inputBinding:
       position: 101
       prefix: --concurrent-sparkplug-max-threads
@@ -382,7 +341,6 @@ inputs:
       - 'null'
       - boolean
     doc: use concurrent sweeping
-    default: false
     inputBinding:
       position: 101
       prefix: --concurrent-sweeping
@@ -393,7 +351,6 @@ inputs:
     doc: 'Suppress certain unspecified behaviors to ease correctness fuzzing: Abort
       program when the stack overflows or a string exceeds maximum length (as opposed
       to throwing RangeError). Use a fixed suppression string for error messages.'
-    default: false
     inputBinding:
       position: 101
       prefix: --correctness-fuzzer-suppressions
@@ -402,7 +359,6 @@ inputs:
       - 'null'
       - int
     doc: CPU profiler sampling interval in microseconds
-    default: 1000
     inputBinding:
       position: 101
       prefix: --cpu-profiler-sampling-interval
@@ -411,7 +367,6 @@ inputs:
       - 'null'
       - boolean
     doc: crash when evacuation of page fails
-    default: false
     inputBinding:
       position: 101
       prefix: --crash-on-aborted-evacuation
@@ -421,7 +376,6 @@ inputs:
       - string
     doc: 'trigger break point when a node with given id is created in given stub.
       The format is: StubName,NodeId'
-    default: ''
     inputBinding:
       position: 101
       prefix: --csa-trap-on-node
@@ -430,7 +384,6 @@ inputs:
       - 'null'
       - boolean
     doc: run regexps with the experimental engine where possible
-    default: false
     inputBinding:
       position: 101
       prefix: --default-to-experimental-regexp-engine
@@ -439,7 +392,6 @@ inputs:
       - 'null'
       - int
     doc: deoptimize every n times a deopt point is passed
-    default: 0
     inputBinding:
       position: 101
       prefix: --deopt-every-n-times
@@ -449,7 +401,6 @@ inputs:
       - boolean
     doc: includes arguments for each function call in the error stack frames 
       array
-    default: false
     inputBinding:
       position: 101
       prefix: --detailed-error-stack-trace
@@ -458,7 +409,6 @@ inputs:
       - 'null'
       - boolean
     doc: Always generate detailed line information for CPU profiling.
-    default: false
     inputBinding:
       position: 101
       prefix: --detailed-line-info
@@ -467,7 +417,6 @@ inputs:
       - 'null'
       - boolean
     doc: trigger out-of-memory failure to avoid GC storm near heap limit
-    default: false
     inputBinding:
       position: 101
       prefix: --detect-ineffective-gcs-near-heap-limit
@@ -476,7 +425,6 @@ inputs:
       - 'null'
       - boolean
     doc: disables AbortJS runtime function
-    default: false
     inputBinding:
       position: 101
       prefix: --disable-abortjs
@@ -486,7 +434,6 @@ inputs:
       - boolean
     doc: Disable old-style API accessors whose setters trigger through the 
       prototype chain
-    default: false
     inputBinding:
       position: 101
       prefix: --disable-old-api-accessors
@@ -495,7 +442,6 @@ inputs:
       - 'null'
       - boolean
     doc: disallow eval and friends
-    default: false
     inputBinding:
       position: 101
       prefix: --disallow-code-generation-from-strings
@@ -504,7 +450,6 @@ inputs:
       - 'null'
       - string
     doc: directory to dump wasm modules to
-    default: ''
     inputBinding:
       position: 101
       prefix: --dump-wasm-module-path
@@ -513,7 +458,6 @@ inputs:
       - 'null'
       - string
     doc: Path for the generated embedded data file. (mksnapshot only)
-    default: ''
     inputBinding:
       position: 101
       prefix: --embedded-src
@@ -522,7 +466,6 @@ inputs:
       - 'null'
       - string
     doc: Label to disambiguate symbols in embedded data file. (mksnapshot only)
-    default: ''
     inputBinding:
       position: 101
       prefix: --embedded-variant
@@ -531,7 +474,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable type checks based on instance types provided by the embedder
-    default: false
     inputBinding:
       position: 101
       prefix: --embedder-instance-types
@@ -540,7 +482,6 @@ inputs:
       - 'null'
       - string
     doc: deprecated (use --arm_arch instead)
-    default: unset
     inputBinding:
       position: 101
       prefix: --enable-32dregs
@@ -549,7 +490,6 @@ inputs:
       - 'null'
       - string
     doc: deprecated (use --arm_arch instead)
-    default: unset
     inputBinding:
       position: 101
       prefix: --enable-armv7
@@ -558,7 +498,6 @@ inputs:
       - 'null'
       - string
     doc: deprecated (use --arm_arch instead)
-    default: unset
     inputBinding:
       position: 101
       prefix: --enable-armv8
@@ -567,7 +506,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable use of AVX instructions if available
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-avx
@@ -576,7 +514,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable use of AVX2 instructions if available
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-avx2
@@ -585,7 +522,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable use of BMI1 instructions if available
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-bmi1
@@ -594,7 +530,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable use of BMI2 instructions if available
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-bmi2
@@ -603,7 +538,6 @@ inputs:
       - 'null'
       - boolean
     doc: recognize regexps with 'l' flag, run them on experimental engine
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-experimental-regexp-engine
@@ -612,7 +546,6 @@ inputs:
       - 'null'
       - boolean
     doc: fall back to a breadth-first regexp engine on excessive backtracking
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-experimental-regexp-engine-on-excessive-backtracks
@@ -621,7 +554,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable use of FMA3 instructions if available
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-fma3
@@ -631,7 +563,6 @@ inputs:
       - boolean
     doc: skip generating source positions during initial compile but regenerate 
       when actually required
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-lazy-source-positions
@@ -640,7 +571,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable use of LZCNT instruction if available
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-lzcnt
@@ -649,7 +579,6 @@ inputs:
       - 'null'
       - boolean
     doc: use MegaDOM IC state for API objects
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-mega-dom-ic
@@ -658,7 +587,6 @@ inputs:
       - 'null'
       - string
     doc: deprecated (use --arm_arch instead)
-    default: unset
     inputBinding:
       position: 101
       prefix: --enable-neon
@@ -667,7 +595,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable use of POPCNT instruction if available
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-popcnt
@@ -676,7 +603,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable unaligned accesses for the regexp engine
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-regexp-unaligned-accesses
@@ -685,7 +611,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable use of SAHF instruction if available (X64 only)
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-sahf
@@ -694,7 +619,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable the SharedArrayBuffer constructor per context
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-sharedarraybuffer-per-context
@@ -703,7 +627,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include source information in the binary at CSA bind locations.
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-source-at-csa-bind
@@ -712,7 +635,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable use of SSE3 instructions if available
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-sse3
@@ -721,7 +643,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable use of SSE4.1 instructions if available
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-sse4-1
@@ -730,7 +651,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable use of SSE4.2 instructions if available
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-sse4-2
@@ -739,7 +659,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable use of SSSE3 instructions if available
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-ssse3
@@ -748,7 +667,6 @@ inputs:
       - 'null'
       - string
     doc: deprecated (use --arm_arch instead)
-    default: unset
     inputBinding:
       position: 101
       prefix: --enable-sudiv
@@ -757,7 +675,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable platform-specific profiling.
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-system-instrumentation
@@ -766,7 +683,6 @@ inputs:
       - 'null'
       - string
     doc: deprecated (use --arm_arch instead)
-    default: unset
     inputBinding:
       position: 101
       prefix: --enable-vfp3
@@ -776,7 +692,6 @@ inputs:
       - int
     doc: number of fixpoint iterations it takes to switch to linear ephemeron 
       algorithm
-    default: 10
     inputBinding:
       position: 101
       prefix: --ephemeron-fixpoint-iterations
@@ -785,7 +700,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable experimental async stacks tagging API
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-async-stack-tagging-api
@@ -794,7 +708,6 @@ inputs:
       - 'null'
       - boolean
     doc: Used in an experiment to evaluate icache flushing on certain CPUs
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-flush-embedded-blob-icache
@@ -803,7 +716,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable experimental frames (API/Builtins) and stack trace layout
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-stack-trace-frames
@@ -812,7 +724,6 @@ inputs:
       - 'null'
       - boolean
     doc: allow wasm modules bigger than 1GB, but below ~2GB
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-wasm-allow-huge-modules
@@ -822,7 +733,6 @@ inputs:
       - boolean
     doc: enable prototype assume ref.cast always succeeds and skip the related 
       type check (unsafe) for wasm
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-wasm-assume-ref-cast-succeeds
@@ -831,7 +741,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable prototype branch hinting for wasm
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-wasm-branch-hinting
@@ -840,7 +749,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable prototype compilation hints section for wasm
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-wasm-compilation-hints
@@ -849,7 +757,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable prototype exception handling opcodes for wasm
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-wasm-eh
@@ -858,7 +765,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable prototype extended constant expressions for wasm
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-wasm-extended-const
@@ -867,7 +773,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable prototype garbage collection for wasm
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-wasm-gc
@@ -876,7 +781,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable prototype memory64 for wasm
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-wasm-memory64
@@ -886,7 +790,6 @@ inputs:
       - boolean
     doc: enable prototype allow non-defaultable/non-nullable locals, validated 
       with 'until end of block' semantics for wasm
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-wasm-nn-locals
@@ -895,7 +798,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable prototype relaxed simd for wasm
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-wasm-relaxed-simd
@@ -904,7 +806,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable prototype return call opcodes for wasm
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-wasm-return-call
@@ -913,7 +814,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable prototype SIMD opcodes for wasm
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-wasm-simd
@@ -922,7 +822,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable prototype skip array bounds checks (unsafe) for wasm
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-wasm-skip-bounds-checks
@@ -932,7 +831,6 @@ inputs:
       - boolean
     doc: enable prototype skip null checks for call.ref and array and struct 
       operations (unsafe) for wasm
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-wasm-skip-null-checks
@@ -941,7 +839,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable prototype stack switching for wasm
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-wasm-stack-switching
@@ -950,7 +847,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable prototype thread opcodes for wasm
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-wasm-threads
@@ -959,7 +855,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable prototype wasm type reflection in JS for wasm
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-wasm-type-reflection
@@ -968,7 +863,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable prototype typed function references for wasm
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-wasm-typed-funcref
@@ -978,7 +872,6 @@ inputs:
       - boolean
     doc: enable prototype allow non-defaultable/non-nullable locals, no 
       validation for wasm
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-wasm-unsafe-nn-locals
@@ -987,7 +880,6 @@ inputs:
       - 'null'
       - boolean
     doc: interpret scripts as web snapshots if they start with a magic number
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental-web-snapshots
@@ -996,7 +888,6 @@ inputs:
       - 'null'
       - boolean
     doc: expose async_hooks object
-    default: false
     inputBinding:
       position: 101
       prefix: --expose-async-hooks
@@ -1005,7 +896,6 @@ inputs:
       - 'null'
       - string
     doc: expose cputracemark extension under the specified name
-    default: ''
     inputBinding:
       position: 101
       prefix: --expose-cputracemark-as
@@ -1014,7 +904,6 @@ inputs:
       - 'null'
       - boolean
     doc: expose externalize string extension
-    default: false
     inputBinding:
       position: 101
       prefix: --expose-externalize-string
@@ -1023,7 +912,6 @@ inputs:
       - 'null'
       - boolean
     doc: expose gc extension
-    default: false
     inputBinding:
       position: 101
       prefix: --expose-gc
@@ -1032,7 +920,6 @@ inputs:
       - 'null'
       - string
     doc: expose gc extension under the specified name
-    default: ''
     inputBinding:
       position: 101
       prefix: --expose-gc-as
@@ -1042,7 +929,6 @@ inputs:
       - boolean
     doc: expose ignition-statistics extension (requires building with 
       v8_enable_ignition_dispatch_counting)
-    default: false
     inputBinding:
       position: 101
       prefix: --expose-ignition-statistics
@@ -1051,7 +937,6 @@ inputs:
       - 'null'
       - boolean
     doc: expose injected-script-source.js for debugging
-    default: false
     inputBinding:
       position: 101
       prefix: --expose-inspector-scripts
@@ -1060,7 +945,6 @@ inputs:
       - 'null'
       - boolean
     doc: expose statistics extension
-    default: false
     inputBinding:
       position: 101
       prefix: --expose-statistics
@@ -1069,7 +953,6 @@ inputs:
       - 'null'
       - boolean
     doc: expose trigger-failure extension
-    default: false
     inputBinding:
       position: 101
       prefix: --expose-trigger-failure
@@ -1078,7 +961,6 @@ inputs:
       - 'null'
       - boolean
     doc: expose wasm interface to JavaScript
-    default: false
     inputBinding:
       position: 101
       prefix: --expose-wasm
@@ -1087,7 +969,6 @@ inputs:
       - 'null'
       - boolean
     doc: fast promote new space on high survival rates
-    default: false
     inputBinding:
       position: 101
       prefix: --fast-promotion-new-space
@@ -1096,7 +977,6 @@ inputs:
       - 'null'
       - boolean
     doc: feed back normalization to constructors
-    default: false
     inputBinding:
       position: 101
       prefix: --feedback-normalization
@@ -1105,7 +985,6 @@ inputs:
       - 'null'
       - boolean
     doc: flush of baseline code when it has not been executed recently
-    default: false
     inputBinding:
       position: 101
       prefix: --flush-baseline-code
@@ -1114,7 +993,6 @@ inputs:
       - 'null'
       - boolean
     doc: flush of bytecode when it has not been executed recently
-    default: false
     inputBinding:
       position: 101
       prefix: --flush-bytecode
@@ -1123,7 +1001,6 @@ inputs:
       - 'null'
       - boolean
     doc: force all emitted branches to be in long mode (MIPS/PPC only)
-    default: false
     inputBinding:
       position: 101
       prefix: --force-long-branches
@@ -1132,7 +1009,6 @@ inputs:
       - 'null'
       - boolean
     doc: force overflows of marking deque by reducing it's size to 64 words
-    default: false
     inputBinding:
       position: 101
       prefix: --force-marking-deque-overflows
@@ -1141,7 +1017,6 @@ inputs:
       - 'null'
       - boolean
     doc: always take the slow path for builtins
-    default: false
     inputBinding:
       position: 101
       prefix: --force-slow-path
@@ -1151,7 +1026,6 @@ inputs:
       - boolean
     doc: Implies all staged features that we want to ship in the not-too-far 
       future
-    default: false
     inputBinding:
       position: 101
       prefix: --future
@@ -1161,7 +1035,6 @@ inputs:
       - boolean
     doc: prints number of allocations and enables analysis mode for gc fuzz 
       testing, e.g. --stress-marking, --stress-scavenge
-    default: false
     inputBinding:
       position: 101
       prefix: --fuzzer-gc-analysis
@@ -1171,7 +1044,6 @@ inputs:
       - int
     doc: Default seed for initializing fuzzer random generator (0, the default, 
       means to use v8's random number generator seed).
-    default: 0
     inputBinding:
       position: 101
       prefix: --fuzzer-random-seed
@@ -1181,7 +1053,6 @@ inputs:
       - boolean
     doc: Fuzzers use this flag to signal that they are ... fuzzing. This causes 
       intrinsics to fail silently (e.g. return undefined) on invalid usage.
-    default: false
     inputBinding:
       position: 101
       prefix: --fuzzing
@@ -1190,7 +1061,6 @@ inputs:
       - 'null'
       - boolean
     doc: less compaction in non-memory reducing mode
-    default: false
     inputBinding:
       position: 101
       prefix: --gc-experiment-less-compaction
@@ -1199,7 +1069,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the name of the file for fake gc mmap used in ll_prof
-    default: /tmp/__v8_gc__
     inputBinding:
       position: 101
       prefix: --gc-fake-mmap
@@ -1208,7 +1077,6 @@ inputs:
       - 'null'
       - boolean
     doc: always perform global GCs
-    default: false
     inputBinding:
       position: 101
       prefix: --gc-global
@@ -1217,7 +1085,6 @@ inputs:
       - 'null'
       - int
     doc: garbage collect after <n> allocations
-    default: -1
     inputBinding:
       position: 101
       prefix: --gc-interval
@@ -1226,7 +1093,6 @@ inputs:
       - 'null'
       - int
     doc: Used by tracing internally to enable gc statistics
-    default: 0
     inputBinding:
       position: 101
       prefix: --gc-stats
@@ -1235,7 +1101,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable GC scheduling based on global memory
-    default: false
     inputBinding:
       position: 101
       prefix: --global-gc-scheduling
@@ -1244,7 +1109,6 @@ inputs:
       - 'null'
       - boolean
     doc: abort by crashing
-    default: false
     inputBinding:
       position: 101
       prefix: --hard-abort
@@ -1253,7 +1117,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable all completed harmony features
-    default: false
     inputBinding:
       position: 101
       prefix: --harmony
@@ -1262,7 +1125,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable "harmony array find last helpers"
-    default: false
     inputBinding:
       position: 101
       prefix: --harmony-array-find-last
@@ -1271,7 +1133,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable "harmony array grouping"
-    default: false
     inputBinding:
       position: 101
       prefix: --harmony-array-grouping
@@ -1280,7 +1141,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable "harmony atomics"
-    default: false
     inputBinding:
       position: 101
       prefix: --harmony-atomics
@@ -1289,7 +1149,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable "harmony static initializer blocks"
-    default: false
     inputBinding:
       position: 101
       prefix: --harmony-class-static-blocks
@@ -1298,7 +1157,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable "harmony error cause property"
-    default: false
     inputBinding:
       position: 101
       prefix: --harmony-error-cause
@@ -1307,7 +1165,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable "harmony import assertions" (in progress)
-    default: false
     inputBinding:
       position: 101
       prefix: --harmony-import-assertions
@@ -1316,7 +1173,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable "Intl BestFitMatcher"
-    default: false
     inputBinding:
       position: 101
       prefix: --harmony-intl-best-fit-matcher
@@ -1325,7 +1181,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable "Intl.NumberFormat v3" (in progress)
-    default: false
     inputBinding:
       position: 101
       prefix: --harmony-intl-number-format-v3
@@ -1334,7 +1189,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable "harmony Object.hasOwn"
-    default: false
     inputBinding:
       position: 101
       prefix: --harmony-object-has-own
@@ -1343,7 +1197,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable "harmony private brand checks"
-    default: false
     inputBinding:
       position: 101
       prefix: --harmony-private-brand-checks
@@ -1353,7 +1206,6 @@ inputs:
       - boolean
     doc: enable "harmony ResizableArrayBuffer / GrowableSharedArrayBuffer" (in 
       progress)
-    default: false
     inputBinding:
       position: 101
       prefix: --harmony-rab-gsab
@@ -1362,7 +1214,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable "harmony relative indexing methods"
-    default: false
     inputBinding:
       position: 101
       prefix: --harmony-relative-indexing-methods
@@ -1371,7 +1222,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable "harmony ShadowRealm" (in progress)
-    default: false
     inputBinding:
       position: 101
       prefix: --harmony-shadow-realm
@@ -1380,7 +1230,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable "harmony sharedarraybuffer"
-    default: false
     inputBinding:
       position: 101
       prefix: --harmony-sharedarraybuffer
@@ -1389,7 +1238,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable all shipped harmony features
-    default: false
     inputBinding:
       position: 101
       prefix: --harmony-shipping
@@ -1398,7 +1246,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable "harmony structs and shared structs" (in progress)
-    default: false
     inputBinding:
       position: 101
       prefix: --harmony-struct
@@ -1407,7 +1254,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable "Temporal" (in progress)
-    default: false
     inputBinding:
       position: 101
       prefix: --harmony-temporal
@@ -1417,7 +1263,6 @@ inputs:
       - boolean
     doc: enable "harmony weak references with 
       FinalizationRegistry.prototype.cleanupSome" (in progress)
-    default: false
     inputBinding:
       position: 101
       prefix: --harmony-weak-refs-with-cleanup-some
@@ -1427,7 +1272,6 @@ inputs:
       - string
     doc: Fixed seed to use to hash property keys (0 means random)(with snapshots
       this option cannot override the baked-in seed)
-    default: 0
     inputBinding:
       position: 101
       prefix: --hash-seed
@@ -1436,7 +1280,6 @@ inputs:
       - 'null'
       - int
     doc: specifies heap growing factor as (1 + heap_growing_percent/100)
-    default: 0
     inputBinding:
       position: 101
       prefix: --heap-growing-percent
@@ -1445,7 +1288,6 @@ inputs:
       - 'null'
       - boolean
     doc: use 'native' rather than 'hidden' node type in snapshot
-    default: false
     inputBinding:
       position: 101
       prefix: --heap-profiler-show-hidden-objects
@@ -1454,7 +1296,6 @@ inputs:
       - 'null'
       - boolean
     doc: Dump heap object allocations/movements/size_updates
-    default: false
     inputBinding:
       position: 101
       prefix: --heap-profiler-trace-objects
@@ -1463,7 +1304,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use the new EmbedderGraph API to get embedder nodes
-    default: false
     inputBinding:
       position: 101
       prefix: --heap-profiler-use-embedder-graph
@@ -1472,7 +1312,6 @@ inputs:
       - 'null'
       - int
     doc: truncate strings to this length in the heap snapshot
-    default: 1024
     inputBinding:
       position: 101
       prefix: --heap-snapshot-string-limit
@@ -1481,7 +1320,6 @@ inputs:
       - 'null'
       - int
     doc: time interval in ms for aggregating memory histograms
-    default: 600000
     inputBinding:
       position: 101
       prefix: --histogram-interval
@@ -1491,7 +1329,6 @@ inputs:
       - boolean
     doc: Increase max size of the old space to 4 GB for x64 systems withthe 
       physical memory bigger than 16 GB
-    default: false
     inputBinding:
       position: 101
       prefix: --huge-max-old-generation-size
@@ -1500,7 +1337,6 @@ inputs:
       - 'null'
       - boolean
     doc: get information about timezones from ICU
-    default: false
     inputBinding:
       position: 101
       prefix: --icu-timezone-data
@@ -1509,7 +1345,6 @@ inputs:
       - 'null'
       - boolean
     doc: elide bytecodes which won't have any external effect
-    default: false
     inputBinding:
       position: 101
       prefix: --ignition-elide-noneffectful-bytecodes
@@ -1518,7 +1353,6 @@ inputs:
       - 'null'
       - boolean
     doc: filter expression positions before the bytecode pipeline
-    default: false
     inputBinding:
       position: 101
       prefix: --ignition-filter-expression-positions
@@ -1527,7 +1361,6 @@ inputs:
       - 'null'
       - boolean
     doc: use ignition register equivalence optimizer
-    default: false
     inputBinding:
       position: 101
       prefix: --ignition-reo
@@ -1537,7 +1370,6 @@ inputs:
       - boolean
     doc: share feedback slots when loading the same named property from the same
       object
-    default: false
     inputBinding:
       position: 101
       prefix: --ignition-share-named-property-feedback
@@ -1546,7 +1378,6 @@ inputs:
       - 'null'
       - boolean
     doc: use incremental marking
-    default: false
     inputBinding:
       position: 101
       prefix: --incremental-marking
@@ -1556,7 +1387,6 @@ inputs:
       - int
     doc: 'threshold for starting incremental marking immediately in percent of available
       space: limit - size'
-    default: 0
     inputBinding:
       position: 101
       prefix: --incremental-marking-hard-trigger
@@ -1566,7 +1396,6 @@ inputs:
       - int
     doc: 'threshold for starting incremental marking via a task in percent of available
       space: limit - size'
-    default: 0
     inputBinding:
       position: 101
       prefix: --incremental-marking-soft-trigger
@@ -1575,7 +1404,6 @@ inputs:
       - 'null'
       - boolean
     doc: use tasks for incremental marking
-    default: false
     inputBinding:
       position: 101
       prefix: --incremental-marking-task
@@ -1584,7 +1412,6 @@ inputs:
       - 'null'
       - boolean
     doc: use incremental marking for marking wrappers
-    default: false
     inputBinding:
       position: 101
       prefix: --incremental-marking-wrappers
@@ -1593,7 +1420,6 @@ inputs:
       - 'null'
       - string
     doc: initial size of the heap (in Mbytes)
-    default: 0
     inputBinding:
       position: 101
       prefix: --initial-heap-size
@@ -1602,7 +1428,6 @@ inputs:
       - 'null'
       - string
     doc: initial old space size (in Mbytes)
-    default: 0
     inputBinding:
       position: 101
       prefix: --initial-old-space-size
@@ -1611,7 +1436,6 @@ inputs:
       - 'null'
       - boolean
     doc: use fast inline allocation
-    default: false
     inputBinding:
       position: 101
       prefix: --inline-new
@@ -1621,7 +1445,6 @@ inputs:
       - boolean
     doc: Show interpreted frames on the native stack (useful for external 
       profilers).
-    default: false
     inputBinding:
       position: 101
       prefix: --interpreted-frames-native-stack
@@ -1630,7 +1453,6 @@ inputs:
       - 'null'
       - int
     doc: interrupt budget which should be used for the profiler counter
-    default: 135168
     inputBinding:
       position: 101
       prefix: --interrupt-budget
@@ -1640,7 +1462,6 @@ inputs:
       - int
     doc: The interrupt budget factor (applied to bytecode size) for allocating 
       feedback vectors, used when bytecode size is known
-    default: 8
     inputBinding:
       position: 101
       prefix: --interrupt-budget-factor-for-feedback-allocation
@@ -1650,7 +1471,6 @@ inputs:
       - int
     doc: The fixed interrupt budget (in bytecode size) for allocating feedback 
       vectors
-    default: 940
     inputBinding:
       position: 101
       prefix: --interrupt-budget-for-feedback-allocation
@@ -1659,7 +1479,6 @@ inputs:
       - 'null'
       - int
     doc: interrupt budget which should be used for the profiler counter
-    default: 40960
     inputBinding:
       position: 101
       prefix: --interrupt-budget-for-maglev
@@ -1668,7 +1487,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable ageing of the isolate script cache.
-    default: false
     inputBinding:
       position: 101
       prefix: --isolate-script-cache-ageing
@@ -1677,7 +1495,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable runtime allocation of executable memory.
-    default: false
     inputBinding:
       position: 101
       prefix: --jitless
@@ -1686,7 +1503,6 @@ inputs:
       - 'null'
       - boolean
     doc: use lazy compilation
-    default: false
     inputBinding:
       position: 101
       prefix: --lazy
@@ -1695,7 +1511,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable compiler dispatcher
-    default: false
     inputBinding:
       position: 101
       prefix: --lazy-compile-dispatcher
@@ -1704,7 +1519,6 @@ inputs:
       - 'null'
       - string
     doc: max threads for compiler dispatcher (0 for unbounded)
-    default: 0
     inputBinding:
       position: 101
       prefix: --lazy-compile-dispatcher-max-threads
@@ -1713,7 +1527,6 @@ inputs:
       - 'null'
       - boolean
     doc: use lazy compilation during eval
-    default: false
     inputBinding:
       position: 101
       prefix: --lazy-eval
@@ -1722,7 +1535,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allocate feedback vectors lazily
-    default: false
     inputBinding:
       position: 101
       prefix: --lazy-feedback-allocation
@@ -1731,7 +1543,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enables the lazy new space shrinking strategy
-    default: false
     inputBinding:
       position: 101
       prefix: --lazy-new-space-shrinking
@@ -1740,7 +1551,6 @@ inputs:
       - 'null'
       - boolean
     doc: use lazy compilation during streaming compilation
-    default: false
     inputBinding:
       position: 101
       prefix: --lazy-streaming
@@ -1749,7 +1559,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable Liftoff, the baseline compiler for WebAssembly
-    default: false
     inputBinding:
       position: 101
       prefix: --liftoff
@@ -1758,7 +1567,6 @@ inputs:
       - 'null'
       - boolean
     doc: disallow TurboFan compilation for WebAssembly (for testing)
-    default: false
     inputBinding:
       position: 101
       prefix: --liftoff-only
@@ -1767,7 +1575,6 @@ inputs:
       - 'null'
       - boolean
     doc: enables trade-off of performance for memory savings
-    default: false
     inputBinding:
       position: 101
       prefix: --lite-mode
@@ -1776,7 +1583,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable low-level linux profiler.
-    default: false
     inputBinding:
       position: 101
       prefix: --ll-prof
@@ -1785,7 +1591,6 @@ inputs:
       - 'null'
       - boolean
     doc: Minimal logging (no API, code, GC, suspect, or handles samples).
-    default: false
     inputBinding:
       position: 101
       prefix: --log
@@ -1794,7 +1599,6 @@ inputs:
       - 'null'
       - boolean
     doc: Log all events to the log file.
-    default: false
     inputBinding:
       position: 101
       prefix: --log-all
@@ -1803,7 +1607,6 @@ inputs:
       - 'null'
       - boolean
     doc: Log code events to the log file without profiling.
-    default: false
     inputBinding:
       position: 101
       prefix: --log-code
@@ -1812,7 +1615,6 @@ inputs:
       - 'null'
       - boolean
     doc: Log all disassembled code to the log file.
-    default: false
     inputBinding:
       position: 101
       prefix: --log-code-disassemble
@@ -1821,7 +1623,6 @@ inputs:
       - 'null'
       - boolean
     doc: When logging, try to use coloured output.
-    default: false
     inputBinding:
       position: 101
       prefix: --log-colour
@@ -1830,7 +1631,6 @@ inputs:
       - 'null'
       - boolean
     doc: log deoptimization
-    default: false
     inputBinding:
       position: 101
       prefix: --log-deopt
@@ -1839,7 +1639,6 @@ inputs:
       - 'null'
       - boolean
     doc: Log function events (parse, compile, execute) separately.
-    default: false
     inputBinding:
       position: 101
       prefix: --log-function-events
@@ -1848,7 +1647,6 @@ inputs:
       - 'null'
       - boolean
     doc: Log inline cache state transitions for tools/ic-processor
-    default: false
     inputBinding:
       position: 101
       prefix: --log-ic
@@ -1857,7 +1655,6 @@ inputs:
       - 'null'
       - boolean
     doc: Time internal events.
-    default: false
     inputBinding:
       position: 101
       prefix: --log-internal-timer-events
@@ -1866,7 +1663,6 @@ inputs:
       - 'null'
       - boolean
     doc: Log map creation
-    default: false
     inputBinding:
       position: 101
       prefix: --log-maps
@@ -1875,7 +1671,6 @@ inputs:
       - 'null'
       - boolean
     doc: Also log map details
-    default: false
     inputBinding:
       position: 101
       prefix: --log-maps-details
@@ -1884,7 +1679,6 @@ inputs:
       - 'null'
       - boolean
     doc: Log source code.
-    default: false
     inputBinding:
       position: 101
       prefix: --log-source-code
@@ -1894,7 +1688,6 @@ inputs:
       - string
     doc: Specify the name of the log file, use '-' for console, '+' for a 
       temporary file.
-    default: v8.log
     inputBinding:
       position: 101
       prefix: --logfile
@@ -1903,7 +1696,6 @@ inputs:
       - 'null'
       - boolean
     doc: Separate log files for each isolate.
-    default: false
     inputBinding:
       position: 101
       prefix: --logfile-per-isolate
@@ -1912,7 +1704,6 @@ inputs:
       - 'null'
       - boolean
     doc: insert an int3 on maglev entries
-    default: false
     inputBinding:
       position: 101
       prefix: --maglev-break-on-entry
@@ -1921,7 +1712,6 @@ inputs:
       - 'null'
       - string
     doc: optimization filter for the maglev compiler
-    default: '*'
     inputBinding:
       position: 101
       prefix: --maglev-filter
@@ -1931,7 +1721,6 @@ inputs:
       - boolean
     doc: Test mode only flag. It allows an unit test to select evacuation 
       candidates pages (requires --stress_compaction).
-    default: false
     inputBinding:
       position: 101
       prefix: --manual-evacuation-candidates-selection
@@ -1940,7 +1729,6 @@ inputs:
       - 'null'
       - string
     doc: Map counters to a file
-    default: ''
     inputBinding:
       position: 101
       prefix: --map-counters
@@ -1950,7 +1738,6 @@ inputs:
       - int
     doc: Maximum bytecode length for a function to be optimized on the first 
       tick
-    default: 81
     inputBinding:
       position: 101
       prefix: --max-bytecode-size-for-early-opt
@@ -1961,7 +1748,6 @@ inputs:
     doc: max size of the heap (in Mbytes) both max_semi_space_size and 
       max_old_space_size take precedence. All three flags cannot be specified at
       the same time.
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-heap-size
@@ -1970,7 +1756,6 @@ inputs:
       - 'null'
       - int
     doc: maximum size of bytecode for a single inlining
-    default: 460
     inputBinding:
       position: 101
       prefix: --max-inlined-bytecode-size
@@ -1979,7 +1764,6 @@ inputs:
       - 'null'
       - int
     doc: maximum absolute size of bytecode considered for inlining
-    default: 4600
     inputBinding:
       position: 101
       prefix: --max-inlined-bytecode-size-absolute
@@ -1988,7 +1772,6 @@ inputs:
       - 'null'
       - int
     doc: maximum cumulative size of bytecode considered for inlining
-    default: 920
     inputBinding:
       position: 101
       prefix: --max-inlined-bytecode-size-cumulative
@@ -1997,7 +1780,6 @@ inputs:
       - 'null'
       - int
     doc: maximum size of bytecode considered for small function inlining
-    default: 27
     inputBinding:
       position: 101
       prefix: --max-inlined-bytecode-size-small
@@ -2006,7 +1788,6 @@ inputs:
       - 'null'
       - boolean
     doc: ignore eager compilation hints
-    default: false
     inputBinding:
       position: 101
       prefix: --max-lazy
@@ -2015,7 +1796,6 @@ inputs:
       - 'null'
       - string
     doc: max size of the old space (in Mbytes)
-    default: 16384
     inputBinding:
       position: 101
       prefix: --max-old-space-size
@@ -2025,7 +1805,6 @@ inputs:
       - int
     doc: maximum bytecode size to be considered for optimization; too high 
       values may cause the compiler to hit (release) assertions
-    default: 61440
     inputBinding:
       position: 101
       prefix: --max-optimized-bytecode-size
@@ -2035,7 +1814,6 @@ inputs:
       - string
     doc: max size of a semi-space (in MBytes), the new space consists of two 
       semi-spaces
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-semi-space-size
@@ -2044,7 +1822,6 @@ inputs:
       - 'null'
       - int
     doc: maximum levels for nesting child serializers
-    default: 25
     inputBinding:
       position: 101
       prefix: --max-serializer-nesting
@@ -2053,7 +1830,6 @@ inputs:
       - 'null'
       - int
     doc: maximum length of function source code printed in a stack trace.
-    default: 300
     inputBinding:
       position: 101
       prefix: --max-stack-trace-source-length
@@ -2062,7 +1838,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of valid maps to track in POLYMORPHIC state
-    default: 4
     inputBinding:
       position: 101
       prefix: --max-valid-polymorphic-map-count
@@ -2071,7 +1846,6 @@ inputs:
       - 'null'
       - string
     doc: enable optimization for specific cpu
-    default: auto
     inputBinding:
       position: 101
       prefix: --mcpu
@@ -2080,7 +1854,6 @@ inputs:
       - 'null'
       - boolean
     doc: use memory reducer
-    default: false
     inputBinding:
       position: 101
       prefix: --memory-reducer
@@ -2089,7 +1862,6 @@ inputs:
       - 'null'
       - boolean
     doc: use memory reducer for small heaps
-    default: false
     inputBinding:
       position: 101
       prefix: --memory-reducer-for-small-heaps
@@ -2098,7 +1870,6 @@ inputs:
       - 'null'
       - float
     doc: minimum frequency for inlining
-    default: 0.15
     inputBinding:
       position: 101
       prefix: --min-inlining-frequency
@@ -2108,7 +1879,6 @@ inputs:
       - string
     doc: min size of a semi-space (in MBytes), the new space consists of two 
       semi-spaces
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-semi-space-size
@@ -2117,7 +1887,6 @@ inputs:
       - 'null'
       - boolean
     doc: perform young generation mark compact GCs
-    default: false
     inputBinding:
       position: 101
       prefix: --minor-mc
@@ -2126,7 +1895,6 @@ inputs:
       - 'null'
       - boolean
     doc: perform sweeping in young generation mark compact GCs
-    default: false
     inputBinding:
       position: 101
       prefix: --minor-mc-sweeping
@@ -2135,7 +1903,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace fragmentation after marking
-    default: false
     inputBinding:
       position: 101
       prefix: --minor-mc-trace-fragmentation
@@ -2144,7 +1911,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use a mock ArrayBuffer allocator for testing.
-    default: false
     inputBinding:
       position: 101
       prefix: --mock-arraybuffer-allocator
@@ -2154,7 +1920,6 @@ inputs:
       - string
     doc: Memory limit for mock ArrayBuffer allocator used to simulate OOM for 
       testing.
-    default: 0
     inputBinding:
       position: 101
       prefix: --mock-arraybuffer-allocator-limit
@@ -2163,7 +1928,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable moving of object starts
-    default: false
     inputBinding:
       position: 101
       prefix: --move-object-start
@@ -2172,7 +1936,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use a multi-mapped mock ArrayBuffer allocator for testing.
-    default: false
     inputBinding:
       position: 101
       prefix: --multi-mapped-mock-allocator
@@ -2181,7 +1944,6 @@ inputs:
       - 'null'
       - boolean
     doc: generate extra code for manipulating stats counters
-    default: false
     inputBinding:
       position: 101
       prefix: --native-code-counters
@@ -2190,7 +1952,6 @@ inputs:
       - 'null'
       - boolean
     doc: use adaptive optimizations
-    default: false
     inputBinding:
       position: 101
       prefix: --opt
@@ -2199,7 +1960,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enables optimizations which favor memory size over execution speed
-    default: false
     inputBinding:
       position: 101
       prefix: --optimize-for-size
@@ -2208,7 +1968,6 @@ inputs:
       - 'null'
       - boolean
     doc: promote pages based on utilization
-    default: false
     inputBinding:
       position: 101
       prefix: --page-promotion
@@ -2217,7 +1976,6 @@ inputs:
       - 'null'
       - int
     doc: min percentage of live bytes on a page to enable fast evacuation
-    default: 70
     inputBinding:
       position: 101
       prefix: --page-promotion-threshold
@@ -2226,7 +1984,6 @@ inputs:
       - 'null'
       - boolean
     doc: use parallel compaction
-    default: false
     inputBinding:
       position: 101
       prefix: --parallel-compaction
@@ -2235,7 +1992,6 @@ inputs:
       - 'null'
       - boolean
     doc: spawn parallel compile tasks for eagerly compiled, top-level functions
-    default: false
     inputBinding:
       position: 101
       prefix: --parallel-compile-tasks-for-eager-toplevel
@@ -2244,7 +2000,6 @@ inputs:
       - 'null'
       - boolean
     doc: spawn parallel compile tasks for all lazily compiled functions
-    default: false
     inputBinding:
       position: 101
       prefix: --parallel-compile-tasks-for-lazy
@@ -2253,7 +2008,6 @@ inputs:
       - 'null'
       - boolean
     doc: use parallel marking in atomic pause
-    default: false
     inputBinding:
       position: 101
       prefix: --parallel-marking
@@ -2262,7 +2016,6 @@ inputs:
       - 'null'
       - boolean
     doc: use parallel pointer update during compaction
-    default: false
     inputBinding:
       position: 101
       prefix: --parallel-pointer-update
@@ -2271,7 +2024,6 @@ inputs:
       - 'null'
       - boolean
     doc: parallel scavenge
-    default: false
     inputBinding:
       position: 101
       prefix: --parallel-scavenge
@@ -2280,7 +2032,6 @@ inputs:
       - 'null'
       - boolean
     doc: only parse the sources
-    default: false
     inputBinding:
       position: 101
       prefix: --parse-only
@@ -2289,7 +2040,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable use of partial constant pools (X64 only)
-    default: false
     inputBinding:
       position: 101
       prefix: --partial-constant-pool
@@ -2298,7 +2048,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable perf linux profiler (basic support).
-    default: false
     inputBinding:
       position: 101
       prefix: --perf-basic-prof
@@ -2307,7 +2056,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only report function code ranges to perf (i.e. no stubs).
-    default: false
     inputBinding:
       position: 101
       prefix: --perf-basic-prof-only-functions
@@ -2316,7 +2064,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable perf linux profiler (experimental annotate support).
-    default: false
     inputBinding:
       position: 101
       prefix: --perf-prof
@@ -2326,7 +2073,6 @@ inputs:
       - boolean
     doc: Used with --perf-prof, load wasm source map and provide annotate 
       support (experimental).
-    default: false
     inputBinding:
       position: 101
       prefix: --perf-prof-annotate-wasm
@@ -2335,7 +2081,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove the perf file right after creating it (for testing only).
-    default: false
     inputBinding:
       position: 101
       prefix: --perf-prof-delete-file
@@ -2344,7 +2089,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable unwinding info for perf linux profiler (experimental).
-    default: false
     inputBinding:
       position: 101
       prefix: --perf-prof-unwinding-info
@@ -2353,7 +2097,6 @@ inputs:
       - 'null'
       - boolean
     doc: polymorphic inlining
-    default: false
     inputBinding:
       position: 101
       prefix: --polymorphic-inlining
@@ -2362,7 +2105,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable predictable mode
-    default: false
     inputBinding:
       position: 101
       prefix: --predictable
@@ -2372,7 +2114,6 @@ inputs:
       - boolean
     doc: Predictable garbage collection schedule. Fixes heap growing, idle, and 
       memory reducing behavior.
-    default: false
     inputBinding:
       position: 101
       prefix: --predictable-gc-schedule
@@ -2381,7 +2122,6 @@ inputs:
       - 'null'
       - boolean
     doc: prepare for turning on always opt
-    default: false
     inputBinding:
       position: 101
       prefix: --prepare-always-opt
@@ -2390,7 +2130,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable all flags related to printing code
-    default: false
     inputBinding:
       position: 101
       prefix: --print-all-code
@@ -2399,7 +2138,6 @@ inputs:
       - 'null'
       - boolean
     doc: print exception object and stack trace on each thrown exception
-    default: false
     inputBinding:
       position: 101
       prefix: --print-all-exceptions
@@ -2408,7 +2146,6 @@ inputs:
       - 'null'
       - boolean
     doc: print generated code for builtins
-    default: false
     inputBinding:
       position: 101
       prefix: --print-builtin-code
@@ -2417,7 +2154,6 @@ inputs:
       - 'null'
       - string
     doc: filter for printing builtin code
-    default: '*'
     inputBinding:
       position: 101
       prefix: --print-builtin-code-filter
@@ -2426,7 +2162,6 @@ inputs:
       - 'null'
       - boolean
     doc: print code size for builtins
-    default: false
     inputBinding:
       position: 101
       prefix: --print-builtin-size
@@ -2435,7 +2170,6 @@ inputs:
       - 'null'
       - boolean
     doc: print bytecode generated by ignition interpreter
-    default: false
     inputBinding:
       position: 101
       prefix: --print-bytecode
@@ -2444,7 +2178,6 @@ inputs:
       - 'null'
       - string
     doc: filter for selecting which functions to print bytecode
-    default: '*'
     inputBinding:
       position: 101
       prefix: --print-bytecode-filter
@@ -2453,7 +2186,6 @@ inputs:
       - 'null'
       - boolean
     doc: print generated code
-    default: false
     inputBinding:
       position: 101
       prefix: --print-code
@@ -2462,7 +2194,6 @@ inputs:
       - 'null'
       - boolean
     doc: print more information for code
-    default: false
     inputBinding:
       position: 101
       prefix: --print-code-verbose
@@ -2471,7 +2202,6 @@ inputs:
       - 'null'
       - boolean
     doc: print number of possible deopt points
-    default: false
     inputBinding:
       position: 101
       prefix: --print-deopt-stress
@@ -2480,7 +2210,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print all flag values of V8
-    default: false
     inputBinding:
       position: 101
       prefix: --print-flag-values
@@ -2489,7 +2218,6 @@ inputs:
       - 'null'
       - boolean
     doc: print maglev code
-    default: false
     inputBinding:
       position: 101
       prefix: --print-maglev-code
@@ -2498,7 +2226,6 @@ inputs:
       - 'null'
       - boolean
     doc: print maglev graph
-    default: false
     inputBinding:
       position: 101
       prefix: --print-maglev-graph
@@ -2507,7 +2234,6 @@ inputs:
       - 'null'
       - boolean
     doc: print optimized code
-    default: false
     inputBinding:
       position: 101
       prefix: --print-opt-code
@@ -2516,7 +2242,6 @@ inputs:
       - 'null'
       - string
     doc: filter for printing optimized code
-    default: '*'
     inputBinding:
       position: 101
       prefix: --print-opt-code-filter
@@ -2525,7 +2250,6 @@ inputs:
       - 'null'
       - boolean
     doc: print source code of optimized and inlined functions
-    default: false
     inputBinding:
       position: 101
       prefix: --print-opt-source
@@ -2534,7 +2258,6 @@ inputs:
       - 'null'
       - boolean
     doc: print generated regexp bytecode
-    default: false
     inputBinding:
       position: 101
       prefix: --print-regexp-bytecode
@@ -2543,7 +2266,6 @@ inputs:
       - 'null'
       - boolean
     doc: print generated regexp code
-    default: false
     inputBinding:
       position: 101
       prefix: --print-regexp-code
@@ -2552,7 +2274,6 @@ inputs:
       - 'null'
       - boolean
     doc: print WebAssembly code
-    default: false
     inputBinding:
       position: 101
       prefix: --print-wasm-code
@@ -2561,7 +2282,6 @@ inputs:
       - 'null'
       - int
     doc: print WebAssembly code for function at index
-    default: -1
     inputBinding:
       position: 101
       prefix: --print-wasm-code-function-index
@@ -2570,7 +2290,6 @@ inputs:
       - 'null'
       - boolean
     doc: print WebAssembly stub code
-    default: false
     inputBinding:
       position: 101
       prefix: --print-wasm-stub-code
@@ -2579,7 +2298,6 @@ inputs:
       - 'null'
       - boolean
     doc: Log statistical profiling information (implies --log-code).
-    default: false
     inputBinding:
       position: 101
       prefix: --prof
@@ -2588,7 +2306,6 @@ inputs:
       - 'null'
       - boolean
     doc: Used with --prof, turns on browser-compatible mode for profiling.
-    default: false
     inputBinding:
       position: 101
       prefix: --prof-browser-mode
@@ -2597,7 +2314,6 @@ inputs:
       - 'null'
       - boolean
     doc: Like --prof, but ignore generated code.
-    default: false
     inputBinding:
       position: 101
       prefix: --prof-cpp
@@ -2606,7 +2322,6 @@ inputs:
       - 'null'
       - int
     doc: Interval for --prof samples (in microseconds).
-    default: 1000
     inputBinding:
       position: 101
       prefix: --prof-sampling-interval
@@ -2615,7 +2330,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print the time it takes to deserialize the snapshot.
-    default: false
     inputBinding:
       position: 101
       prefix: --profile-deserialization
@@ -2625,7 +2339,6 @@ inputs:
       - int
     doc: Collect garbage after random(0, X) allocations. It overrides 
       gc_interval.
-    default: 0
     inputBinding:
       position: 101
       prefix: --random-gc-interval
@@ -2635,7 +2348,6 @@ inputs:
       - int
     doc: Default seed for initializing random generator (0, the default, means 
       to use system random).
-    default: 0
     inputBinding:
       position: 101
       prefix: --random-seed
@@ -2645,7 +2357,6 @@ inputs:
       - boolean
     doc: randomize virtual memory reservations by ignoring any hints passed when
       allocating pages
-    default: false
     inputBinding:
       position: 101
       prefix: --randomize-all-allocations
@@ -2654,7 +2365,6 @@ inputs:
       - 'null'
       - boolean
     doc: report runtime call counts and times
-    default: false
     inputBinding:
       position: 101
       prefix: --rcs
@@ -2663,7 +2373,6 @@ inputs:
       - 'null'
       - boolean
     doc: report runtime times in cpu time (the default is wall time)
-    default: false
     inputBinding:
       position: 101
       prefix: --rcs-cpu-time
@@ -2672,7 +2381,6 @@ inputs:
       - 'null'
       - boolean
     doc: reclaim otherwise unreachable unmodified wrapper objects when possible
-    default: false
     inputBinding:
       position: 101
       prefix: --reclaim-unmodified-wrappers
@@ -2682,7 +2390,6 @@ inputs:
       - boolean
     doc: output deopt information and disassembly into file code-<pid>-<isolate 
       id>.asm
-    default: false
     inputBinding:
       position: 101
       prefix: --redirect-code-traces
@@ -2691,7 +2398,6 @@ inputs:
       - 'null'
       - string
     doc: output deopt information and disassembly into the given file
-    default: ''
     inputBinding:
       position: 101
       prefix: --redirect-code-traces-to
@@ -2702,7 +2408,6 @@ inputs:
     doc: number of backtracks during regexp execution before fall back to 
       experimental engine if 
       enable_experimental_regexp_engine_on_excessive_backtracks is set
-    default: 50000
     inputBinding:
       position: 101
       prefix: --regexp-backtracks-before-fallback
@@ -2711,7 +2416,6 @@ inputs:
       - 'null'
       - boolean
     doc: interpret all regexp code
-    default: false
     inputBinding:
       position: 101
       prefix: --regexp-interpret-all
@@ -2720,7 +2424,6 @@ inputs:
       - 'null'
       - boolean
     doc: generate optimized regexp code
-    default: false
     inputBinding:
       position: 101
       prefix: --regexp-optimization
@@ -2729,7 +2432,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable peephole optimization for regexp bytecode
-    default: false
     inputBinding:
       position: 101
       prefix: --regexp-peephole-optimization
@@ -2739,7 +2441,6 @@ inputs:
       - boolean
     doc: enable regexp interpreter and tier up to the compiler after the number 
       of executions set by the tier up ticks flag
-    default: false
     inputBinding:
       position: 101
       prefix: --regexp-tier-up
@@ -2749,7 +2450,6 @@ inputs:
       - int
     doc: set the number of executions for the regexp interpreter before 
       tiering-up to the compiler
-    default: 1
     inputBinding:
       position: 101
       prefix: --regexp-tier-up-ticks
@@ -2758,7 +2458,6 @@ inputs:
       - 'null'
       - boolean
     doc: rehash strings from the snapshot to override the baked-in seed
-    default: false
     inputBinding:
       position: 101
       prefix: --rehash-snapshot
@@ -2767,7 +2466,6 @@ inputs:
       - 'null'
       - float
     doc: scale factor of bytecode size used to calculate the inlining budget
-    default: 1.2
     inputBinding:
       position: 101
       prefix: --reserve-inline-budget-scale-factor
@@ -2776,7 +2474,6 @@ inputs:
       - 'null'
       - int
     doc: keeps maps alive for <n> old space garbage collections
-    default: 2
     inputBinding:
       position: 101
       prefix: --retain-maps-for-n-gc
@@ -2785,7 +2482,6 @@ inputs:
       - 'null'
       - boolean
     doc: report runtime call counts and times
-    default: false
     inputBinding:
       position: 101
       prefix: --runtime-call-stats
@@ -2794,7 +2490,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use constant sample intervals to eliminate test flakiness
-    default: false
     inputBinding:
       position: 101
       prefix: --sampling-heap-profiler-suppress-randomness
@@ -2803,7 +2498,6 @@ inputs:
       - 'null'
       - boolean
     doc: use a separate phase for stack scanning in scavenge
-    default: false
     inputBinding:
       position: 101
       prefix: --scavenge-separate-stack-scanning
@@ -2812,7 +2506,6 @@ inputs:
       - 'null'
       - boolean
     doc: schedule scavenge tasks
-    default: false
     inputBinding:
       position: 101
       prefix: --scavenge-task
@@ -2821,7 +2514,6 @@ inputs:
       - 'null'
       - int
     doc: scavenge task trigger in percent of the current heap limit
-    default: 80
     inputBinding:
       position: 101
       prefix: --scavenge-task-trigger
@@ -2830,7 +2522,6 @@ inputs:
       - 'null'
       - float
     doc: busy wait [ms] on every Script::Run
-    default: 0
     inputBinding:
       position: 101
       prefix: --script-delay
@@ -2840,7 +2531,6 @@ inputs:
       - float
     doc: busy wait after each Script::Run by the given fraction of the run's 
       duration
-    default: 0
     inputBinding:
       position: 101
       prefix: --script-delay-fraction
@@ -2849,7 +2539,6 @@ inputs:
       - 'null'
       - float
     doc: busy wait [ms] on the first Script::Run
-    default: 0
     inputBinding:
       position: 101
       prefix: --script-delay-once
@@ -2858,7 +2547,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable parsing on background
-    default: false
     inputBinding:
       position: 101
       prefix: --script-streaming
@@ -2867,7 +2555,6 @@ inputs:
       - 'null'
       - int
     doc: factor by which to grow the new space
-    default: 2
     inputBinding:
       position: 101
       prefix: --semi-space-growth-factor
@@ -2876,7 +2563,6 @@ inputs:
       - 'null'
       - boolean
     doc: yound and full garbage collection phases are not overlapping
-    default: false
     inputBinding:
       position: 101
       prefix: --separate-gc-phases
@@ -2885,7 +2571,6 @@ inputs:
       - 'null'
       - boolean
     doc: Collect statistics on serialized objects.
-    default: false
     inputBinding:
       position: 101
       prefix: --serialization-statistics
@@ -2894,7 +2579,6 @@ inputs:
       - 'null'
       - boolean
     doc: internalize strings into shared table
-    default: false
     inputBinding:
       position: 101
       prefix: --shared-string-table
@@ -2904,7 +2588,6 @@ inputs:
       - boolean
     doc: Put embedded builtins code into the code range for shorter builtin 
       calls/jumps if system has >=4GB memory
-    default: false
     inputBinding:
       position: 101
       prefix: --short-builtin-calls
@@ -2913,7 +2596,6 @@ inputs:
       - 'null'
       - string
     doc: 'enable optional features on the simulator for testing: none or all'
-    default: none
     inputBinding:
       position: 101
       prefix: --sim-arm64-optional-features
@@ -2922,7 +2604,6 @@ inputs:
       - 'null'
       - boolean
     doc: disable the use of background tasks
-    default: false
     inputBinding:
       position: 101
       prefix: --single-threaded
@@ -2931,7 +2612,6 @@ inputs:
       - 'null'
       - boolean
     doc: disable the use of background gc tasks
-    default: false
     inputBinding:
       position: 101
       prefix: --single-threaded-gc
@@ -2940,7 +2620,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable slow histograms with more overhead.
-    default: false
     inputBinding:
       position: 101
       prefix: --slow-histograms
@@ -2949,7 +2628,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable Sparkplug baseline compiler
-    default: false
     inputBinding:
       position: 101
       prefix: --sparkplug
@@ -2958,7 +2636,6 @@ inputs:
       - 'null'
       - string
     doc: filter for Sparkplug baseline compiler
-    default: '*'
     inputBinding:
       position: 101
       prefix: --sparkplug-filter
@@ -2968,7 +2645,6 @@ inputs:
       - boolean
     doc: only enable Sparkplug baseline compiler when --short-builtin-calls are 
       also enabled
-    default: false
     inputBinding:
       position: 101
       prefix: --sparkplug-needs-short-builtins
@@ -2977,7 +2653,6 @@ inputs:
       - 'null'
       - int
     doc: default size of stack region v8 is allowed to use (in kBytes)
-    default: 984
     inputBinding:
       position: 101
       prefix: --stack-size
@@ -2986,7 +2661,6 @@ inputs:
       - 'null'
       - int
     doc: number of stack frames to capture
-    default: 10
     inputBinding:
       position: 101
       prefix: --stack-trace-limit
@@ -2995,7 +2669,6 @@ inputs:
       - 'null'
       - boolean
     doc: print stack trace when an illegal exception is thrown
-    default: false
     inputBinding:
       position: 101
       prefix: --stack-trace-on-illegal
@@ -3004,7 +2677,6 @@ inputs:
       - 'null'
       - string
     doc: Write V8 startup blob file. (mksnapshot only)
-    default: ''
     inputBinding:
       position: 101
       prefix: --startup-blob
@@ -3013,7 +2685,6 @@ inputs:
       - 'null'
       - string
     doc: Write V8 startup as C++ src. (mksnapshot only)
-    default: ''
     inputBinding:
       position: 101
       prefix: --startup-src
@@ -3022,7 +2693,6 @@ inputs:
       - 'null'
       - boolean
     doc: stress test parsing on background
-    default: false
     inputBinding:
       position: 101
       prefix: --stress-background-compile
@@ -3032,7 +2702,6 @@ inputs:
       - boolean
     doc: Stress GC compaction to flush out bugs (implies 
       --force_marking_deque_overflows)
-    default: false
     inputBinding:
       position: 101
       prefix: --stress-compaction
@@ -3042,7 +2711,6 @@ inputs:
       - boolean
     doc: Stress GC compaction by selecting random percent of pages as evacuation
       candidates. Overrides stress_compaction.
-    default: false
     inputBinding:
       position: 101
       prefix: --stress-compaction-random
@@ -3051,7 +2719,6 @@ inputs:
       - 'null'
       - boolean
     doc: start background threads that allocate memory
-    default: false
     inputBinding:
       position: 101
       prefix: --stress-concurrent-allocation
@@ -3060,7 +2727,6 @@ inputs:
       - 'null'
       - boolean
     doc: create additional concurrent optimization jobs but throw away result
-    default: false
     inputBinding:
       position: 101
       prefix: --stress-concurrent-inlining
@@ -3069,7 +2735,6 @@ inputs:
       - 'null'
       - boolean
     doc: create additional concurrent optimization jobs
-    default: false
     inputBinding:
       position: 101
       prefix: --stress-concurrent-inlining-attach-code
@@ -3078,7 +2743,6 @@ inputs:
       - 'null'
       - boolean
     doc: stress code flushing
-    default: false
     inputBinding:
       position: 101
       prefix: --stress-flush-code
@@ -3087,7 +2751,6 @@ inputs:
       - 'null'
       - boolean
     doc: simulate GC/compiler thread race related to https://crbug.com/v8/8520
-    default: false
     inputBinding:
       position: 101
       prefix: --stress-gc-during-compilation
@@ -3096,7 +2759,6 @@ inputs:
       - 'null'
       - boolean
     doc: force incremental marking for small heaps and run it more often
-    default: false
     inputBinding:
       position: 101
       prefix: --stress-incremental-marking
@@ -3105,7 +2767,6 @@ inputs:
       - 'null'
       - boolean
     doc: set high thresholds for inlining to inline as much as possible
-    default: false
     inputBinding:
       position: 101
       prefix: --stress-inline
@@ -3114,7 +2775,6 @@ inputs:
       - 'null'
       - boolean
     doc: collect lazy source positions immediately after lazy compile
-    default: false
     inputBinding:
       position: 101
       prefix: --stress-lazy-source-positions
@@ -3124,7 +2784,6 @@ inputs:
       - int
     doc: force marking at random points between 0 and X (inclusive) percent of 
       the regular marking start limit
-    default: 0
     inputBinding:
       position: 101
       prefix: --stress-marking
@@ -3133,7 +2792,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use per-context worklist for marking
-    default: false
     inputBinding:
       position: 101
       prefix: --stress-per-context-marking-worklist
@@ -3142,7 +2800,6 @@ inputs:
       - 'null'
       - int
     doc: number of stress runs
-    default: 0
     inputBinding:
       position: 101
       prefix: --stress-runs
@@ -3151,7 +2808,6 @@ inputs:
       - 'null'
       - int
     doc: Enables sampling allocation profiler with X as a sample interval
-    default: 0
     inputBinding:
       position: 101
       prefix: --stress-sampling-allocation-profiler
@@ -3161,7 +2817,6 @@ inputs:
       - int
     doc: force scavenge at random points between 0 and X (inclusive) percent of 
       the new space capacity
-    default: 0
     inputBinding:
       position: 101
       prefix: --stress-scavenge
@@ -3170,7 +2825,6 @@ inputs:
       - 'null'
       - boolean
     doc: disables sharing of the read-only heap for testing
-    default: false
     inputBinding:
       position: 101
       prefix: --stress-snapshot
@@ -3179,7 +2833,6 @@ inputs:
       - 'null'
       - boolean
     doc: optimize placement of all spill instructions, not just loop-top phis
-    default: false
     inputBinding:
       position: 101
       prefix: --stress-turbo-late-spilling
@@ -3188,7 +2841,6 @@ inputs:
       - 'null'
       - boolean
     doc: try to validate everything as asm.js
-    default: false
     inputBinding:
       position: 101
       prefix: --stress-validate-asm
@@ -3197,7 +2849,6 @@ inputs:
       - 'null'
       - boolean
     doc: stress test garbage collection of wasm code
-    default: false
     inputBinding:
       position: 101
       prefix: --stress-wasm-code-gc
@@ -3206,7 +2857,6 @@ inputs:
       - 'null'
       - boolean
     doc: use an IC for super property loads
-    default: false
     inputBinding:
       position: 101
       prefix: --super-ic
@@ -3215,7 +2865,6 @@ inputs:
       - 'null'
       - boolean
     doc: don't emit asm.js related messages (for golden file testing)
-    default: false
     inputBinding:
       position: 101
       prefix: --suppress-asm-messages
@@ -3225,7 +2874,6 @@ inputs:
       - int
     doc: the number of Smi integer cases present in the switch statement before 
       using the jump table optimization
-    default: 6
     inputBinding:
       position: 101
       prefix: --switch-table-min-cases
@@ -3236,7 +2884,6 @@ inputs:
     doc: allow the jump table used for switch statements to span a range of 
       integers roughly equal to this number times the number of clauses in the 
       switch
-    default: 3
     inputBinding:
       position: 101
       prefix: --switch-table-spread-threshold
@@ -3245,7 +2892,6 @@ inputs:
       - 'null'
       - string
     doc: The mksnapshot target arch. (mksnapshot only)
-    default: ''
     inputBinding:
       position: 101
       prefix: --target-arch
@@ -3255,7 +2901,6 @@ inputs:
       - boolean
     doc: Instruct mksnapshot that the target is meant to run in the simulator 
       and it can generate simulator-specific instructions. (mksnapshot only)
-    default: false
     inputBinding:
       position: 101
       prefix: --target-is-simulator
@@ -3264,7 +2909,6 @@ inputs:
       - 'null'
       - string
     doc: The mksnapshot target os. (mksnapshot only)
-    default: ''
     inputBinding:
       position: 101
       prefix: --target-os
@@ -3274,7 +2918,6 @@ inputs:
       - boolean
     doc: enable testing the function context size overflow path by making the 
       maximum size smaller
-    default: false
     inputBinding:
       position: 101
       prefix: --test-small-max-function-context-stub-size
@@ -3283,7 +2926,6 @@ inputs:
       - 'null'
       - boolean
     doc: testing_bool_flag
-    default: false
     inputBinding:
       position: 101
       prefix: --testing-bool-flag
@@ -3293,7 +2935,6 @@ inputs:
       - boolean
     doc: test runner turns on this flag to enable a check that the function was 
       prepared for optimization before marking it for optimization
-    default: false
     inputBinding:
       position: 101
       prefix: --testing-d8-test-runner
@@ -3302,7 +2943,6 @@ inputs:
       - 'null'
       - float
     doc: float-flag
-    default: 2.5
     inputBinding:
       position: 101
       prefix: --testing-float-flag
@@ -3311,7 +2951,6 @@ inputs:
       - 'null'
       - int
     doc: testing_int_flag
-    default: 13
     inputBinding:
       position: 101
       prefix: --testing-int-flag
@@ -3320,7 +2959,6 @@ inputs:
       - 'null'
       - string
     doc: testing_maybe_bool_flag
-    default: unset
     inputBinding:
       position: 101
       prefix: --testing-maybe-bool-flag
@@ -3329,7 +2967,6 @@ inputs:
       - 'null'
       - int
     doc: Seed used for threading test randomness
-    default: 42
     inputBinding:
       position: 101
       prefix: --testing-prng-seed
@@ -3338,7 +2975,6 @@ inputs:
       - 'null'
       - string
     doc: string-flag
-    default: Hello, world!
     inputBinding:
       position: 101
       prefix: --testing-string-flag
@@ -3347,7 +2983,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether the .text section of binary can be read
-    default: false
     inputBinding:
       position: 101
       prefix: --text-is-readable
@@ -3357,7 +2992,6 @@ inputs:
       - int
     doc: the number of times we have to go through the interrupt budget before 
       considering this function for optimization
-    default: 3
     inputBinding:
       position: 101
       prefix: --ticks-before-optimization
@@ -3366,7 +3000,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace javascript function calls
-    default: false
     inputBinding:
       position: 101
       prefix: --trace
@@ -3375,7 +3008,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace all use positions
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-all-uses
@@ -3384,7 +3016,6 @@ inputs:
       - 'null'
       - int
     doc: print stack trace after <n> free-list allocations
-    default: -1
     inputBinding:
       position: 101
       prefix: --trace-allocation-stack-interval
@@ -3394,7 +3025,6 @@ inputs:
       - boolean
     doc: Show statistics about the origins of allocations. Combine with 
       --no-inline-new to track allocations from generated code
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-allocations-origins
@@ -3403,7 +3033,6 @@ inputs:
       - 'null'
       - boolean
     doc: verbose logging of asm.js parse failures
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-asm-parser
@@ -3412,7 +3041,6 @@ inputs:
       - 'null'
       - boolean
     doc: print tokens encountered by asm.js scanner
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-asm-scanner
@@ -3421,7 +3049,6 @@ inputs:
       - 'null'
       - boolean
     doc: print asm.js timing info to the console
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-asm-time
@@ -3430,7 +3057,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace baseline compilation
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-baseline
@@ -3439,7 +3065,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace baseline batch compilation
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-baseline-batch-compilation
@@ -3448,7 +3073,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace baseline concurrent compilation
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-baseline-concurrent-compilation
@@ -3457,7 +3081,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace collected block coverage information
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-block-coverage
@@ -3466,7 +3089,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace code dependencies
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-compilation-dependencies
@@ -3475,7 +3097,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace compiler dispatcher activity
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-compiler-dispatcher
@@ -3484,7 +3105,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace concurrent marking
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-concurrent-marking
@@ -3493,7 +3113,6 @@ inputs:
       - 'null'
       - boolean
     doc: track concurrent recompilation
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-concurrent-recompilation
@@ -3502,7 +3121,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace the creation of allocation sites
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-creation-allocation-sites
@@ -3511,7 +3129,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace deoptimization
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-deopt
@@ -3520,7 +3137,6 @@ inputs:
       - 'null'
       - boolean
     doc: extra verbose deoptimization tracing
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-deopt-verbose
@@ -3529,7 +3145,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace native contexts that are expected to be garbage collected
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-detached-contexts
@@ -3539,7 +3154,6 @@ inputs:
       - int
     doc: print duplicate objects in the heap if their size is more than given 
       threshold
-    default: 0
     inputBinding:
       position: 101
       prefix: --trace-duplicate-threshold-kb
@@ -3548,7 +3162,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace elements transitions
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-elements-transitions
@@ -3557,7 +3170,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace liveness of local variable slots
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-environment-liveness
@@ -3566,7 +3178,6 @@ inputs:
       - 'null'
       - boolean
     doc: report evacuation statistics
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-evacuation
@@ -3575,7 +3186,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show statistics about the pages evacuation by the compaction
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-evacuation-candidates
@@ -3584,7 +3194,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace execution of experimental regexp engine
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-experimental-regexp-engine
@@ -3593,7 +3202,6 @@ inputs:
       - 'null'
       - boolean
     doc: include file names in trace-opt/trace-deopt output
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-file-names
@@ -3602,7 +3210,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace bytecode flushing
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-flush-bytecode
@@ -3611,7 +3218,6 @@ inputs:
       - 'null'
       - boolean
     doc: Trace for-in enumerate slow-paths
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-for-in-enumerate
@@ -3620,7 +3226,6 @@ inputs:
       - 'null'
       - boolean
     doc: report fragmentation for old space
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-fragmentation
@@ -3629,7 +3234,6 @@ inputs:
       - 'null'
       - boolean
     doc: report fragmentation for old space (detailed)
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-fragmentation-verbose
@@ -3638,7 +3242,6 @@ inputs:
       - 'null'
       - boolean
     doc: print one trace line following each garbage collection
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-gc
@@ -3648,7 +3251,6 @@ inputs:
       - boolean
     doc: prints details of each freelist before and after each major garbage 
       collection
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-gc-freelists
@@ -3658,7 +3260,6 @@ inputs:
       - boolean
     doc: prints details of freelists of each page before and after each major 
       garbage collection
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-gc-freelists-verbose
@@ -3667,7 +3268,6 @@ inputs:
       - 'null'
       - boolean
     doc: print layout of pages in heap before and after gc
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-gc-heap-layout
@@ -3676,7 +3276,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not print trace line before and after minor-gc
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-gc-heap-layout-ignore-minor-gc
@@ -3685,7 +3284,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not print trace line after scavenger collection
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-gc-ignore-scavenger
@@ -3695,7 +3293,6 @@ inputs:
       - boolean
     doc: print one detailed trace line in name=value format after each garbage 
       collection
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-gc-nvp
@@ -3704,7 +3301,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace object counts and memory usage
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-gc-object-stats
@@ -3713,7 +3309,6 @@ inputs:
       - 'null'
       - boolean
     doc: print more details following each garbage collection
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-gc-verbose
@@ -3722,7 +3317,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace map generalization
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-generalization
@@ -3731,7 +3325,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace the heap broker (reports on missing data only)
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-heap-broker
@@ -3740,7 +3333,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace the heap broker memory (refs analysis and zone numbers)
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-heap-broker-memory
@@ -3749,7 +3341,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace the heap broker verbosely (all reports)
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-heap-broker-verbose
@@ -3758,7 +3349,6 @@ inputs:
       - 'null'
       - boolean
     doc: print one trace line following each idle notification
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-idle-notification
@@ -3767,7 +3357,6 @@ inputs:
       - 'null'
       - boolean
     doc: prints the heap state used by the idle notification
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-idle-notification-verbose
@@ -3776,7 +3365,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace the codegen of ignition interpreter bytecode handlers
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-ignition-codegen
@@ -3786,7 +3374,6 @@ inputs:
       - string
     doc: write the bytecode handler dispatch table to the specified file (d8 
       only) (requires building with v8_enable_ignition_dispatch_counting)
-    default: ''
     inputBinding:
       position: 101
       prefix: --trace-ignition-dispatches-output-file
@@ -3795,7 +3382,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace progress of the incremental marking
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-incremental-marking
@@ -3804,7 +3390,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace maglev register allocation
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-maglev-regalloc
@@ -3813,7 +3398,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace object migration
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-migration
@@ -3822,7 +3406,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace parallel marking for the young generation
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-minor-mc-parallel-marking
@@ -3831,7 +3414,6 @@ inputs:
       - 'null'
       - boolean
     doc: print mutator utilization, allocation speed, gc speed
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-mutator-utilization
@@ -3840,7 +3422,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace optimized compilation
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-opt
@@ -3849,7 +3430,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace optimized compilation statistics
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-opt-stats
@@ -3858,7 +3438,6 @@ inputs:
       - 'null'
       - boolean
     doc: extra verbose optimized compilation tracing
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-opt-verbose
@@ -3867,7 +3446,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace on-stack replacement
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-osr
@@ -3876,7 +3454,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace parallel scavenge
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-parallel-scavenge
@@ -3885,7 +3462,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace calls to Heap::IsAllocationPending that return true
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-pending-allocations
@@ -3894,7 +3470,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace pretenuring decisions of HAllocate instructions
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-pretenuring
@@ -3903,7 +3478,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace allocation site pretenuring statistics
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-pretenuring-statistics
@@ -3912,7 +3486,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace protector cell invalidations
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-protector-invalidation
@@ -3921,7 +3494,6 @@ inputs:
       - 'null'
       - boolean
     doc: Trace updates to prototype user tracking
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-prototype-users
@@ -3930,7 +3502,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace RAIL mode
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-rail
@@ -3939,7 +3510,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace regexp macro assembler calls.
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-regexp-assembler
@@ -3948,7 +3518,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace regexp bytecode execution
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-regexp-bytecodes
@@ -3957,7 +3526,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace the regexp graph
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-regexp-graph
@@ -3966,7 +3534,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace regexp parsing
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-regexp-parser
@@ -3975,7 +3542,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace regexp bytecode peephole optimization
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-regexp-peephole-optimization
@@ -3984,7 +3550,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace regexp tiering up execution
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-regexp-tier-up
@@ -3993,7 +3558,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace representation types
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-representation
@@ -4002,7 +3566,6 @@ inputs:
       - 'null'
       - boolean
     doc: print code serializer trace
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-serializer
@@ -4011,7 +3574,6 @@ inputs:
       - 'null'
       - boolean
     doc: print debug messages for side-effect-free debug-evaluate for testing
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-side-effect-free-debug-evaluate
@@ -4020,7 +3582,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace store elimination
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-store-elimination
@@ -4029,7 +3590,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace stress marking progress
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-stress-marking
@@ -4038,7 +3598,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace stress scavenge progress
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-stress-scavenge
@@ -4047,7 +3606,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace temporal code
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-temporal
@@ -4056,7 +3614,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace the tracking of allocation sites
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-track-allocation-sites
@@ -4065,7 +3622,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace generated TurboFan IR
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-turbo
@@ -4074,7 +3630,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace TurboFan's register allocator
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-turbo-alloc
@@ -4083,7 +3638,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace TurboFan's control equivalence
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-turbo-ceq
@@ -4092,7 +3646,6 @@ inputs:
       - 'null'
       - string
     doc: trace turbo cfg graph (for C1 visualizer) to a given file name
-    default: ''
     inputBinding:
       position: 101
       prefix: --trace-turbo-cfg-file
@@ -4101,7 +3654,6 @@ inputs:
       - 'null'
       - string
     doc: filter for tracing turbofan compilation
-    default: '*'
     inputBinding:
       position: 101
       prefix: --trace-turbo-filter
@@ -4110,7 +3662,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace generated TurboFan graphs
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-turbo-graph
@@ -4119,7 +3670,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace TurboFan inlining
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-turbo-inlining
@@ -4128,7 +3678,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace TurboFan's jump threading
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-turbo-jt
@@ -4137,7 +3686,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace TurboFan load elimination
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-turbo-load-elimination
@@ -4146,7 +3694,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace TurboFan's loop optimizations
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-turbo-loop
@@ -4155,7 +3702,6 @@ inputs:
       - 'null'
       - string
     doc: directory to dump generated TurboFan IR to
-    default: ''
     inputBinding:
       position: 101
       prefix: --trace-turbo-path
@@ -4164,7 +3710,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace TurboFan's various reducers
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-turbo-reduction
@@ -4173,7 +3718,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace TurboFan IR with schedule
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-turbo-scheduled
@@ -4182,7 +3726,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace TurboFan's scheduler
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-turbo-scheduler
@@ -4192,7 +3735,6 @@ inputs:
       - boolean
     doc: trace stack load/store counters for optimized code in run-time (x64 
       only)
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-turbo-stack-accesses
@@ -4201,7 +3743,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace TurboFan's graph trimmer
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-turbo-trimming
@@ -4210,7 +3751,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace TurboFan's types
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-turbo-types
@@ -4219,7 +3759,6 @@ inputs:
       - 'null'
       - boolean
     doc: Trace the unmapping
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-unmapper
@@ -4228,7 +3767,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace code stubs verification
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-verify-csa
@@ -4237,7 +3775,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace wasm function calls
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-wasm
@@ -4246,7 +3783,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace garbage collection of wasm code
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-wasm-code-gc
@@ -4255,7 +3791,6 @@ inputs:
       - 'null'
       - boolean
     doc: print how long it took to compile each wasm function
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-wasm-compilation-times
@@ -4264,7 +3799,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace wasm inlining
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-wasm-inlining
@@ -4273,7 +3807,6 @@ inputs:
       - 'null'
       - boolean
     doc: print all memory updates performed in wasm code
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-wasm-memory
@@ -4282,7 +3815,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace wasm speculative inlining
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-wasm-speculative-inlining
@@ -4291,7 +3823,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace web snapshot deserialization
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-web-snapshot
@@ -4300,7 +3831,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace zone memory usage
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-zone-stats
@@ -4309,7 +3839,6 @@ inputs:
       - 'null'
       - boolean
     doc: trace per-type zone memory usage
-    default: false
     inputBinding:
       position: 101
       prefix: --trace-zone-type-stats
@@ -4318,7 +3847,6 @@ inputs:
       - 'null'
       - boolean
     doc: track native contexts that are expected to be garbage collected
-    default: false
     inputBinding:
       position: 101
       prefix: --track-detached-contexts
@@ -4327,7 +3855,6 @@ inputs:
       - 'null'
       - boolean
     doc: track field types
-    default: false
     inputBinding:
       position: 101
       prefix: --track-field-types
@@ -4336,7 +3863,6 @@ inputs:
       - 'null'
       - boolean
     doc: track object counts and memory usage
-    default: false
     inputBinding:
       position: 101
       prefix: --track-gc-object-stats
@@ -4345,7 +3871,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable support for tracking retaining path
-    default: false
     inputBinding:
       position: 101
       prefix: --track-retaining-path
@@ -4354,7 +3879,6 @@ inputs:
       - 'null'
       - boolean
     doc: TurboFan allocation folding
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-allocation-folding
@@ -4363,7 +3887,6 @@ inputs:
       - 'null'
       - boolean
     doc: optimize control flow in TurboFan
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-cf-optimization
@@ -4372,7 +3895,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable experimental feedback collection in generic lowering.
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-collect-feedback-in-generic-lowering
@@ -4381,7 +3903,6 @@ inputs:
       - 'null'
       - boolean
     doc: compress translation arrays (experimental)
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-compress-translation-arrays
@@ -4390,7 +3911,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable escape analysis
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-escape
@@ -4399,7 +3919,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable fast API calls from TurboFan
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-fast-api-calls
@@ -4408,7 +3927,6 @@ inputs:
       - 'null'
       - string
     doc: optimization filter for TurboFan compiler
-    default: '*'
     inputBinding:
       position: 101
       prefix: --turbo-filter
@@ -4417,7 +3935,6 @@ inputs:
       - 'null'
       - boolean
     doc: always use the mid-tier register allocator (for testing)
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-force-mid-tier-regalloc
@@ -4426,7 +3943,6 @@ inputs:
       - 'null'
       - boolean
     doc: inline array builtins in TurboFan code
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-inline-array-builtins
@@ -4435,7 +3951,6 @@ inputs:
       - 'null'
       - boolean
     doc: inline JS->Wasm calls
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-inline-js-wasm-calls
@@ -4444,7 +3959,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable inlining in TurboFan
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-inlining
@@ -4453,7 +3967,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable instruction scheduling in TurboFan
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-instruction-scheduling
@@ -4462,7 +3975,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable jump threading in TurboFan
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-jt
@@ -4471,7 +3983,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable load elimination in TurboFan
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-load-elimination
@@ -4480,7 +3991,6 @@ inputs:
       - 'null'
       - boolean
     doc: TurboFan loop peeling
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-loop-peeling
@@ -4489,7 +3999,6 @@ inputs:
       - 'null'
       - boolean
     doc: TurboFan loop rotation
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-loop-rotation
@@ -4498,7 +4007,6 @@ inputs:
       - 'null'
       - boolean
     doc: TurboFan loop variable optimization
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-loop-variable
@@ -4507,7 +4015,6 @@ inputs:
       - 'null'
       - boolean
     doc: optimize gap moves in TurboFan
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-move-optimization
@@ -4516,7 +4023,6 @@ inputs:
       - 'null'
       - boolean
     doc: optimize Function.prototype.apply
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-optimize-apply
@@ -4525,7 +4031,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable basic block profiling in TurboFan
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-profiling
@@ -4535,7 +4040,6 @@ inputs:
       - boolean
     doc: emit data about basic block usage in builtins to v8.log (requires that 
       V8 was built with v8_enable_builtins_profiling=true)
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-profiling-log-builtins
@@ -4545,7 +4049,6 @@ inputs:
       - string
     doc: Path of the input file containing basic block counters for builtins. 
       (mksnapshot only)
-    default: ''
     inputBinding:
       position: 101
       prefix: --turbo-profiling-log-file
@@ -4555,7 +4058,6 @@ inputs:
       - boolean
     doc: enable basic block profiling in TurboFan, and include each function's 
       schedule and disassembly in the output
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-profiling-verbose
@@ -4564,7 +4066,6 @@ inputs:
       - 'null'
       - boolean
     doc: rewrite far to near jumps (ia32,x64)
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-rewrite-far-jumps
@@ -4573,7 +4074,6 @@ inputs:
       - 'null'
       - boolean
     doc: use stack pointer-relative access to frame wherever possible
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-sp-frame-access
@@ -4582,7 +4082,6 @@ inputs:
       - 'null'
       - boolean
     doc: split nodes during scheduling in TurboFan
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-splitting
@@ -4591,7 +4090,6 @@ inputs:
       - 'null'
       - boolean
     doc: print TurboFan statistics
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-stats
@@ -4600,7 +4098,6 @@ inputs:
       - 'null'
       - boolean
     doc: print TurboFan statistics in machine-readable format
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-stats-nvp
@@ -4609,7 +4106,6 @@ inputs:
       - 'null'
       - boolean
     doc: print TurboFan statistics of wasm compilations
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-stats-wasm
@@ -4618,7 +4114,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable store-store elimination in TurboFan
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-store-elimination
@@ -4627,7 +4122,6 @@ inputs:
       - 'null'
       - boolean
     doc: randomly schedule instructions to stress dependency tracking
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-stress-instruction-scheduling
@@ -4636,7 +4130,6 @@ inputs:
       - 'null'
       - boolean
     doc: fall back to the mid-tier register allocator for huge functions
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-use-mid-tier-regalloc-for-huge-functions
@@ -4645,7 +4138,6 @@ inputs:
       - 'null'
       - boolean
     doc: verify TurboFan graphs at each phase
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-verify
@@ -4654,7 +4146,6 @@ inputs:
       - 'null'
       - boolean
     doc: verify register allocation in TurboFan
-    default: false
     inputBinding:
       position: 101
       prefix: --turbo-verify-allocation
@@ -4663,7 +4154,6 @@ inputs:
       - 'null'
       - string
     doc: verify TurboFan machine graph before instruction selection
-    default: ''
     inputBinding:
       position: 101
       prefix: --turbo-verify-machine-graph
@@ -4672,7 +4162,6 @@ inputs:
       - 'null'
       - boolean
     doc: automatically unbox arrays of doubles
-    default: false
     inputBinding:
       position: 101
       prefix: --unbox-double-arrays
@@ -4681,7 +4170,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use external strings for source code
-    default: false
     inputBinding:
       position: 101
       prefix: --use-external-strings
@@ -4690,7 +4178,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force use of full version of RecordWrite builtin.
-    default: false
     inputBinding:
       position: 101
       prefix: --use-full-record-write-builtin
@@ -4699,7 +4186,6 @@ inputs:
       - 'null'
       - boolean
     doc: use inline caching
-    default: false
     inputBinding:
       position: 101
       prefix: --use-ic
@@ -4708,7 +4194,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use idle notification to reduce memory footprint.
-    default: false
     inputBinding:
       position: 101
       prefix: --use-idle-notification
@@ -4717,7 +4202,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use separate space for maps.
-    default: false
     inputBinding:
       position: 101
       prefix: --use-map-space
@@ -4727,7 +4211,6 @@ inputs:
       - boolean
     doc: Use a progress bar to scan large objects in increments when incremental
       marking is active.
-    default: false
     inputBinding:
       position: 101
       prefix: --use-marking-progress-bar
@@ -4736,7 +4219,6 @@ inputs:
       - 'null'
       - boolean
     doc: use on-stack replacement
-    default: false
     inputBinding:
       position: 101
       prefix: --use-osr
@@ -4745,7 +4227,6 @@ inputs:
       - 'null'
       - boolean
     doc: enforce strict mode
-    default: false
     inputBinding:
       position: 101
       prefix: --use-strict
@@ -4754,7 +4235,6 @@ inputs:
       - 'null'
       - int
     doc: override OS page size (in KBytes)
-    default: 0
     inputBinding:
       position: 101
       prefix: --v8-os-page-size
@@ -4763,7 +4243,6 @@ inputs:
       - 'null'
       - boolean
     doc: validate asm.js modules before compiling
-    default: false
     inputBinding:
       position: 101
       prefix: --validate-asm
@@ -4772,7 +4251,6 @@ inputs:
       - 'null'
       - boolean
     doc: verify graph generated by simplified lowering
-    default: false
     inputBinding:
       position: 101
       prefix: --verify-simplified-lowering
@@ -4782,7 +4260,6 @@ inputs:
       - boolean
     doc: Verify snapshot checksums when deserializing snapshots. Enable checksum
       creation and verification for code caches.
-    default: false
     inputBinding:
       position: 101
       prefix: --verify-snapshot-checksum
@@ -4792,7 +4269,6 @@ inputs:
       - boolean
     doc: Used when v8_enable_vtunejit is enabled, load wasm source map and 
       provide annotate support (experimental).
-    default: false
     inputBinding:
       position: 101
       prefix: --vtune-prof-annotate-wasm
@@ -4801,7 +4277,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable actual asynchronous compilation for WebAssembly.compile
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-async-compilation
@@ -4810,7 +4285,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable bounds checks (disable for performance testing only)
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-bounds-checks
@@ -4819,7 +4293,6 @@ inputs:
       - 'null'
       - int
     doc: the amount of wasm top tier code that triggers the next caching event
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --wasm-caching-threshold
@@ -4828,7 +4301,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable garbage collection of wasm code
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-code-gc
@@ -4838,7 +4310,6 @@ inputs:
       - int
     doc: bitmask of functions to compile for debugging, only applies if the tier
       is Liftoff
-    default: 0
     inputBinding:
       position: 101
       prefix: --wasm-debug-mask-for-testing
@@ -4847,7 +4318,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable dynamic tier up to the optimizing compiler
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-dynamic-tiering
@@ -4856,7 +4326,6 @@ inputs:
       - 'null'
       - boolean
     doc: enforce explicit bounds check even if the trap handler is available
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-enforce-bounds-checks
@@ -4865,7 +4334,6 @@ inputs:
       - 'null'
       - boolean
     doc: generate a test case when running a wasm fuzzer
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-fuzzer-gen-test
@@ -4874,7 +4342,6 @@ inputs:
       - 'null'
       - boolean
     doc: experimental WasmGC-JS interop
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-gc-js-interop
@@ -4884,7 +4351,6 @@ inputs:
       - boolean
     doc: allow use of the generic js-to-wasm wrapper instead of per-signature 
       wrappers
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-generic-wrapper
@@ -4893,7 +4359,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable inlining of wasm functions into wasm functions (experimental)
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-inlining
@@ -4902,7 +4367,6 @@ inputs:
       - 'null'
       - string
     doc: maximum allowed size to inline a function is given by {n / caller size}
-    default: 75000
     inputBinding:
       position: 101
       prefix: --wasm-inlining-budget-factor
@@ -4911,7 +4375,6 @@ inputs:
       - 'null'
       - string
     doc: maximum size of a function that can be inlined, in TF nodes
-    default: 1000
     inputBinding:
       position: 101
       prefix: --wasm-inlining-max-size
@@ -4920,7 +4383,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable lazy compilation for all wasm modules
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-lazy-compilation
@@ -4929,7 +4391,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable lazy validation for lazily compiled wasm functions
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-lazy-validation
@@ -4938,7 +4399,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable loop peeling for wasm functions
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-loop-peeling
@@ -4947,7 +4407,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable loop unrolling for wasm functions
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-loop-unrolling
@@ -4956,7 +4415,6 @@ inputs:
       - 'null'
       - boolean
     doc: intrinsify some Math imports into wasm
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-math-intrinsics
@@ -4965,7 +4423,6 @@ inputs:
       - 'null'
       - string
     doc: maximum committed code space for wasm (in MB)
-    default: 4095
     inputBinding:
       position: 101
       prefix: --wasm-max-code-space
@@ -4974,7 +4431,6 @@ inputs:
       - 'null'
       - int
     doc: maximum size of the initial wasm code space reservation (in MB)
-    default: 0
     inputBinding:
       position: 101
       prefix: --wasm-max-initial-code-space-reservation
@@ -4983,7 +4439,6 @@ inputs:
       - 'null'
       - string
     doc: maximum number of 64KiB memory pages per wasm memory
-    default: 65536
     inputBinding:
       position: 101
       prefix: --wasm-max-mem-pages
@@ -4992,7 +4447,6 @@ inputs:
       - 'null'
       - string
     doc: maximum table size of a wasm instance
-    default: 10000000
     inputBinding:
       position: 101
       prefix: --wasm-max-table-size
@@ -5002,7 +4456,6 @@ inputs:
       - boolean
     doc: protect wasm code memory with PKU if available (takes precedence over 
       --wasm-write-protect-code-memory)
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-memory-protection-keys
@@ -5011,7 +4464,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of parallel compilation tasks for wasm
-    default: 128
     inputBinding:
       position: 101
       prefix: --wasm-num-compilation-tasks
@@ -5020,7 +4472,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable wasm optimization
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-opt
@@ -5029,7 +4480,6 @@ inputs:
       - 'null'
       - boolean
     doc: allow wasm SIMD SSSE3 codegen
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-simd-ssse3-codegen
@@ -5038,7 +4488,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable speculative inlining of call_ref targets (experimental)
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-speculative-inlining
@@ -5047,7 +4496,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable stack checks (disable for performance testing only)
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-stack-checks
@@ -5056,7 +4504,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable staged wasm features
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-staging
@@ -5065,7 +4512,6 @@ inputs:
       - 'null'
       - boolean
     doc: use streaming compilation instead of async compilation for tests
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-test-streaming
@@ -5074,7 +4520,6 @@ inputs:
       - 'null'
       - int
     doc: bitmask of functions to compile with TurboFan instead of Liftoff
-    default: 0
     inputBinding:
       position: 101
       prefix: --wasm-tier-mask-for-testing
@@ -5084,7 +4529,6 @@ inputs:
       - boolean
     doc: enable tier up to the optimizing compiler (requires --liftoff to have 
       an effect)
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-tier-up
@@ -5093,7 +4537,6 @@ inputs:
       - 'null'
       - int
     doc: only tier-up function with this index
-    default: -1
     inputBinding:
       position: 101
       prefix: --wasm-tier-up-filter
@@ -5102,7 +4545,6 @@ inputs:
       - 'null'
       - int
     doc: budget for dynamic tiering (rough approximation of bytes executed)
-    default: 1800000
     inputBinding:
       position: 101
       prefix: --wasm-tiering-budget
@@ -5111,7 +4553,6 @@ inputs:
       - 'null'
       - boolean
     doc: apply isorecursive canonicalization on wasm types
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-type-canonicalization
@@ -5120,7 +4561,6 @@ inputs:
       - 'null'
       - boolean
     doc: write protect code memory on the wasm native heap with mprotect
-    default: false
     inputBinding:
       position: 101
       prefix: --wasm-write-protect-code-memory
@@ -5129,7 +4569,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable unwinding info for Windows/x64
-    default: false
     inputBinding:
       position: 101
       prefix: --win64-unwinding-info
@@ -5138,7 +4577,6 @@ inputs:
       - 'null'
       - boolean
     doc: flip permissions to rwx to write page instead of rw
-    default: false
     inputBinding:
       position: 101
       prefix: --write-code-using-rwx
@@ -5147,7 +4585,6 @@ inputs:
       - 'null'
       - boolean
     doc: write protect code memory
-    default: false
     inputBinding:
       position: 101
       prefix: --write-protect-code-memory
@@ -5156,7 +4593,6 @@ inputs:
       - 'null'
       - string
     doc: report a tick only when allocated zone memory changes by this amount
-    default: 1048576
     inputBinding:
       position: 101
       prefix: --zone-stats-tolerance

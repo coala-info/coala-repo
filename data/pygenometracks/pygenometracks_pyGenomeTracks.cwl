@@ -1,7 +1,7 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pygenometracks_pyGenomeTracks
-label: pygenometracks_pyGenomeTracks
+baseCommand: pyGenomeTracks
+label: pyGenomeTracks
 doc: "Plots genomic tracks on specified region(s). Citations : Ramirez et al. High-resolution
   TADs reveal DNA sequences underlying genome organization in flies. Nature Communications
   (2018) doi:10.1038/s41467-017-02525-w Lopez-Delisle et al. pyGenomeTracks: reproducible
@@ -79,6 +79,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --title
+  - id: out_file_name
+    type: string
+    doc: File name to save the image, file prefix in case multiple images are
+      stored (--outFileName / -out).
+    inputBinding:
+      position: 101
+      prefix: --outFileName
   - id: track_label_fraction
     type:
       - 'null'
@@ -113,14 +120,12 @@ inputs:
       position: 101
       prefix: --width
 outputs:
-  - id: output_file_name
-    type:
-      - 'null'
-      - File
-    doc: File name to save the image, file prefix in case multiple images are 
-      stored
+  - id: output_plot
+    type: File
+    doc: Image written to out_file_name (single file; use a workflow step for
+      multiple BED regions if needed).
     outputBinding:
-      glob: $(inputs.output_file_name)
+      glob: $(inputs.out_file_name)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pygenometracks:3.9--pyhdfd78af_0

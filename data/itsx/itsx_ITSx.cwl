@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: Adds a date and time stamp to the output directory, off (F) by default
-    default: false
     inputBinding:
       position: 101
       prefix: --date
@@ -20,7 +19,6 @@ inputs:
       - boolean
     doc: Allows profiles to be in the wrong order on extracted sequences, off 
       (F) by default
-    default: false
     inputBinding:
       position: 101
       prefix: --allow_reorder
@@ -31,7 +29,6 @@ inputs:
     doc: Allow inclusion of sequences that only find a single domain, given that
       they meet the given E-value and score thresholds, on with parameters 
       1e-9,0 by default
-    default: 1e-9,0
     inputBinding:
       position: 101
       prefix: --allow_single_domain
@@ -42,7 +39,6 @@ inputs:
     doc: Saves an additional number of bases before and after each extracted 
       region. If set to 'HMM' all bases matching the corresponding HMM will be 
       output
-    default: 0
     inputBinding:
       position: 101
       prefix: --anchor
@@ -60,7 +56,6 @@ inputs:
       - boolean
     doc: Checks both DNA strands against the database, creating reverse 
       complements, on (T) by default
-    default: true
     inputBinding:
       position: 101
       prefix: --complement
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: the number of CPU threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpu
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: Domain E-value cutoff for a sequence to be included in the output
-    default: '1e-5'
     inputBinding:
       position: 101
       prefix: -E
@@ -87,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Domain score cutoff for a sequence to be included in the output
-    default: 0
     inputBinding:
       position: 101
       prefix: -S
@@ -97,7 +89,6 @@ inputs:
       - float
     doc: Sets the scale of the graph output, if value is zero, a percentage view
       is shown
-    default: 0
     inputBinding:
       position: 101
       prefix: --graph_scale
@@ -121,7 +112,6 @@ inputs:
       - int
     doc: The minimal number of domains that must match a sequence before it is 
       included
-    default: 2
     inputBinding:
       position: 101
       prefix: -N
@@ -131,7 +121,6 @@ inputs:
       - int
     doc: Minimum length the ITS regions must be to be outputted in the 
       concatenated file (see above)
-    default: 0
     inputBinding:
       position: 101
       prefix: --minlen
@@ -141,7 +130,6 @@ inputs:
       - boolean
     doc: Multi-thread the HMMER-search, on (T) if number of CPUs (--cpu option >
       1), else off (F) by default
-    default: if number of CPUs (--cpu option > 1)
     inputBinding:
       position: 101
       prefix: --multi_thread
@@ -151,7 +139,6 @@ inputs:
       - boolean
     doc: Saves a FASTA-file with concatenated ITS sequences (with 5.8S removed),
       off (F) by default
-    default: false
     inputBinding:
       position: 101
       prefix: --concat
@@ -160,7 +147,6 @@ inputs:
       - 'null'
       - boolean
     doc: Saves a tab-separated list of all results, off (F) by default
-    default: false
     inputBinding:
       position: 101
       prefix: --detailed_results
@@ -169,7 +155,6 @@ inputs:
       - 'null'
       - boolean
     doc: FASTA-format output of extracted ITS sequences, on (T) by default
-    default: true
     inputBinding:
       position: 101
       prefix: --fasta
@@ -178,7 +163,6 @@ inputs:
       - 'null'
       - boolean
     doc: "'Graphical' output, on (T) by default"
-    default: true
     inputBinding:
       position: 101
       prefix: --graphical
@@ -187,7 +171,6 @@ inputs:
       - 'null'
       - boolean
     doc: Saves a list of non-found entries, on (T) by default
-    default: true
     inputBinding:
       position: 101
       prefix: --not_found
@@ -196,7 +179,6 @@ inputs:
       - 'null'
       - boolean
     doc: If true, output is limited to full-length regions, off (F) by default
-    default: false
     inputBinding:
       position: 101
       prefix: --only_full
@@ -206,7 +188,6 @@ inputs:
       - boolean
     doc: Table format output containing the positions ITS sequences were found 
       in, on (T) by default
-    default: true
     inputBinding:
       position: 101
       prefix: --positions
@@ -215,7 +196,6 @@ inputs:
       - 'null'
       - boolean
     doc: Summary of results output, on (T) by default
-    default: true
     inputBinding:
       position: 101
       prefix: --summary
@@ -225,7 +205,6 @@ inputs:
       - boolean
     doc: Table format output of sequences containing probable ITS sequences, off
       (F) by default
-    default: false
     inputBinding:
       position: 101
       prefix: --table
@@ -235,7 +214,6 @@ inputs:
       - int
     doc: Saves additional FASTA-files for full and partial ITS sequences longer 
       than the specified cutoff, default = 0 (off)
-    default: 0
     inputBinding:
       position: 101
       prefix: --partial
@@ -245,7 +223,6 @@ inputs:
       - boolean
     doc: Preserve sequence headers in input file instead of printing out ITSx 
       headers, off (F) by default
-    default: false
     inputBinding:
       position: 101
       prefix: --preserve
@@ -255,7 +232,6 @@ inputs:
       - Directory
     doc: A path to a directory of HMM-profile collections representing ITS 
       conserved regions, default is in the same directory as ITSx itself
-    default: in the same directory as ITSx itself
     inputBinding:
       position: 101
       prefix: -p
@@ -265,7 +241,6 @@ inputs:
       - string
     doc: Profile set to use for the search, see the User's Guide 
       (comma-separated), default is all
-    default: all
     inputBinding:
       position: 101
       prefix: -t
@@ -276,7 +251,6 @@ inputs:
     doc: Requires the complete anchor to found in order to be included in the 
       output sequences (see --anchor above). Cannot be used together with the 
       --anchor option
-    default: 0
     inputBinding:
       position: 101
       prefix: --require_anchor
@@ -285,7 +259,6 @@ inputs:
       - 'null'
       - boolean
     doc: Re-creates the HMM-database before ITSx is run, off (F) by default
-    default: false
     inputBinding:
       position: 101
       prefix: --reset
@@ -295,7 +268,6 @@ inputs:
       - boolean
     doc: Saves all raw data for searches etc. instead of removing it on finish, 
       off (F) by default
-    default: false
     inputBinding:
       position: 101
       prefix: --save_raw
@@ -304,7 +276,6 @@ inputs:
       - 'null'
       - string
     doc: A comma separated list of regions to output separate FASTA files for
-    default: ITS1,ITS2
     inputBinding:
       position: 101
       prefix: --save_regions
@@ -324,7 +295,6 @@ inputs:
       - int
     doc: The score cutoff used in the HMMER search, low numbers may slow down 
       the process, cannot be used with the --search_eval option
-    default: 0
     inputBinding:
       position: 101
       prefix: --search_score
@@ -334,7 +304,6 @@ inputs:
       - string
     doc: Selects what will be of highest priority when determining the origin of
       the sequence
-    default: score
     inputBinding:
       position: 101
       prefix: --selection_priority
@@ -343,7 +312,6 @@ inputs:
       - 'null'
       - boolean
     doc: Supresses printing progress info to stderr, off (F) by default
-    default: false
     inputBinding:
       position: 101
       prefix: --silent
@@ -361,7 +329,6 @@ inputs:
       - boolean
     doc: Truncates the FASTA output to only contain the actual ITS sequences 
       found, on (T) by default
-    default: true
     inputBinding:
       position: 101
       prefix: --truncate
@@ -370,7 +337,6 @@ inputs:
       - 'null'
       - boolean
     doc: Selects whether to use HMMER's heuristic filtering, off (F) by default
-    default: false
     inputBinding:
       position: 101
       prefix: --heuristics
@@ -380,7 +346,6 @@ inputs:
       - boolean
     doc: Selects whether to use nhmmer instead of hmmsearch for HMMER searches, 
       off (F) by default
-    default: false
     inputBinding:
       position: 101
       prefix: --nhmmer
@@ -390,7 +355,6 @@ inputs:
       - boolean
     doc: Use input from standard input instead of an input file, off (F) by 
       default
-    default: false
     inputBinding:
       position: 101
       prefix: --stdin

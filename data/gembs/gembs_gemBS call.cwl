@@ -58,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for calling process
-    default: 1
     inputBinding:
       position: 101
       prefix: --call-threads
@@ -156,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: Bases to trim from left of read pair
-    default: 5
     inputBinding:
       position: 101
       prefix: --left-trim
@@ -230,7 +228,6 @@ inputs:
       - 'null'
       - int
     doc: Bases to trim from right of read pair
-    default: 0
     inputBinding:
       position: 101
       prefix: --right-trim
@@ -247,7 +244,6 @@ inputs:
       - 'null'
       - string
     doc: Sample species name.
-    default: None
     inputBinding:
       position: 101
       prefix: --species
@@ -256,7 +252,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

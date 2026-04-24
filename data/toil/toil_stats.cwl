@@ -20,7 +20,6 @@ inputs:
       - string
     doc: "Comma separated list of any of the following: ['time', 'clock', 'wait',
       'memory', 'disk']."
-    default: time,clock,wait,memory,disk
     inputBinding:
       position: 102
       prefix: --categories
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable or disable colored logging.
-    default: true
     inputBinding:
       position: 102
       prefix: --logColors
@@ -78,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: Set the log level.
-    default: INFO
     inputBinding:
       position: 102
       prefix: --logLevel
@@ -103,7 +100,6 @@ inputs:
       - 'null'
       - boolean
     doc: if not raw, prettify the numbers to be human readable.
-    default: false
     inputBinding:
       position: 102
       prefix: --pretty
@@ -112,7 +108,6 @@ inputs:
       - 'null'
       - boolean
     doc: Return raw json data.
-    default: false
     inputBinding:
       position: 102
       prefix: --raw
@@ -122,7 +117,6 @@ inputs:
       - boolean
     doc: Turn on rotating logging, which prevents log files from getting too 
       big.
-    default: false
     inputBinding:
       position: 102
       prefix: --rotatingLogging
@@ -131,7 +125,6 @@ inputs:
       - 'null'
       - string
     doc: 'Sort direction. Options: ascending, decending'
-    default: decending
     inputBinding:
       position: 102
       prefix: --sort
@@ -141,7 +134,6 @@ inputs:
       - string
     doc: 'How to sort job categories. Options: time, clock, wait, memory, disk, alpha,
       count'
-    default: time
     inputBinding:
       position: 102
       prefix: --sortCategory
@@ -150,7 +142,6 @@ inputs:
       - 'null'
       - string
     doc: 'How to sort job fields. Options: min, med, ave, max, total'
-    default: med
     inputBinding:
       position: 102
       prefix: --sortField
@@ -160,7 +151,6 @@ inputs:
       - Directory
     doc: Path to where temporary directory containing all temp files are 
       created.
-    default: /tmp
     inputBinding:
       position: 102
       prefix: --tempDirRoot

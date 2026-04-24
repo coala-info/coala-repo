@@ -13,7 +13,6 @@ inputs:
     doc: Defines which feature types in the input GFF will be processed to AA sequences.
       Defaults to 'CDS'. You can provide multiple types (space-separated), e.g. -ft
       CDS gene exon
-    default: CDS
     inputBinding:
       position: 101
       prefix: --feature-type
@@ -53,7 +52,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print out more information during the process.
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

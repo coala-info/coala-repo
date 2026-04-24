@@ -107,7 +107,6 @@ inputs:
       - type: array
         items: float
     doc: percentile of cut-off
-    default: 90
     inputBinding:
       position: 101
       prefix: --percentile
@@ -130,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -139,7 +137,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory of work, store temp files
-    default: ./vulcan_work
     inputBinding:
       position: 101
       prefix: --work_dir

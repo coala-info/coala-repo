@@ -64,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: Logging verbosity level
-    default: INFO
     inputBinding:
       position: 101
       prefix: --verbosity

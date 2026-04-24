@@ -7,7 +7,6 @@ inputs:
   - id: name
     type: string
     doc: Name of the workflow to uninstall.
-    default: None
     inputBinding:
       position: 1
   - id: force

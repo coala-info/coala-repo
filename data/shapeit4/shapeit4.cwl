@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: MCMC strategy to be used
-    default: 5b,1p,1b,1p,1b,1p,5m
     inputBinding:
       position: 101
       prefix: --mcmc-iterations
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Number of neighbors to store in the PBWT
-    default: 4
     inputBinding:
       position: 101
       prefix: --pbwt-depth
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --thread
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - float
     doc: Size of the window in Mb in which conditioning haplotypes are selected
-    default: 2.5
     inputBinding:
       position: 101
       prefix: --window

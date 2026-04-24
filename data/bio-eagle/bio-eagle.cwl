@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: maximum base pair position to analyze
-    default: 1000000000
     inputBinding:
       position: 101
       prefix: --bpEnd
@@ -59,7 +58,6 @@ inputs:
       - int
     doc: (ref-mode only) flanking region to use during phasing but discard in 
       output
-    default: 0
     inputBinding:
       position: 101
       prefix: --bpFlanking
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base pair position to analyze
-    default: 0
     inputBinding:
       position: 101
       prefix: --bpStart
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: chromosome to analyze (if input has many)
-    default: '0'
     inputBinding:
       position: 101
       prefix: --chrom
@@ -95,7 +91,6 @@ inputs:
       - 'null'
       - float
     doc: expected length of haplotype copying (cM)
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --expectIBDcM
@@ -120,7 +115,6 @@ inputs:
       - 'null'
       - float
     doc: estimated genotype error probability
-    default: 0.003
     inputBinding:
       position: 101
       prefix: --genoErrProb
@@ -129,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: history length multiplier (0=auto)
-    default: 0
     inputBinding:
       position: 101
       prefix: --histFactor
@@ -146,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: number of conditioning haplotypes
-    default: 10000
     inputBinding:
       position: 101
       prefix: --Kpbwt
@@ -155,7 +147,6 @@ inputs:
       - 'null'
       - float
     doc: 'QC filter: max missing rate per person'
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --maxMissingPerIndiv
@@ -164,7 +155,6 @@ inputs:
       - 'null'
       - float
     doc: 'QC filter: max missing rate per SNP'
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --maxMissingPerSnp
@@ -181,7 +171,6 @@ inputs:
       - 'null'
       - int
     doc: number of computational threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --numThreads
@@ -206,7 +195,6 @@ inputs:
       - 'null'
       - int
     doc: number of PBWT phasing iterations (0=auto)
-    default: 0
     inputBinding:
       position: 101
       prefix: --pbwtIters
@@ -259,7 +247,6 @@ inputs:
       - string
     doc: 'b|u|z|v: compressed BCF (b), uncomp BCF (u), compressed VCF (z), uncomp
       VCF (v)'
-    default: .
     inputBinding:
       position: 101
       prefix: --vcfOutFormat

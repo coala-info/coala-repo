@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: unit of abundance to report {ab | rel | fpkm | tpm}
-    default: rel
     inputBinding:
       position: 102
       prefix: --unit
@@ -26,7 +25,6 @@ inputs:
       - boolean
     doc: 'do not normalize the abundance (only relevant for ab or rel) for sequence
       length (default: normalize)'
-    default: false
     inputBinding:
       position: 102
       prefix: --nolen
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - File
     doc: tab-delimited genome definition file - 'genome-id<tab>seq-id'
-    default: none
     inputBinding:
       position: 102
       prefix: --genome
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: input is SAM
-    default: false
     inputBinding:
       position: 102
       prefix: -S
@@ -60,7 +56,6 @@ inputs:
       - int
     doc: minimum number of inserts mapped to a feature, below which the feature 
       is counted as absent
-    default: 0
     inputBinding:
       position: 102
       prefix: --mincount
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: how to deal with multi-mappers {all | equal | proportional}
-    default: proportional
     inputBinding:
       position: 102
       prefix: --multi
@@ -79,7 +73,6 @@ inputs:
       - int
     doc: number of high-quality inserts (mate-pairs/paired-ends) that were input
       to the aligner
-    default: 0
     inputBinding:
       position: 102
       prefix: --total
@@ -89,7 +82,6 @@ inputs:
       - boolean
     doc: 'print two columns (ID, sample-label) as header compatible with python pandas
       (default: only sample label)'
-    default: false
     inputBinding:
       position: 102
       prefix: --pandas

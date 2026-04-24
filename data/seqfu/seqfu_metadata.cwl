@@ -65,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: String found in filename of forward reads
-    default: _R1
     inputBinding:
       position: 103
       prefix: --for-tag
@@ -90,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output format: dadaist, irida, manifest,... list to list'
-    default: manifest
     inputBinding:
       position: 103
       prefix: --format
@@ -99,7 +97,6 @@ inputs:
       - 'null'
       - string
     doc: Default value for metadata, used in MetaPhage
-    default: Cond
     inputBinding:
       position: 103
       prefix: --meta-default
@@ -108,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Which part of the SampleID to extract metadata, used in MetaPhage
-    default: 1
     inputBinding:
       position: 103
       prefix: --meta-part
@@ -117,7 +113,6 @@ inputs:
       - 'null'
       - string
     doc: Separator in the SampleID to extract metadata, used in MetaPhage
-    default: _
     inputBinding:
       position: 103
       prefix: --meta-split
@@ -126,7 +121,6 @@ inputs:
       - 'null'
       - boolean
     doc: Long reads (Oxford Nanopore)
-    default: false
     inputBinding:
       position: 103
       prefix: --ont
@@ -144,7 +138,6 @@ inputs:
       - type: array
         items: int
     doc: Which part of the filename is the Sample ID
-    default: 1
     inputBinding:
       position: 103
       prefix: --pos
@@ -169,7 +162,6 @@ inputs:
       - 'null'
       - string
     doc: String found in filename of forward reads
-    default: _R2
     inputBinding:
       position: 103
       prefix: --rev-tag
@@ -178,7 +170,6 @@ inputs:
       - 'null'
       - string
     doc: Separator used in filename to identify the sample ID
-    default: _
     inputBinding:
       position: 103
       prefix: --split

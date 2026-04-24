@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: 'Character to use to separate contigs. Default: >'
-    default: '>'
     inputBinding:
       position: 102
       prefix: --contig-sep-char
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: 'Length of the separator between contigs. Default: 1'
-    default: 1
     inputBinding:
       position: 102
       prefix: --contig-sep-len
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: 'Sequence to use as separator between contigs. Default: N'
-    default: N
     inputBinding:
       position: 102
       prefix: --contig-sep-seq
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: 'Character to use for gaps. Default: N'
-    default: N
     inputBinding:
       position: 102
       prefix: --gap-char
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum length of a gap to be considered a gap. Default: 1000'
-    default: 1000
     inputBinding:
       position: 102
       prefix: --max-gap-len
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum length of a contig to be outputted. Default: 1'
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-contig-len
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum length of a gap to be considered a gap. Default: 1'
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-gap-len

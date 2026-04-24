@@ -43,7 +43,6 @@ inputs:
     doc: Minimum alignment length on each side of the junction. May need to be 
       set to smaller values for read lengths smaller than 75bp. Larger values 
       are more stringent.
-    default: 50
     inputBinding:
       position: 102
       prefix: --min-chim-overhang

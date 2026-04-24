@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: (Optional) The ggd channel to search. (Default = genomics)
-    default: genomics
     inputBinding:
       position: 102
       prefix: --channel
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: (Optional) The number of search results to display. (Default = 5)
-    default: 5
     inputBinding:
       position: 102
       prefix: --display-number
@@ -46,7 +44,6 @@ inputs:
       - int
     doc: (Optional) A score between 0 and 100 to use to filter the results by. 
       (Default = 90). The lower the number the more results will be output
-    default: 90
     inputBinding:
       position: 102
       prefix: --match-score
@@ -61,7 +58,6 @@ inputs:
       data package that match each search term separately. 'both' will use the 
       search terms combined and each search term separately to search for data 
       packages. Default = 'both'
-    default: both
     inputBinding:
       position: 102
       prefix: --search-type

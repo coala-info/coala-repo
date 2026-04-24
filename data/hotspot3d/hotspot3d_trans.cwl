@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Genome build (37 or 38), defaults to 38 or according to --release input
-    default: 38
     inputBinding:
       position: 101
       prefix: --grch
@@ -30,7 +29,6 @@ inputs:
     doc: Ensembl release verion (55-87), defaults to 87 or to the latest release
       according to --grch input. Note that releases 55-75 correspond to GRCh37 &
       76-87 correspond to GRCh38
-    default: 87
     inputBinding:
       position: 101
       prefix: --release

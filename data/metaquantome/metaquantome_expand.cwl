@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Desired rank for taxonomy. The default is 'genus'.
-    default: genus
     inputBinding:
       position: 101
       prefix: --ft_tar_rank

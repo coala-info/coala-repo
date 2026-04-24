@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: The length of the invariant (ligation) portion of each read.
-    default: 5
     inputBinding:
       position: 103
       prefix: -i
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: The length of the barcode portion of each read.
-    default: 12
     inputBinding:
       position: 103
       prefix: -t

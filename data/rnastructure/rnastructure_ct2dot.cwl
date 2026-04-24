@@ -29,7 +29,6 @@ inputs:
       with a Title-Line '>TITLE' followed by a Structure-Line, (4) full -- All structures
       written with a full header, including a '>TITLE' line followed by a Sequence-Line
       and then a Structure-Line."
-    default: multi
     inputBinding:
       position: 103
       prefix: --format

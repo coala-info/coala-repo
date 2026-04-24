@@ -18,7 +18,6 @@ inputs:
       - int
     doc: If requesting a PGEN output file, write genotypes in chunks of X 
       variants; reduces memory
-    default: all variants
     inputBinding:
       position: 101
       prefix: --chunk-size
@@ -108,7 +107,6 @@ inputs:
       - 'null'
       - string
     doc: The level of verbosity desired
-    default: INFO
     inputBinding:
       position: 101
       prefix: --verbosity

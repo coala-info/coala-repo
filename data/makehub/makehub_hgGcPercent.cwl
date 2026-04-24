@@ -68,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Overlap windows by N bases
-    default: 0
     inputBinding:
       position: 103
       prefix: -overlap
@@ -93,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Change windows size
-    default: 20000
     inputBinding:
       position: 103
       prefix: -win

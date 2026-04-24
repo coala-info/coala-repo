@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: The target queue to check
-    default: all queues
     inputBinding:
       position: 101
       prefix: --queue

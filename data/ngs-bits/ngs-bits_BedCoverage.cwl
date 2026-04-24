@@ -19,7 +19,6 @@ inputs:
       - boolean
     doc: Clear previous annotation columns before annotating (starting from 4th 
       column).
-    default: false
     inputBinding:
       position: 101
       prefix: -clear
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable debug output.
-    default: false
     inputBinding:
       position: 101
       prefix: -debug
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Number of decimals used in output.
-    default: 2
     inputBinding:
       position: 101
       prefix: -decimals
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - File
     doc: Input BED file. If unset, reads from STDIN.
-    default: ''
     inputBinding:
       position: 101
       prefix: -in
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality.
-    default: 1
     inputBinding:
       position: 101
       prefix: -min_mapq
@@ -66,7 +61,6 @@ inputs:
     doc: Use random access via index to get reads from BAM/CRAM instead of 
       chromosome-wise sweep. Random access is quite slow, especially on CRAM, so
       use it only if a small subset of the file needs to be accessed.
-    default: false
     inputBinding:
       position: 101
       prefix: -random_access
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - File
     doc: Reference genome for CRAM support (mandatory if CRAM is used).
-    default: ''
     inputBinding:
       position: 101
       prefix: -ref
@@ -93,7 +86,6 @@ inputs:
       - boolean
     doc: Skip reads with mapping quality less than 20 that are not properly 
       paired (they are often mis-mapped).
-    default: false
     inputBinding:
       position: 101
       prefix: -skip_mismapped
@@ -102,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads used.
-    default: 1
     inputBinding:
       position: 101
       prefix: -threads

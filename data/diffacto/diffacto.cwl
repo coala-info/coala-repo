@@ -11,7 +11,6 @@ inputs:
       - float
     doc: "Peptides weighted lower than the cutoff will be\n                      \
       \  excluded"
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -cutoff_weight
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: Hyperparameter weight of prior probability
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -farms_alpha
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: Hyperparameter mu
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -farms_mu
@@ -39,7 +36,6 @@ inputs:
       - boolean
     doc: "Allow early termination in EM calculation when noise\n                 \
       \       is sufficiently small."
-    default: false
     inputBinding:
       position: 101
       prefix: -fast
@@ -50,7 +46,6 @@ inputs:
     doc: "Minimum fraction of missing values in the group.\n                     \
       \   Impute missing values if missing fraction is larger\n                  \
       \      than the threshold."
-    default: 0.99
     inputBinding:
       position: 101
       prefix: -impute_threshold
@@ -69,7 +64,6 @@ inputs:
       - boolean
     doc: "Input abundances are in log scale (True) or linear\n                   \
       \     scale (False)"
-    default: false
     inputBinding:
       position: 101
       prefix: -log2
@@ -79,7 +73,6 @@ inputs:
       - int
     doc: "Minimum number of samples peptides needed to be\n                      \
       \  quantified in"
-    default: 1
     inputBinding:
       position: 101
       prefix: -min_samples
@@ -88,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: Method for sample-wise normalization.
-    default: None
     inputBinding:
       position: 101
       prefix: -normalize
@@ -107,7 +99,6 @@ inputs:
       - string
     doc: "Names of reference sample groups (separated by\n                       \
       \ semicolon)"
-    default: average
     inputBinding:
       position: 101
       prefix: -reference
@@ -127,7 +118,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use unique peptides only
-    default: false
     inputBinding:
       position: 101
       prefix: -use_unique

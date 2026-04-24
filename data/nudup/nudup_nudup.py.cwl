@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: length of molecular tag sequence
-    default: 6
     inputBinding:
       position: 102
       prefix: --length
@@ -71,7 +70,6 @@ inputs:
       - int
     doc: position in index read where molecular tag sequence begins. This should
       be a 1-based value that counts in from the 3' END of the read.
-    default: 6
     inputBinding:
       position: 102
       prefix: --start
@@ -80,7 +78,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory for reading and writing to temporary files and named pipes
-    default: /tmp
     inputBinding:
       position: 102
       prefix: -T

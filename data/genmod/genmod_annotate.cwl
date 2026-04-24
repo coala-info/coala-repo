@@ -61,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: Choose what genome build to use.
-    default: '37'
     inputBinding:
       position: 102
       prefix: --genome-build

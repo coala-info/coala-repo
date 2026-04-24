@@ -46,7 +46,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_dat_path
-    default: system.dat
 
   output_pdb_path:
     label: Output PDB with Bfactor x residue x PCA mode file
@@ -61,7 +60,6 @@ inputs:
     - edam:format_1476
     inputBinding:
       prefix: --output_pdb_path
-    default: system.pdb
 
   config:
     label: Advanced configuration options for biobb_flexserv PCZbfactor

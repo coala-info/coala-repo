@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write genomic coordinates in the fasta header
-    default: false
     inputBinding:
       position: 102
       prefix: --coords
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output gff3 instead of fasta
-    default: false
     inputBinding:
       position: 102
       prefix: --gff3
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum ORF length to keep
-    default: 20
     inputBinding:
       position: 102
       prefix: --min-len
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - boolean
     doc: Format fasta output for peptideshaker compatibility
-    default: false
     inputBinding:
       position: 102
       prefix: --peptideshaker
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - boolean
     doc: Dont write sequence definition
-    default: true
     inputBinding:
       position: 102
       prefix: --strip-header

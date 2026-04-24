@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: number of sequences to be held-out in each iteration
-    default: 1
     inputBinding:
       position: 103
       prefix: --block_size
@@ -36,7 +35,6 @@ inputs:
     doc: 'greedyness of Gibbs sampler: model parameters are sampled from among the
       top f configurations (default: f=10), set f to 0 in order to include all possible
       configurations'
-    default: 10
     inputBinding:
       position: 103
       prefix: --flexibility
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: name of the job
-    default: job
     inputBinding:
       position: 103
       prefix: --job_name
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: length of the motif that shall be found
-    default: 6
     inputBinding:
       position: 103
       prefix: --motif_length
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: produce output every <i> iterations
-    default: 100
     inputBinding:
       position: 103
       prefix: --termination_interval
@@ -97,7 +92,6 @@ inputs:
       - float
     doc: the iterative algorithm is terminated if this reduction in sequence 
       structure loglikelihood is not reached for any of the 3 last measurements
-    default: 10
     inputBinding:
       position: 103
       prefix: --threshold

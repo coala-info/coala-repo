@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Trim average counts (default: False)'
-    default: false
     inputBinding:
       position: 102
       prefix: --a-trim
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Trim molecular counts (default: False)'
-    default: false
     inputBinding:
       position: 102
       prefix: --m-trim

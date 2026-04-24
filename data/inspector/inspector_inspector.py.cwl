@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Input read type. (clr, hifi, nanopore)
-    default: clr
     inputBinding:
       position: 101
       prefix: --datatype
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: maximal size for assembly errors.
-    default: 4000000
     inputBinding:
       position: 101
       prefix: --max_assembly_error_size
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: minimal size for assembly errors.
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_assembly_error_size
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: minimal length for a contig to be evaluated.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --min_contig_length
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: minimal contig length for assembly error detection.
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --min_contig_length_assemblyerror
@@ -133,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads.
-    default: 8
     inputBinding:
       position: 101
       prefix: --thread

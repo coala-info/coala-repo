@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Only consider emails that arrived <= hours.
-    default: 10
     inputBinding:
       position: 101
       prefix: --newer-than
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: How long to wait for Seshat to email in seconds.
-    default: 200
     inputBinding:
       position: 101
       prefix: --wait-for

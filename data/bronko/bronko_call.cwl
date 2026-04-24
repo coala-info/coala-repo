@@ -22,7 +22,6 @@ inputs:
       - float
     doc: Percent of total depth that one strand must be under to be considered 
       unbalanced (must be [0.0-1.0])
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --balance-ratio
@@ -91,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer size used for analysis
-    default: 21
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -100,7 +98,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum minor allele frequency to be reported
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --min-af
@@ -110,7 +107,6 @@ inputs:
       - int
     doc: Minimum total depth at an allele to call a minor variant 
       (default=100*min_kmers)
-    default: 300
     inputBinding:
       position: 101
       prefix: --min-depth
@@ -119,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum times a kmer must occur in sequencing data to be used
-    default: 3
     inputBinding:
       position: 101
       prefix: --min-kmers
@@ -129,7 +124,6 @@ inputs:
       - int
     doc: Minimum depth of a minor variant to be called present 
       (default=min_kmers)
-    default: 3
     inputBinding:
       position: 101
       prefix: --min-variant-depth
@@ -139,7 +133,6 @@ inputs:
       - int
     doc: Number of fixed positions at the end of each kmer that cannot 
       contribute to pileup
-    default: 2
     inputBinding:
       position: 101
       prefix: --n-fixed
@@ -149,7 +142,6 @@ inputs:
       - int
     doc: Min number of unique kmers to observe to call a variant at any site 
       (needed on both strands if strand filter active)
-    default: 2
     inputBinding:
       position: 101
       prefix: --n-per-strand
@@ -211,7 +203,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum strand odds ratio for a variant to pass strand filtering
-    default: 6
     inputBinding:
       position: 101
       prefix: --strand_odds
@@ -220,7 +211,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -241,7 +231,6 @@ inputs:
       variant must be above estimated baseline noise in that region (must be > 
       1.0x). Note that for variants under 1%, multiplier will be increased 
       exponentially up to +0.5 more
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --noise-multiplier

@@ -12,7 +12,6 @@ inputs:
     doc: Only label state changes where the confidence percentage is above the 
       specified value.Transitions to lower confidence states will be represented
       by a "uncertain" label.
-    default: []
     inputBinding:
       position: 101
       prefix: --branch-confidence
@@ -25,7 +24,6 @@ inputs:
       column. You must supply this for each column you would like to label. By 
       default the branch label key the same as the column name, but you may 
       customise this via the COLUMN=NAME syntax.
-    default: []
     inputBinding:
       position: 101
       prefix: --branch-labels
@@ -34,7 +32,6 @@ inputs:
       type: array
       items: string
     doc: metadata fields to perform discrete reconstruction on
-    default: None
     inputBinding:
       position: 101
       prefix: --columns
@@ -43,14 +40,12 @@ inputs:
       - 'null'
       - boolean
     doc: record the distribution of subleading mugration states
-    default: false
     inputBinding:
       position: 101
       prefix: --confidence
   - id: metadata
     type: File
     doc: table with metadata
-    default: None
     inputBinding:
       position: 101
       prefix: --metadata
@@ -61,7 +56,6 @@ inputs:
         items: string
     doc: delimiters to accept when reading a metadata file. Only one delimiter 
       will be inferred.
-    default:
       - ','
       - "\t"
     inputBinding:
@@ -74,7 +68,6 @@ inputs:
         items: string
     doc: names of possible metadata columns containing identifier information, 
       ordered by priority. Only one ID column will be inferred.
-    default:
       - strain
       - name
     inputBinding:
@@ -89,14 +82,12 @@ inputs:
       p_i^2)/(1-sum_i t_i^2), where p_i are the equilibrium frequencies and t_i 
       are apparent ones.(or rather the time spent in a particular state on the 
       tree)
-    default: None
     inputBinding:
       position: 101
       prefix: --sampling-bias-correction
   - id: tree
     type: File
     doc: tree to perform trait reconstruction on
-    default: None
     inputBinding:
       position: 101
       prefix: --tree
@@ -105,7 +96,6 @@ inputs:
       - 'null'
       - File
     doc: tsv/csv table with equilibrium probabilities of discrete states
-    default: None
     inputBinding:
       position: 101
       prefix: --weights

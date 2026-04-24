@@ -18,7 +18,6 @@ inputs:
       - string
     doc: 'Type of cavity definition: 1-pure (pure cavities), 2-atom (atom-based cavities),
       3-chain (chain-based cavities)'
-    default: 1-pure
     inputBinding:
       position: 102
       prefix: -c
@@ -34,7 +33,6 @@ inputs:
       - string
     doc: 'Output mode: 1-in and out (all cavities and surrounding solvent), 2-out
       (only surrounding solvent), 3-in (only cavities)'
-    default: 1-in and out
     inputBinding:
       position: 102
       prefix: -h
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Probe radius for SASA and cavity calculation [0, 2.0]
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -p
@@ -53,7 +50,6 @@ inputs:
       - string
     doc: 'Type of SASA calculation: 1-VWS (Vollrath-Wolf-Schiffer), 2-SAS (Solvent
       Accessible Surface), 3-MS (Molecular Surface), 4-SES (Solvent Excluded Surface)'
-    default: 1-VWS
     inputBinding:
       position: 102
       prefix: -s
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: Scale factor for cavity volume calculation (0, 20.0]
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -f
@@ -72,7 +67,6 @@ inputs:
       - string
     doc: 'Type of surface to calculate: 1-MC (Molecular Cavity), 2-VCMC (Volume of
       Molecular Cavity)'
-    default: 1-MC
     inputBinding:
       position: 102
       prefix: -t

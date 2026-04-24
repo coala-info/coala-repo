@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: 'context filter for print results, C, CG, CHG, CHH, default: C'
-    default: C
     inputBinding:
       position: 101
       prefix: --cf
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: '>= <INT> coverage. default:4'
-    default: 4
     inputBinding:
       position: 101
       prefix: --coverage
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: <= <INT> coverage. default:500
-    default: 500
     inputBinding:
       position: 101
       prefix: --maxcoverage
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: 'The maximum number of zoom levels. [0-10], default: 2'
-    default: 2
     inputBinding:
       position: 101
       prefix: --zl
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: calculate the methratio while read QulityScore >= Q. default:20
-    default: 20
     inputBinding:
       position: 101
       prefix: -Q
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: '>= <INT> nCs per region. default:1'
-    default: 1
     inputBinding:
       position: 101
       prefix: -nC
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: Number of mismatches, default 0.06 percentage of read length. [0-1]
-    default: '0.06'
     inputBinding:
       position: 101
       prefix: --Nmismatch
@@ -149,7 +142,6 @@ inputs:
       - 'null'
       - boolean
     doc: REMOVE_DUP, default:false
-    default: false
     inputBinding:
       position: 101
       prefix: --remove_dup

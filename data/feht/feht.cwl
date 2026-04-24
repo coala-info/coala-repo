@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Multiple-testing correction to apply
-    default: bonferroni
     inputBinding:
       position: 101
       prefix: --correction
@@ -26,7 +25,6 @@ inputs:
       - type: array
         items: string
     doc: Delimiter used for both the metadata and data file
-    default: \t
     inputBinding:
       position: 101
       prefix: --delimiter
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Mode for program data; either 'binary' or 'snp'
-    default: binary
     inputBinding:
       position: 101
       prefix: --mode
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: Filter results by ratio (0.00-1.00)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --ratioFilter

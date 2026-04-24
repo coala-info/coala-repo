@@ -11,7 +11,6 @@ inputs:
       - Directory
     doc: Cache folder. We suggest keep this setting the same between different 
       runs.
-    default: .
     inputBinding:
       position: 101
       prefix: --cachefolder
@@ -22,7 +21,6 @@ inputs:
     doc: The restriction enzyme name used in the Hi-C experiment. If the genome 
       was cutted using a sequence-independent/uniform-cutting enzyme, please 
       consider setting this parameter to "uniform".
-    default: MboI
     inputBinding:
       position: 101
       prefix: --enzyme
@@ -31,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: Reference genome name.
-    default: hg38
     inputBinding:
       position: 101
       prefix: --genome
@@ -40,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Cool URI.
-    default: None
     inputBinding:
       position: 101
       prefix: --hic
@@ -49,7 +45,6 @@ inputs:
       - 'null'
       - File
     doc: Logging file name.
-    default: cnv-calculation.log
     inputBinding:
       position: 101
       prefix: --logFile

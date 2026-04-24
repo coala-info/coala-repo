@@ -69,7 +69,6 @@ inputs:
     type: int?
     inputBinding:
       prefix: --cpu
-    default: 8
 
   annotate_hits_table:
     type: File?

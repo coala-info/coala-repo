@@ -18,7 +18,6 @@ inputs:
     doc: A comma separated list of error probabilities for each hamming 
       distance. The length of the list determines the number of hamming 
       distances taken into account.
-    default: 1, 0.06, 0.02, 0.02, 0.01, 0.005, 0.005, 0.005, 0.001, 0.001, 
       0.001, 0.0005
     inputBinding:
       position: 102
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - File
     doc: log file name
-    default: deblur.log
     inputBinding:
       position: 102
       prefix: --log-file
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Level of messages for log file (range 1-debug to 5-critical
-    default: 2
     inputBinding:
       position: 102
       prefix: --log-level
@@ -63,7 +60,6 @@ inputs:
       - float
     doc: The mean per nucleotide error, used for original sequence estimate. If 
       not passed typical illumina error rate is used
-    default: 0.005
     inputBinding:
       position: 102
       prefix: --mean-error

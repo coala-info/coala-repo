@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Miximal iteration of abundance estimation.
-    default: 10
     inputBinding:
       position: 102
       prefix: --abund-max-iters
@@ -24,7 +23,6 @@ inputs:
       - float
     doc: If the percentage change of the predominant target is smaller than this
       threshold, stop the iteration.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --abund-pct-threshold
@@ -76,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: 'Level to estimate abundance at. Available values: species, strain/assembly.'
-    default: species
     inputBinding:
       position: 102
       prefix: --level
@@ -86,7 +83,6 @@ inputs:
       - int
     doc: Number of lines to process for each thread, and 4 threads is fast 
       enough. Type "kmcp profile -h" for details.
-    default: 5000
     inputBinding:
       position: 102
       prefix: --line-chunk-size
@@ -95,7 +91,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum standard deviation of relative depths of all chunks.
-    default: 2.0
     inputBinding:
       position: 102
       prefix: --max-chunks-depth-stdev
@@ -104,7 +99,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum false positive rate of a read in search result.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --max-fpr
@@ -114,7 +108,6 @@ inputs:
       - float
     doc: 'Maximum error rate of a read being matched to a wrong reference, for determing
       the right reference for ambiguous reads. Range: (0, 1).'
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --max-mismatch-err
@@ -123,7 +116,6 @@ inputs:
       - 'null'
       - float
     doc: Max qcov gap between adjacent matches.
-    default: 0.4
     inputBinding:
       position: 102
       prefix: --max-qcov-gap
@@ -132,7 +124,6 @@ inputs:
       - 'null'
       - string
     doc: Metaphlan report version (2 or 3)
-    default: '3'
     inputBinding:
       position: 102
       prefix: --metaphlan-report-version
@@ -142,7 +133,6 @@ inputs:
       - float
     doc: Minimum fraction of matched reference chunks with reads >= 
       -r/--min-chunks-reads.
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --min-chunks-fraction
@@ -151,7 +141,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads for a reference chunk.
-    default: 50
     inputBinding:
       position: 102
       prefix: --min-chunks-reads
@@ -161,7 +150,6 @@ inputs:
       - float
     doc: 'Minimum proportion of distinct reads, for determing the right reference
       for ambiguous reads. Range: (0, 1).'
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --min-dreads-prop
@@ -171,7 +159,6 @@ inputs:
       - int
     doc: Minimum number of high-confidence uniquely matched reads for a 
       reference.
-    default: 5
     inputBinding:
       position: 102
       prefix: --min-hic-ureads
@@ -180,7 +167,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum proportion of high-confidence uniquely matched reads.
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --min-hic-ureads-prop
@@ -189,7 +175,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum query coverage of high-confidence uniquely matched reads.
-    default: 0.75
     inputBinding:
       position: 102
       prefix: --min-hic-ureads-qcov
@@ -198,7 +183,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum query coverage of a read in search result.
-    default: 0.55
     inputBinding:
       position: 102
       prefix: --min-query-cov
@@ -207,7 +191,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of uniquely matched reads for a reference.
-    default: 20
     inputBinding:
       position: 102
       prefix: --min-uniq-reads
@@ -218,7 +201,6 @@ inputs:
     doc: 'Profiling mode, type "kmcp profile -h" for details. available values: 0
       (for pathogen detection), 1 (higherrecall), 2 (high recall), 3 (default), 4
       (high precision), 5 (higher precision).'
-    default: 3
     inputBinding:
       position: 102
       prefix: --mode
@@ -246,7 +228,6 @@ inputs:
       - string
     doc: 'Method for normalize abundance of a reference by the mean/min/max abundance
       in all chunks, available values: mean, min, max.'
-    default: mean
     inputBinding:
       position: 102
       prefix: --norm-abund
@@ -265,7 +246,6 @@ inputs:
       - type: array
         items: string
     doc: Prefixes of taxon name in certain ranks, used with --metaphlan-report.
-    default:
       - k__
       - p__
       - c__
@@ -290,7 +270,6 @@ inputs:
       - 'null'
       - string
     doc: Separator of TaxIds and taxonomy names.
-    default: ;
     inputBinding:
       position: 102
       prefix: --separator
@@ -300,7 +279,6 @@ inputs:
       - type: array
         items: string
     doc: Only show TaxIds and names of these ranks.
-    default:
       - superkingdom
       - phylum
       - class
@@ -343,7 +321,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs cores to use.
-    default: 20
     inputBinding:
       position: 102
       prefix: --threads

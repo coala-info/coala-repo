@@ -18,7 +18,6 @@ inputs:
       - string
     doc: 'type of fit [pan|core_Tettelin|core_Willenbrock|core_both] (default: core_Tettelin,
       PubMed:16172379,18088402)'
-    default: core_Tettelin
     inputBinding:
       position: 101
       prefix: -f
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: font scale for fitted formulas (optional, default=0.8)
-    default: 0.8
     inputBinding:
       position: 101
       prefix: -F

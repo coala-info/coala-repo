@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: length of kmer
-    default: 31
     inputBinding:
       position: 101
       prefix: -k
@@ -27,7 +26,6 @@ inputs:
       - float
     doc: paired-end reads are assigned paired node weights, recommended to be in
       the range of 0 to 1
-    default: 0.6
     inputBinding:
       position: 101
       prefix: --map_weight
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: 'whether to generate non-standard transcripts, 1 : true, 0 : false'
-    default: 0
     inputBinding:
       position: 101
       prefix: --non_canonical
@@ -46,7 +43,6 @@ inputs:
       - int
     doc: 'pair-end reads directions can be defined, 1: opposite directions  2: same
       direction'
-    default: 1
     inputBinding:
       position: 101
       prefix: -d
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: approximate length of the viral reference genome
-    default: 30000
     inputBinding:
       position: 101
       prefix: --ref_genome_len
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 6
     inputBinding:
       position: 101
       prefix: -t

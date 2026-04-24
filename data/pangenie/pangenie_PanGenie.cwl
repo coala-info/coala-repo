@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: effective population size for sampling step.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: -b
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: size of hash used by jellyfish
-    default: 3000000000
     inputBinding:
       position: 101
       prefix: -e
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: kmer size
-    default: 31
     inputBinding:
       position: 101
       prefix: -k
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use for kmer-counting
-    default: 1
     inputBinding:
       position: 101
       prefix: -j
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: to which size the input panel shall be reduced.
-    default: 0
     inputBinding:
       position: 101
       prefix: -x
@@ -111,7 +106,6 @@ inputs:
       - 'null'
       - string
     doc: name of the sample (will be used in the output VCFs)
-    default: sample
     inputBinding:
       position: 101
       prefix: -s
@@ -120,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: sample subsets of paths of this size
-    default: 0
     inputBinding:
       position: 101
       prefix: -a
@@ -129,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: Penality used for already selected alleles in sampling step.
-    default: 5
     inputBinding:
       position: 101
       prefix: -y
@@ -147,7 +139,6 @@ inputs:
       - int
     doc: number of threads to use for core algorithm. Largest number of threads possible
       is the number of chromosomes given in the VCF
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

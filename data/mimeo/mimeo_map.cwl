@@ -73,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: Set the logging level.
-    default: INFO
     inputBinding:
       position: 101
       prefix: --loglevel
@@ -115,7 +114,6 @@ inputs:
       - 'null'
       - Directory
     doc: Write output files to this directory.
-    default: cwd
     inputBinding:
       position: 101
       prefix: --outdir

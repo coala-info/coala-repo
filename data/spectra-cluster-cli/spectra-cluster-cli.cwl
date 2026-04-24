@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Number of clustering rounds to perform
-    default: 3
     inputBinding:
       position: 102
       prefix: -clustering_rounds
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Fragment ion tolerance in Da
-    default: 0.5
     inputBinding:
       position: 102
       prefix: -fragment_tolerance
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - float
     doc: Precursor ion tolerance
-    default: 2.0
     inputBinding:
       position: 102
       prefix: -precursor_tolerance
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Unit of the precursor ion tolerance (da or ppm)
-    default: da
     inputBinding:
       position: 102
       prefix: -precursor_tolerance_unit

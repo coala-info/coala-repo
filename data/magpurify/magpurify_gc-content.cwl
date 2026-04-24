@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - float
     doc: Cutoff
-    default: 15.75
     inputBinding:
       position: 102
       prefix: --cutoff
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: Compute the mean weighted by the contig length
-    default: false
     inputBinding:
       position: 102
       prefix: --weighted-mean

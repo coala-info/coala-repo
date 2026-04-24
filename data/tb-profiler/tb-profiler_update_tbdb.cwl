@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: Branch to pull from
-    default: tbdb
     inputBinding:
       position: 101
       prefix: --branch
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Git commit hash to checkout
-    default: latest
     inputBinding:
       position: 101
       prefix: --commit
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - Directory
     doc: Database directory
-    default: /usr/local/share/tbprofiler
     inputBinding:
       position: 101
       prefix: --db_dir
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force overwrite existing database with the same name
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level
-    default: INFO
     inputBinding:
       position: 101
       prefix: --logging
@@ -56,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: The prefix for all output files
-    default: None
     inputBinding:
       position: 101
       prefix: --match-ref
@@ -65,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: Database name
-    default: None
     inputBinding:
       position: 101
       prefix: --prefix
@@ -74,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: Repository to pull from
-    default: https://github.com/jodyphelan/tbdb.git
     inputBinding:
       position: 101
       prefix: --repo
@@ -83,7 +75,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temp firectory to process all files
-    default: .
     inputBinding:
       position: 101
       prefix: --temp

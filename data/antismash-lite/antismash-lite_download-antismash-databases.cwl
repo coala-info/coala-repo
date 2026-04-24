@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - Directory
     doc: Base directory for the antiSMASH databases
-    default: /usr/local/lib/python3.11/site-packages/antismash/databases
     inputBinding:
       position: 101
       prefix: --database-dir

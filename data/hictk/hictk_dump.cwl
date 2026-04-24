@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Balance interactions using the given method.
-    default: NONE
     inputBinding:
       position: 102
       prefix: --balance
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output pixels in BG2 format.
-    default: false
     inputBinding:
       position: 102
       prefix: --join
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: Matrix type (ignored when file is not in .hic format).
-    default: observed
     inputBinding:
       position: 102
       prefix: --matrix-type
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Matrix unit (ignored when file is not in .hic format).
-    default: BP
     inputBinding:
       position: 102
       prefix: --matrix-unit
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output pixels in BG2 format.
-    default: false
     inputBinding:
       position: 102
       prefix: --no-join
@@ -78,7 +73,6 @@ inputs:
       - string
     doc: Coordinates of the genomic regions to be dumped following UCSC style 
       notation (chr1:0-1000).
-    default: all
     inputBinding:
       position: 102
       prefix: --range
@@ -88,7 +82,6 @@ inputs:
       - string
     doc: Coordinates of the genomic regions to be dumped following UCSC style 
       notation (chr1:0-1000).
-    default: all
     inputBinding:
       position: 102
       prefix: --range2
@@ -105,7 +98,6 @@ inputs:
       - 'null'
       - boolean
     doc: Return interactions in ascending order.
-    default: false
     inputBinding:
       position: 102
       prefix: --sorted
@@ -114,7 +106,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the table to dump.
-    default: pixels
     inputBinding:
       position: 102
       prefix: --table
@@ -131,7 +122,6 @@ inputs:
       - 'null'
       - boolean
     doc: Return interactions in ascending order.
-    default: false
     inputBinding:
       position: 102
       prefix: --unsorted

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Translation frame (1, 2, or 3). Default is 1.
-    default: 1
     inputBinding:
       position: 102
       prefix: --frame
@@ -24,7 +23,6 @@ inputs:
       - string
     doc: Genetic code to use (e.g., 'standard', 'vertebrate_mt'). Default is 
       'standard'.
-    default: standard
     inputBinding:
       position: 102
       prefix: --genetic-code

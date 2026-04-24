@@ -80,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: number of iterations of order determination.
-    default: 100
     inputBinding:
       position: 102
       prefix: --iterations
@@ -97,7 +96,6 @@ inputs:
       - 'null'
       - float
     doc: height of plot in inches.
-    default: 3
     inputBinding:
       position: 102
       prefix: --plot-height
@@ -106,7 +104,6 @@ inputs:
       - 'null'
       - float
     doc: width of plot in inches.
-    default: 3
     inputBinding:
       position: 102
       prefix: --plot-width

@@ -24,7 +24,6 @@ inputs:
       separate: false
       position: 4
     label: 'quality score format'
-    default: '33'
     doc: >
       Either PHRED "33" or "64" specifies the base quality encoding. Default: 64
 
@@ -44,7 +43,6 @@ inputs:
       position: 13
       prefix: 'HEADCROP:'
       separate: false
-    default: 0
     label: 'read head trimming'
     doc: >
       Removes the specified number of bases, regardless of quality, from the
@@ -68,7 +66,6 @@ inputs:
       position: 100
       prefix: 'MINLEN:'
       separate: false
-    default: 50
     label: 'minimum length read filter'
     doc: >
       This module removes reads that fall below the specified minimal length.
@@ -91,7 +88,6 @@ inputs:
       position: 14
       prefix: 'LEADING:'
       separate: false
-    default: 1
     label: 'read tail trimming'
     doc: >
       Remove low quality bases from the beginning. As long as a base has a
@@ -104,7 +100,6 @@ inputs:
       position: 15
       prefix: 'SLIDINGWINDOW:'
       separate: false
-    default: '10:15'
     label: 'read filtering sliding window'
     doc: >
       Perform a sliding window trimming, cutting once the average quality
@@ -179,7 +174,6 @@ inputs:
       position: 14
       prefix: 'TRAILING:'
       separate: false
-    default: 10
     label: 'read tail quality filtering'
     doc: >
       Remove low quality bases from the end. As long as a base has a value
@@ -217,7 +211,6 @@ inputs:
     inputBinding:
       position: 3
     label: 'read -end mode format'
-    default: "PE"
     doc: >
       Single End (SE) or Paired End (PE) mode
 

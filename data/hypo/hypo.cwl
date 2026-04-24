@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Gap penalty for long reads (must be negative).
-    default: -4
     inputBinding:
       position: 101
       prefix: --gap-lr
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Gap penalty for short reads (must be negative).
-    default: -8
     inputBinding:
       position: 101
       prefix: --gap-sr
@@ -68,7 +66,6 @@ inputs:
     doc: "Kind of the short reads.\n\t[Valid Values] \n\t\tsr\t(Corresponding to NGS
       reads like Illumina reads) \n\t\tccs\t(Corresponding to HiFi reads like PacBio
       CCS reads)\n\t[Default] sr."
-    default: sr
     inputBinding:
       position: 101
       prefix: --kind-sr
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Score for matching bases for long reads.
-    default: 3
     inputBinding:
       position: 101
       prefix: --match-lr
@@ -86,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Score for matching bases for short reads.
-    default: 5
     inputBinding:
       position: 101
       prefix: --match-sr
@@ -95,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Score for mismatching bases for long reads.
-    default: -5
     inputBinding:
       position: 101
       prefix: --mismatch-lr
@@ -104,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Score for mismatching bases for short reads.
-    default: -4
     inputBinding:
       position: 101
       prefix: --mismatch-sr
@@ -115,7 +108,6 @@ inputs:
     doc: Threshold for Normalised Edit Distance of long arms allowed in a window
       (in %). Higher number means more arms allowed which may slow down the 
       execution.
-    default: 20
     inputBinding:
       position: 101
       prefix: --ned-th
@@ -134,7 +126,6 @@ inputs:
       - int
     doc: Threshold for mapping quality of reads. The reads with mapping quality 
       below this threshold will not be taken into consideration.
-    default: 2
     inputBinding:
       position: 101
       prefix: --qual-map-th
@@ -158,7 +149,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

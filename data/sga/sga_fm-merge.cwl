@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: minimum overlap required between two reads to merge
-    default: 45
     inputBinding:
       position: 102
       prefix: --min-overlap
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: use PREFIX for the names of the index files
-    default: prefix of the input file
     inputBinding:
       position: 102
       prefix: --prefix
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: use NUM worker threads
-    default: no threading
     inputBinding:
       position: 102
       prefix: --threads

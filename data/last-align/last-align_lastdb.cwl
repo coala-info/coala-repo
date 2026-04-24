@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: 'Child table type: 0=none, 1=byte-size, 2=short-size, 3=full'
-    default: 0
     inputBinding:
       position: 103
       prefix: -C
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Use initial matches starting at every w-th position in each sequence
-    default: 1
     inputBinding:
       position: 103
       prefix: -w
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: 'Input format: 0=fasta or fastq-ignore, 1=fastq-sanger, 2=fastq-solexa, 3=fastq-illumina'
-    default: 0
     inputBinding:
       position: 103
       prefix: -Q
@@ -72,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum limit on initial matches per query position
-    default: 0
     inputBinding:
       position: 103
       prefix: -i
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Use "minimum" positions in sliding windows of W consecutive positions
-    default: 1
     inputBinding:
       position: 103
       prefix: -W
@@ -90,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel threads
-    default: 1
     inputBinding:
       position: 103
       prefix: -P
@@ -99,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Repeat-marking options
-    default: 10
     inputBinding:
       position: 103
       prefix: -R
@@ -132,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: 'Strand: 0=reverse, 1=forward, 2=both'
-    default: 1
     inputBinding:
       position: 103
       prefix: -S

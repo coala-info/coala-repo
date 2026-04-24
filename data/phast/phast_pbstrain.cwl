@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - float
     doc: Convergence threshold for EM algorithm
-    default: 0.001
     inputBinding:
       position: 102
       prefix: --epsilon
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Number of EM algorithm iterations
-    default: 100
     inputBinding:
       position: 102
       prefix: --iterations
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: Substitution model to use (e.g., JC69, K80, HKY85, GTR)
-    default: JC69
     inputBinding:
       position: 102
       prefix: --model

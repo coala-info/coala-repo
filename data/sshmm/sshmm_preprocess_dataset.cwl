@@ -65,7 +65,6 @@ inputs:
       - int
     doc: 'elongation: span for up- and downstream elongation of binding sites (default:
       20)'
-    default: 20
     inputBinding:
       position: 106
       prefix: --elongation
@@ -90,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: 'filtering: maximum binding site length (default: 75)'
-    default: 75
     inputBinding:
       position: 106
       prefix: --max_length
@@ -99,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: 'filtering: minimum binding site length (default: 8)'
-    default: 8
     inputBinding:
       position: 106
       prefix: --min_length
@@ -108,7 +105,6 @@ inputs:
       - 'null'
       - float
     doc: 'filtering: minimum score for binding site (default: 0.0)'
-    default: 0.0
     inputBinding:
       position: 106
       prefix: --min_score

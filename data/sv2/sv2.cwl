@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: define classifier for genotyping
-    default: default
     inputBinding:
       position: 101
       prefix: -clf
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - File
     doc: configuration INI file
-    default: $SV2_INSTALL_PATH/config/sv2.ini
     inputBinding:
       position: 101
       prefix: -ini
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: reference genome build <hg19, hg38, mm10>
-    default: hg19
     inputBinding:
       position: 101
       prefix: -genome
@@ -102,7 +99,6 @@ inputs:
       - 'null'
       - File
     doc: log file for standard error messages
-    default: STDOUT
     inputBinding:
       position: 101
       prefix: -log
@@ -119,7 +115,6 @@ inputs:
       - 'null'
       - float
     doc: minimum reciprocal overlap for merging
-    default: 0.8
     inputBinding:
       position: 101
       prefix: -min-ovr
@@ -144,7 +139,6 @@ inputs:
       - 'null'
       - Directory
     doc: output path, location for sv2 output directories
-    default: working directory
     inputBinding:
       position: 101
       prefix: -odir
@@ -153,7 +147,6 @@ inputs:
       - 'null'
       - string
     doc: output prefix
-    default: sv2_genotypes
     inputBinding:
       position: 101
       prefix: -out
@@ -185,7 +178,6 @@ inputs:
       - 'null'
       - int
     doc: random seed for preprocessing shuffling
-    default: 42
     inputBinding:
       position: 101
       prefix: -seed
@@ -202,7 +194,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory for temporary files
-    default: working directory
     inputBinding:
       position: 101
       prefix: -tmp-dir

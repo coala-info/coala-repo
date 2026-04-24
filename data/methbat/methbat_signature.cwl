@@ -13,7 +13,6 @@ inputs:
       - string
     doc: The baseline category to compare against, all outputs are relative to 
       baseline
-    default: control
     inputBinding:
       position: 101
       prefix: --baseline-category
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: The category we are using as the comparator to baseline
-    default: case
     inputBinding:
       position: 101
       prefix: --compare-category
@@ -38,7 +36,6 @@ inputs:
       - int
     doc: The maximum gap allowed between CpGs before they are automatically 
       segmented
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max-gap
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum number of CpGs that can form a segment
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-cpgs
@@ -66,7 +62,6 @@ inputs:
       - float
     doc: The minimum average delta between the baseline and comparator to 
       consider a region for the signature
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --min-delta
@@ -76,7 +71,6 @@ inputs:
       - float
     doc: The minimum sample fraction required in both baseline and comparator to
       assess a region
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --min-sample-frac
@@ -86,7 +80,6 @@ inputs:
       - float
     doc: The minimum absolute Z-score deviation between the baseline and 
       comparator to consider a region for the signature
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --min-zscore
@@ -95,7 +88,6 @@ inputs:
       - 'null'
       - float
     doc: The target confidence level
-    default: 0.99
     inputBinding:
       position: 101
       prefix: --target-confidence
@@ -104,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for signature building
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

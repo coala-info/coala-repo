@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Print only features of these type(s)
-    default: CDS
     inputBinding:
       position: 101
       prefix: --accepted-feature-types
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Print elements from the comments in the GFF file
-    default: ID
     inputBinding:
       position: 101
       prefix: --comment-fields
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: consider only forward reads (i.e. read1) and ignore reverse reads.
-    default: false
     inputBinding:
       position: 101
       prefix: --forward-read-only
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - boolean
     doc: ignore directionality, give overall coverage
-    default: false
     inputBinding:
       position: 101
       prefix: --ignore-directions
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: Log to file
-    default: stderr
     inputBinding:
       position: 101
       prefix: --logger
@@ -67,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: what to count for each gene
-    default: coverage
     inputBinding:
       position: 101
       prefix: --measure-type
@@ -76,7 +70,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run quietly, set logging to ERROR level
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -85,7 +78,6 @@ inputs:
       - 'null'
       - string
     doc: Apply these samtools filters
-    default: -F0x100 -F0x800
     inputBinding:
       position: 101
       prefix: --sam-filter-flags
@@ -94,7 +86,6 @@ inputs:
       - 'null'
       - string
     doc: Set log level
-    default: INFO
     inputBinding:
       position: 101
       prefix: --trace

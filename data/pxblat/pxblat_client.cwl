@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Output a dot every N query sequences.
-    default: 0
     inputBinding:
       position: 105
       prefix: --dots
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Sets maximum intron size.
-    default: 750000
     inputBinding:
       position: 105
       prefix: --maxIntron
@@ -67,7 +65,6 @@ inputs:
       - int
     doc: Sets minimum sequence identity (in percent). Default is 90 for 
       nucleotide searches, 25 for protein or translated protein searches.
-    default: 90
     inputBinding:
       position: 105
       prefix: --minIdentity
@@ -77,7 +74,6 @@ inputs:
       - int
     doc: Sets minimum score. This is twice the matches minus the mismatches 
       minus some sort of gap penalty.
-    default: 30
     inputBinding:
       position: 105
       prefix: --minScore
@@ -95,7 +91,6 @@ inputs:
       - string
     doc: 'Controls output file format. Type is one of: psl, pslx, axt, maf, sim4,
       wublast, blast, blast8, blast9'
-    default: psl
     inputBinding:
       position: 105
       prefix: --out
@@ -112,7 +107,6 @@ inputs:
       - 'null'
       - string
     doc: 'Query type. Type is one of: dna, rna, prot, dnax, rnax'
-    default: dna
     inputBinding:
       position: 105
       prefix: --qtype
@@ -121,7 +115,6 @@ inputs:
       - 'null'
       - string
     doc: 'Database type. Type is one of: dna, prot, dnax'
-    default: dna
     inputBinding:
       position: 105
       prefix: --type

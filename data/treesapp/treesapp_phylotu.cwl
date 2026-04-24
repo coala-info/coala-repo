@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: The evolutionary distance threshold defining the cluster boundaries.
-    default: auto
     inputBinding:
       position: 101
       prefix: --alpha
@@ -31,7 +30,6 @@ inputs:
     doc: The proportion of the reference package profile HMM a candidate 
       centroid must exceed.No sequence convering less than this proportion will 
       be used as a centroid.
-    default: 0.6
     inputBinding:
       position: 101
       prefix: --centroid_proportion
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: The phylogentic clustering mode to use.
-    default: ref_guided
     inputBinding:
       position: 101
       prefix: --mode
@@ -67,7 +64,6 @@ inputs:
       - int
     doc: The number of CPU threads or parallel processes to use in various 
       pipeline steps
-    default: 2
     inputBinding:
       position: 101
       prefix: --num_procs
@@ -85,7 +81,6 @@ inputs:
       - string
     doc: The method to use for pre-clustering the classified sequences, based on
       either placement-space ('psc') or pairwise alignment ('align').
-    default: psc
     inputBinding:
       position: 101
       prefix: --pre_cluster
@@ -109,7 +104,6 @@ inputs:
       - string
     doc: "A regular expression for parsing the sample name from a query sequence name.
       Example: '^(\\d+)\\.a:.*'."
-    default: None
     inputBinding:
       position: 101
       prefix: --sample_regex
@@ -118,7 +112,6 @@ inputs:
       - 'null'
       - string
     doc: The taxonomic rank the cluster radius should approximately represent.
-    default: species
     inputBinding:
       position: 101
       prefix: --tax_rank

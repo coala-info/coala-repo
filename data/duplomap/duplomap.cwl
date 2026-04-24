@@ -13,7 +13,6 @@ inputs:
       between the read and the PSV alleles are within FLOAT[1]-fold range 
       (max(probabilities) < min(probabilities) * FLOAT[1]). If the PSV has more 
       than FLOAT[2] percent ambiguously aligned reads, it is not used.
-    default:
       - 4
       - 30
     inputBinding:
@@ -27,7 +26,6 @@ inputs:
       PSVs out of all homozygous PSVs. All reads that fail the test are assigned
       low MAPQ. The threshold p-value is divided by the number of reads in each 
       component according to the Bonferroni correction.
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --conflicts-p-value
@@ -48,7 +46,6 @@ inputs:
     doc: Do not realign reads that overlap high copy number regions by more than
       FLOAT %. High copy number regions are defined in duplomap-prepare with 
       --skip-copy-num.
-    default: 50
     inputBinding:
       position: 101
       prefix: --copy-num-perc
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size used for filtering possible location for a read.
-    default: 11
     inputBinding:
       position: 101
       prefix: --filtering-kmer
@@ -84,7 +80,6 @@ inputs:
     doc: We compare LCS paths of a read and its possible locations. If location 
       A is better than location B with p-value lower than FLOAT, location B may 
       be discarded.
-    default: '1e-4'
     inputBinding:
       position: 101
       prefix: --filtering-p-value
@@ -120,7 +115,6 @@ inputs:
       - int
     doc: Do not use reads with MAPQ lower than INT to determine genotype 
       probabilities.
-    default: 30
     inputBinding:
       position: 101
       prefix: --gt-min-mapq
@@ -129,7 +123,6 @@ inputs:
       - 'null'
       - float
     doc: Reference genotype prior.
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --gt-prior
@@ -144,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of iterations of EM-algorithm.
-    default: 100
     inputBinding:
       position: 101
       prefix: --iterations
@@ -162,7 +154,6 @@ inputs:
       - string
     doc: Logging level in log files (stderr shows logs with info level and 
       higher).
-    default: debug
     inputBinding:
       position: 101
       prefix: --log
@@ -172,7 +163,6 @@ inputs:
       - int
     doc: Maximal number of locations after filtering. If read can align to more 
       than INT locations, it will get the original alignment and MAPQ 0.
-    default: 50
     inputBinding:
       position: 101
       prefix: --max-locations
@@ -182,7 +172,6 @@ inputs:
       - int
     doc: Minimal number of conflicts between a read and PSVs to discard the 
       read.
-    default: 5
     inputBinding:
       position: 101
       prefix: --min-conflicts
@@ -191,7 +180,6 @@ inputs:
       - 'null'
       - int
     doc: Minimap2 k-mer size.
-    default: 11
     inputBinding:
       position: 101
       prefix: --minimap-kmer
@@ -208,7 +196,6 @@ inputs:
       - 'null'
       - string
     doc: 'Minimap2 alignment preset. Possible values: pacbio [pb] and nanopore [ont]'
-    default: pacbio
     inputBinding:
       position: 101
       prefix: --preset
@@ -229,7 +216,6 @@ inputs:
     doc: Maximal difference in sizes of the PSV sequences (including anchors). 
       PSVs with bigger difference are not used, but influence pre-PSV LCS 
       comparison.
-    default: 10
     inputBinding:
       position: 101
       prefix: --psv-size-diff
@@ -240,7 +226,6 @@ inputs:
     doc: Maximal read-PSV impact. A single read cannot decrease genotype 
       probability of a PSV by more than 10^FLOAT, and a single PSV cannot affect
       location probabilities by more than 10^FLOAT.
-    default: 3
     inputBinding:
       position: 101
       prefix: --read-psv-impact
@@ -257,7 +242,6 @@ inputs:
     doc: Padding added to the sides of possible read locations. For example, for
       a read with with length 3,000 and relative-padding 0.01, possible 
       locations would be padded by 30 bp on both sides.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --relative-padding
@@ -266,7 +250,6 @@ inputs:
       - 'null'
       - string
     doc: Path to Samtools executable.
-    default: samtools
     inputBinding:
       position: 101
       prefix: --samtools
@@ -276,7 +259,6 @@ inputs:
       - string
     doc: Output at most INT secondary alignments for each realigned read. Use 
       "all" to output all secondary alignments.
-    default: '0'
     inputBinding:
       position: 101
       prefix: --secondary
@@ -286,7 +268,6 @@ inputs:
       - string
     doc: Skip reads with mapping quality at least INT in the original alignment.
       These reads will be used to estimate genotypes, but will not be realigned.
-    default: none
     inputBinding:
       position: 101
       prefix: --skip-mapq
@@ -311,7 +292,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -322,7 +302,6 @@ inputs:
     doc: 'How to process reads that overlap unknown regions in the reference: realign
       - Realign a read and assign appropriate MAPQ, keep-old - Keep an old alignment
       and MAPQ, mapq0 - Keep an old alignment and set MAPQ to 0.'
-    default: realign
     inputBinding:
       position: 101
       prefix: --unknown-regions

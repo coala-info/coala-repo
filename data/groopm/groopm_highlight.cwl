@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - float
     doc: azimuth in printed image
-    default: -45.0
     inputBinding:
       position: 102
       prefix: --azimuth
@@ -24,7 +23,6 @@ inputs:
       - type: array
         items: string
     doc: bin ids to plot (None for all)
-    default: None
     inputBinding:
       position: 102
       prefix: --bids
@@ -34,7 +32,6 @@ inputs:
       - string
     doc: replace bin IDs with user specified labels (use 'none' to force no 
       labels)
-    default: ''
     inputBinding:
       position: 102
       prefix: --binlabels
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: specify contig colors
-    default: ''
     inputBinding:
       position: 102
       prefix: --contigcolors
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: cutoff contig size
-    default: 1000
     inputBinding:
       position: 102
       prefix: --cutoff
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Image resolution
-    default: 300
     inputBinding:
       position: 102
       prefix: --dpi
@@ -70,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: elevation in printed image
-    default: 25.0
     inputBinding:
       position: 102
       prefix: --elevation
@@ -79,7 +72,6 @@ inputs:
       - 'null'
       - File
     doc: name of image file to produce
-    default: gmview
     inputBinding:
       position: 102
       prefix: --file
@@ -88,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: Type of file to produce
-    default: jpg
     inputBinding:
       position: 102
       prefix: --filetype
@@ -97,7 +88,6 @@ inputs:
       - 'null'
       - boolean
     doc: use this to help work out azimuth/elevation parameters
-    default: false
     inputBinding:
       position: 102
       prefix: --place
@@ -106,7 +96,6 @@ inputs:
       - 'null'
       - boolean
     doc: ignore contig lengths when plotting
-    default: false
     inputBinding:
       position: 102
       prefix: --points
@@ -115,7 +104,6 @@ inputs:
       - 'null'
       - boolean
     doc: draw placement radius to help with label moving
-    default: false
     inputBinding:
       position: 102
       prefix: --radius
@@ -124,7 +112,6 @@ inputs:
       - 'null'
       - boolean
     doc: load image in viewer only
-    default: false
     inputBinding:
       position: 102
       prefix: --show

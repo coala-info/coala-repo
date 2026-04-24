@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - float
     doc: stop if motif E-value > <ethresh>
-    default: 0.05
     inputBinding:
       position: 101
       prefix: -e
@@ -77,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: maximum width of core motif
-    default: 8
     inputBinding:
       position: 101
       prefix: -maxk
@@ -103,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: minimum width of core motif
-    default: 3
     inputBinding:
       position: 101
       prefix: -mink
@@ -129,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: number of REs to generalize
-    default: 100
     inputBinding:
       position: 101
       prefix: -g
@@ -168,7 +164,6 @@ inputs:
       - 'null'
       - int
     doc: seed for shuffling sequences; ignored if -n <filename> given
-    default: 1
     inputBinding:
       position: 101
       prefix: -s
@@ -177,7 +172,6 @@ inputs:
       - 'null'
       - int
     doc: 1..5 for varying degrees of extra output
-    default: 2
     inputBinding:
       position: 101
       prefix: -verbosity
@@ -195,7 +189,6 @@ outputs:
       - 'null'
       - Directory
     doc: 'create the specified output directory overwritting it if it already exists;
-      default: create dreme_out in the currrent working directory'
     outputBinding:
       glob: $(inputs.output_directory_overwrite)
 hints:

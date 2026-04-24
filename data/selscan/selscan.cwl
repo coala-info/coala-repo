@@ -12,7 +12,6 @@ inputs:
     doc: Set this flag to calculate homozygosity based on the sum of the squared
       haplotype frequencies in the observed data instead of using binomial 
       coefficients.
-    default: false
     inputBinding:
       position: 101
       prefix: --alt
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: The EHH decay cutoff.
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --cutoff
@@ -40,7 +38,6 @@ inputs:
       - int
     doc: When calculating EHH, this is the length of the window in bp in each 
       direction from the query locus.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --ehh-win
@@ -51,7 +48,6 @@ inputs:
     doc: Gap scale parameter in bp. If a gap is encountered between two snps > 
       GAP_SCALE and < MAX_GAP, then the genetic distance is scaled by 
       GAP_SCALE/GAP.
-    default: 20000
     inputBinding:
       position: 101
       prefix: --gap-scale
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set this flag to calculate iHH12.
-    default: false
     inputBinding:
       position: 101
       prefix: --ihh12
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set this flag to calculate iHS.
-    default: false
     inputBinding:
       position: 101
       prefix: --ihs
@@ -88,7 +82,6 @@ inputs:
       - boolean
     doc: Set this flag to write out left and right iHH scores for '1' and '0' in
       addition to iHS.
-    default: false
     inputBinding:
       position: 101
       prefix: --ihs-detail
@@ -97,7 +90,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include low frequency variants in the construction of your haplotypes.
-    default: false
     inputBinding:
       position: 101
       prefix: --keep-low-freq
@@ -107,7 +99,6 @@ inputs:
       - float
     doc: If a site has a MAF below this value, the program will not use it as a 
       core snp.
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --maf
@@ -126,7 +117,6 @@ inputs:
       - int
     doc: The maximum distance an EHH decay curve is allowed to extend from the 
       core. Set <= 0 for no restriction.
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --max-extend
@@ -136,7 +126,6 @@ inputs:
       - int
     doc: The maximum distance an nSL haplotype is allowed to extend from the 
       core. Set <= 0 for no restriction.
-    default: 100
     inputBinding:
       position: 101
       prefix: --max-extend-nsl
@@ -145,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum allowed gap in bp between two snps.
-    default: 200000
     inputBinding:
       position: 101
       prefix: --max-gap
@@ -154,7 +142,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set this flag to calculate nSL.
-    default: false
     inputBinding:
       position: 101
       prefix: --nsl
@@ -164,7 +151,6 @@ inputs:
       - boolean
     doc: Set this flag to calculate mean pairwise sequence difference in a 
       sliding window.
-    default: false
     inputBinding:
       position: 101
       prefix: --pi
@@ -173,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: Sliding window size in bp for calculating pi.
-    default: 100
     inputBinding:
       position: 101
       prefix: --pi-win
@@ -193,7 +178,6 @@ inputs:
     doc: This flag is now on by default. If you want to include low frequency 
       variants in the construction of your haplotypes please use the 
       --keep-low-freq flag.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-low-freq
@@ -202,7 +186,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads to spawn during the calculation.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -229,7 +212,6 @@ inputs:
       - boolean
     doc: If an EHH decay reaches the end of a sequence before reaching the 
       cutoff, integrate the curve anyway (iHS and XPEHH only).
-    default: false
     inputBinding:
       position: 101
       prefix: --trunc-ok
@@ -256,7 +238,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set this flag to calculate XP-EHH.
-    default: false
     inputBinding:
       position: 101
       prefix: --xpehh

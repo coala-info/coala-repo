@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality
-    default: 5
     inputBinding:
       position: 101
       prefix: --quality
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of discordant pairs to call a SV
-    default: 3
     inputBinding:
       position: 101
       prefix: --pair
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of split reads to call a SV
-    default: 3
     inputBinding:
       position: 101
       prefix: --split

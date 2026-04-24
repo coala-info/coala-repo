@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Choose end-of-line character ('unix' by default).
-    default: unix
     inputBinding:
       position: 102
       prefix: --eol
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: 'Set output sequence line length, 0 for single line (default: 60).'
-    default: 60
     inputBinding:
       position: 102
       prefix: --line-length
@@ -36,7 +34,6 @@ inputs:
       - string
     doc: Specify whether all data, sequence length, or number of sequences is 
       used for determining part sizes ('all' by default).
-    default: all
     inputBinding:
       position: 102
       prefix: --measure
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: 'Put T before part number in file names (def.: .part-)'
-    default: .part-
     inputBinding:
       position: 102
       prefix: --part-num-prefix

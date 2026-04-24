@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - float
     doc: Error rate threshold for mismatches and gaps.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --adapter-error-rate
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum overlap for removal without pair overlap.
-    default: 3
     inputBinding:
       position: 101
       prefix: --adapter-min-overlap
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Type of removal, see section trim-end modes.
-    default: RIGHT
     inputBinding:
       position: 101
       prefix: --adapter-trim-end
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: Error rate threshold for mismatches and gaps.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --barcode-error-rate
@@ -103,7 +99,6 @@ inputs:
       - 'null'
       - string
     doc: Type of detection, see section trim-end modes.
-    default: LTAIL
     inputBinding:
       position: 101
       prefix: --barcode-trim-end
@@ -128,7 +123,6 @@ inputs:
       - 'null'
       - float
     doc: Error rate threshold for mismatches.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --htrim-error-rate
@@ -137,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of homopolymers at read ends.
-    default: 3
     inputBinding:
       position: 101
       prefix: --htrim-min-length
@@ -154,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: Allowed uncalled bases N for each read.
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-uncalled
@@ -163,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length to remain after removal.
-    default: 18
     inputBinding:
       position: 101
       prefix: --min-read-length
@@ -204,7 +195,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum quality as threshold for trimming.
-    default: 20
     inputBinding:
       position: 101
       prefix: --qtrim-threshold
@@ -251,7 +241,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to employ.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: A specific chromosome on which to tag somatic mutations.
-    default: None
     inputBinding:
       position: 102
       prefix: --chrom
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: The max count. of the alt. allele in the normal sample
-    default: 0
     inputBinding:
       position: 102
       prefix: --max-norm-alt-count
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: The max freq. of the alt. allele in the normal sample
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --max-norm-alt-freq
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: The min combined depth for tumor + normal
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-depth
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum depth allowed in the normal sample to believe somatic
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-norm-depth
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: The min variant quality (VCF QUAL)
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-qual
@@ -80,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: The min somatic score (SSC)
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-somatic-score
@@ -89,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: The min count. of the alt. allele in the tumor sample
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-tumor-alt-count
@@ -98,7 +90,6 @@ inputs:
       - 'null'
       - float
     doc: The min freq. of the alt. allele in the tumor sample
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --min-tumor-alt-freq
@@ -107,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum depth allowed in the tumor sample to believe somatic
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-tumor-depth

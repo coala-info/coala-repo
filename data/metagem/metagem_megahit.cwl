@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: intensity of bubble merging (0-2), 0 to disable
-    default: 2
     inputBinding:
       position: 101
       prefix: --bubble-level
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: number of rounds for graph cleanning
-    default: 5
     inputBinding:
       position: 101
       prefix: --cleaning-rounds
@@ -38,7 +36,6 @@ inputs:
       - float
     doc: "disconnect unitigs if its depth is less than this ratio times \n       \
       \                                     the total depth of itself and its siblings"
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --disconnect-ratio
@@ -48,7 +45,6 @@ inputs:
       - string
     doc: "comma-separated list of kmer size\n                                    \
       \        all must be odd, in the range 15-255, increment <= 28)"
-    default: '[21,29,39,59,79,99,119,141]'
     inputBinding:
       position: 101
       prefix: --k-list
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: maximum kmer size (<= 255), must be odd number
-    default: 141
     inputBinding:
       position: 101
       prefix: --k-max
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: minimum kmer size (<= 255), must be odd number
-    default: 21
     inputBinding:
       position: 101
       prefix: --k-min
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: increment of kmer size of each iteration (<= 28), must be even number
-    default: 12
     inputBinding:
       position: 101
       prefix: --k-step
@@ -101,7 +94,6 @@ inputs:
       - float
     doc: "remove unitigs if its depth is less than this ratio times\n            \
       \                                the average depth of the neighborhoods"
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --low-local-ratio
@@ -119,7 +111,6 @@ inputs:
       - int
     doc: "SdBG builder memory mode. 0: minimum; 1: moderate;\n                   \
       \                         others: use all memory specified by '-m/--memory'"
-    default: 1
     inputBinding:
       position: 101
       prefix: --mem-flag
@@ -130,7 +121,6 @@ inputs:
     doc: "max memory in byte to be used in SdBG construction\n                   \
       \                         (if set between 0-1, fraction of the machine's total
       memory)"
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --memory
@@ -139,7 +129,6 @@ inputs:
       - 'null'
       - string
     doc: merge complex bubbles of length <= l*kmer_size and similarity >= s
-    default: 20,0.95
     inputBinding:
       position: 101
       prefix: --merge-level
@@ -148,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of contigs to output
-    default: 200
     inputBinding:
       position: 101
       prefix: --min-contig-len
@@ -157,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: minimum multiplicity for filtering (k_min+1)-mers
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-count
@@ -198,7 +185,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory
-    default: ./megahit_out
     inputBinding:
       position: 101
       prefix: --out-dir
@@ -256,7 +242,6 @@ inputs:
       - 'null'
       - int
     doc: remove unitigs with avg kmer depth less than this value
-    default: 2
     inputBinding:
       position: 101
       prefix: --prune-depth
@@ -265,7 +250,6 @@ inputs:
       - 'null'
       - int
     doc: strength of low depth pruning (0-3)
-    default: 2
     inputBinding:
       position: 101
       prefix: --prune-level

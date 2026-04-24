@@ -21,7 +21,6 @@ inputs:
     doc: Control assertion debugging tools. 'plain' performs no assertion 
       debugging. 'rewrite' (the default) rewrites assert statements in test 
       modules on import to provide assert expression information.
-    default: rewrite
     inputBinding:
       position: 102
       prefix: --assert
@@ -208,7 +207,6 @@ inputs:
       - string
     doc: prepend/append to sys.path when importing test modules, default is to 
       prepend.
-    default: prepend
     inputBinding:
       position: 102
       prefix: --import-mode
@@ -435,7 +433,6 @@ inputs:
       - int
     doc: Timeout in seconds before dumping the stacks. Default is 0 which means 
       no timeout.
-    default: 0
     inputBinding:
       position: 102
       prefix: --timeout

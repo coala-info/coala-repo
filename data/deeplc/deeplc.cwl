@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: verbosity of logging messages; default=info
-    default: info
     inputBinding:
       position: 101
       prefix: --log_level
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPU threads to use; default=all with max of 16
-    default: all with max of 16
     inputBinding:
       position: 101
       prefix: --n_threads

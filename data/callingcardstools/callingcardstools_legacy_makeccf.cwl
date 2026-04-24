@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum insert size to consider for paired-end reads.
-    default: 1000
     inputBinding:
       position: 102
       prefix: --max_insert_size
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality to consider a base for calling card generation.
-    default: 20
     inputBinding:
       position: 102
       prefix: --min_baseq
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum insert size to consider for paired-end reads.
-    default: 0
     inputBinding:
       position: 102
       prefix: --min_insert_size
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality to consider a read for calling card generation.
-    default: 20
     inputBinding:
       position: 102
       prefix: --min_mapq
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for the output calling card files.
-    default: ccf
     inputBinding:
       position: 102
       prefix: --output_prefix
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for processing.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: The name of the file that contains ambiguous reads.
-    default: Ambiguous
     inputBinding:
       position: 101
       prefix: --ambiguous-label
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: The size of the buffer for data compression for each sample.
-    default: 131072
     inputBinding:
       position: 101
       prefix: --compression-buffer-size
@@ -49,7 +47,6 @@ inputs:
       - int
     doc: The level of compression (between 0 and 12). 0 is fast but no 
       compression, 12 is slow but high compression.
-    default: 1
     inputBinding:
       position: 101
       prefix: --compression-level
@@ -103,7 +100,6 @@ inputs:
     doc: The suffix to read1 file name. When using the --input parameter, the 
       tool looks for the file that ends with this suffix and use it as read1 
       file.
-    default: _read_1.fq.gz
     inputBinding:
       position: 101
       prefix: --in-r1-file-suf
@@ -114,7 +110,6 @@ inputs:
     doc: The suffix to read2 file name. When using the --input parameter, the 
       tool looks for the file that ends with this suffix and use it as read2 
       file.
-    default: _read_2.fq.gz
     inputBinding:
       position: 101
       prefix: --in-r2-file-suf
@@ -165,7 +160,6 @@ inputs:
       - string
     doc: 'log level for output messages. Expected values: [error, warn, info, debug,
       trace]. Default is info.'
-    default: info
     inputBinding:
       position: 101
       prefix: --log-level
@@ -175,7 +169,6 @@ inputs:
       - int
     doc: The requested maximum memory to be used (in giga byte). Default is 0 
       then the tool will use the available memory on the machine.
-    default: 0
     inputBinding:
       position: 101
       prefix: --memory
@@ -192,7 +185,6 @@ inputs:
       - 'null'
       - int
     doc: The number of allowed mismatches when detecting indexes from reads.
-    default: 1
     inputBinding:
       position: 101
       prefix: --mismatches
@@ -227,7 +219,6 @@ inputs:
       - int
     doc: The requested threads to be used for input reading. Default is 0 which 
       means auto configuration.
-    default: 0
     inputBinding:
       position: 101
       prefix: --reader-threads
@@ -237,7 +228,6 @@ inputs:
       - int
     doc: 'The level of reporting. 0 no reports will be generated!, 1 data quality
       and demultipexing reports. 2: all reports.'
-    default: 2
     inputBinding:
       position: 101
       prefix: --report-level
@@ -247,7 +237,6 @@ inputs:
       - int
     doc: The number of barcodes to be reported in the list of undetermined and 
       ambiguous barcodes for short/multiqc report.
-    default: 20
     inputBinding:
       position: 101
       prefix: --report-limit
@@ -279,7 +268,6 @@ inputs:
       - int
     doc: The requested threads to be used. Default is 0 which means to use all 
       available CPUs.
-    default: 0
     inputBinding:
       position: 101
       prefix: --threads
@@ -288,7 +276,6 @@ inputs:
       - 'null'
       - string
     doc: The name of the file that contains undetermined reads.
-    default: Undetermined
     inputBinding:
       position: 101
       prefix: --undetermined-label
@@ -306,7 +293,6 @@ inputs:
       - int
     doc: The requested threads to be used for processing and writing outputs. 
       Default is 0 which means auto configuration.
-    default: 0
     inputBinding:
       position: 101
       prefix: --writer-threads
@@ -316,7 +302,6 @@ inputs:
       - int
     doc: The size of the buffer for each sample to be filled with data then 
       written once to the disk.
-    default: 67108864
     inputBinding:
       position: 101
       prefix: --writing-buffer-size

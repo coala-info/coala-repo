@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality at a position to be counted.
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-base-quality
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality of reads to be counted.
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-mapping-quality

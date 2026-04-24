@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: delimiter for adjacency file. Supports a comma and a tab.
-    default: comma
     inputBinding:
       position: 101
       prefix: --delimiter

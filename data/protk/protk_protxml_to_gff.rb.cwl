@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run in debug mode
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -60,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output gff entries for peptide modification sites
-    default: false
     inputBinding:
       position: 102
       prefix: --include-mods
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: Protein Probability Threshold
-    default: 0.99
     inputBinding:
       position: 102
       prefix: --prot-threshold
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - boolean
     doc: Different peptide charge states get separate gff entries
-    default: false
     inputBinding:
       position: 102
       prefix: --stack-charge-states
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - float
     doc: Peptide Probability Threshold
-    default: 0.95
     inputBinding:
       position: 102
       prefix: --threshold

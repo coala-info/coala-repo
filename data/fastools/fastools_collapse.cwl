@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Length of the stretch
-    default: 3
     inputBinding:
       position: 102
       prefix: --stretch

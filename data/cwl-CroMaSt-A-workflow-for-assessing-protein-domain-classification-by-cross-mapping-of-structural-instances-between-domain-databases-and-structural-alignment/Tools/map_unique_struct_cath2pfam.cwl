@@ -42,7 +42,6 @@ inputs:
   pfam_raw:
     type: File?
     label: Raw file from Pfam with all domain instances
-    default: 
       class: File
       location: '../Data/pdbmap'
       basename: pdbmap
@@ -52,21 +51,18 @@ inputs:
   crossmap_cath:
     type: [ File?, string?]
     label: User-defined filename for crossmapped structures from CATH
-    default: cath_crossMapped_pfam.jsonx
     inputBinding:
       prefix: -x
   
   no_crossmap:
     type: [ File?, string?]
     label: User-defined filename for not crossmapped cath structures 
-    default: cath_unq_unmapped.jsonx
     inputBinding:
       prefix: -u
 
   min_dom_len:
     type: int
     label: Minimum domain length criteria to filter domain StIs
-    default: 31
     inputBinding:
       prefix: -l
 

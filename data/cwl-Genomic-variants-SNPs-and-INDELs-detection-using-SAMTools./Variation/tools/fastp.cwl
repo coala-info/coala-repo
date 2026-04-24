@@ -49,22 +49,18 @@ inputs:
         prefix: -I
     threads:
       type: int?
-      default: 1
       inputBinding:
         prefix: --thread
     qualified_phred_quality:
       type: int?
-      default: 20
       inputBinding:
         prefix: --qualified_quality_phred
     unqualified_phred_quality:
       type: int?
-      default: 20
       inputBinding:
         prefix: --unqualified_percent_limit
     min_length_required:
       type: int?
-      default: 50
       inputBinding:
         prefix: --length_required
     force_polyg_tail_trimming:
@@ -73,12 +69,10 @@ inputs:
         prefix: --trim_poly_g
     disable_trim_poly_g:
       type: boolean?
-      default: true
       inputBinding:
         prefix: --disable_trim_poly_g
     base_correction:
       type: boolean?
-      default: true
       inputBinding:
         prefix: --correction
     

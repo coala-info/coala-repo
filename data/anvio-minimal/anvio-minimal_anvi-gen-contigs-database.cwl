@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size to be used for calculating k-mer frequencies.
-    default: 4
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for parallel processes.
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-threads
@@ -86,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: The size of the splits for each contig.
-    default: 20000
     inputBinding:
       position: 101
       prefix: --split-length

@@ -201,7 +201,6 @@ inputs:
       - 'null'
       - string
     doc: Output file type (sam or bam)
-    default: sam
     inputBinding:
       position: 102
       prefix: --output-type

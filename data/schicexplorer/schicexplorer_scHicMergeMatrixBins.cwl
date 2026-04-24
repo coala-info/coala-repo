@@ -24,7 +24,6 @@ inputs:
       - boolean
     doc: "set to merge for using a running window of length\n--numBins. Must be an
       odd number."
-    default: false
     inputBinding:
       position: 101
       prefix: --runningWindow
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: "Number of threads. Using the python multiprocessing\nmodule."
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

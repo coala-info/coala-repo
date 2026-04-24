@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum missing genotype rate per individual
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --max-missing
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum minor allele frequency for variants
-    default: 0.01
     inputBinding:
       position: 103
       prefix: --min-maf
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Number of ancestry components (K)
-    default: 2
     inputBinding:
       position: 103
       prefix: --k
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

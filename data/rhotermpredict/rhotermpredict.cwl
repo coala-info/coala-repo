@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run quietly (default is False)
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet

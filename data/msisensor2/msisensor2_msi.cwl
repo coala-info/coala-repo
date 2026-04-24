@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: 'coverage normalization for paired tumor and normal data, 0: no; 1: yes'
-    default: 0
     inputBinding:
       position: 101
       prefix: -z
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: 'coverage threshold for msi analysis, WXS: 20; WGS: 15'
-    default: 20
     inputBinding:
       position: 101
       prefix: -c
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: FDR threshold for somatic sites detection
-    default: 0.05
     inputBinding:
       position: 101
       prefix: -f
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: maximal homopolymer size for distribution analysis
-    default: 50
     inputBinding:
       position: 101
       prefix: -m
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: maximal microstaes size for distribution analysis
-    default: 40
     inputBinding:
       position: 101
       prefix: -w
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: minimal homopolymer size
-    default: 5
     inputBinding:
       position: 101
       prefix: -l
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: minimal homopolymer size for distribution analysis
-    default: 10
     inputBinding:
       position: 101
       prefix: -p
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: minimal microsates size
-    default: 3
     inputBinding:
       position: 101
       prefix: -q
@@ -95,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: minimal microsates size for distribution analysis
-    default: 5
     inputBinding:
       position: 101
       prefix: -s
@@ -116,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: 'output homopolymer only, 0: no; 1: yes'
-    default: 0
     inputBinding:
       position: 101
       prefix: -x
@@ -125,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: 'output microsatellite only, 0: no; 1: yes'
-    default: 0
     inputBinding:
       position: 101
       prefix: -y
@@ -142,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: span size around window for extracting reads
-    default: 500
     inputBinding:
       position: 101
       prefix: -u
@@ -151,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: threads number for parallel computing
-    default: 1
     inputBinding:
       position: 101
       prefix: -b

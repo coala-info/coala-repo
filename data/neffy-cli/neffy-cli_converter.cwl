@@ -12,7 +12,6 @@ inputs:
       - int
     doc: "Specifies the alphabet for the sequences:\n        0 : Protein (default)\n\
       \        1 : RNA\n        2 : DNA"
-    default: 0
     inputBinding:
       position: 101
       prefix: --alphabet
@@ -22,7 +21,6 @@ inputs:
       - boolean
     doc: If true, validates the sequences to ensure they contain only letters 
       from the specified alphabet.
-    default: true
     inputBinding:
       position: 101
       prefix: --check_validation

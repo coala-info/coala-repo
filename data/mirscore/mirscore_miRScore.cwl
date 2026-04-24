@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Allow up to 1 mismatch in miRNA reads
-    default: 1
     inputBinding:
       position: 101
       prefix: -mm

@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for probability filtering (default=0.7)
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --threshold

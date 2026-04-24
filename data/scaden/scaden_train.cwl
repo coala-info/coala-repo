@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Batch size to use for training.
-    default: 128
     inputBinding:
       position: 102
       prefix: --batch_size
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: Learning rate used for training.
-    default: 0.0001
     inputBinding:
       position: 102
       prefix: --learning_rate

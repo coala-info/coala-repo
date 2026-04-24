@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: select the grammar [plain, shaped]
-    default: plain
     inputBinding:
       position: 101
       prefix: --grammar
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: output file prefix
-    default: .
     inputBinding:
       position: 101
       prefix: --output
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: number of helper threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

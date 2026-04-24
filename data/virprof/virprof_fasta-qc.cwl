@@ -20,7 +20,6 @@ inputs:
       - int
     doc: Minimum length for a repeat to be considered long homopolymer.Set to 0 
       to disable.
-    default: 0
     inputBinding:
       position: 101
       prefix: --hmin

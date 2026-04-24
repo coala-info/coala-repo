@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: genome data for bedtools
-    default: hg38 file in bedtools
     inputBinding:
       position: 101
       prefix: --bedtools-genome
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - File
     doc: alignment to the genome
-    default: ./lastal/read_to_ref.maf
     inputBinding:
       position: 101
       prefix: --genome-maf
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - File
     doc: alignment to the insertion sequence
-    default: ./lastal/read_to_insert.maf
     inputBinding:
       position: 101
       prefix: --insert-maf
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: maximum proportion of the read aligned to the reference genome
-    default: 1
     inputBinding:
       position: 101
       prefix: --max-prop
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: maximum length of the adaptor to be trimmed
-    default: 100
     inputBinding:
       position: 101
       prefix: --max-trim-length
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: minimum coverage for a peak
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-cov
@@ -86,7 +80,6 @@ inputs:
       - 'null'
       - float
     doc: minimum proportion of the read aligned to the reference genome
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-prop
@@ -95,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: minimum read length
-    default: 500
     inputBinding:
       position: 101
       prefix: --min-read-length
@@ -104,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: padding for the target region
-    default: 20
     inputBinding:
       position: 101
       prefix: --padding
@@ -137,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --thread
@@ -154,7 +144,6 @@ inputs:
       - 'null'
       - Directory
     doc: working directory
-    default: current directory
     inputBinding:
       position: 101
       prefix: --workdir

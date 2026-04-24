@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: Method for enrichment analysis (e.g., 'hypergeometric', 'fisher').
-    default: hypergeometric
     inputBinding:
       position: 103
       prefix: --enrichment-method
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of genes allowed in a gene set to be considered.
-    default: 500
     inputBinding:
       position: 103
       prefix: --max-genes-per-set
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of genes required in a gene set to be considered.
-    default: 5
     inputBinding:
       position: 103
       prefix: --min-genes-per-set
@@ -56,7 +53,6 @@ inputs:
       - string
     doc: Algorithm for constructing the gene set network (e.g., 'jaccard', 
       'overlap_coefficient').
-    default: jaccard
     inputBinding:
       position: 103
       prefix: --network-algorithm
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for including edges in the gene set network.
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --network-threshold
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - float
     doc: Significance threshold for p-values.
-    default: 0.05
     inputBinding:
       position: 103
       prefix: --p-value-threshold
@@ -83,7 +77,6 @@ inputs:
       - 'null'
       - float
     doc: Significance threshold for q-values (FDR).
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --q-value-threshold

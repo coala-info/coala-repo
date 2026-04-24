@@ -11,7 +11,6 @@ inputs:
     doc: weighting for adjacency index metric, a comparison of shared domain 
       pairs in the contigs. When two contigs have 0 or 1 domains, their ai is 
       1.0.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --ai
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - File
     doc: Path to a configuration file.
-    default: None
     inputBinding:
       position: 101
       prefix: --config
@@ -30,8 +28,6 @@ inputs:
       - type: array
         items: string
     doc: 'only annotate contigs with ids in this list. Additive with --contigs_file.
-      default: all contigs.'
-    default: []
     inputBinding:
       position: 101
       prefix: --contigs
@@ -41,7 +37,6 @@ inputs:
       - File
     doc: 'only annotate contigs with ids listed in this file (one per line). Additive
       with --contigs. default: all contigs.'
-    default: None
     inputBinding:
       position: 101
       prefix: --contigs_file
@@ -51,7 +46,6 @@ inputs:
       - type: array
         items: string
     doc: 'Domain databases to use for domain content comparison. default: all databases.'
-    default: None
     inputBinding:
       position: 101
       prefix: --databases
@@ -60,7 +54,6 @@ inputs:
       - 'null'
       - File
     doc: Write a dense distance matrix hdf5 file to this path.
-    default: None
     inputBinding:
       position: 101
       prefix: --dense
@@ -69,7 +62,6 @@ inputs:
       - 'null'
       - File
     doc: Write a dense distance matrix tsv file to this path.
-    default: None
     inputBinding:
       position: 101
       prefix: --dense_text
@@ -79,7 +71,6 @@ inputs:
       - type: array
         items: File
     doc: Genbank filenames.
-    default: None
     inputBinding:
       position: 101
       prefix: --input
@@ -90,7 +81,6 @@ inputs:
     doc: weighting for jaccard index metric, a comparison of all distinct types 
       of domains in the contigs. When two contigs have no domains, their ji is 
       1.0.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --ji
@@ -100,7 +90,6 @@ inputs:
       - boolean
     doc: Will rename contigs in the genbank file such that they have a prefix 
       that can be sorted to restore the sorted order.
-    default: false
     inputBinding:
       position: 101
       prefix: --name_by_order
@@ -119,7 +108,6 @@ inputs:
       - 'null'
       - File
     doc: Write a sparse distance matrix hdf5 file to this path.
-    default: None
     inputBinding:
       position: 101
       prefix: --sparse
@@ -129,7 +117,6 @@ inputs:
       - int
     doc: 'for each metric, return scores for this many of the top hits, and consider
       all other hits to be zero. default: count all comparisons.'
-    default: None
     inputBinding:
       position: 101
       prefix: -k

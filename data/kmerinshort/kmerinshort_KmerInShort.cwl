@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - File
     doc: file with kmer values
-    default: ''
     inputBinding:
       position: 101
   - id: nb_cores
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: number of cores
-    default: 0
     inputBinding:
       position: 101
   - id: offset
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: starting offset
-    default: 0
     inputBinding:
       position: 101
   - id: per_seq
@@ -66,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: step
-    default: 1
     inputBinding:
       position: 101
   - id: verbose
@@ -74,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: verbosity level
-    default: 1
     inputBinding:
       position: 101
 outputs:

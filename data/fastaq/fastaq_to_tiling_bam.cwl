@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: Character to use for quality score
-    default: I
     inputBinding:
       position: 105
       prefix: --qual_char
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Add the given read group ID to all reads
-    default: '42'
     inputBinding:
       position: 105
       prefix: --read_group

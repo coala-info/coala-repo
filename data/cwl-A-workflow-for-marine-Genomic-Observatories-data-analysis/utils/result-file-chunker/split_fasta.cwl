@@ -23,7 +23,6 @@ inputs:
       prefix: -i
   type_fasta:
     type: string?
-    default: 'n'   # n=nucleotide, p=protein
   size_limit: int?
 
 arguments:

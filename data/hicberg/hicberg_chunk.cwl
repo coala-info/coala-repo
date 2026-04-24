@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Number of chunks to generate.
-    default: 2
     inputBinding:
       position: 103
       prefix: --chunks

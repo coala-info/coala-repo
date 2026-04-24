@@ -36,7 +36,6 @@ inputs:
       \        it as a template, where %s will be replaced by the\n              \
       \          study name and %a by the assay filename. Default is\n           \
       \             \"%s-%a-sample-variable-matrix.tsv\"."
-    default: '"%s-%a-sample-variable-matrix.tsv"'
     inputBinding:
       position: 101
       prefix: -m
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - Directory
     doc: Set output directory. Default is "."
-    default: '"."'
     inputBinding:
       position: 101
       prefix: -d
@@ -67,7 +65,6 @@ inputs:
       \       template, where %s will be replaced by the study name\n            \
       \            and %a by the assay filename. Default is\n                    \
       \    \"%s-%a-sample-metadata.tsv\"."
-    default: '"%s-%a-sample-metadata.tsv"'
     inputBinding:
       position: 101
       prefix: -s
@@ -98,7 +95,6 @@ inputs:
       \         template, where %s will be replaced by the study name\n          \
       \              and %a by the assay filename. Default is\n                  \
       \      \"%s-%a-variable-metadata.tsv\"."
-    default: '"%s-%a-variable-metadata.tsv"'
     inputBinding:
       position: 101
       prefix: -v

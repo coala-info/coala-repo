@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: maximum gap size
-    default: 5
     inputBinding:
       position: 101
       prefix: --gap_max
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: read alignment program
-    default: bwa
     inputBinding:
       position: 101
       prefix: --mapper
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: minimum allele frequency
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min_af
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality of alignment
-    default: 20
     inputBinding:
       position: 101
       prefix: --min_mapq
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - Directory
     doc: output dir
-    default: .
     inputBinding:
       position: 101
       prefix: --out
@@ -99,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: thread
-    default: 1
     inputBinding:
       position: 101
       prefix: --thread
@@ -108,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: maximum TSD size
-    default: 25
     inputBinding:
       position: 101
       prefix: --tsd_max
@@ -117,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: merge window for identifying TE clusters
-    default: 10
     inputBinding:
       position: 101
       prefix: --window

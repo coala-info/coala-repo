@@ -21,7 +21,6 @@ inputs:
       - int
     doc: Maximum number of hits to report per sequence. Requires --max-num-hits 
       > 1 for now.
-    default: not used
     inputBinding:
       position: 101
       prefix: --limit-per-sequence
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum divergence to report hits for, for each sequence
-    default: not used
     inputBinding:
       position: 101
       prefix: --max-divergence
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of hits to report
-    default: 1
     inputBinding:
       position: 101
       prefix: --max-num-hits

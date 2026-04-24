@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Step shift for the suffix array construction.
-    default: 6
     inputBinding:
       position: 102
       prefix: -s
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 102
       prefix: -t

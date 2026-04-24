@@ -28,7 +28,6 @@ inputs:
       - int
     doc: number of records to sample/keep per sample. If N >= available records,
       all available records are kept.
-    default: 100
     inputBinding:
       position: 102
       prefix: -N
@@ -38,7 +37,6 @@ inputs:
       - int
     doc: number of downsampled replicates per input sample. Each replicate is 
       independently re-sampled.
-    default: 1
     inputBinding:
       position: 102
       prefix: -r
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: 'replicate sample name prefix. If given, the out sample name is: [sname]-[pre]-[rep_id].'
-    default: None
     inputBinding:
       position: 102
       prefix: -p
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: seed for random sampling
-    default: current time
     inputBinding:
       position: 102
       prefix: -s

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: A list of columns that you would like returned.
-    default: '*'
     inputBinding:
       position: 102
       prefix: --columns

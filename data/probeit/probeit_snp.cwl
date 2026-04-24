@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Length of 1st Probes
-    default: 40
     inputBinding:
       position: 101
       prefix: --probe1-len
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: The number of times each 1st Probe should be covered by 2nd Probes
-    default: 1
     inputBinding:
       position: 101
       prefix: --probe2-cover
@@ -60,7 +58,6 @@ inputs:
       - int
     doc: Early stop picking new probes if X% of sequences are covered at least 
       N(--probe2-cover) times.
-    default: 99
     inputBinding:
       position: 101
       prefix: --probe2-earlystop
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: The number of error allowed in 2nd Probes
-    default: 1
     inputBinding:
       position: 101
       prefix: --probe2-error
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Length of 2nd Probes
-    default: 20
     inputBinding:
       position: 101
       prefix: --probe2-len
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: The number of random iterations when minimizing 2nd Probes
-    default: 10
     inputBinding:
       position: 101
       prefix: --probe2-repeat
@@ -115,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPU-cores used
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads
@@ -124,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: size of windows for 2nd probes
-    default: 200
     inputBinding:
       position: 101
       prefix: --window-size

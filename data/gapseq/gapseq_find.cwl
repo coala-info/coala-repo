@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Bit score cutoff for local alignment
-    default: 200
     inputBinding:
       position: 102
       prefix: -b
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Coverage cutoff for local alignment
-    default: 75
     inputBinding:
       position: 102
       prefix: -c
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: 'Database: vmh or seed'
-    default: seed
     inputBinding:
       position: 102
       prefix: -d
@@ -80,7 +77,6 @@ inputs:
       - 'null'
       - boolean
     doc: Exhaustive search, continue blast even when cutoff is reached
-    default: false
     inputBinding:
       position: 102
       prefix: -g
@@ -89,7 +85,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force offline mode
-    default: false
     inputBinding:
       position: 102
       prefix: -O
@@ -98,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Identity cutoff for local alignment
-    default: 0
     inputBinding:
       position: 102
       prefix: -i
@@ -107,7 +101,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include sequences of hits in log files
-    default: false
     inputBinding:
       position: 102
       prefix: -q
@@ -116,7 +109,6 @@ inputs:
       - 'null'
       - string
     doc: Input genome mode. Either 'nucl', 'prot', or 'auto'
-    default: auto
     inputBinding:
       position: 102
       prefix: -M
@@ -132,7 +124,6 @@ inputs:
       - 'null'
       - boolean
     doc: Limit pathways to taxonomic range
-    default: false
     inputBinding:
       position: 102
       prefix: -m
@@ -141,7 +132,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only list pathways found for keyword
-    default: false
     inputBinding:
       position: 102
       prefix: -o
@@ -151,7 +141,6 @@ inputs:
       - boolean
     doc: Do not blast only list pathways, reactions and check for available 
       sequences
-    default: false
     inputBinding:
       position: 102
       prefix: -x
@@ -161,7 +150,6 @@ inputs:
       - boolean
     doc: Do not use gapseq sequence archive and update sequences from uniprot 
       manually (very slow)
-    default: false
     inputBinding:
       position: 102
       prefix: -U
@@ -170,7 +158,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to directory, where output files will be saved
-    default: current directory
     inputBinding:
       position: 102
       prefix: -f
@@ -179,7 +166,6 @@ inputs:
       - 'null'
       - string
     doc: Suffix used for output files
-    default: pathway keyword
     inputBinding:
       position: 102
       prefix: -u
@@ -188,7 +174,6 @@ inputs:
       - 'null'
       - string
     doc: Select the pathway database (MetaCyc, KEGG, SEED, all)
-    default: metacyc,custom
     inputBinding:
       position: 102
       prefix: -l
@@ -197,7 +182,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print annotation genome coverage
-    default: false
     inputBinding:
       position: 102
       prefix: -y
@@ -206,7 +190,6 @@ inputs:
       - 'null'
       - boolean
     doc: Quit if output files already exist
-    default: false
     inputBinding:
       position: 102
       prefix: -j
@@ -216,7 +199,6 @@ inputs:
       - int
     doc: 'Quality of sequences for homology search: 1:only reviewed (swissprot), 2:unreviewed
       only if reviewed not available, 3:reviewed+unreviewed, 4:only unreviewed'
-    default: 2
     inputBinding:
       position: 102
       prefix: -z
@@ -227,7 +209,6 @@ inputs:
     doc: Strict candidate reaction handling (do _not_ use pathway completeness, 
       key kenzymes and operon structure to infere if imcomplete pathway could be
       still present)
-    default: false
     inputBinding:
       position: 102
       prefix: -s
@@ -237,7 +218,6 @@ inputs:
       - string
     doc: 'Taxonomic range for reference sequences to be used. (Bacteria, Archaea,
       auto; default: Bacteria). See Details.'
-    default: Bacteria
     inputBinding:
       position: 102
       prefix: -t
@@ -246,7 +226,6 @@ inputs:
       - 'null'
       - Directory
     doc: Set user-defined temporary folder
-    default: false
     inputBinding:
       position: 102
       prefix: -T
@@ -264,7 +243,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use additional sequences derived from gene names
-    default: true
     inputBinding:
       position: 102
       prefix: -w
@@ -273,7 +251,6 @@ inputs:
       - 'null'
       - int
     doc: Verbose level, 0 for nothing, 1 for pathway infos, 2 for full
-    default: 1
     inputBinding:
       position: 102
       prefix: -v

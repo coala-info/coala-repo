@@ -49,7 +49,6 @@ inputs:
       - int
     doc: Size in bp of the intervals to calculate WPS over. Thesenew intervals 
       are centered over those specified in the site_bed.
-    default: 5000
     inputBinding:
       position: 103
       prefix: --interval-size
@@ -59,7 +58,6 @@ inputs:
       - int
     doc: Maximum length for a fragment to be included. Default is 180, 
       corresponding to L-WPS.
-    default: 180
     inputBinding:
       position: 103
       prefix: --max-length
@@ -69,7 +67,6 @@ inputs:
       - int
     doc: Minimum length for a fragment to be included. Default is 120, 
       corresponding to L-WPS.
-    default: 120
     inputBinding:
       position: 103
       prefix: --min-length
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality threshold.
-    default: 30
     inputBinding:
       position: 103
       prefix: --quality-threshold
@@ -95,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the sliding window used to calculate WPS scores.
-    default: 120
     inputBinding:
       position: 103
       prefix: --window-size

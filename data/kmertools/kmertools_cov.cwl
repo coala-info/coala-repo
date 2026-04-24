@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bins for the coverage histogram
-    default: 16
     inputBinding:
       position: 101
       prefix: --bin-count
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Bin size for the coverage histogram
-    default: 16
     inputBinding:
       position: 101
       prefix: --bin-size
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: K size for the coverage histogram
-    default: 15
     inputBinding:
       position: 101
       prefix: --k-size
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Max memory in GB
-    default: 6
     inputBinding:
       position: 101
       prefix: --memory
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: Output type to write
-    default: spc
     inputBinding:
       position: 101
       prefix: --preset
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Thread count for computations 0=auto
-    default: 0
     inputBinding:
       position: 101
       prefix: --threads

@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: E-value cutoff for homology search
-    default: 0.001
     inputBinding:
       position: 101
       prefix: -f

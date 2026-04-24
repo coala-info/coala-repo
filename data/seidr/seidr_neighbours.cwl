@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Index to use for selection
-    default: last score
     inputBinding:
       position: 102
       prefix: --index
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Number of top first-degree neighbours to return
-    default: 10
     inputBinding:
       position: 102
       prefix: --neighbours
@@ -76,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Number of OpenMP threads for parallel sorting
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

@@ -17,7 +17,6 @@ inputs:
       - string
     doc: Tag of the Docker image to upload (default 'latest'), if image is given as
       an untagged repo name
-    default: latest
     inputBinding:
       position: 2
   - id: batch
@@ -141,7 +140,6 @@ inputs:
       - int
     doc: Maximum number of times to retry server requests that encounter temporary
       failures (e.g., server down). Default 10.
-    default: 10
     inputBinding:
       position: 103
       prefix: --retries

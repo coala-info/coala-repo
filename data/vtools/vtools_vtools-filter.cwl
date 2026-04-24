@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Immediately write filters to file upon hitting one filter criterium.
-    default: true
     inputBinding:
       position: 101
       prefix: --immediate-return
@@ -31,7 +30,6 @@ inputs:
       - boolean
     doc: Do not immediately write filters to file upon hitting one filter 
       criterium.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-immediate-return

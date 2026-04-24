@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bins.
-    default: 4
     inputBinding:
       position: 101
       prefix: --bins
@@ -21,7 +20,6 @@ inputs:
     doc: 'Minimum abundance/Maximum results for each taxonomic level (0: off / 0-1:
       minimum relative abundance / >=1: maximum number of identifications). Default:
       0.0001'
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: --cutoff
@@ -63,7 +61,6 @@ inputs:
       - string
     doc: 'Result mode (precise, very-precise, linear, sensitive, very-sensitive, no-cutoff).
       Default: linear'
-    default: linear
     inputBinding:
       position: 101
       prefix: --mode
@@ -93,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output type (tsv, bioboxes). Default: bioboxes'
-    default: bioboxes
     inputBinding:
       position: 101
       prefix: --output-type
@@ -103,7 +99,6 @@ inputs:
       - string
     doc: 'Comma-separated list of ranks to be independently merged (superkingdom,phylum,class,order,family,genus,species,all).
       Default: species'
-    default: species
     inputBinding:
       position: 101
       prefix: --ranks

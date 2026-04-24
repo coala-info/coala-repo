@@ -104,7 +104,6 @@ inputs:
     type: string?
     doc: simple maximum or maximum likelihood binning assignment strategy (default -Smax) or -Smle
     label: Binning assignment strategy
-    default: "-Smax"
     inputBinding:
       position: 10
 
@@ -112,7 +111,6 @@ inputs:
     type: string?
     doc: Select propagation or correction mode (default Rcorr) or Rprop
     label: Propagation or correction mode
-    default: "-Rcorr"
     inputBinding:
       position: 11
 
@@ -227,7 +225,6 @@ inputs:
     inputBinding:
       prefix: --debug
       position: 25
-    default: true
 
 
   scratch_directory:
@@ -237,7 +234,6 @@ inputs:
     inputBinding:
       prefix: --tmp-dir
       position: 26
-    default: "/tmp/binspreader" 
     # make sure it does not exist
 
 

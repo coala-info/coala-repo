@@ -23,7 +23,6 @@ inputs:
       - int
     doc: Number of interactions to process at once during balancing. Ignored 
       when using --in-memory.
-    default: 10000000
     inputBinding:
       position: 102
       prefix: --chunk-size
@@ -33,7 +32,6 @@ inputs:
       - int
     doc: Compression level used to compress temporary files using ZSTD (only 
       applies to the balancing stage).
-    default: 3
     inputBinding:
       position: 102
       prefix: --compression-lvl
@@ -68,7 +66,6 @@ inputs:
       - int
     doc: Maximum number of parallel threads to spawn (only applies to the 
       balancing stage).
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -85,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Set verbosity of output to the console.
-    default: 3
     inputBinding:
       position: 102
       prefix: --verbosity

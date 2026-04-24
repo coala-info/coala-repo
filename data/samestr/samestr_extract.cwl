@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Program to use for alignment of marker sequences.
-    default: muscle
     inputBinding:
       position: 103
       prefix: --aln-program
@@ -34,7 +33,6 @@ inputs:
       - boolean
     doc: If not working from memory, keeps extracted alignments per sample on 
       disk.
-    default: false
     inputBinding:
       position: 103
       prefix: --keep-tmp-files
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Nucleotides to be cut from each side of a marker.
-    default: 0
     inputBinding:
       position: 103
       prefix: --marker-trunc-len
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: The number of processing units to use.
-    default: 1
     inputBinding:
       position: 103
       prefix: --nprocs
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to output directory.
-    default: out_extract/
     inputBinding:
       position: 103
       prefix: --output-dir
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep alignment files for individual markers.
-    default: false
     inputBinding:
       position: 103
       prefix: --save-marker-aln
@@ -85,7 +79,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to temporary directory
-    default: tmp/
     inputBinding:
       position: 103
       prefix: --tmp-dir

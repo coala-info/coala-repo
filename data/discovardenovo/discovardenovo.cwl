@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of BAM files to open at once.
-    default: 1000
     inputBinding:
       position: 101
       prefix: MAX_BAM_FILES
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - boolean
     doc: If true, check that there is enough memory available.
-    default: true
     inputBinding:
       position: 101
       prefix: MEMORY_CHECK
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: NUM_THREADS

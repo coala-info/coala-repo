@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Separator between name and comment
-    default: tab
     inputBinding:
       position: 102
       prefix: --comment-sep
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Field separator when deinterleaving
-    default: tab
     inputBinding:
       position: 102
       prefix: --field-sep

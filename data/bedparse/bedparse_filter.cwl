@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Column of the annotation file (1-based, default=1).
-    default: 1
     inputBinding:
       position: 102
       prefix: --column

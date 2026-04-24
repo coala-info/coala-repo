@@ -19,7 +19,6 @@ inputs:
       - string
     doc: Enable both the leader and worker nodes to be able to run Singularity 
       with FUSE.
-    default: 'True'
     inputBinding:
       position: 102
       prefix: --allowFuse
@@ -63,7 +62,6 @@ inputs:
       - boolean
     doc: Disables sanity checking the existence of the docker image specified by
       TOIL_APPLIANCE_SELF.
-    default: false
     inputBinding:
       position: 102
       prefix: --forceDockerAppliance
@@ -88,7 +86,6 @@ inputs:
       - int
     doc: Specify the size (in gigabytes) of the root volume for the leader 
       instance.
-    default: 50
     inputBinding:
       position: 102
       prefix: --leaderStorage
@@ -97,7 +94,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable or disable colored logging.
-    default: true
     inputBinding:
       position: 102
       prefix: --logColors
@@ -138,7 +134,6 @@ inputs:
       - 'null'
       - string
     doc: Set the log level.
-    default: INFO
     inputBinding:
       position: 102
       prefix: --logLevel
@@ -172,7 +167,6 @@ inputs:
       - int
     doc: Specify the size (in gigabytes) of the root volume for any worker 
       instances created when using the -w flag.
-    default: 50
     inputBinding:
       position: 102
       prefix: --nodeStorage
@@ -206,7 +200,6 @@ inputs:
       - boolean
     doc: Turn on rotating logging, which prevents log files from getting too 
       big.
-    default: false
     inputBinding:
       position: 102
       prefix: --rotatingLogging
@@ -226,7 +219,6 @@ inputs:
       - Directory
     doc: Path to where temporary directory containing all temp files are 
       created.
-    default: /tmp
     inputBinding:
       position: 102
       prefix: --tempDirRoot
@@ -235,7 +227,6 @@ inputs:
       - 'null'
       - boolean
     doc: if specified, ignore the public ip of the nodes
-    default: false
     inputBinding:
       position: 102
       prefix: --use_private_ip

@@ -23,7 +23,6 @@ inputs:
       - type: array
         items: string
     doc: Gene types to be analyzed. Default is ["protein_coding", "lncRNA"]
-    default:
       - protein_coding
       - lncRNA
     inputBinding:
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum support reads for counting event (default: 10)'
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_support

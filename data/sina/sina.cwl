@@ -27,7 +27,6 @@ inputs:
       - string
     doc: "search engine to use for reference selection \n                        \
       \   [*pt-server*|internal]"
-    default: '*pt-server*'
     inputBinding:
       position: 101
       prefix: --fs-engine
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of full length reference
-    default: 1400
     inputBinding:
       position: 101
       prefix: --fs-full-len
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: length of k-mers
-    default: 10
     inputBinding:
       position: 101
       prefix: --fs-kmer-len
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: number of references used at most
-    default: 40
     inputBinding:
       position: 101
       prefix: --fs-max
@@ -64,7 +60,6 @@ inputs:
       - int
     doc: "number of references used regardless of shared \n                      \
       \     fraction"
-    default: 40
     inputBinding:
       position: 101
       prefix: --fs-min
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: minimal reference length
-    default: 150
     inputBinding:
       position: 101
       prefix: --fs-min-len
@@ -82,7 +76,6 @@ inputs:
       - 'null'
       - float
     doc: required fractional identity of references
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --fs-msc
@@ -92,7 +85,6 @@ inputs:
       - int
     doc: "required number of reference sequences (1)\n                           queries
       with less matches will be dropped"
-    default: 1
     inputBinding:
       position: 101
       prefix: --fs-req
@@ -101,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: required number of full length references
-    default: 1
     inputBinding:
       position: 101
       prefix: --fs-req-full
@@ -110,14 +101,12 @@ inputs:
       - 'null'
       - int
     doc: ignore references with less internal gaps
-    default: 10
     inputBinding:
       position: 101
       prefix: --fs-req-gaps
   - id: input_file
     type: File
     doc: input file (arb or fasta)
-    default: '"- "'
     inputBinding:
       position: 101
       prefix: --in
@@ -136,7 +125,6 @@ inputs:
       - float
     doc: "fraction of search result that must share resulting \n                 \
       \          classification"
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --lca-quorum
@@ -161,7 +149,6 @@ inputs:
       - 'null'
       - int
     doc: number of PT servers to start
-    default: 20
     inputBinding:
       position: 101
       prefix: --num-pts
@@ -210,7 +197,6 @@ inputs:
       - 'null'
       - int
     doc: desired number of search results
-    default: 10
     inputBinding:
       position: 101
       prefix: --search-max-result
@@ -219,7 +205,6 @@ inputs:
       - 'null'
       - float
     doc: required sequence similarity
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --search-min-sim

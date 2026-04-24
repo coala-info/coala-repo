@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Timeout value of graph construction in seconds.
-    default: infinite
     inputBinding:
       position: 101
       prefix: --kill
@@ -59,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: 'Chose the calculation package: hotknots, pkiss, nupack, or vrna/ViennaRNA'
-    default: vrna
     inputBinding:
       position: 101
       prefix: --package

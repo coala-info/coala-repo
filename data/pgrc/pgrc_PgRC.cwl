@@ -70,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: qualityStreamErrorProbability*1000 (1000=>disable)
-    default: 1000
     inputBinding:
       position: 103
       prefix: -q
@@ -95,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads used
-    default: 40
     inputBinding:
       position: 103
       prefix: -t

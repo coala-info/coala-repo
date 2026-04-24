@@ -11,7 +11,6 @@ inputs:
       - string
     doc: "Define the 3' adaptor sequence (default is NEB & ILLUMINA: AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC
       -a TGGAATTCTCGGGTGCCAAGG -> hack: use -a to add adapter sequences)"
-    default: AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC -a TGGAATTCTCGGGTGCCAAGG
     inputBinding:
       position: 101
       prefix: --adapt3
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Define the 5' adaptor sequence
-    default: None
     inputBinding:
       position: 101
       prefix: --adapt5
@@ -32,7 +30,6 @@ inputs:
       : 'h' for expressed_hairpins, 'p' for polymiRs_table, 'i' for consistency_table,
       'c' for remaining_ambiguous, 's' for isomiRs_dist. Ex: '-- annot hpics' [default]
       will produce all of them"
-    default: hpics
     inputBinding:
       position: 101
       prefix: --annot
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Define the Base Quality threshold defined with option -q in cutadapt
-    default: 28
     inputBinding:
       position: 101
       prefix: --bqThresh
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: Provide path to the bowtie2 index builder binary
-    default: from $PATH
     inputBinding:
       position: 101
       prefix: --bowtie2_build
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: Provide path to the bowtie2 binary
-    default: from $PATH
     inputBinding:
       position: 101
       prefix: --bowtie2
@@ -68,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: Provide path to the cutadapt binary
-    default: from $PATH
     inputBinding:
       position: 101
       prefix: --cutadapt
@@ -101,7 +94,6 @@ inputs:
       - float
     doc: Choose the rate threshold for inconsistent reads mapped to a polymiR 
       above which the alignment is flagged as highly suspicious
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --consistentRate
@@ -110,7 +102,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the reference library containing mature miRNAs sequences
-    default: miRBase 21
     inputBinding:
       position: 101
       prefix: --maturesFasta
@@ -119,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: Define the maximum read length defined with option -M in cutadapt
-    default: 27
     inputBinding:
       position: 101
       prefix: --readMax
@@ -129,7 +119,6 @@ inputs:
       - File
     doc: Path to the reference library containing miRNAs and pri-miRNAs 
       coordinates
-    default: miRBase v21, GRCh38 coordinates
     inputBinding:
       position: 101
       prefix: --gff3
@@ -138,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Define the minimum read length defined with option -m in cutadapt
-    default: 15
     inputBinding:
       position: 101
       prefix: --readMin
@@ -147,7 +135,6 @@ inputs:
       - 'null'
       - Directory
     doc: Full path of the directory where output files are generated
-    default: ./OptimiR_Results_Dir/
     inputBinding:
       position: 101
       prefix: --dirOutput
@@ -156,7 +143,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the reference library containing pri-miRNAs sequences
-    default: miRBase 21
     inputBinding:
       position: 101
       prefix: --hairpinsFasta
@@ -182,7 +168,6 @@ inputs:
       - 'null'
       - string
     doc: Provide path to the samtools binary
-    default: from $PATH
     inputBinding:
       position: 101
       prefix: --samtools
@@ -192,7 +177,6 @@ inputs:
       - int
     doc: Choose the threshold for alignment score above which alignments are 
       discarded
-    default: 9
     inputBinding:
       position: 101
       prefix: --scoreThresh
@@ -201,7 +185,6 @@ inputs:
       - 'null'
       - int
     doc: Choose the alignment seed length used in option '-L' by Bowtie2
-    default: 17
     inputBinding:
       position: 101
       prefix: --seedLen
@@ -230,7 +213,6 @@ inputs:
       - float
     doc: Choose the weight applied on events detected on the 5' end of aligned 
       reads
-    default: 4
     inputBinding:
       position: 101
       prefix: --w5

@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Use composition-based statistics
-    default: '2'
     inputBinding:
       position: 101
       prefix: -comp_based_stats
@@ -83,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: Expectation value (E) threshold for saving hits
-    default: 10.0
     inputBinding:
       position: 101
       prefix: -evalue
@@ -140,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: Line length for formatting alignments
-    default: 60
     inputBinding:
       position: 101
       prefix: -line_length
@@ -165,7 +162,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of aligned sequences to keep
-    default: 500
     inputBinding:
       position: 101
       prefix: -max_target_seqs
@@ -190,7 +186,6 @@ inputs:
       - 'null'
       - int
     doc: Number of database sequences to show alignments for
-    default: 250
     inputBinding:
       position: 101
       prefix: -num_alignments
@@ -199,7 +194,6 @@ inputs:
       - 'null'
       - int
     doc: Number of database sequences to show one-line descriptions for
-    default: 500
     inputBinding:
       position: 101
       prefix: -num_descriptions
@@ -208,7 +202,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads (CPUs) to use in the BLAST search
-    default: 1
     inputBinding:
       position: 101
       prefix: -num_threads
@@ -217,7 +210,6 @@ inputs:
       - 'null'
       - string
     doc: alignment view options
-    default: '0'
     inputBinding:
       position: 101
       prefix: -outfmt
@@ -275,7 +267,6 @@ inputs:
       - string
     doc: "Filter query sequence with SEG (Format: 'yes', 'window locut hicut', or
       'no' to disable)"
-    default: no
     inputBinding:
       position: 101
       prefix: -seg
@@ -300,7 +291,6 @@ inputs:
       - 'null'
       - boolean
     doc: Apply filtering locations as soft masks
-    default: false
     inputBinding:
       position: 101
       prefix: -soft_masking
@@ -333,7 +323,6 @@ inputs:
       - 'null'
       - string
     doc: Task to execute
-    default: blastp
     inputBinding:
       position: 101
       prefix: -task

@@ -13,7 +13,6 @@ inputs:
       - 'null'
       - int
     doc: nt allowed for addition processes
-    default: 3
     inputBinding:
       position: 101
       prefix: -add
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - boolean
     doc: add verbosity
-    default: false
     inputBinding:
       position: 101
       prefix: -debug
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: format input
-    default: none
     inputBinding:
       position: 101
       prefix: -format
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: add freq information
-    default: true
     inputBinding:
       position: 101
       prefix: -freq
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: minimum size
-    default: 16
     inputBinding:
       position: 101
       prefix: -minl
@@ -70,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: add reads mapping to precursor
-    default: false
     inputBinding:
       position: 101
       prefix: -pre
@@ -85,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: nt allowed for substitution processes
-    default: 1
     inputBinding:
       position: 101
       prefix: -sub
@@ -94,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: nt allowed for trimming processes
-    default: 3
     inputBinding:
       position: 101
       prefix: -trim

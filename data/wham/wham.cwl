@@ -35,7 +35,6 @@ inputs:
       - int
     doc: exclude soft-cliped sequences with average base quality below phred 
       scaled value (0-41)
-    default: 20
     inputBinding:
       position: 101
       prefix: --min_avg_base_quality
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: exclude soft-clipped reads with mapping quality below value
-    default: 15
     inputBinding:
       position: 101
       prefix: --min_mapping_quality
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of soft-clips supporting START
-    default: 3
     inputBinding:
       position: 101
       prefix: --min_soft_clips_start
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - File
     doc: a bedfile that defines regions to score
-    default: none
     inputBinding:
       position: 101
       prefix: --regions_to_score_bedfile

@@ -25,7 +25,6 @@ inputs:
       - string
     doc: "Which remote database is used to list/install motif\n                  \
       \      set (PFMs). Default: jaspar_core"
-    default: jaspar_core
     inputBinding:
       position: 101
       prefix: --database
@@ -76,7 +75,6 @@ inputs:
       - int
     doc: "The maximal number of `N` base allowed in each random\n                \
       \        sampled sequence. Default: 0"
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-n
@@ -94,7 +92,6 @@ inputs:
       - int
     doc: "Generate N random background sequences to calculate\n                  \
       \      motif score cutoffs. Default: 1,000,000"
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --n-random
@@ -104,7 +101,6 @@ inputs:
       - int
     doc: "Repeat N rounds of random sampling and use the\n                       \
       \ averaged cutoff as final cutoff. Default: 1"
-    default: 1
     inputBinding:
       position: 101
       prefix: --n-repeat

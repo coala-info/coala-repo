@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Set number of threads
-    default: 1
     inputBinding:
       position: 103
       prefix: -t
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Set verbosity level (0-4)
-    default: 2
     inputBinding:
       position: 103
       prefix: -v

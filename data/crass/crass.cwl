@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Remove groups with less than x spacers
-    default: 3
     inputBinding:
       position: 102
       prefix: --covCutoff
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Length of the kmers used to make crispr nodes
-    default: 7
     inputBinding:
       position: 102
       prefix: --graphNodeLen
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: The number of the kmers that need to be shared for clustering
-    default: 6
     inputBinding:
       position: 102
       prefix: --kmerCount
@@ -54,7 +51,6 @@ inputs:
       - string
     doc: Graphviz layout algorithm to use for printing spacer graphs (neato, dot,
       fdp, sfdp, circo, twopi)
-    default: dot
     inputBinding:
       position: 102
       prefix: --layoutAlgorithm
@@ -80,7 +76,6 @@ inputs:
       - boolean
     doc: Set if you want the spacer sequence printed along with the ID in the spacer
       graph
-    default: false
     inputBinding:
       position: 102
       prefix: --longDescription
@@ -89,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Maximim length of the direct repeat to search for
-    default: 47
     inputBinding:
       position: 102
       prefix: --maxDR
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Maximim length of the spacer to search for
-    default: 50
     inputBinding:
       position: 102
       prefix: --maxSpacer
@@ -107,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Minimim length of the direct repeat to search for
-    default: 23
     inputBinding:
       position: 102
       prefix: --minDR
@@ -116,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: Total number of direct repeats in a CRISPR for it to be considered real
-    default: 2
     inputBinding:
       position: 102
       prefix: --minNumRepeats
@@ -125,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Minimim length of the spacer to search for
-    default: 26
     inputBinding:
       position: 102
       prefix: --minSpacer
@@ -135,7 +125,6 @@ inputs:
       - boolean
     doc: Stops rendering of .gv files even if the RENDERING preprocessor macro is
       set
-    default: false
     inputBinding:
       position: 102
       prefix: --noRendering
@@ -152,7 +141,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set if you want to print singleton spacers in the spacer graph
-    default: false
     inputBinding:
       position: 102
       prefix: --showSingltons
@@ -161,7 +149,6 @@ inputs:
       - 'null'
       - int
     doc: The length of the search window. Can only be a number between 6 - 9
-    default: 8
     inputBinding:
       position: 102
       prefix: --windowLength

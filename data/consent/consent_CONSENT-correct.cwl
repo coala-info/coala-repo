@@ -22,7 +22,6 @@ inputs:
       - int
     doc: Minimum number of sequences supporting (Ai) - (Ai+1) to keep the two 
       anchors in the chaining.
-    default: 8
     inputBinding:
       position: 103
       prefix: --anchorSupport
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of overlaps to include in a pile.
-    default: 150
     inputBinding:
       position: 103
       prefix: --maxSupport
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size for chaining and polishing.
-    default: 9
     inputBinding:
       position: 103
       prefix: --merSize
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of anchors in a window to allow consensus computation.
-    default: 10
     inputBinding:
       position: 103
       prefix: --minAnchors
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum support to consider a window for correction.
-    default: 3
     inputBinding:
       position: 103
       prefix: --minSupport
@@ -67,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Split minimap2 index every INT input bases
-    default: 500M
     inputBinding:
       position: 103
       prefix: --minimapIndex
@@ -76,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to run in parallel
-    default: number of cores
     inputBinding:
       position: 103
       prefix: --nproc
@@ -86,7 +79,6 @@ inputs:
       - int
     doc: Minimum number of occurrences to consider a k-mer as solid during 
       polishing.
-    default: 4
     inputBinding:
       position: 103
       prefix: --solid
@@ -95,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: Path where to store the temporary files
-    default: working directory
     inputBinding:
       position: 103
       prefix: --tmpdir
@@ -104,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Overlap size between consecutive windows.
-    default: 50
     inputBinding:
       position: 103
       prefix: --windowOverlap
@@ -113,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the windows to process.
-    default: 500
     inputBinding:
       position: 103
       prefix: --windowSize

@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: adaptive mode
-    default: false
     inputBinding:
       position: 103
       prefix: -a
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: concatenated genomes in a single file
-    default: false
     inputBinding:
       position: 103
       prefix: -c
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not store cmd-line
-    default: true
     inputBinding:
       position: 103
       prefix: -d
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of fall-back minimizers
-    default: 0.0
     inputBinding:
       position: 103
       prefix: -f
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: no of threads
-    default: 28
     inputBinding:
       position: 103
       prefix: -t
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: verbosity level
-    default: 0
     inputBinding:
       position: 103
       prefix: -v

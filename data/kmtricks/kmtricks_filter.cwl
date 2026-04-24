@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: min abundance to keep a k-mer in --key.
-    default: 2
     inputBinding:
       position: 101
       prefix: --hard-min
@@ -53,7 +52,6 @@ inputs:
       \     of k-mers from the key.\n                     v: A text vector (column)
       representing the abundances or presence/absence of k-mers\n                \
       \        from the key in the input matrix."
-    default: m,v
     inputBinding:
       position: 101
       prefix: --out-types
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads.
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: verbosity level [debug|info|warning|error].
-    default: info
     inputBinding:
       position: 101
       prefix: --verbose

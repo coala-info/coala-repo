@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: If numbering the sequences, the first sequence gets this number
-    default: 1
     inputBinding:
       position: 103
       prefix: --first_number

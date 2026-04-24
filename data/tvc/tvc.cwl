@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: allow generation of block substitution candidates
-    default: off
     inputBinding:
       position: 101
       prefix: --allow-complex
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: allow generation of indel candidates
-    default: on
     inputBinding:
       position: 101
       prefix: --allow-indels
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: allow generation of mnp candidates
-    default: on
     inputBinding:
       position: 101
       prefix: --allow-mnps
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: allow generation of snp candidates
-    default: on
     inputBinding:
       position: 101
       prefix: --allow-snps
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: minimum mean log-likelihood delta per read
-    default: 4.0
     inputBinding:
       position: 101
       prefix: --data-quality-stringency
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: (0/1/2) display extra debug messages
-    default: 0
     inputBinding:
       position: 101
       prefix: --debug
@@ -64,7 +58,6 @@ inputs:
       - string
     doc: (devel) dump internal state to json file (uses much more 
       time/memory/disk)
-    default: off
     inputBinding:
       position: 101
       prefix: --do-json-diagnostic
@@ -73,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: (devel) provide minimal read information for called variants
-    default: off
     inputBinding:
       position: 101
       prefix: --do-minimal-diagnostic
@@ -82,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Realign reads in the vicinity of candidate mnp variants
-    default: do-snp-realignment
     inputBinding:
       position: 101
       prefix: --do-mnp-realignment
@@ -91,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: Realign reads in the vicinity of candidate snp variants
-    default: on
     inputBinding:
       position: 101
       prefix: --do-snp-realignment
@@ -100,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: ??
-    default: 2000
     inputBinding:
       position: 101
       prefix: --downsample-to-coverage
@@ -118,7 +107,6 @@ inputs:
       - float
     doc: check post-evaluation systematic bias in deletions; a high value like 
       100 effectively turns off this filter
-    default: 100.0
     inputBinding:
       position: 101
       prefix: --filter-deletion-predictions
@@ -128,7 +116,6 @@ inputs:
       - float
     doc: check post-evaluation systematic bias in insertions; a high value like 
       100 effectively turns off this filter
-    default: 100.0
     inputBinding:
       position: 101
       prefix: --filter-insertion-predictions
@@ -137,7 +124,6 @@ inputs:
       - 'null'
       - float
     doc: posterior log likelihood threshold for accepting bias estimate
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --filter-unusual-predictions
@@ -146,7 +132,6 @@ inputs:
       - 'null'
       - string
     doc: force all read groups to have this sample name
-    default: off
     inputBinding:
       position: 101
       prefix: --force-sample-name
@@ -155,7 +140,6 @@ inputs:
       - 'null'
       - float
     doc: minimum required alt allele frequency to generate a candidate
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --gen-min-alt-allele-freq
@@ -164,7 +148,6 @@ inputs:
       - 'null'
       - int
     doc: minimum required coverage to generate a candidate
-    default: 6
     inputBinding:
       position: 101
       prefix: --gen-min-coverage
@@ -174,7 +157,6 @@ inputs:
       - float
     doc: minimum required alt allele frequency to generate a homopolymer indel 
       candidate
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --gen-min-indel-alt-allele-freq
@@ -184,7 +166,6 @@ inputs:
       - string
     doc: suppress in/dels not participating in diploid variant genotypes if the 
       genotype contains a SNP or MNP
-    default: on
     inputBinding:
       position: 101
       prefix: --heal-snps
@@ -193,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: degrees of freedom in t-dist modeling signal residual heavy tail
-    default: 3
     inputBinding:
       position: 101
       prefix: --heavy-tailed
@@ -203,7 +183,6 @@ inputs:
       - float
     doc: minimum required alt allele frequency for non-reference hotspot variant
       call
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --hotspot-min-allele-freq
@@ -212,7 +191,6 @@ inputs:
       - 'null'
       - int
     doc: filter out hotspot variants with coverage on either strand below this
-    default: snp-min-cov-each-strand
     inputBinding:
       position: 101
       prefix: --hotspot-min-cov-each-strand
@@ -221,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: filter out hotspot variants with total coverage below this
-    default: 6
     inputBinding:
       position: 101
       prefix: --hotspot-min-coverage
@@ -230,7 +207,6 @@ inputs:
       - 'null'
       - float
     doc: filter out hotspot variants with QUAL score below this
-    default: snp-min-variant-score
     inputBinding:
       position: 101
       prefix: --hotspot-min-variant-score
@@ -240,7 +216,6 @@ inputs:
       - float
     doc: filter out hotspot variants with strand bias above this given pval < 
       hotspot-strand-bias-pval
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --hotspot-strand-bias
@@ -250,7 +225,6 @@ inputs:
       - float
     doc: filter out hotspot variants with pval below this given strand bias > 
       hotspot-strand-bias
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --hotspot-strand-bias-pval
@@ -259,7 +233,6 @@ inputs:
       - 'null'
       - int
     doc: filter out indels in homopolymers above this
-    default: 8
     inputBinding:
       position: 101
       prefix: --hp-max-length
@@ -268,7 +241,6 @@ inputs:
       - 'null'
       - string
     doc: apply indel filters to non HP indels
-    default: off
     inputBinding:
       position: 101
       prefix: --indel-as-hpindel
@@ -277,7 +249,6 @@ inputs:
       - 'null'
       - float
     doc: minimum required alt allele frequency for non-reference indel call
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --indel-min-allele-freq
@@ -286,7 +257,6 @@ inputs:
       - 'null'
       - int
     doc: filter out indels with coverage on either strand below this
-    default: 1
     inputBinding:
       position: 101
       prefix: --indel-min-cov-each-strand
@@ -295,7 +265,6 @@ inputs:
       - 'null'
       - int
     doc: filter out indels with total coverage below this
-    default: 30
     inputBinding:
       position: 101
       prefix: --indel-min-coverage
@@ -304,7 +273,6 @@ inputs:
       - 'null'
       - float
     doc: filter out indels with QUAL score below this
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --indel-min-variant-score
@@ -314,7 +282,6 @@ inputs:
       - float
     doc: filter out indels with strand bias above this given pval < 
       indel-strand-bias-pval
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --indel-strand-bias
@@ -324,7 +291,6 @@ inputs:
       - float
     doc: filter out indels with pval below this given strand bias > 
       indel-strand-bias
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --indel-strand-bias-pval
@@ -348,7 +314,6 @@ inputs:
       - 'null'
       - float
     doc: variance increase for adding systematic bias
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --k-zero
@@ -358,7 +323,6 @@ inputs:
       - int
     doc: maximum number of reference alleles between two alternate alleles to 
       allow merging of the alternate alleles
-    default: 1
     inputBinding:
       position: 101
       prefix: --max-complex-gap
@@ -368,7 +332,6 @@ inputs:
       - int
     doc: number of evaluated frequencies for a given hypothesis, reduce for very
       high coverage, set to zero to disable this option
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-detail-level
@@ -377,7 +340,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of scoring flows
-    default: 10
     inputBinding:
       position: 101
       prefix: --max-flows-to-test
@@ -386,7 +348,6 @@ inputs:
       - 'null'
       - float
     doc: minimum prediction delta for scoring flows
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min-delta-for-flow
@@ -395,7 +356,6 @@ inputs:
       - 'null'
       - int
     doc: do not use reads with mapping quality below this
-    default: 4
     inputBinding:
       position: 101
       prefix: --min-mapping-qv
@@ -405,7 +365,6 @@ inputs:
       - float
     doc: minimum required alt allele frequency for variants with error motifs on
       opposite strand
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --min-ratio-reads-non-sse-strand
@@ -414,7 +373,6 @@ inputs:
       - 'null'
       - float
     doc: prior variance per data point, constant
-    default: 0.085
     inputBinding:
       position: 101
       prefix: --minimum-sigma-prior
@@ -423,7 +381,6 @@ inputs:
       - 'null'
       - float
     doc: minimum required alt allele frequency for non-reference mnp calls
-    default: snp-min-allele-freq
     inputBinding:
       position: 101
       prefix: --mnp-min-allele-freq
@@ -432,7 +389,6 @@ inputs:
       - 'null'
       - int
     doc: filter out mnps with coverage on either strand below this
-    default: snp-min-cov-each-strand
     inputBinding:
       position: 101
       prefix: --mnp-min-cov-each-strand
@@ -441,7 +397,6 @@ inputs:
       - 'null'
       - int
     doc: filter out mnps with total coverage below this
-    default: snp-min-coverage
     inputBinding:
       position: 101
       prefix: --mnp-min-coverage
@@ -450,7 +405,6 @@ inputs:
       - 'null'
       - float
     doc: filter out mnps with QUAL score below this
-    default: snp-min-variant-score
     inputBinding:
       position: 101
       prefix: --mnp-min-variant-score
@@ -460,7 +414,6 @@ inputs:
       - float
     doc: filter out mnps with strand bias above this given pval < 
       mnp-strand-bias-pval
-    default: snp-strand-bias
     inputBinding:
       position: 101
       prefix: --mnp-strand-bias
@@ -470,7 +423,6 @@ inputs:
       - float
     doc: filter out mnps with pval below this given strand bias > 
       mnp-strand-bias
-    default: snp-strand-bias-pval
     inputBinding:
       position: 101
       prefix: --mnp-strand-bias-pval
@@ -487,7 +439,6 @@ inputs:
       - 'null'
       - int
     doc: number of worker threads
-    default: 2
     inputBinding:
       position: 101
       prefix: --num-threads
@@ -496,7 +447,6 @@ inputs:
       - 'null'
       - int
     doc: worker thread batch size
-    default: 500
     inputBinding:
       position: 101
       prefix: --num-variants-per-thread
@@ -505,7 +455,6 @@ inputs:
       - 'null'
       - float
     doc: probability for outlier reads
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --outlier-probability
@@ -514,7 +463,6 @@ inputs:
       - 'null'
       - string
     doc: (devel) disable limit-check on input parameters
-    default: off
     inputBinding:
       position: 101
       prefix: --override-limits
@@ -532,7 +480,6 @@ inputs:
       - float
     doc: filter out variants with position bias relative to soft clip ends in 
       reads > position-bias
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --position-bias
@@ -542,7 +489,6 @@ inputs:
       - float
     doc: filter out if position bias above position-bias given pval < 
       position-bias-pval
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --position-bias-pval
@@ -552,7 +498,6 @@ inputs:
       - float
     doc: skip position bias filter if (reference read count)/(reference + alt 
       allele read count) <= to this
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --position-bias-ref-fraction
@@ -569,7 +514,6 @@ inputs:
       - 'null'
       - float
     doc: prior weight in bias estimator
-    default: 30.0
     inputBinding:
       position: 101
       prefix: --prediction-precision
@@ -578,7 +522,6 @@ inputs:
       - 'null'
       - string
     doc: only generate candidates at locations from input-vcf
-    default: off
     inputBinding:
       position: 101
       prefix: --process-input-positions-only
@@ -587,7 +530,6 @@ inputs:
       - 'null'
       - float
     doc: do not use reads with fraction of mismatches above this
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --read-max-mismatch-fraction
@@ -596,7 +538,6 @@ inputs:
       - 'null'
       - float
     doc: filter variants where large numbers of reads are rejected as outliers
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --read-rejection-threshold
@@ -605,7 +546,6 @@ inputs:
       - 'null'
       - int
     doc: do not use reads with number of snps above this
-    default: 10
     inputBinding:
       position: 101
       prefix: --read-snp-limit
@@ -615,7 +555,6 @@ inputs:
       - float
     doc: Max. allowed fraction of reads where realignment causes an alignment 
       change
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --realignment-threshold
@@ -638,7 +577,6 @@ inputs:
       - 'null'
       - string
     doc: If 'true', the basecaller is used to solve soft clipped bases
-    default: off
     inputBinding:
       position: 101
       prefix: --resolve-clipped-bases
@@ -656,7 +594,6 @@ inputs:
       - 'null'
       - float
     doc: penalize log-likelihood for solutions involving large systematic bias
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --shift-likelihood-penalty
@@ -665,7 +602,6 @@ inputs:
       - 'null'
       - float
     doc: weight of prior estimate of variance compared to observations
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --sigma-prior-weight
@@ -674,7 +610,6 @@ inputs:
       - 'null'
       - float
     doc: prior rate of increase of variance over minimum by signal
-    default: 0.0084
     inputBinding:
       position: 101
       prefix: --slope-sigma-prior
@@ -683,7 +618,6 @@ inputs:
       - 'null'
       - float
     doc: minimum required alt allele frequency for non-reference snp calls
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --snp-min-allele-freq
@@ -692,7 +626,6 @@ inputs:
       - 'null'
       - int
     doc: filter out snps with coverage on either strand below this
-    default: 0
     inputBinding:
       position: 101
       prefix: --snp-min-cov-each-strand
@@ -701,7 +634,6 @@ inputs:
       - 'null'
       - int
     doc: filter out snps with total coverage below this
-    default: 6
     inputBinding:
       position: 101
       prefix: --snp-min-coverage
@@ -710,7 +642,6 @@ inputs:
       - 'null'
       - float
     doc: filter out snps with QUAL score below this
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --snp-min-variant-score
@@ -720,7 +651,6 @@ inputs:
       - float
     doc: filter out snps with strand bias above this given pval < 
       snp-strand-bias-pval
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --snp-strand-bias
@@ -730,7 +660,6 @@ inputs:
       - float
     doc: filter out snps with pval below this given strand bias > 
       snp-strand-bias
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --snp-strand-bias-pval
@@ -739,7 +668,6 @@ inputs:
       - 'null'
       - float
     doc: filter out variants in motifs with error rates above this
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --sse-prob-threshold
@@ -748,7 +676,6 @@ inputs:
       - 'null'
       - float
     doc: dampen strand bias detection for SSE events for low coverage
-    default: 0.025
     inputBinding:
       position: 101
       prefix: --sse-relative-safety-level
@@ -757,7 +684,6 @@ inputs:
       - 'null'
       - string
     doc: write filtered variants into the filtered variants vcf
-    default: on
     inputBinding:
       position: 101
       prefix: --suppress-no-calls
@@ -766,7 +692,6 @@ inputs:
       - 'null'
       - string
     doc: do not report a genotype for filtered variants
-    default: on
     inputBinding:
       position: 101
       prefix: --suppress-nocall-genotypes
@@ -775,7 +700,6 @@ inputs:
       - 'null'
       - string
     doc: Suppress homopolymer recalibration
-    default: on
     inputBinding:
       position: 101
       prefix: --suppress-recalibration
@@ -784,7 +708,6 @@ inputs:
       - 'null'
       - string
     doc: write reference calls into the filtered variants vcf
-    default: on
     inputBinding:
       position: 101
       prefix: --suppress-reference-genotypes
@@ -801,7 +724,6 @@ inputs:
       - 'null'
       - string
     doc: match reads to targets and trim the ends that reach outside them
-    default: off
     inputBinding:
       position: 101
       prefix: --trim-ampliseq-primers
@@ -810,7 +732,6 @@ inputs:
       - 'null'
       - float
     doc: dampen strand bias detection for low coverage
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --tune-sbias
@@ -819,7 +740,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of snp alleles
-    default: 2
     inputBinding:
       position: 101
       prefix: --use-best-n-alleles
@@ -828,7 +748,6 @@ inputs:
       - 'null'
       - string
     doc: only consider provided alleles for locations in input-vcf
-    default: off
     inputBinding:
       position: 101
       prefix: --use-input-allele-only
@@ -837,7 +756,6 @@ inputs:
       - 'null'
       - string
     doc: enable the position bias filter
-    default: off
     inputBinding:
       position: 101
       prefix: --use-position-bias
@@ -846,7 +764,6 @@ inputs:
       - 'null'
       - string
     doc: Switch to use the vectorized version of the basecaller
-    default: on
     inputBinding:
       position: 101
       prefix: --use-sse-basecaller

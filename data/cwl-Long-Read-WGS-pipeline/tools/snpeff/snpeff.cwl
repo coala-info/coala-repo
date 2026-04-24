@@ -59,7 +59,6 @@ inputs:
     doc: Set to true to not report usage statistics to SNPeff server.
     inputBinding:
       prefix: -noLog
-    default: false
 #  threads:  # this flag is mentioned in the documentation but not implemented in the tool as of version 5.2.1
 #    type: int?
 #    doc: Use multiple threads, default is 'off'
@@ -71,7 +70,6 @@ inputs:
     doc: Makes sure that the default behavior of downloading a database when not present is turned off, otherwise with improper settings a database will be downloaded seperately in each container.
     inputBinding:
       prefix: -nodownload
-    default: true
   input_format:
     type: 
       - type: enum
@@ -80,14 +78,12 @@ inputs:
     doc: Set input format type, defaults to VCF.
     inputBinding:
       prefix: -i
-    default: vcf    
   file_list:
     type: boolean?
     label: file list input
     doc: Set to true to enable a list of files as input.
     inputBinding:
       prefix: -fileList
-    default: false
   output_format:
     type: 
       - type: enum
@@ -96,7 +92,6 @@ inputs:
     doc: Set output format type, defaults to VCF.
     inputBinding:
       prefix: -o
-    default: vcf    
   stats_file:
     type: string?
     label: SNPeff summary report 
@@ -113,21 +108,18 @@ inputs:
     type: boolean?
     label: no summary statistics
     doc: Set to true to not omit reporting summary statistics, overridden when specifying a summary rerport file.
-    default: false
     inputBinding:
       prefix: -noStats
   no_upstream:
     type: boolean?
     label: no upstream changes
     doc: Set to true to omit upstream changes.
-    default: false
     inputBinding:
       prefix: -no-upstream
   no_downstream:
     type: boolean?
     label: no downstream changes
     doc: Set to true to omit downstream changes.
-    default: false
     inputBinding:
       prefix: -no-downstream
 
@@ -138,7 +130,6 @@ inputs:
     doc: Set to true to perform 'cancer' comparisons (Somatic vs Germline).
     inputBinding:
       prefix: -cancer
-    default: false
   cancer_samples:
     type: File?
     label: cancer samples file
@@ -157,84 +148,72 @@ inputs:
     doc: Set to true to use 'EFF' field compatible with older versions (instead of 'ANN').
     inputBinding:
       prefix: -formatEff
-    default: false
   gene_id:
     type: boolean?
     label: use Gene ID
     doc: Set to true to use gene ID instead of gene name in VCF output.
     inputBinding:
       prefix: -geneId
-    default: false
   hgvs:
     type: boolean?
     label: use HGVS
     doc: Uses HGVS annotations for amino acid sub-field, defaults to true.
     inputBinding:
       prefix: -hgvs
-    default: true
   hgvs_old:
     type: boolean?
     label: use old HGVS
     doc: Set to true to use old HGVS annotations.
     inputBinding:
       prefix: -hgvsOld
-    default: false
   hgvs_1_letter_aa:
     type: boolean?
     label: use one letter amino acids
     doc: Set to true to use one leter Amino acid codes in HGVS annotation.
     inputBinding:
       prefix: -hgvs1LetterAa
-    default: false
   hgvs_transcript_id:
     type: boolean?
     label: use transcript ID
     doc: Set to true to use transcript ID in HGVS annotation.
     inputBinding:
       prefix: -hgvsTrId
-    default: false
   lof:
     type: boolean?
     label: add LOF tags
     doc: Set to true to add loss of function (LOF) and Nonsense mediated decay (NMD) tags.
     inputBinding:
       prefix: -lof
-    default: false
   no_hgvs:
     type: boolean?
     label: no HGVS
     doc: Set to true to not add HGVS annotations.
     inputBinding:
       prefix: -noHgvs
-    default: false
   no_lof:
     type: boolean?
     label: no LOF
     doc: Set to true to not add LOF and NMD annotations.
     inputBinding:
       prefix: -noLof
-    default: false
   no_shift_hgvs:
     type: boolean?
     label: no shift HGVS
     doc: Set to true to not shift variants according to HGVS notation.
     inputBinding:
       prefix: -cancer
-    default: false
   oicr:
     type: boolean?
     label: OICR Tag
     doc: Set to true to add OICR tag in VCF file.
     inputBinding:
       prefix: -oicr
-    default: false
   sequence_ontology:
     type: boolean?
     label: sequence ontology
     doc: Uses sequence ontology terms, defaults to true.
     inputBinding:
       prefix: -sequenceOntology
-    default: true
 
 outputs:
   annotated_vcf:

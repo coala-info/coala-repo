@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: Indicate how many threads you want dedicated to the subprocess CheckM
-    default: 1
     inputBinding:
       position: 101
       prefix: --checkm_threads
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Indicate a number of initial clusters for kmean
-    default: 100
     inputBinding:
       position: 101
       prefix: -C
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the convergence iteration number
-    default: 400
     inputBinding:
       position: 101
       prefix: -v
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a damping factor between 0.5 and 1
-    default: 0.95
     inputBinding:
       position: 101
       prefix: -d
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Indicate a number for the kmer calculation
-    default: 4
     inputBinding:
       position: 101
       prefix: --kmer
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Specify a max number of iterations
-    default: 4000
     inputBinding:
       position: 101
       prefix: -m
@@ -83,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: Specify a preference
-    default: '-3'
     inputBinding:
       position: 101
       prefix: -p
@@ -101,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: Specify a preference for refinement
-    default: '-25'
     inputBinding:
       position: 101
       prefix: --refine-preference
@@ -110,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the contig size cut-off
-    default: 1000
     inputBinding:
       position: 101
       prefix: -x

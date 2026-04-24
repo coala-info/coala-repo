@@ -33,7 +33,6 @@ inputs:
       - string
     doc: Specify a toolshed URL to search, or 'main' (the main Galaxy toolshed, 
       the default) or 'test' (the test Galaxy toolshed)
-    default: main
     inputBinding:
       position: 102
       prefix: --toolshed

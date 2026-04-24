@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Selector, [read,region,file,region-type]
-    default: region
     inputBinding:
       position: 102
       prefix: --selector

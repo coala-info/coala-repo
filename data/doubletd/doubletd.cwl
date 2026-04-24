@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: allelic dropout (ADO) rate
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --beta
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: expected doublet rate
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --delta

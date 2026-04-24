@@ -63,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: Chromsome naming style to use based on ASSEMBLY-REPORT.
-    default: UCSC-style-name
     inputBinding:
       position: 102
       prefix: --name-style

@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: number of processes to use.
-    default: 2
     inputBinding:
       position: 101
       prefix: -p

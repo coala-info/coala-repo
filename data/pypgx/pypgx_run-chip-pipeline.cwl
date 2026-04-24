@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: "Reference genome assembly (default: 'GRCh37') (choices: 'GRCh37', 'GRCh38')."
-    default: GRCh37
     inputBinding:
       position: 104
       prefix: --assembly

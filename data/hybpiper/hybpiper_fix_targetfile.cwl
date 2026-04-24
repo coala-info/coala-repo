@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Number of alignments to run concurrently. Default is 1.
-    default: 1
     inputBinding:
       position: 102
       prefix: --concurrent_alignments
@@ -48,7 +47,6 @@ inputs:
     doc: If more than one representative sequence is present for a given gene, 
       filter out sequences shorter than this percentage of the longest gene 
       sequence length. Default is 0.0 (all sequences retained).
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --filter_by_length_percentage
@@ -72,7 +70,6 @@ inputs:
       Useful to filter out sequences with frameshifts that do NOT introduce stop
       codons. 0.0 means identical sequences, 1.0 means completely different 
       sequences. Default is 0.5
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --maximum_distance
@@ -126,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to run each concurrent alignment with. Default is 1.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads_per_concurrent_alignment

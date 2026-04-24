@@ -52,7 +52,6 @@ inputs:
       - int
     doc: Maximum number of conversion errors before aborting. A negative value 
       will allow an unlimited number of errors.
-    default: 50
     inputBinding:
       position: 102
       prefix: -maxConvertErrors
@@ -62,7 +61,6 @@ inputs:
       - int
     doc: Maximum number of parsing errors before aborting. A negative value will
       allow an unlimited number of errors.
-    default: 50
     inputBinding:
       position: 102
       prefix: -maxParseErrors

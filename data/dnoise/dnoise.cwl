@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: alpha value, 5 by default
-    default: 5
     inputBinding:
       position: 101
       prefix: --alpha
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: number of cores, 1 by default
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: count name column 'size' by default
-    default: size
     inputBinding:
       position: 101
       prefix: --count_name
@@ -91,7 +88,6 @@ inputs:
     doc: as DnoisE has been developed for COI sequences amplified with Leray-XT 
       primers, default value is 3 (i.e., the first nucleotide in the sequences 
       is a third codon position)
-    default: 3
     inputBinding:
       position: 101
       prefix: --first_nt_codon_position
@@ -111,7 +107,6 @@ inputs:
       \t\t\t\t2-> will join by the lesser abundance ratio (r criterion)\n\t\t\t\t\
       3-> will join by the lesser distance (d) value (d criterion)\n\t\t\t\t4-> will
       provide all joining criteria in three different outputs (all)"
-    default: 1
     inputBinding:
       position: 101
       prefix: --joining_criteria
@@ -131,7 +126,6 @@ inputs:
       - int
     doc: minimum abundance filtering applied at the end of analysis, 1 by 
       default
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_abund
@@ -159,7 +153,6 @@ inputs:
       - 'null'
       - string
     doc: sequence column name, 'sequence' by default
-    default: sequence
     inputBinding:
       position: 101
       prefix: --sequence

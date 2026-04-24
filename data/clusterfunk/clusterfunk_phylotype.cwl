@@ -22,7 +22,6 @@ inputs:
       - string
     doc: what format is the tree file. This is passed to dendropy. default is 
       'nexus'
-    default: nexus
     inputBinding:
       position: 101
       prefix: --format
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for each phylotype.
-    default: p
     inputBinding:
       position: 101
       prefix: --prefix
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - float
     doc: branch threshold used to distinguish new phylotype
-    default: '5E-6'
     inputBinding:
       position: 101
       prefix: --threshold

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'compress output file using gzip (default: true)'
-    default: true
     inputBinding:
       position: 102
       prefix: --gzip
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'input is SAM (default: false)'
-    default: false
     inputBinding:
       position: 102
       prefix: -S
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'do not report coverage for sequences without aligned reads (default: false)'
-    default: false
     inputBinding:
       position: 102
       prefix: --skipuncovered
@@ -45,7 +42,6 @@ inputs:
       - boolean
     doc: 'do not report per-position coverage but report fraction of sequence covered
       (default: false)'
-    default: false
     inputBinding:
       position: 102
       prefix: --summary
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of words (coverage values) per line (default: 17)'
-    default: 17
     inputBinding:
       position: 102
       prefix: --wordsize

@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: Highest threshold value to check
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --max
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: Lowest threshold value to check
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --min
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Number of breaks to create for testing
-    default: 100
     inputBinding:
       position: 102
       prefix: --nsteps
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Number of decimal points to print
-    default: 8
     inputBinding:
       position: 102
       prefix: --precision
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Number of OpenMP threads for parallel sorting
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

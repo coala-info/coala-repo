@@ -15,7 +15,6 @@ inputs:
       - type: array
         items: string
     doc: bin ids to print (None for all)
-    default: None
     inputBinding:
       position: 102
       prefix: --bids
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: output format [bins, contigs]
-    default: bins
     inputBinding:
       position: 102
       prefix: --format
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: print unbinned contig IDs too
-    default: false
     inputBinding:
       position: 102
       prefix: --unbinned

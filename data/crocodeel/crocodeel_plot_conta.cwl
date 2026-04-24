@@ -26,7 +26,6 @@ inputs:
       each sample, set the abundance of species to zero if they are up to AB_THRESHOLD_FACTOR
       times more abundant than the least abundant species. Recommended value for MetaPhlAn4:
       20 (default: None)'
-    default: None
     inputBinding:
       position: 101
       prefix: --filter-low-ab
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Number of scatterplots to draw horizontally on each page
-    default: 4
     inputBinding:
       position: 101
       prefix: --ncol
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Number of scatterplots to draw vertically on each page
-    default: 4
     inputBinding:
       position: 101
       prefix: --nrow

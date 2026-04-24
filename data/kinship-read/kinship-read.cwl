@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Window size
-    default: 5000000
     inputBinding:
       position: 101
       prefix: --window_size

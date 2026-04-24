@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment printout: 0 - none, 1 - concise, 2 - detailed (default).'
-    default: 2
     inputBinding:
       position: 103
       prefix: -v
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: 'Global structure alignment: 1 - enable (default), 0 - disable.'
-    default: 1
     inputBinding:
       position: 103
       prefix: -fa
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal number of pocket residues.
-    default: 10
     inputBinding:
       position: 103
       prefix: -plen
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal pocket volume in grid points.
-    default: 100
     inputBinding:
       position: 103
       prefix: -pvol
@@ -113,7 +109,6 @@ inputs:
       - 'null'
       - string
     doc: 'Similarity scoring metric: tm (TM-score), ps (PS-score, default).'
-    default: ps
     inputBinding:
       position: 103
       prefix: -m

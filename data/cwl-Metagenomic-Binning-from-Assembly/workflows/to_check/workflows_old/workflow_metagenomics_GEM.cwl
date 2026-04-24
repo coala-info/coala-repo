@@ -67,12 +67,10 @@ inputs:
   solver:
     type: string
     doc: Solver to be used in MEMOTE and SMETANA (defaul; cplex)
-    default: "cplex"
   run_smetana:
     type: boolean?
     label: Run SMETANA
     doc: Run SMETANA (Species METabolic interaction ANAlysis)
-    default: false
 
   gapfill:
     type: string?
@@ -88,7 +86,6 @@ inputs:
     type: int?
     doc: Number of threads to use for computational processes
     label: number of threads
-    default: 2
 
   destination:
     type: string?
@@ -106,7 +103,6 @@ steps:
     in:
       input_fasta: bins
       single_mode:
-          default: true
     out: [predicted_proteins_faa]
 ##### Compression of prodigal output #####
   compress_prodigal:
@@ -178,15 +174,10 @@ steps:
     in:
       GEM: carveme/carveme_gem
       report_snapshot:
-        default: true
       skip_test_find_metabolites_produced_with_closed_bounds:
-        default: true
       skip_test_find_metabolites_consumed_with_closed_bounds:
-        default: true
       skip_test_find_metabolites_not_produced_with_open_bounds:
-        default: true
       skip_test_find_metabolites_not_consumed_with_open_bounds:
-        default: true
     out: [report_html]
 
   memote_run:
@@ -197,15 +188,10 @@ steps:
     in:
       GEM: carveme/carveme_gem
       run:
-        default: true
       skip_test_find_metabolites_produced_with_closed_bounds:
-        default: true
       skip_test_find_metabolites_consumed_with_closed_bounds:
-        default: true
       skip_test_find_metabolites_not_produced_with_open_bounds:
-        default: true
       skip_test_find_metabolites_not_consumed_with_open_bounds:
-        default: true
     out: [run_json]
 
 #############################################

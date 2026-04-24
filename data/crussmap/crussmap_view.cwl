@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output in csv format, default is false
-    default: false
     inputBinding:
       position: 101
       prefix: --csv
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Rewrite output file, default is false
-    default: false
     inputBinding:
       position: 101
       prefix: --rewrite

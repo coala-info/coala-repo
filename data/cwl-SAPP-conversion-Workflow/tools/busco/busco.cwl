@@ -28,7 +28,6 @@ inputs:
   threads:
     type: int?
     label: Number of threads
-    default: 1
     inputBinding:
       prefix: --cpu
 
@@ -135,7 +134,6 @@ inputs:
     type: boolean
     label: Compress output
     doc: Compress some subdirectories with many files to save space
-    default: true
     inputBinding:
         prefix: --tar
   
@@ -144,7 +142,6 @@ inputs:
     type: boolean
     label: Skip BBTools
     doc: Skip BBTools steps
-    default: false
     inputBinding:
         prefix: --skip_bbtools
 

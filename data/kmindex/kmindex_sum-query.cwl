@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: Sub-indexes to query, comma separated.
-    default: all
     inputBinding:
       position: 101
       prefix: --names
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Verbosity level [debug|info|warning|error].
-    default: info
     inputBinding:
       position: 101
       prefix: --verbose
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Index s-mers and query (s+z)-mers (findere algorithm).
-    default: 0
     inputBinding:
       position: 101
       prefix: --zvalue

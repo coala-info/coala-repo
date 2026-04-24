@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: number of best reference sequences per query to store
-    default: 100
     inputBinding:
       position: 102
       prefix: --nbest
@@ -60,7 +59,6 @@ inputs:
       - int
     doc: Pool size, i.e. how many reference seqs are queued to be processed in 
       parallel (larger than number of threads, defaults to 64 per thread)
-    default: 64 per thread
     inputBinding:
       position: 102
       prefix: --pool
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: maximum allowed ambiguity for QUERY sequence to be excluded
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --query_ambiguity
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: maximum allowed ambiguity for REFERENCE sequence to be excluded
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --ref_ambiguity
@@ -96,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: number of sites to trim from both ends (suggested for sarscov2=230)
-    default: 0
     inputBinding:
       position: 102
       prefix: --trim

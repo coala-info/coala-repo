@@ -98,7 +98,6 @@ inputs:
       - 'null'
       - string
     doc: "Produce a filtered gene count matrix (default:\nbustools)"
-    default: bustools
     inputBinding:
       position: 102
       prefix: --filter
@@ -107,7 +106,6 @@ inputs:
       - 'null'
       - string
     doc: 'Barcode filter threshold (default: auto)'
-    default: auto
     inputBinding:
       position: 102
       prefix: --filter-threshold
@@ -215,7 +213,6 @@ inputs:
       - string
     doc: "Names for col_attrs and row_attrs in loom file\n(default: barcode,target_name).
       Use --loom-\nnames=velocyto for velocyto-compatible loom files"
-    default: barcode,target_name
     inputBinding:
       position: 102
       prefix: --loom-names
@@ -240,7 +237,6 @@ inputs:
       - 'null'
       - string
     doc: "Maximum memory used (default: 2G for standard, 4G for\nothers)"
-    default: 2G for standard, 4G for others
     inputBinding:
       position: 102
       prefix: -m
@@ -318,7 +314,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set platform for lr-kallisto (default: ONT)'
-    default: ONT
     inputBinding:
       position: 102
       prefix: --platform
@@ -346,7 +341,6 @@ inputs:
       - 'null'
       - string
     doc: 'Strandedness (default: see `kb --list`)'
-    default: see `kb --list`
     inputBinding:
       position: 102
       prefix: --strand
@@ -358,7 +352,6 @@ inputs:
       `cell` to add ambiguous and\nprocessed transcript matrices. Use `nucleus` to
       add\nambiguous and unprocessed transcript matrices. Use\n`total` to add all
       three matrices together. (Default:\nnone)"
-    default: none
     inputBinding:
       position: 102
       prefix: --sum
@@ -403,7 +396,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads to use (default: 8)'
-    default: 8
     inputBinding:
       position: 102
       prefix: -t
@@ -412,7 +404,6 @@ inputs:
       - 'null'
       - float
     doc: "Set threshold for lr-kallisto read mapping (default:\n0.8)"
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --threshold
@@ -439,7 +430,6 @@ inputs:
     doc: "Type of workflow. Use `nac` to specify a nac index for\nproducing mature/nascent/ambiguous
       matrices. Use\n`kite` for feature barcoding. Use `kite:10xFB` for 10x\nGenomics
       Feature Barcoding technology. (default:\nstandard)"
-    default: standard
     inputBinding:
       position: 102
       prefix: --workflow

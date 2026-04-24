@@ -19,7 +19,6 @@ inputs:
       - boolean
     doc: Mark all output files as temp files. This can be useful for CI testing,
       in order to save space.
-    default: false
     inputBinding:
       position: 102
       prefix: --all-temp
@@ -30,7 +29,6 @@ inputs:
     doc: Don't check for ambiguous rules and simply use the first if several can
       produce the same file. This allows the user to prioritize rules by their 
       order in the snakefile.
-    default: false
     inputBinding:
       position: 102
       prefix: --allow-ambiguity
@@ -67,7 +65,6 @@ inputs:
       - int
     doc: 'Internal use only: define the initial value of the attempt parameter (default:
       1).'
-    default: 1
     inputBinding:
       position: 102
       prefix: --attempt
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - boolean
     doc: Execute workflow on azure batch
-    default: false
     inputBinding:
       position: 102
       prefix: --az-batch
@@ -96,7 +92,6 @@ inputs:
     doc: Enable autoscaling of the azure batch pool nodes, this option will set 
       the initial dedicated node count to zero, and requires five minutes to 
       resize the cluster, so is only recommended for longer running jobs.
-    default: false
     inputBinding:
       position: 102
       prefix: --az-batch-enable-autoscale
@@ -107,7 +102,6 @@ inputs:
     doc: 'Output code to register bash completion for snakemake. Put the following
       in your .bashrc (including the accents): `snakemake --bash-completion` or issue
       it in an open terminal session.'
-    default: false
     inputBinding:
       position: 102
       prefix: --bash-completion
@@ -145,7 +139,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove unused (singularity) containers
-    default: false
     inputBinding:
       position: 102
       prefix: --cleanup-containers
@@ -165,7 +158,6 @@ inputs:
       - boolean
     doc: Cleanup old shadow directories which have not been deleted due to 
       failures or power loss.
-    default: false
     inputBinding:
       position: 102
       prefix: --cleanup-shadow
@@ -197,7 +189,6 @@ inputs:
       - int
     doc: Specify maximal number of job ids to pass to --cluster-cancel command, 
       defaults to 1000.
-    default: 1000
     inputBinding:
       position: 102
       prefix: --cluster-cancel-nargs
@@ -262,7 +253,6 @@ inputs:
       - 'null'
       - boolean
     doc: Cleanup unused conda environments.
-    default: false
     inputBinding:
       position: 102
       prefix: --conda-cleanup-envs
@@ -283,7 +273,6 @@ inputs:
       - boolean
     doc: If specified, only creates the job-specific conda environments then 
       exits. The `--use-conda` flag must also be set.
-    default: false
     inputBinding:
       position: 102
       prefix: --conda-create-envs-only
@@ -293,7 +282,6 @@ inputs:
       - string
     doc: Choose the conda frontend for installing environments. Mamba is much 
       faster and highly recommended.
-    default: mamba
     inputBinding:
       position: 102
       prefix: --conda-frontend
@@ -303,7 +291,6 @@ inputs:
       - boolean
     doc: Do not block environment variables that modify the search path (R_LIBS,
       PYTHONPATH, PERL5LIB, PERLLIB) when using conda environments.
-    default: false
     inputBinding:
       position: 102
       prefix: --conda-not-block-search-path-envvars
@@ -366,7 +353,6 @@ inputs:
       - boolean
     doc: Print a Dockerfile that provides an execution environment for the 
       workflow, including all conda environments.
-    default: false
     inputBinding:
       position: 102
       prefix: --containerize
@@ -388,7 +374,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print the DAG in D3.js compatible JSON format.
-    default: false
     inputBinding:
       position: 102
       prefix: --d3dag
@@ -399,7 +384,6 @@ inputs:
     doc: 'Do not execute anything and print the directed acyclic graph of jobs in
       the dot language. Recommended use on Unix systems: snakemake --dag | dot | display.
       Note print statements in your Snakefile may interfere with visualization.'
-    default: false
     inputBinding:
       position: 102
       prefix: --dag
@@ -409,7 +393,6 @@ inputs:
       - boolean
     doc: Allow to debug rules with e.g. PDB. This flag allows to set breakpoints
       in run blocks.
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -419,7 +402,6 @@ inputs:
       - boolean
     doc: Print candidate and selected jobs (including their wildcards) while 
       inferring DAG. This can help to debug unexpected DAG topology or errors.
-    default: false
     inputBinding:
       position: 102
       prefix: --debug-dag
@@ -428,7 +410,6 @@ inputs:
       - 'null'
       - string
     doc: Specify prefix for default remote provider. E.g. a bucket name.
-    default: ''
     inputBinding:
       position: 102
       prefix: --default-remote-prefix
@@ -472,7 +453,6 @@ inputs:
       to list files without actually deleting anything. Note that this will not 
       recurse into subworkflows. Write-protected files are not removed. 
       Nevertheless, use with care!
-    default: false
     inputBinding:
       position: 102
       prefix: --delete-all-output
@@ -483,7 +463,6 @@ inputs:
     doc: Remove all temporary files generated by the workflow. Use together with
       --dry-run to list files without actually deleting anything. Note that this
       will not recurse into subworkflows.
-    default: false
     inputBinding:
       position: 102
       prefix: --delete-temp-output
@@ -499,7 +478,6 @@ inputs:
       rule changed since file creation. The input file and shell command columns are
       self explanatory. Finally the last column denotes whether the file will be updated
       or created during the next workflow execution.'
-    default: false
     inputBinding:
       position: 102
       prefix: --detailed-summary
@@ -557,7 +535,6 @@ inputs:
     doc: Drop metadata file tracking information after job finishes. 
       Provenance-information based reports (e.g. --report and the 
       --list_x_changes functions) will be empty or incomplete.
-    default: false
     inputBinding:
       position: 102
       prefix: --drop-metadata
@@ -568,7 +545,6 @@ inputs:
     doc: Do not execute anything, and display what would be done. If you have a 
       very large workflow, use --dry-run --quiet to just print a summary of the 
       DAG of jobs.
-    default: false
     inputBinding:
       position: 102
       prefix: --dry-run
@@ -614,7 +590,6 @@ inputs:
       steps of the workflow. Use this if above option leads to a DAG that is too large.
       Recommended use on Unix systems: snakemake --filegraph | dot | display. Note
       print statements in your Snakefile may interfere with visualization.'
-    default: false
     inputBinding:
       position: 102
       prefix: --filegraph
@@ -625,7 +600,6 @@ inputs:
     doc: Execute your workflow on a flux cluster. Flux can work with both a 
       shared network filesystem (like NFS) or without. If you don't have a 
       shared filesystem, additionally specify --no-shared-fs.
-    default: false
     inputBinding:
       position: 102
       prefix: --flux
@@ -635,7 +609,6 @@ inputs:
       - boolean
     doc: Force the execution of the selected target or the first rule regardless
       of already created output.
-    default: false
     inputBinding:
       position: 102
       prefix: --force
@@ -645,7 +618,6 @@ inputs:
       - boolean
     doc: Force threads rather than processes. Helpful if shared memory 
       (/dev/shm) is full or unavailable.
-    default: false
     inputBinding:
       position: 102
       prefix: --force-use-threads
@@ -655,7 +627,6 @@ inputs:
       - boolean
     doc: Force the execution of the selected (or the first) rule and all rules 
       it is dependent on regardless of already created output.
-    default: false
     inputBinding:
       position: 102
       prefix: --forceall
@@ -694,7 +665,6 @@ inputs:
       GOOGLE_APPLICATION_CREDENTIALS for snakemake to discover. Also, 
       --use-conda, --use-singularity, --config, --configfile are supported and 
       will be carried over.
-    default: false
     inputBinding:
       position: 102
       prefix: --google-lifesciences
@@ -707,7 +677,6 @@ inputs:
       is compressed to a .tar.gz, named by the hash of the contents, and kept in
       Google Cloud Storage. By default, the caches are deleted at the shutdown 
       step of the workflow.
-    default: false
     inputBinding:
       position: 102
       prefix: --google-lifesciences-keep-cache
@@ -737,7 +706,6 @@ inputs:
       - type: array
         items: string
     doc: Specify one or more valid instance regions (defaults to US)
-    default:
       - us-east1
       - us-west1
       - us-central1
@@ -810,7 +778,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not check for incomplete output files.
-    default: false
     inputBinding:
       position: 102
       prefix: --ignore-incomplete
@@ -824,7 +791,6 @@ inputs:
       that your submit script (here sbatch) outputs the generated job id to the first
       stdout line, {dependencies} will be filled with space separated job ids this
       job depends on. Does not work for workflows that contain checkpoint rules."
-    default: false
     inputBinding:
       position: 102
       prefix: --immediate-submit
@@ -835,7 +801,6 @@ inputs:
     doc: Provide a custom name for the jobscript that is submitted to the 
       cluster (see --cluster). NAME is "snakejob.{name}.{jobid}.sh" per default.
       The wildcard {jobid} has to be present in the name.
-    default: snakejob.{name}.{jobid}.sh
     inputBinding:
       position: 102
       prefix: --jobname
@@ -870,7 +835,6 @@ inputs:
       will request 7600m CPUs from k8s, allowing it to utilise one entire node. N.B:
       the job itself would still see the original value, i.e. as the value substituted
       in {threads}."
-    default: 0.95
     inputBinding:
       position: 102
       prefix: --k8s-cpu-scalar
@@ -890,7 +854,6 @@ inputs:
       - 'null'
       - boolean
     doc: Go on with independent jobs if a job fails.
-    default: false
     inputBinding:
       position: 102
       prefix: --keep-going
@@ -899,7 +862,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not remove incomplete output files by failed jobs.
-    default: false
     inputBinding:
       position: 102
       prefix: --keep-incomplete
@@ -908,7 +870,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep local copies of remote input files.
-    default: false
     inputBinding:
       position: 102
       prefix: --keep-remote
@@ -918,7 +879,6 @@ inputs:
       - boolean
     doc: Do not adjust the paths of given target files relative to the working 
       directory.
-    default: false
     inputBinding:
       position: 102
       prefix: --keep-target-files
@@ -941,7 +901,6 @@ inputs:
     doc: Wait given seconds if an output file of a job is not present after the 
       job finished. This helps if your filesystem suffers from latency (default 
       5).
-    default: 5
     inputBinding:
       position: 102
       prefix: --latency-wait
@@ -961,7 +920,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show available rules in given Snakefile.
-    default: false
     inputBinding:
       position: 102
       prefix: --list
@@ -971,7 +929,6 @@ inputs:
       - boolean
     doc: List all output files for which the rule body (run or shell) have 
       changed in the Snakefile.
-    default: false
     inputBinding:
       position: 102
       prefix: --list-code-changes
@@ -980,7 +937,6 @@ inputs:
       - 'null'
       - boolean
     doc: List all conda environments and their location on disk.
-    default: false
     inputBinding:
       position: 102
       prefix: --list-conda-envs
@@ -992,7 +948,6 @@ inputs:
       the Snakefile (e.g. new input files were added in the rule definition or 
       files were renamed). For listing input file modification in the 
       filesystem, use --summary.
-    default: false
     inputBinding:
       position: 102
       prefix: --list-input-changes
@@ -1002,7 +957,6 @@ inputs:
       - boolean
     doc: List all output files for which the defined params have changed in the 
       Snakefile.
-    default: false
     inputBinding:
       position: 102
       prefix: --list-params-changes
@@ -1011,7 +965,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show available target rules in given Snakefile.
-    default: false
     inputBinding:
       position: 102
       prefix: --list-target-rules
@@ -1022,7 +975,6 @@ inputs:
     doc: List all files in the working directory that are not used in the 
       workflow. This can be used e.g. for identifying leftover files. Hidden 
       files and directories are ignored.
-    default: false
     inputBinding:
       position: 102
       prefix: --list-untracked
@@ -1032,7 +984,6 @@ inputs:
       - boolean
     doc: List all output files that have been created with a different version 
       (as determined by the version keyword).
-    default: false
     inputBinding:
       position: 102
       prefix: --list-version-changes
@@ -1043,7 +994,6 @@ inputs:
     doc: 'In cluster/cloud mode, use at most N cores of the host machine in parallel
       (default: number of CPU cores of the host). The cores are used to execute local
       rules. This option is ignored when not in cluster/cloud mode.'
-    default: 20
     inputBinding:
       position: 102
       prefix: --local-cores
@@ -1052,7 +1002,6 @@ inputs:
       - 'null'
       - string
     doc: Name for local groupid, meant for internal use only.
-    default: local
     inputBinding:
       position: 102
       prefix: --local-groupid
@@ -1087,7 +1036,6 @@ inputs:
       creating the inventory itself can be slow, e.g. on network file systems. 
       Hence, we do not spend more than a given amount of time and fall back to 
       individual checks for the rest.
-    default: 20
     inputBinding:
       position: 102
       prefix: --max-inventory-time
@@ -1097,7 +1045,6 @@ inputs:
       - float
     doc: Maximal number of cluster/drmaa jobs per second, default is 10, 
       fractions allowed.
-    default: 10
     inputBinding:
       position: 102
       prefix: --max-jobs-per-second
@@ -1107,7 +1054,6 @@ inputs:
       - float
     doc: Maximal number of job status checks per second, default is 10, 
       fractions allowed.
-    default: 10
     inputBinding:
       position: 102
       prefix: --max-status-checks-per-second
@@ -1128,7 +1074,6 @@ inputs:
       - 'null'
       - int
     doc: Set execution mode of Snakemake (internal use only).
-    default: 0
     inputBinding:
       position: 102
       prefix: --mode
@@ -1137,7 +1082,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not invoke onstart, onsuccess or onerror hooks after execution.
-    default: false
     inputBinding:
       position: 102
       prefix: --no-hooks
@@ -1154,7 +1098,6 @@ inputs:
       --default-remote-provider. Further, when using --cluster you will have to 
       also provide --cluster-status. Only activate this if you know what you are
       doing.
-    default: false
     inputBinding:
       position: 102
       prefix: --no-shared-fs
@@ -1163,7 +1106,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not evaluate or execute subworkflows.
-    default: false
     inputBinding:
       position: 102
       prefix: --no-subworkflows
@@ -1172,7 +1114,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not use a colored output.
-    default: false
     inputBinding:
       position: 102
       prefix: --nocolor
@@ -1181,7 +1122,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not lock the working directory
-    default: false
     inputBinding:
       position: 102
       prefix: --nolock
@@ -1191,7 +1131,6 @@ inputs:
       - string
     doc: The IP address and PORT the notebook server used for editing the 
       notebook (--edit-notebook) will listen on.
-    default: localhost:8888
     inputBinding:
       position: 102
       prefix: --notebook-listen
@@ -1202,7 +1141,6 @@ inputs:
     doc: Ignore temp() declarations. This is useful when running only a part of 
       the workflow, since temp() would lead to deletion of probably needed files
       by other parts of the workflow.
-    default: false
     inputBinding:
       position: 102
       prefix: --notemp
@@ -1275,7 +1213,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print the python representation of the workflow.
-    default: false
     inputBinding:
       position: 102
       prefix: --print-compilation
@@ -1284,7 +1221,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print out the shell commands that will be executed.
-    default: false
     inputBinding:
       position: 102
       prefix: --printshellcmds
@@ -1330,7 +1266,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print the reason for each executed rule (deprecated, always true now).
-    default: false
     inputBinding:
       position: 102
       prefix: --reason
@@ -1360,7 +1295,6 @@ inputs:
       - 'null'
       - boolean
     doc: Re-run all jobs the output of which is recognized as incomplete.
-    default: false
     inputBinding:
       position: 102
       prefix: --rerun-incomplete
@@ -1373,7 +1307,6 @@ inputs:
       are used, which guarantees that results are consistent with the workflow 
       code and configuration. If you rather prefer the traditional way of just 
       considering file modification dates, use '--rerun-trigger mtime'.
-    default:
       - mtime
       - params
       - input
@@ -1403,7 +1336,6 @@ inputs:
       - 'null'
       - int
     doc: Number of times to restart failing jobs (defaults to 0).
-    default: 0
     inputBinding:
       position: 102
       prefix: --retries
@@ -1418,7 +1350,6 @@ inputs:
       if above option leads to a DAG that is too large. Recommended use on Unix systems:
       snakemake --rulegraph | dot | display. Note print statements in your Snakefile
       may interfere with visualization.'
-    default: false
     inputBinding:
       position: 102
       prefix: --rulegraph
@@ -1438,7 +1369,6 @@ inputs:
     doc: Specifies if jobs are selected by a greedy algorithm or by solving an 
       ilp. The ilp scheduler aims to reduce runtime and hdd usage by best 
       possible use of resources.
-    default: ilp
     inputBinding:
       position: 102
       prefix: --scheduler
@@ -1447,7 +1377,6 @@ inputs:
       - 'null'
       - string
     doc: Specifies solver to be utilized when selecting ilp-scheduler.
-    default: COIN_CMD
     inputBinding:
       position: 102
       prefix: --scheduler-ilp-solver
@@ -1532,7 +1461,6 @@ inputs:
       - 'null'
       - boolean
     doc: Automatically display logs of failed jobs.
-    default: false
     inputBinding:
       position: 102
       prefix: --show-failed-logs
@@ -1541,7 +1469,6 @@ inputs:
       - 'null'
       - string
     doc: Pass additional args to singularity.
-    default: ''
     inputBinding:
       position: 102
       prefix: --singularity-args
@@ -1562,7 +1489,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't delete wrapper scripts used for execution
-    default: false
     inputBinding:
       position: 102
       prefix: --skip-script-cleanup
@@ -1577,7 +1503,6 @@ inputs:
       analogous to the SLURM 'mem' and 'mem-per-cpu' flags to sbatch, 
       respectively. Here, the unit is always 'MiB'. In addition 
       '--default_resources' should contain the SLURM account.
-    default: false
     inputBinding:
       position: 102
       prefix: --slurm
@@ -1612,7 +1537,6 @@ inputs:
       newer or if version or implementation of the rule changed since file creation.
       Finally the last column denotes whether the file will be updated or created
       during the next workflow execution.'
-    default: false
     inputBinding:
       position: 102
       prefix: --summary
@@ -1646,7 +1570,6 @@ inputs:
       before snakemake command on the cloud (inside snakemake container on 
       Tibanna VM). Also, --use-conda, --use-singularity, --config, --configfile 
       are supported and will be carried over.
-    default: false
     inputBinding:
       position: 102
       prefix: --tibanna
@@ -1684,7 +1607,6 @@ inputs:
       --forcerun. Note however that you lose the provenance information when the
       files have been created in reality. Hence, this should be used only as a 
       last resort.
-    default: false
     inputBinding:
       position: 102
       prefix: --touch
@@ -1693,7 +1615,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove a lock on the working directory.
-    default: false
     inputBinding:
       position: 102
       prefix: --unlock
@@ -1714,7 +1635,6 @@ inputs:
       - boolean
     doc: If defined in the rule, run job in a conda environment. If this flag is
       not set, the conda directive is ignored.
-    default: false
     inputBinding:
       position: 102
       prefix: --use-conda
@@ -1726,7 +1646,6 @@ inputs:
       loaded in the given order. This can be combined with --use-conda and 
       --use- singularity, which will then be only used as a fallback for rules 
       which don't define environment modules.
-    default: false
     inputBinding:
       position: 102
       prefix: --use-envmodules
@@ -1736,7 +1655,6 @@ inputs:
       - boolean
     doc: If defined in the rule, run job within a singularity container. If this
       flag is not set, the singularity directive is ignored.
-    default: false
     inputBinding:
       position: 102
       prefix: --use-singularity
@@ -1745,7 +1663,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print debugging output.
-    default: false
     inputBinding:
       position: 102
       prefix: --verbose
@@ -1822,7 +1739,6 @@ inputs:
     doc: "Prefix for URL created from wrapper directive (default: https://github.com/snakemake/snakemake-wrappers/raw/).
       Set this to a different URL to use your fork or a local clone of the repository,
       e.g., use a git URL like 'git+file://path/to/your/local/clone@'."
-    default: https://github.com/snakemake/snakemake-wrappers/raw/
     inputBinding:
       position: 102
       prefix: --wrapper-prefix

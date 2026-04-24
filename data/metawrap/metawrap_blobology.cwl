@@ -34,7 +34,6 @@ inputs:
       - Directory
     doc: Folder containing bins. Contig names must match those of the assembly 
       file.
-    default: None
     inputBinding:
       position: 104
       prefix: --bins
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Number of contigs to run blobology on. Subsampling is randomized.
-    default: ALL
     inputBinding:
       position: 104
       prefix: --subsamble

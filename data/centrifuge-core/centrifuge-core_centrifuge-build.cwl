@@ -153,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: number of alignment threads to launch
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

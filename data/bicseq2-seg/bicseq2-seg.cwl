@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: The penalty used in the BIC-seq2 algorithm
-    default: 2.0
     inputBinding:
       position: 102
       prefix: --lambda

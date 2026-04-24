@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: Specify the entropy threshold used to filter the graph edges.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --edgeFilter
@@ -64,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: 'Specify the format of the image output. (svg or png; default: svg)'
-    default: svg
     inputBinding:
       position: 101
       prefix: --plotFormat

@@ -48,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Standard deviation of the distance for pairs
-    default: 35
     inputBinding:
       position: 103
       prefix: -s
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: '# of threads to run DWGSIM'
-    default: 8
     inputBinding:
       position: 103
       prefix: -z
@@ -82,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Haplotypes to simulate
-    default: 2
     inputBinding:
       position: 103
       prefix: -d
@@ -91,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of Duplications and Inversions
-    default: 10000
     inputBinding:
       position: 103
       prefix: '-6'
@@ -100,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of Indels
-    default: 50
     inputBinding:
       position: 103
       prefix: '-3'
@@ -109,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of Translocations
-    default: 10000
     inputBinding:
       position: 103
       prefix: '-9'
@@ -118,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: Mean molecule length in kbp
-    default: 100
     inputBinding:
       position: 103
       prefix: -f
@@ -127,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of Duplications and Inversions
-    default: 1000
     inputBinding:
       position: 103
       prefix: '-5'
@@ -136,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of Indels
-    default: 1
     inputBinding:
       position: 103
       prefix: '-2'
@@ -145,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of Translocations
-    default: 1000
     inputBinding:
       position: 103
       prefix: '-8'
@@ -154,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: 'Average # of molecules per partition'
-    default: 10
     inputBinding:
       position: 103
       prefix: -m
@@ -163,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: '# of Duplications and # of Inversions'
-    default: 100
     inputBinding:
       position: 103
       prefix: '-7'
@@ -172,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: '# of Indels'
-    default: 1000
     inputBinding:
       position: 103
       prefix: '-4'
@@ -181,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: '# of Translocations'
-    default: 100
     inputBinding:
       position: 103
       prefix: '-0'
@@ -190,7 +176,6 @@ inputs:
       - 'null'
       - int
     doc: Outer distance between the two ends for pairs
-    default: 350
     inputBinding:
       position: 103
       prefix: -i
@@ -199,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: n*1000 partitions to generate
-    default: 1500
     inputBinding:
       position: 103
       prefix: -t
@@ -208,7 +192,6 @@ inputs:
       - 'null'
       - float
     doc: Per base error rate of the first read
-    default: 0.0001
     inputBinding:
       position: 103
       prefix: -e
@@ -217,7 +200,6 @@ inputs:
       - 'null'
       - float
     doc: Per base error rate of the second read
-    default: 0.0001
     inputBinding:
       position: 103
       prefix: -E
@@ -226,7 +208,6 @@ inputs:
       - 'null'
       - int
     doc: 1 SNP per INT base pairs
-    default: 1000
     inputBinding:
       position: 103
       prefix: '-1'
@@ -235,7 +216,6 @@ inputs:
       - 'null'
       - int
     doc: '# million reads pairs in total to simulated'
-    default: 600
     inputBinding:
       position: 103
       prefix: -x

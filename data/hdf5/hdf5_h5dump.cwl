@@ -280,7 +280,6 @@ inputs:
       - int
     doc: Set the number of columns of output. A value of 0 (zero) sets the 
       number of columns to the maximum (65535). Default width is 80 columns.
-    default: 80
     inputBinding:
       position: 102
       prefix: --width

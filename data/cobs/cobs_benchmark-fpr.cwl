@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: number of kmers of each query
-    default: 1000
     inputBinding:
       position: 102
       prefix: --num-kmers
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: number of random queries to run
-    default: 10000
     inputBinding:
       position: 102
       prefix: --queries
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: number of random warmup queries to run
-    default: 100
     inputBinding:
       position: 102
       prefix: --warmup

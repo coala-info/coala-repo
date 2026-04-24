@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print a list of all available modules and then quit
-    default: false
     inputBinding:
       position: 101
       prefix: --list_modules
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - boolean
     doc: append the output files
-    default: false
     inputBinding:
       position: 101
       prefix: --resume
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: Trim headers in the output files
-    default: false
     inputBinding:
       position: 101
       prefix: --trim_headers

@@ -52,7 +52,6 @@ inputs:
       - float
     doc: The fraction of a gigabyte to allocate per thread for message passing, can
       be greater than 1.0
-    default: 0.001
     inputBinding:
       position: 102
       prefix: --channel-size-modifier
@@ -62,7 +61,6 @@ inputs:
       - int
     doc: The ideal number of basepairs each worker receives. Total bp in memory at
       one time is (threads - 2) * chunksize
-    default: 1000000
     inputBinding:
       position: 102
       prefix: --chunksize
@@ -71,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: The level to use for compressing output (specified by --bgzip)
-    default: 2
     inputBinding:
       position: 102
       prefix: --compression-level
@@ -80,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads to use for compressing output (specified by --bgzip)
-    default: 4
     inputBinding:
       position: 102
       prefix: --compression-threads
@@ -89,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: SAM flags to exclude, recommended 3848
-    default: 0
     inputBinding:
       position: 102
       prefix: --exclude-flags
@@ -106,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: SAM flags to include
-    default: 0
     inputBinding:
       position: 102
       prefix: --include-flags
@@ -131,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum MAPQ for a read to count toward depth
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-mapq
@@ -164,7 +157,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads to use
-    default: 40
     inputBinding:
       position: 102
       prefix: --threads

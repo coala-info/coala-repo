@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: Cutoff on coefficients of variation
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -v
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal mean insert size
-    default: 50
     inputBinding:
       position: 102
       prefix: -s
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality
-    default: 35
     inputBinding:
       position: 102
       prefix: -q
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bins in the histogram
-    default: 50
     inputBinding:
       position: 102
       prefix: -b
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Number of observation required to estimate mean and s.d. insert size
-    default: 10000
     inputBinding:
       position: 102
       prefix: -n
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: Cutoff in unit of standard deviation
-    default: 4.0
     inputBinding:
       position: 102
       prefix: -c

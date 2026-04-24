@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Collapse overlapping paired-end reads, e.g. for aDNA
-    default: false
     inputBinding:
       position: 101
       prefix: --collapse
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of CPU cores to use
-    default: 20
     inputBinding:
       position: 101
       prefix: --cores
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable debugging mode
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum memory (MB) to use
-    default: 63985
     inputBinding:
       position: 101
       prefix: --mem
@@ -85,7 +81,6 @@ inputs:
       - 'null'
       - boolean
     doc: Automatically trim sequencing adapters from fastq input
-    default: true
     inputBinding:
       position: 101
       prefix: --trim-adapters
@@ -94,7 +89,6 @@ inputs:
       - 'null'
       - boolean
     doc: Unlock the output directory following a crash or hard restart
-    default: false
     inputBinding:
       position: 101
       prefix: --unlock

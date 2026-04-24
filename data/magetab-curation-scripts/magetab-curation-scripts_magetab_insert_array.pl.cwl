@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Submitter user name. If not provided, will use fg_cur.
-    default: fg_cur
     inputBinding:
       position: 101
       prefix: --login

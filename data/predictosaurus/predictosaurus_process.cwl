@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: Distance metric to use for calculating distances between amino acids
-    default: grantham
     inputBinding:
       position: 101
       prefix: --distance-metric
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Metric to use for haplotype quantification
-    default: minimum
     inputBinding:
       position: 101
       prefix: --haplotype-metric
@@ -43,7 +41,6 @@ inputs:
       - int
     doc: Maximum CDS length to consider for processing. Transcripts containing 
       longer CDSs will be ignored with a warning
-    default: 5000
     inputBinding:
       position: 101
       prefix: --max-cds-length

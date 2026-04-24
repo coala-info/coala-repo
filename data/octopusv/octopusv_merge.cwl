@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Position uncertainty threshold for BND events (in base pairs).
-    default: 50
     inputBinding:
       position: 102
       prefix: --bnd-delta
@@ -71,7 +70,6 @@ inputs:
       - int
     doc: Maximum allowed distance between start or end positions for merging 
       events.
-    default: 50
     inputBinding:
       position: 102
       prefix: --max-distance
@@ -80,7 +78,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum allowed ratio between event lengths for merging events.
-    default: 1.3
     inputBinding:
       position: 102
       prefix: --max-length-ratio
@@ -97,7 +94,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum required Jaccard index for overlap to merge events.
-    default: 0.7
     inputBinding:
       position: 102
       prefix: --min-jaccard
@@ -115,7 +111,6 @@ inputs:
       - string
     doc: "Merge mode: 'caller' for same sample different callers, 'sample' for different
       samples."
-    default: caller
     inputBinding:
       position: 102
       prefix: --mode
@@ -141,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: Position uncertainty threshold for TRA events (in base pairs).
-    default: 50
     inputBinding:
       position: 102
       prefix: --tra-delta
@@ -150,7 +144,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum overlap ratio for TRA events.
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --tra-min-overlap
@@ -159,7 +152,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to require strand consistency for TRA events.
-    default: true
     inputBinding:
       position: 102
       prefix: --tra-strand-consistency

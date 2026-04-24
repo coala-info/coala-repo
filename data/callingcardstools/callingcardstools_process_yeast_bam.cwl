@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - Directory
     doc: path to the output directory
-    default: current directory
     inputBinding:
       position: 101
       prefix: --output_dir

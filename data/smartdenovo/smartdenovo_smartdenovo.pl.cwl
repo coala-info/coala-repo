@@ -15,7 +15,6 @@ inputs:
       - string
     doc: engine of overlaper, compressed kmer overlapper(zmo), dot matrix 
       overlapper(dmo)
-    default: dmo
     inputBinding:
       position: 102
       prefix: -e
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: generate consensus
-    default: 0
     inputBinding:
       position: 102
       prefix: -c
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length for overlapping
-    default: 16
     inputBinding:
       position: 102
       prefix: -k
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: min read length
-    default: 5000
     inputBinding:
       position: 102
       prefix: -J
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: output prefix
-    default: wtasm
     inputBinding:
       position: 102
       prefix: -p
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 8
     inputBinding:
       position: 102
       prefix: -t

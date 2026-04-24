@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable or disable colored logging.
-    default: true
     inputBinding:
       position: 102
       prefix: --logColors
@@ -68,7 +67,6 @@ inputs:
     doc: "Set the log level. Options: ['Critical', 'Error', 'Warning', 'Debug', 'Info',
       'critical', 'error', 'warning', 'debug', 'info', 'CRITICAL', 'ERROR', 'WARNING',
       'DEBUG', 'INFO']."
-    default: INFO
     inputBinding:
       position: 102
       prefix: --logLevel
@@ -93,7 +91,6 @@ inputs:
       - 'null'
       - string
     doc: "The provisioner for cluster auto-scaling. Choices: ['aws', 'gce']."
-    default: aws
     inputBinding:
       position: 102
       prefix: --provisioner
@@ -103,7 +100,6 @@ inputs:
       - boolean
     doc: Turn on rotating logging, which prevents log files from getting too 
       big.
-    default: false
     inputBinding:
       position: 102
       prefix: --rotatingLogging
@@ -114,7 +110,6 @@ inputs:
     doc: Path to where temporary directory containing all temp files are 
       created, by default generates a fresh tmp dir with 
       'tempfile.gettempdir()'.
-    default: /tmp
     inputBinding:
       position: 102
       prefix: --tempDirRoot

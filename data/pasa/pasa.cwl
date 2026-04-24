@@ -15,7 +15,6 @@ inputs:
       - int
     doc: bp to discount at alignment termini during pairwise compatibility 
       checks.
-    default: 20
     inputBinding:
       position: 102
       prefix: -F

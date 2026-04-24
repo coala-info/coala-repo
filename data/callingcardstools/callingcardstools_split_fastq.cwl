@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level
-    default: info
     inputBinding:
       position: 101
       prefix: --log_level
@@ -25,7 +24,6 @@ inputs:
       - Directory
     doc: a path to a directory where the output files will be output. Defaults 
       to the current directory
-    default: .
     inputBinding:
       position: 101
       prefix: --output_dirpath
@@ -58,7 +56,6 @@ inputs:
     doc: Either a name of a key in barcode_details['components'], or just a 
       string. This will be used to create the passing output fastq filenames. 
       Defaults to 'tf' which is appropriate for yeast data
-    default: tf
     inputBinding:
       position: 101
       prefix: --split_key
@@ -68,7 +65,6 @@ inputs:
       - string
     doc: append this after the tf name and before _R1.fq in the output fastq 
       files. Defaults to "split"
-    default: split
     inputBinding:
       position: 101
       prefix: --split_suffix

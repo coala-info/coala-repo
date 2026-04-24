@@ -28,7 +28,6 @@ inputs:
       - string
     doc: "which translation table to use. currently available: 'std' (standard, default),
       'vmt' (vertebrate mtDNA), 'ivmt' (invertebrate mtDNA), 'ymt' (yeast mtDNA)"
-    default: std
     inputBinding:
       position: 101
       prefix: --table

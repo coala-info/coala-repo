@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: 'floating point number format (default: g)'
-    default: g
     inputBinding:
       position: 102
       prefix: --float
@@ -28,7 +27,6 @@ inputs:
       - string
     doc: 'set output table format; supported formats: plain, simple, grid, fancy_grid,
       pipe, orgtbl, rst, mediawiki, html, latex, latex_booktabs, tsv (default: simple)'
-    default: simple
     inputBinding:
       position: 102
       prefix: --format
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: 'use a custom column separator (default: whitespace)'
-    default: whitespace
     inputBinding:
       position: 102
       prefix: --sep

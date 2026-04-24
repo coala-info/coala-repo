@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: the kmer length used in sourmash
-    default: 51
     inputBinding:
       position: 103
       prefix: --ksize
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: the scale used in sourmash
-    default: 100
     inputBinding:
       position: 103
       prefix: --scale
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

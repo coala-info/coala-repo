@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - boolean
     doc: Compress output file
-    default: false
     inputBinding:
       position: 101
       prefix: --gz
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: Flag to disable gene_id feature
-    default: false
     inputBinding:
       position: 101
       prefix: --no-gene
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads

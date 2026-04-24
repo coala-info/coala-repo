@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - boolean
     doc: is the provided SDRF file in a condensed form?
-    default: true
     inputBinding:
       position: 101
       prefix: --condensed-sdrf

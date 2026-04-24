@@ -18,7 +18,6 @@ inputs:
     doc: Number of reads process together as a batch. Note that if the specified
       number larger than the number of reads in each fastq files, all reads in 
       the file will be processed as a batch.
-    default: 1000
     inputBinding:
       position: 102
       prefix: --batch-size
@@ -28,7 +27,6 @@ inputs:
       - int
     doc: Output the whitelist base of the count threshold of high-quality 
       putative barcodes
-    default: None
     inputBinding:
       position: 102
       prefix: --count-threshold
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Expected number of cells.
-    default: None
     inputBinding:
       position: 102
       prefix: --expect-cells
@@ -47,7 +44,6 @@ inputs:
       - int
     doc: Force the number of cells to be the specified number. This option is 
       useful when the expected number of cells is known.
-    default: None
     inputBinding:
       position: 102
       prefix: --force-cells
@@ -57,7 +53,6 @@ inputs:
       - File
     doc: Filename of the full barcode whitelist. If not specified, the 
       corresponding version of 10X whitelist will be used.
-    default: None
     inputBinding:
       position: 102
       prefix: --full-bc-whitelist
@@ -69,7 +64,6 @@ inputs:
       barcode detections but potentially increase the number false/uninformative
       BC in the whitelist. Identification of empty droplets are recommended in 
       downstream
-    default: false
     inputBinding:
       position: 102
       prefix: --high-sensitivity-mode
@@ -81,7 +75,6 @@ inputs:
       3v2) or 5ʹ gene expression v3, v2 (5v3, 5v2). If using other protocols, 
       please do not specify this option and specify --full-bc-whitelist and 
       --umi-len instead.
-    default: 3v3
     inputBinding:
       position: 102
       prefix: --10x-kit-version
@@ -92,7 +85,6 @@ inputs:
     doc: A file specifies a list of barcodes for demultiplexing. If not 
       specified, the barcodes will be assigned to the whitelist from the 
       whitelisting step.
-    default: None
     inputBinding:
       position: 102
       prefix: --known-bc-list
@@ -102,7 +94,6 @@ inputs:
       - int
     doc: Maximum edit distance allowed between a putative barcode and a barcode 
       for a read to be assigned to the barcode.
-    default: 2
     inputBinding:
       position: 102
       prefix: --max-edit-distance
@@ -111,7 +102,6 @@ inputs:
       - 'null'
       - boolean
     doc: Minimise the command-line printing.
-    default: false
     inputBinding:
       position: 102
       prefix: --minimal_stdout
@@ -121,7 +111,6 @@ inputs:
       - int
     doc: Minimum phred score for all bases in a putative BC to define a "high 
       quality putative barcode".
-    default: 15
     inputBinding:
       position: 102
       prefix: --minQ
@@ -130,7 +119,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not perform the demultiplexing step.
-    default: true
     inputBinding:
       position: 102
       prefix: --no-demultiplexing
@@ -141,7 +129,6 @@ inputs:
     doc: 'By default, blaze2 re-strands all reads to transcript strand: reads from
       the reverse strand (those with polyT instead of polyA) will be reverse complemented
       the their quality scores will be reversed. This option will disable the re-stranding.'
-    default: true
     inputBinding:
       position: 102
       prefix: --no-restrand
@@ -151,7 +138,6 @@ inputs:
       - boolean
     doc: Do not perform whitelisting, if dumultiplexing is enabled, the reads 
       will be assigned to know list of barcodes specified by --known-bc-list.
-    default: true
     inputBinding:
       position: 102
       prefix: --no-whitelisting
@@ -162,7 +148,6 @@ inputs:
     doc: Filename of output files. Note that the output can be directed to a 
       different directory by specifying the path in the prefix. E.g., 
       --output-prefix /path/to/output/prefix
-    default: ''
     inputBinding:
       position: 102
       prefix: --output-prefix
@@ -173,7 +158,6 @@ inputs:
     doc: By default, BLAZE will skip the steps generating the existing file(s). 
       Specify this option to rerun the steps those steps and overwrite the 
       existing output files.
-    default: false
     inputBinding:
       position: 102
       prefix: --overwrite
@@ -182,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to used.
-    default: 19
     inputBinding:
       position: 102
       prefix: --threads
@@ -191,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: UMI length, will only be used when --kit-version is not specified.
-    default: 12
     inputBinding:
       position: 102
       prefix: --umi-len

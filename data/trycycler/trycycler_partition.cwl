@@ -19,7 +19,6 @@ inputs:
       - int
     doc: "Do not consider reads with less than this many bases\n                 \
       \         aligned"
-    default: 1000
     inputBinding:
       position: 101
       prefix: --min_aligned_len
@@ -29,7 +28,6 @@ inputs:
       - float
     doc: "Do not consider reads with less than this\n                          percentages
       of their length covered by alignments"
-    default: 90.0
     inputBinding:
       position: 101
       prefix: --min_read_cov
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for alignment
-    default: 16
     inputBinding:
       position: 101
       prefix: --threads

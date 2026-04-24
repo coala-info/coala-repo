@@ -33,7 +33,6 @@ inputs:
       - int
     doc: Sets a minimum number of global realignment failures before 
       --max-global-failure-ratio is active
-    default: 50
     inputBinding:
       position: 101
       prefix: --global-failure-count
@@ -43,7 +42,6 @@ inputs:
       - int
     doc: Sets a pruning threshold on global realignment, set to 0 to disable 
       pruning
-    default: 500
     inputBinding:
       position: 101
       prefix: --global-pruning-distance
@@ -53,7 +51,6 @@ inputs:
       - int
     doc: The maximum allowed edit distance for global realignment before 
       fallback to local realignment
-    default: 500
     inputBinding:
       position: 101
       prefix: --global-realignment-max-ed
@@ -79,7 +76,6 @@ inputs:
       - float
     doc: Sets a maximum global realignment failure ratio before disabling global
       realignment for entire block
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --max-global-failure-ratio
@@ -88,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Sets a maximum reference buffer for local realignment
-    default: 15
     inputBinding:
       position: 101
       prefix: --max-reference-buffer
@@ -98,7 +93,6 @@ inputs:
       - int
     doc: Sets the minimum number of connecting reads required to keep two 
       variants in the same block
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-connecting-reads
@@ -107,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: Sets a minimum MAPQ to include a read in the phasing
-    default: 5
     inputBinding:
       position: 101
       prefix: --min-mapq
@@ -117,7 +110,6 @@ inputs:
       - int
     doc: Sets a minimum number of matched variants required for a read to get 
       included in the scoring
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-matched-alleles
@@ -127,7 +119,6 @@ inputs:
       - int
     doc: Sets a minimum number of reads to span two adjacent variants into a 
       putative phase block
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-spanning-reads
@@ -137,7 +128,6 @@ inputs:
       - int
     doc: Sets a minimum genotype quality (GQ) value to include a variant in the 
       phasing
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-vcf-qual
@@ -162,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the minimum queue size for the phasing algorithm
-    default: 1000
     inputBinding:
       position: 101
       prefix: --phase-min-queue-size
@@ -171,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the queue size increment per variant in a phase block
-    default: 3
     inputBinding:
       position: 101
       prefix: --phase-queue-increment
@@ -211,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for phasing
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

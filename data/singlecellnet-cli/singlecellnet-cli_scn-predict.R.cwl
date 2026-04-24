@@ -30,7 +30,6 @@ inputs:
       - boolean
     doc: Should the output be returned in raw format (i.e. not transformed into 
       table)?
-    default: false
     inputBinding:
       position: 101
       prefix: --return-raw-output

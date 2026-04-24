@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for alignment
-    default: 97
     inputBinding:
       position: 101
       prefix: --id
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only run closed reference clustering
-    default: false
     inputBinding:
       position: 101
       prefix: --closed_ref_only
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: 'Number of CPUs. Default: auto'
-    default: auto
     inputBinding:
       position: 101
       prefix: --cpus
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove Intermediate Files
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: map quality filtered reads back to OTUs
-    default: false
     inputBinding:
       position: 101
       prefix: --map_filtered
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: Quality trim EE value
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --maxee
@@ -70,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Min identical seqs to process
-    default: 2
     inputBinding:
       position: 101
       prefix: --minsize
@@ -79,7 +72,6 @@ inputs:
       - 'null'
       - File
     doc: Spike-in mock community (fasta)
-    default: synmock
     inputBinding:
       position: 101
       prefix: --mock
@@ -96,7 +88,6 @@ inputs:
       - 'null'
       - float
     doc: OTU Clustering Percent
-    default: 97
     inputBinding:
       position: 101
       prefix: --pct_otu
@@ -113,7 +104,6 @@ inputs:
       - 'null'
       - string
     doc: USEARCH9 EXE
-    default: usearch9
     inputBinding:
       position: 101
       prefix: --usearch
@@ -122,7 +112,6 @@ inputs:
       - 'null'
       - float
     doc: UTAX confidence value threshold.
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --utax_cutoff
@@ -139,7 +128,6 @@ inputs:
       - 'null'
       - string
     doc: UTAX classification level to retain
-    default: k
     inputBinding:
       position: 101
       prefix: --utax_level

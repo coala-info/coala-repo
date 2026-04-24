@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: Width of the edges in the graph.
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --edge-width
@@ -65,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: Layout algorithm for the graph (e.g., spring, circular, spectral).
-    default: spring
     inputBinding:
       position: 102
       prefix: --layout
@@ -82,7 +80,6 @@ inputs:
       - 'null'
       - float
     doc: Size of the nodes in the graph.
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --node-size

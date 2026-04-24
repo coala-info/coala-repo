@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: Is auto select parameters, 1=yes, 0=no.
-    default: 1
     inputBinding:
       position: 105
       prefix: -a
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - boolean
     doc: Is using the fast calculation algorithm. 1 = yes and 0 = no.
-    default: 1
     inputBinding:
       position: 105
       prefix: -f
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: '"pb" for PacBio and "ont" for Oxford Nanopore.'
-    default: pb
     inputBinding:
       position: 105
       prefix: -m
@@ -66,7 +63,6 @@ inputs:
       - 'null'
       - float
     doc: Minimal maximal conditional substitution rate.
-    default: 0.65
     inputBinding:
       position: 105
       prefix: -c
@@ -75,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal depth for each orphan SNV.
-    default: 15
     inputBinding:
       position: 105
       prefix: -d
@@ -84,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal depth for each SNV.
-    default: 25
     inputBinding:
       position: 105
       prefix: -r
@@ -93,7 +87,6 @@ inputs:
       - 'null'
       - float
     doc: Minimal log-BF for each orphan SNV.
-    default: 10
     inputBinding:
       position: 105
       prefix: -b
@@ -102,7 +95,6 @@ inputs:
       - 'null'
       - float
     doc: Minimal substitution rate for orphan SNVs.
-    default: 0.1
     inputBinding:
       position: 105
       prefix: -p
@@ -111,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal read length (shorter reads will be excluded).
-    default: 1000
     inputBinding:
       position: 105
       prefix: -l
@@ -120,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Number of most similar reads to construct subspaces.
-    default: 100
     inputBinding:
       position: 105
       prefix: -q
@@ -130,7 +120,6 @@ inputs:
       - int
     doc: Seed for permutation test (experimental). [default = 0, i.e. no 
       permutation]
-    default: 0
     inputBinding:
       position: 105
       prefix: -s
@@ -139,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: Segment size(bp) to split each genome.
-    default: 20000
     inputBinding:
       position: 105
       prefix: -g
@@ -148,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 1
     inputBinding:
       position: 105
       prefix: -n

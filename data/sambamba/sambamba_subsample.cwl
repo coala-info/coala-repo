@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for output BAM (0-9)
-    default: 6
     inputBinding:
       position: 102
       prefix: --compress
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Random seed for subsampling
-    default: 0
     inputBinding:
       position: 102
       prefix: --seed

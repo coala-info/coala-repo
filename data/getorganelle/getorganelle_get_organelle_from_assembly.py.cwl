@@ -12,7 +12,6 @@ inputs:
       placed. The default value also can be changed by adding 'export 
       GETORG_PATH=your_favor' to the shell script (e.g. ~/.bash_profile or 
       ~/.bashrc)
-    default: /root/.GetOrganelle
     inputBinding:
       position: 101
       prefix: --config-dir
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: Depth factor for confirming contamination in parallel contigs.
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --contamination-depth
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: Similarity threshold for confirming contaminating contigs.
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --contamination-similarity
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - float
     doc: Depth factor for confirming parallel contigs.
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --degenerate-depth
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: Similarity threshold for confirming parallel contigs.
-    default: 0.98
     inputBinding:
       position: 101
       prefix: --degenerate-similarity
@@ -68,7 +63,6 @@ inputs:
       - float
     doc: Depth factor for differentiate genome type of contigs. The genome type 
       of contigs are determined by blast.
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --depth-factor
@@ -78,7 +72,6 @@ inputs:
       - int
     doc: Time limit (second) for each try of disentangling a graph file as a 
       circular genome. Disentangling a graph as contigs is not limited.
-    default: 3600
     inputBinding:
       position: 101
       prefix: --disentangle-time-limit
@@ -116,7 +109,6 @@ inputs:
     doc: Expected minimum target genome size(s) for disentangling. Should be a 
       list of INTEGER numbers split by comma(s) on a multi-organelle mode, with 
       the same list length to organelle_type (followed by '-F').
-    default: 10000 for all
     inputBinding:
       position: 101
       prefix: --expected-min-size
@@ -167,7 +159,6 @@ inputs:
       - 'null'
       - float
     doc: Input a float or integer number. filter graph file by a maximum depth.
-    default: inf
     inputBinding:
       position: 101
       prefix: --max-depth
@@ -177,7 +168,6 @@ inputs:
       - int
     doc: Maximum multiplicity of contigs for disentangling genome paths. Should 
       be 1~12.
-    default: 8
     inputBinding:
       position: 101
       prefix: --max-multiplicity
@@ -188,7 +178,6 @@ inputs:
     doc: Repeats would dramatically increase the number of potential isomers 
       (paths). This option was used to export a certain amount of paths out of 
       all possible paths per assembly graph.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max-paths-num
@@ -207,7 +196,6 @@ inputs:
       - 'null'
       - float
     doc: Input a float or integer number. Filter graph file by a minimum depth.
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --min-depth
@@ -216,7 +204,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum deviation factor for excluding non-target contigs.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min-sigma
@@ -235,7 +222,6 @@ inputs:
       - boolean
     doc: Disable slimming process and directly disentangle the original assembly
       graph.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-slim
@@ -274,7 +260,6 @@ inputs:
       - 'null'
       - int
     doc: 'Default: 12345'
-    default: 12345
     inputBinding:
       position: 101
       prefix: --random-seed
@@ -323,7 +308,6 @@ inputs:
       - float
     doc: Type factor for identifying contig type tag when multiple tags exist in
       one contig.
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --type-f
@@ -340,7 +324,6 @@ inputs:
       - 'null'
       - File
     doc: Assign the path to bandage binary file if not added to the path.
-    default: try $PATH
     inputBinding:
       position: 101
       prefix: --which-bandage
@@ -349,7 +332,6 @@ inputs:
       - 'null'
       - File
     doc: Assign the path to BLAST binary files if not added to the path.
-    default: try 
       /usr/local/lib/python3.10/site-packages/GetOrganelleDep/linux/ncbi-blast 
       first, then $PATH
     inputBinding:

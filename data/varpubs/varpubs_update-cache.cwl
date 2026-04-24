@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to overwrite existing cache entries.
-    default: false
     inputBinding:
       position: 101
       prefix: --overwrite

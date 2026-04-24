@@ -11,7 +11,6 @@ inputs:
       - float
     doc: The penalty given to a different locus if it is led by another 
       difference. Only works for "-x blockwise".
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --block_penalty
@@ -45,7 +44,6 @@ inputs:
       - string
     doc: 'Method for tree generation. Options: "MSTreeV2", "MSTree", "NJ", "RapidNJ",
       "ninja", "distance".'
-    default: MSTreeV2
     inputBinding:
       position: 101
       prefix: --method
@@ -55,7 +53,6 @@ inputs:
       - string
     doc: 'Handler for missing data in pairwise comparison. Options: 0 (ignore), 1
       (remove column), 2 (treat as allele), 3 (absolute number of allelic differences).'
-    default: '0'
     inputBinding:
       position: 101
       prefix: --missing
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU processes in parallel use.
-    default: 5
     inputBinding:
       position: 101
       prefix: --n_proc

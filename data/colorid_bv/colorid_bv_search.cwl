@@ -59,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: minimum phred score to keep basepairs within read
-    default: 15
     inputBinding:
       position: 101
       prefix: --quality
@@ -74,7 +73,6 @@ inputs:
       - 'null'
       - File
     doc: reverse file(-s)fastq.gz
-    default: none
     inputBinding:
       position: 101
       prefix: --reverse

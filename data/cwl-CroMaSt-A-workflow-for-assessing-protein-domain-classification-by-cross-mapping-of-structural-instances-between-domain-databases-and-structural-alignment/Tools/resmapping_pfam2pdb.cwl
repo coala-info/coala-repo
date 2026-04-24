@@ -51,7 +51,6 @@ inputs:
   resmapping_file:
     type: [ File?, string?]
     label: Filename for the residue mapped file
-    default: pfam_resMapped.csv
     inputBinding:
       position: 3
       prefix: -m
@@ -59,7 +58,6 @@ inputs:
   reslost:
     type: [ File?, string?]
     label: Filename for the lost structures while residue mapping
-    default: lost_pfam.txt
     inputBinding:
       position: 4
       prefix: -l

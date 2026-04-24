@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: maximum insert size (external distance)
-    default: 1000
     inputBinding:
       position: 103
       prefix: -D
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: minimum paired-end coverage
-    default: 0
     inputBinding:
       position: 103
       prefix: -c
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - File
     doc: rank
-    default: 'null'
     inputBinding:
       position: 103
       prefix: -r
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: skip ending INT bases of a read pair
-    default: 50
     inputBinding:
       position: 103
       prefix: -l
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 103
       prefix: -t

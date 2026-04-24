@@ -106,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: number of migration edges to add
-    default: 0
     inputBinding:
       position: 101
       prefix: -m
@@ -184,7 +183,6 @@ inputs:
       - 'null'
       - int
     doc: number of SNPs per block for estimation of covariance matrix
-    default: 1
     inputBinding:
       position: 101
       prefix: -k

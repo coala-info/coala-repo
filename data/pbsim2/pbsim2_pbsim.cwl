@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - float
     doc: maximum accuracy
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --accuracy-max
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: mean of accuracy model
-    default: 0.85
     inputBinding:
       position: 102
       prefix: --accuracy-mean
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: minimum accuracy
-    default: 0.75
     inputBinding:
       position: 102
       prefix: --accuracy-min
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: depth of coverage
-    default: 20.0
     inputBinding:
       position: 102
       prefix: --depth
@@ -51,7 +47,6 @@ inputs:
       - string
     doc: ratio of differences (substitution:insertion:deletion). Each value must be
       0-1000.
-    default: 6:50:54
     inputBinding:
       position: 102
       prefix: --difference-ratio
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: prefix of read ID
-    default: S
     inputBinding:
       position: 102
       prefix: --id-prefix
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: maximum length
-    default: 1000000
     inputBinding:
       position: 102
       prefix: --length-max
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - float
     doc: mean of length model
-    default: 9000.0
     inputBinding:
       position: 102
       prefix: --length-mean
@@ -95,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length
-    default: 100
     inputBinding:
       position: 102
       prefix: --length-min
@@ -104,7 +95,6 @@ inputs:
       - 'null'
       - float
     doc: standard deviation of length model
-    default: 7000.0
     inputBinding:
       position: 102
       prefix: --length-sd

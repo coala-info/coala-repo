@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum overlap fraction.
-    default: 0
     inputBinding:
       position: 103
       prefix: -f
@@ -63,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Window size.
-    default: 0
     inputBinding:
       position: 103
       prefix: -w

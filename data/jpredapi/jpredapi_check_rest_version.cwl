@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: REST address of server
-    default: http://www.compbio.dundee.ac.uk/jpred4/cgi-bin/rest
     inputBinding:
       position: 101
       prefix: --rest

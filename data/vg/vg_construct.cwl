@@ -76,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: format of the MSA file {fasta,clustal}
-    default: fasta
     inputBinding:
       position: 101
       prefix: --msa-format
@@ -94,7 +93,6 @@ inputs:
       - int
     doc: "limit maximum allowable node sequence size (nodes greater than this threshold
       will be divided, note: nodes larger than ~1024 bp can't be GCSA2-indexed)"
-    default: 32
     inputBinding:
       position: 101
       prefix: --node-max
@@ -103,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: don't chop up alternate alleles from input VCF longer than N
-    default: 100
     inputBinding:
       position: 101
       prefix: --parse-max
@@ -148,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: variants per region to parallelize
-    default: 1024
     inputBinding:
       position: 101
       prefix: --region-size

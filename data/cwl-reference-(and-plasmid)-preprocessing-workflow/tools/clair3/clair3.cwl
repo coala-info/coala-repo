@@ -92,12 +92,10 @@ inputs:
     inputBinding:
       prefix: --output=
       separate: false
-    default: clair3_output
   include_all_ctgs:
     type: boolean?
     label: include all contigs
     doc: Set to true to include all contigs (recommended for non-human species).
-    default: true
     inputBinding:
       prefix: --include_all_ctgs
       separate: false

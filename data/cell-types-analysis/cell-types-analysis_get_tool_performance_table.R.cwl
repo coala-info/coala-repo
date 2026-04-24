@@ -37,7 +37,6 @@ inputs:
     doc: Should semantic similarity be included into combined score calculation?
       If setting to TRUE, note that this confines the options on semantic 
       similarity metric to those with range in the [0;1] interval only.
-    default: 'FALSE'
     inputBinding:
       position: 101
       prefix: --include-sem-siml
@@ -78,7 +77,6 @@ inputs:
       - int
     doc: Number of cores to run the process on. --parallel must be set to "true"
       for this to take effect
-    default: all available cores
     inputBinding:
       position: 101
       prefix: --num-cores
@@ -96,7 +94,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Boolean: Should computation be run in parallel?'
-    default: 'FALSE'
     inputBinding:
       position: 101
       prefix: --parallel

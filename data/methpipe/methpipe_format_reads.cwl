@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: maximum buffer size
-    default: 10000
     inputBinding:
       position: 102
       prefix: -buf-size
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: maximum allowed insert size
-    default: 10000
     inputBinding:
       position: 102
       prefix: -max-frag
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: read name suffix length
-    default: 1
     inputBinding:
       position: 102
       prefix: -suff

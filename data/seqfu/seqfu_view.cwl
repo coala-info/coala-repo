@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: Oligo matching threshold
-    default: 0.75
     inputBinding:
       position: 103
       prefix: --match-ths
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Oligo maxmimum mismataches
-    default: 2
     inputBinding:
       position: 103
       prefix: --max-mismatches
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Oligo minimum matches
-    default: 5
     inputBinding:
       position: 103
       prefix: --min-matches
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: Quality thresholds, seven values separated by columns
-    default: 3:15:25:28:30:35:40
     inputBinding:
       position: 103
       prefix: --qual-scale

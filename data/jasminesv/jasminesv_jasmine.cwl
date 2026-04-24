@@ -110,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: the kmer size to use when computing Jaccard similarity of insertions
-    default: 9
     inputBinding:
       position: 101
   - id: kd_tree_norm
@@ -119,7 +118,6 @@ inputs:
       - int
     doc: the power to use in kd-tree distances (1 is Manhattan, 2 is Euclidean, 
       etc.)
-    default: 2
     inputBinding:
       position: 101
   - id: keep_var_ids
@@ -150,7 +148,6 @@ inputs:
       - 'null'
       - int
     doc: the maximum distance variants can be apart when being merged
-    default: inf
     inputBinding:
       position: 101
   - id: max_dist_linear
@@ -159,7 +156,6 @@ inputs:
       - float
     doc: the proportion of the length of each variant to set distance threshold 
       to
-    default: 0.5
     inputBinding:
       position: 101
   - id: max_dup_length
@@ -167,7 +163,6 @@ inputs:
       - 'null'
       - string
     doc: the maximum length of duplication that can be converted to an insertion
-    default: 10k
     inputBinding:
       position: 101
   - id: min_dist
@@ -176,7 +171,6 @@ inputs:
       - int
     doc: the minimum distance threshold a variant can have when using 
       max_dist_linear
-    default: 100
     inputBinding:
       position: 101
   - id: min_overlap
@@ -184,7 +178,6 @@ inputs:
       - 'null'
       - float
     doc: the minimum reciprocal overlap for DEL/INV/DUP SVs
-    default: 0
     inputBinding:
       position: 101
   - id: min_seq_id
@@ -192,7 +185,6 @@ inputs:
       - 'null'
       - float
     doc: the minimum sequence identity for two insertions to be merged
-    default: 0
     inputBinding:
       position: 101
   - id: min_support
@@ -200,7 +192,6 @@ inputs:
       - 'null'
       - int
     doc: the minimum number of callsets a variant must be in to be output
-    default: 1
     inputBinding:
       position: 101
   - id: non_mutual_distance
@@ -239,7 +230,6 @@ inputs:
       - 'null'
       - Directory
     doc: the directory where intermediate files go
-    default: output
     inputBinding:
       position: 101
   - id: output_genotypes
@@ -301,7 +291,6 @@ inputs:
       - 'null'
       - string
     doc: the path to the samtools executable used for coverting duplications
-    default: samtools
     inputBinding:
       position: 101
   - id: spec_len
@@ -309,7 +298,6 @@ inputs:
       - 'null'
       - int
     doc: the minimum length a variant needs to be in the specific callset
-    default: 30
     inputBinding:
       position: 101
   - id: spec_reads
@@ -318,7 +306,6 @@ inputs:
       - int
     doc: the minimum number of reads a variant needs to be in the specific 
       callset
-    default: 10
     inputBinding:
       position: 101
   - id: threads
@@ -326,7 +313,6 @@ inputs:
       - 'null'
       - int
     doc: the number of threads to use for merging the variants
-    default: 1
     inputBinding:
       position: 101
   - id: use_edit_dist

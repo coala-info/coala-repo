@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: number of I/O processes [8]
-    default: 8
     inputBinding:
       position: 102
       prefix: --iop

@@ -56,7 +56,6 @@ inputs:
     doc: set the function to be used when computing distances. The parameter for
       'minkowski' is the power. Note that 'euclidean' is the same as 
       'minkowski(2)', and 'cosine' is the same as ('euclidean'^2)/2
-    default: euclidean
     inputBinding:
       position: 101
       prefix: --distance
@@ -66,7 +65,6 @@ inputs:
       - boolean
     doc: set whether twisted vectors should be normalized prior to computing 
       distances
-    default: true
     inputBinding:
       position: 101
       prefix: --distance-normalization
@@ -107,7 +105,6 @@ inputs:
     doc: set the maximum number of closest target sequences to be kept when 
       summarizing distances. Note that more might be printed anyway in case of 
       ties
-    default: '2'
     inputBinding:
       position: 101
       prefix: --keep-at-most
@@ -128,7 +125,6 @@ inputs:
       - string
     doc: 'set the metric function to be used when computing distances. Parameters
       are: internal power; fractional accumulative threshold; external power.'
-    default: powers(1,1,2)
     inputBinding:
       position: 101
       prefix: --metric
@@ -159,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: set the number of precision digits to be used when outputting numbers
-    default: 15
     inputBinding:
       position: 101
       prefix: --precision
@@ -179,7 +174,6 @@ inputs:
       - int
     doc: number of concurrent computing threads to be spawned (default 
       automatically detected from your configuration)
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -188,7 +182,6 @@ inputs:
       - 'null'
       - boolean
     doc: set verbose execution
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

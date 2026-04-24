@@ -52,7 +52,6 @@ inputs:
       - string
     doc: Show messages of this priority and above 
       (DEBUG|STATUS|INFO|WARNING|ERROR|FATAL) or turn off all messages (QUIET).
-    default: INFO
     inputBinding:
       position: 102
       prefix: --verbosity

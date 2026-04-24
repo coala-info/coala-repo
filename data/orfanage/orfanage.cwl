@@ -38,7 +38,6 @@ inputs:
       - int
     doc: Percent identity by length of bases in frame of the reference 
       transcript. If -1 (default) is set - the check will not be performed.
-    default: -1
     inputBinding:
       position: 102
       prefix: --ilpi
@@ -69,7 +68,6 @@ inputs:
       - int
     doc: Percent identity by length between the original and reference 
       transcripts. If -1 (default) is set - the check will not be performed.
-    default: -1
     inputBinding:
       position: 102
       prefix: --lpi
@@ -87,7 +85,6 @@ inputs:
       - int
     doc: Percent identity by length of bases that are in both query and 
       reference. If -1 (default) is set - the check will not be performed.
-    default: -1
     inputBinding:
       position: 102
       prefix: --mlpi
@@ -97,7 +94,6 @@ inputs:
       - string
     doc: 'Which CDS to report: ALL, LONGEST, LONGEST_MATCH, BEST, START_MATCH. Default:
       LONGEST_MATCH'
-    default: LONGEST_MATCH
     inputBinding:
       position: 102
       prefix: --mode

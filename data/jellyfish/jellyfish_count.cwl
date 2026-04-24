@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: False positive rate of bloom filter
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --bf-fp
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: Count both strand, canonical representation
-    default: false
     inputBinding:
       position: 102
       prefix: --canonical
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disk operation. Do not do size doubling
-    default: false
     inputBinding:
       position: 102
       prefix: --disk
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Shell used to run generator commands
-    default: $SHELL or /bin/sh
     inputBinding:
       position: 102
       prefix: --shell
@@ -138,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: Number files open simultaneously
-    default: 1
     inputBinding:
       position: 102
       prefix: --Files
@@ -147,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: Number of generators run simultaneously
-    default: 1
     inputBinding:
       position: 102
       prefix: --Generators
@@ -164,7 +158,6 @@ inputs:
       - 'null'
       - string
     doc: Output file
-    default: mer_counts.jf
     inputBinding:
       position: 102
       prefix: --output
@@ -173,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: ASCII for quality values
-    default: 64
     inputBinding:
       position: 102
       prefix: --quality-start
@@ -190,7 +182,6 @@ inputs:
       - 'null'
       - boolean
     doc: Dump in text format
-    default: false
     inputBinding:
       position: 102
       prefix: --text
@@ -199,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

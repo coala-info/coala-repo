@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: Display the execution log.
-    default: verbose
     inputBinding:
       position: 102
       prefix: --quiet
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: Display the execution log.
-    default: verbose
     inputBinding:
       position: 102
       prefix: --verbose

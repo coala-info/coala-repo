@@ -58,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: memory limit for making kmer distribution (unit, GB; default, 64)
-    default: 64
     inputBinding:
       position: 103
       prefix: -m
@@ -76,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: minimum identity (%) in read mapping for binning (default, 97)
-    default: 97
     inputBinding:
       position: 103
       prefix: -min_map_idt_binning
@@ -134,7 +132,6 @@ inputs:
       - 'null'
       - string
     doc: prefix of output files (default "out")
-    default: out
     inputBinding:
       position: 103
       prefix: -o
@@ -179,7 +176,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads (<= 1; default, 1)
-    default: 1
     inputBinding:
       position: 103
       prefix: -t
@@ -188,7 +184,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory for temporary files (default, ".")
-    default: .
     inputBinding:
       position: 103
       prefix: -tmp

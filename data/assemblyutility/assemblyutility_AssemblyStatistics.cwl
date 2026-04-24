@@ -15,7 +15,6 @@ inputs:
   - id: length_keyword
     type: string
     doc: Fixed keyword 'LenTh' required by the command structure.
-    default: LenTh
     inputBinding:
       position: 2
   - id: cut_off_length

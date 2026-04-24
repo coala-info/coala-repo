@@ -27,7 +27,6 @@ inputs:
       - int
     doc: How to treat "dangling end" energies for bases adjacent to helices in free
       ends and multi-loops
-    default: 2
     inputBinding:
       position: 101
       prefix: --dangles
@@ -37,7 +36,6 @@ inputs:
       - float
     doc: Calculate an MEA (maximum expected accuracy) structure, where the expected
       accuracy is computed from the pair probabilities
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --MEA
@@ -104,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Calculate the partition function and base pairing probability matrix.
-    default: 1
     inputBinding:
       position: 101
       prefix: --partfunc
@@ -113,7 +110,6 @@ inputs:
       - 'null'
       - float
     doc: Rescale energy parameters to a temperature of temp C.
-    default: 37.0
     inputBinding:
       position: 101
       prefix: --temp

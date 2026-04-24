@@ -24,7 +24,6 @@ inputs:
     doc: Annotation class to use for finding overlaps. Both htseq and 
       intervaltree appear to yield identical results. Performance differences 
       are TBD.
-    default: intervaltree
     inputBinding:
       position: 103
       prefix: --annotation_class
@@ -35,7 +34,6 @@ inputs:
     doc: GTF attribute that defines a transposable element locus. GTF features 
       that share the same value for --attribute will be considered as part of 
       the same locus.
-    default: locus
     inputBinding:
       position: 103
       prefix: --attribute
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum probability for high confidence assignment.
-    default: 0.9
     inputBinding:
       position: 103
       prefix: --conf_prob
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print debug messages.
-    default: false
     inputBinding:
       position: 103
       prefix: --debug
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: EM Algorithm Epsilon cutoff
-    default: '1e-7'
     inputBinding:
       position: 103
       prefix: --em_epsilon
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: Experiment tag
-    default: telescope
     inputBinding:
       position: 103
       prefix: --exp_tag
@@ -80,7 +74,6 @@ inputs:
       - 'null'
       - File
     doc: Log output to this file.
-    default: None
     inputBinding:
       position: 103
       prefix: --logfile
@@ -89,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: EM Algorithm maximum iterations
-    default: 100
     inputBinding:
       position: 103
       prefix: --max_iter
@@ -98,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cores to use. (Multiple cores not supported yet).
-    default: 1
     inputBinding:
       position: 103
       prefix: --ncpu
@@ -108,7 +99,6 @@ inputs:
       - string
     doc: Used internally to represent alignments. Must be different from all 
       other feature names.
-    default: __no_feature
     inputBinding:
       position: 103
       prefix: --no_feature_key
@@ -117,7 +107,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory.
-    default: .
     inputBinding:
       position: 103
       prefix: --outdir
@@ -127,7 +116,6 @@ inputs:
       - string
     doc: Overlap mode. The method used to determine whether a fragment overlaps 
       feature.
-    default: threshold
     inputBinding:
       position: 103
       prefix: --overlap_mode
@@ -137,7 +125,6 @@ inputs:
       - float
     doc: Fraction of fragment that must be contained within a feature to be 
       assigned to that locus. Ignored if --overlap_method is not "threshold".
-    default: 0.2
     inputBinding:
       position: 103
       prefix: --overlap_threshold
@@ -146,7 +133,6 @@ inputs:
       - 'null'
       - float
     doc: Prior on π. Equivalent to adding n unique reads.
-    default: 0
     inputBinding:
       position: 103
       prefix: --pi_prior
@@ -155,7 +141,6 @@ inputs:
       - 'null'
       - boolean
     doc: Silence (most) output.
-    default: false
     inputBinding:
       position: 103
       prefix: --quiet
@@ -174,7 +159,6 @@ inputs:
       aligned reads are included. NOTE: Results using all assignment modes are included
       in the Telescope report by default. This argument determines what mode will
       be used for the "final counts" column.'
-    default: exclude
     inputBinding:
       position: 103
       prefix: --reassign_mode
@@ -183,7 +167,6 @@ inputs:
       - 'null'
       - boolean
     doc: Exits after loading alignment and saving checkpoint file.
-    default: false
     inputBinding:
       position: 103
       prefix: --skip_em
@@ -193,7 +176,6 @@ inputs:
       - string
     doc: Path to temporary directory. Temporary files will be stored here. 
       Default uses python tempfile package to create the temporary directory.
-    default: None
     inputBinding:
       position: 103
       prefix: --tempdir
@@ -204,7 +186,6 @@ inputs:
     doc: 'Prior on θ. Equivalent to adding n non-unique reads. NOTE: It is recommended
       to set this prior to a large value. This increases the penalty for non-unique
       reads and improves accuracy.'
-    default: 200000
     inputBinding:
       position: 103
       prefix: --theta_prior
@@ -213,7 +194,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate an updated alignment file.
-    default: false
     inputBinding:
       position: 103
       prefix: --updated_sam
@@ -222,7 +202,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use difference in log-likelihood as convergence criteria.
-    default: false
     inputBinding:
       position: 103
       prefix: --use_likelihood

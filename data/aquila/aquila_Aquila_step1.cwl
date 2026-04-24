@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: phase block len threshold
-    default: 100000
     inputBinding:
       position: 101
       prefix: --block_len_use
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: phase block threshold
-    default: 200000
     inputBinding:
       position: 101
       prefix: --block_threshold
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: boundary for long fragments with the same barcode
-    default: 50000
     inputBinding:
       position: 101
       prefix: --boundary
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: chromosome end by
-    default: '23'
     inputBinding:
       position: 101
       prefix: --chr_end
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: chromosome start from
-    default: '1'
     inputBinding:
       position: 101
       prefix: --chr_start
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: "phred-scaled quality score for the assertion made in\nALT"
-    default: 13
     inputBinding:
       position: 101
       prefix: --mbq_threshold
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 8
     inputBinding:
       position: 101
       prefix: --num_threads
@@ -78,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads for extracting raw reads
-    default: 8
     inputBinding:
       position: 101
       prefix: --num_threads_for_extract_reads
@@ -87,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads for samtools sort
-    default: 20
     inputBinding:
       position: 101
       prefix: --num_threads_for_samtools_sort
@@ -96,7 +87,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to store assembly results
-    default: ./Assembly_results
     inputBinding:
       position: 101
       prefix: --out_dir

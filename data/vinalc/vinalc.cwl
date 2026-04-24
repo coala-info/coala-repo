@@ -11,7 +11,6 @@ inputs:
       - float
     doc: maximum energy difference (default value 2.0) between the best binding 
       mode and the worst one displayed (kcal/mol)
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --energy_range
@@ -21,7 +20,6 @@ inputs:
       - int
     doc: 'exhaustiveness (default value 8) of the global search (roughly proportional
       to time): 1+'
-    default: 8
     inputBinding:
       position: 101
       prefix: --exhaustiveness
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - float
     doc: the granularity of grids (default value 0.375)
-    default: 0.375
     inputBinding:
       position: 101
       prefix: --granularity
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number (default value 9) of binding modes to generate
-    default: 9
     inputBinding:
       position: 101
       prefix: --num_modes
@@ -89,7 +85,6 @@ inputs:
       - float
     doc: Score cutoff to save ligand with top score higher than certain value 
       (default -8.0)
-    default: -8.0
     inputBinding:
       position: 101
       prefix: --scoreCF

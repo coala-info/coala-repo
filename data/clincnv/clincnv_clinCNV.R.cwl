@@ -45,7 +45,6 @@ inputs:
       - int
     doc: penalty for each additional clone (if you feel that you have some false
       positive clones, increase this value from default 300)
-    default: 300
     inputBinding:
       position: 101
       prefix: --clonePenalty
@@ -80,7 +79,6 @@ inputs:
     doc: number of degrees of freedom of Student's distribution for somatic 
       analysis (a lot of outliers => reduce the default value of 1000 to e.g. 
       10)
-    default: 1000
     inputBinding:
       position: 101
       prefix: --degreesOfFreedomStudent
@@ -178,7 +176,6 @@ inputs:
       - int
     doc: The highest allowed somatic copy-number (higher = more accurate, but 
       slower), [default= 30]
-    default: 30
     inputBinding:
       position: 101
       prefix: --maximumSomaticCN
@@ -189,7 +186,6 @@ inputs:
     doc: minimum number of elements in cluster (done for germline), default=100,
       clustering happens only if number of samples bigger than 3 by number of 
       elements in cluster
-    default: 100
     inputBinding:
       position: 101
       prefix: --minimumNumOfElemsInCluster
@@ -255,7 +251,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads used for some bottleneck parts, default=1
-    default: 1
     inputBinding:
       position: 101
       prefix: --numberOfThreads
@@ -272,7 +267,6 @@ inputs:
       - 'null'
       - Directory
     doc: output folder path
-    default: ./result/
     inputBinding:
       position: 101
       prefix: --out
@@ -281,7 +275,6 @@ inputs:
       - 'null'
       - File
     doc: file with pairing information, 1st column = tumor, 2nd column = normal
-    default: pairs.txt
     inputBinding:
       position: 101
       prefix: --pair
@@ -350,7 +343,6 @@ inputs:
       - float
     doc: step of purity we investigate (from 5% to 100% with the step you 
       specify, default=2.5)
-    default: 2.5
     inputBinding:
       position: 101
       prefix: --purityStep
@@ -359,7 +351,6 @@ inputs:
       - 'null'
       - boolean
     doc: if specified, reanalyses whole cohort
-    default: 'NULL'
     inputBinding:
       position: 101
       prefix: --reanalyseCohort

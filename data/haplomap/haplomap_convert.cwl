@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Max Phred-scaled pvalue for strand bias (the lower, the better).
-    default: 50
     inputBinding:
       position: 102
       prefix: --strand-bias
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Min allelic depth (AD) of samples.
-    default: 3
     inputBinding:
       position: 102
       prefix: --allelic-depth
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Min average mapping quality.
-    default: 20
     inputBinding:
       position: 102
       prefix: --mapping-quality
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: QUAL field of VCF file. Only keep variant > qual.
-    default: 50
     inputBinding:
       position: 102
       prefix: --qual
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - float
     doc: Min ratio of (%MAX(AD) / %MAX(DP)).
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --ratio
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output tped, tfam file for plink.
-    default: false
     inputBinding:
       position: 102
       prefix: --plink
@@ -70,7 +64,6 @@ inputs:
     doc: Phred-scaled genotype likelihood (PL) difference. GT's PL must at least
       pl-diff unit lower than any other PL value. The greater, the more '?' in 
       the output.
-    default: 20
     inputBinding:
       position: 102
       prefix: --pl-diff
@@ -87,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: 'Select variant type: [snp|indel|sv]'
-    default: snp
     inputBinding:
       position: 102
       prefix: --type

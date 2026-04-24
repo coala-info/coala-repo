@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: Input sam/bam/cram/file
-    default: '-'
     inputBinding:
       position: 1
   - id: bed

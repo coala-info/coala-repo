@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: 'ending threshold for the bitvector k-mer comparison (default: 0.2)'
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --bv-end-threshold
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: 'falloff value for the bitvector threshold for each iteration (default: 0.05)'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --bv-falloff
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: 'starting threshold for the bitvector k-mer comparison (default: 0.4)'
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --bv-start-threshold
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: 'k-mer size for isoform clustering (default: 11, maximum: 16)'
-    default: 11
     inputBinding:
       position: 101
       prefix: --iso-kmer-size
@@ -60,7 +56,6 @@ inputs:
       - int
     doc: 'max allowed variance for two reads to be in the same isoform cluster (default:
       25)'
-    default: 25
     inputBinding:
       position: 101
       prefix: --iso-max-variance
@@ -70,7 +65,6 @@ inputs:
       - float
     doc: 'minimum score for two reads to be in the same isoform cluster (default:
       0.3)'
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --iso-score-threshold
@@ -79,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: 'k-mer size for gene clustering (default: 10, maximum: 16)'
-    default: 10
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -97,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: 'set the lower length for input reads filter (default: 150)'
-    default: 150
     inputBinding:
       position: 101
       prefix: --lower-length
@@ -107,7 +99,6 @@ inputs:
       - int
     doc: 'max allowed variance for two reads to be in the same gene cluster (default:
       1000000)'
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --max-variance
@@ -116,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum number of reads per cluster (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-reads-cluster
@@ -125,7 +115,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'output folder (default: .)'
-    default: .
     inputBinding:
       position: 101
       prefix: --output
@@ -142,7 +131,6 @@ inputs:
       - 'null'
       - float
     doc: 'cluster representative percentile (default: 0.15)'
-    default: 0.15
     inputBinding:
       position: 101
       prefix: --repr-percentile
@@ -159,7 +147,6 @@ inputs:
       - 'null'
       - float
     doc: 'minimum score for two reads to be in the same gene cluster (default: 0.2)'
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --score-threshold
@@ -168,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of threads to use (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -177,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: 'set the upper length for input reads filter (default: 100,000)'
-    default: 100000
     inputBinding:
       position: 101
       prefix: --upper-length

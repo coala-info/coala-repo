@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: replace the numbers in these input fields
-    default: '1'
     inputBinding:
       position: 102
       prefix: --field
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: auto-scale input numbers to UNITs; default is 'none'
-    default: none
     inputBinding:
       position: 102
       prefix: --from
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: specify the input unit size (instead of the default 1)
-    default: 1
     inputBinding:
       position: 102
       prefix: --from-unit
@@ -86,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: 'failure mode for invalid numbers: abort, fail, warn, ignore'
-    default: abort
     inputBinding:
       position: 102
       prefix: --invalid
@@ -105,7 +101,6 @@ inputs:
       - string
     doc: 'use METHOD for rounding when scaling: up, down, from-zero, towards-zero,
       nearest'
-    default: from-zero
     inputBinding:
       position: 102
       prefix: --round
@@ -130,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: the output unit size (instead of the default 1)
-    default: 1
     inputBinding:
       position: 102
       prefix: --to-unit

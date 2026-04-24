@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: ANI threshold
-    default: 0.95
     inputBinding:
       position: 103
       prefix: --ani
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - boolean
     doc: Compute bidirectional ANI/conserved DNA values
-    default: false
     inputBinding:
       position: 103
       prefix: --bidirectional
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: Conserved DNA threshold
-    default: 0.69
     inputBinding:
       position: 103
       prefix: --conserved-dna
@@ -47,7 +44,6 @@ inputs:
       - int
     doc: "Max number of candidate reference genomes to pass kmer\n               \
       \         prefilter"
-    default: 100
     inputBinding:
       position: 103
       prefix: --crg
@@ -57,7 +53,6 @@ inputs:
       - int
     doc: "Sliding window - the lower the more accurate but also\n                \
       \        slower"
-    default: 400
     inputBinding:
       position: 103
       prefix: --sliding-window

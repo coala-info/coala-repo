@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory for the tree and the sequences
-    default: ~/prophyle
     inputBinding:
       position: 102
       prefix: -d

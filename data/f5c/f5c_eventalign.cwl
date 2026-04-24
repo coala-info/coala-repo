@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: batch size (max number of reads loaded at once)
-    default: 512
     inputBinding:
       position: 101
       prefix: -K
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: number of I/O processes to read fast5 files
-    default: 1
     inputBinding:
       position: 101
       prefix: --iop
@@ -73,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: max number of bases loaded at once
-    default: 5.0M
     inputBinding:
       position: 101
       prefix: -B
@@ -82,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality
-    default: 20
     inputBinding:
       position: 101
       prefix: --min-mapq
@@ -91,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of events to recalbrate
-    default: 200
     inputBinding:
       position: 101
       prefix: --min-recalib-events
@@ -108,7 +103,6 @@ inputs:
       - 'null'
       - string
     doc: set the pore chemistry (r9, r10 or rna004)
-    default: r9
     inputBinding:
       position: 101
       prefix: --pore
@@ -213,7 +207,6 @@ inputs:
       - 'null'
       - int
     doc: sam output version (set 1 to revert to old nanopolish style format)
-    default: 2
     inputBinding:
       position: 101
       prefix: --sam-out-version
@@ -238,7 +231,6 @@ inputs:
       - 'null'
       - string
     doc: consider secondary mappings or not
-    default: no
     inputBinding:
       position: 101
       prefix: --secondary
@@ -265,7 +257,6 @@ inputs:
       - 'null'
       - string
     doc: skip any unreadable fast5 or terminate program
-    default: yes
     inputBinding:
       position: 101
       prefix: --skip-unreadable
@@ -282,7 +273,6 @@ inputs:
       - 'null'
       - int
     doc: number of processing threads
-    default: 8
     inputBinding:
       position: 101
       prefix: -t
@@ -291,7 +281,6 @@ inputs:
       - 'null'
       - int
     doc: threshold to skip ultra long reads
-    default: 100000
     inputBinding:
       position: 101
       prefix: --ultra-thresh
@@ -300,7 +289,6 @@ inputs:
       - 'null'
       - int
     doc: verbosity level
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbose

@@ -22,7 +22,6 @@ inputs:
       (http:/ /wiki.chasmsoftware.org/index.php/CHASM_Overview). 2 indicates using
       the mutated base and the upstream base. 3 indicates using the mutated base and
       both the upstream and downstream bases. (Default: 1.5)'
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --context
@@ -62,7 +61,6 @@ inputs:
       - int
     doc: 'Number of iterations for null model. p-value precision increases with more
       iterations, however this will also increase the run time (Default: 100,000).'
-    default: 100000
     inputBinding:
       position: 101
       prefix: --num-iterations
@@ -72,7 +70,6 @@ inputs:
       - int
     doc: 'Number of processes to use for parallelization. 0 indicates using a single
       process without using a multiprocessing pool (more means Faster, default: 0).'
-    default: 0
     inputBinding:
       position: 101
       prefix: --processes
@@ -92,7 +89,6 @@ inputs:
     doc: 'Specify the seed for the pseudo random number generator. By default, the
       seed is randomly chosen. The seed will be used for the monte carlo simulations
       (Default: 101).'
-    default: 101
     inputBinding:
       position: 101
       prefix: --seed
@@ -103,7 +99,6 @@ inputs:
     doc: 'Number of iterations more significant then the observed statistic to stop
       further computations. This decreases compute time spent in resolving p-values
       for non-significant genes. (Default: 1000).'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --stop-criteria
@@ -133,7 +128,6 @@ inputs:
       - int
     doc: 'Sequence window size for HotMAPS 1D algorithm by number of codons (Default:
       3)'
-    default: 3
     inputBinding:
       position: 101
       prefix: --window

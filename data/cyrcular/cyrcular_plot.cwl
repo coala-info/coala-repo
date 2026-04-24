@@ -20,7 +20,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 3
     inputBinding:
       position: 102
       prefix: --breakpoint-margin
@@ -40,7 +39,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 0
     inputBinding:
       position: 102
       prefix: --threads

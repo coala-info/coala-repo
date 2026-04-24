@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip to run sequence data error checking.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip_check_errors
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Install geNomad and CheckV databases in the respective repositories.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip_install_databases

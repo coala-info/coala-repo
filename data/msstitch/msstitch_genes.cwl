@@ -48,7 +48,6 @@ inputs:
       - string
     doc: Delimiter in FASTA header, used to parse gene names in case of 
       non-ENSEMBL/Uniprot
-    default: tab
     inputBinding:
       position: 101
       prefix: --fastadelim
@@ -59,7 +58,6 @@ inputs:
     doc: FDR strategy type used. Can be one of [classic, picked]. Picked FDR is 
       implemented after Savitski et al. 2015, MCP, and needs target and decoy 
       fasta files to form pairs
-    default: classic
     inputBinding:
       position: 101
       prefix: --fdrtype
@@ -151,7 +149,6 @@ inputs:
       - float
     doc: Intensity threshold of PSMs when calculating isobaric ratios. Values 
       below threshold will be set to NA.
-    default: no threshold
     inputBinding:
       position: 101
       prefix: --minint

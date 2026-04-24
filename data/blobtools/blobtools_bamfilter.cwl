@@ -65,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: FASTQ = fq, FASTA = fa
-    default: fa
     inputBinding:
       position: 101
       prefix: --read_format

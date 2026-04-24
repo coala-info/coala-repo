@@ -69,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: 'Missed bases allowed in reads compatibility check (default: 2)'
-    default: 2
     inputBinding:
       position: 101
       prefix: --compatiblemis COMPATIBLEMIS
@@ -86,7 +85,6 @@ inputs:
       - 'null'
       - File
     doc: 'Output TIS background estimation result (default: tisBackground.txt)'
-    default: tisBackground.txt
     inputBinding:
       position: 101
       prefix: --e ESTPATH
@@ -127,7 +125,6 @@ inputs:
       - 'null'
       - float
     doc: 'Frame p value threshold (default: 0.05)'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --fpth FPTH
@@ -144,7 +141,6 @@ inputs:
       - 'null'
       - string
     doc: 'Gene annotation file format (gtf, bed, gpd, gff, default: auto)'
-    default: auto
     inputBinding:
       position: 101
       prefix: --geneformat GENEFORMAT
@@ -173,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: 'Flanking region for harr data, in codons (default: 15)'
-    default: 15
     inputBinding:
       position: 101
       prefix: --harrwidth HARRWIDTH
@@ -232,7 +227,6 @@ inputs:
       - 'null'
       - int
     doc: 'Max NH value allowed for bam alignments (default: 5)'
-    default: 5
     inputBinding:
       position: 101
       prefix: --maxNH MAXNH
@@ -241,7 +235,6 @@ inputs:
       - 'null'
       - int
     doc: 'Min amino acid length of candidate ORF (default: 6)'
-    default: 6
     inputBinding:
       position: 101
       prefix: --minaalen MINAALEN
@@ -250,7 +243,6 @@ inputs:
       - 'null'
       - int
     doc: 'Min MapQ value required for bam alignments (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --minMapQ MINMAPQ
@@ -260,7 +252,6 @@ inputs:
       - float
     doc: 'At least one of TIS or frame p value should be lower than this threshold
       (default: 0.05)'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --minpth MINPTH
@@ -277,7 +268,6 @@ inputs:
       - 'null'
       - int
     doc: 'Group transcript according to TIS reads density quantile (default: 10)'
-    default: 10
     inputBinding:
       position: 101
       prefix: --nparts NPARTS
@@ -342,7 +332,6 @@ inputs:
       - 'null'
       - float
     doc: 'TIS p value threshold (default: 0.05)'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --tpth TPTH

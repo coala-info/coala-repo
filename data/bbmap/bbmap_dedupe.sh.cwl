@@ -13,7 +13,6 @@ inputs:
       - 'null'
       - boolean
     doc: Absorb full containments of contigs.
-    default: true
     inputBinding:
       position: 101
       prefix: absorbcontainment
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - boolean
     doc: Absorb exact matches of contigs.
-    default: true
     inputBinding:
       position: 101
       prefix: absorbmatch
@@ -31,7 +29,6 @@ inputs:
       - 'null'
       - boolean
     doc: Absorb reverse-complements as well as normal orientation.
-    default: true
     inputBinding:
       position: 101
       prefix: absorbrc
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - boolean
     doc: Sort in ascending order.
-    default: false
     inputBinding:
       position: 101
       prefix: ascending
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - boolean
     doc: Flip contigs so clusters have a single orientation.
-    default: true
     inputBinding:
       position: 101
       prefix: cc
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - boolean
     doc: Group overlapping contigs into clusters.
-    default: false
     inputBinding:
       position: 101
       prefix: cluster
@@ -76,7 +70,6 @@ inputs:
       - float
     doc: When non-zero, overlaps will only be formed between reads with a depth ratio
       of at most this.
-    default: 0
     inputBinding:
       position: 101
       prefix: depthratio
@@ -85,7 +78,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only allow exact symbol matches. When false, an 'N' will match any symbol.
-    default: true
     inputBinding:
       position: 101
       prefix: exact
@@ -94,7 +86,6 @@ inputs:
       - 'null'
       - boolean
     doc: Truncate graph at nodes with canonization disputes.
-    default: false
     inputBinding:
       position: 101
       prefix: fcc
@@ -104,7 +95,6 @@ inputs:
       - boolean
     doc: Find overlaps between contigs (containments and non-containments). Necessary
       for clustering.
-    default: false
     inputBinding:
       position: 101
       prefix: findoverlap
@@ -113,7 +103,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove redundant overlaps between the same two contigs.
-    default: true
     inputBinding:
       position: 101
       prefix: fixmultijoins
@@ -122,7 +111,6 @@ inputs:
       - 'null'
       - boolean
     doc: Truncate graph at nodes with offset disputes.
-    default: false
     inputBinding:
       position: 101
       prefix: foc
@@ -131,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: If positive, trim bases to the left of this position (exclusive, 0-based).
-    default: -1
     inputBinding:
       position: 101
       prefix: forcetrimleft
@@ -140,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: If positive, trim bases to the right of this position (exclusive, 0-based).
-    default: -1
     inputBinding:
       position: 101
       prefix: forcetrimright
@@ -149,7 +135,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set to true to search for matches using kmers containing Ns.
-    default: false
     inputBinding:
       position: 101
       prefix: hashns
@@ -166,7 +151,6 @@ inputs:
       - 'null'
       - string
     doc: If true, forces fastq input to be paired and interleaved.
-    default: auto
     inputBinding:
       position: 101
       prefix: interleaved
@@ -175,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: Seed length used for finding containments and overlaps.
-    default: 31
     inputBinding:
       position: 101
       prefix: k
@@ -184,7 +167,6 @@ inputs:
       - 'null'
       - int
     doc: Allow up to this many edits (subs or indels).
-    default: 0
     inputBinding:
       position: 101
       prefix: maxedits
@@ -193,7 +175,6 @@ inputs:
       - 'null'
       - int
     doc: Allow up to this many mismatches (substitutions only, no indels).
-    default: 0
     inputBinding:
       position: 101
       prefix: maxsubs
@@ -202,7 +183,6 @@ inputs:
       - 'null'
       - string
     doc: Delimiter between merged headers.
-    default: '>'
     inputBinding:
       position: 101
       prefix: mergedelimiter
@@ -211,7 +191,6 @@ inputs:
       - 'null'
       - boolean
     doc: When a sequence absorbs another, concatenate their headers.
-    default: false
     inputBinding:
       position: 101
       prefix: mergenames
@@ -220,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: Do not output clusters smaller than this.
-    default: 1
     inputBinding:
       position: 101
       prefix: minclustersize
@@ -229,7 +207,6 @@ inputs:
       - 'null'
       - float
     doc: Absorb contained sequences with percent identity of at least this.
-    default: 100
     inputBinding:
       position: 101
       prefix: minidentity
@@ -239,7 +216,6 @@ inputs:
       - float
     doc: Smaller contig must be at least this percent of larger contig's length to
       be absorbed.
-    default: 0
     inputBinding:
       position: 101
       prefix: minlengthpercent
@@ -248,7 +224,6 @@ inputs:
       - 'null'
       - int
     doc: Overlap must be at least this long to cluster and merge.
-    default: 200
     inputBinding:
       position: 101
       prefix: minoverlap
@@ -258,7 +233,6 @@ inputs:
       - float
     doc: Overlap must be at least this percent of smaller contig's length to cluster
       and merge.
-    default: 0
     inputBinding:
       position: 101
       prefix: minoverlappercent
@@ -267,7 +241,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore contigs/scaffolds shorter than this.
-    default: 0
     inputBinding:
       position: 101
       prefix: minscaf
@@ -276,7 +249,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove cyclic edges, leaving only the longest edges that form a tree.
-    default: false
     inputBinding:
       position: 101
       prefix: mst
@@ -285,7 +257,6 @@ inputs:
       - 'null'
       - int
     doc: Number of prefixes/suffixes to index per contig.
-    default: 1
     inputBinding:
       position: 101
       prefix: numaffixmaps
@@ -294,7 +265,6 @@ inputs:
       - 'null'
       - boolean
     doc: Label dot graph nodes with read numbers rather than read names.
-    default: true
     inputBinding:
       position: 101
       prefix: numbergraphnodes
@@ -303,7 +273,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output sequences in input order.
-    default: false
     inputBinding:
       position: 101
       prefix: ordered
@@ -313,7 +282,6 @@ inputs:
       - boolean
     doc: Set to false to force the program to abort rather than overwrite an existing
       file.
-    default: true
     inputBinding:
       position: 101
       prefix: overwrite
@@ -322,7 +290,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only output the single highest-quality read per cluster.
-    default: false
     inputBinding:
       position: 101
       prefix: pbr
@@ -331,7 +298,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print the length of contigs in edges.
-    default: false
     inputBinding:
       position: 101
       prefix: printlengthinedges
@@ -340,7 +306,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run the cluster processing phase.
-    default: false
     inputBinding:
       position: 101
       prefix: processclusters
@@ -349,7 +314,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not look for new edges between nodes in the same cluster.
-    default: false
     inputBinding:
       position: 101
       prefix: pto
@@ -358,7 +322,6 @@ inputs:
       - 'null'
       - string
     doc: Set to qtrim=rl to trim leading and trailing Ns.
-    default: f
     inputBinding:
       position: 101
       prefix: qtrim
@@ -367,7 +330,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove all cycles so clusters form trees.
-    default: true
     inputBinding:
       position: 101
       prefix: removecycles
@@ -376,7 +338,6 @@ inputs:
       - 'null'
       - boolean
     doc: Rename contigs to indicate which cluster they are in.
-    default: false
     inputBinding:
       position: 101
       prefix: renameclusters
@@ -385,7 +346,6 @@ inputs:
       - 'null'
       - boolean
     doc: If true, both names and sequence must match.
-    default: false
     inputBinding:
       position: 101
       prefix: rmn
@@ -394,7 +354,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set to 'f' to suppress display of processing speed.
-    default: true
     inputBinding:
       position: 101
       prefix: showspeed
@@ -403,7 +362,6 @@ inputs:
       - 'null'
       - string
     doc: Sort output (length, quality, name, id).
-    default: 'false'
     inputBinding:
       position: 101
       prefix: sort
@@ -412,7 +370,6 @@ inputs:
       - 'null'
       - boolean
     doc: Store scaffold names (set false to save memory).
-    default: true
     inputBinding:
       position: 101
       prefix: storename
@@ -421,7 +378,6 @@ inputs:
       - 'null'
       - boolean
     doc: Store quality values for fastq assemblies (set false to save memory).
-    default: true
     inputBinding:
       position: 101
       prefix: storequality
@@ -430,7 +386,6 @@ inputs:
       - 'null'
       - int
     doc: Only process reads whose ((ID%subsetcount)==subset).
-    default: 0
     inputBinding:
       position: 101
       prefix: subset
@@ -439,7 +394,6 @@ inputs:
       - 'null'
       - int
     doc: Number of subsets used to process the data; higher uses less memory.
-    default: 1
     inputBinding:
       position: 101
       prefix: subsetcount
@@ -456,7 +410,6 @@ inputs:
       - 'null'
       - boolean
     doc: Convert input bases to upper-case.
-    default: true
     inputBinding:
       position: 101
       prefix: touppercase
@@ -465,7 +418,6 @@ inputs:
       - 'null'
       - int
     doc: Quality trim level.
-    default: 6
     inputBinding:
       position: 101
       prefix: trimq
@@ -474,7 +426,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ensure all output scaffolds have unique names.
-    default: true
     inputBinding:
       position: 101
       prefix: uniquenames
@@ -484,7 +435,6 @@ inputs:
       - boolean
     doc: If true, all copies of duplicate reads will be discarded, rather than keeping
       1.
-    default: false
     inputBinding:
       position: 101
       prefix: uniqueonly
@@ -493,7 +443,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do alignments in C code, which is faster, if an edit distance is allowed.
-    default: false
     inputBinding:
       position: 101
       prefix: usejni
@@ -502,7 +451,6 @@ inputs:
       - 'null'
       - int
     doc: Set to 1 (lowest) through 9 (max) to change compression level.
-    default: 2
     inputBinding:
       position: 101
       prefix: ziplevel

@@ -46,7 +46,6 @@ inputs:
   - id: constant_one
     type: int
     doc: A constant value of 1, likely for internal workflow logic.
-    default: 1
     inputBinding:
       position: 6
 outputs:

@@ -50,7 +50,6 @@ inputs:
       type: int?
       doc: number of cpu threads to use
       label: cpu threads
-      default: 1
       inputBinding:
         position: 2
 

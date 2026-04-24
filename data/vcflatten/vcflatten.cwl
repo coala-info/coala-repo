@@ -73,7 +73,6 @@ inputs:
       or given in --prefix <prefix>), %s The name of the sample, taken from the header
       of the VCF file., %i The index of the sample (1-based)., %% A single, literal
       '%'. If neither %s nor %d is provided, then the VCF file must have only 1 sample."
-    default: '%p-%s-%d'
     inputBinding:
       position: 102
       prefix: --pattern

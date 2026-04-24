@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: Samfile to read. If none is specified, will read from stdin
-    default: stdin
     inputBinding:
       position: 101
       prefix: --samfile
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Batch size for processing.
-    default: 10
     inputBinding:
       position: 104
       prefix: -b
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Distance parameter.
-    default: 15
     inputBinding:
       position: 104
       prefix: -d
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - File
     doc: File containing loci to exclude.
-    default: ''
     inputBinding:
       position: 104
       prefix: -x
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Flag to enable fast mode.
-    default: 1
     inputBinding:
       position: 104
       prefix: -f
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum conditional probability.
-    default: 0.65
     inputBinding:
       position: 104
       prefix: -c
@@ -70,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum probability.
-    default: 0.1
     inputBinding:
       position: 104
       prefix: -p
@@ -79,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length.
-    default: 1000
     inputBinding:
       position: 104
       prefix: -l
@@ -88,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal number of reads in RSM.
-    default: 25
     inputBinding:
       position: 104
       prefix: -r
@@ -97,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 104
       prefix: -n
@@ -106,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for random number generation.
-    default: 18473
     inputBinding:
       position: 104
       prefix: -s
@@ -115,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Top N comparable reads.
-    default: 100
     inputBinding:
       position: 104
       prefix: -q

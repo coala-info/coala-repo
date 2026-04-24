@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: minimum required child taxa to consider taxa when inferring distribution
-    default: 2
     inputBinding:
       position: 102
       prefix: --min_children

@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Function for calculating aggregate signal.
-    default: none
     inputBinding:
       position: 103
   - id: clr_weight_name
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Use balancing weight with this name.
-    default: weight
     inputBinding:
       position: 103
   - id: expected
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Input features format.
-    default: auto
     inputBinding:
       position: 103
   - id: flank
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Size of flanks.
-    default: 100000
     inputBinding:
       position: 103
   - id: ignore_diags
@@ -74,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to split the work between.
-    default: 1
     inputBinding:
       position: 103
       prefix: --nproc
@@ -83,7 +78,6 @@ inputs:
       - 'null'
       - string
     doc: Type of output.
-    default: NPZ
     inputBinding:
       position: 103
   - id: store_snips

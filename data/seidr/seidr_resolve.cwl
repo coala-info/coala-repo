@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: File format to resolve
-    default: infomap
     inputBinding:
       position: 102
       prefix: --format

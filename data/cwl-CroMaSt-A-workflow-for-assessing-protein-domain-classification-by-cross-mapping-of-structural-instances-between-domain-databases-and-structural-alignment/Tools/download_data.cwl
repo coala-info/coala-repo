@@ -26,7 +26,6 @@ inputs:
   data_directory:
     label: Name for the Data directory
     type: string
-    default: Data
 
   pfam_url:
     label: URL to download the file from
@@ -35,7 +34,6 @@ inputs:
   pfam_name:
     label: Name to save the file
     type: string
-    default: pdbmap
 
   cath_url:
     label: URL to download CATH source file 
@@ -44,7 +42,6 @@ inputs:
   cath_name:
     label: Name for CATH source file
     type: string?
-    default: cath-domain-description-file.txt
 
   pdb_obs_url:
     label: URL to download list of obsolete PDB entries 
@@ -53,7 +50,6 @@ inputs:
   pdb_obs_name:
     label: Name for list of obsolete PDB entries
     type: string?
-    default: obsolete_PDB_entry_ids.txt
 
 
 outputs:

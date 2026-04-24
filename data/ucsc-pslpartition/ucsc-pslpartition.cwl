@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Number of records per partition.
-    default: 100
     inputBinding:
       position: 102
       prefix: -partSize

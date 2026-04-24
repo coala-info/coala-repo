@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: stop chain enlongation if there are no minimizers in INT-bp
-    default: '5000'
     inputBinding:
       position: 103
       prefix: -g
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: chaining/alignment bandwidth and long-join bandwidth
-    default: 500,20000
     inputBinding:
       position: 103
       prefix: -r
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - File
     doc: dump index to FILE
-    default: '[]'
     inputBinding:
       position: 103
       prefix: -d
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: filter out top FLOAT fraction of repetitive minimizers
-    default: 0.0002
     inputBinding:
       position: 103
       prefix: -f
@@ -66,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: gap extension penalty; a k-long gap costs min{O1+k*E1,O2+k*E2}
-    default: 2,1
     inputBinding:
       position: 103
       prefix: -E
@@ -75,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: gap open penalty
-    default: 4,24
     inputBinding:
       position: 103
       prefix: -O
@@ -85,7 +79,6 @@ inputs:
       - string
     doc: how to find GT-AG. f:transcript strand, b:both strands, n:don't match 
       GT-AG
-    default: n
     inputBinding:
       position: 103
       prefix: -u
@@ -102,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: split index for every ~NUM input bases
-    default: 8G
     inputBinding:
       position: 103
       prefix: -I
@@ -111,7 +103,6 @@ inputs:
       - 'null'
       - File
     doc: junctions in BED12 to extend *short* RNA-seq alignment
-    default: '[]'
     inputBinding:
       position: 103
       prefix: -j
@@ -120,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size (no larger than 28)
-    default: 15
     inputBinding:
       position: 103
       prefix: -k
@@ -129,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: matching score
-    default: 2
     inputBinding:
       position: 103
       prefix: -A
@@ -138,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: max fragment length (effective with -xsr or in the fragment mode)
-    default: '800'
     inputBinding:
       position: 103
       prefix: -F
@@ -147,7 +135,6 @@ inputs:
       - 'null'
       - string
     doc: max intron length (effective with -xsplice; changing -r)
-    default: 200k
     inputBinding:
       position: 103
       prefix: -G
@@ -156,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: retain at most INT secondary alignments
-    default: 5
     inputBinding:
       position: 103
       prefix: -N
@@ -165,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: minimal number of minimizers on a chain
-    default: 3
     inputBinding:
       position: 103
       prefix: -n
@@ -174,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: minimal chaining score (matching bases minus log gap penalty)
-    default: 40
     inputBinding:
       position: 103
       prefix: -m
@@ -183,7 +167,6 @@ inputs:
       - 'null'
       - int
     doc: minimal peak DP alignment score
-    default: 80
     inputBinding:
       position: 103
       prefix: -s
@@ -192,7 +175,6 @@ inputs:
       - 'null'
       - float
     doc: min secondary-to-primary score ratio
-    default: 0.8
     inputBinding:
       position: 103
       prefix: -p
@@ -201,7 +183,6 @@ inputs:
       - 'null'
       - string
     doc: minibatch size for mapping
-    default: 500M
     inputBinding:
       position: 103
       prefix: -K
@@ -210,7 +191,6 @@ inputs:
       - 'null'
       - int
     doc: mismatch penalty (larger value for lower divergence)
-    default: 4
     inputBinding:
       position: 103
       prefix: -B
@@ -227,7 +207,6 @@ inputs:
       - 'null'
       - string
     doc: output the cs tag; STR is 'short' (if absent) or 'long' [none]
-    default: none
     inputBinding:
       position: 103
       prefix: --cs
@@ -261,7 +240,6 @@ inputs:
       - string
     doc: preset (always applied before other options; see minimap2.1 for 
       details)
-    default: '[]'
     inputBinding:
       position: 103
       prefix: -x
@@ -270,7 +248,6 @@ inputs:
       - 'null'
       - string
     doc: SAM read group line in a format like '@RG\tID:foo\tSM:bar'
-    default: '[]'
     inputBinding:
       position: 103
       prefix: -R
@@ -287,7 +264,6 @@ inputs:
       - 'null'
       - int
     doc: 'splice mode. 0: original minimap2 model; 1: miniprot model'
-    default: 1
     inputBinding:
       position: 103
       prefix: -J
@@ -296,7 +272,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 3
     inputBinding:
       position: 103
       prefix: -t
@@ -313,7 +288,6 @@ inputs:
       - 'null'
       - int
     doc: minimizer window size
-    default: 10
     inputBinding:
       position: 103
       prefix: -w
@@ -338,7 +312,6 @@ inputs:
       - 'null'
       - string
     doc: Z-drop score and inversion Z-drop score
-    default: 400,200
     inputBinding:
       position: 103
       prefix: -z

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - float
     doc: Average coverage divided by read length.
-    default: 0.3
     inputBinding:
       position: 102
       prefix: --avg-cov-by-readlen
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - File
     doc: Input BAM bai/CRAM crai index file.
-    default: <bamPathIn>.[bai,crai]
     inputBinding:
       position: 102
       prefix: --index
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum fragment length allowed.
-    default: 1000
     inputBinding:
       position: 102
       prefix: --max-fragment-length
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Minumum number of matching bases in read.
-    default: 55
     inputBinding:
       position: 102
       prefix: --min-num-matching

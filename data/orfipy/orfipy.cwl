@@ -19,7 +19,6 @@ inputs:
       - boolean
     doc: Output ORFs defined as regions between stop codons (regions free of 
       stop codon). This will set --partial-3 and --partial-5 true.
-    default: false
     inputBinding:
       position: 102
       prefix: --between-stops
@@ -29,7 +28,6 @@ inputs:
       - boolean
     doc: Output separate BED files for ORFs by frame. Can be combined with 
       "--longest" to output longest ORFs in each frame. Requires bed option.
-    default: false
     inputBinding:
       position: 102
       prefix: --by-frame
@@ -54,7 +52,6 @@ inputs:
       - boolean
     doc: Ignore case and find ORFs in lower case sequences too. Useful for 
       soft-masked sequences.
-    default: false
     inputBinding:
       position: 102
       prefix: --ignore-case
@@ -65,7 +62,6 @@ inputs:
     doc: Include stop codon in the results, if a stop codon exists. This output 
       format is compatible with TransDecoder's which includes stop codon 
       coordinates
-    default: false
     inputBinding:
       position: 102
       prefix: --include-stop
@@ -75,7 +71,6 @@ inputs:
       - boolean
     doc: Output a separate BED file for longest ORFs per sequence. Requires bed 
       option.
-    default: false
     inputBinding:
       position: 102
       prefix: --longest
@@ -84,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of ORF, excluding stop codon (nucleotide)
-    default: 1000000000
     inputBinding:
       position: 102
       prefix: --max
@@ -93,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of ORF, excluding stop codon (nucleotide)
-    default: 30
     inputBinding:
       position: 102
       prefix: --min
@@ -102,7 +95,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to outdir
-    default: orfipy_<infasta>_out
     inputBinding:
       position: 102
       prefix: --outdir
@@ -112,7 +104,6 @@ inputs:
       - boolean
     doc: Output ORFs with a start codon but lacking an inframe stop codon. E.g. 
       "ATG TTT AAA"
-    default: false
     inputBinding:
       position: 102
       prefix: --partial-3
@@ -122,7 +113,6 @@ inputs:
       - boolean
     doc: Output ORFs with an inframe stop codon lacking an inframe start codon. 
       E.g. "TTT AAA TAG"
-    default: false
     inputBinding:
       position: 102
       prefix: --partial-5
@@ -131,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Num processor cores to use
-    default: mp.cpu_count()
     inputBinding:
       position: 102
       prefix: --procs
@@ -140,7 +129,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print translation tables and exit.
-    default: false
     inputBinding:
       position: 102
       prefix: --show-tables
@@ -150,7 +138,6 @@ inputs:
       - boolean
     doc: Run in single mode i.e. no parallel processing (SLOWER). If supplied 
       with procs, this is ignored.
-    default: false
     inputBinding:
       position: 102
       prefix: --single-mode
@@ -177,7 +164,6 @@ inputs:
       - 'null'
       - string
     doc: Strands to find ORFs [(f)orward,(r)everse,(b)oth]
-    default: b
     inputBinding:
       position: 102
       prefix: --strand
@@ -187,7 +173,6 @@ inputs:
       - string
     doc: 'The codon table number to use or path to .json file with codon table. Use
       --show-tables to see available tables compiled from: https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi?chapter=cgencodes'
-    default: 1
     inputBinding:
       position: 102
       prefix: --table

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Assembly levels of genomes to download
-    default: complete
     inputBinding:
       position: 101
       prefix: --assembly_level
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cpus to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: CD-HIT (-c) sequence identity threshold
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --identity
@@ -93,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of genomes to download
-    default: 100
     inputBinding:
       position: 101
       prefix: --limit
@@ -102,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: CD-HIT (-M) memory limit (in MB) (0 removes memory limits)
-    default: 0
     inputBinding:
       position: 101
       prefix: --max_memory
@@ -111,7 +106,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to save output files
-    default: ./
     inputBinding:
       position: 101
       prefix: --outdir
@@ -120,7 +114,6 @@ inputs:
       - 'null'
       - float
     doc: CD-HIT (-s) length difference cutoff
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --overlap

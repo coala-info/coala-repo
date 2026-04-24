@@ -19,7 +19,6 @@ inputs:
       - string
     doc: "A list of amino acids at which not to cleave if\n                      \
       \  following cleavage site ie. Proline. Default = none"
-    default: none
     inputBinding:
       position: 102
       prefix: --anti_cleavage_sites
@@ -29,7 +28,6 @@ inputs:
       - string
     doc: "Set cleavage to be c or n terminal of specified\n                      \
       \  cleavage sites. Default = c"
-    default: c
     inputBinding:
       position: 102
       prefix: --cleavage_position
@@ -39,7 +37,6 @@ inputs:
       - string
     doc: "A list of amino acids at which to cleave during\n                      \
       \  digestion. Default = KR"
-    default: KR
     inputBinding:
       position: 102
       prefix: --cleavage_sites
@@ -49,7 +46,6 @@ inputs:
       - string
     doc: "Set accesion prefix for decoy proteins in output.\n                    \
       \    Default=XXX"
-    default: XXX
     inputBinding:
       position: 102
       prefix: --decoy_prefix
@@ -59,7 +55,6 @@ inputs:
       - boolean
     doc: "Turn OFF shuffling of decoy peptides that are in the\n                 \
       \       target database. Default=false"
-    default: false
     inputBinding:
       position: 102
       prefix: --do_not_shuffle
@@ -69,7 +64,6 @@ inputs:
       - boolean
     doc: "Turn OFF switching of cleavage site with preceding\n                   \
       \     amino acid. Default=false"
-    default: false
     inputBinding:
       position: 102
       prefix: --do_not_switch
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep sequence names in the decoy output. Default=false
-    default: false
     inputBinding:
       position: 102
       prefix: --keep_names
@@ -88,7 +81,6 @@ inputs:
       - int
     doc: "Set maximum number of times to shuffle a peptide to\n                  \
       \      make it non-target before failing. Default=100"
-    default: 100
     inputBinding:
       position: 102
       prefix: --max_iterations
@@ -98,7 +90,6 @@ inputs:
       - boolean
     doc: "Slower but uses less memory (does not store decoy\n                    \
       \    peptide list). Default=false"
-    default: false
     inputBinding:
       position: 102
       prefix: --memory_save
@@ -108,7 +99,6 @@ inputs:
       - int
     doc: "Set minimum length of peptides to compare between\n                    \
       \    target and decoy. Default = 5"
-    default: 5
     inputBinding:
       position: 102
       prefix: --min_peptide_length
@@ -117,7 +107,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not make decoy peptides isobaric. Default=false
-    default: false
     inputBinding:
       position: 102
       prefix: --no_isobaric
@@ -127,7 +116,6 @@ inputs:
       - File
     doc: "Set temporary file to write decoys prior to shuffling.\n               \
       \         Default=tmp.fa"
-    default: tmp.fa
     inputBinding:
       position: 102
       prefix: --temp_file

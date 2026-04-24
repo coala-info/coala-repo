@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Set the control file
-    default: invfile.lua
     inputBinding:
       position: 101
       prefix: -f
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Set the URL of the Docker instance
-    default: unix:///var/run/docker.sock
     inputBinding:
       position: 101
       prefix: --host
@@ -37,7 +35,6 @@ inputs:
         items: string
     doc: Used as KEY=VALUE, makes VAR[KEY] available with value VALUE in Lua 
       script
-    default: []
     inputBinding:
       position: 101
       prefix: --set
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Set verbosity, 3 logs everything, 2 shows standard output
-    default: 1
     inputBinding:
       position: 101
       prefix: -v
@@ -64,7 +60,6 @@ inputs:
       - string
     doc: Set working dir, being the base for all operations. Also settable via 
       environment variable $INVOLUCRO_WORKDIR
-    default: .
     inputBinding:
       position: 101
       prefix: -w

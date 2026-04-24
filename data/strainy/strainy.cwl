@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: Set allele frequency for internal caller only (pileup)
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --allele-frequency
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: path to indexed alignment in bam format
-    default: None
     inputBinding:
       position: 101
       prefix: --bam
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: cluster divergence
-    default: 0
     inputBinding:
       position: 101
       prefix: --cluster-divergence
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate extra output for debugging
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - File
     doc: input reference fasta to phase
-    default: None
     inputBinding:
       position: 101
       prefix: --fasta_ref
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable agressive graph simplification
-    default: false
     inputBinding:
       position: 101
       prefix: --link-simplify
@@ -76,7 +70,6 @@ inputs:
       - int
     doc: The maximum coverage threshold for phasing unitigs, unitigs with higher
       coverage will not be phased
-    default: 500
     inputBinding:
       position: 101
       prefix: --max-unitig-coverage
@@ -86,7 +79,6 @@ inputs:
       - int
     doc: The minimum coverage threshold for phasing unitigs, unitigs with lower 
       coverage will not be phased
-    default: 20
     inputBinding:
       position: 101
       prefix: --min-unitig-coverage
@@ -96,7 +88,6 @@ inputs:
       - int
     doc: The length (in kb) which the unitigs that are shorter will not be 
       phased
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-unitig-length
@@ -111,7 +102,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not run stRainy, only split long gfa unitigs
-    default: false
     inputBinding:
       position: 101
       prefix: --only-split
@@ -126,7 +116,6 @@ inputs:
       - 'null'
       - File
     doc: path to vcf file with SNP calls to use
-    default: None
     inputBinding:
       position: 101
       prefix: --snp
@@ -135,7 +124,6 @@ inputs:
       - 'null'
       - string
     doc: 'stage to run: either phase, transform or e2e (phase + transform)'
-    default: e2e
     inputBinding:
       position: 101
       prefix: --stage
@@ -144,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -154,7 +141,6 @@ inputs:
       - int
     doc: The length (in kb) which the unitigs that are longer will be split, set
       0 to disable
-    default: 50
     inputBinding:
       position: 101
       prefix: --unitig-split-length

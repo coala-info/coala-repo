@@ -18,7 +18,6 @@ inputs:
     position: 103
 - id: allow_undef_tags
   type: boolean?
-  default: true
   doc: Print "." for undefined tags
   inputBinding:
     position: 102

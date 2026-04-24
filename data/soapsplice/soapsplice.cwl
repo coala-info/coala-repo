@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum gap allowed in one segment
-    default: 2
     inputBinding:
       position: 101
       prefix: -g
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum intron length
-    default: 50000
     inputBinding:
       position: 101
       prefix: -I
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum mismatch allowed in one segment
-    default: 2
     inputBinding:
       position: 101
       prefix: -m
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum intron length
-    default: 50
     inputBinding:
       position: 101
       prefix: -J
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum segment length
-    default: 8
     inputBinding:
       position: 101
       prefix: -l
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: 'Output format (1: SAM, 2: SOAP)'
-    default: 1
     inputBinding:
       position: 101
       prefix: -f
@@ -70,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: 'Quality system (1: Illumina 1.3+, 2: Sanger/Illumina 1.8+)'
-    default: 1
     inputBinding:
       position: 101
       prefix: -q
@@ -93,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -p

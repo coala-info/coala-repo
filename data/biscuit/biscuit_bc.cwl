@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: length of barcode
-    default: 8
     inputBinding:
       position: 103
       prefix: --bc-length
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: start position of barcode in read (1-based)
-    default: 1
     inputBinding:
       position: 103
       prefix: --bc-start
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: which mate the barcode is in (1 or 2)
-    default: 1
     inputBinding:
       position: 103
       prefix: --mate

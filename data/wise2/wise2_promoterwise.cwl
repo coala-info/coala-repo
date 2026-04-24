@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: use normal DBA or motif alignment
-    default: normal
     inputBinding:
       position: 103
       prefix: -align
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: memory style
-    default: default
     inputBinding:
       position: 103
       prefix: -dymem
@@ -77,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: style of error reporting
-    default: program
     inputBinding:
       position: 103
       prefix: -errorstyle
@@ -94,7 +91,6 @@ inputs:
       - 'null'
       - string
     doc: pseudoblast by default
-    default: pseudoblast
     inputBinding:
       position: 103
       prefix: -hitoutput
@@ -103,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: memory amount to use
-    default: 4000
     inputBinding:
       position: 103
       prefix: -kbyte
@@ -112,7 +107,6 @@ inputs:
       - 'null'
       - float
     doc: aln score cutoff
-    default: 8.0
     inputBinding:
       position: 103
       prefix: -lhaln
@@ -121,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of processed hits
-    default: 20000
     inputBinding:
       position: 103
       prefix: -lhmax
@@ -130,7 +123,6 @@ inputs:
       - 'null'
       - string
     doc: overlap rejection criteria in greedy assembly
-    default: query
     inputBinding:
       position: 103
       prefix: -lhreject
@@ -147,7 +139,6 @@ inputs:
       - 'null'
       - float
     doc: seed score cutoff
-    default: 10.0
     inputBinding:
       position: 103
       prefix: -lhseed
@@ -156,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: sequence window given to alignment
-    default: 50
     inputBinding:
       position: 103
       prefix: -lhwindow
@@ -173,7 +163,6 @@ inputs:
       - 'null'
       - float
     doc: Probability of a match in a non-motif conserved
-    default: 0.75
     inputBinding:
       position: 103
       prefix: -mm_cons
@@ -182,7 +171,6 @@ inputs:
       - 'null'
       - float
     doc: indel inside a conserved region
-    default: 0.025
     inputBinding:
       position: 103
       prefix: -mm_cons_indel
@@ -191,7 +179,6 @@ inputs:
       - 'null'
       - float
     doc: Probability of a match in a motif
-    default: 0.9
     inputBinding:
       position: 103
       prefix: -mm_motif
@@ -200,7 +187,6 @@ inputs:
       - 'null'
       - float
     doc: indel inside a motif
-    default: 1e-05
     inputBinding:
       position: 103
       prefix: -mm_motif_indel
@@ -209,7 +195,6 @@ inputs:
       - 'null'
       - float
     doc: Probability of a match in a spacer
-    default: 0.35
     inputBinding:
       position: 103
       prefix: -mm_spacer
@@ -218,7 +203,6 @@ inputs:
       - 'null'
       - float
     doc: indel inside a spacer
-    default: 0.1
     inputBinding:
       position: 103
       prefix: -mm_spacer_indel
@@ -227,7 +211,6 @@ inputs:
       - 'null'
       - float
     doc: cost of switching to conserved match
-    default: 1e-06
     inputBinding:
       position: 103
       prefix: -mm_switch_cons
@@ -236,7 +219,6 @@ inputs:
       - 'null'
       - float
     doc: cost of switching to motif match
-    default: 0.05
     inputBinding:
       position: 103
       prefix: -mm_switch_motif
@@ -325,7 +307,6 @@ inputs:
       - 'null'
       - float
     doc: simple pseudo count
-    default: 0.3
     inputBinding:
       position: 103
       prefix: -tfb_pseudo
@@ -342,7 +323,6 @@ inputs:
       - 'null'
       - float
     doc: bits cutoff for absolute matches
-    default: 11.0
     inputBinding:
       position: 103
       prefix: -tfm_cutoff
@@ -351,7 +331,6 @@ inputs:
       - 'null'
       - float
     doc: Relative to best possible score, accept if above irregardless of score
-    default: 0.95
     inputBinding:
       position: 103
       prefix: -tfm_rel
@@ -360,7 +339,6 @@ inputs:
       - 'null'
       - float
     doc: If above relsoft and above this bits score, accept
-    default: 11.0
     inputBinding:
       position: 103
       prefix: -tfm_relbits
@@ -370,7 +348,6 @@ inputs:
       - float
     doc: Relative to best possible score, accept if above this relative and bit 
       score
-    default: 0.9
     inputBinding:
       position: 103
       prefix: -tfm_relsoft
@@ -379,7 +356,6 @@ inputs:
       - 'null'
       - string
     doc: 'type of cutoff: absolute, relative, relative mixed'
-    default: abs
     inputBinding:
       position: 103
       prefix: -tfm_type

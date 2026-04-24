@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
-    default: false
     inputBinding:
       position: 101
       prefix: --async-io
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Default GZIP compression level, BAM compression level.
-    default: 5
     inputBinding:
       position: 101
       prefix: --compression
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Net cost of a 1bp gap in the genome.
-    default: -122
     inputBinding:
       position: 101
       prefix: --genome-gap-net-cost
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Net cost of a 1bp gap in the guide.
-    default: -121
     inputBinding:
       position: 101
       prefix: --guide-gap-net-cost
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Net cost of going from a match to a mismatch in the guide.
-    default: -120
     inputBinding:
       position: 101
       prefix: --guide-mismatch-net-cost
@@ -89,7 +84,6 @@ inputs:
       - string
     doc: 'Minimum severity log-level to emit. Options: Debug, Info, Warning, Error,
       Fatal.'
-    default: Info
     inputBinding:
       position: 101
       prefix: --log-level
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum gap bases between guide and PAM
-    default: 3
     inputBinding:
       position: 101
       prefix: --max-gaps-between-guide-and-pam
@@ -107,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of differences (mms+gaps) between guide and genome.
-    default: 5
     inputBinding:
       position: 101
       prefix: --max-guide-diffs
@@ -116,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum overlap allowed between alignments on the same strand.
-    default: 10
     inputBinding:
       position: 101
       prefix: --max-overlap
@@ -125,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum mismatches in the PAM.
-    default: 1
     inputBinding:
       position: 101
       prefix: --max-pam-mismatches
@@ -142,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: Exclude clusters of this more than this many variants.
-    default: 16
     inputBinding:
       position: 101
       prefix: --max-variants
@@ -151,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: Net cost of going from a match to a mismatch in the PAM.
-    default: -260
     inputBinding:
       position: 101
       prefix: --pam-mismatch-net-cost
@@ -174,7 +162,6 @@ inputs:
       - 'null'
       - int
     doc: Threads to use for alignments.
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads
@@ -183,7 +170,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to use for temporary files.
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmp-dir
@@ -200,7 +186,6 @@ inputs:
       - 'null'
       - int
     doc: Window size to align to.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --window-size

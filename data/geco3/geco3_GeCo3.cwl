@@ -19,7 +19,6 @@ inputs:
     doc: Compression level (integer [1;16]). It defines compressibility in 
       balance with computational resources (RAM & time). Use -s for levels 
       perception.
-    default: 5
     inputBinding:
       position: 102
       prefix: --level
@@ -47,7 +46,6 @@ inputs:
       - int
     doc: Hidden layer size (integer). It defines number of hidden nodes for the 
       neural network.
-    default: 40
     inputBinding:
       position: 102
       prefix: --hidden-size
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: Learning rate (real). It defines learning rate the neural network uses.
-    default: 0.03
     inputBinding:
       position: 102
       prefix: --learning-rate

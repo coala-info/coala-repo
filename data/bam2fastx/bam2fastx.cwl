@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level [1-9]
-    default: 1
     inputBinding:
       position: 102
       prefix: -c

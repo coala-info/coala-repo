@@ -44,7 +44,6 @@ inputs:
       if the object if found and complete; yes: download it even if it is found and
       is complete; all: ignore lock files; ALL: ignore lock files, restart download
       from beginning'
-    default: no
     inputBinding:
       position: 102
       prefix: --force
@@ -62,7 +61,6 @@ inputs:
       - string
     doc: Logging level as number or enum string. One of (fatal|sys|int|err|warn|info|debug)
       or (0-6) Current/default is warn
-    default: warn
     inputBinding:
       position: 102
       prefix: --log-level
@@ -71,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: 'Maximum file size to download in KB (exclusive). Default: 20G'
-    default: 20G
     inputBinding:
       position: 102
       prefix: --max-size
@@ -120,7 +117,6 @@ inputs:
       - 'null'
       - string
     doc: 'Resume partial downloads - one of: no, yes [default]'
-    default: yes
     inputBinding:
       position: 102
       prefix: --resume
@@ -129,7 +125,6 @@ inputs:
       - 'null'
       - string
     doc: 'Specify file type to download. Default: sra'
-    default: sra
     inputBinding:
       position: 102
       prefix: --type
@@ -148,7 +143,6 @@ inputs:
       - 'null'
       - string
     doc: 'Verify after download - one of: no, yes [default]'
-    default: yes
     inputBinding:
       position: 102
       prefix: --verify

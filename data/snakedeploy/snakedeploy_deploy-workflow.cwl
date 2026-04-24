@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: The name for the module in the resulting Snakefile
-    default: repository name
     inputBinding:
       position: 103
       prefix: --name

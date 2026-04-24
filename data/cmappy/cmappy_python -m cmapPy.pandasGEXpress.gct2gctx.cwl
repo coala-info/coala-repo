@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to print a bunch of output.
-    default: false
     inputBinding:
       position: 101
       prefix: -verbose

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: the number of partitions loaded each time
-    default: 3
     inputBinding:
       position: 101
       prefix: --batch_partition_size
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: the maximized number of splice graphs that will be combined
-    default: 200
     inputBinding:
       position: 101
       prefix: --max_group_size
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: ignore reads with CIGAR size larger than this value
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max_num_cigar
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: maximized number of threads
-    default: 10
     inputBinding:
       position: 101
       prefix: --max_threads
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - float
     doc: minimum log-ratio to identify a new boundary
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --min_boundary_log_ratio
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: the minimum score for bridging a paired-end reads
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --min_bridging_score
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: minimum distances required to start a new bundle
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_bundle_gap
@@ -105,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: minimum match length in each side for a spliced read
-    default: 3
     inputBinding:
       position: 101
       prefix: --min_flank_length
@@ -114,7 +106,6 @@ inputs:
       - 'null'
       - float
     doc: the minimized similarity for two graphs to be combined
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --min_grouping_similarity
@@ -123,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: ignore reads with mapping quality less than this value
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_mapping_quality
@@ -132,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of reads required in a bundle
-    default: 20
     inputBinding:
       position: 101
       prefix: --min_num_hits_in_bundle
@@ -141,7 +130,6 @@ inputs:
       - 'null'
       - float
     doc: minimum overlaping ratio to merge two single-exon transcripts
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --min_single_exon_clustering_overlap
@@ -150,7 +138,6 @@ inputs:
       - 'null'
       - float
     doc: minimum coverage required for a single-exon transcript
-    default: 20
     inputBinding:
       position: 101
       prefix: --min_single_exon_coverage
@@ -159,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of single-exon transcript
-    default: 250
     inputBinding:
       position: 101
       prefix: --min_single_exon_transcript_length
@@ -168,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: the minimum number of spliced reads required to support a junction
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_splice_bundary_hits
@@ -177,7 +162,6 @@ inputs:
       - 'null'
       - float
     doc: minimum coverage required for a multi-exon transcript
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --min_transcript_coverage
@@ -186,7 +170,6 @@ inputs:
       - 'null'
       - int
     doc: minimum transcript length base
-    default: 100
     inputBinding:
       position: 101
       prefix: --min_transcript_length_base
@@ -195,7 +178,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum length of a transcript: base + #exons * increase'
-    default: 20
     inputBinding:
       position: 101
       prefix: --min_transcript_length_increase
@@ -230,7 +212,6 @@ inputs:
       - 'null'
       - int
     doc: the length of a partition
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --region_partition_length

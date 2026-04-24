@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: separator character
-    default: .
     inputBinding:
       position: 101
       prefix: --separator

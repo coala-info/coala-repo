@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory containing nodes.dmp and names.dmp
-    default: /root/.taxonkit
     inputBinding:
       position: 102
       prefix: --data-dir
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: field index of PERCENTAGE
-    default: 5
     inputBinding:
       position: 102
       prefix: --field-percentage
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: field index of taxid
-    default: 2
     inputBinding:
       position: 102
       prefix: --field-rank
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: field index of taxid
-    default: 1
     inputBinding:
       position: 102
       prefix: --field-taxid
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: field index of TAXPATH
-    default: 3
     inputBinding:
       position: 102
       prefix: --field-taxpath
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: field index of TAXPATHSN
-    default: 4
     inputBinding:
       position: 102
       prefix: --field-taxpathsn
@@ -72,7 +66,6 @@ inputs:
       - type: array
         items: string
     doc: only consider leaves at these ranks
-    default:
       - species
       - strain
       - no rank
@@ -94,7 +87,6 @@ inputs:
       - type: array
         items: string
     doc: only show TaxIds and names of these ranks
-    default:
       - superkingdom
       - phylum
       - class
@@ -111,7 +103,6 @@ inputs:
       - 'null'
       - string
     doc: separator of taxid in TAXPATH and TAXPATHSN
-    default: '|'
     inputBinding:
       position: 102
       prefix: --taxid-sep
@@ -138,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs. 4 is enough
-    default: 4
     inputBinding:
       position: 102
       prefix: --threads

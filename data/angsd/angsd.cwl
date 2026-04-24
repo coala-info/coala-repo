@@ -147,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: How often should the program show progress
-    default: 100
     inputBinding:
       position: 101
       prefix: -howOften
@@ -164,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of queued elements
-    default: -1
     inputBinding:
       position: 101
       prefix: -nQueueSize
@@ -173,7 +171,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: -nThreads

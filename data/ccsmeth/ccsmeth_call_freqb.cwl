@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: number of base clipped in each read, default 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --base_clip
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: histogram bin size, default 20
-    default: 20
     inputBinding:
       position: 101
       prefix: --bin_size
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: 'call mode: count, aggregate. default count.'
-    default: count
     inputBinding:
       position: 101
       prefix: --call_mode
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: chunk length
-    default: 500000
     inputBinding:
       position: 101
       prefix: --chunk_len
@@ -104,7 +100,6 @@ inputs:
       - 'null'
       - string
     doc: haplotype tag, default HP
-    default: HP
     inputBinding:
       position: 101
       prefix: --hap_tag
@@ -113,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: BiRNN hidden_size, default 32
-    default: 32
     inputBinding:
       position: 101
       prefix: --hid_rnn
@@ -122,7 +116,6 @@ inputs:
       - 'null'
       - float
     doc: identity cutoff for selecting alignment items, [0.0, 1.0], default 0.0
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --identity
@@ -137,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: BiRNN layer num, default 1
-    default: 1
     inputBinding:
       position: 101
       prefix: --layer_rnn
@@ -146,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: MAPping Quality cutoff for selecting alignment items, default 1
-    default: 1
     inputBinding:
       position: 101
       prefix: --mapq
@@ -155,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: 0-based location of the targeted base in the motif, default 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --mod_loc
@@ -164,7 +154,6 @@ inputs:
       - 'null'
       - string
     doc: "type of model to use, 'attbigru', 'attbilstm', default: attbigru"
-    default: attbigru
     inputBinding:
       position: 101
       prefix: --model_type
@@ -173,7 +162,6 @@ inputs:
       - 'null'
       - string
     doc: modification type, default 5mC.
-    default: 5mC
     inputBinding:
       position: 101
       prefix: --modtype
@@ -184,7 +172,6 @@ inputs:
     doc: 'motif seq to be extracted, default: CG. can be multi motifs splited by comma
       (no space allowed in the input str), or use IUPAC alphabet, the mod_loc of all
       motifs must be the same'
-    default: CG
     inputBinding:
       position: 101
       prefix: --motifs
@@ -236,7 +223,6 @@ inputs:
     doc: this is to remove ambiguous calls (only for count-mode now). if 
       abs(prob1-prob0)>=prob_cf, then we use the call. e.g., proc_cf=0 means use
       all calls. range [0, 1], default 0.0.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --prob_cf
@@ -269,7 +255,6 @@ inputs:
       - 'null'
       - int
     doc: len of sites used. default 11
-    default: 11
     inputBinding:
       position: 101
       prefix: --seq_len
@@ -286,7 +271,6 @@ inputs:
       - 'null'
       - int
     doc: number of subprocesses used.
-    default: 5
     inputBinding:
       position: 101
       prefix: --threads

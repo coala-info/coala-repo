@@ -21,7 +21,6 @@ inputs:
       - int
     doc: (Default 10). Number of alignments to report. Passed to -k flag of 
       bowtie2.
-    default: 10
     inputBinding:
       position: 103
       prefix: --bt2-k

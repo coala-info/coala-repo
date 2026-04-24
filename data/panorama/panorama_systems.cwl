@@ -12,7 +12,6 @@ inputs:
         items: string
     doc: Name of the annotation sources to load if different from the system 
       source. Can specify more than one, separated by space.
-    default: None
     inputBinding:
       position: 101
       prefix: --annotation_sources
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - boolean
     doc: disables the progress bars
-    default: false
     inputBinding:
       position: 101
       prefix: --disable_prog_bar
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force writing in output directory and in pangenome output file.
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -41,7 +38,6 @@ inputs:
     doc: Minimum Jaccard similarity used to filter edges between gene families. 
       Increasing this value improves precision but significantly lowers 
       sensitivity.
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --jaccard
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - File
     doc: log output file
-    default: stdout
     inputBinding:
       position: 101
       prefix: --log
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Number of available threads.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -88,7 +82,6 @@ inputs:
       - int
     doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
       for debug)
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbose

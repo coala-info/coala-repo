@@ -21,7 +21,6 @@ inputs:
       - File
     doc: FASTA primer file with which new primers should not form dimers. 
       Sequences >40 nt are ignored. Can significantly increase runtime.
-    default: None
     inputBinding:
       position: 103
       prefix: --compatible-primers
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: location of the BLAST db
-    default: None
     inputBinding:
       position: 103
       prefix: --database
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: max length of the amplicons
-    default: 1500
     inputBinding:
       position: 103
       prefix: --max-length
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: max number of ambiguous characters in a primer
-    default: 2
     inputBinding:
       position: 103
       prefix: --n-ambig
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: optimal length of the amplicons
-    default: 1000
     inputBinding:
       position: 103
       prefix: --opt-length
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: report the top n best hits
-    default: inf
     inputBinding:
       position: 103
       prefix: --report-n
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: name of the scheme
-    default: varVAMP
     inputBinding:
       position: 103
       prefix: --name
@@ -84,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

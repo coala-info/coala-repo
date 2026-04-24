@@ -54,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: Choose validation level (Info, Warn, Error), default level is Info!
-    default: Info
     inputBinding:
       position: 101
       prefix: --level

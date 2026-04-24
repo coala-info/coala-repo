@@ -17,7 +17,6 @@ inputs:
       after the first compression. Compression is first performed. Elements that
       remain unmerged and are shorter than this length are then removed, and 
       compression is performed again.
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-size
@@ -35,7 +34,6 @@ inputs:
       - int
     doc: Remove an element if it occurs more than x times in any genome. Use 0 
       to disable removal
-    default: 0
     inputBinding:
       position: 102
       prefix: --remove-dup

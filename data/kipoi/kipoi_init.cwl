@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the new Kipoi model
-    default: my_model
     inputBinding:
       position: 101
 outputs:

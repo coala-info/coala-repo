@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: library type of the sample
-    default: unstranded
     inputBinding:
       position: 101
       prefix: --library_type
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: ignore reads with CIGAR size larger than this value
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max_num_cigar
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: minimum distances required to start a new bundle
-    default: 100
     inputBinding:
       position: 101
       prefix: --min_bundle_gap
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: minimum match length in each side for a spliced read
-    default: 3
     inputBinding:
       position: 101
       prefix: --min_flank_length
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: ignore reads with mapping quality less than this value
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_mapping_quality
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of reads required in a bundle
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_num_hits_in_bundle
@@ -70,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: minimum coverage required for a single-exon transcript
-    default: 20
     inputBinding:
       position: 101
       prefix: --min_single_exon_coverage
@@ -79,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: minimum coverage required for a multi-exon transcript
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --min_transcript_coverage
@@ -89,7 +81,6 @@ inputs:
       - int
     doc: minimum length of a transcript would be --min_transcript_length_base + 
       --min_transcript_length_increase * num-of-exons
-    default: 150
     inputBinding:
       position: 101
       prefix: --min_transcript_length_base
@@ -98,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: minimum transcript length increase
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_transcript_length_increase
@@ -115,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: '0: quiet; 1: one line for each graph; 2: with details'
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbose

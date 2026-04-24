@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether matches/ion are distinct (as opposed to total).
-    default: true
     inputBinding:
       position: 103
       prefix: --distinct-matches
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Legal values are auto, tsv, sqt, pepxml or mzidentml format.
-    default: auto
     inputBinding:
       position: 103
       prefix: --input-format
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - Directory
     doc: The name of the directory where output files will be created.
-    default: crux-output
     inputBinding:
       position: 103
       prefix: --output-dir
@@ -51,7 +48,6 @@ inputs:
       - boolean
     doc: Replace existing files if true or fail when trying to overwrite a file 
       if false.
-    default: false
     inputBinding:
       position: 103
       prefix: --overwrite
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - File
     doc: A file containing parameters.
-    default: ''
     inputBinding:
       position: 103
       prefix: --parameter-file
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - File
     doc: The name of the file in FASTA format.
-    default: ''
     inputBinding:
       position: 103
       prefix: --protein-database
@@ -81,7 +75,6 @@ inputs:
       messages, including all those at lower verbosity levels: 0-fatal errors, 10-non-fatal
       errors, 20-warnings, 30-information on the progress of execution, 40-more progress
       information, 50-debug info, 60-detailed debug info.'
-    default: 30
     inputBinding:
       position: 103
       prefix: --verbosity

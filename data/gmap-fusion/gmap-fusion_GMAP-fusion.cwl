@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: number threads for GMAP
-    default: 4
     inputBinding:
       position: 101
       prefix: --CPU
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: E-value threshold for blast searches
-    default: 0.001
     inputBinding:
       position: 101
       prefix: -E
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: maximum allowed overlap of extended length from breakpoint
-    default: 12
     inputBinding:
       position: 101
       prefix: --max_fuzzy_overlap
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of partners allowed for a given fusion.
-    default: 3
     inputBinding:
       position: 101
       prefix: --max_promiscuity
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length for a chimeric alignment
-    default: 30
     inputBinding:
       position: 101
       prefix: --min_chim_len
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of junction frags
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_J
@@ -78,7 +72,6 @@ inputs:
       - int
     doc: minimum number of junction reads required for novel (non-reference) 
       exon-exon junction support.
-    default: 3
     inputBinding:
       position: 101
       prefix: --min_novel_junction_support
@@ -87,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: minimum sum (junction + spanning) frags
-    default: 2
     inputBinding:
       position: 101
       prefix: --min_sumJS
@@ -96,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: output directory name
-    default: GMAP_Fusion
     inputBinding:
       position: 101
       prefix: --output
@@ -112,7 +103,6 @@ inputs:
       - int
     doc: in assessing breakpoint quality, the length to extend each split 
       sequence beyond the proposed breakpoint.
-    default: 25
     inputBinding:
       position: 101
       prefix: --split_breakpoint_extend_length

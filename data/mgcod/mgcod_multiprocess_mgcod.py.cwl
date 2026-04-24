@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Batch size for multiprocessing.
-    default: 256
     inputBinding:
       position: 101
       prefix: --batch_size
@@ -35,7 +34,6 @@ inputs:
       - int
     doc: Number of consecutive gene labels to be required with same genetic code
       to keep. Only relevant for isoform prediction. Minimum is 2.
-    default: 5
     inputBinding:
       position: 101
       prefix: --consecutive_gene_labels
@@ -45,7 +43,6 @@ inputs:
       - int
     doc: Number of consecutive windows to be required with same genetic code to 
       keep. Only relevant for isoform prediction. Minimum is 2.
-    default: 3
     inputBinding:
       position: 101
       prefix: --consecutive_windows
@@ -85,7 +82,6 @@ inputs:
       - Directory
     doc: Directory where to save MGM predictions so that they can be re-used. If
       path does not exist, it will be created.
-    default: ./mgm_results/
     inputBinding:
       position: 101
       prefix: --path_to_mgm_predictions
@@ -113,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes.
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads
@@ -124,7 +119,6 @@ inputs:
     doc: The maximally tolerated difference in prediction of gene start or gene 
       stop to consider the prediction of two models isoforms. Only relevent for 
       isoform prediction.
-    default: 30
     inputBinding:
       position: 101
       prefix: --tolerance
@@ -134,7 +128,6 @@ inputs:
       - int
     doc: Window size in bp applied to search for isoform. Only relevant for 
       isoform prediction.
-    default: 5000
     inputBinding:
       position: 101
       prefix: --window_size

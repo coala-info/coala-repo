@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include records that have failed one or more filters
-    default: false
     inputBinding:
       position: 102
       prefix: --filtered
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Comma-separated labels for each input VCF file
-    default: basenames
     inputBinding:
       position: 102
       prefix: --labels
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force interpretation as SV
-    default: false
     inputBinding:
       position: 102
       prefix: --sv
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Window for comparing breakpoint positions for SVs
-    default: 100
     inputBinding:
       position: 102
       prefix: --svwindow

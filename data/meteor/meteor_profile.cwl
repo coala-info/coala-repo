@@ -13,7 +13,6 @@ inputs:
       - float
     doc: 'Cutoff above which a module is considered as present in a species. Value
       between 0.0 and 1.0 (default: 0.9).'
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --completeness
@@ -23,7 +22,6 @@ inputs:
       - int
     doc: 'Number of signature genes per species (MSP) used to estimate their respective
       abundance (default: 100).'
-    default: 100
     inputBinding:
       position: 101
       prefix: --core_size
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: 'Multiplication factor for coverage normalization (default: 100).'
-    default: 100
     inputBinding:
       position: 101
       prefix: -c
@@ -49,7 +46,6 @@ inputs:
       - string
     doc: 'Minimal proportion of core genes detected in a sample to consider a species
       (MSP) as present (default: auto).'
-    default: auto
     inputBinding:
       position: 101
       prefix: --msp_filter
@@ -59,7 +55,6 @@ inputs:
       - string
     doc: 'Normalization applied to raw gene counts (default: coverage). Options: coverage,
       fpkm, raw.'
-    default: coverage
     inputBinding:
       position: 101
       prefix: -n
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: 'Rarefaction level. If <= 0, no rarefation is performed (default: 0).'
-    default: 0
     inputBinding:
       position: 101
       prefix: -l
@@ -84,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: 'Seed of the random number generator used for rarefaction (default: 1234).'
-    default: 1234
     inputBinding:
       position: 101
       prefix: --seed

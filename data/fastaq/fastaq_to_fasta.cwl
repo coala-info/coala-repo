@@ -24,7 +24,6 @@ inputs:
       - int
     doc: Number of bases on each sequence line of output file. Set to zero for 
       no linebreaks in sequences
-    default: 60
     inputBinding:
       position: 102
       prefix: --line_length

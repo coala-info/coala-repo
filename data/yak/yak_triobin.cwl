@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Mid occurrence count for a triobin.
-    default: 5
     inputBinding:
       position: 104
       prefix: -d
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum occurrence count for a triobin.
-    default: 2
     inputBinding:
       position: 104
       prefix: -c
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 8
     inputBinding:
       position: 104
       prefix: -t

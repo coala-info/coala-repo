@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Limits use of 24-bit integers
-    default: 24
     inputBinding:
       position: 101
       prefix: --bits
@@ -275,7 +274,6 @@ inputs:
       - 'null'
       - float
     doc: Missing Value Code
-    default: -99.999
     inputBinding:
       position: 101
       prefix: -xname
@@ -348,7 +346,6 @@ inputs:
       - 'null'
       - string
     doc: Output file prefix
-    default: merlin
     inputBinding:
       position: 101
       prefix: --prefix
@@ -373,7 +370,6 @@ inputs:
       - 'null'
       - int
     doc: Random Seed
-    default: 123456
     inputBinding:
       position: 101
       prefix: -r9999
@@ -519,7 +515,6 @@ inputs:
       - 'null'
       - float
     doc: VC Linkage unlinked parameter
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --unlinked

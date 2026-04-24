@@ -10,7 +10,6 @@ inputs:
       - int
     doc: 'Identity required for a barcode to be included after filtering (default:
       90)'
-    default: 90
     inputBinding:
       position: 101
       prefix: --adapter_threshold
@@ -20,7 +19,6 @@ inputs:
       - boolean
     doc: 'Writes a CSV file for each input file containing barcode calls for each
       read. (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --annotate_files
@@ -30,7 +28,6 @@ inputs:
       - boolean
     doc: 'Reads will be binned based on their barcode and saved to separate files.
       (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --bin_barcodes
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of barcodes to classify before filtering barcode set (default: 1000)'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --check_reads
@@ -48,7 +44,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Writes extended information about barcode calls. (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --extended_info
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: 'Demuxing mode, one of ["stringent","lenient","porechop"]. (default: porechop)'
-    default: porechop
     inputBinding:
       position: 101
       prefix: --mode
@@ -92,7 +86,6 @@ inputs:
       - int
     doc: 'The number of reads to process (and hold in memory) at a time (default:
       200)'
-    default: 200
     inputBinding:
       position: 101
       prefix: --num_reads_in_batch
@@ -101,7 +94,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Output directory (default: working directory)'
-    default: working directory
     inputBinding:
       position: 101
       prefix: --output_dir
@@ -110,7 +102,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Only attempts to match the 96 PCR barcodes (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --pcr_barcodes
@@ -127,7 +118,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Only attempts to match the 12 rapid barcodes (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --rapid_barcodes
@@ -137,7 +127,6 @@ inputs:
       - boolean
     doc: 'Reports double/single barcode call to csv in single/double barcoding mode
       (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --report_alternate_call
@@ -155,7 +144,6 @@ inputs:
       - float
     doc: 'The second barcode must have at least this percent identity (and match the
       first one) (default: 5)'
-    default: 5
     inputBinding:
       position: 101
       prefix: --score_diff
@@ -165,7 +153,6 @@ inputs:
       - string
     doc: 'Comma-delimited string of alignment scores: match, mismatch, gap open, gap
       extend (default: 3,-6,-5,-2)'
-    default: 3,-6,-5,-2
     inputBinding:
       position: 101
       prefix: --scoring_scheme
@@ -175,7 +162,6 @@ inputs:
       - float
     doc: 'The second barcode must have at least this percent identity (and match the
       first one) (default: 65)'
-    default: 65
     inputBinding:
       position: 101
       prefix: --secondary_threshold
@@ -184,7 +170,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Writes another file with information about barcode calls. (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --summary_info
@@ -193,7 +178,6 @@ inputs:
       - 'null'
       - int
     doc: 'The number of threads to use (1 to turn off multithreading) (default: 2)'
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads
@@ -202,7 +186,6 @@ inputs:
       - 'null'
       - float
     doc: 'A read must have at least this percent identity to a barcode (default: 75)'
-    default: 75
     inputBinding:
       position: 101
       prefix: --threshold
@@ -211,7 +194,6 @@ inputs:
       - 'null'
       - int
     doc: 'Level of output information: 0 = none, 1 = some, 2 = lots (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbosity

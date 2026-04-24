@@ -115,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: 'value of j for constituent jmers of a kmer (default: 23).'
-    default: 23
     inputBinding:
       position: 103
   - id: stats_type
@@ -123,7 +122,6 @@ inputs:
       - 'null'
       - string
     doc: 'what stats? (mono, cc_density, color_dist, jmerkmer), default: mono'
-    default: mono
     inputBinding:
       position: 103
   - id: use_colorclasses

@@ -18,7 +18,6 @@ inputs:
         items: string
     doc: File pattern to exclude from error checking (can be specified multiple 
       times)
-    default:
       - .git
       - .lineage
       - .nf-test
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: Format scripts and config files that have no errors
-    default: false
     inputBinding:
       position: 102
       prefix: -format
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use Harshil alignment
-    default: false
     inputBinding:
       position: 102
       prefix: -harshil-alignment
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output mode for reporting errors: full, extended, concise, json'
-    default: full
     inputBinding:
       position: 102
       prefix: -output
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - boolean
     doc: Sort script declarations in Nextflow scripts
-    default: false
     inputBinding:
       position: 102
       prefix: -sort-declarations
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Number of spaces to indent
-    default: 0
     inputBinding:
       position: 102
       prefix: -spaces
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - boolean
     doc: Indent with tabs
-    default: false
     inputBinding:
       position: 102
       prefix: -tabs

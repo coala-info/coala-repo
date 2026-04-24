@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Primer pool number
-    default: 1
     inputBinding:
       position: 102
       prefix: --pool
@@ -50,7 +49,6 @@ inputs:
       - float
     doc: The sum of the concentrations of monovalent ions (Na+, K+, NH4+), in 
       molar
-    default: 0.18
     inputBinding:
       position: 102
       prefix: --sodium
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: Annealing temperature in Degree Celsius
-    default: 60.0
     inputBinding:
       position: 102
       prefix: --temperature
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: Name of validation
-    default: olivar-sensitivity
     inputBinding:
       position: 102
       prefix: --title

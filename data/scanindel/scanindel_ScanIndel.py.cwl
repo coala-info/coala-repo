@@ -20,7 +20,6 @@ inputs:
       - boolean
     doc: only execute de novo assembly for indel calling without blat 
       realignment
-    default: false
     inputBinding:
       position: 103
       prefix: --assembly_only
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: Blat sequence identity cutoff
-    default: 0.8
     inputBinding:
       position: 103
       prefix: --blat_ident_pct_cutoff
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: gfServer service port number
-    default: 50000
     inputBinding:
       position: 103
       prefix: --gfServer_port
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - float
     doc: The factor about the indel's heterogenirity and heterozygosity
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --hetero_factor
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: low quality cutoff value
-    default: 20
     inputBinding:
       position: 103
       prefix: --lowqual_cutoff
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - boolean
     doc: only execute blat realignment withou de novo assembly for indel calling
-    default: false
     inputBinding:
       position: 103
       prefix: --mapping_only
@@ -82,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: low mapping quality cutoff
-    default: 1
     inputBinding:
       position: 103
       prefix: --mapq_cutoff
@@ -91,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: setting min-alternate-count for FreeBayes
-    default: 2
     inputBinding:
       position: 103
       prefix: -C
@@ -100,7 +92,6 @@ inputs:
       - 'null'
       - float
     doc: setting min-alternate-fraction for FreeBayes
-    default: 0.2
     inputBinding:
       position: 103
       prefix: -F
@@ -109,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: setting min-coverage for Freebayes
-    default: 0
     inputBinding:
       position: 103
       prefix: -d
@@ -118,7 +108,6 @@ inputs:
       - 'null'
       - float
     doc: min percentage of high quality base in soft clipping reads
-    default: 0.8
     inputBinding:
       position: 103
       prefix: --min_percent_hq
@@ -127,7 +116,6 @@ inputs:
       - 'null'
       - Directory
     doc: setting the output directory
-    default: current working directory
     inputBinding:
       position: 103
       prefix: -o
@@ -144,7 +132,6 @@ inputs:
       - 'null'
       - float
     doc: softclipping percentage triggering BLAT re-alignment
-    default: 0.2
     inputBinding:
       position: 103
       prefix: -s

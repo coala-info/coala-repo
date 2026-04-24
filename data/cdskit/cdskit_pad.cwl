@@ -11,7 +11,6 @@ inputs:
     doc: "Codon table ID. The standard code is \"1\".\n                        See
       here for details: https://www.ncbi.nlm.nih.gov/Tax\n                       \
       \ onomy/Utils/wprintgc.cgi"
-    default: 1
     inputBinding:
       position: 101
       prefix: --codontable
@@ -21,7 +20,6 @@ inputs:
       - string
     doc: "Input sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --inseqformat
@@ -31,7 +29,6 @@ inputs:
       - boolean
     doc: "Drop sequences that contain stop\n                        codon(s) even
       after padding to 5'- or 3'- terminal."
-    default: false
     inputBinding:
       position: 101
       prefix: --nopseudo
@@ -41,7 +38,6 @@ inputs:
       - string
     doc: "Output sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --outseqformat
@@ -51,7 +47,6 @@ inputs:
       - string
     doc: "A character to be used to pad when the\n                        sequence
       length is not multiple of three."
-    default: N
     inputBinding:
       position: 101
       prefix: --padchar
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - File
     doc: Input sequence file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --seqfile

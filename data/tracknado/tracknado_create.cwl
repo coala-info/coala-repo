@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: Set the initial viewing coordinates for the hub.
-    default: chr1:10000-20000
     inputBinding:
       position: 101
       prefix: --default-pos
@@ -65,7 +64,6 @@ inputs:
       - string
     doc: The genome assembly ID (e.g., hg38, mm10). For custom genomes, use this
       as the assembly name.
-    default: hg38
     inputBinding:
       position: 101
       prefix: --genome-name
@@ -74,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: Contact email displayed on the hub's description page.
-    default: alastair.smith@ndcls.ox.ac.uk
     inputBinding:
       position: 101
       prefix: --hub-email
@@ -83,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: The short identifier for the hub (used in UCSC URL).
-    default: HUB
     inputBinding:
       position: 101
       prefix: --hub-name
@@ -165,7 +161,6 @@ inputs:
       - 'null'
       - string
     doc: Base URL where the hub will be hosted (used for final URL reporting).
-    default: https://userweb.molbiol.ox.ac.uk
     inputBinding:
       position: 101
       prefix: --url-prefix

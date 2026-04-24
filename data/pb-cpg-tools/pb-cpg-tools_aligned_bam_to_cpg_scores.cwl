@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: The 2-letter SAM aux tag used for per-read haplotype ids in the input bam
-    default: HP
     inputBinding:
       position: 101
       prefix: --hap-tag
@@ -30,7 +29,6 @@ inputs:
     doc: Minimum site coverage. The tensorflow prediction models have their own hard-coded
       minimum coverage of 4, so any value below this level should have no effect in
       'model' pileup mode
-    default: 4
     inputBinding:
       position: 101
       prefix: --min-coverage
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read mapping quality
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-mapq
@@ -50,7 +47,6 @@ inputs:
     doc: 'Method to pick 5mC scoring sites. Possible values: denovo (Pick sites where
       "CG" is present in the majority of the reads), reference (Pick sites where "CG"
       is present in the reference sequence)'
-    default: denovo
     inputBinding:
       position: 101
       prefix: --modsites-mode
@@ -60,7 +56,6 @@ inputs:
       - string
     doc: 'Method to estimate site methylation from the read pileup. Possible values:
       model (Deep learning model-based approach), count (Simple count-based approach)'
-    default: model
     inputBinding:
       position: 101
       prefix: --pileup-mode

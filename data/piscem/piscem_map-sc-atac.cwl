@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: the length of the barcode sequence
-    default: 16
     inputBinding:
       position: 101
       prefix: --bclen
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: size for bin overlap, default set to 300
-    default: 300
     inputBinding:
       position: 101
       prefix: --bin-overlap
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: size of virtual color, default set to 1000
-    default: 1000
     inputBinding:
       position: 101
       prefix: --bin-size
@@ -66,7 +63,6 @@ inputs:
       - int
     doc: the capacity of the cache used to provide fast lookup for k-mers at the ends
       of unitigs
-    default: 5000000
     inputBinding:
       position: 101
       prefix: --end-cache-capacity
@@ -92,7 +88,6 @@ inputs:
       - int
     doc: determines the maximum cardinality equivalence class (number of (txp, orientation
       status) pairs) to examine (cannot be used with --ignore-ambig-hits)
-    default: 4096
     inputBinding:
       position: 101
       prefix: --max-ec-card
@@ -101,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: in the first pass, consider only k-mers having <= --max-hit-occ hits
-    default: 256
     inputBinding:
       position: 101
       prefix: --max-hit-occ
@@ -111,7 +105,6 @@ inputs:
       - int
     doc: if all k-mers have > --max-hit-occ hits, then make a second pass and consider
       k-mers having <= --max-hit-occ-recover hits
-    default: 1024
     inputBinding:
       position: 101
       prefix: --max-hit-occ-recover
@@ -121,7 +114,6 @@ inputs:
       - int
     doc: reads with more than this number of mappings will not have their mappings
       reported
-    default: 2500
     inputBinding:
       position: 101
       prefix: --max-read-occ
@@ -183,7 +175,6 @@ inputs:
       - string
     doc: 'the skipping strategy to use for k-mer collection [possible values: permissive,
       strict]'
-    default: permissive
     inputBinding:
       position: 101
       prefix: --skipping-strategy
@@ -200,7 +191,6 @@ inputs:
       - 'null'
       - float
     doc: threshold to be considered for pseudoalignment, default set to 0.7
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --thr
@@ -209,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 16
     inputBinding:
       position: 101
       prefix: --threads

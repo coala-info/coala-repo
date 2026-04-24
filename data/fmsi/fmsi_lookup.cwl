@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Size of k-mers
-    default: infer automatically from index
     inputBinding:
       position: 102
       prefix: -k
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - File
     doc: Path to FASTA/FASTQ with queries
-    default: stdin
     inputBinding:
       position: 102
       prefix: -q

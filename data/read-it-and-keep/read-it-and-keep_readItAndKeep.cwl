@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of match required to keep a read in bp
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_map_length
@@ -37,7 +36,6 @@ inputs:
       - float
     doc: Minimum length of match required to keep a read, as a percent of the 
       read length
-    default: 50.0
     inputBinding:
       position: 101
       prefix: --min_map_length_pc
@@ -72,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: Sequencing technology, must be 'illumina' or 'ont'
-    default: illumina
     inputBinding:
       position: 101
       prefix: --tech

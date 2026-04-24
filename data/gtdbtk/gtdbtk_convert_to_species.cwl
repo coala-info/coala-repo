@@ -10,7 +10,6 @@ inputs:
       - boolean
     doc: "add all missing ranks to the leaf nodes if they are\npresent in the reference
       tree."
-    default: false
     inputBinding:
       position: 101
       prefix: --all_ranks
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - boolean
     doc: create intermediate files for debugging purposes
-    default: false
     inputBinding:
       position: 101
       prefix: --debug

@@ -39,7 +39,6 @@ inputs:
       - float
     doc: 'Maximum allowed fraction of total genome CDS length for focal region [Default:
       0.05].'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --max-focal-cds-fraction
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of simulations to run [Default: 10000].'
-    default: 10000
     inputBinding:
       position: 101
       prefix: --num-sims
@@ -65,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: 'Random seed for reproducible results [Default: 42].'
-    default: 42
     inputBinding:
       position: 101
       prefix: --seed

@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum input site length for filtering --in BED file
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --max-len
@@ -32,7 +31,6 @@ inputs:
       - float
     doc: Minimum intron overlap of a site to be reported as intron overlapping 
       (intersectBed -f parameter)
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --min-intron-ol
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum input site length for filtering --in BED file
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --min-len
@@ -51,7 +48,6 @@ inputs:
       - boolean
     doc: Reverse filtering (keep values <= --thr and prefer sites with smaller 
       values)
-    default: false
     inputBinding:
       position: 101
       prefix: --rev-filter
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: Filter out --in BED regions < --thr column 5 score
-    default: no filtering
     inputBinding:
       position: 101
       prefix: --thr

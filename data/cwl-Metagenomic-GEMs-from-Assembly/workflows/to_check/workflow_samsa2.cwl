@@ -36,13 +36,11 @@ inputs:
     type: int?
     doc: number of threads to use for computational processes
     label: number of threads
-    default: 2
 
   step:
     type: int?
     label: CWL base step number
     doc: Step number for order of steps
-    default: 3
 
   destination:
     type: string?
@@ -69,9 +67,7 @@ steps:
       identifier: identifier
       threads: threads
       database:
-        default: "/unlock/references/databases/ncbi/Refseq_Bacterial/diamond/ncbi-bact-refseq_28-01-2020_proteins.dmnd"
       maxtargetseq:
-        default: 1
       forward_reads: forward_reads
       reverse_reads: reverse_reads
     out: [output_diamond]
@@ -87,9 +83,7 @@ steps:
       output:
         valueFrom: $(inputs.identifier)_seed
       database:
-        default: "/unlock/references/databases/SEED/diamond/seed_subsystems_db.dmnd"
       maxtargetseq:
-        default: 1
       forward_reads: forward_reads
       reverse_reads: reverse_reads
     out: [output_diamond]

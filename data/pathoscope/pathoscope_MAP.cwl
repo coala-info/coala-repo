@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: 'Experiment Tag added to files generated for identification (Default: pathomap)'
-    default: pathomap
     inputBinding:
       position: 101
       prefix: -expTag
@@ -65,7 +64,6 @@ inputs:
       - 'null'
       - Directory
     doc: Index Directory (Default=. (current directory))
-    default: .
     inputBinding:
       position: 101
       prefix: -indexDir
@@ -98,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use by aligner (bowtie2) if different from default (8)
-    default: 8
     inputBinding:
       position: 101
       prefix: -numThreads

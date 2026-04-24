@@ -69,7 +69,6 @@ inputs:
       - string
     doc: 'Proteoform match criteria. Valid values: STRICT, SUPERSET, SUPERSET_NO_TYPES,
       SUBSET, SUBSET_NO_TYPES, ONE, ONE_NO_TYPES.'
-    default: SUBSET
     inputBinding:
       position: 101
       prefix: --matchType
@@ -78,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Integer range of error for PTM sites.
-    default: 0
     inputBinding:
       position: 101
       prefix: --range

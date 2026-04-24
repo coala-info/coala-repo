@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: TCP port to communicate over
-    default: 3130
     inputBinding:
       position: 101
       prefix: --port
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for the random number generator
-    default: 1234
     inputBinding:
       position: 101
       prefix: --seed
@@ -34,7 +32,6 @@ inputs:
       - int
     doc: Maximum number of threads. If 0, mapAD will select the number of 
       threads automatically.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -52,7 +52,6 @@ inputs:
     doc: "Dataloader source to use. Specified in\n                        ~/.kipoi/config.yaml
       under model_sources. 'dir' is an\n                        additional source
       referring to the local folder."
-    default: kipoi
     inputBinding:
       position: 102
       prefix: --source

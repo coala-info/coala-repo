@@ -235,7 +235,6 @@ inputs:
       - 'null'
       - string
     doc: Resampling method to use.
-    default: near
     inputBinding:
       position: 102
       prefix: -r

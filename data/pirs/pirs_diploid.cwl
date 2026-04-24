@@ -26,7 +26,6 @@ inputs:
       - float
     doc: A floating-point number in the interval [0, 1] that specifies the 
       heterozygous indel rate.
-    default: 0.0001
     inputBinding:
       position: 102
       prefix: --indel-rate
@@ -44,7 +43,6 @@ inputs:
       - string
     doc: The string "text" or "gzip" to specify the type of the output FASTA 
       file containing the diploid copy of the genome, as well as the log files.
-    default: text
     inputBinding:
       position: 102
       prefix: --output-file-type
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Use PREFIX as the prefix of the output file and logs.
-    default: pirs_diploid
     inputBinding:
       position: 102
       prefix: --output-prefix
@@ -79,7 +76,6 @@ inputs:
       - float
     doc: A floating-point number in the interval [0, 1] that specifies the 
       heterozygous SNP rate.
-    default: 0.001
     inputBinding:
       position: 102
       prefix: --snp-rate
@@ -90,7 +86,6 @@ inputs:
     doc: A floating-point number in the interval [0, 1] that specifies the 
       large-scale structural variation (insertion, deletion, inversion) rate in 
       the diploid genome.
-    default: 1e-06
     inputBinding:
       position: 102
       prefix: --sv-rate
@@ -103,7 +98,6 @@ inputs:
       changed into a pyrimidine or vice-versa. This option specifies a 
       floating-point number RATIO that gives the ratio of the transition 
       probability to the transversion probability for simulated SNPs.
-    default: 2.0
     inputBinding:
       position: 102
       prefix: --transition-to-transversion-ratio

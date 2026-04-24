@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Database to download. Defaults to 'uniref100'
-    default: uniref100
     inputBinding:
       position: 1
   - id: download_directory
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Skip check of downloaded fasta file. Default: False'
-    default: false
     inputBinding:
       position: 102
       prefix: --skip_check
@@ -52,7 +50,6 @@ inputs:
       - string
     doc: Name of ete3 sqlite file to be created within --taxdir. Defaults to 
       'taxonomy.sqlite'
-    default: taxonomy.sqlite
     inputBinding:
       position: 102
       prefix: --sqlitedb
@@ -62,7 +59,6 @@ inputs:
       - Directory
     doc: Directory to store NCBI taxdump files. Defaults to 'taxonomy/' in 
       current directory
-    default: taxonomy/
     inputBinding:
       position: 102
       prefix: --taxdir

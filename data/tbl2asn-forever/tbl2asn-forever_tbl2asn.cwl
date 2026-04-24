@@ -67,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: Delayed Genomic Product Set
-    default: F
     inputBinding:
       position: 101
       prefix: -J
@@ -100,7 +99,6 @@ inputs:
       - 'null'
       - string
     doc: File Type
-    default: a
     inputBinding:
       position: 101
       prefix: -a
@@ -109,7 +107,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force Local protein_id/transcript_id
-    default: F
     inputBinding:
       position: 101
       prefix: -L
@@ -118,7 +115,6 @@ inputs:
       - 'null'
       - boolean
     doc: General ID to Note
-    default: F
     inputBinding:
       position: 101
       prefix: -h
@@ -127,7 +123,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Generate GenBank File (obsolete: use -V b)'
-    default: F
     inputBinding:
       position: 101
       prefix: -b
@@ -144,7 +139,6 @@ inputs:
       - 'null'
       - boolean
     doc: Genomic Product Set
-    default: F
     inputBinding:
       position: 101
       prefix: -g
@@ -153,7 +147,6 @@ inputs:
       - 'null'
       - boolean
     doc: GenProdSet to NucProtSet
-    default: F
     inputBinding:
       position: 101
       prefix: -u
@@ -178,7 +171,6 @@ inputs:
       - 'null'
       - boolean
     doc: Log Progress
-    default: F
     inputBinding:
       position: 101
       prefix: -W
@@ -227,7 +219,6 @@ inputs:
       - 'null'
       - int
     doc: Project Version Number
-    default: 0
     inputBinding:
       position: 101
       prefix: -N
@@ -236,7 +227,6 @@ inputs:
       - 'null'
       - boolean
     doc: Read FASTAs as Set
-    default: F
     inputBinding:
       position: 101
       prefix: -s
@@ -245,7 +235,6 @@ inputs:
       - 'null'
       - boolean
     doc: Recurse
-    default: F
     inputBinding:
       position: 101
       prefix: -E
@@ -254,7 +243,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remote Publication Lookup
-    default: F
     inputBinding:
       position: 101
       prefix: -P
@@ -263,7 +251,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remote Sequence Record Fetching from ID
-    default: F
     inputBinding:
       position: 101
       prefix: -R
@@ -272,7 +259,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remote Taxonomy Lookup
-    default: F
     inputBinding:
       position: 101
       prefix: -T
@@ -281,7 +267,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove Unnecessary Gene Xref
-    default: F
     inputBinding:
       position: 101
       prefix: -U
@@ -290,7 +275,6 @@ inputs:
       - 'null'
       - boolean
     doc: Save Bioseq-set
-    default: F
     inputBinding:
       position: 101
       prefix: -K
@@ -299,7 +283,6 @@ inputs:
       - 'null'
       - boolean
     doc: Seq ID from File Name
-    default: F
     inputBinding:
       position: 101
       prefix: -q
@@ -332,7 +315,6 @@ inputs:
       - 'null'
       - boolean
     doc: Smart Feature Annotation
-    default: F
     inputBinding:
       position: 101
       prefix: -S
@@ -349,7 +331,6 @@ inputs:
       - 'null'
       - string
     doc: Suffix
-    default: .fsa
     inputBinding:
       position: 101
       prefix: -x
@@ -366,7 +347,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Validate (obsolete: use -V v)'
-    default: F
     inputBinding:
       position: 101
       prefix: -v

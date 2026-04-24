@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: 'The number of threads (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --maxthread
@@ -56,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: A prefix for output files
-    default: output
     inputBinding:
       position: 101
       prefix: --outfilename
@@ -68,7 +66,6 @@ inputs:
       not recommended that you change this value unless you create your own pattern
       file (.pt) with a different length. See Supporting Scripts for how to generate
       your own pattern file.'
-    default: 21
     inputBinding:
       position: 101
       prefix: --pattern_length
@@ -79,7 +76,6 @@ inputs:
     doc: 'The length of the genomic region with read mapping (default: 3E9) used to
       compute subsampling rate. If your data is NOT human WGS and you use the -d option,
       it is highly recommended that you specify this value.'
-    default: '3E9'
     inputBinding:
       position: 101
       prefix: --reference_length
@@ -97,7 +93,6 @@ inputs:
       - 'null'
       - float
     doc: The read subsampling rate
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --ss

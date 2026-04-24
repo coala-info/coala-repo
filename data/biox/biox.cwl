@@ -64,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: 'Compression level (1-9, default: 3)'
-    default: 3
     inputBinding:
       position: 101
       prefix: --level

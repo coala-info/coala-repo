@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: 'Collapse exon ends flag: common_ends or longest_ends'
-    default: common_ends
     inputBinding:
       position: 101
       prefix: -e
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Exon ends threshold/ splice junction threshold
-    default: 10
     inputBinding:
       position: 101
       prefix: -m
@@ -54,7 +52,6 @@ inputs:
       - string
     doc: Flag for merging duplicate transcript groups (default no_merge quits 
       when duplicates are found, merge_dup will merge duplicates)
-    default: no_merge
     inputBinding:
       position: 101
       prefix: -d
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: 3 prime threshold
-    default: 10
     inputBinding:
       position: 101
       prefix: -z
@@ -80,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: 5 prime threshold
-    default: 10
     inputBinding:
       position: 101
       prefix: -a

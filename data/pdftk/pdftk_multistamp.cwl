@@ -17,7 +17,6 @@ inputs:
   - id: operation
     type: string
     doc: The operation to perform
-    default: multistamp
     inputBinding:
       position: 2
   - id: stamp_file

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: cutoff threshold
-    default: 0.95
     inputBinding:
       position: 101
       prefix: -cutoff
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for dsk files
-    default: current directory
     inputBinding:
       position: 101
       prefix: -d1
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: est_kmercov
-    default: Estimated by algorithm
     inputBinding:
       position: 101
       prefix: -est
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: Initial heterozygosity
-    default: 0/0.12
     inputBinding:
       position: 101
       prefix: -het
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - float
     doc: Initial rho value
-    default: 0.2
     inputBinding:
       position: 101
       prefix: -rho
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: kmer-size
-    default: 21
     inputBinding:
       position: 101
       prefix: -k
@@ -86,7 +80,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for output plot
-    default: current directory
     inputBinding:
       position: 101
       prefix: -d2
@@ -95,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: Left boundary of the heterozygous region
-    default: Estimated by algorithm
     inputBinding:
       position: 101
       prefix: -setleft
@@ -104,7 +96,6 @@ inputs:
       - 'null'
       - string
     doc: Right boundary of the heterozygous region
-    default: Estimated by algorithm
     inputBinding:
       position: 101
       prefix: -setright
@@ -113,7 +104,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for SNP output
-    default: current directory
     inputBinding:
       position: 101
       prefix: -d3
@@ -122,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: thread
-    default: 8
     inputBinding:
       position: 101
       prefix: -t

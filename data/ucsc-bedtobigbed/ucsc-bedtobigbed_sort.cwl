@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Number of items to bundle in r-tree internal nodes
-    default: 256
     inputBinding:
       position: 103
       prefix: -blockSize
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Number of items to bundle in r-tree leaf nodes
-    default: 1024
     inputBinding:
       position: 103
       prefix: -itemsPerSlot

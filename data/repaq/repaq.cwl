@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: the chunk size (kilo bases) for encoding
-    default: 1000
     inputBinding:
       position: 101
       prefix: --chunk
@@ -36,7 +35,6 @@ inputs:
       - int
     doc: compression level. Higher level means higher compression ratio, and 
       more RAM usage (1~9)
-    default: 4
     inputBinding:
       position: 101
       prefix: --compression
@@ -114,7 +112,6 @@ inputs:
       - int
     doc: thread number for xz compression. Higher thread num means higher speed 
       and lower compression ratio (1~16)
-    default: 1
     inputBinding:
       position: 101
       prefix: --thread

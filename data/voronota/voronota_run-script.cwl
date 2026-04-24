@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: maximum level of output unfolding
-    default: 6
     inputBinding:
       position: 102
       prefix: --max-unfolding

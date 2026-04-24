@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: 'the batch size (default: 512)'
-    default: 512
     inputBinding:
       position: 101
       prefix: --batchsize
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: 'only use reads with mapQ >= NUM (default: 20)'
-    default: 20
     inputBinding:
       position: 101
       prefix: --min-mapping-quality
@@ -50,7 +48,6 @@ inputs:
       \                                  when this is set to reference the SEQ field
       in the output will be the reference\n                                      \
       \ sequence spanned by the read"
-    default: read
     inputBinding:
       position: 101
       prefix: --modbam-style
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: 'use NUM threads (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

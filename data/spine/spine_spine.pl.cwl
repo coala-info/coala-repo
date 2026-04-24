@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Integer
-    default: 200
     inputBinding:
       position: 101
       prefix: --breaklen
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Integer
-    default: 5
     inputBinding:
       position: 101
       prefix: --diagdiff
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Float
-    default: 0.12
     inputBinding:
       position: 101
       prefix: --diagfactor
@@ -80,7 +77,6 @@ inputs:
       \       less than this between adjacent segments will result in\n          \
       \          combination of fragments with N's rather than separating\n      \
       \              into two or more fragments."
-    default: 10
     inputBinding:
       position: 101
       prefix: --maxdist
@@ -89,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Integer
-    default: 65
     inputBinding:
       position: 101
       prefix: --mincluster
@@ -109,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Integer
-    default: 20
     inputBinding:
       position: 101
       prefix: --minmatch
@@ -118,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: minimum size of sequences to be output, in bases
-    default: 10
     inputBinding:
       position: 101
       prefix: --minout
@@ -155,7 +148,6 @@ inputs:
       - int
     doc: "percentage of input genomes in which a region must be\n                \
       \    found in order to be considered core"
-    default: 100
     inputBinding:
       position: 101
       prefix: --pctcore
@@ -165,7 +157,6 @@ inputs:
       - float
     doc: "minimum percent identity for regions to be considered\n                \
       \    homologous"
-    default: 85
     inputBinding:
       position: 101
       prefix: --pctid
@@ -174,7 +165,6 @@ inputs:
       - 'null'
       - string
     doc: Output prefix
-    default: output
     inputBinding:
       position: 101
       prefix: --prefix
@@ -217,7 +207,6 @@ inputs:
       \      processers available. If you set this number higher than\n          \
       \          the number of processors you have, performance is likely to\n   \
       \                 be significantly degraded."
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

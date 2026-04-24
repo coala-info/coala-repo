@@ -129,7 +129,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Disable copying gaps from input alignment (default: false)'
-    default: false
     inputBinding:
       position: 101
       prefix: --no-copy-gaps
@@ -155,7 +154,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set the output format (default: phylip)'
-    default: phylip
     inputBinding:
       position: 101
       prefix: -af
@@ -215,7 +213,6 @@ inputs:
     doc: "Random seed number (default: CPU clock)\n                            Be
       careful to make the AliSim reproducible,\n                            users
       should specify the seed number"
-    default: CPU clock
     inputBinding:
       position: 101
       prefix: --seed
@@ -225,7 +222,6 @@ inputs:
       - string
     doc: "BIN, DNA, AA, CODON, MORPH{NUM_STATES} (default: auto-detect)\n        \
       \                    For morphological data, 0<NUM_STATES<=32"
-    default: auto-detect
     inputBinding:
       position: 101
       prefix: --seqtype
@@ -244,7 +240,6 @@ inputs:
     doc: "Specify the option (MEAN (default), or SAMPLING, or MODEL)\n           \
       \                 to mimic the site-frequencies for mixture models from\n  \
       \                          the input alignment (see Manual)"
-    default: MEAN
     inputBinding:
       position: 101
       prefix: --site-freq
@@ -255,7 +250,6 @@ inputs:
     doc: "Specify the option (MEAN (default), or SAMPLING, or MODEL)\n           \
       \                 to mimic the discrete rate heterogeneity from\n          \
       \                  the input alignment (see Manual)"
-    default: MEAN
     inputBinding:
       position: 101
       prefix: --site-rate
@@ -304,7 +298,6 @@ inputs:
       - 'null'
       - float
     doc: 'Min Gamma shape parameter for site rates (default: 0.02)'
-    default: 0.02
     inputBinding:
       position: 101
       prefix: --alpha-min
@@ -345,7 +338,6 @@ inputs:
       - 'null'
       - float
     doc: 'Min probability of ancestral state (default: equil freq)'
-    default: equil freq
     inputBinding:
       position: 101
       prefix: --asr-min
@@ -370,7 +362,6 @@ inputs:
       - 'null'
       - float
     doc: 'Minimum correlation coefficient (default: 0.99)'
-    default: 0.99
     inputBinding:
       position: 101
       prefix: --bcor
@@ -379,7 +370,6 @@ inputs:
       - 'null'
       - float
     doc: 'RELL epsilon to break tie (default: 0.5)'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --beps
@@ -388,7 +378,6 @@ inputs:
       - 'null'
       - float
     doc: Max branch length for optimization (default 100)
-    default: 100
     inputBinding:
       position: 101
       prefix: -blmax
@@ -397,7 +386,6 @@ inputs:
       - 'null'
       - float
     doc: Min branch length for optimization (default 0.000001)
-    default: 1e-06
     inputBinding:
       position: 101
       prefix: -blmin
@@ -462,7 +450,6 @@ inputs:
       - 'null'
       - float
     doc: 'Std-dev for lognormal relaxed clock (default: 0.2)'
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --clock-sd
@@ -471,7 +458,6 @@ inputs:
       - 'null'
       - int
     doc: 'Max categories for FreeRate model [+R] (default: 10)'
-    default: 10
     inputBinding:
       position: 101
       prefix: --cmax
@@ -480,7 +466,6 @@ inputs:
       - 'null'
       - int
     doc: 'Min categories for FreeRate model [+R] (default: 2)'
-    default: 2
     inputBinding:
       position: 101
       prefix: --cmin
@@ -561,7 +546,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum checkpoint interval (default: 60 sec and adapt)'
-    default: 60 sec and adapt
     inputBinding:
       position: 101
       prefix: --cptime
@@ -634,7 +618,6 @@ inputs:
       - 'null'
       - string
     doc: 'Dating method: LSD for least square dating (default)'
-    default: LSD
     inputBinding:
       position: 101
       prefix: --dating
@@ -651,7 +634,6 @@ inputs:
       - 'null'
       - float
     doc: Likelihood epsilon for parameter estimate (default 0.01)
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --epsilon
@@ -676,7 +658,6 @@ inputs:
       - 'null'
       - int
     doc: 'Fix number of iterations to stop (default: OFF)'
-    default: OFF
     inputBinding:
       position: 101
       prefix: -n
@@ -774,7 +755,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Median approximation for +G site rates (default: mean)'
-    default: false
     inputBinding:
       position: 101
       prefix: --gamma-median
@@ -872,7 +852,6 @@ inputs:
       - string
     doc: 'Stop after NUM hours (CPU time), or use 0 to turn off this stopping rule.
       Default: 7 days.'
-    default: 7 days
     inputBinding:
       position: 101
       prefix: -g_stop_h
@@ -882,7 +861,6 @@ inputs:
       - int
     doc: 'Stop after NUM intermediate trees were visited, or use 0 to turn off this
       stopping rule. Default: 10MLN trees.'
-    default: 10MLN trees
     inputBinding:
       position: 101
       prefix: -g_stop_i
@@ -892,7 +870,6 @@ inputs:
       - int
     doc: 'Stop after NUM species-trees were generated, or use 0 to turn off this stopping
       rule. Default: 1MLN trees.'
-    default: 1MLN trees
     inputBinding:
       position: 101
       prefix: -g_stop_t
@@ -901,7 +878,6 @@ inputs:
       - 'null'
       - float
     doc: 'Subsampling proportion for jackknife (default: 0.5)'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --jack-prop
@@ -918,7 +894,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Keep identical sequences (default: remove & finally add)'
-    default: false
     inputBinding:
       position: 101
       prefix: --keep-ident
@@ -976,7 +951,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set merging algorithm (default: rclusterf)'
-    default: rclusterf
     inputBinding:
       position: 101
       prefix: --merge
@@ -994,7 +968,6 @@ inputs:
       - 'null'
       - string
     doc: 'Use only 1 or all models for merging (default: 1)'
-    default: '1'
     inputBinding:
       position: 101
       prefix: --merge-model
@@ -1020,7 +993,6 @@ inputs:
       - 'null'
       - string
     doc: 'Use only 1 or all rate heterogeneity (default: 1)'
-    default: '1'
     inputBinding:
       position: 101
       prefix: --merge-rate
@@ -1029,7 +1001,6 @@ inputs:
       - 'null'
       - string
     doc: 'Akaike|Bayesian information criterion (default: BIC)'
-    default: BIC
     inputBinding:
       position: 101
       prefix: --merit
@@ -1047,7 +1018,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Optimize mixture weights (default: detect)'
-    default: false
     inputBinding:
       position: 101
       prefix: --mix-opt
@@ -1181,7 +1151,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of best trees retained during search (defaut: 5)'
-    default: 5
     inputBinding:
       position: 101
       prefix: --nbest
@@ -1190,7 +1159,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of initial parsimony trees (default: 100)'
-    default: 100
     inputBinding:
       position: 101
       prefix: --ninit
@@ -1199,7 +1167,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum number of iterations (default: 1000)'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --nmax
@@ -1232,7 +1199,6 @@ inputs:
       - 'null'
       - int
     doc: 'Iterations for UFBoot stopping rule (default: 100)'
-    default: 100
     inputBinding:
       position: 101
       prefix: --nstep
@@ -1241,7 +1207,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of unsuccessful iterations to stop (default: 100)'
-    default: 100
     inputBinding:
       position: 101
       prefix: --nstop
@@ -1250,7 +1215,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of top initial trees (default: 20)'
-    default: 20
     inputBinding:
       position: 101
       prefix: --ntop
@@ -1359,7 +1323,6 @@ inputs:
       - 'null'
       - float
     doc: 'Perturbation strength for randomized NNI (default: 0.5)'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --perturb
@@ -1384,7 +1347,6 @@ inputs:
       - 'null'
       - int
     doc: Discrete Gamma rate with n categories (default n=4)
-    default: 4
     inputBinding:
       position: 101
       prefix: -m
@@ -1401,7 +1363,6 @@ inputs:
       - 'null'
       - int
     doc: 'Virtual population size (default: 9)'
-    default: 9
     inputBinding:
       position: 101
       prefix: -m
@@ -1434,7 +1395,6 @@ inputs:
       - 'null'
       - string
     doc: 'Prefix for all output files (default: aln/partition)'
-    default: aln/partition
     inputBinding:
       position: 101
       prefix: --prefix
@@ -1467,7 +1427,6 @@ inputs:
       - 'null'
       - float
     doc: 'Radius for parsimony SPR search (default: 6)'
-    default: 6
     inputBinding:
       position: 101
       prefix: --radius
@@ -1492,7 +1451,6 @@ inputs:
       - 'null'
       - int
     doc: FreeRate model with n categories (default n=4)
-    default: 4
     inputBinding:
       position: 101
       prefix: -m
@@ -1509,7 +1467,6 @@ inputs:
       - 'null'
       - int
     doc: Discrete Gamma model with n categories (default n=4)
-    default: 4
     inputBinding:
       position: 101
       prefix: -m
@@ -1566,7 +1523,6 @@ inputs:
       - 'null'
       - int
     doc: 'Max number of partition pairs (default: 10*partitions)'
-    default: 10*partitions
     inputBinding:
       position: 101
       prefix: --rcluster-max
@@ -1607,7 +1563,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of indepedent runs (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --runs
@@ -1624,7 +1579,6 @@ inputs:
       - 'null'
       - string
     doc: 'GENE|GENESITE resampling for partitions (default: SITE)'
-    default: SITE
     inputBinding:
       position: 101
       prefix: --sampling
@@ -1705,7 +1659,6 @@ inputs:
       - 'null'
       - string
     doc: 'BIN, DNA, AA, NT2AA, CODON, MORPH (default: auto-detect)'
-    default: auto-detect
     inputBinding:
       position: 101
       prefix: --seqtype
@@ -1754,7 +1707,6 @@ inputs:
       - 'null'
       - string
     doc: 'Starting tree (default: 99 parsimony and BIONJ)'
-    default: 99 parsimony and BIONJ
     inputBinding:
       position: 101
       prefix: -t
@@ -1788,7 +1740,6 @@ inputs:
       - float
     doc: "Min split support, 0.5 for majority-rule consensus\n                   \
       \    (default: 0, extended consensus)"
-    default: 0.5 for majority-rule consensus
     inputBinding:
       position: 101
       prefix: --sup-min
@@ -1821,7 +1772,6 @@ inputs:
       - 'null'
       - float
     doc: 'P-value cutoff (default: 0.05)'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --symtest-pval
@@ -1886,7 +1836,6 @@ inputs:
       - 'null'
       - string
     doc: 'No. cores/threads or AUTO-detect (default: 1)'
-    default: '1'
     inputBinding:
       position: 101
       prefix: -T
@@ -1895,7 +1844,6 @@ inputs:
       - 'null'
       - int
     doc: 'Max number of threads for -T AUTO (default: all cores)'
-    default: all cores
     inputBinding:
       position: 101
       prefix: --threads-max

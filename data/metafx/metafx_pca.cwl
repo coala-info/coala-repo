@@ -18,7 +18,6 @@ inputs:
       - File
     doc: 'tab-separated file with 2 values in each row: <sample>\t<category> ("workDir/samples_categories.tsv"
       can be used)'
-    default: None
     inputBinding:
       position: 101
       prefix: --metadata-file
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: name of output image in workDir
-    default: pca
     inputBinding:
       position: 101
       prefix: --name
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: if TRUE print samples' names on plot
-    default: false
     inputBinding:
       position: 101
       prefix: --show
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - Directory
     doc: working directory
-    default: workDir/
     inputBinding:
       position: 101
       prefix: --work-dir

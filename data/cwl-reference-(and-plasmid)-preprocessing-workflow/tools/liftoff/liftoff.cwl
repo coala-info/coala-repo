@@ -77,7 +77,6 @@ inputs:
     doc: When set to true, partial or low sequence identity mappings will be written to the unmapped file.
     inputBinding:
       prefix: -exclude_partial
-    default: false
   intermediate_dir:
     type: string?
     label: intermediate directory
@@ -88,7 +87,6 @@ inputs:
     type: boolean
     label: include intermediate directory
     doc: Set to true to include the intermediate files directory.
-    default: false
   # Alignment options
   mm2_options:
     type: string?
@@ -139,14 +137,12 @@ inputs:
     doc: Set to true to infer genes if the annotation file only includes transcripts.
     inputBinding:
       prefix: -infer_genes
-    default: false
   infer_transcripts:
     type: boolean?
     label: infer transcripts
     doc: Set to true to infer transcripts if the annotation file only includes exon/CDS features.
     inputBinding:
       prefix: -infer_transcripts
-    default: false
   chromosomes:
     type: File?
     label: corresponding chromosomes
@@ -165,7 +161,6 @@ inputs:
     doc: Set to true to look for extra gene copies in the target genome.
     inputBinding:
       prefix: -copies
-    default: false
   copy_seq_identity:
     type: float?
     label: minimum sequence identity

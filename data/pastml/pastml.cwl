@@ -45,7 +45,6 @@ inputs:
       - string
     doc: column separator for the annotation table. By default is set to tab, 
       i.e. for a tab-delimited file. Set it to ',' if your file is csv.
-    default: tab
     inputBinding:
       position: 101
       prefix: --data_sep
@@ -88,7 +87,6 @@ inputs:
       - int
     doc: index of the annotation table column containing tree tip names, indices
       start from zero (by default is set to 0).
-    default: 0
     inputBinding:
       position: 101
       prefix: --id_index
@@ -107,7 +105,6 @@ inputs:
       - string
     doc: iTOL project the annotated tree should be associated with (must exist, 
       and --itol_id must be specified). By default set to 'Sample project'.
-    default: Sample project
     inputBinding:
       position: 101
       prefix: --itol_project
@@ -166,7 +163,6 @@ inputs:
       the nodes underwent vertical compression), HORIZONTAL (after the nodes 
       underwent vertical and horizontal compression) or TRIM (after the nodes 
       underwent vertical and horizontal compression and minor node trimming)
-    default: VERTICAL
     inputBinding:
       position: 101
       prefix: --pajek_timing

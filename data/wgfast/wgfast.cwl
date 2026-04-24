@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: minimum SNP coverage required to be called a SNP
-    default: 3
     inputBinding:
       position: 101
       prefix: --coverage
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: run depth of coverage on all files?
-    default: T
     inputBinding:
       position: 101
       prefix: --doc
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: How close does a subsample have to be from true placement?
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --fudge_factor
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: How to call GATK?
-    default: EMIT_ALL_CONFIDENT_SITES
     inputBinding:
       position: 101
       prefix: --gatk_method
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: keep temp files?
-    default: F
     inputBinding:
       position: 101
       prefix: --keep
@@ -63,7 +58,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only run sub-sample routine and exit?
-    default: F
     inputBinding:
       position: 101
       prefix: --only_subs
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: '# of processors to use'
-    default: 2
     inputBinding:
       position: 101
       prefix: --processors
@@ -81,7 +74,6 @@ inputs:
       - 'null'
       - float
     doc: proportion of alleles to be called a SNP
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --proportion
@@ -102,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: number of subsamples to process
-    default: 100
     inputBinding:
       position: 101
       prefix: --subnums
@@ -111,7 +102,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run subsample routine?
-    default: T
     inputBinding:
       position: 101
       prefix: --subsample
@@ -120,7 +110,6 @@ inputs:
       - 'null'
       - Directory
     doc: temporary directory for GATK analysis
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --temp

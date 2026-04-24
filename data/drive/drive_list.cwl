@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: maximum recursion depth
-    default: 1
     inputBinding:
       position: 101
       prefix: -depth
@@ -114,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: number of results per pagination
-    default: 100
     inputBinding:
       position: 101
       prefix: -pagesize

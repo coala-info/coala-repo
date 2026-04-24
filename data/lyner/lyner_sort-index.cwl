@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - boolean
     doc: Modify the matrix in place.
-    default: true
     inputBinding:
       position: 101
       prefix: --inplace
@@ -21,7 +20,6 @@ inputs:
       - string
     doc: "Sorting algorithm to use. Options: 'quicksort', 'mergesort', 'heapsort',
       'stable'."
-    default: mergesort
     inputBinding:
       position: 101
       prefix: --kind

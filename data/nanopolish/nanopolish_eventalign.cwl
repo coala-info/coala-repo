@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: 'only use reads with mapping quality at least NUM (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-mapping-quality
@@ -103,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: 'use NUM threads (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

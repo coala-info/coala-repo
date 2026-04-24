@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: Length of "small LCB".
-    default: 10
     inputBinding:
       position: 101
       prefix: --length
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Ordering of blocks in XMFA/FASTA output (0,1,2,...)
-    default: '0'
     inputBinding:
       position: 101
       prefix: --order

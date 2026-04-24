@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - boolean
     doc: Create additional json formatted output file named <OUTPUT FILE>.json .
-    default: "'pmmrcalculator_output.json'"
     inputBinding:
       position: 101
       prefix: --json

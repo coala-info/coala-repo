@@ -87,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal TE mismatches
-    default: 3
     inputBinding:
       position: 101
       prefix: --misTE
@@ -96,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal genome mismatches
-    default: 0
     inputBinding:
       position: 101
       prefix: --mis
@@ -105,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum read size
-    default: 29
     inputBinding:
       position: 101
       prefix: --max
@@ -120,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read size
-    default: 18
     inputBinding:
       position: 101
       prefix: --min
@@ -129,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: Higher bound of piRNA range
-    default: 29
     inputBinding:
       position: 101
       prefix: --pi_max
@@ -138,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: Lower bound of piRNA range
-    default: 23
     inputBinding:
       position: 101
       prefix: --pi_min
@@ -147,7 +141,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ping-pong partners
-    default: true
     inputBinding:
       position: 101
       prefix: --PPPon
@@ -174,7 +167,6 @@ inputs:
       - 'null'
       - int
     doc: Higher bound of siRNA range
-    default: 21
     inputBinding:
       position: 101
       prefix: --si_max
@@ -183,7 +175,6 @@ inputs:
       - 'null'
       - int
     doc: Lower bound of siRNA range
-    default: 21
     inputBinding:
       position: 101
       prefix: --si_min
@@ -204,7 +195,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads used
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

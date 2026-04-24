@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: PostgreSQL connection URL
-    default: postgresql://localhost/variants
     inputBinding:
       position: 102
       prefix: --db

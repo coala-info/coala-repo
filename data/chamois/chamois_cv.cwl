@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: The strength of the parameters regularization.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --alpha
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: The number of cross-validation folds to run.
-    default: 5
     inputBinding:
       position: 101
       prefix: --kfolds
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum number of groups for a class to be retained.
-    default: 5
     inputBinding:
       position: 101
       prefix: --min-class-groups
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum of occurences for a class to be retained.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-class-occurrences
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: The nucleotide length threshold for retaining a cluster.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-cluster-length
@@ -67,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum number of groups for a feature to be retained.
-    default: 5
     inputBinding:
       position: 101
       prefix: --min-feature-groups
@@ -76,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum of occurences for a feature to be retained.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-feature-occurrences
@@ -85,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: The gene count threshold for retaining a cluster.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-genes
@@ -94,7 +86,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to correct mismatching observations.
-    default: false
     inputBinding:
       position: 101
       prefix: --mismatch
@@ -103,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: The kind of model to train.
-    default: logistic
     inputBinding:
       position: 101
       prefix: --model
@@ -112,7 +102,6 @@ inputs:
       - 'null'
       - string
     doc: The algorithm to use for partitioning folds.
-    default: group
     inputBinding:
       position: 101
       prefix: --sampling
@@ -121,7 +110,6 @@ inputs:
       - 'null'
       - float
     doc: The variance threshold for filtering features.
-    default: None
     inputBinding:
       position: 101
       prefix: --variance

@@ -48,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: 'Indel rates: constant, *relaxed, or an expression'
-    default: relaxed
     inputBinding:
       position: 102
       prefix: --indel-rates
@@ -97,7 +96,6 @@ inputs:
       - 'null'
       - string
     doc: 'Subst rates: *constant, relaxed, or an expression'
-    default: constant
     inputBinding:
       position: 102
       prefix: --subst-rates

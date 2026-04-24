@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - File
     doc: Path to gff file corresponding to reference genome
-    default: data/NC_045512_Hu-1.gff
     inputBinding:
       position: 102
       prefix: --annot
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum count for a set of mutations to be saved
-    default: 10
     inputBinding:
       position: 102
       prefix: --min_depth
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum quality for a base to be considered
-    default: 20
     inputBinding:
       position: 102
       prefix: --min_quality
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - File
     doc: Reference genome FASTA file
-    default: data/NC_045512_Hu-1.fasta
     inputBinding:
       position: 102
       prefix: --reference
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum genomic coordinate to consider
-    default: 0
     inputBinding:
       position: 102
       prefix: --start_site
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

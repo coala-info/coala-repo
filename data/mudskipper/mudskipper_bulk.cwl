@@ -30,7 +30,6 @@ inputs:
   - id: max_softclip
     type: int
     doc: Max allowed softclip length
-    default: 50
     inputBinding:
       position: 101
       prefix: --max-softclip
@@ -45,7 +44,6 @@ inputs:
   - id: threads
     type: int
     doc: Number of threads for processing bam files
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

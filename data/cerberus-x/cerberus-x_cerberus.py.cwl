@@ -19,7 +19,6 @@ inputs:
       - string
     doc: Address for MPP. local=no networking, host=make this machine a host, 
       ip-address=connect to remote host
-    default: local
     inputBinding:
       position: 101
       prefix: --address
@@ -80,7 +79,6 @@ inputs:
       - Directory
     doc: path to output directory, defaults to "results-cerberus" in current 
       directory.
-    default: ./results-cerberus
     inputBinding:
       position: 101
       prefix: --dir-out
@@ -90,7 +88,6 @@ inputs:
       - Directory
     doc: path to output directory, defaults to "results-cerberus" in current 
       directory.
-    default: ./results-cerberus
     inputBinding:
       position: 101
       prefix: --dir_out
@@ -109,7 +106,6 @@ inputs:
       - 'null'
       - float
     doc: E-value cutoff for parsing HMMER results
-    default: '1e-09'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -139,7 +135,6 @@ inputs:
         items: string
     doc: A list of databases for HMMER. 'ALL' uses all downloaded databases. Use
       the option --list-db for a list of available databases
-    default: KOFam_all
     inputBinding:
       position: 101
       prefix: --hmm
@@ -165,7 +160,6 @@ inputs:
       - 'null'
       - boolean
     doc: Flag to keep temporary files.
-    default: false
     inputBinding:
       position: 101
       prefix: --keep
@@ -174,7 +168,6 @@ inputs:
       - 'null'
       - boolean
     doc: List available and downloaded databases
-    default: false
     inputBinding:
       position: 101
       prefix: --list-db
@@ -183,7 +176,6 @@ inputs:
       - 'null'
       - boolean
     doc: Metagenomic nucleotide sequences (for prodigal)
-    default: false
     inputBinding:
       position: 101
       prefix: --meta
@@ -192,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: Score cutoff for parsing HMMER results
-    default: 60
     inputBinding:
       position: 101
       prefix: --minscore
@@ -226,7 +217,6 @@ inputs:
       - 'null'
       - int
     doc: The port to listen/connect to
-    default: 24515
     inputBinding:
       position: 101
       prefix: --port
@@ -270,7 +260,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove N repeats, splitting contigs
-    default: false
     inputBinding:
       position: 101
       prefix: --remove-n-repeats
@@ -279,7 +268,6 @@ inputs:
       - 'null'
       - boolean
     doc: Flag to replace existing files.
-    default: false
     inputBinding:
       position: 101
       prefix: --replace
@@ -288,7 +276,6 @@ inputs:
       - 'null'
       - boolean
     doc: Sequences are treated as scaffolds
-    default: false
     inputBinding:
       position: 101
       prefix: --scaffolds
@@ -297,7 +284,6 @@ inputs:
       - 'null'
       - boolean
     doc: Setup additional dependencies
-    default: false
     inputBinding:
       position: 101
       prefix: --setup
@@ -306,7 +292,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip decontamination step
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-decon
@@ -315,7 +300,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip PCA
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-pca
@@ -333,7 +317,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove downloaded databases and FragGeneScan+
-    default: false
     inputBinding:
       position: 101
       prefix: --uninstall
@@ -343,7 +326,6 @@ inputs:
       - type: array
         items: string
     doc: Update downloaded databases
-    default: false
     inputBinding:
       position: 101
       prefix: --update

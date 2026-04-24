@@ -59,7 +59,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_pdb_path
-    default: system.pdb
 
   config:
     label: Advanced configuration options for biobb_model FixBackbone

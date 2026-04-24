@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: input expected. One of "vcf" (default), "hdf5", "zarr" or "txt"
-    default: vcf
     inputBinding:
       position: 101
       prefix: --format

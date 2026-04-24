@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Parse FASTA ids (becomes broken if ranges are used)
-    default: 0
     inputBinding:
       position: 101
       prefix: --fasta-parse-ids
@@ -74,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal number of ambiguities to count
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-amb
@@ -83,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Do not include words counted more than this value (for 16-mers or less)
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-word-count
@@ -100,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bits to reserve for entry count within segment
-    default: 10
     inputBinding:
       position: 101
       prefix: --pack-count-bits
@@ -109,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bits in table to use for data segment offset
-    default: 34
     inputBinding:
       position: 101
       prefix: --pack-offset-bits
@@ -118,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Bits to use for compression prefix
-    default: 26
     inputBinding:
       position: 101
       prefix: --pack-prefix-bits
@@ -128,7 +122,6 @@ inputs:
       - string
     doc: Set pattern to use with discontiguous words, 0x or 0b prefix may be used
       for hex or bin (-w## will be ignored)
-    default: '0'
     inputBinding:
       position: 101
       prefix: --pattern
@@ -153,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: Word size to use
-    default: 18
     inputBinding:
       position: 101
       prefix: --word-size
@@ -162,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: Step (stride size) to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --word-step

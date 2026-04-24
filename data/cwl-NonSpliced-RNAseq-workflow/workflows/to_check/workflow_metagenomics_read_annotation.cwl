@@ -40,17 +40,14 @@ inputs:
     type: boolean
     doc: rRNA read filtering using ...
     label: rRNA filtering
-    default: false
   threads:
     type: int?
     doc: number of threads to use for computational processes
     label: number of threads
-    default: 2
   memory:
     type: int?
     doc: maximum memory usage in megabytes
     label: memory usage (mb)
-    default: 4000
   kraken_database:
     type: string
     doc: database location of kraken2
@@ -60,19 +57,16 @@ inputs:
     type: string?
     doc: bbmap reference fasta file for contamination filtering
     label: contamination reference file
-    default: "/unlock/references/databases/bbduk/GCA_000001405.28_GRCh38.p13_genomic.fna.gz"
 
   run_samsa2:
     type: boolean
     label: Run SAMSA2
     doc: Run SAMSA2 functional read classification
-    default: false
 
   step:
     type: int?
     label: CWL base step number
     doc: Step number for order of steps
-    default: 1
 
   destination:
     type: string?

@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable debug output.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -debug
@@ -41,7 +40,6 @@ inputs:
       - File
     doc: Input BED file containing the regions of interest. If unset, reads from
       STDIN.
-    default: ''
     inputBinding:
       position: 101
       prefix: -in
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality to consider a base.
-    default: '0'
     inputBinding:
       position: 101
       prefix: -min_baseq
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality to consider a read.
-    default: '1'
     inputBinding:
       position: 101
       prefix: -min_mapq
@@ -70,7 +66,6 @@ inputs:
     doc: Use random access via index to get reads from BAM/CRAM instead of 
       chromosome-wise sweep. Random access is quite slow, so use it only if a 
       small subset of the file needs to be accessed.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -random_access
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - File
     doc: Reference genome for CRAM support (mandatory if CRAM is used).
-    default: ''
     inputBinding:
       position: 101
       prefix: -ref
@@ -105,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads used.
-    default: '1'
     inputBinding:
       position: 101
       prefix: -threads

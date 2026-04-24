@@ -72,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: Remove all islands with an FDR below cutoff.
-    default: 0.05
     inputBinding:
       position: 103
       prefix: --false-discovery-rate-cutoff
@@ -82,7 +81,6 @@ inputs:
       - int
     doc: (Single end reads only) Size of the sequenced fragment. The center of 
       the the fragment will be taken as half the fragment size.
-    default: 150
     inputBinding:
       position: 103
       prefix: --fragment-size
@@ -92,7 +90,6 @@ inputs:
       - int
     doc: This number is multiplied by the window size to determine the gap size.
       Must be an integer.
-    default: 3
     inputBinding:
       position: 103
       prefix: --gaps-allowed
@@ -102,7 +99,6 @@ inputs:
       - string
     doc: Which genome to analyze. If --chromsizes flag is given, --genome is not
       required.
-    default: hg19
     inputBinding:
       position: 103
       prefix: --genome
@@ -156,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cpus to use. Can use at most one per chromosome.
-    default: 1
     inputBinding:
       position: 103
       prefix: --number-cores
@@ -175,7 +170,6 @@ inputs:
       - int
     doc: Size of the windows to scan the genome. WINDOW_SIZE is the smallest 
       possible island.
-    default: 200
     inputBinding:
       position: 103
       prefix: --window-size

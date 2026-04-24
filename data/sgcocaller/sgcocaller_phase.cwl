@@ -59,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: the cell barcode tag in BAM
-    default: CB
     inputBinding:
       position: 111
       prefix: --barcodeTag
@@ -68,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: base quality threshold for a base to be used for counting
-    default: 13
     inputBinding:
       position: 111
       prefix: --baseq
@@ -87,7 +85,6 @@ inputs:
       - int
     doc: the size of SNP bins for scanning swith errors, users are recommended 
       to increase this option when SNP density is high.
-    default: 2000
     inputBinding:
       position: 111
       prefix: --binSize
@@ -105,7 +102,6 @@ inputs:
       - 'null'
       - float
     doc: the average centiMorgan distances per megabases default 0.1 cm per Mb
-    default: 0.1
     inputBinding:
       position: 111
       prefix: --cmPmb
@@ -115,7 +111,6 @@ inputs:
       - float
     doc: the threshold used on the allele concordance ratio for determining if a
       SNP bin contains a crossover.
-    default: 0.0099
     inputBinding:
       position: 111
       prefix: --dissimThresh
@@ -124,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: the number of local SNPs to use when finding switch positions
-    default: 25
     inputBinding:
       position: 111
       prefix: --lookBeyondSnps
@@ -134,7 +128,6 @@ inputs:
       - float
     doc: the maximum dissimilarity for a pair of cell to be selected as 
       potential template cells due to not having crossovers in either cell
-    default: 0.0099
     inputBinding:
       position: 111
       prefix: --maxDissim
@@ -143,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: the maximum DP for a SNP to be included in the output file
-    default: 5
     inputBinding:
       position: 111
       prefix: --maxDP
@@ -153,7 +145,6 @@ inputs:
       - int
     doc: the maximum number of iterations to look for locally coexisting 
       positions for inferring missing SNPs in template haplotype sequence
-    default: 1000
     inputBinding:
       position: 111
       prefix: --maxExpand
@@ -163,7 +154,6 @@ inputs:
       - int
     doc: the maximum DP across all barcodes for a SNP to be included in the 
       output file
-    default: 25
     inputBinding:
       position: 111
       prefix: --maxTotalDP
@@ -181,7 +171,6 @@ inputs:
       - 'null'
       - int
     doc: the minimum DP for a SNP to be included in the output file
-    default: 1
     inputBinding:
       position: 111
       prefix: --minDP
@@ -190,7 +179,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum MAPQ for read filtering
-    default: 20
     inputBinding:
       position: 111
       prefix: --minMAPQ
@@ -200,7 +188,6 @@ inputs:
       - int
     doc: the min number of continuing SNPs with positive switch scores to do 
       switch error correction
-    default: 8
     inputBinding:
       position: 111
       prefix: --minPositiveSwitchScores
@@ -210,7 +197,6 @@ inputs:
       - int
     doc: the minimum depth of cell coverage for a SNP to be includes in 
       generated genotype matrix file
-    default: 1
     inputBinding:
       position: 111
       prefix: --minSNPdepth
@@ -220,7 +206,6 @@ inputs:
       - float
     doc: the minimum switch score for a site to be identified as having a switch
       error in the inferred haplotype
-    default: 50.0
     inputBinding:
       position: 111
       prefix: --minSwitchScore
@@ -230,7 +215,6 @@ inputs:
       - int
     doc: the minimum DP across all barcodes for a SNP to be included in the 
       output file
-    default: 10
     inputBinding:
       position: 111
       prefix: --minTotalDP
@@ -264,7 +248,6 @@ inputs:
       - 'null'
       - float
     doc: the min posterior probability for inferring missing SNPs
-    default: 0.99
     inputBinding:
       position: 111
       prefix: --posteriorProbMin
@@ -273,7 +256,6 @@ inputs:
       - 'null'
       - int
     doc: the move step size used in combination with --binSize.
-    default: 200
     inputBinding:
       position: 111
       prefix: --stepSize
@@ -283,7 +265,6 @@ inputs:
       - int
     doc: the cell's genotype to be used a template cell, as the cell's index 
       (0-starting) in the barcode file, default as not supplied
-    default: -1
     inputBinding:
       position: 111
       prefix: --templateCell
@@ -293,7 +274,6 @@ inputs:
       - float
     doc: the theta for the binomial distribution conditioning on hidden state 
       being ALT
-    default: 0.9
     inputBinding:
       position: 111
       prefix: --thetaALT
@@ -303,7 +283,6 @@ inputs:
       - float
     doc: the theta for the binomial distribution conditioning on hidden state 
       being REF
-    default: 0.1
     inputBinding:
       position: 111
       prefix: --thetaREF
@@ -312,7 +291,6 @@ inputs:
       - 'null'
       - int
     doc: number of BAM decompression threads
-    default: 4
     inputBinding:
       position: 111
       prefix: --threads

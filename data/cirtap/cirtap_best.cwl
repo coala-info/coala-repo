@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Define loglevel
-    default: INFO
     inputBinding:
       position: 102
   - id: ncbi_db
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the taxa.sqlite created by ete3
-    default: /root/.etetoolkit/taxa.sqlite
     inputBinding:
       position: 102
   - id: thresh
@@ -55,7 +53,6 @@ inputs:
     doc: Integer threshold for including a genome based on completeness and 
       contamination stats. This is useed as completeness - 5*contamination > 
       thresh
-    default: 70
     inputBinding:
       position: 102
 outputs:

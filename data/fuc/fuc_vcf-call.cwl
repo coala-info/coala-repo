@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: 'Minimum fraction of gapped reads for calling indels (default: 0.002).'
-    default: 0.002
     inputBinding:
       position: 103
       prefix: --gap_frac
@@ -60,7 +59,6 @@ inputs:
       - int
     doc: 'At a position, read maximally this number of reads per input file (default:
       250).'
-    default: 250
     inputBinding:
       position: 103
       prefix: --max-depth
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum mapping quality for an alignment to be used (default: 1).'
-    default: 1
     inputBinding:
       position: 103
       prefix: --min-mq

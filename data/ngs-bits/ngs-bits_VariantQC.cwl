@@ -10,7 +10,6 @@ inputs:
       - boolean
     doc: Ignore filter entries, i.e. consider variants that did not pass 
       filters.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -ignore_filter
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: Adds LongRead specific QC values (e.g. phasing information)
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -long_read
@@ -35,7 +33,6 @@ inputs:
       - File
     doc: Output BED file containing phasing blocks with id. (requires parameter 
       '-longread')
-    default: ''
     inputBinding:
       position: 101
       prefix: -phasing_bed
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - boolean
     doc: Writes TXT format instead of qcML.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -txt

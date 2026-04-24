@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - File
     doc: 'query sequences (default: self-map)'
-    default: self-map
     inputBinding:
       position: 2
   - id: align_paf
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: sketch size for ANI estimation
-    default: 1000
     inputBinding:
       position: 103
       prefix: --ani-sketch-size
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: target batch size for indexing
-    default: 4G
     inputBinding:
       position: 103
       prefix: --batch
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: minimum block length
-    default: 0
     inputBinding:
       position: 103
       prefix: --block-length
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: chain jump (gap)
-    default: 2k
     inputBinding:
       position: 103
       prefix: --chain-jump
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - float
     doc: filter high-freq minimizers
-    default: 0.0002
     inputBinding:
       position: 103
       prefix: --filter-freq
@@ -83,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: group by last occurrence of prefix delimiter
-    default: '#'
     inputBinding:
       position: 103
       prefix: --group-prefix
@@ -92,7 +85,6 @@ inputs:
       - 'null'
       - string
     doc: hypergeometric filter
-    default: 1.0,0.0,99.9
     inputBinding:
       position: 103
       prefix: --hg-filter
@@ -117,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size
-    default: 15
     inputBinding:
       position: 103
       prefix: --kmer-size
@@ -126,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: min hits for L1 filtering
-    default: 3
     inputBinding:
       position: 103
       prefix: --l1-hits
@@ -143,7 +133,6 @@ inputs:
       - 'null'
       - string
     doc: minimum identity % or ANI preset
-    default: ani50-2
     inputBinding:
       position: 103
       prefix: --map-pct-id
@@ -152,7 +141,6 @@ inputs:
       - 'null'
       - int
     doc: mappings per segment (plane sweep)
-    default: inf
     inputBinding:
       position: 103
       prefix: --mappings
@@ -161,7 +149,6 @@ inputs:
       - 'null'
       - string
     doc: max mapping length
-    default: 50k
     inputBinding:
       position: 103
       prefix: --max-length
@@ -210,7 +197,6 @@ inputs:
       - 'null'
       - float
     doc: max overlap ratio
-    default: 0.95
     inputBinding:
       position: 103
       prefix: --overlap
@@ -227,7 +213,6 @@ inputs:
       - 'null'
       - string
     doc: query padding
-    default: segment-length
     inputBinding:
       position: 103
       prefix: --query-padding
@@ -260,7 +245,6 @@ inputs:
       - 'null'
       - int
     doc: mappings per scaffold chain
-    default: 1
     inputBinding:
       position: 103
       prefix: --retain-per-scaffold
@@ -277,7 +261,6 @@ inputs:
       - 'null'
       - string
     doc: max scaffold distance
-    default: 100k
     inputBinding:
       position: 103
       prefix: --scaffold-dist
@@ -286,7 +269,6 @@ inputs:
       - 'null'
       - string
     doc: scaffold jump (gap)
-    default: 100k
     inputBinding:
       position: 103
       prefix: --scaffold-jump
@@ -295,7 +277,6 @@ inputs:
       - 'null'
       - string
     doc: min scaffold length
-    default: 10k
     inputBinding:
       position: 103
       prefix: --scaffold-mass
@@ -304,7 +285,6 @@ inputs:
       - 'null'
       - float
     doc: scaffold chain overlap threshold
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --scaffold-overlap
@@ -321,7 +301,6 @@ inputs:
       - 'null'
       - string
     doc: sketch size
-    default: auto
     inputBinding:
       position: 103
       prefix: --sketch-size
@@ -330,7 +309,6 @@ inputs:
       - 'null'
       - float
     doc: keep this fraction of mappings
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --sparsify
@@ -355,7 +333,6 @@ inputs:
       - 'null'
       - string
     doc: target padding
-    default: segment-length
     inputBinding:
       position: 103
       prefix: --target-padding
@@ -372,7 +349,6 @@ inputs:
       - 'null'
       - int
     doc: threads
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads
@@ -381,7 +357,6 @@ inputs:
       - 'null'
       - Directory
     doc: temp file directory
-    default: pwd
     inputBinding:
       position: 103
       prefix: --tmp-base
@@ -390,7 +365,6 @@ inputs:
       - 'null'
       - string
     doc: gap costs
-    default: 5,8,2,24,1
     inputBinding:
       position: 103
       prefix: --wfa-params
@@ -399,7 +373,6 @@ inputs:
       - 'null'
       - string
     doc: window size
-    default: 1k
     inputBinding:
       position: 103
       prefix: --window-size

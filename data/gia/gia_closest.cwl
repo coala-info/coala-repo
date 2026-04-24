@@ -11,7 +11,6 @@ inputs:
       - int
     doc: "Compression level to use for output files if applicable\n\n          [default:
       6]"
-    default: 6
     inputBinding:
       position: 101
       prefix: --compression-level
@@ -21,7 +20,6 @@ inputs:
       - int
     doc: "Compression threads to use for output files if applicable\n\n          [default:
       1]"
-    default: 1
     inputBinding:
       position: 101
       prefix: --compression-threads
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - File
     doc: Primary BED file to use (default=stdin)
-    default: stdin
     inputBinding:
       position: 101
       prefix: --a
@@ -66,7 +63,6 @@ inputs:
       - string
     doc: "Strand-specificity of closest intervals\n\n          [default: i]\n    \
       \      [possible values: i, m, o]"
-    default: i
     inputBinding:
       position: 101
       prefix: --strandedness

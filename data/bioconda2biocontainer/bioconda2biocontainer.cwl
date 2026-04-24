@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: 'Container type. Default: Docker. Values: Docker, Conda, Singularity'
-    default: Docker
     inputBinding:
       position: 101
       prefix: --container_type
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: 'Registry host. Default: quay.io.Values:'
-    default: quay.io
     inputBinding:
       position: 101
       prefix: --registry_host

@@ -121,7 +121,6 @@ inputs:
     type:
       type: array
       items: string
-    default: [BAM, SortedByCoordinate]
     inputBinding:
       prefix: --outSAMtype
     doc: |
@@ -138,7 +137,6 @@ inputs:
     type: string?
     inputBinding:
       prefix: "--readFilesCommand"
-    default: zcat
 
   AlignIntronMin:
     type: int?

@@ -99,7 +99,6 @@ inputs:
       - 'null'
       - string
     doc: Set logging level.
-    default: DEBUG
     inputBinding:
       position: 101
       prefix: --loglevel
@@ -124,7 +123,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum e-value allowed for valid hit.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --maxeval
@@ -133,7 +131,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum valid hit length as prop of model length.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --mincov
@@ -200,7 +197,6 @@ inputs:
       - 'null'
       - string
     doc: "Add prefix to all hits and paired elements detected in\nthis run."
-    default: None
     inputBinding:
       position: 101
       prefix: --prefix

@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: Dirichlet prior parameter for topic distribution over documents.
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --alpha
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: Dirichlet prior parameter for word distribution over topics.
-    default: 0.01
     inputBinding:
       position: 103
       prefix: --beta
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Gibbs sampling iterations.
-    default: 1000
     inputBinding:
       position: 103
       prefix: --num_iterations
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Number of topics (clusters) to identify.
-    default: 10
     inputBinding:
       position: 103
       prefix: --num_topics

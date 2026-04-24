@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum depth to consider a position. Default: 1000.'
-    default: 1000
     inputBinding:
       position: 102
       prefix: --max-depth
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum depth for an allele (ref or alt) to be considered. Default: 3.'
-    default: 3
     inputBinding:
       position: 102
       prefix: --min-allele-depth
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum depth to consider a position. Default: 10.'
-    default: 10
     inputBinding:
       position: 102
       prefix: --min-depth
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: 'Step size for sliding window. Default: 10000.'
-    default: 10000
     inputBinding:
       position: 102
       prefix: --step
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads to use. Default: 1.'
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: 'Window size for calculating allele frequencies. Default: 50000.'
-    default: 50000
     inputBinding:
       position: 102
       prefix: --window

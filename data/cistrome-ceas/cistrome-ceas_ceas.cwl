@@ -29,7 +29,6 @@ inputs:
       into two equal fractions (ie, 5000\n                        is equivalent to
       2500,5000) DEFAULT: 2500,5000bp.\n                        WARNING: Values >
       20000bp are automatically set to\n                        20000bp."
-    default: 2500,5000bp
     inputBinding:
       position: 102
       prefix: --bisizes
@@ -107,7 +106,6 @@ inputs:
       \               is equivalent to 1000,2000,3000), DEFAULT:\n               \
       \         1000,2000,3000. WARNING: Values > 10000bp are\n                  \
       \      automatically set to 10000bp."
-    default: 1000,2000,3000
     inputBinding:
       position: 102
       prefix: --sizes
@@ -117,7 +115,6 @@ inputs:
       - string
     doc: "Relative distance to TSS/TTS in wig profiling,\n                       \
       \ DEFAULT: 3000bp"
-    default: 3000bp
     inputBinding:
       position: 102
       prefix: --rel-dist
@@ -139,7 +136,6 @@ inputs:
       \         ChIP regions within this range from TSS and TTS are\n            \
       \            considered when calculating the coverage rates in\n           \
       \             promoter and downstream, DEFAULT=3000bp"
-    default: 3000bp
     inputBinding:
       position: 102
       prefix: --span
@@ -170,7 +166,6 @@ inputs:
       - string
     doc: "Wig profiling resolution, DEFAULT: 50bp. WARNING: Value smaller than the
       wig interval (resolution) may\n                        cause aliasing error."
-    default: 50bp
     inputBinding:
       position: 102
       prefix: --pf-res

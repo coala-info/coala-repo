@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Number of top edges to consider
-    default: all
     inputBinding:
       position: 102
       prefix: --edges
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Fraction of gold standard edges to include
-    default: all
     inputBinding:
       position: 102
       prefix: --fraction
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: Index of score to use
-    default: last score
     inputBinding:
       position: 102
       prefix: --index
@@ -74,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Number of data points to print
-    default: all
     inputBinding:
       position: 102
       prefix: --points
@@ -91,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Number of OpenMP threads for parallel sorting
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

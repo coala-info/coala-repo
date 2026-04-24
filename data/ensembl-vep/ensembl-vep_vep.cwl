@@ -24,7 +24,6 @@ inputs:
       - boolean
     doc: Shortcut switch to turn on commonly used options. See web documentation
       for details
-    default: false
     inputBinding:
       position: 101
       prefix: --everything
@@ -64,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: Species to use
-    default: human
     inputBinding:
       position: 101
       prefix: --species

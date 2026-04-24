@@ -68,7 +68,6 @@ inputs:
       - string
     doc: "Filter query sequence with DUST (Format: 'yes', 'level window linker', or
       'no' to disable)"
-    default: 20 64 1
     inputBinding:
       position: 101
       prefix: --dust
@@ -85,7 +84,6 @@ inputs:
       - 'null'
       - float
     doc: Expectation value (E) threshold for saving hits.
-    default: 10
     inputBinding:
       position: 101
       prefix: --evalue
@@ -167,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: Line length for formatting alignments
-    default: 60
     inputBinding:
       position: 101
       prefix: --line_length
@@ -184,7 +181,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of aligned sequences to keep
-    default: 500
     inputBinding:
       position: 101
       prefix: --max_target_seqs
@@ -202,7 +198,6 @@ inputs:
       - 'null'
       - int
     doc: Multi-thread mode to use in BLAST search
-    default: 0
     inputBinding:
       position: 101
       prefix: --mt_mode
@@ -253,7 +248,6 @@ inputs:
       - 'null'
       - int
     doc: Number of database sequences to show alignments for
-    default: 250
     inputBinding:
       position: 101
       prefix: --num_alignments
@@ -262,7 +256,6 @@ inputs:
       - 'null'
       - int
     doc: Number of database sequences to show one-line descriptions for
-    default: 500
     inputBinding:
       position: 101
       prefix: --num_descriptions
@@ -271,7 +264,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads (CPUs) to use in the BLAST search
-    default: 1
     inputBinding:
       position: 101
       prefix: --num_threads
@@ -280,7 +272,6 @@ inputs:
       - 'null'
       - string
     doc: alignment view options
-    default: '0'
     inputBinding:
       position: 101
       prefix: --outfmt
@@ -377,7 +368,6 @@ inputs:
       - 'null'
       - boolean
     doc: Apply filtering locations as soft masks
-    default: true
     inputBinding:
       position: 101
       prefix: --soft_masking
@@ -402,7 +392,6 @@ inputs:
       - 'null'
       - string
     doc: Query strand(s) to search against database/subject
-    default: both
     inputBinding:
       position: 101
       prefix: --strand
@@ -443,7 +432,6 @@ inputs:
       - 'null'
       - string
     doc: Task to execute
-    default: rmblastn
     inputBinding:
       position: 101
       prefix: --task
@@ -492,7 +480,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use MegaBLAST database index
-    default: false
     inputBinding:
       position: 101
       prefix: --use_index

@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of reads to use to generate consensus alt sequence
-    default: 20
     inputBinding:
       position: 103
       prefix: --consensus-reads
@@ -70,7 +69,6 @@ inputs:
       - int
     doc: Max number of reads to extract per locus from the bam file for 
       genotyping (use -1 for all reads)
-    default: 60
     inputBinding:
       position: 103
       prefix: --max-number-reads
@@ -80,7 +78,6 @@ inputs:
       - float
     doc: Minimum fraction of reads required for a cluster to be considered a 
       haplotype (only with --unphased)
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --min-haplotype-fraction
@@ -89,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: minimal length of insertion/deletion operation
-    default: 1
     inputBinding:
       position: 103
       prefix: --minlen
@@ -147,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: minimal number of supporting reads per haplotype
-    default: 3
     inputBinding:
       position: 103
       prefix: --support
@@ -156,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel threads to use
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

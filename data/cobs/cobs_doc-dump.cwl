@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: don't canonicalize DNA k-mers
-    default: false
     inputBinding:
       position: 102
       prefix: --no-canonicalize
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: term size (k-mer size)
-    default: 31
     inputBinding:
       position: 102
       prefix: --term-size

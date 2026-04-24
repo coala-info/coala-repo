@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Number of background samples to sample for PE evidence.
-    default: 160
     inputBinding:
       position: 103
       prefix: --background
@@ -64,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Window inside breakpoint to query for discordant pairs.
-    default: 50
     inputBinding:
       position: 103
       prefix: --window-in
@@ -73,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Window outside breakpoint to query for discordant pairs.
-    default: 500
     inputBinding:
       position: 103
       prefix: --window-out

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: bloom filter size
-    default: 10000000
     inputBinding:
       position: 101
       prefix: --bloom-size
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: size of a k-mer.
-    default: 31
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: size of minimizers.
-    default: 10
     inputBinding:
       position: 101
       prefix: --minimizer-size
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: minimizer type (0=lexi, 1=freq).
-    default: 0
     inputBinding:
       position: 101
       prefix: --minimizer-type
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: number of partitions (0=auto).
-    default: 0
     inputBinding:
       position: 101
       prefix: --nb-partitions
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: minimizer repartition (0=unordered, 1=ordered).
-    default: 0
     inputBinding:
       position: 101
       prefix: --repartition-type
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - Directory
     doc: kmtricks runtime directory.
-    default: '{km_dir}'
     inputBinding:
       position: 101
       prefix: --run-dir
@@ -78,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads.
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -87,7 +79,6 @@ inputs:
       - 'null'
       - string
     doc: verbosity level [debug|info|warning|error].
-    default: info
     inputBinding:
       position: 101
       prefix: --verbose

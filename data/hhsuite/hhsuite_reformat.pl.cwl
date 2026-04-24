@@ -88,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of characers in nameline
-    default: 1000
     inputBinding:
       position: 106
       prefix: -d
@@ -122,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: number of residues per line (for Clustal, FASTA, A2M, A3M formats)
-    default: 100
     inputBinding:
       position: 106
       prefix: -l

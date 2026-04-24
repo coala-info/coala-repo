@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory.
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Tree format.
-    default: newick
     inputBinding:
       position: 101
       prefix: --tree-format

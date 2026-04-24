@@ -36,7 +36,6 @@ inputs:
     doc: '[20] Maximum number of CPU cores available in the execution host. If higher
       than 1, tasks with multi-threading capabilities will enabled (if 0 all available)
       cores will be used'
-    default: 20
     inputBinding:
       position: 101
       prefix: --cpu
@@ -71,7 +70,6 @@ inputs:
       2: dangling-end, 3: error, 4: extra dangling-end, 5: too close from RES, 6:
       too short, 7: too large, 8: over-represented, 9: duplicated, 10: random breaks,
       11: trans-chromosomic"
-    default:
       - 1
       - 2
       - 3
@@ -105,7 +103,6 @@ inputs:
       - 'null'
       - string
     doc: file format for figures
-    default: png
     inputBinding:
       position: 101
       prefix: --format
@@ -141,7 +138,6 @@ inputs:
       - int
     doc: Number of eigenvectors to store. if "-1" all eigenvectors will be 
       calculated
-    default: 3
     inputBinding:
       position: 101
       prefix: --n_evs

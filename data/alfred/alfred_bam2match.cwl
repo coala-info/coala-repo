@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: min. mapping quality
-    default: 0
     inputBinding:
       position: 102
       prefix: --map-qual

@@ -47,7 +47,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for reciprocal overlap
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --pctovl
@@ -56,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for sequence similarity
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --pctsim
@@ -65,7 +63,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for size similarity
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --pctsize
@@ -74,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Max reference location distance
-    default: 500
     inputBinding:
       position: 101
       prefix: --refdist

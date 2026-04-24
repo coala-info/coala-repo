@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads for running STAR
-    default: 4
     inputBinding:
       position: 101
       prefix: --CPU
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory
-    default: STAR-Fusion_outdir
     inputBinding:
       position: 101
       prefix: --output_dir

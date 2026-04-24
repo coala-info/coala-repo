@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level to use if compressing output
-    default: 6
     inputBinding:
       position: 101
       prefix: --compression-level
@@ -101,7 +100,6 @@ inputs:
       - int
     doc: "Threads to use for Kraken2.\n            \n            Specify the number
       of threads with which to run `Kraken2`."
-    default: 4
     inputBinding:
       position: 101
       prefix: --kraken-threads
@@ -110,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum query alignment coverage to deplete a read
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-cov
@@ -119,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum query alignment length to deplete a read
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-len
@@ -128,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality to deplete a read
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-mapq
@@ -154,7 +149,6 @@ inputs:
     doc: "Minimap2 preset configuration - default is `sr`.\n            \n       \
       \     Specify the preset configuration for `minimap2` - the default is short
       reads!"
-    default: sr
     inputBinding:
       position: 101
       prefix: --minimap2-preset

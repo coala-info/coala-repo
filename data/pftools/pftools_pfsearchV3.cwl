@@ -124,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: level to use for cutoff
-    default: 0
     inputBinding:
       position: 103
       prefix: --level
@@ -150,7 +149,6 @@ inputs:
       - 'null'
       - int
     doc: mode to use for normalization
-    default: 1
     inputBinding:
       position: 103
       prefix: --mode
@@ -183,7 +181,6 @@ inputs:
       - 'null'
       - string
     doc: maximum number of column for sequence output printing
-    default: 60
     inputBinding:
       position: 103
       prefix: --output-length
@@ -192,7 +189,6 @@ inputs:
       - 'null'
       - string
     doc: printing output method
-    default: 0
     inputBinding:
       position: 103
       prefix: --output-method

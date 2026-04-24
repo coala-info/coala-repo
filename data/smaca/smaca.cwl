@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: reference genome that was used for alignment
-    default: '[hg19|hg38]'
     inputBinding:
       position: 102
       prefix: --reference

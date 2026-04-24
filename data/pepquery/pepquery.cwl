@@ -65,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Enzyme used for protein digestion (0:Non enzyme, 1:Trypsin, etc.).
-    default: 1
     inputBinding:
       position: 101
       prefix: -e
@@ -90,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: Fixed modification format (e.g., 1,2,3).
-    default: '1'
     inputBinding:
       position: 101
       prefix: -fixMod
@@ -99,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: '1: CID/HCD, 2: ETD.'
-    default: 1
     inputBinding:
       position: 101
       prefix: -fragmentMethod
@@ -108,7 +105,6 @@ inputs:
       - 'null'
       - float
     doc: Fragment ion m/z tolerance in Da.
-    default: 0.6
     inputBinding:
       position: 101
       prefix: -itol
@@ -125,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: 'Index type for MGF: 1 => index (1-based), 2 => spectrum title.'
-    default: 1
     inputBinding:
       position: 101
       prefix: -indexType
@@ -142,7 +137,6 @@ inputs:
       - string
     doc: 'Input type for parameter -i: peptide (pep), protein (pro), DNA (dna), VCF
       (vcf), BED (bed), or GTF (gtf).'
-    default: peptide
     inputBinding:
       position: 101
       prefix: -t
@@ -151,7 +145,6 @@ inputs:
       - 'null'
       - string
     doc: Range of allowed isotope peak errors, such as '0,1'.
-    default: '0'
     inputBinding:
       position: 101
       prefix: -ti
@@ -160,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum charge to consider if the charge state is not available.
-    default: 3
     inputBinding:
       position: 101
       prefix: -maxCharge
@@ -169,7 +161,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum length of peptide to consider.
-    default: 45
     inputBinding:
       position: 101
       prefix: -maxLength
@@ -178,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: The max missed cleavages.
-    default: 2
     inputBinding:
       position: 101
       prefix: -c
@@ -187,7 +177,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of variable modifications.
-    default: 3
     inputBinding:
       position: 101
       prefix: -maxVar
@@ -196,7 +185,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum charge to consider if the charge state is not available.
-    default: 2
     inputBinding:
       position: 101
       prefix: -minCharge
@@ -205,7 +193,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum length of peptide to consider.
-    default: 7
     inputBinding:
       position: 101
       prefix: -minLength
@@ -214,7 +201,6 @@ inputs:
       - 'null'
       - int
     doc: Min peaks in spectrum.
-    default: 10
     inputBinding:
       position: 101
       prefix: -minPeaks
@@ -223,7 +209,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum score to consider for peptide searching.
-    default: 12
     inputBinding:
       position: 101
       prefix: -minScore
@@ -273,7 +258,6 @@ inputs:
       - 'null'
       - int
     doc: The number of random peptides generated for p-value calculation.
-    default: 10000
     inputBinding:
       position: 101
       prefix: -n
@@ -282,7 +266,6 @@ inputs:
       - 'null'
       - int
     doc: 'Scoring method: 1=HyperScore, 2=MVH.'
-    default: 1
     inputBinding:
       position: 101
       prefix: -m
@@ -292,7 +275,6 @@ inputs:
       - int
     doc: 'Task type: 1 => novel peptide/protein validation, 2 => known peptide/protein
       validation.'
-    default: 1
     inputBinding:
       position: 101
       prefix: -s
@@ -301,7 +283,6 @@ inputs:
       - 'null'
       - float
     doc: Precursor ion m/z tolerance.
-    default: 10
     inputBinding:
       position: 101
       prefix: -tol
@@ -310,7 +291,6 @@ inputs:
       - 'null'
       - string
     doc: The unit of precursor ion m/z tolerance.
-    default: ppm
     inputBinding:
       position: 101
       prefix: -tolu
@@ -328,7 +308,6 @@ inputs:
       - 'null'
       - string
     doc: Variable modification format.
-    default: '2'
     inputBinding:
       position: 101
       prefix: -varMod

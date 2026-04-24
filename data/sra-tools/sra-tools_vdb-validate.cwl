@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Check blobs CRC32
-    default: no
     inputBinding:
       position: 102
       prefix: --BLOB-CRC
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Deeply check data consistency for tables
-    default: no
     inputBinding:
       position: 102
       prefix: --CONSISTENCY-CHECK
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: check if redaction of bases has been correctly performed
-    default: false
     inputBinding:
       position: 102
       prefix: --check-redact
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Check data referential integrity for databases
-    default: yes
     inputBinding:
       position: 102
       prefix: --REFERENTIAL-INTEGRITY
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: Continue checking object for all possible errors
-    default: false
     inputBinding:
       position: 102
       prefix: --exhaustive
@@ -63,7 +58,6 @@ inputs:
       - string
     doc: Logging level as number or enum string. One of 
       (fatal|sys|int|err|warn|info|debug) or (0-6) Current/default is warn.
-    default: warn
     inputBinding:
       position: 102
       prefix: --log-level
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - boolean
     doc: Require blob checksums
-    default: false
     inputBinding:
       position: 102
       prefix: --require-blob-checksums
@@ -106,7 +99,6 @@ inputs:
       - string
     doc: Specify threshold for amount of secondary alignment which are shorter 
       (hard-clipped) than corresponding primaries, default 1%.
-    default: 1%
     inputBinding:
       position: 102
       prefix: --sdc:plen_thold
@@ -117,7 +109,6 @@ inputs:
     doc: Specify maximum amount of secondary alignment table rows to look at 
       before saying accession is good, default 100000. Specifying will iterate 
       the whole table. Can be in percent (e.g. 5%)
-    default: '100000'
     inputBinding:
       position: 102
       prefix: --sdc:rows
@@ -128,7 +119,6 @@ inputs:
     doc: Specify maximum amount of sequence table rows to look at before saying 
       accession is good, default 100000. Specifying will iterate the whole 
       table. Can be in percent (e.g. 5%)
-    default: '100000'
     inputBinding:
       position: 102
       prefix: --sdc:seq-rows

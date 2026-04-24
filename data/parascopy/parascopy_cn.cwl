@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal jump in the aggregate copy number between two consecutive windows
-    default: 6
     inputBinding:
       position: 101
       prefix: --agcn-jump
@@ -22,7 +21,6 @@ inputs:
       - type: array
         items: int
     doc: Detect aggregate copy number in a range around the reference copy number
-    default: 5 7
     inputBinding:
       position: 101
       prefix: --agcn-range
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: Exclude duplications for which the expression is true
-    default: length < 500 && seq_sim < 0.97
     inputBinding:
       position: 101
       prefix: --exclude
@@ -87,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Skip regions with reference copy number higher than <int>
-    default: 10
     inputBinding:
       position: 101
       prefix: --max-ref-cn
@@ -96,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Use multi-sample information if there are at least <int> samples present
-    default: 50
     inputBinding:
       position: 101
       prefix: --min-samples
@@ -106,7 +101,6 @@ inputs:
       - int
     doc: Predict aggregate and paralog copy number only in regions with at least <int>
       windows
-    default: 5
     inputBinding:
       position: 101
       prefix: --min-windows
@@ -141,7 +135,6 @@ inputs:
         items: int
     doc: Do not estimate paralog-specific copy number if aggregate CN or psCN tuples
       exceed thresholds.
-    default: 8 500
     inputBinding:
       position: 101
       prefix: --pscn-bound
@@ -151,7 +144,6 @@ inputs:
       - int
     doc: Jointly calculate copy number for nearby duplications with equal reference
       copy number
-    default: 1000
     inputBinding:
       position: 101
       prefix: --region-dist
@@ -189,7 +181,6 @@ inputs:
       - type: array
         items: float
     doc: PSV-reliability thresholds (reliable PSV has all f-values over the threshold).
-    default: 0.80 0.95
     inputBinding:
       position: 101
       prefix: --reliable-threshold
@@ -198,7 +189,6 @@ inputs:
       - 'null'
       - string
     doc: 'Rerun CN analysis for all loci: full, partial, or none.'
-    default: none
     inputBinding:
       position: 101
       prefix: --rerun
@@ -207,7 +197,6 @@ inputs:
       - 'null'
       - string
     doc: Path to samtools executable
-    default: samtools
     inputBinding:
       position: 101
       prefix: --samtools
@@ -216,7 +205,6 @@ inputs:
       - 'null'
       - int
     doc: Skip regions with short duplications (shorter than <int> bp)
-    default: 500
     inputBinding:
       position: 101
       prefix: --short
@@ -257,7 +245,6 @@ inputs:
       - 'null'
       - string
     doc: Path to "tabix" executable
-    default: tabix
     inputBinding:
       position: 101
       prefix: --tabix
@@ -272,7 +259,6 @@ inputs:
       - 'null'
       - int
     doc: Number of available threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -281,7 +267,6 @@ inputs:
       - 'null'
       - float
     doc: Log10 transition probability for the aggregate copy number HMM
-    default: -5
     inputBinding:
       position: 101
       prefix: --transition-prob
@@ -299,7 +284,6 @@ inputs:
       - 'null'
       - float
     doc: At most this fraction of region sequence can be unknown (N)
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --unknown-seq
@@ -308,7 +292,6 @@ inputs:
       - 'null'
       - float
     doc: Update agCN using psCN probabilities when agCN quality is less than <float>
-    default: 40
     inputBinding:
       position: 101
       prefix: --update-agcn
@@ -325,7 +308,6 @@ inputs:
       - 'null'
       - float
     doc: Modify window filtering
-    default: 1
     inputBinding:
       position: 101
       prefix: --window-filtering

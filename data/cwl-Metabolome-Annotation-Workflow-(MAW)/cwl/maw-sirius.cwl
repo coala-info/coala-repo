@@ -13,19 +13,14 @@ inputs:
     #   path: "*.json"
   profile:
     type: string
-    default: "orbitrap"
   candidates:
     type: int
-    default: 30
   ppm_max:
     type: int
-    default: 5
   ppm_max_ms2:
     type: int
-    default: 15
   database:
     type: string
-    default: "coconut"
 
 steps:
   

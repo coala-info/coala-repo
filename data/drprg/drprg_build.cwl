@@ -47,7 +47,6 @@ inputs:
       - int
     doc: Minimum number of consecutive characters which must be identical for a 
       match in make_prg
-    default: 5
     inputBinding:
       position: 101
       prefix: --match-len
@@ -57,7 +56,6 @@ inputs:
       - int
     doc: Maximum nesting level when constructing the reference graph with 
       make_prg
-    default: 5
     inputBinding:
       position: 101
       prefix: --max-nesting
@@ -82,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bases of padding to add to start and end of each gene
-    default: 100
     inputBinding:
       position: 101
       prefix: --padding
@@ -99,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer size to use for pandora
-    default: 15
     inputBinding:
       position: 101
       prefix: --pandora-k
@@ -108,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Window size to use for pandora
-    default: 11
     inputBinding:
       position: 101
       prefix: --pandora-w
@@ -150,7 +145,6 @@ inputs:
       - int
     doc: "Maximum number of threads to use\n          \n          Use 0 to select
       the number automatically"
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

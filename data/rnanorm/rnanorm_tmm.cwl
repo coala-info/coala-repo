@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - float
     doc: Proportion of genes to trim from the median calculation (upper bound).
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --a-trim
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: Proportion of genes to trim from the median calculation (lower bound).
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --m-trim

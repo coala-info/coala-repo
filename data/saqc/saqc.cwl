@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Set log verbosity.
-    default: INFO
     inputBinding:
       position: 101
       prefix: --log-level
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Set a custom nodata value.
-    default: nan
     inputBinding:
       position: 101
       prefix: --nodata
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: A flagging scheme to use.
-    default: simple
     inputBinding:
       position: 101
       prefix: --scheme

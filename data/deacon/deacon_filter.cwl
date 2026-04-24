@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: Optional path to fastx file (or - for stdin)
-    default: '-'
     inputBinding:
       position: 2
   - id: input2
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum absolute number of minimizer hits for a match
-    default: 2
     inputBinding:
       position: 104
       prefix: --abs-threshold
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Output compression level (1-9 for gz & xz; 1-22 for zstd)
-    default: 2
     inputBinding:
       position: 104
       prefix: --compression-level
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads used for output compression (0 = auto)
-    default: 0
     inputBinding:
       position: 104
       prefix: --compression-threads
@@ -75,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Search only the first N nucleotides per sequence (0 = entire sequence)
-    default: 0
     inputBinding:
       position: 104
       prefix: --prefix-length
@@ -92,7 +87,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum relative proportion (0.0-1.0) of minimizer hits for a match
-    default: 0.01
     inputBinding:
       position: 104
       prefix: --rel-threshold
@@ -117,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads (0 = auto)
-    default: 8
     inputBinding:
       position: 104
       prefix: --threads

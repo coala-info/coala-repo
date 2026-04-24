@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Non-autosome label for mitochondrial DNA
-    default: MT
     inputBinding:
       position: 101
       prefix: --MT
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Non-autosome label for chromosome X
-    default: X
     inputBinding:
       position: 101
       prefix: --chrX
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Non-autosome label for chromosome Y
-    default: Y
     inputBinding:
       position: 101
       prefix: --chrY
@@ -93,7 +90,6 @@ inputs:
       - 'null'
       - float
     doc: Scaled indel mutation rate
-    default: '1.0e-04'
     inputBinding:
       position: 101
       prefix: --indel_theta
@@ -118,7 +114,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum LLR for de novo mutation calls
-    default: '-3.0e+00'
     inputBinding:
       position: 101
       prefix: --minLLR_denovo
@@ -135,7 +130,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percentage of samples with data
-    default: '0.00'
     inputBinding:
       position: 101
       prefix: --minPercSampleWithData
@@ -152,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for multiple threading
-    default: 1
     inputBinding:
       position: 101
       prefix: --nthreads
@@ -169,7 +162,6 @@ inputs:
       - 'null'
       - float
     doc: Prior of ts/tv ratio
-    default: '2.00'
     inputBinding:
       position: 101
       prefix: --poly_tstv
@@ -178,7 +170,6 @@ inputs:
       - 'null'
       - float
     doc: Posterior probability cutoff
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -c99.999
@@ -187,7 +178,6 @@ inputs:
       - 'null'
       - float
     doc: Optimization precision
-    default: '1.0e-04'
     inputBinding:
       position: 101
       prefix: --prec
@@ -204,7 +194,6 @@ inputs:
       - 'null'
       - float
     doc: De novo mutation rate
-    default: '1.5e-08'
     inputBinding:
       position: 101
       prefix: --rate_denovo
@@ -213,7 +202,6 @@ inputs:
       - 'null'
       - float
     doc: Scaled mutation rate
-    default: '1.0e-03'
     inputBinding:
       position: 101
       prefix: --theta
@@ -222,7 +210,6 @@ inputs:
       - 'null'
       - float
     doc: De novo transition/transversion ratio
-    default: '2.00'
     inputBinding:
       position: 101
       prefix: --tstv_denovo

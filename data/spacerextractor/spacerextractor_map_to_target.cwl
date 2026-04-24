@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: memory allocated to bbtools
-    default: 20g
     inputBinding:
       position: 101
       prefix: --bbtools_memory
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 2
     inputBinding:
       position: 101
       prefix: --n_threads

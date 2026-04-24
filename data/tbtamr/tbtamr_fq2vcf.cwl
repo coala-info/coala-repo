@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Band width for banded alignment in BWA.
-    default: 100
     inputBinding:
       position: 102
       prefix: --band-width
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Discard a chain if seeded bases shorter than INT in BWA.
-    default: 0
     inputBinding:
       position: 102
       prefix: --discard-short-seeded-bases
@@ -49,7 +47,6 @@ inputs:
       - float
     doc: Drop chains shorter than FLOAT fraction of the longest overlapping 
       chain in BWA.
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --drop-chains-fraction
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: Penalty for 5'- and 3'-end clipping in BWA.
-    default: 5,5
     inputBinding:
       position: 102
       prefix: --end-clipping-penalty
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: Gap extension penalty in BWA.
-    default: 1,1
     inputBinding:
       position: 102
       prefix: --gap-extension-penalty
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: Gap open penalties for deletions and insertions in BWA.
-    default: 6,6
     inputBinding:
       position: 102
       prefix: --gap-open-penalties
@@ -111,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Score for a sequence match in BWA.
-    default: 1
     inputBinding:
       position: 102
       prefix: --match-score
@@ -120,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Perform at most INT rounds of mate rescues for each read in BWA.
-    default: 50
     inputBinding:
       position: 102
       prefix: --max-mate-rescues
@@ -129,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: The fraction of the max score to use with -h in BWA.
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --max-score-fraction-XA
@@ -138,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum score to output in BWA.
-    default: 50
     inputBinding:
       position: 102
       prefix: --min-score-output
@@ -147,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum seed length for BWA.
-    default: 19
     inputBinding:
       position: 102
       prefix: --min-seed-length
@@ -156,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for a mismatch in BWA.
-    default: 4
     inputBinding:
       position: 102
       prefix: --mismatch-penalty
@@ -165,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: Off-diagonal X-dropoff for BWA.
-    default: 100
     inputBinding:
       position: 102
       prefix: --off-diagonal-xdropoff
@@ -191,7 +178,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to store output files.
-    default: tbtamr
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -241,7 +227,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length for samclip.
-    default: 10
     inputBinding:
       position: 102
       prefix: --samclip-max-length
@@ -250,7 +235,6 @@ inputs:
       - 'null'
       - string
     doc: Mode for samtools fixmate.
-    default: m
     inputBinding:
       position: 102
       prefix: --samtools-fixmate-mode
@@ -259,7 +243,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove duplicates with samtools markdup.
-    default: true
     inputBinding:
       position: 102
       prefix: --samtools-markdup-remove-duplicates
@@ -268,7 +251,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip reads with samtools markdup.
-    default: true
     inputBinding:
       position: 102
       prefix: --samtools-markdup-skip-reads
@@ -277,7 +259,6 @@ inputs:
       - 'null'
       - string
     doc: Temporary file prefix for samtools markdup.
-    default: /tmp
     inputBinding:
       position: 102
       prefix: --samtools-markdup-temp-prefix
@@ -286,7 +267,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for samtools sort.
-    default: 0
     inputBinding:
       position: 102
       prefix: --samtools-sort-level
@@ -295,7 +275,6 @@ inputs:
       - 'null'
       - string
     doc: Memory per thread for samtools sort.
-    default: 1000M
     inputBinding:
       position: 102
       prefix: --samtools-sort-memory
@@ -312,7 +291,6 @@ inputs:
       - 'null'
       - string
     doc: Temporary file prefix for samtools sort.
-    default: /tmp
     inputBinding:
       position: 102
       prefix: --samtools-sort-temp-prefix
@@ -321,7 +299,6 @@ inputs:
       - 'null'
       - float
     doc: Seed occurrence ratio for BWA.
-    default: 1.5
     inputBinding:
       position: 102
       prefix: --seed-occurrence-ratio
@@ -330,7 +307,6 @@ inputs:
       - 'null'
       - int
     doc: Seed occurrence for the 3rd round seeding in BWA.
-    default: 20
     inputBinding:
       position: 102
       prefix: --seed-occurrence-third-round
@@ -355,7 +331,6 @@ inputs:
       - 'null'
       - int
     doc: Skip seeds with more than INT occurrences in BWA.
-    default: 500
     inputBinding:
       position: 102
       prefix: --skip-seeds-occurrence
@@ -372,7 +347,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for BWA and Samtools.
-    default: 8
     inputBinding:
       position: 102
       prefix: --threads
@@ -389,7 +363,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for an unpaired read pair in BWA.
-    default: 17
     inputBinding:
       position: 102
       prefix: --unpaired-read-pair-penalty
@@ -415,7 +388,6 @@ inputs:
       - 'null'
       - int
     doc: Verbosity level for BWA (1=error, 2=warning, 3=message, 4+=debugging).
-    default: 3
     inputBinding:
       position: 102
       prefix: --verbosity-level

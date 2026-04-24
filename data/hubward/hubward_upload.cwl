@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - boolean
     doc: Just update the hub text files, not data files
-    default: false
     inputBinding:
       position: 102
       prefix: --hub-only
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: Options for rsync.
-    default: "'-avrL --progress'"
     inputBinding:
       position: 102
       prefix: --rsync_options

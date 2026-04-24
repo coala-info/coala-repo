@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Port number to open web server
-    default: 8501
     inputBinding:
       position: 101
       prefix: --port

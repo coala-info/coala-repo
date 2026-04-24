@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print commands but do not run
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not delete temporary directory
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_tmp
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not write output to console (silence stdout and stderr)
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet

@@ -71,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Set output width.
-    default: 80
     inputBinding:
       position: 103
       prefix: -w

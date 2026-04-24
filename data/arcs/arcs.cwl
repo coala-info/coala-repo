@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: estimate distance using N closest Jaccard scores
-    default: 20
     inputBinding:
       position: 102
       prefix: --bin_size
@@ -75,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: contig head/tail length for masking alignments
-    default: 30000
     inputBinding:
       position: 102
       prefix: --end_length
@@ -84,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: p-value for head/tail assignment and link orientation
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --error_percent
@@ -101,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: fixed gap size for ABySS dist.gv file
-    default: 100
     inputBinding:
       position: 102
       prefix: --gap
@@ -110,7 +106,6 @@ inputs:
       - 'null'
       - string
     doc: barcode multiplicity range
-    default: 50-10000
     inputBinding:
       position: 102
       prefix: --index_multiplicity
@@ -119,7 +114,6 @@ inputs:
       - 'null'
       - float
     doc: minimum fraction of read kmers matching a contigId (ARKS specific)
-    default: 0.55
     inputBinding:
       position: 102
       prefix: --j_index
@@ -128,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: size of a k-mer (ARKS specific)
-    default: 30
     inputBinding:
       position: 102
       prefix: --k_value
@@ -137,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: max node degree in scaffold graph
-    default: 0
     inputBinding:
       position: 102
       prefix: --max_degree
@@ -146,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: min shared barcodes between contigs
-    default: 0
     inputBinding:
       position: 102
       prefix: --min_links
@@ -155,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: min aligned read pairs per barcode mapping
-    default: 5
     inputBinding:
       position: 102
       prefix: --min_reads
@@ -164,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: min contig length
-    default: 500
     inputBinding:
       position: 102
       prefix: --min_size
@@ -206,7 +195,6 @@ inputs:
       - 'null'
       - int
     doc: min sequence identity for read alignments (ARCS specific)
-    default: 98
     inputBinding:
       position: 102
       prefix: --seq_id
@@ -215,7 +203,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads (ARKS specific)
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

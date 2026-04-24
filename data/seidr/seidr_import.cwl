@@ -66,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Number of OpenMP threads for parallel sorting
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length
-    default: 25
     inputBinding:
       position: 101
       prefix: --kmer
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Min k-mer frequency (FASTQ only)
-    default: 3
     inputBinding:
       position: 101
       prefix: --minfreq
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: RAM in gigabytes to use
-    default: 4
     inputBinding:
       position: 101
       prefix: --ram
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: Fast working directory
-    default: auto
     inputBinding:
       position: 101
       prefix: --tempdir
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - float
     doc: 'Weight for enclosing reads. Default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --enclweight
@@ -53,7 +52,6 @@ inputs:
       - 'null'
       - float
     doc: 'Weight for flanking reads. Default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --flankweight
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: 'Weight for FRR reads. Default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --frrweight
@@ -72,7 +69,6 @@ inputs:
       - int
     doc: 'Use optimization rather than grid search to find MLE if more than this many
       possible alleles. Default: 10000'
-    default: 10000
     inputBinding:
       position: 101
       prefix: --grid-threshold
@@ -110,7 +106,6 @@ inputs:
       - int
     doc: 'Maximum number of processed reads per sample before a region is skipped.
       Default: 3000'
-    default: 3000
     inputBinding:
       position: 101
       prefix: --max-proc-read
@@ -128,7 +123,6 @@ inputs:
       - int
     doc: 'Minimum number of matching basepairs on each end of enclosing reads. Default:
       5'
-    default: 5
     inputBinding:
       position: 101
       prefix: --minmatch
@@ -137,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum alignment score (out of 100). Default: 75'
-    default: 75
     inputBinding:
       position: 101
       prefix: --minscore
@@ -162,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of bootstrap samples. Default: 100'
-    default: 100
     inputBinding:
       position: 101
       prefix: --numbstrap
@@ -202,7 +194,6 @@ inputs:
       - 'null'
       - int
     doc: 'Indicate whether data is haploid (1) or diploid (2). Default: -1'
-    default: -1
     inputBinding:
       position: 101
       prefix: --ploidy
@@ -227,7 +218,6 @@ inputs:
       - 'null'
       - int
     doc: 'Read length. Default: -1'
-    default: -1
     inputBinding:
       position: 101
       prefix: --readlength
@@ -249,7 +239,6 @@ inputs:
       - int
     doc: 'Number of regions that GangSTR attempts to rescue mates from (excluding
       off-target regions) Default: 0'
-    default: 0
     inputBinding:
       position: 101
       prefix: --rescue-count
@@ -291,7 +280,6 @@ inputs:
       - 'null'
       - float
     doc: 'Weight for spanning reads. Default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --spanweight
@@ -308,7 +296,6 @@ inputs:
       - 'null'
       - float
     doc: 'Stutter deletion probability. Default: 0.05'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --stutterdown
@@ -317,7 +304,6 @@ inputs:
       - 'null'
       - float
     doc: 'Stutter step size parameter. Default: 0.9'
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --stutterprob
@@ -326,7 +312,6 @@ inputs:
       - 'null'
       - float
     doc: 'Stutter insertion probability. Default: 0.05'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --stutterup

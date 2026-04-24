@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Feature to extract
-    default: protein_id
     inputBinding:
       position: 101
       prefix: --feature
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads

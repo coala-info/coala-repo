@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: Alpha parameter for position-specific priors
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --alpha
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of scores to store
-    default: 100000
     inputBinding:
       position: 103
       prefix: --max-stored-scores
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: Use only the motif identified by <id>
-    default: all
     inputBinding:
       position: 103
       prefix: --motif
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - float
     doc: Pseudocount to add to motif frequencies
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --motif-pseudo
@@ -144,7 +140,6 @@ inputs:
       - 'null'
       - float
     doc: p-value or q-value threshold
-    default: 0.0001
     inputBinding:
       position: 103
       prefix: --thresh
@@ -153,7 +148,6 @@ inputs:
       - 'null'
       - int
     doc: Verbosity level (1-5)
-    default: 2
     inputBinding:
       position: 103
       prefix: --verbosity

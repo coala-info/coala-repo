@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Apply bidirection check for paralogous gene partition.
-    default: false
     inputBinding:
       position: 101
       prefix: --accurate
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: Coverage for the longer sequence.
-    default: 0.6
     inputBinding:
       position: 101
       prefix: --AL
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: The aligner used to pairwise alignment.
-    default: diamond
     inputBinding:
       position: 101
       prefix: --aligner
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Expect ani threshold
-    default: 95
     inputBinding:
       position: 101
       prefix: --ani_thre
@@ -46,7 +42,6 @@ inputs:
       - boolean
     doc: Discard original annotation, and re-annote the genome privately using 
       prodigal
-    default: false
     inputBinding:
       position: 101
       prefix: --annot
@@ -55,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: Coverage for the shorter sequence.
-    default: 0.6
     inputBinding:
       position: 101
       prefix: --AS
@@ -64,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: The method used to cluster the genes.
-    default: cdhit
     inputBinding:
       position: 101
       prefix: --clust_method
@@ -73,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Debug mode. Note: very verbose'
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -82,7 +74,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable progress bar
-    default: false
     inputBinding:
       position: 101
       prefix: --disable
@@ -91,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: The maximum identity between the most recent duplication envent.
-    default: 0.99
     inputBinding:
       position: 101
       prefix: --dup_id
@@ -100,7 +90,6 @@ inputs:
       - 'null'
       - float
     doc: The evalue of aligner.
-    default: '1e-05'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -109,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: The genetic code of your species. Default is [11] (bacteria).
-    default: 11
     inputBinding:
       position: 101
       prefix: --gcode
@@ -119,7 +107,6 @@ inputs:
       - string
     doc: Only for gff file as input, Attribute key to extract from the 9th 
       column as the record ID (e.g., 'ID', 'gene', 'locus_tag').
-    default: ID
     inputBinding:
       position: 101
       prefix: --id-attr-key
@@ -134,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum gene length difference proportion between two genes.
-    default: 0.6
     inputBinding:
       position: 101
       prefix: --LD
@@ -144,7 +130,6 @@ inputs:
       - string
     doc: Assigned darb or outlier strain used to filter the input. See detail in
       marker.cfg in the main path
-    default: None
     inputBinding:
       position: 101
       prefix: --marker
@@ -154,7 +139,6 @@ inputs:
       - int
     doc: The maximum targets for each query in alignment. Improves accuracy for 
       large-scale analyses, but increases runtime and memory usage.
-    default: 2000
     inputBinding:
       position: 101
       prefix: --max_targets
@@ -163,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: protein length of throw_away_sequences, at least 11
-    default: 20
     inputBinding:
       position: 101
       prefix: --min_falen
@@ -172,7 +155,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only output flat file, but no drawing plot
-    default: false
     inputBinding:
       position: 101
       prefix: --nodraw
@@ -182,7 +164,6 @@ inputs:
       - float
     doc: The maximum identity between the most similar panclusters, 0 means 
       automatic selection.
-    default: 0.98
     inputBinding:
       position: 101
       prefix: --orth_id
@@ -191,7 +172,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir
@@ -201,7 +181,6 @@ inputs:
       - float
     doc: Use this identity as the paralogous identity, 0 means automatic 
       selection.
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --para_id
@@ -210,7 +189,6 @@ inputs:
       - 'null'
       - boolean
     doc: Retrieving gene that may lost with annotations
-    default: false
     inputBinding:
       position: 101
       prefix: --retrieve
@@ -219,7 +197,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output each vector plot as a single file
-    default: false
     inputBinding:
       position: 101
       prefix: --single_file
@@ -228,7 +205,6 @@ inputs:
       - 'null'
       - int
     doc: threads used in parallel
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -238,7 +214,6 @@ inputs:
       - string
     doc: Only for gff file as input, feature type (3rd column) to include, Only 
       lines matching these types will be processed.
-    default: CDS
     inputBinding:
       position: 101
       prefix: --type-filter
@@ -247,7 +222,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose output
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

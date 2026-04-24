@@ -180,7 +180,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads to use (default: 8)'
-    default: 8
     inputBinding:
       position: 104
       prefix: -t
@@ -207,7 +206,6 @@ inputs:
     doc: 'The type of index to create. Use `nac` for an index type that can quantify
       nascent and mature RNA. Use `custom` for indexing targets directly. Use `kite`
       for feature barcoding. (default: standard)'
-    default: standard
     inputBinding:
       position: 104
       prefix: --workflow

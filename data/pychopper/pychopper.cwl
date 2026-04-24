@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: Search method (phmm, edlib, or sw)
-    default: phmm
     inputBinding:
       position: 102
       prefix: --method
@@ -72,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

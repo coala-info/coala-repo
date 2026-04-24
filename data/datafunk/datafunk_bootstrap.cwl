@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bootstraps to generate
-    default: 1
     inputBinding:
       position: 101
       prefix: -n
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output files
-    default: bootstrap_
     inputBinding:
       position: 101
       prefix: --output-prefix

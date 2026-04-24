@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size
-    default: 13
     inputBinding:
       position: 102
       prefix: --kmer
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Flanking region around a block to use for mapping
-    default: 10
     inputBinding:
       position: 102
   - id: max_gap
@@ -33,7 +31,6 @@ inputs:
       - int
     doc: Maximum gap for blocks to be contigous, measured in multiples of the 
       k-mer size
-    default: 3
     inputBinding:
       position: 102
   - id: max_kmer_count
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Exclude k-mers which occur more than this number of times in a sequence
-    default: 10
     inputBinding:
       position: 102
   - id: min_block_size
@@ -49,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum block size in bases
-    default: 50
     inputBinding:
       position: 102
   - id: min_fasta_hits
@@ -57,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum No. of kmers matching a read
-    default: 8
     inputBinding:
       position: 102
       prefix: --min_fasta_hits
@@ -66,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum No. of kmers matching a read in 1st pass
-    default: 5
     inputBinding:
       position: 102
   - id: min_perc_coverage
@@ -74,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percentage coverage of typing sequence to report
-    default: 85
     inputBinding:
       position: 102
       prefix: --min_perc_coverage
@@ -83,7 +75,6 @@ inputs:
       - 'null'
       - boolean
     doc: Dont filter out lower coverage genes from same group
-    default: false
     inputBinding:
       position: 102
   - id: no_hc_compression
@@ -91,7 +82,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn off homoploymer compression of k-mers
-    default: false
     inputBinding:
       position: 102
   - id: plasmid_data
@@ -100,7 +90,6 @@ inputs:
       - File
     doc: FASTA file containing plasmid data from downloader script, defaults to 
       bundled database
-    default: None
     inputBinding:
       position: 102
       prefix: --plasmid_data
@@ -109,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Print results every this number of reads
-    default: None
     inputBinding:
       position: 102
       prefix: --print_interval
@@ -118,7 +106,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn on debugging
-    default: false
     inputBinding:
       position: 102
       prefix: --verbose

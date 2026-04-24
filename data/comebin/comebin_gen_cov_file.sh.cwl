@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Forward read suffix for paired reads
-    default: _1.fastq
     inputBinding:
       position: 104
       prefix: -f
@@ -60,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: minimum contig length to bin
-    default: 1000
     inputBinding:
       position: 104
       prefix: -l
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: amount of RAM available
-    default: 4
     inputBinding:
       position: 104
       prefix: -m
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: Reverse read suffix for paired reads
-    default: _2.fastq
     inputBinding:
       position: 104
       prefix: -r
@@ -95,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 104
       prefix: -t

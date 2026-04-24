@@ -75,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: set minimum bit score of a surviving subsequence as <x>
-    default: 50
     inputBinding:
       position: 103
       prefix: -b
@@ -84,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: set minimum length of a surviving subsequence as <n>
-    default: 1
     inputBinding:
       position: 103
       prefix: -l
@@ -93,7 +91,6 @@ inputs:
       - 'null'
       - string
     doc: increase mx size for cmalign to <f> Mb
-    default: '4096'
     inputBinding:
       position: 103
       prefix: --mxsize

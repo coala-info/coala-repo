@@ -12,7 +12,6 @@ inputs:
       - File
     doc: A directory to use for created conda environments. If none given then 
       it will use the user cache directory.
-    default: None
     inputBinding:
       position: 101
       prefix: --conda-prefix
@@ -22,7 +21,6 @@ inputs:
       - int
     doc: Number of cores to request for the workflow. If not given then it will 
       use all available available CPU cores.
-    default: None
     inputBinding:
       position: 101
       prefix: --cores
@@ -30,7 +28,6 @@ inputs:
     type:
       - 'null'
       - Directory
-    default: .
     inputBinding:
       position: 101
       prefix: --directory
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - File
     doc: The input source files
-    default: None
     inputBinding:
       position: 101
       prefix: --files

@@ -10,7 +10,6 @@ inputs:
       - type: array
         items: string
     doc: Comma-separated list of columns to parse as continuous
-    default: None
     inputBinding:
       position: 101
       prefix: --continuous
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force input parsing as .csv file
-    default: false
     inputBinding:
       position: 101
       prefix: --csv
@@ -29,7 +27,6 @@ inputs:
       - type: array
         items: string
     doc: List of columns to ignore
-    default: None
     inputBinding:
       position: 101
       prefix: --ignore
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Size of margin specified in iTOL file
-    default: 5
     inputBinding:
       position: 101
       prefix: --margin
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of categories to not get assigned to "other"
-    default: 18
     inputBinding:
       position: 101
       prefix: --maxcategories
@@ -63,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: Color palette to use for continuous columns
-    default: GnBu
     inputBinding:
       position: 101
       prefix: --palette
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Strip width specified in iTOL file
-    default: 50
     inputBinding:
       position: 101
       prefix: --stripwidth
@@ -81,7 +74,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force input parsing as .tsv file
-    default: false
     inputBinding:
       position: 101
       prefix: --tsv

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: 'Hostname, default: localhost.'
-    default: localhost
     inputBinding:
       position: 102
       prefix: --host
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: 'Port, default: 8088.'
-    default: 8088
     inputBinding:
       position: 102
       prefix: --port

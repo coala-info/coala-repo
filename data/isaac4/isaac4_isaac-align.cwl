@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Avoid failure when some of the --base-calls contain no data
-    default: 0
     inputBinding:
       position: 101
       prefix: --allow-empty-flowcells
@@ -20,7 +19,6 @@ inputs:
     doc: Allow entire pair to be anchored by only one read if it has not been 
       realigned. If not set, each read is anchored individually and does not 
       affect anchoring of its mate.
-    default: 1
     inputBinding:
       position: 101
       prefix: --anchor-mate
@@ -31,7 +29,6 @@ inputs:
     doc: When deciding between an anomalous pair and a rescued pair, this is 
       proportional to the number of mismatches anomalous pair needs to have less
       in order to be accepted instead of a rescued pair.
-    default: 240
     inputBinding:
       position: 101
       prefix: --anomalous-pair-handicap
@@ -41,7 +38,6 @@ inputs:
       - string
     doc: 'Comma-separated list of regular tags to exclude from the output BAM files.
       Allowed values are: all,none,AS,BC,NM,OC,RG,SM,ZX,ZY'
-    default: ZX,ZY
     inputBinding:
       position: 101
       prefix: --bam-exclude-tags
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Gzip level to use for BAM
-    default: 1
     inputBinding:
       position: 101
       prefix: --bam-gzip-level
@@ -69,7 +64,6 @@ inputs:
       - int
     doc: When set, the MAPQ is computed as MAPQ:=min(60, min(SM, AS)), otherwise
       MAPQ:=min(60, max(SM, AS))
-    default: 0
     inputBinding:
       position: 101
       prefix: --bam-pessimistic-mapq
@@ -79,7 +73,6 @@ inputs:
       - int
     doc: Controls whether a separate file containing md5 checksum is produced 
       for each output bam.
-    default: 1
     inputBinding:
       position: 101
       prefix: --bam-produce-md5
@@ -90,7 +83,6 @@ inputs:
     doc: 'Template string for bam header RG tag PU field. Ordinary characters are
       directly copied. The following placeholders are supported: - %F : Flowcell ID
       - %L : Lane number - %B : Barcode'
-    default: '%F:%L:%B'
     inputBinding:
       position: 101
       prefix: --bam-pu-format
@@ -105,7 +97,6 @@ inputs:
       first barcode component and no mismatches for the subsequent components. - 1
       : allow one mismatch for every barcode component. - 0 : no mismatches allowed
       in any barcode component. This is the default.'
-    default: '1'
     inputBinding:
       position: 101
       prefix: --barcode-mismatches
@@ -145,7 +136,6 @@ inputs:
       - int
     doc: 3' end quality trimming cutoff. Value above 0 causes low quality bases 
       to be soft-clipped. 0 turns the trimming off.
-    default: 15
     inputBinding:
       position: 101
       prefix: --base-quality-cutoff
@@ -158,7 +148,6 @@ inputs:
       requires several tens of thousands clusters to work. If tiles are small 
       and data is heavily multiplexed, there might be not enough clusters in a 
       single tile to collect the tls for a sample
-    default: 1
     inputBinding:
       position: 101
       prefix: --bcl-tiles-per-chunk
@@ -171,7 +160,6 @@ inputs:
       the contigs that have aligned data. REGEX : Is treated as comma-separated list
       of regular expressions. Bam files will be filtered to contain only the bins
       that match by the name.'
-    default: all
     inputBinding:
       position: 101
       prefix: --bin-regex
@@ -183,7 +171,6 @@ inputs:
       best alignment. If seeds yield a greater number, the alignment generally 
       is not performed. Other mechanisms such as shadow rescue may still place 
       the fragment.
-    default: 800
     inputBinding:
       position: 101
       prefix: --candidate-matches-max
@@ -195,7 +182,6 @@ inputs:
       have been completed. Notice that this will prevent resumption from the 
       stages that have their input files removed. --start-from Last will still 
       work.
-    default: 0
     inputBinding:
       position: 101
       prefix: --cleanup-intermediary
@@ -205,7 +191,6 @@ inputs:
       - int
     doc: When set, the pairs that have read ends overlapping each other will 
       have the lower-quality end soft-clipped.
-    default: 1
     inputBinding:
       position: 101
       prefix: --clip-overlapping
@@ -215,7 +200,6 @@ inputs:
       - int
     doc: When set, reads have their bases soft-clipped on either sides until a 
       stretch of 5 matches is found
-    default: 0
     inputBinding:
       position: 101
       prefix: --clip-semialigned
@@ -237,7 +221,6 @@ inputs:
       together when input is bam or fastq is computed automatically based on the
       amount of available RAM. Set to non-zero value to force deterministic 
       behavior.
-    default: 8000000
     inputBinding:
       position: 101
       prefix: --clusters-at-a-time
@@ -249,7 +232,6 @@ inputs:
       effort. In particular: - Smith waterman is not used for alignments - Suspicious
       alignments are marked dodgyFor example, to mark everything that does not begin
       with chr as decoy use the following regex: ^(?!chr.*)'
-    default: decoy
     inputBinding:
       position: 101
       prefix: --decoy-regex
@@ -290,7 +272,6 @@ inputs:
       - int
     doc: Number of pairs to use as a single block for template length statistics
       detection
-    default: 10000
     inputBinding:
       position: 101
       prefix: --detect-template-block-size
@@ -301,7 +282,6 @@ inputs:
     doc: If enabled, Isaac does not persist the state of the analysis on disk. 
       This might save noticeable amount of runtime at the expense of not being 
       able to use --start-from option.
-    default: 0
     inputBinding:
       position: 101
       prefix: --disable-resume
@@ -322,7 +302,6 @@ inputs:
       - boolean
     doc: Replicate static data across NUMA nodes, lock threads to their NUMA 
       nodes, allocate thread private data on the corresponding NUMA node
-    default: false
     inputBinding:
       position: 101
       prefix: --enable-numa
@@ -337,7 +316,6 @@ inputs:
       at the resident/swap memory numbers for your process during the bam 
       generation. If you see too much showing as 'swap', it is safe to reduce 
       the --expected-bgzf-ratio.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --expected-bgzf-ratio
@@ -347,7 +325,6 @@ inputs:
       - int
     doc: Expected coverage is required for Isaac to estimate the efficient 
       binning of the aligned data.
-    default: 60
     inputBinding:
       position: 101
       prefix: --expected-coverage
@@ -356,7 +333,6 @@ inputs:
       - 'null'
       - string
     doc: Character to serve as base quality 0 in fastq input.
-    default: '!'
     inputBinding:
       position: 101
       prefix: --fastq-q0
@@ -369,7 +345,6 @@ inputs:
       - m:mm:go:ge:me:gl : colon-delimited string of values where: m : match score
       mm : mismatch score go : gap open score ge : gap extend score me : min extend
       score (all gaps reaching this score will be treated as equal)'
-    default: bwa
     inputBinding:
       position: 101
       prefix: --gap-scoring
@@ -380,7 +355,6 @@ inputs:
     doc: 'Number of buckets to use for reference hash table. Larger number of buckets
       requires more RAM but it tends to speed up the execution and improve sensitivity.
       Value of 0 indicates default bucket count: 2^({seed-length}*2)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --hash-table-buckets
@@ -408,7 +382,6 @@ inputs:
     doc: When set, missing bcl files are treated as all clusters having N bases 
       for the corresponding tile cycle. Otherwise, encountering a missing bcl 
       file causes the analysis to fail.
-    default: 0
     inputBinding:
       position: 101
       prefix: --ignore-missing-bcls
@@ -419,7 +392,6 @@ inputs:
     doc: When set, missing filter files are treated as if all clusters pass 
       filter for the corresponding tile. Otherwise, encountering a missing 
       filter file causes the analysis to fail.
-    default: 0
     inputBinding:
       position: 101
       prefix: --ignore-missing-filters
@@ -428,7 +400,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of concurrent file read operations for --base-calls
-    default: 64
     inputBinding:
       position: 101
       prefix: --input-concurrent-load
@@ -437,7 +408,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of compute threads to run in parallel
-    default: 20
     inputBinding:
       position: 101
       prefix: --jobs
@@ -447,7 +417,6 @@ inputs:
       - int
     doc: Keep duplicate pairs in the bam file (with 0x400 flag set in all but 
       the best one)
-    default: 1
     inputBinding:
       position: 101
       prefix: --keep-duplicates
@@ -458,7 +427,6 @@ inputs:
     doc: 'Available options: - discard : discard clusters where both reads are not
       aligned - front : keep unaligned clusters in the front of the BAM file - back
       : keep unaligned clusters in the back of the BAM file'
-    default: back
     inputBinding:
       position: 101
       prefix: --keep-unaligned
@@ -475,7 +443,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum lane number to look for in --base-calls-directory (fastq only).
-    default: 8
     inputBinding:
       position: 101
       prefix: --lane-number-max
@@ -485,7 +452,6 @@ inputs:
       - int
     doc: If any fragment alignment in template is below the threshold, template 
       is not stored in the BAM.
-    default: -1
     inputBinding:
       position: 101
       prefix: --mapq-threshold
@@ -495,7 +461,6 @@ inputs:
       - int
     doc: If not set and --keep-duplicates is set, the duplicates are not 
       discarded and not flagged.
-    default: 1
     inputBinding:
       position: 101
       prefix: --mark-duplicates
@@ -505,7 +470,6 @@ inputs:
       - int
     doc: Maximum number of seed candidate matches to be considered for finding a
       possible alignment split.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --match-finder-shadow-split-repeats
@@ -514,7 +478,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of seed matches to be looked at for each attempted seed
-    default: 4000
     inputBinding:
       position: 101
       prefix: --match-finder-too-many-repeats
@@ -526,7 +489,6 @@ inputs:
       has candidate alignments and the other has gone over 
       match-finder-too-many-repeats on all seeds or over candidate-matches-max 
       when seed position merge was attempted
-    default: 100000
     inputBinding:
       position: 101
       prefix: --match-finder-way-too-many-repeats
@@ -537,7 +499,6 @@ inputs:
     doc: "Define the behavior in case unexpected memory allocations are detected:
       - warning : Log WARNING about the allocation. - off : Don't monitor dynamic
       memory usage. - strict : Fail memory allocation. Intended for development use."
-    default: off
     inputBinding:
       position: 101
       prefix: --memory-control
@@ -549,7 +510,6 @@ inputs:
       gigabytes. 0 means no limit, however 0 is not allowed as in such case 
       Isaac will most likely consume all the memory on the system and cause it 
       to crash. Default value is taken from ulimit -v.
-    default: 0
     inputBinding:
       position: 101
       prefix: --memory-limit
@@ -561,7 +521,6 @@ inputs:
       same prefix (16 bases) is small enough to justify the neighborhood search.
       Use large enough value e.g. 10000 to enable alignment to positions where 
       seeds don't match exactly.
-    default: 0
     inputBinding:
       position: 101
       prefix: --neighborhood-size-threshold
@@ -571,7 +530,6 @@ inputs:
       - int
     doc: Maximum number of concurrent file write operations for 
       --output-directory
-    default: 120
     inputBinding:
       position: 101
       prefix: --output-concurrent-save
@@ -587,7 +545,6 @@ inputs:
       --per-tile-tls is set. It is not recommended to set --per-tile-tls when 
       input data is not randomly distributed (such as bam) as in such cases, the
       shadow rescue range will be biased by the input data ordering.
-    default: 0
     inputBinding:
       position: 101
       prefix: --per-tile-tls
@@ -597,7 +554,6 @@ inputs:
       - int
     doc: When set, only the fragments passing filter (PF) are generated in the 
       BAM file
-    default: 1
     inputBinding:
       position: 101
       prefix: --pf-only
@@ -608,7 +564,6 @@ inputs:
     doc: Use fallocate to reduce the bin file fragmentation. Since bin files are
       pre-allocated based on the estimation of their size, it is recommended to 
       turn bin pre-allocation off when using RAM disk as temporary storage.
-    default: 0
     inputBinding:
       position: 101
       prefix: --pre-allocate-bins
@@ -618,7 +573,6 @@ inputs:
       - int
     doc: Unset this value if you are working with references that have many 
       contigs (1000+)
-    default: 1
     inputBinding:
       position: 101
       prefix: --pre-sort-bins
@@ -630,7 +584,6 @@ inputs:
       read name length to be determined by reading the first records of the 
       input data. Shorter than needed read names can cause duplicate names in 
       the output bam files.
-    default: 0
     inputBinding:
       position: 101
       prefix: --read-name-length
@@ -640,7 +593,6 @@ inputs:
       - int
     doc: If not set, the reads without alignment score are not realigned against
       gaps found in other reads.
-    default: 0
     inputBinding:
       position: 101
       prefix: --realign-dodgy
@@ -653,7 +605,6 @@ inputs:
       reported around short indels. - no : no gap realignment - sample : realign against
       gaps found in the same sample - project : realign against gaps found in all
       samples of the same project - all : realign against gaps found in all samples'
-    default: sample
     inputBinding:
       position: 101
       prefix: --realign-gaps
@@ -663,7 +614,6 @@ inputs:
       - int
     doc: Gaps from alignments with lower MAPQ will not be used as candidates for
       gap realignment
-    default: 60
     inputBinding:
       position: 101
       prefix: --realign-mapq-min
@@ -674,7 +624,6 @@ inputs:
     doc: If set, the realignment result will be used to search for more gaps and
       attempt another realignment, effectively extending the realignment over 
       multiple deletions not covered by the original alignment.
-    default: 0
     inputBinding:
       position: 101
       prefix: --realign-vigorously
@@ -689,7 +638,6 @@ inputs:
       the bam generation as there is a n choose k combination try with n being 
       the number of gaps detected by all other fragment alignments that overlap 
       the fragment being realigned.
-    default: 4
     inputBinding:
       position: 101
       prefix: --realigned-gaps-per-fragment
@@ -710,7 +658,6 @@ inputs:
       : default reference to use with data that did not match any barcode. - default
       : reference to use for the data with no matching value in sample sheet 'reference'
       column."
-    default: default
     inputBinding:
       position: 101
       prefix: --reference-name
@@ -730,7 +677,6 @@ inputs:
       - int
     doc: Threshold used to decide if matches must be discarded as too abundant 
       (when the number of repeats is greater or equal to the threshold)
-    default: 100
     inputBinding:
       position: 101
       prefix: --repeat-threshold
@@ -740,7 +686,6 @@ inputs:
       - int
     doc: Scan within dominant template range off an orphan, for a possible 
       shadow alignment
-    default: 1
     inputBinding:
       position: 101
       prefix: --rescue-shadows
@@ -770,7 +715,6 @@ inputs:
       - int
     doc: When set, extra care will be taken to scatter pairs aligning to repeats
       across the repeat locations
-    default: 1
     inputBinding:
       position: 101
       prefix: --scatter-repeats
@@ -780,7 +724,6 @@ inputs:
       - int
     doc: Minimum base quality for the seed to be used in alignment candidate 
       search.
-    default: 3
     inputBinding:
       position: 101
       prefix: --seed-base-quality-min
@@ -791,7 +734,6 @@ inputs:
     doc: Length of the seed in bases. Only 10 11 12 13 14 15 16 17 18 19 20 are 
       allowed. Longer seeds reduce sensitivity on noisy data but improve repeat 
       resolution and run time.
-    default: 16
     inputBinding:
       position: 101
       prefix: --seed-length
@@ -802,7 +744,6 @@ inputs:
     doc: -1 - scan for possible mate alignments between template min and max >=0
       - scan for possible mate alignments in range of template median += 
       shadow-scan-range
-    default: -1
     inputBinding:
       position: 101
       prefix: --shadow-scan-range
@@ -813,7 +754,6 @@ inputs:
     doc: If set, the duplicate detection will occur across all read pairs in the
       sample. If not set, different lanes are assumed to originate from 
       different libraries and duplicate detection is not performed across lanes.
-    default: 1
     inputBinding:
       position: 101
       prefix: --single-library-samples
@@ -822,7 +762,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of gap detectable by smith waterman algorithm.
-    default: 16
     inputBinding:
       position: 101
       prefix: --smith-waterman-gap-size-max
@@ -833,7 +772,6 @@ inputs:
     doc: Maximum number of gaps that can be introduced into an alignment by 
       Smith-Waterman algorithm. If the optimum alignment has more gaps, it is 
       simply ignored as an alignment candidate.
-    default: 4
     inputBinding:
       position: 101
       prefix: --smith-waterman-gaps-max
@@ -843,7 +781,6 @@ inputs:
       - int
     doc: When set, alignments crossing a structural variant are allowed to be 
       split with SA tag.
-    default: 1
     inputBinding:
       position: 101
       prefix: --split-alignments
@@ -854,7 +791,6 @@ inputs:
     doc: Maximum length of insertion or deletion allowed to exist in a read. If 
       a gap exceeds this limit, the read gets broken up around the gap with SA 
       tag introduced
-    default: 10000
     inputBinding:
       position: 101
       prefix: --split-gap-length
@@ -869,7 +805,6 @@ inputs:
       perform some basic validation, the only safe option is 'Start' The primary purpose
       of the feature is to reduce the time required to diagnose the issues rather
       than be used on a regular basis."
-    default: Start
     inputBinding:
       position: 101
       prefix: --start-from
@@ -879,7 +814,6 @@ inputs:
       - string
     doc: 'Format to use for images during stats generation - gif : produce .gif type
       plots - none : no stat generation'
-    default: none
     inputBinding:
       position: 101
       prefix: --stats-image-format
@@ -894,7 +828,6 @@ inputs:
       attempts to perform some basic validation, the only safe option is 'Finish'
       The primary purpose of the feature is to reduce the time required to diagnose
       the issues rather than be used on a regular basis."
-    default: Finish
     inputBinding:
       position: 101
       prefix: --stop-at
@@ -906,7 +839,6 @@ inputs:
       targetBinSize in megabytes (1024 * 1024 bytes). Value of 0 will cause 
       Isaac to compute the target bin size automatically based on the available 
       memory.
-    default: 0
     inputBinding:
       position: 101
       prefix: --target-bin-size
@@ -915,7 +847,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of concurrent file read operations for --temp-directory
-    default: 4
     inputBinding:
       position: 101
       prefix: --temp-concurrent-load
@@ -924,7 +855,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of concurrent file write operations for --temp-directory
-    default: 680
     inputBinding:
       position: 101
       prefix: --temp-concurrent-save
@@ -934,7 +864,6 @@ inputs:
       - Directory
     doc: Directory where the temporary files will be stored (matches, unsorted 
       alignments, etc.)
-    default: ./Temp
     inputBinding:
       position: 101
       prefix: --temp-directory
@@ -967,7 +896,6 @@ inputs:
       - 'null'
       - int
     doc: Trim overhanging ends of PE alignments
-    default: 1
     inputBinding:
       position: 101
       prefix: --trim-pe
@@ -992,7 +920,6 @@ inputs:
       of mismatches in aligned reads - smart : apply heuristics to avoid executing
       costly smith-waterman on sequences that are unlikely to produce gaps - never
       : Don't use smith-waterman"
-    default: smart
     inputBinding:
       position: 101
       prefix: --use-smith-waterman
@@ -1011,7 +938,6 @@ inputs:
       - int
     doc: 'Verbosity: FATAL(0), ERRORS(1), WARNINGS(2), INFO(3), DEBUG(4) (not supported
       yet)'
-    default: 2
     inputBinding:
       position: 101
       prefix: --verbosity

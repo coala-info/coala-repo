@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Basename of config files
-    default: .bioxworkflow
     inputBinding:
       position: 102
       prefix: --config_base

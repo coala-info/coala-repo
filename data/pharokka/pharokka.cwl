@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Genetic code table
-    default: 11
     inputBinding:
       position: 101
       prefix: --coding_table
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: 'Gene predictor to use: prodigal-gv or phanotate'
-    default: prodigal-gv
     inputBinding:
       position: 101
       prefix: --gene_predictor
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: Locus tag prefix
-    default: PHAROKKA
     inputBinding:
       position: 101
       prefix: --locustag
@@ -81,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

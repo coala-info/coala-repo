@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Path to folder containing recipes (default: recipes/)'
-    default: recipes/
     inputBinding:
       position: 1
   - id: config
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - File
     doc: 'Path to Bioconda config (default: config.yml)'
-    default: config.yml
     inputBinding:
       position: 2
   - id: cache
@@ -29,7 +27,6 @@ inputs:
       - File
     doc: To speed up debugging, use repodata cached locally in the provided 
       filename. If the file does not exist, it will be created the first time.
-    default: '-'
     inputBinding:
       position: 103
       prefix: --cache
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Limit lines emitted for commands executed
-    default: '-'
     inputBinding:
       position: 103
       prefix: --log-command-max-lines
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - File
     doc: Write log to file
-    default: '-'
     inputBinding:
       position: 103
       prefix: --logfile
@@ -56,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Log level for log file
-    default: debug
     inputBinding:
       position: 103
       prefix: --logfile-level
@@ -65,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: Set logging level (debug, info, warning, error, critical)
-    default: info
     inputBinding:
       position: 103
       prefix: --loglevel
@@ -74,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of recipes that will be updated.
-    default: '-'
     inputBinding:
       position: 103
       prefix: --max-bumps
@@ -83,7 +75,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only update recipes with dependent packages.
-    default: false
     inputBinding:
       position: 103
       prefix: --no-leaves
@@ -93,7 +84,6 @@ inputs:
       - type: array
         items: string
     doc: Glob for package[s] to update, as needed due to a change in pinnings
-    default: '*'
     inputBinding:
       position: 103
       prefix: --packages
@@ -102,7 +92,6 @@ inputs:
       - 'null'
       - boolean
     doc: Drop into debugger on exception
-    default: false
     inputBinding:
       position: 103
       prefix: --pdb
@@ -114,7 +103,6 @@ inputs:
     doc: Skip updating/bumping packges that are already built with compatible 
       pinnings in one of the given channels in addition to those listed in 
       'config'.
-    default: '-'
     inputBinding:
       position: 103
       prefix: --skip-additional-channels
@@ -124,7 +112,6 @@ inputs:
       - type: array
         items: string
     doc: Skip packages that use one of the given variant keys.
-    default: '-'
     inputBinding:
       position: 103
       prefix: --skip-variants
@@ -133,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: Limit maximum number of processes used.
-    default: 16
     inputBinding:
       position: 103
       prefix: --threads

@@ -34,14 +34,12 @@ inputs:
         - '.bwt.2bit.64'
     format: edam:format_1929
     label: host genome fasta file
-    default: 'hg38.fa'
   memory:
     type: [ int?, string? ]
     label: memory for assembly in GB for metaspades and bytes for megahit
   min_contig_length:
     type: int
     label: minimum contig length
-    default: 500
   assembler:
     type: string?
     label: metaspades or megahit
@@ -54,10 +52,8 @@ inputs:
     type: string[]
   raw_dir_name:
     type: string?
-    default: 'raw'
   coassembly: 
     type: string
-    default: 'no'
 
 outputs:
    reads_folder:
@@ -80,7 +76,6 @@ steps:
       reads1: reads1
       reads2: reads2
       minLength:
-        default: 50
       host_genome: host_genome
     out: [ reads_qc_html, reads_qc_json, qc_reads1, qc_reads2, qc_summary ]
 
@@ -93,7 +88,6 @@ steps:
       reads1: multiple_reads_1
       reads2: multiple_reads_2
       minLength:
-        default: 50
       host_genome: host_genome
     out: [ reads_qc_html, reads_qc_json, qc_reads1, qc_reads2, qc_summary ]
 

@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: Name for the created clade.
-    default: clade
     inputBinding:
       position: 103
       prefix: --clade-name
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum bootstrap support value to consider a clade.
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --min-support

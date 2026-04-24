@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: create intermediate files for debugging purposes
-    default: false
     inputBinding:
       position: 101
       prefix: --debug

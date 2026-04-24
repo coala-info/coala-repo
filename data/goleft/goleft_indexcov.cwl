@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: exclude patterns for chromosomes
-    default: ^chrEBV$|^NC|_random$|Un_|^HLA\-|_alt$|hap\d$
     inputBinding:
       position: 102
       prefix: --excludepatt
@@ -65,7 +64,6 @@ inputs:
       - string
     doc: comma delimited names of the sex chromosome(s) used to infer sex. Set 
       to '' if no sex chromosomes are present.
-    default: X,Y
     inputBinding:
       position: 102
       prefix: --sex

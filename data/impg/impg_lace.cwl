@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Output compression format (none, gzip, bgzip, zstd, auto)
-    default: auto
     inputBinding:
       position: 101
       prefix: --compress
@@ -27,7 +26,6 @@ inputs:
       - int
     doc: 'Gap filling mode: 0=none, 1=middle gaps only, 2=all gaps (requires --sequence-files
       or --sequence-list for end gaps, GFA mode only)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --fill-gaps
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Input file format (gfa, vcf, auto)
-    default: auto
     inputBinding:
       position: 101
       prefix: --format
@@ -99,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for parallel processing
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -108,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Verbosity level (0 = error, 1 = info, 2 = debug)
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbose

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: batch size
-    default: 7G
     inputBinding:
       position: 102
       prefix: -m
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - File
     doc: read existing index from FILE
-    default: '[]'
     inputBinding:
       position: 102
       prefix: -i
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: leaf block size in B+-tree
-    default: 512
     inputBinding:
       position: 102
       prefix: -l
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: max number children per internal node
-    default: 64
     inputBinding:
       position: 102
       prefix: -n
@@ -100,7 +96,6 @@ inputs:
       - 'null'
       - File
     doc: output to FILE
-    default: stdout
     inputBinding:
       position: 102
       prefix: -o
@@ -133,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: '#threads for sais and run sais and merge together (more RAM)'
-    default: 0
     inputBinding:
       position: 102
       prefix: -p
@@ -142,7 +136,6 @@ inputs:
       - 'null'
       - File
     doc: save the current index to FILE after each input file
-    default: '[]'
     inputBinding:
       position: 102
       prefix: -S
@@ -151,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: total number of threads
-    default: 4
     inputBinding:
       position: 102
       prefix: -t

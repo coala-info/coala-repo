@@ -27,7 +27,6 @@ inputs:
     type: File
     inputBinding:
       position: 1
-    default:
         class: File
         basename: "gridss.R"
         contents: |-

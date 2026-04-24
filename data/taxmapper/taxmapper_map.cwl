@@ -11,7 +11,6 @@ inputs:
     doc: How to combine forward and reverse hits, for "concordant" forward and 
       reverse have to map to the same taxon, for "best" the best hit from 
       forward and reverse is returned
-    default: best
     inputBinding:
       position: 101
       prefix: --combine
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads, used to map forward and reverse reads in parallel
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads

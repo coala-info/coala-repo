@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: lower limit (inclusive) in insert size
-    default: 105
     inputBinding:
       position: 101
       prefix: --lower
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: SD to use for gaussian smoothing. Use 0 for no smoothing.
-    default: 0
     inputBinding:
       position: 101
       prefix: --smooth
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: upper limit (exclusive) in insert size
-    default: 251
     inputBinding:
       position: 101
       prefix: --upper
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - File
     doc: Accepts VMat file. Default is Vplot from S. Cer.
-    default: Vplot from S. Cer.
     inputBinding:
       position: 101
       prefix: --vplot

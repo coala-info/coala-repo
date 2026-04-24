@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Aligner to use (e.g., mem, backtrack)
-    default: mem
     inputBinding:
       position: 101
       prefix: --aligner
@@ -64,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --procs
@@ -79,7 +77,6 @@ inputs:
       - 'null'
       - float
     doc: Fraction of reads to mutate
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --snvfrac

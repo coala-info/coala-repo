@@ -22,7 +22,6 @@ inputs:
       - string
     doc: what format is the tree file. This is passed to dendropy. default is 
       'nexus'
-    default: nexus
     inputBinding:
       position: 101
       prefix: --format

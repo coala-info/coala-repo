@@ -27,7 +27,6 @@ inputs:
       position: 4
   minCells:
     type: int
-    default: 0
     inputBinding:
       position: 5
   minFeatures:

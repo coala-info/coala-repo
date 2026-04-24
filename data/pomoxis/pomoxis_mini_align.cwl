@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: 'alignment threads (default: 1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -115,7 +114,6 @@ inputs:
       - 'null'
       - string
     doc: 'set the minimap2 preset, e.g. map-ont, asm5, asm10, asm20 [default: map-ont]'
-    default: map-ont
     inputBinding:
       position: 101
       prefix: -d
@@ -156,7 +154,6 @@ inputs:
       - 'null'
       - string
     doc: 'output file prefix (default: reads).'
-    default: reads
     inputBinding:
       position: 101
       prefix: -p
@@ -173,7 +170,6 @@ inputs:
       - string
     doc: "which input bam tags to retain if input is in bam format (implies -C, default:
       '*')."
-    default: '*'
     inputBinding:
       position: 101
       prefix: -T
@@ -191,7 +187,6 @@ inputs:
       - string
     doc: "split index every ~NUM input bases (default: 16G, this is larger\nthan the
       usual minimap2 default)."
-    default: 16G
     inputBinding:
       position: 101
       prefix: -I

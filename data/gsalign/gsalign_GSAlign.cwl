@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Set the maximal indel size
-    default: 25
     inputBinding:
       position: 102
       prefix: -ind
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Set the minimal alignment length
-    default: 200
     inputBinding:
       position: 102
       prefix: -alen
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Set the minimal cluster size
-    default: 200
     inputBinding:
       position: 102
       prefix: -clr
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Set the minimal seed length
-    default: 15
     inputBinding:
       position: 102
       prefix: -slen
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Set the minimal sequence identity (0-100) of a local alignment
-    default: 70
     inputBinding:
       position: 102
       prefix: -idy
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - boolean
     doc: set one on one aligment mode
-    default: false
     inputBinding:
       position: 102
       prefix: -one
@@ -91,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Set the output format 1:maf, 2:aln
-    default: 1
     inputBinding:
       position: 102
       prefix: -fmt
@@ -100,7 +93,6 @@ inputs:
       - 'null'
       - string
     doc: Set the prefix of the output files
-    default: output
     inputBinding:
       position: 102
       prefix: -o
@@ -116,7 +108,6 @@ inputs:
       - 'null'
       - boolean
     doc: Sensitive mode
-    default: false
     inputBinding:
       position: 102
       prefix: -sen
@@ -125,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 8
     inputBinding:
       position: 102
       prefix: -t
@@ -134,7 +124,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output unique alignment only
-    default: false
     inputBinding:
       position: 102
       prefix: -unique

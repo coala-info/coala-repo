@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: output amino acid sequence (default is nucleotides)
-    default: false
     inputBinding:
       position: 101
       prefix: --translate

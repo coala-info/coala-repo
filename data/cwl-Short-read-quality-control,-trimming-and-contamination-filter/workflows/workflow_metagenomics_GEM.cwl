@@ -76,17 +76,14 @@ inputs:
   smetana_solver:
     type: string
     doc: Solver to be used in SMETANA (now only run with cplex)
-    default: "cplex"
   run_smetana:
     type: boolean?
     label: Run SMETANA
     doc: Run SMETANA (Species METabolic interaction ANAlysis) (default false)
-    default: false
   memote_solver:
     type: string?
     label: MEMOTE solver
     doc: MEMOTE solver Choice (cplex, glpk, gurobi, glpk_exact); by default glpk
-    default: "glpk"
   
   gapfill:
     type: string?
@@ -101,7 +98,6 @@ inputs:
     type: string?
     label: CarveMe solver
     doc: CarveMe solver (default scip), possible to use cplex in private container (not provided in public container)
-    default: "scip"
 
   # Prodigal mode, single or meta
   mode:
@@ -113,13 +109,11 @@ inputs:
         - meta
     label: Prodigal mode
     doc: Prodigal mode, single or meta
-    default: single
 
   threads:
     type: int?
     doc: Number of threads to use for computational processes
     label: number of threads
-    default: 2
 
   destination:
     type: string?
@@ -246,15 +240,10 @@ steps:
         pickValue: all_non_null
       solver: memote_solver
       report_snapshot:
-        default: true
       skip_test_find_metabolites_produced_with_closed_bounds:
-        default: true
       skip_test_find_metabolites_consumed_with_closed_bounds:
-        default: true
       skip_test_find_metabolites_not_produced_with_open_bounds:
-        default: true
       skip_test_find_metabolites_not_consumed_with_open_bounds:
-        default: true
     out: [report_html]
 
   memote_run_base:
@@ -270,15 +259,10 @@ steps:
         pickValue: all_non_null
       solver: memote_solver
       run:
-        default: true
       skip_test_find_metabolites_produced_with_closed_bounds:
-        default: true
       skip_test_find_metabolites_consumed_with_closed_bounds:
-        default: true
       skip_test_find_metabolites_not_produced_with_open_bounds:
-        default: true
       skip_test_find_metabolites_not_consumed_with_open_bounds:
-        default: true
     out: [run_json]
 
 # when memote solver is cplex
@@ -298,15 +282,10 @@ steps:
         pickValue: all_non_null
       solver: memote_solver
       report_snapshot:
-        default: true
       skip_test_find_metabolites_produced_with_closed_bounds:
-        default: true
       skip_test_find_metabolites_consumed_with_closed_bounds:
-        default: true
       skip_test_find_metabolites_not_produced_with_open_bounds:
-        default: true
       skip_test_find_metabolites_not_consumed_with_open_bounds:
-        default: true
     out: [report_html]
 
   memote_run:
@@ -325,15 +304,10 @@ steps:
         pickValue: all_non_null
       solver: memote_solver
       run:
-        default: true
       skip_test_find_metabolites_produced_with_closed_bounds:
-        default: true
       skip_test_find_metabolites_consumed_with_closed_bounds:
-        default: true
       skip_test_find_metabolites_not_produced_with_open_bounds:
-        default: true
       skip_test_find_metabolites_not_consumed_with_open_bounds:
-        default: true
     out: [run_json]
 
 #############################################

@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: input GFF3 path, default stdin
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input-path

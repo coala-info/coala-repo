@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads for a read length to be considered
-    default: 100000
     inputBinding:
       position: 101
       prefix: --meta-min-reads
@@ -25,7 +24,6 @@ inputs:
       - float
     doc: Minimum read density (total_reads/length) over an ORF total codons for 
       determining active translation
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min_read_density
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads per codon for determining active translation
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_reads_per_codon
@@ -44,7 +41,6 @@ inputs:
       - int
     doc: Minimum number of codons with non-zero reads for determining active 
       translation
-    default: 5
     inputBinding:
       position: 101
       prefix: --min_valid_codons
@@ -54,7 +50,6 @@ inputs:
       - float
     doc: Minimum ratio of codons with non-zero reads to total codons for 
       determining active translation
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min_valid_codons_ratio
@@ -63,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: Phase score cutoff for determining active translation
-    default: 0.428571428571
     inputBinding:
       position: 101
       prefix: --phase_score_cutoff

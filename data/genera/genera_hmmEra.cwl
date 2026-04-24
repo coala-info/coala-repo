@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: E-value threshold to retain homologs against the Uniprot database
-    default: '1e-05'
     inputBinding:
       position: 101
       prefix: --eval
@@ -35,7 +34,6 @@ inputs:
       - int
     doc: Genes equal and younger to this phylostratum will be assessed with 
       jackhmmer
-    default: 2
     inputBinding:
       position: 101
       prefix: --strata

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - float
     doc: Clustering threshold (e.g., 0.95 for 95% identity)
-    default: 0.95
     inputBinding:
       position: 102
       prefix: --cluster-threshold
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of sequences in a cluster to be considered clustered
-    default: 2
     inputBinding:
       position: 102
       prefix: --min-cluster-size
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

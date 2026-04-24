@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Target index to analyze
-    default: 0
     inputBinding:
       position: 104
       prefix: --index
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Window length to analyze
-    default: 200
     inputBinding:
       position: 104
       prefix: --length
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes
-    default: 1
     inputBinding:
       position: 104
       prefix: --processes
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Number of sequences to sample
-    default: 100
     inputBinding:
       position: 104
       prefix: --sample
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: Motif threshold
-    default: 0.1
     inputBinding:
       position: 104
       prefix: --threshold

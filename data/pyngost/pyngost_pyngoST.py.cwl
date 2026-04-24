@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print fasta files with new alleles
-    default: false
     inputBinding:
       position: 101
       prefix: --alleles_out
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use blastn to find the closest alleles to new ones
-    default: false
     inputBinding:
       position: 101
       prefix: --blast_new_alleles
@@ -29,7 +27,6 @@ inputs:
       - string
     doc: Name of the folder that will contain the database in case a download is
       requested with -d
-    default: allelesDB in working directory
     inputBinding:
       position: 101
       prefix: --db_name
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: Calculate NG-MAST genogroups from NG-MAST types
-    default: false
     inputBinding:
       position: 101
       prefix: --genogroups
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - boolean
     doc: Report if the penA allele sequence is a mosaic or semimosaic
-    default: false
     inputBinding:
       position: 101
       prefix: --mosaic_pena
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include NG-STAR CCs in output table
-    default: false
     inputBinding:
       position: 101
       prefix: --ngstarccs
@@ -91,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to use for computation
-    default: 1
     inputBinding:
       position: 101
       prefix: --num_threads
@@ -101,7 +94,6 @@ inputs:
       - int
     doc: Only assign CCs from a table with NG-STAR STs. Indicate as value the 
       number of the column that contains the STs
-    default: None
     inputBinding:
       position: 101
       prefix: --only_assignccs
@@ -110,7 +102,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only assign STs from a table with NG-STAR, MLST and/or NG-MAST profiles
-    default: None
     inputBinding:
       position: 101
       prefix: --only_assignsts
@@ -127,7 +118,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path used to save output files
-    default: current directory
     inputBinding:
       position: 101
       prefix: --out_path
@@ -153,7 +143,6 @@ inputs:
       - 'null'
       - string
     doc: 'Typing schemes to query separated by commas (options: NG-STAR, MLST, NG-MAST)'
-    default: NG-STAR
     inputBinding:
       position: 101
       prefix: --schemes

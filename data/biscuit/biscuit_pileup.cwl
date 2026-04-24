@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: Contamination rate
-    default: 0.01
     inputBinding:
       position: 103
       prefix: -C
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: Error rate
-    default: 0.001
     inputBinding:
       position: 103
       prefix: -E
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum cytosine retention in a read
-    default: 999999
     inputBinding:
       position: 103
       prefix: -t
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum NM tag
-    default: 999999
     inputBinding:
       position: 103
       prefix: -n
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment score (from AS-tag)
-    default: 40
     inputBinding:
       position: 103
       prefix: -a
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality
-    default: 20
     inputBinding:
       position: 103
       prefix: -b
@@ -86,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum distance to 3' end of a read
-    default: 3
     inputBinding:
       position: 103
       prefix: '-3'
@@ -95,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum distance to 5' end of a read
-    default: 3
     inputBinding:
       position: 103
       prefix: '-5'
@@ -104,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality
-    default: 40
     inputBinding:
       position: 103
       prefix: -m
@@ -113,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length
-    default: 10
     inputBinding:
       position: 103
       prefix: -l
@@ -122,7 +112,6 @@ inputs:
       - 'null'
       - float
     doc: Mutation rate
-    default: 0.001
     inputBinding:
       position: 103
       prefix: -M
@@ -179,7 +168,6 @@ inputs:
       - 'null'
       - float
     doc: Prior probability for heterozygous variant
-    default: 0.333
     inputBinding:
       position: 103
       prefix: -P
@@ -188,7 +176,6 @@ inputs:
       - 'null'
       - float
     doc: Prior probability for homozygous variant
-    default: 0.333
     inputBinding:
       position: 103
       prefix: -Q
@@ -213,7 +200,6 @@ inputs:
       - 'null'
       - float
     doc: Somatic mutation rate
-    default: 0.001
     inputBinding:
       position: 103
       prefix: -x
@@ -230,7 +216,6 @@ inputs:
       - 'null'
       - int
     doc: Step of window dispatching
-    default: 100000
     inputBinding:
       position: 103
       prefix: -s
@@ -239,7 +224,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 3
     inputBinding:
       position: 103
       prefix: -@
@@ -257,7 +241,6 @@ inputs:
       - int
     doc: 'Verbosity level (0: no added info printed, 0<INT<=5: print diagnostic info,
       INT>5: print diagnostic and debug info)'
-    default: 0
     inputBinding:
       position: 103
       prefix: -v

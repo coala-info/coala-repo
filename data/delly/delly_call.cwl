@@ -51,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: insert size cutoff, median+s*MAD (deletions only)
-    default: 9
     inputBinding:
       position: 104
       prefix: --mad-cutoff
@@ -60,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: max. number of reads aligned for SR genotyping
-    default: 250
     inputBinding:
       position: 104
       prefix: --max-geno-count
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: max. read separation
-    default: 40
     inputBinding:
       position: 104
       prefix: --maxreadsep
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: max. reads for consensus computation
-    default: 20
     inputBinding:
       position: 104
       prefix: --max-reads
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: min. clipping length
-    default: 25
     inputBinding:
       position: 104
       prefix: --minclip
@@ -96,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: min. PE/SR clique size
-    default: 2
     inputBinding:
       position: 104
       prefix: --min-clique-size
@@ -105,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: min. mapping quality for genotyping
-    default: 5
     inputBinding:
       position: 104
       prefix: --geno-qual
@@ -114,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: min. paired-end (PE) mapping quality
-    default: 1
     inputBinding:
       position: 104
       prefix: --map-qual
@@ -123,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: min. PE quality for translocation
-    default: 20
     inputBinding:
       position: 104
       prefix: --qual-tra
@@ -132,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: min. reference separation
-    default: 25
     inputBinding:
       position: 104
       prefix: --minrefsep
@@ -141,7 +131,6 @@ inputs:
       - 'null'
       - string
     doc: SV type to compute [DEL, INS, DUP, INV, BND, ALL]
-    default: ALL
     inputBinding:
       position: 104
       prefix: --svtype
@@ -150,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 4
     inputBinding:
       position: 104
       prefix: --threads

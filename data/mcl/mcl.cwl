@@ -122,7 +122,6 @@ inputs:
       - 'null'
       - string
     doc: estimated sparse matrix-vector overhead per summand (default 10)
-    default: 10
     inputBinding:
       position: 101
       prefix: -sparse
@@ -211,7 +210,6 @@ inputs:
       - 'null'
       - float
     doc: main inflation value (default 2.0)
-    default: 2.0
     inputBinding:
       position: 101
       prefix: -I
@@ -236,7 +234,6 @@ inputs:
       - 'null'
       - string
     doc: what to do with overlap (default cut)
-    default: cut
     inputBinding:
       position: 101
       prefix: -overlap

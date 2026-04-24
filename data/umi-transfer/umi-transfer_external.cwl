@@ -12,7 +12,6 @@ inputs:
       - int
     doc: 'Choose the compression level: Maximum 9, defaults to 3. Higher numbers result
       in smaller files but take longer to compress.'
-    default: 3
     inputBinding:
       position: 101
       prefix: --compression_level
@@ -31,7 +30,6 @@ inputs:
       - string
     doc: Delimiter to use when joining the UMIs to the read name. Defaults to 
       `.`.
-    default: ':'
     inputBinding:
       position: 101
       prefix: --delim
@@ -69,7 +67,6 @@ inputs:
       - string
     doc: "Choose the target position for the UMI: 'header' or 'inline'. Defaults to
       'header'."
-    default: header
     inputBinding:
       position: 101
       prefix: --position

@@ -11,7 +11,6 @@ inputs:
     doc: 'Image metadata reader adaptor. PhenoFront metadata is stored in a CSV file
       and the image file name. For the filename option, all metadata is stored in
       the image file name. Current adaptors: phenofront, filename'
-    default: phenofront
     inputBinding:
       position: 101
       prefix: --adaptor
@@ -21,7 +20,6 @@ inputs:
       - string
     doc: Coprocess the specified imgtype with the imgtype specified in --match 
       (e.g. coprocess NIR images with VIS).
-    default: None
     inputBinding:
       position: 101
       prefix: --coprocess
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU processes to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpu
@@ -40,7 +37,6 @@ inputs:
       - boolean
     doc: 'will overwrite an existing databaseWarning: activating this option will
       delete an existing database!'
-    default: false
     inputBinding:
       position: 101
       prefix: --create
@@ -50,7 +46,6 @@ inputs:
       - string
     doc: 'Date range. Format: YYYY-MM-DD-hh-mm-ss_YYYY-MM-DD-hh-mm-ss. If the second
       date is excluded then the current date is assumed.'
-    default: None
     inputBinding:
       position: 101
       prefix: --dates
@@ -60,7 +55,6 @@ inputs:
       - string
     doc: Image file name metadata delimiter character.Alternatively, a regular 
       expression for parsing filename metadata.
-    default: _
     inputBinding:
       position: 101
       prefix: --delimiter
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: Image format type (extension).
-    default: png
     inputBinding:
       position: 101
       prefix: --type
@@ -92,7 +85,6 @@ inputs:
     doc: Restrict analysis to images with metadata matching input criteria. 
       Input a metadata:value comma-separated list. This is an exact match 
       search. E.g. imgtype:VIS,camera:SV,zoom:z500
-    default: None
     inputBinding:
       position: 101
       prefix: --match
@@ -109,7 +101,6 @@ inputs:
       - 'null'
       - string
     doc: Other arguments to pass to the workflow script.
-    default: None
     inputBinding:
       position: 101
       prefix: --other_args
@@ -118,7 +109,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory for images. Not required by all workflows.
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir
@@ -129,7 +119,6 @@ inputs:
     doc: a date format code compatible with strptime C library, e.g. "%Y-%m-%d 
       %H_%M_%S", except "%" symbols must be escaped on Windows with "%" e.g. 
       "%%Y-%%m-%%d %%H_%%M_%%S"default format code is "%Y-%m-%d %H:%M:%S.%f"
-    default: '%Y-%m-%d %H:%M:%S.%f'
     inputBinding:
       position: 101
       prefix: --timestampformat
@@ -144,7 +133,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include analysis images in output.
-    default: false
     inputBinding:
       position: 101
       prefix: --writeimg

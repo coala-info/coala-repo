@@ -7,13 +7,10 @@ requirements:
 inputs:
   gtf_version:
     type: string
-    default: M21
   organism:
     type: string
-    default: mouse
   organism_prefix:
     type: string
-    default: m
 
 baseCommand:
   - bash

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the bin
-    default: 100
     inputBinding:
       position: 101
       prefix: --bin-size
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Downstream offset
-    default: 500
     inputBinding:
       position: 101
       prefix: -r
@@ -65,7 +63,6 @@ inputs:
       - 'null'
       - File
     doc: Output file for PDF report
-    default: report.pdf
     inputBinding:
       position: 101
       prefix: --outfile
@@ -75,7 +72,6 @@ inputs:
       - string
     doc: Format of the output report (PDF, HTML or both PDF:HTML, default is 
       HTML).
-    default: HTML
     inputBinding:
       position: 101
       prefix: --outformat
@@ -113,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: Upstream offset
-    default: 2000
     inputBinding:
       position: 101
       prefix: -l

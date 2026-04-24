@@ -59,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: The format to which files should be converted.
-    default: cool
     inputBinding:
       position: 103
       prefix: --to

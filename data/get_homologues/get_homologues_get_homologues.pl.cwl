@@ -109,7 +109,6 @@ inputs:
       - 'null'
       - float
     doc: max E-value (default=1e-05,max=0.01)
-    default: '1e-05'
     inputBinding:
       position: 101
       prefix: -E
@@ -118,7 +117,6 @@ inputs:
       - 'null'
       - float
     doc: min %coverage in BLAST pairwise alignments (range [1-100],default=75)
-    default: 75
     inputBinding:
       position: 101
       prefix: -C
@@ -128,7 +126,6 @@ inputs:
       - float
     doc: min BLAST neighborhood correlation PubMed=18475320 (range 
       [0,1],default=0 [BDBH|OMCL])
-    default: 0
     inputBinding:
       position: 101
       prefix: -N
@@ -138,7 +135,6 @@ inputs:
       - float
     doc: min %sequence identity in BLAST query/subj pairs (range 
       [1-100],default=1 [BDBH|OMCL])
-    default: 1
     inputBinding:
       position: 101
       prefix: -S
@@ -147,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: nb of threads for BLAST/HMMER/MCL in 'local' runmode
-    default: 2
     inputBinding:
       position: 101
       prefix: -n
@@ -164,7 +159,6 @@ inputs:
       - 'null'
       - float
     doc: orthoMCL inflation value (range [1-5], default=1.5 [OMCL])
-    default: 1.5
     inputBinding:
       position: 101
       prefix: -F
@@ -238,7 +232,6 @@ inputs:
       - string
     doc: 'runmode [local|cluster|dryrun|/path/custom/HPC.conf] (def: local, path overrides
       ./HPC.conf)'
-    default: local
     inputBinding:
       position: 101
       prefix: -m

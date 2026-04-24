@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: size of k-mer
-    default: 31
     inputBinding:
       position: 101
       prefix: --kmerSize
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: filename for log file
-    default: groot.log
     inputBinding:
       position: 101
       prefix: --log
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: maxK in the LSH Ensemble
-    default: 4
     inputBinding:
       position: 101
       prefix: --maxK
@@ -38,7 +35,6 @@ inputs:
       - int
     doc: max number of identical neighbouring sketches permitted in any graph 
       traversal
-    default: 30
     inputBinding:
       position: 101
       prefix: --maxSketchSpan
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: number of partitions in the LSH Ensemble
-    default: 8
     inputBinding:
       position: 101
       prefix: --numPart
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: number of processors to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --processors
@@ -79,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: size of MinHash sketch
-    default: 21
     inputBinding:
       position: 101
       prefix: --sketchSize
@@ -88,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: size of window to sketch graph traversals with
-    default: 100
     inputBinding:
       position: 101
       prefix: --windowSize

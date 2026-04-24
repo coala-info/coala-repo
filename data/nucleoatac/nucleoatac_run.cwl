@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - File
     doc: PWM descriptor file. Default is Human.PWM.txt included in package
-    default: Human.PWM.txt
     inputBinding:
       position: 101
       prefix: --pwm

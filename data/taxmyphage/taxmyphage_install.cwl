@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to the database directory where the databases are stored.
-    default: /usr/local/lib/python3.12/site-packages/taxmyphage/database
     inputBinding:
       position: 101
       prefix: --db_folder
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the blastn executable
-    default: makeblastdb
     inputBinding:
       position: 101
       prefix: --makeblastdb

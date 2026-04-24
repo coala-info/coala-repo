@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: Which clustering algorithm to use.
-    default: cd-hit
     inputBinding:
       position: 101
       prefix: --algorithm
@@ -22,7 +21,6 @@ inputs:
       - string
     doc: If the executable for the algorithm you're using isn't in the system 
       path, you can provide the full path to the executable here.
-    default: None
     inputBinding:
       position: 101
       prefix: --bin_path
@@ -32,7 +30,6 @@ inputs:
       - boolean
     doc: When set for nucleotide inputs, consider both strands for 
       clustering/hash deduplication.
-    default: false
     inputBinding:
       position: 101
       prefix: --both_strands
@@ -42,7 +39,6 @@ inputs:
       - string
     doc: "Separator to separate individual contig names in the second column of the
       cluster table. Default: ' ; '"
-    default: ' ; '
     inputBinding:
       position: 101
       prefix: --cluster_sep
@@ -52,7 +48,6 @@ inputs:
       - File
     doc: 'If supplied, then write a tab separated table with columns: representative,
       contigs.'
-    default: None
     inputBinding:
       position: 101
       prefix: --cluster_table
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - File
     doc: Path to a configuration file.
-    default: None
     inputBinding:
       position: 101
       prefix: --config
@@ -71,7 +65,6 @@ inputs:
       - int
     doc: 'The number of threads to use for deduplication [default: use all available
       cores]'
-    default: 0
     inputBinding:
       position: 101
       prefix: --cpu
@@ -80,7 +73,6 @@ inputs:
       - 'null'
       - boolean
     doc: makes output a fasta file when activated
-    default: false
     inputBinding:
       position: 101
       prefix: --fasta_out
@@ -90,7 +82,6 @@ inputs:
       - string
     doc: Whether the sequences in fasta files are protein or nucleotide 
       sequences.
-    default: protein
     inputBinding:
       position: 101
       prefix: --fasta_type
@@ -100,7 +91,6 @@ inputs:
       - float
     doc: Identity threshold (between 0 and 1), passed to cd-hit as the -c 
       parameter or to usearach as the -id parameter.
-    default: None
     inputBinding:
       position: 101
       prefix: --id
@@ -110,7 +100,6 @@ inputs:
       - type: array
         items: File
     doc: Genbank or fasta filenames.
-    default: None
     inputBinding:
       position: 101
       prefix: --input
@@ -119,7 +108,6 @@ inputs:
       - 'null'
       - File
     doc: The name of the log file. If not supplied, writes to stderr.
-    default: None
     inputBinding:
       position: 101
       prefix: --log
@@ -129,7 +117,6 @@ inputs:
       - string
     doc: "string of parameters to pass to the clustering algorithm, in the form of
       a json dict in single quotes. example: '\"-s\":0.9'"
-    default: None
     inputBinding:
       position: 101
       prefix: --params
@@ -140,7 +127,6 @@ inputs:
     doc: In the output genbank file, will prepend X- to the names of contigs, 
       where X is the number of contigs from the original file collapsed into 
       this centroid.
-    default: false
     inputBinding:
       position: 101
       prefix: --prefix_count
@@ -161,7 +147,6 @@ inputs:
     doc: In the output genbank file, will append -X to the names of contigs, 
       where X is the number of contigs from the original file collapsed into 
       this centroid.
-    default: false
     inputBinding:
       position: 101
       prefix: --suffix_count

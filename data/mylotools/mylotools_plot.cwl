@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the assembly FASTA file
-    default: assembly_primary.fa
     inputBinding:
       position: 102
       prefix: --fasta
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the GFA file
-    default: final_contig_graph.gfa
     inputBinding:
       position: 102
       prefix: --gfa
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Size of marker points in the coverage plot
-    default: 8
     inputBinding:
       position: 102
       prefix: --marker-size
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Size of marker points in the overlap plot
-    default: 12
     inputBinding:
       position: 102
       prefix: --overlap-marker-size
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: Step size for the sliding window
-    default: window_size/2
     inputBinding:
       position: 102
       prefix: --step-size
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Sliding window size in base pairs for GC content
-    default: 1000
     inputBinding:
       position: 102
       prefix: --window-size

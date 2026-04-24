@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum ANI value for clustering
-    default: 95
     inputBinding:
       position: 101
       prefix: --min_ani
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage of the query sequence
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_qcov
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage of the target sequence
-    default: 85
     inputBinding:
       position: 101
       prefix: --min_tcov
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: Sequencing data type (e.g. short vs long reads).
-    default: short
     inputBinding:
       position: 101
       prefix: --read-type
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -62,7 +57,6 @@ inputs:
     doc: Create protein FASTA file from unfiltered virus sequence. Default = 
       False. Warning = If argument provided, the script might run for a long 
       period of time.
-    default: false
     inputBinding:
       position: 101
       prefix: --unfiltered_protein_file

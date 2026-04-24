@@ -137,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore read-to-read overlaps shorter than 'number' bases long.
-    default: 500
     inputBinding:
       position: 106
   - id: min_read_length
@@ -145,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore reads shorter than 'number' bases long.
-    default: 1000
     inputBinding:
       position: 106
   - id: raw_error_rate
@@ -187,7 +185,6 @@ inputs:
       - string
     doc: Run under grid control (true), locally (false), or set up for grid 
       control but don't submit any jobs (remote)
-    default: 'false'
     inputBinding:
       position: 106
 outputs:

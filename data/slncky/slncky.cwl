@@ -72,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: min size of duplication clusters to remove. default=2
-    default: 2
     inputBinding:
       position: 104
       prefix: --min_cluster
@@ -92,7 +91,6 @@ inputs:
       - float
     doc: min exonic identity to filter out transcript that aligns to orthologous
       noncoding gene. default=0
-    default: 0
     inputBinding:
       position: 104
       prefix: --min_noncoding
@@ -102,7 +100,6 @@ inputs:
       - float
     doc: remove any transcript that overlap annotated coding gene > 
       min_overlap%. default = 0%
-    default: 0%
     inputBinding:
       position: 104
       prefix: --min_overlap
@@ -111,7 +108,6 @@ inputs:
       - 'null'
       - float
     doc: minMatch parameter for liftover. default=0.1
-    default: 0.1
     inputBinding:
       position: 104
       prefix: --minMatch
@@ -212,7 +208,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads. default = 5
-    default: 5
     inputBinding:
       position: 104
       prefix: --threads

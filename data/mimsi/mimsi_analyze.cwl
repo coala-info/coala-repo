@@ -10,7 +10,6 @@ inputs:
       - string
     doc: Unique identifier for the single sample/case submitted. This will be 
       the filename for any saved results
-    default: TestCase
     inputBinding:
       position: 101
       prefix: --case-id
@@ -29,7 +28,6 @@ inputs:
       - float
     doc: Confidence interval for the estimated MSI Score reported in the tsv 
       output file
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --confidence-interval
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cores to utilize in parallel
-    default: 16
     inputBinding:
       position: 101
       prefix: --cores
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - File
     doc: The list of microsatellites to check in the tumor/normal pair
-    default: utils/microsatellites.list
     inputBinding:
       position: 101
       prefix: --microsatellites-list
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: name of the saved model weights to load
-    default: model/mimsi_mskcc_impact_200.model
     inputBinding:
       position: 101
       prefix: --model
@@ -75,7 +70,6 @@ inputs:
       - string
     doc: name of the run submitted using --case-list, this will be the filename 
       for any saved results in the tsv format
-    default: BATCH
     inputBinding:
       position: 101
       prefix: --name
@@ -93,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: Normal case name
-    default: None
     inputBinding:
       position: 101
       prefix: --norm-case-id
@@ -129,7 +122,6 @@ inputs:
     doc: 'The location on the filesystem to save the converted vectors and final results.
       WARNING: Exisitng files in this directory in the formats *_locations.npy and
       *_data.npy will be deleted!'
-    default: Current_working_directory/mimsi_results/
     inputBinding:
       position: 101
       prefix: --save-location
@@ -138,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: Random Seed
-    default: 2
     inputBinding:
       position: 101
       prefix: --seed
@@ -156,7 +147,6 @@ inputs:
       - boolean
     doc: Use attention pooling rather than average pooling to aggregate sample 
       embeddings
-    default: false
     inputBinding:
       position: 101
       prefix: --use-attention

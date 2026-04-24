@@ -83,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: Character to fill homogeneous gaps in haplotypes if no --master
-    default: N
     inputBinding:
       position: 104
       prefix: --gapchar
@@ -101,7 +100,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: .
     inputBinding:
       position: 104
       prefix: --out
@@ -110,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of paths to generate
-    default: 100
     inputBinding:
       position: 104
       prefix: --paths
@@ -136,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: 1-indexed included start base position
-    default: 1
     inputBinding:
       position: 104
       prefix: --start
@@ -145,7 +141,6 @@ inputs:
       - 'null'
       - int
     doc: Number of BAM iterators
-    default: 1
     inputBinding:
       position: 104
       prefix: --threads

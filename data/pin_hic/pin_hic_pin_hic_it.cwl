@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: accurate mode
-    default: false
     inputBinding:
       position: 102
       prefix: -a
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: candidate number
-    default: 3
     inputBinding:
       position: 102
       prefix: -c
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: use unnormalized weight as edge weight
-    default: false
     inputBinding:
       position: 102
       prefix: -e
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: iteration times
-    default: 3
     inputBinding:
       position: 102
       prefix: -i
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: minimum contact number
-    default: 100
     inputBinding:
       position: 102
       prefix: -w
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: minimum coverage ratio between maximu coverage and the gap coverage
-    default: 0.3
     inputBinding:
       position: 102
       prefix: -m
@@ -70,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality
-    default: 10
     inputBinding:
       position: 102
       prefix: -q
@@ -79,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: minimum difference between best and secondary orientation
-    default: 0.95
     inputBinding:
       position: 102
       prefix: -d
@@ -88,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: minimum scaffold length
-    default: 0
     inputBinding:
       position: 102
       prefix: -l
@@ -97,7 +88,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not break at the final step
-    default: false
     inputBinding:
       position: 102
       prefix: -b
@@ -130,7 +120,6 @@ inputs:
       - 'null'
       - boolean
     doc: use unnormalized weight
-    default: false
     inputBinding:
       position: 102
       prefix: -n
@@ -139,7 +128,6 @@ inputs:
       - 'null'
       - boolean
     doc: use middle part of contigs
-    default: false
     inputBinding:
       position: 102
       prefix: -g
@@ -148,7 +136,6 @@ inputs:
       - 'null'
       - boolean
     doc: use MST for scaffolding
-    default: false
     inputBinding:
       position: 102
       prefix: '-1'
@@ -157,7 +144,6 @@ inputs:
       - 'null'
       - boolean
     doc: use product
-    default: false
     inputBinding:
       position: 102
       prefix: -p

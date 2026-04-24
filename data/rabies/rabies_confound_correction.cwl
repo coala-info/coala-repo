@@ -21,7 +21,6 @@ inputs:
       - string
     doc: Specify repetition time (TR) in seconds. (e.g. --TR 1.2). 'auto' will 
       read the TR from the nifti header.
-    default: auto
     inputBinding:
       position: 103
       prefix: --TR
@@ -40,7 +39,6 @@ inputs:
       CSF masks voxel timeseries. Components adding up to 50 percent of the variance
       are included. *** aCompCor_5: aCompCor method, but taking 5 first principal
       components.'
-    default: []
     inputBinding:
       position: 103
       prefix: --conf_list
@@ -54,7 +52,6 @@ inputs:
       computed. Note the trend is always subtracted from the whole timeseries. ***
       0-80 will take the first 80 timepoints (e.g. baseline), compute their trend,
       then subtract it from the whole timeseries.'
-    default: order=1,time_interval=all
     inputBinding:
       position: 103
       prefix: --detrending
@@ -66,7 +63,6 @@ inputs:
       acquisition if applying a frequency filter. Highpass filters generate edge
       effects at begining and end of the timeseries. We recommend to cut those 
       timepoints (around 30sec at both end for 0.01Hz highpass.).
-    default: 0
     inputBinding:
       position: 103
       prefix: --edge_cutoff
@@ -86,7 +82,6 @@ inputs:
       Can set a minimum number of timepoints remaining after frame censoring. If the
       threshold is not met, an empty file is generated and the scan is not considered
       in further steps."
-    default: 
       FD_censoring=false,FD_threshold=0.05,DVARS_censoring=false,minimum_timepoint=3
     inputBinding:
       position: 103
@@ -100,7 +95,6 @@ inputs:
       NeuroImage. By selecting this option, an additional figure will be 
       generated to display the variance explained by the real regressors VS the 
       randomized regressors to assess overfitting.
-    default: false
     inputBinding:
       position: 103
       prefix: --generate_CR_null
@@ -109,7 +103,6 @@ inputs:
       - 'null'
       - string
     doc: Specify highpass filter frequency.
-    default: None
     inputBinding:
       position: 103
       prefix: --highpass
@@ -123,7 +116,6 @@ inputs:
       a pre-determined number of MELODIC components to derive. '0' will use an automatic
       estimator. * random_seed: For reproducibility, this option sets a fixed random
       seed for MELODIC."
-    default: apply=false,dim=0,random_seed=1
     inputBinding:
       position: 103
       prefix: --ica_aroma
@@ -144,7 +136,6 @@ inputs:
       each voxel is seperataly scaled according to its mean intensity, a method suggested
       with AFNI https://afni.nimh.nih.gov/afni/community/board/read.php?1,161862,161864.
       Timeseries are then multiplied by 100 to obtain percent BOLD fluctuations.'
-    default: grand_mean_scaling
     inputBinding:
       position: 103
       prefix: --image_scaling
@@ -153,7 +144,6 @@ inputs:
       - 'null'
       - string
     doc: Specify lowpass filter frequency.
-    default: None
     inputBinding:
       position: 103
       prefix: --lowpass
@@ -168,7 +158,6 @@ inputs:
       option if a significant confounding effect of tDOF is detected during 
       --data_diagnosis. The extra timepoints removed are randomly selected among
       the set available post-censoring.
-    default: false
     inputBinding:
       position: 103
       prefix: --match_number_timepoints
@@ -177,7 +166,6 @@ inputs:
       - 'null'
       - boolean
     doc: Conduct confound correction and analysis in native space.
-    default: false
     inputBinding:
       position: 103
       prefix: --nativespace_analysis
@@ -190,7 +178,6 @@ inputs:
       correction without having available RABIES preprocessing folders, but the 
       targetted datasink folders must follow the structure of RABIES 
       preprocessing.
-    default: false
     inputBinding:
       position: 103
       prefix: --read_datasink
@@ -202,7 +189,6 @@ inputs:
       cleaned timeseries resampled to commonspace after denoising is carried in 
       nativespace. Using this option is necessary to enable group ICA at the 
       analysis stage after using --nativespace_analysis.
-    default: false
     inputBinding:
       position: 103
       prefix: --resample_to_commonspace
@@ -214,7 +200,6 @@ inputs:
       voxelwise_mean, this option standardize the variance at each voxel to be 
       equal, while preserving to total variance of the 4D timeseries (i.e. 
       voxels have same variance, but not unit variance).
-    default: false
     inputBinding:
       position: 103
       prefix: --scale_variance_voxelwise
@@ -225,7 +210,6 @@ inputs:
     doc: Specify filter size in mm for spatial smoothing. Will apply nilearn's 
       function 
       https://nilearn.github.io/modules/generated/nilearn.image.smooth_img.html
-    default: None
     inputBinding:
       position: 103
       prefix: --smoothing_filter
@@ -235,7 +219,6 @@ inputs:
       - string
     doc: Before confound correction, can crop the timeseries within a specific 
       interval. e.g. '0,80' for timepoint 0 to 80.
-    default: all
     inputBinding:
       position: 103
       prefix: --timeseries_interval

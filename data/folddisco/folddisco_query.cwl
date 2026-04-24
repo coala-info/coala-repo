@@ -10,7 +10,6 @@ inputs:
       - type: array
         items: float
     doc: Angle threshold. Multiple values can be separated by comma
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --angle
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: C-alpha distance threshold in matching residues
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --ca-distance
@@ -29,7 +27,6 @@ inputs:
       - int
     doc: Filter out structures/matches with connected node count smaller than 
       given value
-    default: 0
     inputBinding:
       position: 101
       prefix: --connected-node
@@ -39,7 +36,6 @@ inputs:
       - float
     doc: Filter out structures/matches with connected node count smaller than 
       given ratio
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --connected-node-ratio
@@ -48,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Filter out structures not covered by given number of nodes with hashes
-    default: 0
     inputBinding:
       position: 101
       prefix: --covered-node
@@ -57,7 +52,6 @@ inputs:
       - 'null'
       - float
     doc: Filter out structures not covered by given ratio of nodes with hashes
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --covered-node-ratio
@@ -68,7 +62,6 @@ inputs:
         items: float
     doc: Distance threshold in Angstroms. Multiple values can be separated by 
       comma
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --distance
@@ -77,7 +70,6 @@ inputs:
       - 'null'
       - float
     doc: Skip queries with hash frequency higher than given ratio
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --freq-filter
@@ -93,7 +85,6 @@ inputs:
       - float
     doc: Length penalty for searching. Zero means no penalty and higher value 
       gives more penalty to longer structures
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --length-penalty
@@ -103,7 +94,6 @@ inputs:
       - int
     doc: Filter out structures of maximum matching node size smaller than given 
       value
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-node
@@ -113,7 +103,6 @@ inputs:
       - float
     doc: Filter out structures of maximum matching node size smaller than given 
       ratio
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --max-node-ratio
@@ -122,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Number of residues cutoff
-    default: 50000
     inputBinding:
       position: 101
       prefix: --num-residue
@@ -162,7 +150,6 @@ inputs:
       - 'null'
       - float
     doc: pLDDT cutoff
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --plddt
@@ -202,7 +189,6 @@ inputs:
       - float
     doc: Sampling ratio for hashes used in searching. For long queries, smaller 
       ratio is recommended
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --sampling-ratio
@@ -211,7 +197,6 @@ inputs:
       - 'null'
       - float
     doc: IDF score cutoff
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --score
@@ -268,7 +253,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -285,7 +269,6 @@ inputs:
       - 'null'
       - int
     doc: Filter out structures with less than total match count
-    default: 0
     inputBinding:
       position: 101
       prefix: --total-match

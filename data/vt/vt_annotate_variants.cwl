@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - File
     doc: coding regions BED file
-    default: '[]'
     inputBinding:
       position: 102
       prefix: -g
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: filter expression
-    default: '[]'
     inputBinding:
       position: 102
       prefix: -f
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - File
     doc: file containing list of intervals
-    default: '[]'
     inputBinding:
       position: 102
       prefix: -I
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - File
     doc: low complexity regions BED file
-    default: '[]'
     inputBinding:
       position: 102
       prefix: -m

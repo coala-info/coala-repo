@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: The number of permutations to perform
-    default: 5000
     inputBinding:
       position: 105
       prefix: -nshuf

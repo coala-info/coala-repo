@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: How much context should be added at up- and downstream of the sequence.
-    default: 150
     inputBinding:
       position: 101
       prefix: --context
@@ -26,7 +25,6 @@ inputs:
       - string
     doc: If you want to start from hand-curated feature files. Use this for 
       evaluating test set performance (set 'on').
-    default: off
     inputBinding:
       position: 101
       prefix: --eval_features
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the data source of the RRIs, e.g. experiment and organism.
-    default: eval_rri
     inputBinding:
       position: 101
       prefix: --experiment_name
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Number of jobs used for graph feature computation.
-    default: 1
     inputBinding:
       position: 101
       prefix: --n_jobs
@@ -80,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: Name for the output directory.
-    default: "'date_Cherri_evaluating_RRIs'"
     inputBinding:
       position: 101
       prefix: --out_name
@@ -104,7 +99,6 @@ inputs:
       - 'null'
       - string
     doc: Set 'off' if you want to disable structure.
-    default: on
     inputBinding:
       position: 101
       prefix: --use_structure

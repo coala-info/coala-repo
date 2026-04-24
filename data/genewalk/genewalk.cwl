@@ -14,7 +14,6 @@ inputs:
       value of 0.1 for both global and gene-specific plots is used. Lower this value
       to increase the stringency of the regulator gene selection procedure. Default:
       1'
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --alpha_fdr
@@ -24,7 +23,6 @@ inputs:
       - Directory
     doc: 'The base folder used to store GeneWalk temporary and result files for a
       given project. Default: /root/genewalk'
-    default: /root/genewalk
     inputBinding:
       position: 101
       prefix: --base_folder
@@ -37,7 +35,6 @@ inputs:
       results, for instance with very large (>2500) input gene lists. Alternatively,
       it can be decreased in case (nearly) all GO annotations are significant, for
       instance with very short gene lists. Default: 8'
-    default: 8
     inputBinding:
       position: 101
       prefix: --dim_rep
@@ -77,7 +74,6 @@ inputs:
     doc: 'The source of the network to be used. Possible values are: pc, indra, edge_list,
       sif, sif_annot, and sif_full. In case of indra, edge_list, sif, sif_annot, and
       sif_full, the network_file argument must be specified. Default: pc'
-    default: pc
     inputBinding:
       position: 101
       prefix: --network_source
@@ -87,7 +83,6 @@ inputs:
       - int
     doc: 'The number of processors to use in a multiprocessing environment. Default:
       1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --nproc
@@ -97,7 +92,6 @@ inputs:
       - int
     doc: 'The number of repeats to run when calculating node vectors on the GeneWalk
       graph. Default: 3'
-    default: 3
     inputBinding:
       position: 101
       prefix: --nreps_graph
@@ -107,7 +101,6 @@ inputs:
       - int
     doc: 'The number of repeats to run when calculating node vectors on the random
       network graphs for constructing the null distribution. Default: 3'
-    default: 3
     inputBinding:
       position: 101
       prefix: --nreps_null
@@ -136,7 +129,6 @@ inputs:
     doc: 'If True, the full DeepWalk object for each repeat is saved in the project
       folder. This can be useful for debugging but the files are typically very large.
       Default: False'
-    default: false
     inputBinding:
       position: 101
       prefix: --save_dw
@@ -145,7 +137,6 @@ inputs:
       - 'null'
       - string
     doc: 'The stage of processing to run. Default: all'
-    default: all
     inputBinding:
       position: 101
       prefix: --stage

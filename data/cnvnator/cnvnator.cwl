@@ -156,7 +156,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum overlap
-    default: 0.8
     inputBinding:
       position: 101
       prefix: -over
@@ -182,7 +181,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality
-    default: 20
     inputBinding:
       position: 101
       prefix: -qual

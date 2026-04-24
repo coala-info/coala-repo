@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: breaklen option used by nucmer
-    default: 500
     inputBinding:
       position: 103
       prefix: --breaklen
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Nucmer diagdiff option
-    default: 25
     inputBinding:
       position: 103
       prefix: --diagdiff
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Contigs shorter than this are discarded (unless specified using --keep)
-    default: 2000
     inputBinding:
       position: 103
       prefix: --min_contig_length
@@ -57,7 +54,6 @@ inputs:
       - float
     doc: If length of nucmer hit is at least this percentage of length of 
       contig, then contig is removed. (unless specified using --keep)
-    default: 95
     inputBinding:
       position: 103
       prefix: --min_contig_percent
@@ -66,7 +62,6 @@ inputs:
       - 'null'
       - float
     doc: Nucmer minimum percent identity
-    default: 95
     inputBinding:
       position: 103
       prefix: --min_nucmer_id
@@ -75,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of hit for nucmer to report
-    default: 500
     inputBinding:
       position: 103
       prefix: --min_nucmer_length

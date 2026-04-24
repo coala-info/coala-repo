@@ -44,7 +44,6 @@ inputs:
       - int
     doc: 'Minimum # of times a kmer is seen to be considered present in the sample
       (solid).'
-    default: 10
     inputBinding:
       position: 101
       prefix: --kt
@@ -53,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of mutations when looking for novel alleles.
-    default: 6
     inputBinding:
       position: 101
       prefix: --mutation_threshold

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: check dependencies are installed
-    default: false
     inputBinding:
       position: 101
       prefix: --check
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: minimum read coverage for gene to be called
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --cutoff
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: percentage of gene length needed for positive call
-    default: 50.0
     inputBinding:
       position: 101
       prefix: --length
@@ -38,7 +35,6 @@ inputs:
       - float
     doc: When using reads as input the minimum depth percentage relative to 
       genome average for positive fliC gene call
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --h_depth
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: percentage of fliC gene length needed for positive call
-    default: 60.0
     inputBinding:
       position: 101
       prefix: --h_length
@@ -65,7 +60,6 @@ inputs:
       - float
     doc: When using reads as input the minimum depth percentage relative to 
       genome average for positive ipaH gene call
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --ipaH_depth
@@ -74,7 +68,6 @@ inputs:
       - 'null'
       - float
     doc: percentage of ipaH gene length needed for positive gene call
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --ipaH_length
@@ -84,7 +77,6 @@ inputs:
       - float
     doc: When using reads as input the minimum depth percentage relative to 
       genome average for positive wz_ gene call
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --o_depth
@@ -93,7 +85,6 @@ inputs:
       - 'null'
       - float
     doc: percentage of wz_ gene length needed for positive call
-    default: 60.0
     inputBinding:
       position: 101
       prefix: --o_length
@@ -102,7 +93,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add flag if file is raw reads.
-    default: false
     inputBinding:
       position: 101
       prefix: -r
@@ -120,7 +110,6 @@ inputs:
       - 'null'
       - boolean
     doc: shows detailed gene search results
-    default: false
     inputBinding:
       position: 101
       prefix: --hits
@@ -130,7 +119,6 @@ inputs:
       - float
     doc: When using reads as input the minimum depth percentage relative to 
       genome average for positive stx gene call
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --stx_depth
@@ -139,7 +127,6 @@ inputs:
       - 'null'
       - float
     doc: percentage of stx gene length needed for positive gene call
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --stx_length
@@ -148,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads.
-    default: 4
     inputBinding:
       position: 101
       prefix: -t

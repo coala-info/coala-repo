@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory for prepared files.
-    default: portcullis_prep
     inputBinding:
       position: 103
       prefix: --output
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads to used to sort the BAM file (if required).
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

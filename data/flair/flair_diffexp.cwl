@@ -19,7 +19,6 @@ inputs:
       - int
     doc: Read count expression threshold. Isoforms in which both conditions contain
       fewer than E reads are filtered out (Default E=10)
-    default: 10
     inputBinding:
       position: 101
       prefix: --exp_thresh

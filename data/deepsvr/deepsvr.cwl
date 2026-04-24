@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Batch size for model inference.
-    default: 1024
     inputBinding:
       position: 103
       prefix: --batch-size
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable CUDA for GPU acceleration.
-    default: false
     inputBinding:
       position: 103
       prefix: --enable-cuda
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level (DEBUG, INFO, WARNING, ERROR).
-    default: INFO
     inputBinding:
       position: 103
       prefix: --log-level
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum sequencing depth to consider a variant.
-    default: 1000
     inputBinding:
       position: 103
       prefix: --max-depth
@@ -56,7 +52,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele fraction to consider a variant.
-    default: 0.05
     inputBinding:
       position: 103
       prefix: --min-allele-fraction
@@ -65,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequencing depth to consider a variant.
-    default: 10
     inputBinding:
       position: 103
       prefix: --min-depth
@@ -80,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for parallel processing.
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

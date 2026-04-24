@@ -44,7 +44,6 @@ inputs:
     doc: 'The scoring metric to use (default: jaccard). Can be used multiple times
       to include multiple scoring metrics. Choices: jaccard, minsize, meansize, maxsize,
       subset, reference.'
-    default: jaccard
     inputBinding:
       position: 102
       prefix: --scoring
@@ -53,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Use multiple processes the compute the similarity scores (default 1).
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

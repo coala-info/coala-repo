@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - File
     doc: SQL query input path
-    default: stdin
     inputBinding:
       position: 102
       prefix: --query-path
@@ -60,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: JDBC connection URL
-    default: 'jdbc:duckdb:'
     inputBinding:
       position: 102
       prefix: --url

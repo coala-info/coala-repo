@@ -10,7 +10,6 @@ inputs:
       - float
     doc: 'OPTIONAL: this flag is used to determine the lower bound of bias values
       to discard. DEFAULT is 0.5'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --biasLowerBound
@@ -20,7 +19,6 @@ inputs:
       - float
     doc: 'OPTIONAL: this flag is used to determine the upper bound of bias values
       to discard. DEFAULT is 2'
-    default: 2
     inputBinding:
       position: 101
       prefix: --biasUpperBound
@@ -39,7 +37,6 @@ inputs:
       - string
     doc: 'OPTIONAL: use this flag to determine which chromosomal regions to study
       (intraOnly, interOnly, All) DEFAULT is intraOnly'
-    default: intraOnly
     inputBinding:
       position: 101
       prefix: --contactType
@@ -61,7 +58,6 @@ inputs:
       - string
     doc: 'OPTIONAL: Name of the library that is analyzed to be used for name of file
       prefixes . DEFAULT is fithic'
-    default: fithic
     inputBinding:
       position: 101
       prefix: --lib
@@ -81,7 +77,6 @@ inputs:
       - int
     doc: 'OPTIONAL: minimum number of hits per locus that has to exist to call it
       mappable. DEFAULT is 1.'
-    default: 1
     inputBinding:
       position: 101
       prefix: --mappabilityThres
@@ -90,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: 'OPTIONAL: number of equal-occupancy (count) bins. Default is 100'
-    default: 100
     inputBinding:
       position: 101
       prefix: --noOfBins
@@ -99,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: 'OPTIONAL: number of spline passes to run Default is 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --passes

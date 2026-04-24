@@ -21,7 +21,6 @@ inputs:
       exactly length SIZE, subsequent chunks will SIZE + OVERLAP and the final 
       chunk may be anywhere from 0.5 to 1.5 times SIZE plus overlap. If a region
       (or contig) is smaller than SIZE the original regions will be returned.
-    default: 1000000
     inputBinding:
       position: 102
       prefix: --chunk-size
@@ -33,7 +32,6 @@ inputs:
       file. If an input contig or region is smaller than this 
       MINIMUM_BP_PER_FILE, then the next contigs/regions will be placed in the 
       same file untill this minimum is met.
-    default: 45000000
     inputBinding:
       position: 102
       prefix: --minimum-bp-per-file
@@ -43,7 +41,6 @@ inputs:
       - int
     doc: The number of bases which each chunk should overlap with the preceding 
       one.
-    default: 150
     inputBinding:
       position: 102
       prefix: --overlap
@@ -53,7 +50,6 @@ inputs:
       - string
     doc: 'The prefix of the ouput files. Output will be named like: <PREFIX><N>.bed,
       in which N is an incrementing number.'
-    default: scatter-
     inputBinding:
       position: 102
       prefix: --prefix

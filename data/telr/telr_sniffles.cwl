@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold on allele frequency (0-1).
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --allelefreq
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Preset CCS Pacbio setting. (Beta)
-    default: false
     inputBinding:
       position: 101
       prefix: --ccs_reads
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enables Sniffles to phase SVs that occur on the same reads
-    default: false
     inputBinding:
       position: 101
       prefix: --cluster
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads supporting clustering of SV.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cluster_support
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enables the scan of CS string instead of Cigar and MD.
-    default: false
     inputBinding:
       position: 101
       prefix: --cs_string
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - float
     doc: Estimated ration of deletions per read (0-1).
-    default: 0.0458369
     inputBinding:
       position: 101
       prefix: --del_ratio
@@ -63,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Inactivated: Automatically true.'
-    default: true
     inputBinding:
       position: 101
       prefix: --genotype
@@ -72,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ignores the sd based filtering.
-    default: false
     inputBinding:
       position: 101
       prefix: --ignore_sd
@@ -89,7 +81,6 @@ inputs:
       - 'null'
       - float
     doc: Estimated ratio of insertions per read (0-1).
-    default: 0.049379
     inputBinding:
       position: 101
       prefix: --ins_ratio
@@ -104,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum differences per 100bp.
-    default: 50
     inputBinding:
       position: 101
       prefix: --max_diff_per_window
@@ -113,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance between alignment (indel) events.
-    default: 4
     inputBinding:
       position: 101
       prefix: --max_dist_aln_events
@@ -122,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance to group SV together.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max_distance
@@ -131,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of splits per read to be still taken into account.
-    default: 7
     inputBinding:
       position: 101
       prefix: --max_num_splits
@@ -140,7 +127,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold on allele frequency (0-1).
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --min_het_af
@@ -149,7 +135,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold on allele frequency (0-1).
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --min_homo_af
@@ -158,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of SV to be reported.
-    default: 30
     inputBinding:
       position: 101
       prefix: --min_length
@@ -167,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: Discard read if non of its segment is larger then this.
-    default: 2000
     inputBinding:
       position: 101
       prefix: --min_seq_size
@@ -176,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads that support a SV.
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_support
@@ -186,7 +168,6 @@ inputs:
       - int
     doc: Discard SV that are not supported by at least x zmws. This applies only
       for PacBio recognizable reads.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_zmw
@@ -195,7 +176,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum Mapping Quality.
-    default: 20
     inputBinding:
       position: 101
       prefix: --minmapping_qual
@@ -204,7 +184,6 @@ inputs:
       - 'null'
       - boolean
     doc: Dont report sequences for indels in vcf output. (Beta version!)
-    default: false
     inputBinding:
       position: 101
       prefix: --not_report_seq
@@ -213,7 +192,6 @@ inputs:
       - 'null'
       - int
     doc: 'Report up to N reads that support the SV in the vcf file. -1: report all.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --num_reads_report
@@ -222,7 +200,6 @@ inputs:
       - 'null'
       - boolean
     doc: Dont report BND instead use Tra in vcf output.
-    default: true
     inputBinding:
       position: 101
       prefix: --report_BND
@@ -231,7 +208,6 @@ inputs:
       - 'null'
       - boolean
     doc: Inactivated (see not_report_seq).
-    default: false
     inputBinding:
       position: 101
       prefix: --report-seq
@@ -240,7 +216,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enables the report of str. (alpha testing)
-    default: false
     inputBinding:
       position: 101
       prefix: --report_str
@@ -249,7 +224,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enables the scan if only very few reads are present.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip_parameter_estimation
@@ -258,7 +232,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 3
     inputBinding:
       position: 101
       prefix: --threads

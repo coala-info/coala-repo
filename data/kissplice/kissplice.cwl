@@ -11,7 +11,6 @@ inputs:
     doc: '0,1 or 2 . Changes how the counts will be reported. If 0 : total counts,
       if 1: counts on junctions, if 2 (default): all counts. see User guide for more
       information'
-    default: 2
     inputBinding:
       position: 101
       prefix: --counts
@@ -95,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size
-    default: 41
     inputBinding:
       position: 101
       prefix: -k
@@ -113,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of branching nodes
-    default: 5
     inputBinding:
       position: 101
       prefix: -b
@@ -123,7 +120,6 @@ inputs:
       - string
     doc: maximal number of bubbles enumeration in each bcc. If exceeded, no 
       bubble is output for the bcc
-    default: 100M
     inputBinding:
       position: 101
       prefix: -y
@@ -133,7 +129,6 @@ inputs:
       - int
     doc: maximum length of the longest path, skipped exons longer than UL_MAX 
       are not reported
-    default: 1000000
     inputBinding:
       position: 101
       prefix: -M
@@ -154,7 +149,6 @@ inputs:
     doc: Maximal number of substitutions authorized between a read and a 
       fragment (for quantification only), default 2. If you increase the 
       mismatch and use --counts think of increasing min_overlap too.
-    default: 2
     inputBinding:
       position: 101
       prefix: --mismatches
@@ -164,7 +158,6 @@ inputs:
       - int
     doc: Maximal number of substitutions authorized between a read and a 
       fragment (for quantification only) for SNP, default 0.
-    default: 0
     inputBinding:
       position: 101
       prefix: --mismatchesSNP
@@ -183,7 +176,6 @@ inputs:
     doc: edit distance threshold, if the two sequences (paths) of a bubble have 
       edit distance smaller than this threshold, the bubble is classified as an 
       inexact repeat
-    default: 3
     inputBinding:
       position: 101
       prefix: -e
@@ -193,7 +185,6 @@ inputs:
       - int
     doc: an integer, k-mers present strictly less than this number of times in 
       the dataset will be discarded
-    default: 2
     inputBinding:
       position: 101
       prefix: -c
@@ -203,7 +194,6 @@ inputs:
       - int
     doc: Set how many nt must overlap a junction to be counted by --counts 
       option. Default=5. see User guide for more information
-    default: 5
     inputBinding:
       position: 101
       prefix: --min_overlap
@@ -213,7 +203,6 @@ inputs:
       - float
     doc: a percentage from [0,1), edges with relative coverage below this number
       are removed
-    default: 0.05
     inputBinding:
       position: 101
       prefix: -C
@@ -263,7 +252,6 @@ inputs:
       - 'null'
       - Directory
     doc: path to store the results and the summary log file
-    default: ./results
     inputBinding:
       position: 101
       prefix: -o
@@ -283,7 +271,6 @@ inputs:
       not output SNPs. If 1, will output Type0a-SNPs. If 2, will output Type0a and
       Type0b SNPs (warning: this option may increase a lot the running time. You might
       also want to try the experimental algorithm here)'
-    default: 0
     inputBinding:
       position: 101
       prefix: -s
@@ -331,7 +318,6 @@ inputs:
       - int
     doc: max amount of time (in seconds) spent for enumerating bubbles in each 
       bcc. If exceeded, no bubble is output for the bcc
-    default: 100000
     inputBinding:
       position: 101
       prefix: --timeout

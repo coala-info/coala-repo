@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Style of the generated figures.
-    default: light
     inputBinding:
       position: 101
       prefix: --fig_style
@@ -55,7 +54,6 @@ inputs:
       - type: array
         items: string
     doc: List of specific genes to include in the report (optional).
-    default: None
     inputBinding:
       position: 101
       prefix: --selected_genes
@@ -70,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Number of top correlated genes to display.
-    default: 50
     inputBinding:
       position: 101
       prefix: --top_corr_genes

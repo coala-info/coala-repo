@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Comment character to skip header
-    default: '#'
     inputBinding:
       position: 103
       prefix: --comment-char
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Select the preset sort and indexing options
-    default: pairix
     inputBinding:
       position: 103
       prefix: --index
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors
-    default: 8
     inputBinding:
       position: 103
       prefix: --nproc
@@ -80,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: Data delimiter in the input file
-    default: \t
     inputBinding:
       position: 103
       prefix: --sep

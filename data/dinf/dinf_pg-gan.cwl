@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Number of generator replicates for approximating E[D(G(θ))].
-    default: 32
     inputBinding:
       position: 101
       prefix: --Dx-replicates
@@ -19,7 +18,6 @@ inputs:
       - int
     doc: Number of full passes over the training dataset when training the 
       discriminator.
-    default: 1
     inputBinding:
       position: 101
       prefix: --epochs
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations.
-    default: 1
     inputBinding:
       position: 101
       prefix: --iterations
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of pretraining rounds.
-    default: 100
     inputBinding:
       position: 101
       prefix: --max-pretraining-iterations
@@ -49,7 +45,6 @@ inputs:
       dinf.DinfModel object that describes the model components. See the 
       examples/ folder of the git repository for example models. 
       https://github.com/RacimoLab/dinf
-    default: None
     inputBinding:
       position: 101
       prefix: --model
@@ -58,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Number of proposals for each parameter in a given iteration.
-    default: 10
     inputBinding:
       position: 101
       prefix: --num-proposals
@@ -68,7 +62,6 @@ inputs:
       - Directory
     doc: Folder to output results. If not specified, the current directory will 
       be used.
-    default: None
     inputBinding:
       position: 101
       prefix: --output-folder
@@ -81,7 +74,6 @@ inputs:
       used. The number of cores used for CPU-based neural networks is not set 
       with this parameter---instead use the`taskset` command. See 
       https://github.com/google/jax/issues/1539
-    default: None
     inputBinding:
       position: 101
       prefix: --parallelism
@@ -90,7 +82,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable output. Only ERROR and CRITICAL messages are printed.
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -103,7 +94,6 @@ inputs:
       trained networks for the same seed value. Also note that operations on a 
       GPU are not fully determinstic, so training or applying a neural network 
       twice with the same seed value will not produce identical results.
-    default: None
     inputBinding:
       position: 101
       prefix: --seed
@@ -113,7 +103,6 @@ inputs:
       - int
     doc: Size of the test dataset used to evaluate the discriminator after each 
       training epoch.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --test-replicates
@@ -122,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the dataset used to train the discriminator.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --training-replicates
@@ -132,7 +120,6 @@ inputs:
       - boolean
     doc: Increase verbosity. Specify once for INFO messages and twice for DEBUG 
       messages.
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbose

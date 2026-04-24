@@ -56,7 +56,6 @@ inputs:
       - string
     doc: "Enable console tracing. Default mode is 'simple' if no value is given. Modes:
       simple | extended | all"
-    default: simple
     inputBinding:
       position: 101
       prefix: --verbose

@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum overlap length for merging
-    default: 20
     inputBinding:
       position: 104
       prefix: --min-overlap
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment score
-    default: 80
     inputBinding:
       position: 104
       prefix: --min-score
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: Output file name
-    default: STDOUT
     inputBinding:
       position: 104
       prefix: --output
@@ -70,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percentage of identity
-    default: 85
     inputBinding:
       position: 104
       prefix: --pct-id
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Quality threshold 0-60
-    default: 22
     inputBinding:
       position: 104
       prefix: --quality
@@ -88,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Score for a gap
-    default: -10
     inputBinding:
       position: 104
       prefix: --score-gap
@@ -97,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Score for a match
-    default: 10
     inputBinding:
       position: 104
       prefix: --score-match
@@ -106,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Score for a mismatch
-    default: -8
     inputBinding:
       position: 104
       prefix: --score-mismatch
@@ -123,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for quality trimming
-    default: 4
     inputBinding:
       position: 104
       prefix: --window

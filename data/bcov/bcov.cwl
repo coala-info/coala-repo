@@ -36,7 +36,6 @@ inputs:
       - int
     doc: 'Minimum sequence separation for parallel strand pairing. 0 = no threshold.
       OPTIONAL, default: 6'
-    default: 6
     inputBinding:
       position: 101
       prefix: -n
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbose level, 0/1 (default: 0).'
-    default: 0
     inputBinding:
       position: 101
       prefix: -v

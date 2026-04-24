@@ -11,7 +11,6 @@ inputs:
       - string
     doc: "Input sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --inseqformat
@@ -21,7 +20,6 @@ inputs:
       - string
     doc: "Output sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --outseqformat
@@ -31,7 +29,6 @@ inputs:
       - string
     doc: Output prefix PATH. If this is INFILE and --outfile is set, --outfile 
       is used as the prefix.
-    default: INFILE
     inputBinding:
       position: 101
       prefix: --prefix
@@ -40,7 +37,6 @@ inputs:
       - 'null'
       - File
     doc: Input sequence file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --seqfile

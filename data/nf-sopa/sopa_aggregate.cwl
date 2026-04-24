@@ -71,7 +71,6 @@ inputs:
       - float
     doc: Cells whose mean channel intensity is less than `min_intensity_ratio * 
       quantile_90` will be filtered
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-intensity-ratio
@@ -80,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Cells with less transcript than this integer will be filtered
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-transcripts

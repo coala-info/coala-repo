@@ -18,7 +18,6 @@ inputs:
       - string
     doc: "How shall we handle ALT allele that are not in the VCF. skip, warn (skip
       and warning), error (raise an error), N (replace with 'N')), all: use all alleles."
-    default: all
     inputBinding:
       position: 102
       prefix: --alt
@@ -29,7 +28,6 @@ inputs:
     doc: When we're looking for variants in a lare VCF file, load the variants 
       in an interval of 'N' bases instead of doing a random access for each 
       variant.
-    default: 1000
     inputBinding:
       position: 102
       prefix: --buffer-size
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - boolean
     doc: In paired mode, ignore discordant read-groups RG-ID.
-    default: false
     inputBinding:
       position: 102
       prefix: --ignore-discordant-rg
@@ -58,7 +55,6 @@ inputs:
       of records stored in RAM before spilling to disk. Increasing this number 
       reduces the number of file handles needed to sort a file, and increases 
       the amount of RAM needed
-    default: 50000
     inputBinding:
       position: 102
       prefix: --maxRecordsInRam
@@ -69,7 +65,6 @@ inputs:
     doc: Activate Paired-end mode. Variant can be supported by the read or/and 
       is mate. Input must be sorted on query name using for example 'samtools 
       collate'.
-    default: false
     inputBinding:
       position: 102
       prefix: --paired
@@ -98,7 +93,6 @@ inputs:
       - 'null'
       - Directory
     doc: tmp working directory.
-    default: '[]'
     inputBinding:
       position: 102
       prefix: --tmpDir
@@ -107,7 +101,6 @@ inputs:
       - 'null'
       - string
     doc: SAM Reader Validation Stringency
-    default: LENIENT
     inputBinding:
       position: 102
       prefix: --validation-stringency

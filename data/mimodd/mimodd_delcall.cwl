@@ -53,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: maximal coverage allowed at any site within an uncovered region
-    default: 0
     inputBinding:
       position: 103
       prefix: --max-cov
@@ -62,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: minimal size in nts for an uncovered region to be reported
-    default: 100
     inputBinding:
       position: 103
       prefix: --min-size

@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: CPU threads for bakta.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

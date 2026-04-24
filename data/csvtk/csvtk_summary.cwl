@@ -13,7 +13,6 @@ inputs:
       - string
     doc: lines starting with commment-character will be ignored. if your header row
       starts with '#', please assign "-C" another rare symbol, e.g. '$'
-    default: '#'
     inputBinding:
       position: 101
       prefix: --comment-char
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: limit floats to N decimal points
-    default: 2
     inputBinding:
       position: 101
       prefix: --decimal-width
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: delimiting character of the input CSV file
-    default: ','
     inputBinding:
       position: 101
       prefix: --delimiter
@@ -119,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs to use
-    default: 4
     inputBinding:
       position: 101
       prefix: --num-cpus
@@ -128,7 +124,6 @@ inputs:
       - 'null'
       - string
     doc: delimiting character of the output CSV file, e.g., -D $'\t' for tab
-    default: ','
     inputBinding:
       position: 101
       prefix: --out-delimiter
@@ -153,7 +148,6 @@ inputs:
       - 'null'
       - int
     doc: rand seed for operation "rand"
-    default: 11
     inputBinding:
       position: 101
       prefix: --rand-seed
@@ -162,7 +156,6 @@ inputs:
       - 'null'
       - string
     doc: separater for collapsed data
-    default: '; '
     inputBinding:
       position: 101
       prefix: --separater

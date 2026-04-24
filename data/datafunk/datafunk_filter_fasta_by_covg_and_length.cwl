@@ -32,7 +32,6 @@ inputs:
       - int
     doc: Integer representing the minimum length threshold. Sequences with 
       length (strictly) less than this will be excluded from the filtered file.
-    default: '?'
     inputBinding:
       position: 102
       prefix: --min-length

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - float
     doc: minimum relatedness to report
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --min-relatedness

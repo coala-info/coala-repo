@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Do exact correction for clusters under this threshold
-    default: 50
     inputBinding:
       position: 101
       prefix: --exact_instance_limit
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to input fastq folder with reads in clusters
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --fastq_folder
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer size
-    default: 9
     inputBinding:
       position: 101
       prefix: --k
@@ -37,7 +34,6 @@ inputs:
       - boolean
     doc: Do not recompute previous results if corrected_reads.fq is found and 
       has the smae number of reads as input file (i.e., is complete).
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_old
@@ -58,7 +54,6 @@ inputs:
       - int
     doc: Maximum number of seqs to correct at a time (in case of large 
       clusters).
-    default: 2000
     inputBinding:
       position: 101
       prefix: --max_seqs
@@ -67,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cores allocated for clustering
-    default: 8
     inputBinding:
       position: 101
       prefix: --t
@@ -76,7 +70,6 @@ inputs:
       - 'null'
       - Directory
     doc: Outfolder with all corrected reads.
-    default: None
     inputBinding:
       position: 101
       prefix: --outfolder
@@ -88,7 +81,6 @@ inputs:
       isONcorrect paper). This experimental option uses randstrobes instead of paired
       minimizers to find shared regions. Randstrobes reduces memory footprint substantially
       (and runtime) with only slight increase in post correction quality.'
-    default: false
     inputBinding:
       position: 101
       prefix: --randstrobes
@@ -98,7 +90,6 @@ inputs:
       - int
     doc: Run isONcorrect on cluster ids with residual (default 0) of cluster_id 
       divided by --split_mod.
-    default: 0
     inputBinding:
       position: 101
       prefix: --residual
@@ -109,7 +100,6 @@ inputs:
     doc: 'EXPERIMENTAL PARAMETER: By default isONcorrect sets layers = 1 if nr seqs
       in batch to be corrected is >= 1000, else layers = 2. This command will manually
       pick the number of layers specified with the --layers parameter.'
-    default: false
     inputBinding:
       position: 101
       prefix: --set_layers_manually
@@ -118,7 +108,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set w = k + max(2*k, floor(cluster_size/1000)).
-    default: false
     inputBinding:
       position: 101
       prefix: --set_w_dynamically
@@ -129,7 +118,6 @@ inputs:
     doc: Splits cluster ids in n (default=1) partitions by computing residual of
       cluster_id divided by n. this parameter needs to be combined with 
       --residual to take effect.
-    default: 1
     inputBinding:
       position: 101
       prefix: --split_mod
@@ -140,7 +128,6 @@ inputs:
     doc: Process reads per batch (of max_seqs sequences) instead of per cluster.
       Significantly decrease runtime when few very large clusters are less than 
       the number of cores used.
-    default: false
     inputBinding:
       position: 101
       prefix: --split_wrt_batches
@@ -149,7 +136,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum fraction keeping substitution
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --T
@@ -159,7 +145,6 @@ inputs:
       - boolean
     doc: Use racon to polish consensus after spoa (more time consuming but 
       higher accuracy).
-    default: false
     inputBinding:
       position: 101
       prefix: --use_racon
@@ -168,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: Window size
-    default: 20
     inputBinding:
       position: 101
       prefix: --w
@@ -177,7 +161,6 @@ inputs:
       - 'null'
       - int
     doc: Upper interval length
-    default: 80
     inputBinding:
       position: 101
       prefix: --xmax
@@ -186,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: Lower interval length
-    default: 18
     inputBinding:
       position: 101
       prefix: --xmin

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Flag to determine if a negative set should be auto-generated (Default: False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --generate-control
@@ -36,7 +35,6 @@ inputs:
       - int
     doc: During data preprocessing, sequences above identity threshold (in 
       percent) will be removed.
-    default: 95
     inputBinding:
       position: 101
       prefix: --max-id
@@ -56,7 +54,6 @@ inputs:
       - boolean
     doc: 'Set this flag to True if no filtering of alignment windows for statistical
       significance of structure should occur (Default: False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --no-structural-filter
@@ -65,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Number of sequences input alignments will be optimized towards.
-    default: 100
     inputBinding:
       position: 101
       prefix: --num-sequences
@@ -85,7 +81,6 @@ inputs:
     doc: The label that should be assigned to the feature vectors generated from
       the (non-control) input data. Can be CDS (for protein coding sequences) or
       ncRNA.
-    default: ncRNA
     inputBinding:
       position: 101
       prefix: --positive-label
@@ -95,7 +90,6 @@ inputs:
       - boolean
     doc: 'Use the column-based shuffling approach provided by the RNAz framework instead
       of SISSIz (Default: False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --shuffle-control
@@ -123,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: Length of overlapping windows that alignments will be sliced into.
-    default: 120
     inputBinding:
       position: 101
       prefix: --window-length

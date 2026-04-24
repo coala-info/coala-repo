@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: 'The threshold for allele frequency, default: 0.01 or 1%'
-    default: 0.01
     inputBinding:
       position: 102
       prefix: -f
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - float
     doc: 'The threshold for allele frequency, default: 0.01 or 1%'
-    default: 0.01
     inputBinding:
       position: 102
       prefix: -f
@@ -60,7 +58,6 @@ inputs:
       will be skipped. A read pair is considered belonging the amplicon if the edges
       are less than int bp to the amplicon, and overlap fraction is at least float.
       Default: 10:0.95'
-    default: 10:0.95
     inputBinding:
       position: 102
       prefix: --amplicon
@@ -176,7 +173,6 @@ inputs:
       - 'null'
       - int
     doc: 'The number of nucleotide to extend for each segment, default: 0'
-    default: 0
     inputBinding:
       position: 102
       prefix: -x
@@ -185,7 +181,6 @@ inputs:
       - 'null'
       - int
     doc: 'The number of nucleotide to extend for each segment, default: 0'
-    default: 0
     inputBinding:
       position: 102
       prefix: -x
@@ -195,7 +190,6 @@ inputs:
       - string
     doc: 'The hexical to filter reads using samtools. Default: 0x500 (filter 2nd alignments
       and duplicates). Use -F 0 to turn it off.'
-    default: '0x500'
     inputBinding:
       position: 102
       prefix: -F
@@ -220,7 +214,6 @@ inputs:
       - 'null'
       - File
     doc: 'The the reference fasta. Should be indexed (.fai). Default to: /ngs/reference_data/genomes/Hsapiens/hg19/seq/hg19.fa'
-    default: /ngs/reference_data/genomes/Hsapiens/hg19/seq/hg19.fa
     inputBinding:
       position: 102
       prefix: -G
@@ -237,7 +230,6 @@ inputs:
       - 'null'
       - int
     doc: 'The indel size. Default: 50bp'
-    default: 50
     inputBinding:
       position: 102
       prefix: -I
@@ -246,7 +238,6 @@ inputs:
       - 'null'
       - int
     doc: 'The insert size. Used for SV calling. Default: 300'
-    default: 300
     inputBinding:
       position: 102
       prefix: --insert-size
@@ -255,7 +246,6 @@ inputs:
       - 'null'
       - int
     doc: 'The insert size STD. Used for SV calling. Default: 100'
-    default: 100
     inputBinding:
       position: 102
       prefix: --insert-std
@@ -265,7 +255,6 @@ inputs:
       - int
     doc: 'The number of STD. A pair will be considered for DEL if INSERT > INSERT_SIZE
       + INSERT_STD_AMT * INSERT_STD. Default: 4'
-    default: 4
     inputBinding:
       position: 102
       prefix: -A
@@ -277,7 +266,6 @@ inputs:
       Gaps are not counted as mismatches. Valid only for bowtie2/TopHat or BWA aln
       followed by sampe. BWA mem is calculated as NM - Indels. Default: 8, or reads
       with more than 8 mismatches will not be used.'
-    default: 8
     inputBinding:
       position: 102
       prefix: -m
@@ -287,7 +275,6 @@ inputs:
       - float
     doc: 'The phred score for a base to be considered a good call. Default: 22.5 (for
       Illumina) For PGM, set it to ~15, as PGM tends to under estimate base quality.'
-    default: 22.5
     inputBinding:
       position: 102
       prefix: -q
@@ -317,7 +304,6 @@ inputs:
       the matched bp is less than INT, then the read is discarded. It is meant for
       PCR based targeted sequencing where there is no insert and the matching is only
       the primers. Default: 25, or reads with matches less than 25bp will be filtered'
-    default: 25
     inputBinding:
       position: 102
       prefix: -M
@@ -326,7 +312,6 @@ inputs:
       - 'null'
       - int
     doc: 'The minimum # of reads to determine strand bias, default 2'
-    default: 2
     inputBinding:
       position: 102
       prefix: -B
@@ -335,7 +320,6 @@ inputs:
       - 'null'
       - int
     doc: 'The minimum # of reads to determine strand bias, default 2'
-    default: 2
     inputBinding:
       position: 102
       prefix: -B
@@ -346,7 +330,6 @@ inputs:
     doc: 'The minimum structural variant length to be presented using <DEL> <DUP>
       <INV> <INS>, etc. Default: 500. Any indel, complex variants less than this will
       be spelled out with exact nucleotides'
-    default: 500
     inputBinding:
       position: 102
       prefix: -L
@@ -355,7 +338,6 @@ inputs:
       - 'null'
       - int
     doc: 'The minimum # of variance reads, default 2'
-    default: 2
     inputBinding:
       position: 102
       prefix: -r
@@ -364,7 +346,6 @@ inputs:
       - 'null'
       - int
     doc: 'The minimum # of variance reads, default 2'
-    default: 2
     inputBinding:
       position: 102
       prefix: -r
@@ -374,7 +355,6 @@ inputs:
       - int
     doc: Extension of bp to look for mismatches after insersion or deletion. 
       Default to 3 bp, or only calls when they are within 3 bp.
-    default: 3
     inputBinding:
       position: 102
       prefix: -X
@@ -421,7 +401,6 @@ inputs:
       - float
     doc: The lowest frequency in normal sample allowed for a putative somatic 
       mutations. Default to 0.05
-    default: 0.05
     inputBinding:
       position: 102
       prefix: -V
@@ -440,7 +419,6 @@ inputs:
       - int
     doc: 'Indicate whether to perform local realignment. Default: 1 or yes. Set to
       0 to disable it. For Ion or PacBio, 0 is recommended.'
-    default: 1
     inputBinding:
       position: 102
       prefix: -k
@@ -458,7 +436,6 @@ inputs:
       - float
     doc: 'The Qratio of (good_quality_reads)/(bad_quality_reads+0.5). The quality
       is defined by -q option. Default: 1.5'
-    default: 1.5
     inputBinding:
       position: 102
       prefix: -o
@@ -468,7 +445,6 @@ inputs:
       - int
     doc: 'The read position filter. If the mean variants position is less that specified,
       it is considered false positive. Default: 5'
-    default: 5
     inputBinding:
       position: 102
       prefix: -P
@@ -479,7 +455,6 @@ inputs:
     doc: Extension of bp of reference to build lookup table. Default to 1200 bp.
       Increase the number will slowdown the program. The main purpose is to call
       large indels within 1000 bp that can be missed by discordant mate pairs.
-    default: 1200
     inputBinding:
       position: 102
       prefix: --ref-extension
@@ -497,7 +472,6 @@ inputs:
       - 'null'
       - string
     doc: "The delimiter for split region_info, default to tab \"\t\""
-    default: "\t"
     inputBinding:
       position: 102
       prefix: -d
@@ -614,7 +588,6 @@ inputs:
     doc: 'Indicate wehther is zero-based cooridates, as IGV does. Default: 1 for BED
       file or amplicon BED file. Use 0 to turn it off. When use -R option, it is set
       to 0'
-    default: 1
     inputBinding:
       position: 102
       prefix: -z

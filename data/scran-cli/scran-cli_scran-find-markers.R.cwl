@@ -42,7 +42,6 @@ inputs:
       comparisons for a given group/cluster. Setting pval.type="all" requires a 
       gene to be DE between each cluster and every other cluster (rather than 
       any other cluster, as is the default with pval.type="any").
-    default: any
     inputBinding:
       position: 101
       prefix: --pvalue-type

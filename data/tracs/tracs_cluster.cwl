@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Set the logging threshold.
-    default: INFO
     inputBinding:
       position: 101
       prefix: --loglevel

@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Output file path
-    default: None
     inputBinding:
       position: 103
       prefix: --output

@@ -10,7 +10,6 @@ inputs:
       - string
     doc: 'A comma separated set of cutoff values for defining the clustering address
       (Default: 1,5,10,20,50,100,200,1000)'
-    default: 1,5,10,20,50,100,200,1000
     inputBinding:
       position: 101
       prefix: --address_range
@@ -21,7 +20,6 @@ inputs:
     doc: Maximum tolerated allele length deviance compared to median allele 
       length of locus; choose integer for "absolute frameshift mode and float 
       (0..1) for "relative" frameshift mode ; default=0.1
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --allele_length_threshold
@@ -31,7 +29,6 @@ inputs:
       - string
     doc: 'Assembler to use in shovill, choose from megahit velvet skesa spades (default:
       spades)'
-    default: spades
     inputBinding:
       position: 101
       prefix: --assembler
@@ -40,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: blast scoring ratio threshold to use , default = 0.6
-    default: 0.6
     inputBinding:
       position: 101
       prefix: --bsr_threshold
@@ -52,7 +48,6 @@ inputs:
       should be (an unambiguous abbreviation of) one of "ward.D", "ward.D2", 
       "single", "complete", "average" (= UPGMA), "mcquitty" (= WPGMA), "median" 
       (= WPGMC) or "centroid" (= UPGMC); default = single
-    default: single
     inputBinding:
       position: 101
       prefix: --clustering_method
@@ -95,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Grapetree distance method; default = 3
-    default: 3
     inputBinding:
       position: 101
       prefix: --distance_method
@@ -105,7 +99,6 @@ inputs:
       - int
     doc: A single distance threshold for the extraction of sub-trees; default = 
       10
-    default: 10
     inputBinding:
       position: 101
       prefix: --distance_threshold
@@ -132,7 +125,6 @@ inputs:
     doc: Whether to consider absolute or relative differences of allele length 
       for frameshifts removal. Choose from "absolute" and "relative", 
       default="relative"
-    default: relative
     inputBinding:
       position: 101
       prefix: --frameshift_mode
@@ -141,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: A distance threshold for joining data with comparsion_db; default = 30
-    default: 30
     inputBinding:
       position: 101
       prefix: --joining_threshold
@@ -158,7 +149,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of a read to keep, default = 15
-    default: 15
     inputBinding:
       position: 101
       prefix: --min_trimmed_length
@@ -214,7 +204,6 @@ inputs:
       - 'null'
       - int
     doc: 'Sub-sample --R1/--R2 to this depth. Disable with --depth 0 (default: 100)'
-    default: 100
     inputBinding:
       position: 101
       prefix: --shovill_depth
@@ -223,7 +212,6 @@ inputs:
       - 'null'
       - string
     doc: 'Extra options for shovill (default: "")'
-    default: ''
     inputBinding:
       position: 101
       prefix: --shovill_extraopts
@@ -233,7 +221,6 @@ inputs:
       - string
     doc: 'Module options for shovill, choose from --noreadcorr --trim --nostitch --nocorr
       --noreadcorr (default: "--noreadcorr")'
-    default: --noreadcorr
     inputBinding:
       position: 101
       prefix: --shovill_modules
@@ -242,7 +229,6 @@ inputs:
       - 'null'
       - string
     doc: 'Extra output options for shovill (default: "")'
-    default: ''
     inputBinding:
       position: 101
       prefix: --shovill_output_options
@@ -251,7 +237,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Fast temporary directory (default: "")'
-    default: ''
     inputBinding:
       position: 101
       prefix: --shovill_tmpdir
@@ -261,7 +246,6 @@ inputs:
       - float
     doc: size threshold, default at 0.2 means alleles with size variation of 
       +-20 percent will be tagged as ASM/ALM , default = 0.2
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --size_threshold
@@ -272,7 +256,6 @@ inputs:
     doc: Number of Threads to use. Note that samples can only be processed 
       sequentially due to the required database access. However the allele 
       calling can be executed in parallel for the different loci, default = 10
-    default: 10
     inputBinding:
       position: 101
       prefix: --threads
@@ -281,7 +264,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Threads to use per sample, default = 10
-    default: 10
     inputBinding:
       position: 101
       prefix: --threads_sample

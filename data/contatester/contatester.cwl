@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Experiment type, could be WG for Whole Genome or EX for Exome
-    default: WG
     inputBinding:
       position: 101
       prefix: --experiment
@@ -65,7 +64,6 @@ inputs:
       - 'null'
       - boolean
     doc: create a pdf report for contamination estimation
-    default: no report
     inputBinding:
       position: 101
       prefix: --report
@@ -74,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads used by job(optional)
-    default: 4|1
     inputBinding:
       position: 101
       prefix: --thread
@@ -83,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Threshold for contaminated status(optional)
-    default: 4
     inputBinding:
       position: 101
       prefix: --threshold

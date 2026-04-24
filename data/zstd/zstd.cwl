@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: 'benchmark file(s), using # compression level'
-    default: 3
     inputBinding:
       position: 102
       prefix: -b
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: 'test all compression levels from -bX to #'
-    default: 1
     inputBinding:
       position: 102
       prefix: -e
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: 'select size of each job (default: 0==automatic)'
-    default: 0
     inputBinding:
       position: 102
       prefix: -B
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: 'compression level (1-19, default: 3)'
-    default: 3
     inputBinding:
       position: 102
       prefix: -#
@@ -93,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: minimum evaluation time in seconds
-    default: 3
     inputBinding:
       position: 102
       prefix: -i
@@ -102,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: switch to ultra fast compression level
-    default: 1
     inputBinding:
       position: 102
       prefix: --fast
@@ -119,7 +113,6 @@ inputs:
       - 'null'
       - string
     doc: compress files to the specified format (zstd, gzip, xz, lzma, lz4)
-    default: zstd
     inputBinding:
       position: 102
       prefix: --format
@@ -144,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: enable long distance matching with given window log
-    default: 27
     inputBinding:
       position: 102
       prefix: --long
@@ -153,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: limit dictionary to specified size
-    default: 112640
     inputBinding:
       position: 102
       prefix: --maxdict
@@ -251,7 +242,6 @@ inputs:
       - 'null'
       - int
     doc: 'spawns # compression threads (default: 1, 0==# cores)'
-    default: 1
     inputBinding:
       position: 102
       prefix: -T

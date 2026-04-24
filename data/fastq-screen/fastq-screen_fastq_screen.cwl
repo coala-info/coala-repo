@@ -31,7 +31,6 @@ inputs:
       parameters -k 2, Bowtie 2 with parameters -k 2 --very-fast-local and BWA 
       with mem -a. Local aligners such as BWA or Bowtie2 will be better at 
       detecting the origin of chimeric reads.
-    default: bowtie2
     inputBinding:
       position: 102
       prefix: --aligner
@@ -224,7 +223,6 @@ inputs:
       Subsets will be taken evenly from throughout the whole original dataset. 
       By Default FastQ Screen runs with this parameter set to 100000. To process
       an entire dataset however, adjust --subset to 0.
-    default: 100000
     inputBinding:
       position: 102
       prefix: --subset

@@ -24,7 +24,6 @@ steps:
     in:
       inp: file_input
       ex:
-        default: "Hello.java"
     out: [ classout ]
   operation:
     label: "Operation"

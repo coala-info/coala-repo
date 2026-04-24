@@ -20,7 +20,6 @@ inputs:
         items: string
     doc: Genotype probability of three kinds of genotype for autosome in 
       population (Pr(G)) when the variant is in dbSNP.
-    default: 0.45, 0.1 and 0.45
     inputBinding:
       position: 102
       prefix: -genoProbK
@@ -31,7 +30,6 @@ inputs:
         items: string
     doc: Genotype probability of three kinds of genotype for autosome in 
       population (Pr(G)) when the variant is not in dbSNP.
-    default: 0.9985, 0.001 and 0.0005
     inputBinding:
       position: 102
       prefix: -genoProbN
@@ -42,7 +40,6 @@ inputs:
         items: string
     doc: Genotype probability of two kinds of genotype for chromosome X for male
       in population (Pr(G)) when the variant is in dbSNP.
-    default: 0.5 and 0.5
     inputBinding:
       position: 102
       prefix: -genoProbXK
@@ -53,7 +50,6 @@ inputs:
         items: string
     doc: Genotype probability of two kinds of genotype for chromosome X for male
       in population (Pr(G)) when the variant is not in dbSNP.
-    default: 0.999 and 0.001
     inputBinding:
       position: 102
       prefix: -genoProbXN
@@ -71,7 +67,6 @@ inputs:
       - string
     doc: 'The likelihood type stored in the likelihood only format file. n:normal(default);
       log10: log10 scaled; ln: ln scaled; PS: phred scaled.'
-    default: n
     inputBinding:
       position: 102
       prefix: -lkType
@@ -81,7 +76,6 @@ inputs:
       - int
     doc: 'Choose the method used in variant calling. 1(default): Bayesian network;
       2: Elston-Stewart algorithm; 3: MCMC.'
-    default: 1
     inputBinding:
       position: 102
       prefix: -method
@@ -90,7 +84,6 @@ inputs:
       - 'null'
       - float
     doc: Mutation rate.
-    default: 1e-07
     inputBinding:
       position: 102
       prefix: -mRate

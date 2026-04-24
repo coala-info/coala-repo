@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: maximum repeat length
-    default: 47
     inputBinding:
       position: 102
       prefix: -maxRL
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: maximum spacer length
-    default: 50
     inputBinding:
       position: 102
       prefix: -maxSL
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of repeats
-    default: 3
     inputBinding:
       position: 102
       prefix: -minNR
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: minimum repeat length
-    default: 23
     inputBinding:
       position: 102
       prefix: -minRL
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: minimum spacer length
-    default: 26
     inputBinding:
       position: 102
       prefix: -minSL
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: search window length
-    default: 8
     inputBinding:
       position: 102
       prefix: -searchWL

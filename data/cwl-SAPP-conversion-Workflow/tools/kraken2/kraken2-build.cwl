@@ -55,7 +55,6 @@ inputs:
       position: 1
   threads:
     type: int?
-    default: 1
     inputBinding:
       position: 2
   references:

@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel processes to search contaminations
-    default: 20
     inputBinding:
       position: 101
       prefix: --nproc
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Number of trees in the RandomForest model
-    default: 100
     inputBinding:
       position: 101
       prefix: --ntrees
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Seed of the random number generator for reproducibility
-    default: 0
     inputBinding:
       position: 101
       prefix: --rng-seed
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: Proportion of dataset to include in test split
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --test-size

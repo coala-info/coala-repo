@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore segments with less reads than this
-    default: 33
     inputBinding:
       position: 102
       prefix: --ignore-low-support-regions
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore segments of this size or smaller
-    default: 5000000
     inputBinding:
       position: 102
       prefix: --ignore-small-regions
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: Fraction of cells with state change to be called recurrent
-    default: 0.100000001
     inputBinding:
       position: 102
       prefix: --recurrent-fraction
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Sliding window to determine recurrent state changes
-    default: 2000000
     inputBinding:
       position: 102
       prefix: --recurrent-window-size

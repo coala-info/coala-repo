@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: max. SV breakpoint offset
-    default: 1000
     inputBinding:
       position: 102
       prefix: --bpdiff
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: max. allele count
-    default: 10000
     inputBinding:
       position: 102
       prefix: --maxac
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - float
     doc: max. SV allele divergence
-    default: 0.300000012
     inputBinding:
       position: 102
       prefix: --divergence
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: max. SV size
-    default: 100000
     inputBinding:
       position: 102
       prefix: --maxsize
@@ -82,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: min. allele count
-    default: 1
     inputBinding:
       position: 102
       prefix: --minac
@@ -91,7 +86,6 @@ inputs:
       - 'null'
       - float
     doc: min. SV size ratio
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --sizeratio
@@ -100,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: min. SV site quality
-    default: 0
     inputBinding:
       position: 102
       prefix: --quality
@@ -109,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: min. SV size
-    default: 50
     inputBinding:
       position: 102
       prefix: --minsize
@@ -118,7 +110,6 @@ inputs:
       - 'null'
       - string
     doc: output prefix
-    default: out
     inputBinding:
       position: 102
       prefix: --outprefix

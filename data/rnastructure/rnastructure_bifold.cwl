@@ -26,7 +26,6 @@ inputs:
       reside in the at the location indicated by environment variable DATAPATH. 
       The default is "rna" (i.e. use RNA parameters). This option overrides the 
       --DNA flag.
-    default: rna
     inputBinding:
       position: 103
       prefix: --alphabet
@@ -61,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Specify a maximum internal/bulge loop size.
-    default: 30
     inputBinding:
       position: 103
       prefix: --loop
@@ -71,7 +69,6 @@ inputs:
       - int
     doc: Specify a maximum percent energy difference. Default is 10 percent 
       (specified as 10, not 0.1).
-    default: 10
     inputBinding:
       position: 103
       prefix: --percent
@@ -80,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Specify a maximum number of structures.
-    default: 20
     inputBinding:
       position: 103
       prefix: --maximum
@@ -99,7 +95,6 @@ inputs:
       - float
     doc: Specify the temperature at which calculation takes place in Kelvin. 
       Default is 310.15 K, which is 37 degrees C.
-    default: 310.15
     inputBinding:
       position: 103
       prefix: --temperature
@@ -108,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Specify a window size.
-    default: 0
     inputBinding:
       position: 103
       prefix: --window

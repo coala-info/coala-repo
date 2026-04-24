@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: weight for discordant paired-end reads
-    default: 1
     inputBinding:
       position: 101
       prefix: --disc_weight
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - File
     doc: VCF input
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input_vcf
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: maximum size of a confidence interval before 95% CI is used intead
-    default: '1e10'
     inputBinding:
       position: 101
       prefix: --max_ci_dist
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of aligned bases to consider read as evidence
-    default: 20
     inputBinding:
       position: 101
       prefix: --min_aligned
@@ -80,7 +76,6 @@ inputs:
       - int
     doc: number of reads to sample from BAM file for building insert size 
       distribution
-    default: 1000000
     inputBinding:
       position: 101
       prefix: -n
@@ -89,7 +84,6 @@ inputs:
       - 'null'
       - float
     doc: weight for split reads
-    default: 1
     inputBinding:
       position: 101
       prefix: --split_weight

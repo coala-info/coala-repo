@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Treat BAM as pre-tagged/phased (default: false)'
-    default: false
     inputBinding:
       position: 101
       prefix: --bamIsTagged
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of clustering iterations (default: 40)'
-    default: 40
     inputBinding:
       position: 101
       prefix: --cluster_iter
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: 'Minimum consensus ratio for STR correction (default: 0.3)'
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --consensus_ratio_str
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: 'Minimum consensus ratio for VNTR correction (default: 0.3)'
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --consensus_ratio_vntr
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Retain reads trimmed during preprocessing (default: false)'
-    default: false
     inputBinding:
       position: 101
       prefix: --keepCutReads
@@ -70,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: 'Minimum read fraction per cluster (default: 0.12)'
-    default: 0.12
     inputBinding:
       position: 101
       prefix: --minPts_frac
@@ -79,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum spanning reads required per region (default: 2)'
-    default: 2
     inputBinding:
       position: 101
       prefix: --minReadsInRegion
@@ -88,7 +81,6 @@ inputs:
       - 'null'
       - float
     doc: 'Minimum match ratio for long motifs (default: 0.5)'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --min_match_ratio_l
@@ -103,7 +95,6 @@ inputs:
       - 'null'
       - float
     doc: 'Noise limit for STR clustering (default: 0.2)'
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --noise_limit_str
@@ -112,7 +103,6 @@ inputs:
       - 'null'
       - float
     doc: 'Noise limit for VNTR clustering (default: 0.35)'
-    default: 0.35
     inputBinding:
       position: 101
       prefix: --noise_limit_vntr
@@ -121,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: 'Padding around the STR region when extracting reads (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --padding
@@ -130,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum read quality score (default: 10, max: 60)'
-    default: 10
     inputBinding:
       position: 101
       prefix: --quality_score
@@ -139,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: 'Sequencing platform / read type (default: CCS)'
-    default: CCS
     inputBinding:
       position: 101
       prefix: --reads_type
@@ -154,7 +141,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Refine tandem repeat regions (default: false)'
-    default: false
     inputBinding:
       position: 101
       prefix: --refineTrRegions
@@ -163,7 +149,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Remove outliers before phasing (default: false)'
-    default: false
     inputBinding:
       position: 101
       prefix: --removeOutliersZscore
@@ -186,7 +171,6 @@ inputs:
       - 'null'
       - float
     doc: 'Initial epsilon for STR clustering (default: 0.2)'
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --start_eps_str
@@ -195,7 +179,6 @@ inputs:
       - 'null'
       - float
     doc: 'Initial epsilon for VNTR clustering (default: 0.2)'
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --start_eps_vntr
@@ -212,7 +195,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

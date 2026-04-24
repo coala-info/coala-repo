@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: input fasta sequence
-    default: stdin
     inputBinding:
       position: 2
   - id: entries

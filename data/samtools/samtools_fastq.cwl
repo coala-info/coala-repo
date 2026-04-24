@@ -34,7 +34,6 @@ inputs:
   - 'null'
   - string
   doc: Barcode tag
-  default: BC
   inputBinding:
     position: 102
     prefix: --barcode-tag
@@ -51,7 +50,6 @@ inputs:
   - 'null'
   - int
   doc: compression level [0..9] to use when writing bgzf files
-  default: 1
   inputBinding:
     position: 102
     prefix: -c
@@ -76,7 +74,6 @@ inputs:
   - 'null'
   - int
   doc: default quality score if not given in file
-  default: 1
   inputBinding:
     position: 102
     prefix: -v
@@ -85,7 +82,6 @@ inputs:
   - 'null'
   - int
   doc: only EXCLUDE reads with all of the FLAGs in INT present
-  default: 0
   inputBinding:
     position: 102
     prefix: -G
@@ -94,7 +90,6 @@ inputs:
   - 'null'
   - string
   doc: only include reads with none of the FLAGs in INT present
-  default: '0x900'
   inputBinding:
     position: 102
     prefix: --excl-flags
@@ -103,7 +98,6 @@ inputs:
   - 'null'
   - int
   doc: only include reads with any of the FLAGs in INT present
-  default: 0
   inputBinding:
     position: 102
     prefix: --incl-flags
@@ -162,7 +156,6 @@ inputs:
   - 'null'
   - string
   doc: Quality tag
-  default: QT
   inputBinding:
     position: 102
     prefix: --quality-tag
@@ -179,7 +172,6 @@ inputs:
   - 'null'
   - int
   doc: only include reads with all of the FLAGs in INT present
-  default: 0
   inputBinding:
     position: 102
     prefix: --require-flags
@@ -188,7 +180,6 @@ inputs:
   - 'null'
   - string
   doc: Tag with which to backup the removed soft-clip data
-  default: s0
   inputBinding:
     position: 102
     prefix: --sc-aux
@@ -213,7 +204,6 @@ inputs:
   - 'null'
   - int
   doc: Number of additional threads to use
-  default: 0
   inputBinding:
     position: 102
     prefix: --threads
@@ -222,7 +212,6 @@ inputs:
   - 'null'
   - string
   doc: the list of aux tags to search for UMI barcode
-  default: RX,OX
   inputBinding:
     position: 102
     prefix: --UMI-tag

@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: 'file format of the output: [1: table; per fragment], [2: GTF (default)]'
-    default: 2
     inputBinding:
       position: 102
       prefix: --format
@@ -34,7 +33,6 @@ inputs:
       - int
     doc: Offset in bp added to the exon-type annotations in the GTF file. This offset
       is used in tools estimating the expression levels
-    default: 4
     inputBinding:
       position: 102
       prefix: --offset3p
@@ -44,7 +42,6 @@ inputs:
       - int
     doc: Offset in bp added to the exon-type annotations in the GTF file. This offset
       is used in tools estimating the expression levels
-    default: 4
     inputBinding:
       position: 102
       prefix: --offset5p

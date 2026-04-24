@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum bitscore to consider valid pair.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --bitScore
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum e-value to consider valid pair.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --eVal
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Set logging level.
-    default: INFO
     inputBinding:
       position: 101
       prefix: --loglevel
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of hit to consider valid.
-    default: 1
     inputBinding:
       position: 101
       prefix: --minLen

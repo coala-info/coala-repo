@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: "Format of input file. By default, it is guessed from\nthe file extension."
-    default: guess
     inputBinding:
       position: 102
       prefix: --input-format
@@ -52,7 +51,6 @@ inputs:
       - Directory
     doc: "Directory containing presentation models.Default: /roo\nt/.local/share/mhcflurry/4/2.2.0/models_class1_present\n\
       ation/models"
-    default: 
       /root/.local/share/mhcflurry/4/2.2.0/models_class1_presentation/models
     inputBinding:
       position: 102
@@ -86,7 +84,6 @@ inputs:
       - 'null'
       - string
     doc: "Delimiter character for results. Default: ','"
-    default: ','
     inputBinding:
       position: 102
       prefix: --output-delimiter
@@ -97,7 +94,6 @@ inputs:
     doc: "Peptide lengths to consider. Pass as START-END (e.g.\n8-11) or a comma-separated
       list (8,9,10,11). When\nusing START-END, the range is INCLUSIVE on both ends.\n\
       Default: 8-11."
-    default: 8-11
     inputBinding:
       position: 102
       prefix: --peptide-lengths
@@ -114,7 +110,6 @@ inputs:
       - 'null'
       - string
     doc: "Input CSV column name for sequences. Default:\n'sequence'"
-    default: sequence
     inputBinding:
       position: 102
       prefix: --sequence-column
@@ -123,7 +118,6 @@ inputs:
       - 'null'
       - string
     doc: "Input CSV column name for sequence IDs. Default:\n'sequence_id'"
-    default: sequence_id
     inputBinding:
       position: 102
       prefix: --sequence-id-column
@@ -141,7 +135,6 @@ inputs:
       - 'null'
       - float
     doc: 'Threshold if filtering by affinity. Default: < 500'
-    default: < 500
     inputBinding:
       position: 102
       prefix: --threshold-affinity
@@ -150,7 +143,6 @@ inputs:
       - 'null'
       - float
     doc: "Threshold if filtering by affinity percentile.\nDefault: < 2.0"
-    default: < 2.0
     inputBinding:
       position: 102
       prefix: --threshold-affinity-percentile
@@ -159,7 +151,6 @@ inputs:
       - 'null'
       - float
     doc: "Threshold if filtering by presentation score. Default:\n> 0.7"
-    default: '> 0.7'
     inputBinding:
       position: 102
       prefix: --threshold-presentation-score
@@ -168,7 +159,6 @@ inputs:
       - 'null'
       - float
     doc: "Threshold if filtering by processing score. Default: >\n0.5"
-    default: '> 0.5'
     inputBinding:
       position: 102
       prefix: --threshold-processing-score

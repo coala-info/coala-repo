@@ -11,7 +11,6 @@ inputs:
       - boolean
     doc: Whether to overwrite all existing files that will be created if they 
       exist.
-    default: false
     inputBinding:
       position: 101
       prefix: --force_overwrite

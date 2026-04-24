@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Specify which assay values to use.
-    default: logcounts
     inputBinding:
       position: 101
       prefix: --assay-type
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: A character vector specifying which spike-in sets to use.
-    default: ERCC
     inputBinding:
       position: 101
       prefix: --type

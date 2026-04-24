@@ -19,7 +19,6 @@ inputs:
   - 'null'
   - string
   doc: output filename format string
-  default: '%*_%#.%.'
   inputBinding:
     position: 102
     prefix: -f
@@ -38,7 +37,6 @@ inputs:
   - 'null'
   - int
   doc: limit number of output files from -d to NUM
-  default: 100
   inputBinding:
     position: 102
     prefix: --max-split
@@ -97,7 +95,6 @@ inputs:
   - 'null'
   - int
   doc: Number of additional threads to use
-  default: 0
   inputBinding:
     position: 102
     prefix: --threads

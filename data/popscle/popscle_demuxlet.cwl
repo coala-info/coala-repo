@@ -10,7 +10,6 @@ inputs:
       - type: array
         items: float
     doc: Grid of alpha to search for (default is 0.1, 0.2, 0.3, 0.4, 0.5)
-    default:
       - 0.1
       - 0.2
       - 0.3
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum base quality (higher BQ will be capped)
-    default: 20
     inputBinding:
       position: 101
       prefix: --cap-BQ
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: Prior of doublet
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --doublet-prior
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: SAM/BAM FLAGs to be excluded
-    default: 3844
     inputBinding:
       position: 101
       prefix: --excl-flag
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: FORMAT field to extract the genotype, likelihood, or posterior from
-    default: GP
     inputBinding:
       position: 101
       prefix: --field
@@ -61,7 +56,6 @@ inputs:
       - float
     doc: Slope of genotype error rate. [error] = [offset] + 
       [1-offset]*[coeff]*[1-r2]
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --geno-error-coeff
@@ -71,7 +65,6 @@ inputs:
       - float
     doc: Offset of genotype error rate. [error] = [offset] + 
       [1-offset]*[coeff]*[1-r2]
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --geno-error-offset
@@ -89,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality to consider (lower BQ will be skipped)
-    default: 13
     inputBinding:
       position: 101
       prefix: --min-BQ
@@ -98,7 +90,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum call rate
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --min-callrate
@@ -107,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum minor allele frequency
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-mac
@@ -116,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality to consider (lower MQ will be ignored)
-    default: 20
     inputBinding:
       position: 101
       prefix: --min-MQ
@@ -126,7 +115,6 @@ inputs:
       - int
     doc: Minimum number of SNPs with coverage for a droplet/cell to be 
       considered
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-snp
@@ -135,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum distance to the tail (lower will be ignored)
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-TD
@@ -144,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of total reads for a droplet/cell to be considered
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-total
@@ -153,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of UMIs for a droplet/cell to be considered
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-umi
@@ -179,7 +164,6 @@ inputs:
       - string
     doc: INFO field name representing R2 value. Used for representing imputation
       quality
-    default: R2
     inputBinding:
       position: 101
       prefix: --r2-info
@@ -196,7 +180,6 @@ inputs:
       - 'null'
       - int
     doc: Verbose message frequency for SAM/BAM/CRAM
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --sam-verbose
@@ -223,7 +206,6 @@ inputs:
       - string
     doc: Tag representing readgroup or cell barcodes, in the case to partition 
       the BAM file into multiple groups. For 10x genomics, use CB
-    default: CB
     inputBinding:
       position: 101
       prefix: --tag-group
@@ -232,7 +214,6 @@ inputs:
       - 'null'
       - string
     doc: Tag representing UMIs. For 10x genomiucs, use UB
-    default: UB
     inputBinding:
       position: 101
       prefix: --tag-UMI
@@ -250,7 +231,6 @@ inputs:
       - 'null'
       - int
     doc: Verbose message frequency for VCF/BCF
-    default: 10000
     inputBinding:
       position: 101
       prefix: --vcf-verbose

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not average pairs to make symmetrical matrices
-    default: false
     inputBinding:
       position: 101
       prefix: --asymmetrical
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Which distance to use in matrix
-    default: median_vertical_window
     inputBinding:
       position: 101
       prefix: --distance_type
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Samples names to exclude from matrix (comma-delimited)
-    default: do not exclude any samples
     inputBinding:
       position: 101
       prefix: --exclude_names
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: Samples names to include in matrix (comma-delimited)
-    default: include all samples
     inputBinding:
       position: 101
       prefix: --include_names
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Behaviour when there are multiple results for a sample pair
-    default: first
     inputBinding:
       position: 101
       prefix: --multi
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not apply Jukes-Cantor correction
-    default: false
     inputBinding:
       position: 101
       prefix: --no_jukes_cantor

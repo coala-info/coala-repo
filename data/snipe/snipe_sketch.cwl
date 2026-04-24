@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Batch size for sample sketching.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --batch-size
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU cores to use.
-    default: 4
     inputBinding:
       position: 101
       prefix: --cores
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size.
-    default: 51
     inputBinding:
       position: 101
       prefix: --ksize
@@ -84,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Sourmash scale factor.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --scale

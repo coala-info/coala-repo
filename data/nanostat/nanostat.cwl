@@ -94,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Set the allowed number of threads to be used by the script
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

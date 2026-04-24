@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print the size of of each basin in output.
-    default: false
     inputBinding:
       position: 102
       prefix: --bsize
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Restrict the output to the connected component.
-    default: false
     inputBinding:
       position: 102
       prefix: --connected
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Define type of the graph, i.e. configuration space.
-    default: RNA
     inputBinding:
       position: 102
       prefix: --graph
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Compute only the lowest <num> local minima.
-    default: 100
     inputBinding:
       position: 102
       prefix: --max
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: Print only minima with energy barrier greater than delta.
-    default: '0.000001'
     inputBinding:
       position: 102
       prefix: --minh
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - boolean
     doc: Be quiet (also inhibit PS tree output).
-    default: false
     inputBinding:
       position: 102
       prefix: --quiet
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - boolean
     doc: Compute rates between macro states (basins).
-    default: false
     inputBinding:
       position: 102
       prefix: --rates
@@ -105,7 +98,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print the saddle point conformations in output.
-    default: false
     inputBinding:
       position: 102
       prefix: --saddle
@@ -114,7 +106,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print saddle component sizes.
-    default: false
     inputBinding:
       position: 102
       prefix: --ssize
@@ -123,7 +114,6 @@ inputs:
       - 'null'
       - boolean
     doc: Be verbose, i.e. print more information.
-    default: false
     inputBinding:
       position: 102
       prefix: --verbose

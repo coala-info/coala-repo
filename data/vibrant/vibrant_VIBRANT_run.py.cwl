@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: input format (nucl or prot)
-    default: nucl
     inputBinding:
       position: 101
       prefix: -f
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of ORFs per scaffold
-    default: 4
     inputBinding:
       position: 101
       prefix: -n
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: length limit (bp) for input scaffolds
-    default: 1000
     inputBinding:
       position: 101
       prefix: -l
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

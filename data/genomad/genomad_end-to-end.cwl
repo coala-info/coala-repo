@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Method for estimating sample composition. (auto|metagenome|virome)
-    default: auto
     inputBinding:
       position: 103
   - id: conservative
@@ -98,7 +97,6 @@ inputs:
       - float
     doc: Maximum accepted false discovery rate. This option will be ignored if 
       the scores were not calibrated.
-    default: 0.1
     inputBinding:
       position: 103
   - id: max_uscg
@@ -109,7 +107,6 @@ inputs:
       virus or a plasmid. Sequences with more than this number of USCGs will not
       be classified as viruses or plasmids, regardless of their score. This 
       option will be ignored if the annotation module was not executed.
-    default: 4
     inputBinding:
       position: 103
   - id: min_number_genes
@@ -118,7 +115,6 @@ inputs:
       - int
     doc: The minimum number of genes a sequence must encode to be considered for
       classification as a plasmid or virus.
-    default: 1
     inputBinding:
       position: 103
   - id: min_plasmid_hallmarks
@@ -127,7 +123,6 @@ inputs:
       - int
     doc: Minimum number of plasmid hallmarks in the identified plasmids. This 
       option will be ignored if the annotation module was not executed.
-    default: 0
     inputBinding:
       position: 103
   - id: min_plasmid_hallmarks_short_seqs
@@ -136,7 +131,6 @@ inputs:
       - int
     doc: Minimum number of plasmid hallmarks in plasmids shorter than 2,500 bp. 
       This option will be ignored if the annotation module was not executed.
-    default: 1
     inputBinding:
       position: 103
   - id: min_plasmid_marker_enrichment
@@ -148,7 +142,6 @@ inputs:
       Sequences with multiple plasmid markers will have higher values than the 
       ones that encode few or no markers. This option will be ignored if the 
       annotation module was not executed.
-    default: 0.1
     inputBinding:
       position: 103
   - id: min_score
@@ -156,7 +149,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum score to flag a sequence as virus or plasmid.
-    default: 0.7
     inputBinding:
       position: 103
   - id: min_virus_hallmarks
@@ -165,7 +157,6 @@ inputs:
       - int
     doc: Minimum number of virus hallmarks in the identified viruses. This 
       option will be ignored if the annotation module was not executed.
-    default: 0
     inputBinding:
       position: 103
   - id: min_virus_hallmarks_short_seqs
@@ -174,7 +165,6 @@ inputs:
       - int
     doc: Minimum number of virus hallmarks in viruses shorter than 2,500 bp. 
       This option will be ignored if the annotation module was not executed.
-    default: 1
     inputBinding:
       position: 103
   - id: min_virus_marker_enrichment
@@ -186,7 +176,6 @@ inputs:
       Sequences with multiple virus markers will have higher values than the 
       ones that encode few or no markers. This option will be ignored if the 
       annotation module was not executed.
-    default: 0.0
     inputBinding:
       position: 103
   - id: quiet
@@ -219,7 +208,6 @@ inputs:
       - float
     doc: MMseqs2 marker search sensitivity. Higher values will annotate more 
       proteins, but the search will be slower and consume more memory.
-    default: 4.2
     inputBinding:
       position: 103
       prefix: -s
@@ -244,7 +232,6 @@ inputs:
     doc: Split the data for the MMseqs2 search. Higher values will reduce memory
       usage, but will make the search slower. If the MMseqs2 search is failing, 
       try to increase the number of splits.
-    default: 0
     inputBinding:
       position: 103
   - id: threads
@@ -252,7 +239,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 20
     inputBinding:
       position: 103
       prefix: -t
@@ -261,7 +247,6 @@ inputs:
       - 'null'
       - boolean
     doc: Display the execution log.
-    default: verbose
     inputBinding:
       position: 103
       prefix: -v

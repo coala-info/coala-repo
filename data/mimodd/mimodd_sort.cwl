@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: the format of the input file
-    default: bam
     inputBinding:
       position: 102
       prefix: --iformat
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: specify whether the output should be in sam or bam format
-    default: bam
     inputBinding:
       position: 102
       prefix: --oformat

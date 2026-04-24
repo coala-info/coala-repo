@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: 'batch size for blastdbcmd. Default: 1000'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --batch-size
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: 'blastn evalue. Default: 10'
-    default: 10
     inputBinding:
       position: 101
       prefix: --evalue
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: 'max_target_seqs option for blastn. Default: 10000'
-    default: 10000
     inputBinding:
       position: 101
       prefix: --max-target-seqs
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: minimum array length (number of spacers). Default 2
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-array-len
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum spacer length when identifying arrays. Default: 25'
-    default: 25
     inputBinding:
       position: 101
       prefix: --min-sp-len
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - float
     doc: 'minumum percent ID of repeat BLAST hits. Default: 80'
-    default: 80
     inputBinding:
       position: 101
       prefix: --percent-id
@@ -110,7 +104,6 @@ inputs:
       - 'null'
       - string
     doc: '{E, P} regex type describing assembly names. Default: P'
-    default: P
     inputBinding:
       position: 101
       prefix: --regex-type
@@ -119,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: 'maximum interval between repeats. Default: 100'
-    default: 100
     inputBinding:
       position: 101
       prefix: --repeat-interval
@@ -134,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of SNPs to consider spacers the same. Default: 0'
-    default: 0
     inputBinding:
       position: 101
       prefix: --snp-thresh
@@ -143,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of threads to use. Default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

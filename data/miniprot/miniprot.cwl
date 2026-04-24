@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: bits per block
-    default: 8
     inputBinding:
       position: 104
       prefix: -b
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: bonus score for alignment reaching query ends
-    default: 5
     inputBinding:
       position: 104
       prefix: -B
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: penalty for frameshifts or in-frame stop codons
-    default: 23
     inputBinding:
       position: 104
       prefix: -F
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: gap extension (a k-long gap costs O+k*E)
-    default: 1
     inputBinding:
       position: 104
       prefix: -E
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: gap open penalty
-    default: 11
     inputBinding:
       position: 104
       prefix: -O
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for IDs in GFF3
-    default: MP
     inputBinding:
       position: 104
       prefix: -P
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: intron open penalty
-    default: 29
     inputBinding:
       position: 104
       prefix: -J
@@ -90,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size for indexing
-    default: 6
     inputBinding:
       position: 104
       prefix: -k
@@ -99,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size for the second round of chaining
-    default: 5
     inputBinding:
       position: 104
       prefix: -l
@@ -108,7 +99,6 @@ inputs:
       - 'null'
       - string
     doc: output up to min{NUM,-N} alignments per query
-    default: '1000'
     inputBinding:
       position: 104
       prefix: --outn
@@ -117,7 +107,6 @@ inputs:
       - 'null'
       - string
     doc: max extension for 2nd round of chaining and alignment
-    default: '10000'
     inputBinding:
       position: 104
       prefix: -e
@@ -126,7 +115,6 @@ inputs:
       - 'null'
       - string
     doc: max intron size; override -I
-    default: 200k
     inputBinding:
       position: 104
       prefix: -G
@@ -135,7 +123,6 @@ inputs:
       - 'null'
       - string
     doc: max k-mer occurrence
-    default: '20000'
     inputBinding:
       position: 104
       prefix: -c
@@ -144,7 +131,6 @@ inputs:
       - 'null'
       - string
     doc: consider at most INT secondary alignments
-    default: '30'
     inputBinding:
       position: 104
       prefix: -N
@@ -153,7 +139,6 @@ inputs:
       - 'null'
       - string
     doc: min chaining score
-    default: '0'
     inputBinding:
       position: 104
       prefix: -m
@@ -162,7 +147,6 @@ inputs:
       - 'null'
       - float
     doc: output if at least FLOAT fraction of query is aligned
-    default: 0.1
     inputBinding:
       position: 104
       prefix: --outc
@@ -171,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: min ORF length to index
-    default: 30
     inputBinding:
       position: 104
       prefix: -L
@@ -180,7 +163,6 @@ inputs:
       - 'null'
       - float
     doc: output if score at least FLOAT*bestScore
-    default: 0.99
     inputBinding:
       position: 104
       prefix: --outs
@@ -189,7 +171,6 @@ inputs:
       - 'null'
       - float
     doc: min secondary-to-primary score ratio
-    default: 0.7
     inputBinding:
       position: 104
       prefix: -p
@@ -198,7 +179,6 @@ inputs:
       - 'null'
       - string
     doc: minimum number of syncmers in a chain
-    default: '3'
     inputBinding:
       position: 104
       prefix: -n
@@ -207,7 +187,6 @@ inputs:
       - 'null'
       - int
     doc: modimisers bit (sample rate = 1/2**M)
-    default: 1
     inputBinding:
       position: 104
       prefix: -M
@@ -216,7 +195,6 @@ inputs:
       - 'null'
       - int
     doc: NCBI translation table (1 through 33)
-    default: 1
     inputBinding:
       position: 104
       prefix: -T
@@ -273,7 +251,6 @@ inputs:
       - 'null'
       - string
     doc: query batch size
-    default: 2M
     inputBinding:
       position: 104
       prefix: -K
@@ -290,7 +267,6 @@ inputs:
       - 'null'
       - int
     doc: 'splice model: 2=vertebrate/insect, 1=general, 0=none (see manual)'
-    default: 1
     inputBinding:
       position: 104
       prefix: -j
@@ -299,7 +275,6 @@ inputs:
       - 'null'
       - int
     doc: splice score for sites not in --spsc
-    default: -7
     inputBinding:
       position: 104
       prefix: --spsc0
@@ -316,7 +291,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 4
     inputBinding:
       position: 104
       prefix: -t
@@ -325,7 +299,6 @@ inputs:
       - 'null'
       - float
     doc: weight of log gap penalty
-    default: 0.75
     inputBinding:
       position: 104
       prefix: -w
@@ -334,7 +307,6 @@ inputs:
       - 'null'
       - float
     doc: weight of splice penalty; 0 to ignore splice signals
-    default: 1.0
     inputBinding:
       position: 104
       prefix: -C

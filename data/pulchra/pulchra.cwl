@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: 'maximum shift from the restraint coordinates (default: 0.5A)'
-    default: 0.5
     inputBinding:
       position: 102
       prefix: -u

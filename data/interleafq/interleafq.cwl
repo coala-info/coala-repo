@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads per chunk for interleaving.
-    default: 100000
     inputBinding:
       position: 102
       prefix: --chunksize
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: "Interleaving mode. Options: 'interleave' (default), 'concat'."
-    default: interleave
     inputBinding:
       position: 102
       prefix: --mode
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

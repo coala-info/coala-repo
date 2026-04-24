@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - Directory
     doc: Cache directory
-    default: ~/.tgv
     inputBinding:
       position: 102
       prefix: --cache-dir

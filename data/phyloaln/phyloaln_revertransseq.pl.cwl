@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: genetic code(default=1, invertebrate mitochondrion=5)
-    default: 1
     inputBinding:
       position: 101
       prefix: -g
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - File
     doc: log file(default='revertransseq.log')
-    default: revertransseq.log
     inputBinding:
       position: 101
       prefix: -l
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: num threads(default=1)
-    default: 1
     inputBinding:
       position: 101
       prefix: -n
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: symbol of termination in blueprint(default='*')
-    default: '*'
     inputBinding:
       position: 101
       prefix: -t

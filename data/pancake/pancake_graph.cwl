@@ -12,7 +12,6 @@ inputs:
       - boolean
     doc: if set, all chromosomes contained in PAN_FILE appear in output (irrespective
       to CHROMS), DEFAULT=False
-    default: false
     inputBinding:
       position: 101
       prefix: -all
@@ -31,7 +30,6 @@ inputs:
       - int
     doc: 'Maximal number of edges in output graph. (DEFAULT=10,000): if exceeded,
       PanCake will warn and interrupt!'
-    default: 10000
     inputBinding:
       position: 101
       prefix: --max_edges
@@ -41,7 +39,6 @@ inputs:
       - int
     doc: 'Shared features are truncated in output if number of contained feature instances
       > MAX_ENTRIES (DEFAULT: MAX_ENTRIES=50)'
-    default: 50
     inputBinding:
       position: 101
       prefix: --max_entries
@@ -51,7 +48,6 @@ inputs:
       - int
     doc: 'Maximal number of nodes in output graph. (DEFAULT=10,000): if exceeded,
       PanCake will warn and interrupt!'
-    default: 10000
     inputBinding:
       position: 101
       prefix: --max_nodes
@@ -67,7 +63,6 @@ inputs:
       - boolean
     doc: if set, only specified regions are shown in output (DEFAULT=False), ignored
       if -all is set
-    default: false
     inputBinding:
       position: 101
       prefix: -regions

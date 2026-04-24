@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Colored test output (default).
-    default: true
     inputBinding:
       position: 102
       prefix: --color
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show the X/Y test count when not verbose (default)
-    default: true
     inputBinding:
       position: 102
       prefix: --count
@@ -83,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: Set the extension for tests (default '.t')
-    default: .t
     inputBinding:
       position: 102
       prefix: --ext

@@ -60,7 +60,6 @@ inputs:
     type: float?
     doc: Genomes with less covered bases than this are reported as having zero coverage.(default; 10)
     label: Minimum covered fraction
-    default: 10
     inputBinding:
       prefix: --min-covered-fraction
 
@@ -81,7 +80,6 @@ inputs:
           - tpm
     doc: Method to calculate coverage (default; relative_abundance)
     label: Method to calculate coverage
-    default: relative_abundance
     inputBinding:
       prefix: --methods
 

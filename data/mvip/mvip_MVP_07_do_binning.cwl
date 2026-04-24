@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Filtration level ("relaxed" or "conservative").
-    default: conservative
     inputBinding:
       position: 101
       prefix: --filtration
@@ -80,7 +79,6 @@ inputs:
       - float
     doc: the maximum ratio of host genes to viral genes required to include a 
       virus prediction
-    default: 1
     inputBinding:
       position: 101
       prefix: --host_viral_genes_ratio
@@ -129,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: Sequencing data type (e.g. short vs long reads).
-    default: short
     inputBinding:
       position: 101
       prefix: --read_type
@@ -138,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -148,7 +144,6 @@ inputs:
       - int
     doc: the minimum number of viral genes required to include a virus 
       prediction
-    default: 0
     inputBinding:
       position: 101
       prefix: --viral_min_genes

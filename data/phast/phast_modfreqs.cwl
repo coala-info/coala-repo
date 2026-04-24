@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of alleles required to calculate frequency.
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-allele-count

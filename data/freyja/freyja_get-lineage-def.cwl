@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Path to custom barcode file
-    default: data/usher_barcodes.feather
     inputBinding:
       position: 102
       prefix: --barcodes

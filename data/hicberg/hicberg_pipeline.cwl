@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the analysis.
-    default: sample
     inputBinding:
       position: 104
       prefix: --name
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Set sensitivity level for Bowtie2.
-    default: very-sensitive
     inputBinding:
       position: 104
       prefix: --sensitivity
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the chromosome to consider as circular.
-    default: ''
     inputBinding:
       position: 104
       prefix: --circular
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Threads to use for analysis.
-    default: 1
     inputBinding:
       position: 104
       prefix: --cpus
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: Standard deviation for contact density estimation.
-    default: 0.5
     inputBinding:
       position: 104
       prefix: --deviation
@@ -88,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: Stage to exit the pipeline.
-    default: None
     inputBinding:
       position: 104
       prefix: --exit-stage
@@ -105,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Genomic resolution.
-    default: 2000
     inputBinding:
       position: 104
       prefix: --bins
@@ -114,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the gaussian kernel for contact density estimation.
-    default: 11
     inputBinding:
       position: 104
       prefix: --kernel-size
@@ -132,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance beyond which pairs are discarded in omics mode.
-    default: 1000
     inputBinding:
       position: 104
       prefix: --distance
@@ -141,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality to consider a read as valid.
-    default: 35
     inputBinding:
       position: 104
       prefix: --mapq
@@ -150,7 +140,6 @@ inputs:
       - 'null'
       - string
     doc: Stage to start the pipeline.
-    default: fastq
     inputBinding:
       position: 104
       prefix: --start-stage
@@ -159,7 +148,6 @@ inputs:
       - 'null'
       - string
     doc: Statistical model to use for ambiguous reads assignment.
-    default: full
     inputBinding:
       position: 104
       prefix: --mode
@@ -168,7 +156,6 @@ inputs:
       - 'null'
       - float
     doc: Rate to use for sub-sampling restriction map.
-    default: 1.0
     inputBinding:
       position: 104
       prefix: --rate

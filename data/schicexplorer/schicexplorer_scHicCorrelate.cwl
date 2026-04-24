@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Fontsize in the plot for x and y axis.
-    default: (25, 20)
     inputBinding:
       position: 101
       prefix: --figuresize
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Fontsize in the plot for x and y axis.
-    default: 30
     inputBinding:
       position: 101
       prefix: --fontsize
@@ -80,7 +78,6 @@ inputs:
       - 'null'
       - string
     doc: Correlation method to use.
-    default: pearson
     inputBinding:
       position: 101
       prefix: --method
@@ -121,7 +118,6 @@ inputs:
       the input file into the buffer and one process which is merging the output
       bam files of the processes into one output bam file. All other threads do 
       the actual computation.
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

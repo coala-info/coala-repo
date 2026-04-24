@@ -101,7 +101,6 @@ arguments:
 inputs:
   threads:
     type: int?
-    default: 1
     inputBinding:
       prefix: --threads
   identifier:
@@ -120,7 +119,6 @@ inputs:
     type: boolean
     label: No kraken standard output
     doc: Do not output kraken's read classification output. Default false
-    default: false
 
   forward_reads:
     type: File?
@@ -141,7 +139,6 @@ inputs:
     inputBinding:
       position: 5
       prefix: "--paired"
-    default: false
 
   nanopore_reads:
     type: File?
@@ -165,7 +162,6 @@ inputs:
     inputBinding:
       position: 5
       prefix: '--gzip-compressed'
-    default: false
   bzip2:
     type: boolean
     label: Bzip2 input
@@ -173,7 +169,6 @@ inputs:
     inputBinding:
       position: 7
       prefix: '--bzip2-compressed'
-    default: false
 
   report_zero_counts:
     type: boolean
@@ -182,7 +177,6 @@ inputs:
     inputBinding:
       position: 8
       prefix: '--report-zero-counts'
-    default: true
   memory_mapping:
     type: boolean
     label: Memory mapping
@@ -190,7 +184,6 @@ inputs:
     inputBinding:
       position: 9
       prefix: '--memory-mapping'
-    default: false
   use_names:
     type: boolean
     label: Use names
@@ -198,18 +191,15 @@ inputs:
     inputBinding:
       position: 10
       prefix: '--use-names'
-    default: true
    
   keep_classified_reads: 
     type: boolean
     label: Keep classified reads
     doc: Output classified reads. Default false
-    default: false
   keep_unclassified_reads:
     type: boolean
     label: Keep unclassified reads
     doc: Output unclassified reads. Default false
-    default: false
 
 outputs:
   standard_report: 

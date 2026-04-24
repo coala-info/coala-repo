@@ -25,7 +25,6 @@ inputs:
       - float
     doc: "Adjust-Pval cutoff, used for generating plots.\n                       \
       \ Default: 0.05."
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --cut-off
@@ -46,7 +45,6 @@ inputs:
       - string
     doc: "The figsize keyword argument need two parameters to\n                  \
       \      define. Default: (6.5, 6)"
-    default: (6.5, 6)
     inputBinding:
       position: 101
       prefix: --figsize
@@ -57,7 +55,6 @@ inputs:
     doc: "File extensions supported by Matplotlib active\n                       \
       \ backend, choose from {'pdf', 'png', 'jpeg','ps',\n                       \
       \ 'eps','svg'}. Default: 'pdf'."
-    default: pdf
     inputBinding:
       position: 101
       prefix: --format
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: 'Numbers of top graphs produced. Default: 20'
-    default: 20
     inputBinding:
       position: 101
       prefix: --graph
@@ -89,7 +85,6 @@ inputs:
       - boolean
     doc: "Speed up computing by suppressing the plot output.This\n               \
       \         is useful only if data are interested. Default: False."
-    default: false
     inputBinding:
       position: 101
       prefix: --no-plot
@@ -99,7 +94,6 @@ inputs:
       - string
     doc: "Enrichr supported organism name. Default: human. See\n                 \
       \       here: https://amp.pharm.mssm.edu/modEnrichr."
-    default: human
     inputBinding:
       position: 101
       prefix: --organism
@@ -108,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: 'Numbers of top terms shown in the plot. Default: 10'
-    default: 10
     inputBinding:
       position: 101
       prefix: --top-term

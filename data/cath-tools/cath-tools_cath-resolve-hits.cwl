@@ -45,7 +45,6 @@ inputs:
       - int
     doc: Prefer higher scores to degree <val> (<val> may be negative to reduce 
       preference for higher scores; 0 leaves scores unaffected)
-    default: 0
     inputBinding:
       position: 102
       prefix: --high-scores-preference
@@ -62,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Only display up to <num> non-solution hits in the HTML
-    default: 80
     inputBinding:
       position: 102
       prefix: --html-max-num-non-soln-hits
@@ -72,7 +70,6 @@ inputs:
       - string
     doc: 'Parse the input data from <format>, one of available formats: hmmer_domtblout,
       hmmscan_out, hmmsearch_out, raw_with_scores, raw_with_evalues'
-    default: raw_with_scores
     inputBinding:
       position: 102
       prefix: --input-format
@@ -91,7 +88,6 @@ inputs:
       - int
     doc: Only process the first <num> query protein(s) encountered in the input 
       data
-    default: 1
     inputBinding:
       position: 102
       prefix: --limit-queries
@@ -101,7 +97,6 @@ inputs:
       - int
     doc: Prefer longer hits to degree <val> (<val> may be negative to prefer 
       shorter; 0 leaves scores unaffected)
-    default: 0
     inputBinding:
       position: 102
       prefix: --long-domains-preference
@@ -111,7 +106,6 @@ inputs:
       - int
     doc: When parsing starts/stops from alignment data, ignore gaps of less than
       <length> residues
-    default: 30
     inputBinding:
       position: 102
       prefix: --min-gap-length
@@ -120,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore all segments that are fewer than <length> residues long
-    default: 7
     inputBinding:
       position: 102
       prefix: --min-seg-length
@@ -149,7 +142,6 @@ inputs:
     doc: Allow different hits' segments to overlap a bit by trimming all 
       segments using spec <trim> of the form n/m (n is a segment length; m is 
       the *total* length to be trimmed off both ends)
-    default: 30/10
     inputBinding:
       position: 102
       prefix: --overlap-trim-spec
@@ -184,7 +176,6 @@ inputs:
       - 'null'
       - float
     doc: Ignore any hits with a bitscore worse than <bitscore>
-    default: 10
     inputBinding:
       position: 102
       prefix: --worst-permissible-bitscore
@@ -193,7 +184,6 @@ inputs:
       - 'null'
       - float
     doc: Ignore any hits with an evalue worse than <evalue>
-    default: 0.001
     inputBinding:
       position: 102
       prefix: --worst-permissible-evalue

@@ -63,7 +63,6 @@ inputs:
       - File
     doc: Path to the base schema file. This file is used as a reference to 
       compare it with the schema generated using this module.
-    default: installed schema in 'relecov-tools 
       /relecov_tools/schema/relecov_schema.json'
     inputBinding:
       position: 101

@@ -42,7 +42,6 @@ inputs:
       - string
     doc: BAM tag used for the cell barcode (default compatible with 10X Genomics
       Chromium is CB).
-    default: CB
     inputBinding:
       position: 103
       prefix: --cell-barcode
@@ -70,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: 'Column delimiter in output (default: TAB).'
-    default: TAB
     inputBinding:
       position: 103
       prefix: --delimiter
@@ -89,7 +87,6 @@ inputs:
       - string
     doc: 'GTF attribute to be used as feature ID (default, suitable for Ensembl GTF
       files: gene_id)'
-    default: gene_id
     inputBinding:
       position: 103
       prefix: --idattr
@@ -111,7 +108,6 @@ inputs:
     doc: 'Skip all reads with MAPQ alignment quality lower than the given minimum
       value (default: 10). MAPQ is the 5th column of a SAM/BAM file and its usage
       depends on the software used to map the reads.'
-    default: 10
     inputBinding:
       position: 103
       prefix: --minaqual
@@ -121,7 +117,6 @@ inputs:
       - string
     doc: 'Mode to handle reads overlapping more than one feature (choices: union,
       intersection-strict, intersection-nonempty; default: union)'
-    default: union
     inputBinding:
       position: 103
       prefix: --mode
@@ -141,7 +136,6 @@ inputs:
     doc: "'pos' or 'name'. Sorting order of <alignment_file> (default: name). Paired-end
       sequencing data must be sorted either by position or by read name, and the sorting
       order must be specified. Ignored for single-end data."
-    default: name
     inputBinding:
       position: 103
       prefix: --order
@@ -175,7 +169,6 @@ inputs:
       - string
     doc: "Whether the data is from a strand-specific assay. Specify 'yes', 'no', or
       'reverse' (default: yes). 'reverse' means 'yes' with reversed strand interpretation"
-    default: yes
     inputBinding:
       position: 103
       prefix: --stranded
@@ -195,7 +188,6 @@ inputs:
     doc: 'Feature type (3rd column in GTF file) to be used, all features of other
       type are ignored (default, suitable forEnsembl GTF files: exon). You can call
       this option multiple times. Features of all specified types will be included.'
-    default: exon
     inputBinding:
       position: 103
       prefix: --type
@@ -205,7 +197,6 @@ inputs:
       - string
     doc: BAM tag used for the unique molecular identifier, also known as 
       molecular barcode (default compatible with 10X Genomics Chromium is UB).
-    default: UB
     inputBinding:
       position: 103
       prefix: --UMI

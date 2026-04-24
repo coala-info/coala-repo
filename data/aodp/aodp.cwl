@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Whether oligos containing ambiguous bases will be sought (yes/no)
-    default: no
     inputBinding:
       position: 103
       prefix: --ambiguous-oligos
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Whether sequences containing ambiguities are considered (yes/no)
-    default: yes
     inputBinding:
       position: 103
       prefix: --ambiguous-sources
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Indicates whether an oligo range is populated with intermediary sites (yes/no)
-    default: no
     inputBinding:
       position: 103
       prefix: --crowded
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the gap between the border of the range and the first interior site
-    default: 5
     inputBinding:
       position: 103
       prefix: --first-site-gap
@@ -93,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the gap between sites inside an oligo range
-    default: 5
     inputBinding:
       position: 103
       prefix: --inter-site-gap
@@ -118,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of ambiguous bases allowed in a sequence
-    default: 5
     inputBinding:
       position: 103
       prefix: --max-ambiguities
@@ -135,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of a homopolymer in any oligo
-    default: 4
     inputBinding:
       position: 103
       prefix: --max-homolo
@@ -177,7 +170,6 @@ inputs:
       - 'null'
       - string
     doc: Na+ concentration (e.g., 0.1M)
-    default: 1M
     inputBinding:
       position: 103
       prefix: --salt
@@ -186,7 +178,6 @@ inputs:
       - 'null'
       - float
     doc: Single strand concentration in mM
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --strand

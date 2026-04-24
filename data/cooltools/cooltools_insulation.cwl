@@ -42,7 +42,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 20000000
     inputBinding:
       position: 103
       prefix: --chunksize
@@ -52,7 +51,6 @@ inputs:
       - string
     doc: Use balancing weight with this name. Provide empty argument to 
       calculate insulation on raw data (no masking bad pixels).
-    default: weight
     inputBinding:
       position: 103
       prefix: --clr-weight-name
@@ -71,7 +69,6 @@ inputs:
       - int
     doc: The minimal allowed distance to a bad bin. Use to mask bins after 
       insulation calculation and during boundary detection.
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-dist-bad-bin
@@ -81,7 +78,6 @@ inputs:
       - float
     doc: The minimal fraction of valid pixels in a sliding diamond. Used to mask
       bins during boundary detection.
-    default: 0.66
     inputBinding:
       position: 103
       prefix: --min-frac-valid-pixels
@@ -90,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to split the work between.
-    default: 1
     inputBinding:
       position: 103
       prefix: --nproc
@@ -113,7 +108,6 @@ inputs:
       weak boundaries. 'Li' or 'Otsu' use corresponding methods from 
       skimage.thresholding. Providing a float value will filter by a fixed 
       threshold.
-    default: '0'
     inputBinding:
       position: 103
       prefix: --threshold

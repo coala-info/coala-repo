@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: STRATEGY
-    default: EVAL, SPR
     inputBinding:
       position: 101
       prefix: --geneSearchStrategy
@@ -86,7 +85,6 @@ inputs:
       - 'null'
       - string
     doc: reconciliationModel
-    default: UndatedDL, UndatedDTL, Auto
     inputBinding:
       position: 101
       prefix: --rec-model

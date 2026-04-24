@@ -36,7 +36,6 @@ inputs:
     type: string?
     doc: Identifier for this dataset. Default "metagenome"
     label: identifier used
-    default: metagenome
 
   reads:
     type: File
@@ -80,7 +79,6 @@ inputs:
         * marker_pres_table: list of markers present in the sample (threshold at 1.0 if not differently specified with --pres_th
         * clade_specific_strain_tracker: list of markers present for a specific clade, specified with --clade, and all its subclades
     label: Analysis type
-    default: rel_ab
 
   bowtie2db:
     type: Directory

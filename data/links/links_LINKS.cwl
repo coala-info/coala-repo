@@ -10,7 +10,6 @@ inputs:
       - float
     doc: Bloom filter false positive rate (default -p 0.001, optional; increase 
       to prevent memory allocation errors)
-    default: 0.001
     inputBinding:
       position: 101
       prefix: -p
@@ -33,7 +32,6 @@ inputs:
     doc: "distance between k-mer pairs (ie. target distances to re-scaffold on. default
       -d 4000, optional)\n                    Multiple distances are separated by
       comma. eg. -d 500,1000,2000,3000"
-    default: '4000'
     inputBinding:
       position: 101
       prefix: -d
@@ -43,7 +41,6 @@ inputs:
       - float
     doc: error (%) allowed on -d distance   e.g. -e 0.1  == distance +/- 10% 
       (default -e 0.1, optional)
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -e
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer value (default -k 15, optional)
-    default: 15
     inputBinding:
       position: 101
       prefix: -k
@@ -69,7 +65,6 @@ inputs:
       - float
     doc: "maximum link ratio between two best contig pairs (default -a 0.3, optional)\n\
       \                    *higher values lead to least accurate scaffolding*"
-    default: 0.3
     inputBinding:
       position: 101
       prefix: -a
@@ -79,7 +74,6 @@ inputs:
       - int
     doc: minimum contig length to consider for scaffolding (default -z 500, 
       optional)
-    default: 500
     inputBinding:
       position: 101
       prefix: -z
@@ -89,7 +83,6 @@ inputs:
       - int
     doc: minimum number of links (k-mer pairs) to compute scaffold (default -l 
       5, optional)
-    default: 5
     inputBinding:
       position: 101
       prefix: -l
@@ -98,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: offset position for extracting k-mer pairs (default -o 0, optional)
-    default: 0
     inputBinding:
       position: 101
       prefix: -o
@@ -124,7 +116,6 @@ inputs:
     doc: "step of sliding window when extracting k-mer pairs from long reads (default
       -t 2, optional)\n                    Multiple steps are separated by comma.
       eg. -t 10,5"
-    default: '2'
     inputBinding:
       position: 101
       prefix: -t
@@ -133,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: threads  (default -j 3, optional)
-    default: 3
     inputBinding:
       position: 101
       prefix: -j
@@ -143,7 +133,6 @@ inputs:
       - boolean
     doc: Turn off Bloom filter functionality (-x 1 = yes, default = no, 
       optional)
-    default: false
     inputBinding:
       position: 101
       prefix: -x
@@ -152,7 +141,6 @@ inputs:
       - 'null'
       - boolean
     doc: Runs in verbose mode (-v 1 = yes, default = no, optional)
-    default: false
     inputBinding:
       position: 101
       prefix: -v

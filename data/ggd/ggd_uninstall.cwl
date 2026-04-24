@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: The ggd channel of the recipe to uninstall.
-    default: genomics
     inputBinding:
       position: 102
       prefix: --channel

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: number of neurons in the dense layer
-    default: 16
     inputBinding:
       position: 102
       prefix: -F
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: dropout rate (use for large models)
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -d
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: number of features per 1D-CNN layer
-    default: 16
     inputBinding:
       position: 102
       prefix: -f
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - File
     doc: input model
-    default: ''
     inputBinding:
       position: 102
       prefix: -i
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: 1D-CNN kernel size
-    default: 5
     inputBinding:
       position: 102
       prefix: -k
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: learning rate
-    default: 0.001
     inputBinding:
       position: 102
       prefix: -r
@@ -68,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: max number of epoches
-    default: 100
     inputBinding:
       position: 102
       prefix: -E
@@ -77,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: min number of epoches
-    default: 3
     inputBinding:
       position: 102
       prefix: -e
@@ -86,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: minibatch size
-    default: 64
     inputBinding:
       position: 102
       prefix: -m
@@ -95,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: random seed
-    default: 11
     inputBinding:
       position: 102
       prefix: -s
@@ -104,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: -t

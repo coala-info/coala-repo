@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality to consider a base. Default is 20.
-    default: 20
     inputBinding:
       position: 102
       prefix: --min-base-quality
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth to consider a position. Default is 1.
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-depth
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality to consider a read. Default is 20.
-    default: 20
     inputBinding:
       position: 102
       prefix: --min-mapping-quality

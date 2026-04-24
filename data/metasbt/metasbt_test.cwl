@@ -8,7 +8,6 @@ inputs:
     type: File
     doc: Path to the file with the list of paths to the metagenome-assembled 
       genomes.
-    default: None
     inputBinding:
       position: 101
       prefix: --mags
@@ -16,7 +15,6 @@ inputs:
     type: File
     doc: Path to the file with the list of paths to the reference genomes and 
       their taxonomies.
-    default: None
     inputBinding:
       position: 101
       prefix: --references

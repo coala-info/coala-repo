@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Base PHRED quality score
-    default: 33
     inputBinding:
       position: 101
       prefix: -b
@@ -19,7 +18,6 @@ inputs:
       - int
     doc: FASTX FASTQ_QUALITY_FILTER - Minimum percent of bases that must have q 
       quality
-    default: 80
     inputBinding:
       position: 101
       prefix: --FASTX-p
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: FASTX FASTQ_QUALITY_FILTER - Minimum quality score to keep
-    default: 30
     inputBinding:
       position: 101
       prefix: --FASTX-q
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: FASTX FASTQ_TO_FASTA - remove sequences with unknown (N) nucleotides
-    default: false
     inputBinding:
       position: 101
       prefix: --FASTX-n
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: 'Joiner method: "PEAR" and "FASTQJOIN"'
-    default: VSEARCH
     inputBinding:
       position: 101
       prefix: --joiner_method
@@ -99,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

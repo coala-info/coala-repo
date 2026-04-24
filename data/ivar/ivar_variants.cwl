@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum frequency threshold(0 - 1) to call variants
-    default: 0.03
     inputBinding:
       position: 101
       prefix: -t
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum quality score threshold to count base
-    default: 20
     inputBinding:
       position: 101
       prefix: -q
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read depth to call variants
-    default: 0
     inputBinding:
       position: 101
       prefix: -m

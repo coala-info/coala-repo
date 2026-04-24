@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add a header line to the output
-    default: false
     inputBinding:
       position: 101
       prefix: -H
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: 'The alignment mode: 0 - local, 1 - glocal, 2 - extend, 3 - global'
-    default: 0
     inputBinding:
       position: 101
       prefix: -M
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Append the cigar to the output
-    default: false
     inputBinding:
       position: 101
       prefix: -c
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Append the query and target to the output
-    default: false
     inputBinding:
       position: 101
       prefix: -s
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: The band width (ksw only)
-    default: 536870911
     inputBinding:
       position: 101
       prefix: -w
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: The gap extend penalty (>0)
-    default: 2
     inputBinding:
       position: 101
       prefix: -r
@@ -63,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: The gap open penalty (>=0)
-    default: 5
     inputBinding:
       position: 101
       prefix: -q
@@ -72,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: 'The library type: 0 - auto, 1 - ksw2, 2 - parasail'
-    default: 0
     inputBinding:
       position: 101
       prefix: -l
@@ -81,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: The match score (>0)
-    default: 1
     inputBinding:
       position: 101
       prefix: -a
@@ -90,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: The mismatch penalty (>0)
-    default: 3
     inputBinding:
       position: 101
       prefix: -b
@@ -99,7 +89,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output offset-and-length, otherwise start-and-end (all zero-based)
-    default: false
     inputBinding:
       position: 101
       prefix: -O
@@ -108,7 +97,6 @@ inputs:
       - 'null'
       - boolean
     doc: Right-align gaps (ksw only)
-    default: false
     inputBinding:
       position: 101
       prefix: -R

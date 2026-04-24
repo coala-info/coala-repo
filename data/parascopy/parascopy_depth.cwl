@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - float
     doc: Skip windows that have more than <float>% reads with soft/hard clipping
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --clipped-perc
@@ -63,7 +62,6 @@ inputs:
       - float
     doc: 'Loess parameter: use <float> closest windows to estimate average read depth
       for each GC-percentage'
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --loess-frac
@@ -80,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Read mapping quality under <int> is considered as low
-    default: 10
     inputBinding:
       position: 101
       prefix: --low-mapq
@@ -89,7 +86,6 @@ inputs:
       - 'null'
       - float
     doc: Skip windows that have more than <float>% reads with MAPQ < 10
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --low-mapq-perc
@@ -98,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Insert size (~ distance between read mates) is expected to be under <int>
-    default: 5000
     inputBinding:
       position: 101
       prefix: --mate-dist
@@ -108,7 +103,6 @@ inputs:
       - int
     doc: Discard <int> neighbouring windows to the left and to the right of a skipped
       window
-    default: 1
     inputBinding:
       position: 101
       prefix: --neighbours
@@ -125,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Genome ploidy.
-    default: 2
     inputBinding:
       position: 101
       prefix: --ploidy
@@ -135,7 +128,6 @@ inputs:
       - int
     doc: Do not use GC-content if it lies in the left or right tail with less than
       <int> windows
-    default: 1000
     inputBinding:
       position: 101
       prefix: --tail-windows
@@ -144,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -153,7 +144,6 @@ inputs:
       - 'null'
       - float
     doc: Skip windows that have more than <float>% reads without proper pair
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --unpaired-perc

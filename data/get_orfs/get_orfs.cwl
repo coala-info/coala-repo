@@ -24,7 +24,6 @@ inputs:
       - int
     doc: number of parallel threads to use. We use 6 for the translation 
       regardless of -j
-    default: 8
     inputBinding:
       position: 101
       prefix: --jobs
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length
-    default: 1
     inputBinding:
       position: 101
       prefix: --length
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: translation table
-    default: 11
     inputBinding:
       position: 101
       prefix: --translation_table

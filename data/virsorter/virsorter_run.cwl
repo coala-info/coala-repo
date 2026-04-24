@@ -81,7 +81,6 @@ inputs:
       - string
     doc: 'classifiers of viral groups to included (comma separated and no space in
       between); available options are: dsDNAphage,NCLDV,RNA,ssDNA,lavidaviridae'
-    default: dsDNAphage,ssDNA
     inputBinding:
       position: 103
       prefix: --include-groups
@@ -90,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: 'max # of jobs allowed in parallel.'
-    default: 20
     inputBinding:
       position: 103
       prefix: --jobs
@@ -121,7 +119,6 @@ inputs:
     doc: 'max # of orf used for computing taxonomic feature; this option can only
       be used in --provirus-off mode; if # of orf in a seq exceeds the max limit,
       it is sub-sampled to this # to reduce computation'
-    default: -1
     inputBinding:
       position: 103
       prefix: --max-orf-per-seq
@@ -130,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: minimal seq length required; all seqs shorter than this will be removed
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-length
@@ -139,7 +135,6 @@ inputs:
       - 'null'
       - float
     doc: minimal score to be identified as viral
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --min-score

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Colorize output (auto, always, never)
-    default: auto
     inputBinding:
       position: 102
       prefix: --color

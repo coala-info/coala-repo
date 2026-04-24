@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: allow for duplications in the query sequence
-    default: 0
     inputBinding:
       position: 101
       prefix: -dups
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: signal cutoff
-    default: 1.8
     inputBinding:
       position: 101
       prefix: -cutoff
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: refinement steps
-    default: 0
     inputBinding:
       position: 101
       prefix: -do_refine
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: dump matches on each cycle (for debug/testing)
-    default: 0
     inputBinding:
       position: 101
       prefix: -dump_cycle_matches
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: number of jobs per block
-    default: 4
     inputBinding:
       position: 101
       prefix: -m
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: run kmatch jobs synchronously
-    default: 1
     inputBinding:
       position: 101
       prefix: -km_sync
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: maximum frequency for kmatch seed kmers
-    default: 1
     inputBinding:
       position: 101
       prefix: -max_seed_kmer_freq
@@ -80,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: minimum alignment length
-    default: 0
     inputBinding:
       position: 101
       prefix: -l
@@ -89,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: minimum matches per target to keep iterating
-    default: 20
     inputBinding:
       position: 101
       prefix: -min_matches
@@ -98,7 +89,6 @@ inputs:
       - 'null'
       - float
     doc: minimum probability to keep match
-    default: 0.99999
     inputBinding:
       position: 101
       prefix: -min_prob
@@ -107,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length for kmatch seeds (after collapsing)
-    default: 24
     inputBinding:
       position: 101
       prefix: -min_seed_length
@@ -116,7 +105,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not pre-filter seeds (slower runtime)
-    default: 0
     inputBinding:
       position: 101
       prefix: -nofilter
@@ -125,7 +113,6 @@ inputs:
       - 'null'
       - string
     doc: loads seeds and runs from there (xcorr*data)
-    default: ''
     inputBinding:
       position: 101
       prefix: -old_seed
@@ -140,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: number of blocks per pixel
-    default: 24
     inputBinding:
       position: 101
       prefix: -pixel
@@ -149,7 +135,6 @@ inputs:
       - 'null'
       - boolean
     doc: approximate match prob using a table lookup in slaves
-    default: 0
     inputBinding:
       position: 101
       prefix: -prob_table
@@ -158,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: number of processing slaves
-    default: 1
     inputBinding:
       position: 101
       prefix: -slaves
@@ -167,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: query chunk size
-    default: 4096
     inputBinding:
       position: 101
       prefix: -q_chunk
@@ -182,7 +165,6 @@ inputs:
       - 'null'
       - string
     doc: loads seeds and runs from there (kmatch files prefix)
-    default: ''
     inputBinding:
       position: 101
       prefix: -seed
@@ -199,7 +181,6 @@ inputs:
       - 'null'
       - int
     doc: target chunk size
-    default: 4096
     inputBinding:
       position: 101
       prefix: -t_chunk
@@ -214,7 +195,6 @@ inputs:
       - 'null'
       - int
     doc: number of working threads per processing slave
-    default: 1
     inputBinding:
       position: 101
       prefix: -threads

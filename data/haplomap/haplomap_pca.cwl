@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: dimensions of reduction
-    default: 4
     inputBinding:
       position: 101
       prefix: --dimension

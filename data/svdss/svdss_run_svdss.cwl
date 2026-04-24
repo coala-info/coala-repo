@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: accuracy percentile
-    default: 0.98
     inputBinding:
       position: 103
       prefix: -p
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - File
     doc: path to kanpig binary
-    default: kanpig
     inputBinding:
       position: 103
       prefix: -k
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: mapping quality
-    default: 20
     inputBinding:
       position: 103
       prefix: -q
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: minimum support for calling
-    default: 2
     inputBinding:
       position: 103
       prefix: -s
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length for SV
-    default: 50
     inputBinding:
       position: 103
       prefix: -l
@@ -80,7 +75,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory
-    default: .
     inputBinding:
       position: 103
       prefix: -w
@@ -89,7 +83,6 @@ inputs:
       - 'null'
       - File
     doc: path to SVDSS binary
-    default: SVDSS
     inputBinding:
       position: 103
       prefix: -x
@@ -98,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 4
     inputBinding:
       position: 103
       prefix: -@

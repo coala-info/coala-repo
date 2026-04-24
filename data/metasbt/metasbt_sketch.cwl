@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: The database name.
-    default: MetaSBT
     inputBinding:
       position: 101
       prefix: --database
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Process the input genomes in parallel.
-    default: 20
     inputBinding:
       position: 101
       prefix: --nproc

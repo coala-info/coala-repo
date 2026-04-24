@@ -14,7 +14,6 @@ inputs:
   - id: operation
     type: string
     doc: The operation to perform
-    default: attach_files
     inputBinding:
       position: 2
   - id: attachment_files

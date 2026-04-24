@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: bootstrapping times
-    default: 100
     inputBinding:
       position: 102
       prefix: -b
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: 'codon NT: ntmm, dn, ds, dm; AA: mm, jtt, kimura'
-    default: mm
     inputBinding:
       position: 102
       prefix: -t
@@ -131,7 +129,6 @@ inputs:
       - 'null'
       - string
     doc: outgroup for tree cutting
-    default: Bilateria
     inputBinding:
       position: 102
       prefix: -o
@@ -148,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: quality cut-off
-    default: 15
     inputBinding:
       position: 102
       prefix: -F

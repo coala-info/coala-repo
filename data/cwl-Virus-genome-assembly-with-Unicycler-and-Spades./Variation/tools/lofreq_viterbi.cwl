@@ -46,7 +46,6 @@ inputs:
       Keep them only if you know what you are doing.
     inputBinding:
       prefix: --keepflags
-    default: false
       
   defqual:
     type: int?

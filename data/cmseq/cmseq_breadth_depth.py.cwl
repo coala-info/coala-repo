@@ -44,7 +44,6 @@ inputs:
     doc: Minimum position coverage to perform the polymorphism calculation. 
       Position with a lower depth of coverage will be discarded (i.e. considered
       as zero-coverage positions). This is calculated AFTER --minqual.
-    default: 1
     inputBinding:
       position: 102
       prefix: --mincov
@@ -62,7 +61,6 @@ inputs:
       - int
     doc: Minimum base quality. Bases with quality score lower than this will be 
       discarded. This is performed BEFORE --mincov.
-    default: 30
     inputBinding:
       position: 102
       prefix: --minqual

@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs
-    default: 1
     inputBinding:
       position: 103
       prefix: --cpus
@@ -117,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of contigs to bin (>=1500 recommended)
-    default: 2500
     inputBinding:
       position: 103
       prefix: --min_contig_len
@@ -126,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: set random seed; default is to use a random seed
-    default: 0
     inputBinding:
       position: 103
       prefix: --seed

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: distance to scan around breakpoint (optional, default=500)
-    default: 500
     inputBinding:
       position: 101
       prefix: -proximity

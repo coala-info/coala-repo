@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Allele Frequencies (a|e|f|m|file)
-    default: a
     inputBinding:
       position: 101
       prefix: -f
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Limits bits for internal representations
-    default: 24
     inputBinding:
       position: 101
       prefix: --bits
@@ -84,7 +82,6 @@ inputs:
       - 'null'
       - File
     doc: Data File
-    default: merlin.dat
     inputBinding:
       position: 101
       prefix: -dname
@@ -221,7 +218,6 @@ inputs:
       - 'null'
       - File
     doc: Map File
-    default: merlin.map
     inputBinding:
       position: 101
       prefix: -mname
@@ -278,7 +274,6 @@ inputs:
       - 'null'
       - float
     doc: Missing Value Code
-    default: -99.999
     inputBinding:
       position: 101
       prefix: -xname
@@ -335,7 +330,6 @@ inputs:
       - 'null'
       - File
     doc: Pedigree File
-    default: merlin.ped
     inputBinding:
       position: 101
       prefix: -pname
@@ -352,7 +346,6 @@ inputs:
       - 'null'
       - string
     doc: Output file prefix
-    default: merlin
     inputBinding:
       position: 101
       prefix: --prefix
@@ -377,7 +370,6 @@ inputs:
       - 'null'
       - int
     doc: Random Seed
-    default: 123456
     inputBinding:
       position: 101
       prefix: -r9999
@@ -523,7 +515,6 @@ inputs:
       - 'null'
       - float
     doc: VC Linkage unlinked parameter
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --unlinked

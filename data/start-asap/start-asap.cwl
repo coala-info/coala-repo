@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: 'String denoting the file is a Forward file (default: "_R1").'
-    default: _R1
     inputBinding:
       position: 101
       prefix: --for-tag
@@ -44,7 +43,6 @@ inputs:
       - string
     doc: 'The sample ID will determined splitting the name at the separator (default:
       "_").'
-    default: _
     inputBinding:
       position: 101
       prefix: --id-separator
@@ -90,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: 'String denoting the file is a Reverse file (default: "_R2")'
-    default: _R2
     inputBinding:
       position: 101
       prefix: --rev-tag

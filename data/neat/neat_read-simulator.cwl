@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for the output read files.
-    default: simulated_reads
     inputBinding:
       position: 101
       prefix: --prefix

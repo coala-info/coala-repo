@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: input rGFA path
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input-rgfa-path

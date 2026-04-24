@@ -12,7 +12,6 @@ inputs:
     doc: List of BED files used for annotation. Each file adds a column to the 
       output file. The base filename is used as column name and 4th column of 
       the BED file is used as annotation value.
-    default: ''
     inputBinding:
       position: 101
       prefix: -annotate
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable debug output
-    default: false
     inputBinding:
       position: 101
       prefix: -debug
@@ -33,7 +31,6 @@ inputs:
     doc: BED files with regions to exclude from ROH analysis. Regions where 
       variant calling is not possible should be removed (centromers, MQ=0 
       regions and large stretches of N bases).
-    default: ''
     inputBinding:
       position: 101
       prefix: -exclude
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: Percentage of ROH markers that can be spanned when merging ROH regions.
-    default: 1
     inputBinding:
       position: 101
       prefix: -ext_marker_perc
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum percentage of heterozygous markers in ROH regions.
-    default: 5
     inputBinding:
       position: 101
       prefix: -ext_max_het_perc
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: Percentage of ROH size that can be spanned when merging ROH regions.
-    default: 50
     inputBinding:
       position: 101
       prefix: -ext_size_perc
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include chrX into the analysis. Excluded by default.
-    default: false
     inputBinding:
       position: 101
       prefix: -inc_chrx
@@ -84,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum marker count of output ROH regions.
-    default: 20
     inputBinding:
       position: 101
       prefix: -roh_min_markers
@@ -93,7 +85,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum Q score of output ROH regions.
-    default: 30
     inputBinding:
       position: 101
       prefix: -roh_min_q
@@ -102,7 +93,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum size in Kb of output ROH regions.
-    default: 20
     inputBinding:
       position: 101
       prefix: -roh_min_size
@@ -119,7 +109,6 @@ inputs:
       - 'null'
       - string
     doc: Comma-separated allele frequency info field names in 'in'.
-    default: ''
     inputBinding:
       position: 101
       prefix: -var_af_keys
@@ -129,7 +118,6 @@ inputs:
       - string
     doc: Comma-separated VEP CSQ field names of allele frequency annotations in 
       'in'.
-    default: ''
     inputBinding:
       position: 101
       prefix: -var_af_keys_vep
@@ -139,7 +127,6 @@ inputs:
       - int
     doc: Minimum variant depth ('DP'). Variants with lower depth are excluded 
       from the analysis.
-    default: 20
     inputBinding:
       position: 101
       prefix: -var_min_dp
@@ -149,7 +136,6 @@ inputs:
       - float
     doc: Minimum variant quality. Variants with lower quality are excluded from 
       the analysis.
-    default: 20
     inputBinding:
       position: 101
       prefix: -var_min_q

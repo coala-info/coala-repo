@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: The distance threshold for clustering alpha spheres
-    default: 1.73
     inputBinding:
       position: 101
       prefix: -D
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: The maximum radius of an alpha sphere
-    default: 6.0
     inputBinding:
       position: 101
       prefix: -M
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum number of alpha spheres per pocket
-    default: 35
     inputBinding:
       position: 101
       prefix: -i
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum radius of an alpha sphere
-    default: 3.0
     inputBinding:
       position: 101
       prefix: -m

@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: The field delimiter for reading CSV data. Must be a single character.
-    default: ','
     inputBinding:
       position: 102
       prefix: --delimiter
@@ -37,7 +36,6 @@ inputs:
       CSV data has an index already created. Note that a file handle is opened 
       for each job. When set to '0', the number of jobs is set to the number of 
       CPUs detected.
-    default: 0
     inputBinding:
       position: 102
       prefix: --jobs
@@ -47,7 +45,6 @@ inputs:
       - int
     doc: Limit the frequency table to the N most common items. Set to '0' to 
       disable a limit.
-    default: 10
     inputBinding:
       position: 102
       prefix: --limit

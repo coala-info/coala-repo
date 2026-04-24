@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Use grammar <string>, defaults to NUS; ignored if model file specified
-    default: NUS
     inputBinding:
       position: 102
       prefix: -g

@@ -8,7 +8,6 @@ inputs:
   - id: chunk_size_gb
     type: float
     doc: Chunk size (in gigabytes).
-    default: 10
     inputBinding:
       position: 101
       prefix: --gb

@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
-    default: false
     inputBinding:
       position: 101
       prefix: --async-io
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Default GZIP compression level, BAM compression level.
-    default: 5
     inputBinding:
       position: 101
       prefix: --compression
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Minimum severity log-level to emit.
-    default: Info
     inputBinding:
       position: 101
       prefix: --log-level
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum inner distance between two segments of a split read mapping
-    default: 100
     inputBinding:
       position: 101
       prefix: --max-aligned-segment-inner-distance
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum inner distance for normal read pair
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max-read-pair-inner-distance
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum mapping quality for primary alignments
-    default: 30
     inputBinding:
       position: 101
       prefix: --min-primary-mapping-quality
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum mapping quality for supplementary alignments
-    default: 18
     inputBinding:
       position: 101
       prefix: --min-supplementary-mapping-quality
@@ -80,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: 'The minimum # of uncovered query bases needed to add a supplemental alignment'
-    default: 20
     inputBinding:
       position: 101
       prefix: --min-unique-bases-to-add
@@ -95,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: Validation stringency for SAM/BAM reading.
-    default: SILENT
     inputBinding:
       position: 101
       prefix: --sam-validation-stringency
@@ -105,7 +96,6 @@ inputs:
       - int
     doc: "The number of bases of slop to allow when determining which records to track
       for the left\nor right side of an aligned segment when merging segments."
-    default: 5
     inputBinding:
       position: 101
       prefix: --slop
@@ -123,7 +113,6 @@ inputs:
       - string
     doc: "Requirement on if each side of the breakpoint must overlap a target. Will
       always annotate\neach side of the breakpoint."
-    default: AnnotateOnly
     inputBinding:
       position: 101
       prefix: --targets-bed-requirement
@@ -132,7 +121,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to use for temporary files.
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmp-dir

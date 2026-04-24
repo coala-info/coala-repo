@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: Which distance measure to use (raw, snp or tn93)
-    default: raw
     inputBinding:
       position: 101
       prefix: --measure

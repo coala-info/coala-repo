@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Normalization method.
-    default: CNV
     inputBinding:
       position: 101
       prefix: --balance-type
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: Path to a TXT file containing pairs of break points.
-    default: None
     inputBinding:
       position: 101
       prefix: --break-points
@@ -30,7 +28,6 @@ inputs:
     doc: List of cooler URIs. If URIs at multiple resolutions are provided, the 
       program will first detect complex SVs from each individual resolution, and
       then combine results from all resolutions in a non-redundant way.
-    default: None
     inputBinding:
       position: 101
       prefix: --hic
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: Logging file name.
-    default: assembleSVs.log
     inputBinding:
       position: 101
       prefix: --logFile
@@ -49,7 +45,6 @@ inputs:
       - int
     doc: For intra-chromosomal SVs, only SVs that are larger than this size will
       be considered by the pipeline.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --minimum-size
@@ -58,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Number of worker processes.
-    default: 1
     inputBinding:
       position: 101
       prefix: --nproc
@@ -67,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: Output prefix.
-    default: None
     inputBinding:
       position: 101
       prefix: --output
@@ -76,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: Experimental protocol of your Hi-C.
-    default: insitu
     inputBinding:
       position: 101
       prefix: --protocol
@@ -85,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: The extended genomic span of SV break points.(bp)
-    default: 5000000
     inputBinding:
       position: 101
       prefix: --region-size

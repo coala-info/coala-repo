@@ -10,7 +10,6 @@ inputs:
       - int
     doc: ETE tree format. See here 
       http://etetoolkit.org/docs/latest/tutorial/tutorial_trees.html
-    default: auto
     inputBinding:
       position: 101
       prefix: --format
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: ETE tree format for --infile2.
-    default: auto
     inputBinding:
       position: 101
       prefix: --format2
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - File
     doc: Input newick file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --infile
@@ -38,7 +35,6 @@ inputs:
       - File
     doc: Input newick file 2. The intersected version of this file will not be 
       generated, so if necessary, replace --infile and --infile2 and run again.
-    default: ''
     inputBinding:
       position: 101
       prefix: --infile2
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Method for ID matching.
-    default: complete
     inputBinding:
       position: 101
       prefix: --match
@@ -65,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: Whether node names are quoted in the input file.
-    default: yes
     inputBinding:
       position: 101
       prefix: --quoted_node_names
@@ -74,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: Alignment format for --seqfile. See https://biopython.org/wiki/SeqIO
-    default: fasta
     inputBinding:
       position: 101
       prefix: --seqformat
@@ -83,7 +76,6 @@ inputs:
       - 'null'
       - File
     doc: Input sequence file.
-    default: ''
     inputBinding:
       position: 101
       prefix: --seqin

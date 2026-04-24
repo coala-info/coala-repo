@@ -11,7 +11,6 @@ inputs:
       - string
     doc: 'Aligner (options: bowtie2, bwa, dragmap, hisat2, lra, minimap2, mm2-fast,
       ngmlr, seq-align, star, unimap, wfmash, winnowmap)'
-    default: minimap2
     inputBinding:
       position: 101
       prefix: --aligner
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: File Stream Buffer Size (bytes)
-    default: 1048576
     inputBinding:
       position: 101
       prefix: --buffer_size
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: List all reference sequences
-    default: false
     inputBinding:
       position: 101
       prefix: --list_references
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: Omit reference sequence from output alignment
-    default: false
     inputBinding:
       position: 101
       prefix: --omit_ref
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - boolean
     doc: Suppress log output
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write MSA to standard output instead of to file
-    default: false
     inputBinding:
       position: 101
       prefix: --stdout
@@ -85,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Threads
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -94,7 +87,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Update ViralMSA (current version: 1.1.46)'
-    default: false
     inputBinding:
       position: 101
       prefix: --update
@@ -103,7 +95,6 @@ inputs:
       - 'null'
       - Directory
     doc: ViralMSA Cache Directory
-    default: /root/.viralmsa
     inputBinding:
       position: 101
       prefix: --viralmsa_dir

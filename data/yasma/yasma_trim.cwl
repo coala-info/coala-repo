@@ -28,7 +28,6 @@ inputs:
       - int
     doc: Number of CPU cores to use. 0 has cutadapt "autodetect" the number of 
       cores
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Maxiumum allowed size for a trimmed read.
-    default: 50
     inputBinding:
       position: 101
       prefix: --max_length
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum allowed size for a trimmed read.
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_length
@@ -56,7 +53,6 @@ inputs:
       - Directory
     doc: Directory name for annotation output. Defaults to the current 
       directory, with this directory name as the project name.
-    default: current directory
     inputBinding:
       position: 101
       prefix: --output_directory

@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - File
     doc: 'VCF file (default: stdin)'
-    default: stdin
     inputBinding:
       position: 2
   - id: debug
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: column of the INFO field
-    default: 8
     inputBinding:
       position: 103
       prefix: --col

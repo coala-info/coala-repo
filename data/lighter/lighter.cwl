@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: allow trimming
-    default: false
     inputBinding:
       position: 101
       prefix: -trim
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: discard unfixable reads. Will LOSE paired-end matching when discarding
-    default: false
     inputBinding:
       position: 101
       prefix: -discard
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - boolean
     doc: ignore the quality socre
-    default: false
     inputBinding:
       position: 101
       prefix: -noQual
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: the maximum number of corrections within a 20bp window
-    default: 4
     inputBinding:
       position: 101
       prefix: -maxcor
@@ -93,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -102,7 +97,6 @@ inputs:
       - 'null'
       - Directory
     doc: output_file_directory
-    default: ./
     inputBinding:
       position: 101
       prefix: -od
@@ -129,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: set the compression level(0-9) of gzip
-    default: 1
     inputBinding:
       position: 101
       prefix: -zlib

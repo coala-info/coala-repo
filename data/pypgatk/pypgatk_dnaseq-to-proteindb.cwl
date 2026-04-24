@@ -66,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Number of ORFs
-    default: 3
     inputBinding:
       position: 101
       prefix: --num_orfs
@@ -75,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Number of ORFs from the reverse side
-    default: 0
     inputBinding:
       position: 101
       prefix: --num_orfs_complement
@@ -110,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: Translation Table
-    default: 1
     inputBinding:
       position: 101
       prefix: --translation_table

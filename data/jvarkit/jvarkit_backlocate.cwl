@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: What kind of help. One of [usage,markdown,xml].
-    default: usage
     inputBinding:
       position: 102
       prefix: --helpFormat
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: print mRNA & protein sequences
-    default: false
     inputBinding:
       position: 102
       prefix: --printSeq

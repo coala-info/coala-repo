@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: Directory for BLAST database
-    default: blast
     inputBinding:
       position: 101
       prefix: --blast-directory
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Directory to save the downloaded MLST schemes
-    default: pubmlst
     inputBinding:
       position: 101
       prefix: --directory

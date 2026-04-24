@@ -11,7 +11,6 @@ inputs:
       - int
     doc: 5' and 3'flanking sequence interval size used for allele frequency 
       estimation
-    default: 100
     inputBinding:
       position: 101
       prefix: --af_flank_interval
@@ -21,7 +20,6 @@ inputs:
       - int
     doc: 5' and 3' flanking sequence offset size used for allele frequency 
       estimation
-    default: 200
     inputBinding:
       position: 101
       prefix: --af_flank_offset
@@ -31,7 +29,6 @@ inputs:
       - int
     doc: 5' and 3' te sequence interval size used for allele frequency 
       estimation
-    default: 50
     inputBinding:
       position: 101
       prefix: --af_te_interval
@@ -40,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: 5' and 3' te sequence offset size used for allele frequency estimation
-    default: 50
     inputBinding:
       position: 101
       prefix: --af_te_offset
@@ -49,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: choose method for read alignment, please provide 'nglmr' or 'minimap2'
-    default: nglmr
     inputBinding:
       position: 101
       prefix: --aligner
@@ -59,7 +54,6 @@ inputs:
       - string
     doc: Choose the method to be used for local contig assembly step, please 
       provide 'wtdbg2' or 'flye'
-    default: wtdbg2
     inputBinding:
       position: 101
       prefix: --assembler
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: flanking sequence length
-    default: 500
     inputBinding:
       position: 101
       prefix: --flank_len
@@ -87,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: max gap size for flanking sequence alignment
-    default: 20
     inputBinding:
       position: 101
       prefix: --gap
@@ -120,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: max overlap size for flanking sequence alignment
-    default: 20
     inputBinding:
       position: 101
       prefix: --overlap
@@ -129,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: iterations of contig polishing
-    default: 1
     inputBinding:
       position: 101
       prefix: --polish_iterations
@@ -139,7 +129,6 @@ inputs:
       - string
     doc: Choose the method to be used for local contig polishing step, please 
       provide 'wtdbg2' or 'flye'
-    default: wtdbg2
     inputBinding:
       position: 101
       prefix: --polisher
@@ -149,7 +138,6 @@ inputs:
       - string
     doc: parameter presets for different sequencing technologies, please provide
       'pacbio' or 'ont'
-    default: pacbio
     inputBinding:
       position: 101
       prefix: --presets
@@ -170,7 +158,6 @@ inputs:
       - 'null'
       - string
     doc: max cpu threads to use
-    default: '1'
     inputBinding:
       position: 101
       prefix: --thread

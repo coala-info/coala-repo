@@ -124,7 +124,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to save FASTA files, reports, and final multi-FASTA
-    default: refseq_plasmids
     inputBinding:
       position: 101
       prefix: --outdir
@@ -157,7 +156,6 @@ inputs:
       - 'null'
       - string
     doc: Filter by topology (circular or linear).
-    default: circular
     inputBinding:
       position: 101
       prefix: --topology

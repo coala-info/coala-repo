@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Run N downloads in parallel
-    default: 1
     inputBinding:
       position: 102
       prefix: --parallel
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Number of retries for failed downloads
-    default: 3
     inputBinding:
       position: 102
       prefix: --retries

@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Window overlap
-    default: 50
     inputBinding:
       position: 101
       prefix: --overlap
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Window size
-    default: 100
     inputBinding:
       position: 101
       prefix: --win

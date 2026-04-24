@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Flank distance
-    default: 0
     inputBinding:
       position: 102
       prefix: -f
@@ -62,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum read length
-    default: 20000
     inputBinding:
       position: 102
       prefix: --max-len
@@ -71,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality
-    default: 0
     inputBinding:
       position: 102
       prefix: -q
@@ -80,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Cutoff for uncovered regions
-    default: 5
     inputBinding:
       position: 102
       prefix: --uncover-cutoff

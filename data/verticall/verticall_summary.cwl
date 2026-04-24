@@ -10,7 +10,6 @@ inputs:
       - boolean
     doc: 'Output one line for all assembly positions (default: omit redundant adjacent
       lines)'
-    default: false
     inputBinding:
       position: 101
       prefix: --all
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Hex colour for horizontal inheritance
-    default: '#c47e7e'
     inputBinding:
       position: 101
       prefix: --horizontal_colour
@@ -41,7 +39,6 @@ inputs:
       - boolean
     doc: 'Instead of outputting a table, display an interactive plot (default: do
       not display a plot)'
-    default: false
     inputBinding:
       position: 101
       prefix: --plot
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Hex colour for unaligned inheritance
-    default: '#c9c9c9'
     inputBinding:
       position: 101
       prefix: --unaligned_colour
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: Hex colour for vertical inheritance
-    default: '#4859a0'
     inputBinding:
       position: 101
       prefix: --vertical_colour

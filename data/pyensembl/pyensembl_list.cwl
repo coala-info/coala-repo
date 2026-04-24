@@ -56,7 +56,6 @@ inputs:
       - type: array
         items: string
     doc: Species for the Ensembl release
-    default: human
     inputBinding:
       position: 102
       prefix: --species

@@ -74,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for GEM mapper.
-    default: threads
     inputBinding:
       position: 101
       prefix: --map-threads
@@ -83,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for the merge operations.
-    default: threads
     inputBinding:
       position: 101
       prefix: --merge-threads
@@ -158,7 +156,6 @@ inputs:
       - 'null'
       - string
     doc: Per thread memory used for the sort operation.
-    default: 768M
     inputBinding:
       position: 101
       prefix: --sort-memory
@@ -167,7 +164,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for the sort operations.
-    default: threads
     inputBinding:
       position: 101
       prefix: --sort-threads
@@ -176,7 +172,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for the mapping pipeline.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -185,7 +180,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temporary folder to perform sorting operations.
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmp-dir

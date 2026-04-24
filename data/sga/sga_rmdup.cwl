@@ -35,7 +35,6 @@ inputs:
     doc: sample the symbol counts every N symbols in the FM-index. Higher values
       use significantly less memory at the cost of higher runtime. This value 
       must be a power of 2
-    default: 256
     inputBinding:
       position: 102
       prefix: --sample-rate
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: use N threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

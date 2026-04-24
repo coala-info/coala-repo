@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: chop offset
-    default: 1
     inputBinding:
       position: 102
       prefix: --jump
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: insert size
-    default: 501
     inputBinding:
       position: 102
       prefix: --insertsize
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: read1 output prefix
-    default: read1
     inputBinding:
       position: 102
       prefix: --fq1
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: read2 output prefix
-    default: read2
     inputBinding:
       position: 102
       prefix: --fq2
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: read length
-    default: 101
     inputBinding:
       position: 102
       prefix: --length

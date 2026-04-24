@@ -51,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: data type. CLR or CCS
-    default: CLR
     inputBinding:
       position: 102
       prefix: --data-type
@@ -93,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length
-    default: 100
     inputBinding:
       position: 102
       prefix: --length-min

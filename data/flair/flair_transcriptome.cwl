@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: window size for comparing TSS/TES
-    default: 100
     inputBinding:
       position: 101
       prefix: --end_window
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: 'Report options include: nosubset, default, comprehensive, ginormous'
-    default: default
     inputBinding:
       position: 101
       prefix: --filter
@@ -108,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of TSS/TES picked per isoform
-    default: 2
     inputBinding:
       position: 101
       prefix: --max_ends
@@ -127,7 +124,6 @@ inputs:
       - string
     doc: 'For each unique splice junction chain, report options include: none, longest,
       best_only'
-    default: none
     inputBinding:
       position: 101
       prefix: --no_redundant
@@ -136,7 +132,6 @@ inputs:
       - 'null'
       - string
     doc: 'parallelization mode. Options: bychrom, byregion, auto:xGB'
-    default: auto:1GB
     inputBinding:
       position: 101
       prefix: --parallelmode
@@ -153,7 +148,6 @@ inputs:
       - 'null'
       - int
     doc: window size for correcting splice sites
-    default: 15
     inputBinding:
       position: 101
       prefix: --ss_window
@@ -171,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of supporting reads for an isoform
-    default: 3
     inputBinding:
       position: 101
       prefix: --support
@@ -180,7 +173,6 @@ inputs:
       - 'null'
       - int
     doc: minimap2 number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

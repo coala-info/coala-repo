@@ -43,7 +43,6 @@ inputs:
       - string
     doc: Regular expression for matching sequence files in -I/--in-dir, case 
       ignored.
-    default: \.(f[aq](st[aq])?|fna)(.gz)?$
     inputBinding:
       position: 102
       prefix: --file-regexp
@@ -79,7 +78,6 @@ inputs:
         items: int
     doc: K-mer size(s). K needs to be <=64. Multiple values are supported, e.g.,
       "-k 21,31" or "-k 21 -k 31"
-    default:
       - 21
     inputBinding:
       position: 102
@@ -115,7 +113,6 @@ inputs:
       - string
     doc: Regular expression (must contains "(" and ")") for extracting reference
       name from filename.
-    default: (?i)(.+)\.(f[aq](st[aq])?|fna)(.gz)?$
     inputBinding:
       position: 102
       prefix: --ref-name-regexp
@@ -125,7 +122,6 @@ inputs:
       - int
     doc: Scale of the FracMinHash (Scaled MinHash), or down-sample factor for 
       Syncmers and Minimizer.
-    default: 1
     inputBinding:
       position: 102
       prefix: --scale
@@ -144,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: Only splitting sequences >= X bp.
-    default: 1000
     inputBinding:
       position: 102
       prefix: --split-min-ref
@@ -188,7 +183,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs cores to use.
-    default: 20
     inputBinding:
       position: 102
       prefix: --threads

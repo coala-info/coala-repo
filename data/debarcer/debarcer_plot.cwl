@@ -75,7 +75,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate a report if activated. Default is True
-    default: 'True'
     inputBinding:
       position: 101
       prefix: --Report

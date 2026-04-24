@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: Sets size of batch of accessions to be processed in parallel
-    default: 300
     inputBinding:
       position: 101
       prefix: --batch
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: minimum phred score to keep basepairs within read
-    default: 15
     inputBinding:
       position: 101
       prefix: --quality

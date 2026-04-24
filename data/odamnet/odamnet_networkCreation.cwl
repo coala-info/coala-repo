@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: Bipartite output name
-    default: Bipartite_WP_RareDiseases_geneSymbols.gr
     inputBinding:
       position: 101
       prefix: --bipartiteName
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Network output name
-    default: WP_RareDiseasesNetwork.gr
     inputBinding:
       position: 101
       prefix: --networksName
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output path name (for complementary output files)
-    default: OutputResults
     inputBinding:
       position: 101
       prefix: --outputPath

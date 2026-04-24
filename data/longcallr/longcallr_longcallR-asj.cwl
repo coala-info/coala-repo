@@ -38,7 +38,6 @@ inputs:
       - type: array
         items: string
     doc: "Gene types to be analyzed. Default is\n[\"protein_coding\", \"lncRNA\"]"
-    default:
       - protein_coding
       - lncRNA
     inputBinding:

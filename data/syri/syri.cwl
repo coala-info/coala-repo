@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use duplications too for variant identification
-    default: false
     inputBinding:
       position: 101
       prefix: --all
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: BPs allowed to overlap
-    default: 5
     inputBinding:
       position: 101
       prefix: --allow-offset
@@ -30,7 +28,6 @@ inputs:
     doc: Cutoff to restrict brute force methods to take too much time (in 
       seconds). Smaller values would make algorithm faster, but could have 
       marginal effects on accuracy. In general case, would not be required.
-    default: 60
     inputBinding:
       position: 101
       prefix: -b
@@ -40,7 +37,6 @@ inputs:
       - boolean
     doc: Find SNPs/indels using CIGAR string. Necessary for alignments generated
       using aligners other than nucmers
-    default: false
     inputBinding:
       position: 101
       prefix: --cigar
@@ -59,7 +55,6 @@ inputs:
       - Directory
     doc: path to working directory (if not current directory). All files must be
       in this directory.
-    default: None
     inputBinding:
       position: 101
       prefix: --dir
@@ -69,7 +64,6 @@ inputs:
       - boolean
     doc: As a default, syri filters out low quality and small alignments. Use 
       this parameter to use the full list of alignments without any filtering.
-    default: true
     inputBinding:
       position: 101
       prefix: -f
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output highly-diverged regions (HDRs) sequence.
-    default: false
     inputBinding:
       position: 101
       prefix: --hdrseq
@@ -88,7 +81,6 @@ inputs:
       - int
     doc: Minimum score increase required to add another alignment to 
       translocation cluster solution
-    default: 1000
     inputBinding:
       position: 101
       prefix: --inc
@@ -103,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: 'Input file type. T: Table, S: SAM, B: BAM, P: PAF'
-    default: T
     inputBinding:
       position: 101
       prefix: -F
@@ -114,7 +105,6 @@ inputs:
     doc: Maximum allowed gap-length between two alignments of a multi-alignment 
       inversion. It affects the selection of large inversions that can have 
       different length in the reference and query genomes.
-    default: 1000000000
     inputBinding:
       position: 101
       prefix: --invgaplen
@@ -123,7 +113,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep intermediate output files
-    default: false
     inputBinding:
       position: 101
       prefix: -k
@@ -132,7 +121,6 @@ inputs:
       - 'null'
       - string
     doc: log level
-    default: INFO
     inputBinding:
       position: 101
       prefix: --log
@@ -141,7 +129,6 @@ inputs:
       - 'null'
       - File
     doc: Name of log file
-    default: syri.log
     inputBinding:
       position: 101
       prefix: --lf
@@ -153,7 +140,6 @@ inputs:
       HDRs). Only affect printing (.out/.vcf file) and not the selection. SVs 
       larger than this value would be printed as symbolic SVs. For no cut-off 
       use -1.
-    default: -1
     inputBinding:
       position: 101
       prefix: --maxsize
@@ -162,7 +148,6 @@ inputs:
       - 'null'
       - int
     doc: number of cores to use in parallel (max is number of chromosomes)
-    default: 1
     inputBinding:
       position: 101
       prefix: --nc
@@ -172,7 +157,6 @@ inputs:
       - boolean
     doc: Do not allow SyRI to automatically match chromosome ids between the two
       genomes if they are not equal
-    default: false
     inputBinding:
       position: 101
       prefix: --no-chrmatch
@@ -181,7 +165,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set to skip SNP/Indel (within alignment) identification
-    default: false
     inputBinding:
       position: 101
       prefix: --nosnp
@@ -190,7 +173,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set to skip structural rearrangement identification
-    default: false
     inputBinding:
       position: 101
       prefix: --nosr
@@ -199,7 +181,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set to skip structural variation identification
-    default: false
     inputBinding:
       position: 101
       prefix: --nosv
@@ -208,7 +189,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not combine all files into one output file
-    default: false
     inputBinding:
       position: 101
       prefix: --novcf
@@ -217,7 +197,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix to add before the output file Names
-    default: ''
     inputBinding:
       position: 101
       prefix: --prefix
@@ -244,7 +223,6 @@ inputs:
       - 'null'
       - string
     doc: Sample name to be used in the output VCF file.
-    default: sample
     inputBinding:
       position: 101
       prefix: --samplename
@@ -253,7 +231,6 @@ inputs:
       - 'null'
       - int
     doc: seed for generating random numbers
-    default: 1
     inputBinding:
       position: 101
       prefix: --seed
@@ -262,7 +239,6 @@ inputs:
       - 'null'
       - File
     doc: path to show-snps from mummer
-    default: show-snps
     inputBinding:
       position: 101
       prefix: -s
@@ -273,7 +249,6 @@ inputs:
     doc: Maximum allowed gap-length between two alignments of a multi-alignment 
       translocation or duplication (TD). Larger values increases TD 
       identification sensitivity but also runtime.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --tdgaplen
@@ -283,7 +258,6 @@ inputs:
       - float
     doc: Maximum allowed overlap between two translocations. Value should be in 
       range (0,1].
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --tdmaxolp
@@ -293,7 +267,6 @@ inputs:
       - int
     doc: Number of uniques bps for selecting translocation. Smaller values would
       select smaller TLs better, but may increase time and decrease accuracy.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --unic
@@ -304,7 +277,6 @@ inputs:
     doc: Percent of unique region requried to select translocation. Value should
       be in range (0,1]. Smaller values would allow selection of TDs which are 
       more overlapped with other regions.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --unip

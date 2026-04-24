@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - float
     doc: The percent identity for clustering with VSEARCH
-    default: 0.99
     inputBinding:
       position: 102
       prefix: --cluster_id
@@ -64,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processor threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

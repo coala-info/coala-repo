@@ -17,7 +17,6 @@ inputs:
       - int
     doc: 'flanking distances when calculating start site overlap ratio (3..15, default:
       5)'
-    default: 5
     inputBinding:
       position: 102
       prefix: -s
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: 'flanking region for read overlap maps (default: 50)'
-    default: 50
     inputBinding:
       position: 102
       prefix: -f
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: 'genomic bin size (100..1000, default: 300)'
-    default: 300
     inputBinding:
       position: 102
       prefix: -b
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: 'use only reads with minimum mapping quality (mapq) (0..100, default: 10)'
-    default: 10
     inputBinding:
       position: 102
       prefix: -q
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of reads required in bin (20..500, default: 50)'
-    default: 50
     inputBinding:
       position: 102
       prefix: -r
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - Directory
     doc: output folder (default is cwd - current working directory)
-    default: cwd
     inputBinding:
       position: 102
       prefix: -o

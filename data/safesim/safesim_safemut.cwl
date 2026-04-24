@@ -11,7 +11,6 @@ inputs:
       - int
     doc: The number of reads used to generate the randomness for simulating the 
       denominator of the allele fraction used with the -p cmd-line param
-    default: 500
     inputBinding:
       position: 101
       prefix: -B
@@ -33,7 +32,6 @@ inputs:
       - int
     doc: The base quality of the inserted bases in the simulated insertion 
       variants.
-    default: 30
     inputBinding:
       position: 101
       prefix: -i
@@ -43,7 +41,6 @@ inputs:
       - float
     doc: the log-normal over-dispersion parameter in Phred scale. Negative value
       means that no over-dispersion is simulated.
-    default: 15.0
     inputBinding:
       position: 101
       prefix: -q
@@ -53,7 +50,6 @@ inputs:
       - int
     doc: The number of reads used to generate the randomness for simulating the 
       nominator of the allele fraction used with the -p cmd-line param
-    default: 50
     inputBinding:
       position: 101
       prefix: -A
@@ -64,7 +60,6 @@ inputs:
     doc: The power-law exponent simulating the over-dispersion of allele 
       fractions in NGS. Negative value means that no over-dispersion is 
       simulated.
-    default: -1.0
     inputBinding:
       position: 101
       prefix: -p
@@ -74,7 +69,6 @@ inputs:
       - int
     doc: The random seed used to simulate allele fractions from read names 
       labeled with UMIs
-    default: 13
     inputBinding:
       position: 101
       prefix: -s
@@ -83,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: The random seed used to simulate basecalling error
-    default: 13
     inputBinding:
       position: 101
       prefix: -C
@@ -94,7 +87,6 @@ inputs:
     doc: sample name used for the -F command-line parameter. The special values 
       NULL pointer, empty-string, and INFO mean using the INFO column instead of
       the FORMAT column.
-    default: NULL pointer
     inputBinding:
       position: 101
       prefix: -S
@@ -104,7 +96,6 @@ inputs:
       - float
     doc: Phred-scale sequencing error rates of simulated SNV variants where -2 
       means zero error and -1 means using sequencer BQ
-    default: -1.0
     inputBinding:
       position: 101
       prefix: -x
@@ -117,7 +108,6 @@ inputs:
       INPUT-VCF. Please note that INFO/FA must be defined the header of 
       INPUT-VCF to be effective. Otherwise, the value defined by -f is used in 
       the simulation
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -f
@@ -126,7 +116,6 @@ inputs:
       - 'null'
       - string
     doc: allele fraction TAG in the VCF file.
-    default: FA
     inputBinding:
       position: 101
       prefix: -F

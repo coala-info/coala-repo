@@ -48,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of reads to call (0 is unlimited)
-    default: 0
     inputBinding:
       position: 102
       prefix: --limit

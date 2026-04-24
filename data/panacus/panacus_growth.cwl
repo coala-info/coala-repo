@@ -22,7 +22,6 @@ inputs:
       coverage thresholds, each one will produce a separated growth curve (e.g.,
       --coverage 2,3). Use --quorum to set a threshold in conjunction with each 
       coverage (e.g., --quorum 0.5,0.9)
-    default: '1'
     inputBinding:
       position: 102
       prefix: --coverage
@@ -86,7 +85,6 @@ inputs:
       point. Specify multiple quorum values with a comma-separated list (e.g., --quorum
       0.5,0.9). Use --coverage to set static path thresholds in conjunction with variable
       quorum percentages (e.g., --coverage 5,10).'
-    default: '0'
     inputBinding:
       position: 102
       prefix: --quorum
@@ -105,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: 'Set the number of threads used (default: use all threads)'
-    default: 0
     inputBinding:
       position: 102
       prefix: -t

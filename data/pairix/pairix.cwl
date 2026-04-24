@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: symbol for comment/meta lines
-    default: '#'
     inputBinding:
       position: 103
       prefix: -c
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: end1 column; can be identical to '-b'
-    default: 5
     inputBinding:
       position: 103
       prefix: -e
@@ -97,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: 'preset: pairs, merged_nodups, old_merged_nodups, gff, bed, sam, vcf, psltbl'
-    default: gff
     inputBinding:
       position: 103
       prefix: -p
@@ -139,7 +136,6 @@ inputs:
       - 'null'
       - string
     doc: symbol for query region separator
-    default: '|'
     inputBinding:
       position: 103
       prefix: -w
@@ -164,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: sequence name column
-    default: 1
     inputBinding:
       position: 103
       prefix: -s
@@ -173,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: skip first INT lines
-    default: 0
     inputBinding:
       position: 103
       prefix: -S
@@ -190,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: start1 column
-    default: 4
     inputBinding:
       position: 103
       prefix: -b

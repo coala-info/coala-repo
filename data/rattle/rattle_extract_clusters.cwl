@@ -47,7 +47,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'output folder for fastx files (default: .)'
-    default: .
     inputBinding:
       position: 101
       prefix: --output-folder

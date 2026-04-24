@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum ORF length in amino acids
-    default: 30
     inputBinding:
       position: 101
       prefix: --min_len
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Translation table (genetic code) to use
-    default: 11
     inputBinding:
       position: 101
       prefix: --genome

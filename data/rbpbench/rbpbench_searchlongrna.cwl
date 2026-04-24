@@ -10,7 +10,6 @@ inputs:
       - float
     doc: 'CMSEARCH bit score threshold (CMSEARCH options: -T --incT). The higher the
       more strict (default: 1.0)'
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --cmsearch-bs
@@ -22,7 +21,6 @@ inputs:
       (CMSEARCH option: --default). 2: max setting (CMSEARCH option: --max), i.e.,
       turn all heuristic filters off, slower and more sensitive / more hits) (default:
       1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --cmsearch-mode
@@ -50,7 +48,6 @@ inputs:
       - string
     doc: 'Set ID/name for provided custom motif database via --custom-db (default:
       "custom")'
-    default: custom
     inputBinding:
       position: 101
       prefix: --custom-db-id
@@ -98,7 +95,6 @@ inputs:
       2: use frequencies from human ENSEMBL transcripts (including introns, resulting
       in lower G+C and T most prominent) 3: use uniform frequencies (same for every
       nucleotide) (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --fimo-ntf-mode
@@ -107,7 +103,6 @@ inputs:
       - 'null'
       - float
     doc: 'FIMO p-value threshold (FIMO option: --thresh) (default: 0.0005)'
-    default: 0.0005
     inputBinding:
       position: 101
       prefix: --fimo-pval
@@ -192,7 +187,6 @@ inputs:
     doc: 'Define how to obtain GO DAG (directed acyclic graph) obo file. 1: download
       most recent file from internet, 2: use local file, 3: provide file via --goa-obo-file
       (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --goa-obo-mode
@@ -211,7 +205,6 @@ inputs:
       - float
     doc: 'GO enrichment analysis p-value threshold (applied on corrected p-value)
       (default: 0.05)'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --goa-pval
@@ -222,7 +215,6 @@ inputs:
     doc: "Define which (m)RNA region to use for motif hit GO enrichment analysis.
       1: whole transcript, 2: only 3'UTR regions, 3: only CDS regions, 4: only 5'UTR
       regions (default: 1)"
-    default: 1
     inputBinding:
       position: 101
       prefix: --goa-rna-region
@@ -254,7 +246,6 @@ inputs:
     doc: 'Minimum amount of overlap required for a motif hit to be assigned to a GTF
       feature (if less or no overlap, region will be assigned to "intergenic") (default:
       0.1)'
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --gtf-feat-min-overlap
@@ -293,7 +284,6 @@ inputs:
       (277 RBPs, 622 motifs, "catrapid_omics_v2.1_human_6plus_ext_ucrbps"), 3: human
       RBP motifs from Ray et al. 2013 (80 RBPs, 102 motifs, "ray2013_human_rbps_rnacompete")
       (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --motif-db
@@ -340,7 +330,6 @@ inputs:
       - int
     doc: 'Define whether to use median or mean mRNA region lengths for plotting. 1:
       median. 2: mean (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --mrna-norm-mode
@@ -399,7 +388,6 @@ inputs:
       - string
     doc: 'Set regex ID used as RBP ID and database ID associated to -regex hits (default:
       "regex")'
-    default: regex
     inputBinding:
       position: 101
       prefix: --regex-id
@@ -409,7 +397,6 @@ inputs:
       - float
     doc: 'Maximum GU (GT) base pair fraction to report structure pattern regex hits
       (default: 1.0)'
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --regex-max-gu
@@ -419,7 +406,6 @@ inputs:
       - float
     doc: 'Minimum GC base pair fraction to report structure pattern regex hits (default:
       0.0)'
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --regex-min-gc
@@ -431,7 +417,6 @@ inputs:
       motif hit start position, 2: when motif hit encountered, continue +1 after motif
       hit end position. NOTE that structure pattern regex currently always uses mode
       1 (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --regex-search-mode
@@ -440,7 +425,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum spacer length for structure pattern regex search (default: 200)'
-    default: 200
     inputBinding:
       position: 101
       prefix: --regex-spacer-max
@@ -449,7 +433,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum spacer length for structure pattern regex search (default: 5)'
-    default: 5
     inputBinding:
       position: 101
       prefix: --regex-spacer-min
@@ -461,7 +444,6 @@ inputs:
       or structure pattern). 2: given --regex string is standard regex, e.g. AC[AG]T.
       3: given --regex string is structure pattern string, e.g. ((AA(((...)))AA))
       (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --regex-type
@@ -480,7 +462,6 @@ inputs:
     doc: 'Define how to provide sorttable.js file. 1: link to packaged .js file. 2:
       copy .js file to plots output folder. 3: include .js code in HTML (default:
       1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --sort-js-mode
@@ -490,7 +471,6 @@ inputs:
       - int
     doc: 'Set top n matched sequences to be displayed in motif hit statistics HTML
       report (create via --plot-motifs) (default: 10)'
-    default: 10
     inputBinding:
       position: 101
       prefix: --top-n-matched

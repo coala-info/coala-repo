@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: max. hamming distance to barcode
-    default: 0
     inputBinding:
       position: 102
       prefix: --hamming
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: max. number of Ns per barcode
-    default: 0
     inputBinding:
       position: 102
       prefix: --ncount
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: 'index read pattern [U: UMI, B: Barcode, N: Ignore]'
-    default: BBBBBBBBUUUUUU
     inputBinding:
       position: 102
       prefix: --pattern

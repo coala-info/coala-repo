@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum peptide length to include in the output table. Default is 50.
-    default: 50
     inputBinding:
       position: 102
       prefix: --max-length
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum peptide length to include in the output table. Default is 5.
-    default: 5
     inputBinding:
       position: 102
       prefix: --min-length
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum score to include a peptide in the output table. Default is 0.0.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --min-score

@@ -25,7 +25,6 @@ inputs:
       - string
     doc: Table name to merge into (ancientmetagenome-environmental, ancientmetagenome-hostassociated,
       ancientsinglegenome-hostassociated, or test)
-    default: ancientmetagenome-hostassociated
     inputBinding:
       position: 102
       prefix: --table_name
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Table type (samples or libraries)
-    default: libraries
     inputBinding:
       position: 102
       prefix: --table_type

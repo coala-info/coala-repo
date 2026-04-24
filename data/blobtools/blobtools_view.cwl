@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: Experimental output
-    default: false
     inputBinding:
       position: 101
       prefix: --experimental
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate concoct files
-    default: false
     inputBinding:
       position: 101
       prefix: --concoct
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate cov files
-    default: false
     inputBinding:
       position: 101
       prefix: --cov
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not generate table view
-    default: false
     inputBinding:
       position: 101
       prefix: --notable
@@ -72,7 +68,6 @@ inputs:
         items: string
     doc: "Taxonomic rank(s) at which output will be written. (supported: 'species',
       'genus', 'family', 'order', 'phylum', 'superkingdom', 'all')"
-    default: phylum
     inputBinding:
       position: 101
       prefix: --rank
@@ -81,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: 'Taxrule used for computing taxonomy (supported: "bestsum", "bestsumorder")'
-    default: bestsum
     inputBinding:
       position: 101
       prefix: --taxrule

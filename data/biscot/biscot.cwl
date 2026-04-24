@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - boolean
     doc: Activates debug level logs
-    default: false
     inputBinding:
       position: 101
       prefix: --debug

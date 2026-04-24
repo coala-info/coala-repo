@@ -55,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bases to cut from the back of reads.
-    default: 0
     inputBinding:
       position: 103
       prefix: --cut_back
@@ -72,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Quality threshold for cutting by quality.
-    default: 15
     inputBinding:
       position: 103
       prefix: --cut_by_quality_threshold
@@ -81,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for cutting by quality.
-    default: 5
     inputBinding:
       position: 103
       prefix: --cut_by_quality_window
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bases to cut from the front of reads.
-    default: 0
     inputBinding:
       position: 103
       prefix: --cut_front
@@ -100,7 +96,6 @@ inputs:
       - int
     doc: Cut reads by mean quality. Reads with mean quality below this threshold
       will be discarded.
-    default: 0
     inputBinding:
       position: 103
       prefix: --cut_mean_quality
@@ -110,7 +105,6 @@ inputs:
       - int
     doc: Cut reads by middle quality. Reads with middle quality below this 
       threshold will be discarded.
-    default: 0
     inputBinding:
       position: 103
       prefix: --cut_middle_quality
@@ -184,7 +178,6 @@ inputs:
       - int
     doc: The maximum length of a read after trimming to be kept. Reads longer 
       than this will be discarded. If set to -1, no length limit is applied.
-    default: -1
     inputBinding:
       position: 103
       prefix: --length_limit
@@ -194,7 +187,6 @@ inputs:
       - int
     doc: The minimum length of a read after trimming to be kept. Reads shorter 
       than this will be discarded.
-    default: 15
     inputBinding:
       position: 103
       prefix: --length_required
@@ -212,7 +204,6 @@ inputs:
       - int
     doc: Maximum number of Ns allowed in a read. Reads with more Ns will be 
       discarded.
-    default: 0
     inputBinding:
       position: 103
       prefix: --max_n
@@ -221,7 +212,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum difference allowed in merging.
-    default: 5
     inputBinding:
       position: 103
       prefix: --merge_diff
@@ -230,7 +220,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum percentage difference allowed in merging.
-    default: 10.0
     inputBinding:
       position: 103
       prefix: --merge_diff_percent
@@ -239,7 +228,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum overlap length for merging.
-    default: 20
     inputBinding:
       position: 103
       prefix: --merge_len
@@ -248,7 +236,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of merged reads. If set to 0, no limit.
-    default: 0
     inputBinding:
       position: 103
       prefix: --merge_max_len
@@ -265,7 +252,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for merging.
-    default: 5
     inputBinding:
       position: 103
       prefix: --merge_window
@@ -2210,7 +2196,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum difference allowed in overlap.
-    default: 5
     inputBinding:
       position: 103
       prefix: --overlap_diff
@@ -2219,7 +2204,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum percentage difference allowed in overlap.
-    default: 10.0
     inputBinding:
       position: 103
       prefix: --overlap_diff_percent
@@ -2236,7 +2220,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum overlap length for Usearch.
-    default: 20
     inputBinding:
       position: 103
       prefix: --overlap_len
@@ -2245,7 +2228,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for overlap detection.
-    default: 5
     inputBinding:
       position: 103
       prefix: --overlap_window
@@ -2255,7 +2237,6 @@ inputs:
       - int
     doc: The minimum quality score for a base to be considered qualified. Bases 
       with quality scores below this threshold will be trimmed.
-    default: 15
     inputBinding:
       position: 103
       prefix: --qualified_quality_threshold
@@ -2264,7 +2245,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 0
     inputBinding:
       position: 103
       prefix: --thread
@@ -2273,7 +2253,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bases to trim from the back of reads.
-    default: 0
     inputBinding:
       position: 103
       prefix: --trim_back
@@ -2282,7 +2261,6 @@ inputs:
       - 'null'
       - int
     doc: Quality threshold for trimming from the back.
-    default: 15
     inputBinding:
       position: 103
       prefix: --trim_back_threshold
@@ -2291,7 +2269,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for trimming from the back.
-    default: 5
     inputBinding:
       position: 103
       prefix: --trim_back_window
@@ -2300,7 +2277,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bases to trim from the front of reads.
-    default: 0
     inputBinding:
       position: 103
       prefix: --trim_front
@@ -2309,7 +2285,6 @@ inputs:
       - 'null'
       - int
     doc: Quality threshold for trimming from the front.
-    default: 15
     inputBinding:
       position: 103
       prefix: --trim_front_threshold
@@ -2318,7 +2293,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for trimming from the front.
-    default: 5
     inputBinding:
       position: 103
       prefix: --trim_front_window
@@ -2351,7 +2325,6 @@ inputs:
       - 'null'
       - int
     doc: Length of UMI barcode.
-    default: 0
     inputBinding:
       position: 103
       prefix: --umi_barcode_len
@@ -2361,7 +2334,6 @@ inputs:
       - string
     doc: Location of UMI barcode (e.g., 'read1_fwd', 'read1_rev', 'read2_fwd', 
       'read2_rev', 'any').
-    default: any
     inputBinding:
       position: 103
       prefix: --umi_barcode_loc
@@ -2378,7 +2350,6 @@ inputs:
       - 'null'
       - int
     doc: Length of UMI.
-    default: 0
     inputBinding:
       position: 103
       prefix: --umi_len
@@ -2388,7 +2359,6 @@ inputs:
       - string
     doc: Location of UMI (e.g., 'read1_fwd', 'read1_rev', 'read2_fwd', 
       'read2_rev', 'any').
-    default: any
     inputBinding:
       position: 103
       prefix: --umi_loc

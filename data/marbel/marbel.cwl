@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Compress the output fastq files
-    default: true
     inputBinding:
       position: 101
       prefix: --compressed
@@ -19,7 +18,6 @@ inputs:
       - float
     doc: 'For generating sampling: Gene mean dependent dispersion of DESeq2. Only
       set when you have knowledge of DESeq2 dispersion.'
-    default: 0.3325853
     inputBinding:
       position: 101
       prefix: --deseq-dispersion-gene-mean
@@ -29,7 +27,6 @@ inputs:
       - float
     doc: 'For generating sampling: General dispersion estimation of DESeq2. Only set
       when you have knowledge of DESeq2 dispersion.'
-    default: 12.9105102
     inputBinding:
       position: 101
       prefix: --deseq-dispersion-general
@@ -40,7 +37,6 @@ inputs:
     doc: Ratio of up and down regulated genes. Must be between 0 and 1.This is a
       random drawing process from normal distribution, so the actual ratio might
       vary.
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --dge-ratio
@@ -51,7 +47,6 @@ inputs:
     doc: Sequencer model for the reads, use basic or perfect (no errors) for 
       custom read length. Note that read lenght must be set when using basic or 
       perfect.
-    default: HiSeq
     inputBinding:
       position: 101
       prefix: --error-model
@@ -61,7 +56,6 @@ inputs:
       - boolean
     doc: Force the creation of the dataset, even if available orthogroups do not
       suffice for specified number of orthogroups.
-    default: false
     inputBinding:
       position: 101
       prefix: --force-creation
@@ -71,7 +65,6 @@ inputs:
       - string
     doc: Determines the level of orthology in groups. If you use this, use it 
       with a lot of threads. Takes a long time.
-    default: normal
     inputBinding:
       position: 101
       prefix: --group-orthologs
@@ -88,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Library size for the reads.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --library-size
@@ -97,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: "Distribution for the library size. Select from: ['poisson', 'uniform', 'negative_binomial']"
-    default: uniform
     inputBinding:
       position: 101
       prefix: --library-size-distribution
@@ -108,7 +99,6 @@ inputs:
     doc: Maximimum mean phylogenetic distance for orthologous groups.specify 
       stricter limit, if you want to avoid orthologous groupswith a more diverse
       phylogenetic distance.
-    default: None
     inputBinding:
       position: 101
       prefix: --max-phylo-dist
@@ -118,7 +108,6 @@ inputs:
       - float
     doc: Minimum mean sequence identity score for an orthologous groups.Specify 
       for more
-    default: None
     inputBinding:
       position: 101
       prefix: --min-identity
@@ -129,7 +118,6 @@ inputs:
     doc: Minimum overlap for the blocks. Use this to evaluate overlap blocks, 
       i.e. uninterrupted parts covered with reads that overlap on the genome. 
       Accounts for kmer size.
-    default: 16
     inputBinding:
       position: 101
       prefix: --min-overlap
@@ -139,7 +127,6 @@ inputs:
       - float
     doc: Will archive the minimum specified sparsity by zeroing count values 
       randomly.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-sparsity
@@ -149,7 +136,6 @@ inputs:
       - int
     doc: 'Number of orthologous groups to be drawn for the metatranscriptome in silico
       dataset. Maximum value: 365813.'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --n-orthogroups
@@ -161,7 +147,6 @@ inputs:
     doc: Number of samples to be created for the metatranscriptome in silico 
       datasetthe first number is the number of samples for group 1 andthe second
       number is the number of samples for group 2
-    default:
       - 10
       - 10
     inputBinding:
@@ -173,7 +158,6 @@ inputs:
       - int
     doc: 'Number of species to be drawn for the metatranscriptome in silico dataset.
       Maximum value: 614.'
-    default: 20
     inputBinding:
       position: 101
       prefix: --n-species
@@ -182,7 +166,6 @@ inputs:
       - 'null'
       - boolean
     doc: Compress the output fastq files
-    default: false
     inputBinding:
       position: 101
       prefix: --no-compressed
@@ -192,7 +175,6 @@ inputs:
       - boolean
     doc: Force the creation of the dataset, even if available orthogroups do not
       suffice for specified number of orthogroups.
-    default: true
     inputBinding:
       position: 101
       prefix: --no-force-creation
@@ -201,7 +183,6 @@ inputs:
       - 'null'
       - string
     doc: Output directory for the metatranscriptome in silico dataset
-    default: simulated_reads
     inputBinding:
       position: 101
       prefix: --outdir
@@ -211,7 +192,6 @@ inputs:
       - int
     doc: Read length for the reads. Only available when using error_model basic 
       or perfect
-    default: None
     inputBinding:
       position: 101
       prefix: --read-length
@@ -220,7 +200,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for the sampling. Set for reproducibility
-    default: None
     inputBinding:
       position: 101
       prefix: --seed
@@ -239,7 +218,6 @@ inputs:
       - int
     doc: 'Number of threads to be used. Use 0 or -1 for auto detection. Uppler limit:
       128.'
-    default: 10
     inputBinding:
       position: 101
       prefix: --threads

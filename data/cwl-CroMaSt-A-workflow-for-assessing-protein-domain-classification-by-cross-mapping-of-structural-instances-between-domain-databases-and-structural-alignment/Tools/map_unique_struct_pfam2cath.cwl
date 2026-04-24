@@ -42,7 +42,6 @@ inputs:
   cath_raw:
     type: File?
     label: Raw file from CATH with all domain instances
-    default: 
       class: File
       location: '../Data/cath-domain-description-file.txt'
       basename: cath-domain-description-file.txt
@@ -52,21 +51,18 @@ inputs:
   crossmap_pfam:
     type: [ File?, string?]
     label: User-defined filename for filtered structures from CATH
-    default: pfam_crossMapped_cath.jsonx
     inputBinding:
       prefix: -x
   
   no_crossmap:
     type: [ File?, string?]
     label: User-defined filename for unampped domain StIs 
-    default: pfam_unq_unmapped.jsonx
     inputBinding:
       prefix: -u
 
   min_dom_len:
     type: int
     label: Minimum domain length criteria to filter domain StIs
-    default: 31
     inputBinding:
       prefix: -l
 

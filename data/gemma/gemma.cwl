@@ -67,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: Minor allele frequency threshold.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: -maf
@@ -76,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: Missingness threshold.
-    default: 0.05
     inputBinding:
       position: 101
       prefix: -miss
@@ -93,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Specify which phenotype column to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: -n

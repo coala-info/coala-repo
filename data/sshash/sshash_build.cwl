@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Size of k-mers to use.
-    default: 31
     inputBinding:
       position: 102
       prefix: --kmer-size
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum sequence length to consider.
-    default: 1000
     inputBinding:
       position: 102
       prefix: --max-len
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequence length to consider.
-    default: 50
     inputBinding:
       position: 102
       prefix: --min-len
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

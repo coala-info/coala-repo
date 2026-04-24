@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Combine .agc -> binary .ags, then gzip
-    default: F
     inputBinding:
       position: 101
       prefix: -z
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Combine .agc -> text .ags (for testing)
-    default: F
     inputBinding:
       position: 101
       prefix: -y
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Extract .ags -> text .agc
-    default: F
     inputBinding:
       position: 101
       prefix: -x
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - File
     doc: Single Input File
-    default: stdin
     inputBinding:
       position: 101
       prefix: -i
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: File is Binary
-    default: F
     inputBinding:
       position: 101
       prefix: -b
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: File is Compressed
-    default: F
     inputBinding:
       position: 101
       prefix: -c
@@ -63,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: Log Processing
-    default: F
     inputBinding:
       position: 101
       prefix: -l
@@ -80,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Taxon ID to Filter
-    default: 0
     inputBinding:
       position: 101
       prefix: -t

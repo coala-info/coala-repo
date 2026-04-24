@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: name of group A
-    default: g1
     inputBinding:
       position: 102
       prefix: --groupA
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: name of group B
-    default: g2
     inputBinding:
       position: 102
       prefix: --groupB
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: maximum distance
-    default: 300
     inputBinding:
       position: 102
       prefix: --maxdist
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: maximum segment length in case of memory issues
-    default: -1
     inputBinding:
       position: 102
       prefix: --maxseg
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: minimum cpgs
-    default: 10
     inputBinding:
       position: 102
       prefix: --mincpgs
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: minimum mean methylation difference
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --minMethDiff
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: minimal number of values in group A
-    default: -1
     inputBinding:
       position: 102
       prefix: --minNoA
@@ -87,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: minimal number of values in group B
-    default: -1
     inputBinding:
       position: 102
       prefix: --minNoB
@@ -96,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of method: 1: de-novo, 2: pre-defined regions, 3: DMCs'
-    default: 1
     inputBinding:
       position: 102
       prefix: --mode
@@ -106,7 +97,6 @@ inputs:
       - int
     doc: 'method of multiple testing correction: 1: Bonferroni, 2: Benjamini-Hochberg
       (FDR)'
-    default: 1
     inputBinding:
       position: 102
       prefix: --mtc
@@ -115,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: set seed for random generator
-    default: 26061981
     inputBinding:
       position: 102
       prefix: --seed
@@ -124,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -133,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: valley filter (0.0 - 1.0)
-    default: 0.7
     inputBinding:
       position: 102
       prefix: --valley

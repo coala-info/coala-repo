@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: Specify the highest p-value that you want included.
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --p-value-limit

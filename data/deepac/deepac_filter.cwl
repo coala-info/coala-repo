@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: Confidence threshold
-    default: None
     inputBinding:
       position: 103
       prefix: --confidence-threshold
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Format pathogenic potentials to given precision
-    default: 2
     inputBinding:
       position: 103
       prefix: --n-classes
@@ -54,7 +52,6 @@ inputs:
       - type: array
         items: int
     doc: Format pathogenic potentials to given precision
-    default: 1
     inputBinding:
       position: 103
       prefix: --positive-classes
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Format pathogenic potentials to given precision
-    default: 3
     inputBinding:
       position: 103
       prefix: --precision
@@ -88,7 +84,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for binary classification
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --threshold

@@ -44,7 +44,6 @@ inputs:
       - type: array
         items: string
     doc: SingleM packages to use
-    default: use the default set
     inputBinding:
       position: 101
       prefix: --singlem-packages

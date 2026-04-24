@@ -17,7 +17,6 @@ inputs:
       - int
     doc: 'Codon table to use. Default: 0 (ie Standard, NCBI #1, but only ATG is considered
       a valid start codon.'
-    default: 0
     inputBinding:
       position: 102
       prefix: --codon-table
@@ -82,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: Log level.
-    default: INFO
     inputBinding:
       position: 102
       prefix: --log-level
@@ -91,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum intron length for transcripts.
-    default: 1000000
     inputBinding:
       position: 102
       prefix: --max-intron-size
@@ -100,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length for transcripts.
-    default: 200
     inputBinding:
       position: 102
       prefix: --minimum-cdna-length
@@ -109,7 +105,6 @@ inputs:
       - 'null'
       - File
     doc: 'Output file. Default: mikado_prepared.gtf.'
-    default: mikado_prepared.gtf
     inputBinding:
       position: 102
       prefix: --out
@@ -118,7 +113,6 @@ inputs:
       - 'null'
       - File
     doc: 'Output file. Default: mikado_prepared.fasta.'
-    default: mikado_prepared.fasta
     inputBinding:
       position: 102
       prefix: --out_fasta
@@ -127,7 +121,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Output directory. Default: current working directory'
-    default: .
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -166,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: 'Random seed number. Default: 0.'
-    default: 0
     inputBinding:
       position: 102
       prefix: --seed

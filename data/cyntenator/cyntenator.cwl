@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: each gene may occur only c times in alignments
-    default: 2
     inputBinding:
       position: 104
       prefix: -coverage
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: best alignments or only unique assignments n=0
-    default: 100
     inputBinding:
       position: 104
       prefix: -filter
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: gap
-    default: -2
     inputBinding:
       position: 104
       prefix: -gap
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: minimum alignment length treshold
-    default: 1
     inputBinding:
       position: 104
       prefix: -length
@@ -86,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: mismatch
-    default: -3
     inputBinding:
       position: 104
       prefix: -mis
@@ -95,7 +90,6 @@ inputs:
       - 'null'
       - float
     doc: threshold
-    default: 4
     inputBinding:
       position: 104
       prefix: -thr

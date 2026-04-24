@@ -11,7 +11,6 @@ inputs:
       - string
     doc: "Plot setting. Set the bin size for averaging\nmethylation ratio among samples,
       default=1000k"
-    default: 1000k
     inputBinding:
       position: 101
       prefix: --binsize
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: 'Clip mode. 0 means close. 1 means open. default: 0'
-    default: '0'
     inputBinding:
       position: 101
       prefix: --clip
@@ -63,7 +61,6 @@ inputs:
       - string
     doc: "Genome the reference belong to.(Use for plotting)\nhg18/hg19/mm10/mm9 and
       so on. Plotting script will not\navailable if leave it blank. default=hg38."
-    default: hg38
     inputBinding:
       position: 101
       prefix: --genome
@@ -208,7 +205,6 @@ inputs:
       - 'null'
       - int
     doc: Window length for clipping mode, default=30
-    default: 30
     inputBinding:
       position: 101
       prefix: --window

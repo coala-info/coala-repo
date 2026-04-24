@@ -34,7 +34,6 @@ inputs:
   dom_posi_file:
     type: [ File?, string?]
     label: Filename for the output file with domain position labels
-    default: resmapped_domains_posi.csv
     inputBinding:
       position: 2
       prefix: -o

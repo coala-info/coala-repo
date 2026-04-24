@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of polyA tail to consider. Default is 30.
-    default: 30
     inputBinding:
       position: 102
       prefix: --max-polyA-len
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of polyA tail to trim. Default is 10.
-    default: 10
     inputBinding:
       position: 102
       prefix: --min-polyA-len
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use. Default is 1.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -42,7 +39,6 @@ inputs:
       - float
     doc: Threshold for trimming polyA tail (e.g., 0.9 means trim if 90% of the 
       tail is A). Default is 0.9.
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --trim-threshold

@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - float
     doc: pseudocount to add to background
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -bp
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: max n-mer to consider
-    default: 8
     inputBinding:
       position: 101
       prefix: -s
@@ -101,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPU threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -116,7 +113,6 @@ inputs:
       - 'null'
       - float
     doc: minimum absolute Sub-Z-score
-    default: 0.0
     inputBinding:
       position: 101
       prefix: -z

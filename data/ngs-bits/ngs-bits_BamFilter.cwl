@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of gaps (indels) in aligned read, -1 to disable.
-    default: 1
     inputBinding:
       position: 101
       prefix: -maxGap
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum insert size, -1 to disable.
-    default: -1
     inputBinding:
       position: 101
       prefix: -maxIS
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of mismatches in aligned read, -1 to disable.
-    default: 4
     inputBinding:
       position: 101
       prefix: -maxMM
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of duplicates.
-    default: 0
     inputBinding:
       position: 101
       prefix: -minDup
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality.
-    default: 30
     inputBinding:
       position: 101
       prefix: -minMQ
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - File
     doc: Reference genome for CRAM support (mandatory if CRAM is used).
-    default: ''
     inputBinding:
       position: 101
       prefix: -ref
@@ -87,7 +81,6 @@ inputs:
       - 'null'
       - boolean
     doc: Writes a CRAM file as output.
-    default: false
     inputBinding:
       position: 101
       prefix: -write_cram

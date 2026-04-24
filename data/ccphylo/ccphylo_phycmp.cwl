@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - File
     doc: Input file(s)
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allocate matrix on the disk
-    default: false
     inputBinding:
       position: 101
       prefix: --mmap
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Output flags
-    default: 1
     inputBinding:
       position: 101
       prefix: --flag
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Separator
-    default: \t
     inputBinding:
       position: 101
       prefix: --separator

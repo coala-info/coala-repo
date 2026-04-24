@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum identity percentage for UniProt BLAST hits
-    default: 50.0
     inputBinding:
       position: 101
       prefix: --min-identity
@@ -60,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use GenBank annotations with fallback to translation (default)
-    default: true
     inputBinding:
       position: 101
       prefix: --retain
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: 'Input type: fasta, genbank, or auto (auto-detect from folder)'
-    default: auto
     inputBinding:
       position: 101
       prefix: --type
@@ -86,7 +83,6 @@ inputs:
       - 'null'
       - File
     doc: Path to UniProt TSV file
-    default: Database/uniprot_plasmids.tsv
     inputBinding:
       position: 101
       prefix: --uniprot-tsv

@@ -50,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: 'Estimated error rate for sequencing data. [default: 0.005]'
-    default: 0.005
     inputBinding:
       position: 101
       prefix: --errorRate
@@ -92,7 +91,6 @@ inputs:
       - string
     doc: 'Format of the results; available options include tsv, csv or biom. [default:
       tsv]'
-    default: tsv
     inputBinding:
       position: 101
       prefix: --format
@@ -119,7 +117,6 @@ inputs:
       - float
     doc: 'Minimum fraction (0.0-1.0) of the read or signature fragment required to
       be considered a valid match. [default: 0]'
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --matchFraction
@@ -128,7 +125,6 @@ inputs:
       - 'null'
       - float
     doc: 'Minimum identity (0.0-1.0) required for a valid match. [default: 0]'
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --matchIdentity
@@ -138,7 +134,6 @@ inputs:
       - int
     doc: 'Minimum length of the alignment required to be considered a valid match.
       [default: 0]'
-    default: 0
     inputBinding:
       position: 101
       prefix: --matchLength
@@ -148,7 +143,6 @@ inputs:
       - float
     doc: 'Maximum estimated z-score for the depths of the mapped region. Set to 0
       to disable. [default: 0]'
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --maxZscore
@@ -158,7 +152,6 @@ inputs:
       - float
     doc: 'Minimum signature coverage to be considered valid in abundance calculation.
       [default: 0]'
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --minCov
@@ -168,7 +161,6 @@ inputs:
       - int
     doc: 'Minimum signature length to be considered valid in abundance calculation.
       [default: 0]'
-    default: 0
     inputBinding:
       position: 101
       prefix: --minLen
@@ -178,7 +170,6 @@ inputs:
       - int
     doc: 'Minimum number of reads to be considered valid in abundance calculation.
       [default: 0]'
-    default: 0
     inputBinding:
       position: 101
       prefix: --minReads
@@ -188,7 +179,6 @@ inputs:
       - string
     doc: "The minimap2 mapping options for short reads. Do not use this option unless
       you know what you are doing. [default: 'auto']"
-    default: auto
     inputBinding:
       position: 101
       prefix: --m2options
@@ -224,7 +214,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Output directory [default: .]'
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir
@@ -242,7 +231,6 @@ inputs:
       - string
     doc: "The preset option (-x) for minimap2. Default value 'sr' for short reads.
       [default: sr]"
-    default: sr
     inputBinding:
       position: 101
       prefix: --presetx
@@ -253,7 +241,6 @@ inputs:
     doc: 'The field will be used to calculate relative abundance. You can specify
       one of the following fields: "DEPTH", "READ_COUNT", "GENOMIC_CONTENT_EST". [default:
       DEPTH]'
-    default: DEPTH
     inputBinding:
       position: 101
       prefix: --relAbu
@@ -265,7 +252,6 @@ inputs:
       files and disabled for SAM files. Users can explicitly control this behavior
       by specifying 'yes' or 'no' to force the step to be enabled or disabled. [default:
       auto]"
-    default: auto
     inputBinding:
       position: 101
       prefix: --removeMultipleHits
@@ -285,7 +271,6 @@ inputs:
       other levels (first), species level (first value), and strain level (second
       value); if only one value is provided, all three levels use that value. [default:
       0.9,0.95,0.99]'
-    default: 0.9,0.95,0.99
     inputBinding:
       position: 101
       prefix: --sniScore
@@ -313,7 +298,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads [default: 1]'
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -11,7 +11,6 @@ inputs:
       - float
     doc: Mininum aligned fraction of (both reference and query) genomes covered 
       in the ANI calculation
-    default: 0
     inputBinding:
       position: 101
       prefix: --alignedfrac
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: ANI for clustering bins (%)
-    default: 99
     inputBinding:
       position: 101
       prefix: --ani
@@ -39,7 +37,6 @@ inputs:
       - string
     doc: Assembler choice for reassembly step (spades|megahit), spades is 
       recommended
-    default: spades
     inputBinding:
       position: 101
       prefix: --assembler
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum completeness of bins (%)
-    default: 50
     inputBinding:
       position: 101
       prefix: --completeness
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: Bin file extension
-    default: fasta
     inputBinding:
       position: 101
       prefix: --format
@@ -88,7 +83,6 @@ inputs:
       - 'null'
       - float
     doc: Mininum purity (1- contamination) of bins (%)
-    default: 95
     inputBinding:
       position: 101
       prefix: --purity
@@ -130,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads

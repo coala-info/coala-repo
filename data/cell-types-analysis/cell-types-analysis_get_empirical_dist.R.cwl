@@ -68,7 +68,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Boolean: Should computation be run in parallel? Default: FALSE'
-    default: 'FALSE'
     inputBinding:
       position: 101
       prefix: --parallel

@@ -10,7 +10,6 @@ inputs:
       - string
     doc: "Genome build used to generate the input.\n                        Valid:
       'hg19,hg38'"
-    default: hg38
     inputBinding:
       position: 101
       prefix: -build
@@ -28,7 +27,6 @@ inputs:
       - float
     doc: Maximum number of median average diviations that are allowed from 
       median population score.
-    default: 4.2
     inputBinding:
       position: 101
       prefix: -mad_dist
@@ -38,7 +36,6 @@ inputs:
       - int
     doc: Minimum number of informative SNPs for population determination. If 
       less SNPs are found, 'NOT_ENOUGH_SNPS' is returned.
-    default: 1000
     inputBinding:
       position: 101
       prefix: -min_snps
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - float
     doc: Absolute score cutoff above which a sample is assigned to a population.
-    default: 0.32
     inputBinding:
       position: 101
       prefix: -score_cutoff

@@ -11,7 +11,6 @@ inputs:
       - int
     doc: Specify the number of threads in Bowtie. Corresponds to the 
       -p/--threads option in Bowtie
-    default: 1
     inputBinding:
       position: 101
       prefix: -T
@@ -28,7 +27,6 @@ inputs:
       - boolean
     doc: Indicate whether to extend the contigs of -s using paired reads in -l 
       (-x 1=extension, -x 0=no extension, default -x 0)
-    default: 0
     inputBinding:
       position: 101
       prefix: -x
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: Make .dot file for visualisation (-p 1=yes, -p 0=no, default -p 0)
-    default: 0
     inputBinding:
       position: 101
       prefix: -p
@@ -55,7 +52,6 @@ inputs:
     doc: Maximum number of allowed gaps during mapping with Bowtie. Corresponds 
       to the -v option in Bowtie. *Higher number of allowed gaps can lead to 
       least accurate scaffolding*
-    default: 0
     inputBinding:
       position: 101
       prefix: -g
@@ -65,7 +61,6 @@ inputs:
       - float
     doc: Maximum link ratio between two best contig pairs. *Higher values lead 
       to least accurate scaffolding*
-    default: 0.7
     inputBinding:
       position: 101
       prefix: -a
@@ -75,7 +70,6 @@ inputs:
       - int
     doc: Minimum contig length used for scaffolding. Filters out contigs below 
       this value
-    default: 0
     inputBinding:
       position: 101
       prefix: -z
@@ -84,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of links (read pairs) to compute scaffold
-    default: 5
     inputBinding:
       position: 101
       prefix: -k
@@ -93,7 +86,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum base ratio used to accept a overhang consensus base
-    default: 0.9
     inputBinding:
       position: 101
       prefix: -r
@@ -103,7 +95,6 @@ inputs:
       - int
     doc: Minimum number of overlapping bases with the seed/contig during 
       overhang consensus build up
-    default: 32
     inputBinding:
       position: 101
       prefix: -m
@@ -113,7 +104,6 @@ inputs:
       - int
     doc: Minimum overlap required between contigs to merge adjacent contigs in a
       scaffold
-    default: 15
     inputBinding:
       position: 101
       prefix: -n
@@ -122,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads needed to call a base during an extension
-    default: 20
     inputBinding:
       position: 101
       prefix: -o
@@ -131,7 +120,6 @@ inputs:
       - 'null'
       - string
     doc: Base name for your output files
-    default: standard_output
     inputBinding:
       position: 101
       prefix: -b
@@ -141,7 +129,6 @@ inputs:
       - int
     doc: Trim up to -t base(s) on the contig end when all possibilities have 
       been exhausted for an extension
-    default: 0
     inputBinding:
       position: 101
       prefix: -t
@@ -158,7 +145,6 @@ inputs:
       - 'null'
       - boolean
     doc: Runs in verbose mode (-v 1=yes, -v 0=no, default -v 0)
-    default: 0
     inputBinding:
       position: 101
       prefix: -v

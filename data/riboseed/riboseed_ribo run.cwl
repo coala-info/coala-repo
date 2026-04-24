@@ -26,7 +26,6 @@ inputs:
       - boolean
     doc: if --clean_temps, mapping files will be removed once they are no no 
       longer needed during the mapping iterations to save space
-    default: false
     inputBinding:
       position: 101
       prefix: --clean_temps
@@ -109,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: length of flanking regions, in bp
-    default: 1000
     inputBinding:
       position: 101
       prefix: --flanking_length
@@ -130,7 +128,6 @@ inputs:
     doc: if iterations>1, multiple seedings will occur after subassembly of seed
       regions; if setting --target_len, seedings will continue until 
       --iterations are completed or --target_len is matched or exceeded
-    default: 3
     inputBinding:
       position: 101
       prefix: --iterations
@@ -139,7 +136,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't do an assembly, just generate the long read 'seeds'
-    default: false
     inputBinding:
       position: 101
       prefix: --just_seed
@@ -148,7 +144,6 @@ inputs:
       - 'null'
       - string
     doc: whether to look for eukaryotic, archaeal, or bacterial rDNA
-    default: bac
     inputBinding:
       position: 101
       prefix: --Kingdom
@@ -159,7 +154,6 @@ inputs:
     doc: kmers used for final assembly, separated by commas such 
       as21,33,55,77,99,127. Can be set to 'auto', where SPAdes chooses. We 
       ensure kmers are not too big or too close to read length
-    default: 21,33,55,77,99,127
     inputBinding:
       position: 101
       prefix: --kmers
@@ -170,7 +164,6 @@ inputs:
     doc: 'if genome is known to not be circular and a region of interest (including
       flanking bits) extends past chromosome end, this extends the seqence past chromosome
       origin forward by --padding; default: False'
-    default: false
     inputBinding:
       position: 101
       prefix: --linear
@@ -179,7 +172,6 @@ inputs:
       - 'null'
       - int
     doc: cores for multiprocessing
-    default: 8
     inputBinding:
       position: 101
       prefix: --memory
@@ -189,7 +181,6 @@ inputs:
       - int
     doc: a subassembly won't be performed if this minimum depth is not achieved 
       on both the 3' and5' end of the pseudocontig
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_flank_depth
@@ -198,7 +189,6 @@ inputs:
       - 'null'
       - string
     doc: kmers used during seeding assemblies, separated bt commas
-    default: 21,33,55,77,99
     inputBinding:
       position: 101
       prefix: --pre_kmers
@@ -210,7 +200,6 @@ inputs:
       use the seed sequences as a --trusted-contig; untrusted: SPAdes will treat as
       --untrusted-contig. infer: if mapping percentage over 80%, 'trusted'; else 'untrusted'.
       See SPAdes docs for details."
-    default: infer
     inputBinding:
       position: 101
       prefix: --ref_as_contig
@@ -240,7 +229,6 @@ inputs:
       - boolean
     doc: if --serialize, runs seeding and assembly without multiprocessing. We 
       recommend this for machines with less than 8GB RAM
-    default: false
     inputBinding:
       position: 101
       prefix: --serialize
@@ -249,7 +237,6 @@ inputs:
       - 'null'
       - boolean
     doc: if --skip_control, no de novo assembly will be done
-    default: false
     inputBinding:
       position: 101
       prefix: --skip_control
@@ -258,7 +245,6 @@ inputs:
       - 'null'
       - string
     doc: colon:separated -- specific features
-    default: 16S:23S:5S
     inputBinding:
       position: 101
       prefix: --specific_features
@@ -278,7 +264,6 @@ inputs:
       - string
     doc: assembler to use for subassembly scheme. SPAdes is used by default, but
       Skesa is a new addition that seems to work for subassembly and is faster
-    default: spades
     inputBinding:
       position: 101
       prefix: --subassembler
@@ -289,7 +274,6 @@ inputs:
     doc: if your cores are hyperthreaded, set number threads to the number of 
       threads per processer.If unsure, see 'cat /proc/cpuinfo' under 'cpu 
       cores', or 'lscpu' under 'Thread(s) per core'.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -300,7 +284,6 @@ inputs:
     doc: Logger writes debug to file in output dir; this sets verbosity level 
       sent to stderr. 1 = debug(), 2 = info(), 3 = warning(), 4 = error() and 5 
       = critical()
-    default: 2
     inputBinding:
       position: 101
       prefix: --verbosity

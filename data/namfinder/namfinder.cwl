@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Bitcount length between 2 and 63.
-    default: 8
     inputBinding:
       position: 104
       prefix: -c
@@ -56,7 +55,6 @@ inputs:
       - int
     doc: "Lower syncmer offset from k/(k-s+1). Start sample second syncmer\n     \
       \               k/(k-s+1) + l syncmers downstream"
-    default: 0
     inputBinding:
       position: 104
       prefix: -l
@@ -65,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Mask (do not process) strobemer hits with count larger than C
-    default: 1000
     inputBinding:
       position: 104
       prefix: -C
@@ -75,7 +72,6 @@ inputs:
       - int
     doc: "Print at most L NAMs per query [1000]. Will print the NAMs with\n      \
       \              highest score S = n_strobemer_hits * query_span."
-    default: 1000
     inputBinding:
       position: 104
       prefix: -L
@@ -85,7 +81,6 @@ inputs:
       - int
     doc: "Retain at most INT secondary alignments (is upper bounded by -M and\n  \
       \                  depends on -S)"
-    default: 0
     inputBinding:
       position: 104
       prefix: -N
@@ -114,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: Strobe length, has to be below 32.
-    default: 20
     inputBinding:
       position: 104
       prefix: -k
@@ -128,7 +122,6 @@ inputs:
       unless you have\n                    a good understanding of syncmers as it
       will drastically change the\n                    memory usage and results with
       non default values."
-    default: k-4
     inputBinding:
       position: 104
       prefix: -s
@@ -137,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 3
     inputBinding:
       position: 104
       prefix: --threads
@@ -147,7 +139,6 @@ inputs:
       - int
     doc: "Upper syncmer offset from k/(k-s+1). End sample second syncmer\n       \
       \             k/(k-s+1) + u syncmers downstream"
-    default: 7
     inputBinding:
       position: 104
       prefix: -u

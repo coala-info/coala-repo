@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: the flanking region length
-    default: 100
     inputBinding:
       position: 103
       prefix: --length
@@ -32,7 +31,6 @@ inputs:
       - boolean
     doc: require flanks to have exactly the specified length (it may be shorter if
       a feature is located near a sequence start or end)
-    default: 'False'
     inputBinding:
       position: 103
       prefix: --strict
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: the input file type (bed or vcf)
-    default: bed
     inputBinding:
       position: 103
       prefix: --type

@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Timeout value of graph construction in seconds.
-    default: infinite
     inputBinding:
       position: 101
       prefix: --kill
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Binding motif and energy of the ligand
-    default: GAUACCAG&CCCUUGGCAGC;(...((((&)...)))...);-9.22
     inputBinding:
       position: 101
       prefix: --ligand
@@ -91,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: Ratio of the alternative to binding competent state in percent
-    default: 90:10
     inputBinding:
       position: 101
       prefix: --ratio

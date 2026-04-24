@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Setting random seed
-    default: 19760620
     inputBinding:
       position: 101
       prefix: --random-seed

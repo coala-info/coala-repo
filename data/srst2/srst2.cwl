@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Samtools -Q parameter (default 20)
-    default: 20
     inputBinding:
       position: 101
       prefix: --baseq
@@ -38,7 +37,6 @@ inputs:
       - int
     doc: Maximum number of mismatches per read for gene detection and allele 
       calling (default 10)
-    default: 10
     inputBinding:
       position: 101
       prefix: --gene_max_mismatch
@@ -82,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Samtools -q parameter (default 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --mapq
@@ -91,7 +88,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum %divergence cutoff for gene reporting (default 10)
-    default: 10
     inputBinding:
       position: 101
       prefix: --max_divergence
@@ -101,7 +97,6 @@ inputs:
       - int
     doc: Read discarded from alignment if either of its ends has unaligned 
       overlap with the reference that is longer than this value (default 10)
-    default: 10
     inputBinding:
       position: 101
       prefix: --max_unaligned_overlap
@@ -119,7 +114,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum %coverage cutoff for gene reporting (default 90)
-    default: 90
     inputBinding:
       position: 101
       prefix: --min_coverage
@@ -128,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mean depth to flag as dubious allele call (default 5)
-    default: 5
     inputBinding:
       position: 101
       prefix: --min_depth
@@ -137,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum edge depth to flag as dubious allele call (default 2)
-    default: 2
     inputBinding:
       position: 101
       prefix: --min_edge_depth
@@ -164,7 +156,6 @@ inputs:
       - string
     doc: Character(s) separating gene name from allele number in MLST database 
       (default "-", as in arcc-1)
-    default: '-'
     inputBinding:
       position: 101
       prefix: --mlst_delimiter
@@ -174,7 +165,6 @@ inputs:
       - int
     doc: Maximum number of mismatches per read for MLST allele calling (default 
       10)
-    default: 10
     inputBinding:
       position: 101
       prefix: --mlst_max_mismatch
@@ -209,7 +199,6 @@ inputs:
       - 'null'
       - float
     doc: Probability of sequencing error (default 0.01)
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --prob_err

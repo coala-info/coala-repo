@@ -36,7 +36,6 @@ inputs:
       - int
     doc: Independent (de novo) assembly i.e Targets used to recruit reads for de novo
       assembly, not guide/seed reference-based assemblies (1 = yes, 0 = no)
-    default: 1
     inputBinding:
       position: 101
       prefix: -i
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum contig size to track amino acid coverage and read position
-    default: 20
     inputBinding:
       position: 101
       prefix: -z
@@ -62,7 +60,6 @@ inputs:
       - int
     doc: Minimum number of overlapping amino acids with the seed/contig during overhang
       consensus build up
-    default: 10
     inputBinding:
       position: 101
       prefix: -m
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum ratio used to accept a overhang consensus amino acid
-    default: 0.7
     inputBinding:
       position: 101
       prefix: -r
@@ -80,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of peptide reads needed to call a amino acid during an extension
-    default: 2
     inputBinding:
       position: 101
       prefix: -o
@@ -113,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: Track amino acid coverage and read position for each contig
-    default: 0
     inputBinding:
       position: 101
       prefix: -c
@@ -123,7 +117,6 @@ inputs:
       - int
     doc: Trim up to -t amino acid(s) on the contig end when all possibilities have
       been exhausted for an extension
-    default: 0
     inputBinding:
       position: 101
       prefix: -t
@@ -140,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: Target sequence word size to hash
-    default: 5
     inputBinding:
       position: 101
       prefix: -j

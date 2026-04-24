@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - File
     doc: PWM descriptor file. Default is Human.PWM.txt included in package
-    default: Human.PWM.txt
     inputBinding:
       position: 101
       prefix: --pwm
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum mean occupancy for NFR.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --max_occ
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum for minimum of upper bound occupancy in NFR.
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --max_occ_upper

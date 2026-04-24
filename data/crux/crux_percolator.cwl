@@ -93,7 +93,6 @@ inputs:
     doc: Apply the specified threshold to PSM, peptide and protein probabilities
       to obtain a faster estimate of the alpha, beta and gamma parameters. 
       Default = 0; Recommended when set = 0.2.
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --fido-fast-gridsearch
@@ -113,7 +112,6 @@ inputs:
     doc: Setting the gridsearch-depth to 0 (fastest), 1 or 2 (slowest) controls 
       how much computational time is required for the estimation of alpha, beta 
       and gamma parameters for Fido. Default = 0.
-    default: 0
     inputBinding:
       position: 102
       prefix: --fido-gridsearch-depth
@@ -124,7 +122,6 @@ inputs:
     doc: Q-value threshold that will be used in the computation of the MSE and 
       ROC AUC score in the grid search. Recommended 0.05 for normal size 
       datasets and 0.1 for large datasets.
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --fido-gridsearch-mse-threshold
@@ -154,7 +151,6 @@ inputs:
     doc: To speed up inference, proteins for which none of the associated 
       peptides has a probability exceeding the specified threshold will be 
       assigned probability = 0.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --fido-protein-truncation-threshold
@@ -180,7 +176,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal number of iterations.
-    default: 10
     inputBinding:
       position: 102
       prefix: --maxiter
@@ -190,7 +185,6 @@ inputs:
       - int
     doc: Number of nested cross validation bins within each cross validation 
       bin. This should reduce overfitting of the hyperparameters.
-    default: 1
     inputBinding:
       position: 102
       prefix: --nested-xval-bins
@@ -282,7 +276,6 @@ inputs:
     doc: Define the text pattern to identify decoy proteins in the database for 
       the picked-protein algorithm. This will have no effect on the target/decoy
       labels specified in the input file.
-    default: random_
     inputBinding:
       position: 102
       prefix: --protein-decoy-pattern
@@ -293,7 +286,6 @@ inputs:
     doc: Type of enzyme 
       "no_enzyme","elastase","pepsin","proteinasek","thermolysin","trypsinp","chymotrypsin","lys-n","lys-c","arg-c","asp-n","glu-c","trypsin".
       Default="trypsin".
-    default: trypsin
     inputBinding:
       position: 102
       prefix: --protein-enzyme
@@ -343,7 +335,6 @@ inputs:
       detect the search type automatically), "concatenated" (single search on concatenated
       target-decoy protein db) or "separate" (two searches, one against target and
       one against decoy protein db).'
-    default: auto
     inputBinding:
       position: 102
       prefix: --search-input
@@ -352,7 +343,6 @@ inputs:
       - 'null'
       - int
     doc: Set seed of the random number generator.
-    default: 1
     inputBinding:
       position: 102
       prefix: --seed
@@ -393,7 +383,6 @@ inputs:
       vector to evaluate the other PSMs. Recommended when analyzing huge numbers
       (>1 million) of PSMs. When set to 0, all PSMs are used for training as 
       normal.
-    default: 0
     inputBinding:
       position: 102
       prefix: --subset-max-train
@@ -412,7 +401,6 @@ inputs:
       - float
     doc: False discovery rate threshold for evaluating best cross validation 
       result and reported end result.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --testFDR
@@ -430,7 +418,6 @@ inputs:
       - float
     doc: False discovery rate threshold to define positive examples in training.
       Set to testFDR if 0.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --trainFDR
@@ -469,7 +456,6 @@ inputs:
       - 'null'
       - int
     doc: 'Set verbosity of output: 0=no processing info, 5=all.'
-    default: 2
     inputBinding:
       position: 102
       prefix: --verbose

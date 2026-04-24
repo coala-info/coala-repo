@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: length of acceptable deletion
-    default: 3
     inputBinding:
       position: 101
       prefix: --acceptable-deletion
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: length of acceptable insertion
-    default: 3
     inputBinding:
       position: 101
       prefix: --acceptable-insertion

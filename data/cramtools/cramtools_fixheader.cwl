@@ -13,7 +13,6 @@ inputs:
       - boolean
     doc: Calculate MD5 for sequences mentioned in the header. Requires --reference-fasta-file
       option.
-    default: false
     inputBinding:
       position: 101
       prefix: --confirm-md5
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - boolean
     doc: Inject URI for all reference sequences in the header.
-    default: false
     inputBinding:
       position: 101
       prefix: --inject-uri
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: 'Change log level: DEBUG, INFO, WARNING, ERROR.'
-    default: ERROR
     inputBinding:
       position: 101
       prefix: --log-level
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: String formatting pattern for sequence URI to be injected.
-    default: http://www.ebi.ac.uk/ena/cram/md5/%s
     inputBinding:
       position: 101
       prefix: --uri-pattern

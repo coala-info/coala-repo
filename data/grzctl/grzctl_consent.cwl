@@ -14,7 +14,6 @@ inputs:
       - string
     doc: "date for which to check consent validity in ISO\n                      \
       \   format (default: today)"
-    default: today
     inputBinding:
       position: 101
       prefix: --date

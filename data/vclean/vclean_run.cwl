@@ -73,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Put the number of CPU to use.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -84,7 +83,6 @@ inputs:
     doc: Put the threshold for the Contamination probability rate value. 
       default=0.6. if the contamination probability value is over the set score,
       the input fasta are assigned as CONTAMINATION.
-    default: 0.6
     inputBinding:
       position: 102
       prefix: --threshold
@@ -101,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: put the translate table
-    default: 11
     inputBinding:
       position: 102
       prefix: --translate_table

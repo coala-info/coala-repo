@@ -33,7 +33,6 @@ inputs:
       - string
     doc: 'Sequence length to be use for identity and similarity calculations [possible
       values: smallest, mean, largest, alignment]'
-    default: smallest
     inputBinding:
       position: 102
       prefix: --length
@@ -43,7 +42,6 @@ inputs:
       - string
     doc: 'Type of matrix to be used for Normalized Similarity Score [possible values:
       blosum62, pam250, gonnet]'
-    default: blosum62
     inputBinding:
       position: 102
       prefix: --matrix
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: Gap extending penalty (Pe)
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --pe
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: Gap opening penalty (Po)
-    default: 10.0
     inputBinding:
       position: 102
       prefix: --po
@@ -86,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use. 0 use all available threads
-    default: 0
     inputBinding:
       position: 102
       prefix: --threads

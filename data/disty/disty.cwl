@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: "input format\n                 0: ACGT\n                 1: 01"
-    default: 0
     inputBinding:
       position: 102
       prefix: -i
@@ -27,7 +26,6 @@ inputs:
       \            1: ignore pairwisely and normalize\n                 2: ignore
       globally\n                 3: replace by the major allele\n                \
       \ 4: replace by the closest individual (not implemented yet)"
-    default: 0
     inputBinding:
       position: 102
       prefix: -s
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: skip columns having frequency of N > FLOAT
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -n

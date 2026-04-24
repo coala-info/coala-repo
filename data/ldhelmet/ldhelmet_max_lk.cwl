@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: Rho value to end maximum likelihood estimation.
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --max_lk_end
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Amount to increment by for maximum likelihood estimation.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --max_lk_resolution
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: Rho value to begin maximum likelihood estimation.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --max_lk_start
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 1
     inputBinding:
       position: 101
       prefix: --num_threads
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum Pade grid value.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --pade_max_rho
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: Pade grid increment.
-    default: 10
     inputBinding:
       position: 101
       prefix: --pade_resolution
@@ -119,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Window size.
-    default: 50
     inputBinding:
       position: 101
       prefix: --window_size

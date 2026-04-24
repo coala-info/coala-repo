@@ -18,7 +18,6 @@ inputs:
       - boolean
     doc: if TRUE, perform grid search of optimal parameters for classification 
       model
-    default: false
     inputBinding:
       position: 101
       prefix: --grid
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: name of output trained model in workDir
-    default: rf_model_cv
     inputBinding:
       position: 101
       prefix: --name
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: number of folds in cross-validation. Must be at least 2.
-    default: 5
     inputBinding:
       position: 101
       prefix: --n-splits
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - Directory
     doc: working directory
-    default: workDir/
     inputBinding:
       position: 101
       prefix: --work-dir

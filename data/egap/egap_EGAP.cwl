@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpu_threads
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Amount of RAM in GB to allocate
-    default: 8
     inputBinding:
       position: 101
       prefix: --ram_gb

@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: slope of base pair distance penalty
-    default: 0.012
     inputBinding:
       position: 102
       prefix: --alpha
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: turning point of base pair distance penalty
-    default: 315.0
     inputBinding:
       position: 102
       prefix: --beta
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: minimum penalty factor for base pairs
-    default: 0.003
     inputBinding:
       position: 102
       prefix: --delta
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: base pair weight factor
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --gamma

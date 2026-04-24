@@ -45,7 +45,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_path
-    default: system.pdb
 
   config:
     label: Advanced configuration options for biobb_chemistry ReduceRemoveHydrogens

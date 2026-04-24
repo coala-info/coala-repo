@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: batch size
-    default: 100000
     inputBinding:
       position: 102
       prefix: -b
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: edge coverage tag in the GFA file
-    default: EC:i
     inputBinding:
       position: 102
       prefix: --edge-c-tag
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: kmer coverage tag in the GFA file
-    default: KC:i
     inputBinding:
       position: 102
       prefix: --kmer-c-tag
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: kmer size
-    default: 1001
     inputBinding:
       position: 102
       prefix: -k
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: maximum bubble size for assembly graph clean
-    default: 100000
     inputBinding:
       position: 102
       prefix: --max-bubble
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: maximum copy number to consider
-    default: 10
     inputBinding:
       position: 102
       prefix: -C
@@ -87,7 +81,6 @@ inputs:
       - 'null'
       - float
     doc: maximum E-value of a core gene
-    default: 1e-06
     inputBinding:
       position: 102
       prefix: -e
@@ -96,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: maximum amount of data to use; suffix K/M/G recognized
-    default: 0
     inputBinding:
       position: 102
       prefix: -D
@@ -105,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: maximum tip size for assembly graph clean
-    default: 10000
     inputBinding:
       position: 102
       prefix: --max-tip
@@ -114,7 +105,6 @@ inputs:
       - 'null'
       - float
     doc: minimum arc coverage
-    default: 0.35
     inputBinding:
       position: 102
       prefix: -a
@@ -123,7 +113,6 @@ inputs:
       - 'null'
       - string
     doc: minimum number of core gene gain; the second INT for mitochondria
-    default: 3,1
     inputBinding:
       position: 102
       prefix: -g
@@ -132,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: minimum annotation score of a core gene
-    default: 300.0
     inputBinding:
       position: 102
       prefix: -S
@@ -141,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: minimum kmer coverage
-    default: 30
     inputBinding:
       position: 102
       prefix: -c
@@ -150,7 +137,6 @@ inputs:
       - 'null'
       - float
     doc: minimum coverage of a sequence compared to the subgraph average
-    default: 0.2
     inputBinding:
       position: 102
       prefix: -q
@@ -159,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of a singleton sequence to keep
-    default: 10000
     inputBinding:
       position: 102
       prefix: -l
@@ -176,7 +161,6 @@ inputs:
       - 'null'
       - File
     doc: mitochondria gene annotation HMM profile database
-    default: 'NULL'
     inputBinding:
       position: 102
       prefix: -m
@@ -185,7 +169,6 @@ inputs:
       - 'null'
       - string
     doc: nhmmscan executable path
-    default: nhmmscan
     inputBinding:
       position: 102
       prefix: --nhmmscan
@@ -210,7 +193,6 @@ inputs:
       - 'null'
       - File
     doc: plastid gene annotation HMM profile database
-    default: 'NULL'
     inputBinding:
       position: 102
       prefix: -p
@@ -219,7 +201,6 @@ inputs:
       - 'null'
       - float
     doc: prefer circular path to longest if >= FLOAT sequence covered
-    default: 0.9
     inputBinding:
       position: 102
       prefix: -f
@@ -228,7 +209,6 @@ inputs:
       - 'null'
       - string
     doc: sequence coverage tag in the GFA file
-    default: SC:f
     inputBinding:
       position: 102
       prefix: --seq-c-tag
@@ -237,7 +217,6 @@ inputs:
       - 'null'
       - int
     doc: smer size (no larger than 31)
-    default: 31
     inputBinding:
       position: 102
       prefix: -s
@@ -246,7 +225,6 @@ inputs:
       - 'null'
       - Directory
     doc: temporary directory
-    default: 'NULL'
     inputBinding:
       position: 102
       prefix: -T
@@ -255,7 +233,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: -t
@@ -264,7 +241,6 @@ inputs:
       - 'null'
       - int
     doc: maximum round of assembly graph unzipping
-    default: 3
     inputBinding:
       position: 102
       prefix: --unzip-round
@@ -282,7 +258,6 @@ inputs:
       - 'null'
       - int
     doc: verbose level
-    default: 0
     inputBinding:
       position: 102
       prefix: -v
@@ -291,7 +266,6 @@ inputs:
       - 'null'
       - float
     doc: maximum relative edge coverage for weak crosslink clean
-    default: 0.3
     inputBinding:
       position: 102
       prefix: --weak-cross

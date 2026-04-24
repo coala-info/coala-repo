@@ -94,7 +94,6 @@ inputs:
         items: string
     doc: List of QC to display. Available qc = violin_plot, total_counts, 
       n_genes_by_counts, pct_counts_mt.
-    default: violin_plot total_counts n_genes_by_counts pct_counts_mt
     inputBinding:
       position: 104
       prefix: --qc_display

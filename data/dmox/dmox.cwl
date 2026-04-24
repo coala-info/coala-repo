@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Raise to output BX codes as part of demultiplexed fastq identifiers
-    default: true
     inputBinding:
       position: 101
       prefix: --bx
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Distance metric to use when matching modules against references
-    default: levenshtein
     inputBinding:
       position: 101
       prefix: --distance
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - boolean
     doc: Raise to output the last part of original fastq identifiers
-    default: false
     inputBinding:
       position: 101
       prefix: --id-tail
@@ -67,7 +64,6 @@ inputs:
     doc: Stop reading input files if this number of fastq blocks are queued in 
       memory, still waiting for a writer to pick them up. Increase to improve 
       performance *provided you have enough RAM*
-    default: 65536
     inputBinding:
       position: 101
       prefix: --max-queued-blocks
@@ -76,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Size of one barcode module
-    default: 6
     inputBinding:
       position: 101
       prefix: --module-size
@@ -94,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Total number of reference barcode modules for each letter
-    default: 96
     inputBinding:
       position: 101
       prefix: --n-modules
@@ -112,7 +106,6 @@ inputs:
       - 'null'
       - boolean
     doc: Raise to output QX codes as part of demultiplexed fastq identifiers
-    default: false
     inputBinding:
       position: 101
       prefix: --qx
@@ -134,7 +127,6 @@ inputs:
       - int
     doc: Number of fastq blocks to read before blocking when the above limit is 
       hit. Don't tweak without profiling performances
-    default: 256
     inputBinding:
       position: 101
       prefix: --readers-channel-capacity
@@ -167,7 +159,6 @@ inputs:
       - 'null'
       - boolean
     doc: Raise to output RX codes as part of demultiplexed fastq identifiers
-    default: false
     inputBinding:
       position: 101
       prefix: --rx
@@ -210,7 +201,6 @@ inputs:
       - 'null'
       - int
     doc: Size of memory buffers for accumulation before writing to disk
-    default: 1048576
     inputBinding:
       position: 101
       prefix: --writers-capacity
@@ -219,7 +209,6 @@ inputs:
       - 'null'
       - int
     doc: Desired output compression level (defaults to gzip's default)
-    default: 6
     inputBinding:
       position: 101
       prefix: --zlevel

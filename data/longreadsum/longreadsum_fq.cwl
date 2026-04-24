@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: 'Will output detail in files? Default: 0(no).'
-    default: 0
     inputBinding:
       position: 101
       prefix: --detail
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: 'The percentage of downsampling for quick run. Default: 1.0 without downsampling'
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --downsample_percentage
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: 'Font size for plots. Default: 14'
-    default: 14
     inputBinding:
       position: 101
       prefix: --fontsize
@@ -74,7 +71,6 @@ inputs:
       - int
     doc: 'Logging level. 1: DEBUG, 2: INFO, 3: WARNING, 4: ERROR, 5: CRITICAL. Default:
       2.'
-    default: 2
     inputBinding:
       position: 101
       prefix: --log_level
@@ -83,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: 'Marker size for plots. Default: 10'
-    default: 10
     inputBinding:
       position: 101
       prefix: --markersize
@@ -92,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: 'The prefix of output. Default: `QC_`.'
-    default: QC_
     inputBinding:
       position: 101
       prefix: --outprefix
@@ -102,7 +96,6 @@ inputs:
       - type: array
         items: int
     doc: 'Set the number of reads to randomly sample from the file. Default: 8.'
-    default: 8
     inputBinding:
       position: 101
       prefix: --readCount
@@ -111,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: 'The number for random seed. Default: 1.'
-    default: 1
     inputBinding:
       position: 101
       prefix: --seed
@@ -120,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: 'The number of threads used. Default: 1.'
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -129,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: 'User defined quality offset for bases in fq. Default: -1.'
-    default: -1
     inputBinding:
       position: 101
       prefix: --udqual

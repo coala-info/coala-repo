@@ -130,7 +130,6 @@ inputs:
       for complexes. Older versions of the AF2 models are generally worse, 
       however they can sometimes result in better predictions. If the model is 
       not already downloaded, it will be automatically downloaded.
-    default: auto
     inputBinding:
       position: 103
       prefix: --model-type
@@ -140,7 +139,6 @@ inputs:
       - string
     doc: 'Databases to use to create the MSA: UniRef30+Environmental (default), UniRef30
       only or None. Using an A3M file as input overwrites this option.'
-    default: mmseqs2_uniref_env
     inputBinding:
       position: 103
       prefix: --msa-mode
@@ -214,7 +212,6 @@ inputs:
       - string
     doc: 'Multimer MSA pairing mode for complex prediction: unpaired MSA only, paired
       MSA only, both (default).'
-    default: unpaired_paired
     inputBinding:
       position: 103
       prefix: --pair-mode
@@ -256,7 +253,6 @@ inputs:
       - 'null'
       - string
     doc: Choose metric to rank the "--num-models" predicted models.
-    default: auto
     inputBinding:
       position: 103
       prefix: --rank
@@ -354,7 +350,6 @@ inputs:
       - string
     doc: 'Sort input queries by: none, length, random. Sorting by length speeds up
       prediction as models are recompiled less often.'
-    default: none
     inputBinding:
       position: 103
       prefix: --sort-queries-by

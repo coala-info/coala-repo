@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: clustered-contigs
     inputBinding:
       position: 101
       prefix: --output-folder
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: 0=all cores; otherwise N threads
-    default: 0
     inputBinding:
       position: 101
       prefix: --threads

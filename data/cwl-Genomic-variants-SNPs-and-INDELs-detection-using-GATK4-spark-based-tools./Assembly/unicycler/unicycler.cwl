@@ -29,7 +29,6 @@ inputs:
         - fastqsanger
         - fastqsanger.gz
     doc: "Type of the First set of reads. Only when fastq_file_type = single  or  paired"  
-    default: fastqsanger
 
   - id: fastq1
     type: File
@@ -47,7 +46,6 @@ inputs:
         symbols:
          - fastqsanger
          - fastqsanger.gz
-    default: "null"
     doc: "Type of the Second set of reads. Only when fastq_file_type=paired"  
 
     
@@ -80,7 +78,6 @@ inputs:
 #    
   - id: compute_slots
     type:  int
-    default: 4
     doc: ""
     
 
@@ -101,25 +98,21 @@ inputs:
 
   - id: min_fasta_length
     type:  int
-    default: 100
     doc: "Exclude contigs from the FASTA file which are shorter than this length (bp)"
 
 
   - id: linear_seqs
     type:  int
-    default: 0
     doc: "The expected number of linear (i.e. non-circular) sequences in the assembly"
 
 
   - id: min_anchor_seg_len
     type:  int
-    default: 0
     doc: "Unicycler will not use segments shorter than this as scaffolding anchors"
 
 
   - id: spades_no_correct
     type:  boolean
-    default: false
     doc: |
         Unicycler uses SPAdes to construct assembly graphs.
         You can modify some of the SPAdes settings here.
@@ -130,7 +123,6 @@ inputs:
  
   - id: spades_min_kmer_frac
     type:  float
-    default: 0.2
     doc: |
          Lowest k-mer size for SPAdes assembly,
          expressed as a fraction of the read length. 
@@ -138,7 +130,6 @@ inputs:
 
   - id: spades_max_kmer_frac
     type:  float
-    default: 0.95
 #    max: 1.0
 #    min: 0.0
     doc: |
@@ -150,7 +141,6 @@ inputs:
   # check default values
   - id: spades_kmers
     type:  string
-    default: "11,127"
     doc: |
          Exact k-mers size to use for SPAdes assembly, comma-separated"
          Kmers must be comma-separated odd integers (no repitition)
@@ -158,7 +148,6 @@ inputs:
 
   - id: spades_kmer_count
     type:  int
-    default: 10
 #    min: 0
     doc: "Number of k-mer steps to use in SPAdes assembly, min 0"
 
@@ -166,7 +155,6 @@ inputs:
  
   - id: spades_depth_filter
     type:  float
-    default: 0.25
 #    min: 0.0
 #    max: 1.0
     doc: |
@@ -177,14 +165,12 @@ inputs:
 
   - id: spades_largest_component
     type:  boolean
-    default: false
     doc: "Only keep the largest connected component of the assembly graph if true"
 
 
 
   - id: rotation_no_rotate
     type:  boolean
-    default: false
     doc: |
          These options control the rotation of completed circular sequence
          near the end of the Unicycler pipeline. Use this ONLY if you know what you are doing!
@@ -202,31 +188,26 @@ inputs:
 
   - id: rotation_start_gene_id
     type:  float
-    default: 90.0
     doc: "The minimum required BLAST percent identity for a start gene search. max 100, min 0"
 
 
   - id: rotation_start_gene_cov
     type:  float
-    default: 95.0
     doc: "The minimum required BLAST percent coverage for a start gene search. min 0, max 100"
 
 
   - id: pilon_no_pilon
     type:  boolean
-    default: false
     doc: "Unicycler uses Pilon tool for polishing final assembly. Do not use if true"
 
 
   - id: graph_clean_min_component_size
     type:  int
-    default: 1000
     doc: "Contigs shorter than this value (bp) will not be polished using Pilon; min 0"
 
     
   - id: graph_clean_min_dead_end_size
     type:  int
-    default: 1000
     doc: |
          These options control the removal of small leftover sequences after bridging is complete.
          Unbridged graph components smaller than this size will be removed from the final graph,
@@ -240,7 +221,6 @@ inputs:
 
   - id: lr_align_scores
     type:  string
-    default: "3,-6,-5,-2"
     doc: |
           Comma-delimited string of alignment scores: match, mismatch, gap open, gap extend
 

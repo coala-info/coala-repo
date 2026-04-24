@@ -58,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: Mass spectrometry resolution.
-    default: 1000.0
     inputBinding:
       position: 102
       prefix: --resolution

@@ -52,7 +52,6 @@ inputs:
       spectra. To avoid rounding issues, each k-mer frequency is also rescaled 
       by the largest normalization across spectra ('mean' averages frequencies 
       across spectra; 'median' computes the median across spectra)
-    default: mean
     inputBinding:
       position: 101
       prefix: --selection-combination-criterion
@@ -64,7 +63,6 @@ inputs:
       spectra. To avoid rounding issues, each k-mer frequency is also rescaled 
       by the largest normalization across spectra ('mean' averages frequencies 
       across spectra; 'median' computes the median across spectra)
-    default: mean
     inputBinding:
       position: 101
       prefix: --combination-criterion
@@ -300,7 +298,6 @@ inputs:
       - boolean
     doc: whether to output column names for the database present in the register
       when writing it as a tab-separated file
-    default: true
     inputBinding:
       position: 101
       prefix: --table-output-col-names
@@ -320,7 +317,6 @@ inputs:
       - boolean
     doc: whether to output metadata for the database present in the register 
       when writing it as a tab-separated file
-    default: false
     inputBinding:
       position: 101
       prefix: --table-output-metadata
@@ -330,7 +326,6 @@ inputs:
       - boolean
     doc: whether to output row names for the database present in the register 
       when writing it as a tab-separated file
-    default: true
     inputBinding:
       position: 101
       prefix: --table-output-row-names
@@ -340,7 +335,6 @@ inputs:
       - boolean
     doc: whether to output rows whose elements are all zero when writing the 
       database as a tab-separated file
-    default: false
     inputBinding:
       position: 101
       prefix: --table-output-zero-rows
@@ -351,7 +345,6 @@ inputs:
     doc: raise counts to this power before transforming and outputting them. A 
       power of 0 when the 'pseudocounts' method is used performs a logarithmic 
       transformation
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --table-power
@@ -360,7 +353,6 @@ inputs:
       - 'null'
       - int
     doc: set the number of precision digits to be used when outputting counts
-    default: 15
     inputBinding:
       position: 101
       prefix: --table-precision
@@ -372,7 +364,6 @@ inputs:
       transforming and outputting them. A fractional threshold between 0. and 1.
       is taken as a relative one with respect to the sum of all counts in the 
       spectrum
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --table-threshold
@@ -381,7 +372,6 @@ inputs:
       - 'null'
       - string
     doc: transformation to apply to table elements before outputting them
-    default: power
     inputBinding:
       position: 101
       prefix: --table-transform
@@ -390,7 +380,6 @@ inputs:
       - 'null'
       - string
     doc: transformation to apply to table elements before outputting them
-    default: power
     inputBinding:
       position: 101
       prefix: --table-transformation
@@ -402,7 +391,6 @@ inputs:
       it as a tab-separated file (if 'true': rows are spectrum names, columns [metadata
       and] k-mer names; if 'false': rows are [metadata and] k-mer names, columns spectrum
       names)"
-    default: false
     inputBinding:
       position: 101
       prefix: --table-transpose
@@ -412,7 +400,6 @@ inputs:
       - int
     doc: number of concurrent computing threads to be spawned (default 
       automatically detected from your configuration)
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -421,7 +408,6 @@ inputs:
       - 'null'
       - boolean
     doc: set verbose execution
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

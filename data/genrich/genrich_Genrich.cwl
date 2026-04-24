@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Expand cut sites to <int> bp
-    default: 100
     inputBinding:
       position: 101
       prefix: -d
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use ATAC-seq mode
-    default: false
     inputBinding:
       position: 101
       prefix: -j
@@ -74,7 +72,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep unpaired alignments
-    default: false
     inputBinding:
       position: 101
       prefix: -y
@@ -83,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance between signif. sites
-    default: 100
     inputBinding:
       position: 101
       prefix: -g
@@ -92,7 +88,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum p-value
-    default: 0.01
     inputBinding:
       position: 101
       prefix: -p
@@ -101,7 +96,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum q-value (FDR-adjusted p-value)
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -q
@@ -110,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum MAPQ to keep an alignment
-    default: 0
     inputBinding:
       position: 101
       prefix: -m
@@ -119,7 +112,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum AUC for a peak
-    default: 200.0
     inputBinding:
       position: 101
       prefix: -a
@@ -128,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of a peak
-    default: 0
     inputBinding:
       position: 101
       prefix: -l
@@ -145,7 +136,6 @@ inputs:
       - 'null'
       - float
     doc: Keep sec alns with AS >= bestAS - <float>
-    default: 0.0
     inputBinding:
       position: 101
       prefix: -s
@@ -162,7 +152,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip Tn5 adjustments of cut sites
-    default: false
     inputBinding:
       position: 101
       prefix: -D

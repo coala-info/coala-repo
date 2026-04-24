@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: number of compression threads
-    default: 0
     inputBinding:
       position: 102
       prefix: --thread

@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum read quality score to consider
-    default: 40
     inputBinding:
       position: 102
       prefix: --max-quality
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length to consider
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-length
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read quality score to consider
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-quality
@@ -66,7 +63,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory for plots and reports
-    default: .
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -75,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

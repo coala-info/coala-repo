@@ -24,7 +24,6 @@ inputs:
       \                    make the logspace which will slice the genomes\n      \
       \                                      in logbins. These slices will be in basepairs\n\
       \                                            unit."
-    default: 1.1
     inputBinding:
       position: 101
       prefix: --base
@@ -125,7 +124,6 @@ inputs:
     doc: "Integer. Number of kb that will be remove around\n                     \
       \                       the centromere position given by in the centromere\n\
       \                                            file. [default: 0]"
-    default: 0
     inputBinding:
       position: 101
       prefix: --remove-centromeres

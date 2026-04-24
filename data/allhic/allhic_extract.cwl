@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of links for contig pair
-    default: 3
     inputBinding:
       position: 103
       prefix: --minLinks
@@ -31,7 +30,6 @@ inputs:
       - string
     doc: Restriction site pattern, use comma to separate multiple patterns (N is considered
       as [ACGT]), e.g. 'GATCGATC,GANTGATC,GANTANTC,GATCANTC'
-    default: GATC
     inputBinding:
       position: 103
       prefix: --RE

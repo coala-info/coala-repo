@@ -26,7 +26,6 @@ inputs:
       - float
     doc: Cutoff for degree of `allele dominance` for a position to be considered
       polymorphic.
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --dominant_frq_thrsh
@@ -55,7 +54,6 @@ inputs:
     doc: Minimum position coverage to perform the polymorphism calculation. 
       Position with a lower depth of coverage will be discarded (i.e. considered
       as zero-coverage positions). This is calculated AFTER --minqual.
-    default: 1
     inputBinding:
       position: 102
       prefix: --mincov
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum Reference Length for a reference to be considered.
-    default: 0
     inputBinding:
       position: 102
       prefix: --minlen
@@ -74,7 +71,6 @@ inputs:
       - int
     doc: Minimum base quality. Bases with quality score lower than this will be 
       discarded. This is performed BEFORE --mincov.
-    default: 30
     inputBinding:
       position: 102
       prefix: --minqual

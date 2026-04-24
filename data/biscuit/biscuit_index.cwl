@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: 'BWT construction algorithm: bwtsw, div, or is'
-    default: auto
     inputBinding:
       position: 102
       prefix: -a

@@ -11,7 +11,6 @@ inputs:
       - boolean
     doc: Output all contigs that were assembled, regardless of mapping or 
       length.
-    default: off
     inputBinding:
       position: 101
       prefix: --all-contigs
@@ -21,7 +20,6 @@ inputs:
       - int
     doc: Set the BWA-MEM SW alignment bandwidth for contig to genome alignments.
       BWA-MEM -w
-    default: 1000
     inputBinding:
       position: 101
       prefix: --bandwidth
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Set the BWA-MEM match score. BWA-MEM -A
-    default: 2
     inputBinding:
       position: 101
       prefix: --bwa-match-score
@@ -56,7 +53,6 @@ inputs:
       - int
     doc: Size of a local assembly window (in bp). Set 0 for whole-BAM in one 
       assembly.
-    default: 25000
     inputBinding:
       position: 101
       prefix: --chunk-size
@@ -83,7 +79,6 @@ inputs:
       - float
     doc: Number of standard deviations of calculated insert-size distribution to
       consider discordant.
-    default: 3.92
     inputBinding:
       position: 101
       prefix: --disc-sd-cutoff
@@ -101,7 +96,6 @@ inputs:
       - string
     doc: (f) Fermi-kit BFC correction, (s) Kmer-correction from SGA, (0) no 
       correction (then suggest non-zero -e)
-    default: f
     inputBinding:
       position: 101
       prefix: --ec-correct-type
@@ -111,7 +105,6 @@ inputs:
       - float
     doc: Learn from fraction of non-weird reads during error-correction. Lower 
       number = faster compute
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --ec-subsample
@@ -121,7 +114,6 @@ inputs:
       - float
     doc: Fractional difference two reads can have to overlap. See SGA. 0 is 
       fast, but requires error correcting.
-    default: 0
     inputBinding:
       position: 101
       prefix: --error-rate
@@ -130,7 +122,6 @@ inputs:
       - 'null'
       - boolean
     doc: Gzip and tabix the output VCF files.
-    default: off
     inputBinding:
       position: 101
       prefix: --g-zip
@@ -140,7 +131,6 @@ inputs:
       - int
     doc: Set the BWA-MEM gap extension penalty for contig to genome alignments. 
       BWA-MEM -E
-    default: 1
     inputBinding:
       position: 101
       prefix: --gap-extension-penalty
@@ -150,7 +140,6 @@ inputs:
       - int
     doc: Set the BWA-MEM gap open penalty for contig to genome alignments. 
       BWA-MEM -O
-    default: 32
     inputBinding:
       position: 101
       prefix: --gap-open-penalty
@@ -193,7 +182,6 @@ inputs:
       - float
     doc: LOD cutoff to classify indel as non-REF (tests AF=0 vs 
       AF=MaxLikelihood(AF))
-    default: 8
     inputBinding:
       position: 101
       prefix: --lod
@@ -203,7 +191,6 @@ inputs:
       - float
     doc: LOD cutoff to classify indel as non-REF (tests AF=0 vs 
       AF=MaxLikelihood(AF)) at DBSnp indel site
-    default: 5
     inputBinding:
       position: 101
       prefix: --lod-dbsnp
@@ -213,7 +200,6 @@ inputs:
       - float
     doc: LOD cutoff to classify indel as somatic (tests AF=0 in normal vs 
       AF=ML(0.5))
-    default: 2.5
     inputBinding:
       position: 101
       prefix: --lod-somatic
@@ -223,7 +209,6 @@ inputs:
       - float
     doc: LOD cutoff to classify indel as somatic (tests AF=0 in normal vs 
       AF=ML(0.5)) at DBSnp indel site
-    default: 4
     inputBinding:
       position: 101
       prefix: --lod-somatic-dbsnp
@@ -232,7 +217,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of somatic reads required to attempt mate-region lookup
-    default: 3
     inputBinding:
       position: 101
       prefix: --mate-lookup-min
@@ -242,7 +226,6 @@ inputs:
       - int
     doc: Max read coverage to send to assembler (per BAM). Subsample reads if 
       exceeded.
-    default: 500
     inputBinding:
       position: 101
       prefix: --max-coverage
@@ -252,7 +235,6 @@ inputs:
       - int
     doc: Max total read count to read in from assembly region. Set 0 to turn 
       off.
-    default: 50000
     inputBinding:
       position: 101
       prefix: --max-reads
@@ -261,7 +243,6 @@ inputs:
       - 'null'
       - int
     doc: Max weird reads to include from a mate lookup region.
-    default: 400
     inputBinding:
       position: 101
       prefix: --max-reads-mate-region
@@ -288,7 +269,6 @@ inputs:
       - int
     doc: Set the BWA-MEM mismatch penalty for contig to genome alignments. 
       BWA-MEM -b
-    default: 18
     inputBinding:
       position: 101
       prefix: --mismatch-penalty
@@ -306,7 +286,6 @@ inputs:
       - 'null'
       - int
     doc: Run assembler multiple times. > 1 will bootstrap the assembly.
-    default: 2
     inputBinding:
       position: 101
       prefix: --num-assembly-rounds
@@ -315,7 +294,6 @@ inputs:
       - 'null'
       - int
     doc: When learning about inputs, number of reads to sample.
-    default: 2,000,000
     inputBinding:
       position: 101
       prefix: --num-to-sample
@@ -333,7 +311,6 @@ inputs:
       - 'null'
       - int
     doc: Set the BWA-MEM penalty for 3' clipping.
-    default: 5
     inputBinding:
       position: 101
       prefix: --penalty-clip-3
@@ -342,7 +319,6 @@ inputs:
       - 'null'
       - int
     doc: Set the BWA-MEM penalty for 5' clipping.
-    default: 5
     inputBinding:
       position: 101
       prefix: --penalty-clip-5
@@ -351,7 +327,6 @@ inputs:
       - 'null'
       - boolean
     doc: Track supporting reads by qname. Increases file sizes.
-    default: off
     inputBinding:
       position: 101
       prefix: --read-tracking
@@ -375,7 +350,6 @@ inputs:
       - float
     doc: Set the BWA-MEM reseed trigger for reseeding mems for contig to genome 
       alignments. BWA-MEM -r
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --reseed-trigger
@@ -385,7 +359,6 @@ inputs:
       - int
     doc: Scale the priors that a site is artifact at given repeat count. 0 means
       assume low (const) error rate
-    default: 1
     inputBinding:
       position: 101
       prefix: --scale-errors
@@ -403,7 +376,6 @@ inputs:
       - 'null'
       - int
     doc: Use NUM threads to run svaba.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -412,7 +384,6 @@ inputs:
       - 'null'
       - int
     doc: Select verbosity level (0-4).
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbose
@@ -429,7 +400,6 @@ inputs:
       - 'null'
       - boolean
     doc: For the case BAM, write reads sent to assembly to a BAM file.
-    default: off
     inputBinding:
       position: 101
       prefix: --write-extracted-reads
@@ -439,7 +409,6 @@ inputs:
       - int
     doc: Set the BWA-MEM SW alignment Z-dropoff for contig to genome alignments.
       BWA-MEM -d
-    default: 100
     inputBinding:
       position: 101
       prefix: --z-dropoff

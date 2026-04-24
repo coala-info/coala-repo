@@ -29,7 +29,6 @@ inputs:
       - float
     doc: maximum span-position distance between SV marks in a cluster to call a 
       SV candidates, when the base SV caller is SVIM
-    default: 0.9
     inputBinding:
       position: 104
       prefix: --cluster_max_distance
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - boolean
     doc: call variants on all contigs, otherwise call chr{1..22,X,Y}
-    default: false
     inputBinding:
       position: 104
       prefix: --include_all_ctgs
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: minimum allele frequency required to call a candidate SNP
-    default: 0.25
     inputBinding:
       position: 104
       prefix: --min_allele_frequency
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of reads that support a SV to be reported
-    default: 2
     inputBinding:
       position: 104
       prefix: --min_support_read
@@ -66,7 +62,6 @@ inputs:
       - string
     doc: choose the base SV caller from cuteSV ("cutesv"), Sniffles (sniffles), 
       or SVIM ("svim")
-    default: cutesv
     inputBinding:
       position: 104
       prefix: --sv_caller
@@ -75,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: minimum SV size to be reported
-    default: 50
     inputBinding:
       position: 104
       prefix: --sv_min_size
@@ -84,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 4
     inputBinding:
       position: 104
       prefix: --thread

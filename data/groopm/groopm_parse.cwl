@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: cutoff contig size during parsing
-    default: 500
     inputBinding:
       position: 104
       prefix: --cutoff
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: overwrite existing DB file without prompting
-    default: false
     inputBinding:
       position: 104
       prefix: --force
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use during BAM parsing
-    default: 1
     inputBinding:
       position: 104
       prefix: --threads

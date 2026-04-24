@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length required for reporting
-    default: 1000
     inputBinding:
       position: 101
       prefix: --length
@@ -43,7 +42,6 @@ inputs:
       - float
     doc: coefficient of variation used for pre-selection, higher--> less 
       restrictive
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --max_CV

@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Method to aggregate networks [top1, top2, borda, irp]
-    default: irp
     inputBinding:
       position: 101
       prefix: --method
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to store temporary data
-    default: auto
     inputBinding:
       position: 101
       prefix: --tempdir
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Number of OpenMP threads for parallel sorting
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

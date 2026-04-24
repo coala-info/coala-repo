@@ -30,14 +30,12 @@ inputs:
   type: int?
   doc: maximum allowed coverage depth. If 0, depth is set to the maximum integer
     value.
-  default: 1000000
   inputBinding:
     position: 102
     prefix: --depth
 - id: ff
   type: string?
   doc: 'filter flags: skip reads with mask bits set'
-  default: UNMAP,SECONDARY,QCFAIL,DUP
   inputBinding:
     position: 102
     prefix: --ff
@@ -57,28 +55,24 @@ inputs:
 - id: min_bq
   type: int?
   doc: base quality threshold
-  default: 0
   inputBinding:
     position: 102
     prefix: --min-BQ
 - id: min_depth
   type: int?
   doc: minimum coverage depth below which a position to be ignored
-  default: 1
   inputBinding:
     position: 102
     prefix: --min-depth
 - id: min_mq
   type: int?
   doc: mapping quality threshold
-  default: 0
   inputBinding:
     position: 102
     prefix: --min-MQ
 - id: min_read_len
   type: int?
   doc: ignore reads shorter than INT bp
-  default: 0
   inputBinding:
     position: 102
     prefix: --min-read-len

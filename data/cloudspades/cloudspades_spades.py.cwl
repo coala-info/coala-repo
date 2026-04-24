@@ -58,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: coverage cutoff value (a positive float number, or 'auto', or 'off')
-    default: off
     inputBinding:
       position: 101
       prefix: --cov-cutoff
@@ -141,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: RAM limit for SPAdes in Gb (terminates if exceeded)
-    default: 250
     inputBinding:
       position: 101
       prefix: --memory
@@ -304,7 +302,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 16
     inputBinding:
       position: 101
       prefix: --threads

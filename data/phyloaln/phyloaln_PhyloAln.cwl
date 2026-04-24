@@ -12,7 +12,6 @@ inputs:
       - string
     doc: the suffix of the reference FASTA alignment files when using 
       "-d"(default:.fa)
-    default: .fa
     inputBinding:
       position: 101
       prefix: --aln_suffix
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: minimum overlap length when cross contamination detection(default:30)
-    default: 30
     inputBinding:
       position: 101
       prefix: --cross_overlap_len
@@ -40,7 +38,6 @@ inputs:
       - float
     doc: minimum overlap percent identity when cross contamination 
       detection(default:98.00)
-    default: 98.0
     inputBinding:
       position: 101
       prefix: --cross_overlap_pident
@@ -60,7 +57,6 @@ inputs:
     doc: the file format of the provided FASTA/FASTQ files, 'large_fasta' is 
       recommended for speeding up reading the FASTA files with long 
       sequences(e.g. genome sequences) and cannot be guessed(default:guess)
-    default: guess
     inputBinding:
       position: 101
       prefix: --file_format
@@ -74,7 +70,6 @@ inputs:
       'all' means remaining all sequences, 'expression' means the sequence with 
       highest read counts after assembly, 'length' means sequence with longest 
       length
-    default: consensus
     inputBinding:
       position: 101
       prefix: --final_seq
@@ -84,7 +79,6 @@ inputs:
       - int
     doc: the genetic code used in translation(default:1 = the standard code, see
       https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi)
-    default: 1
     inputBinding:
       position: 101
       prefix: --gencode
@@ -96,7 +90,6 @@ inputs:
     doc: the parameters when using HMMER hmmbuild for reference preparation, 
       with the format of ' --xxx' of each parameter, in which space is 
       required(default:[])
-    default: []
     inputBinding:
       position: 101
       prefix: --hmmbuild_parameters
@@ -108,7 +101,6 @@ inputs:
     doc: the parameters when using HMMER hmmsearch for mapping the sequences, 
       with the format of ' --xxx' of each parameter, in which space is 
       required((default:[])
-    default: []
     inputBinding:
       position: 101
       prefix: --hmmsearch_parameters
@@ -149,7 +141,6 @@ inputs:
       - float
     doc: minimum expression value when cross contamination 
       detection(default:0.20)
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --min_exp
@@ -159,7 +150,6 @@ inputs:
       - float
     doc: minimum expression fold when cross contamination 
       detection(default:5.00)
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --min_exp_fold
@@ -183,7 +173,6 @@ inputs:
       'prot' suitable for protein-to-nucleotide alignment, 'codon' and 
       'dna_codon' suitable for codon-to-nucleotide alignment based on protein 
       and nucleotide alignments respectively)
-    default: dna
     inputBinding:
       position: 101
       prefix: --mol_type
@@ -247,14 +236,12 @@ inputs:
     doc: the weight coefficient to adjust strictness of the foreign or no-signal
       sequence filter, small number or decimal means ralaxed criterion 
       (default:0.90, 1 = not adjust)
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --outgroup_weight
   - id: output_directory
     type: Directory
     doc: the output directory containing the results(default:PhyloAln_out)
-    default: PhyloAln_out
     inputBinding:
       position: 101
       prefix: --output
@@ -263,7 +250,6 @@ inputs:
       - 'null'
       - int
     doc: minimum overlap length when assembling the raw sequences(default:30)
-    default: 30
     inputBinding:
       position: 101
       prefix: --overlap_len
@@ -273,7 +259,6 @@ inputs:
       - float
     doc: minimum overlap percent identity when assembling the raw 
       sequences(default:98.00)
-    default: 98.0
     inputBinding:
       position: 101
       prefix: --overlap_pident
@@ -318,7 +303,6 @@ inputs:
       - string
     doc: the separate symbol between species name and gene identifier in the 
       sequence headers of the alignments(default:.)
-    default: .
     inputBinding:
       position: 101
       prefix: --sep
@@ -352,7 +336,6 @@ inputs:
       - 'null'
       - int
     doc: maximum threads to be totally used in parallel tasks(default:8)
-    default: 8
     inputBinding:
       position: 101
       prefix: --cpu
@@ -363,7 +346,6 @@ inputs:
     doc: the symbol representing unknown bases for missing 
       regions(default:unknow = 'N' in nucleotide alignments and 'X' in protein 
       alignments)
-    default: unknow
     inputBinding:
       position: 101
       prefix: --unknow_symbol

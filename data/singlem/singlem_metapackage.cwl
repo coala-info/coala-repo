@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: Calculate the average number of genes per species in the metapackage.
-    default: false
     inputBinding:
       position: 101
       prefix: --calculate-average-num-genes-per-species
@@ -36,7 +35,6 @@ inputs:
       - string
     doc: Performance-type arguments to use when calling 'diamond blastx' during 
       the prefiltering.
-    default: --block-size 0.5 --target-indexed -c1
     inputBinding:
       position: 101
       prefix: --diamond-prefilter-performance-parameters
@@ -46,7 +44,6 @@ inputs:
       - string
     doc: Performance-type arguments to use when calling 'diamond blastx' during 
       the taxonomy assignment.
-    default: --block-size 0.5 --target-indexed -c1
     inputBinding:
       position: 101
       prefix: --diamond-taxonomy-assignment-performance-parameters
@@ -72,7 +69,6 @@ inputs:
       - string
     doc: DIAMOND sensitivity parameters to use when indexing the prefilter 
       DIAMOND db.
-    default: None
     inputBinding:
       position: 101
       prefix: --makeidx-sensitivity-params
@@ -113,7 +109,6 @@ inputs:
       - 'null'
       - float
     doc: ID for dereplication of prefilter DB
-    default: 0.6
     inputBinding:
       position: 101
       prefix: --prefilter-clustering-threshold
@@ -155,7 +150,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the taxonomy database to use
-    default: custom_taxonomy_database
     inputBinding:
       position: 101
       prefix: --taxonomy-database-name
@@ -164,7 +158,6 @@ inputs:
       - 'null'
       - string
     doc: Version of the taxonomy database to use
-    default: unspecified
     inputBinding:
       position: 101
       prefix: --taxonomy-database-version
@@ -173,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUS to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

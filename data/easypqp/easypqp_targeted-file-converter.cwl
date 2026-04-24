@@ -23,7 +23,6 @@ inputs:
       - string
     doc: "Input file type. Default: None, will be\ndetermined from input file. Valid
       formats:\n[\"tsv\", \"mrm\" ,\"pqp\", \"TraML\", \"parquet\"]"
-    default: None
     inputBinding:
       position: 101
       prefix: --in_type
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: "PQP to TraML: Should legacy TraML IDs be\nused?"
-    default: true
     inputBinding:
       position: 101
       prefix: --legacy_traml_id
@@ -50,7 +48,6 @@ inputs:
       - string
     doc: "Output file type. Default: None, will be\ndetermined from output file. Valid
       formats:\n[\"tsv\", \"pqp\", \"TraML\"]"
-    default: None
     inputBinding:
       position: 101
       prefix: --out_type

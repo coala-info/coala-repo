@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Number of repeats to perform.
-    default: 1
     inputBinding:
       position: 103
       prefix: -r
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 103
       prefix: -t

@@ -44,7 +44,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_gro_path
-    default: system.gro
 
   input_top_zip_path:
     label: Path the input TOP topology in zip format
@@ -75,7 +74,6 @@ inputs:
     inputBinding:
       position: 4
       prefix: --output_top_zip_path
-    default: system.zip
 
   input_ndx_path:
     label: Path to the input index NDX file

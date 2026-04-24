@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: The Access log file to write to.
-    default: None
     inputBinding:
       position: 102
       prefix: --access-logfile
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: The access log format.
-    default: '%(h)s %(l)s %(u)s %(t)s "% (r)s" %(s)s %(b)s "%(f)s" "%(a)s"'
     inputBinding:
       position: 102
       prefix: --access-logformat
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum number of pending connections.
-    default: 2048
     inputBinding:
       position: 102
       prefix: --backlog
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: The socket to bind.
-    default: "['127.0.0.1:8000']"
     inputBinding:
       position: 102
       prefix: --bind
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: Redirect stdout/stderr to specified file in :ref:`errorlog`.
-    default: false
     inputBinding:
       position: 102
       prefix: --capture-output
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Whether client certificate is required (see stdlib ssl module's)
-    default: '0'
     inputBinding:
       position: 102
       prefix: --cert-reqs
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - File
     doc: SSL certificate file
-    default: None
     inputBinding:
       position: 102
       prefix: --certfile
@@ -80,7 +73,6 @@ inputs:
       - 'null'
       - Directory
     doc: Change directory to specified directory before loading apps.
-    default: /opt/biocontainers
     inputBinding:
       position: 102
       prefix: --chdir
@@ -89,7 +81,6 @@ inputs:
       - 'null'
       - boolean
     doc: Check the configuration and exit. The exit status is 0 if the
-    default: false
     inputBinding:
       position: 102
       prefix: --check-config
@@ -98,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: SSL Cipher suite to use, in the format of an OpenSSL cipher list.
-    default: None
     inputBinding:
       position: 102
       prefix: --ciphers
@@ -107,7 +97,6 @@ inputs:
       - 'null'
       - File
     doc: The Gunicorn config file.
-    default: ./gunicorn.conf.py
     inputBinding:
       position: 102
       prefix: --config
@@ -116,7 +105,6 @@ inputs:
       - 'null'
       - boolean
     doc: Daemonize the Gunicorn process.
-    default: false
     inputBinding:
       position: 102
       prefix: --daemon
@@ -125,7 +113,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable redirect access logs to syslog.
-    default: false
     inputBinding:
       position: 102
       prefix: --disable-redirect-access-to-syslog
@@ -135,7 +122,6 @@ inputs:
       - boolean
     doc: Whether to perform SSL handshake on socket connect (see stdlib ssl 
       module's)
-    default: false
     inputBinding:
       position: 102
       prefix: --do-handshake-on-connect
@@ -144,7 +130,6 @@ inputs:
       - 'null'
       - string
     doc: A comma-delimited list of datadog statsd (dogstatsd) tags to append to
-    default: '[]'
     inputBinding:
       position: 102
       prefix: --dogstatsd-tags
@@ -153,7 +138,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable stdio inheritance.
-    default: false
     inputBinding:
       position: 102
       prefix: --enable-stdio-inheritance
@@ -163,7 +147,6 @@ inputs:
       - type: array
         items: string
     doc: Set environment variables in the execution environment.
-    default: '[]'
     inputBinding:
       position: 102
       prefix: --env
@@ -172,7 +155,6 @@ inputs:
       - 'null'
       - File
     doc: The Error log file to write to.
-    default: '-'
     inputBinding:
       position: 102
       prefix: --error-logfile
@@ -181,7 +163,6 @@ inputs:
       - 'null'
       - string
     doc: Front-end's IPs from which allowed to handle set secure headers.
-    default: 127.0.0.1
     inputBinding:
       position: 102
       prefix: --forwarded-allow-ips
@@ -190,7 +171,6 @@ inputs:
       - 'null'
       - int
     doc: Timeout for graceful workers restart.
-    default: 30
     inputBinding:
       position: 102
       prefix: --graceful-timeout
@@ -199,7 +179,6 @@ inputs:
       - 'null'
       - string
     doc: Switch worker process to run as this group.
-    default: '1000'
     inputBinding:
       position: 102
       prefix: --group
@@ -208,7 +187,6 @@ inputs:
       - 'null'
       - boolean
     doc: If true, set the worker process's group access list with all of the
-    default: false
     inputBinding:
       position: 102
       prefix: --initgroups
@@ -217,7 +195,6 @@ inputs:
       - 'null'
       - int
     doc: The number of seconds to wait for requests on a Keep- Alive connection.
-    default: 2
     inputBinding:
       position: 102
       prefix: --keep-alive
@@ -226,7 +203,6 @@ inputs:
       - 'null'
       - File
     doc: SSL key file
-    default: None
     inputBinding:
       position: 102
       prefix: --keyfile
@@ -235,7 +211,6 @@ inputs:
       - 'null'
       - int
     doc: Limit the allowed size of an HTTP request header field.
-    default: 8190
     inputBinding:
       position: 102
       prefix: --limit-request-field_size
@@ -244,7 +219,6 @@ inputs:
       - 'null'
       - int
     doc: Limit the number of HTTP headers fields in a request.
-    default: 100
     inputBinding:
       position: 102
       prefix: --limit-request-fields
@@ -253,7 +227,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum size of HTTP request line in bytes.
-    default: 4094
     inputBinding:
       position: 102
       prefix: --limit-request-line
@@ -262,7 +235,6 @@ inputs:
       - 'null'
       - File
     doc: The log config file to use.
-    default: None
     inputBinding:
       position: 102
       prefix: --log-config
@@ -271,7 +243,6 @@ inputs:
       - 'null'
       - File
     doc: The Error log file to write to.
-    default: '-'
     inputBinding:
       position: 102
       prefix: --log-file
@@ -280,7 +251,6 @@ inputs:
       - 'null'
       - string
     doc: The granularity of Error log outputs.
-    default: info
     inputBinding:
       position: 102
       prefix: --log-level
@@ -289,7 +259,6 @@ inputs:
       - 'null'
       - boolean
     doc: Send *Gunicorn* logs to syslog.
-    default: false
     inputBinding:
       position: 102
       prefix: --log-syslog
@@ -298,7 +267,6 @@ inputs:
       - 'null'
       - string
     doc: Syslog facility name
-    default: user
     inputBinding:
       position: 102
       prefix: --log-syslog-facility
@@ -307,7 +275,6 @@ inputs:
       - 'null'
       - string
     doc: Makes Gunicorn use the parameter as program-name in the syslog entries.
-    default: None
     inputBinding:
       position: 102
       prefix: --log-syslog-prefix
@@ -316,7 +283,6 @@ inputs:
       - 'null'
       - string
     doc: Address to send syslog messages.
-    default: udp://localhost:514
     inputBinding:
       position: 102
       prefix: --log-syslog-to
@@ -325,7 +291,6 @@ inputs:
       - 'null'
       - string
     doc: The logger you want to use to log events in Gunicorn.
-    default: gunicorn.glogging.Logger
     inputBinding:
       position: 102
       prefix: --logger-class
@@ -334,7 +299,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum number of requests a worker will process before restarting.
-    default: 0
     inputBinding:
       position: 102
       prefix: --max-requests
@@ -343,7 +307,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum jitter to add to the *max_requests* setting.
-    default: 0
     inputBinding:
       position: 102
       prefix: --max-requests-jitter
@@ -352,7 +315,6 @@ inputs:
       - 'null'
       - string
     doc: A base to use with setproctitle for process naming.
-    default: None
     inputBinding:
       position: 102
       prefix: --name
@@ -361,7 +323,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disables the use of ``sendfile()``.
-    default: false
     inputBinding:
       position: 102
       prefix: --no-sendfile
@@ -370,7 +331,6 @@ inputs:
       - 'null'
       - string
     doc: Load a PasteDeploy config file. The argument may contain a ``#``
-    default: None
     inputBinding:
       position: 102
       prefix: --paster
@@ -380,7 +340,6 @@ inputs:
       - type: array
         items: string
     doc: Set a PasteDeploy global config variable in ``key=value`` form.
-    default: '[]'
     inputBinding:
       position: 102
       prefix: --paste-global
@@ -389,7 +348,6 @@ inputs:
       - 'null'
       - File
     doc: A filename to use for the PID file.
-    default: None
     inputBinding:
       position: 102
       prefix: --pid
@@ -398,7 +356,6 @@ inputs:
       - 'null'
       - boolean
     doc: Load application code before the worker processes are forked.
-    default: false
     inputBinding:
       position: 102
       prefix: --preload
@@ -408,7 +365,6 @@ inputs:
       - boolean
     doc: Print the configuration settings as fully resolved. Implies 
       :ref:`check-config`.
-    default: false
     inputBinding:
       position: 102
       prefix: --print-config
@@ -418,7 +374,6 @@ inputs:
       - string
     doc: Front-end's IPs from which allowed accept proxy requests (comma 
       separate).
-    default: 127.0.0.1
     inputBinding:
       position: 102
       prefix: --proxy-allow-from
@@ -427,7 +382,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable detect PROXY protocol (PROXY mode).
-    default: false
     inputBinding:
       position: 102
       prefix: --proxy-protocol
@@ -436,7 +390,6 @@ inputs:
       - 'null'
       - string
     doc: A comma-separated list of directories to add to the Python path.
-    default: None
     inputBinding:
       position: 102
       prefix: --pythonpath
@@ -445,7 +398,6 @@ inputs:
       - 'null'
       - boolean
     doc: Restart workers when code changes.
-    default: false
     inputBinding:
       position: 102
       prefix: --reload
@@ -454,7 +406,6 @@ inputs:
       - 'null'
       - string
     doc: The implementation that should be used to power :ref:`reload`.
-    default: auto
     inputBinding:
       position: 102
       prefix: --reload-engine
@@ -465,7 +416,6 @@ inputs:
         items: File
     doc: Extends :ref:`reload` option to also watch and reload on additional 
       files
-    default: '[]'
     inputBinding:
       position: 102
       prefix: --reload-extra-file
@@ -474,7 +424,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set the ``SO_REUSEPORT`` flag on the listening socket.
-    default: false
     inputBinding:
       position: 102
       prefix: --reuse-port
@@ -483,7 +432,6 @@ inputs:
       - 'null'
       - boolean
     doc: Install a trace function that spews every line executed by the server.
-    default: false
     inputBinding:
       position: 102
       prefix: --spew
@@ -492,7 +440,6 @@ inputs:
       - 'null'
       - string
     doc: SSL version to use.
-    default: _SSLMethod.PROTOCOL_TLS
     inputBinding:
       position: 102
       prefix: --ssl-version
@@ -501,7 +448,6 @@ inputs:
       - 'null'
       - string
     doc: '``host:port`` of the statsd server to log to.'
-    default: None
     inputBinding:
       position: 102
       prefix: --statsd-host
@@ -510,7 +456,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix to use when emitting statsd metrics (a trailing ``.`` is added,
-    default: '[]'
     inputBinding:
       position: 102
       prefix: --statsd-prefix
@@ -519,7 +464,6 @@ inputs:
       - 'null'
       - boolean
     doc: Strip spaces present between the header name and the the ``:``.
-    default: false
     inputBinding:
       position: 102
       prefix: --strip-header-spaces
@@ -528,7 +472,6 @@ inputs:
       - 'null'
       - boolean
     doc: Suppress ragged EOFs (see stdlib ssl module's)
-    default: true
     inputBinding:
       position: 102
       prefix: --suppress-ragged-eofs
@@ -537,7 +480,6 @@ inputs:
       - 'null'
       - int
     doc: The number of worker threads for handling requests.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -547,7 +489,6 @@ inputs:
       - int
     doc: Workers silent for more than this many seconds are killed and 
       restarted.
-    default: 30
     inputBinding:
       position: 102
       prefix: --timeout
@@ -556,7 +497,6 @@ inputs:
       - 'null'
       - int
     doc: A bit mask for the file mode on files written by Gunicorn.
-    default: 0
     inputBinding:
       position: 102
       prefix: --umask
@@ -565,7 +505,6 @@ inputs:
       - 'null'
       - string
     doc: Switch worker processes to run as this user.
-    default: '1000'
     inputBinding:
       position: 102
       prefix: --user
@@ -574,7 +513,6 @@ inputs:
       - 'null'
       - string
     doc: The type of workers to use.
-    default: sync
     inputBinding:
       position: 102
       prefix: --worker-class
@@ -583,7 +521,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum number of simultaneous clients.
-    default: 1000
     inputBinding:
       position: 102
       prefix: --worker-connections
@@ -592,7 +529,6 @@ inputs:
       - 'null'
       - Directory
     doc: A directory to use for the worker heartbeat temporary file.
-    default: None
     inputBinding:
       position: 102
       prefix: --worker-tmp-dir
@@ -601,7 +537,6 @@ inputs:
       - 'null'
       - int
     doc: The number of worker processes for handling requests.
-    default: 1
     inputBinding:
       position: 102
       prefix: --workers

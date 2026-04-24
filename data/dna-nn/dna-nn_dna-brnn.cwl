@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: number of bases to train per epoch
-    default: 10000000
     inputBinding:
       position: 102
       prefix: -b
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: dropout rate
-    default: 0.25
     inputBinding:
       position: 102
       prefix: -d
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: number of epochs
-    default: 25
     inputBinding:
       position: 102
       prefix: -m
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: number of GRU layers
-    default: 1
     inputBinding:
       position: 102
       prefix: -l
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: number of hidden neurons
-    default: 32
     inputBinding:
       position: 102
       prefix: -n
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: learning rate
-    default: 0.001
     inputBinding:
       position: 102
       prefix: -r
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: min signal len (0 to disable)
-    default: 50
     inputBinding:
       position: 102
       prefix: -L
@@ -78,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: mini-batch size
-    default: 256
     inputBinding:
       position: 102
       prefix: -B
@@ -103,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: PRNG seed
-    default: 11
     inputBinding:
       position: 102
       prefix: -s
@@ -112,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: segment overlap length
-    default: 50
     inputBinding:
       position: 102
       prefix: -O
@@ -121,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: -t
@@ -138,7 +127,6 @@ inputs:
       - 'null'
       - float
     doc: weight on false positive errors
-    default: 0
     inputBinding:
       position: 102
       prefix: -w
@@ -147,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: window length
-    default: 150
     inputBinding:
       position: 102
       prefix: -u
@@ -156,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: X-drop len (0 to disable)
-    default: 50
     inputBinding:
       position: 102
       prefix: -X

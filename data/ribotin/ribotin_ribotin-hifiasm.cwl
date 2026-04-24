@@ -72,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: 'k-mer size (default: 101)'
-    default: 101
     inputBinding:
       position: 101
       prefix: -k
@@ -90,7 +89,6 @@ inputs:
       - int
     doc: 'Maximum edit distance between two morphs to assign them into the same cluster
       (default: 200)'
-    default: 200
     inputBinding:
       position: 101
       prefix: --morph-cluster-maxedit
@@ -99,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum edit distance to recluster morphs (default: 5)'
-    default: 5
     inputBinding:
       position: 101
       prefix: --morph-recluster-minedit
@@ -125,7 +122,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Output folder prefix (default: ./result)'
-    default: ./result
     inputBinding:
       position: 101
       prefix: --out
@@ -167,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -176,7 +171,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Temporary folder for ultralong ONT read analysis (default: ./tmp)'
-    default: ./tmp
     inputBinding:
       position: 101
       prefix: --ul-tmp-folder

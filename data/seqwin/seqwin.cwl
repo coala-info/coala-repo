@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer length.
-    default: 21
     inputBinding:
       position: 101
       prefix: --kmerlen
@@ -45,7 +44,6 @@ inputs:
       - string
     doc: NCBI download option. Limit to genomes ≥ this assembly level (contig < 
       scaffold < chromosome < complete).
-    default: contig
     inputBinding:
       position: 101
       prefix: --level
@@ -63,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Min length of output signatures.
-    default: 200
     inputBinding:
       position: 101
       prefix: --min-len
@@ -134,7 +131,6 @@ inputs:
       - Directory
     doc: Path prefix for the output directory. Use the current directory by 
       default.
-    default: /
     inputBinding:
       position: 101
       prefix: --prefix
@@ -143,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: Random seed for reproducibility.
-    default: 42
     inputBinding:
       position: 101
       prefix: --seed
@@ -152,7 +147,6 @@ inputs:
       - 'null'
       - string
     doc: NCBI download option. Genome source ('genbank' or 'refseq').
-    default: genbank
     inputBinding:
       position: 101
       prefix: --source
@@ -163,7 +157,6 @@ inputs:
     doc: Stringency level (0-10) for the sensitivity and specificity of output 
       signatures. Higher levels result in lower estimated node penalty 
       thresholds. Used only if --penalty-th is not provided (auto mode).
-    default: 5
     inputBinding:
       position: 101
       prefix: --stringency
@@ -191,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel processes (CPU cores) to use.
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -200,7 +192,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the output directory.
-    default: seqwin-out
     inputBinding:
       position: 101
       prefix: --title
@@ -209,7 +200,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for minimizer sketch.
-    default: 200
     inputBinding:
       position: 101
       prefix: --windowsize

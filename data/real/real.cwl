@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: filtering level for equal hits 0-4
-    default: 2
     inputBinding:
       position: 101
       prefix: --filter_level
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: composition bias
-    default: 0.41
     inputBinding:
       position: 101
       prefix: --gc
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: mutability bias of G&C
-    default: 2
     inputBinding:
       position: 101
       prefix: --gcmut_bias
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: number of matching threads
-    default: 20
     inputBinding:
       position: 101
       prefix: -T
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of errors in seed
-    default: 2
     inputBinding:
       position: 101
       prefix: -s
@@ -56,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: total maximum number of errors
-    default: 5
     inputBinding:
       position: 101
       prefix: -e
@@ -65,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of physical memory to use
-    default: 0.75
     inputBinding:
       position: 101
       prefix: -f
@@ -82,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: offset for quality scores
-    default: autodetect
     inputBinding:
       position: 101
       prefix: -Q
@@ -91,7 +83,6 @@ inputs:
       - 'null'
       - boolean
     doc: rewrite pattern file
-    default: 1
     inputBinding:
       position: 101
       prefix: -R
@@ -100,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: length of seed
-    default: 32
     inputBinding:
       position: 101
       prefix: -l
@@ -109,7 +99,6 @@ inputs:
       - 'null'
       - float
     doc: sequence similarity
-    default: 0.995
     inputBinding:
       position: 101
       prefix: --similarity
@@ -124,7 +113,6 @@ inputs:
       - 'null'
       - float
     doc: transitions fraction of mutations
-    default: 0.71
     inputBinding:
       position: 101
       prefix: --trans
@@ -133,7 +121,6 @@ inputs:
       - 'null'
       - boolean
     doc: search for unique match
-    default: 1
     inputBinding:
       position: 101
       prefix: -u
@@ -142,7 +129,6 @@ inputs:
       - 'null'
       - boolean
     doc: use quality scores
-    default: 1
     inputBinding:
       position: 101
       prefix: -q

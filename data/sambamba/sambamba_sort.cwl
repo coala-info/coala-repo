@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: approximate total memory limit for all threads
-    default: 2GB
     inputBinding:
       position: 102
       prefix: --memory-limit

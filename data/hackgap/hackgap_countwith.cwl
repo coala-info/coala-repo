@@ -25,7 +25,6 @@ inputs:
       - string
     doc: statistics level of detail (none, *summary*, details, full (all 
       subtables))
-    default: summary
     inputBinding:
       position: 101
       prefix: --statistics

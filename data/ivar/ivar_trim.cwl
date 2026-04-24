@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum quality threshold for sliding window to pass (Default: 20)'
-    default: 20
     inputBinding:
       position: 101
       prefix: -q
@@ -75,7 +74,6 @@ inputs:
       - int
     doc: 'Primer position offset (Default: 0). Reads that occur at the specified offset
       positions relative to primer positions will also be trimmed.'
-    default: 0
     inputBinding:
       position: 101
       prefix: -x
@@ -91,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: 'Width of sliding window (Default: 4)'
-    default: 4
     inputBinding:
       position: 101
       prefix: -s

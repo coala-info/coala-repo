@@ -106,7 +106,6 @@ inputs:
       - int
     doc: Specifies the minimal amount of peptides (passing the --qvalthreshold) 
       needed to fit a linear model, default is 10.
-    default: 10
     inputBinding:
       position: 101
       prefix: --minpepnr

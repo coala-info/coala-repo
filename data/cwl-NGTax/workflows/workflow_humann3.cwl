@@ -91,12 +91,10 @@ inputs:
     type: int
     doc: Number of threads to use for computational processes
     label: Number of threads
-    default: 2
   memory:
     type: int
     doc: Maximum memory usage in megabytes (default 8000)
     label: Memory usage (MB)
-    default: 8000
 
   forward_reads:
     type: File[]
@@ -114,7 +112,6 @@ inputs:
     type: boolean
     label: Skip quality filtering
     doc: Skip quality filtering. (Default false)
-    default: false
 
   humandb:
     type: Directory?
@@ -133,13 +130,11 @@ inputs:
     type: boolean
     doc: Use mapped reads mapped to the custom reference db. (Default false, discard mapped)
     label: Use mapped reads
-    default: false
 
   output_filtered_reads:
     type: boolean
     label: Output filtered reads
     doc: Output filtered reads when filtering is applied. (Default false)
-    default: false
 
   ## MetaPhlAn4
   metaphlan4_bt2_database:
@@ -252,9 +247,7 @@ steps:
       bowtie2db: metaphlan4_bt2_database
       reads: interleave_fastq/fastq_out
       analysis_type:
-        default: "rel_ab_w_read_stats"
       input_type: 
-        default: "fastq"
     out: [profile, bowtie2out]
 ############################################
 ### HUMAnN
@@ -298,11 +291,8 @@ steps:
     in:
       input_table: humann/genefamilies_out
       units:
-        default: ["cpm","relab"]
       mode:
-        default: "community"
       update-sname:
-        default: true
     out: [renormalized_table]
 ############################################
 ### HUMAnN - renormalize pathways
@@ -318,9 +308,7 @@ steps:
         linkMerge: merge_flattened
         pickValue: all_non_null
       units:
-        default: ["cpm","relab"]
       mode:
-        default: "community"
     out: [renormalized_table]
 ############################################
 ### HUMAnN - regroup genefamilies
@@ -332,9 +320,7 @@ steps:
       input_table: humann/genefamilies_out
       group:
         # all = RXN,GO,KO,EC,Pfam,eggnog
-        default: "all"
       add_unireftype:
-        default: "N"
       uniref_type: uniref_dbtype
     out: [regrouped_table]
 ###########################################
@@ -351,10 +337,8 @@ steps:
         linkMerge: merge_flattened
       group:
         # all = RXN,GO,KO,EC,Pfam,eggnog
-        default: "all"
       uniref_type: uniref_dbtype
       add_unireftype:
-        default: "N"
     out: [regrouped_table]
   renorm_groups_to_array:
     run: ../tools/expressions/merge_file_arrays.cwl
@@ -375,7 +359,6 @@ steps:
         source: [humann_renorm_table_genefamilies/renormalized_table, humann_renorm_table_pathways/renormalized_table, renorm_groups_to_array/output]
         linkMerge: merge_flattened
       destination:
-        default: "normalized_tables"
     run: ../tools/expressions/files_to_folder.cwl
     out:
       [results]

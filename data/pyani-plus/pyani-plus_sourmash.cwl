@@ -18,7 +18,6 @@ inputs:
       - Directory
     doc: Cache location if required for a method (must be visible to cluster 
       workers).
-    default: .
     inputBinding:
       position: 102
       prefix: --cache
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: How should the internal tools be run?
-    default: local
     inputBinding:
       position: 102
       prefix: --executor
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Comparison method k-mer size.
-    default: 31
     inputBinding:
       position: 102
       prefix: --kmersize
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Run name. Default is 'N genomes using METHOD'.
-    default: N genomes using METHOD
     inputBinding:
       position: 102
       prefix: --name
@@ -86,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the compression scaling ratio.
-    default: 1000
     inputBinding:
       position: 102
       prefix: --scaled

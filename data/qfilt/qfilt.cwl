@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: minimum retained fragment LENGTH
-    default: 50
     inputBinding:
       position: 101
       prefix: -l
@@ -52,7 +51,6 @@ inputs:
       - int
     doc: minimum per-base quality score below which a read will be split or 
       truncated
-    default: 20
     inputBinding:
       position: 101
       prefix: -q
@@ -63,7 +61,6 @@ inputs:
     doc: 'MODE is a 3-bitmask (an integer in [0-7], default=0): if the lowest bit
       is set, it is like passing -s; if the middle bit is set, it is like passing
       -p; and if the highest bit is set, it is like passing -a'
-    default: 0
     inputBinding:
       position: 101
       prefix: -m
@@ -72,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: output in FASTA or FASTQ format
-    default: FASTA
     inputBinding:
       position: 101
       prefix: -f
@@ -82,7 +78,6 @@ inputs:
       - int
     doc: if PREFIX is supplied, prefix matching tolerates at most MISMATCH 
       mismatches
-    default: 0
     inputBinding:
       position: 101
       prefix: -t

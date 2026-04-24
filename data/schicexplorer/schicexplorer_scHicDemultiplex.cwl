@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: Number of lines to buffer in memory, if full, write the data to disk.
-    default: 20000000.0
     inputBinding:
       position: 101
       prefix: --bufferSize
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path of folder to save the demultiplexed files
-    default: demultiplexed
     inputBinding:
       position: 101
       prefix: --outputFolder
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads. Using the python multiprocessing module.
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

@@ -103,7 +103,6 @@ inputs:
       - 'null'
       - string
     doc: The logging level to use.
-    default: INFO
     inputBinding:
       position: 101
       prefix: --verbosity

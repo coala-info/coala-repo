@@ -37,7 +37,6 @@ inputs:
       if --nreads is specified) * marker_counts: non-normalized marker counts [use
       with extreme caution] * marker_pres_table: list of markers present in the sample
       (threshold at 1.0 if not differently specified with --pres_th [default 'rel_ab']"
-    default: rel_ab
     inputBinding:
       position: 102
       prefix: --analysis_type
@@ -78,7 +77,6 @@ inputs:
     doc: Folder containing the MetaPhlAn database. Used if --input_type is 
       fastq, fasta, multifasta, or multifastq [default 
       /usr/local/bin/metaphlan_databases]
-    default: /usr/local/bin/metaphlan_databases
     inputBinding:
       position: 102
       prefix: --bowtie2db
@@ -97,7 +95,6 @@ inputs:
     doc: 'Presets options for BowTie2 (applied only when a multifasta file is provided)
       The choices enabled in MetaPhlAn are: * sensitive * very-sensitive * sensitive-local
       * very-sensitive-local [default very-sensitive]'
-    default: very-sensitive
     inputBinding:
       position: 102
       prefix: --bt2_ps
@@ -173,7 +170,6 @@ inputs:
       will get the latest version. If the database files are not found on the 
       local MetaPhlAn2 installation they will be automatically downloaded 
       [default latest]
-    default: latest
     inputBinding:
       position: 102
       prefix: --index
@@ -182,7 +178,6 @@ inputs:
     doc: set whether the input is the multifasta file of metagenomic reads or 
       the SAM file of the mapping of the reads against the MetaPhlAn db. 
       [default 'automatic', i.e. the script will try to guess the input format]
-    default: automatic
     inputBinding:
       position: 102
       prefix: --input_type
@@ -268,7 +263,6 @@ inputs:
       - 'null'
       - int
     doc: The number of CPUs to use for parallelizing the mapping [default 4]
-    default: 4
     inputBinding:
       position: 102
       prefix: --nproc
@@ -289,7 +283,6 @@ inputs:
       - float
     doc: Percentage of markers with a non zero relative abundance for 
       misidentify a species [default 0.33]
-    default: 0.33
     inputBinding:
       position: 102
       prefix: --perc_nonzero
@@ -308,7 +301,6 @@ inputs:
       - int
     doc: Specify the minimum length of the reads to be considered when parsing 
       the input file with 'read_fastx.py' script, default value is 70
-    default: 70
     inputBinding:
       position: 102
       prefix: --read_min_len
@@ -326,7 +318,6 @@ inputs:
       - string
     doc: Specify the sample ID for this analysis. Defaults to 
       'Metaphlan2_Analysis'.
-    default: Metaphlan2_Analysis
     inputBinding:
       position: 102
       prefix: --sample_id
@@ -335,7 +326,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the sample ID key for this analysis. Defaults to '#SampleID'.
-    default: '#SampleID'
     inputBinding:
       position: 102
       prefix: --sample_id_key
@@ -350,7 +340,6 @@ inputs:
       marker counts (at --stat_q) 'wavg_g' : winsorized clade global average (at --stat_q)
       'wavg_l' : winsorized average of length-normalized marker counts (at --stat_q)
       'med' : median of length-normalized marker counts [default tavg_g]"
-    default: tavg_g
     inputBinding:
       position: 102
       prefix: --stat
@@ -359,7 +348,6 @@ inputs:
       - 'null'
       - float
     doc: Quantile value for the robust average [default 0.2]
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --stat_q
@@ -370,7 +358,6 @@ inputs:
     doc: "The taxonomic level for the relative abundance output: 'a' : all taxonomic
       levels 'k' : kingdoms 'p' : phyla only 'c' : classes only 'o' : orders only
       'f' : families only 'g' : genera only 's' : species only [default 'a']"
-    default: a
     inputBinding:
       position: 102
       prefix: --tax_lev

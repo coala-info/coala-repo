@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bins to use for entropy calculation
-    default: 100
     inputBinding:
       position: 102
       prefix: --bins

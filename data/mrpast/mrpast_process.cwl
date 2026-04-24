@@ -40,7 +40,6 @@ inputs:
       - int
     doc: 'How many blocks to split the trees in for jackknifing, number of reps for
       standard bootstrap. Default: 100'
-    default: 100
     inputBinding:
       position: 103
       prefix: --bootstrap-iter
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Number of jobs (threads) to use. Defaults to 1.
-    default: 1
     inputBinding:
       position: 103
       prefix: --jobs
@@ -89,7 +87,6 @@ inputs:
       - float
     doc: 'Ignore all coalescence events occuring after the given generation (default:
       1000000.0)'
-    default: 1000000.0
     inputBinding:
       position: 103
       prefix: --max-generation
@@ -99,7 +96,6 @@ inputs:
       - float
     doc: 'The minimum time unit for distinguishing between coalescence events (default:
       1.0 generation)'
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --min-time-unit
@@ -109,7 +105,6 @@ inputs:
       - int
     doc: Number of time slices to use. Defaults to 20. Use the suffix 'l' or 'L'
       to use left-skewed time slices.
-    default: 20
     inputBinding:
       position: 103
       prefix: --num-times
@@ -181,7 +176,6 @@ inputs:
       - int
     doc: 'Sample a tree from the ARG every tree-sample-rate base pairs (default: 125000
       bp)'
-    default: 125000
     inputBinding:
       position: 103
       prefix: --tree-sample-rate

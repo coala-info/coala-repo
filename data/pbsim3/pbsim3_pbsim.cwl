@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: maximum accuracy
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --accuracy-max
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: mean accuracy
-    default: 0.85
     inputBinding:
       position: 101
       prefix: --accuracy-mean
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: minimum accuracy
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --accuracy-min
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: depth of coverage
-    default: 20.0
     inputBinding:
       position: 101
       prefix: --depth
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: difference (error) ratio (substitution:insertion:deletion)
-    default: 6:55:39
     inputBinding:
       position: 101
       prefix: --difference-ratio
@@ -70,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: bias intensity of deletion in homopolymer
-    default: 1
     inputBinding:
       position: 101
       prefix: --hp-del-bias
@@ -79,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: prefix of read ID
-    default: S
     inputBinding:
       position: 101
       prefix: --id-prefix
@@ -88,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: maximum length
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --length-max
@@ -97,7 +89,6 @@ inputs:
       - 'null'
       - float
     doc: mean length
-    default: 9000.0
     inputBinding:
       position: 101
       prefix: --length-mean
@@ -106,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length
-    default: 100
     inputBinding:
       position: 101
       prefix: --length-min
@@ -115,7 +105,6 @@ inputs:
       - 'null'
       - float
     doc: standard deviation of length
-    default: 7000.0
     inputBinding:
       position: 101
       prefix: --length-sd
@@ -132,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: number of sequencing passes
-    default: 1
     inputBinding:
       position: 101
       prefix: --pass-num

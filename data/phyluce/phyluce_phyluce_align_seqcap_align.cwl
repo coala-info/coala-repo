@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: The alignment engine to use.
-    default: mafft
     inputBinding:
       position: 101
       prefix: --aligner
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow reads in alignments containing N-bases.
-    default: false
     inputBinding:
       position: 101
       prefix: --ambiguous
@@ -29,7 +27,6 @@ inputs:
       - int
     doc: Process alignments in parallel using --cores for alignment. This is the
       number of PHYSICAL CPUs.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow alignments that do not contain all --taxa.
-    default: false
     inputBinding:
       position: 101
       prefix: --incomplete-matrix
@@ -63,7 +59,6 @@ inputs:
       - float
     doc: The max proportion of sequence divergence allowed between any row of 
       the alignment and the alignment consensus.
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --max-divergence
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum length of alignments to keep.
-    default: 100
     inputBinding:
       position: 101
       prefix: --min-length
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - boolean
     doc: Align, but DO NOT trim alignments.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-trim
@@ -90,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: The output alignment format.
-    default: nexus
     inputBinding:
       position: 101
       prefix: --output-format
@@ -99,7 +91,6 @@ inputs:
       - 'null'
       - float
     doc: The proportion of taxa required to have sequence at alignment ends.
-    default: 0.65
     inputBinding:
       position: 101
       prefix: --proportion
@@ -115,7 +106,6 @@ inputs:
       - float
     doc: The proportion of residues required across the window in proportion of 
       taxa.
-    default: 0.65
     inputBinding:
       position: 101
       prefix: --threshold
@@ -124,7 +114,6 @@ inputs:
       - 'null'
       - string
     doc: The logging level to use.
-    default: INFO
     inputBinding:
       position: 101
       prefix: --verbosity
@@ -133,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: Sliding window size for trimming.
-    default: 20
     inputBinding:
       position: 101
       prefix: --window

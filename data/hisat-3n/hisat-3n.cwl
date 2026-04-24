@@ -101,7 +101,6 @@ inputs:
     doc: "use Bowtie2's dynamic programming alignment algorithm (0) - 0: no dynamic
       programming, 1: conditional dynamic programming, and 2: unconditional dynamic
       programming (slowest)"
-    default: 0
     inputBinding:
       position: 102
       prefix: --bowtie2-dp
@@ -150,7 +149,6 @@ inputs:
       - 'null'
       - boolean
     doc: -1, -2 mates align fw/rev, rev/fw, fw/fw (--fr)
-    default: true
     inputBinding:
       position: 102
       prefix: --fr
@@ -222,7 +220,6 @@ inputs:
       - 'null'
       - int
     doc: maximum fragment length (500), only valid with --no-spliced-alignment
-    default: 500
     inputBinding:
       position: 102
       prefix: --maxins
@@ -231,7 +228,6 @@ inputs:
       - 'null'
       - int
     doc: maximum intron length (500000)
-    default: 500000
     inputBinding:
       position: 102
       prefix: --max-intronlen
@@ -277,7 +273,6 @@ inputs:
       - 'null'
       - int
     doc: report internal counters & metrics every <int> secs (1)
-    default: 1
     inputBinding:
       position: 102
       prefix: --met
@@ -286,7 +281,6 @@ inputs:
       - 'null'
       - boolean
     doc: send metrics to stderr (off)
-    default: false
     inputBinding:
       position: 102
       prefix: --met-stderr
@@ -295,7 +289,6 @@ inputs:
       - 'null'
       - int
     doc: minimum fragment length (0), only valid with --no-spliced-alignment
-    default: 0
     inputBinding:
       position: 102
       prefix: --minins
@@ -304,7 +297,6 @@ inputs:
       - 'null'
       - int
     doc: minimum intron length (20)
-    default: 20
     inputBinding:
       position: 102
       prefix: --min-intronlen
@@ -313,7 +305,6 @@ inputs:
       - 'null'
       - string
     doc: max and min penalties for mismatch; lower qual = lower penalty <6,2>
-    default: 6,2
     inputBinding:
       position: 102
       prefix: --mp
@@ -442,7 +433,6 @@ inputs:
       - 'null'
       - int
     doc: penalty for non-A/C/G/Ts in read/ref (1)
-    default: 1
     inputBinding:
       position: 102
       prefix: --np
@@ -475,7 +465,6 @@ inputs:
       - 'null'
       - int
     doc: penalty for a canonical splice site (0)
-    default: 0
     inputBinding:
       position: 102
       prefix: --pen-cansplice
@@ -492,7 +481,6 @@ inputs:
       - 'null'
       - int
     doc: penalty for a non-canonical splice site (12)
-    default: 12
     inputBinding:
       position: 102
       prefix: --pen-noncansplice
@@ -501,7 +489,6 @@ inputs:
       - 'null'
       - boolean
     doc: qualities are Phred+33 (default)
-    default: true
     inputBinding:
       position: 102
   - id: phred64
@@ -564,7 +551,6 @@ inputs:
       - 'null'
       - string
     doc: read gap open, extend penalties (5,3)
-    default: 5,3
     inputBinding:
       position: 102
       prefix: --rdg
@@ -598,7 +584,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of repeat will be expanded for repeat alignment (1000)
-    default: 1000
     inputBinding:
       position: 102
       prefix: --repeat-limit
@@ -623,7 +608,6 @@ inputs:
       - 'null'
       - string
     doc: reference gap open, extend penalties (5,3)
-    default: 5,3
     inputBinding:
       position: 102
       prefix: --rfg
@@ -649,7 +633,6 @@ inputs:
       - 'null'
       - string
     doc: specify strand-specific information (unstranded)
-    default: unstranded
     inputBinding:
       position: 102
       prefix: --rna-strandness
@@ -658,7 +641,6 @@ inputs:
       - 'null'
       - string
     doc: "min acceptable alignment score w/r/t read length\n                     (L,0.0,-0.2)"
-    default: L,0.0,-0.2
     inputBinding:
       position: 102
       prefix: --score-min
@@ -667,7 +649,6 @@ inputs:
       - 'null'
       - int
     doc: seed for random number generator (0)
-    default: 0
     inputBinding:
       position: 102
       prefix: --seed
@@ -700,7 +681,6 @@ inputs:
       - string
     doc: max and min penalties for soft-clipping; lower qual = lower penalty 
       <2,1>
-    default: 2,1
     inputBinding:
       position: 102
       prefix: --sp
@@ -717,7 +697,6 @@ inputs:
       - 'null'
       - int
     doc: number of alignment threads to launch (1)
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -742,7 +721,6 @@ inputs:
       - 'null'
       - int
     doc: trim <int> bases from 3'/right end of reads (0)
-    default: 0
     inputBinding:
       position: 102
       prefix: --trim3
@@ -751,7 +729,6 @@ inputs:
       - 'null'
       - int
     doc: trim <int> bases from 5'/left end of reads (0)
-    default: 0
     inputBinding:
       position: 102
       prefix: --trim5

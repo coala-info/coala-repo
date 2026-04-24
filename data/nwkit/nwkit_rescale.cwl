@@ -9,7 +9,6 @@ inputs:
   - id: factor
     type: float
     doc: Rescaling factor of branch length.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --factor
@@ -19,7 +18,6 @@ inputs:
       - int
     doc: ETE tree format. See here 
       http://etetoolkit.org/docs/latest/tutorial/tutorial_trees.html
-    default: auto
     inputBinding:
       position: 101
       prefix: --format
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - File
     doc: Input newick file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --infile
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Whether node names are quoted in the input file.
-    default: yes
     inputBinding:
       position: 101
       prefix: --quoted_node_names
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Nodes to be edited.
-    default: all
     inputBinding:
       position: 101
       prefix: --target

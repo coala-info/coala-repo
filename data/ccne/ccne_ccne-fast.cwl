@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - Directory
     doc: CCNE database root folders
-    default: /usr/local/db
     inputBinding:
       position: 101
       prefix: --dbdir
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: The flanking length of sequence to be excluded
-    default: 0
     inputBinding:
       position: 101
       prefix: --flank
@@ -82,7 +79,6 @@ inputs:
       - 'null'
       - boolean
     doc: No screen output
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -93,7 +89,6 @@ inputs:
     doc: 'Reference gene defalut(Kp:rpoB Ab:rpoB Ec:polB Pa:ppsA), please refer to
       --listsp.Note: When --sp is set to Pls, this parameter should be set to replicon
       type.'
-    default: Kp:rpoB Ab:rpoB Ec:polB Pa:ppsA
     inputBinding:
       position: 101
       prefix: --ref

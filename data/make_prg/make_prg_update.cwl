@@ -35,7 +35,6 @@ inputs:
       - int
     doc: Ignores long deletions of the given size or longer. If long deletions 
       should not be ignored, put a large value.
-    default: 10
     inputBinding:
       position: 101
       prefix: --deletion-threshold
@@ -53,7 +52,6 @@ inputs:
       - string
     doc: 'p: PRG, b: Binary, g: GFA, a: All. Combinations are allowed i.e., gb: GFA
       and Binary.'
-    default: a
     inputBinding:
       position: 101
       prefix: --output-type
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads. 0 will use all available.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

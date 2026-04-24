@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: Output format for the selected sequences (e.g., fasta, phylip).
-    default: fasta
     inputBinding:
       position: 103
       prefix: --format

@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory where to store the reference databases
-    default: zdb_ref in the current directory
     inputBinding:
       position: 101
       prefix: --dir
@@ -84,7 +83,6 @@ inputs:
       - 'null'
       - Directory
     doc: the directory where the singularity images are downloaded
-    default: singularity in current directory
     inputBinding:
       position: 101
       prefix: --singularity_dir

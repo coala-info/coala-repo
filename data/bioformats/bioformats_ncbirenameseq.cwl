@@ -38,7 +38,6 @@ inputs:
       - int
     doc: the number of the column that contains sequence names to be changed (1 by
       default)
-    default: 1
     inputBinding:
       position: 104
       prefix: --column

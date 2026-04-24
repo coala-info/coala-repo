@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: Index of scores that should be used as weights
-    default: last score
     inputBinding:
       position: 102
       prefix: --index

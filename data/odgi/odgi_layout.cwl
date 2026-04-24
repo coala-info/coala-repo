@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: 'Use this fraction of the iterations for layout annealing (default: 0.5).'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --path-sgd-cooling
@@ -48,7 +47,6 @@ inputs:
       - float
     doc: 'The threshold of the maximum displacement approximately in bp at which to
       stop path guided 2D SGD (default: 0).'
-    default: 0
     inputBinding:
       position: 101
       prefix: --path-sgd-delta
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: 'The final learning rate for path guided 2D SGD model (default: 0.01).'
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --path-sgd-eta
@@ -76,7 +73,6 @@ inputs:
       - int
     doc: 'The maximum number of iterations N for the path guided 2D SGD model (default:
       30).'
-    default: 30
     inputBinding:
       position: 101
       prefix: --path-sgd-iter-max
@@ -86,7 +82,6 @@ inputs:
       - int
     doc: 'Specify the iteration N where the learning rate is max for path guided 2D
       SGD model (default: 0).'
-    default: 0
     inputBinding:
       position: 101
       prefix: --path-sgd-iteration-max-learning-rate
@@ -108,7 +103,6 @@ inputs:
     doc: 'Minimum number of terms N to be updated before a new path guided 2D SGD
       iteration with adjusted learning rate eta starts, expressed as a multiple of
       total path length (default: 10).'
-    default: '10'
     inputBinding:
       position: 101
       prefix: --path-sgd-min-term-updates-paths
@@ -118,7 +112,6 @@ inputs:
       - string
     doc: 'Set the prefix to which each snapshot layout of a path guided 2D SGD iteration
       should be written to (default: NONE).'
-    default: NONE
     inputBinding:
       position: 101
       prefix: --path-sgd-snapshot
@@ -148,7 +141,6 @@ inputs:
       - int
     doc: 'The maximum space size N of the Zipfian distribution beyond which quantization
       occurs (default: 1000).'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --path-sgd-zipf-space-max
@@ -158,7 +150,6 @@ inputs:
       - int
     doc: 'The size of the quantization step N when the maximum space size of the Zipfian
       distribution is exceeded (default: 100).'
-    default: 100
     inputBinding:
       position: 101
       prefix: --path-sgd-zipf-space-quantization-step
@@ -169,7 +160,6 @@ inputs:
     doc: 'The theta value N for the Zipfian distribution which is used as the sampling
       method for the second node of one term in the path guided 2D SGD model (default:
       0.99).'
-    default: 0.99
     inputBinding:
       position: 101
       prefix: --path-sgd-zipf-theta

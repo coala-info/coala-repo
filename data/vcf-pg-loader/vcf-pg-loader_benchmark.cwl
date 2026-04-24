@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: Records per batch
-    default: 50000
     inputBinding:
       position: 101
       prefix: --batch
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not use human chromosome enum type
-    default: false
     inputBinding:
       position: 101
       prefix: --no-human-genome
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not normalize variants
-    default: false
     inputBinding:
       position: 101
       prefix: --no-normalize
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - boolean
     doc: Normalize variants
-    default: true
     inputBinding:
       position: 101
       prefix: --normalize
@@ -95,7 +91,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use human chromosome enum type
-    default: true
     inputBinding:
       position: 101
       prefix: --human-genome

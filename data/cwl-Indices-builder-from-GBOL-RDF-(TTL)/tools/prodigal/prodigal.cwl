@@ -96,7 +96,6 @@ inputs:
   codon_table:
     type: int?
     doc: Codon table to use
-    default: 11
     inputBinding:
       prefix: -g
   identifier:

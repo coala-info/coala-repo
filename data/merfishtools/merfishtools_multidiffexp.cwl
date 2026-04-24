@@ -18,7 +18,6 @@ inputs:
       - float
     doc: Maximum coefficient of variation (CV) considered as no differential 
       expression
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --max-null-cv
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: Pseudocounts to add to means before CV calculation
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --pseudocounts

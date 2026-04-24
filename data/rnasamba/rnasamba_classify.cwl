@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: print the progress of the classification. 0 = silent, 1 = current step.
-    default: 0
     inputBinding:
       position: 104
       prefix: --verbose

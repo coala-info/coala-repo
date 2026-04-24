@@ -54,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: gap extension penalty
-    default: 4
     inputBinding:
       position: 103
       prefix: -E
@@ -63,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: gap open penalty
-    default: 11
     inputBinding:
       position: 103
       prefix: -O
@@ -80,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: do not put an indel within INT bp towards the ends
-    default: 5
     inputBinding:
       position: 103
       prefix: -i
@@ -105,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: maximum occurrences for extending a long deletion
-    default: 10
     inputBinding:
       position: 103
       prefix: -d
@@ -114,7 +110,6 @@ inputs:
       - 'null'
       - float
     doc: 'max #diff (int) or missing prob under 0.02 err rate (float)'
-    default: 0.04
     inputBinding:
       position: 103
       prefix: -n
@@ -123,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of gap extensions, -1 for disabling long gaps
-    default: -1
     inputBinding:
       position: 103
       prefix: -e
@@ -132,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number or fraction of gap opens
-    default: 1
     inputBinding:
       position: 103
       prefix: -o
@@ -149,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: maximum entries in the queue
-    default: 2000000
     inputBinding:
       position: 103
       prefix: -m
@@ -158,7 +150,6 @@ inputs:
       - 'null'
       - int
     doc: maximum differences in the seed
-    default: 2
     inputBinding:
       position: 103
       prefix: -k
@@ -167,7 +158,6 @@ inputs:
       - 'null'
       - int
     doc: mismatch penalty
-    default: 3
     inputBinding:
       position: 103
       prefix: -M
@@ -200,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: quality threshold for read trimming down to 35bp
-    default: 0
     inputBinding:
       position: 103
       prefix: -q
@@ -225,7 +214,6 @@ inputs:
       - 'null'
       - int
     doc: seed length
-    default: 32
     inputBinding:
       position: 103
       prefix: -l
@@ -242,7 +230,6 @@ inputs:
       - 'null'
       - int
     doc: stop searching when there are >INT equally best hits
-    default: 30
     inputBinding:
       position: 103
       prefix: -R
@@ -251,7 +238,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 103
       prefix: -t

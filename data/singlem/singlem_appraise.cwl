@@ -71,7 +71,6 @@ inputs:
       - boolean
     doc: "use sequence searching to account for genomes that are\nsimilar to those
       found in the metagenome"
-    default: false
     inputBinding:
       position: 101
       prefix: --imperfect
@@ -156,7 +155,6 @@ inputs:
       - 'null'
       - float
     doc: "sequence identity cutoff to use if --imperfect is\nspecified"
-    default: '0.9666666666666667'
     inputBinding:
       position: 101
       prefix: --sequence-identity
@@ -174,7 +172,6 @@ inputs:
       - 'null'
       - int
     doc: Use this many threads when processing streaming inputs
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

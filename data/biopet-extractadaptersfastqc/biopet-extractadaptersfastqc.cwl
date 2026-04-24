@@ -11,7 +11,6 @@ inputs:
       - float
     doc: The fraction of the adapters in a read should be above this fraction, default
       is 0.001
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --adapterCutoff

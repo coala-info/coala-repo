@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to automatically save the AnnData object.
-    default: false
     inputBinding:
       position: 101
   - id: autoshow
@@ -17,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to automatically show plots.
-    default: true
     inputBinding:
       position: 101
   - id: cache_compression
@@ -25,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Compression method for the cache.
-    default: lzf
     inputBinding:
       position: 101
   - id: cachedir
@@ -33,7 +30,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for caching data.
-    default: cache
     inputBinding:
       position: 101
   - id: categories_to_ignore
@@ -42,7 +38,6 @@ inputs:
       - type: array
         items: string
     doc: List of categories to ignore.
-    default:
       - N/A
       - dontknow
       - no_gate
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory where datasets are located.
-    default: /data
     inputBinding:
       position: 101
   - id: figdir
@@ -62,7 +56,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for saving figures.
-    default: figures
     inputBinding:
       position: 101
   - id: file_format_data
@@ -70,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: Default file format for data files.
-    default: h5ad
     inputBinding:
       position: 101
   - id: file_format_figs
@@ -78,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: Default file format for figure files.
-    default: pdf
     inputBinding:
       position: 101
   - id: logfile
@@ -86,7 +77,6 @@ inputs:
       - 'null'
       - File
     doc: File object for logging.
-    default: <_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'>
     inputBinding:
       position: 101
   - id: logpath
@@ -101,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum memory to use in GB.
-    default: 15
     inputBinding:
       position: 101
   - id: n_jobs
@@ -109,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel jobs to run.
-    default: 1
     inputBinding:
       position: 101
   - id: n_pcs
@@ -117,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Number of principal components to compute.
-    default: 50
     inputBinding:
       position: 101
   - id: plot_suffix
@@ -125,7 +112,6 @@ inputs:
       - 'null'
       - string
     doc: Suffix to append to plot filenames.
-    default: ''
     inputBinding:
       position: 101
   - id: set_figure_params
@@ -140,7 +126,6 @@ inputs:
       - 'null'
       - string
     doc: Verbosity level for logging.
-    default: warn
     inputBinding:
       position: 101
   - id: writedir
@@ -148,7 +133,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for writing output files.
-    default: write
     inputBinding:
       position: 101
 outputs:

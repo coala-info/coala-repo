@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: The header of the output file in case a different stk version.
-    default: '# STOCKHOLM 1.0'
     inputBinding:
       position: 102
       prefix: --header

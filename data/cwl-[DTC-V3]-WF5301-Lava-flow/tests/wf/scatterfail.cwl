@@ -7,7 +7,6 @@ requirements:
 inputs:
   range:
     type: string[]
-    default: ["1", "2", "3"]
 outputs:
   out:
     type: File[]

@@ -11,7 +11,6 @@ inputs:
       items: File
     doc: Path to input MetaPhlAn or mOTUs marker alignments (.sam, .sam.bz2, 
       .bam).
-    default: []
     inputBinding:
       position: 1
   - id: db_force
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force execution, even when database version is not an exact match.
-    default: false
     inputBinding:
       position: 102
       prefix: --db-force
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keeps intermediate files from transformation steps on disk.
-    default: false
     inputBinding:
       position: 102
       prefix: --keep-tmp-files
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percent identity in alignment.
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --min-aln-identity
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment length.
-    default: 40
     inputBinding:
       position: 102
       prefix: --min-aln-len
@@ -62,7 +57,6 @@ inputs:
       - int
     doc: Minimum alignment quality. Increasing this threshold can drastically 
       reduce the number of considered variants.
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-aln-qual
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base call quality.
-    default: 20
     inputBinding:
       position: 102
       prefix: --min-base-qual
@@ -80,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum vertical coverage.
-    default: 3
     inputBinding:
       position: 102
       prefix: --min-vcov
@@ -89,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: The number of processing units to use.
-    default: 1
     inputBinding:
       position: 102
       prefix: --nprocs
@@ -98,7 +89,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to output directory.
-    default: out_convert/
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -107,7 +97,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow checking subdirectories of the input directory for input files.
-    default: false
     inputBinding:
       position: 102
       prefix: --recursive-input
@@ -117,7 +106,6 @@ inputs:
       - Directory
     doc: 'Path to directory with taxonomic profiles (MetaPhlAn or mOTUs, default extension:
       .profile.txt). When not specified, will look for profiles in `input-files` directory.'
-    default: None
     inputBinding:
       position: 102
       prefix: --tax-profiles-dir
@@ -126,7 +114,6 @@ inputs:
       - 'null'
       - string
     doc: File extension of taxonomic profiles.
-    default: .profile.txt
     inputBinding:
       position: 102
       prefix: --tax-profiles-extension
@@ -135,7 +122,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to temporary directory
-    default: tmp/
     inputBinding:
       position: 102
       prefix: --tmp-dir

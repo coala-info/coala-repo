@@ -11,7 +11,6 @@ inputs:
     doc: Use this quality score (decimal representation of ASCII symbol) as a default
       value when the original quality score was lost due to compression. Minimum is
       33.
-    default: 63
     inputBinding:
       position: 101
       prefix: --default-quality-score
@@ -21,7 +20,6 @@ inputs:
       - boolean
     doc: Append read names with read index (/1 for first in pair, /2 for second in
       pair).
-    default: false
     inputBinding:
       position: 101
       prefix: --enumerate
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - boolean
     doc: Compress fastq files with gzip.
-    default: false
     inputBinding:
       position: 101
       prefix: --gzip
@@ -40,7 +37,6 @@ inputs:
       - boolean
     doc: Issue a warning on sequence MD5 mismatch and continue. This does not garantee
       the data will be read succesfully.
-    default: false
     inputBinding:
       position: 101
       prefix: --ignore-md5-mismatch
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: 'Change log level: DEBUG, INFO, WARNING, ERROR.'
-    default: ERROR
     inputBinding:
       position: 101
       prefix: --log-level
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Stop after reading this many records.
-    default: -1
     inputBinding:
       position: 101
       prefix: --max-records
@@ -92,7 +86,6 @@ inputs:
       - 'null'
       - boolean
     doc: Re-reverse reads mapped to negative strand.
-    default: false
     inputBinding:
       position: 101
       prefix: --reverse
@@ -101,7 +94,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip MD5 checks when reading the header.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-md5-check

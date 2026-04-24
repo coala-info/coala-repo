@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Per sample coverage suffix in the GFF
-    default: _cov
     inputBinding:
       position: 101
       prefix: --cov-suff
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele frequency
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --min-freq
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum SNP quality (Phred score)
-    default: 30
     inputBinding:
       position: 101
       prefix: --min-qual
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads to accept the SNP
-    default: 4
     inputBinding:
       position: 101
       prefix: --min-reads

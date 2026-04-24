@@ -18,7 +18,6 @@ inputs:
       - boolean
     doc: Expect N-terminal acetylation as a variable mod in a search or as a 
       parameter when building statistical models
-    default: false
     inputBinding:
       position: 102
       prefix: --acetyl-nterm
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: Search for peptides with up to 1 non-enzymatic cleavage site
-    default: false
     inputBinding:
       position: 102
       prefix: --cleavage-semi
@@ -37,7 +35,6 @@ inputs:
       - string
     doc: Specify the database to use for this search. Can be a named protk 
       database or the path to a fasta file
-    default: sphuman
     inputBinding:
       position: 102
       prefix: --database
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Enzyme
-    default: Trypsin
     inputBinding:
       position: 102
       prefix: --enzyme
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: Fragment ion mass tolerance (unit dependent).
-    default: 0.65
     inputBinding:
       position: 102
       prefix: --fragment-ion-tol
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: Fragment ion mass tolerance units (Da or mmu).
-    default: Da
     inputBinding:
       position: 102
       prefix: --fragment-ion-tol-units
@@ -82,7 +76,6 @@ inputs:
       - boolean
     doc: Expect N-Glycosylation modifications as variable mod in a search or as 
       a parameter when building statistical models
-    default: false
     inputBinding:
       position: 102
       prefix: --glyco
@@ -91,7 +84,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep X!Tandem parameter files
-    default: false
     inputBinding:
       position: 102
       prefix: --keep-params-files
@@ -100,7 +92,6 @@ inputs:
       - 'null'
       - boolean
     doc: Expect Oxidised Methionine modifications as variable mod in a search
-    default: false
     inputBinding:
       position: 102
       prefix: --methionineo
@@ -110,7 +101,6 @@ inputs:
       - boolean
     doc: Expand parent mass window to include windows around neighbouring 
       isotopic peaks
-    default: false
     inputBinding:
       position: 102
       prefix: --multi-isotope-search
@@ -119,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: Number of missed cleavages allowed
-    default: 2
     inputBinding:
       position: 102
       prefix: --num-missed-cleavages
@@ -128,7 +117,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include spectra in the output file
-    default: false
     inputBinding:
       position: 102
       prefix: --output-spectra
@@ -137,7 +125,6 @@ inputs:
       - 'null'
       - float
     doc: Precursor ion mass tolerance.
-    default: 200
     inputBinding:
       position: 102
       prefix: --precursor-ion-tol
@@ -146,7 +133,6 @@ inputs:
       - 'null'
       - string
     doc: Precursor ion mass tolerance units (ppm or Da).
-    default: ppm
     inputBinding:
       position: 102
       prefix: --precursor-ion-tol-units
@@ -155,7 +141,6 @@ inputs:
       - 'null'
       - boolean
     doc: Dont skip analyses for which the output file already exists
-    default: false
     inputBinding:
       position: 102
       prefix: --replace-output
@@ -165,7 +150,6 @@ inputs:
       - string
     doc: Either the full path to an xml file containing a complete set of 
       default parameters, or one of the following (isb_native,isb_kscore,gpm).
-    default: isb_native
     inputBinding:
       position: 102
       prefix: --tandem-params
@@ -175,7 +159,6 @@ inputs:
       - int
     doc: Number of processing threads to use. Set to 0 to autodetect an 
       appropriate value
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

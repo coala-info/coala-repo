@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: run-id
-    default: 648917002
     inputBinding:
       position: 101
       prefix: run-id

@@ -20,7 +20,6 @@ inputs:
       - string
     doc: 'Palette to color taxa in barplot. Should be one of the qualitative ColorBrewer2
       palettes: Accent, Dark2, Paired, Pastel1, Pastel2, Set1, Set2, or Set3.'
-    default: Set3
     inputBinding:
       position: 101
       prefix: --barplot_palette
@@ -30,7 +29,6 @@ inputs:
       - boolean
     doc: 'Logical: Display counts rather than proportions in barplot, i.e. bars will
       not be rescaled to 100% for each sample.'
-    default: false
     inputBinding:
       position: 101
       prefix: --barplot_rawval
@@ -41,7 +39,6 @@ inputs:
     doc: 'Numeric: Change plot width by this scaling factor (e.g. 2 makes it twice
       as wide). Allows adjustment when bars are hidden because the legend labels are
       too long.'
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --barplot_scaleplotwidth
@@ -64,7 +61,6 @@ inputs:
       distances (the distance matrix can be separately output with --task matrix).
       This is an experimental (unpublished) metric similar to Unifrac, but using a
       taxonomy tree instead of a real phylogeny.'
-    default: ward.D
     inputBinding:
       position: 101
       prefix: --cluster-samples
@@ -74,7 +70,6 @@ inputs:
       - string
     doc: 'Clustering method to use for clustering/sorting taxa. Options: "alpha",
       "ward", "single", "complete", "average", "mcquitty", "median", "centroid".'
-    default: ward.D
     inputBinding:
       position: 101
       prefix: --cluster-taxa
@@ -95,7 +90,6 @@ inputs:
       - int
     doc: Number of top taxa to display in barplot. Integer between 3 and 12 is 
       preferable.
-    default: 5
     inputBinding:
       position: 101
       prefix: --displaytaxa
@@ -104,7 +98,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep temporary files
-    default: false
     inputBinding:
       position: 101
       prefix: --keeptmp
@@ -114,7 +107,6 @@ inputs:
       - int
     doc: Taxonomic level to perform the comparison. Must be an integer between 1
       and 7.
-    default: 4
     inputBinding:
       position: 101
       prefix: --level
@@ -123,7 +115,6 @@ inputs:
       - 'null'
       - boolean
     doc: Save log file to file [OUTPREFIX].log
-    default: false
     inputBinding:
       position: 101
       prefix: --log
@@ -140,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: Sum up NTUs with fewer counts into a pseudo-NTU "Other".
-    default: 50
     inputBinding:
       position: 101
       prefix: --min-ntu-count
@@ -149,7 +139,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output files.
-    default: test.phyloFlash_compare
     inputBinding:
       position: 101
       prefix: --out
@@ -159,7 +148,6 @@ inputs:
       - string
     doc: "Format for plots (tasks 'barplot' and 'heatmap' only). Options: \"pdf\"\
       , \"png\""
-    default: pdf
     inputBinding:
       position: 101
       prefix: --outfmt
@@ -184,7 +172,6 @@ inputs:
       at a higher level than you want to use for the comparison. Only works if 
       the tar.gz archives from phyloflash runs are specified with the --zip 
       option above.
-    default: false
     inputBinding:
       position: 101
       prefix: --use_SAM

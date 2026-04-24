@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: minimal ratio of e+1 similarity to 1 similarity to drop an anchor
-    default: 0.6
     inputBinding:
       position: 101
       prefix: -y
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: gap extension penalty
-    default: -2
     inputBinding:
       position: 101
       prefix: -E1
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: gap extension penalty 2
-    default: -1
     inputBinding:
       position: 101
       prefix: -E2
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: gap open penalty
-    default: -8
     inputBinding:
       position: 101
       prefix: -O1
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: gap open penalty 2
-    default: -75
     inputBinding:
       position: 101
       prefix: -O2
@@ -71,7 +66,6 @@ inputs:
       - int
     doc: if the inter-anchor length is shorter than this value, stop trying to find
       new anchors
-    default: 100000
     inputBinding:
       position: 101
       prefix: -fa3
@@ -80,7 +74,6 @@ inputs:
       - 'null'
       - float
     doc: penalty for having a non-linear match in inversion region
-    default: -1
     inputBinding:
       position: 101
       prefix: -IC
@@ -89,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: maximum expected copy number of each gene on each chromosome
-    default: 1
     inputBinding:
       position: 101
       prefix: -e
@@ -98,7 +90,6 @@ inputs:
       - 'null'
       - float
     doc: minimum full-length CDS anchor hit similarity to use
-    default: 0.95
     inputBinding:
       position: 101
       prefix: -mi
@@ -108,7 +99,6 @@ inputs:
       - int
     doc: minimum exon length to use (should be identical with the setting of gff2seq
       function)
-    default: 20
     inputBinding:
       position: 101
       prefix: -m
@@ -117,7 +107,6 @@ inputs:
       - 'null'
       - float
     doc: minimum score to keep an inversion
-    default: 2
     inputBinding:
       position: 101
       prefix: -I
@@ -126,7 +115,6 @@ inputs:
       - 'null'
       - float
     doc: minimum novel anchor hit similarity to use
-    default: 0.2
     inputBinding:
       position: 101
       prefix: -mi2
@@ -135,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: mismatching penalty
-    default: -6
     inputBinding:
       position: 101
       prefix: -B
@@ -182,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -199,7 +185,6 @@ inputs:
       - 'null'
       - int
     doc: sequence alignment window width
-    default: 100000
     inputBinding:
       position: 101
       prefix: -w

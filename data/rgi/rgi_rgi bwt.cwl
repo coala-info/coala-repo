@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: select read aligner (default=kma)
-    default: kma
     inputBinding:
       position: 101
       prefix: --aligner
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - boolean
     doc: removes temporary files (default=False)
-    default: false
     inputBinding:
       position: 101
       prefix: --clean
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - boolean
     doc: debug mode (default=False)
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - boolean
     doc: include baits (default=False)
-    default: false
     inputBinding:
       position: 101
       prefix: --include_baits
@@ -57,7 +53,6 @@ inputs:
       - boolean
     doc: include protein variant, rRNA variant, knockout, and protein 
       overexpression models (default=False)
-    default: false
     inputBinding:
       position: 101
       prefix: --include_other_models
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - boolean
     doc: include wildcard (default=False)
-    default: false
     inputBinding:
       position: 101
       prefix: --include_wildcard
@@ -83,7 +77,6 @@ inputs:
       - 'null'
       - boolean
     doc: filter reads based on mapped reads (default=False)
-    default: false
     inputBinding:
       position: 101
       prefix: --mapped
@@ -92,7 +85,6 @@ inputs:
       - 'null'
       - boolean
     doc: filter reads based on MAPQ score (default=False)
-    default: false
     inputBinding:
       position: 101
       prefix: --mapq
@@ -115,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads (CPUs) to use (default=20)
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads

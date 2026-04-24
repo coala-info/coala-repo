@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: Comma-separated list of codons to use as start codons
-    default: atg,gtg,ttg
     inputBinding:
       position: 103
       prefix: -A

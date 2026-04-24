@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include the sequence description in output
-    default: false
     inputBinding:
       position: 102
       prefix: --include-description

@@ -10,7 +10,6 @@ inputs:
       - int
     doc: Number of full passes over the training dataset when training the 
       discriminator.
-    default: 1
     inputBinding:
       position: 101
       prefix: --epochs
@@ -22,7 +21,6 @@ inputs:
       dinf.DinfModel object that describes the model components. See the 
       examples/ folder of the git repository for example models. 
       https://github.com/RacimoLab/dinf
-    default: None
     inputBinding:
       position: 101
       prefix: --model
@@ -35,7 +33,6 @@ inputs:
       used. The number of cores used for CPU-based neural networks is not set 
       with this parameter---instead use the`taskset` command. See 
       https://github.com/google/jax/issues/1539
-    default: None
     inputBinding:
       position: 101
       prefix: --parallelism
@@ -56,7 +53,6 @@ inputs:
       trained networks for the same seed value. Also note that operations on a 
       GPU are not fully determinstic, so training or applying a neural network 
       twice with the same seed value will not produce identical results.
-    default: None
     inputBinding:
       position: 101
       prefix: --seed
@@ -66,7 +62,6 @@ inputs:
       - int
     doc: Size of the test dataset used to evaluate the discriminator after each 
       training epoch.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --test-replicates
@@ -75,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the dataset used to train the discriminator.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --training-replicates

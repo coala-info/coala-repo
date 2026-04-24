@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum NM for alignments
-    default: -1
     inputBinding:
       position: 102
       prefix: --max-nm
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum alignment identity
-    default: 0.95
     inputBinding:
       position: 102
       prefix: --min-identity
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality
-    default: 2
     inputBinding:
       position: 102
       prefix: --min-mq
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Thread number
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: compression level
-    default: -1
     inputBinding:
       position: 101
       prefix: --compression-level
@@ -44,7 +43,6 @@ inputs:
       - Directory
     doc: directory containing NCBI Taxonomy files, including nodes.dmp, 
       names.dmp, merged.dmp and delnodes.dmp
-    default: /root/.unikmer
     inputBinding:
       position: 101
       prefix: --data-dir
@@ -96,7 +94,6 @@ inputs:
       - string
     doc: for smaller TaxIds, we can use less space to store TaxIds. default 
       value is 1<<32-1, that's enough for NCBI Taxonomy TaxIds
-    default: 4294967295
     inputBinding:
       position: 101
       prefix: --max-taxid
@@ -105,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of subsequence
-    default: 200
     inputBinding:
       position: 101
       prefix: --min-len
@@ -130,7 +126,6 @@ inputs:
       - 'null'
       - string
     doc: out file prefix ("-" for stdout)
-    default: '-'
     inputBinding:
       position: 101
       prefix: --out-prefix
@@ -165,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs to use
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

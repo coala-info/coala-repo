@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: Error rate guaranteed
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --error-rate
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Input is in BAM format
-    default: false
     inputBinding:
       position: 102
       prefix: --bam
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output is written in binary format
-    default: false
     inputBinding:
       position: 102
       prefix: --binary
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output is written in TSV format
-    default: false
     inputBinding:
       position: 102
       prefix: --tsv
@@ -78,7 +74,6 @@ inputs:
       - string
     doc: Comma separated list, keep k-mers with bases above quality threshold in
       PHRED
-    default: 0
     inputBinding:
       position: 102
       prefix: --quality-cutoff
@@ -88,7 +83,6 @@ inputs:
       - int
     doc: Seed value for the randomness (default value 0, use time based 
       randomness)
-    default: 0
     inputBinding:
       position: 102
       prefix: --seed
@@ -97,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: SNumber of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

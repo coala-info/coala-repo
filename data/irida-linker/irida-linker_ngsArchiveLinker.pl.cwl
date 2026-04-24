@@ -37,7 +37,6 @@ inputs:
       - string
     doc: 'Type of file to link or download. Available options: "fastq", "assembly".
       Default "fastq". To get both types, you can enter --type fastq,assembly'
-    default: fastq
     inputBinding:
       position: 101
       prefix: --type

@@ -66,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for computation
-    default: 20
     inputBinding:
       position: 101
       prefix: -T

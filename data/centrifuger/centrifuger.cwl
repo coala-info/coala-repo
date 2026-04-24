@@ -50,7 +50,6 @@ inputs:
       - int
     doc: resolve at most <int>*k entries for each hit [40; use 0 for no 
       restriction]
-    default: 40
     inputBinding:
       position: 101
       prefix: --hitk-factor
@@ -73,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: report upto <int> distinct, primary assignments for each read pair
-    default: 1
     inputBinding:
       position: 101
       prefix: -k
@@ -140,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

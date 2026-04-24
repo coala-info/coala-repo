@@ -46,7 +46,6 @@ inputs:
       - string
     doc: Color settings, one of 'auto' (color if writing to a terminal, this is 
       the default), 'force' (always color), 'no' (no color).
-    default: auto
     inputBinding:
       position: 104
       prefix: --color

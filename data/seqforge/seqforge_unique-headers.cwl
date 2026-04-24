@@ -38,7 +38,6 @@ inputs:
     doc: Progress reporting mode; passing only --progress is equivalent to 
       --progress bar '--verbose' prints a line per record, 'none' silences 
       output
-    default: bar
     inputBinding:
       position: 101
       prefix: --progress

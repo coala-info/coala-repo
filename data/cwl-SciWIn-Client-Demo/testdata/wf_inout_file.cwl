@@ -6,7 +6,6 @@ class: Workflow
 inputs:
   file:
     type: File
-    default:
       class: File
       location: file.txt
 

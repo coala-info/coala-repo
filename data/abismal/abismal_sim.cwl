@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: bisulfite conversion rate
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -bis
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: max fragment length
-    default: 250
     inputBinding:
       position: 102
       prefix: -max-fraglen
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: max mutations
-    default: infty
     inputBinding:
       position: 102
       prefix: -max-mut
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: min fragment length
-    default: 100
     inputBinding:
       position: 102
       prefix: -min-fraglen
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: mutation rate
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -mut
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: number of reads
-    default: 100
     inputBinding:
       position: 102
       prefix: -n-reads
@@ -103,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: read length
-    default: 100
     inputBinding:
       position: 102
       prefix: -read-len
@@ -144,7 +137,6 @@ inputs:
       - 'null'
       - string
     doc: strand {f, r, b}
-    default: b
     inputBinding:
       position: 102
       prefix: -strand

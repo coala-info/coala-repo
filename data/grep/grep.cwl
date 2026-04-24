@@ -298,7 +298,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not ignore case distinctions (default)
-    default: true
     inputBinding:
       position: 103
       prefix: --no-ignore-case

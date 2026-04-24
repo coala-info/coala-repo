@@ -10,7 +10,6 @@ inputs:
       - float
     doc: the maximum ratio of host genes to viral genes required to consider a 
       row as a virus prediction
-    default: 1
     inputBinding:
       position: 101
       prefix: --host_viral_genes_ratio
@@ -37,7 +36,6 @@ inputs:
       - int
     doc: the minimum number of viral genes required to consider a row as a virus
       prediction
-    default: 1
     inputBinding:
       position: 101
       prefix: --viral_min_genes

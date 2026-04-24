@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL).'
-    default: WARN
     inputBinding:
       position: 103
       prefix: --log-level
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum allowed 3' difference if on same exon.
-    default: 100
     inputBinding:
       position: 103
       prefix: --max-3p-diff
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum allowed 5' difference if on same exon.
-    default: 50
     inputBinding:
       position: 103
       prefix: --max-5p-diff
@@ -75,7 +72,6 @@ inputs:
     doc: Maximum memory for batch loading, in megabytes (MB). Batches can be 
       slightly larger than this value. Value <= 0 loads all data in memory at 
       once.
-    default: 4096.0
     inputBinding:
       position: 103
       prefix: --max-batch-mem
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore mismatches or indels shorter than or equal to N.
-    default: 5
     inputBinding:
       position: 103
       prefix: --max-fuzzy-junction
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - float
     doc: Ignore alignments with less than minimum query read coverage.
-    default: 0.99
     inputBinding:
       position: 103
       prefix: --min-aln-coverage
@@ -102,7 +96,6 @@ inputs:
       - 'null'
       - float
     doc: Ignore alignments with less than minimum alignment identity.
-    default: 0.95
     inputBinding:
       position: 103
       prefix: --min-aln-identity
@@ -111,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use, 0 means autodetection.
-    default: 0
     inputBinding:
       position: 103
       prefix: --num-threads
@@ -120,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: Groups larger than this will be linearly split for parallel processing.
-    default: 100
     inputBinding:
       position: 103
       prefix: --split-group-size

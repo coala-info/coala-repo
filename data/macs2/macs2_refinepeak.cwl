@@ -20,7 +20,6 @@ inputs:
       - int
     doc: Buffer size for incrementally increasing internal array size to store 
       reads alignment information.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --buffer-size
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: 'Cutoff DEFAULT: 5'
-    default: 5
     inputBinding:
       position: 101
       prefix: --cutoff
@@ -40,7 +38,6 @@ inputs:
     doc: Format of tag file, "AUTO", "BED" or "ELAND" or "ELANDMULTI" or 
       "ELANDEXPORT" or "SAM" or "BAM" or "BOWTIE". The default AUTO option will 
       let 'macs2 refinepeak' decide which format the file is.
-    default: AUTO
     inputBinding:
       position: 101
       prefix: --format
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: 'Scan window size on both side of the summit (default: 100bp)'
-    default: 100
     inputBinding:
       position: 101
       prefix: --window-size

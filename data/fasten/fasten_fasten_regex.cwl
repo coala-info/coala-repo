@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs
-    default: 1
     inputBinding:
       position: 101
       prefix: --numcpus
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Regular expression
-    default: .
     inputBinding:
       position: 101
       prefix: --regex
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: Which field to match on? ID, SEQ, QUAL.
-    default: SEQ
     inputBinding:
       position: 101
       prefix: --which

@@ -52,7 +52,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum ratio of bases that must remap.
-    default: 0.95
     inputBinding:
       position: 103
       prefix: -minMatch

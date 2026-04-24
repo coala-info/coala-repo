@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Font family of the tree labels.
-    default: Roboto
     inputBinding:
       position: 101
       prefix: --font-family
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Font size of the tree labels.
-    default: 16
     inputBinding:
       position: 101
       prefix: --font-size
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - float
     doc: Scaling factor of heatmap boxes relative to the text.
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --heatmap-scale
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Margin sizes in pixels.
-    default: 20
     inputBinding:
       position: 101
       prefix: --margin
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory.
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir
@@ -86,7 +81,6 @@ inputs:
       - 'null'
       - float
     doc: Scaling factor of the PNG file.
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --png-scale
@@ -103,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Root branch length in pixels.
-    default: 10
     inputBinding:
       position: 101
       prefix: --root-branch
@@ -120,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Tip padding.
-    default: 10
     inputBinding:
       position: 101
       prefix: --tip-pad
@@ -137,7 +129,6 @@ inputs:
       - 'null'
       - string
     doc: Tree format.
-    default: newick
     inputBinding:
       position: 101
       prefix: --tree-format
@@ -146,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: Width of the tree in pixels.
-    default: 200
     inputBinding:
       position: 101
       prefix: --tree-width

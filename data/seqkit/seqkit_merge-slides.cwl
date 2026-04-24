@@ -11,7 +11,6 @@ inputs:
     doc: "length of sequence prefix of the first FASTA record based on\n         \
       \                               which seqkit guesses the sequence type (0 for
       whole seq)"
-    default: 10000
     inputBinding:
       position: 101
       prefix: --alphabet-guess-seq-length
@@ -22,7 +21,6 @@ inputs:
     doc: "size of buffer, supported unit: K, M, G. You need increase the\n       \
       \                               value when \"bufio.Scanner: token too long\"\
       \ error reported"
-    default: 1G
     inputBinding:
       position: 101
       prefix: --buffer-size
@@ -32,7 +30,6 @@ inputs:
       - type: array
         items: string
     doc: comment line prefix
-    default:
       - '#'
       - //
     inputBinding:
@@ -45,7 +42,6 @@ inputs:
     doc: "compression level for gzip, zstd, xz and bzip2. type \"seqkit -h\"\n   \
       \                                     for the range and default value for each
       format"
-    default: -1
     inputBinding:
       position: 101
       prefix: --compress-level
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: regular expression for parsing ID
-    default: ^(\S+)\s?
     inputBinding:
       position: 101
       prefix: --id-regexp
@@ -81,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: line width when outputting FASTA format (0 for no wrap)
-    default: 60
     inputBinding:
       position: 101
       prefix: --line-width
@@ -91,7 +85,6 @@ inputs:
       - int
     doc: "maximum distance of starting positions of two adjacent regions, 0\n    \
       \                                  for no limitation, 1 for no merging."
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-gap
@@ -101,7 +94,6 @@ inputs:
       - int
     doc: "minimum overlap of two adjacent regions, recommend\n                   \
       \                   $sliding_step_size - 1."
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-overlap
@@ -119,7 +111,6 @@ inputs:
       - string
     doc: "regular expression for extract the reference name and window\n         \
       \                             position."
-    default: ^(.+)_sliding:(\d+)\-(\d+)
     inputBinding:
       position: 101
       prefix: --regexp
@@ -129,7 +120,6 @@ inputs:
       - string
     doc: "sequence type (dna|rna|protein|unlimit|auto) (for auto, it\n           \
       \                             automatically detect by the first sequence)"
-    default: auto
     inputBinding:
       position: 101
       prefix: --seq-type
@@ -148,7 +138,6 @@ inputs:
       - int
     doc: "number of CPUs. can also set with environment variable\n               \
       \                         SEQKIT_THREADS)"
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

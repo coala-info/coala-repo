@@ -36,7 +36,6 @@ inputs:
     type: int?
     doc: Maximum threads to use
     label: Threads
-    default: 2
     inputBinding:
       position: 0
 
@@ -44,7 +43,6 @@ inputs:
     type: string
     doc: Optional output filename. Default is based on the input table; inputtablename_uniref-type_group.tsv
     label: Threads
-    default: "None"
     inputBinding:
       position: 2
 
@@ -56,7 +54,6 @@ inputs:
           - N
     doc: Add uniref_type to output file name.  Default Y. (Ignored when output_filename_prefix is used)
     label: Add uniref type
-    default: Y
     inputBinding:
       position: 3
 
@@ -118,7 +115,6 @@ inputs:
           - mean
     doc: How to combine grouped features; default=sum
     label: Function
-    default: sum
     inputBinding:
       prefix: --function
       position: 15
@@ -131,7 +127,6 @@ inputs:
           - N
     doc: Include an 'UNGROUPED' group to capture features that did not belong to other groups? default=Y
     label: Ungrouped
-    default: Y
     inputBinding:
       prefix: --ungrouped
       position: 16
@@ -144,7 +139,6 @@ inputs:
           - N
     doc: Carry through protected features, such as 'UNMAPPED'? default=Y
     label: Protected
-    default: Y
     inputBinding:
       prefix: --protected
       position: 17

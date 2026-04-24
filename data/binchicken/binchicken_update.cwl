@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Assembly strategy to use.
-    default: dynamic
     inputBinding:
       position: 101
       prefix: --assembly-strategy
@@ -134,7 +133,6 @@ inputs:
       - 'null'
       - string
     doc: Speed setting for Aviary.
-    default: fast
     inputBinding:
       position: 101
       prefix: --aviary-speed

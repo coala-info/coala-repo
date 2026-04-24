@@ -14,7 +14,6 @@ inputs:
       with arrows ('go-arrows') based on the representative GO term name 
       ('description'), or based on the representative GO term name with arrows 
       ('description-numbered').
-    default: numbered
     inputBinding:
       position: 101
       prefix: --cluster_labels
@@ -35,7 +34,6 @@ inputs:
       ('log10-pval'), number of GO terms that are a member of the cluster 
       ('members'), frequency of the GO term in the GOA database ('frequency'), a
       unique colour per cluster ('unique'), or a user defined value ('user').
-    default: log10-pval
     inputBinding:
       position: 101
       prefix: --colours
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Integer character limit of GO term descriptions in the legend.
-    default: 35
     inputBinding:
       position: 101
       prefix: --description_limit
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Set DPI for outfiles.
-    default: 400
     inputBinding:
       position: 101
       prefix: --dpi
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: Image file type. 'png', 'pdf', 'svg', or 'tiff'.
-    default: png
     inputBinding:
       position: 101
       prefix: --file_type
@@ -72,7 +67,6 @@ inputs:
       - string
     doc: Font size of the legend. 'xx-small', 'x-small', 'small', 'medium', 
       'large' , 'x-large', or 'xx-large'.
-    default: medium
     inputBinding:
       position: 101
       prefix: --font_size
@@ -95,7 +89,6 @@ inputs:
       column is the GO ID and the second is the p-value, and 'standard-plus' for
       standard input but with a third column containing a user defined numerical
       value (for TopGO and GOStats input, this is the 'significant' value).
-    default: standard
     inputBinding:
       position: 101
       prefix: --input_type
@@ -105,7 +98,6 @@ inputs:
       - string
     doc: Option to show GO terms and descriptions in the legend ('full'), GO 
       term only 'go', description only ('description'), or no legend ('none').
-    default: description
     inputBinding:
       position: 101
       prefix: --legend
@@ -114,7 +106,6 @@ inputs:
       - 'null'
       - string
     doc: Legend as a single ('single') column or double ('double') column.
-    default: double
     inputBinding:
       position: 101
       prefix: --legend_columns
@@ -124,7 +115,6 @@ inputs:
       - string
     doc: Position the legend at the bottom left ('left'), bottom right 
       ('right'), or bottom center ('center').
-    default: center
     inputBinding:
       position: 101
       prefix: --legend_position
@@ -133,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum amount of clusters to plot (integer value).
-    default: 50
     inputBinding:
       position: 101
       prefix: --max_clusters
@@ -142,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum labels to display in the legend.
-    default: 10
     inputBinding:
       position: 101
       prefix: --max_label
@@ -151,7 +139,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum p-value to consider (floating value).
-    default: 99999.99999
     inputBinding:
       position: 101
       prefix: --max_pvalue
@@ -176,7 +163,6 @@ inputs:
       - string
     doc: "Which ontology to use: biological process ('bpo'), molecular function ('mfo'),
       cellular component ('cco'), or all ontologies ('all')."
-    default: all
     inputBinding:
       position: 101
       prefix: --ontology
@@ -185,7 +171,6 @@ inputs:
       - 'null'
       - float
     doc: Set opacity for the clusters, floating point from 0 to 1.
-    default: 1
     inputBinding:
       position: 101
       prefix: --opacity
@@ -211,7 +196,6 @@ inputs:
       - string
     doc: Set to any color brewer palette available for MatPlotLib 
       (https://matplotlib.org/3.1.1/tutorials/colors/colormaps.html).
-    default: plasma
     inputBinding:
       position: 101
       prefix: --palette
@@ -223,7 +207,6 @@ inputs:
       you want the figures to be exactly the same. Needs to be an integer or 
       None. Specifying 'None' will create a different orientation of the plot 
       every time.
-    default: 1
     inputBinding:
       position: 101
       prefix: --random_state
@@ -244,7 +227,6 @@ inputs:
       - 'null'
       - float
     doc: Similarity cutoff to be used between GO terms, a value between 0 and 1.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --similarity_cutoff
@@ -256,7 +238,6 @@ inputs:
       cluster ('members'), frequency in GOA database ('frequency'), p-value 
       where smaller = larger size ('pval'), the user defined value ('user'), or 
       a fixed integer for every cluster.
-    default: members
     inputBinding:
       position: 101
       prefix: --size
@@ -265,7 +246,6 @@ inputs:
       - 'null'
       - string
     doc: Set cluster size range to 'small', 'medium', or 'big'.
-    default: medium
     inputBinding:
       position: 101
       prefix: --size_range
@@ -275,7 +255,6 @@ inputs:
       - string
     doc: "Which values to use for sorting the clusters: 'pval' (p-value) or 'user'
       (user-defined value) or 'user- descending' (user-defined value descending)."
-    default: pval
     inputBinding:
       position: 101
       prefix: --sort_by
@@ -285,7 +264,6 @@ inputs:
       - boolean
     doc: To sum the user-defined values (column 3) for each member of a cluster.
       Either 'True' or 'False'.
-    default: false
     inputBinding:
       position: 101
       prefix: --sum_user
@@ -303,7 +281,6 @@ inputs:
       - string
     doc: Set title size. 'xx-small', 'x-small', 'small', 'medium', 'large' , 
       'x-large', or 'xx-large'.
-    default: medium
     inputBinding:
       position: 101
       prefix: --title_size
@@ -322,7 +299,6 @@ inputs:
       - 'null'
       - string
     doc: X-axis label.
-    default: Semantic space X
     inputBinding:
       position: 101
       prefix: --xlabel
@@ -331,7 +307,6 @@ inputs:
       - 'null'
       - string
     doc: Y-axis label.
-    default: Semantic space Y
     inputBinding:
       position: 101
       prefix: --ylabel

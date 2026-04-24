@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: 'Type of extension: 1 for consensus (linear), 2 for graph.'
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the kmers used for the assembly.
-    default: 31
     inputBinding:
       position: 101
       prefix: -k
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum abundance: kmers with lower abundance are considered as errors.'
-    default: 3
     inputBinding:
       position: 101
       prefix: -c
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: -p
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum search depth for the extension.
-    default: 10
     inputBinding:
       position: 101
       prefix: -d

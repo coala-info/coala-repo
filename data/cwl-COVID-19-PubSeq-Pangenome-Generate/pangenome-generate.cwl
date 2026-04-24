@@ -12,11 +12,9 @@ inputs:
   exclude: File?
   bin_widths:
     type: int[]
-    default: [ 1, 4, 16, 64, 256, 1000, 4000, 16000]
     doc: width of each bin in basepairs along the graph vector
   cells_per_file:
     type: int
-    default: 100
     doc: Cells per file on component_segmentation
 outputs:
   odgiGraph:
@@ -78,13 +76,9 @@ steps:
     in:
       sparse_graph_index: buildGraph/odgiGraph
       width:
-        default: 50000
       height:
-        default: 500
       path_per_row:
-        default: true
       path_height:
-        default: 4
     out: [graph_image]
     run: ../tools/odgi/odgi_viz.cwl
   odgi2rdf:

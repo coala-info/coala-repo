@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of mismatches allowed in search
-    default: 0
     inputBinding:
       position: 102
       prefix: -m
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: position to become new start
-    default: 0
     inputBinding:
       position: 102
       prefix: -x
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: reverse complement after rotating
-    default: false
     inputBinding:
       position: 102
       prefix: -rc

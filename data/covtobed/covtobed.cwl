@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: print BED feature only if the coverage is lower than MAXCOV
-    default: 100000
     inputBinding:
       position: 102
       prefix: --max-cov
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: print BED feature only if the coverage is bigger than (or equal to) MINCOV
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-cov
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: print BED feature only if its length is bigger (or equal to) than MINLELN
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-len
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: skip alignments whose mapping quality is less than MINQ
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-mapq

@@ -19,7 +19,6 @@ inputs:
       - type: array
         items: string
     doc: Main workflow to run. This is the snakemake target rule to run.
-    default:
       - complete_cluster
     inputBinding:
       position: 2
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: Overall ANI level to dereplicate at with FastANI.
-    default: 97
     inputBinding:
       position: 103
       prefix: --ani
@@ -40,7 +38,6 @@ inputs:
       Equivalent to "--snakemake-cmds '--conda-create-envs-only True ' ". Other 
       inputs should be specified as if running normally so that the right set of
       conda environments is built.
-    default: no
     inputBinding:
       position: 103
       prefix: --build
@@ -54,7 +51,6 @@ inputs:
       workflow as it avoids deleting files that would likely be needed in later parts
       of the workflow. NOTE: Not cleaning makes reruns faster but will incur the wrath
       of your sysadmin'
-    default: true
     inputBinding:
       position: 103
       prefix: --clean
@@ -83,7 +79,6 @@ inputs:
       - string
     doc: 'Snakemake resources used as is found at: https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html?highlight=resources#standard-resources
       NOTE: tmpdir is handled by the `tmpdir` command line parameter.'
-    default: ''
     inputBinding:
       position: 103
       prefix: --default-resources
@@ -112,7 +107,6 @@ inputs:
     doc: Maximum number of cores available for use locally. Only relevant if 
       jobs are being submitted to a cluster (e.g. see `--snakemake-profile`), in
       which case `--n-cores` will restrict requested cores in submitted jobs.
-    default: 16
     inputBinding:
       position: 103
       prefix: --local-cores
@@ -121,7 +115,6 @@ inputs:
       - 'null'
       - string
     doc: Ignore genomes with more contamination than this percentage.
-    default: none
     inputBinding:
       position: 103
       prefix: --max-contamination
@@ -130,7 +123,6 @@ inputs:
       - 'null'
       - string
     doc: Maximum memory for available usage in Gigabytes
-    default: '250'
     inputBinding:
       position: 103
       prefix: --max-memory
@@ -142,7 +134,6 @@ inputs:
       max_threads > n_cores then n_cores will be bumped up to max_threads. 
       Useful if you want more fine grain control over the number of threads used
       by each process.
-    default: 8
     inputBinding:
       position: 103
       prefix: --max-threads
@@ -151,7 +142,6 @@ inputs:
       - 'null'
       - string
     doc: Ignore genomes with less completeness than this percentage.
-    default: none
     inputBinding:
       position: 103
       prefix: --min-completeness
@@ -161,7 +151,6 @@ inputs:
       - int
     doc: Maximum number of cores available for use. Setting to multiples of 
       max_threads will allow for multiple processes to be run in parallel.
-    default: 16
     inputBinding:
       position: 103
       prefix: --n-cores
@@ -170,7 +159,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: ./
     inputBinding:
       position: 103
       prefix: --output
@@ -180,7 +168,6 @@ inputs:
       - string
     doc: Parameters to be used with pggb, must be surrounded by quotation marks 
       e.g. ''
-    default: -k 79 -G 7919,8069
     inputBinding:
       position: 103
       prefix: --pggb-params
@@ -190,7 +177,6 @@ inputs:
       - int
     doc: The number of threads given to pplacer, values above `--max-threads` 
       will be scaled to equal `--max-threads`
-    default: 8
     inputBinding:
       position: 103
       prefix: --pplacer-threads
@@ -200,7 +186,6 @@ inputs:
       - float
     doc: Require at least this dashing-derived ANI for preclustering and to 
       avoid FastANI on distant lineages within preclusters.
-    default: 95
     inputBinding:
       position: 103
       prefix: --precluster-ani
@@ -210,7 +195,6 @@ inputs:
       - string
     doc: method of calculating rough ANI for dereplication. 'dashing' for 
       HyperLogLog, 'finch' for finch MinHash.
-    default: dashing
     inputBinding:
       position: 103
       prefix: --precluster-method
@@ -229,7 +213,6 @@ inputs:
       - type: array
         items: string
     doc: Specify which kinds of modifications will trigger rules to rerun
-    default:
       - mtime
     inputBinding:
       position: 103

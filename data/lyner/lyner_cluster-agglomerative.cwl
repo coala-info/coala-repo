@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Distance metric to use for clustering (e.g. euclidean, cosine)
-    default: euclidean
     inputBinding:
       position: 102
       prefix: --distance-metric
@@ -26,7 +25,6 @@ inputs:
       - string
     doc: Linkage method to use for clustering (e.g. ward, average, complete, 
       single)
-    default: ward
     inputBinding:
       position: 102
       prefix: --linkage
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Number of clusters to find
-    default: 10
     inputBinding:
       position: 102
       prefix: --n-clusters

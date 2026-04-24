@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Length of antisense oligos
-    default: 20
     inputBinding:
       position: 102
       prefix: -w
@@ -25,7 +24,6 @@ inputs:
       - File
     doc: Name of file containing folding constraints. Constraint syntax follows 
       what is used in mfold 3.1
-    default: no constraint
     inputBinding:
       position: 102
       prefix: -f
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run clustering on the sampled ensemble
-    default: 1
     inputBinding:
       position: 102
       prefix: -a
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: 1=do Sirna, 2=do Soligo, 3=both, 0=neither
-    default: 0
     inputBinding:
       position: 102
       prefix: -i

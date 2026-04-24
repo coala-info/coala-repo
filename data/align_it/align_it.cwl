@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for alignment.
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

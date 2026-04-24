@@ -126,14 +126,12 @@ inputs:
 - id: threads
   type: int?
   doc: Number of additional threads to use [0]
-  default: 0
   inputBinding:
     position: 102
     prefix: --threads
 - id: tolerance
   type: int?
   doc: match region within this number of bases, default 5.
-  default: 5
   inputBinding:
     position: 102
     prefix: --tolerance
@@ -146,7 +144,6 @@ inputs:
 - id: unmap_len
   type: int?
   doc: unmap reads INT size or shorter, default 0.
-  default: 0
   inputBinding:
     position: 102
     prefix: --unmap-len

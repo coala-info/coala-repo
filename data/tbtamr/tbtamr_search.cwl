@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: csv variant catalog
-    default: 
       /usr/local/lib/python3.13/site-packages/tbtamr/db/who_v2_catalog.csv
     inputBinding:
       position: 101
@@ -20,7 +19,6 @@ inputs:
       - File
     doc: json file indicating the relevant column settings for interpretation of
       the catalog file.
-    default: 
       /usr/local/lib/python3.13/site-packages/tbtamr/configs/db_config.json
     inputBinding:
       position: 101
@@ -30,7 +28,6 @@ inputs:
       type: array
       items: string
     doc: The variant to search for. Multiple allowed separated by a space.
-    default: None
     inputBinding:
       position: 101
       prefix: --query

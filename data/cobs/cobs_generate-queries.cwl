@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: construct this number of random non-existing negative queries
-    default: 0
     inputBinding:
       position: 102
       prefix: --negative
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: pick this number of existing positive queries
-    default: 0
     inputBinding:
       position: 102
       prefix: --positive
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: term size (k-mer size)
-    default: 31
     inputBinding:
       position: 102
       prefix: --term-size

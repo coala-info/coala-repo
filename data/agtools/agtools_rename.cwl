@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for the graph elements
-    default: ''
     inputBinding:
       position: 101
       prefix: --prefix

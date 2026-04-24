@@ -47,7 +47,6 @@ inputs:
       - 'null'
       - float
     doc: canonical base threshold (default=0.8)
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --can_thresh
@@ -72,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: colour palette name for coverage plot
-    default: mako
     inputBinding:
       position: 101
       prefix: --coverpalette
@@ -81,7 +79,6 @@ inputs:
       - 'null'
       - float
     doc: y-axis minimum for coverage plot (default = 0)
-    default: 0
     inputBinding:
       position: 101
       prefix: --cover_ymin
@@ -116,7 +113,6 @@ inputs:
       - 'null'
       - float
     doc: max overlap between distributions (default = 0.0)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --dmr_maxoverlap
@@ -125,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: minimum difference between means (default = 0.4)
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --dmr_mindiff
@@ -134,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: minimum motif count for DMR prediction (default = 20)
-    default: 20
     inputBinding:
       position: 101
       prefix: --dmr_minmotifs
@@ -143,7 +137,6 @@ inputs:
       - 'null'
       - float
     doc: minimum reads ratio for DMR prediction (default=0.3)
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --dmr_minratio
@@ -152,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: minimum reads per group for DMR prediction (default=8)
-    default: 8
     inputBinding:
       position: 101
       prefix: --dmr_minreads
@@ -170,7 +162,6 @@ inputs:
       - 'null'
       - float
     doc: set exon height (default=0.8)
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --exonheight
@@ -187,7 +178,6 @@ inputs:
       - 'null'
       - string
     doc: colour palette name for highlights
-    default: viridis
     inputBinding:
       position: 101
       prefix: --genepalette
@@ -220,7 +210,6 @@ inputs:
       - 'null'
       - float
     doc: image width (inches, default=8)
-    default: 8
     inputBinding:
       position: 101
       prefix: --height
@@ -245,7 +234,6 @@ inputs:
       - 'null'
       - float
     doc: alpha for highlighting in panels (between 0 and 1, default = 0.25)
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --highlight_alpha
@@ -271,7 +259,6 @@ inputs:
       - 'null'
       - string
     doc: colour palette name for highlights
-    default: Blues
     inputBinding:
       position: 101
       prefix: --highlightpalette
@@ -310,7 +297,6 @@ inputs:
       - 'null'
       - float
     doc: maximum percentage of uncovered windows tolerated (default = 50.0)
-    default: 50.0
     inputBinding:
       position: 101
       prefix: --maxuncovered
@@ -319,7 +305,6 @@ inputs:
       - 'null'
       - float
     doc: modified base threshold (default=0.8)
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --meth_thresh
@@ -328,7 +313,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality (mapq), default = 10
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_mapq
@@ -337,7 +321,6 @@ inputs:
       - 'null'
       - int
     doc: minimum reads per window to include in plot (default = 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_window_calls
@@ -369,7 +352,6 @@ inputs:
       - int
     doc: mod motif size, only used with -b/--bams (default is 2 as "CG" is most 
       common use case)
-    default: 2
     inputBinding:
       position: 101
       prefix: --motifsize
@@ -378,7 +360,6 @@ inputs:
       - 'null'
       - int
     doc: tick count (default=10)
-    default: 10
     inputBinding:
       position: 101
       prefix: --nticks
@@ -388,7 +369,6 @@ inputs:
       - string
     doc: 'Alter panel ratios: needs to be 4 (or 5 if --plot_coverage) comma-seperated
       integers.'
-    default: 1,5,3,3
     inputBinding:
       position: 101
       prefix: --panelratios
@@ -443,7 +423,6 @@ inputs:
       - 'null'
       - string
     doc: palette for samples
-    default: tab10
     inputBinding:
       position: 101
       prefix: --samplepalette
@@ -484,7 +463,6 @@ inputs:
       - 'null'
       - float
     doc: alpha (transparency) value for smoothed plot (default = 1.0)
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --smoothalpha
@@ -493,7 +471,6 @@ inputs:
       - 'null'
       - string
     doc: 'smoothing function, one of: flat,hanning,hamming,bartlett,blackman'
-    default: hanning
     inputBinding:
       position: 101
       prefix: --smoothfunc
@@ -502,7 +479,6 @@ inputs:
       - 'null'
       - float
     doc: smooth line width (default = 4.0)
-    default: 4.0
     inputBinding:
       position: 101
       prefix: --smoothlinewidth
@@ -527,7 +503,6 @@ inputs:
       - 'null'
       - float
     doc: image width (inches, default=16)
-    default: 16
     inputBinding:
       position: 101
       prefix: --width
@@ -552,7 +527,6 @@ inputs:
       - 'null'
       - float
     doc: y-axis maximum for smoothed plot (default = 1.05)
-    default: 1.05
     inputBinding:
       position: 101
       prefix: --ymax
@@ -561,7 +535,6 @@ inputs:
       - 'null'
       - float
     doc: y-axis minimum for smoothed plot (default = -0.05)
-    default: -0.05
     inputBinding:
       position: 101
       prefix: --ymin

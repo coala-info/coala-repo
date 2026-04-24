@@ -56,7 +56,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show all available fields
-    default: false
     inputBinding:
       position: 102
       prefix: -list-fields
@@ -65,7 +64,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show only run names
-    default: false
     inputBinding:
       position: 102
       prefix: -quiet
@@ -74,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: Character used to separate column values
-    default: \t
     inputBinding:
       position: 102
       prefix: -s

@@ -21,7 +21,6 @@ inputs:
       - int
     doc: Truncate all ranked lists to the first `k` rankings to calculate RBO. 
       To disable the truncation use --k 0
-    default: 30
     inputBinding:
       position: 103
       prefix: --k
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads (CPUs)
-    default: 20
     inputBinding:
       position: 103
       prefix: --t
@@ -40,7 +38,6 @@ inputs:
       - float
     doc: RBO parameter in range (0, 1) determines the degree of top-weightedness
       of RBO measure. High p implies strong emphasis on top ranked items
-    default: 0.75
     inputBinding:
       position: 103
       prefix: --p

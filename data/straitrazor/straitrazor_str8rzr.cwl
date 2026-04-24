@@ -42,7 +42,6 @@ inputs:
       - int
     doc: the maximum Hamming distance used with anchor search. can only be 0, 1 
       or 2
-    default: 1
     inputBinding:
       position: 102
       prefix: -a
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: the maximum Hamming distance used with motif search. can only be 0 or 1
-    default: 0
     inputBinding:
       position: 102
       prefix: -m

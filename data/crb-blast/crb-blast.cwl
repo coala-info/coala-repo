@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: e-value cut off for BLAST. Format 1e-5
-    default: '1.0e-05'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to run BLAST with
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

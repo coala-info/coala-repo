@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum Align Quality
-    default: 30
     inputBinding:
       position: 102
       prefix: --alignQ
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum Base Quality
-    default: 20
     inputBinding:
       position: 102
       prefix: --baseQ
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: Call deletions (beta)
-    default: false
     inputBinding:
       position: 102
       prefix: --deletions
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: Call insertions (beta)
-    default: false
     inputBinding:
       position: 102
       prefix: --insertions
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: Specifify mtDNA contig name
-    default: 'null'
     inputBinding:
       position: 102
       prefix: --contig-name
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable ANSI support
-    default: false
     inputBinding:
       position: 102
       prefix: --no-ansi
@@ -70,7 +64,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable BAQ
-    default: false
     inputBinding:
       position: 102
       prefix: --baq
@@ -79,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: Specifify mutserve mode
-    default: 'null'
     inputBinding:
       position: 102
       prefix: --excluded-samples
@@ -96,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum Map Quality
-    default: 20
     inputBinding:
       position: 102
       prefix: --mapQ
@@ -105,7 +96,6 @@ inputs:
       - 'null'
       - string
     doc: Specifify mutserve mode
-    default: mtdna
     inputBinding:
       position: 102
       prefix: --mode
@@ -146,7 +136,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use Frequency File
-    default: false
     inputBinding:
       position: 102
       prefix: --no-freq
@@ -155,7 +144,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write fasta file
-    default: false
     inputBinding:
       position: 102
       prefix: --write-fasta
@@ -164,7 +152,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write raw file
-    default: false
     inputBinding:
       position: 102
       prefix: --write-raw

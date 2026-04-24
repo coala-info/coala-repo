@@ -138,7 +138,6 @@ inputs:
       - string
     doc: 'SV types to include in output VCF (default: DEL,INS,DUP,INV,BND). Give a
       comma-separated list of SV types, like "DEL,INS"'
-    default: DEL,INS,DUP,INV,BND
     inputBinding:
       position: 101
       prefix: --types

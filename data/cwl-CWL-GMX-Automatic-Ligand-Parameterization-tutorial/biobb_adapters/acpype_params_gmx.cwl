@@ -46,7 +46,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_path_gro
-    default: system.gro
 
   output_path_itp:
     label: Path to the ITP output file
@@ -62,7 +61,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_path_itp
-    default: system.itp
 
   output_path_top:
     label: Path to the TOP output file
@@ -78,7 +76,6 @@ inputs:
     inputBinding:
       position: 4
       prefix: --output_path_top
-    default: system.top
 
   config:
     label: Advanced configuration options for biobb_chemistry AcpypeParamsGMX

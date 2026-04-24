@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Number of additional bases to clip downstream
-    default: 0
     inputBinding:
       position: 101
       prefix: -d
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for parallel processing
-    default: 1
     inputBinding:
       position: 101
       prefix: -n
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Number of additional bases to clip upstream
-    default: 0
     inputBinding:
       position: 101
       prefix: -u

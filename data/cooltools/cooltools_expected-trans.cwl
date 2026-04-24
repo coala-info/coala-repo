@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Control the number of pixels handled by each worker process at a time.
-    default: 10000000
     inputBinding:
       position: 102
       prefix: --chunksize
@@ -27,7 +26,6 @@ inputs:
       - string
     doc: Use balancing weight with this name stored in cooler.Provide empty 
       argument to calculate cis-expected on raw data
-    default: weight
     inputBinding:
       position: 102
       prefix: --clr-weight-name
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to split the work between.
-    default: 1
     inputBinding:
       position: 102
       prefix: --nproc

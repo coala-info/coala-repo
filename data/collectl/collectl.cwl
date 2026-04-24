@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: collection interval in seconds
-    default: 1
     inputBinding:
       position: 101
       prefix: --interval
@@ -123,7 +122,6 @@ inputs:
       - 'null'
       - string
     doc: specify one or more subsystems
-    default: cdn
     inputBinding:
       position: 101
       prefix: --subsys

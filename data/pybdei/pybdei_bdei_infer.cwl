@@ -114,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: Number of unobserved trees. By default (-1) is estimated.
-    default: -1
     inputBinding:
       position: 101
       prefix: --u

@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality required.
-    default: 10
     inputBinding:
       position: 105
       prefix: --min_base_qual
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum reads depth required for both normal and tumor samples.
-    default: 20
     inputBinding:
       position: 105
       prefix: --min_depth
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality required.
-    default: 10
     inputBinding:
       position: 105
       prefix: --min_map_qual
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to launch for preprocessing.
-    default: 1
     inputBinding:
       position: 105
       prefix: --process_num
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - File
     doc: BED file for segments. If not provided, use autosomes as segments.
-    default: None
     inputBinding:
       position: 105
       prefix: --segments_bed
@@ -76,7 +71,6 @@ inputs:
     doc: Flag indicating whether the BAM files are whole exome sequencing(WES) 
       or not. If not provided, the BAM files are assumed to be whole genome 
       sequencing(WGS).
-    default: false
     inputBinding:
       position: 105
       prefix: --WES

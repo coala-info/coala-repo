@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bootstrap replicates. (INTEGER RANGE 10<=x<=100)
-    default: 30
     inputBinding:
       position: 102
       prefix: --bootstrap-replicates
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: Compute confidence intervals.
-    default: false
     inputBinding:
       position: 102
       prefix: --compute_ci
@@ -37,7 +35,6 @@ inputs:
       - float
     doc: Confidence level for the bootstrap confidence intervals. (FLOAT RANGE 
       0.1<=x<=0.99)
-    default: 0.95
     inputBinding:
       position: 102
       prefix: --conf
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - boolean
     doc: If set to True, temporary files will be kept after the analysis.
-    default: false
     inputBinding:
       position: 102
       prefix: --keep-temporary-files
@@ -73,7 +69,6 @@ inputs:
       - string
     doc: CpG coverage to estimate sequencing saturation. It can be either a 
       single integer or a list of integers (e.g 1,3,5).
-    default: '3'
     inputBinding:
       position: 102
       prefix: --minimum-coverage
@@ -83,7 +78,6 @@ inputs:
       - int
     doc: An positive integer constraining possible rational function 
       approximations.
-    default: 20
     inputBinding:
       position: 102
       prefix: --mt
@@ -93,7 +87,6 @@ inputs:
       - float
     doc: Initial value for the mu parameter in the negative binomial 
       distribution for the EM algorithm.
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --mu
@@ -103,7 +96,6 @@ inputs:
       - boolean
     doc: If set to True, MethylDackel extract will consider the RRBS nature of 
       the data adding the --keepDupes flag.
-    default: false
     inputBinding:
       position: 102
       prefix: --rrbs
@@ -113,7 +105,6 @@ inputs:
       - float
     doc: A positive double, the initial value of the parameter size in the 
       negative binomial distribution for the EM algorithm.
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --size
@@ -122,7 +113,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum value of t for prediction. (FLOAT RANGE 2.0<=x<=1000.0)
-    default: 10.0
     inputBinding:
       position: 102
       prefix: --t-max
@@ -131,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: Step size taken when predicting future unique CpGs at increasing depth.
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --t-step

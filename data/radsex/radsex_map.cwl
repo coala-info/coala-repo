@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum identity to consider a marker as mapped
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --min-identity
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality to consider a marker as mapped
-    default: 20
     inputBinding:
       position: 101
       prefix: --min-quality
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for mapping
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

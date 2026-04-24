@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum gap between pairs.
-    default: 500000
     inputBinding:
       position: 103
       prefix: -maxGap
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum gap between pairs.
-    default: 0
     inputBinding:
       position: 103
       prefix: -minGap

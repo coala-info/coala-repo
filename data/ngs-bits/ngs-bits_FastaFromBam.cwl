@@ -17,7 +17,6 @@ inputs:
       - File
     doc: Reference genome FASTA file. If unset 'reference_genome' from the 
       'settings.ini' file is used.
-    default: ''
     inputBinding:
       position: 101
       prefix: -ref

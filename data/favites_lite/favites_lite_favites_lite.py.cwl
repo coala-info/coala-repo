@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite output directory if it exists
-    default: false
     inputBinding:
       position: 101
       prefix: --overwrite
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: Suppress Log Messages
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Random Number Generator Seed
-    default: None
     inputBinding:
       position: 101
       prefix: --rng_seed

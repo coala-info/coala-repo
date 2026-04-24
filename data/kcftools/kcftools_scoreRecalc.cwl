@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: Inner kmer distance weight
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --wi
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: Kmer ratio weight
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --wr
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: Tail kmer distance weight
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --wt

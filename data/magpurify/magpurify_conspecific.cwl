@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum fraction of contig aligned to reference
-    default: 0.5
     inputBinding:
       position: 104
       prefix: --contig-aln
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percent identity of contig aligned to reference
-    default: 95.0
     inputBinding:
       position: 104
       prefix: --contig-pid
@@ -44,7 +42,6 @@ inputs:
       - type: array
         items: string
     doc: List of references to exclude
-    default: ''
     inputBinding:
       position: 104
       prefix: --exclude
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: Hit rate for flagging contigs
-    default: 0.0
     inputBinding:
       position: 104
       prefix: --hit-rate
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: Mash distance to reference genomes
-    default: 0.05
     inputBinding:
       position: 104
       prefix: --mash-dist
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of genomes to use
-    default: 25
     inputBinding:
       position: 104
       prefix: --max-genomes
@@ -80,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Min number of genomes to use
-    default: 1
     inputBinding:
       position: 104
       prefix: --min-genomes
@@ -89,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use
-    default: 1
     inputBinding:
       position: 104
       prefix: --threads

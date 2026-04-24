@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: Set the minimun abundace value for a clade to be annotated.
-    default: 20.0
     inputBinding:
       position: 101
       prefix: --abundance_threshold
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Set the font size for the annotation legend.
-    default: 10
     inputBinding:
       position: 101
       prefix: --annotation_legend_font_size
@@ -74,7 +72,6 @@ inputs:
       - int
     doc: Set a default size for clades that are not found as biomarkers by 
       LEfSe.
-    default: 10
     inputBinding:
       position: 101
       prefix: --def_clade_size
@@ -83,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Set a default font size.
-    default: 10
     inputBinding:
       position: 101
       prefix: --def_font_size
@@ -117,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: row number containing the names of the features
-    default: 0
     inputBinding:
       position: 101
       prefix: --fname_row
@@ -151,7 +146,6 @@ inputs:
       - int
     doc: When only lefse_input is provided, you can specify the minimum number 
       of biomarkers to extract.
-    default: 3
     inputBinding:
       position: 101
       prefix: --least_biomarkers
@@ -178,7 +172,6 @@ inputs:
       - 'null'
       - int
     doc: Set the maximum value of clades that are biomarkers.
-    default: 200
     inputBinding:
       position: 101
       prefix: --max_clade_size
@@ -187,7 +180,6 @@ inputs:
       - 'null'
       - int
     doc: Set the maximum font size.
-    default: 12
     inputBinding:
       position: 101
       prefix: --max_font_size
@@ -204,7 +196,6 @@ inputs:
       - 'null'
       - int
     doc: Set the minimum value of clades that are biomarkers.
-    default: 20
     inputBinding:
       position: 101
       prefix: --min_clade_size
@@ -213,7 +204,6 @@ inputs:
       - 'null'
       - int
     doc: Set the minimum font size to use.
-    default: 8
     inputBinding:
       position: 101
       prefix: --min_font_size
@@ -223,7 +213,6 @@ inputs:
       - int
     doc: When only lefse_input is provided, you can specify how many clades 
       highlight.
-    default: 10
     inputBinding:
       position: 101
       prefix: --most_abundant
@@ -248,7 +237,6 @@ inputs:
       - 'null'
       - int
     doc: column number containing the names of the samples
-    default: 0
     inputBinding:
       position: 101
       prefix: --sname_row
@@ -281,7 +269,6 @@ inputs:
       - 'null'
       - int
     doc: Set the title font size.
-    default: 15
     inputBinding:
       position: 101
       prefix: --title_font_size

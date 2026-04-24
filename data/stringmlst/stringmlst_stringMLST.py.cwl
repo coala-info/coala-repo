@@ -72,7 +72,6 @@ inputs:
       coverage reads this threshold should be set higher to avoid indicating 
       fuzzy match when exact match was more likely. For lower coverage reads, 
       threshold of <100 is recommended
-    default: 300
     inputBinding:
       position: 101
       prefix: --fuzzy
@@ -92,7 +91,6 @@ inputs:
       tool works best with kmer length in between 35 and 66 for read lengths of 
       55 to 150 bp. Kmer size can be increased accordingly. It is advised to 
       keep lower kmer sizes if the quality of reads is not very good.
-    default: 35
     inputBinding:
       position: 101
       prefix: -k

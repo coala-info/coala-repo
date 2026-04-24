@@ -20,7 +20,6 @@ inputs:
       - string
     doc: Force reverse complementing the I5 and/or I7 indices. If set to anything
       other than 'original' this will disregard lenient mode.
-    default: original
     inputBinding:
       position: 101
       prefix: --force_rc
@@ -39,7 +38,6 @@ inputs:
       - float
     doc: If lenient is set, this is the minimum factor of additional matches required
       to reverse complement the index
-    default: 4.0
     inputBinding:
       position: 101
       prefix: --lenient_factor
@@ -50,7 +48,6 @@ inputs:
     doc: Manually set maximum allowed edit distance for index matching,by default
       this is set to 0, 1 or 2 based on the minimum detectedindex distance in the
       samplesheet.
-    default: 2
     inputBinding:
       position: 101
       prefix: --max-distance
@@ -60,7 +57,6 @@ inputs:
       - int
     doc: Maximum number of unknown indices to show in the output. default is length
       of samplesheet + 10
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-unknowns
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Run name
-    default: anglerfish
     inputBinding:
       position: 101
       prefix: --run_name
@@ -101,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

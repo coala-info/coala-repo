@@ -48,7 +48,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_top_path
-    default: system.top
 
   config:
     label: Advanced configuration options for biobb_amber ParmedHMassRepartition

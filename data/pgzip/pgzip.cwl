@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Set the block size in KiB.
-    default: 128
     inputBinding:
       position: 102
       prefix: -b

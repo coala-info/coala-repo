@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: download limit
-    default: None
     inputBinding:
       position: 102
       prefix: --limit

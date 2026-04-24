@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: desert size
-    default: 1000
     inputBinding:
       position: 102
       prefix: -desert
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: max iterations
-    default: 10
     inputBinding:
       position: 102
       prefix: -itr
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: min cumulative methylation level in HypeMR
-    default: 4.0
     inputBinding:
       position: 102
       prefix: -min-meth
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - float
     doc: Tolerance
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -tolerance

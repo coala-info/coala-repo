@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: dependency coefficient (theta)
-    default: 0.85
     inputBinding:
       position: 104
       prefix: -t
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: expected rate of heterozygotes
-    default: 0.001
     inputBinding:
       position: 104
       prefix: -r
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of mismatches
-    default: 7
     inputBinding:
       position: 104
       prefix: -m
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: maximum sum of errors
-    default: 60
     inputBinding:
       position: 104
       prefix: -Q
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality
-    default: 0
     inputBinding:
       position: 104
       prefix: -q
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: number of haplotypes (>=2)
-    default: 2
     inputBinding:
       position: 104
       prefix: -N

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - File
     doc: "edges file (default is hprd). Format is geneA|geneB\ngeneA|geneC..."
-    default: hprd
     inputBinding:
       position: 102
       prefix: --edges

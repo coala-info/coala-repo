@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: Dataset name to download (registered in DATASETS)
-    default: virome
     inputBinding:
       position: 101
       prefix: --name

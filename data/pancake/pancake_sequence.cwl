@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: line witdth in .fastafile (DEFAULT=100)
-    default: 100
     inputBinding:
       position: 101
       prefix: --linewidth
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: (1-based) start position on CHROMOSME (DEFAULT = 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: -start

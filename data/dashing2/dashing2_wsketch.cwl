@@ -102,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Set number of threads (processes)
-    default: 1
     inputBinding:
       position: 104
       prefix: -p

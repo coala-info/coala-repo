@@ -43,5 +43,4 @@ steps:
     loop:
       i1:
         outputSource: o1
-        default: 5
     outputMethod: all_iterations

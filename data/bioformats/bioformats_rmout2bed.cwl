@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: 'how to choose colors of BED repeat records (default: class)'
-    default: class
     inputBinding:
       position: 102
       prefix: --color
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: 'how to choose names of BED repeat records (default: id)'
-    default: id
     inputBinding:
       position: 102
       prefix: --name
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'output only repeat loci (the output is a BED3 file) (default: False)'
-    default: false
     inputBinding:
       position: 102
       prefix: --short

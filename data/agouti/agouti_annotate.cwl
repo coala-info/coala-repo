@@ -40,7 +40,6 @@ inputs:
       - int
     doc: indicate the coordinate system used in the input file (BED/CUSTOM). 
       Either 0 (0-based) or 1 (1-based).
-    default: 0
     inputBinding:
       position: 101
       prefix: --coordinates
@@ -64,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: the number of header lines in the input file.
-    default: 0
     inputBinding:
       position: 101
       prefix: --header_lines
@@ -80,7 +78,6 @@ inputs:
       - int
     doc: annotate results on a specific level (1 for gene level, 2 for mRNA, 
       tRNA level, etc.).
-    default: 2
     inputBinding:
       position: 101
       prefix: --level
@@ -108,7 +105,6 @@ inputs:
       - 'null'
       - string
     doc: field separator to be used with the --custom option.
-    default: \t
     inputBinding:
       position: 101
       prefix: --separator

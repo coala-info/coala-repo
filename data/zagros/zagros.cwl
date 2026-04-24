@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: A weight to determine the diagnostic events' level of contribution
-    default: 1.1
     inputBinding:
       position: 102
       prefix: -de_weight
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: number of motifs to output
-    default: 10
     inputBinding:
       position: 102
       prefix: -number
@@ -71,7 +69,6 @@ inputs:
       - int
     doc: number of starting points to try for EM search. Higher values will be 
       slower, but more likely to find the global maximum
-    default: 10
     inputBinding:
       position: 102
       prefix: -starting-points
@@ -96,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: width of motifs to find (4 <= w <= 12)
-    default: 6
     inputBinding:
       position: 102
       prefix: -width

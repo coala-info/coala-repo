@@ -26,7 +26,6 @@ inputs:
     doc: 'Set the maximum number of allowed mismatches between a read and the reference
       sequence. Reads with more than this number of mismatches are excluded from coverage
       metrics. Default: 6'
-    default: 6
     inputBinding:
       position: 104
       prefix: --base-mismatch
@@ -45,7 +44,6 @@ inputs:
       - int
     doc: 'Set the maximum accepted distance between read mates. Mates beyond this
       distance will be counted as chimeric pairs. Default: 2000000 [bp]'
-    default: 2000000
     inputBinding:
       position: 104
       prefix: --chimeric-distance
@@ -64,7 +62,6 @@ inputs:
       - int
     doc: 'Sets how many bases at both ends of a transcript are masked out when computing
       per-base exon coverage. Default: 500bp'
-    default: 500
     inputBinding:
       position: 104
       prefix: --coverage-mask
@@ -74,7 +71,6 @@ inputs:
       - int
     doc: "Number of counts on a gene to consider the gene 'detected'. Additionally,
       genes below this limit are excluded from 3' bias computation. Default: 5 reads"
-    default: 5
     inputBinding:
       position: 104
       prefix: --detection-threshold
@@ -110,7 +106,6 @@ inputs:
       - int
     doc: 'Set the number of samples to take when computing fragment sizes. Requires
       the --bed argument. Default: 1000000'
-    default: 1000000
     inputBinding:
       position: 104
       prefix: --fragment-samples
@@ -120,7 +115,6 @@ inputs:
       - int
     doc: 'Set the minimum size of a gene for bias calculation. Genes below this size
       are ignored in the calculation. Default: 600 [bp]'
-    default: 600
     inputBinding:
       position: 104
       prefix: --gene-length
@@ -139,7 +133,6 @@ inputs:
       - int
     doc: 'Set the lower bound on read quality for exon coverage counting. Reads below
       this number are excluded from coverage metrics. Default: 255'
-    default: 255
     inputBinding:
       position: 104
       prefix: --mapping-quality
@@ -150,7 +143,6 @@ inputs:
     doc: "Set the offset into the gene for the 3' and 5' windows in bias calculation.
       A positive value shifts the 3' and 5' windows towards eachother, while a negative
       value shifts them apart. Default: 150 [bp]"
-    default: 150
     inputBinding:
       position: 104
       prefix: --offset
@@ -213,7 +205,6 @@ inputs:
       - int
     doc: "Set the size of the 3' and 5' windows in bias calculation. Default: 100
       [bp]"
-    default: 100
     inputBinding:
       position: 104
       prefix: --window-size

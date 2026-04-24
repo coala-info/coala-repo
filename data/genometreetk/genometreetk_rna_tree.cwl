@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: number of cpus
-    default: 1
     inputBinding:
       position: 106
       prefix: --cpus

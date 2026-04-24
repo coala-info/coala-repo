@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of mismatches
-    default: 7
     inputBinding:
       position: 103
       prefix: -m
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: maximum sum of errors
-    default: 60
     inputBinding:
       position: 103
       prefix: -Q
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality
-    default: 0
     inputBinding:
       position: 103
       prefix: -q
@@ -70,7 +67,6 @@ inputs:
       - 'null'
       - File
     doc: only output required positions
-    default: 'null'
     inputBinding:
       position: 103
       prefix: -l

@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage to call a variant
-    default: 2
     inputBinding:
       position: 101
       prefix: --minCoverage
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: Sample name to be used in the VCF file
-    default: SAMPLE
     inputBinding:
       position: 101
       prefix: --sampleName
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: Variant calling threshold
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --threshold

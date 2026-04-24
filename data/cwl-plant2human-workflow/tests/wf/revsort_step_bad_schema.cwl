@@ -25,12 +25,10 @@ inputs:
     type: File
     doc: "The input file to be processed."
     format: iana:text/plain
-    default:
       class: File
       location: hello.txt
   reverse_sort:
     type: boolean
-    default: true
     doc: "If true, reverse (descending) sort"
 
 # The "outputs" array defines the structure of the output object that describes

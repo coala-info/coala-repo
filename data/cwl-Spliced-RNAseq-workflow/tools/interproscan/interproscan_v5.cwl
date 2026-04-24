@@ -65,7 +65,6 @@ inputs:
     label: Input protein fasta file path
   threads:
     type: int?
-    default: 1
     inputBinding:
       position: 3
       prefix: --cpu
@@ -74,7 +73,6 @@ inputs:
     inputBinding:
       position: 4
       prefix: --applications
-    default: 'Pfam,SFLD,SMART,AntiFam,NCBIfam'
     label: Applications
     doc: |
           Comma separated list of analyses:
@@ -82,7 +80,6 @@ inputs:
           default Pfam,SFLD,SMART,AntiFam,NCBIfam
   output_formats:
     type: string?
-    default: 'TSV,JSON'
     inputBinding:
       position: 5
       prefix: --formats
@@ -90,7 +87,6 @@ inputs:
     doc: Optional, case-insensitive, comma separated list of output formats. Supported formats are TSV, XML, JSON, and GFF3. Default  JSON,TSV
   ipr_lookup:
     type: boolean?
-    default: true
     inputBinding:
       position: 6
       prefix: --iprlookup
@@ -98,7 +94,6 @@ inputs:
     doc: Also include lookup of corresponding InterPro annotation in the TSV and GFF3 output formats. Default true
   goterms:
     type: boolean?
-    default: true
     inputBinding:
       position: 7
       prefix: --goterms
@@ -106,7 +101,6 @@ inputs:
     doc: Lookup of corresponding Gene Ontology annotation (IMPLIES -iprlookup option). Default true
   pathways:
     type: boolean?
-    default: true
     inputBinding:
       position: 8
       prefix: --pathways

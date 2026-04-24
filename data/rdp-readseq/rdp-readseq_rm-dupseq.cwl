@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: filter sequence by minimum sequence length
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_seq_length

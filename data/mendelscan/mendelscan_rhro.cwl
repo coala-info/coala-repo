@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: 'Presumed model of inheritance: dominant, recessive, x-linked'
-    default: dominant
     inputBinding:
       position: 102
       prefix: --inheritance

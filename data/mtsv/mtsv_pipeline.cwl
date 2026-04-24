@@ -22,7 +22,6 @@ inputs:
       sensitive=11,3,1. Passing values for the SEED_SIZE, MIN_SEEDS or SEED_GAP 
       parameters will override these settings. Choices are ['fast', 'efficient',
       'sensitive']
-    default: efficient
     inputBinding:
       position: 102
       prefix: --binning_mode
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to write binning files to.
-    default: ./Binning/
     inputBinding:
       position: 102
       prefix: --binning_outpath
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Edit distance to tolerate in matched reference sites
-    default: 3
     inputBinding:
       position: 102
       prefix: --edits
@@ -67,7 +64,6 @@ inputs:
       - File
     doc: Path to FASTA query file produced by readprep. Avoid moving or renaming
       this file after it is made, required metadata is stored with this file.
-    default: ./QueryFastas/queries.fasta
     inputBinding:
       position: 102
       prefix: --fasta
@@ -76,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Set size of each read segment for segment trim mode.
-    default: 50
     inputBinding:
       position: 102
       prefix: --kmer
@@ -85,7 +80,6 @@ inputs:
       - 'null'
       - File
     doc: Set log file path, absolute or relative to working dir.
-    default: ./Logs/mtsv_{COMMAND}_{TIMESTAMP}.log
     inputBinding:
       position: 102
       prefix: --log_file
@@ -96,7 +90,6 @@ inputs:
     doc: Merged binning output file. (WARNING avoid moving output files from 
       their original directory, downstream processes rely on meta data (.params 
       file) in directory)
-    default: ./Binning/merged.clp
     inputBinding:
       position: 102
       prefix: --merge_file
@@ -131,7 +124,6 @@ inputs:
       - 'null'
       - File
     doc: File to place signature hits output.
-    default: ./Summary/signature.txt
     inputBinding:
       position: 102
       prefix: --signature_file
@@ -142,7 +134,6 @@ inputs:
     doc: File to place summary table. WARNING avoid moving output files from 
       original directory, downstream processes rely on metadata (.params file) 
       stored in directory.
-    default: ./Summary/summary.csv
     inputBinding:
       position: 102
       prefix: --summary_file
@@ -154,7 +145,6 @@ inputs:
       signature hits. (Takes priority over LCA search when family or genus exist
       for a taxonomic ID.) More roll up options comming soon. Choices are 
       ['family', 'genus', 'species']
-    default: species
     inputBinding:
       position: 102
       prefix: --tax_level
@@ -163,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: Number of worker threads to spawn.
-    default: 4
     inputBinding:
       position: 102
       prefix: --threads
@@ -174,7 +163,6 @@ inputs:
     doc: --lcd takes first N bases of each read, where N = shortest read length 
       in FASTQ --segment takes subsequent N length sequences of each read (set N
       with --kmer) Choices are ['lcd', 'segment']
-    default: segment
     inputBinding:
       position: 102
       prefix: --trim_mode
@@ -183,7 +171,6 @@ inputs:
       - 'null'
       - Directory
     doc: Specify working directory to place output.
-    default: /
     inputBinding:
       position: 102
       prefix: --wd

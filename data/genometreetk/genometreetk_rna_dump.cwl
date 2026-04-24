@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of archaeal 16S rRNA gene to include
-    default: 900
     inputBinding:
       position: 104
       prefix: --min_16S_ar_len
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of bacterial 16S rRNA gene to include
-    default: 1200
     inputBinding:
       position: 104
       prefix: --min_16S_bac_len
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of 23S rRNA gene to include
-    default: 1900
     inputBinding:
       position: 104
       prefix: --min_23S_len
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of 5S rRNA gene to include
-    default: 80
     inputBinding:
       position: 104
       prefix: --min_5S_len
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: minimum contig length
-    default: 0
     inputBinding:
       position: 104
       prefix: --min_contig_len

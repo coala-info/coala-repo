@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - float
     doc: proportion required to be present
-    default: '0.5'
     inputBinding:
       position: 101
       prefix: --prop

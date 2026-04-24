@@ -25,7 +25,6 @@ inputs:
       - string
     doc: colorize the output; WHEN can be 'never', 'always', or 'auto' (the 
       default)
-    default: auto
     inputBinding:
       position: 102
       prefix: --color
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: output NUM (default 3) lines of copied context
-    default: 3
     inputBinding:
       position: 102
       prefix: --context
@@ -357,7 +355,6 @@ inputs:
       - 'null'
       - int
     doc: tab stops every NUM (default 8) print columns
-    default: 8
     inputBinding:
       position: 102
       prefix: --tabsize
@@ -390,7 +387,6 @@ inputs:
       - 'null'
       - int
     doc: output NUM (default 3) lines of unified context
-    default: 3
     inputBinding:
       position: 102
       prefix: --unified
@@ -399,7 +395,6 @@ inputs:
       - 'null'
       - int
     doc: output at most NUM (default 130) print columns
-    default: 130
     inputBinding:
       position: 102
       prefix: --width

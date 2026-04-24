@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - boolean
     doc: Typeable if any genes are below threshold
-    default: false
     inputBinding:
       position: 103
       prefix: --below-threshold
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - File
     doc: Turn on fasta output. Accepts a single file or a directory
-    default: cwd
     inputBinding:
       position: 103
       prefix: --fasta
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - File
     doc: Turn on JSON lines output. Optionally choose file (can be existing)
-    default: kaptive_results.json
     inputBinding:
       position: 103
       prefix: --json
@@ -72,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Typeable if <= other genes
-    default: 1
     inputBinding:
       position: 103
       prefix: --max-other-genes
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum gene %coverage (blen/q_len*100) to be used for scoring
-    default: 50.0
     inputBinding:
       position: 103
       prefix: --min-cov
@@ -91,7 +86,6 @@ inputs:
       - int
     doc: Number of best loci from the 1st round of scoring to be fully aligned 
       to the assembly
-    default: 2
     inputBinding:
       position: 103
       prefix: --n-best
@@ -108,7 +102,6 @@ inputs:
       - 'null'
       - float
     doc: Typeable if >= % expected genes
-    default: 50.0
     inputBinding:
       position: 103
       prefix: --percent-expected
@@ -118,7 +111,6 @@ inputs:
       - Directory
     doc: Plot results to "./{assembly}_kaptive_results.{fmt}". Optionally choose
       a directory
-    default: cwd
     inputBinding:
       position: 103
       prefix: --plot
@@ -127,7 +119,6 @@ inputs:
       - 'null'
       - string
     doc: Format for locus plots
-    default: png
     inputBinding:
       position: 103
       prefix: --plot-fmt
@@ -136,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: 'Metric for scoring each locus (0: AS, 1: mlen, 2: blen, 3: q_len)'
-    default: 0
     inputBinding:
       position: 103
       prefix: --score-metric
@@ -145,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: Number of alignment threads or 0 for all available
-    default: 0
     inputBinding:
       position: 103
       prefix: -t
@@ -170,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: Weighting for the 1st stage of the scoring algorithm
-    default: 3
     inputBinding:
       position: 103
       prefix: --weight-metric

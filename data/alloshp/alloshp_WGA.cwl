@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: parameters for Cgaln aligner
-    default: -X4000
     inputBinding:
       position: 101
       prefix: -C
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: parameters for Cgaln indexer
-    default: -K11 -BS10000
     inputBinding:
       position: 101
       prefix: -N
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: parameters for GSAlign aligner
-    default: -no_vcf -one
     inputBinding:
       position: 101
       prefix: -G
@@ -50,7 +47,6 @@ inputs:
     doc: 'parameters for utils/mapcoords.pl (1st: max ratio of mapped positions in
       other blocks, 2nd: max ratio of coordinates with multiple positions in same
       block)'
-    default: 0.25 0.05
     inputBinding:
       position: 101
       prefix: -M
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: min contig length [Mbp]
-    default: 1
     inputBinding:
       position: 101
       prefix: -l
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: number of cores (optional, some tasks only)
-    default: 4
     inputBinding:
       position: 101
       prefix: -n
@@ -93,7 +87,6 @@ inputs:
       - 'null'
       - Directory
     doc: path to dir for temp files
-    default: /tmp
     inputBinding:
       position: 101
       prefix: -t

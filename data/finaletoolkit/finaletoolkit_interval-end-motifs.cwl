@@ -59,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length for a fragment to be included.
-    default: 50
     inputBinding:
       position: 104
       prefix: --min-length

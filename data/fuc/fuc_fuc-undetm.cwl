@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Number of top unknown barcodes to return
-    default: 30
     inputBinding:
       position: 102
       prefix: --count

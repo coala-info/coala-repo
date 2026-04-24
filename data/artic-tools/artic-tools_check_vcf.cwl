@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum quality score to keep a variant
-    default: 10.0
     inputBinding:
       position: 103
       prefix: --minQual

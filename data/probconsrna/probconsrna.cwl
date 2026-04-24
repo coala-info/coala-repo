@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Use REPS passes of consistency transformation
-    default: 2
     inputBinding:
       position: 102
       prefix: --consistency
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Use REPS passes of iterative-refinement
-    default: 100
     inputBinding:
       position: 102
       prefix: --iterative-refinement
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Use REPS passes of pre-training
-    default: 0
     inputBinding:
       position: 102
       prefix: --pre-training

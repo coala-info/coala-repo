@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum positive sample of MSI for training.
-    default: 10
     inputBinding:
       position: 101
       prefix: --positive_num
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: The threads used to run this program.
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: 'Threshold for AUC score: AUC score was calculating by the sklearn package.'
-    default: 0.65
     inputBinding:
       position: 101
       prefix: --thresh_AUCscore
@@ -46,7 +43,6 @@ inputs:
       - float
     doc: Threshold for coefficient of variation of gene expression value of all 
       samples (Mean/Std).
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --thresh_cov
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for Pvalue of rank sum test between MSI-H and MSS samples.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --thresh_p_ranksum

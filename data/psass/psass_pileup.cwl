@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality to include a read in pileup
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-map-quality

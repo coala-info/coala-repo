@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Multiple testing correction method.
-    default: fdr
     inputBinding:
       position: 101
       prefix: --correction-method
@@ -31,7 +30,6 @@ inputs:
       - string
     doc: Name of reduction in Seurat objet to be used to determine the feature 
       space.
-    default: pca
     inputBinding:
       position: 101
       prefix: --reduction-parameter

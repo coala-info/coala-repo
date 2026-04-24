@@ -15,7 +15,6 @@ inputs:
       and the end position of the best alignment will be returned. Otherwise, a 
       new block will be created and the alignment will continue from the current
       end position; default = 0.8.
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --block_ratio
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Block size during alignment; default = 100.
-    default: 100
     inputBinding:
       position: 101
       prefix: --block
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty score (positive number) for 1 indel; default = 2.
-    default: 2
     inputBinding:
       position: 101
       prefix: --indel
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Award score (positive number) for 1 match; default = 1.
-    default: 1
     inputBinding:
       position: 101
       prefix: --match
@@ -65,7 +61,6 @@ inputs:
       - int
     doc: Maximum number of indels allowed in the terminal repeats; set -1 to be 
       unlimited; default = -1.
-    default: -1
     inputBinding:
       position: 101
       prefix: --max_indel
@@ -75,7 +70,6 @@ inputs:
       - int
     doc: Maximum number of mismatches allowed in the terminal repeats; set -1 to
       be unlimited; default = -1.
-    default: -1
     inputBinding:
       position: 101
       prefix: --max_mismatch
@@ -102,7 +96,6 @@ inputs:
       - float
     doc: Maximum length ratio of spacer/total sequence; set -1 to be unlimited; 
       default = -1.
-    default: -1
     inputBinding:
       position: 101
       prefix: -r
@@ -119,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of TSDs; default = 10.
-    default: 10
     inputBinding:
       position: 101
       prefix: --max_tsd
@@ -129,7 +121,6 @@ inputs:
       - int
     doc: Maximum percentage of unpaired nucleotides in the terminal repeats; set
       -1 to be unlimited; default = 10.
-    default: 10
     inputBinding:
       position: 101
       prefix: -p
@@ -163,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of TSDs; default = 2.
-    default: 2
     inputBinding:
       position: 101
       prefix: --min_tsd
@@ -172,7 +162,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty score (positive number) for 1 mismatch; default = 1.
-    default: 1
     inputBinding:
       position: 101
       prefix: --mismatch
@@ -181,7 +170,6 @@ inputs:
       - 'null'
       - int
     doc: 'Format for outputs; 0: FASTA format; 1: only IDs; default = 0.'
-    default: 0
     inputBinding:
       position: 101
       prefix: -f
@@ -190,7 +178,6 @@ inputs:
       - 'null'
       - int
     doc: Length of the seed region; default = 10; must >= 5 and <= '--min_tr'.
-    default: 10
     inputBinding:
       position: 101
       prefix: -s
@@ -199,7 +186,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum mismatch number in the seed region; default = 1.
-    default: 1
     inputBinding:
       position: 101
       prefix: --seed_mismatch
@@ -208,7 +194,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads used in this program; default = 1.
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

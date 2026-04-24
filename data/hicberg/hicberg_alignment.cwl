@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Threads to use for analysis.
-    default: 1
     inputBinding:
       position: 104
       prefix: --cpus
@@ -61,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: Set sensitivity level for Bowtie2.
-    default: very-sensitive
     inputBinding:
       position: 104
       prefix: --sensitivity

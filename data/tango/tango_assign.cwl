@@ -15,7 +15,6 @@ inputs:
       - type: array
         items: string
     doc: Ranks to use when assigning taxa. Defaults to phylum genus species
-    default:
       - phylum
       - genus
       - species
@@ -29,7 +28,6 @@ inputs:
     doc: Size of chunks sent to process pool. For large input files using a 
       large chunksize can make the job complete much faster than using the 
       default value of 1.
-    default: 1
     inputBinding:
       position: 102
       prefix: --chunksize
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cpus to use. Defaults to 1.
-    default: 1
     inputBinding:
       position: 102
       prefix: --cpus
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum e-value to store hits. Default 0.001
-    default: 0.001
     inputBinding:
       position: 102
       prefix: --evalue
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: "Mode to use for parsing taxonomy: 'rank_lca' (default), 'rank_vote' or 'score'"
-    default: rank_lca
     inputBinding:
       position: 102
       prefix: --mode
@@ -76,7 +71,6 @@ inputs:
         items: float
     doc: Rank-specific thresholds corresponding to percent identity of a 
       hit.Defaults to 45 (phylum), 60 (genus) and 85 (species)
-    default:
       - 45.0
       - 60.0
       - 85.0
@@ -90,7 +84,6 @@ inputs:
         items: string
     doc: Ranks to report in output. Defaults to superkingom phylum class 
       orderfamily genus species
-    default:
       - superkingom
       - phylum
       - class
@@ -107,7 +100,6 @@ inputs:
       - string
     doc: Name of ete3 sqlite file to be created within --taxdir. Defaults to 
       'taxonomy.sqlite'
-    default: taxonomy.sqlite
     inputBinding:
       position: 102
       prefix: --sqlitedb
@@ -117,7 +109,6 @@ inputs:
       - Directory
     doc: Directory specified during 'tango download taxonomy'. Defaults to 
       taxonomy/.
-    default: taxonomy/
     inputBinding:
       position: 102
       prefix: --taxdir
@@ -134,7 +125,6 @@ inputs:
       - 'null'
       - float
     doc: Top percent of best score to consider hits for (default=5)
-    default: 5.0
     inputBinding:
       position: 102
       prefix: --top

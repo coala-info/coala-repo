@@ -50,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: Fraction of data to use for test (default=0.2)
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --test_split

@@ -13,7 +13,6 @@ inputs:
     doc: Target sampled haplotype length. All long haplotypes tend to be rare, 
       so setting this to lengths greater than the typical recombination block 
       size will result in long runtimes and poor sampling of the graph.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --bp-target
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - float
     doc: Epsilon (ε) for exponential mechanism.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --epsilon
@@ -39,7 +37,6 @@ inputs:
       - int
     doc: Minimum frequency (count) of haplotype observation to emit. 
       Singularities occur at -c 1, so we warn against its use.
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-hap-freq
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Sample until we have approximately this path depth over the graph.
-    default: 1
     inputBinding:
       position: 101
       prefix: --target-depth

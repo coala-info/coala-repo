@@ -15,7 +15,6 @@ inputs:
       - int
     doc: 'alignment mode: 0 - local (Smith-Waterman), 1 - global (Needleman-Wunsch),
       2 - semi-global'
-    default: 0
     inputBinding:
       position: 102
       prefix: --algorithm
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: gap extension penalty (must be non-positive)
-    default: -6
     inputBinding:
       position: 102
       prefix: -e
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: gap opening penalty (must be non-positive)
-    default: -8
     inputBinding:
       position: 102
       prefix: -g
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: score for matching bases
-    default: 5
     inputBinding:
       position: 102
       prefix: -m
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: minimal consensus coverage (usable only with -r 0)
-    default: -1
     inputBinding:
       position: 102
       prefix: --min-coverage
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: score for mismatching bases
-    default: -4
     inputBinding:
       position: 102
       prefix: -n
@@ -71,7 +65,6 @@ inputs:
         items: int
     doc: 'result mode: 0 - consensus (FASTA), 1 - multiple sequence alignment (FASTA),
       2 - 0 & 1 (FASTA), 3 - partial order graph (GFA), 4 - 0 & 3 (GFA)'
-    default: 0
     inputBinding:
       position: 102
       prefix: --result
@@ -81,7 +74,6 @@ inputs:
       - int
     doc: gap extension penalty of the second affine function (must be 
       non-positive)
-    default: -4
     inputBinding:
       position: 102
       prefix: -c
@@ -91,7 +83,6 @@ inputs:
       - int
     doc: gap opening penalty of the second affine function (must be 
       non-positive)
-    default: -10
     inputBinding:
       position: 102
       prefix: -q

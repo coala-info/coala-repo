@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to launch.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpu-core
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the column in .cool to output the DI track
-    default: DIs
     inputBinding:
       position: 101
       prefix: --DI-col
@@ -36,7 +34,6 @@ inputs:
       - type: array
         items: string
     doc: List of chromosomes to exclude.
-    default:
       - chrY
       - chrM
     inputBinding:
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - File
     doc: Logging file name.
-    default: hitad.log
     inputBinding:
       position: 101
       prefix: --logFile
@@ -56,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum domain size in base-pair unit.
-    default: 4000000
     inputBinding:
       position: 101
       prefix: --maxsize
@@ -66,7 +61,6 @@ inputs:
       - int
     doc: "Minimum chromosome size. Only chromosomes with a size\n                \
       \        greater than this value will be considered."
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --minimum-chrom-size
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove cache data before exiting.
-    default: false
     inputBinding:
       position: 101
       prefix: --removeCache
@@ -86,7 +79,6 @@ inputs:
     doc: "Name of the column in .cool to be used to construct\n                  \
       \      the normalized matrix. Specify \"-W RAW\" if you want to\n          \
       \              run with the raw matrix."
-    default: weight
     inputBinding:
       position: 101
       prefix: --weight-col

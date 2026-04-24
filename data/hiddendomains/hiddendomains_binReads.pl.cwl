@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: 'binWidth: 1000 (change with -b option)'
-    default: 1000
     inputBinding:
       position: 102
       prefix: -b
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: 'minQualScore: 30 (change with -q option)'
-    default: 30
     inputBinding:
       position: 102
       prefix: -q

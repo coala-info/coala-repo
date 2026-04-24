@@ -55,7 +55,6 @@ inputs:
       color list, a file containing one color per line, or an actual 
       comma-separated list of colors. Colors can be specified in the format 
       `#rrggbb` using hex values, or by web color names.
-    default: inferno
     inputBinding:
       position: 101
       prefix: --color-list
@@ -68,7 +67,6 @@ inputs:
       range of the color map. This translation can be done as a simple linear 
       transform, or logarithmic, so that low values can be distinguished with 
       more detail.
-    default: linear
     inputBinding:
       position: 101
       prefix: --color-normalization
@@ -132,7 +130,6 @@ inputs:
     doc: See `--min-value`; this is the equivalent upper limit of values.Any 
       value that is above the max specified here will then be mapped to the 
       `over` color, or be clipped to the highest value in the color map.
-    default: nan
     inputBinding:
       position: 101
       prefix: --max-value
@@ -146,7 +143,6 @@ inputs:
       lower values. Any value that is below the min specified here will then be 
       mapped to the `under` color, or clipped to the lowest value in the color 
       map.
-    default: nan
     inputBinding:
       position: 101
       prefix: --min-value
@@ -155,7 +151,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to write files to
-    default: .
     inputBinding:
       position: 101
       prefix: --out-dir
@@ -165,7 +160,6 @@ inputs:
       - string
     doc: Color used to indicate values above the max value. Color can be 
       specified in the format `#rrggbb` using hex values, or by web color names.
-    default: '#ff00ff'
     inputBinding:
       position: 101
       prefix: --over-color
@@ -186,7 +180,6 @@ inputs:
       (1) `OMP_NUM_THREADS` (OpenMP) and (2) `SLURM_CPUS_PER_TASK` (slurm), as 
       well as (3) the hardware concurrency (number of CPU cores), taking 
       hyperthreads into account, in the given order of precedence.
-    default: 14
     inputBinding:
       position: 101
       prefix: --threads
@@ -196,7 +189,6 @@ inputs:
       - string
     doc: Color used to indicate values below the min value. Color can be 
       specified in the format `#rrggbb` using hex values, or by web color names.
-    default: '#00ffff'
     inputBinding:
       position: 101
       prefix: --under-color

@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: SSRs length
-    default: 10,6,5,4,4,4
     inputBinding:
       position: 101
       prefix: --kmer_length

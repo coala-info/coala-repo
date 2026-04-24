@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use the unweighted inner proudct kernel.
-    default: false
     inputBinding:
       position: 102
       prefix: --unweighted

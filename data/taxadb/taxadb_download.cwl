@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable info logging.
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable debug logging.
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

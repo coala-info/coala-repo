@@ -67,7 +67,6 @@ inputs:
       - int
     doc: "terms with less than cutoff number of genes are not\n                  \
       \      used for statistical tests, default 5"
-    default: 5
     inputBinding:
       position: 101
       prefix: --cutoff
@@ -81,7 +80,6 @@ inputs:
       \           DISEASE, N for NHGRI GWAS Catalog, G for Gene\n                \
       \        Ontology,  S for Gene Ontology Slim(GOslim), default\n            \
       \            K/R/B/p/o/k/N/G/S"
-    default: K/R/B/p/o/k/N/G/S
     inputBinding:
       position: 101
       prefix: --db
@@ -92,7 +90,6 @@ inputs:
     doc: "choose false discovery rate (FDR) correction method:\n                 \
       \       BH for Benjamini and Hochberg, BY for Benjamini and\n              \
       \          Yekutieli, QVALUE, and None, default BH"
-    default: BH
     inputBinding:
       position: 101
       prefix: --fdr
@@ -135,7 +132,6 @@ inputs:
       \         for chi-square test, h for hypergeometric test /\n               \
       \         Fisher's exact test, and x for frequency list, default\n         \
       \               hypergeometric test / Fisher's exact test"
-    default: hypergeometric test / Fisher's exact test
     inputBinding:
       position: 101
       prefix: --method

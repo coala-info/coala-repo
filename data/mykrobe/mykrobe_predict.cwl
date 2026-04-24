@@ -10,7 +10,6 @@ inputs:
       - float
     doc: Number between 0 and 100. Determines --min_variant_conf, by simulating 
       variants and choosing the cutoff that would keep x% of the variants
-    default: 100
     inputBinding:
       position: 101
       prefix: --conf_percent_cutoff
@@ -70,7 +69,6 @@ inputs:
       - 'null'
       - float
     doc: Expected sequencing error rate
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --expected_error_rate
@@ -80,7 +78,6 @@ inputs:
       - type: array
         items: string
     doc: Don't include specific filtered genotypes
-    default:
       - MISSING_WT
       - LOW_PERCENT_COVERAGE
       - LOW_GT_CONF
@@ -101,7 +98,6 @@ inputs:
       - 'null'
       - string
     doc: Choose output format
-    default: csv
     inputBinding:
       position: 101
       prefix: --format
@@ -143,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer length
-    default: 21
     inputBinding:
       position: 101
       prefix: --kmer
@@ -160,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_depth
@@ -169,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum genotype confidence for gene genotyping
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_gene_conf
@@ -178,7 +171,6 @@ inputs:
       - 'null'
       - int
     doc: All genes alleles found above this percent coverage will be reported
-    default: 100
     inputBinding:
       position: 101
       prefix: --min_gene_percent_covg_threshold
@@ -187,7 +179,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum depth required on the sum of both alleles
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --min_proportion_expected_depth
@@ -196,7 +187,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum genotype confidence for variant genotyping
-    default: 150
     inputBinding:
       position: 101
       prefix: --min_variant_conf
@@ -205,7 +195,6 @@ inputs:
       - 'null'
       - string
     doc: Genotype model used. Options kmer_count, median_depth
-    default: kmer_count
     inputBinding:
       position: 101
       prefix: --model
@@ -240,7 +229,6 @@ inputs:
       - 'null'
       - Directory
     doc: Name of directory that contains panel data
-    default: /usr/local/lib/python3.8/site-packages/mykrobe/data
     inputBinding:
       position: 101
       prefix: --panels_dir
@@ -249,7 +237,6 @@ inputs:
       - 'null'
       - string
     doc: Use a diploid (includes 0/1 calls) or haploid genotyping model
-    default: diploid
     inputBinding:
       position: 101
       prefix: --ploidy

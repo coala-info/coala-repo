@@ -49,7 +49,6 @@ inputs:
   next_paramfile:
     label: Parameter file for next iteration
     type: [ File?, string?]
-    default: new_param.yml
     inputBinding:
       position: 2
       prefix: -o

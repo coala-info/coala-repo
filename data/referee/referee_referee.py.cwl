@@ -60,7 +60,6 @@ inputs:
     doc: "The number of lines to be read per process. Decreasing\n               \
       \      may reduce memory usage at the cost of slightly higher\n            \
       \         run times."
-    default: 100000
     inputBinding:
       position: 101
       prefix: -l
@@ -89,7 +88,6 @@ inputs:
       - Directory
     doc: "An output directory for all files associated with this\n               \
       \      run. Will be created if it doesn't exist."
-    default: referee-[date]-[time]
     inputBinding:
       position: 101
       prefix: -d
@@ -117,7 +115,6 @@ inputs:
       - 'null'
       - string
     doc: A prefix for all files associated with this run.
-    default: referee-[date]-[time]
     inputBinding:
       position: 101
       prefix: -prefix
@@ -126,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: The number of processes Referee should use.
-    default: 1
     inputBinding:
       position: 101
       prefix: -p

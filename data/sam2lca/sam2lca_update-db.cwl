@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: JSON file for specifying extra acc2tax mappings
-    default: 
       https://raw.githubusercontent.com/maxibor/sam2lca/master/data/acc2tax.json
     inputBinding:
       position: 101
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Name of taxonomy database to create (ncbi | gtdb)
-    default: ncbi
     inputBinding:
       position: 101
       prefix: --taxonomy

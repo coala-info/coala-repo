@@ -10,7 +10,6 @@ inputs:
       - float
     doc: Option to set the tolerance for collinearity in stepwise conditional 
       search between already selected SNPs and the tested SNP
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --collinear-tol
@@ -28,7 +27,6 @@ inputs:
       - float
     doc: Option to set the p-value threshold for declaring genome-wide 
       significance
-    default: '5e-8'
     inputBinding:
       position: 101
       prefix: --cond-pvalue
@@ -48,7 +46,6 @@ inputs:
     doc: Option to set the posterior probability of a causal configuration to 
       zero if it includes a pair of SNPs with absolute correlation above this 
       threshold
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --corr-config
@@ -105,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Option to set the maximum number of allowed causal SNPs
-    default: 5
     inputBinding:
       position: 101
       prefix: --n-causal-snps
@@ -114,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: Option to set the number of top causal configurations to be saved
-    default: 50000
     inputBinding:
       position: 101
       prefix: --n-configs-top
@@ -125,7 +120,6 @@ inputs:
     doc: Option to set the number of iterations that the added probability mass 
       is required to be below the specified threshold (--prob-conv-sss-tol) 
       before shotgun stochastic search is terminated
-    default: 1000
     inputBinding:
       position: 101
       prefix: --n-conv-sss
@@ -135,7 +129,6 @@ inputs:
       - int
     doc: Option to set the maximum number of iterations before shotgun 
       stochastic search is terminated
-    default: 100000
     inputBinding:
       position: 101
       prefix: --n-iter
@@ -144,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: Option to specify the number of parallel threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --n-threads
@@ -164,7 +156,6 @@ inputs:
     doc: Option to set the prior probability that there is no causal SNP in the 
       genomic region. Only used when computing posterior probabilities for the 
       number of causal SNPs but not during fine-mapping itself
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --prior-k0
@@ -184,7 +175,6 @@ inputs:
       - float
     doc: Option to specify a comma-separated list of prior standard deviations 
       of effect sizes.
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --prior-std
@@ -195,7 +185,6 @@ inputs:
     doc: Option to set the tolerance at which the added probability mass (over 
       --n-conv-sss iterations) is considered small enough to terminate shotgun 
       stochastic search
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --prob-conv-sss-tol
@@ -205,7 +194,6 @@ inputs:
       - float
     doc: Option to set the probability at which the credible interval includes a
       causal SNP
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --prob-cred-set
@@ -214,7 +202,6 @@ inputs:
       - 'null'
       - float
     doc: Option to set a p-value threshold at which SNPs are included
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --pvalue-snps

@@ -17,7 +17,6 @@ inputs:
       - type: array
         items: string
     doc: bin ids to concentrate on (None for all)
-    default: None
     inputBinding:
       position: 102
       prefix: --bids
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: show the colorbar
-    default: false
     inputBinding:
       position: 102
       prefix: --colorbar
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: cutoff contig size
-    default: 1000
     inputBinding:
       position: 102
       prefix: --cutoff
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: what percentage of the movie is devoted to the unbinned contigs
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --firstFade
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: file format output images
-    default: jpeg
     inputBinding:
       position: 102
       prefix: --format
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: frames per second
-    default: 10
     inputBinding:
       position: 102
       prefix: --fps
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: ignore contig lengths when plotting
-    default: false
     inputBinding:
       position: 102
       prefix: --points
@@ -80,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: prefix to append to start of output files
-    default: file
     inputBinding:
       position: 102
       prefix: --prefix
@@ -89,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: title to add to output images
-    default: ''
     inputBinding:
       position: 102
       prefix: --title
@@ -98,7 +89,6 @@ inputs:
       - 'null'
       - float
     doc: how long the movie should go for (seconds)
-    default: 120.0
     inputBinding:
       position: 102
       prefix: --totalTime

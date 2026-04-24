@@ -13,7 +13,6 @@ inputs:
     id: Column name to use for plotting
     type: string
   Plot Title:
-    default: My stripes
     id: Plot Title
     type: string?
   nxsplit:
@@ -33,7 +32,6 @@ inputs:
     id: dates format for xlabels
     type: string?
   Matplotlib colormap:
-    default: RdBu_r
     doc: 'Parameter ''colormap'': valid options: winter,PRGn,hsv,gist_ncar,RdYlGn,summer,BrBG,Pastel1,autumn,PuBuGn,seismic,YlOrRd,Purples,Wistia,YlOrBr,tab10,tab20c,gist_heat,bone,gist_yarg,ocean,flag,RdGy,gist_earth,coolwarm,spring,PuBu,cool,gist_stern,gray,Reds,Greens,Accent,BuGn,RdGy_r,Set3,Pastel2,pink,OrRd,gist_rainbow,Blues,binary,gist_gray,PuOr,Set2,rainbow,copper,RdBu_r,Oranges,Set1,afmhot,BuPu,gnuplot2,brg,terrain,YlGnBu,tab20,Greys,bwr,RdPu,PuRd,tab20b,PiYG,hot,gnuplot,YlGn,Dark2,prism,Spectral,Paired,RdPu_r,RdBu,RdYlBu,GnBu,cubehelix,CMRmap,jet,nipy_spectral)
       Using default: ''RdBu_r''.'
     id: Matplotlib colormap

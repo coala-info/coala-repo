@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Base PHRED quality score encoding of input FASTQ files (e.g., 33 or 64)
-    default: 33
     inputBinding:
       position: 101
       prefix: -b
@@ -20,7 +19,6 @@ inputs:
       - int
     doc: "FASTX quality filter: Minimum percent of bases that must have '--FASTX-q'
       quality"
-    default: 80
     inputBinding:
       position: 101
       prefix: --FASTX-p
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: 'FASTX quality filter: Minimum quality score to keep'
-    default: 30
     inputBinding:
       position: 101
       prefix: --FASTX-q
@@ -46,7 +43,6 @@ inputs:
       - boolean
     doc: Keep sequences containing 'N' nucleotides during FASTQ to FASTA 
       conversion
-    default: false
     inputBinding:
       position: 101
       prefix: --keep-Ns
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to output results
-    default: pipits_prep_output
     inputBinding:
       position: 101
       prefix: -o
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for VSEARCH joining
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

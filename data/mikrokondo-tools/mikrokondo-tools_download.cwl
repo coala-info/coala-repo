@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - Directory
     doc: An existing directory to download files to.
-    default: /
     inputBinding:
       position: 101
       prefix: --output

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: gap extend penalty
-    default: 1
     inputBinding:
       position: 102
       prefix: --extend
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: alignment match (DNA only)
-    default: 1
     inputBinding:
       position: 102
       prefix: --match
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: 'matrix default: NUC4.4. or BLOSUM62)'
-    default: ''
     inputBinding:
       position: 102
       prefix: --matrix
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: alignment mismatch (DNA only)
-    default: 2
     inputBinding:
       position: 102
       prefix: --mismatch
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: gap open penalty
-    default: 11
     inputBinding:
       position: 102
       prefix: --open

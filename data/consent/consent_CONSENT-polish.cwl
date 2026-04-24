@@ -10,7 +10,6 @@ inputs:
       - int
     doc: Minimum number of sequences supporting (Ai) - (Ai+1) to keep the two 
       anchors in the chaining.
-    default: 8
     inputBinding:
       position: 101
       prefix: --anchorSupport
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of overlaps to include in a pile.
-    default: 20000
     inputBinding:
       position: 101
       prefix: --maxSupport
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size for chaining and polishing.
-    default: 9
     inputBinding:
       position: 101
       prefix: --merSize
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of anchors in a window to allow consensus computation.
-    default: 10
     inputBinding:
       position: 101
       prefix: --minAnchors
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum support to consider a window for correction.
-    default: 1
     inputBinding:
       position: 101
       prefix: --minSupport
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Split minimap2 index every INT input bases
-    default: 500M
     inputBinding:
       position: 101
       prefix: --minimapIndex
@@ -85,7 +79,6 @@ inputs:
       - int
     doc: Minimum number of occurrences to consider a k-mer as solid during 
       polishing.
-    default: 4
     inputBinding:
       position: 101
       prefix: --solid
@@ -102,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Overlap size between consecutive windows.
-    default: 50
     inputBinding:
       position: 101
       prefix: --windowOverlap
@@ -111,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the windows to process.
-    default: 500
     inputBinding:
       position: 101
       prefix: --windowSize

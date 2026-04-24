@@ -37,7 +37,6 @@ inputs:
       - string
     doc: Minimum sequence length cutoff for sequences to be included in 
       prediction.
-    default: 3kb
     inputBinding:
       position: 101
       prefix: --min
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: Path to an alternate trained linear SVM model.
-    default: lin_svm_160_3.0.pickle
     inputBinding:
       position: 101
       prefix: --model
@@ -75,7 +73,6 @@ inputs:
     doc: How stringent the algorithm is in identifying eukaryotic scaffolds. 
       Strict has a lower false positive rate and true positive rate; vice verso 
       for leneient. Default is balanced.
-    default: balanced
     inputBinding:
       position: 101
       prefix: -m
@@ -89,7 +86,6 @@ inputs:
       \             prok = classify as prok\n                                rand
       = assign randomly\n                                skip = do not classify\n\
       \                                Default is to classify as eukaryotic."
-    default: euk
     inputBinding:
       position: 101
       prefix: --tie

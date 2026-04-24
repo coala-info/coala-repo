@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Trim x bases from begining of each read.
-    default: 0
     inputBinding:
       position: 101
       prefix: --headtrim
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Exclude reads shorter than this length.
-    default: 0
     inputBinding:
       position: 101
       prefix: --minlen
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum quality score to retain a read.
-    default: 10
     inputBinding:
       position: 101
       prefix: --minqual
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Trim x bases from end of each read.
-    default: None
     inputBinding:
       position: 101
       prefix: --tailtrim

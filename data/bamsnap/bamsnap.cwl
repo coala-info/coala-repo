@@ -32,7 +32,6 @@ inputs:
       - type: array
         items: string
     doc: 'track composition of bamplot (default: -bamplot coverage base read)'
-    default: coverage base read
     inputBinding:
       position: 102
       prefix: -bamplot
@@ -81,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: 'background color (default: FFFFFF)'
-    default: FFFFFF
     inputBinding:
       position: 102
       prefix: -bgcolor
@@ -90,7 +88,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'draw border in plot (default: false)'
-    default: false
     inputBinding:
       position: 102
       prefix: -border
@@ -187,7 +184,6 @@ inputs:
       - 'null'
       - float
     doc: 'coverage variant allele fraction threshold (default: 0.2)'
-    default: 0.2
     inputBinding:
       position: 102
       prefix: -coverage_vaf
@@ -205,7 +201,6 @@ inputs:
       - type: array
         items: string
     doc: 'track composition (default: -draw coordinates bamplot base gene)'
-    default: coordinates bamplot base gene
     inputBinding:
       position: 102
       prefix: -draw
@@ -294,7 +289,6 @@ inputs:
       - 'null'
       - int
     doc: 'insert size threshold for deletion (default: 1000)'
-    default: 1000
     inputBinding:
       position: 102
       prefix: -insert_size_del_threshold
@@ -303,7 +297,6 @@ inputs:
       - 'null'
       - int
     doc: 'insert size threshold for insertion (default: 50)'
-    default: 50
     inputBinding:
       position: 102
       prefix: -insert_size_ins_threshold
@@ -336,7 +329,6 @@ inputs:
       - 'null'
       - int
     doc: 'bottom margin size of plot (default: 20)'
-    default: 20
     inputBinding:
       position: 102
       prefix: -plot_margin_bottom
@@ -345,7 +337,6 @@ inputs:
       - 'null'
       - int
     doc: 'left margin size of plot (default: 0)'
-    default: 0
     inputBinding:
       position: 102
       prefix: -plot_margin_left
@@ -354,7 +345,6 @@ inputs:
       - 'null'
       - int
     doc: 'right margin size of plot (default: 0)'
-    default: 0
     inputBinding:
       position: 102
       prefix: -plot_margin_right
@@ -363,7 +353,6 @@ inputs:
       - 'null'
       - int
     doc: 'top margin size of plot (default: 20)'
-    default: 20
     inputBinding:
       position: 102
       prefix: -plot_margin_top
@@ -381,7 +370,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of process for multi-processing (default: 1)'
-    default: 1
     inputBinding:
       position: 102
       prefix: -process
@@ -695,7 +683,6 @@ inputs:
       - 'null'
       - string
     doc: 'Reference version (default: hg38)'
-    default: hg38
     inputBinding:
       position: 102
       prefix: -refversion
@@ -728,7 +715,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'show soft and hard clipped part (default: false)'
-    default: false
     inputBinding:
       position: 102
       prefix: -show_clipped
@@ -737,7 +723,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'show hard clipped part (default: false)'
-    default: false
     inputBinding:
       position: 102
       prefix: -show_hard_clipped
@@ -746,7 +731,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'show soft clipped part (default: false)'
-    default: false
     inputBinding:
       position: 102
       prefix: -show_soft_clipped
@@ -788,7 +772,6 @@ inputs:
       - 'null'
       - int
     doc: 'image width (unit:px, default: 1000)'
-    default: 1000
     inputBinding:
       position: 102
       prefix: -width

@@ -22,7 +22,6 @@ inputs:
   - id: apollo_instance
     type: string
     doc: name of apollo instance from /user/qianghu/.apollo-arrow.yml
-    default: __default
     inputBinding:
       position: 103
       prefix: --apollo_instance
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level (debug|info|warn|error|critical)
-    default: warn
     inputBinding:
       position: 103
       prefix: --log-level

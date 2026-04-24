@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: maximum desired bin contamination %
-    default: 10
     inputBinding:
       position: 101
       prefix: -x
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: memory in GB
-    default: 40
     inputBinding:
       position: 101
       prefix: -m
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: minimum desired bin completion %
-    default: 70
     inputBinding:
       position: 101
       prefix: -c
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: minimum contig length to be included in reassembly
-    default: 500
     inputBinding:
       position: 101
       prefix: -l
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: maximum allowed SNPs for permissive read mapping
-    default: 5
     inputBinding:
       position: 101
       prefix: --permissive-cut-off
@@ -90,7 +85,6 @@ inputs:
       - 'null'
       - boolean
     doc: maximum allowed SNPs for strict read mapping
-    default: 2
     inputBinding:
       position: 101
       prefix: --strict-cut-off
@@ -99,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

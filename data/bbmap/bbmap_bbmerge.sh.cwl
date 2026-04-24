@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: Merge reads with nn score above this value.
-    default: 0.872857
     inputBinding:
       position: 101
       prefix: cutoff
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Extend reads to the right this much before merging.
-    default: 0
     inputBinding:
       position: 101
       prefix: extend
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: If nonzero, trim left bases of the read to this position.
-    default: 0
     inputBinding:
       position: 101
       prefix: forcetrimleft
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: If nonzero, trim right bases of the read after this position.
-    default: 0
     inputBinding:
       position: 101
       prefix: forcetrimright
@@ -80,7 +76,6 @@ inputs:
       - string
     doc: May be set to true or false to override autodetection of whether the input
       file as interleaved.
-    default: auto
     inputBinding:
       position: 101
       prefix: interleaved
@@ -89,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer length.
-    default: 31
     inputBinding:
       position: 101
       prefix: k
@@ -99,7 +93,6 @@ inputs:
       - float
     doc: If positive, reads with more combined expected errors than this will not
       be attempted to be merged.
-    default: 0
     inputBinding:
       position: 101
       prefix: maxexpectederrors
@@ -108,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: Reads with longer insert sizes will be discarded.
-    default: -1
     inputBinding:
       position: 101
       prefix: maxlength
@@ -117,7 +109,6 @@ inputs:
       - 'null'
       - boolean
     doc: Create merged reads.
-    default: true
     inputBinding:
       position: 101
       prefix: merge
@@ -126,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: Reads with average quality below this will not be attempted to be merged.
-    default: 0
     inputBinding:
       position: 101
       prefix: minavgquality
@@ -135,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum insert size to merge reads.
-    default: 15
     inputBinding:
       position: 101
       prefix: mininsert
@@ -144,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: Reads shorter than this after trimming will be discarded.
-    default: 1
     inputBinding:
       position: 101
       prefix: minlength
@@ -153,7 +141,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of overlapping bases to allow merging.
-    default: 12
     inputBinding:
       position: 101
       prefix: minoverlap
@@ -163,7 +150,6 @@ inputs:
       - boolean
     doc: Output both the merged (or mergable) and unmerged reads in the same file
       (out=).
-    default: false
     inputBinding:
       position: 101
       prefix: mix
@@ -172,7 +158,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use a neural network for increased merging accuracy.
-    default: true
     inputBinding:
       position: 101
       prefix: nn
@@ -181,7 +166,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only print histogram bins with nonzero values.
-    default: true
     inputBinding:
       position: 101
       prefix: nzo
@@ -190,7 +174,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output reads in same order as input.
-    default: false
     inputBinding:
       position: 101
       prefix: ordered
@@ -200,7 +183,6 @@ inputs:
       - string
     doc: 'Trim read ends to remove bases with quality below minq. Values: t, f, r,
       l.'
-    default: f
     inputBinding:
       position: 101
       prefix: qtrim
@@ -209,7 +191,6 @@ inputs:
       - 'null'
       - int
     doc: Quit after this many read pairs (-1 means all).
-    default: -1
     inputBinding:
       position: 101
       prefix: reads
@@ -218,7 +199,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print extra header lines with statistical information.
-    default: true
     inputBinding:
       position: 101
       prefix: showhiststats
@@ -227,7 +207,6 @@ inputs:
       - 'null'
       - boolean
     doc: Decrease false positive rate and merging rate.
-    default: false
     inputBinding:
       position: 101
       prefix: strict
@@ -236,7 +215,6 @@ inputs:
       - 'null'
       - boolean
     doc: Trim overlapping reads to remove rightmost (3') non-overlapping portion.
-    default: false
     inputBinding:
       position: 101
       prefix: tbo
@@ -245,7 +223,6 @@ inputs:
       - 'null'
       - string
     doc: Trim quality threshold. This may be a comma-delimited list.
-    default: '10'
     inputBinding:
       position: 101
       prefix: trimq
@@ -254,7 +231,6 @@ inputs:
       - 'null'
       - int
     doc: Set to 1 (lowest) through 9 (max) to change compression level.
-    default: 2
     inputBinding:
       position: 101
       prefix: ziplevel

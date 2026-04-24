@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Color scale
-    default: LOG
     inputBinding:
       position: 102
       prefix: --color-scale
@@ -26,7 +25,6 @@ inputs:
       - int
     doc: "Don't evaluate a point if the distance between the regions is lower than
       'd'. Negative: don't consider distance."
-    default: -1
     inputBinding:
       position: 102
       prefix: --distance
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: matrix size in pixel
-    default: 1000
     inputBinding:
       position: 102
       prefix: --size
@@ -63,7 +60,6 @@ inputs:
       - int
     doc: Don't print a point if there are less than 'c' common names at the 
       intersection
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-common
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: minimal mapping quality
-    default: 30
     inputBinding:
       position: 102
       prefix: --mapq
@@ -81,7 +76,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't print coverage
-    default: false
     inputBinding:
       position: 102
       prefix: --no-coverage
@@ -90,7 +84,6 @@ inputs:
       - 'null'
       - float
     doc: pixel size. Each dot at intersection will have the following size
-    default: 1
     inputBinding:
       position: 102
       prefix: --pixel
@@ -102,7 +95,6 @@ inputs:
       the read name. "Chromium barcode sequence that is error-corrected and 
       confirmed against a list of known-good barcode sequences.". See 
       https://support.10xgenomics.com/genome-exome/software/pipelines/latest/output/bam
-    default: READ_NAME
     inputBinding:
       position: 102
       prefix: --name
@@ -141,7 +133,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use other canonical alignements from the 'SA:Z:*' attribute
-    default: false
     inputBinding:
       position: 102
       prefix: --sa
@@ -150,7 +141,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use other supplementary alignements
-    default: false
     inputBinding:
       position: 102
       prefix: --supplementary

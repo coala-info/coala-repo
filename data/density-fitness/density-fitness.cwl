@@ -102,7 +102,6 @@ inputs:
       - 'null'
       - string
     doc: Output format, can be either 'edstats' or 'json'
-    default: json
     inputBinding:
       position: 103
       prefix: --output-format
@@ -153,7 +152,6 @@ inputs:
       - 'null'
       - float
     doc: Sampling rate
-    default: 1.5
     inputBinding:
       position: 103
       prefix: --sampling-rate

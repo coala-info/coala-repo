@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - Directory
     doc: Destination directory for references
-    default: user cache
     inputBinding:
       position: 101
       prefix: --data-dir

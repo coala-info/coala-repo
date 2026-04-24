@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Chunk size for RapidNJ/Hybrid methods
-    default: 30
     inputBinding:
       position: 101
       prefix: --chunk_size
@@ -20,7 +19,6 @@ inputs:
       - string
     doc: 'Densification strategy: 0=Optimal Densification, 1=Reverse Optimal Densification/faster
       Densification'
-    default: '0'
     inputBinding:
       position: 101
       prefix: --densification
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size
-    default: 16
     inputBinding:
       position: 101
       prefix: --kmer_size
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Percentage of steps naive for hybrid method
-    default: 90
     inputBinding:
       position: 101
       prefix: --naive_percentage
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: MinHash sketch size
-    default: 10240
     inputBinding:
       position: 101
       prefix: --sketch_size
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use in parallel
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: 'Tree construction method: naive, rapidnj, hybrid'
-    default: rapidnj
     inputBinding:
       position: 101
       prefix: --tree

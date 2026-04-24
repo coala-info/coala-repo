@@ -67,7 +67,6 @@ inputs:
 - id: min_mq
   type: int?
   doc: mapping quality threshold
-  default: 0
   inputBinding:
     position: 1
     prefix: --min-MQ

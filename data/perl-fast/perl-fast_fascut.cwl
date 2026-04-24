@@ -61,7 +61,6 @@ inputs:
       - string
     doc: Use alternative format for input. See man page for "fasconvert" for allowed
       formats.
-    default: fasta
     inputBinding:
       position: 103
       prefix: --format
@@ -80,7 +79,6 @@ inputs:
       - string
     doc: Paste selected fields together with string string for new description. Use
       "\t" to indicate a tab-character.
-    default: ' '
     inputBinding:
       position: 103
       prefix: --join
@@ -97,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: Use [string] as the name of the logfile.
-    default: FAST.log.txt
     inputBinding:
       position: 103
       prefix: --logname

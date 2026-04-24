@@ -13,7 +13,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum correlation to keep pairs.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --correlation
@@ -43,7 +42,6 @@ inputs:
       - float
     doc: "Minimum percentage of samples for correlation\n                        \
       \   analysis."
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --prevalence

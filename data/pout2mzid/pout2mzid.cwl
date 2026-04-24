@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Change the outputfile to original filename+[Value]+.mzid.
-    default: stdout
     inputBinding:
       position: 101
       prefix: --changeoutput
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only adds results to entries with decoy set to true.
-    default: false
     inputBinding:
       position: 101
       prefix: --decoy

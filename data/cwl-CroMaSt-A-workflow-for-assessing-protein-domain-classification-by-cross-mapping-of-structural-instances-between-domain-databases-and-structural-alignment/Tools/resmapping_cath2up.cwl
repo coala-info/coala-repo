@@ -52,7 +52,6 @@ inputs:
   resmapping_file:
     type: [ File?, string?]
     label: Filename for the residue mapped structural instances
-    default: cath_resMapped.csv
     inputBinding:
       position: 4
       prefix: -m
@@ -60,7 +59,6 @@ inputs:
   reslost:
     type: [ File?, string?]
     label: Filename for the lost structures while residue mapping
-    default: lost_cath.txt
     inputBinding:
       position: 5
       prefix: -l

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: file extension option, e.g. X.ext
-    default: ''
     inputBinding:
       position: 102
       prefix: --ext

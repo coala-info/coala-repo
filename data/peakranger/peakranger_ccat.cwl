@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: read extension length
-    default: 200
     inputBinding:
       position: 101
       prefix: --ext_length
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: FDR cut-off
-    default: 0.11
     inputBinding:
       position: 101
       prefix: --FDR
@@ -65,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: minimum window reads count
-    default: 4
     inputBinding:
       position: 101
       prefix: --min_count
@@ -74,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: minimum window reads fold change
-    default: 5
     inputBinding:
       position: 101
       prefix: --min_score
@@ -83,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: the length of the snapshort regions in the report
-    default: 6000
     inputBinding:
       position: 101
       prefix: --plot_region
@@ -100,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: sliding window size
-    default: 500
     inputBinding:
       position: 101
       prefix: --win_size
@@ -109,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: window moving step
-    default: 50
     inputBinding:
       position: 101
       prefix: --win_step
@@ -118,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: number of worker threads
-    default: 19
     inputBinding:
       position: 101
       prefix: --thread

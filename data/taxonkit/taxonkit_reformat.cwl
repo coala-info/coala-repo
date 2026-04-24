@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory containing nodes.dmp and names.dmp
-    default: /root/.taxonkit
     inputBinding:
       position: 101
       prefix: --data-dir
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: field delimiter in input lineage
-    default: ;
     inputBinding:
       position: 101
       prefix: -d
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: output format, placeholders of rank are needed
-    default: '{k};{p};{c};{o};{f};{g};{s}'
     inputBinding:
       position: 101
       prefix: -f
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: field index of lineage. data should be tab-separated
-    default: 2
     inputBinding:
       position: 101
       prefix: --lineage-field
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for estimated taxon names
-    default: 'unclassified '
     inputBinding:
       position: 101
       prefix: --miss-rank-repl-prefix
@@ -89,7 +84,6 @@ inputs:
       - string
     doc: suffix for estimated taxon names. "rank" for rank name, "" for no 
       suffix
-    default: rank
     inputBinding:
       position: 101
       prefix: --miss-rank-repl-suffix
@@ -114,7 +108,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for cellular root, used along with flag -P/--add-prefix
-    default: d__
     inputBinding:
       position: 101
       prefix: --prefix-C
@@ -123,7 +116,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for kingdom, used along with flag -P/--add-prefix
-    default: K__
     inputBinding:
       position: 101
       prefix: --prefix-K
@@ -132,7 +124,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for subspecies, used along with flag -P/--add-prefix
-    default: S__
     inputBinding:
       position: 101
       prefix: --prefix-S
@@ -141,7 +132,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for strain, used along with flag -P/--add-prefix
-    default: T__
     inputBinding:
       position: 101
       prefix: --prefix-T
@@ -150,7 +140,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for acellular root, used along with flag -P/--add-prefix
-    default: d__
     inputBinding:
       position: 101
       prefix: --prefix-a
@@ -159,7 +148,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for class, used along with flag -P/--add-prefix
-    default: c__
     inputBinding:
       position: 101
       prefix: --prefix-c
@@ -168,7 +156,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for domain, used along with flag -P/--add-prefix
-    default: d__
     inputBinding:
       position: 101
       prefix: --prefix-d
@@ -177,7 +164,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for family, used along with flag -P/--add-prefix
-    default: f__
     inputBinding:
       position: 101
       prefix: --prefix-f
@@ -186,7 +172,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for genus, used along with flag -P/--add-prefix
-    default: g__
     inputBinding:
       position: 101
       prefix: --prefix-g
@@ -195,7 +180,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for superkingdom, used along with flag -P/--add-prefix
-    default: k__
     inputBinding:
       position: 101
       prefix: --prefix-k
@@ -204,7 +188,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for order, used along with flag -P/--add-prefix
-    default: o__
     inputBinding:
       position: 101
       prefix: --prefix-o
@@ -213,7 +196,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for phylum, used along with flag -P/--add-prefix
-    default: p__
     inputBinding:
       position: 101
       prefix: --prefix-p
@@ -222,7 +204,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for realm, used along with flag -P/--add-prefix
-    default: r__
     inputBinding:
       position: 101
       prefix: --prefix-r
@@ -231,7 +212,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for species, used along with flag -P/--add-prefix
-    default: s__
     inputBinding:
       position: 101
       prefix: --prefix-s
@@ -240,7 +220,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for subspecies/strain, used along with flag -P/--add-prefix
-    default: t__
     inputBinding:
       position: 101
       prefix: --prefix-t
@@ -276,7 +255,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs. 4 is enough
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: Plot the network graph of the given GO term into the given file name.
-    default: "''"
     inputBinding:
       position: 102
       prefix: --plot

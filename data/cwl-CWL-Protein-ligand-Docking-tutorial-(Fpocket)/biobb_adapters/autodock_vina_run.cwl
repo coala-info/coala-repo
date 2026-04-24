@@ -74,7 +74,6 @@ inputs:
     inputBinding:
       position: 4
       prefix: --output_pdbqt_path
-    default: system.pdbqt
 
   output_log_path:
     label: Path to the log file
@@ -89,7 +88,6 @@ inputs:
     - edam:format_2330
     inputBinding:
       prefix: --output_log_path
-    default: system.log
 
   config:
     label: Advanced configuration options for biobb_vs AutoDockVinaRun

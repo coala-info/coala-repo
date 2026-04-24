@@ -44,7 +44,6 @@ inputs:
       - Directory
     doc: Specify directory containing HybPiper output sample folders. Default is
       the current working directory.
-    default: .
     inputBinding:
       position: 102
       prefix: --hybpiper_dir

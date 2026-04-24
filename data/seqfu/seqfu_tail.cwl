@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: FASTQ default quality
-    default: 33
     inputBinding:
       position: 102
       prefix: --fastq-qual
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Print the first NUM sequences
-    default: 10
     inputBinding:
       position: 102
       prefix: --num
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: Sequence name fields separator
-    default: _
     inputBinding:
       position: 102
       prefix: --sep
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Print one sequence every SKIP
-    default: 0
     inputBinding:
       position: 102
       prefix: --skip

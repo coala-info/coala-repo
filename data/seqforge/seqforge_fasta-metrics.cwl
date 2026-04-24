@@ -27,7 +27,6 @@ inputs:
       - int
     doc: Minimum contig size (in bp) to include for calculation of all reported 
       metrics
-    default: 500
     inputBinding:
       position: 101
       prefix: --min-contig-size
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - Directory
     doc: Specify a temporary directory
-    default: /tmp/
     inputBinding:
       position: 101
       prefix: --temp-dir

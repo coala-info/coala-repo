@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: 'chromosome end window [0: deactivate]'
-    default: 0
     inputBinding:
       position: 102
       prefix: --chrend
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: min. chromosome length
-    default: 40000000
     inputBinding:
       position: 102
       prefix: --chrlen
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: repeat period
-    default: 3
     inputBinding:
       position: 102
       prefix: --period
@@ -50,7 +47,6 @@ inputs:
       - type: array
         items: string
     doc: repeat units
-    default: TTAGGG,TCAGGG,TGAGGG,TTGGGG
     inputBinding:
       position: 102
       prefix: --repeats
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: window length
-    default: 1000
     inputBinding:
       position: 102
       prefix: --window

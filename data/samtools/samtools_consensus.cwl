@@ -46,7 +46,6 @@ inputs:
   - 'null'
   - int
   doc: Size of chromosome block (bp) when threading
-  default: 100000
   inputBinding:
     position: 102
     prefix: --block-size
@@ -55,7 +54,6 @@ inputs:
   - 'null'
   - float
   doc: At least INT portion of bases must agree (simple mode)
-  default: 0.75
   inputBinding:
     position: 102
     prefix: --call-fract
@@ -73,7 +71,6 @@ inputs:
   - 'null'
   - int
   doc: Consensus cutoff quality C (Bayesian mode)
-  default: 10
   inputBinding:
     position: 102
     prefix: --cutoff
@@ -82,7 +79,6 @@ inputs:
   - 'null'
   - string
   doc: Exclude reads with any flag bit set
-  default: UNMAP,SECONDARY,QCFAIL,DUP
   inputBinding:
     position: 102
     prefix: --excl-flags
@@ -91,7 +87,6 @@ inputs:
   - 'null'
   - string
   doc: Output in format FASTA, FASTQ or PILEUP
-  default: FASTA
   inputBinding:
     position: 102
     prefix: --format
@@ -100,7 +95,6 @@ inputs:
   - 'null'
   - float
   doc: Minimum fraction of 2nd-most to most common base (simple mode)
-  default: 0.15
   inputBinding:
     position: 102
     prefix: --het-fract
@@ -109,7 +103,6 @@ inputs:
   - 'null'
   - float
   doc: Heterozygous SNP probability multiplier
-  default: 1.0
   inputBinding:
     position: 102
     prefix: --het-scale
@@ -118,7 +111,6 @@ inputs:
   - 'null'
   - int
   doc: Cap maximum mapping quality
-  default: 60
   inputBinding:
     position: 102
     prefix: --high-MQ
@@ -135,7 +127,6 @@ inputs:
   - 'null'
   - float
   doc: Qual fraction adjustment for -p option
-  default: 0.5
   inputBinding:
     position: 102
     prefix: --homopoly-score
@@ -144,7 +135,6 @@ inputs:
   - 'null'
   - string
   doc: Only include reads with any flag bit set
-  default: '0'
   inputBinding:
     position: 102
     prefix: --incl-flags
@@ -162,7 +152,6 @@ inputs:
   - 'null'
   - int
   doc: Wrap FASTA/Q at line length INT
-  default: 70
   inputBinding:
     position: 102
     prefix: --line-len
@@ -171,7 +160,6 @@ inputs:
   - 'null'
   - int
   doc: Cap minimum mapping quality
-  default: 1
   inputBinding:
     position: 102
     prefix: --low-MQ
@@ -188,7 +176,6 @@ inputs:
   - 'null'
   - int
   doc: Exclude reads with base quality below INT
-  default: 0
   inputBinding:
     position: 102
     prefix: --min-BQ
@@ -197,7 +184,6 @@ inputs:
   - 'null'
   - int
   doc: Minimum depth of INT
-  default: 1
   inputBinding:
     position: 102
     prefix: --min-depth
@@ -206,7 +192,6 @@ inputs:
   - 'null'
   - int
   doc: Exclude reads with mapping quality below INT
-  default: 0
   inputBinding:
     position: 102
     prefix: --min-MQ
@@ -215,7 +200,6 @@ inputs:
   - 'null'
   - string
   doc: Switch consensus mode to "simple"/"bayesian"
-  default: bayesian
   inputBinding:
     position: 102
     prefix: --mode
@@ -224,7 +208,6 @@ inputs:
   - 'null'
   - int
   doc: Size of window for NM count in --adj-MQ
-  default: 50
   inputBinding:
     position: 102
     prefix: --NM-halo
@@ -241,7 +224,6 @@ inputs:
   - 'null'
   - float
   doc: Probability of heterozygous site
-  default: 0.001
   inputBinding:
     position: 102
     prefix: --P-het
@@ -250,7 +232,6 @@ inputs:
   - 'null'
   - float
   doc: Probability of indel sites
-  default: 0.0002
   inputBinding:
     position: 102
     prefix: --P-indel
@@ -267,7 +248,6 @@ inputs:
   - 'null'
   - int
   doc: QUAL to use for reference bases
-  default: 0
   inputBinding:
     position: 102
     prefix: --ref-qual
@@ -291,7 +271,6 @@ inputs:
   - 'null'
   - float
   doc: Scale mapping quality by FLOAT
-  default: 1.0
   inputBinding:
     position: 102
     prefix: --scale-MQ
@@ -300,7 +279,6 @@ inputs:
   - 'null'
   - string
   doc: Whether to show deletion as "*"
-  default: no
   inputBinding:
     position: 102
     prefix: --show-del
@@ -309,7 +287,6 @@ inputs:
   - 'null'
   - string
   doc: Whether to show insertions
-  default: yes
   inputBinding:
     position: 102
     prefix: --show-ins
@@ -318,7 +295,6 @@ inputs:
   - 'null'
   - int
   doc: Number of additional decompression threads to use
-  default: 0
   inputBinding:
     position: 102
     prefix: --threads

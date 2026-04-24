@@ -24,7 +24,6 @@ inputs:
       of voxels with highest values are included). This is used within 
       --data_diagnosis for plotting brain maps and computing Dice overlap 
       coefficients.
-    default: 10
     inputBinding:
       position: 103
       prefix: --brainmap_percent_threshold
@@ -38,7 +37,6 @@ inputs:
       diagnosis report, 2) a quantitative distribution report, 3) a group-level statistical
       report for network analysis. Note that all brain maps are displayed in commonspace,
       and analysis outputs in nativespace are thus first resampled before plotting.'
-    default: false
     inputBinding:
       position: 103
       prefix: --data_diagnosis
@@ -50,7 +48,6 @@ inputs:
       from --prior_maps. The linear coefficients from both the first and second 
       regressions will be provided as outputs. Requires that confound correction
       was conducted on commonspace outputs.
-    default: false
     inputBinding:
       position: 103
       prefix: --DR_ICA
@@ -64,7 +61,6 @@ inputs:
       potential issues of signal amplitude scaling between scans. However, it is
       unclear whether signal of interest (i.e. neural metabolism) contribute to 
       each measure, so these outputs should be interpreted with caution.
-    default: false
     inputBinding:
       position: 103
       prefix: --extended_QC
@@ -74,7 +70,6 @@ inputs:
       - boolean
     doc: Compute whole-brain connectivity matrices using Pearson's r between ROI
       timeseries.
-    default: false
     inputBinding:
       position: 103
       prefix: --FC_matrix
@@ -87,7 +82,6 @@ inputs:
       This option will circumvent --seed_prior_list, and the ICA components 
       selected with --prior_bold_idx won't be used for computing Dice overlap 
       measures during QC.
-    default: false
     inputBinding:
       position: 103
       prefix: --group_avg_prior
@@ -102,7 +96,6 @@ inputs:
       estimator. * random_seed: For reproducibility, this option sets a fixed random
       seed for MELODIC. * disableMigp: Whether to disable the MIGP method for lowering
       the memory load of data concatenation."
-    default: apply=false,dim=0,random_seed=1,disableMigp=false
     inputBinding:
       position: 103
       prefix: --group_ica
@@ -114,7 +107,6 @@ inputs:
       maps, representing respectively network amplitude + shape or network shape
       only. This option applies to both dual regression (DR) and Neural Prior 
       Recovery (NPR) analyses.
-    default: absolute
     inputBinding:
       position: 103
       prefix: --network_weighting
@@ -124,7 +116,6 @@ inputs:
       - int
     doc: Same as --NPR_temporal_comp, but specify how many spatial components to
       compute (which are additioned to the temporal components).
-    default: -1
     inputBinding:
       position: 103
       prefix: --NPR_spatial_comp
@@ -138,7 +129,6 @@ inputs:
       components to compute. After computing these sources, NPR will provide a 
       fit for each prior in --prior_maps indexed by --prior_bold_idx. Specify at
       least 0 extra sources to run NPR.
-    default: -1
     inputBinding:
       position: 103
       prefix: --NPR_temporal_comp
@@ -170,7 +160,6 @@ inputs:
       2. *** Must provide a float. * max_iter: Maximum number of iterations. *** Must
       provide an integer. * compute_max: select 'true' to visualize all iterations
       until max_iter in the report. *** Specify 'true' or 'false'."
-    default: 
       apply=false,window_size=5,min_prior_corr=0.5,diff_thresh=0.03,max_iter=20,compute_max=false
     inputBinding:
       position: 103
@@ -182,7 +171,6 @@ inputs:
     doc: The modified Z-score threshold for detecting outliers during dataset QC
       when using --data_diagnosis. The default of 3.5 is recommended in 
       https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm.
-    default: 3.5
     inputBinding:
       position: 103
       prefix: --outlier_threshold
@@ -197,7 +185,6 @@ inputs:
       where the seed name will be used for plotting in the legend and the seed 
       index (starting from 0) will select the associated seed from --seed_list 
       based on the order of seed provided.
-    default: ''
     inputBinding:
       position: 103
       prefix: --plot_seed_frequencies
@@ -211,7 +198,6 @@ inputs:
       IMPORTANT: index counting starts at 0 (i.e. the first component is selected
       with 0, not 1) SYNTAX: Note that the syntax should follow the example of '--prior_bold_idx
       5 12 19', and not '--prior_bold_idx [5, 12, 19]'."
-    default:
       - 5
       - 12
       - 19
@@ -228,7 +214,6 @@ inputs:
       index counting starts at 0 (i.e. the first component is selected with 0, not
       1) SYNTAX: Note that the syntax should follow the example of '--prior_bold_idx
       5 12 19', and not '--prior_bold_idx [5, 12, 19]'."
-    default:
       - 0
       - 2
       - 6
@@ -259,7 +244,6 @@ inputs:
       combined group of anesthetized-ventilated and awake mice. Confound 
       correction consisted of highpass at 0.01 Hz, FD censoring at 0.03mm, DVARS
       censoring, and mot_6,WM_signal,CSF_signal as regressors.
-    default: /root/.local/share/rabies/melodic_IC.nii.gz
     inputBinding:
       position: 103
       prefix: --prior_maps
@@ -271,7 +255,6 @@ inputs:
       connectivity is computed in nativespace, this option will resample 
       analysis outputs into commonspace (both nativespace and commonspace 
       versions are thus generated).
-    default: false
     inputBinding:
       position: 103
       prefix: --resample_to_commonspace
@@ -282,7 +265,6 @@ inputs:
     doc: A CSV file with the ROI names matching the ROI index numbers in the 
       atlas labels Nifti file. A copy of this file is provided along the FC 
       matrix generated for each subject.
-    default: /root/.local/share/rabies/DSURQE_40micron_R_mapping.csv
     inputBinding:
       position: 103
       prefix: --ROI_csv
@@ -293,7 +275,6 @@ inputs:
     doc: Define ROIs for --FC_matrix between 'parcellated' from the provided 
       atlas during preprocessing, or 'voxelwise' to derive the correlations 
       between every voxel.
-    default: parcellated
     inputBinding:
       position: 103
       prefix: --ROI_type
@@ -318,7 +299,6 @@ inputs:
       The expression for the parameters must follow a dictionary syntax, as with this
       example: '{DR:{Dice:[0.3],Conf:[0.25],Amp:false},SBC:{Dice:[0.3]}}'. Note that
       the expression must be written within ' '."
-    default: '{}'
     inputBinding:
       position: 103
       prefix: --scan_QC_thresholds
@@ -331,7 +311,6 @@ inputs:
       seed, which will be used to evaluate seed-based connectivity maps using on
       Pearson's r. Each seed must consist of a binary mask representing the ROI 
       in commonspace.
-    default: []
     inputBinding:
       position: 103
       prefix: --seed_list
@@ -344,7 +323,6 @@ inputs:
       maps are required for each seed provided in --seed_list. Provide the list 
       of prior files in matching order of the --seed_list arguments to match 
       corresponding seed maps.
-    default: []
     inputBinding:
       position: 103
       prefix: --seed_prior_list

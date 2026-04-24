@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: Alias for setting log level to DEBUG
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: Require index files (.fai or .pbi)
-    default: false
     inputBinding:
       position: 102
       prefix: --index
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Set log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
-    default: CRITICAL
     inputBinding:
       position: 102
       prefix: --log-level
@@ -83,7 +80,6 @@ inputs:
       - boolean
     doc: Limits validation to the first 100 records (plus file header); equivalent
       to --max-records=100
-    default: false
     inputBinding:
       position: 102
       prefix: --quick
@@ -92,7 +88,6 @@ inputs:
       - 'null'
       - boolean
     doc: Alias for setting log level to CRITICAL to suppress output.
-    default: false
     inputBinding:
       position: 102
       prefix: --quiet
@@ -110,7 +105,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn on additional validation, primarily for DataSet XML
-    default: false
     inputBinding:
       position: 102
       prefix: --strict

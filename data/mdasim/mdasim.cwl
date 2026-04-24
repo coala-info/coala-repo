@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: normalized number of primers attached in each step
-    default: '0.5e-11'
     inputBinding:
       position: 101
       prefix: --alpha
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: expected average coverage
-    default: 1000
     inputBinding:
       position: 101
       prefix: --coverage
@@ -37,14 +35,12 @@ inputs:
       - 'null'
       - int
     doc: average number of synthesized bases per phi29
-    default: 70000
     inputBinding:
       position: 101
       prefix: --frgLngth
   - id: input_fasta
     type: File
     doc: file name of reference DNA sequence
-    default: reference.fasta
     inputBinding:
       position: 101
       prefix: --input
@@ -86,7 +82,6 @@ inputs:
   - id: primers_fasta
     type: File
     doc: file name of input primers in fasta format
-    default: primerList.fasta
     inputBinding:
       position: 101
       prefix: --primers
@@ -95,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of output amplicons
-    default: 10
     inputBinding:
       position: 101
       prefix: --readLength
@@ -112,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: number of synthesized bases per phi29 in each step
-    default: 10000
     inputBinding:
       position: 101
       prefix: --stepSize

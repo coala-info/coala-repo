@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: smoothing bandwidth
-    default: 99
     inputBinding:
       position: 101
       prefix: --bandwidth
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: sensitivity of the summit detector
-    default: 1
     inputBinding:
       position: 101
       prefix: --delta
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: read extension length
-    default: 100
     inputBinding:
       position: 101
       prefix: --ext_length
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: FDR cut-off
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --FDR
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: the length of the snapshort regions in the report
-    default: 6000
     inputBinding:
       position: 101
       prefix: --plot_region
@@ -96,7 +91,6 @@ inputs:
       - 'null'
       - float
     doc: p value cut-off
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: --pval
@@ -105,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: number of worker threads
-    default: 19
     inputBinding:
       position: 101
       prefix: --thread

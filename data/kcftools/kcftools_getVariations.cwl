@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: Inner kmer distance weight
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --wi
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: Kmer ratio weight
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --wr
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum kmer count to consider
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-k-count
@@ -85,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: Tail kmer distance weight
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --wt
@@ -94,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads

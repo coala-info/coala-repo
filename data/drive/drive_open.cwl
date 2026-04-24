@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: open file with the local file manager
-    default: true
     inputBinding:
       position: 101
       prefix: -file-browser
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: open file in default browser
-    default: true
     inputBinding:
       position: 101
       prefix: -web-browser

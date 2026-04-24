@@ -39,7 +39,6 @@ inputs:
       - type: array
         items: string
     doc: 'Input comma-sep loci to extract [default: all]'
-    default: all
     inputBinding:
       position: 101
       prefix: --loci
@@ -52,7 +51,6 @@ inputs:
       \                   => \"Warn\"\n                                    -v => \"\
       Info\"\n                                   -vv => \"Debug\"\n              \
       \                    -vvv => \"Trace\" [default: Warn]"
-    default: Warn
     inputBinding:
       position: 101
       prefix: --log-level
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum equivalent matches per query in report [default: 10]'
-    default: 10
     inputBinding:
       position: 101
       prefix: --max_matches
@@ -70,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum length of extracted targets [default: 1000]'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --min_length
@@ -95,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: 'Analysis threads [default: 1]'
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -24,7 +24,6 @@ inputs:
       - boolean
     doc: Do not check region IDs, instead overwriting existing regions if they 
       have identical IDs
-    default: false
     inputBinding:
       position: 101
       prefix: --no-id-check
@@ -50,7 +49,6 @@ inputs:
       - boolean
     doc: Store plot files with absolute paths in HTML files. Default is relative
       paths
-    default: false
     inputBinding:
       position: 101
       prefix: --plot-abs-paths
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: Also output .png plots as .pdf in plotting subfolder
-    default: false
     inputBinding:
       position: 101
       prefix: --plot-pdf
@@ -69,7 +66,6 @@ inputs:
       - int
     doc: 'Define how to provide sorttable.js file. 1: link to packaged .js file. 2:
       copy .js file to output folder. 3: include .js code in HTML'
-    default: 1
     inputBinding:
       position: 101
       prefix: --sort-js-mode
@@ -79,7 +75,6 @@ inputs:
       - boolean
     doc: Use genomic regions as --in / --ctrl-in input site IDs instead of BED 
       col4 IDs
-    default: false
     inputBinding:
       position: 101
       prefix: --use-regions
@@ -91,7 +86,6 @@ inputs:
       --in sites have significantly different average conservation scores compared
       to --ctrl-in sites. 1: test for higher (greater) scores, 2: test for lower (less)
       scores'
-    default: 1
     inputBinding:
       position: 101
       prefix: --wrs-mode

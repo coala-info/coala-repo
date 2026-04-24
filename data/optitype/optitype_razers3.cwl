@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Bytes of main memory available for storing matches. In range [-1..inf].
-    default: 0
     inputBinding:
       position: 104
       prefix: --available-matches-memory-size
@@ -47,7 +46,6 @@ inputs:
       - float
     doc: Multiply compaction threshold by this value after reaching and 
       compacting. In range [0..inf].
-    default: 2.2
     inputBinding:
       position: 104
       prefix: --compact-mult
@@ -82,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: 'Select k-mer filter. One of pigeonhole and swift. Default: pigeonhole.'
-    default: pigeonhole
     inputBinding:
       position: 104
       prefix: --filter
@@ -108,7 +105,6 @@ inputs:
       - int
     doc: Select how genomes are named (see Naming section below). In range 
       [0..1].
-    default: 0
     inputBinding:
       position: 104
       prefix: --genome-naming
@@ -117,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Paired-end library length tolerance. In range [0..inf].
-    default: 50
     inputBinding:
       position: 104
       prefix: --library-error
@@ -126,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Paired-end library length. In range [1..inf].
-    default: 220
     inputBinding:
       position: 104
       prefix: --library-length
@@ -136,7 +130,6 @@ inputs:
       - float
     doc: Set the load factor for the open addressing k-mer index. In range 
       [1..inf].
-    default: 1.6
     inputBinding:
       position: 104
       prefix: --load-factor
@@ -145,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: When to start histogram. In range [1..inf].
-    default: 5
     inputBinding:
       position: 104
       prefix: --match-histo-start-threshold
@@ -162,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: Output only <NUM> of the best hits. In range [1..inf].
-    default: 100
     inputBinding:
       position: 104
       prefix: --max-hits
@@ -179,7 +170,6 @@ inputs:
       - 'null'
       - float
     doc: Set the percent mutation rate (pigeonhole). In range [0..20].
-    default: 5.0
     inputBinding:
       position: 104
       prefix: --mutation-rate
@@ -188,7 +178,6 @@ inputs:
       - 'null'
       - float
     doc: Don't compact if in this last fraction of genome. In range [0..1].
-    default: 0.05
     inputBinding:
       position: 104
       prefix: --no-compact-frac
@@ -205,7 +194,6 @@ inputs:
       - 'null'
       - int
     doc: Set k-mer overabundance cut ratio. In range [0..1].
-    default: 1
     inputBinding:
       position: 104
       prefix: --overabundance-cut
@@ -224,7 +212,6 @@ inputs:
       - int
     doc: Largest number of packages to create for verification per thread-1. In 
       range [1..inf].
-    default: 100
     inputBinding:
       position: 104
       prefix: --parallel-verification-max-package-count
@@ -233,7 +220,6 @@ inputs:
       - 'null'
       - int
     doc: Verify candidates in packages of this size. In range [1..inf].
-    default: 100
     inputBinding:
       position: 104
       prefix: --parallel-verification-size
@@ -242,7 +228,6 @@ inputs:
       - 'null'
       - int
     doc: Collect candidates in windows of this length. In range [1..inf].
-    default: 500000
     inputBinding:
       position: 104
       prefix: --parallel-window-size
@@ -259,7 +244,6 @@ inputs:
       - 'null'
       - float
     doc: Percent identity threshold. In range [50..100].
-    default: 95.0
     inputBinding:
       position: 104
       prefix: --percent-identity
@@ -269,7 +253,6 @@ inputs:
       - int
     doc: Select begin/end position numbering (see Coordinate section below). In 
       range [0..1].
-    default: 0
     inputBinding:
       position: 104
       prefix: --position-format
@@ -286,7 +269,6 @@ inputs:
       - 'null'
       - int
     doc: Select how reads are named (see Naming section below). In range [0..3].
-    default: 0
     inputBinding:
       position: 104
       prefix: --read-naming
@@ -295,7 +277,6 @@ inputs:
       - 'null'
       - float
     doc: Percent recognition rate. In range [80..100].
-    default: 100.0
     inputBinding:
       position: 104
       prefix: --recognition-rate
@@ -304,7 +285,6 @@ inputs:
       - 'null'
       - int
     doc: Skip simple-repeats of length <NUM>. In range [1..inf].
-    default: 1000
     inputBinding:
       position: 104
       prefix: --repeat-length
@@ -330,7 +310,6 @@ inputs:
       - int
     doc: Select how matches are sorted (see Sorting section below). In range 
       [0..1].
-    default: 0
     inputBinding:
       position: 104
       prefix: --sort-order
@@ -339,7 +318,6 @@ inputs:
       - 'null'
       - int
     doc: Set taboo length (swift). In range [1..inf].
-    default: 1
     inputBinding:
       position: 104
       prefix: --taboo-length
@@ -349,7 +327,6 @@ inputs:
       - int
     doc: Set the number of threads to use (0 to force sequential mode). In range
       [0..inf].
-    default: 1
     inputBinding:
       position: 104
       prefix: --thread-count
@@ -391,7 +368,6 @@ inputs:
       - boolean
     doc: Turn this option off to disable version update notifications of the 
       application.
-    default: true
     inputBinding:
       position: 104
       prefix: --version-check

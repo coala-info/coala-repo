@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: default 500; alignment window size
-    default: 500
     inputBinding:
       position: 101
       prefix: -w
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: 'default 1; 1: dinucleotide for err prob measure; 0: not'
-    default: 1
     inputBinding:
       position: 101
       prefix: -dt
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: default 20; quantile of qual for err calibr
-    default: 20
     inputBinding:
       position: 101
       prefix: -qual
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: 'default 0; # of bases to ignore on both end of a read'
-    default: 0
     inputBinding:
       position: 101
       prefix: -ig
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: 'default 1; 1: mate-pair for err calibr; 0: not'
-    default: 1
     inputBinding:
       position: 101
       prefix: -mp
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: 'default 1; 1: pileup + phasing; 2: pileup'
-    default: 1
     inputBinding:
       position: 101
       prefix: -e
@@ -72,7 +66,6 @@ inputs:
       - int
     doc: default 2; constrain PE distance by delta x fragsize_variation (auto 
       measured by program)
-    default: 2
     inputBinding:
       position: 101
       prefix: -delta
@@ -81,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: 'default 1; 1: read cycle for err calibr; 0: not'
-    default: 1
     inputBinding:
       position: 101
       prefix: -cy
@@ -90,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: default 0.05; significance value for stat test
-    default: 0.05
     inputBinding:
       position: 101
       prefix: -a
@@ -99,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: default 30; percentage of reads to sample to get stats.
-    default: 30
     inputBinding:
       position: 101
       prefix: -ps

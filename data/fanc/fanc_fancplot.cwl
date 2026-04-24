@@ -60,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: Width of the figure in inches.
-    default: 4.0
     inputBinding:
       position: 102
       prefix: --width

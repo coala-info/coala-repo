@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - File
     doc: 'Name of VCF output file. Valid filetype is: vcf.'
-    default: insertions.vcf
     inputBinding:
       position: 101
       prefix: --insertions
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to the sample directories.
-    default: .
     inputBinding:
       position: 101
       prefix: --prefix
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - File
     doc: 'Name of reference genome file. Valid filetypes are: fa, fna, and fasta.'
-    default: genome.fa
     inputBinding:
       position: 101
       prefix: --reference

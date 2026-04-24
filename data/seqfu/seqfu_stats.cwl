@@ -89,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Number of decimal places to round to
-    default: 2
     inputBinding:
       position: 102
       prefix: --precision
@@ -107,7 +106,6 @@ inputs:
       - string
     doc: "Sort by KEY from: filename, counts, n50, tot, avg, min, max\ndescending
       for values, ascending for filenames"
-    default: none
     inputBinding:
       position: 102
       prefix: --sort-by

@@ -10,7 +10,6 @@ inputs:
       - int
     doc: "a half of the length of k-mer. For proyakat\ngenome, k = 8 is suggested;
       for mammals, k = 10 or\n11 is suggested."
-    default: 8
     inputBinding:
       position: 101
       prefix: --halfKmerLen
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: a half of the length of k-mer substring.
-    default: 5
     inputBinding:
       position: 101
       prefix: --halfSubstrLen
@@ -29,7 +27,6 @@ inputs:
       - int
     doc: "the level of dimensionality reduction, the\nexpectation dimensionality reduction
       rate is 16^n\nif set -l = n."
-    default: 2
     inputBinding:
       position: 101
       prefix: --level
@@ -39,7 +36,6 @@ inputs:
       - string
     doc: "specify the output file name prefix, if not\nspecify default shuffle named
       'default.shuf\ngenerated'"
-    default: default.shuf
     inputBinding:
       position: 101
       prefix: --outfile

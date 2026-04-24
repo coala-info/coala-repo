@@ -16,7 +16,6 @@ inputs:
       - float
     doc: Ignore implied modifications where the absolute value of its mass is 
       below this value and only score the unmodified peptide.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --min-mod-mass
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Set the precision for modifications as written to .txt files.
-    default: 2
     inputBinding:
       position: 102
       prefix: --mod-precision
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - Directory
     doc: The name of the directory where output files will be created.
-    default: crux-output
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -44,7 +41,6 @@ inputs:
       - boolean
     doc: Replace existing files if true or fail when trying to overwrite a file 
       if false.
-    default: false
     inputBinding:
       position: 102
       prefix: --overwrite
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - File
     doc: A file containing parameters.
-    default: ''
     inputBinding:
       position: 102
       prefix: --parameter-file
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the number of matches to report for each spectrum.
-    default: 5
     inputBinding:
       position: 102
       prefix: --top-match
@@ -74,7 +68,6 @@ inputs:
       messages, including all those at lower verbosity levels: 0-fatal errors, 10-non-fatal
       errors, 20-warnings, 30-information on the progress of execution, 40-more progress
       information, 50-debug info, 60-detailed debug info.'
-    default: 30
     inputBinding:
       position: 102
       prefix: --verbosity

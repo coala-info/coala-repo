@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: Specify path to write config file, not required if using default config
-    default: ./mtsv.cfg
     inputBinding:
       position: 101
       prefix: --config
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - Directory
     doc: Specify working directory to place output.
-    default: /
     inputBinding:
       position: 101
       prefix: --working_dir

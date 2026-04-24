@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: Name of input tmp_genelist
-    default: tmp_gene_list
     inputBinding:
       position: 101
       prefix: --genelist
@@ -28,7 +27,6 @@ inputs:
       - string
     doc: Default pattern used to search ${DIAMONDOUT} splitted files in tmp 
       directory
-    default: Diamond_F3R_
     inputBinding:
       position: 101
       prefix: --pattern

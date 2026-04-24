@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Option for isoquant (quoted string)
-    default: --complete_genedb --data_type nanopore --stranded none 
       --transcript_quantification unique_only --gene_quantification unique_only 
       --matching_strategy default --splice_correction_strategy default_ont 
       --model_construction_strategy default_ont --no_secondary --check_canonical
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - Directory
     doc: Working directory containing intermediate and log files
-    default: isorefiner_isoquant_work
     inputBinding:
       position: 101
       prefix: --work_dir

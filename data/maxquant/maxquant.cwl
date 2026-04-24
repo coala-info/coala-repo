@@ -45,7 +45,6 @@ inputs:
       continue/redo parts of the processing. Job id's can be obtained in the 
       MaxQuant GUI partial processing view or from --dryrun option. The first 
       job id is 1.
-    default: 1
     inputBinding:
       position: 102
       prefix: --partial-processing
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Finish processing at the specified job id. 1-based indexing is used.
-    default: 2147483647
     inputBinding:
       position: 102
       prefix: --partial-processing-end

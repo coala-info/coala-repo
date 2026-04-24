@@ -28,7 +28,6 @@ inputs:
       - string
     doc: "Select which analyses to run: can be one of 'all' (default, runs all available
       analyses), 'peak_centric' or 'gene_centric'"
-    default: all
     inputBinding:
       position: 103
       prefix: --analyses
@@ -48,7 +47,6 @@ inputs:
     doc: Maximum distance allowed between peaks and genes before being omitted 
       from the analyses (default 1000000bp; set to zero for no cutoff, use 
       --cutoffs instead to specify multiple distances)
-    default: 1000000
     inputBinding:
       position: 103
       prefix: --cutoff
@@ -61,7 +59,6 @@ inputs:
       peaks and genes (bp). An analysis will be performed for each GENES-PEAKS 
       pair at each cutoff distance (default 1000000bp; set to zero for no cutoff
       NB cannot be used in conjunction with the --cutoff option)
-    default: 1000000bp
     inputBinding:
       position: 103
       prefix: --cutoffs
@@ -72,7 +69,6 @@ inputs:
     doc: "Gene edges to consider when calculating distances between genes and peaks,
       either: 'tss' (default: only use gene TSS), 'tes' (only use gene TES), or 'both'
       (use whichever of TSS or TES gives shortest distance)"
-    default: tss
     inputBinding:
       position: 103
       prefix: --edge
@@ -107,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of processors/cores to run the program using (default: 1)'
-    default: 1
     inputBinding:
       position: 103
       prefix: --nprocessors
@@ -176,7 +171,6 @@ inputs:
       - string
     doc: Define promoter region with respect to gene TSS in the form 
       UPSTREAM,DOWNSTREAM (default -1000 to 100bp of TSS)
-    default: -1000 to 100bp of TSS
     inputBinding:
       position: 103
       prefix: --promoter_region

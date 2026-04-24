@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - File
     doc: file containing list of intervals
-    default: '[]'
     inputBinding:
       position: 102
       prefix: -I
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: intervals
-    default: '[]'
     inputBinding:
       position: 102
       prefix: -i

@@ -69,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: Format of query file [genbank,fasta]
-    default: genbank,fasta
     inputBinding:
       position: 101
       prefix: --format
@@ -166,7 +165,6 @@ inputs:
       - 'null'
       - string
     doc: Sample name to include default=filename
-    default: filename
     inputBinding:
       position: 101
       prefix: --name

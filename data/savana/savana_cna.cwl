@@ -10,7 +10,6 @@ inputs:
       - int
     doc: Window size for allele counting to parallelise and use for purity 
       estimation (default = 1200000; this should be >=500000)
-    default: 1200000
     inputBinding:
       position: 101
       prefix: --ac_window
@@ -28,7 +27,6 @@ inputs:
       - int
     doc: Mapping quality threshold for reads to be included in the allele 
       counting (default = 5)
-    default: 5
     inputBinding:
       position: 101
       prefix: --allele_mapq
@@ -38,7 +36,6 @@ inputs:
       - int
     doc: Minimum number of reads required per het SNP site for allele counting 
       (default = 10)
-    default: 10
     inputBinding:
       position: 101
       prefix: --allele_min_reads
@@ -48,7 +45,6 @@ inputs:
       - int
     doc: Percentage of known bases per bin required for read counting (default =
       75). Please specify percentage threshold as integer, e.g. "-bt 95"
-    default: 75
     inputBinding:
       position: 101
       prefix: --bases_threshold
@@ -60,7 +56,6 @@ inputs:
       read counting (default = 5). Please specify percentage threshold as 
       integer, e.g. "-t 5". Set "-t 0" if no overlap with blacklist is to be 
       tolerated
-    default: 5
     inputBinding:
       position: 101
       prefix: --bl_threshold
@@ -87,7 +82,6 @@ inputs:
       - float
     doc: Cellularity buffer to define purity grid search space during copy 
       number fitting (default = 0.1).
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --cellularity_buffer
@@ -259,7 +253,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size for a segement to be considered a segment (default = 5).
-    default: 5
     inputBinding:
       position: 101
       prefix: --min_segment_size
@@ -314,7 +307,6 @@ inputs:
       - float
     doc: p-value used to test segmentation statistic for a given interval during
       CBS using (shuffles) number of permutations (default = 0.05).
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --p_seg
@@ -324,7 +316,6 @@ inputs:
       - float
     doc: p-value used to test validity of candidate segments from CBS using 
       (shuffles) number of permutations (default = 0.01).
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --p_val
@@ -344,7 +335,6 @@ inputs:
     doc: Quantile of changepoint (absolute median differences across all 
       segments) used to estimate threshold for segment merging (default = 0.2; 
       set to 0 to avoid segment merging).
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --quantile
@@ -354,7 +344,6 @@ inputs:
       - int
     doc: Mapping quality threshold for reads to be included in the read counting
       (default = 5)
-    default: 5
     inputBinding:
       position: 101
       prefix: --readcount_mapq
@@ -379,7 +368,6 @@ inputs:
       - int
     doc: Number of permutations (shuffles) to be performed during CBS (default =
       1000).
-    default: 1000
     inputBinding:
       position: 101
       prefix: --shuffles

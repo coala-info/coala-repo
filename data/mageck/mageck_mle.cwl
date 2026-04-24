@@ -30,7 +30,6 @@ inputs:
       is not given by file in the --design-matrix option. Should be separated by
       ",", and the number of labels must equal to (# columns of design matrix), 
       including baseline labels.
-    default: bata_0,beta_1,beta_2,...
     inputBinding:
       position: 101
       prefix: --beta-labels
@@ -135,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: The number of genes for mean-variance modeling.
-    default: 0
     inputBinding:
       position: 101
       prefix: --genes-varmodeling
@@ -158,7 +156,6 @@ inputs:
       gene is greater than this number. This will save a lot of time if some 
       isolated regions are targeted by a large number of sgRNAs (usually 
       hundreds). Must be an integer.
-    default: 40
     inputBinding:
       position: 101
       prefix: --max-sgrnapergene-permutation
@@ -191,7 +188,6 @@ inputs:
       (median normalization, default), "total" (normalization by total read 
       counts), "control" (normalization by control sgRNAs specified by the 
       --control-sgrna option).
-    default: median
     inputBinding:
       position: 101
       prefix: --norm-method
@@ -200,7 +196,6 @@ inputs:
       - 'null'
       - string
     doc: The prefix of the output file(s).
-    default: sample1
     inputBinding:
       position: 101
       prefix: --output-prefix
@@ -210,7 +205,6 @@ inputs:
       - int
     doc: 'The rounds for permutation (interger). The permutation time is (# genes)*x
       for x rounds of permutation. Suggested value: 10 (may take longer time).'
-    default: 2
     inputBinding:
       position: 101
       prefix: --permutation-round
@@ -245,7 +239,6 @@ inputs:
       - int
     doc: The sgRNA ID column in sgRNA efficiency prediction file (specified by 
       the --sgrna-efficiency option). Default is 0 (the first column).
-    default: 0
     inputBinding:
       position: 101
       prefix: --sgrna-eff-name-column
@@ -256,7 +249,6 @@ inputs:
     doc: The sgRNA efficiency prediction column in sgRNA efficiency prediction 
       file (specified by the --sgrna-efficiency option). Default is 1 (the 
       second column).
-    default: 1
     inputBinding:
       position: 101
       prefix: --sgrna-eff-score-column
@@ -277,7 +269,6 @@ inputs:
       - int
     doc: Using multiple threads to run the algorithm. Default using only 1 
       thread.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: shrinking factor
-    default: 1
     inputBinding:
       position: 102
       prefix: --factor

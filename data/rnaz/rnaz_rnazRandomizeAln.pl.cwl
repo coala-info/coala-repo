@@ -19,7 +19,6 @@ inputs:
       - string
     doc: "Level of randomization: 'pos' (shuffles positions within columns), 'aln'
       (shuffles the whole alignment), or 'col' (shuffles columns)."
-    default: pos
     inputBinding:
       position: 102
       prefix: --level
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Slide size for windowing. 0 means no windowing.
-    default: 0
     inputBinding:
       position: 102
       prefix: --slide
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for randomization. 0 means no windowing (process entire alignment).
-    default: 0
     inputBinding:
       position: 102
       prefix: --window

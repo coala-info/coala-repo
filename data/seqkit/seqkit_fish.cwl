@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: "alignment parameters in format\n                                 \"<match>,<mismatch>,<gap_open>,<gap_extend>\""
-    default: '"4,-4,-2,-1"'
     inputBinding:
       position: 101
       prefix: --aln-params
@@ -29,7 +28,6 @@ inputs:
     doc: "length of sequence prefix of the first FASTA record based on\n         \
       \                               which seqkit guesses the sequence type (0 for
       whole seq)"
-    default: 10000
     inputBinding:
       position: 101
       prefix: --alphabet-guess-seq-length
@@ -40,7 +38,6 @@ inputs:
     doc: "compression level for gzip, zstd, xz and bzip2. type \"seqkit -h\"\n   \
       \                                     for the range and default value for each
       format"
-    default: -1
     inputBinding:
       position: 101
       prefix: --compress-level
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: regular expression for parsing ID
-    default: '"^(\\S+)\\s?"'
     inputBinding:
       position: 101
       prefix: --id-regexp
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: line width when outputting FASTA format (0 for no wrap)
-    default: 60
     inputBinding:
       position: 101
       prefix: --line-width
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - float
     doc: minimum mapping quality
-    default: 5
     inputBinding:
       position: 101
       prefix: --min-qual
@@ -102,7 +96,6 @@ inputs:
       - 'null'
       - string
     doc: out file ("-" for stdout, suffix .gz for gzipped out)
-    default: '"-"'
     inputBinding:
       position: 101
       prefix: --out-file
@@ -168,7 +161,6 @@ inputs:
       - string
     doc: "sequence type (dna|rna|protein|unlimit|auto) (for auto, it\n           \
       \                             automatically detect by the first sequence)"
-    default: '"auto"'
     inputBinding:
       position: 101
       prefix: --seq-type
@@ -195,7 +187,6 @@ inputs:
       - int
     doc: "number of CPUs. can also set with environment variable\n               \
       \                         SEQKIT_THREADS)"
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

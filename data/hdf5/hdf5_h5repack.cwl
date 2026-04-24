@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Size of user block to be added
-    default: 1024
     inputBinding:
       position: 102
       prefix: --block
@@ -64,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: File space page size for H5Pset_file_space_page_size
-    default: 4096
     inputBinding:
       position: 102
       prefix: --fs_pagesize
@@ -98,7 +96,6 @@ inputs:
       - int
     doc: The high bound for library release versions to use when creating 
       objects in the file
-    default: H5F_LIBVER_LATEST
     inputBinding:
       position: 102
       prefix: --high
@@ -133,7 +130,6 @@ inputs:
       - int
     doc: The low bound for library release versions to use when creating objects
       in the file
-    default: H5F_LIBVER_EARLIEST
     inputBinding:
       position: 102
       prefix: --low
@@ -150,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: Do not apply the filter to datasets smaller than M
-    default: 0
     inputBinding:
       position: 102
       prefix: --minimum
@@ -167,7 +162,6 @@ inputs:
       - 'null'
       - string
     doc: Sort groups and attributes by index Q
-    default: creation_order
     inputBinding:
       position: 102
       prefix: --sort_by
@@ -176,7 +170,6 @@ inputs:
       - 'null'
       - string
     doc: Sort groups and attributes by order Z
-    default: ascending
     inputBinding:
       position: 102
       prefix: --sort_order

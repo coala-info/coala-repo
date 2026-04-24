@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: extend gap penalty
-    default: -2
     inputBinding:
       position: 101
       prefix: -E1
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: extend gap penalty 2
-    default: -1
     inputBinding:
       position: 101
       prefix: -E2
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: mismatching penalty
-    default: -6
     inputBinding:
       position: 101
       prefix: -B
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: open gap penalty
-    default: -8
     inputBinding:
       position: 101
       prefix: -O1
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: open gap penalty 2
-    default: -75
     inputBinding:
       position: 101
       prefix: -O2
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: sequence alignment window width
-    default: 100000
     inputBinding:
       position: 101
       prefix: -w

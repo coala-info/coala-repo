@@ -117,7 +117,6 @@ inputs:
       - 'null'
       - float
     doc: overhang expansion coefficient for neighborhood search
-    default: 2
     inputBinding:
       position: 103
       prefix: --expand-coef
@@ -126,7 +125,6 @@ inputs:
       - 'null'
       - float
     doc: const addition to overhang values for neighborhood search
-    default: 20
     inputBinding:
       position: 103
       prefix: --expand-const
@@ -224,7 +222,6 @@ inputs:
       - float
     doc: expected rate of nucleotides indels in graph edges. Used for AA pHMM alignment
       with frame shifts
-    default: 0
     inputBinding:
       position: 103
       prefix: --indel-rate
@@ -242,7 +239,6 @@ inputs:
       - float
     doc: minimal length of resultant matched sequence; if <=1 then to be multiplied
       on the length of the pHMM
-    default: 0.9
     inputBinding:
       position: 103
       prefix: --length
@@ -267,7 +263,6 @@ inputs:
       - 'null'
       - int
     doc: maximal allowed number of successive I-emissions
-    default: 30
     inputBinding:
       position: 103
       prefix: --max-insertion-length
@@ -276,7 +271,6 @@ inputs:
       - 'null'
       - string
     doc: maximal component size to consider
-    default: INF
     inputBinding:
       position: 103
       prefix: --max-size
@@ -285,7 +279,6 @@ inputs:
       - 'null'
       - int
     doc: RAM limit for PathRacer in GB (terminates if exceeded)
-    default: 100
     inputBinding:
       position: 103
       prefix: --memory
@@ -294,7 +287,6 @@ inputs:
       - 'null'
       - boolean
     doc: disable fast forward in I-loops processing
-    default: false
     inputBinding:
       position: 103
       prefix: --no-fast-forward
@@ -303,7 +295,6 @@ inputs:
       - 'null'
       - boolean
     doc: disable top score Event Graph vertices filter
-    default: false
     inputBinding:
       position: 103
       prefix: --no-top-score-filter
@@ -328,7 +319,6 @@ inputs:
       - 'null'
       - boolean
     doc: process connected components of neighborhood subgraph in parallel
-    default: false
     inputBinding:
       position: 103
       prefix: --parallel-components
@@ -418,7 +408,6 @@ inputs:
       - 'null'
       - int
     doc: the number of parallel threads
-    default: 16
     inputBinding:
       position: 103
       prefix: --threads
@@ -427,7 +416,6 @@ inputs:
       - 'null'
       - int
     doc: extract top N paths
-    default: 10000
     inputBinding:
       position: 103
       prefix: --top

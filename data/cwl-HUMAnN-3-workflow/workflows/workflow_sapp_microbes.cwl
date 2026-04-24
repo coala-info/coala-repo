@@ -28,7 +28,6 @@ inputs:
     type: int?
     doc: number of threads to use for computational processes
     label: number of threads
-    default: 2
   interpro:
     type: Directory
     doc: Path to the interproscan application directory 

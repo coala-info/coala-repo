@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: File extension of the bin FASTA files if using -d (DIRECTORY) argument.
-    default: .fasta
     inputBinding:
       position: 103
       prefix: --extension
@@ -56,7 +55,6 @@ inputs:
       - float
     doc: A position is considered methylated if fraction of methylated reads is 
       above this threshold.
-    default: 0.7
     inputBinding:
       position: 103
       prefix: --methylation_threshold_high
@@ -66,7 +64,6 @@ inputs:
       - float
     doc: A position is considered non-methylated if fraction of methylation is 
       below this threshold.
-    default: 0.3
     inputBinding:
       position: 103
       prefix: --methylation_threshold_low
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum score for a motif to be kept after identification.
-    default: 1.5
     inputBinding:
       position: 103
       prefix: --min_motif_score
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of motif observations in a bin.
-    default: 50
     inputBinding:
       position: 103
       prefix: --min_motifs_bin
@@ -94,7 +89,6 @@ inputs:
       - float
     doc: Minimum KL-divergence for a position to considered for expansion in 
       motif search. Higher value means less exhaustive, but faster search.
-    default: 0.05
     inputBinding:
       position: 103
       prefix: --minimum_kl_divergence
@@ -103,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: length of the sequnces sampled around confident methylation sites.
-    default: 40
     inputBinding:
       position: 103
       prefix: --search_frame_size
@@ -112,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for random number generator.
-    default: 1
     inputBinding:
       position: 103
       prefix: --seed
@@ -121,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads
@@ -131,7 +122,6 @@ inputs:
       - int
     doc: Minimum valid base coverage (Nvalid_cov) for a position to be 
       considered.
-    default: 5
     inputBinding:
       position: 103
       prefix: --threshold_valid_coverage

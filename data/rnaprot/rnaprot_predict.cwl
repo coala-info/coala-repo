@@ -17,7 +17,6 @@ inputs:
       - int
     doc: Define prediction mode. (1) predict whole sites, (2) predict binding 
       sites on longer sequences using moving window predictions
-    default: 1
     inputBinding:
       position: 101
       prefix: --mode
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: 'Plotting format of top window profiles. 1: png, 2: pdf'
-    default: 1
     inputBinding:
       position: 101
       prefix: --plot-format
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: Plot top window profiles
-    default: false
     inputBinding:
       position: 101
       prefix: --plot-top-profiles
@@ -61,7 +58,6 @@ inputs:
       - int
     doc: 'Define site score threshold level for reporting peak regions in --mode 2
       (window prediction). 1: relaxed, 2: standard, 3: strict'
-    default: 2
     inputBinding:
       position: 101
       prefix: --thr

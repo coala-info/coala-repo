@@ -9,7 +9,6 @@ inputs:
     doc: 'Analysis type: getCIGARindels: Extract indels from CIGARs of mapped reads,
       and infer libary insert size distributions indels: infer indels realignCandidates:
       Realign/reposition candidates in candidate file'
-    default: indels
     inputBinding:
       position: 101
       prefix: --analysis
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: Dirichlet a0 parameter haplotype frequency prior
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --bayesa0
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Bayesian EM program type (all or singlevariant or priorpersite)
-    default: singlevariant
     inputBinding:
       position: 101
       prefix: --bayesType
@@ -50,7 +47,6 @@ inputs:
       - int
     doc: 'cap mapping quality in alignment using fast ungapped method (WARNING: setting
       it too high (>50) might result in significant overcalling!)'
-    default: 45
     inputBinding:
       position: 101
       prefix: --capMapQualFast
@@ -60,7 +56,6 @@ inputs:
       - int
     doc: upper limit for read mapping quality in observationmodel_old (phred 
       units)
-    default: 100
     inputBinding:
       position: 101
       prefix: --capMapQualThreshold
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: include all indels at the position of the call site
-    default: 1
     inputBinding:
       position: 101
       prefix: --checkAllCIGARs
@@ -95,7 +89,6 @@ inputs:
       - 'null'
       - float
     doc: difference threshold for viewing
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --compareReadHapThreshold
@@ -145,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: max number of mismatches in indel region
-    default: 2
     inputBinding:
       position: 101
       prefix: --flankMaxMismatch
@@ -154,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: '#bases of reference sequence of indel region'
-    default: 2
     inputBinding:
       position: 101
       prefix: --flankRefSeq
@@ -163,7 +154,6 @@ inputs:
       - 'null'
       - string
     doc: inference method
-    default: empirical
     inputBinding:
       position: 101
       prefix: --inferenceMethod
@@ -181,7 +171,6 @@ inputs:
       - 'null'
       - float
     doc: lower limit for read mapping quality
-    default: 0.99
     inputBinding:
       position: 101
       prefix: --mapQualThreshold
@@ -190,7 +179,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of haplotypes in likelihood computation
-    default: 8
     inputBinding:
       position: 101
       prefix: --maxHap
@@ -199,7 +187,6 @@ inputs:
       - 'null'
       - int
     doc: skip if product of number of reads and haplotypes exceeds this value
-    default: 10000000
     inputBinding:
       position: 101
       prefix: --maxHapReadProd
@@ -209,7 +196,6 @@ inputs:
       - int
     doc: maximum length of a _sequencing error_ indel in read [not for --faster 
       option]
-    default: 5
     inputBinding:
       position: 101
       prefix: --maxLengthIndel
@@ -218,7 +204,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of reads in likelihood computation
-    default: 10000
     inputBinding:
       position: 101
       prefix: --maxRead
@@ -227,7 +212,6 @@ inputs:
       - 'null'
       - int
     doc: maximum length of reads
-    default: 500
     inputBinding:
       position: 101
       prefix: --maxReadLength
@@ -236,7 +220,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of WS observations of indel
-    default: 1
     inputBinding:
       position: 101
       prefix: --minCount
@@ -245,7 +228,6 @@ inputs:
       - 'null'
       - int
     doc: minimum overlap between read and haplotype
-    default: 20
     inputBinding:
       position: 101
       prefix: --minReadOverlap
@@ -268,7 +250,6 @@ inputs:
       - 'null'
       - float
     doc: probability of a read indel
-    default: 0.0005
     inputBinding:
       position: 101
       prefix: --pError
@@ -277,7 +258,6 @@ inputs:
       - 'null'
       - float
     doc: probability of a mutation in the read
-    default: 1e-05
     inputBinding:
       position: 101
       prefix: --pMut
@@ -286,7 +266,6 @@ inputs:
       - 'null'
       - float
     doc: prior probability of a detected indel not being a sequencing error
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: --priorIndel
@@ -295,7 +274,6 @@ inputs:
       - 'null'
       - float
     doc: prior probability of a SNP site
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --priorSNP
@@ -356,7 +334,6 @@ inputs:
       - 'null'
       - int
     doc: skip computation if number of haplotypes exceeds this number
-    default: 200
     inputBinding:
       position: 101
       prefix: --skipMaxHap
@@ -385,7 +362,6 @@ inputs:
       - 'null'
       - int
     doc: number of bases to left and right of indel
-    default: 60
     inputBinding:
       position: 101
       prefix: --width

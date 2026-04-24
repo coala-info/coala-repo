@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: 'Which dataset to use. Default: hsapiens_gene_ensembl'
-    default: hsapiens_gene_ensembl
     inputBinding:
       position: 101
       prefix: --dataset
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: 'Which mart to use. Default: ENSEMBL_MART_ENSEMBL.'
-    default: ENSEMBL_MART_ENSEMBL
     inputBinding:
       position: 101
       prefix: --mart

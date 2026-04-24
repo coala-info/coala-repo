@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: "Mode for cutting tails: 'both', 'left', or 'right'."
-    default: both
     inputBinding:
       position: 103
       prefix: --mode

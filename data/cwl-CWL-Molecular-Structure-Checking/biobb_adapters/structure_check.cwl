@@ -46,7 +46,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_summary_path
-    default: system.json
 
   config:
     label: Advanced configuration options for biobb_structure_utils StructureCheck

@@ -30,12 +30,10 @@ inputs:
     label: identifier used
     inputBinding:
       prefix: --tag-output
-    default: "semibin2"
 
   threads:
     type: int?
     label: Number of threads to use
-    default: 1
     inputBinding:
       prefix: --threads
   assembly:

@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: figure height
-    default: 6
     inputBinding:
       position: 101
       prefix: --height
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - float
     doc: max value for plot
-    default: 1.15
     inputBinding:
       position: 101
       prefix: --max
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: min value for plot
-    default: -0.15
     inputBinding:
       position: 101
       prefix: --min
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality (mapq)
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_mapq
@@ -73,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of calls to include site (methylated + unmethylated)
-    default: 10
     inputBinding:
       position: 101
       prefix: --mincalls
@@ -82,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: minimum reads in interval
-    default: 1
     inputBinding:
       position: 101
       prefix: --minreads
@@ -99,7 +93,6 @@ inputs:
       - 'null'
       - string
     doc: palette, see https://seaborn.pydata.org/tutorial/color_palettes.html
-    default: tab10
     inputBinding:
       position: 101
       prefix: --palette
@@ -108,7 +101,6 @@ inputs:
       - 'null'
       - float
     doc: point size for scatterplot
-    default: 1
     inputBinding:
       position: 101
       prefix: --pointsize
@@ -125,7 +117,6 @@ inputs:
       - 'null'
       - float
     doc: alpha (tranparency) for ridge plot fills
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --ridge_alpha
@@ -134,7 +125,6 @@ inputs:
       - 'null'
       - float
     doc: smoothing parameter for ridge plot, bigger is smoother
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --ridge_smoothing
@@ -143,7 +133,6 @@ inputs:
       - 'null'
       - float
     doc: ridge plot spacing (generally negative)
-    default: -0.25
     inputBinding:
       position: 101
       prefix: --ridge_spacing
@@ -214,7 +203,6 @@ inputs:
       - 'null'
       - string
     doc: set label for y-axis
-    default: pct methylation
     inputBinding:
       position: 101
       prefix: --ylabel

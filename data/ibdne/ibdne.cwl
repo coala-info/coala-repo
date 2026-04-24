@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to filter samples
-    default: true
     inputBinding:
       position: 102
       prefix: filtersamples
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum cM length of an IBD segment
-    default: 4.0
     inputBinding:
       position: 102
       prefix: minibd
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum cM length of a continuous region
-    default: 50.0
     inputBinding:
       position: 102
       prefix: minregion
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bootstrap samples
-    default: 80
     inputBinding:
       position: 102
       prefix: nboots
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations
-    default: 50
     inputBinding:
       position: 102
       prefix: nits
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Number of random starts
-    default: 50
     inputBinding:
       position: 102
       prefix: nstarts
@@ -85,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Number of computational threads
-    default: 1
     inputBinding:
       position: 102
       prefix: nthreads
@@ -100,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for random number generator
-    default: -99999
     inputBinding:
       position: 102
       prefix: seed
@@ -109,7 +101,6 @@ inputs:
       - 'null'
       - float
     doc: cM to trim from ends of each region
-    default: 0.2
     inputBinding:
       position: 102
       prefix: trim

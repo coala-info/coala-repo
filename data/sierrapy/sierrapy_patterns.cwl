@@ -74,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: URL of Sierra GraphQL Web Service.
-    default: production URL varied by virus
     inputBinding:
       position: 102
       prefix: --url
@@ -83,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: Specify virus to be analyzed.
-    default: HIV1
     inputBinding:
       position: 102
       prefix: --virus

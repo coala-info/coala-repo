@@ -12,7 +12,6 @@ inputs:
       - File
     doc: Supply file with gene IDs (one ID per row) to use as background gene 
       list for GOA. NOTE that gene IDs need to be compatible with --gtf
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --goa-bg-gene-list
@@ -22,7 +21,6 @@ inputs:
       - boolean
     doc: Filter out GOA results labeled as purified (i.e., GO terms with 
       significantly lower concentration) in HTML table
-    default: false
     inputBinding:
       position: 101
       prefix: --goa-filter-purified
@@ -33,7 +31,6 @@ inputs:
     doc: 'Provide gene ID to GO IDs mapping table (row format: gene_id<tab>go_id1,go_id2).
       By default, a local file with ENSEMBL gene IDs is used. NOTE that gene IDs need
       to be compatible with --gtf'
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --goa-gene2go-file
@@ -44,7 +41,6 @@ inputs:
     doc: Specify maximum number of children for a significant GO term to be 
       reported in HTML table, e.g. --goa-max- child 100. This allows filtering 
       out very broad terms
-    default: None
     inputBinding:
       position: 101
       prefix: --goa-max-child
@@ -54,7 +50,6 @@ inputs:
       - int
     doc: Specify minimum depth number for a significant GO term to be reported 
       in HTML table, e.g. --goa-min-depth 5
-    default: None
     inputBinding:
       position: 101
       prefix: --goa-min-depth
@@ -63,7 +58,6 @@ inputs:
       - 'null'
       - File
     doc: Provide GO DAG obo file
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --goa-obo-file
@@ -73,7 +67,6 @@ inputs:
       - int
     doc: 'Define how to obtain GO DAG (directed acyclic graph) obo file. 1: download
       most recent file from internet, 2: use local file, 3: provide file via --goa-obo-file'
-    default: 1
     inputBinding:
       position: 101
       prefix: --goa-obo-mode
@@ -82,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: GO enrichment analysis p-value threshold (applied on corrected p-value)
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --goa-pval
@@ -108,7 +100,6 @@ inputs:
       - boolean
     doc: Store plot files with absolute paths in HTML files. Default is relative
       paths
-    default: false
     inputBinding:
       position: 101
       prefix: --plot-abs-paths
@@ -118,7 +109,6 @@ inputs:
       - int
     doc: 'Define how to provide sorttable.js file. 1: link to packaged .js file. 2:
       copy .js file to plots output folder. 3: include .js code in HTML'
-    default: 1
     inputBinding:
       position: 101
       prefix: --sort-js-mode

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: bloom filter format. [howdesbt|sdsl]
-    default: howdesbt
     inputBinding:
       position: 101
       prefix: --bf-format
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: entry width of cbf, with --mode hash:bfc:bin
-    default: 2
     inputBinding:
       position: 101
       prefix: --bitw
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: bloom filter size
-    default: 10000000
     inputBinding:
       position: 101
       prefix: --bloom-size
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - float
     doc: '0: focus on disk usage, 1: focus on speed. [0.0, 1.0]'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --focus
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: min abundance to keep a k-mer.
-    default: 2
     inputBinding:
       position: 101
       prefix: --hard-min
@@ -92,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: size of a k-mer. [8, 255].
-    default: 31
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -101,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: size of minimizers. [4, 15]
-    default: 10
     inputBinding:
       position: 101
       prefix: --minimizer-size
@@ -110,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: minimizer type (0=lexi, 1=freq).
-    default: 0
     inputBinding:
       position: 101
       prefix: --minimizer-type
@@ -119,7 +111,6 @@ inputs:
       - 'null'
       - string
     doc: matrix mode <mode:format:out>, see README
-    default: kmer:count:bin
     inputBinding:
       position: 101
       prefix: --mode
@@ -128,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: number of partitions (0=auto).
-    default: 0
     inputBinding:
       position: 101
       prefix: --nb-partitions
@@ -137,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: min recurrence to keep a k-mer.
-    default: 1
     inputBinding:
       position: 101
       prefix: --recurrence-min
@@ -154,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: minimizer repartition (0=unordered, 1=ordered).
-    default: 0
     inputBinding:
       position: 101
       prefix: --repartition-type
@@ -163,7 +151,6 @@ inputs:
       - 'null'
       - float
     doc: Process only a fraction of partitions. [0.05, 1.0]
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --restrict-to
@@ -186,7 +173,6 @@ inputs:
       - 'null'
       - int
     doc: save a non-solid k-mer if it is solid in N other samples.
-    default: 0
     inputBinding:
       position: 101
       prefix: --share-min
@@ -195,7 +181,6 @@ inputs:
       - 'null'
       - string
     doc: during merge, min abundance to keep a k-mer, see README.
-    default: 1
     inputBinding:
       position: 101
       prefix: --soft-min
@@ -204,7 +189,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads.
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -213,7 +197,6 @@ inputs:
       - 'null'
       - string
     doc: run until [all|repart|superk|count|merge]
-    default: all
     inputBinding:
       position: 101
       prefix: --until
@@ -222,7 +205,6 @@ inputs:
       - 'null'
       - string
     doc: verbosity level [debug|info|warning|error].
-    default: info
     inputBinding:
       position: 101
       prefix: --verbose

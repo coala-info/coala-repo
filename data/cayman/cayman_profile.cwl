@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: Format of the annotation database.
-    default: bed
     inputBinding:
       position: 103
       prefix: --db_format

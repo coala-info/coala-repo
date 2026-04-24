@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: Loss function for NMF (frobenius, kullback-leibler, or itakura-saito)
-    default: frobenius
     inputBinding:
       position: 101
       prefix: --beta-loss
@@ -65,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: Initialization algorithm for NMF (random or nndsvd)
-    default: random
     inputBinding:
       position: 101
       prefix: --init
@@ -92,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of iterations per individual NMF run
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max-nmf-iter

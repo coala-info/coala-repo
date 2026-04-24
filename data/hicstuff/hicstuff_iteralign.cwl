@@ -17,7 +17,6 @@ inputs:
       - string
     doc: Choose alignment software between bowtie2, minimap2 or bwa. minimap2 
       should only be used for reads > 100 bp.
-    default: bowtie2
     inputBinding:
       position: 102
       prefix: --aligner
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: "Length to which the reads should be\n                                 truncated"
-    default: 20
     inputBinding:
       position: 102
       prefix: --min-len
@@ -62,7 +60,6 @@ inputs:
       - int
     doc: "Number of parallel threads allocated for the\n                         \
       \        alignment"
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

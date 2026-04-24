@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of cores to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -85,7 +84,6 @@ inputs:
       - int
     doc: Maximum number of cores to use on localrules when running in cluster 
       mode
-    default: 1
     inputBinding:
       position: 101
       prefix: --local-cores
@@ -102,7 +100,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: .
     inputBinding:
       position: 101
       prefix: --output
@@ -119,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Number of times to retry a failed job
-    default: 3
     inputBinding:
       position: 101
       prefix: --retries
@@ -128,7 +124,6 @@ inputs:
       - 'null'
       - string
     doc: Set temporary directory
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --set-tmp-dir

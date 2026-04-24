@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: Values on each line of the file are separated by this character.
-    default: tab
     inputBinding:
       position: 101
       prefix: --delimiter

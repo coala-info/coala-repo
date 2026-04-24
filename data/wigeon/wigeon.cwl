@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: uses only the single best match.
-    default: 1
     inputBinding:
       position: 101
       prefix: --num_top_hits

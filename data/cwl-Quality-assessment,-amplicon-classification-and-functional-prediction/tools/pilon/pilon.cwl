@@ -35,12 +35,10 @@ inputs:
     label: number of threads
     inputBinding:
       prefix: --threads
-    default: 2
   memory:
     type: int?
     doc: Memory usage in megabytes
     label: memory usage (MB)
-    default: 8000
 
   assembly:
     type: File
@@ -74,7 +72,6 @@ inputs:
   vcf:
     label: vcf output
     type: boolean
-    default: true
     inputBinding:
       prefix: --vcf
 

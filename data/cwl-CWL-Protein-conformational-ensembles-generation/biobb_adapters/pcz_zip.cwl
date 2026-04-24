@@ -61,7 +61,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_pcz_path
-    default: system.pcz
 
   config:
     label: Advanced configuration options for biobb_flexserv PCZzip

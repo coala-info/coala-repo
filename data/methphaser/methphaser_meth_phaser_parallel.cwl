@@ -46,7 +46,6 @@ inputs:
       - int
     doc: 'maximum homozygous region length for phasing, default: -1 (ignore the largest
       homozygous region, centromere), input -2 for not skipping anything'
-    default: -1
     inputBinding:
       position: 101
       prefix: --max_len

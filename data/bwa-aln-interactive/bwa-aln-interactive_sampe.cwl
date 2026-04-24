@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: prior of chimeric rate (lower bound)
-    default: 1e-05
     inputBinding:
       position: 106
       prefix: -c
@@ -62,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: maximum hits to output for discordant pairs
-    default: 10
     inputBinding:
       position: 106
       prefix: -N
@@ -71,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: maximum hits to output for paired reads
-    default: 3
     inputBinding:
       position: 106
       prefix: -n
@@ -80,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: maximum insert size
-    default: 500
     inputBinding:
       position: 106
       prefix: -a
@@ -89,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: maximum occurrences for one end
-    default: 100000
     inputBinding:
       position: 106
       prefix: -o

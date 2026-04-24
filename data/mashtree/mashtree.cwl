@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Genome size for mash sketch
-    default: 5000000
     inputBinding:
       position: 102
       prefix: --genomesize
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer length for mash sketch
-    default: 21
     inputBinding:
       position: 102
       prefix: --kmerlength
@@ -48,7 +46,6 @@ inputs:
       - int
     doc: If mindepth is zero, then it will be chosen in a smart but slower 
       method, to discard lower-abundance kmers.
-    default: 5
     inputBinding:
       position: 102
       prefix: --mindepth
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: This script uses Perl threads.
-    default: 1
     inputBinding:
       position: 102
       prefix: --numcpus
@@ -66,7 +62,6 @@ inputs:
       - 'null'
       - Directory
     doc: If a directory is supplied, then sketches will be saved in it.
-    default: sketches will be saved alongside source files
     inputBinding:
       position: 102
       prefix: --save-sketches
@@ -75,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for mash sketch
-    default: 42
     inputBinding:
       position: 102
       prefix: --seed
@@ -84,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: How many decimal places to use in mash distances
-    default: 10
     inputBinding:
       position: 102
       prefix: --sigfigs
@@ -93,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Sketch size for mash
-    default: 10000
     inputBinding:
       position: 102
       prefix: --sketch-size
@@ -103,7 +95,6 @@ inputs:
       - string
     doc: 'For neighbor-joining, the sort order can make a difference. Options include:
       ABC (alphabetical), random, input-order'
-    default: ABC
     inputBinding:
       position: 102
       prefix: --sort-order
@@ -113,7 +104,6 @@ inputs:
       - Directory
     doc: If specified, this directory will not be removed at the end of the 
       script and can be used to cache results for future analyses.
-    default: a dir will be made for you and then deleted at the end of this 
       script
     inputBinding:
       position: 102
@@ -123,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: How many characters to keep in a filename
-    default: 250
     inputBinding:
       position: 102
       prefix: --truncLength

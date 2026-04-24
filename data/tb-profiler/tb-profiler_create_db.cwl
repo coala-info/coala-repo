@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: A bed file containing lineage barcode SNPs
-    default: barcode.bed
     inputBinding:
       position: 101
       prefix: --barcode
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - File
     doc: A bed file containing a list of low-complexity regions
-    default: mask.bed
     inputBinding:
       position: 101
       prefix: --bedmask
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Create a samtools, gatk and bwa index for the reference genome
-    default: false
     inputBinding:
       position: 101
       prefix: --create-index
@@ -45,7 +42,6 @@ inputs:
       - type: array
         items: File
     doc: The input CSV file containing the mutations
-    default:
       - mutations.csv
     inputBinding:
       position: 101
@@ -56,7 +52,6 @@ inputs:
       - boolean
     doc: Tells the script this is a custom database, this is used to alter the 
       generation of the version definition
-    default: false
     inputBinding:
       position: 101
       prefix: --custom
@@ -89,7 +84,6 @@ inputs:
       - 'null'
       - Directory
     doc: Database directory
-    default: /usr/local/share/tbprofiler
     inputBinding:
       position: 101
       prefix: --db_dir
@@ -106,7 +100,6 @@ inputs:
       - 'null'
       - Directory
     doc: Storage directory
-    default: .
     inputBinding:
       position: 101
       prefix: --dir
@@ -115,7 +108,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force overwrite existing database with the same name
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -125,7 +117,6 @@ inputs:
       - boolean
     doc: Include the original mutation (before reformatting) as part of the 
       variant annotaion
-    default: false
     inputBinding:
       position: 101
       prefix: --include-original-mutation
@@ -134,7 +125,6 @@ inputs:
       - 'null'
       - boolean
     doc: Automaticaly load database
-    default: false
     inputBinding:
       position: 101
       prefix: --load
@@ -143,7 +133,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level
-    default: INFO
     inputBinding:
       position: 101
       prefix: --logging
@@ -160,7 +149,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't load if existing database with prefix exists
-    default: false
     inputBinding:
       position: 101
       prefix: --no-overwrite
@@ -175,7 +163,6 @@ inputs:
       - 'null'
       - File
     doc: A yaml file containing rules for the resistance library
-    default: rules.yml
     inputBinding:
       position: 101
       prefix: --rules
@@ -192,7 +179,6 @@ inputs:
       - 'null'
       - File
     doc: A file containing a list of spoligotype spacers
-    default: spoligotype_spacers.txt
     inputBinding:
       position: 101
       prefix: --spoligotypes
@@ -201,7 +187,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temp firectory to process all files
-    default: .
     inputBinding:
       position: 101
       prefix: --temp
@@ -211,7 +196,6 @@ inputs:
       - File
     doc: A csv file containing genes to profile but without any specific 
       associated mutations
-    default: watchlist.csv
     inputBinding:
       position: 101
       prefix: --watchlist

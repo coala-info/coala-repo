@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: do unique molecular identifier (umi) processing, default is off
-    default: false
     inputBinding:
       position: 101
       prefix: --addUmi
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: If set, candidate reads will be corrected,too, default is off
-    default: false
     inputBinding:
       position: 101
       prefix: --candidateCorrection
@@ -53,7 +51,6 @@ inputs:
     doc: If candidateCorrection is set, a candidates with an absolute shift of 
       candidateCorrectionNewColumns compared to anchor are corrected, default is
       15
-    default: 15
     inputBinding:
       position: 101
       prefix: --candidateCorrectionNewColumns
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: output file compression level (1 - 9), default is 4
-    default: 4
     inputBinding:
       position: 101
       prefix: --compressLevel
@@ -72,7 +68,6 @@ inputs:
       - boolean
     doc: sample correcting low quality bases using information from overlap 
       (faster but less accurate), default is off
-    default: false
     inputBinding:
       position: 101
       prefix: --correctData
@@ -82,7 +77,6 @@ inputs:
       - boolean
     doc: correct data use care engine (slower but much more accurate), default 
       is off
-    default: false
     inputBinding:
       position: 101
       prefix: --correctWithCare
@@ -92,7 +86,6 @@ inputs:
       - boolean
     doc: If set, correction quality label will be appended to output read 
       headers, default is off
-    default: false
     inputBinding:
       position: 101
       prefix: --correctionQualityLabels
@@ -102,7 +95,6 @@ inputs:
       - int
     doc: '0: Classic, 2: Print. Print is only supported in the cpu version, default
       is 0'
-    default: 0
     inputBinding:
       position: 101
       prefix: --correctionType
@@ -112,7 +104,6 @@ inputs:
       - int
     doc: '0: Classic, 2: Print. Print is only supported in the cpu version, default
       is 0'
-    default: 0
     inputBinding:
       position: 101
       prefix: --correctionTypeCands
@@ -130,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: coveragefactortuning, default is 0.6
-    default: 0.6
     inputBinding:
       position: 101
       prefix: --coveragefactortuning
@@ -140,7 +130,6 @@ inputs:
       - boolean
     doc: detect adapter for pe data, default is off, tool prefers to use overlap
       to find adapter
-    default: false
     inputBinding:
       position: 101
       prefix: --decAdaForPe
@@ -149,7 +138,6 @@ inputs:
       - 'null'
       - boolean
     doc: detect adapter for se data, default is on
-    default: true
     inputBinding:
       position: 101
       prefix: --decAdaForSe
@@ -158,7 +146,6 @@ inputs:
       - 'null'
       - boolean
     doc: do over-representation sequence analysis, default is off
-    default: false
     inputBinding:
       position: 101
       prefix: --doOverrepresentation
@@ -168,7 +155,6 @@ inputs:
       - boolean
     doc: If the requested number of hash maps cannot be fulfilled, the program 
       terminates without error correction, default is off
-    default: false
     inputBinding:
       position: 101
       prefix: --enforceHashmapCount
@@ -177,7 +163,6 @@ inputs:
       - 'null'
       - float
     doc: errorfactortuning, default is 0.06
-    default: 0.06
     inputBinding:
       position: 101
       prefix: --errorfactortuning
@@ -187,7 +172,6 @@ inputs:
       - boolean
     doc: If set, reads which contain at least one ambiguous nucleotide will not 
       be corrected, default is off
-    default: false
     inputBinding:
       position: 101
       prefix: --excludeAmbiguous
@@ -196,7 +180,6 @@ inputs:
       - 'null'
       - int
     doc: Process only the first n reads, default is 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --fixedNumberOfReads
@@ -207,7 +190,6 @@ inputs:
     doc: Load factor of hashtables. 0.0 < hashloadfactor < 1.0. Smaller values 
       can improve the runtime at the expense of greater memory usage, default is
       0.8
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --hashloadfactor
@@ -218,7 +200,6 @@ inputs:
     doc: The requested number of hash maps. Must be greater than 0. The actual 
       number of used hash maps may be lower to respect the set memory limit, 
       default is 48
-    default: 48
     inputBinding:
       position: 101
       prefix: --hashmaps
@@ -243,7 +224,6 @@ inputs:
       - 'null'
       - boolean
     doc: use interleaved input (only for pe data), default is off
-    default: false
     inputBinding:
       position: 101
       prefix: --interleavedIn
@@ -252,7 +232,6 @@ inputs:
       - 'null'
       - boolean
     doc: use interleaved output (only for pe data), default is off
-    default: false
     inputBinding:
       position: 101
       prefix: --interleavedOut
@@ -262,7 +241,6 @@ inputs:
       - int
     doc: The kmer length for minhashing. If 0 or missing, it is automatically 
       determined, default is 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --kmerlength
@@ -288,7 +266,6 @@ inputs:
       - float
     doc: Overlap between anchor and candidate must contain at most 
       (maxmismatchratio * overlapsize) mismatches, default is 0.2
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --maxmismatchratio
@@ -299,7 +276,6 @@ inputs:
     doc: Memory limit in bytes for hash tables and hash table construction. Can 
       use suffix K,M,G, e.g. 20G means 20 gigabyte. This option is not a hard 
       limit, default is a bit less than memory
-    default: a bit less than memory
     inputBinding:
       position: 101
       prefix: --memHashtables
@@ -309,7 +285,6 @@ inputs:
       - string
     doc: Total memory limit in bytes. Can use suffix K,M,G, e.g. 20G means 20 
       gigabyte. This option is not a hard limit, default is all free memory
-    default: all free memory
     inputBinding:
       position: 101
       prefix: --memTotal
@@ -319,7 +294,6 @@ inputs:
       - int
     doc: Overlap between anchor and candidate must be at least this long, 
       default is 30
-    default: 30
     inputBinding:
       position: 101
       prefix: --minalignmentoverlap
@@ -329,7 +303,6 @@ inputs:
       - float
     doc: Overlap between anchor and candidate must be at least as long as 
       (minalignmentoverlapratio * candidatelength), default is 0.3
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --minalignmentoverlapratio
@@ -339,7 +312,6 @@ inputs:
       - boolean
     doc: no insert size analysis (only for pe data), default is to do insert 
       size analysis
-    default: false
     inputBinding:
       position: 101
       prefix: --noInsertSize
@@ -348,7 +320,6 @@ inputs:
       - 'null'
       - boolean
     doc: don't trim adapter, default is off
-    default: false
     inputBinding:
       position: 101
       prefix: --noTrimAdapter
@@ -358,7 +329,6 @@ inputs:
       - boolean
     doc: do not keep order as input when outputting reads (may slightly improve 
       performance if opened), default is off
-    default: false
     inputBinding:
       position: 101
       prefix: --notKeepOrder
@@ -375,7 +345,6 @@ inputs:
       - 'null'
       - int
     doc: do overrepresentation every [] reads, default is 20
-    default: 20
     inputBinding:
       position: 101
       prefix: --overrepresentationSampling
@@ -384,7 +353,6 @@ inputs:
       - 'null'
       - string
     doc: SE (single-end) or PE (paired-end), default is SE
-    default: SE
     inputBinding:
       position: 101
       prefix: --pairmode
@@ -393,7 +361,6 @@ inputs:
       - 'null'
       - boolean
     doc: input is using phred64 scoring, default is phred33
-    default: false
     inputBinding:
       position: 101
       prefix: --phred64
@@ -413,7 +380,6 @@ inputs:
       - boolean
     doc: if print overrepresentation sequences to *ORP_sequences.txt or not, 
       default is not
-    default: false
     inputBinding:
       position: 101
       prefix: --printORPSeqs
@@ -422,7 +388,6 @@ inputs:
       - 'null'
       - boolean
     doc: if print what trimmed to *_trimmed_adapters.txt or not, default is not
-    default: false
     inputBinding:
       position: 101
       prefix: --printWhatTrimmed
@@ -442,7 +407,6 @@ inputs:
       - int
     doc: 'How many bits should be used to store a single quality score. Allowed values:
       1,2,8. If not 8, a lossy compression via binning is used, default is 8'
-    default: 8
     inputBinding:
       position: 101
       prefix: --qualityScoreBits
@@ -467,7 +431,6 @@ inputs:
       - 'null'
       - boolean
     doc: If set, progress bar is shown during correction, default is off
-    default: false
     inputBinding:
       position: 101
       prefix: --showProgress
@@ -476,7 +439,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use 1 hashtables with h smallest unique hashes, default is off
-    default: false
     inputBinding:
       position: 101
       prefix: --singlehash
@@ -503,7 +465,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to store temporary files, default is the output directory
-    default: the output directory
     inputBinding:
       position: 101
       prefix: --tempdir
@@ -513,7 +474,6 @@ inputs:
       - boolean
     doc: process third generation sequencing (TGS) data (only for se data, does 
       not support trimming and will not produce output files), default is off
-    default: false
     inputBinding:
       position: 101
       prefix: --TGS
@@ -523,7 +483,6 @@ inputs:
       - int
     doc: number of thread used to do QC, including (de)compression for 
       compressed data, default is 8
-    default: 8
     inputBinding:
       position: 101
       prefix: --threadNum
@@ -533,7 +492,6 @@ inputs:
       - boolean
     doc: do sliding window from 5end to 3end to trim low quality bases, default 
       is off
-    default: false
     inputBinding:
       position: 101
       prefix: --trim3End
@@ -543,7 +501,6 @@ inputs:
       - boolean
     doc: do sliding window from 5end to 3end to trim low quality bases, default 
       is off
-    default: false
     inputBinding:
       position: 101
       prefix: --trim5End
@@ -552,7 +509,6 @@ inputs:
       - 'null'
       - int
     doc: number of bases to trim from front in read1, default is 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --trimFront1
@@ -561,7 +517,6 @@ inputs:
       - 'null'
       - int
     doc: number of bases to trim from front in read2, default is 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --trimFront2
@@ -570,7 +525,6 @@ inputs:
       - 'null'
       - boolean
     doc: do polyg tail trim, default is off
-    default: false
     inputBinding:
       position: 101
       prefix: --trimPolyg
@@ -579,7 +533,6 @@ inputs:
       - 'null'
       - boolean
     doc: do polyx tail trim, default is off
-    default: false
     inputBinding:
       position: 101
       prefix: --trimPolyx
@@ -588,7 +541,6 @@ inputs:
       - 'null'
       - int
     doc: number of bases to trim from tail in read1, default is 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --trimTail1
@@ -597,7 +549,6 @@ inputs:
       - 'null'
       - int
     doc: number of bases to trim from tail in read2, default is 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --trimTail2
@@ -606,7 +557,6 @@ inputs:
       - 'null'
       - int
     doc: umi length if it is in read1/read2, default is 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --umiLen
@@ -616,7 +566,6 @@ inputs:
       - string
     doc: specify the location of umi, can be 
       (index1/index2/read1/read2/per_index/per_read), default is 0
-    default: '0'
     inputBinding:
       position: 101
       prefix: --umiLoc
@@ -625,7 +574,6 @@ inputs:
       - 'null'
       - string
     doc: identification to be added in front of umi, default is no prefix
-    default: no prefix
     inputBinding:
       position: 101
       prefix: --umiPrefix
@@ -634,7 +582,6 @@ inputs:
       - 'null'
       - int
     doc: the number bases to skip if umi exists, default is 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --umiSkip
@@ -643,7 +590,6 @@ inputs:
       - 'null'
       - boolean
     doc: use igzip instead of pugz/zlib, default is off
-    default: false
     inputBinding:
       position: 101
       prefix: --useIgzip
@@ -653,7 +599,6 @@ inputs:
       - boolean
     doc: If set, quality scores (if any) are considered during read correction, 
       default is off
-    default: false
     inputBinding:
       position: 101
       prefix: --useQualityScores

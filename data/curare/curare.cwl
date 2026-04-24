@@ -11,7 +11,6 @@ inputs:
       - string
     doc: Choose conda frontend for creating and installing conda environments 
       (conda, mamba)
-    default: mamba
     inputBinding:
       position: 101
       prefix: --conda-frontend
@@ -53,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Seconds to wait before checking if all files of a rule were created.
-    default: 5
     inputBinding:
       position: 101
       prefix: --latency-wait

@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - float
     doc: convergence threshold for EM
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --convergence-thresh
@@ -21,7 +20,6 @@ inputs:
       - int
     doc: number of probability bins to use in RangeFactorized equivalence classes.
       If this value is set to 1, then basic equivalence classes are used
-    default: 64
     inputBinding:
       position: 101
       prefix: --factorized-eqc-bins
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: max iterations to run the EM
-    default: 1500
     inputBinding:
       position: 101
       prefix: --max-iter
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: number of bootstrap replicates to perform
-    default: 0
     inputBinding:
       position: 101
       prefix: --num-bootstraps
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use (used during the EM and for bootstrapping)
-    default: 16
     inputBinding:
       position: 101
       prefix: --num-threads
@@ -89,7 +84,6 @@ inputs:
     doc: number of (unique) mappings to use to perform initial coarse-grained estimation
       of the fragment length distribution. These fragments will have to be read from
       the file and interrogated twice
-    default: 500000
     inputBinding:
       position: 101
       prefix: --param-est-frags
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - float
     doc: presence threshold for EM
-    default: 1e-08
     inputBinding:
       position: 101
       prefix: --presence-thresh

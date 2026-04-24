@@ -22,7 +22,6 @@ inputs:
     type: string
   min_contig_length:
     type: int
-    default: 500
 
 outputs:
   final_contigs:

@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: max interval size to find coordinates
-    default: 20
     inputBinding:
       position: 103
       prefix: -w
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: max MEM length
-    default: 2147483647
     inputBinding:
       position: 103
       prefix: -L
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: min SMEM interval size
-    default: 1
     inputBinding:
       position: 103
       prefix: -i
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: min SMEM length to output
-    default: 17
     inputBinding:
       position: 103
       prefix: -l
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: stop if MEM is longer than -l with a size less than INT
-    default: 0
     inputBinding:
       position: 103
       prefix: -I

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - File
     doc: log file
-    default: pidXXX.log.info
     inputBinding:
       position: 102
       prefix: --log

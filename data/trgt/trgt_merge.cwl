@@ -12,7 +12,6 @@ inputs:
       - string
     doc: 'Enable or disable color output in logging [possible values: always, auto,
       never]'
-    default: auto
     inputBinding:
       position: 101
       prefix: --color
@@ -102,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for (de)compressing input/output VCF files
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads

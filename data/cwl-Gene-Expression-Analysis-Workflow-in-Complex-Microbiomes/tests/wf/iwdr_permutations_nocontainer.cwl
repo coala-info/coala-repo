@@ -26,7 +26,6 @@ inputs:
   sixth: Directory
   ninth:
     type: Directory
-    default:
       class: Directory
       basename: foo
       listing: []

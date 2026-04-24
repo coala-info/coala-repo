@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Percentages used to downsample the .bam file.
-    default: 0.1,0.25,0.5,0.75
     inputBinding:
       position: 102
       prefix: --downsampling-percentages
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: If set to True, temporary files will be kept after the analysis.
-    default: false
     inputBinding:
       position: 102
       prefix: --keep-temporary-files
@@ -54,7 +52,6 @@ inputs:
       - string
     doc: Minimum CpG coverage to estimate sequencing saturation. It can be 
       either a single integer or a list of integers (e.g 1,3,5).
-    default: '3'
     inputBinding:
       position: 102
       prefix: --minimum-coverage
@@ -72,7 +69,6 @@ inputs:
       - boolean
     doc: If set to True, MethylDackel extract will consider the RRBS nature of 
       the data adding the --keepDupes flag.
-    default: true
     inputBinding:
       position: 102
       prefix: --rrbs

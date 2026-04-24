@@ -13,7 +13,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Path to folder containing recipes (default: recipes/)'
-    default: recipes/
     inputBinding:
       position: 1
   - id: config
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - File
     doc: 'Path to Bioconda config (default: config.yml)'
-    default: config.yml
     inputBinding:
       position: 2
   - id: package
@@ -38,7 +36,6 @@ inputs:
       - Directory
     doc: 'Path to folder containing the recipe for the bioconductor-data-packages
       (default: recipes/bioconductor-data-packages)'
-    default: recipes/bioconductor-data-packages
     inputBinding:
       position: 4
   - id: bioc_version
@@ -49,7 +46,6 @@ inputs:
       finds the latest version of Bioconductor with the specified version in 
       --pkg- version, or if --pkg-version not specified, then finds the the 
       latest package version in the latest Bioconductor version
-    default: '-'
     inputBinding:
       position: 105
       prefix: --bioc-version
@@ -59,7 +55,6 @@ inputs:
       - boolean
     doc: Overwrite the contents of an existing recipe. If --recursive is also 
       used, then overwrite *all* recipes created.
-    default: false
     inputBinding:
       position: 105
       prefix: --force
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Limit lines emitted for commands executed
-    default: '-'
     inputBinding:
       position: 105
       prefix: --log-command-max-lines
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - File
     doc: Write log to file
-    default: '-'
     inputBinding:
       position: 105
       prefix: --logfile
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - string
     doc: Log level for log file
-    default: debug
     inputBinding:
       position: 105
       prefix: --logfile-level
@@ -95,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: Set logging level (debug, info, warning, error, critical)
-    default: debug
     inputBinding:
       position: 105
       prefix: --loglevel
@@ -104,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: Package version to use instead of the current one
-    default: '-'
     inputBinding:
       position: 105
       prefix: --pkg-version
@@ -114,7 +104,6 @@ inputs:
       - boolean
     doc: Creates the recipes for all Bioconductor and CRAN dependencies of the 
       specified package.
-    default: false
     inputBinding:
       position: 105
       prefix: --recursive
@@ -126,7 +115,6 @@ inputs:
     doc: When --recursive is used, it will build *all* recipes. Use this 
       argument to skip recursive building for packages that already exist in the
       packages listed here.
-    default:
       - conda-forge
       - bioconda
     inputBinding:
@@ -137,7 +125,6 @@ inputs:
       - 'null'
       - boolean
     doc: If specified, recipe will be created in RECIPES/<package>/<version>
-    default: false
     inputBinding:
       position: 105
       prefix: --versioned

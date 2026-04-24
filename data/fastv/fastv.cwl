@@ -21,7 +21,6 @@ inputs:
     doc: the adapter for read1. For SE data, if not specified, the adapter will 
       be auto-detected. For PE data, this is used if R1/R2 are found not 
       overlapped.
-    default: auto
     inputBinding:
       position: 101
       prefix: --adapter_sequence
@@ -32,7 +31,6 @@ inputs:
     doc: the adapter for read2 (PE data only). This is used if R1/R2 are found 
       not overlapped. If not specified, it will be the same as 
       <adapter_sequence>
-    default: auto
     inputBinding:
       position: 101
       prefix: --adapter_sequence_r2
@@ -42,7 +40,6 @@ inputs:
       - int
     doc: if one read's average quality score <avg_qual, then this read/pair is 
       discarded. Default 0 means no requirement
-    default: 0
     inputBinding:
       position: 101
       prefix: --average_qual
@@ -52,7 +49,6 @@ inputs:
       - int
     doc: For coverage calculation. The genome is splitted to many bins, with 
       each bin has a length of bin_size (1 ~ 100000), default 0 means adaptive.
-    default: 0
     inputBinding:
       position: 101
       prefix: --bin_size
@@ -62,7 +58,6 @@ inputs:
       - int
     doc: the threshold for low complexity filter (0~100). Default is 30, which 
       means 30% complexity is required.
-    default: 30
     inputBinding:
       position: 101
       prefix: --complexity_threshold
@@ -72,7 +67,6 @@ inputs:
       - int
     doc: compression level for gzip output (1 ~ 9). 1 is fastest, 9 is smallest,
       default is 4.
-    default: 4
     inputBinding:
       position: 101
       prefix: --compression
@@ -91,7 +85,6 @@ inputs:
       - int
     doc: the mean quality requirement option for cut_front, default to 
       cut_mean_quality if not specified
-    default: 20
     inputBinding:
       position: 101
       prefix: --cut_front_mean_quality
@@ -101,7 +94,6 @@ inputs:
       - int
     doc: the window size option of cut_front, default to cut_window_size if not 
       specified
-    default: 4
     inputBinding:
       position: 101
       prefix: --cut_front_window_size
@@ -111,7 +103,6 @@ inputs:
       - int
     doc: 'the mean quality requirement option shared by cut_front, cut_tail or cut_sliding.
       Range: 1~36 default: 20 (Q20)'
-    default: 20
     inputBinding:
       position: 101
       prefix: --cut_mean_quality
@@ -131,7 +122,6 @@ inputs:
       - int
     doc: the mean quality requirement option for cut_right, default to 
       cut_mean_quality if not specified
-    default: 20
     inputBinding:
       position: 101
       prefix: --cut_right_mean_quality
@@ -141,7 +131,6 @@ inputs:
       - int
     doc: the window size option of cut_right, default to cut_window_size if not 
       specified
-    default: 4
     inputBinding:
       position: 101
       prefix: --cut_right_window_size
@@ -160,7 +149,6 @@ inputs:
       - int
     doc: the mean quality requirement option for cut_tail, default to 
       cut_mean_quality if not specified
-    default: 20
     inputBinding:
       position: 101
       prefix: --cut_tail_mean_quality
@@ -170,7 +158,6 @@ inputs:
       - int
     doc: the window size option of cut_tail, default to cut_window_size if not 
       specified
-    default: 4
     inputBinding:
       position: 101
       prefix: --cut_tail_window_size
@@ -180,7 +167,6 @@ inputs:
       - int
     doc: 'the window size option shared by cut_front, cut_tail or cut_sliding. Range:
       1~1000, default: 4'
-    default: 4
     inputBinding:
       position: 101
       prefix: --cut_window_size
@@ -190,7 +176,6 @@ inputs:
       - float
     doc: For coverage calculation. A region is considered covered when its mean 
       depth >= depth_threshold (0.001 ~ 1000). 1.0 by default.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --depth_threshold
@@ -253,7 +238,6 @@ inputs:
       - int
     doc: If the edit distance of a sequence and a genome region is 
       <=ed_threshold, then consider it a match (0 ~ 50). 8 by default.
-    default: 8
     inputBinding:
       position: 101
       prefix: --ed_threshold
@@ -298,7 +282,6 @@ inputs:
       - int
     doc: the allowed difference of index barcode for index filtering, default 0 
       means completely identical.
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter_by_index_threshold
@@ -317,7 +300,6 @@ inputs:
       - 'null'
       - File
     doc: the html format report file name
-    default: fastv.html
     inputBinding:
       position: 101
       prefix: --html
@@ -344,7 +326,6 @@ inputs:
       - 'null'
       - File
     doc: the json format report file name
-    default: fastv.json
     inputBinding:
       position: 101
       prefix: --json
@@ -354,7 +335,6 @@ inputs:
       - double
     doc: For each genome in the k-mer collection FASTA, report it when its 
       coverage > kc_coverage_threshold. Default is 0.01.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --kc_coverage_threshold
@@ -365,7 +345,6 @@ inputs:
     doc: For each genome in the k-mer collection FASTA, report it as high 
       confidence when its coverage > kc_high_confidence_coverage_threshold. 
       Default is 0.9.
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --kc_high_confidence_coverage_threshold
@@ -376,7 +355,6 @@ inputs:
     doc: For each genome in the k-mer collection FASTA, report it as high 
       confidence when its median hits > kc_high_confidence_median_hit_threshold.
       Default is 5.
-    default: 5
     inputBinding:
       position: 101
       prefix: --kc_high_confidence_median_hit_threshold
@@ -404,7 +382,6 @@ inputs:
       - int
     doc: reads longer than length_limit will be discarded, default 0 means no 
       limitation.
-    default: 0
     inputBinding:
       position: 101
       prefix: --length_limit
@@ -413,7 +390,6 @@ inputs:
       - 'null'
       - int
     doc: reads shorter than length_required will be discarded, default is 15.
-    default: 15
     inputBinding:
       position: 101
       prefix: --length_required
@@ -423,7 +399,6 @@ inputs:
       - int
     doc: A read will be considered as long read if its length >= 
       long_read_threshold (100 ~ 10000). 200 by default.
-    default: 200
     inputBinding:
       position: 101
       prefix: --long_read_threshold
@@ -443,7 +418,6 @@ inputs:
       - int
     doc: if read1 is longer than max_len1, then trim read1 at its tail to make 
       it as long as max_len1. Default 0 means no limitation
-    default: 0
     inputBinding:
       position: 101
       prefix: --max_len1
@@ -454,7 +428,6 @@ inputs:
     doc: if read2 is longer than max_len2, then trim read2 at its tail to make 
       it as long as max_len2. Default 0 means no limitation. If it's not 
       specified, it will follow read1's settings
-    default: 0
     inputBinding:
       position: 101
       prefix: --max_len2
@@ -464,7 +437,6 @@ inputs:
       - int
     doc: if one read's number of N base is >n_base_limit, then this read/pair is
       discarded. Default is 5
-    default: 5
     inputBinding:
       position: 101
       prefix: --n_base_limit
@@ -484,7 +456,6 @@ inputs:
     doc: the maximum number of mismatched bases to detect overlapped region of 
       PE reads. This will affect overlap analysis based PE merge, adapter 
       trimming and correction. 5 by default.
-    default: 5
     inputBinding:
       position: 101
       prefix: --overlap_diff_limit
@@ -495,7 +466,6 @@ inputs:
     doc: the maximum percentage of mismatched bases to detect overlapped region 
       of PE reads. This will affect overlap analysis based PE merge, adapter 
       trimming and correction. Default 20 means 20%.
-    default: 20
     inputBinding:
       position: 101
       prefix: --overlap_diff_percent_limit
@@ -506,7 +476,6 @@ inputs:
     doc: the minimum length to detect overlapped region of PE reads. This will 
       affect overlap analysis based PE merge, adapter trimming and correction. 
       30 by default.
-    default: 30
     inputBinding:
       position: 101
       prefix: --overlap_len_require
@@ -524,7 +493,6 @@ inputs:
       - 'null'
       - int
     doc: the minimum length to detect polyG in the read tail. 10 by default.
-    default: 10
     inputBinding:
       position: 101
       prefix: --poly_g_min_len
@@ -533,7 +501,6 @@ inputs:
       - 'null'
       - int
     doc: the minimum length to detect polyX in the read tail. 10 by default.
-    default: 10
     inputBinding:
       position: 101
       prefix: --poly_x_min_len
@@ -543,7 +510,6 @@ inputs:
       - float
     doc: the data is considered as POSITIVE, when its mean coverage of unique 
       kmer >= positive_threshold (0.001 ~ 100). 0.1 by default.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --positive_threshold
@@ -553,7 +519,6 @@ inputs:
       - int
     doc: the quality value that a base is qualified. Default 15 means phred 
       quality >=Q15 is qualified.
-    default: 15
     inputBinding:
       position: 101
       prefix: --qualified_quality_phred
@@ -580,7 +545,6 @@ inputs:
     doc: A long read will be splitted to read segments, with each <= 
       read_segment_len (50 ~ 5000, should be < long_read_threshold). 100 by 
       default.
-    default: 100
     inputBinding:
       position: 101
       prefix: --read_segment_len
@@ -590,7 +554,6 @@ inputs:
       - int
     doc: specify how many reads/pairs to be processed. Default 0 means process 
       all reads.
-    default: 0
     inputBinding:
       position: 101
       prefix: --reads_to_process
@@ -599,7 +562,6 @@ inputs:
       - 'null'
       - string
     doc: should be quoted with ' or ", default is "fastv report"
-    default: fastv report
     inputBinding:
       position: 101
       prefix: --report_title
@@ -608,7 +570,6 @@ inputs:
       - 'null'
       - int
     doc: worker thread number, default is 4
-    default: 4
     inputBinding:
       position: 101
       prefix: --thread
@@ -617,7 +578,6 @@ inputs:
       - 'null'
       - int
     doc: trimming how many bases in front for read1, default is 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --trim_front1
@@ -627,7 +587,6 @@ inputs:
       - int
     doc: trimming how many bases in front for read2. If it's not specified, it 
       will follow read1's settings
-    default: 0
     inputBinding:
       position: 101
       prefix: --trim_front2
@@ -644,7 +603,6 @@ inputs:
       - 'null'
       - int
     doc: trimming how many bases in tail for read1, default is 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --trim_tail1
@@ -654,7 +612,6 @@ inputs:
       - int
     doc: trimming how many bases in tail for read2. If it's not specified, it 
       will follow read1's settings
-    default: 0
     inputBinding:
       position: 101
       prefix: --trim_tail2
@@ -663,7 +620,6 @@ inputs:
       - 'null'
       - int
     doc: if the UMI is in read1/read2, its length should be provided
-    default: 0
     inputBinding:
       position: 101
       prefix: --umi_len
@@ -691,7 +647,6 @@ inputs:
       - int
     doc: if the UMI is in read1/read2, fastv can skip several bases following 
       UMI, default is 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --umi_skip
@@ -701,7 +656,6 @@ inputs:
       - int
     doc: how many percents of bases are allowed to be unqualified (0~100). 
       Default 40 means 40%
-    default: 40
     inputBinding:
       position: 101
       prefix: --unqualified_percent_limit

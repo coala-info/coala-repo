@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: output VCF/BCF (default is VCF to stdout)
-    default: '-'
     inputBinding:
       position: 101
       prefix: --output
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: number of decompression threads.
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

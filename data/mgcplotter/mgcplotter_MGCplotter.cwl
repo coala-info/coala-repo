@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: 'COGclassifier e-value parameter (Default: 1e-02)'
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --cog_evalue
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: "Conserved CDS color (Default: 'chocolate')"
-    default: chocolate
     inputBinding:
       position: 101
       prefix: --conserved_cds_color
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: 'Conserved CDS track radius size (Default: 0.04)'
-    default: 0.04
     inputBinding:
       position: 101
       prefix: --conserved_cds_r
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: "Forward CDS color (Default: 'red')"
-    default: red
     inputBinding:
       position: 101
       prefix: --forward_cds_color
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: 'Forward CDS track radius size (Default: 0.07)'
-    default: 0.07
     inputBinding:
       position: 101
       prefix: --forward_cds_r
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: "GC content color for negative value from average (Default: 'grey')"
-    default: grey
     inputBinding:
       position: 101
       prefix: --gc_content_n_color
@@ -87,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: "GC content color for positive value from average (Default: 'black')"
-    default: black
     inputBinding:
       position: 101
       prefix: --gc_content_p_color
@@ -96,7 +89,6 @@ inputs:
       - 'null'
       - float
     doc: 'GC content track radius size (Default: 0.15)'
-    default: 0.15
     inputBinding:
       position: 101
       prefix: --gc_content_r
@@ -105,7 +97,6 @@ inputs:
       - 'null'
       - string
     doc: "GC skew color for negative value (Default: 'purple')"
-    default: purple
     inputBinding:
       position: 101
       prefix: --gc_skew_n_color
@@ -114,7 +105,6 @@ inputs:
       - 'null'
       - string
     doc: "GC skew color for positive value (Default: 'olive')"
-    default: olive
     inputBinding:
       position: 101
       prefix: --gc_skew_p_color
@@ -123,7 +113,6 @@ inputs:
       - 'null'
       - float
     doc: 'GC skew track radius size (Default: 0.15)'
-    default: 0.15
     inputBinding:
       position: 101
       prefix: --gc_skew_r
@@ -132,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: 'MMseqs RBH search e-value parameter (Default: 1e-03)'
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --mmseqs_evalue
@@ -157,7 +145,6 @@ inputs:
       - 'null'
       - string
     doc: "Reverse CDS color (Default: 'blue')"
-    default: blue
     inputBinding:
       position: 101
       prefix: --reverse_cds_color
@@ -166,7 +153,6 @@ inputs:
       - 'null'
       - float
     doc: 'Reverse CDS track radius size (Default: 0.07)'
-    default: 0.07
     inputBinding:
       position: 101
       prefix: --reverse_cds_r
@@ -175,7 +161,6 @@ inputs:
       - 'null'
       - string
     doc: "rRNA color (Default: 'green')"
-    default: green
     inputBinding:
       position: 101
       prefix: --rrna_color
@@ -184,7 +169,6 @@ inputs:
       - 'null'
       - float
     doc: 'rRNA track radius size (Default: 0.07)'
-    default: 0.07
     inputBinding:
       position: 101
       prefix: --rrna_r
@@ -193,7 +177,6 @@ inputs:
       - 'null'
       - int
     doc: 'Threads number parameter (Default: 19)'
-    default: 19
     inputBinding:
       position: 101
       prefix: --thread_num
@@ -202,7 +185,6 @@ inputs:
       - 'null'
       - int
     doc: 'Ticks label size (Default: 35)'
-    default: 35
     inputBinding:
       position: 101
       prefix: --ticks_labelsize
@@ -211,7 +193,6 @@ inputs:
       - 'null'
       - string
     doc: "tRNA color (Default: 'magenta')"
-    default: magenta
     inputBinding:
       position: 101
       prefix: --trna_color
@@ -220,7 +201,6 @@ inputs:
       - 'null'
       - float
     doc: 'tRNA track radius size (Default: 0.07)'
-    default: 0.07
     inputBinding:
       position: 101
       prefix: --trna_r

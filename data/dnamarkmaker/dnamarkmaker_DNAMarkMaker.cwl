@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Whether to target heterozygous SNP in B
-    default: no
     inputBinding:
       position: 101
       prefix: --Bhetero
@@ -74,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: Size of first band
-    default: 100:500
     inputBinding:
       position: 101
       prefix: --first_size
@@ -83,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum fragment size of restricted PCR product
-    default: 200
     inputBinding:
       position: 101
       prefix: --fragment_min_size
@@ -92,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: Whether to html file
-    default: yes
     inputBinding:
       position: 101
       prefix: --make_html
@@ -101,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum depth of target SNP
-    default: 99
     inputBinding:
       position: 101
       prefix: --max_depth
@@ -110,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality detected from bam
-    default: 13
     inputBinding:
       position: 101
       prefix: --minBQ
@@ -119,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth of target SNP
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_depth
@@ -128,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality detected from bam
-    default: 0
     inputBinding:
       position: 101
       prefix: --minMQ
@@ -137,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum size of PCR product
-    default: 1000 or 700
     inputBinding:
       position: 101
       prefix: --PCR_max_size
@@ -146,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of PCR product
-    default: 500 or 100
     inputBinding:
       position: 101
       prefix: --PCR_min_size
@@ -155,7 +145,6 @@ inputs:
       - 'null'
       - string
     doc: Target chromosome position [chr:start:end]
-    default: chr:start:end
     inputBinding:
       position: 101
       prefix: --position
@@ -188,7 +177,6 @@ inputs:
       - 'null'
       - string
     doc: Size of second band
-    default: 600:1000
     inputBinding:
       position: 101
       prefix: --second_size
@@ -197,7 +185,6 @@ inputs:
       - 'null'
       - string
     doc: Target SNP distance
-    default: 100:300
     inputBinding:
       position: 101
       prefix: --SNP_dist

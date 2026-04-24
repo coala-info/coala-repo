@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Total cores to use
-    default: all
     inputBinding:
       position: 101
       prefix: --cores

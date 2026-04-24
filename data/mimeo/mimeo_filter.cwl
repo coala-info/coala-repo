@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - Directory
     doc: Write output files to this directory.
-    default: cwd
     inputBinding:
       position: 101
       prefix: --outdir

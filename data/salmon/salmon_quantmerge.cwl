@@ -11,7 +11,6 @@ inputs:
       - string
     doc: The name of the column that will be merged together into the output 
       files. The options are {len, elen, tpm, numreads}
-    default: TPM
     inputBinding:
       position: 101
       prefix: --column
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: The value of missing values.
-    default: NA
     inputBinding:
       position: 101
       prefix: --missing

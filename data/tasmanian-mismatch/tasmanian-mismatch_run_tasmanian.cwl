@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base quality
-    default: 20
     inputBinding:
       position: 101
       prefix: -q
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: exclude reads with indels
-    default: false
     inputBinding:
       position: 101
       prefix: --filter-indel
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: include only reads with x,y range of lengths
-    default: 0,350
     inputBinding:
       position: 101
       prefix: --filter-length
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: minimum allowed mapping quality
-    default: 0
     inputBinding:
       position: 101
       prefix: --mapping-quality
@@ -108,7 +104,6 @@ inputs:
       - int
     doc: Decide when softclipped base is correct(0). Don't use these bases(1). 
       Force use them(2).
-    default: 0
     inputBinding:
       position: 101
       prefix: --soft-clip-bypass
@@ -117,7 +112,6 @@ inputs:
       - 'null'
       - boolean
     doc: convert masked bases to upper case and include them in the calculations
-    default: false
     inputBinding:
       position: 101
       prefix: --unmask-genome

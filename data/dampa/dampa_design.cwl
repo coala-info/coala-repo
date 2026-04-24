@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage of genomes over which clusterident must apply (0-1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --clustercov
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum identity to cluster genomes
-    default: 0.999
     inputBinding:
       position: 101
       prefix: --clusterident
@@ -37,7 +35,6 @@ inputs:
     doc: if number of input sequences exceeds this number then cdhit will be 
       used to deduplcate genomes above 99.9 percent identity Set to 0 to always 
       cluster
-    default: 5000
     inputBinding:
       position: 101
       prefix: --clustering_inputno_trigger
@@ -47,7 +44,6 @@ inputs:
       - string
     doc: type of cluster file input cdhit (produced by cdhit) or tabular (genome
       and cluster tab delimited)
-    default: tabular
     inputBinding:
       position: 101
       prefix: --clustertype
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum number of ambiguous bases allowed in a probe
-    default: 10
     inputBinding:
       position: 101
       prefix: --maxambig
@@ -89,7 +84,6 @@ inputs:
       - int
     doc: Maximum depth of probe coverage to describe separately. i.e. if 1 there
       will be 0,1 and >1 depth categories
-    default: 1
     inputBinding:
       position: 101
       prefix: --maxdepth_describe
@@ -106,7 +100,6 @@ inputs:
       - 'null'
       - float
     doc: maximum proportion of genome that can be non ATGC (0-1)
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --maxnonspandard
@@ -117,7 +110,6 @@ inputs:
     doc: minimum length for a pancontig for it to be padded (WARNING setting 
       this below ~80 may result in probes that do not effectively bind, leave 
       these small sequences for final probetools step)
-    default: 90
     inputBinding:
       position: 101
       prefix: --minlenforpadding
@@ -136,7 +128,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage of genomes over which clusterident must apply (0-1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --outlierclustercov
@@ -146,7 +137,6 @@ inputs:
       - float
     doc: outlier identity threshold, i.e. if a cluster is <outlierclusterident 
       and <=outliersizelimit members it is treated as an outlier
-    default: 0.85
     inputBinding:
       position: 101
       prefix: --outlierclusterident
@@ -156,7 +146,6 @@ inputs:
       - int
     doc: In two step clustering if a cluster is <=outliersizelimit at both high 
       and low identity then it is treated as an outlier
-    default: 1
     inputBinding:
       position: 101
       prefix: --outliersizelimit
@@ -165,7 +154,6 @@ inputs:
       - 'null'
       - Directory
     doc: path to output folder
-    default: //
     inputBinding:
       position: 101
       prefix: --outputfolder
@@ -174,7 +162,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for all output files and folders
-    default: probebench_run
     inputBinding:
       position: 101
       prefix: --outputprefix
@@ -183,7 +170,6 @@ inputs:
       - 'null'
       - string
     doc: nucleotide to use for padding probes to args.probelen
-    default: T
     inputBinding:
       position: 101
       prefix: --padding_nuc
@@ -193,7 +179,6 @@ inputs:
       - float
     doc: Energy cost for splitting a block during alignment merger. Controls 
       graph fragmentation
-    default: 0
     inputBinding:
       position: 101
       prefix: --pangraphalpha
@@ -203,7 +188,6 @@ inputs:
       - float
     doc: Energy cost for diversity in the alignment. A high value prevents 
       merging of distantly-related sequences in the same block
-    default: 6.666
     inputBinding:
       position: 101
       prefix: --pangraphbeta
@@ -214,7 +198,6 @@ inputs:
     doc: Minimum depth of a node to allow in pangenome graph. Nodes with depth 
       below this will be removed from the graph. Set to 0 to not remove any 
       nodes based on depth
-    default: 0
     inputBinding:
       position: 101
       prefix: --pangraphdepth
@@ -223,7 +206,6 @@ inputs:
       - 'null'
       - int
     doc: Pangenome percentage identity setting allowable values are 5,10 or 20
-    default: 20
     inputBinding:
       position: 101
       prefix: --pangraphident
@@ -232,7 +214,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of a node to allow in pangenome graph
-    default: 90
     inputBinding:
       position: 101
       prefix: --pangraphlen
@@ -250,7 +231,6 @@ inputs:
       - 'null'
       - int
     doc: length of output probes
-    default: 120
     inputBinding:
       position: 101
       prefix: --probelen
@@ -259,7 +239,6 @@ inputs:
       - 'null'
       - int
     doc: step of probes (for no overlap set to same as probelen)
-    default: 120
     inputBinding:
       position: 101
       prefix: --probestep
@@ -269,7 +248,6 @@ inputs:
       - int
     doc: Minimum length (bp) of 0 coverage region in input genomes to trigger 
       design of additional probes
-    default: 20
     inputBinding:
       position: 101
       prefix: --probetools0covnmin
@@ -278,7 +256,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length (bp) of probe-target binding to allow call of binding
-    default: 90
     inputBinding:
       position: 101
       prefix: --probetoolsalignmin
@@ -287,7 +264,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum identity in probe match to target to call probe binding
-    default: 80
     inputBinding:
       position: 101
       prefix: --probetoolsidentity
@@ -307,7 +283,6 @@ inputs:
       - float
     doc: threshold above which genomes are reported as having too much of their 
       genome not covered by any probes
-    default: 1
     inputBinding:
       position: 101
       prefix: --report0covperc
@@ -317,7 +292,6 @@ inputs:
       - float
     doc: minimum shannon entropy of probes and reported coverage regions 
       (filters out low complexity probes/regions)
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --shannonthresh
@@ -364,7 +338,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Gzip compression level [1-9]
-    default: 1
     inputBinding:
       position: 102
       prefix: -c
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use, 0 means autodetection.
-    default: 0
     inputBinding:
       position: 102
       prefix: --num-threads

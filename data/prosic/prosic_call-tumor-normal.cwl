@@ -36,7 +36,6 @@ inputs:
     doc: "Factor of deletion mutation rate relative to SNV mutation rate (0.03 according\n\
       \                                          to Hodkinson et al. Nature Reviews
       Genetics 2011)."
-    default: 0.03
     inputBinding:
       position: 104
       prefix: --deletion-factor
@@ -46,7 +45,6 @@ inputs:
       - float
     doc: "Effective SNV mutation rate of tumor sample (should be estimated from somatic\n\
       \                                          SNVs)."
-    default: 2000.0
     inputBinding:
       position: 104
       prefix: --effmut
@@ -73,7 +71,6 @@ inputs:
       - 'null'
       - float
     doc: Expected heterozygosity of normal sample.
-    default: '1.25E-4'
     inputBinding:
       position: 104
       prefix: --het
@@ -85,7 +82,6 @@ inputs:
       \                                        calculating read support. This number
       should not be too large in order to\n                                      \
       \    avoid biases caused by other close variants."
-    default: 100
     inputBinding:
       position: 104
       prefix: --indel-window
@@ -96,7 +92,6 @@ inputs:
     doc: "Factor of insertion mutation rate relative to SNV mutation rate (0.01\n\
       \                                          according to Hodkinson et al. Nature
       Reviews Genetics 2011)."
-    default: 0.01
     inputBinding:
       position: 104
       prefix: --insertion-factor
@@ -105,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Omit longer indels when calling.
-    default: 1000
     inputBinding:
       position: 104
       prefix: --max-indel-len
@@ -149,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: Window to investigate for evidence left and right of each variant.
-    default: 2500
     inputBinding:
       position: 104
       prefix: --pileup-window
@@ -158,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: Average ploidy of tumor and normal sample.
-    default: 2
     inputBinding:
       position: 104
       prefix: --ploidy
@@ -167,7 +159,6 @@ inputs:
       - 'null'
       - float
     doc: Purity of tumor sample.
-    default: 1.0
     inputBinding:
       position: 104
       prefix: --purity
@@ -178,7 +169,6 @@ inputs:
     doc: "Rate of spuriosly deleted bases by the sequencer (Illumina: 5.1e-6, see\n\
       \                                          Schirmer et al. BMC Bioinformatics
       2016)."
-    default: '5.1e-6'
     inputBinding:
       position: 104
       prefix: --spurious-del-rate
@@ -189,7 +179,6 @@ inputs:
     doc: "Extension rate of spurious insertions by the sequencer (Illumina: 0.0, see\n\
       \                                          Schirmer et al. BMC Bioinformatics
       2016)."
-    default: 0.0
     inputBinding:
       position: 104
       prefix: --spurious-delext-rate
@@ -200,7 +189,6 @@ inputs:
     doc: "Rate of spuriously inserted bases by the sequencer (Illumina: 2.8e-6, see\n\
       \                                          Schirmer et al. BMC Bioinformatics
       2016)."
-    default: '2.8e-6'
     inputBinding:
       position: 104
       prefix: --spurious-ins-rate
@@ -211,7 +199,6 @@ inputs:
     doc: "Extension rate of spurious insertions by the sequencer (Illumina: 0.0, see\n\
       \                                          Schirmer et al. BMC Bioinformatics
       2016) [0.0]."
-    default: 0.0
     inputBinding:
       position: 104
       prefix: --spurious-insext-rate
@@ -222,7 +209,6 @@ inputs:
     doc: "Rate of wrongly reported insert size abberations (should be set depending
       on\n                                          mapper, BWA: 0.01332338, LASER:
       0.05922201)."
-    default: 0.0
     inputBinding:
       position: 104
       prefix: --spurious-isize-rate

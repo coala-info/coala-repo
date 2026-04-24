@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: 'Filter out [FILTER]% smallest genome bins (default: 0)'
-    default: 0
     inputBinding:
       position: 102
       prefix: --filter
@@ -72,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: 'Comma-separated list of max. contamination thresholds (default %: 10,5)'
-    default: 10,5
     inputBinding:
       position: 102
       prefix: --max_contamination
@@ -81,7 +79,6 @@ inputs:
       - 'null'
       - string
     doc: 'Comma-separated list of min. completeness thresholds (default %: 50,70,90)'
-    default: 50,70,90
     inputBinding:
       position: 102
       prefix: --min_completeness

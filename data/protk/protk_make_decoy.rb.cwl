@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: Append input sequences to the generated database
-    default: false
     inputBinding:
       position: 102
       prefix: --append
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Number of sequences to generate
-    default: 0
     inputBinding:
       position: 102
       prefix: --db-length
@@ -33,7 +31,6 @@ inputs:
       - string
     doc: Regex for finding IDs. If reverse-only is used then this will be used 
       to find ids and prepend with the decoy string.
-    default: .*?\|(.*?)[ \|]
     inputBinding:
       position: 102
       prefix: --id-regex
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: String to prepend to sequence ids
-    default: decoy_
     inputBinding:
       position: 102
       prefix: --prefix-string
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - boolean
     doc: Just reverse sequences. Dont try to randomize. Ignores -L
-    default: false
     inputBinding:
       position: 102
       prefix: --reverse-only

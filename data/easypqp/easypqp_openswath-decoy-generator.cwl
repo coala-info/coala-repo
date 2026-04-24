@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Decoy tag.
-    default: DECOY_
     inputBinding:
       position: 101
       prefix: --decoy_tag
@@ -89,7 +88,6 @@ inputs:
       - string
     doc: 'Input file type. Default: None, will be determined from input file. Valid
       formats: ["tsv", "mrm" ,"pqp", "TraML"]'
-    default: None
     inputBinding:
       position: 101
       prefix: --in_type
@@ -99,7 +97,6 @@ inputs:
       - string
     doc: 'Decoy generation method. Valid methods: "shuffle", "pseudo-reverse", "reverse",
       "shift'
-    default: shuffle
     inputBinding:
       position: 101
       prefix: --method
@@ -134,7 +131,6 @@ inputs:
       - string
     doc: 'Output file type. Default: None, will be determined from output file. Valid
       formats: ["tsv", "pqp", "TraML"]'
-    default: None
     inputBinding:
       position: 101
       prefix: --out_type

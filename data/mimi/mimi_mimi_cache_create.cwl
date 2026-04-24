@@ -38,7 +38,6 @@ inputs:
       - float
     doc: Threshold for filtering molecular isotope variants with relative 
       abundance below CUTOFF w.r.t. the monoisotopic mass
-    default: '1e-5'
     inputBinding:
       position: 102
       prefix: --noise

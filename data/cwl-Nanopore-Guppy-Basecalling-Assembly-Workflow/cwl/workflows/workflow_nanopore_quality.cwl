@@ -46,41 +46,34 @@ inputs:
     type: string[]
     doc: Contamination references fasta file for contamination filtering
     label: Contamination reference file
-    default: ["/unlock/references/databases/bbduk/GCA_000001405.28_GRCh38.p13_genomic.fna.gz"] # HUMAN
   
   keep_reference_mapped_reads:
     type: boolean
     doc: Keep with reads mapped to the given reference
     label: Keep mapped reads
-    default: false
   
   run_kraken2:
     type: boolean?
     label: Kraken2
     doc: Optionally run kraken2 contamination inspection
-    default: true
   kraken_database:
     type: string?
     label: Kraken2 database
     doc: Kraken2 database location
-    default: "/unlock/references/databases/Kraken2/K2_PlusPF_20210517"
     
   threads:
     type: int?
     doc: Number of threads to use for computational processes
     label: Number of threads
-    default: 2
   memory:
     type: int?
     doc: Maximum memory usage in megabytes
     label: Maximum memory in MB
-    default: 4000
 
   step:
     type: int?
     label: CWL base step number
     doc: Step number for order of steps
-    default: 1
 
   destination:
     type: string?
@@ -171,7 +164,6 @@ steps:
       reads: merge_nanopore_fastq/output
       output_mapped: keep_reference_mapped_reads
       preset:
-        default: "map-ont"
     out: [fastq, log]
 
 #############################################

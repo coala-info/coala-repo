@@ -21,7 +21,6 @@ inputs:
       - string
     doc: 'Allowed migration patterns: 0 : PS, 1 : PS, S, 2 : PS, S, M, 3 : PS, S,
       M, R. If no pattern is specified, all allowed patterns will be enumerated'
-    default: 0,1,2,3
     inputBinding:
       position: 103
       prefix: -m
@@ -60,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: -1
     inputBinding:
       position: 103
       prefix: -t
@@ -91,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Time limit in seconds
-    default: -1
     inputBinding:
       position: 103
       prefix: -l
@@ -100,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Upper bound on the comigration number
-    default: -1
     inputBinding:
       position: 103
       prefix: -UB_gamma
@@ -109,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Upper bound on the migration number
-    default: -1
     inputBinding:
       position: 103
       prefix: -UB_mu
@@ -118,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Upper bound on the seeding site number
-    default: -1
     inputBinding:
       position: 103
       prefix: -UB_sigma

@@ -62,7 +62,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum allowed error rate for adapter matching.
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --error-rate
@@ -71,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: Input file format (fastq or fasta).
-    default: fastq
     inputBinding:
       position: 102
       prefix: --format
@@ -104,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of reads to keep.
-    default: 0
     inputBinding:
       position: 102
       prefix: --minimum-length
@@ -137,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: Quality threshold for trimming.
-    default: 0
     inputBinding:
       position: 102
       prefix: --quality-threshold
@@ -186,7 +182,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -195,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: Number of times to trim adapters.
-    default: 1
     inputBinding:
       position: 102
       prefix: --times

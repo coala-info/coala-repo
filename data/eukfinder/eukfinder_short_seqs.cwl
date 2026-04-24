@@ -35,7 +35,6 @@ inputs:
       - string
     doc: "kmers to use during assembly. These must be odd and\n                  \
       \      less than 128."
-    default: 21,33,55
     inputBinding:
       position: 101
       prefix: --kmers

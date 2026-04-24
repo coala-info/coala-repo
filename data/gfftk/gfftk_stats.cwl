@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: write parsing errors to stderr
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: format of input file [gff3, tbl]
-    default: auto
     inputBinding:
       position: 101
       prefix: --input-format

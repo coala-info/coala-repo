@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Path to the input assembly report used for contig synonym mapping
-    default: no_mapping
     inputBinding:
       position: 101
       prefix: --assembly
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the input VCF file, or stdin
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Comma separated values for types of reports (summary, text, valid)
-    default: summary
     inputBinding:
       position: 101
       prefix: --report

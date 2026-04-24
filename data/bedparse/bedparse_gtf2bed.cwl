@@ -47,7 +47,6 @@ inputs:
       - string
     doc: "Transcript feature name. Features with this string in\nfield 3 of the GTF
       file will be considered\ntranscripts. (default 'transcript')"
-    default: transcript
     inputBinding:
       position: 102
       prefix: --transcript_feature_name

@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Base quality threshold <= 10
-    default: 0
     inputBinding:
       position: 104
       prefix: -q
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Input format [fastq (default)|sam|bam]
-    default: fastq
     inputBinding:
       position: 104
       prefix: -F
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Map only every <nreads>-th read pair
-    default: 100
     inputBinding:
       position: 104
       prefix: -u

@@ -55,7 +55,6 @@ inputs:
       - 'null'
       - File
     doc: File for logging
-    default: stdout
     inputBinding:
       position: 101
       prefix: --log-file
@@ -78,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: minibatch size for minimap2 mapping
-    default: 500M
     inputBinding:
       position: 101
       prefix: --mm2-K
@@ -87,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: minimap max number of secondary alignments per read
-    default: 50
     inputBinding:
       position: 101
       prefix: --mm2-N
@@ -97,7 +94,6 @@ inputs:
       - string
     doc: 'ONT: map-ont [map-ont], PacBio (hifi): map-hifi, PacBio (CLR): map-pb, short-read:
       sr'
-    default: map-ont
     inputBinding:
       position: 101
       prefix: --mm2-type

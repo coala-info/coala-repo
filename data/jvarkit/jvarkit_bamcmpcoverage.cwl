@@ -29,7 +29,6 @@ inputs:
       read). An empty expression keeps everything. The variable 'record' is the 
       current observed read, an instance of SAMRecord 
       (https://samtools.github.io/htsjdk/javadoc/htsjdk/htsjdk/samtools/SAMRecord.html).
-    default: record.getMappingQuality()<1 || record.getDuplicateReadFlag() || 
       record.getReadFailsVendorQualityCheckFlag() || 
       record.isSecondaryOrSupplementary()
     inputBinding:
@@ -43,7 +42,6 @@ inputs:
       ). It can be any combination of sample, library.... Possible Values: [readgroup,
       sample, library, platform, center, sample_by_platform, sample_by_center, sample_by_platform_by_center,
       any]'
-    default: sample
     inputBinding:
       position: 102
       prefix: --groupby
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: max depth
-    default: 1000
     inputBinding:
       position: 102
       prefix: --maxDepth
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: min depth
-    default: 0
     inputBinding:
       position: 102
       prefix: --minDepth
@@ -86,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: image width
-    default: 1000
     inputBinding:
       position: 102
       prefix: --width

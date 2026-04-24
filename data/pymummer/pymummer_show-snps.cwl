@@ -17,7 +17,6 @@ inputs:
       - int
     doc: Include x characters of surrounding SNP context in the output, default 
       0
-    default: 0
     inputBinding:
       position: 102
       prefix: -x

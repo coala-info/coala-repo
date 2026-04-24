@@ -29,7 +29,6 @@ inputs:
       - int
     doc: Split the contact matrix pixel records into equally sized chunks to 
       save memory and/or parallelize. Default is 10^7
-    default: 10000000.0
     inputBinding:
       position: 102
       prefix: --chunksize
@@ -57,7 +56,6 @@ inputs:
       - int
     doc: 'Number of processes to split the work between. [default: 1, i.e. no process
       pool]'
-    default: 1
     inputBinding:
       position: 102
       prefix: --nproc

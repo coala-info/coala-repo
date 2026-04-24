@@ -12,7 +12,6 @@ inputs:
       - string
     doc: lines starting with commment-character will be ignored. if your header row
       starts with '#', please assign "-C" another rare symbol, e.g. '$'
-    default: '#'
     inputBinding:
       position: 101
       prefix: --comment-char
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: delimiting character of the input CSV file
-    default: ','
     inputBinding:
       position: 101
       prefix: --delimiter
@@ -90,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs to use
-    default: 4
     inputBinding:
       position: 101
       prefix: --num-cpus
@@ -99,7 +96,6 @@ inputs:
       - 'null'
       - string
     doc: delimiting character of the output CSV file, e.g., -D $'\t' for tab
-    default: ','
     inputBinding:
       position: 101
       prefix: --out-delimiter

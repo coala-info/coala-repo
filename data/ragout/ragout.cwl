@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable debug output
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory
-    default: ragout-out
     inputBinding:
       position: 102
       prefix: --outdir
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: overwrite results from the previous run
-    default: false
     inputBinding:
       position: 102
       prefix: --overwrite
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable refinement with assembly graph
-    default: false
     inputBinding:
       position: 102
       prefix: --refine
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable repeat resolution algorithm
-    default: false
     inputBinding:
       position: 102
       prefix: --repeats
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not break input sequences - disables chimera detection module
-    default: false
     inputBinding:
       position: 102
       prefix: --solid-scaffolds
@@ -68,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: backend for synteny block decomposition
-    default: sibelia
     inputBinding:
       position: 102
       prefix: --synteny
@@ -77,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads for synteny backend
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

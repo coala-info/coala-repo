@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: "Sets output format. Can be one of: 'csv', 'tsv', 'compact', 'pretty'"
-    default: csv
     inputBinding:
       position: 103
       prefix: --format

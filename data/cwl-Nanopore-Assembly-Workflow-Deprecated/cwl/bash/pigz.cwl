@@ -16,7 +16,6 @@ inputs:
     type: File
   threads:
     type: int?
-    default: 1
     inputBinding:
       prefix: '-p'
 

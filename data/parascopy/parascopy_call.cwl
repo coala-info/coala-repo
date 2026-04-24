@@ -12,7 +12,6 @@ inputs:
       - int
     doc: Minimum alternate allele read count (in at least one sample), corresponds
       to freebayes parameter -C
-    default: 4
     inputBinding:
       position: 101
       prefix: --alternate-count
@@ -22,7 +21,6 @@ inputs:
       - float
     doc: Minimum alternate allele read fraction (in at least one sample), corresponds
       to freebayes parameter -F
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --alternate-fraction
@@ -41,7 +39,6 @@ inputs:
       - type: array
         items: int
     doc: Ignore observations with low base quality (first for SNPs, second for indels)
-    default:
       - 10
       - 10
     inputBinding:
@@ -69,7 +66,6 @@ inputs:
       - type: array
         items: float
     doc: 'Two error rates: first for SNPs, second for indels'
-    default:
       - 0.01
       - 0.01
     inputBinding:
@@ -113,7 +109,6 @@ inputs:
       - type: array
         items: int
     doc: Min and max variant read depth
-    default:
       - 3
       - 2000
     inputBinding:
@@ -125,7 +120,6 @@ inputs:
       - float
     doc: Based solely on allelic read depth, ignore pooled genotypes with probabilities
       under 10^<float>
-    default: -5
     inputBinding:
       position: 101
       prefix: --limit-pooled
@@ -134,7 +128,6 @@ inputs:
       - 'null'
       - float
     doc: Skip SNVs that do not overlap PSVs and have Freebayes quality under <float>
-    default: 1
     inputBinding:
       position: 101
       prefix: --limit-qual
@@ -143,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum aggregate copy number
-    default: 10
     inputBinding:
       position: 101
       prefix: --max-agcn
@@ -152,7 +144,6 @@ inputs:
       - 'null'
       - float
     doc: Log10 mutation rate (used for calculating genotype priors)
-    default: -3
     inputBinding:
       position: 101
       prefix: --mutation-rate
@@ -162,7 +153,6 @@ inputs:
       - int
     doc: Use at most <int> best alleles (set 0 to all), corresponds to freebayes parameter
       -n
-    default: 3
     inputBinding:
       position: 101
       prefix: --n-alleles
@@ -172,7 +162,6 @@ inputs:
       - float
     doc: Penalize possible paired-read alignment positions in case they do not match
       second read alignment position (log10 penalty)
-    default: -5
     inputBinding:
       position: 101
       prefix: --no-mate-penalty
@@ -188,7 +177,6 @@ inputs:
       - float
     doc: Use all PSVs (even unreliable) if they have a reference paralog-specific
       genotype (genotype quality >= <float>)
-    default: 20
     inputBinding:
       position: 101
       prefix: --psv-ref-gt
@@ -215,7 +203,6 @@ inputs:
       - 'null'
       - string
     doc: 'Rerun analysis for all loci: full, partial, or none.'
-    default: none
     inputBinding:
       position: 101
       prefix: --rerun
@@ -233,7 +220,6 @@ inputs:
       - 'null'
       - File
     doc: Path to "samtools" executable
-    default: samtools
     inputBinding:
       position: 101
       prefix: --samtools
@@ -250,7 +236,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum strand bias (Phred score)
-    default: 30
     inputBinding:
       position: 101
       prefix: --strand-bias
@@ -259,7 +244,6 @@ inputs:
       - 'null'
       - File
     doc: Path to "tabix" executable. Use "none" to skip indexing output files.
-    default: tabix
     inputBinding:
       position: 101
       prefix: --tabix
@@ -274,7 +258,6 @@ inputs:
       - 'null'
       - int
     doc: Number of available threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -283,7 +266,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum unpaired bias (Phred score)
-    default: 30
     inputBinding:
       position: 101
       prefix: --unpaired-bias

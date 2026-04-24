@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: batch size for ProstT5. 1 is usually fastest.
-    default: 1
     inputBinding:
       position: 101
       prefix: --batch-size
@@ -49,7 +48,6 @@ inputs:
       - float
     doc: Masks 3Di residues below this value of ProstT5 confidence for Foldseek 
       searches
-    default: 25
     inputBinding:
       position: 101
       prefix: --mask-threshold
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: output_baktfold
     inputBinding:
       position: 101
       prefix: --output
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output files
-    default: baktfold
     inputBinding:
       position: 101
       prefix: --prefix
@@ -101,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

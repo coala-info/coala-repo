@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: minimum coverage
-    default: 5
     inputBinding:
       position: 101
       prefix: --coverage
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: export as png, jpg, pdf, svg
-    default: None
     inputBinding:
       position: 101
       prefix: --export_static
@@ -73,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: qaulity threshold for reads
-    default: 15
     inputBinding:
       position: 101
       prefix: --quality-threshold

@@ -19,7 +19,6 @@ inputs:
       length. Allowed values: ignore, warning (default), noprint, abort. Note that
       the noprint option does not print the CIGAR string at all if there is an error,
       so it may break a SAM parser'
-    default: warning
     inputBinding:
       position: 102
       prefix: --action-if-cigar-error
@@ -46,7 +45,6 @@ inputs:
       - int
     doc: Allow an insertion and deletion close to each other (0=no, 1=yes 
       (default), 2=only for high-quality alignments)
-    default: 1
     inputBinding:
       position: 102
       prefix: --allow-close-indels
@@ -84,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Batch mode
-    default: 2
     inputBinding:
       position: 102
       prefix: --batch
@@ -95,7 +92,6 @@ inputs:
     doc: Reward for canonical and semi-canonical introns. 0=low reward, 1=high 
       reward (default), 2=low reward for high-identity sequences and high reward
       otherwise
-    default: 1
     inputBinding:
       position: 102
       prefix: --canonical-mode
@@ -122,7 +118,6 @@ inputs:
     doc: Amount of unaligned sequence that triggers search for the remaining 
       sequence. Enables alignment of chimeric reads, and may help with some 
       non-chimeric reads. To turn off, set to zero.
-    default: 30
     inputBinding:
       position: 102
       prefix: --chimera-margin
@@ -191,7 +186,6 @@ inputs:
       - string
     doc: cDNA direction (sense_force, antisense_force, sense_filter, 
       antisense_filter,or auto (default))
-    default: auto
     inputBinding:
       position: 102
       prefix: --direction
@@ -202,7 +196,6 @@ inputs:
     doc: Trim ends if the alignment score is below this value where a match 
       scores +1 and a mismatch scores -3. The value should be 0 (default) or 
       negative. A negative allows some mismatches at the ends of the alignment
-    default: 0
     inputBinding:
       position: 102
       prefix: --end-trimming-score
@@ -238,7 +231,6 @@ inputs:
       - 'null'
       - int
     doc: Show flanking hits (default 0)
-    default: 0
     inputBinding:
       position: 102
       prefix: --flanking
@@ -275,7 +267,6 @@ inputs:
       - 'null'
       - Directory
     doc: Genome directory.
-    default: /usr/local/share
     inputBinding:
       position: 102
       prefix: --dir
@@ -294,7 +285,6 @@ inputs:
       - int
     doc: 'Whether to add a ### separator after each query sequence. Values: 0 (no),
       1 (yes, default)'
-    default: 1
     inputBinding:
       position: 102
       prefix: --gff3-add-separators
@@ -304,7 +294,6 @@ inputs:
       - string
     doc: 'Whether to use cDNA or genomic translation for the CDS coordinates. Values:
       cdna (default), genomic'
-    default: cdna
     inputBinding:
       position: 102
       prefix: --gff3-cds
@@ -316,7 +305,6 @@ inputs:
       Values: 0 (default): Do not include. 1: Wrap all annotation as Annot="<header>".
       2: Include key=value pairs, replacing brackets with quotation marks and replacing
       spaces between key=value pairs with semicolons'
-    default: 0
     inputBinding:
       position: 102
       prefix: --gff3-fasta-annotation
@@ -327,7 +315,6 @@ inputs:
     doc: 'Whether to swap phase (0 => 0, 1 => 2, 2 => 1) in gff3_gene format. Needed
       by some analysis programs, but deviates from GFF3 specification. Values: 0 (no,
       default), 1 (yes)'
-    default: 0
     inputBinding:
       position: 102
       prefix: --gff3-swap-phase
@@ -361,7 +348,6 @@ inputs:
       - int
     doc: Size of input buffer (program reads this many sequences at a time for 
       efficiency)
-    default: 1000
     inputBinding:
       position: 102
       prefix: --input-buffer-size
@@ -370,7 +356,6 @@ inputs:
       - 'null'
       - int
     doc: Nucleotides to show on each end of intron
-    default: 3
     inputBinding:
       position: 102
       prefix: --introngap
@@ -381,7 +366,6 @@ inputs:
     doc: "Mode for alignments to genomic (-) strand: 0=Don't invert the cDNA (default),
       1=Invert cDNA and print genomic (-) strand, 2=Invert cDNA and print genomic
       (+) strand"
-    default: 0
     inputBinding:
       position: 102
       prefix: --invertmode
@@ -400,7 +384,6 @@ inputs:
       - 'null'
       - int
     doc: Max length for known splice sites at ends of sequence
-    default: 2000000
     inputBinding:
       position: 102
       prefix: --localsplicedist
@@ -442,7 +425,6 @@ inputs:
       - int
     doc: Max length for a deletion. Above this size, a genomic gap will be 
       considered an intron rather than a deletion.
-    default: 30
     inputBinding:
       position: 102
       prefix: --max-deletionlength
@@ -452,7 +434,6 @@ inputs:
       - int
     doc: 'Max length for first or last intron. Note: for backward compatibility, the
       -K or --intronlength flag will set both --max-intronlength-middle and --max-intronlength-ends.'
-    default: 10000
     inputBinding:
       position: 102
       prefix: --max-intronlength-ends
@@ -463,7 +444,6 @@ inputs:
     doc: 'Max length for one internal intron. Note: for backward compatibility, the
       -K or --intronlength flag will set both --max-intronlength-middle and --max-intronlength-ends.
       Also see --split-large-introns below.'
-    default: 500000
     inputBinding:
       position: 102
       prefix: --max-intronlength-middle
@@ -491,7 +471,6 @@ inputs:
       - float
     doc: Allow microexons only if one of the splice site probabilities is 
       greater than this value
-    default: 0.95
     inputBinding:
       position: 102
       prefix: --microexon-spliceprob
@@ -502,7 +481,6 @@ inputs:
     doc: Do not print alignments with identity less this value (default=0.0, 
       which means no filtering). Note that chimeric alignments will be output 
       regardless of this filter
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --min-identity
@@ -512,7 +490,6 @@ inputs:
       - int
     doc: Min length for one internal intron. Below this size, a genomic gap will
       be considered a deletion rather than an intron.
-    default: 9
     inputBinding:
       position: 102
       prefix: --min-intronlength
@@ -523,7 +500,6 @@ inputs:
     doc: Do not print alignments with trimmed coverage less this value 
       (default=0.0, which means no filtering). Note that chimeric alignments 
       will be output regardless of this filter
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --min-trimmed-coverage
@@ -535,7 +511,6 @@ inputs:
       atoi-nonstranded, ttoc-stranded, or ttoc-nonstranded. Non-standard modes requires
       you to have previously run the cmetindex or atoiindex programs (which also cover
       the ttoc modes) on the genome'
-    default: standard
     inputBinding:
       position: 102
       prefix: --mode
@@ -595,7 +570,6 @@ inputs:
     doc: Maximum number of paths to show. If set to 1, GMAP will not report 
       chimeric alignments, since those imply two paths. If you want a single 
       alignment plus chimeric alignments, then set this to be 0.
-    default: 5
     inputBinding:
       position: 102
       prefix: --npaths
@@ -623,7 +597,6 @@ inputs:
     doc: Buffer size, in queries, for output thread. When the number of results 
       to be printed exceeds this size, worker threads wait until the backlog is 
       cleared
-    default: 1000
     inputBinding:
       position: 102
       prefix: --output-buffer-size
@@ -691,7 +664,6 @@ inputs:
       - string
     doc: 'Pruning level: 0=no pruning (default), 1=poor seqs, 2=repetitive seqs, 3=poor
       and repetitive'
-    default: '0'
     inputBinding:
       position: 102
       prefix: --prunelevel
@@ -701,7 +673,6 @@ inputs:
       - int
     doc: Shift FASTQ quality scores by this amount in output (default is 0 for 
       sanger protocol; to change Illumina input to Sanger output, select -31)
-    default: 0
     inputBinding:
       position: 102
       prefix: --quality-print-shift
@@ -714,7 +685,6 @@ inputs:
       0). Default is sanger (no quality print shift). SAM output files should have
       quality scores in sanger protocol. Or you can specify the print shift with this
       flag:'
-    default: sanger
     inputBinding:
       position: 102
       prefix: --quality-protocol
@@ -830,7 +800,6 @@ inputs:
       - 'null'
       - string
     doc: Genome strand to try aligning to (plus, minus, or both default)
-    default: both
     inputBinding:
       position: 102
       prefix: --strand
@@ -843,7 +812,6 @@ inputs:
       the best alignment (matches minus penalties for mismatches and indels). 
       Otherwise, treated as an integer number to be subtracted from the score of
       the best alignment.
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --suboptimal-score
@@ -868,7 +836,6 @@ inputs:
       - 'null'
       - int
     doc: Max total intron length
-    default: 2400000
     inputBinding:
       position: 102
       prefix: --totallength
@@ -879,7 +846,6 @@ inputs:
     doc: Genetic code used for translating codons to amino acids and computing 
       CDS. Integer value (default=1) corresponds to an available code at 
       http://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi
-    default: 1
     inputBinding:
       position: 102
       prefix: --translation-code
@@ -889,7 +855,6 @@ inputs:
       - int
     doc: Trim end exons with fewer than given number of matches (in nt, default 
       12)
-    default: 12
     inputBinding:
       position: 102
       prefix: --trim-end-exons
@@ -908,7 +873,6 @@ inputs:
       - int
     doc: If 1, then allocated memory is shared among all processes on this node.
       If 0 (default), then each process has private allocated memory
-    default: 0
     inputBinding:
       position: 102
       prefix: --use-shared-memory
@@ -926,7 +890,6 @@ inputs:
       - 'null'
       - int
     doc: Wrap length for alignment
-    default: 50
     inputBinding:
       position: 102
       prefix: --wraplength

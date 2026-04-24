@@ -52,7 +52,6 @@ inputs:
   outfile:
     type: [ File, string, "null"]
     label: User-defined filename for lost domain structural instances while resmapping
-    default: lost_resmap.json
     inputBinding:
       position: 1
 

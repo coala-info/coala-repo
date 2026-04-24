@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: RNAshapes abstraction level [RNA structure graphs]
-    default: '3'
     inputBinding:
       position: 101
       prefix: -abstraction
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: GraphProt bitsize used for feature encoding
-    default: 14
     inputBinding:
       position: 101
       prefix: -bitsize
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: SVR parameter c       [regression]
-    default: 1
     inputBinding:
       position: 101
       prefix: -c
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: GraphProt distance
-    default: 4
     inputBinding:
       position: 101
       prefix: -D
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: SGD parameter epochs  [classification]
-    default: 10
     inputBinding:
       position: 101
       prefix: -epochs
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: SVR parameter epsilon [regression]
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -epsilon
@@ -94,14 +88,12 @@ inputs:
       - 'null'
       - float
     doc: SGD parameter lambda  [classification]
-    default: '10e-4'
     inputBinding:
       position: 101
       prefix: -lambda
   - id: mode
     type: string
     doc: "'regression' or 'classification'"
-    default: classification
     inputBinding:
       position: 101
       prefix: -mode
@@ -118,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: set length of motifs
-    default: 12
     inputBinding:
       position: 101
       prefix: -motif_len
@@ -127,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: use n top-scoring subsequences for motif creation
-    default: 1000
     inputBinding:
       position: 101
       prefix: -motif_top_n
@@ -163,7 +153,6 @@ inputs:
       - int
     doc: "keep only regions with average score above a percentile\n              \
       \       as high-affinity sites"
-    default: 99
     inputBinding:
       position: 101
       prefix: -percentile
@@ -172,7 +161,6 @@ inputs:
       - 'null'
       - string
     doc: this prefix is used for all results
-    default: GraphProt
     inputBinding:
       position: 101
       prefix: -prefix
@@ -181,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: GraphProt radius
-    default: 1
     inputBinding:
       position: 101
       prefix: -R

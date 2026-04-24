@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum sequencing depth to consider.
-    default: 1000
     inputBinding:
       position: 103
       prefix: --max-depth
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequencing depth required for calling HLA alleles.
-    default: 10
     inputBinding:
       position: 103
       prefix: --min-depth
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Ploidy of the sample (e.g., 2 for diploid, 1 for haploid).
-    default: 2
     inputBinding:
       position: 103
       prefix: --ploidy
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for computation.
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

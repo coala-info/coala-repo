@@ -11,7 +11,6 @@ inputs:
       - float
     doc: Absolute M-value (log2-ratio) cutoff to define the biased (differential
       binding) peaks.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --m-cutoff
@@ -21,7 +20,6 @@ inputs:
       - int
     doc: Number of random simulations to test the enrichment of peak overlap 
       between the specified samples. Set to 0 to disable the testing.
-    default: 0
     inputBinding:
       position: 101
       prefix: --n-random
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory.
-    default: Current working directory
     inputBinding:
       position: 101
       prefix: --output-dir
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - float
     doc: P-value cutoff to define the biased peaks.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --p-cutoff
@@ -87,7 +83,6 @@ inputs:
       - string
     doc: Format of the peak files. Support ['bed', 'bed3-summit', 'macs', 
       'macs2', 'narrowpeak', 'broadpeak'].
-    default: bed
     inputBinding:
       position: 101
       prefix: --peak-format
@@ -108,7 +103,6 @@ inputs:
       - 'null'
       - string
     doc: Format of the read files. Support ['bed', 'bedpe', 'sam', 'bam'].
-    default: bed
     inputBinding:
       position: 101
       prefix: --read-format
@@ -120,7 +114,6 @@ inputs:
       towards 3' direction and the 5' end of each shifted read is used to 
       represent the genomic locus of the DNA fragment. Set to 0.5 * fragment 
       size of the ChIP-seq library.
-    default: 100
     inputBinding:
       position: 101
       prefix: --shiftsize1
@@ -129,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: Single-end reads shift size for sample 2.
-    default: 100
     inputBinding:
       position: 101
       prefix: --shiftsize2
@@ -158,7 +150,6 @@ inputs:
     doc: Window size to count reads and calculate read densities. Set to 2000 is
       recommended for sharp histone marks like H3K4me3 or H3K27ac and 1000 for 
       TFs or DNase-seq.
-    default: 2000
     inputBinding:
       position: 101
       prefix: --window-size

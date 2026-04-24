@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: "reverse complement the sequence when start > end\ncoordinate. default: False"
-    default: false
     inputBinding:
       position: 103
       prefix: --auto-strand
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'complement the sequence. default: False'
-    default: false
     inputBinding:
       position: 103
       prefix: --complement
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: 'default base for missing positions and masking. default: None'
-    default: None
     inputBinding:
       position: 103
       prefix: --default-seq
@@ -60,7 +57,6 @@ inputs:
       - string
     doc: "delimiter for splitting names to multiple values\n(duplicate names will
       be discarded). default: None"
-    default: None
     inputBinding:
       position: 103
       prefix: --delimiter
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: "entry to take when duplicate sequence names are\nencountered. default: stop"
-    default: stop
     inputBinding:
       position: 103
       prefix: --duplicates-action
@@ -78,8 +73,6 @@ inputs:
       - 'null'
       - string
     doc: 'python function to modify header lines e.g: "lambda x: x.split("|")[0]".
-      default: lambda x: x.split()[0]'
-    default: 'lambda x: x.split()[0]'
     inputBinding:
       position: 103
       prefix: --header-function
@@ -89,7 +82,6 @@ inputs:
       - boolean
     doc: "selected sequences are those not matching 'regions'\nargument. default:
       False"
-    default: false
     inputBinding:
       position: 103
       prefix: --invert-match
@@ -98,7 +90,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'fill in --default-seq for missing ranges. default: False'
-    default: false
     inputBinding:
       position: 103
       prefix: --lazy
@@ -116,7 +107,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'mask the FASTA file by changing to lowercase. default: False'
-    default: false
     inputBinding:
       position: 103
       prefix: --mask-by-case
@@ -125,7 +115,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'mask the FASTA file using --default-seq default: False'
-    default: false
     inputBinding:
       position: 103
       prefix: --mask-with-default-seq
@@ -134,7 +123,6 @@ inputs:
       - 'null'
       - boolean
     doc: "omit coordinates (e.g. chr:start-end) from output\nheaders. default: False"
-    default: false
     inputBinding:
       position: 103
       prefix: --no-coords
@@ -143,7 +131,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'omit sequence names from output. default: False'
-    default: false
     inputBinding:
       position: 103
       prefix: --no-names
@@ -152,7 +139,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'do not output any sequence. default: False'
-    default: false
     inputBinding:
       position: 103
       prefix: --no-output
@@ -161,7 +147,6 @@ inputs:
       - 'null'
       - boolean
     doc: "do not rebuild the .fai index even if it is out of\n    date. default: False"
-    default: false
     inputBinding:
       position: 103
       prefix: --no-rebuild
@@ -170,7 +155,6 @@ inputs:
       - 'null'
       - string
     doc: "selected sequences are those matching regular\nexpression. default: .*"
-    default: .*
     inputBinding:
       position: 103
       prefix: --regex
@@ -179,7 +163,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'reverse the sequence. default: False'
-    default: false
     inputBinding:
       position: 103
       prefix: --reverse
@@ -189,7 +172,6 @@ inputs:
       - string
     doc: "selected sequences are in the size range [low, high].\nexample: 1,1000 default:
       None"
-    default: None
     inputBinding:
       position: 103
       prefix: --size-range
@@ -206,7 +188,6 @@ inputs:
       - 'null'
       - string
     doc: "transform the requested regions into another format.\ndefault: None"
-    default: None
     inputBinding:
       position: 103
       prefix: --transform

@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: 'Consider the N-th occurrence of the delimiter (1-indexed, default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --delim-pos
@@ -68,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum recursion depth for transitive overlaps (0 for no limit)
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-depth
@@ -77,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance between regions to merge
-    default: 0
     inputBinding:
       position: 101
       prefix: --merge-distance
@@ -87,7 +84,6 @@ inputs:
       - int
     doc: Minimum distance between transitive ranges to consider on the same 
       sequence
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-distance-between-ranges
@@ -104,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum region size to consider for transitive queries
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-transitive-len
@@ -155,7 +150,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of PCA components to output (default: 2)'
-    default: 2
     inputBinding:
       position: 101
       prefix: --pca-components
@@ -165,7 +159,6 @@ inputs:
       - string
     doc: Similarity measure to use for PCA distance matrix ("jaccard", "cosine",
       or "dice")
-    default: jaccard
     inputBinding:
       position: 101
       prefix: --pca-measure
@@ -176,7 +169,6 @@ inputs:
     doc: POA alignment scores as 
       match,mismatch,gap_open1,gap_extend1,gap_open2,gap_extend2 (for 'gfa' and 
       'maf')
-    default: 1,4,6,2,26,1
     inputBinding:
       position: 101
       prefix: --poa-scoring
@@ -194,7 +186,6 @@ inputs:
       - int
     doc: Number of previous regions to use for adaptive polarization (0 to 
       disable)
-    default: 3
     inputBinding:
       position: 101
       prefix: --polarize-n-prev
@@ -262,7 +253,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for parallel processing
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -288,7 +278,6 @@ inputs:
       - 'null'
       - int
     doc: Verbosity level (0 = error, 1 = info, 2 = debug)
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbose

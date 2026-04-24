@@ -30,7 +30,6 @@ inputs:
         prefix: -n
         valueFrom: |
                 $(self? self : inputs.infernal_matches.basename)
-    default: ""
 
 baseCommand: awk_tool
 

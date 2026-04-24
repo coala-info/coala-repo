@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: specify aligner for read 2.
-    default: bwa
     inputBinding:
       position: 101
       prefix: --aligner
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: specify maximum number of ambiguous nucleotides allowed for read 1.
-    default: 3
     inputBinding:
       position: 101
       prefix: --cb_num_n_threshold
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: specify cell barcode mismatching threshold.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cb_mismatches
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: specify minimal mapping quality required for feature mapping.
-    default: 10
     inputBinding:
       position: 101
       prefix: --mapq
@@ -57,7 +53,6 @@ inputs:
       - int
     doc: specify the number of Ns to separate sequences belonging to the same 
       feature.
-    default: 0
     inputBinding:
       position: 101
       prefix: --num_n_ref
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - Directory
     doc: specify a temp directory.
-    default: ./barcode_mapping
     inputBinding:
       position: 101
       prefix: --output_directory
@@ -83,7 +77,6 @@ inputs:
     doc: "specify coordinate 'start,end' of read 1 to search. For example, '0,16':
       starts at 0, stops at 15. Nucleotide bases outside the range will be masked
       as lowercase in the output."
-    default: 0,16
     inputBinding:
       position: 101
       prefix: --read1_coordinate
@@ -108,7 +101,6 @@ inputs:
       - string
     doc: specify UMI deduplication method (powered by UMI-tools. Smith, T., et 
       al. 2017).
-    default: directional
     inputBinding:
       position: 101
       prefix: --umi_deduplication_method
@@ -118,7 +110,6 @@ inputs:
       - int
     doc: specify the length of UMIs on read 1. Reads with UMI length less than 
       this value will be discarded.
-    default: 12
     inputBinding:
       position: 101
       prefix: --umi_length
@@ -128,7 +119,6 @@ inputs:
       - int
     doc: specify the maximun edit distance allowed for UMIs on read 1 for 
       deduplication.
-    default: 1
     inputBinding:
       position: 101
       prefix: --umi_mismatches
@@ -137,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: specify expected UMI starting postion on read 1.
-    default: 16
     inputBinding:
       position: 101
       prefix: --umi_start

@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Band width for banded alignment
-    default: 100
     inputBinding:
       position: 104
       prefix: -w
@@ -114,7 +113,6 @@ inputs:
       - int
     doc: Score for a sequence match, which scales options -TdBOELU unless 
       overridden
-    default: 1
     inputBinding:
       position: 104
       prefix: -A
@@ -123,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Perform at most INT rounds of mate rescues for each read
-    default: 50
     inputBinding:
       position: 104
       prefix: -m
@@ -141,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: Skip seeds with more than INT occurrences
-    default: 500
     inputBinding:
       position: 104
       prefix: -c
@@ -151,7 +147,6 @@ inputs:
       - float
     doc: Drop chains shorter than FLOAT fraction of the longest overlapping 
       chain
-    default: 0.5
     inputBinding:
       position: 104
       prefix: -D
@@ -160,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum score to output
-    default: 30
     inputBinding:
       position: 104
       prefix: -T
@@ -169,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum seed length
-    default: 19
     inputBinding:
       position: 104
       prefix: -k
@@ -178,7 +171,6 @@ inputs:
       - 'null'
       - int
     doc: Discard a chain if seeded bases shorter than INT
-    default: 0
     inputBinding:
       position: 104
       prefix: -W
@@ -187,7 +179,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for a mismatch
-    default: 4
     inputBinding:
       position: 104
       prefix: -B
@@ -204,7 +195,6 @@ inputs:
       - 'null'
       - int
     doc: Off-diagonal X-dropoff
-    default: 100
     inputBinding:
       position: 104
       prefix: -d
@@ -278,7 +268,6 @@ inputs:
       - 'null'
       - int
     doc: Seed occurrence for the 3rd round seeding
-    default: 20
     inputBinding:
       position: 104
       prefix: -y
@@ -287,7 +276,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 104
       prefix: -t
@@ -296,7 +284,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for an unpaired read pair
-    default: 17
     inputBinding:
       position: 104
       prefix: -U
@@ -313,7 +300,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbose level: 1=error, 2=warning, 3=message, 4+=debugging'
-    default: 3
     inputBinding:
       position: 104
       prefix: -v

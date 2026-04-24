@@ -63,7 +63,6 @@ inputs:
       - boolean
     doc: random oligo is inline with sequence, occurs only on single-end read 
       (default).
-    default: true
     inputBinding:
       position: 101
       prefix: --inline-null
@@ -89,7 +88,6 @@ inputs:
       - string
     doc: input file type, either 'bustard', 'fastq', 'fasta', 'gzfasta', or 
       'gzfastq'
-    default: fastq
     inputBinding:
       position: 101
       prefix: -i

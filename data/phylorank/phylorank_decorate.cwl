@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: minimum required child taxa to consider taxa when inferring distribution
-    default: 2
     inputBinding:
       position: 103
       prefix: --min_children
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: minimum support value to consider taxa when inferring distribution
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --min_support

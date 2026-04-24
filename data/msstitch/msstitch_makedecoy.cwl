@@ -68,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Amount of missed cleavages to allow when trypsinizing, default is 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --miscleav

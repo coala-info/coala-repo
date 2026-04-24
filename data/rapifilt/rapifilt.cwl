@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Bin size used to compute statistic per base
-    default: 1
     inputBinding:
       position: 101
       prefix: -bin
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable fasta output (default fastq)
-    default: false
     inputBinding:
       position: 101
       prefix: -f
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Set lef-cut value for quality scores
-    default: 0
     inputBinding:
       position: 101
       prefix: -l
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Filter sequence larger than max_len
-    default: 5000
     inputBinding:
       position: 101
       prefix: -mx
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Filter sequence shorter than min_len
-    default: 1
     inputBinding:
       position: 101
       prefix: -m
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Remove n bases from the begins of sequencing fragments
-    default: 0
     inputBinding:
       position: 101
       prefix: -tb
@@ -80,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Remove n bases from the ends of sequencing fragments
-    default: 0
     inputBinding:
       position: 101
       prefix: -te
@@ -89,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Set right-cut value for quality scores
-    default: 0
     inputBinding:
       position: 101
       prefix: -r
@@ -106,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Set windows size to check on the quality scores
-    default: 1
     inputBinding:
       position: 101
       prefix: -w

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: the delimiter used to specify fields in the tip labels
-    default: '|'
     inputBinding:
       position: 101
       prefix: --field-delimiter
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: metadata column to use to match tip labels
-    default: first column
     inputBinding:
       position: 101
       prefix: --id-column
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: tip label field to use to match metadata
-    default: whole label
     inputBinding:
       position: 101
       prefix: --id-field
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: ignore any missing matches in annotations table
-    default: false
     inputBinding:
       position: 101
       prefix: --ignore-missing
@@ -74,7 +70,6 @@ inputs:
       - 'null'
       - boolean
     doc: replace the annotations or tip label headers rather than appending
-    default: false
     inputBinding:
       position: 101
       prefix: --replace

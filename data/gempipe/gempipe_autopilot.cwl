@@ -13,7 +13,6 @@ inputs:
       - 'null'
       - boolean
     doc: Test auxotrophies for aminoacids and vitamins.
-    default: false
     inputBinding:
       position: 101
       prefix: --aux
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - boolean
     doc: "Simulate Biolog's utilization tests on strain-specific\nmodels."
-    default: false
     inputBinding:
       position: 101
       prefix: --biolog
@@ -32,7 +30,6 @@ inputs:
       - float
     doc: "Check biosynthesis of each metabolite while granting\nthe specified minimum
       fraction of objective. If 0,\nthis step will be skipped."
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --biosynth
@@ -42,7 +39,6 @@ inputs:
       - string
     doc: "Maximum number of fragmented Busco's single copy\northologs (absolute or
       percentage)."
-    default: 100%
     inputBinding:
       position: 101
       prefix: --buscoF
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: "Maximum number of missing Busco's single copy\northologs (absolute or percentage)."
-    default: 2%
     inputBinding:
       position: 101
       prefix: --buscoM
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: "Busco database to use ('show' to see the list of\navailable databases)."
-    default: bacteria_odb10
     inputBinding:
       position: 101
       prefix: --buscodb
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - boolean
     doc: "Sistematically simulate growth on all the available\nC-N-P-S sources."
-    default: false
     inputBinding:
       position: 101
       prefix: --cnps
@@ -79,7 +72,6 @@ inputs:
       - float
     doc: "Base the C-N-P-S simulations on a minimal medium\nleading to the specified
       minimum objective value. If\n0, user-defined medium will be used."
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --cnps_minmed
@@ -88,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel processes to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -98,7 +89,6 @@ inputs:
       - int
     doc: "Minimum percentage coverage to use when aligning\nagainst the BiGG gene
       database."
-    default: 70
     inputBinding:
       position: 101
       prefix: --coverage
@@ -108,7 +98,6 @@ inputs:
       - boolean
     doc: "Load the entire eggNOG-mapper database into memory\n(should speed up the
       functional annotation step)."
-    default: false
     inputBinding:
       position: 101
       prefix: --dbmem
@@ -118,7 +107,6 @@ inputs:
       - Directory
     doc: "Path were the needed databases are stored (or\ndownloaded if not already
       existing)."
-    default: ./working/dbs/
     inputBinding:
       position: 101
       prefix: --dbs
@@ -128,7 +116,6 @@ inputs:
       - boolean
     doc: "Try to remove duplicate metabolites and reactions\nusing MNX annotation,
       when a reference is provided."
-    default: false
     inputBinding:
       position: 101
       prefix: --dedup
@@ -139,7 +126,6 @@ inputs:
         items: File
     doc: "Input genbank files (.gb, .gbff) or folder containing\nthe genbanks (see
       documentation)."
-    default: '-'
     inputBinding:
       position: 101
       prefix: --genbanks
@@ -149,7 +135,6 @@ inputs:
       - type: array
         items: File
     doc: "Input genome files or folder containing the genomes\n(see documentation)."
-    default: '-'
     inputBinding:
       position: 101
       prefix: --genomes
@@ -159,7 +144,6 @@ inputs:
       - int
     doc: "Minimum percentage amino acidic sequence identity to\nuse when aligning
       against the BiGG gene database."
-    default: 30
     inputBinding:
       position: 101
       prefix: --identity
@@ -168,7 +152,6 @@ inputs:
       - 'null'
       - string
     doc: "Manual corrections to apply during the reference\nexpansion."
-    default: '-'
     inputBinding:
       position: 101
       prefix: --mancor
@@ -179,7 +162,6 @@ inputs:
         items: File
     doc: "Medium definition file or folder containing media\ndefinitions, to be used
       during the automatic gap-\nfilling."
-    default: '-'
     inputBinding:
       position: 101
       prefix: --media
@@ -188,7 +170,6 @@ inputs:
       - 'null'
       - File
     doc: Table for manual correction of genome metadata.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --metadata
@@ -197,7 +178,6 @@ inputs:
       - 'null'
       - float
     doc: "Minimum flux through the objective of strain-specific\nmodels."
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --minflux
@@ -206,7 +186,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum flux through the objective of the pan model.
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --minpanflux
@@ -215,7 +194,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum N50 allowed per genome.
-    default: 50000
     inputBinding:
       position: 101
       prefix: --N50
@@ -224,7 +202,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of contigs allowed per genome.
-    default: 200
     inputBinding:
       position: 101
       prefix: --ncontigs
@@ -233,7 +210,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip the generation of figures.
-    default: false
     inputBinding:
       position: 101
       prefix: --nofig
@@ -242,7 +218,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip gene recovery when starting from genomes.
-    default: false
     inputBinding:
       position: 101
       prefix: --norec
@@ -251,7 +226,6 @@ inputs:
       - 'null'
       - Directory
     doc: "Main output directory (will be created if not\nexisting)."
-    default: ./
     inputBinding:
       position: 101
       prefix: --outdir
@@ -260,7 +234,6 @@ inputs:
       - 'null'
       - boolean
     doc: Delete the working/ directory at the startup.
-    default: false
     inputBinding:
       position: 101
       prefix: --overwrite
@@ -270,7 +243,6 @@ inputs:
       - type: array
         items: File
     doc: "Input proteome files or folder containing the\nproteomes (see documentation)."
-    default: '-'
     inputBinding:
       position: 101
       prefix: --proteomes
@@ -279,7 +251,6 @@ inputs:
       - 'null'
       - string
     doc: Model to be used as reference.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --refmodel
@@ -288,7 +259,6 @@ inputs:
       - 'null'
       - string
     doc: Proteome to be used as reference.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --refproteome
@@ -297,7 +267,6 @@ inputs:
       - 'null'
       - string
     doc: Reference gene marking spontaneous reactions.
-    default: spontaneous
     inputBinding:
       position: 101
       prefix: --refspont
@@ -306,7 +275,6 @@ inputs:
       - 'null'
       - boolean
     doc: "Save the output GSMMs in SBML format (L3V1 FBC2) in\naddition to JSON."
-    default: false
     inputBinding:
       position: 101
       prefix: --sbml
@@ -315,7 +283,6 @@ inputs:
       - 'null'
       - string
     doc: Gram staining, 'pos' or 'neg'.
-    default: neg
     inputBinding:
       position: 101
       prefix: --staining
@@ -324,7 +291,6 @@ inputs:
       - 'null'
       - string
     doc: "Taxids of the species to model (comma separated, for\nexample '252393,68334')."
-    default: '-'
     inputBinding:
       position: 101
       prefix: --taxids
@@ -333,7 +299,6 @@ inputs:
       - 'null'
       - boolean
     doc: "Experimental feature: try to build transport reactions\nusing TCDB."
-    default: false
     inputBinding:
       position: 101
       prefix: --tcdb
@@ -342,7 +307,6 @@ inputs:
       - 'null'
       - boolean
     doc: "Make stdout messages more verbose, including debug\nmessages."
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

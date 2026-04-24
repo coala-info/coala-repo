@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: The ggd channel the desired recipe is stored in. (Default = genomics)
-    default: genomics
     inputBinding:
       position: 102
       prefix: --channel

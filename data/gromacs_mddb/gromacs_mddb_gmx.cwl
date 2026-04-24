@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write backups if output files exist
-    default: yes
     inputBinding:
       position: 101
       prefix: --no-backup
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Set the nicelevel (default depends on command)
-    default: '19'
     inputBinding:
       position: 101
   - id: quiet

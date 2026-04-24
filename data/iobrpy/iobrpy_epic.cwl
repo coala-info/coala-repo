@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Which reference to use for deconvolution
-    default: TRef
     inputBinding:
       position: 101
       prefix: --reference

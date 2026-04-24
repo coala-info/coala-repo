@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Merge scores on this index for network A
-    default: last score
     inputBinding:
       position: 103
       prefix: --index-a
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Merge scores on this index for network B
-    default: last score
     inputBinding:
       position: 103
       prefix: --index-b
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to store temporary data
-    default: auto
     inputBinding:
       position: 103
       prefix: --tempdir

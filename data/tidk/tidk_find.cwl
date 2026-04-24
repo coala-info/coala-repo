@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Window size to calculate telomeric repeat counts in
-    default: 10000
     inputBinding:
       position: 102
       prefix: --window

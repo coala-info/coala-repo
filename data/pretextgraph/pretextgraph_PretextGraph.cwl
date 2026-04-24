@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - boolean
     doc: '0: disable NOISE FILTER, 1: enable NOISE FILTER'
-    default: 1
     inputBinding:
       position: 101
       prefix: -nf

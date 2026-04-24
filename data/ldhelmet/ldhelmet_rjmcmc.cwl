@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: Block penalty for rjMCMC.
-    default: 10
     inputBinding:
       position: 101
       prefix: --block_penalty
@@ -21,7 +20,6 @@ inputs:
       - int
     doc: Number of iterations for burn-in (in addition to number of iterations 
       to run rjMCMC).
-    default: 1000
     inputBinding:
       position: 101
       prefix: --burn_in
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - float
     doc: Rho value to end maximum likelihood estimation of background rate.
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --max_lk_end
@@ -48,7 +45,6 @@ inputs:
       - float
     doc: Amount to increment by for maximum likelihood estimation of background 
       rate.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --max_lk_resolution
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: Rho value to begin maximum likelihood estimation of background rate.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --max_lk_start
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations to run rjMCMC.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --num_iter
@@ -83,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 1
     inputBinding:
       position: 101
       prefix: --num_threads
@@ -92,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Overlap length.
-    default: 200
     inputBinding:
       position: 101
       prefix: --overlap_length
@@ -109,7 +101,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum Pade grid value.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --pade_max_rho
@@ -118,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: Pade grid increment.
-    default: 10
     inputBinding:
       position: 101
       prefix: --pade_resolution
@@ -127,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: Partition length (number of SNPs).
-    default: 4001
     inputBinding:
       position: 101
       prefix: --partition_length
@@ -152,7 +141,6 @@ inputs:
       - 'null'
       - float
     doc: Prior mean on recombination rate.
-    default: 1
     inputBinding:
       position: 101
       prefix: --prior_rate
@@ -161,7 +149,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for pseudo-random number generator.
-    default: 5489
     inputBinding:
       position: 101
       prefix: --seed
@@ -186,7 +173,6 @@ inputs:
       - 'null'
       - int
     doc: Thinning parameter for summary statistics.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --stats_thin
@@ -195,7 +181,6 @@ inputs:
       - 'null'
       - int
     doc: Window size.
-    default: 50
     inputBinding:
       position: 101
       prefix: --window_size

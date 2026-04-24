@@ -26,7 +26,6 @@ arguments:
 inputs:
   threads:
     type: int?
-    default: 1
     inputBinding:
       prefix: --threads
   identifier:
@@ -56,7 +55,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: "--paired"
-    default: false
 
 # Long reads
   nanopore: # Oxford Nanopore Technologies reads in FASTQ
@@ -72,7 +70,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: '--gzip-compressed'
-    default: false
   bzip2:
     type:
     - "null"
@@ -81,7 +78,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: '--bzip2-compressed'
-    default: false
 
 outputs:
   standard_report: 

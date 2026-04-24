@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: whether draw base track
-    default: no
     inputBinding:
       position: 101
       prefix: --base
@@ -21,7 +20,6 @@ inputs:
       - string
     doc: background color or the path to a user-defined image file (as the 
       background of the resulting file!)
-    default: white
     inputBinding:
       position: 101
       prefix: --bgc
@@ -31,7 +29,6 @@ inputs:
       - string
     doc: absolute path of bwa executable, otherwise, `bwa` must be in your 
       `PATH` variable
-    default: bwa
     inputBinding:
       position: 101
       prefix: --bwa
@@ -40,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: PCG color
-    default: 141,211,199
     inputBinding:
       position: 101
       prefix: --cds_color
@@ -50,7 +46,6 @@ inputs:
       - string
     doc: absolute path of circos executable. otherwise, `circos` must be in your
       `PATH` variable
-    default: circos
     inputBinding:
       position: 101
       prefix: --circos
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: color for filling the abundance track
-    default: 190,186,218
     inputBinding:
       position: 101
       prefix: --depth_fill
@@ -100,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: whether draw GC content track.
-    default: no
     inputBinding:
       position: 101
       prefix: --gc
@@ -109,7 +102,6 @@ inputs:
       - 'null'
       - string
     doc: color for filling the GC track
-    default: 128,177,211
     inputBinding:
       position: 101
       prefix: --gc_fill
@@ -118,7 +110,6 @@ inputs:
       - 'null'
       - string
     doc: gene name label color
-    default: black
     inputBinding:
       position: 101
       prefix: --label_color
@@ -127,7 +118,6 @@ inputs:
       - 'null'
       - string
     doc: locus name's clolor showed on center of circle
-    default: black
     inputBinding:
       position: 101
       prefix: --locus_color
@@ -144,7 +134,6 @@ inputs:
       - 'null'
       - string
     doc: output directory
-    default: ./outdir
     inputBinding:
       position: 101
       prefix: --outdir
@@ -153,7 +142,6 @@ inputs:
       - 'null'
       - string
     doc: rRNA color
-    default: 253,192,134
     inputBinding:
       position: 101
       prefix: --rrna_color
@@ -164,7 +152,6 @@ inputs:
     doc: If you do NOT have the '--depth_file', setting '--run_map yes' as well 
       as '--fq1' and '--fq2' to map reads to references to get the 
       '--depth_file'
-    default: no
     inputBinding:
       position: 101
       prefix: --run_map
@@ -174,7 +161,6 @@ inputs:
       - string
     doc: absolute path of samtools executable, otherwise, `samtools` must be in 
       your `PATH` variable
-    default: samtools
     inputBinding:
       position: 101
       prefix: --samtools
@@ -183,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: BWA thread number
-    default: 2
     inputBinding:
       position: 101
       prefix: --thread
@@ -192,7 +177,6 @@ inputs:
       - 'null'
       - string
     doc: tRNA color
-    default: 251,128,114
     inputBinding:
       position: 101
       prefix: --trna_color
@@ -201,7 +185,6 @@ inputs:
       - 'null'
       - string
     doc: windows size for calculating GC content
-    default: '50'
     inputBinding:
       position: 101
       prefix: --win

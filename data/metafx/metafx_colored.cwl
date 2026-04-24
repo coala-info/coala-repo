@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: maximal frequency for a k-mer to be assumed erroneous
-    default: 1
     inputBinding:
       position: 101
       prefix: --bad-frequency
@@ -34,7 +33,6 @@ inputs:
       - boolean
     doc: if TRUE extract only linear components choosing best path on each graph
       fork
-    default: false
     inputBinding:
       position: 101
       prefix: --linear
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: select not more than <int> components for each category
-    default: -1
     inputBinding:
       position: 101
       prefix: --n-comps
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: relative abundance of k-mer in category to be considered color-specific
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --perc
@@ -76,7 +72,6 @@ inputs:
       - boolean
     doc: if TRUE use only color-specific k-mers in components (does not work in 
       linear mode)
-    default: false
     inputBinding:
       position: 101
       prefix: --separate
@@ -85,7 +80,6 @@ inputs:
       - 'null'
       - boolean
     doc: if TRUE skip de Bruijn graph and fasta construction from components
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-graph
@@ -103,7 +97,6 @@ inputs:
       - boolean
     doc: if TRUE count k-mers occurrences in colored graph as total coverage in 
       samples, otherwise as number of samples
-    default: false
     inputBinding:
       position: 101
       prefix: --total-coverage

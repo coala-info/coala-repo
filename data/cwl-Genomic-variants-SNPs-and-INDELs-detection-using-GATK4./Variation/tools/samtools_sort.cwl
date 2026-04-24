@@ -33,7 +33,6 @@ inputs:
   by_name:
     doc: If true, will sort by name, otherwise will sort by genomic position
     type: boolean
-    default: false
     inputBinding:
       position: 1
       prefix: -n

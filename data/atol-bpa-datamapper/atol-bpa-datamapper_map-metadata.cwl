@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - File
     doc: Input file
-    default: stdin
     inputBinding:
       position: 104
       prefix: --input
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Set the logging level
-    default: INFO
     inputBinding:
       position: 104
       prefix: --log-level

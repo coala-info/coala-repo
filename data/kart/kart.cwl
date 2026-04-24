@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: max gaps (indels)
-    default: 5
     inputBinding:
       position: 101
       prefix: -g
@@ -65,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: -t

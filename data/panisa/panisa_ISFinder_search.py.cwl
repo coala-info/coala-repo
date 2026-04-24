@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Percentage of expected alignment
-    default: 80
     inputBinding:
       position: 102
       prefix: --alignment
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: Expected max evalue
-    default: '1E-3'
     inputBinding:
       position: 102
       prefix: --evalue
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Percentage of expected identity
-    default: 90
     inputBinding:
       position: 102
       prefix: --identity
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Length of the IRR-IRL search
-    default: 30
     inputBinding:
       position: 102
       prefix: --length
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Remove suffix at the end of the filename
-    default: .txt
     inputBinding:
       position: 102
       prefix: --remove

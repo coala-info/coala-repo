@@ -12,7 +12,6 @@ inputs:
       - File
     doc: Path to BiG-SCAPE config.yml file, which stores values for a series of 
       advanced use parameters.
-    default: bundled big_scape/config.yml
     inputBinding:
       position: 101
       prefix: --config-file-path
@@ -40,7 +39,6 @@ inputs:
       - string
     doc: A comma separated list of strings. If any string in this list occurs in
       the .gbk filename, this file will not be used for the analysis
-    default: final
     inputBinding:
       position: 101
       prefix: --exclude-gbk
@@ -59,7 +57,6 @@ inputs:
     doc: A comma separated list of strings. Only .gbk files that have the 
       string(s) in their filename will be used for the analysis. Use an asterisk
       to accept every file ('*' overrides '--exclude_gbk_str').
-    default: cluster,region
     inputBinding:
       position: 101
       prefix: --include-gbk
@@ -78,7 +75,6 @@ inputs:
     doc: 'Tells BiG-SCAPE where to look for input GBK files. recursive: search for
       .gbk files recursively in input directory. Duplicated filenames are not recommended.
       flat: search for .gbk files in input directory only.'
-    default: recursive
     inputBinding:
       position: 101
       prefix: --input-mode
@@ -97,7 +93,6 @@ inputs:
       - 'null'
       - File
     doc: Path to output log file.
-    default: output_dir/timestamp.log
     inputBinding:
       position: 101
       prefix: --log-path

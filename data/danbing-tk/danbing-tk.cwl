@@ -41,7 +41,6 @@ inputs:
     doc: 'Use graph threading algorithm w/ error correction, the default algorithm.
       Discard pe reads if # of matching kmers < INT1 [100] Maxmimal # of edits allowed
       = INT2 [3]'
-    default:
       - 100
       - 3
     inputBinding:
@@ -53,7 +52,6 @@ inputs:
       - type: array
         items: int
     doc: Same as above, except also running sanity check
-    default:
       - 100
       - 3
     inputBinding:
@@ -78,7 +76,6 @@ inputs:
         items: int
     doc: 'Parameters for kmer-based pre-filtering, optimized for 150bp paired-end
       reads. INT1 = # of sub-sampled kmers. [4] INT2 = minimal # of matches. [1]'
-    default:
       - 4
       - 1
     inputBinding:
@@ -89,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer size [21]
-    default: 21
     inputBinding:
       position: 101
       prefix: -k
@@ -99,7 +95,6 @@ inputs:
       - int
     doc: Discard both pe reads if maxhit of one pe read is below this threshold.
       [45] Will skip read filtering and run threading directly if not specified.
-    default: 45
     inputBinding:
       position: 101
       prefix: -cth
@@ -109,7 +104,6 @@ inputs:
       - int
     doc: At baiting step, only consider kmers of which overlapping bases have 
       qual score >= INT. [20]
-    default: 20
     inputBinding:
       position: 101
       prefix: -qth
@@ -157,7 +151,6 @@ inputs:
       - float
     doc: scaling factor for readsPerBatch. Can affect multiprocess efficiency. 
       [1]
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -r
@@ -182,7 +175,6 @@ inputs:
       - 'null'
       - int
     doc: Use n threads. [1]
-    default: 1
     inputBinding:
       position: 101
       prefix: -p
@@ -199,7 +191,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbosity: 0-3.'
-    default: 0
     inputBinding:
       position: 101
       prefix: -v

@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum contig length (0 = unlimited)
-    default: 0
     inputBinding:
       position: 103
   - id: min_completeness

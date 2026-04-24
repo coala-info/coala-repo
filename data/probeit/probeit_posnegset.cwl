@@ -46,7 +46,6 @@ inputs:
       - int
     doc: The number of times each Seqs from positive genome should be covered by
       1st Probes
-    default: 1
     inputBinding:
       position: 101
   - id: probe1_earlystop
@@ -55,7 +54,6 @@ inputs:
       - int
     doc: Early stop picking new probes if X% of sequences are covered at least 
       N(--probe1-cover) times
-    default: 90
     inputBinding:
       position: 101
   - id: probe1_error
@@ -63,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: The number of error allowed in 1st Probes
-    default: 0
     inputBinding:
       position: 101
   - id: probe1_len
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Length of 1st Probes
-    default: 40
     inputBinding:
       position: 101
   - id: probe1_repeat
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: The number of random iterations when minimizing 1st Probes
-    default: 1
     inputBinding:
       position: 101
   - id: probe2_cover
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: The number of times each 1st Probe should be covered by 2nd Probes
-    default: 1
     inputBinding:
       position: 101
   - id: probe2_earlystop
@@ -96,7 +90,6 @@ inputs:
       - int
     doc: Early stop picking new probes if X% of sequences are covered at least 
       N(--probe2-cover) times
-    default: 99
     inputBinding:
       position: 101
   - id: probe2_error
@@ -104,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: The number of error allowed in 2nd Probes
-    default: 1
     inputBinding:
       position: 101
   - id: probe2_len
@@ -112,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Length of 2nd Probes
-    default: 20
     inputBinding:
       position: 101
   - id: probe2_repeat
@@ -120,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: The number of random iterations when minimizing 2nd Probes
-    default: 10
     inputBinding:
       position: 101
   - id: threads
@@ -128,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPU-cores used
-    default: 8
     inputBinding:
       position: 101
   - id: window_size
@@ -136,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: size of windows for 2nd probes
-    default: 200
     inputBinding:
       position: 101
 outputs:

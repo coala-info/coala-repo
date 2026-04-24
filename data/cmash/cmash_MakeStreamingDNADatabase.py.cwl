@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size
-    default: 21
     inputBinding:
       position: 102
       prefix: --k_size
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Number of hashes to use.
-    default: 500
     inputBinding:
       position: 102
       prefix: --num_hashes
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Prime (for modding hashes)
-    default: 9999999999971
     inputBinding:
       position: 102
       prefix: --prime
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 20
     inputBinding:
       position: 102
       prefix: --threads
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print out progress report/timing information
-    default: false
     inputBinding:
       position: 102
       prefix: --verbose

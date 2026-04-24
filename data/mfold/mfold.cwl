@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: 'Structure annotation type: none, p-num or ss-count'
-    default: none
     inputBinding:
       position: 101
       prefix: ANN=
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Sequence type (linear or circular)
-    default: linear
     inputBinding:
       position: 101
       prefix: LC=
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of foldings to be computed
-    default: 100
     inputBinding:
       position: 101
       prefix: MAX=
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum asymmetry of a bulge/interior loop
-    default: 30
     inputBinding:
       position: 101
       prefix: MAX_AS=
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum bulge/interior loop size
-    default: 30
     inputBinding:
       position: 101
       prefix: MAX_LP=
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - float
     doc: Mg++ molar concentration
-    default: 0.0
     inputBinding:
       position: 101
       prefix: MG_CONC=
@@ -88,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: 'Structure display mode: auto, bases or lines'
-    default: auto
     inputBinding:
       position: 101
       prefix: MODE=
@@ -97,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: 'Nucleic acid type: RNA or DNA'
-    default: RNA
     inputBinding:
       position: 101
       prefix: NA=
@@ -106,7 +98,6 @@ inputs:
       - 'null'
       - float
     doc: Na+ molar concentration
-    default: 1.0
     inputBinding:
       position: 101
       prefix: NA_CONC=
@@ -115,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: Percent optimality
-    default: 5
     inputBinding:
       position: 101
       prefix: P=
@@ -124,7 +114,6 @@ inputs:
       - 'null'
       - string
     doc: Reuse existing .sav file (NO/YES)
-    default: NO
     inputBinding:
       position: 101
       prefix: REUSE=
@@ -141,7 +130,6 @@ inputs:
       - 'null'
       - string
     doc: 'Run type: text or html'
-    default: text
     inputBinding:
       position: 101
       prefix: RUN_TYPE=
@@ -156,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: 5' base number
-    default: 1
     inputBinding:
       position: 101
       prefix: START=
@@ -165,7 +152,6 @@ inputs:
       - 'null'
       - string
     doc: 3' base number
-    default: end
     inputBinding:
       position: 101
       prefix: STOP=
@@ -174,7 +160,6 @@ inputs:
       - 'null'
       - float
     doc: Temperature in degrees C
-    default: 37.0
     inputBinding:
       position: 101
       prefix: T=

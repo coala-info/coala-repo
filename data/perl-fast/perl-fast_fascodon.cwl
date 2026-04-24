@@ -19,7 +19,6 @@ inputs:
       - string
     doc: Enumerate codons by the amino acids they encode. Determines which amino acids
       (codon families) will be analyzed and in what order.
-    default: ARNDCQEGHILKMFPSTWYV*
     inputBinding:
       position: 102
       prefix: --amino-order
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Use bases in [string] order to enumerate codons.
-    default: TCAG
     inputBinding:
       position: 102
       prefix: --base-order
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: Use alternative format for input.
-    default: fasta
     inputBinding:
       position: 102
       prefix: --format
@@ -95,7 +92,6 @@ inputs:
       - 'null'
       - string
     doc: Use [string] as the name of the logfile.
-    default: FAST.log.txt
     inputBinding:
       position: 102
       prefix: --logname

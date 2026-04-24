@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum allowed error rate for adapter matching.
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --error-rate
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of reads to keep after trimming.
-    default: 10
     inputBinding:
       position: 102
       prefix: --minimum-length
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum overlap required to consider a read as containing an adapter.
-    default: 3
     inputBinding:
       position: 102
       prefix: --overlap
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Phred quality score threshold for trimming.
-    default: 20
     inputBinding:
       position: 102
       prefix: --quality-threshold
@@ -74,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

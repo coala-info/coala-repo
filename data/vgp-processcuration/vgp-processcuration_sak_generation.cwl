@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: 'Haplotype use as Query for MashMap: Hap_1 or Hap_2 (Default Hap_2)'
-    default: Hap_2
     inputBinding:
       position: 101
       prefix: --query
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: 'Haplotype use as reference for MashMap: Hap_1 or Hap_2 (Default Hap_1)'
-    default: Hap_1
     inputBinding:
       position: 101
       prefix: --reference

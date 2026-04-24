@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Batch size for processing.
-    default: 65536
     inputBinding:
       position: 102
       prefix: --batch-size
@@ -53,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: Set log level.
-    default: WARN
     inputBinding:
       position: 102
       prefix: --log-level
@@ -63,7 +61,6 @@ inputs:
       - string
     doc: Whether to determine real vs non-real cells using Knee-finding ('knee')
       or Percentile-based method ('percentile').
-    default: knee
     inputBinding:
       position: 102
       prefix: --method
@@ -72,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use, 0 means autodetection.
-    default: 0
     inputBinding:
       position: 102
       prefix: --num-threads
@@ -82,7 +78,6 @@ inputs:
       - int
     doc: Percentile to use when calculating real vs non-real cells. This option 
       is only relevant when --method is set to 'percentile'.
-    default: 99
     inputBinding:
       position: 102
       prefix: --percentile
@@ -92,7 +87,6 @@ inputs:
       - string
     doc: Whether to determine real vs non-real cells by read count ('readcount')
       or UMI count ('umicount').
-    default: umicount
     inputBinding:
       position: 102
       prefix: --target

@@ -61,7 +61,6 @@ inputs:
       - string
     doc: 'Alternative to repeated -v/--verbose: set log level via key (error, warn,
       info, debug, trace)'
-    default: error
     inputBinding:
       position: 102
       prefix: --log-level
@@ -70,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Mark fusion groups involving > [arg] genes as low quality
-    default: 3
     inputBinding:
       position: 102
       prefix: --max-genes-in-event
@@ -80,7 +78,6 @@ inputs:
       - int
     doc: Assigns 'low confidence' to fusion calls spanning two genes below the readthrough
       threshold
-    default: 100000
     inputBinding:
       position: 102
       prefix: --max-readthrough
@@ -90,7 +87,6 @@ inputs:
       - int
     doc: Assigns 'low confidence' to fusion calls with the mean breakpoint distance
       is above the threshold
-    default: 1000
     inputBinding:
       position: 102
       prefix: --max-variability
@@ -100,7 +96,6 @@ inputs:
       - int
     doc: Real-cell filtering for single-cell data. Assigns 'low confidence' to fusion
       calls with read coverage below the minimum coverage threshold
-    default: 2
     inputBinding:
       position: 102
       prefix: --min-coverage
@@ -109,7 +104,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum fusion fraction relative to transcript count
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --min-fusion-fraction
@@ -118,7 +112,6 @@ inputs:
       - 'null'
       - string
     doc: 'Determine the minimum fusion quality to emit. Choices: LOW or MEDIUM'
-    default: MEDIUM
     inputBinding:
       position: 102
       prefix: --min-fusion-quality
@@ -128,7 +121,6 @@ inputs:
       - float
     doc: Remove breakpoint pairs from groups if they have gene alignments which fewer
       than [arg] reads in group have
-    default: 0.25
     inputBinding:
       position: 102
       prefix: --min-fusion-read-fraction
@@ -138,7 +130,6 @@ inputs:
       - float
     doc: Assigns 'low confidence' to fusion calls where the mean alignment identity
       is below the threshold
-    default: 0.93
     inputBinding:
       position: 102
       prefix: --min-mean-identity
@@ -148,7 +139,6 @@ inputs:
       - int
     doc: Assigns 'low confidence' to fusion calls where the mean mapq is below the
       threshold
-    default: 10
     inputBinding:
       position: 102
       prefix: --min-mean-mapq
@@ -157,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: Filter rarer events involving genes with high numbers of fusion partners
-    default: 8
     inputBinding:
       position: 102
       prefix: --prom-filter
@@ -174,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads. Defaults to available parallelism
-    default: 0
     inputBinding:
       position: 102
       prefix: --threads

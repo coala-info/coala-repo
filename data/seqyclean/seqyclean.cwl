@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length
-    default: 50
     inputBinding:
       position: 101
       prefix: --min-len
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum N content allowed
-    default: 1
     inputBinding:
       position: 101
       prefix: --n-content
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Quality score cutoff
-    default: 20
     inputBinding:
       position: 101
       prefix: --qual-cut
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

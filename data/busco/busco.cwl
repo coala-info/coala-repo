@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the number of threads/cores to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpu

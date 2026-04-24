@@ -27,7 +27,6 @@ inputs:
     doc: Specify this parameter to T in order to combine charge states with 
       peptide sequencesin peptide-centric search. Works only if 
       estimation-method = peptide-level.
-    default: false
     inputBinding:
       position: 102
       prefix: --combine-charge-states
@@ -38,7 +37,6 @@ inputs:
     doc: Specify this parameter to T in order to treat peptides carrying 
       different or no modifications as being the same. Works only if estimation 
       = peptide-level.
-    default: false
     inputBinding:
       position: 102
       prefix: --combine-modified-peptides
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: Specifies the prefix of the protein names that indicate a decoy.
-    default: decoy_
     inputBinding:
       position: 102
       prefix: --decoy-prefix
@@ -59,7 +56,6 @@ inputs:
       target-decoy competition apply to PSMs. The peptide-level option 
       eliminates any PSM for which there exists a better scoring PSM involving 
       the same peptide, and then uses decoys to assign confidence estimates.
-    default: tdc
     inputBinding:
       position: 102
       prefix: --estimation-method
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: The fileroot string will be added as a prefix to all output file names.
-    default: ''
     inputBinding:
       position: 102
       prefix: --fileroot
@@ -78,7 +73,6 @@ inputs:
       - boolean
     doc: Specify that the search results are provided as lists of files, rather 
       than as individual files.
-    default: false
     inputBinding:
       position: 102
       prefix: --list-of-files
@@ -87,7 +81,6 @@ inputs:
       - 'null'
       - Directory
     doc: The name of the directory where output files will be created.
-    default: crux-output
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -97,7 +90,6 @@ inputs:
       - boolean
     doc: Replace existing files if true or fail when trying to overwrite a file 
       if false.
-    default: false
     inputBinding:
       position: 102
       prefix: --overwrite
@@ -106,7 +98,6 @@ inputs:
       - 'null'
       - string
     doc: A file containing parameters.
-    default: ''
     inputBinding:
       position: 102
       prefix: --parameter-file
@@ -118,7 +109,6 @@ inputs:
       used as input to the q-value estimation procedure. If this parameter is 
       unspecified, then the program searches for "xcorr score", "evalue" 
       (comet), "exact p-value" score fields in this order in the input file.
-    default: ''
     inputBinding:
       position: 102
       prefix: --score
@@ -130,7 +120,6 @@ inputs:
       column in the output file. Note that this adjustment only makes sense if 
       the given scores are p-values, and that it requires the presence of the 
       "distinct matches/spectrum" feature for each PSM.
-    default: false
     inputBinding:
       position: 102
       prefix: --sidak
@@ -141,7 +130,6 @@ inputs:
     doc: Specify the maximum rank to allow when parsing results files. Matches 
       with ranks higher than this value will be ignored (a value of zero allows 
       matches with any rank).
-    default: 0
     inputBinding:
       position: 102
       prefix: --top-match-in
@@ -153,7 +141,6 @@ inputs:
       messages, including all those at lower verbosity levels: 0-fatal errors, 10-non-fatal
       errors, 20-warnings, 30-information on the progress of execution, 40-more progress
       information, 50-debug info, 60-detailed debug info.'
-    default: 30
     inputBinding:
       position: 102
       prefix: --verbosity

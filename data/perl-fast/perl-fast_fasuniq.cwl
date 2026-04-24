@@ -26,7 +26,6 @@ inputs:
       - string
     doc: Concatenate identifiers of repeated sequences in output. Use delimiter [string]
       to concatenate identifiers. If none given, default is ":"
-    default: ':'
     inputBinding:
       position: 102
       prefix: --concat
@@ -60,7 +59,6 @@ inputs:
       - string
     doc: Use alternative format for input. See man page for "fasconvert" for allowed
       formats.
-    default: fasta
     inputBinding:
       position: 102
       prefix: --format
@@ -94,7 +92,6 @@ inputs:
       - 'null'
       - string
     doc: Use [string] as the name of the logfile.
-    default: FAST.log.txt
     inputBinding:
       position: 102
       prefix: --logname

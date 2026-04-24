@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: min match
-    default: 31
     inputBinding:
       position: 102
       prefix: -l
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: min merge length
-    default: 0
     inputBinding:
       position: 102
       prefix: -m
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: -t

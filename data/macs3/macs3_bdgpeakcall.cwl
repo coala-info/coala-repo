@@ -13,7 +13,6 @@ inputs:
     doc: 'Cutoff depends on which method you used for score track. If the file contains
       pvalue scores from MACS3, score 5 means pvalue 1e-5. Regions with signals lower
       than cutoff will not be considerred as enriched regions. DEFAULT: 5'
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --cutoff
@@ -24,7 +23,6 @@ inputs:
     doc: While set, bdgpeakcall will analyze number or total length of peaks 
       that can be called by different cutoff then output a summary table to help
       user decide a better cutoff.
-    default: false
     inputBinding:
       position: 101
       prefix: --cutoff-analysis
@@ -34,7 +32,6 @@ inputs:
       - float
     doc: 'The maximum cutoff score for performing cutoff analysis. Together with --cutoff-analysis-steps,
       the resolution in the final report can be controlled. DEFAULT: 100'
-    default: 100.0
     inputBinding:
       position: 101
       prefix: --cutoff-analysis-max
@@ -45,7 +42,6 @@ inputs:
     doc: 'Steps for performing cutoff analysis. It will be used to decide which cutoff
       value should be included in the final report. Larger the value, higher resolution
       the cutoff analysis can be. DEFAULT: 100'
-    default: 100
     inputBinding:
       position: 101
       prefix: --cutoff-analysis-steps
@@ -61,7 +57,6 @@ inputs:
       - int
     doc: 'maximum gap between significant points in a peak, better to set it as tag
       size. DEFAULT: 30'
-    default: 30
     inputBinding:
       position: 101
       prefix: --max-gap
@@ -70,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum length of peak, better to set it as d value. DEFAULT: 200'
-    default: 200
     inputBinding:
       position: 101
       prefix: --min-length

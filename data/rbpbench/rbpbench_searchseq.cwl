@@ -10,7 +10,6 @@ inputs:
       - float
     doc: 'CMSEARCH bit score threshold (CMSEARCH options: -T --incT). The higher the
       more strict'
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --cmsearch-bs
@@ -21,7 +20,6 @@ inputs:
     doc: 'Set CMSEARCH mode to control strictness of filtering. 1: default setting
       (CMSEARCH option: --default). 2: max setting (CMSEARCH option: --max), i.e.,
       turn all heuristic filters off, slower and more sensitive / more hits)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --cmsearch-mode
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: Set ID/name for provided custom motif database via --custom-db
-    default: custom
     inputBinding:
       position: 101
       prefix: --custom-db-id
@@ -97,7 +94,6 @@ inputs:
       2: use frequencies from human ENSEMBL transcripts (including introns, resulting
       in lower G+C and T most prominent) 3: use uniform frequencies (same for every
       nucleotide)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --fimo-ntf-mode
@@ -106,7 +102,6 @@ inputs:
       - 'null'
       - float
     doc: 'FIMO p-value threshold (FIMO option: --thresh)'
-    default: 0.0005
     inputBinding:
       position: 101
       prefix: --fimo-pval
@@ -138,7 +133,6 @@ inputs:
       - 'null'
       - string
     doc: Constant header ID part used if --make-uniq-headers set
-    default: seq
     inputBinding:
       position: 101
       prefix: --header-id
@@ -211,7 +205,6 @@ inputs:
       "catrapid_omics_v2.1_human_6plus_ext"), 2: human RBP motifs + 23 ucRBP motifs
       (277 RBPs, 622 motifs, "catrapid_omics_v2.1_human_6plus_ext_ucrbps"), 3: human
       RBP motifs from Ray et al. 2013 (80 RBPs, 102 motifs, "ray2013_human_rbps_rnacompete")'
-    default: 1
     inputBinding:
       position: 101
       prefix: --motif-db
@@ -294,7 +287,6 @@ inputs:
       web version link and plotly plot codes into main HTML. 6: put local version
       link and plotly plot codes in main HTML. 7: put plotly js and plotly plot codes
       into main HTML!'
-    default: 1
     inputBinding:
       position: 101
       prefix: --plotly-js-mode
@@ -313,7 +305,6 @@ inputs:
       - int
     doc: Set k-mer size k for k-mer profiles, output in addition to hit profiles
       in HTML report
-    default: 5
     inputBinding:
       position: 101
       prefix: --profiles-k
@@ -323,7 +314,6 @@ inputs:
       - int
     doc: 'Define on which hit level to generate motif hit profile. 1: on RBP hit level
       (merging all motif hits for one RBP). 2: on individual motif level'
-    default: 1
     inputBinding:
       position: 101
       prefix: --profiles-level
@@ -333,7 +323,6 @@ inputs:
       - int
     doc: 'Define how to normalize RBP/motif hit counts included in hit profile. 1:
       use hits per 1000 nt. 2: set 1 if hits present and 0 if no hits on sequence'
-    default: 1
     inputBinding:
       position: 101
       prefix: --profiles-norm
@@ -354,7 +343,6 @@ inputs:
     doc: Set top n similar sequences (similar to --profiles-seq-id sequence, 
       using cosine similarity and euclidean distance) to be reported in HTML 
       report (--profiles-seq-id needs to be set)
-    default: 20
     inputBinding:
       position: 101
       prefix: --profiles-top-n
@@ -384,7 +372,6 @@ inputs:
       - 'null'
       - string
     doc: Set regex ID used as RBP ID and database ID associated to -regex hits
-    default: regex
     inputBinding:
       position: 101
       prefix: --regex-id
@@ -394,7 +381,6 @@ inputs:
       - float
     doc: Maximum GU (GT) base pair fraction to report structure pattern regex 
       hits
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --regex-max-gu
@@ -403,7 +389,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum GC base pair fraction to report structure pattern regex hits
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --regex-min-gc
@@ -415,7 +400,6 @@ inputs:
       motif hit start position, 2: when motif hit encountered, continue +1 after motif
       hit end position. NOTE that structure pattern regex currently always uses mode
       1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --regex-search-mode
@@ -424,7 +408,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum spacer length for structure pattern regex search
-    default: 200
     inputBinding:
       position: 101
       prefix: --regex-spacer-max
@@ -433,7 +416,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum spacer length for structure pattern regex search
-    default: 5
     inputBinding:
       position: 101
       prefix: --regex-spacer-min
@@ -444,7 +426,6 @@ inputs:
     doc: 'Set type of supplied --regex string 1: auto-detect type (standard regex
       or structure pattern). 2: given --regex string is standard regex, e.g. AC[AG]T.
       3: given --regex string is structure pattern string, e.g. ((AA(((...)))AA))'
-    default: 1
     inputBinding:
       position: 101
       prefix: --regex-type
@@ -454,7 +435,6 @@ inputs:
       - int
     doc: 'Define how to provide sorttable.js file. 1: link to packaged .js file. 2:
       copy .js file to plots output folder. 3: include .js code in HTML'
-    default: 1
     inputBinding:
       position: 101
       prefix: --sort-js-mode
@@ -464,7 +444,6 @@ inputs:
       - int
     doc: Set top n matched sequences to be displayed in motif hit statistics 
       HTML report (create via --plot-motifs)
-    default: 10
     inputBinding:
       position: 101
       prefix: --top-n-matched

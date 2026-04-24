@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: bloom filter size in GB
-    default: 4
     inputBinding:
       position: 104
       prefix: -b
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: expected sample error rate
-    default: 0.001
     inputBinding:
       position: 104
       prefix: -e
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: a priori frequency key in the INFO column of the input VCF
-    default: AF
     inputBinding:
       position: 104
       prefix: -f
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: run MALVA in haploid mode
-    default: false
     inputBinding:
       position: 104
       prefix: '-1'
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: size of the kmers to index
-    default: 35
     inputBinding:
       position: 104
       prefix: -k
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: maximum coverage for variant alleles
-    default: 200
     inputBinding:
       position: 104
       prefix: -c
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: max amount of RAM in GB - KMC parameter
-    default: 4
     inputBinding:
       position: 104
       prefix: -m
@@ -87,7 +80,6 @@ inputs:
       - 'null'
       - boolean
     doc: output COVS and GTS in INFO column
-    default: false
     inputBinding:
       position: 104
       prefix: -v
@@ -96,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: size of the reference kmers to index
-    default: 43
     inputBinding:
       position: 104
       prefix: -r
@@ -106,7 +97,6 @@ inputs:
       - File
     doc: file containing the list of (VCF) samples to consider (default:-, i.e. 
       all samples)
-    default: '-'
     inputBinding:
       position: 104
       prefix: -s
@@ -115,7 +105,6 @@ inputs:
       - 'null'
       - boolean
     doc: strip "chr" from sequence names
-    default: false
     inputBinding:
       position: 104
       prefix: -p
@@ -124,7 +113,6 @@ inputs:
       - 'null'
       - boolean
     doc: use uniform a priori probabilities
-    default: false
     inputBinding:
       position: 104
       prefix: -u

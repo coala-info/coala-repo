@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum difference percentage allowed in the overlap
-    default: 8
     inputBinding:
       position: 104
       prefix: -p
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum overlap length
-    default: 6
     inputBinding:
       position: 104
       prefix: -m

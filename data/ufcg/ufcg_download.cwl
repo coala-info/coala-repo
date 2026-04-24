@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - Directory
     doc: Download directory
-    default: auto
     inputBinding:
       position: 101
       prefix: -d

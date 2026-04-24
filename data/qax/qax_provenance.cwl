@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: Font name for the PDF
-    default: Arial
     inputBinding:
       position: 102
       prefix: --font

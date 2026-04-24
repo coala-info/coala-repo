@@ -63,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum depth of coverage allowed on variants
-    default: 2147483647
     inputBinding:
       position: 101
       prefix: --max-covg
@@ -82,7 +81,6 @@ inputs:
     doc: "Minimum allele frequency to call variants\n          \n          If an alternate
       allele has at least this fraction of the depth, a minor resistance (\"r\") prediction
       is made. Set to 1 to disable. If --illumina is passed, the default is 0.1"
-    default: 1
     inputBinding:
       position: 101
       prefix: --maf
@@ -91,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth of coverage allowed on variants
-    default: 3
     inputBinding:
       position: 101
       prefix: --min-covg
@@ -100,7 +97,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum genotype confidence (GT_CONF) score allow on variants
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-gt-conf
@@ -110,7 +106,6 @@ inputs:
       - float
     doc: "Minimum fraction of read support\n          \n          For example, setting
       to 0.9 requires >=90% of coverage for the variant to be on the called allele"
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-frs
@@ -121,7 +116,6 @@ inputs:
     doc: "Minimum strand bias ratio allowed on variants\n          \n          For
       example, setting to 0.25 requires >=25% of total (allele) coverage on both strands
       for an allele."
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --min-strand-bias
@@ -130,7 +124,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to place output
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir
@@ -157,7 +150,6 @@ inputs:
       - int
     doc: "Maximum number of threads to use\n          \n          Use 0 to select
       the number automatically"
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

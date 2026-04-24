@@ -76,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: options for sort command
-    default: 1G
     inputBinding:
       position: 104
       prefix: --sort_option

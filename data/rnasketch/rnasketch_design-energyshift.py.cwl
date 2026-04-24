@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Timeout value of graph construction in seconds.
-    default: infinite
     inputBinding:
       position: 101
       prefix: --kill
@@ -67,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: 'Chose the objective function: 1 for abs differences and 2 for squared'
-    default: 1
     inputBinding:
       position: 101
       prefix: --objective
@@ -76,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: 'Chose the calculation package: hotknots, pkiss, nupack, or vrna/ViennaRNA'
-    default: vrna/ViennaRNA
     inputBinding:
       position: 101
       prefix: --package

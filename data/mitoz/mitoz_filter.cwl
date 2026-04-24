@@ -14,7 +14,6 @@ inputs:
       float2 Gbp, otherwise MitoZ will stop to run. When only float1 is set, 
       float2 is assumed to be 0. Set float1 to be 0 if you want to use ALL raw 
       data.
-    default: 5,0
     inputBinding:
       position: 101
       prefix: --data_size_for_mt_assembly
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: read length of fastq reads, used to split clean fastq files.
-    default: 150
     inputBinding:
       position: 101
       prefix: --fastq_read_length
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: other parar.
-    default: ''
     inputBinding:
       position: 101
       prefix: --filter_other_para
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: output prefix
-    default: out
     inputBinding:
       position: 101
       prefix: --outprefix
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - boolean
     doc: Are the fastq phred64 encoded?
-    default: false
     inputBinding:
       position: 101
       prefix: --phred64
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: thread number
-    default: 4
     inputBinding:
       position: 101
       prefix: --thread_number
@@ -82,7 +76,6 @@ inputs:
       - 'null'
       - Directory
     doc: working directory
-    default: ./
     inputBinding:
       position: 101
       prefix: --workdir
@@ -91,7 +84,6 @@ inputs:
       - 'null'
       - Directory
     doc: done directory
-    default: ./done
     inputBinding:
       position: 101
       prefix: --workdir_done
@@ -100,7 +92,6 @@ inputs:
       - 'null'
       - Directory
     doc: log directory
-    default: ./log
     inputBinding:
       position: 101
       prefix: --workdir_log

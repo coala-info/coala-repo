@@ -12,7 +12,6 @@ inputs:
       - string
     doc: lines starting with commment-character will be ignored. if your header row
       starts with '#', please assign "-C" another rare symbol, e.g. '$'
-    default: '#'
     inputBinding:
       position: 101
       prefix: --comment-char
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: charactor of cross
-    default: +
     inputBinding:
       position: 101
       prefix: --cross
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: delimiting character of the input CSV file
-    default: ','
     inputBinding:
       position: 101
       prefix: --delimiter
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: charactor of separator between header row and data rowws
-    default: '='
     inputBinding:
       position: 101
       prefix: --header
@@ -56,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: charactor of horizontal border
-    default: '-'
     inputBinding:
       position: 101
       prefix: --horizontal-border
@@ -108,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs to use
-    default: 4
     inputBinding:
       position: 101
       prefix: --num-cpus
@@ -117,7 +111,6 @@ inputs:
       - 'null'
       - string
     doc: delimiting character of the output CSV file, e.g., -D $'\t' for tab
-    default: ','
     inputBinding:
       position: 101
       prefix: --out-delimiter
@@ -134,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: charactor of padding
-    default: ' '
     inputBinding:
       position: 101
       prefix: --padding
@@ -167,7 +159,6 @@ inputs:
       - 'null'
       - string
     doc: charactor of vertical border
-    default: '|'
     inputBinding:
       position: 101
       prefix: --vertical-border

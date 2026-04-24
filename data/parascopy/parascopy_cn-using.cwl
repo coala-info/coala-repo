@@ -108,7 +108,6 @@ inputs:
       - 'null'
       - string
     doc: 'Rerun CN analysis for all loci: full, partial, or none.'
-    default: none
     inputBinding:
       position: 102
       prefix: --rerun
@@ -117,7 +116,6 @@ inputs:
       - 'null'
       - string
     doc: Path to samtools executable. Use python wrapper if "none".
-    default: samtools
     inputBinding:
       position: 102
       prefix: --samtools
@@ -151,7 +149,6 @@ inputs:
       - 'null'
       - string
     doc: Path to "tabix" executable. Use "none" to skip indexing output files.
-    default: tabix
     inputBinding:
       position: 102
       prefix: --tabix
@@ -166,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: Number of available threads.
-    default: 4
     inputBinding:
       position: 102
       prefix: --threads
@@ -184,7 +180,6 @@ inputs:
       - 'null'
       - float
     doc: At most this fraction of region sequence can be unknown (N).
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --unknown-seq
@@ -193,7 +188,6 @@ inputs:
       - 'null'
       - float
     doc: Update agCN using psCN probabilities when agCN quality is less than <float>.
-    default: 40
     inputBinding:
       position: 102
       prefix: --update-agcn

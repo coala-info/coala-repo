@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - File
     doc: Path to a SeqNado config YAML
-    default: config_<ASSAY>.yaml
     inputBinding:
       position: 102
       prefix: --configfile
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Snakemake job profile preset.
-    default: le
     inputBinding:
       position: 102
       prefix: --preset
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: Slurm queue/partition for the `ss` preset.
-    default: short
     inputBinding:
       position: 102
       prefix: --queue
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - float
     doc: 'Scale memory/time (env: SCALE_RESOURCES).'
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --scale-resources

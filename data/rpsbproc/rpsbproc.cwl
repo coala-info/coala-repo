@@ -21,7 +21,6 @@ inputs:
       - string
     doc: Select redundancy level of domain hit data. Valid options are "rep" 
       (concise), "std"(standard) and "full" (all hits). Default to "rep"
-    default: rep
     inputBinding:
       position: 101
       prefix: --data-mode
@@ -48,7 +47,6 @@ inputs:
       - float
     doc: EValue cut-off. Program will only process hits with evalues better than
       this value.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --evalue
@@ -84,7 +82,6 @@ inputs:
       - string
     doc: 'Target data: Select desired (target) data. Valid options are "doms", "feats"
       or "both". . If omitted, default to "both"'
-    default: both
     inputBinding:
       position: 101
       prefix: --target-data

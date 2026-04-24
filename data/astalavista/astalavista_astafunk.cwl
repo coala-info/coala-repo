@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: Log level (NONE|INFO|ERROR|DEBUG)
-    default: INFO
     inputBinding:
       position: 101
       prefix: --log
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of threads to use.
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: Select a tool
-    default: astalavista
     inputBinding:
       position: 101
       prefix: --tool

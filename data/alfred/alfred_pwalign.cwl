@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: output format [v|h]
-    default: h
     inputBinding:
       position: 103
       prefix: --format
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: gap extension
-    default: -1
     inputBinding:
       position: 103
       prefix: --gapext
@@ -63,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: gap open
-    default: -10
     inputBinding:
       position: 103
       prefix: --gapopen
@@ -80,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: match
-    default: 5
     inputBinding:
       position: 103
       prefix: --match
@@ -89,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: mismatch
-    default: -4
     inputBinding:
       position: 103
       prefix: --mismatch

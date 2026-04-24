@@ -76,7 +76,6 @@ inputs:
       If at least one RGP is considered incomplete, which occurs when it is located
       at the border of a contig,the 'min_grr' mode is used. Otherwise, the 'max_grr'
       mode is applied."
-    default: incomplete_aware_grr
     inputBinding:
       position: 101
       prefix: --grr_metric

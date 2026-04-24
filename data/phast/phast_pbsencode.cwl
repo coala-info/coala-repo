@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: 'Alphabet of the PSSM (DNA, RNA, or PROTEIN). Default: DNA.'
-    default: DNA
     inputBinding:
       position: 102
       prefix: --alphabet
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: 'Pseudo-count to add to each entry in the PSSM. Default: 0.01.'
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --pseudo-count

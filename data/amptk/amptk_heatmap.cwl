@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: Annotate heatmap with values
-    default: false
     inputBinding:
       position: 101
       prefix: --annotate
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Cluster columns
-    default: false
     inputBinding:
       position: 101
       prefix: --cluster_columns
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Clustering method for clustermap
-    default: single
     inputBinding:
       position: 101
       prefix: --cluster_method
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Color palette
-    default: gist_gray_r
     inputBinding:
       position: 101
       prefix: --color
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print the data table to terminal
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -55,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: Input file (csv)
-    default: tsv
     inputBinding:
       position: 101
       prefix: --delimiter
@@ -64,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: Distance metric for clustermap
-    default: braycurtis
     inputBinding:
       position: 101
       prefix: --distance_metric
@@ -73,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: Figure size (3x5, 2x10, etc)
-    default: 2x8
     inputBinding:
       position: 101
       prefix: --figsize
@@ -82,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Font set
-    default: arial
     inputBinding:
       position: 101
       prefix: --font
@@ -91,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: format to save image in
-    default: pdf
     inputBinding:
       position: 101
       prefix: --format
@@ -106,7 +96,6 @@ inputs:
       - 'null'
       - string
     doc: Type of heatmap
-    default: clustermap
     inputBinding:
       position: 101
       prefix: --method
@@ -115,7 +104,6 @@ inputs:
       - 'null'
       - string
     doc: Normalize data to pct of total, tsv sample ID<tab>reads
-    default: None
     inputBinding:
       position: 101
       prefix: --normalize
@@ -124,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: Value to normalize read counts to
-    default: 100000
     inputBinding:
       position: 101
       prefix: --normalize_counts
@@ -133,7 +120,6 @@ inputs:
       - 'null'
       - string
     doc: Scale the data by row
-    default: None
     inputBinding:
       position: 101
       prefix: --scaling
@@ -142,7 +128,6 @@ inputs:
       - 'null'
       - string
     doc: Max value for heatmap
-    default: None
     inputBinding:
       position: 101
       prefix: --vmax
@@ -151,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: Font size for x-axis
-    default: 6
     inputBinding:
       position: 101
       prefix: --xaxis_fontsize
@@ -160,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: Font size for y-axis
-    default: 6
     inputBinding:
       position: 101
       prefix: --yaxis_fontsize

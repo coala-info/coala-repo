@@ -63,7 +63,6 @@ inputs:
       - 'null'
       - float
     doc: Score value for missing data
-    default: 30.0
     inputBinding:
       position: 101
       prefix: --score_n

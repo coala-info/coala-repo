@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bootstrap samples
-    default: 50
     inputBinding:
       position: 105
       prefix: --bootstrap
@@ -65,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: Strand specific reads
-    default: none
     inputBinding:
       position: 105
       prefix: --stranded
@@ -74,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 105
       prefix: --thread

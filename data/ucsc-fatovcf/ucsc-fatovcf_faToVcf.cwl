@@ -84,7 +84,6 @@ inputs:
       - int
     doc: 'When -windowSize is provided, mask any base for which there are at least
       this many N, ambiguous or gap characters within the window. (default: 2)'
-    default: 2
     inputBinding:
       position: 102
       prefix: -minAmbigInWindow

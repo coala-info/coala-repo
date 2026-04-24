@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use intersection mode (default union).
-    default: false
     inputBinding:
       position: 102
       prefix: -i
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use reversals on the same unor. component (default false).
-    default: false
     inputBinding:
       position: 102
       prefix: -c

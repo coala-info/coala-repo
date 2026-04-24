@@ -45,7 +45,6 @@ inputs:
       - boolean
     doc: Add adapters to the ends of probes; to specify adapter sequences, use 
       --adapter-a and --adapter-b
-    default: false
     inputBinding:
       position: 102
       prefix: --add-adapters
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add to the output the reverse complement of each probe
-    default: false
     inputBinding:
       position: 102
       prefix: --add-reverse-complements
@@ -86,7 +84,6 @@ inputs:
       one group. Therefore, genomes will not be grouped as specified in the 
       input and sequences will not be grouped by genome, and differential 
       identification is not supported
-    default: 0.15
     inputBinding:
       position: 102
       prefix: --cluster-and-design-separately
@@ -106,7 +103,6 @@ inputs:
       performance and the heuristic does not always make the right choice, so 
       trying both choices 'simple' and 'hierarchical' can sometimes be helpful 
       if needed.
-    default: choose
     inputBinding:
       position: 102
       prefix: --cluster-and-design-separately-method
@@ -120,7 +116,6 @@ inputs:
       probes for different fragments can be designed separately. Values should 
       generally be around 50,000. For this to be used, 
       --cluster-and-design-separately must also be set.
-    default: 50000
     inputBinding:
       position: 102
       prefix: --cluster-from-fragments
@@ -135,7 +130,6 @@ inputs:
       fragment that includes the region targeted by the probe, along with 
       surrounding portions of the sequence. Increasing its value should reduce 
       the number of probes required to achieve the desired coverage.
-    default: 50
     inputBinding:
       position: 102
       prefix: --cover-extension
@@ -147,7 +141,6 @@ inputs:
       genome that must be covered by the selected probes; if this is an int > 1,
       it gives the number of bp of each target genome that must be covered by 
       the selected probes
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --coverage
@@ -199,7 +192,6 @@ inputs:
       - 'null'
       - boolean
     doc: Debug output
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -214,7 +206,6 @@ inputs:
       number of 'N' bases in a probe. If followed by a command- line argument 
       (INT), this only expands at most INT randomly selected N bases, and the 
       rest are replaced with random unambiguous bases (default INT is 3).
-    default: 3
     inputBinding:
       position: 102
       prefix: --expand-n
@@ -290,7 +281,6 @@ inputs:
       MISMATCHES (~0, 1, or 2). Values of FILTER_WITH_LSH_MINHASH above ~0.7 may
       start to require significant memory and runtime for near-duplicate 
       detection and are usually not recommended.
-    default: 0.6
     inputBinding:
       position: 102
       prefix: --filter-with-lsh-minhash
@@ -301,7 +291,6 @@ inputs:
     doc: Design probes meant to make it possible to identify nucleic acid from a
       particular input dataset against the other datasets; when set, the 
       coverage should generally be small
-    default: false
     inputBinding:
       position: 102
       prefix: -i
@@ -313,7 +302,6 @@ inputs:
       be an exact match (i.e., no mismatches) of length at least 
       ISLAND_OF_EXACT_MATCH nt between a portion of the probe and a portion of 
       the sequence
-    default: 0
     inputBinding:
       position: 102
       prefix: --island-of-exact-match
@@ -325,7 +313,6 @@ inputs:
       than ISLAND_OF_ EXACT_MATCH. Allows for capturing more possible 
       hybridizations (i.e., more sensitivity) when designing probes for 
       identification or when genomes are avoided.
-    default: 0
     inputBinding:
       position: 102
       prefix: --island-of-exact-match-tolerant
@@ -404,7 +391,6 @@ inputs:
       - int
     doc: Allow for MISMATCHES mismatches when determining whether a probe covers
       a sequence
-    default: 5
     inputBinding:
       position: 102
       prefix: --mismatches
@@ -441,7 +427,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print analysis of the probe set's coverage
-    default: false
     inputBinding:
       position: 102
       prefix: --print-analysis
@@ -450,7 +435,6 @@ inputs:
       - 'null'
       - int
     doc: Make probes be PROBE_LENGTH nt long
-    default: 100
     inputBinding:
       position: 102
       prefix: --probe-length
@@ -460,7 +444,6 @@ inputs:
       - int
     doc: Generate candidate probes from the input that are separated by 
       PROBE_STRIDE nt
-    default: 50
     inputBinding:
       position: 102
       prefix: --probe-stride
@@ -471,7 +454,6 @@ inputs:
     doc: Skip the set cover filter; this is useful when we wish to see the 
       probes generated from only the duplicate and reverse complement filters, 
       to gauge the effects of the set cover filter
-    default: false
     inputBinding:
       position: 102
       prefix: --skip-set-cover
@@ -516,7 +498,6 @@ inputs:
       this may result in substantial memory usage; but it may provide an 
       improvement in runtime when there are relatively few candidate probes and 
       a very large avoided genomes input
-    default: false
     inputBinding:
       position: 102
       prefix: --use-native-dict-when-finding-tolerant-coverage
@@ -525,7 +506,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose output
-    default: false
     inputBinding:
       position: 102
       prefix: --verbose

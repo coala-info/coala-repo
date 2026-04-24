@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size. [8, 63].
-    default: 31
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: minimum abundance to keep a k-mer.
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-abundance
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of samples from which a k-mer should be absent. [0.0, 1.0]
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min-frac-absent
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of samples in which a k-mer should be present. [0.0, 1.0]
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min-frac-present
@@ -79,7 +75,6 @@ inputs:
       - float
     doc: minimum number of samples from which a k-mer should be absent 
       (overrides -f).
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-nb-absent
@@ -89,7 +84,6 @@ inputs:
       - float
     doc: minimum number of samples in which a k-mer should be present (overrides
       -F).
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-nb-present
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - string
     doc: minimum unitig length.
-    default: 2k-1
     inputBinding:
       position: 101
       prefix: --min-unitig-length
@@ -107,7 +100,6 @@ inputs:
       - 'null'
       - float
     doc: minimum k-mer fraction to set unitig average abundance [0,1].
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min-utg-frac
@@ -116,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: minimizer size. [4, 15].
-    default: 15
     inputBinding:
       position: 101
       prefix: --mini-size
@@ -133,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads.
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

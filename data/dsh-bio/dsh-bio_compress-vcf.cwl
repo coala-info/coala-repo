@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: input VCF path, default stdin
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input-vcf-path

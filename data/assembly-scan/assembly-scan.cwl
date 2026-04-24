@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: ID to use for output
-    default: basename of assembly
     inputBinding:
       position: 102
       prefix: --prefix

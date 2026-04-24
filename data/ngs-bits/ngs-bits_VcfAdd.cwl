@@ -12,7 +12,6 @@ inputs:
       - string
     doc: Description used in the filter header - use underscore instead of 
       spaces.
-    default: ''
     inputBinding:
       position: 101
       prefix: -filter_desc
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: Tag variants from all but the first input file with this filter entry.
-    default: ''
     inputBinding:
       position: 101
       prefix: -filter
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip variants if they occur more than once.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -skip_duplicates

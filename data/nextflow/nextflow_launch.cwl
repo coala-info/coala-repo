@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: Compute environment name
-    default: primary
     inputBinding:
       position: 102
       prefix: -compute-env

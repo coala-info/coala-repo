@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL).'
-    default: WARN
     inputBinding:
       position: 103
       prefix: --log-level
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of insert gaps per 20 bp window.
-    default: 5
     inputBinding:
       position: 103
       prefix: --max-insert-gaps
@@ -63,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum insert lengths difference.
-    default: 50
     inputBinding:
       position: 103
       prefix: --max-insert-length-diff
@@ -72,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of missing flanking bases on either insert side.
-    default: 5
     inputBinding:
       position: 103
       prefix: --max-insert-pad
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of mismatches between tags.
-    default: 1
     inputBinding:
       position: 103
       prefix: --max-tag-mismatches
@@ -90,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Tags may be shifted by at maximum of N bases.
-    default: 1
     inputBinding:
       position: 103
       prefix: --max-tag-shift
@@ -99,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum insert alignment concordance in %.
-    default: 97
     inputBinding:
       position: 103
       prefix: --min-concordance-perc
@@ -108,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use, 0 means autodetection.
-    default: 0
     inputBinding:
       position: 103
       prefix: --num-threads
@@ -117,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of input reads used for POA consensus.
-    default: 10
     inputBinding:
       position: 103
       prefix: --poa-cov

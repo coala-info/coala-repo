@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: the target mask type to be run
-    default: maxone
     inputBinding:
       position: 102
       prefix: -t

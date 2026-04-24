@@ -70,7 +70,6 @@ inputs:
       to it (default)\n    error: exception will be raised. This means you will have
       to edit the file yourself to fix the duplicated IDs\n    skip: ignore duplicates,
       emitting a warning\n    replace: keep last duplicate"
-    default: append
     inputBinding:
       position: 103
       prefix: -m

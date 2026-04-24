@@ -11,7 +11,6 @@ inputs:
       - type: array
         items: File
     doc: Input pod5 file(s) to view
-    default: None
     inputBinding:
       position: 1
   - id: exclude
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Exclude a double-quoted comma-separated list of fields.
-    default: None
     inputBinding:
       position: 102
       prefix: --exclude
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite destination files
-    default: false
     inputBinding:
       position: 102
       prefix: --force-overwrite
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only write 'read_id' field
-    default: false
     inputBinding:
       position: 102
       prefix: --ids
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Include a double-quoted comma-separated list of fields
-    default: None
     inputBinding:
       position: 102
       prefix: --include
@@ -55,7 +50,6 @@ inputs:
       - 'null'
       - boolean
     doc: List all groups and fields available for selection and exit
-    default: false
     inputBinding:
       position: 102
       prefix: --list-fields
@@ -64,7 +58,6 @@ inputs:
       - 'null'
       - boolean
     doc: Omit the header line
-    default: false
     inputBinding:
       position: 102
       prefix: --no-header
@@ -73,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: Search for input files recursively matching `*.pod5`
-    default: false
     inputBinding:
       position: 102
       prefix: --recursive
@@ -82,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Table separator character (e.g. ',')
-    default: ''
     inputBinding:
       position: 102
       prefix: --separator
@@ -91,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Set the number of reader workers
-    default: 4
     inputBinding:
       position: 102
       prefix: --threads

@@ -96,7 +96,6 @@ inputs:
       - string
     doc: "Rerun mode [none]. Rerun everything (all); do not rerun\n              \
       \                read mapping (part); do not rerun (none)."
-    default: none
     inputBinding:
       position: 101
       prefix: --rerun
@@ -108,7 +107,6 @@ inputs:
       : short-read sequencing,\n                                hifi         : PacBio
       HiFi,\n                              pb  | pacbio   : PacBio CLR,\n        \
       \                      ont | nanopore : Oxford Nanopore."
-    default: illumina
     inputBinding:
       position: 101
       prefix: --tech
@@ -117,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads

@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: How many bootstraps do you want to run
-    default: 20
     inputBinding:
       position: 101
       prefix: --number
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Separate by first entry in Pan-SN spec
-    default: "\n"
     inputBinding:
       position: 101
       prefix: --pansn
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

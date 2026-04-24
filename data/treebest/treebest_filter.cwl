@@ -48,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: quality cut-off
-    default: '15'
     inputBinding:
       position: 102
       prefix: -F

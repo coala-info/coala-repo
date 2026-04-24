@@ -22,7 +22,6 @@ inputs:
       - string
     doc: Proportion of aligned transcript distribution breakpoints (specified 
       with x,y,z...)
-    default: 0,0.2,0.4,0.6,0.8,0.85,0.9,0.95,1
     inputBinding:
       position: 103
       prefix: -A
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: Alignment proportion threshold for structural inconsistency detection
-    default: 0.9
     inputBinding:
       position: 103
       prefix: -M
@@ -41,7 +39,6 @@ inputs:
       - string
     doc: Barplot colors (quoted hexadecimal codes or R color names, specified 
       with x,y,z...)
-    default: adjusted YlOrRd palette from RColorBrewer package
     inputBinding:
       position: 103
       prefix: -b
@@ -51,7 +48,6 @@ inputs:
       - string
     doc: Common element set relative length distribution breakpoints (specified 
       with x,y,z...)
-    default: 0,0.2,0.4,0.6,0.8,0.85,0.9,0.95,1
     inputBinding:
       position: 103
       prefix: -R
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - Directory
     doc: Comparison output directory name
-    default: CATS_rb_comparison
     inputBinding:
       position: 103
       prefix: -D
@@ -70,7 +65,6 @@ inputs:
       - string
     doc: Proportion of element sets covered by a GTF set distribution 
       breakpoints (specified with x,y,z...)
-    default: 0,0.2,0.4,0.6,0.8,0.85,0.9,0.95,1
     inputBinding:
       position: 103
       prefix: -s
@@ -80,7 +74,6 @@ inputs:
       - string
     doc: Exon set genomic location plot colors (quoted hexadecimal codes or R 
       color names, specified with x,y,z...)
-    default: adjusted Set1 palette from RColorBrewer package
     inputBinding:
       position: 103
       prefix: -n
@@ -89,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Figure DPI
-    default: 600
     inputBinding:
       position: 103
       prefix: -d
@@ -98,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: Figure extension
-    default: png
     inputBinding:
       position: 103
       prefix: -x
@@ -116,7 +107,6 @@ inputs:
       - string
     doc: Hierarchical clustering heatmap colors (quoted hexadecimal codes or R 
       color names, specified with x,y,z...)
-    default: adjusted YlOrRd palette from RColorBrewer package
     inputBinding:
       position: 103
       prefix: -c
@@ -125,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum intron length (in bp)
-    default: 100000
     inputBinding:
       position: 103
       prefix: -i
@@ -134,7 +123,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum right-tail distribution quantile for raincloud plots
-    default: 0.995
     inputBinding:
       position: 103
       prefix: -q
@@ -144,7 +132,6 @@ inputs:
       - float
     doc: Maximum proportion of allowed transcript segment overlap for 
       identification of segments mapping to disjunct genomic regions
-    default: 0.3
     inputBinding:
       position: 103
       prefix: -C
@@ -153,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum transcript set length for completeness analysis (in bp)
-    default: 1000000
     inputBinding:
       position: 103
       prefix: -m
@@ -163,7 +149,6 @@ inputs:
       - float
     doc: Minimum completeness threshold for assigning an element set to a Venn 
       set
-    default: 0.35
     inputBinding:
       position: 103
       prefix: -V
@@ -172,7 +157,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum exon identity proportion
-    default: 0.98
     inputBinding:
       position: 103
       prefix: -p
@@ -181,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum exon length (in bp)
-    default: 20
     inputBinding:
       position: 103
       prefix: -e
@@ -191,7 +174,6 @@ inputs:
       - float
     doc: Minimum proportion of an exon set that must be covered to be considered
       a match to a GTF exon set (and vice versa)
-    default: 0.35
     inputBinding:
       position: 103
       prefix: -g
@@ -200,7 +182,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum exon set length for completeness analysis (in bp)
-    default: 0
     inputBinding:
       position: 103
       prefix: -l
@@ -209,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum overlap between exon sets for edge specification (in bp)
-    default: 1
     inputBinding:
       position: 103
       prefix: -j
@@ -219,7 +199,6 @@ inputs:
       - float
     doc: Minimum proportion of a transcript set that must be covered to be 
       considered a match to a GTF transcript set (and vice versa)
-    default: 0.35
     inputBinding:
       position: 103
       prefix: -G
@@ -228,7 +207,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum transcript set length for completeness analysis (in bp)
-    default: 100
     inputBinding:
       position: 103
       prefix: -L
@@ -237,7 +215,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum overlap between transcript sets for edge specification (in bp)
-    default: 1
     inputBinding:
       position: 103
       prefix: -J
@@ -247,7 +224,6 @@ inputs:
       - int
     doc: Minimum overlap between transcript set and transcript for isoform 
       specification (in bp)
-    default: 1
     inputBinding:
       position: 103
       prefix: -o
@@ -256,7 +232,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads
-    default: 10
     inputBinding:
       position: 103
       prefix: -t
@@ -266,7 +241,6 @@ inputs:
       - string
     doc: Number of exons per transcript distribution breakpoints (specified with
       x,y,z...)
-    default: 1,2,4,6,8,10,15,20
     inputBinding:
       position: 103
       prefix: -N
@@ -275,7 +249,6 @@ inputs:
       - 'null'
       - int
     doc: Number of genomic bins for exon set genomic location plot
-    default: 25000
     inputBinding:
       position: 103
       prefix: -B
@@ -285,7 +258,6 @@ inputs:
       - string
     doc: Number of isoforms per transcript set distribution breakpoints 
       (specified with x,y,z...)
-    default: 1,2,4,6,8,10,15,20
     inputBinding:
       position: 103
       prefix: -I
@@ -294,7 +266,6 @@ inputs:
       - 'null'
       - int
     doc: Number of longest element sets used in hierarchical clustering
-    default: 5000
     inputBinding:
       position: 103
       prefix: -H
@@ -303,7 +274,6 @@ inputs:
       - 'null'
       - string
     doc: Number of longest genomic scaffolds for exon set genomic location plot
-    default: all scaffolds
     inputBinding:
       position: 103
       prefix: -f
@@ -312,7 +282,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite the comparison output directory
-    default: false
     inputBinding:
       position: 103
       prefix: -O
@@ -322,7 +291,6 @@ inputs:
       - string
     doc: Pairwise similarity tileplot colors (quoted hexadecimal codes or R 
       color names, specified with x,y,z...)
-    default: adjusted YlOrRd palette from RColorBrewer package
     inputBinding:
       position: 103
       prefix: -y
@@ -332,7 +300,6 @@ inputs:
       - string
     doc: Raincloud plot colors (quoted hexadecimal codes or R color names, 
       specified with x,y,z...)
-    default: adjusted Set1 palette from RColorBrewer package
     inputBinding:
       position: 103
       prefix: -r
@@ -341,7 +308,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable stranded analysis
-    default: false
     inputBinding:
       position: 103
       prefix: -S
@@ -351,7 +317,6 @@ inputs:
       - int
     doc: Transcript set proximity region length for unique exon set analysis (in
       bp)
-    default: 5000
     inputBinding:
       position: 103
       prefix: -P
@@ -361,7 +326,6 @@ inputs:
       - string
     doc: UpSet plot bar and matrix colors (quoted hexadecimal codes or R color 
       names, specified with x,y)
-    default: '#FDAF4A,#DC151D'
     inputBinding:
       position: 103
       prefix: -u
@@ -370,7 +334,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use raster for heatmap plotting
-    default: false
     inputBinding:
       position: 103
       prefix: -E
@@ -380,7 +343,6 @@ inputs:
       - string
     doc: Venn diagram colors (quoted hexadecimal codes or R color names, 
       specified with x,y,z...)
-    default: adjusted Reds palette from RColorBrewer package
     inputBinding:
       position: 103
       prefix: -v

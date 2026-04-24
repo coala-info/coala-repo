@@ -39,7 +39,6 @@ inputs:
     doc: Maximum number of CPU cores available in the execution host. If higher 
       than 1, tasks with multi-threading capabilities will enabled (if 0 all 
       available) cores will be used
-    default: 20
     inputBinding:
       position: 101
       prefix: --cpus
@@ -49,7 +48,6 @@ inputs:
       - float
     doc: target mean value of a cell after normalization (can be used to weight 
       experiments before merging)
-    default: 1
     inputBinding:
       position: 101
       prefix: --factor
@@ -81,7 +79,6 @@ inputs:
       self-circle, 2: dangling-end, 3: error, 4: extra dangling-end, 5: too close
       from RES, 6: too short, 7: too large, 8: over-represented, 9: duplicated, 10:
       random breaks, 11: trans-chromosomic"
-    default:
       - 1
       - 2
       - 3
@@ -137,7 +134,6 @@ inputs:
       - int
     doc: Define maximum number of jobs for reading BAM file (set to higher 
       numbers for large files and low RAM memory).
-    default: 100
     inputBinding:
       position: 101
       prefix: --max_njobs
@@ -181,7 +177,6 @@ inputs:
       - string
     doc: 'normalization(s) to apply. Order matters. Choices: Vanilla, ICE, SQRT, oneD,
       custom'
-    default: Vanilla
     inputBinding:
       position: 101
       prefix: --normalization
@@ -198,7 +193,6 @@ inputs:
       - 'null'
       - float
     doc: maximum percentage of zeroes allowed per column.
-    default: 95%
     inputBinding:
       position: 101
       prefix: --perc_zeros
@@ -208,7 +202,6 @@ inputs:
       - float
     doc: 'Only for oneD normalization: proportion of data to be used in fitting (for
       very large datasets). Number between 0 and 1.'
-    default: 1
     inputBinding:
       position: 101
       prefix: --prop_data
@@ -232,7 +225,6 @@ inputs:
       - int
     doc: 'Only for oneD normalization: seed number for the random picking of data
       when using the "prop_data" parameter'
-    default: 1
     inputBinding:
       position: 101
       prefix: --seed

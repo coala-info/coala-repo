@@ -25,7 +25,6 @@ inputs:
       - int
     doc: Set the distance an alignment extension will attempt to extend poor 
       scoring regions before giving up, measured in amino acids
-    default: 60
     inputBinding:
       position: 103
       prefix: --breaklen
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: Toggle the creation of the delta file
-    default: true
     inputBinding:
       position: 103
       prefix: --delta
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: Set the clustering diagonal difference separation factor
-    default: 0.11
     inputBinding:
       position: 103
       prefix: --diagfactor
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: Toggle the cluster extension step
-    default: true
     inputBinding:
       position: 103
       prefix: --extend
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Set the maximum bookend masking lenth, measured in amino acids
-    default: 8
     inputBinding:
       position: 103
       prefix: --masklen
@@ -88,7 +83,6 @@ inputs:
       - int
     doc: Set the alignment matrix number to 1 [BLOSUM 45], 2 [BLOSUM 62] or 3 
       [BLOSUM 80]
-    default: 2
     inputBinding:
       position: 103
       prefix: --matrix
@@ -98,7 +92,6 @@ inputs:
       - int
     doc: Set the maximum gap between two adjacent matches in a cluster, measured
       in amino acids
-    default: 30
     inputBinding:
       position: 103
       prefix: --maxgap
@@ -116,7 +109,6 @@ inputs:
       - int
     doc: Sets the minimum length of a cluster of matches, measured in amino 
       acids
-    default: 20
     inputBinding:
       position: 103
       prefix: --mincluster
@@ -125,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: Set the minimum length of a single match, measured in amino acids
-    default: 6
     inputBinding:
       position: 103
       prefix: --minmatch
@@ -187,7 +178,6 @@ inputs:
     doc: Toggle alignment score optimization, i.e. if an alignment extension 
       reaches the end of a sequence, it will backtrack to optimize the alignment
       score instead of terminating the alignment at the end of the sequence
-    default: true
     inputBinding:
       position: 103
       prefix: --optimize
@@ -196,7 +186,6 @@ inputs:
       - 'null'
       - string
     doc: Set the prefix of the output files
-    default: out
     inputBinding:
       position: 103
       prefix: --prefix

@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add 'chr' to chromosome names before printing output.
-    default: false
     inputBinding:
       position: 101
       prefix: --add-chr
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: In case of --sleuth-format, an assembly version.
-    default: GRCm38
     inputBinding:
       position: 101
       prefix: --assembly
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - boolean
     doc: When using --sleuth-format delete 'chr' in sequence id.
-    default: false
     inputBinding:
       position: 101
       prefix: --del-chr
@@ -40,7 +37,6 @@ inputs:
       - boolean
     doc: In case of --sleuth-format, delete gene_id or transcript_id version 
       number (e.g '.2' in ENSG56765.2).
-    default: false
     inputBinding:
       position: 101
       prefix: --delete-version
@@ -49,7 +45,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write explicitly the name of the keys in the header.
-    default: false
     inputBinding:
       position: 101
       prefix: --explicit
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the GTF file. Default to STDIN
-    default: <stdin>
     inputBinding:
       position: 101
       prefix: --inputfile
@@ -76,7 +70,6 @@ inputs:
       - boolean
     doc: Try to keep all temporary files even if process does not terminate 
       normally.
-    default: false
     inputBinding:
       position: 101
       prefix: --keep-all
@@ -85,7 +78,6 @@ inputs:
       - 'null'
       - string
     doc: A set of key for the header.
-    default: feature,transcript_id,gene_id,seqid,start,end
     inputBinding:
       position: 101
       prefix: --label
@@ -94,7 +86,6 @@ inputs:
       - 'null'
       - File
     doc: Stores the arguments passed to the command into a file.
-    default: None
     inputBinding:
       position: 101
       prefix: --logger-file
@@ -103,7 +94,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not add date to output file names.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-date
@@ -113,7 +103,6 @@ inputs:
       - boolean
     doc: Don't reverse complement sequence corresponding to gene on minus 
       strand.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-rev-comp
@@ -122,7 +111,6 @@ inputs:
       - 'null'
       - string
     doc: To separate info in header.
-    default: '|'
     inputBinding:
       position: 101
       prefix: --separator
@@ -131,7 +119,6 @@ inputs:
       - 'null'
       - boolean
     doc: Produce output in sleuth format (still experimental).
-    default: false
     inputBinding:
       position: 101
       prefix: --sleuth-format
@@ -140,7 +127,6 @@ inputs:
       - 'null'
       - Directory
     doc: Keep all temporary files into this folder.
-    default: None
     inputBinding:
       position: 101
       prefix: --tmp-dir
@@ -149,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: Set output verbosity ([0-3]).
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbosity
@@ -158,7 +143,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set to true to include intronic regions.
-    default: false
     inputBinding:
       position: 101
       prefix: --with-introns
@@ -167,7 +151,6 @@ inputs:
       - 'null'
       - File
     doc: Store all message into a file.
-    default: None
     inputBinding:
       position: 101
       prefix: --write-message-to-file

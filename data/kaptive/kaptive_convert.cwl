@@ -30,7 +30,6 @@ inputs:
       - type: array
         items: string
     doc: Space-separated list to filter locus names
-    default: All
     inputBinding:
       position: 104
       prefix: --loci
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: Format for locus plots
-    default: png
     inputBinding:
       position: 104
       prefix: --plot-fmt
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: Python regular-expression to select JSON lines
-    default: All
     inputBinding:
       position: 104
       prefix: --regex
@@ -74,7 +71,6 @@ inputs:
       - type: array
         items: string
     doc: Space-separated list to filter sample names
-    default: All
     inputBinding:
       position: 104
       prefix: --samples

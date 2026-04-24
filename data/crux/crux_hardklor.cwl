@@ -26,7 +26,6 @@ inputs:
       enrichment of the first heavy isotope of hydrogen. In other words, 75% deuterium
       enrichment. Two or more modifications can be combined into the same model, and
       separated by spaces: B2 0.5B1'
-    default: ''
     inputBinding:
       position: 102
       prefix: --averagine-mod
@@ -45,7 +44,6 @@ inputs:
       odd number is recommended to center the boxcar window. For example, a 
       value of 3 would produce an average of the scan of interest, plus one scan
       on each side. A value of 0 disables boxcar averaging.
-    default: 0
     inputBinding:
       position: 102
       prefix: --boxcar-averaging
@@ -60,7 +58,6 @@ inputs:
       over-filtering can occur. The suggested number of scans to set for 
       filtering should be equal to or less than the boxcar-averaging window 
       size. A value of 0 disables filtering.
-    default: 0
     inputBinding:
       position: 102
       prefix: --boxcar-filter
@@ -71,7 +68,6 @@ inputs:
     doc: This parameter is only functional when boxcar-filter is used. The value
       specifies the mass tolerance in ppm for declaring a peak the same prior to
       filtering across all scans in the boxcar window.
-    default: 10.0
     inputBinding:
       position: 102
       prefix: --boxcar-filter-ppm
@@ -80,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: Choose the charge state determination method.
-    default: Q
     inputBinding:
       position: 102
       prefix: --cdm
@@ -89,7 +84,6 @@ inputs:
       - 'null'
       - boolean
     doc: Indicates whether the data contain profile or centroided peaks.
-    default: false
     inputBinding:
       position: 102
       prefix: --centroided
@@ -99,7 +93,6 @@ inputs:
       - float
     doc: Sets the correlation threshold (cosine similarity) for accepting each 
       predicted feature.
-    default: 0.85
     inputBinding:
       position: 102
       prefix: --corr
@@ -113,7 +106,6 @@ inputs:
       current number of deconvolved features explains the observed peaks with a 
       correlation score above the threshold defined with the correlation 
       parameter.
-    default: 3
     inputBinding:
       position: 102
       prefix: --depth
@@ -124,7 +116,6 @@ inputs:
     doc: When reporting each feature, report abundance as the sum of all isotope
       peaks. The value reported is the estimate of the correct peak heights 
       based on the averagine model scaled to the observed peak heights.
-    default: false
     inputBinding:
       position: 102
       prefix: --distribution-area
@@ -133,7 +124,6 @@ inputs:
       - 'null'
       - string
     doc: The fileroot string will be added as a prefix to all output file names.
-    default: ''
     inputBinding:
       position: 102
       prefix: --fileroot
@@ -144,7 +134,6 @@ inputs:
     doc: Determines which spectral feature detection algorithm to use. Different
       results are possible with each algorithm, and there are pros and cons to 
       each.
-    default: version1
     inputBinding:
       position: 102
       prefix: --hardklor-algorithm
@@ -154,7 +143,6 @@ inputs:
       - string
     doc: Specifies an ASCII text file that defines symbols for the periodic 
       table.
-    default: ''
     inputBinding:
       position: 102
       prefix: --hardklor-data-file
@@ -166,7 +154,6 @@ inputs:
       combined with the resolution parameter, define how spectra will be 
       centroided (if you provide profile spectra) and the accuracy when aligning
       observed peaks to the models.
-    default: fticr
     inputBinding:
       position: 102
       prefix: --instrument
@@ -176,7 +163,6 @@ inputs:
       - string
     doc: Specifies an ASCII text file that can be read to override the natural 
       isotope abundances for all elements.
-    default: ''
     inputBinding:
       position: 102
       prefix: --isotope-data-file
@@ -189,7 +175,6 @@ inputs:
       set it to 20 when doing a tryptic shotgun analysis). If set higher than 
       actual charge states that are present, the algorithm will perform 
       significantly slower without any improvement in results.
-    default: 5
     inputBinding:
       position: 102
       prefix: --max-charge
@@ -202,7 +187,6 @@ inputs:
       exceed the number of peaks in the current set. However, as many of the low
       abundance peaks are noise or tail ends of distributions, defining models 
       for them is detrimental to the analysis.
-    default: 10
     inputBinding:
       position: 102
       prefix: --max-features
@@ -215,7 +199,6 @@ inputs:
       to be present. If set higher than actual charge states that are present, 
       those features will not be identified or incorrectly assigned a different 
       charge state and mass.
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-charge
@@ -225,7 +208,6 @@ inputs:
       - float
     doc: Constrains the search in each spectrum to signals below this value in 
       Thomsons. Setting to 0 disables this feature.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --mz-max
@@ -235,7 +217,6 @@ inputs:
       - float
     doc: Constrains the search in each spectrum to signals above this value in 
       Thomsons. Setting to 0 disables this feature.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --mz-min
@@ -245,7 +226,6 @@ inputs:
       - float
     doc: Only used when algorithm = version1. Defines the maximum window size in
       Thomsons to analyze when deconvolving peaks in a spectrum into features.
-    default: 4.0
     inputBinding:
       position: 102
       prefix: --mz-window
@@ -257,7 +237,6 @@ inputs:
       For example, if the data contain MS and MS/MS spectra, setting 
       mzxml-filter = 1 will analyze only the MS scan events. Setting 
       mzxml-filter = 2 will analyze only the MS/MS scan events.
-    default: 1
     inputBinding:
       position: 102
       prefix: --mzxml-filter
@@ -266,7 +245,6 @@ inputs:
       - 'null'
       - Directory
     doc: The name of the directory where output files will be created.
-    default: crux-output
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -276,7 +254,6 @@ inputs:
       - boolean
     doc: Replace existing files if true or fail when trying to overwrite a file 
       if false.
-    default: false
     inputBinding:
       position: 102
       prefix: --overwrite
@@ -285,7 +262,6 @@ inputs:
       - 'null'
       - string
     doc: A file containing parameters.
-    default: ''
     inputBinding:
       position: 102
       prefix: --parameter-file
@@ -295,7 +271,6 @@ inputs:
       - float
     doc: Specifies the resolution of the instrument at 400 m/z for the data 
       being analyzed.
-    default: 100000.0
     inputBinding:
       position: 102
       prefix: --resolution
@@ -305,7 +280,6 @@ inputs:
       - int
     doc: Used to restrict analysis to spectra with scan numbers below this 
       parameter value. A value of 0 disables this feature.
-    default: 0
     inputBinding:
       position: 102
       prefix: --scan-range-max
@@ -315,7 +289,6 @@ inputs:
       - int
     doc: Used to restrict analysis to spectra with scan numbers above this 
       parameter value. A value of 0 disables this feature.
-    default: 0
     inputBinding:
       position: 102
       prefix: --scan-range-min
@@ -326,7 +299,6 @@ inputs:
     doc: 'Set the sensitivity level. There are four levels: 0 (low), 1 (moderate),
       2 (high), and 3 (max). Increasing the sensitivity will increase computation
       time, but will also yield more isotope distributions.'
-    default: 2
     inputBinding:
       position: 102
       prefix: --sensitivity
@@ -336,7 +308,6 @@ inputs:
       - float
     doc: Filters spectra to remove peaks below this signal-to-noise ratio prior 
       to finding features.
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --signal-to-noise
@@ -351,7 +322,6 @@ inputs:
       each data point). Higher values will produce smoother peaks, but with 
       greater depression and broadening. Setting this parameter to 0 disables 
       smoothing.
-    default: 0
     inputBinding:
       position: 102
       prefix: --smooth
@@ -362,7 +332,6 @@ inputs:
     doc: Set the signal-to-noise window length (in m/z). Because noise may be 
       non-uniform across a spectrum, this value adjusts the segment size 
       considered when calculating a signal-over-noise ratio.
-    default: 250.0
     inputBinding:
       position: 102
       prefix: --sn-window
@@ -374,7 +343,6 @@ inputs:
       mass range for a spectrum. Setting this parameter to 0 turns off this 
       feature, and different noise thresholds will be used for each local mass 
       window in a spectrum.
-    default: true
     inputBinding:
       position: 102
       prefix: --static-sn
@@ -386,7 +354,6 @@ inputs:
       messages, including all those at lower verbosity levels: 0-fatal errors, 10-non-fatal
       errors, 20-warnings, 30-information on the progress of execution, 40-more progress
       information, 50-debug info, 60-detailed debug info.'
-    default: 30
     inputBinding:
       position: 102
       prefix: --verbosity

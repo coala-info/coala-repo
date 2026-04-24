@@ -30,7 +30,6 @@ inputs:
       from the spectra themselves. false=no estimation, warn=try to estimate but
       use the default value in case of failure, fail=try to estimate and quit in
       case of failure.
-    default: 'false'
     inputBinding:
       position: 103
       prefix: --auto-mz-bin-width
@@ -42,7 +41,6 @@ inputs:
       from the spectra themselves. false=no estimation, warn=try to estimate but
       use the default value in case of failure, fail=try to estimate and quit in
       case of failure.
-    default: 'false'
     inputBinding:
       position: 103
       prefix: --auto-precursor-window
@@ -58,7 +56,6 @@ inputs:
       overridden. Note that the Sp computation requires re-processing each 
       observed spectrum, so turning on this switch involves significant 
       computational overhead.
-    default: false
     inputBinding:
       position: 103
       prefix: --compute-sp
@@ -71,7 +68,6 @@ inputs:
       are reported for each spectrum, irrespective of whether the matches 
       involve target or decoy peptides.Note that when used with 
       search-for-xlinks, this parameter only has an effect if use-old-xlink=F.
-    default: false
     inputBinding:
       position: 103
       prefix: --concat
@@ -86,7 +82,6 @@ inputs:
       current peak is of lower abundance, then the peak is removed. The value of
       this parameter is the mass tolerance, in units of parts-per-million. If 
       set to 0, no deisotoping is performed.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --deisotope
@@ -98,7 +93,6 @@ inputs:
       entries in the dynamic programming matrix. Smaller values make the program
       run faster but give less exact p-values; larger values make the program 
       run more slowly but give more exact p-values.
-    default: 25
     inputBinding:
       position: 103
       prefix: --evidence-granularity
@@ -116,7 +110,6 @@ inputs:
       allowed on non-terminal residues in conjunction with p-value computation, 
       but currently only static mods are allowed on the N-terminus, and no mods 
       on the C-terminus.
-    default: false
     inputBinding:
       position: 103
       prefix: --exact-p-value
@@ -125,7 +118,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include the file column in tab-delimited output.
-    default: true
     inputBinding:
       position: 103
       prefix: --file-column
@@ -134,7 +126,6 @@ inputs:
       - 'null'
       - string
     doc: The fileroot string will be added as a prefix to all output file names.
-    default: ''
     inputBinding:
       position: 103
       prefix: --fileroot
@@ -145,7 +136,6 @@ inputs:
     doc: Mass tolerance (in Da) for scoring pairs of peaks when creating the 
       residue evidence matrix. This parameter only makes sense when 
       score-function is 'residue-evidence' or 'both'.
-    default: 0.02
     inputBinding:
       position: 103
       prefix: --fragment-tolerance
@@ -154,7 +144,6 @@ inputs:
       - 'null'
       - string
     doc: List of positive, non-zero integers.
-    default: ''
     inputBinding:
       position: 103
       prefix: --isotope-error
@@ -163,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: Set the precision for masses and m/z written to sqt and text files.
-    default: 4
     inputBinding:
       position: 103
       prefix: --mass-precision
@@ -172,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum charge state of a spectra to consider in search.
-    default: 5
     inputBinding:
       position: 103
       prefix: --max-precursor-charge
@@ -181,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum number of peaks a spectrum must have for it to be searched.
-    default: 20
     inputBinding:
       position: 103
       prefix: --min-peaks
@@ -190,7 +176,6 @@ inputs:
       - 'null'
       - int
     doc: Set the precision for modifications as written to .txt files.
-    default: 2
     inputBinding:
       position: 103
       prefix: --mod-precision
@@ -202,7 +187,6 @@ inputs:
       spectra, this parameter specifies the location of the left edge of the 
       first bin, relative to mass = 0 (i.e., mz-bin-offset = 0.xx means the left
       edge of the first bin will be located at +0.xx Da).
-    default: 0.4
     inputBinding:
       position: 103
       prefix: --mz-bin-offset
@@ -216,7 +200,6 @@ inputs:
       floor((x/mz-bin-width) + 1.0 - mz-bin-offset), where x is the observed m/z
       value. For low resolution ion trap ms/ms data 1.0005079 and for high 
       resolution ms/ms 0.02 is recommended.
-    default: 1.0005079
     inputBinding:
       position: 103
       prefix: --mz-bin-width
@@ -225,7 +208,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output an mzIdentML results file to the output directory.
-    default: false
     inputBinding:
       position: 103
       prefix: --mzid-output
@@ -234,7 +216,6 @@ inputs:
       - 'null'
       - int
     doc: 0=poll CPU to set num threads; else specify num threads directly.
-    default: 0
     inputBinding:
       position: 103
       prefix: --num-threads
@@ -243,7 +224,6 @@ inputs:
       - 'null'
       - string
     doc: The name of the directory where output files will be created.
-    default: crux-output
     inputBinding:
       position: 103
       prefix: --output-dir
@@ -253,7 +233,6 @@ inputs:
       - boolean
     doc: Replace existing files if true or fail when trying to overwrite a file 
       if false.
-    default: false
     inputBinding:
       position: 103
       prefix: --overwrite
@@ -262,7 +241,6 @@ inputs:
       - 'null'
       - File
     doc: A file containing parameters.
-    default: ''
     inputBinding:
       position: 103
       prefix: --parameter-file
@@ -276,7 +254,6 @@ inputs:
       "xcorr rank" column will contain the rank of the given spectrum with 
       respect to the given candidate peptide, rather than vice versa (which is 
       the default).
-    default: false
     inputBinding:
       position: 103
       prefix: --peptide-centric-search
@@ -285,7 +262,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output a pepXML results file to the output directory.
-    default: false
     inputBinding:
       position: 103
       prefix: --pepxml-output
@@ -294,7 +270,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output a Percolator input (PIN) file to the output directory.
-    default: false
     inputBinding:
       position: 103
       prefix: --pin-output
@@ -305,7 +280,6 @@ inputs:
     doc: Precursor charge state to consider MS/MS spectra from, in measurement 
       error estimation. Ideally, this should be the most frequently occurring 
       charge state in the given data.
-    default: 2
     inputBinding:
       position: 103
       prefix: --pm-charge
@@ -314,7 +288,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum fragment m/z value to use in measurement error estimation.
-    default: 1800.0
     inputBinding:
       position: 103
       prefix: --pm-max-frag-mz
@@ -325,7 +298,6 @@ inputs:
     doc: Maximum ppm distance between precursor m/z values to consider two scans
       potentially generated by the same peptide for measurement error 
       estimation.
-    default: 50.0
     inputBinding:
       position: 103
       prefix: --pm-max-precursor-delta-ppm
@@ -334,7 +306,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum precursor m/z value to use in measurement error estimation.
-    default: 1800.0
     inputBinding:
       position: 103
       prefix: --pm-max-precursor-mz
@@ -345,7 +316,6 @@ inputs:
     doc: Maximum number of scans two spectra can be separated by in order to be 
       considered potentially generated by the same peptide, for measurement 
       error estimation.
-    default: 1000
     inputBinding:
       position: 103
       prefix: --pm-max-scan-separation
@@ -356,7 +326,6 @@ inputs:
     doc: Number of the most-intense peaks that two spectra must share in order 
       to potentially be generated by the same peptide, for measurement error 
       estimation.
-    default: 20
     inputBinding:
       position: 103
       prefix: --pm-min-common-frag-peaks
@@ -365,7 +334,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum fragment m/z value to use in measurement error estimation.
-    default: 150.0
     inputBinding:
       position: 103
       prefix: --pm-min-frag-mz
@@ -376,7 +344,6 @@ inputs:
     doc: Minimum number of peak pairs (for precursor or fragment) that must be 
       successfully paired in order to attempt to estimate measurement error 
       distribution.
-    default: 100
     inputBinding:
       position: 103
       prefix: --pm-min-peak-pairs
@@ -385,7 +352,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum precursor m/z value to use in measurement error estimation.
-    default: 400.0
     inputBinding:
       position: 103
       prefix: --pm-min-precursor-mz
@@ -395,7 +361,6 @@ inputs:
       - int
     doc: Minimum fragment peaks an MS/MS scan must contain to be used in 
       measurement error estimation.
-    default: 40
     inputBinding:
       position: 103
       prefix: --pm-min-scan-frag-peaks
@@ -405,7 +370,6 @@ inputs:
       - int
     doc: Number of fragment peaks per spectrum pair to be used in fragment error
       estimation.
-    default: 5
     inputBinding:
       position: 103
       prefix: --pm-pair-top-n-frag-peaks
@@ -415,7 +379,6 @@ inputs:
       - int
     doc: Number of most-intense fragment peaks to consider for measurement error
       estimation, per MS/MS spectrum.
-    default: 30
     inputBinding:
       position: 103
       prefix: --pm-top-n-frag-peaks
@@ -424,7 +387,6 @@ inputs:
       - 'null'
       - int
     doc: Set the precision for scores written to sqt and text files.
-    default: 8
     inputBinding:
       position: 103
       prefix: --precision
@@ -435,7 +397,6 @@ inputs:
     doc: Tolerance used for matching peptides to spectra. Peptides must be 
       within +/- 'precursor-window' of the spectrum value. The precursor window 
       units depend upon precursor-window-type.
-    default: 3.0
     inputBinding:
       position: 103
       prefix: --precursor-window
@@ -458,7 +419,6 @@ inputs:
       the mass type. The lower bound of the mass window is then defined as the 
       spectrum mass / (1.0 + (precursor-window / 1000000)) and the upper bound 
       is defined as spectrum mass / (1.0 - (precursor-window / 1000000)).
-    default: mass
     inputBinding:
       position: 103
       prefix: --precursor-window-type
@@ -468,7 +428,6 @@ inputs:
       - int
     doc: Show search progress by printing every n spectra searched. Set to 0 to 
       show no search progress.
-    default: 1000
     inputBinding:
       position: 103
       prefix: --print-search-progress
@@ -478,7 +437,6 @@ inputs:
       - boolean
     doc: If true, all peaks around the precursor m/z will be removed, within a 
       range specified by the --remove-precursor-tolerance option.
-    default: false
     inputBinding:
       position: 103
       prefix: --remove-precursor-peak
@@ -488,7 +446,6 @@ inputs:
       - float
     doc: This parameter specifies the tolerance (in Th) around each precursor 
       m/z that is removed when the --remove-precursor-peak option is invoked.
-    default: 1.5
     inputBinding:
       position: 103
       prefix: --remove-precursor-tolerance
@@ -498,7 +455,6 @@ inputs:
       - string
     doc: A single scan number or a range of numbers to be searched. Range should
       be specified as 'first-last' which will include scans 'first' and 'last'.
-    default: ''
     inputBinding:
       position: 103
       prefix: --scan-number
@@ -510,7 +466,6 @@ inputs:
       function used by SEQUEST; 'residue-evidence' is designed to score 
       high-resolution MS2 spectra; and 'both' calculates both scores. The latter
       requires that exact-p-value=T.
-    default: xcorr
     inputBinding:
       position: 103
       prefix: --score-function
@@ -519,7 +474,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip preprocessing steps on spectra.
-    default: false
     inputBinding:
       position: 103
       prefix: --skip-preprocessing
@@ -531,7 +485,6 @@ inputs:
       searched and spectra with multiple charge states will be searched once at 
       each charge state. With 1, 2, or 3 only spectra with that charge state 
       will be searched.
-    default: all
     inputBinding:
       position: 103
       prefix: --spectrum-charge
@@ -540,7 +493,6 @@ inputs:
       - 'null'
       - float
     doc: The highest spectrum m/z to search in the ms2 file.
-    default: 1000000000.0
     inputBinding:
       position: 103
       prefix: --spectrum-max-mz
@@ -549,7 +501,6 @@ inputs:
       - 'null'
       - float
     doc: The lowest spectrum m/z to search in the ms2 file.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --spectrum-min-mz
@@ -558,7 +509,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the parser to use for reading in MS/MS spectra.
-    default: pwiz
     inputBinding:
       position: 103
       prefix: --spectrum-parser
@@ -569,7 +519,6 @@ inputs:
     doc: Outputs an SQT results file to the output directory. Note that if 
       sqt-output is enabled, then compute-sp is automatically enabled and cannot
       be overridden.
-    default: false
     inputBinding:
       position: 103
       prefix: --sqt-output
@@ -580,7 +529,6 @@ inputs:
     doc: When providing a FASTA file as the index, the generated binary index 
       will be stored at the given path. This option has no effect if a binary 
       index is provided as the index.
-    default: ''
     inputBinding:
       position: 103
       prefix: --store-index
@@ -594,7 +542,6 @@ inputs:
       specified relative to the current working directory, not the Crux output 
       directory (as specified by --output-dir). This option is not valid if 
       multiple input spectrum files are given.
-    default: ''
     inputBinding:
       position: 103
       prefix: --store-spectra
@@ -603,7 +550,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the number of matches to report for each spectrum.
-    default: 5
     inputBinding:
       position: 103
       prefix: --top-match
@@ -612,7 +558,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output a tab-delimited results file to the output directory.
-    default: true
     inputBinding:
       position: 103
       prefix: --txt-output
@@ -623,7 +568,6 @@ inputs:
     doc: Include flanking peaks around singly charged b and y theoretical ions. 
       Each flanking peak occurs in the adjacent m/z bin and has half the 
       intensity of the primary peak.
-    default: false
     inputBinding:
       position: 103
       prefix: --use-flanking-peaks
@@ -635,7 +579,6 @@ inputs:
       of neutral losses are included and are applied only to singly charged b- and
       y-ions: loss of ammonia (NH3, 17.0086343 Da) and H2O (18.0091422). Each neutral
       loss peak has intensity 1/5 of the primary peak.'
-    default: true
     inputBinding:
       position: 103
       prefix: --use-neutral-loss-peaks
@@ -645,7 +588,6 @@ inputs:
       - boolean
     doc: Specify whether, when parsing an MS2 spectrum file, Crux obtains the 
       precursor mass information from the "S" line or the "Z" line.
-    default: true
     inputBinding:
       position: 103
       prefix: --use-z-line
@@ -657,7 +599,6 @@ inputs:
       messages, including all those at lower verbosity levels: 0-fatal errors, 10-non-fatal
       errors, 20-warnings, 30-information on the progress of execution, 40-more progress
       information, 50-debug info, 60-detailed debug info.'
-    default: 30
     inputBinding:
       position: 103
       prefix: --verbosity

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Center the matrix before decomposition.
-    default: false
     inputBinding:
       position: 102
       prefix: --center
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Method for decomposition (e.g., 'svd', 'pca', 'nmf').
-    default: svd
     inputBinding:
       position: 102
       prefix: --method
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: Scale the matrix before decomposition.
-    default: false
     inputBinding:
       position: 102
       prefix: --scale
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable verbose output.
-    default: false
     inputBinding:
       position: 102
       prefix: --verbose

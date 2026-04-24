@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: Character used to mask horizontal regions
-    default: N, use None to leave horizontal regions unmasked
     inputBinding:
       position: 101
       prefix: --h_char
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: Hex colour for horizontal inheritance
-    default: '#c47e7e'
     inputBinding:
       position: 101
       prefix: --horizontal_colour
@@ -66,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: Behaviour when there are multiple results for a sample pair
-    default: first
     inputBinding:
       position: 101
       prefix: --multi
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: Sample name for the reference genome
-    default: determine automatically if possible from the TSV file
     inputBinding:
       position: 101
       prefix: --reference
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: Character used to mask unaligned regions
-    default: -, use None to leave unaligned regions unmasked
     inputBinding:
       position: 101
       prefix: --u_char
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: Hex colour for unaligned inheritance
-    default: '#c9c9c9'
     inputBinding:
       position: 101
       prefix: --unaligned_colour
@@ -102,7 +96,6 @@ inputs:
       - 'null'
       - string
     doc: Hex colour for vertical inheritance
-    default: '#4859a0'
     inputBinding:
       position: 101
       prefix: --vertical_colour

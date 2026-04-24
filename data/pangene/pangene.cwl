@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: apply branch cutting for INT times
-    default: 15
     inputBinding:
       position: 102
       prefix: -T
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: cut a branching arc if weaker by FLOAT
-    default: 0.5
     inputBinding:
       position: 102
       prefix: -B
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: cut a distant branching arc if weaker by FLOAT
-    default: 0.05
     inputBinding:
       position: 102
       prefix: -y
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: demote a branching arc if weaker than the best by FLOAT
-    default: 0.02
     inputBinding:
       position: 102
       prefix: -b
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - float
     doc: gene considered if dominant in FLOAT fraction of genes
-    default: 0.05
     inputBinding:
       position: 102
       prefix: -p
@@ -70,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: gene-protein delimiter
-    default: ':'
     inputBinding:
       position: 102
       prefix: -d
@@ -95,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: drop a gene if its in- or out-degree >INT
-    default: 15
     inputBinding:
       position: 102
       prefix: -g
@@ -104,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: drop a gene if it connects >INT distant loci
-    default: 3
     inputBinding:
       position: 102
       prefix: -r
@@ -113,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: drop a gene if average occurrence is >INT
-    default: 10
     inputBinding:
       position: 102
       prefix: -c
@@ -122,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: prune an arc if it is supported by <INT genomes
-    default: 1
     inputBinding:
       position: 102
       prefix: -a
@@ -131,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: drop an alignment if its identity <FLOAT
-    default: 0.5
     inputBinding:
       position: 102
       prefix: -e
@@ -140,7 +129,6 @@ inputs:
       - 'null'
       - float
     doc: min overlap fraction
-    default: 0.5
     inputBinding:
       position: 102
       prefix: -f
@@ -149,7 +137,6 @@ inputs:
       - 'null'
       - float
     doc: drop an alignment if <FLOAT fraction of the protein aligned
-    default: 0.5
     inputBinding:
       position: 102
       prefix: -l
@@ -182,7 +169,6 @@ inputs:
       - 'null'
       - float
     doc: score adjustment coefficient
-    default: 2.0
     inputBinding:
       position: 102
       prefix: -m

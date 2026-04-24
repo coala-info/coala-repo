@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - File
     doc: adapter sequence file
-    default: 'null'
     inputBinding:
       position: 105
       prefix: -d
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: rate of difference between reads and references
-    default: 0.001
     inputBinding:
       position: 105
       prefix: -m
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: length of the first read (<=127)
-    default: 0
     inputBinding:
       position: 105
       prefix: '-1'
@@ -66,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: length of the second read (<=127)
-    default: 0
     inputBinding:
       position: 105
       prefix: '-2'
@@ -83,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: max number of hits to output. >512 for all 01 hits.
-    default: 250
     inputBinding:
       position: 105
       prefix: -C
@@ -92,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: maximum allowed sum of qualities of mismatches
-    default: 70
     inputBinding:
       position: 105
       prefix: -e
@@ -101,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: max distance between two paired reads
-    default: 250
     inputBinding:
       position: 105
       prefix: -a
@@ -110,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: max distance between two RF paired reads
-    default: 0
     inputBinding:
       position: 105
       prefix: -A
@@ -119,7 +111,6 @@ inputs:
       - 'null'
       - string
     doc: methylation alignment mode [c|g]
-    default: 'null'
     inputBinding:
       position: 105
       prefix: -M
@@ -128,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: number of mismatches in the first 24bp
-    default: 2
     inputBinding:
       position: 105
       prefix: -n
@@ -137,7 +127,6 @@ inputs:
       - 'null'
       - File
     doc: dump multiple/all 01-mismatch hits to FILE
-    default: 'null'
     inputBinding:
       position: 105
       prefix: -H
@@ -146,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: seed for random number generator
-    default: random
     inputBinding:
       position: 105
       prefix: -s
@@ -163,7 +151,6 @@ inputs:
       - 'null'
       - File
     doc: dump unmapped and poorly aligned reads to FILE
-    default: 'null'
     inputBinding:
       position: 105
       prefix: -u

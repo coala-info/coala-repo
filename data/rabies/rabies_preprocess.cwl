@@ -24,7 +24,6 @@ inputs:
     doc: Crops out extra space around the brain on the structural image using 
       AFNI's 3dAutobox 
       https://afni.nimh.nih.gov/pub/dist/doc/program_help/3dAutobox.html.
-    default: false
     inputBinding:
       position: 103
       prefix: --anat_autobox
@@ -47,7 +46,6 @@ inputs:
       correct the whole image. This technique may help with images with particularly
       strong inhomogeneity gradients and very low intensities. *** Specify 'true'
       or 'false'."
-    default: method=SyN,otsu_thresh=2,multiotsu=false
     inputBinding:
       position: 103
       prefix: --anat_inho_cor
@@ -84,7 +82,6 @@ inputs:
       fUS images with intensity outliers. * winsorize_upper_bound: the upper bound
       for the antsRegistration winsorize-image-intensities option, useful for fUS
       images with intensity outliers."
-    default: 
       apply=false,stages=rigid-affine-nlin,masking=false,brain_extraction=false,keep_mask_after_extract=false,template_registration=SyN,winsorize_lower_bound=0.0,winsorize_upper_bound=1.0
     inputBinding:
       position: 103
@@ -94,7 +91,6 @@ inputs:
       - 'null'
       - File
     doc: Anatomical file for the commonspace atlas.
-    default: /root/.local/share/rabies/DSURQE_40micron_average.nii.gz
     inputBinding:
       position: 103
       prefix: --anat_template
@@ -107,7 +103,6 @@ inputs:
       the smallest dimension among the provided anatomical images (EPI images 
       instead if --bold_only is True). Increasing voxel resampling size will 
       increase registration speed at the cost of accuracy.
-    default: inputs_defined
     inputBinding:
       position: 103
       prefix: --anatomical_resampling
@@ -117,7 +112,6 @@ inputs:
       - boolean
     doc: Applies AFNI's 3dDespike 
       https://afni.nimh.nih.gov/pub/dist/doc/program_help/3dDespike.html.
-    default: false
     inputBinding:
       position: 103
       prefix: --apply_despiking
@@ -130,7 +124,6 @@ inputs:
       from within-TR motion. With this option, motion corrections and the 
       subsequent resampling from registration are applied sequentially since the
       2D slice registrations cannot be concatenate with 3D transforms.
-    default: false
     inputBinding:
       position: 103
       prefix: --apply_slice_mc
@@ -139,7 +132,6 @@ inputs:
       - 'null'
       - boolean
     doc: Select this option to apply the STC step.
-    default: false
     inputBinding:
       position: 103
       prefix: --apply_STC
@@ -176,7 +168,6 @@ inputs:
       registration: Specify a registration script. *** Rigid: conducts only rigid
       registration. *** Affine: conducts Rigid then Affine registration. *** SyN:
       conducts Rigid, Affine then non-linear registration. *** no_reg: skip registration."
-    default: 
       masking=false,brain_extraction=false,keep_mask_after_extract=false,registration=SyN,winsorize_lower_bound=0.0,winsorize_upper_bound=1.0
     inputBinding:
       position: 103
@@ -188,7 +179,6 @@ inputs:
     doc: Crops out extra space around the brain on the EPI image using AFNI's 
       3dAutobox 
       https://afni.nimh.nih.gov/pub/dist/doc/program_help/3dAutobox.html.
-    default: false
     inputBinding:
       position: 103
       prefix: --bold_autobox
@@ -197,7 +187,6 @@ inputs:
       - 'null'
       - string
     doc: Same as --anat_inho_cor, but for the EPI images.
-    default: method=Rigid,otsu_thresh=2,multiotsu=false
     inputBinding:
       position: 103
       prefix: --bold_inho_cor
@@ -212,7 +201,6 @@ inputs:
       which is the result of registration to the structural scan, but the 
       commonspace still includes distortion correction. If using --bold_only, 
       this parameter has no effect.
-    default: false
     inputBinding:
       position: 103
       prefix: --bold_nativespace
@@ -224,7 +212,6 @@ inputs:
       executed directly using the corrected EPI 3D reference images. The 
       commonspace registration simultaneously applies distortion correction. 
       Nativespace is always the original EPI space.
-    default: false
     inputBinding:
       position: 103
       prefix: --bold_only
@@ -233,7 +220,6 @@ inputs:
       - 'null'
       - string
     doc: Same as --anat_robust_inho_cor, but for the EPI images.
-    default: 
       apply=false,stages=rigid-affine-nlin,masking=false,brain_extraction=false,keep_mask_after_extract=false,template_registration=SyN,winsorize_lower_bound=0.0,winsorize_upper_bound=1.0
     inputBinding:
       position: 103
@@ -243,7 +229,6 @@ inputs:
       - 'null'
       - File
     doc: Brain mask aligned with the template.
-    default: /root/.local/share/rabies/DSURQE_40micron_mask.nii.gz
     inputBinding:
       position: 103
       prefix: --brain_mask
@@ -277,7 +262,6 @@ inputs:
       winsorize-image-intensities option, useful for fUS images with intensity outliers.
       * winsorize_upper_bound: the upper bound for the antsRegistration winsorize-image-intensities
       option, useful for fUS images with intensity outliers."
-    default: 
       stages=rigid-affine-nlin,masking=false,brain_extraction=false,keep_mask_after_extract=false,template_registration=SyN,fast_commonspace=false,winsorize_lower_bound=0.0,winsorize_upper_bound=1.0
     inputBinding:
       position: 103
@@ -287,7 +271,6 @@ inputs:
       - 'null'
       - string
     doc: Can specify a resampling dimension for the commonspace fMRI outputs.
-    default: inputs_defined
     inputBinding:
       position: 103
       prefix: --commonspace_resampling
@@ -298,7 +281,6 @@ inputs:
     doc: (OPTIONAL) CSF mask aligned with the template. If no input is provided 
       and the default --anat_template is not used, the core pipeline will run, 
       but downstream functions that rely on this file will be disabled.
-    default: /root/.local/share/rabies/DSURQE_40micron_eroded_CSF_mask.nii.gz
     inputBinding:
       position: 103
       prefix: --CSF_mask
@@ -309,7 +291,6 @@ inputs:
     doc: Detect and remove initial dummy volumes from the EPI, and generate a 
       reference EPI based on these volumes if detected. Dummy volumes will be 
       removed from the output preprocessed EPI.
-    default: false
     inputBinding:
       position: 103
       prefix: --detect_dummy
@@ -322,7 +303,6 @@ inputs:
       https://github.com/CoBrALab/RABIES/discussions/259. Other options were 
       taken from 
       https://github.com/ANTsX/ANTsR/blob/master/R/ants_motion_estimation.R.
-    default: optim
     inputBinding:
       position: 103
       prefix: --HMC_option
@@ -339,7 +319,6 @@ inputs:
       following preprocessing parameters will be overriden to enforce consistency
       with the previous run: --anatomical_resampling, --commonspace_reg, --anat_template,
       --brain_mask, --WM_mask, --CSF_mask, --vascular_mask, --labels"
-    default: none
     inputBinding:
       position: 103
       prefix: --inherit_unbiased_template
@@ -352,7 +331,6 @@ inputs:
       interpolated timeseries, while wsinc and fourier methods will introduce 
       less (or none). Refer to this discussion on the topic for more information
       https://github.com/CoBrALab/RABIES/discussions/267.
-    default: fourier
     inputBinding:
       position: 103
       prefix: --interp_method
@@ -366,7 +344,6 @@ inputs:
       partial volume effects, or poor image resolution (see online post on this 
       topic https://github.com/CoBrALab/RABIES/discussions/288). This option 
       will increase computational time, given the higher image resolution.
-    default: false
     inputBinding:
       position: 103
       prefix: --isotropic_HMC
@@ -378,7 +355,6 @@ inputs:
       no input is provided and the default --anat_template is not used, the core
       pipeline will run, but downstream functions that rely on this file will be
       disabled.
-    default: /root/.local/share/rabies/DSURQE_40micron_labels.nii.gz
     inputBinding:
       position: 103
       prefix: --labels
@@ -390,7 +366,6 @@ inputs:
       before registration. The preprocessed functional timeseries will retain 
       the original intensity values. This parameter can support registration of 
       fUSI images.
-    default: false
     inputBinding:
       position: 103
       prefix: --log_transform
@@ -399,7 +374,6 @@ inputs:
       - 'null'
       - string
     doc: Can specify a resampling dimension for the nativespace fMRI outputs.
-    default: inputs_defined
     inputBinding:
       position: 103
       prefix: --nativespace_resampling
@@ -412,7 +386,6 @@ inputs:
       affine: only the affine matrix is changed to cardinal axes. 3dWarp: Applies
       AFNI's 3dWarp -oblique2card. This involves resampling the data on a new isotropic
       grid."
-    default: none
     inputBinding:
       position: 103
       prefix: --oblique2card
@@ -424,7 +397,6 @@ inputs:
       commonspace only ('common_only'), nativespace only ('native_only'), or for
       both native and commonspaces ('both'). Generating timeseries only in the 
       desired space will save memory and computational time.
-    default: common_only
     inputBinding:
       position: 103
       prefix: --resampling_space
@@ -435,7 +407,6 @@ inputs:
     doc: Can specify over which axis of the image the STC must be applied. 
       Generally, the correction should be over the Y axis, which corresponds to 
       the anteroposterior axis in RAS convention.
-    default: Y
     inputBinding:
       position: 103
       prefix: --stc_axis
@@ -450,7 +421,6 @@ inputs:
       with the second or (second-to-last) slice, use 'alt+z2' or 'alt-z2'. Refer
       to this discussion on the topic for more information 
       https://github.com/CoBrALab/RABIES/discussions/217.
-    default: alt-z
     inputBinding:
       position: 103
       prefix: --tpattern
@@ -460,7 +430,6 @@ inputs:
       - string
     doc: Specify repetition time (TR) in seconds. (e.g. --TR 1.2). 'auto' will 
       read the TR from the nifti header.
-    default: auto
     inputBinding:
       position: 103
       prefix: --TR
@@ -474,7 +443,6 @@ inputs:
       vessels. If no input is provided and the default --anat_template is not 
       used, the core pipeline will run, but downstream functions that rely on 
       this file will be disabled.
-    default: /root/.local/share/rabies/vascular_mask.nii.gz
     inputBinding:
       position: 103
       prefix: --vascular_mask
@@ -486,7 +454,6 @@ inputs:
       displacement at each voxel. This will generate 4D nifti files representing
       motion timeseries derived from the 6 motion parameters. This is handled by
       antsMotionCorrStats.
-    default: false
     inputBinding:
       position: 103
       prefix: --voxelwise_motion
@@ -498,7 +465,6 @@ inputs:
       provided and the default --anat_template is not used, the core pipeline 
       will run, but downstream functions that rely on this file will be 
       disabled.
-    default: /root/.local/share/rabies/DSURQE_40micron_eroded_WM_mask.nii.gz
     inputBinding:
       position: 103
       prefix: --WM_mask

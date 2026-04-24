@@ -21,7 +21,6 @@ inputs:
       a compared record pair. auto: use glocal when at least one of the BGCs in each
       pair has the contig_edge annotation from antiSMASH v4+, otherwise use global
       mode on that pair. For an in depth description, see the wiki.'
-    default: glocal
     inputBinding:
       position: 101
       prefix: --alignment-mode
@@ -37,7 +36,6 @@ inputs:
       for .gbks produced by antiSMASH version 6 or higher. For older antiSMASH versions
       or if --legacy-weights is not selected, BiG-SCAPE will use the generic 'mix'
       weights: {JC: 0.2, AI: 0.05, DSS: 0.75, Anchor boost: 2.0}."
-    default: none
     inputBinding:
       position: 101
       prefix: --classify
@@ -47,7 +45,6 @@ inputs:
       - File
     doc: Path to BiG-SCAPE config.yml file, which stores values for a series of 
       advanced use parameters.
-    default: bundled big_scape/config.yml
     inputBinding:
       position: 101
       prefix: --config-file-path
@@ -74,7 +71,6 @@ inputs:
       - 'null'
       - File
     doc: Path to sqlite db output file.
-    default: output_dir/output_dir.db
     inputBinding:
       position: 101
       prefix: --db-path
@@ -110,7 +106,6 @@ inputs:
       - string
     doc: A comma separated list of strings. If any string in this list occurs in
       the .gbk filename, this file will not be used for the analysis
-    default: final
     inputBinding:
       position: 101
       prefix: --exclude-gbk
@@ -125,7 +120,6 @@ inputs:
       relevant extended borders. Greedy is a very simple method that takes the 
       coordinates of the outermost matching domains as the extended borders. For
       more detail see the wiki.
-    default: legacy
     inputBinding:
       position: 101
       prefix: --extend-strategy
@@ -163,7 +157,6 @@ inputs:
       BiG-SCAPE will generate one network for each distance cutoff value. Values should
       be in the range [0.0, 1.0]. Example (providing multiple cutoffs): --gcf-cutoffs
       0.1,0.25,0.5,1.0 For more detail see the wiki.'
-    default: '0.3'
     inputBinding:
       position: 101
       prefix: --gcf-cutoffs
@@ -192,7 +185,6 @@ inputs:
     doc: 'Tells BiG-SCAPE where to look for input GBK files. recursive: search for
       .gbk files recursively in input directory. Duplicated filenames are not recommended.
       flat: search for .gbk files in input directory only.'
-    default: recursive
     inputBinding:
       position: 101
       prefix: --input-mode
@@ -222,7 +214,6 @@ inputs:
       - 'null'
       - File
     doc: Path to output log file.
-    default: output_dir/timestamp.log
     inputBinding:
       position: 101
       prefix: --log-path
@@ -284,7 +275,6 @@ inputs:
       - 'null'
       - File
     doc: Path to output profile file.
-    default: output_dir/
     inputBinding:
       position: 101
       prefix: --profile-path
@@ -347,7 +337,6 @@ inputs:
       feature is not present, BiG-SCAPE will look for a protocluster feature, and
       so on and so forth. The record type hierarchy is: region>cand_cluster>proto
       cluster>proto_core.. For more detail, see the wiki.'
-    default: region
     inputBinding:
       position: 101
       prefix: --record-type

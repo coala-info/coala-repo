@@ -23,7 +23,6 @@ inputs:
       - float
     doc: discard positions where the depth of coverage is higher than the 
       MAX_DEPTH_PERCENTILE percentile
-    default: 90
     inputBinding:
       position: 103
       prefix: --max-depth-percentile
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: discard genomes with less than MAX_IDENT_THR maximum identity
-    default: 0.95
     inputBinding:
       position: 103
       prefix: --max-ident-thr
@@ -42,7 +40,6 @@ inputs:
       - int
     doc: discard positions where the depth of coverage is lower than the 
       MIN_DEPTH_ABSOLUTE
-    default: 6
     inputBinding:
       position: 103
       prefix: --min-depth-absolute
@@ -52,7 +49,6 @@ inputs:
       - float
     doc: filter base counts (set to 0) where they are lower then MIN_DEPTH_BASE 
       x DoC (applied independently for each allelic position)
-    default: 0.01
     inputBinding:
       position: 103
       prefix: --min-depth-base
@@ -62,7 +58,6 @@ inputs:
       - float
     doc: discard positions where the depth of coverage is lower than the 
       MIN_DEPTH_PERCENTILE percentile
-    default: 10
     inputBinding:
       position: 103
       prefix: --min-depth-percentile
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: base quality threshold
-    default: 20
     inputBinding:
       position: 103
       prefix: --quality-thr
@@ -80,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use in model selection
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

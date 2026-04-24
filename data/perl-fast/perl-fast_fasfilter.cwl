@@ -60,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: Use alternative format for input.
-    default: fasta
     inputBinding:
       position: 103
       prefix: --format
@@ -77,7 +76,6 @@ inputs:
       - 'null'
       - File
     doc: Use [string] as the name of the logfile.
-    default: FAST.log.txt
     inputBinding:
       position: 103
       prefix: --logname

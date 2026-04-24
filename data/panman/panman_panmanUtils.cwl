@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: ACR method [fitch(default), mppa]
-    default: fitch
     inputBinding:
       position: 101
       prefix: --acr

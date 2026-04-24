@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: How to treat dangling end energies (0, 1, 2, or 3).
-    default: 2
     inputBinding:
       position: 102
       prefix: --dangles
@@ -70,7 +69,6 @@ inputs:
       - 'null'
       - float
     doc: Rescale energy parameters to a specific temperature in Celsius.
-    default: 37.0
     inputBinding:
       position: 102
       prefix: --temp

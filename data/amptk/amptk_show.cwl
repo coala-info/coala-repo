@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - float
     doc: MaxEE Q-trim threshold
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --maxee
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: Quality trim data
-    default: false
     inputBinding:
       position: 101
       prefix: --quality_trim
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Read truncation length
-    default: 250
     inputBinding:
       position: 101
       prefix: --trunclen

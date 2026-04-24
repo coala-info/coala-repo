@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment identity [0,100]
-    default: 0
     inputBinding:
       position: 105
       prefix: --identity
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 20
     inputBinding:
       position: 105
       prefix: --thread

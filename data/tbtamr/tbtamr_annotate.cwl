@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Sequence name.
-    default: tbtamr
     inputBinding:
       position: 101
       prefix: --seq_id
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: VCF file generated using the H37rV v3 reference genome
-    default: ''
     inputBinding:
       position: 101
       prefix: --vcf

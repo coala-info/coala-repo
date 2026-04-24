@@ -61,7 +61,6 @@ inputs:
     type: int?
     doc: Maximum threads to use
     label: Threads
-    default: 4
     inputBinding:
       position: 4
   identifier:
@@ -88,7 +87,6 @@ inputs:
     type: boolean?
     doc: Keep only reads mapped to the reference (default = false / output only unmapped reads)
     label: Keep mapped
-    default: false
     inputBinding:
       position: 6
 

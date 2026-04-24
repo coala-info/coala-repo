@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: The lane number, required for report name.
-    default: all
     inputBinding:
       position: 101
       prefix: --lane
@@ -21,7 +20,6 @@ inputs:
       - string
     doc: 'log level for output messages. Expected values: [error, warn, info, debug,
       trace]. Default is info.'
-    default: info
     inputBinding:
       position: 101
       prefix: --log-level
@@ -31,7 +29,6 @@ inputs:
       - string
     doc: The prefix of the report. By default, it is the first part of the last 
       input report.
-    default: ''
     inputBinding:
       position: 101
       prefix: --prefix

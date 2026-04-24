@@ -54,7 +54,6 @@ inputs:
       - int
     doc: Amount of signal (number of samples) that will be used in the neural 
       network
-    default: 1024
     inputBinding:
       position: 101
       prefix: --signal_size

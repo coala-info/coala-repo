@@ -14,7 +14,6 @@ inputs:
   - id: blacklist_file
     type: File
     doc: blacklist in BED format
-    default: blacklist.bed
     inputBinding:
       position: 102
       prefix: --blacklist

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: minimum block length filter for mapping
-    default: 5*segment-length
     inputBinding:
       position: 101
       prefix: --block-length
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: use this prefix for consensus path names
-    default: Consensus_
     inputBinding:
       position: 101
       prefix: --consensus-prefix
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: maximum edge jump before breaking
-    default: 0
     inputBinding:
       position: 101
       prefix: --edge-jump-max
@@ -47,7 +44,6 @@ inputs:
       - string
     doc: skip mappings when the query and target have the same prefix before the
       last occurrence of the given character C
-    default: '#'
     inputBinding:
       position: 101
       prefix: --exclude-delim
@@ -56,7 +52,6 @@ inputs:
       - 'null'
       - boolean
     doc: run the POA in global mode
-    default: false
     inputBinding:
       position: 101
       prefix: --global-poa
@@ -65,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: filter out mappings unlikely to be N% less than the best mapping
-    default: '%'
     inputBinding:
       position: 101
       prefix: --hg-filter-ani-diff
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - float
     doc: percent identity for mapping/alignment
-    default: 90
     inputBinding:
       position: 101
       prefix: --map-pct-id
@@ -105,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: kmer size for mapping
-    default: 19
     inputBinding:
       position: 101
       prefix: --mash-kmer
@@ -114,7 +106,6 @@ inputs:
       - 'null'
       - float
     doc: ignore the top % most-frequent kmers
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --mash-kmer-thres
@@ -123,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: filter exact matches below this length
-    default: 23
     inputBinding:
       position: 101
       prefix: --min-match-len
@@ -133,7 +123,6 @@ inputs:
       - boolean
     doc: generate MultiQC report of graphs' statistics and visualizations, 
       automatically runs odgi stats
-    default: false
     inputBinding:
       position: 101
       prefix: --multiqc
@@ -150,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: number of mappings for each segment
-    default: 1
     inputBinding:
       position: 101
       prefix: --n-mappings
@@ -167,7 +155,6 @@ inputs:
       - 'null'
       - boolean
     doc: disable splitting of input sequences during mapping
-    default: false
     inputBinding:
       position: 101
       prefix: --no-splits
@@ -182,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: depth/haplotype at which we don't pad the POA problem
-    default: 100
     inputBinding:
       position: 101
       prefix: --pad-max-depth
@@ -191,7 +177,6 @@ inputs:
       - 'null'
       - int
     doc: maximum path jump to include in block
-    default: 0
     inputBinding:
       position: 101
       prefix: --path-jump-max
@@ -200,7 +185,6 @@ inputs:
       - 'null'
       - string
     doc: target sequence length for POA, one per pass
-    default: 700,1100
     inputBinding:
       position: 101
       prefix: --poa-length-target
@@ -209,7 +193,6 @@ inputs:
       - 'null'
       - float
     doc: pad each end of each sequence in POA with N*(mean_seq_len) bp
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --poa-padding
@@ -219,7 +202,6 @@ inputs:
       - string
     doc: 'score parameters for POA in the form of match,mismatch,gap1,ext1,gap2,ext2
       may also be given as presets: asm5, asm10, asm15, asm20'
-    default: 1,4,6,2,26,1 = asm20
     inputBinding:
       position: 101
       prefix: --poa-params
@@ -237,7 +219,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not overwrite existing outputs in the given directory
-    default: false
     inputBinding:
       position: 101
       prefix: --resume
@@ -246,7 +227,6 @@ inputs:
       - 'null'
       - boolean
     doc: run abPOA
-    default: false
     inputBinding:
       position: 101
       prefix: --run-abpoa
@@ -255,7 +235,6 @@ inputs:
       - 'null'
       - int
     doc: segment length for mapping
-    default: 5000
     inputBinding:
       position: 101
       prefix: --segment-length
@@ -264,7 +243,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not normalize the final graph
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-normalization
@@ -273,7 +251,6 @@ inputs:
       - 'null'
       - boolean
     doc: don't render visualizations of the graph in 1D and 2D
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-viz
@@ -282,7 +259,6 @@ inputs:
       - 'null'
       - string
     doc: keep this randomly selected fraction of input matches
-    default: no sparsification
     inputBinding:
       position: 101
       prefix: --sparse-factor
@@ -291,7 +267,6 @@ inputs:
       - 'null'
       - string
     doc: keep this fraction of mappings ('auto' for giant component heuristic)
-    default: '1.0'
     inputBinding:
       position: 101
       prefix: --sparse-map
@@ -300,7 +275,6 @@ inputs:
       - 'null'
       - boolean
     doc: generate statistics of the seqwish and smoothxg graph
-    default: false
     inputBinding:
       position: 101
       prefix: --stats
@@ -317,7 +291,6 @@ inputs:
       - 'null'
       - int
     doc: number of compute threads to use in parallel steps
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -326,7 +299,6 @@ inputs:
       - 'null'
       - string
     doc: number of bp to use for transitive closure batch
-    default: 10M
     inputBinding:
       position: 101
       prefix: --transclose-batch
@@ -340,7 +312,6 @@ inputs:
       chm13', a path named HG002#1#ctg would be assigned to sample HG002 phase 
       1. If LEN is specified and greater than 0, the VCFs are decomposed, 
       filtering sites whose max allele length is greater than LEN.
-    default: off
     inputBinding:
       position: 101
       prefix: --vcf-spec
@@ -349,7 +320,6 @@ inputs:
       - 'null'
       - boolean
     doc: write MAF output representing merged POA blocks
-    default: false
     inputBinding:
       position: 101
       prefix: --write-maf

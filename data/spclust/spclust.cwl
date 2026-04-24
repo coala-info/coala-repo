@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: alignment mode
-    default: maxPrecision
     inputBinding:
       position: 101
       prefix: -alignMode
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: scoring matrix
-    default: EDNAFULL
     inputBinding:
       position: 101
       prefix: -mdist

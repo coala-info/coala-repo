@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: length of the q-grams (also called k-mers)
-    default: 4
     inputBinding:
       position: 102
       prefix: -q

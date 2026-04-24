@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Number of items to bundle in r-tree.
-    default: 256
     inputBinding:
       position: 103
       prefix: -blockSize
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Number of data points bundled at lowest level.
-    default: 512
     inputBinding:
       position: 103
       prefix: -itemsPerSlot

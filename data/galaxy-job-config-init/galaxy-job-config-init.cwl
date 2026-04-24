@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Command used to launch docker (defaults to 'docker').
-    default: docker
     inputBinding:
       position: 101
       prefix: --docker-cmd
@@ -86,7 +85,6 @@ inputs:
       - string
     doc: Galaxy runner (e.g. DRM) to target (defaults to 'local' requiring no 
       external resource manager).
-    default: local
     inputBinding:
       position: 101
       prefix: --runner
@@ -103,7 +101,6 @@ inputs:
       - 'null'
       - string
     doc: Command used to execute singularity (defaults to 'singularity').
-    default: singularity
     inputBinding:
       position: 101
       prefix: --singularity-cmd
@@ -140,7 +137,6 @@ inputs:
       temp dirs, or specify shell commands/variables for custom temp directory 
       allocation (e.g., '$DRM_VAR' or '$(mktemp -d /scratch/gxyXXXXXX)'). 
       Defaults to true.
-    default: 'true'
     inputBinding:
       position: 101
       prefix: --tmp-dir

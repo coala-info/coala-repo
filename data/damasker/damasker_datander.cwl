@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Look for k-mers in averlapping bands of size 2^-w.
-    default: 4
     inputBinding:
       position: 102
       prefix: -w
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size (must be <= 32).
-    default: 12
     inputBinding:
       position: 102
       prefix: -k
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Look for alignments of length >= -l.
-    default: 500
     inputBinding:
       position: 102
       prefix: -l
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: A seed hit if the k-mers in band cover >= -h bps in the targest read.
-    default: 35
     inputBinding:
       position: 102
       prefix: -h
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - float
     doc: Look for alignments with -e percent similarity.
-    default: 0.7
     inputBinding:
       position: 102
       prefix: -e
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - Directory
     doc: Do first level sort and merge in directory -P.
-    default: /tmp
     inputBinding:
       position: 102
       prefix: -P
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Use -T threads.
-    default: 4
     inputBinding:
       position: 102
       prefix: -T
@@ -80,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Use -s as the trace point spacing for encoding alignments.
-    default: 100
     inputBinding:
       position: 102
       prefix: -s

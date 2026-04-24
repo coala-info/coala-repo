@@ -94,7 +94,6 @@ inputs:
     doc: Calculation type to infer LD, Exact Solution or Pearson R. 
       (Exact|Pearson). Note the Exact Solution works best when all three 
       genotypes are present (0,1,2) in the variants being compared.
-    default: Pearson
     inputBinding:
       position: 101
       prefix: --ld
@@ -119,7 +118,6 @@ inputs:
       - 'null'
       - string
     doc: The level of verbosity desired
-    default: INFO
     inputBinding:
       position: 101
       prefix: --verbosity

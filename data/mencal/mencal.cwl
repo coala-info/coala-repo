@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: all-year calendar (default YYYY is current year)
-    default: current year
     inputBinding:
       position: 102
       prefix: -y
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: duration of menstruation in days (default 4)
-    default: 4
     inputBinding:
       position: 102
   - id: config_period_length
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: length of period in days (default 28)
-    default: 28
     inputBinding:
       position: 102
   - id: config_save_file
@@ -81,7 +78,6 @@ inputs:
       - 'null'
       - string
     doc: color used for menstruation days of subject
-    default: red
     inputBinding:
       position: 102
   - id: config_subject_name
@@ -89,7 +85,6 @@ inputs:
       - 'null'
       - string
     doc: name of subject
-    default: Unknown
     inputBinding:
       position: 102
   - id: intersection_color
@@ -97,7 +92,6 @@ inputs:
       - 'null'
       - string
     doc: intersection color (default red)
-    default: red
     inputBinding:
       position: 102
       prefix: --icolor

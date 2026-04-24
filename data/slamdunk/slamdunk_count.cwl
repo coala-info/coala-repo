@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Number of T>C conversions required to count read as T>C read
-    default: 1
     inputBinding:
       position: 102
       prefix: --conversion-threshold
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Min base quality for T -> C conversions
-    default: 27
     inputBinding:
       position: 102
       prefix: --min-base-qual
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Thread number
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

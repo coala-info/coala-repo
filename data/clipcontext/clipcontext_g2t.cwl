@@ -11,7 +11,6 @@ inputs:
       - boolean
     doc: Output centered and extended sites and sequences for all transcript 
       matches (unique + non-unique)
-    default: false
     inputBinding:
       position: 101
       prefix: --add-out
@@ -21,7 +20,6 @@ inputs:
       - boolean
     doc: Output all centered and extended genomic regions, instead of only the 
       ones with unique transcript matches
-    default: false
     inputBinding:
       position: 101
       prefix: --all-gen-out
@@ -31,7 +29,6 @@ inputs:
       - boolean
     doc: Output an .html report with statistics and plots comparing transcript 
       and genomic sequences
-    default: false
     inputBinding:
       position: 101
       prefix: --report
@@ -40,7 +37,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate unique column 4 IDs for --in BED file entries
-    default: false
     inputBinding:
       position: 101
       prefix: --gen-uniq-ids
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum input site length for filtering --in BED file
-    default: false
     inputBinding:
       position: 101
       prefix: --max-len
@@ -77,7 +72,6 @@ inputs:
       - int
     doc: Extend regions mapped to transcripts by --merge-ext before running 
       mergeBed to merge overlapping regions
-    default: 10
     inputBinding:
       position: 101
       prefix: --merge-ext
@@ -88,7 +82,6 @@ inputs:
     doc: Defines how to merge overlapping transcript sites (overlap controlled 
       by --merge-ext). (1) only merge sites overlapping at exon borders, (2) 
       merge all overlapping sites, (3) do NOT merge overlapping sites
-    default: 1
     inputBinding:
       position: 101
       prefix: --merge-mode
@@ -98,7 +91,6 @@ inputs:
       - float
     doc: Minimum exon overlap of a site to be reported as transcript hit 
       (intersectBed -f parameter)
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --min-exon-ol
@@ -107,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum input site length for filtering --in BED file
-    default: false
     inputBinding:
       position: 101
       prefix: --min-len
@@ -117,7 +108,6 @@ inputs:
       - boolean
     doc: Reverse filtering (keep values <= threshold and prefer sites with 
       smaller values)
-    default: false
     inputBinding:
       position: 101
       prefix: --rev-filter
@@ -126,7 +116,6 @@ inputs:
       - 'null'
       - float
     doc: Site score threshold for filtering --in BED file
-    default: None
     inputBinding:
       position: 101
       prefix: --thr
@@ -136,7 +125,6 @@ inputs:
       - int
     doc: Up- and downstream extension of centered sites for context sequence 
       extraction
-    default: 30
     inputBinding:
       position: 101
       prefix: --seq-ext

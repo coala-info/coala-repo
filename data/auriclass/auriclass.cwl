@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: Path to clade config
-    default: ''
     inputBinding:
       position: 102
       prefix: --clade_config_path
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Very verbose output
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -37,7 +35,6 @@ inputs:
         items: int
     doc: Expected genome size range. Defaults 11.4-14.6 Mb are based on 150 NCBI
       genomes and take mash genome size overestimation into account.
-    default:
       - 11400000
       - 14900000
     inputBinding:
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - boolean
     doc: Input files are fasta files
-    default: false
     inputBinding:
       position: 102
       prefix: --fasta
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - boolean
     doc: Input files are fastq files
-    default: false
     inputBinding:
       position: 102
       prefix: --fastq
@@ -67,7 +62,6 @@ inputs:
       - float
     doc: If the minimal distance from a reference sample is above this 
       threshold, a warning is emitted. See the docs for more info.
-    default: 0.003
     inputBinding:
       position: 102
       prefix: --high_dist_threshold
@@ -76,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer size
-    default: 27
     inputBinding:
       position: 102
       prefix: --kmer_size
@@ -85,7 +78,6 @@ inputs:
       - 'null'
       - File
     doc: Path to log file
-    default: None
     inputBinding:
       position: 102
       prefix: --log_file_path
@@ -94,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal kmer coverage
-    default: 3
     inputBinding:
       position: 102
       prefix: --minimal_kmer_coverage
@@ -103,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: Name of isolate
-    default: isolate
     inputBinding:
       position: 102
       prefix: --name
@@ -112,7 +102,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip extended QC
-    default: false
     inputBinding:
       position: 102
       prefix: --no_qc
@@ -122,7 +111,6 @@ inputs:
       - float
     doc: If the minimal distance from a reference sample is above this 
       threshold, the sample might not be a Candida sp.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --non_candida_threshold
@@ -131,7 +119,6 @@ inputs:
       - 'null'
       - File
     doc: Path to reference sketch
-    default: ''
     inputBinding:
       position: 102
       prefix: --reference_sketch_path
@@ -140,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Sketch size
-    default: 50000
     inputBinding:
       position: 102
       prefix: --sketch_size
@@ -149,7 +135,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose output
-    default: false
     inputBinding:
       position: 102
       prefix: --verbose

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: the column name for batch
-    default: batch
     inputBinding:
       position: 101
   - id: data_matrix
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: the column name for the injection order
-    default: injectionOrder
     inputBinding:
       position: 101
   - id: loess
@@ -46,7 +44,6 @@ inputs:
       - boolean
     doc: Call the script as "batch_correction_all_loess_wrapper.R"; otherwise 
       call it as "batch_correction_wrapper.R" one
-    default: 'TRUE'
     inputBinding:
       position: 101
       prefix: --loess
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: the column name for the sample types
-    default: sampleType
     inputBinding:
       position: 101
   - id: sample_type_tags

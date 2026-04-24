@@ -19,7 +19,6 @@ inputs:
     doc: When activated, new domainator annotations will be added to the file, 
       not just the domain_search annotations. Useful if you want to see what the
       non-best hits score.
-    default: false
     inputBinding:
       position: 101
       prefix: --add_annotations
@@ -29,7 +28,6 @@ inputs:
       - int
     doc: Approximately how many protein sequences to search at one time in a 
       batch.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --batch_size
@@ -40,7 +38,6 @@ inputs:
     doc: How many CDSs downstream of the selected CDS to extract. Example, 1 
       would mean to return contigs including the selected CDSs and the immediate
       downstream CDS.
-    default: None
     inputBinding:
       position: 101
       prefix: --cds_down
@@ -51,7 +48,6 @@ inputs:
     doc: How many CDSs upstream and downstream of the selected CDS to extract. 
       Example, 1 would mean to return contigs including the selected CDSs and 
       the immediate upstream and downstream CDSs.
-    default: None
     inputBinding:
       position: 101
       prefix: --cds_range
@@ -62,7 +58,6 @@ inputs:
     doc: How many CDSs upstream of the selected CDS to extract. Example, 1 would
       mean to return contigs including the selected CDSs and the immediate 
       upstream CDS.
-    default: None
     inputBinding:
       position: 101
       prefix: --cds_up
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - File
     doc: Path to a configuration file.
-    default: None
     inputBinding:
       position: 101
       prefix: --config
@@ -81,7 +75,6 @@ inputs:
       - int
     doc: 'the number of cores of the cpu which are used at a time to run the search
       [default: use all available cores]'
-    default: 0
     inputBinding:
       position: 101
       prefix: --cpu
@@ -93,7 +86,6 @@ inputs:
     doc: Names of decoy domains. A decoy domain is a domain that is not expected
       to be found in the input sequences. If the best hit for a CDS/protein is a
       domain from the decoys list, it will be not be returned as a hit.
-    default: None
     inputBinding:
       position: 101
       prefix: --decoys
@@ -102,7 +94,6 @@ inputs:
       - 'null'
       - File
     doc: text file containing names of decoy domains.
-    default: None
     inputBinding:
       position: 101
       prefix: --decoys_file
@@ -112,7 +103,6 @@ inputs:
       - boolean
     doc: by default if the same region is extracted for multiple hits then both 
       will be kept. Set this option to eliminate redundancies.
-    default: false
     inputBinding:
       position: 101
       prefix: --deduplicate
@@ -121,7 +111,6 @@ inputs:
       - 'null'
       - float
     doc: threshold E value for the domain hit. Must be <=10. [default 0.001]
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --evalue
@@ -131,7 +120,6 @@ inputs:
       - type: array
         items: string
     doc: Space separated list of taxids to exclude
-    default: None
     inputBinding:
       position: 101
       prefix: --exclude_taxids
@@ -141,7 +129,6 @@ inputs:
       - string
     doc: Whether the sequences in fasta files are protein or nucleotide 
       sequences.
-    default: protein
     inputBinding:
       position: 101
       prefix: --fasta_type
@@ -156,7 +143,6 @@ inputs:
       recommended that you also supply -Z, because database size is pre-calcuated
       at the beginning of the execution, whereas gene-calling is done on the fly.
       Not supplying Z may become an error in the future."
-    default: None
     inputBinding:
       position: 101
       prefix: --gene_call
@@ -166,7 +152,6 @@ inputs:
       - type: array
         items: string
     doc: Space separated list of taxids to include
-    default: None
     inputBinding:
       position: 101
       prefix: --include_taxids
@@ -177,7 +162,6 @@ inputs:
         items: File
     doc: the genbank or fasta files to annotate. Genbank files can be nucleotide
       (with CDS annotations) or peptide. Fasta files must be peptide.
-    default: None
     inputBinding:
       position: 101
       prefix: --input
@@ -187,7 +171,6 @@ inputs:
       - string
     doc: How many kb downstream of the selected CDS to extract. Starting from 
       the end of the CDS.
-    default: None
     inputBinding:
       position: 101
       prefix: --kb_down
@@ -197,7 +180,6 @@ inputs:
       - string
     doc: How many kb upstream and downstream of the selected CDS to extract. 
       Starting from the ends of the CDS.
-    default: None
     inputBinding:
       position: 101
       prefix: --kb_range
@@ -207,7 +189,6 @@ inputs:
       - string
     doc: How many kb upstream of the selected CDS to extract. Starting from the 
       end of the CDS.
-    default: None
     inputBinding:
       position: 101
       prefix: --kb_up
@@ -218,7 +199,6 @@ inputs:
     doc: by default extracted regions will be flipped so that the focus cds is 
       on the forward strand. Setting this option will keep the focus cds on 
       whatever strand it started on.
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_direction
@@ -228,7 +208,6 @@ inputs:
       - int
     doc: 'the maximum number of CDSs returned by the search. Prioritized by bitscore
       of best scoring profile. [default: return all hits passing the evalue threshold]'
-    default: None
     inputBinding:
       position: 101
       prefix: --max_hits
@@ -238,7 +217,6 @@ inputs:
       - boolean
     doc: Run hmmsearch/phmmer in maximum sensitivity mode, which is much slower,
       but more sensitive.
-    default: false
     inputBinding:
       position: 101
       prefix: --max_mode
@@ -249,7 +227,6 @@ inputs:
     doc: the maximum fractional overlap between domains to be included in the 
       annotated genbank. If >= 1, then no overlap filtering will be done. 
       [default 1]
-    default: 1
     inputBinding:
       position: 101
       prefix: --max_overlap
@@ -261,7 +238,6 @@ inputs:
       1, then no overlap filtering will be done. Regions are output in a greedy 
       fashion based on CDS start site. New regions are output if less than this 
       fraction of them overlaps with any previously output region.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --max_region_overlap
@@ -272,7 +248,6 @@ inputs:
     doc: hits with E value lower than this will be filtered out. Not frequently 
       used. Use only if you want to eliminate close matches. Must be >=0. 
       [default 0]
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min_evalue
@@ -282,7 +257,6 @@ inputs:
       - Directory
     doc: Path to NCBI taxonomy database directory. Will be created and 
       downloaded if it does not exist.
-    default: /tmp/ncbi_taxonomy
     inputBinding:
       position: 101
       prefix: --ncbi_taxonomy_path
@@ -292,7 +266,6 @@ inputs:
       - boolean
     doc: If set, then ends of sequences will be padded so that the focus CDS 
       aligns.
-    default: false
     inputBinding:
       position: 101
       prefix: --pad
@@ -313,7 +286,6 @@ inputs:
         items: File
     doc: the names of the HMM files with profiles to search. Or protein query 
       files.
-    default: None
     inputBinding:
       position: 101
       prefix: --references
@@ -322,7 +294,6 @@ inputs:
       - 'null'
       - string
     doc: Only extract regions around CDSs on the specified strand.
-    default: None
     inputBinding:
       position: 101
       prefix: --strand
@@ -332,7 +303,6 @@ inputs:
       - boolean
     doc: If taxonomy database exists, check it against the version on the ncbi 
       server and update if there is a newer version.
-    default: false
     inputBinding:
       position: 101
       prefix: --taxonomy_update
@@ -343,7 +313,6 @@ inputs:
     doc: by default, nucleotide databases will return nucleotide hits. When 
       --translate is set, CDS hits will be translated before writing. Note that 
       --translate is incompatble with neighborhood extraction.
-    default: false
     inputBinding:
       position: 101
       prefix: --translate
@@ -352,7 +321,6 @@ inputs:
       - 'null'
       - boolean
     doc: If set, then return the entire matching contigs.
-    default: false
     inputBinding:
       position: 101
       prefix: --whole_contig
@@ -366,7 +334,6 @@ inputs:
       the number actual target sequences (currently this does does not account for
       taxonomic filtering).Supplying -Z is recommended for most use cases of domainate,
       as it will speed up the search and make comparisons between searches more meaningful."
-    default: 1000
     inputBinding:
       position: 101
       prefix: -Z

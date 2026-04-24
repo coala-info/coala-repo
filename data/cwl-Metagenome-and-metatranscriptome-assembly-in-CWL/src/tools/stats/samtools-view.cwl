@@ -29,7 +29,6 @@ inputs:
     doc: |
       only include reads with number of CIGAR operations
       consuming query sequence >= INT [0]
-    default: false
   collapsecigar:
     type: boolean
     inputBinding:
@@ -37,7 +36,6 @@ inputs:
       prefix: '-B'
     doc: |
       collapse the backward CIGAR operation
-    default: false
   count:
     type: boolean
     inputBinding:
@@ -45,7 +43,6 @@ inputs:
       prefix: '-c'
     doc: |
       print only the count of matching records
-    default: false
   fastcompression:
     type: boolean
     inputBinding:
@@ -53,14 +50,12 @@ inputs:
       prefix: '-1'
     doc: |
       use fast BAM compression (implies -b)
-    default: false
   input:
     type: File
     inputBinding:
       position: 4
     doc: |
       Input bam file.
-    default: false
   isbam:
     type: boolean
     inputBinding:
@@ -68,7 +63,6 @@ inputs:
       prefix: '-b'
     doc: |
       output in BAM format
-    default: false
   iscram:
     type: boolean
     inputBinding:
@@ -76,7 +70,6 @@ inputs:
       prefix: '-C'
     doc: |
       output in CRAM format
-    default: false
   output_name:
     type: string
     inputBinding:
@@ -158,7 +151,6 @@ inputs:
       prefix: '-h'
     doc: |
       include header in SAM output
-    default: false
   threads:
     type: int?
     inputBinding:
@@ -166,7 +158,6 @@ inputs:
       prefix: '-@'
     doc: |
       number of BAM compression threads [0]
-    default: false
   uncompressed:
     type: boolean
     inputBinding:

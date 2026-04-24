@@ -30,7 +30,6 @@ inputs:
     doc: 'Specifies the maximum number of sites per sub-block, different sub-blocks
       in sequence file will be sequentially loaded to calculate WIC. Default: 40000
       sites.'
-    default: 40000
     inputBinding:
       position: 101
       prefix: --block
@@ -49,7 +48,6 @@ inputs:
       - int
     doc: 'The window size (default: 200) used for breakpoint scan, and step size is
       fixed at 1.'
-    default: 200
     inputBinding:
       position: 101
       prefix: -bw
@@ -164,7 +162,6 @@ inputs:
       - float
     doc: 'The cutoff threshold of proportion (cp, default: 0.9) used for searching
       recombination regions when mWIC/EIC >= cp, the maximum value of cp is 1.'
-    default: 0.9
     inputBinding:
       position: 101
       prefix: -cp
@@ -192,7 +189,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads (or cores) for calculations, default: 4.'
-    default: 4
     inputBinding:
       position: 101
       prefix: -t
@@ -219,7 +215,6 @@ inputs:
       - 'null'
       - float
     doc: 'Starting value (default: 0) of the Y-axis in plot diagram.'
-    default: 0
     inputBinding:
       position: 101
       prefix: -y

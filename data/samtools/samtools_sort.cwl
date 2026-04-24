@@ -35,7 +35,6 @@ inputs:
   - 'null'
   - int
   doc: Kmer size to use for minimiser
-  default: 20
   inputBinding:
     position: 102
     prefix: -K
@@ -44,7 +43,6 @@ inputs:
   - 'null'
   - string
   doc: Set maximum memory per thread; suffix K/M/G recognized
-  default: 768M
   inputBinding:
     position: 102
     prefix: -m
@@ -151,7 +149,6 @@ inputs:
   - 'null'
   - int
   doc: Number of additional threads to use
-  default: 0
   inputBinding:
     position: 102
     prefix: --threads
@@ -184,7 +181,6 @@ inputs:
   - 'null'
   - int
   doc: Window size for minimiser indexing via -I ref.fa
-  default: 100
   inputBinding:
     position: 102
     prefix: -w

@@ -81,7 +81,6 @@ inputs:
       - boolean
     doc: Refine the predictions of the transformer-based InstaNovo model with 
       the diffusion-based InstaNovo+ model?
-    default: false
     inputBinding:
       position: 102
       prefix: --no-refinement
@@ -91,7 +90,6 @@ inputs:
       - boolean
     doc: Refine the predictions of the transformer-based InstaNovo model with 
       the diffusion-based InstaNovo+ model?
-    default: true
     inputBinding:
       position: 102
       prefix: --with-refinement

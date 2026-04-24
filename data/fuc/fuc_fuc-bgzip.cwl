@@ -12,7 +12,6 @@ inputs:
       - type: array
         items: File
     doc: 'Input file to be compressed (default: stdin).'
-    default: stdin
     inputBinding:
       position: 1
 outputs:

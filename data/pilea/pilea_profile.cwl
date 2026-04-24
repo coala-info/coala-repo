@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Number of mixture components.
-    default: 5
     inputBinding:
       position: 102
       prefix: --components
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force counting.
-    default: false
     inputBinding:
       position: 102
       prefix: --force
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: Max. median per-window dispersion of k-mers' counts.
-    default: inf
     inputBinding:
       position: 102
       prefix: --max-disp
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Terminal condition for EM - max. number of iterations.
-    default: inf
     inputBinding:
       position: 102
       prefix: --max-iter
@@ -60,7 +56,6 @@ inputs:
       - float
     doc: Min. containment of reference genomes' sketches after reassignment of 
       shared k-mers.
-    default: 0.25
     inputBinding:
       position: 102
       prefix: --min-cont
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: Min. median per-window coverage of k-mers.
-    default: 5.0
     inputBinding:
       position: 102
       prefix: --min-cove
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: Min. fraction of reference genomes' windows covered by k-mers.
-    default: 0.75
     inputBinding:
       position: 102
       prefix: --min-frac
@@ -94,7 +87,6 @@ inputs:
       - boolean
     doc: Files are single-end. If not given then merge forward|reward files with
       <_(1|2)>, <_(R1|R2)> or <_(fwd|rev)>.
-    default: false
     inputBinding:
       position: 102
       prefix: --single
@@ -103,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 20
     inputBinding:
       position: 102
       prefix: --threads
@@ -112,7 +103,6 @@ inputs:
       - 'null'
       - float
     doc: Terminal condition for EM - tolerance.
-    default: 1e-05
     inputBinding:
       position: 102
       prefix: --tol

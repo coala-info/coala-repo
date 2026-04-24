@@ -45,7 +45,6 @@ inputs:
     doc: 'output format [native (default): use native integer arrays (uint{8,16,32,64});
       packed: use bit-backed arrays; text: use text files (one integer per line);
       dna: text file with DNA k-mers (one k-mer per line)]'
-    default: native
     inputBinding:
       position: 103
       prefix: --format

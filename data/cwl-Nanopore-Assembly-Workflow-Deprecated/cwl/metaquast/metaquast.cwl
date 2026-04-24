@@ -47,7 +47,6 @@ inputs:
 #       prefix: --output-dir
   threads:
     type: int
-    default: 1
     inputBinding:
       prefix: --threads
 

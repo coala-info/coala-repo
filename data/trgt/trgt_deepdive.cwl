@@ -12,7 +12,6 @@ inputs:
       - string
     doc: 'Enable or disable color output in logging [possible values: always, auto,
       never]'
-    default: auto
     inputBinding:
       position: 101
       prefix: --color

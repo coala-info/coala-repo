@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Merge peaks within <mdist> base pairs.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --mdist
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Test genome bins with at least <minreads> read pairs..
-    default: 15
     inputBinding:
       position: 101
       prefix: --minreads
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum width (bp) of a peak.
-    default: 150
     inputBinding:
       position: 101
       prefix: --minwidth
@@ -70,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: Output prefix to write peaks and metrics file.
-    default: sample
     inputBinding:
       position: 101
       prefix: --prefix
@@ -80,7 +76,6 @@ inputs:
       - float
     doc: Define significance threshold <pval> with multiple hypothesis 
       correction via Benjamini-Hochberg.
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --pval
@@ -89,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Slide size for coverage bins.
-    default: 50
     inputBinding:
       position: 101
       prefix: --slide
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Bin size for coverage bins.
-    default: 100
     inputBinding:
       position: 101
       prefix: --step

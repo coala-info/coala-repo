@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - Directory
     doc: Write alignment to directory <dir>
-    default: .
     inputBinding:
       position: 103
       prefix: --aligndir
@@ -89,7 +88,6 @@ inputs:
       - 'null'
       - Directory
     doc: Search for DSSP files using the path <path>
-    default: .
     inputBinding:
       position: 103
       prefix: --dssp-path
@@ -106,7 +104,6 @@ inputs:
       - 'null'
       - string
     doc: Append the suffix <suf> to a protein's name to form its DSSP filename
-    default: .dssp
     inputBinding:
       position: 103
       prefix: --dssp-suffix
@@ -125,7 +122,6 @@ inputs:
       - float
     doc: Run a second fast SSAP with looser cutoffs if the first fast SSAP's 
       score falls below <score>
-    default: 65
     inputBinding:
       position: 103
       prefix: --max-score-to-fast-rerun
@@ -134,7 +130,6 @@ inputs:
       - 'null'
       - float
     doc: Perform a slow SSAP if the (best) fast SSAP score falls below <score>
-    default: 75
     inputBinding:
       position: 103
       prefix: --max-score-to-slow-rerun
@@ -144,7 +139,6 @@ inputs:
       - float
     doc: Only output alignment/superposition files if the SSAP score exceeds 
       <score>
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-score-for-files
@@ -154,7 +148,6 @@ inputs:
       - float
     doc: '[DEPRECATED] Calculate superposition based on the residue-pairs with scores
       greater than <score>'
-    default: -0.25
     inputBinding:
       position: 103
       prefix: --min-sup-score
@@ -163,7 +156,6 @@ inputs:
       - 'null'
       - Directory
     doc: Search for PDB files using the path <path>
-    default: .
     inputBinding:
       position: 103
       prefix: --pdb-path
@@ -189,7 +181,6 @@ inputs:
       - string
     doc: 'Read the protein data from the set of files <set>, of available sets: PDB,
       PDB_DSSP, PDB_DSSP_SEC, WOLF_SEC'
-    default: PDB
     inputBinding:
       position: 103
       prefix: --prot-src-files
@@ -215,7 +206,6 @@ inputs:
       - 'null'
       - Directory
     doc: Search for sec files using the path <path>
-    default: .
     inputBinding:
       position: 103
       prefix: --sec-path
@@ -232,7 +222,6 @@ inputs:
       - 'null'
       - string
     doc: Append the suffix <suf> to a protein's name to form its sec filename
-    default: .sec
     inputBinding:
       position: 103
       prefix: --sec-suffix
@@ -257,7 +246,6 @@ inputs:
       - 'null'
       - Directory
     doc: Search for wolf files using the path <path>
-    default: .
     inputBinding:
       position: 103
       prefix: --wolf-path
@@ -274,7 +262,6 @@ inputs:
       - 'null'
       - string
     doc: Append the suffix <suf> to a protein's name to form its wolf filename
-    default: .wolf
     inputBinding:
       position: 103
       prefix: --wolf-suffix

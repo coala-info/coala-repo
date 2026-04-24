@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: A list of columns that you would like returned
-    default: '*'
     inputBinding:
       position: 102
       prefix: --columns
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Add amount to increase AF filter between unique and other samples
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --increase
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a maximum sample AF to allow in other samples
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --maxOthers
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth required in all samples
-    default: 0
     inputBinding:
       position: 102
       prefix: --minDP
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum genotype quality required in all samples
-    default: 0
     inputBinding:
       position: 102
       prefix: --minGQ
@@ -97,7 +92,6 @@ inputs:
       - string
     doc: Rather than including all samples in filters, a string of 
       comma-separated specified samples to use
-    default: All
     inputBinding:
       position: 102
       prefix: --samples

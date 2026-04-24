@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: deletion rate
-    default: 0.01
     inputBinding:
       position: 101
       prefix: -d
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: insertion rate
-    default: 0.005
     inputBinding:
       position: 101
       prefix: -i
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of Ns allowed per read
-    default: 0
     inputBinding:
       position: 101
       prefix: -N
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: read mean size
-    default: 200
     inputBinding:
       position: 101
       prefix: -m
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: number of random reads
-    default: 0
     inputBinding:
       position: 101
       prefix: -r
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: number of reads to generate
-    default: 50000
     inputBinding:
       position: 101
       prefix: -n
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: quality encoding character
-    default: "'5'"
     inputBinding:
       position: 101
       prefix: -q
@@ -78,7 +71,6 @@ inputs:
       - 'null'
       - boolean
     doc: skip the correction step
-    default: false
     inputBinding:
       position: 101
       prefix: -skip
@@ -87,7 +79,6 @@ inputs:
       - 'null'
       - float
     doc: standard deviation for read size
-    default: 20.0
     inputBinding:
       position: 101
       prefix: -sd
@@ -96,7 +87,6 @@ inputs:
       - 'null'
       - float
     doc: substitution rate
-    default: 0.005
     inputBinding:
       position: 101
       prefix: -s
@@ -121,7 +111,6 @@ inputs:
       - 'null'
       - boolean
     doc: verbose mode, you need R software in this mode
-    default: false
     inputBinding:
       position: 101
       prefix: -v

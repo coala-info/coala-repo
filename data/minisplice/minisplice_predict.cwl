@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - File
     doc: annotated splice sites in BED12
-    default: '[]'
     inputBinding:
       position: 103
       prefix: -b
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - File
     doc: calibration data
-    default: '[]'
     inputBinding:
       position: 103
       prefix: -c
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: max score
-    default: 13
     inputBinding:
       position: 103
       prefix: -h
@@ -70,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: min score
-    default: -6
     inputBinding:
       position: 103
       prefix: -l
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: minibatch size
-    default: 128
     inputBinding:
       position: 103
       prefix: -m
@@ -104,7 +99,6 @@ inputs:
       - 'null'
       - float
     doc: score bin size
-    default: 0.02
     inputBinding:
       position: 103
       prefix: -s
@@ -113,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 103
       prefix: -t

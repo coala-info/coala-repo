@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum read length to consider.
-    default: 50
     inputBinding:
       position: 102
       prefix: --max-read-length
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum score for a period to be considered significant.
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --min-period-score
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length to consider.
-    default: 20
     inputBinding:
       position: 102
       prefix: --min-read-length
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: Range of periods to test (e.g., '10-50').
-    default: 10-50
     inputBinding:
       position: 102
       prefix: --period-range
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Step size for the sliding window.
-    default: 100
     inputBinding:
       position: 102
       prefix: --step-size
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the sliding window for periodicity calculation.
-    default: 1000
     inputBinding:
       position: 102
       prefix: --window-size

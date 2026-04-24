@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: '<= maximum coverage show, default: 10000'
-    default: 10000
     inputBinding:
       position: 101
       prefix: --maxcover
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: '>= minumum coverage show, default: 0'
-    default: 0
     inputBinding:
       position: 101
       prefix: --mincover

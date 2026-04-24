@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Band width. This value is only used while building the shifting model.
-    default: 300
     inputBinding:
       position: 101
       prefix: --bw
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum entropy change between iterations before halting E-M steps.
-    default: 1e-05
     inputBinding:
       position: 101
       prefix: --EM-converge-diff
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum enrichment score.
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --EM-min-score
@@ -86,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: For diagnostics, min fold enrichment to consider.
-    default: 0
     inputBinding:
       position: 101
       prefix: --fe-min
@@ -95,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: For diagnostics, fold enrichment step.
-    default: 20
     inputBinding:
       position: 101
       prefix: --fe-step
@@ -105,7 +100,6 @@ inputs:
       - string
     doc: Format of tag file, "AUTO", "BED" or "ELAND" or "ELANDMULTI" or "ELANDMULTIPET"
       or "ELANDEXPORT" or "SAM" or "BAM" or "BOWTIE".
-    default: AUTO
     inputBinding:
       position: 101
       prefix: --format
@@ -115,7 +109,6 @@ inputs:
       - string
     doc: Effective genome size. It can be 1.0e+9 or shortcuts:'hs' for human, 'mm'
       for mouse, 'ce' for C. elegans and 'dm' for fruitfly.
-    default: hs
     inputBinding:
       position: 101
       prefix: --gsize
@@ -124,7 +117,6 @@ inputs:
       - 'null'
       - string
     doc: It controls the AREM behavior towards duplicate tags at the exact same location.
-    default: auto
     inputBinding:
       position: 101
       prefix: --keep-dup
@@ -133,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: The large nearby region in basepairs to calculate dynamic lambda.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --llocal
@@ -143,7 +134,6 @@ inputs:
       - string
     doc: Select the regions within MFOLD range of high-confidence enrichment ratio
       against background to build model.
-    default: 10,30
     inputBinding:
       position: 101
       prefix: --mfold
@@ -152,7 +142,6 @@ inputs:
       - 'null'
       - string
     doc: Experiment name, which will be used to generate output file names.
-    default: NA
     inputBinding:
       position: 101
       prefix: --name
@@ -218,7 +207,6 @@ inputs:
       - 'null'
       - int
     doc: Best distance between Pair-End Tags. Only available when format is 'ELANDMULTIPET'.
-    default: 200
     inputBinding:
       position: 101
       prefix: --petdist
@@ -227,7 +215,6 @@ inputs:
       - 'null'
       - float
     doc: Prior probability that a SNP occurs at any base in the genome.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --prior-snp
@@ -236,7 +223,6 @@ inputs:
       - 'null'
       - float
     doc: Pvalue cutoff for peak detection.
-    default: 1e-05
     inputBinding:
       position: 101
       prefix: --pvalue
@@ -245,7 +231,6 @@ inputs:
       - 'null'
       - string
     doc: Read quality scale must be one of ['auto', 'sanger+33', 'illumina+64'].
-    default: auto
     inputBinding:
       position: 101
       prefix: --quality-scale
@@ -264,7 +249,6 @@ inputs:
       - int
     doc: The arbitrary shift size in bp. When nomodel is true, AREM will use this
       value as 1/2 of fragment size.
-    default: 100
     inputBinding:
       position: 101
       prefix: --shiftsize
@@ -281,7 +265,6 @@ inputs:
       - 'null'
       - int
     doc: The small nearby region in basepairs to calculate dynamic lambda.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --slocal
@@ -290,7 +273,6 @@ inputs:
       - 'null'
       - int
     doc: The resoluation for saving wiggle files. Usable only with '--wig' option.
-    default: 10
     inputBinding:
       position: 101
       prefix: --space
@@ -299,7 +281,6 @@ inputs:
       - 'null'
       - int
     doc: Tag size. This will overide the auto detected tag size.
-    default: 25
     inputBinding:
       position: 101
       prefix: --tsize
@@ -325,7 +306,6 @@ inputs:
       - 'null'
       - int
     doc: 'Set verbose level. 0: critical, 1: warning, 2: process info, 3: debug.'
-    default: 2
     inputBinding:
       position: 101
       prefix: --verbose

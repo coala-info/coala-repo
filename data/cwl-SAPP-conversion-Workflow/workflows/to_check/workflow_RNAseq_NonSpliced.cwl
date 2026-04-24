@@ -51,17 +51,14 @@ inputs:
     type: int?
     doc: number of threads to use for computational processes
     label: number of threads
-    default: 2
   memory:
     type: int?
     doc: maximum memory usage in megabytes
     label: Max memory
-    default: 4000
   filter_rrna:
     type: boolean
     label: Filter rRNA
     doc: Filter rRNA from reads if true
-    default: false
   forward_reads:
     type: string[]
     doc: forward sequence file locally
@@ -109,7 +106,6 @@ steps:
       identifier: identifier
       filter_rrna: filter_rrna
       step: 
-        default: 1
     out: [QC_reverse_reads, QC_forward_reads, reports_folder]
   #########################################
   # bowtie2 alignment
@@ -182,7 +178,6 @@ steps:
         linkMerge: merge_flattened
         pickValue: all_non_null
       destination: 
-        default: "3_bowtie2-alignment"
     out:
       [results]
 
@@ -197,7 +192,6 @@ steps:
         linkMerge: merge_flattened
         pickValue: all_non_null
       destination:
-        default: "4_FeatureCounts"
     when: $(inputs.gtf != undefined)
     out:
       [results]
@@ -213,7 +207,6 @@ steps:
         linkMerge: merge_flattened
         pickValue: all_non_null
       destination: 
-        default: "5_Kallisto"
     when: $(inputs.gtf != undefined)
     out:
       [results]

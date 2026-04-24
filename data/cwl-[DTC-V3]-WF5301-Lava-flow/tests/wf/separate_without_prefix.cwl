@@ -6,7 +6,6 @@ baseCommand: echo
 inputs:
   src:
     type: string
-    default:
       string
     inputBinding:
       position: 1

@@ -26,7 +26,6 @@ inputs:
       - float
     doc: log10LR cutoff. Regions with signals lower than cutoff will not be 
       considerred as enriched regions.
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --cutoff
@@ -36,7 +35,6 @@ inputs:
       - float
     doc: Sequencing depth (# of non-redundant reads in million) for condition 1.
       It will be used together with --d2.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --d1
@@ -48,7 +46,6 @@ inputs:
       It will be used together with --d1. DEPTH1 and DEPTH2 will be used to 
       calculate scaling factor for each sample, to down-scale larger sample to 
       the level of smaller one.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --d2
@@ -58,7 +55,6 @@ inputs:
       - int
     doc: Maximum gap to merge nearby differential regions. Consider a wider gap 
       for broad marks. Maximum gap should be smaller than minimum length (-g).
-    default: 100
     inputBinding:
       position: 101
       prefix: --max-gap
@@ -68,7 +64,6 @@ inputs:
       - int
     doc: Minimum length of differential region. Try bigger value to remove small
       regions.
-    default: 200
     inputBinding:
       position: 101
       prefix: --min-len

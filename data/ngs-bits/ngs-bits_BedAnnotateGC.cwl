@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Clear all annotations present in the input file.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: -clear
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Bases to extend around the input region for calculating the GC content.
-    default: '0'
     inputBinding:
       position: 101
       prefix: -extend
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - File
     doc: Input BED file. If unset, reads from STDIN.
-    default: ''
     inputBinding:
       position: 101
       prefix: -in
@@ -37,7 +34,6 @@ inputs:
       - File
     doc: Reference genome FASTA file. If unset, 'reference_genome' from the 
       'settings.ini' file is used.
-    default: ''
     inputBinding:
       position: 101
       prefix: -ref

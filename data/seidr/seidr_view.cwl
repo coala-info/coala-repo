@@ -48,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: Delimiter for scores/ranks
-    default: ;
     inputBinding:
       position: 102
       prefix: --delim
@@ -89,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: Score column to use as edge weights
-    default: last score
     inputBinding:
       position: 102
       prefix: --index
@@ -122,7 +120,6 @@ inputs:
       - 'null'
       - string
     doc: Delimiter for supplementary tags
-    default: ;
     inputBinding:
       position: 102
       prefix: --sc-delim
@@ -147,7 +144,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to store temporary data
-    default: auto
     inputBinding:
       position: 102
       prefix: --tempdir
@@ -156,7 +152,6 @@ inputs:
       - 'null'
       - float
     doc: Only print edges with a weight >= t
-    default: -inf
     inputBinding:
       position: 102
       prefix: --threshold

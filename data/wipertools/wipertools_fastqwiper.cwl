@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: Allowed characters set in the SEQ line.
-    default: ACGTN
     inputBinding:
       position: 101
       prefix: --alphabet
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads you want to print a status message.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --log_frequency

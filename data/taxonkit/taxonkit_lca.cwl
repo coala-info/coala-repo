@@ -12,7 +12,6 @@ inputs:
       - string
     doc: 'size of line buffer, supported unit: K, M, G. You need to increase the value
       when "bufio.Scanner: token too long" error occured'
-    default: 1M
     inputBinding:
       position: 101
       prefix: --buffer-size
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: directory containing nodes.dmp and names.dmp
-    default: /root/.taxonkit
     inputBinding:
       position: 101
       prefix: --data-dir
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: separater for TaxIds. This flag is same to --separator.
-    default: ' '
     inputBinding:
       position: 101
       prefix: --separater
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: separator for TaxIds
-    default: ' '
     inputBinding:
       position: 101
       prefix: --separator
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: field index of TaxIds. Input data should be tab-separated
-    default: 1
     inputBinding:
       position: 101
       prefix: --taxids-field
@@ -90,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs. 4 is enough
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: 'Compression Level. 0: no compression. 9: max compression'
-    default: 5
     inputBinding:
       position: 102
       prefix: --bamcompression
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - boolean
     doc: drop SEQ and QUAL
-    default: false
     inputBinding:
       position: 102
       prefix: --drop-seq
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - float
     doc: lift over min-match
-    default: 0.95
     inputBinding:
       position: 102
       prefix: --minmatch
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Sam output format
-    default: SAM
     inputBinding:
       position: 102
       prefix: --samoutputformat
@@ -86,7 +82,6 @@ inputs:
       - 'null'
       - boolean
     doc: Save original position in SMA attribute
-    default: false
     inputBinding:
       position: 102
       prefix: --save-position
@@ -95,7 +90,6 @@ inputs:
       - 'null'
       - boolean
     doc: discard unmapped reads/unlifted reads
-    default: false
     inputBinding:
       position: 102
       prefix: --unmapped
@@ -104,7 +98,6 @@ inputs:
       - 'null'
       - string
     doc: SAM Reader Validation Stringency
-    default: LENIENT
     inputBinding:
       position: 102
       prefix: --validation-stringency

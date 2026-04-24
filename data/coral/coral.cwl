@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: candidate number of bridgign paths
-    default: 10
     inputBinding:
       position: 101
       prefix: --dp_solution_size
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: number of weights maintained for each bridging path
-    default: 5
     inputBinding:
       position: 101
       prefix: --dp_stack_size
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: maximized length for reconsidering error correction
-    default: 10
     inputBinding:
       position: 101
       prefix: --flank_tiny_length
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: maximized ratio for reconsidering error correction
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --flank_tiny_ratio
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: library type of the sample
-    default: unstranded
     inputBinding:
       position: 101
       prefix: --library_type
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: maximized basepair difference for being in an equivalent class
-    default: 30
     inputBinding:
       position: 101
       prefix: --max_clustring_flank
@@ -70,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: ignore reads with CIGAR size larger than this value
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max_num_cigar
@@ -79,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: the minimized bottleneck weight in bridging path
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --min_bridging_score
@@ -88,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of spliced reads required for a junction
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_splice_bundary_hits

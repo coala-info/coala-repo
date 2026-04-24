@@ -46,7 +46,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_gro_path
-    default: system.pdb
 
   config:
     label: Advanced configuration options for biobb_gromacs Editconf

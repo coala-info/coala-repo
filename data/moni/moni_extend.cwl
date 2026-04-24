@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: number of reads per thread batch
-    default: 100
     inputBinding:
       position: 101
       prefix: --batch
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: length of reference substring for extension
-    default: 100
     inputBinding:
       position: 101
       prefix: --extl
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: coma separated gap extension penalty values
-    default: 2,1
     inputBinding:
       position: 101
       prefix: --gape
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: coma separated gap open penalty values
-    default: 4,13
     inputBinding:
       position: 101
       prefix: --gapo
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: select the grammar [plain, shaped]
-    default: plain
     inputBinding:
       position: 101
       prefix: --grammar
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: match score value
-    default: 2
     inputBinding:
       position: 101
       prefix: --smatch
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: mismatch penalty value
-    default: 4
     inputBinding:
       position: 101
       prefix: --smismatch
@@ -84,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: number of helper threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

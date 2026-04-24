@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: Reconstruction will count all changes rather than only credible changes
-    default: 1
     inputBinding:
       position: 101
       prefix: --count_all_changes
@@ -41,7 +40,6 @@ inputs:
       - int
     doc: Size (length) of the discretization vector, Default=200. Can increase 
       resolution at the cost of computation time.
-    default: 200
     inputBinding:
       position: 101
       prefix: --discretization_size
@@ -52,7 +50,6 @@ inputs:
     doc: Run with no file name to estimate the global error model file. This 
       file can be providedin subsequent runs by providing the path to the Error 
       model file with no spaces(e.g. - eBase_error_model.txt).
-    default: 'false'
     inputBinding:
       position: 101
       prefix: --error
@@ -95,7 +92,6 @@ inputs:
       - int
     doc: Number of gamma categories to use, requires an integer argument. 
       Default=1 (No gamma modelling)
-    default: 1
     inputBinding:
       position: 101
       prefix: --n_gamma_cats
@@ -104,7 +100,6 @@ inputs:
       - 'null'
       - string
     doc: Expansion parameter for Nelder-Mead optimizer, Default=2.
-    default: '2'
     inputBinding:
       position: 101
       prefix: --optimizer_expansion
@@ -115,7 +110,6 @@ inputs:
     doc: Maximum number of iterations that will be performed in sigma 
       search.Default = 300 (increase this number if likelihood is still 
       improving when limit is hit).
-    default: 300
     inputBinding:
       position: 101
       prefix: --optimizer_iterations
@@ -124,7 +118,6 @@ inputs:
       - 'null'
       - string
     doc: Reflection parameter for Nelder-Mead optimizer, Default=1.
-    default: '1'
     inputBinding:
       position: 101
       prefix: --optimizer_reflection
@@ -134,7 +127,6 @@ inputs:
       - string
     doc: Output directory - Name of directory automatically created for output. 
       Default=results.
-    default: results
     inputBinding:
       position: 101
       prefix: --output_prefix
@@ -145,7 +137,6 @@ inputs:
     doc: Expected distribution of the root in Inference Mode (mutually exclusive
       with --rootdist in Simulation Mode). Must be gamma:[k]:[theta]. 
       Default=gamma:0.375:1600.0
-    default: gamma:0.375:1600.0
     inputBinding:
       position: 101
       prefix: --prior
@@ -155,7 +146,6 @@ inputs:
       - boolean
     doc: The input file contains ratios of gene expression values rather than 
       absolute values
-    default: 1
     inputBinding:
       position: 101
       prefix: --ratio
@@ -204,7 +194,6 @@ inputs:
       - string
     doc: Simulate families. Optionally provide the number of simulations to 
       generate
-    default: 'false'
     inputBinding:
       position: 101
       prefix: --simulate
@@ -227,7 +216,6 @@ inputs:
       - 'null'
       - boolean
     doc: Exclude gene families that don't exist at the root, not recommended.
-    default: 1
     inputBinding:
       position: 101
       prefix: --zero_root

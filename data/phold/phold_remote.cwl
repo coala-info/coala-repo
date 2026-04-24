@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - float
     doc: Stricter E-value threshold for Foldseek CARD and VFDB hits
-    default: '1e-10'
     inputBinding:
       position: 101
       prefix: --card_vfdb_evalue
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: Evalue threshold for Foldseek
-    default: '1e-3'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -85,7 +83,6 @@ inputs:
       - int
     doc: Maximum results per query sequence allowed to pass the prefilter. You 
       may want to reduce this to save disk space for enormous datasets
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max_seqs
@@ -94,7 +91,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: output_phold
     inputBinding:
       position: 101
       prefix: --output
@@ -103,7 +99,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output files
-    default: phold
     inputBinding:
       position: 101
       prefix: --prefix
@@ -121,7 +116,6 @@ inputs:
       - 'null'
       - float
     doc: Sensitivity parameter for foldseek
-    default: 9.5
     inputBinding:
       position: 101
       prefix: --sensitivity
@@ -138,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

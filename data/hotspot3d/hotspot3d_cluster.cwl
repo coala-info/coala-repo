@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: .maf file column header for amino acid changes
-    default: amino_acid_change
     inputBinding:
       position: 101
       prefix: --amino-acid-header
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: Cluster using network or density-based methods (network or density)
-    default: network
     inputBinding:
       position: 101
       prefix: --clustering
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Pair distance to use (shortest or average)
-    default: average
     inputBinding:
       position: 101
       prefix: --distance-measure
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: Epsilon value
-    default: 10
     inputBinding:
       position: 101
       prefix: --Epsilon
@@ -82,7 +78,6 @@ inputs:
       - 'null'
       - float
     doc: Length scale used to control scoring of vertices
-    default: 10
     inputBinding:
       position: 101
       prefix: --length-scale
@@ -91,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Linear distance cutoff (> peptides)
-    default: 0
     inputBinding:
       position: 101
       prefix: --linear-cutoff
@@ -118,7 +112,6 @@ inputs:
       - float
     doc: Maximum cluster radius (max network geodesic from centroid, <= 
       Angstroms)
-    default: 10
     inputBinding:
       position: 101
       prefix: --max-radius
@@ -128,7 +121,6 @@ inputs:
       - string
     doc: Clusters for each intra-molecular, monomer, homomer, inter-molecular, 
       heteromer, multimer, or any *mer
-    default: unspecified
     inputBinding:
       position: 101
       prefix: --meric-type
@@ -137,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: MinPts
-    default: 4
     inputBinding:
       position: 101
       prefix: --MinPts
@@ -164,7 +155,6 @@ inputs:
       - int
     doc: Number of density clustering runs to perform before the cluster 
       membership probability being calculated
-    default: 10
     inputBinding:
       position: 101
       prefix: --number-of-runs
@@ -173,7 +163,6 @@ inputs:
       - 'null'
       - float
     doc: P_value cutoff (<)
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --p-value-cutoff
@@ -191,7 +180,6 @@ inputs:
       - string
     doc: Parallelization for structure and subunit dependent runs (none or 
       local)
-    default: none
     inputBinding:
       position: 101
       prefix: --parallel
@@ -200,7 +188,6 @@ inputs:
       - 'null'
       - float
     doc: Clusters will be formed with variants having at least this probability
-    default: 100
     inputBinding:
       position: 101
       prefix: --probability-cut-off
@@ -249,7 +236,6 @@ inputs:
       - 'null'
       - float
     doc: 3D distance cutoff (<)
-    default: 100
     inputBinding:
       position: 101
       prefix: --3d-distance-cutoff
@@ -258,7 +244,6 @@ inputs:
       - 'null'
       - string
     doc: .maf file column header for transcript id's
-    default: transcript_name
     inputBinding:
       position: 101
       prefix: --transcript-id-header
@@ -275,7 +260,6 @@ inputs:
       - 'null'
       - string
     doc: Vertex score system to use (centrality, exponentials)
-    default: centrality
     inputBinding:
       position: 101
       prefix: --vertex-score
@@ -285,7 +269,6 @@ inputs:
       - string
     doc: Graph vertex type for network-based clustering (recurrence, unique, 
       site or weight)
-    default: site
     inputBinding:
       position: 101
       prefix: --vertex-type
@@ -295,7 +278,6 @@ inputs:
       - string
     doc: .maf file column header for mutation weight (used if vertex-type = 
       weight)
-    default: weight
     inputBinding:
       position: 101
       prefix: --weight-header
@@ -304,7 +286,6 @@ inputs:
       - 'null'
       - float
     doc: Weight scale used to control scoring of vertices
-    default: 20
     inputBinding:
       position: 101
       prefix: --weight-scale

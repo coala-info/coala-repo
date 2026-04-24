@@ -10,7 +10,6 @@ inputs:
       - float
     doc: 'score to add to (subtract from) the standard threshold score for selection
       of correct contig-subcontig alignments (e.g., 1 or -1) [default: 0]'
-    default: 0
     inputBinding:
       position: 101
       prefix: --ad_score
@@ -36,7 +35,6 @@ inputs:
       - string
     doc: 'base call quality format of fastq read file; illumina (phred64) or sanger
       (phred33) [default: auto]'
-    default: auto
     inputBinding:
       position: 101
       prefix: --base_qual
@@ -46,7 +44,6 @@ inputs:
       - boolean
     doc: 'conduct alignment between target and query contigs with BLASTn [default:
       false] (Nucmer alignment by default)'
-    default: false
     inputBinding:
       position: 101
       prefix: --blast
@@ -56,7 +53,6 @@ inputs:
       - boolean
     doc: 'connect between gap-encompassing subcontig pairs with their original (not
       merged with query contigs) termini [default: false]'
-    default: false
     inputBinding:
       position: 101
       prefix: --connect_subcon
@@ -66,7 +62,6 @@ inputs:
       - boolean
     doc: 'extend scaffold temini with aligned query sequences [default: false] (When
       using long read query, this option is disabled in the current version)'
-    default: false
     inputBinding:
       position: 101
       prefix: --extend
@@ -76,7 +71,6 @@ inputs:
       - boolean
     doc: 'heterozygosity factor (specify this if your sequenced genome is heterozygous
       (>0.2% difference of the haploid size)) [default: false]'
-    default: false
     inputBinding:
       position: 101
       prefix: --hetero
@@ -85,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: 'average insert size of paired-end reads [>read_len <20001, default: 400]'
-    default: 400
     inputBinding:
       position: 101
       prefix: --insert
@@ -94,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of iteration [default: 3]'
-    default: 3
     inputBinding:
       position: 101
       prefix: --iterate
@@ -104,7 +96,6 @@ inputs:
       - boolean
     doc: 'query sequence file is a fasta file of long reads (PacBio reads must be
       error-corrected) [default: false] (alignment is peformed with blast)'
-    default: false
     inputBinding:
       position: 101
       prefix: --long_read
@@ -114,7 +105,6 @@ inputs:
       - int
     doc: 'fold coverage of long reads for target scaffolds [default: auto ; automatically
       calculated by dividing a total length of query by a total length of target]'
-    default: auto
     inputBinding:
       position: 101
       prefix: --lr_cov
@@ -125,7 +115,6 @@ inputs:
     doc: 'maximum length of indel, observed in alignments between target subcontigs
       and query contigs. The alignments separated by the indel will be merged. [default:
       70]'
-    default: 70
     inputBinding:
       position: 101
       prefix: --max_indel
@@ -135,7 +124,6 @@ inputs:
       - int
     doc: 'maximum alignment coverage (%) of query singletones for target subcontigs
       (query with >= INT is excluded from query singletone output) [default: 60]'
-    default: 60
     inputBinding:
       position: 101
       prefix: --max_qsc
@@ -145,7 +133,6 @@ inputs:
       - int
     doc: 'minimum length of gap, when spliting the target scaffold sequences into
       subcontigs  [>0, default: 1]'
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_gap_size
@@ -155,7 +142,6 @@ inputs:
       - int
     doc: 'minimum overlap identity (%) to be filtered for Nucmer alignments. Alignments
       are selected by combination with -mm option. [95~100, default: 99]'
-    default: 99
     inputBinding:
       position: 101
       prefix: --min_identity
@@ -165,7 +151,6 @@ inputs:
       - int
     doc: 'minimum overlap length for merging between neighbor subcontigs with YASS
       aligner [>14, default: 20]'
-    default: 20
     inputBinding:
       position: 101
       prefix: --min_len_local
@@ -176,7 +161,6 @@ inputs:
     doc: 'minimum overlap length to be filtered for Nucmer alignments. Contig-alignments
       that satisfy both the values specified with -mm and -mi are selected, irrespective
       of any mapping rates of PE-reads. [>49, default: 300]'
-    default: 300
     inputBinding:
       position: 101
       prefix: --min_match_len
@@ -186,7 +170,6 @@ inputs:
       - int
     doc: "minimum number of queries that are aligned to either 5'- or 3'-terminus
       of a target subcontig [default: 1]"
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_qalign
@@ -195,7 +178,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum length of subcontigs, to be used for gapclosing [default: 100]'
-    default: 100
     inputBinding:
       position: 101
       prefix: --min_subcon
@@ -206,7 +188,6 @@ inputs:
     doc: "nucmer exact match length, a value specified with '-l' option of the Nucmer
       aligner [default: auto, increased from 30 to 50 depending on the total contig
       length]"
-    default: auto
     inputBinding:
       position: 101
       prefix: --nuc_len
@@ -238,7 +219,6 @@ inputs:
       - 'null'
       - string
     doc: 'fastq or fasta [default: fastq]'
-    default: fastq
     inputBinding:
       position: 101
       prefix: --read_format
@@ -286,7 +266,6 @@ inputs:
       - 'null'
       - int
     doc: 'standard deviation of insert size of paired-end reads [default: 40]'
-    default: 40
     inputBinding:
       position: 101
       prefix: --sd_insert
@@ -302,7 +281,6 @@ inputs:
       - int
     doc: 'number of threads (for machines with multiple processors), enabling all
       the alignment processes in parallel [default: 5]'
-    default: 5
     inputBinding:
       position: 101
       prefix: --thread
@@ -312,7 +290,6 @@ inputs:
       - int
     doc: 'number of threads (for machines with multiple processors), enabling the
       subcontig-connection process in parallel [default: number specified with --thread]'
-    default: number specified with --thread
     inputBinding:
       position: 101
       prefix: --thread_connect

@@ -8,7 +8,6 @@ inputs:
   - id: s2c_obj
     type: File
     doc: path to SNP2CELL object
-    default: None
     inputBinding:
       position: 1
   - id: pos2gene
@@ -19,7 +18,6 @@ inputs:
       mapping. If not provided, no mapping will be done. If a path is provided 
       the mapping will be read from the file. If a URL is provided, the mapping 
       will be queried from biomart.
-    default: None
     inputBinding:
       position: 102
       prefix: --pos2gene

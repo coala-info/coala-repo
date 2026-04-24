@@ -106,7 +106,6 @@ inputs:
       \  alignment. busco: Using hmmsearch on all candidate\n                    \
       \    protein alignment to purify the miniprot alignment to\n               \
       \         imporve accuracy."
-    default: busco
     inputBinding:
       position: 101
       prefix: --mode
@@ -121,7 +120,6 @@ inputs:
       - 'null'
       - float
     doc: output if score at least FLOAT*bestScore [0.99]
-    default: 0.99
     inputBinding:
       position: 101
       prefix: --outs

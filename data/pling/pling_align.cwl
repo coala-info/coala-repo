@@ -27,7 +27,6 @@ inputs:
       - int
     doc: How many pairs of genomes to run together in one go (for integerisation
       from alignment and DCJ calculation steps).
-    default: 200
     inputBinding:
       position: 104
       prefix: --batch_size
@@ -37,7 +36,6 @@ inputs:
       - int
     doc: Minimum number of connections a plasmid need to be considered a hub 
       plasmid.
-    default: 10
     inputBinding:
       position: 104
       prefix: --bh_connectivity
@@ -47,7 +45,6 @@ inputs:
       - float
     doc: Maximum number of edge density between hub plasmid neighbours to label 
       the plasmid as hub.
-    default: 0.2
     inputBinding:
       position: 104
       prefix: --bh_neighbours_edge_density
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for initial containment network.
-    default: 0.5
     inputBinding:
       position: 104
       prefix: --containment_distance
@@ -67,7 +63,6 @@ inputs:
     doc: Total number of cores/threads. Put the maximum number of threads you 
       request in the resources tsv here. (This argument is passed on to 
       snakemake's --cores argument.)
-    default: 1
     inputBinding:
       position: 104
       prefix: --cores
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Threshold for final DCJ-Indel network.
-    default: 4
     inputBinding:
       position: 104
       prefix: --dcj
@@ -85,7 +79,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force snakemake to rerun everything.
-    default: false
     inputBinding:
       position: 104
       prefix: --forceall
@@ -95,7 +88,6 @@ inputs:
       - int
     doc: Threshold for percentage of shared sequence between blocks (for 
       integerisation from alignment and for containment calculation).
-    default: 80
     inputBinding:
       position: 104
       prefix: --identity
@@ -106,7 +98,6 @@ inputs:
     doc: ILP solver to use. Default is GLPK, which is slower but is bundled with
       pling and is free. If using gurobi, make sure you have a valid license and
       gurobi_cl is in your PATH.
-    default: GLPK
     inputBinding:
       position: 104
       prefix: --ilp_solver
@@ -116,7 +107,6 @@ inputs:
       - int
     doc: Minimum size for an indel to be treated as a block (for integerisation 
       from alignment).
-    default: 200
     inputBinding:
       position: 104
       prefix: --min_indel_size
@@ -126,7 +116,6 @@ inputs:
       - string
     doc: Whether to output networks as html visualisations, cytoscape formatted 
       json, or both.
-    default: html
     inputBinding:
       position: 104
       prefix: --output_type
@@ -136,7 +125,6 @@ inputs:
       - File
     doc: Metadata to add beside plasmid ID on the visualisation graph. Must be a
       tsv with a single column, with data in the same order as in genomes_list.
-    default: None
     inputBinding:
       position: 104
       prefix: --plasmid_metadata
@@ -145,7 +133,6 @@ inputs:
       - 'null'
       - string
     doc: To run on a cluster with corresponding snakemake profile.
-    default: None
     inputBinding:
       position: 104
       prefix: --profile
@@ -155,7 +142,6 @@ inputs:
       - boolean
     doc: Cluster regions rather than complete genomes. Assumes regions are taken
       from circular plasmids.
-    default: false
     inputBinding:
       position: 104
       prefix: --regions
@@ -164,7 +150,6 @@ inputs:
       - 'null'
       - File
     doc: tsv stating number of threads and memory to use for each rule.
-    default: None
     inputBinding:
       position: 104
       prefix: --resources
@@ -174,7 +159,6 @@ inputs:
       - int
     doc: Communities with size up to this parameter will be joined to 
       neighbouring larger subcommunities.
-    default: 4
     inputBinding:
       position: 104
       prefix: --small_subcommunity_size_threshold
@@ -184,7 +168,6 @@ inputs:
       - boolean
     doc: Run sourmash as first filter on which pairs to calculate DCJ on. 
       Recommended for large and very diverse datasets.
-    default: false
     inputBinding:
       position: 104
       prefix: --sourmash
@@ -193,7 +176,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for filtering with sourmash.
-    default: 0.85
     inputBinding:
       position: 104
       prefix: --sourmash_threshold
@@ -202,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: Time limit in seconds for ILP solver.
-    default: None
     inputBinding:
       position: 104
       prefix: --timelimit
@@ -214,7 +195,6 @@ inputs:
       with two columns, one with plasmid IDs under "plasmid" and one with 
       "linear" or "circular" as entries under "topology". Without this file, 
       pling will asume all plasmids are circular.
-    default: None
     inputBinding:
       position: 104
       prefix: --topology
@@ -223,7 +203,6 @@ inputs:
       - 'null'
       - File
     doc: Path to unimog file. Required input if skipping integerisation.
-    default: None
     inputBinding:
       position: 104
       prefix: --unimog

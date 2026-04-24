@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: 'Give max number of CPUs [default: 1]'
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpu
@@ -62,7 +61,6 @@ inputs:
     doc: "The maximum distance with which seeds will be merged.\nThis can often be
       set a bit higher than an expected\nsize of a region If no maximum distance is
       wanted then\nset to 0 [default: 50,000bp]"
-    default: 50,000bp
     inputBinding:
       position: 101
       prefix: --max_seed_distance
@@ -80,7 +78,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Give path to output folder [default: current folder]'
-    default: current folder
     inputBinding:
       position: 101
       prefix: --output_folder

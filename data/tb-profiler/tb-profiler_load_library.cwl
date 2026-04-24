@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - Directory
     doc: Database directory
-    default: /usr/local/share/tbprofiler
     inputBinding:
       position: 102
       prefix: --db_dir
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force overwrite existing database with the same name
-    default: false
     inputBinding:
       position: 102
       prefix: --force
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level
-    default: INFO
     inputBinding:
       position: 102
       prefix: --logging
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - Directory
     doc: Storage directory
-    default: .
     inputBinding:
       position: 102
       prefix: --dir
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temp firectory to process all files
-    default: .
     inputBinding:
       position: 102
       prefix: --temp

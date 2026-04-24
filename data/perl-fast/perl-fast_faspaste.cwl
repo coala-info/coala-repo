@@ -42,7 +42,6 @@ inputs:
       - string
     doc: Use alternative format for input. See man page for "fasconvert" for allowed
       formats.
-    default: fasta
     inputBinding:
       position: 102
       prefix: --format
@@ -75,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Use [string] as the name of the logfile.
-    default: FAST.log.txt
     inputBinding:
       position: 102
       prefix: --logname
@@ -85,7 +83,6 @@ inputs:
       - int
     doc: 'Use input source #<int> as template to receive concatenated data. One-based
       indexing is used, with input source 1 as default.'
-    default: 1
     inputBinding:
       position: 102
       prefix: --recipient

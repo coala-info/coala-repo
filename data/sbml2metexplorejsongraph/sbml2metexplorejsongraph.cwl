@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Convert Flux data contained in the SBML as mapping data
-    default: false
     inputBinding:
       position: 101
       prefix: -flux2Mapp
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: Validate input SBML file.
-    default: false
     inputBinding:
       position: 101
       prefix: -validate

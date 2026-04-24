@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: "provide a local config file with the target location to store database-files.
-      default: looks for config files named 'mdmcleaner.config' in current working
       directory. settings in the local config file will override settings in the global
       config file '/usr/local/lib/python3.11/site-packages/mdmcleaner/mdmcleaner.config'"
     inputBinding:
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: type of marker gene that should be extracted
-    default: all
     inputBinding:
       position: 102
       prefix: --markertype
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory (will be created if it does not exist).
-    default: .
     inputBinding:
       position: 102
       prefix: --outdir

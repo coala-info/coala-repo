@@ -10,7 +10,6 @@ inputs:
       - boolean
     doc: Enable/Disable (1/0) amino acid centered seq and covar outputs for .gb 
       processing (--AAcentered 0), requires AAreport enabled
-    default: 0
     inputBinding:
       position: 101
       prefix: --AAcentered
@@ -21,7 +20,6 @@ inputs:
     doc: Enable/Disable (1/0) reporting multiple nt changes in a single codon as
       one polymorphism, default enabled (--AAcodonasMNP 1), requires AAreport 
       enabled
-    default: 1
     inputBinding:
       position: 101
       prefix: --AAcodonasMNP
@@ -31,7 +29,6 @@ inputs:
       - boolean
     doc: Enable/Disable (1/0) amino acid reporting, default enabled (--AAreport 
       1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --AAreport
@@ -42,7 +39,6 @@ inputs:
     doc: Modifier for chim_rm chimera checking, default 1.2. Higher = more 
       sensitive, more false chimeras removed; lower = less sensitive, fewer 
       chimeras removed
-    default: 1.2
     inputBinding:
       position: 101
       prefix: --alpha
@@ -52,7 +48,6 @@ inputs:
       - float
     doc: 'threshold for a sequence to automatically pass the covar pass checking (default:
       0.3)'
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --autopass
@@ -62,7 +57,6 @@ inputs:
       - float
     doc: Modifier for covar pass checking, default 1. Higher = more sensitive, 
       more failed checks; lower = less sensitive, fewer failed checks
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --beta
@@ -72,7 +66,6 @@ inputs:
       - float
     doc: 'Minimum abundance a unique sequence must have to be considered in chimera
       removal / deconvolution (default: .001)'
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --chim_in_abund
@@ -81,7 +74,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable/Disable (1/0) chim_rm output, default enabled (--chim_rm 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --chim_rm
@@ -98,7 +90,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable/Disable (1/0) collection step, default enabled (--collect 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --collect
@@ -107,7 +98,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable/Disable (1/0) covar output, default enabled (--covar 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --covar
@@ -118,7 +108,6 @@ inputs:
     doc: 'Enable/Disable (1/0) using tiles covering positions instead of minimum nt
       coverage to calculate abundance of covariants (--covar_tile_coverage), require
       --wgs 1 (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --covar_tile_coverage
@@ -127,7 +116,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable/Disable (1/0) covar deconv, default enabled (--deconv 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --deconv
@@ -137,7 +125,6 @@ inputs:
       - float
     doc: Threshold for potential parent / chimera abundance ratio for chim_rm; 
       default is 1.8
-    default: 1.8
     inputBinding:
       position: 101
       prefix: --foldab
@@ -146,7 +133,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable/Disable (1/0) indel output, default enabled (--indel 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --indel
@@ -156,7 +142,6 @@ inputs:
       - int
     doc: 'Maximum number of variances from the reference to be reported in covars
       (default: 8)'
-    default: 8
     inputBinding:
       position: 101
       prefix: --max_covar
@@ -166,7 +151,6 @@ inputs:
       - int
     doc: Max number of times chimera removal will be performed for chim_rm; 
       default is 100
-    default: 100
     inputBinding:
       position: 101
       prefix: --max_cycles
@@ -176,7 +160,6 @@ inputs:
       - int
     doc: 'Maximum number of variances from the reference a sequence can have to be
       consider in covars processing (default: 40)'
-    default: 40
     inputBinding:
       position: 101
       prefix: --max_dist
@@ -186,7 +169,6 @@ inputs:
       - float
     doc: 'Minimum abundance required for variants to be included in collection reports;
       must be non-negative and < 1, % observed (.1 = 10%), (default: .01)'
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --min_col_abund
@@ -196,7 +178,6 @@ inputs:
       - float
     doc: 'Minimum observations required to be included in sample reports; >= 1 occurance
       count; < 1 % observed (.1 = 10%), (default: .001)'
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --min_count
@@ -206,7 +187,6 @@ inputs:
       - float
     doc: 'Minimum abundance required for inclusion in sample reports; % observed (.1
       = 10%), (default: .001)'
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --min_samp_abund
@@ -216,7 +196,6 @@ inputs:
       - int
     doc: set number of processes SAM Refiner will run in parallel, default = 4 
       (--mp 4)
-    default: 4
     inputBinding:
       position: 101
       prefix: --mp
@@ -225,7 +204,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable/Disable (1/0) nt_call output, default enabled (--nt_call 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --nt_call
@@ -236,7 +214,6 @@ inputs:
     doc: 'Minimum abundance relative to total reads required for a position to be
       reported in the nt call output; must be non-negative and < 1, % observed (.1
       = 10%), (default: .001)'
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --ntabund
@@ -246,7 +223,6 @@ inputs:
       - int
     doc: 'Minimum coverage at a position to be reported in the nt call output. (default:
       5)'
-    default: 5
     inputBinding:
       position: 101
       prefix: --ntcover
@@ -255,7 +231,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable/Disable (1/0) nt_call output, default enabled (--ntvar 1)
-    default: 0
     inputBinding:
       position: 101
       prefix: --ntvar
@@ -264,7 +239,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable/Disable (1/0) covar_pass output, default disabled (--pass_out 0)
-    default: 0
     inputBinding:
       position: 101
       prefix: --pass_out
@@ -273,7 +247,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable/Disable (1/0) reads output, default disabled (--read 0)
-    default: 0
     inputBinding:
       position: 101
       prefix: --read
@@ -283,7 +256,6 @@ inputs:
       - boolean
     doc: Enable/Disable (1/0) redistribution of chimera counts for chim_rm, 
       default enabled (--redist 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --redist
@@ -311,7 +283,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable/Disable (1/0) unique seq output, default enabled (--seq 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --seq
@@ -321,7 +292,6 @@ inputs:
       - boolean
     doc: Enable/Disable (1/0) use of counts in sequence IDs, default enabled 
       (--use_count 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --use_count
@@ -330,7 +300,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable/Disable (1/0) covar deconv, default enabled (--wgs 1)
-    default: 0
     inputBinding:
       position: 101
       prefix: --wgs

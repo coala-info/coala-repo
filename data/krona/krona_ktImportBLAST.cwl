@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Hue (0-360) for "bad" scores.
-    default: 0
     inputBinding:
       position: 102
       prefix: -x
@@ -30,7 +29,6 @@ inputs:
       with scores that are within this distance of the highest score will be 
       included when computing the lowest common ancestor (or picking randomly if
       -r is specified).
-    default: 3
     inputBinding:
       position: 102
       prefix: -t
@@ -78,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Hue (0-360) for "good" scores.
-    default: 120
     inputBinding:
       position: 102
       prefix: -y
@@ -87,7 +84,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the highest level.
-    default: Root
     inputBinding:
       position: 102
       prefix: -n
@@ -150,7 +146,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to directory containing a taxonomy database to use.
-    default: /usr/local/opt/krona/taxonomy
     inputBinding:
       position: 102
       prefix: -tax

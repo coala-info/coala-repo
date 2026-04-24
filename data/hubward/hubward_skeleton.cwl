@@ -13,7 +13,6 @@ inputs:
       - boolean
     doc: Sets up a metadata-builder.py script instead of a metadata.yaml config 
       file. Useful for more complicated studies
-    default: false
     inputBinding:
       position: 101
       prefix: --use-metadata-builder

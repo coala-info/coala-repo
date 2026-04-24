@@ -55,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: Tag to recognize forward reads
-    default: _R1
     inputBinding:
       position: 101
       prefix: --for-tag
@@ -74,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: Character separating the sample name from the rest of the filename
-    default: _
     inputBinding:
       position: 101
       prefix: --id-separator
@@ -107,7 +105,6 @@ inputs:
       - float
     doc: After DADA2 run, check the amount of reads globally remaining from 
       input to non-chimeric, abort if the ratio is below threshold
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --max-loss
@@ -116,7 +113,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum Expected Errors in R1
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --maxee1
@@ -125,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum Expected Errors in R2
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --maxee2
@@ -143,7 +138,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum average quality for DADA2 truncation
-    default: 28
     inputBinding:
       position: 101
       prefix: --min-qual
@@ -179,7 +173,6 @@ inputs:
       - string
     doc: Prefix for the output FASTA file, if "MD5" is specified, the sequence 
       MD5 hash will be used instead.
-    default: ASV
     inputBinding:
       position: 101
       prefix: --prefix
@@ -205,7 +198,6 @@ inputs:
       - 'null'
       - string
     doc: Tag to recognize reverse reads
-    default: _R2
     inputBinding:
       position: 101
       prefix: --rev-tag
@@ -214,7 +206,6 @@ inputs:
       - 'null'
       - boolean
     doc: Save a copy of the RDS file
-    default: false
     inputBinding:
       position: 101
       prefix: --save-rds
@@ -239,7 +230,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads
@@ -257,7 +247,6 @@ inputs:
       - 'null'
       - int
     doc: Trim primer from R1 read specifying the number of bases.
-    default: 20
     inputBinding:
       position: 101
       prefix: --trim-primer-for
@@ -266,7 +255,6 @@ inputs:
       - 'null'
       - int
     doc: Trim primer from R2 read specifying the number of bases.
-    default: 20
     inputBinding:
       position: 101
       prefix: --trim-primer-rev
@@ -291,7 +279,6 @@ inputs:
       - 'null'
       - float
     doc: DADA2 truncate quality
-    default: 10
     inputBinding:
       position: 101
       prefix: --trunc-qual

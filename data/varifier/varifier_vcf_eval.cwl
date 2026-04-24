@@ -34,7 +34,6 @@ inputs:
       eveything else is single-core/thread. If you have a big genome, more 
       efficient to run make_truth_vcf with >1 CPU, then use its output with 
       --truth_vcf when running vcf_eval.
-    default: 1
     inputBinding:
       position: 105
       prefix: --cpus
@@ -65,7 +64,6 @@ inputs:
       - int
     doc: Length of sequence to add either side of variant when making probe 
       sequences
-    default: 100
     inputBinding:
       position: 105
       prefix: --flank_length
@@ -94,7 +92,6 @@ inputs:
     doc: Only used if also using --global_align. Do not output variants where 
       the REF allele ends after the given (1-based) coordinate. When running 
       vcf_eval, only applies to recall, not precision
-    default: infinity
     inputBinding:
       position: 105
       prefix: --global_align_max_coord
@@ -105,7 +102,6 @@ inputs:
     doc: Only used if also using --global_align. Do not output variants where 
       the REF allele starts before the given (1-based) coordinate. When running 
       vcf_eval, only applies to recall, not precision
-    default: 1
     inputBinding:
       position: 105
       prefix: --global_align_min_coord

@@ -59,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: edge calculator option
-    default: 0.99
     inputBinding:
       position: 104
       prefix: --edge_quasi_cutoff_cliques
@@ -68,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: edge calculator option
-    default: 0.97
     inputBinding:
       position: 104
       prefix: --edge_quasi_cutoff_mixed
@@ -77,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: edge calculator option
-    default: 0.95
     inputBinding:
       position: 104
       prefix: --edge_quasi_cutoff_single
@@ -86,7 +83,6 @@ inputs:
       - 'null'
       - float
     doc: Filter out reads with low frequency at the end.
-    default: 0.0
     inputBinding:
       position: 104
       prefix: --filter
@@ -112,7 +108,6 @@ inputs:
       - 'null'
       - float
     doc: Indel edge significance level
-    default: 0.2
     inputBinding:
       position: 104
       prefix: --indel_edge_sig_level
@@ -121,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations. haploclique will stop if the superreads converge.
-    default: -1
     inputBinding:
       position: 104
       prefix: --iterations
@@ -163,7 +157,6 @@ inputs:
       - 'null'
       - float
     doc: edge calculator option
-    default: 0.9
     inputBinding:
       position: 104
       prefix: --min_overlap_cliques
@@ -172,7 +165,6 @@ inputs:
       - 'null'
       - float
     doc: edge calculator option
-    default: 0.6
     inputBinding:
       position: 104
       prefix: --min_overlap_single
@@ -197,7 +189,6 @@ inputs:
       - 'null'
       - float
     doc: edge calculator option
-    default: 0.9
     inputBinding:
       position: 104
       prefix: --random_overlap_quality
@@ -206,7 +197,6 @@ inputs:
       - 'null'
       - float
     doc: Filter out reads witch are below <num> standard deviations.
-    default: 3.0
     inputBinding:
       position: 104
       prefix: --significance

@@ -11,7 +11,6 @@ inputs:
       - string
     doc: "Genome build used to generate the input (methods hetx and sry).\n      \
       \                Valid: 'hg19,hg38'"
-    default: hg38
     inputBinding:
       position: 101
       prefix: -build
@@ -29,7 +28,6 @@ inputs:
       - boolean
     doc: Support long reads (> 1kb) and uses single-end reads for gender 
       calculation.
-    default: false
     inputBinding:
       position: 101
       prefix: -long_read
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum Y/X ratio for female (method xy).
-    default: 0.06
     inputBinding:
       position: 101
       prefix: -max_female
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum heterozygous SNP fraction for male (method hetx).
-    default: 0.05
     inputBinding:
       position: 101
       prefix: -max_male
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum heterozygous SNP fraction for female (method hetx).
-    default: 0.25
     inputBinding:
       position: 101
       prefix: -min_female
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum Y/X ratio for male (method xy).
-    default: 0.09
     inputBinding:
       position: 101
       prefix: -min_male
@@ -82,7 +76,6 @@ inputs:
       - 'null'
       - File
     doc: Reference genome for CRAM support (mandatory if CRAM is used).
-    default: ''
     inputBinding:
       position: 101
       prefix: -ref
@@ -99,7 +92,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum average coverage of SRY gene for males (method sry).
-    default: 20.0
     inputBinding:
       position: 101
       prefix: -sry_cov

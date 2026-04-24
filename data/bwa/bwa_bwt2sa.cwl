@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Sampling interval
-    default: 32
     inputBinding:
       position: 102
       prefix: -i

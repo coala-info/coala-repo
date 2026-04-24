@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cores to use for alignment parsing
-    default: 5
     inputBinding:
       position: 101
       prefix: --cores
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: maximum read interval length
-    default: 10000
     inputBinding:
       position: 101
       prefix: --maxReadInterval
@@ -66,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: maximum read length
-    default: 500
     inputBinding:
       position: 101
       prefix: --maxReadLength
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: minimum alignment quality
-    default: 10
     inputBinding:
       position: 101
       prefix: --minAlignmentQuality
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: minimum read length
-    default: 0
     inputBinding:
       position: 101
       prefix: --minReadLength
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Number of nucleotides to offset for crosslink sites
-    default: 0
     inputBinding:
       position: 101
       prefix: --offset
@@ -111,7 +105,6 @@ inputs:
       - string
     doc: 'Crosslink site choices, must be one of: s, i, d, m, e s: start site i: insertion
       site d: deletion site m: middle site e: end site'
-    default: e
     inputBinding:
       position: 101
       prefix: --site
@@ -129,7 +122,6 @@ inputs:
       - 'null'
       - string
     doc: 'Verbose level. Allowed choices: debug, info, warn, quiet'
-    default: info
     inputBinding:
       position: 101
       prefix: --verbose

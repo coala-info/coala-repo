@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Average fragment length.
-    default: 200
     inputBinding:
       position: 102
       prefix: --frag-len-mean
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Standard deviation of fragment length.
-    default: 80
     inputBinding:
       position: 102
       prefix: --frag-len-std-dev
@@ -75,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of fragments allowed in a locus before skipping it.
-    default: 500000
     inputBinding:
       position: 102
       prefix: --max-bundle-frags
@@ -93,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads used during analysis.
-    default: 1
     inputBinding:
       position: 102
       prefix: --num-threads

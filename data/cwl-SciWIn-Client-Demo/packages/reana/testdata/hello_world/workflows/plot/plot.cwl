@@ -17,7 +17,6 @@ requirements:
 inputs:
 - id: results
   type: File
-  default:
     class: File
     location: '../../results.csv'
   inputBinding:

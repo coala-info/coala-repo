@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: The size of annotation plot in final plot
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --annotation-scale
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Recommended backend
-    default: Agg
     inputBinding:
       position: 101
       prefix: --backend
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: The default cell barcode tag label
-    default: CB
     inputBinding:
       position: 101
       prefix: --barcode-tag
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: The clustering method for heatmap
-    default: ward
     inputBinding:
       position: 101
       prefix: --clustering-method
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Index of column with color levels (1-based)
-    default: 1
     inputBinding:
       position: 101
       prefix: --color-factor
@@ -126,7 +121,6 @@ inputs:
       - 'null'
       - string
     doc: The distance metric for heatmap
-    default: euclidean
     inputBinding:
       position: 101
       prefix: --distance-metric
@@ -135,7 +129,6 @@ inputs:
       - 'null'
       - float
     doc: The distance between transcript label and transcript line
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --distance-ratio
@@ -168,7 +161,6 @@ inputs:
       - 'null'
       - int
     doc: The resolution of output file
-    default: 300
     inputBinding:
       position: 101
       prefix: --dpi
@@ -185,7 +177,6 @@ inputs:
       - 'null'
       - float
     doc: The scale of exon
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --exon-scale
@@ -194,7 +185,6 @@ inputs:
       - 'null'
       - string
     doc: Define step if the filling should be a step function
-    default: post
     inputBinding:
       position: 101
       prefix: --fill-step
@@ -275,7 +265,6 @@ inputs:
       - 'null'
       - float
     doc: The height of single subplot
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --height
@@ -340,7 +329,6 @@ inputs:
       - 'null'
       - float
     doc: The scale of intron
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --intron-scale
@@ -381,7 +369,6 @@ inputs:
       - 'null'
       - Directory
     doc: Load local domain folder and load into annotation track
-    default: ''
     inputBinding:
       position: 101
       prefix: --local-domain
@@ -422,7 +409,6 @@ inputs:
       - 'null'
       - string
     doc: The region of motif to plot
-    default: ''
     inputBinding:
       position: 101
       prefix: --motif-region
@@ -431,7 +417,6 @@ inputs:
       - 'null'
       - float
     doc: The width of ATCG characters
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --motif-width
@@ -456,7 +441,6 @@ inputs:
       - 'null'
       - string
     doc: The normalize format for bam file
-    default: count
     inputBinding:
       position: 101
       prefix: --normalize-format
@@ -521,7 +505,6 @@ inputs:
       - 'null'
       - string
     doc: The color of exons
-    default: black
     inputBinding:
       position: 101
       prefix: --ref-color
@@ -587,7 +570,6 @@ inputs:
       - 'null'
       - float
     doc: The relative height of single cell density plots
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --sc-density-height-ratio
@@ -596,7 +578,6 @@ inputs:
       - 'null'
       - float
     doc: The relative height of single cell heatmap plots
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --sc-heatmap-height-ratio
@@ -654,7 +635,6 @@ inputs:
       - 'null'
       - string
     doc: Which strand kept for site plot
-    default: all
     inputBinding:
       position: 101
       prefix: --site-strand
@@ -671,7 +651,6 @@ inputs:
       - 'null'
       - int
     doc: The bin size used to smooth ATAC fragments
-    default: 20
     inputBinding:
       position: 101
       prefix: --smooth-bin
@@ -696,7 +675,6 @@ inputs:
       - 'null'
       - float
     doc: The size of stroke plot in final image
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --stroke-scale
@@ -705,7 +683,6 @@ inputs:
       - 'null'
       - int
     doc: Threshold to filter low abundance junctions
-    default: 0
     inputBinding:
       position: 101
       prefix: --threshold
@@ -714,7 +691,6 @@ inputs:
       - 'null'
       - int
     doc: The requests timeout when `--domain` is True
-    default: 10
     inputBinding:
       position: 101
       prefix: --timeout
@@ -731,7 +707,6 @@ inputs:
       - 'null'
       - string
     doc: Which transcript to show, transcript name or id in gtf file
-    default: ''
     inputBinding:
       position: 101
       prefix: --transcripts-to-show
@@ -740,7 +715,6 @@ inputs:
       - 'null'
       - string
     doc: The default UMI barcode tag label
-    default: UB
     inputBinding:
       position: 101
       prefix: --umi-tag
@@ -757,7 +731,6 @@ inputs:
       - 'null'
       - int
     doc: The width of output file
-    default: 10
     inputBinding:
       position: 101
       prefix: --width

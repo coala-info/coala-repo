@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: The number of allowed mismatches when rescuing single-end barcodes.
-    default: 1
     inputBinding:
       position: 101
       prefix: --barcode-dist-1
@@ -329,7 +328,6 @@ inputs:
       - int
     doc: Set the phred score limit. If the average score within the sliding 
       window drops below this value, the read is discarded.
-    default: 10
     inputBinding:
       position: 101
       prefix: --score-limit
@@ -355,7 +353,6 @@ inputs:
       - float
     doc: Set the size of the sliding window as a fraction of the read length, 
       between 0 and 1.
-    default: 0.15
     inputBinding:
       position: 101
       prefix: --window-size

@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the VCF/BCF file to be filtered. Defaults to '-' for stdin.
-    default: '-'
     inputBinding:
       position: 1
   - id: annotation_key
@@ -21,7 +20,6 @@ inputs:
     doc: The INFO key for the annotation field. This defaults to 'ANN', but 
       tools might use other field names. For example, default VEP annotations 
       can be parsed by setting 'CSQ' here.
-    default: ANN
     inputBinding:
       position: 102
       prefix: --annotation-key
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Set the backend library.
-    default: cyvcf2
     inputBinding:
       position: 102
       prefix: --backend
@@ -80,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: Output format.
-    default: vcf
     inputBinding:
       position: 102
       prefix: --output-fmt
@@ -125,7 +121,6 @@ inputs:
       `q_at_least_30`, which would correspond to an expression `QUAL >= 30`. 
       However, the VCF specification (`v4.4`) defines tags to be set when a 
       filter expression is failed, so vembrane also offers the `fail` mode.
-    default: pass
     inputBinding:
       position: 102
       prefix: --tag-mode

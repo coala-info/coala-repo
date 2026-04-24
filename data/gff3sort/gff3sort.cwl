@@ -17,7 +17,6 @@ inputs:
       - string
     doc: "Specify the chromosome sorting order: 'natural', 'alphabetical', or a path
       to a file containing the desired order"
-    default: natural
     inputBinding:
       position: 102
       prefix: --chr_order

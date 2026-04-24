@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Number of exclusion interations to perform
-    default: 10
     inputBinding:
       position: 101
       prefix: --exclusion_iterations
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Number of interations to perform
-    default: 50
     inputBinding:
       position: 101
       prefix: --iterations
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Random number generator seed
-    default: 1
     inputBinding:
       position: 101
       prefix: --seed
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - float
     doc: Correlation strength exclusion threshold
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --threshold

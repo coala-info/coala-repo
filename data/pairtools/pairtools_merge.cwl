@@ -44,7 +44,6 @@ inputs:
     doc: 'A binary to compress temporary merged chunks. Must decompress input when
       the flag -d is provided. Suggested alternatives: lz4c, gzip, lzop, snzip. NOTE:
       fails silently if the command syntax is wrong.'
-    default: ''
     inputBinding:
       position: 102
       prefix: --compress-program
@@ -70,7 +69,6 @@ inputs:
       - int
     doc: The maximal number of inputs merged at once. For more, store merged 
       intermediates in temporary files.
-    default: 8
     inputBinding:
       position: 102
       prefix: --max-nmerge
@@ -79,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: The amount of memory used by default.
-    default: 2G
     inputBinding:
       position: 102
       prefix: --memory
@@ -88,7 +85,6 @@ inputs:
       - 'null'
       - boolean
     doc: Simple concatenate instead of merging sorted files.
-    default: true
     inputBinding:
       position: 102
       prefix: --no-concatenate
@@ -97,7 +93,6 @@ inputs:
       - 'null'
       - boolean
     doc: merge the headers together
-    default: true
     inputBinding:
       position: 102
       prefix: --no-keep-first-header
@@ -106,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for merging.
-    default: 8
     inputBinding:
       position: 102
       prefix: --nproc
@@ -116,7 +110,6 @@ inputs:
       - int
     doc: Number of processes used by the auto-guessed input decompressing 
       command.
-    default: 1
     inputBinding:
       position: 102
       prefix: --nproc-in
@@ -126,7 +119,6 @@ inputs:
       - int
     doc: Number of processes used by the auto-guessed output compressing 
       command.
-    default: 8
     inputBinding:
       position: 102
       prefix: --nproc-out

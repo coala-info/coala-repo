@@ -11,7 +11,6 @@ inputs:
       - float
     doc: if at least one of the estimated p-distances is above this specified 
       cutoff, then a F81/EI correction is performed
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -c
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: F81/EI transformation gamma shape parameter
-    default: 1.5
     inputBinding:
       position: 101
       prefix: -a
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: probability of observing a random k-mer
-    default: 1e-09
     inputBinding:
       position: 101
       prefix: -q
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: number of steps when performing the ratchet-based BME tree search
-    default: 100
     inputBinding:
       position: 101
       prefix: -r
@@ -87,7 +83,6 @@ inputs:
     doc: sketch size estimated as the proportion (up to 1.00) of the average 
       genome size; the sketch size (integer > 2) can also be directly set using 
       this option
-    default: 0.25
     inputBinding:
       position: 101
       prefix: -s
@@ -96,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 2
     inputBinding:
       position: 101
       prefix: -t

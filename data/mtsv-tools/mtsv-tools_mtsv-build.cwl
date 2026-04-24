@@ -31,7 +31,6 @@ inputs:
       - int
     doc: Suffix array sampling rate. If sampling rate is k, every k-th entry 
       will be kept.
-    default: 32
     inputBinding:
       position: 101
       prefix: --sa-sample
@@ -41,7 +40,6 @@ inputs:
       - int
     doc: BWT occurance sampling rate. If sample interval is k, every k-th entry 
       will be kept.
-    default: 64
     inputBinding:
       position: 101
       prefix: --sample-interval

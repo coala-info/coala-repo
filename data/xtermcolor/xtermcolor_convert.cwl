@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: Compatibility mode. Defaults to xterm.
-    default: xterm
     inputBinding:
       position: 102
       prefix: --compat

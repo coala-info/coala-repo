@@ -112,7 +112,6 @@ inputs:
       - 'null'
       - string
     doc: sharp or broad. Default broad.
-    default: broad
     inputBinding:
       position: 101
       prefix: --peaktype
@@ -129,7 +128,6 @@ inputs:
       - 'null'
       - float
     doc: p-value threshold. Default 1e-5.
-    default: 1e-05
     inputBinding:
       position: 101
       prefix: --threshold

@@ -57,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: min mapping quality
-    default: 10
     inputBinding:
       position: 102
       prefix: --mapq
@@ -74,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: window size of fixed windows
-    default: 500000
     inputBinding:
       position: 102
       prefix: --window

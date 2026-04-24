@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: BWA options, in quotes
-    default: -x pacbio
     inputBinding:
       position: 103
       prefix: --bwa_opts
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

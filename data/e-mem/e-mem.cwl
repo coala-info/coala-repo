@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: "set the minimum length of a match. The default length\nis 50"
-    default: 50
     inputBinding:
       position: 103
       prefix: -l
@@ -80,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: set the split size. The default value is 1
-    default: 1
     inputBinding:
       position: 103
       prefix: -d
@@ -89,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads. The default is 1 thread
-    default: 1
     inputBinding:
       position: 103
       prefix: -t

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bits per cell in the bloom filter
-    default: 32
     inputBinding:
       position: 101
       prefix: bits
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Discard reads
-    default: false
     inputBinding:
       position: 101
       prefix: dr
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: Error correction
-    default: false
     inputBinding:
       position: 101
       prefix: ecc
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Number of hashes
-    default: 3
     inputBinding:
       position: 101
       prefix: hashes
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth
-    default: 0
     inputBinding:
       position: 101
       prefix: mindepth
@@ -63,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum kmers
-    default: 1
     inputBinding:
       position: 101
       prefix: minkmers
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum probability
-    default: 0.0
     inputBinding:
       position: 101
       prefix: minprob
@@ -81,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum quality
-    default: 0
     inputBinding:
       position: 101
       prefix: minqual
@@ -90,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Number of passes
-    default: 1
     inputBinding:
       position: 101
       prefix: passes

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum copy number of each allele allows to take.
-    default: 2
     inputBinding:
       position: 102
       prefix: --allelenumber_max
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of iterations for training.
-    default: 100
     inputBinding:
       position: 102
       prefix: --max_iters
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - File
     doc: File of the prior distribution. If not provided, use uniform prior.
-    default: None
     inputBinding:
       position: 102
       prefix: --priors
@@ -44,7 +41,6 @@ inputs:
       - float
     doc: Stop value of the EM algorithm for training. If the change of 
       log-likelihood is lower than this value, stop training.
-    default: '1e-7'
     inputBinding:
       position: 102
       prefix: --stop_value

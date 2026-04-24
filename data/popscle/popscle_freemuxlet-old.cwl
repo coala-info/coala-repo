@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn on writing auxilary output files
-    default: false
     inputBinding:
       position: 101
       prefix: --aux-files
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: Bayes Factor Threshold used in the initial clustering
-    default: 5.41
     inputBinding:
       position: 101
       prefix: --bf-thres
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum base quality (higher BQ will be capped)
-    default: 40
     inputBinding:
       position: 101
       prefix: --cap-BQ
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: Prior of doublet
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --doublet-prior
@@ -46,7 +42,6 @@ inputs:
       - float
     doc: Fraction of droplets to be clustered in the very first round of initial
       clustering procedure
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --frac-init-clust
@@ -55,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: Genotype error parameter per cluster
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --geno-error
@@ -82,7 +76,6 @@ inputs:
       - int
     doc: Iteration for initial cluster assignment (set to zero to skip the 
       iterations)
-    default: 10
     inputBinding:
       position: 101
       prefix: --iter-init
@@ -91,7 +84,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep missing cluster assignment as missing in the initial iteration
-    default: false
     inputBinding:
       position: 101
       prefix: --keep-init-missing
@@ -100,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality to consider (lower BQ will be skipped)
-    default: 13
     inputBinding:
       position: 101
       prefix: --min-BQ
@@ -110,7 +101,6 @@ inputs:
       - int
     doc: Minimum number of SNPs with coverage for a droplet/cell to be 
       considered
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-snp
@@ -119,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of total reads for a droplet/cell to be considered
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-total
@@ -129,7 +118,6 @@ inputs:
       - int
     doc: Minimum number of unique reads (determined by UMI/SNP pair) for a 
       droplet/cell to be considered
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-uniq
@@ -138,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: Number of samples multiplexed together
-    default: 0
     inputBinding:
       position: 101
       prefix: --nsample
@@ -156,7 +143,6 @@ inputs:
       - int
     doc: 'Turn on verbose mode with specific verbosity threshold. 0: fully verbose,
       100 : no verbose messages'
-    default: 100
     inputBinding:
       position: 101
       prefix: --verbose

@@ -70,7 +70,6 @@ inputs:
       2. Barrnap will use eukaryotic database to predict ribosomal RNA genes.
       3. BUSCO will use eukaryotic database to find conserved orthologs. 
       4. By default, QUAST assumes that a genome is circular and correctly processes its linear representation. This options indicates that the genome is not circular. 
-    default: false
     inputBinding:
       prefix: --eukaryote
   fungal:
@@ -82,7 +81,6 @@ inputs:
       2. Barrnap will use eukaryotic database to predict ribosomal RNA genes. 
       3. BUSCO will use fungal database to find conserved orthologs. 
       4. By default, QUAST assumes that a genome is circular and correctly processes its linear representation. This options indicates that the genome is not circular.
-    default: false
     inputBinding:
       prefix: --fungus
   large_genome:
@@ -92,13 +90,11 @@ inputs:
       Genome is large (typically > 100 Mbp). Use optimal parameters for evaluation of large genomes. Affects speed and accuracy.
       In particular, imposes --eukaryote --min-contig 3000 --min-alignment 500 --extensive-mis-size 7000 (can be overridden manually with the corresponding options).
       In addition, this mode tries to identify misassemblies caused by transposable elements and exclude them from the number of misassemblies.
-    default: false
     inputBinding:
       prefix: --large
   gene_finding:
     type: boolean?
     label: Enable gene finding. Affects performance
-    default: false
   
 
 outputs:

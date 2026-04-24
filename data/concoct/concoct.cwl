@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: specify maximal number of clusters for VGMM
-    default: 400
     inputBinding:
       position: 101
       prefix: --clusters
@@ -67,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Specify maximum number of iterations for the VBGMM.
-    default: 500
     inputBinding:
       position: 101
       prefix: --iterations
@@ -76,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: specify kmer length
-    default: 4
     inputBinding:
       position: 101
       prefix: --kmer_length
@@ -86,7 +83,6 @@ inputs:
       - int
     doc: specify the sequence length threshold, contigs shorter than this value 
       will not be included.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --length_threshold
@@ -127,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: specify read length for coverage
-    default: 100
     inputBinding:
       position: 101
       prefix: --read_length
@@ -138,7 +133,6 @@ inputs:
     doc: Specify an integer to use as seed for clustering. 0 gives a random 
       seed, 1 is the default seed and any other positive integer can be used. 
       Other values give ArgumentTypeError.
-    default: 1
     inputBinding:
       position: 101
       prefix: --seed

@@ -24,7 +24,6 @@ inputs:
   out_gff:
     type: string?
     label: output file with features in GFF
-    default: "CrisprCasFinder_Spacers.gff3"
     inputBinding:
       position: 2
       prefix: -o

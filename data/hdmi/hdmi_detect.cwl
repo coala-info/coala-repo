@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Task number for parallel processing (1-indexed)
-    default: 1
     inputBinding:
       position: 101
       prefix: --task_number
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for parallel processing
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Total number of parallel tasks
-    default: 1
     inputBinding:
       position: 101
       prefix: --total_tasks

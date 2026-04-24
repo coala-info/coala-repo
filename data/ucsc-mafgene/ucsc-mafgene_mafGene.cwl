@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: delay N seconds between genes (default 0)
-    default: 0
     inputBinding:
       position: 106
       prefix: -delay

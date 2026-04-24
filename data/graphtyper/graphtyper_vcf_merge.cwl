@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: 'Select output encoding. Available are: vcf, popvcf'
-    default: vcf
     inputBinding:
       position: 102
       prefix: --encoding

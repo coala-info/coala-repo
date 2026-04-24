@@ -66,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Seed to provide to the hash function. (0-4294967296)
-    default: 42
     inputBinding:
       position: 103
       prefix: -S
@@ -85,7 +84,6 @@ inputs:
     doc: K-mer size. Hashes will be based on strings of this many nucleotides. 
       Canonical nucleotides are used by default (see Alphabet options below). 
       (1-32)
-    default: 21
     inputBinding:
       position: 103
       prefix: -k
@@ -103,7 +101,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum distance to report. (0-1)
-    default: 1.0
     inputBinding:
       position: 103
       prefix: -d
@@ -112,7 +109,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum p-value to report. (0-1)
-    default: 1.0
     inputBinding:
       position: 103
       prefix: -v
@@ -122,7 +118,6 @@ inputs:
       - int
     doc: Minimum copies of each k-mer required to pass noise filter for reads. 
       Implies -r.
-    default: 1
     inputBinding:
       position: 103
       prefix: -m
@@ -152,7 +147,6 @@ inputs:
       - boolean
     doc: Show comment fields with reference/query names (denoted with ':'). 
       (0-1)
-    default: true
     inputBinding:
       position: 103
       prefix: -C
@@ -171,7 +165,6 @@ inputs:
       - int
     doc: Sketch size. Each sketch will have at most this many non-redundant 
       min-hashes.
-    default: 1000
     inputBinding:
       position: 103
       prefix: -s
@@ -199,7 +192,6 @@ inputs:
       - 'null'
       - int
     doc: Parallelism. This many threads will be spawned for processing.
-    default: 1
     inputBinding:
       position: 103
       prefix: -p
@@ -208,7 +200,6 @@ inputs:
       - 'null'
       - float
     doc: Probability threshold for warning about low k-mer size. (0-1)
-    default: 0.01
     inputBinding:
       position: 103
       prefix: -w

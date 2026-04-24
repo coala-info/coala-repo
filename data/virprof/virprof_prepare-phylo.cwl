@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add all NCBI genomes for selected species to output
-    default: false
     inputBinding:
       position: 102
       prefix: --add-all-genomes
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - boolean
     doc: Not implemented
-    default: false
     inputBinding:
       position: 102
       prefix: --add-outgroup
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add reference sequences to output
-    default: true
     inputBinding:
       position: 102
       prefix: --add-references
@@ -45,7 +42,6 @@ inputs:
     type:
       - 'null'
       - boolean
-    default: false
     inputBinding:
       position: 102
       prefix: --exclude-full
@@ -53,7 +49,6 @@ inputs:
     type:
       - 'null'
       - boolean
-    default: true
     inputBinding:
       position: 102
       prefix: --exclude-short
@@ -69,7 +64,6 @@ inputs:
     type:
       - 'null'
       - boolean
-    default: true
     inputBinding:
       position: 102
       prefix: --include-full
@@ -77,7 +71,6 @@ inputs:
     type:
       - 'null'
       - boolean
-    default: false
     inputBinding:
       position: 102
       prefix: --include-short
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of unambious base pairs (for reference include only).
-    default: 120% detected genome size
     inputBinding:
       position: 102
       prefix: --min-bp
@@ -95,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of unambious base pairs.
-    default: 80% detected genome size
     inputBinding:
       position: 102
       prefix: --min-bp
@@ -112,7 +103,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add all NCBI genomes for selected species to output
-    default: true
     inputBinding:
       position: 102
       prefix: --no-add-all-genomes
@@ -121,7 +111,6 @@ inputs:
       - 'null'
       - boolean
     doc: Not implemented
-    default: true
     inputBinding:
       position: 102
       prefix: --no-add-outgroup
@@ -130,7 +119,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add reference sequences to output
-    default: false
     inputBinding:
       position: 102
       prefix: --no-add-references

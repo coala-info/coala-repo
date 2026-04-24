@@ -28,7 +28,6 @@ inputs:
       - int
     doc: The edit distance delta threshold to stop tracking divergent sequences (efficiency
       heuristic)
-    default: 100
     inputBinding:
       position: 101
       prefix: --dual-max-ed-delta
@@ -47,7 +46,6 @@ inputs:
       - float
     doc: Expected minor allele frequency; reduce to account for skew from sequencing
       bias
-    default: 0.45
     inputBinding:
       position: 101
       prefix: --expected-maf
@@ -81,7 +79,6 @@ inputs:
       - 'null'
       - float
     doc: The maximum error rate for a read to the HLA reference allele
-    default: 0.07
     inputBinding:
       position: 101
       prefix: --max-error-rate
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum length of an SV to consider, anything longer is ignored
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --max-sv-length
@@ -100,7 +96,6 @@ inputs:
       - float
     doc: The minimum cumulative distribution function probability for a heterozygous
       call
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --min-cdf-prob
@@ -109,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum counts of sequences required to split into multiple consensuses
-    default: 3
     inputBinding:
       position: 101
       prefix: --min-consensus-count
@@ -119,7 +113,6 @@ inputs:
       - float
     doc: The minimum fraction of sequences required to split into multiple consensuses
       (e.g. MAF)
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min-consensus-fraction

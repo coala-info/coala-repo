@@ -27,7 +27,6 @@ inputs:
       - string
     doc: 'Alternative to repeated -v/--verbose: set log level via key. Values: "error",
       "warn" (default), "info", "debug", "trace".'
-    default: error
     inputBinding:
       position: 101
       prefix: --log-level

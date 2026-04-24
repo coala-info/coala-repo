@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Number of output FASTA files
-    default: 8
     inputBinding:
       position: 3
 outputs:

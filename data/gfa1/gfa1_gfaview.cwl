@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: list of segment names to delete
-    default: '[]'
     inputBinding:
       position: 102
       prefix: -d
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: dropped/longest<FLOAT, for -o
-    default: 0.7
     inputBinding:
       position: 102
       prefix: -O
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: list of segment names to extract
-    default: '[]'
     inputBinding:
       position: 102
       prefix: -s
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: fuzzy length for -r
-    default: 1000
     inputBinding:
       position: 102
       prefix: -R
@@ -66,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: include neighbors in a radius
-    default: 0
     inputBinding:
       position: 102
       prefix: -S
@@ -75,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: max bubble dist for -b
-    default: 50000
     inputBinding:
       position: 102
       prefix: -B
@@ -108,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: tip length for -t
-    default: 4
     inputBinding:
       position: 102
       prefix: -T
@@ -133,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: verbose level
-    default: 2
     inputBinding:
       position: 102
       prefix: -v

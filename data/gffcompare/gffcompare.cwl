@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance (range) for grouping transcript start/end sites.
-    default: 100
     inputBinding:
       position: 102
       prefix: -d

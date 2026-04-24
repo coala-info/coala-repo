@@ -25,7 +25,6 @@ inputs:
       like matching an N (4-fold ambig) to it;\n                           a string
       (e.g. RY): any ambiguity in the list is RESOLVED; any ambiguitiy NOT in the
       list is averaged (LIST-NOT LIST will also be averaged);"
-    default: resolve
     inputBinding:
       position: 102
       prefix: -a
@@ -39,7 +38,6 @@ inputs:
       \  include no more than FRACTION [0,1] of sites with resolvable ambiguities
       will be resolved\n                           while all others will be AVERAGED
       (default = 1.0)"
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -g
@@ -50,7 +48,6 @@ inputs:
     doc: "bootstrap alignment columns before computing distances (default = false)\n\
       \                           when -s is supplied, permutes the assigment of sequences
       to files\n                           interacts with -r option"
-    default: false
     inputBinding:
       position: 102
       prefix: -b
@@ -98,7 +95,6 @@ inputs:
       - string
     doc: use this character as a delimiter in the output column-file (a 
       character, default = ',')
-    default: ','
     inputBinding:
       position: 102
       prefix: -D
@@ -118,7 +114,6 @@ inputs:
       - int
     doc: 'only process pairs of sequences that overlap over at least OVERLAP nucleotides
       (an integer >0, default=100):'
-    default: 100
     inputBinding:
       position: 102
       prefix: -l
@@ -147,7 +142,6 @@ inputs:
       \                      csv: seqname1, seqname2, distance;\n                \
       \           csvn: 1, 2, distance;\n                           hyphy: {{d11,d12,..,d1n}...{dn1,dn2,...,dnn}},
       where distances above THRESHOLD are set to 100;"
-    default: csv
     inputBinding:
       position: 102
       prefix: -f
@@ -174,7 +168,6 @@ inputs:
       - float
     doc: subsample sequences with specified probability (a value between 0 and 
       1, default = 1.0)
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -u
@@ -183,7 +176,6 @@ inputs:
       - 'null'
       - float
     doc: only report (count) distances below this threshold (>=0, default=0.015)
-    default: 0.015
     inputBinding:
       position: 102
       prefix: -t

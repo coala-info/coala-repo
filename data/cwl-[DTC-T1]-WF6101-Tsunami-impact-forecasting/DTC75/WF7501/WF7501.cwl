@@ -17,7 +17,6 @@ inputs:
   Run_User_Model:
     doc: "Flag to run user provided model."
     type: boolean
-    default: true
   UserModel:
     doc: "User provided model for update."
     type: File

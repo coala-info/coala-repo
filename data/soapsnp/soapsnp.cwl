@@ -18,7 +18,6 @@ inputs:
       - boolean
     doc: Enable monoploid calling mode, this will ensure all consensus as HOM 
       and you probably should SPECIFY higher altHOM rate.
-    default: false
     inputBinding:
       position: 101
       prefix: -m
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable rank sum test to give HET further penalty for better accuracy.
-    default: false
     inputBinding:
       position: 101
       prefix: -u
@@ -37,7 +35,6 @@ inputs:
       - string
     doc: Extra headers EXCEPTതിനു CHROMOSOME FIELD specified in GLFv2 output. 
       Format is "TypeName1:DataName1:TypeName2:DataName2"
-    default: ''
     inputBinding:
       position: 101
       prefix: -E
@@ -47,7 +44,6 @@ inputs:
       - float
     doc: Global Error Dependency Coefficient, 0.0(complete 
       dependent)~1.0(complete independent)
-    default: 0.9
     inputBinding:
       position: 101
       prefix: -g
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: maximum FASTQ quality score
-    default: 40
     inputBinding:
       position: 101
       prefix: -Q
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: maximum length of read
-    default: 45
     inputBinding:
       position: 101
       prefix: -L
@@ -80,7 +74,6 @@ inputs:
       - 'null'
       - float
     doc: novel altHOM prior probability
-    default: 0.0005
     inputBinding:
       position: 101
       prefix: -r
@@ -89,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: novel HET prior probability
-    default: 0.001
     inputBinding:
       position: 101
       prefix: -e
@@ -98,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: 'Output format. 0: Text; 1: GLFv2; 2: GPFv2.'
-    default: 0
     inputBinding:
       position: 101
       prefix: -F
@@ -107,7 +98,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only output potential SNPs. Useful in Text output mode.
-    default: false
     inputBinding:
       position: 101
       prefix: -q
@@ -117,7 +107,6 @@ inputs:
       - float
     doc: PCR Error Dependency Coefficient, 0.0(complete dependent)~1.0(complete 
       independent)
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -p
@@ -135,7 +124,6 @@ inputs:
       - 'null'
       - string
     doc: ASCII chracter standing for quality==0
-    default: '@'
     inputBinding:
       position: 101
       prefix: -z
@@ -150,7 +138,6 @@ inputs:
       - 'null'
       - boolean
     doc: REFINE SNPs using dbSNPs information
-    default: false
     inputBinding:
       position: 101
       prefix: '-2'
@@ -175,7 +162,6 @@ inputs:
       - 'null'
       - float
     doc: Unvalidated altHOM rate, if no allele frequency known
-    default: 0.01
     inputBinding:
       position: 101
       prefix: -k
@@ -184,7 +170,6 @@ inputs:
       - 'null'
       - float
     doc: Unvalidated HET prior, if no allele frequency known
-    default: 0.02
     inputBinding:
       position: 101
       prefix: -j
@@ -193,7 +178,6 @@ inputs:
       - 'null'
       - float
     doc: Validated altHOM prior, if no allele frequency known
-    default: 0.05
     inputBinding:
       position: 101
       prefix: -b
@@ -202,7 +186,6 @@ inputs:
       - 'null'
       - float
     doc: Validated HET prior, if no allele frequency known
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -a

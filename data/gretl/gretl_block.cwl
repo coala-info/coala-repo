@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Distance till breaking the block [bp]
-    default: 10000
     inputBinding:
       position: 101
       prefix: --distance
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Node step
-    default: 1000
     inputBinding:
       position: 101
       prefix: --node-step
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Window size (in nodes)
-    default: 1000
     inputBinding:
       position: 101
       prefix: --node-window
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: PanSN-spec separator
-    default: \n
     inputBinding:
       position: 101
       prefix: --pansn
@@ -75,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

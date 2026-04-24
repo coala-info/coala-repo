@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: keep soft masking from the original fragment sequences
-    default: false
     inputBinding:
       position: 103
       prefix: --save_soft_mask

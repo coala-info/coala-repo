@@ -22,7 +22,6 @@ inputs:
       - string
     doc: limit to this chromosome only. use '-3' for all chromosomes (in the 
       case of exome data)
-    default: chr15
     inputBinding:
       position: 103
       prefix: --chrom

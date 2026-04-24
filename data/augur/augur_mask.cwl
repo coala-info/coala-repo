@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: 'FASTA Only: Number of sites to mask from beginning'
-    default: 0
     inputBinding:
       position: 101
       prefix: --mask-from-beginning
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: 'FASTA Only: Number of sites to mask from end'
-    default: 0
     inputBinding:
       position: 101
       prefix: --mask-from-end
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'FASTA Only: Mask invalid nucleotides'
-    default: false
     inputBinding:
       position: 101
       prefix: --mask-invalid
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - boolean
     doc: Leave intermediate files around. May be useful for debugging
-    default: true
     inputBinding:
       position: 101
       prefix: --no-cleanup

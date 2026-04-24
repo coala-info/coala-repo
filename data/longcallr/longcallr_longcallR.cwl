@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Window size used to identify dense regions of candidate SNPs
-    default: 500
     inputBinding:
       position: 101
       prefix: --dense-win-size
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore bases within distance to read end
-    default: 20
     inputBinding:
       position: 101
       prefix: --distance-to-read-end
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - float
     doc: Max sequence divergence for valid reads
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --divergence
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Downsample depth
-    default: 10000
     inputBinding:
       position: 101
       prefix: --downsample-depth
@@ -101,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum allele count for low allele fraction candidate SNPs
-    default: 10
     inputBinding:
       position: 101
       prefix: --low-allele-cnt-cutoff
@@ -110,7 +105,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele frequency for low allele fraction candidate SNPs
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --low-allele-frac-cutoff
@@ -119,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum depth for a candidate SNP
-    default: 50000
     inputBinding:
       position: 101
       prefix: --max-depth
@@ -128,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of SNPs for enumerate haplotypes
-    default: 10
     inputBinding:
       position: 101
       prefix: --max-enum-snps
@@ -137,7 +129,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele frequency for high allele fraction candidate SNPs
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --min-allele-freq
@@ -147,7 +138,6 @@ inputs:
       - float
     doc: Minimum allele frequency for high allele fraction candidate SNPs 
       include intron
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min-allele-freq-include-intron
@@ -156,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: Minimim base quality for allele calling
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-baseq
@@ -166,7 +155,6 @@ inputs:
       - int
     doc: Minimum number of candidate SNPs within the dense window to consider 
       the region as dense
-    default: 5
     inputBinding:
       position: 101
       prefix: --min-dense-cnt
@@ -175,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth for a candidate SNP
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-depth
@@ -185,7 +172,6 @@ inputs:
       - int
     doc: Minimum number of related candidate heterozygous SNPs required to 
       perform phasing in a region
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-linkers
@@ -194,7 +180,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality for reads
-    default: 20
     inputBinding:
       position: 101
       prefix: --min-mapq
@@ -203,7 +188,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum phase score to filter candidate SNPs
-    default: 8.0
     inputBinding:
       position: 101
       prefix: --min-phase-score
@@ -212,7 +196,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum QUAL for candidate SNPs
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-qual
@@ -222,7 +205,6 @@ inputs:
       - float
     doc: Minimum absolute difference between haplotype assignment probabilities 
       required for a read to be confidently assigned
-    default: 0.15
     inputBinding:
       position: 101
       prefix: --min-read-assignment-diff
@@ -231,7 +213,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length for reads
-    default: 500
     inputBinding:
       position: 101
       prefix: --min-read-length
@@ -254,7 +235,6 @@ inputs:
       - 'null'
       - int
     doc: PolyA tail length threshold for filtering
-    default: 5
     inputBinding:
       position: 101
       prefix: --polya-tail-length
@@ -284,7 +264,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to use strand bias to filter SNPs
-    default: false
     inputBinding:
       position: 101
       prefix: --strand-bias
@@ -293,7 +272,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -310,7 +288,6 @@ inputs:
       - 'null'
       - int
     doc: Read number threshold for region truncation
-    default: 200000
     inputBinding:
       position: 101
       prefix: --truncation-coverage

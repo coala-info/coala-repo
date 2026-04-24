@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: The port to run the server on
-    default: 8080
     inputBinding:
       position: 101
       prefix: --port

@@ -13,7 +13,6 @@ inputs:
       \   notebook. If not specified, the default browser will be determined by the\n\
       \    `webbrowser` standard library module, which allows setting of the BROWSER\n\
       \    environment variable to override it."
-    default: "''"
     inputBinding:
       position: 101
       prefix: --browser
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - File
     doc: The full path to an SSL/TLS certificate file.
-    default: "''"
     inputBinding:
       position: 101
       prefix: --certfile
@@ -32,7 +30,6 @@ inputs:
       - File
     doc: "The full path to a certificate authority certificate for SSL/TLS client\n\
       \    authentication."
-    default: "''"
     inputBinding:
       position: 101
       prefix: --client-ca
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - File
     doc: Full path of a config file.
-    default: "''"
     inputBinding:
       position: 101
       prefix: --config
@@ -66,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: The IP address the notebook server will listen on.
-    default: "'localhost'"
     inputBinding:
       position: 101
       prefix: --ip
@@ -75,7 +70,6 @@ inputs:
       - 'null'
       - File
     doc: The full path to a private key file for usage with SSL/TLS.
-    default: "''"
     inputBinding:
       position: 101
       prefix: --keyfile
@@ -85,7 +79,6 @@ inputs:
       - int
     doc: "Set the log level by value or name.\n    Choices: (0, 10, 20, 30, 40, 50,
       'DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL')"
-    default: 30
     inputBinding:
       position: 101
       prefix: --log-level
@@ -121,7 +114,6 @@ inputs:
       - 'null'
       - Directory
     doc: The directory to use for notebooks and kernels.
-    default: "''"
     inputBinding:
       position: 101
       prefix: --notebook-dir
@@ -130,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: The port the notebook server will listen on.
-    default: 8888
     inputBinding:
       position: 101
       prefix: --port
@@ -140,7 +131,6 @@ inputs:
       - int
     doc: "The number of additional ports to try if the specified port is not\n   \
       \ available."
-    default: 50
     inputBinding:
       position: 101
       prefix: --port-retries
@@ -149,7 +139,6 @@ inputs:
       - 'null'
       - string
     doc: 'DISABLED: use %pylab or %matplotlib in the notebook to enable matplotlib.'
-    default: "'disabled'"
     inputBinding:
       position: 101
       prefix: --pylab
@@ -174,7 +163,6 @@ inputs:
       - 'null'
       - string
     doc: "Choices: ['tcp', 'ipc']"
-    default: "'tcp'"
     inputBinding:
       position: 101
       prefix: --transport

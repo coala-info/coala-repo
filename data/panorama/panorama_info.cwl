@@ -11,7 +11,6 @@ inputs:
       - boolean
     doc: Extract and export content information including gene family 
       statistics, core/accessory genome metrics, and module information
-    default: false
     inputBinding:
       position: 101
       prefix: --content
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: disables the progress bars
-    default: false
     inputBinding:
       position: 101
       prefix: --disable_prog_bar
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force writing in output directory and in pangenome output file.
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - File
     doc: log output file
-    default: stdout
     inputBinding:
       position: 101
       prefix: --log
@@ -55,7 +51,6 @@ inputs:
       - boolean
     doc: Extract and export status information showing completion status of 
       different analysis steps for each pangenome
-    default: false
     inputBinding:
       position: 101
       prefix: --status
@@ -65,7 +60,6 @@ inputs:
       - int
     doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
       for debug)
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbose

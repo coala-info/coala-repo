@@ -79,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: The window size over which coverage is averaged
-    default: 25
     inputBinding:
       position: 103
       prefix: --windowSize

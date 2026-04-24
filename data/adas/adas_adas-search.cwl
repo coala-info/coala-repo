@@ -20,7 +20,6 @@ inputs:
   - id: nbng
     type: int
     doc: Number of search answers
-    default: 128
     inputBinding:
       position: 101
       prefix: --nbng
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for sketching
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

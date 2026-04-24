@@ -8,7 +8,6 @@ inputs:
   - id: genome
     type: File
     doc: Reference genome (FASTA, mandatory)
-    default: None
     inputBinding:
       position: 101
       prefix: --genome
@@ -17,14 +16,12 @@ inputs:
       type: array
       items: File
     doc: Reads (FASTQ or FASTA, gzip allowed, mandatory)
-    default: None
     inputBinding:
       position: 101
       prefix: --reads
   - id: ref_gtf
     type: File
     doc: Reference genome annotation (GTF, mandatory)
-    default: None
     inputBinding:
       position: 101
       prefix: --ref_gtf
@@ -33,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -42,7 +38,6 @@ inputs:
       - 'null'
       - Directory
     doc: Working directory containing intermediate and log files
-    default: isorefiner_trans_struct_wf_work
     inputBinding:
       position: 101
       prefix: --work_dir

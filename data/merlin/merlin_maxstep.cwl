@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Limits bits
-    default: 24
     inputBinding:
       position: 101
       prefix: --bits
@@ -347,7 +346,6 @@ inputs:
       - 'null'
       - string
     doc: Output prefix
-    default: merlin
     inputBinding:
       position: 101
       prefix: --prefix
@@ -517,7 +515,6 @@ inputs:
       - 'null'
       - float
     doc: VC Linkage unlinked parameter
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --unlinked

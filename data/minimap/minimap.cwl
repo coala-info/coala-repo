@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: bandwidth
-    default: 500
     inputBinding:
       position: 103
       prefix: -r
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - File
     doc: dump index to FILE
-    default: '[]'
     inputBinding:
       position: 103
       prefix: -d
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: filter out top FLOAT fraction of repetitive minimizers
-    default: 0.001
     inputBinding:
       position: 103
       prefix: -f
@@ -74,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size
-    default: 15
     inputBinding:
       position: 103
       prefix: -k
@@ -83,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: split a mapping if there is a gap longer than INT
-    default: 10000
     inputBinding:
       position: 103
       prefix: -g
@@ -92,7 +87,6 @@ inputs:
       - 'null'
       - float
     doc: merge two chains if FLOAT fraction of minimizers are shared
-    default: 0.5
     inputBinding:
       position: 103
       prefix: -m
@@ -101,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: retain a mapping if it consists of >=INT minimizers
-    default: 4
     inputBinding:
       position: 103
       prefix: -c
@@ -110,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: min matching length
-    default: 40
     inputBinding:
       position: 103
       prefix: -L
@@ -119,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: minizer window size
-    default: '{-k}*2/3'
     inputBinding:
       position: 103
       prefix: -w
@@ -128,7 +119,6 @@ inputs:
       - 'null'
       - string
     doc: preset (recommended to be applied before other options)
-    default: '[]'
     inputBinding:
       position: 103
       prefix: -x
@@ -137,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: SDUST threshold; 0 to disable SDUST
-    default: 0
     inputBinding:
       position: 103
       prefix: -T
@@ -154,7 +143,6 @@ inputs:
       - 'null'
       - string
     doc: split index for every ~NUM input bases
-    default: 4G
     inputBinding:
       position: 103
       prefix: -I
@@ -163,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 3
     inputBinding:
       position: 103
       prefix: -t

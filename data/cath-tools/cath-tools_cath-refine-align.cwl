@@ -32,7 +32,6 @@ inputs:
       one more entry at a time, HEAVY - Perform heavy (slow) refining on the alignment,
       including when gluing alignments together. This can change the method of gluing
       alignments under --ssap-scores-infile and --do-the-ssaps"
-    default: HEAVY
     inputBinding:
       position: 104
   - id: align_regions
@@ -87,7 +86,6 @@ inputs:
       - Directory
     doc: Do the required SSAPs in directory; use results as with 
       --ssap-scores-infile. Use a suitable temp directory if none is specified
-    default: '""'
     inputBinding:
       position: 104
   - id: fasta_aln_infile
@@ -143,7 +141,6 @@ inputs:
       - string
     doc: Use as the PyMOL executable for viewing; may optionally include the 
       full path
-    default: '"pymol"'
     inputBinding:
       position: 104
   - id: res_name_align

@@ -17,8 +17,6 @@ inputs:
       - int
     doc: "[0/1/2/3/4] context for show, 0 represent 'C/ALL' context, 1 'CG' context,
       2 'CHG' context, 3 'CHH' context, 4 calculate and print strand meth level seperately,
-      default: 4."
-    default: 4
     inputBinding:
       position: 101
       prefix: --context
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: weighted/ mean
-    default: weighted/ mean
     inputBinding:
       position: 101
       prefix: --method
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: min cytosines in region will used for calculate
-    default: 2
     inputBinding:
       position: 101
       prefix: --minC
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: '[0/1] also print countC and coverage of body instead of methratio.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --printcoverage
@@ -78,7 +73,6 @@ inputs:
     doc: '[int] print all the countC and coverage results of C/CG/CHG/CHH context
       methylation to same file, only valid when --printcoverage 1. 0 for no, 1 for
       yes.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --print2one
@@ -97,7 +91,6 @@ inputs:
       - int
     doc: also calculate DNA methylation level of upstream and downstream N-bp 
       window.
-    default: 2000
     inputBinding:
       position: 101
       prefix: --regionextend

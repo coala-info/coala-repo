@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: '# of block compares per daligner job'
-    default: 4
     inputBinding:
       position: 103
       prefix: -B
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - Directory
     doc: Do first level sort and merge in directory -P.
-    default: /tmp
     inputBinding:
       position: 103
       prefix: -P
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size (must be <= 32).
-    default: 14
     inputBinding:
       position: 103
       prefix: -k
@@ -84,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Look for alignments of length >= -l.
-    default: 1000
     inputBinding:
       position: 103
       prefix: -l
@@ -93,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: A seed hit if the k-mers in band cover >= -h bps in the targetest read.
-    default: 35
     inputBinding:
       position: 103
       prefix: -h
@@ -110,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Look for k-mers in overlapping bands of size 2^-w.
-    default: 6
     inputBinding:
       position: 103
       prefix: -w
@@ -119,7 +113,6 @@ inputs:
       - 'null'
       - string
     doc: Use this name for the repeat mask track.
-    default: rep-g
     inputBinding:
       position: 103
       prefix: -n
@@ -136,7 +129,6 @@ inputs:
       - 'null'
       - float
     doc: Look for alignments with -e percent similarity.
-    default: 0.7
     inputBinding:
       position: 103
       prefix: -e
@@ -154,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: Use -T threads.
-    default: 4
     inputBinding:
       position: 103
       prefix: -T
@@ -163,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: Use -s as the trace point spacing for encoding alignments.
-    default: 100
     inputBinding:
       position: 103
       prefix: -s

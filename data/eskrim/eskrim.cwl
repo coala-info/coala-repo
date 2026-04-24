@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: length of kmers to count
-    default: 21
     inputBinding:
       position: 102
       prefix: -k
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: NUM_THREADS to launch for kmers counting
-    default: 4
     inputBinding:
       position: 102
       prefix: -t
@@ -37,7 +35,6 @@ inputs:
       - int
     doc: discard reads shorter than READ_LENGTH bases and trim those exceeding 
       this length
-    default: 80
     inputBinding:
       position: 102
       prefix: -l
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for random number generator
-    default: 0
     inputBinding:
       position: 102
       prefix: --seed
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: name of the metagenomic sample
-    default: NA
     inputBinding:
       position: 102
       prefix: -n
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: TARGET_NUM_READS to draw randomly from INPUT_FASTQ_FILES
-    default: 10000000
     inputBinding:
       position: 102
       prefix: -r
@@ -73,7 +67,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temporary directory to store the jellyfish database
-    default: /dev/shm
     inputBinding:
       position: 102
       prefix: --tmp-dir

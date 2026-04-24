@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: 'Dots-per-inch (DPI) for the output. Default is: "300"'
-    default: 300
     inputBinding:
       position: 101
       prefix: --dpi
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: Figure type for the plot. e.g. --figtype svg. Default is "pdf"
-    default: pdf
     inputBinding:
       position: 101
       prefix: --figtype
@@ -66,7 +64,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use file names as labels instead. Default is "False"
-    default: false
     inputBinding:
       position: 101
       prefix: --filenames
@@ -76,7 +73,6 @@ inputs:
       - string
     doc: Report number or  percentage of overlaps (Only if --type=list). Default
       is "number"
-    default: number
     inputBinding:
       position: 101
       prefix: --fill
@@ -85,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: 'Font size for the plot labels.Default is: "14"'
-    default: '14'
     inputBinding:
       position: 101
       prefix: --fontsize
@@ -115,7 +110,6 @@ inputs:
       - string
     doc: 'Minimum threshold to save the overlapping regions/names as bed/txt. Default
       is: "1"'
-    default: '1'
     inputBinding:
       position: 101
       prefix: --overlap-thresh
@@ -124,7 +118,6 @@ inputs:
       - 'null'
       - string
     doc: 'Project name for the output. Default is: "Intervene"'
-    default: Intervene
     inputBinding:
       position: 101
       prefix: --project
@@ -134,7 +127,6 @@ inputs:
       - boolean
     doc: Save overlapping regions/names for all the combinations as bed/txt. 
       Default is "False".
-    default: false
     inputBinding:
       position: 101
       prefix: --save-overlaps
@@ -159,7 +151,6 @@ inputs:
       - 'null'
       - string
     doc: Type of input sets. Genomic regions or lists of genes/SNPs.
-    default: genomic
     inputBinding:
       position: 101
       prefix: --type

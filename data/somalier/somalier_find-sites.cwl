@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: info field in the vcf that contains the allele frequency
-    default: AF
     inputBinding:
       position: 102
       prefix: --AF-field
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: info field in the vcf that contains the allele number
-    default: AN
     inputBinding:
       position: 102
       prefix: --AN-field
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: minimum allele frequency for a site
-    default: 0.15
     inputBinding:
       position: 102
       prefix: --min-AF
@@ -68,7 +65,6 @@ inputs:
       - int
     doc: minimum number of alleles (AN) at the site. (must be less than twice 
       number of samples in the cohort)
-    default: 115000
     inputBinding:
       position: 102
       prefix: --min-AN
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: minimum distance between autosomal SNPs to avoid linkage
-    default: 10000
     inputBinding:
       position: 102
       prefix: --snp-dist

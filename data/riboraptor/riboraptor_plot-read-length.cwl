@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bins for histogram
-    default: 50
     inputBinding:
       position: 102
       prefix: --bins
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Column name to use for read lengths
-    default: read_length
     inputBinding:
       position: 102
       prefix: --column

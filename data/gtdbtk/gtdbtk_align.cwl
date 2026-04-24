@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of columns to retain per gene when generating the MSA
-    default: 42
     inputBinding:
       position: 101
       prefix: --cols_per_gene
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -29,7 +27,6 @@ inputs:
     doc: perform custom filtering of MSA with cols_per_gene, min_consensus 
       max_consensus, and min_perc_taxa parameters instead of using canonical 
       mask
-    default: false
     inputBinding:
       position: 101
       prefix: --custom_msa_filters
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: create intermediate files for debugging purposes
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -54,7 +50,6 @@ inputs:
       - float
     doc: maximum percentage of the same amino acid required to retain column 
       (exclusive bound)
-    default: 95
     inputBinding:
       position: 101
       prefix: --max_consensus
@@ -64,7 +59,6 @@ inputs:
       - float
     doc: minimum percentage of the same amino acid required to retain column 
       (inclusive bound)
-    default: 25
     inputBinding:
       position: 101
       prefix: --min_consensus
@@ -74,7 +68,6 @@ inputs:
       - float
     doc: exclude genomes that do not have at least this percentage of AA in the 
       MSA (inclusive bound)
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_perc_aa
@@ -83,7 +76,6 @@ inputs:
       - 'null'
       - float
     doc: minimum percentage of taxa required to retain column (inclusive bound)
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_perc_taxa
@@ -98,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for all output files
-    default: gtdbtk
     inputBinding:
       position: 101
       prefix: --prefix
@@ -115,7 +106,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not include GTDB reference genomes in multiple sequence alignment.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip_gtdb_refs
@@ -124,7 +114,6 @@ inputs:
       - 'null'
       - boolean
     doc: skip the trimming step and return the full MSAs
-    default: false
     inputBinding:
       position: 101
       prefix: --skip_trimming
@@ -142,7 +131,6 @@ inputs:
       - 'null'
       - Directory
     doc: specify alternative directory for temporary files
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmpdir

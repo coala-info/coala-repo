@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Get a script to activate bash completion.
-    default: false
     inputBinding:
       position: 101
       prefix: --bash-comp
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Get the list of plugins.
-    default: false
     inputBinding:
       position: 101
       prefix: --list-plugins
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print plugin path
-    default: false
     inputBinding:
       position: 101
       prefix: --plugin-path
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Display bats tests for all plugin.
-    default: false
     inputBinding:
       position: 101
       prefix: --plugin-tests
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Display bats tests for plugins not relying on server conn.
-    default: false
     inputBinding:
       position: 101
       prefix: --plugin-tests-no-conn
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: Display some info about the system.
-    default: false
     inputBinding:
       position: 101
       prefix: --system-info
@@ -63,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: Read the ~/.gtftk folder and update the plugin list.
-    default: false
     inputBinding:
       position: 101
       prefix: --update-plugins

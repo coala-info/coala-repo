@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number to divide covered base pairs (default: 1).'
-    default: 1
     inputBinding:
       position: 102
       prefix: --bases
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of decimals (default: 0).'
-    default: 0
     inputBinding:
       position: 102
       prefix: --decimals

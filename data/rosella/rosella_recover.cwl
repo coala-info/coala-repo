@@ -31,7 +31,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 75
     inputBinding:
       position: 101
       prefix: --contig-end-exclusion
@@ -54,7 +53,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 100
     inputBinding:
       position: 101
       prefix: --ef-construction
@@ -69,7 +67,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 1
     inputBinding:
       position: 101
       prefix: --filtering-rounds
@@ -99,7 +96,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 31
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -116,7 +112,6 @@ inputs:
       - 'null'
       - string
     doc: 'possible values: minimap2-ont, minimap2-pb, minimap2-hifi'
-    default: minimap2-ont
     inputBinding:
       position: 101
       prefix: --longread-mapper
@@ -134,7 +129,6 @@ inputs:
       - string
     doc: 'possible values: bwa-mem, bwa-mem2, minimap2-sr, minimap2-ont, minimap2-pb,
       minimap2-hifi, minimap2-no-preset'
-    default: minimap2-sr
     inputBinding:
       position: 101
       prefix: --mapper
@@ -142,7 +136,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 16
     inputBinding:
       position: 101
       prefix: --max-layers
@@ -150,7 +143,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 32
     inputBinding:
       position: 101
       prefix: --max-nb-connections
@@ -158,7 +150,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 5
     inputBinding:
       position: 101
       prefix: --max-retries
@@ -166,7 +157,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 200000
     inputBinding:
       position: 101
       prefix: --min-bin-size
@@ -174,7 +164,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-contig-count
@@ -182,7 +171,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 1500
     inputBinding:
       position: 101
       prefix: --min-contig-size
@@ -190,7 +178,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min-covered-fraction
@@ -212,7 +199,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min-read-aligned-percent
@@ -255,7 +241,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 100
     inputBinding:
       position: 101
       prefix: --n-neighbours
@@ -263,7 +248,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 16
     inputBinding:
       position: 101
       prefix: --nb-grad-batches
@@ -301,7 +285,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 42
     inputBinding:
       position: 101
       prefix: --seed
@@ -317,7 +300,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --sketch-scale
@@ -325,7 +307,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 10
     inputBinding:
       position: 101
       prefix: --threads
@@ -333,7 +314,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 95.0
     inputBinding:
       position: 101
       prefix: --trim-max
@@ -341,7 +321,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --trim-min

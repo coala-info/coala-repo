@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: specify the output format
-    default: wdl
     inputBinding:
       position: 102
       prefix: --format
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: validate the resulting WDL code with PyWDL
-    default: false
     inputBinding:
       position: 102
       prefix: --validate

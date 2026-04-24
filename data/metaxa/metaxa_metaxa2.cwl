@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run only the classification part of Metaxa2, without prior extraction
-    default: false
     inputBinding:
       position: 101
       prefix: -c
@@ -21,7 +20,6 @@ inputs:
       - string
     doc: Specifies the format of the input file (f, a, auto, gzip, bzip, zip, 
       dsrc)
-    default: f
     inputBinding:
       position: 101
       prefix: -z
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: The number of CPU threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpu
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - boolean
     doc: Adds a date and time stamp to the output directory
-    default: false
     inputBinding:
       position: 101
       prefix: --date
@@ -56,7 +52,6 @@ inputs:
       - 'null'
       - float
     doc: Domain E-value cutoff for a sequence to be included in the output
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -E
@@ -65,7 +60,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run only the extraction part of Metaxa2, without classification
-    default: false
     inputBinding:
       position: 101
       prefix: -x
@@ -74,7 +68,6 @@ inputs:
       - 'null'
       - boolean
     doc: FASTA-format output of extracted rRNA sequences
-    default: true
     inputBinding:
       position: 101
       prefix: --fasta
@@ -83,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: Specifies the barcoding gene Metaxa should look for (ssu, lsu, string)
-    default: ssu
     inputBinding:
       position: 101
       prefix: -g
@@ -102,7 +94,6 @@ inputs:
       - boolean
     doc: Do not discard the entire pair if only one of the reads is of bad 
       quality
-    default: true
     inputBinding:
       position: 101
       prefix: --ignore_paired_read
@@ -118,7 +109,6 @@ inputs:
       - string
     doc: Specifies the format of the input file (a, auto, f, fasta, q, fastq, p,
       paired-end, pa, paired-fasta)
-    default: auto
     inputBinding:
       position: 101
       prefix: --format
@@ -127,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: Number of sequence matches to consider for classification
-    default: 5
     inputBinding:
       position: 101
       prefix: -M
@@ -137,7 +126,6 @@ inputs:
       - int
     doc: The minimal number of domains that must match a sequence before it is 
       included
-    default: 2
     inputBinding:
       position: 101
       prefix: -N
@@ -146,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum quality value for basecalling
-    default: 20
     inputBinding:
       position: 101
       prefix: -q
@@ -155,7 +142,6 @@ inputs:
       - 'null'
       - string
     doc: Controls the Metaxa2 operating mode (m, metagenome, g, genome, a, auto)
-    default: metagenome
     inputBinding:
       position: 101
       prefix: --mode
@@ -172,7 +158,6 @@ inputs:
       - 'null'
       - int
     doc: Specifies the distance between the sequence pairs
-    default: 150
     inputBinding:
       position: 101
       prefix: --distance
@@ -199,7 +184,6 @@ inputs:
       - string
     doc: 'Profile set to use for the search (comma-separated: b, bacteria, a, archaea,
       e, eukaryota, m, mitochondrial, c, chloroplast, A, all, o, other)'
-    default: all
     inputBinding:
       position: 101
       prefix: -t
@@ -208,7 +192,6 @@ inputs:
       - 'null'
       - boolean
     doc: Filter out low-quality reads (below specified -q value)
-    default: false
     inputBinding:
       position: 101
       prefix: --quality_filter
@@ -218,7 +201,6 @@ inputs:
       - int
     doc: Percentage of low-quality (below -q value) accepted before 
       filtering/trimming
-    default: 10
     inputBinding:
       position: 101
       prefix: --quality_percent
@@ -227,7 +209,6 @@ inputs:
       - 'null'
       - boolean
     doc: Trim away ends of low quality (below -q value)
-    default: false
     inputBinding:
       position: 101
       prefix: --quality_trim
@@ -254,7 +235,6 @@ inputs:
       - 'null'
       - float
     doc: Reliability cutoff for taxonomic classification
-    default: 75.0
     inputBinding:
       position: 101
       prefix: -R
@@ -263,7 +243,6 @@ inputs:
       - 'null'
       - boolean
     doc: Rebuilds the HMM database
-    default: false
     inputBinding:
       position: 101
       prefix: --reset
@@ -272,7 +251,6 @@ inputs:
       - 'null'
       - float
     doc: Domain score cutoff for a sequence to be included in the output
-    default: 12.0
     inputBinding:
       position: 101
       prefix: -S
@@ -281,7 +259,6 @@ inputs:
       - 'null'
       - boolean
     doc: Supresses printing progress info to stderr
-    default: false
     inputBinding:
       position: 101
       prefix: --silent
@@ -290,7 +267,6 @@ inputs:
       - 'null'
       - boolean
     doc: Summary of results output
-    default: true
     inputBinding:
       position: 101
       prefix: --summary
@@ -308,7 +284,6 @@ inputs:
       - 'null'
       - boolean
     doc: Table format output of probable taxonomic origin for sequences
-    default: true
     inputBinding:
       position: 101
       prefix: --taxonomy
@@ -325,7 +300,6 @@ inputs:
       - 'null'
       - boolean
     doc: Runs the Ublast algorithm instead of Usearch algorithm
-    default: true
     inputBinding:
       position: 101
       prefix: --ublast
@@ -334,7 +308,6 @@ inputs:
       - 'null'
       - boolean
     doc: Runs blast search through blast+ instead of the legacy blastall engine
-    default: false
     inputBinding:
       position: 101
       prefix: --plus
@@ -351,7 +324,6 @@ inputs:
       - 'null'
       - string
     doc: Runs usearch instead of blast, specify version
-    default: '0'
     inputBinding:
       position: 101
       prefix: --usearch

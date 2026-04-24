@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Custom config file
-    default: (outputDir)/trimnami.config.yaml
     inputBinding:
       position: 102
       prefix: --configfile
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Minimap preset
-    default: sr
     inputBinding:
       position: 102
       prefix: --minimap
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output fasta format files instead of fastq
-    default: true
     inputBinding:
       position: 102
       prefix: --no-fasta
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run fastqc on trimmed and untrimmed reads
-    default: true
     inputBinding:
       position: 102
       prefix: --no-fastqc
@@ -109,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 8
     inputBinding:
       position: 102
       prefix: --threads
@@ -118,7 +113,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use conda for Snakemake rules
-    default: true
     inputBinding:
       position: 102
       prefix: --use-conda
@@ -127,7 +121,6 @@ inputs:
       - 'null'
       - string
     doc: Custom config file
-    default: (outputDir)/trimnami.profile/
     inputBinding:
       position: 102
       prefix: --workflow-profile

@@ -45,7 +45,6 @@ inputs:
       - int
     doc: Number of base pairs to subtract from start coordinate to create 
       interval. Useful when dealing with BED files with only CpG coordinates.
-    default: 0
     inputBinding:
       position: 104
       prefix: --left
@@ -79,7 +78,6 @@ inputs:
       - int
     doc: Number of base pairs to add to stop coordinate to create interval. 
       Useful when dealing with BED files with only CpG coordinates.
-    default: 0
     inputBinding:
       position: 104
       prefix: --right

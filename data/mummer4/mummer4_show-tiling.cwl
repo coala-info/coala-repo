@@ -58,7 +58,6 @@ inputs:
       - int
     doc: Set maximum gap between clustered alignments [-1, INT_MAX] A value of 
       -1 will represent infinity (nucmer default = 1000) (promer default = -1)
-    default: -1
     inputBinding:
       position: 102
       prefix: -g
@@ -69,7 +68,6 @@ inputs:
     doc: Set minimum contig coverage to tile [0.0, 100.0] (nucmer default = 
       95.0) sum of individual alignments (promer default = 50.0) extent of 
       syntenic region
-    default: 95.0
     inputBinding:
       position: 102
       prefix: -v
@@ -81,7 +79,6 @@ inputs:
       needed to determine one alignment is 'better' than another alignment 
       (nucmer default = 10.0) sum of individual alignments (promer default = 
       30.0) extent of syntenic region
-    default: 10.0
     inputBinding:
       position: 102
       prefix: -V
@@ -91,7 +88,6 @@ inputs:
       - int
     doc: Set minimum length contig to report [-1, INT_MAX] A value of -1 will 
       represent infinity (common default = 1)
-    default: -1
     inputBinding:
       position: 102
       prefix: -l
@@ -101,7 +97,6 @@ inputs:
       - float
     doc: Set minimum percent identity to tile [0.0, 100.0] (nucmer default = 
       90.0) (promer default = 55.0)
-    default: 90.0
     inputBinding:
       position: 102
       prefix: -i

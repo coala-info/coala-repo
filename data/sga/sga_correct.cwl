@@ -17,7 +17,6 @@ inputs:
       - string
     doc: specify the correction algorithm to use. STR must be one of kmer, 
       hybrid, overlap.
-    default: kmer
     inputBinding:
       position: 102
       prefix: --algorithm
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Attempt to correct bases in a read that are seen less than N times
-    default: 2
     inputBinding:
       position: 102
       prefix: --base-threshold
@@ -47,7 +45,6 @@ inputs:
       - int
     doc: use INT as the threshold to detect a conflicted base in the 
       multi-overlap
-    default: 5
     inputBinding:
       position: 102
       prefix: --conflict
@@ -57,7 +54,6 @@ inputs:
       - int
     doc: When correcting a kmer, require the count of the new kmer is at least 
       +N higher than the count of the old kmer.
-    default: 1
     inputBinding:
       position: 102
       prefix: --count-offset
@@ -75,7 +71,6 @@ inputs:
       - float
     doc: the maximum error rate allowed between two sequences to consider them 
       overlapped
-    default: 0.04
     inputBinding:
       position: 102
       prefix: --error-rate
@@ -84,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Perform N rounds of k-mer correction, correcting up to N bases
-    default: 10
     inputBinding:
       position: 102
       prefix: --kmer-rounds
@@ -93,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: The length of the kmer to use.
-    default: 31
     inputBinding:
       position: 102
       prefix: --kmer-size
@@ -102,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Attempt to correct kmers that are seen less than N times.
-    default: 3
     inputBinding:
       position: 102
       prefix: --kmer-threshold
@@ -131,7 +123,6 @@ inputs:
     doc: minimum count of the base that has the highest count in overlap 
       correction. The base of the read is only corrected if the maximum base has
       at least this count. Should avoid mis-corrections in low coverage regions
-    default: 4
     inputBinding:
       position: 102
       prefix: --min-count-max-base
@@ -140,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: minimum overlap required between two reads
-    default: 45
     inputBinding:
       position: 102
       prefix: --min-overlap
@@ -157,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: iteratively correct reads up to a maximum of NUM rounds
-    default: 1
     inputBinding:
       position: 102
       prefix: --rounds
@@ -168,7 +157,6 @@ inputs:
     doc: use occurrence array sample rate of N in the FM-index. Higher values 
       use significantly less memory at the cost of higher runtime. This value 
       must be a power of 2
-    default: 128
     inputBinding:
       position: 102
       prefix: --sample-rate
@@ -199,7 +187,6 @@ inputs:
       - 'null'
       - int
     doc: use NUM threads for the computation
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

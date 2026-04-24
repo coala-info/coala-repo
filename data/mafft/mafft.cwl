@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: Offset (works like gap extension penalty)
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --ep
@@ -71,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of iterative refinement
-    default: 0
     inputBinding:
       position: 102
       prefix: --maxiterate
@@ -80,7 +78,6 @@ inputs:
       - 'null'
       - float
     doc: Gap opening penalty
-    default: 1.53
     inputBinding:
       position: 102
       prefix: --op

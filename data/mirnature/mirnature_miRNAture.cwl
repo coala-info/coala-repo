@@ -88,7 +88,6 @@ inputs:
       number to\nclassify a family as repetitive. The last one,\n<Candidates_to_evaluate>,
       is the number of candidates prone\nto be evaluated in the next evaluation section.
       The rest\ncandidates are included as homology 'potential' candidates."
-    default: relax,200,100
     inputBinding:
       position: 101
       prefix: -repetition_cutoff

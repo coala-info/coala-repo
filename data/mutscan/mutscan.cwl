@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: The length of the marking sequence (k-mer) for mutation detection.
-    default: 30
     inputBinding:
       position: 101
       prefix: --mark
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum support read number for a mutation to be reported.
-    default: 2
     inputBinding:
       position: 101
       prefix: --support
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Worker thread number.
-    default: 4
     inputBinding:
       position: 101
       prefix: --thread

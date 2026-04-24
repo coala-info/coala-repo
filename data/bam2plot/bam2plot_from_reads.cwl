@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: How to save the plots
-    default: png
     inputBinding:
       position: 102
       prefix: --plot_type

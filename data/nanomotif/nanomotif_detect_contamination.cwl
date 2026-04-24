@@ -46,7 +46,6 @@ inputs:
       - string
     doc: Specify whether to use the median of mean methylated motif positions or
       the weighted mean.
-    default: median
     inputBinding:
       position: 101
       prefix: --methylation_output_type
@@ -57,7 +56,6 @@ inputs:
     doc: Filtering criteria for trusting contig methylation. It is the product 
       of mean_read_coverage and N_motif_observation. Higher value means stricter
       criteria.
-    default: 24
     inputBinding:
       position: 101
       prefix: --methylation_threshold

@@ -12,7 +12,6 @@ inputs:
       - float
     doc: "clock rate as defined in the transcluster paper\n                      \
       \  (SNPs/genome/year)"
-    default: 1e-3 * 29903
     inputBinding:
       position: 101
       prefix: --clock_rate
@@ -22,7 +21,6 @@ inputs:
       - string
     doc: "The type of transmission distance to use. Can be one\n                 \
       \       of 'snp' (default), 'filter', 'direct', 'expectedK'"
-    default: snp
     inputBinding:
       position: 101
       prefix: --cluster_distance
@@ -32,7 +30,6 @@ inputs:
       - int
     doc: "Distance threshold. Samples will be grouped together\n                 \
       \       if the distance between them is below this threshold."
-    default: 10
     inputBinding:
       position: 101
       prefix: --cluster_threshold
@@ -116,7 +113,6 @@ inputs:
       - 'null'
       - float
     doc: ignore queries with per-base divergence > max_div
-    default: 1
     inputBinding:
       position: 101
       prefix: --max_div
@@ -135,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base quality
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_base_qual
@@ -144,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read coverage
-    default: 5
     inputBinding:
       position: 101
       prefix: --min-cov
@@ -153,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_map_qual
@@ -162,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: minimum query length
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_query_len
@@ -180,7 +172,6 @@ inputs:
       - 'null'
       - float
     doc: The precision used to calculate E(K)
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --precision
@@ -206,7 +197,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -216,7 +206,6 @@ inputs:
       - int
     doc: "transmission rate as defined in the transcluster paper\n               \
       \         (transmissions/year)"
-    default: 73
     inputBinding:
       position: 101
       prefix: --trans_rate
@@ -234,7 +223,6 @@ inputs:
       - 'null'
       - int
     doc: ignore bases within TRIM-bp from either end of a read
-    default: 0
     inputBinding:
       position: 101
       prefix: --trim

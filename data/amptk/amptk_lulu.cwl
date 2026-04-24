@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove Intermediate Files
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: LULU minimum match percent identity
-    default: 84
     inputBinding:
       position: 101
       prefix: --min_match
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: LULU minimum ratio
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_ratio
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: LULU minimum ratio threshold
-    default: min
     inputBinding:
       position: 101
       prefix: --min_ratio_type
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: LULU minimum relative cooccurance
-    default: 95
     inputBinding:
       position: 101
       prefix: --min_relative_cooccurence

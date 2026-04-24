@@ -89,7 +89,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory to store phold plots
-    default: phold_plots
     inputBinding:
       position: 101
       prefix: --output
@@ -109,7 +108,6 @@ inputs:
       - string
     doc: "Prefix for output files. Needs to match what\n                         \
       \         phold was run with."
-    default: phold
     inputBinding:
       position: 101
       prefix: --prefix

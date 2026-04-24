@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size for sequence composition analysis
-    default: 31
     inputBinding:
       position: 103
       prefix: --kmer-size
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of bins to generate
-    default: 50
     inputBinding:
       position: 103
       prefix: --max-bins
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum contig length for binning
-    default: 1000
     inputBinding:
       position: 103
       prefix: --min-contig-len
@@ -84,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

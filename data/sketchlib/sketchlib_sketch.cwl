@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: aaHash 'level'
-    default: level1
     inputBinding:
       position: 102
       prefix: --level
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum k-mer count (with reads)
-    default: 5
     inputBinding:
       position: 102
       prefix: --min-count
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum k-mer quality (with reads)
-    default: 20
     inputBinding:
       position: 102
       prefix: --min-qual
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: Type of sequence to hash
-    default: dna
     inputBinding:
       position: 102
       prefix: --seq-type
@@ -107,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Sketch size
-    default: 1000
     inputBinding:
       position: 102
       prefix: --sketch-size
@@ -116,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

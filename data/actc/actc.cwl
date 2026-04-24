@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL).'
-    default: WARN
     inputBinding:
       position: 103
       prefix: --log-level
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum CCS read length after --trim-flanks-bp
-    default: 100
     inputBinding:
       position: 103
       prefix: --min-ccs-length
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use, 0 means autodetection.
-    default: 0
     inputBinding:
       position: 103
       prefix: --num-threads
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Trim N bp from each flank of the CCS read alignment
-    default: 0
     inputBinding:
       position: 103
       prefix: --trim-flanks-bp

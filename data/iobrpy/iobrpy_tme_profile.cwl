@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Threads for ssGSEA and CIBERSORT
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

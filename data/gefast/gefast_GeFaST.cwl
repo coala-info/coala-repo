@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: discard sequences with other characters
-    default: ACGT
     inputBinding:
       position: 104
       prefix: --alphabet
@@ -38,7 +37,6 @@ inputs:
       - int
     doc: mass boundary distinguishing between light and heavy clusters during 
       refinement
-    default: 3
     inputBinding:
       position: 104
       prefix: --boundary
@@ -48,7 +46,6 @@ inputs:
       - boolean
     doc: do not extend cluster when the new amplicon has a larger abundance than
       the current subseed
-    default: 1
     inputBinding:
       position: 104
       prefix: --break_swarms
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: use the specified component to cluster the amplicons
-    default: mode-dependent
     inputBinding:
       position: 104
       prefix: --clusterer
@@ -67,7 +63,6 @@ inputs:
       - int
     doc: penalty for extending a gap during pairwise global alignment 
       computation
-    default: -4
     inputBinding:
       position: 104
       prefix: --gap_extension_penalty
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: penalty for opening a gap during pairwise global alignment computation
-    default: -12
     inputBinding:
       position: 104
       prefix: --gap_opening_penalty
@@ -95,7 +89,6 @@ inputs:
       - int
     doc: reward for nucleotide match during pairwise global alignment 
       computation
-    default: 5
     inputBinding:
       position: 104
       prefix: --match_reward
@@ -104,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: discard more abundant sequences
-    default: deactivated
     inputBinding:
       position: 104
       prefix: --max_abundance
@@ -113,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: discard longer sequences
-    default: deactivated
     inputBinding:
       position: 104
       prefix: --max_length
@@ -122,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: discard less abundant sequences
-    default: deactivated
     inputBinding:
       position: 104
       prefix: --min_abundance
@@ -131,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: discard shorter sequences
-    default: deactivated
     inputBinding:
       position: 104
       prefix: --min_length
@@ -141,7 +130,6 @@ inputs:
       - int
     doc: penalty for nucleotide mismatch during pairwise global alignment 
       computation
-    default: -4
     inputBinding:
       position: 104
       prefix: --mismatch_penalty
@@ -158,7 +146,6 @@ inputs:
       - 'null'
       - string
     doc: use the specified component to generate the requested outputs
-    default: mode-dependent
     inputBinding:
       position: 104
       prefix: --output_generator
@@ -167,7 +154,6 @@ inputs:
       - 'null'
       - string
     doc: use the specified component to perform the preprocessing
-    default: mode-dependent
     inputBinding:
       position: 104
       prefix: --preprocessor
@@ -176,7 +162,6 @@ inputs:
       - 'null'
       - string
     doc: change expected quality encoding (FASTQ inputs)
-    default: sanger
     inputBinding:
       position: 104
       prefix: --quality_encoding
@@ -185,7 +170,6 @@ inputs:
       - 'null'
       - float
     doc: distance threshold in refinement phase
-    default: 0
     inputBinding:
       position: 104
       prefix: --refinement_threshold
@@ -194,7 +178,6 @@ inputs:
       - 'null'
       - string
     doc: use the specified component to refine the clusters
-    default: mode-dependent
     inputBinding:
       position: 104
       prefix: --refiner
@@ -203,7 +186,6 @@ inputs:
       - 'null'
       - string
     doc: change separator symbol between identifier and abundance
-    default: _
     inputBinding:
       position: 104
       prefix: --sep_abundance
@@ -212,7 +194,6 @@ inputs:
       - 'null'
       - float
     doc: distance threshold in clustering phase
-    default: mode-dependent
     inputBinding:
       position: 104
       prefix: --threshold

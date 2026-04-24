@@ -64,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: Transition/Transversion ratio
-    default: 2.0
     inputBinding:
       position: 101
       prefix: -titv_ratio

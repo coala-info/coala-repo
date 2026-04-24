@@ -60,7 +60,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn off all logging
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet

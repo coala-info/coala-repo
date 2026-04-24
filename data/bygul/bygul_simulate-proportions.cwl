@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: Base error rate (e.g., 0.02) for simulation using both wgsim and mason
-    default: 0.004
     inputBinding:
       position: 104
       prefix: --error_rate
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: use this to simulate reads for a haploid organism for wgsim
-    default: true
     inputBinding:
       position: 104
       prefix: --haplotype
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: Probability an indel is extended (e.g., 0.3)for simulation for wgsim
-    default: 5e-05
     inputBinding:
       position: 104
       prefix: --indel_extend_probability
@@ -55,7 +52,6 @@ inputs:
       - float
     doc: Fraction of indels (e.g., 0.15) for simulation,this will be both 
       insertion and deletion probablity for mason
-    default: 5e-05
     inputBinding:
       position: 104
       prefix: --indel_fraction
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of mismatches allowed in primer region
-    default: 1
     inputBinding:
       position: 104
       prefix: --maxmismatch
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - float
     doc: Mean sequence quality in beginning of the read for mason simulator only
-    default: 40.0
     inputBinding:
       position: 104
       prefix: --mean_quality_begin
@@ -82,7 +76,6 @@ inputs:
       - 'null'
       - float
     doc: Mean sequence quality in end of the read for mason simulator only
-    default: 39.5
     inputBinding:
       position: 104
       prefix: --mean_quality_end
@@ -91,7 +84,6 @@ inputs:
       - 'null'
       - float
     doc: Mutation rate (e.g., 0.001) for simulation for wgsim
-    default: 0.001
     inputBinding:
       position: 104
       prefix: --mutation_rate
@@ -100,7 +92,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: results
     inputBinding:
       position: 104
       prefix: --outdir
@@ -109,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Outer distance for simulation using wgsim
-    default: 150
     inputBinding:
       position: 104
       prefix: --outerdistance
@@ -119,7 +109,6 @@ inputs:
       - string
     doc: Read proportions for each sample, e.g.(0.8,0.2) must sum to 1.0. If not
       provided, the program will randomly assign proportions
-    default: NA
     inputBinding:
       position: 104
       prefix: --proportions
@@ -128,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: Read length for simulation
-    default: 150
     inputBinding:
       position: 104
       prefix: --read_length
@@ -137,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads per amplicon
-    default: 500
     inputBinding:
       position: 104
       prefix: --readcnt
@@ -162,7 +149,6 @@ inputs:
       - 'null'
       - string
     doc: Select the simulator to use (wgsim or mason)
-    default: wgsim
     inputBinding:
       position: 104
       prefix: --simulator
@@ -171,7 +157,6 @@ inputs:
       - 'null'
       - int
     doc: Standard deviation of insert size for wgsim
-    default: 50
     inputBinding:
       position: 104
       prefix: --standard_deviation

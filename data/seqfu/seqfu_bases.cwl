@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Number of digits to print
-    default: 2
     inputBinding:
       position: 102
       prefix: --digits

@@ -75,7 +75,6 @@ inputs:
     prefix: --verbosity
 - id: output_filename
   type: string
-  default: "out.bam"
   doc: Name of the output BAM/CRAM file
   inputBinding:
     position: 1

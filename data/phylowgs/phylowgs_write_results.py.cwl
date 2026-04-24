@@ -20,7 +20,6 @@ inputs:
       - boolean
     doc: "Include SSM names in output (which may be sensitive\n                  \
       \     data)"
-    default: false
     inputBinding:
       position: 103
       prefix: --include-ssm-names
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum number or percent of SSMs to retain a subclone
-    default: 0.01
     inputBinding:
       position: 103
       prefix: --min-ssms

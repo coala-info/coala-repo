@@ -17,7 +17,6 @@ inputs:
   - id: operation
     type: string
     doc: The operation to perform
-    default: multibackground
     inputBinding:
       position: 2
   - id: background_pdf

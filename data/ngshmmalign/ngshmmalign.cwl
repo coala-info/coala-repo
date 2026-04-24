@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Name of consensus reference contig that will be created
-    default: CONSENSUS
     inputBinding:
       position: 101
       prefix: -N
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - float
     doc: Gap extend probability
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --ge
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - float
     doc: Gap open probability
-    default: '1e-4'
     inputBinding:
       position: 101
       prefix: --go
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: Global substitution probability
-    default: 0.005
     inputBinding:
       position: 101
       prefix: --error
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - float
     doc: Insert extend probability
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --ie
@@ -90,7 +85,6 @@ inputs:
       - 'null'
       - float
     doc: Insert open probability
-    default: '5e-5'
     inputBinding:
       position: 101
       prefix: --io
@@ -100,7 +94,6 @@ inputs:
       - float
     doc: Jump to end probability; usually 1/L, where L is the average length of 
       the reads
-    default: 1/L
     inputBinding:
       position: 101
       prefix: --ep
@@ -117,7 +110,6 @@ inputs:
       - 'null'
       - float
     doc: Left clip extend probability
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --lce
@@ -126,7 +118,6 @@ inputs:
       - 'null'
       - float
     doc: Left clip open probability
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --lco
@@ -135,7 +126,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum frequency for calling ambiguous base
-    default: 0.05
     inputBinding:
       position: 101
       prefix: -a
@@ -144,7 +134,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum mapped length of read
-    default: L * 0.8
     inputBinding:
       position: 101
       prefix: -M
@@ -188,7 +177,6 @@ inputs:
       - 'null'
       - float
     doc: Right clip extend probability
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --rce
@@ -197,7 +185,6 @@ inputs:
       - 'null'
       - float
     doc: Right clip open probability
-    default: lco/L
     inputBinding:
       position: 101
       prefix: --rco
@@ -207,7 +194,6 @@ inputs:
       - int
     doc: Value of seed for deterministic run. A value of 0 will pick a random 
       seed from some non-deterministic entropy source
-    default: 42
     inputBinding:
       position: 101
       prefix: --seed
@@ -217,7 +203,6 @@ inputs:
       - int
     doc: Number of threads to use for alignment. Defaults to number of logical 
       cores found
-    default: 20
     inputBinding:
       position: 101
       prefix: -t

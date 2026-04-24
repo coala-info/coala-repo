@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Border size for the alignment display
-    default: 10
     inputBinding:
       position: 104
       prefix: -b
@@ -111,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: Width of the alignment display
-    default: 100
     inputBinding:
       position: 104
       prefix: -w

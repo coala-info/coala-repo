@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: field index of abundance. input data should be tab-separated
-    default: 2
     inputBinding:
       position: 101
       prefix: --abundance-field
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory containing nodes.dmp and names.dmp
-    default: /root/.taxonkit
     inputBinding:
       position: 101
       prefix: --data-dir
@@ -78,7 +76,6 @@ inputs:
       - type: array
         items: string
     doc: only show TaxIds and names of these ranks
-    default:
       - superkingdom
       - phylum
       - class
@@ -95,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: field index of taxid. input data should be tab-separated
-    default: 1
     inputBinding:
       position: 101
       prefix: --taxid-field
@@ -112,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs. 4 is enough
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

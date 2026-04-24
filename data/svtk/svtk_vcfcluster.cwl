@@ -27,7 +27,6 @@ inputs:
       - int
     doc: "Maximum clustering distance. Suggested to use max of\n                 \
       \       median + 7*MAD over samples."
-    default: 500
     inputBinding:
       position: 102
       prefix: --dist
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum reciprocal overlap between variants.
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --frac
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for merged variant IDs.
-    default: MERGED
     inputBinding:
       position: 102
       prefix: --prefix
@@ -105,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum SV size to report for intrachromosomal events.
-    default: 0
     inputBinding:
       position: 102
       prefix: --svsize
@@ -114,7 +110,6 @@ inputs:
       - 'null'
       - string
     doc: Comma delimited list of svtypes to cluster
-    default: DEL,DUP,INV,BND
     inputBinding:
       position: 102
       prefix: --svtypes

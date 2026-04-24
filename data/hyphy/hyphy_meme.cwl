@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Branches to test
-    default: All
     inputBinding:
       position: 101
       prefix: --branches
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Which genetic code should be used
-    default: Universal
     inputBinding:
       position: 101
       prefix: --code
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Perform branch length re-optimization under the full codon model
-    default: Yes
     inputBinding:
       position: 101
       prefix: --full-model
@@ -43,7 +40,6 @@ inputs:
       - string
     doc: Use site-level model fits to impute likely character states for each 
       sequence
-    default: No
     inputBinding:
       position: 101
       prefix: --impute-states
@@ -53,7 +49,6 @@ inputs:
       - File
     doc: Use/save parameter estimates from 'initial-guess' model fits to a JSON 
       file (default is not to save)
-    default: /dev/null
     inputBinding:
       position: 101
       prefix: --intermediate-fits
@@ -63,7 +58,6 @@ inputs:
       - string
     doc: Automatically delete internal zero-length branches for computational 
       efficiency (will not affect results otherwise)
-    default: Yes
     inputBinding:
       position: 101
       prefix: --kill-zero-lengths
@@ -73,7 +67,6 @@ inputs:
       - string
     doc: Only analyze sites whose 1-based indices match the following list (null
       to skip)
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --limit-to-sites
@@ -82,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: Include support for multiple nucleotide substitutions
-    default: None
     inputBinding:
       position: 101
       prefix: --multiple-hits
@@ -91,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: Optimization precision settings for preliminary fits
-    default: standard
     inputBinding:
       position: 101
       prefix: --precision
@@ -100,7 +91,6 @@ inputs:
       - 'null'
       - float
     doc: The p-value threshold to use when testing for selection
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --pvalue
@@ -109,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: The number omega rate classes to include in the model [2-4]
-    default: meme.nrate_classes [computed at run time]
     inputBinding:
       position: 101
       prefix: --rates
@@ -121,7 +110,6 @@ inputs:
       bootstrap resampling to derive site-level null LRT distributions up to this
       many replicates per site. Recommended use for small to medium (<30 sequences)
       datasets'
-    default: 0
     inputBinding:
       position: 101
       prefix: --resample
@@ -131,7 +119,6 @@ inputs:
       - string
     doc: For sites whose 1-based indices match the following list, write out 
       likelihood function snapshots (null to skip)
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --save-lf-for-sites
@@ -140,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: Estimate multiple hit rates for each site
-    default: Estimate
     inputBinding:
       position: 101
       prefix: --site-multihit

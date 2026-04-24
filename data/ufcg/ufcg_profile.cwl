@@ -93,7 +93,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to write the temporary files
-    default: /tmp
     inputBinding:
       position: 101
       prefix: -w
@@ -102,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

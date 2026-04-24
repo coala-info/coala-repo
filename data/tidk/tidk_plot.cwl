@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: The font size of the axis labels in the plot
-    default: 12
     inputBinding:
       position: 101
       prefix: --fontsize
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: The height of subplots (px).
-    default: 200
     inputBinding:
       position: 101
       prefix: --height
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: The stroke width of the line graph in the plot
-    default: 2
     inputBinding:
       position: 101
       prefix: --strokewidth
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: The width of plot (px)
-    default: 1000
     inputBinding:
       position: 101
       prefix: --width

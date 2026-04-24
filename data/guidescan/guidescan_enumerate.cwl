@@ -15,7 +15,6 @@ inputs:
       - type: array
         items: string
     doc: Alternative PAMs used to find off-targets
-    default: []
     inputBinding:
       position: 102
       prefix: --alt-pam
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Number of DNA bulges to allow when finding off-targets
-    default: 0
     inputBinding:
       position: 102
       prefix: --dna-bulges
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of off-targets to store for each number of mismatches.
-    default: -1
     inputBinding:
       position: 102
       prefix: --max-off-targets
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Number of mismatches to allow when finding off-targets
-    default: 3
     inputBinding:
       position: 102
       prefix: --mismatches
@@ -74,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of RNA bulges to allow when finding off-targets
-    default: 0
     inputBinding:
       position: 102
       prefix: --rna-bulges
@@ -91,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to parallelize over
-    default: 20
     inputBinding:
       position: 102
       prefix: --threads
@@ -100,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Filters gRNAs with off-targets at a distance at or below this threshold
-    default: -1
     inputBinding:
       position: 102
       prefix: --threshold

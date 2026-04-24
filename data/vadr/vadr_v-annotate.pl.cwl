@@ -85,7 +85,6 @@ inputs:
       - 'null'
       - float
     doc: biasdseq/BIASED_SEQUENCE fractional threshold is <x>
-    default: 0.25
     inputBinding:
       position: 103
       prefix: --biasfract
@@ -126,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: parallelize across <n> CPU workers (requires --split or --glsearch)
-    default: 1
     inputBinding:
       position: 103
       prefix: --cpu
@@ -135,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: dupreg in/DUPLICATE_REGIONS minimum model overlap is <n>
-    default: 20
     inputBinding:
       position: 103
       prefix: --dupregolp
@@ -144,7 +141,6 @@ inputs:
       - 'null'
       - float
     doc: dupreg in/DUPLICATE_REGIONS minimum bit score is <x>
-    default: 10.0
     inputBinding:
       position: 103
       prefix: --dupregsc
@@ -169,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: extrant3/EXTRA_SEQUENCE_END minimum length is <n>
-    default: 1
     inputBinding:
       position: 103
       prefix: --extrant3
@@ -178,7 +173,6 @@ inputs:
       - 'null'
       - int
     doc: extrant5/EXTRA_SEQUENCE_START minimum length is <n>
-    default: 1
     inputBinding:
       position: 103
       prefix: --extrant5
@@ -187,7 +181,6 @@ inputs:
       - 'null'
       - float
     doc: set self-transit probs in ROOT_IL/IR for cmalign to <x>
-    default: 0.8
     inputBinding:
       position: 103
       prefix: --flankselfins
@@ -196,7 +189,6 @@ inputs:
       - 'null'
       - float
     doc: set transition probs to ROOT_IL/IR for cmalign to <x>
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --flanktoins
@@ -256,7 +248,6 @@ inputs:
       - float
     doc: fsthicf{t,i}/POSSIBLE_FRAMESHIFT_HIGH_CONF minimum average probability 
       for alert is <x>
-    default: 0.8
     inputBinding:
       position: 103
       prefix: --fsthighthr
@@ -266,7 +257,6 @@ inputs:
       - float
     doc: fstlocf{t,i}/POSSIBLE_FRAMESHIFT_LOW_CONF minimum average probability 
       for alert is <x>
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --fstlowthr
@@ -276,7 +266,6 @@ inputs:
       - int
     doc: fst{hi,lo,uk}cfi/POSSIBLE_FRAMESHIFT{_{HIGH,LOW}_CONF,} max allowed 
       internal nt length w/o alert is <n>
-    default: 6
     inputBinding:
       position: 103
       prefix: --fstminnti
@@ -286,7 +275,6 @@ inputs:
       - int
     doc: fst{hi,lo,uk}cft/POSSIBLE_FRAMESHIFT{_{HIGH,LOW}_CONF,} max allowed 
       terminal nt length w/o alert is <n>
-    default: 4
     inputBinding:
       position: 103
       prefix: --fstminntt
@@ -295,7 +283,6 @@ inputs:
       - 'null'
       - int
     doc: set glsearch gap extend score to <n> < 0 with glsearch -g option
-    default: -4
     inputBinding:
       position: 103
       prefix: --gls_gapextend
@@ -304,7 +291,6 @@ inputs:
       - 'null'
       - int
     doc: set glsearch gap open score to <n> < 0 with glsearch -f option
-    default: -17
     inputBinding:
       position: 103
       prefix: --gls_gapopen
@@ -313,7 +299,6 @@ inputs:
       - 'null'
       - int
     doc: set glsearch match score to <n> > 0 with glsearch -r option
-    default: 5
     inputBinding:
       position: 103
       prefix: --gls_match
@@ -322,7 +307,6 @@ inputs:
       - 'null'
       - int
     doc: set glsearch mismatch score to <n> < 0 with glsearch -r option
-    default: -3
     inputBinding:
       position: 103
       prefix: --gls_mismatch
@@ -355,7 +339,6 @@ inputs:
       - 'null'
       - float
     doc: set minimum hmmsearch bit score threshold to <x>
-    default: -10.0
     inputBinding:
       position: 103
       prefix: --h_minbit
@@ -365,7 +348,6 @@ inputs:
       - int
     doc: indfantp/INDEFINITE_ANNOTATION min score for a hmmer hit not supported 
       by CM analysis is <n>
-    default: 10
     inputBinding:
       position: 103
       prefix: --hlonescore
@@ -426,7 +408,6 @@ inputs:
       - 'null'
       - float
     doc: inc{group,subgrp}/INCORRECT_{GROUP,SUBGROUP} bits/nt threshold is <x>
-    default: 0.2
     inputBinding:
       position: 103
       prefix: --incspec
@@ -436,7 +417,6 @@ inputs:
       - float
     doc: indf{5,3}lc{c,n}/'INDEFINITE_ANNOTATION_{START,END} non-mat_peptide min
       allowed post probability is <x>
-    default: 0.8
     inputBinding:
       position: 103
       prefix: --indefann
@@ -446,7 +426,6 @@ inputs:
       - float
     doc: indf{5,3}lc{c,n}/'INDEFINITE_ANNOTATION_{START,END} mat_peptide min 
       allowed post probability is <x>
-    default: 0.6
     inputBinding:
       position: 103
       prefix: --indefann_mp
@@ -456,7 +435,6 @@ inputs:
       - float
     doc: indfcls/INDEFINITE_CLASSIFICATION bits per nucleotide diff threshold is
       <x>
-    default: 0.03
     inputBinding:
       position: 103
       prefix: --indefclass
@@ -465,7 +443,6 @@ inputs:
       - 'null'
       - float
     doc: indfstrn/INDEFINITE_STRAND minimum weaker strand bit score is <x>
-    default: 25.0
     inputBinding:
       position: 103
       prefix: --indefstr
@@ -474,7 +451,6 @@ inputs:
       - 'null'
       - int
     doc: set min length of intron to check for splice sites to <n>
-    default: 40
     inputBinding:
       position: 103
       prefix: --intlen
@@ -491,7 +467,6 @@ inputs:
       - 'null'
       - float
     doc: lowcovrg/LOW_COVERAGE fractional coverage threshold is <x>
-    default: 0.9
     inputBinding:
       position: 103
       prefix: --lowcov
@@ -500,7 +475,6 @@ inputs:
       - 'null'
       - float
     doc: lowscore/LOW_SCORE bits per nucleotide threshold is <x>
-    default: 0.3
     inputBinding:
       position: 103
       prefix: --lowsc
@@ -509,7 +483,6 @@ inputs:
       - 'null'
       - int
     doc: lowsim3{c,n}/LOW_FEATURE_SIMILARITY_END minimum length is <n>
-    default: 5
     inputBinding:
       position: 103
       prefix: --lowsim3ftr
@@ -518,7 +491,6 @@ inputs:
       - 'null'
       - int
     doc: long lowsim3l/LOW_FEATURE_SIMILARITY_END minimum length is <n>
-    default: 30
     inputBinding:
       position: 103
       prefix: --lowsim3lftr
@@ -527,7 +499,6 @@ inputs:
       - 'null'
       - int
     doc: lowsim3s/LOW_SIMILARITY_END minimum length is <n>
-    default: 15
     inputBinding:
       position: 103
       prefix: --lowsim3seq
@@ -536,7 +507,6 @@ inputs:
       - 'null'
       - int
     doc: lowsim5{c,n}/LOW_FEATURE_SIMILARITY_START minimum length is <n>
-    default: 5
     inputBinding:
       position: 103
       prefix: --lowsim5ftr
@@ -545,7 +515,6 @@ inputs:
       - 'null'
       - int
     doc: long lowsim5l/LOW_FEATURE_SIMILARITY_START minimum length is <n>
-    default: 30
     inputBinding:
       position: 103
       prefix: --lowsim5lftr
@@ -554,7 +523,6 @@ inputs:
       - 'null'
       - int
     doc: lowsim5s/LOW_SIMILARITY_START minimum length is <n>
-    default: 15
     inputBinding:
       position: 103
       prefix: --lowsim5seq
@@ -563,7 +531,6 @@ inputs:
       - 'null'
       - int
     doc: lowsimi{c,n}/LOW_FEATURE_SIMILARITY (internal) minimum length is <n>
-    default: 1
     inputBinding:
       position: 103
       prefix: --lowsimiftr
@@ -572,7 +539,6 @@ inputs:
       - 'null'
       - int
     doc: long lowsimil/LOW_FEATURE_SIMILARITY (internal) minimum length is <n>
-    default: 30
     inputBinding:
       position: 103
       prefix: --lowsimilftr
@@ -581,7 +547,6 @@ inputs:
       - 'null'
       - int
     doc: lowsimi/LOW_SIMILARITY (internal) minimum length is <n>
-    default: 1
     inputBinding:
       position: 103
       prefix: --lowsimiseq
@@ -590,7 +555,6 @@ inputs:
       - 'null'
       - int
     doc: set max number of jobs to submit to compute farm to <n>
-    default: 2500
     inputBinding:
       position: 103
       prefix: --maxnjobs
@@ -599,7 +563,6 @@ inputs:
       - 'null'
       - float
     doc: set minimum cmsearch bit score threshold to <x>
-    default: -10.0
     inputBinding:
       position: 103
       prefix: --minbit
@@ -617,7 +580,6 @@ inputs:
       - int
     doc: min CDS/mat_peptide/gene length for feature table output and protein 
       validation is <n>
-    default: 30
     inputBinding:
       position: 103
       prefix: --minpvlen
@@ -642,7 +604,6 @@ inputs:
       - 'null'
       - int
     doc: use -k <n> option with minimap2, instead of -x asm20
-    default: 0
     inputBinding:
       position: 103
       prefix: --mm2_k
@@ -651,7 +612,6 @@ inputs:
       - 'null'
       - int
     doc: use -w <n> option with minimap2, instead of -x asm20
-    default: 0
     inputBinding:
       position: 103
       prefix: --mm2_w
@@ -677,7 +637,6 @@ inputs:
       - string
     doc: .cm, .minfo, blastn .fa files in $VADRMODELDIR start with key <s>, not 
       'vadr'
-    default: calici
     inputBinding:
       position: 103
       prefix: --mkey
@@ -702,7 +661,6 @@ inputs:
       - 'null'
       - int
     doc: set max allowed memory for cmalign to <n> Mb
-    default: 16000
     inputBinding:
       position: 103
       prefix: --mxsize
@@ -711,7 +669,6 @@ inputs:
       - 'null'
       - int
     doc: number of KB of sequence for each alignment job and/or chunk is <n>
-    default: 300
     inputBinding:
       position: 103
       prefix: --nkb
@@ -721,7 +678,6 @@ inputs:
       - int
     doc: deletinn/DELETION_OF_NT max allowed nucleotide (nt) deletion length in 
       CDS nt alignment is <n>
-    default: 27
     inputBinding:
       position: 103
       prefix: --nmaxdel
@@ -731,7 +687,6 @@ inputs:
       - int
     doc: insertnn/INSERTION_OF_NT max allowed nucleotide (nt) insertion length 
       in CDS nt alignment is <n>
-    default: 27
     inputBinding:
       position: 103
       prefix: --nmaxins
@@ -740,7 +695,6 @@ inputs:
       - 'null'
       - int
     doc: nmiscftr/TOO_MANY_MISC_FEATURES reported if <n> or more misc_features
-    default: 4
     inputBinding:
       position: 103
       prefix: --nmiscftrthr
@@ -961,7 +915,6 @@ inputs:
       - 'null'
       - float
     doc: for -r, set blastn -gapextend <x> to <x>
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --r_blastnge
@@ -970,7 +923,6 @@ inputs:
       - 'null'
       - int
     doc: for -r, set blastn -gapopen <n> to <n>
-    default: 2
     inputBinding:
       position: 103
       prefix: --r_blastngo
@@ -979,7 +931,6 @@ inputs:
       - 'null'
       - int
     doc: for -r, set blastn -penalty <n> to <n>
-    default: -2
     inputBinding:
       position: 103
       prefix: --r_blastnpn
@@ -988,7 +939,6 @@ inputs:
       - 'null'
       - int
     doc: for -r, set blastn -reward <n> to <n>
-    default: 1
     inputBinding:
       position: 103
       prefix: --r_blastnrw
@@ -997,7 +947,6 @@ inputs:
       - 'null'
       - float
     doc: for -r, set blastn minimum HSP score to consider to <x>
-    default: 50.0
     inputBinding:
       position: 103
       prefix: --r_blastnsc
@@ -1014,7 +963,6 @@ inputs:
       - 'null'
       - int
     doc: for -r, set blastn -word_size <n> to <n>
-    default: 7
     inputBinding:
       position: 103
       prefix: --r_blastnws
@@ -1023,7 +971,6 @@ inputs:
       - 'null'
       - int
     doc: for -r, set blastn -xdrop_gap_final <n> to <n>
-    default: 110
     inputBinding:
       position: 103
       prefix: --r_blastnxd
@@ -1041,7 +988,6 @@ inputs:
       - int
     doc: max allowed length difference b/t seq/mdl regions (mdllen>seqlen) to 
       try replacement is <n>
-    default: 10
     inputBinding:
       position: 103
       prefix: --r_diffmaxdel
@@ -1051,7 +997,6 @@ inputs:
       - int
     doc: max allowed length difference b/t seq/mdl regions (seqlen>mdllen) to 
       try replacement is <n>
-    default: 10
     inputBinding:
       position: 103
       prefix: --r_diffmaxins
@@ -1061,7 +1006,6 @@ inputs:
       - float
     doc: min allowed fraction of non-N matches in diff len replacement region is
       <x>
-    default: 0.75
     inputBinding:
       position: 103
       prefix: --r_diffminfract
@@ -1071,7 +1015,6 @@ inputs:
       - int
     doc: min number non-Ns in diff len replacement region to try replacement is 
       <n>
-    default: 1
     inputBinding:
       position: 103
       prefix: --r_diffminnonn
@@ -1104,7 +1047,6 @@ inputs:
       - 'null'
       - float
     doc: w/--r_lowsimok, minimum fraction of Ns in N-rich region is <x>
-    default: 0.75
     inputBinding:
       position: 103
       prefix: --r_lowsimmf
@@ -1121,7 +1063,6 @@ inputs:
       - 'null'
       - int
     doc: w/--r_lowsimok, max diff from expected length for N-rich region is <n>
-    default: 200
     inputBinding:
       position: 103
       prefix: --r_lowsimxd
@@ -1130,7 +1071,6 @@ inputs:
       - 'null'
       - int
     doc: w/--r_lowsimok, maximum length of N-rich region is <n>
-    default: 5000
     inputBinding:
       position: 103
       prefix: --r_lowsimxl
@@ -1140,7 +1080,6 @@ inputs:
       - float
     doc: minimum fraction of Ns in subseq at 3' end to trigger replacement is 
       <x>
-    default: 0.25
     inputBinding:
       position: 103
       prefix: --r_minfract3
@@ -1150,7 +1089,6 @@ inputs:
       - float
     doc: minimum fraction of Ns in subseq at 5' end to trigger replacement is 
       <x>
-    default: 0.25
     inputBinding:
       position: 103
       prefix: --r_minfract5
@@ -1159,7 +1097,6 @@ inputs:
       - 'null'
       - float
     doc: minimum fraction of Ns in internal subseq to trigger replacement is <x>
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --r_minfracti
@@ -1168,7 +1105,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length subsequence to replace Ns in is <n>
-    default: 5
     inputBinding:
       position: 103
       prefix: --r_minlen
@@ -1225,7 +1161,6 @@ inputs:
       - 'null'
       - float
     doc: for -s, set blastn -gapextend <x> to <x>
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --s_blastnge
@@ -1234,7 +1169,6 @@ inputs:
       - 'null'
       - int
     doc: for -s, set blastn -gapopen <n> to <n>
-    default: 2
     inputBinding:
       position: 103
       prefix: --s_blastngo
@@ -1243,7 +1177,6 @@ inputs:
       - 'null'
       - int
     doc: for -s, set blastn -penalty <n> to <n>
-    default: -2
     inputBinding:
       position: 103
       prefix: --s_blastnpn
@@ -1252,7 +1185,6 @@ inputs:
       - 'null'
       - int
     doc: for -s, set blastn -reward <n> to <n>
-    default: 1
     inputBinding:
       position: 103
       prefix: --s_blastnrw
@@ -1261,7 +1193,6 @@ inputs:
       - 'null'
       - float
     doc: for -s, set blastn minimum HSP score to consider to <x>
-    default: 50.0
     inputBinding:
       position: 103
       prefix: --s_blastnsc
@@ -1278,7 +1209,6 @@ inputs:
       - 'null'
       - int
     doc: for -s, set blastn -word_size <n> to <n>
-    default: 7
     inputBinding:
       position: 103
       prefix: --s_blastnws
@@ -1287,7 +1217,6 @@ inputs:
       - 'null'
       - int
     doc: for -s, set blastn -xdrop_gap_final <n> to <n>
-    default: 110
     inputBinding:
       position: 103
       prefix: --s_blastnxd
@@ -1296,7 +1225,6 @@ inputs:
       - 'null'
       - int
     doc: for -s, set minimum length of ungapped region in HSP seed to <n>
-    default: 10
     inputBinding:
       position: 103
       prefix: --s_minsgmlen
@@ -1305,7 +1233,6 @@ inputs:
       - 'null'
       - int
     doc: for -s, set length of nt overhang for subseqs to align to <n>
-    default: 100
     inputBinding:
       position: 103
       prefix: --s_overhang
@@ -1338,7 +1265,6 @@ inputs:
       - 'null'
       - int
     doc: start sequence indexing at <n> in tabular output files
-    default: 1
     inputBinding:
       position: 103
       prefix: --sidx
@@ -1363,7 +1289,6 @@ inputs:
       - 'null'
       - float
     doc: set the initial tau value for cmalign to <x>
-    default: 0.001
     inputBinding:
       position: 103
       prefix: --tau
@@ -1389,7 +1314,6 @@ inputs:
       - int
     doc: allow <n> wall-clock minutes for jobs on farm to finish, including 
       queueing time
-    default: 500
     inputBinding:
       position: 103
       prefix: --wait
@@ -1399,7 +1323,6 @@ inputs:
       - int
     doc: indf{5,3}{st,lg}/INDEFINITE_ANNOTATION_{START,END} max allowed nt diff 
       blastx start/end is <n>
-    default: 5
     inputBinding:
       position: 103
       prefix: --xalntol
@@ -1408,7 +1331,6 @@ inputs:
       - 'null'
       - int
     doc: set the xdrop value for blastx to <n>
-    default: 25
     inputBinding:
       position: 103
       prefix: --xdrop
@@ -1418,7 +1340,6 @@ inputs:
       - int
     doc: indfantp/INDEFINITE_ANNOTATION min score for a blastx hit not supported
       by CM analysis is <n>
-    default: 80
     inputBinding:
       position: 103
       prefix: --xlonescore
@@ -1436,7 +1357,6 @@ inputs:
       - int
     doc: deletinp/DELETION_OF_NT max allowed nucleotide deletion length in 
       blastx validation is <n>
-    default: 27
     inputBinding:
       position: 103
       prefix: --xmaxdel
@@ -1446,7 +1366,6 @@ inputs:
       - int
     doc: insertnp/INSERTION_OF_NT max allowed nucleotide insertion length in 
       blastx validation is <n>
-    default: 27
     inputBinding:
       position: 103
       prefix: --xmaxins
@@ -1481,7 +1400,6 @@ inputs:
       - int
     doc: number of alignments to keep in blastx output and consider if 
       --xlongest is <n>
-    default: 20
     inputBinding:
       position: 103
       prefix: --xnumali

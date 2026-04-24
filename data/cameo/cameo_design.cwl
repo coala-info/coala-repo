@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Make oxygen available to the host organism
-    default: true
     inputBinding:
       position: 102
       prefix: --aerobic
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: Make oxygen available to the host organism
-    default: false
     inputBinding:
       position: 102
       prefix: --anaerobic
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU cores to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --cores
@@ -44,7 +41,6 @@ inputs:
       - boolean
     doc: Perform differential flux variability analysis to determine flux 
       modulation targets
-    default: true
     inputBinding:
       position: 102
       prefix: --differential-fva
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Grid points for differential FVA
-    default: 10
     inputBinding:
       position: 102
       prefix: --differential-fva-points
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: Find gene knockout targets through heuristic optimization
-    default: true
     inputBinding:
       position: 102
       prefix: --heuristic-optimization
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Time limit (min) on individual heuristic optimizations
-    default: 45
     inputBinding:
       position: 102
       prefix: --heuristic-optimization-timeout
@@ -81,7 +74,6 @@ inputs:
       - type: array
         items: string
     doc: The host organisms to consider
-    default: all
     inputBinding:
       position: 102
       prefix: --host
@@ -90,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level
-    default: WARNING
     inputBinding:
       position: 102
       prefix: --logging
@@ -99,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of heterologous pathways to predict
-    default: 1
     inputBinding:
       position: 102
       prefix: --max-pathway-predictions
@@ -109,7 +99,6 @@ inputs:
       - boolean
     doc: Perform differential flux variability analysis to determine flux 
       modulation targets
-    default: false
     inputBinding:
       position: 102
       prefix: --no-differential-fva
@@ -118,7 +107,6 @@ inputs:
       - 'null'
       - boolean
     doc: Find gene knockout targets through heuristic optimization
-    default: false
     inputBinding:
       position: 102
       prefix: --no-heuristic-optimization
@@ -127,7 +115,6 @@ inputs:
       - 'null'
       - string
     doc: Output file format
-    default: csv
     inputBinding:
       position: 102
       prefix: --format
@@ -136,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: Time limit (min) for individual pathway predictions
-    default: 10
     inputBinding:
       position: 102
       prefix: --pathway-prediction-timeout

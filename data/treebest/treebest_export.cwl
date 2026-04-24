@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: box size
-    default: 4.0
     inputBinding:
       position: 102
       prefix: -b
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: font size
-    default: 11
     inputBinding:
       position: 102
       prefix: -f
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: font width
-    default: font_size/2
     inputBinding:
       position: 102
       prefix: -w
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: height
-    default: 480
     inputBinding:
       position: 102
       prefix: -y
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: margin
-    default: 20
     inputBinding:
       position: 102
       prefix: -m
@@ -109,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: width
-    default: 640
     inputBinding:
       position: 102
       prefix: -x

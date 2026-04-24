@@ -154,7 +154,6 @@ inputs:
       - int
     doc: "Number of simulated variants. If '-1', variant\nnumber will be solely a
       function of mutation\nrate"
-    default: -1
     inputBinding:
       position: 101
       prefix: --num-var

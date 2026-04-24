@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Flanking sequence length
-    default: 100
     inputBinding:
       position: 103
       prefix: -f
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of reads to load per position
-    default: 50
     inputBinding:
       position: 103
       prefix: -m

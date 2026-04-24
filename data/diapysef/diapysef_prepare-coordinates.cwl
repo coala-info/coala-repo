@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Log file to save console messages.
-    default: mobidik_peptide_coordinate_generation.log
     inputBinding:
       position: 101
       prefix: --log_file
@@ -26,7 +25,6 @@ inputs:
       - float
     doc: QValue to filter for peptides below QValue, generate coordinates for 
       these peptides.
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --m_score
@@ -45,7 +43,6 @@ inputs:
       - boolean
     doc: Use the TRANSITION_PEPTIDE_MAPPING when getting PRODUCT MZ, instead of 
       joining on TRANSITION_PRECURSOR_MAPPING.
-    default: true
     inputBinding:
       position: 101
       prefix: --no-use_transition_peptide_mapping
@@ -75,7 +72,6 @@ inputs:
       - boolean
     doc: Only include product m/z of detecting transitions. i.e do not use 
       identifying transitions.
-    default: true
     inputBinding:
       position: 101
       prefix: --use_only_detecting_transitions
@@ -94,7 +90,6 @@ inputs:
       - int
     doc: Level of verbosity. 0 - just displays info, 1 - display some debug 
       info, 10 displays a lot of debug info.
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbose

@@ -14,28 +14,24 @@ inputs:
   - id: prob_thresh_for_prune
     type: float
     doc: The probability below which to prune unlikely fragmentations
-    default: 0.001
     inputBinding:
       position: 2
   - id: param_filename
     type: string
     doc: The filename where the parameters of a trained cfm model can be found 
       (if not given, assumes param_output.log in current directory)
-    default: param_output.log
     inputBinding:
       position: 3
   - id: config_filename
     type: string
     doc: The filename where the configuration parameters of the cfm model can be
       found (if not given, assumes param_config.txt in current directory)
-    default: param_config.txt
     inputBinding:
       position: 4
   - id: include_annotations
     type: boolean
     doc: 'Whether to include fragment information in the output spectra (0 = NO (default),
       1 = YES ). Note: ignored for msp/mgf output.'
-    default: 0
     inputBinding:
       position: 5
   - id: output_filename_or_dir
@@ -50,7 +46,6 @@ inputs:
     doc: Whether or not to post-process predicted spectra to take the top 80% of
       energy (at least 5 peaks), or the highest 30 peaks (whichever comes first)
       (0 = OFF, 1 = ON (default) ).
-    default: 1
     inputBinding:
       position: 7
   - id: suppress_exception
@@ -59,7 +54,6 @@ inputs:
       - boolean
     doc: Suppress exceptions so that the program returns normally even when it 
       fails to produce a result (0 = OFF (default), 1 = ON).
-    default: 0
     inputBinding:
       position: 108
       prefix: --suppress_exception

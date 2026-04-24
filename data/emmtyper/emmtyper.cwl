@@ -18,7 +18,6 @@ inputs:
       - int
     doc: '[BLAST] Threshold for difference between alignment length and subject length
       in BLAST hit.'
-    default: 5
     inputBinding:
       position: 102
       prefix: --align-diff
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Path to EMM BLAST DB
-    default: /usr/local/lib/python3.7/site-packages/emmtyper/db/emm.fna
     inputBinding:
       position: 102
       prefix: --blast_db
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Distance between cluster of matches to consider as different clusters.
-    default: 500
     inputBinding:
       position: 102
       prefix: --cluster-distance
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: '[BLAST] Total hits to return in a position.'
-    default: 5
     inputBinding:
       position: 102
       prefix: --culling-limit
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: '[BLAST] Filter query sequence with DUST.'
-    default: no
     inputBinding:
       position: 102
       prefix: --dust
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: '[BLAST] Threshold gap to allow in BLAST hit.'
-    default: 2
     inputBinding:
       position: 102
       prefix: --gap
@@ -88,7 +82,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep BLAST and isPcr output files.
-    default: false
     inputBinding:
       position: 102
       prefix: --keep
@@ -97,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: '[isPcr] Maximum size of PCR product.'
-    default: 2000
     inputBinding:
       position: 102
       prefix: --max-size
@@ -106,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: '[isPcr] Minimum size where there must be 2 matches for each mismatch.'
-    default: 15
     inputBinding:
       position: 102
       prefix: --min-good
@@ -115,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: "[isPcr] Minimum size of perfect match at 3' primer end."
-    default: 15
     inputBinding:
       position: 102
       prefix: --min-perfect
@@ -124,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: '[BLAST] Threshold for number of mismatch to allow in BLAST hit.'
-    default: 4
     inputBinding:
       position: 102
       prefix: --mismatch
@@ -133,7 +122,6 @@ inputs:
       - 'null'
       - string
     doc: Output stream. Path to file for output to a file.
-    default: stdout
     inputBinding:
       position: 102
       prefix: --output
@@ -150,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: '[BLAST] Minimal percent identity of sequence.'
-    default: 95
     inputBinding:
       position: 102
       prefix: --percent-identity
@@ -160,7 +147,6 @@ inputs:
       - string
     doc: '[isPcr] PCR primer. Text file with 3 columns: Name, Forward Primer, Reverse
       Primer.'
-    default: /usr/local/lib/python3.7/site-packages/emmtyper/data/isPcrPrim.tsv
     inputBinding:
       position: 102
       prefix: --primer-db
@@ -169,7 +155,6 @@ inputs:
       - 'null'
       - string
     doc: Choose workflow
-    default: blast
     inputBinding:
       position: 102
       prefix: --workflow

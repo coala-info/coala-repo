@@ -31,14 +31,12 @@ inputs:
           - queryname
           - coordinate
           - duplicate
-    default: coordinate
     doc: 'coordinate (bam) or queryname (sam)'
     inputBinding:
       prefix: SORT_ORDER=
       separate: false
 
   validation_stringency:
-    default: LENIENT
     doc: Validation stringency for all SAM files read by this program.  Setting stringency
       to SILENT can improve performance when processing a BAM file in which variable-length
       data (read, qualities, tags) do not otherwise need to be decoded.

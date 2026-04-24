@@ -13,7 +13,6 @@ inputs:
       - 'null'
       - string
     doc: URL to FUNGuild db.
-    default: 
       https://mycoportal.org/fdex/services/api/db_return.php?dbReturn=Yes&pp=1
     inputBinding:
       position: 101

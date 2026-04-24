@@ -114,7 +114,6 @@ inputs:
       specified value are treated as "null" alignments. These null alignments 
       convert otherwise linear alignments into walks, and affect how they get 
       reported as a Hi-C pair (see --walks-policy).
-    default: 20
     inputBinding:
       position: 102
       prefix: --max-inter-align-gap
@@ -126,7 +125,6 @@ inputs:
       ligations(from molecules with three alignments) and to rescue complex 
       ligations.The default is based on oriented P(s) at short ranges of 
       multiple Hi-C.Not used with walks-policy all.
-    default: 750
     inputBinding:
       position: 102
       prefix: --max-molecule-size
@@ -135,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: The minimal MAPQ score to consider a read as uniquely mapped
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-mapq
@@ -154,7 +151,6 @@ inputs:
       - int
     doc: Number of processes used by the auto-guessed input decompressing 
       command.
-    default: 3
     inputBinding:
       position: 102
       prefix: --nproc-in
@@ -164,7 +160,6 @@ inputs:
       - int
     doc: Number of processes used by the auto-guessed output compressing 
       command.
-    default: 8
     inputBinding:
       position: 102
       prefix: --nproc-out
@@ -201,7 +196,6 @@ inputs:
       if present; "3any" - report the 3'-most alignment on each side; "3unique" 
       - report the 3'-most unique alignment on each side, if present; "all" - 
       report all available unique alignments on each side.
-    default: 5unique
     inputBinding:
       position: 102
       prefix: --walks-policy

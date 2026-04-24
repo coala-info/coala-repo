@@ -22,7 +22,6 @@ inputs:
       - type: array
         items: string
     doc: names of the k-mer profiles to consider (left)
-    default: all profiles in INPUT_LEFT, in alphabetical order
     inputBinding:
       position: 103
       prefix: --profiles-left
@@ -32,7 +31,6 @@ inputs:
       - type: array
         items: string
     doc: names of the k-mer profiles to consider (right)
-    default: all profiles in INPUT_RIGHT, in alphabetical order
     inputBinding:
       position: 103
       prefix: --profiles-right

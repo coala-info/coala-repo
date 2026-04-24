@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to use for parsing and aligning original basecalls.
-    default: 1
     inputBinding:
       position: 103
       prefix: --align-processes
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads included in each alignment call.
-    default: 1000
     inputBinding:
       position: 103
       prefix: --alignment-batch-size
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Bandwidth of events for dynamic sequence to event mapping.
-    default: 501
     inputBinding:
       position: 103
       prefix: --bandwidth
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: FAST5 group obtain original basecalls (under Analyses group).
-    default: Basecall_1D_000
     inputBinding:
       position: 103
       prefix: --basecall-group
@@ -69,7 +65,6 @@ inputs:
         items: string
     doc: FAST5 subgroup(s) (under Analyses/[corrected-group]) containing 
       basecalls.
-    default: BaseCalled_template
     inputBinding:
       position: 103
       prefix: --basecall-subgroups
@@ -86,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: FAST5 group created by resquiggle command.
-    default: RawGenomeCorrected_000
     inputBinding:
       position: 103
       prefix: --corrected-group
@@ -111,7 +105,6 @@ inputs:
       - 'null'
       - float
     doc: Expected value when a matched event to genomic sequence is encountered.
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --match-expected-value
@@ -150,7 +143,6 @@ inputs:
       - float
     doc: Windosrize the signal at this number of scale values. Negative value 
       disables outlier clipping.
-    default: 5.0
     inputBinding:
       position: 103
       prefix: --outlier-threshold
@@ -167,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes.
-    default: 2
     inputBinding:
       position: 103
       prefix: --processes
@@ -201,7 +192,6 @@ inputs:
       - float
     doc: Penalty applied to skipped genomic bases in event to sequence 
       assignment.
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --skip-penalty

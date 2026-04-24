@@ -11,7 +11,6 @@ inputs:
       - float
     doc: Stop the execution if the best accuracy achieved during the previous 
       group of runs is lower than this number
-    default: 60.0
     inputBinding:
       position: 101
       prefix: --accuracy_threshold
@@ -22,7 +21,6 @@ inputs:
     doc: Take a run into account if its accuracy is lower than the best accuracy
       achieved in the same group, but greaterthan the best accuracy minus its 
       "accuracy_uncertainty_perc" percent
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --accuracy_uncertainty_perc
@@ -31,7 +29,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print references and exit
-    default: false
     inputBinding:
       position: 101
       prefix: --cite
@@ -41,7 +38,6 @@ inputs:
       - boolean
     doc: Delete the classification model as soon as it produces the prediction 
       accuracy
-    default: false
     inputBinding:
       position: 101
       prefix: --cleanup
@@ -51,7 +47,6 @@ inputs:
       - int
     doc: Number of folds for cross validation. Cross validate HD models if 
       --crossv_k greater than 1
-    default: 0
     inputBinding:
       position: 101
       prefix: --crossv_k
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the dataset file
-    default: None
     inputBinding:
       position: 101
       prefix: --dataset
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Dimensionality of the HD model
-    default: 10000
     inputBinding:
       position: 101
       prefix: --dimensionality
@@ -78,7 +71,6 @@ inputs:
       - 'null'
       - boolean
     doc: Build a summary and log files
-    default: false
     inputBinding:
       position: 101
       prefix: --dump
@@ -88,7 +80,6 @@ inputs:
       - File
     doc: Path to a file with a single column containing the whole set or a 
       subset of feature
-    default: None
     inputBinding:
       position: 101
       prefix: --features
@@ -97,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: Field separator
-    default: ','
     inputBinding:
       position: 101
       prefix: --fieldsep
@@ -107,7 +97,6 @@ inputs:
       - boolean
     doc: Build the classification model on an NVidia powered GPU. This argument 
       is ignored if --spark is specified
-    default: false
     inputBinding:
       position: 101
       prefix: --gpu
@@ -117,7 +106,6 @@ inputs:
       - int
     doc: Minimum number of features among those specified with the --features 
       argument
-    default: 1
     inputBinding:
       position: 101
       prefix: --group_min
@@ -127,7 +115,6 @@ inputs:
       - boolean
     doc: Do not delete the level hypervectors. It works in conjunction with 
       --cleanup only
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_levels
@@ -136,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: Number of level hypervectors
-    default: None
     inputBinding:
       position: 101
       prefix: --levels
@@ -145,7 +131,6 @@ inputs:
       - 'null'
       - string
     doc: Master node address
-    default: None
     inputBinding:
       position: 101
       prefix: --master
@@ -154,7 +139,6 @@ inputs:
       - 'null'
       - string
     doc: Executor memory
-    default: 1024m
     inputBinding:
       position: 101
       prefix: --memory
@@ -164,7 +148,6 @@ inputs:
       - int
     doc: Number of parallel jobs for the creation of the HD model. This argument
       is ignored if --spark is enabled
-    default: 1
     inputBinding:
       position: 101
       prefix: --nproc
@@ -174,7 +157,6 @@ inputs:
       - File
     doc: Path to the pickle file. If specified, "--dataset" and "--fieldsep" 
       parameters are not used
-    default: None
     inputBinding:
       position: 101
       prefix: --pickle
@@ -184,7 +166,6 @@ inputs:
       - float
     doc: Percentage of observations that will be used to train the model. The 
       remaining percentage will be used to test the classification model
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --psplit_training
@@ -193,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: Number of retraining iterations
-    default: 0
     inputBinding:
       position: 101
       prefix: --retrain
@@ -202,7 +182,6 @@ inputs:
       - 'null'
       - int
     doc: Random seed
-    default: 0
     inputBinding:
       position: 101
       prefix: --seed
@@ -212,7 +191,6 @@ inputs:
       - boolean
     doc: 'This triggers the backward variable selection method for the identification
       of the most significant features. Warning: computationally intense!'
-    default: false
     inputBinding:
       position: 101
       prefix: --select_features
@@ -222,7 +200,6 @@ inputs:
       - int
     doc: Number of slices in case --spark argument is enabled. This argument is 
       ignored if --gpu is enabled
-    default: None
     inputBinding:
       position: 101
       prefix: --slices
@@ -232,7 +209,6 @@ inputs:
       - boolean
     doc: Build the classification model in a Apache Spark distributed 
       environment
-    default: false
     inputBinding:
       position: 101
       prefix: --spark
@@ -241,7 +217,6 @@ inputs:
       - 'null'
       - boolean
     doc: Stop retraining if the error rate does not change
-    default: false
     inputBinding:
       position: 101
       prefix: --stop
@@ -251,7 +226,6 @@ inputs:
       - int
     doc: Number of threads per block in case --gpu argument is enabled. This 
       argument is ignored if --spark is enabled
-    default: 32
     inputBinding:
       position: 101
       prefix: --tblock
@@ -260,7 +234,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print results in real time
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

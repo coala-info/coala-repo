@@ -52,28 +52,24 @@ inputs:
   passed_structs:
     type: [ File, string, "null" ]
     label: Filename for list of domain StIs passing the threshold
-    default: passed_structures_list.csv
     inputBinding:
       prefix: -p
   
   failed_structs:
     type: [ File, string, "null" ]
     label: Filename for list of domain StIs failed to pass the threshold
-    default: failed_structures_list.csv
     inputBinding:
       prefix: -f
   
   aln_score:
     type: string?
     label: Kpax score type to use for filtering structures 
-    default: Mscore
     inputBinding:
       prefix: -s
 
   threshold_val:
     type: float?
     label: The threshold to use for given aln_score
-    default: 0.6
     inputBinding:
       prefix: -t
 

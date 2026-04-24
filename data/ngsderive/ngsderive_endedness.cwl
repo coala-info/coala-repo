@@ -19,7 +19,6 @@ inputs:
     doc: Calculate and output Reads-Per-Template. This will produce a more 
       sophisticated estimate for endedness, but uses substantially more memory 
       (can reach up to 60-70% of BAM size in memory consumption).
-    default: false
     inputBinding:
       position: 102
       prefix: --calc-rpt
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable DEBUG log level.
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -38,7 +36,6 @@ inputs:
       - int
     doc: How many reads to analyze from the start of the file. Any n < 1 to 
       parse whole file.
-    default: -1
     inputBinding:
       position: 102
       prefix: --n-reads
@@ -57,7 +54,6 @@ inputs:
     doc: Distance from 0.5 split between number of f+l- reads and f-l+ reads 
       allowed to be called 'Paired-End'. Default of `0.0` only appropriate if 
       the whole file is being processed.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --paired-deviance
@@ -67,7 +63,6 @@ inputs:
       - boolean
     doc: Round RPT to the nearest INT before comparing to expected values. 
       Appropriate if using `-n` > 0.
-    default: false
     inputBinding:
       position: 102
       prefix: --round-rpt
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - boolean
     doc: Contain one entry per read group.
-    default: true
     inputBinding:
       position: 102
       prefix: --split-by-rg
@@ -85,7 +79,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable INFO log level.
-    default: false
     inputBinding:
       position: 102
       prefix: --verbose

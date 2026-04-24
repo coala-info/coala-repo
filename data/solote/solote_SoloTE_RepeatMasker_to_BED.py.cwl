@@ -51,7 +51,6 @@ inputs:
       - int
     doc: Minimum length of repeats to include in the output BED file. Default is
       100.
-    default: 100
     inputBinding:
       position: 102
       prefix: --min_length
@@ -61,7 +60,6 @@ inputs:
       - int
     doc: Minimum score of repeats to include in the output BED file. Default is 
       0.
-    default: 0
     inputBinding:
       position: 102
       prefix: --min_score

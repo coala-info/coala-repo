@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: insert size
-    default: 501
     inputBinding:
       position: 102
       prefix: --insertsize
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: min. mapping quality
-    default: 10
     inputBinding:
       position: 102
       prefix: --quality

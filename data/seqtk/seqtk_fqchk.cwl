@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Quality threshold; use -q0 to get the distribution of all quality values
-    default: 20
     inputBinding:
       position: 102
       prefix: -q

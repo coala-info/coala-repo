@@ -46,7 +46,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_ndx_path
-    default: system.ndx
 
   input_ndx_path:
     label: Path to the input index NDX file

@@ -23,7 +23,6 @@ inputs:
       - int
     doc: the size of the subgraph to extract, all vertices that are at most N 
       hops away from the root will be included
-    default: 5
     inputBinding:
       position: 103
       prefix: --size

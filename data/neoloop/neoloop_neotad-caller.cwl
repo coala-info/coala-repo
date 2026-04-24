@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: The assembled SV list outputed by assemble-complexSVs.
-    default: None
     inputBinding:
       position: 101
       prefix: --assembly
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Normalization method.
-    default: CNV
     inputBinding:
       position: 101
       prefix: --balance-type
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Cooler URI.
-    default: None
     inputBinding:
       position: 101
       prefix: --hic
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - File
     doc: Logging file name.
-    default: neotad.log
     inputBinding:
       position: 101
       prefix: --logFile
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Number of worker processes.
-    default: 1
     inputBinding:
       position: 101
       prefix: --nproc
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output path.
-    default: None
     inputBinding:
       position: 101
       prefix: --output
@@ -63,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Experimental protocol of your Hi-C.
-    default: insitu
     inputBinding:
       position: 101
       prefix: --protocol
@@ -72,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: The extended genomic span of SV break points.(bp)
-    default: 3000000
     inputBinding:
       position: 101
       prefix: --region-size
@@ -81,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for calculating DI.
-    default: 2000000
     inputBinding:
       position: 101
       prefix: --window-size

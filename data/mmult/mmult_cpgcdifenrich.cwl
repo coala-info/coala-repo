@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: 'CDIF threshold for a DMC. Default: 0.2.'
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --cdifthr
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: 'KL-divergence threshold for a DMC. A quarter of nats. Default: 0.67957.'
-    default: 0.67957
     inputBinding:
       position: 101
       prefix: --kldthr
@@ -53,7 +51,6 @@ inputs:
       replicates with a limited memory. To enable small-batch running, size info should
       be specificed by `-r|--chrom`. Because the size of chr1 in hg38 is >200 million,
       1/10th (20M) can be good to go. Default: 20000000.'
-    default: 20000000
     inputBinding:
       position: 101
       prefix: --length
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum distance between consecutive DMCs for a DMR. Default: 300.'
-    default: 300
     inputBinding:
       position: 101
       prefix: --maxdistdmcs
@@ -73,7 +69,6 @@ inputs:
     doc: 'Maximum percent of zero CDIFs for a DMC. A CpG with both positive and negative
       CDIFs will be ignored. A negative value will not check zero CDIFs. Default:
       5%.'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --maxzerocdif
@@ -82,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum number of DMCs in a DMR. Default: 3.'
-    default: 3
     inputBinding:
       position: 101
       prefix: --mindmc
@@ -91,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of bins. Default: 100.'
-    default: 100
     inputBinding:
       position: 101
       prefix: --numbins
@@ -100,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads. Default: 10.'
-    default: 10
     inputBinding:
       position: 101
       prefix: --numthreads

@@ -224,7 +224,6 @@ inputs:
       - string
     doc: Tool Version (if tool id supplied). Defaults to just latest version, 
       use * to test all versions
-    default: latest version
     inputBinding:
       position: 101
       prefix: --tool-version

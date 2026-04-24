@@ -12,7 +12,6 @@ requirements:
 inputs: 
   limit: 
     type: int 
-    default: 5
 
 outputs:
   - id: result
@@ -39,7 +38,6 @@ steps:
       baseCommand: ["cat"]
     in:
       counter: 
-        default: 0
       limit: limit
       lfile:
         valueFrom: "${return {'class': 'File', 'basename': 'init-value-from.' + inputs.counter, 'contents': 'first,' + inputs.counter  }}"

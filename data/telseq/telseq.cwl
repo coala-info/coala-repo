@@ -63,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: read length. default = 100
-    default: 100
     inputBinding:
       position: 102
       prefix: -r
@@ -81,7 +80,6 @@ inputs:
       - int
     doc: threshold of the amount of TTAGGG/CCCTAA repeats in read for a read to 
       be considered telomeric. default = 7.
-    default: 7
     inputBinding:
       position: 102
       prefix: -k

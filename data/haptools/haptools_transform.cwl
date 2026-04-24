@@ -100,7 +100,6 @@ inputs:
       - 'null'
       - string
     doc: The level of verbosity desired
-    default: INFO
     inputBinding:
       position: 103
       prefix: --verbosity

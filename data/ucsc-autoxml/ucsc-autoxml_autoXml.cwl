@@ -60,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: what to name text between start/end tags
-    default: text
     inputBinding:
       position: 103
       prefix: -textField

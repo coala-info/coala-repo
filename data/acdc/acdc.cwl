@@ -11,7 +11,6 @@ inputs:
       - int
     doc: 'Aggressive threshold: Treat clusters having a bp size below this threshold
       as outliers. (Default = 0 = aggressive mode disabled)'
-    default: 5000
     inputBinding:
       position: 101
       prefix: --aggressive-threshold
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: Bootstrap subsampling ratio
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --bootstrap-ratio
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal length of contigs to consider for analysis
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-contig-length
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bootstraps
-    default: 10
     inputBinding:
       position: 101
       prefix: --num-bootstraps
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads for bootstrap analysis (default: detect number of cores)'
-    default: 20
     inputBinding:
       position: 101
       prefix: --num-threads
@@ -96,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Approximate number of target points for estimating window parameters
-    default: 1000
     inputBinding:
       position: 101
       prefix: --target-num-points
@@ -121,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: T-SNE dimension
-    default: 2
     inputBinding:
       position: 101
       prefix: --tsne-dimension
@@ -130,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: T-SNE initial PCA dimension
-    default: 50
     inputBinding:
       position: 101
       prefix: --tsne-pca-dimension
@@ -147,7 +139,6 @@ inputs:
       - 'null'
       - float
     doc: T-SNE parameter 'theta' of the underlying Barnes-Hut approximation
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --tsne-theta
@@ -164,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: Length of the k-mers in the sequence vectorizer window
-    default: 4
     inputBinding:
       position: 101
       prefix: --window-kmer-length

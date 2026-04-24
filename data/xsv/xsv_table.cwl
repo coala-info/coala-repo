@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: The field delimiter for reading CSV data. Must be a single character.
-    default: ','
     inputBinding:
       position: 102
       prefix: --delimiter
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum number of spaces between each column.
-    default: 2
     inputBinding:
       position: 102
       prefix: --pad
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum width of each column.
-    default: 2
     inputBinding:
       position: 102
       prefix: --width

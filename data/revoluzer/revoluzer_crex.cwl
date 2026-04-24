@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: compute with breakpoint scenario [ZhaoBourque07]
-    default: false
     inputBinding:
       position: 102
       prefix: --bp
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: compute with CREx1
-    default: false
     inputBinding:
       position: 102
       prefix: --crex1
@@ -73,7 +71,6 @@ inputs:
       - 'null'
       - boolean
     doc: handle genomes as linear
-    default: false
     inputBinding:
       position: 102
       prefix: --linear

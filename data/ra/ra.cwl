@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: consensus type (none, simple, partial)
-    default: none
     inputBinding:
       position: 102
       prefix: --consensus-type
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: layout type (unitig, contig)
-    default: unitig
     inputBinding:
       position: 102
       prefix: --layout-type
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: overlap type (ovl, ava)
-    default: ovl
     inputBinding:
       position: 102
       prefix: --overlap-type
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

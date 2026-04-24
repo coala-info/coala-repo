@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: 'Flag value of reads to exclude in allele counting default: [3852].'
-    default: 3852
     inputBinding:
       position: 101
       prefix: --filtered-flag
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality
-    default: 20
     inputBinding:
       position: 101
       prefix: --min-base-qual
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality
-    default: 35
     inputBinding:
       position: 101
       prefix: --min-map-qual
@@ -88,7 +85,6 @@ inputs:
     doc: 'Flag value of reads to retain in allele counting default: [3]. N.B. if the
       proper-pair flag is are selected, alleleCounter will assume paired-end and filter
       out any proper-pair flagged reads not in F/R orientation.'
-    default: 3
     inputBinding:
       position: 101
       prefix: --required-flag

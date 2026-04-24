@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: BAM file containing mapping, must be sorted and indexed
-    default: None
     inputBinding:
       position: 101
       prefix: --bam
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Only process alignments from this contig
-    default: None
     inputBinding:
       position: 101
       prefix: --contig
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Dump internal data for troubleshooting
-    default: false
     inputBinding:
       position: 101
       prefix: --dump
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of other clipped sequences (non-telomeric) to count
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_clip_length
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of telomere to call
-    default: 24
     inputBinding:
       position: 101
       prefix: --min_telomere_length
@@ -55,7 +50,6 @@ inputs:
       - boolean
     doc: Count other clipped sequences (non-telomeric) and get consensus of 
       clipped segments
-    default: false
     inputBinding:
       position: 101
       prefix: --other_clips
@@ -64,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: Output filename prefix
-    default: miltel.test
     inputBinding:
       position: 101
       prefix: --out
@@ -73,7 +66,6 @@ inputs:
       - 'null'
       - File
     doc: FASTA file containing genomic contigs used as reference for the mapping
-    default: None
     inputBinding:
       position: 101
       prefix: --ref
@@ -82,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Start coordinate (1-based, inclusive) from contig to process
-    default: None
     inputBinding:
       position: 101
       prefix: --start
@@ -91,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Stop coordinate (1-based, inclusive) from contig to process
-    default: None
     inputBinding:
       position: 101
       prefix: --stop
@@ -100,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: Telomere sequence to search for
-    default: ACACCCTA
     inputBinding:
       position: 101
       prefix: --telomere

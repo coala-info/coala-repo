@@ -11,7 +11,6 @@ inputs:
       - int
     doc: number of bootstraps for fpr and recall estimate (default 0), careful, 
       slows down program linearly
-    default: 0
     inputBinding:
       position: 101
       prefix: --boots
@@ -116,7 +115,6 @@ inputs:
       - int
     doc: seed completeness, advice a number around 90 (95 default), this is the 
       default completeness prior
-    default: 95
     inputBinding:
       position: 101
       prefix: --seed

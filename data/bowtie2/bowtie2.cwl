@@ -94,7 +94,6 @@ inputs:
   - 'null'
   - int
   doc: maximum fragment length
-  default: 500
   inputBinding:
     position: 101
     prefix: --maxins
@@ -103,7 +102,6 @@ inputs:
   - 'null'
   - int
   doc: minimum fragment length
-  default: 0
   inputBinding:
     position: 101
     prefix: --minins
@@ -192,7 +190,6 @@ inputs:
   - 'null'
   - int
   doc: length of seed substrings; must be >3, <32
-  default: 22
   inputBinding:
     position: 101
     prefix: -L
@@ -201,7 +198,6 @@ inputs:
   - 'null'
   - int
   doc: 'max # mismatches in seed alignment; can be 0 or 1'
-  default: 0
   inputBinding:
     position: 101
     prefix: -N
@@ -242,7 +238,6 @@ inputs:
   - 'null'
   - int
   doc: number of alignment threads to launch
-  default: 1
   inputBinding:
     position: 101
     prefix: --threads
@@ -251,7 +246,6 @@ inputs:
   - 'null'
   - int
   doc: trim <int> bases from 3'/right end of reads
-  default: 0
   inputBinding:
     position: 101
     prefix: --trim3
@@ -260,7 +254,6 @@ inputs:
   - 'null'
   - int
   doc: trim <int> bases from 5'/left end of reads
-  default: 0
   inputBinding:
     position: 101
     prefix: --trim5
@@ -300,7 +293,6 @@ inputs:
     prefix: --very-sensitive
 - id: output_filename
   type: string
-  default: "aligned.sam"
   doc: Name of the output SAM file
   inputBinding:
     position: 101

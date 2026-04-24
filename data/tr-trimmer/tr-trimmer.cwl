@@ -10,7 +10,6 @@ inputs:
       - type: array
         items: File
     doc: Input file(s). Use '-' for stdin
-    default: '-'
     inputBinding:
       position: 1
   - id: disable_dtr_trimming
@@ -81,7 +80,6 @@ inputs:
       - float
     doc: Maximum fraction of the terminal repeat length that is comprised of 
       ambiguous bases
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --max-ambiguous-frac
@@ -91,7 +89,6 @@ inputs:
       - float
     doc: Maximum fraction of the terminal repeat length that is comprised of 
       low-complexity sequence
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --max-low-complexity-frac
@@ -100,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of terminal repeat
-    default: 21
     inputBinding:
       position: 102
       prefix: --min-length

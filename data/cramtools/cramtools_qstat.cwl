@@ -12,7 +12,6 @@ inputs:
       - int
     doc: Use this value as a default or missing quality score. Lowest is 0, which
       corresponds to '!' in fastq.
-    default: 30
     inputBinding:
       position: 101
       prefix: --default-quality-score
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: 'Change log level: DEBUG, INFO, WARNING, ERROR.'
-    default: ERROR
     inputBinding:
       position: 101
       prefix: --log-level

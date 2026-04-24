@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use human chromosome enum type
-    default: true
     inputBinding:
       position: 102
       prefix: --human-genome
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use human chromosome enum type
-    default: false
     inputBinding:
       position: 102
       prefix: --no-human-genome

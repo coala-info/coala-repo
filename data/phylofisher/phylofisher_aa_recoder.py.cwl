@@ -11,7 +11,6 @@ inputs:
       - string
     doc: 'Input file format if not FASTA. Options: fasta, phylip (names truncated
       at 10 characters), phylip-relaxed (names are not truncated), or nexus.'
-    default: fasta
     inputBinding:
       position: 101
       prefix: --in_format
@@ -27,7 +26,6 @@ inputs:
       - string
     doc: 'Desired output format. Options: fasta, phylip (names truncated at 10 characters),
       phylip-relaxed (names are not truncated), or nexus.'
-    default: fasta
     inputBinding:
       position: 101
       prefix: --out_format
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to user-defined output directory
-    default: ./aa_recoder_out_<M.D.Y>
     inputBinding:
       position: 101
       prefix: --output

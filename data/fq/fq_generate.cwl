@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bases in the sequence
-    default: 101
     inputBinding:
       position: 103
       prefix: --read-length
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Number of records to generate
-    default: 10000
     inputBinding:
       position: 103
       prefix: --record-count

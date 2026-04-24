@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: Set the logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL).
-    default: INFO
     inputBinding:
       position: 102
       prefix: --log_level

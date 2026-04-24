@@ -52,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: 'The length of the final barcode sequence identifier (default: 16)'
-    default: 16
     inputBinding:
       position: 102
       prefix: --bclen
@@ -78,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: 'Set the gzip compression level (default: 1) (range: 1-9)'
-    default: 1
     inputBinding:
       position: 102
       prefix: --compress
@@ -315,7 +313,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of FASTQ file(s) per run (default: 1) (specify 2 for paired-end)'
-    default: 1
     inputBinding:
       position: 102
       prefix: --nFastqs
@@ -534,7 +531,6 @@ inputs:
       - 'null'
       - string
     doc: Modify the default SAM tags
-    default: 'CB:Z:,RX:Z:,BI:i:,SI:i:,BC:Z:,LX:Z:,YM:Z:'
     inputBinding:
       position: 102
       prefix: --sam-tags

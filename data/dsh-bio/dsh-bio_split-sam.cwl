@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: input SAM path
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input-path

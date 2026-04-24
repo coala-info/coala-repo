@@ -78,7 +78,6 @@ inputs:
       - 'null'
       - string
     doc: parameters file, by default json
-    default: json
     inputBinding:
       position: 101
       prefix: --parameters

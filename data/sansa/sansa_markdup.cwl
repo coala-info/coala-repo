@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: max. SV breakpoint offset
-    default: 50
     inputBinding:
       position: 102
       prefix: --bpdiff
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: min. fraction of shared SV carriers
-    default: 0.25
     inputBinding:
       position: 102
       prefix: --carrier
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: max. SV allele divergence
-    default: 0.100000001
     inputBinding:
       position: 102
       prefix: --divergence
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: min. SV site quality
-    default: 300
     inputBinding:
       position: 102
       prefix: --quality
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: min. SV size ratio
-    default: 0.800000012
     inputBinding:
       position: 102
       prefix: --sizeratio

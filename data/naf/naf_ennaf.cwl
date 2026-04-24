@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: 'Use compression level # (from -131072 to 22, default: 1)'
-    default: 1
     inputBinding:
       position: 102
       prefix: --level
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: Input sequence is DNA (default)
-    default: true
     inputBinding:
       position: 102
       prefix: --dna

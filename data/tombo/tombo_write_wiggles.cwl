@@ -14,7 +14,6 @@ inputs:
         items: string
     doc: FAST5 subgroup(s) (under Analyses/[corrected-group]) containing 
       basecalls.
-    default: BaseCalled_template
     inputBinding:
       position: 101
       prefix: --basecall-subgroups
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: FAST5 group created by resquiggle command.
-    default: RawGenomeCorrected_000
     inputBinding:
       position: 101
       prefix: --corrected-group
@@ -68,7 +66,6 @@ inputs:
         items: string
     doc: 'Data types of wiggles to produce. Options: coverage, fraction, signal, signal_sd,
       length, stat, mt_stat, difference.'
-    default: coverage fraction
     inputBinding:
       position: 101
       prefix: --wiggle-types

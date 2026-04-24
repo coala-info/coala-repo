@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: "The classification level to use when constructing the\nmodel."
-    default: phylum
     inputBinding:
       position: 101
       prefix: --level
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - Directory
     doc: Location of the NCBI Taxonomy dump.
-    default: $BLASTDB
     inputBinding:
       position: 101
       prefix: --taxdump

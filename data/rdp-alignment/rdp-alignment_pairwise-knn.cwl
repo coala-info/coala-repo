@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: K-nearest neighbors to return.
-    default: 1
     inputBinding:
       position: 103
       prefix: -k
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Alignment mode {global, glocal, local, overlap, overlap_trimmed}
-    default: glocal
     inputBinding:
       position: 103
       prefix: --mode
@@ -38,7 +36,6 @@ inputs:
       - int
     doc: The top p closest targets from kmer prefilter step. Set p=0 to disable 
       the prefilter step.
-    default: 10
     inputBinding:
       position: 103
       prefix: --prefilter
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: The word size used to find closest targets during prefilter.
-    default: 4 for protein, 8 for nucleotide
     inputBinding:
       position: 103
       prefix: --word-size

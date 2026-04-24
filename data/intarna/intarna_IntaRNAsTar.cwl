@@ -10,7 +10,6 @@ inputs:
       - string
     doc: "accessibility computation : 'N' no accessibility contributions 'C' computation
       of accessibilities (see --accW and --accL)"
-    default: C
     inputBinding:
       position: 101
       prefix: --acc
@@ -21,7 +20,6 @@ inputs:
     doc: if given (or true), the overall energy of a helix (including E_init, 
       ED, dangling ends, ..) will be used for helixMaxE checks; otherwise only 
       loop-terms are considered.
-    default: false
     inputBinding:
       position: 101
       prefix: --helixFullE
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: maximal number of base pairs inside a helix (arg in range [2,20])
-    default: 10
     inputBinding:
       position: 101
       prefix: --helixMaxBP
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: maximal energy (excluding) a helix may have (arg in range [-999,999]).
-    default: 0
     inputBinding:
       position: 101
       prefix: --helixMaxE
@@ -49,7 +45,6 @@ inputs:
       - int
     doc: maximal size for each internal loop size in a helix (arg in range 
       [0,2]).
-    default: 0
     inputBinding:
       position: 101
       prefix: --helixMaxIL
@@ -58,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: minimal number of base pairs inside a helix (arg in range [2,4])
-    default: 2
     inputBinding:
       position: 101
       prefix: --helixMinBP
@@ -68,7 +62,6 @@ inputs:
       - float
     doc: minimal unpaired probability (per sequence) of considered helices (arg 
       in range [0,1]).
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --helixMinPu
@@ -79,7 +72,6 @@ inputs:
     doc: 'interaction site : maximal window size to be considered for interaction
       (arg in range [0,99999]; 0 refers to the full sequence length). If --accW is
       provided, the smaller window size of both is used.'
-    default: 60
     inputBinding:
       position: 101
       prefix: --intLenMax
@@ -90,7 +82,6 @@ inputs:
     doc: 'interaction site : maximal number of unpaired bases between neighbored interacting
       bases to be considered in interactions (arg in range [0,30]; 0 enforces stackings
       only)'
-    default: 8
     inputBinding:
       position: 101
       prefix: --intLoopMax
@@ -100,7 +91,6 @@ inputs:
       - string
     doc: "prediction mode : 'H' = heuristic (fast and low memory), 'M' = exact (slow),
       'S' = seed-only"
-    default: H
     inputBinding:
       position: 101
       prefix: --mode
@@ -113,7 +103,6 @@ inputs:
       (interior loops only), 'B' = single-site, helix-block-based, minimum-free-energy
       interaction (blocks of stable helices and interior loops only), 'P' = single-site
       interaction with minimal free ensemble energy per site (interior loops only)"
-    default: X
     inputBinding:
       position: 101
       prefix: --model
@@ -123,7 +112,6 @@ inputs:
       - boolean
     doc: if given (or true), no seed is enforced within the predicted 
       interactions
-    default: false
     inputBinding:
       position: 101
       prefix: --noSeed
@@ -154,7 +142,6 @@ inputs:
       by the output stream/file name, eg. '--out=\"spotProb:3&76,59&2:STDERR\"'. NOTE:
       value has to be quoted due to '&' symbol! For each, provide a file name or STDOUT/STDERR
       to write to the respective output stream."
-    default: STDOUT
     inputBinding:
       position: 101
       prefix: --out
@@ -165,7 +152,6 @@ inputs:
     doc: "output mode : 'N' normal output (ASCII char + energy), 'D' detailed output
       (ASCII char + energy/position details), 'C' CSV output (see --outCsvCols), 'E'
       ensemble information"
-    default: C
     inputBinding:
       position: 101
       prefix: --outMode
@@ -174,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: number of (sub)optimal interactions to report (arg in range [0,1000])
-    default: 1
     inputBinding:
       position: 101
       prefix: --outNumber
@@ -184,7 +169,6 @@ inputs:
       - string
     doc: "suboptimal output : interactions can overlap 'N' in none of the sequences,
       'T' in the target only, 'Q' in the query only, 'B' in both sequences"
-    default: Q
     inputBinding:
       position: 101
       prefix: --outOverlap
@@ -193,7 +177,6 @@ inputs:
       - 'null'
       - string
     doc: column separator to be used in tabular CSV output
-    default: ;
     inputBinding:
       position: 101
       prefix: --outSep
@@ -231,7 +214,6 @@ inputs:
       - int
     doc: number of inter-molecular base pairs within the seed region (arg in 
       range [2,20])
-    default: 7
     inputBinding:
       position: 101
       prefix: --seedBP
@@ -266,7 +248,6 @@ inputs:
       query-target combinations. A value of 0 requests all available CPUs. Note,
       the number of threads multiplies the required memory used for computation!
       (arg in range [0,20])
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

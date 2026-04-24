@@ -35,7 +35,6 @@ inputs:
       - int
     doc: The maximum amount of clusters that will be extracted. Ordered on score
       (def. 50)
-    default: 50
     inputBinding:
       position: 102
       prefix: --maximum_clusters

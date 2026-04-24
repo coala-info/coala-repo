@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: output format, fasta or fastq.
-    default: fasta
     inputBinding:
       position: 101
       prefix: --format

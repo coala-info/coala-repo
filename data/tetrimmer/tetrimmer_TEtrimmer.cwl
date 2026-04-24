@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold used to generate final consensus sequences from MSAs.
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --cons_thr
@@ -52,7 +51,6 @@ inputs:
       MSA and sum up the proportion numbers in this window. The cropping will 
       continue until the sum of proportions is larger than <--crop_end_div_thr>.
       Cropped nucleotides will be converted to -.
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --crop_end_div_thr
@@ -62,7 +60,6 @@ inputs:
       - int
     doc: Window size used for the end-cropping process. Used with the 
       <--crop_end_div_thr> option.
-    default: 40
     inputBinding:
       position: 101
       prefix: --crop_end_div_win
@@ -75,7 +72,6 @@ inputs:
       in this window. The cropping will continue until the sum of gap 
       proportions is smaller than <--crop_end_gap_thr>. Cropped nucleotides will
       be converted to -.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --crop_end_gap_thr
@@ -85,7 +81,6 @@ inputs:
       - int
     doc: Define window size used to crop end by gap. Used with the 
       <--crop_end_gap_thr> option.
-    default: 250
     inputBinding:
       position: 101
       prefix: --crop_end_gap_win
@@ -121,7 +116,6 @@ inputs:
       - int
     doc: Define the minimum copy number that the output TE consensus sequence 
       can be evaluated as "Perfect".
-    default: 30
     inputBinding:
       position: 101
       prefix: --define_perfect
@@ -142,7 +136,6 @@ inputs:
       <ext_check_win> bp at the end of multiple sequence alignment has “N” 
       present (ie. positions have similarity proportion smaller than <ext_thr>),
       the extension will stop, which defines the edge of the consensus sequence.
-    default: 150
     inputBinding:
       position: 101
       prefix: --ext_check_win
@@ -154,7 +147,6 @@ inputs:
       multiple sequence alignment in each extension step. TE_Trimmer will 
       iteratively add <ext_step> nucleotides until finding the TE boundary or 
       reaching <max_ext>.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --ext_step
@@ -168,7 +160,6 @@ inputs:
       lower the value of <ext_thr>, the more likely to get longer the extensions
       on both ends. You can try reducing <ext_thr> if TEtrimmer fails to find 
       full-length TEs.
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --ext_thr
@@ -188,7 +179,6 @@ inputs:
       multiple sequence alignment. Used with the <gap_thr> option. i.e. if this 
       column has <40% gap and the portion of T (or any other) nucleotide is >70%
       in this particular column, this column will be kept.
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --gap_nul_thr
@@ -200,7 +190,6 @@ inputs:
       proportion larger than <gap_thr> and the proportion of the most common 
       nucleotide in this column is less than <gap_nul_thr>, this column will be 
       removed from the consensus.
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --gap_thr
@@ -232,7 +221,6 @@ inputs:
       (no spaces; the order of patterns determines the priority for the search). If
       the identified pattern end with the nucleotide "T", this "T" will be removed
       from the final consensus sequence.'
-    default: CTAAT，CTAGT，CTGAT，CTGGT (CTRRT)
     inputBinding:
       position: 101
       prefix: --helitron_end_patterns
@@ -249,7 +237,6 @@ inputs:
       ATC,ATT (no spaces; the order of patterns determines the priority for the search).
       If the identified pattern begins with the nucleotide "A", this "A" will be removed
       from the final consensus sequence.'
-    default: ATC
     inputBinding:
       position: 101
       prefix: --helitron_start_patterns
@@ -295,7 +282,6 @@ inputs:
       the consensus sequence if the pattern is found. Note: The user can provide multiple
       LTR end patterns in a comma-separated list, like: CA,TA,GA (no spaces; the order
       of patterns determines the priority for the search).'
-    default: CA
     inputBinding:
       position: 101
       prefix: --ltr_end_patterns
@@ -310,7 +296,6 @@ inputs:
       start of the consensus sequence if the pattern is found. Note: The user can
       provide multiple LTR start patterns in a comma-separated list, like: TG,TA,TC
       (no spaces; the order of patterns determines the priority for the search).'
-    default: TG
     inputBinding:
       position: 101
       prefix: --ltr_start_patterns
@@ -322,7 +307,6 @@ inputs:
       Each multiple sequence alignment can be grouped into different clusters based
       on alignment patterns WARNING: using a larger number will potentially result
       in more accurate consensus results but will also increase the running time.'
-    default: 5
     inputBinding:
       position: 101
       prefix: --max_cluster_num
@@ -332,7 +316,6 @@ inputs:
       - int
     doc: The maximum extension in nucleotides at each ends of the multiple 
       sequence alignment.
-    default: 7000
     inputBinding:
       position: 101
       prefix: --max_ext
@@ -342,7 +325,6 @@ inputs:
       - int
     doc: Set the maximum number of sequences to be included in a multiple 
       sequence alignment.
-    default: 100
     inputBinding:
       position: 101
       prefix: --max_msa_lines
@@ -352,7 +334,6 @@ inputs:
       - int
     doc: The minimum sequence length for blast hits to be included for further 
       analysis.
-    default: 50 for SINE and MITE; 150 for others
     inputBinding:
       position: 101
       prefix: --min_blast_len
@@ -362,7 +343,6 @@ inputs:
       - int
     doc: The minimum blast hit number required for the input sequence. We do not
       recommend decreasing this number.
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_seq_num
@@ -371,7 +351,6 @@ inputs:
       - 'null'
       - int
     doc: Define the minimum ORF length to be predicted by TEtrimmer.
-    default: 200
     inputBinding:
       position: 101
       prefix: --mini_orf
@@ -380,7 +359,6 @@ inputs:
       - 'null'
       - int
     doc: Thread number used for TEtrimmer.
-    default: 1
     inputBinding:
       position: 101
       prefix: --num_threads
@@ -389,7 +367,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to output directory.
-    default: current working directory
     inputBinding:
       position: 101
       prefix: --output_dir
@@ -413,7 +390,6 @@ inputs:
       - int
     doc: Define the minimum length requirement of the poly pattern from the 
       parameter --poly_patterns.
-    default: 10
     inputBinding:
       position: 101
       prefix: --poly_len
@@ -427,7 +403,6 @@ inputs:
       LINE or SINE elements. You can provide multiple end patterns in a comma-separate
       list, like: A,T,TA (No space; the order of patterns determines the priority
       for the search)."
-    default: A
     inputBinding:
       position: 101
       prefix: --poly_patterns
@@ -448,7 +423,6 @@ inputs:
       choose <top_msa_lines> number of sequences. Then, TEtrimmer will randomly 
       select sequences from all remaining BLAST hits until 
       <max_msa_lines>sequences are found for the multiple sequence alignment.
-    default: 100
     inputBinding:
       position: 101
       prefix: --top_msa_lines

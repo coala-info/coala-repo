@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: fast mode (needs more RAM)
-    default: false
     inputBinding:
       position: 102
       prefix: -f
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: 'optional gzip with given level (min: 0; max: 9)'
-    default: 0
     inputBinding:
       position: 102
       prefix: -g
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: 'line length (min: 40; max: 2000000000)'
-    default: 80
     inputBinding:
       position: 102
       prefix: -l
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: 'no of threads (min: 1; max: 56)'
-    default: 28
     inputBinding:
       position: 102
       prefix: -t
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: 'verbosity level (min: 0; max: 2)'
-    default: 0
     inputBinding:
       position: 102
       prefix: -v
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: without reference
-    default: false
     inputBinding:
       position: 102
       prefix: -r

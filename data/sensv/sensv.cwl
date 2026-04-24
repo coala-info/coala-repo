@@ -61,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: reference version (default 37)
-    default: '37'
     inputBinding:
       position: 101
       prefix: --ref_ver

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Config file
-    default: /usr/local/config/gffmunger-config.yml
     inputBinding:
       position: 102
       prefix: --config
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force writing of output file, even if it already exists
-    default: false
     inputBinding:
       position: 102
       prefix: --force
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not validate the input GFF3
-    default: false
     inputBinding:
       position: 102
       prefix: --no-validate
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: Suppress messages & warnings
-    default: false
     inputBinding:
       position: 102
       prefix: --quiet
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn on debugging
-    default: false
     inputBinding:
       position: 102
       prefix: --verbose

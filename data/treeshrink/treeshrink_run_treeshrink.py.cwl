@@ -12,7 +12,6 @@ inputs:
     doc: The name of the input alignment; can only be used when the input 
       directory is specified (see -i option). Each subdirectory under it must 
       contain an alignment with this name.
-    default: input.fasta
     inputBinding:
       position: 101
       prefix: --alignment
@@ -22,7 +21,6 @@ inputs:
       - boolean
     doc: Do centroid reroot in preprocessing. Highly recommended for large 
       trees.
-    default: false
     inputBinding:
       position: 101
       prefix: --centroid
@@ -66,7 +64,6 @@ inputs:
       - string
     doc: If -k not given, we use k=min(n/a,b*sqrt(n)) by default; using this 
       option, you can set the a,b constants;
-    default: 5,2
     inputBinding:
       position: 101
       prefix: --kscaling
@@ -85,7 +82,6 @@ inputs:
       - float
     doc: Do not remove species on the per-species test if their impact on 
       diameter is less than x% where x is the given value.
-    default: 5
     inputBinding:
       position: 101
       prefix: --minImpact
@@ -94,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: "Filtering mode: 'per-species', 'per-gene', 'all-genes','auto'."
-    default: auto
     inputBinding:
       position: 101
       prefix: --mode
@@ -115,7 +110,6 @@ inputs:
     doc: Output name prefix. If the output directory contains some files with 
       the specified prefix, automatically adjusts the prefix (e.g. output --> 
       output1) to avoid overriding. Use --force to force overriding.
-    default: output
     inputBinding:
       position: 101
       prefix: --outprefix
@@ -124,7 +118,6 @@ inputs:
       - 'null'
       - float
     doc: The quantile(s) to set threshold.
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --quantiles
@@ -144,7 +137,6 @@ inputs:
     doc: The name of the input tree/trees. If the input directory is specified 
       (see -i option), each subdirectory under it must contain a tree with this 
       name. Otherwise, all the trees can be included in this one file.
-    default: input.tree
     inputBinding:
       position: 101
       prefix: --tree

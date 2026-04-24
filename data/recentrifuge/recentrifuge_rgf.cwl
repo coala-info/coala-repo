@@ -139,7 +139,6 @@ inputs:
       - int
     doc: number of threads to use for parallel processing; 0 (default) means 
       legacy mode using min(cpu_count, samples)
-    default: 0
     inputBinding:
       position: 101
       prefix: --threads

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: collect all contacts
-    default: false
     inputBinding:
       position: 102
       prefix: -a
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: minimum alignment quality
-    default: 10
     inputBinding:
       position: 102
       prefix: -q
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: use middle
-    default: false
     inputBinding:
       position: 102
       prefix: -g
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: use minimum dist to normalize weight
-    default: false
     inputBinding:
       position: 102
       prefix: -d

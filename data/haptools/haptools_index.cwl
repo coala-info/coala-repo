@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not sort the file
-    default: false
     inputBinding:
       position: 102
       prefix: --no-sort
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: Sort the file
-    default: true
     inputBinding:
       position: 102
       prefix: --sort
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: The level of verbosity desired
-    default: INFO
     inputBinding:
       position: 102
       prefix: --verbosity

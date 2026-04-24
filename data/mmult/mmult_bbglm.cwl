@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Number of batch threads.
-    default: 5
     inputBinding:
       position: 101
       prefix: --batchthreads
@@ -35,7 +34,6 @@ inputs:
       many replicates with a limited memory. To enable small-batch running, size
       info should be specificed by `-c|--chrom`. Because the size of chr1 in 
       hg38 is >200 million, 1/10th (20M) can be good to go.
-    default: 20000000
     inputBinding:
       position: 101
       prefix: --length
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance between consecutive DMCs for DMR.
-    default: 300
     inputBinding:
       position: 101
   - id: methfile
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth for a CpG coverage.
-    default: 1
     inputBinding:
       position: 101
       prefix: --mindepth
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number ofDMCs in a DMR.
-    default: 3
     inputBinding:
       position: 101
   - id: nominaldiff
@@ -80,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: Nominal methylation difference threshold for DMC.
-    default: 0.2
     inputBinding:
       position: 101
   - id: qval
@@ -88,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: Q-value threshold for DMC.
-    default: 0.05
     inputBinding:
       position: 101
   - id: readthreads
@@ -96,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Number of read threads.
-    default: 10
     inputBinding:
       position: 101
       prefix: --readthreads

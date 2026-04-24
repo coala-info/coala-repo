@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - File
     doc: PAF file from minimap2 or unimap. Must have a CIGAR tag
-    default: '-'
     inputBinding:
       position: 1
   - id: fasta_file

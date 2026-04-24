@@ -41,7 +41,6 @@ inputs:
       - int
     doc: If reads have an average quality below this threshold, filter out (fastq
       input only)
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-read-quality
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the executable medaka
-    default: medaka
     inputBinding:
       position: 101
       prefix: --path_to_medaka
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - File
     doc: Path to python
-    default: python
     inputBinding:
       position: 101
       prefix: --path_to_python
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - File
     doc: Path to raven
-    default: raven
     inputBinding:
       position: 101
       prefix: --path_to_raven
@@ -85,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: '{racon, medaka} medaka is more accurate but much slower'
-    default: racon
     inputBinding:
       position: 101
       prefix: --polisher
@@ -100,7 +95,6 @@ inputs:
       - 'null'
       - float
     doc: Consider automatically as true all SNPs shared by proportion u of the reads
-    default: 0.33
     inputBinding:
       position: 101
       prefix: --rescue_snps
@@ -117,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

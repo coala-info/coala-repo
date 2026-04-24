@@ -57,7 +57,6 @@ inputs:
       - 'null'
       - File
     doc: 'Default: elastic-blast.log'
-    default: elastic-blast.log
     inputBinding:
       position: 101
       prefix: --logfile
@@ -66,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: 'Default: DEBUG'
-    default: DEBUG
     inputBinding:
       position: 101
       prefix: --loglevel

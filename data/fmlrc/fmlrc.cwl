@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size for correction
-    default: 21
     inputBinding:
       position: 103
       prefix: --kmer-size
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum count for a k-mer to be considered
-    default: 5
     inputBinding:
       position: 103
       prefix: --min-count
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

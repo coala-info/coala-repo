@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: minimum supporting split read number
-    default: 2
     inputBinding:
       position: 101
       prefix: -n
@@ -26,14 +25,12 @@ inputs:
       - 'null'
       - int
     doc: minimum transfer sequence length
-    default: 500
     inputBinding:
       position: 101
       prefix: -m
   - id: output_file
     type: File
     doc: Output file to save all inferred HGT events.
-    default: complete_HGT_event.csv
     inputBinding:
       position: 101
       prefix: -f

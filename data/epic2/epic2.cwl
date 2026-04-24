@@ -30,7 +30,6 @@ inputs:
       - string
     doc: 'Which genome to analyze. Default: hg19. If --chromsizes and --egf flag is
       given, --genome is not required.'
-    default: hg19
     inputBinding:
       position: 103
       prefix: --genome
@@ -49,7 +48,6 @@ inputs:
       - int
     doc: Size of the windows to scan the genome. BIN-SIZE is the smallest 
       possible island. Default 200.
-    default: 200
     inputBinding:
       position: 103
       prefix: --bin-size
@@ -71,7 +69,6 @@ inputs:
       Default '_'. Note that if you are not interested in the results from 
       non-canonical chromosomes, you should ensure they are removed with this 
       flag, otherwise they will make the statistical analysis too stringent.
-    default: _
     inputBinding:
       position: 103
       prefix: --discard-chromosomes-pattern
@@ -82,7 +79,6 @@ inputs:
     doc: 'The E-value controls the genome-wide error rate of identified islands under
       the random background assumption. Should be used when not using a control library.
       Default: 1000.'
-    default: 1000
     inputBinding:
       position: 103
       prefix: --e-value
@@ -109,7 +105,6 @@ inputs:
       - 'null'
       - float
     doc: Remove all islands with an FDR above cutoff. Default 0.05.
-    default: 0.05
     inputBinding:
       position: 103
       prefix: --false-discovery-rate-cutoff
@@ -120,7 +115,6 @@ inputs:
     doc: '(bampe/bam only.) Discard reads with these bits set in flag. Same as `samtools
       view -F`. Default 1540 (hex: 0x604). See https://broadinstitute.github.io/picard/explain-flags.html
       for more info.'
-    default: 1540
     inputBinding:
       position: 103
       prefix: --filter-flag
@@ -131,7 +125,6 @@ inputs:
     doc: (Single end reads only) Size of the sequenced fragment. Each read is 
       extended half the fragment size from the 5' end. Default 150 (i.e. extend 
       by 75).
-    default: 150
     inputBinding:
       position: 103
       prefix: --fragment-size
@@ -142,7 +135,6 @@ inputs:
     doc: 'This number is multiplied by the window size to determine the number of
       gaps (ineligible windows) allowed between two eligible windows. Must be an integer.
       Default: 3.'
-    default: 3
     inputBinding:
       position: 103
       prefix: --gaps-allowed
@@ -162,7 +154,6 @@ inputs:
       - boolean
     doc: 'Keep reads mapping to the same position on the same strand within a library.
       Default: False.'
-    default: false
     inputBinding:
       position: 103
       prefix: --keep-duplicates
@@ -172,7 +163,6 @@ inputs:
       - int
     doc: (bampe/bam only.) Discard reads with mapping quality lower than this. 
       Default 5.
-    default: 5
     inputBinding:
       position: 103
       prefix: --mapq
@@ -210,7 +200,6 @@ inputs:
       - int
     doc: (bampe/bam only.) Keep reads with these bits set in flag. Same as 
       `samtools view -f`. Default 0
-    default: 0
     inputBinding:
       position: 103
       prefix: --required-flag

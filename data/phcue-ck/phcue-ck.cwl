@@ -37,7 +37,6 @@ inputs:
       - int
     doc: Maximum number of concurrent requests to make to the ENA API (max of 10
       are allowed)
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-requests
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: 'Format for output of data. [possible values: json, csv, csv-wide, csv-long]'
-    default: json
     inputBinding:
       position: 101
       prefix: --output-format

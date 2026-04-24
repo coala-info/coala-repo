@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - File
     doc: Input Tree File
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -21,7 +20,6 @@ inputs:
     doc: 'Clustering Method (options: avg_clade, leaf_dist_avg, leaf_dist_max, leaf_dist_min,
       length, length_clade, max, max_clade, med_clade, root_dist, single_linkage,
       single_linkage_cut, single_linkage_union, sum_branch, sum_branch_clade)'
-    default: max_clade
     inputBinding:
       position: 101
       prefix: --method
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: Branch Support Threshold
-    default: -inf
     inputBinding:
       position: 101
       prefix: --support
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - float
     doc: Length Threshold
-    default: None
     inputBinding:
       position: 101
       prefix: --threshold
@@ -48,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: 'Threshold-Free Approach (options: argmax_clusters)'
-    default: None
     inputBinding:
       position: 101
       prefix: --threshold_free
@@ -57,7 +52,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose Mode
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

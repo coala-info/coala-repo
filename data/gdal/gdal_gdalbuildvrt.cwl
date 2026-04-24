@@ -105,7 +105,6 @@ inputs:
       - string
     doc: "Set the resampling method. Options: 'nearest', 'bilinear', 'cubic', 'cubicspline',
       'lanczos', 'average', 'mode'."
-    default: average
     inputBinding:
       position: 102
       prefix: -r
@@ -116,7 +115,6 @@ inputs:
     doc: Controls how the output resolution is computed when input files have 
       different resolutions. Options are 'highest', 'lowest', 'average', or 
       'user'.
-    default: average
     inputBinding:
       position: 102
       prefix: -resolution

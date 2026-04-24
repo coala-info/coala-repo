@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: Output name for database sketch (with .syldb appended)
-    default: database
     inputBinding:
       position: 102
       prefix: --out-name-db
@@ -48,7 +47,6 @@ inputs:
       - float
     doc: False positive rate for read deduplicate hashing; valid values in 
       [0,1).
-    default: 0.0001
     inputBinding:
       position: 102
       prefix: --fpr
@@ -74,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Value of k. Only k = 21, 31 are currently supported
-    default: 31
     inputBinding:
       position: 102
       prefix: -k
@@ -123,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum spacing between selected k-mers on the genomes
-    default: 30
     inputBinding:
       position: 102
       prefix: --min-spacing
@@ -159,7 +155,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory for sample sketches
-    default: ./
     inputBinding:
       position: 102
       prefix: --sample-output-directory
@@ -177,7 +172,6 @@ inputs:
       - 'null'
       - int
     doc: Subsampling rate
-    default: 200
     inputBinding:
       position: 102
       prefix: -c
@@ -186,7 +180,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 3
     inputBinding:
       position: 102
       prefix: -t

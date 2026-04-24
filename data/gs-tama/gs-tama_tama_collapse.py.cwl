@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: 'Collapse exon ends flag: common_ends or longest_ends'
-    default: common_ends
     inputBinding:
       position: 101
       prefix: -e
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Coverage
-    default: 99
     inputBinding:
       position: 101
       prefix: -c
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Exon/Splice junction threshold
-    default: 10
     inputBinding:
       position: 101
       prefix: -m
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Identity
-    default: 85
     inputBinding:
       position: 101
       prefix: -i
@@ -60,7 +56,6 @@ inputs:
       - string
     doc: Identity calculation method (default ident_cov for including coverage) 
       (alternate is ident_map for excluding hard and soft clipping)
-    default: ident_cov for including coverage
     inputBinding:
       position: 101
       prefix: -icm
@@ -70,7 +65,6 @@ inputs:
       - int
     doc: Threshold for amount of local density error near splice junctions that 
       is allowed
-    default: 1000 errors which practically means no threshold is applied
     inputBinding:
       position: 101
       prefix: -lde
@@ -80,7 +74,6 @@ inputs:
       - string
     doc: Flag for merging duplicate transcript groups (default is merge_dup will
       merge duplicates ,no_merge quits when duplicates are found)
-    default: merge_dup will merge duplicates ,no_merge quits when duplicates are
       found
     inputBinding:
       position: 101
@@ -96,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: 3 prime threshold
-    default: 10
     inputBinding:
       position: 101
       prefix: -z
@@ -105,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: 5 prime threshold
-    default: 10
     inputBinding:
       position: 101
       prefix: -a
@@ -123,7 +114,6 @@ inputs:
       - string
     doc: Run mode allows you to use original or low_mem mode, default is 
       original
-    default: original
     inputBinding:
       position: 101
       prefix: -rm
@@ -147,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: Threshold for detecting errors near splice junctions
-    default: 10bp
     inputBinding:
       position: 101
       prefix: -sjt
@@ -156,7 +145,6 @@ inputs:
       - 'null'
       - string
     doc: Turns off log output to screen of collapsing process.
-    default: on, use log_off to turn off
     inputBinding:
       position: 101
       prefix: -log
@@ -175,7 +163,6 @@ inputs:
     doc: Use error threshold to prioritize the use of splice junction 
       information from collapsing transcripts(default no_priority, activate with
       sj_priority)
-    default: no_priority
     inputBinding:
       position: 101
       prefix: -sj
@@ -184,7 +171,6 @@ inputs:
       - 'null'
       - int
     doc: 'Variation coverage threshold: Default 5 reads'
-    default: 5
     inputBinding:
       position: 101
       prefix: -vc

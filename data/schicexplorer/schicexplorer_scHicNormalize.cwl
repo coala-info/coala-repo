@@ -18,7 +18,6 @@ inputs:
     doc: To compute the normalization factor for the normalization mode 
       'smallest' and 'read_count', consider only this genomic distance around 
       the diagonal.
-    default: 30000000
     inputBinding:
       position: 101
       prefix: --maximumRegionToConsider
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: Values smaller as this threshold are set to 0.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --setToZeroThreshold
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads. Using the python multiprocessing module.
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -54,7 +51,6 @@ inputs:
       - float
     doc: This value is used to either be interpreted as the desired read_count 
       or the multiplicative value. This depends on the value for --normalize
-    default: 1
     inputBinding:
       position: 101
       prefix: --value

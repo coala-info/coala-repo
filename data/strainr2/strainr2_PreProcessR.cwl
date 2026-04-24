@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: exclude subcontig size (minimum subcontig size)
-    default: 10000
     inputBinding:
       position: 101
       prefix: --excludesize
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - Directory
     doc: path to your output directory
-    default: StrainR2DB
     inputBinding:
       position: 101
       prefix: --outdir
@@ -35,7 +33,6 @@ inputs:
       - int
     doc: 'Size of one end of a read. e.g.: for 150bp paired end reads readsize is
       150.'
-    default: 150
     inputBinding:
       position: 101
       prefix: --readsize
@@ -54,7 +51,6 @@ inputs:
       - int
     doc: maximum subcontig size (overrides default use of calculated smallest 
       N50)
-    default: N50
     inputBinding:
       position: 101
       prefix: --subcontigsize

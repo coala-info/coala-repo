@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set logging level (default: WARNING, only shows warnings and errors)'
-    default: WARNING
     inputBinding:
       position: 103
       prefix: --log-level

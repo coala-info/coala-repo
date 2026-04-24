@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: 'use NUM threads (default: 1)'
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

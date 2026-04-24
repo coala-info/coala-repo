@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: min mapping quality
-    default: 10
     inputBinding:
       position: 102
       prefix: --mapq
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: sample 1/n of reads (reduce memory)
-    default: 20
     inputBinding:
       position: 102
       prefix: --numreads
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: window size to approximate
-    default: 100000
     inputBinding:
       position: 102
       prefix: --window

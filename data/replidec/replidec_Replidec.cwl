@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: E-value threshold to filter blast result
-    default: '1e-5'
     inputBinding:
       position: 101
       prefix: --blastp_Eval
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Parameters used for blastp
-    default: -num_threads 3
     inputBinding:
       position: 101
       prefix: --blastp_parameter
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Name of final summary file
-    default: prediction_summary.tsv
     inputBinding:
       position: 101
       prefix: --file_name
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: E-value threshold to filter hmmer result
-    default: '1e-5'
     inputBinding:
       position: 101
       prefix: --hmmer_Eval
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: Parameters used for hmmer
-    default: --noali --cpu 3
     inputBinding:
       position: 101
       prefix: --hmmer_parameters
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: E-value threshold to filter mmseqs2 result
-    default: '1e-5'
     inputBinding:
       position: 101
       prefix: --mmseq_Eval
@@ -80,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Parameter used for mmseqs
-    default: -s 7 --max-seqs 1 --alignment-mode 3 --alignment-output-mode 0 
       --min-aln-len 40 --cov-mode 0 --greedy-best-hits 1 --threads 3
     inputBinding:
       position: 101
@@ -96,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel threads
-    default: 10
     inputBinding:
       position: 101
       prefix: --threads
@@ -105,7 +97,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to store intermediate and final results
-    default: ./Replidec_results
     inputBinding:
       position: 101
       prefix: --work_dir

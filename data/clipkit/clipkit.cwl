@@ -64,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: specifies gaps threshold
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --gaps
@@ -73,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: specifies input file format
-    default: auto-detect
     inputBinding:
       position: 102
       prefix: --input_file_format
@@ -90,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: trimming mode
-    default: smart-gap
     inputBinding:
       position: 102
       prefix: --mode
@@ -115,7 +112,6 @@ inputs:
       - 'null'
       - string
     doc: specifies sequence type of input file
-    default: auto-detect
     inputBinding:
       position: 102
       prefix: --sequence_type
@@ -124,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: requested number of threads to use for parallel processing
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

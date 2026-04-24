@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: create intermediate files for debugging purposes
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: extension of files to process, gz = gzipped
-    default: fna
     inputBinding:
       position: 101
       prefix: --extension
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: continue processing if an error occurs on a single genome
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -54,7 +50,6 @@ inputs:
     doc: 'indicates input files contain predicted proteins as amino acids (skip gene
       calling).Warning: This flag will skip the ANI comparison steps (ANI screen and
       classification).'
-    default: false
     inputBinding:
       position: 101
       prefix: --genes
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for all output files
-    default: gtdbtk
     inputBinding:
       position: 101
       prefix: --prefix
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - Directory
     doc: specify alternative directory for temporary files
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmpdir
@@ -87,7 +80,6 @@ inputs:
       - 'null'
       - boolean
     doc: output unaligned single-copy marker genes
-    default: false
     inputBinding:
       position: 101
       prefix: --write_single_copy_genes

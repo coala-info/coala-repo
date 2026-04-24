@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the lineage column
-    default: compact_lineage
     inputBinding:
       position: 101
       prefix: --lineage-col

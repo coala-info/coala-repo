@@ -15,7 +15,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 2
     inputBinding:
       position: 101
       prefix: --num-threads

@@ -19,7 +19,6 @@ inputs:
       - string
     doc: give file with character alphabet, or dna, protein, or binary for dna, amino
       acid, respectively binary (0 1) alphabets
-    default: dna
     inputBinding:
       position: 102
       prefix: --alphabet_file
@@ -122,7 +121,6 @@ inputs:
       - string
     doc: give tree format for output, nexus (nex or x for short) or newick (new or
       w for short).
-    default: w
     inputBinding:
       position: 102
       prefix: --output

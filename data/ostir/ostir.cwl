@@ -11,7 +11,6 @@ inputs:
       - string
     doc: "anti-Shine-Dalgarno sequence: the 9 bases located at the 3' end of 16S rRNA.
       May be provided as DNA or RNA. Defaults to that of E. coli (ACCTCCTTA)."
-    default: ACCTCCTTA
     inputBinding:
       position: 101
       prefix: --anti-Shine-Dalgarno
@@ -89,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the verbosity level. Default 0 is quiet, 1 is normal, 2 is verbose
-    default: 0
     inputBinding:
       position: 101
       prefix: --versity

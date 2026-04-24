@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: size of batch to submit to blastdbcmd.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --batch-size
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: blast e value.
-    default: 10
     inputBinding:
       position: 101
       prefix: --evalue
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: blast max target seqs.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --max-target-seqs
@@ -124,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: threads to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

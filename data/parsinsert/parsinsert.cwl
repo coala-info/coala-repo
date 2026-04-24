@@ -55,7 +55,6 @@ inputs:
       - 'null'
       - File
     doc: read core tree from this file
-    default: PI_Tree.tree
     inputBinding:
       position: 102
       prefix: -t
@@ -64,7 +63,6 @@ inputs:
       - 'null'
       - File
     doc: read core tree sequences from this file
-    default: PI_Tree.fasta
     inputBinding:
       position: 102
       prefix: -s

@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: initial divergence time; -1 to disable
-    default: -1.0
     inputBinding:
       position: 102
       prefix: -T
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: initial theta/rho ratio
-    default: 4.0
     inputBinding:
       position: 102
       prefix: -r
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: maximum 2N0 coalescent time
-    default: 15.0
     inputBinding:
       position: 102
       prefix: -t
@@ -66,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of iterations
-    default: 30
     inputBinding:
       position: 102
       prefix: -N
@@ -75,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: pattern of parameters
-    default: 4+5*3+4
     inputBinding:
       position: 102
       prefix: -p

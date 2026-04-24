@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: 'TAD-calling algorithm. Options: insulation, ninsulation, directionality.'
-    default: insulation
     inputBinding:
       position: 104
       prefix: --algorithm

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to valid project directory
-    default: current directory
     inputBinding:
       position: 1
   - id: configfile
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: Path to assembly configuration file
-    default: config.yaml
     inputBinding:
       position: 102
       prefix: --configfile
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads available for command
-    default: all
     inputBinding:
       position: 102
       prefix: --threads

@@ -15,7 +15,6 @@ inputs:
       - int
     doc: Default quality score to assign to all bases if not specified in the 
       FASTA header. Default is 30.
-    default: 30
     inputBinding:
       position: 102
       prefix: --default-quality
@@ -33,7 +32,6 @@ inputs:
       - string
     doc: Type of quality scores to generate (e.g., ILLUMINA, SOLEXA, SANGER). 
       Default is ILLUMINA.
-    default: ILLUMINA
     inputBinding:
       position: 102
       prefix: --quality-score-type

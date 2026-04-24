@@ -54,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: Set the level of log output.
-    default: INFO
     inputBinding:
       position: 102
       prefix: --loglevel

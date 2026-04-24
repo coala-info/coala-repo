@@ -96,7 +96,6 @@ inputs:
     doc: "When using save_stats mode, this is the minimum\n                      \
       \  fractional abundance of a sequence for it to be\n                       \
       \ recorded in the csv. Default = 0.0001 (0.01percent)"
-    default: '0.0001'
     inputBinding:
       position: 101
       prefix: --stats_frac

@@ -35,7 +35,6 @@ inputs:
     type: boolean?
     inputBinding:
       prefix: '--verbose'
-    default: true
   max_length:
     type: int?
     inputBinding:
@@ -132,7 +131,6 @@ inputs:
     type: string?
     inputBinding:
       prefix: '--prefix'
-    default: ""
   font_scale:
     type: float?
     inputBinding:

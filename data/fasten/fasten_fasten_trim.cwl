@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: The first base to keep
-    default: 0
     inputBinding:
       position: 101
       prefix: --first-base
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: The last base to keep
-    default: 0
     inputBinding:
       position: 101
       prefix: --last-base
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs
-    default: 1
     inputBinding:
       position: 101
       prefix: --numcpus

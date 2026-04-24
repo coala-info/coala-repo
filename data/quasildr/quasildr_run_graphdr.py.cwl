@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the column to use in annotation file
-    default: group_id
     inputBinding:
       position: 102
       prefix: --anno_column
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Number of input dims to use
-    default: 20
     inputBinding:
       position: 102
       prefix: --max_dim
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: Method
-    default: auto
     inputBinding:
       position: 102
       prefix: --method
@@ -66,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: Metric
-    default: euclidean
     inputBinding:
       position: 102
       prefix: --metric
@@ -75,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Number of neighbors to construct KNN graph
-    default: 10
     inputBinding:
       position: 102
       prefix: --n_neighbors
@@ -92,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: Output file prefix, use input_file if not specified
-    default: ''
     inputBinding:
       position: 102
       prefix: --output
@@ -117,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Refine iteration
-    default: 0
     inputBinding:
       position: 102
       prefix: --refine_iter
@@ -126,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Refine threshold
-    default: 12
     inputBinding:
       position: 102
       prefix: --refine_threshold
@@ -135,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Regularization parameter
-    default: 100
     inputBinding:
       position: 102
       prefix: --reg
@@ -160,7 +151,6 @@ inputs:
       - 'null'
       - string
     doc: Suffix append to output file name
-    default: ''
     inputBinding:
       position: 102
       prefix: --suffix

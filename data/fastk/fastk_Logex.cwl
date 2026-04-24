@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Use -T threads.
-    default: 4
     inputBinding:
       position: 103
       prefix: -T

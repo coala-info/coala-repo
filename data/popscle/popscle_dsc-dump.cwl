@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum base quality (higher BQ will be capped)
-    default: 40
     inputBinding:
       position: 101
       prefix: --cap-BQ
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Number of chunks to store barcodes randomly
-    default: 100
     inputBinding:
       position: 101
       prefix: --chunks
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: SAM/BAM FLAGs to be excluded
-    default: 3844
     inputBinding:
       position: 101
       prefix: --excl-flag
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality to consider (lower BQ will be skipped)
-    default: 13
     inputBinding:
       position: 101
       prefix: --min-BQ
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality to consider (lower MQ will be ignored)
-    default: 20
     inputBinding:
       position: 101
       prefix: --min-MQ
@@ -63,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum distance to the tail (lower will be ignored)
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-TD
@@ -88,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Verbose message frequency for SAM/BAM/CRAM
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --sam-verbose
@@ -97,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for random number generator
-    default: -2128831035
     inputBinding:
       position: 101
       prefix: --seed
@@ -107,7 +99,6 @@ inputs:
       - boolean
     doc: Skip read that does not have group (e.g. cell barcode) information. By 
       default it assigns barcode '.'
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-empty-group
@@ -118,7 +109,6 @@ inputs:
     doc: Skip read that does not have UMI (e.g. cell barcode) information. By 
       default it assigns all reads as a single UMI. To consider them all 
       independent reads, you need to set --tag-UMI '' (empty)
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-empty-umi
@@ -128,7 +118,6 @@ inputs:
       - boolean
     doc: Do not generate [prefix].umi.gz file, which stores the regions covered 
       by each barcode/UMI pair
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-umi
@@ -154,7 +143,6 @@ inputs:
       - string
     doc: Tag representing readgroup or cell barcodes, in the case to partition 
       the BAM file into multiple groups. For 10x genomics, use CB
-    default: CB
     inputBinding:
       position: 101
       prefix: --tag-group
@@ -163,7 +151,6 @@ inputs:
       - 'null'
       - string
     doc: Tag representing UMIs. For 10x genomiucs, use UB
-    default: UB
     inputBinding:
       position: 101
       prefix: --tag-UMI
@@ -180,7 +167,6 @@ inputs:
       - 'null'
       - int
     doc: Verbose message frequency for VCF/BCF
-    default: 10000
     inputBinding:
       position: 101
       prefix: --vcf-verbose

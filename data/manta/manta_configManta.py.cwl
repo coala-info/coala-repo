@@ -84,7 +84,6 @@ inputs:
       - Directory
     doc: "Name of directory to be created where all workflow\nscripts and output will
       be written. Each analysis\nrequires a separate directory."
-    default: MantaWorkflow
     inputBinding:
       position: 101
       prefix: --runDir

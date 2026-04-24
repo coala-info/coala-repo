@@ -53,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Port to run the API server on (if --api is set)
-    default: 3000
     inputBinding:
       position: 101
       prefix: --port

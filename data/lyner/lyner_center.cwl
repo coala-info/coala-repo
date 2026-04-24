@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Type of centering to perform (mean, median)
-    default: mean
     inputBinding:
       position: 102
       prefix: --center-type
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: Base of the log transform
-    default: 2.0
     inputBinding:
       position: 102
       prefix: --log-base
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: Type of scaling to perform (std, mad)
-    default: std
     inputBinding:
       position: 102
       prefix: --scale-type

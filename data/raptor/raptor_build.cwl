@@ -35,7 +35,6 @@ inputs:
       - float
     doc: "The false positive rate. Default: 0.050000, or read from layout\nfile. Value
       must be in range [0.000000,1.000000]."
-    default: 0.050000, or read from layout file
     inputBinding:
       position: 101
       prefix: --fpr
@@ -45,7 +44,6 @@ inputs:
       - int
     doc: "The number of hash functions to use. Default: 2, or read from layout\nfile.
       Value must be in range [1,5]."
-    default: 2, or read from layout file
     inputBinding:
       position: 101
       prefix: --hash
@@ -67,7 +65,6 @@ inputs:
       - int
     doc: "The k-mer size. Default: 20, or read from layout file. Value must be\nin
       range [1,32]."
-    default: 20, or read from layout file
     inputBinding:
       position: 101
       prefix: --kmer
@@ -77,7 +74,6 @@ inputs:
       - int
     doc: "Splits the index in this many parts. Not available for the HIBF.\nDefault:
       1. Value must be a power of two."
-    default: 1
     inputBinding:
       position: 101
       prefix: --parts
@@ -96,7 +92,6 @@ inputs:
     doc: "The shape to use for k-mers. Mutually exclusive with --kmer. Parsed\nfrom
       right to left. Default: 11111111111111111111 (a k-mer of size\n20), or read
       from layout file. Value must match the pattern '[01]+'."
-    default: 11111111111111111111 (a k-mer of size 20), or read from layout file
     inputBinding:
       position: 101
       prefix: --shape
@@ -105,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: "The number of threads to use. Default: 1. Value must be a positive\ninteger."
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -114,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: "The window size. Default: k-mer size. Value must be a positive\ninteger."
-    default: k-mer size
     inputBinding:
       position: 101
       prefix: --window

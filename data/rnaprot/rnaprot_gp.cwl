@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: Filter --in sites based on gene coverage (gene annotations from --gtf)
-    default: false
     inputBinding:
       position: 101
       prefix: --gene-filter
@@ -58,7 +57,6 @@ inputs:
     doc: 'Define mode for --in BED site extraction. (1) Take the center of each site,
       (2) Take the complete site, (3) Take the upstream end for each site. Use --seq-ext
       to extend center sites again (default: 2)'
-    default: '1'
     inputBinding:
       position: 101
       prefix: --mode
@@ -92,7 +90,6 @@ inputs:
       - boolean
     doc: Output an .html report providing various training set statistics and 
       plots
-    default: false
     inputBinding:
       position: 101
       prefix: --report
@@ -101,7 +98,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set theme for .html report (1: palm beach, 2: midnight sunset)'
-    default: '1'
     inputBinding:
       position: 101
       prefix: --theme
@@ -111,7 +107,6 @@ inputs:
       - int
     doc: Up- and downstream sequence extension length of --in sites (if --in 
       BED, site definition by --mode)
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --seq-ext
@@ -131,7 +126,6 @@ inputs:
       labeling (using the corresponding exon regions from --gtf). By default, 
       exon regions of the most prominent transcripts (automatically selected 
       from --gtf) are used
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --tr-list
@@ -143,7 +137,6 @@ inputs:
       prominent transcripts or exon defined by --tr-list. Set this and --tr-list
       will be effective only for --tra. NOTE that by default --eia-all-ex is 
       disabled, even if --train-in model was trained with --eia-all-ex
-    default: false
     inputBinding:
       position: 101
       prefix: --eia-all-ex

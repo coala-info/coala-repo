@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to folder containing recipes
-    default: recipes/
     inputBinding:
       position: 1
   - id: config
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: Path to Bioconda config
-    default: config.yml
     inputBinding:
       position: 2
   - id: artifact_source
@@ -28,7 +26,6 @@ inputs:
       - string
     doc: Application hosting build artifacts (e.g., Azure, Circle CI, or GitHub 
       Actions).
-    default: azure
     inputBinding:
       position: 103
       prefix: --artifact-source
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not actually upload anything.
-    default: false
     inputBinding:
       position: 103
       prefix: --dryrun
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: What to do if no artifacts are found in the PR.
-    default: build
     inputBinding:
       position: 103
       prefix: --fallback
@@ -83,7 +78,6 @@ inputs:
       - 'null'
       - string
     doc: Log level for log file
-    default: debug
     inputBinding:
       position: 103
       prefix: --logfile-level
@@ -92,7 +86,6 @@ inputs:
       - 'null'
       - string
     doc: Set logging level (debug, info, warning, error, critical)
-    default: info
     inputBinding:
       position: 103
       prefix: --loglevel

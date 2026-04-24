@@ -28,7 +28,6 @@ inputs:
       - int
     doc: Bandwidth for kernel density estimation used to access enrichment. In 
       range [1..500].
-    default: 50
     inputBinding:
       position: 101
       prefix: --bdw
@@ -143,7 +142,6 @@ inputs:
       - 'null'
       - float
     doc: Initial value for binomial probability parameter of 'crosslink' state.
-    default: 0.15
     inputBinding:
       position: 101
       prefix: --b2p
@@ -153,7 +151,6 @@ inputs:
       - float
     doc: Initial value for binomial probability parameter of 'non-crosslink' 
       state.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --b1p
@@ -186,7 +183,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum value in look-up table for log-sum-exp values.
-    default: -2000
     inputBinding:
       position: 101
       prefix: --tmv
@@ -195,7 +191,6 @@ inputs:
       - 'null'
       - int
     doc: Size of look-up table for log-sum-exp values.
-    default: 600000
     inputBinding:
       position: 101
       prefix: --ts
@@ -222,7 +217,6 @@ inputs:
       - 'null'
       - float
     doc: Max. k/N ratio used to learn truncation probabilities.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --mkn
@@ -240,7 +234,6 @@ inputs:
       - int
     doc: Maximum number of read starts at one position used for learning. In 
       range [50..50000].
-    default: 500
     inputBinding:
       position: 101
       prefix: --mtc
@@ -250,7 +243,6 @@ inputs:
       - int
     doc: Maximum number of read starts at one position stored. In range 
       [5000..65000].
-    default: 65000
     inputBinding:
       position: 101
       prefix: --mtc2
@@ -275,7 +267,6 @@ inputs:
       - 'null'
       - int
     doc: Distance used to merge individual crosslink sites to binding regions.
-    default: 8
     inputBinding:
       position: 101
       prefix: --dm
@@ -317,7 +308,6 @@ inputs:
       - 'null'
       - float
     doc: Min. transition probability from state '2' to '3'.
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: --mtp
@@ -327,7 +317,6 @@ inputs:
       - int
     doc: Only sites with n >= ntp are used to learn binomial probability 
       parameters.
-    default: 10
     inputBinding:
       position: 101
       prefix: --ntp
@@ -337,7 +326,6 @@ inputs:
       - int
     doc: Only sites with n >= ntp2 are used to learn probability of transition 
       from state '2' to '2' or '3'.
-    default: 0
     inputBinding:
       position: 101
       prefix: --ntp2
@@ -373,7 +361,6 @@ inputs:
       - int
     doc: Prior enrichment threshold for initial classification. In range 
       [2..50].
-    default: 7
     inputBinding:
       position: 101
       prefix: --pet
@@ -399,7 +386,6 @@ inputs:
       - 'null'
       - int
     doc: Scoring scheme. 0 -> score_UC. In range [0..3].
-    default: 0
     inputBinding:
       position: 101
       prefix: --st

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: Data augmentation factor (1 = no augmentation)
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --aug
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Training batch size
-    default: 20
     inputBinding:
       position: 101
       prefix: --batch_size
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: The number of samples per epoch will be this times the batch size
-    default: 5000
     inputBinding:
       position: 101
       prefix: --batches_per_epoch
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Number of training epochs
-    default: 100
     inputBinding:
       position: 101
       prefix: --epochs

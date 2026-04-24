@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: How many iterations to perform after the first template-based pass.
-    default: auto
     inputBinding:
       position: 103
       prefix: --iterations
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Maximum distance from the diagonal (in base pairs) for detection.
-    default: auto
     inputBinding:
       position: 103
       prefix: --max-dist
@@ -68,7 +66,6 @@ inputs:
       - string
     doc: Minimum distance from the diagonal (in base pairs). at which detection 
       should operate.
-    default: '0'
     inputBinding:
       position: 103
       prefix: --min-dist
@@ -79,7 +76,6 @@ inputs:
     doc: Minimum distance required between patterns, in basepairs. If two 
       patterns are closer than this distance in both axes, the one with the 
       lowest score is discarded.
-    default: auto
     inputBinding:
       position: 103
       prefix: --min-separation
@@ -89,7 +85,6 @@ inputs:
       - int
     doc: Maximum number of median absolute deviations below the median of the 
       bin sums distribution allowed to consider detectable bins.
-    default: 5
     inputBinding:
       position: 103
       prefix: --n-mads
@@ -108,7 +103,6 @@ inputs:
     doc: 'Normalization / balancing behaviour. auto: weights present in the cool file
       are used. raw: raw contact values are used. force: recompute weights and overwrite
       existing values. raw'
-    default: auto
     inputBinding:
       position: 103
       prefix: --norm
@@ -118,7 +112,6 @@ inputs:
       - string
     doc: 'Which pattern to detect. This will use preset configurations for the given
       pattern. Possible values are: loops, loops_small, borders, hairpins and centromeres.'
-    default: loops
     inputBinding:
       position: 103
       prefix: --pattern
@@ -129,7 +122,6 @@ inputs:
     doc: Pearson correlation threshold when detecting patterns in the contact 
       map. Lower values leads to potentially more detections, but more false 
       positives.
-    default: auto
     inputBinding:
       position: 103
       prefix: --pearson
@@ -139,7 +131,6 @@ inputs:
       - string
     doc: Maximum percentage of non-detectable pixels (nan) in windows allowed to
       report patterns.
-    default: auto
     inputBinding:
       position: 103
       prefix: --perc-undetected
@@ -149,7 +140,6 @@ inputs:
       - string
     doc: Maximum percentage of empty (0) pixels in windows allowed to report 
       patterns.
-    default: auto
     inputBinding:
       position: 103
       prefix: --perc-zero
@@ -169,7 +159,6 @@ inputs:
     doc: If greater than 1, subsample INT contacts from the matrix. If between 0
       and 1, subsample a proportion of contacts instead. Useful when comparing 
       matrices with different coverages.
-    default: no
     inputBinding:
       position: 103
       prefix: --subsample
@@ -178,7 +167,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use in parallel.
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads
@@ -207,7 +195,6 @@ inputs:
     doc: File format used to store individual windows around each pattern. 
       Window order matches patterns inside the associated text file. Possible 
       formats are json and npy.
-    default: json
     inputBinding:
       position: 103
       prefix: --win-fmt
@@ -219,7 +206,6 @@ inputs:
       correlations. The pattern kernel will be resized to match this size. 
       Linear linear interpolation is used to fill between pixels. If not 
       specified, the default kernel size will be used instead.
-    default: auto
     inputBinding:
       position: 103
       prefix: --win-size

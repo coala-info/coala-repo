@@ -10,7 +10,6 @@ inputs:
   - id: map_dir
     type: Directory
     doc: 'Directory containing genetic maps: chr1.map, chr2.map, etc'
-    default: maps/
     inputBinding:
       position: 101
       prefix: --map-dir
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum recombination rate
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --max-rate
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of SNPs in a haplotype block
-    default: 20
     inputBinding:
       position: 101
       prefix: --max-snps
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of SNPs in a haplotype block
-    default: 7
     inputBinding:
       position: 101
       prefix: --min-snps
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Number of concurrent threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

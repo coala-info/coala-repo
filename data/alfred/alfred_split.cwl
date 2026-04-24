@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: min. mapping quality
-    default: 10
     inputBinding:
       position: 102
       prefix: --map-qual
@@ -46,7 +45,6 @@ inputs:
   - id: sample
     type: string
     doc: sample name (as in BCF)
-    default: NA12878
     inputBinding:
       position: 102
       prefix: --sample

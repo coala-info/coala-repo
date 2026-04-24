@@ -55,7 +55,6 @@ inputs:
       - float
     doc: minimum jaccard similarity used to filter edges between gene families. 
       Increasing it will improve precision but lower sensitivity a lot.
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --jaccard
@@ -80,7 +79,6 @@ inputs:
       - 'null'
       - File
     doc: log output file
-    default: stdout
     inputBinding:
       position: 101
       prefix: --log
@@ -89,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: Mode for detection (fast, profile, sensitive)
-    default: fast
     inputBinding:
       position: 101
       prefix: --mode
@@ -169,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: Number of available threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -178,7 +174,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to temporary directory
-    default: /tmp/panorama
     inputBinding:
       position: 101
       prefix: --tmp
@@ -188,7 +183,6 @@ inputs:
       - int
     doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
       for debug)
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbose

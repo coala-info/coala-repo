@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Number of allowed CIGAR changes (in base pairs) for one alignment.
-    default: 0
     inputBinding:
       position: 102
       prefix: -G
@@ -33,7 +32,6 @@ inputs:
     doc: 'Threshold for BED record intersection. If <= 0: consider any overlap (>0
       bp). If > 1: consider >`-B`-bp overlap. If 1>=`-B`>0: consider overlap with
       a fraction of >`-B` of the alignment.'
-    default: 0
     inputBinding:
       position: 102
       prefix: -B
@@ -56,7 +54,6 @@ inputs:
     doc: Chunk size for each thread. Each thread queries <-T> reads, lifts, and 
       writes. Setting a larger -T uses slightly more memory but might benefit 
       thread scaling.
-    default: 256
     inputBinding:
       position: 102
       prefix: -T
@@ -66,7 +63,6 @@ inputs:
       - File
     doc: Path to a BED file (source coordinates). Reads overlap with the regions
       are always committed.
-    default: none
     inputBinding:
       position: 102
       prefix: -r
@@ -76,7 +72,6 @@ inputs:
       - File
     doc: Path to a BED file (dest coordinates). Reads overlap with the regions 
       are always deferred.
-    default: none
     inputBinding:
       position: 102
       prefix: -D
@@ -87,7 +82,6 @@ inputs:
     doc: Number of threads used to compress/decompress HTS files. This can 
       improve thread scaling. If -t is set, the value should be left unset. The 
       value would be inferred as `max(1, t/4)`.
-    default: 0
     inputBinding:
       position: 102
       prefix: --hts_threads
@@ -106,7 +100,6 @@ inputs:
       - int
     doc: Number of threads used for lifting reads. If -t is set, the value 
       should be left unset. The value would be inferred as `t - max(1, t/4)`.
-    default: 1
     inputBinding:
       position: 102
       prefix: --lift_threads
@@ -121,7 +114,6 @@ inputs:
       - 'null'
       - string
     doc: Re-alignment preset.
-    default: '[]'
     inputBinding:
       position: 102
       prefix: -x
@@ -133,7 +125,6 @@ inputs:
     doc: 'Key-value pair of a split rule. We allow appending multiple `-S` options.
       Options: mapq:<int>, aln_score:<int>, isize:<int>, hdist:<int>, clipped_frac:<float>.
       lifted. [none]'
-    default: none
     inputBinding:
       position: 102
       prefix: -S
@@ -157,7 +148,6 @@ inputs:
       - int
     doc: Number of threads used. If -t is not set, the value would be the sum of
       --hts_threads and --lift_threads.
-    default: 1
     inputBinding:
       position: 102
       prefix: -t
@@ -166,7 +156,6 @@ inputs:
       - 'null'
       - int
     doc: Verbose level
-    default: 0
     inputBinding:
       position: 102
       prefix: -V

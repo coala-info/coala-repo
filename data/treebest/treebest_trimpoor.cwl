@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for trimming poor branches
-    default: '0'
     inputBinding:
       position: 2
 outputs:

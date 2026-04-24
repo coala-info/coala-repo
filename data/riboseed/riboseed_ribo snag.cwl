@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - File
     doc: Path to barrnap executable
-    default: barrnap
     inputBinding:
       position: 103
       prefix: --barrnap_exe
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - boolean
     doc: overwrite previous output files
-    default: false
     inputBinding:
       position: 103
       prefix: --clobber
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: length of flanking regions, in bp
-    default: 1000
     inputBinding:
       position: 103
       prefix: --flanking_length
@@ -48,7 +45,6 @@ inputs:
       - boolean
     doc: Dont bother making an MSA, calculating Shannon Entropy, BLASTing, 
       generating plots etc; just extract the regions
-    default: false
     inputBinding:
       position: 103
       prefix: --just_extract
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: kingdom for barrnap
-    default: bac
     inputBinding:
       position: 103
       prefix: --kingdom
@@ -68,7 +63,6 @@ inputs:
     doc: if the genome is not circular, and an region of interest (including 
       flanking bits) extends past chromosome end, this extends the sequence past
       chromosome origin forward by 5kb
-    default: false
     inputBinding:
       position: 103
       prefix: --linear
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - File
     doc: Path to MAFFT executable
-    default: mafft
     inputBinding:
       position: 103
       prefix: --mafft_exe
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - File
     doc: Path to makeblastdb executable
-    default: makeblastdb
     inputBinding:
       position: 103
       prefix: --makeblastdb_exe
@@ -96,7 +88,6 @@ inputs:
       - boolean
     doc: calculate kmer similarity based on aligned sequences instead of raw 
       sequences
-    default: false
     inputBinding:
       position: 103
       prefix: --msa_kmers
@@ -105,7 +96,6 @@ inputs:
       - 'null'
       - string
     doc: Path to PRANK executable
-    default: mafft
     inputBinding:
       position: 103
       prefix: --msa_tool
@@ -114,7 +104,6 @@ inputs:
       - 'null'
       - string
     doc: rename the contigs with this prefix
-    default: date (YYYYMMDD)
     inputBinding:
       position: 103
       prefix: --name
@@ -124,14 +113,12 @@ inputs:
       - boolean
     doc: default returns reverse complimented seq if majority of regions on 
       reverse strand. if --no_revcomp, this is overwridden
-    default: false
     inputBinding:
       position: 103
       prefix: --no_revcomp
   - id: output_directory
     type: Directory
     doc: output directory
-    default: /
     inputBinding:
       position: 103
       prefix: --output
@@ -142,7 +129,6 @@ inputs:
     doc: if treating as circular, this controls the length of sequence added to 
       the 5' and 3' ends to allow for selecting regions that cross the 
       chromosome's origin
-    default: 5000
     inputBinding:
       position: 103
       prefix: --padding
@@ -151,7 +137,6 @@ inputs:
       - 'null'
       - File
     doc: Path to PRANK executable
-    default: prank
     inputBinding:
       position: 103
       prefix: --prank_exe
@@ -169,7 +154,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip running BLAST Comparisons
-    default: false
     inputBinding:
       position: 103
       prefix: --skip_blast
@@ -178,7 +162,6 @@ inputs:
       - 'null'
       - boolean
     doc: Just plot entropy if MSA
-    default: false
     inputBinding:
       position: 103
       prefix: --skip_kmers
@@ -196,7 +179,6 @@ inputs:
       - 'null'
       - int
     doc: 1 = debug(), 2 = info(), 3 = warning(), 4 = error() and 5 = critical()
-    default: 2
     inputBinding:
       position: 103
       prefix: --verbosity

@@ -13,7 +13,6 @@ inputs:
       - float
     doc: Divides the original probability of correct base calls(no substitution 
       error) by this value and renormalizes
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --errorMutliplier
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of iterations for iterative proportional fitting
-    default: 200
     inputBinding:
       position: 101
       prefix: --ipfIterations
@@ -38,7 +36,6 @@ inputs:
       - float
     doc: Iterative proportional fitting procedure stops after reaching this 
       precision (%)
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --ipfPrecision
@@ -95,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads used (0=auto)
-    default: 0
     inputBinding:
       position: 101
       prefix: --threads
@@ -104,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the level of verbosity (4=everything, 0=nothing)
-    default: 4
     inputBinding:
       position: 101
       prefix: --verbosity

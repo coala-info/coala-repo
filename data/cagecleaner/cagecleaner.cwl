@@ -13,7 +13,6 @@ inputs:
       - 'null'
       - float
     doc: ANI dereplication threshold
-    default: 99.0
     inputBinding:
       position: 101
       prefix: --ani
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cores to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Number of genomes to download in one batch
-    default: 300
     inputBinding:
       position: 101
       prefix: --download_batch
@@ -82,7 +79,6 @@ inputs:
     doc: '[Only relevant for local cblaster sessions] Path to local genome folder
       containing genome files. Accepted formats are FASTA and GenBank [.fasta; .fna;
       .fa; .gbff; .gbk; .gb]. Files can be gzipped. Folder can contain other files.'
-    default: current working directory
     inputBinding:
       position: 101
       prefix: --genomes
@@ -126,7 +122,6 @@ inputs:
     doc: minimum cblaster score difference between hits to be considered 
       different. Discards outlier hits with a score difference below this 
       threshold.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min_score_diff
@@ -135,7 +130,6 @@ inputs:
       - 'null'
       - float
     doc: z-score threshold to consider hits outliers
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --min_z_score
@@ -144,7 +138,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip recovering hits by cluster content
-    default: false
     inputBinding:
       position: 101
       prefix: --no_recovery_content
@@ -153,7 +146,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip recovering hits by outlier scores
-    default: false
     inputBinding:
       position: 101
       prefix: --no_recovery_score
@@ -168,7 +160,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to store temporary files
-    default: your system's default temporary directory
     inputBinding:
       position: 101
       prefix: --temp

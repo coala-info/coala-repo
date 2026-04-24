@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Relative contribution of coding potential to mapping score
-    default: 1
     inputBinding:
       position: 103
       prefix: -P
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of mappings per transcript
-    default: 5
     inputBinding:
       position: 103
       prefix: -N
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum intron length (in bp)
-    default: 20
     inputBinding:
       position: 103
       prefix: -i
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite the mapping output directory
-    default: false
     inputBinding:
       position: 103
       prefix: -O
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Splice site characterization option (0-3, refer to documentation)
-    default: 2
     inputBinding:
       position: 103
       prefix: -s
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable stranded mapping
-    default: false
     inputBinding:
       position: 103
       prefix: -S
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads
-    default: 10
     inputBinding:
       position: 103
       prefix: -t
@@ -90,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Relative contribution of translation initiation signal to mapping score
-    default: 1
     inputBinding:
       position: 103
       prefix: -T

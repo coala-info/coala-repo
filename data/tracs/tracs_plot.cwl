@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: alpha value for plotting
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --alpha
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Column name in distance matrix to use
-    default: SNP distance
     inputBinding:
       position: 101
       prefix: --column-name
@@ -28,7 +26,6 @@ inputs:
       - type: array
         items: string
     doc: contigs for plotting
-    default: All
     inputBinding:
       position: 101
       prefix: --contigs
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: height value for plotting
-    default: 7
     inputBinding:
       position: 101
       prefix: --height
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: minimum frequency to include a variant
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min-freq
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: threshold to filter transmission distances
-    default: None
     inputBinding:
       position: 101
       prefix: --threshold
@@ -86,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: width value for plotting
-    default: 10
     inputBinding:
       position: 101
       prefix: --width

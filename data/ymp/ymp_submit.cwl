@@ -211,7 +211,6 @@ inputs:
         items: string
     doc: Select reasons for reruns. Default changed from Snakemake toonly mtime 
       for performance reasons.
-    default: mtime
     inputBinding:
       position: 102
       prefix: --rerun-triggers

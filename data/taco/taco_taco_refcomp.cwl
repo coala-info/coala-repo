@@ -11,7 +11,6 @@ inputs:
     doc: 'Run CPAT tool to for coding potential scoring. (CPAT function currently
       only supports Human, Mouse, and Zebrafish) (WARNING: The CPAT tool can take
       over an hour)'
-    default: false
     inputBinding:
       position: 101
       prefix: --cpat
@@ -22,7 +21,6 @@ inputs:
     doc: Provide a genome fasta for the genome used to produce assemblies being 
       compared. Required if "--cpat" used. CPAT uses this to obtain sequence for
       the provided transcripts
-    default: None
     inputBinding:
       position: 101
       prefix: --cpat-genome
@@ -31,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: 'Select either: human, mouse, zebrafish'
-    default: human
     inputBinding:
       position: 101
       prefix: --cpat-species
@@ -40,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: 'Run tool in parallel with N processes. (note: each core processes 1 chromosome)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-processes
@@ -49,7 +45,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for reference comparison output
-    default: taco_compare
     inputBinding:
       position: 101
       prefix: --output-dir
@@ -58,7 +53,6 @@ inputs:
       - 'null'
       - File
     doc: Reference GTF file to compare against
-    default: None
     inputBinding:
       position: 101
       prefix: --ref-gtf
@@ -67,7 +61,6 @@ inputs:
       - 'null'
       - File
     doc: GTF file used for comparison
-    default: None
     inputBinding:
       position: 101
       prefix: --test-gtf

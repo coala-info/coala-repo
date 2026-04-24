@@ -53,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Only align nodes that have maximally this many samples (default None).
-    default: None
     inputBinding:
       position: 102
       prefix: -x
@@ -62,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Min length of an exact match
-    default: 20
     inputBinding:
       position: 102
       prefix: -m
@@ -80,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Only index nodes that occur in this many samples or more (default 1).
-    default: 1
     inputBinding:
       position: 102
       prefix: -g
@@ -91,7 +88,6 @@ inputs:
     doc: Min score of an exact match (default 0), exact maches are scored by 
       their length and penalized by the indel they create with respect to 
       previously accepted exact matches.
-    default: 0
     inputBinding:
       position: 102
       prefix: -c
@@ -119,7 +115,6 @@ inputs:
       - string
     doc: Prefix of the variant and alignment graph files to produce, default is 
       "sequence1_sequence2"
-    default: sequence1_sequence2
     inputBinding:
       position: 102
       prefix: --output

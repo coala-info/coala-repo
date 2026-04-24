@@ -26,7 +26,6 @@ arguments:
 inputs:
   threads:
     type: int?
-    default: 1
     inputBinding:
       prefix: --pp-threads
       position: 1
@@ -71,7 +70,6 @@ inputs:
   min_bq:
     label: min_base_quality
     type: int?
-    default: 6
     inputBinding:
       prefix: --min-bq
     doc: 'Skip any base with baseQ smaller than INT [6]'
@@ -79,7 +77,6 @@ inputs:
   min_alt_bq:
     label: min_alterne_base_quality
     type: int?
-    default: 6
     inputBinding:
       prefix: --min-alt-bq
     doc: 'Skip alternate bases with baseQ smaller than INT [6]'
@@ -87,7 +84,6 @@ inputs:
   def_alt_bq:
     label: def_alt_base_quality
     type: int?
-    default: 0
     inputBinding:
       prefix: --def-alt-bq
     doc: 'Overwrite baseQs of alternate bases (that passed bq filter) with this value (-1: use median ref-bq; 0: keep) [0]'
@@ -95,7 +91,6 @@ inputs:
   min_jq:
     label: min_joinedq
     type: int?
-    default: 0
     inputBinding:
       prefix:  --min-jq
     doc: 'Skip any base with joinedQ smaller than INT [0]'
@@ -103,7 +98,6 @@ inputs:
   min_alt_jq:
     label: min_alt_joinedq
     type: int?
-    default: 0
     inputBinding:
       prefix: --min-alt-jq
     doc: "Skip alternate bases with joinedQ smaller than INT [0]"
@@ -111,7 +105,6 @@ inputs:
   def_alt_jq:
     label: def_alt_joinedq
     type: int?
-    default: 0
     inputBinding:
       prefix: --def-alt-jq
     doc: "Overwrite joinedQs of alternate bases (that passed jq filter) with this value (-1: use median ref-bq; 0: keep) [0]"
@@ -146,14 +139,12 @@ inputs:
   min_mq:
     label: min_mapping_quality
     type: int?
-    default: 0
     inputBinding:
       prefix: --min-mq
     doc: "Skip reads with mapping quality smaller than INT [0]"
 
   max_mapping_quality:
     type: int?
-    default: 255
     inputBinding:
       prefix: --max-mq
     doc: "Cap mapping quality at INT [255]"
@@ -178,28 +169,24 @@ inputs:
 
   replace_non_match:
     type: int?
-    default: -1
     inputBinding:
       prefix: --def-nm-q
     doc: 'If >= 0, then replace non-match base qualities with this default value [-1]'
 
   pvalue_cutoff:
     type: float?
-    default: 0.01
     inputBinding:
       prefix: --sig
     doc: "P-Value cutoff / significance level [0.010000]"
 
   bonferroni:
     type: string?
-    default: 'dynamic'
     inputBinding:
       prefix: --bonf
     doc: "Bonferroni factor. 'dynamic' (increase per actually performed test) or INT ['dynamic']"
 
   min_cov:
     type: int?
-    default: 10
     inputBinding:
       prefix: --min-cov
       position: 2
@@ -207,7 +194,6 @@ inputs:
 
   max_depth_cov:
     type: int?
-    default: 1000000
     inputBinding:
       prefix: --max-depth
     doc: "Cap coverage at this depth [1000000]"

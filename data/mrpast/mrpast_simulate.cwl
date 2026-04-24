@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Number of individuals per population.
-    default: 10
     inputBinding:
       position: 103
       prefix: --individuals
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Number of jobs (threads) to use.
-    default: 1
     inputBinding:
       position: 103
       prefix: --jobs
@@ -46,7 +44,6 @@ inputs:
       - string
     doc: Rate of recombination, or filename/prefix for recombination map. A 
       prefix will match '<prefix>*.txt'.
-    default: '1e-08'
     inputBinding:
       position: 103
       prefix: --recomb-rate
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Number of simulation replications to perform.
-    default: 20
     inputBinding:
       position: 103
       prefix: --replicates
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Length of sequences in base-pairs.
-    default: 100000000
     inputBinding:
       position: 103
       prefix: --seq-len

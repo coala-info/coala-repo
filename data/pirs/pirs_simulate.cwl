@@ -139,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: Generate inserts (fragments) having an average length of LEN.
-    default: 180
     inputBinding:
       position: 102
       prefix: --insert-len-mean
@@ -148,7 +147,6 @@ inputs:
       - 'null'
       - string
     doc: Set the standard deviation of the insert (fragment) length.
-    default: 10% of insert length mean.
     inputBinding:
       position: 102
       prefix: --insert-len-sd
@@ -250,7 +248,6 @@ inputs:
     doc: The string "text" or "gzip" to specify the type of the output FASTQ 
       files containing the simulated reads of the genome, as well as the log 
       files.
-    default: text
     inputBinding:
       position: 102
       prefix: --output-file-type
@@ -259,7 +256,6 @@ inputs:
       - 'null'
       - string
     doc: Use PREFIX as the prefix of the output files.
-    default: pirs_reads
     inputBinding:
       position: 102
       prefix: --output-prefix
@@ -269,7 +265,6 @@ inputs:
       - int
     doc: Set the ASCII shift of the quality value (usually 64 or 33 for Illumina
       data).
-    default: 33
     inputBinding:
       position: 102
       prefix: --phred-offset
@@ -279,7 +274,6 @@ inputs:
       - int
     doc: Set the ASCII shift of the quality value (usually 64 or 33 for Illumina
       data).
-    default: 33
     inputBinding:
       position: 102
       prefix: --quality-shift
@@ -304,7 +298,6 @@ inputs:
       - 'null'
       - int
     doc: Generate reads having a length of LEN.
-    default: 100
     inputBinding:
       position: 102
       prefix: --read-len

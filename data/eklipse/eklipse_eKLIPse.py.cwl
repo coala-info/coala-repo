@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: BLAST cost to extend a gap
-    default: 2
     inputBinding:
       position: 101
       prefix: -gapext
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: BLAST cost to open a gap
-    default: 0:proton, 5:illumina
     inputBinding:
       position: 101
       prefix: -gapopen
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: BLAST %coverage threshold
-    default: 70
     inputBinding:
       position: 101
       prefix: -cov
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: BLAST %identity threshold
-    default: 80
     inputBinding:
       position: 101
       prefix: -id
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: BLASTn bin path
-    default: $PATH
     inputBinding:
       position: 101
       prefix: -blastn
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Breakpoint BLAST shift length
-    default: 5
     inputBinding:
       position: 101
       prefix: -shift
@@ -63,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: circos bin path
-    default: $PATH
     inputBinding:
       position: 101
       prefix: -circos
@@ -72,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Downsampling reads number (0=disable)
-    default: 500000
     inputBinding:
       position: 101
       prefix: -downcov
@@ -81,7 +73,6 @@ inputs:
       - 'null'
       - boolean
     doc: Filter non-bilateral BLAST deletions
-    default: true
     inputBinding:
       position: 101
       prefix: -bilateral
@@ -96,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: makeblastdb bin path
-    default: $PATH
     inputBinding:
       position: 101
       prefix: -makeblastdb
@@ -105,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal number of BLAST per breakpoint
-    default: 1
     inputBinding:
       position: 101
       prefix: -minblast
@@ -114,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal resulting mitochondria size
-    default: 1000
     inputBinding:
       position: 101
       prefix: -mitosize
@@ -131,7 +119,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory path
-    default: current
     inputBinding:
       position: 101
       prefix: -out
@@ -140,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Read length threshold
-    default: 100
     inputBinding:
       position: 101
       prefix: -minlen
@@ -149,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: Read quality threshold
-    default: 20
     inputBinding:
       position: 101
       prefix: -minq
@@ -164,7 +149,6 @@ inputs:
       - 'null'
       - string
     doc: samtools bin path
-    default: $PATH
     inputBinding:
       position: 101
       prefix: -samtools
@@ -173,7 +157,6 @@ inputs:
       - 'null'
       - int
     doc: Soft-clipping minimal length
-    default: 25
     inputBinding:
       position: 101
       prefix: -scsize
@@ -190,7 +173,6 @@ inputs:
       - 'null'
       - int
     doc: Number of thread to use
-    default: 2
     inputBinding:
       position: 101
       prefix: -thread
@@ -199,7 +181,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temporary directory path
-    default: /tmp
     inputBinding:
       position: 101
       prefix: -tmp
@@ -208,7 +189,6 @@ inputs:
       - 'null'
       - int
     doc: Upstream mapping length
-    default: 20
     inputBinding:
       position: 101
       prefix: -mapsize

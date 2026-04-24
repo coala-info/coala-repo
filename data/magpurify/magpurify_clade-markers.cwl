@@ -16,7 +16,6 @@ inputs:
       - string
     doc: Path to reference database. By default, the MAGPURIFY environmental 
       variable is used
-    default: None
     inputBinding:
       position: 102
       prefix: --db
@@ -26,7 +25,6 @@ inputs:
       - type: array
         items: string
     doc: 'List of clades to exclude (ex: s__Variovorax_sp_CF313)'
-    default: None
     inputBinding:
       position: 102
       prefix: --exclude_clades
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Lowest rank for bin classification
-    default: None
     inputBinding:
       position: 102
       prefix: --lowest_rank
@@ -45,7 +42,6 @@ inputs:
       - float
     doc: Min fraction of bin length supported by contigs that agree with 
       consensus taxonomy
-    default: 0.6
     inputBinding:
       position: 102
       prefix: --min_bin_fract
@@ -55,7 +51,6 @@ inputs:
       - float
     doc: Min fraction of classified contig length that agree with consensus 
       taxonomy
-    default: 0.75
     inputBinding:
       position: 102
       prefix: --min_contig_fract
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: Min fraction of classified genes that agree with consensus taxonomy
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --min_gene_fract
@@ -74,7 +68,6 @@ inputs:
       - string
     doc: Min number of genes that agree with consensus taxonomy 
       (default=rank-specific-cutoffs)
-    default: None
     inputBinding:
       position: 102
       prefix: --min_genes
@@ -83,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

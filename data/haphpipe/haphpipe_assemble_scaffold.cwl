@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print commands but do not run
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: Additional options
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_tmp
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not write output to console (silence stdout and stderr)
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: Name to append to scaffold sequence.
-    default: sample01
     inputBinding:
       position: 101
       prefix: --seqname

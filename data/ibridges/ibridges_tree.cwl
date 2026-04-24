@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum depth of the tree to be shown, default no limit.
-    default: no limit
     inputBinding:
       position: 102
       prefix: --depth
@@ -34,7 +33,6 @@ inputs:
       - int
     doc: Show only up to this number of dataobject in the same collection, 
       default 10.
-    default: 10
     inputBinding:
       position: 102
       prefix: --show-max

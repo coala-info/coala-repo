@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: allele frequency tag
-    default: AF
     inputBinding:
       position: 102
       prefix: --aftag
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: type of estimator. 0:plink (default) 1:king-robust 2:genetic-relationship-matrix
-    default: 0
     inputBinding:
       position: 102
       prefix: --method

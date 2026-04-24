@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Burn-in samples.
-    default: 500
     inputBinding:
       position: 103
       prefix: -b
@@ -31,7 +30,6 @@ inputs:
       - float
     doc: Ignore TAs occuring within given percentage (as integer) of the C 
       terminus.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: -iC
@@ -41,7 +39,6 @@ inputs:
       - float
     doc: Ignore TAs occuring within given percentage (as integer) of the N 
       terminus.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: -iN
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Smallest read-count to consider.
-    default: 1
     inputBinding:
       position: 103
       prefix: -m
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Number of samples.
-    default: 10000
     inputBinding:
       position: 103
       prefix: -s
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: How to handle replicates. Sum or Mean.
-    default: Sum
     inputBinding:
       position: 103
       prefix: -r
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Trims all but every t-th value.
-    default: 1
     inputBinding:
       position: 103
       prefix: -t

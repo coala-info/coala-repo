@@ -124,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: the kmer size to use when computing Jaccard similarity of insertions
-    default: 9
     inputBinding:
       position: 101
       prefix: k_jaccard
@@ -134,7 +133,6 @@ inputs:
       - int
     doc: the power to use in kd-tree distances (1 is Manhattan, 2 is Euclidean, 
       etc.)
-    default: 2
     inputBinding:
       position: 101
       prefix: kd_tree_norm
@@ -169,7 +167,6 @@ inputs:
       - 'null'
       - int
     doc: the maximum distance variants can be apart when being merged
-    default: inf
     inputBinding:
       position: 101
       prefix: max_dist
@@ -179,7 +176,6 @@ inputs:
       - float
     doc: the proportion of the length of each variant to set distance threshold 
       to
-    default: 0.5
     inputBinding:
       position: 101
       prefix: max_dist_linear
@@ -188,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: the maximum length of duplication that can be converted to an insertion
-    default: 10k
     inputBinding:
       position: 101
       prefix: max_dup_length
@@ -198,7 +193,6 @@ inputs:
       - int
     doc: the minimum distance threshold a variant can have when using 
       max_dist_linear
-    default: 100
     inputBinding:
       position: 101
       prefix: min_dist
@@ -207,7 +201,6 @@ inputs:
       - 'null'
       - float
     doc: the minimum reciprocal overlap for DEL/INV/DUP SVs
-    default: 0
     inputBinding:
       position: 101
       prefix: min_overlap
@@ -216,7 +209,6 @@ inputs:
       - 'null'
       - float
     doc: the minimum sequence identity for two insertions to be merged
-    default: 0
     inputBinding:
       position: 101
       prefix: min_seq_id
@@ -225,7 +217,6 @@ inputs:
       - 'null'
       - int
     doc: the minimum number of callsets a variant must be in to be output
-    default: 1
     inputBinding:
       position: 101
       prefix: min_support
@@ -269,7 +260,6 @@ inputs:
       - 'null'
       - Directory
     doc: the directory where intermediate files go
-    default: output
     inputBinding:
       position: 101
       prefix: out_dir
@@ -339,7 +329,6 @@ inputs:
       - 'null'
       - string
     doc: the path to the samtools executable used for coverting duplications
-    default: samtools
     inputBinding:
       position: 101
       prefix: samtools_path
@@ -348,7 +337,6 @@ inputs:
       - 'null'
       - int
     doc: the minimum length a variant needs to be in the specific callset
-    default: 30
     inputBinding:
       position: 101
       prefix: spec_len
@@ -358,7 +346,6 @@ inputs:
       - int
     doc: the minimum number of reads a variant needs to be in the specific 
       callset
-    default: 10
     inputBinding:
       position: 101
       prefix: spec_reads
@@ -367,7 +354,6 @@ inputs:
       - 'null'
       - int
     doc: the number of threads to use for merging the variants
-    default: 1
     inputBinding:
       position: 101
       prefix: threads

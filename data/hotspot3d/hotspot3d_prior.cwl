@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - float
     doc: 3D distance cutoff (<= Angstroms)
-    default: 20
     inputBinding:
       position: 101
       prefix: --3d-distance-cutoff
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Linear distance cutoff (> peptides)
-    default: 0
     inputBinding:
       position: 101
       prefix: --linear-cutoff
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: p_value cutoff(<=)
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --p-value-cutoff

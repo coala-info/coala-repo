@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: Rename the cancer type. e.g. CRC, STAD, PanCancer etc.
-    default: None
     inputBinding:
       position: 101
       prefix: --cancer_type
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - File
     doc: The path for the genes must be included for this model.
-    default: None
     inputBinding:
       position: 101
       prefix: --gene_list
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Add description for the input file.
-    default: None
     inputBinding:
       position: 101
       prefix: --input_description
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: Add description for this trained model.
-    default: None
     inputBinding:
       position: 101
       prefix: --model_description

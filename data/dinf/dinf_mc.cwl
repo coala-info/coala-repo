@@ -10,7 +10,6 @@ inputs:
       - int
     doc: Number of full passes over the training dataset when training the 
       discriminator.
-    default: 1
     inputBinding:
       position: 101
       prefix: --epochs
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations.
-    default: 1
     inputBinding:
       position: 101
       prefix: --iterations
@@ -38,7 +36,6 @@ inputs:
       - Directory
     doc: Folder to output results. If not specified, the current directory will 
       be used.
-    default: None
     inputBinding:
       position: 101
       prefix: --output-folder
@@ -51,7 +48,6 @@ inputs:
       used. The number of cores used for CPU-based neural networks is not set 
       with this parameter---instead use the`taskset` command. See 
       https://github.com/google/jax/issues/1539
-    default: None
     inputBinding:
       position: 101
       prefix: --parallelism
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Number of replicates for Monte Carlo proposals.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --proposal-replicates
@@ -81,7 +76,6 @@ inputs:
       trained networks for the same seed value. Also note that operations on a 
       GPU are not fully determinstic, so training or applying a neural network 
       twice with the same seed value will not produce identical results.
-    default: None
     inputBinding:
       position: 101
       prefix: --seed
@@ -91,7 +85,6 @@ inputs:
       - int
     doc: Size of the test dataset used to evaluate the discriminator after each 
       training epoch.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --test-replicates
@@ -101,7 +94,6 @@ inputs:
       - int
     doc: In each iteration, accept only the N top proposals, ranked by 
       discriminator prediction.
-    default: None
     inputBinding:
       position: 101
       prefix: --top
@@ -110,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the dataset used to train the discriminator.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --training-replicates

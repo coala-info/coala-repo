@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Report all valid alignments per read or pair (default: False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --count-pair
@@ -115,7 +114,6 @@ inputs:
       (median normalization, default), "total" (normalization by total read 
       counts), "control" (normalization by control sgRNAs specified by the 
       --control-sgrna option).
-    default: median
     inputBinding:
       position: 101
       prefix: --norm-method
@@ -124,7 +122,6 @@ inputs:
       - 'null'
       - string
     doc: The prefix of the output file(s). Default sample1.
-    default: sample1
     inputBinding:
       position: 101
       prefix: --output-prefix
@@ -161,7 +158,6 @@ inputs:
     doc: 'Length of the sgRNA. Default 20. ATTENTION: after v0.5.3, the program will
       automatically determine the sgRNA length from library file; so only use this
       if you turn on the --unmapped-to-file option.'
-    default: 20
     inputBinding:
       position: 101
       prefix: --sgrna-len
@@ -182,7 +178,6 @@ inputs:
       trimming lengths, separated by comma (,); for example, "7,8". Use "AUTO" 
       to allow MAGeCK to automatically determine the trimming length. Default 
       AUTO.
-    default: AUTO
     inputBinding:
       position: 101
       prefix: --trim-5

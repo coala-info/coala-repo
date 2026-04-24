@@ -57,7 +57,6 @@ inputs:
     label: Threads
     inputBinding:
       position: 3
-    default: 4
 
 outputs:
   fastq_out:

@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: Copy template config to file
-    default: config.yaml
     inputBinding:
       position: 101
       prefix: --configfile

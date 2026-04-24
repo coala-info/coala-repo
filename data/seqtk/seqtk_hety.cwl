@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: '# start positions in a window'
-    default: 5
     inputBinding:
       position: 102
       prefix: -t
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: window size
-    default: 50000
     inputBinding:
       position: 102
       prefix: -w

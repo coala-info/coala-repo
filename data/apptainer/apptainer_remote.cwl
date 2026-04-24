@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - File
     doc: path to the file holding remote endpoint configurations
-    default: /user/qianghu/.apptainer/remote.yaml
     inputBinding:
       position: 102
       prefix: --config

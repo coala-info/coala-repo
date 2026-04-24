@@ -25,7 +25,6 @@ inputs:
       - string
     doc: 'Use grammar <string>, defaults to NUS. Available codes: NUS, UNA, RUN, IVO,
       BJK, YRN, UYN, RY3, BK2'
-    default: NUS
     inputBinding:
       position: 102
       prefix: -g

@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: only include lineages that are confirmed by cov-lineages
-    default: true
     inputBinding:
       position: 101
       prefix: --noncl
@@ -28,7 +27,6 @@ inputs:
       - Directory
     doc: Output directory to save updated files.if this option is used, the 
       barcodes are onlydownloaded to the directory specified.
-    default: '""'
     inputBinding:
       position: 101
       prefix: --outdir
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Pathogen to provide update for
-    default: SARS-CoV-2
     inputBinding:
       position: 101
       prefix: --pathogen

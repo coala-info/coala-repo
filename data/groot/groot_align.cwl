@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: containment threshold for the LSH ensemble
-    default: 0.99
     inputBinding:
       position: 101
       prefix: --contThresh
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory to save variation graphs to
-    default: ./groot-graphs-20260225205238
     inputBinding:
       position: 101
       prefix: --graphDir
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - File
     doc: filename for log file
-    default: groot.log
     inputBinding:
       position: 101
       prefix: --log
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: minimum number of k-mers covering each base of a graph segment
-    default: 1
     inputBinding:
       position: 101
       prefix: --minKmerCov
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: number of processors to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --processors

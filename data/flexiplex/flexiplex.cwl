@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add a _C suffix to the read identifier of any chimeric reads.
-    default: false
     inputBinding:
       position: 102
       prefix: -c
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum edit distance to barcode.
-    default: 2
     inputBinding:
       position: 102
       prefix: -e
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum edit distance to primer+polyT.
-    default: 8
     inputBinding:
       position: 102
       prefix: -f
@@ -82,7 +79,6 @@ inputs:
       - boolean
     doc: Replace read ID with barcodes+UMI, remove search strings including flanking
       sequenence and split read if multiple barcodes found.
-    default: true
     inputBinding:
       position: 102
       prefix: -i
@@ -91,7 +87,6 @@ inputs:
       - 'null'
       - boolean
     doc: Sort reads into separate files by barcode.
-    default: false
     inputBinding:
       position: 102
       prefix: -s
@@ -100,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 1
     inputBinding:
       position: 102
       prefix: -p

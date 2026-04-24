@@ -36,7 +36,6 @@ inputs:
   aln_score:
     label: Kpax score type to use for filtering structures
     type: string?
-    default: Mscore
     inputBinding:
       position: 3
       prefix: -s
@@ -44,7 +43,6 @@ inputs:
   threshold_val:
     label: The threshold to use for given aln_score
     type: float?
-    default: 0.6
     inputBinding:
       position: 4
       prefix: -t

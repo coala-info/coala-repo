@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: First number of hops
-    default: 1
     inputBinding:
       position: 103
       prefix: -f
@@ -110,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: Base UDP port number used in probes
-    default: 33434
     inputBinding:
       position: 103
       prefix: -p
@@ -119,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: Number of probes per hop
-    default: 3
     inputBinding:
       position: 103
       prefix: -q
@@ -136,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: Type-of-service in probe packets
-    default: 0
     inputBinding:
       position: 103
       prefix: -t
@@ -153,7 +149,6 @@ inputs:
       - 'null'
       - int
     doc: Wait for a response
-    default: 3
     inputBinding:
       position: 103
       prefix: -w

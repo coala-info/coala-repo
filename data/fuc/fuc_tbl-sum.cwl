@@ -59,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: Delimiter to use
-    default: "'\\t'"
     inputBinding:
       position: 102
       prefix: --sep

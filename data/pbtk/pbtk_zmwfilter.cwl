@@ -67,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL).'
-    default: WARN
     inputBinding:
       position: 102
       prefix: --log-level
@@ -85,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Include only ZMWs that have >= N subreads.
-    default: 0
     inputBinding:
       position: 102
       prefix: --num-passes
@@ -94,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use, 0 means autodetection.
-    default: 0
     inputBinding:
       position: 102
       prefix: --num-threads

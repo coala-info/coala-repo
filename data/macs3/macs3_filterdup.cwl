@@ -13,7 +13,6 @@ inputs:
       - int
     doc: Buffer size for incrementally increasing internal array size to store 
       reads alignment information.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --buffer-size
@@ -32,7 +31,6 @@ inputs:
       - string
     doc: Format of tag file, "AUTO", "BED", "ELAND", "ELANDMULTI", 
       "ELANDEXPORT", "SAM", "BAM", "BOWTIE", "BAMPE", or "BEDPE".
-    default: AUTO
     inputBinding:
       position: 101
       prefix: --format
@@ -43,7 +41,6 @@ inputs:
     doc: Effective genome size. It can be 1.0e+9 or 1000000000, or 
       shortcuts:'hs' for human, 'mm' for mouse, 'ce' for C. elegans and 'dm' for
       fruitfly.
-    default: hs
     inputBinding:
       position: 101
       prefix: --gsize
@@ -62,7 +59,6 @@ inputs:
       - string
     doc: "It controls the 'macs3 filterdup' behavior towards duplicate tags/pairs
       at the exact same location. Options: 'auto', 'all', or an integer."
-    default: auto
     inputBinding:
       position: 101
       prefix: --keep-dup
@@ -83,7 +79,6 @@ inputs:
       - 'null'
       - float
     doc: Pvalue cutoff for binomial distribution test.
-    default: 1e-05
     inputBinding:
       position: 101
       prefix: --pvalue

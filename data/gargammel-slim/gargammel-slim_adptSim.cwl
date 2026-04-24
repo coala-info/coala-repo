@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Append BAM tags or to deflines if adapters are added
-    default: not on/not used
     inputBinding:
       position: 102
       prefix: -name
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Append this string to deflines or BAM tags
-    default: not on/not used
     inputBinding:
       position: 102
       prefix: -tag
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Adapter that is observed after the forward read
-    default: AGATCGGAAG...
     inputBinding:
       position: 102
       prefix: -f
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Desired read length
-    default: 100
     inputBinding:
       position: 102
       prefix: -l
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: Adapter that is observed after the reverse read
-    default: AGATCGGAAG...
     inputBinding:
       position: 102
       prefix: -s

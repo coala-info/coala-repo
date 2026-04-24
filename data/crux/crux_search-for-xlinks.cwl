@@ -43,7 +43,6 @@ inputs:
     doc: Specify a variable modification to apply to C-terminus of peptides. . 
       Note that this parameter only takes effect when specified in the parameter
       file.
-    default: NO MODS
     inputBinding:
       position: 105
       prefix: --cmod
@@ -54,7 +53,6 @@ inputs:
     doc: Estimate the parameters of the score distribution for each spectrum by 
       fitting to a Weibull distribution, and compute a p-value for each xlink 
       product. This option is only available when use-old-xlink=F.
-    default: false
     inputBinding:
       position: 105
       prefix: --compute-p-values
@@ -70,7 +68,6 @@ inputs:
       overridden. Note that the Sp computation requires re-processing each 
       observed spectrum, so turning on this switch involves significant 
       computational overhead.
-    default: false
     inputBinding:
       position: 105
       prefix: --compute-sp
@@ -83,7 +80,6 @@ inputs:
       are reported for each spectrum, irrespective of whether the matches 
       involve target or decoy peptides.Note that when used with 
       search-for-xlinks, this parameter only has an effect if use-old-xlink=F.
-    default: false
     inputBinding:
       position: 105
       prefix: --concat
@@ -102,7 +98,6 @@ inputs:
       not before P which is represented as [RK]|{P}. AspN cuts after any residue
       but only before D which is represented as [X]|[D]. To prevent the 
       sequences from being digested at all, use [Z]|[Z].
-    default: ''
     inputBinding:
       position: 105
       prefix: --custom-enzyme
@@ -113,7 +108,6 @@ inputs:
     doc: Specify whether every peptide in the database must have two enzymatic 
       termini (full-digest) or if peptides with only one enzymatic terminus are 
       also included (partial-digest).
-    default: full-digest
     inputBinding:
       position: 105
       prefix: --digestion
@@ -130,7 +124,6 @@ inputs:
       ([FL]|{P}), elastase-trypsin-chymotrypsin ([ALIVKRWFY]|{P}). Specifying --enzyme
       no-enzyme yields a non-enzymatic digest. Warning: the resulting index may be
       quite large.'
-    default: trypsin
     inputBinding:
       position: 105
       prefix: --enzyme
@@ -139,7 +132,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include the file column in tab-delimited output.
-    default: true
     inputBinding:
       position: 105
       prefix: --file-column
@@ -148,7 +140,6 @@ inputs:
       - 'null'
       - string
     doc: Specify which isotopes to use in calculating fragment ion mass.
-    default: mono
     inputBinding:
       position: 105
       prefix: --fragment-mass
@@ -161,7 +152,6 @@ inputs:
       (2) precursor_mass +/- window, and (3) precursor_mass + neutron_mass +/- window.
       The window size is defined from the precursor-window and precursor-window-type
       parameters. This option is only available when use-old-xlink=F.'
-    default: '0'
     inputBinding:
       position: 105
       prefix: --isotope-windows
@@ -171,7 +161,6 @@ inputs:
       - string
     doc: Specify the type of isotopic masses to use when calculating the peptide
       mass.
-    default: mono
     inputBinding:
       position: 105
       prefix: --isotopic-mass
@@ -183,7 +172,6 @@ inputs:
       the charge state of the peptide ("peptide"). If the max-ion-charge is 
       greater than the charge state of the peptide, then the maximum is the 
       peptide charge.
-    default: peptide
     inputBinding:
       position: 105
       prefix: --max-ion-charge
@@ -192,7 +180,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum length of peptides to consider.
-    default: 50
     inputBinding:
       position: 105
       prefix: --max-length
@@ -201,7 +188,6 @@ inputs:
       - 'null'
       - float
     doc: The maximum mass (in Da) of peptides to consider.
-    default: 7200.0
     inputBinding:
       position: 105
       prefix: --max-mass
@@ -211,7 +197,6 @@ inputs:
       - int
     doc: The maximum number of modifications that can be applied to a single 
       peptide.
-    default: 255
     inputBinding:
       position: 105
       prefix: --max-mods
@@ -221,7 +206,6 @@ inputs:
       - int
     doc: Specify the maximum number of modifications allowed on a crosslinked 
       peptide. This option is only available when use-old-xlink=F.
-    default: 255
     inputBinding:
       position: 105
       prefix: --max-xlink-mods
@@ -230,7 +214,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum length of peptides to consider.
-    default: 6
     inputBinding:
       position: 105
       prefix: --min-length
@@ -239,7 +222,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum mass (in Da) of peptides to consider.
-    default: 200.0
     inputBinding:
       position: 105
       prefix: --min-mass
@@ -249,7 +231,6 @@ inputs:
       - int
     doc: Keep shuffling and collecting XCorr scores until the minimum number of 
       points for weibull fitting (using targets and decoys) is achieved.
-    default: 4000
     inputBinding:
       position: 105
       prefix: --min-weibull-points
@@ -259,7 +240,6 @@ inputs:
       - int
     doc: Maximum number of missed cleavages per peptide to allow in enzymatic 
       digestion.
-    default: 0
     inputBinding:
       position: 105
       prefix: --missed-cleavages
@@ -278,7 +258,6 @@ inputs:
       well as two moifications of masses +14 and +2. In this case, the amino acid
       would be reported as D[16] with 'mod-only', D[131] with 'total', and D[14,2]
       with 'separate'."
-    default: mod-only
     inputBinding:
       position: 105
       prefix: --mod-mass-format
@@ -287,7 +266,6 @@ inputs:
       - 'null'
       - int
     doc: Set the precision for modifications as written to .txt files.
-    default: 2
     inputBinding:
       position: 105
       prefix: --mod-precision
@@ -297,7 +275,6 @@ inputs:
       - string
     doc: 'Expression for static and variable mass modifications to include. Specify
       a comma-separated list of modification sequences of the form: C+57.02146,2M+15.9949,1STY+79.966331,...'
-    default: C+57.02146,2M+15.9949,1STY+79.966331
     inputBinding:
       position: 105
       prefix: --mods-spec
@@ -307,7 +284,6 @@ inputs:
       - string
     doc: Provides a list of amino acids and their mass modifications to consider
       as candidate for mono-/dead- links. Format is the same as mods-spec.
-    default: ''
     inputBinding:
       position: 105
       prefix: --mono-link
@@ -319,7 +295,6 @@ inputs:
       spectra, this parameter specifies the location of the left edge of the 
       first bin, relative to mass = 0 (i.e., mz-bin-offset = 0.xx means the left
       edge of the first bin will be located at +0.xx Da).
-    default: 0.4
     inputBinding:
       position: 105
       prefix: --mz-bin-offset
@@ -333,7 +308,6 @@ inputs:
       floor((x/mz-bin-width) + 1.0 - mz-bin-offset), where x is the observed m/z
       value. For low resolution ion trap ms/ms data 1.0005079 and for high 
       resolution ms/ms 0.02 is recommended.
-    default: 1.0005079
     inputBinding:
       position: 105
       prefix: --mz-bin-width
@@ -344,7 +318,6 @@ inputs:
     doc: Specify a variable modification to apply to N-terminus of peptides. . 
       Note that this parameter only takes effect when specified in the parameter
       file.
-    default: NO MODS
     inputBinding:
       position: 105
       prefix: --nmod
@@ -353,7 +326,6 @@ inputs:
       - 'null'
       - string
     doc: The name of the directory where output files will be created.
-    default: crux-output
     inputBinding:
       position: 105
       prefix: --output-dir
@@ -363,7 +335,6 @@ inputs:
       - boolean
     doc: Replace existing files if true or fail when trying to overwrite a file 
       if false.
-    default: false
     inputBinding:
       position: 105
       prefix: --overwrite
@@ -372,7 +343,6 @@ inputs:
       - 'null'
       - string
     doc: A file containing parameters.
-    default: ''
     inputBinding:
       position: 105
       prefix: --parameter-file
@@ -383,7 +353,6 @@ inputs:
     doc: Tolerance used for matching peptides to spectra. Peptides must be 
       within +/- 'precursor-window' of the spectrum value. The precursor window 
       units depend upon precursor-window-type.
-    default: 3.0
     inputBinding:
       position: 105
       prefix: --precursor-window
@@ -406,7 +375,6 @@ inputs:
       the mass type. The lower bound of the mass window is then defined as the 
       spectrum mass / (1.0 + (precursor-window / 1000000)) and the upper bound 
       is defined as spectrum mass / (1.0 - (precursor-window / 1000000)).
-    default: mass
     inputBinding:
       position: 105
       prefix: --precursor-window-type
@@ -416,7 +384,6 @@ inputs:
       - string
     doc: Window type to use in conjunction with the precursor-window-weibull 
       parameter.
-    default: mass
     inputBinding:
       position: 105
       prefix: --precursor-window-type-weibull
@@ -427,7 +394,6 @@ inputs:
     doc: Search decoy peptides within +/- precursor-window-weibull of the 
       precursor mass. The resulting scores are used only for fitting the Weibull
       distribution
-    default: 20.0
     inputBinding:
       position: 105
       prefix: --precursor-window-weibull
@@ -437,7 +403,6 @@ inputs:
       - int
     doc: Show search progress by printing every n spectra searched. Set to 0 to 
       show no search progress.
-    default: 1000
     inputBinding:
       position: 105
       prefix: --print-search-progress
@@ -447,7 +412,6 @@ inputs:
       - boolean
     doc: If there is no cross-link candidate found, then don't bother looking 
       for linear, self-loop, and dead-link candidates.
-    default: false
     inputBinding:
       position: 105
       prefix: --require-xlink-candidate
@@ -457,7 +421,6 @@ inputs:
       - string
     doc: A single scan number or a range of numbers to be searched. Range should
       be specified as 'first-last' which will include scans 'first' and 'last'.
-    default: ''
     inputBinding:
       position: 105
       prefix: --scan-number
@@ -468,7 +431,6 @@ inputs:
     doc: When given a unsigned integer value seeds the random number generator 
       with that value. When given the string "time" seeds the random number 
       generator with the system time.
-    default: '1'
     inputBinding:
       position: 105
       prefix: --seed
@@ -480,7 +442,6 @@ inputs:
       searched and spectra with multiple charge states will be searched once at 
       each charge state. With 1, 2, or 3 only spectra with that charge state 
       will be searched.
-    default: all
     inputBinding:
       position: 105
       prefix: --spectrum-charge
@@ -489,7 +450,6 @@ inputs:
       - 'null'
       - float
     doc: The highest spectrum m/z to search in the ms2 file.
-    default: 1000000000.0
     inputBinding:
       position: 105
       prefix: --spectrum-max-mz
@@ -498,7 +458,6 @@ inputs:
       - 'null'
       - float
     doc: The lowest spectrum m/z to search in the ms2 file.
-    default: 0.0
     inputBinding:
       position: 105
       prefix: --spectrum-min-mz
@@ -507,7 +466,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the parser to use for reading in MS/MS spectra.
-    default: pwiz
     inputBinding:
       position: 105
       prefix: --spectrum-parser
@@ -516,7 +474,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the number of matches to report for each spectrum.
-    default: 5
     inputBinding:
       position: 105
       prefix: --top-match
@@ -526,7 +483,6 @@ inputs:
       - boolean
     doc: Consider a-ions in the search? Note that an a-ion is equivalent to a 
       neutral loss of CO from the b-ion. Peak height is 10 (in arbitrary units).
-    default: false
     inputBinding:
       position: 105
       prefix: --use-a-ions
@@ -535,7 +491,6 @@ inputs:
       - 'null'
       - boolean
     doc: Consider b-ions in the search? Peak height is 50 (in arbitrary units).
-    default: true
     inputBinding:
       position: 105
       prefix: --use-b-ions
@@ -544,7 +499,6 @@ inputs:
       - 'null'
       - boolean
     doc: Consider c-ions in the search? Peak height is 50 (in arbitrary units).
-    default: false
     inputBinding:
       position: 105
       prefix: --use-c-ions
@@ -555,7 +509,6 @@ inputs:
     doc: Include flanking peaks around singly charged b and y theoretical ions. 
       Each flanking peak occurs in the adjacent m/z bin and has half the 
       intensity of the primary peak.
-    default: false
     inputBinding:
       position: 105
       prefix: --use-flanking-peaks
@@ -567,7 +520,6 @@ inputs:
       version of the code is run. The new version supports variable 
       modifications and can handle more complex databases. This new code is 
       still in development and should be considered a beta release.
-    default: true
     inputBinding:
       position: 105
       prefix: --use-old-xlink
@@ -576,7 +528,6 @@ inputs:
       - 'null'
       - boolean
     doc: Consider x-ions in the search? Peak height is 10 (in arbitrary units).
-    default: false
     inputBinding:
       position: 105
       prefix: --use-x-ions
@@ -585,7 +536,6 @@ inputs:
       - 'null'
       - boolean
     doc: Consider y-ions in the search? Peak height is 50 (in arbitrary units).
-    default: true
     inputBinding:
       position: 105
       prefix: --use-y-ions
@@ -594,7 +544,6 @@ inputs:
       - 'null'
       - boolean
     doc: Consider z-ions in the search? Peak height is 50 (in arbitrary units).
-    default: false
     inputBinding:
       position: 105
       prefix: --use-z-ions
@@ -604,7 +553,6 @@ inputs:
       - boolean
     doc: Specify whether, when parsing an MS2 spectrum file, Crux obtains the 
       precursor mass information from the "S" line or the "Z" line.
-    default: true
     inputBinding:
       position: 105
       prefix: --use-z-line
@@ -616,7 +564,6 @@ inputs:
       messages, including all those at lower verbosity levels: 0-fatal errors, 10-non-fatal
       errors, 20-warnings, 30-information on the progress of execution, 40-more progress
       information, 50-debug info, 60-detailed debug info.'
-    default: 30
     inputBinding:
       position: 105
       prefix: --verbosity
@@ -625,7 +572,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include dead-end peptides in the search.
-    default: true
     inputBinding:
       position: 105
       prefix: --xlink-include-deadends
@@ -634,7 +580,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include inter-protein cross-link candidates within the search.
-    default: true
     inputBinding:
       position: 105
       prefix: --xlink-include-inter
@@ -643,7 +588,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include crosslink candidates that are both inter and intra.
-    default: true
     inputBinding:
       position: 105
       prefix: --xlink-include-inter-intra
@@ -652,7 +596,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include intra-protein cross-link candiates within the search.
-    default: true
     inputBinding:
       position: 105
       prefix: --xlink-include-intra
@@ -661,7 +604,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include linear peptides in the search.
-    default: true
     inputBinding:
       position: 105
       prefix: --xlink-include-linears
@@ -670,7 +612,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include self-loop peptides in the search.
-    default: true
     inputBinding:
       position: 105
       prefix: --xlink-include-selfloops
@@ -680,7 +621,6 @@ inputs:
       - string
     doc: List of amino acids for which the cross-linker can prevent cleavage. 
       This option is only available when use-old-xlink=F.
-    default: K
     inputBinding:
       position: 105
       prefix: --xlink-prevents-cleavage
@@ -690,7 +630,6 @@ inputs:
       - int
     doc: Specify the number of open-mod peptides to consider in the second pass.
       A value of 0 will search all candiates.
-    default: 250
     inputBinding:
       position: 105
       prefix: --xlink-top-n

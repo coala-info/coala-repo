@@ -26,7 +26,6 @@ inputs:
       \       from the Wilcoxon test performed on the motif score of\n           \
       \             foreground vs background regions for a motif to be\n         \
       \               considered as enriched."
-    default: 0.05
     inputBinding:
       position: 103
       prefix: --adjpval_thr
@@ -37,7 +36,6 @@ inputs:
     doc: "Version of the motif-to-TF annotation to use. This\n                   \
       \     parameter is used to download the correct motif-to-TF\n              \
       \          data from the cisTarget webservers."
-    default: v10nr_clust
     inputBinding:
       position: 103
       prefix: --annotation_version
@@ -49,7 +47,6 @@ inputs:
     doc: "Which annotations to use for annotation motifs to TFs.\n               \
       \         Defaults to: Direct_annot Motif_similarity_annot\n               \
       \         Orthology_annot"
-    default:
       - Direct_annot
       - Motif_similarity_annot
       - Orthology_annot
@@ -80,7 +77,6 @@ inputs:
     doc: Fraction of nucleotides, of regions in the bed file, that should 
       overlap with regions in the dem database in order for them to be included 
       in the analysis.
-    default: 0.4
     inputBinding:
       position: 103
       prefix: --fraction_overlap_w_dem_database
@@ -101,7 +97,6 @@ inputs:
     doc: "Threshold on the log2 fold change of the motif score\n                 \
       \       of foreground vs background regions for a motif to be\n            \
       \            considered as enriched."
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --log2fc_thr
@@ -120,7 +115,6 @@ inputs:
       - float
     doc: "Minimul mean signal in the foreground to consider a\n                  \
       \      motif enriched."
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --mean_fg_thr
@@ -140,7 +134,6 @@ inputs:
       - float
     doc: "\" Threshold on motif similarity scores for calling\n                  \
       \      similar motifs. Defaults to: 0.001"
-    default: 0.001
     inputBinding:
       position: 103
       prefix: --motif_similarity_fdr
@@ -160,7 +153,6 @@ inputs:
       - float
     doc: "Threshold on the protein-protein orthology score for\n                 \
       \       calling orthologous motifs. Defaults to: 0.0"
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --orthologous_identity_threshold
@@ -174,7 +166,6 @@ inputs:
       \          containing the full results. hdf5+: an existing hdf5\n          \
       \              file will be appended with the full motifs enrichment\n     \
       \                   results. Defaults to 'hdf5'"
-    default: hdf5
     inputBinding:
       position: 103
       prefix: --output_mode
@@ -193,7 +184,6 @@ inputs:
       - int
     doc: "Number of basepairs up- and downstream of the TSS that\n               \
       \         are considered as being the promoter for that gene."
-    default: 1000
     inputBinding:
       position: 103
       prefix: --promoter_space
@@ -203,7 +193,6 @@ inputs:
       - int
     doc: "Random seed use for sampling background regions (if\n                  \
       \      max_bg_regions is not None) Defaults to: 555"
-    default: 555
     inputBinding:
       position: 103
       prefix: --seed

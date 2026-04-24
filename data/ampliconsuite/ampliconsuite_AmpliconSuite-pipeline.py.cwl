@@ -12,7 +12,6 @@ inputs:
       - string
     doc: If --run_AA selected, set the --extendmode argument to AA. Default mode
       is 'EXPLORE'
-    default: EXPLORE
     inputBinding:
       position: 101
       prefix: --AA_extendmode
@@ -23,7 +22,6 @@ inputs:
     doc: Number of standard deviations around the insert size. May need to 
       increase for sequencing runs with high variance after insert size 
       selection step.
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --AA_insert_sdevs
@@ -35,7 +33,6 @@ inputs:
       path. If you would like to use a different python version with AA, set 
       this to either the path to the interpreter or 'python', 'python3', 
       'python2'
-    default: python3
     inputBinding:
       position: 101
       prefix: --aa_python_interpreter
@@ -45,7 +42,6 @@ inputs:
       - string
     doc: If --run_AA selected, set the --runmode argument to AA. Default mode is
       'FULL'
-    default: FULL
     inputBinding:
       position: 101
       prefix: --AA_runmode
@@ -113,7 +109,6 @@ inputs:
       - string
     doc: Segmentation method for CNVKit (if used), defaults to CNVKit default 
       segmentation method (cbs).
-    default: cbs
     inputBinding:
       position: 101
       prefix: --cnvkit_segmentation
@@ -167,7 +162,6 @@ inputs:
       - int
     doc: Number of read pairs for minimum foldback SV support. Used value will 
       be the maximum of pair_support and this argument.
-    default: 2
     inputBinding:
       position: 101
       prefix: --foldback_pair_support_min
@@ -208,7 +202,6 @@ inputs:
       - 'null'
       - int
     doc: Number of read pairs for minimum breakpoint support
-    default: 2
     inputBinding:
       position: 101
       prefix: --pair_support_min
@@ -341,7 +334,6 @@ inputs:
       - 'null'
       - string
     doc: "Upload server: 'local', 'dev', 'prod' (prod is default)"
-    default: prod
     inputBinding:
       position: 101
       prefix: --upload_server

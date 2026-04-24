@@ -55,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: 'gzip output files: yes or no (default yes)'
-    default: yes
     inputBinding:
       position: 101
       prefix: --gzip
@@ -83,7 +82,6 @@ inputs:
       - float
     doc: percentage of low quality bases tolerated before discarding a read 
       (default 5)
-    default: 5
     inputBinding:
       position: 101
       prefix: --percent
@@ -92,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: minimum quality allowed (int), optional (default 27).
-    default: 27
     inputBinding:
       position: 101
       prefix: --minQ
@@ -101,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length allowed for a read before it is discarded (default 25).
-    default: 25
     inputBinding:
       position: 101
       prefix: --minL
@@ -110,7 +106,6 @@ inputs:
       - 'null'
       - string
     doc: output prefix (with path), optional (default ./out).
-    default: ./out
     inputBinding:
       position: 101
       prefix: --output
@@ -144,7 +139,6 @@ inputs:
       GLOBAL: removes n1 cycles on the left and n2 on the right, specified in -g.
       All reads are discarded if they are shorter than MINL (specified with -m or
       --minL).'
-    default: NO
     inputBinding:
       position: 101
       prefix: --trimQ
@@ -154,7 +148,6 @@ inputs:
       - int
     doc: value of ASCII character representing zero quality (int), optional 
       (default 33)
-    default: 33
     inputBinding:
       position: 101
       prefix: --zeroQ

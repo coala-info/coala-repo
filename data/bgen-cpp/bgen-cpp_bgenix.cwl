@@ -28,7 +28,6 @@ inputs:
       - int
     doc: Zlib compression level to use when transcoding to BGEN v1.1 format.  
       Defaults to "9".
-    default: 9
     inputBinding:
       position: 101
       prefix: -compression-level
@@ -118,7 +117,6 @@ inputs:
       from. This only affects rea-ding the index file.  The named table or view 
       should have the same schema as the Variant table written by bgenix on 
       index creation.  Defaults to "Variant".
-    default: Variant
     inputBinding:
       position: 101
       prefix: -table

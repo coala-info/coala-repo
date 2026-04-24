@@ -27,7 +27,6 @@ inputs:
       - int
     doc: Only for -r mode. Minimum size for a homopolymer to be considered in 
       indel analysis (default is 3)
-    default: 3
     inputBinding:
       position: 101
       prefix: --hm
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - File
     doc: Output file for PDF report (default value is report.pdf).
-    default: report.pdf
     inputBinding:
       position: 101
       prefix: --outfile
@@ -54,7 +52,6 @@ inputs:
       - string
     doc: Format of the output report (PDF, HTML or both PDF:HTML, default is 
       HTML).
-    default: HTML
     inputBinding:
       position: 101
       prefix: --outformat
@@ -71,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Only for -r mode. Number of reads analyzed in a chunk (default is 1000)
-    default: 1000
     inputBinding:
       position: 101
       prefix: --nr
@@ -99,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Only for -r mode. Number of windows (default is 400)
-    default: 400
     inputBinding:
       position: 101
       prefix: --nw

@@ -12,7 +12,6 @@ inputs:
       - int
     doc: Recruit reads mapped to contigs shorter than this [10M]. Only used 
       together with -R for mapped and indexed BAM/CRAM files.
-    default: 10M
     inputBinding:
       position: 101
       prefix: --alt-contig
@@ -22,7 +21,6 @@ inputs:
       - int
     doc: Recruit reads in chunks of this size [10k]. Impacts runtime in 
       multi-threaded read recruitment.
-    default: 10k
     inputBinding:
       position: 101
       prefix: --chunk-size
@@ -76,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Jellyfish executable [jellyfish].
-    default: jellyfish
     inputBinding:
       position: 101
       prefix: --jellyfish
@@ -96,7 +93,6 @@ inputs:
       - int
     doc: Only use k-mers that appear less than INT times in the reference genome
       [10]. Requires -j argument.
-    default: 10
     inputBinding:
       position: 101
       prefix: --kmer-thresh
@@ -105,7 +101,6 @@ inputs:
       - 'null'
       - float
     doc: Minimal fraction of minimizers that need to match reference [0.5].
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --match-frac
@@ -114,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: Recruit long reads with a matching subregion of this length [2000].
-    default: 2000
     inputBinding:
       position: 101
       prefix: --match-len
@@ -125,7 +119,6 @@ inputs:
         items: int
     doc: Use k-mers of size INT_1 (<= 31) with smallest hash across INT_2 
       consecutive k-mers [15 10].
-    default: 15 10
     inputBinding:
       position: 101
       prefix: --minimizer
@@ -209,7 +202,6 @@ inputs:
       - 'null'
       - float
     doc: Before recruitment, subsample reads at this rate [1].
-    default: 1
     inputBinding:
       position: 101
       prefix: --subsample
@@ -218,7 +210,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads [8].
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads

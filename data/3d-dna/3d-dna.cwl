@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Misjoin editor triangular motif region size (default is 125000).
-    default: 125000
     inputBinding:
       position: 103
       prefix: --editor-coarse-region
@@ -52,7 +51,6 @@ inputs:
     doc: 'Misjoin editor coarse matrix resolution, should be one of the following:
       2500000, 1000000, 500000, 250000, 100000, 50000, 25000, 10000, 5000, 1000 (default
       is 25000).'
-    default: 25000
     inputBinding:
       position: 103
       prefix: --editor-coarse-resolution
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Misjoin editor stringency parameter (default is 55).
-    default: 55
     inputBinding:
       position: 103
       prefix: --editor-coarse-stringency
@@ -72,7 +69,6 @@ inputs:
     doc: 'Misjoin editor fine matrix resolution, should be one of the following: 2500000,
       1000000, 500000, 250000, 100000, 50000, 25000, 10000, 5000, 1000 (default is
       1000).'
-    default: 1000
     inputBinding:
       position: 103
       prefix: --editor-fine-resolution
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Misjoin editor threshold repeat coverage (default is 2).
-    default: 2
     inputBinding:
       position: 103
       prefix: --editor-repeat-coverage
@@ -90,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Misjoin editor saturation parameter (default is 5).
-    default: 5
     inputBinding:
       position: 103
       prefix: --editor-saturation-centile
@@ -108,7 +102,6 @@ inputs:
       - int
     doc: Gap size to be added between scaffolded sequences in the final chromosome-length
       scaffolds (default is 500).
-    default: 500
     inputBinding:
       position: 103
       prefix: --gap-size
@@ -118,7 +111,6 @@ inputs:
       - int
     doc: Specifies threshold input contig/scaffold size (default is 15000). Contigs/scaffolds
       smaller than input_size are going to be ignored.
-    default: 15000
     inputBinding:
       position: 103
       prefix: --input
@@ -127,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Mapq threshold for scaffolding and visualization (default is 1).
-    default: 1
     inputBinding:
       position: 103
       prefix: --mapq
@@ -137,7 +128,6 @@ inputs:
       - int
     doc: 'Minimal identity score required from similar nearby sequences (per length)
       for them to be classified as alternative haplotypes. Default: 20.'
-    default: 20
     inputBinding:
       position: 103
       prefix: --merger-alignment-identity
@@ -147,7 +137,6 @@ inputs:
       - int
     doc: 'Minimal length necessary to recognize similar nearby sequences as alternative
       haplotypes. Default: 20000.'
-    default: 20000
     inputBinding:
       position: 103
       prefix: --merger-alignment-length
@@ -157,7 +146,6 @@ inputs:
       - int
     doc: 'Minimal LASTZ alignment score for nearby sequences to be recongnized as
       alternative haplotypes. Default: 50000000.'
-    default: 50000000
     inputBinding:
       position: 103
       prefix: --merger-alignment-score
@@ -167,7 +155,6 @@ inputs:
       - string
     doc: 'Option string to customize LASTZ alignment. Default: "--gfextend\ --gapped\
       --chain=200,200"'
-    default: --gfextend --gapped --chain=200,200
     inputBinding:
       position: 103
       prefix: --merger-lastz-options
@@ -177,7 +164,6 @@ inputs:
       - int
     doc: 'Distance (in bp) within which to locally search for alternative haplotypes
       to a given contig or scaffold. Default: 3000000.'
-    default: 3000000
     inputBinding:
       position: 103
       prefix: --merger-search-band
@@ -186,7 +172,6 @@ inputs:
       - 'null'
       - string
     doc: Runs in specific mode, either haploid or diploid (default is haploid).
-    default: haploid
     inputBinding:
       position: 103
       prefix: --mode
@@ -195,7 +180,6 @@ inputs:
       - 'null'
       - int
     doc: Polisher triangular motif region size (default is 3000000).
-    default: 3000000
     inputBinding:
       position: 103
       prefix: --polisher-coarse-region
@@ -204,7 +188,6 @@ inputs:
       - 'null'
       - int
     doc: Polisher coarse matrix resolution (default is 25000).
-    default: 25000
     inputBinding:
       position: 103
       prefix: --polisher-coarse-resolution
@@ -213,7 +196,6 @@ inputs:
       - 'null'
       - int
     doc: Polisher stringency parameter (default is 55).
-    default: 55
     inputBinding:
       position: 103
       prefix: --polisher-coarse-stringency
@@ -222,7 +204,6 @@ inputs:
       - 'null'
       - int
     doc: Polisher fine matrix resolution (default is 1000).
-    default: 1000
     inputBinding:
       position: 103
       prefix: --polisher-fine-resolution
@@ -232,7 +213,6 @@ inputs:
       - int
     doc: Polisher input size threshold. Scaffolds smaller than polisher_input_size
       are going to be placed into unresolved (default is 1000000).
-    default: 1000000
     inputBinding:
       position: 103
       prefix: --polisher-input-size
@@ -241,7 +221,6 @@ inputs:
       - 'null'
       - int
     doc: Polisher saturation parameter (default is 5).
-    default: 5
     inputBinding:
       position: 103
       prefix: --polisher-saturation-centile
@@ -250,7 +229,6 @@ inputs:
       - 'null'
       - int
     doc: Specifies number of iterative rounds for misjoin correction (default is 2).
-    default: 2
     inputBinding:
       position: 103
       prefix: --rounds
@@ -268,7 +246,6 @@ inputs:
       - 'null'
       - int
     doc: 'Splitter triangular motif region size (Default: 3000000).'
-    default: 3000000
     inputBinding:
       position: 103
       prefix: --splitter-coarse-region
@@ -277,7 +254,6 @@ inputs:
       - 'null'
       - int
     doc: 'Splitter coarse matrix resolution (Default: 25000).'
-    default: 25000
     inputBinding:
       position: 103
       prefix: --splitter-coarse-resolution
@@ -286,7 +262,6 @@ inputs:
       - 'null'
       - int
     doc: 'Splitter stringency parameter (Default: 55).'
-    default: 55
     inputBinding:
       position: 103
       prefix: --splitter-coarse-stringency
@@ -295,7 +270,6 @@ inputs:
       - 'null'
       - int
     doc: 'Splitter fine matrix resolution (Default: 1000).'
-    default: 1000
     inputBinding:
       position: 103
       prefix: --splitter-fine-resolution
@@ -305,7 +279,6 @@ inputs:
       - int
     doc: 'Splitter input size threshold. Scaffolds smaller than polisher_input_size
       are going to be placed into unresolved (Default: 1000000).'
-    default: 1000000
     inputBinding:
       position: 103
       prefix: --splitter-input-size
@@ -314,7 +287,6 @@ inputs:
       - 'null'
       - int
     doc: 'Splitter saturation parameter (Default: 5).'
-    default: 5
     inputBinding:
       position: 103
       prefix: --splitter-saturation-centile

@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of barcodes to consider.
-    default: 500
     inputBinding:
       position: 102
       prefix: --max-len
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of barcodes to consider.
-    default: 100
     inputBinding:
       position: 102
       prefix: --min-len
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for parallel processing.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

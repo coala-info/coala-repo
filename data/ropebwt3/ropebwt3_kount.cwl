@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length
-    default: 51
     inputBinding:
       position: 102
       prefix: -k
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: min k-mer occurrence
-    default: 100
     inputBinding:
       position: 102
       prefix: -m

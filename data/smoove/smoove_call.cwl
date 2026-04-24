@@ -35,7 +35,6 @@ inputs:
       - string
     doc: ignore SVs with either end in this comma-delimited list of chroms. If 
       this starts with ~ it is treated as a regular expression to exclude.
-    default: hs37d5,~:,~^GL,~decoy
     inputBinding:
       position: 102
       prefix: --excludechroms
@@ -80,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: number of processors to parallelize.
-    default: 3
     inputBinding:
       position: 102
       prefix: --processes
@@ -97,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: mininum support required to report a variant.
-    default: 4
     inputBinding:
       position: 102
       prefix: --support

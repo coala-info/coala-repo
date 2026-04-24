@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Min number of clipped reads to look at IS on a position
-    default: 10
     inputBinding:
       position: 102
       prefix: --minimun
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percentage of same base to create consensus
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --percentage
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Min alignment quality value to conserve a clipped read
-    default: 20
     inputBinding:
       position: 102
       prefix: --quality
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Maximun size of direct repeat region
-    default: 20
     inputBinding:
       position: 102
       prefix: --size

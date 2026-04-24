@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: how to compute the score of N
-    default: 0
     inputBinding:
       position: 102
       prefix: -N
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: deletion penalty
-    default: -50
     inputBinding:
       position: 102
       prefix: -d
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: GC select correction for score matrices
-    default: 4.0
     inputBinding:
       position: 102
       prefix: -p
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: insertion penalty
-    default: -50
     inputBinding:
       position: 102
       prefix: -i
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: only results longer than this length are shown
-    default: 50
     inputBinding:
       position: 102
       prefix: -l
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: min value in matrix
-    default: -100
     inputBinding:
       position: 102
       prefix: -m
@@ -88,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: width of the FASTA sequence output
-    default: 60
     inputBinding:
       position: 102
       prefix: -w
@@ -113,7 +106,6 @@ inputs:
       - 'null'
       - File
     doc: score matrices file
-    default: $ESTSCANDIR/Hs.smat
     inputBinding:
       position: 102
       prefix: -M
@@ -123,7 +115,6 @@ inputs:
       - float
     doc: only results are shown, which have scores higher than this fraction of 
       the best score
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -b
@@ -132,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: Skip sequences shorter than length
-    default: 1
     inputBinding:
       position: 102
       prefix: -s
@@ -144,7 +134,6 @@ inputs:
     doc: 8 integers used as log-probabilities for transitions, start->5'UTR, 
       start->CDS, start->3'UTR, 5'UTR->CDS, 5'UTR->end, CDS->3'UTR, CDS->end, 
       3'UTR->end
-    default:
       - -10
       - -10
       - -5

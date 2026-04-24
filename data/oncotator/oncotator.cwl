@@ -92,7 +92,6 @@ inputs:
       - 'null'
       - Directory
     doc: Main annotation database directory.
-    default: /xchip/cga/reference/annotation/db/oncotator_v1_ds_gencode_current/
     inputBinding:
       position: 103
       prefix: --db-dir
@@ -112,7 +111,6 @@ inputs:
     doc: Forces the VCF output renderer to populate the output genotypes as 
       heterozygous. This option should only be used when converting a MAFLITE to
       a VCF; otherwise, the option has no effect.
-    default: 'false'
     inputBinding:
       position: 103
       prefix: --infer_genotypes
@@ -135,7 +133,6 @@ inputs:
       appropriate headers, so long as all of the required headers (or an alias 
       -- see maflite.config) are present. Note that "-i TCGAMAF" is the same as 
       specifying "-i MAFLITE --prune-tcga-maf-cols --allow-overwriting"
-    default: MAFLITE
     inputBinding:
       position: 103
       prefix: --input_format
@@ -144,7 +141,6 @@ inputs:
       - 'null'
       - string
     doc: Specify log output location.
-    default: oncotator.log
     inputBinding:
       position: 103
       prefix: --log_name
@@ -169,7 +165,6 @@ inputs:
       - 'null'
       - string
     doc: Output format.
-    default: TCGAMAF
     inputBinding:
       position: 103
       prefix: --output_format
@@ -234,7 +229,6 @@ inputs:
       - string
     doc: Specify transcript mode for transcript providing datasources that 
       support multiple modes.
-    default: CANONICAL
     inputBinding:
       position: 103
       prefix: --tx-mode
@@ -243,7 +237,6 @@ inputs:
       - 'null'
       - boolean
     doc: set verbosity level
-    default: 5
     inputBinding:
       position: 103
       prefix: --verbose

@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generates one K*.indfile for each value of K run, for use with CLUMPP.
-    default: false
     inputBinding:
       position: 101
       prefix: --clumpp
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: If possible, performs the Evanno 2005 method. Written to evanno.txt.
-    default: false
     inputBinding:
       position: 101
       prefix: --evanno

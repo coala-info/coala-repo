@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: specify cell barcode mismatching threshold. Default (3)
-    default: 3
     inputBinding:
       position: 101
       prefix: --cb_mismatches
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: specify the chunk size for multiprocessing. Default (50,000)
-    default: 50000
     inputBinding:
       position: 101
       prefix: --chunk_size
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: specify feature barcode mismatching threshold. Default (3)
-    default: 3
     inputBinding:
       position: 101
       prefix: --fb_mismatches
@@ -71,7 +68,6 @@ inputs:
       - int
     doc: specify number of reads for analysis. Set to (None) will analyze all 
       the reads. Default (100,000)
-    default: 100000
     inputBinding:
       position: 101
       prefix: --num_reads
@@ -80,7 +76,6 @@ inputs:
       - 'null'
       - Directory
     doc: specify a output directory. Default (./qc)
-    default: ./qc
     inputBinding:
       position: 101
       prefix: --output_directory

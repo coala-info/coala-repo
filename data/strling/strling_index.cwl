@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - float
     doc: proportion of read that is repetitive to be considered as STR
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --proportion-repeat

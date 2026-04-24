@@ -100,7 +100,6 @@ inputs:
       - 'null'
       - string
     doc: 'OrthoDB version, default: odb12'
-    default: odb12
     inputBinding:
       position: 101
       prefix: --odb
@@ -115,7 +114,6 @@ inputs:
       - 'null'
       - float
     doc: output if score at least FLOAT*bestScore [0.99]
-    default: 0.99
     inputBinding:
       position: 101
       prefix: --outs

@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - File
     doc: Custom path to MMSeqs2 binary
-    default: mmseqs
     inputBinding:
       position: 101
       prefix: -mmseqs
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - Directory
     doc: Custom temporary directory
-    default: /tmp/ezaai
     inputBinding:
       position: 101
       prefix: -tmp

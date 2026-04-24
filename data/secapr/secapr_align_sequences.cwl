@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: The alignment engine to use.
-    default: muscle
     inputBinding:
       position: 101
       prefix: --aligner

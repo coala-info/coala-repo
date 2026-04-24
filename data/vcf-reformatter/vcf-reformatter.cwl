@@ -19,7 +19,6 @@ inputs:
     doc: "Annotation type to parse. Possible values:\n          - vep:    VEP annotations
       (CSQ field)\n          - snpeff: SnpEff annotations (ANN field)\n          -
       auto:   Auto-detect from header"
-    default: auto
     inputBinding:
       position: 102
       prefix: --annotation-type
@@ -45,7 +44,6 @@ inputs:
       - string
     doc: NCBI build for MAF output (auto-detected from header, defaults to 
       GRCh38)
-    default: GRCh38
     inputBinding:
       position: 102
       prefix: --ncbi-build
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Output directory (default: current directory)'
-    default: current directory
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -64,7 +61,6 @@ inputs:
       - string
     doc: "Output format: tsv or maf. Possible values:\n          - tsv: Tab-separated
       values (default)\n          - maf: Mutation Annotation Format"
-    default: tsv
     inputBinding:
       position: 102
       prefix: --output-format
@@ -73,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: 'Prefix for output files (default: input filename)'
-    default: input filename
     inputBinding:
       position: 102
       prefix: --prefix
@@ -91,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for parallel processing (0 = auto-detect)
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -103,7 +97,6 @@ inputs:
       only the most severe consequence for each variant\n          - first:      \
       \ Keep first transcript only (fastest)\n          - split:       Split every
       transcript into separate rows"
-    default: first
     inputBinding:
       position: 102
       prefix: --transcript-handling

@@ -13,11 +13,9 @@ requirements:
 inputs:
   prefix:
     type: string?
-    default: gene_counts_ftcounts
 
   threads:
     type: int?
-    default: 1
     inputBinding:
       prefix: "-T"
 

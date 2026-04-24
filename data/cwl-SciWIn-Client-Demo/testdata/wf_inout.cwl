@@ -6,7 +6,6 @@ class: Workflow
 inputs:
   first:
     type: string
-    default: me
 
 outputs:
   last:

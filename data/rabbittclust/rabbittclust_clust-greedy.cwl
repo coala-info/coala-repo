@@ -61,7 +61,6 @@ inputs:
       - int
     doc: set the filter minimum length (minLen), genome length less than minLen 
       will be ignore, default 10,000
-    default: 10000
     inputBinding:
       position: 101
       prefix: --min-length
@@ -92,7 +91,6 @@ inputs:
       - 'null'
       - string
     doc: set the sketch function, such as MinHash, KSSD, default MinHash
-    default: MinHash
     inputBinding:
       position: 101
       prefix: --function
@@ -101,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: set the sketch size for Jaccard Index and Mash distance, default 1000
-    default: 1000
     inputBinding:
       position: 101
       prefix: --sketch-size

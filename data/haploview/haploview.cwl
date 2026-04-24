@@ -68,7 +68,6 @@ inputs:
       - string
     doc: Output type. Gabriel, 4 gamete, spine output or all 3. default is 
       Gabriel.
-    default: Gabriel
     inputBinding:
       position: 101
       prefix: -blockoutput
@@ -220,7 +219,6 @@ inputs:
       - float
     doc: Exclude markers with a HW p-value smaller than <threshold>. <threshold>
       is a value between 0 and 1.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: -hwcutoff
@@ -271,7 +269,6 @@ inputs:
       - 'null'
       - string
     doc: Specify what to print in LD image output. default is DPrime
-    default: DPRIME
     inputBinding:
       position: 101
       prefix: -ldvalues
@@ -280,7 +277,6 @@ inputs:
       - 'null'
       - File
     doc: Specify a logfile name
-    default: haploview.log
     inputBinding:
       position: 101
       prefix: -log
@@ -297,7 +293,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum comparison distance in kilobases (integer).
-    default: 500
     inputBinding:
       position: 101
       prefix: -maxdistance
@@ -306,7 +301,6 @@ inputs:
       - 'null'
       - int
     doc: Markers with more than <integer> Mendel errors will be excluded.
-    default: 1
     inputBinding:
       position: 101
       prefix: -maxMendel
@@ -323,7 +317,6 @@ inputs:
       - 'null'
       - int
     doc: allocates <memsize> megabytes of memory
-    default: 512
     inputBinding:
       position: 101
       prefix: -memory
@@ -341,7 +334,6 @@ inputs:
       - float
     doc: Exclude markers with less than <threshold> valid data. <threshold> is a
       value between 0 and 1.
-    default: 0.75
     inputBinding:
       position: 101
       prefix: -minGeno
@@ -351,7 +343,6 @@ inputs:
       - float
     doc: Minimum minor allele frequency to include a marker. <threshold> is a 
       value between 0 and 0.5.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: -minMAF
@@ -369,7 +360,6 @@ inputs:
       - float
     doc: Exclude individuals with more than <threshold> fraction missing data. 
       <threshold> is a value between 0 and 1.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -missingCutoff
@@ -458,7 +448,6 @@ inputs:
       - 'null'
       - string
     doc: Specifies the HapMap phase for this HapMap download
-    default: '21'
     inputBinding:
       position: 101
       prefix: -release
@@ -484,7 +473,6 @@ inputs:
       - float
     doc: Proportional spacing of markers in LD display. <threshold> is a value 
       between 0 (no spacing) and 1 (max spacing).
-    default: 0
     inputBinding:
       position: 101
       prefix: -spacing

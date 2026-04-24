@@ -221,7 +221,6 @@ inputs:
       - 'null'
       - int
     doc: Random seed, for reproductibility of RAxML-NG runs. Set to 0 by default
-    default: 0
     inputBinding:
       position: 101
       prefix: --seed

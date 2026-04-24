@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Set the IP of the panoptes server
-    default: 0.0.0.0
     inputBinding:
       position: 101
       prefix: --ip
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: The port of the server
-    default: 5000
     inputBinding:
       position: 101
       prefix: --port

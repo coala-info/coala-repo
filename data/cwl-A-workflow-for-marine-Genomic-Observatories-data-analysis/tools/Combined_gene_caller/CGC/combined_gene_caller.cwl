@@ -42,7 +42,6 @@ inputs:
 
   config:
     type: File
-    default:
       class: File
       location: combined_gene_caller_conf.json
       basename: combined_gene_caller_conf

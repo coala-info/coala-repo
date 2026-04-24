@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: min size ratio for merging clusters in message passing
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --cluster-ratio
@@ -98,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: number of concurrent threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

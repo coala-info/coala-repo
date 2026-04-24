@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: loads configuration 'config'
-    default: default_configuration
     inputBinding:
       position: 102
       prefix: -c

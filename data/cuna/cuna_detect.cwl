@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for BAM output compression.
-    default: 4
     inputBinding:
       position: 101
       prefix: --bam_threads
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Batch size to use for GPU inference.
-    default: 1024
     inputBinding:
       position: 101
       prefix: --batch_size
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable model pruning (may slow down CPU inference).
-    default: false
     inputBinding:
       position: 101
       prefix: --disable_pruning
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum cutoff for read length
-    default: 0
     inputBinding:
       position: 101
       prefix: --length_cutoff
@@ -74,7 +70,6 @@ inputs:
       - float
     doc: Probability threshold for a per-read prediction to be considered 
       modified.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --mod_t
@@ -100,7 +95,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to folder where intermediate and final files will be stored
-    default: current working directory
     inputBinding:
       position: 101
       prefix: --output
@@ -109,7 +103,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for the output files
-    default: output
     inputBinding:
       position: 101
       prefix: --prefix
@@ -118,7 +111,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum cutoff for mean quality score of a read
-    default: 0
     inputBinding:
       position: 101
       prefix: --qscore_cutoff
@@ -127,7 +119,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip per-site output generation.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip_per_site
@@ -136,7 +127,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip unmapped reads from modification calling.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip_unmapped
@@ -146,7 +136,6 @@ inputs:
       - int
     doc: 'Number of threads to use for processing signal and running model inference.
       Recommended: at least 4.'
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -156,7 +145,6 @@ inputs:
       - float
     doc: Probability threshold for a per-read prediction to be considered 
       unmodified.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --unmod_t

@@ -22,7 +22,6 @@ inputs:
       - string
     doc: Table name to autofill 
       [ancientmetagenome-environmental|ancientmetagenome-hostassociated|ancientsinglegenome-hostassociated|test]
-    default: ancientmetagenome-hostassociated
     inputBinding:
       position: 102
       prefix: --table_name

@@ -27,7 +27,6 @@ inputs:
       - string
     doc: "The field delimiter for reading CSV data.\n                           Must
       be a single character."
-    default: ','
     inputBinding:
       position: 103
       prefix: --delimiter

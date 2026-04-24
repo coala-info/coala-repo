@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Expected number of cells.
-    default: 10000
     inputBinding:
       position: 105
       prefix: --expect-cells
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: 'Input file format: BAM or SAM. DEFAULT: BAM'
-    default: BAM
     inputBinding:
       position: 105
       prefix: --format
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - boolean
     doc: "Keep the _scTEtmp file, which is useful for debugging.\nDefault: False"
-    default: false
     inputBinding:
       position: 105
       prefix: --keeptmp
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: "Minimum number of counts required for a cell to pass\nfiltering."
-    default: 2*min_genes
     inputBinding:
       position: 105
       prefix: --min_counts
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: "Minimum number of genes expressed required for a cell\nto pass filtering."
-    default: 200
     inputBinding:
       position: 105
       prefix: --min_genes
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - boolean
     doc: "Save the output as .h5ad formatted file instead of csv\nfile. Default: False"
-    default: false
     inputBinding:
       position: 105
       prefix: --hdf5
@@ -88,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads to use, Default: 1'
-    default: 1
     inputBinding:
       position: 105
       prefix: --thread
@@ -98,7 +91,6 @@ inputs:
       - boolean
     doc: "Set to false to ignore for cell barcodes, it is useful\nfor SMART-seq. If
       you set CB=False, it also will set\nUMI=False by default, Default: True"
-    default: true
     inputBinding:
       position: 105
       prefix: -CB
@@ -107,7 +99,6 @@ inputs:
       - 'null'
       - boolean
     doc: "Set to false to ignore for UMI, it is useful for\nSMART-seq. Default: True"
-    default: true
     inputBinding:
       position: 105
       prefix: -UMI

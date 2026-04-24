@@ -19,7 +19,6 @@ inputs:
       - float
     doc: Fraction of adaptor bases immediately before and immediately after index
       insert required to match perfectly for a hit to be considered a good hit
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --good_hit_threshold
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Upper threshold for index(+UMI) insert length, with value included.
-    default: 30
     inputBinding:
       position: 101
       prefix: --insert_thres_high
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Lower threshold for index(+UMI) insert length, with value included.
-    default: 4
     inputBinding:
       position: 101
       prefix: --insert_thres_low
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer length for entropy calculation.
-    default: 2
     inputBinding:
       position: 101
       prefix: --kmer_length
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of good hits for an adaptor to be included in the analysis.
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_hits_per_adaptor
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Minimap2 -B parameter, mismatch penalty.
-    default: 4
     inputBinding:
       position: 101
       prefix: --minimap_b
@@ -73,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads specified to minimap2
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -82,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum number of bases in insert to perform entropy calculation.
-    default: 11.0
     inputBinding:
       position: 101
       prefix: --umi_threshold

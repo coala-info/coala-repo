@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: bit score cutoff for local alignment
-    default: 50
     inputBinding:
       position: 102
       prefix: -b
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: coverage cutoff for local alignment
-    default: 75
     inputBinding:
       position: 102
       prefix: -c
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Input genome mode. Either 'nucl' or 'prot'
-    default: auto
     inputBinding:
       position: 102
       prefix: -M
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: identity cutoff for local alignment
-    default: 0
     inputBinding:
       position: 102
       prefix: -i
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include sequences of hits in log files
-    default: false
     inputBinding:
       position: 102
       prefix: -q
@@ -67,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: only check for this keyword/metabolite
-    default: all
     inputBinding:
       position: 102
       prefix: -m
@@ -76,7 +70,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to directory, where output files will be saved
-    default: current directory
     inputBinding:
       position: 102
       prefix: -f
@@ -94,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Verbose level, 0 for nothing, 1 for full
-    default: 1
     inputBinding:
       position: 102
       prefix: -v

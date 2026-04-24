@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs to use
-    default: -1
     inputBinding:
       position: 101
       prefix: --num-cpu
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: number of GPUs to use
-    default: -1
     inputBinding:
       position: 101
       prefix: --num-gpu
@@ -65,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: output type
-    default: commands
     inputBinding:
       position: 101
       prefix: --output-type

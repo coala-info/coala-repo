@@ -18,7 +18,6 @@ inputs:
       - float
     doc: Minimum fraction of files required to contain the same variant. Specify
       value within [0,1].
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -t

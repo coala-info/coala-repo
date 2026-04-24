@@ -11,7 +11,6 @@ inputs:
       - string
     doc: 'Bin size (0-1: percentile from the lengths of all references in the database
       / >=1: bp). Default: 0.25'
-    default: 0.25
     inputBinding:
       position: 101
       prefix: -b
@@ -53,7 +52,6 @@ inputs:
       - string
     doc: "Last considered rank [superkingdom,phylum,class,order, family,genus,species,strain].
       Default: 'species'"
-    default: species
     inputBinding:
       position: 101
       prefix: -l
@@ -63,7 +61,6 @@ inputs:
       - string
     doc: 'Keep reads up to this number/percentile of matches (0: off / 0-1: percentile
       / >=1: match count). Default: 0'
-    default: 0
     inputBinding:
       position: 101
       prefix: -m
@@ -73,7 +70,6 @@ inputs:
       - string
     doc: 'Minimum number/percentage of supporting matches to consider the reference
       (0: off / 0-1: percentage / >=1: read number). Default: 0.001'
-    default: 0.001
     inputBinding:
       position: 101
       prefix: -a
@@ -82,7 +78,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output prefix. Default: STDOUT'
-    default: STDOUT
     inputBinding:
       position: 101
       prefix: -o
@@ -102,7 +97,6 @@ inputs:
     doc: "SAM file format, ignored for cumstom blast files ['nm': sam file with standard
       cigar string plus NM flag (NM:i:[0-9]*) for mismatches count | 'ex': just the
       extended cigar string]. Default: 'nm'"
-    default: nm
     inputBinding:
       position: 101
       prefix: -i
@@ -111,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: 'Taxonomic Id used to start the analysis (1 = root). Default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: -x
@@ -120,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: '# of threads. Default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

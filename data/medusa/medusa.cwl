@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - Directory
     doc: The folder containing the medusa scripts.
-    default: medusa_scripts
     inputBinding:
       position: 101
       prefix: -scriptPath

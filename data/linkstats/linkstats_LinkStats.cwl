@@ -39,7 +39,6 @@ inputs:
       - type: array
         items: int
     doc: Minimum reads per molecule for analysis, multiple values possible.
-    default:
       - 1
       - 3
       - 5
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 4
     inputBinding:
       position: 105
       prefix: --threads

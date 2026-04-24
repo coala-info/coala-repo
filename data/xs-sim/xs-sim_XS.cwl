@@ -137,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: 'repeats: number'
-    default: 0
     inputBinding:
       position: 101
       prefix: -rn

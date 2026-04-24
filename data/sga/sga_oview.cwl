@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: pad the overlap lines with D characters
-    default: 20
     inputBinding:
       position: 102
       prefix: --default-padding
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: only show D overhanging bases of the alignments
-    default: 6
     inputBinding:
       position: 102
       prefix: --max-overhang

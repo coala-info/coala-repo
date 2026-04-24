@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Mappability values to be calculated based on this read length.
-    default: 24
     inputBinding:
       position: 1
   - id: unique_count_files

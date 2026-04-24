@@ -97,7 +97,6 @@ inputs:
       - 'null'
       - float
     doc: Minimal SNR across channels.
-    default: 3.75
     inputBinding:
       position: 101
       prefix: --minSnr
@@ -113,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal subread length.
-    default: 50
     inputBinding:
       position: 101
       prefix: --minSubLength

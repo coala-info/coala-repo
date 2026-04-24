@@ -64,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: evalue threshold for including in results
-    default: 10
     inputBinding:
       position: 103
       prefix: --ethresh
@@ -119,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: minimum width of any region to consider; must be less than <maxreg>
-    default: 1
     inputBinding:
       position: 103
       prefix: --minreg
@@ -128,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: pseudo-count to use creating PWMs
-    default: 5
     inputBinding:
       position: 103
       prefix: --motif-pseudo
@@ -171,7 +168,6 @@ inputs:
       - float
     doc: score threshold for PWMs, in bits; sequences without a site with score >=
       <S> are ignored
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --score
@@ -213,7 +209,6 @@ inputs:
       - 'null'
       - int
     doc: 'verbosity of output: 1 (quiet) - 4 (dump)'
-    default: 2
     inputBinding:
       position: 103
       prefix: --verbosity

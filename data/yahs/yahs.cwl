@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - File
     doc: AGP file (for rescaffolding)
-    default: none
     inputBinding:
       position: 103
       prefix: -a
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of a contig to scaffold
-    default: 0
     inputBinding:
       position: 103
       prefix: -l
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality
-    default: 10
     inputBinding:
       position: 103
       prefix: -q
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: prefix of output files
-    default: yahs.out
     inputBinding:
       position: 103
       prefix: -o
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: read length (required for PA5 format input)
-    default: 150
     inputBinding:
       position: 103
       prefix: --read-length
@@ -97,7 +92,6 @@ inputs:
       - type: array
         items: int
     doc: list of resolutions in ascending order
-    default: automate
     inputBinding:
       position: 103
       prefix: -r
@@ -106,7 +100,6 @@ inputs:
       - 'null'
       - string
     doc: restriction enzyme cutting sites
-    default: none
     inputBinding:
       position: 103
       prefix: -e
@@ -115,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: rounds to run at each resoultion level
-    default: 1
     inputBinding:
       position: 103
       prefix: -R
@@ -132,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: verbose level
-    default: 0
     inputBinding:
       position: 103
       prefix: -v

@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: 'Sample name. Default: SAMPLE'
-    default: SAMPLE
     inputBinding:
       position: 102
       prefix: --sample-name

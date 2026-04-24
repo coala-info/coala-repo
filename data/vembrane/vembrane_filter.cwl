@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: "Path to the VCF/BCF file to be filtered. Defaults to\n'-' for stdin."
-    default: '-'
     inputBinding:
       position: 2
   - id: annotation_key
@@ -28,7 +27,6 @@ inputs:
     doc: "The INFO key for the annotation field. This defaults\nto 'ANN', but tools
       might use other field names. For\nexample, default VEP annotations can be parsed
       by\nsetting 'CSQ' here."
-    default: ANN
     inputBinding:
       position: 103
       prefix: --annotation-key
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: Set the backend library.
-    default: cyvcf2
     inputBinding:
       position: 103
       prefix: --backend
@@ -95,7 +92,6 @@ inputs:
       - 'null'
       - string
     doc: Output format.
-    default: vcf
     inputBinding:
       position: 103
       prefix: --output-fmt

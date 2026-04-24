@@ -22,7 +22,6 @@ inputs:
       \                          higher than 1, tasks with multi-threading capabilities
       will enabled\n                           (if 0 all available) cores will be
       used"
-    default: 20
     inputBinding:
       position: 101
       prefix: --cpus
@@ -110,7 +109,6 @@ inputs:
       - 'null'
       - string
     doc: '[gem] mapper used, options are gem, bowtie2 or hisat2'
-    default: gem
     inputBinding:
       position: 101
       prefix: --mapper
@@ -119,7 +117,6 @@ inputs:
       - 'null'
       - string
     doc: '[None] path to mapper binary'
-    default: None
     inputBinding:
       position: 101
       prefix: --mapper_binary

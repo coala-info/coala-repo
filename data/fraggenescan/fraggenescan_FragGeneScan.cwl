@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: the number of threads used by FragGeneScan
-    default: 1
     inputBinding:
       position: 101
       prefix: -p

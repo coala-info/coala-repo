@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: Type of merge to be performed
-    default: "'inner'"
     inputBinding:
       position: 103
       prefix: --how
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: Delimiter to use for the left file
-    default: "'\\t'"
     inputBinding:
       position: 103
       prefix: --lsep
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: Delimiter to use for the output file
-    default: "'\\t'"
     inputBinding:
       position: 103
       prefix: --osep
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: Delimiter to use for the right file
-    default: "'\\t'"
     inputBinding:
       position: 103
       prefix: --rsep

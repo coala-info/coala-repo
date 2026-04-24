@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: max abundance threshold for solid kmers
-    default: 2147483647
     inputBinding:
       position: 101
       prefix: -abundance-max
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: min abundance threshold for solid kmers
-    default: 2
     inputBinding:
       position: 101
       prefix: -abundance-min
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: min abundance hard threshold (only used when min abundance is "auto")
-    default: 2
     inputBinding:
       position: 101
       prefix: -abundance-min-threshold
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: output the kmer abundance histogram
-    default: 0
     inputBinding:
       position: 101
       prefix: -histo
@@ -53,7 +49,6 @@ inputs:
       - int
     doc: compute the 2D histogram (with first file = genome, remaining files = 
       reads)
-    default: 0
     inputBinding:
       position: 101
       prefix: -histo2D
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: max number of values in kmers histogram
-    default: 10000
     inputBinding:
       position: 101
       prefix: -histo-max
@@ -79,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: size of a kmer
-    default: 31
     inputBinding:
       position: 101
       prefix: -kmer-size
@@ -88,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: max disk (in MBytes)
-    default: 0
     inputBinding:
       position: 101
       prefix: -max-disk
@@ -97,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: max memory (in MBytes)
-    default: 5000
     inputBinding:
       position: 101
       prefix: -max-memory
@@ -106,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: size of a minimizer
-    default: 10
     inputBinding:
       position: 101
       prefix: -minimizer-size
@@ -115,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: minimizer type (0=lexi, 1=freq)
-    default: 0
     inputBinding:
       position: 101
       prefix: -minimizer-type
@@ -124,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: number of cores
-    default: 0
     inputBinding:
       position: 101
       prefix: -nb-cores
@@ -133,7 +121,6 @@ inputs:
       - 'null'
       - File
     doc: output file
-    default: ''
     inputBinding:
       position: 101
       prefix: -out
@@ -142,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: h5 compression level (0:none, 9:best)
-    default: 0
     inputBinding:
       position: 101
       prefix: -out-compress
@@ -151,7 +137,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory
-    default: .
     inputBinding:
       position: 101
       prefix: -out-dir
@@ -160,7 +145,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory for temporary files
-    default: .
     inputBinding:
       position: 101
       prefix: -out-tmp
@@ -169,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: minimizer repartition (0=unordered, 1=ordered)
-    default: 0
     inputBinding:
       position: 101
       prefix: -repartition-type
@@ -178,7 +161,6 @@ inputs:
       - 'null'
       - File
     doc: output file for solid kmers (only when constructing a graph)
-    default: ''
     inputBinding:
       position: 101
       prefix: -solid-kmers-out
@@ -188,7 +170,6 @@ inputs:
       - string
     doc: when solidity-kind is custom, specifies list of files where kmer must 
       be present
-    default: ''
     inputBinding:
       position: 101
       prefix: -solidity-custom
@@ -198,7 +179,6 @@ inputs:
       - string
     doc: way to compute counts of several files (sum, min, max, one, all, 
       custom)
-    default: sum
     inputBinding:
       position: 101
       prefix: -solidity-kind
@@ -207,7 +187,6 @@ inputs:
       - 'null'
       - string
     doc: storage type of kmer counts ('hdf5' or 'file')
-    default: hdf5
     inputBinding:
       position: 101
       prefix: -storage-type
@@ -216,7 +195,6 @@ inputs:
       - 'null'
       - int
     doc: verbosity level
-    default: 1
     inputBinding:
       position: 101
       prefix: -verbose

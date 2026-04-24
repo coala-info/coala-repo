@@ -24,7 +24,6 @@ inputs:
   out_fasta:
     type: string?
     label: output file with spacer sequences (fasta)
-    default: "CrisprCasFinder_Spacers.fasta"
     inputBinding:
       position: 2
       prefix: -o

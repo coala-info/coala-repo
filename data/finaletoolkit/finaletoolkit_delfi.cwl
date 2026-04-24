@@ -98,7 +98,6 @@ inputs:
     doc: Specify size of large genomic intervals to merge smaller 100kb 
       intervals (or whatever the user specified in bins_file) into. Defaultis 
       5000000
-    default: 5000000
     inputBinding:
       position: 105
       prefix: --window-size

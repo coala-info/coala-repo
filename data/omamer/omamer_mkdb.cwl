@@ -22,7 +22,6 @@ inputs:
       \        will still exist in the database, but it will not be\n            \
       \            possible to place to them. Names must match EXACTLY to\n      \
       \                  those in the given newick species tree."
-    default: None
     inputBinding:
       position: 101
       prefix: --hidden_taxa
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length
-    default: 6
     inputBinding:
       position: 101
       prefix: --k
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level.
-    default: info
     inputBinding:
       position: 101
       prefix: --log_level
@@ -50,7 +47,6 @@ inputs:
       - string
     doc: "Logic used between the two above arguments to filter\n                 \
       \       root-HOGs. Options are AND or OR."
-    default: OR
     inputBinding:
       position: 101
       prefix: --logic
@@ -62,7 +58,6 @@ inputs:
       \      completeness of a HOG is defined as the number of\n                 \
       \       observed species divided by the expected number of\n               \
       \         species at the HOG taxonomic level"
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --min_fam_completeness
@@ -72,7 +67,6 @@ inputs:
       - int
     doc: "Only root-HOGs with a protein count passing this\n                     \
       \   threshold are used."
-    default: 6
     inputBinding:
       position: 101
       prefix: --min_fam_size
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --nthreads
@@ -91,7 +84,6 @@ inputs:
       - Directory
     doc: "Path to OMA browser release (must include OmaServer.h5\n               \
       \         and speciestree.nwk). [BROWSERBUILD]"
-    default: None
     inputBinding:
       position: 101
       prefix: --oma_path
@@ -100,7 +92,6 @@ inputs:
       - 'null'
       - File
     doc: Path to OrthoXML file containing HOGs. [OXMLBUILD]
-    default: None
     inputBinding:
       position: 101
       prefix: --orthoxml
@@ -109,7 +100,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use reduced alphabet from Linclust paper.
-    default: false
     inputBinding:
       position: 101
       prefix: --reduced_alphabet
@@ -120,7 +110,6 @@ inputs:
     doc: "HOGs defined at, or descending from, this taxon are\n                  \
       \      uses as root-HOGs. Default is the top level in species\n            \
       \            tree."
-    default: None
     inputBinding:
       position: 101
       prefix: --root_taxon
@@ -131,7 +120,6 @@ inputs:
         items: File
     doc: "Paths to sequence files (1 or multiple, only for non-\n                \
       \        browser build). [OXMLBUILD]"
-    default: None
     inputBinding:
       position: 101
       prefix: --sequences
@@ -140,7 +128,6 @@ inputs:
       - 'null'
       - File
     doc: "Path to newick file containing species tree.\n                        [OXMLBUILD]"
-    default: None
     inputBinding:
       position: 101
       prefix: --species_tree

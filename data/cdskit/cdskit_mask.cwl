@@ -11,7 +11,6 @@ inputs:
       - string
     doc: "Mask ambiguous codons. e.g., \"AAN\", which\n                        may
       code Asn or Lys in the standard genetic code."
-    default: yes
     inputBinding:
       position: 101
       prefix: --ambiguouscodon
@@ -21,7 +20,6 @@ inputs:
       - int
     doc: "Codon table ID. The standard code is \"1\".\n                        See
       here for details: https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi"
-    default: 1
     inputBinding:
       position: 101
       prefix: --codontable
@@ -31,7 +29,6 @@ inputs:
       - string
     doc: "Input sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --inseqformat
@@ -40,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: A character to be used to mask codons.
-    default: N
     inputBinding:
       position: 101
       prefix: --maskchar
@@ -50,7 +46,6 @@ inputs:
       - string
     doc: "Output sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --outseqformat
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - File
     doc: Input sequence file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --seqfile
@@ -68,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: Mask stop codons.
-    default: yes
     inputBinding:
       position: 101
       prefix: --stopcodon

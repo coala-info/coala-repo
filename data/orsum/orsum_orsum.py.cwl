@@ -34,7 +34,6 @@ inputs:
       not be discarded but also will not be used to represent other terms. By 
       default, it is larger than any annotation term (1E6), which means that it 
       has no effect.
-    default: '1E6'
     inputBinding:
       position: 102
       prefix: --maxRepSize
@@ -45,7 +44,6 @@ inputs:
     doc: The maximum size of the terms to be processed. Larger terms will be 
       discarded. By default, it is larger than any annotation term (1E6), which 
       means that it has no effect.
-    default: '1E6'
     inputBinding:
       position: 102
       prefix: --maxTermSize
@@ -55,7 +53,6 @@ inputs:
       - int
     doc: The minimum size of the terms to be processed. Smaller terms will be 
       discarded. By default, minTermSize = 10
-    default: 10
     inputBinding:
       position: 102
       prefix: --minTermSize
@@ -65,7 +62,6 @@ inputs:
       - int
     doc: The number of representative terms to be presented in barplot and 
       heatmap. By default (and maximum), numberOfTermsToPlot = 50
-    default: 50
     inputBinding:
       position: 102
       prefix: --numberOfTermsToPlot

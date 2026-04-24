@@ -12,7 +12,6 @@ inputs:
     doc: If set, all transcripts are used for annotation. The default is to skip
       transcripts not labeled with 'gencode_basic' and not labeled with 
       'RefSeq'/'BestRefSeq' origin for Refseq.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: --all
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Number of lines processed in one chunk.
-    default: '5000'
     inputBinding:
       position: 101
       prefix: -block_size
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: Tag that is used for the consequence annotation.
-    default: CSQ
     inputBinding:
       position: 101
       prefix: -tag
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable debug output
-    default: 'false'
     inputBinding:
       position: 101
       prefix: --debug
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: GFF source.
-    default: ensembl
     inputBinding:
       position: 101
       prefix: -source
@@ -70,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance between variant and transcript.
-    default: '5000'
     inputBinding:
       position: 101
       prefix: -max_dist_to_trans
@@ -79,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of blocks that may be pre-fetched into memory.
-    default: '64'
     inputBinding:
       position: 101
       prefix: -prefetch
@@ -89,7 +82,6 @@ inputs:
       - File
     doc: Reference genome FASTA file. If unset 'reference_genome' from the 
       'settings.ini' file is used.
-    default: ''
     inputBinding:
       position: 101
       prefix: -ref
@@ -106,7 +98,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip genes that do not have a HGNC identifier.
-    default: 'false'
     inputBinding:
       position: 101
       prefix: --skip_not_hgnc
@@ -116,7 +107,6 @@ inputs:
       - int
     doc: Number of bases at exon boundaries that are considered to be part of 
       the splice region.
-    default: '3'
     inputBinding:
       position: 101
       prefix: -splice_region_ex
@@ -126,7 +116,6 @@ inputs:
       - int
     doc: Number of bases at intron boundaries (3') that are considered to be 
       part of the splice region.
-    default: '20'
     inputBinding:
       position: 101
       prefix: -splice_region_in3
@@ -136,7 +125,6 @@ inputs:
       - int
     doc: Number of bases at intron boundaries (5') that are considered to be 
       part of the splice region.
-    default: '20'
     inputBinding:
       position: 101
       prefix: -splice_region_in5
@@ -145,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads used to read, process and write files.
-    default: '1'
     inputBinding:
       position: 101
       prefix: -threads

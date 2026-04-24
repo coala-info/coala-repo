@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Use [n] CPUs
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpu
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - Directory
     doc: Data directory
-    default: /usr/local/data
     inputBinding:
       position: 101
       prefix: --data

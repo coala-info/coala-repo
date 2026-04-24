@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: The number of pixels loaded and processed per step of computation.
-    default: 10000000
     inputBinding:
       position: 102
       prefix: --chunksize
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: '(w)rite or (a)ppend to the output file (default: w)'
-    default: w
     inputBinding:
       position: 102
       prefix: --mode

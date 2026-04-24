@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Number of burn-in samples to discard
-    default: 500
     inputBinding:
       position: 102
       prefix: --burn-in
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Number of samples to draw from the posterior distribution
-    default: 1000
     inputBinding:
       position: 102
       prefix: --n-samples
@@ -63,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Random seed for reproducibility
-    default: 1234
     inputBinding:
       position: 102
       prefix: --seed

@@ -31,7 +31,6 @@ inputs:
     type: int?
     doc: Number of threads to use for computational processes
     label: Number of threads
-    default: 2
 
   illumina_forward_reads:
     type: File
@@ -58,14 +57,12 @@ inputs:
     type: boolean
     label: Kraken2 standard report
     doc: Also output Kraken2 standard report with per read classification. These can be large. (default true)
-    default: true
 
   ## Bracken
   skip_bracken:
     type: boolean
     label: Run Bracken
     doc: Skip Bracken analysis. Default false.
-    default: false
   read_length:
     type: int
     label: Read length
@@ -74,12 +71,10 @@ inputs:
     type: int
     label: Bracken reads threshold
     doc: Number of reads required PRIOR to abundance estimation to perform reestimation in bracken. Default 0
-    default: 0
   bracken_levels:
     type: string[]
     label: Bracken levels
     doc: Taxonomy levels in bracken estimate abundances on. Default runs through; [P,C,O,F,G,S]
-    default: [P,C,O,F,G,S]
 
   # Input provenance (to be ignored when prov is not used)
   destination:
@@ -106,7 +101,6 @@ steps:
       reverse_reads: illumina_reverse_reads
       confidence: kraken2_confidence
       paired_end:
-        default: true
     out: [sample_report, standard_report]
 #############################################
 #### Compress 
@@ -165,7 +159,6 @@ steps:
         linkMerge: merge_flattened
         pickValue: all_non_null
       destination:
-        default: "Kraken2_Illumina"
     run: ../tools/expressions/files_to_folder.cwl
     out:
       [results]
@@ -178,7 +171,6 @@ steps:
         linkMerge: merge_flattened
         pickValue: all_non_null
       destination:
-        default: "Bracken_Illumina"
     run: ../tools/expressions/files_to_folder.cwl
     out:
       [results]

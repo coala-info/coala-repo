@@ -17,7 +17,6 @@ inputs:
   - id: ksize
     type: int
     doc: k-mer size used for the assembly
-    default: 141
     inputBinding:
       position: 101
       prefix: --ksize

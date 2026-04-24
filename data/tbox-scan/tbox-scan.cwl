@@ -13,7 +13,6 @@ inputs:
       \   1: RFAM model (RFAM00230.cm), finds mostly class I transcriptional T-boxes
       (default)\n                    2: Translational Ile (TBDB001.cm), finds mostly
       class II translational T-boxes"
-    default: 1
     inputBinding:
       position: 101
       prefix: -m
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - File
     doc: save INFERNAL output predictions to .txt file
-    default: INFERNAL.txt
     inputBinding:
       position: 101
       prefix: -i
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: score cutoff for INFERNAL model predictions
-    default: 15
     inputBinding:
       position: 101
       prefix: -c

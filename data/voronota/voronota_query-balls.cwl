@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: sequence identity threshold for chains summary, default is 0.9
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --chains-seq-identity

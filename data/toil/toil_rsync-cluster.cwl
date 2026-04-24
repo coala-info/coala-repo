@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Temporarily disable strict host key checking.
-    default: false
     inputBinding:
       position: 103
       prefix: --insecure
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable or disable colored logging.
-    default: true
     inputBinding:
       position: 103
       prefix: --logColors
@@ -83,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: Set the log level.
-    default: INFO
     inputBinding:
       position: 103
       prefix: --logLevel
@@ -117,7 +114,6 @@ inputs:
       - boolean
     doc: Turn on rotating logging, which prevents log files from getting too 
       big.
-    default: false
     inputBinding:
       position: 103
       prefix: --rotatingLogging
@@ -127,7 +123,6 @@ inputs:
       - Directory
     doc: Path to where temporary directory containing all temp files are 
       created.
-    default: /tmp
     inputBinding:
       position: 103
       prefix: --tempDirRoot

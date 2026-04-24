@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: default burnin = 1/10 of the chain
-    default: 1/10 of the chain
     inputBinding:
       position: 102
       prefix: -x
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: only partitions with max prob > cutoff.
-    default: 0.5
     inputBinding:
       position: 102
       prefix: -c

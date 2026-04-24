@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Chunksize in Mbp
-    default: 25
     inputBinding:
       position: 101
       prefix: --chunk-size
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore alignments matching flag
-    default: 3840
     inputBinding:
       position: 101
       prefix: --mapflag
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapq of reads to consider
-    default: 5
     inputBinding:
       position: 101
       prefix: --mapq
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum size of variant to index
-    default: 10000
     inputBinding:
       position: 101
       prefix: --sizemax
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of variant to index
-    default: 50
     inputBinding:
       position: 101
       prefix: --sizemin
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

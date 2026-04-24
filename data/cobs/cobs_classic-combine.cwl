@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: memory in bytes to use
-    default: 49.989 Gi
     inputBinding:
       position: 103
       prefix: --memory
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: max cores
     inputBinding:
       position: 103
       prefix: --threads

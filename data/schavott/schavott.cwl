@@ -19,7 +19,6 @@ inputs:
     doc: "How often the scaffolding process should run. If run\n mode is set to reads,
       scaffolding will run every i:th\n read. If run mode is time, scaffolding will
       run every\n i:th second."
-    default: 100 reads
     inputBinding:
       position: 101
       prefix: --intensity
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Set output filename.
-    default: schavott
     inputBinding:
       position: 101
       prefix: --output
@@ -102,7 +100,6 @@ inputs:
       - 'null'
       - string
     doc: Use timer or read count.
-    default: reads
     inputBinding:
       position: 101
       prefix: --trigger_mode

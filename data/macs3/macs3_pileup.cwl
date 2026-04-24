@@ -22,7 +22,6 @@ inputs:
       - boolean
     doc: If this option is set as on, aligned reads will be extended in both 
       upstream and downstream directions by extension size.
-    default: false
     inputBinding:
       position: 101
       prefix: --both-direction
@@ -32,7 +31,6 @@ inputs:
       - int
     doc: Buffer size for incrementally increasing internal array size to store 
       reads alignment information.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --buffer-size
@@ -42,7 +40,6 @@ inputs:
       - int
     doc: The extension size in bps. Each alignment read will become a EXTSIZE of
       fragment, then be piled up.
-    default: 200
     inputBinding:
       position: 101
       prefix: --extsize
@@ -52,7 +49,6 @@ inputs:
       - string
     doc: Format of tag file, "AUTO", "BED", "ELAND", "ELANDMULTI", 
       "ELANDEXPORT", "SAM", "BAM", "BOWTIE", "BAMPE", "BEDPE", or "FRAG".
-    default: AUTO
     inputBinding:
       position: 101
       prefix: --format

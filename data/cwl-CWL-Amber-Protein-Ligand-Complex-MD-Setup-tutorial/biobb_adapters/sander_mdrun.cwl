@@ -69,7 +69,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_log_path
-    default: system.log
 
   output_traj_path:
     label: Output trajectory file
@@ -90,7 +89,6 @@ inputs:
     inputBinding:
       position: 4
       prefix: --output_traj_path
-    default: system.trj
 
   output_rst_path:
     label: Output restart file
@@ -110,7 +108,6 @@ inputs:
     inputBinding:
       position: 5
       prefix: --output_rst_path
-    default: system.rst
 
   input_mdin_path:
     label: Input configuration file (MD run options) (AMBER mdin)
@@ -174,7 +171,6 @@ inputs:
     - edam:format_2330
     inputBinding:
       prefix: --output_cpout_path
-    default: system.cpout
 
   output_cprst_path:
     label: Output constant pH restart file (AMBER rstout)
@@ -191,7 +187,6 @@ inputs:
     - edam:format_3886
     inputBinding:
       prefix: --output_cprst_path
-    default: system.cprst
 
   output_mdinfo_path:
     label: Output MD info
@@ -206,7 +201,6 @@ inputs:
     - edam:format_2330
     inputBinding:
       prefix: --output_mdinfo_path
-    default: system.mdinfo
 
   config:
     label: Advanced configuration options for biobb_amber SanderMDRun

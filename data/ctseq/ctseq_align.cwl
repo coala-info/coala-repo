@@ -11,7 +11,6 @@ inputs:
       - int
     doc: number of cores to use to align with Bismark. Default=1. Highly 
       recommended to run with more than 1 core, try starting with 6 cores
-    default: 1
     inputBinding:
       position: 101
       prefix: --bismarkCores
@@ -21,7 +20,6 @@ inputs:
       - int
     doc: number of cores to use with Cutadapt. Default=1. Highly recommended to 
       run with more than 1 core, try starting with 18 cores
-    default: 1
     inputBinding:
       position: 101
       prefix: --cutadaptCores
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: adapter sequence to remove from FORWARD reads
-    default: AGTGTGGGAGGGTAGTTGGTGTT
     inputBinding:
       position: 101
       prefix: --forwardAdapter
@@ -50,7 +47,6 @@ inputs:
     doc: number of reads to analyze per fastq file (should only adjust this if 
       you think you are too big of a file through bismark). Default=5000000 (5 
       million)
-    default: 5000000
     inputBinding:
       position: 101
       prefix: --readsPerFile
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: adapter sequence to remove from REVERSE reads
-    default: ACTCCCCACCTTCCTCATTCTCTAAGACGGTGT
     inputBinding:
       position: 101
       prefix: --reverseAdapter

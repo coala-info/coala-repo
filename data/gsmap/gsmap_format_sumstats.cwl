@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Name of effect allele column (if not a name that gsMap understands)
-    default: None
     inputBinding:
       position: 101
       prefix: --a1
@@ -19,7 +18,6 @@ inputs:
       - string
     doc: Name of none-effect allele column (if not a name that gsMap 
       understands)
-    default: None
     inputBinding:
       position: 101
       prefix: --a2
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Name of gwas beta column (if not a name that gsMap understands).
-    default: None
     inputBinding:
       position: 101
       prefix: --beta
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Name of SNP chromosome column (if not a name that gsMap understands)
-    default: Chr
     inputBinding:
       position: 101
       prefix: --chr
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Chunk size for loading dbsnp file
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --chunksize
@@ -55,7 +50,6 @@ inputs:
       - 'null'
       - File
     doc: Path to reference dnsnp file
-    default: None
     inputBinding:
       position: 101
       prefix: --dbsnp
@@ -64,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: Format of output data
-    default: gsMap
     inputBinding:
       position: 101
       prefix: --format
@@ -73,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: Name of A1 ferquency column (if not a name that gsMap understands)
-    default: None
     inputBinding:
       position: 101
       prefix: --frq
@@ -82,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Name of info column (if not a name that gsMap understands)
-    default: None
     inputBinding:
       position: 101
       prefix: --info
@@ -91,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum INFO score.
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --info_min
@@ -100,7 +90,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep SNP chromosome and position columns in the output data
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_chr_pos
@@ -109,7 +98,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum MAF.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --maf_min
@@ -118,7 +106,6 @@ inputs:
       - 'null'
       - string
     doc: Name of sample size column (if not a name that gsMap understands)
-    default: None
     inputBinding:
       position: 101
       prefix: --n
@@ -127,7 +114,6 @@ inputs:
       - 'null'
       - string
     doc: Name of gwas OR column (if not a name that gsMap understands)
-    default: None
     inputBinding:
       position: 101
       prefix: --OR
@@ -136,7 +122,6 @@ inputs:
       - 'null'
       - string
     doc: Name of p-value column (if not a name that gsMap understands)
-    default: None
     inputBinding:
       position: 101
       prefix: --p
@@ -145,7 +130,6 @@ inputs:
       - 'null'
       - string
     doc: Name of SNP positions column (if not a name that gsMap understands)
-    default: Pos
     inputBinding:
       position: 101
       prefix: --pos
@@ -155,7 +139,6 @@ inputs:
       - string
     doc: Name of gwas standar error of beta column (if not a name that gsMap 
       understands)
-    default: None
     inputBinding:
       position: 101
       prefix: --se
@@ -165,7 +148,6 @@ inputs:
       - string
     doc: Name of standar error of OR column (if not a name that gsMap 
       understands)
-    default: None
     inputBinding:
       position: 101
       prefix: --se_OR
@@ -174,7 +156,6 @@ inputs:
       - 'null'
       - string
     doc: Name of snp column (if not a name that gsMap understands)
-    default: None
     inputBinding:
       position: 101
       prefix: --snp
@@ -189,7 +170,6 @@ inputs:
       - 'null'
       - string
     doc: Name of gwas Z-statistics column (if not a name that gsMap understands)
-    default: None
     inputBinding:
       position: 101
       prefix: --z

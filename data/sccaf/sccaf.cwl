@@ -11,7 +11,6 @@ inputs:
     doc: 'How many samples are taken of cells per clusters prior to the confusion
       matrix calculation.Higher numbers will produce more stable results in terms
       of rounds, but will take longer. Default: 3.'
-    default: 3
     inputBinding:
       position: 101
       prefix: --conf-sampling-iterations

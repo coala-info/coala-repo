@@ -15,7 +15,6 @@ inputs:
       - Directory
     doc: The directory to put the reference file ("barcodes.fa") and its index 
       files in.
-    default: refdir
     inputBinding:
       position: 2
   - id: bowtie_chunkmbs
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Number to pass to bowtie's --chunkmbs option
-    default: 512
     inputBinding:
       position: 103
       prefix: -c
@@ -71,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for bowtie and bowtie-build to use
-    default: 1
     inputBinding:
       position: 103
       prefix: -t

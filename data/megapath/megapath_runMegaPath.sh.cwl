@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - Directory
     doc: Database directory
-    default: /usr/local/MegaPath/db
     inputBinding:
       position: 101
       prefix: -d
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Max read length
-    default: 150
     inputBinding:
       position: 101
       prefix: -L
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: NT alignment score cutoff
-    default: 40
     inputBinding:
       position: 101
       prefix: -c
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Output prefix
-    default: megapath
     inputBinding:
       position: 101
       prefix: -p
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: SPIKE filter number of stdev
-    default: 60
     inputBinding:
       position: 101
       prefix: -s
@@ -90,7 +85,6 @@ inputs:
       - 'null'
       - float
     doc: SPIKE overlap
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -o
@@ -99,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 24
     inputBinding:
       position: 101
       prefix: -t

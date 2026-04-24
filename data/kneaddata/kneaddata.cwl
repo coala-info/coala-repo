@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: path to BMTagger
-    default: $PATH
     inputBinding:
       position: 101
       prefix: --bmtagger
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: options for bowtie2
-    default: --very-sensitive-local
     inputBinding:
       position: 101
       prefix: --bowtie2-options
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - File
     doc: path to bowtie2
-    default: $PATH
     inputBinding:
       position: 101
       prefix: --bowtie2
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: concatenate all final output files
-    default: final output is not concatenated
     inputBinding:
       position: 101
       prefix: --cat-final-output
@@ -63,7 +59,6 @@ inputs:
     doc: options for filtering of paired end reads (strict='remove both R1+R2 if
       either align', lenient='remove only if both R1+R2 align', unpaired='ignore
       pairing and remove as single end')
-    default: strict
     inputBinding:
       position: 101
       prefix: --decontaminate-pairs
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: indel penalty
-    default: 7
     inputBinding:
       position: 101
       prefix: --delta
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - File
     doc: path to fastqc
-    default: $PATH
     inputBinding:
       position: 101
       prefix: --fastqc
@@ -106,7 +99,6 @@ inputs:
       - 'null'
       - File
     doc: log file
-    default: $OUTPUT_DIR/$SAMPLE_kneaddata.log
     inputBinding:
       position: 101
       prefix: --log
@@ -115,7 +107,6 @@ inputs:
       - 'null'
       - string
     doc: level of log messages
-    default: DEBUG
     inputBinding:
       position: 101
       prefix: --log-level
@@ -124,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: matching weight
-    default: 2
     inputBinding:
       position: 101
       prefix: --match
@@ -133,7 +123,6 @@ inputs:
       - 'null'
       - string
     doc: max amount of memory
-    default: 500m
     inputBinding:
       position: 101
       prefix: --max-memory
@@ -142,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: maximum period size to report
-    default: 500
     inputBinding:
       position: 101
       prefix: --maxperiod
@@ -151,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: minimum alignment score to report
-    default: 50
     inputBinding:
       position: 101
       prefix: --minscore
@@ -160,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: mismatching penalty
-    default: 7
     inputBinding:
       position: 101
       prefix: --mismatch
@@ -175,7 +161,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for all output files
-    default: $SAMPLE_kneaddata
     inputBinding:
       position: 101
       prefix: --output-prefix
@@ -184,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: indel probability
-    default: 10
     inputBinding:
       position: 101
       prefix: --pi
@@ -193,7 +177,6 @@ inputs:
       - 'null'
       - int
     doc: match probability
-    default: 80
     inputBinding:
       position: 101
       prefix: --pm
@@ -202,7 +185,6 @@ inputs:
       - 'null'
       - int
     doc: number of processes
-    default: 1
     inputBinding:
       position: 101
       prefix: --processes
@@ -211,7 +193,6 @@ inputs:
       - 'null'
       - string
     doc: quality scores
-    default: phred33
     inputBinding:
       position: 101
       prefix: --quality-scores
@@ -229,7 +210,6 @@ inputs:
       - 'null'
       - boolean
     doc: remove intermediate output files
-    default: intermediate output files are stored
     inputBinding:
       position: 101
       prefix: --remove-intermediate-output
@@ -238,7 +218,6 @@ inputs:
       - 'null'
       - boolean
     doc: order the sequences in the same order as the input
-    default: Sequences are not ordered
     inputBinding:
       position: 101
       prefix: --reorder
@@ -295,7 +274,6 @@ inputs:
       - 'null'
       - string
     doc: options for sequencer-source
-    default: NexteraPE
     inputBinding:
       position: 101
       prefix: --sequencer-source
@@ -314,7 +292,6 @@ inputs:
       - 'null'
       - boolean
     doc: store temp output files
-    default: temp output files are removed
     inputBinding:
       position: 101
       prefix: --store-temp-output
@@ -323,7 +300,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -332,7 +308,6 @@ inputs:
       - 'null'
       - File
     doc: path to TRF
-    default: $PATH
     inputBinding:
       position: 101
       prefix: --trf
@@ -341,7 +316,6 @@ inputs:
       - 'null'
       - string
     doc: options for trimmomatic
-    default: MINLEN:60 ILLUMINACLIP:/-SE.fa:2:30:10 SLIDINGWINDOW:4:20 MINLEN:50
     inputBinding:
       position: 101
       prefix: --trimmomatic-options
@@ -350,7 +324,6 @@ inputs:
       - 'null'
       - File
     doc: path to trimmomatic
-    default: $PATH
     inputBinding:
       position: 101
       prefix: --trimmomatic

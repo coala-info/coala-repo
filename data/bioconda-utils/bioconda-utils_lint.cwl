@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to folder containing recipes
-    default: recipes/
     inputBinding:
       position: 1
   - id: config
@@ -17,7 +16,6 @@ inputs:
       - 'null'
       - File
     doc: Path to Bioconda config
-    default: config.yml
     inputBinding:
       position: 2
   - id: cache
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Commit on github on which to update status
-    default: '-'
     inputBinding:
       position: 103
       prefix: --commit
@@ -53,7 +50,6 @@ inputs:
       - boolean
     doc: Default behavior is to summarize the linting results; use this argument
       to get the full results as a TSV printed to stdout.
-    default: false
     inputBinding:
       position: 103
       prefix: --full-report
@@ -66,7 +62,6 @@ inputs:
       commits in HEAD vs master, or just "HEAD" to include uncommitted changes).
       All recipes modified within this range will be built if not present in the
       channel.
-    default: '-'
     inputBinding:
       position: 103
       prefix: --git-range
@@ -75,7 +70,6 @@ inputs:
       - 'null'
       - boolean
     doc: List the linting functions to be used and then exit
-    default: false
     inputBinding:
       position: 103
       prefix: --list-checks
@@ -84,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Limit lines emitted for commands executed
-    default: '-'
     inputBinding:
       position: 103
       prefix: --log-command-max-lines
@@ -93,7 +86,6 @@ inputs:
       - 'null'
       - File
     doc: Write log to file
-    default: '-'
     inputBinding:
       position: 103
       prefix: --logfile
@@ -102,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: Log level for log file
-    default: debug
     inputBinding:
       position: 103
       prefix: --logfile-level
@@ -111,7 +102,6 @@ inputs:
       - 'null'
       - string
     doc: Set logging level (debug, info, warning, error, critical)
-    default: info
     inputBinding:
       position: 103
       prefix: --loglevel
@@ -122,7 +112,6 @@ inputs:
         items: string
     doc: Glob for package[s] to build. Default is to build all packages. Can be 
       specified more than once
-    default: '*'
     inputBinding:
       position: 103
       prefix: --packages
@@ -131,7 +120,6 @@ inputs:
       - 'null'
       - boolean
     doc: Drop into debugger on exception
-    default: false
     inputBinding:
       position: 103
       prefix: -P
@@ -140,7 +128,6 @@ inputs:
       - 'null'
       - string
     doc: Pull request id on github on which to post a comment.
-    default: '-'
     inputBinding:
       position: 103
       prefix: --pull-request
@@ -151,7 +138,6 @@ inputs:
     doc: If set, the lint status will be posted as a comment in the 
       corresponding pull request (given by --pull-request). Also needs --user 
       and --repo to be set. Requires the env var GITHUB_TOKEN to be set.
-    default: false
     inputBinding:
       position: 103
       prefix: --push-comment
@@ -163,7 +149,6 @@ inputs:
       Also needs --user and --repo to be set. Requires the env var GITHUB_TOKEN 
       to be set. Note that pull requests from forks will not have access to 
       encrypted variables on ci, so this feature may be of limited use.
-    default: false
     inputBinding:
       position: 103
       prefix: --push-status
@@ -172,7 +157,6 @@ inputs:
       - 'null'
       - string
     doc: Github repo
-    default: bioconda-recipes
     inputBinding:
       position: 103
       prefix: --repo
@@ -181,7 +165,6 @@ inputs:
       - 'null'
       - boolean
     doc: Attempt to fix problems where found
-    default: false
     inputBinding:
       position: 103
       prefix: --try-fix
@@ -190,7 +173,6 @@ inputs:
       - 'null'
       - string
     doc: Github user
-    default: bioconda
     inputBinding:
       position: 103
       prefix: --user

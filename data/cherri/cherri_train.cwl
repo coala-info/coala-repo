@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: How much context should be added at up- and downstream of the sequence.
-    default: 150
     inputBinding:
       position: 102
       prefix: --context
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: 'context to extend left and right for the BED file instances. Default: 5'
-    default: 5
     inputBinding:
       position: 102
       prefix: --context_additional
@@ -42,7 +40,6 @@ inputs:
       - string
     doc: "5-fold cross validated of the pipeline will be performed using the training
       data. Set 'off' to skip. Default: 'on'"
-    default: on
     inputBinding:
       position: 102
       prefix: --do_cv
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: 'score threshold for the additional occupied regions [BED]. Default: 10'
-    default: 10
     inputBinding:
       position: 102
       prefix: --exp_score_th
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the data source of RRIs. Will be used for the file names.
-    default: model_rri
     inputBinding:
       position: 102
       prefix: --experiment_name
@@ -70,7 +65,6 @@ inputs:
       - string
     doc: Filter the data for hybrids already detected by ChiRA (set 'on' to 
       filter). Default:'off'
-    default: off
     inputBinding:
       position: 102
       prefix: --filter_hybrid
@@ -79,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of folds for the cross validation. Default: 5'
-    default: 5
     inputBinding:
       position: 102
       prefix: --folds
@@ -95,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: 'Memory in MB each thread can use (total ram/threads). Default: 4300'
-    default: 4300
     inputBinding:
       position: 102
       prefix: --memoryPerThread
@@ -104,7 +96,6 @@ inputs:
       - 'null'
       - string
     doc: 'Methods used for model selection. Default: any'
-    default: any
     inputBinding:
       position: 102
       prefix: --methods
@@ -114,7 +105,6 @@ inputs:
       - string
     doc: "Use mixed model to combine different datasets into a combined model. Default:
       'off'"
-    default: off
     inputBinding:
       position: 102
       prefix: --mixed
@@ -124,7 +114,6 @@ inputs:
       - int
     doc: 'Number of jobs used for graph feature computation and model selection. Default:
       1'
-    default: 1
     inputBinding:
       position: 102
       prefix: --n_jobs
@@ -133,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: '# of interactions IntraRNA will give is possible. Default: 5'
-    default: 5
     inputBinding:
       position: 102
       prefix: --no_sub_opt
@@ -142,7 +130,6 @@ inputs:
       - 'null'
       - string
     doc: Name for the output directory, default 'date_Cherri_evaluating_RRIs'.
-    default: date_cherri_train
     inputBinding:
       position: 102
       prefix: --out_name
@@ -151,7 +138,6 @@ inputs:
       - 'null'
       - File
     doc: IntaRNA parameter file.
-    default: file in path_to_cherri_folder/Cherri/rrieval/IntaRNA_param
     inputBinding:
       position: 102
       prefix: --param_file
@@ -175,7 +161,6 @@ inputs:
       - 'null'
       - int
     doc: 'Time used for the optimization in seconds. Default: 43200 (12h)'
-    default: 43200
     inputBinding:
       position: 102
       prefix: --run_time
@@ -185,7 +170,6 @@ inputs:
       - string
     doc: "Set a temporary directory for autosklearn. Either proved a path or 'out'
       to set it to the output directory. Default: 'off'"
-    default: off
     inputBinding:
       position: 102
       prefix: --temp_dir
@@ -196,7 +180,6 @@ inputs:
     doc: "Set 'off' if you want to disable graph-kernel features. Default: 'on' (when
       set to 'on' the feature optimization will be performed directly and the data
       will be stored in feature_files and no model/feature folder will be created)"
-    default: on
     inputBinding:
       position: 102
       prefix: --use_structure

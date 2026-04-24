@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Number of dimensions to consider in PCA.
-    default: 20
     inputBinding:
       position: 102
       prefix: --dim
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: Error rate threshold for PCA based search
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --error_rate
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Diploid genome size for error rate estimation.
-    default: 6200000000
     inputBinding:
       position: 102
       prefix: --genome_size
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - float
     doc: Search radius for large PCA based search
-    default: 15.0
     inputBinding:
       position: 102
       prefix: --large
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Keep only sites with this coverage and above.
-    default: 1
     inputBinding:
       position: 102
       prefix: --min_cov
@@ -80,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: Missing site threshold large PCA based search
-    default: 0.3
     inputBinding:
       position: 102
       prefix: --miss_large
@@ -89,7 +83,6 @@ inputs:
       - 'null'
       - float
     doc: Missing site threshold small for PCA based search
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --miss_small
@@ -125,7 +118,6 @@ inputs:
       - 'null'
       - float
     doc: Score threshold
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --score_thresh
@@ -135,7 +127,6 @@ inputs:
       - float
     doc: 'Divides the score by coverage. Formula: (cov1*cov2)^skew Set to zero for
       no skew.'
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --skew
@@ -144,7 +135,6 @@ inputs:
       - 'null'
       - float
     doc: Search radius for small PCA based search
-    default: 2.0
     inputBinding:
       position: 102
       prefix: --small
@@ -153,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to run.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

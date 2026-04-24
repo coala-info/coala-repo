@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: alpha scaling factor; increase for stricter event calls (default=1.0)
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --alphascale
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: beta scaling factor; sparse prior on subtype assignment (default=0.05)
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --betascale
@@ -37,7 +35,6 @@ inputs:
       - int
     doc: max. window size for running a mixture model over binding events 
       (default=2000)
-    default: 2000
     inputBinding:
       position: 101
       prefix: --bmwindowmax
@@ -73,7 +70,6 @@ inputs:
       - float
     doc: epsilon scaling factor; increase for more weight on motif in subtype 
       assignment (default=0.2)
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --epsilonscale
@@ -156,7 +152,6 @@ inputs:
       - float
     doc: KL divergence dissimilarity threshold for merging subtypes using read 
       distributions; increase for fewer subtypes (default=-10)
-    default: -10.0
     inputBinding:
       position: 101
       prefix: --kldivergencethres
@@ -184,7 +179,6 @@ inputs:
       - float
     doc: fraction of the genome that is mappable for these experiments 
       (default=0.8)
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --mappability
@@ -201,7 +195,6 @@ inputs:
       - 'null'
       - string
     doc: additional args for MEME (default=  -dna -mod zoops -revcomp -nostatus)
-    default: -dna -mod zoops -revcomp -nostatus
     inputBinding:
       position: 101
       prefix: --memeargs
@@ -210,7 +203,6 @@ inputs:
       - 'null'
       - int
     doc: maxw arg for MEME (default=18)
-    default: 18
     inputBinding:
       position: 101
       prefix: --mememaxw
@@ -219,7 +211,6 @@ inputs:
       - 'null'
       - int
     doc: minw arg for MEME (default=6)
-    default: 6
     inputBinding:
       position: 101
       prefix: --mememinw
@@ -228,7 +219,6 @@ inputs:
       - 'null'
       - int
     doc: number of motifs MEME should find for each condition (default=3)
-    default: 3
     inputBinding:
       position: 101
       prefix: --memenmotifs
@@ -245,7 +235,6 @@ inputs:
       - 'null'
       - float
     doc: minimum event fold-change vs scaled control (default=1.5)
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --minfold
@@ -255,7 +244,6 @@ inputs:
       - int
     doc: minimum number of events to support an update using read distributions 
       (default=100)
-    default: 100
     inputBinding:
       position: 101
       prefix: --minmodelupdateevents
@@ -265,7 +253,6 @@ inputs:
       - int
     doc: minimum number of motif reference to support an subtype distribution 
       update (default=50)
-    default: 50
     inputBinding:
       position: 101
       prefix: --minmodelupdaterefs
@@ -274,7 +261,6 @@ inputs:
       - 'null'
       - float
     doc: minimum motif ROC value (default=0.7)
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --minroc
@@ -284,7 +270,6 @@ inputs:
       - float
     doc: subtypes must have at least this percentage of associated binding 
       events; increase for fewer subtypes (default=0.05)
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --minsubtypefrac
@@ -302,7 +287,6 @@ inputs:
       - float
     doc: motif length adjusted similarity threshold for merging subtypes using 
       motifs; decrease for fewer subtypes (default=0.95)
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --motifpccthres
@@ -376,7 +360,6 @@ inputs:
       - 'null'
       - int
     doc: number of components to cluster (default=500)
-    default: 500
     inputBinding:
       position: 101
       prefix: --numcomps
@@ -418,7 +401,6 @@ inputs:
       - 'null'
       - float
     doc: preference value for read distribution clustering (default=-0.1)
-    default: -0.1
     inputBinding:
       position: 101
       prefix: --pref
@@ -427,7 +409,6 @@ inputs:
       - 'null'
       - float
     doc: Poisson log threshold for potential region scanning (default=-6)
-    default: -6.0
     inputBinding:
       position: 101
       prefix: --prlogconf
@@ -436,7 +417,6 @@ inputs:
       - 'null'
       - float
     doc: Q-value minimum (default=0.01)
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --q
@@ -453,7 +433,6 @@ inputs:
       - 'null'
       - int
     doc: max. model update rounds (default=3)
-    default: 3
     inputBinding:
       position: 101
       prefix: --round
@@ -462,7 +441,6 @@ inputs:
       - 'null'
       - int
     doc: window size for scaling procedure (default=10000)
-    default: 10000
     inputBinding:
       position: 101
       prefix: --scalewin
@@ -480,7 +458,6 @@ inputs:
       - float
     doc: Filter out sequences with motifs below this threshold for recursively 
       finding motifs (default=0.1)
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --seqrmthres
@@ -506,7 +483,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -523,7 +499,6 @@ inputs:
       - 'null'
       - int
     doc: window size of read profiles (default=150)
-    default: 150
     inputBinding:
       position: 101
       prefix: --win

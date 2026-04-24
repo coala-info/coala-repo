@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Per-base accuracy distribution breakpoints (specified with x,y,z...)
-    default: 0,0.2,0.4,0.6,0.8,0.85,0.9,0.95,0.99,1
     inputBinding:
       position: 104
       prefix: -I
@@ -36,7 +35,6 @@ inputs:
       - float
     doc: Alpha compression factor for sigmoid transformation applied to bridge 
       index during integrity score component calculation
-    default: 7
     inputBinding:
       position: 104
       prefix: -a
@@ -46,7 +44,6 @@ inputs:
       - float
     doc: Beta compression factor for sigmoid transformation applied to bridge 
       index during integrity score component calculation
-    default: 0.5
     inputBinding:
       position: 104
       prefix: -b
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: Per-base coverage distribution breakpoints (specified with x,y,z...)
-    default: 0,5,10,20,40,60,80,100
     inputBinding:
       position: 104
       prefix: -i
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: Base coverage weight
-    default: 1.5
     inputBinding:
       position: 104
       prefix: -w
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - float
     doc: Correction factor for distance outlier threshold calculation
-    default: 5
     inputBinding:
       position: 104
       prefix: -c
@@ -82,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: Memory block size for GNU Parallel
-    default: 512M
     inputBinding:
       position: 104
       prefix: -M
@@ -91,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Percentage of available RAM used by GNU sort
-    default: 50
     inputBinding:
       position: 104
       prefix: -G
@@ -100,7 +92,6 @@ inputs:
       - 'null'
       - float
     doc: Multiplicative factor for higher distance outlier threshold calculation
-    default: 10
     inputBinding:
       position: 104
       prefix: -X
@@ -110,7 +101,6 @@ inputs:
       - string
     doc: Per-transcript proportion of improperly paired reads within a 
       transcript distribution breakpoints (specified with x,y,z...)
-    default: 0,0.2,0.4,0.6,0.8,0.85,0.9,0.95,1
     inputBinding:
       position: 104
       prefix: -y
@@ -120,7 +110,6 @@ inputs:
       - string
     doc: Per-transcript proportion of LAR bases distribution breakpoints 
       (specified with x,y,z...)
-    default: 0,0.2,0.4,0.6,0.8,0.85,0.9,0.95,0.99,1
     inputBinding:
       position: 104
       prefix: -U
@@ -129,7 +118,6 @@ inputs:
       - 'null'
       - float
     doc: LAR extension penalty
-    default: 0.1
     inputBinding:
       position: 104
       prefix: -E
@@ -138,7 +126,6 @@ inputs:
       - 'null'
       - float
     doc: Local accuracy threshold for LAR characterization
-    default: 0.98
     inputBinding:
       position: 104
       prefix: -Z
@@ -148,7 +135,6 @@ inputs:
       - string
     doc: Per-transcript proportion of LCR bases distribution breakpoints 
       (specified with x,y,z...)
-    default: 0,0.2,0.4,0.6,0.8,0.85,0.9,0.95,1
     inputBinding:
       position: 104
       prefix: -u
@@ -157,7 +143,6 @@ inputs:
       - 'null'
       - float
     doc: LCR extension penalty
-    default: 0.5
     inputBinding:
       position: 104
       prefix: -e
@@ -166,7 +151,6 @@ inputs:
       - 'null'
       - float
     doc: Local coverage threshold for LCR characterization
-    default: 3
     inputBinding:
       position: 104
       prefix: -z
@@ -176,7 +160,6 @@ inputs:
       - string
     doc: Library strandness, fr = forward-reverse, rf = reverse-forward, u = 
       unstranded, a = automatic detection
-    default: u
     inputBinding:
       position: 104
       prefix: -S
@@ -185,7 +168,6 @@ inputs:
       - 'null'
       - string
     doc: 'Paired- vs. single-end library configuration: pe = paired-end, se = single-end'
-    default: pe
     inputBinding:
       position: 104
       prefix: -C
@@ -194,7 +176,6 @@ inputs:
       - 'null'
       - float
     doc: Multiplicative factor for lower distance outlier threshold calculation
-    default: 8
     inputBinding:
       position: 104
       prefix: -x
@@ -205,7 +186,6 @@ inputs:
     doc: Maximum distance from transcript ends for reads with unmapped pair to 
       be considered evidence of transcript end incompleteness or fragmentation 
       (in bp)
-    default: 40
     inputBinding:
       position: 104
       prefix: -d
@@ -214,7 +194,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of distinct mappings per read
-    default: 10
     inputBinding:
       position: 104
       prefix: -N
@@ -233,7 +212,6 @@ inputs:
       - string
     doc: Mean transcript coverage distribution breakpoints (specified with 
       x,y,z...)
-    default: 0,5,10,20,40,60,80,100
     inputBinding:
       position: 104
       prefix: -r
@@ -242,7 +220,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum accuracy for a base to be considered accurate
-    default: 0.95
     inputBinding:
       position: 104
       prefix: -A
@@ -252,7 +229,6 @@ inputs:
       - int
     doc: Minimum number of bridging events for transcripts to be considered 
       fragmented
-    default: 3
     inputBinding:
       position: 104
       prefix: -f
@@ -261,7 +237,6 @@ inputs:
       - 'null'
       - int
     doc: Number of splits performed on positional and read pair mapping tables
-    default: 3
     inputBinding:
       position: 104
       prefix: -T
@@ -270,7 +245,6 @@ inputs:
       - 'null'
       - Directory
     doc: CATS-rf output directory name
-    default: TRANSCRIPTOME_CATS_rf_dir
     inputBinding:
       position: 104
       prefix: -D
@@ -279,7 +253,6 @@ inputs:
       - 'null'
       - string
     doc: CATS-rf output file prefix
-    default: TRANSCRIPTOME
     inputBinding:
       position: 104
       prefix: -o
@@ -288,7 +261,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite the CATS-rf output directory
-    default: false
     inputBinding:
       position: 104
       prefix: -O
@@ -297,7 +269,6 @@ inputs:
       - 'null'
       - string
     doc: Phred quality encoding of FASTQ files, 33 = phred33, 64 = phred64
-    default: '33'
     inputBinding:
       position: 104
       prefix: -Q
@@ -307,7 +278,6 @@ inputs:
       - int
     doc: Random seed for read mapping, transcript quantification, and read 
       assignment
-    default: 12345
     inputBinding:
       position: 104
       prefix: -R
@@ -317,7 +287,6 @@ inputs:
       - string
     doc: Per-transcript proportion of reads with pair mapped to another 
       transcript distribution breakpoints (specified with x,y,z...)
-    default: 0,0.2,0.4,0.6,0.8,0.85,0.9,0.95,1
     inputBinding:
       position: 104
       prefix: -F
@@ -327,7 +296,6 @@ inputs:
       - int
     doc: Rolling window size for local accuracy calculation (in bp) when 
       defining low-accuracy regions (LAR)
-    default: 10
     inputBinding:
       position: 104
       prefix: -K
@@ -337,7 +305,6 @@ inputs:
       - int
     doc: Rolling window size for local coverage calculation (in bp) when 
       defining low-coverage regions (LCR)
-    default: 10
     inputBinding:
       position: 104
       prefix: -k
@@ -355,7 +322,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads
-    default: 10
     inputBinding:
       position: 104
       prefix: -t
@@ -365,7 +331,6 @@ inputs:
       - string
     doc: Per-transcript proportion of accurate bases distribution breakpoints 
       (specified with x,y,z...)
-    default: 0,0.2,0.4,0.6,0.8,0.85,0.9,0.95,0.99,1
     inputBinding:
       position: 104
       prefix: -P
@@ -375,7 +340,6 @@ inputs:
       - string
     doc: Per-transcript proportion of covered bases distribution breakpoints 
       (specified with x,y,z...)
-    default: 0,0.2,0.4,0.6,0.8,0.85,0.9,0.95,1
     inputBinding:
       position: 104
       prefix: -p
@@ -385,7 +349,6 @@ inputs:
       - float
     doc: Proportion of transcript length for transcript end definition when 
       calculating mean transcript end coverage
-    default: 0.02
     inputBinding:
       position: 104
       prefix: -n
@@ -395,7 +358,6 @@ inputs:
       - float
     doc: Proportion of transcript length for positional accuracy distribution 
       analysis
-    default: 0.01
     inputBinding:
       position: 104
       prefix: -L
@@ -405,7 +367,6 @@ inputs:
       - float
     doc: Proportion of transcript length for positional relative coverage 
       distribution analysis
-    default: 0.01
     inputBinding:
       position: 104
       prefix: -l

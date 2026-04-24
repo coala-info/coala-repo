@@ -21,7 +21,6 @@ inputs:
     doc: The offset to apply to the second file's coordinates. A positive offset
       shifts the second file's regions to the right, and a negative offset 
       shifts them to the left. Defaults to 0.
-    default: 0
     inputBinding:
       position: 103
       prefix: --offset

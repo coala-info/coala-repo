@@ -29,7 +29,6 @@ inputs:
       - float
     doc: Rescaling factor to keep the bowtie2 mutlifasta index below the maximum
       memory limit
-    default: 25.0
     inputBinding:
       position: 101
       prefix: --bowtie2-scaling
@@ -39,7 +38,6 @@ inputs:
       - int
     doc: Number of threads bowtie2 will use to index every individual genome in 
       the database
-    default: 4
     inputBinding:
       position: 101
       prefix: --bowtie2-threads
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of CPU cores to use
-    default: 20
     inputBinding:
       position: 101
       prefix: --cores
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable debugging mode
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -67,7 +63,6 @@ inputs:
       - type: array
         items: string
     doc: List of NCBI accessions to exclude.
-    default: []
     inputBinding:
       position: 101
       prefix: --exclude-accessions
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable validation checks for 'anomalous' assembly flags in NCBI
-    default: false
     inputBinding:
       position: 101
       prefix: --force-accessions
@@ -94,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum memory (MB) to use
-    default: 63985
     inputBinding:
       position: 101
       prefix: --mem
@@ -110,7 +103,6 @@ inputs:
       - boolean
     doc: For eukaryotes, download mitochondrial genomes only. Not to be used 
       with --refseq-rep or queries containing prokaryotes
-    default: false
     inputBinding:
       position: 101
       prefix: --mtDNA
@@ -137,7 +129,6 @@ inputs:
       - string
     doc: Taxonomic rank to perform the identifications on [genus, species, 
       subspecies, serotype]
-    default: species
     inputBinding:
       position: 101
       prefix: --rank
@@ -160,7 +151,6 @@ inputs:
       - boolean
     doc: Pick the first accession when two accessions for a taxon can be found 
       in user provided input files
-    default: false
     inputBinding:
       position: 101
       prefix: --resolve-accessions
@@ -194,7 +184,6 @@ inputs:
       - 'null'
       - boolean
     doc: Unlock the output directory following a crash or hard restart
-    default: false
     inputBinding:
       position: 101
       prefix: --unlock

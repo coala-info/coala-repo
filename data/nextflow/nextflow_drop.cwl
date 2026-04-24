@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: Delete the repository without taking care of local changes
-    default: false
     inputBinding:
       position: 102
       prefix: -f

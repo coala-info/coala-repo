@@ -27,7 +27,6 @@ inputs:
   min_length:
     type: int?
     label: Length filter for short reads
-    default: 50
   host_genome:
     type: File?
     secondaryFiles:
@@ -40,7 +39,6 @@ inputs:
         - '.bwt.2bit.64'
     format: edam:format_1929
     label: host genome fasta file
-    default: hg38.fa
   coassembly:
     type: string
 

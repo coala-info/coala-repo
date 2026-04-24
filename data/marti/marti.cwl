@@ -32,7 +32,6 @@ inputs:
       - int
     doc: Set the level of logging to logs/engine.txt from 0 (none) to 5 
       (maximum)
-    default: 1
     inputBinding:
       position: 101
       prefix: -loglevel

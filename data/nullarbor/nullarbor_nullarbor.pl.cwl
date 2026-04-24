@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: 'Genome annotator to use: prokka_fast'
-    default: prokka_fast
     inputBinding:
       position: 101
       prefix: --annotator
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Extra annotator options to pass
-    default: ()
     inputBinding:
       position: 101
       prefix: --annotator-opt
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: 'Assembler to use: megahit shovill skesa skesa_fast spades'
-    default: skesa
     inputBinding:
       position: 101
       prefix: --assembler
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Extra assembler options to pass
-    default: ()
     inputBinding:
       position: 101
       prefix: --assembler-opt
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - File
     doc: Config file
-    default: /usr/local/bin/../conf/nullarbor.conf
     inputBinding:
       position: 101
       prefix: --conf
@@ -70,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of CPUs to use in total
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -87,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: Force this MLST scheme
-    default: AUTO
     inputBinding:
       position: 101
       prefix: --mlst
@@ -96,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Genetic code for prokka
-    default: 11
     inputBinding:
       position: 101
       prefix: --gcode
@@ -117,7 +109,6 @@ inputs:
       - 'null'
       - string
     doc: Command to symlink/copy FASTQ files into --outdir
-    default: "'ln -s -f'"
     inputBinding:
       position: 101
       prefix: --link-cmd
@@ -126,7 +117,6 @@ inputs:
       - 'null'
       - string
     doc: Mask core SNPS in these regions or 'auto'
-    default: ()
     inputBinding:
       position: 101
       prefix: --mask
@@ -141,7 +131,6 @@ inputs:
   - id: mode
     type: string
     doc: 'Run mode: [all] preview'
-    default: all
     inputBinding:
       position: 101
       prefix: --mode
@@ -178,7 +167,6 @@ inputs:
       - 'null'
       - string
     doc: Options to pass to roary eg. '-iv 1.75 -s -cd 97'
-    default: ()
     inputBinding:
       position: 101
       prefix: --roary_opt
@@ -195,7 +183,6 @@ inputs:
       - 'null'
       - string
     doc: Options to pass to snippy eg. '--mincov 10 --ram 32'
-    default: ()
     inputBinding:
       position: 101
       prefix: --snippy_opt
@@ -204,7 +191,6 @@ inputs:
       - 'null'
       - string
     doc: 'Species ID tool to use: centrifuge kraken kraken2'
-    default: kraken
     inputBinding:
       position: 101
       prefix: --taxoner
@@ -213,7 +199,6 @@ inputs:
       - 'null'
       - string
     doc: Extra species ID builder options to pass
-    default: ()
     inputBinding:
       position: 101
       prefix: --taxoner-opt
@@ -222,7 +207,6 @@ inputs:
       - 'null'
       - string
     doc: 'Tree-builder to use: fasttree iqtree iqtree_fast iqtree_slow'
-    default: iqtree_fast
     inputBinding:
       position: 101
       prefix: --treebuilder
@@ -231,7 +215,6 @@ inputs:
       - 'null'
       - string
     doc: Extra tree-builder options to pass
-    default: ()
     inputBinding:
       position: 101
       prefix: --treebuilder-opt
@@ -240,7 +223,6 @@ inputs:
       - 'null'
       - boolean
     doc: Trim reads of adaptors
-    default: false
     inputBinding:
       position: 101
       prefix: --trim

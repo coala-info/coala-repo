@@ -104,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: discard output alignments with fewer OTUs than <number>
-    default: 4
     inputBinding:
       position: 101
       prefix: --min-taxa
@@ -147,7 +146,6 @@ inputs:
       - 'null'
       - string
     doc: select the paralogy pruning method (LS, MI, MO, RT, 1to1, OTO)
-    default: LS
     inputBinding:
       position: 101
       prefix: --prune
@@ -172,7 +170,6 @@ inputs:
       - 'null'
       - int
     doc: use <number> threads instead of up to 10 threads
-    default: 10
     inputBinding:
       position: 101
       prefix: --threads

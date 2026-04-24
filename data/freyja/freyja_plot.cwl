@@ -23,7 +23,6 @@ inputs:
       - string
     doc: define whether the intervals are calculated daily D or monthly M use 
       with --windowsize
-    default: MS
     inputBinding:
       position: 102
       prefix: --interval
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: Custom lineage hierarchy file
-    default: ''
     inputBinding:
       position: 102
       prefix: --lineageyml
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - float
     doc: min genome coverage included
-    default: 60.0
     inputBinding:
       position: 102
       prefix: --mincov
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: Pathogen of interest.Not used if using --lineageyml option.
-    default: SARS-CoV-2
     inputBinding:
       position: 102
       prefix: --pathogen
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - float
     doc: pass a minimum lineage abundance
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --thresh
@@ -77,7 +72,6 @@ inputs:
       - string
     doc: provide sample collection information,check data/times_metadata.csv for
       additional information
-    default: ''
     inputBinding:
       position: 102
       prefix: --times
@@ -86,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: width of the rolling average windowfor interval calculation
-    default: 14
     inputBinding:
       position: 102
       prefix: --windowsize
@@ -95,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: path to write grouped lineage data
-    default: ''
     inputBinding:
       position: 102
       prefix: --writegrouped

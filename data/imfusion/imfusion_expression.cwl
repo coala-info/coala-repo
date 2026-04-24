@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: Strand specificity of the RNA-Seq library
-    default: unstranded
     inputBinding:
       position: 101
       prefix: --stranded

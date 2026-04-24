@@ -70,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: Sequencing platform
-    default: Illumina
     inputBinding:
       position: 106
       prefix: --platform
@@ -87,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 106
       prefix: --thread

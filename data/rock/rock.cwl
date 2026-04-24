@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length
-    default: 25
     inputBinding:
       position: 102
       prefix: -k
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: lower-bound k-mer coverage depth threshold
-    default: 0
     inputBinding:
       position: 102
       prefix: -c
@@ -57,7 +55,6 @@ inputs:
     doc: maximum expected false positive probability when computing the optimal 
       number of hashing functions from the number of distinct k-mers specified 
       with option -n
-    default: 0.05
     inputBinding:
       position: 102
       prefix: -f
@@ -67,7 +64,6 @@ inputs:
       - int
     doc: sets as valid only k-mers made up of nucleotides with Phred score (+33 
       offset) above this cutoff
-    default: 0
     inputBinding:
       position: 102
       prefix: -q
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: number of hashing function(s)
-    default: 4
     inputBinding:
       position: 102
       prefix: -l
@@ -102,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: upper-bound k-mer coverage depth threshold
-    default: 70
     inputBinding:
       position: 102
       prefix: -C

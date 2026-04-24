@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum Phred quality score (default: 20)'
-    default: 20
     inputBinding:
       position: 101
       prefix: --quality

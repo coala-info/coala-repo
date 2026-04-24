@@ -73,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: number of mismatches allowed from cluster center
-    default: -1
     inputBinding:
       position: 102
       prefix: --mismatches
@@ -132,7 +131,6 @@ inputs:
       - 'null'
       - float
     doc: set similarity between cluster center and cluster sequences
-    default: 0.99000001
     inputBinding:
       position: 102
       prefix: --similarity

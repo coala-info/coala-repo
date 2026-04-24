@@ -65,7 +65,6 @@ inputs:
       shellQuote: false
   runDir:
     type: string?
-    default: "generated"
     inputBinding:
       prefix: '--runDir'
       position: 1

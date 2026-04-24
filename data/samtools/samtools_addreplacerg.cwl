@@ -37,7 +37,6 @@ inputs:
   - 'null'
   - string
   doc: Set the mode of operation from one of overwrite_all, orphan_only
-  default: overwrite_all
   inputBinding:
     position: 102
     prefix: -m
@@ -104,7 +103,6 @@ inputs:
   - 'null'
   - int
   doc: Number of additional threads to use
-  default: 0
   inputBinding:
     position: 102
     prefix: --threads

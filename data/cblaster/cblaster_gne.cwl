@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum intergenic distance
-    default: 100000
     inputBinding:
       position: 102
       prefix: --max_gap
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Total samples taken from max_gap
-    default: 100
     inputBinding:
       position: 102
       prefix: --samples
@@ -66,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: Draw sampling values from a linear or log scale
-    default: linear
     inputBinding:
       position: 102
       prefix: --scale

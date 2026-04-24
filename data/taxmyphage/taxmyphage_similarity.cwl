@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Path to the blastn executable
-    default: blastn
     inputBinding:
       position: 101
       prefix: --blastn
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to the database directory where the databases are stored.
-    default: /usr/local/lib/python3.12/site-packages/taxmyphage/database
     inputBinding:
       position: 101
       prefix: --db_folder
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: Path to the blastn executable
-    default: makeblastdb
     inputBinding:
       position: 101
       prefix: --makeblastdb
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to the output directory.
-    default: .
     inputBinding:
       position: 101
       prefix: --output
@@ -104,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of threads that will be used by BLASTn.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

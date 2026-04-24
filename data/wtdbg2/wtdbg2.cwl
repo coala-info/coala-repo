@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: 'Use best n hits for each read in build graph, 0: keep all, default: 500'
-    default: 500
     inputBinding:
       position: 101
       prefix: --aln-bestn
@@ -19,7 +18,6 @@ inputs:
       - int
     doc: 'Retain dovetail overlaps only, the max overhang size is <--aln-dovetail>,
       -1 to disable filtering, default: 256'
-    default: 256
     inputBinding:
       position: 101
       prefix: --aln-dovetail
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: 'Max n hits for each read in build graph, default: 1000'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --aln-maxhit
@@ -63,7 +60,6 @@ inputs:
       - int
     doc: "1: forward, 2: reverse, 3: both. Please don't change the deault vaule 3,
       unless you exactly know what you are doing"
-    default: 3
     inputBinding:
       position: 101
       prefix: --aln-strand
@@ -73,7 +69,6 @@ inputs:
       - int
     doc: Used in filtering BINs. If a BIN has less indexed valid kmers than 
       <--bin-complexity-cutoff 2>, masks it.
-    default: 2
     inputBinding:
       position: 101
       prefix: --bin-complexity-cutoff
@@ -83,7 +78,6 @@ inputs:
       - int
     doc: 'Max step to search a bubble, meaning the max step from the starting node
       to the ending node. Default: 40'
-    default: 40
     inputBinding:
       position: 101
       prefix: --bubble-step
@@ -100,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Min length of contigs to be output, 5000
-    default: 5000
     inputBinding:
       position: 101
       prefix: --ctg-min-length
@@ -109,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Min num of nodes in a contig to be ouput, 3
-    default: 3
     inputBinding:
       position: 101
       prefix: --ctg-min-nodes
@@ -196,7 +188,6 @@ inputs:
       - 'null'
       - float
     doc: Filter high frequency kmers, maybe repetitive
-    default: 1000
     inputBinding:
       position: 101
       prefix: --kmer-depth-max
@@ -255,7 +246,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer fsize, 0 <= k <= 25
-    default: 0
     inputBinding:
       position: 101
       prefix: --kmer-fsize
@@ -264,7 +254,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer psize, 0 <= p <= 25
-    default: 21
     inputBinding:
       position: 101
       prefix: --kmer-psize
@@ -341,7 +330,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of bin(256bp) in one deviation
-    default: 4
     inputBinding:
       position: 101
       prefix: --dp-max-var
@@ -350,7 +338,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of bin(256bp) in one gap
-    default: 4
     inputBinding:
       position: 101
       prefix: --dp-max-gap
@@ -359,7 +346,6 @@ inputs:
       - 'null'
       - float
     doc: Max length variation of two aligned fragments
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --aln-max-var
@@ -368,7 +354,6 @@ inputs:
       - 'null'
       - float
     doc: Min length of alignment
-    default: 2048
     inputBinding:
       position: 101
       prefix: --aln-min-length
@@ -377,7 +362,6 @@ inputs:
       - 'null'
       - int
     doc: Min kmer frequency
-    default: 2
     inputBinding:
       position: 101
       prefix: --kmer-depth-min
@@ -386,7 +370,6 @@ inputs:
       - 'null'
       - float
     doc: Min matched, counting basepair of the matched kmer's regions
-    default: 200
     inputBinding:
       position: 101
       prefix: --aln-min-match
@@ -395,7 +378,6 @@ inputs:
       - 'null'
       - int
     doc: Min read depth of a valid edge
-    default: 3
     inputBinding:
       position: 101
       prefix: --edge-min
@@ -405,7 +387,6 @@ inputs:
       - int
     doc: Choose the longest subread and drop reads shorter than <int> (5000 
       recommended for PacBio)
-    default: 0
     inputBinding:
       position: 101
       prefix: --tidy-reads
@@ -464,7 +445,6 @@ inputs:
       kbm indexs sequences into BINs of 256 bp in size, so that many parameter should
       be times of 256 bp. There are: --node-len, --node-ovl, --aln-min-length, --aln-dovetail
       . Other parameters are counted in BINs, --dp-max-gap, --dp-max-var'
-    default: 1024
     inputBinding:
       position: 101
       prefix: --node-len
@@ -473,7 +453,6 @@ inputs:
       - 'null'
       - int
     doc: Min matched bins in a node, default:1
-    default: 1
     inputBinding:
       position: 101
       prefix: --node-matched-bins
@@ -483,7 +462,6 @@ inputs:
       - int
     doc: 'Nodes with too high depth will be regarded as repetitive, and be masked.
       Default: 200, more than 200 reads contain this node'
-    default: 200
     inputBinding:
       position: 101
       prefix: --node-max
@@ -502,7 +480,6 @@ inputs:
       - int
     doc: 'Default: 256. Max overlap size between two adjacent intervals in any read.
       It is used in selecting best nodes representing reads in graph'
-    default: 256
     inputBinding:
       position: 101
       prefix: --node-ovl
@@ -517,7 +494,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for BIN deviation
-    default: -21
     inputBinding:
       position: 101
       prefix: --dp-penalty-var
@@ -526,7 +502,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for BIN gap
-    default: -7
     inputBinding:
       position: 101
       prefix: --dp-penalty-gap
@@ -551,7 +526,6 @@ inputs:
       - 'null'
       - int
     doc: Subsampling kmers, 1/(<-S>) kmers are indexed
-    default: 4
     inputBinding:
       position: 101
       prefix: --kmer-subsampling
@@ -560,7 +534,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads, 0 for all cores
-    default: 0
     inputBinding:
       position: 101
       prefix: -t
@@ -569,7 +542,6 @@ inputs:
       - 'null'
       - int
     doc: Max step to search a tip, 10
-    default: 10
     inputBinding:
       position: 101
       prefix: --tip-step
@@ -581,7 +553,6 @@ inputs:
       should be masked. The pattern of such nodes is: depth >= <--ttr-cutoff-depth>,
       and none of their edges have depth greater than depth * <--ttr-cutoff-ratio
       0.5>. set --ttr-cutoff-depth 0 to disable ttr masking'
-    default: 0
     inputBinding:
       position: 101
       prefix: --ttr-cutoff-depth
@@ -593,7 +564,6 @@ inputs:
       should be masked. The pattern of such nodes is: depth >= <--ttr-cutoff-depth>,
       and none of their edges have depth greater than depth * <--ttr-cutoff-ratio
       0.5>. set --ttr-cutoff-depth 0 to disable ttr masking'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --ttr-cutoff-ratio

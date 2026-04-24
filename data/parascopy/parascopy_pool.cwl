@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Exclude duplications for which the expression is true
-    default: length < 500 && seq_sim < 0.97
     inputBinding:
       position: 101
       prefix: --exclude
@@ -54,7 +53,6 @@ inputs:
     doc: Output read mates even if they are outside of the duplication, if the distance
       between mates is less than <int>. Use 0 to skip all mates outside the duplicated
       regions. Use inf|infinity to write all mapped read mates.
-    default: '5000'
     inputBinding:
       position: 101
       prefix: --mate-dist
@@ -77,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: Path to samtools executable. Use python wrapper if "none", can lead to errors.
-    default: samtools
     inputBinding:
       position: 101
       prefix: --samtools

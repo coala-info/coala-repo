@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: print cigar data
-    default: false
     inputBinding:
       position: 102
       prefix: --cigar
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: expands details about sam flag
-    default: false
     inputBinding:
       position: 102
       prefix: --flag
@@ -52,7 +50,6 @@ inputs:
       chrom:middle+extend\"  or \"chrom:start-end+extend\" or \n      \"chrom:start-end+extend-percent%\"\
       .A program might use a Reference \n      sequence to fix the chromosome name
       (e.g: 1->chr1)"
-    default: ''
     inputBinding:
       position: 102
       prefix: --region

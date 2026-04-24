@@ -36,7 +36,6 @@ inputs:
       - boolean
     doc: Keep the most abundant family and ignore families at other positions 
       within each group. Default is False
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --Ignore
@@ -61,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads in region required for grouping. Default is 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --ReadCount
@@ -86,7 +84,6 @@ inputs:
       - boolean
     doc: Discard reads overlapping with the genomic region if True. Default is 
       False
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --Truncate

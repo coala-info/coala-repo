@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: output_phold_foldseek_db
     inputBinding:
       position: 101
       prefix: --output
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for Foldseek database
-    default: phold_foldseek_db
     inputBinding:
       position: 101
       prefix: --prefix
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use with Foldseek
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

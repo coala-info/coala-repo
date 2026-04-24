@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Directory to use for DATA_PATH.
-    default: false
     inputBinding:
       position: 101
       prefix: --data_dir
@@ -19,7 +18,6 @@ inputs:
       - string
     doc: Tax ID of eggNOG HMM database to download. e.g. "-H -d 2 --dbname 
       'Bacteria'" to download Bacteria (taxid 2) to a directory named Bacteria
-    default: None
     inputBinding:
       position: 101
       prefix: --dbname
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: forces download even if the files exist
-    default: false
     inputBinding:
       position: 101
       prefix: -f
@@ -39,7 +36,6 @@ inputs:
     doc: Tax ID of eggNOG HMM database to download. e.g. "-H -d 2" for Bacteria.
       Required if "-H". Available tax IDs can be found at 
       http://eggnog5.embl.de/#/app/downloads.
-    default: None
     inputBinding:
       position: 101
       prefix: -d
@@ -48,7 +44,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not install the diamond database
-    default: false
     inputBinding:
       position: 101
       prefix: -D
@@ -58,7 +53,6 @@ inputs:
       - boolean
     doc: Install the HMMER database specified with "-d TAXID". Required for 
       "emapper.py -m hmmer -d TAXID"
-    default: false
     inputBinding:
       position: 101
       prefix: -H
@@ -67,7 +61,6 @@ inputs:
       - 'null'
       - boolean
     doc: Install the MMseqs2 database, required for "emapper.py -m mmseqs"
-    default: false
     inputBinding:
       position: 101
       prefix: -M
@@ -77,7 +70,6 @@ inputs:
       - boolean
     doc: Install the novel families diamond and annotation databases, required 
       for "emapper.py -m novel_fams"
-    default: false
     inputBinding:
       position: 101
       prefix: -F
@@ -87,7 +79,6 @@ inputs:
       - boolean
     doc: Install the Pfam database, required for de novo annotation or 
       realignment
-    default: false
     inputBinding:
       position: 101
       prefix: -P
@@ -96,7 +87,6 @@ inputs:
       - 'null'
       - boolean
     doc: quiet_mode
-    default: false
     inputBinding:
       position: 101
       prefix: -q
@@ -105,7 +95,6 @@ inputs:
       - 'null'
       - boolean
     doc: simulate and print commands. Nothing is downloaded
-    default: false
     inputBinding:
       position: 101
       prefix: -s
@@ -114,7 +103,6 @@ inputs:
       - 'null'
       - boolean
     doc: assume "yes" to all questions
-    default: false
     inputBinding:
       position: 101
       prefix: -y

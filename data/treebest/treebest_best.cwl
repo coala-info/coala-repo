@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: alpha parameter for Gamma distribution
-    default: '1.0'
     inputBinding:
       position: 102
       prefix: -a
@@ -66,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: duplication probability
-    default: 0.15
     inputBinding:
       position: 102
       prefix: -d
@@ -83,7 +81,6 @@ inputs:
       - 'null'
       - float
     doc: prob. of the presence of an inconsistent branch
-    default: 0.01
     inputBinding:
       position: 102
       prefix: -b
@@ -100,7 +97,6 @@ inputs:
       - 'null'
       - string
     doc: tv/ts ratio (kappa), 'e' for estimating
-    default: e
     inputBinding:
       position: 102
       prefix: -k
@@ -109,7 +105,6 @@ inputs:
       - 'null'
       - float
     doc: probability of a loss following a duplication
-    default: 0.2
     inputBinding:
       position: 102
       prefix: -L
@@ -118,7 +113,6 @@ inputs:
       - 'null'
       - float
     doc: probability of a loss following a speciation
-    default: 0.1
     inputBinding:
       position: 102
       prefix: -l
@@ -135,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: quality cut-off
-    default: 11
     inputBinding:
       position: 102
       prefix: -F
@@ -144,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: number of rate categories for PHYML-HKY
-    default: 2
     inputBinding:
       position: 102
       prefix: -c

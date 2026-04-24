@@ -51,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Format to output results in.
-    default: csv
     inputBinding:
       position: 102
       prefix: --outfmt

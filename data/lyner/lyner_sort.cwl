@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Sort in ascending order. If not specified, descending order is used.
-    default: true
     inputBinding:
       position: 102
       prefix: --ascending

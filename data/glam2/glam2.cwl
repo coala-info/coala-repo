@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: column-sampling moves per site-sampling move
-    default: 1.0
     inputBinding:
       position: 103
       prefix: -m
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: cooling factor per n iterations
-    default: 1.44
     inputBinding:
       position: 103
       prefix: -c
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - float
     doc: deletion pseudocount
-    default: 0.1
     inputBinding:
       position: 103
       prefix: -D
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: initial number of aligned columns
-    default: 20
     inputBinding:
       position: 103
       prefix: -w
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - float
     doc: initial temperature
-    default: 1.2
     inputBinding:
       position: 103
       prefix: -t
@@ -81,7 +76,6 @@ inputs:
       - 'null'
       - float
     doc: insertion pseudocount
-    default: 0.02
     inputBinding:
       position: 103
       prefix: -I
@@ -90,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of aligned columns
-    default: 50
     inputBinding:
       position: 103
       prefix: -b
@@ -99,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: end each run after this many iterations without improvement
-    default: 10000
     inputBinding:
       position: 103
       prefix: -n
@@ -108,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of aligned columns
-    default: 2
     inputBinding:
       position: 103
       prefix: -a
@@ -117,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of sequences in the alignment
-    default: 2
     inputBinding:
       position: 103
       prefix: -z
@@ -126,7 +116,6 @@ inputs:
       - 'null'
       - float
     doc: no-deletion pseudocount
-    default: 2.0
     inputBinding:
       position: 103
       prefix: -E
@@ -135,7 +124,6 @@ inputs:
       - 'null'
       - float
     doc: no-insertion pseudocount
-    default: 1.0
     inputBinding:
       position: 103
       prefix: -J
@@ -144,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: number of alignment runs
-    default: 10
     inputBinding:
       position: 103
       prefix: -r
@@ -161,7 +148,6 @@ inputs:
       - 'null'
       - int
     doc: seed for pseudo-random numbers
-    default: 1
     inputBinding:
       position: 103
       prefix: -s
@@ -170,7 +156,6 @@ inputs:
       - 'null'
       - int
     doc: 'site sampling algorithm: 0=FAST 1=SLOW 2=FFT'
-    default: 0
     inputBinding:
       position: 103
       prefix: -x
@@ -179,7 +164,6 @@ inputs:
       - 'null'
       - float
     doc: temperature lower bound
-    default: 0.1
     inputBinding:
       position: 103
       prefix: -u
@@ -188,7 +172,6 @@ inputs:
       - 'null'
       - float
     doc: weight for generic versus sequence-set-specific residue abundances
-    default: '1e+99'
     inputBinding:
       position: 103
       prefix: -q

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: 'Collapse mode: taxid (min edit per taxid) or taxid-gi (min edit per taxid-gi).'
-    default: taxid
     inputBinding:
       position: 102
       prefix: --mode
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Number of worker threads for sorting.
-    default: 4
     inputBinding:
       position: 102
       prefix: --threads

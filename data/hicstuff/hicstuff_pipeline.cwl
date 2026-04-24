@@ -26,7 +26,6 @@ inputs:
       - string
     doc: Alignment software to use. Can be either bowtie2, minimap2 or bwa. 
       minimap2 should only be used for reads > 100 bp.
-    default: bowtie2
     inputBinding:
       position: 103
       prefix: --aligner
@@ -36,7 +35,6 @@ inputs:
       - string
     doc: 'Arguments to pass to `cooler balance` (default: "") (only used if zoomify
       == True)'
-    default: ''
     inputBinding:
       position: 103
       prefix: --balancing_args
@@ -92,7 +90,6 @@ inputs:
       - string
     doc: Restriction enzyme or "mnase" if a string, or chunk size (i.e. 
       resolution) if a number. Can also be multiple comma-separated enzymes.
-    default: '5000'
     inputBinding:
       position: 103
       prefix: --enzyme
@@ -102,7 +99,6 @@ inputs:
       - string
     doc: Exclude specific chromosomes from the generated matrix. Multiple 
       chromosomes can be listed separated by commas (e.g. `--exclude "chrM,2u"`)
-    default: None
     inputBinding:
       position: 103
       prefix: --exclude
@@ -140,7 +136,6 @@ inputs:
       truncating reads to 20bp and then repeatedly extending to align them. "cutsite":
       Cut reads at the religation sites of the given enzyme using cutsite, create
       new pairs of reads and then align them ; enzyme is required'
-    default: normal
     inputBinding:
       position: 103
       prefix: --mapping
@@ -151,7 +146,6 @@ inputs:
     doc: The format of the output sparse matrix. Can be "bg2" for 2D Bedgraph 
       format, "cool" for Mirnylab's cooler software, or "graal" for 
       graal-compatible plain text COO format.
-    default: cool
     inputBinding:
       position: 103
       prefix: --matfmt
@@ -169,7 +163,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory. Defaults to the current directory.
-    default: current directory
     inputBinding:
       position: 103
       prefix: --outdir
@@ -196,7 +189,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality for selecting contacts.
-    default: 30
     inputBinding:
       position: 103
       prefix: --quality-min
@@ -216,7 +208,6 @@ inputs:
       - int
     doc: Integer. Number of kb that will be remove around the centromere 
       position given by in the centromere file.
-    default: 0
     inputBinding:
       position: 103
       prefix: --remove-centromeres
@@ -226,7 +217,6 @@ inputs:
       - int
     doc: Minimum size threshold to consider contigs. Keep all contigs by 
       default.
-    default: 0
     inputBinding:
       position: 103
       prefix: --size
@@ -238,7 +228,6 @@ inputs:
       is "fastq" to run from the start. Can also be "bam" to skip the alignment,
       "pairs" to start from a single pairs file or "pairs_idx" to skip fragment 
       attribution and only build the matrix.
-    default: fastq
     inputBinding:
       position: 103
       prefix: --start-stage
@@ -247,7 +236,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to allocate.
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads
@@ -257,7 +245,6 @@ inputs:
       - Directory
     doc: Directory for storing intermediary BED files and temporary sort files. 
       Defaults to the output directory.
-    default: output directory
     inputBinding:
       position: 103
       prefix: --tmpdir
@@ -267,7 +254,6 @@ inputs:
       - boolean
     doc: 'Zoomify binned cool matrix [default: True] (only used if mat_fmt == "cool"
       and binning is set)'
-    default: true
     inputBinding:
       position: 103
       prefix: --zoomify

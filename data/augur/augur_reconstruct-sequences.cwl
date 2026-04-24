@@ -11,7 +11,6 @@ inputs:
       - type: array
         items: string
     doc: gene to translate (list or file containing list)
-    default: None
     inputBinding:
       position: 101
       prefix: --gene
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: include sequences of internal nodes in output
-    default: false
     inputBinding:
       position: 101
       prefix: --internal-nodes
@@ -28,14 +26,12 @@ inputs:
     type: File
     doc: json file containing mutations mapped to each branch and the sequence 
       of the root.
-    default: None
     inputBinding:
       position: 101
       prefix: --mutations
   - id: tree
     type: File
     doc: tree as Newick file
-    default: None
     inputBinding:
       position: 101
       prefix: --tree
@@ -44,7 +40,6 @@ inputs:
       - 'null'
       - File
     doc: fasta file of the reference gene translations for VCF format
-    default: None
     inputBinding:
       position: 101
       prefix: --vcf-aa-reference

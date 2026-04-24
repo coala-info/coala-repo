@@ -44,7 +44,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_pocket_pdb
-    default: system.pdb
 
   output_pocket_pqr:
     label: Path to the PQR file with the pocket found by fpocket
@@ -60,7 +59,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_pocket_pqr
-    default: system.pqr
 
   config:
     label: Advanced configuration options for biobb_vs FPocketSelect

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: maximum coverage for which positions should be called
-    default: 100
     inputBinding:
       position: 101
       prefix: -max
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: minimum coverage for which positions should be called
-    default: 3
     inputBinding:
       position: 101
       prefix: -min
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: number of matches required to call a position
-    default: 2
     inputBinding:
       position: 101
       prefix: -n_matches
@@ -44,7 +41,6 @@ inputs:
       - int
     doc: number of random reads used; note that fewer reads might be used if a position
       has depth<n_random_reads
-    default: 3
     inputBinding:
       position: 101
       prefix: -n_random_reads

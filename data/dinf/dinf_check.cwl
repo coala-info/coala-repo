@@ -10,7 +10,6 @@ inputs:
     doc: "Python script from which to import the variable\n\"dinf_model\". This is
       a dinf.DinfModel object that\ndescribes the model components. See the examples/\n\
       folder of the git repository for example models.\nhttps://github.com/RacimoLab/dinf"
-    default: model.py
     inputBinding:
       position: 101
       prefix: --model

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate unique column 4 IDs for --in BED file entries
-    default: false
     inputBinding:
       position: 101
       prefix: --gen-uniq-ids
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum input site length for filtering --in BED file
-    default: false
     inputBinding:
       position: 101
       prefix: --max-len
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum input site length for filtering --in BED file
-    default: false
     inputBinding:
       position: 101
       prefix: --min-len
@@ -63,7 +60,6 @@ inputs:
       - boolean
     doc: Output an .html report with statistics and plots comparing transcript 
       and genomic sequences
-    default: false
     inputBinding:
       position: 101
       prefix: --report
@@ -73,7 +69,6 @@ inputs:
       - boolean
     doc: Reverse filtering (keep values <= threshold and prefer sites with 
       smaller values)
-    default: false
     inputBinding:
       position: 101
       prefix: --rev-filter
@@ -83,7 +78,6 @@ inputs:
       - int
     doc: Up- and downstream extension of centered sites for context sequence 
       extraction
-    default: 30
     inputBinding:
       position: 101
       prefix: --seq-ext
@@ -92,7 +86,6 @@ inputs:
       - 'null'
       - float
     doc: Site score threshold for filtering --in BED file
-    default: None
     inputBinding:
       position: 101
       prefix: --thr

@@ -35,12 +35,10 @@ inputs:
     type: int?
     doc: Number of threads to use for computational processes
     label: Number of threads
-    default: 2
   memory:
     type: int?
     doc: Maximum memory usage in MegaBytes
     label: Maximum memory in MB
-    default: 4000
   fasta:
     type: File
     label: genome fasta file

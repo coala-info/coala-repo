@@ -11,7 +11,6 @@ inputs:
       - boolean
     doc: Annotate sequences only (skip discovery). Only use if you believe each 
       provided sequence is viral
-    default: false
     inputBinding:
       position: 101
       prefix: --annotation_mode
@@ -21,7 +20,6 @@ inputs:
       - string
     doc: Assembler used to generate contigs, if applicable. Specify version of 
       assembler software, if possible.
-    default: unknown_assembler
     inputBinding:
       position: 101
       prefix: --assembler
@@ -31,7 +29,6 @@ inputs:
       - string
     doc: For read data on SRA, project number, usually beginning with 'PRJNA' or
       'PRJEB'
-    default: unknown
     inputBinding:
       position: 101
       prefix: --bioproject
@@ -41,7 +38,6 @@ inputs:
       - string
     doc: For read data on SRA, sample number, usually beginning with 'SAMN' or 
       'SAMEA' or 'SRS'
-    default: unknown
     inputBinding:
       position: 101
       prefix: --biosample
@@ -54,7 +50,6 @@ inputs:
       classic only (meta mode). phanotate: phanotate only Note: phanotate takes longer
       than prodigal, exponentially so for LONG input contigs. adaptive: will choose
       based on preliminary taxonomy call (phages = phanotate, others = prodigal-gv)'
-    default: prodigal-gv
     inputBinding:
       position: 101
       prefix: --caller
@@ -89,7 +84,6 @@ inputs:
       enriched for virus particles, '0' can be used, but please treat circular 
       contigs without known viral domains cautiously. For unenriched samples, 
       '1' might be more suitable.
-    default: 1
     inputBinding:
       position: 101
       prefix: --circ_minimum_hallmark_genes
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - string
     doc: 'Date of collection. this format: 01-Jan-2019, i.e. DD-Mmm-YYYY'
-    default: unknown
     inputBinding:
       position: 101
       prefix: --collection_date
@@ -107,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs available for Cenote-Taker 3.
-    default: 20
     inputBinding:
       position: 101
       prefix: --cpu
@@ -118,7 +110,6 @@ inputs:
     doc: "original data is not taken from other researchers' public or private database.
       'tpa_assembly': data is taken from other researchers' public or private database.
       Please be sure to specify SRA metadata."
-    default: original
     inputBinding:
       position: 101
       prefix: --data_source
@@ -127,7 +118,6 @@ inputs:
       - 'null'
       - boolean
     doc: Make GenBank files (.gbf, .sqn, .fsa, .tbl, .cmt, etc)?
-    default: true
     inputBinding:
       position: 101
       prefix: --genbank
@@ -142,7 +132,6 @@ inputs:
       can extend the duration of the run many times over. Do not use on large input
       contig files). 'none': forgoes annotation of ORFs with hhsuite. Fastest way
       to complete a run."
-    default: none
     inputBinding:
       position: 101
       prefix: --hhsuite_tool
@@ -160,7 +149,6 @@ inputs:
       - string
     doc: Describes the local geographical source of the organism from which the 
       sequence was derived
-    default: unknown
     inputBinding:
       position: 101
       prefix: --isolation_source
@@ -171,7 +159,6 @@ inputs:
     doc: Number of detected viral hallmark genes on a non-circular contig to be 
       considered viral and recieve full annotation. '2' might be more suitable, 
       yielding a false positive rate near 0.
-    default: 1
     inputBinding:
       position: 101
       prefix: --lin_minimum_hallmark_genes
@@ -181,7 +168,6 @@ inputs:
       - int
     doc: maximum sequence length to assess DTRs. Extra long contigs with DTRs 
       are likely to be bacterial chromosomes, not virus genomes.
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --max_dtr_assess
@@ -190,7 +176,6 @@ inputs:
       - 'null'
       - string
     doc: a.k.a. metagenome_source
-    default: unknown
     inputBinding:
       position: 101
       prefix: --metagenome_type
@@ -200,7 +185,6 @@ inputs:
       - int
     doc: Minimum length of contigs to be checked for circularity. Bare minimun 
       is 1000 nts
-    default: 1000
     inputBinding:
       position: 101
       prefix: --minimum_length_circular
@@ -210,7 +194,6 @@ inputs:
       - int
     doc: Minimum length of non-circualr contigs to be checked for viral hallmark
       genes.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --minimum_length_linear
@@ -219,7 +202,6 @@ inputs:
       - 'null'
       - string
     doc: viable options are DNA - OR - RNA
-    default: DNA
     inputBinding:
       position: 101
       prefix: --molecule_type
@@ -265,7 +247,6 @@ inputs:
       - string
     doc: 'Which sequencing technology produced the reads? Common options: Illumina,
       Nanopore, PacBio, Onso, Aviti'
-    default: Illumina
     inputBinding:
       position: 101
       prefix: --seqtech
@@ -274,7 +255,6 @@ inputs:
       - 'null'
       - string
     doc: For read data on SRA, run number, usually beginning with 'SRR' or 'ERR'
-    default: unknown
     inputBinding:
       position: 101
       prefix: --srr_number
@@ -284,7 +264,6 @@ inputs:
       - string
     doc: For read data on SRA, experiment number, usually beginning with 'SRX' 
       or 'ERX'
-    default: unknown
     inputBinding:
       position: 101
       prefix: --srx_number
@@ -295,7 +274,6 @@ inputs:
     doc: Which taxonomy database to use, just refseq virus OR virus hallmark 
       genes from nr virus containing genus, family, and class taxonomy labels 
       and clustered at 90 percent AAI plus all hallmark genes from refseq virus
-    default: hallmark
     inputBinding:
       position: 101
       prefix: --taxdb
@@ -318,7 +296,6 @@ inputs:
       proteins (DNA and RNA genomes) with LOWEST false discovery rate. 'rdrp' database:
       For RNA virus-derived RNA-dependent RNA polymerase. 'dnarep' database: replication
       genes of DNA viruses. mostly useful for small DNA viruses, e.g. CRESS viruses"
-    default: virion rdrp
     inputBinding:
       position: 101
       prefix: --virus_domain_db
@@ -328,7 +305,6 @@ inputs:
       - Directory
     doc: Set working directory with absolute or relative path. run directory 
       will be created within.
-    default: /
     inputBinding:
       position: 101
       prefix: --working_directory
@@ -338,7 +314,6 @@ inputs:
       - boolean
     doc: Wrap/rotate DTR/circular contigs so the start codon of an ORF is the 
       first nucleotide in the contig/genome
-    default: true
     inputBinding:
       position: 101
       prefix: --wrap

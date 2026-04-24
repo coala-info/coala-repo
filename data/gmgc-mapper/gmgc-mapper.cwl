@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the input amino acid gene file (FASTA format)
-    default: None
     inputBinding:
       position: 101
       prefix: --aa-genes
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the input genome FASTA file.
-    default: None
     inputBinding:
       position: 101
       prefix: --input
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the input DNA gene file (FASTA format)
-    default: None
     inputBinding:
       position: 101
       prefix: --nt-genes

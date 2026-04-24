@@ -45,7 +45,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_xvg_path
-    default: system.xvg
 
   config:
     label: Advanced configuration options for biobb_analysis GMXEnergy

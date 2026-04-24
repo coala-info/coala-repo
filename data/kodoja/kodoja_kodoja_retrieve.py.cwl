@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - File
     doc: Read 2 file path
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --read2
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: Virus tax ID for subsetting
-    default: All viral sequences
     inputBinding:
       position: 101
       prefix: --taxID
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: Sequence data format
-    default: fastq
     inputBinding:
       position: 101
       prefix: --user_format

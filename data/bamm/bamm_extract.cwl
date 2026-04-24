@@ -48,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: maximum allowable edit distance from query to reference
-    default: 1000
     inputBinding:
       position: 103
       prefix: --max_distance
@@ -89,7 +88,6 @@ inputs:
       - 'null'
       - Directory
     doc: write to this folder
-    default: .
     inputBinding:
       position: 103
       prefix: --out_folder
@@ -106,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of threads to use
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

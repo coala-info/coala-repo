@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: Apply iTRAQ filter
-    default: false
     inputBinding:
       position: 102
       prefix: --itraq_filter
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the MGF format style
-    default: DEFAULT
     inputBinding:
       position: 102
       prefix: --mgf_format
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not split multiple charge states
-    default: false
     inputBinding:
       position: 102
       prefix: --no_split_multiple_charge_states

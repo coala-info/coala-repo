@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum abundance skew. De novo mode only.
-    default: 1.9
     inputBinding:
       position: 101
       prefix: --abskew
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Number of chunks to extract from the query sequence when searching for parents.
-    default: 4
     inputBinding:
       position: 101
       prefix: --chunks
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: Pseudo-count prior on number of no votes.
-    default: 1.4
     inputBinding:
       position: 101
       prefix: --dn
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Length of id smoothing window.
-    default: 32
     inputBinding:
       position: 101
       prefix: --idsmoothwindow
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum sequence length.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --maxlen
@@ -70,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of candidate parents to consider.
-    default: 2
     inputBinding:
       position: 101
       prefix: --maxp
@@ -79,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of a chunk.
-    default: 64
     inputBinding:
       position: 101
       prefix: --minchunk
@@ -88,7 +81,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum divergence ratio.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --mindiv
@@ -97,7 +89,6 @@ inputs:
       - 'null'
       - float
     doc: Mininum score to report chimera.
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --minh
@@ -106,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequence length.
-    default: 10
     inputBinding:
       position: 101
       prefix: --minlen
@@ -115,7 +105,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum factional identity over smoothed window of candidate parent.
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --minsmoothid
@@ -141,7 +130,6 @@ inputs:
       - float
     doc: Minimum fraction of the query sequence that must be covered by a local-X
       alignment.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --queryfract
@@ -191,7 +179,6 @@ inputs:
       - 'null'
       - float
     doc: Weight of an abstain vote.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --xa
@@ -200,7 +187,6 @@ inputs:
       - 'null'
       - float
     doc: Weight of a no vote (beta parameter).
-    default: 8.0
     inputBinding:
       position: 101
       prefix: --xn

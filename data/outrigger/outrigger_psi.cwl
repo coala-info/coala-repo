@@ -42,7 +42,6 @@ inputs:
       (default is ./outrigger_output/index, which is relative to the directory 
       where you called this program, assuming you have called "outrigger psi" in
       the same folder as you called "outrigger index")
-    default: ./outrigger_output/index
     inputBinding:
       position: 101
       prefix: --index
@@ -53,7 +52,6 @@ inputs:
     doc: Name of column in --splice-junction-csv containing the ID of the 
       junction to use. Must match exactly with the junctions in the 
       index.(default='junction_id')
-    default: junction_id
     inputBinding:
       position: 101
       prefix: --junction-id-col
@@ -81,7 +79,6 @@ inputs:
       - string
     doc: How to deal with multiple junctions on an event - take the mean 
       (default) or the min? (the other option)
-    default: mean
     inputBinding:
       position: 101
       prefix: --method
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads per junction for calculating Psi (default=10)
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-reads
@@ -101,7 +97,6 @@ inputs:
     doc: Number of threads to use when parallelizing psi calculation and file 
       reading. Default is -1, which means to use as many threads as are 
       available.
-    default: -1
     inputBinding:
       position: 101
       prefix: --n-jobs
@@ -111,7 +106,6 @@ inputs:
       - string
     doc: Name of column in --splice-junction-csv containing reads to use. 
       (default='reads')
-    default: reads
     inputBinding:
       position: 101
       prefix: --reads-col
@@ -121,7 +115,6 @@ inputs:
       - string
     doc: Name of column in --splice-junction-csv containing sample ids to use. 
       (default='sample_id')
-    default: sample_id
     inputBinding:
       position: 101
       prefix: --sample-id-col
@@ -142,7 +135,6 @@ inputs:
     doc: If a junction one one side of an exon is bigger than the other side of 
       the exon by this amount, (default is 10, so 10x bigger), then do not use 
       this event
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --uneven-coverage-multiplier

@@ -46,7 +46,6 @@ inputs:
     doc: Value between 0 and 1 reflecting how strictly to filter low CN 
       decompositions (default = 0.1). Higher values filter more of the 
       low-weight decompositions.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --decomposition_strictness
@@ -116,7 +115,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum flow to consider among decomposed paths (1.0).
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --min_flow
@@ -125,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum cycle size (in bp) to consider as valid amplicon (5000).
-    default: 5000
     inputBinding:
       position: 101
       prefix: --min_size

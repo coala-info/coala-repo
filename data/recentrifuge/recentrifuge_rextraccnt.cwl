@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of nt DB entries to search for the taxa
-    default: no maximum
     inputBinding:
       position: 101
       prefix: --entrymax
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: limit of nt DB entries to extract
-    default: no limit
     inputBinding:
       position: 101
       prefix: --limit

@@ -8,7 +8,6 @@ inputs:
   - id: directory
     type: Directory
     doc: Path to valid project directory
-    default: current directory
     inputBinding:
       position: 1
   - id: configfile
@@ -16,7 +15,6 @@ inputs:
       - 'null'
       - File
     doc: Path to assembly configuration file
-    default: config.yaml
     inputBinding:
       position: 102
       prefix: --configfile
@@ -35,7 +33,6 @@ inputs:
       - File
     doc: gff file used to mask to all sequences prior to tree building. If not 
       specified, sequences will not be masked
-    default: false
     inputBinding:
       position: 102
       prefix: --mask
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: minimum coverage required to be included in analysis
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --minimum-completeness
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip performing recombinant region detection
-    default: false
     inputBinding:
       position: 102
       prefix: --no-detect
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate input for Terra and print instructions.
-    default: false
     inputBinding:
       position: 102
       prefix: --terra
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads available for command
-    default: all
     inputBinding:
       position: 102
       prefix: --threads

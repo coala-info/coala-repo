@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: CycNum
-    default: 0
     inputBinding:
       position: 101
       prefix: --CycNum
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - File
     doc: GSAFilename
-    default: <basename>.pairSA
     inputBinding:
       position: 101
       prefix: --GSA
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: readLength. 0 if unknown or not fixed
-    default: 0
     inputBinding:
       position: 101
       prefix: --read-length
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: TAU
-    default: 0
     inputBinding:
       position: 101
       prefix: --TAU

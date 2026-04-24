@@ -10,7 +10,6 @@ inputs:
   - id: s2c_obj
     type: File
     doc: path to SNP2CELL object
-    default: None
     inputBinding:
       position: 1
   - id: score_file
@@ -18,7 +17,6 @@ inputs:
     doc: Path to tsv file with scores for network nodes. Assuming there is no 
       header and the first column contains the node names, the second column the
       scores.
-    default: None
     inputBinding:
       position: 2
   - id: n_cpu
@@ -26,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: number of cpus to use
-    default: None
     inputBinding:
       position: 103
       prefix: --n-cpu
@@ -38,7 +35,6 @@ inputs:
       mapping. If not provided, no mapping will be done. If a path is provided 
       the mapping will be read from the file. If a URL is provided, the mapping 
       will be queried from biomart.
-    default: None
     inputBinding:
       position: 103
       prefix: --pos2gene
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: name for saving scores in object
-    default: snp_score
     inputBinding:
       position: 103
       prefix: --save-key

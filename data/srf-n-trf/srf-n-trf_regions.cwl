@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - float
     doc: Difference in required monomer size
-    default: 0.02
     inputBinding:
       position: 101
       prefix: --diff
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Distance to merge in base pairs
-    default: 100000
     inputBinding:
       position: 101
       prefix: --dst
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length in base pairs
-    default: 30000
     inputBinding:
       position: 101
       prefix: --min-len
@@ -45,7 +42,6 @@ inputs:
         items: int
     doc: Required monomers in merged blocks. Merges iff one of these monomer 
       periods is in block. Also filters out monomers not within this period
-    default:
       - 170
       - 340
       - 510

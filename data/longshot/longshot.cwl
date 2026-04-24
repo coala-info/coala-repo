@@ -11,7 +11,6 @@ inputs:
       - int
     doc: Length of indel-free anchor sequence on the left and right side of read
       realignment window.
-    default: 6
     inputBinding:
       position: 101
       prefix: --anchor_length
@@ -36,7 +35,6 @@ inputs:
       - int
     doc: Minimum width of alignment band. Band will increase in size if 
       sequences are different lengths.
-    default: 20
     inputBinding:
       position: 101
       prefix: --band_width
@@ -47,7 +45,6 @@ inputs:
     doc: Parameters to flag a variant as part of a "dense cluster". Format 
       <n>:<l>:<gq>. If there are at least n variants within l base pairs with 
       genotype quality >=gq, then these variants are flagged as "dn"
-    default: 10:500:50
     inputBinding:
       position: 101
       prefix: --density_params
@@ -66,7 +63,6 @@ inputs:
       - float
     doc: Minimum quality (Phred-scaled) of read->haplotype assignment (for read 
       separation).
-    default: 20.0
     inputBinding:
       position: 101
       prefix: --hap_assignment_qual
@@ -77,7 +73,6 @@ inputs:
     doc: Terminate the haplotype/genotype iteration when the relative change in 
       log-likelihood falls below this amount. Setting a larger value results in 
       faster termination but potentially less accurate results.
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: --hap_converge_delta
@@ -86,7 +81,6 @@ inputs:
       - 'null'
       - float
     doc: Specify the heterozygous SNV Rate for genotype prior estimation
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --het_snv_rate
@@ -95,7 +89,6 @@ inputs:
       - 'null'
       - float
     doc: Specify the homozygous SNV Rate for genotype prior estimation
-    default: 0.0005
     inputBinding:
       position: 101
       prefix: --hom_snv_rate
@@ -114,7 +107,6 @@ inputs:
       - int
     doc: Throw away a read-variant during allelotyping if there is a CIGAR indel
       (I/D/N) longer than this amount in its window.
-    default: 20
     inputBinding:
       position: 101
       prefix: --max_cigar_indel
@@ -124,7 +116,6 @@ inputs:
       - int
     doc: Maximum coverage (of reads passing filters) to consider position as a 
       potential SNV.
-    default: 8000
     inputBinding:
       position: 101
       prefix: --max_cov
@@ -134,7 +125,6 @@ inputs:
       - int
     doc: number of reads used for estimating alignment parameters, default value
       is 0 which uses all reads
-    default: 0
     inputBinding:
       position: 101
       prefix: --max_reads_estimation
@@ -144,7 +134,6 @@ inputs:
       - int
     doc: Cut off variant clusters after this many variants. 2^m haplotypes must 
       be aligned against per read for a variant cluster of size m.
-    default: 3
     inputBinding:
       position: 101
       prefix: --max_snvs
@@ -153,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum "padding" bases on either side of variant realignment window
-    default: 50
     inputBinding:
       position: 101
       prefix: --max_window
@@ -163,7 +151,6 @@ inputs:
       - float
     doc: Minimum estimated quality (Phred-scaled) of allele observation on read 
       to use for genotyping/haplotyping.
-    default: 7.0
     inputBinding:
       position: 101
       prefix: --min_allele_qual
@@ -173,7 +160,6 @@ inputs:
       - int
     doc: Require a potential SNV to have at least this many alternate allele 
       observations.
-    default: 3
     inputBinding:
       position: 101
       prefix: --min_alt_count
@@ -183,7 +169,6 @@ inputs:
       - float
     doc: Require a potential SNV to have at least this fraction of alternate 
       allele observations.
-    default: 0.125
     inputBinding:
       position: 101
       prefix: --min_alt_frac
@@ -193,7 +178,6 @@ inputs:
       - int
     doc: Minimum coverage (of reads passing filters) to consider position as a 
       potential SNV.
-    default: 6
     inputBinding:
       position: 101
       prefix: --min_cov
@@ -202,7 +186,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality to use a read.
-    default: 20
     inputBinding:
       position: 101
       prefix: --min_mapq
@@ -230,7 +213,6 @@ inputs:
     doc: Consider a site as a potential SNV if the original PHRED-scaled QUAL 
       score for 0/0 genotype is below this amount (a larger value considers more
       potential SNV sites).
-    default: 20.0
     inputBinding:
       position: 101
       prefix: --potential_snv_cutoff
@@ -268,7 +250,6 @@ inputs:
       - 'null'
       - string
     doc: Specify a sample ID to write to the output VCF
-    default: SAMPLE
     inputBinding:
       position: 101
       prefix: --sample_id
@@ -289,7 +270,6 @@ inputs:
     doc: Remove a variant if the allele observations are biased toward one 
       strand (forward or reverse) according to Fisher's exact test. Use this 
       cutoff for the two-tailed P-value.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --strand_bias_pvalue_cutoff
@@ -298,7 +278,6 @@ inputs:
       - 'null'
       - float
     doc: Specify the transition/transversion rate for genotype grior estimation
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --ts_tv_ratio

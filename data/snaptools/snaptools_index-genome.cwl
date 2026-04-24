@@ -10,7 +10,6 @@ inputs:
       - string
     doc: aligner to use. Currently, snaptools supports bwa, bowtie, bowtie2 and 
       minimap2.
-    default: bwa
     inputBinding:
       position: 101
       prefix: --aligner
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: =number of indexing threads
-    default: 3
     inputBinding:
       position: 101
       prefix: --num-threads
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: prefix of indexed file
-    default: None
     inputBinding:
       position: 101
       prefix: --output-prefix
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - Directory
     doc: path to fold that contains bwa
-    default: None
     inputBinding:
       position: 101
       prefix: --path-to-aligner

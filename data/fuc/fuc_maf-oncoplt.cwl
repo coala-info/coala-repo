@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Number of top mutated genes to display
-    default: 10
     inputBinding:
       position: 102
       prefix: --count
@@ -28,7 +27,6 @@ inputs:
       - type: array
         items: float
     doc: Width, height in inches
-    default:
       - 15
       - 10
     inputBinding:
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: Font size of labels
-    default: 15
     inputBinding:
       position: 102
       prefix: --label_fontsize
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: Font size of legend texts
-    default: 15
     inputBinding:
       position: 102
       prefix: --legend_fontsize
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: Font size of tick labels
-    default: 15
     inputBinding:
       position: 102
       prefix: --ticklabels_fontsize

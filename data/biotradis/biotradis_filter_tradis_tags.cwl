@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: number of mismatches to allow when matching tag
-    default: 0
     inputBinding:
       position: 101
       prefix: -m

@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: Kmer depth for kmer stats
-    default: 4.0
     inputBinding:
       position: 103
       prefix: --kmer
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - float
     doc: the minimum log Likelihood
-    default: -120.0
     inputBinding:
       position: 103
       prefix: --minLL
@@ -55,7 +53,6 @@ inputs:
       - int
     doc: Minimum quality score to use in Z-normalization. Illumina quality 
       scores can be unreliable below this threshold
-    default: 3
     inputBinding:
       position: 103
       prefix: --minQual
@@ -80,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Quality ascii offset (illumina) 33 or 64 (or 0)
-    default: 33
     inputBinding:
       position: 103
       prefix: --qOff

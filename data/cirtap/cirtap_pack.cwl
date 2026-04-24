@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Define loglevel
-    default: INFO
     inputBinding:
       position: 101
       prefix: --loglevel

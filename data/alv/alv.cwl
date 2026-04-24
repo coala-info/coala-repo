@@ -52,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Genetic code to use, based on NCBI's code list.
-    default: 1
     inputBinding:
       position: 102
       prefix: --code
@@ -64,7 +63,6 @@ inputs:
       approximation of the original, due to the limited color choices for consoles.
       The "hydrophobicity" gives red to hydrophobic, blue to polar, and green to charged
       residues.
-    default: clustal
     inputBinding:
       position: 102
       prefix: --color-scheme
@@ -83,7 +81,6 @@ inputs:
       - string
     doc: Specify what sequence type to assume. Be specific if the file is not recognized
       automatically. When reading from stdin, the format is always guessed to be FASTA.
-    default: guess
     inputBinding:
       position: 102
       prefix: --format
@@ -211,7 +208,6 @@ inputs:
       - 'null'
       - string
     doc: Sort the sequences as given in the infile or alphabetically (by accession).
-    default: infile
     inputBinding:
       position: 102
       prefix: --sorting
@@ -232,7 +228,6 @@ inputs:
     doc: Specify what sequence type to assume. Coding DNA/RNA is assumed with the
       'codon' option. Guessing the format only chooses between 'aa' and 'dna', but
       assumes the standard genetic code.
-    default: guess
     inputBinding:
       position: 102
       prefix: --type

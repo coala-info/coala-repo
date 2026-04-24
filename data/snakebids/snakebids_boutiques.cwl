@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - Directory
     doc: Location of the Snakebids app. Defaults to the current directory.
-    default: .
     inputBinding:
       position: 102
       prefix: --app_dir

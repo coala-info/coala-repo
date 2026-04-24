@@ -16,7 +16,6 @@ inputs:
       - int
     doc: Fixed size for filter in Megabytes (MB). Mutually exclusive --max-fp. 
       Only valid for --filter-type ibf.
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-size
@@ -28,7 +27,6 @@ inputs:
       v3.0.1 installed or binary path set with --raptor-path. --mode, 
       --filter-size and --min-length will be ignored with hibf. hibf will set 
       --max-fp 0.001 as default.
-    default: hibf
     inputBinding:
       position: 101
       prefix: --filter-type
@@ -48,7 +46,6 @@ inputs:
       - int
     doc: The number of hash functions for the interleaved bloom filter [1-5]. 
       With --filter-type ibf, 0 will try to set optimal value.
-    default: 4
     inputBinding:
       position: 101
       prefix: --hash-functions
@@ -103,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: The k-mer size to split sequences.
-    default: 19
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -135,7 +131,6 @@ inputs:
       - int
     doc: Skip sequences smaller then value defined. 0 to not skip any sequence. 
       Only valid for --filter-type ibf.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-length
@@ -241,7 +236,6 @@ inputs:
       - 'null'
       - int
     doc: The window-size to build filter with minimizers.
-    default: 31
     inputBinding:
       position: 101
       prefix: --window-size

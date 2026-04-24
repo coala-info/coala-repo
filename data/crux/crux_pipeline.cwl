@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Specifies which scan types are searched.
-    default: ALL
     inputBinding:
       position: 103
       prefix: --activation_method
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue A.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_A_alanine
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue B.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_B_user_amino_acid
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue C.
-    default: 57.021464
     inputBinding:
       position: 103
       prefix: --add_C_cysteine
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: Specifiy a static modification to the c-terminus of all peptides.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_Cterm_peptide
@@ -72,7 +67,6 @@ inputs:
       - float
     doc: Specify a static modification to the c-terminal peptide of each 
       protein.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_Cterm_protein
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue D.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_D_aspartic_acid
@@ -90,7 +83,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue E.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_E_glutamic_acid
@@ -99,7 +91,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue F.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_F_phenylalanine
@@ -108,7 +99,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue G.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_G_glycine
@@ -117,7 +107,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue H.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_H_histidine
@@ -126,7 +115,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue I.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_I_isoleucine
@@ -135,7 +123,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue J.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_J_user_amino_acid
@@ -144,7 +131,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue K.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_K_lysine
@@ -153,7 +139,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue L.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_L_leucine
@@ -162,7 +147,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue M.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_M_methionine
@@ -171,7 +155,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue N.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_N_asparagine
@@ -180,7 +163,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the n-terminus of all peptides.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_Nterm_peptide
@@ -190,7 +172,6 @@ inputs:
       - float
     doc: Specify a static modification to the n-terminal peptide of each 
       protein.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_Nterm_protein
@@ -199,7 +180,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue O.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_O_ornithine
@@ -208,7 +188,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue P.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_P_proline
@@ -217,7 +196,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue Q.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_Q_glutamine
@@ -226,7 +204,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue R.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_R_arginine
@@ -235,7 +212,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue S.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_S_serine
@@ -244,7 +220,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue T.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_T_threonine
@@ -253,7 +228,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue U.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_U_selenocysteine
@@ -262,7 +236,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue V.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_V_valine
@@ -271,7 +244,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue W.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_W_tryptophan
@@ -280,7 +252,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue X.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_X_user_amino_acid
@@ -289,7 +260,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue Y.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_Y_tyrosine
@@ -298,7 +268,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a static modification to the residue Z.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --add_Z_user_amino_acid
@@ -307,7 +276,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum value is 5; for enzyme search.
-    default: 2
     inputBinding:
       position: 103
       prefix: --allowed_missed_cleavage
@@ -319,7 +287,6 @@ inputs:
       from the spectra themselves. false=no estimation, warn=try to estimate but
       use the default value in case of failure, fail=try to estimate and quit in
       case of failure.
-    default: 'false'
     inputBinding:
       position: 103
       prefix: --auto_fragment_bin_tol
@@ -331,7 +298,6 @@ inputs:
       from the spectra themselves. false=no estimation, warn=try to estimate but
       use the default value in case of failure, fail=try to estimate and quit in
       case of failure.
-    default: 'false'
     inputBinding:
       position: 103
       prefix: --auto-mz-bin-width
@@ -343,7 +309,6 @@ inputs:
       parameter from the spectra themselves. false=no estimation, warn=try to 
       estimate but use the default value in case of failure, fail=try to 
       estimate and quit in case of failure.
-    default: 'false'
     inputBinding:
       position: 103
       prefix: --auto_peptide_mass_tolerance
@@ -355,7 +320,6 @@ inputs:
       from the spectra themselves. false=no estimation, warn=try to estimate but
       use the default value in case of failure, fail=try to estimate and quit in
       case of failure.
-    default: 'false'
     inputBinding:
       position: 103
       prefix: --auto-precursor-window
@@ -368,7 +332,6 @@ inputs:
       ends with .ms2 or .cms2, matching .ms1/.cms1 files will be used as the MS1
       file. Otherwise, it is assumed that the spectrum file contains both MS1 
       and MS2 scans.
-    default: false
     inputBinding:
       position: 103
       prefix: --bullseye
@@ -377,7 +340,6 @@ inputs:
       - 'null'
       - float
     doc: Only consider PPIDs below this maximum mass in daltons.
-    default: 8000.0
     inputBinding:
       position: 103
       prefix: --bullseye-max-mass
@@ -386,7 +348,6 @@ inputs:
       - 'null'
       - float
     doc: Only consider PPIDs above this minimum mass in daltons.
-    default: 600.0
     inputBinding:
       position: 103
       prefix: --bullseye-min-mass
@@ -396,7 +357,6 @@ inputs:
       - float
     doc: Penalty for mistake made on negative examples. If not specified, then 
       this value is set by cross validation over {0.1, 1, 10}.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --c-neg
@@ -408,7 +368,6 @@ inputs:
       0, then it is set via cross validation over the values {0.1, 1, 10}, 
       selecting the value that yields the largest number of PSMs identified at 
       the q-value threshold set via the --test-fdr parameter.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --c-pos
@@ -418,7 +377,6 @@ inputs:
       - string
     doc: For iTRAQ/TMT type data; will clear out all peaks in the specified m/z 
       range.
-    default: 0.0 0.0
     inputBinding:
       position: 103
       prefix: --clear_mz_range
@@ -428,7 +386,6 @@ inputs:
       - int
     doc: 0=leave sequences as-is; 1=also consider sequence w/o N-term 
       methionine.
-    default: 0
     inputBinding:
       position: 103
       prefix: --clip_nterm_methionine
@@ -439,7 +396,6 @@ inputs:
     doc: Specify this parameter to T in order to combine charge states with 
       peptide sequencesin peptide-centric search. Works only if 
       estimation-method = peptide-level.
-    default: false
     inputBinding:
       position: 103
       prefix: --combine-charge-states
@@ -450,7 +406,6 @@ inputs:
     doc: Specify this parameter to T in order to treat peptides carrying 
       different or no modifications as being the same. Works only if estimation 
       = peptide-level.
-    default: false
     inputBinding:
       position: 103
       prefix: --combine-modified-peptides
@@ -466,7 +421,6 @@ inputs:
       overridden. Note that the Sp computation requires re-processing each 
       observed spectrum, so turning on this switch involves significant 
       computational overhead.
-    default: false
     inputBinding:
       position: 103
       prefix: --compute-sp
@@ -479,7 +433,6 @@ inputs:
       are reported for each spectrum, irrespective of whether the matches 
       involve target or decoy peptides.Note that when used with 
       search-for-xlinks, this parameter only has an effect if use-old-xlink=F.
-    default: false
     inputBinding:
       position: 103
       prefix: --concat
@@ -488,7 +441,6 @@ inputs:
       - 'null'
       - string
     doc: Specifies the prefix of the protein names that indicates a decoy.
-    default: decoy_
     inputBinding:
       position: 103
       prefix: --decoy_prefix
@@ -497,7 +449,6 @@ inputs:
       - 'null'
       - string
     doc: Specifies the prefix of the protein names that indicate a decoy.
-    default: decoy_
     inputBinding:
       position: 103
       prefix: --decoy-prefix
@@ -506,7 +457,6 @@ inputs:
       - 'null'
       - int
     doc: 0=no, 1=concatenated search, 2=separate search.
-    default: 0
     inputBinding:
       position: 103
       prefix: --decoy_search
@@ -515,7 +465,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include decoys (PSMs, peptides, and/or proteins) in the XML output.
-    default: false
     inputBinding:
       position: 103
       prefix: --decoy-xml-output
@@ -530,7 +479,6 @@ inputs:
       for the initial ranking, using the name as a string. The name can be 
       preceded by a hyphen (e.g. "-XCorr") to indicate that a lower value is 
       better.
-    default: ''
     inputBinding:
       position: 103
       prefix: --default-direction
@@ -545,7 +493,6 @@ inputs:
       current peak is of lower abundance, then the peak is removed. The value of
       this parameter is the mass tolerance, in units of parts-per-million. If 
       set to 0, no deisotoping is performed.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --deisotope
@@ -554,7 +501,6 @@ inputs:
       - 'null'
       - string
     doc: MH+ peptide mass range to analyze.
-    default: 600.0 5000.0
     inputBinding:
       position: 103
       prefix: --digest_mass_range
@@ -566,7 +512,6 @@ inputs:
       target-decoy competition apply to PSMs. The peptide-level option 
       eliminates any PSM for which there exists a better scoring PSM involving 
       the same peptide, and then uses decoys to assign confidence estimates.
-    default: tdc
     inputBinding:
       position: 103
       prefix: --estimation-method
@@ -578,7 +523,6 @@ inputs:
       entries in the dynamic programming matrix. Smaller values make the program
       run faster but give less exact p-values; larger values make the program 
       run more slowly but give more exact p-values.
-    default: 25
     inputBinding:
       position: 103
       prefix: --evidence-granularity
@@ -593,7 +537,6 @@ inputs:
       tolerance. This wider tolerance is calculated using the PPID's 
       monoisotopic mass and charge (the higher the charge, the smaller the 
       window).
-    default: false
     inputBinding:
       position: 103
       prefix: --exact-match
@@ -611,7 +554,6 @@ inputs:
       allowed on non-terminal residues in conjunction with p-value computation, 
       but currently only static mods are allowed on the N-terminus, and no mods 
       on the C-terminus.
-    default: false
     inputBinding:
       position: 103
       prefix: --exact-p-value
@@ -620,7 +562,6 @@ inputs:
       - 'null'
       - float
     doc: Set the tolerance (+/-ppm) for --exact-match.
-    default: 10.0
     inputBinding:
       position: 103
       prefix: --exact-tolerance
@@ -632,7 +573,6 @@ inputs:
       format. The features will be normalized, using either unit norm or 
       standard deviation normalization (depending upon the value of the 
       unit-norm option).
-    default: false
     inputBinding:
       position: 103
       prefix: --feature-file-out
@@ -643,7 +583,6 @@ inputs:
     doc: Specify the probability with which a present protein emits an 
       associated peptide. Set by grid search (see --fido-gridsearch-depth 
       parameter) if not specified.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --fido-alpha
@@ -653,7 +592,6 @@ inputs:
       - float
     doc: Specify the probability of the creation of a peptide from noise. Set by
       grid search (see --fido-gridsearch-depth parameter) if not specified.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --fido-beta
@@ -663,7 +601,6 @@ inputs:
       - boolean
     doc: Estimate empirical p-values and q-values for proteins using 
       target-decoy analysis.
-    default: false
     inputBinding:
       position: 103
       prefix: --fido-empirical-protein-q
@@ -673,7 +610,6 @@ inputs:
       - float
     doc: Apply the specified threshold to PSM, peptide and protein probabilities
       to obtain a faster estimate of the alpha, beta and gamma parameters.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --fido-fast-gridsearch
@@ -684,7 +620,6 @@ inputs:
     doc: Specify the prior probability that a protein is present in the sample. 
       Set by grid search (see --fido-gridsearch-depth parameter) if not 
       specified.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --fido-gamma
@@ -693,7 +628,6 @@ inputs:
       - 'null'
       - int
     doc: Set depth of the grid search for alpha, beta and gamma estimation.
-    default: 0
     inputBinding:
       position: 103
       prefix: --fido-gridsearch-depth
@@ -703,7 +637,6 @@ inputs:
       - float
     doc: Q-value threshold that will be used in the computation of the MSE and 
       ROC AUC score in the grid search.
-    default: 0.05
     inputBinding:
       position: 103
       prefix: --fido-gridsearch-mse-threshold
@@ -715,7 +648,6 @@ inputs:
       components to be split into subgraphs. The splitting is done by 
       duplicating peptides with low probabilities. Splitting continues until the
       number of possible configurations of each subgraph is below 2^18
-    default: false
     inputBinding:
       position: 103
       prefix: --fido-no-split-large-components
@@ -726,7 +658,6 @@ inputs:
     doc: To speed up inference, proteins for which none of the associated 
       peptides has a probability exceeding the specified threshold will be 
       assigned probability = 0.
-    default: 0.01
     inputBinding:
       position: 103
       prefix: --fido-protein-truncation-threshold
@@ -735,7 +666,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include the file column in tab-delimited output.
-    default: true
     inputBinding:
       position: 103
       prefix: --file-column
@@ -744,7 +674,6 @@ inputs:
       - 'null'
       - string
     doc: The fileroot string will be added as a prefix to all output file names.
-    default: ''
     inputBinding:
       position: 103
       prefix: --fileroot
@@ -753,7 +682,6 @@ inputs:
       - 'null'
       - float
     doc: Offset position to start the binning (0.0 to 1.0).
-    default: 0.4
     inputBinding:
       position: 103
       prefix: --fragment_bin_offset
@@ -762,7 +690,6 @@ inputs:
       - 'null'
       - float
     doc: Binning to use on fragment ions.
-    default: 1.000507
     inputBinding:
       position: 103
       prefix: --fragment_bin_tol
@@ -773,7 +700,6 @@ inputs:
     doc: Mass tolerance (in Da) for scoring pairs of peaks when creating the 
       residue evidence matrix. This parameter only makes sense when 
       score-function is 'residue-evidence' or 'both'.
-    default: 0.02
     inputBinding:
       position: 103
       prefix: --fragment-tolerance
@@ -782,7 +708,6 @@ inputs:
       - 'null'
       - int
     doc: Allowed gap size when checking for PPIDs across consecutive MS1 scans.
-    default: 1
     inputBinding:
       position: 103
       prefix: --gap-tolerance
@@ -791,7 +716,6 @@ inputs:
       - 'null'
       - string
     doc: Read initial weights from the given file (one per line).
-    default: ''
     inputBinding:
       position: 103
       prefix: --init-weights
@@ -800,7 +724,6 @@ inputs:
       - 'null'
       - string
     doc: List of positive, non-zero integers.
-    default: ''
     inputBinding:
       position: 103
       prefix: --isotope-error
@@ -810,7 +733,6 @@ inputs:
       - int
     doc: 0=off, 1=on -1/0/1/2/3 (standard C13 error), 2=-8/-4/0/4/8 (for +4/+8 
       labeling).
-    default: 0
     inputBinding:
       position: 103
       prefix: --isotope_error
@@ -822,7 +744,6 @@ inputs:
       spectrum identification using peptide retention time prediction across 
       diverse chromatography conditions" by Klammer AA, Yi X, MacCoss MJ and 
       Noble WS. (Analytical Chemistry. 2007 Aug 15;79(16):6111-8.).
-    default: false
     inputBinding:
       position: 103
       prefix: --klammer
@@ -832,7 +753,6 @@ inputs:
       - boolean
     doc: Specify that the search results are provided as lists of files, rather 
       than as individual files.
-    default: false
     inputBinding:
       position: 103
       prefix: --list-of-files
@@ -844,7 +764,6 @@ inputs:
       effectively subtracted from each precursor mass such that peptides that 
       are smaller than the precursor mass by the offset value can still be 
       matched to the respective spectrum.
-    default: ''
     inputBinding:
       position: 103
       prefix: --mass_offsets
@@ -853,7 +772,6 @@ inputs:
       - 'null'
       - int
     doc: Set the precision for masses and m/z written to sqt and text files.
-    default: 4
     inputBinding:
       position: 103
       prefix: --mass-precision
@@ -862,7 +780,6 @@ inputs:
       - 'null'
       - int
     doc: 0=average masses, 1=monoisotopic masses.
-    default: 1
     inputBinding:
       position: 103
       prefix: --mass_type_fragment
@@ -871,7 +788,6 @@ inputs:
       - 'null'
       - int
     doc: 0=average masses, 1=monoisotopic masses.
-    default: 1
     inputBinding:
       position: 103
       prefix: --mass_type_parent
@@ -881,7 +797,6 @@ inputs:
       - int
     doc: Specifies the maximum charge state feature. When set to zero, use the 
       maximum observed charge state.
-    default: 0
     inputBinding:
       position: 103
       prefix: --max-charge-feature
@@ -890,7 +805,6 @@ inputs:
       - 'null'
       - int
     doc: Set maximum fragment charge state to analyze (allowed max 5).
-    default: 3
     inputBinding:
       position: 103
       prefix: --max_fragment_charge
@@ -901,7 +815,6 @@ inputs:
     doc: Ignore PPIDs that persist for longer than this length of time in the 
       MS1 spectra. The unit of time is whatever unit is used in your data file 
       (usually minutes). These PPIDs are considered contaminants.
-    default: 2.0
     inputBinding:
       position: 103
       prefix: --max-persist
@@ -910,7 +823,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum charge state of a spectra to consider in search.
-    default: 5
     inputBinding:
       position: 103
       prefix: --max-precursor-charge
@@ -919,7 +831,6 @@ inputs:
       - 'null'
       - int
     doc: Set maximum precursor charge state to analyze (allowed max 9).
-    default: 6
     inputBinding:
       position: 103
       prefix: --max_precursor_charge
@@ -929,7 +840,6 @@ inputs:
       - int
     doc: Specifies the total/maximum number of residues that can be modified in 
       a peptide.
-    default: 5
     inputBinding:
       position: 103
       prefix: --max_variable_mods_in_peptide
@@ -938,7 +848,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of iterations for training.
-    default: 10
     inputBinding:
       position: 103
       prefix: --maxiter
@@ -947,7 +856,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum number of peaks a spectrum must have for it to be searched.
-    default: 20
     inputBinding:
       position: 103
       prefix: --min-peaks
@@ -956,7 +864,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum intensity value to read in.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --minimum_intensity
@@ -965,7 +872,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of peaks in spectrum to search.
-    default: 10
     inputBinding:
       position: 103
       prefix: --minimum_peaks
@@ -974,7 +880,6 @@ inputs:
       - 'null'
       - int
     doc: Set the precision for modifications as written to .txt files.
-    default: 2
     inputBinding:
       position: 103
       prefix: --mod-precision
@@ -983,7 +888,6 @@ inputs:
       - 'null'
       - int
     doc: MS level to analyze, valid are levels 2 or 3.
-    default: 2
     inputBinding:
       position: 103
       prefix: --ms_level
@@ -995,7 +899,6 @@ inputs:
       spectra, this parameter specifies the location of the left edge of the 
       first bin, relative to mass = 0 (i.e., mz-bin-offset = 0.xx means the left
       edge of the first bin will be located at +0.xx Da).
-    default: 0.4
     inputBinding:
       position: 103
       prefix: --mz-bin-offset
@@ -1009,7 +912,6 @@ inputs:
       floor((x/mz-bin-width) + 1.0 - mz-bin-offset), where x is the observed m/z
       value. For low resolution ion trap ms/ms data 1.0005079 and for high 
       resolution ms/ms 0.02 is recommended.
-    default: 1.0005079
     inputBinding:
       position: 103
       prefix: --mz-bin-width
@@ -1018,7 +920,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output an mzIdentML results file to the output directory.
-    default: false
     inputBinding:
       position: 103
       prefix: --mzid-output
@@ -1027,7 +928,6 @@ inputs:
       - 'null'
       - int
     doc: 0=proteinDB, 1-6, 7=forward three, 8=reverse three, 9=all six.
-    default: 0
     inputBinding:
       position: 103
       prefix: --nucleotide_reading_frame
@@ -1037,7 +937,6 @@ inputs:
       - int
     doc: valid values are 1 (semi-digested), 2 (fully digested), 8 N-term, 9 
       C-term.
-    default: 2
     inputBinding:
       position: 103
       prefix: --num_enzyme_termini
@@ -1046,7 +945,6 @@ inputs:
       - 'null'
       - int
     doc: num peptide results to show.
-    default: 5
     inputBinding:
       position: 103
       prefix: --num_output_lines
@@ -1055,7 +953,6 @@ inputs:
       - 'null'
       - int
     doc: Number of search hits to store internally.
-    default: 5
     inputBinding:
       position: 103
       prefix: --num_results
@@ -1064,7 +961,6 @@ inputs:
       - 'null'
       - int
     doc: 0=poll CPU to set num threads; else specify num threads directly.
-    default: 0
     inputBinding:
       position: 103
       prefix: --num-threads
@@ -1073,7 +969,6 @@ inputs:
       - 'null'
       - int
     doc: 0=poll CPU to set num threads; else specify num threads directly.
-    default: 0
     inputBinding:
       position: 103
       prefix: --num_threads
@@ -1083,7 +978,6 @@ inputs:
       - boolean
     doc: Do not remove redundant peptides; keep all PSMs and exclude peptide 
       level probability.
-    default: false
     inputBinding:
       position: 103
       prefix: --only-psms
@@ -1092,7 +986,6 @@ inputs:
       - 'null'
       - Directory
     doc: The name of the directory where output files will be created.
-    default: crux-output
     inputBinding:
       position: 103
       prefix: --output-dir
@@ -1101,7 +994,6 @@ inputs:
       - 'null'
       - int
     doc: 0=no, 1=yes  write .out files.
-    default: 0
     inputBinding:
       position: 103
       prefix: --output_outfiles
@@ -1110,7 +1002,6 @@ inputs:
       - 'null'
       - int
     doc: 0=no, 1=yes  write pep.xml file.
-    default: 1
     inputBinding:
       position: 103
       prefix: --output_pepxmlfile
@@ -1119,7 +1010,6 @@ inputs:
       - 'null'
       - int
     doc: 0=no, 1=yes write percolator file.
-    default: 0
     inputBinding:
       position: 103
       prefix: --output_percolatorfile
@@ -1128,7 +1018,6 @@ inputs:
       - 'null'
       - int
     doc: 0=no, 1=yes  write sqt file.
-    default: 0
     inputBinding:
       position: 103
       prefix: --output_sqtfile
@@ -1138,7 +1027,6 @@ inputs:
       - string
     doc: Specifies the suffix string that is appended to the base output name 
       for the pep.xml, pin.xml, txt and sqt output files.
-    default: ''
     inputBinding:
       position: 103
       prefix: --output_suffix
@@ -1147,7 +1035,6 @@ inputs:
       - 'null'
       - int
     doc: 0=no, 1=yes  write tab-delimited text file.
-    default: 1
     inputBinding:
       position: 103
       prefix: --output_txtfile
@@ -1156,7 +1043,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output final weights to a file named "percolator.weights.txt".
-    default: false
     inputBinding:
       position: 103
       prefix: --output-weights
@@ -1169,7 +1055,6 @@ inputs:
       discard the learned weights and instead employ a previously trained, 
       static score vector. This switch allows this error checking to be 
       overriden.
-    default: false
     inputBinding:
       position: 103
       prefix: --override
@@ -1180,7 +1065,6 @@ inputs:
     doc: Specifies the whether to override existing precursor charge state 
       information when present in the files with the charge range specified by 
       the "precursor_charge" parameter.
-    default: 0
     inputBinding:
       position: 103
       prefix: --override_charge
@@ -1190,7 +1074,6 @@ inputs:
       - boolean
     doc: Replace existing files if true or fail when trying to overwrite a file 
       if false.
-    default: false
     inputBinding:
       position: 103
       prefix: --overwrite
@@ -1199,7 +1082,6 @@ inputs:
       - 'null'
       - File
     doc: A file containing parameters.
-    default: ''
     inputBinding:
       position: 103
       prefix: --parameter-file
@@ -1213,7 +1095,6 @@ inputs:
       "xcorr rank" column will contain the rank of the given spectrum with 
       respect to the given candidate peptide, rather than vice versa (which is 
       the default).
-    default: false
     inputBinding:
       position: 103
       prefix: --peptide-centric-search
@@ -1225,7 +1106,6 @@ inputs:
       specified number i.e. an entered value of "1.0" applies a -1.0 to +1.0 
       tolerance. The units of the mass tolerance is controlled by the parameter 
       "peptide_mass_units".
-    default: 3.0
     inputBinding:
       position: 103
       prefix: --peptide_mass_tolerance
@@ -1234,7 +1114,6 @@ inputs:
       - 'null'
       - int
     doc: 0=amu, 1=mmu, 2=ppm.
-    default: 0
     inputBinding:
       position: 103
       prefix: --peptide_mass_units
@@ -1243,7 +1122,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output a pepXML results file to the output directory.
-    default: false
     inputBinding:
       position: 103
       prefix: --pepxml-output
@@ -1254,7 +1132,6 @@ inputs:
     doc: When given a unsigned integer value seeds the random number generator 
       with that value. When given the string "time" seeds the random number 
       generator with the system time.
-    default: '1'
     inputBinding:
       position: 103
       prefix: --percolator-seed
@@ -1264,7 +1141,6 @@ inputs:
       - float
     doc: Set the mass tolerance (+/-ppm) for finding PPIDs in consecutive MS1 
       scans.
-    default: 10.0
     inputBinding:
       position: 103
       prefix: --persist-tolerance
@@ -1274,7 +1150,6 @@ inputs:
       - string
     doc: Use the picked protein-level FDR to infer protein probabilities, 
       provide the fasta file as the argument to this flag.
-    default: ''
     inputBinding:
       position: 103
       prefix: --picked-protein
@@ -1283,7 +1158,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output a Percolator input (PIN) file to the output directory.
-    default: false
     inputBinding:
       position: 103
       prefix: --pin-output
@@ -1294,7 +1168,6 @@ inputs:
     doc: Precursor charge state to consider MS/MS spectra from, in measurement 
       error estimation. Ideally, this should be the most frequently occurring 
       charge state in the given data.
-    default: 2
     inputBinding:
       position: 103
       prefix: --pm-charge
@@ -1303,7 +1176,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum fragment m/z value to use in measurement error estimation.
-    default: 1800.0
     inputBinding:
       position: 103
       prefix: --pm-max-frag-mz
@@ -1314,7 +1186,6 @@ inputs:
     doc: Maximum ppm distance between precursor m/z values to consider two scans
       potentially generated by the same peptide for measurement error 
       estimation.
-    default: 50.0
     inputBinding:
       position: 103
       prefix: --pm-max-precursor-delta-ppm
@@ -1323,7 +1194,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum precursor m/z value to use in measurement error estimation.
-    default: 1800.0
     inputBinding:
       position: 103
       prefix: --pm-max-precursor-mz
@@ -1334,7 +1204,6 @@ inputs:
     doc: Maximum number of scans two spectra can be separated by in order to be 
       considered potentially generated by the same peptide, for measurement 
       error estimation.
-    default: 1000
     inputBinding:
       position: 103
       prefix: --pm-max-scan-separation
@@ -1345,7 +1214,6 @@ inputs:
     doc: Number of the most-intense peaks that two spectra must share in order 
       to potentially be generated by the same peptide, for measurement error 
       estimation.
-    default: 20
     inputBinding:
       position: 103
       prefix: --pm-min-common-frag-peaks
@@ -1354,7 +1222,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum fragment m/z value to use in measurement error estimation.
-    default: 150.0
     inputBinding:
       position: 103
       prefix: --pm-min-frag-mz
@@ -1365,7 +1232,6 @@ inputs:
     doc: Minimum number of peak pairs (for precursor or fragment) that must be 
       successfully paired in order to attempt to estimate measurement error 
       distribution.
-    default: 100
     inputBinding:
       position: 103
       prefix: --pm-min-peak-pairs
@@ -1374,7 +1240,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum precursor m/z value to use in measurement error estimation.
-    default: 400.0
     inputBinding:
       position: 103
       prefix: --pm-min-precursor-mz
@@ -1384,7 +1249,6 @@ inputs:
       - int
     doc: Minimum fragment peaks an MS/MS scan must contain to be used in 
       measurement error estimation.
-    default: 40
     inputBinding:
       position: 103
       prefix: --pm-min-scan-frag-peaks
@@ -1394,7 +1258,6 @@ inputs:
       - int
     doc: Number of fragment peaks per spectrum pair to be used in fragment error
       estimation.
-    default: 5
     inputBinding:
       position: 103
       prefix: --pm-pair-top-n-frag-peaks
@@ -1404,7 +1267,6 @@ inputs:
       - int
     doc: Number of most-intense fragment peaks to consider for measurement error
       estimation, per MS/MS spectrum.
-    default: 30
     inputBinding:
       position: 103
       prefix: --pm-top-n-frag-peaks
@@ -1413,7 +1275,6 @@ inputs:
       - 'null'
       - string
     doc: Specify which post-processor to apply to the search results.
-    default: percolator
     inputBinding:
       position: 103
       prefix: --post-processor
@@ -1423,7 +1284,6 @@ inputs:
       - boolean
     doc: Output a Percolator pout.xml format results file to the output 
       directory.
-    default: false
     inputBinding:
       position: 103
       prefix: --pout-output
@@ -1432,7 +1292,6 @@ inputs:
       - 'null'
       - int
     doc: Set the precision for scores written to sqt and text files.
-    default: 8
     inputBinding:
       position: 103
       prefix: --precision
@@ -1442,7 +1301,6 @@ inputs:
       - string
     doc: Precursor charge range to analyze; does not override mzXML charge; 0 as
       first entry ignores parameter.
-    default: 0 0
     inputBinding:
       position: 103
       prefix: --precursor_charge
@@ -1451,7 +1309,6 @@ inputs:
       - 'null'
       - int
     doc: 0=singly charged peptide mass, 1=precursor m/z.
-    default: 0
     inputBinding:
       position: 103
       prefix: --precursor_tolerance_type
@@ -1462,7 +1319,6 @@ inputs:
     doc: Tolerance used for matching peptides to spectra. Peptides must be 
       within +/- 'precursor-window' of the spectrum value. The precursor window 
       units depend upon precursor-window-type.
-    default: 3.0
     inputBinding:
       position: 103
       prefix: --precursor-window
@@ -1485,7 +1341,6 @@ inputs:
       the mass type. The lower bound of the mass window is then defined as the 
       spectrum mass / (1.0 + (precursor-window / 1000000)) and the upper bound 
       is defined as spectrum mass / (1.0 - (precursor-window / 1000000)).
-    default: mass
     inputBinding:
       position: 103
       prefix: --precursor-window-type
@@ -1494,7 +1349,6 @@ inputs:
       - 'null'
       - int
     doc: 0=no, 1=yes to replace Sp with expect in out & sqt.
-    default: 1
     inputBinding:
       position: 103
       prefix: --print_expect_score
@@ -1504,7 +1358,6 @@ inputs:
       - int
     doc: Show search progress by printing every n spectra searched. Set to 0 to 
       show no search progress.
-    default: 1000
     inputBinding:
       position: 103
       prefix: --print-search-progress
@@ -1514,7 +1367,6 @@ inputs:
       - boolean
     doc: Use the Fido algorithm to infer protein probabilities. Must be true to 
       use any of the Fido options.
-    default: false
     inputBinding:
       position: 103
       prefix: --protein
@@ -1523,7 +1375,6 @@ inputs:
       - 'null'
       - string
     doc: Type of enzyme
-    default: trypsin
     inputBinding:
       position: 103
       prefix: --protein-enzyme
@@ -1535,7 +1386,6 @@ inputs:
       then Percolator will randomly discard all but one of the proteins. If this
       option is set, then the IDs of these duplicated proteins will be reported 
       as a comma-separated list. Not available for Fido.
-    default: false
     inputBinding:
       position: 103
       prefix: --protein-report-duplicates
@@ -1553,7 +1403,6 @@ inputs:
       Percolator will report a comma-separated list of protein IDs, where the 
       full-length protein B is first in the list and the fragment protein A is 
       listed second. Not available for Fido.
-    default: false
     inputBinding:
       position: 103
       prefix: --protein-report-fragments
@@ -1562,7 +1411,6 @@ inputs:
       - 'null'
       - boolean
     doc: Quicker execution by reduced internal cross-validation.
-    default: false
     inputBinding:
       position: 103
       prefix: --quick-validation
@@ -1572,7 +1420,6 @@ inputs:
       - boolean
     doc: If true, all peaks around the precursor m/z will be removed, within a 
       range specified by the --remove-precursor-tolerance option.
-    default: false
     inputBinding:
       position: 103
       prefix: --remove-precursor-peak
@@ -1581,7 +1428,6 @@ inputs:
       - 'null'
       - int
     doc: 0=no, 1=yes, 2=all charge reduced precursor peaks (for ETD).
-    default: 0
     inputBinding:
       position: 103
       prefix: --remove_precursor_peak
@@ -1591,7 +1437,6 @@ inputs:
       - float
     doc: This parameter specifies the tolerance (in Th) around each precursor 
       m/z that is removed when the --remove-precursor-peak option is invoked.
-    default: 1.5
     inputBinding:
       position: 103
       prefix: --remove-precursor-tolerance
@@ -1600,7 +1445,6 @@ inputs:
       - 'null'
       - float
     doc: +- Da tolerance for precursor removal.
-    default: 1.5
     inputBinding:
       position: 103
       prefix: --remove_precursor_tolerance
@@ -1610,7 +1454,6 @@ inputs:
       - int
     doc: Controls whether the analyzed peptides must contain at least one 
       variable modification.
-    default: 0
     inputBinding:
       position: 103
       prefix: --require_variable_mod
@@ -1621,7 +1464,6 @@ inputs:
     doc: Set the tolerance (+/-units) around the retention time over which a 
       PPID can be matches to the MS2 spectrum. The unit of time is whatever unit
       is used in your data file (usually minutes).
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --retention-tolerance
@@ -1631,7 +1473,6 @@ inputs:
       - int
     doc: Sample enzyme which is possibly different than the one applied to the 
       search. Used to calculate NTT & NMC in pepXML output.
-    default: 1
     inputBinding:
       position: 103
       prefix: --sample_enzyme_number
@@ -1641,7 +1482,6 @@ inputs:
       - string
     doc: A single scan number or a range of numbers to be searched. Range should
       be specified as 'first-last' which will include scans 'first' and 'last'.
-    default: ''
     inputBinding:
       position: 103
       prefix: --scan-number
@@ -1651,7 +1491,6 @@ inputs:
       - string
     doc: Start and scan scan range to search; 0 as first entry ignores 
       parameter.
-    default: 0 0
     inputBinding:
       position: 103
       prefix: --scan_range
@@ -1662,7 +1501,6 @@ inputs:
     doc: Total number of MS1 scans over which a PPID must be observed to be 
       considered real. Gaps in persistence are allowed by setting 
       --gap-tolerance.
-    default: 3
     inputBinding:
       position: 103
       prefix: --scan-tolerance
@@ -1674,7 +1512,6 @@ inputs:
       used as input to the q-value estimation procedure. If this parameter is 
       unspecified, then the program searches for "xcorr score", "evalue" 
       (comet), "exact p-value" score fields in this order in the input file.
-    default: ''
     inputBinding:
       position: 103
       prefix: --score
@@ -1686,7 +1523,6 @@ inputs:
       function used by SEQUEST; 'residue-evidence' is designed to score 
       high-resolution MS2 spectra; and 'both' calculates both scores. The latter
       requires that exact-p-value=T.
-    default: xcorr
     inputBinding:
       position: 103
       prefix: --score-function
@@ -1695,7 +1531,6 @@ inputs:
       - 'null'
       - string
     doc: Specify which search engine to use.
-    default: tide-search
     inputBinding:
       position: 103
       prefix: --search-engine
@@ -1704,7 +1539,6 @@ inputs:
       - 'null'
       - int
     doc: Specify a search enzyme from the end of the parameter file.
-    default: 1
     inputBinding:
       position: 103
       prefix: --search_enzyme_number
@@ -1716,7 +1550,6 @@ inputs:
       to detect the search type automatically. Using 'separate' specifies two searches:
       one against target and one against decoy protein db. Using 'concatenated' specifies
       a single search on concatenated target-decoy protein db."
-    default: auto
     inputBinding:
       position: 103
       prefix: --search-input
@@ -1725,7 +1558,6 @@ inputs:
       - 'null'
       - int
     doc: 0=no, 1=yes for out files only.
-    default: 0
     inputBinding:
       position: 103
       prefix: --show_fragment_ions
@@ -1737,7 +1569,6 @@ inputs:
       column in the output file. Note that this adjustment only makes sense if 
       the given scores are p-values, and that it requires the presence of the 
       "distinct matches/spectrum" feature for each PSM.
-    default: false
     inputBinding:
       position: 103
       prefix: --sidak
@@ -1746,7 +1577,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip preprocessing steps on spectra.
-    default: false
     inputBinding:
       position: 103
       prefix: --skip-preprocessing
@@ -1756,7 +1586,6 @@ inputs:
       - int
     doc: For '.out' file output only, 0=search everything again, 1=don't search 
       if .out exists.
-    default: 1
     inputBinding:
       position: 103
       prefix: --skip_researching
@@ -1766,7 +1595,6 @@ inputs:
       - float
     doc: Report the number of unique PSMs and total (including shared peptides) 
       PSMs as two extra columns in the protein tab-delimited output.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --spectral-counting-fdr
@@ -1776,7 +1604,6 @@ inputs:
       - int
     doc: Maximum number of spectra to search at a time; 0 to search the entire 
       scan range in one loop.
-    default: 0
     inputBinding:
       position: 103
       prefix: --spectrum_batch_size
@@ -1788,7 +1615,6 @@ inputs:
       searched and spectra with multiple charge states will be searched once at 
       each charge state. With 1, 2, or 3 only spectra with that charge state 
       will be searched.
-    default: all
     inputBinding:
       position: 103
       prefix: --spectrum-charge
@@ -1798,7 +1624,6 @@ inputs:
       - string
     doc: The format to write the output spectra to. If empty, the spectra will 
       be output in the same format as the MS2 input.
-    default: ''
     inputBinding:
       position: 103
       prefix: --spectrum-format
@@ -1807,7 +1632,6 @@ inputs:
       - 'null'
       - float
     doc: The highest spectrum m/z to search in the ms2 file.
-    default: 1000000000.0
     inputBinding:
       position: 103
       prefix: --spectrum-max-mz
@@ -1816,7 +1640,6 @@ inputs:
       - 'null'
       - float
     doc: The lowest spectrum m/z to search in the ms2 file.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --spectrum-min-mz
@@ -1825,7 +1648,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the parser to use for reading in MS/MS spectra.
-    default: pwiz
     inputBinding:
       position: 103
       prefix: --spectrum-parser
@@ -1836,7 +1658,6 @@ inputs:
     doc: Outputs an SQT results file to the output directory. Note that if 
       sqt-output is enabled, then compute-sp is automatically enabled and cannot
       be overridden.
-    default: false
     inputBinding:
       position: 103
       prefix: --sqt-output
@@ -1847,7 +1668,6 @@ inputs:
     doc: When providing a FASTA file as the index, the generated binary index 
       will be stored at the given path. This option has no effect if a binary 
       index is provided as the index.
-    default: ''
     inputBinding:
       position: 103
       prefix: --store-index
@@ -1861,7 +1681,6 @@ inputs:
       specified relative to the current working directory, not the Crux output 
       directory (as specified by --output-dir). This option is not valid if 
       multiple input spectrum files are given.
-    default: ''
     inputBinding:
       position: 103
       prefix: --store-spectra
@@ -1873,7 +1692,6 @@ inputs:
       vector to evaluate the other PSMs. Recommended when analyzing huge numbers
       (>1 million) of PSMs. When set to 0, all PSMs are used for training as 
       normal.
-    default: 0
     inputBinding:
       position: 103
       prefix: --subset-max-train
@@ -1884,7 +1702,6 @@ inputs:
     doc: Use target-decoy competition to assign q-values and PEPs. When set to 
       F, the mix-max method, which estimates the proportion pi0 of incorrect 
       target PSMs, is used instead.
-    default: true
     inputBinding:
       position: 103
       prefix: --tdc
@@ -1893,7 +1710,6 @@ inputs:
       - 'null'
       - boolean
     doc: Measure performance on test set each iteration.
-    default: false
     inputBinding:
       position: 103
       prefix: --test-each-iteration
@@ -1903,7 +1719,6 @@ inputs:
       - float
     doc: False discovery rate threshold used in selecting hyperparameters during
       internal cross-validation and for reporting the final results.
-    default: 0.01
     inputBinding:
       position: 103
       prefix: --test-fdr
@@ -1912,7 +1727,6 @@ inputs:
       - 'null'
       - int
     doc: 0=default peak shape, 1=M peak only.
-    default: 1
     inputBinding:
       position: 103
       prefix: --theoretical_fragment_ions
@@ -1921,7 +1735,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the number of matches to report for each spectrum.
-    default: 5
     inputBinding:
       position: 103
       prefix: --top-match
@@ -1932,7 +1745,6 @@ inputs:
     doc: Specify the maximum rank to allow when parsing results files. Matches 
       with ranks higher than this value will be ignored (a value of zero allows 
       matches with any rank).
-    default: 0
     inputBinding:
       position: 103
       prefix: --top-match-in
@@ -1943,7 +1755,6 @@ inputs:
     doc: Enforce that, for each spectrum, at most one PSM is included in the 
       positive set during each training iteration. Note that if the user only 
       provides one PSM per spectrum, then this option will have no effect.
-    default: false
     inputBinding:
       position: 103
       prefix: --train-best-positive
@@ -1952,7 +1763,6 @@ inputs:
       - 'null'
       - float
     doc: False discovery rate threshold to define positive examples in training.
-    default: 0.01
     inputBinding:
       position: 103
       prefix: --train-fdr
@@ -1961,7 +1771,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output a tab-delimited results file to the output directory.
-    default: true
     inputBinding:
       position: 103
       prefix: --txt-output
@@ -1972,7 +1781,6 @@ inputs:
     doc: Use unit normalization (i.e., linearly rescale each PSM's feature 
       vector to have a Euclidean length of 1), instead of standard deviation 
       normalization.
-    default: false
     inputBinding:
       position: 103
       prefix: --unitnorm
@@ -1982,7 +1790,6 @@ inputs:
       - int
     doc: Controls whether or not A-ions are considered in the search (0 - no, 1 
       - yes).
-    default: 0
     inputBinding:
       position: 103
       prefix: --use_A_ions
@@ -1992,7 +1799,6 @@ inputs:
       - int
     doc: Controls whether or not B-ions are considered in the search (0 - no, 1 
       - yes).
-    default: 1
     inputBinding:
       position: 103
       prefix: --use_B_ions
@@ -2002,7 +1808,6 @@ inputs:
       - int
     doc: Controls whether or not C-ions are considered in the search (0 - no, 1 
       - yes).
-    default: 0
     inputBinding:
       position: 103
       prefix: --use_C_ions
@@ -2011,7 +1816,6 @@ inputs:
       - 'null'
       - int
     doc: 0=no, 1= yes to consider NH3/H2O neutral loss peak.
-    default: 1
     inputBinding:
       position: 103
       prefix: --use_NL_ions
@@ -2021,7 +1825,6 @@ inputs:
       - int
     doc: Controls whether or not X-ions are considered in the search (0 - no, 1 
       - yes).
-    default: 0
     inputBinding:
       position: 103
       prefix: --use_X_ions
@@ -2031,7 +1834,6 @@ inputs:
       - int
     doc: Controls whether or not Y-ions are considered in the search (0 - no, 1 
       - yes).
-    default: 1
     inputBinding:
       position: 103
       prefix: --use_Y_ions
@@ -2041,7 +1843,6 @@ inputs:
       - int
     doc: Controls whether or not Z-ions are considered in the search (0 - no, 1 
       - yes).
-    default: 0
     inputBinding:
       position: 103
       prefix: --use_Z_ions
@@ -2052,7 +1853,6 @@ inputs:
     doc: Include flanking peaks around singly charged b and y theoretical ions. 
       Each flanking peak occurs in the adjacent m/z bin and has half the 
       intensity of the primary peak.
-    default: false
     inputBinding:
       position: 103
       prefix: --use-flanking-peaks
@@ -2064,7 +1864,6 @@ inputs:
       of neutral losses are included and are applied only to singly charged b- and
       y-ions: loss of ammonia (NH3, 17.0086343 Da) and H2O (18.0091422). Each neutral
       loss peak has intensity 1/5 of the primary peak.'
-    default: true
     inputBinding:
       position: 103
       prefix: --use-neutral-loss-peaks
@@ -2074,7 +1873,6 @@ inputs:
       - boolean
     doc: Specify whether, when parsing an MS2 spectrum file, Crux obtains the 
       precursor mass information from the "S" line or the "Z" line.
-    default: true
     inputBinding:
       position: 103
       prefix: --use-z-line
@@ -2097,7 +1895,6 @@ inputs:
       applied to: 0 = protein N-terminus; 1 = protein C-terminus; 2 = peptide N-terminus;
       3 = peptide C-terminus.Force specifies whether peptides must contain this modification:
       0 = not forced to be present; 1 = modification is required.'
-    default: 0.0 null 0 4 -1 0 0
     inputBinding:
       position: 103
       prefix: --variable_mod01
@@ -2106,7 +1903,6 @@ inputs:
       - 'null'
       - string
     doc: See syntax for variable_mod01.
-    default: 0.0 null 0 4 -1 0 0
     inputBinding:
       position: 103
       prefix: --variable_mod02
@@ -2115,7 +1911,6 @@ inputs:
       - 'null'
       - string
     doc: See syntax for variable_mod01.
-    default: 0.0 null 0 4 -1 0 0
     inputBinding:
       position: 103
       prefix: --variable_mod03
@@ -2124,7 +1919,6 @@ inputs:
       - 'null'
       - string
     doc: See syntax for variable_mod01.
-    default: 0.0 null 0 4 -1 0 0
     inputBinding:
       position: 103
       prefix: --variable_mod04
@@ -2133,7 +1927,6 @@ inputs:
       - 'null'
       - string
     doc: See syntax for variable_mod01.
-    default: 0.0 null 0 4 -1 0 0
     inputBinding:
       position: 103
       prefix: --variable_mod05
@@ -2142,7 +1935,6 @@ inputs:
       - 'null'
       - string
     doc: See syntax for variable_mod01.
-    default: 0.0 null 0 4 -1 0 0
     inputBinding:
       position: 103
       prefix: --variable_mod06
@@ -2151,7 +1943,6 @@ inputs:
       - 'null'
       - string
     doc: See syntax for variable_mod01.
-    default: 0.0 null 0 4 -1 0 0
     inputBinding:
       position: 103
       prefix: --variable_mod07
@@ -2160,7 +1951,6 @@ inputs:
       - 'null'
       - string
     doc: See syntax for variable_mod01.
-    default: 0.0 null 0 4 -1 0 0
     inputBinding:
       position: 103
       prefix: --variable_mod08
@@ -2169,7 +1959,6 @@ inputs:
       - 'null'
       - string
     doc: See syntax for variable_mod01.
-    default: 0.0 null 0 4 -1 0 0
     inputBinding:
       position: 103
       prefix: --variable_mod09
@@ -2181,7 +1970,6 @@ inputs:
       messages, including all those at lower verbosity levels: 0-fatal errors, 10-non-fatal
       errors, 20-warnings, 30-information on the progress of execution, 40-more progress
       information, 50-debug info, 60-detailed debug info.'
-    default: 30
     inputBinding:
       position: 103
       prefix: --verbosity

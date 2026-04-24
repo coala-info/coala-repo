@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: use NUM threads to compute the overlaps
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

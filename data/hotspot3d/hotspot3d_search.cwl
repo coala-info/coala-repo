@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: MAF file column header for amino acid changes
-    default: amino_acid_change
     inputBinding:
       position: 101
       prefix: --amino-acid-header
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Linear distance cutoff (>= peptides)
-    default: 0
     inputBinding:
       position: 101
       prefix: --linear-cutoff
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - boolean
     doc: missense mutation only
-    default: no
     inputBinding:
       position: 101
       prefix: --missense-only
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - float
     doc: p_value cutoff(<=)
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --p-value-cutoff
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - boolean
     doc: skip silent mutations
-    default: no
     inputBinding:
       position: 101
       prefix: --skip-silent
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: 3D distance cutoff (<=)
-    default: 10
     inputBinding:
       position: 101
       prefix: --3d-distance-cutoff
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: MAF file column header for transcript id's
-    default: transcript_name
     inputBinding:
       position: 101
       prefix: --transcript-id-header

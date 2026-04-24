@@ -18,7 +18,6 @@ inputs:
       - int
     doc: Base quality score threshold. Bases with quality scores below the 
       threshold are not used in the consensus.
-    default: 25
     inputBinding:
       position: 101
       prefix: --Quality
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ignore orphans (paired reads that are not in a proper pair).
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --IgnoreOrphans
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum read depth.
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --MaxDepth
@@ -117,7 +114,6 @@ inputs:
       - boolean
     doc: If truncate is True and a region is given, only pileup columns in the 
       exact region specificied are returned.
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --Truncate

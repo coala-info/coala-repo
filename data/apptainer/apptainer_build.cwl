@@ -200,7 +200,6 @@ inputs:
         items: string
     doc: only run specific section(s) of deffile (setup, post, files, environment,
       test, labels, none)
-    default: all
     inputBinding:
       position: 102
       prefix: --section

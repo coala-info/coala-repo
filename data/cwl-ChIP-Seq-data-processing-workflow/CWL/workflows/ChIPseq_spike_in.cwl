@@ -37,7 +37,6 @@ inputs:
     doc: |
       If paired end data is used set to true, else set to false.
     type: boolean
-    default: true
   adapter1: 
     doc: |
       Adapter sequence for first reads. 
@@ -112,7 +111,6 @@ inputs:
       The larger the bin size the smaller are the coverage tracks, however, 
       the less precise is the signal. For single bp resolution set to 1.
     type: int
-    default: 10
   ignoreForNormalization:
     doc: |
       List of space-delimited chromosome names that shall be ignored 
@@ -120,7 +118,6 @@ inputs:
       Specify as space-delimited string. 
       Default: "chrX chrY chrM"
     type: string?
-    default: "chrX chrY chrM"
 
 ### WORKFLOW STEPS:
 ##################################################

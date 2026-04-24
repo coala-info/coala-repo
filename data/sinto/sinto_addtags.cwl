@@ -18,7 +18,6 @@ inputs:
       - string
     doc: Either tag (default) or readname. Some BAM file store the cell barcode 
       in the readname rather than under a read tag
-    default: tag
     inputBinding:
       position: 101
       prefix: --mode
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors (default = 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --nproc

@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: Backoff factor
-    default: 2.0
     inputBinding:
       position: 103
       prefix: --factor
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of retries
-    default: 5
     inputBinding:
       position: 103
       prefix: --max-retries
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: Initial sleep time in seconds
-    default: 1.0
     inputBinding:
       position: 103
       prefix: --sleep

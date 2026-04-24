@@ -39,7 +39,6 @@ inputs:
   threads:
     type: int?
     label: Number of threads to use
-    default: 8
     inputBinding:
       position: 0
       prefix: -t
@@ -50,7 +49,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: -x
-    default: "fa"
 
 arguments:
   - "--reduced_tree"

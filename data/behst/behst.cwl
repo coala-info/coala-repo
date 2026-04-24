@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - Directory
     doc: path to directory with reference data
-    default: ~/.local/share/behst
     inputBinding:
       position: 102
       prefix: --data
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: extend query regions by BP base pairs
-    default: 24100
     inputBinding:
       position: 102
       prefix: --query-extension
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: extend target regions by BP base pairs
-    default: 9400
     inputBinding:
       position: 102
       prefix: --target-extension

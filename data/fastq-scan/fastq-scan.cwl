@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Genome size for calculating estimated sequencing coverage.
-    default: 1
     inputBinding:
       position: 101
       prefix: -g
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: ASCII offset for input quality scores, can be 33 or 64.
-    default: 33
     inputBinding:
       position: 101
       prefix: -p

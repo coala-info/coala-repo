@@ -4,7 +4,6 @@ cwlVersion: v1.0
 inputs:
   inp1:
     type: File
-    default:
       class: File
       location: hello.txt
       secondaryFiles:

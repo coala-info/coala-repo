@@ -11,7 +11,6 @@ inputs:
     doc: The deepest internal taxonomic level to show in the krona plots. Will 
       aggregate if this level is deeper than the taxonomic level the input tsv 
       goes up to.
-    default: superkingdom
     inputBinding:
       position: 101
       prefix: --aggregate_to
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum reads across samples to include taxa
-    default: 100
     inputBinding:
       position: 101
       prefix: --minreads

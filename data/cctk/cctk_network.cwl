@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory path.
-    default: ./
     inputBinding:
       position: 101
       prefix: --outdir

@@ -108,7 +108,6 @@ inputs:
       - int
     doc: Number of processing jobs. If not specified, all available CPU threads 
       will be used
-    default: 20
     inputBinding:
       position: 102
       prefix: --jobs
@@ -331,7 +330,6 @@ inputs:
       - string
     doc: "Set verbosity level of console output [default: warn]\n\n[possible values:
       off, error, warn, info, debug, trace]"
-    default: warn
     inputBinding:
       position: 102
       prefix: --verbosity

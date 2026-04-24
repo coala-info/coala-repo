@@ -47,7 +47,6 @@ inputs:
       - string
     doc: 'Codon table to use. Default: 0 (ie Standard, NCBI #1, but only ATG is considered
       a valid start codon.'
-    default: 0
     inputBinding:
       position: 102
       prefix: --codon-table
@@ -64,7 +63,6 @@ inputs:
     doc: 'Exclude all retained intron alternative splicing events from the final output.
       Default: False. Retained intron events that do not dirsupt the CDS are kept
       by Mikado in the final output.'
-    default: false
     inputBinding:
       position: 102
       prefix: --exclude-retained-introns
@@ -90,7 +88,6 @@ inputs:
         items: int
     doc: 'Range into which intron lengths should fall, as a couple of integers. Transcripts
       with intron lengths outside of this range will be penalised. Default: (60, 900)'
-    default:
       - 60
       - 900
     inputBinding:
@@ -109,7 +106,6 @@ inputs:
     doc: 'Keep in the final output transcripts whose CDS is most probably disrupted
       by a retained intron event. Default: False. Mikado will try to detect these
       instances and exclude them from the final output.'
-    default: false
     inputBinding:
       position: 102
       prefix: --keep-disrupted-cds
@@ -152,7 +148,6 @@ inputs:
     doc: 'Minimum cDNA overlap between two transcripts for them to be considered part
       of the same locus during the late picking stages. NOTE: if --min-cds-overlap
       is not specified, it will be set to this value! Default: 20%.'
-    default: 20%
     inputBinding:
       position: 102
       prefix: --min-clustering-cdna-overlap
@@ -164,7 +159,6 @@ inputs:
       of the same locus during the late picking stages. NOTE: if not specified, and
       --min-cdna-overlap is specified on the command line, min-cds-overlap will be
       set to this value! Default: 20%.'
-    default: 20%
     inputBinding:
       position: 102
       prefix: --min-clustering-cds-overlap
@@ -272,7 +266,6 @@ inputs:
       - 'null'
       - string
     doc: 'Prefix for the genes. Default: Mikado'
-    default: Mikado
     inputBinding:
       position: 102
       prefix: --prefix
@@ -355,7 +348,6 @@ inputs:
       - 'null'
       - int
     doc: 'Random seed number. Default: 0.'
-    default: 0
     inputBinding:
       position: 102
       prefix: --seed

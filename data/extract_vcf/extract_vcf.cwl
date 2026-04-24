@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele frequency required for a variant to be considered
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --min-allele-frequency
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage required for a codon to be included
-    default: 10
     inputBinding:
       position: 102
       prefix: --min-coverage
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

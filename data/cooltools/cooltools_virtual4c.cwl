@@ -34,7 +34,6 @@ inputs:
       - string
     doc: Use balancing weight with this name. Provide empty argument to 
       calculate insulation on raw data (no masking bad pixels).
-    default: weight
     inputBinding:
       position: 103
       prefix: --clr-weight-name
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to split the work between.
-    default: 1
     inputBinding:
       position: 103
       prefix: --nproc

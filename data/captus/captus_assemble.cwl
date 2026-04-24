@@ -28,7 +28,6 @@ inputs:
       set to 'auto', Captus will run as many concurrent assemblies as possible 
       with a minimum of 4 CPUs and 4 GB of RAM per assembly (8 GB if presets RNA
       or WGS are used)
-    default: auto
     inputBinding:
       position: 102
       prefix: --concurrent
@@ -38,7 +37,6 @@ inputs:
       - boolean
     doc: Enable debugging mode, parallelization is disabled so errors are logged
       to screen
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -49,7 +47,6 @@ inputs:
     doc: Disable mapping the reads back to the contigs using Salmon for accurate
       depth estimation. If disabled, the approximate depth estimation given by 
       MEGAHIT will be used instead
-    default: false
     inputBinding:
       position: 102
       prefix: --disable_mapping
@@ -70,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not delete any intermediate files
-    default: false
     inputBinding:
       position: 102
       prefix: --keep_all
@@ -81,7 +77,6 @@ inputs:
     doc: Maximum GC percentage allowed per contig. Useful to filter 
       contamination. For example, bacteria usually exceed 60% GC content while 
       eukaryotes rarely exceed that limit. 100.0 disables the GC filter
-    default: 100.0
     inputBinding:
       position: 102
       prefix: --max_contig_gc
@@ -90,7 +85,6 @@ inputs:
       - 'null'
       - File
     doc: Path to MEGAHIT
-    default: megahit
     inputBinding:
       position: 102
       prefix: --megahit_path
@@ -99,7 +93,6 @@ inputs:
       - 'null'
       - File
     doc: Path to MEGAHIT's toolkit
-    default: megahit_toolkit
     inputBinding:
       position: 102
       prefix: --megahit_toolkit_path
@@ -110,7 +103,6 @@ inputs:
     doc: Merge complex bubbles, the first number multiplied by the kmer size 
       represents the maximum bubble length to merge, the second number 
       represents the minimum similarity required to merge bubbles
-    default: 20,0.95
     inputBinding:
       position: 102
       prefix: --merge_level
@@ -123,7 +115,6 @@ inputs:
       is chosen, otherwise it will retain only contigs of at least 1.5x. 
       Accepted values are decimals greater or equal to 0. Use 0 to disable the 
       filter
-    default: auto
     inputBinding:
       position: 102
       prefix: --min_contig_depth
@@ -133,7 +124,6 @@ inputs:
       - string
     doc: Minimum contig length in output assembly, 'auto' is mean input read 
       length + smallest kmer size in '--k_list'
-    default: auto
     inputBinding:
       position: 102
       prefix: --min_contig_len
@@ -153,7 +143,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite previous results
-    default: false
     inputBinding:
       position: 102
       prefix: --overwrite
@@ -169,7 +158,6 @@ inputs:
       limitations when assembly high-depth data, consider using '--preset WGS 
       --concurrent 1' to assemble a single sample at time using all the CPUs and
       RAM provided by '--threads' and '--ram'
-    default: CAPSKIM
     inputBinding:
       position: 102
       prefix: --preset
@@ -189,7 +177,6 @@ inputs:
       - string
     doc: "Maximum RAM in GB (e.g.: 4.5) dedicated to Captus, 'auto' uses 99% of available
       RAM"
-    default: auto
     inputBinding:
       position: 102
       prefix: --ram
@@ -199,7 +186,6 @@ inputs:
       - boolean
     doc: Enable if you want to try different values for `--max_contig_gc` or 
       `--min_contig_depth`. Only the filtering step will be repeated
-    default: false
     inputBinding:
       position: 102
       prefix: --redo_filtering
@@ -208,7 +194,6 @@ inputs:
       - 'null'
       - File
     doc: Path to reformat.sh
-    default: reformat.sh
     inputBinding:
       position: 102
       prefix: --reformat_path
@@ -217,7 +202,6 @@ inputs:
       - 'null'
       - File
     doc: Path to Salmon
-    default: salmon
     inputBinding:
       position: 102
       prefix: --salmon_path
@@ -229,7 +213,6 @@ inputs:
       are randomly subsampled with 'reformat.sh' from BBTools (option: srt/samplereadstarget).
       Useful for limiting the amount of data of samples with very high sequencing
       depth. To use all the reads, set this value to 0"
-    default: 0
     inputBinding:
       position: 102
       prefix: --sample_reads_target
@@ -239,7 +222,6 @@ inputs:
       - boolean
     doc: Do not show individual sample information during the run, the 
       information is still written to the log
-    default: false
     inputBinding:
       position: 102
       prefix: --show_less
@@ -249,7 +231,6 @@ inputs:
       - string
     doc: Maximum number of CPUs dedicated to Captus, 'auto' uses all available 
       CPUs
-    default: auto
     inputBinding:
       position: 102
       prefix: --threads
@@ -261,7 +242,6 @@ inputs:
       MEGAHIT assembly. Sometimes, when working on external hard drives MEGAHIT 
       will refuse to run unless this directory is created in an internal hard 
       drive
-    default: $HOME
     inputBinding:
       position: 102
       prefix: --tmp_dir

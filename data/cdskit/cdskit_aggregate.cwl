@@ -11,7 +11,6 @@ inputs:
         items: string
     doc: A regular expression to aggregate the sequences. Multiple values can be
       specified.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --expression
@@ -21,7 +20,6 @@ inputs:
       - string
     doc: "Input sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --inseqformat
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: Criterion to keep a sequence during aggregation.
-    default: longest
     inputBinding:
       position: 101
       prefix: --mode
@@ -40,7 +37,6 @@ inputs:
       - string
     doc: "Output sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --outseqformat
@@ -49,7 +45,6 @@ inputs:
       - 'null'
       - File
     doc: Input sequence file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --seqfile

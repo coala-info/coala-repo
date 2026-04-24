@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: accuracy for SCC calculation, lower is better
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --acc
@@ -84,7 +83,6 @@ inputs:
       - 'null'
       - boolean
     doc: copies the xcontrol file at startup
-    default: true
     inputBinding:
       position: 102
       prefix: --copy
@@ -117,7 +115,6 @@ inputs:
       - 'null'
       - float
     doc: electronic temperature
-    default: 300K
     inputBinding:
       position: 102
       prefix: --etemp
@@ -155,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: specify parametrisation of GFN-xTB
-    default: 2
     inputBinding:
       position: 102
       prefix: --gfn
@@ -272,7 +268,6 @@ inputs:
       - 'null'
       - boolean
     doc: does not copy the xcontrol file at startup
-    default: false
     inputBinding:
       position: 102
       prefix: --no-copy
@@ -281,7 +276,6 @@ inputs:
       - 'null'
       - boolean
     doc: does not restart calculation from xtbrestart
-    default: false
     inputBinding:
       position: 102
       prefix: --no-restart
@@ -354,7 +348,6 @@ inputs:
       - 'null'
       - boolean
     doc: restarts calculation from xtbrestart
-    default: true
     inputBinding:
       position: 102
       prefix: --restart

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Result count
-    default: 10
     inputBinding:
       position: 101
       prefix: --count
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Result offset
-    default: 0
     inputBinding:
       position: 101
       prefix: --offset

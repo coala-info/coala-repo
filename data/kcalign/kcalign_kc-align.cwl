@@ -20,7 +20,6 @@ inputs:
     doc: 'For genome/mixed mode, determines the max distance a homologous sequence
       can be before it is discarded from the alignment (default = none). Distance
       limits: none < very-close < close < semi-close < less-close'
-    default: none
     inputBinding:
       position: 101
       prefix: --dist

@@ -21,14 +21,12 @@ inputs:
 
   count:
     type: boolean?
-    default: true
     doc: "Instead of printing the alignments, only count them and print the total number."
     inputBinding:
       position: 1
       prefix: -c
   exclude_unmapped:
     type: boolean?
-    default: true
     inputBinding:
       valueFrom: "4"
       prefix: -F
@@ -37,12 +35,10 @@ inputs:
   is_paired_end:
     doc: if paired end, only properly paired reads pass
     type: boolean
-    default: true
 
   min_mapping_quality:
     doc: Reads with a mapping quality below this will be excluded
     type: int?
-    default: 20
     inputBinding:
       position: 1
       prefix: -q
@@ -56,7 +52,6 @@ inputs:
           - include
           - exclude
           - only
-    default: include
     inputBinding:
         valueFrom: |
             ${

@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: Human-readable name of the analysis run for output
-    default: <none>
     inputBinding:
       position: 102
       prefix: --name
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore bases with quality scores lower than this value
-    default: 3
     inputBinding:
       position: 102
       prefix: --base-quality-cutoff
@@ -55,7 +53,6 @@ inputs:
       - string
     doc: Settings for mapping criteria used in aligning reads to candidate 
       junctions.
-    default: --local -i S,1,0.25 --score-min L,1,0.70 -k 2000
     inputBinding:
       position: 102
       prefix: --bowtie2-junction
@@ -66,7 +63,6 @@ inputs:
     doc: All calls to bowtie2 must use the same commands for assigning scores to
       read alignments. Larger scores are assumed to be better by breseq. Each 
       call to bowtie2 has this option added to its command line.
-    default: --ma 1 --mp 3 --np 0 --rdg 2,3 --rfg 2,3 --ignore-quals
     inputBinding:
       position: 102
       prefix: --bowtie2-scoring
@@ -76,7 +72,6 @@ inputs:
       - string
     doc: Settings for mapping criteria used for the stage 1 alignment. This step
       is normally meant for quickly aligning near-perfect matches.
-    default: --local -i S,1,0.25 --score-min L,1,0.9 -k 2000
     inputBinding:
       position: 102
       prefix: --bowtie2-stage1
@@ -88,7 +83,6 @@ inputs:
       the empty string "", then stage 2 alignment is skipped. This step is 
       normally meant for exhaustively mapping reads that were unmapped by stage 
       1.
-    default: --local -i S,1,0.25 --score-min L,6,0.2 -k 2000
     inputBinding:
       position: 102
       prefix: --bowtie2-stage2
@@ -131,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: Tile size for copy number variation prediction
-    default: 500
     inputBinding:
       position: 102
       prefix: --cnv-tile-size
@@ -191,7 +184,6 @@ inputs:
       expansion/contraction of homopolymer repeats with this length or greater 
       in the reference genome (0 = OFF) (DEFAULT = consensus mode, OFF; 
       polymorphism mode, OFF)
-    default: OFF
     inputBinding:
       position: 102
       prefix: --consensus-reject-indel-homopolymer-length
@@ -204,7 +196,6 @@ inputs:
       after the changed base. For example, TATTT->TTTTT would be rejected with a
       setting of 5, but ATTTT->TTTTT would not. (0 = OFF) (DEFAULT = consensus 
       mode, OFF; polymorphism mode, OFF)
-    default: OFF
     inputBinding:
       position: 102
       prefix: --consensus-reject-surrounding-homopolymer-length
@@ -213,7 +204,6 @@ inputs:
       - 'null'
       - int
     doc: Log10 E-value cutoff for consensus base substitutions and small indels
-    default: 10
     inputBinding:
       position: 102
       prefix: --consensus-score-cutoff
@@ -227,7 +217,6 @@ inputs:
       all contigs from a genome that should be present with the same copy 
       number. Use of this option will improve performance when there are many 
       contigs and especially when some are very short (≤1,000 bases).
-    default: '0'
     inputBinding:
       position: 102
       prefix: --contig-reference
@@ -237,7 +226,6 @@ inputs:
       - int
     doc: Value for coverage above which MC ends stop. 0 = calculated from 
       coverage distribution
-    default: 0
     inputBinding:
       position: 102
       prefix: --deletion-coverage-propagation-cutoff
@@ -246,7 +234,6 @@ inputs:
       - 'null'
       - int
     doc: Value for coverage below which MC are seeded
-    default: 0
     inputBinding:
       position: 102
       prefix: --deletion-coverage-seed-cutoff
@@ -260,7 +247,6 @@ inputs:
       default, you will need to use the converted reference file 
       (data/reference.gff) for further breseq and gdtools operations on breseq 
       output!
-    default: AUTOMATIC
     inputBinding:
       position: 102
       prefix: --genbank-field-for-seq-id
@@ -278,7 +264,6 @@ inputs:
       - int
     doc: Only consider this many passed alignment pairs when creating candidate 
       junction sequences (0 = DO NOT LIMIT)
-    default: 100000
     inputBinding:
       position: 102
       prefix: --junction-alignment-pair-limit
@@ -303,7 +288,6 @@ inputs:
     doc: Accept top-scoring junction candidates to test until their cumulative 
       length is this factor times the total reference sequence length (0 = DO 
       NOT LIMIT)
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --junction-candidate-length-factor
@@ -322,7 +306,6 @@ inputs:
     doc: Split read alignments on indels of this many or more bases. Indel 
       mutations of this length or longer will be predicted by JC evidence and 
       those that are shorter will be predicted from RA evience
-    default: 3
     inputBinding:
       position: 102
       prefix: --junction-indel-split-length
@@ -332,7 +315,6 @@ inputs:
       - int
     doc: Test no more than this many of the top-scoring junction candidates (0 =
       DO NOT LIMIT)
-    default: 5000
     inputBinding:
       position: 102
       prefix: --junction-maximum-candidates
@@ -342,7 +324,6 @@ inputs:
       - int
     doc: Minimum number of distinct spanning read start positions required to 
       create a junction candidate for further testing
-    default: 2
     inputBinding:
       position: 102
       prefix: --junction-minimum-candidate-pos-hash-score
@@ -352,7 +333,6 @@ inputs:
       - int
     doc: Test at least this many of the top-scoring junction candidates, 
       regardless of their length
-    default: 100
     inputBinding:
       position: 102
       prefix: --junction-minimum-candidates
@@ -371,7 +351,6 @@ inputs:
       - float
     doc: Minimum probablilty assigned that no mapped read will start at a given 
       position and strand for junction prediction
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --junction-minimum-pr-no-read-start-per-position
@@ -396,7 +375,6 @@ inputs:
       sequences. An example of appropriate usage is including a transposon 
       sequence not present in a reference genome. Option may be provided 
       multiple times for multiple files.
-    default: '0'
     inputBinding:
       position: 102
       prefix: --junction-only-reference
@@ -406,7 +384,6 @@ inputs:
       - float
     doc: Maximum negative log10 probability of uneven coverage across a junction
       breakpoint to accept (0 = OFF)
-    default: 3.0
     inputBinding:
       position: 102
       prefix: --junction-score-cutoff
@@ -427,7 +404,6 @@ inputs:
       between 60 and 120 will usually speed up the analysis with no loss in 
       sensitivity for clonal samples. The actual coverage achieved will be 
       somewhat less because not all reads will map
-    default: OFF
     inputBinding:
       position: 102
       prefix: --limit-fold-coverage
@@ -452,7 +428,6 @@ inputs:
       breseq because of how it performs mapping and analyzes split-read 
       alignments. Filters such as --read-min-length are applied to split reads. 
       (0 = OFF)
-    default: 200
     inputBinding:
       position: 102
       prefix: --long-read-split-length
@@ -463,7 +438,6 @@ inputs:
     doc: Mark a file as containing long reads and enable read splitting if the 
       longest read has a length that is greater than or equal to this value. (0 
       = OFF)
-    default: 1000
     inputBinding:
       position: 102
       prefix: --long-read-trigger-length
@@ -473,7 +447,6 @@ inputs:
       - int
     doc: Maximum number of reads to display in the HTML output for an evidence 
       item
-    default: 100
     inputBinding:
       position: 102
       prefix: --max-displayed-reads
@@ -485,7 +458,6 @@ inputs:
       different from the reference sequence. Unaligned bases at the end of a 
       read also count as mismatches. Unaligned bases at the beginning of the 
       read do NOT count as mismatches.
-    default: OFF
     inputBinding:
       position: 102
       prefix: --maximum-read-mismatches
@@ -497,7 +469,6 @@ inputs:
       mutations. MQ scores are equal to -10log10(P), where P is the probability 
       that the best alignment is not to the correct location in the reference 
       genome. The range of MQ scores returned by bowtie2 is 0 to 255.
-    default: 0
     inputBinding:
       position: 102
       prefix: --minimum-mapping-quality
@@ -536,7 +507,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors to use in multithreaded steps
-    default: 1
     inputBinding:
       position: 102
       prefix: --num-processors
@@ -545,7 +515,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to breseq output
-    default: .
     inputBinding:
       position: 102
       prefix: --output
@@ -564,7 +533,6 @@ inputs:
     doc: P-value criterion for Fisher's exact test for strand bias AND K-S test 
       for quality score bias. (0 = OFF) (DEFAULT = consensus mode, OFF; 
       polymorphism mode, OFF)
-    default: OFF
     inputBinding:
       position: 102
       prefix: --polymorphism-bias-cutoff
@@ -647,7 +615,6 @@ inputs:
       expansion/contraction of homopolymer repeats with this length or greater 
       in the reference genome (0 = OFF) (DEFAULT = consensus mode, OFF; 
       polymorphism mode, 3)
-    default: OFF
     inputBinding:
       position: 102
       prefix: --polymorphism-reject-indel-homopolymer-length
@@ -660,7 +627,6 @@ inputs:
       after the changed base. For example, TATTT->TTTTT would be rejected with a
       setting of 5, but ATTTT->TTTTT would not. (0 = OFF) (DEFAULT = consensus 
       mode, OFF; polymorphism mode, 5)
-    default: OFF
     inputBinding:
       position: 102
       prefix: --polymorphism-reject-surrounding-homopolymer-length
@@ -688,7 +654,6 @@ inputs:
       - float
     doc: Reads in the input FASTQ file in which this fraction or more of the 
       bases are uncalled as N will be ignored. (0 = OFF)
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --read-max-N-fraction
@@ -698,7 +663,6 @@ inputs:
       - float
     doc: Reads in the input FASTQ file in which this fraction or more of the 
       bases are the same will be ignored. (0 = OFF)
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --read-max-same-base-fraction
@@ -708,7 +672,6 @@ inputs:
       - int
     doc: Reads in the input FASTQ file that are shorter than this length will be
       ignored. (0 = OFF)
-    default: 18
     inputBinding:
       position: 102
       prefix: --read-min-length
@@ -726,7 +689,6 @@ inputs:
       - 'null'
       - float
     doc: Only consider alignments that cover this fraction of a read
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --require-match-fraction
@@ -735,7 +697,6 @@ inputs:
       - 'null'
       - int
     doc: Only consider alignments that cover this many bases of a read
-    default: 0
     inputBinding:
       position: 102
       prefix: --require-match-length

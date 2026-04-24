@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: use N bits per element in Bloom filter
-    default: 128
     inputBinding:
       position: 103
       prefix: --bit
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: number of unique k-mers to represent a reference
-    default: 100
     inputBinding:
       position: 103
       prefix: --cov
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: sets the aggregate entropy rate threshold
-    default: 0.65
     inputBinding:
       position: 103
       prefix: --entropy
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: distinct Bloom filter hash number
-    default: 5
     inputBinding:
       position: 103
       prefix: --hash1
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: repeat Bloom filter hash number
-    default: 5
     inputBinding:
       position: 103
       prefix: --hash2
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: the length of kmer
-    default: 81
     inputBinding:
       position: 103
       prefix: --kmer
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: the output sketch file name
-    default: sketch_uniq.tsv
     inputBinding:
       position: 103
       prefix: --out
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - Directory
     doc: dir for universe unique k-mers
-    default: outdir_uniqsketch
     inputBinding:
       position: 103
       prefix: --outdir
@@ -103,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: the output unique kmer stat file name
-    default: db_uniq_count.tsv
     inputBinding:
       position: 103
       prefix: --stat
@@ -112,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: use N parallel threads
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

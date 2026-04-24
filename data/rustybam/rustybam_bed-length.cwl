@@ -10,7 +10,6 @@ inputs:
       - type: array
         items: File
     doc: Input bed file
-    default: '-'
     inputBinding:
       position: 1
   - id: column

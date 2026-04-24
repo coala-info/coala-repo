@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Version to put in Genbank file
-    default: 1
     inputBinding:
       position: 102
       prefix: --accver
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: Sequencing centre ID.
-    default: ''
     inputBinding:
       position: 102
       prefix: --centre
@@ -81,7 +79,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage on query protein
-    default: 80.0
     inputBinding:
       position: 102
       prefix: --coverage
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use [0=all]
-    default: 0
     inputBinding:
       position: 102
       prefix: --cpus
@@ -99,7 +95,6 @@ inputs:
       - 'null'
       - Directory
     doc: Prokka database root folders
-    default: /usr/local/db
     inputBinding:
       position: 102
       prefix: --dbdir
@@ -124,7 +119,6 @@ inputs:
       - 'null'
       - float
     doc: Similarity e-value cut-off
-    default: '1e-09'
     inputBinding:
       position: 102
       prefix: --evalue
@@ -149,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: Genetic code / Translation table (set if --kingdom is set)
-    default: 0
     inputBinding:
       position: 102
       prefix: --gcode
@@ -158,7 +151,6 @@ inputs:
       - 'null'
       - string
     doc: Genus name
-    default: Genus
     inputBinding:
       position: 102
       prefix: --genus
@@ -167,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: GFF version
-    default: 3
     inputBinding:
       position: 102
       prefix: --gffver
@@ -176,7 +167,6 @@ inputs:
       - 'null'
       - string
     doc: 'Gram: -/neg +/pos'
-    default: ''
     inputBinding:
       position: 102
       prefix: --gram
@@ -185,7 +175,6 @@ inputs:
       - 'null'
       - File
     doc: Trusted HMM to first annotate from
-    default: ''
     inputBinding:
       position: 102
       prefix: --hmms
@@ -194,7 +183,6 @@ inputs:
       - 'null'
       - int
     doc: Locus tag counter increment
-    default: 1
     inputBinding:
       position: 102
       prefix: --increment
@@ -203,7 +191,6 @@ inputs:
       - 'null'
       - string
     doc: 'Annotation mode: Archaea|Bacteria|Mitochondria|Viruses'
-    default: Bacteria
     inputBinding:
       position: 102
       prefix: --kingdom
@@ -220,7 +207,6 @@ inputs:
       - 'null'
       - string
     doc: Locus tag prefix
-    default: auto
     inputBinding:
       position: 102
       prefix: --locustag
@@ -237,7 +223,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum contig size [NCBI needs 200]
-    default: 1
     inputBinding:
       position: 102
       prefix: --mincontiglen
@@ -270,7 +255,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output folder
-    default: auto
     inputBinding:
       position: 102
       prefix: --outdir
@@ -279,7 +263,6 @@ inputs:
       - 'null'
       - string
     doc: Plasmid name or identifier
-    default: ''
     inputBinding:
       position: 102
       prefix: --plasmid
@@ -288,7 +271,6 @@ inputs:
       - 'null'
       - string
     doc: Filename output prefix
-    default: auto
     inputBinding:
       position: 102
       prefix: --prefix
@@ -297,7 +279,6 @@ inputs:
       - 'null'
       - string
     doc: Prodigal training file
-    default: ''
     inputBinding:
       position: 102
       prefix: --prodigaltf
@@ -306,7 +287,6 @@ inputs:
       - 'null'
       - File
     doc: FASTA or GBK file to use as 1st priority
-    default: ''
     inputBinding:
       position: 102
       prefix: --proteins
@@ -355,7 +335,6 @@ inputs:
       - 'null'
       - string
     doc: Species name
-    default: species
     inputBinding:
       position: 102
       prefix: --species
@@ -364,7 +343,6 @@ inputs:
       - 'null'
       - string
     doc: Strain name
-    default: strain
     inputBinding:
       position: 102
       prefix: --strain

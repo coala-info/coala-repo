@@ -30,7 +30,6 @@ inputs:
       - boolean
     doc: Include stop codon in CDS region (include_stop), default is to remove 
       stop codon from CDS region
-    default: to remove stop codon from CDS region
     inputBinding:
       position: 101
       prefix: -s
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Distance from last splice junction to call NMD (default 50bp)
-    default: 50
     inputBinding:
       position: 101
       prefix: -d

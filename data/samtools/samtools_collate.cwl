@@ -21,7 +21,6 @@ inputs:
 - id: compression_level
   type: int?
   doc: Compression level
-  default: 1
   inputBinding:
     position: 103
     prefix: -l
@@ -41,7 +40,6 @@ inputs:
 - id: nb_temp_files
   type: int?
   doc: Number of temporary files
-  default: 64
   inputBinding:
     position: 103
     prefix: -n
@@ -85,7 +83,6 @@ inputs:
 - id: threads
   type: int?
   doc: Number of additional threads to use
-  default: 0
   inputBinding:
     position: 103
     prefix: --threads
@@ -104,7 +101,6 @@ inputs:
 - id: working_reads
   type: int?
   doc: Working reads stored (with -f)
-  default: 10000
   inputBinding:
     position: 103
     prefix: -r

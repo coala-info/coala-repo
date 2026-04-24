@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: bloom filter size in GB (default:1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --bf-size
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: confidence for associating a read to a gene (default:0.6)
-    default: 0.6
     inputBinding:
       position: 101
       prefix: --confidence
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: size of the kmers to index (default:17, max:31)
-    default: 17
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -36,8 +33,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base quality (assume FASTQ Illumina 1.8+ Phred scale, 
-      default:0, i.e., no filtering)
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-base-quality
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads (default:1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

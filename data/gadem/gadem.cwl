@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: ln(E-value) cutoff for selecting MOTIFS.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: -ev
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Number of EM steps. Set to 0 to scan sequences with a PWM.
-    default: 40
     inputBinding:
       position: 101
       prefix: -em
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Base extension and trimming (1 -yes, 0 -no).
-    default: 1
     inputBinding:
       position: 101
       prefix: -extTrim
@@ -46,7 +43,6 @@ inputs:
       - float
     doc: Fraction of sequences used in EM to obtain PWMs in an unseeded 
       analysis.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -fEM
@@ -56,7 +52,6 @@ inputs:
       - int
     doc: 0 (default) - scan masked sequences in S (disallow motif site overlap).
       1 - scan unmasked sequences in S (allow motif sites to overlap).
-    default: 0
     inputBinding:
       position: 101
       prefix: -fullScan
@@ -65,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Number of genetic algorithm (GA) generations.
-    default: 5
     inputBinding:
       position: 101
       prefix: -gen
@@ -74,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: GA population size.
-    default: 100
     inputBinding:
       position: 101
       prefix: -pop
@@ -83,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: 'Mask repetitive, low-complexity sequences (default: 0-no masking, 1-masking).'
-    default: 0
     inputBinding:
       position: 101
       prefix: -maskR
@@ -92,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal number of unspecified nucleotides in spaced dyads.
-    default: 10
     inputBinding:
       position: 101
       prefix: -maxgap
@@ -101,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal number of motifs sought.
-    default: 25
     inputBinding:
       position: 101
       prefix: -nmotifs
@@ -110,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Number of top-ranked pentamers for spaced dyads.
-    default: 60
     inputBinding:
       position: 101
       prefix: -maxw5
@@ -119,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: Number of top-ranked tetramers for spaced dyads.
-    default: 40
     inputBinding:
       position: 101
       prefix: -maxw4
@@ -128,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Number of top-ranked trimers for spaced dyads.
-    default: 20
     inputBinding:
       position: 101
       prefix: -maxw3
@@ -137,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal number of unspecified nucleotides in spaced dyads.
-    default: 0
     inputBinding:
       position: 101
       prefix: -mingap
@@ -154,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: Number of sets of randomly simulated sequences.
-    default: 10
     inputBinding:
       position: 101
       prefix: -nbs
@@ -163,7 +148,6 @@ inputs:
       - 'null'
       - File
     doc: Name of main GADEM output file.
-    default: gadem.txt
     inputBinding:
       position: 101
       prefix: -fout
@@ -172,7 +156,6 @@ inputs:
       - 'null'
       - File
     doc: Name of output PWM file in STAMP format.
-    default: observedPWMs.txt
     inputBinding:
       position: 101
       prefix: -fpwm
@@ -181,7 +164,6 @@ inputs:
       - 'null'
       - float
     doc: P-value cutoff for declaring BINDING SITES.
-    default: 0.00025
     inputBinding:
       position: 101
       prefix: -pv
@@ -191,7 +173,6 @@ inputs:
       - int
     doc: Weight profile for positions on the sequence (0 - no weight, 1 - 
       gaussian prior, 2 - triangular prior). Default is 1.
-    default: 1
     inputBinding:
       position: 101
       prefix: -posWt
@@ -201,7 +182,6 @@ inputs:
       - int
     doc: For -posWt 1 or 2, width of central sequence region with large EM 
       weights for PWM optimization. Ignored when -posWt is 0.
-    default: 50
     inputBinding:
       position: 101
       prefix: -widthWt
@@ -224,7 +204,6 @@ inputs:
       - 'null'
       - int
     doc: Use top-scoring sequences for deriving PWMs. 0 - no (default), 1 - yes.
-    default: 0
     inputBinding:
       position: 101
       prefix: -useScore
@@ -233,7 +212,6 @@ inputs:
       - 'null'
       - int
     doc: Print immediate results on screen [1-yes (default), 0-no].
-    default: 1
     inputBinding:
       position: 101
       prefix: -verbose

@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use conda environments instead of container
-    default: use container
     inputBinding:
       position: 101
       prefix: --conda_envs_only
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use a custom assembly
-    default: use metaflye
     inputBinding:
       position: 101
       prefix: --custom_assembly
@@ -70,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: Extra inputs for myloasm assembler
-    default: none
     inputBinding:
       position: 101
       prefix: --extra_myloasm
@@ -79,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum initial contig coverage used by Flye assembler
-    default: 3
     inputBinding:
       position: 101
       prefix: --flye_min_cov
@@ -88,7 +84,6 @@ inputs:
       - 'null'
       - string
     doc: Minimum overlap between reads used by Flye assembler
-    default: auto
     inputBinding:
       position: 101
       prefix: --flye_min_ovlp
@@ -97,7 +92,6 @@ inputs:
       - 'null'
       - string
     doc: Medaka polishing model
-    default: r1041_e82_400bps_sup_v5.0.0
     inputBinding:
       position: 101
       prefix: --medaka_model
@@ -106,7 +100,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum assembly contig coverage for binning
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_contig_cov
@@ -115,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum assembly contig length for binning
-    default: 3000
     inputBinding:
       position: 101
       prefix: --min_contig_len
@@ -124,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum genomic bin size
-    default: 250000
     inputBinding:
       position: 101
       prefix: --min_len_bin
@@ -133,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum contig coverage used by myloasm assembler
-    default: 1
     inputBinding:
       position: 101
       prefix: --myloasm_min_cov
@@ -142,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum overlap between reads used by myloasm assembler
-    default: 500
     inputBinding:
       position: 101
       prefix: --myloasm_min_ovlp
@@ -159,7 +148,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory name
-    default: mmlong2
     inputBinding:
       position: 101
       prefix: --output_dir
@@ -176,7 +164,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes/multi-threading
-    default: 3
     inputBinding:
       position: 101
       prefix: --processes
@@ -202,7 +189,6 @@ inputs:
       - 'null'
       - string
     doc: Binning model for SemiBin
-    default: global
     inputBinding:
       position: 101
       prefix: --semibin_model
@@ -219,7 +205,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip assembly curation and removal of misassemblies
-    default: run curation
     inputBinding:
       position: 101
       prefix: --skip_curation
@@ -228,7 +213,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for temporary files
-    default: ''
     inputBinding:
       position: 101
       prefix: --temporary_dir
@@ -245,7 +229,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use Medaka for polishing Nanopore assemblies
-    default: skip Medaka
     inputBinding:
       position: 101
       prefix: --use_medaka
@@ -254,7 +237,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use metaFlye for metagenomic assembly
-    default: use metaflye
     inputBinding:
       position: 101
       prefix: --use_metaflye
@@ -263,7 +245,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use metaMDBG for metagenomic assembly
-    default: use metaflye
     inputBinding:
       position: 101
       prefix: --use_metamdbg
@@ -272,7 +253,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use myloasm for metagenomic assembly
-    default: use metaflye
     inputBinding:
       position: 101
       prefix: --use_myloasm
@@ -281,7 +261,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use Whokaryote for identifying eukaryotic contigs
-    default: use Tiara
     inputBinding:
       position: 101
       prefix: --use_whokaryote

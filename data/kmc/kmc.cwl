@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: exclude k-mers occurring less than <value> times
-    default: 2
     inputBinding:
       position: 104
       prefix: -ci
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: exclude k-mers occurring more of than <value> times
-    default: '1e9'
     inputBinding:
       position: 104
       prefix: -cx
@@ -83,7 +81,6 @@ inputs:
       - 'null'
       - boolean
     doc: hide percentage progress
-    default: false
     inputBinding:
       position: 104
       prefix: -hp
@@ -93,7 +90,6 @@ inputs:
       - string
     doc: input in FASTA format (-fa), FASTQ format (-fq), multi FASTA (-fm) or 
       BAM (-fbam) or KMC (-fkmc)
-    default: FASTQ
     inputBinding:
       position: 104
       prefix: -f
@@ -102,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length (k from 1 to 256)
-    default: 25
     inputBinding:
       position: 104
       prefix: -k
@@ -111,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: maximal value of a counter
-    default: 255
     inputBinding:
       position: 104
       prefix: -cs
@@ -120,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: max amount of RAM in GB (from 1 to 1024)
-    default: 12
     inputBinding:
       position: 104
       prefix: -m
@@ -145,7 +138,6 @@ inputs:
       - 'null'
       - string
     doc: output in KMC of KFF format
-    default: KMC
     inputBinding:
       position: 104
       prefix: -o
@@ -162,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: signature length (5, 6, 7, 8, 9, 10, 11)
-    default: 9
     inputBinding:
       position: 104
       prefix: -p
@@ -204,7 +195,6 @@ inputs:
       - 'null'
       - boolean
     doc: verbose mode (shows all parameter settings)
-    default: false
     inputBinding:
       position: 104
       prefix: -v

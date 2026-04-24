@@ -62,7 +62,6 @@ inputs:
       - string
     doc: 'Field separator for nested features (default: "_") or otherwise (default:
       "|").'
-    default: '"_" or "|"'
     inputBinding:
       position: 101
       prefix: --sep

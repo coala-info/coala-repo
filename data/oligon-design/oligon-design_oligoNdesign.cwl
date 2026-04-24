@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: A minimum (and maximum) GC content (in between quotes).
-    default: '0'
     inputBinding:
       position: 101
       prefix: -c
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: The maximum presence in the excluding file.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: -s
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum presence in the target file.
-    default: 0.8
     inputBinding:
       position: 101
       prefix: -m
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: The number of best oligonucleotides to select.
-    default: 4
     inputBinding:
       position: 101
       prefix: -n
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: The lengths of the desired oligonucleotides (in between quotes).
-    default: "'18 20'"
     inputBinding:
       position: 101
       prefix: -l
@@ -109,7 +104,6 @@ inputs:
       - 'null'
       - string
     doc: "The Small SubUnit of the rDNA: Either '18S' (default) or '16S'."
-    default: 18S
     inputBinding:
       position: 101
       prefix: -g

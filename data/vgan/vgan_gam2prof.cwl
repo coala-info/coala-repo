@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Set length for substitution matrix
-    default: 5
     inputBinding:
       position: 101
       prefix: -l

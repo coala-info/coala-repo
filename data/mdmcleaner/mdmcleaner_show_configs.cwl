@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: path to aragorn executable
-    default: aragorn
     inputBinding:
       position: 101
   - id: aragornpath
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: path to aragorn executable
-    default: '[]'
     inputBinding:
       position: 101
   - id: barrnap
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: path to barrnap executable
-    default: barrnap
     inputBinding:
       position: 101
   - id: barrnappath
@@ -35,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: path to barrnap executable
-    default: '[]'
     inputBinding:
       position: 101
   - id: blacklistfile
@@ -43,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: path to the blacklist file
-    default: "['/usr/local/lib/python3.11/site-packages/mdmcleaner/blacklist.list']"
     inputBinding:
       position: 101
   - id: blastdbcmd
@@ -51,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: path to blastdbcmd executable
-    default: blastdbcmd
     inputBinding:
       position: 101
   - id: blastn
@@ -59,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: path to blastn executable
-    default: blastn
     inputBinding:
       position: 101
   - id: blastp
@@ -67,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: path to blastp executable
-    default: blastp
     inputBinding:
       position: 101
   - id: blastpath
@@ -75,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: path to blast executables
-    default: '[]'
     inputBinding:
       position: 101
   - id: db_basedir
@@ -83,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: base directory for databases
-    default: '[]'
     inputBinding:
       position: 101
   - id: db_type
@@ -91,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: type of database to use
-    default: "['gtdb']"
     inputBinding:
       position: 101
   - id: diamond
@@ -99,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: path to diamond executable
-    default: diamond
     inputBinding:
       position: 101
   - id: diamondpath
@@ -107,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: path to diamond executable
-    default: '[]'
     inputBinding:
       position: 101
   - id: hmmerpath
@@ -115,7 +102,6 @@ inputs:
       - 'null'
       - string
     doc: path to HMMER executables
-    default: '[]'
     inputBinding:
       position: 101
   - id: hmmsearch
@@ -123,7 +109,6 @@ inputs:
       - 'null'
       - string
     doc: path to hmmsearch executable
-    default: hmmsearch
     inputBinding:
       position: 101
   - id: makeblastdb
@@ -131,7 +116,6 @@ inputs:
       - 'null'
       - string
     doc: path to makeblastdb executable
-    default: makeblastdb
     inputBinding:
       position: 101
   - id: prodigal
@@ -139,7 +123,6 @@ inputs:
       - 'null'
       - string
     doc: path to prodigal executable
-    default: prodigal
     inputBinding:
       position: 101
   - id: prodigalpath
@@ -147,7 +130,6 @@ inputs:
       - 'null'
       - string
     doc: path to prodigal executable
-    default: '[]'
     inputBinding:
       position: 101
   - id: threads
@@ -155,7 +137,6 @@ inputs:
       - 'null'
       - string
     doc: number of threads
-    default: '1'
     inputBinding:
       position: 101
 outputs:

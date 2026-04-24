@@ -11,7 +11,6 @@ inputs:
       - type: array
         items: File
     doc: FASTA file(s) of adaptors. Multiple adaptor files can be used.
-    default: /usr/local/opt/bbmap-38.95-1/resources/adapters.fa
     inputBinding:
       position: 101
       prefix: --adaptors

@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum p-value
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --max-p-value
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum score
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --min-score
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel processes
-    default: 4
     inputBinding:
       position: 101
       prefix: --parallel
@@ -66,7 +63,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temporary directory
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmpdir

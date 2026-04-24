@@ -53,7 +53,6 @@ inputs:
       - string
     doc: Composition of the final set in fraction (bacterial, contaminant, 
       endogenous)
-    default: 0,0,1
     inputBinding:
       position: 102
       prefix: --comp
@@ -62,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Desired read length
-    default: 75
     inputBinding:
       position: 102
       prefix: -rl
@@ -79,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Generate fragments of fixed length
-    default: 35
     inputBinding:
       position: 102
       prefix: -l
@@ -202,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum fragments length
-    default: 1000
     inputBinding:
       position: 102
       prefix: --maxsize
@@ -220,7 +216,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum fragments length
-    default: 0
     inputBinding:
       position: 102
       prefix: --minsize
@@ -245,7 +240,6 @@ inputs:
       - 'null'
       - int
     doc: Distance to consider for base misincorporation
-    default: 1
     inputBinding:
       position: 102
       prefix: --distmis
@@ -270,7 +264,6 @@ inputs:
       - 'null'
       - int
     doc: Generate number of fragments
-    default: 1000
     inputBinding:
       position: 102
       prefix: -n
@@ -288,7 +281,6 @@ inputs:
       - float
     doc: Increase error rate for forward reads by a factor of 
       1/(10^([factor]/10))
-    default: 0
     inputBinding:
       position: 102
       prefix: -qs
@@ -298,7 +290,6 @@ inputs:
       - float
     doc: Increase error rate for reverse reads by a factor of 
       1/(10^([factor]/10))
-    default: 0
     inputBinding:
       position: 102
       prefix: -qs2
@@ -315,7 +306,6 @@ inputs:
       - 'null'
       - string
     doc: Illumina platform to use (GA2, HS20, HS25, HSXt, MSv1, MSv3)
-    default: HS25
     inputBinding:
       position: 102
       prefix: -ss

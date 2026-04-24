@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: Evalue cutoff
-    default: '1e-10'
     inputBinding:
       position: 101
       prefix: --arg-alignment-evalue
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: Identity cutoff for sequence alignment in percent
-    default: 50
     inputBinding:
       position: 101
       prefix: --arg-alignment-identity
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: Alignment overlap cutoff between read and genes
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --arg-alignment-overlap
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Diamond, minimum number of alignments per entry
-    default: 1000
     inputBinding:
       position: 101
       prefix: --arg-num-alignments-per-entry
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum probability cutoff
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --min-prob
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Model deepARG version
-    default: v2
     inputBinding:
       position: 101
       prefix: --model-version
@@ -88,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: Molecular data type prot/nucl
-    default: nucl
     inputBinding:
       position: 101
       prefix: --type

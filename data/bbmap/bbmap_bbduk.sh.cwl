@@ -14,7 +14,6 @@ inputs:
       - boolean
     doc: Process non-AGCT IUPAC reference bases by making all possible unambiguous
       copies.
-    default: false
     inputBinding:
       position: 101
       prefix: copyundefined
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum edit distance from ref kmers (subs and indels).
-    default: 0
     inputBinding:
       position: 101
       prefix: editdistance
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum Hamming distance for ref kmers (subs only).
-    default: 0
     inputBinding:
       position: 101
       prefix: hammingdistance
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: t/f overrides interleaved autodetection.
-    default: auto
     inputBinding:
       position: 101
       prefix: interleaved
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer length used for finding contaminants.
-    default: 31
     inputBinding:
       position: 101
       prefix: k
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: Trim reads to remove bases matching reference kmers (f, r, l).
-    default: f
     inputBinding:
       position: 101
       prefix: ktrim
@@ -91,7 +85,6 @@ inputs:
       - 'null'
       - string
     doc: Treat the middle base of a kmer as a wildcard.
-    default: t
     inputBinding:
       position: 101
       prefix: maskmiddle
@@ -100,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Reads with average quality (after trimming) below this will be discarded.
-    default: 0
     inputBinding:
       position: 101
       prefix: minavgquality
@@ -109,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: Look for shorter kmers at read tips down to this length.
-    default: 0
     inputBinding:
       position: 101
       prefix: mink
@@ -118,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: Reads shorter than this after trimming will be discarded.
-    default: 10
     inputBinding:
       position: 101
       prefix: minlength
@@ -127,7 +117,6 @@ inputs:
       - 'null'
       - boolean
     doc: Grant permission to overwrite files.
-    default: true
     inputBinding:
       position: 101
       prefix: overwrite
@@ -136,7 +125,6 @@ inputs:
       - 'null'
       - string
     doc: 'Input quality offset: 33 (Sanger), 64, or auto.'
-    default: auto
     inputBinding:
       position: 101
       prefix: qin
@@ -145,7 +133,6 @@ inputs:
       - 'null'
       - string
     doc: Trim read ends to remove bases with quality below trimq (rl, f, r, l, w).
-    default: f
     inputBinding:
       position: 101
       prefix: qtrim
@@ -154,7 +141,6 @@ inputs:
       - 'null'
       - boolean
     doc: Look for reverse-complements of kmers.
-    default: true
     inputBinding:
       position: 101
       prefix: rcomp
@@ -163,7 +149,6 @@ inputs:
       - 'null'
       - int
     doc: If positive, quit after processing X reads or pairs.
-    default: -1
     inputBinding:
       position: 101
       prefix: reads
@@ -182,7 +167,6 @@ inputs:
       - 'null'
       - float
     doc: Set lower to only process a fraction of input reads.
-    default: 1
     inputBinding:
       position: 101
       prefix: samplerate
@@ -199,7 +183,6 @@ inputs:
       - 'null'
       - boolean
     doc: Trim adapters based on where paired reads overlap.
-    default: false
     inputBinding:
       position: 101
       prefix: tbo
@@ -208,7 +191,6 @@ inputs:
       - 'null'
       - string
     doc: Set number of threads to use.
-    default: auto
     inputBinding:
       position: 101
       prefix: threads
@@ -217,7 +199,6 @@ inputs:
       - 'null'
       - boolean
     doc: Change all bases upper-case.
-    default: false
     inputBinding:
       position: 101
       prefix: touppercase
@@ -226,7 +207,6 @@ inputs:
       - 'null'
       - boolean
     doc: When kmer right-trimming, trim both reads to the minimum length of either.
-    default: false
     inputBinding:
       position: 101
       prefix: tpe
@@ -235,7 +215,6 @@ inputs:
       - 'null'
       - float
     doc: Regions with average quality BELOW this will be trimmed.
-    default: 6
     inputBinding:
       position: 101
       prefix: trimq
@@ -244,7 +223,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level; 1 (min) through 9 (max).
-    default: 2
     inputBinding:
       position: 101
       prefix: ziplevel

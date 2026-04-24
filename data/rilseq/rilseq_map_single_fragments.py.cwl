@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Allowed mismatches for BWA mapping.
-    default: 2
     inputBinding:
       position: 102
       prefix: --allowed_mismatches
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: bwa command
-    default: bwa
     inputBinding:
       position: 102
       prefix: --bwa_exec
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: Create a coverage wiggle file.
-    default: false
     inputBinding:
       position: 102
       prefix: --create_wig
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory, default is this directory.
-    default: .
     inputBinding:
       position: 102
       prefix: --dirout
@@ -52,7 +48,6 @@ inputs:
       - type: array
         items: File
     doc: A list of the first read of the sequencing.
-    default: None
     inputBinding:
       position: 102
       prefix: --fastq_1
@@ -63,7 +58,6 @@ inputs:
         items: File
     doc: A list of the second read of the sequencing. The order of these files 
       should be as same as -1. Optional.
-    default: None
     inputBinding:
       position: 102
       prefix: --fastq_2
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: Name of features to count on the GTF file (column 2).
-    default: exon
     inputBinding:
       position: 102
       prefix: --feature
@@ -82,7 +75,6 @@ inputs:
       - File
     doc: Name of gff file to count the reads per gene. If not given or not 
       readable, skip this stage.
-    default: None
     inputBinding:
       position: 102
       prefix: --genes_gff
@@ -91,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: Name of identifier to print (in column 8 of the GTF file).
-    default: gene_id
     inputBinding:
       position: 102
       prefix: --identifier
@@ -101,7 +92,6 @@ inputs:
       - string
     doc: Output file names of counts table (suffixed _counts.txt) and wiggle 
       file (suffixed _coverage.wig)
-    default: bwa_mapped_single_reads
     inputBinding:
       position: 102
       prefix: --outhead
@@ -110,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal required overlap between the fragment and the feature.
-    default: 5
     inputBinding:
       position: 102
       prefix: --overlap
@@ -119,7 +108,6 @@ inputs:
       - 'null'
       - string
     doc: Additional parameters for aln function of bwa.
-    default: -t 8 -R 200
     inputBinding:
       position: 102
       prefix: --params_aln
@@ -131,7 +119,6 @@ inputs:
       reads per gene and generating wig file. The resulting BAM files will be 
       the original ones. Use this when treating libraries built using Livny's 
       protocol.
-    default: false
     inputBinding:
       position: 102
       prefix: --reverse_complement
@@ -140,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: Additional parameters for sampe function of bwa.
-    default: -a 1500 -P
     inputBinding:
       position: 102
       prefix: --sampe_params
@@ -149,7 +135,6 @@ inputs:
       - 'null'
       - string
     doc: Additional parameters for samse function of bwa.
-    default: ''
     inputBinding:
       position: 102
       prefix: --samse_params
@@ -158,7 +143,6 @@ inputs:
       - 'null'
       - string
     doc: Samtools executable.
-    default: samtools
     inputBinding:
       position: 102
       prefix: --samtools_cmd

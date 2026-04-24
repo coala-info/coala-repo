@@ -50,7 +50,6 @@ inputs:
       - boolean
     doc: If the input table is reversed, T(rue) or F(alse), default is false 
       [Optional for -t]
-    default: false
     inputBinding:
       position: 101
       prefix: -R

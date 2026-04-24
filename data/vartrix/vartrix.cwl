@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: BAM tag to consider for marking cells?
-    default: CB
     inputBinding:
       position: 101
       prefix: --bam-tag
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level
-    default: error
     inputBinding:
       position: 101
       prefix: --log-level
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read mapping quality to consider
-    default: 0
     inputBinding:
       position: 101
       prefix: --mapq
@@ -63,7 +60,6 @@ inputs:
       - int
     doc: Number of padding to use on both sides of the variant. Should be at 
       least 1/2 of read length
-    default: 100
     inputBinding:
       position: 101
       prefix: --padding
@@ -85,7 +81,6 @@ inputs:
       --ref-matrix to store the second matrix in. The 'alt_frac' mode will 
       report the fraction of alt reads, which is effectively the ratio of the 
       alternate matrix to the sum of the alternate and coverage matrices.
-    default: consensus
     inputBinding:
       position: 101
       prefix: --scoring-method
@@ -94,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -112,7 +106,6 @@ inputs:
       - string
     doc: Valid characters in an alternative haplotype. This prevents non 
       sequence- resolved variants from being genotyped.
-    default: ATGCatgc
     inputBinding:
       position: 101
       prefix: --valid-chars

@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size to construct DBG, currently supporting 2,3,4,5
-    default: 2
     inputBinding:
       position: 101
       prefix: -k

@@ -38,7 +38,6 @@ inputs:
       alignment would be discarded. An alignment with 5bp clipped on the left 
       and 0bp clipped on the right would be accepted. An alignment with 5bp 
       clipped on the left and 3bp clipped on the right would be discarded.
-    default: 0
     inputBinding:
       position: 102
       prefix: --arm_max_clipped_bases
@@ -50,7 +49,6 @@ inputs:
       mismatches) at the beginning of the read on each "side" of the alignment. 
       E.g. if arm_min_matched_start_bases is set to 5, the first and last 5bp of
       the read alignment would have to match exactly to the aligned location.
-    default: 10
     inputBinding:
       position: 102
       prefix: --arm_min_matched_start_bases
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Command to run bowtie2
-    default: bowtie2
     inputBinding:
       position: 102
       prefix: --bowtie2_command
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: Command to run casoffinder
-    default: cas-offinder
     inputBinding:
       position: 102
       prefix: --casoffinder_command
@@ -87,7 +83,6 @@ inputs:
     doc: If greater than zero, the number of Cas-OFFinder mismatches for 
       in-silico off-target search. If this value is zero, Cas-OFFinder is not 
       run
-    default: 0
     inputBinding:
       position: 102
       prefix: --casoffinder_num_mismatches
@@ -97,7 +92,6 @@ inputs:
       - int
     doc: Position where cleavage occurs, for in-silico off- target search 
       (relative to end of spacer seq -- for Cas9 this is -3)
-    default: -3
     inputBinding:
       position: 102
       prefix: --cleavage_offset
@@ -106,7 +100,6 @@ inputs:
       - 'null'
       - string
     doc: Command to run crispresso
-    default: CRISPResso
     inputBinding:
       position: 102
       prefix: --crispresso_command
@@ -118,7 +111,6 @@ inputs:
       to be analyzed by CRISPResso. Reads with indels longer than this length 
       will not be analyzed by CRISPResso, but the indel length will be reported 
       elsewhere.
-    default: 50
     inputBinding:
       position: 102
       prefix: --crispresso_max_indel_size
@@ -128,7 +120,6 @@ inputs:
       - int
     doc: Min alignment score to reference sequence for quantification by 
       CRISPResso
-    default: 20
     inputBinding:
       position: 102
       prefix: --crispresso_min_aln_score
@@ -138,7 +129,6 @@ inputs:
       - int
     doc: Min number of reads required to be seen at a site for it to be analyzed
       by CRISPResso
-    default: 50
     inputBinding:
       position: 102
       prefix: --crispresso_min_count
@@ -147,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bp on each side of a cut to consider for edits
-    default: 1
     inputBinding:
       position: 102
       prefix: --crispresso_quant_window_size
@@ -158,7 +147,6 @@ inputs:
         items: string
     doc: 'User-customizable annotations for cut products in the form: chr1:234:left:Custom_label
       (multiple annotations are separated by spaces)'
-    default: []
     inputBinding:
       position: 102
       prefix: --cut_classification_annotations
@@ -180,7 +168,6 @@ inputs:
       - 'null'
       - string
     doc: Command to run cutadapt
-    default: cutadapt
     inputBinding:
       position: 102
       prefix: --cutadapt_command
@@ -189,7 +176,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print debug output
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -200,7 +186,6 @@ inputs:
     doc: If set, deduplicates based on final cut assignment - so that reads with
       the same UMI with different start/stop alignment positions will be 
       deduplicated if they are assigned to the same final cut position
-    default: false
     inputBinding:
       position: 102
       prefix: --dedup_by_final_cut_assignment_and_UMI
@@ -213,7 +198,6 @@ inputs:
       redundant (only one read will exist with a UMI after this step). This will
       also affect the values in the column "reads_with_same_umi_pos" in the 
       final_assignments.txt file, which will only show 1 for all reads.
-    default: false
     inputBinding:
       position: 102
       prefix: --dedup_input_on_UMI
@@ -259,7 +243,6 @@ inputs:
     doc: Spacer sequences of guides (multiple guide sequences are separated by 
       spaces). Spacer sequences must be provided without the PAM sequence, but 
       oriented so the PAM would immediately follow the provided spacer sequence
-    default: []
     inputBinding:
       position: 102
       prefix: --guide_sequences
@@ -270,7 +253,6 @@ inputs:
     doc: If set, "N" bases will be ignored. By default (False) N bases will 
       count as mismatches in the number of bases required to match at each 
       arm/side of the read
-    default: false
     inputBinding:
       position: 102
       prefix: --ignore_n
@@ -279,7 +261,6 @@ inputs:
       - 'null'
       - boolean
     doc: If true, intermediate files are not deleted
-    default: false
     inputBinding:
       position: 102
       prefix: --keep_intermediate
@@ -293,7 +274,6 @@ inputs:
       guide_sequences. Novel cut sites farther than known_cut_merge_distance 
       will be merged into novel cut sites based on the parameter 
       novel_cut_merge_distance.
-    default: 50
     inputBinding:
       position: 102
       prefix: --known_cut_merge_distance
@@ -302,7 +282,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum primer/origin alignment score for trimming.
-    default: 40
     inputBinding:
       position: 102
       prefix: --min_primer_aln_score
@@ -312,7 +291,6 @@ inputs:
       - int
     doc: Minimum length of sequence required to match between the primer/origin 
       and read sequence
-    default: 30
     inputBinding:
       position: 102
       prefix: --min_primer_length
@@ -321,7 +299,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of read after all filtering
-    default: 30
     inputBinding:
       position: 102
       prefix: --min_read_length
@@ -335,7 +312,6 @@ inputs:
       trusted than UMI/read combinations that appear in low abundance. However, 
       this probably only applies for sequencing libraries with members with 
       uniform PCR amplification properties.
-    default: 0
     inputBinding:
       position: 102
       prefix: --min_umi_seen_to_keep_read
@@ -344,7 +320,6 @@ inputs:
       - 'null'
       - string
     doc: Number of processes to run on (may be set to "max")
-    default: '1'
     inputBinding:
       position: 102
       prefix: --n_processes
@@ -366,7 +341,6 @@ inputs:
       site. Variation in the cut sites or in the fragments produced may produce 
       clusters of cut sites in a certain region. This parameter will merge novel
       cut sites within this distance into a single cut site.
-    default: 50
     inputBinding:
       position: 102
       prefix: --novel_cut_merge_distance
@@ -376,7 +350,6 @@ inputs:
       - int
     doc: Reads aligned within this distance (bp) to the origin site will be 
       merged to that origin.
-    default: 10000
     inputBinding:
       position: 102
       prefix: --origin_cut_merge_distance
@@ -394,7 +367,6 @@ inputs:
       - boolean
     doc: If true, the primer is in R2. By default, the primer is required to be 
       in R1.
-    default: false
     inputBinding:
       position: 102
       prefix: --primer_in_r2
@@ -412,7 +384,6 @@ inputs:
       - int
     doc: Max distance between r1 and r2 for the read pair to be classified as 
       "supported" by r2
-    default: 10000
     inputBinding:
       position: 102
       prefix: --r1_r2_support_max_distance
@@ -431,7 +402,6 @@ inputs:
     doc: If set, CRISPResso analysis will be performed on novel cut sites. If 
       false, CRISPResso analysis will only be performed on user-provided on- and
       off-targets
-    default: false
     inputBinding:
       position: 102
       prefix: --run_crispresso_on_novel_sites
@@ -440,7 +410,6 @@ inputs:
       - 'null'
       - string
     doc: Command to run samtools
-    default: samtools
     inputBinding:
       position: 102
       prefix: --samtools_command
@@ -451,7 +420,6 @@ inputs:
     doc: For reads aligned to a cut site, indels this size or shorter are 
       classified as "short indels" while indels larger than this size are 
       classified as "long indels"
-    default: 50
     inputBinding:
       position: 102
       prefix: --short_indel_length_cutoff
@@ -462,7 +430,6 @@ inputs:
     doc: If set, reads that are called as deduplicates based on alignment 
       position and UMI will be included in final analysis and counts. By 
       default, these reads are excluded.
-    default: false
     inputBinding:
       position: 102
       prefix: --suppress_dedup_on_aln_pos_and_UMI_filter
@@ -473,7 +440,6 @@ inputs:
     doc: If set, detection of guide sequence homology at cut sites is skipped. 
       By default, novel cut sites are checked for homology, which can be 
       computationally demanding if there are many cut sites.
-    default: false
     inputBinding:
       position: 102
       prefix: --suppress_homology_detection
@@ -482,7 +448,6 @@ inputs:
       - 'null'
       - boolean
     doc: If true, no plotting will be performed
-    default: false
     inputBinding:
       position: 102
       prefix: --suppress_plots
@@ -494,7 +459,6 @@ inputs:
       --arm_min_matched_start_bases matches at the alignment ends or more than 
       --arm_max_clipped_bases on both sides of the read) are included in final 
       analysis and counts. By default they are excluded.
-    default: false
     inputBinding:
       position: 102
       prefix: --suppress_poor_alignment_filter
@@ -504,7 +468,6 @@ inputs:
       - boolean
     doc: If set, reads without r2 support will be included in final analysis and
       counts. By default these reads are excluded.
-    default: false
     inputBinding:
       position: 102
       prefix: --suppress_r2_support_filter
@@ -513,7 +476,6 @@ inputs:
       - 'null'
       - string
     doc: Transposase adapter sequence to be trimmed from reads
-    default: CTGTCTCTTATACACATCTGACGCTGCCGACGA
     inputBinding:
       position: 102
       prefix: --transposase_adapter_seq
@@ -530,7 +492,6 @@ inputs:
       - 'null'
       - boolean
     doc: If true, a file with information for discarded reads is produced
-    default: false
     inputBinding:
       position: 102
       prefix: --write_discarded_read_info
@@ -540,7 +501,6 @@ inputs:
       - boolean
     doc: If set, a file will be produced containing each UMI and the number of 
       reads that were associated with that UMI
-    default: false
     inputBinding:
       position: 102
       prefix: --write_UMI_counts

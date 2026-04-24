@@ -54,7 +54,6 @@ inputs:
       - int
     doc: maximum memory (in mb) available to PASTA's java tools - requires 
       "--alignment_method = pasta"
-    default: 256
     inputBinding:
       position: 101
       prefix: --max_memory
@@ -64,7 +63,6 @@ inputs:
       - int
     doc: number of threads (CPUs) to assign to external utilities (MAFFT and 
       PASTA)
-    default: 1
     inputBinding:
       position: 101
       prefix: --num_threads
@@ -81,7 +79,6 @@ inputs:
       - int
     doc: Maximum number of iteration that the PASTA algorithm will run - 
       requires "--alignment_method = pasta"
-    default: 3
     inputBinding:
       position: 101
       prefix: --pasta_iter_limit

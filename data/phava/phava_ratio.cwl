@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - File
     doc: Name of the reads file to be used for mapping
-    default: None
     inputBinding:
       position: 101
       prefix: --fastq
@@ -35,7 +33,6 @@ inputs:
       - File
     doc: Name of the file with reverse reads to be used for mapping (only for 
       paired short reads!)
-    default: None
     inputBinding:
       position: 101
       prefix: --fastq2
@@ -45,7 +42,6 @@ inputs:
       - File
     doc: Fasta file of forward and inverted repeats (ie. generated from create 
       command)
-    default: None
     inputBinding:
       position: 101
       prefix: --inv
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep the sam file from the mapping
-    default: false
     inputBinding:
       position: 101
       prefix: --keepSam
@@ -64,7 +59,6 @@ inputs:
       - boolean
     doc: Should the logging info be output to stdout? Otherwise, it will be 
       written to 'PhaVa.log'
-    default: false
     inputBinding:
       position: 101
       prefix: --log
@@ -74,7 +68,6 @@ inputs:
       - float
     doc: Maximum proportion of inverton sequence that can be mismatch before a 
       read is removed
-    default: 0.15
     inputBinding:
       position: 101
       prefix: --maxMismatch
@@ -84,7 +77,6 @@ inputs:
       - int
     doc: The minimum count of mapped reads to an 'inverted' inverton for it to 
       be reported in the output
-    default: 3
     inputBinding:
       position: 101
       prefix: --minRC
@@ -94,7 +86,6 @@ inputs:
       - boolean
     doc: Report mapping results for all putative invertons, regardless of 
       outcome
-    default: false
     inputBinding:
       position: 101
       prefix: --reportAll
@@ -103,7 +94,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run the pipeline with short reads instead of long reads
-    default: false
     inputBinding:
       position: 101
       prefix: --short-reads

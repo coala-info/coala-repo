@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Databases used for cancer hotspot annotation (comma separated)
-    default: cosmic
     inputBinding:
       position: 101
       prefix: --cancerDb
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: Export original VCF with TMB_FILTER tag
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: Export a VCF with the considered variants
-    default: false
     inputBinding:
       position: 101
       prefix: --export
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - boolean
     doc: Filter variants annotated as cancer hotspots
-    default: false
     inputBinding:
       position: 101
       prefix: --filterCancerHotspot
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - boolean
     doc: Filter Coding variants
-    default: false
     inputBinding:
       position: 101
       prefix: --filterCoding
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - boolean
     doc: Filter insertions/deletions
-    default: false
     inputBinding:
       position: 101
       prefix: --filterIndels
@@ -86,7 +80,6 @@ inputs:
       - 'null'
       - boolean
     doc: Filter low quality (i.e not PASS) variant
-    default: false
     inputBinding:
       position: 101
       prefix: --filterLowQual
@@ -95,7 +88,6 @@ inputs:
       - 'null'
       - boolean
     doc: Filter Non-coding variants
-    default: false
     inputBinding:
       position: 101
       prefix: --filterNonCoding
@@ -104,7 +96,6 @@ inputs:
       - 'null'
       - boolean
     doc: Filter Non-Synonymous variants
-    default: false
     inputBinding:
       position: 101
       prefix: --filterNonSyn
@@ -113,7 +104,6 @@ inputs:
       - 'null'
       - boolean
     doc: Filter polymorphism variants in genome databases. See --maf
-    default: false
     inputBinding:
       position: 101
       prefix: --filterPolym
@@ -122,7 +112,6 @@ inputs:
       - 'null'
       - boolean
     doc: Filter on recurrence values
-    default: false
     inputBinding:
       position: 101
       prefix: --filterRecurrence
@@ -131,7 +120,6 @@ inputs:
       - 'null'
       - boolean
     doc: Filter Splice variants
-    default: false
     inputBinding:
       position: 101
       prefix: --filterSplice
@@ -140,7 +128,6 @@ inputs:
       - 'null'
       - boolean
     doc: Filter Synonymous variants
-    default: false
     inputBinding:
       position: 101
       prefix: --filterSyn
@@ -149,7 +136,6 @@ inputs:
       - 'null'
       - float
     doc: Filter variants with MAF > maf
-    default: 1
     inputBinding:
       position: 101
       prefix: --maf
@@ -158,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: Filter variants with alternative allele depth < minAltDepth
-    default: 1
     inputBinding:
       position: 101
       prefix: --minAltDepth
@@ -167,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: Filter variants with depth < minDepth
-    default: 1
     inputBinding:
       position: 101
       prefix: --minDepth
@@ -176,7 +160,6 @@ inputs:
       - 'null'
       - string
     doc: Databases used for polymorphisms detection (comma separated)
-    default: gnomad
     inputBinding:
       position: 101
       prefix: --polymDb
@@ -193,7 +176,6 @@ inputs:
       - 'null'
       - float
     doc: Filter variants with Allelic Ratio < vaf
-    default: 0
     inputBinding:
       position: 101
       prefix: --vaf
@@ -214,7 +196,6 @@ inputs:
       - 'null'
       - boolean
     doc: Active verbose mode
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

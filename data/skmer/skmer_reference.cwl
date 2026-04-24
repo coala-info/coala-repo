@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer length [1-31].
-    default: 31
     inputBinding:
       position: 102
       prefix: K
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: 'Max number of processors to use [1-20]. Default for this machine: 20'
-    default: 20
     inputBinding:
       position: 102
       prefix: P
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory of output (reference) library.
-    default: working_directory/library
     inputBinding:
       position: 102
       prefix: L
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Output (distances) prefix.
-    default: ref-dist-mat
     inputBinding:
       position: 102
       prefix: O
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Sketch size.
-    default: 100000
     inputBinding:
       position: 102
       prefix: S
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Sketching random seed.
-    default: 42
     inputBinding:
       position: 102
       prefix: S

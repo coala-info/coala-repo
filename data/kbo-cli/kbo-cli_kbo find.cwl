@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size, larger values are slower and use more space.
-    default: 31
     inputBinding:
       position: 102
   - id: max_error_prob
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: Tolerance for errors in k-mer matching.
-    default: 1e-07
     inputBinding:
       position: 102
       prefix: --max-error-prob
@@ -66,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Allow gaps of this length in the alignment.
-    default: 0
     inputBinding:
       position: 102
       prefix: --max-gap-len
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Memory available when building on temp disk space (in gigabytes).
-    default: 4
     inputBinding:
       position: 102
       prefix: --mem-gb
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment length to report.
-    default: 100
     inputBinding:
       position: 102
       prefix: --min-len
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Length of precalculated prefixes included in the index.
-    default: 8
     inputBinding:
       position: 102
       prefix: --prefix-precalc
@@ -118,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

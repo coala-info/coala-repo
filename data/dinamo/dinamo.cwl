@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Limits the degeneration to at most k positions.
-    default: k
     inputBinding:
       position: 101
       prefix: --degeneration-level

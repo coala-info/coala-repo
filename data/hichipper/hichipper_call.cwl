@@ -79,7 +79,6 @@ inputs:
       - string
     doc: "Argument to pass to the -g variable in MACS2\n(mm for mouse genome; hs for
       human genome);\ndefault = \"hs\""
-    default: hs
     inputBinding:
       position: 102
       prefix: --macs2-genome
@@ -97,7 +96,6 @@ inputs:
       - string
     doc: "String of arguments to pass to MACS2; only is\ncalled when peaks are set
       to be called;\ndefault = \"-q 0.01 --extsize 147 --nomodel\""
-    default: '"-q 0.01 --extsize 147 --nomodel"'
     inputBinding:
       position: 102
       prefix: --macs2-string
@@ -124,7 +122,6 @@ inputs:
       - 'null'
       - string
     doc: "Maximum distance for loop calls; default =\n2000000"
-    default: '2000000'
     inputBinding:
       position: 102
       prefix: --max-dist
@@ -133,7 +130,6 @@ inputs:
       - 'null'
       - string
     doc: "Merge nearby peaks (after all padding is\ncomplete; default = 500"
-    default: '500'
     inputBinding:
       position: 102
       prefix: --merge-gap
@@ -142,7 +138,6 @@ inputs:
       - 'null'
       - string
     doc: "Minimum distance for loop calls; default =\n5000"
-    default: '5000'
     inputBinding:
       position: 102
       prefix: --min-dist
@@ -166,7 +161,6 @@ inputs:
       - 'null'
       - string
     doc: "Peak padding width (applied on both left and\nright); default = 500"
-    default: '500'
     inputBinding:
       position: 102
       prefix: --peak-pad
@@ -192,7 +186,6 @@ inputs:
       - 'null'
       - string
     doc: "Length of reads from sequencing runs; default\n= 75"
-    default: '75'
     inputBinding:
       position: 102
       prefix: --read-length

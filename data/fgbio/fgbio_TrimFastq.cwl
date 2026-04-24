@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
-    default: false
     inputBinding:
       position: 101
       prefix: --async-io
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Default GZIP compression level, BAM compression level.
-    default: 5
     inputBinding:
       position: 101
       prefix: --compression
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: Exclude reads below the trim length.
-    default: false
     inputBinding:
       position: 101
       prefix: --exclude
@@ -60,7 +57,6 @@ inputs:
       - string
     doc: 'Minimum severity log-level to emit. Options: Debug, Info, Warning, Error,
       Fatal.'
-    default: Info
     inputBinding:
       position: 101
       prefix: --log-level
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: 'Validation stringency for SAM/BAM reading. Options: STRICT, LENIENT, SILENT.'
-    default: SILENT
     inputBinding:
       position: 101
       prefix: --sam-validation-stringency
@@ -86,7 +81,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to use for temporary files.
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmp-dir

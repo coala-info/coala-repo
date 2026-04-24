@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: Set the logging level
-    default: info
     inputBinding:
       position: 101
       prefix: --log_level

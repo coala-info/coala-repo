@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Parallel genome download
-    default: 4
     inputBinding:
       position: 101
       prefix: --download_parallel
@@ -61,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Kraken kmer size
-    default: 31
     inputBinding:
       position: 101
       prefix: --kraken_kmer
@@ -70,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Kraken minimizer size
-    default: 15
     inputBinding:
       position: 101
       prefix: --kraken_minimizer
@@ -101,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

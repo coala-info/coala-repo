@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the suffix of Protein sequence files
-    default: .faa
     inputBinding:
       position: 101
       prefix: --aa_suffix
@@ -27,7 +26,6 @@ inputs:
       - Directory
     doc: The full path of cas database, not include the database name and the 
       last '/' of the path
-    default: /usr/local/bin
     inputBinding:
       position: 101
       prefix: --casDBpath
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the suffix of GenBank files
-    default: .gbk
     inputBinding:
       position: 101
       prefix: --gbk_suffix
@@ -78,7 +75,6 @@ inputs:
       - int
     doc: Minimum contig size (in bp) to be included in the analysis. Smaller 
       contigs will be dropped
-    default: 5000
     inputBinding:
       position: 101
       prefix: --min_contig_size
@@ -88,7 +84,6 @@ inputs:
       - int
     doc: The minimum number of genes that must be identified as belonging to a 
       phage for the region to be included
-    default: 1
     inputBinding:
       position: 101
       prefix: --phage_genes
@@ -97,7 +92,6 @@ inputs:
       - 'null'
       - File
     doc: Specify the path of pVOG.hmm
-    default: /usr/local/bin/pVOGs.hmm
     inputBinding:
       position: 101
       prefix: --phmms
@@ -131,7 +125,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the suffix of Genome/Scaffolds/Contigs files
-    default: .fa
     inputBinding:
       position: 101
       prefix: --scaf_suffix
@@ -140,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 6
     inputBinding:
       position: 101
       prefix: --threads

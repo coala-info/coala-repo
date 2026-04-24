@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: number of simultaneous downloads
-    default: 20
     inputBinding:
       position: 102
       prefix: --jobs

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: number of cores to use in batch mode
-    default: all available cores
     inputBinding:
       position: 101
       prefix: --cpus
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: e-value that is passed to pyHmmer for hmmsearch
-    default: '1e-10'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -43,7 +41,6 @@ inputs:
       - int
     doc: minimum number of unique viral hits that each viral region must have to
       be reported
-    default: 4
     inputBinding:
       position: 101
       prefix: --minhit
@@ -53,7 +50,6 @@ inputs:
       - int
     doc: minimum score of viral regions to report, with higher values indicating
       higher confidence
-    default: 10
     inputBinding:
       position: 101
       prefix: --minscore
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: minimum length of viral regions to report, in kilobases
-    default: 10 kb
     inputBinding:
       position: 101
       prefix: --minsize
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: sliding window size to use for detecting viral regions
-    default: 15 kb
     inputBinding:
       position: 101
       prefix: --window

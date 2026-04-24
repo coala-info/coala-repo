@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Batch size for training.
-    default: 256
     inputBinding:
       position: 101
       prefix: --batch_size
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Dimension of BiLSTM hidden units or Transformer feedforward layers.
-    default: 100
     inputBinding:
       position: 101
       prefix: --dim_feedforward
@@ -28,7 +26,6 @@ inputs:
       - int
     doc: Number of epochs to wait without improvement in validation F1 before 
       stopping. 0 to disable.
-    default: 0
     inputBinding:
       position: 101
       prefix: --early_stopping
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Size of base embedding dimension.
-    default: 4
     inputBinding:
       position: 101
       prefix: --embedding_dim
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Embedding type for bases.
-    default: one_hot
     inputBinding:
       position: 101
       prefix: --embedding_type
@@ -55,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Number of training epochs.
-    default: 100
     inputBinding:
       position: 101
       prefix: --epochs
@@ -64,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: Type of fully connected layers used in classifier.
-    default: all
     inputBinding:
       position: 101
       prefix: --fc_type
@@ -73,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: L2 regularization coefficient.
-    default: 1e-05
     inputBinding:
       position: 101
       prefix: --l2_coef
@@ -82,7 +74,6 @@ inputs:
       - 'null'
       - float
     doc: Learning rate.
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: --lr
@@ -104,7 +95,6 @@ inputs:
   - id: model_type
     type: string
     doc: Model architecture type.
-    default: None
     inputBinding:
       position: 101
       prefix: --model_type
@@ -113,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Number of attention heads in Transformer.
-    default: 4
     inputBinding:
       position: 101
       prefix: --nhead
@@ -122,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Size of fully connected layer between encoder and classifier.
-    default: 16
     inputBinding:
       position: 101
       prefix: --num_fc
@@ -131,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Number of BiLSTM or Transformer encoder layers.
-    default: 3
     inputBinding:
       position: 101
       prefix: --num_layers
@@ -140,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Dimension for positional encoding in Transformer.
-    default: 16
     inputBinding:
       position: 101
       prefix: --pe_dim
@@ -149,7 +135,6 @@ inputs:
       - 'null'
       - string
     doc: Type of positional encoding.
-    default: fixed
     inputBinding:
       position: 101
       prefix: --pe_type
@@ -158,7 +143,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix name for the model checkpoints.
-    default: model
     inputBinding:
       position: 101
       prefix: --prefix
@@ -167,7 +151,6 @@ inputs:
       - 'null'
       - File
     doc: Path to a saved model checkpoint for retraining.
-    default: None
     inputBinding:
       position: 101
       prefix: --retrain
@@ -176,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: Random seed for reproducibility.
-    default: None
     inputBinding:
       position: 101
       prefix: --seed
@@ -196,7 +178,6 @@ inputs:
       - float
     doc: Fraction of training dataset to use for validation when validation_type
       is "split".
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --validation_fraction
@@ -206,7 +187,6 @@ inputs:
       - string
     doc: 'Validation strategy: "split" uses a fraction of training data, "dataset"
       uses separate validation data.'
-    default: split
     inputBinding:
       position: 101
       prefix: --validation_type
@@ -216,7 +196,6 @@ inputs:
       - string
     doc: 'Weight for positive (modified) label in loss. Options: "equal", "auto",
       or a numeric value.'
-    default: equal
     inputBinding:
       position: 101
       prefix: --weights

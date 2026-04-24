@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: Input bam or sam file (must end in .bam or .sam)
-    default: stdin
     inputBinding:
       position: 101
       prefix: --bam
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of nonconverted Cs on a read to consider it nonconverted
-    default: 3
     inputBinding:
       position: 101
       prefix: --c_count

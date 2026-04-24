@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory containing nodes.dmp and names.dmp
-    default: /root/.taxonkit
     inputBinding:
       position: 101
       prefix: --data-dir
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: regular expression to extract assembly accession
-    default: ^(.+)$
     inputBinding:
       position: 101
       prefix: --field-accession-re
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: regular expression to extract assembly accession as the subspecies
-    default: ^\w\w_GC[AF]_(.+)\.\d+$
     inputBinding:
       position: 101
       prefix: --gtdb-re-subs
@@ -80,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: number of lines to process for each thread, and 4 threads is enough.
-    default: 5000
     inputBinding:
       position: 101
       prefix: --line-chunk-size
@@ -89,7 +85,6 @@ inputs:
       - 'null'
       - string
     doc: null value of taxa
-    default: '[,NULL,NA]'
     inputBinding:
       position: 101
       prefix: --null
@@ -125,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs. 4 is enough
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

@@ -101,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: 'consider at most N haplotype combinations (default: 1000)'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max-haplotypes
@@ -110,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: 'perform N rounds of consensus sequence improvement (default: 50)'
-    default: 50
     inputBinding:
       position: 101
       prefix: --max-rounds
@@ -129,7 +127,6 @@ inputs:
       - int
     doc: 'extract candidate variants from the aligned reads when the depth is at least
       D (default: 20)'
-    default: 20
     inputBinding:
       position: 101
       prefix: --min-candidate-depth
@@ -139,7 +136,6 @@ inputs:
       - float
     doc: extract candidate variants from the aligned reads when the variant 
       frequency is at least F (default 0.2)
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --min-candidate-frequency
@@ -148,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: 'distance from alignment end to calculate variants (default: 30)'
-    default: 30
     inputBinding:
       position: 101
       prefix: --min-flanking-sequence
@@ -195,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: 'use NUM threads (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

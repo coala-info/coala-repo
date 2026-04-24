@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - File
     doc: Input tree
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Input tree format (newick, nexus, phyloxml, or nextstrain)
-    default: newick
     inputBinding:
       position: 101
       prefix: --format
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Distance metric (brlen|boot|none)
-    default: brlen
     inputBinding:
       position: 101
       prefix: --metric
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: 'Random Seed: -1 = nano seconds since 1970/01/01 00:00:00'
-    default: -1
     inputBinding:
       position: 101
       prefix: --seed
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads (Max=20)
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: initial quantity of DNA in ng sequenced in the <NORMAL-INPUT-BAM> file
-    default: 10.0
     inputBinding:
       position: 101
       prefix: -j
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: average number of reads in a UMI family in the <NORMAL-INPUT-BAM> file
-    default: 1.5
     inputBinding:
       position: 101
       prefix: -e
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: random seed used to select the UMI from the initial quantity of DNA
-    default: 13
     inputBinding:
       position: 101
       prefix: -r
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: random seed used to select the reads in each UMI
-    default: 23
     inputBinding:
       position: 101
       prefix: -s
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: the fraction of DNA that comes from tumor
-    default: 0.05
     inputBinding:
       position: 101
       prefix: -f
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: initial quantity of DNA in ng sequenced in the <TUMOR-INPUT-BAM> file
-    default: 10.0
     inputBinding:
       position: 101
       prefix: -i
@@ -84,7 +78,6 @@ inputs:
       - 'null'
       - float
     doc: average number of reads in a UMI family in the <TUMOR-INPUT-BAM> file
-    default: 1.5
     inputBinding:
       position: 101
       prefix: -d

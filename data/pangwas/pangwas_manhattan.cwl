@@ -19,7 +19,6 @@ inputs:
       - type: array
         items: string
     doc: Only plot these clusters.
-    default: all
     inputBinding:
       position: 101
       prefix: --clusters
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Font family of the tree labels.
-    default: Roboto
     inputBinding:
       position: 101
       prefix: --font-family
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Font size of the tree labels.
-    default: 16
     inputBinding:
       position: 101
       prefix: --font-size
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Margin sizes in pixels.
-    default: 20
     inputBinding:
       position: 101
       prefix: --margin
@@ -70,7 +66,6 @@ inputs:
       - int
     doc: Maximum number of blocks to draw before switching to pangenome 
       coordinates.
-    default: 20
     inputBinding:
       position: 101
       prefix: --max-blocks
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - float
     doc: Scaling factor of the PNG file.
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --png-scale
@@ -105,7 +99,6 @@ inputs:
       - type: array
         items: string
     doc: Only plot these synteny blocks.
-    default: all
     inputBinding:
       position: 101
       prefix: --syntenies
@@ -115,7 +108,6 @@ inputs:
       - type: array
         items: string
     doc: Only plot these variant types.
-    default: all
     inputBinding:
       position: 101
       prefix: --variant-types

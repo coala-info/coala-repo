@@ -77,7 +77,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_traj_path
-    default: system.xtc
 
   input_index_path:
     label: Path to the GROMACS index file

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment quality
-    default: 0
     inputBinding:
       position: 102
       prefix: -q
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: BAM region
-    default: None
     inputBinding:
       position: 102
       prefix: -c

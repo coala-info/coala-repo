@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform eigen decomposition of tests
-    default: false
     inputBinding:
       position: 101
       prefix: --eigen
@@ -43,7 +42,6 @@ inputs:
       - string
     doc: "Select SNPs with position > x (in bp/cM) Warning :\ndoes not work with BED
       files"
-    default: '0'
     inputBinding:
       position: 101
       prefix: --from
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - boolean
     doc: Haplotype data provided
-    default: false
     inputBinding:
       position: 101
       prefix: --inbred
@@ -70,7 +67,6 @@ inputs:
       - File
     doc: "Read population kinship from file (if None, kinship is\n               \
       \         estimated)"
-    default: None
     inputBinding:
       position: 101
       prefix: --kinship
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: Missing Genotype Code
-    default: '0'
     inputBinding:
       position: 101
       prefix: --miss_geno
@@ -96,7 +91,6 @@ inputs:
       - 'null'
       - string
     doc: Missing Parent Code
-    default: '0'
     inputBinding:
       position: 101
       prefix: --miss_parent
@@ -105,7 +99,6 @@ inputs:
       - 'null'
       - string
     doc: Missing Phenotype Code
-    default: '-9'
     inputBinding:
       position: 101
       prefix: --miss_pheno
@@ -114,7 +107,6 @@ inputs:
       - 'null'
       - string
     doc: Missing Sex Code
-    default: '0'
     inputBinding:
       position: 101
       prefix: --miss_sex
@@ -123,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: Use N processors when possible
-    default: 1
     inputBinding:
       position: 101
       prefix: --ncpu
@@ -132,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: Set the number of model fit to use
-    default: 20
     inputBinding:
       position: 101
       prefix: --nfit
@@ -150,7 +140,6 @@ inputs:
       - int
     doc: "Set the number of clusters to K. hapFLK calculations\n                 \
       \       switched off if K<0"
-    default: -1
     inputBinding:
       position: 101
       prefix: -K
@@ -168,7 +157,6 @@ inputs:
       - string
     doc: "Use population POP as outgroup for tree rooting (if\n                  \
       \      None, use midpoint rooting)"
-    default: None
     inputBinding:
       position: 101
       prefix: --outgroup
@@ -177,7 +165,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for output files
-    default: hapflk
     inputBinding:
       position: 101
       prefix: --prefix
@@ -194,7 +181,6 @@ inputs:
       - 'null'
       - boolean
     doc: Haplotype data provided
-    default: false
     inputBinding:
       position: 101
       prefix: --phased
@@ -203,7 +189,6 @@ inputs:
       - 'null'
       - int
     doc: Number of SNPs to use to estimate Reynolds distances
-    default: 10000
     inputBinding:
       position: 101
       prefix: --reynolds-snps
@@ -213,7 +198,6 @@ inputs:
       - string
     doc: Select SNPs with position < x (in bp/cM) Warning :does not work with 
       BED files
-    default: inf
     inputBinding:
       position: 101
       prefix: --to

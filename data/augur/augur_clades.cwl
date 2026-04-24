@@ -15,7 +15,6 @@ inputs:
   - id: clades
     type: File
     doc: TSV file containing clade definitions by amino-acid
-    default: None
     inputBinding:
       position: 101
       prefix: --clades
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Key to store clade labels under; use "None" to not export this
-    default: clade
     inputBinding:
       position: 101
       prefix: --label-name
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Key to store clade membership under; use "None" to not export this
-    default: clade_membership
     inputBinding:
       position: 101
       prefix: --membership-name
@@ -43,7 +40,6 @@ inputs:
       items: File
     doc: JSON(s) containing ancestral and tip nucleotide and/or amino-acid 
       mutations
-    default: None
     inputBinding:
       position: 101
       prefix: --mutations
@@ -53,14 +49,12 @@ inputs:
       - boolean
     doc: Skip validation of input/output files, equivalent to 
       --validation-mode=skip. Use at your own risk!
-    default: None
     inputBinding:
       position: 101
       prefix: --skip-validation
   - id: tree
     type: File
     doc: prebuilt Newick -- no tree will be built if provided
-    default: None
     inputBinding:
       position: 101
       prefix: --tree
@@ -74,7 +68,6 @@ inputs:
       status if any validation checks failed, while 'warn' does not. 'skip' mode
       performs no validation. Note that some validation checks are non- optional
       and as such are not affected by this setting.
-    default: error
     inputBinding:
       position: 101
       prefix: --validation-mode

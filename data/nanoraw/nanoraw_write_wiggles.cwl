@@ -18,7 +18,6 @@ inputs:
         items: string
     doc: FAST5 subgroup (under Analyses/[corrected-group]) where individual 
       template and/or complement reads are stored.
-    default: "['BaseCalled_template']"
     inputBinding:
       position: 102
       prefix: --basecall-subgroups
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: FAST5 group to access/plot created by genome_resquiggle script.
-    default: RawGenomeCorrected_000
     inputBinding:
       position: 102
       prefix: --corrected-group
@@ -46,7 +44,6 @@ inputs:
       - int
     doc: Offset up and downstream over which to compute combined p-values using 
       Fisher's method.
-    default: 2
     inputBinding:
       position: 102
       prefix: --fishers-method-offset
@@ -65,7 +62,6 @@ inputs:
       - int
     doc: Number of reads required from both samples to test for significant 
       difference in signal level.
-    default: 5
     inputBinding:
       position: 102
       prefix: --minimum-test-reads
@@ -115,7 +111,6 @@ inputs:
     doc: Basename for output files. Two files (plus and minus strand) will be 
       produced for each --wiggle-types supplied. Filenames will be formatted as 
       "[wiggle- basename].[wiggle-type].[group1/2]?. [plus/minus].wig".
-    default: Nanopore_data
     inputBinding:
       position: 102
       prefix: --wiggle-basename
@@ -128,7 +123,6 @@ inputs:
       types). Choices: coverage, signal, signal_sd, length, pvals, qvals (both negative
       log10), difference. Note that signal, signal_sd and length (number of observations
       per base) are means over all reads at each base.'
-    default: coverage, pvals
     inputBinding:
       position: 102
       prefix: --wiggle-types

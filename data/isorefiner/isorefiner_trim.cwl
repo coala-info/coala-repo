@@ -10,7 +10,6 @@ inputs:
       - string
     doc: "Prefix of final output files (extentions are those of\n                \
       \        input files)"
-    default: isorefiner_trimmed
     inputBinding:
       position: 101
       prefix: --out_prefix
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Option for Porechomp_ABI (quoted string)
-    default: ''
     inputBinding:
       position: 101
       prefix: --tool_option
@@ -46,7 +43,6 @@ inputs:
       - Directory
     doc: "Working directory containing intermediate and log\n                    \
       \    files"
-    default: isorefiner_trim_work
     inputBinding:
       position: 101
       prefix: --work_dir

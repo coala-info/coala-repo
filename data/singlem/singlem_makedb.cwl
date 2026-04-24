@@ -67,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: make annoy nucleotide sequence indices with this ntrees
-    default: 10
     inputBinding:
       position: 101
       prefix: --num-annoy-nucleotide-trees
@@ -76,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: make annoy protein sequence indices with this ntrees
-    default: 10
     inputBinding:
       position: 101
       prefix: --num-annoy-protein-trees
@@ -120,7 +118,6 @@ inputs:
         items: string
     doc: Index sequences using these methods. Note that specifying "scann-naive"
       means "scann" databases will also be built
-    default:
       - smafa-naive
     inputBinding:
       position: 101
@@ -131,7 +128,6 @@ inputs:
       - type: array
         items: string
     doc: Index sequences using these types.
-    default:
       - nucleotide
     inputBinding:
       position: 101
@@ -141,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: Use this many threads where possible
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

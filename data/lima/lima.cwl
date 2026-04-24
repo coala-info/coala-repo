@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum ratio of bad adapter.
-    default: 0
     inputBinding:
       position: 104
       prefix: --bad-adapter-ratio
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Branch penalty.
-    default: 4
     inputBinding:
       position: 104
       prefix: --branch-penalty
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Deletions penalty.
-    default: 7
     inputBinding:
       position: 104
       prefix: --deletion-penalty
@@ -95,7 +92,6 @@ inputs:
       - int
     doc: Group maximum numbers of split barcode output files per directory; 0 
       means deactivated.
-    default: 0
     inputBinding:
       position: 104
       prefix: --files-per-directory
@@ -105,7 +101,6 @@ inputs:
       - int
     doc: Try to guess the used barcodes, using the provided mean score 
       threshold; 0 means guessing deactivated.
-    default: 0
     inputBinding:
       position: 104
       prefix: --guess
@@ -114,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of ZMWs observed to whitelist barcodes.
-    default: 0
     inputBinding:
       position: 104
       prefix: --guess-min-count
@@ -123,7 +117,6 @@ inputs:
       - 'null'
       - string
     doc: Recommended settings. See below for preset parameter details.
-    default: NONE
     inputBinding:
       position: 104
       prefix: --hifi-preset
@@ -148,7 +141,6 @@ inputs:
       - 'null'
       - int
     doc: Insertion penalty.
-    default: 7
     inputBinding:
       position: 104
       prefix: --insertion-penalty
@@ -190,7 +182,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL).'
-    default: WARN
     inputBinding:
       position: 104
       prefix: --log-level
@@ -199,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: Score for a sequence match.
-    default: 4
     inputBinding:
       position: 104
       prefix: --match-score
@@ -208,7 +198,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum input sequence length, 0 means deactivated.
-    default: 0
     inputBinding:
       position: 104
       prefix: --max-input-length
@@ -218,7 +207,6 @@ inputs:
       - int
     doc: Analyze at maximum the provided number of adapters per ZMW; 0 means 
       deactivated.
-    default: 0
     inputBinding:
       position: 104
       prefix: --max-scored-adapters
@@ -228,7 +216,6 @@ inputs:
       - int
     doc: Only use up to N barcode pair regions to find the barcode, 0 means use 
       all.
-    default: 0
     inputBinding:
       position: 104
       prefix: --max-scored-barcode-pairs
@@ -238,7 +225,6 @@ inputs:
       - int
     doc: Analyze at maximum the provided number of barcodes per ZMW; 0 means 
       deactivated.
-    default: 0
     inputBinding:
       position: 104
       prefix: --max-scored-barcodes
@@ -248,7 +234,6 @@ inputs:
       - int
     doc: Minimum end barcode score threshold is applied to the individual 
       leading and trailing ends.
-    default: 0
     inputBinding:
       position: 104
       prefix: --min-end-score
@@ -257,7 +242,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequence length after clipping.
-    default: 50
     inputBinding:
       position: 104
       prefix: --min-length
@@ -266,7 +250,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal number of full passes.
-    default: 0
     inputBinding:
       position: 104
       prefix: --min-passes
@@ -275,7 +258,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum reference span relative to the barcode length.
-    default: 0.5
     inputBinding:
       position: 104
       prefix: --min-ref-span
@@ -285,7 +267,6 @@ inputs:
       - int
     doc: Reads with scores less than or equal to the minimum barcode score are 
       removed from downstream analysis.
-    default: 0
     inputBinding:
       position: 104
       prefix: --min-score
@@ -294,7 +275,6 @@ inputs:
       - 'null'
       - int
     doc: The minimal score lead required to call a barcode pair significant.
-    default: 10
     inputBinding:
       position: 104
       prefix: --min-score-lead
@@ -304,7 +284,6 @@ inputs:
       - int
     doc: Minimum number of barcode regions with sufficient relative span to the 
       barcode length.
-    default: 1
     inputBinding:
       position: 104
       prefix: --min-scoring-regions
@@ -314,7 +293,6 @@ inputs:
       - int
     doc: The minimal score difference, between first and combined, required to 
       call a barcode pair different.
-    default: 10
     inputBinding:
       position: 104
       prefix: --min-signal-increase
@@ -323,7 +301,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for a mismatch.
-    default: 13
     inputBinding:
       position: 104
       prefix: --mismatch-penalty
@@ -364,7 +341,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use, 0 means autodetection.
-    default: 0
     inputBinding:
       position: 104
       prefix: --num-threads
@@ -381,7 +357,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of open output files.
-    default: 500
     inputBinding:
       position: 104
       prefix: --output-handles
@@ -407,7 +382,6 @@ inputs:
       - int
     doc: Demux the first N ZMWs and return the mean score; 0 means peeking 
       deactivated.
-    default: 0
     inputBinding:
       position: 104
       prefix: --peek
@@ -464,7 +438,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum ratio of scored vs sequenced adapters.
-    default: 0.25
     inputBinding:
       position: 104
       prefix: --scored-adapter-ratio
@@ -523,7 +496,6 @@ inputs:
       - int
     doc: The candidate region size in bp. If set, --window-size-mult will be 
       ignored.
-    default: 0
     inputBinding:
       position: 104
       prefix: --window-size
@@ -532,7 +504,6 @@ inputs:
       - 'null'
       - float
     doc: 'The candidate region size multiplier: barcode_length * multiplier.'
-    default: 3
     inputBinding:
       position: 104
       prefix: --window-size-multi

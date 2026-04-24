@@ -35,7 +35,6 @@ inputs:
     type: File
     label: merging script
     doc: Python script to merge multiple GenBank Files. Passed externally within the git structure to avoid having to host a new image.
-    default: 
       class: File
       location: ../tools/scripts/merge_genbank.py
       basename: merge_genbank.py
@@ -43,7 +42,6 @@ inputs:
     type: File
     label: FASTA extraction script
     doc: Python script that extracts a FASTA file from GenBank Files. Passed externally within the git structure to avoid having to host a new image.
-    default: 
       class: File
       location: ../tools/scripts/genbank_to_fasta.py
       basename: genbank_to_fasta.py
@@ -51,7 +49,6 @@ inputs:
     type: File
     label: GFF3 extraction script
     doc: BioPerl script that extracts a GFF3 file from GenBank Files. Passed externally within the git structure to avoid having to host a new image.
-    default: 
       class: File
       location: ../tools/scripts/bp_genbank2gff3_fixed.pl
       basename: bp_genbank2gff3_fixed.pl

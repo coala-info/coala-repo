@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: precision in number of decimals
-    default: 10
     inputBinding:
       position: 102
       prefix: -n

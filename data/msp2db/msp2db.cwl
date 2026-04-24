@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Database type [mysql, sqlite]
-    default: sqlite
     inputBinding:
       position: 101
       prefix: --db_type
@@ -66,7 +65,6 @@ inputs:
       - string
     doc: Type of schema used (by default is "mona" msp style but can use 
       "massbank" style
-    default: mona
     inputBinding:
       position: 101
       prefix: --schema

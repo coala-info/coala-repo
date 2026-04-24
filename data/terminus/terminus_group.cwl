@@ -17,7 +17,6 @@ inputs:
       - float
     doc: the minimum spread a transcript must exhibit to enable an attached edge
       to be a collapse candidate
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min-spread
@@ -27,7 +26,6 @@ inputs:
       - int
     doc: The allowable difference between the weights of transcripts in same 
       equivalence classes to treat them as identical
-    default: 10
     inputBinding:
       position: 101
       prefix: --seed
@@ -37,7 +35,6 @@ inputs:
       - float
     doc: The allowable difference between the weights of transcripts in same 
       equivalence classes to treat them as identical
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --tolerance

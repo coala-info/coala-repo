@@ -13,7 +13,6 @@ requirements:
 inputs:
 - id: test
   type: File
-  default:
     class: File
     location: input.txt
   inputBinding:

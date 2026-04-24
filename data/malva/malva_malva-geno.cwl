@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: bloom filter size in GB
-    default: 4
     inputBinding:
       position: 104
       prefix: --bf-size
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: expected sample error rate
-    default: 0.001
     inputBinding:
       position: 104
       prefix: --error-rate
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: a priori frequency key in the INFO column of the input VCF
-    default: AF
     inputBinding:
       position: 104
       prefix: --freq-key
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: run MALVA in haploid mode
-    default: false
     inputBinding:
       position: 104
       prefix: --haploid
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: size of the kmers to index
-    default: 35
     inputBinding:
       position: 104
       prefix: --kmer-size
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: maximum coverage for variant alleles
-    default: 200
     inputBinding:
       position: 104
       prefix: --max-coverage
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: size of the reference kmers to index
-    default: 43
     inputBinding:
       position: 104
       prefix: --ref-kmer-size
@@ -87,7 +80,6 @@ inputs:
       - 'null'
       - File
     doc: file containing the list of (VCF) samples to consider
-    default: '-'
     inputBinding:
       position: 104
       prefix: --samples
@@ -96,7 +88,6 @@ inputs:
       - 'null'
       - boolean
     doc: strip "chr" from sequence names
-    default: false
     inputBinding:
       position: 104
       prefix: --strip-chr
@@ -105,7 +96,6 @@ inputs:
       - 'null'
       - boolean
     doc: use uniform a priori probabilities
-    default: false
     inputBinding:
       position: 104
       prefix: --uniform
@@ -114,7 +104,6 @@ inputs:
       - 'null'
       - boolean
     doc: output COVS and GTS in INFO column
-    default: false
     inputBinding:
       position: 104
       prefix: --verbose

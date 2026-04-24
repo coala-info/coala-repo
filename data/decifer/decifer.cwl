@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Use betabinomial likelihood to cluster mutations (default: binomial)'
-    default: false
     inputBinding:
       position: 102
       prefix: --betabinomial
@@ -24,7 +23,6 @@ inputs:
       - boolean
     doc: 'Use binary-search model selection (default: False, iterative is used; use
       binary search when considering large numbers of clusters'
-    default: false
     inputBinding:
       position: 102
       prefix: --binarysearch
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Run with CCF instead of DCF (default: False)'
-    default: false
     inputBinding:
       position: 102
       prefix: --ccf
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: 'Elbow sensitivity, lower values increase sensitivity (default: 0.06)'
-    default: 0.06
     inputBinding:
       position: 102
       prefix: --elbow
@@ -76,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum number of iterations per restart (default: 200)'
-    default: 200
     inputBinding:
       position: 102
       prefix: --maxit
@@ -85,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum number of clusters (default: 12)'
-    default: 12
     inputBinding:
       position: 102
       prefix: --maxk
@@ -94,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum number of clusters, which must be at least 2 (default: 2)'
-    default: 2
     inputBinding:
       position: 102
       prefix: --mink
@@ -103,7 +96,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output prefix (default: ./decifer)'
-    default: ./decifer
     inputBinding:
       position: 102
       prefix: --output
@@ -127,7 +119,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Record objectives (default: False)'
-    default: false
     inputBinding:
       position: 102
       prefix: --record
@@ -136,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of restarts (default: 20)'
-    default: 20
     inputBinding:
       position: 102
       prefix: --restarts
@@ -146,7 +136,6 @@ inputs:
       - int
     doc: 'Maximum size of brute-force search, when fitting betabinomial parameters
       (default: 1e4)'
-    default: 10000
     inputBinding:
       position: 102
       prefix: --restarts_bb
@@ -172,7 +161,6 @@ inputs:
       - float
     doc: 'Sensitivity E to exclude SNPs with 0.5 - E <= BAF < 0.5, for estimating
       betabinomial parameters (default: 0.1)'
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --sensitivity
@@ -190,7 +178,6 @@ inputs:
       - int
     doc: 'Numbers to skip in the brute-force search, when fitting betabinomial parameters
       (default: 10)'
-    default: 10
     inputBinding:
       position: 102
       prefix: --skip
@@ -216,7 +203,6 @@ inputs:
       - float
     doc: Filter poorly fit SNVs with VAFs that are more than this number of 
       standard deviations away from the cluster center VAF (default 1.5)
-    default: 1.5
     inputBinding:
       position: 102
       prefix: --vafdevfilter

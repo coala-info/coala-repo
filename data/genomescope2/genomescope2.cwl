@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Ploidy of the genome
-    default: 2
     inputBinding:
       position: 101
       prefix: --ploidy

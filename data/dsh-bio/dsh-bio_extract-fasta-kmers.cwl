@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: input FASTA alphabet { dna, protein }, default dna
-    default: dna
     inputBinding:
       position: 101
       prefix: --alphabet
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: downstream length, default 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --downstream-length
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - File
     doc: input FASTA path, default stdin
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input-fasta-path
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: upstream length, default 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --upstream-length

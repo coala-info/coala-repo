@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Alignment method {nucleotide, codon, codon12, protein}
-    default: protein
     inputBinding:
       position: 101
       prefix: -a
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - File
     doc: Path to FastTree binary
-    default: FastTree
     inputBinding:
       position: 101
       prefix: --fasttree
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Gap-rich filter percentage threshold {0 - 100}
-    default: 50
     inputBinding:
       position: 101
       prefix: -f
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: GSI value threshold {1 - 100}
-    default: 95
     inputBinding:
       position: 101
       prefix: -g
@@ -76,7 +72,6 @@ inputs:
       - 'null'
       - File
     doc: Path to IQ-TREE binary
-    default: iqtree
     inputBinding:
       position: 101
       prefix: --iqtree
@@ -94,7 +89,6 @@ inputs:
       - 'null'
       - File
     doc: Path to MAFFT binary
-    default: mafft-linsi
     inputBinding:
       position: 101
       prefix: --mafft
@@ -136,7 +130,6 @@ inputs:
       - 'null'
       - File
     doc: Path to RAxML binary
-    default: raxmlHPC-PTHREADS
     inputBinding:
       position: 101
       prefix: --raxml
@@ -145,7 +138,6 @@ inputs:
       - 'null'
       - string
     doc: Name of this run
-    default: tree
     inputBinding:
       position: 101
       prefix: -n
@@ -154,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -163,7 +154,6 @@ inputs:
       - 'null'
       - string
     doc: Tree building program {raxml, iqtree, fasttree}
-    default: iqtree
     inputBinding:
       position: 101
       prefix: -p

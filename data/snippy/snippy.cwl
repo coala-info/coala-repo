@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum VCF variant quality
-    default: 13
     inputBinding:
       position: 101
       prefix: --basequal
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use
-    default: 8
     inputBinding:
       position: 101
       prefix: --cpus
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage to call a site
-    default: 10
     inputBinding:
       position: 101
       prefix: --mincov
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum proportion for variant evidence
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --minfrac
@@ -85,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: RAM to use in GB
-    default: 8
     inputBinding:
       position: 101
       prefix: --ram

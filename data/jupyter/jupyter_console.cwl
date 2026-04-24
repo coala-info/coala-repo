@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: Full path of a config file.
-    default: "''"
     inputBinding:
       position: 101
       prefix: --config
@@ -36,7 +35,6 @@ inputs:
       This file will contain the IP, ports, and authentication key needed to\nconnect
       clients to this kernel. By default, this file will be created in the\nsecurity
       dir of the current profile, but can be specified by absolute path."
-    default: "''"
     inputBinding:
       position: 101
       prefix: -f
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: Connect to an already running kernel
-    default: "''"
     inputBinding:
       position: 101
       prefix: --existing
@@ -79,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: 'set the heartbeat port [default: random]'
-    default: 0
     inputBinding:
       position: 101
       prefix: --hb
@@ -88,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: 'set the iopub (PUB) port [default: random]'
-    default: 0
     inputBinding:
       position: 101
       prefix: --iopub
@@ -99,7 +94,6 @@ inputs:
     doc: "Set the kernel's IP address [default localhost]. If the IP address is\n\
       something other than localhost, then Consoles on other machines will be able\n\
       to connect to the Kernel, so be careful!"
-    default: "''"
     inputBinding:
       position: 101
       prefix: --ip
@@ -108,7 +102,6 @@ inputs:
       - 'null'
       - string
     doc: The name of the default kernel to start.
-    default: "'python'"
     inputBinding:
       position: 101
       prefix: --kernel
@@ -118,7 +111,6 @@ inputs:
       - int
     doc: "Set the log level by value or name.\nChoices: (0, 10, 20, 30, 40, 50, 'DEBUG',
       'INFO', 'WARN', 'ERROR', 'CRITICAL')"
-    default: 30
     inputBinding:
       position: 101
       prefix: --log-level
@@ -145,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: 'set the shell (ROUTER) port [default: random]'
-    default: 0
     inputBinding:
       position: 101
       prefix: --shell
@@ -162,7 +153,6 @@ inputs:
       - 'null'
       - string
     doc: The SSH server to use to connect to the kernel.
-    default: "''"
     inputBinding:
       position: 101
       prefix: --ssh
@@ -171,7 +161,6 @@ inputs:
       - 'null'
       - int
     doc: 'set the stdin (ROUTER) port [default: random]'
-    default: 0
     inputBinding:
       position: 101
       prefix: --stdin
@@ -180,7 +169,6 @@ inputs:
       - 'null'
       - string
     doc: "Choices: ['tcp', 'ipc']"
-    default: "'tcp'"
     inputBinding:
       position: 101
       prefix: --transport

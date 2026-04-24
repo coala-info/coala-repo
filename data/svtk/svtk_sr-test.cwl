@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Number of background samples to choose for comparison in t-test.
-    default: 160
     inputBinding:
       position: 103
       prefix: --background
@@ -67,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Window around variant start/end to consider for split read support.
-    default: 100
     inputBinding:
       position: 103
       prefix: --window

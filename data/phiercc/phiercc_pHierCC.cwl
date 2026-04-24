@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - float
     doc: Allowed proportion of missing genes in pairwise comparisons
-    default: 0.03
     inputBinding:
       position: 101
       prefix: --allowed_missing
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - File
     doc: The NPZ output of a previous pHierCC run
-    default: None
     inputBinding:
       position: 101
       prefix: --append
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes (CPUs) to use
-    default: 4
     inputBinding:
       position: 101
       prefix: --n_proc

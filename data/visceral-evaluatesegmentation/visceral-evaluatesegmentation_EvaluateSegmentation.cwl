@@ -40,7 +40,6 @@ inputs:
       - string
     doc: Specify whether millimeter or voxel to be used as a unit for distances 
       and volumes
-    default: voxel
     inputBinding:
       position: 103
       prefix: -unit
@@ -50,7 +49,6 @@ inputs:
       - string
     doc: The metrics to be used. Note that additional options can be given 
       between two @ characters.
-    default: all
     inputBinding:
       position: 103
       prefix: -use

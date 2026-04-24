@@ -80,7 +80,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_path
-    default: system.ent
 
   config:
     label: Advanced configuration options for biobb_chemistry BabelConvert

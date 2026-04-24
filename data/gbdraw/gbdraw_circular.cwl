@@ -11,7 +11,6 @@ inputs:
       - boolean
     doc: 'Place labels inside the circle (default: False). If enabled, labels are
       placed both inside and outside the circle, and gc and skew tracks are not shown.'
-    default: false
     inputBinding:
       position: 101
       prefix: --allow_inner_labels
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: 'Axis stroke color (str; default: "gray")'
-    default: gray
     inputBinding:
       position: 101
       prefix: --axis_stroke_color
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: 'Block stroke color (str; default: "gray")'
-    default: gray
     inputBinding:
       position: 101
       prefix: --block_stroke_color
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: 'Definition font size (optional; default: 18)'
-    default: '18'
     inputBinding:
       position: 101
       prefix: --definition_font_size
@@ -82,7 +78,6 @@ inputs:
       - 'null'
       - string
     doc: 'Comma-separated list of feature keys to draw (default: CDS,rRNA,tRNA,tmRNA,ncRNA,misc_RNA,repeat_region)'
-    default: CDS,rRNA,tRNA,tmRNA,ncRNA,misc_RNA,repeat_region
     inputBinding:
       position: 101
       prefix: --features
@@ -92,7 +87,6 @@ inputs:
       - string
     doc: 'Comma-separated list of output file formats (svg, png, pdf, eps, ps; default:
       svg).'
-    default: svg
     inputBinding:
       position: 101
       prefix: --format
@@ -163,7 +157,6 @@ inputs:
       - string
     doc: 'Legend position (default: "right"; "left", "right", "upper_left", "upper_right",
       "lower_left", "lower_right", "none")'
-    default: right
     inputBinding:
       position: 101
       prefix: --legend
@@ -190,7 +183,6 @@ inputs:
       - 'null'
       - string
     doc: 'Line stroke color (str; default: "gray")'
-    default: gray
     inputBinding:
       position: 101
       prefix: --line_stroke_color
@@ -208,7 +200,6 @@ inputs:
       - 'null'
       - string
     doc: 'dinucleotide (default: GC).'
-    default: GC
     inputBinding:
       position: 101
       prefix: --nt
@@ -233,7 +224,6 @@ inputs:
       - 'null'
       - string
     doc: 'output file prefix (default: accession number of the sequence)'
-    default: accession number of the sequence
     inputBinding:
       position: 101
       prefix: --output
@@ -242,7 +232,6 @@ inputs:
       - 'null'
       - string
     doc: 'Palette name (default: default)'
-    default: default
     inputBinding:
       position: 101
       prefix: --palette
@@ -268,7 +257,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Separate strands (default: False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --separate_strands
@@ -277,7 +265,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Show feature labels (default: False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --show_labels
@@ -312,7 +299,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Suppress GC content track (default: False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --suppress_gc
@@ -321,7 +307,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Suppress GC skew track (default: False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --suppress_skew
@@ -338,7 +323,6 @@ inputs:
       - 'null'
       - string
     doc: 'Track type (default: "tuckin"; "tuckin", "middle", "spreadout")'
-    default: tuckin
     inputBinding:
       position: 101
       prefix: --track_type

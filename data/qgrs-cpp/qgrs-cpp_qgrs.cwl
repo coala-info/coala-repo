@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: filter output to QGRS with g-score equal to or greater than n
-    default: 17
     inputBinding:
       position: 101
       prefix: -s
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: filter output to QGRS with number tetrads equal to or greater than n
-    default: 2
     inputBinding:
       position: 101
       prefix: -t

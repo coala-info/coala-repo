@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Channel to check for duplicates
-    default: bioconda
     inputBinding:
       position: 102
       prefix: --channel
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only print removal plan.
-    default: false
     inputBinding:
       position: 102
       prefix: --dryrun
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Limit lines emitted for commands executed
-    default: '-'
     inputBinding:
       position: 102
       prefix: --log-command-max-lines
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: Write log to file
-    default: '-'
     inputBinding:
       position: 102
       prefix: --logfile
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Log level for log file
-    default: debug
     inputBinding:
       position: 102
       prefix: --logfile-level
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: Set logging level (debug, info, warning, error, critical)
-    default: info
     inputBinding:
       position: 102
       prefix: --loglevel
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove packages from anaconda.
-    default: false
     inputBinding:
       position: 102
       prefix: --remove
@@ -78,7 +71,6 @@ inputs:
       - 'null'
       - boolean
     doc: Require version and build to strictly match.
-    default: false
     inputBinding:
       position: 102
       prefix: --strict-build
@@ -87,7 +79,6 @@ inputs:
       - 'null'
       - boolean
     doc: Require version to strictly match.
-    default: false
     inputBinding:
       position: 102
       prefix: --strict-version
@@ -96,7 +87,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print anaconda urls.
-    default: false
     inputBinding:
       position: 102
       prefix: --url

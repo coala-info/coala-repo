@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: verbose output
-    default: 0
     inputBinding:
       position: 101
       prefix: -v

@@ -95,7 +95,6 @@ inputs:
       - int
     doc: Maximum number of retries per upload part for multipart uploads. 
       Defaults to 3.
-    default: 3
     inputBinding:
       position: 102
       prefix: --max-retries
@@ -106,7 +105,6 @@ inputs:
     doc: Number of uploads to process in parallel. Defaults to 1, but can be set
       much higher than CPU count since the upload process is IO bound, not CPU 
       bound.
-    default: 1
     inputBinding:
       position: 102
       prefix: --num-processes

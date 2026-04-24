@@ -23,7 +23,6 @@ inputs:
       - float
     doc: Maximum pi value to count a lineage as present. Should be the same as 
       used in classify step.
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --max_pi
@@ -33,7 +32,6 @@ inputs:
       - float
     doc: Minimum probability score to count a lineage as present. Should be the 
       same as used in classify step.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --min_prob

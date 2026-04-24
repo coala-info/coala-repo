@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Read tag storing cell barcode information
-    default: CB
     inputBinding:
       position: 101
       prefix: --barcodetag
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors
-    default: 1
     inputBinding:
       position: 101
       prefix: --nproc

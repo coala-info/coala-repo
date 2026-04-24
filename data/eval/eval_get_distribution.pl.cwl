@@ -38,7 +38,6 @@ inputs:
     doc: 'Specify distribution mode. Must be a number selected from the list (1: Transcripts_Per_Gene,
       2: Transcript_Length, 3: Transcript_Coding_Length, 4: Exons_Per_Transcript,
       5: Exon_Length, 6: Exon_Score).'
-    default: 1
     inputBinding:
       position: 104
       prefix: -m

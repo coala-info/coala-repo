@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: decoy tag
-    default: rev_
     inputBinding:
       position: 101
       prefix: --tag
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: peptide ion FDR level
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --ion
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: minimum peptide length criterion for protein probability assignment
-    default: 7
     inputBinding:
       position: 101
       prefix: --minPepLen
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - float
     doc: peptide FDR level
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --pep
@@ -73,7 +69,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for defining peptide uniqueness
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --weight
@@ -98,7 +93,6 @@ inputs:
       - 'null'
       - float
     doc: protein FDR level
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --prot
@@ -108,7 +102,6 @@ inputs:
       - float
     doc: protein probability threshold for the FDR filtering (not used with the 
       razor algorithm)
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --protProb
@@ -125,7 +118,6 @@ inputs:
       - 'null'
       - float
     doc: psm FDR level
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --psm
@@ -134,7 +126,6 @@ inputs:
       - 'null'
       - float
     doc: top peptide probability threshold for the FDR filtering
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --pepProb

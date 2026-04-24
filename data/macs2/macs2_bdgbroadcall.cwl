@@ -14,7 +14,6 @@ inputs:
     doc: 'Cutoff for linking regions/low abundance regions depending on which method
       you used for score track. If the file contains qvalue scores from MACS2, score
       1 means qvalue 0.1, and score 0.3 means qvalue 0.5. DEFAULT: 1'
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --cutoff-link
@@ -25,7 +24,6 @@ inputs:
     doc: 'Cutoff for peaks depending on which method you used for score track. If
       the file contains qvalue scores from MACS2, score 2 means qvalue 0.01. DEFAULT:
       2'
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --cutoff-peak
@@ -41,7 +39,6 @@ inputs:
       - int
     doc: 'maximum gap between significant peaks, better to set it as tag size. DEFAULT:
       30'
-    default: 30
     inputBinding:
       position: 101
       prefix: --lvl1-max-gap
@@ -51,7 +48,6 @@ inputs:
       - int
     doc: 'maximum linking between significant peaks, better to set it as 4 times of
       d value. DEFAULT: 800'
-    default: 800
     inputBinding:
       position: 101
       prefix: --lvl2-max-gap
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum length of peak, better to set it as d value. DEFAULT: 200'
-    default: 200
     inputBinding:
       position: 101
       prefix: --min-length

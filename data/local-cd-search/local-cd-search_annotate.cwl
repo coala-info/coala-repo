@@ -23,7 +23,6 @@ inputs:
     doc: Redundancy level of domain hit data passed to rpsbproc. 'rep' (best 
       model per region of the query), 'std' (best model per source per region of
       the query), 'full' (all models meeting E-value significance).
-    default: std
     inputBinding:
       position: 103
       prefix: --data-mode
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum allowed E-value for hits.
-    default: 0.01
     inputBinding:
       position: 103
       prefix: --evalue
@@ -73,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for rpsblast.
-    default: 0
     inputBinding:
       position: 103
       prefix: --threads

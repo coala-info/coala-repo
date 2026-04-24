@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: delimiter for input/output results. Supports a comma and a tab.
-    default: comma
     inputBinding:
       position: 101
       prefix: --delimiter
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for the output file
-    default: ''
     inputBinding:
       position: 101
       prefix: --prefix

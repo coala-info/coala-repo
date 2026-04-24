@@ -51,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Base quality threshold <= 10 (default 0).
-    default: 0
     inputBinding:
       position: 104
       prefix: -q
@@ -76,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: 'Identity threshold (default: 0).'
-    default: 0.0
     inputBinding:
       position: 104
       prefix: -y
@@ -85,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: Input format [fastq (default)|sam|bam].
-    default: fastq
     inputBinding:
       position: 104
       prefix: -F
@@ -110,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum insert size for paired reads (default: 500).'
-    default: 500
     inputBinding:
       position: 104
       prefix: -i
@@ -119,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum insert size for paired reads (default: 0).'
-    default: 0
     inputBinding:
       position: 104
       prefix: -j
@@ -128,7 +123,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output format [sam(default)|bam|cigar|gff|ssaha]. Ext: [sam|bam]:nohead,x,clip.'
-    default: sam
     inputBinding:
       position: 104
       prefix: -f
@@ -137,7 +131,6 @@ inputs:
       - 'null'
       - string
     doc: 'Type of paired read library [pe|mp|pp] (default: pe).'
-    default: pe
     inputBinding:
       position: 104
       prefix: -l

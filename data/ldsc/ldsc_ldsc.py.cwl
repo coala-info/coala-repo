@@ -204,7 +204,6 @@ inputs:
       - 'null'
       - float
     doc: Minor allele frequency lower bound. Default is MAF > 0.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --maf

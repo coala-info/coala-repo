@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Print commands but do not run (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: 'Format for output (default: nuc_fa)'
-    default: nuc_fa
     inputBinding:
       position: 101
       prefix: --outfmt

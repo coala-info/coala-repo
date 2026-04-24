@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: unaligned reference removal method
-    default: parse
     inputBinding:
       position: 102
       prefix: --method

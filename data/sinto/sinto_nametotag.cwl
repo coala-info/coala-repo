@@ -18,7 +18,6 @@ inputs:
       - string
     doc: Regular expression used to extract cell barcode from read name. Default
       ("[^:]*") matches all characters up to the first colon.
-    default: '[^:]*'
     inputBinding:
       position: 101
       prefix: --barcode_regex
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Output format. One of 't' (SAM), 'b' (BAM), or 'u' (uncompressed BAM)
-    default: t
     inputBinding:
       position: 101
       prefix: --outputformat

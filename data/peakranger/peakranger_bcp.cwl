@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: read extension length
-    default: 200
     inputBinding:
       position: 101
       prefix: --ext_length
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: p value cut-off
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: --pval
@@ -66,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: the length of the snapshort regions in the report
-    default: 6000
     inputBinding:
       position: 101
       prefix: --plot_region
@@ -83,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: sliding window size
-    default: 500
     inputBinding:
       position: 101
 outputs:

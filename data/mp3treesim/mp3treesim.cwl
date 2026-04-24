@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Similarity method to use (e.g., mp3, grf, rf)
-    default: mp3
     inputBinding:
       position: 101
       prefix: --method

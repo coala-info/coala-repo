@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: acceptable false positive rate
-    default: 0.05
     inputBinding:
       position: 101
       prefix: -e
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: number of border nucleotides for shallow regions
-    default: 2
     inputBinding:
       position: 101
       prefix: -b
@@ -26,7 +24,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: none
     inputBinding:
       position: 101
       prefix: -c
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: denominator for minimum candidate element score formula
-    default: 10.0
     inputBinding:
       position: 101
       prefix: -q
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: depth threshold for shallow columns, in substitutions per site
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -d
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: suffix for naming exclusion region file
-    default: no output
     inputBinding:
       position: 101
       prefix: -w
@@ -70,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: exponent for minimum candidate element score formula
-    default: 1.15
     inputBinding:
       position: 101
       prefix: -r
@@ -79,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: inverse of the rounding tolerance
-    default: 10
     inputBinding:
       position: 101
       prefix: -t
@@ -88,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: maximum element length
-    default: 2000
     inputBinding:
       position: 101
       prefix: -L
@@ -97,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: minimum element length
-    default: 4
     inputBinding:
       position: 101
       prefix: -l
@@ -106,7 +96,6 @@ inputs:
       - 'null'
       - string
     doc: suffix for naming output files
-    default: .elems
     inputBinding:
       position: 101
       prefix: -x
@@ -116,7 +105,6 @@ inputs:
       - float
     doc: penalty coefficient for shallow columns, as fraction of the median 
       neutral rate
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -p
@@ -124,7 +112,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 0
     inputBinding:
       position: 101
       prefix: -s
@@ -133,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: total number of allowed non-border shallow nucleotides per element
-    default: 10
     inputBinding:
       position: 101
       prefix: -a

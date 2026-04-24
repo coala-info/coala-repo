@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - float
     doc: 'AAI threshold used to identify strain heterogeneity (default: 0.9)'
-    default: 0.9
     inputBinding:
       position: 103
       prefix: --aai_strain
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: 'e-value cut off (default: 1e-10)'
-    default: '1e-10'
     inputBinding:
       position: 103
       prefix: --e_value
@@ -72,7 +70,6 @@ inputs:
       - 'null'
       - float
     doc: 'percent overlap between target and query (default: 0.7)'
-    default: 0.7
     inputBinding:
       position: 103
       prefix: --length
@@ -91,7 +88,6 @@ inputs:
       the same scaffold\n                          8. list indicating position of
       each marker gene within a bin\n                          9. FASTA file of marker
       genes identified in each bin"
-    default: 1
     inputBinding:
       position: 103
       prefix: --out_format
@@ -132,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of threads (default: 1)'
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

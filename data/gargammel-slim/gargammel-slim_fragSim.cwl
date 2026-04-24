@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - File
     doc: Distance from ends to consider
-    default: 1
     inputBinding:
       position: 102
       prefix: --dist
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Generate fragments of fixed length
-    default: 20
     inputBinding:
       position: 102
       prefix: -l
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: Use GC bias factor
-    default: 0
     inputBinding:
       position: 102
       prefix: -gc
@@ -92,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum fragments length
-    default: 1000
     inputBinding:
       position: 102
       prefix: -M
@@ -101,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum fragments length
-    default: 0
     inputBinding:
       position: 102
       prefix: -m
@@ -126,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Generate [number] fragments
-    default: 10
     inputBinding:
       position: 102
       prefix: -n
@@ -135,7 +129,6 @@ inputs:
       - 'null'
       - Directory
     doc: Use this directory as the temporary dir for zipped files
-    default: /tmp/
     inputBinding:
       position: 102
       prefix: -tmp

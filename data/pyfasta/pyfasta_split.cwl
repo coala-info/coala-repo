@@ -28,7 +28,6 @@ inputs:
     doc: split big files into pieces of this size in basepairs. default default 
       of -1 means do not split the sequence up into k-mers, just split based on 
       the headers. a reasonable value would be 10Kbp
-    default: -1
     inputBinding:
       position: 102
       prefix: --kmers

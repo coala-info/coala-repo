@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum fragment length to consider.
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-len
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Length of the end motifs to analyze.
-    default: 5
     inputBinding:
       position: 102
       prefix: --motif-len
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: Separator used in the input file.
-    default: \t
     inputBinding:
       position: 102
       prefix: --sep
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for computation.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

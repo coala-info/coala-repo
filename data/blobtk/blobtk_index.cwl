@@ -55,7 +55,6 @@ inputs:
         items: float
     doc: Window sizes for feature extraction. Supported values depend on the 
       BlobDir (typically 0.01, 0.1, 1, 100000, 1000000)
-    default: 1
     inputBinding:
       position: 101
       prefix: --window-size

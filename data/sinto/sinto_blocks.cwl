@@ -27,7 +27,6 @@ inputs:
       - string
     doc: "Read tag storing cell barcode information (default =\n                 \
       \       \"CB\")"
-    default: CB
     inputBinding:
       position: 101
       prefix: --barcodetag
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum MAPQ required to retain read (default = 30)
-    default: 30
     inputBinding:
       position: 101
       prefix: --min_mapq
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors (default = 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --nproc
@@ -74,7 +71,6 @@ inputs:
       - string
     doc: "Read tag storing UMI barcode information (default =\n                  \
       \      \"UB\")"
-    default: UB
     inputBinding:
       position: 101
       prefix: --umitag

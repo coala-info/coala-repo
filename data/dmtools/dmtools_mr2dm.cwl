@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: coverage filter, >=[int], default 4.
-    default: 4
     inputBinding:
       position: 101
       prefix: --CF
@@ -33,7 +32,6 @@ inputs:
       - string
     doc: CG/CHG/CHH/ALL, only convert provide context in methratio file or 
       bedsimple, default ALL
-    default: ALL
     inputBinding:
       position: 101
   - id: file_format
@@ -42,7 +40,6 @@ inputs:
       - string
     doc: file format. methratio, bedmethyl, bismark or bedsimple [default 
       methratio]
-    default: methratio
     inputBinding:
       position: 101
       prefix: -f
@@ -112,7 +109,6 @@ inputs:
       - 'null'
       - string
     doc: make chromsize file and meth file in same coordinate, default Y
-    default: Y
     inputBinding:
       position: 101
       prefix: --sort

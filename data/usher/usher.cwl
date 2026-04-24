@@ -46,7 +46,6 @@ inputs:
       - int
     doc: Maximum parsimony score of the most parsimonious placement(s) allowed 
       per sample beyond which the sample is ignored
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --max-parsimony-per-sample
@@ -56,7 +55,6 @@ inputs:
       - int
     doc: Maximum number of equally parsimonious placements allowed per sample 
       beyond which the sample is ignored
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --max-uncertainty-per-sample
@@ -66,7 +64,6 @@ inputs:
       - int
     doc: Create a new tree up to this limit for each possibility of 
       parsimony-optimal placement
-    default: 1
     inputBinding:
       position: 101
       prefix: --multiple-placements
@@ -83,7 +80,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory to dump output and log files
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir
@@ -136,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use when possible
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -171,7 +166,6 @@ inputs:
     doc: Similar to write-subtrees-size but produces a single subtree with all 
       newly added samples along with random samples up to the value specified by
       this argument
-    default: 0
     inputBinding:
       position: 101
       prefix: --write-single-subtree
@@ -181,7 +175,6 @@ inputs:
       - int
     doc: Write minimum set of subtrees covering the newly added samples of size 
       equal to this value
-    default: 0
     inputBinding:
       position: 101
       prefix: --write-subtrees-size

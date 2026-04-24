@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - float
     doc: Text fontsize
-    default: 25
     inputBinding:
       position: 102
       prefix: --fontsize
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - Directory
     doc: Create plots in this directory
-    default: current directory
     inputBinding:
       position: 102
       prefix: --path

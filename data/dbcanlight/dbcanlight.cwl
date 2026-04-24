@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: Coverage cutoff
-    default: 0.35
     inputBinding:
       position: 102
       prefix: --coverage
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: E-value cutoff
-    default: 1e-15
     inputBinding:
       position: 102
       prefix: --evalue
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

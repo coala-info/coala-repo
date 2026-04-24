@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: Bit score threshold for reported hits
-    default: 15.0
     inputBinding:
       position: 101
       prefix: --bit-cutoff
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - File
     doc: Input fasta index file
-    default: <input.fasta>.fai
     inputBinding:
       position: 101
       prefix: --fai
@@ -43,7 +41,6 @@ inputs:
     doc: 'all: All hits are kept (default). no_overlap: Hits are removed if they are
       overlapped by a better hit from a different query. best_per: Only the highest
       scoring hit per contig is kept.'
-    default: all
     inputBinding:
       position: 101
       prefix: --filter
@@ -103,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Length threshold (no. of codons) for reported hits
-    default: 30
     inputBinding:
       position: 101
       prefix: --length-cutoff
@@ -145,7 +141,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory.
-    default: current working directory
     inputBinding:
       position: 101
       prefix: --outdir
@@ -154,7 +149,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output files
-    default: dvorfs
     inputBinding:
       position: 101
       prefix: --prefix
@@ -163,7 +157,6 @@ inputs:
       - 'null'
       - int
     doc: Size of flanking regions next to presearch hits in which to search
-    default: 3000
     inputBinding:
       position: 101
       prefix: --presearch-slop
@@ -188,7 +181,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory in which DVORFS will save files during a run
-    default: <outdir>/dvorfs.tmp
     inputBinding:
       position: 101
       prefix: --workdir

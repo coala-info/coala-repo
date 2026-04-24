@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: 'Number of CPUs. Default: auto'
-    default: auto
     inputBinding:
       position: 101
       prefix: --cpus
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: Create USEARCH DB
-    default: None
     inputBinding:
       position: 101
       prefix: --create_db
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove Intermediate Files
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'De-replicate sequences. Default: off'
-    default: false
     inputBinding:
       position: 101
       prefix: --derep_fulllength
@@ -48,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: "Drop Seqeunces with more than X # of N's"
-    default: 8
     inputBinding:
       position: 101
       prefix: --drop_ns
@@ -57,7 +52,6 @@ inputs:
       - 'null'
       - File
     doc: FASTA input
-    default: None
     inputBinding:
       position: 101
       prefix: --fasta
@@ -66,14 +60,12 @@ inputs:
       - 'null'
       - string
     doc: Reformat FASTA headers for UTAX
-    default: unite2utax
     inputBinding:
       position: 101
       prefix: --format
   - id: fwd_primer
     type: string
     doc: Forward primer (fITS7)
-    default: fITS7
     inputBinding:
       position: 101
       prefix: --fwd_primer
@@ -82,7 +74,6 @@ inputs:
       - 'null'
       - boolean
     doc: Install into AMPtk database
-    default: false
     inputBinding:
       position: 101
       prefix: --install
@@ -91,7 +82,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run LCA (last common ancestor) for dereplicating taxonomy
-    default: false
     inputBinding:
       position: 101
       prefix: --lca
@@ -100,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum read length to keep
-    default: 1200
     inputBinding:
       position: 101
       prefix: --max_len
@@ -109,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length to keep
-    default: 100
     inputBinding:
       position: 101
       prefix: --min_len
@@ -118,7 +106,6 @@ inputs:
       - 'null'
       - string
     doc: Base Name Output files
-    default: None
     inputBinding:
       position: 101
       prefix: --out
@@ -127,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: Max Primer Mismatch
-    default: 2
     inputBinding:
       position: 101
       prefix: --primer_mismatch
@@ -136,7 +122,6 @@ inputs:
       - 'null'
       - string
     doc: 'Keep Seq if primer found Default: for'
-    default: for
     inputBinding:
       position: 101
       prefix: --primer_required
@@ -145,7 +130,6 @@ inputs:
       - 'null'
       - string
     doc: Reverse primer (ITS4)
-    default: ITS4
     inputBinding:
       position: 101
       prefix: --rev_primer
@@ -154,7 +138,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip Primer trimming (not recommended)
-    default: false
     inputBinding:
       position: 101
       prefix: --skip_trimming
@@ -163,7 +146,6 @@ inputs:
       - 'null'
       - string
     doc: 'DB source and version separated by :'
-    default: ':'
     inputBinding:
       position: 101
       prefix: --source
@@ -172,7 +154,6 @@ inputs:
       - 'null'
       - string
     doc: Random subsample
-    default: None
     inputBinding:
       position: 101
       prefix: --subsample
@@ -181,7 +162,6 @@ inputs:
       - 'null'
       - int
     doc: Truncate reads to length
-    default: None
     inputBinding:
       position: 101
       prefix: --trunclen
@@ -190,7 +170,6 @@ inputs:
       - 'null'
       - File
     doc: USEARCH9 EXE
-    default: usearch9
     inputBinding:
       position: 101
       prefix: --usearch
@@ -199,7 +178,6 @@ inputs:
       - 'null'
       - string
     doc: UTAX training parameters
-    default: NVkpcofgs
     inputBinding:
       position: 101
       prefix: --utax_splitlevels
@@ -208,7 +186,6 @@ inputs:
       - 'null'
       - string
     doc: UTAX training parameters
-    default: kpcofgs
     inputBinding:
       position: 101
       prefix: --utax_trainlevels

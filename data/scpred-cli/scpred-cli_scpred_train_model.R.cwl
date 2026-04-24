@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Should parallel processing be allowed?
-    default: true
     inputBinding:
       position: 101
       prefix: --allow-parallel
@@ -19,7 +18,6 @@ inputs:
       - boolean
     doc: Should scpred object be extracted from Seurat object after model 
       training?
-    default: false
     inputBinding:
       position: 101
       prefix: --get-scpred
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Number of resampling iterations.
-    default: 5
     inputBinding:
       position: 101
       prefix: --iter-num
@@ -52,7 +49,6 @@ inputs:
       - string
     doc: Model type used for training. Must be one of the models supported by 
       Caret package.
-    default: svmRadial
     inputBinding:
       position: 101
       prefix: --model
@@ -106,7 +102,6 @@ inputs:
       - 'null'
       - boolean
     doc: If TRUE, training data is returned within scPred object.
-    default: false
     inputBinding:
       position: 101
       prefix: --return-data

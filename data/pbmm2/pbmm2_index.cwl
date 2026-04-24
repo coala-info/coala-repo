@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size (no larger than 28).
-    default: -1
     inputBinding:
       position: 102
       prefix: -k
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL).'
-    default: WARN
     inputBinding:
       position: 102
       prefix: --log-level
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Minimizer window size.
-    default: -1
     inputBinding:
       position: 102
       prefix: -w
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use, 0 means autodetection.
-    default: 0
     inputBinding:
       position: 102
       prefix: --num-threads
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set alignment mode. Valid choices: (SUBREAD, CCS, ISOSEQ, UNROLLED).'
-    default: CCS
     inputBinding:
       position: 102
       prefix: --preset

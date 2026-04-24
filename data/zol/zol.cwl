@@ -31,7 +31,6 @@ inputs:
       - int
     doc: Minimum length of chopped CDS (cCDS) features to keep. Relavent to 
       'domain-mode'.
-    default: 50
     inputBinding:
       position: 101
       prefix: --ccds-min-length
@@ -41,7 +40,6 @@ inputs:
       - float
     doc: Inflation parameter for MCL clustering of ortholog groups. Can be set 
       to -1 for single-linkage clustering
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --clustering-inflation
@@ -68,7 +66,6 @@ inputs:
       - float
     doc: Minimum query coverage for an alignment between protein pairs from two 
       gene-clusters to consider in search for orthologs.
-    default: 50.0
     inputBinding:
       position: 101
       prefix: --coverage-threshold
@@ -98,7 +95,6 @@ inputs:
       - string
     doc: Parameters for performing diamond cluster based ortholog group 
       clustering if requested via --dco-orthogroup.
-    default: --approx-id 50 --mutual-cover 25
     inputBinding:
       position: 101
       prefix: --dc-params
@@ -107,7 +103,6 @@ inputs:
       - 'null'
       - float
     doc: skani aligned fraction threshold to use for dereplication.
-    default: 95.0
     inputBinding:
       position: 101
       prefix: --derep-coverage
@@ -116,7 +111,6 @@ inputs:
       - 'null'
       - float
     doc: skani ANI threshold to use for dereplication.
-    default: 99.0
     inputBinding:
       position: 101
       prefix: --derep-identity
@@ -172,7 +166,6 @@ inputs:
       - float
     doc: Maximum E-value for an alignment between protein pairs from two 
       gene-clusters to consider in search for orthologs.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --evalue-threshold
@@ -219,7 +212,6 @@ inputs:
       - int
     doc: Minutes to allow GARD to run before timing out and using the initial 
       alilgnment for downstream selection analyses instead
-    default: 60
     inputBinding:
       position: 101
       prefix: --gard-timeout
@@ -229,7 +221,6 @@ inputs:
       - float
     doc: Minimum identity coverage for an alignment between protein pairs from 
       two gene-clusters to consider in search for orthologs.
-    default: 30.0
     inputBinding:
       position: 101
       prefix: --identity-threshold
@@ -257,7 +248,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the height/length of the heatmap plot
-    default: 7
     inputBinding:
       position: 101
       prefix: --length
@@ -285,7 +275,6 @@ inputs:
     doc: 'Parameters for controlling Pfam domain annotation with PyHMMER. String with
       three space-separated parts: 1) Domain filtering mode (Domain or Full) 2) Score
       cutoff (Gathering, Trusted, Noise, or None) 3) E-value threshold (float)'
-    default: Domain Gathering 10.0
     inputBinding:
       position: 101
       prefix: --pfam-params
@@ -328,7 +317,6 @@ inputs:
       DIAMOND blastp search mode, second should be identity threshold to match 
       non-rep proteins to rep proteins, and third should be the non-rep protein 
       coverage threshold to the rep
-    default: fast 98.0 95.0
     inputBinding:
       position: 101
       prefix: --reinflate-params
@@ -406,7 +394,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the width of the heatmap plot
-    default: 14
     inputBinding:
       position: 101
       prefix: --width

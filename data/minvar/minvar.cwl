@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - boolean
     doc: keep intermediate files
-    default: false
     inputBinding:
       position: 101
       prefix: --keep
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: turn on recalibration with GATK
-    default: false
     inputBinding:
       position: 101
       prefix: --recal

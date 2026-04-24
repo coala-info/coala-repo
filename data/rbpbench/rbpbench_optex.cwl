@@ -19,7 +19,6 @@ inputs:
       - boolean
     doc: Reverse --bed-sc-thr filtering (i.e. the lower the better, e.g. if 
       score column contains p-values)
-    default: false
     inputBinding:
       position: 101
       prefix: --bed-sc-thr-rf
@@ -30,7 +29,6 @@ inputs:
     doc: --in BED score column used for p-value calculations and finding optimal
       extension. BED score can be e.g. log2 fold change or -log10 p-value of the
       region
-    default: 5
     inputBinding:
       position: 101
       prefix: --bed-score-col
@@ -40,7 +38,6 @@ inputs:
       - float
     doc: 'CMSEARCH bit score threshold (CMSEARCH options: -T --incT). The higher the
       more strict'
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --cmsearch-bs
@@ -51,7 +48,6 @@ inputs:
     doc: 'Set CMSEARCH mode to control strictness of filtering. 1: default setting
       (CMSEARCH option: --default). 2: max setting (CMSEARCH option: --max), i.e.,
       turn all heuristic filters off, slower and more sensitive / more hits)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --cmsearch-mode
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: Longest extension p-value
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --ext-pval
@@ -92,7 +87,6 @@ inputs:
       2: use frequencies from human ENSEMBL transcripts (including introns, resulting
       in lower G+C and T most prominent) 3: use uniform frequencies (same for every
       nucleotide)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --fimo-ntf-mode
@@ -101,7 +95,6 @@ inputs:
       - 'null'
       - float
     doc: 'FIMO p-value threshold (FIMO option: --thresh)'
-    default: 0.0005
     inputBinding:
       position: 101
       prefix: --fimo-pval
@@ -118,7 +111,6 @@ inputs:
     doc: Keep only best FIMO/CMSEARCH motif hits (i.e., hit with lowest p-value 
       / highest bit score for each motif sequence/site combination). By default,
       report all hits
-    default: false
     inputBinding:
       position: 101
       prefix: --greatest-hits
@@ -135,7 +127,6 @@ inputs:
       - boolean
     doc: Disable MEME version check. Make sure --meme-no-pgc is set if MEME 
       version >= 5.5.4 is installed!
-    default: false
     inputBinding:
       position: 101
       prefix: --meme-no-check
@@ -145,7 +136,6 @@ inputs:
       - boolean
     doc: Manually set MEME's FIMO --no-pgc option (required for MEME version >= 
       5.5.4). Make sure that MEME >= 5.5.4 is installed!
-    default: false
     inputBinding:
       position: 101
       prefix: --meme-no-pgc
@@ -157,7 +147,6 @@ inputs:
       "catrapid_omics_v2.1_human_6plus_ext"), 2: human RBP motifs + 23 ucRBP motifs
       (277 RBPs, 622 motifs, "catrapid_omics_v2.1_human_6plus_ext_ucrbps"), 3: human
       RBP motifs from Ray et al. 2013 (80 RBPs, 102 motifs, "ray2013_human_rbps_rnacompete")'
-    default: 1
     inputBinding:
       position: 101
       prefix: --motif-db

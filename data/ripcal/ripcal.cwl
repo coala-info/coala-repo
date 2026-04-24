@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Alignment model [gc|consensus|user]
-    default: gc
     inputBinding:
       position: 101
       prefix: -m
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: RIP analysis type [align|index|scan]
-    default: align
     inputBinding:
       position: 101
       prefix: -t
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: CpA+TpG/ApC+GpT threshold
-    default: 1.03
     inputBinding:
       position: 101
       prefix: -w
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Scanning subsequence increment
-    default: 150
     inputBinding:
       position: 101
       prefix: -i
@@ -99,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Length of scanning subsequence
-    default: 300
     inputBinding:
       position: 101
       prefix: -l
@@ -108,7 +103,6 @@ inputs:
       - 'null'
       - float
     doc: TpA/ApT threshold
-    default: 0.89
     inputBinding:
       position: 101
       prefix: -q

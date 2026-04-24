@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: read extension length
-    default: 0
     inputBinding:
       position: 101
       prefix: --ext_length

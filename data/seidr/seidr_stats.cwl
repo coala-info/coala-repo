@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: Eigenvector centrality convergence tolerance
-    default: 1e-08
     inputBinding:
       position: 102
       prefix: --eigenvector-tol
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Index of score to use
-    default: last score
     inputBinding:
       position: 102
       prefix: --index
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: String describing metrics to calculate
-    default: PR,CLO,BTW,STR,EV,KTZ,LPC,SEC,EBC
     inputBinding:
       position: 102
       prefix: --metrics
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Use N samples for approximations
-    default: 0
     inputBinding:
       position: 102
       prefix: --nsamples
@@ -66,7 +62,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to store temporary data
-    default: auto
     inputBinding:
       position: 102
       prefix: --tempdir

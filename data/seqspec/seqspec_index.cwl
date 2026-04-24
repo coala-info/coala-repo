@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable overlap
-    default: false
     inputBinding:
       position: 102
       prefix: --no-overlap
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Selector for ID, [read, region, file]
-    default: read
     inputBinding:
       position: 102
       prefix: --selector
@@ -54,7 +52,6 @@ inputs:
       - string
     doc: Tool, [chromap, kb, kb-single, relative, seqkit, simpleaf, starsolo, 
       splitcode, tab, zumis]
-    default: tab
     inputBinding:
       position: 102
       prefix: --tool

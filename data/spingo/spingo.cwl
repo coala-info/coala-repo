@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: number of bootstrap samples
-    default: 10
     inputBinding:
       position: 101
       prefix: --bootstrap
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size
-    default: 8
     inputBinding:
       position: 101
       prefix: --kmersize
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: number of processor threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --processors

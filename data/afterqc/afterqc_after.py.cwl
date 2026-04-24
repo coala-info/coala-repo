@@ -13,7 +13,6 @@ inputs:
       - int
     doc: the count of allowed mismatches when detection polyX. Default 2 means 
       allow 2 mismatches for polyX detection
-    default: 2
     inputBinding:
       position: 101
       prefix: --allow_mismatch_in_poly
@@ -24,7 +23,6 @@ inputs:
     doc: specify whether deal with barcode sequencing files, default is on, 
       which means all files with barcode_flag in filename will be treated as 
       barcode sequencing files
-    default: on
     inputBinding:
       position: 101
       prefix: --barcode
@@ -34,7 +32,6 @@ inputs:
       - string
     doc: specify the name flag of a barcoded file, default is barcode, which 
       means a file with name *barcode* is a barcoded file
-    default: barcode
     inputBinding:
       position: 101
       prefix: --barcode_flag
@@ -61,7 +58,6 @@ inputs:
       - int
     doc: set compression level (0~9) for gzip output, default is 2 (0 = best 
       speed, 9 = best compression).
-    default: 2
     inputBinding:
       position: 101
       prefix: --compression
@@ -71,7 +67,6 @@ inputs:
       - boolean
     doc: specify whether apply debubble algorithm to remove the reads in the 
       bubbles. Default is False
-    default: false
     inputBinding:
       position: 101
       prefix: --debubble
@@ -81,7 +76,6 @@ inputs:
       - string
     doc: specify whether draw the pictures or not, when use debubble or QC. 
       Default is on
-    default: on
     inputBinding:
       position: 101
       prefix: --draw
@@ -109,7 +103,6 @@ inputs:
       - string
     doc: specify the name flag of index1, default is I1, which means a file with
       name *I1* is index2 file
-    default: I1
     inputBinding:
       position: 101
       prefix: --index1_flag
@@ -128,7 +121,6 @@ inputs:
       - string
     doc: specify the name flag of index2, default is I2, which means a file with
       name *I2* is index2 file
-    default: I2
     inputBinding:
       position: 101
       prefix: --index2_flag
@@ -156,7 +148,6 @@ inputs:
       - int
     doc: if exists more than maxn bases have N, then this read/pair is bad. 
       Default is 5
-    default: 5
     inputBinding:
       position: 101
       prefix: --n_base_limit
@@ -182,7 +173,6 @@ inputs:
       - int
     doc: if exists one polyX(polyG means GGGGGGGGG...), and its length is >= 
       poly_size_limit, then this read/pair is bad. Default is 35
-    default: 35
     inputBinding:
       position: 101
       prefix: --poly_size_limit
@@ -191,7 +181,6 @@ inputs:
       - 'null'
       - int
     doc: specify the kmer length for KMER statistics for QC, default is 8
-    default: 8
     inputBinding:
       position: 101
       prefix: --qc_kmer
@@ -209,7 +198,6 @@ inputs:
       - int
     doc: sample up to qc_sample reads when do QC, 0 means sample all reads. 
       Default is 200,000
-    default: 200000
     inputBinding:
       position: 101
       prefix: --qc_sample
@@ -219,7 +207,6 @@ inputs:
       - int
     doc: the quality value that a base is qualifyed. Default 15 means phred base
       quality >=Q15 is qualified.
-    default: 15
     inputBinding:
       position: 101
       prefix: --qualified_quality_phred
@@ -238,7 +225,6 @@ inputs:
       - string
     doc: specify the name flag of read1, default is R1, which means a file with 
       name *R1* is read1 file
-    default: R1
     inputBinding:
       position: 101
       prefix: --read1_flag
@@ -257,7 +243,6 @@ inputs:
       - string
     doc: specify the name flag of read2, default is R2, which means a file with 
       name *R2* is read2 file
-    default: R2
     inputBinding:
       position: 101
       prefix: --read2_flag
@@ -267,7 +252,6 @@ inputs:
       - int
     doc: if the trimmed read is shorter than seq_len_req, then this read/pair is
       bad. Default is 35
-    default: 35
     inputBinding:
       position: 101
       prefix: --seq_len_req
@@ -284,7 +268,6 @@ inputs:
       - 'null'
       - int
     doc: number of bases to be trimmed in the head of read. -1 means auto detect
-    default: -1
     inputBinding:
       position: 101
       prefix: --trim_front
@@ -294,7 +277,6 @@ inputs:
       - string
     doc: use same trimming configuration for read1 and read2 to keep their 
       sequence length identical, default is true
-    default: 'true'
     inputBinding:
       position: 101
       prefix: --trim_pair_same
@@ -303,7 +285,6 @@ inputs:
       - 'null'
       - int
     doc: number of bases to be trimmed in the tail of read. -1 means auto detect
-    default: -1
     inputBinding:
       position: 101
       prefix: --trim_tail
@@ -313,7 +294,6 @@ inputs:
       - int
     doc: if exists more than unqualified_base_limit bases that quality is lower 
       than qualified quality, then this read/pair is bad. Default is 60
-    default: 60
     inputBinding:
       position: 101
       prefix: --unqualified_base_limit

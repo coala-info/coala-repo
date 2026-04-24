@@ -13,7 +13,6 @@ inputs:
       - 'null'
       - string
     doc: address of the server hosting the Archer service
-    default: localhost
     inputBinding:
       position: 101
       prefix: --grpcAddress
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: TCP port to listen to by the gRPC server
-    default: '9090'
     inputBinding:
       position: 101
       prefix: --grpcPort

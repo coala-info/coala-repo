@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: Output format, fasta or tsv (tsv by default, optional)
-    default: tsv
     inputBinding:
       position: 101
       prefix: --out_format

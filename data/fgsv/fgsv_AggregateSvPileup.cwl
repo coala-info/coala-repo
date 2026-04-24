@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
-    default: false
     inputBinding:
       position: 101
       prefix: --async-io
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Default GZIP compression level, BAM compression level.
-    default: 5
     inputBinding:
       position: 101
       prefix: --compression
@@ -70,7 +68,6 @@ inputs:
       are the templates\nthat will be partitioned into those supporting the breakpoint
       vs. reading through it for\nthe allele frequency calculation. Recommended to
       use at least the max read pair inner\ndistance used by SvPileup."
-    default: 1000
     inputBinding:
       position: 101
       prefix: --flank
@@ -86,7 +83,6 @@ inputs:
       - string
     doc: 'Minimum severity log-level to emit. Options: Debug, Info, Warning, Error,
       Fatal.'
-    default: Info
     inputBinding:
       position: 101
       prefix: --log-level
@@ -95,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Distance threshold below which to cluster breakpoints
-    default: 10
     inputBinding:
       position: 101
       prefix: --max-dist
@@ -107,7 +102,6 @@ inputs:
       aggregated\nbreakpoint to report allele frequency. Supports speed improvement
       by avoiding querying\nand iterating over huge read pileups that contain insufficient
       support for a breakpoint\nto be considered interesting."
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-breakpoint-support
@@ -118,7 +112,6 @@ inputs:
     doc: "If BAM file is provided: minimum allele frequency to report. Supports speed
       improvement\nby avoiding iterating over huge read pileups that contain insufficient
       support for a\nbreakpoint to be considered interesting."
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --min-frequency
@@ -127,7 +120,6 @@ inputs:
       - 'null'
       - string
     doc: "Validation stringency for SAM/BAM reading. Options:\nSTRICT, LENIENT, SILENT."
-    default: SILENT
     inputBinding:
       position: 101
       prefix: --sam-validation-stringency
@@ -144,7 +136,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to use for temporary files.
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmp-dir

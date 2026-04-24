@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Inference algorithm to use. Defaults to 'mle'
-    default: mle
     inputBinding:
       position: 101
       prefix: -m
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum Divergence to count a lineage as present.
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --max_pi
@@ -48,7 +46,6 @@ inputs:
       - float
     doc: 'Bayesian only: Minimum value the highest posterior density interval over
       divergence must cover to count a lineage as present.'
-    default: 0.15
     inputBinding:
       position: 101
       prefix: --min_hpd
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: 'Bayesian only: Minimum probability score to count a lineage as present.'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --min_prob
@@ -66,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of present mutations to count a lineage as present.
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_snps

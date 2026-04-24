@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: The ggd channel of the recipe to find.
-    default: genomics
     inputBinding:
       position: 102
       prefix: --channel

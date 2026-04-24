@@ -48,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: window size for comparing TSS/TES
-    default: 100
     inputBinding:
       position: 101
       prefix: --end_window
@@ -148,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of TSS/TES picked per isoform
-    default: 2
     inputBinding:
       position: 101
       prefix: --max_ends
@@ -176,7 +174,6 @@ inputs:
       - string
     doc: 'For each unique splice junction chain, report options include: none, longest,
       best_only'
-    default: none
     inputBinding:
       position: 101
       prefix: --no_redundant
@@ -201,7 +198,6 @@ inputs:
       - 'null'
       - int
     doc: minimum MAPQ of read assignment to an isoform
-    default: 0
     inputBinding:
       position: 101
       prefix: --quality
@@ -242,7 +238,6 @@ inputs:
       - float
     doc: minimum number of supporting reads for an isoform; if s < 1, it will be treated
       as a percentage of expression of the gene
-    default: 3
     inputBinding:
       position: 101
       prefix: --support
@@ -259,7 +254,6 @@ inputs:
       - 'null'
       - int
     doc: minimap2 number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

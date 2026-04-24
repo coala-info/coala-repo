@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bytes per unit when inflated (1-8). 0 - infer from data.
-    default: 0
     inputBinding:
       position: 102
       prefix: -u

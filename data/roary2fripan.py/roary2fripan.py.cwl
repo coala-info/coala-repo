@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - File
     doc: Specify Roary output
-    default: gene_presence_absence.csv
     inputBinding:
       position: 102
       prefix: --input

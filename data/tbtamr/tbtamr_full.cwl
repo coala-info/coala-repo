@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: band width for banded alignment
-    default: 100
     inputBinding:
       position: 104
       prefix: -w
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: discard a chain if seeded bases shorter than INT
-    default: 0
     inputBinding:
       position: 104
       prefix: -W
@@ -62,7 +60,6 @@ inputs:
       - float
     doc: drop chains shorter than FLOAT fraction of the longest overlapping 
       chain
-    default: 0.5
     inputBinding:
       position: 104
       prefix: -D
@@ -121,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum clipping length for samclip
-    default: 10
     inputBinding:
       position: 104
       prefix: --max-clip-length
@@ -130,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: perform at most INT rounds of mate rescues for each read
-    default: 50
     inputBinding:
       position: 104
       prefix: -m
@@ -139,7 +134,6 @@ inputs:
       - 'null'
       - float
     doc: The fraction of the max score to use with -h
-    default: 0.8
     inputBinding:
       position: 104
       prefix: -z
@@ -148,7 +142,6 @@ inputs:
       - 'null'
       - string
     doc: Memory per thread for samtools sort
-    default: 1000M
     inputBinding:
       position: 104
       prefix: --memory-samtools-sort
@@ -157,7 +150,6 @@ inputs:
       - 'null'
       - int
     doc: minimum score to output
-    default: 50
     inputBinding:
       position: 104
       prefix: -T
@@ -166,7 +158,6 @@ inputs:
       - 'null'
       - int
     doc: minimum seed length
-    default: 19
     inputBinding:
       position: 104
       prefix: -k
@@ -175,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: penalty for a mismatch
-    default: 4
     inputBinding:
       position: 104
       prefix: -B
@@ -184,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: off-diagonal X-dropoff
-    default: 100
     inputBinding:
       position: 104
       prefix: -d
@@ -260,7 +249,6 @@ inputs:
       - 'null'
       - float
     doc: look for internal seeds inside a seed longer than {-k} * FLOAT
-    default: 1.5
     inputBinding:
       position: 104
       prefix: -r
@@ -269,7 +257,6 @@ inputs:
       - 'null'
       - int
     doc: seed occurrence for the 3rd round seeding
-    default: 20
     inputBinding:
       position: 104
       prefix: -y
@@ -279,7 +266,6 @@ inputs:
       - int
     doc: score for a sequence match, which scales options -TdBOELU unless 
       overridden
-    default: 1
     inputBinding:
       position: 104
       prefix: -A
@@ -304,7 +290,6 @@ inputs:
       - 'null'
       - int
     doc: skip seeds with more than INT occurrences
-    default: 500
     inputBinding:
       position: 104
       prefix: -c
@@ -321,7 +306,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 8
     inputBinding:
       position: 104
       prefix: --threads
@@ -354,7 +338,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for samtools sort
-    default: 8
     inputBinding:
       position: 104
       prefix: --threads-samtools-sort
@@ -363,7 +346,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temporary directory for samtools operations
-    default: /tmp
     inputBinding:
       position: 104
       prefix: --tmp-dir
@@ -381,7 +363,6 @@ inputs:
       - 'null'
       - int
     doc: penalty for an unpaired read pair
-    default: 17
     inputBinding:
       position: 104
       prefix: -U
@@ -407,7 +388,6 @@ inputs:
       - 'null'
       - int
     doc: 'verbosity level: 1=error, 2=warning, 3=message, 4+=debugging'
-    default: 3
     inputBinding:
       position: 104
       prefix: -v

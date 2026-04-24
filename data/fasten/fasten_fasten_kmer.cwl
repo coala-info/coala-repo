@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: The size of the kmer
-    default: 21
     inputBinding:
       position: 101
       prefix: --kmer-length
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs
-    default: 1
     inputBinding:
       position: 101
       prefix: --numcpus

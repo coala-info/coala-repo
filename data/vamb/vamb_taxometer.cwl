@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use GPU to train & cluster
-    default: false
     inputBinding:
       position: 101
       prefix: --cuda
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore contigs shorter than this
-    default: 2000
     inputBinding:
       position: 101
       prefix: -m
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip reference name hashing check
-    default: false
     inputBinding:
       position: 101
       prefix: --norefcheck
@@ -82,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use where customizable
-    default: 8
     inputBinding:
       position: 101
       prefix: -p

@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Minimiser size
-    default: 10
     inputBinding:
       position: 101
       prefix: --m-size
@@ -26,7 +25,6 @@ inputs:
     doc: "Output type to write\n\n          Possible values:\n          - s2m: Conver
       sequences into minimiser representation\n          - m2s: Group sequences by
       minimiser"
-    default: s2m
     inputBinding:
       position: 101
       prefix: --preset
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Thread count for computations 0=auto
-    default: 0
     inputBinding:
       position: 101
       prefix: --threads
@@ -45,7 +42,6 @@ inputs:
       - int
     doc: "Window size\n          \n          0 - emits one minimiser per sequence
       (useful for sequencing reads)\n          w_size must be longer than m_size"
-    default: 0
     inputBinding:
       position: 101
       prefix: --w-size

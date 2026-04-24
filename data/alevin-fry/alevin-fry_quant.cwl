@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: number of bootstraps to use
-    default: 0
     inputBinding:
       position: 101
       prefix: --num-bootstraps
@@ -72,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use for processing
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -16,7 +16,6 @@ inputs:
       - string
     doc: "After how many characters should a potential error\n                   \
       \        message be truncated. \"Inf\" for no truncation."
-    default: CharCount 1500
     inputBinding:
       position: 102
       prefix: --errLength
@@ -27,7 +26,6 @@ inputs:
     doc: "Where to read the population/group name from the FAM\n                 \
       \          file in Plink-format. Three options are possible:\n             \
       \              asFamily (default) | asPhenotype | asBoth."
-    default: asFamily
     inputBinding:
       position: 102
       prefix: --inPlinkPopName
@@ -37,7 +35,6 @@ inputs:
       - string
     doc: "How information should be reported: NoLog, SimpleLog,\n                \
       \           DefaultLog, ServerLog or VerboseLog."
-    default: DefaultLog
     inputBinding:
       position: 102
       prefix: --logMode

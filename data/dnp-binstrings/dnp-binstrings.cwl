@@ -18,7 +18,6 @@ inputs:
       - string
     doc: "Dinucleotide that is to identify in fasta sequences One of AA, AC,\n   \
       \       AG, AT, CA, CC, CG, CT, GA, GC, GG, GT, TA, TC, TG, and TT."
-    default: CC
     inputBinding:
       position: 102
       prefix: --dinucleotide
@@ -28,7 +27,6 @@ inputs:
       - boolean
     doc: "Turn this option off to disable version update notifications of the\n  \
       \        application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO."
-    default: 1
     inputBinding:
       position: 102
       prefix: --version-check

@@ -67,7 +67,6 @@ inputs:
     type: boolean
     doc:  Output human reads instead of removing them. (Default false)
     label: Output human reads
-    default: false
     inputBinding:
       prefix: --human
 
@@ -83,7 +82,6 @@ inputs:
     type: int
     doc: Number of parallel threads to use. Default 4
     label: Threads
-    default: 4
     inputBinding:
       prefix: --threads
       position: 101
@@ -92,7 +90,6 @@ inputs:
     type: boolean
     doc: Write the Kraken2 read classification output to a file. (Default false)
     label: Kraken output
-    default: false
 
 outputs:
   forward_reads_out:

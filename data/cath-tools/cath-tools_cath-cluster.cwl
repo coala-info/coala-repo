@@ -17,7 +17,6 @@ inputs:
     doc: "Parse the link values (distances/strengths) from column number <colnum>\n\
       \                                Must be ≥ 3 because columns 1 and 2 must contain
       the IDs"
-    default: 3
     inputBinding:
       position: 102
       prefix: --column-idx

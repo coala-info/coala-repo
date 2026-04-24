@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Alphabet
-    default: dna
     inputBinding:
       position: 101
       prefix: --alpha
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Input batch size for training
-    default: 1000
     inputBinding:
       position: 101
       prefix: --batchsize
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: Fudge factor to help with extremely rare motifs. Should be >0 and <=1
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --fudge
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer half-length for gapped k-mer search seeding
-    default: 6
     inputBinding:
       position: 101
       prefix: --halflength
@@ -70,7 +66,6 @@ inputs:
     doc: Maximum number of refining iterations of batch EM to run from any 
       starting point. Batch EM is run for maxiter iterations or until 
       convergence (see -tolerance, below) from each starting point for refining
-    default: 20
     inputBinding:
       position: 101
       prefix: --maxiter
@@ -88,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of motif occurrences
-    default: 100
     inputBinding:
       position: 101
       prefix: --minsites
@@ -97,7 +91,6 @@ inputs:
       - 'null'
       - string
     doc: Model
-    default: tcm
     inputBinding:
       position: 101
       prefix: --model
@@ -106,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Number of motifs to find
-    default: 1
     inputBinding:
       position: 101
       prefix: --nmotifs
@@ -142,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: Random seed for reproducibility
-    default: 1337
     inputBinding:
       position: 101
       prefix: --seed
@@ -153,7 +144,6 @@ inputs:
     doc: Stop iterating refining batch/on-line EM when the change in the motif 
       probability matrix is less than tolerance. Change is defined as the 
       euclidean distance between two successive frequency matrices
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --tolerance
@@ -162,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: Motif width
-    default: 20
     inputBinding:
       position: 101
       prefix: --width

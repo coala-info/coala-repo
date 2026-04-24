@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: 'memory to use (for example: 1500M, 4G, etc.) (optional, default: 2 Gb)'
-    default: 2 Gb
     inputBinding:
       position: 101
       prefix: --memory
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'working directory (optional, default: workDir)'
-    default: workDir
     inputBinding:
       position: 101
       prefix: --work-dir

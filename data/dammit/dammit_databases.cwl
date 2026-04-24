@@ -12,7 +12,6 @@ inputs:
     doc: Path to an alternative BUSCO config file; otherwise, BUSCO will attempt
       to use its default installation which will likely only work on bioconda. 
       Advanced use only!
-    default: None
     inputBinding:
       position: 101
       prefix: --busco-config-file
@@ -23,7 +22,6 @@ inputs:
         items: string
     doc: Which BUSCO group to use. Should be chosen based on the organism being 
       annotated. Full list of options is below.
-    default: metazoa
     inputBinding:
       position: 101
       prefix: --busco-group
@@ -33,7 +31,6 @@ inputs:
       - File
     doc: A JSON file providing values to override built-in config. Advanced use 
       only!
-    default: None
     inputBinding:
       position: 101
       prefix: --config-file
@@ -44,7 +41,6 @@ inputs:
     doc: Directory to store databases. Existing databases will not be 
       overwritten. By default, the database directory is 
       $HOME/.dammit/databases.
-    default: $HOME/.dammit/databases
     inputBinding:
       position: 101
       prefix: --database-dir
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: Ignore missing database tasks.
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -64,7 +59,6 @@ inputs:
     doc: Run a "complete" annotation; includes uniref90, which is left out of 
       the default pipeline because it is huge and homology searches take a long 
       time.
-    default: false
     inputBinding:
       position: 101
       prefix: --full
@@ -73,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: Install missing databases. Downloads and preps where necessary
-    default: false
     inputBinding:
       position: 101
       prefix: --install
@@ -83,7 +76,6 @@ inputs:
       - int
     doc: For annotate, number of threads to pass to programs supporting 
       multithreading. For databases, number of simultaneous tasks to execute.
-    default: 1
     inputBinding:
       position: 101
       prefix: --n_threads
@@ -93,7 +85,6 @@ inputs:
       - boolean
     doc: 'Keep original transcript names. Note: make sure your transcript names do
       not contain unusual characters.'
-    default: false
     inputBinding:
       position: 101
       prefix: --no-rename
@@ -104,7 +95,6 @@ inputs:
     doc: Also include annotation to NR database, which is left out of the 
       default and "full" pipelines because it is huge and homology searches take
       a long time.
-    default: false
     inputBinding:
       position: 101
       prefix: --nr
@@ -113,7 +103,6 @@ inputs:
       - 'null'
       - boolean
     doc: Profile task execution.
-    default: false
     inputBinding:
       position: 101
       prefix: --profile
@@ -125,7 +114,6 @@ inputs:
       Pfam tasks, and the LAST OrthoDB and uniref90 tasks. Best for users just 
       looking to get basic stats and conditional reciprocal best LAST from a 
       protein database.
-    default: false
     inputBinding:
       position: 101
       prefix: --quick
@@ -134,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: Verbosity level for doit tasks.
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbosity

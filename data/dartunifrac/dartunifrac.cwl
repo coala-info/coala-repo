@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: 'Extracting lower bits from hashes. Supported: 16 (default), 32, 64.'
-    default: 16
     inputBinding:
       position: 101
       prefix: --bbits
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: 'Sketching method: dmh (DartMinHash) or ers (Efficient Rejection Sampling)'
-    default: dmh
     inputBinding:
       position: 101
       prefix: --method
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Random seed for reproducibility
-    default: 1337
     inputBinding:
       position: 101
       prefix: --seed
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Per-hash independent random sequence length for ERS, must be >= 512
-    default: 2048
     inputBinding:
       position: 101
       prefix: --length
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Sketch size for Weighted MinHash (DartMinHash or ERS)
-    default: 2048
     inputBinding:
       position: 101
       prefix: --sketch

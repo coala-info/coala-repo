@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - boolean
     doc: Should the decorated version of row names be downloaded?
-    default: false
     inputBinding:
       position: 101
       prefix: --decorated-rows
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: Should condensed SDRF file(s) be downloaded?
-    default: false
     inputBinding:
       position: 101
       prefix: --get-condensed-sdrf
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - boolean
     doc: Should experimental design file be downloaded?
-    default: false
     inputBinding:
       position: 101
       prefix: --get-exp-design
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - boolean
     doc: Should expression data be downloaded?
-    default: false
     inputBinding:
       position: 101
       prefix: --get-expression-data
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - boolean
     doc: Should IDF file(s) be downloaded?
-    default: false
     inputBinding:
       position: 101
       prefix: --get-idf
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - boolean
     doc: Should marker gene file(s) be downloaded?
-    default: false
     inputBinding:
       position: 101
       prefix: --get-marker-genes
@@ -85,7 +79,6 @@ inputs:
       - 'null'
       - boolean
     doc: Should SDRF file(s) be downloaded?
-    default: false
     inputBinding:
       position: 101
       prefix: --get-sdrf
@@ -123,7 +116,6 @@ inputs:
       - 'null'
       - boolean
     doc: Should default (non 10x-type) file names be used for expression data?
-    default: false
     inputBinding:
       position: 101
       prefix: --use-default-expr-names
@@ -132,7 +124,6 @@ inputs:
       - 'null'
       - boolean
     doc: Should non-expression data files be named with full file names?
-    default: false
     inputBinding:
       position: 101
       prefix: --use-full-names

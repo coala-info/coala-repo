@@ -11,7 +11,6 @@ inputs:
       - type: array
         items: string
     doc: code to be executed (e.g., assigning new tags)
-    default: None
     inputBinding:
       position: 101
       prefix: -c
@@ -21,7 +20,6 @@ inputs:
       - type: array
         items: string
     doc: debugging expression to print
-    default: None
     inputBinding:
       position: 101
       prefix: -d
@@ -31,7 +29,6 @@ inputs:
       - type: array
         items: string
     doc: debugging trigger
-    default: 'True'
     inputBinding:
       position: 101
       prefix: -t
@@ -41,7 +38,6 @@ inputs:
       - type: array
         items: string
     doc: filtering expression
-    default: 'True'
     inputBinding:
       position: 101
       prefix: -f
@@ -51,7 +47,6 @@ inputs:
       - type: array
         items: string
     doc: initialization
-    default: None
     inputBinding:
       position: 101
       prefix: '-0'
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - File
     doc: input SAM/BAM file
-    default: '-'
     inputBinding:
       position: 101
       prefix: -i
@@ -71,7 +65,6 @@ inputs:
     doc: "mode: strict (stop on first error)\n                          nonstop-keep
       (keep alignments causing errors)\n                          nonstop-remove (remove
       alignments causing errors)"
-    default: strict
     inputBinding:
       position: 101
       prefix: -m

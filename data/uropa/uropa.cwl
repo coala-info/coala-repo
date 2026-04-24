@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of lines per chunk for multiprocessing (default: 1000)'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --chunk

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Export chr prefix Allowed 0, 1
-    default: 0
     inputBinding:
       position: 101
       prefix: -chr
@@ -26,7 +25,6 @@ inputs:
       - string
     doc: Select the output formats from gtf, gct, bed, ptmbed, all or combinations
       thereof separated by ','
-    default: all
     inputBinding:
       position: 101
       prefix: -format
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Compute the kmer algorithm in memory (0) or using database algorithm (1)
-    default: 0
     inputBinding:
       position: 101
       prefix: -inm
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: Format of the input file (mztab, mzid, or tsv)
-    default: tsv
     inputBinding:
       position: 101
       prefix: -inf
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set 'true' to merge mappings from all files from input
-    default: false
     inputBinding:
       position: 101
       prefix: -merge
@@ -87,7 +82,6 @@ inputs:
       - boolean
     doc: 'Mismatch mode (true or false): if true mismatching with two mismatches will
       only allow 1 mismatch every kmersize (default: 5) positions.'
-    default: false
     inputBinding:
       position: 101
       prefix: -mmmode
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Allowed mismatches (0, 1 or 2)
-    default: 0
     inputBinding:
       position: 101
       prefix: -mm
@@ -105,7 +98,6 @@ inputs:
       - 'null'
       - string
     doc: Source name which will be used in the second column in the output gtf file
-    default: PoGo
     inputBinding:
       position: 101
       prefix: -source

@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
-    default: false
     inputBinding:
       position: 101
       prefix: --async-io
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Default GZIP compression level, BAM compression level.
-    default: 5
     inputBinding:
       position: 101
       prefix: --compression
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Net cost of a 1bp gap in the genome.
-    default: -122
     inputBinding:
       position: 101
       prefix: --genome-gap-net-cost
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Net cost of a 1bp gap in the guide.
-    default: -121
     inputBinding:
       position: 101
       prefix: --guide-gap-net-cost
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Net cost of going from a match to a mismatch in the guide.
-    default: -120
     inputBinding:
       position: 101
       prefix: --guide-mismatch-net-cost
@@ -80,7 +75,6 @@ inputs:
       - string
     doc: 'Minimum severity log-level to emit. Options: Debug, Info, Warning, Error,
       Fatal.'
-    default: Info
     inputBinding:
       position: 101
       prefix: --log-level
@@ -89,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum gap bases between guide and PAM
-    default: 3
     inputBinding:
       position: 101
       prefix: --max-gaps-between-guide-and-pam
@@ -130,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: Net cost of going from a match to a mismatch in the PAM.
-    default: -260
     inputBinding:
       position: 101
       prefix: --pam-mismatch-net-cost
@@ -153,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: Threads to use for alignments.
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads
@@ -162,7 +153,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to use for temporary files.
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmp-dir

@@ -13,7 +13,6 @@ inputs:
       - string
     doc: Aligner to use. Currently, methylpy supports bowtie, bowtie2 and 
       minimap2.
-    default: bowtie2
     inputBinding:
       position: 101
       prefix: --aligner
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: The number of bytes that will be read in from the reference at once.
-    default: 100
     inputBinding:
       position: 101
       prefix: --buffsize
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors you wish to use to parallelize this function
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-procs
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: Path to bowtie/bowtie2 installation
-    default: ''
     inputBinding:
       position: 101
       prefix: --path-to-aligner

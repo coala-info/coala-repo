@@ -37,7 +37,6 @@ inputs:
       - string
     doc: Filter the output to focus on results with positive (pos) or negative 
       (neg) LFCs.
-    default: all
     inputBinding:
       position: 104
   - id: lfc_column
@@ -46,7 +45,6 @@ inputs:
       - int
     doc: Column with log2FC (starting with 0; can also be negative, i.e. -1 
       means last col) (used for ranking genes by SLPV or LFC).
-    default: 6
     inputBinding:
       position: 104
       prefix: -LFC_col
@@ -56,7 +54,6 @@ inputs:
       - string
     doc: "Method to use: FET for Fisher's Exact Test, GSEA for Gene Set Enrichment
       Analysis, or ONT for Ontologizer."
-    default: FET
     inputBinding:
       position: 104
       prefix: -M
@@ -67,7 +64,6 @@ inputs:
     doc: Filter the output to include only genes that have a magnitude of LFC 
       greater than the specified value (e.g. '-minLFC 1' means analyze only 
       genes with 2-fold change or greater).
-    default: 0
     inputBinding:
       position: 104
   - id: num_permutations
@@ -76,7 +72,6 @@ inputs:
       - int
     doc: Number of permutations to simulate for null distribution to determine 
       p-value.
-    default: 10000
     inputBinding:
       position: 104
       prefix: -Nperm
@@ -86,7 +81,6 @@ inputs:
       - int
     doc: Pseudo-counts to use in calculating p-value based on hypergeometric 
       distribution.
-    default: 2
     inputBinding:
       position: 104
       prefix: -PC
@@ -96,7 +90,6 @@ inputs:
       - int
     doc: Column with raw P-values (starting with 0; can also be negative, i.e. 
       -1 means last col) (used for sorting).
-    default: -2
     inputBinding:
       position: 104
       prefix: -Pval_col
@@ -106,7 +99,6 @@ inputs:
       - int
     doc: Column with adjusted P-values (starting with 0; can also be negative, 
       i.e. -1 means last col) (used for significant cutoff).
-    default: -1
     inputBinding:
       position: 104
       prefix: -Qval_col
@@ -116,7 +108,6 @@ inputs:
       - float
     doc: Filter the output to include only genes that have Qval less than to the
       value specified.
-    default: 0.05
     inputBinding:
       position: 104
   - id: ranking

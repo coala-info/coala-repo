@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether or not to collect test data needed for generating a report.
-    default: true
     inputBinding:
       position: 102
       prefix: --collect
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Results will be read from and committed to the given branch.
-    default: gh-pages
     inputBinding:
       position: 102
       prefix: --deployment
@@ -85,7 +83,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether or not to collect test data needed for generating a report.
-    default: false
     inputBinding:
       position: 102
       prefix: --no-collect
@@ -121,7 +118,6 @@ inputs:
       - 'null'
       - string
     doc: Set the solver to be used.
-    default: glpk
     inputBinding:
       position: 102
       prefix: --solver

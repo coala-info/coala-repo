@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Break chimera fragment
-    default: F
     inputBinding:
       position: 101
       prefix: --break
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Search noisy error region nearby an CSE breakpoint
-    default: T
     inputBinding:
       position: 101
       prefix: --error_region
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Gap[N] is treated as 1:CRE 2:CSE
-    default: 1
     inputBinding:
       position: 101
       prefix: --gapmodel
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: Upper clipping rate for heterozygous allele
-    default: 0.6
     inputBinding:
       position: 101
       prefix: --he_max
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - float
     doc: Lower clipping rate for heterozygous allele
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --he_min
@@ -61,7 +56,6 @@ inputs:
       - string
     doc: Mapping use map-pb/map-hifi/map-ont for PacBio CLR/HiFi or Nanopore vs reference
       [ignored if .bam provided]
-    default: map-hifi
     inputBinding:
       position: 101
       prefix: --map
@@ -70,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum reads mapping quality
-    default: 20
     inputBinding:
       position: 101
       prefix: --mapq
@@ -79,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Gap[N] length greater than the threshold will be treated as breakage
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_gap_size
@@ -88,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of NGS clipped-reads
-    default: 2
     inputBinding:
       position: 101
       prefix: --min_ngs_clip_num
@@ -97,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of SMS clipped-reads
-    default: 2
     inputBinding:
       position: 101
       prefix: --min_sms_clip_num
@@ -106,7 +96,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum proportion of NGS clipped-reads
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --ngs_clip_coverRate
@@ -115,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Average NGS coverage
-    default: 100
     inputBinding:
       position: 101
       prefix: --ngs_coverage
@@ -133,7 +121,6 @@ inputs:
       - 'null'
       - string
     doc: Window size for normalizing error count
-    default: 0.0001*(total size)
     inputBinding:
       position: 101
       prefix: --norm_window
@@ -142,7 +129,6 @@ inputs:
       - 'null'
       - string
     doc: Plotting CRAQ metrics. pycircos (python 3.7later) is required if 'T'
-    default: F
     inputBinding:
       position: 101
       prefix: --plot
@@ -159,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: Regional quality benchmarking
-    default: 500000
     inputBinding:
       position: 101
       prefix: --regional_window
@@ -168,7 +153,6 @@ inputs:
       - 'null'
       - string
     doc: Report tiny Indel errors or heterozyous variants (<40bp)
-    default: F
     inputBinding:
       position: 101
       prefix: --report_SNV
@@ -177,7 +161,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum proportion of SMS clipped-reads
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --sms_clip_coverRate
@@ -186,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: Average SMS coverage
-    default: 100
     inputBinding:
       position: 101
       prefix: --sms_coverage
@@ -201,7 +183,6 @@ inputs:
       - 'null'
       - int
     doc: The number of thread used in alignment
-    default: 10
     inputBinding:
       position: 101
       prefix: --thread

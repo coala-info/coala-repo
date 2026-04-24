@@ -72,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: privilege escalation method to use
-    default: sudo
     inputBinding:
       position: 102
       prefix: --become-method
@@ -98,7 +97,6 @@ inputs:
       - 'null'
       - string
     doc: connection type to use
-    default: smart
     inputBinding:
       position: 102
       prefix: --connection
@@ -115,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: specify number of parallel processes to use
-    default: 5
     inputBinding:
       position: 102
       prefix: --forks
@@ -124,7 +121,6 @@ inputs:
       - 'null'
       - File
     doc: specify inventory host file
-    default: /etc/ansible/hosts
     inputBinding:
       position: 102
       prefix: --inventory-file
@@ -157,7 +153,6 @@ inputs:
       - 'null'
       - string
     doc: module name to execute
-    default: command
     inputBinding:
       position: 102
       prefix: --module-name
@@ -182,7 +177,6 @@ inputs:
       - 'null'
       - int
     doc: set the poll interval if using -B
-    default: 15
     inputBinding:
       position: 102
       prefix: --poll
@@ -207,7 +201,6 @@ inputs:
       - 'null'
       - string
     doc: run operations with su as this user (deprecated, use become)
-    default: root
     inputBinding:
       position: 102
       prefix: --su-user
@@ -224,7 +217,6 @@ inputs:
       - 'null'
       - string
     doc: desired sudo user (deprecated, use become)
-    default: root
     inputBinding:
       position: 102
       prefix: --sudo-user
@@ -233,7 +225,6 @@ inputs:
       - 'null'
       - int
     doc: override the SSH timeout in seconds
-    default: 10
     inputBinding:
       position: 102
       prefix: --timeout

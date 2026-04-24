@@ -13,7 +13,6 @@ inputs:
       valid. Normalized alignment score is defined as the Needleman-Wunch 
       alignment score divided by the maximum possible score. Below this 
       alignment threshold, reads are discarded.
-    default: 30
     inputBinding:
       position: 101
       prefix: --amplicon_min_score
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - float
     doc: Confidence interval for the evaluated editing activity
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --confidence_interval
@@ -41,7 +39,6 @@ inputs:
       - int
     doc: Expected cut-site position with respect to the 3' end of the provided 
       sgRNA sequence. Note, the sgRNA sequence must be entered without the PAM.
-    default: -3
     inputBinding:
       position: 101
       prefix: --cut_site_position
@@ -91,7 +88,6 @@ inputs:
       - int
     doc: Maximum edit distance to consider a read prefix (or suffix) as a match 
       for a primer.
-    default: 8
     inputBinding:
       position: 101
       prefix: --max_edit_distance_on_primers
@@ -101,7 +97,6 @@ inputs:
       - float
     doc: Minimum editing activity (%). Sites with editing activity lower than 
       the minimum, will be discarded from the translocation detection.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min_editing_activity
@@ -110,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads (per locus site) to evaluate edit events
-    default: 500
     inputBinding:
       position: 101
       prefix: --min_num_of_reads
@@ -121,7 +115,6 @@ inputs:
     doc: Filter out any read shorter than min_read_length_without_primers + 
       length of forward and reverse primers. This threshold filters 
       primer-dimmer effect reads.
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_read_length_without_primers
@@ -169,7 +162,6 @@ inputs:
       a possible translocation. Should be higher than --amplicon_min_score, 
       because translocations reads are noisier.Score is normalized between 0 
       (not even one bp match) to 100 (read is identical to the reference)
-    default: 80
     inputBinding:
       position: 101
       prefix: --translocation_amplicon_min_score
@@ -179,7 +171,6 @@ inputs:
       - float
     doc: Translocations statistical significance level. This threshold is 
       applied on the corrected p_value,FDR (false discovery rate).
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --translocation_p_value

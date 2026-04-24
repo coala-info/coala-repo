@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Format of the input and output tree files (e.g., newick, nexus)
-    default: newick
     inputBinding:
       position: 102
       prefix: --format
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Number of NNI iterations to perform
-    default: 100
     inputBinding:
       position: 102
       prefix: --iterations

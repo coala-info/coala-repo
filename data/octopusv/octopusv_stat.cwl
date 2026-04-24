@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum SV size to consider.
-    default: 50
     inputBinding:
       position: 102
       prefix: --min-size

@@ -77,7 +77,6 @@ inputs:
       - int
     doc: Specifies the number of colors in the dot plot. Default is 5 colors. 
       Minimum is 3 colors. Maximum is 15 colors.
-    default: 5
     inputBinding:
       position: 102
       prefix: --entries

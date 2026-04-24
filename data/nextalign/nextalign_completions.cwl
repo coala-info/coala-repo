@@ -47,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Set verbosity level
-    default: warn
     inputBinding:
       position: 101
       prefix: --verbosity

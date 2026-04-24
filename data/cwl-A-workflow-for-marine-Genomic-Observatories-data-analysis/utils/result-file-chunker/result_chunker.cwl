@@ -14,11 +14,9 @@ inputs:
   format: string
   type_fasta:
     type: string?
-    default: "n"
   size_limit: int?
   line_number_tsv:
     type: int
-    default: 10000000
 
 outputs:
   chunked_by_size_files:

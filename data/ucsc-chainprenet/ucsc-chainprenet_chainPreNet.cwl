@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: extra to pad around blocks to decrease trash
-    default: 1
     inputBinding:
       position: 104
       prefix: --pad

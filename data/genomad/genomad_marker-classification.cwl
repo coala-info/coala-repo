@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 20
     inputBinding:
       position: 103
       prefix: --threads
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - boolean
     doc: Display the execution log.
-    default: verbose
     inputBinding:
       position: 103
       prefix: --verbose

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Select the assembler to be used. Default is SGA
-    default: SGA
     inputBinding:
       position: 101
       prefix: --assembler
@@ -19,7 +18,6 @@ inputs:
       - int
     doc: "Get up to --best good alignments per read.\n                           \
       \                                              Default is 10"
-    default: 10
     inputBinding:
       position: 101
       prefix: --best
@@ -38,7 +36,6 @@ inputs:
       - int
     doc: "Ref coverage threshold. By default set to 0 to\n                       \
       \                                                  desactivate filtering"
-    default: 0
     inputBinding:
       position: 101
       prefix: --coverage_threshold
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of CPU to use. Default is 1 cpu
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpu
@@ -65,7 +61,6 @@ inputs:
       - float
     doc: "Max e-value to keep an alignment for. Default\n                        \
       \                                                 is 1e-05"
-    default: '1e-05'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -102,7 +97,6 @@ inputs:
       - int
     doc: "Maximum memory to use (in MBi). Default is\n                           \
       \                                              10000 MBi"
-    default: 10000
     inputBinding:
       position: 101
       prefix: --max_memory
@@ -111,7 +105,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum identity of an overlap between 2 reads. Default is 1.0
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --min_identity
@@ -121,7 +114,6 @@ inputs:
       - int
     doc: "Minimum number of overlap to keep an edge.\n                           \
       \                                              Default is 1"
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_overlap_edge
@@ -130,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of an overlap. Default is 50
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_overlap_length
@@ -140,7 +131,6 @@ inputs:
       - int
     doc: "Minimum number of read to keep a node. Default\n                       \
       \                                                  is 1"
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_read_node
@@ -158,7 +148,6 @@ inputs:
       - Directory
     doc: "Output directory.Default will be\n                                     \
       \                                    \"matam_assembly\""
-    default: matam_assembly
     inputBinding:
       position: 101
       prefix: --out_dir
@@ -176,7 +165,6 @@ inputs:
       - float
     doc: "Quorum for LCA computing. Has to be between\n                          \
       \                                               0.51 and 1. Default is 0.51"
-    default: 0.51
     inputBinding:
       position: 101
       prefix: --quorum
@@ -203,7 +191,6 @@ inputs:
       and assemble the other\n                                                   \
       \                      components without read correction. Default is\n    \
       \                                                                     auto"
-    default: auto
     inputBinding:
       position: 101
       prefix: --read_correction
@@ -213,7 +200,6 @@ inputs:
       - Directory
     doc: "MATAM ref db. Default is\n                                             \
       \                            $MATAM_DIR/db/SILVA_128_SSURef_NR95"
-    default: $MATAM_DIR/db/SILVA_128_SSURef_NR95
     inputBinding:
       position: 101
       prefix: --ref_db
@@ -236,7 +222,6 @@ inputs:
       - float
     doc: "Score threshold (real between 0 and 1). Default\n                      \
       \                                                   is 0.9"
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --score_threshold
@@ -265,7 +250,6 @@ inputs:
       - string
     doc: "The training model used for taxonomic\n                                \
       \                                         assignment. Default is 16srrna"
-    default: 16srrna
     inputBinding:
       position: 101
       prefix: --training_model

@@ -59,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: 'Set the number of threads used (default: use all threads)'
-    default: use all threads
     inputBinding:
       position: 102
   - id: verbose

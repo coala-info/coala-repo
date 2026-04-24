@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Input tree format (newick, nexus, phyloxml, or nextstrain)
-    default: newick
     inputBinding:
       position: 101
       prefix: --format
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: RTT plot image image output file
-    default: none
     inputBinding:
       position: 101
       prefix: --image
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: RTT plot image output heigh
-    default: 4
     inputBinding:
       position: 101
       prefix: --image-height
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: RTT plot image image output width
-    default: 4
     inputBinding:
       position: 101
       prefix: --image-width
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: Input tree(s) file
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: Mutation rate higher bound
-    default: -1
     inputBinding:
       position: 101
       prefix: --max-rate
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: Root date
-    default: -1
     inputBinding:
       position: 101
       prefix: --max-root-date
@@ -80,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: Mutation rate lower bound
-    default: -1
     inputBinding:
       position: 101
       prefix: --min-rate
@@ -89,7 +81,6 @@ inputs:
       - 'null'
       - float
     doc: Root date
-    default: -1
     inputBinding:
       position: 101
       prefix: --min-root-date
@@ -98,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: RTT output file
-    default: stdout
     inputBinding:
       position: 101
       prefix: --output
@@ -107,7 +97,6 @@ inputs:
       - 'null'
       - float
     doc: Mutation rate to display on the figure
-    default: -1
     inputBinding:
       position: 101
       prefix: --rate
@@ -116,7 +105,6 @@ inputs:
       - 'null'
       - float
     doc: Root date
-    default: -1
     inputBinding:
       position: 101
       prefix: --root-date
@@ -125,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: 'Random Seed: -1 = nano seconds since 1970/01/01 00:00:00'
-    default: -1
     inputBinding:
       position: 101
       prefix: --seed
@@ -134,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads (Max=20)
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

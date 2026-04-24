@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - boolean
     doc: combine UMIs strand pairs (implies --filter-strand-umis)
-    default: false
     inputBinding:
       position: 101
       prefix: --combine-strand-umis
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: spread group-wise model fitting over CORES cpus
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: number of digits to output
-    default: 3
     inputBinding:
       position: 101
       prefix: --digits
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - boolean
     doc: filtes UMIs where only one strands was observed
-    default: false
     inputBinding:
       position: 101
       prefix: --filter-strand-umis
@@ -57,7 +53,6 @@ inputs:
       - string
     doc: counts UMIs per distinct key(s), can be "cell" and/or "gene", "cell" 
       implies --umitools-option --per-cell
-    default: gene
     inputBinding:
       position: 101
       prefix: --group-per
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: use global estimates for groups with fewer than MINUMIS (strand) UMIs
-    default: 5
     inputBinding:
       position: 101
       prefix: --groupwise-min-umis
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - boolean
     doc: add filtered and unfiltered read and UMI counts to count table
-    default: false
     inputBinding:
       position: 101
       prefix: --include-filter-statistics
@@ -108,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: ignored read with mapping quality below MAPQ (passed to umi_tools)
-    default: 20
     inputBinding:
       position: 101
       prefix: --mapping-quality
@@ -117,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: assume UMIs are initially represented by MOLECULES copies (strands)
-    default: 2
     inputBinding:
       position: 101
       prefix: --molecules
@@ -126,7 +117,6 @@ inputs:
       - 'null'
       - boolean
     doc: assume BAM file contains paired reads (passed to umi_tools)
-    default: false
     inputBinding:
       position: 101
       prefix: --paired
@@ -151,7 +141,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not show phantom UMIs in histogram plot
-    default: false
     inputBinding:
       position: 101
       prefix: --plot-skip-phantoms
@@ -160,7 +149,6 @@ inputs:
       - 'null'
       - int
     doc: plot PLOTVARBINS separate emprirical variances
-    default: 10
     inputBinding:
       position: 101
       prefix: --plot-var-bins
@@ -169,7 +157,6 @@ inputs:
       - 'null'
       - boolean
     doc: use log scale for the variance (y) axis
-    default: false
     inputBinding:
       position: 101
       prefix: --plot-var-logy
@@ -194,7 +181,6 @@ inputs:
       - 'null'
       - float
     doc: use quantile Q of the raw read-count distribution for THRESHOLD
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --threshold-quantile
@@ -203,7 +189,6 @@ inputs:
       - 'null'
       - string
     doc: assume UMISEP separates read name and UMI (passed to umi_tools)
-    default: _
     inputBinding:
       position: 101
       prefix: --umi-sep
@@ -220,7 +205,6 @@ inputs:
       - 'null'
       - string
     doc: use executable UMITOOLS to run `umi_tools group`
-    default: umi_tools
     inputBinding:
       position: 101
       prefix: --umitools
@@ -238,7 +222,6 @@ inputs:
       - 'null'
       - string
     doc: use VAREST to estimate variances, can be "lsq" or "mle"
-    default: lsq
     inputBinding:
       position: 101
       prefix: --variance-estimator

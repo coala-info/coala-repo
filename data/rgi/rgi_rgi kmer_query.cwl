@@ -33,7 +33,6 @@ inputs:
       - int
     doc: Minimum number of kmers in the called category for the classification 
       to be made
-    default: 10
     inputBinding:
       position: 101
       prefix: --minimum
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads (CPUs) to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: use local database
-    default: uses database in executable directory
     inputBinding:
       position: 101
       prefix: --local

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use accurate mass binning
-    default: false
     inputBinding:
       position: 102
       prefix: --accurate-mass
@@ -26,7 +25,6 @@ inputs:
       - boolean
     doc: Warning instead of exit with error if instrument types between runs is 
       different
-    default: false
     inputBinding:
       position: 102
       prefix: --allow-alt-instruments
@@ -36,7 +34,6 @@ inputs:
       - string
     doc: Specify the database to use for this search. Can be a named protk 
       database or the path to a fasta file
-    default: sphuman
     inputBinding:
       position: 102
       prefix: --database
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for decoy sequences
-    default: decoy
     inputBinding:
       position: 102
       prefix: --decoy-prefix
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force fitting of mixture model and bypass checks
-    default: false
     inputBinding:
       position: 102
       prefix: --force-fit
@@ -73,7 +68,6 @@ inputs:
       - boolean
     doc: Expect N-Glycosylation modifications as variable mod in a search or as 
       a parameter when building statistical models
-    default: false
     inputBinding:
       position: 102
       prefix: --glyco
@@ -82,7 +76,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run a search on MALDI data
-    default: false
     inputBinding:
       position: 102
       prefix: --maldi
@@ -91,7 +84,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't use decoy sequences to pin down the negative distribution
-    default: false
     inputBinding:
       position: 102
       prefix: --no-decoy
@@ -100,7 +92,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't use NMC model
-    default: false
     inputBinding:
       position: 102
       prefix: --no-nmc
@@ -109,7 +100,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't use NTT model
-    default: false
     inputBinding:
       position: 102
       prefix: --no-ntt
@@ -118,7 +108,6 @@ inputs:
       - 'null'
       - boolean
     doc: Create a separate pproph output file for each analysis
-    default: false
     inputBinding:
       position: 102
       prefix: --one-ata-time
@@ -135,7 +124,6 @@ inputs:
       - 'null'
       - float
     doc: Probability threshold below which PSMs are discarded
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --p-thresh
@@ -144,7 +132,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use phospho information
-    default: false
     inputBinding:
       position: 102
       prefix: --phospho
@@ -153,7 +140,6 @@ inputs:
       - 'null'
       - boolean
     doc: Dont skip analyses for which the output file already exists
-    default: false
     inputBinding:
       position: 102
       prefix: --replace-output
@@ -163,7 +149,6 @@ inputs:
       - int
     doc: Number of processing threads to use. Set to 0 to autodetect an 
       appropriate value
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -172,7 +157,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use Non-parametric model, can only be used with decoy option
-    default: false
     inputBinding:
       position: 102
       prefix: --use-non-parametric-model
@@ -181,7 +165,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only use Expect Score as the discriminant
-    default: false
     inputBinding:
       position: 102
       prefix: --use-only-expect
@@ -190,7 +173,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use Gamma distribution to model the negatives
-    default: false
     inputBinding:
       position: 102
       prefix: --usegamma
@@ -199,7 +181,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use icat information
-    default: false
     inputBinding:
       position: 102
       prefix: --useicat
@@ -208,7 +189,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use pI information
-    default: false
     inputBinding:
       position: 102
       prefix: --usepi
@@ -217,7 +197,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use hydrophobicity / RT information
-    default: false
     inputBinding:
       position: 102
       prefix: --usert

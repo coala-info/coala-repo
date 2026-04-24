@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: "Set the output format of the BIOM table. Default is\nHDF5."
-    default: hdf5
     inputBinding:
       position: 101
       prefix: --fmt
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: "The transform to apply to the data. Default: arcsine\nsquare root."
-    default: arcsin_sqrt
     inputBinding:
       position: 101
       prefix: --transform

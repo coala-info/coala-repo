@@ -11,7 +11,6 @@ inputs:
       - float
     doc: hyperparameter to Dirichlet prior distribution; may need to be tweaked 
       if MCMC is mixing poorly
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --alpha
@@ -21,7 +20,6 @@ inputs:
       - int
     doc: base quality threshold below which to discard data (default 30; 0 
       signals NO threshold)
-    default: 30
     inputBinding:
       position: 101
       prefix: --baseq
@@ -47,7 +45,6 @@ inputs:
     doc: number of MCMC chains to run from different random starting parameters,
       which are used for Gelman-Rubin convergence testing (default 3; uses 
       multiple processors if available)
-    default: 3
     inputBinding:
       position: 101
       prefix: --nChains
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: number of iterations in Markov chain
-    default: 50000
     inputBinding:
       position: 101
       prefix: --nIter
@@ -67,7 +63,6 @@ inputs:
     doc: The number of threads to use. Defaults to 1. If a number higher than 
       the available threads is used, the maximum available number of threads 
       will be used instead.
-    default: 1
     inputBinding:
       position: 101
       prefix: --nrThreads
@@ -119,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: 'trim this # of bases from ends of sequence (reducing effect of aDNA damage)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --trimBases

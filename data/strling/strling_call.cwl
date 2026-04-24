@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of supporting clipped reads for each side of a locus
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-clip
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: minimum total number of supporting clipped reads for a locus
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-clip-total
@@ -63,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality (does not apply to STR reads)
-    default: 40
     inputBinding:
       position: 103
       prefix: --min-mapq
@@ -72,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of supporting reads for a locus to be reported
-    default: 5
     inputBinding:
       position: 103
       prefix: --min-support
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for output files
-    default: strling
     inputBinding:
       position: 103
       prefix: --output-prefix

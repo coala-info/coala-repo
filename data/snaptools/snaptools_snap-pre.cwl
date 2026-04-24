@@ -49,7 +49,6 @@ inputs:
       - boolean
     doc: a boolen tag indicates whether to keep fragments mapped to chrM. If set
       Fasle, fragments aligned to the mitochondrial sequence will be filtered.
-    default: true
     inputBinding:
       position: 101
       prefix: --keep-chrm
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: a boolen tag indicates whether to keep discordant read pairs.
-    default: false
     inputBinding:
       position: 101
       prefix: --keep-discordant
@@ -69,7 +67,6 @@ inputs:
     doc: a boolen tag indicates whether to keep secondary alignments. If False, 
       secondary alignments will be filtered. If True, a secondary alignments 
       will be treated as fragments just single-end.
-    default: false
     inputBinding:
       position: 101
       prefix: --keep-secondary
@@ -81,7 +78,6 @@ inputs:
       or missing. If False, unpaired reads will be filtered. If True, unpaired reads
       will be simply treated as a fragment. Note: for single-end such as scTHS-seq,
       --keep-single must be True.'
-    default: true
     inputBinding:
       position: 101
       prefix: --keep-single
@@ -91,7 +87,6 @@ inputs:
       - int
     doc: max fragment length. Fragments of length longer than --max-flen will be
       filtered.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max-flen
@@ -101,7 +96,6 @@ inputs:
       - int
     doc: max number of barcodes to store. Barcodes are sorted based on the 
       coverage and only the top --max-num barcodes will be stored.
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --max-num
@@ -115,7 +109,6 @@ inputs:
       --min-cov, one can remove barcodes of low coverage without wasting time and
       storage. Please note that this is not selection of good barcodes for downstream
       clustering analysis, it is only filterationof very low-quality barcodes.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-cov
@@ -125,7 +118,6 @@ inputs:
       - int
     doc: min fragment length. Fragments of length shorted than --min-flen will 
       be filtered.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-flen
@@ -135,7 +127,6 @@ inputs:
       - int
     doc: min mappability score. Fargments with mappability score less than 
       --min-mapq will be filtered.
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-mapq
@@ -145,7 +136,6 @@ inputs:
       - boolean
     doc: a boolen tag indicates whether to overwrite the matrix session if it 
       already exists.
-    default: false
     inputBinding:
       position: 101
       prefix: --overwrite
@@ -156,7 +146,6 @@ inputs:
     doc: a boolen tag indicates whether to create a master qc file. This .qc 
       file contains basic quality control metrics at the bulk level. Quality 
       control is only estimated by selected barcodes only.
-    default: true
     inputBinding:
       position: 101
       prefix: --qc-file
@@ -174,7 +163,6 @@ inputs:
       - 'null'
       - boolean
     doc: a boolen tag indicates output the progress.
-    default: true
     inputBinding:
       position: 101
       prefix: --verbose

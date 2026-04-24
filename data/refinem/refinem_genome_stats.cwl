@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --cpus
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: suppress output of logger
-    default: false
     inputBinding:
       position: 102
       prefix: --silent

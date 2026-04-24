@@ -75,7 +75,6 @@ inputs:
       - boolean
     doc: Output merged abundance data in either wide or (tidy) long format. 
       Ignored when the desired output format is BIOM.
-    default: wide
     inputBinding:
       position: 102
       prefix: --wide

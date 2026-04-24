@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Max size of each sra file
-    default: 50G
     inputBinding:
       position: 101
       prefix: --maxsize
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to where to download .sra files
-    default: current directory/tmp_srahunter
     inputBinding:
       position: 101
       prefix: --path
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 6
     inputBinding:
       position: 101
       prefix: -t

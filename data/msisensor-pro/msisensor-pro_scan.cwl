@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: context length (5-32)
-    default: 5
     inputBinding:
       position: 101
       prefix: -c
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: maximal homopolymer size
-    default: 50
     inputBinding:
       position: 101
       prefix: -m
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: maximal length of microsatellite (1-32)
-    default: 6
     inputBinding:
       position: 101
       prefix: -s
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: minimal homopolymer(repeat unit length = 1) size
-    default: 8
     inputBinding:
       position: 101
       prefix: -l
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: minimal repeat times of microsatellite(repeat unit length>=2)
-    default: 5
     inputBinding:
       position: 101
       prefix: -r
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: 'output homopolymer only, 0: no; 1: yes'
-    default: 0
     inputBinding:
       position: 101
       prefix: -p

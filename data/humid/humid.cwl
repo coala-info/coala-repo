@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: allowed mismatches
-    default: 1
     inputBinding:
       position: 102
       prefix: -m
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: calculate statistics
-    default: false
     inputBinding:
       position: 102
       prefix: -s
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: log file name
-    default: /dev/stderr
     inputBinding:
       position: 102
       prefix: -l
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory
-    default: .
     inputBinding:
       position: 102
       prefix: -d
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: use edit distance
-    default: false
     inputBinding:
       position: 102
       prefix: -e
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - boolean
     doc: use maximum clustering method
-    default: false
     inputBinding:
       position: 102
       prefix: -x
@@ -70,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: word length
-    default: 24
     inputBinding:
       position: 102
       prefix: -n
@@ -79,7 +72,6 @@ inputs:
       - 'null'
       - boolean
     doc: write annotated FastQ files
-    default: false
     inputBinding:
       position: 102
       prefix: -a
@@ -88,7 +80,6 @@ inputs:
       - 'null'
       - boolean
     doc: write deduplicated FastQ files
-    default: true
     inputBinding:
       position: 102
       prefix: -q

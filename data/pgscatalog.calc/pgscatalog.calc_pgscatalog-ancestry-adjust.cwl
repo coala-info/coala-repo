@@ -54,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Number of PCs used for population NORMALIZATION (default = 4)
-    default: 4
     inputBinding:
       position: 104
       prefix: --n_normalization
@@ -63,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Number of PCs used for population comparison (default = 5)
-    default: 5
     inputBinding:
       position: 104
       prefix: --n_popcomp

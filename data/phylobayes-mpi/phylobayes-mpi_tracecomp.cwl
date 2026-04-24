@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: burnin period
-    default: 20% of the chain
     inputBinding:
       position: 102
       prefix: -x

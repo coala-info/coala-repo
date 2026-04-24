@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - boolean
     doc: Append to files that already exist
-    default: false
     inputBinding:
       position: 101
       prefix: app
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore fasta reads shorter than this
-    default: 1
     inputBinding:
       position: 101
       prefix: fastaminlen
@@ -30,7 +28,6 @@ inputs:
       - int
     doc: Set to a non-zero number to break fasta files into reads of at most this
       length
-    default: 0
     inputBinding:
       position: 101
       prefix: fastareadlen
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Length of lines in fasta output
-    default: 70
     inputBinding:
       position: 101
       prefix: fastawrap
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - boolean
     doc: Determines whether INPUT file is considered interleaved
-    default: false
     inputBinding:
       position: 101
       prefix: int
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: Toss unmapped reads
-    default: false
     inputBinding:
       position: 101
       prefix: mappedonly
@@ -80,7 +74,6 @@ inputs:
       - 'null'
       - float
     doc: Reads with average quality (after trimming) below this will be discarded
-    default: 0
     inputBinding:
       position: 101
       prefix: minavgquality
@@ -89,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Reads shorter than this after trimming will be discarded
-    default: 0
     inputBinding:
       position: 101
       prefix: minlength
@@ -98,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: If non-negative, toss reads with mapq under this
-    default: -1
     inputBinding:
       position: 101
       prefix: minmapq
@@ -107,7 +98,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrites files that already exist
-    default: false
     inputBinding:
       position: 101
       prefix: ow
@@ -116,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: Quality value used for fasta to fastq reformatting
-    default: 30
     inputBinding:
       position: 101
       prefix: qfake
@@ -141,7 +130,6 @@ inputs:
       - 'null'
       - string
     doc: ASCII offset for input quality. May be 33 (Sanger), 64 (Illumina), or auto
-    default: auto
     inputBinding:
       position: 101
       prefix: qin
@@ -150,7 +138,6 @@ inputs:
       - 'null'
       - string
     doc: ASCII offset for output quality. May be 33 (Sanger), 64 (Illumina), or auto
-    default: auto
     inputBinding:
       position: 101
       prefix: qout
@@ -159,7 +146,6 @@ inputs:
       - 'null'
       - string
     doc: Trim read ends to remove bases with quality below trimq (t, f, r, l, w)
-    default: f
     inputBinding:
       position: 101
       prefix: qtrim
@@ -168,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: Set to a positive number to only process this many INPUT reads
-    default: -1
     inputBinding:
       position: 101
       prefix: reads
@@ -185,7 +170,6 @@ inputs:
       - 'null'
       - boolean
     doc: Reverse-complement reads
-    default: false
     inputBinding:
       position: 101
       prefix: rcomp
@@ -194,7 +178,6 @@ inputs:
       - 'null'
       - float
     doc: Randomly output only this fraction of reads
-    default: 1.0
     inputBinding:
       position: 101
       prefix: samplerate
@@ -203,7 +186,6 @@ inputs:
       - 'null'
       - float
     doc: Regions with average quality BELOW this will be trimmed
-    default: 6.0
     inputBinding:
       position: 101
       prefix: trimq
@@ -212,7 +194,6 @@ inputs:
       - 'null'
       - boolean
     doc: When true, checks reads to see if the names look paired
-    default: false
     inputBinding:
       position: 101
       prefix: verifypaired
@@ -221,7 +202,6 @@ inputs:
       - 'null'
       - int
     doc: Set compression level, 1 (low) to 9 (max)
-    default: 4
     inputBinding:
       position: 101
       prefix: zl

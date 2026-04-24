@@ -35,7 +35,6 @@ inputs:
       otherwise no taxonomy is assigned. Requires a non-standard metapackage. T} T{
       pplacer T}@T{ Use pplacer to assign taxonomy of each read in each OTU. Requires
       a non-standard metapackage. T} .TE'
-    default: smafa_naive_then_diamond
     inputBinding:
       position: 101
       prefix: --assignment-method
@@ -62,7 +61,6 @@ inputs:
     doc: "Performance-type arguments to use when calling 'diamond blastx' during the
       taxonomy assignment step. [default: use setting defined in metapackage when
       set, otherwise use '--block-size 0.5 --target-indexed -c1']"
-    default: use setting defined in metapackage when set, otherwise use 
       '--block-size 0.5 --target-indexed -c1'
     inputBinding:
       position: 101
@@ -72,7 +70,6 @@ inputs:
       - 'null'
       - float
     doc: 'HMMSEARCH e-value cutoff to use for sequence gathering [default: 1e-05]'
-    default: '1e-05'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -90,7 +87,6 @@ inputs:
       - int
     doc: 'Ignore reads aligning in less than this many positions to each protein HMM
       when using --no-diamond-prefilter [default: 24]'
-    default: 24
     inputBinding:
       position: 101
       prefix: --filter-minimum-protein
@@ -132,7 +128,6 @@ inputs:
     doc: 'Maximum number of different bases acids to allow between a sequence and
       the best hit in the database so that it is assigned to the species level. [default:
       2]'
-    default: 2
     inputBinding:
       position: 101
       prefix: --max-species-divergence
@@ -150,7 +145,6 @@ inputs:
       - int
     doc: 'When predicting ORFs require this many base pairs uninterrupted by a stop
       codon [default: 72 for reads, 300 for genomes]'
-    default: 72 for reads, 300 for genomes
     inputBinding:
       position: 101
       prefix: --min-orf-length
@@ -160,7 +154,6 @@ inputs:
       - float
     doc: 'Minimum coverage to report in a taxonomic profile. [default: 0.35 for reads,
       0.1 for genomes]'
-    default: 0.35 for reads, 0.1 for genomes
     inputBinding:
       position: 101
       prefix: --min-taxon-coverage
@@ -258,7 +251,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of CPUS to use [default: 1]'
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -273,7 +265,6 @@ inputs:
       without a significant effect on the majority of bacteria and archaea that use
       table 11. See http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=tgencodes
       for details on specific tables. [default: 4]'
-    default: 4
     inputBinding:
       position: 101
       prefix: --translation-table

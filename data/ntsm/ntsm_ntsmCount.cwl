@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size used.
-    default: 19
     inputBinding:
       position: 103
       prefix: --kmer
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer coverage threshold for early termination.
-    default: inf
     inputBinding:
       position: 103
       prefix: --maxCov
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to run.
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

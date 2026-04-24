@@ -19,7 +19,6 @@ inputs:
       - int
     doc: Trim N bases from the start of each read. Required only when using the 
       `fixed-crop` trimming approach
-    default: 0
     inputBinding:
       position: 101
       prefix: --headcrop
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Sets a maximum read length
-    default: INF
     inputBinding:
       position: 101
       prefix: --maxlength
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Sets a maximum Phred average quality score
-    default: 1000
     inputBinding:
       position: 101
       prefix: --maxqual
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Sets a minimum read length
-    default: 1
     inputBinding:
       position: 101
       prefix: --minlength
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Sets a minimum Phred average quality score
-    default: 0
     inputBinding:
       position: 101
       prefix: --quality
@@ -107,7 +102,6 @@ inputs:
       - int
     doc: Trim N bases from the end of each read. Required only when using the 
       `fixed-crop` trimming approach
-    default: 0
     inputBinding:
       position: 101
       prefix: --tailcrop
@@ -116,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: Use N parallel threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

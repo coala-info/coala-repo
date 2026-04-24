@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable the console color
-    default: true
     inputBinding:
       position: 102
       prefix: --no-color
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable the console markup
-    default: true
     inputBinding:
       position: 102
       prefix: --no-markup

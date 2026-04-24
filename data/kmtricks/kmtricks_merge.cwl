@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: matrix mode <mode:format:out>, see README
-    default: kmer:count:bin
     inputBinding:
       position: 101
       prefix: --mode
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: partition id (-1 = all partitions are processed).
-    default: -1
     inputBinding:
       position: 101
       prefix: --partition-id
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: min recurrence to keep a k-mer/hash.
-    default: 1
     inputBinding:
       position: 101
       prefix: --recurrence-min
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: save a non-solid k-mer if it is solid in N other samples.
-    default: 0
     inputBinding:
       position: 101
       prefix: --share-min
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: min abundance to keep a k-mer/hash, see README.
-    default: '1'
     inputBinding:
       position: 101
       prefix: --soft-min
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads.
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -85,7 +79,6 @@ inputs:
       - 'null'
       - string
     doc: verbosity level [debug|info|warning|error].
-    default: info
     inputBinding:
       position: 101
       prefix: --verbose

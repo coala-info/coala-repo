@@ -90,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the number of significant digits used in the output
-    default: 6
     inputBinding:
       position: 103
       prefix: -p

@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Parallel jobs to run
-    default: 1
     inputBinding:
       position: 103
       prefix: --jobs
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Define loglevel
-    default: INFO
     inputBinding:
       position: 103
       prefix: --loglevel
@@ -60,7 +58,6 @@ inputs:
       - string
     doc: Sequence set to create. One of `SSU` (based on .PATRIC.frn) and 
       `proteins` (based on .PATRIC.faa)
-    default: SSU
     inputBinding:
       position: 103
       prefix: --target-set

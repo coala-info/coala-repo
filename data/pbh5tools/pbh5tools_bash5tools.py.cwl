@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: Catch exceptions in debugger (requires ipdb)
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: min read length
-    default: 0
     inputBinding:
       position: 102
       prefix: --minLength
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: min number of CCS passes, valid only with --readType=ccs
-    default: 0
     inputBinding:
       position: 102
       prefix: --minPasses
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: min read score, valid only with --readType={unrolled,subreads}
-    default: 0
     inputBinding:
       position: 102
       prefix: --minReadScore
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: output file type (fasta, fastq)
-    default: fasta
     inputBinding:
       position: 102
       prefix: --outType
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print runtime profile at exit
-    default: false
     inputBinding:
       position: 102
       prefix: --profile

@@ -10,7 +10,6 @@ inputs:
       - float
     doc: Confidence interval for the estimated MSI Score reported in the tsv 
       output file
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --confidence-interval
@@ -71,7 +70,6 @@ inputs:
       - 'null'
       - Directory
     doc: The location on the filesystem to save the final results
-    default: Current_working_directory/mimsi_results/
     inputBinding:
       position: 101
       prefix: --save-location
@@ -80,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Random Seed
-    default: 2
     inputBinding:
       position: 101
       prefix: --seed
@@ -90,7 +87,6 @@ inputs:
       - boolean
     doc: Use attention pooling rather than average pooling to aggregate sample 
       embeddings
-    default: false
     inputBinding:
       position: 101
       prefix: --use-attention

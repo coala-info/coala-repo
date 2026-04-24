@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable DEBUG log level.
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -26,7 +25,6 @@ inputs:
       - int
     doc: To call a majority readlen, the maximum read length must have at least 
       `majority-vote-cutoff`% reads in support.
-    default: 70
     inputBinding:
       position: 102
       prefix: --majority-vote-cutoff
@@ -36,7 +34,6 @@ inputs:
       - int
     doc: How many reads to analyze from the start of the file. Any n < 1 to 
       parse whole file.
-    default: -1
     inputBinding:
       position: 102
       prefix: --n-reads
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable INFO log level.
-    default: false
     inputBinding:
       position: 102
       prefix: --verbose

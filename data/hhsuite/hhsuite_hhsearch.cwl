@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: number of columns per line in alignment list
-    default: 80
     inputBinding:
       position: 101
       prefix: -aliw
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: amino acid score
-    default: 1
     inputBinding:
       position: 101
       prefix: -sc
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: 'banded alignment: forbid <ovlp> largest diagonals |i-j| of DP matrix'
-    default: 0
     inputBinding:
       position: 101
       prefix: -ovlp
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: weight of central position in cs pseudocount mode
-    default: 1.6
     inputBinding:
       position: 101
       prefix: -csw
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: weight decay parameter for positions in cs pc mode
-    default: 0.9
     inputBinding:
       position: 101
       prefix: -csb
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: E-value cutoff for inclusion in result alignment
-    default: 0.001
     inputBinding:
       position: 101
       prefix: -e
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - float
     doc: penalty (bits) for end gaps aligned to query residues
-    default: 0.0
     inputBinding:
       position: 101
       prefix: -egq
@@ -105,7 +98,6 @@ inputs:
       - 'null'
       - float
     doc: penalty (bits) for end gaps aligned to template residues
-    default: 0.0
     inputBinding:
       position: 101
       prefix: -egt
@@ -123,7 +115,6 @@ inputs:
       - int
     doc: filter MSAs by selecting most diverse set of sequences, keeping at 
       least this many seqs in each MSA block of length 50
-    default: 100
     inputBinding:
       position: 101
       prefix: -diff
@@ -132,7 +123,6 @@ inputs:
       - 'null'
       - float
     doc: factor to increase/reduce gap extend penalty for deletes
-    default: 0.6
     inputBinding:
       position: 101
       prefix: -gaph
@@ -141,7 +131,6 @@ inputs:
       - 'null'
       - float
     doc: factor to increase/reduce gap extend penalty for inserts
-    default: 0.6
     inputBinding:
       position: 101
       prefix: -gapi
@@ -150,7 +139,6 @@ inputs:
       - 'null'
       - float
     doc: Transition pseudocount admixture for extend gap
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -gape
@@ -159,7 +147,6 @@ inputs:
       - 'null'
       - float
     doc: factor to increase/reduce gap open penalty for deletes
-    default: 0.6
     inputBinding:
       position: 101
       prefix: -gapf
@@ -168,7 +155,6 @@ inputs:
       - 'null'
       - float
     doc: factor to increase/reduce gap open penalty for inserts
-    default: 0.6
     inputBinding:
       position: 101
       prefix: -gapg
@@ -177,7 +163,6 @@ inputs:
       - 'null'
       - float
     doc: Transition pseudocount admixture for open gap
-    default: 0.15
     inputBinding:
       position: 101
       prefix: -gapd
@@ -186,7 +171,6 @@ inputs:
       - 'null'
       - float
     doc: Transition pseudocount admixture
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -gapb
@@ -236,7 +220,6 @@ inputs:
       - float
     doc: 'posterior prob threshold for MAC realignment controlling greediness at alignment
       ends: 0:global >0.1:local'
-    default: 0.35
     inputBinding:
       position: 101
       prefix: -mact
@@ -253,7 +236,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of alignments in alignment list
-    default: 500
     inputBinding:
       position: 101
       prefix: -B
@@ -262,7 +244,6 @@ inputs:
       - 'null'
       - int
     doc: show up to this many alternative alignments with raw score > smin
-    default: 4
     inputBinding:
       position: 101
       prefix: -alt
@@ -271,7 +252,6 @@ inputs:
       - 'null'
       - float
     doc: maximum E-value in summary and alignment list
-    default: '1E+06'
     inputBinding:
       position: 101
       prefix: -E
@@ -280,7 +260,6 @@ inputs:
       - 'null'
       - int
     doc: max number of HMM columns
-    default: 20001
     inputBinding:
       position: 101
       prefix: -maxres
@@ -289,7 +268,6 @@ inputs:
       - 'null'
       - int
     doc: max number of input rows
-    default: 65535
     inputBinding:
       position: 101
       prefix: -maxseq
@@ -298,7 +276,6 @@ inputs:
       - 'null'
       - float
     doc: limit memory for realignment (in GB)
-    default: 3.0
     inputBinding:
       position: 101
       prefix: -maxmem
@@ -307,7 +284,6 @@ inputs:
       - 'null'
       - float
     doc: maximum pairwise sequence identity
-    default: 90.0
     inputBinding:
       position: 101
       prefix: -id
@@ -316,7 +292,6 @@ inputs:
       - 'null'
       - int
     doc: max. number of query/template sequences displayed
-    default: 1
     inputBinding:
       position: 101
       prefix: -seq
@@ -325,7 +300,6 @@ inputs:
       - 'null'
       - int
     doc: realign max. <int> hits
-    default: 500
     inputBinding:
       position: 101
       prefix: -realign_max
@@ -334,7 +308,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of lines in summary hit list
-    default: 500
     inputBinding:
       position: 101
       prefix: -Z
@@ -343,7 +316,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of alignments in alignment list
-    default: 10
     inputBinding:
       position: 101
       prefix: -b
@@ -352,7 +324,6 @@ inputs:
       - 'null'
       - float
     doc: minimum coverage with master sequence (%)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: -cov
@@ -361,7 +332,6 @@ inputs:
       - 'null'
       - float
     doc: minimum sequence identity with master sequence (%)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: -qid
@@ -370,7 +340,6 @@ inputs:
       - 'null'
       - float
     doc: minimum probability in summary and alignment list
-    default: 20.0
     inputBinding:
       position: 101
       prefix: -p
@@ -379,7 +348,6 @@ inputs:
       - 'null'
       - float
     doc: minimum raw score for alternative alignments
-    default: 20.0
     inputBinding:
       position: 101
       prefix: -smin
@@ -388,7 +356,6 @@ inputs:
       - 'null'
       - float
     doc: minimum score per column with master sequence
-    default: -20.0
     inputBinding:
       position: 101
       prefix: -qsc
@@ -397,7 +364,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of lines in summary hit list
-    default: 10
     inputBinding:
       position: 101
       prefix: -z
@@ -407,7 +373,6 @@ inputs:
       - boolean
     doc: do NOT neutralize His-, C-myc-, FLAG-tags, and trypsin recognition 
       sequence to background distribution
-    default: true
     inputBinding:
       position: 101
       prefix: -notags
@@ -425,7 +390,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs to use (for shared memory SMPs)
-    default: 2
     inputBinding:
       position: 101
       prefix: -cpu
@@ -434,7 +398,6 @@ inputs:
       - 'null'
       - float
     doc: weight of term for pair correlations
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -corr
@@ -443,7 +406,6 @@ inputs:
       - 'null'
       - float
     doc: overall pseudocount admixture
-    default: 0.9
     inputBinding:
       position: 101
       prefix: -pc_hhm_contxt_a
@@ -452,7 +414,6 @@ inputs:
       - 'null'
       - float
     doc: Neff threshold value for mode 2
-    default: 4.0
     inputBinding:
       position: 101
       prefix: -pc_hhm_contxt_b
@@ -461,7 +422,6 @@ inputs:
       - 'null'
       - float
     doc: extinction exponent c for mode 2
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -pc_hhm_contxt_c
@@ -470,7 +430,6 @@ inputs:
       - 'null'
       - int
     doc: position dependence of pc admixture 'tau' (pc mode, default=2)
-    default: 2
     inputBinding:
       position: 101
       prefix: -pc_hhm_contxt_mode
@@ -479,7 +438,6 @@ inputs:
       - 'null'
       - float
     doc: overall pseudocount admixture
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -pc_hhm_nocontxt_a
@@ -488,7 +446,6 @@ inputs:
       - 'null'
       - float
     doc: Neff threshold value for mode 2
-    default: 1.5
     inputBinding:
       position: 101
       prefix: -pc_hhm_nocontxt_b
@@ -497,7 +454,6 @@ inputs:
       - 'null'
       - float
     doc: extinction exponent c for mode 2
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -pc_hhm_nocontxt_c
@@ -506,7 +462,6 @@ inputs:
       - 'null'
       - int
     doc: position dependence of pc admixture 'tau' (pc mode, default=2)
-    default: 2
     inputBinding:
       position: 101
       prefix: -pc_hhm_nocontxt_mode
@@ -515,7 +470,6 @@ inputs:
       - 'null'
       - float
     doc: profile-profile score offset
-    default: -0.03
     inputBinding:
       position: 101
       prefix: -shift
@@ -562,7 +516,6 @@ inputs:
       - 'null'
       - float
     doc: weight of ss score
-    default: 0.11
     inputBinding:
       position: 101
       prefix: -ssw
@@ -571,7 +524,6 @@ inputs:
       - 'null'
       - int
     doc: ss scoring mode
-    default: 2
     inputBinding:
       position: 101
       prefix: -ssm
@@ -580,7 +532,6 @@ inputs:
       - 'null'
       - float
     doc: SS substitution matrix weight
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -ssa
@@ -613,7 +564,6 @@ inputs:
       - 'null'
       - int
     doc: 'verbose mode: 0:no screen output 1:only warnings 2: verbose'
-    default: 2
     inputBinding:
       position: 101
       prefix: -v

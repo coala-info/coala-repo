@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of CPUs. Default: auto'
-    default: auto
     inputBinding:
       position: 101
       prefix: --cpus

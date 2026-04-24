@@ -27,7 +27,6 @@ inputs:
       two values or a single value can be given. If a single value is given, it will
       be segmented into two equal fractions (ie, 5000 is equivalent to 2500,5000)
       DEFAULT: 2500,5000bp. WARNING: Values > 20000bp are automatically set to 20000bp.'
-    default: 2500,5000bp
     inputBinding:
       position: 102
       prefix: --bisizes
@@ -75,7 +74,6 @@ inputs:
     doc: Span from TSS and TTS in the gene-centered annotation. ChIP regions 
       within this range from TSS and TTS are considered when calculating the 
       coverage rates in promoter and downstream, DEFAULT=3000bp
-    default: 3000
     inputBinding:
       position: 102
       prefix: --span
@@ -109,7 +107,6 @@ inputs:
       will be segmented into three equal fractions (ie, 3000 is equivalent to 1000,2000,3000),
       DEFAULT: 1000,2000,3000. WARNING: Values > 10000bp are automatically set to
       10000bp.'
-    default: 1000,2000,3000
     inputBinding:
       position: 102
       prefix: --sizes
@@ -118,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: 'Relative distance to TSS/TTS in wig profiling, DEFAULT: 3000bp'
-    default: 3000
     inputBinding:
       position: 102
       prefix: --rel-dist
@@ -156,7 +152,6 @@ inputs:
       - int
     doc: 'Wig profiling resolution, DEFAULT: 50bp. WARNING: Value smaller than the
       wig interval (resolution) may cause aliasing error.'
-    default: 50
     inputBinding:
       position: 102
       prefix: --pf-res

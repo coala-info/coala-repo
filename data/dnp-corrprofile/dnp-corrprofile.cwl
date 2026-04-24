@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Dinucleotide profile sequence length. In range [25..600].
-    default: 600
     inputBinding:
       position: 102
       prefix: --length
@@ -34,7 +33,6 @@ inputs:
       - boolean
     doc: "Turn this option off to disable version update notifications of the\n  \
       \        application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO."
-    default: true
     inputBinding:
       position: 102
       prefix: --version-check
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Sliding window size, < than length. In range [10..146].
-    default: 10
     inputBinding:
       position: 102
       prefix: --window

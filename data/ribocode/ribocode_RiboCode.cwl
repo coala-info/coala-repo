@@ -11,7 +11,6 @@ inputs:
       - string
     doc: 'The alternative start codon, such as CTG,GTG, default: None. Multiple codons
       should be separated by comma.'
-    default: None
     inputBinding:
       position: 101
       prefix: --alt_start_codons
@@ -36,7 +35,6 @@ inputs:
       test could help determine whether the combined p-values should be ajusted to
       account for the dependence between two test (i.e. F0 vs F1 and F0 vs F2). mic:
       Maximal Information Coefficient; pcc: Pearson Correlation Coefficient.'
-    default: none
     inputBinding:
       position: 101
       prefix: --dependence_test
@@ -47,7 +45,6 @@ inputs:
     doc: the region from most distal AUG to stop was defined as an ORF. If set 
       to no , the position of start codon will be automatically determined by 
       program.
-    default: yes
     inputBinding:
       position: 101
       prefix: --longest-orf
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: The minimal length of predicted peptides,default 5
-    default: 5
     inputBinding:
       position: 101
       prefix: --min-AA-length
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: 'output file name, default: final_result'
-    default: final_result
     inputBinding:
       position: 101
       prefix: --output-name
@@ -99,7 +94,6 @@ inputs:
       - 'null'
       - float
     doc: P-value cutoff for ORF filtering, default 0.05
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --pval-cutoff
@@ -108,7 +102,6 @@ inputs:
       - 'null'
       - string
     doc: The canonical start codon.
-    default: ATG
     inputBinding:
       position: 101
       prefix: --start_codon
@@ -117,7 +110,6 @@ inputs:
       - 'null'
       - string
     doc: 'Stop codon, default: TAA,TAG,TGA'
-    default: TAA,TAG,TGA
     inputBinding:
       position: 101
       prefix: --stop_codon
@@ -127,7 +119,6 @@ inputs:
       - string
     doc: 'the method for adjustment the cominbed p-values to account for the dependence
       between two tests (i.e. F0 vs F1 and F0 vs F2). see details at: https://search.r-project.org/CRAN/refmans/poolr/html/stouffer.html'
-    default: none
     inputBinding:
       position: 101
       prefix: --stouffer_adj
@@ -138,7 +129,6 @@ inputs:
     doc: 'ORF translation table(Default: 1). Assign the correct genetic code based
       on your organism, [please refer: https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi
       ]'
-    default: 1
     inputBinding:
       position: 101
       prefix: --transl_table

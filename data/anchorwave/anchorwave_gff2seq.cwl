@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: minimum exon length to output
-    default: 20
     inputBinding:
       position: 101
       prefix: -m

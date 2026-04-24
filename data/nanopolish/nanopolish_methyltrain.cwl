@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: 'use NUM events for training (default: 1000)'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max-events
@@ -118,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: 'use NUM threads (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

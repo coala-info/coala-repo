@@ -60,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: Default branch support if not provided as input
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --default
@@ -70,7 +69,6 @@ inputs:
       - int
     doc: 'Execution mode (0: efficient, 1: brute force, 2: weighted quartets exit,
       3: good/bad edges exit)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --execution
@@ -117,7 +115,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum value of input branch support
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --max
@@ -127,7 +124,6 @@ inputs:
       - int
     doc: Seeds random number generator prior to calling the max cut heuristic. If
       -1, system time is used.
-    default: 1
     inputBinding:
       position: 101
       prefix: --maxcutseed
@@ -136,7 +132,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum value of input branch support
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min
@@ -145,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: 'Normalization scheme for artificial taxa (0: none, 1: uniform, 2: non-uniform)'
-    default: 2
     inputBinding:
       position: 101
       prefix: --norm_atax
@@ -164,7 +158,6 @@ inputs:
       - int
     doc: Seeds random number generator with prior to arbitrarily resolving polytomies.
       If -1, system time is used.
-    default: 12345
     inputBinding:
       position: 101
       prefix: --polyseed
@@ -216,7 +209,6 @@ inputs:
       - int
     doc: 'Verbose mode (0: none, 1: CSV subproblem info, 2: detailed CSV subproblem
       info)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbose
@@ -226,7 +218,6 @@ inputs:
       - string
     doc: 'Weighting scheme for quartets (n: none, h: hybrid, s: support, l: length,
       f: none fast)'
-    default: n
     inputBinding:
       position: 101
       prefix: --weight

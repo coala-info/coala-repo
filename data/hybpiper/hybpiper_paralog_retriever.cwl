@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - Directory
     doc: Specify directory for output FASTA files (ALL).
-    default: paralogs_all
     inputBinding:
       position: 102
       prefix: --fasta_dir_all
@@ -33,7 +32,6 @@ inputs:
       - Directory
     doc: Specify directory for output FASTA files (no putative chimeric 
       sequences).
-    default: paralogs_no_chimeras
     inputBinding:
       position: 102
       prefix: --fasta_dir_no_chimeras
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: 'Dots per inch (DPI) for the output heatmap image. Default is: 100.'
-    default: 100
     inputBinding:
       position: 102
       prefix: --heatmap_dpi
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: Filename for the output heatmap, saved by default as a *.png file.
-    default: paralog_heatmap
     inputBinding:
       position: 102
       prefix: --heatmap_filename
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: 'File type to save the output heatmap image as. Default is: png.'
-    default: png
     inputBinding:
       position: 102
       prefix: --heatmap_filetype
@@ -97,7 +92,6 @@ inputs:
       - Directory
     doc: Specify directory containing HybPiper output sample folders. Default is
       the current working directory.
-    default: .
     inputBinding:
       position: 102
       prefix: --hybpiper_dir
@@ -106,7 +100,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'If supplied, do not create a heatmap figure. Default is: False.'
-    default: false
     inputBinding:
       position: 102
       prefix: --no_heatmap
@@ -116,7 +109,6 @@ inputs:
       - boolean
     doc: 'If supplied, do not render labels for x-axis (loci) in the saved heatmap
       figure. Default is: False.'
-    default: false
     inputBinding:
       position: 102
       prefix: --no_xlabels
@@ -126,7 +118,6 @@ inputs:
       - boolean
     doc: 'If supplied, do not render labels for y-axis (samples) in the saved heatmap
       figure. Default is: False.'
-    default: false
     inputBinding:
       position: 102
       prefix: --no_ylabels
@@ -135,7 +126,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the filename for the paralog *.tsv report table.
-    default: paralog_report
     inputBinding:
       position: 102
       prefix: --paralog_report_filename
@@ -145,7 +135,6 @@ inputs:
       - string
     doc: Specify the filename for the *.txt list of genes with paralogs in 
       <paralogs_list_threshold_percentage> number of samples.
-    default: paralogs_above_threshold_report
     inputBinding:
       position: 102
       prefix: --paralogs_above_threshold_report_filename
@@ -157,7 +146,6 @@ inputs:
       warnings to be reported in the <genes_with_paralogs.txt> report file. The 
       default is 0.0, meaning that all genes and samples with at least one 
       paralog warning will be reported
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --paralogs_list_threshold_percentage
@@ -167,7 +155,6 @@ inputs:
       - boolean
     doc: 'If supplied, run the subcommand using cProfile. Saves a *.csv file of results.
       Default is: False.'
-    default: false
     inputBinding:
       position: 102
       prefix: --run_profiler

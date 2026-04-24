@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - float
     doc: The probability for a new association between two proteins
-    default: 0.005
     inputBinding:
       position: 102
       prefix: --association-probability
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: The probability for a dissociation of a pairwise interaction
-    default: 0.0125
     inputBinding:
       position: 102
       prefix: --dissociation-probability
@@ -42,7 +40,6 @@ inputs:
       - int
     doc: Maximum number of simulation steps if convergence is not reached until 
       then
-    default: 1000
     inputBinding:
       position: 102
       prefix: --max-steps

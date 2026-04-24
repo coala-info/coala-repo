@@ -66,7 +66,6 @@ inputs:
       - int
     doc: 'define the decoy generating mode, 0: revere sequence (default), 1:reverse
       and shift KR, 2:reverse and swap Kr'
-    default: 0
     inputBinding:
       position: 101
       prefix: --decoymode
@@ -75,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: define a decoy prefix
-    default: rev_
     inputBinding:
       position: 101
       prefix: --prefix
@@ -84,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: enzyme for digestion (trypsin, lys_c, lys_n, glu_c, chymotrypsin)
-    default: trypsin
     inputBinding:
       position: 101
       prefix: --enzyme

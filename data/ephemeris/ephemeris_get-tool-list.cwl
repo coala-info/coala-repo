@@ -10,7 +10,6 @@ inputs:
       - string
     doc: Galaxy admin user API key (required if not defined in the tools list 
       file)
-    default: None
     inputBinding:
       position: 101
       prefix: --api-key
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Target Galaxy instance URL/IP address
-    default: http://localhost:8080
     inputBinding:
       position: 101
       prefix: --galaxy
@@ -29,7 +27,6 @@ inputs:
       - boolean
     doc: Get all tools and revisions, not just those which are present on the 
       web ui.Requires login details.
-    default: false
     inputBinding:
       position: 101
       prefix: --get-all-tools
@@ -39,7 +36,6 @@ inputs:
       - boolean
     doc: Include the data managers in the tool list. Requires admin login 
       details
-    default: false
     inputBinding:
       position: 101
       prefix: --get-data-managers
@@ -50,7 +46,6 @@ inputs:
     doc: Include tool_panel_id in tool_list.yml ? Use this only if the tool 
       panel id already exists. See 
       https://github.com/galaxyproject/ansible-galaxy-tools/blob/master/files/tool_list.yaml.sample
-    default: false
     inputBinding:
       position: 101
       prefix: --include-tool-panel-id
@@ -65,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: Password for the Galaxy user
-    default: None
     inputBinding:
       position: 101
       prefix: --password
@@ -76,7 +70,6 @@ inputs:
     doc: Do not include the changeset revision when generating the tool list.Use
       this if you would like to use the list to update all the tools inyour 
       galaxy instance using shed-install.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-changeset-revision
@@ -85,7 +78,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not include tool_panel_name in tool_list.yml ?
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-tool-panel-name
@@ -94,7 +86,6 @@ inputs:
       - 'null'
       - string
     doc: Galaxy user email address
-    default: None
     inputBinding:
       position: 101
       prefix: --user
@@ -103,7 +94,6 @@ inputs:
       - 'null'
       - boolean
     doc: Increase output verbosity.
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: Path to an assembly fasta.
-    default: None
     inputBinding:
       position: 101
       prefix: --assembly
@@ -22,7 +21,6 @@ inputs:
       samples, e.g.: "path/to/my/mappings/*.bam" or "path/to/my/mappings/wi th/*/different/folder/*/structure/*.bam"
       or "path/to/my/mappings/my_mapping.bam. Leave empty if you have an average depth
       per contig file to supply to binny.'
-    default: None
     inputBinding:
       position: 101
       prefix: --bam
@@ -31,7 +29,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set to use high memory capacity computer node.
-    default: false
     inputBinding:
       position: 101
       prefix: --big_mem_avail
@@ -41,7 +38,6 @@ inputs:
       - float
     doc: Specify the amount of memory per core for high memory capacity node. 
       Use with '--big-mem'.
-    default: 26.0
     inputBinding:
       position: 101
       prefix: --big_mem_per_core_gb
@@ -51,7 +47,6 @@ inputs:
       - string
     doc: Submission command of a cluster or batch system to use (Atm only slurm 
       support.
-    default: '{cluster.call} {cluster.runtime}{resources.runtime} {cluster.mem_per_cpu}{resources.mem}
       {cluster.nodes} {cluster.qos} {cluster.threads}{threads} {cluster.partition}
       {cluster.stdout}'
     inputBinding:
@@ -64,7 +59,6 @@ inputs:
     doc: Will use coassembly mode, starting with contigs >= 500 bp instead of 
       high threshold, decreasing, if set to 'on' or if 'auto' and multiple depth
       files are detected. Choose between, 'auto', 'on' , 'off'.
-    default: auto
     inputBinding:
       position: 101
       prefix: --coassembly_mode
@@ -74,7 +68,6 @@ inputs:
       - File
     doc: 'Path to config file. A default config file to use as template can be found
       at: /usr/local/lib/python3.10/site- packages/binny/config/config.default.yaml.'
-    default: ''
     inputBinding:
       position: 101
       prefix: --config_file
@@ -85,7 +78,6 @@ inputs:
     doc: Path to an average depth per contig tsv file. Leave empty if you supply
       a bam file for binny to calculate average contig depth from. First column 
       needs to be the contig ids, subsequent column(s) for depht(s).
-    default: ''
     inputBinding:
       position: 101
       prefix: --contig_depth
@@ -95,7 +87,6 @@ inputs:
       - Directory
     doc: Absolute path to put binny dbs in. If left empty they will be put into 
       'database' in the binny main dir.
-    default: /usr/local/lib/python3.10/site- packages/binny/database
     inputBinding:
       position: 101
       prefix: --db_path
@@ -104,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: Distance metric for opentSNE and HDBSCAN.
-    default: manhattan
     inputBinding:
       position: 101
       prefix: --distance_metric
@@ -113,7 +103,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform a dry-run.
-    default: false
     inputBinding:
       position: 101
       prefix: --dry-run
@@ -123,7 +112,6 @@ inputs:
       - boolean
     doc: Extract single contig MAGs of at least 90% purity and 92.5% 
       completeness.
-    default: true
     inputBinding:
       position: 101
       prefix: --extract_scmags
@@ -132,7 +120,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force all output files to be re-created.
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -143,7 +130,6 @@ inputs:
     doc: Increasing the HDBSCAN cluster selection epsilon beyond 0.5 is not 
       advised as it might massively increase run time, but it might help recover
       fragmented genomes that would be missed with lower settings.
-    default: 0.250,0.000
     inputBinding:
       position: 101
       prefix: --hdbscan_epsilon_range
@@ -154,7 +140,6 @@ inputs:
     doc: "Adapted from the HDBSCAN manual: 'Measure of how conservative the clustering
       should be. With larger values, more points will be declared as noise, and clusters
       will be restricted to progressively more dense areas.'."
-    default: 1,5,10
     inputBinding:
       position: 101
       prefix: --hdbscan_min_samples_range
@@ -163,7 +148,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use depth as additional dimension during the initial clustering.
-    default: false
     inputBinding:
       position: 101
       prefix: --include_depth_initial
@@ -172,7 +156,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use depth as additional dimension during the main clusterings.
-    default: false
     inputBinding:
       position: 101
       prefix: --include_depth_main
@@ -181,7 +164,6 @@ inputs:
       - 'null'
       - string
     doc: Naming scheme for cluster job scripts.
-    default: binny.{rulename}.{jobid}.sh
     inputBinding:
       position: 101
       prefix: --job_name
@@ -190,7 +172,6 @@ inputs:
       - 'null'
       - string
     doc: Input a list of kmers, e.g. '2,3,4'.
-    default: 2,3,4
     inputBinding:
       position: 101
       prefix: --kmers
@@ -200,7 +181,6 @@ inputs:
       - boolean
     doc: Toggle masking of potentially disruptive contig regions (e.g. rRNA and 
       CRISPR elements) from k-mer counting
-    default: true
     inputBinding:
       position: 101
       prefix: --mask_disruptive_sequences
@@ -209,7 +189,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum contig length. Caps NX filtering value.
-    default: 2250
     inputBinding:
       position: 101
       prefix: --max_cont_length_cutoff
@@ -219,7 +198,6 @@ inputs:
       - int
     doc: Maximum contig length containing CheckM markers. Caps NX filtering 
       value.
-    default: 2250
     inputBinding:
       position: 101
       prefix: --max_cont_length_cutoff_marker
@@ -228,7 +206,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of binny iterations.
-    default: 50
     inputBinding:
       position: 101
       prefix: --max_iterations
@@ -238,7 +215,6 @@ inputs:
       - int
     doc: "Maximum marker set lineage depth to check bin quality with:0: 'domain',
       1: 'phylum', 2: 'class', 3: 'order', 4: 'family', 5: 'genus', 6: 'species'."
-    default: 2
     inputBinding:
       position: 101
       prefix: --max_marker_lineage_depth_lvl
@@ -251,7 +227,6 @@ inputs:
       minimum size threshold until the maximum is reached. Prevents use of 
       excessive amounts of memory on large assemblies.Default should ensure 
       adequate performance, adjust according to available memory.
-    default: 500000.0
     inputBinding:
       position: 101
       prefix: --max_n_contigs
@@ -260,7 +235,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum value binny will lower completeness to while running.
-    default: 72.5
     inputBinding:
       position: 101
       prefix: --min_completeness
@@ -269,7 +243,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum contig length. Caps NX filtering value.
-    default: 2250
     inputBinding:
       position: 101
       prefix: --min_cont_length_cutoff
@@ -279,7 +252,6 @@ inputs:
       - int
     doc: Minimum contig length containing CheckM markers. Caps NX filtering 
       value.
-    default: 2250
     inputBinding:
       position: 101
       prefix: --min_cont_length_cutoff_marker
@@ -288,7 +260,6 @@ inputs:
       - 'null'
       - float
     doc: Specify the amount of memory per core for your system.
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --normal_mem_per_core_gb
@@ -301,7 +272,6 @@ inputs:
       noise. Be aware that, depending on the assembly quality, low values as the
       N<X> might results in leaving out a large proportion of the assembly (if 
       the max_cont_length cutoffs are set high as well).
-    default: 90.0
     inputBinding:
       position: 101
       prefix: --NX_value
@@ -310,7 +280,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum purity for bins to be selected.
-    default: 95.0
     inputBinding:
       position: 101
       prefix: --purity
@@ -319,7 +288,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate a report (it's recommended to run -c, -f and -l with -r).
-    default: false
     inputBinding:
       position: 101
       prefix: --report
@@ -328,7 +296,6 @@ inputs:
       - 'null'
       - string
     doc: Sample name.
-    default: sample
     inputBinding:
       position: 101
       prefix: --sample
@@ -337,7 +304,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the scheduler preset file for cluster submission.
-    default: /usr/local/lib/python3.10/site- 
       packages/binny/config/slurm.config.yaml
     inputBinding:
       position: 101
@@ -347,7 +313,6 @@ inputs:
       - 'null'
       - boolean
     doc: Setup CheckM database, Mantis and Prokka container.
-    default: false
     inputBinding:
       position: 101
       prefix: --setup
@@ -356,7 +321,6 @@ inputs:
       - 'null'
       - float
     doc: Completeness threshold binny wilt begin with.
-    default: 92.5
     inputBinding:
       position: 101
       prefix: --start_completeness
@@ -365,7 +329,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of cpus/threads to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -374,7 +337,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to a temporary directory to write to. Defaults to outputdir/tmp
-    default: ''
     inputBinding:
       position: 101
       prefix: --tmp_dir
@@ -383,7 +345,6 @@ inputs:
       - 'null'
       - boolean
     doc: Unlock working directory (only necessary for crash/kill recovery).
-    default: false
     inputBinding:
       position: 101
       prefix: --unlock
@@ -392,7 +353,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use cluster to submit jobs to instead of running locally.
-    default: false
     inputBinding:
       position: 101
       prefix: --use_cluster
@@ -401,7 +361,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write all contig data to compressed tsv. Might create large file.
-    default: true
     inputBinding:
       position: 101
       prefix: --write_contig_data

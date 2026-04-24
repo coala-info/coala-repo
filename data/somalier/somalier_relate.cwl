@@ -39,7 +39,6 @@ inputs:
       - float
     doc: hets sites must be between min-ab and 1 - min_ab. set this to 0.2 for 
       RNA-Seq data
-    default: 0.3
     inputBinding:
       position: 102
       prefix: --min-ab
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: only genotype sites with at least this depth.
-    default: 7
     inputBinding:
       position: 102
       prefix: --min-depth
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: output prefix for results.
-    default: somalier
     inputBinding:
       position: 102
       prefix: --output-prefix

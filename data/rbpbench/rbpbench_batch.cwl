@@ -50,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: 'Label to use for additional regions in HTML report (default: "custom")'
-    default: custom
     inputBinding:
       position: 104
       prefix: --add-annot-id
@@ -78,7 +77,6 @@ inputs:
       - int
     doc: '--in BED score column used for p-value calculations. BED score can be e.g.
       log2 fold change or -log10 p-value of the region (default: 5)'
-    default: 5
     inputBinding:
       position: 104
       prefix: --bed-score-col
@@ -88,7 +86,6 @@ inputs:
       - float
     doc: 'CMSEARCH bit score threshold (CMSEARCH options: -T --incT). The higher the
       more strict (default: 1.0)'
-    default: 1.0
     inputBinding:
       position: 104
       prefix: --cmsearch-bs
@@ -100,7 +97,6 @@ inputs:
       (CMSEARCH option: --default). 2: max setting (CMSEARCH option: --max), i.e.,
       turn all heuristic filters off, slower and more sensitive / more hits) (default:
       1)'
-    default: 1
     inputBinding:
       position: 104
       prefix: --cmsearch-mode
@@ -127,7 +123,6 @@ inputs:
       - string
     doc: 'Set ID/name for provided custom motif database via --custom-db (default:
       "custom")'
-    default: custom
     inputBinding:
       position: 104
       prefix: --custom-db-id
@@ -186,7 +181,6 @@ inputs:
     doc: 'Up- and downstream extension of --in sites in nucleotides (nt). Set e.g.
       --ext 30 for 30 nt on both sides, or --ext 20,10 for different up- and downstream
       extension (default: 0)'
-    default: '0'
     inputBinding:
       position: 104
       prefix: --ext
@@ -208,7 +202,6 @@ inputs:
       2: use frequencies from human ENSEMBL transcripts (including introns, resulting
       in lower G+C and T most prominent) 3: use uniform frequencies (same for every
       nucleotide) (default: 1)'
-    default: 1
     inputBinding:
       position: 104
       prefix: --fimo-ntf-mode
@@ -217,7 +210,6 @@ inputs:
       - 'null'
       - float
     doc: 'FIMO p-value threshold (FIMO option: --thresh) (default: 0.0005)'
-    default: 0.0005
     inputBinding:
       position: 104
       prefix: --fimo-pval
@@ -227,7 +219,6 @@ inputs:
       - int
     doc: 'Defines Fisher exact test alternative hypothesis for testing co-occurrences
       of RBP motifs. 1: greater, 2: two-sided, 3: less (default: 1)'
-    default: 1
     inputBinding:
       position: 104
       prefix: --fisher-mode
@@ -302,7 +293,6 @@ inputs:
     doc: 'Define how to obtain GO DAG (directed acyclic graph) obo file. 1: download
       most recent file from internet, 2: use local file, 3: provide file via --goa-obo-file
       (default: 1)'
-    default: 1
     inputBinding:
       position: 104
       prefix: --goa-obo-mode
@@ -322,7 +312,6 @@ inputs:
       - float
     doc: 'GO enrichment analysis p-value threshold (applied on corrected p-value)
       (default: 0.05)'
-    default: 0.05
     inputBinding:
       position: 104
       prefix: --goa-pval
@@ -358,7 +347,6 @@ inputs:
       feature (if less or no overlap, region will be assigned to "intergenic"). If
       there is overlap with several features, assign the one with highest overlap
       (default: 0.1)'
-    default: 0.1
     inputBinding:
       position: 104
       prefix: --gtf-feat-min-overlap
@@ -368,7 +356,6 @@ inputs:
       - int
     doc: 'Set intron border region length (up- + downstream ends) for exon intron
       overlap statistics (default: 250)'
-    default: 250
     inputBinding:
       position: 104
       prefix: --gtf-intron-border-len
@@ -387,7 +374,6 @@ inputs:
       - 'null'
       - int
     doc: 'K-mer size for comparative plots (default: 5)'
-    default: 5
     inputBinding:
       position: 104
       prefix: --kmer-size
@@ -397,7 +383,6 @@ inputs:
       - int
     doc: 'Set maximum motif distance for regex-RBP co-occurrence statistic in HTML
       report (default: 20)'
-    default: 20
     inputBinding:
       position: 104
       prefix: --max-motif-dist
@@ -449,7 +434,6 @@ inputs:
       (277 RBPs, 622 motifs, "catrapid_omics_v2.1_human_6plus_ext_ucrbps"), 3: human
       RBP motifs from Ray et al. 2013 (80 RBPs, 102 motifs, "ray2013_human_rbps_rnacompete")
       (default: 1)'
-    default: 1
     inputBinding:
       position: 104
       prefix: --motif-db
@@ -497,7 +481,6 @@ inputs:
       web version link and plotly plot codes into main HTML. 6: put local version
       link and plotly plot codes in main HTML. 7: put plotly js and plotly plot codes
       into main HTML! (default: 1)'
-    default: 1
     inputBinding:
       position: 104
       prefix: --plotly-js-mode
@@ -517,7 +500,6 @@ inputs:
     doc: 'Up- and downstream extension of transcript start site (TSS) to define putative
       promoter regions, e.g. --prom-ext 500,0 for 500 upstream and 0 downstream extension
       (default: 1000,100)'
-    default: 1000,100
     inputBinding:
       position: 104
       prefix: --prom-ext
@@ -565,7 +547,6 @@ inputs:
       - float
     doc: 'Maximum GU (GT) base pair fraction to report structure pattern regex hits
       (default: 1.0)'
-    default: 1.0
     inputBinding:
       position: 104
       prefix: --regex-max-gu
@@ -575,7 +556,6 @@ inputs:
       - float
     doc: 'Minimum GC base pair fraction to report structure pattern regex hits (default:
       0.0)'
-    default: 0.0
     inputBinding:
       position: 104
       prefix: --regex-min-gc
@@ -587,7 +567,6 @@ inputs:
       motif hit start position, 2: when motif hit encountered, continue +1 after motif
       hit end position. NOTE that structure pattern regex currently always uses mode
       1 (default: 1)'
-    default: 1
     inputBinding:
       position: 104
       prefix: --regex-search-mode
@@ -596,7 +575,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum spacer length for structure pattern regex search (default: 200)'
-    default: 200
     inputBinding:
       position: 104
       prefix: --regex-spacer-max
@@ -605,7 +583,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum spacer length for structure pattern regex search (default: 5)'
-    default: 5
     inputBinding:
       position: 104
       prefix: --regex-spacer-min
@@ -617,7 +594,6 @@ inputs:
       or structure pattern). 2: given --regex string is standard regex, e.g. AC[AG]T.
       3: given --regex string is structure pattern string, e.g. ((AA(((...)))AA))
       (default: 1)'
-    default: 1
     inputBinding:
       position: 104
       prefix: --regex-type
@@ -636,7 +612,6 @@ inputs:
       - int
     doc: 'Set k for sequence complexity (Shannon entropy) calculation. 1 == mono-nucleotides,
       2 == di- nucleotides (default: 1)'
-    default: 1
     inputBinding:
       position: 104
       prefix: --seq-comp-k
@@ -646,7 +621,6 @@ inputs:
       - int
     doc: 'Define which attribute to use for coloring k-mer variation plot. 1: average
       k-mer site percentage. 2: present k-mers percentage (default: 1)'
-    default: 1
     inputBinding:
       position: 104
       prefix: --seq-var-color-mode
@@ -657,7 +631,6 @@ inputs:
     doc: 'Define what sequence k-mer variation plot to create 1: plot using site percentages
       for each k-mer as dimensions. 2: plot using k-mer variations as dimensions (default:
       1)'
-    default: 1
     inputBinding:
       position: 104
       prefix: --seq-var-feat-mode
@@ -666,7 +639,6 @@ inputs:
       - 'null'
       - int
     doc: 'K-mer size for sequence variation statistics and plot (default: 3)'
-    default: 3
     inputBinding:
       position: 104
       prefix: --seq-var-kmer-size
@@ -677,7 +649,6 @@ inputs:
     doc: 'Define how to provide sorttable.js file. 1: link to packaged .js file. 2:
       copy .js file to plots output folder. 3: include .js code in HTML (default:
       1)'
-    default: 1
     inputBinding:
       position: 104
       prefix: --sort-js-mode
@@ -730,7 +701,6 @@ inputs:
     doc: 'Defines Wilcoxon rank-sum test alternative hypothesis for testing whether
       motif-containing regions have significantly different scores. 1: test for higher
       (greater) scores, 2: test for lower (less) scores (default: 1)'
-    default: 1
     inputBinding:
       position: 104
       prefix: --wrs-mode

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'write/keep intermediate files (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -34,7 +33,6 @@ inputs:
       - boolean
     doc: 'URL encode attribute values in GFF3 output for downstream tool compatibility
       (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --url-encode

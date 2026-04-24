@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Specify display options for categories (deafult=plain).
-    default: plain
     inputBinding:
       position: 101
       prefix: --display

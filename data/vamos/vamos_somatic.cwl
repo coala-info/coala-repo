@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: Penalty of indel in dynamic programming (double).
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -d
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length locus to compute annotation for.
-    default: 10000
     inputBinding:
       position: 102
       prefix: -L
@@ -80,7 +78,6 @@ inputs:
       - 'null'
       - float
     doc: Penalty of mismatch in dynamic programming (double).
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -c
@@ -115,7 +112,6 @@ inputs:
       - int
     doc: 'Range of flanking sequences which is used in the phasing step. DEFAULT:
       15000 bps.'
-    default: 15000
     inputBinding:
       position: 102
       prefix: -p
@@ -141,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 1
     inputBinding:
       position: 102
       prefix: -t

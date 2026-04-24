@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to workflow directory containing .snakemake/.
-    default: .
     inputBinding:
       position: 1
   - id: no_estimate
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable time estimation from historical data.
-    default: false
     inputBinding:
       position: 102
       prefix: --no-estimate
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Optional path to a timing profile for bootstrapping estimates.
-    default: None
     inputBinding:
       position: 102
       prefix: --profile

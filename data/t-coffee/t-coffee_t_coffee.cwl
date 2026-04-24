@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: Contact email for adding extra methods.
-    default: cedric.notredame@gmail.com
     inputBinding:
       position: 101
   - id: install_package

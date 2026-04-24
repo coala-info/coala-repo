@@ -21,7 +21,6 @@ inputs:
       - int
     doc: Batch size used in subsitution analysis of the Monte Carlo Simulated 
       sequences
-    default: no batch processing
     inputBinding:
       position: 102
       prefix: -bs
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - File
     doc: Complete constraint tree
-    default: estimated from alignment
     inputBinding:
       position: 102
       prefix: -te
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Model of sequence evolution
-    default: estimated from alignment
     inputBinding:
       position: 102
       prefix: -m
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - boolean
     doc: Fix branch lengths of tree.
-    default: false
     inputBinding:
       position: 102
       prefix: -blfix
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads provided to IQ-TREE
-    default: 1 (without alrt); 5 (with alrt)
     inputBinding:
       position: 102
       prefix: -nt
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: IQ-TREE version.
-    default: iqtree2
     inputBinding:
       position: 102
       prefix: -iv
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Number of simulated alignments for p-value estimation
-    default: 1000
     inputBinding:
       position: 102
       prefix: --num-alignments
@@ -90,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads used for RECUR internal processing
-    default: 20
     inputBinding:
       position: 102
       prefix: -t
@@ -99,7 +91,6 @@ inputs:
       - 'null'
       - Directory
     doc: Results directory
-    default: same directory as MSA files
     inputBinding:
       position: 102
       prefix: -o
@@ -108,14 +99,12 @@ inputs:
       - 'null'
       - int
     doc: Random starting see number
-    default: 8
     inputBinding:
       position: 102
       prefix: --seed
   - id: sequence_type
     type: string
     doc: AA|CODON
-    default: AA
     inputBinding:
       position: 102
       prefix: -st
@@ -124,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Update cycle used in progress bar
-    default: no progress bar
     inputBinding:
       position: 102
       prefix: -uc

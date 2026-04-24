@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: 'FASTA line width (0: unlimited)'
-    default: 0
     inputBinding:
       position: 102
       prefix: --line-width
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Discard sequences longer than MAX_LEN
-    default: 0
     inputBinding:
       position: 102
       prefix: --max-length
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Discard sequences shorter than MIN_LEN
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-length
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Print clusters with size equal or bigger than INT sequences
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-size
@@ -86,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: Sequence name prefix
-    default: seq
     inputBinding:
       position: 102
       prefix: --prefix
@@ -95,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: Sequence name separator
-    default: .
     inputBinding:
       position: 102
       prefix: --separator

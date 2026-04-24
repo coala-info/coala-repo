@@ -49,7 +49,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: -q
-    default: false
 
 outputs:
   krona_html:

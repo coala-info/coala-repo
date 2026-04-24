@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix to use for output files
-    default: sizemeup
     inputBinding:
       position: 101
       prefix: --prefix
@@ -31,7 +30,6 @@ inputs:
   - id: sizes
     type: string
     doc: The built in sizes file to use
-    default: /usr/local/bin/../share/sizemeup/sizemeup-sizes.txt
     inputBinding:
       position: 101
       prefix: --sizes

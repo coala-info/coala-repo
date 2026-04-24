@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: output.dnaapler
     inputBinding:
       position: 101
       prefix: --output
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output files
-    default: dnaapler
     inputBinding:
       position: 101
       prefix: --prefix
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use with MMseqs2
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

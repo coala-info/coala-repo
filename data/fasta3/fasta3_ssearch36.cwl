@@ -259,7 +259,6 @@ inputs:
       - 'null'
       - boolean
     doc: quiet [default] -- do not prompt
-    default: true
     inputBinding:
       position: 103
       prefix: -q
@@ -268,7 +267,6 @@ inputs:
       - 'null'
       - boolean
     doc: quiet [default] -- do not prompt
-    default: true
     inputBinding:
       position: 103
       prefix: -Q

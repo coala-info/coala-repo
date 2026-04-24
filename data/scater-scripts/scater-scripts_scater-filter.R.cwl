@@ -43,7 +43,6 @@ inputs:
       - type: array
         items: string
     doc: Comma-separated high cutoffs for the parameters.
-    default: Inf
     inputBinding:
       position: 101
       prefix: --high-cell-thresholds
@@ -53,7 +52,6 @@ inputs:
       - type: array
         items: string
     doc: Comma-separated high cutoffs for the parameters.
-    default: Inf
     inputBinding:
       position: 101
       prefix: --high-feature-thresholds
@@ -69,7 +67,6 @@ inputs:
       - type: array
         items: string
     doc: Comma-separated low cutoffs for the parameters.
-    default: -Inf
     inputBinding:
       position: 101
       prefix: --low-cell-thresholds
@@ -79,7 +76,6 @@ inputs:
       - type: array
         items: string
     doc: Comma-separated low cutoffs for the parameters.
-    default: -Inf
     inputBinding:
       position: 101
       prefix: --low-feature-thresholds

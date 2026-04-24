@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: bin size for parallelisation
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --binsize
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: canonical base threshold
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --can_thresh
@@ -78,7 +76,6 @@ inputs:
       - 'null'
       - float
     doc: modified base threshold
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --meth_thresh
@@ -95,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality (mapq)
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_mapq
@@ -104,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: minimum chromosome length
-    default: 0
     inputBinding:
       position: 101
       prefix: --minlen

@@ -27,7 +27,6 @@ inputs:
       - int
     doc: Gzip compression level. Integer values between 1 and 9, with 9 and 1 
       being the highest lowest compression levels, respectively.
-    default: 5
     inputBinding:
       position: 101
       prefix: --compression-lev
@@ -80,7 +79,6 @@ inputs:
       - float
     doc: Affects the granularity of ortholog groups. This value should be 
       between 1.2 (very coarse) and 5 (fine grained clustering).
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --inflation
@@ -108,7 +106,6 @@ inputs:
       inparalogs. Example: 0.5 means one of the two sequences could be two times longer
       than the other 0 means no length difference allowed; 1 means any length difference
       allowed.'
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --max-len-diff
@@ -118,7 +115,6 @@ inputs:
       - float
     doc: When merging graph- and arch-based orhtologs consider only 
       new-orthologs with a protein coverage greater or equal than this value.
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --min-arch-merging-cov
@@ -131,7 +127,6 @@ inputs:
       this value will reduce the number of paralogs (and orthologs) generate.WARNING:
       use only if you are sure of what you are doing. INFO: higher min-bitscore values
       reduce the execution time for all-vs-all.'
-    default: 40
     inputBinding:
       position: 101
       prefix: --min-bitscore
@@ -237,7 +232,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of CPUs to be used.
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

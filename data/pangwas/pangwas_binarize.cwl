@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory.
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: Output delimiter.
-    default: "\t"
     inputBinding:
       position: 101
       prefix: --output-delim

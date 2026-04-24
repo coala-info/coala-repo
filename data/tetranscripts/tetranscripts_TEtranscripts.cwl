@@ -25,7 +25,6 @@ inputs:
       - float
     doc: "Fold-change ratio (absolute) cutoff for differential\n                 \
       \       expression."
-    default: 1
     inputBinding:
       position: 103
       prefix: --foldchange
@@ -35,7 +34,6 @@ inputs:
       - int
     doc: "average fragment length for single end reads. For\n                    \
       \    paired-end, estimated from the input alignment file."
-    default: for paired-end, estimate from the input alignment file; for 
       single-end, ignored by default.
     inputBinding:
       position: 103
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: 'Input file format: BAM or SAM.'
-    default: BAM
     inputBinding:
       position: 103
       prefix: --format
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: number of iteration to run the optimization.
-    default: 100
     inputBinding:
       position: 103
       prefix: --iteration
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: maximum fragment length.
-    default: 500
     inputBinding:
       position: 103
       prefix: --maxL
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: minimum fragment length.
-    default: 0
     inputBinding:
       position: 103
       prefix: --minL
@@ -88,7 +82,6 @@ inputs:
       - int
     doc: "read count cutoff. genes/TEs with reads less than the\n                \
       \        cutoff will not be considered."
-    default: 1
     inputBinding:
       position: 103
       prefix: --minread
@@ -100,7 +93,6 @@ inputs:
       \      normalization method), TC (total annotated counts),\n               \
       \         quant (quantile normalization). Only applicable if\n             \
       \           DESeq is used instead of DESeq2."
-    default: DESeq_default
     inputBinding:
       position: 103
       prefix: --norm
@@ -109,7 +101,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for output files.
-    default: current directory
     inputBinding:
       position: 103
       prefix: --outdir
@@ -118,7 +109,6 @@ inputs:
       - 'null'
       - float
     doc: FDR cutoff for significance.
-    default: 0.05
     inputBinding:
       position: 103
       prefix: --padj
@@ -127,7 +117,6 @@ inputs:
       - 'null'
       - string
     doc: Name of this project.
-    default: TEtranscripts_out
     inputBinding:
       position: 103
       prefix: --project
@@ -147,7 +136,6 @@ inputs:
       \         For \"first-strand\" cDNA libraries (e.g. TruSeq\n               \
       \         stranded), choose reverse. For \"second-strand\" cDNA\n          \
       \              libraries (e.g. QIAseq stranded), choose forward."
-    default: no
     inputBinding:
       position: 103
       prefix: --stranded
@@ -157,7 +145,6 @@ inputs:
       - string
     doc: "How to count TE: uniq (unique mappers only), or multi\n                \
       \        (distribute among all alignments)."
-    default: multi
     inputBinding:
       position: 103
       prefix: --mode
@@ -182,7 +169,6 @@ inputs:
       - int
     doc: 'Set verbose level. 0: only show critical message, 1: show additional warning
       message, 2: show process information, 3: show debug messages.'
-    default: 2
     inputBinding:
       position: 103
       prefix: --verbose

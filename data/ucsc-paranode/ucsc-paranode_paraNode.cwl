@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use - default 1.
-    default: 1
     inputBinding:
       position: 102
       prefix: -cpu
@@ -64,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: minimum syslog priority to log, also filters file logging.
-    default: warn
     inputBinding:
       position: 102
       prefix: -logMinPriority
@@ -76,7 +74,6 @@ inputs:
       This is mostly to avoid swamping NFS with file opens when loading up an 
       idle cluster. Also it limits the impact on the hub of very short jobs. 
       Default 5000.
-    default: 5000
     inputBinding:
       position: 102
       prefix: -randomDelay
@@ -93,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: Set umask to run under - default 002.
-    default: '002'
     inputBinding:
       position: 102
       prefix: -umask

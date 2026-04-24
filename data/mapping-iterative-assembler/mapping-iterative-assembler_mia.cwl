@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: consensus calling code; default = 1
-    default: 1
     inputBinding:
       position: 101
       prefix: -p
@@ -98,7 +97,6 @@ inputs:
       - 'null'
       - boolean
     doc: iterate assembly until convergence (default)
-    default: true
     inputBinding:
       position: 101
       prefix: -i

@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - File
     doc: Path to CSV APOBEC csv file
-    default: apobecs.csv
     inputBinding:
       position: 102
       prefix: -apobec_csv
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - File
     doc: Path to CSV file to determine mutation type
-    default: mutation-type-pairs_hiv1.csv
     inputBinding:
       position: 102
       prefix: -mutation_csv
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - File
     doc: Path to CSV file to determine SDRM mutations
-    default: sdrms_hiv1.csv
     inputBinding:
       position: 102
       prefix: -sdrms_csv
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - File
     doc: Path to CSV file to determine if is unusual
-    default: rx-all_subtype-all.csv
     inputBinding:
       position: 102
       prefix: -unusual_csv
@@ -85,7 +81,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to folder to store updated files from updater
-    default: sierralocal/data folder
     inputBinding:
       position: 102
       prefix: -updater_outdir
@@ -94,7 +89,6 @@ inputs:
       - 'null'
       - File
     doc: Path to HIVdb ASI2 XML file
-    default: HIVDB_9.4.xml
     inputBinding:
       position: 102
       prefix: -xml

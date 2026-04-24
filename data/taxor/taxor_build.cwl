@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory containing the fasta reference files
-    default: .
     inputBinding:
       position: 101
       prefix: --input-sequence-dir
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: size of kmers used for index construction
-    default: 20
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: A file name for the resulting index.
-    default: .
     inputBinding:
       position: 101
       prefix: --output-filename
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: factor for scaling down syncmer/minimizer sketches
-    default: 1
     inputBinding:
       position: 101
       prefix: --scaling
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: size of syncmer used for index construction
-    default: 10
     inputBinding:
       position: 101
       prefix: --syncmer-size
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -88,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: window size of minimizer scheme used for index construction
-    default: 20
     inputBinding:
       position: 101
       prefix: --window-size

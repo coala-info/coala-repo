@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: File containing log information
-    default: run.log
     inputBinding:
       position: 101
       prefix: --log-file
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Number of concurrent threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

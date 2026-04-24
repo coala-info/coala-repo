@@ -67,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: Length of sgrnas in library file.
-    default: AUTO
     inputBinding:
       position: 102
       prefix: --sgrna-len

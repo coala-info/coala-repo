@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Custom config file
-    default: (outputDir)/hecatomb.config.yaml
     inputBinding:
       position: 102
       prefix: --configfile
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use conda for Snakemake rules
-    default: true
     inputBinding:
       position: 102
       prefix: --no-use-conda
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: hecatomb.out
     inputBinding:
       position: 102
       prefix: --output
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 32
     inputBinding:
       position: 102
       prefix: --threads
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use conda for Snakemake rules
-    default: false
     inputBinding:
       position: 102
       prefix: --use-conda
@@ -80,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: Custom config file
-    default: (outputDir)/hecatomb.profile/
     inputBinding:
       position: 102
       prefix: --workflow-profile

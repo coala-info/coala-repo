@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force override an existing mutamr run.
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep accessory files for further use.
-    default: false
     inputBinding:
       position: 101
       prefix: --keep
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth to call a variant
-    default: 20
     inputBinding:
       position: 101
       prefix: --min_depth
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum proportion to call a variant (0-1)
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min_frac
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run for Mtb
-    default: false
     inputBinding:
       position: 101
       prefix: --mtb
@@ -63,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Max ram to use
-    default: 8
     inputBinding:
       position: 101
       prefix: --ram
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - File
     doc: path to read1
-    default: ''
     inputBinding:
       position: 101
       prefix: --read1
@@ -81,7 +74,6 @@ inputs:
       - 'null'
       - File
     doc: path to read2
-    default: ''
     inputBinding:
       position: 101
       prefix: --read2
@@ -98,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: Sequence name
-    default: mutamr
     inputBinding:
       position: 101
       prefix: --seq_id
@@ -107,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Threads to use for generation of vcf file.
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads
@@ -116,7 +106,6 @@ inputs:
       - 'null'
       - Directory
     doc: temp directory to use
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmp

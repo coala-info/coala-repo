@@ -89,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: Module name used to check out repository. Default is git.
-    default: git
     inputBinding:
       position: 102
       prefix: --module-name

@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: Wrap fasta lines accroding to this value.
-    default: 80
     inputBinding:
       position: 101
       prefix: --fasta-line-length
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: 'Change log level: DEBUG, INFO, WARNING, ERROR.'
-    default: ERROR
     inputBinding:
       position: 101
       prefix: --log-level

@@ -11,7 +11,6 @@ inputs:
       - string
     doc: For metagenomic data, the delimiter that separates the bin ID from the 
       protein ID [default "_"]. Use "--" to ignore bin ID entirely.
-    default: _
     inputBinding:
       position: 101
       prefix: --bin_delimiter
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: 'The target isotope. Default: 13C'
-    default: 13C
     inputBinding:
       position: 101
       prefix: --isotope
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: The number of (virtual) processors that calisp will use (default 4)
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

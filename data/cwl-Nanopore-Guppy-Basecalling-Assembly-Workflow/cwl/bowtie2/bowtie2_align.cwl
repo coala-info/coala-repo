@@ -110,7 +110,6 @@ inputs:
               return self;
             }
         }
-    default: ""
     doc: |
       File for SAM output (default: stdout)
 

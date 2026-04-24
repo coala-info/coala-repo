@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: disregard if the fraction of ambiguous bases higher than FLOAT
-    default: 0.05
     inputBinding:
       position: 104
       prefix: --amb
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: the base error rate
-    default: 0.02
     inputBinding:
       position: 104
       prefix: --err
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: probability an indel is extended
-    default: 0.25
     inputBinding:
       position: 104
       prefix: --ext
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of indels
-    default: 0.15
     inputBinding:
       position: 104
       prefix: --frac
@@ -73,7 +69,6 @@ inputs:
       - 'null'
       - float
     doc: rate of mutations
-    default: 0.001
     inputBinding:
       position: 104
       prefix: --mut
@@ -82,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: number of read pairs
-    default: 1000
     inputBinding:
       position: 104
       prefix: --num
@@ -91,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: outer distance between the two ends
-    default: 500
     inputBinding:
       position: 104
       prefix: --dist
@@ -100,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: seed for the random generator
-    default: 0
     inputBinding:
       position: 104
       prefix: --seed
@@ -109,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: length of the first read
-    default: 70
     inputBinding:
       position: 104
       prefix: --L1
@@ -118,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: length of the second read
-    default: 70
     inputBinding:
       position: 104
       prefix: --L2
@@ -127,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: standard deviation
-    default: 50
     inputBinding:
       position: 104
       prefix: --stdev

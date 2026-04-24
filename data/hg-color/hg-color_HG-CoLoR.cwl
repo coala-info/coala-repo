@@ -13,7 +13,6 @@ inputs:
       accordingly to the short reads coverage. Its default value is adapted for 
       a 50x coverage of short reads. It should be decreased with higher 
       coverage, and increased with lower coverage.
-    default: 50
     inputBinding:
       position: 101
       prefix: --bestn
@@ -24,7 +23,6 @@ inputs:
     doc: Maximum number of branches exploration. Raising this parameter will 
       result in less split corrected long reads. However, it will also increase 
       the runtime, and may create chimeric linkings between the seeds.
-    default: 1250
     inputBinding:
       position: 101
       prefix: --branches
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum amount of RAM for KMC, in GB
-    default: 12
     inputBinding:
       position: 101
       prefix: --kmcmem
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum k-mer size of the variable-order de Bruijn graph
-    default: K/2
     inputBinding:
       position: 101
       prefix: --minorder
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Allowed mismatches when attempting to link two seeds together
-    default: 3
     inputBinding:
       position: 101
       prefix: --mismatches
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to run in parallel
-    default: number of cores
     inputBinding:
       position: 101
       prefix: --nproc
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance to consider two consecutive seeds for merging
-    default: 10
     inputBinding:
       position: 101
       prefix: --seedsdistance
@@ -90,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of seed skips
-    default: 3
     inputBinding:
       position: 101
       prefix: --seedskips
@@ -99,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum overlap length to allow the merging of two overlapping seeds
-    default: K - 1
     inputBinding:
       position: 101
       prefix: --seedsoverlap
@@ -119,7 +110,6 @@ inputs:
       the short reads coverage and accuracy, and to the chosen maximum order of 
       the graph. It should only be increased when using high coverage of short 
       reads, or a small maximum order.
-    default: 1
     inputBinding:
       position: 101
       prefix: --solid
@@ -128,7 +118,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path where to store the directory containing temporary files
-    default: working directory
     inputBinding:
       position: 101
       prefix: --tmpdir

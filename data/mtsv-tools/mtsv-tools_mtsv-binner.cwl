@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: The maximum proportion of edits allowed for alignment.
-    default: 0.13
     inputBinding:
       position: 101
       prefix: --edit-rate
@@ -61,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Skip seeds with more than MAX_HITS hits.
-    default: 2000
     inputBinding:
       position: 101
       prefix: --max-hits
@@ -70,7 +68,6 @@ inputs:
       - 'null'
       - float
     doc: Set the minimum percentage of seeds required to perform an alignment.
-    default: 0.015
     inputBinding:
       position: 101
       prefix: --min-seed
@@ -79,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output format: default (taxid=edit) or long (taxid-gi-offset=edit).'
-    default: default
     inputBinding:
       position: 101
       prefix: --output-format
@@ -88,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Skip this many reads before processing.
-    default: 0
     inputBinding:
       position: 101
       prefix: --read-offset
@@ -97,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Set the interval between seeds used for initial exact match.
-    default: 15
     inputBinding:
       position: 101
       prefix: --seed-interval
@@ -106,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Set seed size.
-    default: 18
     inputBinding:
       position: 101
       prefix: --seed-size
@@ -115,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: Number of worker threads to spawn.
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -126,7 +118,6 @@ inputs:
     doc: Each time the number of seed hits is greater than TUNE_MAX_HITS but 
       less than MAX_HITS, the seed interval will be doubled to reduce the number
       of seed hits and reduce runtime.
-    default: 200
     inputBinding:
       position: 101
       prefix: --tune-max-hits

@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add 'chr' to chromosome names before printing output.
-    default: false
     inputBinding:
       position: 101
       prefix: --add-chr
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: Get the list of all datasets.
-    default: false
     inputBinding:
       position: 101
       prefix: --all-dataset
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Select a dataset.
-    default: simple
     inputBinding:
       position: 101
       prefix: --dataset
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: The dataset format.
-    default: gtf
     inputBinding:
       position: 101
       prefix: --format
@@ -48,7 +44,6 @@ inputs:
       - boolean
     doc: Try to keep all temporary files even if process does not terminate 
       normally.
-    default: false
     inputBinding:
       position: 101
       prefix: --keep-all
@@ -57,7 +52,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only list files of a dataset.
-    default: false
     inputBinding:
       position: 101
       prefix: --list
@@ -74,7 +68,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not add date to output file names.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-date
@@ -83,7 +76,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't write any message when copying files.
-    default: false
     inputBinding:
       position: 101
       prefix: --quiet
@@ -100,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Set output verbosity ([0-3]).
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbosity

@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Max. expected value to report alignments (--evalue/-e in diamond).
-    default: 1e-05
     inputBinding:
       position: 102
       prefix: -e
@@ -35,7 +34,6 @@ inputs:
       - int
     doc: Max. number of ARG-containing reads per chunk for overlapping. If "0" 
       then use a single chunk.
-    default: 0
     inputBinding:
       position: 102
       prefix: -u
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Max. number of secondary alignments to report (-N in minimap2).
-    default: 2147483647
     inputBinding:
       position: 102
       prefix: -n
@@ -54,7 +51,6 @@ inputs:
       - int
     doc: Max. number of target sequences to report (--max-target-seqs/-k in 
       diamond).
-    default: 25
     inputBinding:
       position: 102
       prefix: -m
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: MCL parameter - expansion.
-    default: 2
     inputBinding:
       position: 102
       prefix: -y
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: MCL parameter - inflation.
-    default: 2
     inputBinding:
       position: 102
       prefix: -x
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Terminal condition - max. iterations.
-    default: 1000
     inputBinding:
       position: 102
       prefix: -b
@@ -91,7 +84,6 @@ inputs:
       - float
     doc: Min. estimated genome copies of a species to report it ARG copies and 
       abundances.
-    default: 1
     inputBinding:
       position: 102
       prefix: -z
@@ -101,7 +93,6 @@ inputs:
       - float
     doc: Min. identity in percentage to report alignments. If "0" then set 90 - 
       2.5 * 100 * median sequence divergence.
-    default: 0
     inputBinding:
       position: 102
       prefix: -i
@@ -111,7 +102,6 @@ inputs:
       - float
     doc: Min. secondary-to-primary score ratio to report secondary alignments 
       (-p in minimap2).
-    default: 0.9
     inputBinding:
       position: 102
       prefix: -p
@@ -120,7 +110,6 @@ inputs:
       - 'null'
       - float
     doc: Min. subject cover within a read cluster to report alignments.
-    default: 90
     inputBinding:
       position: 102
       prefix: -s
@@ -129,7 +118,6 @@ inputs:
       - 'null'
       - boolean
     doc: List ARGs carried by plasmids.
-    default: false
     inputBinding:
       position: 102
       prefix: --plasmid
@@ -138,7 +126,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip cleaning, keep all temporary <*.tmp> files.
-    default: false
     inputBinding:
       position: 102
       prefix: --skip-clean
@@ -147,7 +134,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip Melon for genome copy estimation.
-    default: false
     inputBinding:
       position: 102
       prefix: --skip-melon
@@ -156,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 20
     inputBinding:
       position: 102
       prefix: --threads

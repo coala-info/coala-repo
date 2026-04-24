@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality for a base to be considered.
-    default: 13
     inputBinding:
       position: 101
       prefix: --minBQ
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality for an alignment to be used.
-    default: 60
     inputBinding:
       position: 101
       prefix: --minMQ
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory.
-    default: dosage_score
     inputBinding:
       position: 101
       prefix: --output_dir
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Minumum plot in window size.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --step_size
@@ -85,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Thread.
-    default: 1
     inputBinding:
       position: 101
       prefix: --thread
@@ -94,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Minumum plot in window size.
-    default: 2000000
     inputBinding:
       position: 101
       prefix: --window_size

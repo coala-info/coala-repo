@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Selects which normalization metric to use, FPKM or TPM.
-    default: tpm
     inputBinding:
       position: 101
       prefix: --metric
@@ -27,7 +26,6 @@ inputs:
       - int
     doc: The number of CPU threads or parallel processes to use in various 
       pipeline steps
-    default: 2
     inputBinding:
       position: 101
       prefix: --num_procs
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Indicating whether the reads are paired-end (pe) or single-end (se).
-    default: pe
     inputBinding:
       position: 101
       prefix: --pairing
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to the directory containing reference package pickle (.pkl) files.
-    default: treesapp/data/
     inputBinding:
       position: 101
       prefix: --refpkg_dir
@@ -73,7 +69,6 @@ inputs:
     doc: What should be done with the abundance values? The TreeSAPP 
       classification table can be overwritten (update), appended or left 
       unchanged.
-    default: append
     inputBinding:
       position: 101
       prefix: --report
@@ -92,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: The stage(s) for TreeSAPP to execute
-    default: continue
     inputBinding:
       position: 101
       prefix: --stage

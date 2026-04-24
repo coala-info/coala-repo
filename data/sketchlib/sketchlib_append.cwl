@@ -41,7 +41,6 @@ inputs:
       All amino acids are different\n          - level2: Level2: Groups T,S; D,E;
       Q,K,R; V,I,L,M; W,F,Y\n          - level3: Level3: Additionally groups A with
       T,S; N with D,E"
-    default: level1
     inputBinding:
       position: 103
   - id: min_count
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum k-mer count (with reads)
-    default: 5
     inputBinding:
       position: 103
   - id: min_qual
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum k-mer quality (with reads)
-    default: 20
     inputBinding:
       position: 103
   - id: quiet
@@ -79,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads
-    default: 1
     inputBinding:
       position: 103
   - id: verbose

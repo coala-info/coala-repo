@@ -21,7 +21,6 @@ inputs:
       - int
     doc: All bases with a base call quality below this threshold will be 
       filtered out
-    default: 30
     inputBinding:
       position: 101
       prefix: --base-call-quality
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: Error rate to use in the power calculation
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --error-rate
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: False Positive Rate (FPR) to use in the power calculation
-    default: '5e-07'
     inputBinding:
       position: 101
       prefix: --fpr
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - boolean
     doc: Flag indicating to include ambiguous bases from the DP calculation
-    default: false
     inputBinding:
       position: 101
       prefix: --include-ambiguous-bases
@@ -64,7 +60,6 @@ inputs:
       - int
     doc: All reads with a mapping quality below this threshold will be filtered 
       out
-    default: 1
     inputBinding:
       position: 101
       prefix: --mapping-quality
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Normal ploidy for the power calculation
-    default: 2
     inputBinding:
       position: 101
       prefix: --normal-ploidy

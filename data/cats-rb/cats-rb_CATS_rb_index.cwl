@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite the genome index directory
-    default: false
     inputBinding:
       position: 102
       prefix: -O
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads
-    default: 10
     inputBinding:
       position: 102
       prefix: -t

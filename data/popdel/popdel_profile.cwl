@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum size of deletions.
-    default: 10000
     inputBinding:
       position: 103
       prefix: --max-deletion-size
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of read pairs for parameter estimation (per read group)
-    default: 50000
     inputBinding:
       position: 103
       prefix: --min-read-num
@@ -69,7 +67,6 @@ inputs:
     doc: Reference genome version used for the mapping. Not used when using 
       custom sampling intervals (option '-i'). One of 'GRCh37', 'GRCh38', 
       'hg19', 'hg38' (case-insensitive).
-    default: GRCh38
     inputBinding:
       position: 103
       prefix: --reference

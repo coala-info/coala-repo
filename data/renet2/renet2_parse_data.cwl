@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - File
     doc: PMID/PMCID list file input
-    default: ../test/test_download_pmid_list.csv
     inputBinding:
       position: 101
       prefix: --id_f
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - Directory
     doc: input abstracts raw file dir
-    default: None
     inputBinding:
       position: 101
       prefix: --in_abs_dir
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - Directory
     doc: input full-text raw file dir
-    default: None
     inputBinding:
       position: 101
       prefix: --in_ft_dir
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: '[abs, ft] download text type: abstrcts or full-text'
-    default: abs
     inputBinding:
       position: 101
       prefix: --type

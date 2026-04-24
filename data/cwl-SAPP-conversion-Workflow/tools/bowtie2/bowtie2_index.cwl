@@ -33,7 +33,6 @@ inputs:
       prefix: -f
   threads:
     type: int?
-    default: 1
     inputBinding:
       prefix: --threads
 

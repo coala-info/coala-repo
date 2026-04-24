@@ -184,7 +184,6 @@ inputs:
       symbols:
       - fastqsanger
       - fastqsanger.gz
-    default: fastqsanger
   fastq1:
     doc: |-
       First set of reads with forward reads. Only when fastq_file_type = single or paired
@@ -197,7 +196,6 @@ inputs:
       symbols:
       - fastqsanger
       - fastqsanger.gz
-    default: 'null'
   fastq2:
     doc: Second set of reads with reverse reads. Only when fastq_file_type=paired
     type: File?
@@ -215,7 +213,6 @@ inputs:
     type: File?
   compute_slots:
     type: int?
-    default: 4
   mode:
     doc: |
       Bridging mode, values:
@@ -231,15 +228,12 @@ inputs:
   min_fasta_length:
     doc: Exclude contigs from the FASTA file which are shorter than this length (bp)
     type: int?
-    default: 100
   linear_seqs:
     doc: The expected number of linear (i.e. non-circular) sequences in the assembly
     type: int?
-    default: 0
   min_anchor_seg_len:
     doc: Unicycler will not use segments shorter than this as scaffolding anchors
     type: int?
-    default: 0
   spades_no_correct:
     doc: |
       Unicycler uses SPAdes to construct assembly graphs.
@@ -248,32 +242,27 @@ inputs:
       This option turns off SPAdes error correction.
       Generally it is highly recommended to use correction.
     type: boolean?
-    default: false
   spades_min_kmer_frac:
     doc: |
       Lowest k-mer size for SPAdes assembly,
       expressed as a fraction of the read length.
       min 0, max 1
     type: float?
-    default: 0.2
   spades_max_kmer_frac:
     doc: |
       Highest k-mer size for SPAdes assembly,
       expressed as a fraction of the read length.
       min 0, max 1
     type: float?
-    default: 0.95
   spades_kmers:
     doc: |
       Exact k-mers size to use for SPAdes assembly, comma-separated"
       Kmers must be comma-separated odd integers (no repitition)
       without space in the range of 11 to 127 (inclusive)
     type: string?
-    default: 11,127
   spades_kmer_count:
     doc: Number of k-mer steps to use in SPAdes assembly, min 0
     type: int?
-    default: 10
   spades_depth_filter:
     doc: |
       Filter out contigs lower than this fraction
@@ -281,11 +270,9 @@ inputs:
       It is done if does not result in graph dead ends
       min 0, max 1
     type: float?
-    default: 0.25
   spades_largest_component:
     doc: Only keep the largest connected component of the assembly graph if true
     type: boolean?
-    default: false
   rotation_no_rotate:
     doc: |
       These options control the rotation of completed circular sequence
@@ -296,7 +283,6 @@ inputs:
       encoded on the forward strand. This provides consistently oriented assemblies and reduces
       the risk that a gene will be split across the start and end of the sequence.
     type: boolean?
-    default: false
   rotation_start_genes:
     doc: FASTA file of genes for start point of rotated replicons
     type: File?
@@ -304,27 +290,22 @@ inputs:
     doc: |-
       The minimum required BLAST percent identity for a start gene search. max 100, min 0
     type: float?
-    default: 90.0
   rotation_start_gene_cov:
     doc: |-
       The minimum required BLAST percent coverage for a start gene search. min 0, max 100
     type: float?
-    default: 95.0
   pilon_no_pilon:
     doc: Unicycler uses Pilon tool for polishing final assembly. Do not use if true
     type: boolean?
-    default: false
   graph_clean_min_component_size:
     doc: Contigs shorter than this value (bp) will not be polished using Pilon; min 0
     type: int?
-    default: 1000
   graph_clean_min_dead_end_size:
     doc: |
       These options control the removal of small leftover sequences after bridging is complete.
       Unbridged graph components smaller than this size will be removed from the final graph,
       min 0
     type: int?
-    default: 1000
   lr_align_contamination:
     doc: |
       FASTA file of known contamination in long reads,
@@ -334,7 +315,6 @@ inputs:
     doc: |
       Comma-delimited string of alignment scores: match, mismatch, gap open, gap extend
     type: string?
-    default: 3,-6,-5,-2
   lr_align_low_score:
     doc: |
       Score threshold - alignments below this are considered poor,

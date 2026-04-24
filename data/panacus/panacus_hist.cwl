@@ -17,7 +17,6 @@ inputs:
       - string
     doc: 'Graph quantity to be counted [default: node] [possible values: node, bp,
       edge, all]'
-    default: node
     inputBinding:
       position: 102
       prefix: --count
@@ -71,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: 'Set the number of threads used (default: use all threads)'
-    default: 0
     inputBinding:
       position: 102
       prefix: -t

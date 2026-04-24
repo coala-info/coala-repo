@@ -17,7 +17,6 @@ inputs:
       - string
     doc: 'UniFrac tree branch length function (default: "lambda x: 1/x", where x=tree
       depth)'
-    default: '"lambda x: 1/x"'
     inputBinding:
       position: 102
       prefix: --branch_length_function
@@ -66,7 +65,6 @@ inputs:
       - string
     doc: 'Metrics for spider plot of absolute performances, first character, comma-separated.
       Valid metrics: c:completeness, p:purity, b:Bray-Curtis (default: c,p)'
-    default: c,p
     inputBinding:
       position: 102
       prefix: --metrics_plot_abs
@@ -77,7 +75,6 @@ inputs:
     doc: 'Metrics for spider plot of relative performances, first character, comma-separated.
       Valid metrics: w:weighted Unifrac, l:L1 norm, c:completeness, p:purity, f:false
       positives, t:true positives (default: w,l,c,p,f)'
-    default: w,l,c,p,f
     inputBinding:
       position: 102
       prefix: --metrics_plot_rel
@@ -113,7 +110,6 @@ inputs:
     doc: 'Highest and lowest taxonomic ranks to consider in performance rankings,
       comma-separated. Valid ranks: superkingdom, phylum, class, order, family, genus,
       species, strain (default:superkingdom,species)'
-    default: superkingdom,species
     inputBinding:
       position: 102
       prefix: --ranks

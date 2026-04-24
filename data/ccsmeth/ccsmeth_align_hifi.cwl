@@ -12,7 +12,6 @@ inputs:
       secondary alignments are retained. Do not use 2, cause -N1 is not 
       suggested for high accuracy of alignment. [This arg is for further 
       extension.]
-    default: 3
     inputBinding:
       position: 101
       prefix: --bestn
@@ -78,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads, default 5
-    default: 5
     inputBinding:
       position: 101
       prefix: --threads

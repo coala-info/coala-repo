@@ -42,7 +42,6 @@ inputs:
     type: string?
   delta:
     type: int?
-    default: 4
   toi:
     label: Time of interest
     doc: Start and end date-time strings. Must be provided if 'date' input is omitted.

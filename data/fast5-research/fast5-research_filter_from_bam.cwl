@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality score for reads to be included.
-    default: 0
     inputBinding:
       position: 103
       prefix: --min_mapq
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for processing.
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

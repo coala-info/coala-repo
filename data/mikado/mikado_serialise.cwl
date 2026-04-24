@@ -89,7 +89,6 @@ inputs:
       - 'null'
       - File
     doc: 'Optional log file. Default: stderr'
-    default: stderr
     inputBinding:
       position: 102
       prefix: --log
@@ -98,7 +97,6 @@ inputs:
       - 'null'
       - string
     doc: 'Log level. Default: derived from the configuration; if absent, INFO'
-    default: derived from the configuration; if absent, INFO
     inputBinding:
       position: 102
       prefix: --log-level
@@ -108,7 +106,6 @@ inputs:
       - int
     doc: 'Maximum number of objects to cache in memory before committing to the database.
       Default: 100,000 i.e. approximately 450MB RAM usage for Drosophila.'
-    default: 100,000
     inputBinding:
       position: 102
       prefix: --max-objects
@@ -170,7 +167,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Output directory. Default: current working directory'
-    default: current working directory
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -203,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: 'Random seed number. Default: 0.'
-    default: 0
     inputBinding:
       position: 102
       prefix: --seed

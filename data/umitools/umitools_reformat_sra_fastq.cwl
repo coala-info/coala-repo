@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - boolean
     doc: More output for debugging
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -21,7 +20,6 @@ inputs:
       - int
     doc: "Setting it to >=1 allows errors in UMIs. Otherwise, no\nerrors are allowed
       in UMIs."
-    default: 0
     inputBinding:
       position: 101
       prefix: --errors-allowed
@@ -37,7 +35,6 @@ inputs:
       - string
     doc: "Set the UMI pattern at the 3' end. Use ACGT for fixed\nnt and N for variable
       nt in UMI. If there are multiple\npatterns, separate them using comma"
-    default: NNNGTCNNNTAGNNN
     inputBinding:
       position: 101
       prefix: --umi-pattern-3
@@ -47,7 +44,6 @@ inputs:
       - string
     doc: "Set the UMI pattern at the 5' end. Use ACGT for fixed\nnt and N for variable
       nt in UMI. If there are multiple\npatterns, separate them using comma"
-    default: NNNCGANNNTACNNN,NNNATCNNNAGTNNN
     inputBinding:
       position: 101
       prefix: --umi-pattern-5
@@ -56,7 +52,6 @@ inputs:
       - 'null'
       - boolean
     doc: Also include detailed run info
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

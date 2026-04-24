@@ -18,7 +18,6 @@ inputs:
       (with '_NCBI' appended). See `-L` argument for specifying desired ranks, 
       and see helper script `gtt-get-accessions-from-GTDB` for help getting 
       input accessions based on GTDB taxonomy searches.
-    default: false
     inputBinding:
       position: 101
       prefix: -D
@@ -32,7 +31,6 @@ inputs:
       NCBI accessions (provided to the `-a` argument), but any input GenBank 
       files will also be searched for an NCBI taxid. See `-L` argument for 
       specifying desired ranks.
-    default: false
     inputBinding:
       position: 101
       prefix: -t
@@ -54,7 +52,6 @@ inputs:
       a given genome, GToTree won't include a sequence for that target from that genome
       in the final alignment. With this flag provided, GToTree will use the best hit.
       See here for more discussion: github.com/AstrobioMike/GToTree/wiki/things-to-consider"
-    default: false
     inputBinding:
       position: 101
       prefix: -B
@@ -64,7 +61,6 @@ inputs:
       - boolean
     doc: debug mode; Provide this flag with no arguments if you'd like to keep 
       the temporary directory. (Mostly useful for debugging.)
-    default: false
     inputBinding:
       position: 101
       prefix: -d
@@ -82,7 +78,6 @@ inputs:
       - boolean
     doc: force overwrite; Provide this flag with no arguments if you'd like to 
       force overwriting the output directory if it exists.
-    default: false
     inputBinding:
       position: 101
       prefix: -F
@@ -102,7 +97,6 @@ inputs:
       of hits a genome must have of the SCG-set. For example, if there are 100 
       target genes in the HMM profile, and Genome X only has hits to 49 of them,
       it will be removed from analysis with default value 0.5.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -G
@@ -126,7 +120,6 @@ inputs:
       - boolean
     doc: keep individual target gene alignments; Keep individual alignment 
       files.
-    default: false
     inputBinding:
       position: 101
       prefix: -k
@@ -151,7 +144,6 @@ inputs:
       E.g., all would be "-L 
       Domain,Phylum,Class,Order,Family,Genus,Species,Strain". Note that 
       strain-level information is available through NCBI, but not GTDB.
-    default: Domain,Phylum,Class,Species,Strain
     inputBinding:
       position: 101
       prefix: -L
@@ -168,7 +160,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not make a tree; No tree. Generate alignment only.
-    default: false
     inputBinding:
       position: 101
       prefix: -N
@@ -181,7 +172,6 @@ inputs:
       accessions (passed to `-a`) and genome fasta files (passed to `-f` as 
       input sources. (GToTree still finds target genes based on amino-acid HMM 
       searches.)
-    default: false
     inputBinding:
       position: 101
       prefix: -z
@@ -193,7 +183,6 @@ inputs:
       (Given these are individual small searches on single genomes, 2 is 
       probably always sufficient. Keep in mind this will be multiplied by the 
       number of jobs running concurrently if also modifying the `-j` parameter.)
-    default: 2
     inputBinding:
       position: 101
       prefix: -n
@@ -210,7 +199,6 @@ inputs:
       \  there or higher, and GToTree is saying a lot of input accessions were not\n\
       \                  successfully downloaded, consider trying with a lower `-j`
       setting."
-    default: 1
     inputBinding:
       position: 101
       prefix: -j
@@ -221,7 +209,6 @@ inputs:
     doc: num muscle threads; The number of threads muscle will use during 
       alignment. (Keep in mind this will be multiplied by the number of jobs 
       running concurrently if also modifying the `-j` parameter.)
-    default: 5
     inputBinding:
       position: 101
       prefix: -M
@@ -230,7 +217,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the desired output directory.
-    default: GToTree_output
     inputBinding:
       position: 101
       prefix: -o
@@ -245,7 +231,6 @@ inputs:
       for more details and the note just above there on using representative 
       genomes). Anyway, provide this flag with no arguments if you don't want to
       speed up the alignments.
-    default: false
     inputBinding:
       position: 101
       prefix: -X
@@ -279,7 +264,6 @@ inputs:
       of a set of sequences is 100 AAs, those seqs longer than 120 or shorter 
       than 80 will be filtered out before alignment of that gene set with the 
       default 0.2 setting.
-    default: 0.2
     inputBinding:
       position: 101
       prefix: -c
@@ -296,7 +280,6 @@ inputs:
       specification) as input into a dedicated treeing program (the GToTree `-N`
       option will generate the alignment only to skip internal treeing if 
       wanted).
-    default: FastTreeMP if available, FastTree if not
     inputBinding:
       position: 101
       prefix: -T
@@ -306,7 +289,6 @@ inputs:
       - boolean
     doc: use http instead of ftp; Provide this flag with no arguments if your 
       system can't use ftp, and you'd like to try using http.
-    default: false
     inputBinding:
       position: 101
       prefix: -P

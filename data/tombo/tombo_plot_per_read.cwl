@@ -22,7 +22,6 @@ inputs:
         items: string
     doc: FAST5 subgroup(s) (under Analyses/[corrected-group]) containing 
       basecalls.
-    default: BaseCalled_template
     inputBinding:
       position: 101
       prefix: --basecall-subgroups
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: FAST5 group created by resquiggle command.
-    default: RawGenomeCorrected_000
     inputBinding:
       position: 101
       prefix: --corrected-group
@@ -57,7 +55,6 @@ inputs:
       - int
     doc: Number of context bases up and downstream over which to compute 
       Fisher's method combined p-values.
-    default: 1
     inputBinding:
       position: 101
       prefix: --fishers-method-context
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bases to plot/output.
-    default: 51
     inputBinding:
       position: 101
       prefix: --num-bases
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads to plot.
-    default: 100
     inputBinding:
       position: 101
       prefix: --num-reads

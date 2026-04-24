@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Automatically generate an ID for each sequence.
-    default: false
     inputBinding:
       position: 101
       prefix: --auto-id
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use constraints for multiple sequences.
-    default: false
     inputBinding:
       position: 101
       prefix: --batch
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove non-canonical base pairs from the structure constraint
-    default: false
     inputBinding:
       position: 101
       prefix: --canonicalBPonly
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Assume a circular (instead of linear) RNA molecule.
-    default: false
     inputBinding:
       position: 101
       prefix: --circ
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - File
     doc: Calculate structures subject to constraints.
-    default: ''
     inputBinding:
       position: 101
       prefix: --constraint
@@ -55,7 +50,6 @@ inputs:
       - int
     doc: How to treat "dangling end" energies for bases adjacent to helices in 
       free ends and multi-loops
-    default: 2
     inputBinding:
       position: 101
       prefix: --dangles
@@ -82,7 +76,6 @@ inputs:
       - 'null'
       - boolean
     doc: Compute density of states instead of secondary structures
-    default: false
     inputBinding:
       position: 101
       prefix: --dos
@@ -91,7 +84,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enforce base pairs given by round brackets ( ) in structure constraint
-    default: false
     inputBinding:
       position: 101
       prefix: --enforceConstraint
@@ -102,7 +94,6 @@ inputs:
     doc: Incoorporate G-Quadruplex formation into the structure prediction 
       algorithm (no support of G-quadruplex prediction for stochastic 
       backtracking and Zuker-style suboptimals yet)
-    default: false
     inputBinding:
       position: 101
       prefix: --gquad
@@ -111,7 +102,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for automatically generated IDs (as used in output file names)
-    default: sequence
     inputBinding:
       position: 101
       prefix: --id-prefix
@@ -129,7 +119,6 @@ inputs:
       - boolean
     doc: Recalculate energies of structures using a logarithmic energy function 
       for multi-loops before output.
-    default: false
     inputBinding:
       position: 101
       prefix: --logML
@@ -138,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Set the maximum base pair span
-    default: -1
     inputBinding:
       position: 101
       prefix: --maxBPspan
@@ -147,7 +135,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not allow GU pairs at the end of helices
-    default: false
     inputBinding:
       position: 101
       prefix: --noClosingGU
@@ -156,7 +143,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not automatically substitude nucleotide "T" with "U"
-    default: false
     inputBinding:
       position: 101
       prefix: --noconv
@@ -165,7 +151,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not allow GU pairs
-    default: false
     inputBinding:
       position: 101
       prefix: --noGU
@@ -174,7 +159,6 @@ inputs:
       - 'null'
       - boolean
     doc: Produce structures without lonely pairs (helices of length 1).
-    default: false
     inputBinding:
       position: 101
       prefix: --noLP
@@ -184,7 +168,6 @@ inputs:
       - boolean
     doc: Do not include special tabulated stabilizing energies for tri-, tetra- 
       and hexaloop hairpins.
-    default: false
     inputBinding:
       position: 101
       prefix: --noTetra
@@ -193,7 +176,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable non-redundant sampling strategy.
-    default: false
     inputBinding:
       position: 101
       prefix: --nonRedundant
@@ -221,7 +203,6 @@ inputs:
       - string
     doc: Specify the method used to convert SHAPE reactivities to pairing 
       probabilities when using the SHAPE approach of Zarringhalam et al.
-    default: O
     inputBinding:
       position: 101
       prefix: --shapeConversion
@@ -231,7 +212,6 @@ inputs:
       - string
     doc: Specify the method how to convert SHAPE reactivity data to pseudo 
       energy contributions
-    default: D
     inputBinding:
       position: 101
       prefix: --shapeMethod
@@ -240,7 +220,6 @@ inputs:
       - 'null'
       - boolean
     doc: Sort the suboptimal structures by energy.
-    default: false
     inputBinding:
       position: 101
       prefix: --sorted
@@ -277,7 +256,6 @@ inputs:
       - 'null'
       - boolean
     doc: Be verbose
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose
@@ -287,7 +265,6 @@ inputs:
       - boolean
     doc: Compute Zuker suboptimals instead of all suboptimal structures within 
       an engery band around the MFE.
-    default: false
     inputBinding:
       position: 101
       prefix: --zuker

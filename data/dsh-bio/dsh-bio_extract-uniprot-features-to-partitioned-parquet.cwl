@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: input UniProt XML path
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input-uniprot-xml-path
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - long
     doc: partition size
-    default: 1228800
     inputBinding:
       position: 101
       prefix: --partition-size
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: row group size
-    default: 122880
     inputBinding:
       position: 101
       prefix: --row-group-size

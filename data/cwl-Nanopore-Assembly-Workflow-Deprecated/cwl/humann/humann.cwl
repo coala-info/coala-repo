@@ -22,13 +22,11 @@ inputs:
     type: string
     doc: location of a indexed metaphlan database
     label: metaphlan database
-    default: "--bowtie2db /unlock/references/databases/HUMAnN/metaphlan_databases/"
     inputBinding:
       prefix: --metaphlan-options
 
   threads:
     type: int?
-    default: 2
     inputBinding:
       prefix: --threads
   identifier:

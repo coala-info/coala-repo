@@ -47,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Min length of maximal exact matches for considering
-    default: 20
     inputBinding:
       position: 103
       prefix: -m

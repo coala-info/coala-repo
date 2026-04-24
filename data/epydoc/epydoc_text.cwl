@@ -57,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: The default markup language for docstrings.
-    default: epytext
     inputBinding:
       position: 103
       prefix: --docformat
@@ -263,7 +262,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not list each module's imports.
-    default: false
     inputBinding:
       position: 103
       prefix: --no-imports
@@ -370,7 +368,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include frames in the HTML output.
-    default: true
     inputBinding:
       position: 103
       prefix: --show-frames
@@ -387,7 +384,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include private variables in the output.
-    default: true
     inputBinding:
       position: 103
       prefix: --show-private
@@ -396,7 +392,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include source code with syntax highlighting in the HTML output.
-    default: true
     inputBinding:
       position: 103
       prefix: --show-sourcecode

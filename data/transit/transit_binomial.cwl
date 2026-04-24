@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Number of burn-in samples to take.
-    default: 500
     inputBinding:
       position: 103
       prefix: -b
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: Hyper-parameters for rho, non-essential genes.
-    default: 1.0
     inputBinding:
       position: 103
       prefix: -M0
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: Hyper-parameters for rho, essential genes.
-    default: 1.0
     inputBinding:
       position: 103
       prefix: -M1
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: Hyper-parameters for kappa, non-essential genes.
-    default: 10.0
     inputBinding:
       position: 103
       prefix: -a0
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: Hyper-parameters for kappa, essential genes.
-    default: 10.0
     inputBinding:
       position: 103
       prefix: -a1
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - float
     doc: Hyper-parameters for prior prob of gene being essential.
-    default: 0.5
     inputBinding:
       position: 103
       prefix: -aw
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - float
     doc: Hyper-parameters for kappa, non-essential genes.
-    default: 1.0
     inputBinding:
       position: 103
       prefix: -b0
@@ -84,7 +77,6 @@ inputs:
       - 'null'
       - float
     doc: Hyper-parameters for kappa, essential genes.
-    default: 1.0
     inputBinding:
       position: 103
       prefix: -b1
@@ -93,7 +85,6 @@ inputs:
       - 'null'
       - float
     doc: Hyper-parameters for prior prob of gene being essential.
-    default: 0.5
     inputBinding:
       position: 103
       prefix: -bw
@@ -102,7 +93,6 @@ inputs:
       - 'null'
       - float
     doc: Hyper-parameters for rho, non-essential genes.
-    default: 0.5
     inputBinding:
       position: 103
       prefix: -pi0
@@ -111,7 +101,6 @@ inputs:
       - 'null'
       - float
     doc: Hyper-parameters for rho, essential genes.
-    default: 0.5
     inputBinding:
       position: 103
       prefix: -pi1
@@ -120,7 +109,6 @@ inputs:
       - 'null'
       - float
     doc: Ignore TAs occuring at given percentage (as integer) of the C terminus.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: -iC
@@ -129,7 +117,6 @@ inputs:
       - 'null'
       - float
     doc: Ignore TAs occuring at given percentage (as integer) of the N terminus.
-    default: 0.0
     inputBinding:
       position: 103
       prefix: -iN
@@ -138,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: Number of samples to take.
-    default: 10000
     inputBinding:
       position: 103
       prefix: -s

@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: 'Image size: if >1 use as pixels, if <1 use as fraction of longest sequence'
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --img-size
@@ -64,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: 'Window size for matching (default: 10)'
-    default: 10
     inputBinding:
       position: 101
       prefix: --window

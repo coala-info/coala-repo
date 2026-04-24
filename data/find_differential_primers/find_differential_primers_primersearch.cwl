@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Allowed percent mismatch (Any integer value)
-    default: 0
     inputBinding:
       position: 101
       prefix: -mismatchpercent

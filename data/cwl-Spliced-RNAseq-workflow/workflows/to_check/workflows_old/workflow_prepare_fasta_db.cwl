@@ -24,7 +24,6 @@ inputs:
     type: boolean?
     label: Make headers unique
     doc: Make fasta headers unique avoiding same fasta headers, which can break some tools.
-    default: false
 
 outputs:
   fasta_db:

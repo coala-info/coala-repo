@@ -44,7 +44,6 @@ inputs:
       - int
     doc: average sample depth cap applied to input with extraordinarily large 
       numbers of samples sequenced at high coverage to limit memory usage
-    default: 250
     inputBinding:
       position: 103
       prefix: --max-depth

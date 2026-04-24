@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: Set the temperature for the Boltzmann weight (in °C).
-    default: 37.0
     inputBinding:
       position: 101
       prefix: --boltzmann-temp
@@ -19,7 +18,6 @@ inputs:
       - int
     doc: How to treat "dangling end" energies for bases adjacent to helices in 
       free ends and multi-loops.
-    default: 2
     inputBinding:
       position: 101
       prefix: --dangling-end
@@ -29,7 +27,6 @@ inputs:
       - float
     doc: Set the maximum energy difference that states in a basin can have 
       w.r.t. the local minimum (in kcal/mol).
-    default: 65536.0
     inputBinding:
       position: 101
       prefix: --delta-e
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: Increases K if the MFE structure is not explored.
-    default: false
     inputBinding:
       position: 101
       prefix: --dynamic-best-k
@@ -50,7 +46,6 @@ inputs:
       states to be hashed in a gradient walk, by considering the maximal 
       available physical memory and the number of threads. This reduces the 
       probability of swapping.
-    default: false
     inputBinding:
       position: 101
       prefix: --dynamic-max-to-hash
@@ -60,7 +55,6 @@ inputs:
       - int
     doc: Set the energy model. 0=Turner model 2004, 1=Turner model 1999, 
       2=Andronescu model, 2007
-    default: 0
     inputBinding:
       position: 101
       prefix: --energy-model
@@ -87,7 +81,6 @@ inputs:
     doc: 'Set the gas constant in [kcal/(K*mol)]. You need this in order to compare
       the rate matrix with the results of other tools. ViennaRNA package: 0.00198717
       kcal/(K*mol) Barriers: 0.00198717 kcal/(K*mol) ELL Library: 0.0019871588 kcal/(K*mol)'
-    default: 0.00198717
     inputBinding:
       position: 101
       prefix: --gas-constant
@@ -102,7 +95,6 @@ inputs:
       given, the explorative flooding will not stop at the final structure! Instead
       it will explore all minima on the direct path and at its borders. This helps
       to evaluate optimal refolding paths in a post-processing step.'
-    default: 65536
     inputBinding:
       position: 101
       prefix: --max-bp-dist-add
@@ -112,7 +104,6 @@ inputs:
       - float
     doc: Sets the maximum energy that a state is allowed to have to be 
       considered by the flooder (in kcal/mol).
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --max-energy
@@ -158,7 +149,6 @@ inputs:
       - int
     doc: 'Move set: 0 = insertion and deletion, 1 = shift moves, 2 = no lonely pair
       moves.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --move-set
@@ -167,7 +157,6 @@ inputs:
       - 'null'
       - string
     doc: The RNA sequence of the molecule
-    default: ACUGUAUGCGCGU
     inputBinding:
       position: 101
       prefix: --sequence
@@ -178,7 +167,6 @@ inputs:
     doc: Skip the computation of the diagonal of the rate matrix (it can be 
       skipped because some post-processing tools like treekin compute it per 
       default).
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-diagonal
@@ -205,7 +193,6 @@ inputs:
       - float
     doc: Set the temperature for the free energy calculation (in °C). (If "T" is
       set and "B" not, "B" is equals "T").
-    default: 37.0
     inputBinding:
       position: 101
       prefix: --temperature
@@ -214,7 +201,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose.
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

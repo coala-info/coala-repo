@@ -56,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: Rename the sequences by adding this at the front
-    default: "''"
     inputBinding:
       position: 101
       prefix: --sequence-prefix

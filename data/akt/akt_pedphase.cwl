@@ -26,7 +26,6 @@ inputs:
       - string
     doc: 'b: compressed BCF, u: uncompressed BCF, z: compressed VCF, v: uncompressed
       VCF'
-    default: v
     inputBinding:
       position: 102
       prefix: --output-type

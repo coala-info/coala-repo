@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Output format (json, csv, pickle).
-    default: json
     inputBinding:
       position: 101
       prefix: --output-format
@@ -59,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

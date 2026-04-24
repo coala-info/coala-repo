@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: A list of genes to be plotted, separated by comma.
-    default: none
     inputBinding:
       position: 101
       prefix: --genes
@@ -61,7 +60,6 @@ inputs:
       (median normalization, default), "total" (normalization by total read 
       counts), "control" (normalization by control sgRNAs specified by the 
       --control-sgrna option).
-    default: median
     inputBinding:
       position: 101
       prefix: --norm-method
@@ -70,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: The prefix of the output file(s).
-    default: sample1.
     inputBinding:
       position: 101
       prefix: --output-prefix
@@ -79,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: A list of samples to be plotted, separated by comma.
-    default: using all samples in the count table.
     inputBinding:
       position: 101
       prefix: --samples

@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: custom barcode file
-    default: ''
     inputBinding:
       position: 103
       prefix: --barcodes
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: set seed for bootstrap generation
-    default: 0
     inputBinding:
       position: 103
       prefix: --bootseed
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: file format of boxplot output (e.g. pdf or png)
-    default: ''
     inputBinding:
       position: 103
       prefix: --boxplot
@@ -64,7 +61,6 @@ inputs:
       - int
     doc: exclude sites with coverage depth below this value andgroup identical 
       barcodes
-    default: 0
     inputBinding:
       position: 103
       prefix: --depthcutoff
@@ -73,7 +69,6 @@ inputs:
       - 'null'
       - float
     doc: minimum abundance to include
-    default: 0.001
     inputBinding:
       position: 103
       prefix: --eps
@@ -82,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: Frequency column name in the vcf file
-    default: AF
     inputBinding:
       position: 103
       prefix: --freqcol
@@ -91,7 +85,6 @@ inputs:
       - 'null'
       - string
     doc: lineage hierarchy file in yaml format
-    default: ''
     inputBinding:
       position: 103
       prefix: --lineageyml
@@ -100,7 +93,6 @@ inputs:
       - 'null'
       - string
     doc: custom lineage to variant metadata file
-    default: ''
     inputBinding:
       position: 103
       prefix: --meta
@@ -109,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: number of times bootstrapping is performed
-    default: 100
     inputBinding:
       position: 103
       prefix: --nb
@@ -118,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: max number of cpus to use
-    default: 1
     inputBinding:
       position: 103
       prefix: --nt
@@ -127,7 +117,6 @@ inputs:
       - 'null'
       - File
     doc: Output file basename
-    default: test
     inputBinding:
       position: 103
       prefix: --output_base
@@ -136,7 +125,6 @@ inputs:
       - 'null'
       - string
     doc: Pathogen of interest.Not used if using --barcodes option.
-    default: SARS-CoV-2
     inputBinding:
       position: 103
       prefix: --pathogen
@@ -162,7 +150,6 @@ inputs:
       - 'null'
       - float
     doc: associated threshold for robust mrca function
-    default: 0.9
     inputBinding:
       position: 103
       prefix: --relaxedthresh
@@ -171,7 +158,6 @@ inputs:
       - 'null'
       - string
     doc: solver used for estimating lineage prevalence
-    default: CLARABEL
     inputBinding:
       position: 103
       prefix: --solver

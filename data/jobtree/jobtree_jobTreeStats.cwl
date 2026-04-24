@@ -42,7 +42,6 @@ inputs:
       - Directory
     doc: Directory containing the job tree. Can also be specified as the single 
       argument to the script.
-    default: ./jobTree
     inputBinding:
       position: 102
       prefix: --jobTree
@@ -76,7 +75,6 @@ inputs:
       - string
     doc: Log at level (may be either OFF/INFO/DEBUG/CRITICAL). (default is 
       CRITICAL)
-    default: CRITICAL
     inputBinding:
       position: 102
       prefix: --logLevel

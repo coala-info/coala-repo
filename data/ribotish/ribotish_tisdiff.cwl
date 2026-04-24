@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: 'Scatter plot figure size (default: 8,8)'
-    default: 8,8
     inputBinding:
       position: 101
       prefix: --figsize
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: 'Minimum fold change threshold (default: 1.5)'
-    default: 1.5
     inputBinding:
       position: 101
       prefix: -f
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: 'Gene annotation file format (gtf, bed, gpd, gff, default: auto)'
-    default: auto
     inputBinding:
       position: 101
       prefix: --geneformat
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: 'Input TIS p value threshold (default: 0.05)'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --ipth
@@ -76,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: 'Input TIS q value threshold (default: 0.05)'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --iqth
@@ -85,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: 'Max NH value allowed for bam alignments (default: 5)'
-    default: 5
     inputBinding:
       position: 101
       prefix: --maxNH
@@ -94,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: 'Min MapQ value required for bam alignments (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --minMapQ
@@ -135,7 +128,6 @@ inputs:
       - 'null'
       - float
     doc: 'Output TIS diff p value threshold (default: 0.05)'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --opth
@@ -144,7 +136,6 @@ inputs:
       - 'null'
       - float
     doc: 'Output TIS diff q value threshold (default: 0.05)'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --oqth
@@ -169,7 +160,6 @@ inputs:
       - 'null'
       - string
     doc: 'Input RNASeq scale factor of 2/1 (default: auto)'
-    default: auto
     inputBinding:
       position: 101
       prefix: --rnascale
@@ -178,7 +168,6 @@ inputs:
       - 'null'
       - string
     doc: 'Input TIS scale factor of 2/1 (default: auto)'
-    default: auto
     inputBinding:
       position: 101
       prefix: --scalefactor
@@ -243,7 +232,6 @@ inputs:
       - 'null'
       - int
     doc: 'Index of TIS q value, 0 based (default: 15)'
-    default: 15
     inputBinding:
       position: 101
       prefix: --qi

@@ -10,7 +10,6 @@ inputs:
       - type: array
         items: string
     doc: List of to be plotted chromosomes
-    default: None
     inputBinding:
       position: 101
       prefix: --chromosomes
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: 'Color map to use for the heatmap. Available values can be seen here: http://matplotlib.org/examples/color/colormaps_reference.html'
-    default: RdYlBu_r
     inputBinding:
       position: 101
       prefix: --colorMap
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: The dpi of the plot.
-    default: 300
     inputBinding:
       position: 101
       prefix: --dpi
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Fontsize in the plot for x and y axis.
-    default: 10
     inputBinding:
       position: 101
       prefix: --fontsize
@@ -47,7 +43,6 @@ inputs:
       - boolean
     doc: Use an individual value range for all cluster consensus matrices. If 
       not set, the same scale is applied to all.
-    default: true
     inputBinding:
       position: 101
       prefix: --individual_scale
@@ -56,7 +51,6 @@ inputs:
       - 'null'
       - boolean
     doc: Apply log1p operation to plot the matrices.
-    default: false
     inputBinding:
       position: 101
       prefix: --log1p
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not plot a header.
-    default: true
     inputBinding:
       position: 101
       prefix: --no_header
@@ -81,7 +74,6 @@ inputs:
       - string
     doc: Region to be plotted for each consensus matrix. Mutual exclusion with 
       the usage of --chromosomes parameter
-    default: None
     inputBinding:
       position: 101
       prefix: --region
@@ -90,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads. Using the python multiprocessing module.
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

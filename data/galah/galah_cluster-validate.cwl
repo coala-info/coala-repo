@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - float
     doc: ANI to validate against
-    default: 99
     inputBinding:
       position: 101
       prefix: --ani
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Min aligned fraction of two genomes for clustering
-    default: 50
     inputBinding:
       position: 101
       prefix: --min-aligned-fraction
@@ -42,7 +40,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

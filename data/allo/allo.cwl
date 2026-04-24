@@ -71,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes, 1 by default
-    default: 1
     inputBinding:
       position: 102
       prefix: -p

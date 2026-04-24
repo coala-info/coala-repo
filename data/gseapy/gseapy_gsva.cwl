@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Max size of input genes presented in Gene Sets.
-    default: 2000
     inputBinding:
       position: 101
       prefix: --max-size
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Min size of input genes presented in Gene Sets.
-    default: 15
     inputBinding:
       position: 101
       prefix: --min-size
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Number of random seed.
-    default: 123
     inputBinding:
       position: 101
       prefix: -s
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Processes you are going to use.
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -94,7 +90,6 @@ inputs:
       - 'null'
       - float
     doc: tau in the random walk performed by the gsva.
-    default: 1
     inputBinding:
       position: 101
       prefix: --weight

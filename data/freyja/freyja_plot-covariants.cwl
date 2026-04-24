@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of mutations in a cluster to be plotted
-    default: 2
     inputBinding:
       position: 102
       prefix: --min_mutations
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: number of clusters to plot (sorted by frequency)
-    default: 10
     inputBinding:
       position: 102
       prefix: --num_clusters

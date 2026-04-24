@@ -14,7 +14,6 @@ inputs:
     type: int?
     label: Number of threads
     doc: Number of threads for clustalo to use.
-    default: 4
     inputBinding:
       prefix: -threads
   fasta:
@@ -27,7 +26,6 @@ inputs:
     type: string
     label: Binary path
     doc: Path to the clustalo binary
-    default: /unlock/infrastructure/binaries/clustalo/clustalo
     inputBinding:
       prefix: -clustalo
       position: 1

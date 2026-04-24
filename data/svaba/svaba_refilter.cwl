@@ -40,7 +40,6 @@ inputs:
       - float
     doc: LOD cutoff to classify indel as non-REF (tests AF=0 vs 
       AF=MaxLikelihood(AF))
-    default: 8
     inputBinding:
       position: 101
       prefix: --lod
@@ -50,7 +49,6 @@ inputs:
       - float
     doc: LOD cutoff to classify indel as non-REF (tests AF=0 vs 
       AF=MaxLikelihood(AF)) at DBSnp indel site
-    default: 5
     inputBinding:
       position: 101
       prefix: --lod-dbsnp
@@ -60,7 +58,6 @@ inputs:
       - float
     doc: LOD cutoff to classify indel as somatic (tests AF=0 in normal vs 
       AF=ML(0.5))
-    default: 2.5
     inputBinding:
       position: 101
       prefix: --lod-somatic
@@ -70,7 +67,6 @@ inputs:
       - float
     doc: LOD cutoff to classify indel as somatic (tests AF=0 in normal vs 
       AF=ML(0.5)) at DBSnp indel site
-    default: 4
     inputBinding:
       position: 101
       prefix: --lod-somatic-dbsnp
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: Track supporting reads by qname. Increases file sizes.
-    default: off
     inputBinding:
       position: 101
       prefix: --read-tracking
@@ -89,7 +84,6 @@ inputs:
       - float
     doc: Scale the priors that a site is artifact at given repeat count. 0 means
       assume low (const) error rate
-    default: 1
     inputBinding:
       position: 101
       prefix: --scale-errors
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Select verbosity level (0-4)
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbose

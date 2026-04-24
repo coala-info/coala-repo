@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: Word size for Autotag BLASTn.
-    default: 31
     inputBinding:
       position: 101
       prefix: --autotag_word_size
@@ -45,7 +44,6 @@ inputs:
       - float
     doc: Minimum coverage perc to consider an allele incomplete (if --detailed 
       option).
-    default: 70.0
     inputBinding:
       position: 101
       prefix: --min_cov_incomplete
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage perc to consider new alleles.
-    default: 90.0
     inputBinding:
       position: 101
       prefix: --min_cov_new_allele
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum identity perc to consider new alleles.
-    default: 90.0
     inputBinding:
       position: 101
       prefix: --min_id_new_allele
@@ -80,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 4
     inputBinding:
       position: 101
       prefix: --num_threads

@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Chunk size for parallel processing
-    default: 15000
     inputBinding:
       position: 101
       prefix: --chunks
@@ -69,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -78,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: BED type format
-    default: '12'
     inputBinding:
       position: 101
       prefix: --type

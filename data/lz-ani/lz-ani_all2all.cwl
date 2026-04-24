@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: max. no. of mismatches in approx. window
-    default: 7
     inputBinding:
       position: 102
       prefix: --am
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: min. length of run ending approx. extension
-    default: 3
     inputBinding:
       position: 102
       prefix: --ar
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: approx. window length
-    default: 15
     inputBinding:
       position: 102
       prefix: --aw
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: min. anchor length
-    default: 11
     inputBinding:
       position: 102
       prefix: --mal
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: max. dist. between approx. matches in query
-    default: 40
     inputBinding:
       position: 102
       prefix: --mqd
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: max. dist. between approx. matches in reference
-    default: 40
     inputBinding:
       position: 102
       prefix: --mrd
@@ -102,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: min. seed length
-    default: 7
     inputBinding:
       position: 102
       prefix: --msl
@@ -111,7 +104,6 @@ inputs:
       - 'null'
       - boolean
     doc: multi sample FASTA input
-    default: true
     inputBinding:
       position: 102
       prefix: --multisample-fasta
@@ -129,7 +121,6 @@ inputs:
       - 'null'
       - string
     doc: Comma-separated list of values for output format
-    default: standard
     inputBinding:
       position: 102
       prefix: --out-format
@@ -138,7 +129,6 @@ inputs:
       - 'null'
       - boolean
     doc: output in percent
-    default: false
     inputBinding:
       position: 102
       prefix: --out-in-percent
@@ -155,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: min. considered region length
-    default: 35
     inputBinding:
       position: 102
       prefix: --reg
@@ -164,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: no of threads; 0 means auto-detect
-    default: 0
     inputBinding:
       position: 102
       prefix: --threads
@@ -173,7 +161,6 @@ inputs:
       - 'null'
       - int
     doc: verbosity level
-    default: 1
     inputBinding:
       position: 102
       prefix: --verbose

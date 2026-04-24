@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Count both strand, canonical representation
-    default: false
     inputBinding:
       position: 102
       prefix: --canonical
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: False positive rate
-    default: 0.001
     inputBinding:
       position: 102
       prefix: --fpr
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Number files open simultaneously
-    default: 1
     inputBinding:
       position: 102
       prefix: --Files
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Number of generators run simultaneously
-    default: 1
     inputBinding:
       position: 102
       prefix: --Generators
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: Output file
-    default: mer_bloom_filter
     inputBinding:
       position: 102
       prefix: --output
@@ -81,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: Shell used to run generator commands
-    default: $SHELL or /bin/sh
     inputBinding:
       position: 102
       prefix: --shell
@@ -90,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

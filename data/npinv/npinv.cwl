@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - File
     doc: An inverted repeat file for the reference in bed format.
-    default: none
     inputBinding:
       position: 101
       prefix: --IRdatabase
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: maximum size of an inversion.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --max
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: minimum size for Alignment & Inv.
-    default: 500
     inputBinding:
       position: 101
       prefix: --minAln
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: minimum size of an inversion.
-    default: 500
     inputBinding:
       position: 101
       prefix: --min
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the region for running. Such as chr9:1-1000 OR chr9 OR all
-    default: all
     inputBinding:
       position: 101
       prefix: --region
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of supporting reads for an inversion.
-    default: 3
     inputBinding:
       position: 101
       prefix: --threshold
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: minimun window size (bp) to merge inversion breakpoints.
-    default: 2000
     inputBinding:
       position: 101
       prefix: --window

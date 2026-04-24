@@ -13,7 +13,6 @@ inputs:
       - 'null'
       - float
     doc: The spread of coverage mean given GC content.
-    default: 0.22
     inputBinding:
       position: 101
       prefix: -CMGCS
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - float
     doc: The peak coverage mean for a region.
-    default: 37.7
     inputBinding:
       position: 101
       prefix: -CMP
@@ -31,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: The GC content for regions with peak coverage mean.
-    default: 0.45
     inputBinding:
       position: 101
       prefix: -CMPGC
@@ -40,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: The coverage standard deviation divided by the mean.
-    default: 0.2
     inputBinding:
       position: 101
       prefix: -CSD
@@ -76,7 +72,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether nucleobase coverage is biased by GC content.
-    default: true
     inputBinding:
       position: 101
       prefix: -GCC
@@ -85,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Region size in nucleobases for which to calculate GC content.
-    default: 150
     inputBinding:
       position: 101
       prefix: -GCR
@@ -95,7 +89,6 @@ inputs:
       - int
     doc: The region size as a multiple of -NBS for which summary coverage statistics
       are recorded.
-    default: 2
     inputBinding:
       position: 101
       prefix: -L
@@ -104,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: The number of reference sequence nucleobases to buffer in memory.
-    default: 5000
     inputBinding:
       position: 101
       prefix: -N
@@ -121,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: The length of each read.
-    default: 76
     inputBinding:
       position: 101
       prefix: -RL
@@ -131,7 +122,6 @@ inputs:
       - int
     doc: Filter out no 'N-containing' reads (0), 'all-N' reads (1), 'at-least-1-N'
       reads (2).
-    default: 0
     inputBinding:
       position: 101
       prefix: -RCNF
@@ -146,7 +136,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to simulate error in the read based on the quality scores.
-    default: false
     inputBinding:
       position: 101
       prefix: -SE
@@ -162,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: The mean DNA template length.
-    default: 210
     inputBinding:
       position: 101
       prefix: -TLM
@@ -171,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: The standard deviation of the DNA template length.
-    default: 60
     inputBinding:
       position: 101
       prefix: -TLSD
@@ -181,7 +168,6 @@ inputs:
       - boolean
     doc: Whether to use real quality scores from existing fastq files or set all to
       the maximum.
-    default: false
     inputBinding:
       position: 101
       prefix: -URQS
@@ -190,7 +176,6 @@ inputs:
       - 'null'
       - int
     doc: The first read's X coordinate.
-    default: 1000
     inputBinding:
       position: 101
       prefix: -X
@@ -199,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: The first read's Y coordinate.
-    default: 1000
     inputBinding:
       position: 101
       prefix: -Y

@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory when downloading files
-    default: CWD
     inputBinding:
       position: 102
       prefix: --input
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory when downloading files
-    default: CWD
     inputBinding:
       position: 102
       prefix: --output

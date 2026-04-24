@@ -51,7 +51,6 @@ inputs:
     type: boolean?
     doc: Keep reads mapped to the reference (default = output unmapped)
     label: Keep mapped
-    default: false
 
   preset:
     type: string

@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: Number of subsampled read sets to output
-    default: 4
     inputBinding:
       position: 101
       prefix: --count
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allowed read depth
-    default: 25.0
     inputBinding:
       position: 101
       prefix: --min_read_depth
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for random number generator
-    default: 0
     inputBinding:
       position: 101
       prefix: --seed

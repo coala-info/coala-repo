@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum ML score to consider a position as variant
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --bed-ml
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Error model to use for processing
-    default: novaseq6000
     inputBinding:
       position: 101
       prefix: --error-model
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - File
     doc: Input file
-    default: '-'
     inputBinding:
       position: 101
       prefix: --input

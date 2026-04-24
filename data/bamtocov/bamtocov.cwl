@@ -10,7 +10,6 @@ inputs:
       - type: array
         items: File
     doc: the alignment file for which to calculate depth
-    default: STDIN
     inputBinding:
       position: 1
   - id: bam_threads
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: BAM decompression threads
-    default: 0
     inputBinding:
       position: 102
       prefix: --threads
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Exclude reads with any of the bits in FLAG set
-    default: 1796
     inputBinding:
       position: 102
       prefix: --flag
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: '[Experimental] artificially extend reads by INT bases'
-    default: 0
     inputBinding:
       position: 102
       prefix: --extendReads
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: GFF feature type to parse
-    default: CDS
     inputBinding:
       position: 102
       prefix: --gff-type
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: GFF identifier
-    default: ID
     inputBinding:
       position: 102
       prefix: --gff-id
@@ -87,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: GFF attributes separator
-    default: ;
     inputBinding:
       position: 102
       prefix: --gff-separator
@@ -96,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Mapping quality threshold
-    default: 0
     inputBinding:
       position: 102
       prefix: --mapq
@@ -129,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Report coverage for bases with coverage < min
-    default: 0
     inputBinding:
       position: 102
       prefix: --report-low
@@ -154,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: Output in WIG format (using fixed <SPAN>), 0 will print in BED format
-    default: 0
     inputBinding:
       position: 102
       prefix: --wig
@@ -163,7 +153,6 @@ inputs:
       - 'null'
       - string
     doc: How to summarize coverage for each WIG span (mean/min/max)
-    default: max
     inputBinding:
       position: 102
       prefix: --op

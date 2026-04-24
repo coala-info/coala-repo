@@ -19,7 +19,6 @@ inputs:
       - string
     doc: 'ASN.1 Type (Single Record: a Any, e Seq-entry, b Bioseq, s Bioseq-set, m
       Seq-submit, q Catenated; Release File: t Batch Bioseq-set, u Batch Seq-submit)'
-    default: a
     inputBinding:
       position: 101
       prefix: -a
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - File
     doc: Asn2Flat Executable
-    default: asn2flat
     inputBinding:
       position: 101
       prefix: -n
@@ -38,7 +36,6 @@ inputs:
       - int
     doc: Batch (1 Report, 2 Sequin/Release, 3 asn2gb SSEC/nocleanup, 4 asn2flat BSEC/nocleanup,
       5 asn2gb/asn2flat, 6 asn2gb NEW dbxref/OLD dbxref, 7 oldasn2gb/newasn2gb)
-    default: 0
     inputBinding:
       position: 101
       prefix: -t
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - boolean
     doc: Batch File is Compressed
-    default: false
     inputBinding:
       position: 101
       prefix: -c
@@ -56,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Bit Flags (1 HTML, 2 XML, 4 ContigFeats, 8 ContigSrcs, 16 FarTransl)
-    default: 0
     inputBinding:
       position: 101
       prefix: -g
@@ -65,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Custom Flags (4 HideFeats, 1792 HideRefs, 8192 HideSources, 262144 HideTranslation)
-    default: 0
     inputBinding:
       position: 101
       prefix: -u
@@ -74,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Feature itemID
-    default: 0
     inputBinding:
       position: 101
       prefix: -y
@@ -83,7 +76,6 @@ inputs:
       - 'null'
       - File
     doc: Ffdiff Executable
-    default: /netopt/genbank/subtool/bin/ffdiff
     inputBinding:
       position: 101
       prefix: -q
@@ -92,7 +84,6 @@ inputs:
       - 'null'
       - string
     doc: Format (b GenBank, e EMBL, p GenPept, t Feature Table, x INSDSet)
-    default: b
     inputBinding:
       position: 101
       prefix: -f
@@ -101,7 +92,6 @@ inputs:
       - 'null'
       - File
     doc: Input File Name
-    default: stdin
     inputBinding:
       position: 101
       prefix: -i
@@ -110,7 +100,6 @@ inputs:
       - 'null'
       - boolean
     doc: Input File is Binary
-    default: false
     inputBinding:
       position: 101
       prefix: -b
@@ -119,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: Lock/Lookup Flags (8 LockProd, 16 LookupComp, 64 LookupProd)
-    default: 0
     inputBinding:
       position: 101
       prefix: -h
@@ -128,7 +116,6 @@ inputs:
       - 'null'
       - string
     doc: Mode (r Release, e Entrez, s Sequin, d Dump)
-    default: s
     inputBinding:
       position: 101
       prefix: -m
@@ -137,7 +124,6 @@ inputs:
       - 'null'
       - boolean
     doc: Propagate Top Descriptors
-    default: false
     inputBinding:
       position: 101
       prefix: -p
@@ -146,7 +132,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remote Annotation Fetch Test (use -A Accession,0,-1 instead)
-    default: false
     inputBinding:
       position: 101
       prefix: -F
@@ -155,7 +140,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remote Fetching
-    default: false
     inputBinding:
       position: 101
       prefix: -r
@@ -164,7 +148,6 @@ inputs:
       - 'null'
       - int
     doc: SeqLoc From
-    default: 0
     inputBinding:
       position: 101
       prefix: -j
@@ -173,7 +156,6 @@ inputs:
       - 'null'
       - boolean
     doc: SeqLoc Minus Strand
-    default: false
     inputBinding:
       position: 101
       prefix: -d
@@ -182,7 +164,6 @@ inputs:
       - 'null'
       - int
     doc: SeqLoc To
-    default: 0
     inputBinding:
       position: 101
       prefix: -k
@@ -191,7 +172,6 @@ inputs:
       - 'null'
       - string
     doc: Style (n Normal, s Segment, m Master, c Contig)
-    default: n
     inputBinding:
       position: 101
       prefix: -s

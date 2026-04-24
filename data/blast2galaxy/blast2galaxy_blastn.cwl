@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Filter out low complexity regions (with DUST)
-    default: yes
     inputBinding:
       position: 101
       prefix: --dust
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Expectation value cutoff
-    default: '0.001'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: Output format
-    default: '6'
     inputBinding:
       position: 101
       prefix: --outfmt
@@ -85,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: Percent identity cutoff
-    default: '0.0'
     inputBinding:
       position: 101
       prefix: --perc_identity
@@ -96,7 +92,6 @@ inputs:
     doc: ID of the profile as defined in your config TOML. The profile consists 
       of Galaxy server credentials and a Galaxy Tool-ID to be used for your 
       BLAST call
-    default: default
     inputBinding:
       position: 101
       prefix: --profile
@@ -105,7 +100,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum query coverage per hsp (percentage, 0 to 100)
-    default: '0.0'
     inputBinding:
       position: 101
       prefix: --qcov_hsp_perc
@@ -120,7 +114,6 @@ inputs:
       - 'null'
       - string
     doc: Query strand(s) to search against database/subject
-    default: both
     inputBinding:
       position: 101
       prefix: --strand
@@ -129,7 +122,6 @@ inputs:
       - 'null'
       - string
     doc: Task type
-    default: megablast
     inputBinding:
       position: 101
       prefix: --task

@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: amount of mismatches allowed
-    default: 2
     inputBinding:
       position: 103
       prefix: --mismatches

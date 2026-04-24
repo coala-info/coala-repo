@@ -10,7 +10,6 @@ inputs:
       - int
     doc: Reads below this complexity threshold will be removed (consult fastp 
       manual for more explanation).
-    default: 10
     inputBinding:
       position: 101
       prefix: --complexity_threshold
@@ -21,7 +20,6 @@ inputs:
     doc: Set quality threshold for moving window. If the mean quality across the
       window drops below this threshold, the nucleotides within the window are 
       removed (cut), as well as all trailing nucleotides.
-    default: 20
     inputBinding:
       position: 101
       prefix: --cut_mean_quality
@@ -33,7 +31,6 @@ inputs:
       trimming. The window will start moving from the end toward the beginning 
       of the read, applying the quality threshold set with the 
       --cut_mean_quality flag.
-    default: 5
     inputBinding:
       position: 101
       prefix: --cut_window_size
@@ -78,7 +75,6 @@ inputs:
       - int
     doc: Specifies the length of the nucleotide repeat region at end of read to 
       be trimmed.
-    default: 7
     inputBinding:
       position: 101
       prefix: --poly_g_min_len
@@ -88,7 +84,6 @@ inputs:
       - int
     doc: Specifies the length of the nucleotide repeat region at end of read to 
       be trimmed.
-    default: 7
     inputBinding:
       position: 101
       prefix: --poly_x_min_len
@@ -98,7 +93,6 @@ inputs:
       - int
     doc: Specifies how accurate the match between any adapter etc. sequence must
       be against a read. For more information see trimmoatic tutorial.
-    default: 20
     inputBinding:
       position: 101
       prefix: --qualified_quality_phred
@@ -108,7 +102,6 @@ inputs:
       - int
     doc: Set the minimum read count threshold. Any sample with fewer reads than 
       this minimum threshold will not be processed further.
-    default: 400000
     inputBinding:
       position: 101
       prefix: --read_min
@@ -118,7 +111,6 @@ inputs:
       - int
     doc: Set this value to only allow reads to pass which are equal to or longer
       than this threshold.
-    default: 0
     inputBinding:
       position: 101
       prefix: --required_read_length
@@ -135,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Remove this number of nucleotides from the beginning of each read.
-    default: 0
     inputBinding:
       position: 101
       prefix: --trim_front
@@ -144,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: Remove this number of nucleotides from the end of each read.
-    default: 0
     inputBinding:
       position: 101
       prefix: --trim_tail
@@ -155,7 +145,6 @@ inputs:
     doc: Set the maximum percent of low-quality nucleotides allowed. Any read 
       with a higher percentage of unqualified (low quality) nucleotides will be 
       discarded.
-    default: 40
     inputBinding:
       position: 101
       prefix: --unqualified_percent_limit

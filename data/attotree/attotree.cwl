@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: kmer size
-    default: 21
     inputBinding:
       position: 102
       prefix: -k
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: sketch size
-    default: 10000
     inputBinding:
       position: 102
       prefix: -s
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: '[#cores, 20]'
     inputBinding:
       position: 102
       prefix: -t
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - Directory
     doc: tmp dir
-    default: '[default system, /tmp...]'
     inputBinding:
       position: 102
       prefix: -d
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: tree construction method (nj/upgma)
-    default: nj
     inputBinding:
       position: 102
       prefix: -m

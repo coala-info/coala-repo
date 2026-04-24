@@ -75,7 +75,6 @@ inputs:
       - float
     doc: 'Maximum archive file size to download with no confirmation required (in
       GB, default: 10)'
-    default: 10
     inputBinding:
       position: 102
       prefix: --size-cutoff

@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size for graph building/querying
-    default: 31
     inputBinding:
       position: 101
       prefix: --kmer
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output
-    default: unitig_caller
     inputBinding:
       position: 101
       prefix: --out
@@ -107,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

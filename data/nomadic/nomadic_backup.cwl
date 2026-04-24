@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - boolean
     doc: Exclude minknow data in the backup.
-    default: false
     inputBinding:
       position: 101
       prefix: --exclude-minknow
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include minknow data in the backup.
-    default: true
     inputBinding:
       position: 101
       prefix: --include-minknow
@@ -39,7 +37,6 @@ inputs:
       - Directory
     doc: Path to the base minknow output directory. Only needed if the files 
       were moved.
-    default: /var/lib/minknow/data
     inputBinding:
       position: 101
       prefix: --minknow_dir
@@ -66,7 +63,6 @@ inputs:
       results) are stored. The workspace directory simplifies the use of nomadic
       in that many arguments don't need to be listed as they are predefined in 
       the workspace config or can be loaded from the workspace
-    default: (current directory)
     inputBinding:
       position: 101
       prefix: --workspace

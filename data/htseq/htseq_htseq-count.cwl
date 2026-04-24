@@ -58,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: Column delimiter in output.
-    default: TAB
     inputBinding:
       position: 103
       prefix: --delimiter
@@ -86,7 +85,6 @@ inputs:
       - type: array
         items: string
     doc: GTF attribute to be used as feature ID.
-    default: gene_id
     inputBinding:
       position: 103
       prefix: --idattr
@@ -105,7 +103,6 @@ inputs:
       - int
     doc: Skip all reads with MAPQ alignment quality lower than the given minimum
       value.
-    default: 10
     inputBinding:
       position: 103
       prefix: --minaqual
@@ -114,7 +111,6 @@ inputs:
       - 'null'
       - string
     doc: Mode to handle reads overlapping more than one feature.
-    default: union
     inputBinding:
       position: 103
       prefix: --mode
@@ -124,7 +120,6 @@ inputs:
       - string
     doc: Whether and how to score reads that are not uniquely aligned or 
       ambiguously assigned to features.
-    default: none
     inputBinding:
       position: 103
       prefix: --nonunique
@@ -133,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel CPU processes to use.
-    default: 1
     inputBinding:
       position: 103
       prefix: --nprocesses
@@ -143,7 +137,6 @@ inputs:
       - string
     doc: "'pos' or 'name'. Sorting order of <alignment_file>. Paired-end sequencing
       data must be sorted either by position or by read name."
-    default: name
     inputBinding:
       position: 103
       prefix: --order
@@ -177,7 +170,6 @@ inputs:
       - string
     doc: Whether the data is from a strand-specific assay. Specify 'yes', 'no', 
       or 'reverse'.
-    default: yes
     inputBinding:
       position: 103
       prefix: --stranded
@@ -196,7 +188,6 @@ inputs:
         items: string
     doc: Feature type (3rd column in GTF file) to be used, all features of other
       type are ignored.
-    default: exon
     inputBinding:
       position: 103
       prefix: --type
@@ -206,7 +197,6 @@ inputs:
       - boolean
     doc: Whether to add a column header to the output TSV file indicating which 
       column corresponds to which input BAM file.
-    default: false
     inputBinding:
       position: 103
       prefix: --with-header

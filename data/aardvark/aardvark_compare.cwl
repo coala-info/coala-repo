@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: Optional comparison label for the summary output
-    default: compare
     inputBinding:
       position: 101
       prefix: --compare-label
@@ -54,7 +53,6 @@ inputs:
       - int
     doc: Maximum branch factor in the query optimizer; limits work on dense variant
       regions
-    default: 50
     inputBinding:
       position: 101
       prefix: --max-branch-factor
@@ -63,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum gap (bp) between variants to split into separate sub-regions
-    default: 50
     inputBinding:
       position: 101
       prefix: --min-variant-gap
@@ -72,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: The sample name to use in the query VCF
-    default: first sample
     inputBinding:
       position: 101
       prefix: --query-sample
@@ -109,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use in the benchmarking step
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -118,7 +113,6 @@ inputs:
       - 'null'
       - string
     doc: The sample name to use in the truth VCF
-    default: first sample
     inputBinding:
       position: 101
       prefix: --truth-sample

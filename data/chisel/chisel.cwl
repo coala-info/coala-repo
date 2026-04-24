@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: "Size of the haplotype blocks (default: 50kb, use 0 to\ndisable)"
-    default: 50kb
     inputBinding:
       position: 101
       prefix: --blocksize
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: "Prefix of cell barcode field in SAM format (default:\nCB:Z:)"
-    default: 'CB:Z:'
     inputBinding:
       position: 101
       prefix: --cellprefix
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: "Suffix of cell barcode field in SAM format (default:\nnone)"
-    default: none
     inputBinding:
       position: 101
       prefix: --cellsuffix
@@ -57,7 +54,6 @@ inputs:
     doc: "Space-separeted list of chromosomes between apices\n(default: \"chr1 chr2
       chr3 chr4 chr5 chr6 chr7 chr8\nchr9 chr10 chr11 chr12 chr13 chr14 chr15 chr16
       chr17\nchr18 chr19 chr20 chr21 chr22\")"
-    default: "chr1 chr2 chr3 chr4 chr5 chr6 chr7 chr8\nchr9 chr10 chr11 chr12 chr13
       chr14 chr15 chr16 chr17\nchr18 chr19 chr20 chr21 chr22"
     inputBinding:
       position: 101
@@ -84,7 +80,6 @@ inputs:
       - int
     doc: "Maximum total copy number to consider for balanced\ncluster (default: 4,
       corresponding to a WGD)"
-    default: 4
     inputBinding:
       position: 101
       prefix: --maxploidy
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: "Minimum number total reads to select cells (default:\n300000)"
-    default: 300000
     inputBinding:
       position: 101
       prefix: --minreads
@@ -122,7 +116,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Running directory (default: current directory)'
-    default: current directory
     inputBinding:
       position: 101
       prefix: --rundir
@@ -140,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: 'Random seed for replication (default: None)'
-    default: None
     inputBinding:
       position: 101
       prefix: --seed
@@ -164,7 +156,6 @@ inputs:
       - int
     doc: "Maximum number of bin clusters (default: 100, use 0 to\nconsider maximum
       number of clusters)"
-    default: 100
     inputBinding:
       position: 101
       prefix: --upperk

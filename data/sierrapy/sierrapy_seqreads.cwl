@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal read depth applied to each codon of this sequence
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-codon-reads
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal read depth applied to each position of this sequence
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-position-reads
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: 'Maximum mixture rate for this sequence reads (range: 0-1.0)'
-    default: 0.0005
     inputBinding:
       position: 102
       prefix: --mixture-cutoff
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: 'Minimal prevalence cutoff for this sequence reads (range: 0-1.0)'
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --pcnt-cutoff
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: URL of Sierra GraphQL Web Service.
-    default: production URL varied by virus
     inputBinding:
       position: 102
       prefix: --url
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Specify virus to be analyzed.
-    default: HIV1
     inputBinding:
       position: 102
       prefix: --virus

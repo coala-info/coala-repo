@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Compress the database by creating a tar archive.
-    default: false
     inputBinding:
       position: 102
       prefix: --compress
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - Directory
     doc: Database directory. If given then extend it, otherwise build a new one.
-    default: None
     inputBinding:
       position: 102
       prefix: --database
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size.
-    default: 31
     inputBinding:
       position: 102
       prefix: --kmer
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Scale for downsampling.
-    default: 250
     inputBinding:
       position: 102
       prefix: --scale
@@ -60,7 +56,6 @@ inputs:
       - File
     doc: Path to GTDB-Tk's <gtdbtk.bac120.summary.tsv> or GTDB's 
       <bac120_taxonomy.tsv>. If not given then ignore taxonomy mapping.
-    default: None
     inputBinding:
       position: 102
       prefix: --taxonomy
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 20
     inputBinding:
       position: 102
       prefix: --threads
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for k-mer grouping.
-    default: 25000
     inputBinding:
       position: 102
       prefix: --window

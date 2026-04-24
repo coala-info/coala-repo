@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - boolean
     doc: Bundle the output files into a single archive.
-    default: false
     inputBinding:
       position: 101
       prefix: --bundle
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use for HMMsearch.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -73,7 +71,6 @@ inputs:
       - 'null'
       - float
     doc: Domain E-value threshold for HMMsearch.
-    default: '1e-5'
     inputBinding:
       position: 101
       prefix: --domevalue
@@ -82,7 +79,6 @@ inputs:
       - 'null'
       - float
     doc: E-value threshold for HMMsearch.
-    default: '1e-5'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -92,7 +88,6 @@ inputs:
       - boolean
     doc: Keep additional HMM score columns (norm_bitscore_profile, 
       norm_bitscore_sequence, ID_score) in the output.
-    default: false
     inputBinding:
       position: 101
       prefix: --extended-output
@@ -101,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: 'Genetic code to use for translation. (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --gen-code
@@ -110,7 +104,6 @@ inputs:
       - 'null'
       - float
     doc: Inclusion domain E-value threshold for HMMsearch.
-    default: '1e-5'
     inputBinding:
       position: 101
       prefix: --incdomevalue
@@ -119,7 +112,6 @@ inputs:
       - 'null'
       - float
     doc: Inclusion E-value threshold for HMMsearch.
-    default: '1e-5'
     inputBinding:
       position: 101
       prefix: --incevalue
@@ -134,7 +126,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep temporary files (Expert users)
-    default: false
     inputBinding:
       position: 101
       prefix: --keep-tmp
@@ -144,7 +135,6 @@ inputs:
       - int
     doc: 'Minimum length threshold for seqkit seq(default: 400). ONLY used for nucleotide
       sequences.'
-    default: 400
     inputBinding:
       position: 101
       prefix: --length-thr
@@ -153,7 +143,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force overwrite of existing output directory.
-    default: false
     inputBinding:
       position: 101
       prefix: --overwrite
@@ -179,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: Number of sequences to search against.
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --zvalue

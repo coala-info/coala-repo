@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Return exit value of 1 if job tree jobs not all completed.
-    default: false
     inputBinding:
       position: 102
       prefix: --failIfNotComplete
@@ -27,7 +26,6 @@ inputs:
       - Directory
     doc: Directory containing the job tree. The jobTree location can also be 
       specified as the argument to the script.
-    default: ./jobTree
     inputBinding:
       position: 102
       prefix: --jobTree
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: Log at level (may be either OFF/INFO/DEBUG/CRITICAL).
-    default: CRITICAL
     inputBinding:
       position: 102
       prefix: --logLevel
@@ -95,7 +92,6 @@ inputs:
       - boolean
     doc: Print loads of information, particularly all the log files of jobs that
       failed.
-    default: false
     inputBinding:
       position: 102
       prefix: --verbose

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: filter expression
-    default: ''
     inputBinding:
       position: 102
       prefix: -f
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: intervals
-    default: ''
     inputBinding:
       position: 102
       prefix: -i
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - File
     doc: file containing list of intervals
-    default: ''
     inputBinding:
       position: 102
       prefix: -I
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - Directory
     doc: output latex directory
-    default: ''
     inputBinding:
       position: 102
       prefix: -x
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - File
     doc: reference sequence fasta file
-    default: ''
     inputBinding:
       position: 102
       prefix: -r

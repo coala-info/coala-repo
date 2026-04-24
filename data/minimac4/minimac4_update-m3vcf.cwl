@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum chunk length in base pairs to impute at once
-    default: 20000000
     inputBinding:
       position: 103
       prefix: --chunk
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: 'Decay rate for dosages in flanking regions (default: disabled with 0)'
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --decay
@@ -70,7 +68,6 @@ inputs:
       - string
     doc: Comma-separated list of format fields to generate (GT, HDS, DS, GP, or 
       SD)
-    default: HDS
     inputBinding:
       position: 103
       prefix: --format
@@ -87,7 +84,6 @@ inputs:
       - 'null'
       - float
     doc: Error parameter for HMM match probabilities
-    default: 0.01
     inputBinding:
       position: 103
       prefix: --match-error
@@ -96,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum block size for unique haplotype compression
-    default: 65535
     inputBinding:
       position: 103
       prefix: --max-block-size
@@ -105,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Minimium block size for unique haplotype compression
-    default: 10
     inputBinding:
       position: 103
       prefix: --min-block-size
@@ -122,7 +116,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum ratio of number of target sites to reference sites
-    default: '1e-4'
     inputBinding:
       position: 103
       prefix: --min-ratio
@@ -131,7 +124,6 @@ inputs:
       - 'null'
       - string
     doc: Behavior for when --min-ratio is not met ("skip" or "fail")
-    default: fail
     inputBinding:
       position: 103
       prefix: --min-ratio-behavior
@@ -140,7 +132,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum recombination probability
-    default: '1e-5'
     inputBinding:
       position: 103
       prefix: --min-recom
@@ -150,7 +141,6 @@ inputs:
       - string
     doc: Default output file format used for ambiguous filenames (bcf, sav, 
       vcf.gz, ubcf, usav, or vcf)
-    default: sav
     inputBinding:
       position: 103
       prefix: --output-format
@@ -160,7 +150,6 @@ inputs:
       - int
     doc: Size (in base pairs) of overlap before and after impute region to use 
       as input to HMM
-    default: 3000000
     inputBinding:
       position: 103
       prefix: --overlap
@@ -219,7 +208,6 @@ inputs:
       - 'null'
       - int
     doc: Parameter for unique haplotype compression heuristic
-    default: 10
     inputBinding:
       position: 103
       prefix: --slope-unit
@@ -228,7 +216,6 @@ inputs:
       - 'null'
       - int
     doc: Number of samples to impute before writing to temporary files
-    default: 200
     inputBinding:
       position: 103
       prefix: --temp-buffer
@@ -237,7 +224,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix path for temporary output files
-    default: ${TMPDIR}/m4_
     inputBinding:
       position: 103
       prefix: --temp-prefix
@@ -246,7 +232,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

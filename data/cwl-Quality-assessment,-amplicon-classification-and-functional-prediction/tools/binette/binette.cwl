@@ -32,7 +32,6 @@ inputs:
     label: Threads
     inputBinding:
       prefix: --threads
-    default: 1
   
   checkm2_db:
     type: Directory?
@@ -73,14 +72,12 @@ inputs:
     label: Minimum completeness
     inputBinding:
       prefix: --min_completeness
-    default: 40
   contamination_weight:
     type: float
     doc: Bin are scored as follow; completeness - weight * contamination. A low contamination_weight favor complete bins over low contaminated bins. Default 2
     label: Contamination weight
     inputBinding:
       prefix: --contamination_weight
-    default: 2.0
   
   low_mem:
     type: boolean
@@ -88,21 +85,18 @@ inputs:
     label: Low memory
     inputBinding:
       prefix: --low_mem
-    default: false
   verbose:
     type: boolean
     doc: Verbose output. Default false
     label: Verbose
     inputBinding:
       prefix: --verbose
-    default: false
   debug:
     type: boolean
     doc: Debug output. Default false
     label: Debug
     inputBinding:
       prefix: --debug
-    default: false
 
 outputs:
   final_bins:

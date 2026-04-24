@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: 'alignment mode: 0: global, 1: local, 2: extension'
-    default: 0
     inputBinding:
       position: 102
       prefix: --aln-mode
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: 'consensus algorithm (0: heaviest bundling path, 1: most frequent bases)'
-    default: 0
     inputBinding:
       position: 102
       prefix: --cons-algrm
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: first adaptive banding parameter; set < 0 to disable adaptive banded DP
-    default: 10
     inputBinding:
       position: 102
       prefix: --extra-b
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: second adaptive banding parameter
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --extra-f
@@ -75,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: gap extension penalty (E1,E2)
-    default: 2,1
     inputBinding:
       position: 102
       prefix: --gap-ext
@@ -92,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: gap opening penalty (O1,O2)
-    default: 4,24
     inputBinding:
       position: 102
       prefix: --gap-open
@@ -125,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: minimizer k-mer size
-    default: 19
     inputBinding:
       position: 102
       prefix: --k-mer
@@ -134,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: match score
-    default: 2
     inputBinding:
       position: 102
       prefix: --match
@@ -151,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: max. number of consensus sequence to generate
-    default: 1
     inputBinding:
       position: 102
       prefix: --maxnum-cons
@@ -160,7 +151,6 @@ inputs:
       - 'null'
       - float
     doc: min. frequency of each cluster
-    default: 0.25
     inputBinding:
       position: 102
       prefix: --min-freq
@@ -169,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: min. size of window to perform POA
-    default: 500
     inputBinding:
       position: 102
       prefix: --min-poa-win
@@ -178,7 +167,6 @@ inputs:
       - 'null'
       - int
     doc: mismatch penalty
-    default: 4
     inputBinding:
       position: 102
       prefix: --mismatch
@@ -196,7 +184,6 @@ inputs:
       - int
     doc: 'output result mode (0: consensus FASTA, 1: MSA PIR, 2: both, 3: graph GFA,
       4: graph+consensus GFA, 5: consensus FASTQ)'
-    default: 0
     inputBinding:
       position: 102
       prefix: --result
@@ -230,7 +217,6 @@ inputs:
       - 'null'
       - int
     doc: verbose level (0-2)
-    default: 0
     inputBinding:
       position: 102
       prefix: --verbose
@@ -239,7 +225,6 @@ inputs:
       - 'null'
       - int
     doc: minimizer window size
-    default: 10
     inputBinding:
       position: 102
       prefix: --window

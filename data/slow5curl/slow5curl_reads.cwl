@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - File
     doc: save the downloaded index to the specified file path
-    default: 'false'
     inputBinding:
       position: 102
       prefix: --cache

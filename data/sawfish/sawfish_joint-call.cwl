@@ -30,7 +30,6 @@ inputs:
     doc: "Regex used to select chromosomes where max depth filtration is disabled\n\
       \          \n          Default value is intended to disable high depth filtration
       on mitochondria"
-    default: (?i)^(chr)?(m|mt|mito|mitochondria)$
     inputBinding:
       position: 101
       prefix: --disable-max-dapth-chrom-regex
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum MAPQ value for reads to be used in joint-genotyping
-    default: 5
     inputBinding:
       position: 101
       prefix: --min-sv-mapq
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for all joint-call command output (must not already exist)
-    default: sawfish_joint-call_output
     inputBinding:
       position: 101
       prefix: --output-dir

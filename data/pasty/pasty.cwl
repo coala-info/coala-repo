@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum percent coverage to count a hit
-    default: 95
     inputBinding:
       position: 101
       prefix: --min-coverage
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum percent identity to count a hit
-    default: 95
     inputBinding:
       position: 101
       prefix: --min-pident
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to write output
-    default: ./
     inputBinding:
       position: 101
       prefix: --outdir
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix to use for output files
-    default: camlhmp
     inputBinding:
       position: 101
       prefix: --prefix
@@ -66,7 +62,6 @@ inputs:
   - id: targets_file
     type: File
     doc: Query targets in FASTA format
-    default: /usr/local/bin/../share/pasty/pa-osa.fasta
     inputBinding:
       position: 101
       prefix: --targets
@@ -81,7 +76,6 @@ inputs:
   - id: yaml_file
     type: File
     doc: YAML file documenting the targets and types
-    default: /usr/local/bin/../share/pasty/pa-osa.yaml
     inputBinding:
       position: 101
       prefix: --yaml

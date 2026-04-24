@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: round of correction in alignment
-    default: 3
     inputBinding:
       position: 101
       prefix: -r
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length (must be <64)
-    default: 21
     inputBinding:
       position: 101
       prefix: -k
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: maximum allowed error rate used for filtering overlaps
-    default: 0.04
     inputBinding:
       position: 101
       prefix: -e
@@ -63,7 +60,6 @@ inputs:
   - id: threads
     type: int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

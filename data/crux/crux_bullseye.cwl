@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: Only consider PPIDs below this maximum mass in daltons.
-    default: 8000.0
     inputBinding:
       position: 103
       prefix: --bullseye-max-mass
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - float
     doc: Only consider PPIDs above this minimum mass in daltons.
-    default: 600.0
     inputBinding:
       position: 103
       prefix: --bullseye-min-mass
@@ -52,7 +50,6 @@ inputs:
       tolerance. This wider tolerance is calculated using the PPID's 
       monoisotopic mass and charge (the higher the charge, the smaller the 
       window).
-    default: false
     inputBinding:
       position: 103
       prefix: --exact-match
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: Set the tolerance (+/-ppm) for --exact-match.
-    default: 10.0
     inputBinding:
       position: 103
       prefix: --exact-tolerance
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: The fileroot string will be added as a prefix to all output file names.
-    default: ''
     inputBinding:
       position: 103
       prefix: --fileroot
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Allowed gap size when checking for PPIDs across consecutive MS1 scans.
-    default: 1
     inputBinding:
       position: 103
       prefix: --gap-tolerance
@@ -90,7 +84,6 @@ inputs:
     doc: Ignore PPIDs that persist for longer than this length of time in the 
       MS1 spectra. The unit of time is whatever unit is used in your data file 
       (usually minutes). These PPIDs are considered contaminants.
-    default: 2.0
     inputBinding:
       position: 103
       prefix: --max-persist
@@ -99,7 +92,6 @@ inputs:
       - 'null'
       - Directory
     doc: The name of the directory where output files will be created.
-    default: crux-output
     inputBinding:
       position: 103
       prefix: --output-dir
@@ -109,7 +101,6 @@ inputs:
       - boolean
     doc: Replace existing files if true or fail when trying to overwrite a file 
       if false.
-    default: false
     inputBinding:
       position: 103
       prefix: --overwrite
@@ -118,7 +109,6 @@ inputs:
       - 'null'
       - File
     doc: A file containing parameters.
-    default: ''
     inputBinding:
       position: 103
       prefix: --parameter-file
@@ -128,7 +118,6 @@ inputs:
       - float
     doc: Set the mass tolerance (+/-ppm) for finding PPIDs in consecutive MS1 
       scans.
-    default: 10.0
     inputBinding:
       position: 103
       prefix: --persist-tolerance
@@ -139,7 +128,6 @@ inputs:
     doc: Set the tolerance (+/-units) around the retention time over which a 
       PPID can be matches to the MS2 spectrum. The unit of time is whatever unit
       is used in your data file (usually minutes).
-    default: 0.5
     inputBinding:
       position: 103
       prefix: --retention-tolerance
@@ -150,7 +138,6 @@ inputs:
     doc: Total number of MS1 scans over which a PPID must be observed to be 
       considered real. Gaps in persistence are allowed by setting 
       --gap-tolerance.
-    default: 3
     inputBinding:
       position: 103
       prefix: --scan-tolerance
@@ -160,7 +147,6 @@ inputs:
       - string
     doc: The format to write the output spectra to. If empty, the spectra will 
       be output in the same format as the MS2 input.
-    default: ''
     inputBinding:
       position: 103
       prefix: --spectrum-format
@@ -172,7 +158,6 @@ inputs:
       messages, including all those at lower verbosity levels: 0-fatal errors, 10-non-fatal
       errors, 20-warnings, 30-information on the progress of execution, 40-more progress
       information, 50-debug info, 60-detailed debug info.'
-    default: 30
     inputBinding:
       position: 103
       prefix: --verbosity

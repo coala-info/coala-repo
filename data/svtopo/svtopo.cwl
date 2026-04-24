@@ -23,7 +23,6 @@ inputs:
       - int
     doc: Filter threshold for maximum coverage, to remove regions with coverage 
       spikes due to e.g. alignment issues
-    default: 300
     inputBinding:
       position: 101
       prefix: --max-coverage

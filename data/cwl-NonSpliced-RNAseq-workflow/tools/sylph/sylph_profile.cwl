@@ -29,7 +29,6 @@ inputs:
     type: int?
     doc: Maximum threads to use. Default 3
     label: Threads
-    default: 3
     inputBinding:
       prefix: -t
       position: 10

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of attempts to check job status
-    default: 10
     inputBinding:
       position: 102
       prefix: --attempts
@@ -64,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: Address of Jpred4 server
-    default: http://www.compbio.dundee.ac.uk/jpred4
     inputBinding:
       position: 102
       prefix: --jpred4
@@ -89,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: REST address of server
-    default: http://www.compbio.dundee.ac.uk/jpred4/cgi-bin/rest
     inputBinding:
       position: 102
       prefix: --rest
@@ -130,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Wait interval before retrying to check job status in seconds
-    default: 60
     inputBinding:
       position: 102
       prefix: --wait

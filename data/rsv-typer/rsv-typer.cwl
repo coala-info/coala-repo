@@ -34,7 +34,6 @@ inputs:
       - string
     doc: "Output file format of the nextclade results (tsv, csv,\n               \
       \         json, ndjson, all). Default: tsv"
-    default: tsv
     inputBinding:
       position: 101
       prefix: --nextcladeOutput

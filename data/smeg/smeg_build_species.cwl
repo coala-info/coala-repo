@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Cluster SNPs threshold for iterative clustering
-    default: 50
     inputBinding:
       position: 101
       prefix: -t
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - File
     doc: File listing a subset of genomes for database building
-    default: use all genomes in 'Genomes directory'
     inputBinding:
       position: 101
       prefix: -l
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep Roary output
-    default: false
     inputBinding:
       position: 101
       prefix: -k
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - boolean
     doc: Create database ONLY applicable with Reference-based SMEG method
-    default: generate database suitable for both de novo and ref-based methods
     inputBinding:
       position: 101
       prefix: -e
@@ -73,7 +69,6 @@ inputs:
       - 'null'
       - boolean
     doc: Representative genome
-    default: auto select Rep genome
     inputBinding:
       position: 101
       prefix: -r
@@ -82,7 +77,6 @@ inputs:
       - 'null'
       - float
     doc: SNP assignment threshold (range 0.1 - 1)
-    default: 0.6
     inputBinding:
       position: 101
       prefix: -s
@@ -91,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: -p

@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - boolean
     doc: Flag to indicate fast mode
-    default: true
     inputBinding:
       position: 105
       prefix: -f
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum conditional probability
-    default: 0.65
     inputBinding:
       position: 105
       prefix: -c
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum probability
-    default: 0.2
     inputBinding:
       position: 105
       prefix: -p
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length
-    default: 1000
     inputBinding:
       position: 105
       prefix: -l
@@ -73,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal number of reads in RSM
-    default: 25
     inputBinding:
       position: 105
       prefix: -r
@@ -82,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 105
       prefix: -n
@@ -91,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Seed value
-    default: 18473
     inputBinding:
       position: 105
       prefix: -s
@@ -100,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Top N comparable reads
-    default: 100
     inputBinding:
       position: 105
       prefix: -q

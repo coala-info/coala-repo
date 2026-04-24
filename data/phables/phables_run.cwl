@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: coverage multiplier for flow interval modelling
-    default: 1.2
     inputBinding:
       position: 102
       prefix: --alpha
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: maximum unitig count to consider a component
-    default: 200
     inputBinding:
       position: 102
       prefix: --compcount
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Custom config file
-    default: (outputDir)/config.yaml
     inputBinding:
       position: 102
       prefix: --configfile
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: coverage tolerance for extending subpaths
-    default: 100
     inputBinding:
       position: 102
       prefix: --covtol
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: maximum e-value for phrog annotations
-    default: '1e-10'
     inputBinding:
       position: 102
       prefix: --evalue
@@ -86,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of paths to resolve for a component
-    default: 10
     inputBinding:
       position: 102
       prefix: --maxpaths
@@ -95,7 +89,6 @@ inputs:
       - 'null'
       - float
     doc: length threshold to consider single copy marker genes
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --mgfrac
@@ -104,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: minimum coverage of paths to output
-    default: 10
     inputBinding:
       position: 102
       prefix: --mincov
@@ -113,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of circular unitigs to consider
-    default: 2000
     inputBinding:
       position: 102
       prefix: --minlength
@@ -122,7 +113,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use conda for Snakemake rules
-    default: false
     inputBinding:
       position: 102
       prefix: --no-use-conda
@@ -131,7 +121,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: phables.out
     inputBinding:
       position: 102
       prefix: --output
@@ -162,7 +151,6 @@ inputs:
       - 'null'
       - float
     doc: minimum sequence identity for phrog annotations
-    default: 0.3
     inputBinding:
       position: 102
       prefix: --seqidentity
@@ -171,7 +159,6 @@ inputs:
       - 'null'
       - string
     doc: Customise Snakemake runtime args
-    default: --rerun-incomplete, --printshellcmds, --nolock, --show-failed-logs
     inputBinding:
       position: 102
       prefix: --snake-default
@@ -180,7 +167,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -189,7 +175,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use conda for Snakemake rules
-    default: true
     inputBinding:
       position: 102
       prefix: --use-conda

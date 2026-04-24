@@ -155,7 +155,6 @@ inputs:
       - int
     doc: remove assert and __debug__-dependent statements; add .opt-1 before 
       .pyc extension; also PYTHONOPTIMIZE=x
-    default: 1
     inputBinding:
       position: 104
       prefix: -O
@@ -165,7 +164,6 @@ inputs:
       - int
     doc: do -O changes and also discard docstrings; add .opt-2 before .pyc 
       extension
-    default: 2
     inputBinding:
       position: 104
       prefix: -OO

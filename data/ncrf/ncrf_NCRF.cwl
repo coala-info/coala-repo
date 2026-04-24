@@ -54,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: discard alignments that don't have long enough repeat
-    default: 500
     inputBinding:
       position: 103
       prefix: --minlength
@@ -73,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: discard alignments that don't score high enough
-    default: 0
     inputBinding:
       position: 103
       prefix: --minscore

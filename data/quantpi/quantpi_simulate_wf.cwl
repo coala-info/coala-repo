@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: pipeline end point. Allowed values are simulate_all, all
-    default: all
     inputBinding:
       position: 1
   - id: check_samples
@@ -17,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: check samples
-    default: false
     inputBinding:
       position: 102
       prefix: --check-samples
@@ -26,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: cluster workflow manager engine, support slurm(sbatch) and sge(qsub)
-    default: slurm
     inputBinding:
       position: 102
       prefix: --cluster-engine
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - Directory
     doc: conda environment prefix
-    default: ~/.conda/envs
     inputBinding:
       position: 102
       prefix: --conda-prefix
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - File
     doc: config.yaml
-    default: ./config.yaml
     inputBinding:
       position: 102
       prefix: --config
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: all job cores, available on '--run-local'
-    default: 240
     inputBinding:
       position: 102
       prefix: --cores
@@ -86,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: cluster job numbers, available on '--run-remote'
-    default: 30
     inputBinding:
       position: 102
       prefix: --jobs
@@ -103,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: local job cores, available on '--run-remote'
-    default: 8
     inputBinding:
       position: 102
       prefix: --local-cores
@@ -136,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: wait given seconds
-    default: 60
     inputBinding:
       position: 102
       prefix: --wait
@@ -145,7 +136,6 @@ inputs:
       - 'null'
       - Directory
     doc: project workdir
-    default: ./
     inputBinding:
       position: 102
       prefix: --workdir

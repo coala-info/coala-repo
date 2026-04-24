@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: 'use X to separate elements in collapse and unique lists (default: comma)'
-    default: ','
     inputBinding:
       position: 103
       prefix: --collapse-delimiter
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: fill missing values with X (default N/A)
-    default: N/A
     inputBinding:
       position: 103
       prefix: --filler

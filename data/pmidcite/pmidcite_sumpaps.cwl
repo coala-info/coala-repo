@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum NIH percentile to be placed in group 1
-    default: 2.1
     inputBinding:
       position: 102
       prefix: '-1'
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum NIH percentile to be placed in group 2
-    default: 30.0
     inputBinding:
       position: 102
       prefix: '-2'
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum NIH percentile to be placed in group 3
-    default: 60.0
     inputBinding:
       position: 102
       prefix: '-3'
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum NIH percentile to be placed in group 4
-    default: 94.0
     inputBinding:
       position: 102
       prefix: '-4'
@@ -54,7 +50,6 @@ inputs:
       - type: array
         items: string
     doc: 'Paper label choices: TOP CIT CLI REF CITS ALL'
-    default: TOP
     inputBinding:
       position: 102
       prefix: -p

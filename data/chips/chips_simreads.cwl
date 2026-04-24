@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Consider bins of this size when simulating
-    default: 100000
     inputBinding:
       position: 101
       prefix: --binsize
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: Fraction of the genome that is bound
-    default: 0.03713
     inputBinding:
       position: 101
       prefix: --frac
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Parameters for fragment length distribution (alpha, beta).
-    default: 15.67,15.49
     inputBinding:
       position: 101
       prefix: --gamma-frag
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Number of copies of the genome to simulate
-    default: 100
     inputBinding:
       position: 101
       prefix: --numcopies
@@ -85,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads (or read pairs) to simulate
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --numreads
@@ -100,7 +95,6 @@ inputs:
       - 'null'
       - float
     doc: The rate of geometric distribution for PCR simulation
-    default: 1
     inputBinding:
       position: 101
       prefix: --pcr_rate
@@ -118,7 +112,6 @@ inputs:
       - int
     doc: The index of the BED file column used to score each peak (index 
       starting from 1). Required if -b not used.
-    default: -1
     inputBinding:
       position: 101
       prefix: -c
@@ -133,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: Read length to generate
-    default: 36
     inputBinding:
       position: 101
       prefix: --readlen
@@ -197,7 +189,6 @@ inputs:
       - 'null'
       - boolean
     doc: Simulate paired-end reads
-    default: false
     inputBinding:
       position: 101
       prefix: --paired
@@ -206,7 +197,6 @@ inputs:
       - 'null'
       - float
     doc: SPOT score (fraction of reads in peaks)
-    default: 0.17594
     inputBinding:
       position: 101
       prefix: --spot
@@ -215,7 +205,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads used for computing
-    default: 1
     inputBinding:
       position: 101
       prefix: --thread

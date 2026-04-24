@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - File
     doc: path to bcalm
-    default: bcalm
     inputBinding:
       position: 101
       prefix: --bcalm
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: compression factor
-    default: 20
     inputBinding:
       position: 101
       prefix: --compression
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: comma-separated increasing sizes of k for assembly, must go at least to 31
-    default: 17,31
     inputBinding:
       position: 101
       prefix: --kmer-sizes
@@ -46,7 +43,6 @@ inputs:
       - int
     doc: minimum abundance of kmer to consider solid - RECOMMENDED to set to coverage/2
       if single-genome
-    default: 5
     inputBinding:
       position: 101
       prefix: --min-abundance
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: order of MSR compression (odd)
-    default: 101
     inputBinding:
       position: 101
       prefix: --order
@@ -94,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

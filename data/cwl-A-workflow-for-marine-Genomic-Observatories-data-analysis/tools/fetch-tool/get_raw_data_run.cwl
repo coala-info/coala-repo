@@ -23,21 +23,18 @@ inputs:
  private_data: 
     type: boolean
     label: In case the ENA data are still private, you need to denote that and fill your credentials in the Configuration file.
-    default: false
     inputBinding:
         prefix: -p 
 
  ena_api_username: 
     type: string
     label: The username for the ENA account to be accessed to get raw data.
-    default: ""
     inputBinding: 
         prefix: -u
 
  ena_api_password:
     type: string
     label: The password for the ENA account to be accessed to get raw data.
-    default: ""
     inputBinding: 
         prefix: -k
 

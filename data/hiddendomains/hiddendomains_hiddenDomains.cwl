@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: The width of the bin. Default is 1000bp.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --b
@@ -56,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum MAPQ score. Default is 30.
-    default: 30
     inputBinding:
       position: 101
       prefix: --q
@@ -69,7 +67,6 @@ inputs:
       bins according the following scale: >= 0.9, 0.9 > posterior >= 0.8, 0.8 > posterior
       >= 0.7, 0.7 > posterior >= min posterior for significance. The default value
       is 0; everything is merged by default.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --p

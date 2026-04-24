@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - boolean
     doc: Should the keyword name match exactly?
-    default: false
     inputBinding:
       position: 103
       prefix: exact

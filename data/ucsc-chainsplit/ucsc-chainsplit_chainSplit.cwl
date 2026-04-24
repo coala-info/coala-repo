@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - boolean
     doc: Split on query (default is on target)
-    default: false
     inputBinding:
       position: 103
       prefix: -q

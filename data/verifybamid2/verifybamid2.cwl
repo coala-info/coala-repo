@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: adjust mapping quality; recommended:50, disable:0
-    default: 40
     inputBinding:
       position: 101
       prefix: --adjust-MQ
@@ -45,7 +44,6 @@ inputs:
       - float
     doc: Minimization procedure convergence threshold, usually a trade-off 
       bettween accuracy and running time[default:1e-10]
-    default: 1e-08
     inputBinding:
       position: 101
       prefix: --Epsilon
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: 'filter flags: skip reads with mask bits set'
-    default: 1796
     inputBinding:
       position: 101
       prefix: --excl-flags
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: Input fixed Alpha to estimate PC coordinates
-    default: -1.0
     inputBinding:
       position: 101
       prefix: --FixAlpha
@@ -80,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: 'required flags: skip reads with mask bits unset'
-    default: 1040
     inputBinding:
       position: 101
       prefix: --incl-flags
@@ -97,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: max per-file depth
-    default: 8000
     inputBinding:
       position: 101
       prefix: --max-depth
@@ -114,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: skip bases with baseQ/BAQ smaller than min-BQ
-    default: 13
     inputBinding:
       position: 101
       prefix: --min-BQ
@@ -123,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: skip alignments with mapQ smaller than min-MQ
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-MQ
@@ -140,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: Set number of PCs to infer Allele Frequency[optional]
-    default: 2
     inputBinding:
       position: 101
       prefix: --NumPC
@@ -149,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: Set number of threads in likelihood calculation[default:4]
-    default: 4
     inputBinding:
       position: 101
       prefix: --NumThread
@@ -158,7 +148,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix of output files[optional]
-    default: result
     inputBinding:
       position: 101
       prefix: --Output
@@ -198,7 +187,6 @@ inputs:
       - 'null'
       - int
     doc: Random number seed[default:12345]
-    default: 12345
     inputBinding:
       position: 101
       prefix: --Seed

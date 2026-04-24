@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - File
     doc: input BAM/CRAM/SAM. Use '-' for stdin if using positional arguments
-    default: '-'
     inputBinding:
       position: 102
       prefix: --input
@@ -33,7 +32,6 @@ inputs:
       - int
     doc: maximum number of unaligned bases between two alignments to be included
       in the splitter file
-    default: 50
     inputBinding:
       position: 102
       prefix: --max-unmapped-bases
@@ -43,7 +41,6 @@ inputs:
       - int
     doc: minimum structural variant feature size for split alignments to be 
       included in the splitter file
-    default: 50
     inputBinding:
       position: 102
       prefix: --min-indel-size
@@ -53,7 +50,6 @@ inputs:
       - int
     doc: minimum number of non-overlapping base pairs between two alignments for
       a read to be included in the splitter file
-    default: 20
     inputBinding:
       position: 102
       prefix: --min-non-overlap
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

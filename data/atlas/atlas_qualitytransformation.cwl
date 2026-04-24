@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Set the logging level
-    default: INFO
     inputBinding:
       position: 102
       prefix: --log-level
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

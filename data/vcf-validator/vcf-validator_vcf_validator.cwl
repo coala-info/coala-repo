@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the input VCF file, or stdin
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Validation level (error, warning, stop)
-    default: warning
     inputBinding:
       position: 101
       prefix: --level
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Comma separated values for types of reports (summary, text)
-    default: summary
     inputBinding:
       position: 101
       prefix: --report

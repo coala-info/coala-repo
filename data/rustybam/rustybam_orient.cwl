@@ -12,7 +12,6 @@ inputs:
       - File
     doc: "PAF file from minimap2 or unimap. Must have the cg tag, and n matches will
       be zero\n            unless the cigar uses =X"
-    default: '-'
     inputBinding:
       position: 1
   - id: insert
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Space to add between records
-    default: 1000000
     inputBinding:
       position: 102
       prefix: --insert

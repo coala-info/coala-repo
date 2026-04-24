@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: 'Assembler: megahit skesa spades velvet'
-    default: spades
     inputBinding:
       position: 101
       prefix: --assembler
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use (0=ALL)
-    default: 8
     inputBinding:
       position: 101
       prefix: --cpus
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Sub-sample --R1/--R2 to this depth. Disable with --depth 0
-    default: 150
     inputBinding:
       position: 101
       prefix: --depth
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force overwite of existing output folder
-    default: OFF
     inputBinding:
       position: 101
       prefix: --force
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep intermediate files
-    default: OFF
     inputBinding:
       position: 101
       prefix: --keepfiles
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum contig coverage <0=AUTO>
-    default: 2
     inputBinding:
       position: 101
       prefix: --mincov
@@ -87,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum contig length <0=AUTO>
-    default: 0
     inputBinding:
       position: 101
       prefix: --minlen
@@ -96,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: Format of contig FASTA IDs in 'printf' style
-    default: contig%05d
     inputBinding:
       position: 101
       prefix: --namefmt
@@ -105,7 +97,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable post-assembly correction
-    default: OFF
     inputBinding:
       position: 101
       prefix: --nocorr
@@ -114,7 +105,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable read error correction
-    default: OFF
     inputBinding:
       position: 101
       prefix: --noreadcorr
@@ -123,7 +113,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable read stitching
-    default: OFF
     inputBinding:
       position: 101
       prefix: --nostitch
@@ -146,7 +135,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use plasmid mode if availabnlke
-    default: OFF
     inputBinding:
       position: 101
       prefix: --plasmid
@@ -167,7 +155,6 @@ inputs:
       - 'null'
       - float
     doc: Try to keep RAM usage below this many GB
-    default: 16
     inputBinding:
       position: 101
       prefix: --ram
@@ -184,7 +171,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable adaptor trimming
-    default: OFF
     inputBinding:
       position: 101
       prefix: --trim

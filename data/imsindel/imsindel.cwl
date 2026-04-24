@@ -8,7 +8,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 5
     inputBinding:
       position: 101
       prefix: --alt-read-depth
@@ -22,7 +21,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 20
     inputBinding:
       position: 101
       prefix: --baseq
@@ -38,7 +36,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 5
     inputBinding:
       position: 101
       prefix: --clip-length
@@ -54,7 +51,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: glsearch36
     inputBinding:
       position: 101
       prefix: --glsearch
@@ -62,7 +58,6 @@ inputs:
     type:
       - 'null'
       - File
-    default: data/mydna.mat
     inputBinding:
       position: 101
       prefix: --glsearch-mat
@@ -78,7 +73,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: mafft
     inputBinding:
       position: 101
       prefix: --mafft
@@ -86,7 +80,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 20
     inputBinding:
       position: 101
       prefix: --mapq
@@ -94,7 +87,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 5
     inputBinding:
       position: 101
       prefix: --pair-within
@@ -110,7 +102,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: samtools
     inputBinding:
       position: 101
       prefix: --samtools
@@ -118,7 +109,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 5
     inputBinding:
       position: 101
       prefix: --support-clip-length
@@ -126,7 +116,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 3
     inputBinding:
       position: 101
       prefix: --support-reads
@@ -134,7 +123,6 @@ inputs:
     type:
       - 'null'
       - Directory
-    default: /temp
     inputBinding:
       position: 101
       prefix: --temp
@@ -142,7 +130,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 1
     inputBinding:
       position: 101
       prefix: --thread
@@ -150,7 +137,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 3
     inputBinding:
       position: 101
       prefix: --within

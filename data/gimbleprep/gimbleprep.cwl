@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not delete temporary files
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_tmp
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: Max read depth (as multiple of mean coverage of each BAM)
-    default: 2
     inputBinding:
       position: 101
       prefix: --max_depth
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Min read depth
-    default: 8
     inputBinding:
       position: 101
       prefix: --min_depth
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum PHRED quality
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_qual
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: Outprefix
-    default: gimble
     inputBinding:
       position: 101
       prefix: --outprefix
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: SnpGap
-    default: 2
     inputBinding:
       position: 101
       prefix: --snpgap
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

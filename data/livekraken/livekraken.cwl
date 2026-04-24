@@ -91,7 +91,6 @@ inputs:
       - 'null'
       - string
     doc: Name for Kraken DB
-    default: none
     inputBinding:
       position: 102
       prefix: --db
@@ -164,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

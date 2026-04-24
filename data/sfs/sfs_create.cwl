@@ -18,7 +18,6 @@ inputs:
       - int
     doc: "Output precision.\n          \n          This option is only used when projecting,
       and otherwise set to zero since the output must be integer counts."
-    default: 6
     inputBinding:
       position: 102
       prefix: --precision
@@ -104,7 +103,6 @@ inputs:
       - int
     doc: "Number of threads.\n          \n          Multi-threading currently only
       affects reading and parsing BGZF compressed input."
-    default: 4
     inputBinding:
       position: 102
       prefix: --threads

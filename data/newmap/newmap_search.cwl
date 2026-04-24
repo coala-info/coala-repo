@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - File
     doc: File of reference index file to count occurances in.
-    default: basename of fasta_file with the awfmi extension
     inputBinding:
       position: 2
   - id: exclude_sequences
@@ -25,7 +24,6 @@ inputs:
       - string
     doc: A comma separated list of sequence IDs to exclude from fasta_file. 
       Cannot be used with --include-sequences.
-    default: all sequences in fasta_file
     inputBinding:
       position: 103
       prefix: --exclude-sequences
@@ -35,7 +33,6 @@ inputs:
       - string
     doc: A comma separated list of sequence IDs to select from fasta_file. 
       Cannot be used with --exclude-sequences.
-    default: all sequences in fasta_file
     inputBinding:
       position: 103
       prefix: --include-sequences
@@ -45,7 +42,6 @@ inputs:
       - string
     doc: Specify the initial search length. Only valid when the search range is 
       a continuous range separated by a colon.
-    default: midpoint of the range
     inputBinding:
       position: 103
       prefix: --initial-search-length
@@ -55,7 +51,6 @@ inputs:
       - int
     doc: Maximum number of k-mers to batch per reference sequence from input 
       fasta file. Use to control memory usage.
-    default: 10000000
     inputBinding:
       position: 103
       prefix: --kmer-batch-size
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to parallelize k-mer counting.
-    default: 1
     inputBinding:
       position: 103
       prefix: --num-threads
@@ -75,7 +69,6 @@ inputs:
     doc: 'Search set of sequence lengths to determine uniqueness. Use a comma separated
       list of increasing lengths or a full inclusive set of lengths separated by a
       colon. Examples: 20,24,30 or 20:30.'
-    default: 20:200
     inputBinding:
       position: 103
       prefix: --search-range

@@ -13,20 +13,15 @@ inputs:
     ### FASTQ file split ###
     input_file_split:
         type: string?
-        default: "_R"
     input_file_split_fwd_single:
         type: string?
-        default: "R1"
     input_file_split_rev:
         type: string?
-        default: "R2"
     ### QC and trimming options ###
     input_qc_check: 
         type: boolean?
-        default: false
     input_trimming_check:
         type: boolean?
-        default: false
     premapping_input_check: 
         type: string
     ### Trim galore ###
@@ -55,22 +50,16 @@ inputs:
     ### samtools view ###
     samtools_view_isbam:
         type: boolean
-        default: true
     samtools_view_collapsecigar:
         type: boolean
-        default: false
     samtools_view_uncompressed:
         type: boolean
-        default: false
     samtools_view_fastcompression:
         type: boolean
-        default: false
     samtools_view_samheader:
         type: boolean
-        default: false
     samtools_view_count:
         type: boolean
-        default: false
     samtools_view_readswithoutbits: 
         type: int?
     samtools_view_readsingroup:
@@ -85,7 +74,6 @@ inputs:
         type: int?
     samtools_view_iscram:
         type: boolean
-        default: false
     samtools_view_threads:
         type: int?
     samtools_view_randomseed:
@@ -103,7 +91,6 @@ inputs:
         type: string?
     samtools_sort_sort_by_name:
         type: boolean?
-        default: false
     ### Stringtie assembly of RNA-Seq alignments to transcripts ###
     stringtie_guide_gff:
         type: File
@@ -119,7 +106,6 @@ inputs:
         type: int?
     stringtie_verbose:
         type: boolean?
-        default: true
     stringtie_min_isoform_abundance:
         type: float?
     stringtie_junction_coverage:
@@ -127,7 +113,6 @@ inputs:
     stringtie_min_read_coverage:
         type: float?
     stringtie_conservative_mode:
-        default: false
         type: boolean?
     ### Ballgown - differential transcript expression analysis ###
     bg_phenotype_file:
@@ -153,7 +138,6 @@ inputs:
     ### featureCounts - counting reads ###
     featureCounts_number_of_threads:
         type: int?
-        default: 16
     featureCounts_annotation_file:
         type: File
     featureCounts_output_file:

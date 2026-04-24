@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Which type of FASTQ entries should be reported?
-    default: all
     inputBinding:
       position: 102
       prefix: --type

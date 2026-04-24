@@ -25,7 +25,6 @@ inputs:
     doc: use a preset alignment scoring model, either "short" (default) or 
       "long" (ONT/PacBio) "long" is equivalent to -u 2 -L 63 -q 1 -z 2 -o 2 -y 1
       -w 128 -O 32
-    default: short
     inputBinding:
       position: 103
       prefix: --alignment-model
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: weight MQ by suffix tree based estimate when estimate less than FLOAT
-    default: 0
     inputBinding:
       position: 103
       prefix: --approx-mq-cap
@@ -44,7 +42,6 @@ inputs:
       - int
     doc: the maximum number of bands of insertion we consider in the alignment 
       chain model
-    default: 128
     inputBinding:
       position: 103
       prefix: --band-jump
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: treat bands with < INT MQ as unaligned
-    default: 0
     inputBinding:
       position: 103
       prefix: --band-min-mq
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: consider this many alignments of each band in banded alignment
-    default: 16
     inputBinding:
       position: 103
       prefix: --band-multi
@@ -71,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: band overlap for long read alignment
-    default: '{-w}/8'
     inputBinding:
       position: 103
       prefix: --band-overlap
@@ -80,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: band width for long read alignment
-    default: 256
     inputBinding:
       position: 103
       prefix: --band-width
@@ -98,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: buffer this many alignments together before outputting in GAM
-    default: 512
     inputBinding:
       position: 103
       prefix: --buffer-size
@@ -134,7 +126,6 @@ inputs:
       - float
     doc: drop chains shorter than FLOAT fraction of the longest overlapping 
       chain
-    default: 0.45
     inputBinding:
       position: 103
       prefix: --drop-chain
@@ -197,7 +188,6 @@ inputs:
     doc: fragment length distribution specification STR=m:μ:σ:o:d 
       max:mean:stdev:orientation (1=same/0=flip):direction (1=forward, 
       0=backward)
-    default: 5000:0:0:0:1
     inputBinding:
       position: 103
       prefix: --fragment
@@ -214,7 +204,6 @@ inputs:
       - 'null'
       - int
     doc: the full-length alignment bonus
-    default: 5
     inputBinding:
       position: 103
       prefix: --full-l-bonus
@@ -239,7 +228,6 @@ inputs:
       - 'null'
       - int
     doc: use this gap extension penalty
-    default: 1
     inputBinding:
       position: 103
       prefix: --gap-extend
@@ -248,7 +236,6 @@ inputs:
       - 'null'
       - int
     doc: use this gap open penalty
-    default: 6
     inputBinding:
       position: 103
       prefix: --gap-open
@@ -273,7 +260,6 @@ inputs:
       - 'null'
       - float
     doc: the exponent for haplotype consistency likelihood in alignment score
-    default: 1
     inputBinding:
       position: 103
       prefix: --hap-exp
@@ -282,7 +268,6 @@ inputs:
       - 'null'
       - int
     doc: ignore MEMs who have >N hits in our index (0 for no limit)
-    default: 2048
     inputBinding:
       position: 103
       prefix: --hit-max
@@ -333,7 +318,6 @@ inputs:
       - 'null'
       - int
     doc: use this match score
-    default: 1
     inputBinding:
       position: 103
       prefix: --match
@@ -342,7 +326,6 @@ inputs:
       - 'null'
       - int
     doc: attempt up to INT mate rescues per pair
-    default: 64
     inputBinding:
       position: 103
       prefix: --mate-rescues
@@ -352,7 +335,6 @@ inputs:
       - int
     doc: maximum gap length allowed in each contiguous alignment (for X-drop 
       alignment)
-    default: 40
     inputBinding:
       position: 103
       prefix: --max-gap-length
@@ -361,7 +343,6 @@ inputs:
       - 'null'
       - int
     doc: ignore MEMs longer than INT (unset if 0)
-    default: 0
     inputBinding:
       position: 103
       prefix: --max-mem
@@ -370,7 +351,6 @@ inputs:
       - 'null'
       - int
     doc: produce up to INT alignments per read
-    default: 1
     inputBinding:
       position: 103
       prefix: --max-multimaps
@@ -379,7 +359,6 @@ inputs:
       - 'null'
       - int
     doc: skip cluster subgraphs with length > N*read_length
-    default: 100
     inputBinding:
       position: 103
       prefix: --max-target-x
@@ -388,7 +367,6 @@ inputs:
       - 'null'
       - float
     doc: this fraction of -k length hits will be by chance
-    default: '5e-4'
     inputBinding:
       position: 103
       prefix: --mem-chance
@@ -397,7 +375,6 @@ inputs:
       - 'null'
       - int
     doc: discard a chain if seeded bases are shorter than INT
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-chain
@@ -406,7 +383,6 @@ inputs:
       - 'null'
       - float
     doc: accept alignment only if the alignment identity is >= FLOAT
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-ident
@@ -415,7 +391,6 @@ inputs:
       - 'null'
       - int
     doc: minimum MEM length (if 0 estimate via -e)
-    default: 0
     inputBinding:
       position: 103
       prefix: --min-mem
@@ -424,7 +399,6 @@ inputs:
       - 'null'
       - int
     doc: use this mismatch penalty
-    default: 4
     inputBinding:
       position: 103
       prefix: --mismatch
@@ -433,7 +407,6 @@ inputs:
       - 'null'
       - int
     doc: cap the mapping quality at INT
-    default: 60
     inputBinding:
       position: 103
       prefix: --mq-max
@@ -443,7 +416,6 @@ inputs:
       - float
     doc: scale MQ by count of alignments with FLOAT overlap in the query with 
       the primary
-    default: 0
     inputBinding:
       position: 103
       prefix: --mq-overlap
@@ -501,7 +473,6 @@ inputs:
       - 'null'
       - float
     doc: use this log recombination penalty for GBWT haplotype scoring
-    default: 20.7
     inputBinding:
       position: 103
       prefix: --recombination-penalty
@@ -535,7 +506,6 @@ inputs:
       - 'null'
       - float
     doc: look for internal seeds inside a seed longer than FLOAT*--min-seed
-    default: 1.5
     inputBinding:
       position: 103
       prefix: --reseed-x
@@ -593,7 +563,6 @@ inputs:
       - 'null'
       - int
     doc: attempt to align at least the INT best candidate chains of seeds
-    default: 1
     inputBinding:
       position: 103
       prefix: --try-at-least
@@ -603,7 +572,6 @@ inputs:
       - int
     doc: attempt to align up to the INT best candidate chains of seeds (1/2 for 
       paired)
-    default: 128
     inputBinding:
       position: 103
       prefix: --try-up-to
@@ -612,7 +580,6 @@ inputs:
       - 'null'
       - int
     doc: penalty for an unpaired read pair
-    default: 17
     inputBinding:
       position: 103
       prefix: --unpaired-cost

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: The ARTIC primer scheme version (default = latest)
-    default: 0
     inputBinding:
       position: 102
       prefix: --schemeVersion

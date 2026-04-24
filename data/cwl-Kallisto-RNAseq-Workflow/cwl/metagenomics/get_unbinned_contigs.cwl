@@ -20,7 +20,6 @@ inputs:
   threads:
     type: int?
     label: Number of threads to use
-    default: 8
   
   assembly_fasta:
     type: File

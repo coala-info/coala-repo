@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: the input bai filename if non-conventionally named
-    default: ''
     inputBinding:
       position: 101
       prefix: -bai
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: bit flag for read filter (as specified in SAM doc)
-    default: 3845
     inputBinding:
       position: 101
       prefix: -bitflag
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: length of the k-mer context for context dependent insertion table
-    default: 6
     inputBinding:
       position: 101
       prefix: -len_context_ins
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: length of the k-mer context for context dependent substitution table
-    default: 5
     inputBinding:
       position: 101
       prefix: -len_context_sub
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: maximum homopolymer length
-    default: 20
     inputBinding:
       position: 101
       prefix: -len_max_hp
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: maximum length of indels to consider
-    default: 20
     inputBinding:
       position: 101
       prefix: -len_max_indel
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length aligned
-    default: 1000
     inputBinding:
       position: 101
       prefix: -len_min_aln
@@ -84,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: minimum contig length
-    default: 1500
     inputBinding:
       position: 101
       prefix: -len_min_contig
@@ -93,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: minimum homopolymer length
-    default: 3
     inputBinding:
       position: 101
       prefix: -len_min_hp
@@ -102,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: minimum read length
-    default: 1500
     inputBinding:
       position: 101
       prefix: -len_min_read
@@ -111,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: length of the contig edge to trim before computing various statistics
-    default: 1
     inputBinding:
       position: 101
       prefix: -len_trim_contig_edge
@@ -121,7 +110,6 @@ inputs:
       - int
     doc: pass this flag to run the program with 'lim' randomly selected reads 
       (both pass and fail)
-    default: -1
     inputBinding:
       position: 101
       prefix: -lim
@@ -130,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapq threshold
-    default: 40
     inputBinding:
       position: 101
       prefix: -mapq_thres
@@ -139,7 +126,6 @@ inputs:
       - 'null'
       - boolean
     doc: pass this flag to not generate figures
-    default: false
     inputBinding:
       position: 101
       prefix: -no_figures
@@ -148,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of points to be plotted for any scatter plots
-    default: 100000
     inputBinding:
       position: 101
       prefix: -num_pts_max
@@ -164,7 +149,6 @@ inputs:
       - string
     doc: the name of the output PDF report if the user wishes to use a 
       non-default name.
-    default: report.pdf
     inputBinding:
       position: 101
       prefix: -report_name
@@ -174,7 +158,6 @@ inputs:
       - boolean
     doc: pass this flag to NOT perform reverse complementing of the reverse 
       complement mapped reads
-    default: false
     inputBinding:
       position: 101
       prefix: -use_recorded
@@ -183,7 +166,6 @@ inputs:
       - 'null'
       - boolean
     doc: pass this flag to follow progress in the terminal
-    default: false
     inputBinding:
       position: 101
       prefix: -verbose

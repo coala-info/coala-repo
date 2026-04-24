@@ -80,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: String that will be used to define the unit of each iteration
-    default: it
     inputBinding:
       position: 102
       prefix: --unit

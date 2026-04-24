@@ -101,14 +101,12 @@ inputs:
         label: Threads
         inputBinding:
             prefix: "--threads"
-        default: 4 # lets use more than 1 thread by default
     visualize:
         type: boolean?
         doc: "output mappings for visualization, can be enabled for single genome to single genome comparison only [disabled by default]"
         label: Visualize ANI matrix
         inputBinding:
             prefix: "--visualize"
-        default: false
     fragLen:
         type: int?
         doc: "fragment length for ANI calculation [default: 3000]"
@@ -133,14 +131,12 @@ inputs:
         label: ANI matrix file name
         inputBinding:
             prefix: "--matrix"
-        default: false
     outfile:
         type: string
         doc: "output file name"
         label: Output file name
         inputBinding:
             prefix: "--output"
-        default: "fastani.out"
 
 arguments:
   - valueFrom: >

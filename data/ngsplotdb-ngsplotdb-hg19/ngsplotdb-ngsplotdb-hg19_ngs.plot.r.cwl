@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: Chunk size for loading genes in batch(default=100)
-    default: 100
     inputBinding:
       position: 101
       prefix: -CS
@@ -24,7 +23,6 @@ inputs:
       on each individual heatmap region: base on all heatmaps belong to the same region
       global: base on all heatmaps together min_val,max_val: custom scale using a
       pair of numerics'
-    default: local
     inputBinding:
       position: 101
       prefix: -SC
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: Draw X- and Y-axis labels? 1(default) or 0
-    default: true
     inputBinding:
       position: 101
       prefix: -XYL
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - boolean
     doc: Draw box around plot? 1(default) or 0
-    default: true
     inputBinding:
       position: 101
       prefix: -BOX
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - boolean
     doc: Draw legend? 1(default) or 0
-    default: true
     inputBinding:
       position: 101
       prefix: -LEG
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - boolean
     doc: Draw vertical lines? 1(default) or 0
-    default: true
     inputBinding:
       position: 101
       prefix: -VLN
@@ -102,7 +96,6 @@ inputs:
       - 'null'
       - float
     doc: Flooding fraction:[0, 1), default=0.02
-    default: 0.02
     inputBinding:
       position: 101
       prefix: -FC
@@ -111,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Font size(default=12)
-    default: 12
     inputBinding:
       position: 101
       prefix: -FS
@@ -120,7 +112,6 @@ inputs:
       - 'null'
       - boolean
     doc: Forbid image output if set to 1(default=0)
-    default: false
     inputBinding:
       position: 101
       prefix: -FI
@@ -129,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: Fragment length used to calculate physical coverage(default=150)
-    default: 150
     inputBinding:
       position: 101
       prefix: -FL
@@ -138,7 +128,6 @@ inputs:
       - 'null'
       - string
     doc: 'Gene database: ensembl(default), refseq'
-    default: ensembl
     inputBinding:
       position: 101
       prefix: -D
@@ -156,7 +145,6 @@ inputs:
       - string
     doc: 'Gene order algorithm used in heatmaps: total(default), hc, max, prod, diff,
       km and none(according to gene list supplied)'
-    default: total
     inputBinding:
       position: 101
       prefix: -GO
@@ -184,7 +172,6 @@ inputs:
       lower values give more widely spaced colors at the negative end In other words,
       they shift the neutral color to positive values If set to 1, the neutral color
       represents 0(i.e. no bias)'
-    default: 0.6
     inputBinding:
       position: 101
       prefix: -CD
@@ -194,7 +181,6 @@ inputs:
       - int
     doc: Reduce ratio(default=30). The parameter controls the heatmap height The
       smaller the value, the taller the heatmap
-    default: 30
     inputBinding:
       position: 101
       prefix: -RR
@@ -203,7 +189,6 @@ inputs:
       - 'null'
       - float
     doc: Image height(default=7)
-    default: 7
     inputBinding:
       position: 101
       prefix: -HG
@@ -220,7 +205,6 @@ inputs:
       - 'null'
       - float
     doc: Image width(default=8)
-    default: 8
     inputBinding:
       position: 101
       prefix: -WD
@@ -230,7 +214,6 @@ inputs:
       - boolean
     doc: Shall interval be larger than flanking in plot?(0 or 1, 
       default=automatic)
-    default: automatic
     inputBinding:
       position: 101
       prefix: -IN
@@ -239,7 +222,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of iterations(default=20) for K-means
-    default: 20
     inputBinding:
       position: 101
       prefix: -MIT
@@ -248,7 +230,6 @@ inputs:
       - 'null'
       - int
     doc: Number of random starts(default=30) in K-means
-    default: 30
     inputBinding:
       position: 101
       prefix: -NRS
@@ -257,7 +238,6 @@ inputs:
       - 'null'
       - int
     doc: K-means or HC number of clusters(default=5)
-    default: 5
     inputBinding:
       position: 101
       prefix: -KNC
@@ -266,7 +246,6 @@ inputs:
       - 'null'
       - int
     doc: Line width(default=3)
-    default: 3
     inputBinding:
       position: 101
       prefix: -LWD
@@ -275,7 +254,6 @@ inputs:
       - 'null'
       - int
     doc: Low count cutoff(default=10) in rank-based normalization
-    default: 10
     inputBinding:
       position: 101
       prefix: -LOW
@@ -284,7 +262,6 @@ inputs:
       - 'null'
       - int
     doc: Mapping quality cutoff to filter reads(default=20)
-    default: 20
     inputBinding:
       position: 101
       prefix: -MQ
@@ -294,7 +271,6 @@ inputs:
       - int
     doc: Moving window width to smooth avg. profiles, must be integer 
       1=no(default); 3=slightly; 5=somewhat; 9=quite; 13=super.
-    default: 1
     inputBinding:
       position: 101
       prefix: -MW
@@ -303,7 +279,6 @@ inputs:
       - 'null'
       - string
     doc: 'Algorithm used to normalize coverage vectors: spline(default), bin'
-    default: spline
     inputBinding:
       position: 101
       prefix: -AL
@@ -312,7 +287,6 @@ inputs:
       - 'null'
       - int
     doc: '#CPUs to use. Set 0(default) for auto detection'
-    default: 0
     inputBinding:
       position: 101
       prefix: -P
@@ -351,7 +325,6 @@ inputs:
       - float
     doc: Opacity of shaded area, suggested value:[0, 0.5] default=0, i.e. no 
       shading, just lines
-    default: 0
     inputBinding:
       position: 101
       prefix: -H
@@ -360,7 +333,6 @@ inputs:
       - 'null'
       - string
     doc: 'Strand-specific coverage calculation: both(default), same, opposite'
-    default: both
     inputBinding:
       position: 101
       prefix: -SS
@@ -370,7 +342,6 @@ inputs:
       - float
     doc: The fraction of extreme values to be trimmed on both ends default=0, 
       0.05 means 5% of extreme values will be trimmed
-    default: 0
     inputBinding:
       position: 101
       prefix: -RB
@@ -379,7 +350,6 @@ inputs:
       - 'null'
       - string
     doc: 'Y-axis scale: auto(default) or min_val,max_val(custom scale)'
-    default: auto
     inputBinding:
       position: 101
       prefix: -YAS

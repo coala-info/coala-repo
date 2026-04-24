@@ -69,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: limit of sequence reads to extract
-    default: no limit
     inputBinding:
       position: 101
       prefix: --limit
@@ -96,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of sequence reads to search for the taxa
-    default: no maximum
     inputBinding:
       position: 101
       prefix: --maxreads

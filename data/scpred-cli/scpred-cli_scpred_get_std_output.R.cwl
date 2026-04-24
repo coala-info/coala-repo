@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Should score column be added?
-    default: true
     inputBinding:
       position: 101
       prefix: --get-scores

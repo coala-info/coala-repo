@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add CSV output
-    default: false
     inputBinding:
       position: 102
       prefix: --csv
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Mutation panel name
-    default: tbdb
     inputBinding:
       position: 102
       prefix: --db
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - Directory
     doc: Database directory
-    default: /usr/local/share/tbprofiler
     inputBinding:
       position: 102
       prefix: --db_dir
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - Directory
     doc: Storage directory
-    default: .
     inputBinding:
       position: 102
       prefix: --dir
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add docx output. This requires docxtpl to be installed
-    default: false
     inputBinding:
       position: 102
       prefix: --docx
@@ -85,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level
-    default: INFO
     inputBinding:
       position: 102
       prefix: --logging
@@ -94,7 +88,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temp firectory to process all files
-    default: .
     inputBinding:
       position: 102
       prefix: --temp
@@ -111,7 +104,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add text output
-    default: false
     inputBinding:
       position: 102
       prefix: --txt

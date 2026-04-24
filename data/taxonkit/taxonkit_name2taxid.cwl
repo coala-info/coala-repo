@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory containing nodes.dmp and names.dmp
-    default: /root/.taxonkit
     inputBinding:
       position: 101
       prefix: --data-dir
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: choose top n matches in fuzzy search
-    default: 1
     inputBinding:
       position: 101
       prefix: --fuzzy-top-n
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: field index of name. data should be tab-separated
-    default: 1
     inputBinding:
       position: 101
       prefix: --name-field
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs. 4 is enough
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

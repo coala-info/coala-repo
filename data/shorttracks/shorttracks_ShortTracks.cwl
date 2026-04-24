@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: 'Parsing mode: simple, readgroup, or readlength'
-    default: simple
     inputBinding:
       position: 101
       prefix: --mode

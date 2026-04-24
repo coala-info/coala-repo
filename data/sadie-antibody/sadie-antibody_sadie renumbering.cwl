@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: A comma seperated list of species to align against
-    default: H,K,L,A,B,G,D
     inputBinding:
       position: 101
       prefix: --allowed-chains
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: A comma seperated list of species to align against
-    default: human,mouse,rat,rabbit,rhesus,pig,alpaca,dog,cat
     inputBinding:
       position: 101
       prefix: --allowed-species
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: The framework and cdr defition to use
-    default: imgt
     inputBinding:
       position: 101
       prefix: --region
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: The numbering scheme to use.
-    default: imgt
     inputBinding:
       position: 101
       prefix: --scheme

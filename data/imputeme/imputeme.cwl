@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Number of neighbors to consider for KNN imputation.
-    default: 5
     inputBinding:
       position: 102
       prefix: --k
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: Imputation method to use (e.g., 'knn', 'mean', 'median').
-    default: knn
     inputBinding:
       position: 102
       prefix: --method
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for parallel processing.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

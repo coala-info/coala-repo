@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Use HMM-specific bitscore cutoffs to filter domain annotations.
-    default: None
     inputBinding:
       position: 101
       prefix: --bit-cutoffs
@@ -20,7 +19,6 @@ inputs:
       - string
     doc: Extract genes from annotated records using a feature rather than 
       running de-novo gene-calling.
-    default: None
     inputBinding:
       position: 101
       prefix: --cds-feature
@@ -30,7 +28,6 @@ inputs:
       - float
     doc: The e-value cutoff for protein domains to be included. This is not 
       stable across versions, so consider using a p-value filter instead.
-    default: None
     inputBinding:
       position: 101
       prefix: --e-filter
@@ -40,7 +37,6 @@ inputs:
       - boolean
     doc: Always write TSV output files even when they are empty (e.g. because no
       genes or no clusters were found).
-    default: false
     inputBinding:
       position: 101
       prefix: --force-tsv
@@ -50,7 +46,6 @@ inputs:
       - string
     doc: The format of the input file, as a Biopython format string. FASTA, EMBL
       and GenBank files are recognized automatically if this is not given.
-    default: None
     inputBinding:
       position: 101
       prefix: --format
@@ -67,7 +62,6 @@ inputs:
       - type: array
         items: File
     doc: The path to one or more alternative HMM file to use (in HMMER format).
-    default: None
     inputBinding:
       position: 101
       prefix: --hmm
@@ -77,7 +71,6 @@ inputs:
       - int
     doc: The number of jobs to use for multithreading. Use 0 to use all 
       available CPUs.
-    default: 0
     inputBinding:
       position: 101
       prefix: --jobs
@@ -87,7 +80,6 @@ inputs:
       - string
     doc: The name of the feature qualifier to use for naming extracted genes 
       when using the ``--cds-feature`` flag.
-    default: locus_tag
     inputBinding:
       position: 101
       prefix: --locus-tag
@@ -97,7 +89,6 @@ inputs:
       - boolean
     doc: Enable unknown region masking to prevent genes from stretching across 
       ambiguous nucleotides.
-    default: false
     inputBinding:
       position: 101
       prefix: --mask
@@ -106,7 +97,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable the console color
-    default: true
     inputBinding:
       position: 101
       prefix: --no-color
@@ -115,7 +105,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable the console markup
-    default: true
     inputBinding:
       position: 101
       prefix: --no-markup
@@ -124,7 +113,6 @@ inputs:
       - 'null'
       - Directory
     doc: The directory in which to write the output files.
-    default: .
     inputBinding:
       position: 101
       prefix: --output-dir
@@ -133,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: The p-value cutoff for protein domains to be included.
-    default: '1e-09'
     inputBinding:
       position: 101
       prefix: --p-filter

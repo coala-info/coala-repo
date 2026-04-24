@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: how to handle expanded chemical component ID >3 characters
-    default: map
     inputBinding:
       position: 102
       prefix: -ccd5
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: format of chain ID mapping file
-    default: txt
     inputBinding:
       position: 102
       prefix: -idmap
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: whether to convert dbref record
-    default: 0
     inputBinding:
       position: 102
       prefix: -dbref
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: whether to convert SEQRES record
-    default: 0
     inputBinding:
       position: 102
       prefix: -seqres
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: whether to perform gzip compression
-    default: 0
     inputBinding:
       position: 102
       prefix: -gzip
@@ -71,7 +66,6 @@ inputs:
       - int
     doc: "maximum number of atoms in a file. default is 99999.\n                 \
       \    no limit on number of atoms if maxatom<=0"
-    default: 99999
     inputBinding:
       position: 102
       prefix: -maxatom
@@ -80,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: output format
-    default: 0
     inputBinding:
       position: 102
       prefix: -outfmt
@@ -89,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: prefix of output file.
-    default: PDB ID read from the input
     inputBinding:
       position: 102
       prefix: -p
@@ -98,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: whether to convert PDB header text to upper case
-    default: 1
     inputBinding:
       position: 102
       prefix: -upper

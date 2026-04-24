@@ -76,7 +76,6 @@ inputs:
     type: int?
     doc: Maximum memory usage in megabytes
     label: Maximum memory in MB
-    default: 40000
   nanopore_fastq_files:
     type: string[]?
     doc: List of file paths with Nanopore raw reads in fastq format
@@ -97,18 +96,15 @@ inputs:
     type: boolean
     doc: Continue with reads mapped to the given reference
     label: Use mapped reads
-    default: false
   deduplicate:
     type: boolean?
     doc: Remove exact duplicate reads (Illumina) with fastp 
     label: Deduplicate reads
-    default: false
 
   kraken_database:
     type: string
     doc: Absolute path with database location of kraken2
     label: Kraken2 database
-    default: "/unlock/references/databases/Kraken2/K2_PlusPF_20210517"
   # Medaka
   basecall_model:
     type: string
@@ -122,7 +118,6 @@ inputs:
   # Flye
   metagenome:
     type: boolean?
-    default: true
     doc: Metagenome option for the flye assembly
     label: When working with metagenomes
   # Filtering
@@ -134,13 +129,11 @@ inputs:
     type: string
     label: Pilon fix list
     doc: A comma-separated list of categories of issues to try to fix
-    default: "snps,gaps,local"
 
   binning:
     type: boolean?
     label: Run binning workflow
     doc: Run with contig binning workflow
-    default: false
 
   destination:
     type: string?
@@ -161,7 +154,6 @@ steps:
       threads: threads
       identifier: identifier
       step: 
-        default: 1
     out: [filtered_reads, reports_folder]
 #############################################
 #### Quality Illumina
@@ -181,7 +173,6 @@ steps:
       threads: threads
       identifier: identifier
       step: 
-        default: 2
     out: [QC_reverse_reads, QC_forward_reads, reports_folder]
 #############################################
 #### Taxonomic classification of with Kraken2
@@ -213,7 +204,6 @@ steps:
       forward_reads: workflow_quality_illumina/QC_forward_reads
       reverse_reads: workflow_quality_illumina/QC_forward_reads
       paired_end: 
-        default: true
     out: [standard_report, sample_report]
 
   kraken2_compress:
@@ -342,7 +332,6 @@ steps:
       bam_file: illumina_pilon_sam_to_sorted_bam/sortedbam
       threads: threads
       step: 
-        default: 1
     out: [metabat2_output, checkm_output, gtdbtk_output, busco_output, bins_summary]
 
 #############################################    

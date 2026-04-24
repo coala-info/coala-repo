@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: surface points density
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -density
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: surface points high density
-    default: 3.0
     inputBinding:
       position: 101
       prefix: -hdensity
@@ -102,7 +100,6 @@ inputs:
       - 'null'
       - float
     doc: probe sphere radius
-    default: 1.5
     inputBinding:
       position: 101
       prefix: -probe_radius
@@ -135,7 +132,6 @@ inputs:
       - 'null'
       - string
     doc: triangulated or Analytical SES (tses, ases)
-    default: tses
     inputBinding:
       position: 101
       prefix: -surface

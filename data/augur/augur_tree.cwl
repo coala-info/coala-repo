@@ -19,7 +19,6 @@ inputs:
     doc: file name of one-based sites to exclude for raw tree building (BED 
       format in .bed files, second column in tab-delimited files, or one 
       position per line)
-    default: None
     inputBinding:
       position: 101
       prefix: --exclude-sites
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: tree builder to use
-    default: iqtree
     inputBinding:
       position: 101
       prefix: --method
@@ -39,7 +37,6 @@ inputs:
     doc: maximum number of threads to use; specifying the value 'auto' will 
       cause the number of available CPU cores on your system, if determinable, 
       to be used
-    default: '1'
     inputBinding:
       position: 101
       prefix: --nthreads
@@ -49,7 +46,6 @@ inputs:
       - boolean
     doc: override default tree builder arguments with the values provided by the
       user in `--tree-builder-args` instead of augmenting the existing defaults.
-    default: false
     inputBinding:
       position: 101
       prefix: --override-default-args
@@ -59,7 +55,6 @@ inputs:
       - string
     doc: substitution model to use. Specify 'auto' to run ModelTest. Currently, 
       only available for IQ-TREE.
-    default: GTR
     inputBinding:
       position: 101
       prefix: --substitution-model
@@ -78,7 +73,6 @@ inputs:
       then restores them later. Unfortunately, this breaks the use of certain IQ-TREE
       options (e.g., `-g`) which rely on matching names between the FASTA and other
       input files.'
-    default: None
     inputBinding:
       position: 101
       prefix: --tree-builder-args
@@ -87,7 +81,6 @@ inputs:
       - 'null'
       - File
     doc: fasta file of the sequence the VCF was mapped to
-    default: None
     inputBinding:
       position: 101
       prefix: --vcf-reference

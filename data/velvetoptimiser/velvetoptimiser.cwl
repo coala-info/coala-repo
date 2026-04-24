@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn on velvet's read tracking and amos file output.
-    default: '0'
     inputBinding:
       position: 101
       prefix: --amosfile!
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: The name of the directory to put the final output into.
-    default: .
     inputBinding:
       position: 101
       prefix: --dir_final
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: The end (higher) hash value
-    default: 31
     inputBinding:
       position: 101
       prefix: --hashe
@@ -40,7 +37,6 @@ inputs:
       Only used in memory use estimation. If not specified, memory use estimation\n\
       \t\t\twill not occur. If memory use is estimated, the results are shown and
       then program exits."
-    default: '0'
     inputBinding:
       position: 101
       prefix: --genomesize
@@ -49,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum cov_cutoff to be used.
-    default: '0'
     inputBinding:
       position: 101
       prefix: --minCovCutoff
@@ -58,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: The optimisation function used for cov_cutoff optimisation.
-    default: Lbp
     inputBinding:
       position: 101
       prefix: --optFuncCov
@@ -67,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: The optimisation function used for k-mer choice.
-    default: n50
     inputBinding:
       position: 101
       prefix: --optFuncKmer
@@ -77,7 +70,6 @@ inputs:
       - string
     doc: The prefix for the output filenames, the default is the date and time 
       in the format DD-MM-YYYY-HH-MM_.
-    default: auto
     inputBinding:
       position: 101
       prefix: --prefix
@@ -86,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: The starting (lower) hash value
-    default: 19
     inputBinding:
       position: 101
       prefix: --hashs
@@ -95,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: The step in hash search..  min 2, no odd numbers
-    default: 2
     inputBinding:
       position: 101
       prefix: --step
@@ -104,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum number of simulataneous velvet instances to run.
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -114,7 +103,6 @@ inputs:
       - float
     doc: The maximum coverage cutoff to consider as a multiplier of the expected
       coverage.
-    default: '0'
     inputBinding:
       position: 101
       prefix: --upperCovCutoff
@@ -124,7 +112,6 @@ inputs:
       - string
     doc: Extra velvetg options to pass through.  eg. -long_mult_cutoff 
       -max_coverage etc
-    default: ''
     inputBinding:
       position: 101
       prefix: --velvetgoptions
@@ -133,7 +120,6 @@ inputs:
       - 'null'
       - string
     doc: The file section of the velveth command line.
-    default: '0'
     inputBinding:
       position: 101
       prefix: --f|velvethfiles
@@ -142,7 +128,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose logging, includes all velvet output in the logfile.
-    default: '0'
     inputBinding:
       position: 101
       prefix: --verbose+

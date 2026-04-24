@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: A comma-delimited list of which barcodes to include
-    default: include all barcodes
     inputBinding:
       position: 102
       prefix: --barcodes
@@ -27,7 +26,6 @@ inputs:
     doc: This many random signals will be added to the output as no-barcode 
       training samples (expressed as a multiple of the balanced per-barcode 
       count
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --random_signal

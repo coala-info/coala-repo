@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Number of pixels to store in memory before writing to disk.
-    default: 10000000
     inputBinding:
       position: 102
       prefix: --chunk-size
@@ -36,7 +35,6 @@ inputs:
       - string
     doc: Specify the count type to be used when merging files. Ignored when the 
       output file is in .hic format.
-    default: int
     inputBinding:
       position: 102
       prefix: --count-type
@@ -63,7 +61,6 @@ inputs:
       - string
     doc: Output format (by default this is inferred from the output file 
       extension).
-    default: auto
     inputBinding:
       position: 102
       prefix: --output-fmt
@@ -90,7 +87,6 @@ inputs:
       - int
     doc: Maximum number of parallel threads to spawn. When merging interactions 
       in Cooler format, only a single thread will be used.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -107,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Set verbosity of output to the console.
-    default: 3
     inputBinding:
       position: 102
       prefix: --verbosity

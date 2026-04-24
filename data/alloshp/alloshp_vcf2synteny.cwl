@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: max missing samples
-    default: 10
     inputBinding:
       position: 101
       prefix: -m
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: min depth of called SNPs
-    default: 3
     inputBinding:
       position: 101
       prefix: -d
@@ -87,7 +85,6 @@ inputs:
       - 'null'
       - Directory
     doc: path to dir for temp file
-    default: /tmp
     inputBinding:
       position: 101
       prefix: -t

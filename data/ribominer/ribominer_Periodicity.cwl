@@ -26,7 +26,6 @@ inputs:
       - string
     doc: define the id type users input. the default is transcript id, if not, 
       will be transformed into transcript id.
-    default: transcript_id
     inputBinding:
       position: 101
       prefix: --id-type

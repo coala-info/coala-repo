@@ -75,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Ploidy of the sample
-    default: 2
     inputBinding:
       position: 101
       prefix: --ploidy

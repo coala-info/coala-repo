@@ -48,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele fraction to call an allele
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --min-allele-fraction
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality to consider a base
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-baseq
@@ -66,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage to call an allele
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-coverage
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality to consider a read
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-mapq
@@ -92,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

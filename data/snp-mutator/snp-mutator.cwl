@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Number of deletions to perform
-    default: 0
     inputBinding:
       position: 102
       prefix: --num-dels
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Number of insertions to perform
-    default: 0
     inputBinding:
       position: 102
       prefix: --num-ins
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Number of substitutions to perform
-    default: 0
     inputBinding:
       position: 102
       prefix: --num-subs

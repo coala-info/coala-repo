@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: Minimal buffer size in cM
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --buffer-cm
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimal buffer size in # common variants'
-    default: 2000
     inputBinding:
       position: 101
       prefix: --buffer-count
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Minimal buffer size in Mb
-    default: 0.400000006
     inputBinding:
       position: 101
       prefix: --buffer-mb
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Seed of the random number generator
-    default: 15052011
     inputBinding:
       position: 101
       prefix: --seed
@@ -94,7 +90,6 @@ inputs:
       - 'null'
       - float
     doc: (Expert setting) Rare variant threshold
-    default: 0.00100000005
     inputBinding:
       position: 101
       prefix: --sparse-maf
@@ -103,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -121,7 +115,6 @@ inputs:
       - 'null'
       - float
     doc: Minimal window size in cM
-    default: 2.5
     inputBinding:
       position: 101
       prefix: --window-cm
@@ -130,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimal window size in # common variants'
-    default: 20000
     inputBinding:
       position: 101
       prefix: --window-count
@@ -139,7 +131,6 @@ inputs:
       - 'null'
       - float
     doc: Minimal window size in Mb
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --window-mb

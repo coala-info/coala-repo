@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: output format (tab/sam)
-    default: tab
     inputBinding:
       position: 101
       prefix: --outfmt
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: number of cpu threads
-    default: 0
     inputBinding:
       position: 101
       prefix: --threads

@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: Results will be read from and committed to the given branch.
-    default: gh-pages
     inputBinding:
       position: 104
       prefix: --deployment
@@ -94,7 +93,6 @@ inputs:
       - 'null'
       - string
     doc: Set the solver to be used.
-    default: glpk
     inputBinding:
       position: 104
       prefix: --solver

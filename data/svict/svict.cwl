@@ -10,7 +10,6 @@ inputs:
       - int
     doc: Anchor length. Intervals shorter than this value would be discarded in 
       interval chaining procedure for locating contigs
-    default: 30
     inputBinding:
       position: 101
       prefix: --anchor
@@ -28,7 +27,6 @@ inputs:
       - int
     doc: The minimum lenth of overlaps between 2 reads in 
       overlap-layout-consensus contig assembly
-    default: 50
     inputBinding:
       position: 101
       prefix: --assembler_overlap
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length to index and remap assembled contigs to reference genome
-    default: 14
     inputBinding:
       position: 101
       prefix: --kmer
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Max SV length
-    default: 20000
     inputBinding:
       position: 101
       prefix: --max_length
@@ -79,7 +75,6 @@ inputs:
       - int
     doc: The maximum number of supporting reads required to be considered a SV, 
       could be used to filter out germline calls
-    default: unlimited
     inputBinding:
       position: 101
       prefix: --max_support
@@ -88,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Min SV length
-    default: 30
     inputBinding:
       position: 101
       prefix: --min_length
@@ -98,7 +92,6 @@ inputs:
       - int
     doc: Minimum soft clip length for a read to be considered as unmapped or 
       incorrectly mapped to be extracted for contig assembly
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_sc
@@ -107,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum number of supporting reads required to be considered a SV
-    default: 2
     inputBinding:
       position: 101
       prefix: --min_support
@@ -116,7 +108,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix of output file
-    default: out
     inputBinding:
       position: 101
       prefix: --output
@@ -159,7 +150,6 @@ inputs:
       optimal by c on the DAGs to achieve potentially better sensitivity. See 
       "Interval Chaining for Optimal Mapping" in publication (default 0 - 
       co-optimals only, negative value disables).
-    default: 0
     inputBinding:
       position: 101
       prefix: --sub_optimal
@@ -169,7 +159,6 @@ inputs:
       - int
     doc: Uncertainty around the breakpoint position. See "Interval Chaining for 
       Optimal Mapping" in publication
-    default: 8
     inputBinding:
       position: 101
       prefix: --uncertainty
@@ -190,7 +179,6 @@ inputs:
       for contig assembly. Larger window size could assign a read to more 
       clusters for potentially higher sensitivity with the cost of increased 
       running time
-    default: 3
     inputBinding:
       position: 101
       prefix: --window_size

@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: Output format (binary, libsvm)
-    default: binary
     inputBinding:
       position: 102
       prefix: --format

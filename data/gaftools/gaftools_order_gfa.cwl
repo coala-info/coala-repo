@@ -63,7 +63,6 @@ inputs:
       - boolean
     doc: Strip sequences from the output graph (for less memory usage and easier
       visualization).
-    default: false
     inputBinding:
       position: 102
       prefix: --without-sequence

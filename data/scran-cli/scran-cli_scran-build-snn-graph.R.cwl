@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: 'A string specifying which assay values to use. Default: logcounts.'
-    default: logcounts
     inputBinding:
       position: 101
       prefix: --assay-type

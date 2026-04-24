@@ -39,7 +39,6 @@ inputs:
       - string
     doc: delimiter for output results. Supports a comma (,), a semicolon (;), a 
       tab ($'\t'), a space (" ") and a pipe (|) .
-    default: ','
     inputBinding:
       position: 101
       prefix: --delimiter
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: maximum depth for the breadth-first-search.
-    default: 5
     inputBinding:
       position: 101
       prefix: --depth
@@ -63,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use.
-    default: 8
     inputBinding:
       position: 101
       prefix: --nthreads
@@ -88,7 +85,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for determining inconsistent vertices.
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --threshold

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: The consensus method to use (majority, consensus, or set).
-    default: majority
     inputBinding:
       position: 101
       prefix: --act
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum number of sequences required to build a consensus.
-    default: 1
     inputBinding:
       position: 101
       prefix: -n

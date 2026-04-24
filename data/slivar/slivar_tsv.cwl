@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - File
     doc: input VCF
-    default: /dev/stdin
     inputBinding:
       position: 1
   - id: csq_column

@@ -20,7 +20,6 @@ inputs:
       - string
     doc: "gene boundary(ies) for the cis region\ndefault=TSS (assumed to be start
       in BED file)"
-    default: TSS
     inputBinding:
       position: 101
       prefix: --anchor
@@ -37,7 +36,6 @@ inputs:
       for each singleton (subgroup-specific configuration)\n they use the small grid
       (BF_BMAlite is also reported)\n'all': compute also the BFs for all configurations
       (costly if many subgroups)\n all BFs use the small grid (BF_BMA is also reported)"
-    default: gen
     inputBinding:
       position: 101
       prefix: --bfs
@@ -47,7 +45,6 @@ inputs:
       - int
     doc: "length of half of the cis region (radius, in bp)\napart from the anchor(s),
       default=100000"
-    default: 100000
     inputBinding:
       position: 101
       prefix: --cis
@@ -94,7 +91,6 @@ inputs:
     doc: "param used when estimating the variance of the errors (if --analys join,
       only with 'mvlr' or 'hybrid')\ndefault=0.5 but can be between 0 (null model)
       and 1 (full model)"
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --fiterr
@@ -158,7 +154,6 @@ inputs:
       - 'null'
       - string
     doc: "likelihood to use\n'normal' (default)\n'poisson' or 'quasipoisson'"
-    default: normal
     inputBinding:
       position: 101
       prefix: --lik
@@ -167,7 +162,6 @@ inputs:
       - 'null'
       - float
     doc: minimum minor allele frequency (default=0.0)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --maf
@@ -185,7 +179,6 @@ inputs:
       - 'null'
       - int
     doc: "number of permutations\ndefault=0, otherwise 10000 is recommended"
-    default: 0
     inputBinding:
       position: 101
       prefix: --nperm
@@ -214,7 +207,6 @@ inputs:
       'none' (default): no permutations are done for the joint analysis\n'gen': general
       BF (see --bfs above)\n'gen-sin': 0.5 BFgen + 0.5 BFsin (also called BF_BMAlite)\n\
       'all': average over all configurations (also called BF_BMA)"
-    default: none
     inputBinding:
       position: 101
       prefix: --pbf
@@ -226,7 +218,6 @@ inputs:
       are done for the separate analysis\n1: use the minimum P-value over SNPs and
       subgroups as a test statistic (keeps correlations)\n2: use the minimum P-value
       over SNPs but in each subgroup separately (breaks correlations)"
-    default: 0
     inputBinding:
       position: 101
       prefix: --permsep
@@ -284,7 +275,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads (default=1, parallelize over SNPs)
-    default: 1
     inputBinding:
       position: 101
       prefix: --thread
@@ -307,7 +297,6 @@ inputs:
       - int
     doc: "cutoff for the trick (default=10)\nstop permutations once the nb of permutations
       for which permTestStat is more extreme\n than trueTestStat equals this cutoff"
-    default: 10
     inputBinding:
       position: 101
       prefix: --tricut
@@ -316,7 +305,6 @@ inputs:
       - 'null'
       - int
     doc: verbosity level (0/default=1/2/3)
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbose
@@ -327,7 +315,6 @@ inputs:
     doc: "number of genes which results are written at once (default=10)\nto prevent
       excessive memory usage\ntune it depending on the average number of cis SNPs
       per gene"
-    default: 10
     inputBinding:
       position: 101
       prefix: --wrtsize

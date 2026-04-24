@@ -116,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Use maximum m GB of memory
-    default: 4
     inputBinding:
       position: 105
       prefix: --mem
@@ -215,7 +214,6 @@ inputs:
       - int
     doc: Use t number of cores for mapping the sequences. Use 0 to use all the 
       available cores in the system.
-    default: 1
     inputBinding:
       position: 105
       prefix: --threads
@@ -225,7 +223,6 @@ inputs:
       - File
     doc: Output unmapped reads in file. This file will be generated in all 
       mapping mode.
-    default: output.nohit
     inputBinding:
       position: 105
       prefix: -u
@@ -234,7 +231,6 @@ inputs:
       - 'null'
       - int
     doc: Index the reference genome with sliding a window of size window_size
-    default: 12
     inputBinding:
       position: 105
       prefix: --ws

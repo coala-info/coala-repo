@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: <= maximum coverage show
-    default: 10000
     inputBinding:
       position: 101
       prefix: --maxcover
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum number of zoom levels. [0-10], valid for dm out
-    default: 0
     inputBinding:
       position: 101
       prefix: --zl
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: method for merge overlap sites, weighted/ mean
-    default: weighted
     inputBinding:
       position: 101
       prefix: --method
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: '>= minumum coverage show'
-    default: 0
     inputBinding:
       position: 101
       prefix: --mincover
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: txt or dm format
-    default: txt
     inputBinding:
       position: 101
       prefix: --outformat

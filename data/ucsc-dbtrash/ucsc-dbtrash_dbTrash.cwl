@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Specify a database to work with, default is customTrash.
-    default: customTrash
     inputBinding:
       position: 101
       prefix: -db
@@ -86,7 +85,6 @@ inputs:
       - Directory
     doc: 'directory name to prepend to file names in extFile - default is /usr/local/apache/trash
       - file names in extFile are typically: "../trash/ct/..."'
-    default: /usr/local/apache/trash
     inputBinding:
       position: 101
       prefix: -topDir

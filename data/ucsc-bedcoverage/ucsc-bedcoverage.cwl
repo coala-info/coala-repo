@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum coverage to report (default: 1)'
-    default: 1
     inputBinding:
       position: 103
       prefix: --min-coverage

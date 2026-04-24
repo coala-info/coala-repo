@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: Opacity for non-passing k-mers (between 0 and 1, 0 indicates full transparency)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --alpha
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: P-value column in the associations file
-    default: lrt-pvalue
     inputBinding:
       position: 101
       prefix: --column
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Output resolution (DPI)
-    default: 300
     inputBinding:
       position: 101
       prefix: --dpi
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Output format for plots (png, tiff, pdf, or svg)
-    default: png
     inputBinding:
       position: 101
       prefix: --format
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Figure height (inches)
-    default: 9.0
     inputBinding:
       position: 101
       prefix: --height
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum p-value for color and transparency
-    default: 1e-10
     inputBinding:
       position: 101
       prefix: --minimum-pvalue
@@ -117,7 +111,6 @@ inputs:
       - 'null'
       - float
     doc: Association p-value threshold
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --threshold
@@ -134,7 +127,6 @@ inputs:
       - 'null'
       - float
     doc: Figure width (inches)
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --width
@@ -143,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: Spacing for ticks on x axis
-    default: 200
     inputBinding:
       position: 101
       prefix: --xticks

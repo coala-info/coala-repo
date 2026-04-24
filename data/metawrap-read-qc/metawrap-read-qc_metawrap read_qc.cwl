@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: prefix of host index in bmtagger database folder
-    default: hg38
     inputBinding:
       position: 101
       prefix: -x
@@ -70,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

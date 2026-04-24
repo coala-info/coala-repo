@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not execute anything, and display what would be done.
-    default: false
     inputBinding:
       position: 103
       prefix: --dryrun

@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of processors to use [1-20]
-    default: 20
     inputBinding:
       position: 103
       prefix: -p
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: Output (distances) prefix
-    default: dist
     inputBinding:
       position: 103
       prefix: -o

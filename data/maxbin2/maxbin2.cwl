@@ -48,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Marker gene sets (107 or 40)
-    default: 107
     inputBinding:
       position: 101
       prefix: -markerset
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum contig length
-    default: 1000
     inputBinding:
       position: 101
       prefix: -min_contig_length
@@ -74,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: Probability threshold for EM final classification
-    default: 0.9
     inputBinding:
       position: 101
       prefix: -prob_threshold
@@ -107,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -thread

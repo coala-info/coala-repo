@@ -17,7 +17,6 @@ inputs:
       alignments are sorted by decreasing LEN * IDY% value. All alignments with 
       LEN * IDY% < S * best(LEN * IDY%) are discarded. S should be between 0.8 
       and 1.0
-    default: 0.99
     inputBinding:
       position: 102
       prefix: --ambiguity-score
@@ -27,7 +26,6 @@ inputs:
       - string
     doc: Use none, one, or all alignments of a contig when all of them are 
       almost equally good (see --ambiguity-score)
-    default: one
     inputBinding:
       position: 102
       prefix: --ambiguity-usage
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: Comma-separated list of contig length thresholds
-    default: 0,1000,5000,10000,25000,50000
     inputBinding:
       position: 102
       prefix: --contig-thresholds
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Use provided insert size in upper bound assembly simulation
-    default: auto detect from reads or 255
     inputBinding:
       position: 102
       prefix: --est-insert-size
@@ -101,7 +97,6 @@ inputs:
     doc: Lower threshold for extensive misassembly size. All relocations with 
       inconsistency less than extensive-mis-size are counted as local 
       misassemblies
-    default: 1000
     inputBinding:
       position: 102
       prefix: --extensive-mis-size
@@ -139,7 +134,6 @@ inputs:
     doc: Mark translocation as fake if both alignments are located no further 
       than N bases from the ends of the reference fragments. Requires 
       --fragmented option
-    default: 200
     inputBinding:
       position: 102
       prefix: --fragmented-max-indent
@@ -166,7 +160,6 @@ inputs:
       - string
     doc: Comma-separated list of threshold lengths of genes to search with Gene 
       Finding module
-    default: 0,300,1500,3000
     inputBinding:
       position: 102
       prefix: --gene-thresholds
@@ -184,7 +177,6 @@ inputs:
       - 'null'
       - int
     doc: Size of k used in --k-mer-stats
-    default: 101
     inputBinding:
       position: 102
       prefix: --k-mer-size
@@ -222,7 +214,6 @@ inputs:
       - int
     doc: Lower threshold on local misassembly size. Local misassemblies with 
       inconsistency less than local-mis-size are counted as (long) indels
-    default: 200
     inputBinding:
       position: 102
       prefix: --local-mis-size
@@ -249,7 +240,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum alignment length
-    default: 65
     inputBinding:
       position: 102
       prefix: --min-alignment
@@ -258,7 +248,6 @@ inputs:
       - 'null'
       - int
     doc: Lower threshold for contig length
-    default: 500
     inputBinding:
       position: 102
       prefix: --min-contig
@@ -267,7 +256,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum alignment identity (80.0, 100.0)
-    default: 95.0
     inputBinding:
       position: 102
       prefix: --min-identity
@@ -387,7 +375,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to store all result files
-    default: quast_results/results_<datetime>
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -430,7 +417,6 @@ inputs:
       - string
     doc: 'Save plots in specified format. Supported formats: emf, eps, pdf, png, ps,
       raw, rgba, svg, svgz'
-    default: pdf
     inputBinding:
       position: 102
       prefix: --plots-format
@@ -493,7 +479,6 @@ inputs:
     doc: Max allowed scaffold gap length difference. All relocations with 
       inconsistency less than scaffold-gap-size are counted as scaffold gap 
       misassemblies
-    default: 10000
     inputBinding:
       position: 102
       prefix: --scaffold-gap-max-size
@@ -591,7 +576,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of threads
-    default: 25% of CPUs
     inputBinding:
       position: 102
       prefix: --threads
@@ -601,7 +585,6 @@ inputs:
       - int
     doc: Lower threshold for detecting partially unaligned contigs. Such contig 
       should have at least one unaligned fragment >= the threshold
-    default: 500
     inputBinding:
       position: 102
       prefix: --unaligned-part-size
@@ -619,7 +602,6 @@ inputs:
       - int
     doc: Minimal number of 'connecting reads' needed for joining upper bound 
       contigs into a scaffold
-    default: 2 for mate-pairs and 1 for long reads
     inputBinding:
       position: 102
       prefix: --upper-bound-min-con
@@ -638,7 +620,6 @@ inputs:
       - int
     doc: Value of 'x' for Nx, Lx, etc metrics reported in addition to N50, L50, 
       etc (0, 100)
-    default: 90
     inputBinding:
       position: 102
       prefix: --x-for-Nx

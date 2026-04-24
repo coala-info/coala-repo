@@ -11,7 +11,6 @@ inputs:
       - File
     doc: "PAF file from minimap2 or unimap. Must have the cg tag, and n matches will
       be zero\n             unless the cigar uses =X"
-    default: '-'
     inputBinding:
       position: 1
   - id: max_size
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum indel size to keep in the paf
-    default: 100
     inputBinding:
       position: 102
       prefix: --max-size

@@ -16,7 +16,6 @@ inputs:
       - type: array
         items: string
     doc: One or more base clustering methods
-    default: k-means
     inputBinding:
       position: 102
       prefix: -basemethods
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: Cluster tightness
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -t
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: 'Filtering: number of conditions'
-    default: 0
     inputBinding:
       position: 102
       prefix: -fil-c
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: 'Filtering: number of datasets'
-    default: 0
     inputBinding:
       position: 102
       prefix: -fil-d
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - float
     doc: 'Filtering: gene expression threshold'
-    default: -inf
     inputBinding:
       position: 102
       prefix: -fil-v
@@ -94,7 +89,6 @@ inputs:
       - type: array
         items: int
     doc: K values, e.g. 2 4 6 10 ...
-    default: 4 to 20 (step=4)
     inputBinding:
       position: 102
       prefix: -K
@@ -111,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Smallest cluster size
-    default: 11
     inputBinding:
       position: 102
       prefix: -cs
@@ -120,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Min datasets in which a gene must exist
-    default: 1
     inputBinding:
       position: 102
       prefix: -d
@@ -146,7 +138,6 @@ inputs:
       - type: array
         items: string
     doc: Normalisation file or list of codes
-    default: '1000'
     inputBinding:
       position: 102
       prefix: -n
@@ -155,7 +146,6 @@ inputs:
       - 'null'
       - float
     doc: Outlier standard deviations
-    default: 3.0
     inputBinding:
       position: 102
       prefix: -s
@@ -164,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: Obsolete. Number of parallel processes
-    default: 1
     inputBinding:
       position: 102
       prefix: -np
@@ -173,7 +162,6 @@ inputs:
       - 'null'
       - float
     doc: Q3s defining outliers
-    default: 2.0
     inputBinding:
       position: 102
       prefix: -q3s

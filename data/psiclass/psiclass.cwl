@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: only use the subexons with classifier score <= than the given number
-    default: 0.05
     inputBinding:
       position: 101
       prefix: -c
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: the number of subexons a constraint can cover in DP. (-1 for inf)
-    default: 7
     inputBinding:
       position: 101
       prefix: --maxDpConstraintSize
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - float
     doc: the minimum average coverage depth of a transcript to be reported
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --vd
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: the minimum average number of supported read for retained introns
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --sa
@@ -80,7 +76,6 @@ inputs:
       - int
     doc: 0-start from beginning; 1-building subexon files; 2-combining subexon 
       files; 3-assembling transcripts; 4-voting consensus transcripts
-    default: 0
     inputBinding:
       position: 101
       prefix: --stage
@@ -97,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: number of processes/threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -p
@@ -114,7 +108,6 @@ inputs:
       - 'null'
       - float
     doc: the quantile for transcription start/end sites in subexon graph
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --tssTesQuantile

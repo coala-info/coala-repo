@@ -12,7 +12,6 @@ inputs:
       - string
     doc: 'classification model: RF – Random Forest, ADA – AdaBoost, GBDT – Gradient
       Boosted Decision Trees'
-    default: RF
     inputBinding:
       position: 101
       prefix: --estimator
@@ -30,7 +29,6 @@ inputs:
       - boolean
     doc: if TRUE opens Bandage GUI and draw images. Does NOT work on servers 
       with command line interface only
-    default: false
     inputBinding:
       position: 101
       prefix: --gui
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: name of output file with tree model in text format in workDir
-    default: tree_model
     inputBinding:
       position: 101
       prefix: --name
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - Directory
     doc: working directory
-    default: workDir/
     inputBinding:
       position: 101
       prefix: --work-dir

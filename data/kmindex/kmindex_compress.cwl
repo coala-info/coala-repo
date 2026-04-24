@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Size of uncompressed blocks, in megabytes.
-    default: 8
     inputBinding:
       position: 101
       prefix: --block-size
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Reorder columns by group of N. Should be a multiple of 8 (0=all)
-    default: 0
     inputBinding:
       position: 101
       prefix: --column-per-block
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level in [1,22])
-    default: 6
     inputBinding:
       position: 101
       prefix: --cpr-level
@@ -72,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Number of rows to sample for reordering.
-    default: 20000
     inputBinding:
       position: 101
       prefix: --sampling
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -90,7 +85,6 @@ inputs:
       - 'null'
       - string
     doc: Verbosity level [debug|info|warning|error].
-    default: info
     inputBinding:
       position: 101
       prefix: --verbose

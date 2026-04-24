@@ -16,7 +16,6 @@ inputs:
         items: string
     doc: 'Database(s) to download: genomad_1.9, checkv_1.5, phrogs_4, or all (default:
       all). Can be repeated or comma-separated.'
-    default: all
     inputBinding:
       position: 101
       prefix: --db

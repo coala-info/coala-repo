@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size for clustering
-    default: 15
     inputBinding:
       position: 101
       prefix: --k
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --t
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for minimizers
-    default: 10
     inputBinding:
       position: 101
       prefix: --w

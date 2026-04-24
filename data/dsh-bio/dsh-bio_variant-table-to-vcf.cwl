@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: input Ensembl variant table path
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input-variant-table-path

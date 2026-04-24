@@ -17,7 +17,6 @@ inputs:
       - string
     doc: "Distance metric to use. Options: 'euclidean', 'manhattan', 'correlation',
       'cosine'"
-    default: euclidean
     inputBinding:
       position: 102
       prefix: --distance-metric
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: "Clustering method to use. Options: 'average', 'complete', 'centroid', 'ward'"
-    default: average
     inputBinding:
       position: 102
       prefix: --method
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: DPI of the dendrogram plot
-    default: 300
     inputBinding:
       position: 102
       prefix: --plot-dpi
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Height of the dendrogram plot in inches
-    default: 8
     inputBinding:
       position: 102
       prefix: --plot-height
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Width of the dendrogram plot in inches
-    default: 10
     inputBinding:
       position: 102
       prefix: --plot-width

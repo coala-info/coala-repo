@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: 'Which aligner to use: bowtie2 | bwa-mem | snap'
-    default: bowtie2
     inputBinding:
       position: 101
       prefix: --aligner
@@ -21,7 +20,6 @@ inputs:
       - boolean
     doc: When correctness can be inferred from simulated read names, assess 
       accuracy of old and new MAPQ predictions
-    default: false
     inputBinding:
       position: 101
       prefix: --assess-accuracy
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum number of alignments to assess when assessing accuracy
-    default: 100000000
     inputBinding:
       position: 101
       prefix: --assess-limit
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove redundant rows just before prediction. Usually not a net win.
-    default: false
     inputBinding:
       position: 101
       prefix: --collapse
@@ -74,7 +70,6 @@ inputs:
       - int
     doc: 'Maximum # templates to keep when building an input model. There are 4 separate
       models for each alignment category and this governs the maximum for all 4.'
-    default: 30000
     inputBinding:
       position: 101
       prefix: --input-model-size
@@ -84,7 +79,6 @@ inputs:
       - boolean
     doc: Keep intermediates in output directory; if False, intermediates are 
       written to a temporary directory then deleted
-    default: false
     inputBinding:
       position: 101
       prefix: --keep-intermediates
@@ -94,7 +88,6 @@ inputs:
       - boolean
     doc: Don't remove ZT:Z field, with aligner-reported feature data, from the 
       final output SAM
-    default: false
     inputBinding:
       position: 101
       prefix: --keep-ztz
@@ -103,7 +96,6 @@ inputs:
       - 'null'
       - string
     doc: learning rate to use when fitting; only relevant for GradientBoosting
-    default: 0.75,0.8,0.85,0.9,0.95,1.0
     inputBinding:
       position: 101
       prefix: --learning-rate
@@ -133,7 +125,6 @@ inputs:
       - int
     doc: When simulating fragments, longer fragments are truncated to this 
       length
-    default: 100000
     inputBinding:
       position: 101
       prefix: --max-allowed-fraglen
@@ -143,7 +134,6 @@ inputs:
       - string
     doc: maximum number of features to consider at each decision tree node; 
       relevant for RandomForest and ExtraTrees
-    default: 0.1,0.2,0.25,0.3,0.35,0.4,0.45
     inputBinding:
       position: 101
       prefix: --max-features
@@ -153,7 +143,6 @@ inputs:
       - string
     doc: maximum number of leaf nodes to include in a decision tree; relevant 
       for RandomForest and ExtraTrees
-    default: '35'
     inputBinding:
       position: 101
       prefix: --max-leaf-nodes
@@ -163,7 +152,6 @@ inputs:
       - int
     doc: Maximum number of rows (alignments) to feed at once to the prediction 
       function
-    default: 250000
     inputBinding:
       position: 101
       prefix: --max-rows
@@ -172,7 +160,6 @@ inputs:
       - 'null'
       - string
     doc: '{RandomForest | ExtraTrees | GradientBoosting}'
-    default: RandomForest
     inputBinding:
       position: 101
       prefix: --model-family
@@ -182,7 +169,6 @@ inputs:
       - boolean
     doc: Don't use out-of-bag score when fitting hyperparameters -- use cross 
       validation instead. No effect for models that don't calculate OOB score.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-oob
@@ -191,7 +177,6 @@ inputs:
       - 'null'
       - string
     doc: number of decision trees to try; relevant for all model families
-    default: '30'
     inputBinding:
       position: 101
       prefix: --num-trees
@@ -201,7 +186,6 @@ inputs:
       - float
     doc: When using hill climbing procedure to optimize hyperparamters,stop when
       OOB score can't be improved by this relative factor
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --optimization-tolerance
@@ -211,7 +195,6 @@ inputs:
       - string
     doc: If --write-orig-mapq is specified, store original MAPQ in this extra 
       SAM field
-    default: Zm:Z
     inputBinding:
       position: 101
       prefix: --orig-mapq-flag
@@ -221,7 +204,6 @@ inputs:
       - string
     doc: If --write-precise-mapq is specified, store original MAPQ in this extra
       SAM field
-    default: Zp:Z
     inputBinding:
       position: 101
       prefix: --precise-mapq-flag
@@ -231,7 +213,6 @@ inputs:
       - boolean
     doc: Make predictions and produce associated plots/output files for training
       (tandem) data
-    default: false
     inputBinding:
       position: 101
       prefix: --predict-for-training
@@ -240,7 +221,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print profiling info
-    default: false
     inputBinding:
       position: 101
       prefix: --profile
@@ -249,7 +229,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use guppy/heapy to profile memory and periodically print heap usage
-    default: false
     inputBinding:
       position: 101
       prefix: --profile-memory
@@ -268,7 +247,6 @@ inputs:
       - boolean
     doc: When fitting, reweigh samples according to initially-predicted mapq. 
       Higher predictions get more weight
-    default: false
     inputBinding:
       position: 101
       prefix: --reweight-mapq
@@ -277,7 +255,6 @@ inputs:
       - 'null'
       - float
     doc: Add this to every MAPQ before reweighting
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --reweight-mapq-offset
@@ -287,7 +264,6 @@ inputs:
       - float
     doc: When fitting, reweigh samples so weight of highest-mapq alignment has 
       this times as much weight as lowest-mapq.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --reweight-ratio
@@ -296,7 +272,6 @@ inputs:
       - 'null'
       - int
     doc: Integer to initialize pseudo-random generator
-    default: 99099
     inputBinding:
       position: 101
       prefix: --seed
@@ -306,7 +281,6 @@ inputs:
       - int
     doc: 'If predictions for ends with an unaligned mate are needed, simulate at least
       this # of pairs with a bad end.'
-    default: 10000
     inputBinding:
       position: 101
       prefix: --sim-bad-end-min
@@ -316,7 +290,6 @@ inputs:
       - int
     doc: 'If predictions for concordantly aligned reads are needed, simulate at least
       this # of concordant pairs.'
-    default: 30000
     inputBinding:
       position: 101
       prefix: --sim-conc-min
@@ -326,7 +299,6 @@ inputs:
       - int
     doc: 'If predictions for discordantly aligned reads are needed, simulate at least
       this # of discordant pairs.'
-    default: 10000
     inputBinding:
       position: 101
       prefix: --sim-disc-min
@@ -337,7 +309,6 @@ inputs:
     doc: 'This is multiplied with X (if --sim-function=linear) or with sqrt(X) (if
       --sim-function=sqrt) or with 1 (if --sim-function=const) to calculate # tandem
       reads to simulate in a given category, where X is # of input reads in that category.'
-    default: 45.0
     inputBinding:
       position: 101
       prefix: --sim-factor
@@ -347,7 +318,6 @@ inputs:
       - string
     doc: 'Function giving # of tandem reads to simulate in a category; parameter is
       the number of input reads. See also: --sim-factor.'
-    default: sqrt
     inputBinding:
       position: 101
       prefix: --sim-function
@@ -357,7 +327,6 @@ inputs:
       - int
     doc: 'If predictions for unpaired reads are needed, simulate at least this # of
       unpaired reads.'
-    default: 30000
     inputBinding:
       position: 101
       prefix: --sim-unp-min
@@ -367,7 +336,6 @@ inputs:
       - boolean
     doc: Skip the final SAM rewriting step; other results, including any fit and
       prediction assessments requested, are still written.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-rewrite
@@ -384,7 +352,6 @@ inputs:
       - 'null'
       - string
     doc: Comma separated list of subsampling fractions to try
-    default: '1.0'
     inputBinding:
       position: 101
       prefix: --subsampling-series
@@ -402,7 +369,6 @@ inputs:
       - 'null'
       - int
     doc: Number of times to repeat fitting/prediction
-    default: 1
     inputBinding:
       position: 101
       prefix: --trials
@@ -411,8 +377,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Try both with and without including the tool-predicted MAPQ as a feature;
-      default: does not include it'
-    default: false
     inputBinding:
       position: 101
       prefix: --try-include-mapq
@@ -431,7 +395,6 @@ inputs:
       - 'null'
       - boolean
     doc: Be talkative
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose
@@ -441,7 +404,6 @@ inputs:
       - int
     doc: Wiggle room to allow in starting position when determining whether 
       alignment is correct
-    default: 30
     inputBinding:
       position: 101
       prefix: --wiggle
@@ -450,7 +412,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write original MAPQ as an extra field in output SAM
-    default: false
     inputBinding:
       position: 101
       prefix: --write-orig-mapq
@@ -459,7 +420,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write a more precise MAPQ prediction as an extra field in output SAM
-    default: false
     inputBinding:
       position: 101
       prefix: --write-precise-mapq

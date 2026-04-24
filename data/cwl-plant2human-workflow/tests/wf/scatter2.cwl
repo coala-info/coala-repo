@@ -10,10 +10,8 @@ $namespaces:
 inputs:
   sleeptime:
     type: int[]
-    default: [5]
   fileblub:
     type: File
-    default:
       class: File
       location: keep:99999999999999999999999999999999+118/token.txt
 outputs:

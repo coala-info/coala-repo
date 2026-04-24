@@ -13,7 +13,6 @@ inputs:
       \                    MUSCLE during lsaBGC-Reconcile and lsaBGC-Sociate - to
       prevent long\n                        runs due to stragglers/abnormally large
       orthogroups [Default is\n                        1800 (30 minutes)]."
-    default: 1800
     inputBinding:
       position: 101
       prefix: --alignment-timeout
@@ -34,7 +33,6 @@ inputs:
       \                     to be found within the comparing gene cluster for the
       pair to be\n                        considered in MCL (a minimum of 3 OGs shared
       are still required) [Default\n                        is 70.0]"
-    default: 70.0
     inputBinding:
       position: 101
       prefix: --cluster-containment
@@ -44,7 +42,6 @@ inputs:
       - float
     doc: "The MCL inflation parameter for clustering BGCs into GCFs [Default\n   \
       \                     is 0.8]."
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --cluster-inflation
@@ -54,7 +51,6 @@ inputs:
       - float
     doc: "Cutoff for Jaccard similarity of homolog groups shared between two\n   \
       \                     BGCs [Default is 50.0]."
-    default: 50.0
     inputBinding:
       position: 101
       prefix: --cluster-jaccard
@@ -64,7 +60,6 @@ inputs:
       - float
     doc: "The minimal correlation coefficient needed between for considering them\n\
       \                        as a pair prior to MCL [Default is 0.4]."
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --cluster-syntenic-correlation
@@ -75,7 +70,6 @@ inputs:
     doc: "What proportion of genomes single-copy orthogroups need to be\n        \
       \                found in to be used for species tree construction [Default
       is 0.9]."
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --core-proportion
@@ -87,7 +81,6 @@ inputs:
       \                      fragmented. Used in GCF clustering (related to --cluster-containment\n\
       \                        parameter) and zol conservation computations [Default
       is 5000]."
-    default: 5000
     inputBinding:
       position: 101
       prefix: --edge-distance
@@ -151,7 +144,6 @@ inputs:
       - int
     doc: "The maximum number of single copy (near-)core orthogroups to\n         \
       \               use [Default is 500]."
-    default: 500
     inputBinding:
       position: 101
       prefix: --max-core-genes
@@ -176,7 +168,6 @@ inputs:
       - float
     doc: "The core-genome identity cutoff used to define pairs of genomes as\n   \
       \                     belonging to the same group/population [Default is 99.0]."
-    default: 99.0
     inputBinding:
       position: 101
       prefix: --population-identity-cutoff
@@ -225,7 +216,6 @@ inputs:
       - int
     doc: "Total number of threads/processes to use. Recommend inreasing as much\n\
       \                        as possible. [Default is 4]."
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -271,7 +261,6 @@ inputs:
       - string
     doc: "The parameters to run zol analyses with - please surround by quotes\n  \
       \                      [Defaut is \"\"]."
-    default: ''
     inputBinding:
       position: 101
       prefix: --zol-parameters

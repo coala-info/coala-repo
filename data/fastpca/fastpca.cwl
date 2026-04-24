@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: 'max. allocatable RAM [Gb] (default: 2)'
-    default: 2
     inputBinding:
       position: 101
       prefix: --buf
@@ -53,7 +52,6 @@ inputs:
       - int
     doc: 'number of OpenMP threads to use. if set to zero, will use value of OMP_NUM_THREADS
       (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --nthreads

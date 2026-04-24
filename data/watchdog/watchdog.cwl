@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: Reboot after N seconds if not reset
-    default: 60s
     inputBinding:
       position: 102
       prefix: -T
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: Reset every N seconds
-    default: 30s
     inputBinding:
       position: 102
       prefix: -t

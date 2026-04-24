@@ -15,7 +15,6 @@ inputs:
       - int
     doc: Minimal score to initiate pulling sub-graphs (larger numbers boost 
       performance but result in suboptimal results)
-    default: 8
     inputBinding:
       position: 102
       prefix: --min-e-score

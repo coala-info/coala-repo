@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - File
     doc: bed file to specify the capturing region, none by default
-    default: ''
     inputBinding:
       position: 101
       prefix: --bed
@@ -20,7 +19,6 @@ inputs:
       - int
     doc: the sampling rate for genome scale coverage statistics. Default 10000 
       means 1/10000.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --coverage_sampling
@@ -40,7 +38,6 @@ inputs:
       <duplex_diff_threshold> mismatches, then they will be merged to generate a
       duplex consensus sequence, otherwise will be discarded. Default value is 
       2.
-    default: 2
     inputBinding:
       position: 101
       prefix: --duplex_diff_threshold
@@ -59,7 +56,6 @@ inputs:
       - int
     doc: the threshold for a quality score to be considered as high quality. 
       Default 30 means Q30.
-    default: 30
     inputBinding:
       position: 101
       prefix: --high_qual
@@ -69,7 +65,6 @@ inputs:
       - File
     doc: input sorted bam/sam file. STDIN will be read from if it's not 
       specified
-    default: STDIN
     inputBinding:
       position: 101
       prefix: --in
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - File
     doc: the json format report file name
-    default: gencore.json
     inputBinding:
       position: 101
       prefix: --json
@@ -88,7 +82,6 @@ inputs:
       - int
     doc: the threshold for a quality score to be considered as low quality. 
       Default 15 means Q15.
-    default: 15
     inputBinding:
       position: 101
       prefix: --low_qual
@@ -98,7 +91,6 @@ inputs:
       - int
     doc: the threshold for a quality score to be considered as moderate quality.
       Default 20 means Q20.
-    default: 20
     inputBinding:
       position: 101
       prefix: --moderate_qual
@@ -116,7 +108,6 @@ inputs:
       - 'null'
       - File
     doc: output bam/sam file. STDOUT will be written to if it's not specified
-    default: STDOUT
     inputBinding:
       position: 101
       prefix: --out
@@ -126,7 +117,6 @@ inputs:
       - int
     doc: stop when <quit_after_contig> contigs are processed. Only used for fast
       debugging. Default 0 means no limitation.
-    default: 0
     inputBinding:
       position: 101
       prefix: --quit_after_contig
@@ -137,7 +127,6 @@ inputs:
     doc: if the ratio of the major base in a cluster is less than 
       <ratio_threshold>, it will be further compared to the reference. The valud
       should be 0.5~1.0, and the default value is 0.8
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --ratio_threshold
@@ -154,7 +143,6 @@ inputs:
     doc: if the score of the major base in a cluster is less than 
       <score_threshold>, it will be further compared to the reference. The valud
       should be 1~20, and the default value is 6
-    default: 6
     inputBinding:
       position: 101
       prefix: --score_threshold
@@ -164,7 +152,6 @@ inputs:
       - int
     doc: only output consensus reads/pairs that merged by >= <supporting_reads> 
       reads/pairs. The valud should be 1~10, and the default value is 1.
-    default: 1
     inputBinding:
       position: 101
       prefix: --supporting_reads
@@ -175,7 +162,6 @@ inputs:
     doc: if two reads with identical mapping position have UMI difference <= 
       <umi_diff_threshold>, then they will be merged to generate a consensus 
       read. Default value is 1.
-    default: 1
     inputBinding:
       position: 101
       prefix: --umi_diff_threshold
@@ -185,7 +171,6 @@ inputs:
       - string
     doc: the prefix for UMI, if it has. None by default. Check the README for 
       the defails of UMI formats.
-    default: auto
     inputBinding:
       position: 101
       prefix: --umi_prefix

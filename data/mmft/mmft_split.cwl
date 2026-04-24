@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory for split files. Default is current working directory.
-    default: .
     inputBinding:
       position: 102
       prefix: --dir

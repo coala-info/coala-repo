@@ -17,8 +17,6 @@ inputs:
       - 'null'
       - string
     doc: 'Specifies whether to sort in ascending or descending order (asc or desc;
-      default: asc)'
-    default: asc
     inputBinding:
       position: 102
       prefix: --direction
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: 'Specifies which allele position to sort by (beg, mid or end; default: beg)'
-    default: beg
     inputBinding:
       position: 102
       prefix: --point

@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: autocompletion file
-    default: /root/.bash_completion.d/taxonkit.sh
     inputBinding:
       position: 101
       prefix: --file
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: directory containing nodes.dmp and names.dmp
-    default: /root/.taxonkit
     inputBinding:
       position: 101
       prefix: --data-dir
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: autocompletion type (bash|zsh|fish|powershell)
-    default: bash
     inputBinding:
       position: 101
       prefix: --shell
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs. 4 is enough
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

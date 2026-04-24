@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Bin width for estimating read depth variance
-    default: 100
     inputBinding:
       position: 102
       prefix: --bin-width
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Custom config file
-    default: (outputDir)/koverage.config.yaml
     inputBinding:
       position: 102
       prefix: --configfile
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Max kmers to sample per contig
-    default: 5000
     inputBinding:
       position: 102
       prefix: --kmer-max
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Min kmers to try to sample per contig
-    default: 50
     inputBinding:
       position: 102
       prefix: --kmer-min
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Sample every [INT]th kmer
-    default: 100
     inputBinding:
       position: 102
       prefix: --kmer-sample
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Size of kmers to use
-    default: 25
     inputBinding:
       position: 102
       prefix: --kmer-size
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: Minimap preset
-    default: sr
     inputBinding:
       position: 102
       prefix: --minimap
@@ -106,7 +99,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: koverage.out
     inputBinding:
       position: 102
       prefix: --output
@@ -132,7 +124,6 @@ inputs:
       - int
     doc: Only include the top N contigs by coverage in the summary HMTL report 
       (use -1 for all contigs)
-    default: 1000
     inputBinding:
       position: 102
       prefix: --report-max-ctg
@@ -141,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 8
     inputBinding:
       position: 102
       prefix: --threads
@@ -150,7 +140,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use conda for Snakemake rules
-    default: true
     inputBinding:
       position: 102
       prefix: --use-conda
@@ -159,7 +148,6 @@ inputs:
       - 'null'
       - string
     doc: Custom config file
-    default: (outputDir)/koverage.profile/
     inputBinding:
       position: 102
       prefix: --workflow-profile

@@ -27,7 +27,6 @@ inputs:
       - float
     doc: the least ratio of two greatest fragment alignment scores to determine 
       the fragment placed to a reference genome
-    default: 1.2
     inputBinding:
       position: 104
       prefix: --ratio_threshold
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: shrink large interfragment gaps to the specified size
-    default: false
     inputBinding:
       position: 104
       prefix: --shrink_gaps

@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: max sum of errors
-    default: 70
     inputBinding:
       position: 103
       prefix: -Q
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: minimum end overlap
-    default: 10
     inputBinding:
       position: 103
       prefix: -T
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 103
       prefix: -t

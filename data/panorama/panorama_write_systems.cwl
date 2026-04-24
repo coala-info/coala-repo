@@ -12,7 +12,6 @@ inputs:
       - type: array
         items: string
     doc: Write association between systems and others pangenomes elements
-    default: []
     inputBinding:
       position: 101
       prefix: --association
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write the canonical version of systems too.
-    default: false
     inputBinding:
       position: 101
       prefix: --canonical
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - boolean
     doc: disables the progress bars
-    default: false
     inputBinding:
       position: 101
       prefix: --disable_prog_bar
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force writing in output directory and in pangenome output file.
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -48,7 +44,6 @@ inputs:
       - 'null'
       - File
     doc: log output file
-    default: stdout
     inputBinding:
       position: 101
       prefix: --log
@@ -78,7 +73,6 @@ inputs:
       - type: array
         items: string
     doc: Visualization output format customization.
-    default:
       - html
     inputBinding:
       position: 101
@@ -97,7 +91,6 @@ inputs:
       - boolean
     doc: Write a heatmap file with for each organism, partition of the systems. 
       If organisms are specified, heatmap will be write only for them.
-    default: false
     inputBinding:
       position: 101
       prefix: --partition
@@ -107,7 +100,6 @@ inputs:
       - boolean
     doc: Project the systems on organisms. If organisms are specified, 
       projection will be done only for them.
-    default: false
     inputBinding:
       position: 101
       prefix: --projection
@@ -145,7 +137,6 @@ inputs:
       - int
     doc: Indicate verbose level (0 for warning and errors only, 1 for info, 2 
       for debug)
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbose

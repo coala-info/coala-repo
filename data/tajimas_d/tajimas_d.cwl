@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Compute the Pi-Estimator score.
-    default: true
     inputBinding:
       position: 101
       prefix: --pi

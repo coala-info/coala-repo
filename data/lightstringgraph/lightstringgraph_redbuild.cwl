@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: bucket length
-    default: 1000000
     inputBinding:
       position: 101
       prefix: -g
@@ -29,7 +28,6 @@ inputs:
     type:
       - 'null'
       - boolean
-    default: true
     inputBinding:
       position: 101
       prefix: -r

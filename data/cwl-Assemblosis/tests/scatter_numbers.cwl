@@ -20,7 +20,6 @@ steps:
       inputs:
         max: 
           type: int
-          default: 100
       outputs:
         numbers:
           type: int[]

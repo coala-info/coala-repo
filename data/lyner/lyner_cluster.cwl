@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: Clustering algorithm to use (e.g., kmeans, leiden).
-    default: kmeans
     inputBinding:
       position: 102
       prefix: --method

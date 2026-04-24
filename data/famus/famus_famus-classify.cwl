@@ -15,7 +15,6 @@ inputs:
       - int
     doc: Number of sequences to process at once for classification or threshold 
       calculation.
-    default: 20000
     inputBinding:
       position: 102
       prefix: --chunksize
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Device to use (cpu or cuda).
-    default: cuda
     inputBinding:
       position: 102
       prefix: --device
@@ -42,7 +40,6 @@ inputs:
       - boolean
     doc: Load sdf_train from pickle instead of json for slightly faster 
       classification preprocessing.
-    default: false
     inputBinding:
       position: 102
       prefix: --load-sdf-from-pickle
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to save logs.
-    default: /root/.famus/logs
     inputBinding:
       position: 102
       prefix: --log-dir
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: Type of model(s) to use (comprehensive or light).
-    default: comprehensive
     inputBinding:
       position: 102
       prefix: --model-type
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to save or load models.
-    default: /root/.famus/models
     inputBinding:
       position: 102
       prefix: --models-dir
@@ -86,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to use.
-    default: 4
     inputBinding:
       position: 102
       prefix: --n-processes
@@ -95,7 +88,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable logging.
-    default: false
     inputBinding:
       position: 102
       prefix: --no-log

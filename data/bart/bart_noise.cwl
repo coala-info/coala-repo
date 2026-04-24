@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: variance
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -n

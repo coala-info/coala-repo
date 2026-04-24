@@ -63,7 +63,6 @@ inputs:
       - float
     doc: If input is FastQ, select K% random read pairs from each input set. 
       Default is 0.05%. To turn off (align all reads), set --downsample 1
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --downsample
@@ -73,7 +72,6 @@ inputs:
       - float
     doc: If input is FastQ, select K% random read pairs from each input set. 
       Default is 0.05%. To turn off (align all reads), set --downsample 1
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --downsample-fraction
@@ -119,7 +117,6 @@ inputs:
       - int
     doc: integer indicating the number of bases to extend each target region up 
       and down-stream. Default is 200
-    default: 200
     inputBinding:
       position: 102
       prefix: --padding

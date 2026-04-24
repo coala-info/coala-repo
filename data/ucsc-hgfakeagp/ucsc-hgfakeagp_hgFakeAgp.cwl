@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size for a gap between contigs.
-    default: 25
     inputBinding:
       position: 102
       prefix: -minContigGap
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Min size for a gap between scaffolds.
-    default: 50000
     inputBinding:
       position: 102
       prefix: -minScaffoldGap

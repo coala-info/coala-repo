@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: canonical base threshold
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --can_thresh
@@ -72,7 +71,6 @@ inputs:
       - 'null'
       - float
     doc: y-axis minimum for coverage plot
-    default: 0
     inputBinding:
       position: 101
       prefix: --cover_ymin
@@ -81,7 +79,6 @@ inputs:
       - 'null'
       - string
     doc: colour palette name for coverage plot
-    default: mako
     inputBinding:
       position: 101
       prefix: --coverpalette
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: processes to use for coverage function
-    default: 1
     inputBinding:
       position: 101
       prefix: --coverprocs
@@ -133,7 +129,6 @@ inputs:
       - 'null'
       - float
     doc: set exon height
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --exonheight
@@ -142,7 +137,6 @@ inputs:
       - 'null'
       - string
     doc: colour palette name for highlights
-    default: viridis
     inputBinding:
       position: 101
       prefix: --genepalette
@@ -167,7 +161,6 @@ inputs:
       - 'null'
       - float
     doc: image height (inches)
-    default: 8
     inputBinding:
       position: 101
       prefix: --height
@@ -201,7 +194,6 @@ inputs:
       - 'null'
       - float
     doc: alpha for highlighting in panels (between 0 and 1)
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --highlight_alpha
@@ -228,7 +220,6 @@ inputs:
       - 'null'
       - string
     doc: colour palette name for highlights
-    default: Blues
     inputBinding:
       position: 101
       prefix: --highlightpalette
@@ -275,7 +266,6 @@ inputs:
       - 'null'
       - float
     doc: alpha (transparency) for (un)methylation marker
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --markeralpha
@@ -284,7 +274,6 @@ inputs:
       - 'null'
       - int
     doc: read count masking cutoff
-    default: 1
     inputBinding:
       position: 101
       prefix: --maskcutoff
@@ -301,7 +290,6 @@ inputs:
       - 'null'
       - float
     doc: skip smoothed plot if fraction of sample masked > this value
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --maxmaskedfrac
@@ -310,7 +298,6 @@ inputs:
       - 'null'
       - float
     doc: modified base threshold
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --meth_thresh
@@ -319,7 +306,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality (mapq)
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_mapq
@@ -328,7 +314,6 @@ inputs:
       - 'null'
       - int
     doc: drop modspace positions if call count (meth+unmeth) < --mincalls
-    default: 0
     inputBinding:
       position: 101
       prefix: --mincalls
@@ -345,7 +330,6 @@ inputs:
       - 'null'
       - string
     doc: spacing between links in top panel
-    default: auto
     inputBinding:
       position: 101
       prefix: --modspace
@@ -362,7 +346,6 @@ inputs:
       - 'null'
       - int
     doc: mod motif size, only used with -b/--bams
-    default: 2
     inputBinding:
       position: 101
       prefix: --motifsize
@@ -387,7 +370,6 @@ inputs:
       - 'null'
       - int
     doc: tick count
-    default: 10
     inputBinding:
       position: 101
       prefix: --nticks
@@ -396,7 +378,6 @@ inputs:
       - 'null'
       - string
     doc: 'Alter panel ratios: needs to be 5 comma-seperated integers'
-    default: 1,5,1,3,3
     inputBinding:
       position: 101
       prefix: --panelratios
@@ -446,7 +427,6 @@ inputs:
       - 'null'
       - float
     doc: alpha (transparency) for read mapping lines
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --readlinealpha
@@ -455,7 +435,6 @@ inputs:
       - 'null'
       - float
     doc: width for lines representing read alignments
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --readlinewidth
@@ -464,7 +443,6 @@ inputs:
       - 'null'
       - string
     doc: marker for (un)methylated glpyhs in read panel (matplotlib markers)
-    default: o
     inputBinding:
       position: 101
       prefix: --readmarker
@@ -473,7 +451,6 @@ inputs:
       - 'null'
       - float
     doc: marker size for (un)methylated glpyhs in read panel
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --readmarkersize
@@ -517,7 +494,6 @@ inputs:
       - 'null'
       - string
     doc: palette for samples
-    default: tab10
     inputBinding:
       position: 101
       prefix: --samplepalette
@@ -558,7 +534,6 @@ inputs:
       - 'null'
       - int
     doc: step size for initial sliding window
-    default: 1
     inputBinding:
       position: 101
       prefix: --slidingwindowstep
@@ -567,7 +542,6 @@ inputs:
       - 'null'
       - int
     doc: size of initial sliding window for coverage check
-    default: 2
     inputBinding:
       position: 101
       prefix: --slidingwindowsize
@@ -576,7 +550,6 @@ inputs:
       - 'null'
       - string
     doc: size of window for smoothing
-    default: auto
     inputBinding:
       position: 101
       prefix: --smoothwindowsize
@@ -585,7 +558,6 @@ inputs:
       - 'null'
       - float
     doc: alpha (transparency) value for smoothed plot
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --smoothalpha
@@ -594,7 +566,6 @@ inputs:
       - 'null'
       - string
     doc: 'smoothing function, one of: flat,hanning,hamming,bartlett,blackman'
-    default: hanning
     inputBinding:
       position: 101
       prefix: --smoothfunc
@@ -603,7 +574,6 @@ inputs:
       - 'null'
       - float
     doc: smooth line width
-    default: 4.0
     inputBinding:
       position: 101
       prefix: --smoothlinewidth
@@ -644,7 +614,6 @@ inputs:
       - 'null'
       - string
     doc: colour palette for variant ticks
-    default: Set1
     inputBinding:
       position: 101
       prefix: --variantpalette
@@ -661,7 +630,6 @@ inputs:
       - 'null'
       - int
     doc: size of variant ticks
-    default: 6
     inputBinding:
       position: 101
       prefix: --variantsize
@@ -670,7 +638,6 @@ inputs:
       - 'null'
       - float
     doc: image width (inches)
-    default: 16
     inputBinding:
       position: 101
       prefix: --width
@@ -679,7 +646,6 @@ inputs:
       - 'null'
       - float
     doc: y-axis maximum for smoothed plot
-    default: 1.05
     inputBinding:
       position: 101
       prefix: --ymax
@@ -688,7 +654,6 @@ inputs:
       - 'null'
       - float
     doc: y-axis minimum for smoothed plot
-    default: -0.05
     inputBinding:
       position: 101
       prefix: --ymin

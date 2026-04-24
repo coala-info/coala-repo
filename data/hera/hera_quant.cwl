@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Compress level (1 - 9)
-    default: -1
     inputBinding:
       position: 104
       prefix: -z
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bootstraps
-    default: 0
     inputBinding:
       position: 104
       prefix: -b
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Output bam file 0:true, 1: false'
-    default: 0
     inputBinding:
       position: 104
       prefix: -w
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: ./
     inputBinding:
       position: 104
       prefix: -o
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: Output prefix
-    default: ''
     inputBinding:
       position: 104
       prefix: -p
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 104
       prefix: -t

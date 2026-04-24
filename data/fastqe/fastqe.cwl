@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of sequence to include
-    default: 500
     inputBinding:
       position: 102
       prefix: --max-len
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of sequence to include
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-len

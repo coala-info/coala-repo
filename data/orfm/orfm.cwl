@@ -17,7 +17,6 @@ inputs:
     doc: codon table for translation (see 
       http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=tgencodes
       for details)
-    default: 1
     inputBinding:
       position: 102
       prefix: -c
@@ -27,7 +26,6 @@ inputs:
       - int
     doc: ignore the sequence of the read beyond this, useful when comparing 
       reads from with different read lengths
-    default: none
     inputBinding:
       position: 102
       prefix: -l
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of nucleotides (not amino acids) to call an ORF on
-    default: 96
     inputBinding:
       position: 102
       prefix: -m
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - boolean
     doc: only print those ORFs in the same frame as a stop codon
-    default: off
     inputBinding:
       position: 102
       prefix: -s
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: print the actual stop codons at sequence ends if encoded
-    default: do not
     inputBinding:
       position: 102
       prefix: -p

@@ -7,7 +7,6 @@ inputs:
   - id: download
     type: string
     doc: The database name.
-    default: None
     inputBinding:
       position: 101
       prefix: --download
@@ -16,7 +15,6 @@ inputs:
       - 'null'
       - Directory
     doc: Store the selected database under this folder.
-    default: /
     inputBinding:
       position: 101
       prefix: --folder
@@ -25,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: List official public MetaSBT databases.
-    default: false
     inputBinding:
       position: 101
       prefix: --list

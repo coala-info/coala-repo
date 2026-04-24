@@ -38,7 +38,6 @@ inputs:
       - float
     doc: designate a feature mapped only if it aligns with coverage ≥A; by 
       default A=0.5
-    default: 0.5
     inputBinding:
       position: 103
       prefix: -a
@@ -56,7 +55,6 @@ inputs:
     doc: distance scaling factor; alignment nodes separated by more than a 
       factor of D in the target genome will not be connected in the graph; by 
       default D=2.0
-    default: 2.0
     inputBinding:
       position: 103
       prefix: -d
@@ -87,7 +85,6 @@ inputs:
     doc: amount of flanking sequence to align as a fraction [0.0-1.0] of gene 
       length. This can improve gene alignment where gene structure differs 
       between target and reference; by default F=0.0
-    default: 0.0
     inputBinding:
       position: 103
       prefix: -flank
@@ -96,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: gap extend penalty in exons when finding best mapping; by default GE=1
-    default: 1
     inputBinding:
       position: 103
       prefix: -gap_extend
@@ -105,7 +101,6 @@ inputs:
       - 'null'
       - int
     doc: gap open penalty in exons when finding best mapping; by default GO=2
-    default: 2
     inputBinding:
       position: 103
       prefix: -gap_open
@@ -138,7 +133,6 @@ inputs:
       - Directory
     doc: name of directory to save intermediate fasta and SAM files; default is 
       "intermediate_files"
-    default: intermediate_files
     inputBinding:
       position: 103
       prefix: -dir
@@ -156,7 +150,6 @@ inputs:
       - float
     doc: maximum fraction [0.0-1.0] of overlap allowed by 2 features; by default
       O=0.1
-    default: 0.1
     inputBinding:
       position: 103
       prefix: -overlap
@@ -182,7 +175,6 @@ inputs:
       - 'null'
       - int
     doc: mismatch penalty in exons when finding best mapping; by default M=2
-    default: 2
     inputBinding:
       position: 103
       prefix: -mismatch
@@ -192,7 +184,6 @@ inputs:
       - string
     doc: space delimited minimap2 parameters. By default ="-a --end-bonus 5 
       --eqx -N 50 -p 0.5"
-    default: '"-a --end-bonus 5 --eqx -N 50 -p 0.5"'
     inputBinding:
       position: 103
       prefix: -mm2_options
@@ -201,7 +192,6 @@ inputs:
       - 'null'
       - int
     doc: use p parallel processes to accelerate alignment; by default p=1
-    default: 1
     inputBinding:
       position: 103
       prefix: -p
@@ -219,7 +209,6 @@ inputs:
       - float
     doc: designate a feature mapped only if its child features (usually 
       exons/CDS) align with sequence identity ≥S; by default S=0.5
-    default: 0.5
     inputBinding:
       position: 103
       prefix: -s
@@ -230,7 +219,6 @@ inputs:
     doc: text file with name(s) of unplaced sequences to map genes from after 
       genes from chromosomes in chroms.txt are mapped; default is 
       "unplaced_seq_names.txt"
-    default: unplaced_seq_names.txt
     inputBinding:
       position: 103
       prefix: -unplaced

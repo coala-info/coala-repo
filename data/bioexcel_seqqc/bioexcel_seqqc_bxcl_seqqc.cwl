@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: The adapter sequence to be trimmed from the FastQ file.
-    default: Illumina TruSeq Universal Adapter
     inputBinding:
       position: 101
       prefix: --adaptseq
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - File
     doc: Location of config file.
-    default: internal config
     inputBinding:
       position: 101
       prefix: --qcconf
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: 'Max number of threads to use. NOTE: not allstages use all threads.'
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temp directory.
-    default: system tmp location
     inputBinding:
       position: 101
       prefix: --tmpdir
@@ -64,7 +60,6 @@ inputs:
       - string
     doc: 'The type of trimming to be done on the paired sequences: [A]dapter or [Q]uality
       trimming, or [F]ull/both. WARNING: For standalone execution of runtrim only!'
-    default: F
     inputBinding:
       position: 101
       prefix: --trim

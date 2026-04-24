@@ -26,7 +26,6 @@ inputs:
       - int
     doc: Maximum length of predicted non-specific amplicon. Ignored is no BLAST 
       database is provided.
-    default: 1500
     inputBinding:
       position: 102
       prefix: --max-amp-len
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Primer pool number
-    default: 1
     inputBinding:
       position: 102
       prefix: --pool
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: PCR annealing temperature
-    default: 60.0
     inputBinding:
       position: 102
       prefix: --temperature
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: Name of validation
-    default: olivar-specificity
     inputBinding:
       position: 102
       prefix: --title

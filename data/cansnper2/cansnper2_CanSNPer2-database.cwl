@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: Select output format [tab, newick]
-    default: '[tab, newick]'
     inputBinding:
       position: 101
   - id: logs
@@ -109,7 +108,6 @@ inputs:
       - 'null'
       - Directory
     doc: Specify tmp directory default (/tmp)
-    default: /tmp
     inputBinding:
       position: 101
   - id: tree

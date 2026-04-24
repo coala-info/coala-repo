@@ -6,7 +6,6 @@ class: Workflow
 inputs:
   dir:
     type: Directory
-    default:
       class: Directory
       location: test_dir
 

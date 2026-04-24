@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Log file to save console messages.
-    default: mobidik_report.log
     inputBinding:
       position: 101
       prefix: --log_file
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Type of plot to generate.
-    default: rt_im_heatmap
     inputBinding:
       position: 101
       prefix: --type
@@ -53,7 +51,6 @@ inputs:
       - int
     doc: Level of verbosity. 0 - just displays info, 1 - display some debug 
       info, 10 displays a lot of debug info.
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbose

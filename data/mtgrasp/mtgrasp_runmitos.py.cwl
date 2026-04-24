@@ -114,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: 'position of intron prediction in 1st round (0: skip)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --intron
@@ -196,7 +195,6 @@ inputs:
       - 'null'
       - int
     doc: 'position of OH prediction in 1st round (0: skip)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --orih
@@ -205,7 +203,6 @@ inputs:
       - 'null'
       - int
     doc: 'position of OL prediction in 1st round (0: skip)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --oril
@@ -220,7 +217,6 @@ inputs:
       - 'null'
       - int
     doc: 'position of protein prediction in 1st round (0: skip)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --prot
@@ -245,7 +241,6 @@ inputs:
       - 'null'
       - int
     doc: 'position of rRNA prediction in 1st round (0: skip)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --rrna
@@ -262,7 +257,6 @@ inputs:
       - 'null'
       - int
     doc: 'position of tRNA prediction in 1st round (0: skip)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --trna

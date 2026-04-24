@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Write compressed output
-    default: 0
     inputBinding:
       position: 102
       prefix: --compressed
@@ -25,7 +24,6 @@ inputs:
     doc: allow predictions to overlap another on the same strand. when not 
       allowed (default), only the prediction with better E-value will be 
       retained [0,1]
-    default: 0
     inputBinding:
       position: 102
       prefix: --overlap
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU-cores used (all by default)
-    default: 20
     inputBinding:
       position: 102
       prefix: --threads
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbosity level: 0: quiet, 1: +errors, 2: +warnings, 3: +info'
-    default: 3
     inputBinding:
       position: 102
       prefix: -v

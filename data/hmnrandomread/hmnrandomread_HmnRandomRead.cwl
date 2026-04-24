@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Reads Size
-    default: 150
     inputBinding:
       position: 101
       prefix: --length-reads
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Mean Insert Size
-    default: 500
     inputBinding:
       position: 101
       prefix: --mean-insert-size
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - File
     doc: Name file with profile diversity
-    default: ''
     inputBinding:
       position: 101
       prefix: --profile-diversity
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - File
     doc: Name file with profile error
-    default: ''
     inputBinding:
       position: 101
       prefix: --profile-error
@@ -46,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Id error profile to apply (required if -profileError)
-    default: ''
     inputBinding:
       position: 101
       prefix: --profile-error-id
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Seed number
-    default: 0
     inputBinding:
       position: 101
       prefix: --seed
@@ -70,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Standard Deviation Insert Size
-    default: 50
     inputBinding:
       position: 101
       prefix: --std-insert-size

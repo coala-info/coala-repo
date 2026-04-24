@@ -73,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level
-    default: INFO
     inputBinding:
       position: 103
       prefix: --log-level
@@ -82,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum gap allowed between alignment and contig end
-    default: 10
     inputBinding:
       position: 103
       prefix: --max-break
@@ -91,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum homopolymer run length allowed
-    default: 500
     inputBinding:
       position: 103
       prefix: --max-homopolymer
@@ -100,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum anchor length required for alignment
-    default: 100
     inputBinding:
       position: 103
       prefix: --min-anchor
@@ -109,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum overhang length for extension
-    default: 1
     inputBinding:
       position: 103
       prefix: --min-extension
@@ -118,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum supporting overhangs required
-    default: 1
     inputBinding:
       position: 103
       prefix: --min-overhangs
@@ -127,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: Z-score threshold for outlier detection
-    default: 2.0
     inputBinding:
       position: 103
       prefix: --outlier-threshold
@@ -136,7 +129,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for default output filenames
-    default: teloclip_extended
     inputBinding:
       position: 103
       prefix: --prefix
@@ -146,7 +138,6 @@ inputs:
       - int
     doc: 'Number of terminal bases to screen for motifs in original contigs (default:
       0, disabled)'
-    default: 0
     inputBinding:
       position: 103
       prefix: --screen-terminal-bases

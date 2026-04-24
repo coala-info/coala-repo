@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Change the dpi from the default 600 if you need it higher
-    default: 600
     inputBinding:
       position: 101
       prefix: --dpi
@@ -38,7 +37,6 @@ inputs:
       - type: array
         items: string
     doc: Which output format would you like? Def.=png
-    default: png
     inputBinding:
       position: 101
       prefix: --fileform

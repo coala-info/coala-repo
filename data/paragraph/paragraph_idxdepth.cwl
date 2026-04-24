@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Include ALT contigs in estimation
-    default: 0
     inputBinding:
       position: 101
       prefix: --altcontig
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Regex to identify autosome chromosome names
-    default: (chr)?[1-9][0-9]?
     inputBinding:
       position: 101
       prefix: --autosome-regex
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Enable / disable async logging.
-    default: 1
     inputBinding:
       position: 101
       prefix: --log-async
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: Set log level (error, warning, info).
-    default: info
     inputBinding:
       position: 101
       prefix: --log-level
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Regex to identify sex chromosome names
-    default: (chr)?[XY]?
     inputBinding:
       position: 101
       prefix: --sex-chromosome-regex
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for parallel estimation.
-    default: 40
     inputBinding:
       position: 101
       prefix: --threads

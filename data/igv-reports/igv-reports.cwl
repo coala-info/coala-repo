@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Flanking region in base pairs
-    default: 1000
     inputBinding:
       position: 102
       prefix: --flanking

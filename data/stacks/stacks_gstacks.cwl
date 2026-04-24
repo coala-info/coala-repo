@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: 'alpha threshold for calling genotypes (default: 0.05)'
-    default: 0.05
     inputBinding:
       position: 101
   - id: ignore_pe_reads
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: 'kmer length for the de Bruijn graph (default: 31, max. 31)'
-    default: 31
     inputBinding:
       position: 101
   - id: max_clipped
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: 'maximum soft-clipping level, in fraction of read length (default: 0.20)'
-    default: 0.2
     inputBinding:
       position: 101
   - id: max_debruijn_reads
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: 'maximum number of reads to use in the de Bruijn graph (default: 1000)'
-    default: 1000
     inputBinding:
       position: 101
   - id: max_insert_len
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: 'maximum allowed sequencing insert length (default: 1000)'
-    default: 1000
     inputBinding:
       position: 101
   - id: methyl_status
@@ -88,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum coverage to consider a kmer (default: 2)'
-    default: 2
     inputBinding:
       position: 101
   - id: min_mapq
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum PHRED-scaled mapping quality to consider a read (default: 10)'
-    default: 10
     inputBinding:
       position: 101
   - id: model
@@ -105,7 +98,6 @@ inputs:
       - string
     doc: model to use to call variants and genotypes; one of marukilow 
       (default), marukihigh, or snp
-    default: marukilow
     inputBinding:
       position: 101
   - id: phasing_cooccurrences_thr_range
@@ -114,7 +106,6 @@ inputs:
       - string
     doc: 'range of edge coverage thresholds to iterate over when building the graph
       of allele cooccurrences for SNP phasing (default: 1,2)'
-    default: 1,2
     inputBinding:
       position: 101
   - id: phasing_dont_prune_hets
@@ -168,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -185,7 +175,6 @@ inputs:
       - 'null'
       - float
     doc: 'alpha threshold for discovering SNPs (default: 0.01 for marukilow)'
-    default: 0.01
     inputBinding:
       position: 101
   - id: write_alignments

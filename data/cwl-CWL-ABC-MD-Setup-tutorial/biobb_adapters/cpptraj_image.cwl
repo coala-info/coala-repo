@@ -97,7 +97,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_cpptraj_path
-    default: system.mdcrd
 
   config:
     label: Advanced configuration options for biobb_analysis CpptrajImage

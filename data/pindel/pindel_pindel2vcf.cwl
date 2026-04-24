@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only report events that are detected on both strands
-    default: false
     inputBinding:
       position: 101
       prefix: --both_strands_supported
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: The propertion of reads to call het
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --het_cutoff
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - float
     doc: The propertion of reads to call het
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --hom_cutoff
@@ -115,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum number of reads to provide a genotype
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_coverage
@@ -124,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum size of events to be reported
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_size
@@ -133,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum number of supporting reads required for an event to be reported
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_supporting_reads
@@ -143,7 +137,6 @@ inputs:
       - int
     doc: The minimum number of samples an event needs to occur in with sufficient
       support to be reported
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_supporting_samples
@@ -153,7 +146,6 @@ inputs:
       - int
     doc: Only count a sample as supporting an event if at least one of its strands
       is supported by X reads
-    default: 1
     inputBinding:
       position: 101
       prefix: --minimum_strand_support
@@ -163,7 +155,6 @@ inputs:
       - boolean
     doc: Only count a sample as supporting an event if it is supported by reads on
       both strands
-    default: false
     inputBinding:
       position: 101
       prefix: --only_balanced_samples
@@ -215,7 +206,6 @@ inputs:
       - 'null'
       - int
     doc: The start of the region of which events are to be reported
-    default: 0
     inputBinding:
       position: 101
       prefix: --region_start
@@ -225,7 +215,6 @@ inputs:
       - int
     doc: 'Memory saving option: the size of the genomic region in a chromosome of
       which structural variants are calculated separately, in millions of bases'
-    default: 300
     inputBinding:
       position: 101
       prefix: --window_size

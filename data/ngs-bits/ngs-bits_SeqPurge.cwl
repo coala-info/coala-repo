@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Forward adapter sequence (at least 15 bases).
-    default: AGATCGGAAGAGCACACGTCTGAACTCCAGTCA
     inputBinding:
       position: 101
       prefix: -a1
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Reverse adapter sequence (at least 15 bases).
-    default: AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
     inputBinding:
       position: 101
       prefix: -a2
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Number of blocks that may be pre-fetched into memory.
-    default: 32
     inputBinding:
       position: 101
       prefix: -block_prefetch
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Number of FASTQ entries processed in one block.
-    default: 10000
     inputBinding:
       position: 101
       prefix: -block_size
@@ -47,7 +43,6 @@ inputs:
       - int
     doc: Output FASTQ compression level from 1 (fastest) to 9 (best 
       compression).
-    default: 1
     inputBinding:
       position: 101
       prefix: -compression_level
@@ -56,7 +51,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enables debug output (use only with one thread).
-    default: false
     inputBinding:
       position: 101
       prefix: -debug
@@ -66,7 +60,6 @@ inputs:
       - boolean
     doc: Enable error-correction of adapter-trimmed reads (only those with 
       insert match).
-    default: false
     inputBinding:
       position: 101
       prefix: -ec
@@ -91,7 +84,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percentage of matching bases for sequence/adapter matches.
-    default: '80'
     inputBinding:
       position: 101
       prefix: -match_perc
@@ -100,7 +92,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum error probability of insert and adapter matches.
-    default: '1e-06'
     inputBinding:
       position: 101
       prefix: -mep
@@ -110,7 +101,6 @@ inputs:
       - int
     doc: Minimum read length after adapter trimming. Shorter reads are 
       discarded.
-    default: 30
     inputBinding:
       position: 101
       prefix: -min_len
@@ -120,7 +110,6 @@ inputs:
       - int
     doc: Number of subsequent Ns to trimmed using a sliding window approach from
       the front of reads. Set to 0 to disable.
-    default: 7
     inputBinding:
       position: 101
       prefix: -ncut
@@ -130,7 +119,6 @@ inputs:
       - string
     doc: Name prefix of singleton read output files (if only one read of a pair 
       is discarded).
-    default: ''
     inputBinding:
       position: 101
       prefix: -out3
@@ -140,7 +128,6 @@ inputs:
       - int
     doc: Enables progress output at the given interval in milliseconds (disabled
       by default).
-    default: -1
     inputBinding:
       position: 101
       prefix: -progress
@@ -149,7 +136,6 @@ inputs:
       - 'null'
       - File
     doc: If set, a read QC file in qcML format is created (just like ReadQC).
-    default: ''
     inputBinding:
       position: 101
       prefix: -qc
@@ -159,7 +145,6 @@ inputs:
       - int
     doc: Quality trimming cutoff for trimming from the end of reads using a 
       sliding window approach. Set to 0 to disable.
-    default: 15
     inputBinding:
       position: 101
       prefix: -qcut
@@ -168,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: Quality trimming FASTQ score offset.
-    default: 33
     inputBinding:
       position: 101
       prefix: -qoff
@@ -177,7 +161,6 @@ inputs:
       - 'null'
       - int
     doc: Quality trimming window size.
-    default: 5
     inputBinding:
       position: 101
       prefix: -qwin
@@ -194,7 +177,6 @@ inputs:
       - 'null'
       - File
     doc: Write summary/progress to this file instead of STDOUT.
-    default: ''
     inputBinding:
       position: 101
       prefix: -summary
@@ -204,7 +186,6 @@ inputs:
       - int
     doc: The number of threads used for trimming (up to three additional threads
       are used for reading and writing).
-    default: 1
     inputBinding:
       position: 101
       prefix: -threads

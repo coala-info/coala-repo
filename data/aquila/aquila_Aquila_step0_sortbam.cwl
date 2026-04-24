@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads you can define for samtools sort, default = 20
-    default: 20
     inputBinding:
       position: 101
       prefix: --num_threads_for_samtools_sort
@@ -25,7 +24,6 @@ inputs:
       - Directory
     doc: Directory to store Aquila assembly results, default = 
       ./Assembly_results
-    default: ./Assembly_results
     inputBinding:
       position: 101
       prefix: --out_dir

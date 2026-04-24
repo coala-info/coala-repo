@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum score to output
-    default: 1000
     inputBinding:
       position: 104
       prefix: -minScore
@@ -59,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Set verbosity level
-    default: 1
     inputBinding:
       position: 104
       prefix: -verbose

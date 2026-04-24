@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: Step size to increase k
-    default: 20
     inputBinding:
       position: 101
       prefix: --delta-k
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Initial kmer length to start the multi-k iteration
-    default: 27
     inputBinding:
       position: 101
       prefix: --k-init
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal kmer length to build a dBG with
-    default: 127
     inputBinding:
       position: 101
       prefix: --k-max
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: Specify a prefix for the output files
-    default: ccdbg
     inputBinding:
       position: 101
       prefix: --outputfile-prefix
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - Directory
     doc: Auxiliary directory for temporary files.
-    default: auxMultik
     inputBinding:
       position: 101
       prefix: --temp-path

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: transcript_type to filter regions by
-    default: protein_coding
     inputBinding:
       position: 101
       prefix: --filter_by_tx_annotation
@@ -17,7 +16,6 @@ inputs:
     type: int
     doc: Minimum number of codons with non-zero reads for determining active 
       translation (required for BAM input)
-    default: 5
     inputBinding:
       position: 101
       prefix: --min_valid_codons
@@ -26,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bootstraps
-    default: 20000
     inputBinding:
       position: 101
       prefix: --n_bootstraps
@@ -34,7 +31,6 @@ inputs:
     type: float
     doc: Phase score cutoff for determining active translation (required for BAM
       input)
-    default: 0.428571428571
     inputBinding:
       position: 101
       prefix: --phase_score_cutoff
@@ -94,7 +90,6 @@ inputs:
       - 'null'
       - float
     doc: Number of protein coding regions to sample per bootstrap
-    default: 0.33
     inputBinding:
       position: 101
       prefix: --sampling_ratio

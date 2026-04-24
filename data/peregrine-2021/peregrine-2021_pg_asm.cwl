@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: number of best overlaps for initial graph
-    default: 6
     inputBinding:
       position: 104
       prefix: --bestn
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer size
-    default: 56
     inputBinding:
       position: 104
       prefix: -k
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: layout version
-    default: 2
     inputBinding:
       position: 104
       prefix: -l
@@ -81,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum error coverage
-    default: 1
     inputBinding:
       position: 104
       prefix: --min_ec_cov
@@ -98,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Reduction factor
-    default: 6
     inputBinding:
       position: 104
       prefix: -r
@@ -107,7 +102,6 @@ inputs:
       - 'null'
       - float
     doc: Alignment tolerance
-    default: 0.01
     inputBinding:
       position: 104
       prefix: --tol
@@ -116,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: Window size
-    default: 80
     inputBinding:
       position: 104
       prefix: -w

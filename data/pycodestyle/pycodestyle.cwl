@@ -50,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: exclude files or directories which match these comma separated patterns
-    default: .svn,CVS,.bzr,.hg,.git,__pycache__,.tox
     inputBinding:
       position: 102
       prefix: --exclude
@@ -60,7 +59,6 @@ inputs:
       - string
     doc: when parsing directories, only check filenames matching these comma 
       separated patterns
-    default: '*.py'
     inputBinding:
       position: 102
       prefix: --filename
@@ -77,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: set the error format [default|pylint|<custom>]
-    default: default
     inputBinding:
       position: 102
       prefix: --format
@@ -95,7 +92,6 @@ inputs:
       - 'null'
       - string
     doc: skip errors and warnings (e.g. E4,W)
-    default: E121,E123,E126,E226,E24,E704,W503
     inputBinding:
       position: 102
       prefix: --ignore
@@ -104,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: set maximum allowed line length
-    default: 79
     inputBinding:
       position: 102
       prefix: --max-line-length

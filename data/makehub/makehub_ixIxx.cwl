@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Size of bins in ixx.
-    default: 64k
     inputBinding:
       position: 104
       prefix: -binSize
@@ -35,7 +34,6 @@ inputs:
       - int
     doc: Maximum allowed word length. Words with more characters than this limit
       are ignored and will not appear in index or be searchable.
-    default: 31
     inputBinding:
       position: 104
       prefix: -maxWordLength
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Size of prefix to index on in ixx.
-    default: 5
     inputBinding:
       position: 104
       prefix: -prefixSize

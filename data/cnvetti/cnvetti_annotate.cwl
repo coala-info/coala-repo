@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: Number of additional threads to use for (de)compression in I/O.
-    default: 0
     inputBinding:
       position: 101
       prefix: --io-threads

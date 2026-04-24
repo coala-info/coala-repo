@@ -61,7 +61,6 @@ inputs:
   is_paired_end:
     doc: if paired end, reads are extended
     type: boolean
-    default: true
       
 outputs:
   qc_plot_fingerprint_plot:

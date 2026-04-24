@@ -13,7 +13,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum N50 allowed per genome.
-    default: 50000
     inputBinding:
       position: 101
       prefix: --N50
@@ -23,7 +22,6 @@ inputs:
       - string
     doc: "Maximum number of fragmented Busco's single copy\n                     \
       \   orthologs (absolute or percentage)."
-    default: 100%
     inputBinding:
       position: 101
       prefix: --buscoF
@@ -33,7 +31,6 @@ inputs:
       - string
     doc: "Maximum number of missing Busco's single copy\n                        orthologs
       (absolute or percentage)."
-    default: 2%
     inputBinding:
       position: 101
       prefix: --buscoM
@@ -43,7 +40,6 @@ inputs:
       - string
     doc: "Busco database to use ('show' to see the list of\n                     \
       \   available databases)."
-    default: bacteria_odb10
     inputBinding:
       position: 101
       prefix: --buscodb
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel processes to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -62,7 +57,6 @@ inputs:
       - int
     doc: "Minimum percentage coverage to use when aligning\n                     \
       \   against the BiGG gene database."
-    default: 70
     inputBinding:
       position: 101
       prefix: --coverage
@@ -72,7 +66,6 @@ inputs:
       - boolean
     doc: "Load the entire eggNOG-mapper database into memory\n                   \
       \     (should speed up the functional annotation step)."
-    default: false
     inputBinding:
       position: 101
       prefix: --dbmem
@@ -82,7 +75,6 @@ inputs:
       - Directory
     doc: "Path were the needed databases are stored (or\n                        downloaded
       if not already existing)."
-    default: ./working/dbs/
     inputBinding:
       position: 101
       prefix: --dbs
@@ -92,7 +84,6 @@ inputs:
       - boolean
     doc: "Try to remove duplicate metabolites and reactions\n                    \
       \    using MNX annotation, when a reference is provided."
-    default: false
     inputBinding:
       position: 101
       prefix: --dedup
@@ -103,7 +94,6 @@ inputs:
         items: File
     doc: "Input genbank files (.gb, .gbff) or folder containing\n                \
       \        the genbanks (see documentation)."
-    default: '-'
     inputBinding:
       position: 101
       prefix: --genbanks
@@ -114,7 +104,6 @@ inputs:
         items: File
     doc: "Input genome files or folder containing the genomes\n                  \
       \      (see documentation)."
-    default: '-'
     inputBinding:
       position: 101
       prefix: --genomes
@@ -124,7 +113,6 @@ inputs:
       - int
     doc: "Minimum percentage amino acidic sequence identity to\n                 \
       \       use when aligning against the BiGG gene database."
-    default: 30
     inputBinding:
       position: 101
       prefix: --identity
@@ -134,7 +122,6 @@ inputs:
       - string
     doc: "Manual corrections to apply during the reference\n                     \
       \   expansion."
-    default: '-'
     inputBinding:
       position: 101
       prefix: --mancor
@@ -143,7 +130,6 @@ inputs:
       - 'null'
       - File
     doc: Table for manual correction of genome metadata.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --metadata
@@ -152,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of contigs allowed per genome.
-    default: 200
     inputBinding:
       position: 101
       prefix: --ncontigs
@@ -161,7 +146,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip the generation of figures.
-    default: false
     inputBinding:
       position: 101
       prefix: --nofig
@@ -170,7 +154,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip gene recovery when starting from genomes.
-    default: false
     inputBinding:
       position: 101
       prefix: --norec
@@ -179,7 +162,6 @@ inputs:
       - 'null'
       - Directory
     doc: "Main output directory (will be created if not\n                        existing)."
-    default: ./
     inputBinding:
       position: 101
       prefix: --outdir
@@ -188,7 +170,6 @@ inputs:
       - 'null'
       - boolean
     doc: Delete the working/ directory at the startup.
-    default: false
     inputBinding:
       position: 101
       prefix: --overwrite
@@ -199,7 +180,6 @@ inputs:
         items: File
     doc: "Input proteome files or folder containing the\n                        proteomes
       (see documentation)."
-    default: '-'
     inputBinding:
       position: 101
       prefix: --proteomes
@@ -208,7 +188,6 @@ inputs:
       - 'null'
       - string
     doc: Model to be used as reference.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --refmodel
@@ -217,7 +196,6 @@ inputs:
       - 'null'
       - File
     doc: Proteome to be used as reference.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --refproteome
@@ -226,7 +204,6 @@ inputs:
       - 'null'
       - string
     doc: Reference gene marking spontaneous reactions.
-    default: spontaneous
     inputBinding:
       position: 101
       prefix: --refspont
@@ -236,7 +213,6 @@ inputs:
       - boolean
     doc: "Save the output GSMMs in SBML format (L3V1 FBC2) in\n                  \
       \      addition to JSON."
-    default: false
     inputBinding:
       position: 101
       prefix: --sbml
@@ -245,7 +221,6 @@ inputs:
       - 'null'
       - string
     doc: Gram staining, 'pos' or 'neg'.
-    default: neg
     inputBinding:
       position: 101
       prefix: --staining
@@ -255,7 +230,6 @@ inputs:
       - string
     doc: "Taxids of the species to model (comma separated, for\n                 \
       \       example '252393,68334')."
-    default: '-'
     inputBinding:
       position: 101
       prefix: --taxids
@@ -265,7 +239,6 @@ inputs:
       - boolean
     doc: "Experimental feature: try to build transport reactions\n               \
       \         using TCDB."
-    default: false
     inputBinding:
       position: 101
       prefix: --tcdb
@@ -275,7 +248,6 @@ inputs:
       - boolean
     doc: "Make stdout messages more verbose, including debug\n                   \
       \     messages."
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

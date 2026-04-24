@@ -58,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Seed of the random number generator
-    default: 15052011
     inputBinding:
       position: 101
       prefix: --seed
@@ -67,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: (Expert setting) Rare variant threshold.
-    default: 0.00100000005
     inputBinding:
       position: 101
       prefix: --sparse-maf
@@ -76,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

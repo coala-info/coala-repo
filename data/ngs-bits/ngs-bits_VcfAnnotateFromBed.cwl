@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Number of lines processed in one chunk.
-    default: 5000
     inputBinding:
       position: 101
       prefix: -block_size
@@ -32,7 +31,6 @@ inputs:
       - int
     doc: Enables debug output at the given interval in milliseconds (disabled by
       default, cannot be combined with writing to STDOUT).
-    default: -1
     inputBinding:
       position: 101
       prefix: -debug
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of chunks that may be pre-fetched into memory.
-    default: 64
     inputBinding:
       position: 101
       prefix: -prefetch
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: Separator used if there are several matches for one variant.
-    default: ':'
     inputBinding:
       position: 101
       prefix: -sep
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads used to read, process and write files.
-    default: 1
     inputBinding:
       position: 101
       prefix: -threads

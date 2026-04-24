@@ -23,7 +23,6 @@ inputs:
       number, or removed for single output files. If the -o option is not 
       specified, single file output will be written to stdout and paired file 
       output to the default stem (output%).
-    default: output%
     inputBinding:
       position: 102
       prefix: -o

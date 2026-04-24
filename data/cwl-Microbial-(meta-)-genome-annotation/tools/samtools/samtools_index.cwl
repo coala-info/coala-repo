@@ -30,7 +30,6 @@ inputs:
   threads:
     type: int?
     label: Number of threads to use
-    default: 2
     inputBinding:
       position: 0
       prefix: -@

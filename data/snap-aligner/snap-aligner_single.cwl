@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Bonus for alignment reaching 3' end of read
-    default: 7
     inputBinding:
       position: 103
       prefix: -g3
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Bonus for alignment reaching 5' end of read
-    default: 10
     inputBinding:
       position: 103
       prefix: -g5
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Cost for extending a gap
-    default: 1
     inputBinding:
       position: 103
       prefix: -ge
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Cost for match
-    default: 1
     inputBinding:
       position: 103
       prefix: -gm
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Cost for opening a gap
-    default: 6
     inputBinding:
       position: 103
       prefix: -go
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Cost for substitution
-    default: 4
     inputBinding:
       position: 103
       prefix: -gs
@@ -92,7 +86,6 @@ inputs:
       - 'null'
       - float
     doc: Increase expansion factor for BAM and GZ files
-    default: 1.0
     inputBinding:
       position: 103
       prefix: -xf
@@ -223,7 +216,6 @@ inputs:
       - 'null'
       - int
     doc: Specifies the extra search depth
-    default: 1
     inputBinding:
       position: 103
       prefix: -D
@@ -241,7 +233,6 @@ inputs:
       - 'null'
       - int
     doc: Force MAPQ below this value to zero
-    default: 3
     inputBinding:
       position: 103
       prefix: -fmb
@@ -300,7 +291,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum edit distance allowed per read or pair absent indels
-    default: 27
     inputBinding:
       position: 103
       prefix: -d
@@ -309,7 +299,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum hits to consider per seed
-    default: 300
     inputBinding:
       position: 103
       prefix: -h
@@ -318,7 +307,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance allowed per read for indels
-    default: 40
     inputBinding:
       position: 103
       prefix: -i
@@ -327,7 +315,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum score gap to prefer a non-ALT alignment
-    default: 64
     inputBinding:
       position: 103
       prefix: -asg
@@ -336,7 +323,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the minimum read length to align
-    default: 50
     inputBinding:
       position: 103
       prefix: -mrl
@@ -345,7 +331,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum seed matches per location
-    default: 1
     inputBinding:
       position: 103
       prefix: -ms
@@ -575,7 +560,6 @@ inputs:
       - 'null'
       - int
     doc: Write buffer size in megabytes
-    default: 16
     inputBinding:
       position: 103
       prefix: -wbs

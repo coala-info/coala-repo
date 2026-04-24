@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of edges per node
-    default: 200
     inputBinding:
       position: 101
       prefix: --maxEdges
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Percentage of 'N's in a contig to ignore it
-    default: 95
     inputBinding:
       position: 101
       prefix: --maxP
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of a contig for binning (should be >=1500)
-    default: 2500
     inputBinding:
       position: 101
       prefix: --minContig
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum score of a edge for binning
-    default: 60
     inputBinding:
       position: 101
       prefix: --minS
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads to use (0: use all cores)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --numThreads
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Probability of being a bin
-    default: 0
     inputBinding:
       position: 101
       prefix: --pBF

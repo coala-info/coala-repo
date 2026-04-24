@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Multiple sequence aligner [foldmason, mafft-linsi, mafft]
-    default: foldmason
     inputBinding:
       position: 102
       prefix: --aligner
@@ -33,7 +32,6 @@ inputs:
       - File
     doc: File containing core structures for computing phylogenetic tree. If not
       provided, all core structures will be used
-    default: ''
     inputBinding:
       position: 102
       prefix: --names
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use; 0 to use all
-    default: 0
     inputBinding:
       position: 102
       prefix: --threads
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Gap threshold for multiple sequence alignment [0 - 100]
-    default: 50
     inputBinding:
       position: 102
       prefix: --threshold
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: Phylogenetic tree builder [iqtree, fasttree, raxml-ng]
-    default: iqtree
     inputBinding:
       position: 102
       prefix: --tree-builder
@@ -88,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbosity (0: quiet, 1: +errors, 2: +warnings, 3: +info, 4: +debug)'
-    default: 3
     inputBinding:
       position: 102
       prefix: --verbosity

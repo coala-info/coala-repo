@@ -11,7 +11,6 @@ inputs:
       - File
     doc: "PAF file from minimap2 or unimap. Must have the cg tag, and n matches will
       be zero\n             unless the cigar uses =X"
-    default: '-'
     inputBinding:
       position: 1
 outputs:

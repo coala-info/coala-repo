@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size used for sequence partitioning
-    default: 32
     inputBinding:
       position: 101
       prefix: --kmer
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Look-ahead margin used for sequence partitioning
-    default: 10000
     inputBinding:
       position: 101
       prefix: --lookahead
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Step size used for sequence partitioning
-    default: 1000
     inputBinding:
       position: 101
       prefix: --step
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for multiple sequence alignment
-    default: 16
     inputBinding:
       position: 101
       prefix: --threads

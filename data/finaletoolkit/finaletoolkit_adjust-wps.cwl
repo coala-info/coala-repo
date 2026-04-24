@@ -27,7 +27,6 @@ inputs:
       - int
     doc: size of the edge subtracted from ends of window when --subtract-edges 
       is set.
-    default: 500
     inputBinding:
       position: 104
       prefix: --edge-size

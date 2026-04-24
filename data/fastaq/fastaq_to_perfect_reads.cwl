@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for random number generator. Default is to use python's default
-    default: python's default
     inputBinding:
       position: 106
       prefix: --seed

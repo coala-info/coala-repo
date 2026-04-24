@@ -32,7 +32,6 @@ inputs:
     type: string?
     doc: Identifier for this dataset
     label: identifier used
-    default: "emu"
     inputBinding:
       position: 1
       prefix: --output-basename
@@ -51,13 +50,11 @@ inputs:
           - map-ont
     doc: (map-ont, map-pb, or sr) short-read; sr, Pac-Bio:map-pb, ONT:map-ont. default map-ont
     label: Denote sequencer 
-    default: map-ont
     inputBinding:
       position: 3
       prefix: --type
   threads:
     type: int?
-    default: 4
     inputBinding:
       prefix: --threads
 

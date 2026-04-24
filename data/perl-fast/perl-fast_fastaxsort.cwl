@@ -65,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: Use alternative format for input (e.g., see fasconvert formats).
-    default: fasta
     inputBinding:
       position: 104
       prefix: --format
@@ -108,7 +107,6 @@ inputs:
       - 'null'
       - string
     doc: Use [string] as the name of the logfile.
-    default: FAST.log.txt
     inputBinding:
       position: 104
       prefix: --logname

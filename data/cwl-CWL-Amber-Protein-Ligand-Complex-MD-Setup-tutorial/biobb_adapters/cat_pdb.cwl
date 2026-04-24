@@ -62,7 +62,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_structure_path
-    default: system.pdb
 
   config:
     label: Advanced configuration options for biobb_structure_utils CatPDB

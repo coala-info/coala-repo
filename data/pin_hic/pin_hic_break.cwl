@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - float
     doc: minimum coverage ratio between maximum coverage and the gap coverage
-    default: 0.3
     inputBinding:
       position: 103
       prefix: -m
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality
-    default: 10
     inputBinding:
       position: 103
       prefix: -q

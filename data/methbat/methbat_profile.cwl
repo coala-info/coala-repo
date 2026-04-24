@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: The maximum Fisher's exact test p-value to consider ASM
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --max-asm-fishers-exact
@@ -37,7 +36,6 @@ inputs:
       - float
     doc: The maximum combined methylation fraction to consider unmethylated 
       status
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --max-unmethylated-combined
@@ -47,7 +45,6 @@ inputs:
       - float
     doc: The minimum absolute delta from mean to flag a region as Hypo-/Hyper- 
       relative to the background population
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --min-abs-delta
@@ -57,7 +54,6 @@ inputs:
       - float
     doc: The minimum absolute Z-score to flag a region as Hypo-/Hyper- relative 
       to the background population
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --min-abs-zscore
@@ -67,7 +63,6 @@ inputs:
       - float
     doc: The minimum absolute difference between mean haplotype methylation 
       fractions to consider ASM
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --min-asm-abs-delta-mean
@@ -77,7 +72,6 @@ inputs:
       - float
     doc: The minimum fraction of CpGs in a region that must be phased to 
       consider ASM
-    default: 0.75
     inputBinding:
       position: 101
       prefix: --min-asm-phased-fraction
@@ -88,7 +82,6 @@ inputs:
     doc: The minimum number of background dataset required to flag a region 
       Hypo-/Hyper- relative to the background population; ASM requires this many
       phased datasets
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-datasets
@@ -97,7 +90,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum combined methylation fraction to consider methylated status
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --min-methylated-combined
@@ -106,7 +98,6 @@ inputs:
       - 'null'
       - float
     doc: ASM p-value cutoff for --output-asm-bed
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --p-value
@@ -117,7 +108,6 @@ inputs:
         items: string
     doc: Specify the label from the background profile to compare against, can 
       be specified multiple times
-    default: ALL
     inputBinding:
       position: 101
       prefix: --profile-label

@@ -75,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of bins to be combined, default is 250
-    default: 250
     inputBinding:
       position: 101
       prefix: --maxContigsInSingleJob
@@ -171,7 +170,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write bin statistics. Default False
-    default: false
     inputBinding:
       position: 101
       prefix: --writeBinStats

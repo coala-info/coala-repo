@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: length of kmer
-    default: 21
     inputBinding:
       position: 101
       prefix: -k

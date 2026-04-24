@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: database to search
-    default: COX1
     inputBinding:
       position: 101
       prefix: -d
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - boolean
     doc: debug mode output
-    default: false
     inputBinding:
       position: 101
       prefix: -D
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: input file format
-    default: fasta
     inputBinding:
       position: 101
       prefix: -f
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: "Maximum submission time for a sequence, useful for\nhandling TimeOutException."
-    default: 4
     inputBinding:
       position: 101
       prefix: -r
@@ -84,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: The length of subsequences for chimera check
-    default: 400
     inputBinding:
       position: 101
       prefix: -q
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: how many first top hits will be output.
-    default: 1
     inputBinding:
       position: 101
       prefix: -n

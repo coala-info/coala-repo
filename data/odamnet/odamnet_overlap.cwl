@@ -38,7 +38,6 @@ inputs:
     doc: "True: Extract target genes from chemicals\n                            \
       \      False: Extract target genes from chemicals +\n                      \
       \            its child chemicals"
-    default: true
     inputBinding:
       position: 101
       prefix: --directAssociation
@@ -48,7 +47,6 @@ inputs:
       - int
     doc: "Minimum number of publications to keep an\n                            \
       \      interaction"
-    default: 2
     inputBinding:
       position: 101
       prefix: --nbPub
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output folder name to save results
-    default: OutputResults
     inputBinding:
       position: 101
       prefix: --outputPath

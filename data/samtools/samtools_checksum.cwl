@@ -62,7 +62,6 @@ inputs:
   - 'null'
   - int
   doc: Stop after INT number of records
-  default: 0
   inputBinding:
     position: 102
     prefix: --count
@@ -71,7 +70,6 @@ inputs:
   - 'null'
   - string
   doc: Filter if any FLAGs are present
-  default: '0x900'
   inputBinding:
     position: 102
     prefix: --exclude-flags
@@ -80,7 +78,6 @@ inputs:
   - 'null'
   - string
   doc: BAM FLAGs to use in checksums
-  default: '0x0c1'
   inputBinding:
     position: 102
     prefix: --flag-mask
@@ -123,7 +120,6 @@ inputs:
   - 'null'
   - string
   doc: Filter unless all FLAGs are present
-  default: '0'
   inputBinding:
     position: 102
     prefix: --require-flags
@@ -156,7 +152,6 @@ inputs:
   - 'null'
   - string
   doc: Select tags to checksum
-  default: BC,FI,QT,RT,TC
   inputBinding:
     position: 102
     prefix: --tags
@@ -165,7 +160,6 @@ inputs:
   - 'null'
   - int
   doc: Number of additional threads to use
-  default: 0
   inputBinding:
     position: 102
     prefix: --threads

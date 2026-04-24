@@ -38,7 +38,6 @@ inputs:
       position: 100
   threads:
     type: int?
-    default: 3
     inputBinding:
       prefix: --cpu
   ko_list:
@@ -65,7 +64,6 @@ inputs:
           - mapper-one-line
         inputBinding:
           prefix: --format
-    default: detail-tsv
     doc: |
           Format of the output. (default detail-tsv)
           detail:          Detail for each hits (including hits below threshold)

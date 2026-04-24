@@ -44,7 +44,6 @@ inputs:
       - string
     doc: Use alternative format for input. See man page for "fasconvert" for allowed
       formats.
-    default: fasta
     inputBinding:
       position: 102
       prefix: --format
@@ -70,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: Use [string] as the name of the logfile.
-    default: FAST.log.txt
     inputBinding:
       position: 102
       prefix: --logname
@@ -79,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: The number of sequence records to print. Must be a positive integer.
-    default: 10
     inputBinding:
       position: 102
       prefix: --records

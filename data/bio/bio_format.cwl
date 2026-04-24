@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: end coordinate
-    default: ''
     inputBinding:
       position: 102
       prefix: --end
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: start coordinate
-    default: ''
     inputBinding:
       position: 102
       prefix: --start

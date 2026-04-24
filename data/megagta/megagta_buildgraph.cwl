@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: gpu memory to be used. 0 for auto detect.
-    default: 0
     inputBinding:
       position: 101
       prefix: --gpu_mem
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Max memory to be used. 90% of the free memory is recommended.
-    default: 0
     inputBinding:
       position: 101
       prefix: --host_mem
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: kmer size
-    default: 21
     inputBinding:
       position: 101
       prefix: --kmer_k
@@ -48,7 +45,6 @@ inputs:
       - int
     doc: "memory options. 0: minimize memory usage; 1: automatically use moderate
       memory; other: use all available mem specified by '--host_mem'"
-    default: 1
     inputBinding:
       position: 101
       prefix: --mem_flag
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: min frequency to output an edge
-    default: 2
     inputBinding:
       position: 101
       prefix: --min_kmer_frequency
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPU threads. At least 2.
-    default: 0
     inputBinding:
       position: 101
       prefix: --num_cpu_threads
@@ -83,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads for output. Must be less than num_cpu_threads
-    default: 0
     inputBinding:
       position: 101
       prefix: --num_output_threads
@@ -92,7 +85,6 @@ inputs:
       - 'null'
       - string
     doc: output prefix
-    default: out
     inputBinding:
       position: 101
       prefix: --output_prefix

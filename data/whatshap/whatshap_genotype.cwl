@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: 'This constant is used to regularize the priors (default: 0).'
-    default: 0
     inputBinding:
       position: 103
       prefix: --constant
@@ -59,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: 'gap extend penalty in case affine gap costs are used (default: 7).'
-    default: 7
     inputBinding:
       position: 103
       prefix: --gap-extend
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: 'gap starting penalty in case affine gap costs are used (default: 10).'
-    default: 10
     inputBinding:
       position: 103
       prefix: --gap-start
@@ -88,7 +85,6 @@ inputs:
     doc: 'Phred scaled error probability threshold used for genotyping (default: 0).
       Must be at least 0. If error probability of genotype is higher, genotype ./.
       is output.'
-    default: 0
     inputBinding:
       position: 103
       prefix: --gt-qual-threshold
@@ -139,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality
-    default: 20
     inputBinding:
       position: 103
       prefix: --mapping-quality
@@ -148,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: Reduce coverage to at most MAXCOV
-    default: 15
     inputBinding:
       position: 103
       prefix: --max-coverage
@@ -157,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: 'mismatch cost in case affine gap costs are used (default: 15)'
-    default: 15
     inputBinding:
       position: 103
       prefix: --mismatch
@@ -166,7 +159,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Skip initial prior genotyping and use uniform priors (default: False).'
-    default: false
     inputBinding:
       position: 103
       prefix: --no-priors
@@ -184,7 +176,6 @@ inputs:
       - int
     doc: 'When --reference is used, extend alignment by this many bases to left and
       right when realigning (default: 10).'
-    default: 10
     inputBinding:
       position: 103
       prefix: --overhang
@@ -213,7 +204,6 @@ inputs:
       - float
     doc: 'Recombination rate in cM/Mb (used with --ped). If given, a constant recombination
       rate is assumed (default: 1.26cM/Mb).'
-    default: 1.26
     inputBinding:
       position: 103
       prefix: --recombrate

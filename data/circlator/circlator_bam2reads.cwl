@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: All reads mapped to contigs shorter than this will be kept
-    default: 100000
     inputBinding:
       position: 103
       prefix: --length_cutoff
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of read to output
-    default: 250
     inputBinding:
       position: 103
       prefix: --min_read_length

@@ -18,7 +18,6 @@ inputs:
       - int
     doc: "This is the deme id where ascertainment is performed\n                 \
       \          when simulating SNPs. Default: no ascertainment."
-    default: 0
     inputBinding:
       position: 101
       prefix: --ascDeme
@@ -28,7 +27,6 @@ inputs:
       - int
     doc: "number of ascertained chromosomes used to define SNPs in\n             \
       \              a given deme. Optional parameter. Default value is 2"
-    default: 2
     inputBinding:
       position: 101
       prefix: --ascSize
@@ -39,7 +37,6 @@ inputs:
     doc: "tolerance for Brent optimization\n                           Default = 0.01.
       Smaller value imply more precise estimations\n                           but
       require more computation time (min;max) = (1e-1;1e-5)"
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --brentol
@@ -49,7 +46,6 @@ inputs:
       - int
     doc: "number of openMP threads for parameter estimation\n                    \
       \       (default=1, max=numBatches, use 0 to let openMP choose optimal value)"
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -85,7 +81,6 @@ inputs:
       - int
     doc: "output DNA as SNP data, and specify maximum no. of SNPs\n              \
       \             to output (use 0 to output all SNPs)."
-    default: 2000
     inputBinding:
       position: 101
       prefix: --dnatosnp
@@ -174,7 +169,6 @@ inputs:
     doc: "number of simulated polymorphic sites kept in memory\n                 \
       \          If the simulated no. is larger, then temporary files\n          \
       \                 are created. Default value is 10000"
-    default: 10000
     inputBinding:
       position: 101
       prefix: --keep
@@ -185,7 +179,6 @@ inputs:
     doc: "precision for computation of logs of random numbers. Max value is 23\n \
       \                          Default value is 23 (full precision). Recommended
       lower value is 18"
-    default: 23
     inputBinding:
       position: 101
       prefix: --logprecision
@@ -205,7 +198,6 @@ inputs:
     doc: "number of  loops (ECM cycles) for which the lhood is \n                \
       \           computed on both monomorphic and polymorphic sites\n           \
       \                if REFERENCE parameter is defined"
-    default: 2
     inputBinding:
       position: 101
       prefix: --minnumloops
@@ -216,7 +208,6 @@ inputs:
     doc: "minimum observed SFS entry count taken into account in\n               \
       \            likelihood computation (default = 1, but value can be < 1. e.g\
       \  0.5)"
-    default: 1
     inputBinding:
       position: 101
       prefix: --minSFSCount
@@ -259,7 +250,6 @@ inputs:
       - int
     doc: "max. no. of batches for multi-threaded runs\n                          \
       \ (default=12)"
-    default: 12
     inputBinding:
       position: 101
       prefix: --numBatches
@@ -269,7 +259,6 @@ inputs:
       - int
     doc: "number of bootstraps to perform on polymorphic sites to extract SFS\n  \
       \                         (should be used in addition to -s0 and -j options)"
-    default: 10
     inputBinding:
       position: 101
       prefix: --numboot
@@ -279,7 +268,6 @@ inputs:
       - int
     doc: "number of draws from parameter priors (optional)\n                     \
       \      Listed parameter values are substituted in template file"
-    default: 10
     inputBinding:
       position: 101
       prefix: --numest
@@ -289,7 +277,6 @@ inputs:
       - int
     doc: "number of loops (ECM cycles) to perform during\n                       \
       \    lhood maximization. Default is 20"
-    default: 20
     inputBinding:
       position: 101
       prefix: --numloops
@@ -299,7 +286,6 @@ inputs:
       - int
     doc: "number of simulations to perform\n                           Also applies
       for parameter estimation"
-    default: 1000
     inputBinding:
       position: 101
       prefix: --numsims

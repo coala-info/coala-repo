@@ -64,7 +64,6 @@ inputs:
       - int
     doc: "Filter the length of contigs || default: 3000\n    Contigs with length smaller
       than this value will not proceed"
-    default: 3000
     inputBinding:
       position: 101
       prefix: --len
@@ -155,7 +154,6 @@ inputs:
       - string
     doc: 'Select a program to run: end_to_end, phamer, phagcn, phatyp, cherry, phavip,
       contamination, votu, tree'
-    default: end_to_end
     inputBinding:
       position: 101
       prefix: --task

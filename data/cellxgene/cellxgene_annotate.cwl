@@ -20,7 +20,6 @@ inputs:
       that will store the predicted annotation values and confidence scores, 2) `obsm`
       embeddings (reference and umap embedding), and 3) `uns` metadata for the prediction
       operation'
-    default: cxg
     inputBinding:
       position: 102
       prefix: --annotation-prefix

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: "aligner choice (rapsearch, diamond, blast, or mmseqs2;\ndefault rapsearch)."
-    default: rapsearch
     inputBinding:
       position: 101
       prefix: --aligner
@@ -28,7 +27,6 @@ inputs:
       - boolean
     doc: "amino acid input; 0 nucleotides; 1 amino acids\n                       \
       \ (default 0)."
-    default: false
     inputBinding:
       position: 101
       prefix: --amino_acid
@@ -38,7 +36,6 @@ inputs:
       - string
     doc: "database (DB_90, DB_95, DB_98, or DB_100; default\n                    \
       \    DB_90)"
-    default: DB_90
     inputBinding:
       position: 101
       prefix: --database
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - float
     doc: e-value (default 0.00001).
-    default: 1e-05
     inputBinding:
       position: 101
       prefix: --evalue
@@ -65,7 +61,6 @@ inputs:
       - boolean
     doc: "runs RAPSearch2 or DIAMOND on fast mode - 0 (False) /\n                \
       \        1 (True) (default: 1)."
-    default: true
     inputBinding:
       position: 101
       prefix: --fast
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'runs FOCUS; 1 does run; 0 does not run: default 0.'
-    default: false
     inputBinding:
       position: 101
       prefix: --focus
@@ -92,7 +86,6 @@ inputs:
       - 'null'
       - File
     doc: 'Path to log file (Default: STDOUT).'
-    default: STDOUT
     inputBinding:
       position: 101
       prefix: --log
@@ -101,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum alignment (amino acids) (default: 15).'
-    default: 15
     inputBinding:
       position: 101
       prefix: --minimum_alignment
@@ -110,7 +102,6 @@ inputs:
       - 'null'
       - float
     doc: minimum identity (default 60 perc).
-    default: 60.0
     inputBinding:
       position: 101
       prefix: --minimum_identity
@@ -120,7 +111,6 @@ inputs:
       - boolean
     doc: "normalises each query counts based on number of hits;\n                \
       \        0 doesn't normalize; 1 normalizes (default: 1)."
-    default: true
     inputBinding:
       position: 101
       prefix: --normalise_output
@@ -135,7 +125,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output prefix (Default: output).'
-    default: output
     inputBinding:
       position: 101
       prefix: --output_prefix
@@ -168,7 +157,6 @@ inputs:
       - int
     doc: "Number Threads used in the k-mer counting (Default:\n                  \
       \      4)."
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: "'N' (Bad read) percentage causing cycle removal"
-    default: 20
     inputBinding:
       position: 104
       prefix: -x
@@ -94,7 +93,6 @@ inputs:
       - 'null'
       - float
     doc: Homopolymer filter percent
-    default: 95
     inputBinding:
       position: 104
       prefix: --homopolymer-pct
@@ -119,7 +117,6 @@ inputs:
       - 'null'
       - float
     doc: Log scale for adapter minimum-length-match
-    default: 2.2
     inputBinding:
       position: 104
       prefix: -s
@@ -128,7 +125,6 @@ inputs:
       - 'null'
       - float
     doc: Complexity filter percent
-    default: 95
     inputBinding:
       position: 104
       prefix: --lowcomplex-pct
@@ -169,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum adapter difference percentage
-    default: 10
     inputBinding:
       position: 104
       prefix: -p
@@ -202,7 +197,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum clip length, overrides scaled auto
-    default: 1
     inputBinding:
       position: 104
       prefix: -m
@@ -235,7 +229,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum remaining sequence length
-    default: 19
     inputBinding:
       position: 104
       prefix: -l
@@ -244,7 +237,6 @@ inputs:
       - 'null'
       - float
     doc: '% occurance threshold before adapter clipping'
-    default: 0.25
     inputBinding:
       position: 104
       prefix: -t
@@ -285,7 +277,6 @@ inputs:
       - 'null'
       - int
     doc: quality threshold causing base removal
-    default: 10
     inputBinding:
       position: 104
       prefix: -q
@@ -294,7 +285,6 @@ inputs:
       - 'null'
       - int
     doc: window-size for quality trimming
-    default: 1
     inputBinding:
       position: 104
       prefix: -w
@@ -303,7 +293,6 @@ inputs:
       - 'null'
       - int
     doc: 'Remove duplicate reads: Read_1 has an identical N bases'
-    default: 0
     inputBinding:
       position: 104
       prefix: -D
@@ -336,7 +325,6 @@ inputs:
       - 'null'
       - int
     doc: sKew percentage-less-than causing cycle removal
-    default: 2
     inputBinding:
       position: 104
       prefix: -k
@@ -345,7 +333,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads to use for subsampling
-    default: 300000
     inputBinding:
       position: 104
       prefix: -C

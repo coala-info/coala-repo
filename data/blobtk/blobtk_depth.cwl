@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Bin size for coverage calculations (use 0 for full contig length)
-    default: 0
     inputBinding:
       position: 101
       prefix: --bin-size

@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - float
     doc: Majority rule threshold
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --majority_threshold
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of reads to use for consensus generation
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --max_reads
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth for consensus calling
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_depth
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum quality score for consensus calling
-    default: 30
     inputBinding:
       position: 101
       prefix: --min_quality

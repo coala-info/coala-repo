@@ -15,7 +15,6 @@ inputs:
       self-circle, 2: dangling-end, 3: error, 4: extra dangling-end, 5: too close
       from RES, 6: too short, 7: too large, 8: over-represented, 9: duplicated, 10:
       random breaks"
-    default:
       - 1
       - 2
       - 3
@@ -52,7 +51,6 @@ inputs:
     doc: Maximum number of CPU cores available in the execution host. If higher 
       than 1, tasks with multi-threading capabilities will enabled (if 0 all 
       available) cores will be used
-    default: 20
     inputBinding:
       position: 101
       prefix: --cpus
@@ -70,7 +68,6 @@ inputs:
       - string
     doc: for compression into pseudo-BAM format. Short contains only positions 
       of reads mapped, mid everything but restriction sites.
-    default: mid
     inputBinding:
       position: 101
       prefix: --format
@@ -80,7 +77,6 @@ inputs:
       - int
     doc: to exclude large genomic RE fragments (probably resulting from gaps in 
       the reference genome)
-    default: 100000
     inputBinding:
       position: 101
       prefix: --max_frag_size
@@ -89,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: to exclude small genomic RE fragments (smaller than sequenced reads)
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_frag_size
@@ -107,7 +102,6 @@ inputs:
       - float
     doc: percentage of restriction-enzyme (RE) genomic fragments with more 
       coverage to exclude (possible PCR artifact).
-    default: 0.001%
     inputBinding:
       position: 101
       prefix: --over_represented
@@ -129,7 +123,6 @@ inputs:
       - int
     doc: to exclude read-ends falling too close from RE site 
       (pseudo-dangling-ends)
-    default: 5
     inputBinding:
       position: 101
       prefix: --re_proximity

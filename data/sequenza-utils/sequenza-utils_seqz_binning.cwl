@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum depth for a bin to be considered
-    default: 1000
     inputBinding:
       position: 102
       prefix: --max-depth
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum allele frequency for a bin to be considered
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --max-freq
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of a bin to be considered
-    default: 1000000
     inputBinding:
       position: 102
       prefix: --max-len
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth for a bin to be considered
-    default: 20
     inputBinding:
       position: 102
       prefix: --min-depth
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele frequency for a bin to be considered
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --min-freq
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of a bin to be considered
-    default: 10000
     inputBinding:
       position: 102
       prefix: --min-len
@@ -76,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Step size for binning (bp)
-    default: 50000
     inputBinding:
       position: 102
       prefix: --step
@@ -85,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -102,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for binning (bp)
-    default: 100000
     inputBinding:
       position: 102
       prefix: --window

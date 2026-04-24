@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: 'optional gzip with given level (default: 0; min: 0; max: 9)'
-    default: 0
     inputBinding:
       position: 103
       prefix: -g
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: 'line length (default: 80; min: 40; max: 2000000000)'
-    default: 80
     inputBinding:
       position: 103
       prefix: -l
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: 'no of threads (default: 28; min: 1; max: 56)'
-    default: 28
     inputBinding:
       position: 103
       prefix: -t
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: 'verbosity level (default: 0; min: 0; max: 2)'
-    default: 0
     inputBinding:
       position: 103
       prefix: -v

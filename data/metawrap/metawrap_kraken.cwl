@@ -48,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: read subsampling number
-    default: all
     inputBinding:
       position: 104
       prefix: -s

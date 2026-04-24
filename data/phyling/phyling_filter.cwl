@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Input data sequence type
-    default: AUTO
     inputBinding:
       position: 101
       prefix: --seqtype
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Threads for filtering
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads

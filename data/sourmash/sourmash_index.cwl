@@ -72,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: 'type of index to build (default: SBT)'
-    default: SBT
     inputBinding:
       position: 103
       prefix: --index-type
@@ -145,7 +144,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'choose a nucleotide signature (default: True)'
-    default: true
     inputBinding:
       position: 103
       prefix: --dna, --rna, --nucleotide

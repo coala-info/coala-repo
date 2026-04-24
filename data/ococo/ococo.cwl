@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - File
     doc: input SAM/BAM/CRAM file
-    default: '-'
     inputBinding:
       position: 101
       prefix: -i
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base quality
-    default: 20
     inputBinding:
       position: 101
       prefix: -Q
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality
-    default: 20
     inputBinding:
       position: 101
       prefix: -q
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: consensus mode (majority/stochastic/gapless)
-    default: majority
     inputBinding:
       position: 101
       prefix: -m
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

@@ -37,7 +37,6 @@ arguments:
 inputs:
   threads:
     type: int?
-    default: 1
     inputBinding:
       prefix: --processors
   seq_summary:

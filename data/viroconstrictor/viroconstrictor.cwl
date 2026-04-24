@@ -9,7 +9,6 @@ inputs:
     type: string
     doc: "Define the amplicon-type, either being\n'end-to-end', 'end-to-mid', or\n\
       'fragmented'. See the docs for more\ninfo"
-    default: end-to-end
     inputBinding:
       position: 101
       prefix: --amplicon-type
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Adds extra information to the log file
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: "Run the workflow without actually\ndoing anything"
-    default: false
     inputBinding:
       position: 101
       prefix: --dryrun
@@ -69,7 +66,6 @@ inputs:
       - boolean
     doc: "Match your data to the best reference\navailable in the given reference
       fasta\nfile."
-    default: false
     inputBinding:
       position: 101
       prefix: --match-ref
@@ -78,14 +74,12 @@ inputs:
       - 'null'
       - int
     doc: "Minimum coverage for the consensus\nsequence."
-    default: 30
     inputBinding:
       position: 101
       prefix: --min-coverage
   - id: output_dir
     type: Directory
     doc: Output directory
-    default: /
     inputBinding:
       position: 101
       prefix: --output
@@ -94,7 +88,6 @@ inputs:
     doc: "Define the sequencing platform that\nwas used to generate the dataset,\n\
       either being 'nanopore', 'illumina' or\n'iontorrent', see the docs for more\n\
       info"
-    default: nanopore
     inputBinding:
       position: 101
       prefix: --platform
@@ -114,7 +107,6 @@ inputs:
       - int
     doc: "Maximum number of mismatches allowed\nin the primer sequences during primer\n\
       coordinate search. Use 0 for exact\nprimer matches Default is 3."
-    default: 3
     inputBinding:
       position: 101
       prefix: --primer-mismatch-rate
@@ -150,7 +142,6 @@ inputs:
     doc: "The scheduler to use for the workflow,\neither 'auto', 'none', or any in
       the\nfollowing list: ['LOCAL', 'SLURM',\n'LSF', 'DRYRUN', 'AUTO']. Default is\n\
       'auto', which will try to determine\nthe scheduler automatically."
-    default: auto
     inputBinding:
       position: 101
       prefix: --scheduler
@@ -162,7 +153,6 @@ inputs:
       ref process should take segmented\nreference information into account.\nPlease
       note that specific formatting\nis required for the reference fasta\nfile, see
       the docs for more info."
-    default: false
     inputBinding:
       position: 101
       prefix: --segmented
@@ -171,7 +161,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip the update check
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-updates
@@ -201,7 +190,6 @@ inputs:
     doc: "Use this flag to indicate that the\n(illumina) sequencing data is\nunidirectional
       (i.e. only R1 reads are\navailable). This will cause the\npipeline to not consider
       R2 reads for\nthe analysis. Can only be combined\nwith the illumina platform."
-    default: false
     inputBinding:
       position: 101
       prefix: --unidirectional
@@ -210,7 +198,6 @@ inputs:
       - 'null'
       - boolean
     doc: Adds extra information to the log file
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

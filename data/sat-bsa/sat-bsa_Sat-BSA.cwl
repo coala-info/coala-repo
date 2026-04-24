@@ -75,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: The mapping quality value excluded from analysis.
-    default: 0
     inputBinding:
       position: 102
       prefix: -q
@@ -84,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum length of insertion or deletion applied for analysis.
-    default: 5
     inputBinding:
       position: 102
       prefix: -f
@@ -93,7 +91,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for P-value from Fishers exact test.
-    default: 0.05
     inputBinding:
       position: 102
       prefix: -v
@@ -102,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Defining promoter size applied for identifying SVs.
-    default: 0
     inputBinding:
       position: 102
       prefix: -p
@@ -111,7 +107,6 @@ inputs:
       - 'null'
       - string
     doc: Read status set in Canu.
-    default: -nanopore-raw
     inputBinding:
       position: 102
       prefix: -r
@@ -159,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: Thread number.
-    default: 1
     inputBinding:
       position: 102
       prefix: -t

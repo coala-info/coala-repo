@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to folder containing recipes
-    default: recipes/
     inputBinding:
       position: 1
   - id: config
@@ -17,7 +16,6 @@ inputs:
       - 'null'
       - File
     doc: Path to Bioconda config
-    default: config.yml
     inputBinding:
       position: 2
   - id: channel
@@ -25,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Channel with packages to check
-    default: bioconda
     inputBinding:
       position: 103
       prefix: --channel
@@ -36,7 +33,6 @@ inputs:
         items: string
     doc: Git range (e.g. commits or something like "master HEAD" to check 
       commits in HEAD vs master, or just "HEAD" to include uncommitted changes).
-    default: '-'
     inputBinding:
       position: 103
       prefix: --git-range
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for links to build failures
-    default: ''
     inputBinding:
       position: 103
       prefix: --link-prefix
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Output format
-    default: txt
     inputBinding:
       position: 103
       prefix: --output-format

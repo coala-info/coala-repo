@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: cluster identity level
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --level

@@ -137,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: Gap between tracks
-    default: 4
     inputBinding:
       position: 101
       prefix: --track-gap
@@ -146,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: Width of each track ring
-    default: 6
     inputBinding:
       position: 101
       prefix: --track-width

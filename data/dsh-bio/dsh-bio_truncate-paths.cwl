@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: input GFA 1.0 path
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input-gfa1-path

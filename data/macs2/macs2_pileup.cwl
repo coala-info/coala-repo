@@ -13,7 +13,6 @@ inputs:
     doc: If this option is set as on, aligned reads will be extended in both 
       upstream and downstream directions by extension size. It means 
       [-size,size] where 0 is the 5' end of a aligned read.
-    default: false
     inputBinding:
       position: 101
       prefix: --both-direction
@@ -24,7 +23,6 @@ inputs:
     doc: Buffer size for incrementally increasing internal array size to store 
       reads alignment information. Recommended to specify a smaller buffer size 
       if there are large number of chromosomes to decrease memory usage.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --buffer-size
@@ -34,7 +32,6 @@ inputs:
       - int
     doc: The extension size in bps. Each alignment read will become a EXTSIZE of
       fragment, then be piled up. Check description for -B for detail.
-    default: 200
     inputBinding:
       position: 101
       prefix: --extsize
@@ -45,7 +42,6 @@ inputs:
     doc: Format of tag file, "AUTO", "BED", "ELAND", "ELANDMULTI", 
       "ELANDEXPORT", "SAM", "BAM", "BOWTIE", "BAMPE", or "BEDPE". The default 
       AUTO option will let 'macs2 pileup' decide which format the file is.
-    default: AUTO
     inputBinding:
       position: 101
       prefix: --format

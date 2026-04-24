@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: debug
-    default: false
     inputBinding:
       position: 102
       prefix: -d
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: intervals
-    default: ''
     inputBinding:
       position: 102
       prefix: -i
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - File
     doc: file containing list of intervals
-    default: ''
     inputBinding:
       position: 102
       prefix: -I
@@ -42,7 +39,6 @@ inputs:
       - boolean
     doc: do not fail when REF is inconsistent with reference sequence for non 
       SNPs
-    default: false
     inputBinding:
       position: 102
       prefix: -n
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not print options and summary
-    default: false
     inputBinding:
       position: 102
       prefix: -q
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: window size for local sorting of variants
-    default: 10000
     inputBinding:
       position: 102
       prefix: -w

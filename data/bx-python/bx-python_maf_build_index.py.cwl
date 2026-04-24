@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - File
     doc: Index file to be created. If not provided, maf_file.index is used.
-    default: maf_file.index
     inputBinding:
       position: 2
   - id: species

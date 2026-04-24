@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: a vcf input file
-    default: stdin
     inputBinding:
       position: 1
   - id: allele_fraction_filters

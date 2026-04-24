@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: corner threshold parameter
-    default: 1
     inputBinding:
       position: 102
       prefix: --alphamax
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: black/white cutoff in input file
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --blacklevel
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: set foreground color
-    default: black
     inputBinding:
       position: 102
       prefix: --color
@@ -91,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: set fill color
-    default: transparent
     inputBinding:
       position: 102
       prefix: --fillcolor
@@ -108,7 +104,6 @@ inputs:
       - 'null'
       - float
     doc: gamma value for anti-aliasing
-    default: 2.2
     inputBinding:
       position: 102
       prefix: --gamma
@@ -163,7 +158,6 @@ inputs:
       - 'null'
       - boolean
     doc: use postscript level 2 compression
-    default: true
     inputBinding:
       position: 102
       prefix: --level2
@@ -212,7 +206,6 @@ inputs:
       - 'null'
       - float
     doc: curve optimization tolerance
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --opttolerance
@@ -221,7 +214,6 @@ inputs:
       - 'null'
       - string
     doc: page size
-    default: letter
     inputBinding:
       position: 102
       prefix: --pagesize
@@ -340,7 +332,6 @@ inputs:
       - 'null'
       - int
     doc: suppress speckles of up to this size
-    default: 2
     inputBinding:
       position: 102
       prefix: --turdsize
@@ -357,7 +348,6 @@ inputs:
       - 'null'
       - int
     doc: quantize output to 1/unit pixels
-    default: 1
     inputBinding:
       position: 102
       prefix: --unit

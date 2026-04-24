@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - File
     doc: Path to output log file.
-    default: output_dir/timestamp.log
     inputBinding:
       position: 101
       prefix: --log-path

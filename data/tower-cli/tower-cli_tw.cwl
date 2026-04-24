@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: Seqera Platform API endpoint URL (TOWER_API_ENDPOINT)
-    default: api.cloud.seqera.io
     inputBinding:
       position: 102
       prefix: --url

@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Normalization method
-    default: TTR
     inputBinding:
       position: 102
       prefix: -n

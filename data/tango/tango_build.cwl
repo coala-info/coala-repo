@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cpus to use when building (defaults to 1)
-    default: 1
     inputBinding:
       position: 104
       prefix: --cpus

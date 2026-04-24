@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer size to be used while calculating frequency
-    default: 1
     inputBinding:
       position: 102
       prefix: --kmer
@@ -51,7 +50,6 @@ inputs:
     doc: Quality score to be applied to to each position for all reads. 'setQual'
       flag should be present in order it to work. Has no effect if input reads are
       not in FASTQ format.
-    default: I
     inputBinding:
       position: 102
       prefix: --qual
@@ -88,7 +86,6 @@ inputs:
     doc: Sensitivity of selected reads. If some positions are predominated by specific
       nucleotides, increasing this value can make simulated reads more similar to
       input reads. However runtime will also increase linearly.
-    default: 20
     inputBinding:
       position: 102
       prefix: --sens

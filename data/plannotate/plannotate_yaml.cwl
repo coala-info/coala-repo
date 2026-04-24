@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Algorithm for fpbase annotation.
-    default: ctg
     inputBinding:
       position: 102
       prefix: --fpbase-algo
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Composition-based statistics for fpbase annotation.
-    default: 0
     inputBinding:
       position: 102
       prefix: --fpbase-comp-based-stats
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether fpbase database is compressed.
-    default: false
     inputBinding:
       position: 102
       prefix: --fpbase-compressed
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Culling overlap for fpbase annotation.
-    default: 200
     inputBinding:
       position: 102
       prefix: --fpbase-culling-overlap
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Default type for fpbase entries.
-    default: CDS
     inputBinding:
       position: 102
       prefix: --fpbase-default-type
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Gap extend penalty for fpbase annotation.
-    default: 1
     inputBinding:
       position: 102
       prefix: --fpbase-gapextend
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Gap open penalty for fpbase annotation.
-    default: 10
     inputBinding:
       position: 102
       prefix: --fpbase-gapopen
@@ -78,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Identity threshold for fpbase annotation.
-    default: 75
     inputBinding:
       position: 102
       prefix: --fpbase-id
@@ -87,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: k-value for fpbase annotation.
-    default: 0
     inputBinding:
       position: 102
       prefix: --fpbase-k
@@ -96,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: Location of the fpbase database.
-    default: Default
     inputBinding:
       position: 102
       prefix: --fpbase-location
@@ -105,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: Scoring matrix for fpbase annotation.
-    default: BLOSUM90
     inputBinding:
       position: 102
       prefix: --fpbase-matrix
@@ -114,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of HSPs for fpbase annotation.
-    default: 10
     inputBinding:
       position: 102
       prefix: --fpbase-max-hsps
@@ -123,7 +111,6 @@ inputs:
       - 'null'
       - string
     doc: Method used for fpbase annotation.
-    default: diamond
     inputBinding:
       position: 102
       prefix: --fpbase-method
@@ -132,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum ORF length for fpbase annotation.
-    default: 1
     inputBinding:
       position: 102
       prefix: --fpbase-min-orf
@@ -141,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Priority of fpbase annotation.
-    default: 1
     inputBinding:
       position: 102
       prefix: --fpbase-priority
@@ -150,7 +135,6 @@ inputs:
       - 'null'
       - float
     doc: Seed cut-off for fpbase annotation.
-    default: 0.001
     inputBinding:
       position: 102
       prefix: --fpbase-seed-cut
@@ -159,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for fpbase annotation.
-    default: 1
     inputBinding:
       position: 102
       prefix: --fpbase-threads
@@ -168,7 +151,6 @@ inputs:
       - 'null'
       - string
     doc: Version of the fpbase database.
-    default: downloaded 2020-09-02
     inputBinding:
       position: 102
       prefix: --fpbase-version
@@ -177,7 +159,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether Rfam database is compressed.
-    default: false
     inputBinding:
       position: 102
       prefix: --rfam-compressed
@@ -186,7 +167,6 @@ inputs:
       - 'null'
       - string
     doc: Default type for Rfam entries.
-    default: ncRNA
     inputBinding:
       position: 102
       prefix: --rfam-default-type
@@ -195,7 +175,6 @@ inputs:
       - 'null'
       - string
     doc: Location of the Rfam database.
-    default: Default
     inputBinding:
       position: 102
       prefix: --rfam-location
@@ -204,7 +183,6 @@ inputs:
       - 'null'
       - string
     doc: Method used for Rfam annotation.
-    default: infernal
     inputBinding:
       position: 102
       prefix: --rfam-method
@@ -213,7 +191,6 @@ inputs:
       - 'null'
       - int
     doc: Priority of Rfam annotation.
-    default: 3
     inputBinding:
       position: 102
       prefix: --rfam-priority
@@ -222,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for Rfam annotation.
-    default: 1
     inputBinding:
       position: 102
       prefix: --rfam-threads
@@ -231,7 +207,6 @@ inputs:
       - 'null'
       - string
     doc: Version of the Rfam database.
-    default: release 14.5
     inputBinding:
       position: 102
       prefix: --rfam-version
@@ -240,7 +215,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether snapgene database is compressed.
-    default: false
     inputBinding:
       position: 102
       prefix: --snapgene-compressed
@@ -249,7 +223,6 @@ inputs:
       - 'null'
       - int
     doc: Culling limit for snapgene annotation.
-    default: 25
     inputBinding:
       position: 102
       prefix: --snapgene-culling-limit
@@ -258,7 +231,6 @@ inputs:
       - 'null'
       - string
     doc: Default type for snapgene entries.
-    default: None
     inputBinding:
       position: 102
       prefix: --snapgene-default-type
@@ -267,7 +239,6 @@ inputs:
       - 'null'
       - string
     doc: Location of the snapgene database.
-    default: Default
     inputBinding:
       position: 102
       prefix: --snapgene-location
@@ -276,7 +247,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of target sequences for snapgene annotation.
-    default: 20000
     inputBinding:
       position: 102
       prefix: --snapgene-max-target-seqs
@@ -285,7 +255,6 @@ inputs:
       - 'null'
       - string
     doc: Method used for snapgene annotation.
-    default: blastn
     inputBinding:
       position: 102
       prefix: --snapgene-method
@@ -294,7 +263,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for snapgene annotation.
-    default: 1
     inputBinding:
       position: 102
       prefix: --snapgene-num-threads
@@ -303,7 +271,6 @@ inputs:
       - 'null'
       - float
     doc: Percent identity threshold for snapgene annotation.
-    default: 95.0
     inputBinding:
       position: 102
       prefix: --snapgene-perc-identity
@@ -312,7 +279,6 @@ inputs:
       - 'null'
       - int
     doc: Priority of snapgene annotation.
-    default: 1
     inputBinding:
       position: 102
       prefix: --snapgene-priority
@@ -321,7 +287,6 @@ inputs:
       - 'null'
       - string
     doc: Version of the snapgene database.
-    default: Downloaded 2021-07-23
     inputBinding:
       position: 102
       prefix: --snapgene-version
@@ -330,7 +295,6 @@ inputs:
       - 'null'
       - int
     doc: Word size for snapgene annotation.
-    default: 12
     inputBinding:
       position: 102
       prefix: --snapgene-word-size
@@ -339,7 +303,6 @@ inputs:
       - 'null'
       - string
     doc: Algorithm for swissprot annotation.
-    default: ctg
     inputBinding:
       position: 102
       prefix: --swissprot-algo
@@ -348,7 +311,6 @@ inputs:
       - 'null'
       - int
     doc: Composition-based statistics for swissprot annotation.
-    default: 0
     inputBinding:
       position: 102
       prefix: --swissprot-comp-based-stats
@@ -357,7 +319,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether swissprot database is compressed.
-    default: true
     inputBinding:
       position: 102
       prefix: --swissprot-compressed
@@ -366,7 +327,6 @@ inputs:
       - 'null'
       - int
     doc: Culling overlap for swissprot annotation.
-    default: 200
     inputBinding:
       position: 102
       prefix: --swissprot-culling-overlap
@@ -375,7 +335,6 @@ inputs:
       - 'null'
       - string
     doc: Default type for swissprot entries.
-    default: CDS
     inputBinding:
       position: 102
       prefix: --swissprot-default-type
@@ -384,7 +343,6 @@ inputs:
       - 'null'
       - int
     doc: Gap extend penalty for swissprot annotation.
-    default: 1
     inputBinding:
       position: 102
       prefix: --swissprot-gapextend
@@ -393,7 +351,6 @@ inputs:
       - 'null'
       - int
     doc: Gap open penalty for swissprot annotation.
-    default: 10
     inputBinding:
       position: 102
       prefix: --swissprot-gapopen
@@ -402,7 +359,6 @@ inputs:
       - 'null'
       - int
     doc: Identity threshold for swissprot annotation.
-    default: 50
     inputBinding:
       position: 102
       prefix: --swissprot-id
@@ -411,7 +367,6 @@ inputs:
       - 'null'
       - int
     doc: k-value for swissprot annotation.
-    default: 0
     inputBinding:
       position: 102
       prefix: --swissprot-k
@@ -420,7 +375,6 @@ inputs:
       - 'null'
       - string
     doc: Location of the swissprot database.
-    default: Default
     inputBinding:
       position: 102
       prefix: --swissprot-location
@@ -429,7 +383,6 @@ inputs:
       - 'null'
       - string
     doc: Scoring matrix for swissprot annotation.
-    default: BLOSUM90
     inputBinding:
       position: 102
       prefix: --swissprot-matrix
@@ -438,7 +391,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of HSPs for swissprot annotation.
-    default: 10
     inputBinding:
       position: 102
       prefix: --swissprot-max-hsps
@@ -447,7 +399,6 @@ inputs:
       - 'null'
       - string
     doc: Method used for swissprot annotation.
-    default: diamond
     inputBinding:
       position: 102
       prefix: --swissprot-method
@@ -456,7 +407,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum ORF length for swissprot annotation.
-    default: 1
     inputBinding:
       position: 102
       prefix: --swissprot-min-orf
@@ -465,7 +415,6 @@ inputs:
       - 'null'
       - int
     doc: Priority of swissprot annotation.
-    default: 2
     inputBinding:
       position: 102
       prefix: --swissprot-priority
@@ -474,7 +423,6 @@ inputs:
       - 'null'
       - float
     doc: Seed cut-off for swissprot annotation.
-    default: 0.001
     inputBinding:
       position: 102
       prefix: --swissprot-seed-cut
@@ -483,7 +431,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for swissprot annotation.
-    default: 1
     inputBinding:
       position: 102
       prefix: --swissprot-threads
@@ -492,7 +439,6 @@ inputs:
       - 'null'
       - string
     doc: Version of the swissprot database.
-    default: Release 2021_03
     inputBinding:
       position: 102
       prefix: --swissprot-version

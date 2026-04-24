@@ -21,7 +21,6 @@ inputs:
       - int
     doc: If a breakpoint has been detected more than 'int' samples, it is 
       considered false positives and removed.
-    default: 5
     inputBinding:
       position: 102
       prefix: -N
@@ -31,7 +30,6 @@ inputs:
       - float
     doc: If a breakpoint has been detected more than 'float' fraction of 
       samples, it is considered false positive and removed.
-    default: 0.03
     inputBinding:
       position: 102
       prefix: -R
@@ -57,7 +55,6 @@ inputs:
       - int
     doc: The minimum consecutive amplicons to look for deletions and 
       amplifications. Use with caution when it is less than 3.
-    default: 1
     inputBinding:
       position: 102
       prefix: -s
@@ -67,7 +64,6 @@ inputs:
       - float
     doc: When considering breakpoint in the middle of a gene, the minimum number
       of exons.
-    default: 5.0
     inputBinding:
       position: 102
       prefix: -e
@@ -76,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum log2 ratio for a whole gene to be considered amplified.
-    default: 1.5
     inputBinding:
       position: 102
       prefix: -A
@@ -85,7 +80,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum log2 ratio for a whole gene to be considered deleted.
-    default: -2.0
     inputBinding:
       position: 102
       prefix: -D
@@ -96,7 +90,6 @@ inputs:
     doc: When considering partial deletions less than 3 exons/amplicons, the 
       minimum MAD value, in addition to -E, before considering it to be 
       amplified or deleted.
-    default: 10.0
     inputBinding:
       position: 102
       prefix: -M
@@ -106,7 +99,6 @@ inputs:
       - float
     doc: Minimum mean log2 ratio difference for <3 exon deletion/amplification 
       to be called.
-    default: 1.25
     inputBinding:
       position: 102
       prefix: -E
@@ -116,7 +108,6 @@ inputs:
       - float
     doc: When considering breakpoint in the middle of a gene, the minimum 
       differences between the log2 of two segments.
-    default: 0.4
     inputBinding:
       position: 102
       prefix: -t
@@ -126,7 +117,6 @@ inputs:
       - float
     doc: When considering >=3 exons deletion/amplification within a gene, the 
       minimum differences between the log2 of two segments.
-    default: 0.5
     inputBinding:
       position: 102
       prefix: -d
@@ -136,7 +126,6 @@ inputs:
       - float
     doc: The p-value for t-test when the breakpoint is in the middle with min 
       exons/amplicons >= [-e].
-    default: 1e-06
     inputBinding:
       position: 102
       prefix: -P
@@ -145,7 +134,6 @@ inputs:
       - 'null'
       - float
     doc: The p-value for t-test when consecutive exons/amplicons are >= 3.
-    default: 1e-05
     inputBinding:
       position: 102
       prefix: -p

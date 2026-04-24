@@ -46,7 +46,6 @@ inputs:
     doc: Choose the "correct" barcode in a network of related barcodes by either
       the count of how many times the barcode was observed ('count') or how 
       connected the barcode is to the others in the network ('connect').
-    default: count
     inputBinding:
       position: 104
       prefix: --choose-by
@@ -63,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: NM edit distance threshold.
-    default: 3
     inputBinding:
       position: 104
       prefix: --dist
@@ -97,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: MAPQ threshold.
-    default: 20
     inputBinding:
       position: 104
       prefix: --mapq
@@ -139,7 +136,6 @@ inputs:
       - int
     doc: POS tolerance. Alignments will be ignored if abs(POS - 1) is greater 
       than this value. Set to greater than the barcode length for no threshold.
-    default: 2
     inputBinding:
       position: 104
       prefix: --pos

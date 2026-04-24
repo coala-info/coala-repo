@@ -11,7 +11,6 @@ inputs:
       - float
     doc: consensus threshold to make consensus methylation call from all the 
       reads with the same UMI
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --consensus
@@ -30,7 +29,6 @@ inputs:
       - int
     doc: number of processes (default=1; default settings could take a long time
       to run)
-    default: 1
     inputBinding:
       position: 101
       prefix: --processes
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: 'algorithm used to collapse UMIs, options: default=directional'
-    default: directional
     inputBinding:
       position: 101
       prefix: --umiCollapseAlg
@@ -59,7 +56,6 @@ inputs:
       - int
     doc: UMIs with this edit distance will be collapsed together, default=0 
       (don't collapse)
-    default: 0
     inputBinding:
       position: 101
       prefix: --umiThreshold

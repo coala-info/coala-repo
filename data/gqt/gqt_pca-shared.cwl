@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temporary directory name for remote files
-    default: ./
     inputBinding:
       position: 101
       prefix: -t

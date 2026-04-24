@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: Regular expression to select cells from cell column (see above).
-    default: .*
     inputBinding:
       position: 103
       prefix: --cells
@@ -39,7 +38,6 @@ inputs:
       - type: array
         items: float
     doc: Prior probability of 0->1 error
-    default: 0.04
     inputBinding:
       position: 103
       prefix: --p0
@@ -49,7 +47,6 @@ inputs:
       - type: array
         items: float
     doc: Prior probability of 1->0 error
-    default: 0.1
     inputBinding:
       position: 103
       prefix: --p1
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Width of the window to calculate PMF for.
-    default: 100
     inputBinding:
       position: 103
       prefix: --pmf-window-width
@@ -73,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

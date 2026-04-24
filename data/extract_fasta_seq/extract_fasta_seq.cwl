@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Starting number
-    default: 1
     inputBinding:
       position: 1
   - id: inc
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Increment step
-    default: 1
     inputBinding:
       position: 2
   - id: last

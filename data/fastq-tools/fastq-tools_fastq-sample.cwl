@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: the number of reads to sample
-    default: 10000
     inputBinding:
       position: 103
       prefix: -n
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: output file prefix
-    default: sample
     inputBinding:
       position: 103
       prefix: --output

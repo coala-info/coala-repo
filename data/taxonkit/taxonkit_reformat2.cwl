@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory containing nodes.dmp and names.dmp
-    default: /root/.taxonkit
     inputBinding:
       position: 101
   - id: format
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: output format, placeholders of rank are needed
-    default: '{domain|acellular root|superkingdom};{phylum};{class};{order};{family};{genus};{species}'
     inputBinding:
       position: 101
       prefix: --format
@@ -53,7 +51,6 @@ inputs:
         items: string
     doc: rank names of no-rank. A lineage might have many "no rank" ranks, we 
       only keep the last one below known ranks
-    default: '[no rank,clade]'
     inputBinding:
       position: 101
       prefix: --no-ranks
@@ -71,7 +68,6 @@ inputs:
       - int
     doc: field index of taxid. input data should be tab-separated. it overrides 
       -i/--lineage-field
-    default: 1
     inputBinding:
       position: 101
       prefix: --taxid-field
@@ -80,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs. 4 is enough
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

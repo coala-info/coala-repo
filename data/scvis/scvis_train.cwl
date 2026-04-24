@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: The data will be divided by this number if provided
-    default: the maximum value
     inputBinding:
       position: 101
       prefix: --normalize

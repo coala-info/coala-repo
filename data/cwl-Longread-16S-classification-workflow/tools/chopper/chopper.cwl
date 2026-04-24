@@ -62,7 +62,6 @@ inputs:
     type: int
     doc: Number of parallel threads to use. Default 4
     label: Threads
-    default: 4
     inputBinding:
       prefix: --threads
       position: 101
@@ -71,7 +70,6 @@ inputs:
     type: int
     doc: Trim N nucleotides from the start of a read. Default 0
     label: Head crop
-    default: 0
     inputBinding:
       prefix: --headcrop
       position: 102
@@ -80,7 +78,6 @@ inputs:
     type: int
     doc: Sets a maximum read length. Default 2147483647
     label: Maximum length
-    default: 2147483647
     inputBinding:
       prefix: --maxlength
       position: 103    
@@ -89,7 +86,6 @@ inputs:
     type: int
     doc: Sets a minimum read length. Default 1
     label: Minimum length
-    default: 1
     inputBinding:
       prefix: --minlength
       position: 103
@@ -98,7 +94,6 @@ inputs:
     type: int
     doc: Sets a minimum Phred average quality score. Default 0
     label: Quality score
-    default: 0
     inputBinding:
       prefix: --quality
       position: 104
@@ -107,7 +102,6 @@ inputs:
     type: int
     doc: Trim N nucleotides from the end of a read. Default 0
     label: Tail crop
-    default: 0
     inputBinding:
       prefix: --tailcrop
       position: 105
@@ -116,7 +110,6 @@ inputs:
     type: float
     doc: Sets a maximum GC content. Default 1.0
     label: Maximum GC content
-    default: 1.0
     inputBinding:
       prefix: --maxgc
       position: 106
@@ -125,7 +118,6 @@ inputs:
     type: float
     doc: Sets a minimum GC content. Default 0.0
     label: Minimum GC content
-    default: 0.0
     inputBinding:
       prefix: --mingc
       position: 107

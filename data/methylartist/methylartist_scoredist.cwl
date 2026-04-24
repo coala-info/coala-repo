@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: line width
-    default: 2
     inputBinding:
       position: 101
       prefix: --lw
@@ -54,7 +53,6 @@ inputs:
       - string
     doc: palette for phases, see 
       https://seaborn.pydata.org/tutorial/color_palettes.html
-    default: tab10
     inputBinding:
       position: 101
       prefix: --palette
@@ -71,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: sample size
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --n

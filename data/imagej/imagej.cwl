@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: set available memory (default=4000 max=0)
-    default: 4000
     inputBinding:
       position: 103
       prefix: -x

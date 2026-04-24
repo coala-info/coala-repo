@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum active proportion threshold for cell type filtering
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --min-active

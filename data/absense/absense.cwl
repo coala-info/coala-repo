@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - float
     doc: E-value threshold for BLAST searches
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --evalue
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for BLAST searches
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

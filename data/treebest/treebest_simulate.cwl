@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: Gene duplication rate
-    default: 0.1
     inputBinding:
       position: 102
       prefix: -d
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Gene loss rate
-    default: 0.1
     inputBinding:
       position: 102
       prefix: -l
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Number of gene trees to simulate
-    default: 1
     inputBinding:
       position: 102
       prefix: -n
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Substitution rate scale (branch length scaling factor)
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -s

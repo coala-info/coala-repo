@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for the output BAM file
-    default: 0
     inputBinding:
       position: 102
       prefix: --compression

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: Which chromosome should the sex test be applied to?
-    default: chrX
     inputBinding:
       position: 102
       prefix: --chrom
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: What type of QC should be run?
-    default: sex
     inputBinding:
       position: 102
       prefix: --mode

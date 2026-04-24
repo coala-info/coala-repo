@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Number of flanking bases to include around the gene region.
-    default: 0
     inputBinding:
       position: 103
       prefix: --flank-size
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of a codon region to be considered valid.
-    default: 100
     inputBinding:
       position: 103
       prefix: --min-codon-length
@@ -38,7 +36,6 @@ inputs:
       - string
     doc: Strand to consider for gene annotation ('forward', 'reverse', or 
       'both').
-    default: both
     inputBinding:
       position: 103
       prefix: --strand

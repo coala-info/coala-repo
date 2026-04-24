@@ -21,7 +21,6 @@ inputs:
       overlapping StackCluster for a given MergedCluster. May be used to select 
       loci with enough read mapping data across the sample set for downstream 
       analysis [0].
-    default: 0
     inputBinding:
       position: 102
       prefix: --completeness
@@ -44,7 +43,6 @@ inputs:
     doc: Maximal total number of reads per StackCluster per sample. The total 
       number of reads in a StackCluster is calculated after filtering out the 
       Stacks using --min_stack_depth_fraction [inf].
-    default: inf
     inputBinding:
       position: 102
       prefix: --max_cluster_depth
@@ -54,7 +52,6 @@ inputs:
       - int
     doc: Maximum cluster length. Can be used to remove artifacts that arise from
       read merging [inf].
-    default: inf
     inputBinding:
       position: 102
       prefix: --max_cluster_length
@@ -65,7 +62,6 @@ inputs:
     doc: Maximum number of SMAPs per MergedCluster across the sample set. Can be
       used to remove loci with excessive MergedCluster complexity before 
       downstream analysis [inf].
-    default: inf
     inputBinding:
       position: 102
       prefix: --max_smap_number
@@ -74,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum total number of reads per Stack per sample [inf].
-    default: inf
     inputBinding:
       position: 102
       prefix: --max_stack_depth
@@ -84,7 +79,6 @@ inputs:
       - int
     doc: Maximum number of Stacks per StackCluster, may be 2 in diploid 
       individuals, 4 for tetraploid individuals, 20 for Pool-Seq [inf].
-    default: inf
     inputBinding:
       position: 102
       prefix: --max_stack_number
@@ -96,7 +90,6 @@ inputs:
       number of reads in a StackCluster is calculated after filtering out the 
       Stacks using --min_stack_depth_fraction. A good reference value is 10 for 
       individual diploid samples, 20 for tetraploids, and 30 for Pool-Seq [0].
-    default: 0
     inputBinding:
       position: 102
       prefix: --min_cluster_depth
@@ -106,7 +99,6 @@ inputs:
       - int
     doc: Minimum cluster length. Can be used to remove artifacts that arise from
       read merging [0].
-    default: 0
     inputBinding:
       position: 102
       prefix: --min_cluster_length
@@ -116,7 +108,6 @@ inputs:
       - int
     doc: Minimum number of reads per Stack per sample. A good reference value 
       could be 3 [0].
-    default: 0
     inputBinding:
       position: 102
       prefix: --min_stack_depth
@@ -129,7 +120,6 @@ inputs:
       in the number of SMAPs per locus. The StackCluster total read depth and 
       number of SMAPs is recalculated based on the retained Stacks per sample 
       [0].
-    default: 0
     inputBinding:
       position: 102
       prefix: --min_stack_depth_fraction
@@ -138,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum bam mapping quality to retain reads for analysis [30].
-    default: 30
     inputBinding:
       position: 102
       prefix: --minimum_mapping_quality
@@ -148,7 +137,6 @@ inputs:
       - string
     doc: Label to describe the sample set, will be added to the last column in 
       the final stack BED file and is used by SMAP-compare [Set1].
-    default: Set1
     inputBinding:
       position: 102
       prefix: --name
@@ -160,7 +148,6 @@ inputs:
       plot generation. Passing "summary" only generates graphs with information 
       for all samples while "all" will also enable generate per-sample plots 
       [default "summary"].
-    default: summary
     inputBinding:
       position: 102
       prefix: --plot
@@ -169,7 +156,6 @@ inputs:
       - 'null'
       - string
     doc: Choose the file type for the plots [png].
-    default: png
     inputBinding:
       position: 102
       prefix: --plot_type
@@ -178,7 +164,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel processes [1].
-    default: 1
     inputBinding:
       position: 102
       prefix: --processes

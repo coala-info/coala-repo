@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: Filter summary report by n_members to the top nth percentile.
-    default: 99.0
     inputBinding:
       position: 101
       prefix: --percentile

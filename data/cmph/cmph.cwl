@@ -60,7 +60,6 @@ inputs:
       - int
     doc: set the number of keys per bin for a t-perfect hashing function (CHD 
       and CHD_PH only, range [1,128])
-    default: 1
     inputBinding:
       position: 102
       prefix: -t

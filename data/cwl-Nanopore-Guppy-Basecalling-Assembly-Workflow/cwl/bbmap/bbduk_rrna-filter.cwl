@@ -19,10 +19,8 @@ inputs:
     label: identifier used
   memory:
     type: int?
-    default: 8
   threads:
     type: int?
-    default: 1
     inputBinding:
       prefix: 'threads='
       separate: false
@@ -41,7 +39,6 @@ inputs:
     inputBinding:
       prefix: "k="
       separate: false
-    default: 31
   reference:
     doc: Reference contamination fasta file (can be compressed)
     label: Reference contamination file
@@ -49,7 +46,6 @@ inputs:
     inputBinding:
       prefix: "ref="
       separate: false
-    default: "/unlock/references/databases/riboKmers.fa.gz"
 
 arguments:
   - prefix: "-Xmx"

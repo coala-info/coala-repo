@@ -11,7 +11,6 @@ inputs:
       - File
     doc: path to forward background reads for exclusion. This is not necessary 
       in a typical use case.
-    default: None
     inputBinding:
       position: 101
       prefix: --background1
@@ -21,7 +20,6 @@ inputs:
       - File
     doc: path to reverse background reads for exclusion. This is not necessary 
       in a typical use case.
-    default: None
     inputBinding:
       position: 101
       prefix: --background2
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: gigabytes of memory to use when running bbmap
-    default: 8
     inputBinding:
       position: 101
       prefix: --mem
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Name of community (used in output files)
-    default: sample
     inputBinding:
       position: 101
       prefix: --prefix
@@ -69,7 +65,6 @@ inputs:
       - float
     doc: Percentage of a strain's subcontigs that should be filtered out based 
       on number of unique k-mers
-    default: 0
     inputBinding:
       position: 101
       prefix: --subcontigfilter
@@ -79,7 +74,6 @@ inputs:
       - int
     doc: number of threads to use when running fastp, bbmap, and samtools. 
       Maximum is 16
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads
@@ -88,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: Weighted percentile for a strain's FUKMs to use in abundance estimation
-    default: 60
     inputBinding:
       position: 101
       prefix: --weightedpercentile

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: Output format (fasta or fastq)
-    default: fasta
     inputBinding:
       position: 102
       prefix: --format
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequence length to include in output
-    default: 50
     inputBinding:
       position: 102
       prefix: --min-length
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum Phred quality score to include in output
-    default: 20
     inputBinding:
       position: 102
       prefix: --quality-threshold

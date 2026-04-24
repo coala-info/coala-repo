@@ -7,7 +7,6 @@ inputs:
   - id: genome
     type: File
     doc: Reference genome in .fasta format with .fai index file
-    default: ''
     inputBinding:
       position: 1
   - id: bam_files
@@ -16,7 +15,6 @@ inputs:
       - type: array
         items: File
     doc: Bam/cram alignment file. Repeat for multiple files stacked vertically
-    default: ''
     inputBinding:
       position: 102
       prefix: --bam
@@ -25,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Apply command before drawing e.g. -c 'sort strand'
-    default: ''
     inputBinding:
       position: 102
       prefix: --command
@@ -34,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Delay in milliseconds before each update, useful for remote connections
-    default: 0
     inputBinding:
       position: 102
       prefix: --delay
@@ -43,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: Image dimensions (px)
-    default: 1366x800
     inputBinding:
       position: 102
       prefix: --dims
@@ -52,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Filter to apply to all reads
-    default: ''
     inputBinding:
       position: 102
       prefix: --filter
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Indels >= this length (bp) will have text labels
-    default: 15
     inputBinding:
       position: 102
       prefix: --indel-length
@@ -87,7 +80,6 @@ inputs:
       - 'null'
       - File
     doc: Input labels from tab-separated FILE (use with -v or -i)
-    default: ''
     inputBinding:
       position: 102
       prefix: --in-labels
@@ -97,7 +89,6 @@ inputs:
       - string
     doc: Choice of labels to use. Provide as comma-separated list e.g. 
       'PASS,FAIL'
-    default: PASS,FAIL
     inputBinding:
       position: 102
       prefix: --labels
@@ -106,7 +97,6 @@ inputs:
       - 'null'
       - string
     doc: Draw linking lines between these alignments
-    default: none
     inputBinding:
       position: 102
       prefix: --link
@@ -115,7 +105,6 @@ inputs:
       - 'null'
       - boolean
     doc: Scale coverage track to log2
-    default: false
     inputBinding:
       position: 102
       prefix: --log2-cov
@@ -124,7 +113,6 @@ inputs:
       - 'null'
       - boolean
     doc: Reduce memory usage by discarding quality values
-    default: false
     inputBinding:
       position: 102
       prefix: --low-mem
@@ -133,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum tlen to display on plot
-    default: 2000
     inputBinding:
       position: 102
       prefix: --max-tlen
@@ -142,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum chromosome size for chromosome-scale images
-    default: 10000000
     inputBinding:
       position: 102
       prefix: --min-chrom-size
@@ -151,7 +137,6 @@ inputs:
       - 'null'
       - boolean
     doc: Edge colours are not shown
-    default: false
     inputBinding:
       position: 102
       prefix: --no-edges
@@ -160,7 +145,6 @@ inputs:
       - 'null'
       - boolean
     doc: Insertions below --indel-length are not shown
-    default: false
     inputBinding:
       position: 102
       prefix: --no-insertions
@@ -169,7 +153,6 @@ inputs:
       - 'null'
       - boolean
     doc: Mismatches are not shown
-    default: false
     inputBinding:
       position: 102
       prefix: --no-mismatches
@@ -178,7 +161,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't display images to screen
-    default: false
     inputBinding:
       position: 102
       prefix: --no-show
@@ -187,7 +169,6 @@ inputs:
       - 'null'
       - boolean
     doc: Soft-clips are not shown
-    default: false
     inputBinding:
       position: 102
       prefix: --no-soft-clips
@@ -196,7 +177,6 @@ inputs:
       - 'null'
       - string
     doc: Images tiles to display (used with -v and -i)
-    default: 3x3
     inputBinding:
       position: 102
       prefix: --number
@@ -205,7 +185,6 @@ inputs:
       - 'null'
       - string
     doc: Output file format
-    default: png
     inputBinding:
       position: 102
       prefix: --fmt
@@ -214,7 +193,6 @@ inputs:
       - 'null'
       - int
     doc: Padding +/- in bp to add to each region from -v or -r
-    default: 500
     inputBinding:
       position: 102
       prefix: --pad
@@ -224,7 +202,6 @@ inputs:
       - string
     doc: Label to parse from vcf file (used with -v) e.g. 'filter' or 'info.SU' 
       or 'qual'
-    default: filter
     inputBinding:
       position: 102
       prefix: --parse-label
@@ -243,7 +220,6 @@ inputs:
       - 'null'
       - boolean
     doc: Resume labelling from last user-labelled variant
-    default: false
     inputBinding:
       position: 102
       prefix: --resume
@@ -252,7 +228,6 @@ inputs:
       - 'null'
       - File
     doc: GW session file to load (.ini suffix)
-    default: ''
     inputBinding:
       position: 102
       prefix: --session
@@ -261,7 +236,6 @@ inputs:
       - 'null'
       - boolean
     doc: Display path of loaded .gw.ini config
-    default: false
     inputBinding:
       position: 102
       prefix: --config
@@ -270,7 +244,6 @@ inputs:
       - 'null'
       - boolean
     doc: Base modifications are shown
-    default: false
     inputBinding:
       position: 102
       prefix: --mods
@@ -280,7 +253,6 @@ inputs:
       - int
     doc: Max variant size before region is split into two smaller panes (used 
       with -v only)
-    default: 10000
     inputBinding:
       position: 102
       prefix: --split-view-size
@@ -289,7 +261,6 @@ inputs:
       - 'null'
       - int
     doc: Start labelling from -v / -i index (zero-based)
-    default: 0
     inputBinding:
       position: 102
       prefix: --start-index
@@ -298,7 +269,6 @@ inputs:
       - 'null'
       - string
     doc: Image theme igv|dark|slate
-    default: dark
     inputBinding:
       position: 102
       prefix: --theme
@@ -307,7 +277,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 4
     inputBinding:
       position: 102
       prefix: --threads
@@ -317,7 +286,6 @@ inputs:
       - boolean
     doc: Y-axis will be set to template-length (tlen) bp. Relevant for 
       paired-end reads only
-    default: false
     inputBinding:
       position: 102
       prefix: --tlen-y
@@ -328,7 +296,6 @@ inputs:
         items: string
     doc: Track to display at bottom of window BED/VCF/GFF3/GTF/BEGBID/BIGWIG. 
       Repeat for multiple files stacked vertically
-    default: ''
     inputBinding:
       position: 102
       prefix: --track
@@ -345,7 +312,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum y limit of coverage track
-    default: 50
     inputBinding:
       position: 102
       prefix: --cov
@@ -354,7 +320,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum y limit (depth) of reads in image
-    default: 50
     inputBinding:
       position: 102
       prefix: --ylim

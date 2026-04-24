@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: Minor Allele Frequency filter
-    default: 0.05
     inputBinding:
       position: 101
       prefix: -MAF
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Select variant type (1:SNP, 2:Indel, 3:Both)
-    default: 1
     inputBinding:
       position: 101
       prefix: -SeleVar

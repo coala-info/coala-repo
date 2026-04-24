@@ -18,7 +18,6 @@ inputs:
   RUN_MLESMAP:
     doc: "Flag to run or skip MLESmap step."
     type: boolean
-    default: true
 
 # Define global outputs.
 outputs:

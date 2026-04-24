@@ -12,7 +12,6 @@ inputs:
       - type: array
         items: string
     doc: Only print the citations for the given keys.
-    default: '[]'
     inputBinding:
       position: 1
   - id: all
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Output format for citations.
-    default: bibtex
     inputBinding:
       position: 102
       prefix: --format

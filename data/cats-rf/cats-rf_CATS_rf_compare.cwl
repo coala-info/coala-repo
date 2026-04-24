@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Comparison output directory name
-    default: CATS_rf_comparison
     inputBinding:
       position: 102
       prefix: -D
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Figure DPI
-    default: 600
     inputBinding:
       position: 102
       prefix: -d
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: Figure extension
-    default: png
     inputBinding:
       position: 102
       prefix: -x
@@ -70,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum right-tail distribution quantile for histograms
-    default: 0.98
     inputBinding:
       position: 102
       prefix: -q
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - boolean
     doc: Overwrite the comparison output directory
-    default: false
     inputBinding:
       position: 102
       prefix: -O
@@ -97,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU threads
-    default: 10
     inputBinding:
       position: 102
       prefix: -t

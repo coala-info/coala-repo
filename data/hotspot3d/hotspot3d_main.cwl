@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: .maf file column header for amino acid changes
-    default: amino_acid_change
     inputBinding:
       position: 101
       prefix: --amino-acid-header
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: Cluster using network or density-based methods (network or density)
-    default: network
     inputBinding:
       position: 101
       prefix: --clustering
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: Pair distance to use (shortest or average)
-    default: average
     inputBinding:
       position: 101
       prefix: --distance-measure
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Linear distance cutoff (> peptides)
-    default: 0
     inputBinding:
       position: 101
       prefix: --linear-cutoff
@@ -64,7 +60,6 @@ inputs:
       - float
     doc: Maximum cluster radius (max network geodesic from centroid, <= 
       Angstroms)
-    default: 10
     inputBinding:
       position: 101
       prefix: --max-radius
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: missense mutation only
-    default: no
     inputBinding:
       position: 101
       prefix: --missense-only
@@ -82,7 +76,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix of output files
-    default: 3D_Proximity
     inputBinding:
       position: 101
       prefix: --output-prefix
@@ -91,7 +84,6 @@ inputs:
       - 'null'
       - float
     doc: P_value cutoff (<) (if 3d-distance-cutoff also not set)
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --p-value-cutoff
@@ -100,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Number of simulations
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --simulations
@@ -109,7 +100,6 @@ inputs:
       - 'null'
       - string
     doc: skip silent mutations
-    default: no
     inputBinding:
       position: 101
       prefix: --skip-silent
@@ -118,7 +108,6 @@ inputs:
       - 'null'
       - string
     doc: Step to start on (search, post, cluster, sigclus, summary, visual)
-    default: search
     inputBinding:
       position: 101
       prefix: --start
@@ -127,7 +116,6 @@ inputs:
       - 'null'
       - float
     doc: 3D distance cutoff (<) (if p-value-cutoff also not set)
-    default: 100
     inputBinding:
       position: 101
       prefix: --3d-distance-cutoff
@@ -136,7 +124,6 @@ inputs:
       - 'null'
       - string
     doc: .maf file column header for transcript id's
-    default: transcript_name
     inputBinding:
       position: 101
       prefix: --transcript-id-header
@@ -146,7 +133,6 @@ inputs:
       - string
     doc: Graph vertex type for network-based clustering (recurrence, unique, or 
       weight)
-    default: recurrence
     inputBinding:
       position: 101
       prefix: --vertex-type
@@ -156,7 +142,6 @@ inputs:
       - string
     doc: .maf file column header for mutation weight (used if vertex-type = 
       weight)
-    default: weight
     inputBinding:
       position: 101
       prefix: --weight-header

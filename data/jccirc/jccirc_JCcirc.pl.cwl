@@ -32,7 +32,6 @@ inputs:
     doc: the difference in support numbers between adjacent fragments when 
       generating circRNA isoforms, default is 0 (recommend setting to 0, 1, or 
       2, the larger number means stricter).
-    default: 0
     inputBinding:
       position: 101
   - id: genome_file
@@ -67,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: set number of threads for parallel running, default is 4.
-    default: 4
     inputBinding:
       position: 101
       prefix: --thread

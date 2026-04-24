@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of a barcode to be considered valid.
-    default: 20
     inputBinding:
       position: 102
       prefix: --max-barcode-len
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of a barcode to be considered valid.
-    default: 10
     inputBinding:
       position: 102
       prefix: --min-barcode-len
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to save the output counts and plots.
-    default: .
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for processing.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

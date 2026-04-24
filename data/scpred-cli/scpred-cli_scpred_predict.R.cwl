@@ -27,7 +27,6 @@ inputs:
       - string
     doc: 'If --normalise-data specified, what normalisation method to use? NB: normalisation
       method must be identical to that used for reference data'
-    default: LogNormalize
     inputBinding:
       position: 101
       prefix: --normalisation-method
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: Should the predicted expression data be normalised?
-    default: false
     inputBinding:
       position: 101
       prefix: --normalise-data
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: Recompute alignment? Useful if scPredict() has already been run.
-    default: true
     inputBinding:
       position: 101
       prefix: --recompute-alignment
@@ -71,7 +68,6 @@ inputs:
       - boolean
     doc: Scale new dataset based on means and stdevs from reference dataset 
       before alignment.
-    default: true
     inputBinding:
       position: 101
       prefix: --reference-scaling

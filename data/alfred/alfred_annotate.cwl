@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: 'max. distance (0: overlapping features only)'
-    default: 0
     inputBinding:
       position: 102
       prefix: --distance
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: gtf/gff3 feature
-    default: gene
     inputBinding:
       position: 102
       prefix: --feature
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: gtf/gff3 attribute
-    default: gene_name
     inputBinding:
       position: 102
       prefix: --id
@@ -83,7 +80,6 @@ inputs:
       - 'null'
       - float
     doc: motif quantile score [0,1]
-    default: 0.949999988
     inputBinding:
       position: 102
       prefix: --quantile

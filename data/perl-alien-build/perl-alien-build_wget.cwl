@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - Directory
     doc: Save to DIR
-    default: .
     inputBinding:
       position: 102
       prefix: -P

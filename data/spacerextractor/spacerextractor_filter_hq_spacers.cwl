@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: memory allocated to bbtools
-    default: 20g
     inputBinding:
       position: 101
       prefix: --bbtools_memory
@@ -69,7 +68,6 @@ inputs:
       - int
     doc: To change the default cutoff on minimum number of distinct spacers 
       required for an array to be retained
-    default: 5
     inputBinding:
       position: 101
       prefix: --min_n_spacers
@@ -78,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 2
     inputBinding:
       position: 101
       prefix: --n_threads

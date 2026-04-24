@@ -98,7 +98,6 @@ inputs:
       - int
     doc: Number of bins to split the distance range in log10-space, specified 
       per a factor of 10 difference.
-    default: 8
     inputBinding:
       position: 102
       prefix: --n-dist-bins-decade
@@ -137,7 +136,6 @@ inputs:
       - int
     doc: Number of processes used by the auto-guessed input decompressing 
       command.
-    default: 3
     inputBinding:
       position: 102
       prefix: --nproc-in
@@ -147,7 +145,6 @@ inputs:
       - int
     doc: Number of processes used by the auto-guessed output compressing 
       command.
-    default: 8
     inputBinding:
       position: 102
       prefix: --nproc-out

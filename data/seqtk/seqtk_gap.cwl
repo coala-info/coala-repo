@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum gap length
-    default: 50
     inputBinding:
       position: 102
       prefix: -l

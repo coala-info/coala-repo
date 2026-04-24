@@ -65,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: 'The minimum number of genes in a module (default: 20).'
-    default: 20
     inputBinding:
       position: 103
       prefix: --min_genes
@@ -85,7 +84,6 @@ inputs:
         items: float
     doc: 'The first method to create the TF-modules based on the best targets for
       each transcription factor (default: 0.75 0.90).'
-    default: 0.75 0.90
     inputBinding:
       position: 103
       prefix: --thresholds
@@ -96,7 +94,6 @@ inputs:
         items: int
     doc: 'The alternative way to create the TF-modules is to select the best regulators
       for each gene. (default: 5 10 50)'
-    default: 5 10 50
     inputBinding:
       position: 103
       prefix: --top_n_regulators
@@ -107,7 +104,6 @@ inputs:
         items: int
     doc: 'The second method is to select the top targets for a given TF. (default:
       50)'
-    default: 50
     inputBinding:
       position: 103
       prefix: --top_n_targets

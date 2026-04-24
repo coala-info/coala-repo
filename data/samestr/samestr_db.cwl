@@ -12,7 +12,6 @@ inputs:
     doc: Clade to process from input files. Processing all if not specified. 
       Names must correspond to the taxonomy of the respective database [e.g. 
       t__SGB10068 for MetaPhlAn or ref_mOTU_v3_00095 for mOTUs]
-    default: None
     inputBinding:
       position: 101
       prefix: --clade
@@ -22,7 +21,6 @@ inputs:
       - boolean
     doc: Performs just a database integrity check, if an existing SameStr 
       database is provided. All other options will be ignored.
-    default: false
     inputBinding:
       position: 101
       prefix: --db-check
@@ -32,7 +30,6 @@ inputs:
       - string
     doc: Path to version file of database (`mpa_latest` for MetaPhlAn, or 
       `db_mOTU_versions` for mOTUs.)
-    default: PATH
     inputBinding:
       position: 101
       prefix: --db-version
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to existing MetaPhlAn or mOTUs clade marker database.
-    default: None
     inputBinding:
       position: 101
       prefix: --marker-dir
@@ -51,7 +47,6 @@ inputs:
       - File
     doc: Markers fasta file (MetaPhlAn [mpa_vJan21_CHOCOPhlAnSGB_202103.fna or 
       higher], or mOTUs [db_mOTU_DB_CEN.fasta]
-    default: None
     inputBinding:
       position: 101
       prefix: --markers-fasta
@@ -64,7 +59,6 @@ inputs:
       file (mpa_vJan21_CHOCOPhlAnSGB_202103.pkl or higher). For mOTUs, should be
       both `db_mOTU_taxonomy_meta-mOTUs.tsv` and 
       `db_mOTU_taxonomy_ref-mOTUs.tsv`.
-    default: None
     inputBinding:
       position: 101
       prefix: --markers-info
@@ -73,7 +67,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to output directory.
-    default: out_db/
     inputBinding:
       position: 101
       prefix: --output-dir

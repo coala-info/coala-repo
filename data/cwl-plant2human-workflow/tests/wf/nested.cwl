@@ -21,7 +21,6 @@ steps:
       inp:
         source: create-tar/tar
       ex:
-        default: "Hello.java"
     out: [classout]
 
   create-tar:

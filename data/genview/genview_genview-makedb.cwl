@@ -133,7 +133,6 @@ inputs:
       - int
     doc: '% identity threshold for annotating orfs aurrounding the target sequence,
       default 60'
-    default: 60
     inputBinding:
       position: 101
       prefix: --uniprot_cutoff

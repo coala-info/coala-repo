@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: 'Quantise BD:Z: tags to two values; cutoff'
-    default: 0
     inputBinding:
       position: 102
       prefix: -f
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: 'BD:Z: lower replacement value'
-    default: 0
     inputBinding:
       position: 102
       prefix: -e
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: 'BD:Z: upper replacement value'
-    default: 0
     inputBinding:
       position: 102
       prefix: -g
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: 'Quantise BI:Z: tags to two values; cutoff'
-    default: 0
     inputBinding:
       position: 102
       prefix: -F
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: 'BI:Z: lower replacement value'
-    default: 0
     inputBinding:
       position: 102
       prefix: -E
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: 'BI:Z: upper replacement value'
-    default: 0
     inputBinding:
       position: 102
       prefix: -G
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: Keep qual if local depth >= X times deeper than expected
-    default: 999.0
     inputBinding:
       position: 102
       prefix: -P
@@ -87,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: Adjust indel size by (STR_size+add)*mul
-    default: 1.0,2
     inputBinding:
       position: 102
       prefix: -i
@@ -96,7 +88,6 @@ inputs:
       - 'null'
       - float
     doc: Keep if >= X indel sizes do not fit bi-modal dist
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -Z
@@ -105,7 +96,6 @@ inputs:
       - 'null'
       - float
     doc: Fraction of reads with indel to trigger STR analysis
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -Y
@@ -114,7 +104,6 @@ inputs:
       - 'null'
       - string
     doc: Input format and format-options
-    default: auto
     inputBinding:
       position: 102
       prefix: -I
@@ -131,7 +120,6 @@ inputs:
       - 'null'
       - float
     doc: Keep if >= X reads have low mapping quality
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -M
@@ -140,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: Whether mismatching bases can have qualities lowered (bool 0/1)
-    default: 1
     inputBinding:
       position: 102
       prefix: -L
@@ -157,7 +144,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum discrepancy score (ignoring mapping quality)
-    default: 2.0
     inputBinding:
       position: 102
       prefix: -x
@@ -166,7 +152,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum discrepancy score (with mapping quality)
-    default: 1.5
     inputBinding:
       position: 102
       prefix: -X
@@ -175,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum indel call confidence (ignoring mapping quality)
-    default: 50
     inputBinding:
       position: 102
       prefix: -d
@@ -184,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum indel call confidence (with mapping quality)
-    default: 125
     inputBinding:
       position: 102
       prefix: -D
@@ -193,7 +176,6 @@ inputs:
       - 'null'
       - int
     doc: Keep qualities for seqs with mapping quality <= mqual
-    default: 0
     inputBinding:
       position: 102
       prefix: -m
@@ -202,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum snp call confidence (ignoring mapping quality)
-    default: 0
     inputBinding:
       position: 102
       prefix: -q
@@ -211,7 +192,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum snp call confidence (with mapping quality)
-    default: 70
     inputBinding:
       position: 102
       prefix: -Q
@@ -228,7 +208,6 @@ inputs:
       - 'null'
       - string
     doc: Output format and format-options
-    default: SAM
     inputBinding:
       position: 102
       prefix: -O
@@ -237,7 +216,6 @@ inputs:
       - 'null'
       - int
     doc: P-block algorithm; quality values +/- 'int'
-    default: 0
     inputBinding:
       position: 102
       prefix: -p
@@ -262,7 +240,6 @@ inputs:
       - 'null'
       - int
     doc: In highly confident regions, quality values above/below this are quantised
-    default: 25
     inputBinding:
       position: 102
       prefix: -c
@@ -271,7 +248,6 @@ inputs:
       - 'null'
       - int
     doc: Lower quantisation value
-    default: 5
     inputBinding:
       position: 102
       prefix: -l
@@ -280,7 +256,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum quality cap used in all bases
-    default: 60
     inputBinding:
       position: 102
       prefix: -U
@@ -289,7 +264,6 @@ inputs:
       - 'null'
       - int
     doc: Upper quantisation value
-    default: 40
     inputBinding:
       position: 102
       prefix: -u
@@ -322,7 +296,6 @@ inputs:
       - 'null'
       - string
     doc: Adjust SNP size by (STR_size+add)*mul
-    default: 0.0,0
     inputBinding:
       position: 102
       prefix: -s
@@ -331,7 +304,6 @@ inputs:
       - 'null'
       - float
     doc: Keep if >= X reads have soft-clipping
-    default: 0.2
     inputBinding:
       position: 102
       prefix: -C
@@ -340,7 +312,6 @@ inputs:
       - 'null'
       - float
     doc: Keep if < X reads span indel
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -V

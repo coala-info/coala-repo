@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: maximum edit distance as percentage of read length
-    default: 0.02
     inputBinding:
       position: 105
       prefix: --cov_max_edit_dist
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: minimum alignment length as percentage of read length
-    default: 0.98
     inputBinding:
       position: 105
       prefix: --cov_min_align
@@ -66,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs to use
-    default: 1
     inputBinding:
       position: 105
       prefix: --cpus
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: extension of genomes (other files in directory are ignored)
-    default: fna
     inputBinding:
       position: 105
       prefix: --genome_ext

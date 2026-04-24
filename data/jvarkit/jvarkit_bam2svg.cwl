@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: print bases in read
-    default: false
     inputBinding:
       position: 102
       prefix: --bases
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show clipping
-    default: false
     inputBinding:
       position: 102
       prefix: --clip
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: custom parameters. '-Dkey=value'. Undocumented.
-    default: '{}'
     inputBinding:
       position: 102
       prefix: -D
@@ -61,7 +58,6 @@ inputs:
     doc: Group Reads by. Data partitioning using the SAM Read Group (see 
       https://gatkforums.broadinstitute.org/gatk/discussion/6472/ ) . It can be 
       any combination of sample, library....
-    default: sample
     inputBinding:
       position: 102
       prefix: --groupby
@@ -80,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: min mapping quality
-    default: 1
     inputBinding:
       position: 102
       prefix: --mapq
@@ -89,7 +84,6 @@ inputs:
       - 'null'
       - string
     doc: file prefix
-    default: ''
     inputBinding:
       position: 102
       prefix: --prefix
@@ -117,7 +111,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show clipping
-    default: false
     inputBinding:
       position: 102
       prefix: --showclipping
@@ -134,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Page width
-    default: 1000
     inputBinding:
       position: 102
       prefix: --width

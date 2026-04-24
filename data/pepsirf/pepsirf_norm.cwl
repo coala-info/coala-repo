@@ -43,7 +43,6 @@ inputs:
       column-sum method; 'size_factors': Anders and Huber 2010 method; 'diff': difference
       from negative controls; 'ratio': ratio to negative controls; 'diff_ratio': difference
       divided by mean of negative controls."
-    default: col_sum
     inputBinding:
       position: 101
       prefix: --normalize_approach
@@ -60,7 +59,6 @@ inputs:
       - int
     doc: Output score precision. The scores written to the output will be output to
       this many decimal places.
-    default: 2
     inputBinding:
       position: 101
       prefix: --precision

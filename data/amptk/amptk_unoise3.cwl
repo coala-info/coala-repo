@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: 'Number of CPUs. Default: auto'
-    default: None
     inputBinding:
       position: 101
       prefix: --cpus
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove Intermediate Files
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: map quality filtered reads back to OTUs
-    default: false
     inputBinding:
       position: 101
       prefix: --map_filtered
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: Quality trim EE value
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --maxee
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: Program to use
-    default: vsearch
     inputBinding:
       position: 101
       prefix: --method
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Min size to keep for denoising
-    default: 8
     inputBinding:
       position: 101
       prefix: --minsize
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: Biological OTU Clustering Percent
-    default: 97
     inputBinding:
       position: 101
       prefix: --pct_otu
@@ -87,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: Run UCHIME2 REF [ITS,16S,LSU,COI,custom]
-    default: None
     inputBinding:
       position: 101
       prefix: --uchime_ref
@@ -96,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: USEARCH10 EXE
-    default: usearch10
     inputBinding:
       position: 101
       prefix: --usearch

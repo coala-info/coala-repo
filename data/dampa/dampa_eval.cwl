@@ -18,7 +18,6 @@ inputs:
       - string
     doc: type of cluster file input cdhit (produced by cdhit) or tabular (genome
       and cluster tab delimited)
-    default: tabular
     inputBinding:
       position: 101
       prefix: --clustertype
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: remove genomes with non standard nucleotides i.e. not A,T,G,C or N
-    default: false
     inputBinding:
       position: 101
       prefix: --filtnonstandard
@@ -46,7 +44,6 @@ inputs:
       - string
     doc: type of cluster file input cdhit (produced by cdhit) or tabular (genome
       and cluster tab delimited)
-    default: genomes
     inputBinding:
       position: 101
       prefix: --inputtype
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - boolean
     doc: keep logs containing output from pangraph and probetools
-    default: false
     inputBinding:
       position: 101
       prefix: --keeplogs
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - boolean
     doc: keep intermediate files from pangraph and probetools
-    default: false
     inputBinding:
       position: 101
       prefix: --keeptmp
@@ -74,7 +69,6 @@ inputs:
       - int
     doc: Maximum depth of probe coverage to describe separately. i.e. if 1 there
       will be 0,1 and >1 depth categories
-    default: 1
     inputBinding:
       position: 101
       prefix: --maxdepth_describe
@@ -85,7 +79,6 @@ inputs:
     doc: Do not run low complexity filter in BLAST (within probetools). If 
       sample has very low GC or is very repetitive this option can be enabled to
       prevent low complexity regions from being removed
-    default: false
     inputBinding:
       position: 101
       prefix: --nodust
@@ -94,7 +87,6 @@ inputs:
       - 'null'
       - Directory
     doc: path to output folder
-    default: //
     inputBinding:
       position: 101
       prefix: --outputfolder
@@ -103,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for all output files and folders
-    default: probebench_run
     inputBinding:
       position: 101
       prefix: --outputprefix
@@ -112,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: length of output probes
-    default: 120
     inputBinding:
       position: 101
       prefix: --probelen
@@ -129,7 +119,6 @@ inputs:
       - int
     doc: Minimum length (bp) of 0 coverage region in input genomes to trigger 
       design of additional probes
-    default: 20
     inputBinding:
       position: 101
       prefix: --probetools0covnmin
@@ -138,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length (bp) of probe-target binding to allow call of binding
-    default: 90
     inputBinding:
       position: 101
       prefix: --probetoolsalignmin
@@ -147,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum identity in probe match to target to call probe binding
-    default: 85
     inputBinding:
       position: 101
       prefix: --probetoolsidentity
@@ -157,7 +144,6 @@ inputs:
       - float
     doc: threshold above which genomes are reported as having too much of their 
       genome not covered by any probes
-    default: 1
     inputBinding:
       position: 101
       prefix: --report0covperc
@@ -167,7 +153,6 @@ inputs:
       - float
     doc: minimum shannon entropy of probes and reported coverage regions 
       (filters out low complexity probes/regions)
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --shannonthresh
@@ -176,7 +161,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

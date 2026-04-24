@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: expected coverage, used for memory tuning
-    default: 128
     inputBinding:
       position: 103
       prefix: --expected-cov
@@ -87,7 +86,6 @@ inputs:
       - 'null'
       - float
     doc: maximum fraction of N bases in an edit for it to be included
-    default: 0.25
     inputBinding:
       position: 103
       prefix: --max-n

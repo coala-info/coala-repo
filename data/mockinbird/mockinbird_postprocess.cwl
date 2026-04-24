@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: verbosity level of the logger
-    default: info
     inputBinding:
       position: 104
       prefix: --log_level
@@ -36,7 +35,6 @@ inputs:
       - string
     doc: preprocessing filename prefix - only required if there are multiple 
       table files in the specified preprocess directory
-    default: None
     inputBinding:
       position: 104
       prefix: --prefix

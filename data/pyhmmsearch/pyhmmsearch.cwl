@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: E-value threshold
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --evalue
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: HMM reference type (accession, name)
-    default: accession
     inputBinding:
       position: 101
       prefix: --hmm_marker_field
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --n_jobs
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - string
     doc: '{full, domain}'
-    default: full
     inputBinding:
       position: 101
       prefix: --score_type
@@ -88,7 +84,6 @@ inputs:
       - 'null'
       - string
     doc: Cutoff threshold method
-    default: e
     inputBinding:
       position: 101
       prefix: --threshold_method

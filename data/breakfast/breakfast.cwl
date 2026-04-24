@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Metadata column to cluster
-    default: dna_profile
     inputBinding:
       position: 101
       prefix: --clust-col
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Column with the sequence identifier
-    default: accession
     inputBinding:
       position: 101
       prefix: --id-col
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Number of jobs (threads) to run simultaneously
-    default: 1
     inputBinding:
       position: 101
       prefix: --jobs
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum parwise distance
-    default: 1
     inputBinding:
       position: 101
       prefix: --max-dist
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum cluster size
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-cluster-size
@@ -84,7 +79,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory for all output files
-    default: output
     inputBinding:
       position: 101
       prefix: --outdir
@@ -93,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Length of reference genome (defaults to NC_045512.2 length)
-    default: 29903
     inputBinding:
       position: 101
       prefix: --reference-length
@@ -102,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: Input file separator
-    default: '        '
     inputBinding:
       position: 101
       prefix: --sep
@@ -111,7 +103,6 @@ inputs:
       - 'null'
       - string
     doc: Secondary clustering column separator (between each mutation)
-    default: ' '
     inputBinding:
       position: 101
       prefix: --sep2
@@ -136,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Bases to trim from the end (0 = disable)
-    default: 228
     inputBinding:
       position: 101
       prefix: --trim-end
@@ -145,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: Bases to trim from the beginning (0 = disable)
-    default: 264
     inputBinding:
       position: 101
       prefix: --trim-start
@@ -154,7 +143,6 @@ inputs:
       - 'null'
       - string
     doc: Type of variants
-    default: covsonar_dna
     inputBinding:
       position: 101
       prefix: --var-type

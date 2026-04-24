@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Thread chunk size.
-    default: 1
     inputBinding:
       position: 102
       prefix: --chunk-size
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: EventDetection group to use.
-    default: smallest available
     inputBinding:
       position: 102
       prefix: --ed-group
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum fasta line width.
-    default: 80
     inputBinding:
       position: 102
       prefix: --fasta-line-width
@@ -69,7 +66,6 @@ inputs:
       - type: array
         items: string
     doc: Log level.
-    default: info
     inputBinding:
       position: 102
       prefix: --log
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum EventDetection events.
-    default: 100000
     inputBinding:
       position: 102
       prefix: --max-ed-events
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum EventDetection events.
-    default: 10
     inputBinding:
       position: 102
       prefix: --min-ed-events
@@ -153,7 +147,6 @@ inputs:
       - 'null'
       - string
     doc: Pore name, used to select builtin pore model.
-    default: r9
     inputBinding:
       position: 102
       prefix: --pore
@@ -162,7 +155,6 @@ inputs:
       - 'null'
       - float
     doc: Transition probability of skipping at least 1 state.
-    default: 0.3
     inputBinding:
       position: 102
       prefix: --pr-skip
@@ -171,7 +163,6 @@ inputs:
       - 'null'
       - float
     doc: Transition probability of staying in the same state.
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --pr-stay
@@ -180,7 +171,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum scaling rounds.
-    default: 10
     inputBinding:
       position: 102
       prefix: --scaling-max-rounds
@@ -189,7 +179,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum scaling fit progress.
-    default: 1
     inputBinding:
       position: 102
       prefix: --scaling-min-progress
@@ -198,7 +187,6 @@ inputs:
       - 'null'
       - int
     doc: Number of events used for model scaling.
-    default: 200
     inputBinding:
       position: 102
       prefix: --scaling-num-events
@@ -208,7 +196,6 @@ inputs:
       - float
     doc: Select best model per strand during scaling if log score better by 
       threshold.
-    default: 20
     inputBinding:
       position: 102
       prefix: --scaling-select-threshold
@@ -233,7 +220,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel threads.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -250,7 +236,6 @@ inputs:
       - 'null'
       - string
     doc: Train drift parameter.
-    default: yes for R73, no for R9
     inputBinding:
       position: 102
       prefix: --train-drift
@@ -267,7 +252,6 @@ inputs:
       - 'null'
       - int
     doc: Number of events to trim after hairpin end.
-    default: 50
     inputBinding:
       position: 102
       prefix: --trim-ed-hp-end
@@ -276,7 +260,6 @@ inputs:
       - 'null'
       - int
     doc: Number of events to trim before hairpin start.
-    default: 50
     inputBinding:
       position: 102
       prefix: --trim-ed-hp-start
@@ -285,7 +268,6 @@ inputs:
       - 'null'
       - int
     doc: Number of events to trim before sequence end.
-    default: 50
     inputBinding:
       position: 102
       prefix: --trim-ed-sq-end
@@ -294,7 +276,6 @@ inputs:
       - 'null'
       - int
     doc: Number of events to trim after sequence start.
-    default: 50
     inputBinding:
       position: 102
       prefix: --trim-ed-sq-start

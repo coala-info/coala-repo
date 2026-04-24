@@ -83,40 +83,33 @@ inputs:
     type: boolean
     doc: Continue with reads mapped to the given reference
     label: Keep mapped reads
-    default: false
   deduplicate:
     type: boolean?
     doc: Remove exact duplicate reads with fastp
     label: Deduplicate reads
-    default: false
   kraken_database:
     type: string
     doc: Absolute path with database location of kraken2
     label: Kraken2 database
-    default: "/unlock/references/databases/Kraken2/K2_PlusPF_20210517"
 
   binning:
     type: boolean?
     label: Run binning workflow
     doc: Run with contig binning workflow
-    default: true
   # There are some issues with the --tmpdir-prefix option in cwltool and the gtdbtk tool
   run_gtdbtk:
     type: boolean
     label: Run GTDB-Tk
     doc: Run GTDB-Tk taxonomic bin classification when true
-    default: false
 
   threads:
     type: int?
     doc: number of threads to use for computational processes
     label: number of threads
-    default: 2
   memory:
     type: int?
     doc: maximum memory usage in megabytes
     label: memory usage (MB)
-    default: 4000
   
   destination:
     type: string?
@@ -140,7 +133,6 @@ steps:
       threads: threads
       identifier: identifier
       step:
-        default: 1
     out: [QC_reverse_reads, QC_forward_reads, reports_folder]
 
 #############################################
@@ -158,7 +150,6 @@ steps:
       forward_reads: workflow_quality/QC_forward_reads
       reverse_reads: workflow_quality/QC_reverse_reads
       paired_end: 
-        default: true
     out: [standard_report, sample_report]
 
   kraken2_compress:
@@ -192,7 +183,6 @@ steps:
       pacbio_reads: pacbio_reads
       nanopore_reads: nanopore_reads
       metagenomics:
-        default: true
       memory: memory
       threads: threads
     out: [contigs, scaffolds, assembly_graph, contigs_assembly_paths, scaffolds_assembly_paths, contigs_before_rr, params, log, internal_config, internal_dataset]
@@ -271,7 +261,6 @@ steps:
       memory: memory
       run_gtdbtk: run_gtdbtk
       step: 
-        default: 1
     out: [metabat2_output,checkm_output,gtdbtk_output,busco_output]
 
 #############################################    

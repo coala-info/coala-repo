@@ -21,7 +21,6 @@ inputs:
     doc: 'Method to use while calculating a score in any bin by comparing treatment
       value and control value. Available choices are: ppois, qpois, subtract, logFE,
       logLR, slogLR, FE, and max.'
-    default: ppois
     inputBinding:
       position: 101
       prefix: --method
@@ -40,7 +39,6 @@ inputs:
       - float
     doc: The pseudocount used for calculating logLR, logFE or FE. The count will
       be applied after normalization of sequencing depth.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --pseudocount
@@ -50,7 +48,6 @@ inputs:
       - float
     doc: Scaling factor for treatment and control track. Keep it as 1.0 or 
       default in most cases.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --scaling-factor

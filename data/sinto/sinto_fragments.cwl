@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Read tag storing cell barcode information (default = "CB")
-    default: CB
     inputBinding:
       position: 101
       prefix: --barcodetag
@@ -66,7 +65,6 @@ inputs:
     doc: Maximum distance between integration sites for the fragment to be 
       retained. Allows filtering of implausible fragments that likely result 
       from incorrect mapping positions. Default is 5000 bp.
-    default: 5000
     inputBinding:
       position: 101
       prefix: --max_distance
@@ -77,7 +75,6 @@ inputs:
     doc: Minimum distance between integration sites for the fragment to be 
       retained. Allows filtering of implausible fragments that likely result 
       from incorrect mapping positions. Default is 10 bp.
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_distance
@@ -86,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum MAPQ required to retain fragment (default = 30)
-    default: 30
     inputBinding:
       position: 101
       prefix: --min_mapq
@@ -95,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors (default = 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --nproc
@@ -124,7 +119,6 @@ inputs:
     doc: Regular expression used to match chromosomes to be included in output. 
       Default is "(?i)^chr" to match all chromosomes starting with "chr", case 
       insensitive
-    default: (?i)^chr
     inputBinding:
       position: 101
       prefix: --use_chrom

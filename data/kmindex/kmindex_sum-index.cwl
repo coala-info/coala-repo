@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: False positive rate correction factor in [0.0,1.0].
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --fp-correction
@@ -40,7 +39,6 @@ inputs:
       - int
     doc: Number of k-mers to use for estimating the correction factor (only with
       -e).
-    default: 10000
     inputBinding:
       position: 101
       prefix: --nbk
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: Verbosity level [debug|info|warning|error].
-    default: info
     inputBinding:
       position: 101
       prefix: --verbose

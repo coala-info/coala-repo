@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: Extension of IPA files
-    default: .txt
     inputBinding:
       position: 101
       prefix: --extension

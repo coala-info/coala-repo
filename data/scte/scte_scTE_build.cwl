@@ -28,7 +28,6 @@ inputs:
       TEs), or exclusive (exclued the reads that can map to the exon of protein coding
       genes and lncRNAs), or nointron (exclude the reads that can map to the exons
       and intron of genes).'
-    default: exclusive
     inputBinding:
       position: 101
       prefix: --mode
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: Output file prefix
-    default: the genome name
     inputBinding:
       position: 101
       prefix: --out

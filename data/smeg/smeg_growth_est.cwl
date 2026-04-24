@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: Cluster detection threshold (range 0.1 - 1)
-    default: 0.2
     inputBinding:
       position: 101
       prefix: -d
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: Coverage cutoff (>= 0.5)
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -c
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of mismatch
-    default: use default bowtie2 threshold
     inputBinding:
       position: 101
       prefix: -n
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of SNPs to estimate growth rate
-    default: 100
     inputBinding:
       position: 101
       prefix: -u
@@ -83,7 +79,6 @@ inputs:
       - 'null'
       - string
     doc: Sample filename extension (fq, fastq, fastq.gz)
-    default: fastq
     inputBinding:
       position: 101
       prefix: -x
@@ -92,7 +87,6 @@ inputs:
       - 'null'
       - float
     doc: Sample-specific SNP assignment threshold (range 0.1 - 1)
-    default: 0.6
     inputBinding:
       position: 101
       prefix: -t
@@ -101,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: SMEG method (0 = de novo-based method, 1 = reference-based method)
-    default: 0
     inputBinding:
       position: 101
       prefix: -m
@@ -125,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: -p

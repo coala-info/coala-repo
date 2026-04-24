@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size
-    default: 31
     inputBinding:
       position: 102
       prefix: --k
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

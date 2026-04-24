@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: output file
-    default: None
     inputBinding:
       position: 101
       prefix: --out_f

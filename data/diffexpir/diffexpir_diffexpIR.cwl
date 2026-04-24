@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Gene key to use from GTF file.
-    default: gene_id
     inputBinding:
       position: 101
       prefix: -k
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum fold change to filter out
-    default: 2.0
     inputBinding:
       position: 101
       prefix: -f
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum fold change between intron and neighboring exons
-    default: -1.0
     inputBinding:
       position: 101
       prefix: -r
@@ -53,7 +50,6 @@ inputs:
       - int
     doc: Smaller size allowed for an intron created for genes. We recommend to 
       use the reads length
-    default: 16
     inputBinding:
       position: 101
       prefix: -c
@@ -62,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum P-Value to filter out
-    default: '1.0E-6'
     inputBinding:
       position: 101
       prefix: -v
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: 'Stat method: ttest (default), wilcox'
-    default: ttest
     inputBinding:
       position: 101
       prefix: -s
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - string
     doc: Transcript key to use from GTF file.
-    default: transcript_id
     inputBinding:
       position: 101
       prefix: -t

@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: number of sequence bases per CSA bin
-    default: inf
     inputBinding:
       position: 101
       prefix: --bin-size
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: expected coverage. used only for memory tuning
-    default: 128
     inputBinding:
       position: 101
       prefix: --expected-cov
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: ignore reads with MAPQ < N and positions with base quality < N
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-mapq
@@ -102,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: use N threads
-    default: numCPUs
     inputBinding:
       position: 101
       prefix: --threads

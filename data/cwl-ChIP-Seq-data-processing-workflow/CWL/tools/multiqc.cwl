@@ -82,7 +82,6 @@ inputs:
   report_name:
     doc: name used for the html report and the corresponding zip file
     type: string
-    default: multiqc
     inputBinding:
       valueFrom: $(self + "_report")
       prefix: --filename

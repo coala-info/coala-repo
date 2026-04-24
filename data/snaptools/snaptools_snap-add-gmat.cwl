@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: max number of barcodes be stored in the memory.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --buffer-size
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: a boolen tag indicates output the progress.
-    default: true
     inputBinding:
       position: 101
       prefix: --verbose

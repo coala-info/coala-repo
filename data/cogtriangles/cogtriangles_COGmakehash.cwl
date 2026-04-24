@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: input file (list of IDs)
-    default: data.csv
     inputBinding:
       position: 101
       prefix: -i
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: index of the name field in the input file (1-based)
-    default: 1
     inputBinding:
       position: 101
       prefix: -n
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: separator character
-    default: ','
     inputBinding:
       position: 101
       prefix: -s

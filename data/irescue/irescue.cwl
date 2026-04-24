@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: "Path to bedtools binary, in case it's not in PATH (Default: bedtools)."
-    default: bedtools
     inputBinding:
       position: 101
       prefix: --bedtools
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: 'BAM tag containing the cell barcode sequence (default: CB).'
-    default: CB
     inputBinding:
       position: 101
       prefix: --cb-tag
@@ -43,7 +41,6 @@ inputs:
       - string
     doc: 'Genome assembly symbol. One of: GRCh38, hg38, GRCh37, hg19, GRCm39, mm39,
       GRCm38, mm10, dm6, test (default: None).'
-    default: None
     inputBinding:
       position: 101
       prefix: --genome
@@ -69,7 +66,6 @@ inputs:
       - boolean
     doc: 'Perform locus-level quantification, instead of subfamily-level (default:
       False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --locus
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum number of EM iterations (Default: 100).'
-    default: 100
     inputBinding:
       position: 101
       prefix: --max-iters
@@ -113,7 +108,6 @@ inputs:
       - boolean
     doc: 'Ignore UMI sequence. Intended for UMI-less datasets, such as Smart-seq (default:
       False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --no-umi
@@ -122,7 +116,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Output directory name (default: irescue_out).'
-    default: irescue_out
     inputBinding:
       position: 101
       prefix: --outdir
@@ -141,7 +134,6 @@ inputs:
       - 'null'
       - string
     doc: "Path to samtools binary, in case it's not in PATH (Default: samtools)."
-    default: samtools
     inputBinding:
       position: 101
       prefix: --samtools
@@ -151,7 +143,6 @@ inputs:
       - string
     doc: 'Library strandedness. Use only if the orientation of TEs is relevant. One
       of: unstranded, forward, reverse (default: unstranded).'
-    default: unstranded
     inputBinding:
       position: 101
       prefix: --strandedness
@@ -160,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of cpus to use (default: 1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -169,7 +159,6 @@ inputs:
       - 'null'
       - float
     doc: 'Log-likelihood change below which convergence is assumed (Default: 0.0001).'
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: --tolerance
@@ -178,7 +167,6 @@ inputs:
       - 'null'
       - string
     doc: 'BAM tag containing the UMI sequence (default: UR).'
-    default: UR
     inputBinding:
       position: 101
       prefix: --umi-tag

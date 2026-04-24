@@ -37,7 +37,6 @@ inputs:
     doc: Maximum allowed length of sequence ids. Defaults to 14 (required by 
       diamond for adding taxonomy info to database). Ids longer than this are 
       written to a file with the original id
-    default: 14
     inputBinding:
       position: 103
       prefix: --maxidlen

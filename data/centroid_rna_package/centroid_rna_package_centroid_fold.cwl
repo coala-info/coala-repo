@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: specify the inference engine
-    default: McCaskill
     inputBinding:
       position: 103
       prefix: --engine
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: the maximum number of clusters for the stochastic sampling algorithm
-    default: 10
     inputBinding:
       position: 103
       prefix: --max-clusters
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: the maximum distance of base-pairs
-    default: '0'
     inputBinding:
       position: 103
       prefix: --max-dist
@@ -142,7 +139,6 @@ inputs:
       - string
     doc: specify the seed for the random number generator (set this 
       automatically if seed=0)
-    default: '0'
     inputBinding:
       position: 103
       prefix: --seed

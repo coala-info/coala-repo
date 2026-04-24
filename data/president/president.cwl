@@ -11,7 +11,6 @@ inputs:
     doc: "ACGT nucleotide identity threshold after alignment\n                   \
       \     (percentage). A query sequence is reported as valid\n                \
       \        based on this threshold (def: 0.9)"
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --id_threshold
@@ -21,7 +20,6 @@ inputs:
       - float
     doc: "A query sequence is reported as valid, if the\n                        percentage
       of Ns is smaller or equal the threshold\n                        (def: 0.05)"
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --n_threshold

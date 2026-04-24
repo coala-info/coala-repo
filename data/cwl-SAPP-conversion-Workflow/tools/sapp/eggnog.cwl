@@ -62,13 +62,11 @@ inputs:
     inputBinding:
       prefix: -m
     label: hmmer or diamond
-    default: hmmer
 
   cpu:
     type: int?
     inputBinding:
       prefix: --cpu
-    default: 4
 
 arguments: 
   - position: 1

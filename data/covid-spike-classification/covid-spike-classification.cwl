@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: 'Select which input format to expect. Choices: ab1, fasta, fastq.'
-    default: ab1
     inputBinding:
       position: 102
       prefix: --input-format
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - File
     doc: Reference FASTA file to use
-    default: /ref/NC_045512.fasta
     inputBinding:
       position: 102
       prefix: --reference

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to folder containing recipes
-    default: recipes/
     inputBinding:
       position: 1
   - id: config
@@ -17,7 +16,6 @@ inputs:
       - 'null'
       - File
     doc: Path to Bioconda config
-    default: config.yml
     inputBinding:
       position: 2
   - id: dependencies
@@ -27,7 +25,6 @@ inputs:
         items: string
     doc: Return recipes in `recipe_folder` in the dependency chain for the 
       packages listed here. Answers the question "what does PACKAGE need?"
-    default: '-'
     inputBinding:
       position: 103
       prefix: --dependencies
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Limit lines emitted for commands executed
-    default: '-'
     inputBinding:
       position: 103
       prefix: --log-command-max-lines
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - File
     doc: Write log to file
-    default: '-'
     inputBinding:
       position: 103
       prefix: --logfile
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Log level for log file
-    default: debug
     inputBinding:
       position: 103
       prefix: --logfile-level
@@ -63,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Set logging level (debug, info, warning, error, critical)
-    default: info
     inputBinding:
       position: 103
       prefix: --loglevel
@@ -73,7 +66,6 @@ inputs:
       - boolean
     doc: Restrict --dependencies to packages in `recipe_folder`. Has no effect 
       if --reverse- dependencies, which always looks just in the recipe dir.
-    default: false
     inputBinding:
       position: 103
       prefix: --restrict
@@ -84,7 +76,6 @@ inputs:
         items: string
     doc: Return recipes in `recipe_folder` in the reverse dependency chain for 
       packages listed here. Answers the question "what depends on PACKAGE?"
-    default: '-'
     inputBinding:
       position: 103
       prefix: --reverse-dependencies

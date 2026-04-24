@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: E-value cutoff for the self-BLAST search.
-    default: '1e-10'
     inputBinding:
       position: 102
       prefix: --evalue
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment length *after* splitting hits.
-    default: 500
     inputBinding:
       position: 102
       prefix: --min_length
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percent identity for a BLAST hit.
-    default: 90.0
     inputBinding:
       position: 102
       prefix: --min_pident
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of groups in final bedfile
-    default: 20
     inputBinding:
       position: 102
       prefix: --num_groups

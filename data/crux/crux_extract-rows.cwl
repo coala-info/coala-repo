@@ -26,7 +26,6 @@ inputs:
       - string
     doc: Specifies the data type of the column, either an integer (int), a 
       floating point number (real), or a string.
-    default: string
     inputBinding:
       position: 104
       prefix: --column-type
@@ -36,7 +35,6 @@ inputs:
       - string
     doc: Specify the operator that is used to compare an entry in the specified 
       column to the value given on the command line.
-    default: eq
     inputBinding:
       position: 104
       prefix: --comparison
@@ -47,7 +45,6 @@ inputs:
     doc: Specify the input and output delimiter to use when processing the 
       delimited file. The argument can be either a single character or the 
       keyword 'tab.'
-    default: tab
     inputBinding:
       position: 104
       prefix: --delimiter
@@ -57,7 +54,6 @@ inputs:
       - boolean
     doc: Print the header line of the file, in addition to the columns that 
       match.
-    default: true
     inputBinding:
       position: 104
       prefix: --header
@@ -69,7 +65,6 @@ inputs:
       messages, including all those at lower verbosity levels: 0-fatal errors, 10-non-fatal
       errors, 20-warnings, 30-information on the progress of execution, 40-more progress
       information, 50-debug info, 60-detailed debug info.'
-    default: 30
     inputBinding:
       position: 104
       prefix: --verbosity

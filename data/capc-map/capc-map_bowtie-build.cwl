@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Diff-cover period for blockwise suffix-array builder
-    default: 1024
     inputBinding:
       position: 103
       prefix: --dcv
@@ -56,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Number of chars in initial lookup table
-    default: 10
     inputBinding:
       position: 103
       prefix: --ftabchars
@@ -81,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: SA is sampled every 2^offrate BWT chars
-    default: 5
     inputBinding:
       position: 103
       prefix: --offrate

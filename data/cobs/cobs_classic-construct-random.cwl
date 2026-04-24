@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: number of random 31-mers in document
-    default: 1000000
     inputBinding:
       position: 102
       prefix: --document-size
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: number of random documents in index
-    default: 10000
     inputBinding:
       position: 102
       prefix: --num-documents
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: number of hash functions
-    default: 1
     inputBinding:
       position: 102
       prefix: --num-hashes
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: number of bits of the signatures (vertical size)
-    default: 2 Mi
     inputBinding:
       position: 102
       prefix: --signature-size

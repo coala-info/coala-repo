@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: like -D, but allow separating groups with an empty line; METHOD={none(default),prepend,separate}
-    default: none
     inputBinding:
       position: 102
       prefix: --all-repeated
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: show all items, separating groups with an empty line; METHOD={separate(default),prepend,append,both}
-    default: separate
     inputBinding:
       position: 102
       prefix: --group

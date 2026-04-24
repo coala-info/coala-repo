@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: scale modification factor in HNSW or HubNSW, must be in [0.2,1]
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --scale_modify_f

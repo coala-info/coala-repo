@@ -24,7 +24,6 @@ inputs:
       - string
     doc: File name for the "deny list" text file (if written). Default is 
       <denylist.txt>
-    default: <denylist.txt>
     inputBinding:
       position: 102
       prefix: --denylist_filename

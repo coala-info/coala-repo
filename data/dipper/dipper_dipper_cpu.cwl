@@ -27,7 +27,6 @@ inputs:
       - int
     doc: 'Distance type to calculate: 1 - uncorrected, 2 - JC (default), 3 - Tajima-Nei,
       4 - K2P, 5 - Tamura, 6 - Jinnei'
-    default: 2
     inputBinding:
       position: 101
       prefix: --distance-type
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: 'Placement mode: -1 - exact mode, 10 - default'
-    default: 10
     inputBinding:
       position: 101
       prefix: --K-closest
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: 'K-mer size: Valid range: 2-15 (default: 15)'
-    default: 15
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -86,7 +83,6 @@ inputs:
       - string
     doc: 'Output format: t - phylogenetic tree in Newick format (default), d - distance
       matrix in PHYLIP format (coming soon)'
-    default: t
     inputBinding:
       position: 101
       prefix: --output-format
@@ -95,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: 'Sketch size (default: 1000)'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --sketch-size

@@ -23,7 +23,6 @@ inputs:
       - int
     doc: Number of pixels to buffer in memory. Only used when zoomifying .hic 
       files.
-    default: 10000000
     inputBinding:
       position: 103
       prefix: --chunk-size
@@ -33,7 +32,6 @@ inputs:
       - int
     doc: Compression level used to compress interactions. Defaults to 6 and 10 
       for .mcool and .hic files, respectively.
-    default: 6
     inputBinding:
       position: 103
       prefix: --compression-lvl
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: Copy the base resolution to the output file.
-    default: true
     inputBinding:
       position: 103
       prefix: --copy-base-resolution
@@ -60,7 +57,6 @@ inputs:
       - boolean
     doc: Use nice or power of two steps to automatically generate the list of 
       resolutions.
-    default: true
     inputBinding:
       position: 103
       prefix: --nice-steps
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: Copy the base resolution to the output file.
-    default: false
     inputBinding:
       position: 103
       prefix: --no-copy-base-resolution
@@ -79,7 +74,6 @@ inputs:
       - boolean
     doc: Do not generate All vs All matrix. Has no effect when zoomifying .cool 
       files.
-    default: true
     inputBinding:
       position: 103
       prefix: --no-skip-all-vs-all
@@ -89,7 +83,6 @@ inputs:
       - boolean
     doc: Use nice or power of two steps to automatically generate the list of 
       resolutions.
-    default: false
     inputBinding:
       position: 103
       prefix: --pow2-steps
@@ -108,7 +101,6 @@ inputs:
       - boolean
     doc: Do not generate All vs All matrix. Has no effect when zoomifying .cool 
       files.
-    default: false
     inputBinding:
       position: 103
       prefix: --skip-all-vs-all
@@ -118,7 +110,6 @@ inputs:
       - int
     doc: Maximum number of parallel threads to spawn. When zoomifying 
       interactions from a .cool file, only a single thread will be used.
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads
@@ -135,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: Set verbosity of output to the console.
-    default: 3
     inputBinding:
       position: 103
       prefix: --verbosity

@@ -29,7 +29,6 @@ inputs:
       - string
     doc: Selector for ID, [read, region, file, seqkit, seqprotocol, libkit, 
       libprotocol, assay]
-    default: read
     inputBinding:
       position: 102
       prefix: --selector

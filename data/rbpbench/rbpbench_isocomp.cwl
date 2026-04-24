@@ -14,7 +14,6 @@ inputs:
     doc: 'Allow overlapping regex hits. By default, search continues +1 after regex
       hit end position (i.e., not overlapping). NOTE that if --regex is structure
       pattern, search is currently always overlapping (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --allow-overlaps
@@ -25,7 +24,6 @@ inputs:
     doc: 'Define to which chromosome ID style to convert chromosome IDs to. 1: do
       not change chromosome IDs. 2: convert to chr1,chr2,...,chrM style. 3: convert
       to 1,2,...,MT style (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --chr-id-style
@@ -66,7 +64,6 @@ inputs:
       - int
     doc: 'Minimum sequence length required for input transcript sequences to be included
       in search (default: False)'
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --min-seq-len
@@ -77,7 +74,6 @@ inputs:
     doc: 'Minimum spacer length between regex hits. By default 0, i.e., hits can also
       be adjacent. Note that setting --min-spacer to > 0 also sets --allow-overlaps
       (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-spacer-len
@@ -97,7 +93,6 @@ inputs:
       - float
     doc: 'Maximum GU (GT) base pair fraction to report structure pattern regex hits
       (default: 1.0)'
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --regex-max-gu
@@ -107,7 +102,6 @@ inputs:
       - float
     doc: 'Minimum GC base pair fraction to report structure pattern regex hits (default:
       0.0)'
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --regex-min-gc
@@ -116,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum spacer length for structure pattern regex search (default: 200)'
-    default: 200
     inputBinding:
       position: 101
       prefix: --regex-spacer-max
@@ -125,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum spacer length for structure pattern regex search (default: 5)'
-    default: 5
     inputBinding:
       position: 101
       prefix: --regex-spacer-min
@@ -140,7 +132,6 @@ inputs:
       4: use full non-coding transcripts (i.e., no transcripts from protein-coding
       genes). 5: use full transcripts, coding AND non-coding (i.e., all transcripts
       from GTF!) (default: 1)"
-    default: 1
     inputBinding:
       position: 101
       prefix: --select-mode

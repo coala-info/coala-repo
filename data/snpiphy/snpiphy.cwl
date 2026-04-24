@@ -11,7 +11,6 @@ inputs:
     doc: Percent coverage of reference sequence (0-100%) used to reject a 
       sample. Samples lower than this threshold will be excluded from 
       phylogenetic pipeline steps.
-    default: 85%
     inputBinding:
       position: 101
       prefix: --cov_cutoff
@@ -110,7 +109,6 @@ inputs:
       - 'null'
       - string
     doc: 'Algorithm used for building the phylogenetic tree (default: raxml)'
-    default: raxml
     inputBinding:
       position: 101
       prefix: --tree_builder

@@ -51,7 +51,6 @@ inputs:
   unique_pfam_struct:
     type: string?
     label: Filename for unique domain StIs from Pfam 
-    default: unique_pfam.csv
     inputBinding:
       position: 4
       prefix: -uq_pf
@@ -59,7 +58,6 @@ inputs:
   unique_cath_struct:
     type: string?
     label: Filename for unique domain StIs from CATH 
-    default: unique_cath.csv
     inputBinding:
       position: 5
       prefix: -uq_ca
@@ -67,7 +65,6 @@ inputs:
   min_dom_len:
     type: int
     label: Minimum domain length criteria to filter StIs
-    default: 31
     inputBinding:
       prefix: -l
 

@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: length of k-mer to use, must be <= 31 and odd
-    default: 31
     inputBinding:
       position: 101
       prefix: --klen
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: length of minimizer to use; must be < `klen`
-    default: 19
     inputBinding:
       position: 101
       prefix: --mlen
@@ -99,7 +97,6 @@ inputs:
       - int
     doc: index construction seed (seed value passed to SSHash index construction;
       useful if empty buckets occur)
-    default: 1
     inputBinding:
       position: 101
       prefix: --seed
@@ -114,7 +111,6 @@ inputs:
       - 'null'
       - Directory
     doc: working directory where temporary files should be placed
-    default: ./workdir.noindex
     inputBinding:
       position: 101
       prefix: --work-dir

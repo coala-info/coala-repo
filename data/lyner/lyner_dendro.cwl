@@ -49,7 +49,6 @@ inputs:
       - string
     doc: Type of linkage to use for clustering (e.g., 'single', 'complete', 
       'average', 'weighted').
-    default: average
     inputBinding:
       position: 102
       prefix: --linkage
@@ -66,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: Orientation of the dendrogram ('top', 'bottom', 'left', 'right').
-    default: top
     inputBinding:
       position: 102
       prefix: --orientation

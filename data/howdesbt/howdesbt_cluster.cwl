@@ -35,7 +35,6 @@ inputs:
     doc: "remove nodes from the binary tree; remove those for which\n            \
       \        saturation of determined is more than 2 standard deviations\n     \
       \               below the mean\n                    (this is the default)"
-    default: true
     inputBinding:
       position: 103
       prefix: --cull
@@ -80,7 +79,6 @@ inputs:
       - boolean
     doc: "perform the clustering but don't build the tree's nodes\n              \
       \      (this is the default)"
-    default: true
     inputBinding:
       position: 103
       prefix: --nobuild

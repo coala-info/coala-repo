@@ -13,7 +13,6 @@ inputs:
       - 'null'
       - string
     doc: File name pattern for the input files.
-    default: .*.spoligotype]
     inputBinding:
       position: 101
       prefix: --pattern
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - boolean
     doc: Search input directories recursively
-    default: true
     inputBinding:
       position: 101
       prefix: --recursive

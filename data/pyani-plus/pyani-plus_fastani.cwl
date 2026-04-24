@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: 'How should the internal tools be run? [default: local]'
-    default: local
     inputBinding:
       position: 102
       prefix: --executor
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Comparison method fragment size.
-    default: 3000
     inputBinding:
       position: 102
       prefix: --fragsize
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Comparison method k-mer size
-    default: 16
     inputBinding:
       position: 102
       prefix: --kmersize
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: Comparison method min-match.
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --minmatch

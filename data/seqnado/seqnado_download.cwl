@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cores/parallel jobs.
-    default: 4
     inputBinding:
       position: 102
       prefix: --cores
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: Snakemake job profile preset.
-    default: le
     inputBinding:
       position: 102
       prefix: --preset

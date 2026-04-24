@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: deletion'
-    default: -3
     inputBinding:
       position: 101
       prefix: -D
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: gap extension'
-    default: -1
     inputBinding:
       position: 101
       prefix: -E
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: insertion'
-    default: -2
     inputBinding:
       position: 101
       prefix: -I
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: match'
-    default: 2
     inputBinding:
       position: 101
       prefix: -M
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: mismatch'
-    default: -5
     inputBinding:
       position: 101
       prefix: -X
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: read end clipping'
-    default: -10
     inputBinding:
       position: 101
       prefix: -T
@@ -63,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Basic bandwidth in graph alignment
-    default: 100
     inputBinding:
       position: 101
       prefix: -g
@@ -73,7 +66,6 @@ inputs:
       - int
     doc: Number of iterations for consensus calling, the more, the accurater, 
       the slower
-    default: 2
     inputBinding:
       position: 101
       prefix: -n
@@ -82,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Index of current job (0-based)
-    default: 0
     inputBinding:
       position: 101
       prefix: -p
@@ -129,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum bandwidth at graph alignment and ending extension
-    default: 800
     inputBinding:
       position: 101
       prefix: -e
@@ -138,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum bandwidth of pairwise alignment
-    default: 3200
     inputBinding:
       position: 101
       prefix: -W
@@ -147,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum variant of uncompressed sizes between two matched zmer
-    default: 2
     inputBinding:
       position: 101
       prefix: -l
@@ -156,7 +144,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum alignment identity
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -m
@@ -165,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum bandwidth of pairwise alignment, iteratively doubled to maximum
-    default: 50
     inputBinding:
       position: 101
       prefix: -w
@@ -174,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of seeding region within zmer window
-    default: 200
     inputBinding:
       position: 101
       prefix: -R
@@ -183,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: Total parallel jobs
-    default: 1
     inputBinding:
       position: 101
       prefix: -P
@@ -192,7 +176,6 @@ inputs:
       - 'null'
       - string
     doc: Print backbone sequences on file for debug
-    default: 'NULL'
     inputBinding:
       position: 101
       prefix: -B
@@ -201,7 +184,6 @@ inputs:
       - 'null'
       - string
     doc: Print dot graph on file, H U G E, be careful
-    default: 'NULL'
     inputBinding:
       position: 101
       prefix: -G
@@ -218,7 +200,6 @@ inputs:
       - 'null'
       - int
     doc: Zmer size, 5 <= <-z> <= 16
-    default: 10
     inputBinding:
       position: 101
       prefix: -z
@@ -227,7 +208,6 @@ inputs:
       - 'null'
       - int
     doc: Zmer window
-    default: 800
     inputBinding:
       position: 101
       prefix: -y

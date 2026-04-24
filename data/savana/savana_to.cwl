@@ -12,7 +12,6 @@ inputs:
       - int
     doc: Window size for allele counting to parallelise (default = 1200000; this
       should be >=500000)
-    default: 1200000
     inputBinding:
       position: 101
       prefix: --ac_window
@@ -30,7 +29,6 @@ inputs:
       - int
     doc: Mapping quality threshold for reads to be included in the allele 
       counting (default = 5)
-    default: 5
     inputBinding:
       position: 101
       prefix: --allele_mapq
@@ -40,7 +38,6 @@ inputs:
       - int
     doc: Minimum number of reads required per het SNP site for allele counting 
       (default = 10)
-    default: 10
     inputBinding:
       position: 101
       prefix: --allele_min_reads
@@ -50,7 +47,6 @@ inputs:
       - int
     doc: Percentage of known bases per bin required for read counting (default =
       75). Please specify percentage threshold as integer, e.g. "-bt 95"
-    default: 75
     inputBinding:
       position: 101
       prefix: --bases_threshold
@@ -62,7 +58,6 @@ inputs:
       read counting (default = 5). Please specify percentage threshold as 
       integer, e.g. "-t 5". Set "-t 0" if no overlap with blacklist is to be 
       tolerated
-    default: 5
     inputBinding:
       position: 101
       prefix: --bl_threshold
@@ -89,7 +84,6 @@ inputs:
       - int
     doc: Buffer when clustering adjacent potential breakpoints, excepting 
       insertions
-    default: 10
     inputBinding:
       position: 101
       prefix: --buffer
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Comparison method: tie-break by min. distance (default)'
-    default: true
     inputBinding:
       position: 101
       prefix: --by_distance
@@ -116,7 +109,6 @@ inputs:
       - float
     doc: Cellularity buffer to define purity grid search space during copy 
       number fitting (default = 0.1).
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --cellularity_buffer
@@ -147,7 +139,6 @@ inputs:
       - int
     doc: Chunksize to use when splitting genome for parallel analysis - used to 
       optimise memory (default=1000000)
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --chunksize
@@ -208,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: Length used for coverage bins (default=5)
-    default: 5
     inputBinding:
       position: 101
       prefix: --coverage_binsize
@@ -276,7 +266,6 @@ inputs:
       - int
     doc: Buffer when clustering alternate edge of potential breakpoints, 
       excepting insertions
-    default: 50
     inputBinding:
       position: 101
       prefix: --end_buffer
@@ -294,7 +283,6 @@ inputs:
       - 'null'
       - int
     doc: Buffer when clustering adjacent potential insertion breakpoints
-    default: 250
     inputBinding:
       position: 101
       prefix: --insertion_buffer
@@ -304,7 +292,6 @@ inputs:
       - int
     doc: Maximum distance between alignment start/end to be considered an 
       artefact when --keep_inv_artefact is not set
-    default: 200
     inputBinding:
       position: 101
       prefix: --inv_artefact_distance
@@ -329,7 +316,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length SV to consider
-    default: 30
     inputBinding:
       position: 101
       prefix: --length
@@ -347,7 +333,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum MAPQ to consider a read mapped
-    default: 5
     inputBinding:
       position: 101
       prefix: --mapq
@@ -393,7 +378,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele-fraction for a PASS variant (default=0.01)
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --min_af
@@ -448,7 +432,6 @@ inputs:
       - 'null'
       - int
     doc: In clustering step, discard clusters with fewer than n supporting reads
-    default: 3
     inputBinding:
       position: 101
       prefix: --min_reads_per_cluster
@@ -457,7 +440,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size for a segement to be considered a segment (default = 5).
-    default: 5
     inputBinding:
       position: 101
       prefix: --min_segment_size
@@ -466,7 +448,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum supporting reads for a PASS variant (default=3)
-    default: 3
     inputBinding:
       position: 101
       prefix: --min_support
@@ -490,7 +471,6 @@ inputs:
       - boolean
     doc: Use the Oxford Nanopore (ONT) trained model to classify variants 
       (default)
-    default: true
     inputBinding:
       position: 101
       prefix: --ont
@@ -505,7 +485,6 @@ inputs:
       - 'null'
       - int
     doc: Buffer for considering an overlap (default=100)
-    default: 100
     inputBinding:
       position: 101
       prefix: --overlap_buffer
@@ -532,7 +511,6 @@ inputs:
       - float
     doc: p-value used to test segmentation statistic for a given interval during
       CBS using (shuffles) number of permutations (default = 0.05).
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --p_seg
@@ -542,7 +520,6 @@ inputs:
       - float
     doc: p-value used to test validity of candidate segments from CBS using 
       (shuffles) number of permutations (default = 0.01).
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --p_val
@@ -578,7 +555,6 @@ inputs:
     doc: Quantile of changepoint (absolute median differences across all 
       segments) used to estimate threshold for segment merging (default = 0.2; 
       set to 0 to avoid segment merging).
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --quantile
@@ -588,7 +564,6 @@ inputs:
       - int
     doc: Mapping quality threshold for reads to be included in the read counting
       (default = 5)
-    default: 5
     inputBinding:
       position: 101
       prefix: --readcount_mapq
@@ -622,7 +597,6 @@ inputs:
       - int
     doc: Number of permutations (shuffles) to be performed during CBS (default =
       1000).
-    default: 1000
     inputBinding:
       position: 101
       prefix: --shuffles
@@ -632,7 +606,6 @@ inputs:
       - boolean
     doc: Report single breakend variants in addition to standard types 
       (default=False)
-    default: false
     inputBinding:
       position: 101
       prefix: --single_bnd
@@ -642,7 +615,6 @@ inputs:
       - int
     doc: Convert supplementary alignments below this threshold to single 
       breakend (default=5, must not exceed --mapq argument)
-    default: 5
     inputBinding:
       position: 101
       prefix: --single_bnd_max_mapq
@@ -651,7 +623,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of single breakend to consider (default=100)
-    default: 100
     inputBinding:
       position: 101
       prefix: --single_bnd_min_length

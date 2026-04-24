@@ -68,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size threshold to keep fragments.
-    default: 0
     inputBinding:
       position: 102
       prefix: --size

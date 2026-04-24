@@ -15,14 +15,12 @@ requirements:
 inputs:
 - id: population
   type: File
-  default:
     class: File
     location: '../../data/population.csv'
   inputBinding:
     prefix: '--population'
 - id: speakers
   type: File
-  default:
     class: File
     location: '../../data/speakers_revised.csv'
   inputBinding:

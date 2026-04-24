@@ -56,7 +56,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output files will be saved in OUTPUT_DIR.
-    default: .
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -65,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum noise level. This is used to calculate QUAL score
-    default: 0.002
     inputBinding:
       position: 102
       prefix: --p
@@ -82,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: Reference genome version to use.
-    default: hs37d5
     inputBinding:
       position: 102
       prefix: --reference

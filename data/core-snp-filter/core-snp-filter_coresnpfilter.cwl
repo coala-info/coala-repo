@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - float
     doc: Restrict to core genome (0.0 to 1.0, default = 0.0)
-    default: '0.0'
     inputBinding:
       position: 102
       prefix: --core

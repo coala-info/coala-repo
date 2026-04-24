@@ -29,7 +29,6 @@ inputs:
     doc: "If k-mers of single .unik file exceeds this threshold, an\n            \
       \                         individual index is created for this file. Supported
       units: K, M,\n                                     G."
-    default: 200M
     inputBinding:
       position: 101
       prefix: --block-size1-kmers-t
@@ -39,7 +38,6 @@ inputs:
       - string
     doc: "If k-mers of single .unik file exceeds this threshold, block\n         \
       \                            size is changed to 8. Supported units: K, M, G."
-    default: 20M
     inputBinding:
       position: 101
       prefix: --block-size8-kmers-t
@@ -49,7 +47,6 @@ inputs:
       - int
     doc: "If k-mers of single .unik file exceeds --block-sizeX-kmers-t,\n        \
       \                             block size is changed to this value."
-    default: 256
     inputBinding:
       position: 101
       prefix: --block-sizeX
@@ -60,7 +57,6 @@ inputs:
     doc: "If k-mers of single .unik file exceeds this threshold, block\n         \
       \                            size is changed to --block-sizeX. Supported units:
       K, M, G."
-    default: 10M
     inputBinding:
       position: 101
       prefix: --block-sizeX-kmers-t
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: 'False positive rate of the bloom filters, range: (0, 1).'
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --false-positive-rate
@@ -87,7 +82,6 @@ inputs:
       - string
     doc: "Regular expression for matching files in -I/--in-dir, case\n           \
       \                          ignored."
-    default: .unik$
     inputBinding:
       position: 101
       prefix: --file-regexp
@@ -129,7 +123,6 @@ inputs:
       - int
     doc: "Maximum number of opened files, please use a small value for\n         \
       \                            hard disk drive storage."
-    default: 256
     inputBinding:
       position: 101
       prefix: --max-open-files
@@ -138,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: Number of hash functions in bloom filters.
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-hash
@@ -156,7 +148,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs cores to use.
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: The path to an alternative model used for predicting classes.
-    default: None
     inputBinding:
       position: 101
       prefix: --model
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum search rank to record in the table output.
-    default: 10
     inputBinding:
       position: 101
       prefix: --rank
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - boolean
     doc: Display best match for each query.
-    default: false
     inputBinding:
       position: 101
       prefix: --render

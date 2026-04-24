@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: 'Generate index for sorted BAM output. Valid choices: (NONE, BAI, CSI).'
-    default: BAI
     inputBinding:
       position: 103
       prefix: --bam-index
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Bandwidth used in chaining and DP-based alignment.
-    default: -1
     inputBinding:
       position: 103
       prefix: -r
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Output at maximum N alignments for each read, 0 means no maximum.
-    default: 0
     inputBinding:
       position: 103
       prefix: --best-n
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Process N records per chunk.
-    default: 100
     inputBinding:
       position: 103
       prefix: --chunk-size
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Gap extension penalty 1.
-    default: -1
     inputBinding:
       position: 103
       prefix: --gap-extend-1
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Gap extension penalty 2.
-    default: -1
     inputBinding:
       position: 103
       prefix: --gap-extend-2
@@ -83,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Gap open penalty 1.
-    default: -1
     inputBinding:
       position: 103
       prefix: --gap-open-1
@@ -92,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Gap open penalty 2.
-    default: -1
     inputBinding:
       position: 103
       prefix: --gap-open-2
@@ -118,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer size (no larger than 28).
-    default: -1
     inputBinding:
       position: 103
       prefix: -k
@@ -135,7 +126,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL).'
-    default: WARN
     inputBinding:
       position: 103
       prefix: --log-level
@@ -144,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: Matching score.
-    default: -1
     inputBinding:
       position: 103
       prefix: -A
@@ -153,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: Max intron length (changes -r).
-    default: -1
     inputBinding:
       position: 103
       prefix: -G
@@ -170,7 +158,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum gap-compressed sequence identity in percent.
-    default: 70.0
     inputBinding:
       position: 103
       prefix: --min-gap-comp-id-perc
@@ -179,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapped read length in basepairs.
-    default: 50
     inputBinding:
       position: 103
       prefix: --min-length
@@ -188,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: Minimizer window size.
-    default: -1
     inputBinding:
       position: 103
       prefix: -w
@@ -197,7 +182,6 @@ inputs:
       - 'null'
       - int
     doc: Mismatch penalty.
-    default: -1
     inputBinding:
       position: 103
       prefix: -B
@@ -223,7 +207,6 @@ inputs:
       - 'null'
       - int
     doc: Cost for a non-canonical GT-AG splicing (effective in ISOSEQ preset).
-    default: -1
     inputBinding:
       position: 103
       prefix: -C
@@ -232,7 +215,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use, 0 means autodetection.
-    default: 0
     inputBinding:
       position: 103
       prefix: --num-threads
@@ -241,7 +223,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set alignment mode. Valid choices: (SUBREAD, CCS, HIFI, ISOSEQ, UNROLLED).'
-    default: CCS
     inputBinding:
       position: 103
       prefix: --preset
@@ -282,7 +263,6 @@ inputs:
       - 'null'
       - string
     doc: Memory per thread for sorting.
-    default: 768M
     inputBinding:
       position: 103
       prefix: --sort-memory
@@ -291,7 +271,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads used for sorting; 0 means 25% of -j, maximum 8.
-    default: 0
     inputBinding:
       position: 103
       prefix: --sort-threads
@@ -308,7 +287,6 @@ inputs:
       - 'null'
       - int
     doc: Stop chain enlongation if there are no minimizers in N bp.
-    default: -1
     inputBinding:
       position: 103
       prefix: -g
@@ -333,7 +311,6 @@ inputs:
       - 'null'
       - int
     doc: Z-drop inversion score.
-    default: -1
     inputBinding:
       position: 103
       prefix: -Z
@@ -342,7 +319,6 @@ inputs:
       - 'null'
       - int
     doc: Z-drop score.
-    default: -1
     inputBinding:
       position: 103
       prefix: -z

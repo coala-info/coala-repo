@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: Frequency of sequences to print, 0 to 1.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --frequency
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs
-    default: 1
     inputBinding:
       position: 101
       prefix: --numcpus

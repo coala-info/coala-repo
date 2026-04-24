@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: "'sam'(bwa samse/sampe), 'mem'(bwa mem)"
-    default: sam
     inputBinding:
       position: 101
       prefix: -b

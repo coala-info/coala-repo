@@ -20,7 +20,6 @@ inputs:
       - int
     doc: Compression level (integer). It defines compressibility in balance with
       computational resources (RAM & time). Use -s for levels perception.
-    default: 5
     inputBinding:
       position: 102
       prefix: --level

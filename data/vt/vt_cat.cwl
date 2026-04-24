@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: filter expression
-    default: ''
     inputBinding:
       position: 102
       prefix: -f
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - File
     doc: file containing list of intervals
-    default: ''
     inputBinding:
       position: 102
       prefix: -I
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: naive, assumes that headers are the same.
-    default: false
     inputBinding:
       position: 102
       prefix: -n
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - boolean
     doc: print options and summary
-    default: false
     inputBinding:
       position: 102
       prefix: -p
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: print site information only without genotypes
-    default: false
     inputBinding:
       position: 102
       prefix: -s
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: local sorting window size
-    default: 0
     inputBinding:
       position: 102
       prefix: -w

@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Chrom 1 column; default chrom1[input format option]
-    default: chrom1
     inputBinding:
       position: 102
       prefix: --c1
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Chrom 2 column; default chrom2[input format option]
-    default: chrom2
     inputBinding:
       position: 102
       prefix: --c2
@@ -54,7 +52,6 @@ inputs:
     doc: Number of deduped pairs to carry over from previous chunk to the new 
       chunk to avoid breaking duplicate clusters. Only works with '--backend 
       scipy or sklearn'. [dedup option]
-    default: 100
     inputBinding:
       position: 102
       prefix: --carryover
@@ -79,7 +76,6 @@ inputs:
       10,000 performance starts suffering significantly and the algorithm might 
       miss a few duplicates with non-zero --max-mismatch. Only works with 
       '--backend scipy or sklearn'. [dedup option]
-    default: 10000
     inputBinding:
       position: 102
       prefix: --chunksize
@@ -164,7 +160,6 @@ inputs:
       - int
     doc: Pairs with both sides mapped within this distance (bp) from each other 
       are considered duplicates. [dedup option]
-    default: 3
     inputBinding:
       position: 102
       prefix: --max-mismatch
@@ -175,7 +170,6 @@ inputs:
     doc: define the mismatch as either the max or the sum of the mismatches 
       ofthe genomic locations of the both sides of the two compared molecules. 
       [dedup option]
-    default: max
     inputBinding:
       position: 102
       prefix: --method
@@ -212,7 +206,6 @@ inputs:
       - int
     doc: Number of processes used by the auto-guessed input decompressing 
       command.
-    default: 3
     inputBinding:
       position: 102
       prefix: --nproc-in
@@ -222,7 +215,6 @@ inputs:
       - int
     doc: Number of processes used by the auto-guessed output compressing 
       command.
-    default: 8
     inputBinding:
       position: 102
       prefix: --nproc-out
@@ -231,7 +223,6 @@ inputs:
       - 'null'
       - string
     doc: Position 1 column; default pos1[input format option]
-    default: pos1
     inputBinding:
       position: 102
       prefix: --p1
@@ -240,7 +231,6 @@ inputs:
       - 'null'
       - string
     doc: Position 2 column; default pos2[input format option]
-    default: pos2
     inputBinding:
       position: 102
       prefix: --p2
@@ -249,7 +239,6 @@ inputs:
       - 'null'
       - string
     doc: Strand 1 column; default strand1[input format option]
-    default: strand1
     inputBinding:
       position: 102
       prefix: --s1
@@ -258,7 +247,6 @@ inputs:
       - 'null'
       - string
     doc: Strand 2 column; default strand2[input format option]
-    default: strand2
     inputBinding:
       position: 102
       prefix: --s2
@@ -307,7 +295,6 @@ inputs:
       - 'null'
       - string
     doc: Placeholder for a chromosome on an unmapped side; default !
-    default: '!'
     inputBinding:
       position: 102
       prefix: --unmapped-chrom

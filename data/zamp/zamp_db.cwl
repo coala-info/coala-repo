@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum amplicon coverage
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --ampcov
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Choose 16S or ITS for primer trimming
-    default: 16S
     inputBinding:
       position: 102
       prefix: --amplicon
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Which classifiers to train on the database
-    default: rdp, qiimerdp, dada2rdp
     inputBinding:
       position: 102
       prefix: --classifier
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Custom config file
-    default: (outputDir)/config.yaml
     inputBinding:
       position: 102
       prefix: --configfile
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum number of accepted primer mismatches, or float between 0 and 1
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --errors
@@ -82,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum amplicon length
-    default: 500
     inputBinding:
       position: 102
       prefix: --maxlen
@@ -91,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum amplicon length
-    default: 300
     inputBinding:
       position: 102
       prefix: --minlen
@@ -106,7 +99,6 @@ inputs:
       - 'null'
       - boolean
     doc: Extract amplicon regions and merge taxonomy
-    default: false
     inputBinding:
       position: 102
       prefix: --no-processing
@@ -115,7 +107,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use conda for Snakemake rules
-    default: true
     inputBinding:
       position: 102
       prefix: --no-use-conda
@@ -124,7 +115,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use singularity containers for Snakemake rules
-    default: false
     inputBinding:
       position: 102
       prefix: --no-use-singularity
@@ -133,7 +123,6 @@ inputs:
       - 'null'
       - boolean
     doc: Extract amplicon regions and merge taxonomy
-    default: true
     inputBinding:
       position: 102
       prefix: --processing
@@ -142,7 +131,6 @@ inputs:
       - 'null'
       - string
     doc: Maximum RAM for RDP training
-    default: 30g
     inputBinding:
       position: 102
       prefix: --rdp-mem
@@ -173,7 +161,6 @@ inputs:
       - 'null'
       - string
     doc: Dictionary of number of ranks to print limit when collapsing names
-    default: '{"Species": 5, "Genus": 6}'
     inputBinding:
       position: 102
       prefix: --tax-collapse
@@ -188,7 +175,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -197,7 +183,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use conda for Snakemake rules
-    default: false
     inputBinding:
       position: 102
       prefix: --use-conda
@@ -206,7 +191,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use singularity containers for Snakemake rules
-    default: true
     inputBinding:
       position: 102
       prefix: --use-singularity

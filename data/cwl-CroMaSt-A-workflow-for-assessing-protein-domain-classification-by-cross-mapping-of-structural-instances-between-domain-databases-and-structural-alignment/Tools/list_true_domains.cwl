@@ -39,12 +39,10 @@ inputs:
   outfile:
     type: [ File, string, "null"]
     label: User-defined filename for core structures from the given db
-    default: coreDomains.json
 
   database:
     type: [ string, "null"]
     label: The database to select core-structure from; either "CATH" or "Pfam"
-    default: CATH
 
 
 outputs:

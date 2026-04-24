@@ -10,7 +10,6 @@ inputs:
       - int
     doc: add info for streaming duplicate marking (for name collated input only,
       ignored for fixmate=0, disabled by default)
-    default: 0
     inputBinding:
       position: 101
       prefix: adddupmarksupport
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: size of internal memory buffer used for sorting in MiB
-    default: 1024
     inputBinding:
       position: 101
       prefix: blockmb
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: calculate MD and NM aux fields (for coordinate sorted output only)
-    default: 0
     inputBinding:
       position: 101
       prefix: calmdnm
@@ -46,7 +43,6 @@ inputs:
       - int
     doc: compression settings for output bam file 
       (1=fast,2=2,3=3,4=4,5=5,6=6,7=7,8=8,9=best,10=10,11=11,12=12)
-    default: 6
     inputBinding:
       position: 101
       prefix: level
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: 'create BAM index (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: index
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: 'create md5 check sum (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: md5
@@ -73,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: disable input validation (default is 0)
-    default: 0
     inputBinding:
       position: 101
       prefix: disablevalidation
@@ -83,7 +76,6 @@ inputs:
       - int
     doc: fix mate information (for name collated input only, disabled by 
       default)
-    default: 0
     inputBinding:
       position: 101
       prefix: fixmates
@@ -92,7 +84,6 @@ inputs:
       - 'null'
       - string
     doc: 'hash used for producing bamseqchksum type checksums (default: crc32prod)'
-    default: crc32prod
     inputBinding:
       position: 101
       prefix: hash
@@ -109,7 +100,6 @@ inputs:
       - 'null'
       - File
     doc: input filename (standard input if unset)
-    default: stdin
     inputBinding:
       position: 101
       prefix: I
@@ -118,7 +108,6 @@ inputs:
       - 'null'
       - string
     doc: input format (bam,cram,maussam,sam,sbam)
-    default: bam
     inputBinding:
       position: 101
       prefix: inputformat
@@ -127,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: 'input helper threads (for inputformat=bam only, default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: inputthreads
@@ -137,7 +125,6 @@ inputs:
       - int
     doc: mark duplicates (only when input name collated and output coordinate 
       sorted, disabled by default)
-    default: 0
     inputBinding:
       position: 101
       prefix: markduplicates
@@ -162,7 +149,6 @@ inputs:
       - 'null'
       - string
     doc: output format (bam,cram,sam)
-    default: bam
     inputBinding:
       position: 101
       prefix: outputformat
@@ -171,7 +157,6 @@ inputs:
       - 'null'
       - int
     doc: 'output helper threads (for outputformat=bam only, default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: outputthreads
@@ -190,7 +175,6 @@ inputs:
       - int
     doc: only recalculate MD and NM in the presence of indeterminate bases 
       (calmdnm=1 only)
-    default: 0
     inputBinding:
       position: 101
       prefix: calmdnmrecompindetonly
@@ -208,7 +192,6 @@ inputs:
       - int
     doc: remove duplicates (only when input name collated and output coordinate 
       sorted, disabled by default)
-    default: 0
     inputBinding:
       position: 101
       prefix: rmdup
@@ -225,7 +208,6 @@ inputs:
       - 'null'
       - int
     doc: 'threads used for sorting (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: sortthreads
@@ -235,7 +217,6 @@ inputs:
       - string
     doc: sorting order (coordinate, queryname, hash, tag, tagonly, queryname_HI 
       or queryname_lexicographic)
-    default: coordinate
     inputBinding:
       position: 101
       prefix: SO
@@ -244,7 +225,6 @@ inputs:
       - 'null'
       - int
     doc: do not open input files multiple times when set
-    default: 1
     inputBinding:
       position: 101
       prefix: streaming
@@ -269,7 +249,6 @@ inputs:
       - 'null'
       - int
     doc: print progress report
-    default: 1
     inputBinding:
       position: 101
       prefix: verbose
@@ -278,7 +257,6 @@ inputs:
       - 'null'
       - int
     doc: warn when changing existing MD/NM fields (calmdnm=1 only)
-    default: 0
     inputBinding:
       position: 101
       prefix: calmdnmwarnchange

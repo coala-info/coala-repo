@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - Directory
     doc: Base directory for species databases, defaults to bundled
-    default: None
     inputBinding:
       position: 103
       prefix: --db_dir
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn on debugging
-    default: false
     inputBinding:
       position: 103
       prefix: --debug
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Only look at this number of bases from start and end of fragment
-    default: None
     inputBinding:
       position: 103
       prefix: --max_bases_from_ends
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment length
-    default: 100
     inputBinding:
       position: 103
       prefix: --min_alignment_length
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum bit score
-    default: 100
     inputBinding:
       position: 103
       prefix: --min_bit_score
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - File
     doc: Filename for novel fragments
-    default: novel_fragments.fa
     inputBinding:
       position: 103
       prefix: --new_fragments
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - boolean
     doc: Assume chromosome is not circularised
-    default: false
     inputBinding:
       position: 103
       prefix: -c
@@ -84,7 +77,6 @@ inputs:
       - 'null'
       - File
     doc: Filename for novel profiles
-    default: profile.txt.novel
     inputBinding:
       position: 103
       prefix: --novel_profiles
@@ -93,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: No. of threads to use
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads
@@ -102,7 +93,6 @@ inputs:
       - 'null'
       - File
     doc: Filename for top blast hits
-    default: None
     inputBinding:
       position: 103
       prefix: --top_blast_hits
@@ -111,7 +101,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn on verbose output
-    default: false
     inputBinding:
       position: 103
       prefix: --verbose

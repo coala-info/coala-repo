@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: "Reference genome assembly (default: 'GRCh37') (choices: 'GRCh37', 'GRCh38')."
-    default: GRCh37
     inputBinding:
       position: 104
       prefix: --assembly
@@ -69,7 +68,6 @@ inputs:
       250). If your input data is from WGS (e.g. 30X), you don't need to change this
       option. However, if it's from targeted sequencing with ultra-deep coverage (e.g.
       500X), then you need to increase the maximum depth."
-    default: 250
     inputBinding:
       position: 104
       prefix: --max-depth

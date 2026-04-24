@@ -69,29 +69,24 @@ inputs:
     type: int?
     doc: Number of threads to use for computational processes
     label: number of threads
-    default: 2
   memory:
     type: int?
     doc: Maximum memory usage in megabytes
     label: memory usage (mb)
-    default: 4000
   
   # TODO: There seem to be some issues with the --tmpdir-prefix option in cwltool and the gtdbtk tool.
   run_gtdbtk:
     type: boolean
     label: Run GTDB-Tk
     doc: Run GTDB-Tk taxonomic bin classification when true
-    default: false
   busco_dataset:
       type: string
-      default: "/unlock/references/databases/BUSCO/BUSCO_odb10"
       label: BUSCO dataset
       doc: Path to the BUSCO dataset download location
   step:
     type: int?
     label: CWL base step number
     doc: Step number for order of steps
-    default: 1
   destination:
     type: string?
     label: Output Destination

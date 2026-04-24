@@ -40,7 +40,6 @@ inputs:
       - int
     doc: 'Use top #s percentile as cutoff for selecting bootstrap candidates (default:
       10)'
-    default: 10
     inputBinding:
       position: 103
       prefix: -cand_cutoff
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: 'Size of the candidate tree set (defaut: 5)'
-    default: 5
     inputBinding:
       position: 103
       prefix: -numcand
@@ -108,7 +106,6 @@ inputs:
       - 'null'
       - string
     doc: 'BIN, DNA, AA, CODON, or MORPH (default: auto-detect)'
-    default: auto-detect
     inputBinding:
       position: 103
       prefix: -st
@@ -125,7 +122,6 @@ inputs:
       - 'null'
       - int
     doc: 'Fix number of iterations to <#iterations> (default: auto)'
-    default: auto
     inputBinding:
       position: 103
       prefix: -n
@@ -134,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum number of iterations (default: 1000)'
-    default: 1000
     inputBinding:
       position: 103
       prefix: -nm
@@ -143,7 +138,6 @@ inputs:
       - 'null'
       - float
     doc: 'Minimum correlation coefficient (default: 0.99)'
-    default: 0.99
     inputBinding:
       position: 103
       prefix: -bcor
@@ -153,7 +147,6 @@ inputs:
       - float
     doc: "Min split support in range [0,1]. 0.5 for majority-rule\nconsensus (default:
       0, i.e. extended consensus)"
-    default: 0
     inputBinding:
       position: 103
       prefix: -t
@@ -170,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of initial parsimony trees (default: 100)'
-    default: 100
     inputBinding:
       position: 103
       prefix: -numpars
@@ -235,7 +227,6 @@ inputs:
       - 'null'
       - float
     doc: 'Perturbation strength for randomized NNI (default: 0.5)'
-    default: 0.5
     inputBinding:
       position: 103
       prefix: -pers
@@ -279,7 +270,6 @@ inputs:
       - int
     doc: 'Number of non-ratchet iterations before each ratchet iteration (default:
       1)'
-    default: 1
     inputBinding:
       position: 103
       prefix: -ratchet_iter
@@ -297,7 +287,6 @@ inputs:
       - float
     doc: 'Percentage of informative sites selected for perturbation during ratchet
       (default: 50)'
-    default: 50
     inputBinding:
       position: 103
       prefix: -ratchet_percent
@@ -307,7 +296,6 @@ inputs:
       - float
     doc: 'Weight to add to each site selected for perturbation during ratchet (default:
       1)'
-    default: 1
     inputBinding:
       position: 103
       prefix: -ratchet_wgt
@@ -316,7 +304,6 @@ inputs:
       - 'null'
       - float
     doc: 'RELL epsilon to break tie (default: 0.5)'
-    default: 0.5
     inputBinding:
       position: 103
       prefix: -beps
@@ -325,7 +312,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum radius of SPR (default: 3)'
-    default: 3
     inputBinding:
       position: 103
       prefix: -spr_rad
@@ -334,7 +320,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of unsuccessful iterations to stop (default: 100)'
-    default: 100
     inputBinding:
       position: 103
       prefix: -numstop
@@ -351,7 +336,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of best parsimony trees (default: 20)'
-    default: 20
     inputBinding:
       position: 103
       prefix: -toppars
@@ -360,7 +344,6 @@ inputs:
       - 'null'
       - int
     doc: '#Iterations for UFBoot stopping rule (default: 100)'
-    default: 100
     inputBinding:
       position: 103
       prefix: -nstep

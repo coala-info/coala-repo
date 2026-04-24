@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: number of processors to use.
-    default: 3
     inputBinding:
       position: 102
       prefix: --processes
@@ -61,7 +60,6 @@ inputs:
       - 'null'
       - File
     doc: vcf to genotype (use - for stdin).
-    default: '-'
     inputBinding:
       position: 102
       prefix: --vcf

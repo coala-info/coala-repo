@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of threads for multithreaded processes (default: 4)'
-    default: 4
     inputBinding:
       position: 101
       prefix: --CPU
@@ -145,7 +144,6 @@ inputs:
       - int
     doc: 'max distance between mates, also max intron length for STAR alignments (default:
       100000)'
-    default: 100000
     inputBinding:
       position: 101
       prefix: --max_mate_dist
@@ -154,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: 'maximum number of partners allowed for a given fusion (default: 10)'
-    default: 10
     inputBinding:
       position: 101
       prefix: --max_promiscuity
@@ -174,7 +171,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum number of junction-spanning reads required (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_junction_reads
@@ -184,7 +180,6 @@ inputs:
       - int
     doc: 'minimum number of junction reads required if breakpoint lacks involvement
       of only reference junctions (default: 3)'
-    default: 3
     inputBinding:
       position: 101
       prefix: --min_novel_junction_support
@@ -195,7 +190,6 @@ inputs:
     doc: 'for promiscuous fusions, those with less than this support of the dominant
       scoring pair are filtered prior to applying the max_promiscuity filter. (default:
       50)'
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_pct_dom_promiscuity
@@ -205,7 +199,6 @@ inputs:
       - int
     doc: 'minimum percent identity for a fusion-supporting read alignment (defualt:
       96)'
-    default: 96
     inputBinding:
       position: 101
       prefix: --min_per_id
@@ -215,7 +208,6 @@ inputs:
       - int
     doc: 'minimum number of spanning frags if no junction reads are found (default:
       5)'
-    default: 5
     inputBinding:
       position: 101
       prefix: --min_spanning_frags_only
@@ -225,7 +217,6 @@ inputs:
       - int
     doc: 'minimum fusion support = ( # junction_reads + # spanning_frags )  (default:
       1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_sum_frags
@@ -293,7 +284,6 @@ inputs:
       - 'null'
       - string
     doc: 'output filename prefix (default: finspector)'
-    default: finspector
     inputBinding:
       position: 101
       prefix: --out_prefix
@@ -312,7 +302,6 @@ inputs:
       - int
     doc: 'require long double anchor support for split reads when no spanning frags
       are found (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --require_LDAS
@@ -337,7 +326,6 @@ inputs:
       - 'null'
       - int
     doc: 'maximum length of introns when shrunk (default: 1000)'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --shrink_intron_max_length

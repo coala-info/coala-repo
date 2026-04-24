@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Ordering of blocks in XMFA/FASTA output (0,1,2,...)
-    default: '0'
     inputBinding:
       position: 101
       prefix: --order

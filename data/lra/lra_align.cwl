@@ -73,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Compute at most number of alignments for one read.
-    default: 3
     inputBinding:
       position: 103
       prefix: --Al
@@ -83,7 +82,6 @@ inputs:
       - int
     doc: Print out at most number of alignments for one read. (Use this option 
       if want to print out secondary alignments)
-    default: 1
     inputBinding:
       position: 103
       prefix: --PrintNumAln
@@ -142,7 +140,6 @@ inputs:
       - float
     doc: Retain secondary alignments that have score at least this fraction to 
       the primary alignment
-    default: 0.7
     inputBinding:
       position: 103
       prefix: --alnthres
@@ -167,7 +164,6 @@ inputs:
       - 'null'
       - int
     doc: Use n threads
-    default: 1
     inputBinding:
       position: 103
       prefix: -t

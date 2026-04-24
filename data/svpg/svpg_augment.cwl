@@ -19,7 +19,6 @@ inputs:
       - int
     doc: Minimum size of SVs to be detected. Set to -1 for unlimited size 
       (recommend somatic SV).
-    default: -1
     inputBinding:
       position: 101
       prefix: --max_sv_size

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: feature type to include
-    default: CDS
     inputBinding:
       position: 101
       prefix: --feature
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: replace locus tag with value from field
-    default: off
     inputBinding:
       position: 101
       prefix: --field
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: list of isolates to include in output
-    default: off
     inputBinding:
       position: 101
       prefix: --list

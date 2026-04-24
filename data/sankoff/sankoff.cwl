@@ -47,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Assign label to internal nodes. The argument is the prefix.
-    default: inode
     inputBinding:
       position: 101
       prefix: --ilabel
@@ -56,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: remove nodes not in the alignment
-    default: 1
     inputBinding:
       position: 101
       prefix: --induce_tree_over_samples
@@ -73,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: change number of default threads
-    default: 20
     inputBinding:
       position: 101
       prefix: --nthread

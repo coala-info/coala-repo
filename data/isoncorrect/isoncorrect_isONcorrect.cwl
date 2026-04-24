@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Activates slower exact mode for instance smaller than this limit
-    default: 0
     inputBinding:
       position: 101
       prefix: --exact_instance_limit
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - File
     doc: Path to input fastq file with reads
-    default: false
     inputBinding:
       position: 101
       prefix: --fastq
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer size
-    default: 9
     inputBinding:
       position: 101
       prefix: --k
@@ -79,7 +76,6 @@ inputs:
       - int
     doc: Maximum number of seqs to correct at a time (in case of large 
       clusters).
-    default: 2000
     inputBinding:
       position: 101
       prefix: --max_seqs
@@ -88,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of seqs to spoa
-    default: 200
     inputBinding:
       position: 101
       prefix: --max_seqs_to_spoa
@@ -126,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum fraction keeping substitution
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --T
@@ -152,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: Window size
-    default: 20
     inputBinding:
       position: 101
       prefix: --w
@@ -161,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: Upper interval length
-    default: 80
     inputBinding:
       position: 101
       prefix: --xmax
@@ -170,7 +162,6 @@ inputs:
       - 'null'
       - int
     doc: Lower interval length
-    default: 18
     inputBinding:
       position: 101
       prefix: --xmin

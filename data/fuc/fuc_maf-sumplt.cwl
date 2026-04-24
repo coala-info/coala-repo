@@ -17,7 +17,6 @@ inputs:
       - type: array
         items: float
     doc: Width, height in inches
-    default:
       - 15.0
       - 10.0
     inputBinding:
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: Font size of legend texts
-    default: 12.0
     inputBinding:
       position: 102
       prefix: --legend_fontsize
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: Font size of tick labels
-    default: 12.0
     inputBinding:
       position: 102
       prefix: --ticklabels_fontsize
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: Font size of subplot titles
-    default: 16.0
     inputBinding:
       position: 102
       prefix: --title_fontsize

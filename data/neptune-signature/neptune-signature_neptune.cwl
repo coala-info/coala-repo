@@ -136,7 +136,6 @@ inputs:
       - float
     doc: The probability of a mutation or error at an arbitrary position. The 
       default value is 0.01.
-    default: 0.01
     inputBinding:
       position: 104
       prefix: --rate

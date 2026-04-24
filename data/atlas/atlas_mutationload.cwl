@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Filtered flag
-    default: 0
     inputBinding:
       position: 103
       prefix: -F
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality
-    default: 0
     inputBinding:
       position: 103
       prefix: -q
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Required flag
-    default: 0
     inputBinding:
       position: 103
       prefix: -f
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 0
     inputBinding:
       position: 103
       prefix: -@

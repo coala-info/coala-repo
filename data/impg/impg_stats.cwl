@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for parallel processing
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Verbosity level (0 = error, 1 = info, 2 = debug)
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbose

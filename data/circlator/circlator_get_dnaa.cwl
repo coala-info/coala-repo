@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length in amino acids
-    default: 500
     inputBinding:
       position: 102
       prefix: --max_length
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length in amino acids
-    default: 333
     inputBinding:
       position: 102
       prefix: --min_length
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Each sequence name must match this regular expression
-    default: Chromosomal replication initiat(or|ion) protein.*dnaa
     inputBinding:
       position: 102
       prefix: --name_re
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - string
     doc: Uniprot search term
-    default: dnaa
     inputBinding:
       position: 102
       prefix: --uniprot_search

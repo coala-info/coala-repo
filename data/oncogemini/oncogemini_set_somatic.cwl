@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth required in all samples
-    default: 0
     inputBinding:
       position: 102
       prefix: --minDP
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum genotype quality required in all samples
-    default: 0
     inputBinding:
       position: 102
       prefix: --minGQ
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: The maximum frequency of the alternate allele in the normal sample
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --normAF
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum count of the alternate allele in the normal sample
-    default: 0
     inputBinding:
       position: 102
       prefix: --normCount
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum depth allowed in the normal sample to believe somatic
-    default: 0
     inputBinding:
       position: 102
       prefix: --normDP
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum frequency of the alternate allele in the tumor sample
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --tumAF
@@ -86,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum count of the alternate allele in the tumor sample
-    default: 0
     inputBinding:
       position: 102
       prefix: --tumCount
@@ -95,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum depth allowed in the tumor sample to believe somatic
-    default: 0
     inputBinding:
       position: 102
       prefix: --tumDP

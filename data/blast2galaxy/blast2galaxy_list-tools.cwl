@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Server-ID as in your config TOML
-    default: default
     inputBinding:
       position: 101
       prefix: --server

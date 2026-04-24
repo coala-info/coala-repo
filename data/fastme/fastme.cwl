@@ -21,7 +21,6 @@ inputs:
     doc: Use this option to indicate the number of replicates FastME will do for
       bootstrapping. Default value is 0. Only helpful when the input data file 
       contains sequences alignment(s).
-    default: 0
     inputBinding:
       position: 101
       prefix: --bootstrap
@@ -60,7 +59,6 @@ inputs:
       - int
     doc: Use this option to indicate the number of datasets in your input data 
       file. Default value is 1.
-    default: 1
     inputBinding:
       position: 101
       prefix: --datasets
@@ -96,7 +94,6 @@ inputs:
       with gamma distributed rates across sites, the [alpha] default value is 
       1.0. Only helpful when the input data file contains sequences 
       alignment(s).
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --gamma
@@ -142,7 +139,6 @@ inputs:
       - int
     doc: Use this option to set the number of digits after the dot to use on 
       output. Default number of digits is 8.
-    default: 8
     inputBinding:
       position: 101
       prefix: -f
@@ -152,7 +148,6 @@ inputs:
       - int
     doc: Use this option to set the number of threads to use. Default number of 
       threads is 20.
-    default: 20
     inputBinding:
       position: 101
       prefix: --nb_threads
@@ -198,7 +193,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the verbose level to value [0-3]. Default value is 0.
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbose

@@ -55,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: target output count error rate
-    default: 0.001
     inputBinding:
       position: 102
       prefix: -e
@@ -64,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: -t

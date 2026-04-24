@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use; 0 to use all
-    default: 0
     inputBinding:
       position: 104
       prefix: --threads
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Coverage threshold for core structures. [0 - 100]
-    default: 80
     inputBinding:
       position: 104
       prefix: --threshold
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbosity (0: quiet, 1: +errors, 2: +warnings, 3: +info, 4: +debug)'
-    default: 3
     inputBinding:
       position: 104
       prefix: --verbosity

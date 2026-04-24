@@ -37,7 +37,6 @@ inputs:
     doc: "Sets the number of pixel records loaded from\n                         \
       \         disk at one time. Can affect the performance\n                   \
       \               of joins on high resolution datasets."
-    default: 1000000
     inputBinding:
       position: 102
       prefix: --chunksize
@@ -69,7 +68,6 @@ inputs:
       - string
     doc: "Format string for floating point numbers\n                             \
       \     (e.g. '.12g', '03.2f')."
-    default: g
     inputBinding:
       position: 102
       prefix: --float-format
@@ -101,7 +99,6 @@ inputs:
       - string
     doc: "Missing data representation. Default is\n                              \
       \    empty ''."
-    default: "''"
     inputBinding:
       position: 102
       prefix: --na-rep
@@ -163,7 +160,6 @@ inputs:
       \           to be ignored. Note that for coolers stored\n                  \
       \                in 'symmetric-upper' mode, 'pixels' only holds\n          \
       \                        the upper triangle values of the matrix."
-    default: pixels
     inputBinding:
       position: 102
       prefix: --table

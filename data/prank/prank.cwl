@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Min. sequence length for anchoring
-    default: 200
     inputBinding:
       position: 102
       prefix: -anchorskip
@@ -79,7 +78,6 @@ inputs:
       - 'null'
       - float
     doc: Gap extension probability
-    default: dna 0.75 / prot 0.5
     inputBinding:
       position: 102
       prefix: -gapext
@@ -88,7 +86,6 @@ inputs:
       - 'null'
       - float
     doc: Gap opening rate
-    default: dna 0.025 / prot 0.005
     inputBinding:
       position: 102
       prefix: -gaprate
@@ -113,7 +110,6 @@ inputs:
       - 'null'
       - float
     doc: TS/TV rate ratio
-    default: 2
     inputBinding:
       position: 102
       prefix: -kappa
@@ -138,7 +134,6 @@ inputs:
       - 'null'
       - float
     doc: Merge distance (if no tree provided)
-    default: 0.1
     inputBinding:
       position: 102
       prefix: -mergedist
@@ -147,7 +142,6 @@ inputs:
       - 'null'
       - File
     doc: Model file
-    default: HKY2/WAG
     inputBinding:
       position: 102
       prefix: -m
@@ -204,7 +198,6 @@ inputs:
       - 'null'
       - string
     doc: Output format ('fasta', 'phylipi', 'phylips', 'paml', 'nexus')
-    default: fasta
     inputBinding:
       position: 102
       prefix: -f
@@ -229,7 +222,6 @@ inputs:
       - 'null'
       - float
     doc: Expected pairwise distance for computing guide tree
-    default: dna 0.25 / prot 0.5
     inputBinding:
       position: 102
       prefix: -pwdist
@@ -254,7 +246,6 @@ inputs:
       - 'null'
       - float
     doc: Pur/pyr rate ratio
-    default: 1
     inputBinding:
       position: 102
       prefix: -rho
@@ -263,7 +254,6 @@ inputs:
       - 'null'
       - string
     doc: Scale branch lengths
-    default: dna 1 / prot 1
     inputBinding:
       position: 102
       prefix: -scalebranches
@@ -392,7 +382,6 @@ inputs:
       - 'null'
       - File
     doc: Tree file
-    default: no tree, generate approximate NJ tree
     inputBinding:
       position: 102
       prefix: -t

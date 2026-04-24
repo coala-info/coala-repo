@@ -80,7 +80,6 @@ inputs:
       - float
     doc: '% of -A & -B genomes that must comply presence/absence (optional, default=100,
       requires -g)'
-    default: 100
     inputBinding:
       position: 101
       prefix: -P

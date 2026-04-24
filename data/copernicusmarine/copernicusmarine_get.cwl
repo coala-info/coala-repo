@@ -136,7 +136,6 @@ inputs:
     doc: Maximum number of concurrent requests. Default 15. The command uses a 
       thread pool executor to manage concurrent requests. If set to 0, no 
       parallel executions are used.
-    default: 15
     inputBinding:
       position: 101
       prefix: --max-concurrent-requests
@@ -155,7 +154,6 @@ inputs:
       - Directory
     doc: The destination folder for the downloaded files. Default is the current
       directory.
-    default: current directory
     inputBinding:
       position: 101
       prefix: --output-directory

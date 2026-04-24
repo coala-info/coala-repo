@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Align genomes to the center (default: False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --align_center
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: 'Axis stroke color (str; default: "lightgray")'
-    default: '"lightgray"'
     inputBinding:
       position: 101
       prefix: --axis_stroke_color
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: bitscore threshold (default=50)
-    default: 50
     inputBinding:
       position: 101
       prefix: --bitscore
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: 'Block stroke color (str; default: "gray")'
-    default: '"gray"'
     inputBinding:
       position: 101
       prefix: --block_stroke_color
@@ -99,7 +95,6 @@ inputs:
       - 'null'
       - float
     doc: evalue threshold (default=1e-2)
-    default: '1e-2'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -128,7 +123,6 @@ inputs:
       - string
     doc: "Comma-separated list of feature keys to draw (default:\n               \
       \         CDS,rRNA,tRNA,tmRNA,ncRNA,misc_RNA,repeat_region)"
-    default: CDS,rRNA,tRNA,tmRNA,ncRNA,misc_RNA,repeat_region
     inputBinding:
       position: 101
       prefix: --features
@@ -138,7 +132,6 @@ inputs:
       - string
     doc: "Comma-separated list of output file formats (svg, png,\n               \
       \         pdf, eps, ps; default: svg)."
-    default: svg
     inputBinding:
       position: 101
       prefix: --format
@@ -174,7 +167,6 @@ inputs:
       - 'null'
       - int
     doc: identity threshold (default=0)
-    default: 0
     inputBinding:
       position: 101
       prefix: --identity
@@ -212,7 +204,6 @@ inputs:
       - string
     doc: "Legend position (default: \"right\"; \"right\", \"left\",\n            \
       \            \"top\", \"bottom\", \"none\")"
-    default: '"right"'
     inputBinding:
       position: 101
       prefix: --legend
@@ -241,7 +232,6 @@ inputs:
       - string
     doc: "Line stroke color (optional; str; default:\n                        \"lightgray\"\
       )"
-    default: '"lightgray"'
     inputBinding:
       position: 101
       prefix: --line_stroke_color
@@ -260,7 +250,6 @@ inputs:
       - boolean
     doc: "Normalize record length (experimental; default:\n                      \
       \  False)."
-    default: false
     inputBinding:
       position: 101
       prefix: --normalize_length
@@ -269,7 +258,6 @@ inputs:
       - 'null'
       - string
     doc: 'dinucleotide skew (default: GC).'
-    default: GC
     inputBinding:
       position: 101
       prefix: --nt
@@ -278,7 +266,6 @@ inputs:
       - 'null'
       - string
     doc: 'output file prefix (default: out)'
-    default: out
     inputBinding:
       position: 101
       prefix: --output
@@ -287,7 +274,6 @@ inputs:
       - 'null'
       - string
     doc: 'Palette name (default: default)'
-    default: default
     inputBinding:
       position: 101
       prefix: --palette
@@ -305,7 +291,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Resolve overlaps (experimental; default: False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --resolve_overlaps
@@ -334,7 +319,6 @@ inputs:
       - string
     doc: "Scale bar/ruler stroke color (optional; str; default:\n                \
       \        \"black\")"
-    default: '"black"'
     inputBinding:
       position: 101
       prefix: --scale_stroke_color
@@ -344,7 +328,6 @@ inputs:
       - float
     doc: "Scale bar/ruler stroke width (optional; float;\n                       \
       \ default: 3 (pt))"
-    default: 3
     inputBinding:
       position: 101
       prefix: --scale_stroke_width
@@ -354,7 +337,6 @@ inputs:
       - string
     doc: "Style for the length scale (default: \"bar\"; \"bar\",\n               \
       \         \"ruler\")"
-    default: '"bar"'
     inputBinding:
       position: 101
       prefix: --scale_style
@@ -365,7 +347,6 @@ inputs:
     doc: "separate forward and reverse strands (default: False).\n               \
       \         Features of undefined strands are shown on the forward\n         \
       \               strand."
-    default: false
     inputBinding:
       position: 101
       prefix: --separate_strands
@@ -374,7 +355,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'plot GC content below genome (default: False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --show_gc
@@ -385,7 +365,6 @@ inputs:
     doc: "Show labels: no argument or 'all' (all records),\n                     \
       \   'first' (first record only), 'none' (no labels).\n                     \
       \   Default: 'none'"
-    default: "'none'"
     inputBinding:
       position: 101
       prefix: --show_labels
@@ -394,7 +373,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'plot GC skew below genome (default: False).'
-    default: false
     inputBinding:
       position: 101
       prefix: --show_skew

@@ -68,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer size (default 21), it has to be an odd number
-    default: 21
     inputBinding:
       position: 101
       prefix: --kmer_size
@@ -95,7 +94,6 @@ inputs:
       - int
     doc: Number of buckets in hash table in bits (default 10, this is a power of
       2, ie 2^mem_height)
-    default: 10
     inputBinding:
       position: 101
       prefix: --mem_height
@@ -104,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Size of hash table buckets (default 100)
-    default: 100
     inputBinding:
       position: 101
       prefix: --mem_width
@@ -147,7 +144,6 @@ inputs:
       - int
     doc: Filter for quality scores in the input file, any k-mer wiht a base with
       quality in the threshold or smaller is not considered (default 0)
-    default: 0
     inputBinding:
       position: 101
       prefix: --quality_score_threshold

@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: set kmer for baiting stringency
-    default: 31
     inputBinding:
       position: 101
       prefix: --kbait
@@ -52,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum average coverage of contigs to be retained (default: 0 - off)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_cov
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum length of contig to be retained as backbone (default: 0 - off)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --min_len
@@ -106,7 +103,6 @@ inputs:
       - string
     doc: "specify sequencing platform (default: 'solexa'; other options: 'iontor',
       '454', 'pacbio')"
-    default: solexa
     inputBinding:
       position: 101
       prefix: --platform
@@ -168,7 +164,6 @@ inputs:
       - 'null'
       - int
     doc: iteration to start with (default=0, when using '-quick' reference)
-    default: 0
     inputBinding:
       position: 101
       prefix: -start

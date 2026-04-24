@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 4
     inputBinding:
       position: 103
       prefix: -t
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory where all temporary files will be stored
-    default: /tmp
     inputBinding:
       position: 103
       prefix: -tmp

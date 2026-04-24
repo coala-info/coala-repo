@@ -96,7 +96,6 @@ inputs:
       - 'null'
       - string
     doc: Sample name to include default=filename
-    default: filename
     inputBinding:
       position: 101
       prefix: --name

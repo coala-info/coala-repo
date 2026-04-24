@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of cells a gene must be detected in to be included
-    default: 3
     inputBinding:
       position: 102
       prefix: --min-cells
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of genes detected in a cell to be included
-    default: 200
     inputBinding:
       position: 102
       prefix: --min-genes
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Number of highly variable genes to identify
-    default: 2000
     inputBinding:
       position: 102
       prefix: --n-top-genes

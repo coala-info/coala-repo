@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - File
     doc: VNTR models file
-    default: vntr_data/hg19_selected_VNTRs_Illumina.db
     inputBinding:
       position: 101
       prefix: --models

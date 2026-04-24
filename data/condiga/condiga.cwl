@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: minimum genome coverage cut-off
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --genome-coverage
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - float
     doc: minimum mapping length threshold cut-off
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --map-threshold
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 8
     inputBinding:
       position: 101
       prefix: --nthreads
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - float
     doc: minimum relative abundance cut-off
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: --rel-abundance

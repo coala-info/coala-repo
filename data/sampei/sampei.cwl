@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: Type of error (ppm or dalton)
-    default: ppm
     inputBinding:
       position: 104
       prefix: --error-type
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Fragment mass error
-    default: 20
     inputBinding:
       position: 104
       prefix: --fragment-mass-error
@@ -47,7 +45,6 @@ inputs:
       - float
     doc: The percentage of the largest consecutive b/y ion missing over the 
       length of the peptide sequence.
-    default: 0.4
     inputBinding:
       position: 104
       prefix: --largest-gap-percent
@@ -58,7 +55,6 @@ inputs:
     doc: The percentage of MS2 intensity of target scan matched to the 
       theoretical fragments of peptide sequence over the summation of total MS2 
       intensity in the target scan.
-    default: 0.5
     inputBinding:
       position: 104
       prefix: --matched-peptide-intensity
@@ -68,7 +64,6 @@ inputs:
       - float
     doc: The percentage of MS2 intensity of query scan matched to target scan 
       over the summation of total MS2 intensity in the query scan.
-    default: 0.3
     inputBinding:
       position: 104
       prefix: --matched-query-intensity
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of peaks per scan
-    default: 20
     inputBinding:
       position: 104
       prefix: --max-peaks-per-scan
@@ -87,7 +81,6 @@ inputs:
       - int
     doc: The absolute minimum dalton difference between the query scan and the 
       target scan.
-    default: 10
     inputBinding:
       position: 104
       prefix: --min-diff-dalton-bin

@@ -10,7 +10,6 @@ inputs:
       type: array
       items: File
     doc: Alignment BAMs
-    default: []
     inputBinding:
       position: 1
   - id: chromosomes
@@ -19,7 +18,6 @@ inputs:
       - type: array
         items: string
     doc: List of chromosomes to process
-    default: []
     inputBinding:
       position: 2
   - id: bplib
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Version of breakpoint library format to use
-    default: 2
     inputBinding:
       position: 103
       prefix: --format_version
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Junction length
-    default: 200
     inputBinding:
       position: 103
       prefix: --junction_length
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep temporary files
-    default: false
     inputBinding:
       position: 103
       prefix: --keep_temp
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Min overlap
-    default: 10
     inputBinding:
       position: 103
       prefix: --min_overlap
@@ -85,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum span for junction
-    default: 10
     inputBinding:
       position: 103
       prefix: --min_span
@@ -94,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to use for parallelism
-    default: 1
     inputBinding:
       position: 103
       prefix: --nthreads
@@ -123,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: Window size
-    default: 100
     inputBinding:
       position: 103
       prefix: --window
@@ -132,7 +123,6 @@ inputs:
       - 'null'
       - Directory
     doc: Working directory
-    default: work
     inputBinding:
       position: 103
       prefix: --work

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Genome assembly of input, either GRCh38 or GRCh37
-    default: GRCh38
     inputBinding:
       position: 101
       prefix: --assembly
@@ -20,7 +19,6 @@ inputs:
       - string
     doc: "Input file format, either vcf or bed, defaults to vcf\n                \
       \        when not provided"
-    default: vcf
     inputBinding:
       position: 101
       prefix: --format
@@ -45,7 +43,6 @@ inputs:
       - File
     doc: "phyloP file path, defaults to\n                        'data/hg38.phyloP100way.bw'
       when not provided"
-    default: data/hg38.phyloP100way.bw
     inputBinding:
       position: 101
       prefix: --phyloP

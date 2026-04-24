@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: "DEBUG: write cosine similarity values to file [default: don't]"
-    default: false
     inputBinding:
       position: 102
       prefix: --dbg_cos
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: "DEBUG: dump pickled feature vectors to file [default: don't]"
-    default: false
     inputBinding:
       position: 102
       prefix: --dbg_vectors
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: Extension of input files.
-    default: .fna
     inputBinding:
       position: 102
       prefix: --extension
@@ -70,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'overwrite output directory [default: do not overwrite]'
-    default: false
     inputBinding:
       position: 102
       prefix: --force
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - boolean
     doc: Treat input files as protein files.
-    default: false
     inputBinding:
       position: 102
       prefix: --genes
@@ -114,7 +109,6 @@ inputs:
       - boolean
     doc: "Remove all intermediate files (protein files, diamond output) [default:
       don't]"
-    default: false
     inputBinding:
       position: 102
       prefix: --remove_intermediates
@@ -140,7 +134,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Print results to stdout [default: write to file]'
-    default: false
     inputBinding:
       position: 102
       prefix: --stdout
@@ -149,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUS to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

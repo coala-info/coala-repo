@@ -29,7 +29,6 @@ inputs:
       - string
     doc: the symbol to fill the sites of absent species in the 
       alignments(default='-')
-    default: '-'
     inputBinding:
       position: 101
       prefix: -f
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: the suffix of the input FASTA alignment files(default='.fa')
-    default: .fa
     inputBinding:
       position: 101
       prefix: -x
@@ -55,7 +53,6 @@ inputs:
     doc: type of input format(phyloaln/orthograph/blastsearch, 
       default='phyloaln', also suitable for the format with same species name in
       all alignments, but the name shuold not contain separate symbol)
-    default: phyloaln
     inputBinding:
       position: 101
       prefix: -t
@@ -74,7 +71,6 @@ inputs:
       - string
     doc: the symbol to separate the sequences name and the first space is the 
       species name in the 'phyloaln' format(default='.')
-    default: .
     inputBinding:
       position: 101
       prefix: -s

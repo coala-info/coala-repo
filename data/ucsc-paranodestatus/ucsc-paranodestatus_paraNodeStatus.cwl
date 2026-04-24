@@ -25,7 +25,6 @@ inputs:
       after 1/100th of a second. Each retry after that takes twice as long up to
       a maximum of 1 second per retry. Default is 7 retries and takes about a 
       second.
-    default: 7
     inputBinding:
       position: 102
       prefix: -retries

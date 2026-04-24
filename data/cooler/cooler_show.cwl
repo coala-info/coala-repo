@@ -47,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: 'Pixel values to display.  [default: count]'
-    default: count
     inputBinding:
       position: 103
       prefix: --field
@@ -76,7 +75,6 @@ inputs:
       - string
     doc: 'Scale transformation of the colormap: linear, log2 or log10. Default is
       log10.'
-    default: log10
     inputBinding:
       position: 103
       prefix: --scale

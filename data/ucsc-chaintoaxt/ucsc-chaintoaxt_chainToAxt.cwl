@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: maximum chain size allowed without breaking
-    default: 2147483647
     inputBinding:
       position: 104
       prefix: -maxChain
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: maximum gap sized allowed without breaking
-    default: 100
     inputBinding:
       position: 104
       prefix: -maxGap

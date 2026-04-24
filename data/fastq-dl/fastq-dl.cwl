@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Total cpus used for downloading from SRA.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -56,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of download attempts.
-    default: 10
     inputBinding:
       position: 101
       prefix: --max-attempts
@@ -81,7 +79,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to output downloads to.
-    default: ./
     inputBinding:
       position: 101
       prefix: --outdir
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix to use for naming log files.
-    default: fastq
     inputBinding:
       position: 101
       prefix: --prefix
@@ -99,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: Specify which provider (ENA or SRA) to use.
-    default: ena
     inputBinding:
       position: 101
       prefix: --provider
@@ -117,7 +112,6 @@ inputs:
       - int
     doc: Minimum amount of time to sleep between retries (API query and 
       download)
-    default: 10
     inputBinding:
       position: 101
       prefix: --sleep

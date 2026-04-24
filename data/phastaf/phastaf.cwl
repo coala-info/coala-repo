@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use (0=ALL)
-    default: 1
     inputBinding:
       position: 102
       prefix: --cpus
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - File
     doc: Diamond database of phage proteins
-    default: /usr/local/db/phastaf.dmnd
     inputBinding:
       position: 102
       prefix: --db
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force overwite of existing output folder
-    default: false
     inputBinding:
       position: 102
       prefix: --force
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Intergenic fuzz factor
-    default: 2000
     inputBinding:
       position: 102
       prefix: --igff
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep intermediate files
-    default: false
     inputBinding:
       position: 102
       prefix: --keepfiles
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum genes in cluster
-    default: 5
     inputBinding:
       position: 102
       prefix: --mingenes

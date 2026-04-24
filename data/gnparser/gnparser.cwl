@@ -73,7 +73,6 @@ inputs:
     doc: "Sets the output format. Accepted values are: - 'csv': Comma-separated values
       - 'tsv': Tab-separated values - 'compact': Compact JSON format - 'pretty': Human-readable
       JSON format. If not set, the output format defaults to 'csv'."
-    default: csv
     inputBinding:
       position: 102
       prefix: --format

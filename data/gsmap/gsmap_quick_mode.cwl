@@ -13,7 +13,6 @@ inputs:
   - id: data_layer
     type: string
     doc: Data layer for gene expression (e.g., "count", "counts", "log1p").
-    default: counts
     inputBinding:
       position: 101
       prefix: --data_layer
@@ -60,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of processes for parallel execution.
-    default: 10
     inputBinding:
       position: 101
       prefix: --max_processes
@@ -69,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Number of neighbors.
-    default: 21
     inputBinding:
       position: 101
       prefix: --num_neighbour
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Number of spatial neighbors.
-    default: 101
     inputBinding:
       position: 101
       prefix: --num_neighbour_spatial
@@ -87,7 +83,6 @@ inputs:
       - 'null'
       - boolean
     doc: Using the pearson residuals.
-    default: false
     inputBinding:
       position: 101
       prefix: --pearson_residuals

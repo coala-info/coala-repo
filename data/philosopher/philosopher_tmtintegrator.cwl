@@ -10,7 +10,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 8
     inputBinding:
       position: 101
       prefix: --memory

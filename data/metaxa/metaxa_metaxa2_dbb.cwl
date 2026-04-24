@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: Auto-detect conservation score cutoff, on (T) by default
-    default: true
     inputBinding:
       position: 101
       prefix: -A
@@ -29,7 +28,6 @@ inputs:
       - boolean
     doc: Choose a reference sequence automatically (requires Usearch to be 
       installed), on (T) by default
-    default: true
     inputBinding:
       position: 101
       prefix: --auto_rep
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Conservation score cutoff, not used unless -A is set to false (F)
-    default: 4
     inputBinding:
       position: 101
       prefix: -C
@@ -66,7 +63,6 @@ inputs:
       - boolean
     doc: Will try to correct the taxonomic information at order, family, genus 
       and species level, off (F) by default
-    default: false
     inputBinding:
       position: 101
       prefix: --correct_taxonomy
@@ -75,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use (will be passed on to other programs)
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpu
@@ -103,7 +98,6 @@ inputs:
       - string
     doc: Will dereplicate the input data using Usearch before building the 
       database, using the specified identity threshold or off (F)
-    default: F
     inputBinding:
       position: 101
       prefix: --dereplicate
@@ -123,7 +117,6 @@ inputs:
     doc: Statistically evaluate the performance of the database built. This 
       increases the time requirement for the process dramatically, off (F) by 
       default
-    default: false
     inputBinding:
       position: 101
       prefix: --evaluate
@@ -133,7 +126,6 @@ inputs:
       - int
     doc: Will filter out sequences with taxonomic information lower than the 
       specified level
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter_level
@@ -143,7 +135,6 @@ inputs:
       - boolean
     doc: Will try to filter out sequences that are derived from uncultured 
       species, off (F) by default
-    default: false
     inputBinding:
       position: 101
       prefix: --filter_uncultured
@@ -153,7 +144,6 @@ inputs:
       - int
     doc: number of basepairs to use for full-length definition (set to zero to 
       disable full-length extraction)
-    default: 100
     inputBinding:
       position: 101
       prefix: --full_length
@@ -186,7 +176,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations for the statistical evaluation
-    default: 10
     inputBinding:
       position: 101
       prefix: --iterations
@@ -196,7 +185,6 @@ inputs:
       - int
     doc: Look-ahead length (the number of residues to consider when determining 
       the start and end of conserved regions)
-    default: 5
     inputBinding:
       position: 101
       prefix: -L
@@ -215,7 +203,6 @@ inputs:
       - float
     doc: Minimal conserved proportion of the alignment (until a lower 
       conservation cutoff is considered)
-    default: 0.6
     inputBinding:
       position: 101
       prefix: -P
@@ -224,7 +211,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal conserved region length
-    default: 20
     inputBinding:
       position: 101
       prefix: -M
@@ -243,7 +229,6 @@ inputs:
       - string
     doc: Selects the mode in which the profile database is built (divergent, 
       conserved, hybrid)
-    default: divergent
     inputBinding:
       position: 101
       prefix: --mode
@@ -253,7 +238,6 @@ inputs:
       - float
     doc: Noise cutoff (minimal proportion of sequences required to be considered
       at each position). A number between 0 and 1
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -N
@@ -271,7 +255,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use BLAST+ instead of legacy BLAST, off (F) by default
-    default: false
     inputBinding:
       position: 101
       prefix: --plus
@@ -290,7 +273,6 @@ inputs:
       - int
     doc: The number of sequences to aim to investigate when determining 
       taxonomic cutoffs
-    default: 1000
     inputBinding:
       position: 101
       prefix: --sample
@@ -299,7 +281,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep intermediate files after the program finishes, off (F) by default
-    default: false
     inputBinding:
       position: 101
       prefix: --save_raw
@@ -309,7 +290,6 @@ inputs:
       - boolean
     doc: Build only one single HMM for the entire alignment from the input 
       sequences, off (F) by default
-    default: false
     inputBinding:
       position: 101
       prefix: --single_profile
@@ -329,7 +309,6 @@ inputs:
         items: string
     doc: Proportion of sequences to leave out for testing. Several values can be
       specified, separated by commas
-    default: '0.1'
     inputBinding:
       position: 101
       prefix: --test_sets

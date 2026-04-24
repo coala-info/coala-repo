@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: The model size that torch expects
-    default: 125
     inputBinding:
       position: 101
       prefix: --filter_size
@@ -35,7 +34,6 @@ inputs:
     doc: The maximum length of the sequences allowed by the model. All 
       pre-trained models have `--L_max 600`. However, if you trained your own 
       PARM model with a different L_max value, you should specify it here.
-    default: 600
     inputBinding:
       position: 101
       prefix: --L_max
@@ -54,7 +52,6 @@ inputs:
       - int
     doc: Number of sequences to predict simultaneously, increase only if your 
       memory allows it.
-    default: 1
     inputBinding:
       position: 101
       prefix: --n_seqs_per_batch
@@ -74,7 +71,6 @@ inputs:
     doc: If this flag is set, PARM will assume the input is the hdf5 file of the
       test fold of a trained model. This is useful if you want to evaluate the 
       performance of a model that you trained.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-predict_test_fold
@@ -85,7 +81,6 @@ inputs:
     doc: If this flag is set, PARM will assume the input is the hdf5 file of the
       test fold of a trained model. This is useful if you want to evaluate the 
       performance of a model that you trained.
-    default: false
     inputBinding:
       position: 101
       prefix: --predict_test_fold
@@ -95,7 +90,6 @@ inputs:
       - string
     doc: Type of loss function to use for the model. Default is "poisson". Other
       options are "MSE" and "heteroscedastic".
-    default: poisson
     inputBinding:
       position: 101
       prefix: --type_loss

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Hi-C scaffolding in accurate mode
-    default: false
     inputBinding:
       position: 102
       prefix: -a
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: ignore middle part of contigs
-    default: false
     inputBinding:
       position: 102
       prefix: -g
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: maximum linking candiates
-    default: 1
     inputBinding:
       position: 102
       prefix: -k
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: minimum weight for links
-    default: 10
     inputBinding:
       position: 102
       prefix: -w
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: minimum weight difference
-    default: 0.95
     inputBinding:
       position: 102
       prefix: -f
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - boolean
     doc: normalize weight
-    default: false
     inputBinding:
       position: 102
       prefix: -n
@@ -86,7 +80,6 @@ inputs:
       - 'null'
       - boolean
     doc: use MST to construct scaffolding graph [only for pin_hic]
-    default: false
     inputBinding:
       position: 102
       prefix: '-1'
@@ -95,7 +88,6 @@ inputs:
       - 'null'
       - boolean
     doc: use normalized weight as edge weight
-    default: true
     inputBinding:
       position: 102
       prefix: -e
@@ -104,7 +96,6 @@ inputs:
       - 'null'
       - boolean
     doc: use product of length
-    default: false
     inputBinding:
       position: 102
       prefix: -p

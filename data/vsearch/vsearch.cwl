@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: minimum abundance ratio
-    default: 1.0, 2.0, 16.0 for uchime3
     inputBinding:
       position: 101
       prefix: --abskew
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: width of alignments in alignment output file
-    default: 60
     inputBinding:
       position: 101
       prefix: --alignwidth
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: width of alignment in uchimealn output
-    default: 80
     inputBinding:
       position: 101
       prefix: --alignwidth
@@ -148,7 +145,6 @@ inputs:
       - 'null'
       - float
     doc: mismatch % allowed in each chimeric region
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --chimeras_diff_pct
@@ -157,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of each chimeric region
-    default: 10
     inputBinding:
       position: 101
       prefix: --chimeras_length_min
@@ -166,7 +161,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of parent sequences
-    default: 3
     inputBinding:
       position: 101
       prefix: --chimeras_parents_max
@@ -175,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: number of parts to divide sequences
-    default: length/100
     inputBinding:
       position: 101
       prefix: --chimeras_parts
@@ -304,7 +297,6 @@ inputs:
       - 'null'
       - string
     doc: mask db seqs with dust, soft or no method
-    default: dust
     inputBinding:
       position: 101
       prefix: --dbmask
@@ -313,7 +305,6 @@ inputs:
       - 'null'
       - string
     doc: mask db with dust, soft or no method
-    default: dust
     inputBinding:
       position: 101
       prefix: --dbmask
@@ -322,7 +313,6 @@ inputs:
       - 'null'
       - string
     doc: mask db with dust, soft or no method
-    default: dust
     inputBinding:
       position: 101
       prefix: --dbmask
@@ -379,7 +369,6 @@ inputs:
       - 'null'
       - float
     doc: "'no' vote pseudo-count"
-    default: 1.4
     inputBinding:
       position: 101
       prefix: --dn
@@ -388,7 +377,6 @@ inputs:
       - 'null'
       - string
     doc: fastq_eestats2 expected error cutoffs
-    default: 0.5,1,2
     inputBinding:
       position: 101
       prefix: --ee_cutoffs
@@ -429,7 +417,6 @@ inputs:
       - 'null'
       - int
     doc: width of FASTA seq lines, 0 for no wrap
-    default: 80
     inputBinding:
       position: 101
       prefix: --fasta_width
@@ -598,7 +585,6 @@ inputs:
       - 'null'
       - int
     doc: FASTQ input quality score ASCII base char
-    default: 33
     inputBinding:
       position: 101
       prefix: --fastq_ascii
@@ -607,7 +593,6 @@ inputs:
       - 'null'
       - int
     doc: FASTQ input quality score ASCII base char
-    default: 33
     inputBinding:
       position: 101
       prefix: --fastq_ascii
@@ -616,7 +601,6 @@ inputs:
       - 'null'
       - int
     doc: FASTQ input quality score ASCII base char
-    default: 33
     inputBinding:
       position: 101
       prefix: --fastq_ascii
@@ -625,7 +609,6 @@ inputs:
       - 'null'
       - int
     doc: FASTQ input quality score ASCII base char
-    default: 33
     inputBinding:
       position: 101
       prefix: --fastq_ascii
@@ -634,7 +617,6 @@ inputs:
       - 'null'
       - int
     doc: FASTQ input quality score ASCII base char
-    default: 33
     inputBinding:
       position: 101
       prefix: --fastq_ascii
@@ -643,7 +625,6 @@ inputs:
       - 'null'
       - int
     doc: FASTQ input quality score ASCII base char
-    default: 33
     inputBinding:
       position: 101
       prefix: --fastq_ascii
@@ -652,7 +633,6 @@ inputs:
       - 'null'
       - int
     doc: FASTQ input quality score ASCII base char
-    default: 33
     inputBinding:
       position: 101
       prefix: --fastq_ascii
@@ -661,7 +641,6 @@ inputs:
       - 'null'
       - int
     doc: FASTQ input quality score ASCII base char
-    default: 33
     inputBinding:
       position: 101
       prefix: --fastq_ascii
@@ -670,7 +649,6 @@ inputs:
       - 'null'
       - int
     doc: FASTQ output quality score ASCII base char
-    default: 33
     inputBinding:
       position: 101
       prefix: --fastq_asciiout
@@ -679,7 +657,6 @@ inputs:
       - 'null'
       - int
     doc: FASTQ output quality score ASCII base char
-    default: 33
     inputBinding:
       position: 101
       prefix: --fastq_asciiout
@@ -688,7 +665,6 @@ inputs:
       - 'null'
       - int
     doc: FASTQ output quality score ASCII base char
-    default: 33
     inputBinding:
       position: 101
       prefix: --fastq_asciiout
@@ -753,7 +729,6 @@ inputs:
       - 'null'
       - float
     doc: maximum percentage diff. bases in overlap
-    default: 100.0
     inputBinding:
       position: 101
       prefix: --fastq_maxdiffpct
@@ -762,7 +737,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of different bases in overlap
-    default: 10
     inputBinding:
       position: 101
       prefix: --fastq_maxdiffs
@@ -835,7 +809,6 @@ inputs:
       - 'null'
       - int
     doc: minimum input read length after truncation
-    default: 1
     inputBinding:
       position: 101
       prefix: --fastq_minlen
@@ -860,7 +833,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of overlap between reads
-    default: 10
     inputBinding:
       position: 101
       prefix: --fastq_minovlen
@@ -869,7 +841,6 @@ inputs:
       - 'null'
       - int
     doc: discard if any base quality value lower
-    default: 0
     inputBinding:
       position: 101
       prefix: --fastq_minqual
@@ -886,7 +857,6 @@ inputs:
       - 'null'
       - int
     doc: maximum base quality value for FASTQ input
-    default: 41
     inputBinding:
       position: 101
       prefix: --fastq_qmax
@@ -895,7 +865,6 @@ inputs:
       - 'null'
       - int
     doc: maximum base quality value for FASTQ input
-    default: 41
     inputBinding:
       position: 101
       prefix: --fastq_qmax
@@ -904,7 +873,6 @@ inputs:
       - 'null'
       - int
     doc: maximum base quality value for FASTQ input
-    default: 41
     inputBinding:
       position: 101
       prefix: --fastq_qmax
@@ -913,7 +881,6 @@ inputs:
       - 'null'
       - int
     doc: maximum base quality value for FASTQ input
-    default: 41
     inputBinding:
       position: 101
       prefix: --fastq_qmax
@@ -922,7 +889,6 @@ inputs:
       - 'null'
       - int
     doc: maximum base quality value for FASTQ input
-    default: 41
     inputBinding:
       position: 101
       prefix: --fastq_qmax
@@ -931,7 +897,6 @@ inputs:
       - 'null'
       - int
     doc: maximum base quality value for FASTQ input
-    default: 41
     inputBinding:
       position: 101
       prefix: --fastq_qmax
@@ -940,7 +905,6 @@ inputs:
       - 'null'
       - int
     doc: maximum base quality value for FASTQ input
-    default: 41
     inputBinding:
       position: 101
       prefix: --fastq_qmax
@@ -949,7 +913,6 @@ inputs:
       - 'null'
       - int
     doc: maximum base quality value for FASTQ input
-    default: 41
     inputBinding:
       position: 101
       prefix: --fastq_qmax
@@ -958,7 +921,6 @@ inputs:
       - 'null'
       - int
     doc: maximum base quality value for FASTQ output
-    default: 41
     inputBinding:
       position: 101
       prefix: --fastq_qmaxout
@@ -967,7 +929,6 @@ inputs:
       - 'null'
       - int
     doc: maximum base quality value for FASTQ output
-    default: 41
     inputBinding:
       position: 101
       prefix: --fastq_qmaxout
@@ -976,7 +937,6 @@ inputs:
       - 'null'
       - int
     doc: fake quality score for FASTQ output
-    default: 41
     inputBinding:
       position: 101
       prefix: --fastq_qmaxout
@@ -985,7 +945,6 @@ inputs:
       - 'null'
       - int
     doc: maximum base quality value for FASTQ output
-    default: 41
     inputBinding:
       position: 101
       prefix: --fastq_qmaxout
@@ -994,7 +953,6 @@ inputs:
       - 'null'
       - int
     doc: maximum base quality value for FASTQ output
-    default: 41
     inputBinding:
       position: 101
       prefix: --fastq_qmaxout
@@ -1003,7 +961,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base quality value for FASTQ input
-    default: 0
     inputBinding:
       position: 101
       prefix: --fastq_qmin
@@ -1012,7 +969,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base quality value for FASTQ input
-    default: 0
     inputBinding:
       position: 101
       prefix: --fastq_qmin
@@ -1021,7 +977,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base quality value for FASTQ input
-    default: 0
     inputBinding:
       position: 101
       prefix: --fastq_qmin
@@ -1030,7 +985,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base quality value for FASTQ input
-    default: 0
     inputBinding:
       position: 101
       prefix: --fastq_qmin
@@ -1039,7 +993,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base quality value for FASTQ input
-    default: 0
     inputBinding:
       position: 101
       prefix: --fastq_qmin
@@ -1048,7 +1001,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base quality value for FASTQ input
-    default: 0
     inputBinding:
       position: 101
       prefix: --fastq_qmin
@@ -1057,7 +1009,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base quality value for FASTQ input
-    default: 0
     inputBinding:
       position: 101
       prefix: --fastq_qmin
@@ -1066,7 +1017,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base quality value for FASTQ input
-    default: 0
     inputBinding:
       position: 101
       prefix: --fastq_qmin
@@ -1075,7 +1025,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base quality value for FASTQ output
-    default: 0
     inputBinding:
       position: 101
       prefix: --fastq_qminout
@@ -1084,7 +1033,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base quality value for FASTQ output
-    default: 0
     inputBinding:
       position: 101
       prefix: --fastq_qminout
@@ -1093,7 +1041,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base quality value for FASTQ output
-    default: 0
     inputBinding:
       position: 101
       prefix: --fastq_qminout
@@ -1102,7 +1049,6 @@ inputs:
       - 'null'
       - int
     doc: minimum base quality value for FASTQ output
-    default: 0
     inputBinding:
       position: 101
       prefix: --fastq_qminout
@@ -1135,7 +1081,6 @@ inputs:
       - 'null'
       - int
     doc: min length of tails to count for fastq_chars
-    default: 4
     inputBinding:
       position: 101
       prefix: --fastq_tail
@@ -1376,7 +1321,6 @@ inputs:
       - 'null'
       - string
     doc: penalties for gap extension
-    default: 2I/1E
     inputBinding:
       position: 101
       prefix: --gapext
@@ -1385,7 +1329,6 @@ inputs:
       - 'null'
       - string
     doc: penalties for gap opening
-    default: 20I/2E
     inputBinding:
       position: 101
       prefix: --gapopen
@@ -1450,7 +1393,6 @@ inputs:
       - 'null'
       - int
     doc: id definition, 0-4=CD-HIT,all,int,MBL,BLAST
-    default: 2
     inputBinding:
       position: 101
       prefix: --iddef
@@ -1459,7 +1401,6 @@ inputs:
       - 'null'
       - int
     doc: id definition, 0-4=CD-HIT,all,int,MBL,BLAST
-    default: 2
     inputBinding:
       position: 101
       prefix: --iddef
@@ -1484,7 +1425,6 @@ inputs:
       - 'null'
       - string
     doc: sequence string used for padding
-    default: NNNNNNNN
     inputBinding:
       position: 101
       prefix: --join_padgap
@@ -1493,7 +1433,6 @@ inputs:
       - 'null'
       - string
     doc: quality string used for padding
-    default: IIIIIIII
     inputBinding:
       position: 101
       prefix: --join_padgapq
@@ -1518,7 +1457,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of matching hits required for LCA
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --lca_cutoff
@@ -1543,7 +1481,6 @@ inputs:
       - 'null'
       - string
     doc: fastq_eestats2 length (min,max,incr)
-    default: 50,*,50
     inputBinding:
       position: 101
       prefix: --length_cutoffs
@@ -1584,7 +1521,6 @@ inputs:
       - 'null'
       - int
     doc: score for match
-    default: 2
     inputBinding:
       position: 101
       prefix: --match
@@ -1601,7 +1537,6 @@ inputs:
       - 'null'
       - float
     doc: max unmasked % of sequences to keep
-    default: 100.0
     inputBinding:
       position: 101
       prefix: --max_unmasked_pct
@@ -1610,7 +1545,6 @@ inputs:
       - 'null'
       - int
     doc: number of hits to accept and show per strand
-    default: 1
     inputBinding:
       position: 101
       prefix: --maxaccepts
@@ -1635,7 +1569,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of hits to show
-    default: unlimited
     inputBinding:
       position: 101
       prefix: --maxhits
@@ -1668,7 +1601,6 @@ inputs:
       - 'null'
       - int
     doc: number of non-matching hits to consider
-    default: 32
     inputBinding:
       position: 101
       prefix: --maxrejects
@@ -1677,7 +1609,6 @@ inputs:
       - 'null'
       - int
     doc: maximum sequence length
-    default: 50000
     inputBinding:
       position: 101
       prefix: --maxseqlength
@@ -1742,7 +1673,6 @@ inputs:
       - 'null'
       - float
     doc: min unmasked % of sequences to keep
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min_unmasked_pct
@@ -1759,7 +1689,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of differences in segment
-    default: 3
     inputBinding:
       position: 101
       prefix: --mindiffs
@@ -1768,7 +1697,6 @@ inputs:
       - 'null'
       - float
     doc: minimum divergence from closest parent
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --mindiv
@@ -1777,7 +1705,6 @@ inputs:
       - 'null'
       - float
     doc: minimum score (ignored in uchime2/3)
-    default: 0.28
     inputBinding:
       position: 101
       prefix: --minh
@@ -1794,7 +1721,6 @@ inputs:
       - 'null'
       - int
     doc: 'min seq length (clust/derep/search: 32, other:1)'
-    default: 32, other:1
     inputBinding:
       position: 101
       prefix: --minseqlength
@@ -1803,7 +1729,6 @@ inputs:
       - 'null'
       - int
     doc: minimum abundance (unoise only)
-    default: 8
     inputBinding:
       position: 101
       prefix: --minsize
@@ -1860,7 +1785,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of word matches required
-    default: 12
     inputBinding:
       position: 101
       prefix: --minwordmatches
@@ -1869,7 +1793,6 @@ inputs:
       - 'null'
       - int
     doc: score for mismatch
-    default: -4
     inputBinding:
       position: 101
       prefix: --mismatch
@@ -2046,7 +1969,6 @@ inputs:
       - 'null'
       - string
     doc: mask seqs with dust, soft or no method
-    default: dust
     inputBinding:
       position: 101
       prefix: --qmask
@@ -2055,7 +1977,6 @@ inputs:
       - 'null'
       - string
     doc: mask seqs with dust, soft or no method
-    default: dust
     inputBinding:
       position: 101
       prefix: --qmask
@@ -2064,7 +1985,6 @@ inputs:
       - 'null'
       - string
     doc: mask seqs with dust, soft or no method
-    default: dust
     inputBinding:
       position: 101
       prefix: --qmask
@@ -2073,7 +1993,6 @@ inputs:
       - 'null'
       - string
     doc: mask query with dust, soft or no method
-    default: dust
     inputBinding:
       position: 101
       prefix: --qmask
@@ -2082,7 +2001,6 @@ inputs:
       - 'null'
       - string
     doc: mask query with dust, soft or no method
-    default: dust
     inputBinding:
       position: 101
       prefix: --qmask
@@ -2107,7 +2025,6 @@ inputs:
       - 'null'
       - int
     doc: seed for PRNG, zero to use random data source
-    default: 0
     inputBinding:
       position: 101
       prefix: --randseed
@@ -2116,7 +2033,6 @@ inputs:
       - 'null'
       - int
     doc: seed for PRNG, zero to use random data source
-    default: 0
     inputBinding:
       position: 101
       prefix: --randseed
@@ -2125,7 +2041,6 @@ inputs:
       - 'null'
       - int
     doc: seed for PRNG, zero to use random data source
-    default: 0
     inputBinding:
       position: 101
       prefix: --randseed
@@ -2454,7 +2369,6 @@ inputs:
       - 'null'
       - int
     doc: width of alignment lines in alnout output
-    default: 64
     inputBinding:
       position: 101
       prefix: --rowlen
@@ -2535,7 +2449,6 @@ inputs:
       - 'null'
       - boolean
     doc: clip ends of sequences as indicated in file
-    default: false
     inputBinding:
       position: 101
       prefix: --sff_clip
@@ -2568,7 +2481,6 @@ inputs:
       - 'null'
       - float
     doc: confidence value cutoff level
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --sintax_cutoff
@@ -2729,7 +2641,6 @@ inputs:
       - 'null'
       - string
     doc: cluster using plus or both strands
-    default: plus
     inputBinding:
       position: 101
       prefix: --strand
@@ -2738,7 +2649,6 @@ inputs:
       - 'null'
       - string
     doc: dereplicate plus or both strands
-    default: plus
     inputBinding:
       position: 101
       prefix: --strand
@@ -2747,7 +2657,6 @@ inputs:
       - 'null'
       - string
     doc: search plus or both strands
-    default: plus
     inputBinding:
       position: 101
       prefix: --strand
@@ -2796,7 +2705,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use, zero for all cores
-    default: 0
     inputBinding:
       position: 101
       prefix: --threads
@@ -2941,7 +2849,6 @@ inputs:
       - 'null'
       - float
     doc: alpha parameter (unoise only)
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --unoise_alpha
@@ -2990,7 +2897,6 @@ inputs:
       - 'null'
       - int
     doc: length of words used for matching 3-15
-    default: 12
     inputBinding:
       position: 101
       prefix: --wordlength
@@ -2999,7 +2905,6 @@ inputs:
       - 'null'
       - int
     doc: length of words for database index 3-15
-    default: 8
     inputBinding:
       position: 101
       prefix: --wordlength
@@ -3008,7 +2913,6 @@ inputs:
       - 'null'
       - int
     doc: length of words for database index 3-15
-    default: 8
     inputBinding:
       position: 101
       prefix: --wordlength
@@ -3033,7 +2937,6 @@ inputs:
       - 'null'
       - float
     doc: "'no' vote weight"
-    default: 8.0
     inputBinding:
       position: 101
       prefix: --xn

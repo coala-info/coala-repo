@@ -14,7 +14,6 @@ inputs:
   - id: operation
     type: string
     doc: The operation to perform (rotate)
-    default: rotate
     inputBinding:
       position: 2
   - id: page_ranges

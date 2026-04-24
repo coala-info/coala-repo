@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use to calculate SCJ CARP index.
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-threads
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Size threshold for nodes (nodes of lower sizes are discarded)
-    default: '0'
     inputBinding:
       position: 101
       prefix: --size-thresh

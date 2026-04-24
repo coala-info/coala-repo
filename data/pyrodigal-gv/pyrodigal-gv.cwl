@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Closed ends. Do not allow genes to run off edges.
-    default: false
     inputBinding:
       position: 101
       prefix: -c
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Bypass Shine-Dalgarno trainer and force a full motif scan.
-    default: false
     inputBinding:
       position: 101
       prefix: -n
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads to use if input contains multiple sequences.
-    default: 1
     inputBinding:
       position: 101
       prefix: --jobs
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Treat runs of N as masked sequence; don't build genes across them.
-    default: false
     inputBinding:
       position: 101
       prefix: -m
@@ -54,7 +50,6 @@ inputs:
       - int
     doc: The maximum number of nucleotides that can overlap between two genes on
       the same strand. This must be lower or equal to the minimum gene length.
-    default: 60
     inputBinding:
       position: 101
       prefix: --max-overlap
@@ -63,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum edge gene length.
-    default: 60
     inputBinding:
       position: 101
       prefix: --min-edge-gene
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum gene length.
-    default: 90
     inputBinding:
       position: 101
       prefix: --min-gene
@@ -81,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Select procedure.
-    default: meta
     inputBinding:
       position: 101
       prefix: -p
@@ -91,7 +83,6 @@ inputs:
       - boolean
     doc: Disables translation of stop codons into star characters (*) for 
       complete genes.
-    default: true
     inputBinding:
       position: 101
       prefix: --no-stop-codon
@@ -108,7 +99,6 @@ inputs:
       - 'null'
       - string
     doc: Select output format.
-    default: gff
     inputBinding:
       position: 101
       prefix: -f
@@ -118,7 +108,6 @@ inputs:
       - string
     doc: The sort of pool to use to process genomes in parallel. Processes may 
       be faster than threads on some machines, refer to documentation.
-    default: thread
     inputBinding:
       position: 101
       prefix: --pool
@@ -135,7 +124,6 @@ inputs:
       - 'null'
       - string
     doc: Specify a translation table to use.
-    default: '11'
     inputBinding:
       position: 101
       prefix: -g

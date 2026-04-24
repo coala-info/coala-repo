@@ -18,7 +18,6 @@ inputs:
       - type: array
         items: string
     doc: GPU devices to use (comma-separated).
-    default: all
     inputBinding:
       position: 101
       prefix: --gpus
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU cores.
-    default: all
     inputBinding:
       position: 101
       prefix: --n-cpus
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Run name
-    default: based on chosen config
     inputBinding:
       position: 101
       prefix: --run-name

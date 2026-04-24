@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: Field separator
-    default: ','
     inputBinding:
       position: 102
       prefix: --delimiter
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: Identifier for forward reads
-    default: _R1
     inputBinding:
       position: 102
       prefix: --for-tag
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: Identifier for reverse reads
-    default: _R2
     inputBinding:
       position: 102
       prefix: --rev-tag

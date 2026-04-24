@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Directory to search in (default: current directory).'
-    default: .
     inputBinding:
       position: 102
       prefix: --directory

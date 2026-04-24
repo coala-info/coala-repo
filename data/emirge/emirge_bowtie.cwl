@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: max megabytes of RAM for best-first search frames
-    default: 64
     inputBinding:
       position: 103
       prefix: --chunkmbs
@@ -95,7 +94,6 @@ inputs:
       - 'null'
       - boolean
     doc: query input files are FASTQ .fq/.fastq
-    default: true
     inputBinding:
       position: 103
       prefix: -q
@@ -112,7 +110,6 @@ inputs:
       - 'null'
       - boolean
     doc: mates align forward/reverse
-    default: true
     inputBinding:
       position: 103
       prefix: --fr
@@ -145,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: max sum of mismatch quals across alignment for -n
-    default: 70
     inputBinding:
       position: 103
       prefix: --maqerr
@@ -172,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: report up to <int> good alignments per read
-    default: 1
     inputBinding:
       position: 103
       prefix: -k
@@ -181,7 +176,6 @@ inputs:
       - 'null'
       - int
     doc: 'max # backtracks for -n 2/3'
-    default: 125
     inputBinding:
       position: 103
       prefix: --maxbts
@@ -190,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: maximum insert size for paired-end alignment
-    default: 250
     inputBinding:
       position: 103
       prefix: --maxins
@@ -207,7 +200,6 @@ inputs:
       - 'null'
       - int
     doc: max mismatches in seed (can be 0-3)
-    default: 2
     inputBinding:
       position: 103
       prefix: --seedmms
@@ -224,7 +216,6 @@ inputs:
       - 'null'
       - int
     doc: minimum insert size for paired-end alignment
-    default: 0
     inputBinding:
       position: 103
       prefix: --minins
@@ -265,7 +256,6 @@ inputs:
       - 'null'
       - int
     doc: leftmost ref offset = <int> in bowtie output
-    default: 0
     inputBinding:
       position: 103
       prefix: --offbase
@@ -282,7 +272,6 @@ inputs:
       - 'null'
       - int
     doc: 'max # attempts to find mate for anchor hit'
-    default: 100
     inputBinding:
       position: 103
       prefix: --pairtries
@@ -291,7 +280,6 @@ inputs:
       - 'null'
       - boolean
     doc: input quals are Phred+33
-    default: true
     inputBinding:
       position: 103
       prefix: --phred33-quals
@@ -375,7 +363,6 @@ inputs:
       - 'null'
       - int
     doc: '# of reads to read from input file at once'
-    default: 16
     inputBinding:
       position: 103
       prefix: --reads-per-batch
@@ -448,7 +435,6 @@ inputs:
       - 'null'
       - int
     doc: seed length for -n
-    default: 28
     inputBinding:
       position: 103
       prefix: --seedlen
@@ -481,7 +467,6 @@ inputs:
       - 'null'
       - int
     doc: Phred penalty for SNP when decoding colorspace
-    default: 30
     inputBinding:
       position: 103
       prefix: --snpphred
@@ -538,7 +523,6 @@ inputs:
       - 'null'
       - int
     doc: number of alignment threads to launch
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

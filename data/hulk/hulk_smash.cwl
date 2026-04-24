@@ -13,7 +13,6 @@ inputs:
       - 'null'
       - string
     doc: tells HULK which sketching algorithm to use [histosketch kmv khf]
-    default: histosketch
     inputBinding:
       position: 101
       prefix: --algorithm
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: minimizer k-mer length
-    default: 21
     inputBinding:
       position: 101
       prefix: --kmerSize
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: tells HULK which distance metric to use [jaccard weightedjaccard]
-    default: jaccard
     inputBinding:
       position: 101
       prefix: --metric
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: number of processors to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --processors
@@ -73,7 +69,6 @@ inputs:
       - 'null'
       - Directory
     doc: the directory containing the sketches to smash (compare)...
-    default: ./
     inputBinding:
       position: 101
       prefix: --sketchDir

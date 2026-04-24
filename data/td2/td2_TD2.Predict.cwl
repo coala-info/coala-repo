@@ -10,7 +10,6 @@ inputs:
       - boolean
     doc: report all ORFs that pass PSAURON and/or length-based false discovery 
       filters, default=False
-    default: false
     inputBinding:
       position: 101
       prefix: --all-good
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: discard all ORFs without both a stop and start codon, default=False
-    default: false
     inputBinding:
       position: 101
       prefix: --complete-orfs-only
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: retain ORFs that are fully contained within larger ORFs, default=False
-    default: false
     inputBinding:
       position: 101
       prefix: --discard-encapsulated
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: genetic code a.k.a. translation table, NCBI integer codes, default=1
-    default: 1
     inputBinding:
       position: 101
       prefix: -G
@@ -55,7 +51,6 @@ inputs:
       - boolean
     doc: set --precise to enable precise mode. Equivalent to -P 0.9 and 
       --retain-long-orfs-fdr 0.005 for TD2.Predict, default=False
-    default: false
     inputBinding:
       position: 101
       prefix: --precise
@@ -66,7 +61,6 @@ inputs:
     doc: require ORF to have highest PSAURON score compared to all other reading
       frames, set this argument for less sensitive and more precise ORFs, can 
       dramatically increase compute time requirements, default=False
-    default: false
     inputBinding:
       position: 101
       prefix: --psauron-all-frame
@@ -76,7 +70,6 @@ inputs:
       - float
     doc: 'minimum in-frame PSAURON score required to report ORF assuming no homology
       hits, higher is less sensitive and more precise (range: [0,1]; default: 0.50)'
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -P
@@ -104,7 +97,6 @@ inputs:
       - float
     doc: in "--retain-long-orfs-mode dynamic" mode, set the False Discovery Rate
       used to calculate dynamic threshold, default=0.10
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --retain-long-orfs-fdr
@@ -115,7 +107,6 @@ inputs:
     doc: in "--retain-long-orfs-mode strict" mode, retain all ORFs found that 
       are equal or longer than these many nucleotides even if no other evidence 
       marks it as coding, default=100000
-    default: 100000
     inputBinding:
       position: 101
       prefix: --retain-long-orfs-length
@@ -149,7 +140,6 @@ inputs:
       - 'null'
       - boolean
     doc: verbose output with progress bars, default=False
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: output MEM occurrence in the reference
-    default: false
     inputBinding:
       position: 101
       prefix: --extended-output
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: select the grammar [plain, shaped]
-    default: plain
     inputBinding:
       position: 101
       prefix: --grammar
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: minimum MEM length
-    default: 35
     inputBinding:
       position: 101
       prefix: --minimum-MEM-length
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: output file prefix
-    default: .
     inputBinding:
       position: 101
       prefix: --output
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - boolean
     doc: output MEM in a SAM formatted file.
-    default: false
     inputBinding:
       position: 101
       prefix: --sam-output
@@ -67,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: number of helper threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

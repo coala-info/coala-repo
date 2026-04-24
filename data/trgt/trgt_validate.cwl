@@ -12,7 +12,6 @@ inputs:
       - string
     doc: 'Enable or disable color output in logging [possible values: always, auto,
       never]'
-    default: auto
     inputBinding:
       position: 101
       prefix: --color
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Length of flanking regions
-    default: '50'
     inputBinding:
       position: 101
       prefix: --flank-len

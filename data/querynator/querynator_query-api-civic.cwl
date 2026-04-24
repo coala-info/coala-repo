@@ -32,7 +32,6 @@ inputs:
   - id: genome
     type: string
     doc: Please enter the reference genome version
-    default: '[GRCh37|GRCh38|NCBI36]'
     inputBinding:
       position: 101
       prefix: --genome

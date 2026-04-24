@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: start position of the i1 index (1-based) on read 2
-    default: 11
     inputBinding:
       position: 101
       prefix: --i1-start

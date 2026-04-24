@@ -10,7 +10,6 @@ inputs:
       - File
     doc: Optional explicit path to configuration file, by default ~/.hlama.cfg 
       is searched for
-    default: ~/.hlama.cfg
     inputBinding:
       position: 101
       prefix: --config
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for read mapping, defaults to 1
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-threads

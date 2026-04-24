@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: 'maximum number of FASTA reads to process; default: no maximum'
-    default: no maximum
     inputBinding:
       position: 101
       prefix: --maxreads

@@ -13,7 +13,6 @@ inputs:
       - 'null'
       - string
     doc: the AWS S3 bucket name for data upload
-    default: artic-archer-uploads-test
     inputBinding:
       position: 101
       prefix: --awsBucketName
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: the AWS region to use
-    default: eu-west-2
     inputBinding:
       position: 101
       prefix: --awsRegion
@@ -31,7 +29,6 @@ inputs:
       - 'null'
       - Directory
     doc: location to store the Archer database
-    default: /user/qianghu/.archer
     inputBinding:
       position: 101
       prefix: --dbPath
@@ -40,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: address to announce on
-    default: localhost
     inputBinding:
       position: 101
       prefix: --grpcAddress
@@ -49,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: TCP port to listen to by the gRPC server
-    default: '9090'
     inputBinding:
       position: 101
       prefix: --grpcPort
@@ -58,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: the ARTIC primer scheme manifest url
-    default: 
       https://raw.githubusercontent.com/artic-network/primer-schemes/master/schemes_manifest.json
     inputBinding:
       position: 101
@@ -68,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: number of processors to use (-1 == all)
-    default: -1
     inputBinding:
       position: 101
       prefix: --numProcessors
@@ -77,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: number of concurrent request handlers to use
-    default: 2
     inputBinding:
       position: 101
       prefix: --numWorkers

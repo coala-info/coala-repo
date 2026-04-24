@@ -45,7 +45,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_pdb_path
-    default: system.pdb
 
   output_gro_path:
     label: Output gro file
@@ -61,7 +60,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_gro_path
-    default: system.gro
 
   output_dat_path:
     label: Output dat with structure interpretation and bond definitions
@@ -78,7 +76,6 @@ inputs:
     inputBinding:
       position: 4
       prefix: --output_dat_path
-    default: system.dat
 
   config:
     label: Advanced configuration options for biobb_flexdyn ConcoordDist

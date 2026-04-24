@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for output bins
-    default: bin_
     inputBinding:
       position: 103
       prefix: --bin_prefix
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: minimum quality of bin to report
-    default: 10
     inputBinding:
       position: 103
       prefix: --report_min_quality
@@ -63,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: maximum contamination of bin to consider during bin selection process
-    default: 10
     inputBinding:
       position: 103
       prefix: --sel_max_cont
@@ -72,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: minimum completeness of bin to consider during bin selection process
-    default: 50
     inputBinding:
       position: 103
       prefix: --sel_min_comp
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: minimum quality of bin to consider during bin selection process
-    default: 50
     inputBinding:
       position: 103
       prefix: --sel_min_quality
@@ -106,7 +101,6 @@ inputs:
       - 'null'
       - float
     doc: weight given to contamination for assessing genome quality
-    default: 2
     inputBinding:
       position: 103
       prefix: --weight

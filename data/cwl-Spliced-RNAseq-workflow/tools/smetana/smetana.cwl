@@ -64,7 +64,6 @@ inputs:
     inputBinding:
       prefix: --flavor
       position: 3
-    default: "fbc2"
 
   global:
       type: boolean?
@@ -73,7 +72,6 @@ inputs:
       inputBinding:
         prefix: "--global"
         position: 11
-      default: false
   detailed:
       type: boolean?
       doc: Runs MIP/MRO and is much faster, recommended when analysing multiple communities.

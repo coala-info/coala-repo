@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum distance between consecutive VMCs for VMR. Default: 300.'
-    default: 300
     inputBinding:
       position: 101
       prefix: --maxdistvmcs
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum CpGs in a window. Default: 3.'
-    default: 3
     inputBinding:
       position: 101
       prefix: --mincpg
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum depth for a CpG coverage. Default: 3.'
-    default: 3
     inputBinding:
       position: 101
       prefix: --mindepth
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum samples for a CpG. Default: 5.'
-    default: 5
     inputBinding:
       position: 101
   - id: nme
@@ -66,7 +62,6 @@ inputs:
       - 'null'
       - float
     doc: 'NME for VMC. Default: 0.25.'
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --nme
@@ -75,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads. Default: 8.'
-    default: 8
     inputBinding:
       position: 101
       prefix: --numthreads
@@ -84,7 +78,6 @@ inputs:
       - 'null'
       - float
     doc: 'sd for VMC. Default: 0.2.'
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --sd
@@ -93,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of discretization states. Default: 2.'
-    default: 2
     inputBinding:
       position: 101
       prefix: --state
@@ -110,7 +102,6 @@ inputs:
       - int
     doc: 'VMR detection method. 0: identify VMCs first and detect VMRs from consecutive
       VMCs; 1: Genome scan method by fixed-size windows. Default: 0.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --vmrmethod
@@ -119,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: 'Window size for genome scan. Default: 150.'
-    default: 150
     inputBinding:
       position: 101
       prefix: --window

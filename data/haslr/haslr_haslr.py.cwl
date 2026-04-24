@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of alignment block
-    default: 500
     inputBinding:
       position: 101
       prefix: --aln-block
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: minimum alignment similarity
-    default: 0.85
     inputBinding:
       position: 101
       prefix: --aln-sim
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: amount of long read coverage to use for assembly
-    default: 25
     inputBinding:
       position: 101
       prefix: --cov-lr
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of long read supporting each edge
-    default: 3
     inputBinding:
       position: 101
       prefix: --edge-sup
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: type of minia assembly chosen from {contigs,unitigs}
-    default: contigs
     inputBinding:
       position: 101
       prefix: --minia-asm
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: kmer size used by minia
-    default: 49
     inputBinding:
       position: 101
       prefix: --minia-kmer
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: minimum kmer abundance used by minia
-    default: 3
     inputBinding:
       position: 101
       prefix: --minia-solid
@@ -104,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPU threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: method to use for creating multiple sequence alignment
-    default: ssu_align
     inputBinding:
       position: 104
       prefix: --align_method
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: number of cpus
-    default: 1
     inputBinding:
       position: 104
       prefix: --cpus
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: maximum contigs comprising a genome for it to be included in tree
-    default: 500
     inputBinding:
       position: 104
       prefix: --max_contigs
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: minimum N50 of contigs for a genome to be include in tree
-    default: 5000
     inputBinding:
       position: 104
       prefix: --min_N50
@@ -79,7 +75,6 @@ inputs:
       - int
     doc: minimum quality (completeness - 5*contamination) for a genome to be 
       included in tree [0, 100]
-    default: 50
     inputBinding:
       position: 104
       prefix: --min_quality
@@ -89,7 +84,6 @@ inputs:
       - int
     doc: minimum length of scaffold containing 16S sequence to be include in 
       tree
-    default: 0
     inputBinding:
       position: 104
       prefix: --min_scaffold_length
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of 16S sequence to be include in tree
-    default: 1200
     inputBinding:
       position: 104
       prefix: --min_ssu_length

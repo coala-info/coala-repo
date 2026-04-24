@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: number of parallel CPU workers to use for multithreads
-    default: 2
     inputBinding:
       position: 103
       prefix: --cpu
@@ -60,7 +59,6 @@ inputs:
       - 'null'
       - float
     doc: 'Fwd threshold: promote hits w/ P <= F3'
-    default: '1e-5'
     inputBinding:
       position: 103
       prefix: --F3
@@ -101,7 +99,6 @@ inputs:
       - 'null'
       - float
     doc: 'MSV threshold: promote hits w/ P <= F1'
-    default: 0.02
     inputBinding:
       position: 103
       prefix: --F1
@@ -134,7 +131,6 @@ inputs:
       - 'null'
       - float
     doc: report domains <= this E-value threshold in output
-    default: 10.0
     inputBinding:
       position: 103
       prefix: --domE
@@ -151,7 +147,6 @@ inputs:
       - 'null'
       - float
     doc: report models <= this E-value threshold in output
-    default: 10.0
     inputBinding:
       position: 103
       prefix: -E
@@ -168,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: 'set RNG seed to <n> (if 0: one-time arbitrary seed)'
-    default: 42
     inputBinding:
       position: 103
       prefix: --seed
@@ -185,7 +179,6 @@ inputs:
       - 'null'
       - int
     doc: set max width of ASCII text output lines
-    default: 120
     inputBinding:
       position: 103
       prefix: --textw
@@ -226,7 +219,6 @@ inputs:
       - 'null'
       - float
     doc: 'Vit threshold: promote hits w/ P <= F2'
-    default: '1e-3'
     inputBinding:
       position: 103
       prefix: --F2

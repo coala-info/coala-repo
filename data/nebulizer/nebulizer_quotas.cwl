@@ -37,7 +37,6 @@ inputs:
     doc: "list quotas with the specified status; can be\n                        \
       \         one of 'active', 'deleted', 'all' (default:\n                    \
       \             'active')"
-    default: active
     inputBinding:
       position: 102
       prefix: --status

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: The path to an alternative model to extract weights from.
-    default: None
     inputBinding:
       position: 102
       prefix: --model

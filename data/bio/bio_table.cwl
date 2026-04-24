@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: end coordinate
-    default: ''
     inputBinding:
       position: 102
       prefix: --end
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: table fields
-    default: id,size
     inputBinding:
       position: 102
       prefix: --fields
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: filter for a gene name
-    default: ''
     inputBinding:
       position: 102
       prefix: --gene
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: exact match on a sequence id
-    default: ''
     inputBinding:
       position: 102
       prefix: --id
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: regexp match on a sequence id
-    default: ''
     inputBinding:
       position: 102
       prefix: --match
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: overlap with coordinate
-    default: ''
     inputBinding:
       position: 102
       prefix: --olap
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: rename sequence ids
-    default: ''
     inputBinding:
       position: 102
       prefix: --rename
@@ -80,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: start coordinate
-    default: 1
     inputBinding:
       position: 102
       prefix: --start
@@ -89,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: filter for a feature type
-    default: ''
     inputBinding:
       position: 102
       prefix: --type

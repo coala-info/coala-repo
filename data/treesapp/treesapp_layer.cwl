@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to the directory containing reference package pickle (.pkl) files.
-    default: treesapp/data/
     inputBinding:
       position: 101
       prefix: --refpkg_dir

@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Start at this position (0-based)
-    default: 0
     inputBinding:
       position: 102
       prefix: -start

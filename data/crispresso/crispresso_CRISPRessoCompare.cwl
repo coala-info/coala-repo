@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Output name
-    default: ''
     inputBinding:
       position: 103
       prefix: --name
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Sample 1 name
-    default: Sample_1
     inputBinding:
       position: 103
       prefix: --sample_1_name
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Sample 2 name
-    default: Sample_2
     inputBinding:
       position: 103
       prefix: --sample_2_name
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - boolean
     doc: Save also .png images additionally to .pdf files
-    default: false
     inputBinding:
       position: 103
       prefix: --save_also_png

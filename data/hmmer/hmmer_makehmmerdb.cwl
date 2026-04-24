@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: bin length (power of 2; 32<=b<=4096)
-    default: 256
     inputBinding:
       position: 102
       prefix: --bin_length
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: input sequence broken into blocks this size (Mbases)
-    default: 50
     inputBinding:
       position: 102
       prefix: --block_size
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: suffix array sample rate (power of 2)
-    default: 8
     inputBinding:
       position: 102
       prefix: --sa_freq

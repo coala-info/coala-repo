@@ -131,7 +131,6 @@ inputs:
       - 'null'
       - string
     doc: Timeout in seconds for request
-    default: 0s
     inputBinding:
       position: 101
       prefix: --HTTPStorage.Timeout
@@ -216,7 +215,6 @@ inputs:
       - 'null'
       - string
     doc: Timeout in seconds for initial connection and follow up operations
-    default: 0s
     inputBinding:
       position: 101
       prefix: --MongoDB.Timeout
@@ -249,7 +247,6 @@ inputs:
       - 'null'
       - string
     doc: Node timeout in seconds
-    default: 0s
     inputBinding:
       position: 101
       prefix: --Node.Timeout
@@ -258,7 +255,6 @@ inputs:
       - 'null'
       - string
     doc: Node update rate
-    default: 0s
     inputBinding:
       position: 101
       prefix: --Node.UpdateRate
@@ -283,7 +279,6 @@ inputs:
       - 'null'
       - string
     doc: Request timeout for RPC client connections
-    default: 0s
     inputBinding:
       position: 101
       prefix: --RPCClient.Timeout
@@ -364,7 +359,6 @@ inputs:
       - 'null'
       - string
     doc: How often to send stdout/stderr log updates
-    default: 0s
     inputBinding:
       position: 101
       prefix: --Worker.LogUpdateRate
@@ -373,7 +367,6 @@ inputs:
       - 'null'
       - string
     doc: How often to poll for cancel signals
-    default: 0s
     inputBinding:
       position: 101
       prefix: --Worker.PollingRate

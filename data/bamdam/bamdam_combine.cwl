@@ -27,7 +27,6 @@ inputs:
     doc: Extra metrics to include in output file. Specify any combination of 
       columns in your bamdam compute output files. TaxNodeID, TaxName, 
       TotalReads, Duplicity, MeanDust, Damage+1 and taxpath are always included.
-    default: none
     inputBinding:
       position: 101
       prefix: --include
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum reads across samples to include a taxon
-    default: 50
     inputBinding:
       position: 101
       prefix: --minreads

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal block length
-    default: 30
     inputBinding:
       position: 101
 outputs:

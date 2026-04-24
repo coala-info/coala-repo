@@ -16,7 +16,6 @@ inputs:
       - int
     doc: Minimum mapping quality (phred scaled) for an alignment to be called 'uniquely
       mapped'.
-    default: 30
     inputBinding:
       position: 101
       prefix: --mapq

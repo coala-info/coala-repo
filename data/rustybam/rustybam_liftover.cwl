@@ -13,7 +13,6 @@ inputs:
       - File
     doc: PAF file from minimap2 or unimap run with -c and --eqx [i.e. the PAF 
       file must have the cg tag and use extended CIGAR opts (=/X)]
-    default: '-'
     inputBinding:
       position: 1
   - id: bed_file

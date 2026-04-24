@@ -82,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: Fraction of fragments to use when running fantasy baseball.
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --fantasy-frac
@@ -99,7 +98,6 @@ inputs:
       - 'null'
       - float
     doc: The cutoff for determining figs. Default is 0; specify 0 to disable.
-    default: 0
     inputBinding:
       position: 102
       prefix: --fig-cutoff
@@ -124,7 +122,6 @@ inputs:
       - 'null'
       - float
     doc: Lower bound for the informative prior mean.
-    default: 0
     inputBinding:
       position: 102
       prefix: --prior-lower
@@ -134,7 +131,6 @@ inputs:
       - float
     doc: Throw away anything that has ml_ratio below keep_factor times (best 
       ml_ratio).
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --keep-factor
@@ -152,7 +148,6 @@ inputs:
       - 'null'
       - float
     doc: Specify cutoff for inclusion in MAP sequence file.
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --map-mrca-min
@@ -161,7 +156,6 @@ inputs:
       - 'null'
       - float
     doc: Set the maximum ML pendant branch length.
-    default: 2
     inputBinding:
       position: 102
       prefix: --max-pend
@@ -170,7 +164,6 @@ inputs:
       - 'null'
       - int
     doc: Set the maximum number of pitches for baseball.
-    default: 40
     inputBinding:
       position: 102
       prefix: --max-pitches
@@ -179,7 +172,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum number of placements we keep.
-    default: 7
     inputBinding:
       position: 102
       prefix: --keep-at-most
@@ -188,7 +180,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of strikes for baseball. 0 -> no ball playing.
-    default: 6
     inputBinding:
       position: 102
       prefix: --max-strikes
@@ -197,7 +188,6 @@ inputs:
       - 'null'
       - float
     doc: 1st stage branch len optimization tolerance (2nd stage to 1e-5).
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --ml-tolerance
@@ -223,7 +213,6 @@ inputs:
       - 'null'
       - int
     doc: The number of child processes to spawn when doing placements.
-    default: 2
     inputBinding:
       position: 102
       prefix: -j
@@ -257,7 +246,6 @@ inputs:
       - 'null'
       - float
     doc: Relative error for the posterior probability calculation.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --pp-rel-err
@@ -306,7 +294,6 @@ inputs:
       - 'null'
       - float
     doc: Starting pendant branch length.
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --start-pend
@@ -315,7 +302,6 @@ inputs:
       - 'null'
       - float
     doc: Set the size of the strike box in log likelihood units.
-    default: 3
     inputBinding:
       position: 102
       prefix: --strike-box
@@ -357,7 +343,6 @@ inputs:
       - 'null'
       - int
     doc: Set verbosity level. 0 is silent, and 2 is quite a lot.
-    default: 1
     inputBinding:
       position: 102
       prefix: --verbosity

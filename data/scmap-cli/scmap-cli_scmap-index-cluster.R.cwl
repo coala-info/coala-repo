@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Should expression data be removed from index object? Default: FALSE'
-    default: false
     inputBinding:
       position: 101
       prefix: --remove-mat

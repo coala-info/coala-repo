@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: modification type (tag if combining multiple mods, default = "CpG")
-    default: CpG
     inputBinding:
       position: 101
       prefix: --modname
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: mod motif (default = CG)
-    default: CG
     inputBinding:
       position: 101
       prefix: --motif
@@ -54,7 +52,6 @@ inputs:
       - float
     doc: llr threshold (default = 2.5; if using --scalegroup the suggested 
       setting is 2.0)
-    default: 2.5
     inputBinding:
       position: 101
       prefix: --thresh

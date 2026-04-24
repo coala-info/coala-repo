@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: Custom config file
-    default: config.yaml
     inputBinding:
       position: 102
       prefix: --configfile
@@ -102,7 +101,6 @@ inputs:
       - 'null'
       - string
     doc: Flye Assembly Parameter
-    default: --nano-hq
     inputBinding:
       position: 102
       prefix: --flyeModel
@@ -121,7 +119,6 @@ inputs:
       \            (hybrid) or pyrodigal mean length (long).\n                   \
       \               Use --last to pick the last polishing round\n              \
       \                    regardless."
-    default: best
     inputBinding:
       position: 102
       prefix: --logic
@@ -140,7 +137,6 @@ inputs:
       - 'null'
       - string
     doc: Medaka Model.
-    default: r1041_e82_400bps_sup_v5.0.0
     inputBinding:
       position: 102
       prefix: --medakaModel
@@ -163,7 +159,6 @@ inputs:
       than\n                                  min_depth*chromosome_size bases of long-\n\
       \                                  reads left AFTER filtlong and porechop-ABI\n\
       \                                  steps are run."
-    default: 0
     inputBinding:
       position: 102
       prefix: --min_depth
@@ -172,7 +167,6 @@ inputs:
       - 'null'
       - int
     doc: min read length for long reads
-    default: 1000
     inputBinding:
       position: 102
       prefix: --min_length
@@ -181,7 +175,6 @@ inputs:
       - 'null'
       - int
     doc: min read quality score for long reads in bp.
-    default: 9
     inputBinding:
       position: 102
       prefix: --min_quality
@@ -216,7 +209,6 @@ inputs:
       - 'null'
       - string
     doc: Customise Snakemake runtime args
-    default: "--rerun-incomplete, --printshellcmds,\n                            \
       \      --nolock, --show-failed-logs, --conda-\n                            \
       \      frontend conda"
     inputBinding:
@@ -228,7 +220,6 @@ inputs:
       - int
     doc: "subsampled long read depth to subsample with\n                         \
       \         Filtlong. By default is 100x."
-    default: 100
     inputBinding:
       position: 102
       prefix: --subsample_depth
@@ -237,7 +228,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -246,7 +236,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use conda for Snakemake rules
-    default: true
     inputBinding:
       position: 102
       prefix: --use-conda

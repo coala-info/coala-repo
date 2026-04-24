@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: batch size for EPost submissions
-    default: 100
     inputBinding:
       position: 104
       prefix: --batchsize
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory for cached data
-    default: .ncfp_cache
     inputBinding:
       position: 104
       prefix: --cachedir
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: suffix for cache filestems
-    default: 2026-02-26-17-02-43
     inputBinding:
       position: 104
       prefix: --cachestem
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: report debug-level information
-    default: false
     inputBinding:
       position: 104
       prefix: --debug
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - boolean
     doc: disable progress bar (for testing)
-    default: false
     inputBinding:
       position: 104
       prefix: --disabletqdm
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: stem for output sequence files
-    default: ncfp
     inputBinding:
       position: 104
       prefix: --filestem
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - boolean
     doc: keep download cache (for testing)
-    default: false
     inputBinding:
       position: 104
       prefix: --keepcache
@@ -87,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of sequences to process (for testing)
-    default: None
     inputBinding:
       position: 104
       prefix: --limit
@@ -96,7 +88,6 @@ inputs:
       - 'null'
       - File
     doc: path to logfile
-    default: None
     inputBinding:
       position: 104
       prefix: --logfile
@@ -105,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of Entrez retries
-    default: 10
     inputBinding:
       position: 104
       prefix: --retries
@@ -114,7 +104,6 @@ inputs:
       - 'null'
       - File
     doc: path to file with skipped sequences
-    default: skipped.fasta
     inputBinding:
       position: 104
       prefix: --skippedfile
@@ -123,7 +112,6 @@ inputs:
       - 'null'
       - boolean
     doc: parse Stockholm format sequence regions
-    default: false
     inputBinding:
       position: 104
       prefix: --stockholm
@@ -132,7 +120,6 @@ inputs:
       - 'null'
       - boolean
     doc: report verbosely
-    default: false
     inputBinding:
       position: 104
       prefix: --verbose

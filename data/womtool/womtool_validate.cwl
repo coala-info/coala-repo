@@ -47,7 +47,6 @@ inputs:
       - boolean
     doc: If set, optional inputs are also included in the inputs set. Default is
       'true' (used only with the inputs command)
-    default: true
     inputBinding:
       position: 103
       prefix: --optional-inputs

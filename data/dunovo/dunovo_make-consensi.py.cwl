@@ -36,7 +36,6 @@ inputs:
       implementation by Nicolaus Lance Hepler and is the old default. 'biopython'
       uses BioPython's PairwiseAligner and a substitution matrix built by the Bioconductor's
       Biostrings package. Default: biopython"
-    default: biopython
     inputBinding:
       position: 102
       prefix: --aligner
@@ -47,7 +46,6 @@ inputs:
     doc: 'The fractional threshold to use when making consensus sequences. The consensus
       base must be present in more than this fraction of the reads, or N will be used
       as the consensus base instead. Default: 0.7'
-    default: 0.7
     inputBinding:
       position: 102
       prefix: --cons-thres
@@ -85,7 +83,6 @@ inputs:
     doc: 'The absolute threshold to use when making consensus sequences. The consensus
       base must be present in more than this number of reads, or N will be used as
       the consensus base instead. Default: 0'
-    default: 0
     inputBinding:
       position: 102
       prefix: --min-cons-reads
@@ -95,7 +92,6 @@ inputs:
       - int
     doc: 'The minimum number of reads (from each strand) required to form a single-strand
       consensus. Strands with fewer reads will be skipped. Default: 3.'
-    default: 3
     inputBinding:
       position: 102
       prefix: --min-reads
@@ -122,7 +118,6 @@ inputs:
     doc: 'Number of worker subprocesses to use. If 0, no subprocesses will be started
       and everything will be done inside one process. Give "auto" to use as many processes
       as there are CPU cores. Default: 0.'
-    default: '0'
     inputBinding:
       position: 102
       prefix: --processes
@@ -132,7 +127,6 @@ inputs:
       - int
     doc: 'Base quality threshold. Bases below this quality will not be counted. Default:
       20.'
-    default: 20
     inputBinding:
       position: 102
       prefix: --qual
@@ -142,7 +136,6 @@ inputs:
       - string
     doc: "FASTQ quality score format. Sanger scores are assumed to begin at 33 ('!').
       Default: sanger."
-    default: sanger
     inputBinding:
       position: 102
       prefix: --qual-format

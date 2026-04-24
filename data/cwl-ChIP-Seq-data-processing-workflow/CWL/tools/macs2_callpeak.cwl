@@ -57,7 +57,6 @@ inputs:
         prefix: "--qvalue"
   is_paired_end:
     type: boolean
-    default: true
  
 outputs:
   peaks_bed:    

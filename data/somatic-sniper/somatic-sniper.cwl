@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: 'Filtering priority: minimum mapping quality'
-    default: 0
     inputBinding:
       position: 103
       prefix: -q
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum somatic score
-    default: 15
     inputBinding:
       position: 103
       prefix: -Q
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: Prior probability of a somatic mutation
-    default: 0.01
     inputBinding:
       position: 103
       prefix: -s
@@ -77,7 +74,6 @@ inputs:
       - 'null'
       - float
     doc: Theta in the somatic calculation
-    default: 0.85
     inputBinding:
       position: 103
       prefix: -T

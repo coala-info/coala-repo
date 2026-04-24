@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: anchor sequence
-    default: TGCGTCTATTTAGTGGAGCC
     inputBinding:
       position: 105
       prefix: --anchor
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: concentration of annealing(!) Oligos in nMol
-    default: 50
     inputBinding:
       position: 105
   - id: apply_distance_to_probe
@@ -77,7 +75,6 @@ inputs:
       - 'null'
       - Directory
     doc: primer3 config directory
-    default: ./src/primer3_config/
     inputBinding:
       position: 105
       prefix: --config
@@ -86,7 +83,6 @@ inputs:
       - 'null'
       - float
     doc: concentration of divalent ions in mMol
-    default: 1.5
     inputBinding:
       position: 105
   - id: enttemp
@@ -94,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: temperature for entropie and entalpie calculation in Celsius
-    default: 37
     inputBinding:
       position: 105
   - id: gc_max
@@ -102,7 +97,6 @@ inputs:
       - 'null'
       - float
     doc: maximum arm GC fraction
-    default: 0.6
     inputBinding:
       position: 105
   - id: gc_min
@@ -110,7 +104,6 @@ inputs:
       - 'null'
       - float
     doc: minimum arm GC fraction
-    default: 0.4
     inputBinding:
       position: 105
   - id: gtf_attribute
@@ -118,7 +111,6 @@ inputs:
       - 'null'
       - string
     doc: gtf/gff3 attribute
-    default: gene_id
     inputBinding:
       position: 105
       prefix: --attribute
@@ -127,7 +119,6 @@ inputs:
       - 'null'
       - string
     doc: gtf/gff3 feature
-    default: exon
     inputBinding:
       position: 105
       prefix: --feature
@@ -144,7 +135,6 @@ inputs:
       - 'null'
       - int
     doc: concentration of monovalent ions in mMol
-    default: 50
     inputBinding:
       position: 105
   - id: neighborhood_distance
@@ -152,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: neighborhood distance
-    default: 1
     inputBinding:
       position: 105
       prefix: --distance
@@ -161,7 +150,6 @@ inputs:
       - 'null'
       - int
     doc: probe arm length
-    default: 20
     inputBinding:
       position: 105
       prefix: --armlen
@@ -191,7 +179,6 @@ inputs:
       - 'null'
       - string
     doc: spacer left
-    default: TCCTC
     inputBinding:
       position: 105
       prefix: --spacerleft
@@ -200,7 +187,6 @@ inputs:
       - 'null'
       - string
     doc: spacer right
-    default: TCTTT
     inputBinding:
       position: 105
       prefix: --spacerright
@@ -209,7 +195,6 @@ inputs:
       - 'null'
       - int
     doc: Tm difference between arms
-    default: 2
     inputBinding:
       position: 105
       prefix: --tmdiff
@@ -218,7 +203,6 @@ inputs:
       - 'null'
       - float
     doc: the sum of all dNTPs in mMol
-    default: 0.6
     inputBinding:
       position: 105
   - id: use_hamming

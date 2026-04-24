@@ -18,7 +18,6 @@ inputs:
         items: float
     doc: "Parameters for the function determining the parameter n for the chi^2 distribution:
       m, b, z for 'm*x + b' if x < z and 'm*z + b' for x >=z"
-    default:
       - 0.00189237136
       - 2.5394497
       - 5500
@@ -32,7 +31,6 @@ inputs:
         items: float
     doc: "Parameters for the curve determining the parameter scale for the chi^2 distribution:
       m,b, z, c, a for 'm*x + b' if x <= z and 'c * x^-a' if x > z"
-    default:
       - 0.01214
       - -5.12
       - 675
@@ -89,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal number of passes for one molecule
-    default: 40
     inputBinding:
       position: 102
       prefix: --max-passes
@@ -98,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Minium read length for lognormal distribution
-    default: 50
     inputBinding:
       position: 102
       prefix: --min-readlength
@@ -117,7 +113,6 @@ inputs:
         items: float
     doc: Parameters for normal distributed noise added to quality increase sqare
       root function
-    default:
       - 0
       - 0.2
     inputBinding:
@@ -128,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads to simulate
-    default: 1000
     inputBinding:
       position: 102
       prefix: --num-reads
@@ -147,7 +141,6 @@ inputs:
       - 'null'
       - float
     doc: Probability for deletions for reads with one pass.
-    default: 0.04
     inputBinding:
       position: 102
       prefix: --prob-del
@@ -156,7 +149,6 @@ inputs:
       - 'null'
       - float
     doc: Probability for insertions for reads with one pass.
-    default: 0.11
     inputBinding:
       position: 102
       prefix: --prob-ins
@@ -165,7 +157,6 @@ inputs:
       - 'null'
       - float
     doc: Probability for substitutions for reads with one pass.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --prob-sub
@@ -174,7 +165,6 @@ inputs:
       - 'null'
       - float
     doc: Upper bound for the modified total error probability
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --probability-threshold
@@ -219,7 +209,6 @@ inputs:
         items: float
     doc: "Parameters for the sqare root function for the quality increase: a, b for
       'sqrt(x+a) - b'"
-    default:
       - 0.5
       - 0.2247
     inputBinding:

@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: The function to use for regrouping (sum, mean, max)
-    default: sum
     inputBinding:
       position: 101
       prefix: --function

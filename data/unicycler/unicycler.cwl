@@ -14,7 +14,6 @@ inputs:
       \                         2 = also keep SAM (enables fast rerun in different
       mode),\n                            3 = keep all temp files and save all graphs
       (for debugging)"
-    default: 1
     inputBinding:
       position: 101
       prefix: --keep
@@ -24,7 +23,6 @@ inputs:
       - int
     doc: "The expected number of linear (i.e. non-circular)\n                    \
       \      sequences in the underlying sequence (default: 0)"
-    default: 0
     inputBinding:
       position: 101
       prefix: --linear_seqs
@@ -42,7 +40,6 @@ inputs:
       - int
     doc: "Exclude contigs from the FASTA file which are\n                        \
       \  shorter than this length (default: 100)"
-    default: 100
     inputBinding:
       position: 101
       prefix: --min_fasta_length
@@ -55,7 +52,6 @@ inputs:
       \       rate\n                            normal = moderate contig size and
       misassembly rate\n                            bold = longest contigs, higher
       misassembly rate"
-    default: normal
     inputBinding:
       position: 101
       prefix: --mode
@@ -80,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads used (default: 8)'
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads
@@ -99,7 +94,6 @@ inputs:
     doc: "Level of stdout and log file information (default: 1)\n                \
       \            0 = no stdout, 1 = basic progress indicators,\n               \
       \             2 = extra info, 3 = debugging info"
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbosity

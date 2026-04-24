@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: Significance threshold for chi2
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --chi2-threshold
@@ -157,7 +156,6 @@ inputs:
         items: File
     doc: Input file 2, containing the nb of cases/controls carrying an haplotype.
       Names must be separated by colons.
-    default: correspond.txt
     inputBinding:
       position: 101
       prefix: --second-input-file

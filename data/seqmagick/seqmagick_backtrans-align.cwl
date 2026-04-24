@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: Action to take on an ambiguous codon
-    default: fail
     inputBinding:
       position: 103
       prefix: --fail-action
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: Translation table to use.
-    default: standard-ambiguous
     inputBinding:
       position: 103
       prefix: --translation-table

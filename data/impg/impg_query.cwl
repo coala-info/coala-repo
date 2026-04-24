@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum recursion depth for transitive overlaps (0 for no limit)
-    default: 2
     inputBinding:
       position: 101
       prefix: --max-depth
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance between regions to merge
-    default: 0
     inputBinding:
       position: 101
       prefix: --merge-distance
@@ -52,7 +50,6 @@ inputs:
       - int
     doc: Minimum distance between transitive ranges to consider on the same 
       sequence
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-distance-between-ranges
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum region size to consider for transitive queries
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-transitive-len
@@ -105,7 +101,6 @@ inputs:
     doc: "Output format: 'auto' ('bed' for -r, 'bedpe' for -b), 'bed', 'bedpe', 'paf',
       'gfa' (v1.0), 'maf', 'fasta', or 'fasta+paf' ('gfa', 'maf', 'fasta', and 'fasta+paf'
       require --sequence-files or --sequence-list)"
-    default: auto
     inputBinding:
       position: 101
       prefix: --output-format
@@ -133,7 +128,6 @@ inputs:
     doc: POA alignment scores as 
       match,mismatch,gap_open1,gap_extend1,gap_open2,gap_extend2 (for 'gfa' and 
       'maf')
-    default: 1,4,6,2,26,1
     inputBinding:
       position: 101
       prefix: --poa-scoring
@@ -193,7 +187,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for parallel processing
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -219,7 +212,6 @@ inputs:
       - 'null'
       - int
     doc: Verbosity level (0 = error, 1 = info, 2 = debug)
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbose

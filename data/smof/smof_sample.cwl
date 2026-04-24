@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - File
     doc: input fasta sequence
-    default: stdin
     inputBinding:
       position: 1
   - id: number
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: sample size
-    default: 1
     inputBinding:
       position: 102
       prefix: --number

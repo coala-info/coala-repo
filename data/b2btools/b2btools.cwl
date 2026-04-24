@@ -55,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: 'Execution mode: Single Sequence or MSA Analysis'
-    default: single_seq
     inputBinding:
       position: 101
       prefix: --mode
@@ -72,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: Tabular separator
-    default: tab
     inputBinding:
       position: 101
       prefix: --sep

@@ -44,7 +44,6 @@ inputs:
       initial start sequence by sampling one connected component only. plocal-neighbors:
       Only find neighboring sequences to the initial start sequence by sampling one
       path only.'
-    default: sample
     inputBinding:
       position: 101
       prefix: --mode
@@ -53,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: number of designs
-    default: 10
     inputBinding:
       position: 101
       prefix: --num

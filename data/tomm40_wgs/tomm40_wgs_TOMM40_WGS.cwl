@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: 'YAML configuration file (default: config.yaml in script directory).'
-    default: config.yaml
     inputBinding:
       position: 101
       prefix: --configfile
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of cores to use (default: 1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores

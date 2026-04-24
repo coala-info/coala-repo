@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: max traversal depth
-    default: -1
     inputBinding:
       position: 101
       prefix: --depth
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: allows docs + sheets to be pulled as .desktop files or URL linked files
-    default: true
     inputBinding:
       position: 101
       prefix: --desktop-links
@@ -188,7 +186,6 @@ inputs:
       - 'null'
       - boolean
     doc: performs the pull action recursively
-    default: true
     inputBinding:
       position: 101
       prefix: --recursive
@@ -197,7 +194,6 @@ inputs:
       - 'null'
       - int
     doc: max number of retries for exponential backoff
-    default: 20
     inputBinding:
       position: 101
       prefix: --retry-count

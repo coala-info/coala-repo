@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Will output detail in files? Default: 0(no).'
-    default: false
     inputBinding:
       position: 101
       prefix: --detail
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: The percentage of downsampling for quick run.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --downsample_percentage
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Font size for plots.
-    default: 14
     inputBinding:
       position: 101
       prefix: --fontsize
@@ -72,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: 'Logging level. 1: DEBUG, 2: INFO, 3: WARNING, 4: ERROR, 5: CRITICAL.'
-    default: 2
     inputBinding:
       position: 101
       prefix: --log_level
@@ -81,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Marker size for plots.
-    default: 10
     inputBinding:
       position: 101
       prefix: --markersize
@@ -90,7 +85,6 @@ inputs:
       - 'null'
       - string
     doc: The prefix of output.
-    default: QC_
     inputBinding:
       position: 101
       prefix: --outprefix
@@ -100,7 +94,6 @@ inputs:
       - type: array
         items: int
     doc: Set the number of reads to randomly sample from the file.
-    default: 8
     inputBinding:
       position: 101
       prefix: --readCount
@@ -109,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: The number for random seed.
-    default: 1
     inputBinding:
       position: 101
       prefix: --seed
@@ -118,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads used.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -23,7 +23,6 @@ inputs:
       as in MMseqs: AST,C,DN,EQ,FY,G,H,IV,KR,LM,P,W * aa11_diamond (amino acid reduced
       to 11 symbols as in Diamond: KREDQN,C,G,H,ILV,M,F,Y,W,P,STA * aa6_dayhoff (amino
       acid reduced to 6 symbols as proposed by Dayhoff: STPAG,NDEQ,HRK,MILV,FYW,C'
-    default: nt
     inputBinding:
       position: 102
   - id: extend
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: 'fraction of all k-mers to be accepted by the minhash filter (default: 1)'
-    default: 1
     inputBinding:
       position: 102
       prefix: -f
@@ -62,7 +60,6 @@ inputs:
       - int
     doc: 'length of k-mers (default: 18, maximum depends on the alphabet - 31 for
       default nt)'
-    default: 18
     inputBinding:
       position: 102
       prefix: -k
@@ -78,8 +75,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'preserve strand instead of taking canonical k-mers (allowed only in nt alphabet;
-      default: off)'
-    default: false
     inputBinding:
       position: 102
   - id: threads
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of threads (default: number of available cores)'
-    default: number of available cores
     inputBinding:
       position: 102
       prefix: -t

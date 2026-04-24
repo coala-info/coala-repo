@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations for FDR calculation
-    default: 100
     inputBinding:
       position: 103
       prefix: --fdr-iterations
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - float
     doc: The FDR threshold for footprinting
-    default: 0.01
     inputBinding:
       position: 103
       prefix: --fdr-limit
@@ -62,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to use
-    default: 1
     inputBinding:
       position: 103
       prefix: --processes

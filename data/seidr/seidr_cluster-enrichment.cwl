@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: Adjusted p-value cutoff
-    default: SEIDR_COMPARE_CLUST_DEF_ALPHA
     inputBinding:
       position: 103
       prefix: --alpha
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Output delimiter
-    default: ','
     inputBinding:
       position: 103
       prefix: --delim
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum members of a cluster
-    default: 200
     inputBinding:
       position: 103
       prefix: --max-members
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum members of a cluster
-    default: 20
     inputBinding:
       position: 103
       prefix: --min-members

@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - float
     doc: Filter reads by accuracy.
-    default: None
     inputBinding:
       position: 102
       prefix: --accuracy
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: "Filter reads by coverage (what fraction of the read\naligns)."
-    default: None
     inputBinding:
       position: 102
       prefix: --coverage
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include supplementary alignments.
-    default: false
     inputBinding:
       position: 102
       prefix: --keep_supplementary
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include unmapped reads.
-    default: false
     inputBinding:
       position: 102
       prefix: --keep_unmapped
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Filter reads by read length.
-    default: None
     inputBinding:
       position: 102
       prefix: --length
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: Sample only forward or reverse reads.
-    default: None
     inputBinding:
       position: 102
       prefix: --orientation
@@ -68,7 +62,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use only primary reads.
-    default: true
     inputBinding:
       position: 102
       prefix: --primary_only
@@ -77,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Filter reads by mean qscore.
-    default: None
     inputBinding:
       position: 102
       prefix: --quality
@@ -86,7 +78,6 @@ inputs:
       - 'null'
       - string
     doc: Only process given region.
-    default: None
     inputBinding:
       position: 102
       prefix: --region
@@ -95,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel threads for io processing.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

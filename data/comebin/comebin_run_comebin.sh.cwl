@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: batch size for training process
-    default: 1024
     inputBinding:
       position: 101
       prefix: -b
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: embedding size for comebin network
-    default: 2048
     inputBinding:
       position: 101
       prefix: -e
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: embedding size for coverage network
-    default: 2048
     inputBinding:
       position: 101
       prefix: -c
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: number of views for contrastive multiple-view learning
-    default: 6
     inputBinding:
       position: 101
       prefix: -n
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: temperature in loss function
-    default: 0.07 for assemblies with an N50 > 10000, default=0.15 for others
     inputBinding:
       position: 101
       prefix: -l
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 5
     inputBinding:
       position: 101
       prefix: -t

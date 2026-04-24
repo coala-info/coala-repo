@@ -28,7 +28,6 @@ inputs:
       - float
     doc: Specifies a coverage cutoff quantile such that only coverage values below
       this quantile are considered.
-    default: 0.95
     inputBinding:
       position: 102
       prefix: --cutoff
@@ -38,7 +37,6 @@ inputs:
       - string
     doc: 'Distributions to fit. z->zero; n: nbinom (MOM); N: nbinom (MLE); p:binom;
       t: tail.'
-    default: zn
     inputBinding:
       position: 102
       prefix: --distributions
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of iterations.
-    default: 50
     inputBinding:
       position: 102
       prefix: --iterations
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable logging.
-    default: false
     inputBinding:
       position: 102
       prefix: --log
@@ -75,7 +71,6 @@ inputs:
       - 'null'
       - boolean
     doc: Create a plot of the fitted mixture model.
-    default: false
     inputBinding:
       position: 102
       prefix: --plot
@@ -85,7 +80,6 @@ inputs:
       - float
     doc: Set the convergence threshold for the iteration. Stop if the change between
       two iterations is less than THR.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --threshold
@@ -94,7 +88,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only view the GCP. Do not fit any distribution. Respects cutoff (-c).
-    default: false
     inputBinding:
       position: 102
       prefix: --view

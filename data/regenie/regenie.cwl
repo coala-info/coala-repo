@@ -235,7 +235,6 @@ inputs:
       - 'null'
       - int
     doc: number of cross validation (CV) folds
-    default: 5
     inputBinding:
       position: 101
       prefix: --cv
@@ -436,7 +435,6 @@ inputs:
       - int
     doc: number of ridge parameters to use when fitting models within blocks 
       [evenly spaced in (0,1)]
-    default: 5
     inputBinding:
       position: 101
       prefix: --l0
@@ -446,7 +444,6 @@ inputs:
       - int
     doc: number of ridge parameters to use when fitting model across blocks 
       [evenly spaced in (0,1)]
-    default: 5
     inputBinding:
       position: 101
       prefix: --l1
@@ -516,7 +513,6 @@ inputs:
       - 'null'
       - float
     doc: minimum imputation info score (Impute/Mach R^2) for tested variants
-    default: 0
     inputBinding:
       position: 101
       prefix: --minINFO
@@ -525,7 +521,6 @@ inputs:
       - 'null'
       - float
     doc: minimum minor allele count (MAC) for tested variants
-    default: 5
     inputBinding:
       position: 101
       prefix: --minMAC
@@ -558,7 +553,6 @@ inputs:
       - 'null'
       - float
     doc: P-value threshold below which to apply Firth/SPA correction
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --pThresh
@@ -567,7 +561,6 @@ inputs:
       - 'null'
       - string
     doc: build code to identify PAR region boundaries on chrX
-    default: hg38
     inputBinding:
       position: 101
       prefix: --par-region
@@ -645,7 +638,6 @@ inputs:
       - float
     doc: minor allele count (MAC) threshold below which to use HLM for 
       interaction testing with QTs
-    default: 1000
     inputBinding:
       position: 101
       prefix: --rare-mac
@@ -819,7 +811,6 @@ inputs:
       - 'null'
       - float
     doc: maximum AAF for variants included in gene-based tests
-    default: 1
     inputBinding:
       position: 101
       prefix: --vc-maxAAF

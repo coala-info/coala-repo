@@ -9,7 +9,6 @@ inputs:
   - id: libraries_file
     type: File
     doc: Path to the TSV file containing library information.
-    default: libraries.tsv
     inputBinding:
       position: 1
 outputs:

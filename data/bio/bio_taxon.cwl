@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: how deep to visit a clade
-    default: 0
     inputBinding:
       position: 102
       prefix: --depth
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: which column to read when filtering
-    default: 1
     inputBinding:
       position: 102
       prefix: --field
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: the indentation depth (set to zero for flat)
-    default: 2
     inputBinding:
       position: 102
       prefix: --indent
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: clade to keep
-    default: "''"
     inputBinding:
       position: 102
       prefix: --keep
@@ -93,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: clade to remove
-    default: "''"
     inputBinding:
       position: 102
       prefix: --remove
@@ -102,7 +97,6 @@ inputs:
       - 'null'
       - string
     doc: separator (default is ', ')
-    default: ','
     inputBinding:
       position: 102
       prefix: --sep

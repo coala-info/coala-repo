@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Size of k-mers to use
-    default: 31
     inputBinding:
       position: 102
       prefix: --kmer-size
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Number of hash functions to use
-    default: 3
     inputBinding:
       position: 102
       prefix: --num-hashes
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Number of hash tables to use
-    default: 5
     inputBinding:
       position: 102
       prefix: --num-tables
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

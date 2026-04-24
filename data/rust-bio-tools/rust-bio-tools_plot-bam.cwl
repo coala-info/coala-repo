@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Set the maximum rows that will be shown in the alignment plots
-    default: 500
     inputBinding:
       position: 101
       prefix: --max-read-depth

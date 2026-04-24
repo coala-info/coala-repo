@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: Basename for output files
-    default: <input>_hits
     inputBinding:
       position: 101
       prefix: --out
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: Rapsearch path, version >=2.24
-    default: rapsearch set in PATH variable
     inputBinding:
       position: 101
       prefix: --rapsearch
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

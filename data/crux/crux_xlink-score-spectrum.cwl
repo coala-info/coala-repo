@@ -54,7 +54,6 @@ inputs:
       - boolean
     doc: Consider a-ions in the search? Note that an a-ion is equivalent to a 
       neutral loss of CO from the b-ion. Peak height is 10 (in arbitrary units).
-    default: false
     inputBinding:
       position: 109
       prefix: --use-a-ions
@@ -63,7 +62,6 @@ inputs:
       - 'null'
       - boolean
     doc: Consider b-ions in the search? Peak height is 50 (in arbitrary units).
-    default: true
     inputBinding:
       position: 109
       prefix: --use-b-ions
@@ -72,7 +70,6 @@ inputs:
       - 'null'
       - boolean
     doc: Consider c-ions in the search? Peak height is 50 (in arbitrary units).
-    default: false
     inputBinding:
       position: 109
       prefix: --use-c-ions
@@ -83,7 +80,6 @@ inputs:
     doc: Include flanking peaks around singly charged b and y theoretical ions. 
       Each flanking peak occurs in the adjacent m/z bin and has half the 
       intensity of the primary peak.
-    default: false
     inputBinding:
       position: 109
       prefix: --use-flanking-peaks
@@ -92,7 +88,6 @@ inputs:
       - 'null'
       - boolean
     doc: Consider x-ions in the search? Peak height is 10 (in arbitrary units).
-    default: false
     inputBinding:
       position: 109
       prefix: --use-x-ions
@@ -101,7 +96,6 @@ inputs:
       - 'null'
       - boolean
     doc: Consider y-ions in the search? Peak height is 50 (in arbitrary units).
-    default: true
     inputBinding:
       position: 109
       prefix: --use-y-ions
@@ -110,7 +104,6 @@ inputs:
       - 'null'
       - boolean
     doc: Consider z-ions in the search? Peak height is 50 (in arbitrary units).
-    default: false
     inputBinding:
       position: 109
       prefix: --use-z-ions
@@ -122,7 +115,6 @@ inputs:
       messages, including all those at lower verbosity levels: 0-fatal errors, 10-non-fatal
       errors, 20-warnings, 30-information on the progress of execution, 40-more progress
       information, 50-debug info, 60-detailed debug info.'
-    default: 30
     inputBinding:
       position: 109
       prefix: --verbosity
@@ -131,7 +123,6 @@ inputs:
       - 'null'
       - string
     doc: Score method for xlink {composite, modification, concatenated}.
-    default: composite
     inputBinding:
       position: 109
       prefix: --xlink-score-method

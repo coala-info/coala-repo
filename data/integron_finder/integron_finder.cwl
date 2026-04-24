@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of an integron to be reported. Defaults to 100 bp.
-    default: 100
     inputBinding:
       position: 102
       prefix: --min-length
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum score for an integron to be reported. Defaults to 0.7.
-    default: 0.7
     inputBinding:
       position: 102
       prefix: --min-score
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for the analysis. Defaults to 1.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

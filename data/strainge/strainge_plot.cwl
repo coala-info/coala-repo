@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: The kind of plot to generate.
-    default: spectrum
     inputBinding:
       position: 102
       prefix: --plot-type

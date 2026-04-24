@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Number of SNPs to use in batches of memory variant
-    default: 8192
     inputBinding:
       position: 101
       prefix: --batch
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum iterations in estimation of individual allele frequencies
-    default: 100
     inputBinding:
       position: 101
       prefix: --iter
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Number of power iterations in randomized SVD
-    default: 11
     inputBinding:
       position: 101
       prefix: --power
@@ -116,7 +113,6 @@ inputs:
       - 'null'
       - float
     doc: Tolerance in update for individual allele frequencies
-    default: '1e-5'
     inputBinding:
       position: 101
       prefix: --tole

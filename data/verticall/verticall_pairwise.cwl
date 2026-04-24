@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Minimap2 options for assembly-to-assembly alignment
-    default: -x asm20
     inputBinding:
       position: 101
       prefix: --align_options
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Allow this much overlap between alignments
-    default: 100
     inputBinding:
       position: 101
       prefix: --allowed_overlap
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: Minimap2 options for assembly indexing
-    default: -k15 -w10
     inputBinding:
       position: 101
       prefix: --index_options
@@ -66,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: "Fraction of the data to analyse (for\nparallelisation"
-    default: 1/1
     inputBinding:
       position: 101
       prefix: --part
@@ -84,7 +80,6 @@ inputs:
       - float
     doc: "Peaks with a mass of at least this fraction of the\nmost massive peak will
       be used to produce secondary\ndistances"
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --secondary
@@ -102,7 +97,6 @@ inputs:
       - 'null'
       - float
     doc: "Degree to which the distance distribution is\nsmoothed"
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --smoothing_factor
@@ -111,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: CPU threads for parallel processing
-    default: 16
     inputBinding:
       position: 101
       prefix: --threads
@@ -128,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: "Aim to have at least this many comparison windows\nbetween assemblies"
-    default: 50000
     inputBinding:
       position: 101
       prefix: --window_count

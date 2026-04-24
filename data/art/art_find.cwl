@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - Directory
     doc: The starting directory path for the search.
-    default: .
     inputBinding:
       position: 1
   - id: name_pattern

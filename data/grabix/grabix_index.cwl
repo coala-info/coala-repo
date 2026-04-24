@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: Character indicating a comment line.
-    default: '#'
     inputBinding:
       position: 102
       prefix: --comment-char
@@ -63,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for indexing.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

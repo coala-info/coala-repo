@@ -45,7 +45,6 @@ inputs:
       - float
     doc: For gender testing, if chrY is designed. For exome, the number should 
       be higher, such as 0.3.
-    default: 0.15
     inputBinding:
       position: 103
       prefix: -Y
@@ -65,7 +64,6 @@ inputs:
     doc: The failed factor for individual amplicons. If (the 80th percentile of 
       an amplicon depth)/(the global median depth) is less than the argument, 
       the amplicon is considered failed.
-    default: 0.2
     inputBinding:
       position: 103
       prefix: -F

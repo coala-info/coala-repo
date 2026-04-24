@@ -45,7 +45,6 @@ inputs:
       prefix: --date
   delta:
     type: int?
-    default: 4
     inputBinding:
       prefix: --delta
   toi:

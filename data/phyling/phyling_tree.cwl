@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: Algorithm used for tree building.
-    default: ft
     inputBinding:
       position: 101
       prefix: --method
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Seed number for stochastic elements during inferences.
-    default: -1
     inputBinding:
       position: 101
       prefix: --seed
@@ -66,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: Input data sequence type
-    default: AUTO
     inputBinding:
       position: 101
       prefix: --seqtype
@@ -75,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Threads for tree construction
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads

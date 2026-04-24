@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Gap-extending penalty.
-    default: -3
     inputBinding:
       position: 103
       prefix: -u
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Gap-extending penalty for unaligned query parts.
-    default: 0
     inputBinding:
       position: 103
       prefix: -qu
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Gap-extending penalty for unaligned reference ends.
-    default: 0
     inputBinding:
       position: 103
       prefix: -ru
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Gap-opening penalty.
-    default: -9
     inputBinding:
       position: 103
       prefix: -v
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Gap-opening penalty for unaligned query parts.
-    default: -5
     inputBinding:
       position: 103
       prefix: -qv
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Gap-opening penalty for unaligned reference ends.
-    default: 0
     inputBinding:
       position: 103
       prefix: -rv
@@ -73,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Matching score for extension reference part.
-    default: 2
     inputBinding:
       position: 103
       prefix: -s2
@@ -82,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Matching score for non-extension reference part.
-    default: 4
     inputBinding:
       position: 103
       prefix: -s1
@@ -91,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Mismatching score.
-    default: -6
     inputBinding:
       position: 103
       prefix: -s0

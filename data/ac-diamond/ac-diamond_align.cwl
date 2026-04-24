@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: band for dynamic programming computation
-    default: 0
     inputBinding:
       position: 101
       prefix: --band
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: compression for output files (0=none, 1=gzip)
-    default: 0
     inputBinding:
       position: 101
       prefix: --compress
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - float
     doc: maximum e-value to report alignments
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --evalue
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: trace point fetch size
-    default: 4096
     inputBinding:
       position: 101
       prefix: --fetch-size
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: gap extension penalty, -1=default (1 for protein)
-    default: -1
     inputBinding:
       position: 101
       prefix: --gapextend
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: gap open penalty, -1=default (11 for protein)
-    default: -1
     inputBinding:
       position: 101
       prefix: --gapopen
@@ -82,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: xdrop for gapped alignment in bits
-    default: 20
     inputBinding:
       position: 101
       prefix: --gapped-xdrop
@@ -91,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: band for hit verification
-    default: 0
     inputBinding:
       position: 101
       prefix: --hit-band
@@ -100,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: minimum score to keep a tentative alignment
-    default: 0
     inputBinding:
       position: 101
       prefix: --hit-score
@@ -109,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: minimum identity% to report an alignment
-    default: 0
     inputBinding:
       position: 101
       prefix: --id
@@ -118,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: index mode (1=10x1, 2=10x8)
-    default: 0
     inputBinding:
       position: 101
       prefix: --index-mode
@@ -135,7 +124,6 @@ inputs:
       - 'null'
       - string
     doc: score matrix for protein alignment
-    default: blosum62
     inputBinding:
       position: 101
       prefix: --matrix
@@ -144,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of target sequences to report alignments for
-    default: 25
     inputBinding:
       position: 101
       prefix: --max-target-seqs
@@ -153,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: minimum bit score to report alignments (overrides e-value setting)
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-score
@@ -170,7 +156,6 @@ inputs:
       - 'null'
       - float
     doc: query sequence block size in billions of letters
-    default: 6
     inputBinding:
       position: 101
       prefix: --query-block-size
@@ -203,7 +188,6 @@ inputs:
       - 'null'
       - int
     doc: number of cpu threads
-    default: 0
     inputBinding:
       position: 101
       prefix: --threads
@@ -212,7 +196,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory for temporary files
-    default: /dev/shm
     inputBinding:
       position: 101
       prefix: --tmpdir
@@ -222,7 +205,6 @@ inputs:
       - int
     doc: report alignments within this percentage range of top alignment score 
       (overrides --max-target-seqs)
-    default: 100
     inputBinding:
       position: 101
       prefix: --top
@@ -231,7 +213,6 @@ inputs:
       - 'null'
       - int
     doc: minimum raw alignment score to continue local extension
-    default: 0
     inputBinding:
       position: 101
       prefix: --ungapped-score
@@ -248,7 +229,6 @@ inputs:
       - 'null'
       - int
     doc: window size for local hit search
-    default: 0
     inputBinding:
       position: 101
       prefix: --window
@@ -257,7 +237,6 @@ inputs:
       - 'null'
       - int
     doc: xdrop for ungapped alignment
-    default: 20
     inputBinding:
       position: 101
       prefix: --xdrop

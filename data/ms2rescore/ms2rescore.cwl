@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable automatic check for software updates
-    default: false
     inputBinding:
       position: 101
       prefix: --disable-update-check
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: logging level
-    default: info
     inputBinding:
       position: 101
       prefix: --log-level
@@ -68,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: PSM file type
-    default: infer
     inputBinding:
       position: 101
       prefix: --psm-file-type
@@ -85,7 +82,6 @@ inputs:
       - 'null'
       - boolean
     doc: boolean whether to write an HTML report
-    default: true
     inputBinding:
       position: 101
       prefix: --write-report

@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: autocompletion file
-    default: /root/.bash_completion.d/kmcp.sh
     inputBinding:
       position: 101
       prefix: --file
@@ -46,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: autocompletion type (bash|zsh|fish|powershell)
-    default: bash
     inputBinding:
       position: 101
       prefix: --shell
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs cores to use.
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads

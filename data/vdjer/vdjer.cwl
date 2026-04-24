@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: 'anchor mismatches (default: 4)'
-    default: 4
     inputBinding:
       position: 101
       prefix: --am
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: 'start position for contig filtering (default: 52)'
-    default: 52
     inputBinding:
       position: 101
       prefix: --e0
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: 'stop position for contig filtering (default: 411)'
-    default: 411
     inputBinding:
       position: 101
       prefix: --e1
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: 'J extension (default: 162)'
-    default: 162
     inputBinding:
       position: 101
       prefix: --jext
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: 'kmer size (default: 35)'
-    default: 35
     inputBinding:
       position: 101
       prefix: --k
@@ -86,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: 'mate span distance (default: 48)'
-    default: 48
     inputBinding:
       position: 101
       prefix: --ms
@@ -103,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: 'min base quality (default: 90)'
-    default: 90
     inputBinding:
       position: 101
       prefix: --mq
@@ -112,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: 'min contig score (default: -5)'
-    default: -5
     inputBinding:
       position: 101
       prefix: --mcs
@@ -121,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: 'min node frequency (default: 3)'
-    default: 3
     inputBinding:
       position: 101
       prefix: --mf
@@ -130,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: 'min source node homology score (default: 30)'
-    default: 30
     inputBinding:
       position: 101
       prefix: --mrs
@@ -147,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: 'read filter floor (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --rf
@@ -156,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: 'read span distance (default: 35)'
-    default: 35
     inputBinding:
       position: 101
       prefix: --rs
@@ -171,7 +159,6 @@ inputs:
       - 'null'
       - int
     doc: 'threads (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --t
@@ -186,7 +173,6 @@ inputs:
       - 'null'
       - int
     doc: 'vregion kmer size (default: 15)'
-    default: 15
     inputBinding:
       position: 101
       prefix: --vk
@@ -203,7 +189,6 @@ inputs:
       - 'null'
       - int
     doc: 'window span (default: 486)'
-    default: 486
     inputBinding:
       position: 101
       prefix: --ws

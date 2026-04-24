@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the level of disk optimization (0 disabled)
-    default: 5
     inputBinding:
       position: 102
       prefix: --disk-optimization-level
@@ -118,7 +117,6 @@ inputs:
       - 'null'
       - string
     doc: Hash type used to identify kmers
-    default: Auto
     inputBinding:
       position: 102
       prefix: --hash-type
@@ -157,7 +155,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: BuildUnitigs
     inputBinding:
       position: 102
       prefix: --last-step
@@ -170,7 +167,6 @@ inputs:
       This usage does not include the needed memory for the processing steps. GGCAT\n\
       \            can allocate extra memory for files if the current memory is not
       enough to complete the current operation"
-    default: 2
     inputBinding:
       position: 102
       prefix: --memory
@@ -179,7 +175,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum multiplicity required to keep a kmer
-    default: 2
     inputBinding:
       position: 102
       prefix: --min-multiplicity
@@ -195,7 +190,6 @@ inputs:
     type:
       - 'null'
       - File
-    default: output.fasta.lz4
     inputBinding:
       position: 102
       prefix: --output-file
@@ -219,7 +213,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: MinimizerBucketing
     inputBinding:
       position: 102
       prefix: --step
@@ -228,7 +221,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for temporary files (default .temp_files)
-    default: .temp_files
     inputBinding:
       position: 102
       prefix: --temp-dir
@@ -236,7 +228,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 16
     inputBinding:
       position: 102
       prefix: --threads-count

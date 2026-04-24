@@ -10,7 +10,6 @@ inputs:
       - File
     doc: "Path to the VCF/BCF file to be filtered. Defaults to\n                 \
       \       '-' for stdin."
-    default: '-'
     inputBinding:
       position: 1
   - id: sample
@@ -31,7 +30,6 @@ inputs:
       \       to 'ANN', but tools might use other field names. For\n             \
       \           example, default VEP annotations can be parsed by\n            \
       \            setting 'CSQ' here."
-    default: ANN
     inputBinding:
       position: 104
       prefix: --annotation-key
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Set the backend library.
-    default: cyvcf2
     inputBinding:
       position: 104
       prefix: --backend
@@ -187,7 +184,6 @@ inputs:
       - string
     doc: "Python expression accessing the the samples allelic\n                  \
       \      read depth.Default is: \"FORMAT['AD'][sample][1]\""
-    default: FORMAT['AD'][sample][1]
     inputBinding:
       position: 104
       prefix: --sample-allelic-read-depth

@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Name for Kraken DB
-    default: none
     inputBinding:
       position: 102
       prefix: --db
@@ -90,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Precision for unique k-mer counting, between 10 and 18
-    default: 12
     inputBinding:
       position: 102
       prefix: --precision
@@ -121,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

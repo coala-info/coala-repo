@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: 'If set to 1, then VirStrain will not generate figures. (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --turn_off_figures
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: 'If the virus has high mutation rate, use this option. (default: Not use)'
-    default: Not use
     inputBinding:
       position: 101
       prefix: --high_mutation_virus
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Output dir (default: current dir/VirStrain_Out)'
-    default: current dir/VirStrain_Out
     inputBinding:
       position: 101
       prefix: --output_dir
@@ -58,7 +55,6 @@ inputs:
       - int
     doc: 'If set to 1, then VirStrain will sort the most possible strain by matches
       to the sites. (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --rank_by_sites
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - float
     doc: 'The cutoff of filtering one site (default: 0.05)'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --site_filter_cutoff

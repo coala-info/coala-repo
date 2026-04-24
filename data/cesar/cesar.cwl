@@ -84,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Verbosity level (0 to 2)
-    default: 0
     inputBinding:
       position: 102
       prefix: --verbosity

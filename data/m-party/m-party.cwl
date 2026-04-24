@@ -18,7 +18,6 @@ inputs:
       - File
     doc: user defined config file. Only recommended for advanced users. Defaults
       to 'config.yaml'. If given, overrides config file construction from input
-    default: config.yaml
     inputBinding:
       position: 101
       prefix: --config_file
@@ -69,7 +68,6 @@ inputs:
       - string
     doc: chose output type of hmmsearch run from 'out', 'tsv' or 'pfam' format. 
       Defaults to 'tsv'
-    default: tsv
     inputBinding:
       position: 101
       prefix: --hmms_output_type
@@ -96,7 +94,6 @@ inputs:
       - string
     doc: specifies the nature of the sequences in the input file between 
       'protein', 'nucleic' or 'metagenome'. Defaults to 'protein'
-    default: protein
     inputBinding:
       position: 101
       prefix: --input_type
@@ -114,7 +111,6 @@ inputs:
       - 'null'
       - Directory
     doc: name for the output directory. Defaults to 'PlastEDMA_results'
-    default: PlastEDMA_results
     inputBinding:
       position: 101
       prefix: --output
@@ -124,7 +120,6 @@ inputs:
       - string
     doc: choose report table outpt format from 'tsv', 'csv' or 'excel'. Defaults
       to 'tsv'
-    default: tsv
     inputBinding:
       position: 101
       prefix: --output_type
@@ -152,7 +147,6 @@ inputs:
       - File
     doc: user defined snakemake workflow Snakefile. Defaults to 
       '/workflow/Snakefile
-    default: /workflow/Snakefile
     inputBinding:
       position: 101
       prefix: --snakefile
@@ -161,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads for Snakemake to use. Defaults to 1
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -180,7 +173,6 @@ inputs:
     doc: decides whether to perform models validation and filtration with the 
       'leave-one-out' cross validation methods. Call to set to True. Defaults to
       False
-    default: false
     inputBinding:
       position: 101
       prefix: --validation
@@ -191,7 +183,6 @@ inputs:
     doc: defines the workflow to follow, between "annotation", 
       "database_construction" and "both". Latter keyword makes the database 
       construction first and posterior annotation. Defaults to "annotation"
-    default: annotation
     inputBinding:
       position: 101
       prefix: --workflow

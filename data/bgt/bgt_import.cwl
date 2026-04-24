@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - File
     doc: list of reference names and lengths
-    default: 'null'
     inputBinding:
       position: 103
       prefix: -t

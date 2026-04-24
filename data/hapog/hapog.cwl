@@ -87,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: "Amount of memory to use per samtools thread (Default: '5G')"
-    default: 5G
     inputBinding:
       position: 101
       prefix: --samtools-mem

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - float
     doc: 'gap-occ (default: 0.3)'
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --gap-occ
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: 'min-occ (default: 0.3)'
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --min-occ
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: 'min reads to correct/output consensus for a cluster (default: 5)'
-    default: 5
     inputBinding:
       position: 101
       prefix: --min-reads
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'output folder (default: .)'
-    default: .
     inputBinding:
       position: 101
       prefix: --output
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: 'split clusters into sub-clusters of size s for msa (default: 200)'
-    default: 200
     inputBinding:
       position: 101
       prefix: --split
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of threads to use (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: Sequencing data type (e.g. short vs long reads).
-    default: short
     inputBinding:
       position: 101
       prefix: --read_type
@@ -62,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use (default = 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

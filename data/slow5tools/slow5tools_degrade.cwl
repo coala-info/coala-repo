@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: number of records loaded to the memory at once
-    default: 4096
     inputBinding:
       position: 102
       prefix: --batchsize
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: specify input file format [auto]
-    default: auto
     inputBinding:
       position: 102
       prefix: --from
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: record compression method [zlib] (only for blow5 format)
-    default: zlib
     inputBinding:
       position: 102
       prefix: --compress
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: signal compression method [ex-zd] (only for blow5 format)
-    default: ex-zd
     inputBinding:
       position: 102
       prefix: --sig-compress
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 8
     inputBinding:
       position: 102
       prefix: --threads

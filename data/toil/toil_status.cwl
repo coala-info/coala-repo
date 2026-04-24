@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print children of each job.
-    default: false
     inputBinding:
       position: 102
       prefix: --children
@@ -27,7 +26,6 @@ inputs:
       - boolean
     doc: Print dot formatted description of the graph. If using --jobs will 
       restrict to subgraph including only those jobs.
-    default: false
     inputBinding:
       position: 102
       prefix: --dot
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Return exit value of 1 if toil jobs not all completed.
-    default: false
     inputBinding:
       position: 102
       prefix: --failIfNotComplete
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: List jobs which seem to have failed to run
-    default: false
     inputBinding:
       position: 102
       prefix: --failed
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable or disable colored logging.
-    default: true
     inputBinding:
       position: 102
       prefix: --logColors
@@ -105,7 +100,6 @@ inputs:
       - 'null'
       - string
     doc: Set the log level.
-    default: INFO
     inputBinding:
       position: 102
       prefix: --logLevel
@@ -130,7 +124,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print the log files of jobs (if they exist).
-    default: false
     inputBinding:
       position: 102
       prefix: --logs
@@ -139,7 +132,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not print overall, aggregate status of workflow.
-    default: true
     inputBinding:
       position: 102
       prefix: --noAggStats
@@ -148,7 +140,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print info about each job.
-    default: false
     inputBinding:
       position: 102
       prefix: --perJob
@@ -158,7 +149,6 @@ inputs:
       - boolean
     doc: Turn on rotating logging, which prevents log files from getting too 
       big.
-    default: false
     inputBinding:
       position: 102
       prefix: --rotatingLogging
@@ -168,7 +158,6 @@ inputs:
       - boolean
     doc: Determine which jobs are currently running and the associated batch 
       system ID
-    default: false
     inputBinding:
       position: 102
       prefix: --status
@@ -178,7 +167,6 @@ inputs:
       - Directory
     doc: Path to where temporary directory containing all temp files are 
       created.
-    default: /tmp
     inputBinding:
       position: 102
       prefix: --tempDirRoot

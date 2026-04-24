@@ -12,14 +12,12 @@ inputs:
       type: array
       items: string
     doc: names to store distances associated with the corresponding masks
-    default: None
     inputBinding:
       position: 101
       prefix: --attribute-names
   - id: branch_lengths
     type: File
     doc: JSON with branch lengths and internal node dates estimated by TreeTime
-    default: None
     inputBinding:
       position: 101
       prefix: --branch-lengths
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: disable normalization of LBI by the maximum value
-    default: false
     inputBinding:
       position: 101
       prefix: --no-normalization
@@ -37,14 +34,12 @@ inputs:
       type: array
       items: float
     doc: tau value(s) defining the neighborhood of each clade
-    default: None
     inputBinding:
       position: 101
       prefix: --tau
   - id: tree
     type: File
     doc: Newick tree
-    default: None
     inputBinding:
       position: 101
       prefix: --tree
@@ -53,7 +48,6 @@ inputs:
       type: array
       items: float
     doc: time window(s) to calculate LBI across
-    default: None
     inputBinding:
       position: 101
       prefix: --window

@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: FDR to control for.
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --fdr

@@ -13,7 +13,6 @@ inputs:
     doc: Boolean indicates whether to add "chr" in the input allc file to match 
       chromosome names in genome sequence file. This option overrides 
       --remove-chr-prefix.
-    default: false
     inputBinding:
       position: 101
       prefix: --add-chr-prefix
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Genomic bin size for calculating methylation level
-    default: 100
     inputBinding:
       position: 101
       prefix: --bin-size
@@ -48,7 +46,6 @@ inputs:
     doc: List of space separated mc nucleotide contexts for which you want to 
       look for DMRs. These classifications may use the wildcards H (indicating 
       anything but a G) and N (indicating any nucleotide).
-    default:
       - CGN
     inputBinding:
       position: 101
@@ -59,7 +56,6 @@ inputs:
       - int
     doc: Minimum total coverage of all sites in a bin for methylation level to 
       be calculated.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-bin-cov
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sites in a bin for it to be included.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-bin-sites
@@ -77,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum total coverage of a site for it to be included.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-site-cov
@@ -110,7 +104,6 @@ inputs:
       - boolean
     doc: Boolean indicates whether to remove "chr" in the chromosome names in 
       genome sequence file to match chromosome names in input allc file.
-    default: true
     inputBinding:
       position: 101
       prefix: --remove-chr-prefix

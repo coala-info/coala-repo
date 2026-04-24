@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: min GC fraction (or AT fraction for -w)
-    default: 0.6
     inputBinding:
       position: 102
       prefix: -f
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: min region length to output
-    default: 20
     inputBinding:
       position: 102
       prefix: -l
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: X-dropoff
-    default: 10.0
     inputBinding:
       position: 102
       prefix: -x

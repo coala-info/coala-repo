@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use this flag to collapse duplicate records
-    default: false
     inputBinding:
       position: 102
       prefix: --collapse
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - string
     doc: FORMAT subfields to be retained (e.g. 'GT:AD:DP')
-    default: GT
     inputBinding:
       position: 102
       prefix: --format
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: Type of merge as defined in pandas.DataFrame.merge
-    default: inner
     inputBinding:
       position: 102
       prefix: --how
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use this flag to turn off sorting of records
-    default: true
     inputBinding:
       position: 102
       prefix: --sort

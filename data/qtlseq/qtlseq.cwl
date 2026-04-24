@@ -19,7 +19,6 @@ inputs:
       - int
     doc: "Adjust the mapping quality for mpileup. The default\n                  \
       \   setting is optimized for BWA."
-    default: 50
     inputBinding:
       position: 101
       prefix: --adjust-MQ
@@ -49,7 +48,6 @@ inputs:
       - string
     doc: "Colors for dots in plots. Specify a\n                     comma-separated
       list in the order of bulk1,\n                     bulk2, and delta."
-    default: '"#74D3AE,#FFBE0B,#B3B8DD"'
     inputBinding:
       position: 101
       prefix: --dot-colors
@@ -59,7 +57,6 @@ inputs:
       - int
     doc: "Filial generation. This parameter must be greater\n                    \
       \ than 1."
-    default: 2
     inputBinding:
       position: 101
       prefix: --filial
@@ -69,7 +66,6 @@ inputs:
       - string
     doc: "Colors for threshold lines in plots. Specify a\n                     comma-separated
       list in the order of SNP-index,\n                     p95, and p99."
-    default: '"#C3310F,#009E72,#FDB003"'
     inputBinding:
       position: 101
       prefix: --line-colors
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum depth of variants to be used.
-    default: 250
     inputBinding:
       position: 101
       prefix: --max-depth
@@ -88,7 +83,6 @@ inputs:
       - string
     doc: "Maximum memory per thread when sorting BAM files;\n                    \
       \ suffixes K/M/G are recognized."
-    default: 1G
     inputBinding:
       position: 101
       prefix: --mem
@@ -97,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality for mpileup.
-    default: 18
     inputBinding:
       position: 101
       prefix: --min-BQ
@@ -106,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth of variants to be used.
-    default: 8
     inputBinding:
       position: 101
       prefix: --min-depth
@@ -115,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality for mpileup.
-    default: 40
     inputBinding:
       position: 101
       prefix: --min-MQ
@@ -137,7 +128,6 @@ inputs:
       - int
     doc: "Number of replicates for simulations to generate\n                     null
       distribution."
-    default: 5000
     inputBinding:
       position: 101
       prefix: --N-rep
@@ -171,7 +161,6 @@ inputs:
       - 'null'
       - int
     doc: Step size in kilobases (kb).
-    default: 100
     inputBinding:
       position: 101
       prefix: --step
@@ -181,7 +170,6 @@ inputs:
       - int
     doc: "Number of threads. If a value less than 1 is specified,\n              \
       \       QTL-seq will use the maximum available threads."
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads
@@ -203,7 +191,6 @@ inputs:
       To remove Illumina adapters,\n                     specify the adapter FASTA
       file with \"--adapter\".\n                     If not specified, adapter trimming
       will be skipped."
-    default: 33,<ADAPTER_FASTA>:2:30:10,20,20,4:15,75
     inputBinding:
       position: 101
       prefix: --trim-params
@@ -212,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: Window size in kilobases (kb).
-    default: 2000
     inputBinding:
       position: 101
       prefix: --window

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Optional - number of threads to be used in each step
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpu
@@ -21,7 +20,6 @@ inputs:
       \         of the final mitochondiral genome (in bp; e.g., use\n            \
       \            17000 for 17Kb). If not set, the estimated size will\n        \
       \                be considered similar to the reference being used."
-    default: length(reference)
     inputBinding:
       position: 101
       prefix: --length
@@ -33,7 +31,6 @@ inputs:
       \        read data being used (e.g., \"pacbio_hifi\",\n                    \
       \    \"pacbio_clr\", or \"nanopore\"). If not set, the\n                   \
       \     \"pacbio_hifi\" will be considered."
-    default: pacbio_hifi
     inputBinding:
       position: 101
       prefix: --method

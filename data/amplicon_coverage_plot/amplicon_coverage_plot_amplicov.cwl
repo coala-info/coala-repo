@@ -52,7 +52,6 @@ inputs:
         items: int
     doc: Add option to display lines at these depths (provide depths as a list of
       integers)
-    default:
       - 5
       - 10
       - 20
@@ -73,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: minimum coverage to count as ambiguous N site
-    default: 10
     inputBinding:
       position: 101
       prefix: --mincov

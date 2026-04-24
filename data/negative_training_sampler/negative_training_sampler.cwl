@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: number of used cores
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -57,7 +56,6 @@ inputs:
       - string
     doc: "amount of memory per core (e.g. 2 cores * 2GB =\n                      \
       \       4GB)"
-    default: 2GB
     inputBinding:
       position: 101
       prefix: --memory

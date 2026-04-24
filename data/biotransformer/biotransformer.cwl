@@ -41,7 +41,6 @@ inputs:
       - int
     doc: 'Specify the CYP450 prediction Mode: 1) CypReact + BioTransformer rules;
       2) CyProduct only; 3) Combined.'
-    default: 1
     inputBinding:
       position: 101
       prefix: --cyp450mode
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the mass threshold used to validate input substrates (in Da).
-    default: 1500
     inputBinding:
       position: 101
       prefix: --massThreshold
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: Mass tolerance for metabolite identification.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --mTolerance
@@ -100,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: The number of steps for the prediction.
-    default: 1
     inputBinding:
       position: 101
       prefix: --nsteps
@@ -110,7 +106,6 @@ inputs:
       - int
     doc: 'Specify the PhaseII prediction Mode: 1) BioTransformer rules; 2) PhaseII
       predictor only; 3) Combined.'
-    default: 1
     inputBinding:
       position: 101
       prefix: --phaseIImode

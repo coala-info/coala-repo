@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - File
     doc: BowTie2 BAM file containing the alignments
-    default: None
     inputBinding:
       position: 1
   - id: db_path
@@ -19,7 +18,6 @@ inputs:
       - Directory
     doc: Specify a different MetaMLST-Database. If unset, use the default 
       Database. You can create a custom DB with metaMLST-index.py)
-    default: None
     inputBinding:
       position: 102
       prefix: --database
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: Debug Mode
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -38,7 +35,6 @@ inputs:
       - string
     doc: Filter for specific set of organisms only (METAMLST-KEYs, comma 
       separated. Use metaMLST-index.py --listspecies to get MLST keys)
-    default: None
     inputBinding:
       position: 102
       prefix: --filter
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: generate logfiles
-    default: false
     inputBinding:
       position: 102
       prefix: --log
@@ -57,7 +52,6 @@ inputs:
       - int
     doc: Maximum SNPs rate for each alignment to be considered valid (BowTie2s 
       XM value)
-    default: 5
     inputBinding:
       position: 102
       prefix: --max_xM
@@ -67,7 +61,6 @@ inputs:
       - float
     doc: Minimum threshold on Confidence score (percentage) to pass the 
       reconstruction step
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --min_accuracy
@@ -76,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum BowTie2 alignment length
-    default: 50
     inputBinding:
       position: 102
       prefix: --min_read_len
@@ -85,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment score for each alignment to be considered valid
-    default: 80
     inputBinding:
       position: 102
       prefix: --minscore
@@ -95,7 +86,6 @@ inputs:
       - int
     doc: Do not discard samples where at least NLOCI (percent) are detected. 
       This can lead to imperfect MLST typing
-    default: 100
     inputBinding:
       position: 102
       prefix: --nloci
@@ -104,7 +94,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output Folder
-    default: ./out
     inputBinding:
       position: 102
       prefix: -o
@@ -113,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: MetaMLST penaty for under-represented alleles
-    default: 100
     inputBinding:
       position: 102
       prefix: --penalty
@@ -123,7 +111,6 @@ inputs:
       - boolean
     doc: The input BAM file is sorted and indexed with samtools. If set, 
       MetaMLST skips this step
-    default: false
     inputBinding:
       position: 102
       prefix: --presorted
@@ -132,7 +119,6 @@ inputs:
       - 'null'
       - boolean
     doc: Suppress text output
-    default: false
     inputBinding:
       position: 102
       prefix: --quiet
@@ -141,7 +127,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write known sequences
-    default: false
     inputBinding:
       position: 102
       prefix: -a

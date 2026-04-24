@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: when set uses local as the base other remote will be used as the base
-    default: true
     inputBinding:
       position: 101
       prefix: -base-local
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: max traversal depth
-    default: -1
     inputBinding:
       position: 101
       prefix: -depth
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: recursively diff
-    default: true
     inputBinding:
       position: 101
       prefix: -recursive
@@ -84,7 +81,6 @@ inputs:
       - 'null'
       - boolean
     doc: unified diff
-    default: true
     inputBinding:
       position: 101
       prefix: -u

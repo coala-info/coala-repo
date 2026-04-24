@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Assembly name.
-    default: unknown
     inputBinding:
       position: 102
       prefix: --assembly
@@ -67,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Number of pixels to buffer in memory.
-    default: 10000000
     inputBinding:
       position: 102
       prefix: --chunk-size
@@ -156,7 +154,6 @@ inputs:
       - string
     doc: 'Output format (by default this is inferred from the output file extension).
       Should be one of: - auto - cool - hic'
-    default: auto
     inputBinding:
       position: 102
       prefix: --output-fmt
@@ -175,7 +172,6 @@ inputs:
       - int
     doc: Maximum number of parallel threads to spawn. When loading interactions 
       in a .cool file, only up to two threads will be used.
-    default: 2
     inputBinding:
       position: 102
       prefix: --threads
@@ -213,7 +209,6 @@ inputs:
       - 'null'
       - int
     doc: Set verbosity of output to the console.
-    default: 3
     inputBinding:
       position: 102
       prefix: --verbosity

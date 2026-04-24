@@ -36,7 +36,6 @@ inputs:
       - Directory
     doc: Directory name for resulting bigWig files. This directory is created as
       subdirectory of the output directory.
-    default: vis
     inputBinding:
       position: 101
       prefix: --bwdir
@@ -54,7 +53,6 @@ inputs:
       - string
     doc: Log file extension. The log file is created in the directory given via 
       -o.
-    default: .bam_split.log
     inputBinding:
       position: 101
       prefix: --log
@@ -88,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: If --bw is given, scale bigWig files to this number.
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --scale

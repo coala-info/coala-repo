@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Compare records according to comparison function CMP
-    default: location
     inputBinding:
       position: 102
       prefix: -f
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Compress output at level NUMBER
-    default: 'SAM: no compression; BAM: 6'
     inputBinding:
       position: 102
       prefix: -z
@@ -67,7 +65,6 @@ inputs:
       - 'null'
       - Directory
     doc: Write temporary files to DIR
-    default: $TMPDIR or /tmp
     inputBinding:
       position: 102
       prefix: -T

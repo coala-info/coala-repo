@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Discard biexonic transcripts having one exon size lower to this value
-    default: 25
     inputBinding:
       position: 101
       prefix: --biex
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep only long intergenic/interveaning ncRNAs
-    default: false
     inputBinding:
       position: 101
       prefix: --linconly
@@ -45,7 +43,6 @@ inputs:
       - float
     doc: Minimal fraction out of the candidate lncRNA size to be considered for 
       overlap
-    default: 0
     inputBinding:
       position: 101
       prefix: --minfrac_over
@@ -56,7 +53,6 @@ inputs:
     doc: 'Keep monoexonic transcript(s): mode to be selected from : -1 keep monoexonic
       antisense (for RNASeq stranded protocol), 1 keep all monoexonic, 0 remove all
       monoexonic'
-    default: 0
     inputBinding:
       position: 101
       prefix: --monoex
@@ -80,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Number of thread for computing overlap
-    default: 4
     inputBinding:
       position: 101
       prefix: --proc
@@ -89,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Keep transcript with a minimal size
-    default: 200
     inputBinding:
       position: 101
       prefix: --size
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Level of verbosity 0, 1 and 2
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbosity

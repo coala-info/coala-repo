@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: Predict flanking peaks for b- and y ions.
-    default: false
     inputBinding:
       position: 103
       prefix: --flanking
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Specify which isotopes to use in calculating fragment ion mass.
-    default: mono
     inputBinding:
       position: 103
       prefix: --fragment-mass
@@ -38,7 +36,6 @@ inputs:
       - int
     doc: Include in the predicted peaks, b/y ions with the loss of 1 to n water 
       molecules. See --nh3 for an example.
-    default: 0
     inputBinding:
       position: 103
       prefix: --h2o
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Predict the given number of isotope peaks (0|1|2).
-    default: 0
     inputBinding:
       position: 103
       prefix: --isotope
@@ -59,7 +55,6 @@ inputs:
       the charge state of the peptide ("peptide"). If the max-ion-charge is 
       greater than the charge state of the peptide, then the maximum is the 
       peptide charge.
-    default: peptide
     inputBinding:
       position: 103
       prefix: --max-ion-charge
@@ -72,7 +67,6 @@ inputs:
       loss of one nh3 group and predict a second peak for each b- and y-ion with
       the loss of two nh3 groups. These peaks will have 1 and 2, respectively, 
       in the NH3 column of the output.
-    default: 0
     inputBinding:
       position: 103
       prefix: --nh3
@@ -82,7 +76,6 @@ inputs:
       - boolean
     doc: Predict the precursor ions, and all associated ions (neutral losses, 
       multiple charge states) consistent with the other specified options.
-    default: false
     inputBinding:
       position: 103
       prefix: --precursor-ions
@@ -93,7 +86,6 @@ inputs:
     doc: Predict the specified primary ion series. 'a' indicates a-ions only, 
       'b' indicates b-ions only, 'y' indicates y-ions only, 'by' indicates both 
       b and y, 'bya' indicates b, y, and a.
-    default: by
     inputBinding:
       position: 103
       prefix: --primary-ions

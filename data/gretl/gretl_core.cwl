@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Separate by first entry in Pan-SN spec
-    default: \n
     inputBinding:
       position: 101
       prefix: --pansn
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: similarity, depth, node degree
-    default: similarity
     inputBinding:
       position: 101
       prefix: --stats
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Column name that contains the lineages
-    default: classification
     inputBinding:
       position: 104
       prefix: --lineage-column
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Name of taxid column that will be appended to the input table
-    default: taxid
     inputBinding:
       position: 104
       prefix: --taxid-column
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: Name of taxid-rank column that will be appended to the input table
-    default: taxid_rank
     inputBinding:
       position: 104
       prefix: --taxid-rank-column

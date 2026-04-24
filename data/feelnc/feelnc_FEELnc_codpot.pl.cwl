@@ -29,7 +29,6 @@ inputs:
     doc: To keep the temporary files in a 'tmp' directory the outdir, by default
       don't keep it (0 value). Any other value than 0 will keep the temporary 
       files
-    default: 0
     inputBinding:
       position: 101
       prefix: --keeptmp
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Kmer size list with size separate by ',' as string
-    default: 1,2,3,6,9,12
     inputBinding:
       position: 101
       prefix: -k
@@ -68,7 +66,6 @@ inputs:
       same as '1' but with a stop codon; '3': same as '0' and ORF with a start or
       a stop, take the longest (see '1' and '2'); '4': same as '3' but if no ORF is
       found, take the input sequence as ORF."
-    default: 3
     inputBinding:
       position: 101
       prefix: --learnorftype
@@ -89,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Number of trees used in random forest
-    default: 500
     inputBinding:
       position: 101
       prefix: --ntree
@@ -108,7 +104,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: ./feelnc_codpot_out/
     inputBinding:
       position: 101
       prefix: --outdir
@@ -126,7 +121,6 @@ inputs:
       - float
     doc: Percentage of the training file use for the training of the kmer model.
       What remains will be used to train the random forest
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --percentage
@@ -144,7 +138,6 @@ inputs:
       - int
     doc: Use to fixe the seed value for the extraction of intergenic DNA region 
       to get lncRNA like sequences and for the random forest
-    default: 1234
     inputBinding:
       position: 101
       prefix: --seed
@@ -154,7 +147,6 @@ inputs:
       - float
     doc: Ratio between mRNA sequence lengths and non coding intergenic region 
       sequence lengths as, by default, ncInter = mRNA * 0.75
-    default: 0.75
     inputBinding:
       position: 101
       prefix: -s
@@ -173,7 +165,6 @@ inputs:
       - int
     doc: Integer [0,1,2,3,4] to specify the type of longest ORF calculate for 
       test data set. See --learnortype description for more informations.
-    default: 3
     inputBinding:
       position: 101
       prefix: --testorftype
@@ -190,7 +181,6 @@ inputs:
       - int
     doc: 'Integer [0,1,2]: which level of information that need to be print. Note
       that that printing is made on STDERR'
-    default: 1
     inputBinding:
       position: 101
       prefix: --verbosity

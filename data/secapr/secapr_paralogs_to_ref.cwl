@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Set the gap extention penalty for the alignment
-    default: 1
     inputBinding:
       position: 101
       prefix: --gap_extent_penalty
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Set the gap opening penalty for the alignments
-    default: 3
     inputBinding:
       position: 101
       prefix: --gap_open_penalty

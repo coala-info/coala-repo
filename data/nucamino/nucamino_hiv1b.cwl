@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - float
     doc: penalty score when a gap was extended
-    default: 2
     inputBinding:
       position: 101
       prefix: --gap-extension-penalty
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: penalty score when a gap was opened
-    default: 10
     inputBinding:
       position: 101
       prefix: --gap-opening-penalty
@@ -39,7 +37,6 @@ inputs:
       - int
     doc: number of goroutines the alignment will use. Use the core number when 
       equals to 0
-    default: 0
     inputBinding:
       position: 101
       prefix: --goroutines
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: bonus score when a indel codon was extended
-    default: 2
     inputBinding:
       position: 101
       prefix: --indel-codon-extension-bonus
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: bonus score when a indel codon was opened
-    default: 0
     inputBinding:
       position: 101
       prefix: --indel-codon-opening-bonus
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - File
     doc: FASTA file contains one or more DNA sequences
-    default: '-'
     inputBinding:
       position: 101
       prefix: --input
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: output format of the alignment result
-    default: tsv
     inputBinding:
       position: 101
       prefix: --output-format
@@ -100,7 +93,6 @@ inputs:
       - 'null'
       - float
     doc: penalty score when a stop codon was met
-    default: 4
     inputBinding:
       position: 101
       prefix: --stop-codon-penalty

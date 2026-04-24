@@ -21,7 +21,6 @@ inputs:
       - boolean
     doc: If set, Rebaler will polish the given genome without first producing an
       unpolished version
-    default: false
     inputBinding:
       position: 103
       prefix: --direct
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - boolean
     doc: If a part of the reference is missing, replace it with random sequence
-    default: false
     inputBinding:
       position: 103
       prefix: --random
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for alignment and polishing
-    default: 16
     inputBinding:
       position: 103
       prefix: --threads

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Genome chunk size used for parallelizaton, 5000 by default
-    default: 5000
     inputBinding:
       position: 101
       prefix: --chunksize
@@ -44,7 +43,6 @@ inputs:
       - float
     doc: Minimum variant frequency to call heterogeneous SNPs and multi-base indels
       (default 0.1)
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min-vf
@@ -54,7 +52,6 @@ inputs:
       - float
     doc: Minimum variant frequency to call heterogeneous single-base indels (default
       0.2)
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --min-vf-si

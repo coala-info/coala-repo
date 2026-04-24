@@ -65,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer length
-    default: 24
     inputBinding:
       position: 102
       prefix: --kmer-len
@@ -74,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: Mer database size
-    default: 200M
     inputBinding:
       position: 102
       prefix: --size
@@ -98,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum above -q for high quality base
-    default: 5
     inputBinding:
       position: 102
       prefix: --min-quality
@@ -107,7 +104,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not discard reads, output a single N
-    default: false
     inputBinding:
       position: 102
       prefix: --no-discard
@@ -116,7 +112,6 @@ inputs:
       - 'null'
       - string
     doc: Output prefix
-    default: quorum_corrected
     inputBinding:
       position: 102
       prefix: --prefix

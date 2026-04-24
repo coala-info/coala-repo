@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - float
     doc: Edit cost beyond read boundaries
-    default: 0.4
     inputBinding:
       position: 101
       prefix: --alpha
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: Fraction compared to 'perfect' match score for top candidate
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --min-score
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: Fraction difference between top 2 candidates
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min-score-diff
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 10
     inputBinding:
       position: 101
       prefix: --threads

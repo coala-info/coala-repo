@@ -29,7 +29,6 @@ inputs:
       - int
     doc: Density threshold before marking contig as repetitive (CLUSTER_MAX_LINK_DENSITY
       in LACHESIS)
-    default: 2
     inputBinding:
       position: 104
       prefix: --maxLinkDensity
@@ -39,7 +38,6 @@ inputs:
       - int
     doc: Minimum number of RE sites in a contig to be clustered (CLUSTER_MIN_RE_SITES
       in LACHESIS)
-    default: 10
     inputBinding:
       position: 104
       prefix: --minREs
@@ -49,7 +47,6 @@ inputs:
       - int
     doc: cutoff for recovering skipped contigs back into the clusters (CLUSTER_NON-INFORMATIVE_RATIO
       in LACHESIS)
-    default: 3
     inputBinding:
       position: 104
       prefix: --nonInformativeRatio

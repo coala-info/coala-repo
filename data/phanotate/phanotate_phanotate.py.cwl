@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Output format (fasta, gbk, tabular, or dnaplustxt)
-    default: fasta
     inputBinding:
       position: 102
       prefix: --format

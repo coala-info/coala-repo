@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: The name/path of the log file.
-    default: log.log
     inputBinding:
       position: 101
       prefix: --log_file

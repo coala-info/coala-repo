@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: maximum read length (<=155)
-    default: 100
     inputBinding:
       position: 101
       prefix: -l
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: overlap param(<=31)
-    default: 25
     inputBinding:
       position: 101
       prefix: -p
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: thread number
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

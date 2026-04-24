@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads for cluster
-    default: 1
     inputBinding:
       position: 101
       prefix: --n
@@ -103,7 +102,6 @@ inputs:
       - 'null'
       - float
     doc: 'quality threshold used for the data (standard: 0.9)'
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --quality-threshold

@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Number of mismatches allowed
-    default: 2
     inputBinding:
       position: 101
       prefix: --mismatches
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --processor

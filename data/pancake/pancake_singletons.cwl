@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of regions to identify as a singleton region
-    default: 25
     inputBinding:
       position: 101
       prefix: --min_len

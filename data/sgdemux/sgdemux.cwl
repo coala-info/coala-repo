@@ -11,7 +11,6 @@ inputs:
       - int
     doc: Number of allowed mismatches between the observed barcode and the 
       expected barcode
-    default: 1
     inputBinding:
       position: 101
       prefix: --allowed-mismatches
@@ -21,7 +20,6 @@ inputs:
       - int
     doc: "Number of threads for compression the output reads.\n\n            The number
       of threads to use for compressing reads that are queued for writing."
-    default: 12
     inputBinding:
       position: 101
       prefix: --compressor-threads
@@ -32,7 +30,6 @@ inputs:
     doc: "Number of threads for demultiplexing.\n\n            The number of threads
       to use for the process of determining which input reads should be assigned to
       which sample."
-    default: 4
     inputBinding:
       position: 101
       prefix: --demux-threads
@@ -67,7 +64,6 @@ inputs:
       - int
     doc: Number of N's to allow in a barcode without counting against the 
       allowed_mismatches
-    default: 1
     inputBinding:
       position: 101
       prefix: --free-ns
@@ -90,7 +86,6 @@ inputs:
     doc: "Max no-calls (N's) in a barcode before it is considered unmatchable.\n\n\
       \            A barcode with total N's greater than `max_no_call` will be considered
       unmatchable."
-    default: None
     inputBinding:
       position: 101
       prefix: --max-no-calls
@@ -108,7 +103,6 @@ inputs:
       - int
     doc: The minimum allowed difference between an observed barcode and the 
       second closest expected barcode
-    default: 2
     inputBinding:
       position: 101
       prefix: --min-delta
@@ -119,7 +113,6 @@ inputs:
     doc: "Output the most frequent \"unmatched\" barcodes up to this number.\n\n \
       \           If set to 0 unmatched barcodes will not be collected, improving
       overall performance."
-    default: 1000
     inputBinding:
       position: 101
       prefix: --most-unmatched-to-output
@@ -132,7 +125,6 @@ inputs:
       barcode bases\n            - `M` - Molecular barcode bases\n            - `S`
       - Skip bases\n            \n            For each read structure, all segment
       types listed by `--output-types` will be output to a\n            FASTQ file."
-    default: T
     inputBinding:
       position: 101
       prefix: --output-types
@@ -144,7 +136,6 @@ inputs:
       > 12 bp long, a cached hamming distance matcher is used. If the barcodes are
       less than or equal to 12 bp long, all possible matches are precomputed.\n  \
       \          \n            This option allows for overriding that heuristic."
-    default: None
     inputBinding:
       position: 101
       prefix: --override-matcher
@@ -203,7 +194,6 @@ inputs:
       - string
     doc: The sample name for undetermined reads (reads that do not match an 
       expected barcode)
-    default: Undetermined
     inputBinding:
       position: 101
       prefix: --undetermined-sample-name
@@ -213,7 +203,6 @@ inputs:
       - int
     doc: "Number of threads for writing compressed reads to output.\n\n          \
       \  The number of threads to have writing reads to their individual output files."
-    default: 5
     inputBinding:
       position: 101
       prefix: --writer-threads

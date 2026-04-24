@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: The extension used for assemblies.
-    default: consensus.fa
     inputBinding:
       position: 101
       prefix: --extension
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum percent identity to count a hit
-    default: 7500
     inputBinding:
       position: 101
       prefix: --max-ns
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percent coverage to count a hit
-    default: 70.0
     inputBinding:
       position: 101
       prefix: --min-coverage
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to write output
-    default: ./
     inputBinding:
       position: 101
       prefix: --outdir
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: Pipeline used for analysis.
-    default: cecret
     inputBinding:
       position: 101
       prefix: --pipeline
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix to use for output files
-    default: gisaid-batch
     inputBinding:
       position: 101
       prefix: --prefix

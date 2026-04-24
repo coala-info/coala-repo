@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Set compression block size to mmmK
-    default: 128K
     inputBinding:
       position: 102
       prefix: --blocksize
@@ -220,7 +219,6 @@ inputs:
       - 'null'
       - string
     doc: Use suffix .sss instead of .gz (for compression)
-    default: .gz
     inputBinding:
       position: 102
       prefix: --suffix

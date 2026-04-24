@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: 'max bucket sz as divisor of ref len (default: 4)'
-    default: 4
     inputBinding:
       position: 103
       prefix: --bmaxdivn
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: 'diff-cover period for blockwise (default: 1024)'
-    default: 1024
     inputBinding:
       position: 103
       prefix: --dcv
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - boolean
     doc: reference files are Fasta (default)
-    default: true
     inputBinding:
       position: 103
       prefix: -f
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: '# of chars consumed in initial lookup (default: 10)'
-    default: 10
     inputBinding:
       position: 103
       prefix: --ftabchars
@@ -114,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: 'SA is sampled every 2^offRate BWT chars (default: 5)'
-    default: 5
     inputBinding:
       position: 103
       prefix: --offrate

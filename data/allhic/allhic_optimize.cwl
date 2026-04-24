@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Mutation prob in GA
-    default: 0.2
     inputBinding:
       position: 103
       prefix: --mutapb
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Number of generations for convergence
-    default: 5000
     inputBinding:
       position: 103
       prefix: --ngen
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Population size
-    default: 100
     inputBinding:
       position: 103
       prefix: --npop
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Random seed
-    default: 42
     inputBinding:
       position: 103
       prefix: --seed

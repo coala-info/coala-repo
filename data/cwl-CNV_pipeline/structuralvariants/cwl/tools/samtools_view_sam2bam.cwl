@@ -31,7 +31,6 @@ inputs:
       prefix: '-bS'
   threads:
     type: int?
-    default: 1
     inputBinding:
       position: 1
       prefix: '--threads'

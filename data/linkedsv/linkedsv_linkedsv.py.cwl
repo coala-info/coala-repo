@@ -74,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: minimal number of shared barcodes between two SV breakpoints
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_supp_barcodes
@@ -83,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --n_thread
@@ -122,7 +120,6 @@ inputs:
       - boolean
     doc: 'Do not remove intermediate files after the run. Use in debug mode. Default:
       False'
-    default: false
     inputBinding:
       position: 101
       prefix: --save_temp_files

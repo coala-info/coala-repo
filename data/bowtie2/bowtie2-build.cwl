@@ -13,7 +13,6 @@ inputs:
     position: 1
 - id: bt2_index_base_name
   type: string
-  default: "index"
   doc: basename of the index files to write
   inputBinding:
     position: 2
@@ -25,13 +24,11 @@ inputs:
     prefix: --bmax
 - id: bmaxdivn
   type: int?
-  default: 4
   inputBinding:
     position: 102
     prefix: --bmaxdivn
 - id: dcv
   type: int?
-  default: 1024
   inputBinding:
     position: 102
     prefix: --dcv
@@ -49,7 +46,6 @@ inputs:
     prefix: -f
 - id: ftabchars
   type: int?
-  default: 10
   inputBinding:
     position: 102
     prefix: --ftabchars
@@ -86,7 +82,6 @@ inputs:
     prefix: --noref
 - id: offrate
   type: int?
-  default: 5
   inputBinding:
     position: 102
     prefix: --offrate

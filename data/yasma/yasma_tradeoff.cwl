@@ -52,7 +52,6 @@ inputs:
       which is used instead of the normal read length. By default, this is very 
       large (250 nt), basically meaning that depth summed across 250 nt windows 
       are used for region annotation.
-    default: 250
     inputBinding:
       position: 101
       prefix: --coverage_window
@@ -86,7 +85,6 @@ inputs:
       - boolean
     doc: filter low abundance loci. This is meant to remove loci which have not 
       reached an absolute level of abundance.
-    default: true
     inputBinding:
       position: 101
       prefix: --filter_abundance
@@ -96,7 +94,6 @@ inputs:
       - boolean
     doc: filter low abundance loci. This is meant to remove loci which have not 
       reached an absolute level of abundance.
-    default: true
     inputBinding:
       position: 101
       prefix: --filter_abundance_density
@@ -105,7 +102,6 @@ inputs:
       - 'null'
       - boolean
     doc: filter low complexity loci
-    default: true
     inputBinding:
       position: 101
       prefix: --filter_complexity
@@ -114,7 +110,6 @@ inputs:
       - 'null'
       - boolean
     doc: filter highly skewed loci
-    default: false
     inputBinding:
       position: 101
       prefix: --filter_skew
@@ -133,7 +128,6 @@ inputs:
     doc: This is a max filter for the coverage, which extends coverages by a 
       default 250 nt. This is built-in padding for regions, which will then be 
       revised to find boundaries.
-    default: 250
     inputBinding:
       position: 101
       prefix: --kernel_window
@@ -152,7 +146,6 @@ inputs:
     doc: Filter value for loci which are skewed toward only one sequence in 
       abundance. By default (0.95), if more than 1 in 20 reads for a locus are a
       single sequence, they are excluded from the annotation.
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --max_skew
@@ -163,7 +156,6 @@ inputs:
     doc: Distance in nucleotides for which sRNA peaks should be considered for 
       'clumping'. Clumped regions must have sufficient similarity in sRNA-size 
       profile and strand-preference. Default 500 nt.
-    default: 500
     inputBinding:
       position: 101
       prefix: --merge_dist
@@ -173,7 +165,6 @@ inputs:
       - float
     doc: Similarity threshold of strand fraction for clumping two peaks. 
       Difference in fraction must be smaller than threshold. Default 0.5.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --merge_strand_similarity
@@ -182,7 +173,6 @@ inputs:
       - 'null'
       - int
     doc: Min reads in a locus
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_abundance
@@ -191,7 +181,6 @@ inputs:
       - 'null'
       - int
     doc: Min of (default 100) reads per 1000 nucleotides in a locus.
-    default: 100
     inputBinding:
       position: 101
       prefix: --min_abundance_density
@@ -201,7 +190,6 @@ inputs:
       - int
     doc: Filter value for locus complexity. This is defined as the minimum 
       number of unique- reads / 1000 nt
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_complexity
@@ -228,7 +216,6 @@ inputs:
       - boolean
     doc: filter low abundance loci. This is meant to remove loci which have not 
       reached an absolute level of abundance.
-    default: true
     inputBinding:
       position: 101
       prefix: --no_filter_abundance
@@ -238,7 +225,6 @@ inputs:
       - boolean
     doc: filter low abundance loci. This is meant to remove loci which have not 
       reached an absolute level of abundance.
-    default: true
     inputBinding:
       position: 101
       prefix: --no_filter_abundance_density
@@ -247,7 +233,6 @@ inputs:
       - 'null'
       - boolean
     doc: filter low complexity loci
-    default: true
     inputBinding:
       position: 101
       prefix: --no_filter_complexity
@@ -256,7 +241,6 @@ inputs:
       - 'null'
       - boolean
     doc: filter highly skewed loci
-    default: false
     inputBinding:
       position: 101
       prefix: --no_filter_skew

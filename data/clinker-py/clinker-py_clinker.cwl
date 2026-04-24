@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Number of decimal places in output
-    default: 2
     inputBinding:
       position: 102
       prefix: --decimals
@@ -95,7 +94,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum alignment sequence identity
-    default: 0.3
     inputBinding:
       position: 102
       prefix: --identity
@@ -104,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Number of alignments to run in parallel (0 to use the number of CPUs)
-    default: 0
     inputBinding:
       position: 102
       prefix: --jobs

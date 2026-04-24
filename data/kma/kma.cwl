@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: Base ConClave on template mappings
-    default: false
     inputBinding:
       position: 101
       prefix: -mem_mode
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Bootstrap sub-sequence
-    default: false
     inputBinding:
       position: 101
       prefix: -boot
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: Circular alignments
-    default: false
     inputBinding:
       position: 101
       prefix: -ca
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: ConClave version
-    default: 1
     inputBinding:
       position: 101
       prefix: -ConClave
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - boolean
     doc: Count k-mers over pseudo alignment
-    default: false
     inputBinding:
       position: 101
       prefix: -ck
@@ -63,7 +58,6 @@ inputs:
       - 'null'
       - boolean
     doc: Searh kmers exhaustively
-    default: false
     inputBinding:
       position: 101
       prefix: -ex_mode
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: Extra status
-    default: false
     inputBinding:
       position: 101
       prefix: -status
@@ -81,7 +74,6 @@ inputs:
       - 'null'
       - boolean
     doc: Altered indel calling for ONT data
-    default: false
     inputBinding:
       position: 101
       prefix: -bcNano
@@ -107,7 +99,6 @@ inputs:
       - 'null'
       - File
     doc: Single end input(s)
-    default: stdin
     inputBinding:
       position: 101
       prefix: -i
@@ -116,7 +107,6 @@ inputs:
       - 'null'
       - string
     doc: K-mersize
-    default: DB defined
     inputBinding:
       position: 101
       prefix: -k
@@ -125,7 +115,6 @@ inputs:
       - 'null'
       - boolean
     doc: Length corrected template chaining
-    default: false
     inputBinding:
       position: 101
       prefix: -lc
@@ -134,7 +123,6 @@ inputs:
       - 'null'
       - boolean
     doc: Maintain insignificant gaps
-    default: false
     inputBinding:
       position: 101
       prefix: -bcg
@@ -143,7 +131,6 @@ inputs:
       - 'null'
       - string
     doc: Map everything to one template
-    default: False/0
     inputBinding:
       position: 101
       prefix: -Mt1
@@ -152,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of fragments to store in memory
-    default: 1000000
     inputBinding:
       position: 101
       prefix: -mf
@@ -161,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length on se
-    default: 2147483647
     inputBinding:
       position: 101
       prefix: -xl
@@ -170,7 +155,6 @@ inputs:
       - 'null'
       - float
     doc: Max overlap between templates
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -mct
@@ -179,7 +163,6 @@ inputs:
       - 'null'
       - boolean
     doc: Memory map *.comp.b
-    default: false
     inputBinding:
       position: 101
       prefix: -mmap
@@ -188,7 +171,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment length
-    default: 16
     inputBinding:
       position: 101
       prefix: -ml
@@ -197,7 +179,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum avg. quality score
-    default: 0
     inputBinding:
       position: 101
       prefix: -eq
@@ -206,7 +187,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum consensus ID
-    default: 1.0%
     inputBinding:
       position: 101
       prefix: -ID
@@ -215,7 +195,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum depth
-    default: 0.0
     inputBinding:
       position: 101
       prefix: -md
@@ -224,7 +203,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth to cal bases
-    default: 1
     inputBinding:
       position: 101
       prefix: -bcd
@@ -233,7 +211,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum internal phred score
-    default: 0
     inputBinding:
       position: 101
       prefix: -mi
@@ -242,7 +219,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length
-    default: 16
     inputBinding:
       position: 101
       prefix: -ml
@@ -251,7 +227,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality
-    default: 0
     inputBinding:
       position: 101
       prefix: -mq
@@ -260,7 +235,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum phred score
-    default: 20
     inputBinding:
       position: 101
       prefix: -mp
@@ -269,7 +243,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum query coverage
-    default: 0.0
     inputBinding:
       position: 101
       prefix: -mrc
@@ -278,7 +251,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum relative alignment score
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -mrs
@@ -287,7 +259,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum support to call bases
-    default: 0
     inputBinding:
       position: 101
       prefix: -bc
@@ -296,7 +267,6 @@ inputs:
       - 'null'
       - boolean
     doc: No aln file
-    default: false
     inputBinding:
       position: 101
       prefix: -na
@@ -305,7 +275,6 @@ inputs:
       - 'null'
       - boolean
     doc: No consensus file
-    default: false
     inputBinding:
       position: 101
       prefix: -nc
@@ -314,7 +283,6 @@ inputs:
       - 'null'
       - boolean
     doc: No frag file
-    default: false
     inputBinding:
       position: 101
       prefix: -nf
@@ -323,7 +291,6 @@ inputs:
       - 'null'
       - boolean
     doc: One query to one template
-    default: false
     inputBinding:
       position: 101
       prefix: -1t1
@@ -332,7 +299,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only count kmers
-    default: false
     inputBinding:
       position: 101
       prefix: -Sparse
@@ -341,7 +307,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output all template mappings
-    default: false
     inputBinding:
       position: 101
       prefix: -a
@@ -350,7 +315,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output additional features
-    default: false
     inputBinding:
       position: 101
       prefix: -ef
@@ -359,7 +323,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output assembly matrix
-    default: false
     inputBinding:
       position: 101
       prefix: -matrix
@@ -376,7 +339,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output sam, 4/2096 for mapped/aligned
-    default: false
     inputBinding:
       position: 101
       prefix: -sam
@@ -385,7 +347,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output vcf file, 2 to apply FT
-    default: false
     inputBinding:
       position: 101
       prefix: -vcf
@@ -394,7 +355,6 @@ inputs:
       - 'null'
       - float
     doc: P-value
-    default: 0.05
     inputBinding:
       position: 101
       prefix: -p
@@ -403,7 +363,6 @@ inputs:
       - 'null'
       - string
     doc: Pairing method (p,u,f)
-    default: u
     inputBinding:
       position: 101
       prefix: -pm
@@ -412,7 +371,6 @@ inputs:
       - 'null'
       - string
     doc: Pairing method (p,u,f)
-    default: u
     inputBinding:
       position: 101
       prefix: -fpm
@@ -421,7 +379,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for gap extension
-    default: 1
     inputBinding:
       position: 101
       prefix: -gapextend
@@ -430,7 +387,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for gap opening
-    default: 3
     inputBinding:
       position: 101
       prefix: -gapopen
@@ -439,7 +395,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for mismatch
-    default: 2
     inputBinding:
       position: 101
       prefix: -penalty
@@ -448,7 +403,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for opening a local chain
-    default: 6
     inputBinding:
       position: 101
       prefix: -localopen
@@ -457,7 +411,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for local opening
-    default: 6
     inputBinding:
       position: 101
       prefix: -localopen
@@ -466,7 +419,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty matching N
-    default: 0
     inputBinding:
       position: 101
       prefix: -Npenalty
@@ -475,7 +427,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for transition
-    default: 2
     inputBinding:
       position: 101
       prefix: -transition
@@ -484,7 +435,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for transversion
-    default: 2
     inputBinding:
       position: 101
       prefix: -transversion
@@ -493,7 +443,6 @@ inputs:
       - 'null'
       - string
     doc: Proximity scoring (negative for soft)
-    default: False/1.0
     inputBinding:
       position: 101
       prefix: -proxi
@@ -502,7 +451,6 @@ inputs:
       - 'null'
       - boolean
     doc: Reassign consensus sequences
-    default: false
     inputBinding:
       position: 101
       prefix: -reassign
@@ -511,7 +459,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove contamination
-    default: false
     inputBinding:
       position: 101
       prefix: -deCon
@@ -520,7 +467,6 @@ inputs:
       - 'null'
       - int
     doc: Reward for pairing reads
-    default: 7
     inputBinding:
       position: 101
       prefix: -per
@@ -529,7 +475,6 @@ inputs:
       - 'null'
       - int
     doc: Score for match
-    default: 1
     inputBinding:
       position: 101
       prefix: -reward
@@ -538,7 +483,6 @@ inputs:
       - 'null'
       - boolean
     doc: Seeds soround alignments
-    default: false
     inputBinding:
       position: 101
       prefix: -ssa
@@ -547,7 +491,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set assembly genefinding preset
-    default: false
     inputBinding:
       position: 101
       prefix: -asm
@@ -556,7 +499,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set CGE penalties and rewards
-    default: false
     inputBinding:
       position: 101
       prefix: -cge
@@ -565,7 +507,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set 2nd gen genefinding preset
-    default: false
     inputBinding:
       position: 101
       prefix: -ill
@@ -574,7 +515,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set 2nd gen Mintyper preset
-    default: false
     inputBinding:
       position: 101
       prefix: -mint2
@@ -583,7 +523,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set 3rd gen Mintyper preset
-    default: false
     inputBinding:
       position: 101
       prefix: -mint3
@@ -592,7 +531,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set 3rd gen genefinding preset
-    default: false
     inputBinding:
       position: 101
       prefix: -ont
@@ -601,7 +539,6 @@ inputs:
       - 'null'
       - string
     doc: Sets both pm and fpm
-    default: u
     inputBinding:
       position: 101
       prefix: -apm
@@ -610,7 +547,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip alignment
-    default: false
     inputBinding:
       position: 101
       prefix: -sasm
@@ -619,7 +555,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip insertion in consensus
-    default: false
     inputBinding:
       position: 101
       prefix: -dense
@@ -628,7 +563,6 @@ inputs:
       - 'null'
       - string
     doc: Sparse sorting (q,c,d,n)
-    default: q
     inputBinding:
       position: 101
       prefix: -ss
@@ -653,7 +587,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -662,7 +595,6 @@ inputs:
       - 'null'
       - int
     doc: Trim 3 prime
-    default: 0
     inputBinding:
       position: 101
       prefix: -3p
@@ -671,7 +603,6 @@ inputs:
       - 'null'
       - int
     doc: Trim 5 prime
-    default: 0
     inputBinding:
       position: 101
       prefix: -5p
@@ -680,7 +611,6 @@ inputs:
       - 'null'
       - int
     doc: Trim front of seeds
-    default: 0
     inputBinding:
       position: 101
       prefix: -ts
@@ -689,7 +619,6 @@ inputs:
       - 'null'
       - int
     doc: Tsv flag
-    default: 0
     inputBinding:
       position: 101
       prefix: -tsv
@@ -706,7 +635,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use a HMM to assign template(s)
-    default: false
     inputBinding:
       position: 101
       prefix: -hmm
@@ -723,7 +651,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use neither mrs or p-value on consensus
-    default: false
     inputBinding:
       position: 101
       prefix: -oa
@@ -732,7 +659,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use n's on indels
-    default: false
     inputBinding:
       position: 101
       prefix: -ref_fsa
@@ -741,7 +667,6 @@ inputs:
       - 'null'
       - int
     doc: Use DB in shared memory
-    default: 0
     inputBinding:
       position: 101
       prefix: -shm
@@ -750,7 +675,6 @@ inputs:
       - 'null'
       - boolean
     doc: Extra verbose
-    default: false
     inputBinding:
       position: 101
       prefix: -verbose

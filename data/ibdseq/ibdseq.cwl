@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: max allele error rate
-    default: 0.001
     inputBinding:
       position: 101
   - id: errorprop
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - float
     doc: allele error as proportion of MAF
-    default: 0.25
     inputBinding:
       position: 101
   - id: excludemarkers
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: min LOD score for reported IBD
-    default: 3.0
     inputBinding:
       position: 101
   - id: ibdtrim
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: LOD score to trim from segment ends
-    default: 0.3
     inputBinding:
       position: 101
   - id: minalleles
@@ -68,7 +64,6 @@ inputs:
       - 'null'
       - int
     doc: minimum minor allele count
-    default: 2
     inputBinding:
       position: 101
   - id: nthreads
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 1
     inputBinding:
       position: 101
   - id: out
@@ -89,7 +83,6 @@ inputs:
       - 'null'
       - float
     doc: max R2 permitted between markers
-    default: 0.15
     inputBinding:
       position: 101
   - id: r2window
@@ -97,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: window-size when checking marker R2
-    default: 500
     inputBinding:
       position: 101
 outputs:

@@ -33,7 +33,6 @@ inputs:
       coeviz and evcouplings are also some options to analyze sequence 
       correlations. If your data is any other coupling data in full matrix 
       format, you can select your data type as 'generic'.
-    default: ndcc
     inputBinding:
       position: 101
       prefix: -t
@@ -52,7 +51,6 @@ inputs:
       - float
     doc: If the distance between two C_alpha atoms is bigger than the specified 
       distance, it will be projected onto protein structure.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: -d
@@ -71,7 +69,6 @@ inputs:
       - float
     doc: If the distance between two C_alpha atoms is smaller than the specified
       distance, it will be projected onto protein structure.
-    default: 9999.9
     inputBinding:
       position: 101
       prefix: -D

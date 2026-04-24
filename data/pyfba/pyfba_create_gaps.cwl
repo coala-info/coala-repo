@@ -40,7 +40,6 @@ inputs:
       - string
     doc: organism type for the model (currently allowed are ['gramnegative', 
       'grampositive', 'microbial', 'mycobacteria', 'plant'])
-    default: gramnegative
     inputBinding:
       position: 101
       prefix: --type

@@ -81,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Specifies the number of tests to run simultaneously (defaults to one).
-    default: 1
     inputBinding:
       position: 102
       prefix: -j
@@ -138,7 +137,6 @@ inputs:
       - int
     doc: Time of execution in seconds after which the test will be skipped. 
       Defaults to 600 seconds (10.0 minutes).
-    default: 600
     inputBinding:
       position: 102
       prefix: --timeout
@@ -147,7 +145,6 @@ inputs:
       - 'null'
       - string
     doc: CWL runner executable to use (default 'cwl-runner'
-    default: cwl-runner
     inputBinding:
       position: 102
       prefix: --tool

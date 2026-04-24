@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: Boolean indicating whether to compress (by gzip) the final output
-    default: true
     inputBinding:
       position: 101
       prefix: --compress-output
@@ -84,7 +83,6 @@ inputs:
       - int
     doc: Minimum number of reads that must cover a site for it to be included in
       the output file.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-cov
@@ -93,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors you wish to use to parallelize this function
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-procs

@@ -17,7 +17,6 @@ inputs:
       - int
     doc: "The minimum mapping quality threshold for an alignment\n               \
       \         to pass."
-    default: 0
     inputBinding:
       position: 101
       prefix: --map_quality
@@ -27,7 +26,6 @@ inputs:
       - float
     doc: "The minimum percentage of a read's length that must be\n               \
       \         aligned to be included."
-    default: 10%
     inputBinding:
       position: 101
       prefix: --aln_percent
@@ -54,7 +52,6 @@ inputs:
       - string
     doc: "Field-separator character to be used when writing the\n                \
       \        output table."
-    default: ','
     inputBinding:
       position: 101
       prefix: --sep
@@ -65,7 +62,6 @@ inputs:
     doc: "The minimum percentage a reference sequence must be\n                  \
       \      covered for its coverage stats to be included; they\n               \
       \         are set to zero otherwise."
-    default: 50%
     inputBinding:
       position: 101
       prefix: --seq_coverage

@@ -8,7 +8,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 3
     inputBinding:
       position: 101
       prefix: branchlower
@@ -16,7 +15,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 20.0
     inputBinding:
       position: 101
       prefix: branchmult1
@@ -24,7 +22,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 3.0
     inputBinding:
       position: 101
       prefix: branchmult2
@@ -32,7 +29,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 1
     inputBinding:
       position: 101
       prefix: build
@@ -40,7 +36,6 @@ inputs:
     type:
       - 'null'
       - boolean
-    default: false
     inputBinding:
       position: 101
       prefix: eccpincer
@@ -48,7 +43,6 @@ inputs:
     type:
       - 'null'
       - boolean
-    default: true
     inputBinding:
       position: 101
       prefix: eccreassemble
@@ -56,7 +50,6 @@ inputs:
     type:
       - 'null'
       - boolean
-    default: false
     inputBinding:
       position: 101
       prefix: ecctail
@@ -65,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Extension length for read 2.
-    default: 50
     inputBinding:
       position: 101
       prefix: extend2
@@ -73,7 +65,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 500
     inputBinding:
       position: 101
       prefix: fastareadlen
@@ -98,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer size for merging.
-    default: 60
     inputBinding:
       position: 101
       prefix: k
@@ -106,7 +96,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 2
     inputBinding:
       position: 101
       prefix: mincountextend
@@ -114,7 +103,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 3
     inputBinding:
       position: 101
       prefix: mincountseed
@@ -122,7 +110,6 @@ inputs:
     type:
       - 'null'
       - float
-    default: 0.5
     inputBinding:
       position: 101
       prefix: minprob
@@ -131,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads to generate.
-    default: 50
     inputBinding:
       position: 101
       prefix: reads
@@ -139,7 +125,6 @@ inputs:
     type:
       - 'null'
       - boolean
-    default: true
     inputBinding:
       position: 101
       prefix: overwrite
@@ -148,7 +133,6 @@ inputs:
       - 'null'
       - boolean
     doc: Generate paired-end reads.
-    default: true
     inputBinding:
       position: 101
       prefix: paired
@@ -156,7 +140,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 0
     inputBinding:
       position: 101
       prefix: prefilter
@@ -173,7 +156,6 @@ inputs:
       - 'null'
       - int
     doc: Length of the reference genome to generate.
-    default: 700
     inputBinding:
       position: 101
       prefix: len

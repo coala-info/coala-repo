@@ -41,7 +41,6 @@ inputs:
     doc: maximum number of metadata records to read into memory at a time. 
       Increasing this number can reduce run times at the cost of more memory 
       used.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --metadata-chunk-size
@@ -52,7 +51,6 @@ inputs:
         items: string
     doc: delimiters to accept when reading a metadata file. Only one delimiter 
       will be inferred.
-    default:
       - ','
       - "\t"
     inputBinding:
@@ -65,7 +63,6 @@ inputs:
         items: string
     doc: names of possible metadata columns containing identifier information, 
       ordered by priority. Only one ID column will be inferred.
-    default:
       - strain
       - name
     inputBinding:
@@ -79,7 +76,6 @@ inputs:
       subsample, this means the number of samples to run simultaneously. 
       Individual samples are limited to a single thread. The final augur filter 
       call can take advantage of multiple threads.
-    default: 1
     inputBinding:
       position: 101
       prefix: --nthreads
@@ -133,7 +129,6 @@ inputs:
       large files. Note that this should only be used if you are sure there are 
       no duplicate sequences or mismatched ids since they can lead to errors in 
       downstream Augur commands.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-checks

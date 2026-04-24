@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: logging level
-    default: info
     inputBinding:
       position: 101
       prefix: --log_level

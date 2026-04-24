@@ -31,7 +31,6 @@ inputs:
       - string
     doc: delimiter for input/output results. Supports a comma (,), a semicolon 
       (;), a tab ($'\t'), a space (" ") and a pipe (|)
-    default: ','
     inputBinding:
       position: 101
       prefix: --delimiter
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - float
     doc: difference threshold for label propagation algorithm
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --diff_threshold
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of iterations for label propagation algorithm
-    default: 100
     inputBinding:
       position: 101
       prefix: --max_iteration

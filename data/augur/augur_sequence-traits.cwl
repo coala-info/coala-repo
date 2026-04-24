@@ -11,7 +11,6 @@ inputs:
       - File
     doc: nucleotide alignment (VCF) to search for sequence traits in (can be 
       generated from 'ancestral' using '--output-vcf')
-    default: None
     inputBinding:
       position: 101
       prefix: --ancestral-sequences
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: 'Whether to count traits (ex: # drugs resistant to) or mutations'
-    default: traits
     inputBinding:
       position: 101
       prefix: --count
@@ -32,7 +30,6 @@ inputs:
       "GENE SITE ALT DISPLAY_NAME FEATURE". For nucleotide sites, GENE can be "nuc"
       (or column excluded entirely for all-nuc sites). "DISPLAY_NAME" can be blank
       or excluded entirely.'
-    default: None
     inputBinding:
       position: 101
       prefix: --features
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: 'How to label the counts (ex: Drug_Resistance)'
-    default: '# Traits'
     inputBinding:
       position: 101
       prefix: --label
@@ -51,7 +47,6 @@ inputs:
       - File
     doc: AA alignment to search for sequence traits in (can include ancestral 
       sequences)
-    default: None
     inputBinding:
       position: 101
       prefix: --translations
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - File
     doc: fasta file of the sequence the nucleotide VCF was mapped to
-    default: None
     inputBinding:
       position: 101
       prefix: --vcf-reference
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - File
     doc: fasta file of the sequence the translated VCF was mapped to
-    default: None
     inputBinding:
       position: 101
       prefix: --vcf-translate-reference

@@ -45,7 +45,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_json_path
-    default: system.json
 
   config:
     label: Advanced configuration options for biobb_flexserv PCZhinges

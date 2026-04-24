@@ -28,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: only assess seqs with at least this fraction aligned
-    default: 0.8
     inputBinding:
       position: 103
       prefix: --min-map-frac
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: only assess first
-    default: 1000
     inputBinding:
       position: 103
       prefix: --num-reads

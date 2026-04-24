@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: 1 if fit MixBin model using batch mode, 0 else
-    default: 1
     inputBinding:
       position: 101
       prefix: --batchFit
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Number of variants in one batch, cooperate with --nproc for speeding up
-    default: 128
     inputBinding:
       position: 101
       prefix: --batchSize
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Use betabinomial model if True
-    default: 0
     inputBinding:
       position: 101
       prefix: --beta
@@ -52,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum no. of cells in minor component
-    default: 2
     inputBinding:
       position: 101
       prefix: --minCell
@@ -61,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum DP to include for modelling
-    default: 10
     inputBinding:
       position: 101
       prefix: --minDP
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Number of subprocesses
-    default: 1
     inputBinding:
       position: 101
       prefix: --nproc
@@ -87,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: Seed for random initialization
-    default: none
     inputBinding:
       position: 101
       prefix: --randSeed

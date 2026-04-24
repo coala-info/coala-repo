@@ -19,7 +19,6 @@ inputs:
       - string
     doc: "width of rolling mean window in terms of --timeWindow's (recomend using
       with small --timeWindow) ; default: sum of counts withen timeWindow (ie no average)"
-    default: None
     inputBinding:
       position: 101
       prefix: --avgWindow
@@ -38,7 +37,6 @@ inputs:
       - string
     doc: end date in iso format YYYY-MM-DD or 'lastDate' which sets end date as 
       last date in metadata
-    default: lastDate
     inputBinding:
       position: 101
       prefix: --endDate
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: HEIGHT of page (px)
-    default: 1000
     inputBinding:
       position: 101
       prefix: --HEIGHT
@@ -89,7 +86,6 @@ inputs:
       - File
     doc: pangolin output lineage_report.csv file, if argument not supplied looks
       in inMeta for col with 'pangolin_lineage', 'pangolin_lin', or 'lineage'
-    default: metadata
     inputBinding:
       position: 101
       prefix: --inPangolin
@@ -98,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: choose position of clade labels
-    default: Right
     inputBinding:
       position: 101
       prefix: --labelPosition
@@ -107,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: nudge label over by LABELSHIFT (px)
-    default: 15
     inputBinding:
       position: 101
       prefix: --LABELSHIFT
@@ -116,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: LEGENDWIDTH to the right of plotting area (px)
-    default: 220
     inputBinding:
       position: 101
       prefix: --LEGENDWIDTH
@@ -125,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: MARGIN around all sides of plotting area (px)
-    default: 60
     inputBinding:
       position: 101
       prefix: --MARGIN
@@ -134,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: minimum time point to start plotting
-    default: 30
     inputBinding:
       position: 101
       prefix: --MINTIME
@@ -143,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: minimum total count for group to be included
-    default: 50
     inputBinding:
       position: 101
       prefix: --MINTOTALCOUNT
@@ -152,7 +142,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not add lineage to clade names
-    default: false
     inputBinding:
       position: 101
       prefix: --noPangolin
@@ -161,7 +150,6 @@ inputs:
       - 'null'
       - Directory
     doc: folder for output
-    default: ./
     inputBinding:
       position: 101
       prefix: --outDirectory
@@ -177,7 +165,6 @@ inputs:
       - string
     doc: start date in iso format YYYY-MM-DD or 'firstDate' which sets start 
       date to first date in metadata
-    default: '2020-03-01'
     inputBinding:
       position: 101
       prefix: --startDate
@@ -186,7 +173,6 @@ inputs:
       - 'null'
       - int
     doc: number of days for sampling window
-    default: 7
     inputBinding:
       position: 101
       prefix: --timeWindow
@@ -196,7 +182,6 @@ inputs:
       - string
     doc: "[use with -n/--inNextstrain] name of [traitOfInterstFile].json in '-n/--inNextstrain'
       folder"
-    default: aa_muts.json
     inputBinding:
       position: 101
       prefix: --traitOfInterstFile
@@ -206,7 +191,6 @@ inputs:
       - string
     doc: "key for trait of interst in json file OR (if -a/--annotatedTree AND key
       is mutations with aa (not nuc): use 'aa_muts')"
-    default: aa_muts
     inputBinding:
       position: 101
       prefix: --traitOfInterstKey
@@ -225,7 +209,6 @@ inputs:
       - 'null'
       - int
     doc: WIDTH of page (px)
-    default: 1500
     inputBinding:
       position: 101
       prefix: --WIDTH
@@ -235,7 +218,6 @@ inputs:
       - string
     doc: 'Format of x axis label: ISO date format or timepoints from start, or dd-Mon-YYYY
       on 1st and 15th'
-    default: date
     inputBinding:
       position: 101
       prefix: --xlabel

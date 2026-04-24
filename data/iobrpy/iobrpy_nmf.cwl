@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum k (inclusive).
-    default: 8
     inputBinding:
       position: 101
       prefix: --kmax
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum k (inclusive).
-    default: 2
     inputBinding:
       position: 101
       prefix: --kmin
@@ -53,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum iterations for NMF (default: 1000)'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max-iter

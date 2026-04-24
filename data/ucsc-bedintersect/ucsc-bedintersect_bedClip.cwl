@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Set to 0 for no social prompts, 2 for more info.
-    default: 1
     inputBinding:
       position: 103
       prefix: -verbose

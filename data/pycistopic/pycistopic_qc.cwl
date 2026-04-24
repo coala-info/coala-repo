@@ -10,7 +10,6 @@ inputs:
       - boolean
     doc: Don't collapse duplicate fragments (same chromosomal positions and 
       linked to the same cell barcode).
-    default: false
     inputBinding:
       position: 101
       prefix: --dont-collapse_duplicates
@@ -26,7 +25,6 @@ inputs:
       - int
     doc: Minimum number of fragments needed per cell barcode to keep the 
       fragments for those cell barcodes.
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_fragments_per_cb
@@ -51,7 +49,6 @@ inputs:
       to get probability density function (PDF) values for log10 unique 
       fragments in peaks vs TSS enrichment, fractions of fragments in peaks and 
       duplication ratio.
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads
@@ -68,7 +65,6 @@ inputs:
       - int
     doc: Flanking window around the TSS. Used for intersecting fragments with 
       TSS positions and keeping cut sites.
-    default: 2000
     inputBinding:
       position: 101
       prefix: --tss_flank_window
@@ -79,7 +75,6 @@ inputs:
     doc: Minimum normalization score. If the average minimum signal value is 
       below this value, this number is used to normalize the TSS signal. This 
       approach penalizes cells with fewer reads.
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --tss_min_norm
@@ -91,7 +86,6 @@ inputs:
       ([-flank_window, -flank_window + minimum_signal_window + 1], [flank_window
       - minimum_signal_window + 1, flank_window]) is used to normalize the TSS 
       enrichment.
-    default: 100
     inputBinding:
       position: 101
       prefix: --tss_minimum_signal_window
@@ -100,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Rolling window used to smooth the cut sites signal.
-    default: 10
     inputBinding:
       position: 101
       prefix: --tss_smoothing_rolling_window
@@ -110,7 +103,6 @@ inputs:
       - int
     doc: Window around the TSS used to count fragments in the TSS when 
       calculating the TSS enrichment per cell barcode.
-    default: 50
     inputBinding:
       position: 101
       prefix: --tss_window

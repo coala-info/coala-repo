@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - boolean
     doc: write/keep intermediate files
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -45,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: maximum exon length
-    default: -1
     inputBinding:
       position: 101
       prefix: --max-exon
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: maximum intron length
-    default: -1
     inputBinding:
       position: 101
       prefix: --max-intron
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: minimum exon length
-    default: 3
     inputBinding:
       position: 101
       prefix: --min-exon
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: minimum intron length
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-intron
@@ -99,7 +94,6 @@ inputs:
       - type: array
         items: File
     doc: 'protein alignments in GFF3 format [accepts multiple files: space separated]'
-    default: []
     inputBinding:
       position: 101
       prefix: --proteins
@@ -108,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: percent gene model overlap with repeats to remove
-    default: 90
     inputBinding:
       position: 101
       prefix: --repeat-overlap
@@ -125,7 +118,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not write anything to terminal/stderr
-    default: false
     inputBinding:
       position: 101
       prefix: --silent
@@ -135,7 +127,6 @@ inputs:
       - type: array
         items: File
     doc: 'transcripts alignments in GFF3 format [accepts multiple files: space separated]'
-    default: []
     inputBinding:
       position: 101
       prefix: --transcripts
@@ -145,7 +136,6 @@ inputs:
       - type: array
         items: string
     doc: 'user supplied source weights [accepts multiple: space separated source:weight]'
-    default: []
     inputBinding:
       position: 101
       prefix: --weights

@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: ion purity threshold
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --purity
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - float
     doc: only use PSMs with the specified minimum probability score
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --minprob
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: ms level for the quantification
-    default: 2
     inputBinding:
       position: 101
       prefix: --level
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: m/z tolerance in ppm
-    default: 20
     inputBinding:
       position: 101
       prefix: --tol

@@ -50,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output parsed data in a different format. Default: tsv'
-    default: tsv
     inputBinding:
       position: 102
       prefix: --data-format

@@ -59,7 +59,6 @@ inputs:
   threads:
     label: Number of basecallers to be run in parallel, each one with one thread
     type: int?
-    default: 1
     inputBinding:
       prefix: --cpu_threads_per_caller
   configuration_command:
@@ -85,25 +84,21 @@ inputs:
   enable_adapter_trimming:
     label: Determines if Guppy performs adapter trimming
     type: boolean
-    default: false
     inputBinding:
       prefix: --trim_barcodes
   recursive_input_search:
     label: Recursive search in subdirectories to find the *.fast5 files
     type: boolean
-    default: true
     inputBinding:
       prefix: --recursive
   disable_qscore_filtering:
     label: disable qscore filtering
     type: boolean
-    default: true
     inputBinding:
       prefix: --disable_qscore_filtering
   disable_pings:
     label: disable pings
     type: boolean
-    default: true
     inputBinding:
       prefix: --disable_pings
 

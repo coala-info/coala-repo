@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the analysis
-    default: None
     inputBinding:
       position: 101
       prefix: --name
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of processes running in parallel
-    default: 1
     inputBinding:
       position: 101
       prefix: --jobs
@@ -63,7 +61,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to where ICEscreen results will be written
-    default: /root
     inputBinding:
       position: 101
       prefix: --outdir

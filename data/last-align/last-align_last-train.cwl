@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: 'type of alignment: 0=local, 1=overlap'
-    default: 0
     inputBinding:
       position: 103
       prefix: -T
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: gap existence cost
-    default: 21 if Q>0, else 15
     inputBinding:
       position: 103
       prefix: -a
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: gap extension cost
-    default: 9 if Q>0, else 3
     inputBinding:
       position: 103
       prefix: -b
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: use initial matches starting at every STEP-th position in each query
-    default: 1
     inputBinding:
       position: 103
       prefix: -k
@@ -66,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: 'input format: 0=fasta or fastq-ignore, 1=fastq-sanger'
-    default: 0
     inputBinding:
       position: 103
       prefix: -Q
@@ -99,7 +94,6 @@ inputs:
       - 'null'
       - float
     doc: match score
-    default: 6 if Q>0, else 5
     inputBinding:
       position: 103
       prefix: -r
@@ -124,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: maximum initial matches per query position
-    default: 10
     inputBinding:
       position: 103
       prefix: -m
@@ -133,7 +126,6 @@ inputs:
       - 'null'
       - float
     doc: mismatch cost
-    default: 18 if Q>0, else 5
     inputBinding:
       position: 103
       prefix: -q
@@ -158,7 +150,6 @@ inputs:
       - 'null'
       - float
     doc: skip alignments with > PID% identity
-    default: 100
     inputBinding:
       position: 103
       prefix: --pid
@@ -167,7 +158,6 @@ inputs:
       - 'null'
       - float
     doc: skip mostly-lowercase alignments
-    default: 1
     inputBinding:
       position: 103
       prefix: --postmask
@@ -176,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: query letters per random alignment
-    default: '1e6'
     inputBinding:
       position: 103
       prefix: -D
@@ -193,7 +182,6 @@ inputs:
       - 'null'
       - int
     doc: length of each sample
-    default: 2000
     inputBinding:
       position: 103
       prefix: --sample-length
@@ -202,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: number of random sequence samples
-    default: 500
     inputBinding:
       position: 103
       prefix: --sample-number
@@ -211,7 +198,6 @@ inputs:
       - 'null'
       - int
     doc: 'score matrix applies to forward strand of: 0=reference, 1=query'
-    default: 1
     inputBinding:
       position: 103
       prefix: -S
@@ -220,7 +206,6 @@ inputs:
       - 'null'
       - int
     doc: 0=reverse, 1=forward, 2=both
-    default: 2 if DNA, else 1
     inputBinding:
       position: 103
       prefix: -s

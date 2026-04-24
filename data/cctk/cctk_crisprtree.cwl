@@ -10,7 +10,6 @@ inputs:
       - type: array
         items: string
     doc: IDs of the arrays you want to analyse.
-    default: all
     inputBinding:
       position: 1
   - id: acquisition
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: parsimony cost of a spacer acquisition event.
-    default: 1
     inputBinding:
       position: 102
       prefix: --acquisition
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: 'Show support. Options: colour, number, newick'
-    default: colour
     inputBinding:
       position: 102
       prefix: --branch-support
@@ -66,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: parsimony cost of a deletion event.
-    default: 10
     inputBinding:
       position: 102
       prefix: --deletion
@@ -75,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: resolution of the output image.
-    default: 600
     inputBinding:
       position: 102
       prefix: --dpi
@@ -84,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: parsimony cost of a duplication event.
-    default: 1
     inputBinding:
       position: 102
       prefix: --duplication
@@ -134,7 +128,6 @@ inputs:
       - 'null'
       - int
     doc: parsimony cost of an insertion event.
-    default: 30
     inputBinding:
       position: 102
       prefix: --insertion
@@ -175,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: parsimony cost of an array having no identity with its ancestor.
-    default: 100
     inputBinding:
       position: 102
       prefix: --no-ident
@@ -184,7 +176,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use.
-    default: 1
     inputBinding:
       position: 102
       prefix: --num-threads
@@ -193,7 +184,6 @@ inputs:
       - 'null'
       - float
     doc: height of plot in inches.
-    default: 3.0
     inputBinding:
       position: 102
       prefix: --plot-height
@@ -202,7 +192,6 @@ inputs:
       - 'null'
       - float
     doc: width of plot in inches.
-    default: 3.0
     inputBinding:
       position: 102
       prefix: --plot-width
@@ -219,7 +208,6 @@ inputs:
       - 'null'
       - int
     doc: parsimony cost independently acquiring spacers.
-    default: 50
     inputBinding:
       position: 102
       prefix: --rep-indel
@@ -228,7 +216,6 @@ inputs:
       - 'null'
       - int
     doc: number of replicates of tree building.
-    default: 100
     inputBinding:
       position: 102
       prefix: --replicates
@@ -245,7 +232,6 @@ inputs:
       - 'null'
       - int
     doc: parsimony cost of trailer spacer loss.
-    default: 1
     inputBinding:
       position: 102
       prefix: --trailer-loss

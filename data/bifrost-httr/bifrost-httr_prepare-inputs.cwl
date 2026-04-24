@@ -12,7 +12,6 @@ inputs:
       - string
     doc: "Field to use as batch key in the BIFROST model (default: 'N/A' - single
       batch for all samples)"
-    default: N/A
     inputBinding:
       position: 101
       prefix: --batch-key
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - boolean
     doc: Filter control samples to only those in batches containing treatments
-    default: false
     inputBinding:
       position: 101
       prefix: --batch-matched-controls
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum average treatment count required
-    default: 5
     inputBinding:
       position: 101
       prefix: --min-avg-treatment-count
@@ -66,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of mapped reads required
-    default: 100000
     inputBinding:
       position: 101
       prefix: --min-num-mapped-reads
@@ -75,7 +71,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percentage of mapped reads required
-    default: 50.0
     inputBinding:
       position: 101
       prefix: --min-percent-mapped-reads

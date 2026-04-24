@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable verbose debug output.
-    default: false
     inputBinding:
       position: 101
       prefix: -debug
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - File
     doc: BED file with regions to exclude, e.g. copy-number variant regions.
-    default: ''
     inputBinding:
       position: 101
       prefix: -exclude
@@ -34,7 +32,6 @@ inputs:
       - float
     doc: Percentage of markers that can be spanned when merging adjacent regions
       .
-    default: 1
     inputBinding:
       position: 101
       prefix: -ext_marker_perc
@@ -44,7 +41,6 @@ inputs:
       - float
     doc: Percentage of base size that can be spanned when merging adjacent 
       regions.
-    default: 20
     inputBinding:
       position: 101
       prefix: -ext_size_perc
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: Mimimum size in kilo-bases required for a UPD region.
-    default: 1000
     inputBinding:
       position: 101
       prefix: -reg_min_kb
@@ -80,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Mimimum number of UPD markers required in a region.
-    default: 15
     inputBinding:
       position: 101
       prefix: -reg_min_markers
@@ -89,7 +83,6 @@ inputs:
       - 'null'
       - float
     doc: Mimimum Q-score required for a UPD region.
-    default: 20
     inputBinding:
       position: 101
       prefix: -reg_min_q
@@ -115,7 +108,6 @@ inputs:
       - 'null'
       - boolean
     doc: Also use InDels. The default is to use SNVs only.
-    default: false
     inputBinding:
       position: 101
       prefix: -var_use_indels
@@ -124,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth (DP) of a variant (in all three samples).
-    default: 20
     inputBinding:
       position: 101
       prefix: -var_min_dp
@@ -133,7 +124,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum quality (QUAL) of a variant.
-    default: 20
     inputBinding:
       position: 101
       prefix: -var_min_q

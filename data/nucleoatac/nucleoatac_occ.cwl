@@ -24,7 +24,6 @@ inputs:
       - float
     doc: confidence interval level for lower and upper bounds. default is 0.9, 
       should be between 0 and 1
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --confidence_interval
@@ -50,7 +49,6 @@ inputs:
       - int
     doc: Distance on each side of dyad to include for local occ calculation. 
       Default is 60.
-    default: 60
     inputBinding:
       position: 101
       prefix: --flank
@@ -69,7 +67,6 @@ inputs:
       - float
     doc: Occupancy cutoff for determining nucleosome distribution. Default is 
       0.1
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min_occ
@@ -78,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: minimum separation between occupany peaks. Default is 120.
-    default: 120
     inputBinding:
       position: 101
       prefix: --nuc_sep
@@ -93,7 +89,6 @@ inputs:
       - 'null'
       - File
     doc: PWM descriptor file. Default is Human.PWM.txt included in package
-    default: Human.PWM.txt
     inputBinding:
       position: 101
       prefix: --pwm
@@ -103,7 +98,6 @@ inputs:
       - int
     doc: step size along genome for comuting occ. Default is 5. Should be odd, 
       or will be subtracted by 1
-    default: 5
     inputBinding:
       position: 101
       prefix: --step
@@ -112,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: upper limit in insert size. default is 251
-    default: 251
     inputBinding:
       position: 101
       prefix: --upper

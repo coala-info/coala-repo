@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Set a new maximum CSV field size
-    default: None
     inputBinding:
       position: 102
       prefix: --csv-field-size-limit
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for decoy proteins.
-    default: decoy_
     inputBinding:
       position: 102
       prefix: --decoy_pattern
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: log2 fold change evaluation threshold.
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --fold_change_eval
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of samples a peptide needed to be quantified in.
-    default: 2
     inputBinding:
       position: 102
       prefix: --min_samples
@@ -53,7 +49,6 @@ inputs:
     doc: Distribution to fit for missing value prior. Use "DIA" for using means 
       of NaNs to fit the censored normal distribution. The "default" option fits
       the censored normal distribution with all observed XIC values.
-    default: default
     inputBinding:
       position: 102
       prefix: --missing_value_prior
@@ -63,7 +58,6 @@ inputs:
       - int
     doc: Number of threads, by default this is equal to the number of CPU cores 
       available on the device.
-    default: 20
     inputBinding:
       position: 102
       prefix: --num_threads
@@ -73,7 +67,6 @@ inputs:
       - string
     doc: Separator used in tab delimited input and output for separating protein
       names.
-    default: ''
     inputBinding:
       position: 102
       prefix: --protein_name_separator
@@ -83,7 +76,6 @@ inputs:
       - boolean
     doc: Use t-test for evaluating differential expression instead of posterior 
       probabilities.
-    default: false
     inputBinding:
       position: 102
       prefix: --ttest
@@ -93,7 +85,6 @@ inputs:
       - boolean
     doc: Write quantifications for consensus spectra. Only works if consensus 
       spectrum index are given in input.
-    default: false
     inputBinding:
       position: 102
       prefix: --write_spectrum_quants

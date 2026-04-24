@@ -66,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: Display best-model's ASCII tree
-    default: false
     inputBinding:
       position: 101
       prefix: -t2
@@ -75,7 +74,6 @@ inputs:
       - 'null'
       - boolean
     doc: Display best-model's newick tree
-    default: false
     inputBinding:
       position: 101
       prefix: -t1
@@ -142,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: Define number of categories for +G and +I+G models
-    default: 4
     inputBinding:
       position: 101
       prefix: -ncat
@@ -152,7 +149,6 @@ inputs:
       - int
     doc: 'Optimization strategy mode: 0: Fixed BIONJ JTT, 1: BIONJ Tree, 2: Maximum
       Likelihood tree, 3: User defined topology'
-    default: 0
     inputBinding:
       position: 101
       prefix: -S
@@ -161,7 +157,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads requested to compute (only if MPJ is not used)
-    default: 1
     inputBinding:
       position: 101
       prefix: -threads
@@ -179,7 +174,6 @@ inputs:
       - string
     doc: 'Tree search operation for ML search: NNI (fastest), SPR (slowest), BEST
       (best of NNI and SPR)'
-    default: NNI
     inputBinding:
       position: 101
       prefix: -s
@@ -188,7 +182,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose mode
-    default: false
     inputBinding:
       position: 101
       prefix: -verbose

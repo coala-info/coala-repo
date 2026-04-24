@@ -16,7 +16,6 @@ inputs:
       - float
     doc: The distance from the end of the chromosome as a proportion of 
       chromosome length. Must range from 0-0.5.
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --distance
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of substring
-    default: 12
     inputBinding:
       position: 102
       prefix: --maximum
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of substring
-    default: 5
     inputBinding:
       position: 102
       prefix: --minimum
@@ -60,7 +57,6 @@ inputs:
       - int
     doc: Positions of repeats are only reported if they occur sequentially in a 
       greater number than the threshold
-    default: 100
     inputBinding:
       position: 102
       prefix: --threshold

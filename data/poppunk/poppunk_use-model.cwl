@@ -10,7 +10,6 @@ inputs:
       - int
     doc: "Number of pairwise distances in each assignment batch\n                \
       \        [default = 5000]"
-    default: 5000
     inputBinding:
       position: 101
       prefix: --assign-subsample
@@ -20,7 +19,6 @@ inputs:
       - int
     doc: "Number of sequences used to estimate betweeness with a\n               \
       \         GPU [default = 100]"
-    default: 100
     inputBinding:
       position: 101
       prefix: --betweenness-sample
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - boolean
     doc: Used codon phased seeds X--X--X [default = False]
-    default: false
     inputBinding:
       position: 101
       prefix: --codon-phased
@@ -57,7 +54,6 @@ inputs:
       - int
     doc: "Maximum number of clusters in DBSCAN fitting [default\n                \
       \        = 100]"
-    default: 100
     inputBinding:
       position: 101
       prefix: --D
@@ -66,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: CUDA device ID, if using GPU [default = 0]
-    default: 0
     inputBinding:
       position: 101
       prefix: --deviceid
@@ -118,7 +113,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use a GPU when calculating distances [default = False]
-    default: false
     inputBinding:
       position: 101
       prefix: --gpu-dist
@@ -127,7 +121,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use a GPU when calculating networks [default = False]
-    default: false
     inputBinding:
       position: 101
       prefix: --gpu-graph
@@ -136,7 +129,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use a GPU when fitting a model [default = False]
-    default: false
     inputBinding:
       position: 101
       prefix: --gpu-model
@@ -146,7 +138,6 @@ inputs:
       - boolean
     doc: "Use a GPU when calculating sketches (read data only)\n                 \
       \       [default = False]"
-    default: false
     inputBinding:
       position: 101
       prefix: --gpu-sketch
@@ -171,7 +162,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of mixture components [default = 2]
-    default: 2
     inputBinding:
       position: 101
       prefix: --K
@@ -180,7 +170,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer step size [default = 4]
-    default: 4
     inputBinding:
       position: 101
       prefix: --k-step
@@ -225,7 +214,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum accessory distance to permit [default = 0.5]
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --max-a-dist
@@ -234,7 +222,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum kmer length [default = 29]
-    default: 29
     inputBinding:
       position: 101
       prefix: --max-k
@@ -243,7 +230,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum core distance to permit [default = 0.1]
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --max-pi-dist
@@ -262,7 +248,6 @@ inputs:
       - float
     doc: "Maximum proportion of zero distances to permit\n                       \
       \ [default = 0.05]"
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --max-zero-dist
@@ -272,7 +257,6 @@ inputs:
       - float
     doc: "Minimum proportion of points in a cluster in DBSCAN\n                  \
       \      fitting [default = 0.0001]"
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: --min-cluster-prop
@@ -281,7 +265,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum kmer length [default = 13]
-    default: 13
     inputBinding:
       position: 101
       prefix: --min-k
@@ -291,7 +274,6 @@ inputs:
       - int
     doc: "Minimum k-mer count when using reads as input [default\n               \
       \         = 0]"
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-kmer-count
@@ -311,7 +293,6 @@ inputs:
       - int
     doc: "Number of pairwise distances used to fit model\n                       \
       \ [default = 100000]"
-    default: 100000
     inputBinding:
       position: 101
       prefix: --model-subsample
@@ -367,7 +348,6 @@ inputs:
       - int
     doc: "Create this many plots of some fits relating k-mer to\n                \
       \        core/accessory distances [default = 0]"
-    default: 0
     inputBinding:
       position: 101
       prefix: --plot-fit
@@ -386,7 +366,6 @@ inputs:
       - float
     doc: "Threshold ambiguous base proportion above which\n                      \
       \  sequences will be excluded [default = 0.1]"
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --prop-n
@@ -421,7 +400,6 @@ inputs:
       - string
     doc: "Comma separated list of ranks used in lineage\n                        clustering
       [default = 1,2,3]"
-    default: 1,2,3
     inputBinding:
       position: 101
       prefix: --ranks
@@ -457,7 +435,6 @@ inputs:
       - boolean
     doc: "Retain sketches of genomes that do not pass QC filters\n               \
       \         in separate database [default = False]"
-    default: false
     inputBinding:
       position: 101
       prefix: --retain-failures
@@ -466,7 +443,6 @@ inputs:
       - 'null'
       - int
     doc: Index of score to use [default = 0]
-    default: 0
     inputBinding:
       position: 101
       prefix: --score-idx
@@ -475,7 +451,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer sketch size [default = 10000]
-    default: 10000
     inputBinding:
       position: 101
       prefix: --sketch-size
@@ -495,7 +470,6 @@ inputs:
       - string
     doc: "Number of sequences used to estimate graph properties\n                \
       \        [default = all]"
-    default: all
     inputBinding:
       position: 101
       prefix: --summary-sample
@@ -504,7 +478,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use [default = 1]
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -539,7 +512,6 @@ inputs:
       - boolean
     doc: "Use accessory distances for lineage definitions\n                      \
       \  [default = use core distances]"
-    default: false
     inputBinding:
       position: 101
       prefix: --use-accessory

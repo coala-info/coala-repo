@@ -31,7 +31,6 @@ inputs:
       - int
     doc: minimum number of shared kmers to consider hit in second phase kmer 
       search
-    default: 1
     inputBinding:
       position: 104
       prefix: -minid1
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of shared kmers to consider hit in alignment phase
-    default: 1
     inputBinding:
       position: 104
       prefix: -minid2
@@ -50,7 +48,6 @@ inputs:
       - int
     doc: 'minimum score cutoff to consider for a classification, should be reduced
       when searching very small sequences, i.e.: primer search'
-    default: 30
     inputBinding:
       position: 104
       prefix: -minscore
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 4
     inputBinding:
       position: 104
       prefix: -nthreads
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: number of sequences per internal cluster to include in alignment phase
-    default: 50
     inputBinding:
       position: 104
       prefix: -otulim
@@ -112,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: number of reference sequences to include in alignment phase
-    default: 20
     inputBinding:
       position: 104
       prefix: -tophits
@@ -121,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: number of internal reference otus to include in alignment phase
-    default: 10
     inputBinding:
       position: 104
       prefix: -topotus

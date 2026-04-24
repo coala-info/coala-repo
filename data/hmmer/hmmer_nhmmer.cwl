@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: number of parallel CPU workers to use for multithreads
-    default: 2
     inputBinding:
       position: 103
       prefix: --cpu
@@ -93,7 +92,6 @@ inputs:
       - 'null'
       - float
     doc: report sequences <= this E-value threshold in output
-    default: 10.0
     inputBinding:
       position: 103
       prefix: -E
@@ -110,7 +108,6 @@ inputs:
       - 'null'
       - float
     doc: 'Stage 2 (Vit) threshold: promote hits w/ P <= F2'
-    default: 0.003
     inputBinding:
       position: 103
       prefix: --F2
@@ -119,7 +116,6 @@ inputs:
       - 'null'
       - float
     doc: 'Stage 3 (Fwd) threshold: promote hits w/ P <= F3'
-    default: 3e-05
     inputBinding:
       position: 103
       prefix: --F3
@@ -128,7 +124,6 @@ inputs:
       - 'null'
       - float
     doc: consider sequences <= this E-value threshold as significant
-    default: 0.01
     inputBinding:
       position: 103
       prefix: --incE
@@ -193,7 +188,6 @@ inputs:
       - 'null'
       - float
     doc: gap extend probability
-    default: 0.75
     inputBinding:
       position: 103
       prefix: --pextend
@@ -202,7 +196,6 @@ inputs:
       - 'null'
       - float
     doc: gap open probability
-    default: 0.03125
     inputBinding:
       position: 103
       prefix: --popen
@@ -243,7 +236,6 @@ inputs:
       - 'null'
       - int
     doc: 'set RNG seed to n (if 0: one-time arbitrary seed)'
-    default: 42
     inputBinding:
       position: 103
       prefix: --seed
@@ -252,7 +244,6 @@ inputs:
       - 'null'
       - int
     doc: consecutive matches to consensus will override score threshold
-    default: 11
     inputBinding:
       position: 103
       prefix: --seed_consens_match
@@ -261,7 +252,6 @@ inputs:
       - 'null'
       - float
     doc: in seed, max drop in a run of length [fm_drop_max_len]
-    default: 0.3
     inputBinding:
       position: 103
       prefix: --seed_drop_lim
@@ -270,7 +260,6 @@ inputs:
       - 'null'
       - int
     doc: maximum run length with score under (max - [fm_drop_lim])
-    default: 4
     inputBinding:
       position: 103
       prefix: --seed_drop_max_len
@@ -279,7 +268,6 @@ inputs:
       - 'null'
       - int
     doc: seed length at which bit threshold must be met
-    default: 15
     inputBinding:
       position: 103
       prefix: --seed_max_depth
@@ -288,7 +276,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number consecutive positive scores in seed
-    default: 5
     inputBinding:
       position: 103
       prefix: --seed_req_pos
@@ -297,7 +284,6 @@ inputs:
       - 'null'
       - float
     doc: seed must maintain this bit density from one of two ends
-    default: 0.75
     inputBinding:
       position: 103
       prefix: --seed_sc_density
@@ -306,7 +292,6 @@ inputs:
       - 'null'
       - float
     doc: Default req. score for FM seed (bits)
-    default: 14
     inputBinding:
       position: 103
       prefix: --seed_sc_thresh
@@ -315,7 +300,6 @@ inputs:
       - 'null'
       - int
     doc: length of window around FM seed to get full SSV diagonal
-    default: 100
     inputBinding:
       position: 103
       prefix: --seed_ssv_length
@@ -332,7 +316,6 @@ inputs:
       - 'null'
       - int
     doc: set max width of ASCII text output lines
-    default: 120
     inputBinding:
       position: 103
       prefix: --textw

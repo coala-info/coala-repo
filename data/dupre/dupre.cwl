@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: occupancy number above which to use the heuristic
-    default: 25
     inputBinding:
       position: 101
       prefix: --K0

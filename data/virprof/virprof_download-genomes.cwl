@@ -57,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Include outgroup species (yes|no|only)
-    default: no
     inputBinding:
       position: 101
       prefix: --outgroup

@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: Output format. One of 't' (SAM), 'b' (BAM), or 'u' (uncompressed BAM)
-    default: t
     inputBinding:
       position: 101
       prefix: --outputformat

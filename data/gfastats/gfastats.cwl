@@ -56,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: 'Append perfect terminal overlaps of minimum length n (default: 1000).'
-    default: 1000
     inputBinding:
       position: 104
       prefix: --discover-terminal-overlaps
@@ -141,8 +140,6 @@ inputs:
       - 'null'
       - string
     doc: Generates bed coordinates of given feature (agp|scaffolds|contigs|gaps 
-      default:agp).
-    default: agp
     inputBinding:
       position: 104
       prefix: --out-coord
@@ -169,8 +166,6 @@ inputs:
       - 'null'
       - string
     doc: Generates size list of given feature (scaffolds|contigs|gaps 
-      default:scaffolds).
-    default: scaffolds
     inputBinding:
       position: 104
       prefix: --out-size
@@ -212,7 +207,6 @@ inputs:
       - 'null'
       - boolean
     doc: Report summary statistics (default).
-    default: true
     inputBinding:
       position: 104
       prefix: --stats

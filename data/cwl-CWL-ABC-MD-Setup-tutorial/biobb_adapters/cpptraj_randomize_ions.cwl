@@ -63,7 +63,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_pdb_path
-    default: system.pdb
 
   output_crd_path:
     label: Structure CRD file with coordinates including randomized ions
@@ -81,7 +80,6 @@ inputs:
     inputBinding:
       position: 4
       prefix: --output_crd_path
-    default: system.crd
 
   config:
     label: Advanced configuration options for biobb_amber.cpptraj.cpptraj_randomize_ions

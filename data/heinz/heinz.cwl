@@ -36,7 +36,6 @@ inputs:
       - int
     doc: "Enumeration mode:\n     0 - No enumeration\n     1 - No root\n     2 - Fix
       root\n     3 - No root per component (default)"
-    default: 3
     inputBinding:
       position: 101
       prefix: -enum
@@ -57,7 +56,6 @@ inputs:
       \     4 - Cut formulation (Node-separator)\n     5 - Cut formulation (Node-separator,
       BK, default)\n     6 - Tree DP\n     7 - Tree DP heuristic (fixed_edge)\n  \
       \   8 - Tree DP heuristic (random_edge)\n     9 - Tree DP heuristic (uniform_edge)"
-    default: 5
     inputBinding:
       position: 101
       prefix: -f
@@ -75,7 +73,6 @@ inputs:
       - int
     doc: "Specifies the maximum number of cuts per step\n     (only in conjuction
       with -f 2, optional, default: -1)"
-    default: -1
     inputBinding:
       position: 101
       prefix: -maxCuts
@@ -108,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: Specifies number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -m
@@ -117,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: 'Time limit (in seconds, default: -1)'
-    default: -1
     inputBinding:
       position: 101
       prefix: -t
@@ -127,7 +122,6 @@ inputs:
       - int
     doc: "Specifies the verbosity level:\n     0 - No output\n     1 - Only necessary
       output\n     2 - More verbose output (default)\n     3 - Debug output"
-    default: 2
     inputBinding:
       position: 101
       prefix: --verbosity

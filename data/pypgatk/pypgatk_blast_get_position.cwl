@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Used to specify the number of processes.
-    default: 40
     inputBinding:
       position: 101
       prefix: --number_of_processes

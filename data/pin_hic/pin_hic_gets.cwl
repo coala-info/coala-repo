@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: minimum output scaffolds length
-    default: 0
     inputBinding:
       position: 102
       prefix: -l

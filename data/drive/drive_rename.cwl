@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: rename local as well (default true)
-    default: true
     inputBinding:
       position: 101
       prefix: -local
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: rename remote as well (default true)
-    default: true
     inputBinding:
       position: 101
       prefix: -remote

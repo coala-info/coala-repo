@@ -17,7 +17,6 @@ inputs:
       - float
     doc: the gene body bin size is N multiple of the bin size of the upstream 
       and downstream extension region.
-    default: 1
     inputBinding:
       position: 101
       prefix: --bodyX
@@ -27,7 +26,6 @@ inputs:
       - int
     doc: "[0/1/2/3] context for calculate, 0 represent 'C/ALL' context, 1 'CG' context,
       2 'CHG' context, 3 'CHH' context."
-    default: 0
     inputBinding:
       position: 101
       prefix: --context
@@ -60,7 +58,6 @@ inputs:
     doc: the bin size is N times of the profile bin size, so the bin size should
       be N*profilestep [5], please note N*profilestep must < 1 and N must >= 1, 
       used for calculation per gene.
-    default: 5
     inputBinding:
       position: 101
       prefix: --matrixX
@@ -70,7 +67,6 @@ inputs:
       - int
     doc: '[int] print all the matrix results of C/CG/CHG/CHH context methylation to
       same file. 0 for no, 1 for yes.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --print2one
@@ -81,7 +77,6 @@ inputs:
     doc: calculate the methylation matrix mode of every region or gene. 0 for 
       gene and flanks mode, 1 for tss and flanks, 2 for tts and flanks, 3 for 
       region center and flanks.
-    default: 0
     inputBinding:
       position: 101
       prefix: --profilemode
@@ -99,7 +94,6 @@ inputs:
       - 'null'
       - float
     doc: 'step mean bin size for chromosome region, default: 0.02 (2%)'
-    default: 0.02
     inputBinding:
       position: 101
       prefix: --profilestep
@@ -108,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: region extend for upstream and downstram
-    default: 2000
     inputBinding:
       position: 101
       prefix: --regionextend
@@ -118,7 +111,6 @@ inputs:
       - int
     doc: "[0/1/2] strand for calculate, 0 represent '+' positive strand, 1 '-' negative
       strand, 2 '.' all information"
-    default: 2
     inputBinding:
       position: 101
       prefix: --strand

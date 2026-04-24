@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Burn-in length
-    default: 50000
     inputBinding:
       position: 102
       prefix: -burn
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Number of iterations
-    default: 5000
     inputBinding:
       position: 102
       prefix: -n
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Number of pilot runs
-    default: 20
     inputBinding:
       position: 102
       prefix: -nbp
@@ -74,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Length of pilot runs
-    default: 5000
     inputBinding:
       position: 102
       prefix: -pilot
@@ -83,7 +79,6 @@ inputs:
       - 'null'
       - float
     doc: Prior odds for the neutral model
-    default: 10
     inputBinding:
       position: 102
       prefix: -pr_odds
@@ -92,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Thinning interval
-    default: 10
     inputBinding:
       position: 102
       prefix: -thin

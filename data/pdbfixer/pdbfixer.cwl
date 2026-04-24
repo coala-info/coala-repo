@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: 'Which missing atoms to add: all, heavy, or none.'
-    default: all
     inputBinding:
       position: 102
       prefix: --add-atoms
@@ -33,7 +32,6 @@ inputs:
       - string
     doc: 'Which heterogens to keep: all, water, none, or a comma-separated list of
       IDs.'
-    default: all
     inputBinding:
       position: 102
       prefix: --keep-heterogens
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: The pH to use for adding hydrogens.
-    default: 7.0
     inputBinding:
       position: 102
       prefix: --ph

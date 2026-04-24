@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - Directory
     doc: Database directory
-    default: /usr/local/MegaPath/db
     inputBinding:
       position: 101
       prefix: -d
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum read length
-    default: 250
     inputBinding:
       position: 101
       prefix: -L
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Output prefix
-    default: megapath-amplicon
     inputBinding:
       position: 101
       prefix: -p
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 45
     inputBinding:
       position: 101
       prefix: -t

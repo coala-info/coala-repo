@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Catch exceptions in debugger (requires ipdb)
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print runtime profile at exit
-    default: false
     inputBinding:
       position: 102
       prefix: --profile

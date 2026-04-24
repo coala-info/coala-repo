@@ -11,7 +11,6 @@ inputs:
       - int
     doc: "Number of valid pairs to downsample to for analysis.\nSet to 0 to disable
       downsampling (default: 0)."
-    default: 0
     inputBinding:
       position: 101
       prefix: --downsample_size
@@ -51,7 +50,6 @@ inputs:
       - float
     doc: "Additional threshold of maximum fold change of gene\nexpression for a promoter
       to be considered alternative\npromoter (default 1.5)"
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --max_gFC
@@ -69,7 +67,6 @@ inputs:
       - float
     doc: "Additional threshold of minimum fold change of\npromoter activity for a
       promoter to be considered\nalternative promoter (default 2.0)"
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --min_pFC
@@ -137,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: "Number of CPU threads to use for parallel processing\n(default: 30)."
-    default: 30
     inputBinding:
       position: 101
       prefix: --threads

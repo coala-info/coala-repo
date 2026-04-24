@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Only align nodes that have maximally this many samples
-    default: None
     inputBinding:
       position: 102
       prefix: -x
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Only align nodes that occcur in this many samples
-    default: 1
     inputBinding:
       position: 102
       prefix: -n

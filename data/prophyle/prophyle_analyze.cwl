@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: Input format of assignments [auto]
-    default: auto
     inputBinding:
       position: 104
       prefix: -f
@@ -47,7 +46,6 @@ inputs:
     doc: 'statistics to use for the computation of histograms: w (default) => weighted
       assignments; u => unique assignments, non-weighted; wl => weighted assignments,
       propagated to leaves; ul => unique assignments, propagated to leaves.'
-    default: w
     inputBinding:
       position: 104
       prefix: -s

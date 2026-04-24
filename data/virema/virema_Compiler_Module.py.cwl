@@ -24,7 +24,6 @@ inputs:
     doc: Select this option for compound recombination event mapping (see manual
       for details). Enter number of nucleotides to map (must be less than Seed, 
       and greater than number of nts in MicroInDel). Default is off.
-    default: off
     inputBinding:
       position: 102
       prefix: --Compound_Handling
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove potential PCR duplicates. Default is off.
-    default: false
     inputBinding:
       position: 102
       prefix: -DeDup
@@ -44,7 +42,6 @@ inputs:
     doc: "Choose how to defuzz data: '5' to report at 5' end of fuzzy region, '3'
       to report at 3' end, or '0' to report in centre of fuzzy region. Default is
       no fuzz handling (similar to choosing Right - see Routh et al)."
-    default: no fuzz handling
     inputBinding:
       position: 102
       prefix: --Defuzz
@@ -63,7 +60,6 @@ inputs:
       - int
     doc: Size of MicroInDels - these are common artifacts of cDNA preparation. 
       See Routh et al JMB 2012. Default size is 0)
-    default: 0
     inputBinding:
       position: 102
       prefix: --MicroInDel_Length
@@ -88,7 +84,6 @@ inputs:
       - 'null'
       - boolean
     doc: Append Read Names contributing to each compiled result. Default is off.
-    default: false
     inputBinding:
       position: 102
       prefix: -ReadNamesEntry

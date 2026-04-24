@@ -27,7 +27,6 @@ inputs:
       - boolean
     doc: Add backtrace string (convert to alignments with mmseqs convertalis 
       module) [0]
-    default: false
     inputBinding:
       position: 104
       prefix: -a
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: Adjust k-mer length based on specificity (only for nucleotides) [0]
-    default: false
     inputBinding:
       position: 104
       prefix: --adjust-kmer-len
@@ -48,7 +46,6 @@ inputs:
       \                                  1: only score and end_pos\n             \
       \                     2: also start_pos and cov\n                          \
       \        3: also seq.id [0]"
-    default: 0
     inputBinding:
       position: 104
       prefix: --alignment-mode
@@ -62,7 +59,6 @@ inputs:
       \        3: also seq.id\n                                  4: only ungapped
       alignment\n                                  5: score only (output) cluster
       format [0]"
-    default: 0
     inputBinding:
       position: 104
       prefix: --alignment-output-mode
@@ -73,7 +69,6 @@ inputs:
     doc: "How to compute the alignment:\n                                  0: 3di
       alignment\n                                  1: TM alignment\n             \
       \                     2: 3Di+AA [2]"
-    default: 2
     inputBinding:
       position: 104
       prefix: --alignment-type
@@ -82,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Show up to this many alternative alignments [0]
-    default: 0
     inputBinding:
       position: 104
       prefix: --alt-ali
@@ -93,7 +87,6 @@ inputs:
     doc: "Add chain to name:\n                                  0: auto\n        \
       \                          1: always add\n                                 \
       \  [0]"
-    default: 0
     inputBinding:
       position: 104
       prefix: --chain-name-mode
@@ -104,7 +97,6 @@ inputs:
     doc: "0: Set-Cover (greedy)\n                                  1: Connected component
       (BLASTclust)\n                                  2,3: Greedy clustering by sequence
       length (CDHIT) [0]"
-    default: 0
     inputBinding:
       position: 104
       prefix: --cluster-mode
@@ -115,7 +107,6 @@ inputs:
     doc: "Cascaded clustering can cluster sequence that do not fulfill the clustering
       criteria.\n                                  Cluster reassignment corrects these
       errors [0]"
-    default: false
     inputBinding:
       position: 104
       prefix: --cluster-reassign
@@ -132,7 +123,6 @@ inputs:
       - 'null'
       - float
     doc: Weight threshold used for cluster priorization [0.900]
-    default: 0.9
     inputBinding:
       position: 104
       prefix: --cluster-weight-threshold
@@ -141,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: Correct for locally biased amino acid composition (range 0-1) [1]
-    default: 1
     inputBinding:
       position: 104
       prefix: --comp-bias-corr
@@ -150,7 +139,6 @@ inputs:
       - 'null'
       - float
     doc: Correct for locally biased amino acid composition (range 0-1) [1.000]
-    default: 1.0
     inputBinding:
       position: 104
       prefix: --comp-bias-corr-scale
@@ -159,7 +147,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write compressed output [0]
-    default: false
     inputBinding:
       position: 104
       prefix: --compressed
@@ -170,7 +157,6 @@ inputs:
     doc: "Coordinate storage mode: \n                                  1: C-alpha
       as float\n                                  2: C-alpha as difference (uint16_t)
       [2]"
-    default: 2
     inputBinding:
       position: 104
       prefix: --coord-store-mode
@@ -184,7 +170,6 @@ inputs:
       length\n                                  4: query seq. length has to be at
       least x% of target length\n                                  5: short seq. needs
       to be at least x% of the other seq. length [0]"
-    default: 0
     inputBinding:
       position: 104
       prefix: --cov-mode
@@ -194,7 +179,6 @@ inputs:
       - float
     doc: List matches above this fraction of aligned (covered) residues (see 
       --cov-mode) [0.000]
-    default: 0.0
     inputBinding:
       position: 104
       prefix: -c
@@ -203,7 +187,6 @@ inputs:
       - 'null'
       - int
     doc: 'createdb extraction mode: 0: chain 1: interface [0]'
-    default: 0
     inputBinding:
       position: 104
       prefix: --db-extraction-mode
@@ -212,7 +195,6 @@ inputs:
       - 'null'
       - int
     doc: 'Database preload mode 0: auto, 1: fread, 2: mmap, 3: mmap+touch [0]'
-    default: 0
     inputBinding:
       position: 104
       prefix: --db-load-mode
@@ -221,7 +203,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use ungapped diagonal scoring during prefilter [1]
-    default: true
     inputBinding:
       position: 104
       prefix: --diag-score
@@ -231,7 +212,6 @@ inputs:
       - float
     doc: Residues with C-beta below this threshold will be part of interface 
       [8.000]
-    default: 8.0
     inputBinding:
       position: 104
       prefix: --distance-threshold
@@ -240,7 +220,6 @@ inputs:
       - 'null'
       - float
     doc: List matches below this E-value (range 0.0-inf) [1.000E+01]
-    default: 10.0
     inputBinding:
       position: 104
       prefix: -e
@@ -249,7 +228,6 @@ inputs:
       - 'null'
       - int
     doc: Extract only exact k-mers for matching (range 0-1) [0]
-    default: 0
     inputBinding:
       position: 104
       prefix: --exact-kmer-matching
@@ -258,7 +236,6 @@ inputs:
       - 'null'
       - boolean
     doc: turn on fast exact TMscore (slow), default is approximate [0]
-    default: false
     inputBinding:
       position: 104
       prefix: --exact-tmscore
@@ -267,7 +244,6 @@ inputs:
       - 'null'
       - string
     doc: Exclude file names based on this regex [^$]
-    default: ^$
     inputBinding:
       position: 104
       prefix: --file-exclude
@@ -276,7 +252,6 @@ inputs:
       - 'null'
       - string
     doc: Include file names based on this regex [.*]
-    default: .*
     inputBinding:
       position: 104
       prefix: --file-include
@@ -285,7 +260,6 @@ inputs:
       - 'null'
       - boolean
     doc: Filter hits by seq.id. and coverage [0]
-    default: false
     inputBinding:
       position: 104
       prefix: --filter-hits
@@ -295,7 +269,6 @@ inputs:
       - boolean
     doc: Reuse tmp filse in tmp/latest folder ignoring parameters and version 
       changes [0]
-    default: false
     inputBinding:
       position: 104
       prefix: --force-reuse
@@ -320,7 +293,6 @@ inputs:
       - 'null'
       - int
     doc: Use GPU (CUDA) if possible [0]
-    default: 0
     inputBinding:
       position: 104
       prefix: --gpu
@@ -329,7 +301,6 @@ inputs:
       - 'null'
       - int
     doc: Shift k-mer hash initialization [67]
-    default: 67
     inputBinding:
       position: 104
       prefix: --hash-shift
@@ -338,7 +309,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip k-mers occurring multiple times (>=2) [0]
-    default: false
     inputBinding:
       position: 104
       prefix: --ignore-multi-kmer
@@ -347,7 +317,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include only extendable [0]
-    default: false
     inputBinding:
       position: 104
       prefix: --include-only-extendable
@@ -360,7 +329,6 @@ inputs:
       \               2: mmCIF\n                                  3: mmJSON\n    \
       \                              4: ChemComp\n                               \
       \   5: Foldcomp [0]"
-    default: 0
     inputBinding:
       position: 104
       prefix: --input-format
@@ -378,7 +346,6 @@ inputs:
       - 'null'
       - int
     doc: 'k-mer length (0: automatically set to optimum) [0]'
-    default: 0
     inputBinding:
       position: 104
       prefix: -k
@@ -387,7 +354,6 @@ inputs:
       - 'null'
       - int
     doc: k-mers per sequence [21]
-    default: 21
     inputBinding:
       position: 104
       prefix: --kmer-per-seq
@@ -405,7 +371,6 @@ inputs:
       - 'null'
       - float
     doc: accept alignments with a lddt > thr [0.0,1.0] [0.000]
-    default: 0.0
     inputBinding:
       position: 104
       prefix: --lddt-threshold
@@ -423,7 +388,6 @@ inputs:
       - int
     doc: 'Mask sequences in prefilter stage with tantan: 0: w/o low complexity masking,
       1: with low complexity masking [0]'
-    default: 0
     inputBinding:
       position: 104
       prefix: --mask
@@ -432,7 +396,6 @@ inputs:
       - 'null'
       - float
     doc: mask residues for seeding if b-factor < thr [0,100] [0.000]
-    default: 0.0
     inputBinding:
       position: 104
       prefix: --mask-bfactor-threshold
@@ -442,7 +405,6 @@ inputs:
       - int
     doc: 'Lowercase letters will be excluded from k-mer search 0: include region,
       1: exclude region [1]'
-    default: 1
     inputBinding:
       position: 104
       prefix: --mask-lower-case
@@ -451,7 +413,6 @@ inputs:
       - 'null'
       - int
     doc: Repeat letters that occure > threshold in a rwo [6]
-    default: 6
     inputBinding:
       position: 104
       prefix: --mask-n-repeat
@@ -460,7 +421,6 @@ inputs:
       - 'null'
       - float
     doc: Mask sequences is probablity is above threshold [1.000]
-    default: 1.0
     inputBinding:
       position: 104
       prefix: --mask-prob
@@ -470,7 +430,6 @@ inputs:
       - int
     doc: Maximum accepted alignments before alignment calculation for a query is
       stopped [2147483647]
-    default: 2147483647
     inputBinding:
       position: 104
       prefix: --max-accept
@@ -480,7 +439,6 @@ inputs:
       - int
     doc: Maximum depth of breadth first search in connected component clustering
       [1000]
-    default: 1000
     inputBinding:
       position: 104
       prefix: --max-iterations
@@ -490,7 +448,6 @@ inputs:
       - int
     doc: Maximum rejected alignments before alignment calculation for a query is
       stopped [2147483647]
-    default: 2147483647
     inputBinding:
       position: 104
       prefix: --max-rejected
@@ -499,7 +456,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum sequence length [65535]
-    default: 65535
     inputBinding:
       position: 104
       prefix: --max-seq-len
@@ -509,7 +465,6 @@ inputs:
       - int
     doc: Maximum results per query sequence allowed to pass the prefilter 
       (affects sensitivity) [300]
-    default: 300
     inputBinding:
       position: 104
       prefix: --max-seqs
@@ -518,7 +473,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment length (range 0-INT_MAX) [0]
-    default: 0
     inputBinding:
       position: 104
       prefix: --min-aln-len
@@ -528,7 +482,6 @@ inputs:
       - float
     doc: List matches above this sequence identity (for clustering) (range 
       0.0-1.0) [0.000]
-    default: 0.0
     inputBinding:
       position: 104
       prefix: --min-seq-id
@@ -537,7 +490,6 @@ inputs:
       - 'null'
       - int
     doc: Accept only matches with ungapped alignment score above threshold [30]
-    default: 30
     inputBinding:
       position: 104
       prefix: --min-ungapped-score
@@ -563,7 +515,6 @@ inputs:
       - 'null'
       - boolean
     doc: Delete temporary files [1]
-    default: true
     inputBinding:
       position: 104
       prefix: --remove-tmp-files
@@ -576,7 +527,6 @@ inputs:
       \                           2: local alignment\n                           \
       \       3: global alignment\n                                  4: longest alignment
       fulfilling window quality criterion [0]"
-    default: 0
     inputBinding:
       position: 104
       prefix: --rescore-mode
@@ -593,7 +543,6 @@ inputs:
       - 'null'
       - float
     doc: 'Sensitivity: 1.0 faster; 4.0 fast; 7.5 sensitive [4.000]'
-    default: 4.0
     inputBinding:
       position: 104
       prefix: -s
@@ -602,7 +551,6 @@ inputs:
       - 'null'
       - int
     doc: '0: alignment length 1: shorter, 2: longer sequence [0]'
-    default: 0
     inputBinding:
       position: 104
       prefix: --seq-id-mode
@@ -612,7 +560,6 @@ inputs:
       - int
     doc: 'Type of score used for clustering. 1: alignment score 2: sequence identity
       [2]'
-    default: 2
     inputBinding:
       position: 104
       prefix: --similarity-type
@@ -621,7 +568,6 @@ inputs:
       - 'null'
       - boolean
     doc: Switch from cascaded to simple clustering workflow [0]
-    default: false
     inputBinding:
       position: 104
       prefix: --single-step-clustering
@@ -630,7 +576,6 @@ inputs:
       - 'null'
       - int
     doc: sort by bits*sqrt(alnlddt*alntmscore) [1]
-    default: 1
     inputBinding:
       position: 104
       prefix: --sort-by-structure-bits
@@ -640,7 +585,6 @@ inputs:
       - int
     doc: 'Sort results: 0: no sorting, 1: sort by E-value (Alignment) or seq.id. (Hamming)
       [0]'
-    default: 0
     inputBinding:
       position: 104
       prefix: --sort-results
@@ -649,7 +593,6 @@ inputs:
       - 'null'
       - int
     doc: '0: use consecutive positions in k-mers; 1: use spaced k-mers [1]'
-    default: 1
     inputBinding:
       position: 104
       prefix: --spaced-kmer-mode
@@ -667,7 +610,6 @@ inputs:
       - int
     doc: 'Split input into N equally distributed chunks. 0: set the best split automatically
       [0]'
-    default: 0
     inputBinding:
       position: 104
       prefix: --split
@@ -677,7 +619,6 @@ inputs:
       - string
     doc: Set max memory per split. E.g. 800B, 5K, 10M, 1G. Default (0) to all 
       available system memory [0]
-    default: '0'
     inputBinding:
       position: 104
       prefix: --split-memory-limit
@@ -687,7 +628,6 @@ inputs:
       - int
     doc: '0: split target db; 1: split query db; 2: auto, depending on main memory
       [2]'
-    default: 2
     inputBinding:
       position: 104
       prefix: --split-mode
@@ -704,7 +644,6 @@ inputs:
       - 'null'
       - int
     doc: 'target search mode (0: regular k-mer, 1: similar k-mer) [0]'
-    default: 0
     inputBinding:
       position: 104
       prefix: --target-search-mode
@@ -721,7 +660,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU-cores used (all by default) [20]
-    default: 20
     inputBinding:
       position: 104
       prefix: --threads
@@ -730,7 +668,6 @@ inputs:
       - 'null'
       - boolean
     doc: turn on fast search in TM-align [1]
-    default: true
     inputBinding:
       position: 104
       prefix: --tmalign-fast
@@ -740,7 +677,6 @@ inputs:
       - int
     doc: 'order hits by 0: (qTM+tTM)/2, 1: qTM, 2: tTM, 3: min(qTM,tTM) 4: max(qTM,tTM)
       [0]'
-    default: 0
     inputBinding:
       position: 104
       prefix: --tmalign-hit-order
@@ -749,7 +685,6 @@ inputs:
       - 'null'
       - float
     doc: accept alignments with a tmsore > thr [0.0,1.0] [0.000]
-    default: 0.0
     inputBinding:
       position: 104
       prefix: --tmscore-threshold
@@ -758,7 +693,6 @@ inputs:
       - 'null'
       - int
     doc: '0: alignment, 1: query 2: target length [0]'
-    default: 0
     inputBinding:
       position: 104
       prefix: --tmscore-threshold-mode
@@ -767,7 +701,6 @@ inputs:
       - 'null'
       - int
     doc: 'Verbosity level: 0: quiet, 1: +errors, 2: +warnings, 3: +info [3]'
-    default: 3
     inputBinding:
       position: 104
       prefix: -v
@@ -785,7 +718,6 @@ inputs:
       - boolean
     doc: write .lookup file containing mapping from internal id, fasta id and 
       file number [1]
-    default: true
     inputBinding:
       position: 104
       prefix: --write-lookup
@@ -795,7 +727,6 @@ inputs:
       - boolean
     doc: write _mapping file containing mapping from internal id to taxonomic 
       identifier [0]
-    default: false
     inputBinding:
       position: 104
       prefix: --write-mapping
@@ -805,7 +736,6 @@ inputs:
       - int
     doc: Maximal allowed difference between score values before alignment is 
       truncated  (nucleotide alignment only) [40]
-    default: 40
     inputBinding:
       position: 104
       prefix: --zdrop

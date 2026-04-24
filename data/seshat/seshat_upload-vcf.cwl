@@ -10,7 +10,6 @@ inputs:
       - string
     doc: 'The human genome assembly of the input VCF. Available options: (hg17, hg19,
       hg38).'
-    default: hg38
     inputBinding:
       position: 101
       prefix: --assembly
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: The Seshat batch annotation URL.
-    default: http://vps338341.ovh.net/batch_analysis
     inputBinding:
       position: 101
       prefix: --url
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Seconds to wait before raising an exception.
-    default: 200
     inputBinding:
       position: 101
       prefix: --wait-for

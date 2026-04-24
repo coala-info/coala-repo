@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: How should the annotation file be used?
-    default: extract
     inputBinding:
       position: 102
       prefix: -a

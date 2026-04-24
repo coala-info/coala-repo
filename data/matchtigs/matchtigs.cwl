@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: The command used to run blossom5
-    default: blossom5
     inputBinding:
       position: 101
       prefix: --blossom5-command
@@ -32,7 +31,6 @@ inputs:
     doc: A value from 0-9 indicating the level of compression used when output. 
       0 means no compression but fast output, while 9 means "take as long as you
       like". This only has an effect for output files that end in ".gz"
-    default: 6
     inputBinding:
       position: 101
       prefix: --compression-level
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: The heap data structure used by Dijkstra's algorithm
-    default: StdBinaryHeap
     inputBinding:
       position: 101
       prefix: --dijkstra-heap-type
@@ -67,7 +64,6 @@ inputs:
       - string
     doc: The data structure to store the weight of visited nodes in Dijkstra's 
       algorithm
-    default: HashbrownHashMap
     inputBinding:
       position: 101
       prefix: --dijkstra-node-weight-array-type
@@ -76,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: The performance data collector used by Dijkstra's algorithm
-    default: None
     inputBinding:
       position: 101
       prefix: --dijkstra-performance-data-type
@@ -91,7 +86,6 @@ inputs:
       nodes, `FACTOR` is the factor given by this parameter, and `THREADS` is 
       the number of threads. The number of threads decreases in each stage of 
       execution as described in `--dijkstra-staged-parallelism-divisor`
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --dijkstra-resource-limit-factor
@@ -144,7 +138,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: Info
     inputBinding:
       position: 101
       prefix: --log-level
@@ -153,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads used to compute greedy matchtigs and matchtigs
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

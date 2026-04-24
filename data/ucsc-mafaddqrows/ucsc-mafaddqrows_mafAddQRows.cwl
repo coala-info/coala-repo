@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - float
     doc: value to divide Q value by
-    default: 5
     inputBinding:
       position: 103
       prefix: --divisor

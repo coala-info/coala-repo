@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Specify directory for output files to be deposited [Default: Working Directory]'
-    default: Working Directory
     inputBinding:
       position: 101
       prefix: -o
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: 'Specify Number of Threads For Feature Counts [Default: 1]'
-    default: 1
     inputBinding:
       position: 101
       prefix: -T
@@ -55,7 +53,6 @@ inputs:
       \                    SQR --> Square root\n                            We recommend
       using a scaled log transformation for initial testing.\n                   \
       \         Other transformations can be useful on a case by case basis"
-    default: log
     inputBinding:
       position: 101
       prefix: --transform

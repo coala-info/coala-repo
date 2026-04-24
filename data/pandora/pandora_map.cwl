@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - float
     doc: Estimated error rate for reads
-    default: 0.11
     inputBinding:
       position: 103
       prefix: --error-rate
@@ -56,7 +55,6 @@ inputs:
       - string
     doc: Estimated length of the genome - used for coverage estimation. Can pass string
       such as 4.4m, 100k etc.
-    default: '5000000'
     inputBinding:
       position: 103
       prefix: --genome-size
@@ -73,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum genotype confidence (GT_CONF) required to make a call
-    default: 1
     inputBinding:
       position: 103
       prefix: --gt-conf
@@ -83,7 +80,6 @@ inputs:
       - float
     doc: When genotyping, assume that coverage on alternative alleles arises as a
       result of an error process with rate -E.
-    default: 0.01
     inputBinding:
       position: 103
       prefix: --gt-error-rate
@@ -101,7 +97,6 @@ inputs:
       - int
     doc: Maximum number of kmers to average over when selecting the maximum likelihood
       path
-    default: 100
     inputBinding:
       position: 103
       prefix: --kmer-avg
@@ -110,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size for (w,k)-minimizers
-    default: 15
     inputBinding:
       position: 103
       prefix: -k
@@ -144,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum coverage of reads to accept
-    default: 300
     inputBinding:
       position: 103
       prefix: --max-covg
@@ -153,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance (bp) between consecutive hits within a cluster
-    default: 250
     inputBinding:
       position: 103
       prefix: --max-diff
@@ -162,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: Hard threshold for the minimum allele coverage allowed when genotyping
-    default: 0
     inputBinding:
       position: 103
       prefix: -a
@@ -172,7 +163,6 @@ inputs:
       - int
     doc: Minimum allele coverage, as a fraction of the expected coverage, allowed
       when genotyping
-    default: 0
     inputBinding:
       position: 103
       prefix: -F
@@ -182,7 +172,6 @@ inputs:
       - int
     doc: Minimum size of a cluster of hits between a read and a loci to consider the
       loci present
-    default: 10
     inputBinding:
       position: 103
       prefix: --min-cluster-size
@@ -192,7 +181,6 @@ inputs:
       - int
     doc: Minimum difference in coverage on a site required between the first and second
       maximum likelihood path
-    default: 0
     inputBinding:
       position: 103
       prefix: -D
@@ -201,7 +189,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum required total coverage for a site when genotyping
-    default: 0
     inputBinding:
       position: 103
       prefix: -s
@@ -227,7 +214,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of threads to use
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads
@@ -254,7 +240,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for (w,k)-minimizers (must be <=k)
-    default: 14
     inputBinding:
       position: 103
       prefix: -w

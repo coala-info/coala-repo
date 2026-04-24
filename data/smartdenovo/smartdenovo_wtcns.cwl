@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: deletion, used in rounds after first'
-    default: -3
     inputBinding:
       position: 101
       prefix: -D
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: gap extension'
-    default: -1
     inputBinding:
       position: 101
       prefix: -E
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: insertion or deletion, used in first round'
-    default: -3
     inputBinding:
       position: 101
       prefix: -O
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: insertion, used in rounds after first'
-    default: -2
     inputBinding:
       position: 101
       prefix: -I
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: match'
-    default: 2
     inputBinding:
       position: 101
       prefix: -M
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: mismatch'
-    default: -5
     inputBinding:
       position: 101
       prefix: -X
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: read end clipping'
-    default: -10
     inputBinding:
       position: 101
       prefix: -T
@@ -80,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Basic bandwidth in refine-alignment
-    default: 8
     inputBinding:
       position: 101
       prefix: -r
@@ -90,7 +82,6 @@ inputs:
       - int
     doc: Number of iterations for consensus calling, the larger, the accurater, 
       the slower
-    default: 6
     inputBinding:
       position: 101
       prefix: -n
@@ -99,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Index of current job (0-based)
-    default: 0
     inputBinding:
       position: 101
       prefix: -p
@@ -147,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum bandwidth
-    default: 3200
     inputBinding:
       position: 101
       prefix: -W
@@ -156,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum bandwidth at ending extension
-    default: 800
     inputBinding:
       position: 101
       prefix: -e
@@ -165,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum variant of uncompressed sizes between two matched zmer
-    default: 2
     inputBinding:
       position: 101
       prefix: -l
@@ -174,7 +161,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum alignment identity
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -m
@@ -183,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum bandwidth, iteratively doubled to maximum
-    default: 50
     inputBinding:
       position: 101
       prefix: -w
@@ -192,7 +177,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of seeding region within zmer window
-    default: 200
     inputBinding:
       position: 101
       prefix: -R
@@ -209,7 +193,6 @@ inputs:
       - 'null'
       - float
     doc: Penalty of alternative edge in calling consensus
-    default: 0.2
     inputBinding:
       position: 101
       prefix: -N
@@ -218,7 +201,6 @@ inputs:
       - 'null'
       - float
     doc: Penalty of backbone edge in calling consensus
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -Y
@@ -227,7 +209,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 16
     inputBinding:
       position: 101
       prefix: -t
@@ -236,7 +217,6 @@ inputs:
       - 'null'
       - int
     doc: Total parallel jobs
-    default: 1
     inputBinding:
       position: 101
       prefix: -P
@@ -253,7 +233,6 @@ inputs:
       - 'null'
       - int
     doc: Zmer size, 5 <= <-z> <= 16
-    default: 10
     inputBinding:
       position: 101
       prefix: -z
@@ -262,7 +241,6 @@ inputs:
       - 'null'
       - int
     doc: Zmer window
-    default: 800
     inputBinding:
       position: 101
       prefix: -y

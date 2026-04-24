@@ -11,7 +11,6 @@ inputs:
       - type: array
         items: float
     doc: Grid of alpha to search for (default is 0, 0.5)
-    default:
       - 0.0
       - 0.5
     inputBinding:
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum base quality (higher BQ will be capped)
-    default: 40
     inputBinding:
       position: 101
       prefix: --cap-BQ
@@ -31,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: Prior of doublet
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --doublet-prior
@@ -40,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: SAM/BAM FLAGs to be excluded
-    default: 3844
     inputBinding:
       position: 101
       prefix: --excl-flag
@@ -49,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: FORMAT field to extract the genotype, likelihood, or posterior from
-    default: GP
     inputBinding:
       position: 101
       prefix: --field
@@ -58,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: Genotype error rate (must be used with --field GT)
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --geno-error
@@ -76,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality to consider (lower BQ will be skipped)
-    default: 13
     inputBinding:
       position: 101
       prefix: --min-BQ
@@ -85,7 +78,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum call rate
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --min-callrate
@@ -94,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum minor allele frequency
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-mac
@@ -103,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality to consider (lower MQ will be ignored)
-    default: 20
     inputBinding:
       position: 101
       prefix: --min-MQ
@@ -113,7 +103,6 @@ inputs:
       - int
     doc: Minimum number of SNPs with coverage for a droplet/cell to be 
       considered
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-snp
@@ -122,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum distance to the tail (lower will be ignored)
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-TD
@@ -131,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of total reads for a droplet/cell to be considered
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-total
@@ -141,7 +128,6 @@ inputs:
       - int
     doc: Minimum number of unique reads (determined by UMI/SNP pair) for a 
       droplet/cell to be considered
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-uniq
@@ -158,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: Verbose message frequency for SAM/BAM/CRAM
-    default: 1000000
     inputBinding:
       position: 101
       prefix: --sam-verbose
@@ -185,7 +170,6 @@ inputs:
       - string
     doc: Tag representing readgroup or cell barcodes, in the case to partition 
       the BAM file into multiple groups. For 10x genomics, use CB
-    default: CB
     inputBinding:
       position: 101
       prefix: --tag-group
@@ -194,7 +178,6 @@ inputs:
       - 'null'
       - string
     doc: Tag representing UMIs. For 10x genomiucs, use UB
-    default: UB
     inputBinding:
       position: 101
       prefix: --tag-UMI
@@ -212,7 +195,6 @@ inputs:
       - 'null'
       - int
     doc: Verbose message frequency for VCF/BCF
-    default: 10000
     inputBinding:
       position: 101
       prefix: --vcf-verbose
@@ -221,7 +203,6 @@ inputs:
       - 'null'
       - boolean
     doc: Writing the (HUGE) pair file
-    default: false
     inputBinding:
       position: 101
       prefix: --write-pair

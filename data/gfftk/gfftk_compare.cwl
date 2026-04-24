@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: write parsing errors to stderr
-    default: false
     inputBinding:
       position: 101
       prefix: --debug

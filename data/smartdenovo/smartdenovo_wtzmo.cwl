@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: gap extension'
-    default: -1
     inputBinding:
       position: 101
       prefix: -E
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: insertion or deletion'
-    default: -3
     inputBinding:
       position: 101
       prefix: -O
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: match'
-    default: 2
     inputBinding:
       position: 101
       prefix: -M
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: mismatch'
-    default: -5
     inputBinding:
       position: 101
       prefix: -X
@@ -47,7 +43,6 @@ inputs:
       - int
     doc: 'Alignment penalty: read end clipping, 0: distable HSP extension, otherwise
       set to -50 or other'
-    default: -50
     inputBinding:
       position: 101
       prefix: -T
@@ -56,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Build kmer index in multiple iterations to save memory
-    default: 1
     inputBinding:
       position: 101
       prefix: -G
@@ -65,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Index of current job (0-based)
-    default: 0
     inputBinding:
       position: 101
       prefix: -p
@@ -74,7 +67,6 @@ inputs:
       - 'null'
       - File
     doc: Reads from this file(s) are to be exclued, one line for one read name
-    default: 'NULL'
     inputBinding:
       position: 101
       prefix: -F
@@ -83,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: Filter high frequency kmers, maybe repetitive
-    default: 0
     inputBinding:
       position: 101
       prefix: -K
@@ -92,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Filter high frequency z-mers, maybe repetitive
-    default: 64
     inputBinding:
       position: 101
       prefix: -Z
@@ -109,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Option of homopolymer compression
-    default: 3
     inputBinding:
       position: 101
       prefix: -H
@@ -118,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: Jack knife of original read length
-    default: 0
     inputBinding:
       position: 101
       prefix: -J
@@ -127,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: Kmer size, 5 <= <-k> <= 32
-    default: 16
     inputBinding:
       position: 101
       prefix: -k
@@ -136,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: Limit number of best candidates per read
-    default: 500
     inputBinding:
       position: 101
       prefix: -A
@@ -145,7 +131,6 @@ inputs:
       - 'null'
       - int
     doc: Limit number of best overlaps per read
-    default: 100
     inputBinding:
       position: 101
       prefix: -B
@@ -155,7 +140,6 @@ inputs:
       - File
     doc: Load pairs of read name from file, will avoid to calculate overlap them
       again
-    default: 'NULL'
     inputBinding:
       position: 101
       prefix: -L
@@ -179,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum bandwidth
-    default: 3200
     inputBinding:
       position: 101
       prefix: -W
@@ -188,7 +171,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum bandwidth at ending extension
-    default: 800
     inputBinding:
       position: 101
       prefix: -e
@@ -197,7 +179,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum variant of uncompressed sizes between two matched hz-kmer
-    default: 2
     inputBinding:
       position: 101
       prefix: -l
@@ -206,7 +187,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum alignment identity
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -m
@@ -215,7 +195,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment score
-    default: 200
     inputBinding:
       position: 101
       prefix: -s
@@ -224,7 +203,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum bandwidth, iteratively doubled to maximum
-    default: 50
     inputBinding:
       position: 101
       prefix: -w
@@ -233,7 +211,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of seeding region within zmer window
-    default: 200
     inputBinding:
       position: 101
       prefix: -R
@@ -242,7 +219,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of total seeding region for kmer windows
-    default: 300
     inputBinding:
       position: 101
       prefix: -d
@@ -251,7 +227,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of total seeding region for zmer windows
-    default: 300
     inputBinding:
       position: 101
       prefix: -r
@@ -294,7 +269,6 @@ inputs:
       - 'null'
       - int
     doc: Subsampling kmers, 1/<-S> kmers are indexed
-    default: 4
     inputBinding:
       position: 101
       prefix: -S
@@ -303,7 +277,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -313,7 +286,6 @@ inputs:
       - int
     doc: THreshold of seed-window coverage along query, will be used to decrease
       weight of repetitive region
-    default: 100
     inputBinding:
       position: 101
       prefix: -q
@@ -322,7 +294,6 @@ inputs:
       - 'null'
       - int
     doc: Total parallel jobs
-    default: 1
     inputBinding:
       position: 101
       prefix: -P
@@ -348,7 +319,6 @@ inputs:
       - 'null'
       - int
     doc: Smaller kmer size (z-mer), 5 <= <-z> <= 16
-    default: 10
     inputBinding:
       position: 101
       prefix: -z
@@ -357,7 +327,6 @@ inputs:
       - 'null'
       - int
     doc: Zmer window
-    default: 800
     inputBinding:
       position: 101
       prefix: -y

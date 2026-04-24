@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - float
     doc: Proportion of sink sample in unknown.
-    default: 0.1
     inputBinding:
       position: 102
       prefix: --alpha
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Number of dimensions to retain for dimension reduction.
-    default: 2
     inputBinding:
       position: 102
       prefix: --dim
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: Distance method. (unweighted_unifrac | weighted_unifrac)
-    default: weighted_unifrac
     inputBinding:
       position: 102
       prefix: --distance
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - File
     doc: Output embedding csv file.
-    default: None
     inputBinding:
       position: 102
       prefix: --embed
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Number of fold for K-fold cross validation in parameter optimization.
-    default: 5
     inputBinding:
       position: 102
       prefix: --kfold
@@ -59,7 +54,6 @@ inputs:
       - 'null'
       - File
     doc: Path to labels csv file.
-    default: data/modern_gut_microbiomes_labels.csv
     inputBinding:
       position: 102
       prefix: --labels
@@ -68,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: Embedding Method. TSNE, MDS, or UMAP.
-    default: TSNE
     inputBinding:
       position: 102
       prefix: --method
@@ -77,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: Numbers of neigbors if KNN ML classication (integer or 'all').
-    default: 0 (chosen by CV)
     inputBinding:
       position: 102
       prefix: --neighbors
@@ -86,7 +78,6 @@ inputs:
       - 'null'
       - string
     doc: Normalization method (RLE | Subsample | GMPR | None).
-    default: GMPR
     inputBinding:
       position: 102
       prefix: --normalization
@@ -95,7 +86,6 @@ inputs:
       - 'null'
       - string
     doc: Output file basename.
-    default: <sample_basename>.sourcepredict.csv
     inputBinding:
       position: 102
       prefix: --output
@@ -104,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for random generator.
-    default: 42
     inputBinding:
       position: 102
       prefix: --seed
@@ -113,7 +102,6 @@ inputs:
       - 'null'
       - File
     doc: Path to source csv file.
-    default: data/modern_gut_microbiomes_sources.csv
     inputBinding:
       position: 102
       prefix: --sources
@@ -122,7 +110,6 @@ inputs:
       - 'null'
       - string
     doc: Taxonomic rank to use for Unifrac distances.
-    default: species
     inputBinding:
       position: 102
       prefix: --tax_rank
@@ -131,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for parallel processing.
-    default: 2
     inputBinding:
       position: 102
       prefix: --threads
@@ -140,7 +126,6 @@ inputs:
       - 'null'
       - string
     doc: Sample weight function for KNN prediction (distance | uniform).
-    default: distance.
     inputBinding:
       position: 102
       prefix: --weights

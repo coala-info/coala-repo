@@ -17,7 +17,6 @@ inputs:
     doc: Optional flag to export Nodegraph file (bloom filter) containing all 
       k-mers in the training database. Saved in same location as out_file. This 
       is to be used with QueryDNADatabase.py
-    default: false
     inputBinding:
       position: 102
       prefix: --intersect_nodegraph
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size
-    default: 21
     inputBinding:
       position: 102
       prefix: --k_size
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Number of hashes to use.
-    default: 500
     inputBinding:
       position: 102
       prefix: --num_hashes
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Prime (for modding hashes)
-    default: 9999999999971
     inputBinding:
       position: 102
       prefix: --prime
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 20
     inputBinding:
       position: 102
       prefix: --threads

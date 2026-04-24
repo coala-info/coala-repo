@@ -37,7 +37,6 @@ inputs:
     type: string?
     doc: Name of the output file. .fastq.gz will be appended to the reads. Default "fastplong_out"
     label: Output filename (base)
-    default: "fastplong_out"
   input_file:
     type: File
     inputBinding:
@@ -184,21 +183,18 @@ inputs:
     doc: "Quality filtering is enabled by default. If this option is specified, quality filtering is disabled"
   qualified_quality_phred:
     type: int?
-    default: 8
     inputBinding:
       prefix: "--qualified_quality_phred"
     label: Qualified_quality_phred
     doc: "The quality value that a base is qualified. Default 8 means phred quality >=Q8 is qualified."
   unqualified_percent_limit:
     type: int?
-    default: 40
     inputBinding:
       prefix: "--unqualified_percent_limit"
     label: Unqualified_percent_limit
     doc: "How many percents of bases are allowed to be unqualified (0~100). Default 40 means 40%"
   n_base_limit:
     type: int?
-    default: 5
     inputBinding:
       prefix: "--n_base_limit"
     label: N_base_limit
@@ -217,14 +213,12 @@ inputs:
     doc: "Length filtering is enabled by default. If this option is specified, length filtering is disabled"
   length_required:
     type: int?
-    default: 15
     inputBinding:
       prefix: "--length_required"
     label: Length required
     doc: "Reads shorter than length required will be discarded. Default 15"
   length_limit:
     type: int?
-    default: 0
     inputBinding:
       prefix: "--length_limit"
     label: Length limit
@@ -237,7 +231,6 @@ inputs:
     doc: "Enable low complexity filter. The complexity is defined as the percentage of base that is different from its next base (base[i] != base[i+1])."
   complexity_threshold:
     type: int?
-    default: 30
     inputBinding:
       prefix: "--complexity_threshold"
     label: Complexity threshold
@@ -249,7 +242,6 @@ inputs:
     doc: "Should be quoted with ' or \", default is \"fastplong report\" (string [=fastplong report])"
   threads:
     type: int?
-    default: 3
     inputBinding:
       prefix: "--thread"
     label: Threads

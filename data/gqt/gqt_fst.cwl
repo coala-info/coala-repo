@@ -47,7 +47,6 @@ inputs:
       - 'null'
       - Directory
     doc: tmp direcory name for remote files
-    default: ./
     inputBinding:
       position: 101
       prefix: -t

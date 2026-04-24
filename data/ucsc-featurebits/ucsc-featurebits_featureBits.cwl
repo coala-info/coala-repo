@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Bin overlap for generating counts in bin file
-    default: 250000
     inputBinding:
       position: 103
       prefix: -binOverlap
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Bin size for generating counts in bin file
-    default: 500000
     inputBinding:
       position: 103
       prefix: -binSize
@@ -125,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size to output
-    default: 1
     inputBinding:
       position: 103
       prefix: -minSize

@@ -50,7 +50,6 @@ inputs:
     type: float
     doc: Minimum threshold detectable, expressed in percentage (default 0.1)
     label: Minimum threshold
-    default: 0.1
   sample:
     type: string
     doc: Name of the sample being analysed
@@ -67,7 +66,6 @@ inputs:
     type: int?
     doc: number of threads to use for computational processes
     label: number of threads
-    default: 2
   # metadata:
   #   type: File?
   #   doc: UNLOCK assay metadata file
@@ -76,7 +74,6 @@ inputs:
     type: boolean?
     doc: PICRUSt2 flag to indicate that stratified tables should be generated at all steps (will increase run-time).
     label: Stratified picrust2 tables
-    default: false
 
   destination:
     type: string?

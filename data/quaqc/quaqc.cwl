@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: Filename extension for bedGraphs.
-    default: .bedGraph.gz
     inputBinding:
       position: 102
       prefix: --bedGraph-ext
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Resize reads (centered on the 5-prime end).
-    default: 100
     inputBinding:
       position: 102
       prefix: --bedGraph-qlen
@@ -74,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: Filename extension for BED files.
-    default: .bed.gz
     inputBinding:
       position: 102
       prefix: --bed-ext
@@ -155,7 +152,6 @@ inputs:
       - 'null'
       - string
     doc: Extension of new BAM.
-    default: .filt.bam
     inputBinding:
       position: 102
       prefix: --keep-ext
@@ -172,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: Min read MAPQ score.
-    default: 30
     inputBinding:
       position: 102
       prefix: --mapq
@@ -181,7 +176,6 @@ inputs:
       - 'null'
       - int
     doc: Max base depth for read depth histogram.
-    default: 100000
     inputBinding:
       position: 102
       prefix: --max-depth
@@ -190,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: Max fragment length for histogram.
-    default: --max-flen
     inputBinding:
       position: 102
       prefix: --max-fhist
@@ -199,7 +192,6 @@ inputs:
       - 'null'
       - int
     doc: Max fragment length.
-    default: 2000
     inputBinding:
       position: 102
       prefix: --max-flen
@@ -208,7 +200,6 @@ inputs:
       - 'null'
       - int
     doc: Max alignment length for histogram.
-    default: --max-qlen
     inputBinding:
       position: 102
       prefix: --max-qhist
@@ -217,7 +208,6 @@ inputs:
       - 'null'
       - int
     doc: Max alignment length.
-    default: 250
     inputBinding:
       position: 102
       prefix: --max-qlen
@@ -226,7 +216,6 @@ inputs:
       - 'null'
       - int
     doc: Min fragment length.
-    default: 15
     inputBinding:
       position: 102
       prefix: --min-flen
@@ -235,7 +224,6 @@ inputs:
       - 'null'
       - int
     doc: Min alignment length.
-    default: 15
     inputBinding:
       position: 102
       prefix: --min-qlen
@@ -244,7 +232,6 @@ inputs:
       - 'null'
       - string
     doc: Mitochondria references names.
-    default: chrM,ChrM,Mt,MT,MtDNA,mit,Mito,mitochondria,mitochondrion
     inputBinding:
       position: 102
       prefix: --mitochondria
@@ -301,7 +288,6 @@ inputs:
       - 'null'
       - string
     doc: Filename extension for output files.
-    default: .quaqc.txt
     inputBinding:
       position: 102
       prefix: --output-ext
@@ -318,7 +304,6 @@ inputs:
       - 'null'
       - string
     doc: Plastid reference names.
-    default: chrC,ChrC,Pt,PT,Pltd,Chloro,chloroplast
     inputBinding:
       position: 102
       prefix: --plastids
@@ -407,7 +392,6 @@ inputs:
       - 'null'
       - int
     doc: Number of worker threads. Max one per sample.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -424,7 +408,6 @@ inputs:
       - 'null'
       - int
     doc: Change the global Tn5 shift for forward reads.
-    default: 4
     inputBinding:
       position: 102
       prefix: --tn5-fwd
@@ -433,7 +416,6 @@ inputs:
       - 'null'
       - int
     doc: Change the global Tn5 shift for reverse reads.
-    default: 5
     inputBinding:
       position: 102
       prefix: --tn5-rev
@@ -450,7 +432,6 @@ inputs:
       - 'null'
       - int
     doc: Resize reads (centered on the 5p end) for pileup.
-    default: 100
     inputBinding:
       position: 102
       prefix: --tss-qlen
@@ -459,7 +440,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the TSS region for pileup.
-    default: 2001
     inputBinding:
       position: 102
       prefix: --tss-size

@@ -59,7 +59,6 @@ inputs:
       order when reading and writing hyb\n                        records. As the
       preferred alternative to using this\n                        setting, the --custom_flags
       argument can be be used to\n                        supply custom allowed flags."
-    default: false
     inputBinding:
       position: 103
       prefix: --allow_undefined_flags
@@ -69,7 +68,6 @@ inputs:
       - boolean
     doc: "Allow unknown segment types when assigning segment\n                   \
       \     types."
-    default: false
     inputBinding:
       position: 103
       prefix: --allow_unknown_seg_types
@@ -79,7 +77,6 @@ inputs:
       - int
     doc: "For DynamicFoldRecords, allowed number of mismatches\n                 \
       \       with a HybRecord."
-    default: 0
     inputBinding:
       position: 103
       prefix: --allowed_mismatches
@@ -90,7 +87,6 @@ inputs:
         items: string
     doc: "Custom flags to allow in addition to those specified\n                 \
       \       in the hybkit specification."
-    default: []
     inputBinding:
       position: 103
       prefix: --custom_flags
@@ -110,7 +106,6 @@ inputs:
       \               \"allowed_mismatches\" setting; \"energy_mismatch\": Error\n\
       \                        when a mismatch exists between HybRecord and\n    \
       \                    FoldRecord energy values."
-    default:
       - hybrecord_indel
       - foldrecord_nofold
       - max_mismatch
@@ -129,7 +124,6 @@ inputs:
       \          \"warn_return\": Print a warning and return the\n               \
       \         error_value ; \"return\": Return the error value with no\n       \
       \                 program output. record is encountered."
-    default: raise
     inputBinding:
       position: 103
       prefix: --error_mode
@@ -141,7 +135,6 @@ inputs:
     doc: "Types of evaluations to perform on input hyb file.\n                   \
       \     (Note: evaluations can be combined, such as \"--\n                   \
       \     eval_types type mirna\")"
-    default:
       - type
     inputBinding:
       position: 103
@@ -152,7 +145,6 @@ inputs:
       - string
     doc: "Placeholder character/string for missing data for\n                    \
       \    reading/writing fold records."
-    default: .
     inputBinding:
       position: 103
       prefix: --fold_placeholder
@@ -162,7 +154,6 @@ inputs:
       - string
     doc: "placeholder character/string for missing data in hyb\n                 \
       \       files."
-    default: .
     inputBinding:
       position: 103
       prefix: --hyb_placeholder
@@ -175,7 +166,6 @@ inputs:
       \               to infer the number of contained read counts. When set\n   \
       \                     to True, the identifiers will be parsed as:\n        \
       \                \"<read_id>_<read_count>\""
-    default: false
     inputBinding:
       position: 103
       prefix: --hybformat_id
@@ -187,7 +177,6 @@ inputs:
       \     with identifiers that contain sequence type and other\n              \
       \          sequence information. When set to True, all hyb file\n          \
       \              identifiers will be parsed as:\n                        \"<gene_id>_<transcript_id>_<gene_name>_<seg_type>\""
-    default: false
     inputBinding:
       position: 103
       prefix: --hybformat_ref
@@ -203,7 +192,6 @@ inputs:
       \                        to the next iteration; \"skip\": Continue to the next\n\
       \                        iteration without any output; \"return\": return the\n\
       \                        value without any error output;"
-    default: warn_skip
     inputBinding:
       position: 103
       prefix: --iter_error_mode
@@ -215,7 +203,6 @@ inputs:
       \     Limited as several sequential skips usually indicates\n              \
       \          an issue with record formatting or a desynchronization\n        \
       \                between files."
-    default: 100
     inputBinding:
       position: 103
       prefix: --max_sequential_skips
@@ -225,7 +212,6 @@ inputs:
       - type: array
         items: string
     doc: '"seg_type" fields identifying a miRNA'
-    default:
       - miRNA
       - microRNA
     inputBinding:
@@ -247,7 +233,6 @@ inputs:
     doc: "Suffix to add to the name of output files, before any\n                \
       \        file- or analysis-specific suffixes. The file-type\n              \
       \          appropriate suffix will be added automatically."
-    default: _evaluated
     inputBinding:
       position: 103
       prefix: --out_suffix
@@ -257,7 +242,6 @@ inputs:
       - boolean
     doc: "Re-order flags to the hybkit-specification order when\n                \
       \        writing hyb records."
-    default: true
     inputBinding:
       position: 103
       prefix: --reorder_flags
@@ -271,7 +255,6 @@ inputs:
       \                    requires a sequence match to the \"dynamic\" annotated\n\
       \                        regions of a HybRecord, and may be shorter/longer than\n\
       \                        the original sequence."
-    default: static
     inputBinding:
       position: 103
       prefix: --seq_type
@@ -280,7 +263,6 @@ inputs:
       - 'null'
       - boolean
     doc: Set "dataset" flag to value of the input file name.
-    default: false
     inputBinding:
       position: 103
       prefix: --set_dataset
@@ -289,7 +271,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print no output during run.
-    default: false
     inputBinding:
       position: 103
       prefix: --silent
@@ -300,7 +281,6 @@ inputs:
     doc: "Segment-type finding method to use for type\n                        evaluation.
       For a description of the different\n                        methods, see the
       HybRecord documentation for the\n                        eval_types method."
-    default: hybformat
     inputBinding:
       position: 103
       prefix: --type_method
@@ -321,7 +301,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print verbose output during run.
-    default: false
     inputBinding:
       position: 103
       prefix: --verbose

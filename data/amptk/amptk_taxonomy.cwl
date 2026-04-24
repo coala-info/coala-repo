@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove Intermediate Files
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -72,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: Taxonomy method
-    default: hybrid
     inputBinding:
       position: 101
       prefix: --method
@@ -81,7 +79,6 @@ inputs:
       - 'null'
       - File
     doc: Append Taxonomy to OTU table
-    default: None
     inputBinding:
       position: 101
       prefix: --otu_table
@@ -98,7 +95,6 @@ inputs:
       - 'null'
       - float
     doc: RDP confidence value threshold
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --rdp_cutoff
@@ -107,7 +103,6 @@ inputs:
       - 'null'
       - string
     doc: Training set for RDP Classifier
-    default: fungalits_unite
     inputBinding:
       position: 101
       prefix: --rdp_db
@@ -116,7 +111,6 @@ inputs:
       - 'null'
       - float
     doc: SINTAX threshold.
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --sintax_cutoff
@@ -149,7 +143,6 @@ inputs:
       - 'null'
       - string
     doc: USEARCH8 EXE
-    default: usearch9
     inputBinding:
       position: 101
       prefix: --usearch
@@ -158,7 +151,6 @@ inputs:
       - 'null'
       - float
     doc: USEARCH percent ID threshold.
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --usearch_cutoff
@@ -175,7 +167,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run UTAX (requires usearch9)
-    default: true
     inputBinding:
       position: 101
       prefix: --utax
@@ -184,7 +175,6 @@ inputs:
       - 'null'
       - float
     doc: UTAX confidence value threshold.
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --utax_cutoff

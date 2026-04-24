@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: 'CADD version (only v1.7 possible with this set of scripts [default: v1.7])'
-    default: v1.7
     inputBinding:
       position: 102
       prefix: -v
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of cores that snakemake is allowed to use [default: 1]'
-    default: 1
     inputBinding:
       position: 102
       prefix: -c
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - string
     doc: 'genome build (supported are GRCh37 and GRCh38 [default: GRCh38])'
-    default: GRCh38
     inputBinding:
       position: 102
       prefix: -g
@@ -74,7 +71,6 @@ inputs:
       - string
     doc: singularity/apptainer arguments, e.g. "--bind /data/mnt/x --nv" 
       [default "" but will always add "--bind "]
-    default: '""'
     inputBinding:
       position: 102
       prefix: -r

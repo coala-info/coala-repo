@@ -32,7 +32,6 @@ inputs:
       reside in the at the location indicated by environment variable DATAPATH. 
       The default is "rna" (i.e. use RNA parameters). This option overrides the 
       --DNA flag.
-    default: rna
     inputBinding:
       position: 102
       prefix: --alphabet
@@ -136,7 +135,6 @@ inputs:
       - float
     doc: Specify a slope used with differential SHAPE restraints. Default is 
       2.11 kcal/mol.
-    default: 2.11
     inputBinding:
       position: 102
       prefix: --DSHAPEslope
@@ -157,7 +155,6 @@ inputs:
       - float
     doc: Specify an intercept (overall offset) to use with the 2D experimental 
       pair bonus file. Default is 0.0 (no change to input bonuses).
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -xo
@@ -167,7 +164,6 @@ inputs:
       - float
     doc: Specify a number to multiply the experimental pair bonus matrix by. 
       Default is 1.0 (no change to input bonuses).
-    default: 1.0
     inputBinding:
       position: 102
       prefix: -xs
@@ -186,7 +182,6 @@ inputs:
       - int
     doc: Specify a maximum internal/bulge loop size. Default is 30 unpaired 
       nucleotides.
-    default: 30
     inputBinding:
       position: 102
       prefix: --loop
@@ -196,7 +191,6 @@ inputs:
       - float
     doc: Specify a maximum percent energy difference. Default is 10 percent 
       (specified as 10, not 0.1).
-    default: 10.0
     inputBinding:
       position: 102
       prefix: --percent
@@ -205,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: Specify a maximum number of structures. Default is 20 structures.
-    default: 20
     inputBinding:
       position: 102
       prefix: --maximum
@@ -252,7 +245,6 @@ inputs:
       - float
     doc: Specify an intercept used with SHAPE restraints. Default is -0.6 
       kcal/mol.
-    default: -0.6
     inputBinding:
       position: 102
       prefix: --SHAPEintercept
@@ -270,7 +262,6 @@ inputs:
       - 'null'
       - float
     doc: Specify a slope used with SHAPE renstraints. Default is 1.8 kcal/mol.
-    default: 1.8
     inputBinding:
       position: 102
       prefix: --SHAPEslope
@@ -300,7 +291,6 @@ inputs:
       - float
     doc: Specify the temperature at which calculation takes place in Kelvin. 
       Default is 310.15 K, which is 37 degrees C.
-    default: 310.15
     inputBinding:
       position: 102
       prefix: --temperature
@@ -310,7 +300,6 @@ inputs:
       - float
     doc: Specify an intercept used with unpaired SHAPE constraints. Default is 0
       kcal/mol.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --unpairedSHAPEintercept
@@ -320,7 +309,6 @@ inputs:
       - float
     doc: Specify a slope used with unpaired SHAPE constraints. Default is 0 
       kcal/mol.
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --unpairedSHAPEslope
@@ -333,7 +321,6 @@ inputs:
       Warnings are written to standard output. (default) * err -- Warnings are sent
       to STDERR. This can be used in automated scripts etc to detect problems. * off
       -- Do not display warnings at all (not recommended).'
-    default: on
     inputBinding:
       position: 102
       prefix: --warnings

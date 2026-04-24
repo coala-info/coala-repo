@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: specify colour of recombination regions in HEX format (default=black)
-    default: black
     inputBinding:
       position: 102
       prefix: --svgcolour
@@ -62,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: specify width and height of SVG in pixels (default="800x600")
-    default: 800x600
     inputBinding:
       position: 102
       prefix: --svgsize
@@ -71,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: symbol to use for masking (default="?")
-    default: '?'
     inputBinding:
       position: 102
       prefix: --symbol

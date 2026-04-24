@@ -15,7 +15,6 @@ inputs:
   - id: operation
     type: string
     doc: 'The operation to perform: generate_fdf.'
-    default: generate_fdf
     inputBinding:
       position: 2
   - id: allow

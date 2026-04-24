@@ -87,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: 'DNA masking: hard/soft/none'
-    default: soft
     inputBinding:
       position: 102
       prefix: --mask

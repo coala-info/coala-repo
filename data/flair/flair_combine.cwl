@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: window for comparing ends of isoforms with the same intron chain. Default:200bp
-    default: 200
     inputBinding:
       position: 101
       prefix: --endwindow
@@ -30,7 +29,6 @@ inputs:
       - string
     doc: 'type of filtering. Options: usageandlongest(default), usageonly, none, or
       a number for the total count of reads required to call an isoform'
-    default: usageandlongest
     inputBinding:
       position: 101
       prefix: --filter
@@ -58,7 +56,6 @@ inputs:
       - int
     doc: minimum percent usage required in one sample to keep isoform in combined
       transcriptome. Default:10
-    default: 10
     inputBinding:
       position: 101
       prefix: --minpercentusage

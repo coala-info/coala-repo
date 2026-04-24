@@ -37,7 +37,6 @@ inputs:
 
   detect_adapter_for_pe:
     type: boolean
-    default: false
     inputBinding: 
       valueFrom:
         ${
@@ -50,7 +49,6 @@ inputs:
 
   overrepresentation_analysis:
     type: boolean
-    default: false
     inputBinding: 
       valueFrom:
         ${
@@ -63,7 +61,6 @@ inputs:
 
   merge: 
     type: boolean
-    default: true
     inputBinding: 
       valueFrom: 
         ${
@@ -76,7 +73,6 @@ inputs:
 
   merged_out: 
     type: boolean?
-    default: true
     inputBinding: 
       prefix: --merged_out
       valueFrom: 
@@ -102,11 +98,9 @@ inputs:
 
   threads:
     type: int?
-    default: 1
 
   qualified_phred_quality:
     type: int?
-    default: 0
     inputBinding: 
       valueFrom: 
         ${
@@ -119,7 +113,6 @@ inputs:
 
   unqualified_percent_limit:
     type: int?
-    default: 0
     inputBinding: 
       valueFrom: 
         ${
@@ -132,7 +125,6 @@ inputs:
 
   min_length_required:
     type: int?
-    default: 0
     inputBinding: 
       valueFrom: 
         ${
@@ -145,7 +137,6 @@ inputs:
 
   force_polyg_tail_trimming:
     type: boolean?
-    default: false
     inputBinding:
       valueFrom: 
         ${
@@ -158,7 +149,6 @@ inputs:
 
   disable_trim_poly_g:
     type: boolean?
-    default: false
     inputBinding:
       valueFrom: 
         ${
@@ -171,7 +161,6 @@ inputs:
 
   base_correction:
     type: boolean?
-    default: false
     inputBinding:
       valueFrom: 
         ${
@@ -184,7 +173,6 @@ inputs:
 
   overlap_len_require: 
     type: int
-    default: 0
     inputBinding:
       valueFrom:
         ${
@@ -197,7 +185,6 @@ inputs:
 
   cut_right: 
     type: boolean
-    default: true
     inputBinding:
       valueFrom: 
         ${

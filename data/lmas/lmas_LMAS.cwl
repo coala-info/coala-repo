@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - boolean
     doc: Execute the workflow using DSL1 syntax
-    default: false
     inputBinding:
       position: 102
       prefix: --dsl1
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - boolean
     doc: Execute the workflow using DSL2 syntax
-    default: false
     inputBinding:
       position: 102
       prefix: --dsl2
@@ -72,7 +70,6 @@ inputs:
       - 'null'
       - boolean
     doc: Dump task hash keys for debugging purpose
-    default: false
     inputBinding:
       position: 102
       prefix: --dump-hashes
@@ -89,7 +86,6 @@ inputs:
       - 'null'
       - string
     doc: Add the specified variable to execution environment
-    default: '{}'
     inputBinding:
       position: 102
       prefix: --e.
@@ -98,7 +94,6 @@ inputs:
       - 'null'
       - boolean
     doc: Exports all current system environment
-    default: false
     inputBinding:
       position: 102
       prefix: -E
@@ -115,7 +110,6 @@ inputs:
       - 'null'
       - boolean
     doc: Pull latest changes before run
-    default: false
     inputBinding:
       position: 102
       prefix: --latest
@@ -149,7 +143,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not check for remote project updates
-    default: false
     inputBinding:
       position: 102
       prefix: --offline
@@ -174,7 +167,6 @@ inputs:
       - 'null'
       - string
     doc: Set process options
-    default: '{}'
     inputBinding:
       position: 102
       prefix: --process.
@@ -218,7 +210,6 @@ inputs:
       - 'null'
       - boolean
     doc: Execute the workflow replacing process scripts with command stubs
-    default: false
     inputBinding:
       position: 102
       prefix: --stub
@@ -341,7 +332,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable process execution with Docker
-    default: false
     inputBinding:
       position: 102
       prefix: --without-docker

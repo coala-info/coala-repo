@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: '[ALL_FINAL_ALLELES.PNG] Min ATL to include allele'
-    default: 100
     inputBinding:
       position: 101
       prefix: -afa-a
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: '[ALL_FINAL_ALLELES.PNG] X axis max'
-    default: 15000
     inputBinding:
       position: 101
       prefix: -afa-x
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: '[ALL_FINAL_ALLELES.PNG] X axis tick steps'
-    default: 1000
     inputBinding:
       position: 101
       prefix: -afa-t
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: 'Method for choosing ATL: mean / median / p75 / max'
-    default: p75
     inputBinding:
       position: 101
       prefix: -m
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Merge similar alleles mapped <= this bp from each other
-    default: 1000
     inputBinding:
       position: 101
       prefix: --collapse-hom
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - float
     doc: '[TREECUT] Collapsing aligned alleles'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: -th
@@ -127,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Downsample to this many telomere reads
-    default: -1
     inputBinding:
       position: 101
       prefix: -d
@@ -144,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: '[FILTERING] Remove reads that end in > this much non-tel'
-    default: 100
     inputBinding:
       position: 101
       prefix: --filt-nontel
@@ -153,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: '[FILTERING] Remove reads that end in < this much subtel'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --filt-sub
@@ -162,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: '[FILTERING] Remove reads that end in < this much tel'
-    default: 400
     inputBinding:
       position: 101
       prefix: --filt-tel
@@ -179,7 +169,6 @@ inputs:
       - 'null'
       - File
     doc: Telomere kmers file
-    default: ''
     inputBinding:
       position: 101
       prefix: -k
@@ -188,7 +177,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum hits to tandem canonical kmer
-    default: 8
     inputBinding:
       position: 101
       prefix: -c
@@ -197,7 +185,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length
-    default: 4000
     inputBinding:
       position: 101
       prefix: -l
@@ -206,7 +193,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads per cluster
-    default: 3
     inputBinding:
       position: 101
       prefix: -n
@@ -215,7 +201,6 @@ inputs:
       - 'null'
       - string
     doc: /path/to/minimap2
-    default: ''
     inputBinding:
       position: 101
       prefix: --minimap2
@@ -224,7 +209,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to use
-    default: 4
     inputBinding:
       position: 101
       prefix: -p
@@ -233,7 +217,6 @@ inputs:
       - 'null'
       - string
     doc: /path/to/pbmm2
-    default: ''
     inputBinding:
       position: 101
       prefix: --pbmm2
@@ -290,7 +273,6 @@ inputs:
       - 'null'
       - string
     doc: 'Read type: hifi / ont'
-    default: ont
     inputBinding:
       position: 101
       prefix: -r
@@ -299,7 +281,6 @@ inputs:
       - 'null'
       - File
     doc: Reference filename (only needed if input is cram)
-    default: ''
     inputBinding:
       position: 101
       prefix: --ref
@@ -308,7 +289,6 @@ inputs:
       - 'null'
       - int
     doc: RNG seed value
-    default: -1
     inputBinding:
       position: 101
       prefix: --rng
@@ -317,7 +297,6 @@ inputs:
       - 'null'
       - float
     doc: '[TREECUT] Subtel cluster refinement'
-    default: 0.2
     inputBinding:
       position: 101
       prefix: -ts
@@ -326,7 +305,6 @@ inputs:
       - 'null'
       - File
     doc: Telogator reference fasta
-    default: ''
     inputBinding:
       position: 101
       prefix: -t
@@ -335,7 +313,6 @@ inputs:
       - 'null'
       - float
     doc: '[TREECUT] TVR clustering (collapse)'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: -tc
@@ -344,7 +321,6 @@ inputs:
       - 'null'
       - float
     doc: '[TREECUT] TVR clustering (iteration 0)'
-    default: 0.2
     inputBinding:
       position: 101
       prefix: -t0
@@ -353,7 +329,6 @@ inputs:
       - 'null'
       - float
     doc: '[TREECUT] TVR clustering (iteration 1)'
-    default: 0.15
     inputBinding:
       position: 101
       prefix: -t1
@@ -362,7 +337,6 @@ inputs:
       - 'null'
       - float
     doc: '[TREECUT] TVR clustering (iteration 2)'
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -t2
@@ -371,7 +345,6 @@ inputs:
       - 'null'
       - int
     doc: '[VIOLIN_ATL.PNG] ploidy. i.e. number of alleles per arm'
-    default: 2
     inputBinding:
       position: 101
       prefix: -va-p
@@ -380,7 +353,6 @@ inputs:
       - 'null'
       - int
     doc: '[VIOLIN_ATL.PNG] Y axis max'
-    default: 20000
     inputBinding:
       position: 101
       prefix: -va-y
@@ -389,7 +361,6 @@ inputs:
       - 'null'
       - int
     doc: '[VIOLIN_ATL.PNG] Y axis tick steps'
-    default: 5000
     inputBinding:
       position: 101
       prefix: -va-t
@@ -398,7 +369,6 @@ inputs:
       - 'null'
       - string
     doc: /path/to/winnowmap
-    default: ''
     inputBinding:
       position: 101
       prefix: --winnowmap
@@ -407,7 +377,6 @@ inputs:
       - 'null'
       - File
     doc: high freq kmers file (only needed for winnowmap)
-    default: ''
     inputBinding:
       position: 101
       prefix: --winnowmap-k15

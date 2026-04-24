@@ -11,7 +11,6 @@ inputs:
       - int
     doc: "Perform (1) or not perform (0, default) whole-genome TE annotation\nafter
       TE library construction."
-    default: 0
     inputBinding:
       position: 101
       prefix: --anno
@@ -56,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: 'Retain intermediate files (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: --debug
@@ -66,7 +64,6 @@ inputs:
       - int
     doc: "Evaluate (1) classification consistency of the TE annotation.\n(--anno 1
       required). Default: 1."
-    default: 1
     inputBinding:
       position: 101
       prefix: --evaluate
@@ -85,7 +82,6 @@ inputs:
       - int
     doc: "When no confident TE candidates are found: 0, interrupt and exit\n(default);
       1, use rice TEs to continue."
-    default: 0
     inputBinding:
       position: 101
       prefix: --force
@@ -109,7 +105,6 @@ inputs:
       - int
     doc: "Maximum divergence (0-100%, default: 40) of repeat fragments comparing to\
       \ \nlibrary sequences."
-    default: 40
     inputBinding:
       position: 101
       prefix: --maxdiv
@@ -119,7 +114,6 @@ inputs:
       - int
     doc: "If previous raw TE results are found, decide to overwrite\n(1, rerun) or
       not (0, default)."
-    default: 0
     inputBinding:
       position: 101
       prefix: --overwrite
@@ -155,7 +149,6 @@ inputs:
       - int
     doc: "Use RepeatModeler to identify remaining TEs (1) or not (0,\ndefault). This
       step may help to recover some TEs."
-    default: 0
     inputBinding:
       position: 101
       prefix: --sensitive
@@ -164,7 +157,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the species for identification of TIR candidates.
-    default: others
     inputBinding:
       position: 101
       prefix: --species
@@ -176,7 +168,6 @@ inputs:
       (default)\nfilter: start from raw TEs to the end.\nfinal: start from filtered
       TEs to finalizing the run.\nanno: perform whole-genome annotation/analysis after\n\
       \t\t\tTE library construction."
-    default: all
     inputBinding:
       position: 101
       prefix: --step
@@ -185,7 +176,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of theads to run this script (default: 4)'
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -196,7 +186,6 @@ inputs:
     doc: "Neutral mutation rate to calculate the age of intact LTR elements.\nIntact
       LTR age is found in this file: *EDTA_raw/LTR/*.pass.list.\nDefault: 1.3e-8 (per
       bp per year, from rice)."
-    default: '1.3e-8'
     inputBinding:
       position: 101
       prefix: --u

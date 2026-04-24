@@ -24,7 +24,6 @@ inputs:
       - int
     doc: factor (between 1 and 1000) to set the size of the index build overflow
       space
-    default: 40
     inputBinding:
       position: 103
       prefix: --overflow
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: Seed size used in building the index
-    default: 20
     inputBinding:
       position: 103
       prefix: --seedsize
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: Hash table slack for indexing
-    default: 0.3
     inputBinding:
       position: 103
       prefix: --slack

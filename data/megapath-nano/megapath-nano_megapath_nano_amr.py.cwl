@@ -57,7 +57,6 @@ inputs:
       - 'null'
       - Directory
     doc: The path of reference files. RefSeq by default
-    default: RefSeq
     inputBinding:
       position: 101
       prefix: --REFSEQ_PATH

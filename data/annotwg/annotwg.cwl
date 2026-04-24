@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: prefix that will be added before every annotation from the annotation file
-    default: "''"
     inputBinding:
       position: 101
       prefix: --annotprefix
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: The level of compression (integer from 1 to 9) (optional)
-    default: -1
     inputBinding:
       position: 101
       prefix: --compression-level
@@ -66,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: 'b: compressed BCF, z: compressed VCF'
-    default: z
     inputBinding:
       position: 101
       prefix: --output-format
@@ -89,7 +86,6 @@ inputs:
       - 'null'
       - Directory
     doc: path to annotWG temporary directory
-    default: working directory
     inputBinding:
       position: 101
       prefix: --tempdir
@@ -98,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads used by annotwg (optional)
-    default: 1
     inputBinding:
       position: 101
       prefix: --thread

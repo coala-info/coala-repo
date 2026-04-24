@@ -13,7 +13,6 @@ inputs:
       - string
     doc: Output all variants (-F off; default) or only deep-intronic variants with
       PDIVAS scores (-F on)
-    default: off
     inputBinding:
       position: 101
       prefix: -F

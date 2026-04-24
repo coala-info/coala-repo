@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: 'Specify genome alignment tool: minimap or mashmap'
-    default: minimap
     inputBinding:
       position: 101
       prefix: --aligner
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Barplot color palette
-    default: Spectral
     inputBinding:
       position: 101
       prefix: --palette
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: Barplot font size
-    default: 8.0
     inputBinding:
       position: 101
       prefix: --bfsize
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - float
     doc: Barplot figure height in inches
-    default: 10.8
     inputBinding:
       position: 101
       prefix: --bheight
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: 'Barplot mode: pair (pairwise), cat (concatenated), all (cat + pair)'
-    default: pair
     inputBinding:
       position: 101
       prefix: --bpmode
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: Barplot figure width in inches
-    default: 19.2
     inputBinding:
       position: 101
       prefix: --bwidth
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: 'Circos plot mode: pair (pairwise), cat (concatenated), all (cat + pair)'
-    default: pair
     inputBinding:
       position: 101
       prefix: --circos
@@ -90,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: 'Karyotype orientation: normal, inverted or both'
-    default: normal
     inputBinding:
       position: 101
       prefix: --orientation
@@ -99,7 +91,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for concatenated plots
-    default: circos
     inputBinding:
       position: 101
       prefix: --circos_prefix
@@ -116,7 +107,6 @@ inputs:
       - 'null'
       - string
     doc: Contig label font
-    default: bold
     inputBinding:
       position: 101
       prefix: --label_font
@@ -125,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: Contig label size
-    default: 36
     inputBinding:
       position: 101
       prefix: --label_size
@@ -134,7 +123,6 @@ inputs:
       - 'null'
       - string
     doc: 'Contig label type: mixed (arabic + roman numbers), arabic, roman, or names'
-    default: mixed
     inputBinding:
       position: 101
       prefix: --labels
@@ -159,7 +147,6 @@ inputs:
       - 'null'
       - string
     doc: Dotplot color
-    default: blue
     inputBinding:
       position: 101
       prefix: --color
@@ -176,7 +163,6 @@ inputs:
       - 'null'
       - float
     doc: Dotplot font size
-    default: 8.0
     inputBinding:
       position: 101
       prefix: --dfsize
@@ -185,7 +171,6 @@ inputs:
       - 'null'
       - float
     doc: Dotplot figure height in inches
-    default: 10.8
     inputBinding:
       position: 101
       prefix: --dheight
@@ -194,7 +179,6 @@ inputs:
       - 'null'
       - float
     doc: Axes units multiplier (for dotplots)
-    default: 100000.0
     inputBinding:
       position: 101
       prefix: --multi
@@ -203,7 +187,6 @@ inputs:
       - 'null'
       - float
     doc: Vertical distance (height) between subplots
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --hdis
@@ -212,7 +195,6 @@ inputs:
       - 'null'
       - float
     doc: Horizontal distance (width) between subplots
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --wdis
@@ -221,7 +203,6 @@ inputs:
       - 'null'
       - float
     doc: Dotplot figure width in inches
-    default: 19.2
     inputBinding:
       position: 101
       prefix: --dwidth
@@ -230,7 +211,6 @@ inputs:
       - 'null'
       - float
     doc: DIAMOND BLASTP evalue cutoff
-    default: '1e-10'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -249,7 +229,6 @@ inputs:
       - type: array
         items: int
     doc: Allowable number of gaps between gene pairs
-    default: 0
     inputBinding:
       position: 101
       prefix: --gaps
@@ -266,7 +245,6 @@ inputs:
       - 'null'
       - string
     doc: Heatmap color palette
-    default: winter_r
     inputBinding:
       position: 101
       prefix: --hmpalette
@@ -275,7 +253,6 @@ inputs:
       - 'null'
       - float
     doc: Heatmap font size
-    default: 8.0
     inputBinding:
       position: 101
       prefix: --hfsize
@@ -284,7 +261,6 @@ inputs:
       - 'null'
       - float
     doc: Heatmap figure height in inches
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --hheight
@@ -293,7 +269,6 @@ inputs:
       - 'null'
       - int
     doc: Set maximum color bar value
-    default: 100
     inputBinding:
       position: 101
       prefix: --hmax
@@ -302,7 +277,6 @@ inputs:
       - 'null'
       - int
     doc: Set minimum color bar value
-    default: 0
     inputBinding:
       position: 101
       prefix: --hmin
@@ -311,7 +285,6 @@ inputs:
       - 'null'
       - float
     doc: Heatmap figure width in inches
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --hwidth
@@ -329,7 +302,6 @@ inputs:
       - 'null'
       - float
     doc: Font size
-    default: 8.0
     inputBinding:
       position: 101
       prefix: --lfsize
@@ -338,7 +310,6 @@ inputs:
       - 'null'
       - float
     doc: Linear map figure height in inches
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --lheight
@@ -347,7 +318,6 @@ inputs:
       - 'null'
       - string
     doc: Reference genome color palette
-    default: tab20
     inputBinding:
       position: 101
       prefix: --lm_rpalette
@@ -356,7 +326,6 @@ inputs:
       - 'null'
       - int
     doc: Contig name rotation
-    default: 90
     inputBinding:
       position: 101
       prefix: --lmrotation
@@ -365,7 +334,6 @@ inputs:
       - 'null'
       - string
     doc: Target genome color palette
-    default: Blues
     inputBinding:
       position: 101
       prefix: --lm_xpalette
@@ -374,7 +342,6 @@ inputs:
       - 'null'
       - float
     doc: Heatmap figure width in inches
-    default: 20.0
     inputBinding:
       position: 101
       prefix: --lwidth
@@ -391,7 +358,6 @@ inputs:
       - 'null'
       - int
     doc: Specify mashmap3 percentage identity
-    default: 85
     inputBinding:
       position: 101
       prefix: --mpid
@@ -400,7 +366,6 @@ inputs:
       - 'null'
       - int
     doc: Set max number of ideograms
-    default: 200
     inputBinding:
       position: 101
       prefix: --max_ideograms
@@ -409,7 +374,6 @@ inputs:
       - 'null'
       - int
     doc: Set max number of links
-    default: 75000
     inputBinding:
       position: 101
       prefix: --max_links
@@ -418,7 +382,6 @@ inputs:
       - 'null'
       - int
     doc: Set max number of points per track
-    default: 75000
     inputBinding:
       position: 101
       prefix: --max_points_per_track
@@ -427,7 +390,6 @@ inputs:
       - 'null'
       - int
     doc: Set max number of ticks
-    default: 5000
     inputBinding:
       position: 101
       prefix: --max_ticks
@@ -445,7 +407,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum contig size (in bp)
-    default: 1
     inputBinding:
       position: 101
       prefix: --minsize
@@ -454,7 +415,6 @@ inputs:
       - 'null'
       - int
     doc: Specify minimap max divergence preset (--asm 5, 10 or 20)
-    default: off
     inputBinding:
       position: 101
       prefix: --asm
@@ -551,7 +511,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: SYNY
     inputBinding:
       position: 101
       prefix: --outdir
@@ -594,7 +553,6 @@ inputs:
       - 'null'
       - string
     doc: Size unit (Kb or Mb)
-    default: Mb
     inputBinding:
       position: 101
       prefix: --unit
@@ -627,7 +585,6 @@ inputs:
       - 'null'
       - int
     doc: Sliding windows step (nucleotide biases)
-    default: 5000
     inputBinding:
       position: 101
       prefix: --stepsize
@@ -636,7 +593,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 16
     inputBinding:
       position: 101
       prefix: --threads
@@ -645,7 +601,6 @@ inputs:
       - 'null'
       - int
     doc: Sliding windows size (nucleotide biases)
-    default: 10000
     inputBinding:
       position: 101
       prefix: --winsize

@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Save the wiggle plot to a file (def=reads).
-    default: reads
     inputBinding:
       position: 102
       prefix: --plot-type

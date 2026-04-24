@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: min match
-    default: 30
     inputBinding:
       position: 102
       prefix: -l
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - File
     doc: rank file
-    default: 'null'
     inputBinding:
       position: 102
       prefix: -r
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: -t

@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: bin size to use
-    default: 500bp
     inputBinding:
       position: 103
       prefix: --bin_size
@@ -62,7 +61,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable quantile normalization
-    default: false
     inputBinding:
       position: 103
       prefix: --disable_quantile_normalization
@@ -107,7 +105,6 @@ inputs:
       - 'null'
       - float
     doc: Upper bound on the % of the regions selected
-    default: 0.1, 0.0=0% 1.0=100%
     inputBinding:
       position: 103
       prefix: --max_regions_percentage
@@ -133,7 +130,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: current directory
     inputBinding:
       position: 103
       prefix: --output_directory
@@ -142,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: Read extension in bps
-    default: 200
     inputBinding:
       position: 103
       prefix: --read_ext
@@ -152,7 +147,6 @@ inputs:
       - int
     doc: "Percentile on the signal intensity to consider for the\n               \
       \         hotspots"
-    default: 99
     inputBinding:
       position: 103
       prefix: --th_rpm
@@ -162,7 +156,6 @@ inputs:
       - string
     doc: "Variance stabilizing transformation among: none, log2,\n               \
       \         angle"
-    default: angle
     inputBinding:
       position: 103
       prefix: --transformation
@@ -171,7 +164,6 @@ inputs:
       - 'null'
       - float
     doc: z-score value to select the specific regions
-    default: 1.5
     inputBinding:
       position: 103
       prefix: --z_score_high
@@ -180,7 +172,6 @@ inputs:
       - 'null'
       - float
     doc: z-score value to select the not specific regions
-    default: 0.25
     inputBinding:
       position: 103
       prefix: --z_score_low

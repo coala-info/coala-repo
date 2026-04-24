@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - Directory
     doc: Databases folder
-    default: /usr/local/db
     inputBinding:
       position: 102
       prefix: --datadir
@@ -42,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: Database to use
-    default: ncbi
     inputBinding:
       position: 102
       prefix: --db
@@ -83,7 +81,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum DNA %coverage
-    default: 80.0
     inputBinding:
       position: 102
       prefix: --mincov
@@ -92,7 +89,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum DNA %identity
-    default: 80.0
     inputBinding:
       position: 102
       prefix: --minid
@@ -141,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: Use this many BLAST+ threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

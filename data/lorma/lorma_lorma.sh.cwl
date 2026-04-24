@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: End value for processing
-    default: 61
     inputBinding:
       position: 102
   - id: friends
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Number of friends
-    default: 7
     inputBinding:
       position: 102
   - id: k
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer size
-    default: 19
     inputBinding:
       position: 102
   - id: save_intermediate_data
@@ -57,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Start value for processing
-    default: 19
     inputBinding:
       position: 102
   - id: step
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Step size for processing
-    default: 21
     inputBinding:
       position: 102
   - id: threads
@@ -73,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 6
     inputBinding:
       position: 102
 outputs:

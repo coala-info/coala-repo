@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include secondary and supplementary alignments.
-    default: false
     inputBinding:
       position: 102
       prefix: --all_alignments
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - File
     doc: .bed file of reference regions to include.
-    default: None
     inputBinding:
       position: 102
       prefix: --bed
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - File
     doc: Output summary to file instead of stderr.
-    default: <_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'>
     inputBinding:
       position: 102
       prefix: --summary
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for parallel processing.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

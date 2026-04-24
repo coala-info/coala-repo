@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Set verbose level (higher for more output)
-    default: 1
     inputBinding:
       position: 103
       prefix: -verbose

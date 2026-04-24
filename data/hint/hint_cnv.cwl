@@ -17,7 +17,6 @@ inputs:
       - boolean
     doc: If this switch is on, HiNT will do the iterative regression model by 
       removing copy numer variated regions, DEFAULT=False
-    default: false
     inputBinding:
       position: 101
       prefix: --doiter
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: 'Format for the output contact matrix, DEFAULT: cooler'
-    default: cooler
     inputBinding:
       position: 101
       prefix: --format
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: 'Specify your species, choose form hg38, hg19, and mm10. DEFAULT: hg19'
-    default: hg19
     inputBinding:
       position: 101
       prefix: --genome
@@ -55,7 +52,6 @@ inputs:
     doc: 'Choose which ENCODE mappability track should be used for regression. See
       more details http://genome.ucsc.edu/cgi-bin/hgTrackUi?db=hg18&g=wgEncodeMapability.
       DEFAULT: 50mer'
-    default: 50mer
     inputBinding:
       position: 101
       prefix: --maptrack
@@ -73,7 +69,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for the result files. If not set, 'NA' will be used instead
-    default: NA
     inputBinding:
       position: 101
       prefix: --name
@@ -99,7 +94,6 @@ inputs:
       - int
     doc: 'Resolution for the Hi-C contact matrix used for the CNV detection, unit:
       kb, DEFAULT: 50kb'
-    default: 50
     inputBinding:
       position: 101
       prefix: --resolution
@@ -108,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads for running HiNT-cnv, DEFAULT: 16'
-    default: 16
     inputBinding:
       position: 101
       prefix: --threads

@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Select output format (gbk, gff, or sco)
-    default: gbk
     inputBinding:
       position: 101
       prefix: --format
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: Select procedure (single or meta)
-    default: single
     inputBinding:
       position: 101
       prefix: --procedure
@@ -76,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Specify a translation table to use
-    default: 11
     inputBinding:
       position: 101
       prefix: --translation-table

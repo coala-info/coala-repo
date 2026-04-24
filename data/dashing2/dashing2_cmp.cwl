@@ -258,7 +258,6 @@ inputs:
     doc: This sets the number of LSH tables. The first 3 tables use register 
       grouping sizes of powers of 2, and subsequent tables use 2 times the 
       index.
-    default: 2
     inputBinding:
       position: 103
       prefix: --nlsh
@@ -448,7 +447,6 @@ inputs:
       - 'null'
       - int
     doc: Set sketchsize.
-    default: 1024
     inputBinding:
       position: 103
       prefix: --sketchsize

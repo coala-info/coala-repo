@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum k-mer length to check
-    default: 12
     inputBinding:
       position: 102
       prefix: --k-max
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum k-mer length to check
-    default: 8
     inputBinding:
       position: 102
       prefix: --k-min
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Step size between k-values (arithmetic progression)
-    default: 2
     inputBinding:
       position: 102
       prefix: --k-step
@@ -53,7 +50,6 @@ inputs:
       - int
     doc: Limit the total number of reads used for enrichment. Set to 0 to use 
       all reads
-    default: 10000
     inputBinding:
       position: 102
       prefix: --max-reads
@@ -92,7 +88,6 @@ inputs:
       contained within longer k-mers, those with (shorter k-mer count) / (longer
       k-mer count) >= this threshold will be removed. For homopolymer k-mers, 
       the threshold is lowered to threshold^4
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --substring-count-ratio-threshold
@@ -101,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Number of top k-mers to keep per k value
-    default: 400
     inputBinding:
       position: 102
       prefix: --top-kmers
@@ -110,7 +104,6 @@ inputs:
       - 'null'
       - float
     doc: 'Z-score threshold for k-mer enrichment (default: 5.0)'
-    default: 5.0
     inputBinding:
       position: 102
       prefix: --z-score-threshold

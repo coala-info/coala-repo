@@ -13,7 +13,6 @@ inputs:
       - string
     doc: "Input sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --inseqformat
@@ -23,7 +22,6 @@ inputs:
       - string
     doc: "Output sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --outseqformat
@@ -33,7 +31,6 @@ inputs:
       - string
     doc: Problematic characters considered by --problematic_percent. Without 
       separator.
-    default: NX-?
     inputBinding:
       position: 101
       prefix: --problematic_char
@@ -43,7 +40,6 @@ inputs:
       - float
     doc: Sequences containing >= this percentage of --problematic_char are 
       removed.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --problematic_percent
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - File
     doc: Input sequence file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --seqfile
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: Names of sequences to remove. Regex is supported.
-    default: ''
     inputBinding:
       position: 101
       prefix: --seqname

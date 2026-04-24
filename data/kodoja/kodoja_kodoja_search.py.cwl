@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: Sequence data format (default fastq)
-    default: fastq
     inputBinding:
       position: 101
       prefix: --data_format
@@ -100,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads (default 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

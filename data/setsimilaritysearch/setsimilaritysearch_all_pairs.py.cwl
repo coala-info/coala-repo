@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Similarity function to use.
-    default: jaccard
     inputBinding:
       position: 101
       prefix: --similarity-func

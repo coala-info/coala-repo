@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - float
     doc: Set energy threshold to -E kcal/mol
-    default: 1.0
     inputBinding:
       position: 103
       prefix: -E
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - float
     doc: Set gap-extend penalty to -Y
-    default: -9.0
     inputBinding:
       position: 103
       prefix: -Y
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: Set gap-open penalty to -X
-    default: -4.0
     inputBinding:
       position: 103
       prefix: -X
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not perform thermodynamics
-    default: off
     inputBinding:
       position: 103
       prefix: -noenergy
@@ -65,7 +61,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output fewer event notifications
-    default: off
     inputBinding:
       position: 103
       prefix: -quiet
@@ -75,7 +70,6 @@ inputs:
       - File
     doc: Restricts scans to those between specific miRNAs and UTRs provided in a
       pairwise tab-separated file
-    default: off
     inputBinding:
       position: 103
       prefix: -restrict
@@ -84,7 +78,6 @@ inputs:
       - 'null'
       - float
     doc: Set scaling parameter to Z
-    default: 4.0
     inputBinding:
       position: 103
       prefix: -scale
@@ -93,7 +86,6 @@ inputs:
       - 'null'
       - float
     doc: Set score threshold to S
-    default: 140.0
     inputBinding:
       position: 103
       prefix: -sc
@@ -102,7 +94,6 @@ inputs:
       - 'null'
       - boolean
     doc: Demand strict 5' seed pairing
-    default: off
     inputBinding:
       position: 103
       prefix: -strict
@@ -111,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Trim reference sequences to T nt
-    default: off
     inputBinding:
       position: 103
       prefix: -trim

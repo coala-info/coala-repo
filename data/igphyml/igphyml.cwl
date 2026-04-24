@@ -91,7 +91,6 @@ inputs:
       branch length and rate parameters are optimised. params = l   : branch length
       are optimised. params = r   : rate parameters are optimised. params = n   :
       no parameter is optimised.'
-    default: tlr
     inputBinding:
       position: 101
       prefix: -o
@@ -126,7 +125,6 @@ inputs:
       - string
     doc: Tree topology search operation option. Can be either NNI (default, 
       fast) or SPR (thorough, slow).
-    default: NNI
     inputBinding:
       position: 101
       prefix: -s
@@ -143,7 +141,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for parallelization. Default is 1.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

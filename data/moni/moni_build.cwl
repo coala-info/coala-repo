@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: compress output of the parsing phase (debug only)
-    default: false
     inputBinding:
       position: 101
       prefix: --compress
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: select the grammar [plain, shaped]
-    default: plain
     inputBinding:
       position: 101
       prefix: --grammar
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: keep temporary files
-    default: false
     inputBinding:
       position: 101
       prefix: -k
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: hash modulus
-    default: 100
     inputBinding:
       position: 101
       prefix: --mod
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: stop after the parsing phase (debug only)
-    default: false
     inputBinding:
       position: 101
       prefix: --parsing
@@ -54,14 +49,12 @@ inputs:
       - 'null'
       - boolean
     doc: read fasta
-    default: false
     inputBinding:
       position: 101
       prefix: -f
   - id: reference
     type: File
     doc: reference file name
-    default: None
     inputBinding:
       position: 101
       prefix: --reference
@@ -70,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: number of helper threads
-    default: 0
     inputBinding:
       position: 101
       prefix: --threads
@@ -79,7 +71,6 @@ inputs:
       - 'null'
       - boolean
     doc: verbose
-    default: false
     inputBinding:
       position: 101
       prefix: -v
@@ -88,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: sliding window size
-    default: 10
     inputBinding:
       position: 101
       prefix: --wsize

@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: specifies common genelist identifier in VCF file(s)
-    default: AL
     inputBinding:
       position: 105
       prefix: --geneid

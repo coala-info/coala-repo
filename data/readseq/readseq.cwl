@@ -65,7 +65,6 @@ inputs:
       - int
     doc: Compare two sequence files, reporting differences 
       (flags=nodoc,noid,nolen,nocrc)
-    default: 1
     inputBinding:
       position: 102
       prefix: -compare
@@ -74,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: remove gap symbols
-    default: '-'
     inputBinding:
       position: 102
       prefix: -degap

@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Size of k-mers to use for analysis.
-    default: 25
     inputBinding:
       position: 103
       prefix: --kmer-size
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum contig length to consider for analysis.
-    default: 200
     inputBinding:
       position: 103
       prefix: --min-contig-length
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum k-mer coverage to consider a k-mer as valid.
-    default: 2
     inputBinding:
       position: 103
       prefix: --min-kmer-coverage
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length to consider for analysis.
-    default: 50
     inputBinding:
       position: 103
       prefix: --min-read-length
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for computation.
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

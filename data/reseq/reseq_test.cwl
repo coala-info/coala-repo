@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads used (0=auto)
-    default: 0
     inputBinding:
       position: 101
       prefix: --threads
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the level of verbosity (4=everything, 0=nothing)
-    default: 4
     inputBinding:
       position: 101
       prefix: --verbosity

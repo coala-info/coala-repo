@@ -64,7 +64,6 @@ inputs:
       \  available fields. Else, values should be fields to be\n                 \
       \       returned separated by spaces. See --print-fields for\n             \
       \           available options."
-    default: None
     inputBinding:
       position: 101
       prefix: --return-fields

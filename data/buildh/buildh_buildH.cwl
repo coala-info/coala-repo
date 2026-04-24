@@ -80,7 +80,6 @@ inputs:
       - string
     doc: Output file name for storing order parameters. Default name is 
       OP_buildH.out.
-    default: OP_buildH.out
     inputBinding:
       position: 101
       prefix: --out

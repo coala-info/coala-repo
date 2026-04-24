@@ -22,7 +22,6 @@ inputs:
         Filename prefix to be used when reads are going to merged. File extensions are preserved.
         This is only used when multiple reads are given. default "merged"
     label: Filename prefix
-    default: "merged"
   forward_reads:
     type: File[]
     doc: Forward sequence reads file(s). Can be compressed. Do not mix filetypes.

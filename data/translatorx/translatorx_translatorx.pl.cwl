@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: 'Genetic code table number (default 1: Standard)'
-    default: 1
     inputBinding:
       position: 101
       prefix: -c
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output format: [fasta|phylip|clustal]'
-    default: fasta
     inputBinding:
       position: 101
       prefix: -w
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: 'Protein alignment program: [mafft|muscle|clustal|t_coffee]'
-    default: mafft
     inputBinding:
       position: 101
       prefix: -p

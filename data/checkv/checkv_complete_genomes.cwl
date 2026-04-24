@@ -19,7 +19,6 @@ inputs:
       counting occurence of each kmer, and taking the average count. Expected 
       value of 1.0 for no duplicated regions; 2.0 for the same genome repeated 
       back-to-back
-    default: 1.5
     inputBinding:
       position: 102
       prefix: --kmer_max_freq
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: Max fraction of TR composed of Ns
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --tr_max_ambig
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: Max fraction of TR composed of single nucleotide
-    default: 0.75
     inputBinding:
       position: 102
       prefix: --tr_max_basefreq
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Max occurences of TR per contig
-    default: 8
     inputBinding:
       position: 102
       prefix: --tr_max_count
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Min length of TR
-    default: 20
     inputBinding:
       position: 102
       prefix: --tr_min_len

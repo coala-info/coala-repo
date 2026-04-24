@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: character to be ignored in frequency calculations
-    default: ''
     inputBinding:
       position: 101
       prefix: --ignore-char
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: calculate frequencies for internal nodes as well as tips
-    default: false
     inputBinding:
       position: 101
       prefix: --include-internal-nodes
@@ -54,7 +52,6 @@ inputs:
       - float
     doc: determines how frequencies continue in absense of data (inertia=0 -> go
       flat, inertia=1.0 -> continue current trend)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --inertia
@@ -83,7 +80,6 @@ inputs:
         items: string
     doc: delimiters to accept when reading a metadata file. Only one delimiter 
       will be inferred.
-    default:
       - ','
       - "\t"
     inputBinding:
@@ -96,7 +92,6 @@ inputs:
         items: string
     doc: names of possible metadata columns containing identifier information, 
       ordered by priority. Only one ID column will be inferred.
-    default:
       - strain
       - name
     inputBinding:
@@ -126,7 +121,6 @@ inputs:
       - int
     doc: minimal number of tips a clade must have for its diffusion frequencies 
       to be reported
-    default: 0
     inputBinding:
       position: 101
       prefix: --minimal-clade-size
@@ -137,7 +131,6 @@ inputs:
     doc: minimal number of tips a clade must have for its diffusion frequencies 
       to be estimated by the diffusion likelihood; all smaller clades will 
       inherit frequencies from their parents
-    default: 10
     inputBinding:
       position: 101
       prefix: --minimal-clade-size-to-estimate
@@ -146,7 +139,6 @@ inputs:
       - 'null'
       - float
     doc: minimal all-time frequencies for a trajectory to be estimates
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --minimal-frequency
@@ -155,7 +147,6 @@ inputs:
       - 'null'
       - float
     doc: the bandwidth for the narrow KDE
-    default: 0.08333333333333333
     inputBinding:
       position: 101
       prefix: --narrow-bandwidth
@@ -164,7 +155,6 @@ inputs:
       - 'null'
       - string
     doc: format to export frequencies JSON depending on the viewing interface
-    default: auspice
     inputBinding:
       position: 101
       prefix: --output-format
@@ -173,7 +163,6 @@ inputs:
       - 'null'
       - int
     doc: number of units between pivots
-    default: 3
     inputBinding:
       position: 101
       prefix: --pivot-interval
@@ -182,7 +171,6 @@ inputs:
       - 'null'
       - string
     doc: space pivots by months (default) or by weeks
-    default: months
     inputBinding:
       position: 101
       prefix: --pivot-interval-units
@@ -191,7 +179,6 @@ inputs:
       - 'null'
       - float
     doc: the proportion of the wide bandwidth to use in the KDE mixture model
-    default: 0.2
     inputBinding:
       position: 101
       prefix: --proportion-wide
@@ -203,7 +190,6 @@ inputs:
     doc: region to filter to. Regions should match values in the 'region' column
       of the metadata file if specifying values other than the default 'global' 
       region.
-    default:
       - global
     inputBinding:
       position: 101
@@ -213,7 +199,6 @@ inputs:
       - 'null'
       - float
     doc: parameter penalizing curvature of the frequency trajectory
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --stiffness
@@ -248,7 +233,6 @@ inputs:
       - 'null'
       - float
     doc: the bandwidth for the wide KDE
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --wide-bandwidth

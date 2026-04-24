@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - File
     doc: 'Name of supercontigs file. Valid filetypes are: fa, fna, and fasta.'
-    default: supercontigs.fa
     inputBinding:
       position: 102
       prefix: --contigs
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Model used for genotyping. One of DUP and RANDOM.
-    default: RANDOM
     inputBinding:
       position: 102
       prefix: --model
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - File
     doc: 'Name of VCF input file. Valid filetype is: vcf.'
-    default: insertions.vcf
     inputBinding:
       position: 102
       prefix: --insertions
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to the sample directories.
-    default: .
     inputBinding:
       position: 102
       prefix: --prefix
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - File
     doc: 'Name of reference genome file. Valid filetypes are: fa, fna, and fasta.'
-    default: genome.fa
     inputBinding:
       position: 102
       prefix: --reference
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Region window size.
-    default: 50
     inputBinding:
       position: 102
       prefix: --window

@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - string
     doc: "Reference genome assembly (default: 'GRCh37') (choices: 'GRCh37', 'GRCh38')."
-    default: GRCh37
     inputBinding:
       position: 103
       prefix: --assembly
@@ -97,7 +96,6 @@ inputs:
       - 'null'
       - string
     doc: "Genotyping platform (default: 'WGS') (choices: 'WGS', 'Targeted')"
-    default: WGS
     inputBinding:
       position: 103
       prefix: --platform

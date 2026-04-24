@@ -10,7 +10,6 @@ inputs:
       - type: array
         items: File
     doc: Input file(s). Use '-' for stdin
-    default: '-'
     inputBinding:
       position: 1
   - id: circular_kmers
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the k-mers to hash when using --multi-kmer-hashing
-    default: 31
     inputBinding:
       position: 102
       prefix: --kmer-size

@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: kmer size (number of nucleotides in a kmer)
-    default: 20
     inputBinding:
       position: 102
       prefix: --k
@@ -73,7 +72,6 @@ inputs:
       - int
     doc: kmers occuring fewer than N times are left out of the bloom filter; 
       this does not apply when --kmersin is used
-    default: 1
     inputBinding:
       position: 102
       prefix: --min
@@ -91,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: number of bits in the bloom filter
-    default: 500000
     inputBinding:
       position: 102
       prefix: --bits
@@ -100,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: how many hash functions to use for the filter
-    default: 1
     inputBinding:
       position: 102
       prefix: --hashes
@@ -125,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use during kmerization
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

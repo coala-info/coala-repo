@@ -19,7 +19,6 @@ inputs:
       - string
     doc: Output format. One of 't' (SAM), 'b' (BAM), or 'u' (uncompressed BAM) 
       ('t' default)
-    default: t
     inputBinding:
       position: 101
       prefix: --outputformat
@@ -29,7 +28,6 @@ inputs:
       - string
     doc: Read tag to extract the value from that is appended to the read group. 
       Default is 'CB', the tag that is used in 10x sequencing to identify cells.
-    default: CB
     inputBinding:
       position: 101
       prefix: --tag

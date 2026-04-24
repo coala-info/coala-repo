@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: File containing discriminator network weights.
-    default: None
     inputBinding:
       position: 101
       prefix: --discriminator
@@ -21,7 +20,6 @@ inputs:
       dinf.DinfModel object that describes the model components. See the 
       examples/ folder of the git repository for example models. 
       https://github.com/RacimoLab/dinf
-    default: None
     inputBinding:
       position: 101
       prefix: --model
@@ -34,7 +32,6 @@ inputs:
       used. The number of cores used for CPU-based neural networks is not set 
       with this parameter---instead use the`taskset` command. See 
       https://github.com/google/jax/issues/1539
-    default: None
     inputBinding:
       position: 101
       prefix: --parallelism
@@ -52,7 +49,6 @@ inputs:
       - int
     doc: Number of theta replicates to generate and predict with the 
       discriminator.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --replicates
@@ -65,7 +61,6 @@ inputs:
       trained networks for the same seed value. Also note that operations on a 
       GPU are not fully determinstic, so training or applying a neural network 
       twice with the same seed value will not produce identical results.
-    default: None
     inputBinding:
       position: 101
       prefix: --seed
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - boolean
     doc: Sample features from the target dataset.
-    default: false
     inputBinding:
       position: 101
       prefix: --target

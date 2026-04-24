@@ -13,7 +13,6 @@ inputs:
       - int
     doc: Buffer size for incrementally increasing internal array size to store 
       reads alignment information.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --buffer-size
@@ -32,7 +31,6 @@ inputs:
       - string
     doc: Format of tag file, "AUTO", "BED" or "ELAND" or "ELANDMULTI" or 
       "ELANDEXPORT" or "SAM" or "BAM" or "BOWTIE" or "BAMPE" or "BEDPE".
-    default: AUTO
     inputBinding:
       position: 101
       prefix: --format
@@ -43,7 +41,6 @@ inputs:
     doc: Effective genome size. It can be 1.0e+9 or 1000000000, or 
       shortcuts:'hs' for human (2.7e9), 'mm' for mouse (1.87e9), 'ce' for C. 
       elegans (9e7) and 'dm' for fruitfly (1.2e8).
-    default: hs
     inputBinding:
       position: 101
       prefix: --gsize
@@ -65,7 +62,6 @@ inputs:
       at the exact same location. 'auto' calculates max tags based on binomial 
       distribution; 'all' keeps every tag. If an integer is given, at most this 
       number of tags will be kept.
-    default: auto
     inputBinding:
       position: 101
       prefix: --keep-dup
@@ -82,7 +78,6 @@ inputs:
       - 'null'
       - float
     doc: Pvalue cutoff for binomial distribution test.
-    default: 1e-05
     inputBinding:
       position: 101
       prefix: --pvalue

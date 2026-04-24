@@ -15,7 +15,6 @@ inputs:
       - int
     doc: "Minimum alignment quality to include read in\n                         \
       \         genotype."
-    default: 0
     inputBinding:
       position: 102
       prefix: --alignment-quality
@@ -44,7 +43,6 @@ inputs:
       - int
     doc: "Minimum base quality for inclusion in the\n                            \
       \      genotype count."
-    default: 0
     inputBinding:
       position: 102
       prefix: --base-qual
@@ -115,7 +113,6 @@ inputs:
       - string
     doc: "Maximum memory for java for running\n                                  duplicate
       removal."
-    default: 4000m
     inputBinding:
       position: 102
       prefix: --max-javamem
@@ -136,7 +133,6 @@ inputs:
       - int
     doc: "Minimum number of supporting reads to call a\n                         \
       \         consensus UMI/rread."
-    default: 1
     inputBinding:
       position: 102
       prefix: --min-reads
@@ -170,7 +166,6 @@ inputs:
       - int
     doc: "Maximum number of read alignments allowed as\n                         \
       \         governed by the NH flag."
-    default: 2
     inputBinding:
       position: 102
       prefix: --NHmax
@@ -180,7 +175,6 @@ inputs:
       - int
     doc: "Maximum number of paired mismatches allowed\n                          \
       \        represented by the NM/nM tags."
-    default: 15
     inputBinding:
       position: 102
       prefix: --NMmax

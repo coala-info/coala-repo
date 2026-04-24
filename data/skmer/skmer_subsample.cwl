@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: K-mer length [1-31].
-    default: 31
     inputBinding:
       position: 102
       prefix: --k
@@ -50,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: Number of subsampled replicates.
-    default: 100
     inputBinding:
       position: 102
       prefix: --b
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory of output for subsample replicates.
-    default: working_directory/subsample
     inputBinding:
       position: 102
       prefix: --sub
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: Save sketches.
-    default: false
     inputBinding:
       position: 102
       prefix: --msh
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - boolean
     doc: Save subsampled genome-skims.
-    default: false
     inputBinding:
       position: 102
       prefix: --fa
@@ -86,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Sketch size.
-    default: 100000
     inputBinding:
       position: 102
       prefix: --s
@@ -95,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Sketching random seed.
-    default: 42
     inputBinding:
       position: 102
       prefix: --S
@@ -104,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Start index of subsampled replicate (eg 5 for dir rep5).
-    default: 0
     inputBinding:
       position: 102
       prefix: --i
@@ -113,7 +105,6 @@ inputs:
       - 'null'
       - float
     doc: Exponent value for subsampling.
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --c

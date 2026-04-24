@@ -23,7 +23,6 @@ inputs:
       - boolean
     doc: "<bool>: Set this flag to force the iSAFE to use random samples even when
       MDDAF doesn't recommend.\n  * --vcf-cont must be provided."
-    default: false
     inputBinding:
       position: 101
       prefix: --ForceRandomSample
@@ -41,7 +40,6 @@ inputs:
       --AA.\n    - With hap format, iSAFE assumes that derived allele is 1 and ancestral
       allele is 0 in the input file,\n      and the selection is ongoing (the favored
       mutation is not fixed)."
-    default: vcf
     inputBinding:
       position: 101
       prefix: --format
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: '<bool>: Set this flag to ignore gaps.'
-    default: false
     inputBinding:
       position: 101
       prefix: --IgnoreGaps
@@ -66,7 +63,6 @@ inputs:
       - 'null'
       - float
     doc: '<float>: Ignore SNPs with frequency higher than MaxFreq.'
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --MaxFreq
@@ -77,7 +73,6 @@ inputs:
     doc: "<int>: Maximum gap size in bp.\n  * When there is a gap larger than --MaxGapSize
       the program raise an error.\n  * You can ignore this by setting the --IgnoreGaps
       flag."
-    default: 10000
     inputBinding:
       position: 101
       prefix: --MaxGapSize
@@ -88,7 +83,6 @@ inputs:
     doc: "<int>: Ignore SNPs with rank higher than MAXRANK.\n  * For considering all
       SNPs set --MaxRank > --window.\n  * The higher the --MaxRank, the higher the
       computation time."
-    default: 15
     inputBinding:
       position: 101
       prefix: --MaxRank
@@ -98,7 +92,6 @@ inputs:
       - int
     doc: "<int>: Maximum region size in bp.\n  * Consider the memory (RAM) size when
       change this parameter."
-    default: 6000000
     inputBinding:
       position: 101
       prefix: --MaxRegionSize
@@ -107,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: '<int>: Minimum region size in bp.'
-    default: 200000
     inputBinding:
       position: 101
       prefix: --MinRegionSize-bp
@@ -117,7 +109,6 @@ inputs:
       - int
     doc: "<int>: Minimum region size in polymorphic sites.\n  * Note that --window
       cannot be smaller than --MinRegionSize-ps."
-    default: 1000
     inputBinding:
       position: 101
       prefix: --MinRegionSize-ps
@@ -126,7 +117,6 @@ inputs:
       - 'null'
       - boolean
     doc: '<bool>: Set this flag to output Psi_1 in a text file with suffix .Psi.out.'
-    default: false
     inputBinding:
       position: 101
       prefix: --OutputPsi
@@ -138,7 +128,6 @@ inputs:
       \  * Must be non-negative and less than 1.\n  * Ignored when --vcf-case is not
       used.\n  * Ignored when MDDAF criterion doesn't recommend adding random samples.
       The option --ForceRandomSample\n    can be used to override MDDAF criterion."
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --RandomSampleRate
@@ -164,7 +153,6 @@ inputs:
       or --MinRegionSize-bp (Default: 200kbp), \n    the region is too small for iSAFE
       analysis. Therefore, It's better to use --SAFE flag to report the SAFE scores
       of \n    the entire region instead of iSAFE scores."
-    default: false
     inputBinding:
       position: 101
       prefix: --SAFE
@@ -207,7 +195,6 @@ inputs:
       - 'null'
       - boolean
     doc: '<bool>: Set this flag to turn off printing status.'
-    default: false
     inputBinding:
       position: 101
       prefix: --StatusOff
@@ -216,7 +203,6 @@ inputs:
       - 'null'
       - int
     doc: '<int>: Step size of sliding window in polymorphic sites.'
-    default: 150
     inputBinding:
       position: 101
       prefix: --step
@@ -225,7 +211,6 @@ inputs:
       - 'null'
       - int
     doc: '<int>: Rank of SNPs used for learning window weights (alpha).'
-    default: 1
     inputBinding:
       position: 101
       prefix: --topk
@@ -252,7 +237,6 @@ inputs:
       - 'null'
       - boolean
     doc: '<bool>: Set this flag to turn off warnings.'
-    default: false
     inputBinding:
       position: 101
       prefix: --WarningOff
@@ -261,7 +245,6 @@ inputs:
       - 'null'
       - int
     doc: '<int>: Sliding window size in polymorphic sites.'
-    default: 300
     inputBinding:
       position: 101
       prefix: --window

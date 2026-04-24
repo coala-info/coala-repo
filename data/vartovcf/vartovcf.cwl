@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - File
     doc: Input VAR file or stream
-    default: /dev/stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Variant calling mode
-    default: TumorOnly
     inputBinding:
       position: 101
       prefix: --mode

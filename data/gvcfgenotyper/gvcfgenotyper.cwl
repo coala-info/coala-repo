@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of alleles
-    default: 50
     inputBinding:
       position: 101
       prefix: --max-alleles
@@ -33,7 +32,6 @@ inputs:
       - string
     doc: 'b: compressed BCF, u: uncompressed BCF, z: compressed VCF, v: uncompressed
       VCF'
-    default: v
     inputBinding:
       position: 101
       prefix: --output-type

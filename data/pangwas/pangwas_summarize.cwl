@@ -18,7 +18,6 @@ inputs:
       - int
     doc: Truncate the product description to this length if used as an 
       identifie.
-    default: 50
     inputBinding:
       position: 101
       prefix: --max-product-len
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory.
-    default: .
     inputBinding:
       position: 101
       prefix: --outdir
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - float
     doc: Required this proportion of samples to have annotations in agreement.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --threshold

@@ -11,7 +11,6 @@ inputs:
       - float
     doc: chi square significance level required to call a heterozygote or 
       homozygote, either 0.1, 0.05 (default), 0.01, or 0.001.
-    default: 0.05
     inputBinding:
       position: 101
   - id: bc_err_freq
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: upper bound for epsilon, the error rate, between 0 and 1.0
-    default: 1.0
     inputBinding:
       position: 101
   - id: bound_low
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - float
     doc: lower bound for epsilon, the error rate, between 0 and 1.0
-    default: 0.0
     inputBinding:
       position: 101
   - id: deleverage
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - float
     doc: highly-repetitive stacks threshold, in standard deviation units
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --high-cov-thres
@@ -89,7 +85,6 @@ inputs:
       - string
     doc: 'input file type. Supported types: fasta, fastq, gzfasta, or gzfastq (default:
       guess).'
-    default: guess
     inputBinding:
       position: 101
       prefix: --in-type
@@ -114,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance (in nucleotides) allowed between stacks
-    default: 2
     inputBinding:
       position: 101
       prefix: -M
@@ -123,7 +117,6 @@ inputs:
       - 'null'
       - int
     doc: number of gaps allowed between stacks before merging
-    default: 2
     inputBinding:
       position: 101
   - id: max_locus_stacks
@@ -131,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of stacks at a single de novo locus
-    default: 3
     inputBinding:
       position: 101
   - id: max_secondary_align_dist
@@ -147,7 +139,6 @@ inputs:
       - 'null'
       - float
     doc: minimum length of aligned sequence in a gapped alignment
-    default: 0.8
     inputBinding:
       position: 101
   - id: min_reads
@@ -155,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads to seed a new stack
-    default: 3
     inputBinding:
       position: 101
       prefix: -m
@@ -164,7 +154,6 @@ inputs:
       - 'null'
       - string
     doc: either 'snp' (default), 'bounded', or 'fixed'
-    default: snp
     inputBinding:
       position: 101
   - id: num_threads

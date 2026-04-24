@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: Name of dataset in input HDF5 file.
-    default: X
     inputBinding:
       position: 103
       prefix: --dataset
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: Suppress abs correlations below this number.
-    default: 0.8
     inputBinding:
       position: 103
       prefix: --lower-bound

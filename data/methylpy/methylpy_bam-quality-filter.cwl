@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: size of buffer for reads to be written on hard drive.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --buffer-line-number
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum mCH level for reads to be included.
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --max-mch-level
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum MAPQ for reads to be included.
-    default: 30
     inputBinding:
       position: 101
       prefix: --min-mapq
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of CH sites for mCH level filter to be applied.
-    default: 30
     inputBinding:
       position: 101
       prefix: --min-num-ch

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: batch size used for encoding S/BLOW5 records in a single process
-    default: 1000
     inputBinding:
       position: 102
       prefix: --batchsize
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: record compression method (only for .blow5 format)
-    default: zlib
     inputBinding:
       position: 102
       prefix: --compress
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: number of I/O processes to use during conversion of multiple files
-    default: 4
     inputBinding:
       position: 102
       prefix: --iop
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - Directory
     doc: output to directory
-    default: None
     inputBinding:
       position: 102
       prefix: --out-dir
@@ -53,7 +49,6 @@ inputs:
       - boolean
     doc: retain the same directory structure in the converted output as the 
       input (experimental)
-    default: false
     inputBinding:
       position: 102
       prefix: --retain
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: signal compression method (only for .blow5 format)
-    default: svb-zd
     inputBinding:
       position: 102
       prefix: --sig-compress
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads used for encoding S/BLOW5 records in a single process
-    default: 8
     inputBinding:
       position: 102
       prefix: --threads

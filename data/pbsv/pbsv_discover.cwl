@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Consider up to N alignments in a window; 0 means disabled.
-    default: 100
     inputBinding:
       position: 102
       prefix: --downsample-max-alignments
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: Window in which to limit coverage, in basepairs.
-    default: 10K
     inputBinding:
       position: 102
       prefix: --downsample-window-length
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL).'
-    default: WARN
     inputBinding:
       position: 102
       prefix: --log-level
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Ignore alignment pairs separated by > N bp of a read or reference.
-    default: '100'
     inputBinding:
       position: 102
       prefix: --max-skip-split
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - float
     doc: Ignore alignments with gap-compressed sequence identity < N%.
-    default: 70.0
     inputBinding:
       position: 102
       prefix: --min-gap-comp-id-perc
@@ -78,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore alignments with mapping quality < N.
-    default: 5
     inputBinding:
       position: 102
       prefix: --min-mapq
@@ -87,7 +81,6 @@ inputs:
       - 'null'
       - string
     doc: Ignore alignments with reference length < N bp.
-    default: '100'
     inputBinding:
       position: 102
       prefix: --min-ref-span
@@ -96,7 +89,6 @@ inputs:
       - 'null'
       - string
     doc: Ignore SV signatures with length < N bp.
-    default: '7'
     inputBinding:
       position: 102
       prefix: --min-svsig-length

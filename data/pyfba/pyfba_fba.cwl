@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: biomass equation to use
-    default: the same as --type option
     inputBinding:
       position: 101
       prefix: --biomass
@@ -31,7 +30,6 @@ inputs:
       - string
     doc: organism type for the model (currently allowed are ['gramnegative', 
       'grampositive', 'microbial', 'mycobacteria', 'plant'])
-    default: gramnegative
     inputBinding:
       position: 101
       prefix: --type

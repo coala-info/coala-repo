@@ -63,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Number of nucleotides to use in continuous window
-    default: 60
     inputBinding:
       position: 101
       prefix: --window-size

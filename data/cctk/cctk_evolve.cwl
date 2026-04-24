@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: relative frequency of spacer acquisitions.
-    default: 75
     inputBinding:
       position: 101
       prefix: --acquisition
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: thickness of branch lines.
-    default: 1
     inputBinding:
       position: 101
       prefix: --branch-weight
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: relative frequency of deletions .
-    default: 10
     inputBinding:
       position: 101
       prefix: --deletion
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: resolution of the output image.
-    default: 300
     inputBinding:
       position: 101
       prefix: --dpi
@@ -86,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: length of the starting array.
-    default: 5
     inputBinding:
       position: 101
       prefix: --initial-length
@@ -95,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: rate arrays are lost after spawning descendant.
-    default: 50
     inputBinding:
       position: 101
       prefix: --loss-rate
@@ -134,7 +128,6 @@ inputs:
       - 'null'
       - Directory
     doc: output directory.
-    default: ./
     inputBinding:
       position: 101
       prefix: --outdir
@@ -143,7 +136,6 @@ inputs:
       - 'null'
       - float
     doc: height of plot in inches.
-    default: 3
     inputBinding:
       position: 101
       prefix: --plot-height
@@ -152,7 +144,6 @@ inputs:
       - 'null'
       - float
     doc: width of plot in inches.
-    default: 3
     inputBinding:
       position: 101
       prefix: --plot-width
@@ -169,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: relative frequency of trailer spacer decay.
-    default: 15
     inputBinding:
       position: 101
       prefix: --trailer-loss

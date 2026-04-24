@@ -11,7 +11,6 @@ inputs:
       - string
     doc: Name of the background file in FASTA format or order of the Markov 
       model to generate background sequences
-    default: '3'
     inputBinding:
       position: 101
       prefix: -b
@@ -21,7 +20,6 @@ inputs:
       - float
     doc: Cutoff of Hamming distance to delete redundant motifs basedn on 
       consensus
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -r
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: Cutoff of z-value to extend preliniary motifs
-    default: 1.96
     inputBinding:
       position: 101
       prefix: -z
@@ -39,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Length of the flanking l-mers
-    default: 6
     inputBinding:
       position: 101
       prefix: -l
@@ -48,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cycles of Gibbs Sampling to find each preliminary motif
-    default: 100
     inputBinding:
       position: 101
       prefix: -f
@@ -57,7 +52,6 @@ inputs:
       - 'null'
       - float
     doc: The cutoff of Hamming Distance between any two k-mers in a PWM
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -d
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: Cutoff of Hamming distance to merge similar k-mers
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -c
@@ -81,7 +74,6 @@ inputs:
       - 'null'
       - int
     doc: Length of preliminary motifs
-    default: 9
     inputBinding:
       position: 101
       prefix: -k
@@ -98,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: Number(1 or 2) of strands to be considered
-    default: 2
     inputBinding:
       position: 101
       prefix: -p
@@ -115,7 +106,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print this message
-    default: false
     inputBinding:
       position: 101
       prefix: -h
@@ -124,7 +114,6 @@ inputs:
       - 'null'
       - float
     doc: Cutoff of z-value to choose significant k-mers
-    default: 8.0
     inputBinding:
       position: 101
       prefix: -t
@@ -133,7 +122,6 @@ inputs:
       - 'null'
       - float
     doc: Cutoff of z-value to choose sub-significant k-mers
-    default: 4.5
     inputBinding:
       position: 101
       prefix: -w
@@ -142,7 +130,6 @@ inputs:
       - 'null'
       - float
     doc: Cutoff of SW score to construct graph
-    default: 1.8
     inputBinding:
       position: 101
       prefix: -s

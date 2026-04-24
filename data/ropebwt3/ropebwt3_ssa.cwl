@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: sample rate one SA per 2**INT bases
-    default: 8
     inputBinding:
       position: 102
       prefix: -s
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 4
     inputBinding:
       position: 102
       prefix: -t

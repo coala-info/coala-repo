@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow ABSOLUTE directories (enabled by default)
-    default: true
     inputBinding:
       position: 102
       prefix: --absolute
@@ -189,7 +188,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow RELATIVE directories (enabled by default)
-    default: true
     inputBinding:
       position: 102
       prefix: --relative

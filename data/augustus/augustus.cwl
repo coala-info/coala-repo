@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: partial, intronless, complete, atleastone or exactlyone
-    default: partial
     inputBinding:
       position: 102
       prefix: --genemodel
@@ -93,7 +92,6 @@ inputs:
       - boolean
     doc: 'Do not report transcripts with in-frame stop codons. Otherwise, intron-spanning
       stop codons could occur. Default: false'
-    default: false
     inputBinding:
       position: 102
       prefix: --noInFrameStop
@@ -129,7 +127,6 @@ inputs:
       - 'null'
       - boolean
     doc: show a progressmeter
-    default: false
     inputBinding:
       position: 102
       prefix: --progress
@@ -158,7 +155,6 @@ inputs:
       - boolean
     doc: predict genes independently on each strand, allow overlapping genes on 
       opposite strands
-    default: false
     inputBinding:
       position: 102
       prefix: --singlestrand
@@ -174,7 +170,6 @@ inputs:
       - 'null'
       - string
     doc: both, forward or backward
-    default: both
     inputBinding:
       position: 102
       prefix: --strand

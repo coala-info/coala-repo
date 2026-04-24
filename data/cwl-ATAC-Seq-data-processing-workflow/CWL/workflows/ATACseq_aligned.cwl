@@ -33,7 +33,6 @@ inputs:
       Q-value cutoff used for peak calling by MACS2. 
       The default is 0.05.
     type: float
-    default: 0.05
   effective_genome_size:
     doc: |
       The effectively mappable genome size, please see: 
@@ -45,7 +44,6 @@ inputs:
       The larger the bin size the smaller are the coverage tracks, however, 
       the less precise is the signal. For single bp resolution set to 1.
     type: int
-    default: 10
   ignoreForNormalization:
     doc: |
       List of space-delimited chromosome names that shall be ignored 
@@ -53,7 +51,6 @@ inputs:
       Specify as space-delimited string. 
       Default: "chrX chrY chrM"
     type: string?
-    default: "chrX chrY chrM"
 
  
 steps:
@@ -195,7 +192,6 @@ steps:
       sample_id:
         source: sample_id
       is_paired_end:
-        default: true
     out:
       - qc_plot_fingerprint_plot  
       - qc_plot_fingerprint_tsv

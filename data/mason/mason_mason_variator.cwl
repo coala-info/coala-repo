@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - string
     doc: Haplotype name separator in output FASTA.
-    default: /
     inputBinding:
       position: 101
       prefix: --haplotype-name-sep
@@ -20,7 +19,6 @@ inputs:
       - string
     doc: The separator between the chromosome and the haplotype name in the 
       output FASTA file.
-    default: /
     inputBinding:
       position: 101
       prefix: --haplotype-sep
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal small indel size to simulate. In range [0..inf].
-    default: 6
     inputBinding:
       position: 101
       prefix: --max-small-indel-size
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal SV size to simulate. In range [0..inf].
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max-sv-size
@@ -63,7 +59,6 @@ inputs:
       - float
     doc: Median of beta distribution for methylation level of CpG loci. In range
       [0..1].
-    default: 0.6
     inputBinding:
       position: 101
       prefix: --meth-cg-mu
@@ -73,7 +68,6 @@ inputs:
       - float
     doc: Standard deviation of beta distribution for methylation level of CpG 
       loci. In range [0..1].
-    default: 0.03
     inputBinding:
       position: 101
       prefix: --meth-cg-sigma
@@ -83,7 +77,6 @@ inputs:
       - float
     doc: Median of beta distribution for methylation level of CHG loci. In range
       [0..1].
-    default: 0.08
     inputBinding:
       position: 101
       prefix: --meth-chg-mu
@@ -93,7 +86,6 @@ inputs:
       - float
     doc: Standard deviation of beta distribution for methylation level of CHG 
       loci. In range [0..1].
-    default: 0.008
     inputBinding:
       position: 101
       prefix: --meth-chg-sigma
@@ -103,7 +95,6 @@ inputs:
       - float
     doc: Median of beta distribution for methylation level of CHH loci. In range
       [0..1].
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --meth-chh-mu
@@ -113,7 +104,6 @@ inputs:
       - float
     doc: Standard deviation of beta distribution for methylation level of CHH 
       loci. In range [0..1].
-    default: 0.005
     inputBinding:
       position: 101
       prefix: --meth-chh-sigma
@@ -142,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal small indel size to simulate. In range [0..inf].
-    default: 1
     inputBinding:
       position: 101
       prefix: --min-small-indel-size
@@ -151,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal SV size to simulate. In range [0..inf].
-    default: 50
     inputBinding:
       position: 101
       prefix: --min-sv-size
@@ -168,7 +156,6 @@ inputs:
       - 'null'
       - int
     doc: The number of haplotypes to simulate. In range [1..inf].
-    default: 1
     inputBinding:
       position: 101
       prefix: --num-haplotypes
@@ -185,7 +172,6 @@ inputs:
       - 'null'
       - string
     doc: The seed to use for the random number generator.
-    default: '0'
     inputBinding:
       position: 101
       prefix: --seed
@@ -194,7 +180,6 @@ inputs:
       - 'null'
       - float
     doc: Small indel rate. In range [0.0..1.0].
-    default: 1e-06
     inputBinding:
       position: 101
       prefix: --small-indel-rate
@@ -203,7 +188,6 @@ inputs:
       - 'null'
       - float
     doc: Per-base SNP rate. In range [0.0..1.0].
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: --snp-rate
@@ -212,7 +196,6 @@ inputs:
       - 'null'
       - float
     doc: Per-base SNP rate. In range [0.0..1.0].
-    default: 1e-07
     inputBinding:
       position: 101
       prefix: --sv-duplication-rate
@@ -221,7 +204,6 @@ inputs:
       - 'null'
       - float
     doc: Per-base SNP rate. In range [0.0..1.0].
-    default: 1e-07
     inputBinding:
       position: 101
       prefix: --sv-indel-rate
@@ -230,7 +212,6 @@ inputs:
       - 'null'
       - float
     doc: Per-base SNP rate. In range [0.0..1.0].
-    default: 1e-07
     inputBinding:
       position: 101
       prefix: --sv-inversion-rate
@@ -239,7 +220,6 @@ inputs:
       - 'null'
       - float
     doc: Per-base SNP rate. In range [0.0..1.0].
-    default: 1e-07
     inputBinding:
       position: 101
       prefix: --sv-translocation-rate
@@ -257,7 +237,6 @@ inputs:
       - boolean
     doc: Turn this option off to disable version update notifications of the 
       application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO.
-    default: true
     inputBinding:
       position: 101
       prefix: --version-check

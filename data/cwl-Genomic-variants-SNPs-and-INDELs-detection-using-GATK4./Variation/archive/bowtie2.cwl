@@ -68,7 +68,6 @@ inputs:
 
   is_paired_end:
     type: boolean
-    default: false
   fastq2:
     type: File?
     inputBinding:
@@ -86,7 +85,6 @@ inputs:
   max_mapping_insert_length:
     doc: usefull for very long fragments, as expected for ATAC
     type: long?
-    default: 2000
 #    inputBinding:
 #      prefix: --maxins
 #      position: 1

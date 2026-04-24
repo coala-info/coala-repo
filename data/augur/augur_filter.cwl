@@ -17,7 +17,6 @@ inputs:
       - string
     doc: How should empty outputs be reported when no strains pass filtering 
       and/or subsampling.
-    default: error
     inputBinding:
       position: 101
       prefix: --empty-output-reporting
@@ -36,7 +35,6 @@ inputs:
       - boolean
     doc: Exclude all strains by default. Use this with the include arguments to 
       select a specific subset of strains.
-    default: false
     inputBinding:
       position: 101
       prefix: --exclude-all
@@ -75,7 +73,6 @@ inputs:
       ends on a Sunday. (3) 'month' and 'week' grouping cannot be used together. (4)
       Custom columns ['month', 'week', 'year'] in the metadata are ignored for grouping.
       Please rename them if you want to use their values for grouping."
-    default: []
     inputBinding:
       position: 101
       prefix: --group-by
@@ -156,7 +153,6 @@ inputs:
     doc: maximum number of metadata records to read into memory at a time. 
       Increasing this number can speed up filtering at the cost of more memory 
       used.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --metadata-chunk-size
@@ -167,7 +163,6 @@ inputs:
         items: string
     doc: delimiters to accept when reading a metadata file. Only one delimiter 
       will be inferred.
-    default:
       - ','
       - "\t"
     inputBinding:
@@ -180,7 +175,6 @@ inputs:
         items: string
     doc: names of possible metadata columns containing identifier information, 
       ordered by priority. Only one ID column will be inferred.
-    default:
       - strain
       - name
     inputBinding:
@@ -220,7 +214,6 @@ inputs:
       - 'null'
       - boolean
     doc: Exclude sequences that contain illegal characters.
-    default: false
     inputBinding:
       position: 101
       prefix: --non-nucleotide
@@ -229,7 +222,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs/cores/threads/jobs to utilize at once.
-    default: 1
     inputBinding:
       position: 101
       prefix: --nthreads
@@ -254,7 +246,6 @@ inputs:
     doc: Allow probabilistic sampling during subsampling. This is useful when 
       there are more groups than requested sequences. This option only applies 
       when a total sample size is provided.
-    default: true
     inputBinding:
       position: 101
       prefix: --probabilistic-sampling
@@ -317,7 +308,6 @@ inputs:
       large files. Note that this should only be used if you are sure there are 
       no duplicate sequences or mismatched ids since they can lead to errors in 
       downstream Augur commands.
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-checks

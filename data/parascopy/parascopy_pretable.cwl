@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - File
     doc: Path to "bedtools" executable
-    default: bedtools
     inputBinding:
       position: 101
       prefix: --bedtools
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - File
     doc: Path to "bgzip" executable
-    default: bgzip
     inputBinding:
       position: 101
       prefix: --bgzip
@@ -30,7 +28,6 @@ inputs:
       - 'null'
       - File
     doc: Path to BWA executable
-    default: bwa
     inputBinding:
       position: 101
       prefix: --bwa
@@ -62,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Skip regions with more than <int> homologies (copies) in the genome
-    default: 10
     inputBinding:
       position: 101
       prefix: --max-homologies
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal alignment length
-    default: 250
     inputBinding:
       position: 101
       prefix: --min-aln-len
@@ -80,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: Minimal sequence similarity
-    default: 0.96
     inputBinding:
       position: 101
       prefix: --min-seq-sim
@@ -89,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: Artificial read length
-    default: 900
     inputBinding:
       position: 101
       prefix: --read-len
@@ -117,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum BWA seed length
-    default: 16
     inputBinding:
       position: 101
       prefix: --seed-len
@@ -126,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: Artificial reads step size
-    default: 150
     inputBinding:
       position: 101
       prefix: --step-size
@@ -143,7 +134,6 @@ inputs:
       - 'null'
       - File
     doc: Path to "tabix" executable
-    default: tabix
     inputBinding:
       position: 101
       prefix: --tabix
@@ -152,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: Use <int> threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

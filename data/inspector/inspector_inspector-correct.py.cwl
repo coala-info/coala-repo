@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal runtime for local assembly with Flye. Unit is second.
-    default: 1200
     inputBinding:
       position: 101
       prefix: --flyetimeout

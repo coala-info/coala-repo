@@ -11,7 +11,6 @@ inputs:
     doc: "Alignment format of MSA, must be a biopython AlignIO\n                 \
       \       input alignment_format. See\n                        http://biopython.org/wiki/AlignIO.
       Default: fasta"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --alignment-format
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - File
     doc: Path to write log to. Default is stderr
-    default: stderr
     inputBinding:
       position: 101
       prefix: --log
@@ -45,7 +43,6 @@ inputs:
       - int
     doc: "Maximum number of levels to use for nesting. Default:\n                \
       \        5"
-    default: 5
     inputBinding:
       position: 101
       prefix: --max-nesting
@@ -55,7 +52,6 @@ inputs:
       - int
     doc: "Minimum number of consecutive characters which must be\n               \
       \         identical for a match. Default: 7"
-    default: 7
     inputBinding:
       position: 101
       prefix: --min-match-length
@@ -73,7 +69,6 @@ inputs:
       - string
     doc: "p: PRG, b: Binary, g: GFA, a: All. Combinations are\n                  \
       \      allowed i.e., gb: GFA and Binary. Default: a"
-    default: a
     inputBinding:
       position: 101
       prefix: --output-type
@@ -94,7 +89,6 @@ inputs:
       - int
     doc: "Number of threads. 0 will use all available. Default:\n                \
       \        1"
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

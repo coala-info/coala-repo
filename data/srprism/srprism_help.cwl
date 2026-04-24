@@ -23,7 +23,6 @@ inputs:
       - string
     doc: Minimum message level to report to the log stream. Possible values are 
       "debug", "info", "warning", "error", "quiet".
-    default: warning
     inputBinding:
       position: 102
       prefix: --trace-level

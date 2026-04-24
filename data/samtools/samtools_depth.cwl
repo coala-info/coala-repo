@@ -53,7 +53,6 @@ inputs:
   - 'null'
   - string
   doc: Add specified flags to the default filter-out flag list
-  default: UNMAP,SECONDARY,QCFAIL,DUP
   inputBinding:
     position: 102
     prefix: --excl-flags
@@ -70,7 +69,6 @@ inputs:
   - 'null'
   - string
   doc: Only include records with at least one the FLAGs present
-  default: '0'
   inputBinding:
     position: 102
     prefix: --incl-flags
@@ -97,7 +95,6 @@ inputs:
   - 'null'
   - int
   doc: Filter bases with base quality smaller than INT
-  default: 0
   inputBinding:
     position: 102
     prefix: --min-BQ
@@ -106,7 +103,6 @@ inputs:
   - 'null'
   - int
   doc: Filter alignments with mapping quality smaller than INT
-  default: 0
   inputBinding:
     position: 102
     prefix: --min-MQ
@@ -115,7 +111,6 @@ inputs:
   - 'null'
   - int
   doc: Minimum read length
-  default: 0
   inputBinding:
     position: 102
     prefix: -l
@@ -164,7 +159,6 @@ inputs:
   - 'null'
   - string
   doc: Only include records with all of the FLAGs present
-  default: '0'
   inputBinding:
     position: 102
     prefix: --require-flags
@@ -173,7 +167,6 @@ inputs:
   - 'null'
   - int
   doc: Number of additional threads to use
-  default: 0
   inputBinding:
     position: 102
     prefix: --threads

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to folder containing recipes
-    default: recipes/
     inputBinding:
       position: 1
   - id: config
@@ -17,7 +16,6 @@ inputs:
       - 'null'
       - File
     doc: Path to Bioconda config
-    default: config.yml
     inputBinding:
       position: 2
   - id: anaconda_upload
@@ -45,7 +43,6 @@ inputs:
     doc: Filename to optionally replace build script template used by the Docker
       container. By default use docker_utils.BUILD_SCRIPT_TEMPLATE. Only used if
       --docker is True.
-    default: '-'
     inputBinding:
       position: 103
       prefix: --build-script-template
@@ -58,7 +55,6 @@ inputs:
       present in one of these channels will be skipped. The default is the first
       two channels specified in the config file. Note that this is ignored if 
       you specify --git-range.
-    default: '-'
     inputBinding:
       position: 103
       prefix: --check-channels
@@ -83,7 +79,6 @@ inputs:
       - 'null'
       - string
     doc: Name of base image that can be used in Dockerfile template.
-    default: '-'
     inputBinding:
       position: 103
       prefix: --docker-base-image
@@ -93,7 +88,6 @@ inputs:
       - type: array
         items: string
     doc: Packages to exclude during this run
-    default: '-'
     inputBinding:
       position: 103
       prefix: --exclude
@@ -116,7 +110,6 @@ inputs:
       commits in HEAD vs master, or just "HEAD" to include uncommitted changes).
       All recipes modified within this range will be built if not present in the
       channel.
-    default: '-'
     inputBinding:
       position: 103
       prefix: --git-range
@@ -154,7 +147,6 @@ inputs:
       - type: array
         items: string
     doc: Exclude this linting function. Can be used multiple times.
-    default: '-'
     inputBinding:
       position: 103
       prefix: --lint-exclude
@@ -163,7 +155,6 @@ inputs:
       - 'null'
       - int
     doc: Limit lines emitted for commands executed
-    default: '-'
     inputBinding:
       position: 103
       prefix: --log-command-max-lines
@@ -172,7 +163,6 @@ inputs:
       - 'null'
       - File
     doc: Write log to file
-    default: '-'
     inputBinding:
       position: 103
       prefix: --logfile
@@ -181,7 +171,6 @@ inputs:
       - 'null'
       - string
     doc: Log level for log file
-    default: debug
     inputBinding:
       position: 103
       prefix: --logfile-level
@@ -190,7 +179,6 @@ inputs:
       - 'null'
       - string
     doc: Set logging level (debug, info, warning, error, critical)
-    default: info
     inputBinding:
       position: 103
       prefix: --loglevel
@@ -200,7 +188,6 @@ inputs:
       - string
     doc: Conda Docker image to install the package with during the mulled based 
       tests.
-    default: quay.io/bioconda/create-env:latest
     inputBinding:
       position: 103
       prefix: --mulled-conda-image
@@ -217,7 +204,6 @@ inputs:
       - 'null'
       - string
     doc: Provide a quay.io target to push mulled docker images to.
-    default: '-'
     inputBinding:
       position: 103
       prefix: --mulled-upload-target
@@ -233,7 +219,6 @@ inputs:
       are NOT parallel workers (i.e., the majority of cases). This should 
       generally NOT be used in conjunctions with the --packages or --git-range 
       options!
-    default: 1
     inputBinding:
       position: 103
       prefix: --n-workers
@@ -244,7 +229,6 @@ inputs:
         items: string
     doc: Glob for package[s] to build. Default is to build all packages. Can be 
       specified more than once
-    default: '*'
     inputBinding:
       position: 103
       prefix: --packages
@@ -255,7 +239,6 @@ inputs:
     doc: Specifies the directory to which container-built packages should be 
       stored on the host. Default is to use the host's conda-bld dir. If 
       --docker is not specified, then this argument is ignored.
-    default: '-'
     inputBinding:
       position: 103
       prefix: --pkg-dir
@@ -292,7 +275,6 @@ inputs:
       - int
     doc: Number of levels of root nodes to skip. (Optional, and only if using 
       n_workers)
-    default: '-'
     inputBinding:
       position: 103
       prefix: --subdag-depth
@@ -315,7 +297,6 @@ inputs:
       11th, etc. sub-DAGs. Equivalently, using "--n-workers 5 --worker-offset 1"
       will result in sub-DAGs 2, 7, 12, etc. being processed. If you use more 
       than one worker, then make sure to give each a different offset!
-    default: 0
     inputBinding:
       position: 103
       prefix: --worker-offset

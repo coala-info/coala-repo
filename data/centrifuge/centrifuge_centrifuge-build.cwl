@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Number of chars consumed in initial lookup
-    default: 10
     inputBinding:
       position: 102
       prefix: --ftabchars
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: SA is sampled every 2^offRate BWT chars
-    default: 5
     inputBinding:
       position: 102
       prefix: --offrate

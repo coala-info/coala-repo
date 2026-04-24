@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - Directory
     doc: location for the yasma annotation used in this analysis.
-    default: the project's tradeoff folder
     inputBinding:
       position: 101
       prefix: --annotation_folder
@@ -71,7 +70,6 @@ inputs:
       - int
     doc: Maximum hairpin size. Longer loci will not be considered for miRNA 
       analysis.
-    default: 300
     inputBinding:
       position: 101
       prefix: --max_length
@@ -88,7 +86,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory name for annotation output.
-    default: the current directory, with this directory name as the project name
     inputBinding:
       position: 101
       prefix: --output_directory

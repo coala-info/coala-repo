@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: ANIcalculator !!! ERROR !!!
-    default: false
     inputBinding:
       position: 101
   - id: centrifuge
@@ -17,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: centrifuge !!! ERROR !!!
-    default: false
     inputBinding:
       position: 101
   - id: checkm
@@ -25,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: checkm all good
-    default: true
     inputBinding:
       position: 101
   - id: fastANI
@@ -33,7 +30,6 @@ inputs:
       - 'null'
       - boolean
     doc: fastANI all good
-    default: true
     inputBinding:
       position: 101
   - id: mash
@@ -41,7 +37,6 @@ inputs:
       - 'null'
       - boolean
     doc: mash all good
-    default: true
     inputBinding:
       position: 101
   - id: nsimscan
@@ -49,7 +44,6 @@ inputs:
       - 'null'
       - boolean
     doc: nsimscan !!! ERROR !!!
-    default: false
     inputBinding:
       position: 101
   - id: nucmer
@@ -57,7 +51,6 @@ inputs:
       - 'null'
       - boolean
     doc: nucmer all good
-    default: true
     inputBinding:
       position: 101
   - id: prodigal
@@ -65,7 +58,6 @@ inputs:
       - 'null'
       - boolean
     doc: prodigal all good
-    default: true
     inputBinding:
       position: 101
   - id: skani
@@ -73,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: skani all good
-    default: true
     inputBinding:
       position: 101
 outputs:

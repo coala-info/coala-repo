@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: Adjacent DICOMs (y/n, default n)
-    default: n
     inputBinding:
       position: 102
       prefix: -a
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: 'BIDS sidecar (y/n/o [only: no NIfTI], default y)'
-    default: y
     inputBinding:
       position: 102
       prefix: -b
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Filename format (e.g. %p=protocol, %t=time)
-    default: '%f_%p_%t_%s'
     inputBinding:
       position: 102
       prefix: -f
@@ -49,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: GZ compress images (y/n/i [i=internal], default n)
-    default: n
     inputBinding:
       position: 102
       prefix: -z
@@ -58,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: Merge 2D slices from same series (y/n, default n)
-    default: n
     inputBinding:
       position: 102
       prefix: -m

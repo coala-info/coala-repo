@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: maximum depth of coverage for sample1
-    default: 1000000
     inputBinding:
       position: 102
       prefix: -A
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: maximum depth of coverage for sample2
-    default: 1000000
     inputBinding:
       position: 102
       prefix: -B
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: minimum depth of coverage for sample1
-    default: 0
     inputBinding:
       position: 102
       prefix: -a
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: minimum depth of coverage for sample2
-    default: 0
     inputBinding:
       position: 102
       prefix: -b
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: minimum size of window to output
-    default: 0
     inputBinding:
       position: 102
       prefix: -l
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Target number of valid bases in the window
-    default: 1000
     inputBinding:
       position: 102
       prefix: -v

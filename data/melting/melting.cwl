@@ -94,7 +94,6 @@ inputs:
       if the sequences are self complementary. Otherwise F is 4 if the both 
       strands are present in equivalent amount and 1 if one strand is in excess.
       The default factor value is 4.
-    default: 4.0
     inputBinding:
       position: 101
       prefix: -F
@@ -412,7 +411,6 @@ inputs:
       - 'null'
       - int
     doc: Threshold for approximative computation. Default is 60.
-    default: 60
     inputBinding:
       position: 101
       prefix: -T
@@ -421,7 +419,6 @@ inputs:
       - 'null'
       - boolean
     doc: Switch ON the verbose mode, issuing lot more info. Default is OFF.
-    default: false
     inputBinding:
       position: 101
       prefix: -v

@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level to use if compressing output
-    default: 6
     inputBinding:
       position: 103
       prefix: --compress-level
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Size of k-mers (max. 32)
-    default: 21
     inputBinding:
       position: 103
       prefix: --kmer
@@ -41,7 +39,6 @@ inputs:
     doc: "u: uncompressed; b: Bzip2; g: Gzip; l: Lzma; z: Zstd\n          \n     \
       \     Output compression format is automatically guessed from the filename extension.
       This option is used to override that"
-    default: u
     inputBinding:
       position: 103
       prefix: --output-type

@@ -36,7 +36,6 @@ inputs:
       - int
     doc: The length of the feature in bp. It is only used when not using dual 
       sequence search.
-    default: 20
     inputBinding:
       position: 101
       prefix: --l
@@ -63,7 +62,6 @@ inputs:
       - int
     doc: The number of allowed mismatches per feature. When in extract + Count 
       mode, this parameter is ignored.
-    default: 1
     inputBinding:
       position: 101
       prefix: --m
@@ -72,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Downstream search sequence delimiting search sequence mismatches.
-    default: 0
     inputBinding:
       position: 101
       prefix: --msd
@@ -81,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Upstream search sequence delimiting search sequence mismatches.
-    default: 0
     inputBinding:
       position: 101
       prefix: --msu
@@ -90,7 +86,6 @@ inputs:
       - 'null'
       - string
     doc: Specify an output compiled file name
-    default: compiled
     inputBinding:
       position: 101
       prefix: --fn
@@ -99,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal Phred-score in the downstream search sequence
-    default: 30
     inputBinding:
       position: 101
       prefix: --qsd
@@ -109,7 +103,6 @@ inputs:
       - int
     doc: Minimal Phred-score. Reads with nucleotides having < than the indicated
       Phred-score will be discarded.
-    default: 30
     inputBinding:
       position: 101
       prefix: --ph
@@ -118,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal Phred-score in the upstream search sequence
-    default: 30
     inputBinding:
       position: 101
       prefix: --qsu
@@ -135,7 +127,6 @@ inputs:
       - 'null'
       - string
     doc: Running Mode [Counter (C) / Extractor + Counter (EC)].
-    default: C
     inputBinding:
       position: 101
       prefix: --mo
@@ -161,7 +152,6 @@ inputs:
       - int
     doc: The start position of the feature within the read. Ignored when using 
       sequence searches with known delimiting sequences.
-    default: 0
     inputBinding:
       position: 101
       prefix: --st

@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: mode of editing, range 0-2
-    default: 0
     inputBinding:
       position: 101
       prefix: -m
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: cap for the number of base insertions that can be made at one position
-    default: k*1.5
     inputBinding:
       position: 101
       prefix: -c
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: k/x ratio for the number of k-mers that should be missing
-    default: 5.0
     inputBinding:
       position: 101
       prefix: -x
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: k/y ratio for the number of edited k-mers that should be present
-    default: 9.0
     inputBinding:
       position: 101
       prefix: -y
@@ -69,7 +65,6 @@ inputs:
       - float
     doc: ratio of number of k-mers in the k subset that should be missing in 
       order to attempt fix (higher=stringent)
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -X
@@ -79,7 +74,6 @@ inputs:
       - float
     doc: ratio of number of k-mers in the k subset that should be present to 
       accept an edit (higher=stringent)
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -Y
@@ -89,7 +83,6 @@ inputs:
       - int
     doc: controls size of k-mer subset. When checking subset of k-mers, check 
       every jth k-mer
-    default: 3
     inputBinding:
       position: 101
       prefix: -j
@@ -99,7 +92,6 @@ inputs:
       - int
     doc: soft masks missing k-mer positions having no fix (-v 1 = yes, default =
       0, no)
-    default: 0
     inputBinding:
       position: 101
       prefix: -a
@@ -108,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of deletions bases to try, range 0-10
-    default: 5
     inputBinding:
       position: 101
       prefix: -d
@@ -117,7 +108,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of insertion bases to try, range 0-5
-    default: 5
     inputBinding:
       position: 101
       prefix: -i
@@ -127,7 +117,6 @@ inputs:
       - int
     doc: maximum k-mer coverage threshold (CBF only) [default=255, largest 
       possible value]
-    default: 255
     inputBinding:
       position: 101
       prefix: -q
@@ -136,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: minimum contig length
-    default: 100
     inputBinding:
       position: 101
       prefix: -z
@@ -172,7 +160,6 @@ inputs:
       - int
     doc: SNV mode. Overrides draft k-mer checks, forcing reassessment at each 
       position (-s 1 = yes, default = 0, no)
-    default: 0
     inputBinding:
       position: 101
       prefix: -s
@@ -181,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: -t
@@ -190,7 +176,6 @@ inputs:
       - 'null'
       - int
     doc: verbose mode (-v 1 = yes, default = 0, no)
-    default: 0
     inputBinding:
       position: 101
       prefix: -v

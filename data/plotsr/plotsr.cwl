@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Output figure format (pdf, png, svg)
-    default: pdf
     inputBinding:
       position: 101
       prefix: --format

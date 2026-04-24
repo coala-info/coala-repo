@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - File
     doc: Dump barcoding mutations to a file
-    default: None
     inputBinding:
       position: 101
       prefix: --barcode_snps
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Variant caller
-    default: freebayes
     inputBinding:
       position: 101
       prefix: --caller
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Mutation panel name
-    default: tbdb
     inputBinding:
       position: 101
       prefix: --db
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - Directory
     doc: Database directory
-    default: /usr/local/share/tbprofiler
     inputBinding:
       position: 101
       prefix: --db_dir
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - Directory
     doc: Storage directory
-    default: .
     inputBinding:
       position: 101
       prefix: --dir
@@ -61,7 +56,6 @@ inputs:
       - 'null'
       - string
     doc: Path to db files prefix (overrides "--db" parameter)
-    default: None
     inputBinding:
       position: 101
       prefix: --external_db
@@ -70,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: Kmer counter
-    default: FastK
     inputBinding:
       position: 101
       prefix: --kmer_counter
@@ -79,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: Logging level
-    default: INFO
     inputBinding:
       position: 101
       prefix: --logging
@@ -88,7 +80,6 @@ inputs:
       - 'null'
       - string
     doc: NGS Platform used to generate data
-    default: illumina
     inputBinding:
       position: 101
       prefix: --platform
@@ -97,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: Sample prefix
-    default: tbprofiler
     inputBinding:
       position: 101
       prefix: --prefix
@@ -106,7 +96,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform in-silico spoligotyping
-    default: false
     inputBinding:
       position: 101
       prefix: --spoligotype
@@ -115,7 +104,6 @@ inputs:
       - 'null'
       - Directory
     doc: Temp firectory to process all files
-    default: .
     inputBinding:
       position: 101
       prefix: --temp
@@ -124,7 +112,6 @@ inputs:
       - 'null'
       - string
     doc: Jinja2 formatted template for output
-    default: None
     inputBinding:
       position: 101
       prefix: --text_template
@@ -133,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: Threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

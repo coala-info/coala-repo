@@ -35,7 +35,6 @@ inputs:
     doc: "Accept a walk as correctly resolving a gap if the walk length is within
       T standard \n                                       deviations from the estimated
       distance (default: 3.0f)"
-    default: 3.0
     inputBinding:
       position: 102
       prefix: --distanceFactor
@@ -59,7 +58,6 @@ inputs:
       \          The most conservative most is unique, then best-unique with best-any
       being the most\n                                       aggressive. The default
       is unique"
-    default: unique
     inputBinding:
       position: 102
       prefix: --graph-resolve
@@ -69,7 +67,6 @@ inputs:
       - int
     doc: "separate contigs by at least N bases. All predicted gaps less\n        \
       \                               than N will be extended to N (default: 25)"
-    default: 25
     inputBinding:
       position: 102
       prefix: --min-gap-length

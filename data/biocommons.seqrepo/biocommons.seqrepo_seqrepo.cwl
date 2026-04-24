@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: rsync server host
-    default: dl.biocommons.org
     inputBinding:
       position: 102
       prefix: --remote-host
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - Directory
     doc: seqrepo root directory (SEQREPO_ROOT_DIR)
-    default: /usr/local/share/seqrepo
     inputBinding:
       position: 102
       prefix: --root-directory
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - File
     doc: path to rsync executable
-    default: /usr/bin/rsync
     inputBinding:
       position: 102
       prefix: --rsync-exe
@@ -52,7 +49,6 @@ inputs:
       - type: array
         items: boolean
     doc: be verbose; multiple accepted
-    default: 0
     inputBinding:
       position: 102
       prefix: --verbose

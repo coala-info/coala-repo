@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: ASV denoising, T(rue) or F(alse)
-    default: true
     inputBinding:
       position: 101
       prefix: -v
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Bootstrap for sequence number normalization
-    default: 200
     inputBinding:
       position: 101
       prefix: -b
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Chimera removal, T(rue) or F(alse)
-    default: true
     inputBinding:
       position: 101
       prefix: -c
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Cluster number
-    default: 2
     inputBinding:
       position: 101
       prefix: -C
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: Functional analysis, T(rue) or F(alse)
-    default: true
     inputBinding:
       position: 101
       prefix: -f
@@ -86,7 +81,6 @@ inputs:
       - 'null'
       - float
     doc: Network analysis edge threshold
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -G
@@ -103,7 +97,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output path
-    default: default_out
     inputBinding:
       position: 101
       prefix: -o
@@ -112,7 +105,6 @@ inputs:
       - 'null'
       - boolean
     doc: If the samples are paired, T(rue) or F(alse)
-    default: false
     inputBinding:
       position: 101
       prefix: -E
@@ -121,7 +113,6 @@ inputs:
       - 'null'
       - boolean
     doc: rRNA copy number correction, T(rue) or F(alse)
-    default: true
     inputBinding:
       position: 101
       prefix: -r
@@ -130,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: rRNA length threshold of rRNA extraction. 0 is disabled
-    default: 0
     inputBinding:
       position: 101
       prefix: -a
@@ -139,7 +129,6 @@ inputs:
       - 'null'
       - boolean
     doc: Rarefaction curve, T(rue) or F(alse)
-    default: false
     inputBinding:
       position: 101
       prefix: -R
@@ -173,7 +162,6 @@ inputs:
       - 'null'
       - boolean
     doc: Sequence format check, T(rue) or F(alse)
-    default: false
     inputBinding:
       position: 101
       prefix: -k
@@ -182,7 +170,6 @@ inputs:
       - 'null'
       - int
     doc: Sequence number normalization depth, 0 is disabled
-    default: 0
     inputBinding:
       position: 101
       prefix: -s
@@ -191,7 +178,6 @@ inputs:
       - 'null'
       - string
     doc: Sequence type, T (Shotgun) or F (rRNA)
-    default: F
     inputBinding:
       position: 101
       prefix: -M
@@ -208,7 +194,6 @@ inputs:
       - 'null'
       - int
     doc: 'Taxonomical distance type, 0: weighted, 1: unweigthed, 2: both'
-    default: 2
     inputBinding:
       position: 101
       prefix: -w
@@ -226,7 +211,6 @@ inputs:
       - 'null'
       - int
     doc: Number of thread
-    default: auto
     inputBinding:
       position: 101
       prefix: -t

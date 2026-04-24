@@ -195,7 +195,6 @@ inputs:
       - int
     doc: 'Use the following splice model: 0 - original sim4; 1 - GeneSplicer; 2 -
       Glimmer (default: 0)'
-    default: 0
     inputBinding:
       position: 101
       prefix: -splicemodel

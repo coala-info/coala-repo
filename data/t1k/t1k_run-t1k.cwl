@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: the delimiter character for digit unit
-    default: automatic
     inputBinding:
       position: 101
       prefix: --alleleDelimiter
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: the number of units in genotyping result
-    default: automatic
     inputBinding:
       position: 101
       prefix: --alleleDigitUnits
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: only consider read aligned to the listed allele sereies.
-    default: not used
     inputBinding:
       position: 101
       prefix: --alleleWhitelist
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: if -b, BAM field for barcode; if -1 -2/-u, file containing barcodes
-    default: not used
     inputBinding:
       position: 101
       prefix: --barcode
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: start, end(-1 for length-1), strand in a barcode is the true barcode
-    default: -1
     inputBinding:
       position: 101
       prefix: --barcodeRange
@@ -68,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: start, end(-1 for length-1), strand in a barcode is the true barcode
-    default: 0
     inputBinding:
       position: 101
       prefix: --barcodeRange
@@ -77,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: start, end(-1 for length-1), strand in a barcode is the true barcode
-    default: +
     inputBinding:
       position: 101
       prefix: --barcodeRange
@@ -86,7 +79,6 @@ inputs:
       - 'null'
       - File
     doc: path to the barcode whitelist
-    default: not used
     inputBinding:
       position: 101
       prefix: --barcodeWhitelist
@@ -95,7 +87,6 @@ inputs:
       - 'null'
       - float
     doc: the effect from other gene's expression
-    default: 0.04
     inputBinding:
       position: 101
       prefix: --crossGeneRate
@@ -104,7 +95,6 @@ inputs:
       - 'null'
       - float
     doc: filter genes with average coverage less than the specified value
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --cov
@@ -113,7 +103,6 @@ inputs:
       - 'null'
       - float
     doc: filter if abundance is less than the frac of dominant allele
-    default: 0.15
     inputBinding:
       position: 101
       prefix: --frac
@@ -144,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: maximal number of alleles per read
-    default: 2000
     inputBinding:
       position: 101
       prefix: -n
@@ -153,7 +141,6 @@ inputs:
       - 'null'
       - float
     doc: minimum alignment similarity
-    default: 0.8
     inputBinding:
       position: 101
       prefix: -s
@@ -162,7 +149,6 @@ inputs:
       - 'null'
       - boolean
     doc: directly use the files from provided -1 -2/-u for genotyping
-    default: extraction first
     inputBinding:
       position: 101
       prefix: --noExtraction
@@ -171,7 +157,6 @@ inputs:
       - 'null'
       - Directory
     doc: the directory for output files.
-    default: ./
     inputBinding:
       position: 101
       prefix: --od
@@ -180,7 +165,6 @@ inputs:
       - 'null'
       - string
     doc: prefix of output files.
-    default: inferred from file prefix
     inputBinding:
       position: 101
       prefix: -o
@@ -189,7 +173,6 @@ inputs:
       - 'null'
       - boolean
     doc: output the allele assignment for each read to prefix_assign.tsv file
-    default: not used
     inputBinding:
       position: 101
       prefix: --outputReadAssignment
@@ -199,7 +182,6 @@ inputs:
       - int
     doc: the maximum variant group size to call novel variant. -1 for no 
       limitation
-    default: 8
     inputBinding:
       position: 101
       prefix: --post-varMaxGroup
@@ -226,7 +208,6 @@ inputs:
       - 'null'
       - int
     doc: start, end(-1 for length-1) in -1/-u files for genomic sequence
-    default: -1
     inputBinding:
       position: 101
       prefix: --read1Range
@@ -235,7 +216,6 @@ inputs:
       - 'null'
       - int
     doc: start, end(-1 for length-1) in -1/-u files for genomic sequence
-    default: 0
     inputBinding:
       position: 101
       prefix: --read1Range
@@ -252,7 +232,6 @@ inputs:
       - 'null'
       - int
     doc: start, end(-1 for length-1) in -2 files for genomic sequence
-    default: -1
     inputBinding:
       position: 101
       prefix: --read2Range
@@ -261,7 +240,6 @@ inputs:
       - 'null'
       - int
     doc: start, end(-1 for length-1) in -2 files for genomic sequence
-    default: 0
     inputBinding:
       position: 101
       prefix: --read2Range
@@ -276,7 +254,6 @@ inputs:
       - 'null'
       - boolean
     doc: allow one more mismatch in intronic alignment
-    default: false
     inputBinding:
       position: 101
       prefix: --relaxIntronAlign
@@ -291,7 +268,6 @@ inputs:
       - 'null'
       - boolean
     doc: only conduct genotyping.
-    default: conduct the post analysis
     inputBinding:
       position: 101
       prefix: --skipPostAnalysis
@@ -311,7 +287,6 @@ inputs:
     doc: 'start genotyping on specified stage: 0: start from beginning (candidate
       read extraction); 1: start from genotype with candidate reads; 2: start from
       post analysis'
-    default: 0
     inputBinding:
       position: 101
       prefix: --stage
@@ -320,7 +295,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

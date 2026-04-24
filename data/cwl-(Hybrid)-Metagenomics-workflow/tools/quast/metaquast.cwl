@@ -70,7 +70,6 @@ inputs:
 #       prefix: --output-dir
   threads:
     type: int?
-    default: 1
     inputBinding:
       prefix: --threads
   blastdb:
@@ -85,7 +84,6 @@ inputs:
     doc: Uses less diskspace. Removes aux files with some details for advanced analysis. (default true)
     inputBinding:
       prefix: --space-efficient
-    default: true
 
 outputs:
   metaquast_outdir:

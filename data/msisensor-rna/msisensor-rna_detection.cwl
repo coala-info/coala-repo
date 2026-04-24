@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - boolean
     doc: Run the program directly without any Confirm.
-    default: false
     inputBinding:
       position: 101
       prefix: --run_directly

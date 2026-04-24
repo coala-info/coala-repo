@@ -32,7 +32,6 @@ inputs:
       - string
     doc: Method for testing pathway enrichment, including gsea (Gene Set 
       Enrichment Analysis) or rra.
-    default: gsea
     inputBinding:
       position: 101
       prefix: --method
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: The prefix of the output file(s).
-    default: sample1
     inputBinding:
       position: 101
       prefix: --output-prefix
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - float
     doc: The default alpha value for RRA pathway enrichment.
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --pathway-alpha
@@ -59,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: The perumtation for gsea.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --permutation
@@ -71,7 +67,6 @@ inputs:
       either an integer of column number, or a string of column label. Default 
       "2" (the 3rd column), the column of the negative selection RRA score in 
       gene_summary file.
-    default: '2'
     inputBinding:
       position: 101
       prefix: --ranking-column
@@ -84,7 +79,6 @@ inputs:
       option is used to determine the column for positive selections and is 
       disabled if --single-ranking is specified. Default "8" (the 9th column), 
       the column of positive selection RRA score in gene_summary file.
-    default: '8'
     inputBinding:
       position: 101
       prefix: --ranking-column-2
@@ -103,7 +97,6 @@ inputs:
       - string
     doc: Sorting criteria, either by negative selection (neg) or positive 
       selection (pos).
-    default: neg
     inputBinding:
       position: 101
       prefix: --sort-criteria

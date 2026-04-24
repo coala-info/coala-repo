@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: "FASTA header format: 'basic' (ID only, default) or 'detailed' (ID|taxid|accession|description|length)"
-    default: basic
     inputBinding:
       position: 101
       prefix: --header
@@ -82,7 +81,6 @@ inputs:
       - int
     doc: 'Minimum nucleotide sequence length(default: 1000. Can be bypassed by setting
       to zero/a negative number)'
-    default: 1000
     inputBinding:
       position: 101
       prefix: --nucleotide-size
@@ -92,7 +90,6 @@ inputs:
       - int
     doc: 'Minimum protein sequence length (default: 500. Can be bypassed by setting
       to zero/a negative number)'
-    default: 500
     inputBinding:
       position: 101
       prefix: --protein-size

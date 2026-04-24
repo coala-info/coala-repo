@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum genotype quality for non-variant records
-    default: 20
     inputBinding:
       position: 101
       prefix: --non-variant-quality
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum genotype quality
-    default: 20
     inputBinding:
       position: 101
       prefix: --quality

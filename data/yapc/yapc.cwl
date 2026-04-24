@@ -22,7 +22,6 @@ inputs:
         items: string
     doc: Name of the condition, BigWig files of first and second replicates; all
       separated by spaces.
-    default: None
     inputBinding:
       position: 2
   - id: fixed_peak_halfwidth
@@ -31,7 +30,6 @@ inputs:
       - int
     doc: Set final peak coordinates to the specified number of base pairs on 
       either side of the concave region mode.
-    default: None
     inputBinding:
       position: 103
       prefix: --fixed-peak-halfwidth
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Discard concave regions smaller than the threshold specified.
-    default: 75
     inputBinding:
       position: 103
       prefix: --min-concave-region-width
@@ -52,7 +49,6 @@ inputs:
       Fig 7): for each condition, assess peak reproducibility in replicates and pseudoreplicates;
       report globalIDRs for the set with a larger number of peak calls (at IDR=0.001).
       Pseudoreplicates are specified as the 3rd and 4th file name after every condition.'
-    default: false
     inputBinding:
       position: 103
       prefix: --pseudoreplicates
@@ -63,7 +59,6 @@ inputs:
     doc: Do not recompute (intermediate) output files if a file with the 
       expected name is already present. Enabling this can lead to funky 
       behaviour e.g. in the case of a previously interrupted run.
-    default: false
     inputBinding:
       position: 103
       prefix: --recycle
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: Number of times smoothing is applied to the second derivative.
-    default: 3
     inputBinding:
       position: 103
       prefix: --smoothing-times
@@ -83,7 +77,6 @@ inputs:
     doc: Width of the smoothing window used for the second derivative track. If 
       the peak calls aren't capturing the peak shape well, try setting this to 
       different values ranging from 75 to 200.
-    default: 150
     inputBinding:
       position: 103
       prefix: --smoothing-window-width
@@ -92,7 +85,6 @@ inputs:
       - 'null'
       - int
     doc: Truncate IDR input to the number of peaks specified.
-    default: 100000
     inputBinding:
       position: 103
       prefix: --truncate-idr-input

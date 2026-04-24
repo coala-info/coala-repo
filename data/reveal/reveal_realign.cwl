@@ -53,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Min length of an exact match
-    default: 20
     inputBinding:
       position: 104
       prefix: -m
@@ -73,7 +72,6 @@ inputs:
     doc: Min score of an exact match (default 0), exact maches are scored by 
       their length and penalized by the indel they create with respect to 
       previously accepted exact matches.
-    default: 0
     inputBinding:
       position: 104
       prefix: -c

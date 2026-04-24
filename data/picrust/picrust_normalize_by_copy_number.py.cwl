@@ -11,7 +11,6 @@ inputs:
       - string
     doc: 'Version of GreenGenes that was used for OTU picking. Valid choices are:
       13_5, 18may2012'
-    default: '13_5'
     inputBinding:
       position: 101
       prefix: --gg_version
@@ -37,7 +36,6 @@ inputs:
     doc: Instead of loading the precalculated file in tab- delimited format 
       (with otu ids as row ids and traits as columns) load the data in biom 
       format (with otu as SampleIds and traits as ObservationIds)
-    default: false
     inputBinding:
       position: 101
       prefix: --load_precalc_file_in_biom
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: identifier for copy number entry as observation metadata
-    default: CopyNumber
     inputBinding:
       position: 101
       prefix: --metadata_identifer
@@ -55,7 +52,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print information during execution -- useful for debugging
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

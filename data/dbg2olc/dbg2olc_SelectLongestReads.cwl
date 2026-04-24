@@ -28,7 +28,6 @@ inputs:
   - id: initial_total_bases
     type: int
     doc: Initial total bases
-    default: 0
     inputBinding:
       position: 5
   - id: input_file1

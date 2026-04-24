@@ -13,20 +13,15 @@ inputs:
     ### FASTQ file split ###
     input_file_split:
         type: string?
-        default: "_R"
     input_file_split_fwd_single:
         type: string?
-        default: "R1"
     input_file_split_rev:
         type: string?
-        default: "R2"
     ### QC and trimming options ###
     input_qc_check: 
         type: boolean?
-        default: true
     input_trimming_check:
         type: boolean?
-        default: true
     ### Treatment & Control sample options ###
     input_treatment_samples:
         type: string[]
@@ -69,14 +64,12 @@ inputs:
     ### Samtools ###
     samtools_readswithoutbits: 
         type: int
-        default: 4
     samtools_view_threads: 
         type: int?
     samtools_fixmate_threads:
         type: int?
     samtools_fixmate_output_format:
         type: string
-        default: bam
     samtools_sort_compression_level:
         type: int?
     samtools_sort_threads:
@@ -95,7 +88,6 @@ inputs:
     # plotCorrelation
     plotCorrelation_numbers:
         type: boolean?
-        default: true
     plotCorrelation_method:
         type: string?
     plotCorrelation_color:
@@ -190,19 +182,16 @@ inputs:
         type: 
         - int
         - float
-        default: 2
     DiffBind_blacklist: 
         type: 
         - string
         - boolean
         - File
-        default: true
     DiffBind_greylist: 
         type: 
         - string
         - boolean
         - File
-        default: false
     DiffBind_cores:
         type: int?
     DiffBind_bParallel:
@@ -215,14 +204,12 @@ inputs:
         type: boolean?
     DiffBind_design:
         type: string
-        default: "~Condition"
     DiffBind_reorderMeta_factor:
         type: string[]?
     DiffBind_reorderMeta_value:
         type: string[]?
     DiffBind_retrieve_consensus: 
         type: boolean?
-        default: true
     DiffBind_low_read_count_filter:
         type: int?
     DiffBind_filterFun:

@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: list of gt columns to index. default is all
-    default: all
     inputBinding:
       position: 102
       prefix: --cols

@@ -16,7 +16,6 @@ inputs:
       create the cell x bin count matrix. If more than one bin size are given, 
       snaptools will generate a list of cell x bin matrices of different 
       resolutions and stored in the same snap file.
-    default:
       - 5000
     inputBinding:
       position: 101
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: a boolen tag indicates output the progress.
-    default: true
     inputBinding:
       position: 101
       prefix: --verbose

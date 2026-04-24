@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum chunk depth to read
-    default: 1
     inputBinding:
       position: 102
       prefix: --chunk-depth
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: 'Compression type for Zarr (null, zlib, blosc; default: blosc)'
-    default: blosc
     inputBinding:
       position: 102
       prefix: --compression
@@ -93,7 +91,6 @@ inputs:
       - string
     doc: Change logging level; valid values are OFF, ERROR, WARN, INFO, DEBUG, TRACE
       and ALL.
-    default: WARN
     inputBinding:
       position: 102
       prefix: --log-level
@@ -102,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of tiles that will be cached across all workers
-    default: 64
     inputBinding:
       position: 102
       prefix: --max-cached-tiles
@@ -111,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of workers
-    default: 4
     inputBinding:
       position: 102
       prefix: --max-workers
@@ -130,7 +125,6 @@ inputs:
     doc: Whether to calculate minimum and maximum pixel values. Min/max calculation
       can result in slower conversions. If true, min/max values are saved as OMERO
       rendering metadata (true by default)
-    default: true
     inputBinding:
       position: 102
       prefix: --minmax
@@ -139,7 +133,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to use '/' as the chunk path separator (true by default)
-    default: true
     inputBinding:
       position: 102
       prefix: --nested
@@ -224,7 +217,6 @@ inputs:
       - 'null'
       - string
     doc: Format string for scale paths
-    default: '%d/%d'
     inputBinding:
       position: 102
       prefix: --scale-format-string
@@ -251,7 +243,6 @@ inputs:
       - int
     doc: Maximum tile height. This is both the chunk size (in Y) when writing Zarr
       and the tile size used for reading from the original data.
-    default: 1024
     inputBinding:
       position: 102
       prefix: --tile-height
@@ -261,7 +252,6 @@ inputs:
       - int
     doc: Maximum tile width. This is both the chunk size (in X) when writing Zarr
       and the tile size used for reading from the original data.
-    default: 1024
     inputBinding:
       position: 102
       prefix: --tile-width

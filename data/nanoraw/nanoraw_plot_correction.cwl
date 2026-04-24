@@ -17,7 +17,6 @@ inputs:
       - string
     doc: FAST5 subgroup (under Analyses/[corrected-group]) where individual 
       template or complement read is stored.
-    default: BaseCalled_template
     inputBinding:
       position: 102
       prefix: --basecall-subgroup
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: FAST5 group to access/plot created by genome_resquiggle script.
-    default: RawGenomeCorrected_000
     inputBinding:
       position: 102
       prefix: --corrected-group
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Number of observations to plot in each region.
-    default: 500
     inputBinding:
       position: 102
       prefix: --num-obs
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads to plot (one region per read).
-    default: 10
     inputBinding:
       position: 102
       prefix: --num-reads
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - File
     doc: PDF filename to store plot(s).
-    default: Nanopore_genome_correction.pdf
     inputBinding:
       position: 102
       prefix: --pdf-filename
@@ -70,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: 'Region to plot within each read. Choices are: random (default), start, end.'
-    default: random
     inputBinding:
       position: 102
       prefix: --region-type

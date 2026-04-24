@@ -11,7 +11,6 @@ inputs:
       - float
     doc: 'Hmmsearch reporting threshold (default: 1e-10, only being used when bitscore
       cutoff file is not available)'
-    default: '1e-10'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: 'Program used for multiple sequence alignment (default: hmmalign)'
-    default: hmmalign
     inputBinding:
       position: 101
       prefix: --method
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: 'Input data sequence type (default: AUTO)'
-    default: AUTO
     inputBinding:
       position: 101
       prefix: --seqtype
@@ -67,7 +64,6 @@ inputs:
       - int
     doc: 'Threads for hmmsearch and the number of parallelized jobs in MSA step. Better
       be multiple of 4 if using more than 8 threads (default: 20)'
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads

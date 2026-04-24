@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: If true, add 'chr' to chroms 1-22, X and Y.
-    default: true
     inputBinding:
       position: 101
       prefix: --add-chr-prefix
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use asynchronous I/O where possible, e.g. for SAM and BAM files.
-    default: false
     inputBinding:
       position: 101
       prefix: --async-io
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Default GZIP compression level, BAM compression level.
-    default: 5
     inputBinding:
       position: 101
       prefix: --compression
@@ -61,7 +58,6 @@ inputs:
       - string
     doc: 'Minimum severity log-level to emit. Options: Debug, Info, Warning, Error,
       Fatal.'
-    default: Info
     inputBinding:
       position: 101
       prefix: --log-level
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: The minimum allele frequency of variants to retain.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --min-af
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to use for temporary files.
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmp-dir

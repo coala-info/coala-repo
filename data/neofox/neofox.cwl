@@ -58,7 +58,6 @@ inputs:
       - float
     doc: MHC-I epitopes with a netMHCpan predicted rank greater than or equal 
       than this threshold will be filtered out
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --rank-mhci-threshold
@@ -68,7 +67,6 @@ inputs:
       - float
     doc: MHC-II epitopes with a netMHCIIpan predicted rank greater than or equal
       than this threshold will be filtered out
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --rank-mhcii-threshold

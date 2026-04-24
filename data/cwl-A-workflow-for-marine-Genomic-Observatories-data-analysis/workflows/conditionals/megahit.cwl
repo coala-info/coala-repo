@@ -19,14 +19,12 @@ inputs:
   memory:
     type: float?
     label: Memory to run assembly. When 0 < -m < 1, fraction of all available memory of the machine is used, otherwise it specifies the memory in BYTE.
-    default: 0.9
     inputBinding:
       position: 4
       prefix: "--memory"
 
   min-contig-len:
     type: int?
-    default: 500
     inputBinding:
       position: 3
       prefix: "--min-contig-len"
@@ -51,7 +49,6 @@ inputs:
 
   threads: 
     type: int
-    default: 1
     inputBinding: 
       position: 5
       prefix: "--num-cpu-threads"

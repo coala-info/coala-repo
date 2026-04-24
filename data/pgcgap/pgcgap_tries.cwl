@@ -42,7 +42,6 @@ inputs:
       - float
     doc: Alignment coverage for the longer sequence. If set to 0.9, the 
       alignment must covers 90% of the sequence
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -aL
@@ -52,7 +51,6 @@ inputs:
       - float
     doc: Alignment coverage for the shorter sequence. If set to 0.9, the 
       alignment must covers 90% of the sequence
-    default: 0.7
     inputBinding:
       position: 101
       prefix: -aS
@@ -116,7 +114,6 @@ inputs:
   - id: bsnum
     type: int
     doc: Replicates for bootstrap of IQ-TREE. ( Default 500 )
-    default: 500
     inputBinding:
       position: 101
       prefix: --bsnum
@@ -139,7 +136,6 @@ inputs:
   - id: cds_path
     type: Directory
     doc: CDs of all strains as fasta file paths
-    default: ./Results/Annotations/CDs
     inputBinding:
       position: 101
       prefix: --CDsPath
@@ -168,14 +164,12 @@ inputs:
       the threshold (fast cluster). If set to 1, the program will cluster it 
       into the most similar cluster that meets the threshold (accurate but slow 
       mode, Default 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: -g
   - id: codon
     type: int
     doc: Translation table
-    default: 11
     inputBinding:
       position: 101
       prefix: --codon
@@ -185,7 +179,6 @@ inputs:
       - int
     doc: 'Parameter for getRepeats, specify which column is used for the calculation
       (default: 0 for the whole line).'
-    default: 0
     inputBinding:
       position: 101
       prefix: --column
@@ -201,7 +194,6 @@ inputs:
     type: int
     doc: Minimum %coverage to keep the result, should be a number between 0 to 
       100.
-    default: 50
     inputBinding:
       position: 101
       prefix: --coverage
@@ -209,7 +201,6 @@ inputs:
     type: string
     doc: 'The database to use, options: all, argannot, card, ecoh, ecoli_vf, megares,
       ncbi, plasmidfinder, resfinder and vfdb.'
-    default: all
     inputBinding:
       position: 101
       prefix: --db
@@ -219,14 +210,12 @@ inputs:
       - int
     doc: length of description in .clstr file. if set to 0, it takes the fasta 
       defline and stops at first space
-    default: 0
     inputBinding:
       position: 101
       prefix: -d
   - id: evalue
     type: float
     doc: maximum e-value to report alignments
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --evalue
@@ -242,7 +231,6 @@ inputs:
     type: int
     doc: Replicates for ultrafast bootstrap of IQ-TREE. ( must >= 1000, Default 
       1000 )
-    default: 1000
     inputBinding:
       position: 101
       prefix: --fastboot
@@ -284,7 +272,6 @@ inputs:
       - 'null'
       - string
     doc: Genus name of the strain
-    default: NA
     inputBinding:
       position: 101
       prefix: --genus
@@ -300,7 +287,6 @@ inputs:
   - id: gff_path
     type: Directory
     doc: Gff files of all strains as paths
-    default: ./Results/Annotations/GFF
     inputBinding:
       position: 101
       prefix: --GffPath
@@ -309,21 +295,18 @@ inputs:
       - 'null'
       - int
     doc: Use global (set to 1) or local (set to 0) sequence identity
-    default: 0
     inputBinding:
       position: 101
       prefix: -G
   - id: hout
     type: string
     doc: Output directory for hybrid assembly
-    default: ../../Results/Assembles/Hybrid
     inputBinding:
       position: 101
       prefix: --hout
   - id: id
     type: int
     doc: minimum identity% to report an alignment
-    default: 40
     inputBinding:
       position: 101
       prefix: --id
@@ -341,7 +324,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percentage identity for blastp ( Default 0.95, 0 < identi < 1 )
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --identi
@@ -349,7 +331,6 @@ inputs:
     type: int
     doc: Minimum %identity to keep the result, should be a number between 1 to 
       100.
-    default: 75
     inputBinding:
       position: 101
       prefix: --identity
@@ -375,7 +356,6 @@ inputs:
     type: int
     doc: k-mer size for genome assembly of Illumina data with abyss( Default 81 
       )
-    default: 81
     inputBinding:
       position: 101
       prefix: --kmmer
@@ -384,7 +364,6 @@ inputs:
       - 'null'
       - int
     doc: Threshold to keep a read based on length after trimming.
-    default: 20
     inputBinding:
       position: 101
       prefix: --length
@@ -393,7 +372,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the log file
-    default: Logs.txt
     inputBinding:
       position: 101
       prefix: --logs
@@ -433,7 +411,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum number of reads covering a site to be considered
-    default: 10
     inputBinding:
       position: 101
       prefix: --mincov
@@ -443,7 +420,6 @@ inputs:
       - float
     doc: The minimum proportion of those reads which must differ from the 
       reference
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --minfrac
@@ -452,7 +428,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum VCF variant call "quality"
-    default: 100
     inputBinding:
       position: 101
       prefix: --minqual
@@ -544,7 +519,6 @@ inputs:
       - 'null'
       - int
     doc: Threshold for trimming based on average quality in a window.
-    default: 20
     inputBinding:
       position: 101
       prefix: --qual
@@ -552,21 +526,18 @@ inputs:
     type: string
     doc: Type of quality values (solexa (CASAVA < 1.3), illumina (CASAVA 1.3 to 
       1.7), sanger (which is CASAVA >= 1.8)).
-    default: sanger
     inputBinding:
       position: 101
       prefix: --qualtype
   - id: query_cover
     type: int
     doc: minimum query cover% to report an alignment
-    default: 70
     inputBinding:
       position: 101
       prefix: --query_cover
   - id: query_list
     type: File
     doc: The file containing full paths to query genomes, one per line
-    default: scaf.list
     inputBinding:
       position: 101
       prefix: --queryL
@@ -575,7 +546,6 @@ inputs:
       - 'null'
       - int
     doc: Try and keep RAM under this many GB
-    default: 8
     inputBinding:
       position: 101
       prefix: --ram
@@ -605,14 +575,12 @@ inputs:
       - 'null'
       - int
     doc: Tolerance for redundance
-    default: 0
     inputBinding:
       position: 101
       prefix: -t
   - id: ref_list
     type: File
     doc: The file containing full paths to reference genomes, one per line.
-    default: scaf.list
     inputBinding:
       position: 101
       prefix: --refL
@@ -644,7 +612,6 @@ inputs:
       - string
     doc: 'Parameter for getRepeats, specify the separator (space, tab, comma, semicolon)
       between columns (Default: tab).'
-    default: "\t"
     inputBinding:
       position: 101
       prefix: --sep
@@ -653,7 +620,6 @@ inputs:
       - 'null'
       - float
     doc: Sequence identity threshold
-    default: 0.5
     inputBinding:
       position: 101
       prefix: -c
@@ -688,7 +654,6 @@ inputs:
       - 'null'
       - string
     doc: Type Of Sequence (p, d, c for Protein, DNA, Codons, respectively).
-    default: p
     inputBinding:
       position: 101
       prefix: --seqtype
@@ -756,7 +721,6 @@ inputs:
       - 'null'
       - string
     doc: Species name of the strain
-    default: NA
     inputBinding:
       position: 101
       prefix: --species
@@ -765,7 +729,6 @@ inputs:
       - 'null'
       - string
     doc: 'Sequence search program, Options: blast, mmseqs, blast_gz, diamond'
-    default: diamond
     inputBinding:
       position: 101
       prefix: --Sprogram
@@ -787,7 +750,6 @@ inputs:
   - id: subject_cover
     type: int
     doc: minimum subject cover% to report an alignment
-    default: 50
     inputBinding:
       position: 101
       prefix: --subject_cover
@@ -797,7 +759,6 @@ inputs:
       length of the reads name minus the length of the strain name. For example 
       the --suffix_len of "YBT-1520_L1_I050.R1.clean.fastq.gz" is 26 ( 
       "YBT-1520" is the strain name ) ( Default 0 )
-    default: 0
     inputBinding:
       position: 101
       prefix: --suffix_len
@@ -806,7 +767,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to be used
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads
@@ -840,7 +800,6 @@ inputs:
       - int
     doc: Word_length, -n 2 for thresholds 0.4-0.5, -n 3 for thresholds 0.5-0.6, 
       -n 4 for thresholds 0.6-0.7, -n 5 for thresholds 0.7-1.0
-    default: 2
     inputBinding:
       position: 101
       prefix: -n

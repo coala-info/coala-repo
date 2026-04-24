@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Algorithm used
-    default: 623/623L
     inputBinding:
       position: 103
   - id: alln_prob
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: Probability of matching a NNN codon
-    default: 1.0
     inputBinding:
       position: 103
   - id: codon_table
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: Compare on the forward strand
-    default: true
     inputBinding:
       position: 103
       prefix: -tfor
@@ -67,7 +64,6 @@ inputs:
       - 'null'
       - string
     doc: Comparison matrix
-    default: BLOSUM62.bla
     inputBinding:
       position: 103
       prefix: -matrix
@@ -106,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: memory amount to use
-    default: 4000
     inputBinding:
       position: 103
       prefix: -kbyte
@@ -115,7 +110,6 @@ inputs:
       - 'null'
       - string
     doc: memory style
-    default: default
     inputBinding:
       position: 103
       prefix: -dymem
@@ -124,7 +118,6 @@ inputs:
       - 'null'
       - string
     doc: style of error reporting
-    default: program
     inputBinding:
       position: 103
       prefix: -errorstyle
@@ -149,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: extension penalty
-    default: 2
     inputBinding:
       position: 103
       prefix: -ext
@@ -158,7 +150,6 @@ inputs:
       - 'null'
       - int
     doc: gap penalty
-    default: 12
     inputBinding:
       position: 103
       prefix: -gap
@@ -167,7 +158,6 @@ inputs:
       - 'null'
       - File
     doc: gene statistics file
-    default: gene.stat
     inputBinding:
       position: 103
   - id: gw_edge_query_expand
@@ -175,7 +165,6 @@ inputs:
       - 'null'
       - int
     doc: at start/end, amount of protein area to expand
-    default: 10
     inputBinding:
       position: 103
   - id: gw_edge_target_expand
@@ -183,7 +172,6 @@ inputs:
       - 'null'
       - int
     doc: at start/end, amount of DNA area to expand
-    default: 3000
     inputBinding:
       position: 103
   - id: gw_splicesite_spread
@@ -191,7 +179,6 @@ inputs:
       - 'null'
       - int
     doc: spread around splice sites in codons
-    default: 5
     inputBinding:
       position: 103
   - id: gwdebug
@@ -206,7 +193,6 @@ inputs:
       - 'null'
       - string
     doc: startend policy for the HMM/protein
-    default: default
     inputBinding:
       position: 103
   - id: insert_model
@@ -214,7 +200,6 @@ inputs:
       - 'null'
       - string
     doc: Use protein insert model
-    default: flat
     inputBinding:
       position: 103
   - id: insertion_deletion_error_rate
@@ -222,7 +207,6 @@ inputs:
       - 'null'
       - float
     doc: Insertion/deletion error rate
-    default: 1e-06
     inputBinding:
       position: 103
   - id: is_embl_file
@@ -254,7 +238,6 @@ inputs:
       - 'null'
       - string
     doc: divide string for multiple outputs
-    default: //
     inputBinding:
       position: 103
       prefix: -divide
@@ -270,7 +253,6 @@ inputs:
       - 'null'
       - boolean
     doc: use heuristics for proteins
-    default: false
     inputBinding:
       position: 103
   - id: no_new_gene
@@ -292,7 +274,6 @@ inputs:
       - 'null'
       - string
     doc: Random Model as synchronous or flat
-    default: syn
     inputBinding:
       position: 103
   - id: paldebug
@@ -321,7 +302,6 @@ inputs:
       - 'null'
       - float
     doc: Probability of marked introns
-    default: 0.95
     inputBinding:
       position: 103
   - id: phase_unmarked_intron_prob
@@ -329,7 +309,6 @@ inputs:
       - 'null'
       - float
     doc: Probability of unmarked introns
-    default: 1e-05
     inputBinding:
       position: 103
   - id: pretty_output
@@ -345,7 +324,6 @@ inputs:
       - 'null'
       - int
     doc: Length of main block in pretty output
-    default: 50
     inputBinding:
       position: 103
       prefix: -block
@@ -513,7 +491,6 @@ inputs:
       - 'null'
       - float
     doc: probability for gt/ag
-    default: 0.001
     inputBinding:
       position: 103
   - id: splice_max_collar
@@ -521,7 +498,6 @@ inputs:
       - 'null'
       - float
     doc: maximum Bits value for a splice site
-    default: 5.0
     inputBinding:
       position: 103
   - id: splice_min_collar
@@ -529,7 +505,6 @@ inputs:
       - 'null'
       - float
     doc: minimum Bits value for a splice site
-    default: -5.0
     inputBinding:
       position: 103
   - id: splice_score_offset
@@ -537,7 +512,6 @@ inputs:
       - 'null'
       - float
     doc: score offset for splice sites
-    default: 1.5
     inputBinding:
       position: 103
   - id: splice_type
@@ -553,7 +527,6 @@ inputs:
       - 'null'
       - float
     doc: Substitution error rate
-    default: 1e-06
     inputBinding:
       position: 103
   - id: use_hmmer_filename_as_name
@@ -576,7 +549,6 @@ inputs:
       - 'null'
       - boolean
     doc: use heuristics for proteins
-    default: false
     inputBinding:
       position: 103
 outputs:

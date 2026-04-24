@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: set the max N of combinations of variants to be evaluated
-    default: 15
     inputBinding:
       position: 102
       prefix: -comb

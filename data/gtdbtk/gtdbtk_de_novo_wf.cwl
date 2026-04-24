@@ -31,7 +31,6 @@ inputs:
       - int
     doc: 'maximum number of columns to retain per gene when generating the MSA (default:
       42)'
-    default: 42
     inputBinding:
       position: 101
       prefix: --cols_per_gene
@@ -40,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of CPUs to use (default: 1)'
-    default: 1
     inputBinding:
       position: 101
       prefix: --cpus
@@ -50,7 +48,6 @@ inputs:
       - boolean
     doc: 'perform custom filtering of MSA with cols_per_gene, min_consensus max_consensus,
       and min_perc_taxa parameters instead of using canonical mask (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --custom_msa_filters
@@ -68,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'create intermediate files for debugging purposes (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: 'extension of files to process, gz = gzipped (default: fna)'
-    default: fna
     inputBinding:
       position: 101
       prefix: --extension
@@ -86,7 +81,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'continue processing if an error occurs on a single genome (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -95,7 +89,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'rescale branch lengths to optimize the Gamma20 likelihood (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --gamma
@@ -106,7 +99,6 @@ inputs:
     doc: 'indicates input files contain predicted proteins as amino acids (skip gene
       calling).Warning: This flag will skip the ANI comparison steps (ANI screen and
       classification). (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --genes
@@ -129,7 +121,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'keep intermediate files in the final directory (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_intermediates
@@ -148,7 +139,6 @@ inputs:
       - float
     doc: 'minimum percentage of the same amino acid required to retain column (inclusive
       bound) (default: 25)'
-    default: 25
     inputBinding:
       position: 101
       prefix: --min_consensus
@@ -158,7 +148,6 @@ inputs:
       - float
     doc: 'exclude genomes that do not have at least this percentage of AA in the MSA
       (inclusive bound) (default: 10)'
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_perc_aa
@@ -168,7 +157,6 @@ inputs:
       - float
     doc: 'minimum percentage of taxa required to retain column (inclusive bound) (default:
       50)'
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_perc_taxa
@@ -178,7 +166,6 @@ inputs:
       - boolean
     doc: 'do not compute local support values using the Shimodaira-Hasegawa test (default:
       False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --no_support
@@ -200,7 +187,6 @@ inputs:
       - 'null'
       - string
     doc: 'prefix for all output files (default: gtdbtk)'
-    default: gtdbtk
     inputBinding:
       position: 101
       prefix: --prefix
@@ -209,7 +195,6 @@ inputs:
       - 'null'
       - string
     doc: 'protein substitution model for tree inference (default: WAG)'
-    default: WAG
     inputBinding:
       position: 101
       prefix: --prot_model
@@ -227,7 +212,6 @@ inputs:
       - boolean
     doc: 'do not include GTDB reference genomes in multiple sequence alignment. (default:
       False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --skip_gtdb_refs
@@ -245,7 +229,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'specify alternative directory for temporary files (default: /tmp)'
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tmpdir
@@ -254,7 +237,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'output unaligned single-copy marker genes (default: False)'
-    default: false
     inputBinding:
       position: 101
       prefix: --write_single_copy_genes

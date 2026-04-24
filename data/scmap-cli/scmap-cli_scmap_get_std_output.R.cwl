@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Should prediction scores be included in output?
-    default: 'FALSE'
     inputBinding:
       position: 101
       prefix: --include-scores

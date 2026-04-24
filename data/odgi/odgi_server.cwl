@@ -18,7 +18,6 @@ inputs:
       - string
     doc: Run the server under this IP address. If not specified, *IP* will be 
       *localhost*.
-    default: localhost
     inputBinding:
       position: 101
       prefix: --ip

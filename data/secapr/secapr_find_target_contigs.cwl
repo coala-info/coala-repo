@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum percent identity required for a match
-    default: 90
     inputBinding:
       position: 101
       prefix: --min_identity
@@ -54,7 +53,6 @@ inputs:
       - int
     doc: Length of initial seed sequence for finding BLAST matches. The seed has
       to be a perfect match between a given contig and a reference locus
-    default: 11
     inputBinding:
       position: 101
       prefix: --seed_length
@@ -65,7 +63,6 @@ inputs:
     doc: The required length of the matching sequence stretch between contigs 
       and target sequences. This does not have to be a perfect match but can be 
       adjusted with the --min_identity flag
-    default: 50
     inputBinding:
       position: 101
       prefix: --target_length

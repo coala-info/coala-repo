@@ -52,7 +52,6 @@ inputs:
 
   cpu:
     type: int
-    default: 8
     inputBinding:
       position: 2
       prefix: '--cpu'

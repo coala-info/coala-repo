@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: Output format
-    default: BAM
     inputBinding:
       position: 103
       prefix: --format

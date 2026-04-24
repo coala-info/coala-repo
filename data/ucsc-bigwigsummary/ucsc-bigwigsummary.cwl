@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: 'Summary type: mean, min, max, std, or coverage.'
-    default: mean
     inputBinding:
       position: 106
       prefix: -type

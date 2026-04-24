@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: gap extension'
-    default: -1
     inputBinding:
       position: 101
       prefix: -E
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: insertion or deletion'
-    default: -3
     inputBinding:
       position: 101
       prefix: -O
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: match'
-    default: 2
     inputBinding:
       position: 101
       prefix: -M
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: 'Alignment penalty: mismatch'
-    default: -5
     inputBinding:
       position: 101
       prefix: -X
@@ -46,7 +42,6 @@ inputs:
       - int
     doc: 'Alignment penalty: read end clipping, 0: distable HSP extension, otherwise
       set to -50 or other'
-    default: -50
     inputBinding:
       position: 101
       prefix: -T
@@ -65,7 +60,6 @@ inputs:
       - float
     doc: Best score cutoff, say best overlap MUST have alignment score >= <-r> *
       read's best score
-    default: 0.95
     inputBinding:
       position: 101
       prefix: -q
@@ -82,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Filter high frequency z-mers, maybe repetitive
-    default: 100
     inputBinding:
       position: 101
       prefix: -Z
@@ -99,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Smaller kmer size (z-mer), 5 <= <-z> <= 16
-    default: 10
     inputBinding:
       position: 101
       prefix: -z
@@ -109,7 +101,6 @@ inputs:
       - File
     doc: Load pairs of read name from file, will avoid to calculate overlap them
       again
-    default: 'NULL'
     inputBinding:
       position: 101
       prefix: -L
@@ -135,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum margin of alignment
-    default: 100
     inputBinding:
       position: 101
       prefix: -u
@@ -144,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum bandwidth
-    default: 3200
     inputBinding:
       position: 101
       prefix: -W
@@ -153,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: Max turns of iteration
-    default: 5
     inputBinding:
       position: 101
       prefix: -N
@@ -162,7 +150,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum variant of uncompressed sizes between two matched hz-kmer
-    default: 2
     inputBinding:
       position: 101
       prefix: -l
@@ -171,7 +158,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum alignment identity
-    default: 0.6
     inputBinding:
       position: 101
       prefix: -m
@@ -180,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum alignment score
-    default: 200
     inputBinding:
       position: 101
       prefix: -s
@@ -189,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum bandwidth, iteratively doubled to maximum
-    default: 50
     inputBinding:
       position: 101
       prefix: -w
@@ -199,7 +183,6 @@ inputs:
       - int
     doc: Minimum estimated coverage of edge to be trusted, edge coverage is 
       calculated by counting overlaps that can replace this edge
-    default: 1
     inputBinding:
       position: 101
       prefix: -c
@@ -208,7 +191,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of seeding region within zmer window
-    default: 200
     inputBinding:
       position: 101
       prefix: -R
@@ -217,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of total seeding region for zmer windows
-    default: 300
     inputBinding:
       position: 101
       prefix: -r
@@ -243,7 +224,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -260,7 +240,6 @@ inputs:
       - 'null'
       - int
     doc: Zmer window
-    default: 800
     inputBinding:
       position: 101
       prefix: -y

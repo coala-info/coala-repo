@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of sequence to output
-    default: 1
     inputBinding:
       position: 102
       prefix: --min_length

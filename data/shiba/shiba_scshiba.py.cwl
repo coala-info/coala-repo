@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --process
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: 'Start the pipeline from the specified step (default: 0, run all steps)'
-    default: 0
     inputBinding:
       position: 102
       prefix: --start-step

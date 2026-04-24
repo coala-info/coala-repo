@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform cgmlst analysis. It needs about 3 mins for one genome
-    default: F
     inputBinding:
       position: 101
       prefix: --cgmlst
@@ -27,7 +26,6 @@ inputs:
       - string
     doc: Set E-value, Identify, Coverage (Query and Subject), Match_length 
       (alignment length) cutoff in Blastn analysis
-    default: E-value=1e-5, Identify=70, Coverage=95, Match_length=100
     inputBinding:
       position: 101
       prefix: --homologous_gene_cutoff
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform mlst analysis
-    default: T
     inputBinding:
       position: 101
       prefix: --mlst
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Set thread number
-    default: 1
     inputBinding:
       position: 101
       prefix: --multiple_threads
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - boolean
     doc: Annotate all genomes using prodigal
-    default: T
     inputBinding:
       position: 101
       prefix: --prodigal_annotation
@@ -78,7 +73,6 @@ inputs:
     doc: Re-create the figure of the genetic organization of cps gene cluster 
       for genomes. At this step, users can add a parameter "phylogenetic_tree" 
       or "strain_reorder_file".
-    default: F
     inputBinding:
       position: 101
       prefix: --recreate_figure
@@ -89,7 +83,6 @@ inputs:
     doc: Re-create the heatmap of cps gene distribution in genomes. At this 
       step, users can add a parameter "phylogenetic_tree" or 
       "strain_reorder_file".
-    default: F
     inputBinding:
       position: 101
       prefix: --recreate_heatmap
@@ -106,7 +99,6 @@ inputs:
       - 'null'
       - boolean
     doc: Skip the process of sequence processing (STEP-1)
-    default: F
     inputBinding:
       position: 101
       prefix: --skip_sequence_processing
@@ -128,7 +120,6 @@ inputs:
       - boolean
     doc: Run pneumo-typer using Test_data as input to check whether Pneumo-Typer
       is installed successfully
-    default: F
     inputBinding:
       position: 101
       prefix: --test

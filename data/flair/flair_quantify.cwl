@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: minimum MAPQ of read assignment to an isoform
-    default: 0
     inputBinding:
       position: 101
       prefix: --quality
@@ -81,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: minimap2 number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

@@ -17,7 +17,6 @@ inputs:
       - int
     doc: "The number of pixels loaded and processed per step of\n                \
       \       computation."
-    default: 10000000
     inputBinding:
       position: 102
       prefix: --chunksize
@@ -67,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to split the work between.
-    default: 1
     inputBinding:
       position: 102
       prefix: --nproc

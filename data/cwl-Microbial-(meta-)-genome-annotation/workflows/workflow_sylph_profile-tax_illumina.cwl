@@ -45,7 +45,6 @@ inputs:
     type: int
     doc: Maximum threads to use. (Default 3)
     label: Threads
-    default: 3
 
   forward_reads:
     type: File[]?
@@ -92,19 +91,16 @@ inputs:
     type: boolean
     doc: Estimate true coverage and scale sequence abundance in `profile` by estimated unknown sequence percentage. Default false
     label: Estimate unknown
-    default: true
   annotate_virus_hosts:
     type: boolean
     doc: Add additional column(s) by integrating viral-host information available (currently available for IMGVR4.1). Default false
     label: Annotate virus hosts
-    default: false
 
   # Read filtering parameters
   skip_read_filter:
     type: boolean
     label: Skip quality filtering
     doc: Skip quality reporting, filtering and contamination. (Default false)
-    default: false
 
   humandb:
     type: Directory?
@@ -122,13 +118,11 @@ inputs:
     type: boolean
     doc: Use mapped reads mapped to the custom reference db. (Default false, discard mapped)
     label: Use mapped reads
-    default: false
 
   output_filtered_reads:
     type: boolean
     label: Output filtered reads
     doc: Output filtered reads when filtering is applied. (Default false)
-    default: false
  
   destination:
     type: string?

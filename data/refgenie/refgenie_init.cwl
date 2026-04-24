@@ -42,7 +42,6 @@ inputs:
       - type: array
         items: string
     doc: URL(s) to use for the genome_servers attribute in config file.
-    default: http://refgenomes.databio.org
     inputBinding:
       position: 101
       prefix: --genome-server

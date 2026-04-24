@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - int
     doc: Block size
-    default: 2000
     inputBinding:
       position: 101
       prefix: --block_size
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: same as --p1
     inputBinding:
       position: 101
       prefix: --output
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: Threads
-    default: 10
     inputBinding:
       position: 101
       prefix: --threads

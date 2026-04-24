@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: "Mode for filtering: '+' for inclusive, 'x' for exclusive"
-    default: +
     inputBinding:
       position: 103
       prefix: --mode

@@ -47,7 +47,6 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_log_path
-    default: system.log
 
   output_crd_path:
     label: Output ensemble
@@ -65,7 +64,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_crd_path
-    default: system.crd
 
   config:
     label: Advanced configuration options for biobb_flexserv DMDRun

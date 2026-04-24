@@ -11,7 +11,6 @@ inputs:
       - float
     doc: cut-off radius (Angstroms) for non-bonded interacting pairs (the cut-off
       distances are additional to the sum of VDW radii)
-    default: 4.0
     inputBinding:
       position: 101
       prefix: -c
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - float
     doc: multiply each distance margin by value
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -damp
@@ -55,7 +53,6 @@ inputs:
       - int
     doc: minimum nr of distances to be defined for each atom (default 50, or 1 with
       -noe)
-    default: 50
     inputBinding:
       position: 101
       prefix: -m

@@ -63,7 +63,6 @@ inputs:
       - 'null'
       - float
     doc: Scale factor for coverage values.
-    default: 1
     inputBinding:
       position: 103
       prefix: --scale-factor

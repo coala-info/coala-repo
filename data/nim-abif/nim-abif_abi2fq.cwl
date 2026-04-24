@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Quality threshold 0-60
-    default: 20
     inputBinding:
       position: 102
       prefix: --quality
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Window size for quality trimming
-    default: 10
     inputBinding:
       position: 102
       prefix: --window

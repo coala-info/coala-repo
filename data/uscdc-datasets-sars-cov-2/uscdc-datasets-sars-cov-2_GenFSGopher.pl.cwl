@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: 'The input format. Default: tsv. No other format is accepted at this time.'
-    default: tsv
     inputBinding:
       position: 102
       prefix: --format
@@ -41,7 +40,6 @@ inputs:
       - string
     doc: 'Layout for organizing output files. Options: onedir, hashsums, byrun, byformat,
       cfsan.'
-    default: onedir
     inputBinding:
       position: 102
       prefix: --layout
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: How many jobs to run at once. Be careful of disk I/O.
-    default: 1
     inputBinding:
       position: 102
       prefix: --numcpus
@@ -82,7 +79,6 @@ inputs:
       - 'null'
       - Directory
     doc: Choose a different temp directory than the system default
-    default: ''
     inputBinding:
       position: 102
       prefix: --tempdir

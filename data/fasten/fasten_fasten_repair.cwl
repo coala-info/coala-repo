@@ -26,7 +26,6 @@ inputs:
       - string
     doc: Either repair or panic. If panic, then the binary will panic when the 
       first issue comes up.
-    default: repair
     inputBinding:
       position: 101
       prefix: --mode
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs
-    default: 1
     inputBinding:
       position: 101
       prefix: --numcpus

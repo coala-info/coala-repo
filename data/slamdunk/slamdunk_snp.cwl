@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Minimimum coverage to call variant
-    default: 10
     inputBinding:
       position: 102
       prefix: --min-coverage
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Thread number
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - float
     doc: Minimimum variant fraction to call variant
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --var-fraction

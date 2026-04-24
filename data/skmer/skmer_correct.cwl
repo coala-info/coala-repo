@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: 'Max number of processors to use [1-20]. Default for this machine: 20'
-    default: 20
     inputBinding:
       position: 101
       prefix: -p
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory of output for subsample replicates.
-    default: working_directory/subsample
     inputBinding:
       position: 101
       prefix: -sub

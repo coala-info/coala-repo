@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - float
     doc: alpha
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --alpha
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - float
     doc: canonical base threshold
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --can_thresh
@@ -80,7 +78,6 @@ inputs:
       - 'null'
       - float
     doc: fraction of TE length that must align
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --lenfrac
@@ -89,7 +86,6 @@ inputs:
       - 'null'
       - float
     doc: line width
-    default: 1
     inputBinding:
       position: 101
       prefix: --linewidth
@@ -106,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: maximum output elements
-    default: 200
     inputBinding:
       position: 101
       prefix: --maxelts
@@ -131,7 +126,6 @@ inputs:
       - 'null'
       - float
     doc: modified base threshold
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --meth_thresh
@@ -140,7 +134,6 @@ inputs:
       - 'null'
       - int
     doc: minimum mapping quality (mapq)
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_mapq
@@ -149,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: minimum call count to include elt
-    default: 100
     inputBinding:
       position: 101
       prefix: --mincalls
@@ -158,7 +150,6 @@ inputs:
       - 'null'
       - int
     doc: minimum output elements
-    default: 1
     inputBinding:
       position: 101
       prefix: --minelts
@@ -175,7 +166,6 @@ inputs:
       - 'null'
       - string
     doc: modified motif to highlight
-    default: CG
     inputBinding:
       position: 101
       prefix: --motif
@@ -192,7 +182,6 @@ inputs:
       - 'null'
       - string
     doc: palette for samples
-    default: tab10
     inputBinding:
       position: 101
       prefix: --palette
@@ -237,7 +226,6 @@ inputs:
       - 'null'
       - int
     doc: size of sliding window for meth frac
-    default: 10
     inputBinding:
       position: 101
       prefix: --slidingwindowsize
@@ -246,7 +234,6 @@ inputs:
       - 'null'
       - int
     doc: step size for meth frac
-    default: 1
     inputBinding:
       position: 101
       prefix: --slidingwindowstep
@@ -255,7 +242,6 @@ inputs:
       - 'null'
       - string
     doc: 'smoothing function, one of: flat, hanning, hamming, bartlett, blackman'
-    default: hanning
     inputBinding:
       position: 101
       prefix: --smoothfunc
@@ -264,7 +250,6 @@ inputs:
       - 'null'
       - int
     doc: size of window for smoothing
-    default: 8
     inputBinding:
       position: 101
       prefix: --smoothwindowsize

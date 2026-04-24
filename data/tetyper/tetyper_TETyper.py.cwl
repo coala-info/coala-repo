@@ -63,7 +63,6 @@ inputs:
       - int
     doc: Minimum read number for each strand for including a specific flanking 
       sequence.
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_each_strand
@@ -74,7 +73,6 @@ inputs:
     doc: Minimum length of mapping for a read to be used in determining flanking
       sequences. Higher values are more robust to spurious mapping. Lower values
       will recover more reads.
-    default: 30
     inputBinding:
       position: 101
       prefix: --min_mapped_len
@@ -83,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum quality value across extracted flanking sequence.
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_qual
@@ -92,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read number for including a specific flanking sequence.
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_reads
@@ -183,7 +179,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for mapping and assembly steps.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -193,7 +188,6 @@ inputs:
       - int
     doc: Verbosity level for logging to stderr. 1 = ERROR, 2 = WARNING, 3 = 
       INFO, 4 = DUBUG.
-    default: 3
     inputBinding:
       position: 101
       prefix: --verbosity

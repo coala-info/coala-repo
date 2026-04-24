@@ -94,7 +94,6 @@ inputs:
       - int
     doc: Maximum length of an exon detected *de novo* from the dataset. This is 
       to prevent multiple kilobase long exons from being accidentally created.
-    default: 100
     inputBinding:
       position: 101
       prefix: --max-de-novo-exon-length
@@ -104,7 +103,6 @@ inputs:
       - int
     doc: Minimum number of reads per junction for that junction to count in 
       creating the index of splicing events
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-reads
@@ -115,7 +113,6 @@ inputs:
     doc: Number of threads to use when parallelizing exon finding and file 
       reading. Default is -1, which means to use as many threads as are 
       available.
-    default: -1
     inputBinding:
       position: 101
       prefix: --n-jobs

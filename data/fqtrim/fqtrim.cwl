@@ -113,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Match reward for scoring the adapter alignment
-    default: 1
     inputBinding:
       position: 103
   - id: max_perc_n
@@ -121,7 +120,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum percentage of Ns allowed in a read after trimming
-    default: 5.0
     inputBinding:
       position: 103
       prefix: -m
@@ -131,7 +129,6 @@ inputs:
       - int
     doc: Minimum length of exact suffix-prefix match with adapter sequence that 
       can be trimmed at either end of the read
-    default: 6
     inputBinding:
       position: 103
       prefix: -a
@@ -140,7 +137,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percent identity for adapter match at 3' end
-    default: 94.0
     inputBinding:
       position: 103
   - id: min_percent_identity_5
@@ -148,7 +144,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum percent identity for adapter match at 5' end
-    default: 96.0
     inputBinding:
       position: 103
   - id: min_poly
@@ -156,7 +151,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of poly-A/T run to remove
-    default: 6
     inputBinding:
       position: 103
       prefix: -y
@@ -174,7 +168,6 @@ inputs:
       - int
     doc: Minimum read length after trimming (if the remaining sequence is 
       shorter than this, the read will be discarded)
-    default: 16
     inputBinding:
       position: 103
       prefix: -l
@@ -183,7 +176,6 @@ inputs:
       - 'null'
       - int
     doc: Mismatch penalty for scoring the adapter alignment
-    default: 3
     inputBinding:
       position: 103
   - id: ntrimdist
@@ -308,7 +300,6 @@ inputs:
       - 'null'
       - int
     doc: For -q, sliding window size for calculating avg. quality
-    default: 6
     inputBinding:
       position: 103
       prefix: -w

@@ -51,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: 'The algorithm for gene regulatory network reconstruction (default: grnboost2).'
-    default: grnboost2
     inputBinding:
       position: 103
       prefix: --method
@@ -61,7 +60,6 @@ inputs:
       - int
     doc: 'The number of workers to use. Only valid if using dask_multiprocessing,
       custom_multiprocessing or local as mode. (default: 20).'
-    default: 20
     inputBinding:
       position: 103
       prefix: --num_workers

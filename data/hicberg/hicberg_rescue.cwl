@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - int
     doc: Threads to use for analysis.
-    default: 1
     inputBinding:
       position: 102
       prefix: --cpus
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Statistical model to use for ambiguous reads assignment.
-    default: full
     inputBinding:
       position: 102
       prefix: --mode

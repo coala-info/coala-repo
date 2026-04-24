@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: minimum identity a read as a 16s rRNA gene
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --bowtie_16s_identity
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: minimum e-value for ARG alignments
-    default: '1e-10'
     inputBinding:
       position: 101
       prefix: --deeparg_evalue
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: minimum identity for ARG alignments
-    default: 80
     inputBinding:
       position: 101
       prefix: --deeparg_identity
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - float
     doc: minimum probability for considering a reads as ARG-like
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --deeparg_probability
@@ -64,7 +60,6 @@ inputs:
       This parameter looks at the full gene and all hits that align to the gene.
       If the overlap of all hits is below the threshold the gene is discarded. 
       Use with caution
-    default: 1
     inputBinding:
       position: 101
       prefix: --gene_coverage

@@ -11,7 +11,6 @@ inputs:
       - string
     doc: 'classification model: RF – scikit-learn Random Forest, XGB – XGBoost, Torch
       – PyTorch neural network, default: RF]'
-    default: RF
     inputBinding:
       position: 101
       prefix: --estimator
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: name of output trained model in workDir
-    default: model
     inputBinding:
       position: 101
       prefix: --name
@@ -43,7 +41,6 @@ inputs:
       - 'null'
       - Directory
     doc: working directory
-    default: workDir/
     inputBinding:
       position: 101
       prefix: --work-dir

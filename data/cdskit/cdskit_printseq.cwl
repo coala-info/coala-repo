@@ -10,7 +10,6 @@ inputs:
       - string
     doc: "Input sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --inseqformat
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: Input sequence file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --seqfile
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the sequence to print. Regex is supported.
-    default: ''
     inputBinding:
       position: 101
       prefix: --seqname
@@ -38,7 +35,6 @@ inputs:
       - string
     doc: Whether to show sequence name starting with ">". "no" prints sequences 
       only.
-    default: yes
     inputBinding:
       position: 101
       prefix: --show_seqname

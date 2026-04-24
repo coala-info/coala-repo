@@ -79,7 +79,6 @@ inputs:
     type: int?
     doc: number of threads to use for computational processes
     label: number of threads
-    default: 2
 # Guppy
   fast5_files:
     type: string[]?
@@ -111,7 +110,6 @@ inputs:
     type: boolean?
     doc: Metagenome option for the flye assembly
     label: when working with metagenomes
-    default: true
 
   destination:
     type: string?

@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: 'Ask even optional options: [no], yes'
-    default: no
     inputBinding:
       position: 101
       prefix: --ask-options
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: 'Bulk operation error handling: no, [yes]'
-    default: yes
     inputBinding:
       position: 101
       prefix: --bfail
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - string
     doc: 'Bulk operation (only some): [no], yes'
-    default: no
     inputBinding:
       position: 101
       prefix: --bulk
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: 'Save and reuse OAuth tokens: no, [yes]'
-    default: yes
     inputBinding:
       position: 101
       prefix: --cache-tokens
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - string
     doc: 'Cleanup temporary files on exit: no, [yes]'
-    default: yes
     inputBinding:
       position: 101
       prefix: --clean-temp
@@ -89,7 +84,6 @@ inputs:
       - string
     doc: 'Wizard: set as default configuration for specified plugin (also: update):
       no, [yes]'
-    default: yes
     inputBinding:
       position: 101
       prefix: --default
@@ -98,7 +92,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output only some information: [info], data, error'
-    default: info
     inputBinding:
       position: 101
       prefix: --display
@@ -117,7 +110,6 @@ inputs:
       - 'null'
       - string
     doc: '(Table) Display deep values as additional keys: no, [yes]'
-    default: yes
     inputBinding:
       position: 101
       prefix: --flat-hash
@@ -126,7 +118,6 @@ inputs:
       - 'null'
       - string
     doc: 'Output format: text, nagios, ruby, json, jsonpp, yaml, [table], csv, image'
-    default: table
     inputBinding:
       position: 101
       prefix: --format
@@ -184,7 +175,6 @@ inputs:
       - 'null'
       - string
     doc: 'Do not validate any HTTPS certificate: [no], yes'
-    default: no
     inputBinding:
       position: 101
       prefix: --insecure
@@ -193,7 +183,6 @@ inputs:
       - 'null'
       - string
     doc: 'Use interactive input of missing params: [no], yes'
-    default: no
     inputBinding:
       position: 101
       prefix: --interactive
@@ -218,7 +207,6 @@ inputs:
       - 'null'
       - string
     doc: 'Log level: trace2, trace1, debug, info, [warn], error, fatal, unknown'
-    default: warn
     inputBinding:
       position: 101
       prefix: --log-level
@@ -227,7 +215,6 @@ inputs:
       - 'null'
       - string
     doc: 'Show passwords in logs: [no], yes'
-    default: no
     inputBinding:
       position: 101
       prefix: --log-secrets
@@ -236,7 +223,6 @@ inputs:
       - 'null'
       - string
     doc: 'Logging method: [stderr], stdout, syslog'
-    default: stderr
     inputBinding:
       position: 101
       prefix: --logger
@@ -245,7 +231,6 @@ inputs:
       - 'null'
       - string
     doc: '(Table) Each element of a table are displayed as a table: [no], yes'
-    default: no
     inputBinding:
       position: 101
       prefix: --multi-table
@@ -278,7 +263,6 @@ inputs:
       - 'null'
       - string
     doc: 'Process only new items (some commands): [no], yes'
-    default: no
     inputBinding:
       position: 101
       prefix: --once-only
@@ -287,7 +271,6 @@ inputs:
       - 'null'
       - string
     doc: 'Wizard: override existing value: [no], yes'
-    default: no
     inputBinding:
       position: 101
       prefix: --override
@@ -320,7 +303,6 @@ inputs:
       - 'null'
       - string
     doc: 'Display progress bar: [no], yes'
-    default: no
     inputBinding:
       position: 101
       prefix: --progress-bar
@@ -394,7 +376,6 @@ inputs:
       - 'null'
       - string
     doc: 'Show secrets on command output: [no], yes'
-    default: no
     inputBinding:
       position: 101
       prefix: --show-secrets
@@ -403,7 +384,6 @@ inputs:
       - 'null'
       - string
     doc: 'Issue a warning if certificate is ignored: no, [yes]'
-    default: yes
     inputBinding:
       position: 101
       prefix: --silent-insecure
@@ -428,7 +408,6 @@ inputs:
       - 'null'
       - string
     doc: 'Type of file list: [list], pair'
-    default: list
     inputBinding:
       position: 101
       prefix: --src-type
@@ -437,7 +416,6 @@ inputs:
       - 'null'
       - string
     doc: 'Default parser when expected value is a struct: json, ruby'
-    default: json
     inputBinding:
       position: 101
       prefix: --struct-parser
@@ -454,7 +432,6 @@ inputs:
       - 'null'
       - string
     doc: 'Wizard: skip private key check step: [no], yes'
-    default: no
     inputBinding:
       position: 101
       prefix: --test-mode
@@ -471,7 +448,6 @@ inputs:
       - 'null'
       - string
     doc: 'Type of transfer agent: trsdk, alpha, httpgw, [direct], node, connect'
-    default: direct
     inputBinding:
       position: 101
       prefix: --transfer
@@ -488,7 +464,6 @@ inputs:
       - 'null'
       - string
     doc: '(Table) Single object fields output vertically: no, [yes]'
-    default: yes
     inputBinding:
       position: 101
       prefix: --transpose-single
@@ -505,7 +480,6 @@ inputs:
       - 'null'
       - string
     doc: 'Method to start browser: [text], graphical'
-    default: text
     inputBinding:
       position: 101
       prefix: --ui

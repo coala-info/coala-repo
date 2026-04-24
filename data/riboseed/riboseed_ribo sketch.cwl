@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: extension of assemblies, usually fasta
-    default: fasta
     inputBinding:
       position: 102
       prefix: --assembly_ext
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - File
     doc: path to Mauve.jar
-    default: ~/mauve_snapshot_2015-02-13/Mauve.jar
     inputBinding:
       position: 102
       prefix: --mauve_jar
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: extension of reference, usually gb
-    default: gb
     inputBinding:
       position: 102
       prefix: --ref_ext
@@ -66,7 +63,6 @@ inputs:
     doc: Logger writes debug to file in output dir; this sets verbosity level 
       sent to stderr. 1 = debug(), 2 = info(), 3 = warning(), 4 = error() and 5 
       = critical()
-    default: 2
     inputBinding:
       position: 102
       prefix: --verbosity

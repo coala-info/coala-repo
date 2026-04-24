@@ -17,7 +17,6 @@ inputs:
       \        3 -> [4,8) \n                     4 -> [8,16) \n                  \
       \   5 -> [16,32) \n                     6 -> [32,64) \n                    \
       \ 7 -> [64,max(uint32_t))"
-    default: 2
     inputBinding:
       position: 101
       prefix: --bitw
@@ -56,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Min abundance to keep a k-mer.
-    default: 2
     inputBinding:
       position: 101
       prefix: --hard-min
@@ -81,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Size of a k-mer. in [8, 255])
-    default: 31
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Size of minimizers. in [4, 15]
-    default: 10
     inputBinding:
       position: 101
       prefix: --minim-size
@@ -107,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Number of partitions (0=auto).
-    default: 0
     inputBinding:
       position: 101
       prefix: --nb-partitions
@@ -129,7 +124,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -138,7 +132,6 @@ inputs:
       - 'null'
       - string
     doc: Verbosity level [debug|info|warning|error].
-    default: info
     inputBinding:
       position: 101
       prefix: --verbose

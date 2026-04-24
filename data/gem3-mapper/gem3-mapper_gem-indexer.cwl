@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: Create a bisulfite-converted index
-    default: false
     inputBinding:
       position: 101
       prefix: --bisulfite-index
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: '#cores'
     inputBinding:
       position: 101
       prefix: --threads

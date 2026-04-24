@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum sequence identity threshold (0.0 to 1.0).
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --min-identity
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequence length to consider for comparison.
-    default: 100
     inputBinding:
       position: 102
       prefix: --min-length
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for comparison.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

@@ -10,7 +10,6 @@ inputs:
       - float
     doc: 'Minimum bitscore for reaction associated blast hits to consider reactions
       as core/candidate reactions. Default: 50'
-    default: 50.0
     inputBinding:
       position: 101
       prefix: --bcore
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: 'Minimum growth rate that should be achieved by gap-filling. Default: 0.01'
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --min.obj.val
@@ -70,7 +68,6 @@ inputs:
       - boolean
     doc: 'Use always all reactions instead of core reactions, which have sequence
       evidence. Default: FALSE'
-    default: false
     inputBinding:
       position: 101
       prefix: --no.core
@@ -79,7 +76,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Path to directory, where output files will be saved (default: current directory)'
-    default: current directory
     inputBinding:
       position: 101
       prefix: --output.dir
@@ -88,7 +84,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'perform only step 1 and 2. Default: FALSE'
-    default: false
     inputBinding:
       position: 101
       prefix: --quick.gf
@@ -98,7 +93,6 @@ inputs:
       - boolean
     doc: 'Save final model as unconstraint network (i.e. all exchange reactions are
       open). Default: FALSE'
-    default: false
     inputBinding:
       position: 101
       prefix: --relaxed.constraints
@@ -134,7 +128,6 @@ inputs:
       - string
     doc: 'ID (without compartment suffix) of metabolite that shall be produced. Default:
       cpd11416 (Biomass)'
-    default: cpd11416
     inputBinding:
       position: 101
       prefix: --target.metabolite
@@ -143,7 +136,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Verbose output and printing of debug messages. Default: FALSE'
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

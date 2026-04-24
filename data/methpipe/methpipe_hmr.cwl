@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: max dist btwn covered cpgs in HMR
-    default: 1000
     inputBinding:
       position: 102
       prefix: -desert
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: max iterations
-    default: 10
     inputBinding:
       position: 102
       prefix: -itr
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: specify random seed
-    default: 408
     inputBinding:
       position: 102
       prefix: -seed

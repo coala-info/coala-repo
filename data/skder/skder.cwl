@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - float
     doc: Aligned cutoff threshold for dereplication - only needed by one genome
-    default: 50.0
     inputBinding:
       position: 101
       prefix: --aligned-fraction-cutoff
@@ -21,7 +20,6 @@ inputs:
     doc: Automatically skip warnings and download genomes from NCBI if -t 
       argument issued. Automatation off by default to prevent unexpected 
       downloading of large genomes
-    default: false
     inputBinding:
       position: 101
       prefix: --automate
@@ -32,7 +30,6 @@ inputs:
     doc: Whether to use a "dynamic" (more concise), "greedy" (more 
       comprehensive), or "low_mem_greedy" (currently experimental) approach to 
       selecting representative genomes.
-    default: greedy
     inputBinding:
       position: 101
       prefix: --dereplication-mode
@@ -80,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: Which GTDB release to use if -t argument issued
-    default: R226
     inputBinding:
       position: 101
       prefix: --gtdb-release
@@ -90,7 +86,6 @@ inputs:
       - float
     doc: Maximum difference for aligned fraction between a pair to automatically
       disqualify the genome with a higher AF from being a representative
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --max-af-distance-cutoff
@@ -99,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Max memory in Gigabytes
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-memory
@@ -108,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal N50 of genomes to be included in dereplication
-    default: 0
     inputBinding:
       position: 101
       prefix: --minimal_n50
@@ -123,7 +116,6 @@ inputs:
       - 'null'
       - float
     doc: ANI cutoff for dereplication
-    default: 99.5
     inputBinding:
       position: 101
       prefix: --percent-identity-cutoff
@@ -142,7 +134,6 @@ inputs:
       - string
     doc: Options for skani triangle. Note ANI and AF cutoffs are specified 
       separately and the -E parameter is always requested.
-    default: -s X, where X is 10 below the ANI cutoff
     inputBinding:
       position: 101
       prefix: --skani-triangle-parameters
@@ -177,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads/processes to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

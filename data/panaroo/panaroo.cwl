@@ -10,7 +10,6 @@ inputs:
       - string
     doc: "Specify an aligner. Options:'prank', 'clustal', and\n                  \
       \      default: 'mafft'"
-    default: mafft
     inputBinding:
       position: 101
       prefix: --aligner
@@ -61,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: the codon table to use for translation
-    default: 11
     inputBinding:
       position: 101
       prefix: --codon-table
@@ -90,7 +88,6 @@ inputs:
       - int
     doc: "Randomly subset the core genome to these many genes\n                  \
       \      (default=all)"
-    default: all
     inputBinding:
       position: 101
       prefix: --core_subset
@@ -99,7 +96,6 @@ inputs:
       - 'null'
       - float
     doc: Core-genome sample threshold
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --core_threshold
@@ -117,7 +113,6 @@ inputs:
       - 'null'
       - float
     doc: length difference cutoff at the gene family level
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --family_len_dif_percent
@@ -126,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: protein family sequence identity threshold
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --family_threshold
@@ -154,7 +148,6 @@ inputs:
       - 'null'
       - float
     doc: length difference cutoff
-    default: 0.98
     inputBinding:
       position: 101
       prefix: --len_dif_percent
@@ -167,7 +160,6 @@ inputs:
       \         genes in the same cluster (default=0.01). Genes\n                \
       \        failing this test will be re-annotated at the shorter\n           \
       \             length"
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --length_outlier_support_proportion
@@ -272,7 +264,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -281,7 +272,6 @@ inputs:
       - 'null'
       - float
     doc: sequence identity threshold
-    default: 0.98
     inputBinding:
       position: 101
       prefix: --threshold

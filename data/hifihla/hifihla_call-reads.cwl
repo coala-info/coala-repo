@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Haplotypes in sample
-    default: 2
     inputBinding:
       position: 101
       prefix: --haplotypes
@@ -33,7 +32,6 @@ inputs:
       - type: array
         items: string
     doc: Input comma-sep loci to extract
-    default: all
     inputBinding:
       position: 101
       prefix: --loci
@@ -42,7 +40,6 @@ inputs:
       - 'null'
       - string
     doc: 'Alternative to repeated -v/--verbose: set log level via key.'
-    default: Warn
     inputBinding:
       position: 101
       prefix: --log-level
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum reads per locus
-    default: 50
     inputBinding:
       position: 101
       prefix: --max_depth
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum matches in output report
-    default: 10
     inputBinding:
       position: 101
       prefix: --max_matches
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele frequency
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min_allele_freq
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum binomial CDF to call het/hom
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --min_cdf
@@ -111,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Random number seed for downsampling to max_depth
-    default: 42
     inputBinding:
       position: 101
       prefix: --seed
@@ -120,7 +112,6 @@ inputs:
       - 'null'
       - int
     doc: Analysis threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

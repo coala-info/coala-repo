@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Fix gff records that have coordinates out of the sequence range.
-    default: yes
     inputBinding:
       position: 101
       prefix: --fix_outrange_gff_records
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: Input gff file.
-    default: None
     inputBinding:
       position: 101
       prefix: --ingff
@@ -28,7 +26,6 @@ inputs:
       - string
     doc: "Input sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --inseqformat
@@ -37,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Input sequence format for --seqfile2.
-    default: fasta
     inputBinding:
       position: 101
       prefix: --inseqformat2
@@ -47,7 +43,6 @@ inputs:
       - string
     doc: "Output sequence format. See Biopython documentation for available options.\n\
       \                        https://biopython.org/wiki/SeqIO"
-    default: fasta
     inputBinding:
       position: 101
       prefix: --outseqformat
@@ -56,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Output sequence format for --outfile2.
-    default: fasta
     inputBinding:
       position: 101
       prefix: --outseqformat2
@@ -65,7 +59,6 @@ inputs:
       - 'null'
       - File
     doc: Input sequence file. Use "-" for STDIN.
-    default: '-'
     inputBinding:
       position: 101
       prefix: --seqfile
@@ -74,7 +67,6 @@ inputs:
       - 'null'
       - File
     doc: Input sequence file 2.
-    default: None
     inputBinding:
       position: 101
       prefix: --seqfile2

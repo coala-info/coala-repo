@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: use <format> as the format.
-    default: '%+e%+ei'
     inputBinding:
       position: 102
       prefix: -f

@@ -19,7 +19,6 @@ steps:
         message:
           type: string
           doc: "The message to print"
-          default: "Hello World"
           inputBinding:
             position: 1
       baseCommand: echo

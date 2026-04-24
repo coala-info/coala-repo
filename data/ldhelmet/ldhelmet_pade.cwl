@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: Defect threshold for Pade coefficients.
-    default: 40
     inputBinding:
       position: 101
       prefix: --defect_threshold
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Pade coefficients to compute.
-    default: 11
     inputBinding:
       position: 101
       prefix: --num_coeff
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 101
       prefix: --num_threads

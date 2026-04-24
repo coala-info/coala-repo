@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: minimum fraction of marker genes that should be present in a bin.
-    default: 0.33333
     inputBinding:
       position: 101
       prefix: --bin_mg_threshold
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: distance limit for contig matching.
-    default: 20
     inputBinding:
       position: 101
       prefix: --d_limit
@@ -47,7 +45,6 @@ inputs:
       - string
     doc: delimiter for output results. Supports a comma (,), a semicolon (;), a 
       tab ($'\t'), a space (" ") and a pipe (|) .
-    default: ','
     inputBinding:
       position: 101
       prefix: --delimiter
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: depth to consider for label propagation.
-    default: 10
     inputBinding:
       position: 101
       prefix: --depth
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - File
     doc: path to marker.hmm file.
-    default: auxiliary/marker.hmm
     inputBinding:
       position: 101
       prefix: --hmm
@@ -80,7 +75,6 @@ inputs:
       - 'null'
       - float
     doc: length threshold to consider marker genes.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --mg_threshold
@@ -89,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: minimum size of a bin to output in base pairs (bp).
-    default: 200000
     inputBinding:
       position: 101
       prefix: --min_bin_size
@@ -98,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of contigs to consider for binning.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --min_length
@@ -107,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: total number of marker genes.
-    default: 108
     inputBinding:
       position: 101
       prefix: --n_mg
@@ -124,7 +115,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use.
-    default: 8
     inputBinding:
       position: 101
       prefix: --nthreads
@@ -133,7 +123,6 @@ inputs:
       - 'null'
       - float
     doc: maximum probability of an edge matching to create a new bin.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --p_inter
@@ -142,7 +131,6 @@ inputs:
       - 'null'
       - float
     doc: minimum probability of an edge matching to assign to the same bin.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --p_intra

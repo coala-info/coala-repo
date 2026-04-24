@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Color scheme
-    default: Zappo
     inputBinding:
       position: 101
       prefix: --color_scheme
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Consensus identity bar color
-    default: '#1f77b4'
     inputBinding:
       position: 101
       prefix: --consensus_color
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Consensus identity bar height size
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --consensus_size
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: Figure DPI
-    default: 300
     inputBinding:
       position: 101
       prefix: --dpi
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: End position of MSA visualization
-    default: MSA Length
     inputBinding:
       position: 101
       prefix: --end
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: MSA file format
-    default: fasta
     inputBinding:
       position: 101
       prefix: --format
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - string
     doc: Label type ('id'[default]|'description')
-    default: id
     inputBinding:
       position: 101
       prefix: --label_type
@@ -78,7 +71,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show consensus sequence
-    default: false
     inputBinding:
       position: 101
       prefix: --show_consensus
@@ -87,7 +79,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show seq char count without gap on right side
-    default: false
     inputBinding:
       position: 101
       prefix: --show_count
@@ -96,7 +87,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show grid
-    default: false
     inputBinding:
       position: 101
       prefix: --show_grid
@@ -105,7 +95,6 @@ inputs:
       - 'null'
       - boolean
     doc: Sort MSA order by NJ tree constructed from MSA distance matrix
-    default: false
     inputBinding:
       position: 101
       prefix: --sort
@@ -114,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: Start position of MSA visualization
-    default: 1
     inputBinding:
       position: 101
       prefix: --start
@@ -123,7 +111,6 @@ inputs:
       - 'null'
       - string
     doc: Wrap length
-    default: None
     inputBinding:
       position: 101
       prefix: --wrap_length
@@ -132,7 +119,6 @@ inputs:
       - 'null'
       - float
     doc: Space size between wrap MSA plot area
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --wrap_space_size

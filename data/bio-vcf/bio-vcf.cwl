@@ -142,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: Multi-core version (default ALL)
-    default: ALL
     inputBinding:
       position: 102
       prefix: --num-threads
@@ -248,7 +247,6 @@ inputs:
       - 'null'
       - int
     doc: Fork thread on num lines (default 40000)
-    default: 40000
     inputBinding:
       position: 102
       prefix: --thread-lines
@@ -257,7 +255,6 @@ inputs:
       - 'null'
       - int
     doc: Timeout waiting for thread to complete (default 180)
-    default: 180
     inputBinding:
       position: 102
       prefix: --timeout

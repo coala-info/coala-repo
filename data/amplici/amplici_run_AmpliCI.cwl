@@ -96,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Verbosity level; set to 8+ for debugging.
-    default: 1
     inputBinding:
       position: 102
       prefix: --verbose

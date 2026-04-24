@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of missing positions for the genotype
-    default: 1
     inputBinding:
       position: 101
       prefix: --max_missing_positions
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --num_threads

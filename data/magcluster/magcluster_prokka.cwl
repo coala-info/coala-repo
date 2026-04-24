@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Version to put in Genbank file
-    default: '1'
     inputBinding:
       position: 102
       prefix: --accver
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add 'gene' features for each 'CDS' feature
-    default: false
     inputBinding:
       position: 102
       prefix: --addgenes
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add 'mRNA' features for each 'CDS' feature
-    default: false
     inputBinding:
       position: 102
       prefix: --addmrna
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow [tr]RNA to overlap CDS
-    default: false
     inputBinding:
       position: 102
       prefix: --cdsrnaolap
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: Sequencing centre ID.
-    default: ''
     inputBinding:
       position: 102
       prefix: --centre
@@ -63,7 +58,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Force Genbank/ENA/DDJB compliance: --genes --mincontiglen 200 --centre XXX'
-    default: false
     inputBinding:
       position: 102
       prefix: --compliant
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPUs to use [0=all]
-    default: 8
     inputBinding:
       position: 102
       prefix: --cpus
@@ -81,7 +74,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Debug mode: keep all temporary files'
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -90,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: Similarity e-value cut-off
-    default: '1e-06'
     inputBinding:
       position: 102
       prefix: --evalue
@@ -99,7 +90,6 @@ inputs:
       - 'null'
       - boolean
     doc: Fast mode - skip CDS /product searching
-    default: false
     inputBinding:
       position: 102
       prefix: --fast
@@ -108,7 +98,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force overwriting existing output folder
-    default: false
     inputBinding:
       position: 102
       prefix: --force
@@ -117,7 +106,6 @@ inputs:
       - 'null'
       - string
     doc: Genetic code / Translation table (set if --kingdom is set)
-    default: '0'
     inputBinding:
       position: 102
       prefix: --gcode
@@ -126,7 +114,6 @@ inputs:
       - 'null'
       - string
     doc: Genus name
-    default: Genus
     inputBinding:
       position: 102
       prefix: --genus
@@ -135,7 +122,6 @@ inputs:
       - 'null'
       - string
     doc: GFF version
-    default: '3'
     inputBinding:
       position: 102
       prefix: --gffver
@@ -144,7 +130,6 @@ inputs:
       - 'null'
       - string
     doc: 'Gram: -/neg +/pos'
-    default: ''
     inputBinding:
       position: 102
       prefix: --gram
@@ -153,7 +138,6 @@ inputs:
       - 'null'
       - string
     doc: Trusted HMM to first annotate from
-    default: ''
     inputBinding:
       position: 102
       prefix: --hmms
@@ -162,7 +146,6 @@ inputs:
       - 'null'
       - int
     doc: Locus tag counter increment
-    default: 1
     inputBinding:
       position: 102
       prefix: --increment
@@ -171,7 +154,6 @@ inputs:
       - 'null'
       - string
     doc: 'Annotation mode: Archaea|Bacteria|Viruses'
-    default: Bacteria
     inputBinding:
       position: 102
       prefix: --kingdom
@@ -180,7 +162,6 @@ inputs:
       - 'null'
       - string
     doc: Locus tag prefix
-    default: PROKKA
     inputBinding:
       position: 102
       prefix: --locustag
@@ -189,7 +170,6 @@ inputs:
       - 'null'
       - boolean
     doc: Improve gene predictions for highly fragmented genomes
-    default: false
     inputBinding:
       position: 102
       prefix: --metagenome
@@ -198,7 +178,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum contig size [NCBI needs 200]
-    default: 1
     inputBinding:
       position: 102
       prefix: --mincontiglen
@@ -207,7 +186,6 @@ inputs:
       - 'null'
       - boolean
     doc: For CDS just set /product="unannotated protein"
-    default: false
     inputBinding:
       position: 102
       prefix: --noanno
@@ -216,7 +194,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't run rRNA search
-    default: false
     inputBinding:
       position: 102
       prefix: --norrna
@@ -225,7 +202,6 @@ inputs:
       - 'null'
       - boolean
     doc: Don't run tRNA search
-    default: false
     inputBinding:
       position: 102
       prefix: --notrna
@@ -234,7 +210,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output folder
-    default: auto
     inputBinding:
       position: 102
       prefix: --outdir
@@ -243,7 +218,6 @@ inputs:
       - 'null'
       - string
     doc: Plasmid name or identifier
-    default: ''
     inputBinding:
       position: 102
       prefix: --plasmid
@@ -252,7 +226,6 @@ inputs:
       - 'null'
       - string
     doc: Filename output prefix
-    default: auto
     inputBinding:
       position: 102
       prefix: --prefix
@@ -261,7 +234,6 @@ inputs:
       - 'null'
       - File
     doc: Fasta file of trusted proteins to first annotate from
-    default: Magnetosome_protein_data.fasta
     inputBinding:
       position: 102
       prefix: --proteins
@@ -270,7 +242,6 @@ inputs:
       - 'null'
       - boolean
     doc: No screen output
-    default: false
     inputBinding:
       position: 102
       prefix: --quiet
@@ -279,7 +250,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not clean up /product annotation
-    default: false
     inputBinding:
       position: 102
       prefix: --rawproduct
@@ -288,7 +258,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable searching for ncRNAs with Infernal+Rfam (SLOW!)
-    default: false
     inputBinding:
       position: 102
       prefix: --rfam
@@ -297,7 +266,6 @@ inputs:
       - 'null'
       - boolean
     doc: Prefer RNAmmer over Barrnap for rRNA prediction
-    default: false
     inputBinding:
       position: 102
       prefix: --rnammer
@@ -306,7 +274,6 @@ inputs:
       - 'null'
       - string
     doc: Species name
-    default: species
     inputBinding:
       position: 102
       prefix: --species
@@ -315,7 +282,6 @@ inputs:
       - 'null'
       - string
     doc: Strain name
-    default: strain
     inputBinding:
       position: 102
       prefix: --strain
@@ -324,7 +290,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use genus-specific BLAST databases (needs --genus)
-    default: false
     inputBinding:
       position: 102
       prefix: --usegenus

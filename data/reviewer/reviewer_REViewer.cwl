@@ -42,7 +42,6 @@ inputs:
       - int
     doc: Length of flanking region (must match corresponding ExpansionHunter 
       setting)
-    default: 1000
     inputBinding:
       position: 101
       prefix: --region-extension-length

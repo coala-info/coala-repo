@@ -11,7 +11,6 @@ inputs:
       - int
     doc: Maximal plasmid sequence length difference in basepairs (default = 
       1000)
-    default: 1000
     inputBinding:
       position: 101
       prefix: --max-sequence-length-difference
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Minimal plasmid sequence identity (default = 90%)
-    default: 90
     inputBinding:
       position: 101
       prefix: --min-sequence-identity

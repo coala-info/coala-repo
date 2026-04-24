@@ -15,7 +15,6 @@ inputs:
   - id: operation
     type: string
     doc: The operation to perform (background).
-    default: background
     inputBinding:
       position: 2
   - id: background_pdf

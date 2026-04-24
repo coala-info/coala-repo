@@ -84,7 +84,6 @@ inputs:
     doc: 'Require at least MIN_ALTERNATE_COUNT observations supporting an alternate
       allele within a single individual in order to evaluate the position. Default:
       4'
-    default: 4
     inputBinding:
       position: 102
       prefix: --min-alternate-count
@@ -95,7 +94,6 @@ inputs:
     doc: 'Require at least MIN_ALTERNATE_FRACTION observations supporting an alternate
       allele within a single individual in the in order to evaluate the position.
       Default: 0.01, range = [0,1]'
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --min-alternate-fraction
@@ -105,7 +103,6 @@ inputs:
       - int
     doc: 'Exclude alleles from analysis if their supporting base quality is less than
       MIN_BASE_QUALITY. Default: 24'
-    default: 24
     inputBinding:
       position: 102
       prefix: --min-base-quality
@@ -115,7 +112,6 @@ inputs:
       - int
     doc: 'Exclude alignments from analysis if they have a mapping quality less than
       MIN_MAPPING_QUALITY. Default: 30'
-    default: 30
     inputBinding:
       position: 102
       prefix: --min-mapping-quality
@@ -125,7 +121,6 @@ inputs:
       - float
     doc: 'A variant must have at least this VAF to be included in the report. Default:
       0.'
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --min_vaf
@@ -142,7 +137,6 @@ inputs:
       - 'null'
       - Directory
     doc: "Output files will be saved in OUTPUT_DIR. Default: '.'"
-    default: .
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -152,7 +146,6 @@ inputs:
       - float
     doc: 'Minimum noise level. This is used to calculate QUAL score. Default: 0.002,
       range = [0,1]'
-    default: 0.002
     inputBinding:
       position: 102
       prefix: --p
@@ -167,7 +160,6 @@ inputs:
       - 'null'
       - string
     doc: 'Reference genome version to use. Default: hs37d5'
-    default: hs37d5
     inputBinding:
       position: 102
       prefix: --reference

@@ -61,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes to be used
-    default: 1
     inputBinding:
       position: 105
       prefix: --proc
@@ -71,7 +70,6 @@ inputs:
       - string
     doc: Print full query names in output files ('yes' value). In case of 'no', 
       everything after the first space will be ignored.
-    default: no
     inputBinding:
       position: 105
       prefix: --query_name_full
@@ -81,7 +79,6 @@ inputs:
       - string
     doc: Print full reference names in output files ('yes' value). In case of 
       'no', everything after the first space will be ignored.
-    default: no
     inputBinding:
       position: 105
       prefix: --ref_name_full
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum distance between two relocated blocks
-    default: 10000
     inputBinding:
       position: 105
       prefix: --reloc_dist

@@ -17,7 +17,6 @@ inputs:
       - boolean
     doc: perform base level alignment when computing read overlaps in the first 
       iteration
-    default: false
     inputBinding:
       position: 102
       prefix: --base
@@ -27,7 +26,6 @@ inputs:
       - boolean
     doc: use banding approximation for polishing on GPU. Only applicable when -c
       is used.
-    default: false
     inputBinding:
       position: 102
       prefix: --cuda-banded-alignment
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: number of batches for CUDA accelerated alignment
-    default: 0
     inputBinding:
       position: 102
       prefix: --cudaaligner-batches
@@ -45,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: number of batches for CUDA accelerated polishing
-    default: 0
     inputBinding:
       position: 102
       prefix: --cudapoa-batches
@@ -54,7 +50,6 @@ inputs:
       - 'null'
       - float
     doc: maximum allowed error rate used for filtering overlaps
-    default: 0.3
     inputBinding:
       position: 102
       prefix: --error-threshold
@@ -63,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: gap penalty (must be negative)
-    default: -8
     inputBinding:
       position: 102
       prefix: --gap
@@ -72,7 +66,6 @@ inputs:
       - 'null'
       - boolean
     doc: output unpolished target sequences
-    default: false
     inputBinding:
       position: 102
       prefix: --include-unpolished
@@ -82,7 +75,6 @@ inputs:
       - boolean
     doc: perform linear based fragment correction rather than variation graph 
       based fragment correction
-    default: false
     inputBinding:
       position: 102
       prefix: --linear
@@ -91,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: score for matching bases
-    default: 5
     inputBinding:
       position: 102
       prefix: --match
@@ -100,7 +91,6 @@ inputs:
       - 'null'
       - float
     doc: minimum confidence for keeping edges in the graph
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --min-confidence
@@ -110,7 +100,6 @@ inputs:
       - float
     doc: minimum identity used for filtering overlaps, only works combined with 
       --base
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --min-identity
@@ -119,7 +108,6 @@ inputs:
       - 'null'
       - float
     doc: minimum sequence identity between read overlaps in the consensus round
-    default: 0.99
     inputBinding:
       position: 102
       prefix: --min-identity-cns
@@ -128,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: minimum read overlap length in the consensus round
-    default: 1000
     inputBinding:
       position: 102
       prefix: --min-ovlplen-cns
@@ -137,7 +124,6 @@ inputs:
       - 'null'
       - float
     doc: minimum support for keeping edges in the graph
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --min-support
@@ -146,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: score for mismatching bases
-    default: -4
     inputBinding:
       position: 102
       prefix: --mismatch
@@ -155,7 +140,6 @@ inputs:
       - 'null'
       - string
     doc: 'sequencing platform: pb/ont'
-    default: pb
     inputBinding:
       position: 102
       prefix: --platform
@@ -164,7 +148,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for average base quality of windows used in POA
-    default: 10.0
     inputBinding:
       position: 102
       prefix: --quality-threshold
@@ -173,7 +156,6 @@ inputs:
       - 'null'
       - boolean
     doc: scrub chimeric reads
-    default: false
     inputBinding:
       position: 102
       prefix: --scrub
@@ -183,7 +165,6 @@ inputs:
       - boolean
     doc: split target sequences into chunks (recommend for FASTQ > 20G or FASTA 
       > 10G)
-    default: false
     inputBinding:
       position: 102
       prefix: --split
@@ -193,7 +174,6 @@ inputs:
       - int
     doc: split target sequences into chunks of desired size in lines, only valid
       when using --split
-    default: 1000000
     inputBinding:
       position: 102
       prefix: --split-size
@@ -202,7 +182,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -211,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: size of window on which POA is performed
-    default: 500
     inputBinding:
       position: 102
       prefix: --window-length

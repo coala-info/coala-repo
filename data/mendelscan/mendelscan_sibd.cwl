@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum Beagle FastIBD score below which segments will be used
-    default: '10e-10'
     inputBinding:
       position: 102
       prefix: --ibd-score-threshold
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: 'Presumed model of inheritance: dominant, recessive, x-linked'
-    default: dominant
     inputBinding:
       position: 102
       prefix: --inheritance
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Window size in base pairs to use for SIBD region binning
-    default: 100000
     inputBinding:
       position: 102
       prefix: --window-resolution

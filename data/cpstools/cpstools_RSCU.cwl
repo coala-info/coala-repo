@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: CDS filter length
-    default: 300
     inputBinding:
       position: 101
       prefix: --filter_length

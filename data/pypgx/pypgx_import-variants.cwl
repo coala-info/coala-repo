@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: "Reference genome assembly (default: 'GRCh37') (choices: 'GRCh37', 'GRCh38')."
-    default: GRCh37
     inputBinding:
       position: 103
       prefix: --assembly
@@ -46,7 +45,6 @@ inputs:
       will return VcfFrame[Consolidated] after applying the phase-extension algorithm
       to estimate haplotype phase of any variants that could not be resolved by read-backed
       phasing."
-    default: WGS
     inputBinding:
       position: 103
       prefix: --platform

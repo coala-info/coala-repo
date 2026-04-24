@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: BAM output compression level
-    default: 6
     inputBinding:
       position: 101
       prefix: --compression
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel decompression & writer threads to use
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

@@ -43,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable or disable colored logging.
-    default: true
     inputBinding:
       position: 102
       prefix: --logColors
@@ -84,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set the log level. Options: Critical, Error, Warning, Debug, Info, etc.'
-    default: INFO
     inputBinding:
       position: 102
       prefix: --logLevel
@@ -110,7 +108,6 @@ inputs:
       - boolean
     doc: Turn on rotating logging, which prevents log files from getting too 
       big.
-    default: false
     inputBinding:
       position: 102
       prefix: --rotatingLogging
@@ -120,7 +117,6 @@ inputs:
       - Directory
     doc: Path to where temporary directory containing all temp files are 
       created.
-    default: /tmp
     inputBinding:
       position: 102
       prefix: --tempDirRoot

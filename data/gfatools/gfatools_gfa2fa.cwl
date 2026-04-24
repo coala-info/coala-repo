@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: line length
-    default: 60
     inputBinding:
       position: 102
       prefix: -l

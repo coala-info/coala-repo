@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - int
     doc: Number of header rows to ignore.
-    default: 0
     inputBinding:
       position: 102
       prefix: --header

@@ -15,7 +15,6 @@ inputs:
       - string
     doc: "fields to extract: Build a comma separated list from [names, mers, gc, coverage,
       tcoverage, ncoverage, lengths, bins] or just use 'all']"
-    default: names,bins
     inputBinding:
       position: 102
       prefix: --fields
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - boolean
     doc: don't add headers
-    default: false
     inputBinding:
       position: 102
       prefix: --no_headers
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: data separator
-    default: ','
     inputBinding:
       position: 102
       prefix: --separator

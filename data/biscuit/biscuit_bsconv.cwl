@@ -54,7 +54,6 @@ inputs:
       - 'null'
       - float
     doc: 'Filter: maximum CpH retention fraction'
-    default: 1.0
     inputBinding:
       position: 103
       prefix: -f
@@ -79,7 +78,6 @@ inputs:
       - 'null'
       - float
     doc: 'Filter: maximum CpY retention fraction'
-    default: 1.0
     inputBinding:
       position: 103
       prefix: -y

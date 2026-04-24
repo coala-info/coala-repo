@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: number of results to return
-    default: all
     inputBinding:
       position: 102
       prefix: --limit
@@ -62,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use
-    default: max cores
     inputBinding:
       position: 102
       prefix: --threads
@@ -71,7 +69,6 @@ inputs:
       - 'null'
       - float
     doc: threshold in percentage of terms in query matching
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --threshold

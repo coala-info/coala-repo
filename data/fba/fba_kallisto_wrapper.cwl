@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - Directory
     doc: specify a temp directory. Default (./kallisto)
-    default: ./kallisto
     inputBinding:
       position: 101
       prefix: --output_directory
@@ -37,7 +36,6 @@ inputs:
       - 'null'
       - string
     doc: specify feature barcoding technology. The default is 10xv3
-    default: 10xv3
     inputBinding:
       position: 101
       prefix: --technology
@@ -46,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: specify number of kallisto/bustools threads to launch. Default (1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

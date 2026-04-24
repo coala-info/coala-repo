@@ -17,7 +17,6 @@ inputs:
       - string
     doc: 'Evolutionary model to use (default: p-distance). Options: p-distance, jc69,
       k2p, tn93'
-    default: p-distance
     inputBinding:
       position: 101
       prefix: --model
@@ -38,7 +37,6 @@ inputs:
   - id: threshold
     type: float
     doc: The p-distance threshold for genotyping (e.g., 0.105).
-    default: 0.105
     inputBinding:
       position: 101
       prefix: --threshold

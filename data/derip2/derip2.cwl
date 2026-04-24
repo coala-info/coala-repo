@@ -44,7 +44,6 @@ inputs:
       - 'null'
       - string
     doc: Set logging level.
-    default: INFO
     inputBinding:
       position: 101
       prefix: --loglevel
@@ -62,7 +61,6 @@ inputs:
       - float
     doc: Maximum proportion of gapped positions in column to be tolerated before
       forcing a gap in final deRIP sequence.
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --max-gaps
@@ -73,7 +71,6 @@ inputs:
     doc: Maximum proportion of conflicting SNPs permitted before excluding 
       column from RIP/deamination assessment. i.e. By default a column with >= 
       0.5 'C/T' bases will have 'TpA' positions logged as RIP events.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --max-snp-noise
@@ -84,7 +81,6 @@ inputs:
     doc: "Minimum proportion of deamination events in RIP context (5' CpA 3' --> 5'
       TpA 3') required for column to deRIP'd in final sequence. Note: If 'reaminate'
       option is set all deamination events will be corrected."
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --min-rip-like
@@ -118,7 +114,6 @@ inputs:
       - string
     doc: Specify the type of RIP events to be displayed in the alignment 
       visualization.
-    default: both
     inputBinding:
       position: 101
       prefix: --plot-rip-type
@@ -128,7 +123,6 @@ inputs:
       - string
     doc: Prefix for output files. Output files will be named prefix.fasta, 
       prefix_alignment.fasta, etc.
-    default: deRIPseq
     inputBinding:
       position: 101
       prefix: --prefix

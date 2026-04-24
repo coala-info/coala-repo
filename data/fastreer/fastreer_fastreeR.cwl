@@ -63,7 +63,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print extra messages on stderr
-    default: false
     inputBinding:
       position: 107
       prefix: --extraVerbose
@@ -72,7 +71,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to JAR library folder
-    default: /usr/local/share/fastreer-2.1.3-0
     inputBinding:
       position: 107
       prefix: --lib
@@ -81,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Max RAM for JVM in MB
-    default: 256
     inputBinding:
       position: 107
       prefix: --mem
@@ -90,7 +87,6 @@ inputs:
       - 'null'
       - boolean
     doc: Pipe Java stderr to CLI
-    default: false
     inputBinding:
       position: 107
       prefix: --pipe-stderr

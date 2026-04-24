@@ -10,7 +10,6 @@ inputs:
       - boolean
     doc: Only print pyrpipe's commands and not execute anything through 
       pyrpipe_engine module
-    default: false
     inputBinding:
       position: 101
       prefix: --dry-run
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force execution of commands if their target files already exist
-    default: false
     inputBinding:
       position: 101
       prefix: --force
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for saving log files
-    default: ./pyrpipe_logs
     inputBinding:
       position: 101
       prefix: --logs-dir
@@ -51,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: Autorun MultiQC after execution
-    default: false
     inputBinding:
       position: 101
       prefix: --multiqc
@@ -60,7 +56,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable pyrpipe logs
-    default: false
     inputBinding:
       position: 101
       prefix: --no-logs
@@ -69,7 +64,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory containing parameter yaml files
-    default: ./params
     inputBinding:
       position: 101
       prefix: --param-dir
@@ -78,7 +72,6 @@ inputs:
       - 'null'
       - boolean
     doc: Disable file deletions through pyrpipe_engine module
-    default: false
     inputBinding:
       position: 101
       prefix: --safe-mode
@@ -95,7 +88,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print pyrpipe_engine's stdout and stderr
-    default: false
     inputBinding:
       position: 101
       prefix: --verbose

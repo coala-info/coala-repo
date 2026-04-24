@@ -33,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: install repository dependencies via the toolshed, if any are defined
-    default: yes
     inputBinding:
       position: 103
       prefix: --install-repository-dependencies
@@ -43,7 +42,6 @@ inputs:
       - string
     doc: install dependencies through a resolver that supports installation 
       (e.g. conda)
-    default: yes
     inputBinding:
       position: 103
       prefix: --install-resolver-dependencies
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - string
     doc: install tool dependencies via the toolshed, if any are defined
-    default: yes
     inputBinding:
       position: 103
       prefix: --install-tool-dependencies
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: wait up to TIMEOUT seconds for tool installations to complete
-    default: 600
     inputBinding:
       position: 103
       prefix: --timeout

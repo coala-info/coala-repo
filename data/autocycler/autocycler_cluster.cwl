@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: cutoff distance threshold for hierarchical clustering
-    default: '0.2'
     inputBinding:
       position: 101
       prefix: --cutoff
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - string
     doc: manually define clusters using tree node numbers
-    default: automatic
     inputBinding:
       position: 101
       prefix: --manual
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: refuse to run if mean contigs per assembly exceeds this value
-    default: '25'
     inputBinding:
       position: 101
       prefix: --max_contigs
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: exclude clusters with fewer than this many assemblies
-    default: automatic
     inputBinding:
       position: 101
       prefix: --min_assemblies

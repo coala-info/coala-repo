@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - float
     doc: maximum allowed error rate used for filtering overlaps
-    default: 0.3
     inputBinding:
       position: 104
       prefix: --error-threshold
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: gap penalty (must be negative)
-    default: -4
     inputBinding:
       position: 104
       prefix: --gap
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: score for matching bases
-    default: 3
     inputBinding:
       position: 104
       prefix: --match
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: score for mismatching bases
-    default: -5
     inputBinding:
       position: 104
       prefix: --mismatch
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - float
     doc: threshold for average base quality of windows used in consensus generation
-    default: 10.0
     inputBinding:
       position: 104
       prefix: --quality-threshold
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 104
       prefix: --threads
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: size of window on which POA is performed
-    default: 500
     inputBinding:
       position: 104
       prefix: --window-length

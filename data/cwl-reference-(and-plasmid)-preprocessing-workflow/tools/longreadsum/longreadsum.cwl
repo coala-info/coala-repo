@@ -93,7 +93,6 @@ inputs:
     type: string
     label: output folder
     doc: Sets the output directory, defaults to "longreadsum_output".
-    default: longreadsum_output
     inputBinding:
       prefix: --outputfolder
   threads:
@@ -110,7 +109,6 @@ inputs:
     doc: Output html file prefix, default is "QC_".
     inputBinding:
       prefix: --outprefix
-    default: QC_
   seed:
     type: int?
     label: random seed

@@ -17,7 +17,6 @@ inputs:
       - string
     doc: Only download genomes with the specified assembly level. Use 'Any' for 
       any assembly level.
-    default: Complete Genome
     inputBinding:
       position: 102
       prefix: -a
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: 'Download using program. Options: rsync, curl, wget.'
-    default: wget (auto-detected)
     inputBinding:
       position: 102
       prefix: -g
@@ -61,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: Mask low-complexity regions using dustmasker.
-    default: false
     inputBinding:
       position: 102
       prefix: -m
@@ -70,7 +67,6 @@ inputs:
       - 'null'
       - boolean
     doc: Modify header to include taxonomy ID.
-    default: false
     inputBinding:
       position: 102
       prefix: -l
@@ -79,7 +75,6 @@ inputs:
       - 'null'
       - Directory
     doc: Folder to which the files are downloaded.
-    default: .
     inputBinding:
       position: 102
       prefix: -o
@@ -88,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: Only download genomes in the specified refseq category.
-    default: any
     inputBinding:
       position: 102
       prefix: -c
@@ -97,7 +91,6 @@ inputs:
       - 'null'
       - string
     doc: Only download the specified taxonomy IDs, comma separated.
-    default: any
     inputBinding:
       position: 102
       prefix: -t
@@ -106,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processes when downloading (uses xargs).
-    default: 1
     inputBinding:
       position: 102
       prefix: -P

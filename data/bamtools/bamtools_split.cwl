@@ -63,7 +63,6 @@ inputs:
       - string
     doc: delimiter used to separate values in the filenames generated from splitting
       on list-type tags
-    default: --
     inputBinding:
       position: 101
       prefix: -tagListDelim

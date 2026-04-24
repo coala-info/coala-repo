@@ -10,7 +10,6 @@ inputs:
       - float
     doc: (Plotting option). Numeric; Cutoff at which to label ambiguous markers.
       Default 0.5.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --amb-marker-cutoff
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: Format of the gene IDs in your CDS object. The default is "ENSEMBL".
-    default: ENSEMBL
     inputBinding:
       position: 101
       prefix: --cds-gene-id-type
@@ -38,7 +36,6 @@ inputs:
     doc: Optional. The type of gene ID that will be used in the classifier. If 
       possible for your organism, this should be 'ENSEMBL', which is the 
       default. Ignored if db = 'none'.
-    default: ENSEMBL
     inputBinding:
       position: 101
       prefix: --classifier-gene-id-type
@@ -65,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: Format of the gene IDs in your marker file. The default is "ENSEMBL".
-    default: ENSEMBL
     inputBinding:
       position: 101
       prefix: --marker-file-gene-id-type
@@ -94,7 +90,6 @@ inputs:
       - boolean
     doc: 'Optional. Should markers from child nodes of a cell type be used in finding
       representatives of the parent type? Default: TRUE.'
-    default: true
     inputBinding:
       position: 101
       prefix: --propogate-markers
@@ -105,7 +100,6 @@ inputs:
     doc: 'Optional. Should TF-IDF matrix be calculated during estimation? If TRUE,
       estimates will be more accurate, but calculation is slower with very large datasets.
       Default: TRUE.'
-    default: true
     inputBinding:
       position: 101
       prefix: --use-tf-idf

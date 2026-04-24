@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - float
     doc: default=0.8
-    default: 0.8
     inputBinding:
       position: 104
       prefix: --alphaPacking
@@ -41,7 +40,6 @@ inputs:
       - float
     doc: For testing purposes randomly kill 'badWorker' proportion of jobs using
       SIGKILL, default=0.0
-    default: 0.0
     inputBinding:
       position: 104
       prefix: --badWorker
@@ -51,7 +49,6 @@ inputs:
       - float
     doc: When killing the job pick uniformly within the interval from 0.0 to 
       'badWorkerFailInterval' seconds after the worker starts, default=0.01
-    default: 0.01
     inputBinding:
       position: 104
       prefix: --badWorkerFailInterval
@@ -62,7 +59,6 @@ inputs:
     doc: The type of batch system to run the job(s) with, currently can be one 
       of singleMachine, parasol, gridEngine, lsf or mesos'. 
       default=singleMachine
-    default: singleMachine
     inputBinding:
       position: 104
       prefix: --batchSystem
@@ -71,7 +67,6 @@ inputs:
       - 'null'
       - float
     doc: default=1.2
-    default: 1.2
     inputBinding:
       position: 104
       prefix: --betaInertia
@@ -125,7 +120,6 @@ inputs:
       information from the jobStore upon completion so the jobStore will never be
       deleted with that flag. If you wish to be able to restart the run, choose 'never'
       or 'onSuccess'. Default is 'never' if stats is enabled, and 'onSuccess' otherwise"
-    default: onSuccess
     inputBinding:
       position: 104
       prefix: --clean
@@ -137,7 +131,6 @@ inputs:
       Choices: 'always', 'never', 'onSuccess'. Default = always. WARNING: This option
       should be changed for debugging only. Running a full pipeline with this option
       could fill your disk with intermediate data."
-    default: always
     inputBinding:
       position: 104
       prefix: --cleanWorkDir
@@ -172,7 +165,6 @@ inputs:
       - 'null'
       - string
     doc: 'Database type: tokyo_cabinet or kyoto_tycoon [default: kyoto_tycoon]'
-    default: kyoto_tycoon
     inputBinding:
       position: 104
       prefix: --database
@@ -184,7 +176,6 @@ inputs:
       jobs that do not specify an explicit value for this requirement. Fractions
       of a core (for example 0.1) are supported on some batch systems, namely 
       Mesos and singleMachine. Default is 1.0
-    default: 1.0
     inputBinding:
       position: 104
       prefix: --defaultCores
@@ -195,7 +186,6 @@ inputs:
     doc: The default amount of disk space to dedicate a job. Only applicable to 
       jobs that do not specify an explicit value for this requirement. Standard 
       suffixes like K, Ki, M, Mi, G or Gi are supported. Default is 2.0 Gi
-    default: 2.0 Gi
     inputBinding:
       position: 104
       prefix: --defaultDisk
@@ -206,7 +196,6 @@ inputs:
     doc: The default amount of memory to request for a job. Only applicable to 
       jobs that do not specify an explicit value for this requirement. Standard 
       suffixes like K, Ki, M, Mi, G or Gi are supported. Default is 2.0 Gi
-    default: 2.0 Gi
     inputBinding:
       position: 104
       prefix: --defaultMemory
@@ -308,7 +297,6 @@ inputs:
     doc: The maximum number of CPU cores to request from the batch system at any
       one time. Standard suffixes like K, Ki, M, Mi, G or Gi are supported. 
       Default is 8.0 Ei
-    default: 8.0 Ei
     inputBinding:
       position: 104
       prefix: --maxCores
@@ -319,7 +307,6 @@ inputs:
     doc: The maximum amount of disk space to request from the batch system at 
       any one time. Standard suffixes like K, Ki, M, Mi, G or Gi are supported. 
       Default is 8.0 Ei
-    default: 8.0 Ei
     inputBinding:
       position: 104
       prefix: --maxDisk
@@ -330,7 +317,6 @@ inputs:
     doc: Maximum runtime of a job (in seconds) before we kill it (this is a 
       lower bound, and the actual time before killing the job may be longer). 
       default=9223372036854775807
-    default: 9223372036854775807
     inputBinding:
       position: 104
       prefix: --maxJobDuration
@@ -341,7 +327,6 @@ inputs:
     doc: The maximum size of a job log file to keep (in bytes), log files larger
       than this will be truncated to the last X bytes. Default is 50 kilobytes, 
       default=50120
-    default: 50120
     inputBinding:
       position: 104
       prefix: --maxLogFileSize
@@ -352,7 +337,6 @@ inputs:
     doc: The maximum amount of memory to request from the batch system at any 
       one time. Standard suffixes like K, Ki, M, Mi, G or Gi are supported. 
       Default is 8.0 Ei
-    default: 8.0 Ei
     inputBinding:
       position: 104
       prefix: --maxMemory
@@ -362,7 +346,6 @@ inputs:
       - int
     doc: Maximum number of non-preemptable nodes in the cluster, if using 
       auto-scaling. The default is 10.
-    default: 10
     inputBinding:
       position: 104
       prefix: --maxNodes
@@ -372,7 +355,6 @@ inputs:
       - int
     doc: Maximum number of preemptable nodes in the cluster, if using 
       auto-scaling. The default is 10.
-    default: 10
     inputBinding:
       position: 104
       prefix: --maxPreemptableNodes
@@ -382,7 +364,6 @@ inputs:
       - string
     doc: The host and port of the Mesos master separated by colon. 
       default=localhost:5050
-    default: localhost:5050
     inputBinding:
       position: 104
       prefix: --mesosMaster
@@ -392,7 +373,6 @@ inputs:
       - int
     doc: Minimum number of non-preemptable nodes in the cluster, if using 
       auto-scaling. The default is 0.
-    default: 0
     inputBinding:
       position: 104
       prefix: --minNodes
@@ -402,7 +382,6 @@ inputs:
       - int
     doc: Minimum number of preemptable nodes in the cluster, if using 
       auto-scaling. The default is 0.
-    default: 0
     inputBinding:
       position: 104
       prefix: --minPreemptableNodes
@@ -433,7 +412,6 @@ inputs:
       - string
     doc: The name or path of the parasol program. Will be looked up on PATH 
       unless it starts with a slashdefault=parasol
-    default: parasol
     inputBinding:
       position: 104
       prefix: --parasolCommand
@@ -444,7 +422,6 @@ inputs:
     doc: Maximum number of job batches the Parasol batch is allowed to create. 
       One batch is created for jobs with a a unique set of resource 
       requirements. default=10000
-    default: 10000
     inputBinding:
       position: 104
       prefix: --parasolMaxBatches
@@ -504,7 +481,6 @@ inputs:
     doc: Period of time to wait (in seconds) between checking for 
       missing/overlong jobs, that is jobs which get lost by the batch system. 
       Expert parameter. default=3600
-    default: 3600
     inputBinding:
       position: 104
       prefix: --rescueJobsFrequency
@@ -524,7 +500,6 @@ inputs:
       - int
     doc: Number of times to retry a failing job before giving up and labeling 
       job failed. default=0
-    default: 0
     inputBinding:
       position: 104
       prefix: --retryCount
@@ -553,7 +528,6 @@ inputs:
       - float
     doc: A scaling factor to change the value of all submitted tasks's submitted
       cores. Used in singleMachine batch system. default=1
-    default: 1.0
     inputBinding:
       position: 104
       prefix: --scale
@@ -563,7 +537,6 @@ inputs:
       - int
     doc: The interval (seconds) between assessing if the scale of the cluster 
       needs to change. default=360
-    default: 360
     inputBinding:
       position: 104
       prefix: --scaleInterval
@@ -573,7 +546,6 @@ inputs:
       - int
     doc: Interval of time service jobs wait between polling for the existence of
       the keep-alive flag (defailt=60)
-    default: 60
     inputBinding:
       position: 104
       prefix: --servicePollingInterval

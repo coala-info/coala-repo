@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Which type of FASTA entries should be reported?
-    default: all
     inputBinding:
       position: 102
       prefix: --type

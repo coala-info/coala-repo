@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: database genetic code [1-23] (1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --db_gencode
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: set effective database size (0)
-    default: 0
     inputBinding:
       position: 101
       prefix: --dbsize
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: dump database [0-2=no,yes,split headers] (0)
-    default: 0
     inputBinding:
       position: 101
       prefix: --dump
@@ -44,7 +41,6 @@ inputs:
       - 'null'
       - float
     doc: maximum expect value of sequences to show (10.0)
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --evalue
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: gap extension penalty (1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --gapextend
@@ -62,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: gap open penalty (11)
-    default: 11
     inputBinding:
       position: 101
       prefix: --gapopen
@@ -71,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: score matrix name or filename (BLOSUM62)
-    default: BLOSUM62
     inputBinding:
       position: 101
       prefix: --matrix
@@ -80,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: maximum score of sequences to show (inf.)
-    default: inf.
     inputBinding:
       position: 101
       prefix: --max_score
@@ -89,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: minimum score of sequences to show (1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_score
@@ -98,7 +89,6 @@ inputs:
       - 'null'
       - float
     doc: minimum expect value of sequences to show (0.0)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --minevalue
@@ -107,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: sequence alignments to show (100)
-    default: 100
     inputBinding:
       position: 101
       prefix: --num_alignments
@@ -116,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: sequence descriptions to show (250)
-    default: 250
     inputBinding:
       position: 101
       prefix: --num_descriptions
@@ -125,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads to use [1-256] (1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --num_threads
@@ -134,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: output format [0,7-9=plain,xml,tsv,tsv+] (0)
-    default: 0
     inputBinding:
       position: 101
       prefix: --outfmt
@@ -143,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: penalty for nucleotide mismatch (-3)
-    default: -3
     inputBinding:
       position: 101
       prefix: --penalty
@@ -152,7 +137,6 @@ inputs:
       - 'null'
       - File
     doc: query sequence filename (stdin)
-    default: stdin
     inputBinding:
       position: 101
       prefix: --query
@@ -161,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: query genetic code [1-23] (1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --query_gencode
@@ -170,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: reward for nucleotide match (1)
-    default: 1
     inputBinding:
       position: 101
       prefix: --reward
@@ -179,7 +161,6 @@ inputs:
       - 'null'
       - boolean
     doc: show gi numbers in results (no)
-    default: false
     inputBinding:
       position: 101
       prefix: --show_gis
@@ -188,7 +169,6 @@ inputs:
       - 'null'
       - boolean
     doc: show taxid etc in results (no)
-    default: false
     inputBinding:
       position: 101
       prefix: --show_taxid
@@ -197,7 +177,6 @@ inputs:
       - 'null'
       - string
     doc: query strands to search [1-3] (3)
-    default: '3'
     inputBinding:
       position: 101
       prefix: --strand
@@ -206,7 +185,6 @@ inputs:
       - 'null'
       - string
     doc: symbol type/translation [0-4] (1)
-    default: '1'
     inputBinding:
       position: 101
       prefix: --symtype

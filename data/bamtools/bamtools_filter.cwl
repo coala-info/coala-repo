@@ -46,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: keep only alignments that are marked as duplicate?
-    default: 'true'
     inputBinding:
       position: 101
       prefix: -isDuplicate
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - string
     doc: keep only alignments that failed QC?
-    default: 'true'
     inputBinding:
       position: 101
       prefix: -isFailedQC
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - string
     doc: keep only alignments marked as first mate?
-    default: 'true'
     inputBinding:
       position: 101
       prefix: -isFirstMate
@@ -73,7 +70,6 @@ inputs:
       - 'null'
       - string
     doc: keep only alignments that were mapped?
-    default: 'true'
     inputBinding:
       position: 101
       prefix: -isMapped
@@ -82,7 +78,6 @@ inputs:
       - 'null'
       - string
     doc: keep only alignments with mates that mapped
-    default: 'true'
     inputBinding:
       position: 101
       prefix: -isMateMapped
@@ -91,7 +86,6 @@ inputs:
       - 'null'
       - string
     doc: keep only alignments with mate on reverse strand?
-    default: 'true'
     inputBinding:
       position: 101
       prefix: -isMateReverseStrand
@@ -100,7 +94,6 @@ inputs:
       - 'null'
       - string
     doc: keep only alignments that were sequenced as paired?
-    default: 'true'
     inputBinding:
       position: 101
       prefix: -isPaired
@@ -109,7 +102,6 @@ inputs:
       - 'null'
       - string
     doc: keep only alignments marked as primary?
-    default: 'true'
     inputBinding:
       position: 101
       prefix: -isPrimaryAlignment
@@ -118,7 +110,6 @@ inputs:
       - 'null'
       - string
     doc: keep only alignments that passed PE resolution?
-    default: 'true'
     inputBinding:
       position: 101
       prefix: -isProperPair
@@ -127,7 +118,6 @@ inputs:
       - 'null'
       - string
     doc: keep only alignments on reverse strand?
-    default: 'true'
     inputBinding:
       position: 101
       prefix: -isReverseStrand
@@ -136,7 +126,6 @@ inputs:
       - 'null'
       - string
     doc: keep only alignments marked as second mate?
-    default: 'true'
     inputBinding:
       position: 101
       prefix: -isSecondMate
@@ -145,7 +134,6 @@ inputs:
       - 'null'
       - string
     doc: keep only singletons
-    default: 'true'
     inputBinding:
       position: 101
       prefix: -isSingleton

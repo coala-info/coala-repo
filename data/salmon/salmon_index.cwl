@@ -33,7 +33,6 @@ inputs:
       indexing. The filter will be of size 2^{filterSize}. The default value of 
       -1 means that the filter size will be automatically set based on the 
       number of distinct k-mers in the input, as estimated by nthll.
-    default: -1
     inputBinding:
       position: 101
       prefix: --filterSize
@@ -79,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: The size of k-mers that should be used for the quasi index.
-    default: 31
     inputBinding:
       position: 101
       prefix: --kmerLen
@@ -106,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use during indexing.
-    default: 2
     inputBinding:
       position: 101
       prefix: --threads
@@ -133,7 +130,6 @@ inputs:
       - string
     doc: The type of index to build; the only option is "puff" in this version 
       of salmon.
-    default: puff
     inputBinding:
       position: 101
       prefix: --type

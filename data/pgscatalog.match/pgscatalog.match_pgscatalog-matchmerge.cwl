@@ -55,7 +55,6 @@ inputs:
       A/T and G/C SNPs), which are normally excluded (default: false). In this case
       the program proceeds assuming that the genotype data is on the same strand as
       the GWAS whose summary statistics were used to construct the score.'
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_ambiguous
@@ -73,7 +72,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Flag to allow matching to multiallelic variants (default: false).'
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_multiallelic

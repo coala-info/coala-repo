@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Bases to consider for bias calculation (e.g., ACGT, AC)
-    default: ACGT
     inputBinding:
       position: 102
       prefix: --bases
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of aligned sites required in a window to calculate bias
-    default: 50
     inputBinding:
       position: 102
       prefix: --min-sites
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Step size for the sliding window
-    default: 10
     inputBinding:
       position: 102
       prefix: --step
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Size of the sliding window for calculating bias
-    default: 100
     inputBinding:
       position: 102
       prefix: --window

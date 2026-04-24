@@ -22,7 +22,6 @@ inputs:
       - int
     doc: "Maximum distance of CLIP peak region end to nearest exon end\n         \
       \         for CLIP region to still be output"
-    default: 50
     inputBinding:
       position: 101
       prefix: --max-dist
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum input site length for filtering --in BED file
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --max-len
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum input site length for filtering --in BED file
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --min-len
@@ -50,7 +47,6 @@ inputs:
       - boolean
     doc: "Reverse filtering (keep values <= --thr and prefer sites\n             \
       \     with smaller values)"
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --rev-filter
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: Filter out --in BED regions < --thr column 5 score
-    default: no filtering
     inputBinding:
       position: 101
       prefix: --thr

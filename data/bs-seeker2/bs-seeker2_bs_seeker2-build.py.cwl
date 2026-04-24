@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: 'Aligner program to perform the analysis: bowtie, bowtie2, soap, rmap'
-    default: bowtie
     inputBinding:
       position: 101
       prefix: --aligner
@@ -28,7 +27,6 @@ inputs:
       - string
     doc: 'Cut sites of restriction enzyme. Ex: MspI(C-CGG), Mael:(C-TAG), double-enzyme
       MspI&Mael:(C-CGG,C-TAG).'
-    default: C-CGG
     inputBinding:
       position: 101
       prefix: --cut-site
@@ -38,7 +36,6 @@ inputs:
       - int
     doc: lower bound of fragment length (excluding recognition sequence such as 
       C-CGG)
-    default: 20
     inputBinding:
       position: 101
       prefix: --low
@@ -54,7 +51,6 @@ inputs:
       - Directory
     doc: Path to the reference genome library (generated in preprocessing 
       genome)
-    default: /usr/local/bin/bs_utils/reference_genomes
     inputBinding:
       position: 101
       prefix: --db
@@ -64,7 +60,6 @@ inputs:
       - boolean
     doc: Build index specially for Reduced Representation Bisulfite Sequencing 
       experiments. Genome other than certain fragments will be masked.
-    default: false
     inputBinding:
       position: 101
       prefix: --rrbs
@@ -74,7 +69,6 @@ inputs:
       - int
     doc: upper bound of fragment length (excluding recognition sequence such as 
       C-CGG ends)
-    default: 500
     inputBinding:
       position: 101
       prefix: --up

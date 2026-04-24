@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: SNP file containing the SNPs to be simulated
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --snp
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - File
     doc: variation file containing the genomic variations to be simulated
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --var

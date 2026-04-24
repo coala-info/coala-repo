@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: coverage depth of homozygous region (default auto)
-    default: auto
     inputBinding:
       position: 101
       prefix: -e
@@ -100,7 +99,6 @@ inputs:
       - File
     doc: path of mapper executable file (default, minimap2; only effective with 
       -p option)
-    default: minimap2
     inputBinding:
       position: 101
       prefix: -mapper
@@ -110,7 +108,6 @@ inputs:
       - type: array
         items: int
     doc: mapping seed length for short reads (default 32 64 96)
-    default: 32 64 96
     inputBinding:
       position: 101
       prefix: -s
@@ -119,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: maximum fragment length of tag (10x Genomics) (default 200000)
-    default: 200000
     inputBinding:
       position: 101
       prefix: -L
@@ -136,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of links to phase variants (default 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: -k
@@ -145,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: minimum number of links to scaffold (default 3)
-    default: 3
     inputBinding:
       position: 101
       prefix: -l
@@ -155,7 +149,6 @@ inputs:
       - boolean
     doc: sensitive mode for minimap2 (default, off; only effective with -p 
       option)
-    default: false
     inputBinding:
       position: 101
       prefix: --minimap2_sensitive
@@ -164,7 +157,6 @@ inputs:
       - 'null'
       - string
     doc: prefix of output file (default out, length <= 200)
-    default: out
     inputBinding:
       position: 101
       prefix: -o
@@ -191,7 +183,6 @@ inputs:
       - 'null'
       - boolean
     doc: reduce redundant sequences that exactly matche others (default, off)
-    default: false
     inputBinding:
       position: 101
       prefix: --reduce_redundancy
@@ -208,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads (<= 1, default 1)
-    default: 1
     inputBinding:
       position: 101
       prefix: -t
@@ -217,7 +207,6 @@ inputs:
       - 'null'
       - Directory
     doc: directory for temporary files (default .)
-    default: .
     inputBinding:
       position: 101
       prefix: -tmp

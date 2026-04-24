@@ -60,13 +60,11 @@ inputs:
 
   output_name:
     type: string?
-    default: output
     inputBinding:
       prefix: --output-name
 
   plot_name:
     type: string?
-    default: plot
     inputBinding:
       prefix: --plot-name
 

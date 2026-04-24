@@ -20,7 +20,6 @@ inputs:
       - int
     doc: An arbitrary number of extra bases to trim from the ends of reads 
       because the original pyadapter_trim.py script did so.
-    default: 1
     inputBinding:
       position: 103
       prefix: --fudge
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - int
     doc: The maximum edit distance permitted when aligning the paired reads
-    default: 1
     inputBinding:
       position: 103
       prefix: --max-edit-distance
@@ -39,7 +37,6 @@ inputs:
       - int
     doc: Use the reverse complement of this number of bases from the beginning 
       of the reverse read to align the reads
-    default: 20
     inputBinding:
       position: 103
       prefix: --rc-length
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Trim this number of bases from the start of each sequence
-    default: 0
     inputBinding:
       position: 103
       prefix: --trim-from-start

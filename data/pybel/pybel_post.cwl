@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - string
     doc: URL of BEL Commons.
-    default: https://bel-commons.scai.fraunhofer.de
     inputBinding:
       position: 102
       prefix: --host

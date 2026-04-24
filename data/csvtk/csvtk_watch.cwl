@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: number of histogram bins
-    default: -1
     inputBinding:
       position: 101
       prefix: --bins
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: lines starting with commment-character will be ignored
-    default: '#'
     inputBinding:
       position: 101
       prefix: --comment-char
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: sleep this many seconds after plotting
-    default: 1
     inputBinding:
       position: 101
       prefix: --delay
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: delimiting character of the input CSV file
-    default: ','
     inputBinding:
       position: 101
       prefix: --delimiter
@@ -120,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPUs to use
-    default: 4
     inputBinding:
       position: 101
       prefix: --num-cpus
@@ -129,7 +124,6 @@ inputs:
       - 'null'
       - string
     doc: delimiting character of the output CSV file
-    default: ','
     inputBinding:
       position: 101
       prefix: --out-delimiter
@@ -154,7 +148,6 @@ inputs:
       - 'null'
       - int
     doc: print/report after this many records (-1 for print after EOF)
-    default: -1
     inputBinding:
       position: 101
       prefix: --print-freq

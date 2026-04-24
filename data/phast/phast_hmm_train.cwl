@@ -27,7 +27,6 @@ inputs:
       - int
     doc: The number of EM (Expectation-Maximization) iterations to perform 
       during training.
-    default: 10
     inputBinding:
       position: 102
       prefix: --iterations

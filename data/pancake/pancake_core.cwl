@@ -32,7 +32,6 @@ inputs:
       - float
     doc: Maximum fraction of non-core sequence regions within each included sequence
       (FLOAT, DEAFULT=0.05)
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --max_non_core_frac
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: maximum non-core space allowed within a core region (DEFAULT=25)
-    default: 25
     inputBinding:
       position: 101
       prefix: --max_space
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: minimum length of regions to identify as part of core genome (INTEGER, DEFAULT=25)
-    default: 25
     inputBinding:
       position: 101
       prefix: --min_len

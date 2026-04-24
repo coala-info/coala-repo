@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: format of output file
-    default: fastq
     inputBinding:
       position: 101
       prefix: --format

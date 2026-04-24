@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads ot use.
-    default: 20
     inputBinding:
       position: 102
       prefix: --processes

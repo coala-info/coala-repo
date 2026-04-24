@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum count of the alternative (non-reference) allele at a loci.
-    default: 2
     inputBinding:
       position: 101
       prefix: --altallele-count
@@ -21,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: Only consider bases with quality score greater than this value.
-    default: 20
     inputBinding:
       position: 101
       prefix: -Q
@@ -40,7 +38,6 @@ inputs:
       - string
     doc: 'Option to control when to apply local assembly through fermi-lite. Options:
       auto, on, off.'
-    default: auto
     inputBinding:
       position: 101
       prefix: --fermi
@@ -50,7 +47,6 @@ inputs:
       - int
     doc: The minimal overlap for fermi to initially assemble two reads. Must be 
       between 1 and read length.
-    default: 30
     inputBinding:
       position: 101
       prefix: --fermi-overlap
@@ -60,7 +56,6 @@ inputs:
       - float
     doc: Genotype Quality score (-10log10((L00+L11)/(L01+L00+L11))) cutoff for 
       Heterozygous allele type.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --gq-hetero
@@ -70,7 +65,6 @@ inputs:
       - float
     doc: Genotype Quality score (-10log10((L00+L01)/(L01+L00+L11))) cutoff for 
       Homozygous allele (not the same as reference) type.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --gq-homo
@@ -80,7 +74,6 @@ inputs:
       - float
     doc: The maximum Allele-Ratio allowed while calculating likelihood for 
       allele-specific binding.
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --max-ar
@@ -90,7 +83,6 @@ inputs:
       - int
     doc: Maximum duplicated reads allowed per mapping position, mapping strand 
       and the same CIGAR code.
-    default: 1
     inputBinding:
       position: 101
       prefix: -D
@@ -99,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: CPU used for multiple processing.
-    default: 1
     inputBinding:
       position: 101
       prefix: --multiple-processing
@@ -128,7 +119,6 @@ inputs:
       - float
     doc: The minimum ratio of reads for the top 2 most frequent alleles 
       comparing to total reads mapped. Must be a float between 0.5 and 1.
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --top2alleles-mratio

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum number of genomes in each batch (maximum value: 131072)'
-    default: 5000
     inputBinding:
       position: 101
       prefix: --batch-size
@@ -29,7 +28,6 @@ inputs:
       - int
     doc: 'Number of chunks for storing seeds (k-mer-value data) files. Max: 128. Default:
       the value of -j/--threads.'
-    default: 20
     inputBinding:
       position: 101
       prefix: --chunks
@@ -39,7 +37,6 @@ inputs:
       - int
     doc: Length of interval (N's) between contigs in a genome. It can't be too 
       small (<1000) or some alignments might be fragmented
-    default: 1000
     inputBinding:
       position: 101
       prefix: --contig-interval
@@ -58,7 +55,6 @@ inputs:
     doc: "Regular expression for matching sequence files in -I/--in-dir, case ignored.
       Attention: use double quotation marks for patterns containing commas, e.g.,
       -p '\"A{2,}\"'. "
-    default: \.(f[aq](st[aq])?|fna)(\.gz|\.xz|\.zst|\.bz2)?$
     inputBinding:
       position: 101
       prefix: --file-regexp
@@ -93,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum k-mer size. K needs to be <= 32.
-    default: 31
     inputBinding:
       position: 101
       prefix: --kmer
@@ -119,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: Number of LexicHash masks.
-    default: 20000
     inputBinding:
       position: 101
       prefix: --masks
@@ -132,7 +126,6 @@ inputs:
       threshold will be split into chunks and alignments from these chunks will be
       merged in "lexicmap search". The value needs to be smaller than the maximum
       supported genome size: 268435456.'
-    default: 15000000
     inputBinding:
       position: 101
       prefix: --max-genome
@@ -142,7 +135,6 @@ inputs:
       - int
     doc: Maximum opened files, used in merging indexes. If there are >100 
       batches, please increase this value and set a bigger "ulimit -n" in shell.
-    default: 1024
     inputBinding:
       position: 101
       prefix: --max-open-files
@@ -151,7 +143,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum sequence length to index. The value would be k for values <= 0.
-    default: -1
     inputBinding:
       position: 101
       prefix: --min-seq-len
@@ -175,7 +166,6 @@ inputs:
       - int
     doc: Number of partitions for indexing seeds (k-mer-value data) files. The 
       value needs to be the power of 4.
-    default: 4096
     inputBinding:
       position: 101
       prefix: --partitions
@@ -193,7 +183,6 @@ inputs:
       - 'null'
       - int
     doc: Rand seed for generating random masks.
-    default: 1
     inputBinding:
       position: 101
       prefix: --rand-seed
@@ -204,7 +193,6 @@ inputs:
     doc: "Regular expression (must contains \"(\" and \")\") for extracting the reference
       name from the filename. Attention: use double quotation marks for patterns containing
       commas, e.g., -p '\"A{2,}\"'. "
-    default: (?i)(.+)\.(f[aq](st[aq])?|fna)(\.gz|\.xz|\.zst|\.bz2)?$
     inputBinding:
       position: 101
       prefix: --ref-name-regexp
@@ -225,7 +213,6 @@ inputs:
       all batches, the value should be in range of [1, -c/--chunks]. If there 
       are >100 batches, please also increase the value of --max-open-files and 
       set a bigger "ulimit -n" in shell.
-    default: 8
     inputBinding:
       position: 101
       prefix: --seed-data-threads
@@ -234,7 +221,6 @@ inputs:
       - 'null'
       - int
     doc: Distance of k-mers to fill deserts.
-    default: 50
     inputBinding:
       position: 101
       prefix: --seed-in-desert-dist
@@ -245,7 +231,6 @@ inputs:
     doc: Maximum length of sketching deserts, or maximum seed distance. Deserts 
       with seed distance larger than this value will be filled by choosing 
       k-mers roughly every --seed-in-desert-dist bases.
-    default: 100
     inputBinding:
       position: 101
       prefix: --seed-max-desert
@@ -272,7 +257,6 @@ inputs:
       - 'null'
       - int
     doc: Number of CPU cores to use. By default, it uses all available cores.
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads

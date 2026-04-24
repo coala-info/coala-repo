@@ -12,7 +12,6 @@ inputs:
       - int
     doc: Tolerance of difference of coordinates between true (i.e., expected) 
       alignment and real alignment (very important parameter!)
-    default: 5
     inputBinding:
       position: 101
       prefix: --allowed-delta

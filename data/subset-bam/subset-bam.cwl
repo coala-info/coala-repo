@@ -16,7 +16,6 @@ inputs:
       - string
     doc: Change from default value (CB) to subset alignments based on 
       alternative tags.
-    default: CB
     inputBinding:
       position: 101
       prefix: --bam-tag
@@ -32,7 +31,6 @@ inputs:
       - int
     doc: Number of cores to use. If larger than 1, will write BAM subsets to 
       temporary files before merging.
-    default: 1
     inputBinding:
       position: 101
       prefix: --cores
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: 'Logging level. [possible values: info, debug, error]'
-    default: error
     inputBinding:
       position: 101
       prefix: --log-level

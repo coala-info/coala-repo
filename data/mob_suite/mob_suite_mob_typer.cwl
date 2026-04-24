@@ -26,7 +26,6 @@ inputs:
       - Directory
     doc: Directory you want to use for your databases. If the databases are not 
       already downloaded, they will be downloaded automatically.
-    default: /usr/local/lib/python3.11/site-packages/mob_suite/databases
     inputBinding:
       position: 101
       prefix: --database_directory
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show debug information
-    default: false
     inputBinding:
       position: 101
       prefix: --debug
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not delete temporary file directory
-    default: false
     inputBinding:
       position: 101
       prefix: --keep_tmp
@@ -68,7 +65,6 @@ inputs:
       - int
     doc: Minimum percentage coverage of assembly contig by the plasmid reference
       database to be considered
-    default: 70
     inputBinding:
       position: 101
       prefix: --min_con_cov
@@ -77,7 +73,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum evalue threshold for contig blastn
-    default: '1e-05'
     inputBinding:
       position: 101
       prefix: --min_con_evalue
@@ -86,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequence identity for contigs
-    default: 80
     inputBinding:
       position: 101
       prefix: --min_con_ident
@@ -95,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of blast hits
-    default: 500
     inputBinding:
       position: 101
       prefix: --min_length
@@ -104,7 +97,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum percentage coverage of relaxase query by input assembly
-    default: 80
     inputBinding:
       position: 101
       prefix: --min_mob_cov
@@ -113,7 +105,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum evalue threshold for relaxase tblastn
-    default: '1e-05'
     inputBinding:
       position: 101
       prefix: --min_mob_evalue
@@ -122,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequence identity for relaxases
-    default: 80
     inputBinding:
       position: 101
       prefix: --min_mob_ident
@@ -131,7 +121,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum overlap of fragments
-    default: 10
     inputBinding:
       position: 101
       prefix: --min_overlap
@@ -140,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum percentage coverage of replicon query by input assembly
-    default: 80
     inputBinding:
       position: 101
       prefix: --min_rep_cov
@@ -149,7 +137,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum evalue threshold for replicon blastn
-    default: '1e-05'
     inputBinding:
       position: 101
       prefix: --min_rep_evalue
@@ -158,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequence identity for replicons
-    default: 80
     inputBinding:
       position: 101
       prefix: --min_rep_ident
@@ -167,7 +153,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum percentage coverage of MGE
-    default: 80
     inputBinding:
       position: 101
       prefix: --min_rpp_cov
@@ -176,7 +161,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum evalue threshold for repetitve elements blastn
-    default: '1e-05'
     inputBinding:
       position: 101
       prefix: --min_rpp_evalue
@@ -185,7 +169,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum sequence identity for MGE
-    default: 80
     inputBinding:
       position: 101
       prefix: --min_rpp_ident
@@ -194,7 +177,6 @@ inputs:
       - 'null'
       - boolean
     doc: Treat each sequence as an independant plasmid
-    default: false
     inputBinding:
       position: 101
       prefix: --multi
@@ -203,7 +185,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to be used
-    default: 1
     inputBinding:
       position: 101
       prefix: --num_threads
@@ -212,7 +193,6 @@ inputs:
       - 'null'
       - string
     doc: Blast database type of reference database
-    default: blastn
     inputBinding:
       position: 101
       prefix: --plasmid_db_type
@@ -221,7 +201,6 @@ inputs:
       - 'null'
       - File
     doc: Companion Mash database of reference database
-    default: 
       /usr/local/lib/python3.11/site-packages/mob_suite/databases/ncbi_plasmid_full_seqs.fas.msh
     inputBinding:
       position: 101
@@ -232,7 +211,6 @@ inputs:
       - File
     doc: MOB-cluster plasmid cluster formatted file matched to the reference 
       plasmid db
-    default: 
       /usr/local/lib/python3.11/site-packages/mob_suite/databases/clusters.txt
     inputBinding:
       position: 101
@@ -242,7 +220,6 @@ inputs:
       - 'null'
       - File
     doc: Fasta of plasmid relaxases
-    default: 
       /usr/local/lib/python3.11/site-packages/mob_suite/databases/mob.proteins.faa
     inputBinding:
       position: 101
@@ -252,7 +229,6 @@ inputs:
       - 'null'
       - File
     doc: Fasta of known plasmid mate-pair proteins
-    default: 
       /usr/local/lib/python3.11/site-packages/mob_suite/databases/mpf.proteins.faa
     inputBinding:
       position: 101
@@ -262,7 +238,6 @@ inputs:
       - 'null'
       - File
     doc: Fasta of known plasmid oriT dna sequences
-    default: 
       /usr/local/lib/python3.11/site-packages/mob_suite/databases/orit.fas
     inputBinding:
       position: 101
@@ -272,7 +247,6 @@ inputs:
       - 'null'
       - File
     doc: Fasta of plasmid replicons
-    default: 
       /usr/local/lib/python3.11/site-packages/mob_suite/databases/rep.dna.fas
     inputBinding:
       position: 101
@@ -282,7 +256,6 @@ inputs:
       - 'null'
       - float
     doc: Mash distance for assigning primary cluster id 0 - 1
-    default: 0.06
     inputBinding:
       position: 101
       prefix: --primary_cluster_dist
@@ -291,7 +264,6 @@ inputs:
       - 'null'
       - File
     doc: Fasta of known repetitive elements
-    default: 
       /usr/local/lib/python3.11/site-packages/mob_suite/databases/repetitive.dna.fas
     inputBinding:
       position: 101

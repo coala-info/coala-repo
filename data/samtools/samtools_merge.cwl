@@ -10,7 +10,6 @@ requirements:
 inputs:
 - id: output_filename
   type: string
-  default: merged.bam
   doc: Name of the output BAM file
   inputBinding:
     position: 1
@@ -198,7 +197,6 @@ inputs:
   - 'null'
   - int
   doc: Number of additional threads to use
-  default: 0
   inputBinding:
     position: 102
     prefix: --threads

@@ -22,7 +22,6 @@ inputs:
       results) are stored. The workspace directory simplifies the use of nomadic
       in that many arguments don't need to be listed as they are predefined in 
       the workspace config or can be loaded from the workspace
-    default: (current directory)
     inputBinding:
       position: 102
       prefix: --workspace

@@ -44,7 +44,6 @@ inputs:
     doc: Output filename (fastq.gz will be added by default), defaults to filtered_read, advisable to use sample name here.
     inputBinding:
       position: -2
-    default: filtered_read
   long_reads:
     type: File
     #format: edam:format_1930
@@ -95,7 +94,6 @@ inputs:
     doc: Set to true to trim non-k-mer-matching bases from start/end of reads. Requires assembly or read reference.
     inputBinding:
       prefix: --trim
-    default: false
   split:
     type: int?
     label: split reads

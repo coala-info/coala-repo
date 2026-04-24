@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - float
     doc: Target Bloom filter error rate
-    default: 0.0001
     inputBinding:
       position: 103
       prefix: --error-rate
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: k-mer length, ignored if using spaced seeds (-s)
-    default: 64
     inputBinding:
       position: 103
       prefix: --kmer-length
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum k-mer count (<=254)
-    default: 254
     inputBinding:
       position: 103
       prefix: --max-count
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum k-mer count (>=1), ignored if using --solid
-    default: 1
     inputBinding:
       position: 103
       prefix: --min-count
@@ -73,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Number of hashes to generate per k-mer/spaced seed
-    default: 3
     inputBinding:
       position: 103
       prefix: --num-hashes
@@ -98,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Number of parallel threads
-    default: 4
     inputBinding:
       position: 103
       prefix: --threads

@@ -10,7 +10,6 @@ inputs:
       - int
     doc: Pindel will only map part of a read if there are no other candidate positions
       with no more than the specified number of mismatches
-    default: 1
     inputBinding:
       position: 101
       prefix: --additional_mismatch
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: the minimal mapping quality of the reads Pindel uses as anchor
-    default: 0
     inputBinding:
       position: 101
       prefix: --anchor_quality
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: the number of bases of a SV above which a more stringent filter is applied
-    default: 100
     inputBinding:
       position: 101
       prefix: --balance_cutoff
@@ -46,7 +43,6 @@ inputs:
       - string
     doc: Which chr/fragment. '-c ALL' will make Pindel loop over all chromosomes.
       Can also be limited to a specific region (e.g., -c 20:5,000,000-15,000,000)
-    default: ALL
     inputBinding:
       position: 101
       prefix: --chromosome
@@ -65,7 +61,6 @@ inputs:
       - boolean
     doc: Report discordant sequences and positions for mates of reads mapping inside
       dispersed duplications
-    default: false
     inputBinding:
       position: 101
       prefix: --DD_REPORT_DUPLICATION_READS
@@ -74,7 +69,6 @@ inputs:
       - 'null'
       - boolean
     doc: Flag indicating whether to detect dispersed duplications
-    default: false
     inputBinding:
       position: 101
       prefix: --detect_DD
@@ -113,7 +107,6 @@ inputs:
       - 'null'
       - boolean
     doc: search for consensus indels to corret contigs
-    default: false
     inputBinding:
       position: 101
       prefix: --IndelCorrection
@@ -130,7 +123,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance between dispersed duplication breakpoints
-    default: 350
     inputBinding:
       position: 101
       prefix: --MAX_DD_BREAKPOINT_DISTANCE
@@ -140,7 +132,6 @@ inputs:
       - int
     doc: Maximum distance between reads for them to provide evidence for a single
       breakpoint
-    default: 100
     inputBinding:
       position: 101
       prefix: --MAX_DISTANCE_CLUSTER_READS
@@ -149,7 +140,6 @@ inputs:
       - 'null'
       - int
     doc: the maximum size of structural variations to be detected (1-9)
-    default: 2
     inputBinding:
       position: 101
       prefix: --max_range_index
@@ -159,7 +149,6 @@ inputs:
       - float
     doc: Only reads with more than this fraction of mismatches than the reference
       genome will be considered
-    default: 0.02
     inputBinding:
       position: 101
       prefix: --maximum_allowed_mismatch_rate
@@ -169,7 +158,6 @@ inputs:
       - int
     doc: Minimum number of split reads for calling an exact breakpoint for dispersed
       duplications
-    default: 3
     inputBinding:
       position: 101
       prefix: --MIN_DD_BREAKPOINT_SUPPORT
@@ -178,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of reads needed for calling a breakpoint for dispersed duplications
-    default: 3
     inputBinding:
       position: 101
       prefix: --MIN_DD_CLUSTER_SIZE
@@ -187,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping distance of read pairs for them to be considered discordant
-    default: 8000
     inputBinding:
       position: 101
       prefix: --MIN_DD_MAP_DISTANCE
@@ -196,7 +182,6 @@ inputs:
       - 'null'
       - int
     doc: the minimum number of bases required to match reference
-    default: 8
     inputBinding:
       position: 101
       prefix: --min_distance_to_the_end
@@ -205,7 +190,6 @@ inputs:
       - 'null'
       - int
     doc: only report inversions greater than this number of bases
-    default: 50
     inputBinding:
       position: 101
       prefix: --min_inversion_size
@@ -215,7 +199,6 @@ inputs:
       - int
     doc: only consider reads as evidence if they map with more than X bases to the
       reference
-    default: 30
     inputBinding:
       position: 101
       prefix: --min_num_matched_bases
@@ -224,7 +207,6 @@ inputs:
       - 'null'
       - int
     doc: minimum perfectly matching bases between read and reference at split point
-    default: 3
     inputBinding:
       position: 101
       prefix: --min_perfect_match_around_BP
@@ -233,7 +215,6 @@ inputs:
       - 'null'
       - int
     doc: Pindel only calls events which have this number or more supporting reads
-    default: 1
     inputBinding:
       position: 101
       prefix: --minimum_support_for_event
@@ -242,7 +223,6 @@ inputs:
       - 'null'
       - int
     doc: the minimum number of edit distance between reads and reference genome
-    default: 2
     inputBinding:
       position: 101
       prefix: --NM
@@ -251,7 +231,6 @@ inputs:
       - 'null'
       - boolean
     doc: Turn on germline filtering
-    default: false
     inputBinding:
       position: 101
       prefix: --NormalSamples
@@ -260,7 +239,6 @@ inputs:
       - 'null'
       - int
     doc: the number of threads Pindel will use
-    default: 1
     inputBinding:
       position: 101
       prefix: --number_of_threads
@@ -295,7 +273,6 @@ inputs:
       - 'null'
       - boolean
     doc: report breakpoints
-    default: false
     inputBinding:
       position: 101
       prefix: --report_breakpoints
@@ -304,7 +281,6 @@ inputs:
       - 'null'
       - boolean
     doc: report reads of which only one end could be mapped
-    default: false
     inputBinding:
       position: 101
       prefix: --report_close_mapped_reads
@@ -313,7 +289,6 @@ inputs:
       - 'null'
       - boolean
     doc: report tandem duplications
-    default: true
     inputBinding:
       position: 101
       prefix: --report_duplications
@@ -322,7 +297,6 @@ inputs:
       - 'null'
       - boolean
     doc: search for interchromosomal events
-    default: false
     inputBinding:
       position: 101
       prefix: --report_interchromosomal_events
@@ -331,7 +305,6 @@ inputs:
       - 'null'
       - boolean
     doc: report inversions
-    default: true
     inputBinding:
       position: 101
       prefix: --report_inversions
@@ -340,7 +313,6 @@ inputs:
       - 'null'
       - boolean
     doc: report insertions of which the full sequence cannot be deduced
-    default: false
     inputBinding:
       position: 101
       prefix: --report_long_insertions
@@ -349,7 +321,6 @@ inputs:
       - 'null'
       - boolean
     doc: do not search for SVs, only report reads of which only one end could be mapped
-    default: false
     inputBinding:
       position: 101
       prefix: --report_only_close_mapped_reads
@@ -358,7 +329,6 @@ inputs:
       - 'null'
       - boolean
     doc: search for discordant read-pair to improve sensitivity
-    default: true
     inputBinding:
       position: 101
       prefix: --RP
@@ -368,7 +338,6 @@ inputs:
       - float
     doc: Pindel only reports reads if they can be fit around an event within a certain
       number of mismatches
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --sensitivity
@@ -377,7 +346,6 @@ inputs:
       - 'null'
       - float
     doc: the expected fraction of sequencing errors
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --sequencing_error_rate
@@ -386,7 +354,6 @@ inputs:
       - 'null'
       - int
     doc: divides the reference in bins of X million bases to save RAM
-    default: 5
     inputBinding:
       position: 101
       prefix: --window_size

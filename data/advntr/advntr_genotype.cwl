@@ -78,7 +78,6 @@ inputs:
       - 'null'
       - File
     doc: VNTR models file
-    default: vntr_data/hg19_selected_VNTRs_Illumina.db
     inputBinding:
       position: 101
       prefix: --models
@@ -104,7 +103,6 @@ inputs:
       - 'null'
       - string
     doc: output format. Allowed values are {text, bed, vcf}
-    default: text
     inputBinding:
       position: 101
       prefix: --outfmt
@@ -131,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

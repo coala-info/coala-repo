@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: Alpha value for regularization in admixture estimations - NMF
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --admix-alpha
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Number of mini-batches in stochastic admixture estimations - NMF
-    default: 10
     inputBinding:
       position: 101
       prefix: --admix-batch
@@ -44,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Depth in automatic search of alpha
-    default: 7
     inputBinding:
       position: 101
       prefix: --admix-depth
@@ -53,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of iterations for admixture estimations - NMF
-    default: 500
     inputBinding:
       position: 101
       prefix: --admix-iter
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Random seed used in admixture estimations - NMF
-    default: 0
     inputBinding:
       position: 101
       prefix: --admix-seed
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - float
     doc: Tolerance for admixture estimations - NMF
-    default: 1e-05
     inputBinding:
       position: 101
       prefix: --admix-tole
@@ -136,7 +130,6 @@ inputs:
       - 'null'
       - float
     doc: Incorporate errors into genotypes
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --geno-error
@@ -161,7 +154,6 @@ inputs:
       - 'null'
       - float
     doc: Tolerance for HWE filtering of sites
-    default: 1e-06
     inputBinding:
       position: 101
       prefix: --hwe-tole
@@ -170,7 +162,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum iterations for inbreeding coefficients estimation - EM
-    default: 500
     inputBinding:
       position: 101
       prefix: --inbreed-iter
@@ -195,7 +186,6 @@ inputs:
       - 'null'
       - float
     doc: Tolerance for inbreeding coefficients estimation update - EM
-    default: 1e-05
     inputBinding:
       position: 101
       prefix: --inbreed-tole
@@ -204,7 +194,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum iterations for estimation of individual allele frequencies
-    default: 100
     inputBinding:
       position: 101
       prefix: --iter
@@ -213,7 +202,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum minor allele frequency threshold
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --maf
@@ -222,7 +210,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum iterations for minor allele frequencies estimation - EM
-    default: 500
     inputBinding:
       position: 101
       prefix: --maf-iter
@@ -239,7 +226,6 @@ inputs:
       - 'null'
       - float
     doc: Tolerance for minor allele frequencies estimation update - EM
-    default: 1e-06
     inputBinding:
       position: 101
       prefix: --maf-tole
@@ -320,7 +306,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -329,7 +314,6 @@ inputs:
       - 'null'
       - float
     doc: Tolerance for update in estimation of individual allele frequencies
-    default: 1e-05
     inputBinding:
       position: 101
       prefix: --tole

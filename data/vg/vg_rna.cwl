@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: parse only this feature type in the GTF/GFF (parses all if empty)
-    default: exon
     inputBinding:
       position: 102
       prefix: --feature-type
@@ -83,7 +82,6 @@ inputs:
       - 'null'
       - int
     doc: chop nodes longer than INT (disable with 0)
-    default: 0
     inputBinding:
       position: 102
       prefix: --max-node-length
@@ -100,7 +98,6 @@ inputs:
       - 'null'
       - string
     doc: collapse identical transcript paths across no|haplotype|all paths
-    default: haplotype
     inputBinding:
       position: 102
       prefix: --path-collapse
@@ -133,7 +130,6 @@ inputs:
       - 'null'
       - int
     doc: number of compute threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -143,7 +139,6 @@ inputs:
       - string
     doc: use this attribute tag in the GTF/GFf file(s) as ID to group exons and 
       name paths
-    default: transcript_id
     inputBinding:
       position: 102
       prefix: --transcript-tag

@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum coverage depth for a mutation cluster to be considered
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_depth
@@ -41,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum frequency (cluster depth / total depth) to include a cluster in output
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --min_frequency
@@ -50,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality for variant calling
-    default: 20
     inputBinding:
       position: 101
       prefix: --min_quality
@@ -65,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Genomic start site for variant calling
-    default: 0
     inputBinding:
       position: 101
       prefix: --start_site
@@ -74,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to spawn for variant calling
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

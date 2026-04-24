@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: beta parameter for Leiden algorithm
-    default: 0.01
     inputBinding:
       position: 102
       prefix: --leiden-beta
@@ -49,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: number of interations for Leiden algorithm
-    default: 2
     inputBinding:
       position: 102
       prefix: --leiden-iterations
@@ -58,7 +56,6 @@ inputs:
       - 'null'
       - float
     doc: resolution parameter for Leiden algorithm
-    default: 0.7
     inputBinding:
       position: 102
       prefix: --leiden-resolution
@@ -104,7 +101,6 @@ inputs:
       - 'null'
       - boolean
     doc: output a CSV table instead of a default TSV
-    default: false
     inputBinding:
       position: 102
       prefix: --out-csv
@@ -114,7 +110,6 @@ inputs:
       - boolean
     doc: output a representative object for each cluster instead of a cluster 
       numerical identifier
-    default: false
     inputBinding:
       position: 102
       prefix: --out-representatives
@@ -123,7 +118,6 @@ inputs:
       - 'null'
       - boolean
     doc: use percent similarity (has to be in [0,100] interval)
-    default: false
     inputBinding:
       position: 102
       prefix: --percent-similarity
@@ -132,7 +126,6 @@ inputs:
       - 'null'
       - boolean
     doc: use similarity instead of distances (has to be in [0,1] interval)
-    default: false
     inputBinding:
       position: 102
       prefix: --similarity

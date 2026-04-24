@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: 'length of flanking regions, in bp; default: 1000'
-    default: 1000
     inputBinding:
       position: 102
       prefix: --flanking_length
@@ -60,8 +59,6 @@ inputs:
       - int
     doc: 'Logger writes debug to file in output dir; this sets verbosity level sent
       to stderr. 1 = debug(), 2 = info(), 3 = warning(), 4 = error() and 5 = critical();
-      default: 2'
-    default: 2
     inputBinding:
       position: 102
       prefix: --verbosity

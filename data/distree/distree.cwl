@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: Tree file format (only 'newick' is supported)
-    default: newick
     inputBinding:
       position: 102
       prefix: --format

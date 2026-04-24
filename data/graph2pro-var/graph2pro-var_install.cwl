@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: Just copy (default)
-    default: true
     inputBinding:
       position: 103
       prefix: -c

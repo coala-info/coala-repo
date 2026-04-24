@@ -26,7 +26,6 @@ inputs:
       - float
     doc: Only output ANI values where both genomes have aligned fraction > than 
       this value.
-    default: disabled
     inputBinding:
       position: 103
       prefix: --both-min-af
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Compression factor (k-mer subsampling rate).
-    default: 125
     inputBinding:
       position: 103
       prefix: -c
@@ -107,7 +105,6 @@ inputs:
     doc: Marker k-mer compression factor. Markers are used for filtering. 
       Consider decreasing to ~200-300 if working with small genomes (e.g. 
       plasmids or viruses).
-    default: 1000
     inputBinding:
       position: 103
       prefix: -m
@@ -116,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of results to show for each query.
-    default: unlimited
     inputBinding:
       position: 103
       prefix: -n
@@ -136,7 +132,6 @@ inputs:
       - float
     doc: Only output ANI values where one genome has aligned fraction > than 
       this value.
-    default: 15
     inputBinding:
       position: 103
       prefix: --min-af
@@ -197,7 +192,6 @@ inputs:
       - int
     doc: Screen out pairs with *approximately* < % identity using k-mer 
       sketching.
-    default: 80
     inputBinding:
       position: 103
       prefix: -s
@@ -234,7 +228,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 3
     inputBinding:
       position: 103
       prefix: -t

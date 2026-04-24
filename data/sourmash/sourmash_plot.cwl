@@ -105,7 +105,6 @@ inputs:
       - 'null'
       - int
     doc: random seed for --subsample; default=1
-    default: 1
     inputBinding:
       position: 102
       prefix: --subsample-seed
@@ -114,7 +113,6 @@ inputs:
       - 'null'
       - float
     doc: upper limit of heatmap scale; default=1.000000
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --vmax
@@ -123,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: lower limit of heatmap scale; default=0.000000
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --vmin

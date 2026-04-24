@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: prefix for output
-    default: gno
     inputBinding:
       position: 102
       prefix: --prefix

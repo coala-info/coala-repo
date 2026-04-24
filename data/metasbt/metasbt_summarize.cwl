@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: The database name.
-    default: MetaSBT
     inputBinding:
       position: 101
       prefix: --database

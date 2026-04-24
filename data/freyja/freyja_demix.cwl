@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: adaptive lasso parameter, hard threshold
-    default: '1e-08'
     inputBinding:
       position: 103
       prefix: --a_eps
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: adaptive lasso penalty parameter
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --adapt
@@ -48,7 +46,6 @@ inputs:
       - 'null'
       - string
     doc: Path to custom barcode file
-    default: ''
     inputBinding:
       position: 103
       prefix: --barcodes
@@ -65,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: calculate percent of sites with n or greater reads
-    default: 10
     inputBinding:
       position: 103
       prefix: --covcut
@@ -75,7 +71,6 @@ inputs:
       - int
     doc: exclude sites with coverage depth below this value and group identical 
       barcodes
-    default: 0
     inputBinding:
       position: 103
       prefix: --depthcutoff
@@ -84,7 +79,6 @@ inputs:
       - 'null'
       - float
     doc: minimum abundance to include for each lineage
-    default: 0.001
     inputBinding:
       position: 103
       prefix: --eps
@@ -93,7 +87,6 @@ inputs:
       - 'null'
       - string
     doc: Frequency column name in the vcf file
-    default: AF
     inputBinding:
       position: 103
       prefix: --freqcol
@@ -102,7 +95,6 @@ inputs:
       - 'null'
       - string
     doc: lineage hierarchy file in a yaml format
-    default: ''
     inputBinding:
       position: 103
       prefix: --lineageyml
@@ -112,7 +104,6 @@ inputs:
       - int
     doc: maximum number of threads for multithreaded demix solvers (0 to choose 
       automatically)
-    default: 1
     inputBinding:
       position: 103
       prefix: --max-solver-threads
@@ -121,7 +112,6 @@ inputs:
       - 'null'
       - string
     doc: custom lineage to variant metadata file
-    default: ''
     inputBinding:
       position: 103
       prefix: --meta
@@ -130,7 +120,6 @@ inputs:
       - 'null'
       - string
     doc: Pathogen of interest. Not used if using --barcodes option.
-    default: SARS-CoV-2
     inputBinding:
       position: 103
       prefix: --pathogen
@@ -140,7 +129,6 @@ inputs:
       - string
     doc: JSON file containing region(s) of interest for which to compute 
       additional coverage estimates
-    default: ''
     inputBinding:
       position: 103
       prefix: --region_of_interest
@@ -158,7 +146,6 @@ inputs:
       - 'null'
       - float
     doc: associated threshold for robust mrca function
-    default: 0.9
     inputBinding:
       position: 103
       prefix: --relaxedthresh
@@ -167,7 +154,6 @@ inputs:
       - 'null'
       - string
     doc: solver used for estimating lineage prevalence
-    default: CLARABEL
     inputBinding:
       position: 103
       prefix: --solver

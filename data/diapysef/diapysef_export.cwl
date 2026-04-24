@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: Log file to save console messages.
-    default: mobidik_export.log
     inputBinding:
       position: 101
       prefix: --log_file
@@ -47,7 +46,6 @@ inputs:
       - string
     doc: list of mslevel(s) to extract data for. i.e. [1,2] would extract data 
       for MS1 and MS2.
-    default: '[1]'
     inputBinding:
       position: 101
       prefix: --mslevel
@@ -57,7 +55,6 @@ inputs:
       - int
     doc: The m/z tolerance toget get upper and lower bounds arround target mz. 
       Must be in ppm.
-    default: 25
     inputBinding:
       position: 101
       prefix: --mz_tol
@@ -76,7 +73,6 @@ inputs:
       - string
     doc: Filename to save extracted data to, tsv or parquet if input is mzML or 
       sqMass if input is tsv or mzML.
-    default: diapasef_extracted_data.tsv
     inputBinding:
       position: 101
       prefix: --out
@@ -85,7 +81,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to parallelize exporting across threads.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads
@@ -95,7 +90,6 @@ inputs:
       - int
     doc: Level of verbosity. 0 - just displays info, 1 - display some debug 
       info, 10 displays a lot of debug info.
-    default: 0
     inputBinding:
       position: 101
       prefix: --verbose

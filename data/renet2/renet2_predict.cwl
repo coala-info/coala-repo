@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - boolean
     doc: cache file suffix
-    default: false
     inputBinding:
       position: 101
       prefix: --add_cache_suf
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: input batch size for training
-    default: 60
     inputBinding:
       position: 101
       prefix: --batch_size
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: number of epochs to train
-    default: 10
     inputBinding:
       position: 101
       prefix: --epochs
@@ -60,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: number of sentence in input, recommend [for abs 32, for ft 400]
-    default: 400
     inputBinding:
       position: 101
       prefix: --fix_snt_n
@@ -69,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: number of tokens
-    default: 54
     inputBinding:
       position: 101
       prefix: --fix_token_n
@@ -94,7 +89,6 @@ inputs:
       - 'null'
       - boolean
     doc: reading doc file, not renet1's abstracts file
-    default: true
     inputBinding:
       position: 101
       prefix: --is_read_doc
@@ -111,7 +105,6 @@ inputs:
       - 'null'
       - float
     doc: L2 weight decay
-    default: 5e-05
     inputBinding:
       position: 101
       prefix: --l2_weight_decay
@@ -128,7 +121,6 @@ inputs:
       - 'null'
       - float
     doc: learning rate
-    default: 0.0008
     inputBinding:
       position: 101
       prefix: --lr
@@ -137,7 +129,6 @@ inputs:
       - 'null'
       - int
     doc: number of document, 0 for read all doc
-    default: 0
     inputBinding:
       position: 101
       prefix: --max_doc_num
@@ -154,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: number of models to train
-    default: 10
     inputBinding:
       position: 101
       prefix: --models_number
@@ -163,7 +153,6 @@ inputs:
       - 'null'
       - boolean
     doc: disables using cache file for data input
-    default: false
     inputBinding:
       position: 101
       prefix: --no_cache_file
@@ -180,7 +169,6 @@ inputs:
       - 'null'
       - boolean
     doc: overwrite_cache
-    default: false
     inputBinding:
       position: 101
       prefix: --overwrite_cache
@@ -205,7 +193,6 @@ inputs:
       - 'null'
       - int
     doc: raw data read max doc batch number
-    default: -1
     inputBinding:
       position: 101
       prefix: --raw_input_read_batch
@@ -214,7 +201,6 @@ inputs:
       - 'null'
       - int
     doc: raw data read max doc batch number resume
-    default: -1
     inputBinding:
       position: 101
       prefix: --raw_input_read_batch_resume
@@ -223,7 +209,6 @@ inputs:
       - 'null'
       - boolean
     doc: reading_abs_only
-    default: false
     inputBinding:
       position: 101
       prefix: --read_abs
@@ -248,7 +233,6 @@ inputs:
       - 'null'
       - int
     doc: random seed
-    default: 42
     inputBinding:
       position: 101
       prefix: --seed

@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - string
     doc: name printed at the top of the smudgeplot
-    default: infile prefix
     inputBinding:
       position: 102
       prefix: -title

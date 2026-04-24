@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - File
     doc: Path to matches, concatentated output of abritamr
-    default: summary_matches.txt
     inputBinding:
       position: 101
       prefix: --matches
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - File
     doc: Path to partial matches, concatentated output of abritamr
-    default: summary_partials.txt
     inputBinding:
       position: 101
       prefix: --partials
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: MDU RunID
-    default: Run ID
     inputBinding:
       position: 101
       prefix: --runid
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: 'The pipeline for reporting results. Options: general, plus'
-    default: general
     inputBinding:
       position: 101
       prefix: --sop

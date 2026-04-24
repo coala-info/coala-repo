@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: line length
-    default: 0
     inputBinding:
       position: 103
       prefix: -l
@@ -30,7 +29,6 @@ inputs:
       - 'null'
       - int
     doc: number of files
-    default: 10
     inputBinding:
       position: 103
       prefix: -n

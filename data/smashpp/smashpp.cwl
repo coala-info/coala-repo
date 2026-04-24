@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - float
     doc: "entropy of 'N's: 0.0 to 100.0."
-    default: 2.0
     inputBinding:
       position: 101
       prefix: --entropy-N
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: 'filter size: 1 to 4294967295.'
-    default: 100
     inputBinding:
       position: 101
       prefix: --filter-size
@@ -45,7 +43,6 @@ inputs:
       - string
     doc: 'filter type (windowing function): {0/rectangular, 1/hamming, 2/hann, 3/blackman,
       4/triangular, 5/welch, 6/sine, 7/nuttall}.'
-    default: hann
     inputBinding:
       position: 101
       prefix: --filter-type
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: 'format of the output (position) file: {pos, json}.'
-    default: pos
     inputBinding:
       position: 101
       prefix: --format
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: 'level of compression: 0 to 6.'
-    default: 3
     inputBinding:
       position: 101
       prefix: --level
@@ -80,7 +75,6 @@ inputs:
       - 'null'
       - int
     doc: 'minimum segment size: 1 to 4294967295.'
-    default: 50
     inputBinding:
       position: 101
       prefix: --min-segment-size
@@ -97,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: 'number of threads: 1 to 255.'
-    default: 4
     inputBinding:
       position: 101
       prefix: --num-threads
@@ -106,7 +99,6 @@ inputs:
       - 'null'
       - int
     doc: 'reference begin guard: -32768 to 32767.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --reference-begin-guard
@@ -115,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: 'reference ending guard: -32768 to 32767.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --reference-end-guard
@@ -146,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: sampling step.
-    default: 1
     inputBinding:
       position: 101
       prefix: --sampling-step
@@ -201,7 +191,6 @@ inputs:
       - 'null'
       - int
     doc: 'target begin guard: -32768 to 32767.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --target-begin-guard
@@ -210,7 +199,6 @@ inputs:
       - 'null'
       - int
     doc: 'target ending guard: -32768 to 32767.'
-    default: 0
     inputBinding:
       position: 101
       prefix: --target-end-guard
@@ -235,7 +223,6 @@ inputs:
       - 'null'
       - float
     doc: 'threshold: 0.0 to 20.0.'
-    default: 1.5
     inputBinding:
       position: 101
       prefix: --threshold

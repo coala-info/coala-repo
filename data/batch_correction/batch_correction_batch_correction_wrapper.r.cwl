@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: The column name for batch.
-    default: batch
     inputBinding:
       position: 101
   - id: dataMatrix
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: The column name for the injection order.
-    default: injectionOrder
     inputBinding:
       position: 101
   - id: loess
@@ -70,7 +68,6 @@ inputs:
       - 'null'
       - string
     doc: The column name for the sample types.
-    default: sampleType
     inputBinding:
       position: 101
   - id: sample_type_tags

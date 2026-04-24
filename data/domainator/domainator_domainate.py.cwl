@@ -14,7 +14,6 @@ inputs:
       - int
     doc: How many protein sequences to search at one time in a batch. Increasing
       this number might improve speeds at the cost of memory.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --batch_size
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - File
     doc: Path to a configuration file.
-    default: None
     inputBinding:
       position: 101
       prefix: --config
@@ -33,7 +31,6 @@ inputs:
       - int
     doc: 'the number of cores of the cpu which are used at a time to run the search
       [default: use all available cores]'
-    default: 0
     inputBinding:
       position: 101
       prefix: --cpu
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: device to use for esm2_3Di model.
-    default: cuda:0
     inputBinding:
       position: 101
       prefix: --esm2_3Di_device
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: threshold E value for the domain hit. Must be <=10.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --evalue
@@ -79,7 +74,6 @@ inputs:
       - string
     doc: Whether the sequences in fasta files are protein or nucleotide 
       sequences.
-    default: protein
     inputBinding:
       position: 101
       prefix: --fasta_type
@@ -104,7 +98,6 @@ inputs:
       it is STRONGLY recommended that you also supply -Z, because database size is
       pre-calcuated at the beginning of the execution, whereas gene-calling is done
       on the fly. Not supplying Z may become an error in the future."
-    default: None
     inputBinding:
       position: 101
       prefix: --gene_call
@@ -144,7 +137,6 @@ inputs:
       - int
     doc: the maximum number of domains to be reported per CDS. If not specified,
       then no max_domains filter is applied.
-    default: 0
     inputBinding:
       position: 101
       prefix: --max_domains
@@ -163,7 +155,6 @@ inputs:
       - float
     doc: the maximum fractional of overlap between domains to be included in the
       annotated genbank. If >= 1, then no overlap filtering will be done.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --max_overlap
@@ -174,7 +165,6 @@ inputs:
     doc: hits with E value LOWER (as in BETTER) than this will be filtered out. 
       NOT FREQUENTLY USED. Use only if you want to eliminate close matches. Must
       be >=0.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min_evalue
@@ -184,7 +174,6 @@ inputs:
       - Directory
     doc: Path to NCBI taxonomy database directory. Will be created and 
       downloaded if it does not exist.
-    default: /tmp/ncbi_taxonomy
     inputBinding:
       position: 101
       prefix: --ncbi_taxonomy_path
@@ -205,7 +194,6 @@ inputs:
     doc: 'File offset to start reading records at. (Note that this usually only makes
       sense when there is just a single input file). Default: start at the top of
       the file'
-    default: None
     inputBinding:
       position: 101
       prefix: --offset
@@ -233,7 +221,6 @@ inputs:
       - 'null'
       - int
     doc: 'Stop after reading this many records. Default: read all the records'
-    default: None
     inputBinding:
       position: 101
       prefix: --recs_to_read
@@ -267,7 +254,6 @@ inputs:
       does does not account for taxonomic filtering).Supplying -Z is recommended for
       most use cases of domainate, as it will speed up the search and make comparisons
       between searches more meaningful."
-    default: 1000
     inputBinding:
       position: 101
       prefix: -Z

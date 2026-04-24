@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum K-mer size
-    default: 51
     inputBinding:
       position: 102
       prefix: -K
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum K-mer size
-    default: 25
     inputBinding:
       position: 102
       prefix: -k
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum occurrence count
-    default: 2
     inputBinding:
       position: 102
       prefix: -o
@@ -41,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: -t

@@ -42,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Linkage disequilibrium distance (automatically determined if negative).
-    default: -1
     inputBinding:
       position: 101
       prefix: --ld-distance
@@ -51,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum ld distance for automatic ld distance determination.
-    default: 1000
     inputBinding:
       position: 101
       prefix: --ld-distance-min
@@ -60,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: Use nth max score for automatic ld distance determination.
-    default: 10
     inputBinding:
       position: 101
       prefix: --ld-distance-nth-score
@@ -69,7 +66,6 @@ inputs:
       - 'null'
       - float
     doc: Score difference threshold for automatic ld distance determination.
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --ld-distance-score
@@ -78,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: Maximum allowed graph distance (for constraining the searches).
-    default: inf
     inputBinding:
       position: 101
       prefix: --max-distance
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: Number of queries to read from the queries file.
-    default: inf
     inputBinding:
       position: 101
       prefix: --n-queries
@@ -120,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: Set queries format manually (0..5).
-    default: -1
     inputBinding:
       position: 101
       prefix: --queries-format
@@ -145,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: Filter low count single genome graph distances.
-    default: 10
     inputBinding:
       position: 101
       prefix: --sgg-count-threshold
@@ -162,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

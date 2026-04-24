@@ -27,7 +27,6 @@ inputs:
     doc: Specify type of linearGap to use. loose is chicken/human linear gap 
       costs. medium is mouse/human linear gap costs. Or specify a piecewise 
       linearGap tab delimited file.
-    default: loose
     inputBinding:
       position: 104
       prefix: -linearGap
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum size of double-sided gap to try to bridge
-    default: 6000
     inputBinding:
       position: 104
       prefix: -maxGap

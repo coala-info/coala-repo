@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - File
     doc: Path to bowtie2 binary.
-    default: bowtie2
     inputBinding:
       position: 101
       prefix: --bowtie2
@@ -21,14 +20,12 @@ inputs:
       - 'null'
       - File
     doc: Path to bowtie2 binary.
-    default: bowtie2-build
     inputBinding:
       position: 101
       prefix: --bowtie2-build
   - id: bowtie2db
     type: Directory
     doc: Path to metaphlan bowtie2db.
-    default: /usr/local/bin/../mpa_vJun23_CHOCOPhlAnSGB_202403
     inputBinding:
       position: 101
       prefix: --bowtie2db
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: The cutoff of elbow method while identifying strains number.
-    default: 0.24
     inputBinding:
       position: 101
       prefix: --elbow
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - File
     doc: Path to gatk binary.
-    default: /usr/local/bin//GenomeAnalysisTK.jar
     inputBinding:
       position: 101
       prefix: --gatk
@@ -62,7 +57,6 @@ inputs:
       - float
     doc: The weight of prior knowledge while rectifying genotype frequencies. 
       The value is between 0~1.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --lambda1
@@ -72,7 +66,6 @@ inputs:
       - float
     doc: The weight of prior estimation while rectifying second order genotype 
       frequencies. The value is between 0~1.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --lambda2
@@ -81,14 +74,12 @@ inputs:
       - 'null'
       - File
     doc: Path to metaphlan.
-    default: metaphlan
     inputBinding:
       position: 101
       prefix: --metaphlan
   - id: metaphlan_index
     type: string
     doc: metaphlan bowtie2db index.
-    default: mpa_vJun23_CHOCOPhlAnSGB_202403
     inputBinding:
       position: 101
       prefix: --metaphlan_index
@@ -108,7 +99,6 @@ inputs:
       - int
     doc: Metaphlan version [3 or 4]. Used to download the corresponding 
       database.
-    default: 4
     inputBinding:
       position: 101
       prefix: --metaphlan_version
@@ -117,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: The number of CPUs to use for parallelizing the mapping with bowtie2.
-    default: 1
     inputBinding:
       position: 101
       prefix: --nproc
@@ -126,7 +115,6 @@ inputs:
       - 'null'
       - File
     doc: Path to picard binary.
-    default: /usr/local/bin//picard.jar
     inputBinding:
       position: 101
       prefix: --picard
@@ -144,7 +132,6 @@ inputs:
       - int
     doc: The number of process to use for parallelizing the whole pipeline, run 
       a sample in each process.
-    default: 1
     inputBinding:
       position: 101
       prefix: --proc
@@ -154,7 +141,6 @@ inputs:
       - int
     doc: The minimum quality score of SNVs to be considered in strain profiling 
       step.
-    default: 20
     inputBinding:
       position: 101
       prefix: --qual
@@ -163,7 +149,6 @@ inputs:
       - 'null'
       - File
     doc: Path to samtools binary.
-    default: samtools
     inputBinding:
       position: 101
       prefix: --samtools
@@ -172,7 +157,6 @@ inputs:
       - 'null'
       - float
     doc: The similarity cutoff of hierachical clustering in merge step.
-    default: 0.95
     inputBinding:
       position: 101
       prefix: --similarity
@@ -182,7 +166,6 @@ inputs:
       - float
     doc: The SNVs of which the depth are less than the specific ratio of the 
       species's mean depth would be removed.
-    default: 0.45
     inputBinding:
       position: 101
       prefix: --snp_ratio
@@ -191,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum depth of species to be considered in strain profiling step.
-    default: 5
     inputBinding:
       position: 101
       prefix: --species_dp
@@ -201,7 +183,6 @@ inputs:
       - float
     doc: The weight of genotype frequencies while computing loss, then the 
       weight of linked read type frequencies is 1-w. The value is between 0~1.
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --weight

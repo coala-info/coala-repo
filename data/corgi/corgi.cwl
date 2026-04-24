@@ -8,7 +8,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 1
     inputBinding:
       position: 101
       prefix: --batch-size
@@ -22,7 +21,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 5000
     inputBinding:
       position: 101
       prefix: --max-length
@@ -37,7 +35,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 128
     inputBinding:
       position: 101
       prefix: --min-length
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether or not to use a GPU for processing if available.
-    default: gpu
     inputBinding:
       position: 101
       prefix: --no-gpu
@@ -56,7 +52,6 @@ inputs:
       - boolean
     doc: Should the pretrained model be downloaded again if it is online and 
       already present locally.
-    default: no-reload
     inputBinding:
       position: 101
       prefix: --no-reload
@@ -65,7 +60,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether or not to save the filtered sequences.
-    default: save-filtered
     inputBinding:
       position: 101
       prefix: --no-save-filtered
@@ -83,7 +77,6 @@ inputs:
       - boolean
     doc: Should the pretrained model be downloaded again if it is online and 
       already present locally.
-    default: no-reload
     inputBinding:
       position: 101
       prefix: --reload
@@ -92,7 +85,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether or not to save the filtered sequences.
-    default: save-filtered
     inputBinding:
       position: 101
       prefix: --save-filtered
@@ -110,7 +102,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether or not to use a GPU for processing if available.
-    default: gpu
     inputBinding:
       position: 101
       prefix: --gpu

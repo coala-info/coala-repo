@@ -30,7 +30,6 @@ inputs:
     doc: Consider the N-th occurrence of the delimiter specified with **-D, 
       --delim** to obtain the group identifier. Specify 1 for the 1st occurrence
       (default).
-    default: 1
     inputBinding:
       position: 101
       prefix: --delim-pos

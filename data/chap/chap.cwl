@@ -14,7 +14,6 @@ inputs:
     doc: Bandwidth for the kernel density estimator. Ignored for other methods. 
       If negative or zero, bandwidth will be determined automatically to 
       minimise the asymptotic mean integrated squared error (AMISE).
-    default: -1
     inputBinding:
       position: 101
       prefix: -de-bandwidth
@@ -24,7 +23,6 @@ inputs:
       - float
     doc: Scaling factor for the band width. Useful to set a bandwidth relative 
       to the AMISE-optimal value.
-    default: 1
     inputBinding:
       position: 101
       prefix: -de-bw-scale
@@ -35,7 +33,6 @@ inputs:
     doc: Evaluation range cutoff for kernel density estimator in multiples of 
       bandwidth. Ignored for other methods. Ensures that the density falls off 
       smoothly to zero outside the data range.
-    default: 5
     inputBinding:
       position: 101
       prefix: -de-eval-cutoff
@@ -45,7 +42,6 @@ inputs:
       - string
     doc: 'Method used for estimating the probability density of the solvent particles
       along the permeation pathway: histogram, kernel'
-    default: kernel
     inputBinding:
       position: 101
       prefix: -de-method
@@ -56,7 +52,6 @@ inputs:
     doc: Spatial resolution of the density estimator. In case of a histogram, 
       this is the bin width, in case of a kernel density estimator, this is the 
       spacing of the evaluation points.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: -de-res
@@ -65,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: First frame (ps) to read from trajectory
-    default: 0
     inputBinding:
       position: 101
       prefix: -b
@@ -74,7 +68,6 @@ inputs:
       - 'null'
       - float
     doc: Only use frame if t MOD dt == first time (ps)
-    default: 0
     inputBinding:
       position: 101
       prefix: -dt
@@ -83,7 +76,6 @@ inputs:
       - 'null'
       - float
     doc: Bandwidth for hydrophobicity kernel.
-    default: 0.35
     inputBinding:
       position: 101
       prefix: -hydrophob-bandwidth
@@ -94,7 +86,6 @@ inputs:
     doc: 'Database of hydrophobicity scale for pore forming residues: hessa_2005,
       kyte_doolittle_1982, monera_1995, moon_2011, wimley_white_1996, zhu_2016, memprotmd,
       user'
-    default: wimley_white_1996
     inputBinding:
       position: 101
       prefix: -hydrophob-database
@@ -104,7 +95,6 @@ inputs:
       - float
     doc: Fallback hydrophobicity for residues in the pathway defining group. If 
       unset (nan), residues missing in the database will cause an error.
-    default: nan
     inputBinding:
       position: 101
       prefix: -hydrophob-fallback
@@ -130,7 +120,6 @@ inputs:
       - 'null'
       - float
     doc: Last frame (ps) to read from trajectory
-    default: 0
     inputBinding:
       position: 101
       prefix: -e
@@ -139,7 +128,6 @@ inputs:
       - 'null'
       - float
     doc: Distance of vertices in initial Nelder-Mead simplex.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -nm-init-shift
@@ -148,7 +136,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Nelder-Mead simplex iterations in path finding algorithm.
-    default: 100
     inputBinding:
       position: 101
       prefix: -nm-max-iter
@@ -159,7 +146,6 @@ inputs:
     doc: If true, CHAP will write detailed per-frame information to a newline 
       delimited JSON file including original probe positions and spline 
       parameters. This is mostly useful for debugging.
-    default: false
     inputBinding:
       position: 101
       prefix: -out-detailed
@@ -169,7 +155,6 @@ inputs:
       - float
     doc: Extrapolation distance beyond the pathway endpoints for both JSON and 
       OBJ output.
-    default: 0
     inputBinding:
       position: 101
       prefix: -out-extrap-dist
@@ -178,7 +163,6 @@ inputs:
       - 'null'
       - string
     doc: File name for output files without file extension.
-    default: output
     inputBinding:
       position: 101
       prefix: -out-filename
@@ -189,7 +173,6 @@ inputs:
     doc: Controls the sampling distance of vertices on the pathway surface which
       are subsequently interpolated to yield a smooth surface. Very small values
       may yield visual artifacts.
-    default: 0.15
     inputBinding:
       position: 101
       prefix: -out-grid-dist
@@ -199,7 +182,6 @@ inputs:
       - int
     doc: Number of spatial sample points that are written to the JSON output 
       file.
-    default: 1000
     inputBinding:
       position: 101
       prefix: -out-num-points
@@ -211,7 +193,6 @@ inputs:
       surface in the OBJ output. Varies between -1 and 1 (exculisvely), where 
       larger values result in a smoother surface. Negative values may result in 
       visualisation artifacts.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -out-vis-tweak
@@ -220,7 +201,6 @@ inputs:
       - 'null'
       - string
     doc: 'Method for aligning pathway coordinates across time steps: none, ipp'
-    default: ipp
     inputBinding:
       position: 101
       prefix: -pf-align-method
@@ -229,7 +209,6 @@ inputs:
       - 'null'
       - string
     doc: Channel direction vector. Will be normalised to unit vector internally.
-    default: 0 0 1
     inputBinding:
       position: 101
       prefix: -pf-chan-dir-vec
@@ -240,7 +219,6 @@ inputs:
     doc: Cutoff for distance searches in path finding algorithm. A value of zero
       or less means no cutoff is applied. If unset, an appropriate cutoff is 
       determined automatically.
-    default: nan
     inputBinding:
       position: 101
       prefix: -pf-cutoff
@@ -251,7 +229,6 @@ inputs:
     doc: Initial position of probe in probe-based pore finding algorithms. If 
       set explicitly, it will overwrite the COM-based initial position set with 
       the ippSelflag.
-    default: nan nan nan
     inputBinding:
       position: 101
       prefix: -pf-init-probe-pos
@@ -269,7 +246,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum radius of pore.
-    default: 1
     inputBinding:
       position: 101
       prefix: -pf-max-free-dist
@@ -278,7 +254,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of steps the probe is moved in either direction.
-    default: 10000
     inputBinding:
       position: 101
       prefix: -pf-max-probe-steps
@@ -291,7 +266,6 @@ inputs:
       in subsequent parallel planes so as to maximise its radius. The alternative
       naive_cylindrical simply uses a cylindrical volume as permeation pathway.: cylindrical,
       inplane_optim'
-    default: inplane_optim
     inputBinding:
       position: 101
       prefix: -pf-method
@@ -300,7 +274,6 @@ inputs:
       - 'null'
       - float
     doc: Step length for probe movement.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -pf-probe-step
@@ -310,7 +283,6 @@ inputs:
       - string
     doc: 'Database of van-der-Waals radii to be used in pore finding: hole_amberuni,
       hole_bondi, hole_hardcore, hole_simple, hole_xplor, user'
-    default: hole_simple
     inputBinding:
       position: 101
       prefix: -pf-vdwr-database
@@ -322,7 +294,6 @@ inputs:
       van-der-Waals radius database. Unless this is set to a positive value, an 
       error will be thrown if a pathway-forming atom has no associated 
       van-der-Waals radius in the database.
-    default: nan
     inputBinding:
       position: 101
       prefix: -pf-vdwr-fallback
@@ -350,7 +321,6 @@ inputs:
     doc: Selection string that determines the group of atoms in each residue 
       whose centre of geometry's distance from the centre line is used to 
       determine if a residue is pore-facing.
-    default: name CA
     inputBinding:
       position: 101
       prefix: -pm-pf-sel
@@ -361,7 +331,6 @@ inputs:
     doc: Margin for determining pathway lining residues. A residue is considered
       to be pathway lining if it is no further than the local path radius plus 
       this margin from the pathway's centre line.
-    default: 0.75
     inputBinding:
       position: 101
       prefix: -pm-pl-margin
@@ -380,7 +349,6 @@ inputs:
     doc: 'Default selection output positions: atom, res_com, res_cog, mol_com, mol_cog,
       whole_res_com, whole_res_cog, whole_mol_com, whole_mol_cog, part_res_com, part_res_cog,
       part_mol_com, part_mol_cog, dyn_res_com, dyn_res_cog, dyn_mol_com, dyn_mol_cog'
-    default: atom
     inputBinding:
       position: 101
       prefix: -seltype
@@ -391,7 +359,6 @@ inputs:
     doc: 'Selection reference positions: atom, res_com, res_cog, mol_com, mol_cog,
       whole_res_com, whole_res_cog, whole_mol_com, whole_mol_cog, part_res_com, part_res_cog,
       part_mol_com, part_mol_cog, dyn_res_com, dyn_res_cog, dyn_mol_com, dyn_mol_cog'
-    default: atom
     inputBinding:
       position: 101
       prefix: -selrpos
@@ -400,7 +367,6 @@ inputs:
       - 'null'
       - float
     doc: Simulated annealing cooling factor.
-    default: 0.98
     inputBinding:
       position: 101
       prefix: -sa-cooling-fac
@@ -409,7 +375,6 @@ inputs:
       - 'null'
       - float
     doc: Simulated annealing initial temperature.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: -sa-init-temp
@@ -418,7 +383,6 @@ inputs:
       - 'null'
       - int
     doc: Number of cooling iterations in one simulated annealing run.
-    default: 0
     inputBinding:
       position: 101
       prefix: -sa-max-iter
@@ -428,7 +392,6 @@ inputs:
       - int
     doc: Seed used in pseudo random number generation for simulated annealing. 
       If not set explicitly, a random seed is used.
-    default: 0
     inputBinding:
       position: 101
       prefix: -sa-seed
@@ -437,7 +400,6 @@ inputs:
       - 'null'
       - float
     doc: Step length factor used in candidate generation.
-    default: 0.001
     inputBinding:
       position: 101
       prefix: -sa-step
@@ -462,7 +424,6 @@ inputs:
       - 'null'
       - string
     doc: 'Unit for time values: fs, ps, ns, us, ms, s'
-    default: ps
     inputBinding:
       position: 101
       prefix: -tu
@@ -487,7 +448,6 @@ inputs:
       - 'null'
       - string
     doc: 'Plot formatting: none, xmgrace, xmgr'
-    default: xmgrace
     inputBinding:
       position: 101
       prefix: -xvg

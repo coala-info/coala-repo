@@ -55,7 +55,6 @@ inputs:
       - 'null'
       - string
     doc: "input format, variants are: 'pdb' (default), 'mmcif', 'detect'"
-    default: pdb
     inputBinding:
       position: 102
       prefix: --input-format

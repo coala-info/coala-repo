@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Total number of fragments in sample
-    default: 0
     inputBinding:
       position: 101
       prefix: --fragment_amount
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: Input file
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Rarification factor
-    default: 10000000
     inputBinding:
       position: 101
       prefix: --rarification_factor

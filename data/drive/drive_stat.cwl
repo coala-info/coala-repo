@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: max traversal depth
-    default: 1
     inputBinding:
       position: 101
       prefix: -depth

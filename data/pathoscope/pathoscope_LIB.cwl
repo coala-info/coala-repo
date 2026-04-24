@@ -12,7 +12,6 @@ inputs:
       - 'null'
       - string
     doc: mysql pathoscope database name
-    default: pathodb
     inputBinding:
       position: 101
       prefix: -db
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: provide mysql server port if different from default (3306)
-    default: 3306
     inputBinding:
       position: 101
       prefix: -dbport

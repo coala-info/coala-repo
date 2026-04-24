@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - string
     doc: 'Additional arguments specific to antiSMASH (Default: "")'
-    default: ''
     inputBinding:
       position: 101
       prefix: --antismash_arguments
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - Directory
     doc: 'Output directory (default: current working directory)'
-    default: current working directory
     inputBinding:
       position: 101
       prefix: --output
@@ -133,7 +131,6 @@ inputs:
       - 'null'
       - string
     doc: 'Strain name (default: input file prefix)'
-    default: input file prefix
     inputBinding:
       position: 101
       prefix: --strain

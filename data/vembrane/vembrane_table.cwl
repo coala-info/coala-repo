@@ -16,7 +16,6 @@ inputs:
       - File
     doc: "Path to the VCF/BCF file to be filtered. Defaults to\n                 \
       \       '-' for stdin."
-    default: '-'
     inputBinding:
       position: 2
   - id: annotation_key
@@ -27,7 +26,6 @@ inputs:
       \       to 'ANN', but tools might use other field names. For\n             \
       \           example, default VEP annotations can be parsed by\n            \
       \            setting 'CSQ' here."
-    default: ANN
     inputBinding:
       position: 103
       prefix: --annotation-key
@@ -45,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: 'Set the backend library. (default: cyvcf2)'
-    default: cyvcf2
     inputBinding:
       position: 103
       prefix: --backend
@@ -85,7 +82,6 @@ inputs:
       \              from the expression. Provide a comma separated string\n     \
       \                   to manually set the header. Provide \"none\" to disable\n\
       \                        any header output."
-    default: auto
     inputBinding:
       position: 103
       prefix: --header
@@ -104,7 +100,6 @@ inputs:
       - string
     doc: "The naming convention to use for column names when\n                   \
       \     generating the header for the ALL expression."
-    default: dictionary
     inputBinding:
       position: 103
       prefix: --naming-convention
@@ -145,7 +140,6 @@ inputs:
       - 'null'
       - string
     doc: "Define the field separator (default: \t)."
-    default: "\t"
     inputBinding:
       position: 103
       prefix: --separator

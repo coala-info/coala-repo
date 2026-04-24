@@ -19,7 +19,6 @@ inputs:
       - 'null'
       - string
     doc: Path to the blastn executable
-    default: blastdbcmd
     inputBinding:
       position: 102
       prefix: --blastdbcmd
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Path to the blastn executable
-    default: blastn
     inputBinding:
       position: 102
       prefix: --blastn
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to the database directory where the databases are stored.
-    default: /usr/local/lib/python3.12/site-packages/taxmyphage/database
     inputBinding:
       position: 102
       prefix: --db_folder
@@ -64,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: Path to the blastn executable
-    default: makeblastdb
     inputBinding:
       position: 102
       prefix: --makeblastdb
@@ -78,7 +74,6 @@ inputs:
       shows the phage is a new genus. We have found increasing above 0.2 does 
       not place the query in any current genus, only provides the output files 
       to demonstrate it falls outside of current genera.
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --distance
@@ -87,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: Path to the MASH executable
-    default: mash
     inputBinding:
       position: 102
       prefix: --mash
@@ -96,7 +90,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to the output directory.
-    default: .
     inputBinding:
       position: 102
       prefix: --output
@@ -119,7 +112,6 @@ inputs:
     doc: Path to the reference database file. Input file will be used as query 
       against it. If not provided, input will be compare against itself. If you 
       use reference no figure is generated.
-    default: ''
     inputBinding:
       position: 102
       prefix: --reference
@@ -128,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of threads that will be used by BLASTn.
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

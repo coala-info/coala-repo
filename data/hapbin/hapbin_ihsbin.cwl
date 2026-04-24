@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: EHH cutoff value
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --cutoff
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: Number of frequency bins for iHS normalization
-    default: 50
     inputBinding:
       position: 101
       prefix: --bin
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum distance in bp to traverse when calculating EHH
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-extend
@@ -65,7 +62,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele frequency
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --minmaf

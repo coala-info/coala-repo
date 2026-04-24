@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - float
     doc: Ratio of stack height to width
-    default: 5.0
     inputBinding:
       position: 102
       prefix: --aspect-ratio
@@ -44,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: Draw boxes around symbols?
-    default: false
     inputBinding:
       position: 102
       prefix: --box
@@ -84,7 +82,6 @@ inputs:
       name (e.g. 'E. coli', 'H. sapiens'), or an explicit distribution (e.g. \"{'A':10,
       'C':40, 'G':40, 'T':10}\"). The automatic option uses a typical distribution
       for proteins and equiprobable distribution for everything else."
-    default: auto
     inputBinding:
       position: 102
       prefix: --composition
@@ -101,7 +98,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Output additional diagnostic information. (Default: False)'
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -118,7 +114,6 @@ inputs:
       - 'null'
       - float
     doc: Sets error bars display proportion
-    default: 0.9
     inputBinding:
       position: 102
       prefix: --errorbar-fraction
@@ -127,7 +122,6 @@ inputs:
       - 'null'
       - float
     doc: Sets error bars' gray scale percentage
-    default: 0.75
     inputBinding:
       position: 102
       prefix: --errorbar-gray
@@ -136,7 +130,6 @@ inputs:
       - 'null'
       - float
     doc: Sets error bars width display proportion
-    default: 0.25
     inputBinding:
       position: 102
       prefix: --errorbar-width-fraction
@@ -145,7 +138,6 @@ inputs:
       - 'null'
       - boolean
     doc: Display error bars?
-    default: true
     inputBinding:
       position: 102
       prefix: --errorbars
@@ -154,7 +146,6 @@ inputs:
       - 'null'
       - File
     doc: Sequence input file
-    default: stdin
     inputBinding:
       position: 102
       prefix: --fin
@@ -171,7 +162,6 @@ inputs:
       - 'null'
       - int
     doc: Index of first position in sequence data
-    default: 1
     inputBinding:
       position: 102
       prefix: --first-index
@@ -180,7 +170,6 @@ inputs:
       - 'null'
       - int
     doc: Regular text font size in points
-    default: 10
     inputBinding:
       position: 102
       prefix: --fontsize
@@ -189,7 +178,6 @@ inputs:
       - 'null'
       - string
     doc: Format of output
-    default: eps
     inputBinding:
       position: 102
       prefix: --format
@@ -215,7 +203,6 @@ inputs:
       - 'null'
       - string
     doc: Specify font for logo
-    default: Arial-BoldMT
     inputBinding:
       position: 102
       prefix: --logo-font
@@ -224,7 +211,6 @@ inputs:
       - 'null'
       - string
     doc: Specify a standard logo size (small, medium (default), large)
-    default: medium
     inputBinding:
       position: 102
       prefix: --size
@@ -241,7 +227,6 @@ inputs:
       - 'null'
       - int
     doc: Axis numbers font size in points
-    default: 8
     inputBinding:
       position: 102
       prefix: --number-fontsize
@@ -250,7 +235,6 @@ inputs:
       - 'null'
       - int
     doc: Distance between numbers on X-axis
-    default: 5
     inputBinding:
       position: 102
       prefix: --number-interval
@@ -259,7 +243,6 @@ inputs:
       - 'null'
       - int
     doc: Listen to this local port.
-    default: 8080
     inputBinding:
       position: 102
       prefix: --port
@@ -269,7 +252,6 @@ inputs:
       - int
     doc: 'Bitmap resolution in dots per inch (DPI). (Default: 96 DPI, except png_print,
       600 DPI) Low resolution bitmaps (DPI<300) are antialiased.'
-    default: 96
     inputBinding:
       position: 102
       prefix: --resolution
@@ -294,7 +276,6 @@ inputs:
       - 'null'
       - boolean
     doc: Draw stacks with largest letters on top?
-    default: true
     inputBinding:
       position: 102
       prefix: --reverse-stacks
@@ -303,7 +284,6 @@ inputs:
       - 'null'
       - boolean
     doc: Draw X-axis numbers with vertical orientation
-    default: false
     inputBinding:
       position: 102
       prefix: --rotate-numbers
@@ -313,7 +293,6 @@ inputs:
       - boolean
     doc: 'Scale the visible stack width by the fraction of symbols in the column?
       (I.e. columns with many gaps of unknowns are narrow.) (Default: yes)'
-    default: true
     inputBinding:
       position: 102
       prefix: --scale-width
@@ -338,7 +317,6 @@ inputs:
       - 'null'
       - boolean
     doc: Label the ends of the sequence?
-    default: false
     inputBinding:
       position: 102
       prefix: --show-ends
@@ -347,7 +325,6 @@ inputs:
       - 'null'
       - boolean
     doc: Display sequence numbers along x-axis?
-    default: true
     inputBinding:
       position: 102
       prefix: --show-xaxis
@@ -356,7 +333,6 @@ inputs:
       - 'null'
       - boolean
     doc: Display entropy scale along y-axis?
-    default: true
     inputBinding:
       position: 102
       prefix: --show-yaxis
@@ -365,7 +341,6 @@ inputs:
       - 'null'
       - int
     doc: Small text font size in points
-    default: 6
     inputBinding:
       position: 102
       prefix: --small-fontsize
@@ -374,7 +349,6 @@ inputs:
       - 'null'
       - float
     doc: Width of a logo stack
-    default: 10.8
     inputBinding:
       position: 102
       prefix: --stack-width
@@ -383,7 +357,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of logo stacks per logo line.
-    default: 40
     inputBinding:
       position: 102
       prefix: --stacks-per-line
@@ -392,7 +365,6 @@ inputs:
       - 'null'
       - string
     doc: Specify font for labels
-    default: ArialMT
     inputBinding:
       position: 102
       prefix: --text-font
@@ -401,7 +373,6 @@ inputs:
       - 'null'
       - float
     doc: Distance between ticmarks
-    default: 1.0
     inputBinding:
       position: 102
       prefix: --ticmarks
@@ -418,7 +389,6 @@ inputs:
       - 'null'
       - string
     doc: Specify font for title
-    default: ArialMT
     inputBinding:
       position: 102
       prefix: --title-font
@@ -427,7 +397,6 @@ inputs:
       - 'null'
       - int
     doc: Title text font size in points
-    default: 12
     inputBinding:
       position: 102
       prefix: --title-fontsize
@@ -438,7 +407,6 @@ inputs:
     doc: A unit of entropy ('bits' (default), 'nats', 'digits'), or a unit 
       offree energy ('kT', 'kJ/mol', 'kcal/mol'), or 'probability' for 
       probabilities
-    default: bits
     inputBinding:
       position: 102
       prefix: --units

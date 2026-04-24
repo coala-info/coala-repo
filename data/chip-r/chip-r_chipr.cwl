@@ -22,7 +22,6 @@ inputs:
     doc: Alpha specifies the user cut-off value for set of reproducible peaks 
       The analysis will still produce results including peaks within the 
       threshold calculatedusing the binomial method
-    default: 0.05
     inputBinding:
       position: 102
       prefix: --alpha
@@ -33,7 +32,6 @@ inputs:
     doc: "Specifies how to handle entries that are ranked equally within a replicate
       Can either take the 'average' ranks or a 'random' rearrangement of the ordinal
       ranks Options: 'average', 'random'"
-    default: average
     inputBinding:
       position: 102
       prefix: --duphandling
@@ -52,7 +50,6 @@ inputs:
       - int
     doc: The minimum peaks between replicates required to form an intersection 
       of the peaks
-    default: 1
     inputBinding:
       position: 102
       prefix: --minentries
@@ -62,7 +59,6 @@ inputs:
       - float
     doc: Specify a seed to be used in conjunction with the 'random' option for 
       -duphandling Must be between 0 and 1
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --seed
@@ -72,7 +68,6 @@ inputs:
       - string
     doc: "The ranking method used to rank peaks within replicates. Options: 'signalvalue',
       'pvalue', 'qvalue'."
-    default: pvalue
     inputBinding:
       position: 102
       prefix: --rankmethod
@@ -84,7 +79,6 @@ inputs:
       fragmentation. Usually the minimum peak size is determined by the size of 
       surrounding peaks, but in the case that there are no surrounding peaks 
       this value will be used
-    default: 20
     inputBinding:
       position: 102
       prefix: --size

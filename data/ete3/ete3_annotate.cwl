@@ -31,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Delimiter used in annotation files.
-    default: ','
     inputBinding:
       position: 103
       prefix: --annotation-delimiter
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Column index (0-based) to use as the key in annotation files.
-    default: 0
     inputBinding:
       position: 103
       prefix: --annotation-key-column
@@ -90,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: Output tree format (e.g., newick, phyloxml).
-    default: newick
     inputBinding:
       position: 103
       prefix: --format

@@ -126,7 +126,6 @@ inputs:
       - 'null'
       - int
     doc: Set the height in pixels of the output image
-    default: 500
     inputBinding:
       position: 101
       prefix: --height
@@ -307,7 +306,6 @@ inputs:
       - 'null'
       - int
     doc: Set the width in pixels of the output image
-    default: 1500
     inputBinding:
       position: 101
       prefix: --width

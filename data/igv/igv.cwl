@@ -66,7 +66,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to the local igv directory. Defaults to <user home>/igv
-    default: <user home>/igv
     inputBinding:
       position: 102
       prefix: --igvDirectory
@@ -93,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: IGV command port number (defaults to 60151)
-    default: 60151
     inputBinding:
       position: 102
       prefix: --port

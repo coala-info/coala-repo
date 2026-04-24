@@ -54,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Threshold for short read fraction. Default is 150.
-    default: 150
     inputBinding:
       position: 103
       prefix: --short-reads

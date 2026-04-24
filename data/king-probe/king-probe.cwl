@@ -55,7 +55,6 @@ inputs:
       - 'null'
       - float
     doc: Offset added to Van der Waals radii (default 0.0).
-    default: 0.0
     inputBinding:
       position: 105
       prefix: -ADDvdw
@@ -104,7 +103,6 @@ inputs:
       - 'null'
       - float
     doc: Set relative scale for scoring bumps (default 10.0).
-    default: 10.0
     inputBinding:
       position: 105
       prefix: -BUMPWeight
@@ -131,7 +129,6 @@ inputs:
       - 'null'
       - float
     doc: Scale C=O carbon Van der Waals radii (default 0.94).
-    default: 0.94
     inputBinding:
       position: 105
       prefix: -COSCale
@@ -172,7 +169,6 @@ inputs:
       - 'null'
       - float
     doc: Division for Contact categories (default 0.25).
-    default: 0.25
     inputBinding:
       position: 105
       prefix: -DIVHigh
@@ -181,7 +177,6 @@ inputs:
       - 'null'
       - float
     doc: Division for Bump categories (default -0.4).
-    default: -0.4
     inputBinding:
       position: 105
       prefix: -DIVLow
@@ -190,7 +185,6 @@ inputs:
       - 'null'
       - float
     doc: Division for regarding a clash as a worse clash (default -0.5).
-    default: -0.5
     inputBinding:
       position: 105
       prefix: -DIVWorse
@@ -199,7 +193,6 @@ inputs:
       - 'null'
       - int
     doc: Set dot density (default 16 dots/sq A).
-    default: 16
     inputBinding:
       position: 105
       prefix: -DEnsity
@@ -280,7 +273,6 @@ inputs:
       - 'null'
       - boolean
     doc: Explicit hydrogens (default).
-    default: true
     inputBinding:
       position: 105
       prefix: -Explicit
@@ -297,7 +289,6 @@ inputs:
       - 'null'
       - boolean
     doc: Extend bond chain dot removal to 4 for H (default).
-    default: true
     inputBinding:
       position: 105
       prefix: -4H
@@ -331,7 +322,6 @@ inputs:
       - 'null'
       - boolean
     doc: Color dots by gap amount (default).
-    default: true
     inputBinding:
       position: 105
       prefix: -GAPcolor
@@ -340,7 +330,6 @@ inputs:
       - 'null'
       - float
     doc: Set weight for scoring gaps (default 0.25).
-    default: 0.25
     inputBinding:
       position: 105
       prefix: -GAPWeight
@@ -349,7 +338,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the group name (default "dots").
-    default: dots
     inputBinding:
       position: 105
       prefix: -Name
@@ -358,7 +346,6 @@ inputs:
       - 'null'
       - float
     doc: Set relative scale for scoring Hbonds (default 4.0).
-    default: 4.0
     inputBinding:
       position: 105
       prefix: -HBWeight
@@ -383,7 +370,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include dots to non-water HET groups (default).
-    default: true
     inputBinding:
       position: 105
       prefix: -HETs
@@ -400,7 +386,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include dots to water (default).
-    default: true
     inputBinding:
       position: 105
       prefix: -WATERS
@@ -409,7 +394,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep nonselected atoms (default).
-    default: true
     inputBinding:
       position: 105
       prefix: -Keep
@@ -450,7 +434,6 @@ inputs:
       - 'null'
       - boolean
     doc: Limit bump dots to max dist when kissing (default).
-    default: true
     inputBinding:
       position: 105
       prefix: -LIMit
@@ -459,7 +442,6 @@ inputs:
       - 'null'
       - float
     doc: Max overlap for charged Hbonds (default=0.8).
-    default: 0.8
     inputBinding:
       position: 105
       prefix: -HBCharged
@@ -468,7 +450,6 @@ inputs:
       - 'null'
       - float
     doc: Max overlap for regular Hbonds (default=0.6).
-    default: 0.6
     inputBinding:
       position: 105
       prefix: -HBRegular
@@ -477,7 +458,6 @@ inputs:
       - 'null'
       - float
     doc: Occupancy below this is same as zero (default 0.02).
-    default: 0.02
     inputBinding:
       position: 105
       prefix: -MINOCCupancy
@@ -534,7 +514,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not add lens keyword to kin file (default).
-    default: true
     inputBinding:
       position: 105
       prefix: -NOLENs
@@ -664,7 +643,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the point color for -OUT (default "gray").
-    default: gray
     inputBinding:
       position: 105
       prefix: -OUTCOLor
@@ -673,7 +651,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use short radii of polar hydrogens (default).
-    default: true
     inputBinding:
       position: 105
       prefix: -PolarH
@@ -682,7 +659,6 @@ inputs:
       - 'null'
       - float
     doc: Set probe radius (default 0.25 A).
-    default: 0.25
     inputBinding:
       position: 105
       prefix: -Radius
@@ -707,7 +683,6 @@ inputs:
       - 'null'
       - float
     doc: Scale factor for CH..O Hbond score (default=0.5).
-    default: 0.5
     inputBinding:
       position: 105
       prefix: -CHO
@@ -716,7 +691,6 @@ inputs:
       - 'null'
       - float
     doc: Scale factor for Van der Waals radii (default 1.0).
-    default: 1.0
     inputBinding:
       position: 105
       prefix: -SCALEvdw
@@ -758,7 +732,6 @@ inputs:
       - boolean
     doc: To separate bad overlaps and worse overlaps (default false, if true, 
       deafult value to separate the worse clashes is -0.5).
-    default: false
     inputBinding:
       position: 105
       prefix: -SEPWORSE
@@ -775,7 +748,6 @@ inputs:
       - 'null'
       - boolean
     doc: Draw spike instead of dots (default).
-    default: true
     inputBinding:
       position: 105
       prefix: -SPike
@@ -784,7 +756,6 @@ inputs:
       - 'null'
       - float
     doc: Set spike scale (default=0.5).
-    default: 0.5
     inputBinding:
       position: 105
       prefix: -SPike
@@ -825,7 +796,6 @@ inputs:
       - 'null'
       - boolean
     doc: Verbose mode (default).
-    default: true
     inputBinding:
       position: 105
       prefix: -VErbose

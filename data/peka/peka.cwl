@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: controls the number of outputs, can be True or False
-    default: 'False'
     inputBinding:
       position: 101
       prefix: --alloutputs
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: how many enriched kmers to cluster and plot
-    default: 5
     inputBinding:
       position: 101
       prefix: --clusters
@@ -28,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: window around enriched kmers to calculate distribution
-    default: 150
     inputBinding:
       position: 101
       prefix: --distalwindow
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: kmer length
-    default: 5
     inputBinding:
       position: 101
       prefix: --kmerlength
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - Directory
     doc: output folder
-    default: current directory
     inputBinding:
       position: 101
       prefix: --outputpath
@@ -83,7 +78,6 @@ inputs:
       is determined at which >=70 percent of the crosslink sites within the 
       region have a cDNA count equal or below the threshold. Thresholded 
       crosslinks have cDNA count above the threshold.
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --percentile
@@ -104,7 +98,6 @@ inputs:
       is recommended, unless you have data of very high complexity and are using
       k-mer length <=5. This argument can't be used together with -pos argument,
       which sets a user-defined threshold for relevant positions.
-    default: 'True'
     inputBinding:
       position: 101
       prefix: --relaxed_prtxn
@@ -130,7 +123,6 @@ inputs:
       "repeats_only", "remove_repeats"). When applying any of the options with the
       exception of repeats == "unmasked", a genome with soft-masked repeat sequences
       should be used for input, ie. repeats in lowercase letters.'
-    default: unmasked
     inputBinding:
       position: 101
       prefix: --repeats
@@ -141,7 +133,6 @@ inputs:
     doc: If you want to ensure reproducibility of results the option set_seeds 
       must be set to True. Can be True or False [DEFAULT True]. Note that 
       setting seeds reduces the randomness of background sampling.
-    default: 'True'
     inputBinding:
       position: 101
       prefix: --set_seeds
@@ -150,7 +141,6 @@ inputs:
       - 'null'
       - int
     doc: window used for smoothing kmer positional distribution curves
-    default: 6
     inputBinding:
       position: 101
       prefix: --smoothing
@@ -170,7 +160,6 @@ inputs:
       - boolean
     doc: if the crosslinks file is very large, they can be subsampled to reduce 
       runtime, can be True/False
-    default: 'True'
     inputBinding:
       position: 101
       prefix: --subsample
@@ -180,7 +169,6 @@ inputs:
       - int
     doc: number of kmers ranked by z-score in descending order for clustering 
       and plotting
-    default: 20
     inputBinding:
       position: 101
       prefix: --topn
@@ -189,7 +177,6 @@ inputs:
       - 'null'
       - int
     doc: window around thresholded crosslinks for finding enriched kmers
-    default: 20
     inputBinding:
       position: 101
       prefix: --window

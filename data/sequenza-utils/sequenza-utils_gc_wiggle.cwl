@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - int
     doc: 'Size of bins in base pairs. Default: 10000.'
-    default: 10000
     inputBinding:
       position: 102
       prefix: --bin-size
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: 'Window size for GC content calculation. Default: 1000.'
-    default: 1000
     inputBinding:
       position: 102
       prefix: --gc-window
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of threads to use. Default: 1.'
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

@@ -22,7 +22,6 @@ inputs:
       - int
     doc: filter MSAs by selecting most diverse set of sequences, keeping at 
       least this many seqs in each MSA block of length 50
-    default: 100
     inputBinding:
       position: 101
       prefix: -diff
@@ -71,7 +70,6 @@ inputs:
       - 'null'
       - boolean
     doc: use local alignment mode for searching/ranking
-    default: true
     inputBinding:
       position: 101
       prefix: -loc
@@ -81,7 +79,6 @@ inputs:
       - float
     doc: 'posterior prob threshold for MAC realignment controlling greediness at alignment
       ends: 0:global >0.1:local'
-    default: 0.35
     inputBinding:
       position: 101
       prefix: -mact
@@ -98,7 +95,6 @@ inputs:
       - 'null'
       - float
     doc: maximum pairwise sequence identity
-    default: 90
     inputBinding:
       position: 101
       prefix: -id
@@ -107,7 +103,6 @@ inputs:
       - 'null'
       - float
     doc: minimum coverage with master sequence (%)
-    default: 0
     inputBinding:
       position: 101
       prefix: -cov
@@ -116,7 +111,6 @@ inputs:
       - 'null'
       - float
     doc: minimum score per column with master sequence
-    default: -20.0
     inputBinding:
       position: 101
       prefix: -qsc
@@ -125,7 +119,6 @@ inputs:
       - 'null'
       - float
     doc: minimum sequence identity with master sequence (%)
-    default: 0
     inputBinding:
       position: 101
       prefix: -qid
@@ -152,7 +145,6 @@ inputs:
       - boolean
     doc: do NOT neutralize His-, C-myc-, FLAG-tags, and trypsin recognition 
       sequence to background distribution
-    default: true
     inputBinding:
       position: 101
       prefix: -notags
@@ -192,7 +184,6 @@ inputs:
       - 'null'
       - int
     doc: 'verbose mode: 0:no screen output 1:only warings 2: verbose'
-    default: 2
     inputBinding:
       position: 101
       prefix: -v

@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage to keep (0.0 to 1.0)
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -minCover

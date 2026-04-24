@@ -32,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform adaptive resampling
-    default: false
     inputBinding:
       position: 104
       prefix: -a
@@ -55,7 +54,6 @@ inputs:
     doc: String of letters representing library of control files in order (e.g.,
       'AABB'). Letters used must also be used in --exp_lib. If non-empty, 
       resampling will limit permutations to within-libraries.
-    default: ''
     inputBinding:
       position: 104
       prefix: --ctrl_lib
@@ -71,7 +69,6 @@ inputs:
       - boolean
     doc: Exclude rows with zero across conditions (include rows with zeros by 
       default)
-    default: false
     inputBinding:
       position: 104
       prefix: -ez
@@ -88,7 +85,6 @@ inputs:
     doc: String of letters representing library of experimental files in order 
       (e.g., 'ABAB'). Letters used must also be used in --ctrl_lib. If 
       non-empty, resampling will limit permutations to within-libraries.
-    default: ''
     inputBinding:
       position: 104
       prefix: --exp_lib
@@ -98,7 +94,6 @@ inputs:
       - int
     doc: Ignore TAs occurring within given percentage (as integer) of the C 
       terminus
-    default: 0
     inputBinding:
       position: 104
       prefix: -iC
@@ -108,7 +103,6 @@ inputs:
       - int
     doc: Ignore TAs occurring within given percentage (as integer) of the N 
       terminus
-    default: 0
     inputBinding:
       position: 104
       prefix: -iN
@@ -117,7 +111,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform LOESS Correction; Helps remove possible genomic position bias
-    default: false
     inputBinding:
       position: 104
       prefix: -l
@@ -126,7 +119,6 @@ inputs:
       - 'null'
       - string
     doc: Normalization method
-    default: TTR
     inputBinding:
       position: 104
       prefix: -n
@@ -135,7 +127,6 @@ inputs:
       - 'null'
       - int
     doc: Number of samples
-    default: 10000
     inputBinding:
       position: 104
       prefix: -s
@@ -144,7 +135,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output histogram of the permutations for each gene
-    default: false
     inputBinding:
       position: 104
       prefix: -h
@@ -153,7 +143,6 @@ inputs:
       - 'null'
       - float
     doc: Pseudocounts used in calculating LFC
-    default: 1.0
     inputBinding:
       position: 104
       prefix: -PC

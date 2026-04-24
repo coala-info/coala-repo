@@ -17,7 +17,6 @@ inputs:
       - File
     doc: Path to the ete3 NCBI database to be used. Default will use the default
       location at ~/.etetoolkit/taxa.sqlite
-    default: ~/.etetoolkit/taxa.sqlite
     inputBinding:
       position: 101
       prefix: --ete_ncbi_db

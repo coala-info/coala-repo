@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not remove reads which appear to have mismatched primers
-    default: false
     inputBinding:
       position: 102
       prefix: --allow-mismatched-primers
@@ -55,7 +54,6 @@ inputs:
       - int
     doc: Minimum coverage required for a position to be included in the 
       consensus sequence
-    default: 20
     inputBinding:
       position: 102
       prefix: --min-depth
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality to consider
-    default: 20
     inputBinding:
       position: 102
       prefix: --min-mapq
@@ -83,7 +80,6 @@ inputs:
       - Directory
     doc: Path containing clair3 models, defaults to models packaged with conda 
       installation
-    default: $CONDA_PREFIX/bin/models/
     inputBinding:
       position: 102
       prefix: --model-dir
@@ -109,7 +105,6 @@ inputs:
       - int
     doc: 'Normalise down to moderate coverage to save runtime (default: 100, deactivate
       with `--normalise 0`)'
-    default: 100
     inputBinding:
       position: 102
       prefix: --normalise
@@ -118,7 +113,6 @@ inputs:
       - 'null'
       - int
     doc: Allow fuzzy primer matching within this threshold
-    default: 35
     inputBinding:
       position: 102
       prefix: --primer-match-threshold
@@ -149,7 +143,6 @@ inputs:
       - 'null'
       - Directory
     doc: Default scheme directory
-    default: //primer-schemes
     inputBinding:
       position: 102
       prefix: --scheme-directory
@@ -185,7 +178,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 8
     inputBinding:
       position: 102
       prefix: --threads

@@ -29,7 +29,6 @@ inputs:
       - float
     doc: Cutoff of the rank product for chromosomal pairs to select candidate 
       translocated chromosomal pairs, default = 0.05
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --cutoff
@@ -38,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: 'Enzyme used in Hi-C experiment, DEFAULT: MboI'
-    default: MboI
     inputBinding:
       position: 101
       prefix: --enzyme
@@ -47,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: 'Format for the output contact matrix, DEFAULT: cooler'
-    default: cooler
     inputBinding:
       position: 101
       prefix: --format
@@ -56,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: 'Specify your species, choose form hg38, hg19, and mm10. DEFAULT: hg19'
-    default: hg19
     inputBinding:
       position: 101
       prefix: --genome
@@ -76,7 +72,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for the result files. If not set, 'NA' will be used instead
-    default: NA
     inputBinding:
       position: 101
       prefix: --name
@@ -99,7 +94,6 @@ inputs:
       - int
     doc: 'Number of threads for running HiNT-tl translocation breakpoints detection
       part, DEFAULT: 16'
-    default: 16
     inputBinding:
       position: 101
       prefix: --threads

@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - float
     doc: coverage cutoff for reporting ARGs
-    default: 0.97
     inputBinding:
       position: 101
       prefix: --covCutoff
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: filename for log file
-    default: groot.log
     inputBinding:
       position: 101
       prefix: --log
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - int
     doc: number of processors to use
-    default: 1
     inputBinding:
       position: 101
       prefix: --processors

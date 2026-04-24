@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - string
     doc: 'algorithm: bpr or bcr'
-    default: bpr
     inputBinding:
       position: 102
       prefix: -a
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: max number children per internal node (bpr only)
-    default: 64
     inputBinding:
       position: 102
       prefix: -n
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: max number of runs in leaves (bpr only)
-    default: 512
     inputBinding:
       position: 102
       prefix: -r
@@ -98,7 +95,6 @@ inputs:
       - 'null'
       - File
     doc: temporary sequence file name (bcr only)
-    default: 'null'
     inputBinding:
       position: 102
       prefix: -f
@@ -107,7 +103,6 @@ inputs:
       - 'null'
       - int
     doc: verbose level (bcr only)
-    default: 2
     inputBinding:
       position: 102
       prefix: -v

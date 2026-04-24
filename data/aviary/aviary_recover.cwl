@@ -30,7 +30,6 @@ inputs:
       Equivalent to "--snakemake-cmds '--conda-create-envs-only True ' ". Other 
       inputs should be specified as if running normally so that the right set of
       conda environments is built.
-    default: no
     inputBinding:
       position: 101
       prefix: --build
@@ -52,7 +51,6 @@ inputs:
       workflow as it avoids deleting files that would likely be needed in later parts
       of the workflow. NOTE: Not cleaning makes reruns faster but will incur the wrath
       of your sysadmin'
-    default: true
     inputBinding:
       position: 101
       prefix: --clean
@@ -95,7 +93,6 @@ inputs:
       If performing assembly and multiple files are provided then only the first file
       will be used for assembly. If no longreads are provided then all samples will
       be co-assembled with megahit or metaspades depending on the --coassemble parameter'
-    default:
       - none
     inputBinding:
       position: 101
@@ -106,7 +103,6 @@ inputs:
       - string
     doc: 'Snakemake resources used as is found at: https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html?highlight=resources#standard-resources
       NOTE: tmpdir is handled by the `tmpdir` command line parameter.'
-    default: ''
     inputBinding:
       position: 101
       prefix: --default-resources
@@ -150,7 +146,6 @@ inputs:
       - int
     doc: Automatically exclude Flye contigs with long read coverage less than or
       equal to this and less than or equal to `--exclude-contig-size`
-    default: 10
     inputBinding:
       position: 101
       prefix: --exclude-contig-cov
@@ -160,7 +155,6 @@ inputs:
       - int
     doc: Automatically exclude Flye contigs with length less than or equal to 
       this and long read coverage less than or equal to `--exclude-contig-cov`
-    default: 2500
     inputBinding:
       position: 101
       prefix: --exclude-contig-size
@@ -193,7 +187,6 @@ inputs:
         items: File
     doc: Gold standard assembly to compare either the Aviary assembly or a given
       input assembly against
-    default:
       - none
     inputBinding:
       position: 101
@@ -203,7 +196,6 @@ inputs:
       - 'null'
       - string
     doc: CAMI I & II GSA mappings
-    default: none
     inputBinding:
       position: 101
       prefix: --gsa-mappings
@@ -221,7 +213,6 @@ inputs:
       - int
     doc: Automatically include Flye contigs with length greater than or equal to
       this
-    default: 10000
     inputBinding:
       position: 101
       prefix: --include-contig-size
@@ -234,7 +225,6 @@ inputs:
       and multiple files are provided then only the first file will be used for assembly.
       If no longreads are provided then all samples will be co-assembled with megahit
       or metaspades depending on the --coassemble parameter'
-    default:
       - none
     inputBinding:
       position: 101
@@ -244,7 +234,6 @@ inputs:
       - 'null'
       - int
     doc: 'DEPRECATED: Percentage of reads passing quality thresholds kept by filtlong'
-    default: 100
     inputBinding:
       position: 101
       prefix: --keep-percent
@@ -255,7 +244,6 @@ inputs:
         items: string
     doc: Manually specify the kmer-sizes used by SPAdes during assembly. Space 
       separated odd integer values and less than 128 or "auto"
-    default:
       - auto
     inputBinding:
       position: 101
@@ -267,7 +255,6 @@ inputs:
     doc: Maximum number of cores available for use locally. Only relevant if 
       jobs are being submitted to a cluster (e.g. see `--snakemake-profile`), in
       which case `--n-cores` will restrict requested cores in submitted jobs.
-    default: 16
     inputBinding:
       position: 101
       prefix: --local-cores
@@ -279,7 +266,6 @@ inputs:
       for PacBio RSII, "sq" for PacBio Sequel, "ccs" for PacBio CCS, "hifi" for 
       PacBio HiFi reads, "ont" for Oxford Nanopore and "ont_hq" for Oxford 
       Nanopore high quality reads (Guppy5+ or Q20)
-    default: ont
     inputBinding:
       position: 101
       prefix: --longread-type
@@ -291,7 +277,6 @@ inputs:
     doc: 'A space separated list of long-read read files. NOTE: The first file will
       be used for assembly unless --coassemble is set to True. Then all files will
       be used.'
-    default:
       - none
     inputBinding:
       position: 101
@@ -301,7 +286,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum memory for available usage in Gigabytes
-    default: 250
     inputBinding:
       position: 101
       prefix: --max-memory
@@ -310,7 +294,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum length of short reads to be kept, 0 = no maximum
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-short-read-length
@@ -322,7 +305,6 @@ inputs:
       max_threads > n_cores then n_cores will be bumped up to max_threads. 
       Useful if you want more fine grain control over the number of threads used
       by each process.
-    default: 8
     inputBinding:
       position: 101
       prefix: --max-threads
@@ -331,7 +313,6 @@ inputs:
       - 'null'
       - string
     doc: Medaka model to use for polishing long reads.
-    default: r941_min_hac_g507
     inputBinding:
       position: 101
       prefix: --medaka-model
@@ -340,7 +321,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum bin size in base pairs for a MAG
-    default: 200000
     inputBinding:
       position: 101
       prefix: --min-bin-size
@@ -349,7 +329,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum contig size in base pairs to be considered for binning
-    default: 1500
     inputBinding:
       position: 101
       prefix: --min-contig-size
@@ -360,7 +339,6 @@ inputs:
     doc: Automatically include Flye contigs with long read coverage greater than
       or equal to this. High long read coverage during assembly indicates that 
       the overlap layout consensus algorithm is more likely to be correct.
-    default: 5
     inputBinding:
       position: 101
       prefix: --min-cov-long
@@ -371,7 +349,6 @@ inputs:
     doc: Automatically include Flye contigs with short read coverage less than 
       or equal to this. Low coverage via short reads indicates that metaSPAdes 
       will not be able to better assemble this contig.
-    default: 5
     inputBinding:
       position: 101
       prefix: --min-cov-short
@@ -380,7 +357,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum long read mean quality threshold
-    default: 10
     inputBinding:
       position: 101
       prefix: --min-mean-q
@@ -390,7 +366,6 @@ inputs:
       - int
     doc: Minimum percent read identity used by CoverM for long-readswhen 
       calculating genome abundances.
-    default: 85
     inputBinding:
       position: 101
       prefix: --min-percent-read-identity-long
@@ -400,7 +375,6 @@ inputs:
       - int
     doc: Minimum percent read identity used by CoverM for short-reads when 
       calculating genome abundances.
-    default: 95
     inputBinding:
       position: 101
       prefix: --min-percent-read-identity-short
@@ -409,7 +383,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum long read size when filtering using Filtlong
-    default: 100
     inputBinding:
       position: 101
       prefix: --min-read-size
@@ -418,7 +391,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum length of short reads to be kept
-    default: 15
     inputBinding:
       position: 101
       prefix: --min-short-read-length
@@ -428,7 +400,6 @@ inputs:
       - int
     doc: Maximum number of cores available for use. Setting to multiples of 
       max_threads will allow for multiple processes to be run in parallel.
-    default: 16
     inputBinding:
       position: 101
       prefix: --n-cores
@@ -437,7 +408,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory
-    default: ./
     inputBinding:
       position: 101
       prefix: --output
@@ -450,7 +420,6 @@ inputs:
       and multiple files are provided then only the first file will be used for assembly.
       If no longreads are provided then all samples will be co-assembled with megahit
       or metaspades depending on the --coassemble parameter'
-    default:
       - none
     inputBinding:
       position: 101
@@ -464,7 +433,6 @@ inputs:
       and multiple files are provided then only the first file will be used for assembly.
       If no longreads are provided then all samples will be co-assembled with megahit
       or metaspades depending on the --coassemble parameter'
-    default:
       - none
     inputBinding:
       position: 101
@@ -484,7 +452,6 @@ inputs:
       - int
     doc: The number of threads given to pplacer, values above `--max-threads` 
       will be scaled to equal `--max-threads`
-    default: 8
     inputBinding:
       position: 101
       prefix: --pplacer-threads
@@ -494,7 +461,6 @@ inputs:
       - int
     doc: The short read quality value that a base is qualified. Default 15 means
       phred quality >=Q15 is qualified.
-    default: 15
     inputBinding:
       position: 101
       prefix: --quality-cutoff
@@ -505,7 +471,6 @@ inputs:
         items: File
     doc: One or more reference filter files to aid in the assembly. Remove 
       contaminant reads from the assembly.
-    default:
       - none
     inputBinding:
       position: 101
@@ -517,7 +482,6 @@ inputs:
     doc: Maximum number of iterations for Rosella refinery. Set to 0 to skip 
       refinery. Lower values will run faster but may result in lower quality 
       MAGs.
-    default: 5
     inputBinding:
       position: 101
       prefix: --refinery-max-iterations
@@ -528,7 +492,6 @@ inputs:
     doc: Maximum number of retries rosella uses to generate valid reclustering 
       within a refinery iteration. Lower values will run faster but may result 
       in lower quality MAGs.
-    default: 3
     inputBinding:
       position: 101
       prefix: --refinery-max-retries
@@ -547,7 +510,6 @@ inputs:
       - type: array
         items: string
     doc: Specify which kinds of modifications will trigger rules to rerun
-    default:
       - mtime
     inputBinding:
       position: 101
@@ -559,7 +521,6 @@ inputs:
     doc: 'The environment model to passed to SemiBin. Can be one of: human_gut, dog_gut,
       ocean, soil, cat_gut, human_oral, mouse_gut, pig_gut, built_environment, wastewater,
       global'
-    default: global
     inputBinding:
       position: 101
       prefix: --semibin-model
@@ -654,7 +615,6 @@ inputs:
       - int
     doc: how many percents of bases are allowed to be unqualified. Default 40 
       means 40 percent
-    default: 40
     inputBinding:
       position: 101
       prefix: --unqualified-percent-limit
@@ -682,7 +642,6 @@ inputs:
       - type: array
         items: string
     doc: Main workflow to run. This is the snakemake target rule to run.
-    default:
       - recover_mags
     inputBinding:
       position: 101

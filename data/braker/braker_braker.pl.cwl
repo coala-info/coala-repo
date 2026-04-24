@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output alternative transcripts based on explicit evidence from hints
-    default: true
     inputBinding:
       position: 101
       prefix: --alternatives-from-evidence

@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum percent coverage of regions to count a hit
-    default: 83
     inputBinding:
       position: 101
       prefix: --min-regions-coverage
@@ -32,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum percent identity of regions to count a hit
-    default: 85
     inputBinding:
       position: 101
       prefix: --min-regions-pident
@@ -41,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum percent coverage of targets to count a hit
-    default: 80
     inputBinding:
       position: 101
       prefix: --min-targets-coverage
@@ -50,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum percent identity of targets to count a hit
-    default: 90
     inputBinding:
       position: 101
       prefix: --min-targets-pident
@@ -59,7 +55,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to write output
-    default: ./
     inputBinding:
       position: 101
       prefix: --outdir
@@ -68,14 +63,12 @@ inputs:
       - 'null'
       - string
     doc: Prefix to use for output files
-    default: sccmec
     inputBinding:
       position: 101
       prefix: --prefix
   - id: regions
     type: File
     doc: Query regions in FASTA format
-    default: /usr/local/bin/../share/sccmec/sccmec-regions...
     inputBinding:
       position: 101
       prefix: --regions
@@ -90,7 +83,6 @@ inputs:
   - id: targets
     type: File
     doc: Query targets in FASTA format
-    default: /usr/local/bin/../share/sccmec/sccmec-targets...
     inputBinding:
       position: 101
       prefix: --targets
@@ -105,14 +97,12 @@ inputs:
   - id: yaml_regions
     type: File
     doc: YAML file documenting the regions and types
-    default: /usr/local/bin/../share/sccmec/sccmec-regions...
     inputBinding:
       position: 101
       prefix: --yaml-regions
   - id: yaml_targets
     type: File
     doc: YAML file documenting the targets and types
-    default: /usr/local/bin/../share/sccmec/sccmec-targets...
     inputBinding:
       position: 101
       prefix: --yaml-targets

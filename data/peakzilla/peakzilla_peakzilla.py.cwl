@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - float
     doc: minimum cutoff for fold enrichment
-    default: 2
     inputBinding:
       position: 103
       prefix: --enrichment_cutoff
@@ -55,7 +54,6 @@ inputs:
       - 'null'
       - File
     doc: directory/filename to store log file to
-    default: log.txt
     inputBinding:
       position: 103
       prefix: --log
@@ -64,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: number of most highly enriched regions used to estimate peak size
-    default: 200
     inputBinding:
       position: 103
       prefix: --model_peaks
@@ -81,7 +78,6 @@ inputs:
       - 'null'
       - float
     doc: minimum cutoff for peak score
-    default: 1
     inputBinding:
       position: 103
       prefix: --score_cutoff

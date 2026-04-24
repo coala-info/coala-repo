@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Number of T>C conversions required to count read as T>C read
-    default: 1
     inputBinding:
       position: 102
       prefix: --conversion-threshold
@@ -48,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum NM for alignments
-    default: -1
     inputBinding:
       position: 102
       prefix: --max-nm
@@ -57,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Max number of As at the 3' end of a read
-    default: 4
     inputBinding:
       position: 102
       prefix: --max-polya
@@ -74,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Min base quality for T -> C conversions
-    default: 27
     inputBinding:
       position: 102
       prefix: --min-base-qual
@@ -83,7 +79,6 @@ inputs:
       - 'null'
       - int
     doc: Minimimum coverage to call variant
-    default: 10
     inputBinding:
       position: 102
       prefix: --min-coverage
@@ -92,7 +87,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum alignment identity
-    default: 0.95
     inputBinding:
       position: 102
       prefix: --min-identity
@@ -101,7 +95,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality
-    default: 2
     inputBinding:
       position: 102
       prefix: --min-mq
@@ -173,7 +166,6 @@ inputs:
       - 'null'
       - int
     doc: Thread number
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads
@@ -182,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: Max. number of alignments to report per read
-    default: 1
     inputBinding:
       position: 102
       prefix: --topn
@@ -191,7 +182,6 @@ inputs:
       - 'null'
       - int
     doc: Number of bp removed from 5' end of all reads
-    default: 12
     inputBinding:
       position: 102
       prefix: --trim-5p
@@ -200,7 +190,6 @@ inputs:
       - 'null'
       - float
     doc: Minimimum variant fraction to call variant
-    default: 0.8
     inputBinding:
       position: 102
       prefix: --var-fraction

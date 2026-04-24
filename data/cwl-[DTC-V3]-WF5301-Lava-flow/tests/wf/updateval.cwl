@@ -13,7 +13,6 @@ inputs:
   r: File
   script:
     type: File
-    default:
       class: File
       location: updateval.py
 outputs:

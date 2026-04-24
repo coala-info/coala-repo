@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do PCR product enrichment.
-    default: false
     inputBinding:
       position: 101
       prefix: --do_enrich

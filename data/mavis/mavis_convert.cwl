@@ -39,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: level of logging to output
-    default: INFO
     inputBinding:
       position: 101
       prefix: --log_level

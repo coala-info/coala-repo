@@ -87,7 +87,6 @@ inputs:
 - id: threads
   type: int?
   doc: Number of additional threads to use
-  default: 0
   inputBinding:
     position: 1
     prefix: --threads

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: The database name.
-    default: MetaSBT
     inputBinding:
       position: 101
       prefix: --database
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: The kmer size in bp.
-    default: 27
     inputBinding:
       position: 101
       prefix: --kmer-size
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: The minimizer length in bp.
-    default: 21
     inputBinding:
       position: 101
       prefix: --minimizer-length
@@ -43,7 +40,6 @@ inputs:
       - 'null'
       - int
     doc: "Number of characters in minimizer that are ignored in\ncomparisons."
-    default: 5
     inputBinding:
       position: 101
       prefix: --minimizer-spaces
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for kraken2-build.
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

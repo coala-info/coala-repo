@@ -14,7 +14,6 @@ inputs:
     doc: "Name of the genome assembly to be simulated.\n                         \
       \       This is only used to populate the \"assembly\" attribute in the output
       .cool file."
-    default: unknown
     inputBinding:
       position: 101
       prefix: --assembly-name
@@ -25,7 +24,6 @@ inputs:
     doc: "Average LEF processivity in bp.\n                                The average
       LEF processivity corresponds to the average size of loops extruded by\n    \
       \                            unobstructed LEFs."
-    default: 300000
     inputBinding:
       position: 101
       prefix: --avg-lef-processivity
@@ -40,7 +38,6 @@ inputs:
       this parameter to values other than 1.0 comes with many gotchas.\n         \
       \                                    For the time being, tuning this parameter
       is not reccommended."
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --burnin-extr-speed-coefficient
@@ -50,7 +47,6 @@ inputs:
       - int
     doc: Number of epochs used to determine whether a simulation instance has 
       reached a stable state.
-    default: 100
     inputBinding:
       position: 101
       prefix: --burnin-history-length
@@ -60,7 +56,6 @@ inputs:
       - int
     doc: "Window size used to smooth metrics monitored to decide when the burn-in
       phase should be\n                                  terminated."
-    default: 5
     inputBinding:
       position: 101
       prefix: --burnin-smoothing-window-size
@@ -75,7 +70,6 @@ inputs:
       overall\n                                  extrusion speed and burn-in extrusion
       speed coefficient (--avg-lef-processivity,\n                               \
       \   --fwd/rev-extrusion-speed and --burn-in-extr-speed-coefficient respectively)."
-    default: 320
     inputBinding:
       position: 101
       prefix: --burnin-target-epochs-for-lef-activation
@@ -99,7 +93,6 @@ inputs:
       \ Using sampling intervals that are significantly smaller than the average LEF
       processivity is usually\n                                not recommended, as
       will cause MoDLE to sample many contacts from a single loop."
-    default: 50000
     inputBinding:
       position: 101
       prefix: --contact-sampling-interval
@@ -119,7 +112,6 @@ inputs:
       distrubution.\n                                The distribution parameters can
       be controlled through the options --mu, --sigma\n                          \
       \      and --xi."
-    default: tad-plus-loop-with-noise
     inputBinding:
       position: 101
       prefix: --contact-sampling-strategy
@@ -134,7 +126,6 @@ inputs:
       should roughly 10x the average LEF processivity.\n                         \
       \       Setting --diagonal-width to very large values (i.e. tens of Mbp) will
       significantly\n                                increase MoDLE's memory requirements."
-    default: 3000000
     inputBinding:
       position: 101
       prefix: --diagonal-width
@@ -168,7 +159,6 @@ inputs:
       \ state.\n                                  In other words, the probability
       that an extrusion barrier that is inactive in the current\n                \
       \                  epoch will remain inactive during the next epoch."
-    default: 0.7
     inputBinding:
       position: 101
       prefix: --extrusion-barrier-not-bound-stp
@@ -207,7 +197,6 @@ inputs:
       by collision events taking place during the current epoch.\n               \
       \                   By deafult extrusion speed is set to half the bin size specified
       through the --resolution\n                                  option."
-    default: 4000
     inputBinding:
       position: 101
       prefix: --fwd-extrusion-speed
@@ -225,7 +214,6 @@ inputs:
       \                                  Example: when running modle sim --fwd-extrusion-speed=10000
       ...\n                                           --fwd-extrusion-speed-std=0.1
       and --fwd-extrusion-speed-std=1000 are equivalent."
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --fwd-extrusion-speed-std
@@ -235,7 +223,6 @@ inputs:
       - float
     doc: "Location parameter (mu) of the generalized extreme value distribution used
       to add noise to\n                                  molecular contacts."
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --genextr-location
@@ -245,7 +232,6 @@ inputs:
       - float
     doc: "Scale parameter (sigma) of the generalized extreme value distribution used
       to add noise to\n                                  molecular contacts."
-    default: 5000.0
     inputBinding:
       position: 101
       prefix: --genextr-scale
@@ -255,7 +241,6 @@ inputs:
       - float
     doc: "Shape parameter (xi) of the generalized extreme value distribution used
       to add noise to\n                                  molecular contacts."
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --genextr-shape
@@ -280,7 +265,6 @@ inputs:
       in convergent orientation.\n                                  Setting this to
       1 makes the DNA-binding stability of hard-stalled LEFs identical to that of\n\
       \                                  unobstructed LEFs. Has no effects when --lef-bar-major-collision-prob=0."
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --hard-stall-lef-stability-multiplier
@@ -300,7 +284,6 @@ inputs:
       - float
     doc: "Probability of collision between LEFs and extrusion barriers where barriers
       are pointing\n                                  towards the extrusion direction."
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --lef-bar-major-collision-prob
@@ -310,7 +293,6 @@ inputs:
       - float
     doc: "Probability of collision between LEFs and extrusion barriers where barriers
       are pointing\n                                  away from the extrusion direction."
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --lef-bar-minor-collision-prob
@@ -320,7 +302,6 @@ inputs:
       - float
     doc: Loop extrusion factor (LEF) density expressed as the number of LEF per 
       Mbp of DNA simulated.
-    default: 20.0
     inputBinding:
       position: 101
       prefix: --lef-density
@@ -330,7 +311,6 @@ inputs:
       - float
     doc: Loop extrusion factor (LEF) density expressed as the number of LEF per 
       Mbp of DNA simulated.
-    default: 20.0
     inputBinding:
       position: 101
       prefix: --lefs-per-mbp
@@ -369,7 +349,6 @@ inputs:
       \        This is especially useful when simlating loop extrusion with very few
       LEFs.\n                                  When this is the case, --max-burnin-epochs=100000
       can be used as a very conservative\n                                  threshold."
-    default: inf
     inputBinding:
       position: 101
       prefix: --max-burnin-epochs
@@ -378,7 +357,6 @@ inputs:
       - 'null'
       - int
     doc: Lower bound for the burn-in phase duration.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-burnin-epochs
@@ -388,7 +366,6 @@ inputs:
       - float
     doc: "Location parameter (mu) of the generalized extreme value distribution used
       to add noise to\n                                  molecular contacts."
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --mu
@@ -403,7 +380,6 @@ inputs:
       \          generated across all simulation instances. To achieve good performance
       and CPU utilization\n                                we recommend setting --ncells
       equal to the number of available CPU cores."
-    default: 512
     inputBinding:
       position: 101
       prefix: --ncells
@@ -413,7 +389,6 @@ inputs:
       - boolean
     doc: Toggle on/off normalization of transition and collision probabilities 
       using --probability-normalization-factor.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-normalize-probabilities
@@ -425,7 +400,6 @@ inputs:
       \               LEF positions are aggregated across all simulated cells and
       are written to disk in BigWig format\n                                under
       the prefix specified through --output-prefix."
-    default: false
     inputBinding:
       position: 101
       prefix: --no-track-1d-lef-position
@@ -488,7 +462,6 @@ inputs:
       \                                 - --lef-bar-major-collision-prob\n       \
       \                            - --lef-bar-minor-collision-prob\n            \
       \                       - --probability-of-lef-bypass"
-    default: 8000
     inputBinding:
       position: 101
       prefix: --probability-normalization-factor
@@ -498,7 +471,6 @@ inputs:
       - float
     doc: Probability that two colliding LEFs will avoid collision by bypassing 
       each other.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --probability-of-lef-bypass
@@ -520,7 +492,6 @@ inputs:
       \                                NOTE: MoDLE simulation always take place at
       1 bp resolution.\n                                      This parameter only
       affects the resolution of the output contact matrix."
-    default: 5000
     inputBinding:
       position: 101
       prefix: --resolution
@@ -530,7 +501,6 @@ inputs:
       - int
     doc: Same as --fwd-extrusion-speed but for extrusion units moving in 3'-5' 
       direction.
-    default: 4000
     inputBinding:
       position: 101
       prefix: --rev-extrusion-speed
@@ -540,7 +510,6 @@ inputs:
       - float
     doc: Same as --fwd-extrusion-speed-std but for extrusion units moving in 
       3'-5' direction.
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --rev-extrusion-speed-std
@@ -549,7 +518,6 @@ inputs:
       - 'null'
       - int
     doc: Base seed to use for random number generation.
-    default: 0
     inputBinding:
       position: 101
       prefix: --seed
@@ -559,7 +527,6 @@ inputs:
       - float
     doc: "Scale parameter (sigma) of the generalized extreme value distribution used
       to add noise to\n                                  molecular contacts."
-    default: 5000.0
     inputBinding:
       position: 101
       prefix: --sigma
@@ -593,7 +560,6 @@ inputs:
       is passed, entries for chromosomes without barriers\n                      \
       \            will still be written to the output .cool file, but no contacts
       will be generated for\n                                  those chromosomes."
-    default: false
     inputBinding:
       position: 101
       prefix: --skip-chromosomes-wo-barriers
@@ -614,7 +580,6 @@ inputs:
       orientation. Setting this to 1 makes the DNA-binding stability\n           \
       \                       of soft-stalled LEFs identical to that of unobstructed
       LEFs.\n                                  Has no effects when --lef-bar-minor-collision-prob=0."
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --soft-stall-lef-stability-multiplier
@@ -624,7 +589,6 @@ inputs:
       - string
     doc: Simulation stopping criterion. Should be one of contact-density or 
       simulation-epochs.
-    default: contact-density
     inputBinding:
       position: 101
       prefix: --stopping-criterion
@@ -640,7 +604,6 @@ inputs:
       correspond to TADs.\n                                  Use \"0\" to disable
       sampling of TAD contacts.\n                                  Use \"inf\" to
       disable sampling of loop contacts."
-    default: 5.0
     inputBinding:
       position: 101
       prefix: --tad-to-loop-contact-ratio
@@ -670,7 +633,6 @@ inputs:
       \   Each simulation instance will run exactly --target-number-of-epochs epochs
       after burn-in\n                                phase. Has no effect when --stopping-criterion=\"\
       contact-density\"."
-    default: 2000
     inputBinding:
       position: 101
       prefix: --target-number-of-epochs
@@ -684,7 +646,6 @@ inputs:
       high core count machines a slightly better performance can usually be obtained\n\
       \                                by setting --threads equal to the number of
       physical CPU cores."
-    default: 20
     inputBinding:
       position: 101
       prefix: --threads
@@ -714,7 +675,6 @@ inputs:
       - float
     doc: "Shape parameter (xi) of the generalized extreme value distribution used
       to add noise to\n                                  molecular contacts."
-    default: 0.001
     inputBinding:
       position: 101
       prefix: --xi

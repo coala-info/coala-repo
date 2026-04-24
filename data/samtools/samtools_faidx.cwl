@@ -63,7 +63,6 @@ inputs:
   - 'null'
   - int
   doc: Length of FASTA sequence line.
-  default: 60
   inputBinding:
     position: 103
     prefix: --length
@@ -107,7 +106,6 @@ inputs:
   - 'null'
   - int
   doc: Number of additional threads to use
-  default: 0
   inputBinding:
     position: 103
     prefix: --threads

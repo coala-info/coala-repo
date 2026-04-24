@@ -26,7 +26,6 @@ inputs:
       - string
     doc: 'Specify the database to download SRA sequencing data. Note: new SRA files
       may not be available in the ENA database, even if you specify "ena".'
-    default: ena
     inputBinding:
       position: 101
       prefix: --database
@@ -75,7 +74,6 @@ inputs:
       - 'null'
       - Directory
     doc: The output directory. If not exists, it will be created
-    default: .
     inputBinding:
       position: 101
       prefix: --output
@@ -94,7 +92,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the protocol only when downloading files from ENA
-    default: ftp
     inputBinding:
       position: 101
       prefix: --protocol
@@ -119,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Download speed limit (MB/s)
-    default: 1000
     inputBinding:
       position: 101
       prefix: --speed
@@ -129,7 +125,6 @@ inputs:
       - int
     doc: The number of threads to use for converting SRA to FASTQ files or 
       compressing FASTQ files
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads

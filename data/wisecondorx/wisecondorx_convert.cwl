@@ -14,7 +14,6 @@ inputs:
       - 'null'
       - float
     doc: Bin size (bp)
-    default: 5000.0
     inputBinding:
       position: 102
       prefix: --binsize
@@ -23,7 +22,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not remove duplicates
-    default: false
     inputBinding:
       position: 102
       prefix: --normdup
@@ -32,7 +30,6 @@ inputs:
       - 'null'
       - File
     doc: Fasta reference to be used during cram conversion
-    default: None
     inputBinding:
       position: 102
       prefix: --reference

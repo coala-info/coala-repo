@@ -86,7 +86,6 @@ inputs:
     doc: 'Assembler: Unicycler (default; better quality), SPAdes (faster, may use
       mate-pair reads), Flye (long reads only with short-reads polishing), MEGAHIT
       (short reads only).'
-    default: unicycler
     inputBinding:
       position: 109
       prefix: --assembler
@@ -154,7 +153,6 @@ inputs:
       - string
     doc: CheckM working mode. Default is checking for domain-specific 
       marker-set.
-    default: taxonomy_wf
     inputBinding:
       position: 109
       prefix: --checkm-mode
@@ -187,7 +185,6 @@ inputs:
       - 'null'
       - string
     doc: 'Prokaryotic domain: Bacteria or Archaea, default: Bacteria.'
-    default: Bacteria
     inputBinding:
       position: 109
       prefix: --domain
@@ -197,7 +194,6 @@ inputs:
       - float
     doc: Set between 0 and 1 to filter reads with entropy below that value. 
       Higher is more stringent. Default = -1, filtering disabled.
-    default: -1
     inputBinding:
       position: 109
       prefix: --entropy-cutoff
@@ -224,7 +220,6 @@ inputs:
       - 'null'
       - string
     doc: 'First step of the pipeline. Default: readqc'
-    default: readqc
     inputBinding:
       position: 109
       prefix: --first-step
@@ -274,7 +269,6 @@ inputs:
       - 'null'
       - string
     doc: "Genus name if known, default: 'Unknown'."
-    default: Unknown
     inputBinding:
       position: 109
       prefix: --genus
@@ -283,7 +277,6 @@ inputs:
       - 'null'
       - string
     doc: 'Last step of the pipeline. Default: annotation'
-    default: annotation
     inputBinding:
       position: 109
       prefix: --last-step
@@ -308,7 +301,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum copies of each k-mer to include in size estimation, default: 10.'
-    default: 10
     inputBinding:
       position: 109
       prefix: --mash-kmer-copies
@@ -317,7 +309,6 @@ inputs:
       - 'null'
       - string
     doc: 'Memory limit in GB, default: 8.'
-    default: '8'
     inputBinding:
       position: 109
       prefix: --memory-limit
@@ -382,7 +373,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of polishing iterations, default: 1.'
-    default: 1
     inputBinding:
       position: 109
       prefix: --polishing-iterations
@@ -399,7 +389,6 @@ inputs:
       - 'null'
       - int
     doc: 'Base quality cutoff for short reads, default: 18'
-    default: 18
     inputBinding:
       position: 109
       prefix: --quality-cutoff
@@ -416,7 +405,6 @@ inputs:
       - 'null'
       - string
     doc: "Species name if known, , default: 'sp.'"
-    default: sp.
     inputBinding:
       position: 109
       prefix: --species
@@ -442,7 +430,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of CPU threads to use (where possible), default: 4.'
-    default: 4
     inputBinding:
       position: 109
       prefix: --threads
@@ -451,7 +438,6 @@ inputs:
       - 'null'
       - int
     doc: 'Translation table: 11/4, default: 11.'
-    default: 11
     inputBinding:
       position: 109
       prefix: --translation-table
@@ -468,7 +454,6 @@ inputs:
       - 'null'
       - string
     doc: 'Unicycler: assember mode: conservative, normal (default) or bold.'
-    default: normal
     inputBinding:
       position: 109
       prefix: --unicycler-mode

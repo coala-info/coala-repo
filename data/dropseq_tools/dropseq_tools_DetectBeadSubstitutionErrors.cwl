@@ -16,7 +16,6 @@ inputs:
         items: File
     doc: read one or more arguments files and add them to the command line This 
       argument may be specified 0 or more times.
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --arguments_file
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: The cell barcode tag.
-    default: XC
     inputBinding:
       position: 101
       prefix: --CELL_BARCODE_TAG
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - string
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -44,7 +41,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -53,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -70,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: The edit distance to collapse barcodes
-    default: 1
     inputBinding:
       position: 101
       prefix: --EDIT_DISTANCE
@@ -80,7 +74,6 @@ inputs:
       - boolean
     doc: Remove smaller barcodes that map at the edit distance to multiple 
       larger barcodes.
-    default: true
     inputBinding:
       position: 101
       prefix: --FILTER_AMBIGUOUS
@@ -95,7 +88,6 @@ inputs:
       but we don't want to arbitrarily combine barcodes together. Set this to 0 
       to combine everything...but testing has revealed that this will combine 
       barcodes capriciously so we don't recommend it!
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --FREQ_COMMON_SUBSTITUTION
@@ -111,7 +103,6 @@ inputs:
       - 'null'
       - string
     doc: Heap size to allocate for the JVM.
-    default: 4g
     inputBinding:
       position: 101
       prefix: -m
@@ -123,7 +114,6 @@ inputs:
       of records stored in RAM before spilling to disk. Increasing this number 
       reduces the number of file handles needed to sort the file, and increases 
       the amount of RAM needed.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -135,7 +125,6 @@ inputs:
       collapse. Setting this number higher speeds up cleanup. Very small 
       barcodes will not contribute many UMIs, so are not a useful return on 
       investment. Suggested values range from 20 to 200.
-    default: 20
     inputBinding:
       position: 101
       prefix: --MIN_UMIS_PER_CELL
@@ -144,7 +133,6 @@ inputs:
       - 'null'
       - string
     doc: The molecular barcode tag.
-    default: XM
     inputBinding:
       position: 101
       prefix: --MOLECULAR_BARCODE_TAG
@@ -153,7 +141,6 @@ inputs:
       - 'null'
       - string
     doc: Number of threads to use. Defaults to 1.
-    default: 1
     inputBinding:
       position: 101
       prefix: --NUM_THREADS
@@ -163,7 +150,6 @@ inputs:
       - string
     doc: The output barcode tag for the newly collapsed barcodes. Defaults to 
       the CELL_BARCODE_TAG if not set.
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --OUT_CELL_BARCODE_TAG
@@ -172,7 +158,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -182,7 +167,6 @@ inputs:
       - string
     doc: Read quality filter. Filters all reads lower than this mapping quality.
       Defaults to 10. Set to 0 to not filter reads by map quality.
-    default: 10
     inputBinding:
       position: 101
       prefix: --READ_MQ
@@ -191,7 +175,6 @@ inputs:
       - 'null'
       - File
     doc: Reference sequence file.
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
@@ -200,7 +183,6 @@ inputs:
       - 'null'
       - boolean
     doc: display hidden arguments
-    default: false
     inputBinding:
       position: 101
       prefix: --showHidden
@@ -212,7 +194,6 @@ inputs:
     doc: One or more directories with space available to be used by this program
       for temporary storage of working files This argument may be specified 0 or
       more times.
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --TMP_DIR
@@ -222,7 +203,6 @@ inputs:
       - string
     doc: Which base to scan for UMI bias. This is typically the last base of the
       UMI. If set to null, program will use the last base of the UMI.
-    default: 'null'
     inputBinding:
       position: 101
       prefix: --UMI_BIAS_BASE
@@ -232,7 +212,6 @@ inputs:
       - string
     doc: The amount of bias (all UMIs for a cell have the same base) at which a 
       cell barcode is considered biased?
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --UMI_BIAS_THRESHOLD
@@ -242,7 +221,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -252,7 +230,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -264,7 +241,6 @@ inputs:
       stringency to SILENT can improve performance when processing a BAM file in
       which variable-length data (read, qualities, tags) do not otherwise need 
       to be decoded.
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
@@ -273,7 +249,6 @@ inputs:
       - 'null'
       - string
     doc: Control verbosity of logging.
-    default: INFO
     inputBinding:
       position: 101
       prefix: --VERBOSITY

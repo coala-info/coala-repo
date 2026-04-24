@@ -25,7 +25,6 @@ inputs:
       - boolean
     doc: 'Included positive and negative regulons in the analysis (default: no, i.e.
       only positive).'
-    default: false
     inputBinding:
       position: 103
       prefix: --all_modules
@@ -41,7 +40,6 @@ inputs:
       - float
     doc: The threshold used for calculating the AUC of a feature as fraction of 
       ranked genes
-    default: 0.05
     inputBinding:
       position: 103
       prefix: --auc_threshold
@@ -59,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: The size of the module chunks assigned to a node in the dask graph
-    default: 100
     inputBinding:
       position: 103
       prefix: --chunk_size
@@ -111,7 +108,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum FDR in motif similarity to use when annotating enriched motifs
-    default: 0.001
     inputBinding:
       position: 103
       prefix: --max_similarity_fdr
@@ -120,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum number of genes in a module
-    default: 20
     inputBinding:
       position: 103
       prefix: --min_genes
@@ -129,7 +124,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum orthologous identity to use when annotating enriched motifs
-    default: 0.0
     inputBinding:
       position: 103
       prefix: --min_orthologous_identity
@@ -138,7 +132,6 @@ inputs:
       - 'null'
       - string
     doc: The mode to be used for computing
-    default: custom_multiprocessing
     inputBinding:
       position: 103
       prefix: --mode
@@ -148,7 +141,6 @@ inputs:
       - float
     doc: The Normalized Enrichment Score (NES) threshold for finding enriched 
       features
-    default: 3.0
     inputBinding:
       position: 103
       prefix: --nes_threshold
@@ -166,7 +158,6 @@ inputs:
       - int
     doc: The number of workers to use. Only valid if using dask_multiprocessing,
       custom_multiprocessing or local as mode.
-    default: 20
     inputBinding:
       position: 103
       prefix: --num_workers
@@ -176,7 +167,6 @@ inputs:
       - int
     doc: The rank threshold used for deriving the target genes of an enriched 
       motif
-    default: 5000
     inputBinding:
       position: 103
       prefix: --rank_threshold
@@ -196,7 +186,6 @@ inputs:
         items: float
     doc: The first method to create the TF-modules based on the best targets for
       each transcription factor
-    default:
       - 0.75
       - 0.9
     inputBinding:
@@ -209,7 +198,6 @@ inputs:
         items: int
     doc: The alternative way to create the TF-modules is to select the best 
       regulators for each gene.
-    default:
       - 5
       - 10
       - 50
@@ -222,7 +210,6 @@ inputs:
       - type: array
         items: int
     doc: The second method is to select the top targets for a given TF.
-    default:
       - 50
     inputBinding:
       position: 103

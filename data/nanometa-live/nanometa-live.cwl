@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the configuration file.
-    default: config.yaml
     inputBinding:
       position: 101
       prefix: --config

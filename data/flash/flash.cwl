@@ -65,7 +65,6 @@ inputs:
       - 'null'
       - int
     doc: Average fragment length.
-    default: 180
     inputBinding:
       position: 103
       prefix: --fragment-len
@@ -74,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Average fragment standard deviation.
-    default: 18
     inputBinding:
       position: 103
       prefix: --fragment-len-stddev
@@ -108,7 +106,6 @@ inputs:
       - float
     doc: Maximum allowed ratio between the number of mismatched base pairs and the
       overlap length.
-    default: 0.25
     inputBinding:
       position: 103
       prefix: --max-mismatch-density
@@ -117,7 +114,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum overlap length expected in approximately 90% of read pairs.
-    default: 65
     inputBinding:
       position: 103
       prefix: --max-overlap
@@ -127,7 +123,6 @@ inputs:
       - int
     doc: The minimum required overlap length between two reads to provide a confident
       overlap.
-    default: 10
     inputBinding:
       position: 103
       prefix: --min-overlap
@@ -137,7 +132,6 @@ inputs:
       - int
     doc: The smallest ASCII value of the characters used to represent quality values
       of bases in FASTQ files (33 or 64).
-    default: 33
     inputBinding:
       position: 103
       prefix: --phred-offset
@@ -154,7 +148,6 @@ inputs:
       - 'null'
       - int
     doc: Average read length.
-    default: 100
     inputBinding:
       position: 103
       prefix: --read-len

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Run clustering from 2 to k.
-    default: 4
     inputBinding:
       position: 101
       prefix: -k
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Do not plot probability per sample. Write to TSV only. [off=0,on=1]
-    default: 0
     inputBinding:
       position: 101
       prefix: -q
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - string
     doc: Type of library reads in your input BAMs. (single, paired, or mixed)
-    default: paired
     inputBinding:
       position: 101
       prefix: -lib
@@ -43,7 +40,6 @@ inputs:
       - int
     doc: Require at least m reads to be mapped to a reference to be included in 
       clustering
-    default: 1000
     inputBinding:
       position: 101
       prefix: -m
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - int
     doc: Set to 1 if all profs should be plotted individually. Slow!
-    default: 0
     inputBinding:
       position: 101
       prefix: -plotall

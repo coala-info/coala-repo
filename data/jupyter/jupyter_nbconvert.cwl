@@ -29,7 +29,6 @@ inputs:
       - 'null'
       - string
     doc: Full path of a config file.
-    default: ''
     inputBinding:
       position: 102
       prefix: --config
@@ -71,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Set the log level by value or name.
-    default: 30
     inputBinding:
       position: 102
       prefix: --log-level
@@ -80,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: The nbformat version to write. Use this to downgrade notebooks.
-    default: 4
     inputBinding:
       position: 102
       prefix: --nbformat
@@ -90,7 +87,6 @@ inputs:
       - string
     doc: "overwrite base name use for output files. can only be used when converting\n\
       \    one notebook at a time."
-    default: ''
     inputBinding:
       position: 102
       prefix: --output
@@ -100,7 +96,6 @@ inputs:
       - Directory
     doc: "Directory to write output to.  Leave blank to output to the current\n  \
       \  directory"
-    default: ''
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -109,7 +104,6 @@ inputs:
       - 'null'
       - string
     doc: PostProcessor class used to write the results of the conversion
-    default: ''
     inputBinding:
       position: 102
       prefix: --post
@@ -120,7 +114,6 @@ inputs:
     doc: "The URL prefix for reveal.js. This can be a a relative URL for a local copy\n\
       \    of reveal.js, or point to a CDN.\n    For speaker notes to work, a local
       reveal.js prefix must be used."
-    default: ''
     inputBinding:
       position: 102
       prefix: --reveal-prefix
@@ -146,7 +139,6 @@ inputs:
       - 'null'
       - string
     doc: Name of the template file to use
-    default: ''
     inputBinding:
       position: 102
       prefix: --template
@@ -156,7 +148,6 @@ inputs:
       - string
     doc: "The export format to be used, either one of the built-in formats, or a\n\
       \    dotted object name that represents the import path for an `Exporter` class"
-    default: html
     inputBinding:
       position: 102
       prefix: --to
@@ -165,7 +156,6 @@ inputs:
       - 'null'
       - string
     doc: Writer class used to write the  results of the conversion
-    default: FilesWriter
     inputBinding:
       position: 102
       prefix: --writer

@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - File
     doc: input file in fasta/q format
-    default: stdin
     inputBinding:
       position: 101
       prefix: --in
@@ -26,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: size of lines in fasta output. Use 0 for no wrapping
-    default: 0
     inputBinding:
       position: 101
       prefix: --lineWidth

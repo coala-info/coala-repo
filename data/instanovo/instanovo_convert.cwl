@@ -36,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum charge to filter out
-    default: 10
     inputBinding:
       position: 103
       prefix: --max-charge
@@ -57,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Length of saved data shards
-    default: 1000000
     inputBinding:
       position: 103
       prefix: --shard-size

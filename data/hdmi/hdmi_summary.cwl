@@ -40,7 +40,6 @@ inputs:
       - 'null'
       - float
     doc: Abundance threshold
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --threshold

@@ -37,7 +37,6 @@ inputs:
       - 'null'
       - string
     doc: skip variants with these impacts (comma-separated)
-    default: 
       splice_region,intergenic_region,intron,non_coding_transcript,non_coding,upstream_gene,downstream_gene,non_coding_transcript_exon,NMD_transcript,5_prime_UTR,3_prime_UTR
     inputBinding:
       position: 101
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - File
     doc: input VCF
-    default: /dev/stdin
     inputBinding:
       position: 101
       prefix: --vcf

@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - float
     doc: maximum e-value to infer reference ORFs
-    default: '1e-10'
     inputBinding:
       position: 101
       prefix: --evalue
@@ -65,7 +64,6 @@ inputs:
       - 'null'
       - float
     doc: minimum % identity to remove redundant transcripts
-    default: 97
     inputBinding:
       position: 101
       prefix: --id
@@ -74,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: kmer size for generating sequence features
-    default: 3
     inputBinding:
       position: 101
       prefix: --kmer
@@ -91,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: maximum ORF length (bp) to evaluate
-    default: 10000
     inputBinding:
       position: 101
       prefix: --max-orf
@@ -100,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: memory limit (MB) for CD-HIT (default = 2000, unlimited = 0)
-    default: 2000
     inputBinding:
       position: 101
       prefix: --memory
@@ -109,7 +104,6 @@ inputs:
       - 'null'
       - int
     doc: minimum ORF length (bp) to evaluate
-    default: 300
     inputBinding:
       position: 101
       prefix: --min-orf
@@ -158,7 +152,6 @@ inputs:
       - 'null'
       - int
     doc: step-size for overlapping kmers
-    default: kmer-length/2
     inputBinding:
       position: 101
       prefix: --step
@@ -167,7 +160,6 @@ inputs:
       - 'null'
       - string
     doc: query strands to call ORFs (both/minus/plus)
-    default: both
     inputBinding:
       position: 101
       prefix: --strand
@@ -182,7 +174,6 @@ inputs:
       - 'null'
       - int
     doc: number of CPU threads
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

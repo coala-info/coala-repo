@@ -26,7 +26,6 @@ inputs:
       distribution renormalized as appropriate. As another example, if "--min-alignment-prob=0.90
       --alignment-policy=all" is given, then all alignments with posterior probability
       at least 0.90 will be used.'
-    default: sample
     inputBinding:
       position: 101
       prefix: --alignment-policy
@@ -44,7 +43,6 @@ inputs:
       reference transcript) with posterior probability, as calculated by RSEM, 
       strictly less than this value will be discarded. Noise reads, with 
       posterior probability exactly 0, are always discarded.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --min-alignment-prob
@@ -62,7 +60,6 @@ inputs:
       corresponding to --min-overlap=2, --min-overlap=3, and --min-overlap=4 You might
       use this option to compute ideal assemblies at all overlap sizes, e.g., --min-overlap=0,76
       for 76-length reads.'
-    default: '0'
     inputBinding:
       position: 101
       prefix: --min-overlap

@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - string
     doc: refer to Celltypist for another model
-    default: Immune_All_Low.pkl
     inputBinding:
       position: 103
       prefix: --celltypist_model
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - double
     doc: see kraken2 manual
-    default: 0.05
     inputBinding:
       position: 103
       prefix: --confidence
@@ -49,7 +47,6 @@ inputs:
       - 'null'
       - int
     doc: refer to Seurat for more details
-    default: 30
     inputBinding:
       position: 103
       prefix: --dims
@@ -59,7 +56,6 @@ inputs:
       - boolean
     doc: 'Doublet filter. [default: True] #this may fail on some samples and on low
       memory. If you have a problem, try False.'
-    default: true
     inputBinding:
       position: 103
       prefix: --doublet_filter
@@ -94,7 +90,6 @@ inputs:
       - 'null'
       - int
     doc: seurat defaults, recommended
-    default: 2000
     inputBinding:
       position: 103
       prefix: --highly_variable_features
@@ -111,7 +106,6 @@ inputs:
       - 'null'
       - int
     doc: Total CPUs.
-    default: 1
     inputBinding:
       position: 103
       prefix: --jobs
@@ -127,7 +121,6 @@ inputs:
     type:
       - 'null'
       - double
-    default: 0.25
     inputBinding:
       position: 103
       prefix: --logfc_threshold
@@ -136,7 +129,6 @@ inputs:
       - 'null'
       - string
     doc: you may install others from Bioconductor, this is for human
-    default: org.Hs.eg.db
     inputBinding:
       position: 103
       prefix: --mapping
@@ -145,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: plot summary marker plots for top markers
-    default: 20
     inputBinding:
       position: 103
       prefix: --marker_plots_per_cluster_n
@@ -154,7 +145,6 @@ inputs:
       - 'null'
       - int
     doc: seurat default, nFeature_RNA, 5000 can be a good cutoff
-    default: Inf
     inputBinding:
       position: 103
       prefix: --max_features
@@ -164,7 +154,6 @@ inputs:
       - int
     doc: seurat default, nCount_RNA, to filter potential doublets, doublet 
       filtering is already default, so keep this Inf
-    default: Inf
     inputBinding:
       position: 103
       prefix: --max_molecules
@@ -183,7 +172,6 @@ inputs:
       - 'null'
       - string
     doc: Metadata column for differential expression analysis
-    default: condition
     inputBinding:
       position: 103
       prefix: --metadata_column
@@ -191,7 +179,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 1
     inputBinding:
       position: 103
       prefix: --microbiome_min_cells
@@ -199,7 +186,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 3
     inputBinding:
       position: 103
       prefix: --microbiome_min_features
@@ -208,7 +194,6 @@ inputs:
       - 'null'
       - int
     doc: seurat default, recommended
-    default: 3
     inputBinding:
       position: 103
       prefix: --min_cells
@@ -217,7 +202,6 @@ inputs:
       - 'null'
       - int
     doc: seurat default, recommended, nFeature_RNA
-    default: 200
     inputBinding:
       position: 103
       prefix: --min_features
@@ -226,7 +210,6 @@ inputs:
       - 'null'
       - int
     doc: see kraken2 manual
-    default: 4
     inputBinding:
       position: 103
       prefix: --min_hit_groups
@@ -236,7 +219,6 @@ inputs:
       - int
     doc: seurat default, nCount_RNA, min_features usually handles this so keep 
       it 0
-    default: 0
     inputBinding:
       position: 103
       prefix: --min_molecules
@@ -245,7 +227,6 @@ inputs:
       - 'null'
       - double
     doc: only show clusters more than % of cells on the legend
-    default: 5
     inputBinding:
       position: 103
       prefix: --min_percentage_to_plot
@@ -253,7 +234,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: LogNormalize
     inputBinding:
       position: 103
       prefix: --normalization_method
@@ -262,7 +242,6 @@ inputs:
       - 'null'
       - string
     doc: alternatives https://www.genome.jp/kegg/catalog/org_list.html
-    default: hsa
     inputBinding:
       position: 103
       prefix: --organism
@@ -272,7 +251,6 @@ inputs:
       - double
     doc: Maximum mitochondrial gene percentage cutoff, for example, 5 or 10, 
       write "auto" for auto detection
-    default: 10
     inputBinding:
       position: 103
       prefix: --percent_mt
@@ -281,7 +259,6 @@ inputs:
       - 'null'
       - double
     doc: Ribosomal genes minimum percentage (0-100), default no filtering
-    default: 0
     inputBinding:
       position: 103
       prefix: --percent_rp
@@ -290,7 +267,6 @@ inputs:
       - 'null'
       - string
     doc: refer to Seurat for more details
-    default: cca
     inputBinding:
       position: 103
       prefix: --reduction
@@ -307,7 +283,6 @@ inputs:
       - 'null'
       - double
     doc: Resolution for cluster detection, write "auto" for auto detection
-    default: 0.8
     inputBinding:
       position: 103
       prefix: --resolution
@@ -315,7 +290,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 10000
     inputBinding:
       position: 103
       prefix: --scale_factor
@@ -323,7 +297,6 @@ inputs:
     type:
       - 'null'
       - boolean
-    default: true
     inputBinding:
       position: 103
       prefix: --show_labels
@@ -333,7 +306,6 @@ inputs:
       - string
     doc: 
       https://bioconductor.org/packages/release/data/experiment/vignettes/celldex/inst/doc/userguide.html#1_Overview
-    default: BlueprintEncodeData
     inputBinding:
       position: 103
       prefix: --singler_ref
@@ -342,7 +314,6 @@ inputs:
       - 'null'
       - string
     doc: 'for cellchat, #only human or mouse is accepted'
-    default: human
     inputBinding:
       position: 103
       prefix: --species
@@ -352,7 +323,6 @@ inputs:
       - string
     doc: available options "domain", "kingdom", "phylum", "class", "order", 
       "family", "genus", "species"
-    default: genus
     inputBinding:
       position: 103
       prefix: --taxa
@@ -360,7 +330,6 @@ inputs:
     type:
       - 'null'
       - string
-    default: wilcox
     inputBinding:
       position: 103
       prefix: --test_use
@@ -368,7 +337,6 @@ inputs:
     type:
       - 'null'
       - boolean
-    default: false
     inputBinding:
       position: 103
       prefix: --tsne_markers_plot
@@ -376,7 +344,6 @@ inputs:
     type:
       - 'null'
       - boolean
-    default: true
     inputBinding:
       position: 103
       prefix: --umap_markers_plot
@@ -394,7 +361,6 @@ inputs:
       - 'null'
       - string
     doc: seurat defaults, recommended
-    default: vst
     inputBinding:
       position: 103
       prefix: --variable_selection_method

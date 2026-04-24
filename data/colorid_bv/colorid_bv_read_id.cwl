@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: Sets size of batch of reads to be processed in parallel
-    default: 50000
     inputBinding:
       position: 101
       prefix: --batch
@@ -27,7 +26,6 @@ inputs:
       - int
     doc: Collects matches for subset of kmers indicated, using this subset to more
       rapidly find hits for the remainder of the kmers
-    default: 3
     inputBinding:
       position: 101
       prefix: --bitvector_sample
@@ -37,7 +35,6 @@ inputs:
       - int
     doc: down-sample k-mers used for read classification; increases speed at cost
       of decreased sensitivity
-    default: 1
     inputBinding:
       position: 101
       prefix: --down_sample
@@ -47,7 +44,6 @@ inputs:
       - int
     doc: Parameter to correct for false positives, maybe increased for larger searches.
       Adjust for larger datasets
-    default: 3
     inputBinding:
       position: 101
       prefix: --fp_correct
@@ -67,7 +63,6 @@ inputs:
       - int
     doc: kmers with nucleotides below this minimum phred score will be excluded from
       the analyses
-    default: 15
     inputBinding:
       position: 101
       prefix: --quality

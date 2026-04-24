@@ -11,7 +11,6 @@ inputs:
       - int
     doc: Number of records to use for automatic library evaluation. Set to 0 to evaluate
       all. In range [0..inf].
-    default: 100000
     inputBinding:
       position: 101
       prefix: --auto-library-num-records
@@ -21,7 +20,6 @@ inputs:
       - int
     doc: Radius around breakpoints to extract for remapping. Set to 0 to use maximal
       fragment size. In range [0..inf].
-    default: 0
     inputBinding:
       position: 101
       prefix: --breakpoint-window-radius
@@ -31,7 +29,6 @@ inputs:
       - int
     doc: The number of clipping positions to find in one window such that the window
       is not discarded.
-    default: 5
     inputBinding:
       position: 101
       prefix: --clipping-min-coverage
@@ -41,7 +38,6 @@ inputs:
       - int
     doc: Smallest number of characters that have to be soft-clipped such that the
       alignment is not ignored.
-    default: 15
     inputBinding:
       position: 101
       prefix: --clipping-min-length
@@ -50,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Window radius to use for clipping position clustering. In range [0..inf].
-    default: 20
     inputBinding:
       position: 101
       prefix: --clipping-window-radius
@@ -60,7 +55,6 @@ inputs:
       - int
     doc: Filter out calls at locations that have a higher coverage than this number.
       Set to 0 to disable filter. In range [0..inf].
-    default: 200
     inputBinding:
       position: 101
       prefix: --filter-max-coverage
@@ -69,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Ignore alignments with a quality below this value. In range [0..inf].
-    default: 0
     inputBinding:
       position: 101
       prefix: --filter-min-aln-quality
@@ -78,7 +71,6 @@ inputs:
       - 'null'
       - string
     doc: Default orientation. One of F+, F-, R+, and R-.
-    default: R+
     inputBinding:
       position: 101
       prefix: --fragment-default-orientation
@@ -88,7 +80,6 @@ inputs:
       - float
     doc: Factor to multiple fragment size stddev with to get allowed error. In range
       [0..inf].
-    default: 8
     inputBinding:
       position: 101
       prefix: --fragment-size-factor
@@ -97,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Median fragment size. In range [0..inf].
-    default: 250
     inputBinding:
       position: 101
       prefix: --fragment-size-median
@@ -106,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Fragment size standard deviation. In range [0..inf].
-    default: 3
     inputBinding:
       position: 101
       prefix: --fragment-size-std-dev
@@ -127,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal alignment length. In range [0..inf].
-    default: 2000
     inputBinding:
       position: 101
       prefix: --max-alignment-length
@@ -136,7 +124,6 @@ inputs:
       - 'null'
       - string
     doc: Algorithm for OEA cluster selection. One of chaining and set_cover.
-    default: chaining
     inputBinding:
       position: 101
       prefix: --oea-cluster-selection
@@ -145,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: Smallest number of EOA reads to support an insertion. In range [1..inf].
-    default: 4
     inputBinding:
       position: 101
       prefix: --oea-min-support
@@ -155,7 +141,6 @@ inputs:
       - int
     doc: Smallest number of EOA reads on each side to support an insertion. In range
       [1..inf].
-    default: 2
     inputBinding:
       position: 101
       prefix: --oea-min-support-each-side
@@ -164,7 +149,6 @@ inputs:
       - 'null'
       - string
     doc: The name of the individual in the output.
-    default: individual
     inputBinding:
       position: 101
       prefix: --out-individual-name
@@ -173,7 +157,6 @@ inputs:
       - 'null'
       - string
     doc: The types of variants to write out. One of insertion.
-    default: insertion
     inputBinding:
       position: 101
       prefix: --out-variation-type
@@ -190,7 +173,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use for the realignment. In range [1..inf].
-    default: 1
     inputBinding:
       position: 101
       prefix: --realignment-num-threads

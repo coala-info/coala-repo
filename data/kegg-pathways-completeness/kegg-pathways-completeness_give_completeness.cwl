@@ -61,7 +61,6 @@ inputs:
   - id: list_separator
     type: string
     doc: Separator for list option
-    default: comma
     inputBinding:
       position: 101
       prefix: --list-separator

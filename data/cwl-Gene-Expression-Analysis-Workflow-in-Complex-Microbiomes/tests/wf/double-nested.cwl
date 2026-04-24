@@ -36,7 +36,6 @@ steps:
       inp2:
         source: create-tar/tar
       ex2:
-        default: "Hello.java"
     out: [classout]
 
   create-tar:

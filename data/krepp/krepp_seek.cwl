@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum Hamming distance for a k-mer to match.
-    default: 4
     inputBinding:
       position: 101
       prefix: --hdist-th

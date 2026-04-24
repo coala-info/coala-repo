@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality
-    default: 20
     inputBinding:
       position: 101
       prefix: -q
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality
-    default: 20
     inputBinding:
       position: 101
       prefix: -m
@@ -34,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum number of supporting reads
-    default: 2
     inputBinding:
       position: 101
       prefix: -n

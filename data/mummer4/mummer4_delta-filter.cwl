@@ -26,7 +26,6 @@ inputs:
       - float
     doc: Set the maximum alignment overlap for -r and -q options as a percent of
       the alignment length [0, 100]
-    default: 100.0
     inputBinding:
       position: 102
       prefix: -o
@@ -35,7 +34,6 @@ inputs:
       - 'null'
       - int
     doc: Set the minimum alignment length
-    default: 0
     inputBinding:
       position: 102
       prefix: -l
@@ -45,7 +43,6 @@ inputs:
       - float
     doc: Set the minimum alignment uniqueness, i.e. percent of the alignment 
       matching to unique reference AND query sequence [0, 100]
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -u
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - float
     doc: Set the minimum alignment identity [0, 100]
-    default: 0.0
     inputBinding:
       position: 102
       prefix: -i

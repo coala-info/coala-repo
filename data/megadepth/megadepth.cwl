@@ -63,7 +63,6 @@ inputs:
     doc: Size of buffer for reading BigWig files, critical to use a large value 
       (~1GB) for remote BigWigs. Default setting should be fine for most uses, 
       but raise if very slow on a remote BigWig.
-    default: 1GB
     inputBinding:
       position: 102
       prefix: --bwbuffer
@@ -91,7 +90,6 @@ inputs:
       consider in the same BigWig query window (a form of binning) for 
       performance. This determines the number of times the BigWig index is 
       queried.
-    default: 2200
     inputBinding:
       position: 102
       prefix: --distance
@@ -288,7 +286,6 @@ inputs:
       - 'null'
       - string
     doc: Statistic to run on the intervals provided by --annotation
-    default: sum
     inputBinding:
       position: 102
       prefix: --op
@@ -362,7 +359,6 @@ inputs:
       sorted by sort -k1,1 -k2,2n. Default is to assume sorted and check for 
       unsorted positions, if unsorted positions are found, will fall back to 
       slower version.
-    default: false
     inputBinding:
       position: 102
       prefix: --unsorted

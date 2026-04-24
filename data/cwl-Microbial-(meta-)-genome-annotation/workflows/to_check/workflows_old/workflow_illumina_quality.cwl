@@ -61,12 +61,10 @@ inputs:
     type: int?
     doc: Number of threads to use for computational processes
     label: Number of threads
-    default: 2
   memory:
     type: int?
     doc: Maximum memory usage in MegaBytes
     label: Maximum memory in MB
-    default: 4000
 
   forward_reads:
     type: File[]
@@ -83,18 +81,15 @@ inputs:
     type: boolean?
     doc: Skip FastQC analyses of raw input reads (default false)
     label: Skip QC unfiltered
-    default: false
   skip_qc_filtered:
     type: boolean?
     doc: Skip FastQC analyses of filtered input reads (default false)
     label: Skip QC filtered
-    default: false
 
   filter_rrna:
     type: boolean?
     doc: Optionally remove rRNA sequences from the reads (default false)
     label: filter rRNA
-    default: false
   filter_references:
     type: File[]?
     doc: References fasta file(s) for filtering    
@@ -104,7 +99,6 @@ inputs:
     type: boolean?
     doc: Remove exact duplicate reads with fastp
     label: Deduplicate reads
-    default: false
 
   kraken2_confidence:
     type: float?
@@ -114,32 +108,27 @@ inputs:
     type: Directory[]?
     label: Kraken2 database
     doc: Kraken2 database location, multiple databases is possible
-    default: []
     loadListing: no_listing
   kraken2_standard_report:
     type: boolean
     label: Kraken2 standard report
     doc: Also output Kraken2 standard report with per read classification. These can be large. (default false)
-    default: false    
 
   keep_reference_mapped_reads:
     type: boolean?
     doc: Keep with reads mapped to the given reference (default false)
     label: Keep mapped reads
-    default: false
   prepare_reference:
     type: boolean
     doc: |
           Prepare references to a single fasta file and unique headers (default true).
           When false a single fasta file as reference is expected with unique headers
     label: Prepare references
-    default: true
 
   step:
     type: int?
     doc: Step number for output folder numbering (default 1)
     label: Output Step number
-    default: 1
 
   destination:
     type: string?
@@ -280,7 +269,6 @@ steps:
       prepare_reference: prepare_reference
 
       make_headers_unique:
-        default: prepare_reference
       fasta_input: filter_references
       output_name: identifier
     out: [fasta_db]
@@ -389,7 +377,6 @@ steps:
           - fastp/out_reverse_reads
         pickValue: first_non_null
       paired_end:
-        default: true
     out: [sample_report, standard_report]
 
   illumina_kraken2_filtered:
@@ -408,7 +395,6 @@ steps:
       forward_reads: phix_filter/out_forward_reads
       reverse_reads: phix_filter/out_reverse_reads
       paired_end:
-        default: true
     out: [sample_report, standard_report]
   
   illumina_kraken2_compress:
@@ -469,7 +455,6 @@ steps:
         linkMerge: merge_flattened
         pickValue: all_non_null
       destination:
-        default: "Illumina_quality_reports"
     out:
       [results]
 
@@ -485,7 +470,6 @@ steps:
         linkMerge: merge_flattened
         pickValue: all_non_null
       destination:
-        default: "Kraken2_Illumina"
     run: ../expressions/files_to_folder.cwl
     out:
       [results]  

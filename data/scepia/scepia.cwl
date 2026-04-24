@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - float
     doc: Resolution for Louvain/Leiden clustering
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --cluster-resolution
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Method for finding marker genes (e.g., 'wilcoxon', 't-test')
-    default: wilcoxon
     inputBinding:
       position: 102
       prefix: --marker-genes-method
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Number of components for dimensionality reduction
-    default: 2
     inputBinding:
       position: 102
       prefix: --n-components
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Number of neighbors for UMAP/t-SNE
-    default: 15
     inputBinding:
       position: 102
       prefix: --n-neighbors
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - string
     doc: Normalization method (e.g., 'log1p', 'scran')
-    default: log1p
     inputBinding:
       position: 102
       prefix: --normalization-method
@@ -60,7 +55,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory to save results
-    default: .
     inputBinding:
       position: 102
       prefix: --output-dir
@@ -126,7 +120,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: 1
     inputBinding:
       position: 102
       prefix: --threads

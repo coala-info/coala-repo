@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - string
     doc: 'Parsimony algorithm for resolving ambiguities: acctran, deltran, or downpass'
-    default: acctran
     inputBinding:
       position: 101
       prefix: --algo
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - File
     doc: Alignment input file
-    default: stdin
     inputBinding:
       position: 101
       prefix: --align
@@ -29,7 +27,6 @@ inputs:
       - 'null'
       - string
     doc: Input tree format (newick, nexus, phyloxml, or nextstrain)
-    default: newick
     inputBinding:
       position: 101
       prefix: --format
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: Input tree
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Output log file
-    default: stdout
     inputBinding:
       position: 101
       prefix: --log
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Alignment is in phylip? default : false (Fasta)'
-    default: false
     inputBinding:
       position: 101
       prefix: --phylip
@@ -82,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: 'Random Seed: -1 = nano seconds since 1970/01/01 00:00:00'
-    default: -1
     inputBinding:
       position: 101
       prefix: --seed
@@ -91,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads (Max=20)
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

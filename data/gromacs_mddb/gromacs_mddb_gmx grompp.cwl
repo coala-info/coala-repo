@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - File
     doc: Energy file
-    default: ener.edr
     inputBinding:
       position: 101
       prefix: -e
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - File
     doc: Index file
-    default: index.ndx
     inputBinding:
       position: 101
       prefix: -n
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - File
     doc: grompp input file with MD parameters
-    default: grompp.mdp
     inputBinding:
       position: 101
       prefix: -f
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - File
     doc: 'Structure file: gro g96 pdb brk ent esp tpr'
-    default: conf.gro
     inputBinding:
       position: 101
       prefix: -c
@@ -57,7 +53,6 @@ inputs:
       - int
     doc: "Number of allowed warnings during input processing. Not for normal\n   \
       \        use and may generate unstable systems"
-    default: 0
     inputBinding:
       position: 101
       prefix: -maxwarn
@@ -65,7 +60,6 @@ inputs:
     type:
       - 'null'
       - boolean
-    default: false
     inputBinding:
       position: 101
       prefix: --no-rmvsbds
@@ -73,7 +67,6 @@ inputs:
     type:
       - 'null'
       - boolean
-    default: false
     inputBinding:
       position: 101
       prefix: --no-renum
@@ -81,7 +74,6 @@ inputs:
     type:
       - 'null'
       - boolean
-    default: true
     inputBinding:
       position: 101
       prefix: --no-zero
@@ -89,7 +81,6 @@ inputs:
     type:
       - 'null'
       - boolean
-    default: true
     inputBinding:
       position: 101
       prefix: --no-v
@@ -98,7 +89,6 @@ inputs:
       - 'null'
       - File
     doc: Input file for QM program
-    default: topol-qmmm.inp
     inputBinding:
       position: 101
       prefix: -qmi
@@ -107,7 +97,6 @@ inputs:
       - 'null'
       - File
     doc: 'Full precision trajectory: trr cpt tng'
-    default: rotref.trr
     inputBinding:
       position: 101
       prefix: -ref
@@ -115,7 +104,6 @@ inputs:
     type:
       - 'null'
       - boolean
-    default: true
     inputBinding:
       position: 101
       prefix: --rmvsbds
@@ -123,7 +111,6 @@ inputs:
     type:
       - 'null'
       - boolean
-    default: true
     inputBinding:
       position: 101
       prefix: --renum
@@ -132,7 +119,6 @@ inputs:
       - 'null'
       - File
     doc: 'Structure file: gro g96 pdb brk ent esp tpr'
-    default: restraint.gro
     inputBinding:
       position: 101
       prefix: -r
@@ -141,7 +127,6 @@ inputs:
       - 'null'
       - File
     doc: 'Structure file: gro g96 pdb brk ent esp tpr'
-    default: restraint.gro
     inputBinding:
       position: 101
       prefix: -rb
@@ -149,7 +134,6 @@ inputs:
     type:
       - 'null'
       - boolean
-    default: false
     inputBinding:
       position: 101
       prefix: --zero
@@ -158,7 +142,6 @@ inputs:
       - 'null'
       - float
     doc: Take frame at or first after this time.
-    default: -1.0
     inputBinding:
       position: 101
   - id: topology_file
@@ -166,7 +149,6 @@ inputs:
       - 'null'
       - File
     doc: Topology file
-    default: topol.top
     inputBinding:
       position: 101
       prefix: -p
@@ -175,7 +157,6 @@ inputs:
       - 'null'
       - File
     doc: 'Full precision trajectory: trr cpt tng'
-    default: traj.trr
     inputBinding:
       position: 101
       prefix: -t
@@ -183,7 +164,6 @@ inputs:
     type:
       - 'null'
       - boolean
-    default: false
     inputBinding:
       position: 101
       prefix: --v

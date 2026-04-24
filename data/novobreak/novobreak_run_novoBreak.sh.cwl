@@ -34,7 +34,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output directory. Defaults to the current working directory (PWD).
-    default: PWD
     inputBinding:
       position: 6
 outputs:

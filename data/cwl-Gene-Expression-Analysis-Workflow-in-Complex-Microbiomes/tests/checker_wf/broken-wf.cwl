@@ -8,22 +8,16 @@ requirements:
 inputs:
   letters0:
     type: [string, int]
-    default: "a0"
   letters1:
     type: string[]
-    default: ["a1", "b1"]
   letters2:
     type: [string, int]
-    default: "a2"
   letters3:
     type: string[]
-    default: ["a3", "b3"]
   letters4:
     type: int
-    default: 4
   letters5:
     type: string[]
-    default: ["a5", "b5", "c5"]
 
 outputs:
   all:

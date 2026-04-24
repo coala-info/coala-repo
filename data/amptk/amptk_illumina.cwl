@@ -11,7 +11,6 @@ inputs:
       - 'null'
       - int
     doc: Number of mis-matches allowed in index
-    default: 1
     inputBinding:
       position: 101
   - id: cleanup
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - boolean
     doc: Delete all intermediate files
-    default: false
     inputBinding:
       position: 101
   - id: cpus
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - int
     doc: 'Number of CPUs. Default: auto'
-    default: None
     inputBinding:
       position: 101
   - id: full_length
@@ -35,7 +32,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep only full length reads (no trimming/padding)
-    default: false
     inputBinding:
       position: 101
   - id: fwd_primer
@@ -43,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: Forward Primer (fITS7)
-    default: fITS7
     inputBinding:
       position: 101
       prefix: --fwd_primer
@@ -58,7 +53,6 @@ inputs:
       - 'null'
       - File
     doc: 'Mapping file: QIIME format can have extra meta data columns'
-    default: None
     inputBinding:
       position: 101
       prefix: --mapping_file
@@ -67,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: Software to use for PE read merging
-    default: vsearch
     inputBinding:
       position: 101
   - id: min_len
@@ -75,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length to keep
-    default: 100
     inputBinding:
       position: 101
   - id: output_folder
@@ -83,7 +75,6 @@ inputs:
       - 'null'
       - Directory
     doc: Name for output folder
-    default: amptk-illumina
     inputBinding:
       position: 101
       prefix: --out
@@ -92,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: Pad with Ns to a set length
-    default: off
     inputBinding:
       position: 101
       prefix: -p
@@ -101,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: Number of mis-matches in primer
-    default: 2
     inputBinding:
       position: 101
   - id: read_length
@@ -109,7 +98,6 @@ inputs:
       - 'null'
       - int
     doc: Read length, i.e. 2 x 300 bp = 300
-    default: None
     inputBinding:
       position: 101
   - id: reads
@@ -117,7 +105,6 @@ inputs:
       - 'null'
       - string
     doc: PE or forward reads
-    default: paired
     inputBinding:
       position: 101
   - id: require_primer
@@ -125,7 +112,6 @@ inputs:
       - 'null'
       - string
     doc: Require Fwd primer to be present
-    default: on
     inputBinding:
       position: 101
   - id: rescue_forward
@@ -133,7 +119,6 @@ inputs:
       - 'null'
       - string
     doc: Rescue Not-merged forward reads
-    default: on
     inputBinding:
       position: 101
   - id: rev_primer
@@ -141,7 +126,6 @@ inputs:
       - 'null'
       - string
     doc: Reverse Primer (ITS4)
-    default: ITS4
     inputBinding:
       position: 101
       prefix: --rev_primer
@@ -150,7 +134,6 @@ inputs:
       - 'null'
       - boolean
     doc: Input files are from NCBI SRA not direct from illumina
-    default: false
     inputBinding:
       position: 101
   - id: trim_len
@@ -158,7 +141,6 @@ inputs:
       - 'null'
       - int
     doc: Trim length for reads
-    default: 300
     inputBinding:
       position: 101
       prefix: --trim_len
@@ -167,7 +149,6 @@ inputs:
       - 'null'
       - string
     doc: USEARCH executable
-    default: usearch9
     inputBinding:
       position: 101
       prefix: --usearch

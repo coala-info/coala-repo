@@ -38,7 +38,6 @@ inputs:
       - 'null'
       - string
     doc: How should the internal tools be run?
-    default: local
     inputBinding:
       position: 102
   - id: log
@@ -47,7 +46,6 @@ inputs:
       - File
     doc: Where to record log(s). Use '-' for no logging. Default is no logging 
       for the local executor, but otherwise "pyani-plus.log".
-    default: pyani-plus.log
     inputBinding:
       position: 102
   - id: mode
@@ -55,7 +53,6 @@ inputs:
       - 'null'
       - string
     doc: Nucmer mode for ANIm.
-    default: mum
     inputBinding:
       position: 102
   - id: name
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: Run name.
-    default: N genomes using METHOD
     inputBinding:
       position: 102
   - id: temp

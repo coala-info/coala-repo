@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: maximum count threshold (<=255)
-    default: 255
     inputBinding:
       position: 102
       prefix: -cmax
@@ -39,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: minimum count threshold (>=1, or 0 for first minimum)
-    default: 1
     inputBinding:
       position: 102
       prefix: -cmin
@@ -80,7 +78,6 @@ inputs:
       - 'null'
       - float
     doc: target output error rate
-    default: 0.001
     inputBinding:
       position: 102
       prefix: -e
@@ -89,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 1
     inputBinding:
       position: 102
       prefix: -t

@@ -25,7 +25,6 @@ inputs:
       - 'null'
       - boolean
     doc: Add the output name as plot title
-    default: false
     inputBinding:
       position: 104
       prefix: --add-plot-title
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: p-value cut-off for calling a CBS breakpoint.
-    default: 0.0001
     inputBinding:
       position: 104
       prefix: --alpha
@@ -44,7 +42,6 @@ inputs:
       - boolean
     doc: Outputs tab-delimited .bed files, containing the most important 
       information
-    default: false
     inputBinding:
       position: 104
       prefix: --bed
@@ -55,7 +52,6 @@ inputs:
     doc: When beta is given, --zscore is ignored and a ratio cut-off is used to 
       call aberrations. Beta is a number between 0 (liberal) and 1 
       (conservative) and is optimally close to the purity.
-    default: None
     inputBinding:
       position: 104
       prefix: --beta
@@ -64,7 +60,6 @@ inputs:
       - 'null'
       - File
     doc: 'Blacklist that masks regions in output, structure of header-less file: chr...(/t)startpos(/t)endpos(/n)'
-    default: None
     inputBinding:
       position: 104
       prefix: --blacklist
@@ -74,7 +69,6 @@ inputs:
       - boolean
     doc: Uses cairo bitmap type for plotting. Might be necessary for certain 
       setups.
-    default: false
     inputBinding:
       position: 104
       prefix: --cairo
@@ -83,7 +77,6 @@ inputs:
       - 'null'
       - string
     doc: Force WisecondorX to analyze this case as a male (M) or a female (F)
-    default: None
     inputBinding:
       position: 104
       prefix: --gender
@@ -93,7 +86,6 @@ inputs:
       - int
     doc: Regions with distances > mean + sd * 3 will be masked. Number of 
       masking cycles.
-    default: 5
     inputBinding:
       position: 104
       prefix: --maskrepeats
@@ -102,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum amount of sensible reference bins per target bin.
-    default: 150
     inputBinding:
       position: 104
       prefix: --minrefbins
@@ -111,7 +102,6 @@ inputs:
       - 'null'
       - boolean
     doc: Outputs .png plots
-    default: false
     inputBinding:
       position: 104
       prefix: --plot
@@ -120,7 +110,6 @@ inputs:
       - 'null'
       - int
     doc: Seed for segmentation algorithm
-    default: None
     inputBinding:
       position: 104
       prefix: --seed
@@ -129,7 +118,6 @@ inputs:
       - 'null'
       - string
     doc: y-axis limits for plotting. e.g. [-2,2]
-    default: def
     inputBinding:
       position: 104
       prefix: --ylim
@@ -138,7 +126,6 @@ inputs:
       - 'null'
       - float
     doc: z-score cut-off for aberration calling.
-    default: 5
     inputBinding:
       position: 104
       prefix: --zscore

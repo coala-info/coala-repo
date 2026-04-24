@@ -10,7 +10,6 @@ inputs:
       items: File
     doc: Path to input SNV Profiles. Should have .npy, .npz or .npy.gz 
       extension.
-    default: []
     inputBinding:
       position: 1
   - id: input_names
@@ -18,7 +17,6 @@ inputs:
       type: array
       items: File
     doc: Path to input name files.
-    default: []
     inputBinding:
       position: 2
   - id: clade
@@ -29,7 +27,6 @@ inputs:
     doc: Clade to process from input files. Processing all if not specified. 
       Names must correspond to the taxonomy of the respective database [e.g. 
       t__SGB10068 for MetaPhlAn or ref_mOTU_v3_00095 for mOTUs]
-    default: None
     inputBinding:
       position: 103
       prefix: --clade
@@ -38,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Skipping clades with fewer than `clade-min-samples` samples.
-    default: 2
     inputBinding:
       position: 103
       prefix: --clade-min-samples
@@ -47,7 +43,6 @@ inputs:
       - 'null'
       - boolean
     doc: Delete masked marker and global positions from array instead of np.nan
-    default: false
     inputBinding:
       position: 103
       prefix: --delete-pos
@@ -57,7 +52,6 @@ inputs:
       - float
     doc: Remove positions covered by fewer than `global-pos-min-f-vcov` fraction
       of samples.
-    default: false
     inputBinding:
       position: 103
       prefix: --global-pos-min-f-vcov
@@ -67,7 +61,6 @@ inputs:
       - int
     doc: Remove positions covered by fewer than `global-pos-min-n-vcov` number 
       of samples. Overrides `global-pos-min-f-vcov`.
-    default: 2
     inputBinding:
       position: 103
       prefix: --global-pos-min-n-vcov
@@ -76,7 +69,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep only positions that are monomorphic in all samples
-    default: false
     inputBinding:
       position: 103
       prefix: --keep-mono
@@ -85,7 +77,6 @@ inputs:
       - 'null'
       - boolean
     doc: Keep only positions that are polymorphic in at least one sample
-    default: false
     inputBinding:
       position: 103
       prefix: --keep-poly
@@ -94,7 +85,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to MetaPhlAn or mOTUs clade marker database.
-    default: None
     inputBinding:
       position: 103
       prefix: --marker-dir
@@ -104,7 +94,6 @@ inputs:
       - File
     doc: List of Markers to keep for selected clade. Requires `clade` to be 
       specified. Overrides `marker-remove`.
-    default: None
     inputBinding:
       position: 103
       prefix: --marker-keep
@@ -114,7 +103,6 @@ inputs:
       - File
     doc: List of Markers to remove for selected clade. Requires `clade` to be 
       specified.
-    default: None
     inputBinding:
       position: 103
       prefix: --marker-remove
@@ -123,7 +111,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Nucleotides to be cut from each two sides of a marker.
-    default: 50
     inputBinding:
       position: 103
       prefix: --marker-trunc-len
@@ -132,7 +119,6 @@ inputs:
       - 'null'
       - int
     doc: The number of processing units to use.
-    default: 1
     inputBinding:
       position: 103
       prefix: --nprocs
@@ -141,7 +127,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to output directory.
-    default: out_filter/
     inputBinding:
       position: 103
       prefix: --output-dir
@@ -151,7 +136,6 @@ inputs:
       - int
     doc: Remove positions with coverage below `sample-pos-min-n-vcov` 
       nucleotides.
-    default: 1
     inputBinding:
       position: 103
       prefix: --sample-pos-min-n-vcov
@@ -161,7 +145,6 @@ inputs:
       - float
     doc: Remove positions with coverage +-`sample-pos-min-sd-vcov` from the 
       mean.
-    default: 3.0
     inputBinding:
       position: 103
       prefix: --sample-pos-min-sd-vcov
@@ -170,7 +153,6 @@ inputs:
       - 'null'
       - float
     doc: Remove variants with coverage below `sample-var-min-f-vcov` percent.
-    default: 0.05
     inputBinding:
       position: 103
       prefix: --sample-var-min-f-vcov
@@ -180,7 +162,6 @@ inputs:
       - int
     doc: Remove variants with coverage below `sample-var-min-n-vcov` 
       nucleotides.
-    default: 2
     inputBinding:
       position: 103
       prefix: --sample-var-min-n-vcov
@@ -190,7 +171,6 @@ inputs:
       - float
     doc: Remove samples with fraction of horizontal coverage below 
       `samples-min-f-hcov`.
-    default: None
     inputBinding:
       position: 103
       prefix: --samples-min-f-hcov
@@ -199,7 +179,6 @@ inputs:
       - 'null'
       - float
     doc: Remove samples with mean coverage below `samples-min-m-vcov`.
-    default: None
     inputBinding:
       position: 103
       prefix: --samples-min-m-vcov
@@ -208,7 +187,6 @@ inputs:
       - 'null'
       - int
     doc: Remove samples with horizontal coverage below `samples-min-n-hcov`.
-    default: 5000
     inputBinding:
       position: 103
       prefix: --samples-min-n-hcov
@@ -218,7 +196,6 @@ inputs:
       - type: array
         items: File
     doc: Path to names file with subsample of input names.
-    default: []
     inputBinding:
       position: 103
       prefix: --samples-select

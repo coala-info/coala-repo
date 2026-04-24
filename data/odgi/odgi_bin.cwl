@@ -38,7 +38,6 @@ inputs:
       - int
     doc: 'Specify the minimum depth a path needs to have in a bin to actually report
       that bin (default: 1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: --haplo-blocker-min-depth
@@ -48,7 +47,6 @@ inputs:
       - int
     doc: 'Specify the minimum number of paths that need to be present in the bin to
       actually report that bin (default: 1).'
-    default: 1
     inputBinding:
       position: 101
       prefix: --haplo-blocker-min-paths

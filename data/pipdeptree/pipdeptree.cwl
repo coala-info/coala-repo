@@ -99,7 +99,6 @@ inputs:
     doc: Warning control. "suppress" will show warnings but return 0 whether or not
       they are present. "silence" will not show warnings at all and always return
       0. "fail" will show warnings and return 1 if any are present.
-    default: suppress
     inputBinding:
       position: 101
       prefix: --warn

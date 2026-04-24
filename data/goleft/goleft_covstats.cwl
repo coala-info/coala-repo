@@ -24,7 +24,6 @@ inputs:
       - 'null'
       - int
     doc: number of reads to sample for length
-    default: 1000000
     inputBinding:
       position: 102
       prefix: --n

@@ -23,7 +23,6 @@ inputs:
       - string
     doc: "The multiple sequence aligner to use. Default:\n                       \
       \ kalign"
-    default: kalign
     inputBinding:
       position: 102
       prefix: --aligner
@@ -82,7 +81,6 @@ inputs:
       \ subprocesses will be started and everything\n                        will
       be done inside one process. Give \"auto\"\n                        to use as
       many processes as there are CPU\n                        cores. Default: 0."
-    default: '0'
     inputBinding:
       position: 102
       prefix: --processes

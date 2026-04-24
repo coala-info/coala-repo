@@ -38,7 +38,6 @@ inputs:
       - float
     doc: e-value of blast program used for contig identification and annotation.
       Default = 0.00001
-    default: 1e-05
     inputBinding:
       position: 101
       prefix: --blast-eval
@@ -47,7 +46,6 @@ inputs:
       - 'null'
       - int
     doc: Nucleotide identity percentage for a hit to be retained. Default = 50
-    default: 50
     inputBinding:
       position: 101
       prefix: --blast-identity-nucl
@@ -56,7 +54,6 @@ inputs:
       - 'null'
       - int
     doc: Amino acid identity percentage for a hit to be retained. Default = 40
-    default: 40
     inputBinding:
       position: 101
       prefix: --blast-identity-prot
@@ -65,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Percentage of overlap in blast best hit to be retained. Default = 30
-    default: 30
     inputBinding:
       position: 101
       prefix: --blast-size
@@ -84,7 +80,6 @@ inputs:
       - int
     doc: Offset from start and finish to consider when looking for 
       circularization. Default = 200
-    default: 200
     inputBinding:
       position: 101
       prefix: --circular-offset
@@ -93,7 +88,6 @@ inputs:
       - 'null'
       - int
     doc: Size to consider when checking for circularization. Default = 45
-    default: 45
     inputBinding:
       position: 101
       prefix: --circular-size
@@ -143,7 +137,6 @@ inputs:
       - 'null'
       - int
     doc: Size of intron allowed. Default = 5000 bp
-    default: 5000
     inputBinding:
       position: 101
       prefix: --intron-size
@@ -153,7 +146,6 @@ inputs:
       - int
     doc: Maximum number of contigs matching to the reference to keep. Default = 
       0 (unlimited)
-    default: 0
     inputBinding:
       position: 101
       prefix: --max-contig
@@ -162,7 +154,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum size of a contig to be considered. Default = 25000
-    default: 25000
     inputBinding:
       position: 101
       prefix: --max-contig-size
@@ -179,7 +170,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use Megahit for assembly. (Default)
-    default: true
     inputBinding:
       position: 101
       prefix: --megahit
@@ -196,7 +186,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum size of a contig to be considered. Default = 1000
-    default: 1000
     inputBinding:
       position: 101
       prefix: --min-contig-size
@@ -228,7 +217,6 @@ inputs:
     doc: Maximum number of codon steps to be tested on each size of the gene to 
       find the start and stop codon during the annotation step. Default = 5 (30 
       bases)
-    default: 5
     inputBinding:
       position: 101
       prefix: --nwalk
@@ -321,7 +309,6 @@ inputs:
       - 'null'
       - int
     doc: Shortest contig length to be used (MEGAHIT). Default = 100
-    default: 100
     inputBinding:
       position: 101
       prefix: --length
@@ -338,7 +325,6 @@ inputs:
       - 'null'
       - string
     doc: '"arwen"/"mitfi"/"trnascan" tRNA annotater to use.'
-    default: mitfi
     inputBinding:
       position: 101
       prefix: --tRNA-annotation

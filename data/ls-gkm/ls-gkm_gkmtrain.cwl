@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - int
     doc: n-fold cross-validation
-    default: 3
     inputBinding:
       position: 103
       prefix: -v
@@ -29,7 +28,6 @@ inputs:
       - 'null'
       - float
     doc: Epsilon for gkm kernel
-    default: 0.01
     inputBinding:
       position: 103
       prefix: -e
@@ -38,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Number of informative columns
-    default: 7
     inputBinding:
       position: 103
       prefix: -k
@@ -47,7 +44,6 @@ inputs:
       - 'null'
       - int
     doc: 'Kernel type: 1: gkm, 2: l-gkm, 4: wgkm (recommended), 5: l-wgkm'
-    default: 4
     inputBinding:
       position: 103
       prefix: -t
@@ -56,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of gaps
-    default: 2
     inputBinding:
       position: 103
       prefix: -g
@@ -65,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of mismatches
-    default: 3
     inputBinding:
       position: 103
       prefix: -d
@@ -74,7 +68,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum count of a k-mer
-    default: 50.0
     inputBinding:
       position: 103
       prefix: -m
@@ -83,7 +76,6 @@ inputs:
       - 'null'
       - float
     doc: Weight for positive sequences
-    default: 1.0
     inputBinding:
       position: 103
       prefix: -w
@@ -92,7 +84,6 @@ inputs:
       - 'null'
       - float
     doc: Regularization parameter C
-    default: 1.0
     inputBinding:
       position: 103
       prefix: -c
@@ -101,7 +92,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads for parallel processing
-    default: 1
     inputBinding:
       position: 103
       prefix: -T
@@ -110,7 +100,6 @@ inputs:
       - 'null'
       - int
     doc: Word length
-    default: 11
     inputBinding:
       position: 103
       prefix: -l

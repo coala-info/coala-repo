@@ -10,7 +10,6 @@ inputs:
       - float
     doc: 'The beta value for for homozygosity detection (see paper). Default: 0.009.
       Handle with care.'
-    default: 0.009
     inputBinding:
       position: 101
       prefix: --beta
@@ -19,7 +18,6 @@ inputs:
       - 'null'
       - File
     doc: 'Path to config file. Default: config.ini in the same directory as this script'
-    default: config.ini in the same directory as this script
     inputBinding:
       position: 101
       prefix: --config
@@ -35,7 +33,6 @@ inputs:
       - int
     doc: 'Number of enumerations. OptiType will output the optimal solution and the
       top N-1 suboptimal solutions in the results CSV. Default: 1'
-    default: 1
     inputBinding:
       position: 101
       prefix: --enumerate

@@ -13,7 +13,6 @@ inputs:
       4 = flat query-anchored, no identities, 5 = query-anchored no identities and
       blunt ends, 6 = flat query-anchored, no identities and blunt ends, 7 = XML Blast
       output, 8 = tabular, 9 tabular with comment lines, 10 ASN, text, 11 ASN, binary'
-    default: 0
     inputBinding:
       position: 101
       prefix: -m
@@ -22,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: Number of database sequence to show alignments for (B)
-    default: 250
     inputBinding:
       position: 101
       prefix: -b
@@ -31,7 +29,6 @@ inputs:
       - 'null'
       - boolean
     doc: Believe the query defline
-    default: false
     inputBinding:
       position: 101
       prefix: -J
@@ -40,7 +37,6 @@ inputs:
       - 'null'
       - int
     doc: Number of best hits from a region to keep. Off by default.
-    default: 0
     inputBinding:
       position: 101
       prefix: -K
@@ -49,7 +45,6 @@ inputs:
       - 'null'
       - string
     doc: Use composition-based score adjustments for blastp or tblastn
-    default: D
     inputBinding:
       position: 101
       prefix: -C
@@ -58,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: Number of concatenated queries, for blastn and tblastn
-    default: 0
     inputBinding:
       position: 101
       prefix: -B
@@ -67,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: Database
-    default: nr
     inputBinding:
       position: 101
       prefix: -d
@@ -76,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: DB Genetic code (for tblast[nx] only)
-    default: 1
     inputBinding:
       position: 101
       prefix: -D
@@ -85,7 +77,6 @@ inputs:
       - 'null'
       - int
     doc: Number of database sequences to show one-line descriptions for (V)
-    default: 500
     inputBinding:
       position: 101
       prefix: -v
@@ -94,7 +85,6 @@ inputs:
       - 'null'
       - float
     doc: Effective length of the database (use zero for the real size)
-    default: 0
     inputBinding:
       position: 101
       prefix: -z
@@ -103,7 +93,6 @@ inputs:
       - 'null'
       - float
     doc: Effective length of the search space (use zero for the real size)
-    default: 0
     inputBinding:
       position: 101
       prefix: -Y
@@ -112,7 +101,6 @@ inputs:
       - 'null'
       - float
     doc: Expectation value (E)
-    default: 10.0
     inputBinding:
       position: 101
       prefix: -e
@@ -121,7 +109,6 @@ inputs:
       - 'null'
       - string
     doc: Filter query sequence (DUST with blastn, SEG with others)
-    default: T
     inputBinding:
       position: 101
       prefix: -F
@@ -130,7 +117,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force use of the legacy BLAST engine
-    default: false
     inputBinding:
       position: 101
       prefix: -V
@@ -139,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: Frame shift penalty (OOF algorithm for blastx)
-    default: 0
     inputBinding:
       position: 101
       prefix: -w
@@ -148,7 +133,6 @@ inputs:
       - 'null'
       - int
     doc: Cost to extend a gap (-1 invokes default behavior)
-    default: -1
     inputBinding:
       position: 101
       prefix: -E
@@ -157,7 +141,6 @@ inputs:
       - 'null'
       - int
     doc: Cost to open a gap (-1 invokes default behavior)
-    default: -1
     inputBinding:
       position: 101
       prefix: -G
@@ -166,7 +149,6 @@ inputs:
       - 'null'
       - boolean
     doc: Perform gapped alignment (not available with tblastx)
-    default: true
     inputBinding:
       position: 101
       prefix: -g
@@ -183,7 +165,6 @@ inputs:
       - 'null'
       - boolean
     doc: Produce HTML output
-    default: false
     inputBinding:
       position: 101
       prefix: -T
@@ -200,7 +181,6 @@ inputs:
       - 'null'
       - int
     doc: Reward for a nucleotide match (blastn only)
-    default: 1
     inputBinding:
       position: 101
       prefix: -r
@@ -209,7 +189,6 @@ inputs:
       - 'null'
       - string
     doc: Matrix
-    default: BLOSUM62
     inputBinding:
       position: 101
       prefix: -M
@@ -219,7 +198,6 @@ inputs:
       - int
     doc: Length of the largest intron allowed in a translated nucleotide sequence
       when linking multiple distinct alignments.
-    default: 0
     inputBinding:
       position: 101
       prefix: -t
@@ -228,7 +206,6 @@ inputs:
       - 'null'
       - boolean
     doc: MegaBlast search
-    default: false
     inputBinding:
       position: 101
       prefix: -n
@@ -237,7 +214,6 @@ inputs:
       - 'null'
       - int
     doc: Penalty for a nucleotide mismatch (blastn only)
-    default: -3
     inputBinding:
       position: 101
       prefix: -q
@@ -246,7 +222,6 @@ inputs:
       - 'null'
       - int
     doc: 0 for multiple hit, 1 for single hit (does not apply to blastn)
-    default: 0
     inputBinding:
       position: 101
       prefix: -P
@@ -255,7 +230,6 @@ inputs:
       - 'null'
       - int
     doc: Multiple Hits window size, default if zero
-    default: 0
     inputBinding:
       position: 101
       prefix: -A
@@ -264,7 +238,6 @@ inputs:
       - 'null'
       - int
     doc: Number of processors to use
-    default: 1
     inputBinding:
       position: 101
       prefix: -a
@@ -287,7 +260,6 @@ inputs:
       - 'null'
       - File
     doc: Query File
-    default: stdin
     inputBinding:
       position: 101
       prefix: -i
@@ -296,7 +268,6 @@ inputs:
       - 'null'
       - int
     doc: Query Genetic code to use
-    default: 1
     inputBinding:
       position: 101
       prefix: -Q
@@ -314,7 +285,6 @@ inputs:
       - int
     doc: Query strands to search against database (for blast[nx], and tblastx). 3
       is both, 1 is top, 2 is bottom
-    default: 3
     inputBinding:
       position: 101
       prefix: -S
@@ -323,7 +293,6 @@ inputs:
       - 'null'
       - boolean
     doc: Show GI's in deflines
-    default: false
     inputBinding:
       position: 101
       prefix: -I
@@ -333,7 +302,6 @@ inputs:
       - boolean
     doc: Compute locally optimal Smith-Waterman alignments (This option is only available
       for gapped tblastn.)
-    default: false
     inputBinding:
       position: 101
       prefix: -s
@@ -342,7 +310,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold for extending hits, default if zero
-    default: 0
     inputBinding:
       position: 101
       prefix: -f
@@ -351,7 +318,6 @@ inputs:
       - 'null'
       - int
     doc: Word size, default if zero
-    default: 0
     inputBinding:
       position: 101
       prefix: -W
@@ -360,7 +326,6 @@ inputs:
       - 'null'
       - int
     doc: X dropoff value for final gapped alignment in bits (0.0 invokes default behavior)
-    default: 0
     inputBinding:
       position: 101
       prefix: -Z
@@ -369,7 +334,6 @@ inputs:
       - 'null'
       - int
     doc: X dropoff value for gapped alignment (in bits) (zero invokes default behavior)
-    default: 0
     inputBinding:
       position: 101
       prefix: -X
@@ -378,7 +342,6 @@ inputs:
       - 'null'
       - float
     doc: X dropoff value for ungapped extensions in bits (0.0 invokes default behavior)
-    default: 0.0
     inputBinding:
       position: 101
       prefix: -y

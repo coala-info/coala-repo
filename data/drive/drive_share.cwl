@@ -41,7 +41,6 @@ inputs:
       - 'null'
       - boolean
     doc: toggle whether to notify receipients about share
-    default: true
     inputBinding:
       position: 101
       prefix: --notify
@@ -76,7 +75,6 @@ inputs:
       - 'null'
       - boolean
     doc: show step by step information verbosely
-    default: true
     inputBinding:
       position: 101
       prefix: --verbose

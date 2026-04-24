@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - string
     doc: Byte precision on distance matrix
-    default: double / 1e0
     inputBinding:
       position: 101
       prefix: --byte_precision
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Float precision on distance matrix
-    default: double
     inputBinding:
       position: 101
       prefix: --float_precision
@@ -27,7 +25,6 @@ inputs:
       - 'null'
       - File
     doc: Input file
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - float
     doc: Maximum distance
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --max_distance
@@ -45,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum neighbors
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_neighbors
@@ -54,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allocate matrix on the disk
-    default: false
     inputBinding:
       position: 101
       prefix: --mmap
@@ -63,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: Quote taxa
-    default: \0
     inputBinding:
       position: 101
       prefix: --quotes
@@ -72,7 +65,6 @@ inputs:
       - 'null'
       - string
     doc: Separator
-    default: \t
     inputBinding:
       position: 101
       prefix: --separator
@@ -81,7 +73,6 @@ inputs:
       - 'null'
       - string
     doc: Short precision on distance matrix
-    default: double / 1e0
     inputBinding:
       position: 101
       prefix: --short_precision

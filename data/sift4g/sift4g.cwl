@@ -12,7 +12,6 @@ inputs:
     doc: 'algorithm used for alignment, must be one of the following: SW - Smith-Waterman
       local alignment, NW - Needleman-Wunsch global alignment, HW - semiglobal alignment,
       OV - overlap alignment'
-    default: SW
     inputBinding:
       position: 101
       prefix: --algorithm
@@ -22,7 +21,6 @@ inputs:
       - string
     doc: list of cards should be given as an array of card indexes delimited 
       with nothing, for example usage of first two cards is given as --cards 01
-    default: all available CUDA cards
     inputBinding:
       position: 101
       prefix: --cards
@@ -38,7 +36,6 @@ inputs:
       - float
     doc: evalue threshold, alignments with higher evalue are filtered, must be 
       given as a positive float
-    default: 0.0001
     inputBinding:
       position: 101
       prefix: --evalue
@@ -48,7 +45,6 @@ inputs:
       - int
     doc: gap extension penalty, must be given as a positive integer and must be 
       less or equal to gap opening penalty
-    default: 1
     inputBinding:
       position: 101
       prefix: --gap-extend
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - int
     doc: gap opening penalty, must be given as a positive integer
-    default: 10
     inputBinding:
       position: 101
       prefix: --gap-open
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - int
     doc: 'length of kmers used for database search, possible values: 3, 4, 5'
-    default: 5
     inputBinding:
       position: 101
       prefix: --kmer-length
@@ -76,7 +70,6 @@ inputs:
       - string
     doc: 'similarity matrix, can be one of the following: BLOSUM_45, BLOSUM_50, BLOSUM_62,
       BLOSUM_80, BLOSUM_90, BLOSUM_30, BLOSUM_70, BLOSUM_250'
-    default: BLOSUM_62
     inputBinding:
       position: 101
       prefix: --matrix
@@ -85,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: maximum number of alignments to be outputted
-    default: 400
     inputBinding:
       position: 101
       prefix: --max-aligns
@@ -94,7 +86,6 @@ inputs:
       - 'null'
       - int
     doc: number of database sequences passed on to the Smith-Waterman part
-    default: 5000
     inputBinding:
       position: 101
       prefix: --max-candidates
@@ -103,7 +94,6 @@ inputs:
       - 'null'
       - float
     doc: represents alignment diversity, used to output only a set of alignments
-    default: 2.75
     inputBinding:
       position: 101
       prefix: --median-threshold
@@ -114,7 +104,6 @@ inputs:
     doc: 'out format for the alignment file, must be one of the following: bm0 - blast
       m0 output format, bm8 - blast m8 tabular output format, bm9 - blast m9 commented
       tabular output format, light - score-name tabbed output'
-    default: bm9
     inputBinding:
       position: 101
       prefix: --outfmt
@@ -128,7 +117,6 @@ inputs:
     type:
       - 'null'
       - int
-    default: 100
     inputBinding:
       position: 101
       prefix: --seq-id
@@ -148,7 +136,6 @@ inputs:
     doc: directory containing substitution files for each query (extension 
       .subst) files must have the same name as their corresponding query in 
       FASTA file
-    default: current directory
     inputBinding:
       position: 101
       prefix: --subst
@@ -157,7 +144,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads used in thread pool
-    default: 8
     inputBinding:
       position: 101
       prefix: --threads

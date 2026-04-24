@@ -20,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: 'Alphabet for export: AminoAcids, Nucleotides'
-    default: AminoAcids
     inputBinding:
       position: 103
       prefix: --exportAlphabet
@@ -30,7 +29,6 @@ inputs:
       - string
     doc: 'Type of export: Mutations, PairwiseAlignments, GlobalAlignment, PositionTable,
       MutationTable'
-    default: Mutations
     inputBinding:
       position: 103
       prefix: --exportKind
@@ -39,7 +37,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Include reference sequence in the export: yes or no'
-    default: no
     inputBinding:
       position: 103
       prefix: --exportReferenceSequence
@@ -48,7 +45,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Include insertions in the export: yes or no'
-    default: no
     inputBinding:
       position: 103
       prefix: --exportWithInsertions
@@ -57,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: Penalty for extending a gap
-    default: 3.3
     inputBinding:
       position: 103
       prefix: --gapExtensionPenalty
@@ -66,7 +61,6 @@ inputs:
       - 'null'
       - float
     doc: Penalty for opening a gap
-    default: 10.0
     inputBinding:
       position: 103
       prefix: --gapOpenPenalty
@@ -75,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum number of allowed frame shifts
-    default: 3
     inputBinding:
       position: 103
       prefix: --maxFrameShifts
@@ -92,7 +85,6 @@ inputs:
       - 'null'
       - boolean
     doc: 'Show progress: yes or no'
-    default: no
     inputBinding:
       position: 103
       prefix: --progress
@@ -101,7 +93,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use
-    default: all cpus available
     inputBinding:
       position: 103
       prefix: --threads

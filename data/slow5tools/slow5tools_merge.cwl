@@ -27,7 +27,6 @@ inputs:
       - 'null'
       - int
     doc: Number of records loaded to the memory at once
-    default: 4096
     inputBinding:
       position: 102
       prefix: --batchsize
@@ -36,7 +35,6 @@ inputs:
       - 'null'
       - boolean
     doc: Retain information in auxiliary fields during the conversion
-    default: true
     inputBinding:
       position: 102
       prefix: --lossless
@@ -54,7 +52,6 @@ inputs:
       - 'null'
       - string
     doc: Record compression method [zlib] (only for blow5 format)
-    default: zlib
     inputBinding:
       position: 102
       prefix: --compress
@@ -63,7 +60,6 @@ inputs:
       - 'null'
       - string
     doc: Signal compression method [svb-zd] (only for blow5 format)
-    default: svb-zd
     inputBinding:
       position: 102
       prefix: --sig-compress
@@ -72,7 +68,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads
-    default: 8
     inputBinding:
       position: 102
       prefix: --threads

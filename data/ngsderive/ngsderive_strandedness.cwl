@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable DEBUG log level.
-    default: false
     inputBinding:
       position: 102
       prefix: --debug
@@ -25,7 +24,6 @@ inputs:
       - 'null'
       - File
     doc: Gene model as a GFF/GTF file.
-    default: None
     inputBinding:
       position: 102
       prefix: --gene-model
@@ -35,7 +33,6 @@ inputs:
       - int
     doc: At most, search this many times for genes that satisfy our search 
       criteria. Default is 10 * n-genes.
-    default: None
     inputBinding:
       position: 102
       prefix: --max-iterations-per-try
@@ -46,7 +43,6 @@ inputs:
     doc: When inconclusive, the test will repeat until this many tries have been
       reached. Evidence of previous attempts is saved and reused, leading to a 
       larger sample size with multiple attempts.
-    default: 3
     inputBinding:
       position: 102
       prefix: --max-tries
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum MAPQ to consider for reads.
-    default: 30
     inputBinding:
       position: 102
       prefix: --min-mapq
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Filter any genes that don't have at least `m` reads.
-    default: 10
     inputBinding:
       position: 102
       prefix: --minimum-reads-per-gene
@@ -73,7 +67,6 @@ inputs:
       - 'null'
       - int
     doc: How many genes to sample.
-    default: 1000
     inputBinding:
       position: 102
       prefix: --n-genes
@@ -98,7 +91,6 @@ inputs:
       - 'null'
       - boolean
     doc: Only consider protein coding genes
-    default: true
     inputBinding:
       position: 102
       prefix: --only-protein-coding-genes
@@ -107,7 +99,6 @@ inputs:
       - 'null'
       - boolean
     doc: Contain one entry per read group.
-    default: true
     inputBinding:
       position: 102
       prefix: --split-by-rg
@@ -116,7 +107,6 @@ inputs:
       - 'null'
       - boolean
     doc: Enable INFO log level.
-    default: false
     inputBinding:
       position: 102
       prefix: --verbose

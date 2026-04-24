@@ -22,7 +22,6 @@ inputs:
       - 'null'
       - float
     doc: Threshold of Interaction Strength
-    default: 0.2
     inputBinding:
       position: 102
       prefix: --strength

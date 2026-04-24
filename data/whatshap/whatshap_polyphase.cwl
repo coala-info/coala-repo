@@ -26,7 +26,6 @@ inputs:
     doc: 'Strategy to determine block borders. 0 yields the longest blocks with more
       switch errors, 5 has the shortest blocks with lowest switch error rate (default:
       4).'
-    default: 4
     inputBinding:
       position: 103
       prefix: --block-cut-sensitivity
@@ -81,7 +80,6 @@ inputs:
       - 'null'
       - int
     doc: 'Minimum mapping quality (default: 20)'
-    default: 20
     inputBinding:
       position: 103
       prefix: --mapping-quality
@@ -91,7 +89,6 @@ inputs:
       - int
     doc: 'Minimum required read overlap for internal read clustering stage (default:
       2).'
-    default: 2
     inputBinding:
       position: 103
       prefix: --min-overlap
@@ -142,7 +139,6 @@ inputs:
       - int
     doc: 'Skip supplementary alignments further than DIST bp away from the primary
       alignment (default: 100000)'
-    default: 100000
     inputBinding:
       position: 103
       prefix: --supplementary-distance
@@ -152,7 +148,6 @@ inputs:
       - string
     doc: 'Store phasing information with PS tag (standardized) or HP tag (used by
       GATK ReadBackedPhasing) (default: PS)'
-    default: PS
     inputBinding:
       position: 103
       prefix: --tag
@@ -161,7 +156,6 @@ inputs:
       - 'null'
       - int
     doc: 'Maximum number of CPU threads used (default: 1).'
-    default: 1
     inputBinding:
       position: 103
       prefix: --threads

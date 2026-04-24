@@ -152,7 +152,6 @@ inputs:
       - 'null'
       - float
     doc: Specifies tick density, between 0 and 1.0.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -d

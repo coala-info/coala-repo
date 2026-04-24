@@ -24,7 +24,6 @@ inputs:
       - string
     doc: 'String with entity fusion strategy name. One from list: harmonize, union,
       larger.'
-    default: harmonize
     inputBinding:
       position: 101
       prefix: --entity-fusion-strategy
@@ -76,7 +75,6 @@ inputs:
       - 'null'
       - string
     doc: 'String with entity type name. For example: cell, nuclei.'
-    default: cell
     inputBinding:
       position: 101
       prefix: --output-entity-type

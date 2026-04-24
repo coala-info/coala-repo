@@ -11,7 +11,6 @@ inputs:
       - type: array
         items: File
     doc: Input file(s)
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input
@@ -28,7 +27,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum coverage
-    default: 50.0%
     inputBinding:
       position: 101
       prefix: --min_cov
@@ -37,7 +35,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum overlapping length
-    default: 1
     inputBinding:
       position: 101
       prefix: --min_len
@@ -46,7 +43,6 @@ inputs:
       - 'null'
       - int
     doc: Output flags
-    default: 1
     inputBinding:
       position: 101
       prefix: --flag
@@ -55,7 +51,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum proximity between SNPs
-    default: 0
     inputBinding:
       position: 101
       prefix: --proximity
@@ -64,7 +59,6 @@ inputs:
       - 'null'
       - string
     doc: Target reference
-    default: None
     inputBinding:
       position: 101
       prefix: --reference

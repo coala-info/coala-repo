@@ -48,7 +48,6 @@ inputs:
     doc: For the dominant cell type within a subcluster, the minimum proportion 
       of cells required to support naming of the subcluster by this cell type. 
       Ignored if `--majority-voting` is not set.
-    default: 0
     inputBinding:
       position: 101
       prefix: --min-prop
@@ -60,7 +59,6 @@ inputs:
       prediction (`best_match`), or enable a multi-label classification 
       (`prob_match`), which assigns 0 (i.e., unassigned), 1, or >=2 cell type 
       labels to each query cell.
-    default: best_match
     inputBinding:
       position: 101
       prefix: --mode
@@ -70,7 +68,6 @@ inputs:
       - string
     doc: Model used for predictions. If not provided, default to using the 
       `Immune_All_Low.pkl` model.
-    default: Immune_All_Low.pkl
     inputBinding:
       position: 101
       prefix: --model
@@ -83,7 +80,6 @@ inputs:
       If not provided, default to using a heuristic over-clustering approach 
       according to the size of input data. Ignored if `--majority-voting` is not
       set.
-    default: auto
     inputBinding:
       position: 101
       prefix: --over-clustering
@@ -93,7 +89,6 @@ inputs:
       - float
     doc: Probability threshold for the multi-label classification. Ignored if 
       `--mode` is `best_match`.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --p-thres

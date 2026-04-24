@@ -83,7 +83,6 @@ inputs:
       - 'null'
       - int
     doc: specify qcov parameter for blast
-    default: 30
     inputBinding:
       position: 101
       prefix: --qcov_hsp
@@ -92,7 +91,6 @@ inputs:
       - 'null'
       - int
     doc: number of threads
-    default: 4
     inputBinding:
       position: 101
       prefix: -t

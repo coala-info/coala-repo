@@ -87,7 +87,6 @@ inputs:
     doc: Enable the credential lookup via the keyring library if user input is 
       allowed. Specify which mechanism to use [auto, disabled, import, 
       subprocess].
-    default: auto
     inputBinding:
       position: 103
       prefix: --keyring-provider
@@ -172,7 +171,6 @@ inputs:
       - int
     doc: Maximum number of retries each connection should attempt (default 5 
       times).
-    default: 5
     inputBinding:
       position: 103
       prefix: --retries
@@ -181,7 +179,6 @@ inputs:
       - 'null'
       - int
     doc: Set the socket timeout (default 15 seconds).
-    default: 15
     inputBinding:
       position: 103
       prefix: --timeout

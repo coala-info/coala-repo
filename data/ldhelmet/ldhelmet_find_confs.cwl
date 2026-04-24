@@ -18,7 +18,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 1
     inputBinding:
       position: 102
       prefix: --num_threads
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: Window size.
-    default: 50
     inputBinding:
       position: 102
       prefix: --window_size

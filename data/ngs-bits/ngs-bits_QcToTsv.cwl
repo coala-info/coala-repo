@@ -18,7 +18,6 @@ inputs:
       - File
     doc: OBO file to use. If unset, uses the default file compiled into 
       ngs-bits.
-    default: ''
     inputBinding:
       position: 101
       prefix: -obo

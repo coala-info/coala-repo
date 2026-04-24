@@ -11,7 +11,6 @@ inputs:
       - boolean
     doc: Use CDS features in the GenBank input as genes instead of running 
       Pyrodigal.
-    default: false
     inputBinding:
       position: 101
       prefix: --cds
@@ -20,7 +19,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove overlapping domains by best P-value.
-    default: false
     inputBinding:
       position: 101
       prefix: --disentangle

@@ -10,7 +10,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for abblast.
-    default: /usr/local/bin
     inputBinding:
       position: 101
       prefix: --abblast_dir
@@ -27,7 +26,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for crossmatch.
-    default: /usr/local/bin
     inputBinding:
       position: 101
       prefix: --crossmatch_dir
@@ -36,7 +34,6 @@ inputs:
       - 'null'
       - string
     doc: Default search engine for RepeatMasker.
-    default: rmblast
     inputBinding:
       position: 101
       prefix: --default_search_engine
@@ -54,7 +51,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for hmmer.
-    default: /usr/local/bin
     inputBinding:
       position: 101
       prefix: --hmmer_dir
@@ -63,7 +59,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory where RepeatMasker libraries are located.
-    default: /usr/local/share/RepeatMasker/Libraries/
     inputBinding:
       position: 101
       prefix: --repeatmasker_libdir
@@ -72,7 +67,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory for rmblast.
-    default: /usr/local/bin
     inputBinding:
       position: 101
       prefix: --rmblast_dir
@@ -81,7 +75,6 @@ inputs:
       - 'null'
       - File
     doc: Path to the trf program.
-    default: /usr/local/bin/trf
     inputBinding:
       position: 101
       prefix: --trf_program

@@ -22,7 +22,6 @@ inputs:
       - float
     doc: Alignment must cover at least FRACTION of the read to appear in the 
       cover report.
-    default: 0.01
     inputBinding:
       position: 103
       prefix: --minimum-cover-fraction
@@ -31,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum read length. Ignore reads that are shorter.
-    default: 1
     inputBinding:
       position: 103
       prefix: --minimum-length
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality
-    default: 0
     inputBinding:
       position: 103
       prefix: --quality

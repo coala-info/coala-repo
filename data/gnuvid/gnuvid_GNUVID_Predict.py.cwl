@@ -21,7 +21,6 @@ inputs:
       - 'null'
       - int
     doc: prediction block size, good for limited memory
-    default: 1000
     inputBinding:
       position: 102
       prefix: --block_pred
@@ -31,7 +30,6 @@ inputs:
       - boolean
     doc: turn off exact matching (no allele will be identified for each ORF) and
       only use machine learning prediction
-    default: false
     inputBinding:
       position: 102
       prefix: --exact_matching
@@ -40,7 +38,6 @@ inputs:
       - 'null'
       - boolean
     doc: Force overwriting existing results folder assigned with -o
-    default: false
     inputBinding:
       position: 102
       prefix: --force
@@ -58,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: minimum sequence length
-    default: 15000
     inputBinding:
       position: 102
       prefix: --min_len
@@ -67,7 +63,6 @@ inputs:
       - 'null'
       - float
     doc: maximum proportion of ambiguity (Ns) allowed
-    default: 0.5
     inputBinding:
       position: 102
       prefix: --n_max
@@ -76,7 +71,6 @@ inputs:
       - 'null'
       - Directory
     doc: Output folder and prefix to be created for results
-    default: timestamped GNUVID_results in the current directory
     inputBinding:
       position: 102
       prefix: --output_folder
@@ -85,7 +79,6 @@ inputs:
       - 'null'
       - boolean
     doc: No screen output
-    default: false
     inputBinding:
       position: 102
       prefix: --quiet

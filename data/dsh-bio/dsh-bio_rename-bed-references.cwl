@@ -17,7 +17,6 @@ inputs:
       - 'null'
       - File
     doc: input BED path
-    default: stdin
     inputBinding:
       position: 101
       prefix: --input-bed-path

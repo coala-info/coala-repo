@@ -23,7 +23,6 @@ inputs:
       - 'null'
       - string
     doc: Specify the output character encoding.
-    default: utf-8
     inputBinding:
       position: 103
       prefix: --encoding

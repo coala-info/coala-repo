@@ -15,7 +15,6 @@ inputs:
       - 'null'
       - File
     doc: provide an annotation file in gff3 format
-    default: ''
     inputBinding:
       position: 102
       prefix: --annot
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality score
-    default: 20
     inputBinding:
       position: 102
       prefix: --minq
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - File
     doc: Reference file in fasta format
-    default: data/NC_045512_Hu-1.fasta
     inputBinding:
       position: 102
       prefix: --ref
@@ -42,7 +39,6 @@ inputs:
       - 'null'
       - string
     doc: Ref name (for bams with multiple sequences)
-    default: ''
     inputBinding:
       position: 102
       prefix: --refname
@@ -51,7 +47,6 @@ inputs:
       - 'null'
       - float
     doc: Variant frequency threshold
-    default: 0.0
     inputBinding:
       position: 102
       prefix: --varthresh

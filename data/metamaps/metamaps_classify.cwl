@@ -30,7 +30,6 @@ inputs:
       - 'null'
       - int
     doc: count of threads for parallel execution
-    default: 1
     inputBinding:
       position: 101
       prefix: --threads

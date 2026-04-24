@@ -16,7 +16,6 @@ inputs:
       - 'null'
       - string
     doc: 'The normalization mode [choices: community, gene]'
-    default: community
     inputBinding:
       position: 101
       prefix: --mode
@@ -26,7 +25,6 @@ inputs:
       - string
     doc: 'Include the special features (UNMAPPED, UNINTEGRATED, and UNGROUPED) [choices:
       y, n]'
-    default: y
     inputBinding:
       position: 101
       prefix: --special
@@ -35,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: 'The units to normalize to [choices: copies, relab]'
-    default: copies
     inputBinding:
       position: 101
       prefix: --units

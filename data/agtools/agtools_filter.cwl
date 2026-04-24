@@ -17,7 +17,6 @@ inputs:
   - id: min_length
     type: int
     doc: minimum length of segments to keep
-    default: 100
     inputBinding:
       position: 101
       prefix: --min-length

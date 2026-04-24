@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - Directory
     doc: Directory containing the database.
-    default: /usr/local/MegaPath-Nano/bin/db
     inputBinding:
       position: 101
       prefix: -d
@@ -18,7 +17,6 @@ inputs:
       - 'null'
       - string
     doc: Prefix for output files.
-    default: megapath-nano-amplicon
     inputBinding:
       position: 101
       prefix: -p
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Number of threads to use.
-    default: 24
     inputBinding:
       position: 101
       prefix: -t

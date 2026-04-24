@@ -9,7 +9,6 @@ inputs:
       - 'null'
       - float
     doc: VSEARCH - Identity threshold
-    default: 0.97
     inputBinding:
       position: 101
       prefix: -d
@@ -59,7 +58,6 @@ inputs:
       - float
     doc: RDP assignment confidence threshold - RDP Classifier confidence 
       threshold for output
-    default: 0.85
     inputBinding:
       position: 101
       prefix: -c
@@ -86,7 +84,6 @@ inputs:
       - 'null'
       - float
     doc: VSEARCH SINTAX assignment confidence threshold
-    default: 0.85
     inputBinding:
       position: 101
       prefix: --sintaxconfidence
@@ -105,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Number of Threads
-    default: 1
     inputBinding:
       position: 101
       prefix: -t

@@ -26,7 +26,6 @@ inputs:
       - 'null'
       - int
     doc: min. chromosome length
-    default: 40000000
     inputBinding:
       position: 104
       prefix: --chrlen
@@ -43,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: rolling median window
-    default: 501
     inputBinding:
       position: 104
       prefix: --medsize
@@ -52,7 +50,6 @@ inputs:
       - 'null'
       - int
     doc: min. clipping length
-    default: 18
     inputBinding:
       position: 104
       prefix: --minclip
@@ -61,7 +58,6 @@ inputs:
       - 'null'
       - int
     doc: rolling average window
-    default: 51
     inputBinding:
       position: 104
       prefix: --movavg
@@ -70,7 +66,6 @@ inputs:
       - 'null'
       - string
     doc: output file prefix
-    default: out
     inputBinding:
       position: 104
       prefix: --outprefix
@@ -79,7 +74,6 @@ inputs:
       - 'null'
       - string
     doc: repeat units
-    default: TTAGGG,TCAGGG,TGAGGG,TTGGGG
     inputBinding:
       position: 104
       prefix: --repeats
@@ -88,7 +82,6 @@ inputs:
       - 'null'
       - float
     doc: repeat threshold
-    default: 0.35
     inputBinding:
       position: 104
       prefix: --thres

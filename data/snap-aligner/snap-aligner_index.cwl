@@ -97,7 +97,6 @@ inputs:
       - 'null'
       - float
     doc: Hash table slack
-    default: 0.3
     inputBinding:
       position: 103
       prefix: -h
@@ -161,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: Specify the number of Ns to put as padding between chromosomes.
-    default: 2000
     inputBinding:
       position: 103
       prefix: -p
@@ -179,7 +177,6 @@ inputs:
       - 'null'
       - int
     doc: Seed size
-    default: 24
     inputBinding:
       position: 103
       prefix: -s

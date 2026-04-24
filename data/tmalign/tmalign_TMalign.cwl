@@ -55,7 +55,6 @@ inputs:
       - int
     doc: Whether to assume residue index correspondence between the two 
       structures.
-    default: 0
     inputBinding:
       position: 108
       prefix: -byresi
@@ -64,7 +63,6 @@ inputs:
       - 'null'
       - int
     doc: Whether to align residues marked as 'HETATM' in addition to 'ATOM  '
-    default: 0
     inputBinding:
       position: 108
       prefix: -het
@@ -73,7 +71,6 @@ inputs:
       - 'null'
       - int
     doc: Whether to align the mirror image of input structure
-    default: 0
     inputBinding:
       position: 108
       prefix: -mirror
@@ -91,7 +88,6 @@ inputs:
       - 'null'
       - string
     doc: 4-character atom name used to represent a residue.
-    default: ' CA '
     inputBinding:
       position: 108
       prefix: -atom
@@ -100,7 +96,6 @@ inputs:
       - 'null'
       - boolean
     doc: TM-score normalized by the average length of two structures
-    default: false
     inputBinding:
       position: 108
       prefix: -a
@@ -165,7 +160,6 @@ inputs:
       - 'null'
       - int
     doc: Input format for chain1
-    default: -1
     inputBinding:
       position: 108
       prefix: -infmt1
@@ -174,7 +168,6 @@ inputs:
       - 'null'
       - int
     doc: Input format for chain2
-    default: -1
     inputBinding:
       position: 108
       prefix: -infmt2
@@ -183,7 +176,6 @@ inputs:
       - 'null'
       - int
     doc: Output format
-    default: 0
     inputBinding:
       position: 108
       prefix: -outfmt
@@ -200,7 +192,6 @@ inputs:
       - 'null'
       - int
     doc: Whether to split PDB file into multiple chains
-    default: 0
     inputBinding:
       position: 108
       prefix: -split
@@ -217,7 +208,6 @@ inputs:
       - 'null'
       - int
     doc: Strings to mark the end of a chain
-    default: 3
     inputBinding:
       position: 108
       prefix: -ter
@@ -229,7 +219,6 @@ inputs:
       length, -1: normalized by shorter structure length, 0: (default, same as F)
       normalized by second structure, 1: same as T, normalized by average structure
       length'
-    default: 0
     inputBinding:
       position: 108
       prefix: -TMcut
@@ -239,7 +228,6 @@ inputs:
       - float
     doc: '-1: (default) do not consider TMcut. Values in [0.5,1): Do not proceed with
       TM-align for this structure pair if TM-score is unlikely to reach TMcut.'
-    default: -1
     inputBinding:
       position: 108
       prefix: -TMcut

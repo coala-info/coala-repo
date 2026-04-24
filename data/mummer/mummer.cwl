@@ -57,7 +57,6 @@ inputs:
       - 'null'
       - int
     doc: set the minimum length of a match
-    default: 20
     inputBinding:
       position: 103
       prefix: -l
@@ -83,7 +82,6 @@ inputs:
       - boolean
     doc: compute maximal matches that are unique in the reference- sequence but 
       not necessarily in the query-sequence (default)
-    default: true
     inputBinding:
       position: 103
       prefix: -mumreference

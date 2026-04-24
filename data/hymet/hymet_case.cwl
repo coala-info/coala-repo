@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - File
     doc: Manifest TSV
-    default: case/manifest.tsv
     inputBinding:
       position: 102
       prefix: --manifest

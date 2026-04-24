@@ -45,7 +45,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum alignment coverage in order to use a SAM entry.
-    default: 0.9
     inputBinding:
       position: 101
       prefix: --cov
@@ -54,7 +53,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum alignment identity in order to use a SAM entry.
-    default: 0.8
     inputBinding:
       position: 101
       prefix: --identity
@@ -79,7 +77,6 @@ inputs:
       - 'null'
       - Directory
     doc: Path to directory for tmp files.
-    default: talon_tmp/
     inputBinding:
       position: 101
       prefix: --tmpDir

@@ -83,7 +83,6 @@ inputs:
       - 'null'
       - string
     doc: specify output name prefix
-    default: interact.iproph
     inputBinding:
       position: 101
       prefix: --output
@@ -108,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: specify threads to use
-    default: 4
     inputBinding:
       position: 101
       prefix: --threads

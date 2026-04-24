@@ -69,7 +69,6 @@ inputs:
     doc: change settings in local or global config file. 'global' likely require
       admin privileges. 'local' will modify or create a mdmcleaner.config file 
       in the current working directory.
-    default: local
     inputBinding:
       position: 101
       prefix: --scope

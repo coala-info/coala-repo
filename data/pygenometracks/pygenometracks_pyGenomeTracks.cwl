@@ -34,7 +34,6 @@ inputs:
       - int
     doc: Resolution for the image in case the ouput is a raster graphics image 
       (e.g png, jpg) (default is 72)
-    default: 72
     inputBinding:
       position: 101
       prefix: --dpi
@@ -86,7 +85,6 @@ inputs:
       - float
     doc: By default the space dedicated to the track labels is 0.05 of the plot 
       width. This fraction can be changed with this parameter if needed.
-    default: '0.05'
     inputBinding:
       position: 101
       prefix: --trackLabelFraction
@@ -111,7 +109,6 @@ inputs:
       - 'null'
       - int
     doc: figure width in centimeters (default is 40)
-    default: '40'
     inputBinding:
       position: 101
       prefix: --width

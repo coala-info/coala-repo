@@ -149,7 +149,7 @@ Public
 
 * [Notifications](/login?return_to=%2Fmikehaertl%2Fphp-pdftk) You must be signed in to change notification settings
 * [Fork
-  135](/login?return_to=%2Fmikehaertl%2Fphp-pdftk)
+  134](/login?return_to=%2Fmikehaertl%2Fphp-pdftk)
 * [Star
    1k](/login?return_to=%2Fmikehaertl%2Fphp-pdftk)
 
@@ -160,7 +160,7 @@ Public
   0](/mikehaertl/php-pdftk/pulls)
 * [Actions](/mikehaertl/php-pdftk/actions)
 * [Projects](/mikehaertl/php-pdftk/projects)
-* [Security
+* [Security and quality
   0](/mikehaertl/php-pdftk/security)
 * [Insights](/mikehaertl/php-pdftk/pulse)
 
@@ -171,7 +171,7 @@ Additional navigation options
 * [Pull requests](/mikehaertl/php-pdftk/pulls)
 * [Actions](/mikehaertl/php-pdftk/actions)
 * [Projects](/mikehaertl/php-pdftk/projects)
-* [Security](/mikehaertl/php-pdftk/security)
+* [Security and quality](/mikehaertl/php-pdftk/security)
 * [Insights](/mikehaertl/php-pdftk/pulse)
 
 # mikehaertl/php-pdftk
@@ -345,4 +345,4 @@ If you use `pdftk-java` >= 3.3.0 and the embedded font does not support UTF-8
 characters you can also replace it with a local font:
 
 ```
-use mikehaertl\pdftk\Pdf;
+u

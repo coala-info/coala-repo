@@ -4,7 +4,7 @@
 
 Toggle navigation
 
-[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FFFmpeg%2FFFmpeg)
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FFFmpeg%2FFFmpeg%2Fblob%2Fmaster%2FREADME.md)
 
 Appearance settings
 
@@ -126,9 +126,9 @@ Cancel
 Cancel
  Create saved search
 
-[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FFFmpeg%2FFFmpeg)
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FFFmpeg%2FFFmpeg%2Fblob%2Fmaster%2FREADME.md)
 
-[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=FFmpeg%2FFFmpeg)
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fblob%2Fshow&source=header-repo&source_repo=FFmpeg%2FFFmpeg)
 
 Appearance settings
 
@@ -166,67 +166,63 @@ Additional navigation options
 * [Security and quality](/FFmpeg/FFmpeg/security)
 * [Insights](/FFmpeg/FFmpeg/pulse)
 
-# FFmpeg/FFmpeg
+## FilesExpand file tree
 
 master
 
-[Branches](/FFmpeg/FFmpeg/branches)[Tags](/FFmpeg/FFmpeg/tags)
+## Breadcrumbs
 
-Go to file
+1. [FFmpeg](/FFmpeg/FFmpeg/tree/master)
 
-Code
+/
 
-Open more actions menu
+# README.md
 
-## Folders and files
+Copy path
 
-| Name | | Name | Last commit message | Last commit date |
-| --- | --- | --- | --- | --- |
-| Latest commit   History[124,295 Commits](/FFmpeg/FFmpeg/commits/master/)   124,295 Commits | | |
-| [.forgejo](/FFmpeg/FFmpeg/tree/master/.forgejo ".forgejo") | | [.forgejo](/FFmpeg/FFmpeg/tree/master/.forgejo ".forgejo") |  |  |
-| [compat](/FFmpeg/FFmpeg/tree/master/compat "compat") | | [compat](/FFmpeg/FFmpeg/tree/master/compat "compat") |  |  |
-| [doc](/FFmpeg/FFmpeg/tree/master/doc "doc") | | [doc](/FFmpeg/FFmpeg/tree/master/doc "doc") |  |  |
-| [ffbuild](/FFmpeg/FFmpeg/tree/master/ffbuild "ffbuild") | | [ffbuild](/FFmpeg/FFmpeg/tree/master/ffbuild "ffbuild") |  |  |
-| [fftools](/FFmpeg/FFmpeg/tree/master/fftools "fftools") | | [fftools](/FFmpeg/FFmpeg/tree/master/fftools "fftools") |  |  |
-| [libavcodec](/FFmpeg/FFmpeg/tree/master/libavcodec "libavcodec") | | [libavcodec](/FFmpeg/FFmpeg/tree/master/libavcodec "libavcodec") |  |  |
-| [libavdevice](/FFmpeg/FFmpeg/tree/master/libavdevice "libavdevice") | | [libavdevice](/FFmpeg/FFmpeg/tree/master/libavdevice "libavdevice") |  |  |
-| [libavfilter](/FFmpeg/FFmpeg/tree/master/libavfilter "libavfilter") | | [libavfilter](/FFmpeg/FFmpeg/tree/master/libavfilter "libavfilter") |  |  |
-| [libavformat](/FFmpeg/FFmpeg/tree/master/libavformat "libavformat") | | [libavformat](/FFmpeg/FFmpeg/tree/master/libavformat "libavformat") |  |  |
-| [libavutil](/FFmpeg/FFmpeg/tree/master/libavutil "libavutil") | | [libavutil](/FFmpeg/FFmpeg/tree/master/libavutil "libavutil") |  |  |
-| [libswresample](/FFmpeg/FFmpeg/tree/master/libswresample "libswresample") | | [libswresample](/FFmpeg/FFmpeg/tree/master/libswresample "libswresample") |  |  |
-| [libswscale](/FFmpeg/FFmpeg/tree/master/libswscale "libswscale") | | [libswscale](/FFmpeg/FFmpeg/tree/master/libswscale "libswscale") |  |  |
-| [presets](/FFmpeg/FFmpeg/tree/master/presets "presets") | | [presets](/FFmpeg/FFmpeg/tree/master/presets "presets") |  |  |
-| [tests](/FFmpeg/FFmpeg/tree/master/tests "tests") | | [tests](/FFmpeg/FFmpeg/tree/master/tests "tests") |  |  |
-| [tools](/FFmpeg/FFmpeg/tree/master/tools "tools") | | [tools](/FFmpeg/FFmpeg/tree/master/tools "tools") |  |  |
-| [.gitattributes](/FFmpeg/FFmpeg/blob/master/.gitattributes ".gitattributes") | | [.gitattributes](/FFmpeg/FFmpeg/blob/master/.gitattributes ".gitattributes") |  |  |
-| [.gitignore](/FFmpeg/FFmpeg/blob/master/.gitignore ".gitignore") | | [.gitignore](/FFmpeg/FFmpeg/blob/master/.gitignore ".gitignore") |  |  |
-| [.mailmap](/FFmpeg/FFmpeg/blob/master/.mailmap ".mailmap") | | [.mailmap](/FFmpeg/FFmpeg/blob/master/.mailmap ".mailmap") |  |  |
-| [CONTRIBUTING.md](/FFmpeg/FFmpeg/blob/master/CONTRIBUTING.md "CONTRIBUTING.md") | | [CONTRIBUTING.md](/FFmpeg/FFmpeg/blob/master/CONTRIBUTING.md "CONTRIBUTING.md") |  |  |
-| [COPYING.GPLv2](/FFmpeg/FFmpeg/blob/master/COPYING.GPLv2 "COPYING.GPLv2") | | [COPYING.GPLv2](/FFmpeg/FFmpeg/blob/master/COPYING.GPLv2 "COPYING.GPLv2") |  |  |
-| [COPYING.GPLv3](/FFmpeg/FFmpeg/blob/master/COPYING.GPLv3 "COPYING.GPLv3") | | [COPYING.GPLv3](/FFmpeg/FFmpeg/blob/master/COPYING.GPLv3 "COPYING.GPLv3") |  |  |
-| [COPYING.LGPLv2.1](/FFmpeg/FFmpeg/blob/master/COPYING.LGPLv2.1 "COPYING.LGPLv2.1") | | [COPYING.LGPLv2.1](/FFmpeg/FFmpeg/blob/master/COPYING.LGPLv2.1 "COPYING.LGPLv2.1") |  |  |
-| [COPYING.LGPLv3](/FFmpeg/FFmpeg/blob/master/COPYING.LGPLv3 "COPYING.LGPLv3") | | [COPYING.LGPLv3](/FFmpeg/FFmpeg/blob/master/COPYING.LGPLv3 "COPYING.LGPLv3") |  |  |
-| [CREDITS](/FFmpeg/FFmpeg/blob/master/CREDITS "CREDITS") | | [CREDITS](/FFmpeg/FFmpeg/blob/master/CREDITS "CREDITS") |  |  |
-| [Changelog](/FFmpeg/FFmpeg/blob/master/Changelog "Changelog") | | [Changelog](/FFmpeg/FFmpeg/blob/master/Changelog "Changelog") |  |  |
-| [FUNDING.json](/FFmpeg/FFmpeg/blob/master/FUNDING.json "FUNDING.json") | | [FUNDING.json](/FFmpeg/FFmpeg/blob/master/FUNDING.json "FUNDING.json") |  |  |
-| [INSTALL.md](/FFmpeg/FFmpeg/blob/master/INSTALL.md "INSTALL.md") | | [INSTALL.md](/FFmpeg/FFmpeg/blob/master/INSTALL.md "INSTALL.md") |  |  |
-| [LICENSE.md](/FFmpeg/FFmpeg/blob/master/LICENSE.md "LICENSE.md") | | [LICENSE.md](/FFmpeg/FFmpeg/blob/master/LICENSE.md "LICENSE.md") |  |  |
-| [MAINTAINERS](/FFmpeg/FFmpeg/blob/master/MAINTAINERS "MAINTAINERS") | | [MAINTAINERS](/FFmpeg/FFmpeg/blob/master/MAINTAINERS "MAINTAINERS") |  |  |
-| [Makefile](/FFmpeg/FFmpeg/blob/master/Makefile "Makefile") | | [Makefile](/FFmpeg/FFmpeg/blob/master/Makefile "Makefile") |  |  |
-| [README.md](/FFmpeg/FFmpeg/blob/master/README.md "README.md") | | [README.md](/FFmpeg/FFmpeg/blob/master/README.md "README.md") |  |  |
-| [RELEASE](/FFmpeg/FFmpeg/blob/master/RELEASE "RELEASE") | | [RELEASE](/FFmpeg/FFmpeg/blob/master/RELEASE "RELEASE") |  |  |
-| [configure](/FFmpeg/FFmpeg/blob/master/configure "configure") | | [configure](/FFmpeg/FFmpeg/blob/master/configure "configure") |  |  |
-| View all files | | |
+BlameMore file actions
 
-## Repository files navigation
+BlameMore file actions
 
-* README
-* Contributing
-* License
-* GPL-2.0 license
-* GPL-3.0 license
-* LGPL-2.1 license
-* LGPL-3.0 license
+## Latest commit
+
+## History
+
+[History](/FFmpeg/FFmpeg/commits/master/README.md)
+
+History
+
+45 lines (31 loc) · 1.76 KB
+
+master
+
+## Breadcrumbs
+
+1. [FFmpeg](/FFmpeg/FFmpeg/tree/master)
+
+/
+
+# README.md
+
+Top
+
+## File metadata and controls
+
+* Preview
+* Code
+* Blame
+
+45 lines (31 loc) · 1.76 KB
+
+[Raw](https://github.com/FFmpeg/FFmpeg/raw/refs/heads/master/README.md)
+
+Copy raw file
+
+Download raw file
+
+Outline
+
+Edit and raw actions
 
 # FFmpeg README
 
@@ -274,79 +270,20 @@ Patches should be submitted to the ffmpeg-devel mailing list using
 `git format-patch` or `git send-email`. Github pull requests should be
 avoided because they are not part of our review process and will be ignored.
 
-## About
+## Footer
 
-Mirror of <https://git.ffmpeg.org/ffmpeg.git>
+© 2026 GitHub, Inc.
 
-[ffmpeg.org/](https://ffmpeg.org/ "https://ffmpeg.org/")
+### Footer navigation
 
-### Topics
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
 
-[audio](/topics/audio "Topic: audio")
-[c](/topics/c "Topic: c")
-[streaming](/topics/streaming "Topic: streaming")
-[video](/topics/video "Topic: video")
-[rtsp](/topics/rtsp "Topic: rtsp")
-[ffmpeg](/topics/ffmpeg "Topic: ffmpeg")
-[mp4](/topics/mp4 "Topic: mp4")
-[hls](/topics/hls "Topic: hls")
-[multimedia](/topics/multimedia "Topic: multimedia")
-[rtmp](/topics/rtmp "Topic: rtmp")
-[webm](/topics/webm "Topic: webm")
-[mpeg](/topics/mpeg "Topic: mpeg")
-[fft](/topics/fft "Topic: fft")
-[hevc](/topics/hevc "Topic: hevc")
-[matroska](/topics/matroska "Topic: matroska")
-
-### Resources
-
-[Readme](#readme-ov-file)
-
-### License
-
-Unknown and 4 other licenses found
-
-### Licenses found
-
-[Unknown
-
-LICENSE.md](/FFmpeg/FFmpeg/blob/master/./LICENSE.md) [GPL-2.0
-
-COPYING.GPLv2](/FFmpeg/FFmpeg/blob/master/./COPYING.GPLv2) [GPL-3.0
-
-COPYING.GPLv3](/FFmpeg/FFmpeg/blob/master/./COPYING.GPLv3) [LGPL-2.1
-
-COPYING.LGPLv2.1](/FFmpeg/FFmpeg/blob/master/./COPYING.LGPLv2.1) [LGPL-3.0
-
-COPYING.LGPLv3](/FFmpeg/FFmpeg/blob/master/./COPYING.LGPLv3)
-
-### Contributing
-
-[Contributing](#contributing-ov-file)
-
-### Uh oh!
-
-There was an error while loading. Please reload this page.
-
-[Activity](/FFmpeg/FFmpeg/activity)
-
-[Custom properties](/FFmpeg/FFmpeg/custom-properties)
-
-### Stars
-
-[**59.4k**
-stars](/FFmpeg/FFmpeg/stargazers)
-
-### Watchers
-
-[**1.5k**
-watching](/FFmpeg/FFmpeg/watchers)
-
-### Forks
-
-[**13.8k**
-forks](/FFmpeg/FFmpeg/forks)
-
-[Report repository](/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2FFFmpeg%2FFFmpeg&report=FFmpeg+%28user%29)
-
-## [Releases](/FFmp
+You can’t perform that action at this time.

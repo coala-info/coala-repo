@@ -7,7 +7,7 @@ Universal media converter
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ffmpeg:7.1.1
-- **Homepage**: https://github.com/FFmpeg/FFmpeg
+- **Homepage**: https://www.ffmpeg.org/ffmpeg.html
 - **Package**: Not found
 - **Validation**: PASS
 

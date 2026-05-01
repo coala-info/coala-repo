@@ -92,6 +92,13 @@ ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_op
         ffmpeg -i input.mp4 -vf scale=640:-1 output.mp4
         ```
         *   `-1` tells FFmpeg to calculate the height automatically.
+    *   Recommended video options for Twitter/X upload:
+        ```bash
+        ffmpeg -i input.mp4 -vf scale=1920:-2 -pix_fmt yuv420p -r 30 output.mp4
+        ```
+        *   `scale=1920:-2` sets the width to 1920 and keeps the height proportional while making it divisible by 2.
+        *   `-pix_fmt yuv420p` improves compatibility with web video players and upload pipelines.
+        *   `-r 30` outputs a 30 FPS video.
 
 6.  **Extracting Audio:**
     *   Extract audio from a video to MP3:

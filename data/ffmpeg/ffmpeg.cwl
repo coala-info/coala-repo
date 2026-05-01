@@ -15,11 +15,11 @@ inputs:
   - id: infile
     type:
       - 'null'
-      - type: array
-        items: File
+      - File
     doc: Input file
     inputBinding:
       position: 2
+      prefix: -i
   - id: output_options
     type:
       - 'null'
@@ -159,8 +159,7 @@ inputs:
   - id: filter_graph
     type:
       - 'null'
-      - type: array
-        items: string
+      - string
     doc: apply specified filters to audio/video
     inputBinding:
       position: 104
@@ -183,8 +182,8 @@ inputs:
   - id: framerate
     type:
       - 'null'
-      - type: array
-        items: string
+      - int
+      - float
     doc: override input framerate/convert to given output framerate (Hz value, 
       fraction or abbreviation)
     inputBinding:
@@ -245,13 +244,14 @@ inputs:
     inputBinding:
       position: 104
       prefix: -y
-  - id: pix_fmts
+  - id: pix_fmt
     type:
       - 'null'
-      - boolean
-    doc: show available pixel formats
+      - string
+    doc: sets the pixel format (color space, bit depth, and chroma subsampling) for the output video.
     inputBinding:
       position: 104
+      prefix: -pix_fmt
   - id: sample_fmts
     type:
       - 'null'
@@ -314,6 +314,11 @@ inputs:
     inputBinding:
       position: 104
       prefix: -b
+  - id: out
+    type: string
+    doc: output file
+    inputBinding:
+      position: 999
 outputs:
   - id: outfile
     type:
@@ -321,7 +326,7 @@ outputs:
       - File
     doc: Output file
     outputBinding:
-      glob: '*.out'
+      glob: $(inputs.out)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ffmpeg:7.1.1

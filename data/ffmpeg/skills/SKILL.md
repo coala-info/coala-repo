@@ -1,140 +1,95 @@
 ---
 name: ffmpeg
-description: FFmpeg is a command-line tool for processing audio and video files. Use when user asks to convert video and audio formats, transcode media streams, perform basic video editing, resize video, apply filters, or extract media information.
-homepage: https://github.com/FFmpeg/FFmpeg
+description: FFmpeg is a comprehensive multimedia framework used to process, transcode, and analyze video and audio streams. Use when user asks to convert media formats, scale video resolution, trim clips, extract audio, concatenate files, or apply complex filtergraphs.
+homepage: https://www.ffmpeg.org/ffmpeg.html
 metadata:
   docker_image: "quay.io/biocontainers/ffmpeg:7.1.1"
 ---
 
+
 # ffmpeg
 
-yaml
-name: ffmpeg
-description: |
-  A powerful command-line tool for processing audio and video files.
-  Use this skill when Claude needs to perform tasks such as:
-  - Converting video and audio formats.
-  - Transcoding media streams.
-  - Basic video editing (trimming, concatenating).
-  - Resizing or scaling video.
-  - Applying filters to audio or video.
-  - Extracting information from media files.
-```
 ## Overview
-FFmpeg is a versatile and robust command-line utility for handling multimedia files and streams. It excels at a wide range of tasks including format conversion, transcoding, basic editing operations like trimming and joining clips, resizing video, applying complex audio and video filters, and extracting detailed metadata from media. It's the go-to tool for programmatic manipulation of audio and video content.
 
-## Core Usage and Best Practices
+FFmpeg is the industry-standard multimedia framework for handling video, audio, and other multimedia streams. This skill provides procedural knowledge for constructing efficient transcoding pipelines, applying complex filtergraphs, and performing deep stream analysis. It transforms general media requests into precise, high-performance command-line operations that leverage FFmpeg's modular architecture of demuxers, decoders, filters, and encoders.
 
-FFmpeg's power lies in its extensive command-line options. The general syntax is:
+## Core Command Structure
+
+The `ffmpeg` command follows a strict order of operations. Options applied to an input do not carry over to the output.
 
 ```bash
 ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_options] output_url} ...
 ```
 
-### Common Operations and Tips
+- **Global Options**: Verbosity (`-loglevel`), overwriting files (`-y`), or hardware acceleration (`-hwaccel`).
+- **Input Options**: Seek position (`-ss`), duration (`-t`), or forced format (`-f`).
+- **Output Options**: Codecs (`-c:v`, `-c:a`), bitrates (`-b:v`), and mapping (`-map`).
 
-1.  **Format Conversion:**
-    *   Convert MP4 to AVI:
-        ```bash
-        ffmpeg -i input.mp4 output.avi
-        ```
-    *   Convert MP3 to AAC:
-        ```bash
-        ffmpeg -i input.mp3 output.aac
-        ```
+## Stream Selection and Mapping
 
-2.  **Video Transcoding (Changing Codec):**
-    *   Convert H.264 to VP9:
-        ```bash
-        ffmpeg -i input.mp4 -c:v libvpx-vp9 -c:a libopus output.webm
-        ```
-        *   `-c:v`: specifies the video codec.
-        *   `-c:a`: specifies the audio codec.
+By default, FFmpeg selects only one stream of each type. Use the `-map` option for precise control.
 
-3.  **Trimming/Cutting Videos:**
-    *   Extract a segment from 10 seconds to 20 seconds:
-        ```bash
-        ffmpeg -ss 00:00:10 -i input.mp4 -to 00:00:20 -c copy output.mp4
-        ```
-        *   `-ss`: start time.
-        *   `-to`: end time.
-        *   `-c copy`: avoids re-encoding, making it very fast and lossless for keyframes. For precise cuts, re-encoding might be necessary (remove `-c copy`).
+- **Manual Selection**: `-map 0:v:0` (first video stream of first input) or `-map 0:a` (all audio streams of first input).
+- **Streamcopy**: Use `-c copy` to bypass decoding and encoding. This is lossless and extremely fast.
+  - *Example*: `ffmpeg -i input.mkv -map 0 -c copy output.mp4` (re-wraps all streams into a new container).
 
-4.  **Concatenating Videos:**
-    *   **Method 1: Using `concat` demuxer (preferred for same codecs/parameters):**
-        Create a text file (e.g., `mylist.txt`):
-        ```
-        file 'input1.mp4'
-        file 'input2.mp4'
-        ```
-        Then run:
-        ```bash
-        ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.mp4
-        ```
-        *   `-f concat`: specifies the concat demuxer.
-        *   `-safe 0`: required for relative paths in `mylist.txt`.
+## Common CLI Patterns
 
-    *   **Method 2: Using `concat` filter (more flexible, handles different codecs):**
-        ```bash
-        ffmpeg -i input1.mp4 -i input2.mp4 -filter_complex "[0:v:0][0:a:0][1:v:0][1:a:0]concat=n=2:v=1:a=1[outv][outa]" -map "[outv]" -map "[outa]" output.mp4
-        ```
-        *   `n=2`: number of input files.
-        *   `v=1`: number of video streams.
-        *   `a=1`: number of audio streams.
+### Transcoding and Scaling
+To change format while resizing:
+```bash
+ffmpeg -i input.mov -vf "scale=1280:720" -c:v libx264 -crf 23 -c:a aac output.mp4
+```
 
-5.  **Resizing Videos:**
-    *   Resize to 1280x720:
-        ```bash
-        ffmpeg -i input.mp4 -vf scale=1280:720 output.mp4
-        ```
-    *   Resize to a width of 640, maintaining aspect ratio:
-        ```bash
-        ffmpeg -i input.mp4 -vf scale=640:-1 output.mp4
-        ```
-        *   `-1` tells FFmpeg to calculate the height automatically.
-    *   Recommended video options for Twitter/X upload:
-        ```bash
-        ffmpeg -i input.mp4 -vf scale=1920:-2 -pix_fmt yuv420p -r 30 output.mp4
-        ```
-        *   `scale=1920:-2` sets the width to 1920 and keeps the height proportional while making it divisible by 2.
-        *   `-pix_fmt yuv420p` improves compatibility with web video players and upload pipelines.
-        *   `-r 30` outputs a 30 FPS video.
+### Trimming and Seeking
+- **Input Seeking (Fast)**: `ffmpeg -ss 00:01:00 -i input.mp4 ...` (jumps to keyframe).
+- **Output Seeking (Accurate)**: `ffmpeg -i input.mp4 -ss 00:01:00 ...` (decodes until timestamp).
 
-6.  **Extracting Audio:**
-    *   Extract audio from a video to MP3:
-        ```bash
-        ffmpeg -i input.mp4 -vn -acodec libmp3lame -q:a 2 output.mp3
-        ```
-        *   `-vn`: disables video recording.
-        *   `-acodec libmp3lame`: specifies MP3 encoder.
-        *   `-q:a 2`: sets audio quality (lower is better, 0-9).
+### Extracting Audio
+```bash
+ffmpeg -i video.mp4 -vn -c:a libmp3lame -q:a 2 audio.mp3
+```
 
-7.  **Extracting Thumbnails:**
-    *   Extract a single thumbnail at 1 second:
-        ```bash
-        ffmpeg -i input.mp4 -ss 00:00:01 -vframes 1 output.png
-        ```
-        *   `-vframes 1`: extracts only one video frame.
+### Concatenation
+For files with identical codecs, use the `concat` demuxer to avoid re-encoding:
+```bash
+ffmpeg -f concat -safe 0 -i filelist.txt -c copy output.mp4
+```
 
-8.  **Getting Media Information:**
-    *   Use `ffprobe` (often bundled with FFmpeg) for detailed analysis:
-        ```bash
-        ffprobe input.mp4
-        ```
-        *   To get specific info like duration:
-            ```bash
-            ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 input.mp4
-            ```
+## Filtergraphs
 
-### Expert Tips
+Filters process raw frames between the decoder and encoder.
 
-*   **`-hide_banner`**: Suppresses printing the FFmpeg version and configuration information, useful for cleaner output.
-*   **`-loglevel error`**: Reduces verbose output, showing only errors. Use `-loglevel warning`, `-loglevel info`, or `-loglevel debug` for more detail.
-*   **`-y`**: Overwrite output files without asking. Use with caution.
-*   **`-map`**: Explicitly select streams (video, audio, subtitle) to include in the output. Essential for complex multiplexing.
-*   **`-threads`**: Control the number of threads used for encoding. `0` usually means auto-detection.
-*   **`-progress`**: Show real-time progress information.
-*   **Filters (`-vf`, `-af`)**: FFmpeg's filter system is extremely powerful. Explore the documentation for complex operations like overlaying images, adding text, color correction, audio mixing, etc.
+- **Simple Filtergraphs**: Single input/output. Use `-vf` (video) or `-af` (audio).
+  - *Example*: `-vf "yadif,scale=640:480"` (deinterlace then scale).
+- **Complex Filtergraphs**: Multiple inputs or outputs. Use `-filter_complex`.
+  - *Example (Overlaying a logo)*: `ffmpeg -i video.mp4 -i logo.png -filter_complex "[0:v][1:v]overlay=10:10" output.mp4`
+
+## Media Analysis with ffprobe
+
+Use `ffprobe` to inspect stream properties without processing.
+
+- **JSON Output**: `ffprobe -v error -show_format -show_streams -of json input.mp4`
+- **Check Duration**: `ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 input.mp4`
+
+## Expert Tips
+
+1. **Order Matters**: Always place `-ss` before `-i` for fast seeking unless frame-accuracy is failing.
+2. **CRF vs Bitrate**: For H.264/H.265, prefer `-crf` (Constant Rate Factor) for quality-based encoding over `-b:v` for bitrate-based encoding.
+3. **Hardware Acceleration**: Check available decoders with `ffmpeg -decoders | grep h264`. Use `-hwaccel` (e.g., `cuda`, `videotoolbox`, `vaapi`) to reduce CPU load.
+4. **Diagnostic Logs**: If a command fails, use `-report` to generate a full log file for debugging.
+5. **Twitter/X Uploads**: Recommend `-vf "scale=1920:-2" -pix_fmt yuv420p -r 30` to cap width at 1920 px, preserve aspect ratio with an even height, use broad player-compatible pixel format, and normalize frame rate to 30 fps.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ffmpeg | Universal media converter |
 
 ## Reference documentation
-- [FFmpeg Documentation](https://ffmpeg.org/documentation.html)
+- [ffmpeg Documentation](./references/www_ffmpeg_org_documentation.html.md)
+- [ffmpeg Tool Manual](./references/www_ffmpeg_org_ffmpeg.html.md)
+- [ffprobe Analysis Tool](./references/www_ffmpeg_org_ffprobe.html.md)
+- [FFmpeg Filters Reference](./references/www_ffmpeg_org_ffmpeg-filters.html.md)

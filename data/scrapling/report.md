@@ -6,7 +6,7 @@
 [Errno 2] No such file or directory: 'scrapling'; fallback failed: [Errno 2] No such file or directory: 'scrapling'
 
 ### Metadata
-- **Docker Image**: Not found
+- **Docker Image**: pyd4vinci/scrapling
 - **Homepage**: https://github.com/D4Vinci/Scrapling
 - **Package**: Not found
 - **Validation**: FAIL (generation failed)

@@ -4,7 +4,7 @@
 
 Toggle navigation
 
-[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmetagenlab%2Fassembly_finder%2Ftree%2Fmain%2Fdocs)
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmetagenlab%2Fassembly_finder%2Fblob%2Fmain%2Fdocs%2Finputs.md)
 
 Appearance settings
 
@@ -126,9 +126,9 @@ Cancel
 Cancel
  Create saved search
 
-[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmetagenlab%2Fassembly_finder%2Ftree%2Fmain%2Fdocs)
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmetagenlab%2Fassembly_finder%2Fblob%2Fmain%2Fdocs%2Finputs.md)
 
-[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Ffiles%2Fdisambiguate&source=header-repo&source_repo=metagenlab%2Fassembly_finder)
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fblob%2Fshow&source=header-repo&source_repo=metagenlab%2Fassembly_finder)
 
 Appearance settings
 
@@ -183,60 +183,117 @@ main
 ## Breadcrumbs
 
 1. [assembly\_finder](/metagenlab/assembly_finder/tree/main)
+2. /[docs](/metagenlab/assembly_finder/tree/main/docs)
 
 /
 
-# docs
-
-/
+# inputs.md
 
 Copy path
 
-## Directory actions
+BlameMore file actions
 
-## More options
-
-More options
-
-## Directory actions
-
-## More options
-
-More options
+BlameMore file actions
 
 ## Latest commit
 
 ## History
 
-[History](/metagenlab/assembly_finder/commits/main/docs)
+[History](/metagenlab/assembly_finder/commits/main/docs/inputs.md)
 
 History
+
+52 lines (32 loc) · 1.09 KB
 
 main
 
 ## Breadcrumbs
 
 1. [assembly\_finder](/metagenlab/assembly_finder/tree/main)
+2. /[docs](/metagenlab/assembly_finder/tree/main/docs)
 
 /
 
-# docs
-
-/
+# inputs.md
 
 Top
 
-## Folders and files
+## File metadata and controls
 
-| Name | | Name | Last commit message | Last commit date |
-| --- | --- | --- | --- | --- |
-| parent directory [..](/metagenlab/assembly_finder/tree/main) | | |
-| [images](/metagenlab/assembly_finder/tree/main/docs/images "images") | | [images](/metagenlab/assembly_finder/tree/main/docs/images "images") |  |  |
-| [examples.md](/metagenlab/assembly_finder/blob/main/docs/examples.md "examples.md") | | [examples.md](/metagenlab/assembly_finder/blob/main/docs/examples.md "examples.md") |  |  |
-| [index.md](/metagenlab/assembly_finder/blob/main/docs/index.md "index.md") | | [index.md](/metagenlab/assembly_finder/blob/main/docs/index.md "index.md") |  |  |
-| [inputs.md](/metagenlab/assembly_finder/blob/main/docs/inputs.md "inputs.md") | | [inputs.md](/metagenlab/assembly_finder/blob/main/docs/inputs.md "inputs.md") |  |  |
-| [outputs.md](/metagenlab/assembly_finder/blob/main/docs/outputs.md "outputs.md") | | [outputs.md](/metagenlab/assembly_finder/blob/main/docs/outputs.md "outputs.md") |  |  |
-| View all files | | |
+* Preview
+* Code
+* Blame
+
+52 lines (32 loc) · 1.09 KB
+
+[Raw](https://github.com/metagenlab/assembly_finder/raw/refs/heads/main/docs/inputs.md)
+
+Copy raw file
+
+Download raw file
+
+Outline
+
+Edit and raw actions
+
+# Inputs
+
+Input can be either a string or a table, and queries can be either taxa or accessions as shown in [NCBI datasets docs](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/download-and-install).
+
+## Strings
+
+=== "Taxons"
+
+```
+```sh
+assembly_finder -i 1290,staphylococcus_aureus,562 -nb 1 -o taxons
+```
+
+!!! note
+
+    Taxons can be either taxids or taxon names
+```
+
+=== "Accessions"
+
+```
+```sh
+assembly_finder --accession -i GCF_003812505.1,GCF_000418345.1,GCF_000157115.2 \
+-o accessions
+```
+!!! note
+
+    Accessions can be bioproject or genome accessions see [ncbi-datasets docs](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/how-tos/genomes/get-genome-metadata/)
+```
+
+## Tables
+
+=== "Taxons"
+
+```
+| taxon | nb |
+| :-------------------- | :-- |
+| 1290 | 1 |
+| staphylococcus_aureus | 1 |
+| 562 | 1 |
+
+!!! note
+
+    You can set the number of genomes per taxon in the table
+```
+
+=== "Accessions"
+
+```
+| GCF_003812505.1 |
+| :-------------- |
+| GCF_000418345.1 |
+| GCF_000157115.2 |
+
+!!! note
+
+    The accession table does not have a header
+```
 
 ## Footer
 

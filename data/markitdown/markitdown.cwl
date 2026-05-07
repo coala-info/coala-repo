@@ -89,3 +89,6 @@ outputs:
     doc: Output file name. If not provided, output is written to stdout.
     outputBinding:
       glob: $(inputs.output)
+hints:
+  - class: DockerRequirement
+    dockerPull: mcp/markitdown:latest

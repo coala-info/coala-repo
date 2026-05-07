@@ -7,14 +7,14 @@ Print a data report containing gene, genome or virus metadata in JSON format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
-- **Homepage**: https://github.com/metagenlab/assembly_finder
+- **Homepage**: https://www.ncbi.nlm.nih.gov/datasets/docs/v2/how-tos/
 - **Package**: Not found
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/ncbi-datasets-cli/overview
 - **Total Downloads**: 1.1M
 - **Last updated**: 2026-04-30
-- **GitHub**: https://github.com/metagenlab/assembly_finder
+- **GitHub**: https://github.com/ncbi/datasets
 - **Stars**: N/A
 ### Original Help Text
 ```text
@@ -55,7 +55,7 @@ Download genome, gene and virus data packages, including sequence, annotation, a
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
-- **Homepage**: https://github.com/metagenlab/assembly_finder
+- **Homepage**: https://github.com/ncbi/datasets
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -104,7 +104,7 @@ Download data files for an unzipped, dehydrated genome data package. Data files 
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
-- **Homepage**: https://github.com/metagenlab/assembly_finder
+- **Homepage**: https://github.com/ncbi/datasets
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -138,7 +138,7 @@ This sub-command generates files needed to enable auto-complete for several popu
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
-- **Homepage**: https://github.com/metagenlab/assembly_finder
+- **Homepage**: https://github.com/ncbi/datasets
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -176,7 +176,7 @@ Convert data to TSV format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
-- **Homepage**: https://github.com/metagenlab/assembly_finder
+- **Homepage**: https://github.com/ncbi/datasets
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -220,7 +220,7 @@ Convert data into an Excel workbook.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
-- **Homepage**: https://github.com/metagenlab/assembly_finder
+- **Homepage**: https://github.com/ncbi/datasets
 - **Package**: Not found
 - **Validation**: PASS
 

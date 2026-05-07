@@ -31,7 +31,7 @@ inputs:
       position: 103
       prefix: --fasta-filter
   - id: fasta_filter_file
-    type: File
+    type: File?
     doc: Limit protein and RNA sequence files to the specified RefSeq nucleotide
       and protein accessions included in the specified file
     inputBinding:

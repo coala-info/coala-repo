@@ -26,8 +26,8 @@ Copied from[cf-post-staging / ncbi-datasets-cli](/channels/cf-post-staging/packa
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | linux-aarch64/ncbi-datasets-cli-18.25.1-h8af1aa0\_0.conda | conda | 18.25.1 | linux-aarch64 | main | 6 days ago | 15.17 MB | 41 |  |
 | osx-64/ncbi-datasets-cli-18.25.1-h694c41f\_0.conda | conda | 18.25.1 | macOS-64 | main | 6 days ago | 31.81 MB | 57 |  |
-| osx-arm64/ncbi-datasets-cli-18.25.1-hce30654\_0.conda | conda | 18.25.1 | macOS-arm64 | main | 6 days ago | 31.8 MB | 95 |  |
-| win-64/ncbi-datasets-cli-18.25.1-h57928b3\_0.conda | conda | 18.25.1 | win-64 | main | 6 days ago | 16.47 MB | 54 |  |
+| osx-arm64/ncbi-datasets-cli-18.25.1-hce30654\_0.conda | conda | 18.25.1 | macOS-arm64 | main | 6 days ago | 31.8 MB | 96 |  |
+| win-64/ncbi-datasets-cli-18.25.1-h57928b3\_0.conda | conda | 18.25.1 | win-64 | main | 6 days ago | 16.47 MB | 55 |  |
 | linux-64/ncbi-datasets-cli-18.25.1-ha770c72\_0.conda | conda | 18.25.1 | linux-64 | main | 6 days ago | 16.21 MB | 1.1K |  |
 | linux-aarch64/ncbi-datasets-cli-18.25.0-h8af1aa0\_0.conda | conda | 18.25.0 | linux-aarch64 | main | 7 days ago | 15.16 MB | 24 |  |
 | osx-64/ncbi-datasets-cli-18.25.0-h694c41f\_0.conda | conda | 18.25.0 | macOS-64 | main | 7 days ago | 31.8 MB | 25 |  |

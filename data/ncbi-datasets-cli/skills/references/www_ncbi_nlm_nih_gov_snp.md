@@ -125,7 +125,7 @@ dbSNP contains human single nucleotide variations, microsatellites, and small-sc
 * [ClinVar](/clinvar)
 * [GTR](https://www.ncbi.nlm.nih.gov/gtr/)
 
-![](/stat?jsdisabled=true&ncbi_app=entrez&ncbi_db=snp&ncbi_pdid=home&ncbi_phid=CE8C92659FBD28510000000000810070)
+![](/stat?jsdisabled=true&ncbi_app=entrez&ncbi_db=snp&ncbi_pdid=home&ncbi_phid=CE8B4D1D9FBDAD910000000000600055)
 
 Follow NCBI
 

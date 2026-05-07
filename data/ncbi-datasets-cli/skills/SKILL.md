@@ -1,7 +1,7 @@
 ---
 name: ncbi-datasets-cli
-description: The ncbi-datasets-cli tool provides a command-line interface for programmatically searching and downloading genome assemblies, sequences, and metadata from NCBI databases. Use when user asks to download reference genomes, search for metadata by taxon or accession, filter assemblies by quality level, or fetch specific genomic files like GFF3 and protein sequences.
-homepage: https://github.com/metagenlab/assembly_finder
+description: The ncbi-datasets-cli tool retrieves biological data packages from NCBI and transforms their metadata into structured formats. Use when user asks to download reference genomes, retrieve gene sequences, manage large datasets through dehydration and rehydration, or convert metadata reports into TSV format.
+homepage: https://www.ncbi.nlm.nih.gov/datasets/docs/v2/how-tos/
 metadata:
   docker_image: "quay.io/biocontainers/ncbi-datasets-cli:14.26.0"
 ---
@@ -10,47 +10,61 @@ metadata:
 # ncbi-datasets-cli
 
 ## Overview
-The `ncbi-datasets-cli` skill provides a streamlined interface for programmatically accessing the vast biological data repositories at NCBI. It replaces older, more complex tools like E-utilities for many common tasks, offering a modern, JSON-based approach to data retrieval. This skill enables the efficient gathering of genome assemblies, transcript sequences, and associated metadata using simple command-line patterns, making it essential for reproducible bioinformatics research and large-scale genomic analysis.
 
-## Core Command Patterns
+The `ncbi-datasets-cli` skill provides a streamlined interface for interacting with NCBI's biological databases programmatically. It utilizes two core utilities: `datasets` for downloading comprehensive data packages (including sequences, annotations, and metadata) and `dataformat` for transforming the resulting metadata into structured formats. This skill is particularly useful for bioinformaticians needing to automate the retrieval of reference genomes, gene sequences, or viral data, and for those managing large-scale data transfers through NCBI's dehydration and rehydration workflow.
 
-The tool is structured around three primary subcommands: `summary` (for metadata), `download` (for data packages), and `rehydrate` (for fetching large files from a metadata-only package).
+## Core CLI Patterns
 
-### 1. Metadata Retrieval (Summary)
-Always start with `summary` to validate your query and estimate data size before downloading.
+### 1. Downloading Data Packages
+The `datasets` tool retrieves data as a ZIP archive containing sequences and metadata.
 
-*   **Search by Taxon:**
-    `datasets summary genome taxon "Staphylococcus aureus" --reference`
-*   **Search by Accession:**
-    `datasets summary genome accession GCF_000013425.1`
-*   **Filter by Assembly Level:**
-    `datasets summary genome taxon human --assembly-level complete`
+*   **Genome by Taxon**: Download the reference genome for a specific organism.
+    ```bash
+    datasets download genome taxon "Homo sapiens" --reference --filename human_ref.zip
+    ```
+*   **Genome by Accession**: Download specific assembly versions.
+    ```bash
+    datasets download genome accession GCF_000001405.40 --filename grch38.zip
+    ```
+*   **Gene by Symbol**: Download gene sequences and metadata using symbols and taxon.
+    ```bash
+    datasets download gene symbol BRCA1 --taxon human --filename brca1_data.zip
+    ```
 
-### 2. Downloading Data Packages
-Downloads are provided as a zip archive containing the requested sequences and a data report.
+### 2. Handling Large Datasets (Dehydration/Rehydration)
+For large numbers of genomes, use the dehydration workflow to download metadata first and fetch sequences later.
 
-*   **Download Reference Genome:**
-    `datasets download genome taxon "staphylococcus aureus" --reference`
-*   **Include Specific Files (CDS, Protein, GFF3):**
-    `datasets download genome taxon 1280 --include rna,protein,cds,gff3`
-*   **Download by Accession List:**
-    `datasets download genome accession GCF_003812505.1,GCF_001618865.1`
+1.  **Download Dehydrated Package**:
+    ```bash
+    datasets download genome taxon "Mus musculus" --dehydrated --filename mouse_dehydrated.zip
+    ```
+2.  **Unzip**:
+    ```bash
+    unzip mouse_dehydrated.zip -d mouse_data_dir
+    ```
+3.  **Rehydrate**: Fetch the actual sequence files.
+    ```bash
+    datasets rehydrate --directory mouse_data_dir/
+    ```
 
-### 3. Advanced Filtering and Bulk Operations
-*   **Limit Results:** Use `--limit` to test queries or fetch a subset.
-    `datasets summary genome taxon eubacteria --limit 5`
-*   **RefSeq Only:** Use `--source refseq` to exclude GenBank assemblies.
-    `datasets download genome taxon "Escherichia coli" --source refseq`
-*   **Exclude MAGs:** For high-quality isolates, exclude Metagenome Assembled Genomes.
-    `datasets download genome taxon bacteria --mag exclude`
+### 3. Metadata Extraction and Formatting
+The `dataformat` tool processes the `data_report.jsonl` file found inside downloaded ZIP packages.
 
-## Expert Tips & Best Practices
+*   **Convert to TSV**: Extract specific fields from a genome package.
+    ```bash
+    dataformat tsv genome --package human_ref.zip --fields organism-name,assminfo-name,accession
+    ```
+*   **Gene Metadata**: Extract gene-specific information.
+    ```bash
+    dataformat tsv gene --package brca1_data.zip --fields symbol,gene-id,description
+    ```
 
-*   **API Keys:** For large-scale downloads or high-frequency queries, always use an NCBI API key to avoid rate limiting. Pass it via `--api-key <key>`.
-*   **JSON Processing:** The `summary` command outputs JSON. Pipe the output to `jq` for easy parsing of specific fields like accessions or FTP paths.
-    `datasets summary genome taxon "Chlamydia" | jq '.reports[].accession'`
-*   **Decompression:** NCBI data packages are zipped. Use `unzip` to access the `ncbi_dataset/data/` directory where sequences are stored.
-*   **Assembly Finder Logic:** When searching for the "best" available genome, follow the hierarchy: **Complete Genome > Chromosome > Scaffold > Contig**.
+## Expert Tips
+
+*   **API Keys**: NCBI limits requests to 5 per second by default. Use an API key to increase this to 10 requests per second. Set the key in your environment: `export NCBI_API_KEY=your_key_here`.
+*   **Filtering Genome Downloads**: Use flags like `--reference` to get only the high-quality reference assembly or `--annotated` to ensure the package includes functional annotations.
+*   **Field Discovery**: If unsure of available fields for `dataformat`, use the tool's help command for the specific data type (e.g., `dataformat tsv genome --help`) to see a full list of valid field names.
+*   **Taxonomy Checks**: Use `datasets summary taxonomy taxon <name>` to verify the taxonomic ID or rank before initiating a large download.
 
 
 
@@ -65,8 +79,8 @@ Downloads are provided as a zip archive containing the requested sequences and a
 | datasets rehydrate | Download data files for an unzipped, dehydrated genome data package. Data files specified in fetch.txt will be downloaded from NCBI. |
 | datasets summary | Print a data report containing gene, genome or virus metadata in JSON format. |
 
-## Reference Documentation
-- [NCBI Datasets CLI Overview](./references/anaconda_org_channels_conda-forge_packages_ncbi-datasets-cli_overview.md)
-- [Assembly Finder Examples](./references/github_com_metagenlab_assembly_finder_blob_main_docs_examples.md)
-- [Input Patterns and Tables](./references/github_com_metagenlab_assembly_finder_blob_main_docs_inputs.md)
-- [NCBI Datasets How-To Guides](./references/www_ncbi_nlm_nih_gov_datasets_docs_v2_how-tos.md)
+## Reference documentation
+
+- [NCBI Datasets GitHub README](./references/github_com_ncbi_datasets_blob_master_README.md)
+- [NCBI Datasets Documentation Overview](./references/www_ncbi_nlm_nih_gov_datasets.md)
+- [Comparative Genomics Resource Analysis Tools](./references/www_ncbi_nlm_nih_gov_comparative-genomics-resource_analysis-tools.md)

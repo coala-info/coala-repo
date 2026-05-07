@@ -85,7 +85,7 @@ The Nucleotide database is a collection of sequences from several sources, inclu
 * [SRA Home](/Traces/sra/sra.cgi)
 * [INSDC](http://www.insdc.org)
 
-![](/stat?jsdisabled=true&ncbi_app=entrez&ncbi_db=nuccore&ncbi_pdid=home&ncbi_phid=CE8AC6F79FBD515100000000007D0068)
+![](/stat?jsdisabled=true&ncbi_app=entrez&ncbi_db=nuccore&ncbi_pdid=home&ncbi_phid=CE8AEBED9FBD89810000000000E900DA)
 
 Follow NCBI
 

@@ -48,7 +48,7 @@ Logged in as:
 [Main Content](#maincontent)
 Main Navigation
 
-![](/stat?jsdisabled=true&ncbi_app=account&ncbi_db=&ncbi_pdid=signout-page&ncbi_phid=CE8EB02D9FBD54D100000000007B006D)
+![](/stat?jsdisabled=true&ncbi_app=account&ncbi_db=&ncbi_pdid=signout-page&ncbi_phid=CE8EDB229FBD81E10000000000E300D0)
 
 Follow NCBI
 

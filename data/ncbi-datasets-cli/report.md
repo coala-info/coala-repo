@@ -6,7 +6,7 @@
 Print a data report containing gene, genome or virus metadata in JSON format.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
+- **Docker Image**: ensemblorg/datasets-cli:v18.25.1
 - **Homepage**: https://www.ncbi.nlm.nih.gov/datasets/docs/v2/how-tos/
 - **Package**: Not found
 - **Validation**: PASS
@@ -54,7 +54,7 @@ Use datasets summary <command> --help for detailed help about a command.
 Download genome, gene and virus data packages, including sequence, annotation, and metadata, as a zip file.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
+- **Docker Image**: ensemblorg/datasets-cli:latest
 - **Homepage**: https://github.com/ncbi/datasets
 - **Package**: Not found
 - **Validation**: PASS
@@ -103,7 +103,7 @@ Use datasets download <command> --help for detailed help about a command.
 Download data files for an unzipped, dehydrated genome data package. Data files specified in fetch.txt will be downloaded from NCBI.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
+- **Docker Image**: ensemblorg/datasets-cli:latest
 - **Homepage**: https://github.com/ncbi/datasets
 - **Package**: Not found
 - **Validation**: PASS
@@ -137,7 +137,7 @@ Global Flags
 This sub-command generates files needed to enable auto-complete for several popular command-line interpreters.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
+- **Docker Image**: ensemblorg/datasets-cli:latest
 - **Homepage**: https://github.com/ncbi/datasets
 - **Package**: Not found
 - **Validation**: PASS
@@ -175,7 +175,7 @@ Use datasets completion <command> --help for detailed help about a command.
 Convert data to TSV format.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
+- **Docker Image**: ensemblorg/datasets-cli:latest
 - **Homepage**: https://github.com/ncbi/datasets
 - **Package**: Not found
 - **Validation**: PASS
@@ -219,7 +219,7 @@ Use dataformat tsv <command> --help for detailed help about a command.
 Convert data into an Excel workbook.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
+- **Docker Image**: ensemblorg/datasets-cli:latest
 - **Homepage**: https://github.com/ncbi/datasets
 - **Package**: Not found
 - **Validation**: PASS
@@ -266,7 +266,7 @@ Use dataformat excel <command> --help for detailed help about a command.
 Print a data report containing gene metadata. The data report is returned in JSON format.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
+- **Docker Image**: ensemblorg/datasets-cli:latest
 - **Homepage**: https://github.com/ncbi/datasets
 - **Package**: Not found
 - **Validation**: PASS
@@ -318,7 +318,7 @@ Use datasets summary gene <command> --help for detailed help about a command.
 Print a data report containing genome metadata. The data report is returned in JSON format.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
+- **Docker Image**: ensemblorg/datasets-cli:latest
 - **Homepage**: https://github.com/ncbi/datasets
 - **Package**: Not found
 - **Validation**: PASS
@@ -385,7 +385,7 @@ Use datasets summary genome <command> --help for detailed help about a command.
 Print a data report containing virus genome metadata by accession or taxon. The data report is returned in JSON format.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
+- **Docker Image**: ensemblorg/datasets-cli:latest
 - **Homepage**: https://github.com/ncbi/datasets
 - **Package**: Not found
 - **Validation**: PASS
@@ -416,7 +416,7 @@ Use datasets summary virus <command> --help for detailed help about a command.
 Download a virus genome or SARS-CoV-2 protein data package as a zip file.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
+- **Docker Image**: ensemblorg/datasets-cli:latest
 - **Homepage**: https://github.com/ncbi/datasets
 - **Package**: Not found
 - **Validation**: PASS
@@ -454,7 +454,7 @@ Use datasets download virus <command> --help for detailed help about a command.
 Download a gene data package. Gene data packages include gene, transcript and protein sequences and one or more data reports. Data packages are downloaded as a zip archive.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
+- **Docker Image**: ensemblorg/datasets-cli:latest
 - **Homepage**: https://github.com/ncbi/datasets
 - **Package**: Not found
 - **Validation**: PASS
@@ -508,7 +508,7 @@ Use datasets download gene <command> --help for detailed help about a command.
 Download a genome data package. Genome data packages may include genome, transcript and protein sequences, annotation and one or more data reports. Data packages are downloaded as a zip archive.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
+- **Docker Image**: ensemblorg/datasets-cli:latest
 - **Homepage**: https://github.com/ncbi/datasets
 - **Package**: Not found
 - **Validation**: PASS

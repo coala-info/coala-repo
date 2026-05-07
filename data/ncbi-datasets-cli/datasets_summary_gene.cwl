@@ -64,7 +64,7 @@ outputs:
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
+    dockerPull: ensemblorg/datasets-cli:latest
 stdout: datasets_summary_gene.out
 s:url: https://github.com/metagenlab/assembly_finder
 $namespaces:

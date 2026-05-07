@@ -68,7 +68,7 @@ outputs:
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
+    dockerPull: ensemblorg/datasets-cli:latest
 stdout: ncbi-datasets-cli_rehydrate.out
 s:url: https://github.com/metagenlab/assembly_finder
 $namespaces:

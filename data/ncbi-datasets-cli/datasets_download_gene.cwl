@@ -87,7 +87,7 @@ requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
+    dockerPull: ensemblorg/datasets-cli:latest
 s:url: https://github.com/metagenlab/assembly_finder
 $namespaces:
   s: https://schema.org/

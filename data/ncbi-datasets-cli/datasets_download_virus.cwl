@@ -3,29 +3,15 @@ class: CommandLineTool
 baseCommand:
   - datasets
   - download
-label: ncbi-datasets-cli_download
-doc: Download genome, gene and virus data packages, including sequence, 
-  annotation, and metadata, as a zip file.
+  - virus
+label: datasets_download_virus
+doc: Download a virus genome or SARS-CoV-2 protein data package as a zip file.
 inputs:
-  - id: command
+  - id: subcommand
     type: string
-    doc: The specific data package type to download (gene, genome, or virus)
+    doc: The subcommand to execute (genome or protein)
     inputBinding:
       position: 1
-  - id: filename
-    type: string
-    doc: Specify a custom file name for the downloaded data package
-    inputBinding:
-      position: 102
-      prefix: --filename
-  - id: no_progressbar
-    type:
-      - 'null'
-      - boolean
-    doc: Hide progress bar
-    inputBinding:
-      position: 102
-      prefix: --no-progressbar
   - id: api_key
     type:
       - 'null'
@@ -42,6 +28,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --debug
+  - id: filename
+    type: string
+    doc: Specify a custom file name for the downloaded data package
+    inputBinding:
+      position: 102
+      prefix: --filename
+  - id: no_progressbar
+    type:
+      - 'null'
+      - boolean
+    doc: Hide progress bar
+    inputBinding:
+      position: 102
+      prefix: --no-progressbar
 outputs:
   - id: output_filename
     type:

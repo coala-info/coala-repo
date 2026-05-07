@@ -115,11 +115,17 @@ Search, read, and discover.
 
 ### Featured Titles
 
-* [![Book thumbnail](/corehtml/pmc/pmcgifs/bookshelf/thumbs/th-jaspers2024.png)](/books/NBK609907)
-  [Jasper's Basic Mechanisms of the Epilepsies. 5th edition.](/books/NBK609907)
+* [![Book thumbnail](/corehtml/pmc/pmcgifs/bookshelf/thumbs/th-glyco4.png)](/books/NBK579918)
+  [Essentials of Glycobiology [Internet]. 4th edition.](/books/NBK579918)
 
-  Noebels JL, Avoli M, Rogawski MA, et al., editors.
-  New York: Oxford University Press; 2024.
+  Varki A, Cummings RD, Esko JD, et al., editors.
+  Cold Spring Harbor (NY): Cold Spring Harbor Laboratory Press; 2022.
+* [![Book thumbnail](/corehtml/pmc/pmcgifs/bookshelf/thumbs/th-sr02208.png)](/books/NBK612855)
+  [Evaluation of an Enhanced Modified Kalman Filter Approach for Estimating Health Outcomes in Small Subpopulations [Internet].](/books/NBK612855)
+
+  Vital and Health Statistics Series Reports Series 2, No. 208.
+  Rossen LM, Talih M, Patel P, et al.
+  Atlanta (GA): National Center for Health Statistics (NCHS); 2024 Sep.
 * [![Book thumbnail](/corehtml/pmc/pmcgifs/bookshelf/thumbs/th-sr02211.png)](/books/NBK613905)
   [Measuring Progress Toward Target Attainment and the Elimination of Health Disparities in Healthy People 2030 [Internet].](/books/NBK613905)
 
@@ -132,15 +138,10 @@ Search, read, and discover.
   Vital and Health Statistics Series Reports Series 2, No. 210.
   Galinsky AM, Medley GE, Nguyen DT, et al.
   Atlanta (GA): National Center for Health Statistics (NCHS); 2024 Dec.
-* [![Book thumbnail](/corehtml/pmc/pmcgifs/bookshelf/thumbs/th-nchsnhsr.png)](/books/NBK606853)
-  [National Health Statistics Reports [Internet].](/books/NBK606853)
+* [![Book thumbnail](/corehtml/pmc/pmcgifs/bookshelf/thumbs/th-nchsnvsr.png)](/books/NBK606162)
+  [National Vital Statistics Reports [Internet].](/books/NBK606162)
 
   Hyattsville (MD): National Center for Health Statistics (US); 2024 Jul-.
-* [![Book thumbnail](/corehtml/pmc/pmcgifs/bookshelf/thumbs/th-iarcwcr2020.png)](/books/NBK606505)
-  [World Cancer Report: Cancer research for cancer prevention.](/books/NBK606505)
-
-  Wild CP, Weiderpass E, Stewart BW, editors.
-  Lyon (FR): International Agency for Research on Cancer; 2020.
 
 ### More Information
 
@@ -150,7 +151,7 @@ Search, read, and discover.
 
 Image credit: SEM Penicillium mold and spores; David Gregory and Debbie Marshall, Wellcome Images
 
-![](/stat?jsdisabled=true&ncbi_app=entrez&ncbi_db=books&ncbi_pdid=home&ncbi_phid=CE8E13189FBDB52100000000007B0074)
+![](/stat?jsdisabled=true&ncbi_app=entrez&ncbi_db=books&ncbi_pdid=home&ncbi_phid=CE8C403E9FBDFF310000000000D000BA)
 
 Follow NCBI
 

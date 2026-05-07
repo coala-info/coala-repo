@@ -83,7 +83,7 @@ The Protein database is a collection of sequences from several sources, includin
 * [CDD](/cdd)
 * [Structure](/sites/structure)
 
-![](/stat?jsdisabled=true&ncbi_app=entrez&ncbi_db=protein&ncbi_pdid=home&ncbi_phid=CE8A0DFA9FBDB9010000000000850081)
+![](/stat?jsdisabled=true&ncbi_app=entrez&ncbi_db=protein&ncbi_pdid=home&ncbi_phid=CE8879AA9FBE6741000000000056004F)
 
 Follow NCBI
 

@@ -6,7 +6,7 @@
 Convert various file formats to markdown.
 
 ### Metadata
-- **Docker Image**: Not found
+- **Docker Image**: mcp/markitdown:latest
 - **Homepage**: https://github.com/microsoft/markitdown
 - **Package**: Not found
 - **Validation**: PASS

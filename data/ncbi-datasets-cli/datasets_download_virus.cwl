@@ -52,6 +52,8 @@ outputs:
       glob: $(inputs.filename)
 requirements:
   - class: InlineJavascriptRequirement
+  - class: NetworkAccess
+    networkAccess: true
 hints:
   - class: DockerRequirement
     dockerPull: ensemblorg/datasets-cli:latest

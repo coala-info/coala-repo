@@ -1,6 +1,6 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: markitdown
+baseCommand: ""
 label: markitdown
 doc: "Convert various file formats to markdown.\n\nTool homepage: https://github.com/microsoft/markitdown"
 inputs:
@@ -11,6 +11,14 @@ inputs:
     doc: Input file to be converted. If empty, markitdown reads from stdin.
     inputBinding:
       position: 1
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output file name. If not provided, output is written to stdout.
+    inputBinding:
+      position: 102
+      prefix: --output
   - id: charset
     type:
       - 'null'
@@ -88,7 +96,7 @@ outputs:
       - File
     doc: Output file name. If not provided, output is written to stdout.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
 hints:
   - class: DockerRequirement
     dockerPull: adeuxy/markitdown:latest

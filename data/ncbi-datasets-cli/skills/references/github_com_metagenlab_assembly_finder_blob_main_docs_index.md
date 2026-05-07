@@ -4,7 +4,7 @@
 
 Toggle navigation
 
-[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmetagenlab%2Fassembly_finder%2Ftree%2Fmain%2Fdocs)
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmetagenlab%2Fassembly_finder%2Fblob%2Fmain%2Fdocs%2Findex.md)
 
 Appearance settings
 
@@ -126,9 +126,9 @@ Cancel
 Cancel
  Create saved search
 
-[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmetagenlab%2Fassembly_finder%2Ftree%2Fmain%2Fdocs)
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmetagenlab%2Fassembly_finder%2Fblob%2Fmain%2Fdocs%2Findex.md)
 
-[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Ffiles%2Fdisambiguate&source=header-repo&source_repo=metagenlab%2Fassembly_finder)
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fblob%2Fshow&source=header-repo&source_repo=metagenlab%2Fassembly_finder)
 
 Appearance settings
 
@@ -183,60 +183,174 @@ main
 ## Breadcrumbs
 
 1. [assembly\_finder](/metagenlab/assembly_finder/tree/main)
+2. /[docs](/metagenlab/assembly_finder/tree/main/docs)
 
 /
 
-# docs
-
-/
+# index.md
 
 Copy path
 
-## Directory actions
+BlameMore file actions
 
-## More options
-
-More options
-
-## Directory actions
-
-## More options
-
-More options
+BlameMore file actions
 
 ## Latest commit
 
 ## History
 
-[History](/metagenlab/assembly_finder/commits/main/docs)
+[History](/metagenlab/assembly_finder/commits/main/docs/index.md)
 
 History
+
+107 lines (74 loc) · 2.87 KB
 
 main
 
 ## Breadcrumbs
 
 1. [assembly\_finder](/metagenlab/assembly_finder/tree/main)
+2. /[docs](/metagenlab/assembly_finder/tree/main/docs)
 
 /
 
-# docs
-
-/
+# index.md
 
 Top
 
-## Folders and files
+## File metadata and controls
 
-| Name | | Name | Last commit message | Last commit date |
-| --- | --- | --- | --- | --- |
-| parent directory [..](/metagenlab/assembly_finder/tree/main) | | |
-| [images](/metagenlab/assembly_finder/tree/main/docs/images "images") | | [images](/metagenlab/assembly_finder/tree/main/docs/images "images") |  |  |
-| [examples.md](/metagenlab/assembly_finder/blob/main/docs/examples.md "examples.md") | | [examples.md](/metagenlab/assembly_finder/blob/main/docs/examples.md "examples.md") |  |  |
-| [index.md](/metagenlab/assembly_finder/blob/main/docs/index.md "index.md") | | [index.md](/metagenlab/assembly_finder/blob/main/docs/index.md "index.md") |  |  |
-| [inputs.md](/metagenlab/assembly_finder/blob/main/docs/inputs.md "inputs.md") | | [inputs.md](/metagenlab/assembly_finder/blob/main/docs/inputs.md "inputs.md") |  |  |
-| [outputs.md](/metagenlab/assembly_finder/blob/main/docs/outputs.md "outputs.md") | | [outputs.md](/metagenlab/assembly_finder/blob/main/docs/outputs.md "outputs.md") |  |  |
-| View all files | | |
+* Preview
+* Code
+* Blame
+
+107 lines (74 loc) · 2.87 KB
+
+[Raw](https://github.com/metagenlab/assembly_finder/raw/refs/heads/main/docs/index.md)
+
+Copy raw file
+
+Download raw file
+
+Outline
+
+Edit and raw actions
+
+# assembly\_finder
+
+[![tests](https://github.com/metagenlab/assembly_finder/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/metagenlab/assembly_finder/actions/workflows/unit-tests.yml)
+[![docs](https://github.com/metagenlab/assembly_finder/actions/workflows/build-docs.yml/badge.svg)](https://github.com/metagenlab/assembly_finder/actions/workflows/build-docs.yml)
+[![docker](https://github.com/metagenlab/assembly_finder/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/metagenlab/assembly_finder/actions/workflows/docker-publish.yml)
+
+[![snaketool](https://camo.githubusercontent.com/e9e3cdfff18a546ac69e1a36c4a78288faf64eb5cfd1a136ab680c3f207a335e/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f6c6162656c3d434c49266d6573736167653d536e616b65746f6f6c26636f6c6f723d626c756576696f6c6574)](https://github.com/beardymcjohnface/Snaketool)
+[![license](https://camo.githubusercontent.com/427b286cb8814ca083392882d28f7c45998f21f3599b7d82177ff7c9ec6fbe1d/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6d65746167656e6c61622f617373656d626c795f66696e6465722e737667)](https://github.com/metagenlab/assembly_finder/blob/main/LICENSE)
+[![version](https://camo.githubusercontent.com/33d80d3abaccc123c412ef0466e35e55e9d576e10e3c8228c176be9bcb088242/68747470733a2f2f696d672e736869656c64732e696f2f636f6e64612f766e2f62696f636f6e64612f617373656d626c795f66696e646572)](http://bioconda.github.io/recipes/assembly_finder/README.html)
+[![downloads](https://camo.githubusercontent.com/106e622eba50db7ddf33c64e3318080aae934540db0699912fe8cdd25309cc4e/68747470733a2f2f696d672e736869656c64732e696f2f636f6e64612f646e2f62696f636f6e64612f617373656d626c795f66696e646572)](https://anaconda.org/bioconda/assembly_finder)
+
+[![DOI](https://camo.githubusercontent.com/0124a280206807fb86cc8f467191a371c7c46c4379eb2dde18f28480d068b363/68747470733a2f2f7a656e6f646f2e6f72672f62616467652f444f492f31302e353238312f7a656e6f646f2e31333335333439342e737667)](https://zenodo.org/doi/10.5281/zenodo.13353494)
+
+`assembly_finder` is a [Snakemake](https://github.com/snakemake/snakemake) CLI wrapper for [NCBI datasets](https://github.com/ncbi/datasets), written with [Snaketool](https://github.com/beardymcjohnface/Snaketool), for easy genome assembly downloads.
+
+## Installation
+
+=== "Conda (recommended)"
+
+```
+```sh
+conda create -n assembly_finder -c bioconda assembly_finder
+```
+!!! note
+    Requires a [Miniforge](https://github.com/conda-forge/miniforge) installation
+```
+
+=== "git"
+
+```
+```sh
+git clone https://github.com/metagenlab/assembly_finder.git
+pip install -e assembly_finder
+```
+!!! note
+    Requires a [Miniforge](https://github.com/conda-forge/miniforge) installation
+```
+
+=== "Apptainer"
+
+```
+```sh
+apptainer pull docker://ghcr.io/metagenlab/assembly_finder:latest
+```
+```
+
+## Usage
+
+### Taxon
+
+* Download staphylococcus aureus **reference genome**
+
+```
+assembly_finder -i staphylococcus_aureus --reference
+```
+
+or
+
+```
+assembly_finder -i 1280 -r
+```
+
+### Taxa
+
+* Find reference genomes for multiple taxa
+
+```
+assembly_finder -i 1290,1813735,114185 --reference
+```
+
+or
+
+```
+assembly_finder -i taxa.txt --reference
+```
+
+with `taxa.txt`:
+
+```
+1280
+1813735
+114185
+```
+
+### Accessions
+
+* Download staphylococcus aureus **reference genome** using its assembly accession
+
+```
+assembly_finder --acc -i GCF_000013425.1
+```
+
+* Download multiple accessions
+
+```
+assembly_finder --acc -i GCF_003812505.1,GCF_001618865.1,GCF_000287275.1
+```
+
+or
+
+```
+assembly_finder -i accessions.txt
+```
+
+with `accessions.txt`:
+
+```
+GCF_003812505.1
+GCF_001618865.1
+GCF_000287275.1
+```
+
+## Command-line options
+
+[![assembly_finder -h](/metagenlab/assembly_finder/raw/main/docs/images/af-help.svg)](/metagenlab/assembly_finder/blob/main/docs/images/af-help.svg)
 
 ## Footer
 

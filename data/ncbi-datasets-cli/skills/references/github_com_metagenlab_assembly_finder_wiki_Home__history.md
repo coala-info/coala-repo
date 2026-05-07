@@ -4,7 +4,7 @@
 
 Toggle navigation
 
-[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmetagenlab%2Fassembly_finder%2Ftree%2Fmain%2Fdocs)
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmetagenlab%2Fassembly_finder%2Fwiki%2FHome%2F_history)
 
 Appearance settings
 
@@ -126,9 +126,9 @@ Cancel
 Cancel
  Create saved search
 
-[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmetagenlab%2Fassembly_finder%2Ftree%2Fmain%2Fdocs)
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmetagenlab%2Fassembly_finder%2Fwiki%2FHome%2F_history)
 
-[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Ffiles%2Fdisambiguate&source=header-repo&source_repo=metagenlab%2Fassembly_finder)
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fwiki%2Fhistory&source=header-repo&source_repo=metagenlab%2Fassembly_finder)
 
 Appearance settings
 
@@ -176,67 +176,7 @@ Additional navigation options
 * [Security and quality](/metagenlab/assembly_finder/security)
 * [Insights](/metagenlab/assembly_finder/pulse)
 
-## FilesExpand file tree
-
-main
-
-## Breadcrumbs
-
-1. [assembly\_finder](/metagenlab/assembly_finder/tree/main)
-
-/
-
-# docs
-
-/
-
-Copy path
-
-## Directory actions
-
-## More options
-
-More options
-
-## Directory actions
-
-## More options
-
-More options
-
-## Latest commit
-
-## History
-
-[History](/metagenlab/assembly_finder/commits/main/docs)
-
-History
-
-main
-
-## Breadcrumbs
-
-1. [assembly\_finder](/metagenlab/assembly_finder/tree/main)
-
-/
-
-# docs
-
-/
-
-Top
-
-## Folders and files
-
-| Name | | Name | Last commit message | Last commit date |
-| --- | --- | --- | --- | --- |
-| parent directory [..](/metagenlab/assembly_finder/tree/main) | | |
-| [images](/metagenlab/assembly_finder/tree/main/docs/images "images") | | [images](/metagenlab/assembly_finder/tree/main/docs/images "images") |  |  |
-| [examples.md](/metagenlab/assembly_finder/blob/main/docs/examples.md "examples.md") | | [examples.md](/metagenlab/assembly_finder/blob/main/docs/examples.md "examples.md") |  |  |
-| [index.md](/metagenlab/assembly_finder/blob/main/docs/index.md "index.md") | | [index.md](/metagenlab/assembly_finder/blob/main/docs/index.md "index.md") |  |  |
-| [inputs.md](/metagenlab/assembly_finder/blob/main/docs/inputs.md "inputs.md") | | [inputs.md](/metagenlab/assembly_finder/blob/main/docs/inputs.md "inputs.md") |  |  |
-| [outputs.md](/metagenlab/assembly_finder/blob/main/docs/outputs.md "outputs.md") | | [outputs.md](/metagenlab/assembly_finder/blob/main/docs/outputs.md "outputs.md") |  |  |
-| View all files | | |
+# [History](/metagenlab/assembly_finder/wiki/_history) / Home
 
 ## Footer
 

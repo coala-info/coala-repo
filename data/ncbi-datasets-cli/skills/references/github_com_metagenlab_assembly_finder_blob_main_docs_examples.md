@@ -4,7 +4,7 @@
 
 Toggle navigation
 
-[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmetagenlab%2Fassembly_finder%2Ftree%2Fmain%2Fdocs)
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmetagenlab%2Fassembly_finder%2Fblob%2Fmain%2Fdocs%2Fexamples.md)
 
 Appearance settings
 
@@ -126,9 +126,9 @@ Cancel
 Cancel
  Create saved search
 
-[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmetagenlab%2Fassembly_finder%2Ftree%2Fmain%2Fdocs)
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmetagenlab%2Fassembly_finder%2Fblob%2Fmain%2Fdocs%2Fexamples.md)
 
-[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Ffiles%2Fdisambiguate&source=header-repo&source_repo=metagenlab%2Fassembly_finder)
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fblob%2Fshow&source=header-repo&source_repo=metagenlab%2Fassembly_finder)
 
 Appearance settings
 
@@ -183,60 +183,188 @@ main
 ## Breadcrumbs
 
 1. [assembly\_finder](/metagenlab/assembly_finder/tree/main)
+2. /[docs](/metagenlab/assembly_finder/tree/main/docs)
 
 /
 
-# docs
-
-/
+# examples.md
 
 Copy path
 
-## Directory actions
+BlameMore file actions
 
-## More options
-
-More options
-
-## Directory actions
-
-## More options
-
-More options
+BlameMore file actions
 
 ## Latest commit
 
 ## History
 
-[History](/metagenlab/assembly_finder/commits/main/docs)
+[History](/metagenlab/assembly_finder/commits/main/docs/examples.md)
 
 History
+
+119 lines (93 loc) · 2.96 KB
 
 main
 
 ## Breadcrumbs
 
 1. [assembly\_finder](/metagenlab/assembly_finder/tree/main)
+2. /[docs](/metagenlab/assembly_finder/tree/main/docs)
 
 /
 
-# docs
-
-/
+# examples.md
 
 Top
 
-## Folders and files
+## File metadata and controls
 
-| Name | | Name | Last commit message | Last commit date |
-| --- | --- | --- | --- | --- |
-| parent directory [..](/metagenlab/assembly_finder/tree/main) | | |
-| [images](/metagenlab/assembly_finder/tree/main/docs/images "images") | | [images](/metagenlab/assembly_finder/tree/main/docs/images "images") |  |  |
-| [examples.md](/metagenlab/assembly_finder/blob/main/docs/examples.md "examples.md") | | [examples.md](/metagenlab/assembly_finder/blob/main/docs/examples.md "examples.md") |  |  |
-| [index.md](/metagenlab/assembly_finder/blob/main/docs/index.md "index.md") | | [index.md](/metagenlab/assembly_finder/blob/main/docs/index.md "index.md") |  |  |
-| [inputs.md](/metagenlab/assembly_finder/blob/main/docs/inputs.md "inputs.md") | | [inputs.md](/metagenlab/assembly_finder/blob/main/docs/inputs.md "inputs.md") |  |  |
-| [outputs.md](/metagenlab/assembly_finder/blob/main/docs/outputs.md "outputs.md") | | [outputs.md](/metagenlab/assembly_finder/blob/main/docs/outputs.md "outputs.md") |  |  |
-| View all files | | |
+* Preview
+* Code
+* Blame
+
+119 lines (93 loc) · 2.96 KB
+
+[Raw](https://github.com/metagenlab/assembly_finder/raw/refs/heads/main/docs/examples.md)
+
+Copy raw file
+
+Download raw file
+
+Outline
+
+Edit and raw actions
+
+## Download summary tables
+
+Starting from [v0.8.0](https://github.com/metagenlab/assembly_finder/releases/tag/v0.8.0), you can restrict outputs to `assembly_summary.tsv` and `taxonomy.tsv`
+
+* Command
+
+```
+assembly_finder -i staphylococcus_aureus --reference --summary
+```
+
+* Output
+
+```
+📂staphylococcus_aureus
+ ┣ 📂logs
+ ┃ ┣ 📂taxons
+ ┃ ┃ ┗ 📜staphylococcus_aureus.log
+ ┃ ┗📜lineage.log
+ ┣ 📜assembly_finder.log
+ ┣ 📜assembly_summary.tsv
+ ┣ 📜config.yaml
+ ┗ 📜taxonomy.tsv
+```
+
+## Download genomes
+
+### Small datasets
+
+* *Staphylococcus aureus* complete genomes
+
+```
+assembly_finder -i staphylococcus_aureus
+```
+
+!!! note
+By default, assembly\_finder searches assembly levels in the following order: **complete**, **chromosome**, **scaffold**, and **contig**.
+
+```
+The search stops at the first assembly level where genomes are found.
+
+This behavior was introduced in [v0.9.0](https://github.com/metagenlab/assembly_finder/releases/tag/v0.9.0) to allow finding the best genomes available for each taxon
+```
+
+* All *Staphylococcus aureus* genomes
+
+```
+assembly_finder -i staphylococcus_aureus --all
+```
+
+!!! note
+The --all option disables the default iteration over assembly levels.
+When used, all genomes for the specified taxon are downloaded, regardless of their assembly level.
+
+* Any *Staphylococcus aureus* complete genome
+
+```
+assembly_finder -i staphylococcus_aureus -nb 1
+```
+
+### Big datasets
+
+!!! warning
+
+```
+These examples are for big datasets downloads, so using an NCBI api-key is highly recommended
+```
+
+* Download all chlamydia genomes
+
+```
+assembly_finder -i chlamydia --all --api-key <api-key>
+```
+
+* Best ranking complete genome per bacteria species
+
+```
+assembly_finder -i eubacteria --api-key <api-key> --rank species --nrank 1
+```
+
+* Complete bacteria viruses and archaea genomes from RefSeq (excluding MAGs and atypical)
+
+```
+assembly_finder -i eubacteria,viruses,archaea \
+--api-key <api-key> \
+--source refseq \
+--mag exclude \
+-o outdir
+```
+
+* Specific bioproject
+
+```
+assembly_finder -i PRJNA289059 --api-key <api-key> --accession
+```
+
+## Download other files (cds, proteins, gff3 ...)
+
+```
+assembly_finder -i staphylococcus_aureus --reference \
+--include rna,protein,cds,gff3,gtf,gbff,seq-report
+```
+
+Output:
+
+```
+📂staphylococcus_aureus
+ ┣ 📂download
+ ┃ ┣ 📂GCF_000013425.1
+ ┃ ┃ ┣ 📜GCF_000013425.1_ASM1342v1_genomic.fna.gz
+ ┃ ┃ ┣ 📜cds_from_genomic.fna.gz
+ ┃ ┃ ┣ 📜genomic.gbff.gz
+ ┃ ┃ ┣ 📜genomic.gff.gz
+ ┃ ┃ ┣ 📜genomic.gtf.gz
+ ┃ ┃ ┗ 📜protein.faa.gz
+ ┃ ┃ ┗ 📜sequence_report.jsonl
+ ┃ ┗ 📜.snakemake_timestamp
+ ┣ 📂logs
+ ┃ ┣ 📂taxons
+ ┃ ┃ ┗ 📜staphylococcus_aureus.log
+ ┃ ┣ 📜archive.log
+ ┃ ┣ 📜lineage.log
+ ┃ ┣ 📜rsync.log
+ ┃ ┗ 📜unzip.log
+ ┣ 📜archive.zip
+ ┣ 📜assembly_finder.log
+ ┣ 📜assembly_summary.tsv
+ ┣ 📜config.yaml
+ ┗ 📜taxonomy.tsv
+```
 
 ## Footer
 

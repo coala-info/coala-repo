@@ -4,7 +4,7 @@
 
 Toggle navigation
 
-[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmetagenlab%2Fassembly_finder%2Ftree%2Fmain%2Fdocs)
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmetagenlab%2Fassembly_finder%2Ftree%2Fmain%2Fdocs%2Fimages)
 
 Appearance settings
 
@@ -126,7 +126,7 @@ Cancel
 Cancel
  Create saved search
 
-[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmetagenlab%2Fassembly_finder%2Ftree%2Fmain%2Fdocs)
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmetagenlab%2Fassembly_finder%2Ftree%2Fmain%2Fdocs%2Fimages)
 
 [Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Ffiles%2Fdisambiguate&source=header-repo&source_repo=metagenlab%2Fassembly_finder)
 
@@ -183,10 +183,11 @@ main
 ## Breadcrumbs
 
 1. [assembly\_finder](/metagenlab/assembly_finder/tree/main)
+2. /[docs](/metagenlab/assembly_finder/tree/main/docs)
 
 /
 
-# docs
+# images
 
 /
 
@@ -208,7 +209,7 @@ More options
 
 ## History
 
-[History](/metagenlab/assembly_finder/commits/main/docs)
+[History](/metagenlab/assembly_finder/commits/main/docs/images)
 
 History
 
@@ -217,10 +218,11 @@ main
 ## Breadcrumbs
 
 1. [assembly\_finder](/metagenlab/assembly_finder/tree/main)
+2. /[docs](/metagenlab/assembly_finder/tree/main/docs)
 
 /
 
-# docs
+# images
 
 /
 
@@ -230,12 +232,8 @@ Top
 
 | Name | | Name | Last commit message | Last commit date |
 | --- | --- | --- | --- | --- |
-| parent directory [..](/metagenlab/assembly_finder/tree/main) | | |
-| [images](/metagenlab/assembly_finder/tree/main/docs/images "images") | | [images](/metagenlab/assembly_finder/tree/main/docs/images "images") |  |  |
-| [examples.md](/metagenlab/assembly_finder/blob/main/docs/examples.md "examples.md") | | [examples.md](/metagenlab/assembly_finder/blob/main/docs/examples.md "examples.md") |  |  |
-| [index.md](/metagenlab/assembly_finder/blob/main/docs/index.md "index.md") | | [index.md](/metagenlab/assembly_finder/blob/main/docs/index.md "index.md") |  |  |
-| [inputs.md](/metagenlab/assembly_finder/blob/main/docs/inputs.md "inputs.md") | | [inputs.md](/metagenlab/assembly_finder/blob/main/docs/inputs.md "inputs.md") |  |  |
-| [outputs.md](/metagenlab/assembly_finder/blob/main/docs/outputs.md "outputs.md") | | [outputs.md](/metagenlab/assembly_finder/blob/main/docs/outputs.md "outputs.md") |  |  |
+| parent directory [..](/metagenlab/assembly_finder/tree/main/docs) | | |
+| [af-help.svg](/metagenlab/assembly_finder/blob/main/docs/images/af-help.svg "af-help.svg") | | [af-help.svg](/metagenlab/assembly_finder/blob/main/docs/images/af-help.svg "af-help.svg") |  |  |
 | View all files | | |
 
 ## Footer

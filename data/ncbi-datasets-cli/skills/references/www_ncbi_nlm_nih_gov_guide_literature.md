@@ -179,7 +179,7 @@ Search termSearch
 * [Training & Tutorials](/guide/training-tutorials/)
 * [Variation](/guide/variation/)
 
-![](/stat?jsdisabled=true&ncbi_app=guide&ncbi_db=&ncbi_pdid=ResourceListPage&ncbi_phid=CE8D847A9FBD99A100000000007D0072)
+![](/stat?jsdisabled=true&ncbi_app=guide&ncbi_db=&ncbi_pdid=ResourceListPage&ncbi_phid=CE8BFC2B9FBE76A100000000002F002B)
 
 Follow NCBI
 

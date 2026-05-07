@@ -1,6 +1,6 @@
 ---
 name: ncbi-datasets-cli
-description: The ncbi-datasets-cli tool retrieves biological data packages from NCBI and transforms their metadata into structured formats. Use when user asks to download reference genomes, retrieve gene sequences, manage large datasets through dehydration and rehydration, or convert metadata reports into TSV format.
+description: The ncbi-datasets-cli is a command-line toolset for downloading genomic data and metadata from NCBI. Use when user asks to download genome or gene data, retrieve biological metadata, or convert NCBI data packages into tabular formats like TSV or Excel.
 homepage: https://www.ncbi.nlm.nih.gov/datasets/docs/v2/how-tos/
 metadata:
   docker_image: "quay.io/biocontainers/ncbi-datasets-cli:14.26.0"
@@ -11,60 +11,78 @@ metadata:
 
 ## Overview
 
-The `ncbi-datasets-cli` skill provides a streamlined interface for interacting with NCBI's biological databases programmatically. It utilizes two core utilities: `datasets` for downloading comprehensive data packages (including sequences, annotations, and metadata) and `dataformat` for transforming the resulting metadata into structured formats. This skill is particularly useful for bioinformaticians needing to automate the retrieval of reference genomes, gene sequences, or viral data, and for those managing large-scale data transfers through NCBI's dehydration and rehydration workflow.
+The `ncbi-datasets-cli` is a modern suite of command-line tools designed to streamline the retrieval of biological data from NCBI. It consists of two primary binaries: `datasets` for querying and downloading data packages, and `dataformat` for converting the resulting JSON Lines metadata into human-readable formats like TSV or Excel. This toolset is the preferred method for accessing eukaryotic genomes, gene information, and viral data, offering a more structured and reliable alternative to legacy scripts or manual web downloads.
 
-## Core CLI Patterns
+## Installation
 
-### 1. Downloading Data Packages
-The `datasets` tool retrieves data as a ZIP archive containing sequences and metadata.
+The tools are most easily installed via conda:
+```bash
+conda install -c conda-forge ncbi-datasets-cli
+```
 
-*   **Genome by Taxon**: Download the reference genome for a specific organism.
+## Core Workflows
+
+### 1. Downloading Genome Data
+To download a genome, you can specify a taxon (e.g., "human", "mus musculus") or a specific assembly accession.
+
+*   **Download by Taxon (Reference Genome):**
     ```bash
-    datasets download genome taxon "Homo sapiens" --reference --filename human_ref.zip
+    datasets download genome taxon human --reference --filename human_ref.zip
     ```
-*   **Genome by Accession**: Download specific assembly versions.
+*   **Download by Accession:**
     ```bash
     datasets download genome accession GCF_000001405.40 --filename grch38.zip
     ```
-*   **Gene by Symbol**: Download gene sequences and metadata using symbols and taxon.
+
+### 2. Downloading Gene Data
+Retrieve sequence and metadata for specific genes using NCBI Gene IDs or symbols.
+
+*   **Download by Gene ID:**
     ```bash
-    datasets download gene symbol BRCA1 --taxon human --filename brca1_data.zip
+    datasets download gene gene-id 672 --filename brca1_data.zip
+    ```
+*   **Download by Symbol and Taxon:**
+    ```bash
+    datasets download gene symbol brca1 --taxon human --filename brca1_human.zip
     ```
 
-### 2. Handling Large Datasets (Dehydration/Rehydration)
-For large numbers of genomes, use the dehydration workflow to download metadata first and fetch sequences later.
+### 3. Handling Large Downloads (Dehydration/Rehydration)
+For large-scale genomic studies involving hundreds or thousands of assemblies, use the "dehydrated" workflow to avoid massive initial zip files.
 
-1.  **Download Dehydrated Package**:
+1.  **Download Dehydrated Archive:**
     ```bash
-    datasets download genome taxon "Mus musculus" --dehydrated --filename mouse_dehydrated.zip
+    datasets download genome taxon "felis catus" --dehydrated --filename cat_genomes.zip
     ```
-2.  **Unzip**:
+2.  **Unzip:**
     ```bash
-    unzip mouse_dehydrated.zip -d mouse_data_dir
+    unzip cat_genomes.zip -d cat_data/
     ```
-3.  **Rehydrate**: Fetch the actual sequence files.
+3.  **Rehydrate (Fetch actual sequences):**
     ```bash
-    datasets rehydrate --directory mouse_data_dir/
+    datasets rehydrate --directory cat_data/
     ```
 
-### 3. Metadata Extraction and Formatting
-The `dataformat` tool processes the `data_report.jsonl` file found inside downloaded ZIP packages.
+### 4. Extracting Metadata with `dataformat`
+NCBI data packages include metadata in `.jsonl` format. Use `dataformat` to create tables.
 
-*   **Convert to TSV**: Extract specific fields from a genome package.
+*   **Convert Genome Metadata to TSV:**
     ```bash
     dataformat tsv genome --package human_ref.zip --fields organism-name,assminfo-name,accession
     ```
-*   **Gene Metadata**: Extract gene-specific information.
+*   **Convert Gene Metadata to TSV:**
     ```bash
     dataformat tsv gene --package brca1_data.zip --fields symbol,gene-id,description
     ```
 
-## Expert Tips
+## Expert Tips and Best Practices
 
-*   **API Keys**: NCBI limits requests to 5 per second by default. Use an API key to increase this to 10 requests per second. Set the key in your environment: `export NCBI_API_KEY=your_key_here`.
-*   **Filtering Genome Downloads**: Use flags like `--reference` to get only the high-quality reference assembly or `--annotated` to ensure the package includes functional annotations.
-*   **Field Discovery**: If unsure of available fields for `dataformat`, use the tool's help command for the specific data type (e.g., `dataformat tsv genome --help`) to see a full list of valid field names.
-*   **Taxonomy Checks**: Use `datasets summary taxonomy taxon <name>` to verify the taxonomic ID or rank before initiating a large download.
+*   **Rate Limiting:** By default, NCBI limits requests to 5 per second. Use an NCBI API key to increase this to 10 per second by setting the `NCBI_API_KEY` environment variable.
+*   **Filtering Assemblies:** When downloading genomes by taxon, use flags like `--reference` (for the reference assembly only) or `--annotated` (to ensure the assembly has functional annotation).
+*   **Check Summary First:** Before downloading large files, use the `summary` command to see what is available:
+    ```bash
+    datasets summary genome taxon "sars-cov-2"
+    ```
+*   **File Management:** Always specify a `--filename` ending in `.zip` to keep your workspace organized, as the default behavior may create generic filenames.
 
 
 
@@ -75,12 +93,15 @@ The `dataformat` tool processes the `data_report.jsonl` file found inside downlo
 | dataformat excel | Convert data into an Excel workbook. |
 | dataformat tsv | Convert data to TSV format. |
 | datasets completion | This sub-command generates files needed to enable auto-complete for several popular command-line interpreters. |
-| datasets download | Download genome, gene and virus data packages, including sequence, annotation, and metadata, as a zip file. |
+| datasets download gene | Download a gene data package. Gene data packages include gene, transcript and protein sequences and one or more data reports. Data packages are downloaded as a zip archive. |
+| datasets download genome | Download a genome data package. Genome data packages may include genome, transcript and protein sequences, annotation and one or more data reports. Data packages are downloaded as a zip archive. |
+| datasets download virus | Download a virus genome or SARS-CoV-2 protein data package as a zip file. |
 | datasets rehydrate | Download data files for an unzipped, dehydrated genome data package. Data files specified in fetch.txt will be downloaded from NCBI. |
-| datasets summary | Print a data report containing gene, genome or virus metadata in JSON format. |
+| datasets summary gene | Print a data report containing gene metadata. The data report is returned in JSON format. |
+| datasets summary genome | Print a data report containing genome metadata. The data report is returned in JSON format. |
+| datasets summary virus | Print a data report containing virus genome metadata by accession or taxon. The data report is returned in JSON format. |
 
 ## Reference documentation
-
 - [NCBI Datasets GitHub README](./references/github_com_ncbi_datasets_blob_master_README.md)
-- [NCBI Datasets Documentation Overview](./references/www_ncbi_nlm_nih_gov_datasets.md)
+- [NCBI Datasets How-to Guides](./references/www_ncbi_nlm_nih_gov_datasets_docs_v2_how-tos.md)
 - [Comparative Genomics Resource Analysis Tools](./references/www_ncbi_nlm_nih_gov_comparative-genomics-resource_analysis-tools.md)

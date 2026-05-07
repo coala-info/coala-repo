@@ -3,13 +3,16 @@ class: CommandLineTool
 baseCommand:
   - datasets
   - summary
-label: ncbi-datasets-cli_summary
-doc: Print a data report containing gene, genome or virus metadata in JSON 
-  format.
+  - virus
+label: datasets_summary_virus
+doc: Print a data report containing virus genome metadata by accession or taxon.
+  The data report is returned in JSON format.
 inputs:
   - id: command
-    type: string
-    doc: The subcommand to execute (gene, genome, or virus)
+    type:
+      - 'null'
+      - string
+    doc: Subcommand to execute (e.g., genome)
     inputBinding:
       position: 1
   - id: api_key
@@ -35,7 +38,7 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ncbi-datasets-cli:14.26.0
-stdout: ncbi-datasets-cli_summary.out
+stdout: datasets_summary_virus.out
 s:url: https://github.com/metagenlab/assembly_finder
 $namespaces:
   s: https://schema.org/

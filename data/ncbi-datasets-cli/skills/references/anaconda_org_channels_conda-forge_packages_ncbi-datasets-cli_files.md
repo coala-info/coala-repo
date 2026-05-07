@@ -43,7 +43,7 @@ Copied from[cf-post-staging / ncbi-datasets-cli](/channels/cf-post-staging/packa
 | osx-64/ncbi-datasets-cli-18.23.0-h694c41f\_0.conda | conda | 18.23.0 | macOS-64 | main | Apr 6, 2026, 05:42 PM | 31.73 MB | 220 |  |
 | win-64/ncbi-datasets-cli-18.23.0-h57928b3\_0.conda | conda | 18.23.0 | win-64 | main | Apr 6, 2026, 05:42 PM | 16.44 MB | 103 |  |
 | osx-arm64/ncbi-datasets-cli-18.23.0-hce30654\_0.conda | conda | 18.23.0 | macOS-arm64 | main | Apr 6, 2026, 05:38 PM | 31.73 MB | 508 |  |
-| linux-64/ncbi-datasets-cli-18.23.0-ha770c72\_0.conda | conda | 18.23.0 | linux-64 | main | Apr 6, 2026, 05:37 PM | 16.18 MB | 7.3K |  |
+| linux-64/ncbi-datasets-cli-18.23.0-ha770c72\_0.conda | conda | 18.23.0 | linux-64 | main | Apr 6, 2026, 05:37 PM | 16.18 MB | 7.4K |  |
 | linux-aarch64/ncbi-datasets-cli-18.22.1-h8af1aa0\_0.conda | conda | 18.22.1 | linux-aarch64 | main | Mar 27, 2026, 01:42 PM | 15.12 MB | 59 |  |
 | osx-64/ncbi-datasets-cli-18.22.1-h694c41f\_0.conda | conda | 18.22.1 | macOS-64 | main | Mar 27, 2026, 01:32 PM | 31.73 MB | 79 |  |
 | win-64/ncbi-datasets-cli-18.22.1-h57928b3\_0.conda | conda | 18.22.1 | win-64 | main | Mar 27, 2026, 01:29 PM | 16.44 MB | 67 |  |

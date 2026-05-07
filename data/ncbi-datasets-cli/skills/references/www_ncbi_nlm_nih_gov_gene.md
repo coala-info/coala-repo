@@ -104,7 +104,7 @@ Gene integrates information from a wide range of species. A record may include n
 | chromosome and species | [Y[CHR] AND human[ORGN]](/gene/?term=Y%5bCHR%5d+AND+human%5bORGN%5d) |
 | Enzyme Commission (EC) numbers | [1.9.3.1[EC]](/gene/?term=1.9.3.1%5bEC%5d) |
 
-![](/stat?jsdisabled=true&ncbi_app=entrez&ncbi_db=gene&ncbi_pdid=home&ncbi_phid=CE8998AC9FBDA4D10000000000AE00A6)
+![](/stat?jsdisabled=true&ncbi_app=entrez&ncbi_db=gene&ncbi_pdid=home&ncbi_phid=CE89D03B9FBDFAF10000000001380117)
 
 Follow NCBI
 

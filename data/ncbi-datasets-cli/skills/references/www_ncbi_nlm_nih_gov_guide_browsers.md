@@ -185,7 +185,7 @@ Accesskey + 0
 
   Shift key + Esc key (enabling a menu), followed by the accesskey.
 
-![](/stat?jsdisabled=true&ncbi_app=guide&ncbi_db=&ncbi_pdid=static&ncbi_phid=CE8E19909FBDBAF100000000006E0063)
+![](/stat?jsdisabled=true&ncbi_app=guide&ncbi_db=&ncbi_pdid=static&ncbi_phid=CE8D3C7C9FBE65D100000000004E0049)
 
 Follow NCBI
 

@@ -186,6 +186,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --wait-pid
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 102
+      prefix: --out-file
 outputs:
   - id: out_file
     type:
@@ -193,7 +199,9 @@ outputs:
       - File
     doc: out file ("-" for stdout, suffix .gz for gzipped out)
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqkit:2.12.0--he881be0_1

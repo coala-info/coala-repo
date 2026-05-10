@@ -48,6 +48,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --positive-vcf
+  - id: discordant_vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `discordant_vcf_path`
+    inputBinding:
+      position: 102
+      prefix: --discordant-vcf
+  - id: stats_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_path`
+    inputBinding:
+      position: 103
+      prefix: --stats
 outputs:
   - id: stats
     type:
@@ -55,14 +71,16 @@ outputs:
       - File
     doc: Path to output stats json file
     outputBinding:
-      glob: $(inputs.stats)
+      glob: $(inputs.stats_path)
   - id: discordant_vcf
     type:
       - 'null'
       - File
     doc: Path to output the discordant vcf file
     outputBinding:
-      glob: $(inputs.discordant_vcf)
+      glob: $(inputs.discordant_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vtools:1.1.0--py311h93dcfea_7

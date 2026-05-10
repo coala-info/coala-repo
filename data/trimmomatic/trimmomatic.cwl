@@ -66,6 +66,22 @@ inputs:
     inputBinding:
       position: 104
       prefix: -validatePairs
+  - id: summary_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `summary_path`
+    inputBinding:
+      position: 105
+      prefix: --summary
+  - id: trimlog_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `trimlog_path`
+    inputBinding:
+      position: 106
+      prefix: --trimlog
 outputs:
   - id: trimlog
     type:
@@ -73,14 +89,16 @@ outputs:
       - File
     doc: Log file containing details of trimming for each read
     outputBinding:
-      glob: $(inputs.trimlog)
+      glob: $(inputs.trimlog_path)
   - id: summary
     type:
       - 'null'
       - File
     doc: File to write summary statistics
     outputBinding:
-      glob: $(inputs.summary)
+      glob: $(inputs.summary_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/trimmomatic:0.40--hdfd78af_0

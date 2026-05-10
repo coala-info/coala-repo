@@ -70,6 +70,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --sigfile
+  - id: output_filename_path
+    type: string
+    doc: Output or path parameter `output_filename_path`
+    inputBinding:
+      position: 103
+      prefix: --output-filename
 outputs:
   - id: output_filename
     type:
@@ -77,7 +83,9 @@ outputs:
       - File
     doc: File path to write to. If omitted will write to stdout.
     outputBinding:
-      glob: $(inputs.output_filename)
+      glob: $(inputs.output_filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gambit:1.1.0--py39hbcbf7aa_2

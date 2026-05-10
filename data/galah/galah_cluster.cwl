@@ -79,6 +79,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --small-contigs
+  - id: output_cluster_definition_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_cluster_definition_path`
+    inputBinding:
+      position: 102
+      prefix: --output-cluster-definition
+  - id: output_representative_fasta_directory_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_representative_fasta_directory_path`
+    inputBinding:
+      position: 103
+      prefix: --output-representative-fasta-directory
 outputs:
   - id: output_representative_fasta_directory
     type:
@@ -86,14 +102,16 @@ outputs:
       - Directory
     doc: Directory to store symlinked FASTA files of representatives
     outputBinding:
-      glob: $(inputs.output_representative_fasta_directory)
+      glob: $(inputs.output_representative_fasta_directory_path)
   - id: output_cluster_definition
     type:
       - 'null'
       - File
     doc: File to output cluster definitions
     outputBinding:
-      glob: $(inputs.output_cluster_definition)
+      glob: $(inputs.output_cluster_definition_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/galah:0.4.2--hc1c3326_2

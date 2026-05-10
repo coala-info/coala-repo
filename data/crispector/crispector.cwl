@@ -198,6 +198,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: report_output_path
+    type: string
+    doc: Path to output folder
+    inputBinding:
+      position: 102
+      prefix: --report_output
 outputs:
   - id: report_output
     type:
@@ -205,7 +211,9 @@ outputs:
       - Directory
     doc: Path to output folder
     outputBinding:
-      glob: $(inputs.report_output)
+      glob: $(inputs.report_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crispector:1.0.7--pyhdfd78af_0

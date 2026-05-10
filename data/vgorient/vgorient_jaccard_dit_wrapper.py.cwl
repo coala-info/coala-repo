@@ -75,6 +75,21 @@ inputs:
     inputBinding:
       position: 102
       prefix: --vg_orient
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
+  - id: vg_output_dir_path
+    type:
+      - 'null'
+      - Directory
+    inputBinding:
+      position: 104
+      prefix: --vg_output_dir
 outputs:
   - id: output
     type:
@@ -82,14 +97,16 @@ outputs:
       - File
     doc: Output file name for kmer_jaccard.py
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: vg_output_dir
     type:
       - 'null'
       - Directory
     doc: Output directory for VG_diterative.py
     outputBinding:
-      glob: $(inputs.vg_output_dir)
+      glob: $(inputs.vg_output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vgorient:0.1.1--pyhdfd78af_0

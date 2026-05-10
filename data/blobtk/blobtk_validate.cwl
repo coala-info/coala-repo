@@ -53,6 +53,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --taxonomy-format
+  - id: schema_path
+    type: string
+    doc: Output or path parameter `schema_path`
+    inputBinding:
+      position: 102
+      prefix: --schema
 outputs:
   - id: schema
     type:
@@ -60,7 +66,9 @@ outputs:
       - File
     doc: Path to output JSON Schema file
     outputBinding:
-      glob: $(inputs.schema)
+      glob: $(inputs.schema_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blobtk:0.7.1--py39hf6b2c50_0

@@ -73,6 +73,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threads
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 104
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -80,7 +86,9 @@ outputs:
       - File
     doc: The prefix of output filenames
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/skewer:0.2.2--h2d50403_2

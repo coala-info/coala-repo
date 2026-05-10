@@ -20,10 +20,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Ranks to use when assigning taxa. Defaults to phylum genus species
-      - phylum
-      - genus
-      - species
+    doc: Ranks to use when assigning taxa. Defaults to phylum genus species - 
+      phylum - genus - species
     inputBinding:
       position: 103
       prefix: --assignranks
@@ -76,10 +74,7 @@ inputs:
       - type: array
         items: float
     doc: Rank-specific thresholds corresponding to percent identity of a hit. 
-      Defaults to 45 (phylum), 60 (genus) and 85 (species)
-      - 45.0
-      - 60.0
-      - 85.0
+      Defaults to 45 (phylum), 60 (genus) and 85 (species) - 45.0 - 60.0 - 85.0
     inputBinding:
       position: 103
       prefix: --rank_thresholds
@@ -89,14 +84,8 @@ inputs:
       - type: array
         items: string
     doc: Ranks to report in output. Defaults to superkingom phylum class order 
-      family genus species
-      - superkingom
-      - phylum
-      - class
-      - order
-      - family
-      - genus
-      - species
+      family genus species - superkingom - phylum - class - order - family - 
+      genus - species
     inputBinding:
       position: 103
       prefix: --reportranks
@@ -142,6 +131,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --vote_threshold
+  - id: blobout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `blobout_path`
+    inputBinding:
+      position: 104
+      prefix: --blobout
+  - id: taxidout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `taxidout_path`
+    inputBinding:
+      position: 105
+      prefix: --taxidout
 outputs:
   - id: blobout
     type:
@@ -149,14 +154,16 @@ outputs:
       - File
     doc: Output hits.tsv table compatible with blobtools
     outputBinding:
-      glob: $(inputs.blobout)
+      glob: $(inputs.blobout_path)
   - id: taxidout
     type:
       - 'null'
       - File
     doc: Write output with taxonomy ids instead of taxonomy names to file
     outputBinding:
-      glob: $(inputs.taxidout)
+      glob: $(inputs.taxidout_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/contigtax:0.5.10--pyhdfd78af_0

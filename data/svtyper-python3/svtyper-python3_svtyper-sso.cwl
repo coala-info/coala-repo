@@ -111,6 +111,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sum_quals
+  - id: output_vcf_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output_vcf
 outputs:
   - id: output_vcf
     type:
@@ -118,7 +123,9 @@ outputs:
       - File
     doc: output VCF to write
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svtyper-python3:0.7.1--pyhdfd78af_0

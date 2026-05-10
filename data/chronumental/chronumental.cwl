@@ -194,6 +194,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --wandb_project_name
+  - id: dates_out_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --dates_out
+  - id: tree_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output for tree (otherwise will use default)
+    inputBinding:
+      position: 103
+      prefix: --tree_out
 outputs:
   - id: dates_out
     type:
@@ -201,14 +216,16 @@ outputs:
       - File
     doc: Output for date tsv (otherwise will use default)
     outputBinding:
-      glob: $(inputs.dates_out)
+      glob: $(inputs.dates_out_path)
   - id: tree_out
     type:
       - 'null'
       - File
     doc: Output for tree (otherwise will use default)
     outputBinding:
-      glob: $(inputs.tree_out)
+      glob: $(inputs.tree_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chronumental:0.0.65--pyhdfd78af_0

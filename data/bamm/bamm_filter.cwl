@@ -74,6 +74,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use_supplementary
+  - id: out_folder_path
+    type: Directory
+    doc: Output or path parameter `out_folder_path`
+    inputBinding:
+      position: 102
+      prefix: --out-folder
 outputs:
   - id: out_folder
     type:
@@ -81,7 +87,9 @@ outputs:
       - Directory
     doc: write to this folder (output file has '_filtered.bam' suffix)
     outputBinding:
-      glob: $(inputs.out_folder)
+      glob: $(inputs.out_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bamm:1.7.3--py312hdcc493e_15

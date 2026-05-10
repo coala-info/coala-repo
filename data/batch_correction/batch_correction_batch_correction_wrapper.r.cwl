@@ -89,27 +89,61 @@ inputs:
     doc: Input variable metadata file.
     inputBinding:
       position: 101
+  - id: dataMatrix_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `dataMatrix_out_path`
+    inputBinding:
+      position: 102
+      prefix: --dataMatrix-out
+  - id: graph_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `graph_output_path`
+    inputBinding:
+      position: 103
+      prefix: --graph-output
+  - id: rdata_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `rdata_output_path`
+    inputBinding:
+      position: 104
+      prefix: --rdata-output
+  - id: variableMetadata_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `variableMetadata_out_path`
+    inputBinding:
+      position: 105
+      prefix: --variableMetadata-out
 outputs:
   - id: dataMatrix_out
     type: File
     doc: Output data matrix file.
     outputBinding:
-      glob: $(inputs.dataMatrix_out)
+      glob: $(inputs.dataMatrix_out_path)
   - id: variableMetadata_out
     type: File
     doc: Output variable metadata file.
     outputBinding:
-      glob: $(inputs.variableMetadata_out)
+      glob: $(inputs.variableMetadata_out_path)
   - id: graph_output
     type: File
     doc: Output graph file.
     outputBinding:
-      glob: $(inputs.graph_output)
+      glob: $(inputs.graph_output_path)
   - id: rdata_output
     type: File
     doc: Output Rdata file.
     outputBinding:
-      glob: $(inputs.rdata_output)
+      glob: $(inputs.rdata_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/batch_correction:phenomenal-v2.2.3_cv1.1.15

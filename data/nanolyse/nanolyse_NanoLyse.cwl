@@ -21,6 +21,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --summary_in
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    doc: Specify the path and filename for the log file.
+    inputBinding:
+      position: 102
+      prefix: --logfile
+  - id: summary_out_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --summary_out
 outputs:
   - id: summary_out
     type:
@@ -28,14 +43,16 @@ outputs:
       - File
     doc: 'with --summary_in: name of output file.'
     outputBinding:
-      glob: $(inputs.summary_out)
+      glob: $(inputs.summary_out_path)
   - id: logfile
     type:
       - 'null'
       - File
     doc: Specify the path and filename for the log file.
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanolyse:1.2.1--pyhdfd78af_0

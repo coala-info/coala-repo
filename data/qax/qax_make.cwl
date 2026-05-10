@@ -76,12 +76,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_artifact_path
+    type: string
+    doc: Output or path parameter `output_artifact_path`
+    inputBinding:
+      position: 103
+      prefix: --output-artifact
 outputs:
   - id: output_artifact
     type: File
     doc: Output artifact (required)
     outputBinding:
-      glob: $(inputs.output_artifact)
+      glob: $(inputs.output_artifact_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qax:0.9.8--h515fd9b_0

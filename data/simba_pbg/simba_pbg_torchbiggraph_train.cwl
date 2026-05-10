@@ -461,6 +461,12 @@ inputs:
       will be multiplied.
     inputBinding:
       position: 102
+  - id: config_checkpoint_path_path
+    type: string
+    doc: Output or path parameter `config_checkpoint_path_path`
+    inputBinding:
+      position: 103
+      prefix: --config-checkpoint-path
 outputs:
   - id: config_checkpoint_path
     type:
@@ -470,7 +476,9 @@ outputs:
       be written to. If checkpoints are found in it, training will resume from 
       them.
     outputBinding:
-      glob: $(inputs.config_checkpoint_path)
+      glob: $(inputs.config_checkpoint_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/simba:1.2--pyh7cba7a3_0

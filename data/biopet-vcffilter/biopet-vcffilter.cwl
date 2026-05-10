@@ -25,8 +25,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Only show variants that contain unique alleles in complete set for given
-      sample
+    doc: Only show variants that contain unique alleles in complete set for 
+      given sample
     inputBinding:
       position: 101
       prefix: --deNovoInSample
@@ -50,8 +50,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: If variants in sample 1 are heterogeneous and alternative alleles are homogeneous
-      in sample 2 variants are filtered
+    doc: If variants in sample 1 are heterogeneous and alternative alleles are 
+      homogeneous in sample 2 variants are filtered
     inputBinding:
       position: 101
       prefix: --filterHetVarToHomVar
@@ -162,8 +162,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Min number off samples to pass --minAlternateDepth, --minBamAlternateDepth
-      and --minSampleDepth
+    doc: Min number off samples to pass --minAlternateDepth, 
+      --minBamAlternateDepth and --minSampleDepth
     inputBinding:
       position: 101
       prefix: --minSamplesPass
@@ -179,8 +179,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Must have genotoype <genotype> for this sample. Genotype can be NO_CALL,
-      HOM_REF, HET, HOM_VAR, UNAVAILABLE, MIXED
+    doc: Must have genotoype <genotype> for this sample. Genotype can be 
+      NO_CALL, HOM_REF, HET, HOM_VAR, UNAVAILABLE, MIXED
     inputBinding:
       position: 101
       prefix: --mustHaveGenotype
@@ -204,7 +204,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Only shows variants where child is homozygous and both parants hetrozygous
+    doc: Only shows variants where child is homozygous and both parants 
+      hetrozygous
     inputBinding:
       position: 101
       prefix: --resToDom
@@ -220,8 +221,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Only shows variants where child is a compound variant combined from both
-      parants
+    doc: Only shows variants where child is a compound variant combined from 
+      both parants
     inputBinding:
       position: 101
       prefix: --trioCompound
@@ -241,19 +242,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --uniqueOnly
+  - id: inverted_output_vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `inverted_output_vcf_path`
+    inputBinding:
+      position: 102
+      prefix: --inverted-output-vcf
+  - id: output_vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_vcf_path`
+    inputBinding:
+      position: 103
+      prefix: --output-vcf
 outputs:
   - id: output_vcf
     type: File
     doc: Output vcf file
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf_path)
   - id: inverted_output_vcf
     type:
       - 'null'
       - File
     doc: inverted output vcf file
     outputBinding:
-      glob: $(inputs.inverted_output_vcf)
+      glob: $(inputs.inverted_output_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biopet-vcffilter:0.2--0

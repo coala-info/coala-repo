@@ -27,6 +27,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: multi_read_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `multi_read_path`
+    inputBinding:
+      position: 104
+      prefix: --multi-read
+  - id: single_read_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `single_read_path`
+    inputBinding:
+      position: 105
+      prefix: --single-read
 outputs:
   - id: single_read
     type:
@@ -35,7 +51,7 @@ outputs:
     doc: Filename for single-read mappability BED file output. Use '-' for 
       standard output.
     outputBinding:
-      glob: $(inputs.single_read)
+      glob: $(inputs.single_read_path)
   - id: multi_read
     type:
       - 'null'
@@ -43,7 +59,9 @@ outputs:
     doc: Filename for multi-read mappability WIG file output. Use '-' for 
       standard output.
     outputBinding:
-      glob: $(inputs.multi_read)
+      glob: $(inputs.multi_read_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/newmap:0.2--py312h9c9b0c2_1

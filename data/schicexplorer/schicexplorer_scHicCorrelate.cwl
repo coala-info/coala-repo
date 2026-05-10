@@ -139,6 +139,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --zMin
+  - id: out_file_name_heatmap_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_file_name_heatmap_path`
+    inputBinding:
+      position: 102
+      prefix: --out-file-name-heatmap
+  - id: out_file_name_scatter_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_file_name_scatter_path`
+    inputBinding:
+      position: 103
+      prefix: --out-file-name-scatter
 outputs:
   - id: out_file_name_heatmap
     type:
@@ -146,14 +162,16 @@ outputs:
       - File
     doc: File name to save the resulting heatmap plot.
     outputBinding:
-      glob: $(inputs.out_file_name_heatmap)
+      glob: $(inputs.out_file_name_heatmap_path)
   - id: out_file_name_scatter
     type:
       - 'null'
       - File
     doc: File name to save the resulting scatter plot.
     outputBinding:
-      glob: $(inputs.out_file_name_scatter)
+      glob: $(inputs.out_file_name_scatter_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/schicexplorer:7--py_0

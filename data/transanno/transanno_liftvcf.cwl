@@ -40,7 +40,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not prefer same name contig when a variant lifted into multiple positions.
+    doc: Do not prefer same name contig when a variant lifted into multiple 
+      positions.
     inputBinding:
       position: 101
       prefix: --do-not-prefer-same-contig-when-multimap
@@ -110,8 +111,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not swap ref/alt when reference allele is changed. This option is suitable
-      to do liftOver clinVar, COSMIC annotations
+    doc: Do not swap ref/alt when reference allele is changed. This option is 
+      suitable to do liftOver clinVar, COSMIC annotations
     inputBinding:
       position: 101
       prefix: --noswap
@@ -127,17 +128,36 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf
+  - id: fail_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `fail_path`
+    inputBinding:
+      position: 102
+      prefix: --fail
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type: File
-    doc: output VCF file for succeeded to liftOver records (This file is not sorted)
+    doc: output VCF file for succeeded to liftOver records (This file is not 
+      sorted)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: fail
     type: File
     doc: output VCF file for failed to liftOver records
     outputBinding:
-      glob: $(inputs.fail)
+      glob: $(inputs.fail_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/transanno:0.4.5--h4349ce8_0

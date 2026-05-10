@@ -11,8 +11,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Input alignment file in BAM format, can be specified multiple times; required
-      for HLA diplotyping
+    doc: Input alignment file in BAM format, can be specified multiple times; 
+      required for HLA diplotyping
     inputBinding:
       position: 101
       prefix: --bam
@@ -26,8 +26,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The edit distance delta threshold to stop tracking divergent sequences (efficiency
-      heuristic)
+    doc: The edit distance delta threshold to stop tracking divergent sequences 
+      (efficiency heuristic)
     inputBinding:
       position: 101
       prefix: --dual-max-ed-delta
@@ -35,8 +35,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Optional file indicating the list of genes to exclude from diplotyping, one
-      per line
+    doc: Optional file indicating the list of genes to exclude from diplotyping,
+      one per line
     inputBinding:
       position: 101
       prefix: --exclude-set
@@ -44,8 +44,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Expected minor allele frequency; reduce to account for skew from sequencing
-      bias
+    doc: Expected minor allele frequency; reduce to account for skew from 
+      sequencing bias
     inputBinding:
       position: 101
       prefix: --expected-maf
@@ -61,8 +61,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Optional file indicating the list of genes to include in diplotyping, one
-      per line
+    doc: Optional file indicating the list of genes to include in diplotyping, 
+      one per line
     inputBinding:
       position: 101
       prefix: --include-set
@@ -70,7 +70,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Enables inferrence of connected alleles based on population observations
+    doc: Enables inferrence of connected alleles based on population 
+      observations
     inputBinding:
       position: 101
       prefix: --infer-connections
@@ -94,8 +95,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: The minimum cumulative distribution function probability for a heterozygous
-      call
+    doc: The minimum cumulative distribution function probability for a 
+      heterozygous call
     inputBinding:
       position: 101
       prefix: --min-cdf-prob
@@ -103,7 +104,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The minimum counts of sequences required to split into multiple consensuses
+    doc: The minimum counts of sequences required to split into multiple 
+      consensuses
     inputBinding:
       position: 101
       prefix: --min-consensus-count
@@ -111,8 +113,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: The minimum fraction of sequences required to split into multiple consensuses
-      (e.g. MAF)
+    doc: The minimum fraction of sequences required to split into multiple 
+      consensuses (e.g. MAF)
     inputBinding:
       position: 101
       prefix: --min-consensus-fraction
@@ -163,26 +165,53 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_calls_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_calls_path`
+    inputBinding:
+      position: 102
+      prefix: --output-calls
+  - id: output_debug_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_debug_path`
+    inputBinding:
+      position: 103
+      prefix: --output-debug
+  - id: pharmcat_tsv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pharmcat_tsv_path`
+    inputBinding:
+      position: 104
+      prefix: --pharmcat-tsv
 outputs:
   - id: output_calls
     type: File
     doc: Output diplotype call file (JSON)
     outputBinding:
-      glob: $(inputs.output_calls)
+      glob: $(inputs.output_calls_path)
   - id: pharmcat_tsv
     type:
       - 'null'
       - File
-    doc: Output file that can be provided to PharmCAT for further call interpretation
+    doc: Output file that can be provided to PharmCAT for further call 
+      interpretation
     outputBinding:
-      glob: $(inputs.pharmcat_tsv)
+      glob: $(inputs.pharmcat_tsv_path)
   - id: output_debug
     type:
       - 'null'
       - Directory
     doc: Optional output debug folder
     outputBinding:
-      glob: $(inputs.output_debug)
+      glob: $(inputs.output_debug_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbstarphase:2.0.1--h9ee0642_0

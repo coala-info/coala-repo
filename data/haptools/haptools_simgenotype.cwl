@@ -110,6 +110,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbosity
+  - id: out_path
+    type: string
+    doc: Output filename  [required]
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type: File
@@ -117,7 +123,9 @@ outputs:
       outputs are vcf|bcf|vcf.gz|pgen and there will be an additional 
       breakpoints output with extension bp e.g. /path/to/output.bp.
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haptools:0.6.2--pyhdfd78af_0

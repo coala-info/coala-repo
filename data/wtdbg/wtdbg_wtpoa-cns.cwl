@@ -232,6 +232,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -u
+  - id: output_files_path
+    type: string
+    doc: Output or path parameter `output_files_path`
+    inputBinding:
+      position: 102
+      prefix: --output-files
 outputs:
   - id: output_files
     type:
@@ -239,7 +245,9 @@ outputs:
       - File
     doc: Output files
     outputBinding:
-      glob: $(inputs.output_files)
+      glob: $(inputs.output_files_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wtdbg:2.5--h5b5514e_2

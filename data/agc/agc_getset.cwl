@@ -4,8 +4,8 @@ baseCommand:
   - agc
   - getset
 label: agc_getset
-doc: "Assembled Genomes Compressor - extract a set of samples from an AGC file\n\n
-  Tool homepage: https://github.com/refresh-bio/agc"
+doc: "Assembled Genomes Compressor - extract a set of samples from an AGC file\n\n\
+  \ Tool homepage: https://github.com/refresh-bio/agc"
 inputs:
   - id: input_agc
     type: File
@@ -67,6 +67,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: -v
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -74,7 +80,9 @@ outputs:
       - File
     doc: 'output to file (default: output is sent to stdout)'
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/agc:3.2.1--h9ee0642_0

@@ -106,6 +106,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --true-labels
+  - id: raw_table_output_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `raw_table_output_path_path`
+    inputBinding:
+      position: 102
+      prefix: --raw-table-output-path
+  - id: summary_table_output_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `summary_table_output_path_path`
+    inputBinding:
+      position: 103
+      prefix: --summary-table-output-path
 outputs:
   - id: summary_table_output_path
     type:
@@ -114,14 +130,16 @@ outputs:
     doc: Path to the output table with top labels and per-cell metrics in .tsv 
       format
     outputBinding:
-      glob: $(inputs.summary_table_output_path)
+      glob: $(inputs.summary_table_output_path_path)
   - id: raw_table_output_path
     type:
       - 'null'
       - File
     doc: Path to the output table with all labels in .tsv format
     outputBinding:
-      glob: $(inputs.raw_table_output_path)
+      glob: $(inputs.raw_table_output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cell-types-analysis:0.1.11--hdfd78af_1

@@ -84,6 +84,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --windowSize
+  - id: index_dir_path
+    type: string
+    doc: Output or path parameter `index_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --index-dir
 outputs:
   - id: index_dir
     type:
@@ -91,7 +97,9 @@ outputs:
       - Directory
     doc: directory for to write/read the GROOT index files
     outputBinding:
-      glob: $(inputs.index_dir)
+      glob: $(inputs.index_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/groot:1.1.2--h047eeb3_7

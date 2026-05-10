@@ -312,12 +312,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --test_sets
+  - id: output_directory_path
+    type: Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 102
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type: Directory
     doc: Directory name for the output files
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaxa:2.2.3--pl5321hdfd78af_2

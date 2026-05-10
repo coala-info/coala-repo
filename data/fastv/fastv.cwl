@@ -668,6 +668,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: read1_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `read1_output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --read1-output-file
+  - id: read2_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `read2_output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --read2-output-file
 outputs:
   - id: read1_output_file
     type:
@@ -675,14 +691,16 @@ outputs:
       - File
     doc: file name to store read1 with on-target sequences
     outputBinding:
-      glob: $(inputs.read1_output_file)
+      glob: $(inputs.read1_output_file_path)
   - id: read2_output_file
     type:
       - 'null'
       - File
     doc: file name to store read2 with on-target sequences
     outputBinding:
-      glob: $(inputs.read2_output_file)
+      glob: $(inputs.read2_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastv:0.10.0--h077b44d_1

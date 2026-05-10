@@ -567,6 +567,70 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: all_alignments_tabular_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `all_alignments_tabular_file_path`
+    inputBinding:
+      position: 102
+      prefix: --all-alignments-tabular-file
+  - id: output_a3m_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_a3m_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-a3m-file
+  - id: output_blasttab_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_blasttab_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-blasttab-file
+  - id: output_fasta_format_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_fasta_format_path`
+    inputBinding:
+      position: 105
+      prefix: --output-fasta-format
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 106
+      prefix: --output-file
+  - id: output_hhm_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_hhm_file_path`
+    inputBinding:
+      position: 107
+      prefix: --output-hhm-file
+  - id: output_psi_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_psi_file_path`
+    inputBinding:
+      position: 108
+      prefix: --output-psi-file
+  - id: scores_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `scores_file_path`
+    inputBinding:
+      position: 109
+      prefix: --scores-file
 outputs:
   - id: output_file
     type:
@@ -574,14 +638,14 @@ outputs:
       - File
     doc: write results in standard format to file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_a3m_file
     type:
       - 'null'
       - File
     doc: write result MSA with significant matches in a3m format
     outputBinding:
-      glob: $(inputs.output_a3m_file)
+      glob: $(inputs.output_a3m_file_path)
   - id: output_blasttab_file
     type:
       - 'null'
@@ -589,21 +653,21 @@ outputs:
     doc: write result in tabular BLAST format (compatible to -m 8 or -outfmt 6 
       output)
     outputBinding:
-      glob: $(inputs.output_blasttab_file)
+      glob: $(inputs.output_blasttab_file_path)
   - id: output_psi_file
     type:
       - 'null'
       - File
     doc: write result MSA of significant matches in PSI-BLAST format
     outputBinding:
-      glob: $(inputs.output_psi_file)
+      glob: $(inputs.output_psi_file_path)
   - id: output_hhm_file
     type:
       - 'null'
       - File
     doc: write HHM file for result MSA of significant matches
     outputBinding:
-      glob: $(inputs.output_hhm_file)
+      glob: $(inputs.output_hhm_file_path)
   - id: output_fasta_format
     type:
       - 'null'
@@ -611,21 +675,23 @@ outputs:
     doc: write pairwise alignments in FASTA xor A2M (-Oa2m) xor A3M (-Oa3m) 
       format
     outputBinding:
-      glob: $(inputs.output_fasta_format)
+      glob: $(inputs.output_fasta_format_path)
   - id: scores_file
     type:
       - 'null'
       - File
     doc: write scores for all pairwise comparisons to file
     outputBinding:
-      glob: $(inputs.scores_file)
+      glob: $(inputs.scores_file_path)
   - id: all_alignments_tabular_file
     type:
       - 'null'
       - File
     doc: write all alignments in tabular layout to file
     outputBinding:
-      glob: $(inputs.all_alignments_tabular_file)
+      glob: $(inputs.all_alignments_tabular_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hhsuite:3.3.0--h503566f_15

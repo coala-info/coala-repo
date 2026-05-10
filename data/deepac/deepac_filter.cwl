@@ -87,6 +87,30 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threshold
+  - id: neg_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `neg_output_path`
+    inputBinding:
+      position: 104
+      prefix: --neg-output
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 105
+      prefix: --output
+  - id: undef_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `undef_output_path`
+    inputBinding:
+      position: 106
+      prefix: --undef-output
 outputs:
   - id: output
     type:
@@ -94,14 +118,14 @@ outputs:
       - File
     doc: Output file path for positive predictions [.fasta].
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: neg_output
     type:
       - 'null'
       - File
     doc: Output file path for negative predictions [.fasta].
     outputBinding:
-      glob: $(inputs.neg_output)
+      glob: $(inputs.neg_output_path)
   - id: undef_output
     type:
       - 'null'
@@ -109,7 +133,9 @@ outputs:
     doc: Output file path for predictions not passing the confidence threshold 
       [.fasta].
     outputBinding:
-      glob: $(inputs.undef_output)
+      glob: $(inputs.undef_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deepac:0.14.1--pyhdfd78af_0

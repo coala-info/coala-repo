@@ -114,6 +114,30 @@ inputs:
     inputBinding:
       position: 104
       prefix: --threads
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 105
+      prefix: --output
+  - id: output2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output2_path`
+    inputBinding:
+      position: 106
+      prefix: --output2
+  - id: summary_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `summary_path`
+    inputBinding:
+      position: 107
+      prefix: --summary
 outputs:
   - id: output
     type:
@@ -122,21 +146,23 @@ outputs:
     doc: Path to output fastx file (stdout if not specified; detects .gz and 
       .zst)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: output2
     type:
       - 'null'
       - File
     doc: Optional path to second paired output fastx file (detects .gz and .zst)
     outputBinding:
-      glob: $(inputs.output2)
+      glob: $(inputs.output2_path)
   - id: summary
     type:
       - 'null'
       - File
     doc: Path to JSON summary output file
     outputBinding:
-      glob: $(inputs.summary)
+      glob: $(inputs.summary_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deacon:0.13.2--h7ef3eeb_1

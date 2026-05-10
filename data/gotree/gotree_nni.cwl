@@ -44,6 +44,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_tree_path
+    type: string
+    doc: Output or path parameter `output_tree_path`
+    inputBinding:
+      position: 103
+      prefix: --output-tree
 outputs:
   - id: output_tree
     type:
@@ -51,7 +57,9 @@ outputs:
       - File
     doc: Output tree file (e.g., Newick format)
     outputBinding:
-      glob: $(inputs.output_tree)
+      glob: $(inputs.output_tree_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gotree:0.5.1--he881be0_0

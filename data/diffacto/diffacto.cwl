@@ -121,6 +121,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: -use_unique
+  - id: loadings_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `loadings_output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --loadings-output-file
+  - id: mc_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `mc_output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --mc-output-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -128,21 +152,23 @@ outputs:
       - File
     doc: Path to output file (writing in TSV format).
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: mc_output_file
     type:
       - 'null'
       - File
     doc: Path to MCFDR output (writing in TSV format).
     outputBinding:
-      glob: $(inputs.mc_output_file)
+      glob: $(inputs.mc_output_file_path)
   - id: loadings_output_file
     type:
       - 'null'
       - File
     doc: File for peptide loadings (writing in TSV format).
     outputBinding:
-      glob: $(inputs.loadings_output_file)
+      glob: $(inputs.loadings_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/diffacto:1.0.7--pyh7cba7a3_0

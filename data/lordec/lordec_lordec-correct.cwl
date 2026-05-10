@@ -102,19 +102,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --trials
+  - id: corrected_read_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `corrected_read_file_path`
+    inputBinding:
+      position: 102
+      prefix: --corrected-read-file
+  - id: stat_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stat_file_path`
+    inputBinding:
+      position: 103
+      prefix: --stat-file
 outputs:
   - id: corrected_read_file
     type: File
     doc: output reads file
     outputBinding:
-      glob: $(inputs.corrected_read_file)
+      glob: $(inputs.corrected_read_file_path)
   - id: stat_file
     type:
       - 'null'
       - File
     doc: out statistics file
     outputBinding:
-      glob: $(inputs.stat_file)
+      glob: $(inputs.stat_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lordec:0.9--h77376b9_3

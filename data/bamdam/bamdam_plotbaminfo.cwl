@@ -23,6 +23,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --in_bam_list
+  - id: outplot_path
+    type: string
+    doc: Output or path parameter `outplot_path`
+    inputBinding:
+      position: 102
+      prefix: --outplot
 outputs:
   - id: outplot
     type:
@@ -30,7 +36,9 @@ outputs:
       - File
     doc: Filename for the output plot, ending in .png or .pdf
     outputBinding:
-      glob: $(inputs.outplot)
+      glob: $(inputs.outplot_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bamdam:0.4.3--pyhdfd78af_0

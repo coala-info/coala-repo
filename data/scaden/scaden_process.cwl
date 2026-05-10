@@ -24,6 +24,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --var_cutoff
+  - id: processed_path_path
+    type: string
+    doc: Output or path parameter `processed_path_path`
+    inputBinding:
+      position: 104
+      prefix: --processed-path
 outputs:
   - id: processed_path
     type:
@@ -31,7 +37,9 @@ outputs:
       - File
     doc: Path of processed file. Must end with .h5ad
     outputBinding:
-      glob: $(inputs.processed_path)
+      glob: $(inputs.processed_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scaden:1.1.2--pyhdfd78af_0

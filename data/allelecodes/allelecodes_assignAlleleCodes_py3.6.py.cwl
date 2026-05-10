@@ -52,6 +52,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_path
+    type: string
+    doc: output file (tsv or csv) into which results will be
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -60,7 +66,9 @@ outputs:
     doc: output file (tsv or csv) into which results will be written (delimiter 
       determined by input extension)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/allelecodes:2.1--py313hdfd78af_0

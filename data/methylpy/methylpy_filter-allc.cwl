@@ -94,12 +94,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --num-procs
+  - id: output_files_path
+    type: string
+    doc: Output or path parameter `output_files_path`
+    inputBinding:
+      position: 102
+      prefix: --output-files
 outputs:
   - id: output_files
     type: File
     doc: Name of output files. Each output file matches each allc file.
     outputBinding:
-      glob: $(inputs.output_files)
+      glob: $(inputs.output_files_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methylpy:1.4.7--py39h0ae133c_0

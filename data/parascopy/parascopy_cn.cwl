@@ -11,7 +11,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximal jump in the aggregate copy number between two consecutive windows
+    doc: Maximal jump in the aggregate copy number between two consecutive 
+      windows
     inputBinding:
       position: 101
       prefix: --agcn-jump
@@ -20,7 +21,8 @@ inputs:
       - 'null'
       - type: array
         items: int
-    doc: Detect aggregate copy number in a range around the reference copy number
+    doc: Detect aggregate copy number in a range around the reference copy 
+      number
     inputBinding:
       position: 101
       prefix: --agcn-range
@@ -67,7 +69,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Input indexed BAM/CRAM files. All entries should follow the format "filename[::sample]"
+    doc: Input indexed BAM/CRAM files. All entries should follow the format 
+      "filename[::sample]"
     inputBinding:
       position: 101
       prefix: --input
@@ -91,7 +94,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Use multi-sample information if there are at least <int> samples present
+    doc: Use multi-sample information if there are at least <int> samples 
+      present
     inputBinding:
       position: 101
       prefix: --min-samples
@@ -99,8 +103,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Predict aggregate and paralog copy number only in regions with at least <int>
-      windows
+    doc: Predict aggregate and paralog copy number only in regions with at least
+      <int> windows
     inputBinding:
       position: 101
       prefix: --min-windows
@@ -108,7 +112,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Modify reference copy number using bed file with the same format as `--force-agcn`.
+    doc: Modify reference copy number using bed file with the same format as 
+      `--force-agcn`.
     inputBinding:
       position: 101
       prefix: --modify-ref
@@ -133,8 +138,8 @@ inputs:
       - 'null'
       - type: array
         items: int
-    doc: Do not estimate paralog-specific copy number if aggregate CN or psCN tuples
-      exceed thresholds.
+    doc: Do not estimate paralog-specific copy number if aggregate CN or psCN 
+      tuples exceed thresholds.
     inputBinding:
       position: 101
       prefix: --pscn-bound
@@ -142,8 +147,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Jointly calculate copy number for nearby duplications with equal reference
-      copy number
+    doc: Jointly calculate copy number for nearby duplications with equal 
+      reference copy number
     inputBinding:
       position: 101
       prefix: --region-dist
@@ -180,7 +185,8 @@ inputs:
       - 'null'
       - type: array
         items: float
-    doc: PSV-reliability thresholds (reliable PSV has all f-values over the threshold).
+    doc: PSV-reliability thresholds (reliable PSV has all f-values over the 
+      threshold).
     inputBinding:
       position: 101
       prefix: --reliable-threshold
@@ -291,7 +297,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Update agCN using psCN probabilities when agCN quality is less than <float>
+    doc: Update agCN using psCN probabilities when agCN quality is less than 
+      <float>
     inputBinding:
       position: 101
       prefix: --update-agcn
@@ -299,7 +306,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Sort samples by variance-mean ratio, and only use samples with smallest values.
+    doc: Sort samples by variance-mean ratio, and only use samples with smallest
+      values.
     inputBinding:
       position: 101
       prefix: --vmr
@@ -311,12 +319,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window-filtering
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: Output directory.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parascopy:1.19.0--py312hc576ae5_0

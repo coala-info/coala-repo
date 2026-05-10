@@ -68,6 +68,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --plot-width
+  - id: output_clusters_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_clusters_path`
+    inputBinding:
+      position: 103
+      prefix: --output-clusters
+  - id: output_tree_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_tree_path`
+    inputBinding:
+      position: 104
+      prefix: --output-tree
 outputs:
   - id: output_tree
     type:
@@ -75,14 +91,16 @@ outputs:
       - File
     doc: Output tree file
     outputBinding:
-      glob: $(inputs.output_tree)
+      glob: $(inputs.output_tree_path)
   - id: output_clusters
     type:
       - 'null'
       - File
     doc: Output clusters file
     outputBinding:
-      glob: $(inputs.output_clusters)
+      glob: $(inputs.output_clusters_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lyner:0.4.3--py_0

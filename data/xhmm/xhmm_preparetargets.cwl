@@ -585,6 +585,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: --zScoreData
+  - id: normalize_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `normalize_output_path`
+    inputBinding:
+      position: 102
+      prefix: --normalize-output
+  - id: output_matrix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_matrix_path`
+    inputBinding:
+      position: 103
+      prefix: --output-matrix
+  - id: vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `vcf_path`
+    inputBinding:
+      position: 104
+      prefix: --vcf
+  - id: xcnv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `xcnv_path`
+    inputBinding:
+      position: 105
+      prefix: --xcnv
 outputs:
   - id: output_matrix
     type:
@@ -592,28 +624,30 @@ outputs:
       - File
     doc: Read-depth matrix output file
     outputBinding:
-      glob: $(inputs.output_matrix)
+      glob: $(inputs.output_matrix_path)
   - id: normalize_output
     type:
       - 'null'
       - File
     doc: Normalized read-depth matrix output file
     outputBinding:
-      glob: $(inputs.normalize_output)
+      glob: $(inputs.normalize_output_path)
   - id: xcnv
     type:
       - 'null'
       - File
     doc: CNV output file
     outputBinding:
-      glob: $(inputs.xcnv)
+      glob: $(inputs.xcnv_path)
   - id: vcf
     type:
       - 'null'
       - File
     doc: Genotyped CNV output VCF file
     outputBinding:
-      glob: $(inputs.vcf)
+      glob: $(inputs.vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/xhmm:0.0.0.2016_01_04.cc14e52--hedee03e_3

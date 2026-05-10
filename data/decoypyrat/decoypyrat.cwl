@@ -119,6 +119,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --temp_file
+  - id: output_fasta_path
+    type: string
+    doc: Output or path parameter `output_fasta_path`
+    inputBinding:
+      position: 103
+      prefix: --output-fasta
 outputs:
   - id: output_fasta
     type:
@@ -126,7 +132,9 @@ outputs:
       - File
     doc: Set file to write decoy proteins to. Default=decoy.fa
     outputBinding:
-      glob: $(inputs.output_fasta)
+      glob: $(inputs.output_fasta_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/decoypyrat:1.0.1--py_0

@@ -54,6 +54,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --vcffile
+  - id: hap1_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `hap1_path`
+    inputBinding:
+      position: 103
+      prefix: --hap1
+  - id: hap2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `hap2_path`
+    inputBinding:
+      position: 104
+      prefix: --hap2
 outputs:
   - id: hap1
     type:
@@ -61,14 +77,16 @@ outputs:
       - File
     doc: haplotype1 output file
     outputBinding:
-      glob: $(inputs.hap1)
+      glob: $(inputs.hap1_path)
   - id: hap2
     type:
       - 'null'
       - File
     doc: haplotype2 output file
     outputBinding:
-      glob: $(inputs.hap2)
+      glob: $(inputs.hap2_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/alfred:0.5.1--h4d20210_0

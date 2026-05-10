@@ -109,6 +109,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: --xtandem-xml
+  - id: output_directory_path
+    type: Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 105
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type:
@@ -117,7 +123,9 @@ outputs:
     doc: Full path to the directory where output is stored. If this directory 
       does not exist it will be created.
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sampei:0.0.9--py_0

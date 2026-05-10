@@ -47,8 +47,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: In case the gff names and sequence names don't match, change the labels that
-      will appear over the text.
+    doc: In case the gff names and sequence names don't match, change the labels
+      that will appear over the text.
     inputBinding:
       position: 101
       prefix: --gff_labels
@@ -57,8 +57,9 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: The input filepath. for the gff annotation to plot. Individual filepaths
-      separated by spaces. For example, --gff_paths sp1.gff sp2.gff sp3.gff
+    doc: The input filepath. for the gff annotation to plot. Individual 
+      filepaths separated by spaces. For example, --gff_paths sp1.gff sp2.gff 
+      sp3.gff
     inputBinding:
       position: 101
       prefix: --gff_paths
@@ -74,10 +75,10 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: If selected, this doesn't plot the optimum arrangement of things as they
-      are input into gff_paths. Instead, it uses the first gff file as the top-most
-      sequence in the plot, and reorganizes the remaining gff files to minimize the
-      number of intersections.
+    doc: If selected, this doesn't plot the optimum arrangement of things as 
+      they are input into gff_paths. Instead, it uses the first gff file as the 
+      top-most sequence in the plot, and reorganizes the remaining gff files to 
+      minimize the number of intersections.
     inputBinding:
       position: 101
       prefix: --optimum_order
@@ -103,8 +104,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Put an additional copy of the first gff file on the bottom of the plot for
-      comparison.
+    doc: Put an additional copy of the first gff file on the bottom of the plot 
+      for comparison.
     inputBinding:
       position: 101
       prefix: --sandwich
@@ -112,8 +113,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Minimizes the number of intersections but only selects combos where the first
-      gene in each sequence is aligned.
+    doc: Minimizes the number of intersections but only selects combos where the
+      first gene in each sequence is aligned.
     inputBinding:
       position: 101
       prefix: --start_with_aligned_genes
@@ -121,8 +122,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Performs some internal corrections if the gff annotation includes the stop
-      codons in the coding sequences.
+    doc: Performs some internal corrections if the gff annotation includes the 
+      stop codons in the coding sequences.
     inputBinding:
       position: 101
       prefix: --stop_codons
@@ -130,20 +131,28 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Specify this option if you DON'T want a transparent background. Default is
-      on.
+    doc: Specify this option if you DON'T want a transparent background. Default
+      is on.
     inputBinding:
       position: 101
       prefix: --transparent
+  - id: output_basename_path
+    type: string
+    doc: Output or path parameter `output_basename_path`
+    inputBinding:
+      position: 102
+      prefix: --output-basename
 outputs:
   - id: output_basename
     type:
       - 'null'
       - File
-    doc: Specify a base name for the output file(s). The input file base name is the
-      default.
+    doc: Specify a base name for the output file(s). The input file base name is
+      the default.
     outputBinding:
-      glob: $(inputs.output_basename)
+      glob: $(inputs.output_basename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pauvre:0.1924--py_0

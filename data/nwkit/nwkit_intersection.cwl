@@ -79,6 +79,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --seqin
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    doc: 'default=-: Output newick file. Use "-" for STDOUT.'
+    inputBinding:
+      position: 102
+      prefix: --outfile
+  - id: seqout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `seqout_path`
+    inputBinding:
+      position: 103
+      prefix: --seqout
 outputs:
   - id: outfile
     type:
@@ -86,14 +102,16 @@ outputs:
       - File
     doc: Output newick file. Use "-" for STDOUT.
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
   - id: seqout
     type:
       - 'null'
       - File
     doc: Output sequence file.
     outputBinding:
-      glob: $(inputs.seqout)
+      glob: $(inputs.seqout_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nwkit:0.21.1--pyhdfd78af_0

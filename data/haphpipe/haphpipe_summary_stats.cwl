@@ -46,6 +46,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --quiet
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    doc: Append console output to this file
+    inputBinding:
+      position: 102
+      prefix: --logfile
+  - id: outdir_path
+    type:
+      - 'null'
+      - string
+    doc: 'Output directory (default: .)'
+    inputBinding:
+      position: 103
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -53,14 +69,16 @@ outputs:
       - Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
   - id: logfile
     type:
       - 'null'
       - File
     doc: Name for log file (output)
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haphpipe:1.0.3--py_0

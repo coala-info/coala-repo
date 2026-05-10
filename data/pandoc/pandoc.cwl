@@ -10,16 +10,16 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Input files to be converted. If no files are specified, input is read from
-      stdin.
+    doc: Input files to be converted. If no files are specified, input is read 
+      from stdin.
     inputBinding:
       position: 1
   - id: extract_media
     type:
       - 'null'
       - Directory
-    doc: Extract images and other media contained in a docx or epub container to the
-      specified directory.
+    doc: Extract images and other media contained in a docx or epub container to
+      the specified directory.
     inputBinding:
       position: 102
       prefix: --extract-media
@@ -28,7 +28,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Specify an executable to be used as a filter transforming the pandoc AST.
+    doc: Specify an executable to be used as a filter transforming the pandoc 
+      AST.
     inputBinding:
       position: 102
       prefix: --filter
@@ -61,7 +62,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Use the specified engine when producing PDF output (e.g. pdflatex, wkhtmltopdf).
+    doc: Use the specified engine when producing PDF output (e.g. pdflatex, 
+      wkhtmltopdf).
     inputBinding:
       position: 102
       prefix: --pdf-engine
@@ -106,6 +108,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --variable
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -113,7 +121,9 @@ outputs:
       - File
     doc: Write output to FILE instead of stdout.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pandoc:2.1.3--0

@@ -56,12 +56,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: out_file_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --out_file
 outputs:
   - id: out_file
     type: File
     doc: The output file name
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/emvc-2:1.0--h7b50bb2_4

@@ -46,20 +46,38 @@ inputs:
     inputBinding:
       position: 104
       prefix: -v
+  - id: output_format_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_format_path`
+    inputBinding:
+      position: 105
+      prefix: --output-format
+  - id: report_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_file_path`
+    inputBinding:
+      position: 106
+      prefix: --report-file
 outputs:
   - id: output_format
     type: File
     doc: Output file name format. Use '%' as a placeholder for 'un1', 'un2', and
       'join' (e.g., output.%.fq)
     outputBinding:
-      glob: $(inputs.output_format)
+      glob: $(inputs.output_format_path)
   - id: report_file
     type:
       - 'null'
       - File
     doc: Write joining statistics report to the specified file
     outputBinding:
-      glob: $(inputs.report_file)
+      glob: $(inputs.report_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastq-join:1.3.1--h9948957_8

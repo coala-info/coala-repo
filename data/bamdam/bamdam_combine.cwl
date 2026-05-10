@@ -38,6 +38,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --minreads
+  - id: out_tsv_path
+    type: string
+    doc: Output or path parameter `out_tsv_path`
+    inputBinding:
+      position: 102
+      prefix: --out-tsv
 outputs:
   - id: out_tsv
     type:
@@ -45,7 +51,9 @@ outputs:
       - File
     doc: Path to output tsv file name
     outputBinding:
-      glob: $(inputs.out_tsv)
+      glob: $(inputs.out_tsv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bamdam:0.4.3--pyhdfd78af_0

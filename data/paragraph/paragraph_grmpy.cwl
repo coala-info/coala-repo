@@ -49,8 +49,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: gzip-compress output files. If -O is used, output file names are appended
-      with .gz
+    doc: gzip-compress output files. If -O is used, output file names are 
+      appended with .gz
     inputBinding:
       position: 101
       prefix: --gzip-output
@@ -154,30 +154,56 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sample-threads
+  - id: alignment_output_folder_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `alignment_output_folder_path`
+    inputBinding:
+      position: 102
+      prefix: --alignment-output-folder
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
+  - id: output_folder_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_folder_path`
+    inputBinding:
+      position: 104
+      prefix: --output-folder
 outputs:
   - id: alignment_output_folder
     type:
       - 'null'
       - Directory
-    doc: Output folder for alignments. Note these can become very large and are only
-      required for curation / visualisation or faster reanalysis.
+    doc: Output folder for alignments. Note these can become very large and are 
+      only required for curation / visualisation or faster reanalysis.
     outputBinding:
-      glob: $(inputs.alignment_output_folder)
+      glob: $(inputs.alignment_output_folder_path)
   - id: output_file
     type:
       - 'null'
       - File
     doc: Output file name. Will output to stdout if omitted or '-'.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_folder
     type:
       - 'null'
       - Directory
-    doc: Output folder path. paragraph will attempt to create the folder but not the
-      entire path.
+    doc: Output folder path. paragraph will attempt to create the folder but not
+      the entire path.
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/paragraph:2.3--h8908b6f_0

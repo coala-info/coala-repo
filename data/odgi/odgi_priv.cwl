@@ -72,13 +72,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write-haps
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type: File
     doc: Write the graph with sub-paths sampled under differential privacy to 
       this FILE (.og recommended).
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/odgi:0.9.4--h077b44d_0

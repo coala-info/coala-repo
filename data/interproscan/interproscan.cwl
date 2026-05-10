@@ -78,6 +78,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --temp-directory
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile
+  - id: output_file_base_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_base_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file-base
 outputs:
   - id: output_file_base
     type:
@@ -86,7 +102,7 @@ outputs:
     doc: Optional output file base name. If not provided, the input file name is
       used.
     outputBinding:
-      glob: $(inputs.output_file_base)
+      glob: $(inputs.output_file_base_path)
   - id: outfile
     type:
       - 'null'
@@ -94,7 +110,9 @@ outputs:
     doc: Explicit output file name. Only valid if a single output format is 
       specified.
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/interproscan:5.59-91.0

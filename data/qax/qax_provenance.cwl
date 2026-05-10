@@ -33,6 +33,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: dotfile_path
+    type: string
+    doc: Output or path parameter `dotfile_path`
+    inputBinding:
+      position: 103
+      prefix: --dotfile
 outputs:
   - id: dotfile
     type:
@@ -40,7 +46,9 @@ outputs:
       - File
     doc: Save graphviz graph (dot format)
     outputBinding:
-      glob: $(inputs.dotfile)
+      glob: $(inputs.dotfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qax:0.9.8--h515fd9b_0

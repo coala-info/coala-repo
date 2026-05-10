@@ -14,8 +14,8 @@ inputs:
       prefix: --include-reference
   - id: input
     type: File
-    doc: Input tree in CSV format (mandatory CSV columns are 'sample', 'position',
-      'sequence' and 'frequency')
+    doc: Input tree in CSV format (mandatory CSV columns are 'sample', 
+      'position', 'sequence' and 'frequency')
     inputBinding:
       position: 101
       prefix: --input
@@ -33,12 +33,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: Output CSV file with distances between each pair of samples
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/afwdist:1.0.0--h4349ce8_0

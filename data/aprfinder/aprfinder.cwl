@@ -56,7 +56,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum number of tracks to consider a sequence to be an a-phased repeat.
+    doc: Minimum number of tracks to consider a sequence to be an a-phased 
+      repeat.
     inputBinding:
       position: 101
       prefix: --max-tracks
@@ -80,7 +81,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum number of tracks to consider a sequence to be an a-phased repeat.
+    doc: Minimum number of tracks to consider a sequence to be an a-phased 
+      repeat.
     inputBinding:
       position: 101
       prefix: --min-tracks
@@ -92,15 +94,23 @@ inputs:
     inputBinding:
       position: 101
       prefix: --upper-bound
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
       - 'null'
       - File
-    doc: Defines output file name. Note that <string> should be in format <name>.gff.
-      If not defined, output is set to result.gff.
+    doc: Defines output file name. Note that <string> should be in format 
+      <name>.gff. If not defined, output is set to result.gff.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/aprfinder:1.5--h7b50bb2_3

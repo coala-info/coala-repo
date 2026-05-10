@@ -15,8 +15,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: A BCF/VCF file containing positions of interest. If specified, only bases
-      from the given positions will be reported on.
+    doc: A BCF/VCF file containing positions of interest. If specified, only 
+      bases from the given positions will be reported on.
     inputBinding:
       position: 102
       prefix: --bcf-file
@@ -24,8 +24,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: A BED file containing regions of interest. If specified, only bases from
-      the given regions will be reported on
+    doc: A BED file containing regions of interest. If specified, only bases 
+      from the given regions will be reported on
     inputBinding:
       position: 102
       prefix: --bed-file
@@ -33,8 +33,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Output BED-like output format with the depth in the 5th column. Note, `-z`
-      can be used with this to change coordinates to 0-based to be more BED-like
+    doc: Output BED-like output format with the depth in the 5th column. Note, 
+      `-z` can be used with this to change coordinates to 0-based to be more 
+      BED-like
     inputBinding:
       position: 102
       prefix: --bed-format
@@ -50,8 +51,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: The fraction of a gigabyte to allocate per thread for message passing, can
-      be greater than 1.0
+    doc: The fraction of a gigabyte to allocate per thread for message passing, 
+      can be greater than 1.0
     inputBinding:
       position: 102
       prefix: --channel-size-modifier
@@ -59,8 +60,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The ideal number of basepairs each worker receives. Total bp in memory at
-      one time is (threads - 2) * chunksize
+    doc: The ideal number of basepairs each worker receives. Total bp in memory 
+      at one time is (threads - 2) * chunksize
     inputBinding:
       position: 102
       prefix: --chunksize
@@ -76,7 +77,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The number of threads to use for compressing output (specified by --bgzip)
+    doc: The number of threads to use for compressing output (specified by 
+      --bgzip)
     inputBinding:
       position: 102
       prefix: --compression-threads
@@ -92,7 +94,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Calculate depth based only on read starts/stops, see docs for full details
+    doc: Calculate depth based only on read starts/stops, see docs for full 
+      details
     inputBinding:
       position: 102
       prefix: --fast-mode
@@ -148,7 +151,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Skip mergeing togther regions specified in the optional BED or BCF/VCF files.
+    doc: Skip mergeing togther regions specified in the optional BED or BCF/VCF 
+      files.
     inputBinding:
       position: 102
       prefix: --skip-merging-intervals
@@ -168,6 +172,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --zero-base
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -175,7 +185,9 @@ outputs:
       - File
     doc: Output path, defaults to stdout
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perbase:1.2.0--h15397dd_0

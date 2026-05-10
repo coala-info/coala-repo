@@ -36,12 +36,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --predicted-cell-type-field
+  - id: output_file_path_path
+    type: string
+    doc: Output or path parameter `output_file_path_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file-path
 outputs:
   - id: output_file_path
     type: File
     doc: Path to the produced output file in .tsv format
     outputBinding:
-      glob: $(inputs.output_file_path)
+      glob: $(inputs.output_file_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/garnett-cli:0.0.5--hdfd78af_1

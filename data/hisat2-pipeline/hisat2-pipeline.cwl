@@ -65,6 +65,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --yes
+  - id: outfolder_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --outfolder
 outputs:
   - id: outfolder
     type:
@@ -72,7 +77,9 @@ outputs:
       - Directory
     doc: The folder where the results will be written to
     outputBinding:
-      glob: $(inputs.outfolder)
+      glob: $(inputs.outfolder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hisat2-pipeline:1.1.1--pyhdfd78af_0

@@ -187,6 +187,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: outfa_seq_fa_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfa_seq_fa_path`
+    inputBinding:
+      position: 102
+      prefix: --outfa-seq-fa
+  - id: outmat_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outmat_file_path`
+    inputBinding:
+      position: 103
+      prefix: --outmat-file
+  - id: outtsv_final_tsv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outtsv_final_tsv_path`
+    inputBinding:
+      position: 104
+      prefix: --outtsv-final-tsv
 outputs:
   - id: outtsv_final_tsv
     type:
@@ -194,21 +218,23 @@ outputs:
       - File
     doc: Save the final sequence ranges to a TSV file.
     outputBinding:
-      glob: $(inputs.outtsv_final_tsv)
+      glob: $(inputs.outtsv_final_tsv_path)
   - id: outfa_seq_fa
     type:
       - 'null'
       - File
     doc: Save all the final sequences ( original range + extension ) to a file.
     outputBinding:
-      glob: $(inputs.outfa_seq_fa)
+      glob: $(inputs.outfa_seq_fa_path)
   - id: outmat_file
     type:
       - 'null'
       - File
     doc: Dump the dp matrix paths to a file for debugging.
     outputBinding:
-      glob: $(inputs.outmat_file)
+      glob: $(inputs.outmat_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/repeatafterme:0.0.7--h7b50bb2_0

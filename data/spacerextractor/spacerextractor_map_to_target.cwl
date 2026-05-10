@@ -60,13 +60,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --quiet
+  - id: out_dir_path
+    type: Directory
+    doc: Output or path parameter `out_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --out-dir
 outputs:
   - id: out_dir
     type: Directory
     doc: Path to the output folder where temp files and result file will be 
       written
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spacerextractor:0.9.8--pyhdfd78af_0

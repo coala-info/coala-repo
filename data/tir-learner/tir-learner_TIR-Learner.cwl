@@ -123,6 +123,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --working_dir
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -130,7 +136,9 @@ outputs:
       - Directory
     doc: Output directory (Optional)
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tir-learner:3.0.7--hdfd78af_0

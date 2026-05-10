@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: pathracer
 label: pathracer
-doc: "PathRacer is a tool for aligning HMMs or sequences against assembly graphs.\n
-  \nTool homepage: http://cab.spbu.ru/software/pathracer/"
+doc: "PathRacer is a tool for aligning HMMs or sequences against assembly graphs.\n\
+  \ \nTool homepage: http://cab.spbu.ru/software/pathracer/"
 inputs:
   - id: input_file
     type: File
@@ -220,8 +220,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: expected rate of nucleotides indels in graph edges. Used for AA pHMM alignment
-      with frame shifts
+    doc: expected rate of nucleotides indels in graph edges. Used for AA pHMM 
+      alignment with frame shifts
     inputBinding:
       position: 103
       prefix: --indel-rate
@@ -237,8 +237,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: minimal length of resultant matched sequence; if <=1 then to be multiplied
-      on the length of the pHMM
+    doc: minimal length of resultant matched sequence; if <=1 then to be 
+      multiplied on the length of the pHMM
     inputBinding:
       position: 103
       prefix: --length
@@ -419,12 +419,20 @@ inputs:
     inputBinding:
       position: 103
       prefix: --top
+  - id: output_directory_path
+    type: Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 104
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type: Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pathracer:3.16.0.dev--h95f258a_0

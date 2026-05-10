@@ -18,8 +18,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: number of probability bins to use in RangeFactorized equivalence classes.
-      If this value is set to 1, then basic equivalence classes are used
+    doc: number of probability bins to use in RangeFactorized equivalence 
+      classes. If this value is set to 1, then basic equivalence classes are 
+      used
     inputBinding:
       position: 101
       prefix: --factorized-eqc-bins
@@ -27,8 +28,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: mean of fragment length distribution mean (required, and used, only in the
-      case of unpaired fragments)
+    doc: mean of fragment length distribution mean (required, and used, only in 
+      the case of unpaired fragments)
     inputBinding:
       position: 101
       prefix: --fld-mean
@@ -36,8 +37,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: mean of fragment length distribution standard deviation (required, and used,
-      only in the case of unpaired fragments)
+    doc: mean of fragment length distribution standard deviation (required, and 
+      used, only in the case of unpaired fragments)
     inputBinding:
       position: 101
       prefix: --fld-sd
@@ -81,9 +82,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: number of (unique) mappings to use to perform initial coarse-grained estimation
-      of the fragment length distribution. These fragments will have to be read from
-      the file and interrogated twice
+    doc: number of (unique) mappings to use to perform initial coarse-grained 
+      estimation of the fragment length distribution. These fragments will have 
+      to be read from the file and interrogated twice
     inputBinding:
       position: 101
       prefix: --param-est-frags
@@ -95,13 +96,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --presence-thresh
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
-    doc: output file prefix (multiple output files may be created, the main will have
-      a `.quant` suffix)
+    doc: output file prefix (multiple output files may be created, the main will
+      have a `.quant` suffix)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/piscem-infer:0.7.0--h090f6cf_0

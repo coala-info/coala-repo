@@ -120,6 +120,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: --stdev
+  - id: gff_output_file_path
+    type: string
+    doc: Output or path parameter `gff_output_file_path`
+    inputBinding:
+      position: 105
+      prefix: --gff-output-file
 outputs:
   - id: gff_output_file
     type:
@@ -127,7 +133,9 @@ outputs:
       - File
     doc: GFF output file
     outputBinding:
-      glob: $(inputs.gff_output_file)
+      glob: $(inputs.gff_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pywgsim:0.6.0--py310h397c9d8_0

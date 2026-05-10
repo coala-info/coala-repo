@@ -160,10 +160,8 @@ inputs:
       - type: array
         items: float
     doc: Use non-parametric estimation of p-values. Either use <START END 
-      STEPS>, e.g. 0.1, 1.0, 0.1 or set to fixed value, e.g. 0.4, 0, 0.
-      - 0.1
-      - 0.5
-      - 0.05
+      STEPS>, e.g. 0.1, 1.0, 0.1 or set to fixed value, e.g. 0.4, 0, 0. - 0.1 - 
+      0.5 - 0.05
     inputBinding:
       position: 102
       prefix: --pi0_lambda
@@ -240,22 +238,48 @@ inputs:
     inputBinding:
       position: 102
       prefix: --rt_reference_run_path
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 103
+      prefix: --out
+  - id: peptide_plot_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `peptide_plot_path`
+    inputBinding:
+      position: 104
+      prefix: --peptide-plot
+  - id: protein_plot_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `protein_plot_path`
+    inputBinding:
+      position: 105
+      prefix: --protein-plot
 outputs:
   - id: out
     type: File
     doc: Output TSV peptide query parameter file.
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: peptide_plot
     type: File
     doc: Output peptide-level PDF report.
     outputBinding:
-      glob: $(inputs.peptide_plot)
+      glob: $(inputs.peptide_plot_path)
   - id: protein_plot
     type: File
     doc: Output protein-level PDF report.
     outputBinding:
-      glob: $(inputs.protein_plot)
+      glob: $(inputs.protein_plot_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/easypqp:0.1.56--pyhdfd78af_0

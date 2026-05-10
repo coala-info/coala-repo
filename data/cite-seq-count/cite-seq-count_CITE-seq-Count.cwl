@@ -153,6 +153,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --whitelist
+  - id: output_folder_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_folder_path`
+    inputBinding:
+      position: 102
+      prefix: --output-folder
+  - id: unmapped_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unmapped_file_path`
+    inputBinding:
+      position: 103
+      prefix: --unmapped-file
 outputs:
   - id: output_folder
     type:
@@ -160,14 +176,16 @@ outputs:
       - Directory
     doc: Results will be written to this folder
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder_path)
   - id: unmapped_file
     type:
       - 'null'
       - File
     doc: Write table of unknown TAGs to file.
     outputBinding:
-      glob: $(inputs.unmapped_file)
+      glob: $(inputs.unmapped_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cite-seq-count:1.4.5--pyhdfd78af_0

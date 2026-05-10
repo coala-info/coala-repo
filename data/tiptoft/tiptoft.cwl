@@ -109,6 +109,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: filtered_reads_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `filtered_reads_file_path`
+    inputBinding:
+      position: 103
+      prefix: --filtered-reads-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: filtered_reads_file
     type:
@@ -116,14 +132,16 @@ outputs:
       - File
     doc: Filename to save matching reads to
     outputBinding:
-      glob: $(inputs.filtered_reads_file)
+      glob: $(inputs.filtered_reads_file_path)
   - id: output_file
     type:
       - 'null'
       - File
     doc: Output file [STDOUT]
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tiptoft:1.0.2--py310h4b81fae_4

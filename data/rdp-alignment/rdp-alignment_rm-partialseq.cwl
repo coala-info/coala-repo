@@ -40,6 +40,14 @@ inputs:
     inputBinding:
       position: 103
       prefix: --min_gaps
+  - id: alignment_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `alignment_out_path`
+    inputBinding:
+      position: 104
+      prefix: --alignment-out
 outputs:
   - id: passedSeqOutFile
     type: File
@@ -52,7 +60,9 @@ outputs:
       - File
     doc: The output file containing the pairwise alignment
     outputBinding:
-      glob: $(inputs.alignment_out)
+      glob: $(inputs.alignment_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/rdp-alignment:v1.2.0-5-deb_cv1

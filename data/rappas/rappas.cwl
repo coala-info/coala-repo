@@ -312,6 +312,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --workdir
+  - id: write_reduction_path
+    type: string
+    doc: Output or path parameter `write_reduction_path`
+    inputBinding:
+      position: 102
+      prefix: --write-reduction
 outputs:
   - id: write_reduction
     type:
@@ -319,7 +325,9 @@ outputs:
       - File
     doc: Write reduced alignment to file. (b phase)
     outputBinding:
-      glob: $(inputs.write_reduction)
+      glob: $(inputs.write_reduction_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rappas:1.22--hdfd78af_0

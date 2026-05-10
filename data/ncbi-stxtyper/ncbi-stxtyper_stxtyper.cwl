@@ -77,6 +77,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: nucleotide_fasta_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `nucleotide_fasta_out_path`
+    inputBinding:
+      position: 102
+      prefix: --nucleotide-fasta-out
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -84,14 +100,16 @@ outputs:
       - File
     doc: Write output to OUTPUT_FILE instead of STDOUT
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: nucleotide_fasta_out
     type:
       - 'null'
       - File
     doc: Output nucleotide FASTA file of reported nucleotide sequences
     outputBinding:
-      glob: $(inputs.nucleotide_fasta_out)
+      glob: $(inputs.nucleotide_fasta_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ncbi-stxtyper:1.0.45--h9948957_0

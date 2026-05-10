@@ -11,6 +11,22 @@ inputs:
     doc: Input MS/MS spectra file
     inputBinding:
       position: 1
+  - id: output_mask_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_mask_file_path`
+    inputBinding:
+      position: 101
+      prefix: --output-mask-file
+  - id: output_superstring_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_superstring_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-superstring-file
 outputs:
   - id: output_mask_file
     type:
@@ -18,14 +34,16 @@ outputs:
       - File
     doc: Output file with mask
     outputBinding:
-      glob: $(inputs.output_mask_file)
+      glob: $(inputs.output_mask_file_path)
   - id: output_superstring_file
     type:
       - 'null'
       - File
     doc: Output file with superstring
     outputBinding:
-      glob: $(inputs.output_superstring_file)
+      glob: $(inputs.output_superstring_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kmercamel:2.2.0--ha119d93_0

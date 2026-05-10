@@ -20,12 +20,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --model-path
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type: Directory
     doc: Name for the output directory (Required).
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svhip:1.0.9--hdfd78af_0

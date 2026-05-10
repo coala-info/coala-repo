@@ -134,6 +134,38 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: genemap_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `genemap_path`
+    inputBinding:
+      position: 103
+      prefix: --genemap
+  - id: ilens_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `ilens_path`
+    inputBinding:
+      position: 104
+      prefix: --ilens
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 105
+      prefix: --outfile
+  - id: transmap_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `transmap_path`
+    inputBinding:
+      position: 106
+      prefix: --transmap
 outputs:
   - id: ilens
     type:
@@ -141,7 +173,7 @@ outputs:
       - File
     doc: create a file with the lengths of each intergenic iLocus
     outputBinding:
-      glob: $(inputs.ilens)
+      glob: $(inputs.ilens_path)
   - id: genemap
     type:
       - 'null'
@@ -149,14 +181,14 @@ outputs:
     doc: print a mapping from each gene annotation to its corresponding locus to
       the given file
     outputBinding:
-      glob: $(inputs.genemap)
+      glob: $(inputs.genemap_path)
   - id: outfile
     type:
       - 'null'
       - File
     doc: name of file to which results will be written
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
   - id: transmap
     type:
       - 'null'
@@ -164,7 +196,9 @@ outputs:
     doc: print a mapping from each transcript annotation to its corresponding 
       locus to the given file
     outputBinding:
-      glob: $(inputs.transmap)
+      glob: $(inputs.transmap_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/aegean:0.16.0--h71bfec9_5

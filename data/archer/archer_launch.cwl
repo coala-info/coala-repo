@@ -52,7 +52,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: the ARTIC primer scheme manifest url
+    doc: the ARTIC primer scheme manifest url 
       https://raw.githubusercontent.com/artic-network/primer-schemes/master/schemes_manifest.json
     inputBinding:
       position: 101
@@ -73,6 +73,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --numWorkers
+  - id: log_file_path
+    type: string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 102
+      prefix: --log-file
 outputs:
   - id: log_file
     type:
@@ -80,7 +86,9 @@ outputs:
       - File
     doc: where to write the server log (if unset, STDERR used)
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/archer:0.1.1--he881be0_0

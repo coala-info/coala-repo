@@ -44,12 +44,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: -v
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: Path to write combined outupt file to.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mtsv-tools:2.1.0--h54198d6_0

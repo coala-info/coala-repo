@@ -142,6 +142,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: outhtml_path
+    type: string
+    doc: Output or path parameter `outhtml_path`
+    inputBinding:
+      position: 102
+      prefix: --outhtml
 outputs:
   - id: outhtml
     type:
@@ -150,7 +156,9 @@ outputs:
     doc: HTML output file (if not given the filename will be inferred from input
       files)
     outputBinding:
-      glob: $(inputs.outhtml)
+      glob: $(inputs.outhtml_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/recentrifuge:2.1.1--pyhdfd78af_0

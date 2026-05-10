@@ -84,12 +84,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -tfam
+  - id: output_stem_path
+    type: string
+    doc: Output or path parameter `output_stem_path`
+    inputBinding:
+      position: 102
+      prefix: --output-stem
 outputs:
   - id: output_stem
     type: File
     doc: Stem for output files
     outputBinding:
-      glob: $(inputs.output_stem)
+      glob: $(inputs.output_stem_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/treemix:1.13--h63c0f18_10

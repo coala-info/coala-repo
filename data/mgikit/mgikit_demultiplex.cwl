@@ -305,6 +305,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --writing-buffer-size
+  - id: log_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_path_path`
+    inputBinding:
+      position: 102
+      prefix: --log-path
+  - id: output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --output-dir
+  - id: reports_dir_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `reports_dir_path`
+    inputBinding:
+      position: 104
+      prefix: --reports-dir
 outputs:
   - id: output_dir
     type:
@@ -313,7 +337,7 @@ outputs:
     doc: Path to the output folder. If not provided, the output will be written 
       at mgiKit_ followed by current data and time.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
   - id: reports_dir
     type:
       - 'null'
@@ -321,14 +345,16 @@ outputs:
     doc: Prefix of report file. If not provided, the output will be written at 
       output_ followed by current data and time.
     outputBinding:
-      glob: $(inputs.reports_dir)
+      glob: $(inputs.reports_dir_path)
   - id: log_path
     type:
       - 'null'
       - File
     doc: Path to the output log, instead of writing to the stdout.
     outputBinding:
-      glob: $(inputs.log_path)
+      glob: $(inputs.log_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mgikit:2.1.1--h3ab6199_0

@@ -767,6 +767,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use-sse-basecaller
+  - id: output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: base directory for all output files [current dir]
+    inputBinding:
+      position: 102
+      prefix: --output-dir
+  - id: output_vcf_path
+    type:
+      - 'null'
+      - string
+    doc: vcf file with variant calling results [required]
+    inputBinding:
+      position: 103
+      prefix: --output-vcf
 outputs:
   - id: output_dir
     type:
@@ -774,12 +790,14 @@ outputs:
       - Directory
     doc: base directory for all output files
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
   - id: output_vcf
     type: File
     doc: vcf file with variant calling results
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/tvc:v5.0.3git20151221.80e144edfsg-2-deb_cv1

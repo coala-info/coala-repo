@@ -47,13 +47,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use-dfs
+  - id: output_graph_path
+    type: string
+    doc: Output or path parameter `output_graph_path`
+    inputBinding:
+      position: 102
+      prefix: --output-graph
 outputs:
   - id: output_graph
     type: File
     doc: Write the groomed succinct variation graph in ODGI format to *FILE*. A 
       file ending with *.og* is recommended.
     outputBinding:
-      glob: $(inputs.output_graph)
+      glob: $(inputs.output_graph_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/odgi:0.9.4--h077b44d_0

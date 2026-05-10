@@ -100,6 +100,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: output1_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output1_path`
+    inputBinding:
+      position: 103
+      prefix: --output1
+  - id: output2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output2_path`
+    inputBinding:
+      position: 104
+      prefix: --output2
 outputs:
   - id: output
     type:
@@ -107,21 +131,23 @@ outputs:
       - File
     doc: output file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: output1
     type:
       - 'null'
       - File
     doc: output file1
     outputBinding:
-      glob: $(inputs.output1)
+      glob: $(inputs.output1_path)
   - id: output2
     type:
       - 'null'
       - File
     doc: output file2
     outputBinding:
-      glob: $(inputs.output2)
+      glob: $(inputs.output2_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/starcode:1.4--h7b50bb2_6

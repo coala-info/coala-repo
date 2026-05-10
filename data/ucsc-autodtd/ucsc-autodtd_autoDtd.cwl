@@ -10,6 +10,22 @@ inputs:
     doc: XML document to process
     inputBinding:
       position: 1
+  - id: output_attributed_tree_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_attributed_tree_path`
+    inputBinding:
+      position: 101
+      prefix: --output-attributed-tree
+  - id: output_tree_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_tree_path`
+    inputBinding:
+      position: 102
+      prefix: --output-tree
 outputs:
   - id: output_dtd
     type: File
@@ -27,14 +43,16 @@ outputs:
       - File
     doc: Output tag tree
     outputBinding:
-      glob: $(inputs.output_tree)
+      glob: $(inputs.output_tree_path)
   - id: output_attributed_tree
     type:
       - 'null'
       - File
     doc: Output attributed tag tree
     outputBinding:
-      glob: $(inputs.output_attributed_tree)
+      glob: $(inputs.output_attributed_tree_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-autodtd:482--h0b57e2e_0

@@ -49,12 +49,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --seed
+  - id: output_bam_path
+    type: string
+    doc: Output or path parameter `output_bam_path`
+    inputBinding:
+      position: 103
+      prefix: --output-bam
 outputs:
   - id: output_bam
     type: File
     doc: Output BAM file
     outputBinding:
-      glob: $(inputs.output_bam)
+      glob: $(inputs.output_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sambamba:1.0.1--he614052_4

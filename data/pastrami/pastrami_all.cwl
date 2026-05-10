@@ -99,6 +99,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: log_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 102
+      prefix: --log-file
+  - id: out_prefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_prefix_path`
+    inputBinding:
+      position: 103
+      prefix: --out-prefix
 outputs:
   - id: out_prefix
     type:
@@ -107,14 +123,16 @@ outputs:
     doc: 'Output prefix for creating following sets of files: .pickle, _query.tsv,
       .tsv, .fam, _fractions.Q, _paintings.Q, _estimates.Q, _fine_grain_estimates.Q'
     outputBinding:
-      glob: $(inputs.out_prefix)
+      glob: $(inputs.out_prefix_path)
   - id: log_file
     type:
       - 'null'
       - File
     doc: File containing log information
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pastrami:1.0.1--pyh67a8953_0

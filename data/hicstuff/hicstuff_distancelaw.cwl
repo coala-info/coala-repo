@@ -140,6 +140,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sup
+  - id: outputfile_img_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outputfile_img_path`
+    inputBinding:
+      position: 102
+      prefix: --outputfile-img
+  - id: outputfile_tabl_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outputfile_tabl_path`
+    inputBinding:
+      position: 103
+      prefix: --outputfile-tabl
 outputs:
   - id: outputfile_img
     type:
@@ -148,14 +164,16 @@ outputs:
     doc: "Output file. Format must be compatible with\n                          \
       \                  plt.savefig. Default : None."
     outputBinding:
-      glob: $(inputs.outputfile_img)
+      glob: $(inputs.outputfile_img_path)
   - id: outputfile_tabl
     type:
       - 'null'
       - File
     doc: 'Output file. Default : None.'
     outputBinding:
-      glob: $(inputs.outputfile_tabl)
+      glob: $(inputs.outputfile_tabl_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hicstuff:3.2.4--pyhdfd78af_0

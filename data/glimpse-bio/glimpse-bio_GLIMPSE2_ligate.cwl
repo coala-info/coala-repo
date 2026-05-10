@@ -35,12 +35,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type: File
     doc: Output ligated (phased) file in VCF/BCF format
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/glimpse-bio:2.0.1--ha5d29c5_3

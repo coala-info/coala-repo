@@ -46,12 +46,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t
+  - id: output_path
+    type: string
+    doc: output directory
+    inputBinding:
+      position: 102
+      prefix: -o
 outputs:
   - id: output
     type: Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dpcstruct:0.1.1--h9948957_0

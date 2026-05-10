@@ -290,12 +290,28 @@ inputs:
     inputBinding:
       position: 101
       prefix: --variant_debug_dir
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
+  - id: out_bam_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_bam_path`
+    inputBinding:
+      position: 103
+      prefix: --out-bam
 outputs:
   - id: out
     type: File
     doc: output VCF file with called variants.
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: out_bam
     type:
       - 'null'
@@ -303,7 +319,9 @@ outputs:
     doc: Write new bam file with haplotype tags (HP:i:1 and HP:i:2) for reads 
       assigned to each haplotype, any existing HP and PS tags are removed
     outputBinding:
-      glob: $(inputs.out_bam)
+      glob: $(inputs.out_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/longshot:1.0.0--hd4f2111_2

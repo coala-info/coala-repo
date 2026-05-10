@@ -48,6 +48,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: meta_output_path
+    type: string
+    doc: Output or path parameter `meta_output_path`
+    inputBinding:
+      position: 102
+      prefix: --meta-output
 outputs:
   - id: meta_output
     type:
@@ -55,7 +61,9 @@ outputs:
       - File
     doc: Output meta file
     outputBinding:
-      glob: $(inputs.meta_output)
+      glob: $(inputs.meta_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gretl:0.1.1--hc1c3326_2

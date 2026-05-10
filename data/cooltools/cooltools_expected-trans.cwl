@@ -63,6 +63,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --view
+  - id: output_path
+    type: string
+    doc: Specify output file name to store the coverage in a
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -70,7 +76,9 @@ outputs:
       - File
     doc: Specify output file name to store the expected in a tsv format.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cooltools:0.7.1--py311h93dcfea_3

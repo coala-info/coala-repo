@@ -173,7 +173,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Print all CpG and SNP locations in location column, ignored if -O not given
+    doc: Print all CpG and SNP locations in location column, ignored if -O not 
+      given
     inputBinding:
       position: 103
       prefix: -A
@@ -209,6 +210,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: -v
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -216,7 +223,9 @@ outputs:
       - File
     doc: Output file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biscuit:1.7.1.20250908--hc4b60c0_0

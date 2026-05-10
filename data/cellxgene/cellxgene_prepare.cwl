@@ -19,9 +19,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Embedding algorithm(s). Repeat option for multiple embeddings.
-      - umap
-      - tsne
+    doc: Embedding algorithm(s). Repeat option for multiple embeddings. - umap -
+      tsne
     inputBinding:
       position: 102
       prefix: --embedding
@@ -113,6 +112,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --sparse
+  - id: output_filename_path
+    type: string
+    doc: Output or path parameter `output_filename_path`
+    inputBinding:
+      position: 103
+      prefix: --output-filename
 outputs:
   - id: output_filename
     type:
@@ -120,7 +125,9 @@ outputs:
       - File
     doc: Save a new file to filename.
     outputBinding:
-      glob: $(inputs.output_filename)
+      glob: $(inputs.output_filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cellxgene:1.3.0--pyhdfd78af_0

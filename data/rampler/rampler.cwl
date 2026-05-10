@@ -38,6 +38,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --seed
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -45,7 +51,9 @@ outputs:
       - File
     doc: Path to the output file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/rampler:v1.1.0-1-deb_cv1

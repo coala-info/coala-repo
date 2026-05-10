@@ -19,6 +19,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --gml
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 103
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -26,7 +32,9 @@ outputs:
       - File
     doc: Prefix of the file to which subgraph will be written.
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/reveal:0.1--py27_1

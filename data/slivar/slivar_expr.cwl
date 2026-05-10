@@ -121,6 +121,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf
+  - id: out_vcf_path
+    type: string
+    doc: Output or path parameter `out_vcf_path`
+    inputBinding:
+      position: 102
+      prefix: --out-vcf
 outputs:
   - id: out_vcf
     type:
@@ -128,7 +134,9 @@ outputs:
       - File
     doc: path to output VCF/BCF
     outputBinding:
-      glob: $(inputs.out_vcf)
+      glob: $(inputs.out_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/slivar:0.3.3--h5f107b1_0

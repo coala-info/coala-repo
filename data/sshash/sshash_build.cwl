@@ -49,6 +49,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: output_shash_path
+    type: string
+    doc: Output or path parameter `output_shash_path`
+    inputBinding:
+      position: 103
+      prefix: --output-shash
 outputs:
   - id: output_shash
     type:
@@ -56,7 +62,9 @@ outputs:
       - File
     doc: Output shash file.
     outputBinding:
-      glob: $(inputs.output_shash)
+      glob: $(inputs.output_shash_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sshash:5.0.0--haf24da9_0

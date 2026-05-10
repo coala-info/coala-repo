@@ -103,6 +103,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: coverages_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `coverages_path`
+    inputBinding:
+      position: 103
+      prefix: --coverages
+  - id: inserts_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `inserts_path`
+    inputBinding:
+      position: 104
+      prefix: --inserts
+  - id: links_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `links_path`
+    inputBinding:
+      position: 105
+      prefix: --links
 outputs:
   - id: coverages
     type:
@@ -110,21 +134,23 @@ outputs:
       - File
     doc: filename to write coverage profiles to
     outputBinding:
-      glob: $(inputs.coverages)
+      glob: $(inputs.coverages_path)
   - id: links
     type:
       - 'null'
       - File
     doc: filename to write pairing links to
     outputBinding:
-      glob: $(inputs.links)
+      glob: $(inputs.links_path)
   - id: inserts
     type:
       - 'null'
       - File
     doc: filename to write bamfile insert distributions to
     outputBinding:
-      glob: $(inputs.inserts)
+      glob: $(inputs.inserts_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bamm:1.7.3--py312hdcc493e_15

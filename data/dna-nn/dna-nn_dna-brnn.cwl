@@ -146,6 +146,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -X
+  - id: output_model_file_path
+    type: string
+    doc: Output or path parameter `output_model_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-model-file
 outputs:
   - id: output_model_file
     type:
@@ -153,7 +159,9 @@ outputs:
       - File
     doc: Write model to FILE
     outputBinding:
-      glob: $(inputs.output_model_file)
+      glob: $(inputs.output_model_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dna-nn:0.1--h077b44d_3

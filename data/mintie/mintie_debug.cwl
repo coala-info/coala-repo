@@ -141,6 +141,30 @@ inputs:
     inputBinding:
       position: 104
       prefix: --yes
+  - id: autoarchive_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `autoarchive_path`
+    inputBinding:
+      position: 105
+      prefix: --autoarchive
+  - id: output_directory_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 106
+      prefix: --output-directory
+  - id: report_filename_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_filename_path`
+    inputBinding:
+      position: 107
+      prefix: --report-filename
 outputs:
   - id: autoarchive
     type:
@@ -148,21 +172,23 @@ outputs:
       - File
     doc: clean up all internal files after run into given archive
     outputBinding:
-      glob: $(inputs.autoarchive)
+      glob: $(inputs.autoarchive_path)
   - id: output_directory
     type:
       - 'null'
       - Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
   - id: report_filename
     type:
       - 'null'
       - File
     doc: output file name of report
     outputBinding:
-      glob: $(inputs.report_filename)
+      glob: $(inputs.report_filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mintie:0.4.3--hdfd78af_0

@@ -46,6 +46,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 103
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -54,7 +60,9 @@ outputs:
     doc: Output file ("-" for stdout), file name ending in .gz/.bz2/.xz will be 
       compressed automatically
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wgatools:1.1.0--hf6a8760_0

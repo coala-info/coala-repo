@@ -27,12 +27,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --reference_fasta_db
+  - id: output_path
+    type: string
+    doc: path to the output directory
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: path to the output directory
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pylprotpredictor:1.0.2--py_0

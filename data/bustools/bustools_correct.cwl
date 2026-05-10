@@ -53,6 +53,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --replace
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -60,7 +66,9 @@ outputs:
       - File
     doc: File for corrected bus output
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bustools:0.45.1--h6f0a7f7_0

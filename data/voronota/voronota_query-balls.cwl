@@ -220,6 +220,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --whole-residues
+  - id: chains_summary_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `chains_summary_output_path`
+    inputBinding:
+      position: 103
+      prefix: --chains-summary-output
+  - id: ref_seq_alignment_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `ref_seq_alignment_path`
+    inputBinding:
+      position: 104
+      prefix: --ref-seq-alignment
+  - id: seq_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `seq_output_path`
+    inputBinding:
+      position: 105
+      prefix: --seq-output
 outputs:
   - id: ref_seq_alignment
     type:
@@ -227,21 +251,21 @@ outputs:
       - File
     doc: file path to output alignment with reference
     outputBinding:
-      glob: $(inputs.ref_seq_alignment)
+      glob: $(inputs.ref_seq_alignment_path)
   - id: seq_output
     type:
       - 'null'
       - File
     doc: file path to output query result sequence string
     outputBinding:
-      glob: $(inputs.seq_output)
+      glob: $(inputs.seq_output_path)
   - id: chains_summary_output
     type:
       - 'null'
       - File
     doc: file path to output chains summary
     outputBinding:
-      glob: $(inputs.chains_summary_output)
+      glob: $(inputs.chains_summary_output_path)
   - id: stdout
     type:
       - 'null'
@@ -249,6 +273,8 @@ outputs:
     doc: "list of balls (line format: 'annotation x y z r tags adjuncts')"
     outputBinding:
       glob: '*.out'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/voronota:1.29.4602--h5755088_0

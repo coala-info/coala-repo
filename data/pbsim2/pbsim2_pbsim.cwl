@@ -45,8 +45,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: ratio of differences (substitution:insertion:deletion). Each value must be
-      0-1000.
+    doc: ratio of differences (substitution:insertion:deletion). Each value must
+      be 0-1000.
     inputBinding:
       position: 102
       prefix: --difference-ratio
@@ -110,8 +110,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: sample-fastq (filtered) profile ID. When using --sample-fastq, profile is
-      stored.
+    doc: sample-fastq (filtered) profile ID. When using --sample-fastq, profile 
+      is stored.
     inputBinding:
       position: 102
       prefix: --sample-profile-id
@@ -123,6 +123,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --seed
+  - id: prefix_path
+    type: string
+    doc: Output or path parameter `prefix_path`
+    inputBinding:
+      position: 103
+      prefix: --prefix
 outputs:
   - id: prefix
     type:
@@ -130,7 +136,9 @@ outputs:
       - File
     doc: prefix of output files
     outputBinding:
-      glob: $(inputs.prefix)
+      glob: $(inputs.prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbsim2:2.0.1--h9948957_4

@@ -33,6 +33,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -t
+  - id: logfile_path
+    type: string
+    doc: Output or path parameter `logfile_path`
+    inputBinding:
+      position: 103
+      prefix: --logfile
 outputs:
   - id: logfile
     type:
@@ -40,7 +46,9 @@ outputs:
       - File
     doc: Log file
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/allegro:3--h077b44d_10

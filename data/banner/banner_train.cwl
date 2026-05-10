@@ -29,6 +29,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --processors
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -36,7 +42,9 @@ outputs:
       - File
     doc: Where to write the model to
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/banner:0.0.2--py_0

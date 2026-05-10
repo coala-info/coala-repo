@@ -11,8 +11,8 @@ doc: "Match a list of peptides with post translational modifications\n\nTool hom
 inputs:
   - id: fasta_path
     type: File
-    doc: Path and name of the fasta file containing the Proteins where to find the
-      peptides.
+    doc: Path and name of the fasta file containing the Proteins where to find 
+      the peptides.
     inputBinding:
       position: 101
       prefix: --fasta
@@ -58,8 +58,8 @@ inputs:
     type:
       - 'null'
       - Directory
-    doc: Path to directory with the static mapping files. By default uses the mapping
-      files integrated in the jar file.
+    doc: Path to directory with the static mapping files. By default uses the 
+      mapping files integrated in the jar file.
     inputBinding:
       position: 101
       prefix: --mapping
@@ -88,6 +88,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --topLevelPathways
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -97,7 +103,9 @@ outputs:
       pathways containing the input), analysis.tsv (over-representation analysis)
       and networks files.'
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pathwaymatcher:1.9.1--1

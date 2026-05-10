@@ -124,6 +124,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --where-field
+  - id: out_fasta_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_fasta_path`
+    inputBinding:
+      position: 102
+      prefix: --out-fasta
+  - id: out_metadata_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_metadata_path`
+    inputBinding:
+      position: 103
+      prefix: --out-metadata
 outputs:
   - id: out_fasta
     type:
@@ -131,14 +147,16 @@ outputs:
       - File
     doc: A FASTA file (else writes to stdout)
     outputBinding:
-      glob: $(inputs.out_fasta)
+      glob: $(inputs.out_fasta_path)
   - id: out_metadata
     type:
       - 'null'
       - File
     doc: A metadata file
     outputBinding:
-      glob: $(inputs.out_metadata)
+      glob: $(inputs.out_metadata_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastafunk:0.1.2--pyh5e36f6f_0

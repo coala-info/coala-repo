@@ -72,6 +72,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: -keepDisoriented
+  - id: info_file_path
+    type: string
+    doc: Output or path parameter `info_file_path`
+    inputBinding:
+      position: 105
+      prefix: --info-file
 outputs:
   - id: info_file
     type:
@@ -79,7 +85,9 @@ outputs:
       - File
     doc: Write information about each EST to this tab separated file
     outputBinding:
-      glob: $(inputs.info_file)
+      glob: $(inputs.info_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-estorient:482--h0b57e2e_0

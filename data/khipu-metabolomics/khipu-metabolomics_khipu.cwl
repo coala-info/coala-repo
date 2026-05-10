@@ -61,6 +61,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --start
+  - id: output_path
+    type: string
+    doc: prefix of output files
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -68,7 +74,9 @@ outputs:
       - File
     doc: prefix of output files
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/khipu-metabolomics:2.0.4--pyhdfd78af_0

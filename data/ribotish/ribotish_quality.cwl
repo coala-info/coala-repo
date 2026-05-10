@@ -164,6 +164,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: fig_pdf_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `fig_pdf_path_path`
+    inputBinding:
+      position: 102
+      prefix: --fig-pdf-path
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: 'Output data file (default: ribobampath[:-4]+'
+    inputBinding:
+      position: 103
+      prefix: -o
+  - id: para_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `para_path_path`
+    inputBinding:
+      position: 104
+      prefix: --para-path
 outputs:
   - id: output
     type:
@@ -171,21 +195,23 @@ outputs:
       - File
     doc: Output data file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: fig_pdf_path
     type:
       - 'null'
       - File
     doc: Output pdf figure file
     outputBinding:
-      glob: $(inputs.fig_pdf_path)
+      glob: $(inputs.fig_pdf_path_path)
   - id: para_path
     type:
       - 'null'
       - File
     doc: Output offset parameter file
     outputBinding:
-      glob: $(inputs.para_path)
+      glob: $(inputs.para_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ribotish:0.2.8--pyhdfd78af_0

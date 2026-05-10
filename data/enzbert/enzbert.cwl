@@ -67,6 +67,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_folder_path_path
+    type: Directory
+    inputBinding:
+      position: 102
+      prefix: --output_folder_path
 outputs:
   - id: output_folder_path
     type:
@@ -74,7 +79,9 @@ outputs:
       - Directory
     doc: Path of the csv output prediction
     outputBinding:
-      glob: $(inputs.output_folder_path)
+      glob: $(inputs.output_folder_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/enzbert:1.1--pyh7e72e81_0

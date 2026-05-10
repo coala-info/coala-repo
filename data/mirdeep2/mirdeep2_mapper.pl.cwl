@@ -93,8 +93,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Remove all entries that have a sequence that contains characters other than
-      a,c,g,t,u,n,A,C,G,T,U,N
+    doc: Remove all entries that have a sequence that contains characters other 
+      than a,c,g,t,u,n,A,C,G,T,U,N
     inputBinding:
       position: 102
       prefix: -j
@@ -106,6 +106,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: -v
+  - id: output_arf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_arf_path`
+    inputBinding:
+      position: 103
+      prefix: --output-arf
+  - id: output_processed_reads_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_processed_reads_path`
+    inputBinding:
+      position: 104
+      prefix: --output-processed-reads
 outputs:
   - id: output_processed_reads
     type:
@@ -113,14 +129,16 @@ outputs:
       - File
     doc: Print processed reads to this file
     outputBinding:
-      glob: $(inputs.output_processed_reads)
+      glob: $(inputs.output_processed_reads_path)
   - id: output_arf
     type:
       - 'null'
       - File
     doc: Print mappings to this file (arf format)
     outputBinding:
-      glob: $(inputs.output_arf)
+      glob: $(inputs.output_arf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mirdeep2:2.0.1.3--hdfd78af_2

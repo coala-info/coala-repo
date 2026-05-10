@@ -47,6 +47,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 103
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -54,7 +60,9 @@ outputs:
       - File
     doc: output file name (e.g. intermediate PIA file)
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pia:1.5.7--hdfd78af_0

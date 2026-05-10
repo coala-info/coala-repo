@@ -109,19 +109,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
+  - id: outfa_path
+    type:
+      - 'null'
+      - string
+    doc: Path to output fasta file with new alleles sequences
+    inputBinding:
+      position: 103
+      prefix: --outfa
 outputs:
   - id: out
     type: File
     doc: Path to output file.
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: outfa
     type:
       - 'null'
       - File
     doc: Path to output fasta file with new alleles sequences if detected.
     outputBinding:
-      glob: $(inputs.outfa)
+      glob: $(inputs.outfa_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coreprofiler:2.0.0--pyhdfd78af_0

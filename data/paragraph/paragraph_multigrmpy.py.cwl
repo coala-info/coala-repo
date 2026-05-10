@@ -125,8 +125,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Keep long insertion sequences in the graph rather than trimming them at the
-      read / padding length.
+    doc: Keep long insertion sequences in the graph rather than trimming them at
+      the read / padding length.
     inputBinding:
       position: 101
       prefix: --no-alt-splitting
@@ -142,8 +142,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Read length -- this is used to add reference padding when converting VCF
-      to graphs.
+    doc: Read length -- this is used to add reference padding when converting 
+      VCF to graphs.
     inputBinding:
       position: 101
       prefix: --read-length
@@ -201,19 +201,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write-alignments
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `logfile_path`
+    inputBinding:
+      position: 102
+      prefix: --logfile
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: Output directory.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: logfile
     type:
       - 'null'
       - File
     doc: Write logging information into file rather than to stderr
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/paragraph:2.3--h8908b6f_0

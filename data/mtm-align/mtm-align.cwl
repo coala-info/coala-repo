@@ -14,6 +14,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -i
+  - id: output_directory_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 102
+      prefix: --output-directory
+  - id: output_filename_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_filename_path`
+    inputBinding:
+      position: 103
+      prefix: --output-filename
 outputs:
   - id: output_filename
     type:
@@ -24,7 +40,7 @@ outputs:
       the superimposed structures will be separated by 'MODEL'\n                 \
       \  Otherwise, the structures are speparated using the chain IDs: A,B,C,..."
     outputBinding:
-      glob: $(inputs.output_filename)
+      glob: $(inputs.output_filename_path)
   - id: output_directory
     type:
       - 'null'
@@ -32,7 +48,9 @@ outputs:
     doc: The output directory to save the results (the default is 
       './mTM_result')
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mtm-align:20220104--h9948957_3

@@ -31,6 +31,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --mutations
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -40,7 +46,9 @@ outputs:
       the suffix of the input filename (i.e. .fasta or .blastPsiMat) is replaced
       to create an output filename.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/reprof:v1.0.1-6-deb_cv1

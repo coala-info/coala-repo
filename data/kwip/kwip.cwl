@@ -60,6 +60,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --weights
+  - id: distance_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `distance_output_path`
+    inputBinding:
+      position: 103
+      prefix: --distance-output
+  - id: kernel_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `kernel_output_path`
+    inputBinding:
+      position: 104
+      prefix: --kernel-output
 outputs:
   - id: kernel_output
     type:
@@ -67,14 +83,16 @@ outputs:
       - File
     doc: Output file for the kernel matrix.
     outputBinding:
-      glob: $(inputs.kernel_output)
+      glob: $(inputs.kernel_output_path)
   - id: distance_output
     type:
       - 'null'
       - File
     doc: Output file for the distance matrix.
     outputBinding:
-      glob: $(inputs.distance_output)
+      glob: $(inputs.distance_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kwip:0.2.0--hd28b015_0

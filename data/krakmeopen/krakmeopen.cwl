@@ -60,6 +60,29 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tax_id_file
+  - id: kmer_tally_table_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --kmer_tally_table
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: The file to write the quality metrics output to.
+    inputBinding:
+      position: 103
+      prefix: --output
+  - id: output_pickle_path
+    type:
+      - 'null'
+      - string
+    doc: The pickle file to write kmer tallies to. Use this
+    inputBinding:
+      position: 104
+      prefix: --output_pickle
 outputs:
   - id: output
     type:
@@ -67,7 +90,7 @@ outputs:
       - File
     doc: The file to write the quality metrics output to.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: output_pickle
     type:
       - 'null'
@@ -76,14 +99,16 @@ outputs:
       calculation of quality metrics and\nonly output kmer counts to a pickled file.
       Input the\npickled file using --input_pickle."
     outputBinding:
-      glob: $(inputs.output_pickle)
+      glob: $(inputs.output_pickle_path)
   - id: kmer_tally_table
     type:
       - 'null'
       - File
     doc: "File to output the complete kmer tally table for each\ntax ID to. Optional."
     outputBinding:
-      glob: $(inputs.kmer_tally_table)
+      glob: $(inputs.kmer_tally_table_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/krakmeopen:0.1.5--pyh3252c3a_0

@@ -129,6 +129,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: --removeDups
+  - id: discordant_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `discordant_file_path`
+    inputBinding:
+      position: 102
+      prefix: --discordant-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
+  - id: splitter_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `splitter_file_path`
+    inputBinding:
+      position: 104
+      prefix: --splitter-file
+  - id: unmapped_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unmapped_file_path`
+    inputBinding:
+      position: 105
+      prefix: --unmapped-file
 outputs:
   - id: output_file
     type:
@@ -136,21 +168,21 @@ outputs:
       - File
     doc: Output sam file for all input alignments
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: discordant_file
     type:
       - 'null'
       - File
     doc: Output discordant read pairs to this file.
     outputBinding:
-      glob: $(inputs.discordant_file)
+      glob: $(inputs.discordant_file_path)
   - id: splitter_file
     type:
       - 'null'
       - File
     doc: Output split reads to this file abiding by paramaters below.
     outputBinding:
-      glob: $(inputs.splitter_file)
+      glob: $(inputs.splitter_file_path)
   - id: unmapped_file
     type:
       - 'null'
@@ -159,7 +191,9 @@ outputs:
       parameters below. Requires soft clipping in input file. Will output FASTQ 
       if QUAL information available, otherwise FASTA.
     outputBinding:
-      glob: $(inputs.unmapped_file)
+      glob: $(inputs.unmapped_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/samblaster:0.1.26--h9948957_7

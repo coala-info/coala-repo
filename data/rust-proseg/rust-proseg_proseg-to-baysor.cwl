@@ -12,19 +12,37 @@ inputs:
     type: File
     inputBinding:
       position: 2
+  - id: output_cell_polygons_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_cell_polygons_path`
+    inputBinding:
+      position: 101
+      prefix: --output-cell-polygons
+  - id: output_transcript_metadata_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_transcript_metadata_path`
+    inputBinding:
+      position: 102
+      prefix: --output-transcript-metadata
 outputs:
   - id: output_transcript_metadata
     type:
       - 'null'
       - File
     outputBinding:
-      glob: $(inputs.output_transcript_metadata)
+      glob: $(inputs.output_transcript_metadata_path)
   - id: output_cell_polygons
     type:
       - 'null'
       - File
     outputBinding:
-      glob: $(inputs.output_cell_polygons)
+      glob: $(inputs.output_cell_polygons_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rust-proseg:2.0.6--h4349ce8_0

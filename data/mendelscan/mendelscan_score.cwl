@@ -294,6 +294,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --vep-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
+  - id: output_vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_vcf_path`
+    inputBinding:
+      position: 104
+      prefix: --output-vcf
 outputs:
   - id: output_file
     type:
@@ -301,14 +317,16 @@ outputs:
       - File
     doc: Output file to contain human-friendly scored variants
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_vcf
     type:
       - 'null'
       - File
     doc: Output file to contain scored variants in VCF format
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mendelscan:v1.2.2--0

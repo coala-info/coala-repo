@@ -4,8 +4,8 @@ baseCommand:
   - biscuit
   - qc_coverage
 label: biscuit_qc_coverage
-doc: "BISCUIT QC coverage tool for calculating coverage statistics from BAM files.\n
-  \nTool homepage: https://github.com/huishenlab/biscuit"
+doc: "BISCUIT QC coverage tool for calculating coverage statistics from BAM files.\n\
+  \ \nTool homepage: https://github.com/huishenlab/biscuit"
 inputs:
   - id: reference_fasta
     type: File
@@ -110,6 +110,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: -T
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 105
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -117,7 +123,9 @@ outputs:
       - File
     doc: Prefix for output file names
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biscuit:1.7.1.20250908--hc4b60c0_0

@@ -320,7 +320,7 @@ inputs:
       - 'null'
       - string
     doc: If no target specified, skip realignment of chromosomes matching 
-      specified regex.
+      specified regex. 
       GL.*|hs37d5|chr.*random|chrUn.*|chrEBV|CMV|HBV|HCV.*|HIV.*|KSHV|HTLV.*|MCV|SV40|HPV.*
     inputBinding:
       position: 101
@@ -407,6 +407,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ws
+  - id: contigs_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `contigs_output_path`
+    inputBinding:
+      position: 102
+      prefix: --contigs-output
+  - id: output_files_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_files_path`
+    inputBinding:
+      position: 103
+      prefix: --output-files
 outputs:
   - id: contigs_output
     type:
@@ -414,12 +430,14 @@ outputs:
       - File
     doc: Optional file to which assembled contigs are written
     outputBinding:
-      glob: $(inputs.contigs_output)
+      glob: $(inputs.contigs_output_path)
   - id: output_files
     type: File
     doc: Required list of output sam or bam file(s) separated by comma
     outputBinding:
-      glob: $(inputs.output_files)
+      glob: $(inputs.output_files_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/abra2:2.24--hdcf5f25_3

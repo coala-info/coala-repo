@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: variabel
 label: variabel_variabel.py
-doc: "A tool for calling low-frequency variants in viral populations from NGS data.\n
-  \nTool homepage: https://gitlab.com/treangenlab/variabel"
+doc: "A tool for calling low-frequency variants in viral populations from NGS data.\n\
+  \ \nTool homepage: https://gitlab.com/treangenlab/variabel"
 inputs:
   - id: bam
     type: File
@@ -57,6 +57,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -64,7 +70,9 @@ outputs:
       - File
     doc: Output file to write variants to.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/variabel:1.0.0--hdfd78af_0

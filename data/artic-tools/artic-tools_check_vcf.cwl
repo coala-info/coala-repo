@@ -25,19 +25,37 @@ inputs:
     inputBinding:
       position: 103
       prefix: --minQual
+  - id: summary_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `summary_out_path`
+    inputBinding:
+      position: 104
+      prefix: --summary-out
+  - id: vcf_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `vcf_out_path`
+    inputBinding:
+      position: 105
+      prefix: --vcf-out
 outputs:
   - id: summary_out
     type: File
     doc: Summary of variant checks will be written here (TSV format)
     outputBinding:
-      glob: $(inputs.summary_out)
+      glob: $(inputs.summary_out_path)
   - id: vcf_out
     type:
       - 'null'
       - File
     doc: If provided, will write variants that pass checks to this file
     outputBinding:
-      glob: $(inputs.vcf_out)
+      glob: $(inputs.vcf_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/artic-tools:0.3.1--hf9554c4_7

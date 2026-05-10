@@ -42,6 +42,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -s
+  - id: output_files_path
+    type: string
+    doc: Output or path parameter `output_files_path`
+    inputBinding:
+      position: 102
+      prefix: --output-files
 outputs:
   - id: output_files
     type:
@@ -49,7 +55,9 @@ outputs:
       - File
     doc: Output FASTA file (if used, must be used as many times as -i).
     outputBinding:
-      glob: $(inputs.output_files)
+      glob: $(inputs.output_files_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/prophasm:0.1.1--h077b44d_5

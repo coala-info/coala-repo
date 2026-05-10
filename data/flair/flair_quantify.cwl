@@ -9,8 +9,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: enforce coverage of 4 out of 6 bp around each splice site and no insertions
-      greater than 3 bp at the splice site
+    doc: enforce coverage of 4 out of 6 bp around each splice site and no 
+      insertions greater than 3 bp at the splice site
     inputBinding:
       position: 101
       prefix: --check_splice
@@ -26,7 +26,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: isoform .bed file, must be specified if --stringent or check_splice is specified
+    doc: isoform .bed file, must be specified if --stringent or check_splice is 
+      specified
     inputBinding:
       position: 101
       prefix: --isoform_bed
@@ -62,8 +63,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Supporting reads must cover 80 percent of their isoform and extend at least
-      25 nt into the first and last exons.
+    doc: Supporting reads must cover 80 percent of their isoform and extend at 
+      least 25 nt into the first and last exons.
     inputBinding:
       position: 101
       prefix: --stringent
@@ -71,7 +72,8 @@ inputs:
     type:
       - 'null'
       - Directory
-    doc: directory to put temporary files. use './' to indicate current directory
+    doc: directory to put temporary files. use './' to indicate current 
+      directory
     inputBinding:
       position: 101
       prefix: --temp_dir
@@ -87,8 +89,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Convert counts matrix to transcripts per million and output as a separate
-      file named <output>.tpm.tsv
+    doc: Convert counts matrix to transcripts per million and output as a 
+      separate file named <output>.tpm.tsv
     inputBinding:
       position: 101
       prefix: --tpm
@@ -96,10 +98,27 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: specify if reads are generated from a long read method with minimal fragmentation
+    doc: specify if reads are generated from a long read method with minimal 
+      fragmentation
     inputBinding:
       position: 101
       prefix: --trust_ends
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: output_bam_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_bam_path`
+    inputBinding:
+      position: 103
+      prefix: --output-bam
 outputs:
   - id: output
     type:
@@ -107,14 +126,16 @@ outputs:
       - File
     doc: output file name base for FLAIR quantify
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: output_bam
     type:
       - 'null'
       - File
     doc: whether to output bam file of reads aligned to correct isoforms
     outputBinding:
-      glob: $(inputs.output_bam)
+      glob: $(inputs.output_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flair:3.0.0--pyhdfd78af_0

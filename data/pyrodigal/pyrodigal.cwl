@@ -77,6 +77,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: --translation-table
+  - id: nucleotide_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `nucleotide_output_path`
+    inputBinding:
+      position: 102
+      prefix: --nucleotide-output
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
+  - id: potential_genes_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `potential_genes_path`
+    inputBinding:
+      position: 104
+      prefix: --potential-genes
+  - id: translation_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `translation_output_path`
+    inputBinding:
+      position: 105
+      prefix: --translation-output
 outputs:
   - id: output
     type:
@@ -84,28 +116,30 @@ outputs:
       - File
     doc: 'Output file (default: stdout)'
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: translation_output
     type:
       - 'null'
       - File
     doc: Write protein translations to the selected file
     outputBinding:
-      glob: $(inputs.translation_output)
+      glob: $(inputs.translation_output_path)
   - id: nucleotide_output
     type:
       - 'null'
       - File
     doc: Write nucleotide sequences of genes to the selected file
     outputBinding:
-      glob: $(inputs.nucleotide_output)
+      glob: $(inputs.nucleotide_output_path)
   - id: potential_genes
     type:
       - 'null'
       - File
     doc: Write all potential genes (with scores) to the selected file
     outputBinding:
-      glob: $(inputs.potential_genes)
+      glob: $(inputs.potential_genes_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyrodigal:3.7.0--py311haab0aaa_0

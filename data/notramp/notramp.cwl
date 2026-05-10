@@ -152,6 +152,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --trim
+  - id: out_dir_path
+    type: Directory
+    doc: Optionally specify a directory for saving of outfiles.
+    inputBinding:
+      position: 102
+      prefix: -o
 outputs:
   - id: out_dir
     type:
@@ -161,7 +167,9 @@ outputs:
       is not given, out-files will be saved\nin the directory where the input reads
       are located.\n[default=False]"
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/notramp:1.1.9--pyh7e72e81_0

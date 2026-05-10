@@ -145,6 +145,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_html_path
+    type:
+      - 'null'
+      - string
+    doc: 'Output HTML tree path  [default: shiptv-'
+    inputBinding:
+      position: 102
+      prefix: --output-html
+  - id: output_metadata_table_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --output-metadata-table
 outputs:
   - id: output_html
     type:
@@ -152,14 +167,16 @@ outputs:
       - File
     doc: Output HTML tree path
     outputBinding:
-      glob: $(inputs.output_html)
+      glob: $(inputs.output_html_path)
   - id: output_metadata_table
     type:
       - 'null'
       - File
     doc: Output metadata table path
     outputBinding:
-      glob: $(inputs.output_metadata_table)
+      glob: $(inputs.output_metadata_table_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/shiptv:0.4.1--pyh5e36f6f_0

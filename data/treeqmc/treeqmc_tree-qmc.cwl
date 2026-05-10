@@ -25,8 +25,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Input are binary characters i.e. bipartitions. Missing states are N, -, and
-      ?
+    doc: Input are binary characters i.e. bipartitions. Missing states are N, -,
+      and ?
     inputBinding:
       position: 101
       prefix: --bp
@@ -50,8 +50,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Contract internal branches with support less than specified threshold after
-      mapping support to the interval 0 to 1
+    doc: Contract internal branches with support less than specified threshold 
+      after mapping support to the interval 0 to 1
     inputBinding:
       position: 101
       prefix: --contract
@@ -122,8 +122,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Seeds random number generator prior to calling the max cut heuristic. If
-      -1, system time is used.
+    doc: Seeds random number generator prior to calling the max cut heuristic. 
+      If -1, system time is used.
     inputBinding:
       position: 101
       prefix: --maxcutseed
@@ -147,8 +147,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Compute partitioned coalescent support (PCS) for specified branch in species
-      tree in file (annotate branch with PCS) and then exit
+    doc: Compute partitioned coalescent support (PCS) for specified branch in 
+      species tree in file (annotate branch with PCS) and then exit
     inputBinding:
       position: 101
       prefix: --pcsonly
@@ -156,8 +156,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Seeds random number generator with prior to arbitrarily resolving polytomies.
-      If -1, system time is used.
+    doc: Seeds random number generator with prior to arbitrarily resolving 
+      polytomies. If -1, system time is used.
     inputBinding:
       position: 101
       prefix: --polyseed
@@ -165,8 +165,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Root species tree at given species if possible (list of species separated
-      by commas)
+    doc: Root species tree at given species if possible (list of species 
+      separated by commas)
     inputBinding:
       position: 101
       prefix: --root
@@ -182,8 +182,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use shared taxon data structure to normalize quartet weights. Do NOT use
-      unless there are NO missing data.
+    doc: Use shared taxon data structure to normalize quartet weights. Do NOT 
+      use unless there are NO missing data.
     inputBinding:
       position: 101
       prefix: --shared
@@ -221,6 +221,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --weight
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
+  - id: write_table_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_table_path`
+    inputBinding:
+      position: 103
+      prefix: --write-table
 outputs:
   - id: output_file
     type:
@@ -228,14 +244,16 @@ outputs:
       - File
     doc: File for writing output species tree
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: write_table
     type:
       - 'null'
       - File
     doc: Write branch and quartet support information to CSV
     outputBinding:
-      glob: $(inputs.write_table)
+      glob: $(inputs.write_table_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/treeqmc:3.0.1--hee07fbb_0

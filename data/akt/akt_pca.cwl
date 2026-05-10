@@ -23,8 +23,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Assume missing genotypes/sites are homozygous reference (useful for projecting
-      a single sample)
+    doc: Assume missing genotypes/sites are homozygous reference (useful for 
+      projecting a single sample)
     inputBinding:
       position: 102
       prefix: --assume-homref
@@ -140,6 +140,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --weight
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -147,7 +153,9 @@ outputs:
       - File
     doc: output vcf
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/akt:0.3.3--h5ca1c30_7

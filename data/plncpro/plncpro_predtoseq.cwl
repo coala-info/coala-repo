@@ -48,12 +48,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: -l
+  - id: outputfile_path
+    type: string
+    doc: Output or path parameter `outputfile_path`
+    inputBinding:
+      position: 103
+      prefix: --outputfile
 outputs:
   - id: outputfile
     type: File
     doc: outputfile
     outputBinding:
-      glob: $(inputs.outputfile)
+      glob: $(inputs.outputfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plncpro:1.2.2--py37hc9558a2_0

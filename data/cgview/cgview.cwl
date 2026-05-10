@@ -171,6 +171,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -x
+  - id: html_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `html_file_path`
+    inputBinding:
+      position: 102
+      prefix: --html-file
+  - id: output_image_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_image_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-image-file
 outputs:
   - id: html_file
     type:
@@ -178,14 +194,16 @@ outputs:
       - File
     doc: HTML file to create.
     outputBinding:
-      glob: $(inputs.html_file)
+      glob: $(inputs.html_file_path)
   - id: output_image_file
     type:
       - 'null'
       - File
     doc: The image file to create.
     outputBinding:
-      glob: $(inputs.output_image_file)
+      glob: $(inputs.output_image_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cgview:1.0--py35pl5.22.0_1

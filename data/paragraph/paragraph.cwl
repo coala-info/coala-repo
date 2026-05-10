@@ -33,7 +33,8 @@ inputs:
     type:
       type: array
       items: File
-    doc: Input BAM file(s) for read extraction. We align all reads to all graphs.
+    doc: Input BAM file(s) for read extraction. We align all reads to all 
+      graphs.
     inputBinding:
       position: 101
       prefix: --bam
@@ -57,8 +58,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: gzip-compress output files. If -O is used, output file names are appended
-      with .gz
+    doc: gzip-compress output files. If -O is used, output file names are 
+      appended with .gz
     inputBinding:
       position: 101
       prefix: --gzip-output
@@ -122,8 +123,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Output detailed read counts not just for paths but also for each node/edge
-      on the paths.
+    doc: Output detailed read counts not just for paths but also for each 
+      node/edge on the paths.
     inputBinding:
       position: 101
       prefix: --output-detailed-read-counts
@@ -201,8 +202,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Comma-separated list of target regions, e.g. chr1:1-20,chr2:2-40. This overrides
-      the target regions in the graph spec.
+    doc: Comma-separated list of target regions, e.g. chr1:1-20,chr2:2-40. This 
+      overrides the target regions in the graph spec.
     inputBinding:
       position: 101
       prefix: --target-regions
@@ -218,8 +219,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Use information in the input bam read names to collect statistics about the
-      accuracy of alignments.
+    doc: Use information in the input bam read names to collect statistics about
+      the accuracy of alignments.
     inputBinding:
       position: 101
       prefix: --validate-alignments
@@ -239,23 +240,41 @@ inputs:
     inputBinding:
       position: 101
       prefix: --variant-min-reads
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
+  - id: output_folder_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_folder_path`
+    inputBinding:
+      position: 103
+      prefix: --output-folder
 outputs:
   - id: output_file
     type:
       - 'null'
       - File
-    doc: Output file name. Will output to stdout if '-' or neither of output-file
-      or output-folder provided.
+    doc: Output file name. Will output to stdout if '-' or neither of 
+      output-file or output-folder provided.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_folder
     type:
       - 'null'
       - Directory
-    doc: Output folder path. paragraph will attempt to create the folder but not the
-      entire path.
+    doc: Output folder path. paragraph will attempt to create the folder but not
+      the entire path.
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/paragraph:2.3--h8908b6f_0

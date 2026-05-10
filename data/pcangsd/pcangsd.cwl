@@ -281,7 +281,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Manual selection of number of eigenvectors in selection scans/SNP weights
+    doc: Manual selection of number of eigenvectors in selection scans/SNP 
+      weights
     inputBinding:
       position: 101
       prefix: --selection-eig
@@ -333,6 +334,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tree-samples
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -340,7 +347,9 @@ outputs:
       - File
     doc: Prefix for output files
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pcangsd:1.36.4--py311h8ddd9a4_0

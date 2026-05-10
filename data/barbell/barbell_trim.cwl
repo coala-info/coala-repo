@@ -59,19 +59,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sort-labels
+  - id: failed_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `failed_out_path`
+    inputBinding:
+      position: 102
+      prefix: --failed-out
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: Output folder path for trimmed reads
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: failed_out
     type:
       - 'null'
       - File
     doc: Write ids of failed trimmed reads to this file
     outputBinding:
-      glob: $(inputs.failed_out)
+      glob: $(inputs.failed_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/barbell:0.3.1--hc1c3326_0

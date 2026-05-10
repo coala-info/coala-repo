@@ -55,6 +55,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --unique
+  - id: outfile_path
+    type: string
+    doc: 'default=-: Output sequence file. Use "-" for STDOUT.'
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -62,7 +68,9 @@ outputs:
       - File
     doc: Output sequence file. Use "-" for STDOUT.
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cdskit:0.16.1--pyhdfd78af_0

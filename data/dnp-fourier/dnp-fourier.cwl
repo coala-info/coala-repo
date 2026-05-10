@@ -28,12 +28,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -l
+  - id: output_table_path
+    type: string
+    doc: Output or path parameter `output_table_path`
+    inputBinding:
+      position: 102
+      prefix: --output-table
 outputs:
   - id: output_table
     type: File
     doc: output table
     outputBinding:
-      glob: $(inputs.output_table)
+      glob: $(inputs.output_table_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dnp-fourier:1.0--h503566f_6

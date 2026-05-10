@@ -8,8 +8,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: The pathname of a file containing pod documentation to be output in usage
-      message format (defaults to standard input).
+    doc: The pathname of a file containing pod documentation to be output in 
+      usage message format (defaults to standard input).
     inputBinding:
       position: 1
   - id: exit_val
@@ -24,8 +24,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Which text formatter to use. Default is Pod::Text, or for very old Perl versions
-      Pod::PlainText.
+    doc: Which text formatter to use. Default is Pod::Text, or for very old Perl
+      versions Pod::PlainText.
     inputBinding:
       position: 102
       prefix: -formatter
@@ -33,9 +33,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specifies one or more directories to search for the input file if it was
-      not supplied with an absolute path. Each directory path in the given list should
-      be separated by a ':' on Unix (';' on MSWin32 and DOS).
+    doc: Specifies one or more directories to search for the input file if it 
+      was not supplied with an absolute path. Each directory path in the given 
+      list should be separated by a ':' on Unix (';' on MSWin32 and DOS).
     inputBinding:
       position: 102
       prefix: -pathlist
@@ -43,8 +43,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: This option assumes that the formatter understands the option "utf8". It
-      turns on generation of utf8 output.
+    doc: This option assumes that the formatter understands the option "utf8". 
+      It turns on generation of utf8 output.
     inputBinding:
       position: 102
       prefix: -utf8
@@ -57,16 +57,24 @@ inputs:
     inputBinding:
       position: 102
       prefix: -verbose
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
       - 'null'
       - File
-    doc: The output file to print to. If the special names "-" or ">&1" or ">&STDOUT"
-      are used then standard output is used. If ">&2" or ">&STDERR" is used then standard
-      error is used.
+    doc: The output file to print to. If the special names "-" or ">&1" or 
+      ">&STDOUT" are used then standard output is used. If ">&2" or ">&STDERR" 
+      is used then standard error is used.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-pod-usage:2.05--pl5321hdfd78af_0

@@ -35,7 +35,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Set the standard deviation for the mean number of replicates per amplicon
+    doc: Set the standard deviation for the mean number of replicates per 
+      amplicon
     inputBinding:
       position: 103
       prefix: --sd
@@ -47,6 +48,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --seed
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -54,7 +61,9 @@ outputs:
       - File
     doc: Output to FILE instead of standard output
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amplisim:0.2.1--h69ac913_3

@@ -19,8 +19,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Aligned Iso-Seq data in BAM format. Accepts a path to a bam, a url, or a
-      fofn file
+    doc: Aligned Iso-Seq data in BAM format. Accepts a path to a bam, a url, or 
+      a fofn file
     inputBinding:
       position: 102
       prefix: -b
@@ -28,8 +28,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Permit fusion events identified involving primarily immunological genes and
-      their pseudogenes
+    doc: Permit fusion events identified involving primarily immunological genes
+      and their pseudogenes
     inputBinding:
       position: 102
       prefix: --allow-immune
@@ -76,8 +76,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Assigns 'low confidence' to fusion calls spanning two genes below the readthrough
-      threshold
+    doc: Assigns 'low confidence' to fusion calls spanning two genes below the 
+      readthrough threshold
     inputBinding:
       position: 102
       prefix: --max-readthrough
@@ -85,8 +85,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Assigns 'low confidence' to fusion calls with the mean breakpoint distance
-      is above the threshold
+    doc: Assigns 'low confidence' to fusion calls with the mean breakpoint 
+      distance is above the threshold
     inputBinding:
       position: 102
       prefix: --max-variability
@@ -94,8 +94,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Real-cell filtering for single-cell data. Assigns 'low confidence' to fusion
-      calls with read coverage below the minimum coverage threshold
+    doc: Real-cell filtering for single-cell data. Assigns 'low confidence' to 
+      fusion calls with read coverage below the minimum coverage threshold
     inputBinding:
       position: 102
       prefix: --min-coverage
@@ -119,8 +119,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Remove breakpoint pairs from groups if they have gene alignments which fewer
-      than [arg] reads in group have
+    doc: Remove breakpoint pairs from groups if they have gene alignments which 
+      fewer than [arg] reads in group have
     inputBinding:
       position: 102
       prefix: --min-fusion-read-fraction
@@ -128,8 +128,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Assigns 'low confidence' to fusion calls where the mean alignment identity
-      is below the threshold
+    doc: Assigns 'low confidence' to fusion calls where the mean alignment 
+      identity is below the threshold
     inputBinding:
       position: 102
       prefix: --min-mean-identity
@@ -137,8 +137,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Assigns 'low confidence' to fusion calls where the mean mapq is below the
-      threshold
+    doc: Assigns 'low confidence' to fusion calls where the mean mapq is below 
+      the threshold
     inputBinding:
       position: 102
       prefix: --min-mean-mapq
@@ -146,7 +146,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Filter rarer events involving genes with high numbers of fusion partners
+    doc: Filter rarer events involving genes with high numbers of fusion 
+      partners
     inputBinding:
       position: 102
       prefix: --prom-filter
@@ -175,12 +176,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 103
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type: File
     doc: Output prefix
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbfusion:0.5.1--hdfd78af_0

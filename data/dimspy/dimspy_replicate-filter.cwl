@@ -66,19 +66,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --rsd-threshold
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: report_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_path`
+    inputBinding:
+      position: 103
+      prefix: --report
 outputs:
   - id: output
     type: File
     doc: HDF5 file to save the peaklist objects to.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: report
     type:
       - 'null'
       - File
     doc: Summary/Report of processed mass spectra
     outputBinding:
-      glob: $(inputs.report)
+      glob: $(inputs.report_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dimspy:2.0.0--pyhdfd78af_1

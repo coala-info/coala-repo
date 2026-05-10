@@ -99,12 +99,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -m
+  - id: classifications_out_path
+    type: string
+    doc: Output or path parameter `classifications_out_path`
+    inputBinding:
+      position: 102
+      prefix: --classifications-out
 outputs:
   - id: classifications_out
     type: File
     doc: output path
     outputBinding:
-      glob: $(inputs.classifications_out)
+      glob: $(inputs.classifications_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/rtax:v0.984-6-deb_cv1

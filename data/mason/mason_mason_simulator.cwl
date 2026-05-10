@@ -735,6 +735,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --very-verbose
+  - id: out_alignment_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_alignment_path`
+    inputBinding:
+      position: 102
+      prefix: --out-alignment
+  - id: out_left_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_left_path`
+    inputBinding:
+      position: 103
+      prefix: --out-left
+  - id: out_right_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_right_path`
+    inputBinding:
+      position: 104
+      prefix: --out-right
 outputs:
   - id: out_left
     type: File
@@ -743,7 +767,7 @@ outputs:
       .fa[.*], and .bam, where * is any of the following extensions: gz, bz2, and
       bgzf for transparent (de)compression.'
     outputBinding:
-      glob: $(inputs.out_left)
+      glob: $(inputs.out_left_path)
   - id: out_right
     type:
       - 'null'
@@ -753,7 +777,7 @@ outputs:
       .fastq[.*], .fasta[.*], .fas[.*], .faa[.*], .fa[.*], and .bam, where * is any
       of the following extensions: gz, bz2, and bgzf for transparent (de)compression.'
     outputBinding:
-      glob: $(inputs.out_right)
+      glob: $(inputs.out_right_path)
   - id: out_alignment
     type:
       - 'null'
@@ -761,7 +785,9 @@ outputs:
     doc: 'SAM/BAM file with alignments. Valid filetypes are: .sam[.*] and .bam, where
       * is any of the following extensions: gz, bz2, and bgzf for transparent (de)compression.'
     outputBinding:
-      glob: $(inputs.out_alignment)
+      glob: $(inputs.out_alignment_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mason:2.0.13--h7f3286b_0

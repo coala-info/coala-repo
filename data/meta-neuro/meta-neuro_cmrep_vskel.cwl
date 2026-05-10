@@ -191,6 +191,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: -z
+  - id: output_depth_map_image_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_depth_map_image_path`
+    inputBinding:
+      position: 103
+      prefix: --output-depth-map-image
+  - id: output_thickness_image_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_thickness_image_path`
+    inputBinding:
+      position: 104
+      prefix: --output-thickness-image
 outputs:
   - id: output_skeleton
     type: File
@@ -204,7 +220,7 @@ outputs:
     doc: Generate thickness map in an image. Input is a binary image. Output 1 
       is a thickness image; Output 2 is a depth map. Output thickness image
     outputBinding:
-      glob: $(inputs.output_thickness_image)
+      glob: $(inputs.output_thickness_image_path)
   - id: output_depth_map_image
     type:
       - 'null'
@@ -212,7 +228,9 @@ outputs:
     doc: Generate thickness map in an image. Input is a binary image. Output 1 
       is a thickness image; Output 2 is a depth map. Output depth map
     outputBinding:
-      glob: $(inputs.output_depth_map_image)
+      glob: $(inputs.output_depth_map_image_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meta-neuro:2.0.1--py313h47f2c4e_0

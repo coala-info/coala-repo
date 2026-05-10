@@ -11,8 +11,8 @@ inputs:
     type:
       - 'null'
       - Directory
-    doc: Enter a directory path in which summaries are in samples directories, e.g.
-      './ampcombi_parse_tables/'
+    doc: Enter a directory path in which summaries are in samples directories, 
+      e.g. './ampcombi_parse_tables/'
     inputBinding:
       position: 101
       prefix: --summaries_directory
@@ -21,11 +21,17 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Enter a list of samples' ampcombi summaries, e.g. ./ampcombi/sample_1/sample_1_ampcombi.tsv
-      ./ampcombi/sample_2_ampcombi.tsv
+    doc: Enter a list of samples' ampcombi summaries, e.g. 
+      ./ampcombi/sample_1/sample_1_ampcombi.tsv ./ampcombi/sample_2_ampcombi.tsv
     inputBinding:
       position: 101
       prefix: --summaries_files
+  - id: log_path
+    type: string
+    doc: Output or path parameter `log_path`
+    inputBinding:
+      position: 102
+      prefix: --log
 outputs:
   - id: log
     type:
@@ -33,7 +39,9 @@ outputs:
       - File
     doc: Silences the standard output and captures it in a log file
     outputBinding:
-      glob: $(inputs.log)
+      glob: $(inputs.log_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ampcombi:2.0.1--pyhdfd78af_0

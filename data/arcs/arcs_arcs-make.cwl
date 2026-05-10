@@ -199,8 +199,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Read name. File must have .fastq.gz or .fq.gz extension (or .fastq, .fq for
-      long modes)
+    doc: Read name. File must have .fastq.gz or .fq.gz extension (or .fastq, .fq
+      for long modes)
     inputBinding:
       position: 102
       prefix: reads
@@ -224,7 +224,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Logs time and memory usage to file for main steps (Set to 1 to enable logging)
+    doc: Logs time and memory usage to file for main steps (Set to 1 to enable 
+      logging)
     inputBinding:
       position: 102
       prefix: time
@@ -244,6 +245,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: window
+  - id: barcode_counts_file_path
+    type: string
+    doc: Output or path parameter `barcode_counts_file_path`
+    inputBinding:
+      position: 103
+      prefix: --barcode-counts-file
 outputs:
   - id: barcode_counts_file
     type:
@@ -251,7 +258,9 @@ outputs:
       - File
     doc: Name of output barcode multiplicity TSV file
     outputBinding:
-      glob: $(inputs.barcode_counts_file)
+      glob: $(inputs.barcode_counts_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/arcs:1.2.8--hdcf5f25_0

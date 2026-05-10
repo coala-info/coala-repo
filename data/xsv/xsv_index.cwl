@@ -18,6 +18,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --delimiter
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -27,7 +33,9 @@ outputs:
       currently useful because the only way to use an index is if it is 
       specially named <input>.idx.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/xsv:0.10.3--0

@@ -37,6 +37,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --vep-file
+  - id: output_denovo_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_denovo_path`
+    inputBinding:
+      position: 103
+      prefix: --output-denovo
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
+  - id: output_recessive_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_recessive_path`
+    inputBinding:
+      position: 105
+      prefix: --output-recessive
 outputs:
   - id: output_file
     type:
@@ -44,21 +68,23 @@ outputs:
       - File
     doc: Output file to contain summary report
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_recessive
     type:
       - 'null'
       - File
     doc: Output file to contain scored variants in VCF format
     outputBinding:
-      glob: $(inputs.output_recessive)
+      glob: $(inputs.output_recessive_path)
   - id: output_denovo
     type:
       - 'null'
       - File
     doc: Output file for possible de novo variants
     outputBinding:
-      glob: $(inputs.output_denovo)
+      glob: $(inputs.output_denovo_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mendelscan:v1.2.2--0

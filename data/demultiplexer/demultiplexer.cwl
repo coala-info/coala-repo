@@ -62,6 +62,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threads
+  - id: unmatched_output_path
+    type: string
+    doc: Output or path parameter `unmatched_output_path`
+    inputBinding:
+      position: 104
+      prefix: --unmatched-output
 outputs:
   - id: unmatched_output
     type:
@@ -69,7 +75,9 @@ outputs:
       - File
     doc: FASTQ file to save reads that do not match any barcode.
     outputBinding:
-      glob: $(inputs.unmatched_output)
+      glob: $(inputs.unmatched_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/demultiplexer:1.2.1--pyhdfd78af_0

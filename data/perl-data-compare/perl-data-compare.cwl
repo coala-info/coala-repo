@@ -93,6 +93,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --only-in-file2
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -100,7 +106,9 @@ outputs:
       - File
     doc: Output file to write differences to. Defaults to stdout.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-data-compare:1.25--pl526_0

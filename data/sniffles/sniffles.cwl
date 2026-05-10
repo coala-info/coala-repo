@@ -222,6 +222,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tmp-dir
+  - id: snf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `snf_path`
+    inputBinding:
+      position: 102
+      prefix: --snf
+  - id: vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `vcf_path`
+    inputBinding:
+      position: 103
+      prefix: --vcf
 outputs:
   - id: vcf
     type:
@@ -231,7 +247,7 @@ outputs:
       given filename ends with .gz, the VCF file will be automatically bgzipped 
       and a .tbi index built for it.
     outputBinding:
-      glob: $(inputs.vcf)
+      glob: $(inputs.vcf_path)
   - id: snf
     type:
       - 'null'
@@ -239,7 +255,9 @@ outputs:
     doc: Sniffles2 file (.snf) output filename to store candidates for later 
       multi-sample calling
     outputBinding:
-      glob: $(inputs.snf)
+      glob: $(inputs.snf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sniffles:2.7.2--pyhdfd78af_0

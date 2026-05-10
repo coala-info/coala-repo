@@ -302,12 +302,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: mat_file_output_path
+    type: string
+    doc: Output or path parameter `mat_file_output_path`
+    inputBinding:
+      position: 102
+      prefix: --mat-file-output
 outputs:
   - id: mat_file_output
     type: File
     doc: Output MAT file
     outputBinding:
-      glob: $(inputs.mat_file_output)
+      glob: $(inputs.mat_file_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/minnow:1.2--h86b0361_0

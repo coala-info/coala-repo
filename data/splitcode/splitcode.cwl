@@ -638,6 +638,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --x-only
+  - id: outb_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outb_path`
+    inputBinding:
+      position: 103
+      prefix: --outb
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
+  - id: unassigned_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unassigned_path`
+    inputBinding:
+      position: 105
+      prefix: --unassigned
 outputs:
   - id: output
     type:
@@ -645,14 +669,14 @@ outputs:
       - File
     doc: FASTQ file(s) where output will be written (comma-separated)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: outb
     type:
       - 'null'
       - File
     doc: FASTQ file where final barcodes will be written
     outputBinding:
-      glob: $(inputs.outb)
+      glob: $(inputs.outb_path)
   - id: unassigned
     type:
       - 'null'
@@ -660,7 +684,9 @@ outputs:
     doc: FASTQ file(s) where output of unassigned reads will be written 
       (comma-separated)
     outputBinding:
-      glob: $(inputs.unassigned)
+      glob: $(inputs.unassigned_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/splitcode:0.31.6--h077b44d_0

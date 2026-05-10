@@ -154,6 +154,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -user_models
+  - id: workdir_path
+    type: string
+    doc: Output or path parameter `workdir_path`
+    inputBinding:
+      position: 102
+      prefix: --workdir
 outputs:
   - id: workdir
     type:
@@ -161,7 +167,9 @@ outputs:
       - Directory
     doc: Working directory path to write all miRNAture results.
     outputBinding:
-      glob: $(inputs.workdir)
+      glob: $(inputs.workdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mirnature:1.1--pl5321hdfd78af_2

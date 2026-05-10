@@ -41,6 +41,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --logfile
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -48,7 +54,9 @@ outputs:
       - File
     doc: The name of the output file where sorted sequences will be written.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mothur:1.48.5--h11ba690_0

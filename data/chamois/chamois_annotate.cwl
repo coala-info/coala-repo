@@ -36,12 +36,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input
+  - id: output_path
+    type: string
+    doc: The path where to write the sequence annotations in
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: The path where to write the sequence annotations in HDF5 format.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chamois:0.2.2--pyhdfd78af_0

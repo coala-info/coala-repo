@@ -186,6 +186,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vfdb
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -193,7 +199,9 @@ outputs:
       - Directory
     doc: directory where the files necessary for the webapp will be stored
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/zdb:1.3.11--hdfd78af_0

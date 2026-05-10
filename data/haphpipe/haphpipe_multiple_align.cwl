@@ -358,6 +358,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --weighti
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    doc: Append console output to this file
+    inputBinding:
+      position: 102
+      prefix: --logfile
+  - id: out_align_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_align_path`
+    inputBinding:
+      position: 103
+      prefix: --out-align
 outputs:
   - id: out_align
     type:
@@ -365,14 +381,16 @@ outputs:
       - File
     doc: Name for alignment file
     outputBinding:
-      glob: $(inputs.out_align)
+      glob: $(inputs.out_align_path)
   - id: logfile
     type:
       - 'null'
       - File
     doc: Name for log file (output)
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haphpipe:1.0.3--py_0

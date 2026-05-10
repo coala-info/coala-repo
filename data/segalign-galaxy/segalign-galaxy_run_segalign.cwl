@@ -195,6 +195,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --ydrop
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -202,7 +208,9 @@ outputs:
       - File
     doc: output filename
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/segalign-galaxy:0.1.2.7--hdfd78af_2

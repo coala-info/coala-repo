@@ -12,8 +12,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Defines what should be done when sample or peptide names are not unique across
-      files being joined (combine, include, or ignore).
+    doc: Defines what should be done when sample or peptide names are not unique
+      across files being joined (combine, include, or ignore).
     inputBinding:
       position: 101
       prefix: --duplicate_evaluation
@@ -21,8 +21,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: New data file will contain all of the input samples (or peptides) except
-      the ones specified in the sample names.
+    doc: New data file will contain all of the input samples (or peptides) 
+      except the ones specified in the sample names.
     inputBinding:
       position: 101
       prefix: --exclude
@@ -30,9 +30,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Flag to include if the name lists input to the input or multi_file options
-      should be treated as peptide (i.e. row) names instead of sample (i.e. column)
-      names.
+    doc: Flag to include if the name lists input to the input or multi_file 
+      options should be treated as peptide (i.e. row) names instead of sample 
+      (i.e. column) names.
     inputBinding:
       position: 101
       prefix: --filter_peptide_names
@@ -51,13 +51,29 @@ inputs:
     type:
       - 'null'
       - File
-    doc: The name of a tab-delimited file containing score matrix and sample name
-      list filename pairs, one per line. Each of these pairs must be a score matrix
-      and a file containing the names of samples (or peptides, if specified) to keep
-      from the input the score matrix.
+    doc: The name of a tab-delimited file containing score matrix and sample 
+      name list filename pairs, one per line. Each of these pairs must be a 
+      score matrix and a file containing the names of samples (or peptides, if 
+      specified) to keep from the input the score matrix.
     inputBinding:
       position: 101
       prefix: --multi_file
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `logfile_path`
+    inputBinding:
+      position: 102
+      prefix: --logfile
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -65,14 +81,16 @@ outputs:
       - File
     doc: Name for the output score matrix file.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: logfile
     type:
       - 'null'
       - File
     doc: Designated file to which the module's processes are logged.
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pepsirf:1.7.1--h077b44d_0

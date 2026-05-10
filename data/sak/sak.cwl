@@ -80,6 +80,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --version-check
+  - id: output_file_path
+    type: string
+    inputBinding:
+      position: 103
+      prefix: --out-path
 outputs:
   - id: output_file
     type:
@@ -89,7 +94,9 @@ outputs:
       format. Valid filetypes are: .sam, .raw, .frn, .fq, .fna, .ffn, .fastq, .fasta,
       .faa, and .fa.'
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sak:0.4.8--h9948957_0

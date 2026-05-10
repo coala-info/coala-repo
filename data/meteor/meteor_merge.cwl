@@ -70,12 +70,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -b
+  - id: merging_dir_path
+    type: string
+    doc: Output or path parameter `merging_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --merging-dir
 outputs:
   - id: merging_dir
     type: Directory
     doc: Directory where the merged abundance tables are saved.
     outputBinding:
-      glob: $(inputs.merging_dir)
+      glob: $(inputs.merging_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meteor:2.0.22--pyhdfd78af_0

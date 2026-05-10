@@ -96,6 +96,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --seed
+  - id: output_vcf_path
+    type: string
+    doc: 'Output VCF file containing simulated genotypes ex:'
+    inputBinding:
+      position: 103
+      prefix: --output_vcf
 outputs:
   - id: output_vcf
     type:
@@ -103,7 +109,9 @@ outputs:
       - File
     doc: Output VCF file containing simulated genotypes
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vcferr:1.0.2--pyh5e36f6f_0

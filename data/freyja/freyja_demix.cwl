@@ -165,6 +165,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose-solver
+  - id: output_path
+    type: string
+    doc: 'name for aggregated results  [default: aggregated_result.tsv]'
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -172,7 +178,9 @@ outputs:
       - File
     doc: Output file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/freyja:2.0.3--pyhdfd78af_0

@@ -50,6 +50,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --thread
+  - id: outpath_path
+    type: string
+    doc: Output or path parameter `outpath_path`
+    inputBinding:
+      position: 102
+      prefix: --outpath
 outputs:
   - id: outpath
     type:
@@ -57,7 +63,9 @@ outputs:
       - Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.outpath)
+      glob: $(inputs.outpath_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/inspector:1.3.1--hdfd78af_1

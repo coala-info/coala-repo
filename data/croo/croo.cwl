@@ -156,6 +156,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --use-presigned-url-s3
+  - id: out_dir_path
+    type: Directory
+    doc: Output directory/bucket (LOCAL OR REMOTE). This can be
+    inputBinding:
+      position: 103
+      prefix: --out-dir
 outputs:
   - id: out_dir
     type:
@@ -164,7 +170,9 @@ outputs:
     doc: "Output directory/bucket (LOCAL OR REMOTE). This can be\n               \
       \         a local path, gs:// or s3://."
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/croo:0.6.0--pyhdfd78af_0

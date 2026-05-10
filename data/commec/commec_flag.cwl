@@ -26,6 +26,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --recursive
+  - id: output_path
+    type: string
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -33,7 +38,9 @@ outputs:
       - Directory
     doc: Output directory name (defaults to directory if not provided)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/commec:1.0.3--pyhdfd78af_0

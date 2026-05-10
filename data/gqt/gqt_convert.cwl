@@ -59,6 +59,46 @@ inputs:
     inputBinding:
       position: 102
       prefix: -t
+  - id: bim_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `bim_output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --bim-output-file
+  - id: gqt_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `gqt_output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --gqt-output-file
+  - id: off_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `off_output_file_path`
+    inputBinding:
+      position: 105
+      prefix: --off-output-file
+  - id: ped_db_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `ped_db_output_file_path`
+    inputBinding:
+      position: 106
+      prefix: --ped-db-output-file
+  - id: vid_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `vid_output_file_path`
+    inputBinding:
+      position: 107
+      prefix: --vid-output-file
 outputs:
   - id: gqt_output_file
     type:
@@ -66,35 +106,37 @@ outputs:
       - File
     doc: GQT output file name
     outputBinding:
-      glob: $(inputs.gqt_output_file)
+      glob: $(inputs.gqt_output_file_path)
   - id: vid_output_file
     type:
       - 'null'
       - File
     doc: VID output file name
     outputBinding:
-      glob: $(inputs.vid_output_file)
+      glob: $(inputs.vid_output_file_path)
   - id: off_output_file
     type:
       - 'null'
       - File
     doc: OFF output file name
     outputBinding:
-      glob: $(inputs.off_output_file)
+      glob: $(inputs.off_output_file_path)
   - id: bim_output_file
     type:
       - 'null'
       - File
     doc: BIM output file name
     outputBinding:
-      glob: $(inputs.bim_output_file)
+      glob: $(inputs.bim_output_file_path)
   - id: ped_db_output_file
     type:
       - 'null'
       - File
     doc: PED DB output file name
     outputBinding:
-      glob: $(inputs.ped_db_output_file)
+      glob: $(inputs.ped_db_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gqt:1.1.3--h0263287_3

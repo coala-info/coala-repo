@@ -105,6 +105,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: -v
+  - id: logging_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `logging_file_path`
+    inputBinding:
+      position: 103
+      prefix: --logging-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -112,14 +128,16 @@ outputs:
       - File
     doc: output file  (redirection of stdout)
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: logging_file
     type:
       - 'null'
       - File
     doc: logging file (redirection of stderr)
     outputBinding:
-      glob: $(inputs.logging_file)
+      glob: $(inputs.logging_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gocr:0.52--h7b50bb2_0

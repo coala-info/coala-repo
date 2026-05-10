@@ -81,6 +81,54 @@ inputs:
     inputBinding:
       position: 102
       prefix: --target-contacts-file
+  - id: atom_scores_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `atom_scores_file_path`
+    inputBinding:
+      position: 103
+      prefix: --atom-scores-file
+  - id: inter_atom_scores_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `inter_atom_scores_file_path`
+    inputBinding:
+      position: 104
+      prefix: --inter-atom-scores-file
+  - id: inter_residue_scores_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `inter_residue_scores_file_path`
+    inputBinding:
+      position: 105
+      prefix: --inter-residue-scores-file
+  - id: remapped_chains_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `remapped_chains_file_path`
+    inputBinding:
+      position: 106
+      prefix: --remapped-chains-file
+  - id: residue_scores_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `residue_scores_file_path`
+    inputBinding:
+      position: 107
+      prefix: --residue-scores-file
+  - id: smoothed_scores_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `smoothed_scores_file_path`
+    inputBinding:
+      position: 108
+      prefix: --smoothed-scores-file
 outputs:
   - id: inter_atom_scores_file
     type:
@@ -88,42 +136,44 @@ outputs:
       - File
     doc: file path to output inter-atom scores
     outputBinding:
-      glob: $(inputs.inter_atom_scores_file)
+      glob: $(inputs.inter_atom_scores_file_path)
   - id: inter_residue_scores_file
     type:
       - 'null'
       - File
     doc: file path to output inter-residue scores
     outputBinding:
-      glob: $(inputs.inter_residue_scores_file)
+      glob: $(inputs.inter_residue_scores_file_path)
   - id: atom_scores_file
     type:
       - 'null'
       - File
     doc: file path to output atom scores
     outputBinding:
-      glob: $(inputs.atom_scores_file)
+      glob: $(inputs.atom_scores_file_path)
   - id: residue_scores_file
     type:
       - 'null'
       - File
     doc: file path to output residue scores
     outputBinding:
-      glob: $(inputs.residue_scores_file)
+      glob: $(inputs.residue_scores_file_path)
   - id: smoothed_scores_file
     type:
       - 'null'
       - File
     doc: file path to output smoothed residue scores
     outputBinding:
-      glob: $(inputs.smoothed_scores_file)
+      glob: $(inputs.smoothed_scores_file_path)
   - id: remapped_chains_file
     type:
       - 'null'
       - File
     doc: file path to output calculated chains remapping
     outputBinding:
-      glob: $(inputs.remapped_chains_file)
+      glob: $(inputs.remapped_chains_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/voronota:1.29.4602--h5755088_0

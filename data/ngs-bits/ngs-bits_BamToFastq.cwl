@@ -78,19 +78,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: -write_buffer_size
+  - id: output_read1_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_read1_path`
+    inputBinding:
+      position: 102
+      prefix: --output-read1
+  - id: output_read2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_read2_path`
+    inputBinding:
+      position: 103
+      prefix: --output-read2
 outputs:
   - id: output_read1
     type: File
     doc: Read 1 output FASTQ.GZ file.
     outputBinding:
-      glob: $(inputs.output_read1)
+      glob: $(inputs.output_read1_path)
   - id: output_read2
     type:
       - 'null'
       - File
     doc: Read 2 output FASTQ.GZ file (required for pair-end samples).
     outputBinding:
-      glob: $(inputs.output_read2)
+      glob: $(inputs.output_read2_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngs-bits:2025_12--py314h40a1aea_0

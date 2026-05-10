@@ -147,19 +147,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use-mega
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output BAM file
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: output_html_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_html_path`
+    inputBinding:
+      position: 103
+      prefix: --output-html
 outputs:
   - id: output
     type: Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: output_html
     type:
       - 'null'
       - File
     doc: Output report name
     outputBinding:
-      glob: $(inputs.output_html)
+      glob: $(inputs.output_html_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pacu_snp:1.0.0--pyhdfd78af_0

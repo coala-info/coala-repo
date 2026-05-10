@@ -161,6 +161,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: out_file_name_path
+    type: string
+    doc: Output or path parameter `out_file_name_path`
+    inputBinding:
+      position: 102
+      prefix: --out-file-name
 outputs:
   - id: out_file_name
     type:
@@ -168,7 +174,9 @@ outputs:
       - File
     doc: File name to save the resulting clusters
     outputBinding:
-      glob: $(inputs.out_file_name)
+      glob: $(inputs.out_file_name_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/schicexplorer:7--py_0

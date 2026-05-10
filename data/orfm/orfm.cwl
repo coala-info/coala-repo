@@ -62,6 +62,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -p
+  - id: transcript_output_file_path
+    type: string
+    doc: Output or path parameter `transcript_output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --transcript-output-file
 outputs:
   - id: transcript_output_file
     type:
@@ -69,7 +75,9 @@ outputs:
       - File
     doc: output nucleotide sequences of transcripts to this path
     outputBinding:
-      glob: $(inputs.transcript_output_file)
+      glob: $(inputs.transcript_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/orfm:1.4.0--h577a1d6_0

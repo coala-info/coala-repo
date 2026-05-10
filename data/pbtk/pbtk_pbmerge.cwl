@@ -16,8 +16,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Disables creation of PBI index file. PBI always disabled when writing to
-      stdout.
+    doc: Disables creation of PBI index file. PBI always disabled when writing 
+      to stdout.
     inputBinding:
       position: 102
       prefix: --no-pbi
@@ -29,6 +29,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --num-threads
+  - id: output_bam_path
+    type: string
+    doc: Output or path parameter `output_bam_path`
+    inputBinding:
+      position: 103
+      prefix: --output-bam
 outputs:
   - id: output_bam
     type:
@@ -36,7 +42,9 @@ outputs:
       - File
     doc: Output BAM filename. Writes to stdout if not provided.
     outputBinding:
-      glob: $(inputs.output_bam)
+      glob: $(inputs.output_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbtk:3.5.0--h9ee0642_0

@@ -46,12 +46,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threshold
+  - id: call_fn_path
+    type: string
+    doc: Output or path parameter `call_fn_path`
+    inputBinding:
+      position: 102
+      prefix: --call-fn
 outputs:
   - id: call_fn
     type: File
     doc: Output VCF file
     outputBinding:
-      glob: $(inputs.call_fn)
+      glob: $(inputs.call_fn_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/clairvoyante:1.02--0

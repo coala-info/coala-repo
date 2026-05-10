@@ -10,8 +10,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: lines starting with commment-character will be ignored. if your header row
-      starts with '#', please assign "-C" another rare symbol, e.g. '$'
+    doc: lines starting with commment-character will be ignored. if your header 
+      row starts with '#', please assign "-C" another rare symbol, e.g. '$'
     inputBinding:
       position: 101
       prefix: --comment-char
@@ -43,8 +43,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: ignore illegal rows. You can also use 'csvtk fix' to fix files with different
-      numbers of columns in rows
+    doc: ignore illegal rows. You can also use 'csvtk fix' to fix files with 
+      different numbers of columns in rows
     inputBinding:
       position: 101
       prefix: --ignore-illegal-row
@@ -52,8 +52,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: file of input files list (one file per line), if given, they are appended
-      to files from cli arguments
+    doc: file of input files list (one file per line), if given, they are 
+      appended to files from cli arguments
     inputBinding:
       position: 101
       prefix: --infile-list
@@ -61,8 +61,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: if given, a quote may appear in an unquoted field and a non-doubled quote
-      may appear in a quoted field
+    doc: if given, a quote may appear in an unquoted field and a non-doubled 
+      quote may appear in a quoted field
     inputBinding:
       position: 101
       prefix: --lazy-quotes
@@ -126,10 +126,17 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: specifies that the input CSV file is delimited with tabs. Overrides "-d"
+    doc: specifies that the input CSV file is delimited with tabs. Overrides 
+      "-d"
     inputBinding:
       position: 101
       prefix: --tabs
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 102
+      prefix: --out-file
 outputs:
   - id: out_file
     type:
@@ -137,7 +144,9 @@ outputs:
       - File
     doc: out file ("-" for stdout, suffix .gz for gzipped out)
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/csvtk:0.31.0--h9ee0642_0

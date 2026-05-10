@@ -24,8 +24,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Puts all structural variations of which either the ref allele or the alt
-      allele exceeds the specified size in a compact format
+    doc: Puts all structural variations of which either the ref allele or the 
+      alt allele exceeds the specified size in a compact format
     inputBinding:
       position: 101
       prefix: --compact_output_limit
@@ -33,8 +33,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: calls genotypes which could either be homozygous or heterozygous not as ./1
-      but as 0/1, to ensure compatibility with GATK
+    doc: calls genotypes which could either be homozygous or heterozygous not as
+      ./1 but as 0/1, to ensure compatibility with GATK
     inputBinding:
       position: 101
       prefix: --gatk_compatible
@@ -58,8 +58,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Filters out all indels where the inserted/deleted sequence is a homopolymers/microsatellite
-      with an unit size of more than Y
+    doc: Filters out all indels where the inserted/deleted sequence is a 
+      homopolymers/microsatellite with an unit size of more than Y
     inputBinding:
       position: 101
       prefix: --max_internal_repeatlength
@@ -67,8 +67,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Filters out all indels where the inserted/deleted sequence is a homopolymer/microsatellite
-      of more than X repetitions
+    doc: Filters out all indels where the inserted/deleted sequence is a 
+      homopolymer/microsatellite of more than X repetitions
     inputBinding:
       position: 101
       prefix: --max_internal_repeats
@@ -76,9 +76,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Filters out all indels where the inserted/deleted sequence is followed by
-      a repetition of the fundamental repeat unit; the maximum size of that 'fundamental
-      unit' given by the value of -pl
+    doc: Filters out all indels where the inserted/deleted sequence is followed 
+      by a repetition of the fundamental repeat unit; the maximum size of that 
+      'fundamental unit' given by the value of -pl
     inputBinding:
       position: 101
       prefix: --max_postindel_repeatlength
@@ -86,8 +86,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Filters out all indels where the inserted/deleted sequence is followed by
-      a repetition (of over X times) of the fundamental repeat unit
+    doc: Filters out all indels where the inserted/deleted sequence is followed 
+      by a repetition (of over X times) of the fundamental repeat unit
     inputBinding:
       position: 101
       prefix: --max_postindel_repeats
@@ -103,7 +103,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The maximum number of supporting reads allowed for an event to be reported
+    doc: The maximum number of supporting reads allowed for an event to be 
+      reported
     inputBinding:
       position: 101
       prefix: --max_supporting_reads
@@ -127,7 +128,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The minimum number of supporting reads required for an event to be reported
+    doc: The minimum number of supporting reads required for an event to be 
+      reported
     inputBinding:
       position: 101
       prefix: --min_supporting_reads
@@ -135,8 +137,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The minimum number of samples an event needs to occur in with sufficient
-      support to be reported
+    doc: The minimum number of samples an event needs to occur in with 
+      sufficient support to be reported
     inputBinding:
       position: 101
       prefix: --min_supporting_samples
@@ -144,8 +146,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Only count a sample as supporting an event if at least one of its strands
-      is supported by X reads
+    doc: Only count a sample as supporting an event if at least one of its 
+      strands is supported by X reads
     inputBinding:
       position: 101
       prefix: --minimum_strand_support
@@ -153,8 +155,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Only count a sample as supporting an event if it is supported by reads on
-      both strands
+    doc: Only count a sample as supporting an event if it is supported by reads 
+      on both strands
     inputBinding:
       position: 101
       prefix: --only_balanced_samples
@@ -170,8 +172,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: The root-name of the pindel output file; combines deletions, insertions,
-      duplications, and inversions into one VCF.
+    doc: The root-name of the pindel output file; combines deletions, 
+      insertions, duplications, and inversions into one VCF.
     inputBinding:
       position: 101
       prefix: --pindel_output_root
@@ -218,6 +220,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window_size
+  - id: vcf_path
+    type: string
+    doc: Output or path parameter `vcf_path`
+    inputBinding:
+      position: 102
+      prefix: --vcf
 outputs:
   - id: vcf
     type:
@@ -225,7 +233,9 @@ outputs:
       - File
     doc: 'The name of the output vcf-file (default: name of pindel output file +".vcf")'
     outputBinding:
-      glob: $(inputs.vcf)
+      glob: $(inputs.vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pindel:0.2.5b9--h077b44d_12

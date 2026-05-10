@@ -97,6 +97,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_folder_path
+    type: Directory
+    doc: Output or path parameter `output_folder_path`
+    inputBinding:
+      position: 102
+      prefix: --output-folder
 outputs:
   - id: output_folder
     type:
@@ -104,7 +110,9 @@ outputs:
       - Directory
     doc: The folder containing output data the script wilp generate.
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/omark:0.4.1--pyh7e72e81_0

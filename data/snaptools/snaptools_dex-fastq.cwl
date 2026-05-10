@@ -19,12 +19,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input-fastq
+  - id: output_fastq_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output-fastq
 outputs:
   - id: output_fastq
     type: File
     doc: output decomplexed fastq file
     outputBinding:
-      glob: $(inputs.output_fastq)
+      glob: $(inputs.output_fastq_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snaptools:1.4.8--py_0

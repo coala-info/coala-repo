@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: bam2fasta
 label: pbtk_bam2fasta
-doc: "Converts multiple BAM and/or DataSet files into into gzipped FASTA file(s).\n
-  \nTool homepage: https://github.com/PacificBiosciences/pbbioconda"
+doc: "Converts multiple BAM and/or DataSet files into into gzipped FASTA file(s).\n\
+  \ \nTool homepage: https://github.com/PacificBiosciences/pbbioconda"
 inputs:
   - id: input
     type:
@@ -24,8 +24,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not compress. In this case, we will not add .gz, and we ignore any -c
-      setting.
+    doc: Do not compress. In this case, we will not add .gz, and we ignore any 
+      -c setting.
     inputBinding:
       position: 102
       prefix: -u
@@ -61,15 +61,23 @@ inputs:
     inputBinding:
       position: 102
       prefix: --with-biosample-prefix
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 103
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
       - 'null'
       - File
-    doc: Prefix of output filenames, '-' implies streaming. Streaming not supported
-      with compression nor with split_barcodes
+    doc: Prefix of output filenames, '-' implies streaming. Streaming not 
+      supported with compression nor with split_barcodes
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbtk:3.5.0--h9ee0642_0

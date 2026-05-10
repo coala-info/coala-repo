@@ -4,8 +4,8 @@ baseCommand:
   - args_oap
   - stage_one
 label: args_oap_stage_one
-doc: "Stage one of the ARGs-OAP pipeline for antibiotic resistance genes (ARGs) analysis.\n
-  \nTool homepage: https://github.com/xinehc/args_oap"
+doc: "Stage one of the ARGs-OAP pipeline for antibiotic resistance genes (ARGs) analysis.\n\
+  \ \nTool homepage: https://github.com/xinehc/args_oap"
 inputs:
   - id: database
     type:
@@ -65,7 +65,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Query cover cutoff (in percentage) for Essential Single Copy Marker Genes.
+    doc: Query cover cutoff (in percentage) for Essential Single Copy Marker 
+      Genes.
     inputBinding:
       position: 101
       prefix: --qcov
@@ -85,12 +86,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --thread
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type: Directory
     doc: Output folder.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/args_oap:3.2.4--pyhdfd78af_0

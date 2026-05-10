@@ -120,6 +120,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tumor-bam
+  - id: output_vcf_path
+    type: string
+    doc: Output or path parameter `output_vcf_path`
+    inputBinding:
+      position: 102
+      prefix: --output-vcf
 outputs:
   - id: output_vcf
     type:
@@ -127,7 +133,9 @@ outputs:
       - File
     doc: Path to the output VCF file.
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sga:v0.10.15-4-deb_cv1

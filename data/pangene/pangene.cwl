@@ -180,6 +180,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -w
+  - id: output_bed_path
+    type: string
+    doc: Output or path parameter `output_bed_path`
+    inputBinding:
+      position: 103
+      prefix: --output-bed
 outputs:
   - id: output_bed
     type:
@@ -187,7 +193,9 @@ outputs:
       - File
     doc: output 12-column BED where STR is walk, raw or flag
     outputBinding:
-      glob: $(inputs.output_bed)
+      glob: $(inputs.output_bed_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pangene:r231--h5ca1c30_0

@@ -39,6 +39,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input
+  - id: sanitize_outdir_path
+    type: Directory
+    doc: Output or path parameter `sanitize_outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --sanitize-outdir
 outputs:
   - id: sanitize_outdir
     type:
@@ -47,7 +53,9 @@ outputs:
     doc: Leave original filenames unchanged, but copy them to a new directory 
       with santitized filenames
     outputBinding:
-      glob: $(inputs.sanitize_outdir)
+      glob: $(inputs.sanitize_outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqforge:2.0.0--pyh7e72e81_0

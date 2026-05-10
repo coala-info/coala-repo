@@ -77,6 +77,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --true-negative
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 103
+      prefix: --out-file
 outputs:
   - id: out_file
     type:
@@ -84,7 +90,9 @@ outputs:
       - File
     doc: output file path
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cobs:0.3.1--hdcf5f25_0

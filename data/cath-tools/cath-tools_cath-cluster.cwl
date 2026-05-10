@@ -45,6 +45,38 @@ inputs:
     inputBinding:
       position: 102
       prefix: --names-infile
+  - id: clust_spans_to_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `clust_spans_to_file_path`
+    inputBinding:
+      position: 103
+      prefix: --clust-spans-to-file
+  - id: clusters_to_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `clusters_to_file_path`
+    inputBinding:
+      position: 104
+      prefix: --clusters-to-file
+  - id: merges_to_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `merges_to_file_path`
+    inputBinding:
+      position: 105
+      prefix: --merges-to-file
+  - id: reps_to_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `reps_to_file_path`
+    inputBinding:
+      position: 106
+      prefix: --reps-to-file
 outputs:
   - id: clusters_to_file
     type:
@@ -52,14 +84,14 @@ outputs:
       - File
     doc: Write the clustering to file <file> (or '-' for stdout)
     outputBinding:
-      glob: $(inputs.clusters_to_file)
+      glob: $(inputs.clusters_to_file_path)
   - id: merges_to_file
     type:
       - 'null'
       - File
     doc: Write the ordered list of merges to file <file> (or '-' for stdout)
     outputBinding:
-      glob: $(inputs.merges_to_file)
+      glob: $(inputs.merges_to_file_path)
   - id: clust_spans_to_file
     type:
       - 'null'
@@ -67,14 +99,16 @@ outputs:
     doc: Write links that form spanning trees for each cluster to file <file> 
       (or '-' for stdout)
     outputBinding:
-      glob: $(inputs.clust_spans_to_file)
+      glob: $(inputs.clust_spans_to_file_path)
   - id: reps_to_file
     type:
       - 'null'
       - File
     doc: Write the list of representatives to file <file> (or '-' for stdout)
     outputBinding:
-      glob: $(inputs.reps_to_file)
+      glob: $(inputs.reps_to_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cath-tools:0.16.5--h78a066a_0

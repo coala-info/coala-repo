@@ -520,6 +520,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --window-size
+  - id: cmpout_path
+    type: string
+    doc: Output or path parameter `cmpout_path`
+    inputBinding:
+      position: 104
+      prefix: --cmpout
 outputs:
   - id: cmpout
     type:
@@ -527,7 +533,9 @@ outputs:
       - File
     doc: Compute distances and emit them to <arg>.
     outputBinding:
-      glob: $(inputs.cmpout)
+      glob: $(inputs.cmpout_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dashing2:2.1.20--he9e5f93_0

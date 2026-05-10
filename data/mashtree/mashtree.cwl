@@ -103,8 +103,7 @@ inputs:
       - 'null'
       - Directory
     doc: If specified, this directory will not be removed at the end of the 
-      script and can be used to cache results for future analyses.
-      script
+      script and can be used to cache results for future analyses. script
     inputBinding:
       position: 102
       prefix: --tempdir
@@ -116,6 +115,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --truncLength
+  - id: outmatrix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outmatrix_path`
+    inputBinding:
+      position: 103
+      prefix: --outmatrix
+  - id: outtree_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outtree_path`
+    inputBinding:
+      position: 104
+      prefix: --outtree
 outputs:
   - id: outmatrix
     type:
@@ -123,7 +138,7 @@ outputs:
       - File
     doc: If specified, will write a distance matrix in tab-delimited format
     outputBinding:
-      glob: $(inputs.outmatrix)
+      glob: $(inputs.outmatrix_path)
   - id: outtree
     type:
       - 'null'
@@ -131,7 +146,9 @@ outputs:
     doc: If specified, the tree will be written to this file and not to stdout. 
       Log messages will still go to stderr.
     outputBinding:
-      glob: $(inputs.outtree)
+      glob: $(inputs.outtree_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mashtree:1.4.6--pl5321h7b50bb2_3

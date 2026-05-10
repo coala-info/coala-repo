@@ -77,6 +77,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 103
+      prefix: --out-file
 outputs:
   - id: out_file
     type:
@@ -84,7 +90,9 @@ outputs:
       - File
     doc: Out file, supports and recommends a ".gz" suffix ("-" for stdout).
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kmcp:0.9.4--h9ee0642_1

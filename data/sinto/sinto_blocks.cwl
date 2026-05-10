@@ -74,6 +74,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --umitag
+  - id: blocks_file_path
+    type: string
+    doc: Output or path parameter `blocks_file_path`
+    inputBinding:
+      position: 102
+      prefix: --blocks-file
 outputs:
   - id: blocks_file
     type: File
@@ -81,7 +87,9 @@ outputs:
       \      output is not sorted or compressed. To sort the output\n            \
       \            file use sort -k 1,1 -k2,2n"
     outputBinding:
-      glob: $(inputs.blocks_file)
+      glob: $(inputs.blocks_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sinto:0.10.1--pyhdfd78af_0

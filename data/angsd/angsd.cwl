@@ -3,8 +3,8 @@ class: CommandLineTool
 baseCommand: angsd
 label: angsd
 doc: "Analysis of Next Generation Sequencing Data. Methods for estimating allele frequencies,
-  genotype likelihoods, and other population genetic parameters from NGS data.\n\n
-  Tool homepage: http://www.popgen.dk/angsd/index.php/ANGSD"
+  genotype likelihoods, and other population genetic parameters from NGS data.\n\n\
+  \ Tool homepage: http://www.popgen.dk/angsd/index.php/ANGSD"
 inputs:
   - id: anc
     type:
@@ -18,7 +18,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Options relating to bam reading (often a file containing a list of BAMs)
+    doc: Options relating to bam reading (often a file containing a list of 
+      BAMs)
     inputBinding:
       position: 101
       prefix: -bam
@@ -190,6 +191,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -sites
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -197,7 +204,9 @@ outputs:
       - File
     doc: Output file prefix
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/angsd:0.940--h13024bc_4

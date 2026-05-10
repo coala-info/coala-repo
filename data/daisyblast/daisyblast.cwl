@@ -44,6 +44,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --num_groups
+  - id: output_dir_path
+    type: Directory
+    inputBinding:
+      position: 103
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type:
@@ -51,7 +56,9 @@ outputs:
       - Directory
     doc: Directory to save output .bed and .png files.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/daisyblast:0.2.0--pyhdfd78af_0

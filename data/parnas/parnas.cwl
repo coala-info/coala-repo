@@ -152,6 +152,36 @@ inputs:
     inputBinding:
       position: 101
       prefix: --weights
+  - id: clusters_path_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --clusters
+  - id: color_out_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `color_out_path_path`
+    inputBinding:
+      position: 103
+      prefix: --color-out-path
+  - id: diversity_csv_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `diversity_csv_path_path`
+    inputBinding:
+      position: 104
+      prefix: --diversity-csv-path
+  - id: sample_tree_path_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 105
+      prefix: --subtree
 outputs:
   - id: color_out_path
     type:
@@ -162,7 +192,7 @@ outputs:
       prior centers are specified, they (and the subtrees\nthey represent) will be
       colored red."
     outputBinding:
-      glob: $(inputs.color_out_path)
+      glob: $(inputs.color_out_path_path)
   - id: diversity_csv_path
     type:
       - 'null'
@@ -170,7 +200,7 @@ outputs:
     doc: "Save diversity scores for all k (number of\nrepresentatives) from 2 to n.
       Can be used to choose\nthe right number of representatives for a dataset."
     outputBinding:
-      glob: $(inputs.diversity_csv_path)
+      glob: $(inputs.diversity_csv_path_path)
   - id: sample_tree_path
     type:
       - 'null'
@@ -178,7 +208,7 @@ outputs:
     doc: "Prune the tree to the sampled taxa and save to the\nspecified file in NEXUS
       format."
     outputBinding:
-      glob: $(inputs.sample_tree_path)
+      glob: $(inputs.sample_tree_path_path)
   - id: clusters_path
     type:
       - 'null'
@@ -187,7 +217,9 @@ outputs:
       to the specified file. Output is a\ntab-delimited file with lines as <taxon\n\
       name><tab><partition number>."
     outputBinding:
-      glob: $(inputs.clusters_path)
+      glob: $(inputs.clusters_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parnas:0.1.7--pyhdfd78af_0

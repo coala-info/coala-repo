@@ -45,6 +45,29 @@ inputs:
     inputBinding:
       position: 101
       prefix: --taxdump
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: tokeep_path
+    type:
+      - 'null'
+      - string
+    doc: Location to save the contigs identified as the
+    inputBinding:
+      position: 103
+      prefix: --tokeep
+  - id: toremove_path
+    type:
+      - 'null'
+      - string
+    doc: Location to save the contigs identified as not
+    inputBinding:
+      position: 104
+      prefix: --toremove
 outputs:
   - id: output
     type:
@@ -52,14 +75,14 @@ outputs:
       - File
     doc: Output file path
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: tokeep
     type:
       - 'null'
       - File
     doc: "Location to save the contigs identified as the target\norganism(optional)."
     outputBinding:
-      glob: $(inputs.tokeep)
+      glob: $(inputs.tokeep_path)
   - id: toremove
     type:
       - 'null'
@@ -67,7 +90,9 @@ outputs:
     doc: "Location to save the contigs identified as not\nbelonging to the target
       organism (optional)."
     outputBinding:
-      glob: $(inputs.toremove)
+      glob: $(inputs.toremove_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sidr:0.0.2a2--pyh3252c3a_0

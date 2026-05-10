@@ -58,12 +58,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --min-oea-sum
+  - id: out_file_name_path
+    type: string
+    doc: Output or path parameter `out_file_name_path`
+    inputBinding:
+      position: 102
+      prefix: --out-file-name
 outputs:
   - id: out_file_name
     type: File
     doc: Output file name.
     outputBinding:
-      glob: $(inputs.out_file_name)
+      glob: $(inputs.out_file_name_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/anise_basil:1.2.0--py312hdcc493e_9

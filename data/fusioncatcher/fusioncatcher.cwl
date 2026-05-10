@@ -269,6 +269,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tmp
+  - id: output_directory_path
+    type: Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 102
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type:
@@ -277,7 +283,9 @@ outputs:
     doc: The output directory where all the output files containing information 
       about the found candidate fusiongenes are written. Default is 'none'.
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fusioncatcher:1.33--hdfd78af_6

@@ -268,13 +268,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --user-provided-loss-prob
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 102
+      prefix: --out-file
 outputs:
   - id: out_file
     type: File
     doc: "Path to where trace file will be written in\n                          \
       \        HDF5 format."
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyclone:0.8.0--pyhdfd78af_0

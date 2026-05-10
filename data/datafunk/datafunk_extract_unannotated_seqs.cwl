@@ -41,22 +41,48 @@ inputs:
     inputBinding:
       position: 101
       prefix: --null-column
+  - id: output_fasta_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_fasta_path`
+    inputBinding:
+      position: 102
+      prefix: --output-fasta
+  - id: output_metadata_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_metadata_path`
+    inputBinding:
+      position: 103
+      prefix: --output-metadata
+  - id: output_tree_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_tree_path`
+    inputBinding:
+      position: 104
+      prefix: --output-tree
 outputs:
   - id: output_tree
     type: File
     doc: output tree file
     outputBinding:
-      glob: $(inputs.output_tree)
+      glob: $(inputs.output_tree_path)
   - id: output_metadata
     type: File
     doc: output metadata file
     outputBinding:
-      glob: $(inputs.output_metadata)
+      glob: $(inputs.output_metadata_path)
   - id: output_fasta
     type: File
     doc: fasta file to write
     outputBinding:
-      glob: $(inputs.output_fasta)
+      glob: $(inputs.output_fasta_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0

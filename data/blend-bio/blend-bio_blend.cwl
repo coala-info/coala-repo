@@ -46,9 +46,10 @@ inputs:
     type:
       - 'null'
       - int
-    doc: BLEND uses INT number of bits when generating hash values of seeds rather
-      than using 2*k number of bits. Useful when collision rate needs to be decreased
-      than 2*k bits. Setting this option to 0 uses 2*k bits for hash values.
+    doc: BLEND uses INT number of bits when generating hash values of seeds 
+      rather than using 2*k number of bits. Useful when collision rate needs to 
+      be decreased than 2*k bits. Setting this option to 0 uses 2*k bits for 
+      hash values.
     inputBinding:
       position: 103
       prefix: --fixed-bits
@@ -80,8 +81,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: use the hash values of consecutive k-mers to generate the hash values of
-      seeds (defualt behavior).
+    doc: use the hash values of consecutive k-mers to generate the hash values 
+      of seeds (defualt behavior).
     inputBinding:
       position: 103
       prefix: --immediate
@@ -258,7 +259,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: how to find GT-AG. f:transcript strand, b:both strands, n:don't match GT-AG
+    doc: how to find GT-AG. f:transcript strand, b:both strands, n:don't match 
+      GT-AG
     inputBinding:
       position: 103
       prefix: -u
@@ -282,8 +284,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: link minimizers rather than the preceding k-mers of a single minimizer. (Number
-      of minimizers to link is defined by --neighbors.)
+    doc: link minimizers rather than the preceding k-mers of a single minimizer.
+      (Number of minimizers to link is defined by --neighbors.)
     inputBinding:
       position: 103
       prefix: --strobemers
@@ -319,6 +321,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: -z
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -326,7 +334,9 @@ outputs:
       - File
     doc: output alignments to FILE
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blend-bio:1.0.0--h577a1d6_3

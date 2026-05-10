@@ -2,14 +2,15 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: trimal
 label: trimal
-doc: "A tool for automated alignment trimming in large-scale phylogenetic analyses.\n
-  \nTool homepage: https://trimal.readthedocs.io"
+doc: "A tool for automated alignment trimming in large-scale phylogenetic analyses.\n\
+  \ \nTool homepage: https://trimal.readthedocs.io"
 inputs:
   - id: alternative_matrix
     type:
       - 'null'
       - string
-    doc: Select an alternative similarity matrix already loaded. Only available 'degenerated_nt_identity'
+    doc: Select an alternative similarity matrix already loaded. Only available 
+      'degenerated_nt_identity'
     inputBinding:
       position: 101
       prefix: --alternative_matrix
@@ -17,8 +18,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use a heuristic selection of the automatic method based on similarity statistics.
-      (Optimized for Maximum Likelihood phylogenetic tree reconstruction).
+    doc: Use a heuristic selection of the automatic method based on similarity 
+      statistics. (Optimized for Maximum Likelihood phylogenetic tree 
+      reconstruction).
     inputBinding:
       position: 101
       prefix: -automated1
@@ -26,7 +28,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Use a Coding Sequences file to get a backtranslation for a given AA alignment
+    doc: Use a Coding Sequences file to get a backtranslation for a given AA 
+      alignment
     inputBinding:
       position: 101
       prefix: -backtrans
@@ -34,8 +37,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum column block size to be kept in the trimmed alignment. Available
-      with manual and automatic (gappyout) methods
+    doc: Minimum column block size to be kept in the trimmed alignment. 
+      Available with manual and automatic (gappyout) methods
     inputBinding:
       position: 101
       prefix: -block
@@ -92,7 +95,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: (half) Window size only applies to statistics/methods based on Consistency.
+    doc: (half) Window size only applies to statistics/methods based on 
+      Consistency.
     inputBinding:
       position: 101
       prefix: -cw
@@ -124,8 +128,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use automated selection on 'gappyout' mode. This method only uses information
-      based on gaps' distribution.
+    doc: Use automated selection on 'gappyout' mode. This method only uses 
+      information based on gaps' distribution.
     inputBinding:
       position: 101
       prefix: -gappyout
@@ -139,8 +143,8 @@ inputs:
       prefix: -ignorestopcodon
   - id: input_file
     type: File
-    doc: Input file in several formats (clustal, fasta, NBRF/PIR, nexus, phylip3.2,
-      phylip).
+    doc: Input file in several formats (clustal, fasta, NBRF/PIR, nexus, 
+      phylip3.2, phylip).
     inputBinding:
       position: 101
       prefix: -in
@@ -148,8 +152,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Keep original sequence header including non-alphanumeric characters. Only
-      available for input FASTA format files.
+    doc: Keep original sequence header including non-alphanumeric characters. 
+      Only available for input FASTA format files.
     inputBinding:
       position: 101
       prefix: -keepheader
@@ -262,7 +266,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Output file in PHYLIP3.2 format. Sequences name length up to 10 characters.
+    doc: Output file in PHYLIP3.2 format. Sequences name length up to 10 
+      characters.
     inputBinding:
       position: 101
       prefix: -phylip3.2_m10
@@ -270,7 +275,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Output file in PHYLIP/PHYLIP4 format. Sequences name length up to 10 characters.
+    doc: Output file in PHYLIP/PHYLIP4 format. Sequences name length up to 10 
+      characters.
     inputBinding:
       position: 101
       prefix: -phylip_m10
@@ -286,8 +292,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Output file in PHYLIP format compatible with PAML. Sequences name length
-      up to 10 characters.
+    doc: Output file in PHYLIP format compatible with PAML. Sequences name 
+      length up to 10 characters.
     inputBinding:
       position: 101
       prefix: -phylip_paml_m10
@@ -411,7 +417,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: (half) Window size only applies to statistics/methods based on Similarity.
+    doc: (half) Window size only applies to statistics/methods based on 
+      Similarity.
     inputBinding:
       position: 101
       prefix: -sw
@@ -435,8 +442,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use automated selection on 'strictplus' mode. (Optimized for Neighbour Joining
-      phylogenetic tree reconstruction).
+    doc: Use automated selection on 'strictplus' mode. (Optimized for Neighbour 
+      Joining phylogenetic tree reconstruction).
     inputBinding:
       position: 101
       prefix: -strictplus
@@ -444,8 +451,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Only columns out of internal boundaries (first and last column without gaps)
-      are candidates to be trimmed depending on the selected method
+    doc: Only columns out of internal boundaries (first and last column without 
+      gaps) are candidates to be trimmed depending on the selected method
     inputBinding:
       position: 101
       prefix: -terminalonly
@@ -453,11 +460,27 @@ inputs:
     type:
       - 'null'
       - int
-    doc: (half) Window size, score of position i is the average of the window (i -
-      n) to (i + n).
+    doc: (half) Window size, score of position i is the average of the window (i
+      - n) to (i + n).
     inputBinding:
       position: 101
       prefix: -w
+  - id: html_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `html_output_path`
+    inputBinding:
+      position: 102
+      prefix: --html-output
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -465,14 +488,16 @@ outputs:
       - File
     doc: Output alignment in the same input format (default stdout).
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: html_output
     type:
       - 'null'
       - File
     doc: Get a summary of trimal's work in an HTML file.
     outputBinding:
-      glob: $(inputs.html_output)
+      glob: $(inputs.html_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/trimal:1.5.1--h9948957_0

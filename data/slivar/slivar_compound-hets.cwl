@@ -36,7 +36,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: skip variants with these impacts (comma-separated)
+    doc: skip variants with these impacts (comma-separated) 
       splice_region,intergenic_region,intron,non_coding_transcript,non_coding,upstream_gene,downstream_gene,non_coding_transcript_exon,NMD_transcript,5_prime_UTR,3_prime_UTR
     inputBinding:
       position: 101
@@ -49,6 +49,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf
+  - id: out_vcf_path
+    type: string
+    doc: Output or path parameter `out_vcf_path`
+    inputBinding:
+      position: 102
+      prefix: --out-vcf
 outputs:
   - id: out_vcf
     type:
@@ -56,7 +62,9 @@ outputs:
       - File
     doc: path to output VCF/BCF
     outputBinding:
-      glob: $(inputs.out_vcf)
+      glob: $(inputs.out_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/slivar:0.3.3--h5f107b1_0

@@ -73,6 +73,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sample-name
+  - id: dump_path
+    type: string
+    doc: Output or path parameter `dump_path`
+    inputBinding:
+      position: 102
+      prefix: --dump
 outputs:
   - id: dump
     type:
@@ -80,7 +86,9 @@ outputs:
       - File
     doc: Path to write generated lookup table
     outputBinding:
-      glob: $(inputs.dump)
+      glob: $(inputs.dump_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/array-as-vcf:1.1.0--pyhdfd78af_0

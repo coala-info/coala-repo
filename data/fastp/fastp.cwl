@@ -2370,6 +2370,38 @@ inputs:
     inputBinding:
       position: 103
       prefix: --umi_prefix
+  - id: output_fastq1_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_fastq1_path`
+    inputBinding:
+      position: 104
+      prefix: --output-fastq1
+  - id: output_fastq2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_fastq2_path`
+    inputBinding:
+      position: 105
+      prefix: --output-fastq2
+  - id: output_html_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_html_path`
+    inputBinding:
+      position: 106
+      prefix: --output-html
+  - id: output_json_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_json_path`
+    inputBinding:
+      position: 107
+      prefix: --output-json
 outputs:
   - id: output_fastq1
     type:
@@ -2378,7 +2410,7 @@ outputs:
     doc: Output FASTQ file 1 (unpaired or read 1 of paired-end data). If not 
       specified, output to stdout.
     outputBinding:
-      glob: $(inputs.output_fastq1)
+      glob: $(inputs.output_fastq1_path)
   - id: output_fastq2
     type:
       - 'null'
@@ -2386,21 +2418,23 @@ outputs:
     doc: Output FASTQ file 2 (read 2 of paired-end data). If not specified, 
       output to stdout.
     outputBinding:
-      glob: $(inputs.output_fastq2)
+      glob: $(inputs.output_fastq2_path)
   - id: output_json
     type:
       - 'null'
       - File
     doc: Output JSON report file. If not specified, output to stdout.
     outputBinding:
-      glob: $(inputs.output_json)
+      glob: $(inputs.output_json_path)
   - id: output_html
     type:
       - 'null'
       - File
     doc: Output HTML report file. If not specified, output to stdout.
     outputBinding:
-      glob: $(inputs.output_html)
+      glob: $(inputs.output_html_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastp:1.1.0--heae3180_0

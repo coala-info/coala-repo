@@ -90,8 +90,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: if given, a quote may appear in an unquoted field and a non-doubled quote
-      may appear in a quoted field
+    doc: if given, a quote may appear in an unquoted field and a non-doubled 
+      quote may appear in a quoted field
     inputBinding:
       position: 101
       prefix: --lazy-quotes
@@ -179,10 +179,27 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: specifies that the input CSV file is delimited with tabs. Overrides "-d"
+    doc: specifies that the input CSV file is delimited with tabs. Overrides 
+      "-d"
     inputBinding:
       position: 101
       prefix: --tabs
+  - id: image_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `image_path`
+    inputBinding:
+      position: 102
+      prefix: --image
+  - id: out_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 103
+      prefix: --out-file
 outputs:
   - id: image
     type:
@@ -190,14 +207,16 @@ outputs:
       - File
     doc: save histogram to this PDF/image file
     outputBinding:
-      glob: $(inputs.image)
+      glob: $(inputs.image_path)
   - id: out_file
     type:
       - 'null'
       - File
     doc: out file ("-" for stdout, suffix .gz for gzipped out)
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/csvtk:0.31.0--h9ee0642_0

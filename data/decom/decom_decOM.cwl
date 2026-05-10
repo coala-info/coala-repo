@@ -71,6 +71,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -79,7 +85,9 @@ outputs:
     doc: Path to output folder, where you want decOM to write the results. 
       Folder must not exist, it won't be overwritten.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/decom:0.0.32--pyhdfd78af_2

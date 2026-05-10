@@ -175,6 +175,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --workdir
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
@@ -183,7 +189,9 @@ outputs:
       `-o r1.fq -o r2.fq` or give two files consecutively\n            `-o r1.fq r2.fq`.
       NOTE: The order of the pairs is assumed to be the same as that given for --input."
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scrubby:0.2.1--h715e4b3_0

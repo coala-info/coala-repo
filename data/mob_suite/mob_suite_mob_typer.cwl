@@ -200,7 +200,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Companion Mash database of reference database
+    doc: Companion Mash database of reference database 
       /usr/local/lib/python3.11/site-packages/mob_suite/databases/ncbi_plasmid_full_seqs.fas.msh
     inputBinding:
       position: 101
@@ -210,7 +210,7 @@ inputs:
       - 'null'
       - File
     doc: MOB-cluster plasmid cluster formatted file matched to the reference 
-      plasmid db
+      plasmid db 
       /usr/local/lib/python3.11/site-packages/mob_suite/databases/clusters.txt
     inputBinding:
       position: 101
@@ -219,7 +219,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Fasta of plasmid relaxases
+    doc: Fasta of plasmid relaxases 
       /usr/local/lib/python3.11/site-packages/mob_suite/databases/mob.proteins.faa
     inputBinding:
       position: 101
@@ -228,7 +228,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Fasta of known plasmid mate-pair proteins
+    doc: Fasta of known plasmid mate-pair proteins 
       /usr/local/lib/python3.11/site-packages/mob_suite/databases/mpf.proteins.faa
     inputBinding:
       position: 101
@@ -237,7 +237,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Fasta of known plasmid oriT dna sequences
+    doc: Fasta of known plasmid oriT dna sequences 
       /usr/local/lib/python3.11/site-packages/mob_suite/databases/orit.fas
     inputBinding:
       position: 101
@@ -246,7 +246,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Fasta of plasmid replicons
+    doc: Fasta of plasmid replicons 
       /usr/local/lib/python3.11/site-packages/mob_suite/databases/rep.dna.fas
     inputBinding:
       position: 101
@@ -263,7 +263,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Fasta of known repetitive elements
+    doc: Fasta of known repetitive elements 
       /usr/local/lib/python3.11/site-packages/mob_suite/databases/repetitive.dna.fas
     inputBinding:
       position: 101
@@ -276,12 +276,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sample_id
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 102
+      prefix: --out-file
 outputs:
   - id: out_file
     type: File
     doc: Output file to write results
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mob_suite:3.1.9--pyhdfd78af_1

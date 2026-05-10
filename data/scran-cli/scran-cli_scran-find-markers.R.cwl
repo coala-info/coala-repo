@@ -54,6 +54,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --subset_row
+  - id: output_markers_path
+    type: string
+    doc: Output or path parameter `output_markers_path`
+    inputBinding:
+      position: 102
+      prefix: --output-markers
 outputs:
   - id: output_markers
     type:
@@ -62,7 +68,9 @@ outputs:
     doc: Path to the rds list of DataFrames with a sorted marker gene list per 
       cluster/group.
     outputBinding:
-      glob: $(inputs.output_markers)
+      glob: $(inputs.output_markers_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scran-cli:v0.0.1--hdfd78af_1

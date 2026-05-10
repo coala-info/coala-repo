@@ -27,6 +27,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --rewrite
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: unmap_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unmap_path`
+    inputBinding:
+      position: 103
+      prefix: --unmap
 outputs:
   - id: output
     type:
@@ -34,14 +50,16 @@ outputs:
       - File
     doc: output bed file path, if not set, output to STDOUT
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: unmap
     type:
       - 'null'
       - File
     doc: unmapped bed file path, if not set, output to STDOUT
     outputBinding:
-      glob: $(inputs.unmap)
+      glob: $(inputs.unmap_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crussmap:1.0.1--h5c46d4b_0

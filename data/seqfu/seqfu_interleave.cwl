@@ -50,6 +50,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: outputfile_path
+    type: string
+    doc: Output or path parameter `outputfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outputfile
 outputs:
   - id: outputfile
     type:
@@ -57,7 +63,9 @@ outputs:
       - File
     doc: save file to <out-file> instead of STDOUT
     outputBinding:
-      glob: $(inputs.outputfile)
+      glob: $(inputs.outputfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqfu:1.23.0--hfd12232_0

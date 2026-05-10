@@ -37,6 +37,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: bed_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `bed_path`
+    inputBinding:
+      position: 102
+      prefix: --bed
+  - id: fasta_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `fasta_path`
+    inputBinding:
+      position: 103
+      prefix: --fasta
 outputs:
   - id: fasta
     type:
@@ -45,7 +61,7 @@ outputs:
     doc: Write the concatenated node sequences (also known as pangenome 
       sequence) in FASTA format to FILE.
     outputBinding:
-      glob: $(inputs.fasta)
+      glob: $(inputs.fasta_path)
   - id: bed
     type:
       - 'null'
@@ -53,7 +69,9 @@ outputs:
     doc: Write the mapping between graph paths and the linearized FASTA sequence
       in BED format to FILE.
     outputBinding:
-      glob: $(inputs.bed)
+      glob: $(inputs.bed_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/odgi:0.9.4--h077b44d_0

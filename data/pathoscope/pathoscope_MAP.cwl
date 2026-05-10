@@ -95,7 +95,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of threads to use by aligner (bowtie2) if different from default (8)
+    doc: Number of threads to use by aligner (bowtie2) if different from default
+      (8)
     inputBinding:
       position: 101
       prefix: -numThreads
@@ -134,6 +135,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -targetRefFiles
+  - id: out_align_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_align_path`
+    inputBinding:
+      position: 102
+      prefix: --out-align
+  - id: out_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `out_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --out-dir
 outputs:
   - id: out_dir
     type:
@@ -141,14 +158,16 @@ outputs:
       - Directory
     doc: Output Directory (Default=. (current directory))
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
   - id: out_align
     type:
       - 'null'
       - File
     doc: Output Alignment File Name (Default=outalign.sam)
     outputBinding:
-      glob: $(inputs.out_align)
+      glob: $(inputs.out_align_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pathoscope:2.0.7--pyhdfd78af_2

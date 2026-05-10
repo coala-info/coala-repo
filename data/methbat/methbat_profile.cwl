@@ -111,6 +111,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --profile-label
+  - id: output_asm_bed_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_asm_bed_path`
+    inputBinding:
+      position: 102
+      prefix: --output-asm-bed
+  - id: output_region_profile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_region_profile_path`
+    inputBinding:
+      position: 103
+      prefix: --output-region-profile
 outputs:
   - id: output_region_profile
     type:
@@ -118,14 +134,16 @@ outputs:
       - File
     doc: Optional output CpG aggregation file (CSV/TSV)
     outputBinding:
-      glob: $(inputs.output_region_profile)
+      glob: $(inputs.output_region_profile_path)
   - id: output_asm_bed
     type:
       - 'null'
       - File
     doc: Optional output BED file with individual ASM CpG loci
     outputBinding:
-      glob: $(inputs.output_asm_bed)
+      glob: $(inputs.output_asm_bed_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methbat:0.17.0--h9ee0642_0

@@ -14,6 +14,12 @@ inputs:
     doc: Prefix to add to chromosome names
     inputBinding:
       position: 2
+  - id: output_cool_path
+    type: string
+    doc: Output or path parameter `output_cool_path`
+    inputBinding:
+      position: 101
+      prefix: --output-cool
 outputs:
   - id: output_cool
     type:
@@ -21,7 +27,9 @@ outputs:
       - File
     doc: 'Output .cool file (default: overwrites input)'
     outputBinding:
-      glob: $(inputs.output_cool)
+      glob: $(inputs.output_cool_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/neoloop:0.4.3.post2--pyhdfd78af_0

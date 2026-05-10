@@ -454,6 +454,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --truncation-threshold
+  - id: out_path
+    type: string
+    doc: Output directory
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -461,7 +467,9 @@ outputs:
       - Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ggcaller:1.4.3--py39h3961c5e_0

@@ -9,8 +9,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: append/aggregate mode (use if BLAST hits from one query do not form a contiguous
-      block in the BLAST output files)
+    doc: append/aggregate mode (use if BLAST hits from one query do not form a 
+      contiguous block in the BLAST output files)
     inputBinding:
       position: 101
       prefix: -a
@@ -50,8 +50,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: symmetrize reciprocal hits (use when BLAST search has not been run in a fully
-      symmetrical all-against-all manner)
+    doc: symmetrize reciprocal hits (use when BLAST search has not been run in a
+      fully symmetrical all-against-all manner)
     inputBinding:
       position: 101
       prefix: -r
@@ -79,6 +79,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: filtered_blast_dir_path
+    type: string
+    doc: Output or path parameter `filtered_blast_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --filtered-blast-dir
 outputs:
   - id: filtered_blast_dir
     type:
@@ -86,7 +92,9 @@ outputs:
       - Directory
     doc: directory with the filtered BLAST results
     outputBinding:
-      glob: $(inputs.filtered_blast_dir)
+      glob: $(inputs.filtered_blast_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cogtriangles:2012.04--h9948957_4

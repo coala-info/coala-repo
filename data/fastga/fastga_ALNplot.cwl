@@ -97,6 +97,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: -T
+  - id: pdf_output_path
+    type: string
+    doc: Output or path parameter `pdf_output_path`
+    inputBinding:
+      position: 104
+      prefix: --pdf-output
 outputs:
   - id: pdf_output
     type:
@@ -104,7 +110,9 @@ outputs:
       - File
     doc: make PDF output (requires '[e]ps[to|2]pdf')
     outputBinding:
-      glob: $(inputs.pdf_output)
+      glob: $(inputs.pdf_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastga:1.3.1--h577a1d6_0

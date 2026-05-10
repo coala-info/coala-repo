@@ -391,6 +391,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -xdrop_ungap
+  - id: export_search_strategy_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `export_search_strategy_path`
+    inputBinding:
+      position: 102
+      prefix: --export-search-strategy
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: export_search_strategy
     type:
@@ -398,14 +414,16 @@ outputs:
       - File
     doc: File name to record the search strategy used
     outputBinding:
-      glob: $(inputs.export_search_strategy)
+      glob: $(inputs.export_search_strategy_path)
   - id: output_file
     type:
       - 'null'
       - File
     doc: Output file name
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/reparation_blast:1.0.9--pl526_0

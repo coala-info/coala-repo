@@ -23,6 +23,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --taxa
+  - id: counts_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `counts_path`
+    inputBinding:
+      position: 102
+      prefix: --counts
+  - id: freq_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `freq_path`
+    inputBinding:
+      position: 103
+      prefix: --freq
+  - id: plot_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `plot_path`
+    inputBinding:
+      position: 104
+      prefix: --plot
 outputs:
   - id: freq
     type:
@@ -30,21 +54,23 @@ outputs:
       - File
     doc: Output file 1, taxon matrix with normalized frequencies
     outputBinding:
-      glob: $(inputs.freq)
+      glob: $(inputs.freq_path)
   - id: counts
     type:
       - 'null'
       - File
     doc: Output file 2, taxon matrix with counts
     outputBinding:
-      glob: $(inputs.counts)
+      glob: $(inputs.counts_path)
   - id: plot
     type:
       - 'null'
       - File
     doc: Output file 3, stacked barplot of total count normalized taxa
     outputBinding:
-      glob: $(inputs.plot)
+      glob: $(inputs.plot_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/taxmapper:1.0.2--py36_0

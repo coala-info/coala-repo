@@ -323,6 +323,38 @@ inputs:
     inputBinding:
       position: 102
       prefix: --ylim
+  - id: out_labels_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_labels_file_path`
+    inputBinding:
+      position: 103
+      prefix: --out-labels-file
+  - id: out_vcf_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_vcf_file_path`
+    inputBinding:
+      position: 104
+      prefix: --out-vcf-file
+  - id: outdir_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 105
+      prefix: --outdir
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 106
+      prefix: --output-file
 outputs:
   - id: outdir
     type:
@@ -330,28 +362,30 @@ outputs:
       - Directory
     doc: Output folder to save images
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
   - id: output_file
     type:
       - 'null'
       - File
     doc: Output single image to file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: out_vcf_file
     type:
       - 'null'
       - File
     doc: Output labelling results to vcf FILE (the -v option is required)
     outputBinding:
-      glob: $(inputs.out_vcf_file)
+      glob: $(inputs.out_vcf_file_path)
   - id: out_labels_file
     type:
       - 'null'
       - File
     doc: Output labelling results to tab-separated FILE (use with -v or -i)
     outputBinding:
-      glob: $(inputs.out_labels_file)
+      glob: $(inputs.out_labels_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gw:1.2.6--hff18be8_0

@@ -84,6 +84,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: -G
+  - id: output_frozen_path
+    type: string
+    doc: Output or path parameter `output_frozen_path`
+    inputBinding:
+      position: 104
+      prefix: --output-frozen
 outputs:
   - id: output_frozen
     type:
@@ -92,7 +98,9 @@ outputs:
     doc: Indicate to output the frozen_file and all parameters into file 
       Seq2C.frozen.txt
     outputBinding:
-      glob: $(inputs.output_frozen)
+      glob: $(inputs.output_frozen_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seq2c:2019.05.30--pl526_0

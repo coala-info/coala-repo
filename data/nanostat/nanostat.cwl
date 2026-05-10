@@ -106,6 +106,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ubam
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -113,7 +119,9 @@ outputs:
       - Directory
     doc: Specify the output directory.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanostat:1.6.0--pyhdfd78af_0

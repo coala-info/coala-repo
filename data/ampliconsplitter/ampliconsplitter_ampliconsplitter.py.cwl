@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: ampliconsplitter.py
 label: ampliconsplitter_ampliconsplitter.py
-doc: "AmpliconSplitter separates sequencing reads based on reference amplicons.\n\n
-  Tool homepage: https://github.com/RolandFaure/AmpliconSplitter"
+doc: "AmpliconSplitter separates sequencing reads based on reference amplicons.\n\n\
+  \ Tool homepage: https://github.com/RolandFaure/AmpliconSplitter"
 inputs:
   - id: debug
     type:
@@ -39,8 +39,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: If reads have an average quality below this threshold, filter out (fastq
-      input only)
+    doc: If reads have an average quality below this threshold, filter out 
+      (fastq input only)
     inputBinding:
       position: 101
       prefix: --min-read-quality
@@ -94,7 +94,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Consider automatically as true all SNPs shared by proportion u of the reads
+    doc: Consider automatically as true all SNPs shared by proportion u of the 
+      reads
     inputBinding:
       position: 101
       prefix: --rescue_snps
@@ -114,12 +115,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ampliconsplitter:1.9.22--h9948957_0

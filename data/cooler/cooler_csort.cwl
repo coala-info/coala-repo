@@ -112,6 +112,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --zero-based
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -119,7 +125,9 @@ outputs:
       - File
     doc: Output gzip file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cooler:0.10.4--pyhdfd78af_0

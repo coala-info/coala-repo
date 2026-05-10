@@ -36,17 +36,35 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
+  - id: output_report_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_report_path`
+    inputBinding:
+      position: 103
+      prefix: --output-report
 outputs:
   - id: output_file
     type: File
     doc: file name for Bracken default output
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_report
     type: File
     doc: New Kraken REPORT output file with Bracken read estimates
     outputBinding:
-      glob: $(inputs.output_report)
+      glob: $(inputs.output_report_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bracken:3.1--h9948957_0

@@ -76,6 +76,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
+  - id: path_for_results_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `path_for_results_path`
+    inputBinding:
+      position: 103
+      prefix: --path-for-results
 outputs:
   - id: path_for_results
     type:
@@ -83,14 +99,16 @@ outputs:
       - Directory
     doc: Path for Results
     outputBinding:
-      glob: $(inputs.path_for_results)
+      glob: $(inputs.path_for_results_path)
   - id: output_file
     type:
       - 'null'
       - File
     doc: Single Output File
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ncbi-util-legacy:6.1--h0e27e84_3

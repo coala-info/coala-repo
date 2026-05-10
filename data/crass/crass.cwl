@@ -24,8 +24,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Defines the range of colours to use for the output graph (red-blue, blue-red,
-      green-red-blue, red-blue-green)
+    doc: Defines the range of colours to use for the output graph (red-blue, 
+      blue-red, green-red-blue, red-blue-green)
     inputBinding:
       position: 102
       prefix: --graphColour
@@ -49,8 +49,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Graphviz layout algorithm to use for printing spacer graphs (neato, dot,
-      fdp, sfdp, circo, twopi)
+    doc: Graphviz layout algorithm to use for printing spacer graphs (neato, 
+      dot, fdp, sfdp, circo, twopi)
     inputBinding:
       position: 102
       prefix: --layoutAlgorithm
@@ -74,8 +74,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Set if you want the spacer sequence printed along with the ID in the spacer
-      graph
+    doc: Set if you want the spacer sequence printed along with the ID in the 
+      spacer graph
     inputBinding:
       position: 102
       prefix: --longDescription
@@ -123,8 +123,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Stops rendering of .gv files even if the RENDERING preprocessor macro is
-      set
+    doc: Stops rendering of .gv files even if the RENDERING preprocessor macro 
+      is set
     inputBinding:
       position: 102
       prefix: --noRendering
@@ -152,6 +152,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --windowLength
+  - id: out_dir_path
+    type: Directory
+    doc: Output or path parameter `out_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --out-dir
 outputs:
   - id: out_dir
     type:
@@ -159,7 +165,9 @@ outputs:
       - Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crass:1.0.1--hcb2000e_7

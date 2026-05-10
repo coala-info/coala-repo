@@ -64,6 +64,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: gfa_path
+    type: string
+    doc: Output or path parameter `gfa_path`
+    inputBinding:
+      position: 102
+      prefix: --gfa
 outputs:
   - id: gfa
     type:
@@ -71,7 +77,9 @@ outputs:
       - File
     doc: write the variation graph in GFA format to FILE
     outputBinding:
-      glob: $(inputs.gfa)
+      glob: $(inputs.gfa_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqwish:0.7.11--h5ca1c30_1

@@ -135,6 +135,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -v
+  - id: overlapout_path
+    type: string
+    doc: Output or path parameter `overlapout_path`
+    inputBinding:
+      position: 103
+      prefix: --overlapout
 outputs:
   - id: overlapout
     type:
@@ -142,7 +148,9 @@ outputs:
       - File
     doc: create new tabular file with overlap information in <s>
     outputBinding:
-      glob: $(inputs.overlapout)
+      glob: $(inputs.overlapout_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 

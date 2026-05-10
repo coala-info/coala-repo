@@ -36,12 +36,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --remove
+  - id: out_gfa_path
+    type: string
+    doc: Output or path parameter `out_gfa_path`
+    inputBinding:
+      position: 102
+      prefix: --out-gfa
 outputs:
   - id: out_gfa
     type: File
     doc: Output GFA file (required)
     outputBinding:
-      glob: $(inputs.out_gfa)
+      glob: $(inputs.out_gfa_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/autocycler:0.5.2--h3ab6199_0

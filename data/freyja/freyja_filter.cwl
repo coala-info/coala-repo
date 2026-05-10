@@ -29,6 +29,12 @@ inputs:
     doc: Maximum genomic coordinate
     inputBinding:
       position: 4
+  - id: output_path
+    type: string
+    doc: 'name for aggregated results  [default: aggregated_result.tsv]'
+    inputBinding:
+      position: 101
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -36,7 +42,9 @@ outputs:
       - File
     doc: path to save filtered reads
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/freyja:2.0.3--pyhdfd78af_0

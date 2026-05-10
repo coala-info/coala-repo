@@ -36,11 +36,10 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Option for isoquant (quoted string)
-      --transcript_quantification unique_only --gene_quantification unique_only 
-      --matching_strategy default --splice_correction_strategy default_ont 
-      --model_construction_strategy default_ont --no_secondary --check_canonical
-      --count_exons
+    doc: Option for isoquant (quoted string) --transcript_quantification 
+      unique_only --gene_quantification unique_only --matching_strategy default 
+      --splice_correction_strategy default_ont --model_construction_strategy 
+      default_ont --no_secondary --check_canonical --count_exons
     inputBinding:
       position: 101
       prefix: --tool_option
@@ -52,6 +51,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --work_dir
+  - id: out_gtf_path
+    type: string
+    doc: Output or path parameter `out_gtf_path`
+    inputBinding:
+      position: 102
+      prefix: --out-gtf
 outputs:
   - id: out_gtf
     type:
@@ -59,7 +64,9 @@ outputs:
       - File
     doc: Final output file name (GTF)
     outputBinding:
-      glob: $(inputs.out_gtf)
+      glob: $(inputs.out_gtf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/isorefiner:0.1.0--pyh7e72e81_1

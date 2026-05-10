@@ -43,6 +43,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_fasta_path
+    type: string
+    doc: Output or path parameter `output_fasta_path`
+    inputBinding:
+      position: 103
+      prefix: --output-fasta
 outputs:
   - id: output_fasta
     type:
@@ -51,7 +57,9 @@ outputs:
     doc: Output file name for resulting filtered FASTA (default adds .filtered 
       to input file name)
     outputBinding:
-      glob: $(inputs.output_fasta)
+      glob: $(inputs.output_fasta_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0

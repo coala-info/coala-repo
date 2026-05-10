@@ -10,12 +10,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --galaxy_parameters_file
+  - id: target_dir_path
+    type: string
+    doc: Output path to write
+    inputBinding:
+      position: 102
+      prefix: --target_dir
 outputs:
   - id: target_dir
     type: Directory
     doc: Output path to write
     outputBinding:
-      glob: $(inputs.target_dir)
+      glob: $(inputs.target_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/isatab-create:v0.9.5_cv0.3.14

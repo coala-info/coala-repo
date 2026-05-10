@@ -17,6 +17,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --proportion-repeat
+  - id: genome_repeats_path
+    type: string
+    doc: Output or path parameter `genome_repeats_path`
+    inputBinding:
+      position: 103
+      prefix: --genome-repeats
 outputs:
   - id: genome_repeats
     type:
@@ -25,7 +31,9 @@ outputs:
     doc: optional path to output genome repeats file. if it does not exist, it 
       will be created
     outputBinding:
-      glob: $(inputs.genome_repeats)
+      glob: $(inputs.genome_repeats_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/strling:0.6.0--h7b50bb2_0

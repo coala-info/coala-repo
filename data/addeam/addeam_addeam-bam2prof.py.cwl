@@ -196,6 +196,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: -threads
+  - id: hpc_dry_run_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `hpc_dry_run_path`
+    inputBinding:
+      position: 103
+      prefix: --hpc-dry-run
+  - id: output_directory_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 104
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type:
@@ -203,14 +219,16 @@ outputs:
       - Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
   - id: hpc_dry_run
     type:
       - 'null'
       - File
     doc: Dry Run. Pipe execution commands to file
     outputBinding:
-      glob: $(inputs.hpc_dry_run)
+      glob: $(inputs.hpc_dry_run_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/addeam:1.0.0--py313h1510ab2_0

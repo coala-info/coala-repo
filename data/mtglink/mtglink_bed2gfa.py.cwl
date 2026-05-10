@@ -45,12 +45,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -min
+  - id: output_gfa_file_path
+    type: string
+    doc: Output or path parameter `output_gfa_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-gfa-file
 outputs:
   - id: output_gfa_file
     type: File
     doc: Name of the output GFA file
     outputBinding:
-      glob: $(inputs.output_gfa_file)
+      glob: $(inputs.output_gfa_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mtglink:2.4.1--hdfd78af_0

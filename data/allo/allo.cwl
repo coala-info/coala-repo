@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: allo
 label: allo
-doc: "Allo is a software that allocates multi-mapped reads in gene regulatory data.\n
-  \nTool homepage: https://github.com/seqcode/allo"
+doc: "Allo is a software that allocates multi-mapped reads in gene regulatory data.\n\
+  \ \nTool homepage: https://github.com/seqcode/allo"
 inputs:
   - id: input
     type: File
@@ -54,7 +54,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use CNN trained on a dataset with mixed ChIP-seq peaks, narrow by default
+    doc: Use CNN trained on a dataset with mixed ChIP-seq peaks, narrow by 
+      default
     inputBinding:
       position: 102
       prefix: --mixed
@@ -78,8 +79,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use read 2 for allocation procedure instead of read 1 (only for paired-end
-      sequencing)
+    doc: Use read 2 for allocation procedure instead of read 1 (only for 
+      paired-end sequencing)
     inputBinding:
       position: 102
       prefix: --r2
@@ -103,8 +104,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Disregard multi-mapped reads that map to regions with 0 uniquely mapped reads
-      (random assignment)
+    doc: Disregard multi-mapped reads that map to regions with 0 uniquely mapped
+      reads (random assignment)
     inputBinding:
       position: 102
       prefix: --remove-zeros
@@ -122,6 +123,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --splice
+  - id: outfile_path
+    type: string
+    doc: Output file name
+    inputBinding:
+      position: 103
+      prefix: -o
 outputs:
   - id: outfile
     type:
@@ -129,7 +136,9 @@ outputs:
       - File
     doc: Output file name
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/allo:1.2.0--pyhdfd78af_0

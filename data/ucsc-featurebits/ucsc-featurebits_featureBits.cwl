@@ -166,6 +166,38 @@ inputs:
     inputBinding:
       position: 103
       prefix: -where
+  - id: bed_region_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `bed_region_out_path`
+    inputBinding:
+      position: 104
+      prefix: --bed-region-out
+  - id: bin_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `bin_output_file_path`
+    inputBinding:
+      position: 105
+      prefix: --bin-output-file
+  - id: output_bed_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_bed_path`
+    inputBinding:
+      position: 106
+      prefix: --output-bed
+  - id: output_fa_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_fa_path`
+    inputBinding:
+      position: 107
+      prefix: --output-fa
 outputs:
   - id: output_bed
     type:
@@ -173,28 +205,30 @@ outputs:
       - File
     doc: Put intersection into bed format. Can use stdout.
     outputBinding:
-      glob: $(inputs.output_bed)
+      glob: $(inputs.output_bed_path)
   - id: output_fa
     type:
       - 'null'
       - File
     doc: Put sequence in intersection into .fa file
     outputBinding:
-      glob: $(inputs.output_fa)
+      glob: $(inputs.output_fa_path)
   - id: bin_output_file
     type:
       - 'null'
       - File
     doc: Put bin counts in output file
     outputBinding:
-      glob: $(inputs.bin_output_file)
+      glob: $(inputs.bin_output_file_path)
   - id: bed_region_out
     type:
       - 'null'
       - File
     doc: Write a bed file of bin counts in specific regions from bedRegionIn
     outputBinding:
-      glob: $(inputs.bed_region_out)
+      glob: $(inputs.bed_region_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-featurebits:482--h0b57e2e_0

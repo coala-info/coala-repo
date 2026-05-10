@@ -309,6 +309,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --xDrop
+  - id: gff_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `gff_output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --gff-output-file
+  - id: vcf_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `vcf_output_file_path`
+    inputBinding:
+      position: 105
+      prefix: --vcf-output-file
 outputs:
   - id: gff_output_file
     type:
@@ -316,14 +332,16 @@ outputs:
       - File
     doc: Name of gff breakpoint output file.
     outputBinding:
-      glob: $(inputs.gff_output_file)
+      glob: $(inputs.gff_output_file_path)
   - id: vcf_output_file
     type:
       - 'null'
       - File
     doc: Name of vcf breakpoint output file.
     outputBinding:
-      glob: $(inputs.vcf_output_file)
+      glob: $(inputs.vcf_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gustaf:1.0.10--h8ecad89_1

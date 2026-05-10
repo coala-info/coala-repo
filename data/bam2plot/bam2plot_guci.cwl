@@ -28,12 +28,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --window
+  - id: out_folder_path
+    type: Directory
+    doc: Output or path parameter `out_folder_path`
+    inputBinding:
+      position: 103
+      prefix: --out-folder
 outputs:
   - id: out_folder
     type: Directory
     doc: Where to save the plots.
     outputBinding:
-      glob: $(inputs.out_folder)
+      glob: $(inputs.out_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bam2plot:0.4.0--pyhdfd78af_0

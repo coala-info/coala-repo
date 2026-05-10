@@ -54,8 +54,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: do not re-compute kmer counts, suppose h5 file already computed (with previous
-      run with -count-only)
+    doc: do not re-compute kmer counts, suppose h5 file already computed (with 
+      previous run with -count-only)
     inputBinding:
       position: 101
       prefix: -from-h5
@@ -195,6 +195,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: -verbose
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
+  - id: out_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `out_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --out-dir
+  - id: solid_kmers_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `solid_kmers_out_path`
+    inputBinding:
+      position: 104
+      prefix: --solid-kmers-out
 outputs:
   - id: solid_kmers_out
     type:
@@ -202,21 +226,23 @@ outputs:
       - File
     doc: output file for solid kmers
     outputBinding:
-      glob: $(inputs.solid_kmers_out)
+      glob: $(inputs.solid_kmers_out_path)
   - id: out
     type:
       - 'null'
       - File
     doc: output file
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: out_dir
     type:
       - 'null'
       - Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bloocoo:1.0.7--h5b5514e_4

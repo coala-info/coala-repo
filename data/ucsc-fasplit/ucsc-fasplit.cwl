@@ -43,6 +43,14 @@ inputs:
     inputBinding:
       position: 104
       prefix: -verbose
+  - id: lift_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `lift_path`
+    inputBinding:
+      position: 105
+      prefix: --lift
 outputs:
   - id: out_root
     type: File
@@ -55,7 +63,9 @@ outputs:
       - File
     doc: Create a lift file
     outputBinding:
-      glob: $(inputs.lift)
+      glob: $(inputs.lift_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-fasplit:482--h0b57e2e_0

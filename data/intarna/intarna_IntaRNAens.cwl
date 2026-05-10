@@ -221,6 +221,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -249,7 +255,9 @@ outputs:
       value has to be quoted due to '&' symbol! For each, provide a file name or STDOUT/STDERR
       to write to the respective output stream."
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/intarna:3.4.1--pl5321h077b44d_3

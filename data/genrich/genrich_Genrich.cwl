@@ -179,40 +179,82 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_bed_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_bed_path`
+    inputBinding:
+      position: 102
+      prefix: --output-bed
+  - id: output_bedgraph_p_q_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_bedgraph_p_q_path`
+    inputBinding:
+      position: 103
+      prefix: --output-bedgraph-p-q
+  - id: output_bedgraph_pileups_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_bedgraph_pileups_path`
+    inputBinding:
+      position: 104
+      prefix: --output-bedgraph-pileups
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 105
+      prefix: --output-file
+  - id: output_pcr_duplicates_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_pcr_duplicates_path`
+    inputBinding:
+      position: 106
+      prefix: --output-pcr-duplicates
 outputs:
   - id: output_file
     type: File
     doc: Output peak file (in ENCODE narrowPeak format)
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_bedgraph_p_q
     type:
       - 'null'
       - File
     doc: Output bedgraph-ish file for p/q values
     outputBinding:
-      glob: $(inputs.output_bedgraph_p_q)
+      glob: $(inputs.output_bedgraph_p_q_path)
   - id: output_bedgraph_pileups
     type:
       - 'null'
       - File
     doc: Output bedgraph-ish file for pileups and p-values
     outputBinding:
-      glob: $(inputs.output_bedgraph_pileups)
+      glob: $(inputs.output_bedgraph_pileups_path)
   - id: output_bed
     type:
       - 'null'
       - File
     doc: Output BED file for reads/fragments/intervals
     outputBinding:
-      glob: $(inputs.output_bed)
+      glob: $(inputs.output_bed_path)
   - id: output_pcr_duplicates
     type:
       - 'null'
       - File
     doc: Output file for PCR duplicates (only with -r)
     outputBinding:
-      glob: $(inputs.output_pcr_duplicates)
+      glob: $(inputs.output_pcr_duplicates_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genrich:0.6.1--hed695b0_0

@@ -104,6 +104,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -v
+  - id: mph_file_path
+    type: string
+    doc: Output or path parameter `mph_file_path`
+    inputBinding:
+      position: 103
+      prefix: --mph-file
 outputs:
   - id: mph_file
     type:
@@ -111,7 +117,9 @@ outputs:
       - File
     doc: minimum perfect hash function file
     outputBinding:
-      glob: $(inputs.mph_file)
+      glob: $(inputs.mph_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cmph:2.0--h7b50bb2_7

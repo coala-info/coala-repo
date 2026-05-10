@@ -76,6 +76,30 @@ inputs:
     inputBinding:
       position: 104
       prefix: --threshold
+  - id: minimap2_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `minimap2_output_path`
+    inputBinding:
+      position: 105
+      prefix: --minimap2-output
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 106
+      prefix: --outfile
+  - id: outseq_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outseq_path`
+    inputBinding:
+      position: 107
+      prefix: --outseq
 outputs:
   - id: outfile
     type:
@@ -83,21 +107,23 @@ outputs:
       - File
     doc: Output file for einverted results.
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
   - id: outseq
     type:
       - 'null'
       - File
     doc: Output sequence file for einverted.
     outputBinding:
-      glob: $(inputs.outseq)
+      glob: $(inputs.outseq_path)
   - id: minimap2_output
     type:
       - 'null'
       - File
     doc: Output SAM file for minimap2.
     outputBinding:
-      glob: $(inputs.minimap2_output)
+      glob: $(inputs.minimap2_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phava:0.2.3--pyhdfd78af_0

@@ -27,6 +27,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: output_bam_path
+    type: string
+    doc: Output or path parameter `output_bam_path`
+    inputBinding:
+      position: 103
+      prefix: --output-bam
 outputs:
   - id: output_bam
     type:
@@ -34,7 +40,9 @@ outputs:
       - File
     doc: Output BAM file
     outputBinding:
-      glob: $(inputs.output_bam)
+      glob: $(inputs.output_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/atlas:2.0.1--hadca570_0

@@ -49,8 +49,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Exclude contigs with read depth less than this fraction of the longest contig's
-      depth
+    doc: Exclude contigs with read depth less than this fraction of the longest 
+      contig's depth
     inputBinding:
       position: 102
       prefix: --min_depth_rel
@@ -76,6 +76,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: out_prefix_path
+    type: string
+    doc: Output or path parameter `out_prefix_path`
+    inputBinding:
+      position: 103
+      prefix: --out-prefix
 outputs:
   - id: out_prefix
     type:
@@ -83,7 +89,9 @@ outputs:
       - File
     doc: Output prefix (required for all tasks except genome_size)
     outputBinding:
-      glob: $(inputs.out_prefix)
+      glob: $(inputs.out_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/autocycler:0.5.2--h3ab6199_0

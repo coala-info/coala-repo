@@ -187,6 +187,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write-uncondensed-final-tree
+  - id: save_mutation_annotated_tree_path
+    type: string
+    doc: Output or path parameter `save_mutation_annotated_tree_path`
+    inputBinding:
+      position: 102
+      prefix: --save-mutation-annotated-tree
 outputs:
   - id: save_mutation_annotated_tree
     type:
@@ -194,7 +200,9 @@ outputs:
       - File
     doc: Save output mutation-annotated tree object to the specified filename
     outputBinding:
-      glob: $(inputs.save_mutation_annotated_tree)
+      glob: $(inputs.save_mutation_annotated_tree_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/usher:0.6.6--hdd55de9_4

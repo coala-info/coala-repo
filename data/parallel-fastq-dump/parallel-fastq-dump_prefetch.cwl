@@ -59,8 +59,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Logging level as number or enum string. One of (fatal|sys|int|err|warn|info|debug)
-      or (0-6) Current/default is warn
+    doc: Logging level as number or enum string. One of 
+      (fatal|sys|int|err|warn|info|debug) or (0-6) Current/default is warn
     inputBinding:
       position: 102
       prefix: --log-level
@@ -133,8 +133,8 @@ inputs:
       - 'null'
       - type: array
         items: boolean
-    doc: Increase the verbosity of the program status messages. Use multiple times
-      for more verbosity.
+    doc: Increase the verbosity of the program status messages. Use multiple 
+      times for more verbosity.
     inputBinding:
       position: 102
       prefix: --verbose
@@ -146,6 +146,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verify
+  - id: output_directory_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 103
+      prefix: --output-directory
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -153,14 +169,16 @@ outputs:
       - File
     doc: Write file to <file> when downloading single file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_directory
     type:
       - 'null'
       - Directory
     doc: Save files to <directory>/
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parallel-fastq-dump:0.6.7--pyhdfd78af_0

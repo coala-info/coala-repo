@@ -87,17 +87,25 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Candidate VCF file input, if provided, Clair3 will only call variants at
-      these positions.
+    doc: Candidate VCF file input, if provided, Clair3 will only call variants 
+      at these positions.
     inputBinding:
       position: 101
       prefix: --vcf_fn
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type: Directory
     doc: Output directory for the variant calling results.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/clair3:1.2.0--py310h779eee5_0

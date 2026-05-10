@@ -40,6 +40,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threads
+  - id: output_path
+    type: string
+    doc: path to output directory or - for stdout
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -47,7 +53,9 @@ outputs:
       - Directory
     doc: path to output directory
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hostile:2.0.2--pyhdfd78af_0

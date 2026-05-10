@@ -95,12 +95,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tumor-ploidy
+  - id: output_vcf_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output-vcf
 outputs:
   - id: output_vcf
     type: File
     doc: The annotated VCF
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vafator:2.2.2--pyhdfd78af_0

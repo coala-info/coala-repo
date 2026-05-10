@@ -169,6 +169,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --sequence-dictionary-url
+  - id: output_xml_path
+    type: string
+    doc: Output or path parameter `output_xml_path`
+    inputBinding:
+      position: 103
+      prefix: --output-xml
 outputs:
   - id: output_xml
     type:
@@ -176,7 +182,9 @@ outputs:
       - File
     doc: 'output XML file. Default: stdout'
     outputBinding:
-      glob: $(inputs.output_xml)
+      glob: $(inputs.output_xml_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jvarkit:2024.08.25--hdfd78af_2

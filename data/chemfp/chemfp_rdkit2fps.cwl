@@ -116,6 +116,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --torsions
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -123,7 +129,9 @@ outputs:
       - File
     doc: Save the fingerprints to filename (default is stdout)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chemfp:1.6.1--py27h9801fc8_2

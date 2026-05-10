@@ -185,6 +185,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --translation-format
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    doc: 'Logfile (default: fargene_analysis.log).'
+    inputBinding:
+      position: 102
+      prefix: --logfile
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -192,14 +208,16 @@ outputs:
       - Directory
     doc: 'The output directory for the whole run (default: ./fargene_output).'
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: logfile
     type:
       - 'null'
       - File
     doc: 'Logfile (default: fargene_analysis.log).'
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fargene:0.1--py27h5ca1d4c_2

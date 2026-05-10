@@ -77,11 +77,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Don't include specific filtered genotypes
-      - MISSING_WT
-      - LOW_PERCENT_COVERAGE
-      - LOW_GT_CONF
-      - LOW_TOTAL_DEPTH
+    doc: Don't include specific filtered genotypes - MISSING_WT - 
+      LOW_PERCENT_COVERAGE - LOW_GT_CONF - LOW_TOTAL_DEPTH
     inputBinding:
       position: 101
       prefix: --filters
@@ -303,6 +300,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tmp
+  - id: dump_species_covgs_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --dump_species_covgs
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: dump_species_covgs
     type:
@@ -310,14 +322,16 @@ outputs:
       - File
     doc: Dump species probes coverage information to a JSON file
     outputBinding:
-      glob: $(inputs.dump_species_covgs)
+      glob: $(inputs.dump_species_covgs_path)
   - id: output
     type:
       - 'null'
       - File
     doc: File path to save output file as. Default is to stdout
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mykrobe:0.13.0--py38h59a8061_3

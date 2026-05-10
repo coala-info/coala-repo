@@ -15,8 +15,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: A BCF/VCF file containing positions of interest. If specified, only bases
-      from the given positions will be reported on
+    doc: A BCF/VCF file containing positions of interest. If specified, only 
+      bases from the given positions will be reported on
     inputBinding:
       position: 102
       prefix: --bcf-file
@@ -24,8 +24,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: A BED file containing regions of interest. If specified, only bases from
-      the given regions will be reported on
+    doc: A BED file containing regions of interest. If specified, only bases 
+      from the given regions will be reported on
     inputBinding:
       position: 102
       prefix: --bed-file
@@ -41,8 +41,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: The fraction of a gigabyte to allocate per thread for message passing, can
-      be greater than 1.0
+    doc: The fraction of a gigabyte to allocate per thread for message passing, 
+      can be greater than 1.0
     inputBinding:
       position: 102
       prefix: --channel-size-modifier
@@ -50,8 +50,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The ideal number of basepairs each worker receives. Total bp in memory at
-      one time is (threads - 2) * chunksize
+    doc: The ideal number of basepairs each worker receives. Total bp in memory 
+      at one time is (threads - 2) * chunksize
     inputBinding:
       position: 102
       prefix: --chunksize
@@ -67,7 +67,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The number of threads to use for compressing output (specified by --bgzip)
+    doc: The number of threads to use for compressing output (specified by 
+      --bgzip)
     inputBinding:
       position: 102
       prefix: --compression-threads
@@ -115,8 +116,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Set the max depth for a pileup. If a positions depth is within 1% of max-depth
-      the `NEAR_MAX_DEPTH` output field will be set to true
+    doc: Set the max depth for a pileup. If a positions depth is within 1% of 
+      max-depth the `NEAR_MAX_DEPTH` output field will be set to true
     inputBinding:
       position: 102
       prefix: --max-depth
@@ -124,9 +125,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minium base quality for a base to be counted toward [A, C, T, G]. If the
-      base is less than the specified quality score it will instead be counted as
-      an `N`.
+    doc: Minium base quality for a base to be counted toward [A, C, T, G]. If 
+      the base is less than the specified quality score it will instead be 
+      counted as an `N`.
     inputBinding:
       position: 102
       prefix: --min-base-quality-score
@@ -142,8 +143,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of Reference Sequences to hold in memory at one time. Smaller will
-      decrease mem usage
+    doc: Number of Reference Sequences to hold in memory at one time. Smaller 
+      will decrease mem usage
     inputBinding:
       position: 102
       prefix: --ref-cache-size
@@ -159,7 +160,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Skip merging togther regions specified in the optional BED or BCF/VCF files.
+    doc: Skip merging togther regions specified in the optional BED or BCF/VCF 
+      files.
     inputBinding:
       position: 102
       prefix: --skip-merging-intervals
@@ -179,6 +181,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --zero-base
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -186,7 +194,9 @@ outputs:
       - File
     doc: Output path, defaults to stdout
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perbase:1.2.0--h15397dd_0

@@ -50,6 +50,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --upstream-length
+  - id: output_kmer_file_path
+    type: string
+    doc: Output or path parameter `output_kmer_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-kmer-file
 outputs:
   - id: output_kmer_file
     type:
@@ -57,7 +63,9 @@ outputs:
       - File
     doc: output kmer file, default stdout
     outputBinding:
-      glob: $(inputs.output_kmer_file)
+      glob: $(inputs.output_kmer_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dsh-bio:3.0--hdfd78af_0

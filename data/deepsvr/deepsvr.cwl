@@ -77,12 +77,20 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threads
+  - id: output_vcf_path
+    type: string
+    doc: Output or path parameter `output_vcf_path`
+    inputBinding:
+      position: 104
+      prefix: --output-vcf
 outputs:
   - id: output_vcf
     type: File
     doc: Output VCF file for predicted variants.
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deepsvr:0.1.0--py_0

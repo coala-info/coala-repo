@@ -23,6 +23,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --symetric
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -30,7 +36,9 @@ outputs:
       - File
     doc: Output file name for dump in .bson format
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/graphembed:0.1.8--h2e3eeea_0

@@ -54,12 +54,20 @@ inputs:
     inputBinding:
       position: 104
       prefix: --window
+  - id: outprefix_path
+    type: string
+    doc: Output or path parameter `outprefix_path`
+    inputBinding:
+      position: 105
+      prefix: --outprefix
 outputs:
   - id: outprefix
     type: File
     doc: output file prefix
     outputBinding:
-      glob: $(inputs.outprefix)
+      glob: $(inputs.outprefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/alfred:0.5.1--h4d20210_0

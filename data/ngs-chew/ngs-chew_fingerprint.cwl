@@ -138,13 +138,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write-vcf
+  - id: output_fingerprint_path
+    type: string
+    doc: Output or path parameter `output_fingerprint_path`
+    inputBinding:
+      position: 102
+      prefix: --output-fingerprint
 outputs:
   - id: output_fingerprint
     type: File
     doc: Path to output .npz file (extension will be added automatically if 
       necessary)
     outputBinding:
-      glob: $(inputs.output_fingerprint)
+      glob: $(inputs.output_fingerprint_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngs-chew:0.9.4--pyhdfd78af_0

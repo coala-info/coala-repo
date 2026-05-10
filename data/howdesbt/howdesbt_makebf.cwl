@@ -132,6 +132,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --uncompressed
+  - id: output_filename_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_filename_path`
+    inputBinding:
+      position: 103
+      prefix: --output-filename
+  - id: stats_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_file_path`
+    inputBinding:
+      position: 104
+      prefix: --stats-file
 outputs:
   - id: output_filename
     type:
@@ -140,7 +156,7 @@ outputs:
     doc: name for bloom filter file (by default this is derived from first 
       sequence filename)
     outputBinding:
-      glob: $(inputs.output_filename)
+      glob: $(inputs.output_filename_path)
   - id: stats_file
     type:
       - 'null'
@@ -148,7 +164,9 @@ outputs:
     doc: write bloom filter stats to a text file (if no filename is given this 
       is derived from the bloom filter filename)
     outputBinding:
-      glob: $(inputs.stats_file)
+      glob: $(inputs.stats_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/howdesbt:2.00.15--h9948957_2

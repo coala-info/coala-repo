@@ -38,6 +38,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: -vcf
+  - id: output_vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_vcf_path`
+    inputBinding:
+      position: 102
+      prefix: --output-vcf
+  - id: ref_slice_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `ref_slice_path`
+    inputBinding:
+      position: 103
+      prefix: --ref-slice
+  - id: tumor_slice_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `tumor_slice_path`
+    inputBinding:
+      position: 104
+      prefix: --tumor-slice
 outputs:
   - id: output_vcf
     type:
@@ -45,21 +69,23 @@ outputs:
       - File
     doc: VCF output file (optional)
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf_path)
   - id: ref_slice
     type:
       - 'null'
       - File
     doc: the sliced Reference BAM to output (optional)
     outputBinding:
-      glob: $(inputs.ref_slice)
+      glob: $(inputs.ref_slice_path)
   - id: tumor_slice
     type:
       - 'null'
       - File
     doc: the sliced Tumor BAM to output (optional)
     outputBinding:
-      glob: $(inputs.tumor_slice)
+      glob: $(inputs.tumor_slice_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/break-point-inspector:1.5--0

@@ -103,6 +103,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --unified_chr_convention
+  - id: output_path_path
+    type: string
+    doc: Output or path parameter `output_path_path`
+    inputBinding:
+      position: 103
+      prefix: --output-path
 outputs:
   - id: output_path
     type:
@@ -110,7 +116,9 @@ outputs:
       - File
     doc: path to the output file.
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/callingcardstools:1.8.1--pyhdfd78af_0

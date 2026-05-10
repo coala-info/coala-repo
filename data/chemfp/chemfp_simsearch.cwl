@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: simsearch
 label: chemfp_simsearch
-doc: "Search a set of target fingerprints for those similar to the query fingerprints.\n
-  \nTool homepage: https://chemfp.com"
+doc: "Search a set of target fingerprints for those similar to the query fingerprints.\n\
+  \ \nTool homepage: https://chemfp.com"
 inputs:
   - id: queries
     type: File
@@ -14,7 +14,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Target fingerprints file (if not provided, queries are searched against themselves)
+    doc: Target fingerprints file (if not provided, queries are searched against
+      themselves)
     inputBinding:
       position: 2
   - id: k_nearest
@@ -57,6 +58,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --times
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -64,7 +71,9 @@ outputs:
       - File
     doc: Write output to FILE
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chemfp:1.6.1--py27h9801fc8_2

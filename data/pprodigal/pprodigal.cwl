@@ -76,6 +76,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tasks
+  - id: nucl_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `nucl_path`
+    inputBinding:
+      position: 102
+      prefix: --nucl
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
+  - id: proteins_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `proteins_path`
+    inputBinding:
+      position: 104
+      prefix: --proteins
+  - id: scorefile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `scorefile_path`
+    inputBinding:
+      position: 105
+      prefix: --scorefile
 outputs:
   - id: proteins
     type:
@@ -83,28 +115,30 @@ outputs:
       - File
     doc: Write protein translations to the selected file.
     outputBinding:
-      glob: $(inputs.proteins)
+      glob: $(inputs.proteins_path)
   - id: nucl
     type:
       - 'null'
       - File
     doc: Write nucleotide sequences of genes to the selected file.
     outputBinding:
-      glob: $(inputs.nucl)
+      glob: $(inputs.nucl_path)
   - id: output
     type:
       - 'null'
       - File
     doc: Specify output file (default writes to stdout).
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: scorefile
     type:
       - 'null'
       - File
     doc: Write all potential genes (with scores) to the selected file.
     outputBinding:
-      glob: $(inputs.scorefile)
+      glob: $(inputs.scorefile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pprodigal:1.0.1--pyhdfd78af_0

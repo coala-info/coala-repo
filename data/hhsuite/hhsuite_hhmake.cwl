@@ -221,12 +221,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_hmm_file_path
+    type: string
+    doc: Output or path parameter `output_hmm_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-hmm-file
 outputs:
   - id: output_hmm_file
     type: File
     doc: HMM file to be written to
     outputBinding:
-      glob: $(inputs.output_hmm_file)
+      glob: $(inputs.output_hmm_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hhsuite:3.3.0--h503566f_15

@@ -116,10 +116,7 @@ inputs:
       - 'null'
       - type: array
         items: float
-    doc: ELOD penetrance values (three floats)
-      - 0.0
-      - 0.0
-      - 1.0
+    doc: ELOD penetrance values (three floats) - 0.0 - 0.0 - 1.0
     inputBinding:
       position: 101
       prefix: --penetrance
@@ -203,6 +200,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -210,7 +213,9 @@ outputs:
       - File
     doc: Output file name
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/swiftlink:1.0--1

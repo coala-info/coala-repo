@@ -123,13 +123,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tombo-model-filename
+  - id: statistics_file_basename_path
+    type: string
+    doc: Output or path parameter `statistics_file_basename_path`
+    inputBinding:
+      position: 102
+      prefix: --statistics-file-basename
 outputs:
   - id: statistics_file_basename
     type: File
     doc: File base name to save base by base statistics from testing. Filenames 
       will be [--statistics-file-basename].[--alternate-bases]?.tombo.stats
     outputBinding:
-      glob: $(inputs.statistics_file_basename)
+      glob: $(inputs.statistics_file_basename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tombo:1.0--py27_0

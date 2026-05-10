@@ -130,6 +130,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --sumz
+  - id: csv_file_path_path
+    type: string
+    doc: Output or path parameter `csv_file_path_path`
+    inputBinding:
+      position: 104
+      prefix: --csv-file-path
 outputs:
   - id: csv_file_path
     type:
@@ -137,7 +143,9 @@ outputs:
       - File
     doc: path to the results file in csv format
     outputBinding:
-      glob: $(inputs.csv_file_path)
+      glob: $(inputs.csv_file_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jass:2.3--pyhca03a8a_0

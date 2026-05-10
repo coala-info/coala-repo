@@ -26,8 +26,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Extra command line parameters passed to the blast program (e.g., '-num_threads
-      20').
+    doc: Extra command line parameters passed to the blast program (e.g., 
+      '-num_threads 20').
     inputBinding:
       position: 101
       prefix: --blast-extra-commandline
@@ -43,7 +43,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum query hit coverage at least one bait must have in each tiling stack.
+    doc: Minimum query hit coverage at least one bait must have in each tiling 
+      stack.
     inputBinding:
       position: 101
       prefix: --blast-min-hit-coverage-of-baits-in-tiling-stack
@@ -59,7 +60,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Maximum E-value for the second best hit. Threshold for ambiguous binding.
+    doc: Maximum E-value for the second best hit. Threshold for ambiguous 
+      binding.
     inputBinding:
       position: 101
       prefix: --blast-second-hit-evalue
@@ -90,8 +92,8 @@ inputs:
       prefix: --ignore_rest
   - id: input_bait_file
     type: File
-    doc: Name of the input bait locus file obtained from BaitFisher or a previous
-      BaitFilter run.
+    doc: Name of the input bait locus file obtained from BaitFisher or a 
+      previous BaitFilter run.
     inputBinding:
       position: 101
       prefix: --input-bait-file-name
@@ -99,8 +101,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specifies the filter mode (e.g., ab, as, fb, fs, blast-a, blast-f, blast-l,
-      blast-c, thin-b, thin-s).
+    doc: Specifies the filter mode (e.g., ab, as, fb, fs, blast-a, blast-f, 
+      blast-l, blast-c, thin-b, thin-s).
     inputBinding:
       position: 101
       prefix: --mode
@@ -136,6 +138,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbosity
+  - id: output_bait_file_path
+    type: string
+    doc: Output or path parameter `output_bait_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-bait-file
 outputs:
   - id: output_bait_file
     type:
@@ -143,7 +151,9 @@ outputs:
       - File
     doc: Name of the output bait file.
     outputBinding:
-      glob: $(inputs.output_bait_file)
+      glob: $(inputs.output_bait_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/baitfisher:v1.2.7git20180107.e92dbf2dfsg-1-deb_cv1

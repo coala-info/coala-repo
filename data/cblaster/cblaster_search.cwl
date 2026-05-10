@@ -298,6 +298,54 @@ inputs:
     inputBinding:
       position: 101
       prefix: --unique
+  - id: binary_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `binary_path`
+    inputBinding:
+      position: 102
+      prefix: --binary
+  - id: blast_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `blast_file_path`
+    inputBinding:
+      position: 103
+      prefix: --blast-file
+  - id: ipg_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `ipg_file_path`
+    inputBinding:
+      position: 104
+      prefix: --ipg-file
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 105
+      prefix: --output
+  - id: plot_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `plot_path`
+    inputBinding:
+      position: 106
+      prefix: --plot
+  - id: recompute_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `recompute_path`
+    inputBinding:
+      position: 107
+      prefix: --recompute
 outputs:
   - id: output
     type:
@@ -305,14 +353,14 @@ outputs:
       - File
     doc: Write results to file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: binary
     type:
       - 'null'
       - File
     doc: Generate a binary table.
     outputBinding:
-      glob: $(inputs.binary)
+      glob: $(inputs.binary_path)
   - id: plot
     type:
       - 'null'
@@ -321,21 +369,21 @@ outputs:
       name, the plot will be served using Python's HTTP server. If a file name 
       is specified, a static HTML file will be generated at that path.
     outputBinding:
-      glob: $(inputs.plot)
+      glob: $(inputs.plot_path)
   - id: blast_file
     type:
       - 'null'
       - File
     doc: Save BLAST/DIAMOND hit table to file
     outputBinding:
-      glob: $(inputs.blast_file)
+      glob: $(inputs.blast_file_path)
   - id: ipg_file
     type:
       - 'null'
       - File
     doc: Save IPG table to file (only if --mode remote)
     outputBinding:
-      glob: $(inputs.ipg_file)
+      glob: $(inputs.ipg_file_path)
   - id: recompute
     type:
       - 'null'
@@ -345,7 +393,9 @@ outputs:
       argument is specified with no value, the session will be filtered but not 
       saved (e.g. for plotting purposes).
     outputBinding:
-      glob: $(inputs.recompute)
+      glob: $(inputs.recompute_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cblaster:1.4.0--pyhdfd78af_0

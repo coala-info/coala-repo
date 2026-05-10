@@ -34,12 +34,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --duplicates
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type: File
     doc: output fasta file
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/rdp-readseq:v2.0.2-6-deb_cv1

@@ -51,6 +51,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: reference_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `reference_out_path`
+    inputBinding:
+      position: 102
+      prefix: --reference-out
+  - id: reference_pickle_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `reference_pickle_out_path`
+    inputBinding:
+      position: 103
+      prefix: --reference-pickle-out
 outputs:
   - id: reference_pickle_out
     type:
@@ -58,14 +74,16 @@ outputs:
       - File
     doc: The reference pickle file output
     outputBinding:
-      glob: $(inputs.reference_pickle_out)
+      glob: $(inputs.reference_pickle_out_path)
   - id: reference_out
     type:
       - 'null'
       - File
     doc: The reference copying matrix output
     outputBinding:
-      glob: $(inputs.reference_out)
+      glob: $(inputs.reference_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pastrami:1.0.1--pyh67a8953_0

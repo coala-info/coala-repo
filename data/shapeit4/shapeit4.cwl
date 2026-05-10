@@ -71,19 +71,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window
+  - id: log_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_path`
+    inputBinding:
+      position: 102
+      prefix: --log
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: Phased haplotypes in VCF/BCF format
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: log
     type:
       - 'null'
       - File
     doc: Log file
     outputBinding:
-      glob: $(inputs.log)
+      glob: $(inputs.log_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/shapeit4:4.2.2--h6959450_5

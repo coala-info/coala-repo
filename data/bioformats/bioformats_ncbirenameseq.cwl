@@ -4,8 +4,8 @@ baseCommand:
   - bioformats
   - ncbirenameseq
 label: bioformats_ncbirenameseq
-doc: "Change NCBI-style sequence names in a FASTA file or plain text tabular file\n
-  \nTool homepage: https://github.com/gtamazian/bioformats"
+doc: "Change NCBI-style sequence names in a FASTA file or plain text tabular file\n\
+  \ \nTool homepage: https://github.com/gtamazian/bioformats"
 inputs:
   - id: input_file
     type: File
@@ -14,14 +14,14 @@ inputs:
       position: 1
   - id: input_format
     type: string
-    doc: a format of sequence names in input (refseq_full, genbank_full, refseq_gi,
-      genbank_gi, refseq, genbank, chr_refseq, chr_genbank)
+    doc: a format of sequence names in input (refseq_full, genbank_full, 
+      refseq_gi, genbank_gi, refseq, genbank, chr_refseq, chr_genbank)
     inputBinding:
       position: 2
   - id: output_format
     type: string
-    doc: a format of sequence names in output (refseq_full, genbank_full, refseq_gi,
-      genbank_gi, refseq, genbank, chr_refseq, chr_genbank, ucsc)
+    doc: a format of sequence names in output (refseq_full, genbank_full, 
+      refseq_gi, genbank_gi, refseq, genbank, chr_refseq, chr_genbank, ucsc)
     inputBinding:
       position: 3
   - id: chr
@@ -36,8 +36,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: the number of the column that contains sequence names to be changed (1 by
-      default)
+    doc: the number of the column that contains sequence names to be changed (1 
+      by default)
     inputBinding:
       position: 104
       prefix: --column
@@ -109,8 +109,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: perform reverse renaming, that is, change original and new names in the renaming
-      table
+    doc: perform reverse renaming, that is, change original and new names in the
+      renaming table
     inputBinding:
       position: 104
       prefix: --revert
@@ -158,7 +158,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: a name of a file containing NCBI accession numbers of unlocalized fragments
+    doc: a name of a file containing NCBI accession numbers of unlocalized 
+      fragments
     inputBinding:
       position: 104
       prefix: --unloc
@@ -166,10 +167,19 @@ inputs:
     type:
       - 'null'
       - File
-    doc: a name of a file containing NCBI accession numbers of unplaced fragments
+    doc: a name of a file containing NCBI accession numbers of unplaced 
+      fragments
     inputBinding:
       position: 104
       prefix: --unpl
+  - id: output_table_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_table_path`
+    inputBinding:
+      position: 105
+      prefix: --output-table
 outputs:
   - id: output_file
     type: File
@@ -182,7 +192,9 @@ outputs:
       - File
     doc: write the renaming table to the specified file
     outputBinding:
-      glob: $(inputs.output_table)
+      glob: $(inputs.output_table_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioformats:0.1.15--py27_0

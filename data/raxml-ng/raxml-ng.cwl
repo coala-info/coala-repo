@@ -81,6 +81,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tree
+  - id: prefix_path
+    type: string
+    doc: Output or path parameter `prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --prefix
 outputs:
   - id: prefix
     type:
@@ -88,7 +94,9 @@ outputs:
       - File
     doc: Prefix for all output files
     outputBinding:
-      glob: $(inputs.prefix)
+      glob: $(inputs.prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/raxml-ng:1.2.2--h6747034_2

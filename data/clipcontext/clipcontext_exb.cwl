@@ -64,12 +64,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tr
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 102
+      prefix: --out-file
 outputs:
   - id: out_file
     type: File
     doc: CLIP peak regions near exon borders output BED file
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/clipcontext:0.7--py_0

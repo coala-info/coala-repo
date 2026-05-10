@@ -32,6 +32,11 @@ inputs:
     inputBinding:
       position: 103
       prefix: --mode
+  - id: output_file_path
+    type: string
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -39,7 +44,9 @@ outputs:
       - File
     doc: Output file path.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/transcov:1.1.3--py_0

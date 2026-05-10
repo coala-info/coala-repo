@@ -16,8 +16,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to Pango Alias file for pango_aliasor. Will download latest file if
-      not supplied.
+    doc: Path to Pango Alias file for pango_aliasor. Will download latest file 
+      if not supplied.
     inputBinding:
       position: 102
       prefix: --alias-file
@@ -33,8 +33,9 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path or URL to collapse file with parental lineages (one per line) to collapse
-      up to. Defaults to collapse file shipped with this version of pango-collapse.
+    doc: Path or URL to collapse file with parental lineages (one per line) to 
+      collapse up to. Defaults to collapse file shipped with this version of 
+      pango-collapse.
     inputBinding:
       position: 102
       prefix: --collapse-file
@@ -76,9 +77,9 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Parental lineage to collapse up to. Can be used multiple times to collapse
-      to multiple lineages. If --collapse-file is supplied parents will be appended
-      to the file.
+    doc: Parental lineage to collapse up to. Can be used multiple times to 
+      collapse to multiple lineages. If --collapse-file is supplied parents will
+      be appended to the file.
     inputBinding:
       position: 102
       prefix: --parent
@@ -86,8 +87,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: If a lineage is not in the collapse file return None instead of the compressed
-      lineage.
+    doc: If a lineage is not in the collapse file return None instead of the 
+      compressed lineage.
     inputBinding:
       position: 102
       prefix: --strict
@@ -95,20 +96,28 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Input file is in TSV format. If not supplied will try to infer from file
-      extension.
+    doc: Input file is in TSV format. If not supplied will try to infer from 
+      file extension.
     inputBinding:
       position: 102
       prefix: --tsv
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
       - 'null'
       - File
-    doc: Path to output CSV/TSV with Lineage column. If not supplied will print to
-      stdout.
+    doc: Path to output CSV/TSV with Lineage column. If not supplied will print 
+      to stdout.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pango-collapse:0.8.2--pyhdfd78af_0

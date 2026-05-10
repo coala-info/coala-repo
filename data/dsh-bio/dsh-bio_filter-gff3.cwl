@@ -44,6 +44,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --script
+  - id: output_gff3_file_path
+    type: string
+    doc: Output or path parameter `output_gff3_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-gff3-file
 outputs:
   - id: output_gff3_file
     type:
@@ -51,7 +57,9 @@ outputs:
       - File
     doc: output GFF3 file, default stdout
     outputBinding:
-      glob: $(inputs.output_gff3_file)
+      glob: $(inputs.output_gff3_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dsh-bio:3.0--hdfd78af_0

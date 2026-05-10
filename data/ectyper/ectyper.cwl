@@ -141,6 +141,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verify
+  - id: output_path
+    type: string
+    doc: Directory location of output files
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -148,7 +154,9 @@ outputs:
       - Directory
     doc: Directory location of output files
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ectyper:2.0.0--pyhdfd78af_4

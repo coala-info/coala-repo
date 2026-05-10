@@ -181,26 +181,52 @@ inputs:
     inputBinding:
       position: 101
       prefix: -w
+  - id: output_graph_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_graph_path`
+    inputBinding:
+      position: 102
+      prefix: --output-graph
+  - id: output_homology_map_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_homology_map_path`
+    inputBinding:
+      position: 103
+      prefix: --output-homology-map
+  - id: output_sequence_paths_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_sequence_paths_path`
+    inputBinding:
+      position: 104
+      prefix: --output-sequence-paths
 outputs:
   - id: output_graph
     type: File
     doc: Output graph
     outputBinding:
-      glob: $(inputs.output_graph)
+      glob: $(inputs.output_graph_path)
   - id: output_sequence_paths
     type:
       - 'null'
       - File
     doc: Output the paths of the input sequences to a file (.gaf)
     outputBinding:
-      glob: $(inputs.output_sequence_paths)
+      glob: $(inputs.output_sequence_paths_path)
   - id: output_homology_map
     type:
       - 'null'
       - File
     doc: Output a list of homologous k-mer locations
     outputBinding:
-      glob: $(inputs.output_homology_map)
+      glob: $(inputs.output_homology_map_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mbg:1.0.17--h06902ac_0

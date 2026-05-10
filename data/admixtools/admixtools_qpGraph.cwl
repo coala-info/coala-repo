@@ -66,6 +66,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: -z
+  - id: graph_dot_name_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `graph_dot_name_path`
+    inputBinding:
+      position: 103
+      prefix: --graph-dot-name
+  - id: out_graph_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_graph_path`
+    inputBinding:
+      position: 104
+      prefix: --out-graph
 outputs:
   - id: out_graph
     type:
@@ -73,14 +89,16 @@ outputs:
       - File
     doc: use <nam> as out graph
     outputBinding:
-      glob: $(inputs.out_graph)
+      glob: $(inputs.out_graph_path)
   - id: graph_dot_name
     type:
       - 'null'
       - File
     doc: use <nam> for graph dot name
     outputBinding:
-      glob: $(inputs.graph_dot_name)
+      glob: $(inputs.graph_dot_name_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0

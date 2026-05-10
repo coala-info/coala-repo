@@ -67,6 +67,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: output_path_path
+    type: string
+    doc: Output or path parameter `output_path_path`
+    inputBinding:
+      position: 104
+      prefix: --output-path
 outputs:
   - id: output_path
     type:
@@ -76,7 +82,9 @@ outputs:
       alongside the input file as <input file>.<INDEX_TYPE> for indices of type "fai"
       and "bai", or in a directory <input file>.snap_index)'
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mimodd:0.1.9--py35_0

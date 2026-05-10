@@ -52,6 +52,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -L
+  - id: fastq_output_path
+    type: string
+    doc: Output or path parameter `fastq_output_path`
+    inputBinding:
+      position: 102
+      prefix: --fastq-output
 outputs:
   - id: fastq_output
     type:
@@ -59,7 +65,9 @@ outputs:
       - File
     doc: Output FASTQ file (if not specified, outputs to stdout)
     outputBinding:
-      glob: $(inputs.fastq_output)
+      glob: $(inputs.fastq_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bazam:1.0.1--0

@@ -132,6 +132,73 @@ inputs:
     inputBinding:
       position: 101
       prefix: --starts
+  - id: cell_lookup_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --cell_lookup
+  - id: mut_lookup_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --mut_lookup
+  - id: pred_cell_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pred_cell_path`
+    inputBinding:
+      position: 104
+      prefix: --pred-cell
+  - id: pred_event_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pred_event_path`
+    inputBinding:
+      position: 105
+      prefix: --pred-event
+  - id: pred_mut_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pred_mut_path`
+    inputBinding:
+      position: 106
+      prefix: --pred-mut
+  - id: tree_path2
+    type:
+      - 'null'
+      - string
+    doc: output file for png (dot) of Phertilizer tree
+    inputBinding:
+      position: 107
+      prefix: --tree
+  - id: tree_list_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 108
+      prefix: --tree_list
+  - id: tree_path_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 109
+      prefix: --tree_path
+  - id: tree_pickle_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 110
+      prefix: --tree_pickle
 outputs:
   - id: pred_mut
     type:
@@ -139,56 +206,56 @@ outputs:
       - File
     doc: output file for mutation clusters
     outputBinding:
-      glob: $(inputs.pred_mut)
+      glob: $(inputs.pred_mut_path)
   - id: pred_cell
     type:
       - 'null'
       - File
     doc: output file cell clusters
     outputBinding:
-      glob: $(inputs.pred_cell)
+      glob: $(inputs.pred_cell_path)
   - id: pred_event
     type:
       - 'null'
       - File
     doc: output file cna genotypes
     outputBinding:
-      glob: $(inputs.pred_event)
+      glob: $(inputs.pred_event_path)
   - id: tree
     type:
       - 'null'
       - File
     doc: output file for png (dot) of Phertilizer tree
     outputBinding:
-      glob: $(inputs.tree)
+      glob: $(inputs.tree_path2)
   - id: tree_pickle
     type:
       - 'null'
       - File
     doc: output pickle of Phertilizer tree
     outputBinding:
-      glob: $(inputs.tree_pickle)
+      glob: $(inputs.tree_pickle_path)
   - id: tree_path
     type:
       - 'null'
       - Directory
     doc: path to directory where pngs of all trees are saved
     outputBinding:
-      glob: $(inputs.tree_path)
+      glob: $(inputs.tree_path_path)
   - id: tree_list
     type:
       - 'null'
       - File
     doc: pickle file to save a ClonalTreeList of all generated trees
     outputBinding:
-      glob: $(inputs.tree_list)
+      glob: $(inputs.tree_list_path)
   - id: cell_lookup
     type:
       - 'null'
       - File
     doc: output file that maps internal cell index to the input cell label
     outputBinding:
-      glob: $(inputs.cell_lookup)
+      glob: $(inputs.cell_lookup_path)
   - id: mut_lookup
     type:
       - 'null'
@@ -196,7 +263,9 @@ outputs:
     doc: output file that maps internal mutation index to the input mutation 
       label
     outputBinding:
-      glob: $(inputs.mut_lookup)
+      glob: $(inputs.mut_lookup_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phertilizer:0.1.0--pyhdfd78af_0

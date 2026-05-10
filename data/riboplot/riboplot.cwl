@@ -66,6 +66,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --transcriptome_fasta
+  - id: html_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `html_file_path`
+    inputBinding:
+      position: 102
+      prefix: --html-file
+  - id: output_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path_path`
+    inputBinding:
+      position: 103
+      prefix: --output-path
 outputs:
   - id: html_file
     type:
@@ -73,14 +89,16 @@ outputs:
       - File
     doc: Output file for results (HTML)
     outputBinding:
-      glob: $(inputs.html_file)
+      glob: $(inputs.html_file_path)
   - id: output_path
     type:
       - 'null'
       - Directory
     doc: Files are saved in this directory
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/riboplot:0.3.1--py27_0

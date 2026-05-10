@@ -49,6 +49,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --minreads
+  - id: out_xml_path
+    type: string
+    doc: Output or path parameter `out_xml_path`
+    inputBinding:
+      position: 102
+      prefix: --out-xml
 outputs:
   - id: out_xml
     type:
@@ -56,7 +62,9 @@ outputs:
       - File
     doc: Path to output xml file name
     outputBinding:
-      glob: $(inputs.out_xml)
+      glob: $(inputs.out_xml_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bamdam:0.4.3--pyhdfd78af_0

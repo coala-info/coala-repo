@@ -86,6 +86,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --singleton
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
+  - id: output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 104
+      prefix: --output-dir
 outputs:
   - id: output
     type:
@@ -93,14 +109,16 @@ outputs:
       - File
     doc: output computed signatures to this file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: output_dir
     type:
       - 'null'
       - Directory
     doc: output computed signatures to this directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bactopia-sketcher:1.0.2--hdfd78af_0

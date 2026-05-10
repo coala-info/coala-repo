@@ -34,12 +34,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --virus_fasta
+  - id: working_dir_path
+    type: string
+    doc: Output or path parameter `working_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --working-dir
 outputs:
   - id: working_dir
     type: Directory
     doc: Output directory path
     outputBinding:
-      glob: $(inputs.working_dir)
+      glob: $(inputs.working_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/psosp:1.1.2--pyhdfd78af_2

@@ -18,9 +18,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: if results are sent to stdout (like when piping to another tool), default
-      behavior is to leave output uncompressed. Use this flag to override and force
-      compression
+    doc: if results are sent to stdout (like when piping to another tool), 
+      default behavior is to leave output uncompressed. Use this flag to 
+      override and force compression
     inputBinding:
       position: 101
       prefix: -forceCompression
@@ -45,8 +45,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: only pull random alignments from within this genomic region. Index file is
-      recommended for better performance, and is used automatically if it exists.
+    doc: only pull random alignments from within this genomic region. Index file
+      is recommended for better performance, and is used automatically if it 
+      exists.
     inputBinding:
       position: 101
       prefix: -region
@@ -54,11 +55,17 @@ inputs:
     type:
       - 'null'
       - int
-    doc: random number generator seed (for repeatable results). Current time is used
-      if no seed value is provided.
+    doc: random number generator seed (for repeatable results). Current time is 
+      used if no seed value is provided.
     inputBinding:
       position: 101
       prefix: -seed
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -66,7 +73,9 @@ outputs:
       - File
     doc: the output BAM file [stdout]
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bamtools:2.5.3--he132191_0

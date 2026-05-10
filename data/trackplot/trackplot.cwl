@@ -742,6 +742,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --y-limit
+  - id: output_path
+    type: string
+    doc: Path to output graph file
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -749,7 +755,9 @@ outputs:
       - File
     doc: Path to output graph file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/trackplot:0.5.7--pyhdfd78af_0

@@ -4,8 +4,8 @@ baseCommand: ncbimeta
 label: ncbimeta
 doc: "The provided text is an error log indicating a failure to run the tool due to
   storage issues ('no space left on device'). Based on the tool's standard documentation,
-  ncbimeta is a tool for retrieving and organizing NCBI metadata into a local database.\n
-  \nTool homepage: https://github.com/ktmeaton/NCBImeta"
+  ncbimeta is a tool for retrieving and organizing NCBI metadata into a local database.\n\
+  \ \nTool homepage: https://github.com/ktmeaton/NCBImeta"
 inputs:
   - id: db
     type:
@@ -55,6 +55,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -62,7 +68,9 @@ outputs:
       - Directory
     doc: Directory for output files
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ncbimeta:0.8.3--pyhdfd78af_0

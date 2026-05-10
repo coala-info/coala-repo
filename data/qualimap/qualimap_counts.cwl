@@ -72,6 +72,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threshold
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -79,7 +85,9 @@ outputs:
       - File
     doc: Output file for PDF report (default value is report.pdf).
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/qualimap:2.3--hdfd78af_0

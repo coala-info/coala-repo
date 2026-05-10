@@ -30,7 +30,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Optional input FASTQ file; if provided, will be used to get quality scores
+    doc: Optional input FASTQ file; if provided, will be used to get quality 
+      scores
     inputBinding:
       position: 101
       prefix: --fq
@@ -64,12 +65,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --min-identity
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type: File
     doc: Output prefix (e.g. 'collapsed')
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cdna_cupcake:29.0.0--py310h79ef01b_0

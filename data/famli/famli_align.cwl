@@ -82,12 +82,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_folder_path
+    type: Directory
+    inputBinding:
+      position: 102
+      prefix: --output-folder
 outputs:
   - id: output_folder
     type: Directory
     doc: 'Folder to place results. (Supported: s3://, or local path).'
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/famli:v1.0_cv2

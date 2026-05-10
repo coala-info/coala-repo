@@ -34,6 +34,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -41,7 +47,9 @@ outputs:
       - Directory
     doc: Path to where to download .fastq files
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/srahunter:0.0.9--pyhdfd78af_0

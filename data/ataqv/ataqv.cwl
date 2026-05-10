@@ -172,6 +172,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: metrics_file_path
+    type: string
+    doc: Output or path parameter `metrics_file_path`
+    inputBinding:
+      position: 104
+      prefix: --metrics-file
 outputs:
   - id: metrics_file
     type:
@@ -180,7 +186,9 @@ outputs:
     doc: The JSON file to which metrics will be written. The default filename 
       will be based on the BAM file, with the suffix ".ataqv.json".
     outputBinding:
-      glob: $(inputs.metrics_file)
+      glob: $(inputs.metrics_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ataqv:1.3.1--py310h50a2689_5

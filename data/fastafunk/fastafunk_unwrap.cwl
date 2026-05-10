@@ -29,6 +29,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: out_fasta_path
+    type: string
+    doc: Output or path parameter `out_fasta_path`
+    inputBinding:
+      position: 103
+      prefix: --out-fasta
 outputs:
   - id: out_fasta
     type:
@@ -36,7 +42,9 @@ outputs:
       - File
     doc: A FASTA file (else writes to stdout)
     outputBinding:
-      glob: $(inputs.out_fasta)
+      glob: $(inputs.out_fasta_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastafunk:0.1.2--pyh5e36f6f_0

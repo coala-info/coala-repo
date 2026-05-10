@@ -373,6 +373,78 @@ inputs:
     inputBinding:
       position: 101
       prefix: --unmapping-min-appraised
+  - id: coassemble_binned_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `coassemble_binned_path`
+    inputBinding:
+      position: 102
+      prefix: --coassemble-binned
+  - id: coassemble_elusive_clusters_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `coassemble_elusive_clusters_path`
+    inputBinding:
+      position: 103
+      prefix: --coassemble-elusive-clusters
+  - id: coassemble_elusive_edges_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `coassemble_elusive_edges_path`
+    inputBinding:
+      position: 104
+      prefix: --coassemble-elusive-edges
+  - id: coassemble_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `coassemble_output_path`
+    inputBinding:
+      position: 105
+      prefix: --coassemble-output
+  - id: coassemble_summary_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `coassemble_summary_path`
+    inputBinding:
+      position: 106
+      prefix: --coassemble-summary
+  - id: coassemble_targets_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `coassemble_targets_path`
+    inputBinding:
+      position: 107
+      prefix: --coassemble-targets
+  - id: coassemble_unbinned_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `coassemble_unbinned_path`
+    inputBinding:
+      position: 108
+      prefix: --coassemble-unbinned
+  - id: coassemblies_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `coassemblies_path`
+    inputBinding:
+      position: 109
+      prefix: --coassemblies
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 110
+      prefix: --output
 outputs:
   - id: coassemble_output
     type:
@@ -380,63 +452,65 @@ outputs:
       - Directory
     doc: Output directory for coassembly results.
     outputBinding:
-      glob: $(inputs.coassemble_output)
+      glob: $(inputs.coassemble_output_path)
   - id: coassemble_unbinned
     type:
       - 'null'
       - Directory
     doc: Directory to store unbinned contigs from coassembly.
     outputBinding:
-      glob: $(inputs.coassemble_unbinned)
+      glob: $(inputs.coassemble_unbinned_path)
   - id: coassemble_binned
     type:
       - 'null'
       - Directory
     doc: Directory to store binned contigs from coassembly.
     outputBinding:
-      glob: $(inputs.coassemble_binned)
+      glob: $(inputs.coassemble_binned_path)
   - id: coassemble_targets
     type:
       - 'null'
       - File
     doc: File to store target sequences from coassembly.
     outputBinding:
-      glob: $(inputs.coassemble_targets)
+      glob: $(inputs.coassemble_targets_path)
   - id: coassemble_elusive_edges
     type:
       - 'null'
       - File
     doc: File to store elusive edges from coassembly.
     outputBinding:
-      glob: $(inputs.coassemble_elusive_edges)
+      glob: $(inputs.coassemble_elusive_edges_path)
   - id: coassemble_elusive_clusters
     type:
       - 'null'
       - File
     doc: File to store elusive clusters from coassembly.
     outputBinding:
-      glob: $(inputs.coassemble_elusive_clusters)
+      glob: $(inputs.coassemble_elusive_clusters_path)
   - id: coassemble_summary
     type:
       - 'null'
       - File
     doc: Summary file for coassembly results.
     outputBinding:
-      glob: $(inputs.coassemble_summary)
+      glob: $(inputs.coassemble_summary_path)
   - id: coassemblies
     type:
       - 'null'
       - Directory
     doc: List of directories containing coassembly results.
     outputBinding:
-      glob: $(inputs.coassemblies)
+      glob: $(inputs.coassemblies_path)
   - id: output
     type:
       - 'null'
       - Directory
     doc: Output directory for results.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/binchicken:0.13.5--pyhdfd78af_0

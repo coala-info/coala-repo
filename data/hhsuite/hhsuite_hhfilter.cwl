@@ -93,19 +93,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: append_outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `append_outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --append-outfile
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 103
+      prefix: --outfile
 outputs:
   - id: outfile
     type: File
     doc: write to output file in A3M format
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
   - id: append_outfile
     type:
       - 'null'
       - File
     doc: append to output file in A3M format
     outputBinding:
-      glob: $(inputs.append_outfile)
+      glob: $(inputs.append_outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hhsuite:3.3.0--h503566f_15

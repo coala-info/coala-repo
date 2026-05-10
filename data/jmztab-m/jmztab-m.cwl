@@ -57,6 +57,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --level
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -65,7 +71,9 @@ outputs:
     doc: Record validation messages into outfile. If not set, print validation 
       messages to stdout/stderr.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/jmztab-m:1.0.6--hdfd78af_1

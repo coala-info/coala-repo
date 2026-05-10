@@ -331,18 +331,26 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Assign the path to BLAST binary files if not added to the path.
+    doc: Assign the path to BLAST binary files if not added to the path. 
       /usr/local/lib/python3.10/site-packages/GetOrganelleDep/linux/ncbi-blast 
       first, then $PATH
     inputBinding:
       position: 101
       prefix: --which-blast
+  - id: output_base_path
+    type: string
+    doc: Output or path parameter `output_base_path`
+    inputBinding:
+      position: 102
+      prefix: --output-base
 outputs:
   - id: output_base
     type: Directory
     doc: Output directory. Overwriting files if directory exists.
     outputBinding:
-      glob: $(inputs.output_base)
+      glob: $(inputs.output_base_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/getorganelle:1.7.7.1--pyhdfd78af_0

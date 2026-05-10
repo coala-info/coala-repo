@@ -88,6 +88,54 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use_all_relations
+  - id: bp_graph_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `bp_graph_file_path`
+    inputBinding:
+      position: 102
+      prefix: --bp-graph-file
+  - id: bp_result_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `bp_result_file_path`
+    inputBinding:
+      position: 103
+      prefix: --bp-result-file
+  - id: cc_graph_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `cc_graph_file_path`
+    inputBinding:
+      position: 104
+      prefix: --cc-graph-file
+  - id: cc_result_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `cc_result_file_path`
+    inputBinding:
+      position: 105
+      prefix: --cc-result-file
+  - id: mf_graph_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `mf_graph_file_path`
+    inputBinding:
+      position: 106
+      prefix: --mf-graph-file
+  - id: mf_result_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `mf_result_file_path`
+    inputBinding:
+      position: 107
+      prefix: --mf-result-file
 outputs:
   - id: mf_result_file
     type:
@@ -95,42 +143,44 @@ outputs:
       - File
     doc: Path to the output MF result file
     outputBinding:
-      glob: $(inputs.mf_result_file)
+      glob: $(inputs.mf_result_file_path)
   - id: bp_result_file
     type:
       - 'null'
       - File
     doc: Path to the output BP result file
     outputBinding:
-      glob: $(inputs.bp_result_file)
+      glob: $(inputs.bp_result_file_path)
   - id: cc_result_file
     type:
       - 'null'
       - File
     doc: Path to the output CC result file
     outputBinding:
-      glob: $(inputs.cc_result_file)
+      glob: $(inputs.cc_result_file_path)
   - id: mf_graph_file
     type:
       - 'null'
       - File
     doc: Path to the output MF graph file
     outputBinding:
-      glob: $(inputs.mf_graph_file)
+      glob: $(inputs.mf_graph_file_path)
   - id: bp_graph_file
     type:
       - 'null'
       - File
     doc: Path to the output BP graph file
     outputBinding:
-      glob: $(inputs.bp_graph_file)
+      glob: $(inputs.bp_graph_file_path)
   - id: cc_graph_file
     type:
       - 'null'
       - File
     doc: Path to the output CC graph file
     outputBinding:
-      glob: $(inputs.cc_graph_file)
+      glob: $(inputs.cc_graph_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/goenrichment:2.0.1--0

@@ -121,6 +121,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --score-fraction-threshold
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
+  - id: sam_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sam_file_path`
+    inputBinding:
+      position: 105
+      prefix: --sam-file
 outputs:
   - id: output_file
     type:
@@ -128,14 +144,16 @@ outputs:
       - File
     doc: write to this file instead of stdout
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: sam_file
     type:
       - 'null'
       - File
     doc: write SAM output to this file
     outputBinding:
-      glob: $(inputs.sam_file)
+      glob: $(inputs.sam_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/k-slam:1.0--1

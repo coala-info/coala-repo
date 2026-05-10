@@ -4,8 +4,8 @@ baseCommand:
   - biopet-sampleconfig
   - cromwellarrays
 label: biopet-sampleconfig_cromwellarrays
-doc: "A tool to generate Cromwell arrays configuration from sample JSON or YAML files.\n
-  \nTool homepage: https://github.com/biopet/sampleconfig"
+doc: "A tool to generate Cromwell arrays configuration from sample JSON or YAML files.\n\
+  \ \nTool homepage: https://github.com/biopet/sampleconfig"
 inputs:
   - id: input_file
     type:
@@ -24,6 +24,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --log_level
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -31,7 +37,9 @@ outputs:
       - File
     doc: Output file, if none given stdout is used
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biopet-sampleconfig:0.3--0

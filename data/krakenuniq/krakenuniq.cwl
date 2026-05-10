@@ -75,6 +75,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
+  - id: report_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_file_path`
+    inputBinding:
+      position: 104
+      prefix: --report-file
 outputs:
   - id: output
     type:
@@ -82,14 +98,16 @@ outputs:
       - File
     doc: Print output to FILE
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: report_file
     type:
       - 'null'
       - File
     doc: Print a report with aggregate counts/clade to FILE
     outputBinding:
-      glob: $(inputs.report_file)
+      glob: $(inputs.report_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/krakenuniq:1.0.4--pl5321h668145b_4

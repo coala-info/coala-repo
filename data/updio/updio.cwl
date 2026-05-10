@@ -17,8 +17,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Comma-separated list of UniProt data columns to retrieve (e.g., 'id,entry
-      name,reviewed').
+    doc: Comma-separated list of UniProt data columns to retrieve (e.g., 
+      'id,entry name,reviewed').
     inputBinding:
       position: 102
       prefix: --columns
@@ -26,7 +26,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: The database type of the input identifiers (e.g., ACC+ID, P_ENTREZGENEID).
+    doc: The database type of the input identifiers (e.g., ACC+ID, 
+      P_ENTREZGENEID).
     inputBinding:
       position: 102
       prefix: --from
@@ -38,6 +39,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --to
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -45,7 +52,9 @@ outputs:
       - File
     doc: Path to the output file where results will be saved.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/updio:1.1.0--hdfd78af_0

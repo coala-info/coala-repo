@@ -279,6 +279,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbosity
+  - id: probabilities_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `probabilities_out_path`
+    inputBinding:
+      position: 102
+      prefix: --probabilities-out
+  - id: stats_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_out_path`
+    inputBinding:
+      position: 103
+      prefix: --stats-out
+  - id: write_sys_error_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_sys_error_path`
+    inputBinding:
+      position: 104
+      prefix: --write-sys-error
 outputs:
   - id: stats_out
     type:
@@ -286,14 +310,14 @@ outputs:
       - File
     doc: Stores the real data statistics for reuse in given file
     outputBinding:
-      glob: $(inputs.stats_out)
+      glob: $(inputs.stats_out_path)
   - id: probabilities_out
     type:
       - 'null'
       - File
     doc: Stores the probabilities estimated by iterative proportional fitting
     outputBinding:
-      glob: $(inputs.probabilities_out)
+      glob: $(inputs.probabilities_out_path)
   - id: write_sys_error
     type:
       - 'null'
@@ -301,7 +325,9 @@ outputs:
     doc: Write the randomly drawn systematic errors to file in fastq format 
       (seq=dominant error, qual=error percentage)
     outputBinding:
-      glob: $(inputs.write_sys_error)
+      glob: $(inputs.write_sys_error_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/reseq:1.1--py310hfb68e69_5

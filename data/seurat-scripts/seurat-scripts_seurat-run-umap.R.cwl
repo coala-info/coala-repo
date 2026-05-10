@@ -11,7 +11,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Dimensions of reduction to use as input. A comma-separated list of integers.
+    doc: Dimensions of reduction to use as input. A comma-separated list of 
+      integers.
     inputBinding:
       position: 101
       prefix: --dims
@@ -57,8 +58,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The number of training epochs to be used in optimizing the low-dimensional
-      embedding.
+    doc: The number of training epochs to be used in optimizing the 
+      low-dimensional embedding.
     inputBinding:
       position: 101
       prefix: --n-epochs
@@ -66,8 +67,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: This determines the number of neighboring points used in local approximations
-      of manifold structure.
+    doc: This determines the number of neighboring points used in local 
+      approximations of manifold structure.
     inputBinding:
       position: 101
       prefix: --n-neighbors
@@ -87,12 +88,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --spread
+  - id: output_object_file_path
+    type: string
+    doc: Output or path parameter `output_object_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-object-file
 outputs:
   - id: output_object_file
     type: File
     doc: File name in which to store the serialized Seurat object.
     outputBinding:
-      glob: $(inputs.output_object_file)
+      glob: $(inputs.output_object_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seurat-scripts:4.4.0--hdfd78af_0

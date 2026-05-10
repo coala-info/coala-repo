@@ -64,6 +64,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --num-threads
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 104
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -71,7 +77,9 @@ outputs:
       - Directory
     doc: The directory in which to write output files
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/berkeley-express:v1.5.1-3b1-deb_cv1

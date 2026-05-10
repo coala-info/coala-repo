@@ -39,14 +39,23 @@ inputs:
     inputBinding:
       position: 103
       prefix: --no-force
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
       - 'null'
       - File
-    doc: The name of the output file. If not specified, output will go to stdout.
+    doc: The name of the output file. If not specified, output will go to 
+      stdout.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/khmer:3.0.0a1--py36hfc679d8_0

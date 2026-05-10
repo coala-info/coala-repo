@@ -146,12 +146,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --trim
+  - id: output_dir_path
+    type: Directory
+    inputBinding:
+      position: 102
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type: Directory
     doc: "Path to the output directory where results will be\nsaved (e.g., /path/to/output/)."
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snakealtpromoter:1.0.5--pyhdfd78af_0

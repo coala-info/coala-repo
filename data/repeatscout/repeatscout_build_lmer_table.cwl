@@ -39,12 +39,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: freq_path
+    type: string
+    doc: Output or path parameter `freq_path`
+    inputBinding:
+      position: 102
+      prefix: --freq
 outputs:
   - id: freq
     type: File
     doc: Output frequency table file
     outputBinding:
-      glob: $(inputs.freq)
+      glob: $(inputs.freq_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/repeatscout:1.0.7--h7b50bb2_1

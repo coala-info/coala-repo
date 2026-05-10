@@ -116,6 +116,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --window-size
+  - id: fst_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `fst_file_path`
+    inputBinding:
+      position: 103
+      prefix: --fst-file
+  - id: genes_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `genes_file_path`
+    inputBinding:
+      position: 104
+      prefix: --genes-file
+  - id: snp_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `snp_file_path`
+    inputBinding:
+      position: 105
+      prefix: --snp-file
 outputs:
   - id: output_file
     type: File
@@ -128,21 +152,23 @@ outputs:
       - File
     doc: Output sex-biased SNPs to this file
     outputBinding:
-      glob: $(inputs.snp_file)
+      glob: $(inputs.snp_file_path)
   - id: fst_file
     type:
       - 'null'
       - File
     doc: Output high FST positions to this file
     outputBinding:
-      glob: $(inputs.fst_file)
+      glob: $(inputs.fst_file_path)
   - id: genes_file
     type:
       - 'null'
       - File
     doc: Output gene metrics to this file (requires a GFF file)
     outputBinding:
-      glob: $(inputs.genes_file)
+      glob: $(inputs.genes_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/psass:3.1.0--hf5e1c6e_4

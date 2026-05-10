@@ -84,6 +84,38 @@ inputs:
     inputBinding:
       position: 102
       prefix: --use-labels
+  - id: drawing_for_chimera_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `drawing_for_chimera_path`
+    inputBinding:
+      position: 103
+      prefix: --drawing-for-chimera
+  - id: drawing_for_jmol_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `drawing_for_jmol_path`
+    inputBinding:
+      position: 104
+      prefix: --drawing-for-jmol
+  - id: drawing_for_pymol_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `drawing_for_pymol_path`
+    inputBinding:
+      position: 105
+      prefix: --drawing-for-pymol
+  - id: drawing_for_scenejs_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `drawing_for_scenejs_path`
+    inputBinding:
+      position: 106
+      prefix: --drawing-for-scenejs
 outputs:
   - id: drawing_for_pymol
     type:
@@ -91,28 +123,30 @@ outputs:
       - File
     doc: file path to output drawing as pymol script
     outputBinding:
-      glob: $(inputs.drawing_for_pymol)
+      glob: $(inputs.drawing_for_pymol_path)
   - id: drawing_for_jmol
     type:
       - 'null'
       - File
     doc: file path to output drawing as jmol script
     outputBinding:
-      glob: $(inputs.drawing_for_jmol)
+      glob: $(inputs.drawing_for_jmol_path)
   - id: drawing_for_scenejs
     type:
       - 'null'
       - File
     doc: file path to output drawing as scenejs script
     outputBinding:
-      glob: $(inputs.drawing_for_scenejs)
+      glob: $(inputs.drawing_for_scenejs_path)
   - id: drawing_for_chimera
     type:
       - 'null'
       - File
     doc: file path to output drawing as chimera bild script
     outputBinding:
-      glob: $(inputs.drawing_for_chimera)
+      glob: $(inputs.drawing_for_chimera_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/voronota:1.29.4602--h5755088_0

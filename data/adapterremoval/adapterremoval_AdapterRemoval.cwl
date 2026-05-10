@@ -395,6 +395,55 @@ inputs:
     inputBinding:
       position: 101
       prefix: --trimwindows
+  - id: discarded_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --discarded
+  - id: output1_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --output1
+  - id: output2_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --output2
+  - id: outputcollapsed_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 105
+      prefix: --outputcollapsed
+  - id: outputcollapsedtruncated_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: --outputcollapsedtruncated
+  - id: settings_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 107
+      prefix: --settings
+  - id: singleton_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 108
+      prefix: --singleton
 outputs:
   - id: settings
     type:
@@ -403,21 +452,21 @@ outputs:
     doc: Output file containing information on the parameters used in the run as
       well as overall statistics.
     outputBinding:
-      glob: $(inputs.settings)
+      glob: $(inputs.settings_path)
   - id: output1
     type:
       - 'null'
       - File
     doc: Output file containing trimmed mate1 reads
     outputBinding:
-      glob: $(inputs.output1)
+      glob: $(inputs.output1_path)
   - id: output2
     type:
       - 'null'
       - File
     doc: Output file containing trimmed mate 2 reads
     outputBinding:
-      glob: $(inputs.output2)
+      glob: $(inputs.output2_path)
   - id: singleton
     type:
       - 'null'
@@ -425,7 +474,7 @@ outputs:
     doc: Output file to which containing paired reads for which the mate has 
       been discarded
     outputBinding:
-      glob: $(inputs.singleton)
+      glob: $(inputs.singleton_path)
   - id: outputcollapsed
     type:
       - 'null'
@@ -434,7 +483,7 @@ outputs:
       read (PE mode) or reads for which the adapter was identified by a minimum 
       overlap.
     outputBinding:
-      glob: $(inputs.outputcollapsed)
+      glob: $(inputs.outputcollapsed_path)
   - id: outputcollapsedtruncated
     type:
       - 'null'
@@ -442,7 +491,7 @@ outputs:
     doc: Collapsed reads which were trimmed due the presence of low-quality or 
       ambiguous nucleotides
     outputBinding:
-      glob: $(inputs.outputcollapsedtruncated)
+      glob: $(inputs.outputcollapsedtruncated_path)
   - id: discarded
     type:
       - 'null'
@@ -450,7 +499,9 @@ outputs:
     doc: Contains reads discarded due to the --minlength, --maxlength or --maxns
       options
     outputBinding:
-      glob: $(inputs.discarded)
+      glob: $(inputs.discarded_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/adapterremoval:2.3.4--pl5321haf24da9_2

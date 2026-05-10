@@ -171,6 +171,12 @@ inputs:
     inputBinding:
       position: 105
       prefix: --weights
+  - id: out_dir_path
+    type: Directory
+    doc: Store training results to files in the given
+    inputBinding:
+      position: 106
+      prefix: --out
 outputs:
   - id: out_dir
     type: Directory
@@ -178,7 +184,9 @@ outputs:
       the trained model,training/validation loss and accuracy values,and the 
       ground truth plus predicted classes per training epoch, if requested.
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deepnog:1.2.4--pyh7e72e81_0

@@ -227,6 +227,38 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threshold-bp
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
+  - id: save_matches_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `save_matches_path`
+    inputBinding:
+      position: 105
+      prefix: --save-matches
+  - id: save_matching_hashes_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `save_matching_hashes_path`
+    inputBinding:
+      position: 106
+      prefix: --save-matching-hashes
+  - id: save_unmatched_hashes_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `save_unmatched_hashes_path`
+    inputBinding:
+      position: 107
+      prefix: --save-unmatched-hashes
 outputs:
   - id: output_file
     type:
@@ -234,7 +266,7 @@ outputs:
       - File
     doc: output CSV containing matches to this file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: save_matches
     type:
       - 'null'
@@ -242,21 +274,23 @@ outputs:
     doc: save all matching signatures from the databases to the specified file 
       or directory
     outputBinding:
-      glob: $(inputs.save_matches)
+      glob: $(inputs.save_matches_path)
   - id: save_unmatched_hashes
     type:
       - 'null'
       - File
     doc: output unmatched query hashes as a signature to the specified file
     outputBinding:
-      glob: $(inputs.save_unmatched_hashes)
+      glob: $(inputs.save_unmatched_hashes_path)
   - id: save_matching_hashes
     type:
       - 'null'
       - File
     doc: output matching query hashes as a signature to the specified file
     outputBinding:
-      glob: $(inputs.save_matching_hashes)
+      glob: $(inputs.save_matching_hashes_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sourmash:4.9.4--hdfd78af_0

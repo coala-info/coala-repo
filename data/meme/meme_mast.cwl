@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mast
 label: meme_mast
-doc: "Motif Alignment and Search Tool (MAST) - searches for motifs in sequence databases.\n
-  \nTool homepage: https://meme-suite.org"
+doc: "Motif Alignment and Search Tool (MAST) - searches for motifs in sequence databases.\n\
+  \ \nTool homepage: https://meme-suite.org"
 inputs:
   - id: motif_file
     type: File
@@ -51,7 +51,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: in results use <df> as database name; ignored when option -dblist is specified
+    doc: in results use <df> as database name; ignored when option -dblist is 
+      specified
     inputBinding:
       position: 103
       prefix: -df
@@ -99,8 +100,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: in results use <dl> as link to search sequence names; ignored when -dblist
-      specified
+    doc: in results use <dl> as link to search sequence names; ignored when 
+      -dblist specified
     inputBinding:
       position: 103
       prefix: -dl
@@ -116,7 +117,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: use only motifs with E-values (or p-values) less than or equal to <thresh>
+    doc: use only motifs with E-values (or p-values) less than or equal to 
+      <thresh>
     inputBinding:
       position: 103
       prefix: -mev
@@ -218,6 +220,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: -w
+  - id: output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 104
+      prefix: --output-dir
+  - id: output_dir_overwrite_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_dir_overwrite_path`
+    inputBinding:
+      position: 105
+      prefix: --output-dir-overwrite
 outputs:
   - id: output_dir
     type:
@@ -225,14 +243,16 @@ outputs:
       - Directory
     doc: directory to output mast results
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
   - id: output_dir_overwrite
     type:
       - 'null'
       - Directory
     doc: directory to output mast results with overwriting allowed
     outputBinding:
-      glob: $(inputs.output_dir_overwrite)
+      glob: $(inputs.output_dir_overwrite_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meme:5.5.9--pl5321h1ca524f_0

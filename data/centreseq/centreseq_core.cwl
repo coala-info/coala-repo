@@ -81,6 +81,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: outdir_path
+    type: string
+    doc: Root directory to store all output files. If
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type: Directory
@@ -89,7 +95,9 @@ outputs:
       the existing Prokka output directory, but will overwrite all other 
       existing result files.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/centreseq:0.3.8--py_0

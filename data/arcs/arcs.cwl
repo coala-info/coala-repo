@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: arcs
 label: arcs
-doc: "ARCS/ARKS utilizes linked read alignments or kmers for scaffolding draft genomes.\n
-  \nTool homepage: https://github.com/bcgsc/arcs"
+doc: "ARCS/ARKS utilizes linked read alignments or kmers for scaffolding draft genomes.\n\
+  \ \nTool homepage: https://github.com/bcgsc/arcs"
 inputs:
   - id: alignment_files
     type:
@@ -177,8 +177,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: output scaffolds pairing TSV with number of barcode links supporting each
-      of the 4 possible orientation
+    doc: output scaffolds pairing TSV with number of barcode links supporting 
+      each of the 4 possible orientation
     inputBinding:
       position: 102
       prefix: --pair
@@ -206,6 +206,46 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: barcode_counts_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `barcode_counts_file_path`
+    inputBinding:
+      position: 103
+      prefix: --barcode-counts-file
+  - id: dist_tsv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `dist_tsv_path`
+    inputBinding:
+      position: 104
+      prefix: --dist-tsv
+  - id: graph_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `graph_file_path`
+    inputBinding:
+      position: 105
+      prefix: --graph-file
+  - id: samples_tsv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `samples_tsv_path`
+    inputBinding:
+      position: 106
+      prefix: --samples-tsv
+  - id: tsv_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `tsv_output_path`
+    inputBinding:
+      position: 107
+      prefix: --tsv-output
 outputs:
   - id: graph_file
     type:
@@ -213,35 +253,37 @@ outputs:
       - File
     doc: write the ABySS dist.gv to FILE
     outputBinding:
-      glob: $(inputs.graph_file)
+      glob: $(inputs.graph_file_path)
   - id: tsv_output
     type:
       - 'null'
       - File
     doc: write graph in TSV format to FILE
     outputBinding:
-      glob: $(inputs.tsv_output)
+      glob: $(inputs.tsv_output_path)
   - id: barcode_counts_file
     type:
       - 'null'
       - File
     doc: write number of reads per barcode to FILE
     outputBinding:
-      glob: $(inputs.barcode_counts_file)
+      glob: $(inputs.barcode_counts_file_path)
   - id: dist_tsv
     type:
       - 'null'
       - File
     doc: write min/max distance estimates to FILE
     outputBinding:
-      glob: $(inputs.dist_tsv)
+      glob: $(inputs.dist_tsv_path)
   - id: samples_tsv
     type:
       - 'null'
       - File
     doc: write intra-contig distance/barcode samples to FILE
     outputBinding:
-      glob: $(inputs.samples_tsv)
+      glob: $(inputs.samples_tsv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/arcs:1.2.8--hdcf5f25_0

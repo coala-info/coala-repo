@@ -32,6 +32,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --result_group
+  - id: output_path_path
+    type: string
+    doc: Output or path parameter `output_path_path`
+    inputBinding:
+      position: 102
+      prefix: --output-path
 outputs:
   - id: output_path
     type:
@@ -40,7 +46,9 @@ outputs:
     doc: Location of the output directory, where the downloadable files are 
       written to.
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mg-toolkit:0.10.4--pyhdfd78af_0

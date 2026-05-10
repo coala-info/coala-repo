@@ -77,6 +77,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --sample-field
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 103
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -84,7 +90,9 @@ outputs:
       - File
     doc: path to output tab-separated file
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/slivar:0.3.3--h5f107b1_0

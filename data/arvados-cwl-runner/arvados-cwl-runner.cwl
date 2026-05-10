@@ -21,7 +21,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: When invoked with --submit --wait, always submit a runner to manage the workflow
+    doc: When invoked with --submit --wait, always submit a runner to manage the
+      workflow
     inputBinding:
       position: 103
       prefix: --always-submit-runner
@@ -85,7 +86,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: When submitting a workflow, defer downloading HTTP URLs to workflow launch.
+    doc: When submitting a workflow, defer downloading HTTP URLs to workflow 
+      launch.
     inputBinding:
       position: 103
       prefix: --defer-downloads
@@ -141,8 +143,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: If a workflow step fails due to preemption, re-submit with the `preemptible`
-      flag disabled.
+    doc: If a workflow step fails due to preemption, re-submit with the 
+      `preemptible` flag disabled.
     inputBinding:
       position: 103
       prefix: --enable-resubmit-non-preemptible
@@ -166,7 +168,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Time to wait for a Javascript expression to evaluate before giving an error
+    doc: Time to wait for a Javascript expression to evaluate before giving an 
+      error
     inputBinding:
       position: 103
       prefix: --eval-timeout
@@ -182,7 +185,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Ignore Docker image version when deciding whether to reuse past containers.
+    doc: Ignore Docker image version when deciding whether to reuse past 
+      containers.
     inputBinding:
       position: 103
       prefix: --ignore-docker-for-reuse
@@ -190,8 +194,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: If N > 0, intermediate output collections will be trashed N seconds after
-      creation.
+    doc: If N > 0, intermediate output collections will be trashed N seconds 
+      after creation.
     inputBinding:
       position: 103
       prefix: --intermediate-output-ttl
@@ -199,8 +203,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specify comma separated list of storage classes to be used when saving intermediate
-      workflow output to Keep.
+    doc: Specify comma separated list of storage classes to be used when saving 
+      intermediate workflow output to Keep.
     inputBinding:
       position: 103
       prefix: --intermediate-storage-classes
@@ -224,8 +228,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Where Arvados has more than one Docker image of the same name, use image
-      from the Docker instance on the submitting node.
+    doc: Where Arvados has more than one Docker image of the same name, use 
+      image from the Docker instance on the submitting node.
     inputBinding:
       position: 103
       prefix: --match-submitter-images
@@ -321,8 +325,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: To assist copying, print a list of Keep collections that this workflow depends
-      on.
+    doc: To assist copying, print a list of Keep collections that this workflow 
+      depends on.
     inputBinding:
       position: 103
       prefix: --print-keep-deps
@@ -354,8 +358,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum number of times to retry server requests that encounter temporary
-      failures (e.g., server down).
+    doc: Maximum number of times to retry server requests that encounter 
+      temporary failures (e.g., server down).
     inputBinding:
       position: 103
       prefix: --retries
@@ -371,8 +375,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specify comma separated list of storage classes to be used when saving final
-      workflow output to Keep.
+    doc: Specify comma separated list of storage classes to be used when saving 
+      final workflow output to Keep.
     inputBinding:
       position: 103
       prefix: --storage-classes
@@ -388,8 +392,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Update and commit to supplied container request instead of creating a new
-      one.
+    doc: Update and commit to supplied container request instead of creating a 
+      new one.
     inputBinding:
       position: 103
       prefix: --submit-request-uuid
@@ -461,8 +465,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: A comma separated list of URL query parameters that should be ignored when
-      storing HTTP URLs in Keep.
+    doc: A comma separated list of URL query parameters that should be ignored 
+      when storing HTTP URLs in Keep.
     inputBinding:
       position: 103
       prefix: --varying-url-params
@@ -482,6 +486,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --wait
+  - id: outdir_path
+    type: string
+    doc: Output directory, default current directory
+    inputBinding:
+      position: 104
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -489,7 +499,9 @@ outputs:
       - Directory
     doc: Output directory, default current directory
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/arvados-cwl-runner:3.1.2--pyhdfd78af_0

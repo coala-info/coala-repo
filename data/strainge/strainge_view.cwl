@@ -61,6 +61,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose-vcf
+  - id: summary_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `summary_file_path`
+    inputBinding:
+      position: 103
+      prefix: --summary-file
+  - id: vcf_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `vcf_file_path`
+    inputBinding:
+      position: 104
+      prefix: --vcf-file
 outputs:
   - id: summary_file
     type:
@@ -69,7 +85,7 @@ outputs:
     doc: Output a TSV with a summary of variant calling statistics to the given 
       file.
     outputBinding:
-      glob: $(inputs.summary_file)
+      glob: $(inputs.summary_file_path)
   - id: vcf_file
     type:
       - 'null'
@@ -78,7 +94,9 @@ outputs:
       good insertion/deletion calling mechanism, but some information on 
       possible indels is written to the VCF file.
     outputBinding:
-      glob: $(inputs.vcf_file)
+      glob: $(inputs.vcf_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/strainge:1.3.9--py38h737be40_0

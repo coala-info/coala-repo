@@ -121,6 +121,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_basename_path
+    type: string
+    doc: Output or path parameter `output_basename_path`
+    inputBinding:
+      position: 102
+      prefix: --output-basename
 outputs:
   - id: output_basename
     type:
@@ -129,7 +135,9 @@ outputs:
     doc: 'outfile basename: [SE] <name>.fastq[.gz] or [PE] <name>.{1,2,S}.fastq[.gz];
       .gz is added when using option -z'
     outputBinding:
-      glob: $(inputs.output_basename)
+      glob: $(inputs.output_basename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/alientrimmer:2.1--hdfd78af_0

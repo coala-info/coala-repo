@@ -114,12 +114,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_bam_path
+    type: string
+    doc: Output or path parameter `output_bam_path`
+    inputBinding:
+      position: 102
+      prefix: --output-bam
 outputs:
   - id: output_bam
     type: File
     doc: output bam file contains unfiltered alignments
     outputBinding:
-      glob: $(inputs.output_bam)
+      glob: $(inputs.output_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snaptools:1.4.8--py_0

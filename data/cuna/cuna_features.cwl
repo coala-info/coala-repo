@@ -110,12 +110,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window
+  - id: output_path
+    type: string
+    doc: Path to folder where intermediate and final files will
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: Path to folder where features will be stored
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cuna:0.3.0--pyhdfd78af_0

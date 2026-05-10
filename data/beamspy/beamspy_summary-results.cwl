@@ -65,19 +65,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --single-row
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: pdf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pdf_path`
+    inputBinding:
+      position: 103
+      prefix: --pdf
 outputs:
   - id: output
     type: File
     doc: Output file for the summary
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: pdf
     type:
       - 'null'
       - File
     doc: Output pdf file for the summary plots
     outputBinding:
-      glob: $(inputs.pdf)
+      glob: $(inputs.pdf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/beamspy:1.2.0--pyhdfd78af_0

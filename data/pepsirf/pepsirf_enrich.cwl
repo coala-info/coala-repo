@@ -12,8 +12,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: A character or string to use to join replicate sample names in order to create
-      output file names.
+    doc: A character or string to use to join replicate sample names in order to
+      create output file names.
     inputBinding:
       position: 101
       prefix: --join_on
@@ -21,9 +21,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: By default samples with any replicates below the raw read threshold will
-      be dropped; when this flag is included, replicates with reads above the threshold
-      will be kept.
+    doc: By default samples with any replicates below the raw read threshold 
+      will be dropped; when this flag is included, replicates with reads above 
+      the threshold will be kept.
     inputBinding:
       position: 101
       prefix: --low_raw_reads
@@ -39,8 +39,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: If more than two replicates are evaluated, stop filenames from including
-      more than 3 samplenames (e.g., 'A~B~C~1more').
+    doc: If more than two replicates are evaluated, stop filenames from 
+      including more than 3 samplenames (e.g., 'A~B~C~1more').
     inputBinding:
       position: 101
       prefix: --output_filename_truncate
@@ -48,8 +48,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The minimum total raw count across all peptides for a sample to be included
-      in the analysis.
+    doc: The minimum total raw count across all peptides for a sample to be 
+      included in the analysis.
     inputBinding:
       position: 101
       prefix: --raw_score_constraint
@@ -57,8 +57,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Optionally, a tab-delimited matrix containing raw counts can be provided.
-      If included, '--raw_score_constraint' must also be specified.
+    doc: Optionally, a tab-delimited matrix containing raw counts can be 
+      provided. If included, '--raw_score_constraint' must also be specified.
     inputBinding:
       position: 101
       prefix: --raw_scores
@@ -66,8 +66,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: The name of the tab-delimited file containing sample information, denoting
-      which samples, in the input matrices, are replicates.
+    doc: The name of the tab-delimited file containing sample information, 
+      denoting which samples, in the input matrices, are replicates.
     inputBinding:
       position: 101
       prefix: --samples
@@ -75,35 +75,62 @@ inputs:
     type:
       - 'null'
       - File
-    doc: The name of a tab-delimited file containing one tab-delimited matrix filename
-      and threshold(s), one per line. If using more than one threshold for a given
-      matrix, then separate by comma.
+    doc: The name of a tab-delimited file containing one tab-delimited matrix 
+      filename and threshold(s), one per line. If using more than one threshold 
+      for a given matrix, then separate by comma.
     inputBinding:
       position: 101
       prefix: --threshhold_file
+  - id: enrichment_failure_reason_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `enrichment_failure_reason_path`
+    inputBinding:
+      position: 102
+      prefix: --enrichment-failure-reason
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `logfile_path`
+    inputBinding:
+      position: 103
+      prefix: --logfile
+  - id: output_directory_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 104
+      prefix: --output-directory
 outputs:
   - id: enrichment_failure_reason
     type:
       - 'null'
       - File
-    doc: File containing reasons why specific sample sets did not result in enriched
-      peptide files. Output to the same directory as enriched peptide files.
+    doc: File containing reasons why specific sample sets did not result in 
+      enriched peptide files. Output to the same directory as enriched peptide 
+      files.
     outputBinding:
-      glob: $(inputs.enrichment_failure_reason)
+      glob: $(inputs.enrichment_failure_reason_path)
   - id: output_directory
     type:
       - 'null'
       - Directory
     doc: Directory name to which output files will be written.
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
   - id: logfile
     type:
       - 'null'
       - File
     doc: Designated file to which the module's processes are logged.
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pepsirf:1.7.1--h077b44d_0

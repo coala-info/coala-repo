@@ -73,6 +73,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tile-size
+  - id: output_path_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output-path
 outputs:
   - id: output_path
     type: Directory
@@ -80,7 +85,9 @@ outputs:
       as segmentation_specification.json and where the final segmentation 
       results will be saved.
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0

@@ -37,6 +37,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --number_of_processes
+  - id: output_psm_path
+    type: string
+    doc: The file name of the output PSM table.
+    inputBinding:
+      position: 102
+      prefix: --output_psm
 outputs:
   - id: output_psm
     type:
@@ -44,7 +50,9 @@ outputs:
       - File
     doc: The file name of the output PSM table.
     outputBinding:
-      glob: $(inputs.output_psm)
+      glob: $(inputs.output_psm_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pypgatk:0.0.24--pyhdfd78af_0

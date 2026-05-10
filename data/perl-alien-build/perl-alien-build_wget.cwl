@@ -107,6 +107,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: -U
+  - id: log_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 103
+      prefix: --log-file
+  - id: output_document_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_document_path`
+    inputBinding:
+      position: 104
+      prefix: --output-document
 outputs:
   - id: output_document
     type:
@@ -114,14 +130,16 @@ outputs:
       - File
     doc: Save to FILE ('-' for stdout)
     outputBinding:
-      glob: $(inputs.output_document)
+      glob: $(inputs.output_document_path)
   - id: log_file
     type:
       - 'null'
       - File
     doc: Log messages to FILE
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-alien-build:2.84--pl5321h7b50bb2_1

@@ -71,6 +71,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --transfer_learning
+  - id: file_pred_out_path
+    type: string
+    doc: Output or path parameter `file_pred_out_path`
+    inputBinding:
+      position: 102
+      prefix: --file-pred-out
 outputs:
   - id: file_pred_out
     type:
@@ -78,7 +84,9 @@ outputs:
       - File
     doc: path to write output file with predictions
     outputBinding:
-      glob: $(inputs.file_pred_out)
+      glob: $(inputs.file_pred_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deeplc:3.1.13--pyhdfd78af_0

@@ -41,8 +41,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum variant frequency to call heterogeneous SNPs and multi-base indels
-      (default 0.1)
+    doc: Minimum variant frequency to call heterogeneous SNPs and multi-base 
+      indels (default 0.1)
     inputBinding:
       position: 101
       prefix: --min-vf
@@ -50,8 +50,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum variant frequency to call heterogeneous single-base indels (default
-      0.2)
+    doc: Minimum variant frequency to call heterogeneous single-base indels 
+      (default 0.2)
     inputBinding:
       position: 101
       prefix: --min-vf-si
@@ -79,6 +79,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tempdir
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -86,7 +92,9 @@ outputs:
       - File
     doc: Output VCF file name, stdout by default
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbhoover:1.1.0--pyhdfd78af_1

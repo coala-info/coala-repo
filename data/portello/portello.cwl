@@ -74,6 +74,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: remapped_read_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `remapped_read_output_path`
+    inputBinding:
+      position: 102
+      prefix: --remapped-read-output
+  - id: unassembled_read_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unassembled_read_output_path`
+    inputBinding:
+      position: 103
+      prefix: --unassembled-read-output
 outputs:
   - id: remapped_read_output
     type: File
@@ -84,13 +100,15 @@ outputs:
       to an assembly contig region which is not mappable to the reference, they should
       not be remapped to the reference sequence."
     outputBinding:
-      glob: $(inputs.remapped_read_output)
+      glob: $(inputs.remapped_read_output_path)
   - id: unassembled_read_output
     type: File
     doc: "Filename to use for unmapped reads which are not (well) mapped to any assembly
       contig\n\n          This file is written in BAM format"
     outputBinding:
-      glob: $(inputs.unassembled_read_output)
+      glob: $(inputs.unassembled_read_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/portello:0.7.0--h9ee0642_0

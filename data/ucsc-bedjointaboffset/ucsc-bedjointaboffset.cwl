@@ -24,6 +24,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --offset
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -32,7 +38,9 @@ outputs:
     doc: The output file to write the joined BED data to. If not specified, the 
       output will be written to standard output.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-bedjointaboffset:377--h199ee4e_0

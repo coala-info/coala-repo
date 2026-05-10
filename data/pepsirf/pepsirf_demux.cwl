@@ -28,7 +28,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Flexible index file provided as an alternative to --index1 and --index2.
+    doc: Flexible index file provided as an alternative to --index1 and 
+      --index2.
     inputBinding:
       position: 101
       prefix: --fif
@@ -44,7 +45,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Fasta-formatted file containing forward and (potentially) reverse index sequences.
+    doc: Fasta-formatted file containing forward and (potentially) reverse index
+      sequences.
     inputBinding:
       position: 101
       prefix: --index
@@ -52,7 +54,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Positional information for index1 (start, length, mismatches). E.g., '12,12,1'.
+    doc: Positional information for index1 (start, length, mismatches). E.g., 
+      '12,12,1'.
     inputBinding:
       position: 101
       prefix: --index1
@@ -66,8 +69,8 @@ inputs:
       prefix: --index2
   - id: input_r1
     type: File
-    doc: Fastq-formatted file containing reads with DNA tags. Can be uncompressed
-      or gzipped if Zlib support is enabled.
+    doc: Fastq-formatted file containing reads with DNA tags. Can be 
+      uncompressed or gzipped if Zlib support is enabled.
     inputBinding:
       position: 101
       prefix: --input_r1
@@ -75,8 +78,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Optional index-only fastq file. If not supplied, only 'index1' will be used
-      to identify samples.
+    doc: Optional index-only fastq file. If not supplied, only 'index1' will be 
+      used to identify samples.
     inputBinding:
       position: 101
       prefix: --input_r2
@@ -84,8 +87,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Fasta-formatted file containing reference DNA tags. If not included, reference-independent
-      demultiplexing is performed.
+    doc: Fasta-formatted file containing reference DNA tags. If not included, 
+      reference-independent demultiplexing is performed.
     inputBinding:
       position: 101
       prefix: --library
@@ -109,8 +112,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The minimum average phred-scaled quality score for the DNA tag portion of
-      a read.
+    doc: The minimum average phred-scaled quality score for the DNA tag portion 
+      of a read.
     inputBinding:
       position: 101
       prefix: --phred_min_score
@@ -126,7 +129,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: A tab-delimited list of samples with a header row and one sample per line.
+    doc: A tab-delimited list of samples with a header row and one sample per 
+      line.
     inputBinding:
       position: 101
       prefix: --samplelist
@@ -142,8 +146,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Header for the index 1 and additional optional index column names in the
-      samplelist.
+    doc: Header for the index 1 and additional optional index column names in 
+      the samplelist.
     inputBinding:
       position: 101
       prefix: --sindex
@@ -163,6 +167,62 @@ inputs:
     inputBinding:
       position: 101
       prefix: --translate_aggregates
+  - id: aa_counts_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `aa_counts_path`
+    inputBinding:
+      position: 102
+      prefix: --aa-counts
+  - id: diagnostic_info_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `diagnostic_info_path`
+    inputBinding:
+      position: 103
+      prefix: --diagnostic-info
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `logfile_path`
+    inputBinding:
+      position: 104
+      prefix: --logfile
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 105
+      prefix: --output
+  - id: replicate_info_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `replicate_info_path`
+    inputBinding:
+      position: 106
+      prefix: --replicate-info
+  - id: trunc_info_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `trunc_info_output_path`
+    inputBinding:
+      position: 107
+      prefix: --trunc-info-output
+  - id: unmapped_reads_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unmapped_reads_output_path`
+    inputBinding:
+      position: 108
+      prefix: --unmapped-reads-output
 outputs:
   - id: output
     type:
@@ -170,51 +230,54 @@ outputs:
       - File
     doc: Name for the output counts file (tab-delimited).
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: aa_counts
     type:
       - 'null'
       - File
     doc: Name for an output file that will contain aggregated aa-level counts.
     outputBinding:
-      glob: $(inputs.aa_counts)
+      glob: $(inputs.aa_counts_path)
   - id: diagnostic_info
     type:
       - 'null'
       - File
-    doc: Include this flag with an output file name to collect diagnostic information
-      on read pair matches.
+    doc: Include this flag with an output file name to collect diagnostic 
+      information on read pair matches.
     outputBinding:
-      glob: $(inputs.diagnostic_info)
+      glob: $(inputs.diagnostic_info_path)
   - id: logfile
     type:
       - 'null'
       - File
     doc: Designated file to which the module's processes are logged.
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
   - id: replicate_info
     type:
       - 'null'
       - File
-    doc: Include this flag with an output file name to provide a summary of replicates.
+    doc: Include this flag with an output file name to provide a summary of 
+      replicates.
     outputBinding:
-      glob: $(inputs.replicate_info)
+      glob: $(inputs.replicate_info_path)
   - id: unmapped_reads_output
     type:
       - 'null'
       - File
-    doc: Include this flag with a .fastq output file name to create a file containing
-      unmapped reads.
+    doc: Include this flag with a .fastq output file name to create a file 
+      containing unmapped reads.
     outputBinding:
-      glob: $(inputs.unmapped_reads_output)
+      glob: $(inputs.unmapped_reads_output_path)
   - id: trunc_info_output
     type:
       - 'null'
       - Directory
     doc: Name of directory to output truncated sequence information.
     outputBinding:
-      glob: $(inputs.trunc_info_output)
+      glob: $(inputs.trunc_info_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pepsirf:1.7.1--h077b44d_0

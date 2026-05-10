@@ -21,6 +21,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fastq-path
+  - id: sequence_length_file_path
+    type: string
+    doc: Output or path parameter `sequence_length_file_path`
+    inputBinding:
+      position: 102
+      prefix: --sequence-length-file
 outputs:
   - id: sequence_length_file
     type:
@@ -28,7 +34,9 @@ outputs:
       - File
     doc: output file of sequence lengths
     outputBinding:
-      glob: $(inputs.sequence_length_file)
+      glob: $(inputs.sequence_length_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dsh-bio:3.0--hdfd78af_0

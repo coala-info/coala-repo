@@ -67,6 +67,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --write-pin
+  - id: output_directory_path
+    type: Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 104
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type:
@@ -75,7 +81,9 @@ outputs:
     doc: Path where search and quant results will be written. Overrides the 
       directory specified in the configuration file.
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sage-proteomics:0.14.7--hc1c3326_2

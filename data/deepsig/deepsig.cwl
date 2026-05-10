@@ -32,12 +32,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: outf_path
+    type: string
+    doc: Output or path parameter `outf_path`
+    inputBinding:
+      position: 102
+      prefix: --outf
 outputs:
   - id: outf
     type: File
     doc: The output file
     outputBinding:
-      glob: $(inputs.outf)
+      glob: $(inputs.outf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deepsig:1.2.5--pyhca03a8a_1

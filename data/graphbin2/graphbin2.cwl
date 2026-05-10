@@ -88,12 +88,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threshold
+  - id: output_path
+    type: string
+    doc: path to the output folder  [required]
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: path to the output folder
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/graphbin2:1.3.3--pyh7e72e81_0

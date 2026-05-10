@@ -12,6 +12,12 @@ inputs:
     doc: Formatted fastq file
     inputBinding:
       position: 1
+  - id: umi_histogram_path
+    type: string
+    doc: Output or path parameter `umi_histogram_path`
+    inputBinding:
+      position: 101
+      prefix: --umi-histogram
 outputs:
   - id: umi_histogram
     type:
@@ -19,7 +25,9 @@ outputs:
       - File
     doc: Output a count of each UMI for each cellular barcode to this file.
     outputBinding:
-      glob: $(inputs.umi_histogram)
+      glob: $(inputs.umi_histogram_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/umis:1.0.9--py310h1fe012e_5

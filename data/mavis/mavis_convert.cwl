@@ -50,12 +50,20 @@ inputs:
       specificity.
     inputBinding:
       position: 101
+  - id: outputfile_path
+    type: string
+    doc: Output or path parameter `outputfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outputfile
 outputs:
   - id: outputfile
     type: File
     doc: path to the outputfile
     outputBinding:
-      glob: $(inputs.outputfile)
+      glob: $(inputs.outputfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mavis:3.1.2--pyhdfd78af_0

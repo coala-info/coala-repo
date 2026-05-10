@@ -50,6 +50,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: -w
+  - id: output_base_breakdown_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_base_breakdown_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-base-breakdown-file
+  - id: output_fastx_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_fastx_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-fastx-file
+  - id: output_length_counts_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_length_counts_file_path`
+    inputBinding:
+      position: 105
+      prefix: --output-length-counts-file
 outputs:
   - id: output_fastx_file
     type:
@@ -57,7 +81,7 @@ outputs:
       - File
     doc: output fastx statistics (requires an output filename)
     outputBinding:
-      glob: $(inputs.output_fastx_file)
+      glob: $(inputs.output_fastx_file_path)
   - id: output_base_breakdown_file
     type:
       - 'null'
@@ -65,14 +89,16 @@ outputs:
     doc: output base breakdown by per phred quality at every cycle. It sets 
       cylemax to longest read length
     outputBinding:
-      glob: $(inputs.output_base_breakdown_file)
+      glob: $(inputs.output_base_breakdown_file_path)
   - id: output_length_counts_file
     type:
       - 'null'
       - File
     doc: Output length counts
     outputBinding:
-      glob: $(inputs.output_length_counts_file)
+      glob: $(inputs.output_length_counts_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ea-utils:1.1.2.779--h9dd4a16_0

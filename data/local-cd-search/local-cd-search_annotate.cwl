@@ -83,6 +83,14 @@ inputs:
     inputBinding:
       position: 103
       prefix: --tmp-dir
+  - id: sites_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sites_output_path`
+    inputBinding:
+      position: 104
+      prefix: --sites-output
 outputs:
   - id: output_file
     type: File
@@ -95,7 +103,9 @@ outputs:
       - File
     doc: Path to write functional site annotations.
     outputBinding:
-      glob: $(inputs.sites_output)
+      glob: $(inputs.sites_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/local-cd-search:0.3.1--pyhdfd78af_0

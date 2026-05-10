@@ -71,12 +71,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --test-code
+  - id: output_fp_path
+    type: string
+    doc: Output or path parameter `output_fp_path`
+    inputBinding:
+      position: 102
+      prefix: --output-fp
 outputs:
   - id: output_fp
     type: File
     doc: output filepath to store generated Python code
     outputBinding:
-      glob: $(inputs.output_fp)
+      glob: $(inputs.output_fp_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyqi:0.3.2--py27_1

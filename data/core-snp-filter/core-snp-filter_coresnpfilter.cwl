@@ -26,6 +26,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --exclude_invariant
+  - id: invariant_counts_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `invariant_counts_path`
+    inputBinding:
+      position: 103
+      prefix: --invariant-counts
+  - id: table_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `table_path`
+    inputBinding:
+      position: 104
+      prefix: --table
 outputs:
   - id: table
     type:
@@ -33,14 +49,17 @@ outputs:
       - File
     doc: Create a table with per-site information
     outputBinding:
-      glob: $(inputs.table)
+      glob: $(inputs.table_path)
   - id: invariant_counts
     type:
       - 'null'
       - File
-    doc: Output invariant site counts (suitable for IQ-TREE -fconst) and nothing else
+    doc: Output invariant site counts (suitable for IQ-TREE -fconst) and nothing
+      else
     outputBinding:
-      glob: $(inputs.invariant_counts)
+      glob: $(inputs.invariant_counts_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/core-snp-filter:0.2.0--h3ab6199_2

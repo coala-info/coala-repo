@@ -58,6 +58,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --pe-sam
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -65,7 +71,9 @@ outputs:
       - File
     doc: Prefix for output files.
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/frc:5b3f53e--boost1.64_0

@@ -26,6 +26,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 103
+      prefix: --out-file
 outputs:
   - id: out_file
     type:
@@ -34,7 +40,9 @@ outputs:
     doc: The file to write the graph representation to. If not specified, prints
       to stdout.
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sbol-utilities:1.0a16--pyhdfd78af_0

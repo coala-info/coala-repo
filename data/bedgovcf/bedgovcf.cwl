@@ -48,6 +48,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --skip
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -55,7 +61,9 @@ outputs:
       - File
     doc: The location to the output VCF file, defaults to stdout
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedgovcf:0.1.1--h9ee0642_1

@@ -16,7 +16,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to a BAM or CRAM file to be indexed. Omit if standard input (pipe).
+    doc: Path to a BAM or CRAM file to be indexed. Omit if standard input 
+      (pipe).
     inputBinding:
       position: 101
       prefix: --input-file
@@ -28,6 +29,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --log-level
+  - id: index_file_path
+    type: string
+    doc: Output or path parameter `index_file_path`
+    inputBinding:
+      position: 102
+      prefix: --index-file
 outputs:
   - id: index_file
     type:
@@ -35,7 +42,9 @@ outputs:
       - File
     doc: Write index to this file.
     outputBinding:
-      glob: $(inputs.index_file)
+      glob: $(inputs.index_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cramtools:3.0.b127--0

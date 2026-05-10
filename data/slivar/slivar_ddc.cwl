@@ -41,6 +41,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --info-fields
+  - id: html_path
+    type: string
+    doc: Output or path parameter `html_path`
+    inputBinding:
+      position: 104
+      prefix: --html
 outputs:
   - id: html
     type:
@@ -48,7 +54,9 @@ outputs:
       - File
     doc: path to output file
     outputBinding:
-      glob: $(inputs.html)
+      glob: $(inputs.html_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/slivar:0.3.3--h5f107b1_0

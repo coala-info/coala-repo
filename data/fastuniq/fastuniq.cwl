@@ -30,20 +30,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: -i
+  - id: output_1_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_1_path`
+    inputBinding:
+      position: 102
+      prefix: --output-1
+  - id: output_2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_2_path`
+    inputBinding:
+      position: 103
+      prefix: --output-2
 outputs:
   - id: output_1
     type: File
     doc: Output file for the first read of paired-end data or for single-end 
       data.
     outputBinding:
-      glob: $(inputs.output_1)
+      glob: $(inputs.output_1_path)
   - id: output_2
     type:
       - 'null'
       - File
     doc: Output file for the second read of paired-end data.
     outputBinding:
-      glob: $(inputs.output_2)
+      glob: $(inputs.output_2_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastuniq:1.1--h7b50bb2_2

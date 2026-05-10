@@ -170,11 +170,7 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Plots to generate.
-      - overview
-      - samples
-      - heatmap
-      - correlation
+    doc: Plots to generate. - overview - samples - heatmap - correlation
     inputBinding:
       position: 101
       prefix: --output-plots
@@ -184,8 +180,7 @@ inputs:
       - type: array
         items: string
     doc: Taxonomic ranks to generate visualizations. Use 'default' to use 
-      entries from the table directly.
-      - default
+      entries from the table directly. - default
     inputBinding:
       position: 101
       prefix: --ranks
@@ -307,6 +302,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --values
+  - id: output_html_path
+    type: string
+    doc: Output or path parameter `output_html_path`
+    inputBinding:
+      position: 102
+      prefix: --output-html
 outputs:
   - id: output_html
     type:
@@ -314,7 +315,9 @@ outputs:
       - File
     doc: Filename of the HTML report output.
     outputBinding:
-      glob: $(inputs.output_html)
+      glob: $(inputs.output_html_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/grimer:1.1.0--pyhdfd78af_0

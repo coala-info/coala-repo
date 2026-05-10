@@ -146,6 +146,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --use-model-cache
+  - id: output_h5ad_file_path
+    type: string
+    doc: Output or path parameter `output_h5ad_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-h5ad-file
 outputs:
   - id: output_h5ad_file
     type:
@@ -155,7 +161,9 @@ outputs:
       If this option is not provided, the input file will be overwritten to 
       include the new annotations; in this case you must specify --overwrite.
     outputBinding:
-      glob: $(inputs.output_h5ad_file)
+      glob: $(inputs.output_h5ad_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cellxgene:1.3.0--pyhdfd78af_0

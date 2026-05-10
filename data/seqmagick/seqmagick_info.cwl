@@ -37,6 +37,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 103
+      prefix: --out-file
 outputs:
   - id: out_file
     type:
@@ -44,7 +50,9 @@ outputs:
       - File
     doc: 'Output destination. Default: STDOUT'
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqmagick:0.8.6--pyhdfd78af_0

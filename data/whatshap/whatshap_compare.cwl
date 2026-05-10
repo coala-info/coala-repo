@@ -56,6 +56,48 @@ inputs:
     inputBinding:
       position: 102
       prefix: --sample
+  - id: longest_block_tsv_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --longest-block-tsv
+  - id: plot_blocksizes_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --plot-blocksizes
+  - id: plot_sum_of_blocksizes_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 105
+      prefix: --plot-sum-of-blocksizes
+  - id: switch_error_bed_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: --switch-error-bed
+  - id: tsv_multiway_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 107
+      prefix: --tsv-multiway
+  - id: tsv_pairwise_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 108
+      prefix: --tsv-pairwise
 outputs:
   - id: tsv_pairwise
     type:
@@ -64,7 +106,7 @@ outputs:
     doc: Filename to write comparison results from pair-wise comparison to 
       (tab-separated).
     outputBinding:
-      glob: $(inputs.tsv_pairwise)
+      glob: $(inputs.tsv_pairwise_path)
   - id: tsv_multiway
     type:
       - 'null'
@@ -72,7 +114,7 @@ outputs:
     doc: Filename to write comparison results from multiway comparison to 
       (tab-separated). Only for diploid VCFs.
     outputBinding:
-      glob: $(inputs.tsv_multiway)
+      glob: $(inputs.tsv_multiway_path)
   - id: switch_error_bed
     type:
       - 'null'
@@ -80,7 +122,7 @@ outputs:
     doc: Write BED file with switch error positions to given filename. Only for 
       diploid VCFs.
     outputBinding:
-      glob: $(inputs.switch_error_bed)
+      glob: $(inputs.switch_error_bed_path)
   - id: plot_blocksizes
     type:
       - 'null'
@@ -88,7 +130,7 @@ outputs:
     doc: Write PDF file with a block length histogram to given filename 
       (requires matplotlib).
     outputBinding:
-      glob: $(inputs.plot_blocksizes)
+      glob: $(inputs.plot_blocksizes_path)
   - id: plot_sum_of_blocksizes
     type:
       - 'null'
@@ -96,7 +138,7 @@ outputs:
     doc: Write PDF file with a block length histogram in which the height of 
       each bar corresponds to the sum of lengths.
     outputBinding:
-      glob: $(inputs.plot_sum_of_blocksizes)
+      glob: $(inputs.plot_sum_of_blocksizes_path)
   - id: longest_block_tsv
     type:
       - 'null'
@@ -104,7 +146,9 @@ outputs:
     doc: Write position-wise agreement of longest joint blocks in each 
       chromosome to tab-separated file. Only for diploid VCFs.
     outputBinding:
-      glob: $(inputs.longest_block_tsv)
+      glob: $(inputs.longest_block_tsv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/whatshap:2.8--py39h2de1943_0

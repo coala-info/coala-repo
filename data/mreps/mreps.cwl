@@ -108,6 +108,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -win
+  - id: xml_output_file_path
+    type: string
+    doc: Output or path parameter `xml_output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --xml-output-file
 outputs:
   - id: xml_output_file
     type:
@@ -115,7 +121,9 @@ outputs:
       - File
     doc: outputs to <file> in xml format
     outputBinding:
-      glob: $(inputs.xml_output_file)
+      glob: $(inputs.xml_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mreps:2.6.01--h7b50bb2_6

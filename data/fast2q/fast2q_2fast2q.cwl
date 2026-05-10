@@ -172,6 +172,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --us
+  - id: output_directory_path
+    type: Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 102
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type:
@@ -179,7 +185,9 @@ outputs:
       - Directory
     doc: The full path to the output directory
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fast2q:2.8.1--pyh7e72e81_0

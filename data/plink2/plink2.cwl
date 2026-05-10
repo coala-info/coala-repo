@@ -86,8 +86,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Exclude variants with missing call frequencies greater than threshold (default
-      0.1).
+    doc: Exclude variants with missing call frequencies greater than threshold 
+      (default 0.1).
     inputBinding:
       position: 101
       prefix: --geno
@@ -103,8 +103,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Exclude variants with Hardy-Weinberg equilibrium exact test p-values less
-      than threshold.
+    doc: Exclude variants with Hardy-Weinberg equilibrium exact test p-values 
+      less than threshold.
     inputBinding:
       position: 101
       prefix: --hwe
@@ -121,7 +121,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Exclude variants with allele frequency lower than threshold (default 0.01).
+    doc: Exclude variants with allele frequency lower than threshold (default 
+      0.01).
     inputBinding:
       position: 101
       prefix: --maf
@@ -153,8 +154,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Exclude samples with missing call frequencies greater than threshold (default
-      0.1).
+    doc: Exclude samples with missing call frequencies greater than threshold 
+      (default 0.1).
     inputBinding:
       position: 101
       prefix: --mind
@@ -239,6 +240,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -246,7 +253,9 @@ outputs:
       - File
     doc: Specify prefix for output files.
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plink2:2.0.0a.6.9--h9948957_0

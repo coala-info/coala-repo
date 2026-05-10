@@ -85,12 +85,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use-dimred
+  - id: output_igraph_object_path
+    type: string
+    doc: Output or path parameter `output_igraph_object_path`
+    inputBinding:
+      position: 102
+      prefix: --output-igraph-object
 outputs:
   - id: output_igraph_object
     type: File
     doc: Path to the output igraph object in RDS format.
     outputBinding:
-      glob: $(inputs.output_igraph_object)
+      glob: $(inputs.output_igraph_object_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scran-cli:v0.0.1--hdfd78af_1

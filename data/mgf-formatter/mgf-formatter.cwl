@@ -33,6 +33,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --no_split_multiple_charge_states
+  - id: output_path
+    type: string
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -40,7 +45,9 @@ outputs:
       - File
     doc: Output file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mgf-formatter:1.0.0--py27_1

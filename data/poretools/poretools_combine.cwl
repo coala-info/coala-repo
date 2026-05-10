@@ -19,12 +19,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --quiet
+  - id: output_tar_path
+    type: string
+    doc: Output or path parameter `output_tar_path`
+    inputBinding:
+      position: 103
+      prefix: --output-tar
 outputs:
   - id: output_tar
     type: File
     doc: The name of the output TAR archive for the set of FAST5 files.
     outputBinding:
-      glob: $(inputs.output_tar)
+      glob: $(inputs.output_tar_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/poretools:0.6.1a0--py27_0

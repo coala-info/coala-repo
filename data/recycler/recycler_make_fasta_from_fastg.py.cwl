@@ -11,6 +11,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --graph
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -18,7 +24,9 @@ outputs:
       - File
     doc: output file name for FASTA of cycles
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/recycler:0.7--py27h24bf2e0_2

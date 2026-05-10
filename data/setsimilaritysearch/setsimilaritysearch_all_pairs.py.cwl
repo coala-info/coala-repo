@@ -48,13 +48,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --similarity-threshold
+  - id: output_pairs_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output-pairs
 outputs:
   - id: output_pairs
     type: File
     doc: Output file with each line a (SetID_X, SetID_Y, Size_X, Size_Y, 
       Similarity) tuple.
     outputBinding:
-      glob: $(inputs.output_pairs)
+      glob: $(inputs.output_pairs_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/setsimilaritysearch:1.0.0

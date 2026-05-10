@@ -92,7 +92,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Map all subreads of a zmw to where the longest full pass subread aligned.
+    doc: Map all subreads of a zmw to where the longest full pass subread 
+      aligned.
     inputBinding:
       position: 103
       prefix: --concordant
@@ -124,8 +125,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specify a policy to treat multiple hits from [all, allbest, random, randombest,
-      leftmost]
+    doc: Specify a policy to treat multiple hits from [all, allbest, random, 
+      randombest, leftmost]
     inputBinding:
       position: 103
       prefix: --hitPolicy
@@ -157,8 +158,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Do not add anchors from a position if it matches to more than 'm' locations
-      in the target.
+    doc: Do not add anchors from a position if it matches to more than 'm' 
+      locations in the target.
     inputBinding:
       position: 103
       prefix: --maxAnchorsPerPosition
@@ -206,7 +207,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Report alignments only if their percentage accuracy is greater than minAccuracy.
+    doc: Report alignments only if their percentage accuracy is greater than 
+      minAccuracy.
     inputBinding:
       position: 103
       prefix: --minPctAccuracy
@@ -214,7 +216,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Report alignments only if their percentage similarity is greater than minPctSimilarity.
+    doc: Report alignments only if their percentage similarity is greater than 
+      minPctSimilarity.
     inputBinding:
       position: 103
       prefix: --minPctSimilarity
@@ -222,7 +225,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Do not align subreads whose quality score in region table is less than m.
+    doc: Do not align subreads whose quality score in region table is less than 
+      m.
     inputBinding:
       position: 103
       prefix: --minRawSubreadScore
@@ -294,8 +298,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Place gaps consistently in alignments of a read as alignments of its reverse
-      complementary sequence.
+    doc: Place gaps consistently in alignments of a read as alignments of its 
+      reverse complementary sequence.
     inputBinding:
       position: 103
       prefix: --placeGapConsistently
@@ -311,7 +315,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Reconstitutes polymerase reads, omitting LQ regions (used with --noSplitSubreads).
+    doc: Reconstitutes polymerase reads, omitting LQ regions (used with 
+      --noSplitSubreads).
     inputBinding:
       position: 103
       prefix: --polymerase
@@ -343,7 +348,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Read in a read-region table in HDF format for masking portions of reads (DEPRECATED).
+    doc: Read in a read-region table in HDF format for masking portions of reads
+      (DEPRECATED).
     inputBinding:
       position: 103
       prefix: --regionTable
@@ -391,7 +397,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Proportion of reads to randomly subsample (expressed as a decimal) and align.
+    doc: Proportion of reads to randomly subsample (expressed as a decimal) and 
+      align.
     inputBinding:
       position: 103
       prefix: --subsample
@@ -399,8 +406,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Use the suffix array 'sa' for detecting matches between the reads and the
-      reference.
+    doc: Use the suffix array 'sa' for detecting matches between the reads and 
+      the reference.
     inputBinding:
       position: 103
       prefix: --sa
@@ -440,7 +447,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Align the circular consensus, and report only the alignment of the ccs sequence.
+    doc: Align the circular consensus, and report only the alignment of the ccs 
+      sequence.
     inputBinding:
       position: 103
       prefix: --useccsdenovo
@@ -452,6 +460,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --useQuality
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 104
+      prefix: --out
+  - id: unaligned_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unaligned_path`
+    inputBinding:
+      position: 105
+      prefix: --unaligned
 outputs:
   - id: out
     type:
@@ -459,14 +483,16 @@ outputs:
       - File
     doc: Write output to 'out'.
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: unaligned
     type:
       - 'null'
       - File
     doc: Output reads that are not aligned to 'file'
     outputBinding:
-      glob: $(inputs.unaligned)
+      glob: $(inputs.unaligned_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blasr:5.3.5--0

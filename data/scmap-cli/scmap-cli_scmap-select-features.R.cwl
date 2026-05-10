@@ -18,6 +18,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --n-features
+  - id: output_object_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_object_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-object-file
+  - id: output_plot_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_plot_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-plot-file
 outputs:
   - id: output_plot_file
     type:
@@ -27,13 +43,15 @@ outputs:
       log(expression) versus log(dropout) distribution for all genes. Selected 
       features are highlighted with the red colour.
     outputBinding:
-      glob: $(inputs.output_plot_file)
+      glob: $(inputs.output_plot_file_path)
   - id: output_object_file
     type: File
     doc: File name in which to store serialized R object of type 
       'SingleCellExperiment'.
     outputBinding:
-      glob: $(inputs.output_object_file)
+      glob: $(inputs.output_object_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scmap-cli:0.1.0--hdfd78af_0

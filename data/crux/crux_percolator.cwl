@@ -468,6 +468,78 @@ inputs:
     inputBinding:
       position: 102
       prefix: --xml-in
+  - id: decoy_results_peptides_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `decoy_results_peptides_file_path`
+    inputBinding:
+      position: 103
+      prefix: --decoy-results-peptides-file
+  - id: decoy_results_proteins_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `decoy_results_proteins_file_path`
+    inputBinding:
+      position: 104
+      prefix: --decoy-results-proteins-file
+  - id: decoy_results_psms_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `decoy_results_psms_file_path`
+    inputBinding:
+      position: 105
+      prefix: --decoy-results-psms-file
+  - id: results_peptides_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `results_peptides_file_path`
+    inputBinding:
+      position: 106
+      prefix: --results-peptides-file
+  - id: results_proteins_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `results_proteins_file_path`
+    inputBinding:
+      position: 107
+      prefix: --results-proteins-file
+  - id: results_psms_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `results_psms_file_path`
+    inputBinding:
+      position: 108
+      prefix: --results-psms-file
+  - id: tab_out_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `tab_out_file_path`
+    inputBinding:
+      position: 109
+      prefix: --tab-out-file
+  - id: weights_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `weights_file_path`
+    inputBinding:
+      position: 110
+      prefix: --weights-file
+  - id: xml_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `xml_output_file_path`
+    inputBinding:
+      position: 111
+      prefix: --xml-output-file
 outputs:
   - id: xml_output_file
     type:
@@ -476,21 +548,21 @@ outputs:
     doc: Path to xml-output (pout) file. pout.xml is where the output will be 
       written (ensure to have read and write access on the file).
     outputBinding:
-      glob: $(inputs.xml_output_file)
+      glob: $(inputs.xml_output_file_path)
   - id: tab_out_file
     type:
       - 'null'
       - File
     doc: Output computed features to given file in pin-tab format.
     outputBinding:
-      glob: $(inputs.tab_out_file)
+      glob: $(inputs.tab_out_file_path)
   - id: weights_file
     type:
       - 'null'
       - File
     doc: Output final weights to given file
     outputBinding:
-      glob: $(inputs.weights_file)
+      glob: $(inputs.weights_file_path)
   - id: results_peptides_file
     type:
       - 'null'
@@ -498,7 +570,7 @@ outputs:
     doc: Output tab delimited results of peptides to a file instead of stdout 
       (will be ignored if used with -U option)
     outputBinding:
-      glob: $(inputs.results_peptides_file)
+      glob: $(inputs.results_peptides_file_path)
   - id: decoy_results_peptides_file
     type:
       - 'null'
@@ -506,21 +578,21 @@ outputs:
     doc: Output tab delimited results for decoy peptides into a file (will be 
       ignored if used with -U option)
     outputBinding:
-      glob: $(inputs.decoy_results_peptides_file)
+      glob: $(inputs.decoy_results_peptides_file_path)
   - id: results_psms_file
     type:
       - 'null'
       - File
     doc: Output tab delimited results of PSMs to a file instead of stdout
     outputBinding:
-      glob: $(inputs.results_psms_file)
+      glob: $(inputs.results_psms_file_path)
   - id: decoy_results_psms_file
     type:
       - 'null'
       - File
     doc: Output tab delimited results for decoy PSMs into a file
     outputBinding:
-      glob: $(inputs.decoy_results_psms_file)
+      glob: $(inputs.decoy_results_psms_file_path)
   - id: results_proteins_file
     type:
       - 'null'
@@ -528,7 +600,7 @@ outputs:
     doc: Output tab delimited results of proteins to a file instead of stdout 
       (Only valid if option -A or -f is active)
     outputBinding:
-      glob: $(inputs.results_proteins_file)
+      glob: $(inputs.results_proteins_file_path)
   - id: decoy_results_proteins_file
     type:
       - 'null'
@@ -536,7 +608,9 @@ outputs:
     doc: Output tab delimited results for decoy proteins into a file (Only valid
       if option -A or -f is active)
     outputBinding:
-      glob: $(inputs.decoy_results_proteins_file)
+      glob: $(inputs.decoy_results_proteins_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/crux:v3.2_cv3

@@ -224,26 +224,52 @@ inputs:
     inputBinding:
       position: 101
       prefix: --unrooted
+  - id: colour_scheme_outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `colour_scheme_outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --colour-scheme-outfile
+  - id: out_plot_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_plot_path`
+    inputBinding:
+      position: 103
+      prefix: --out-plot
+  - id: output_arrays_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_arrays_path`
+    inputBinding:
+      position: 104
+      prefix: --output-arrays
 outputs:
   - id: out_plot
     type: File
     doc: output plot file name
     outputBinding:
-      glob: $(inputs.out_plot)
+      glob: $(inputs.out_plot_path)
   - id: output_arrays
     type:
       - 'null'
       - File
     doc: file to store analyzed arrays and hypothetical ancestors
     outputBinding:
-      glob: $(inputs.output_arrays)
+      glob: $(inputs.output_arrays_path)
   - id: colour_scheme_outfile
     type:
       - 'null'
       - File
     doc: output file to store json format colour schemes
     outputBinding:
-      glob: $(inputs.colour_scheme_outfile)
+      glob: $(inputs.colour_scheme_outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cctk:1.0.3--pyhdfd78af_0

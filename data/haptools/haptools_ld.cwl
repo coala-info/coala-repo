@@ -107,6 +107,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: --verbosity
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 105
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -114,7 +120,9 @@ outputs:
       - File
     doc: A .hap file containing haplotypes and their LD with TARGET
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haptools:0.6.2--pyhdfd78af_0

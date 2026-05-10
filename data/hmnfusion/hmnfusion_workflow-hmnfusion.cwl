@@ -49,12 +49,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --name
+  - id: output_hmnfusion_vcf_path
+    type: string
+    doc: Output or path parameter `output_hmnfusion_vcf_path`
+    inputBinding:
+      position: 102
+      prefix: --output-hmnfusion-vcf
 outputs:
   - id: output_hmnfusion_vcf
     type: File
     doc: Vcf file output
     outputBinding:
-      glob: $(inputs.output_hmnfusion_vcf)
+      glob: $(inputs.output_hmnfusion_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmnfusion:1.5.1--pyh7e72e81_0

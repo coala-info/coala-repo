@@ -18,6 +18,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -udcDir
+  - id: key_list_path
+    type: string
+    doc: Output or path parameter `key_list_path`
+    inputBinding:
+      position: 103
+      prefix: --key-list
 outputs:
   - id: key_list
     type:
@@ -25,7 +31,9 @@ outputs:
       - File
     doc: 'file to write a key list, two columns: md5sum and sequenceName'
     outputBinding:
-      glob: $(inputs.key_list)
+      glob: $(inputs.key_list_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-twobitdup:482--h0b57e2e_0

@@ -532,6 +532,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write-lineage-networks
+  - id: output_path
+    type: string
+    doc: Prefix for output files
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -539,7 +545,9 @@ outputs:
       - File
     doc: Prefix for output files
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/poppunk:2.7.8--py310h4d0eb5b_0

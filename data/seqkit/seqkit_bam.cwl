@@ -300,6 +300,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --top-size
+  - id: img_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `img_file_path`
+    inputBinding:
+      position: 102
+      prefix: --img-file
+  - id: out_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 103
+      prefix: --out-file
+  - id: top_bam_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `top_bam_file_path`
+    inputBinding:
+      position: 104
+      prefix: --top-bam-file
 outputs:
   - id: img_file
     type:
@@ -307,21 +331,23 @@ outputs:
       - File
     doc: save histogram to this PDF/image file
     outputBinding:
-      glob: $(inputs.img_file)
+      glob: $(inputs.img_file_path)
   - id: top_bam_file
     type:
       - 'null'
       - File
     doc: save the top -? records to this bam file
     outputBinding:
-      glob: $(inputs.top_bam_file)
+      glob: $(inputs.top_bam_file_path)
   - id: out_file
     type:
       - 'null'
       - File
     doc: out file ("-" for stdout, suffix .gz for gzipped out)
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqkit:2.12.0--he881be0_1

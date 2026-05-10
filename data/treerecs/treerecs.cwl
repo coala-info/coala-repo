@@ -17,8 +17,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: input alignment file. Must contain the pll substitution model and paths to
-      multiple alignments.
+    doc: input alignment file. Must contain the pll substitution model and paths
+      to multiple alignments.
     inputBinding:
       position: 101
       prefix: --alignments
@@ -185,8 +185,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: specify branch support thresholds to use while contracting gene trees (EXPRESSION
-      | quantiles[N]).
+    doc: specify branch support thresholds to use while contracting gene trees 
+      (EXPRESSION | quantiles[N]).
     inputBinding:
       position: 101
       prefix: --threshold
@@ -206,6 +206,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: outdir_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -213,7 +218,9 @@ outputs:
       - Directory
     doc: output directory.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/treerecs:1.2--h9f5acd7_3

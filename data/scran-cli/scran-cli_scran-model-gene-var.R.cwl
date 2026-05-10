@@ -93,6 +93,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --subset-row
+  - id: output_geneVar_table_path
+    type: string
+    doc: Output or path parameter `output_geneVar_table_path`
+    inputBinding:
+      position: 102
+      prefix: --output-geneVar-table
 outputs:
   - id: output_geneVar_table
     type:
@@ -101,7 +107,9 @@ outputs:
     doc: 'Path to the table where each row corresponds to a gene in sce, and contains:
       mean, total var, bio var, tech var, p.value and FDR.'
     outputBinding:
-      glob: $(inputs.output_geneVar_table)
+      glob: $(inputs.output_geneVar_table_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scran-cli:v0.0.1--hdfd78af_1

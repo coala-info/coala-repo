@@ -106,6 +106,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --weights
+  - id: couplings_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `couplings_file_path`
+    inputBinding:
+      position: 103
+      prefix: --couplings-file
+  - id: output_param_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_param_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-param-file
+  - id: save_weights_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `save_weights_path`
+    inputBinding:
+      position: 105
+      prefix: --save-weights
 outputs:
   - id: couplings_file
     type:
@@ -113,21 +137,23 @@ outputs:
       - File
     doc: Save coupling scores to file (text)
     outputBinding:
-      glob: $(inputs.couplings_file)
+      glob: $(inputs.couplings_file_path)
   - id: output_param_file
     type:
       - 'null'
       - File
     doc: Save estimated parameters to file (binary)
     outputBinding:
-      glob: $(inputs.output_param_file)
+      glob: $(inputs.output_param_file_path)
   - id: save_weights
     type:
       - 'null'
       - File
     doc: Save sequence weights to file (text)
     outputBinding:
-      glob: $(inputs.save_weights)
+      glob: $(inputs.save_weights_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plmc:20221105--hec16e2b_0

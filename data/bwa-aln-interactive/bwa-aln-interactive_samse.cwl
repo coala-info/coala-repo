@@ -38,6 +38,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: -r
+  - id: output_sam_path
+    type: string
+    doc: Output or path parameter `output_sam_path`
+    inputBinding:
+      position: 105
+      prefix: --output-sam
 outputs:
   - id: output_sam
     type:
@@ -45,7 +51,9 @@ outputs:
       - File
     doc: Output SAM file
     outputBinding:
-      glob: $(inputs.output_sam)
+      glob: $(inputs.output_sam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bwa-aln-interactive:0.7.18--h577a1d6_2

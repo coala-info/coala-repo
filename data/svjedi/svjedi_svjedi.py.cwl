@@ -91,6 +91,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -98,7 +104,9 @@ outputs:
       - File
     doc: genotype output file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svjedi:1.1.6--hdfd78af_1

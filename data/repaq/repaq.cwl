@@ -123,6 +123,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verify
+  - id: json_compare_result_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `json_compare_result_path`
+    inputBinding:
+      position: 102
+      prefix: --json-compare-result
+  - id: output_file1_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file1_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file1
+  - id: output_file2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file2_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file2
 outputs:
   - id: output_file1
     type:
@@ -130,14 +154,14 @@ outputs:
       - File
     doc: output file name
     outputBinding:
-      glob: $(inputs.output_file1)
+      glob: $(inputs.output_file1_path)
   - id: output_file2
     type:
       - 'null'
       - File
     doc: read2 output file name when decoding to paired-end FASTQ files
     outputBinding:
-      glob: $(inputs.output_file2)
+      glob: $(inputs.output_file2_path)
   - id: json_compare_result
     type:
       - 'null'
@@ -145,7 +169,9 @@ outputs:
     doc: the file to store the comparison result. This is optional since the 
       result is also printed on STDOUT.
     outputBinding:
-      glob: $(inputs.json_compare_result)
+      glob: $(inputs.json_compare_result_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/repaq:0.5.1--hcb620b3_1

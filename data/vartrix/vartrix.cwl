@@ -115,6 +115,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf
+  - id: out_barcodes_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_barcodes_path`
+    inputBinding:
+      position: 102
+      prefix: --out-barcodes
+  - id: out_matrix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_matrix_path`
+    inputBinding:
+      position: 103
+      prefix: --out-matrix
+  - id: out_variants_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_variants_path`
+    inputBinding:
+      position: 104
+      prefix: --out-variants
+  - id: ref_matrix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `ref_matrix_path`
+    inputBinding:
+      position: 105
+      prefix: --ref-matrix
 outputs:
   - id: out_barcodes
     type:
@@ -123,14 +155,14 @@ outputs:
     doc: Output cell barcode file. Barcode labels of output matrices. Will have 
       duplicate barcodes removed compared to input barcodes file.
     outputBinding:
-      glob: $(inputs.out_barcodes)
+      glob: $(inputs.out_barcodes_path)
   - id: out_matrix
     type:
       - 'null'
       - File
     doc: Output Matrix Market file (.mtx)
     outputBinding:
-      glob: $(inputs.out_matrix)
+      glob: $(inputs.out_matrix_path)
   - id: out_variants
     type:
       - 'null'
@@ -138,7 +170,7 @@ outputs:
     doc: Output variant file. Reports ordered list of variants to help with 
       loading into downstream tools
     outputBinding:
-      glob: $(inputs.out_variants)
+      glob: $(inputs.out_variants_path)
   - id: ref_matrix
     type:
       - 'null'
@@ -146,7 +178,9 @@ outputs:
     doc: Location to write reference Matrix Market file. Only used if 
       --scoring-method is coverage
     outputBinding:
-      glob: $(inputs.ref_matrix)
+      glob: $(inputs.ref_matrix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vartrix:1.1.22--h9ee0642_6

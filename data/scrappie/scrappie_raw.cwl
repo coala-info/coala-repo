@@ -182,6 +182,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --uuid
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -189,7 +195,9 @@ outputs:
       - File
     doc: Write to file rather than stdout
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scrappie:1.4.2--py310pl5321h9a1f509_7

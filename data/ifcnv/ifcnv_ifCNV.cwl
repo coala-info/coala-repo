@@ -120,19 +120,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_report_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_report_path`
+    inputBinding:
+      position: 102
+      prefix: --output-report
+  - id: reads_matrix_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `reads_matrix_output_path`
+    inputBinding:
+      position: 103
+      prefix: --reads-matrix-output
 outputs:
   - id: output_report
     type: File
     doc: Path to the output report
     outputBinding:
-      glob: $(inputs.output_report)
+      glob: $(inputs.output_report_path)
   - id: reads_matrix_output
     type:
       - 'null'
       - File
     doc: A path to a file to export the reads matrix as a .tsv file
     outputBinding:
-      glob: $(inputs.reads_matrix_output)
+      glob: $(inputs.reads_matrix_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ifcnv:0.2.1--pyh5e36f6f_0

@@ -37,13 +37,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --profile
+  - id: output_path
+    type: string
+    doc: '[OUTPUT] Prefix for the output files consisting'
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: Prefix for the output files consisting of a NUMPY and a TEXT version of
       the clustering result.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phiercc:1.24--pyhdfd78af_0

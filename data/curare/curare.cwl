@@ -93,12 +93,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_folder_path
+    type: Directory
+    doc: Output or path parameter `output_folder_path`
+    inputBinding:
+      position: 102
+      prefix: --output-folder
 outputs:
   - id: output_folder
     type: Directory
     doc: Output folder (will be created if not existing)
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/curare:0.6.0--pyhdfd78af_0

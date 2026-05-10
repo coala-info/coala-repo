@@ -10,6 +10,12 @@ inputs:
     doc: The netcdf input file.
     inputBinding:
       position: 1
+  - id: output_tabular_file_path
+    type: string
+    doc: Output or path parameter `output_tabular_file_path`
+    inputBinding:
+      position: 101
+      prefix: --output-tabular-file
 outputs:
   - id: output_tabular_file
     type:
@@ -17,7 +23,9 @@ outputs:
       - File
     doc: Output tabular file containing variable and dimension information.
     outputBinding:
-      glob: $(inputs.output_tabular_file)
+      glob: $(inputs.output_tabular_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/netcdf-metadata-info:1.1.6--h7b50bb2_7

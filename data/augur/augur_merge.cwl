@@ -100,6 +100,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --source-columns
+  - id: output_metadata_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --output-metadata
+  - id: output_sequences_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --output-sequences
 outputs:
   - id: output_metadata
     type:
@@ -107,14 +121,16 @@ outputs:
       - File
     doc: Merged metadata as TSV. Compressed files are supported.
     outputBinding:
-      glob: $(inputs.output_metadata)
+      glob: $(inputs.output_metadata_path)
   - id: output_sequences
     type:
       - 'null'
       - File
     doc: Merged sequences as FASTA. Compressed files are supported.
     outputBinding:
-      glob: $(inputs.output_sequences)
+      glob: $(inputs.output_sequences_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0

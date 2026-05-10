@@ -311,6 +311,12 @@ inputs:
     inputBinding:
       position: 106
       prefix: --transcriptome-only
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 107
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -318,7 +324,9 @@ outputs:
       - Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tophat:2.1.2--h3e6c209_0

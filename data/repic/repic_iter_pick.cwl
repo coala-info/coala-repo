@@ -44,6 +44,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: --semi_auto
+  - id: out_file_path_path
+    type: string
+    doc: Output or path parameter `out_file_path_path`
+    inputBinding:
+      position: 105
+      prefix: --out-file-path
 outputs:
   - id: out_file_path
     type:
@@ -51,7 +57,9 @@ outputs:
       - File
     doc: path for picking log file
     outputBinding:
-      glob: $(inputs.out_file_path)
+      glob: $(inputs.out_file_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/repic:1.0.0--pyhdfd78af_0

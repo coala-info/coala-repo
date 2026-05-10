@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: clairvoyante_ExtractVariantCandidates.py
 label: clairvoyante_ExtractVariantCandidates.py
-doc: "Extract variant candidates from a BAM file for Clairvoyante variant calling.\n
-  \nTool homepage: https://github.com/aquaskyline/Clairvoyante"
+doc: "Extract variant candidates from a BAM file for Clairvoyante variant calling.\n\
+  \ \nTool homepage: https://github.com/aquaskyline/Clairvoyante"
 inputs:
   - id: bam_fn
     type: File
@@ -89,6 +89,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf_fn
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -96,7 +102,9 @@ outputs:
       - File
     doc: Prefix for output files
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/clairvoyante:1.02--0

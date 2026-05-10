@@ -319,7 +319,7 @@ inputs:
       - 'null'
       - boolean
     doc: Using the minimap2 preset for Oxford Nanopore (ONT) vs reference 
-      mapping (-x map-ont). Only works in conjuntion with --minimap2.
+      mapping (-x map-ont). Only works in conjuntion with --minimap2. 
       qualifiers.
     inputBinding:
       position: 103
@@ -765,6 +765,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --upto
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 104
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -775,7 +781,9 @@ outputs:
       specified folder does not exist, Bismark will attempt to create it first. 
       The path to the output folder can be either relative or absolute.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bismark:0.25.1--hdfd78af_0

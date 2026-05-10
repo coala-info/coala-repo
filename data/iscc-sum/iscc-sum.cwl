@@ -111,6 +111,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --zero
+  - id: output_path
+    type: string
+    doc: Write checksums to FILE instead of stdout
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -118,7 +124,9 @@ outputs:
       - File
     doc: Write checksums to FILE instead of stdout (ensures UTF-8, LF encoding)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/iscc-sum:0.1.0--py314hc1c3326_0

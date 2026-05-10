@@ -70,6 +70,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: output_vcf_path
+    type: string
+    doc: Output or path parameter `output_vcf_path`
+    inputBinding:
+      position: 104
+      prefix: --output-vcf
 outputs:
   - id: output_vcf
     type:
@@ -77,7 +83,9 @@ outputs:
       - File
     doc: Output VCF file name for HLA genotypes.
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lohhla:20171108--hdfd78af_3

@@ -62,6 +62,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --gene
+  - id: plot_path
+    type: string
+    doc: Output or path parameter `plot_path`
+    inputBinding:
+      position: 103
+      prefix: --plot
 outputs:
   - id: plot
     type:
@@ -69,7 +75,9 @@ outputs:
       - File
     doc: Plot expressions to FILE (PDF or PNG)
     outputBinding:
-      glob: $(inputs.plot)
+      glob: $(inputs.plot_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/igdiscover:0.15.1--pyhdfd78af_2

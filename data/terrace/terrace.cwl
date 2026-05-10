@@ -47,12 +47,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -fa
+  - id: gtf_file_path
+    type: string
+    doc: Output or path parameter `gtf_file_path`
+    inputBinding:
+      position: 102
+      prefix: --gtf-file
 outputs:
   - id: gtf_file
     type: File
     doc: gtf-file.gtf
     outputBinding:
-      glob: $(inputs.gtf_file)
+      glob: $(inputs.gtf_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/terrace:1.1.2--he153687_0

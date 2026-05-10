@@ -127,6 +127,12 @@ inputs:
       and names.dmp are required. A merged.dmp file is optional.
     inputBinding:
       position: 102
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type: File
@@ -134,7 +140,9 @@ outputs:
       determine the output format, but when setting the format explicitly using 
       the --output-format option, automatic detection is disabled.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/taxpasta:0.7.0--pyhdfd78af_1

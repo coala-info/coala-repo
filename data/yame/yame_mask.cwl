@@ -33,6 +33,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: -v
+  - id: output_cx_file_path
+    type: string
+    doc: Output or path parameter `output_cx_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-cx-file
 outputs:
   - id: output_cx_file
     type:
@@ -40,7 +46,9 @@ outputs:
       - File
     doc: output cx file name. if missing, output to stdout without index.
     outputBinding:
-      glob: $(inputs.output_cx_file)
+      glob: $(inputs.output_cx_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/yame:1.8--ha83d96e_0

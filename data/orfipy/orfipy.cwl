@@ -176,6 +176,46 @@ inputs:
     inputBinding:
       position: 102
       prefix: --table
+  - id: bed_path
+    type:
+      - 'null'
+      - string
+    doc: 'bed out file Default: None'
+    inputBinding:
+      position: 103
+      prefix: --bed
+  - id: bed12_path
+    type:
+      - 'null'
+      - string
+    doc: 'bed12 out file Default: None'
+    inputBinding:
+      position: 104
+      prefix: --bed12
+  - id: dna_path
+    type:
+      - 'null'
+      - string
+    doc: 'fasta (DNA) out file Default: None'
+    inputBinding:
+      position: 105
+      prefix: --dna
+  - id: pep_path
+    type:
+      - 'null'
+      - string
+    doc: 'fasta (peptide) out file Default: None'
+    inputBinding:
+      position: 106
+      prefix: --pep
+  - id: rna_path
+    type:
+      - 'null'
+      - string
+    doc: 'fasta (RNA) out file Default: None'
+    inputBinding:
+      position: 107
+      prefix: --rna
 outputs:
   - id: bed12
     type:
@@ -183,35 +223,37 @@ outputs:
       - File
     doc: bed12 out file
     outputBinding:
-      glob: $(inputs.bed12)
+      glob: $(inputs.bed12_path)
   - id: bed
     type:
       - 'null'
       - File
     doc: bed out file
     outputBinding:
-      glob: $(inputs.bed)
+      glob: $(inputs.bed_path)
   - id: dna
     type:
       - 'null'
       - File
     doc: fasta (DNA) out file
     outputBinding:
-      glob: $(inputs.dna)
+      glob: $(inputs.dna_path)
   - id: rna
     type:
       - 'null'
       - File
     doc: fasta (RNA) out file
     outputBinding:
-      glob: $(inputs.rna)
+      glob: $(inputs.rna_path)
   - id: pep
     type:
       - 'null'
       - File
     doc: fasta (peptide) out file
     outputBinding:
-      glob: $(inputs.pep)
+      glob: $(inputs.pep_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/orfipy:0.0.4--py37h96cfd12_1

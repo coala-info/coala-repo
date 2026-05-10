@@ -185,6 +185,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --yaml
+  - id: output_bytile_stats_path
+    type:
+      - 'null'
+      - string
+    doc: output file for duplicate statistics. Note
+    inputBinding:
+      position: 103
+      prefix: --output-bytile-stats
+  - id: output_stats_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_stats_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-stats-file
 outputs:
   - id: output_stats_file
     type:
@@ -192,7 +208,7 @@ outputs:
       - File
     doc: output stats tsv file.
     outputBinding:
-      glob: $(inputs.output_stats_file)
+      glob: $(inputs.output_stats_file_path)
   - id: output_bytile_stats
     type:
       - 'null'
@@ -203,7 +219,9 @@ outputs:
       printed. Note that the readID and parent_readID should be provided and 
       contain tile information for this option.
     outputBinding:
-      glob: $(inputs.output_bytile_stats)
+      glob: $(inputs.output_bytile_stats_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pairtools:1.1.3--py310h4e61836_0

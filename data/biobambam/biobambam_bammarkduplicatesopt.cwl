@@ -221,6 +221,22 @@ inputs:
     doc: 'print progress report (default: 1)'
     inputBinding:
       position: 101
+  - id: duplicates_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `duplicates_output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --duplicates-output-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -228,14 +244,16 @@ outputs:
       - File
     doc: output file, stdout if unset
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: duplicates_output_file
     type:
       - 'null'
       - File
     doc: duplicates output file if rmdup=1
     outputBinding:
-      glob: $(inputs.duplicates_output_file)
+      glob: $(inputs.duplicates_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biobambam:2.0.185--h85de650_1

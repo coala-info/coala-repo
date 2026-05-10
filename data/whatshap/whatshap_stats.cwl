@@ -67,6 +67,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --sample
+  - id: tsv_path
+    type: string
+    doc: Output or path parameter `tsv_path`
+    inputBinding:
+      position: 103
+      prefix: --tsv
 outputs:
   - id: tsv
     type:
@@ -74,7 +80,9 @@ outputs:
       - File
     doc: Write statistics in tab-separated value format to FILE
     outputBinding:
-      glob: $(inputs.tsv)
+      glob: $(inputs.tsv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/whatshap:2.8--py39h2de1943_0

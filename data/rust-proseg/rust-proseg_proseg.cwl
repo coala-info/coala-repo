@@ -493,10 +493,7 @@ inputs:
       - type: array
         items: int
     doc: Sampler schedule, indicating the number of iterations between doubling 
-      resolution
-      - 150
-      - 150
-      - 300
+      resolution - 150 - 150 - 300
     inputBinding:
       position: 102
       prefix: --schedule
@@ -580,6 +577,118 @@ inputs:
     inputBinding:
       position: 102
       prefix: --z-column
+  - id: monitor_cell_polygons_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `monitor_cell_polygons_path`
+    inputBinding:
+      position: 103
+      prefix: --monitor-cell-polygons
+  - id: output_cell_hulls_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_cell_hulls_path`
+    inputBinding:
+      position: 104
+      prefix: --output-cell-hulls
+  - id: output_cell_metadata_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_cell_metadata_path`
+    inputBinding:
+      position: 105
+      prefix: --output-cell-metadata
+  - id: output_cell_polygon_layers_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_cell_polygon_layers_path`
+    inputBinding:
+      position: 106
+      prefix: --output-cell-polygon-layers
+  - id: output_cell_polygons_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_cell_polygons_path`
+    inputBinding:
+      position: 107
+      prefix: --output-cell-polygons
+  - id: output_cell_voxels_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_cell_voxels_path`
+    inputBinding:
+      position: 108
+      prefix: --output-cell-voxels
+  - id: output_expected_counts_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_expected_counts_path`
+    inputBinding:
+      position: 109
+      prefix: --output-expected-counts
+  - id: output_gene_metadata_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_gene_metadata_path`
+    inputBinding:
+      position: 110
+      prefix: --output-gene-metadata
+  - id: output_maxpost_counts_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_maxpost_counts_path`
+    inputBinding:
+      position: 111
+      prefix: --output-maxpost-counts
+  - id: output_metagene_loadings_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_metagene_loadings_path`
+    inputBinding:
+      position: 112
+      prefix: --output-metagene-loadings
+  - id: output_metagene_rates_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_metagene_rates_path`
+    inputBinding:
+      position: 113
+      prefix: --output-metagene-rates
+  - id: output_rates_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_rates_path`
+    inputBinding:
+      position: 114
+      prefix: --output-rates
+  - id: output_transcript_metadata_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_transcript_metadata_path`
+    inputBinding:
+      position: 115
+      prefix: --output-transcript-metadata
+  - id: output_union_cell_polygons_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_union_cell_polygons_path`
+    inputBinding:
+      position: 116
+      prefix: --output-union-cell-polygons
 outputs:
   - id: output_maxpost_counts
     type:
@@ -587,70 +696,70 @@ outputs:
       - File
     doc: Output a point estimate of transcript counts per cell
     outputBinding:
-      glob: $(inputs.output_maxpost_counts)
+      glob: $(inputs.output_maxpost_counts_path)
   - id: output_expected_counts
     type:
       - 'null'
       - File
     doc: Output a matrix of expected transcript counts per cell
     outputBinding:
-      glob: $(inputs.output_expected_counts)
+      glob: $(inputs.output_expected_counts_path)
   - id: output_rates
     type:
       - 'null'
       - File
     doc: Output a matrix of estimated Poisson expression rates per cell
     outputBinding:
-      glob: $(inputs.output_rates)
+      glob: $(inputs.output_rates_path)
   - id: output_cell_hulls
     type:
       - 'null'
       - File
     doc: Output cell convex hulls
     outputBinding:
-      glob: $(inputs.output_cell_hulls)
+      glob: $(inputs.output_cell_hulls_path)
   - id: output_cell_metadata
     type:
       - 'null'
       - File
     doc: Output cell metadata
     outputBinding:
-      glob: $(inputs.output_cell_metadata)
+      glob: $(inputs.output_cell_metadata_path)
   - id: output_transcript_metadata
     type:
       - 'null'
       - File
     doc: Output transcript metadata
     outputBinding:
-      glob: $(inputs.output_transcript_metadata)
+      glob: $(inputs.output_transcript_metadata_path)
   - id: output_gene_metadata
     type:
       - 'null'
       - File
     doc: Output gene metadata
     outputBinding:
-      glob: $(inputs.output_gene_metadata)
+      glob: $(inputs.output_gene_metadata_path)
   - id: output_metagene_rates
     type:
       - 'null'
       - File
     doc: Output cell metagene rates
     outputBinding:
-      glob: $(inputs.output_metagene_rates)
+      glob: $(inputs.output_metagene_rates_path)
   - id: output_metagene_loadings
     type:
       - 'null'
       - File
     doc: Output metagene loadings
     outputBinding:
-      glob: $(inputs.output_metagene_loadings)
+      glob: $(inputs.output_metagene_loadings_path)
   - id: output_cell_voxels
     type:
       - 'null'
       - File
     doc: Output a table of each voxel in each cell
     outputBinding:
-      glob: $(inputs.output_cell_voxels)
+      glob: $(inputs.output_cell_voxels_path)
   - id: output_cell_polygons
     type:
       - 'null'
@@ -658,28 +767,30 @@ outputs:
     doc: Output consensus non-overlapping 2D polygons, formed by taking the 
       dominant cell at each x/y location
     outputBinding:
-      glob: $(inputs.output_cell_polygons)
+      glob: $(inputs.output_cell_polygons_path)
   - id: output_union_cell_polygons
     type:
       - 'null'
       - File
     doc: Output cell polygons flattened (unioned) to 2D
     outputBinding:
-      glob: $(inputs.output_union_cell_polygons)
+      glob: $(inputs.output_union_cell_polygons_path)
   - id: output_cell_polygon_layers
     type:
       - 'null'
       - File
     doc: Output separate cell polygons for each layer of voxels along the z-axis
     outputBinding:
-      glob: $(inputs.output_cell_polygon_layers)
+      glob: $(inputs.output_cell_polygon_layers_path)
   - id: monitor_cell_polygons
     type:
       - 'null'
       - File
     doc: Output cell polygons repeatedly during sampling
     outputBinding:
-      glob: $(inputs.monitor_cell_polygons)
+      glob: $(inputs.monitor_cell_polygons_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rust-proseg:2.0.6--h4349ce8_0

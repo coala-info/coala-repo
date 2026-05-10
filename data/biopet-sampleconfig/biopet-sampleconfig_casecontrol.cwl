@@ -5,15 +5,15 @@ baseCommand:
   - casecontrol
 label: biopet-sampleconfig_casecontrol
 doc: "Options for CaseControl. This tool handles sample configuration for case-control
-  studies, allowing input of BAM files and sample configurations with specific tags.\n
-  \nTool homepage: https://github.com/biopet/sampleconfig"
+  studies, allowing input of BAM files and sample configurations with specific tags.\n\
+  \ \nTool homepage: https://github.com/biopet/sampleconfig"
 inputs:
   - id: control_tag
     type:
       - 'null'
       - string
-    doc: This works the same as for a normal input file. Difference is that it placed
-      in a sub key 'tags' in the config file
+    doc: This works the same as for a normal input file. Difference is that it 
+      placed in a sub key 'tags' in the config file
     inputBinding:
       position: 101
       prefix: --controlTag
@@ -36,11 +36,17 @@ inputs:
       prefix: --log_level
   - id: sample_config
     type: File
-    doc: This works the same as for a normal input file. Difference is that it placed
-      in a sub key 'tags' in the config file
+    doc: This works the same as for a normal input file. Difference is that it 
+      placed in a sub key 'tags' in the config file
     inputBinding:
       position: 101
       prefix: --sampleConfig
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -48,7 +54,9 @@ outputs:
       - File
     doc: Output file, if not given stdout is used
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biopet-sampleconfig:0.3--0

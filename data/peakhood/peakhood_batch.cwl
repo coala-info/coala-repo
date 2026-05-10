@@ -11,8 +11,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Additional genomic annotations GTF file (.gtf or .gtf.gz) for transcript
-      to gene region annotation
+    doc: Additional genomic annotations GTF file (.gtf or .gtf.gz) for 
+      transcript to gene region annotation
     inputBinding:
       position: 101
       prefix: --add-gtf
@@ -29,8 +29,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Width of exon-intron border regions (EIB) to calculate coverage drops from
-      exon to intron region
+    doc: Width of exon-intron border regions (EIB) to calculate coverage drops 
+      from exon to intron region
     inputBinding:
       position: 101
       prefix: --eib-width
@@ -66,8 +66,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Define transcript selection strategy for a given exonic site during F2 filtering.
-      (1) majority vote filtering, (2) sequential filtering.
+    doc: Define transcript selection strategy for a given exonic site during F2 
+      filtering. (1) majority vote filtering, (2) sequential filtering.
     inputBinding:
       position: 101
       prefix: --f2-mode
@@ -111,8 +111,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Enable prefilerting of exons (before F1, F2) by exon neigbhorhood intron-spanning
-      read count.
+    doc: Enable prefilerting of exons (before F1, F2) by exon neigbhorhood 
+      intron-spanning read count.
     inputBinding:
       position: 101
       prefix: --isrn-prefilter
@@ -128,8 +128,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Extend regions by --merge-ext before merging overlapping regions (if --merge-mode
-      2)
+    doc: Extend regions by --merge-ext before merging overlapping regions (if 
+      --merge-mode 2)
     inputBinding:
       position: 101
       prefix: --merge-ext
@@ -137,8 +137,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Defines whether or how to merge nearby sites before applying --seq-ext. (1)
-      Do NOT merge sites, (2) merge overlapping and adjacent sites.
+    doc: Defines whether or how to merge nearby sites before applying --seq-ext.
+      (1) Do NOT merge sites, (2) merge overlapping and adjacent sites.
     inputBinding:
       position: 101
       prefix: --merge-mode
@@ -146,8 +146,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum exon to neighboring intron coverage for exonic site to be reported
-      as exonic site with transcript context
+    doc: Minimum exon to neighboring intron coverage for exonic site to be 
+      reported as exonic site with transcript context
     inputBinding:
       position: 101
       prefix: --min-ei-ratio
@@ -155,8 +155,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum exon border to neighboring intron border region coverage for an exon
-      to be considered for transcript context selection
+    doc: Minimum exon border to neighboring intron border region coverage for an
+      exon to be considered for transcript context selection
     inputBinding:
       position: 101
       prefix: --min-eib-ratio
@@ -164,8 +164,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum intron-spanning read count to connect two sites at adjacent exon
-      borders.
+    doc: Minimum intron-spanning read count to connect two sites at adjacent 
+      exon borders.
     inputBinding:
       position: 101
       prefix: --min-exbs-isr-c
@@ -173,8 +173,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum exon overlap of a site to be considered for transcript context extraction
-      (intersectBed -f parameter)
+    doc: Minimum exon overlap of a site to be considered for transcript context 
+      extraction (intersectBed -f parameter)
     inputBinding:
       position: 101
       prefix: --min-exon-overlap
@@ -182,8 +182,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum number of intronic sites needed per transcript to assign all sites
-      on the transcript to genomic context
+    doc: Minimum number of intronic sites needed per transcript to assign all 
+      sites on the transcript to genomic context
     inputBinding:
       position: 101
       prefix: --min-tis-sites
@@ -215,8 +215,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Disable exon-intron border ratio filtering by checking the ratios of whole
-      transcripts
+    doc: Disable exon-intron border ratio filtering by checking the ratios of 
+      whole transcripts
     inputBinding:
       position: 101
       prefix: --no-eibr-wt-filter
@@ -224,7 +224,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Disable exon-intron ratio filtering by checking the ratios of whole transcripts
+    doc: Disable exon-intron ratio filtering by checking the ratios of whole 
+      transcripts
     inputBinding:
       position: 101
       prefix: --no-eir-wt-filter
@@ -240,8 +241,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not discard transcripts containing intronic sites from transcript context
-      selection
+    doc: Do not discard transcripts containing intronic sites from transcript 
+      context selection
     inputBinding:
       position: 101
       prefix: --no-tis-filter
@@ -249,7 +250,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Merge book-ended and overlapping --in sites BEFORE transcript context extraction.
+    doc: Merge book-ended and overlapping --in sites BEFORE transcript context 
+      extraction.
     inputBinding:
       position: 101
       prefix: --pre-merge
@@ -266,8 +268,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Generate .html reports for extract and merge, containing dataset statistics
-      and plots
+    doc: Generate .html reports for extract and merge, containing dataset 
+      statistics and plots
     inputBinding:
       position: 101
       prefix: --report
@@ -299,8 +301,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Define mode for site context sequence extraction after determining context.
-      (1) Take the complete site, (2) Take the center, (3) Take the upstream end.
+    doc: Define mode for site context sequence extraction after determining 
+      context. (1) Take the complete site, (2) Take the center, (3) Take the 
+      upstream end.
     inputBinding:
       position: 101
       prefix: --seq-ext-mode
@@ -309,8 +312,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Manually provide transcript biotype ID(s) to filter out transcripts with
-      these biotypes
+    doc: Manually provide transcript biotype ID(s) to filter out transcripts 
+      with these biotypes
     inputBinding:
       position: 101
       prefix: --tbt-filter-ids
@@ -318,8 +321,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum site score (--in BED files column 5) for filtering (assuming higher
-      score == better site)
+    doc: Minimum site score (--in BED files column 5) for filtering (assuming 
+      higher score == better site)
     inputBinding:
       position: 101
       prefix: --thr
@@ -339,12 +342,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: out_dir_path
+    type: Directory
+    doc: Output or path parameter `out_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --out-dir
 outputs:
   - id: out_dir
     type: Directory
     doc: Results output folder
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/peakhood:0.3--pyhdfd78af_0

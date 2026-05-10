@@ -10,7 +10,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: gene-to-transcript identifier mapping file (tab-delimited, gene_id<tab>trans_id)
+    doc: gene-to-transcript identifier mapping file (tab-delimited, 
+      gene_id<tab>trans_id)
     inputBinding:
       position: 101
       prefix: --gene_trans_map
@@ -45,6 +46,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -52,7 +59,9 @@ outputs:
       - Directory
     doc: 'output directory (default: same as target_transcripts file name + .transdecoder_dir)'
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/transdecoder:5.7.1--pl5321hdfd78af_2

@@ -6,7 +6,8 @@ doc: "adaptive banded Partial Order Alignment\n\nTool homepage: https://github.c
 inputs:
   - id: input_file
     type: File
-    doc: Input sequences in FASTA/FASTQ format (or a list of files if -l is used)
+    doc: Input sequences in FASTA/FASTQ format (or a list of files if -l is 
+      used)
     inputBinding:
       position: 1
   - id: aln_mode
@@ -207,8 +208,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: take base quality score from FASTQ input file as graph edge weight for consensus
-      calling
+    doc: take base quality score from FASTQ input file as graph edge weight for 
+      consensus calling
     inputBinding:
       position: 102
       prefix: --use-qual-weight
@@ -228,6 +229,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --window
+  - id: out_pog_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_pog_path`
+    inputBinding:
+      position: 103
+      prefix: --out-pog
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -235,14 +252,16 @@ outputs:
       - File
     doc: output to FILE
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: out_pog
     type:
       - 'null'
       - File
     doc: dump final alignment graph to FILE (.pdf/.png)
     outputBinding:
-      glob: $(inputs.out_pog)
+      glob: $(inputs.out_pog_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/abpoa:1.5.5--h577a1d6_0

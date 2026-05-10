@@ -155,6 +155,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --workflow-profile
+  - id: output_path
+    type: string
+    doc: 'Output directory  [default: koverage.out]'
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -162,7 +168,9 @@ outputs:
       - Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/koverage:0.1.11--pyhdfd78af_0

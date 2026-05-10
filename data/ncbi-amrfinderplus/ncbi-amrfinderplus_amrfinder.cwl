@@ -245,6 +245,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: --update
+  - id: nucleotide_flank5_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `nucleotide_flank5_output_path`
+    inputBinding:
+      position: 102
+      prefix: --nucleotide-flank5-output
+  - id: nucleotide_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `nucleotide_output_path`
+    inputBinding:
+      position: 103
+      prefix: --nucleotide-output
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
+  - id: protein_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `protein_output_path`
+    inputBinding:
+      position: 105
+      prefix: --protein-output
 outputs:
   - id: output_file
     type:
@@ -252,21 +284,21 @@ outputs:
       - File
     doc: Write output to OUTPUT_FILE instead of STDOUT
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: protein_output
     type:
       - 'null'
       - File
     doc: Output protein FASTA file of reported proteins
     outputBinding:
-      glob: $(inputs.protein_output)
+      glob: $(inputs.protein_output_path)
   - id: nucleotide_output
     type:
       - 'null'
       - File
     doc: Output nucleotide FASTA file of reported nucleotide sequences
     outputBinding:
-      glob: $(inputs.nucleotide_output)
+      glob: $(inputs.nucleotide_output_path)
   - id: nucleotide_flank5_output
     type:
       - 'null'
@@ -274,7 +306,9 @@ outputs:
     doc: Output nucleotide FASTA file of reported nucleotide sequences with 5' 
       flanking sequences
     outputBinding:
-      glob: $(inputs.nucleotide_flank5_output)
+      glob: $(inputs.nucleotide_flank5_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ncbi-amrfinderplus:4.2.7--hf69ffd2_0

@@ -458,6 +458,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --ylabel
+  - id: fout_path
+    type: string
+    doc: Output or path parameter `fout_path`
+    inputBinding:
+      position: 103
+      prefix: --fout
 outputs:
   - id: fout
     type:
@@ -465,7 +471,9 @@ outputs:
       - File
     doc: Output file
     outputBinding:
-      glob: $(inputs.fout)
+      glob: $(inputs.fout_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/weblogo:3.7.9--pyhdfd78af_0

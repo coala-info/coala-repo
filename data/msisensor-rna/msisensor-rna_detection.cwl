@@ -24,12 +24,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --run_directly
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: The path of output file prefix.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msisensor-rna:0.1.6--pyhdfd78af_0

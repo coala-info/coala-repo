@@ -41,19 +41,37 @@ inputs:
     inputBinding:
       position: 103
       prefix: --seed
+  - id: r1_dst_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `r1_dst_path`
+    inputBinding:
+      position: 104
+      prefix: --r1-dst
+  - id: r2_dst_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `r2_dst_path`
+    inputBinding:
+      position: 105
+      prefix: --r2-dst
 outputs:
   - id: r1_dst
     type: File
     doc: Read 1 destination. Output will be gzipped if ends in `.gz`
     outputBinding:
-      glob: $(inputs.r1_dst)
+      glob: $(inputs.r1_dst_path)
   - id: r2_dst
     type:
       - 'null'
       - File
     doc: Read 2 destination. Output will be gzipped if ends in `.gz`
     outputBinding:
-      glob: $(inputs.r2_dst)
+      glob: $(inputs.r2_dst_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fq:0.12.0--h9ee0642_0

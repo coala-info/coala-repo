@@ -40,16 +40,17 @@ inputs:
       - 'null'
       - type: array
         items: int
-    doc: Monomer size in base pairs to search for
-      - 170
-      - 340
-      - 510
-      - 680
-      - 850
+    doc: Monomer size in base pairs to search for - 170 - 340 - 510 - 680 - 850 
       - 1020
     inputBinding:
       position: 101
       prefix: --sizes
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -58,7 +59,9 @@ outputs:
     doc: Output fasta file filtered to only motifs composed of monomers of given
       size
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/srf-n-trf:0.1.2--h4349ce8_0

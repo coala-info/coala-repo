@@ -93,6 +93,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --transcript-id-header
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -100,7 +106,9 @@ outputs:
       - File
     doc: Prefix of output files
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hotspot3d:1.8.2--pl526_0

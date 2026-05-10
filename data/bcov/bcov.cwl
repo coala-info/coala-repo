@@ -47,17 +47,35 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_beta_contact_map_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_beta_contact_map_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-beta-contact-map-file
+  - id: output_beta_strand_pairing_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_beta_strand_pairing_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-beta-strand-pairing-file
 outputs:
   - id: output_beta_contact_map_file
     type: File
     doc: Write predicted beta contact map to file. REQUIRED.
     outputBinding:
-      glob: $(inputs.output_beta_contact_map_file)
+      glob: $(inputs.output_beta_contact_map_file_path)
   - id: output_beta_strand_pairing_file
     type: File
     doc: Write predicted beta strand pairing to file. REQUIRED.
     outputBinding:
-      glob: $(inputs.output_beta_strand_pairing_file)
+      glob: $(inputs.output_beta_strand_pairing_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bcov:1.0--h67df5e2_11

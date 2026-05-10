@@ -143,6 +143,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf-reference
+  - id: output_node_data_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_node_data_path`
+    inputBinding:
+      position: 102
+      prefix: --output-node-data
+  - id: output_sequences_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --output-sequences
+  - id: output_translations_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_translations_path`
+    inputBinding:
+      position: 104
+      prefix: --output-translations
+  - id: output_vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_vcf_path`
+    inputBinding:
+      position: 105
+      prefix: --output-vcf
 outputs:
   - id: output_node_data
     type:
@@ -150,7 +181,7 @@ outputs:
       - File
     doc: name of JSON file to save mutations and ancestral sequences to
     outputBinding:
-      glob: $(inputs.output_node_data)
+      glob: $(inputs.output_node_data_path)
   - id: output_sequences
     type:
       - 'null'
@@ -158,7 +189,7 @@ outputs:
     doc: name of FASTA file to save ancestral nucleotide sequences to (FASTA 
       alignments only)
     outputBinding:
-      glob: $(inputs.output_sequences)
+      glob: $(inputs.output_sequences_path)
   - id: output_translations
     type:
       - 'null'
@@ -168,14 +199,16 @@ outputs:
       'ancestral_aa_sequences_%GENE.fasta' where %GENE will be replaced bythe 
       gene name.
     outputBinding:
-      glob: $(inputs.output_translations)
+      glob: $(inputs.output_translations_path)
   - id: output_vcf
     type:
       - 'null'
       - File
     doc: name of output VCF file which will include ancestral seqs
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0

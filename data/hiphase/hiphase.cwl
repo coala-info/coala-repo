@@ -217,6 +217,54 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: blocks_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `blocks_file_path`
+    inputBinding:
+      position: 102
+      prefix: --blocks-file
+  - id: haplotag_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `haplotag_file_path`
+    inputBinding:
+      position: 103
+      prefix: --haplotag-file
+  - id: output_bam_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_bam_path`
+    inputBinding:
+      position: 104
+      prefix: --output-bam
+  - id: output_vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_vcf_path`
+    inputBinding:
+      position: 105
+      prefix: --output-vcf
+  - id: stats_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_file_path`
+    inputBinding:
+      position: 106
+      prefix: --stats-file
+  - id: summary_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `summary_file_path`
+    inputBinding:
+      position: 107
+      prefix: --summary-file
 outputs:
   - id: output_bam
     type:
@@ -224,40 +272,42 @@ outputs:
       - File
     doc: Output haplotagged alignment file in BAM format
     outputBinding:
-      glob: $(inputs.output_bam)
+      glob: $(inputs.output_bam_path)
   - id: output_vcf
     type: File
     doc: Output phased variant file in VCF format
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf_path)
   - id: summary_file
     type:
       - 'null'
       - File
     doc: Output summary phasing statistics file (optional, csv/tsv)
     outputBinding:
-      glob: $(inputs.summary_file)
+      glob: $(inputs.summary_file_path)
   - id: stats_file
     type:
       - 'null'
       - File
     doc: Output algorithmic statistics file (optional, csv/tsv)
     outputBinding:
-      glob: $(inputs.stats_file)
+      glob: $(inputs.stats_file_path)
   - id: blocks_file
     type:
       - 'null'
       - File
     doc: Output blocks file (optional, csv/tsv)
     outputBinding:
-      glob: $(inputs.blocks_file)
+      glob: $(inputs.blocks_file_path)
   - id: haplotag_file
     type:
       - 'null'
       - File
     doc: Output haplotag file (optional, csv/tsv)
     outputBinding:
-      glob: $(inputs.haplotag_file)
+      glob: $(inputs.haplotag_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hiphase:1.6.0--h9ee0642_0

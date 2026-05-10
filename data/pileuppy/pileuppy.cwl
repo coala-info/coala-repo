@@ -16,8 +16,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Display additional INT positions around the region. Only displays reads that
-      cover <region>.
+    doc: Display additional INT positions around the region. Only displays reads
+      that cover <region>.
     inputBinding:
       position: 102
       prefix: --display
@@ -41,8 +41,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: How to write headers (skip|comment|plain). If comment, every header line
-      will start with '#'.
+    doc: How to write headers (skip|comment|plain). If comment, every header 
+      line will start with '#'.
     inputBinding:
       position: 102
       prefix: --header
@@ -50,7 +50,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not split single BAM/CRAM file into multiple columns with different samples.
+    doc: Do not split single BAM/CRAM file into multiple columns with different 
+      samples.
     inputBinding:
       position: 102
       prefix: --join-samples
@@ -106,8 +107,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Only use reads with matching samples. You can use multiple regex patterns
-      or exact sample names.
+    doc: Only use reads with matching samples. You can use multiple regex 
+      patterns or exact sample names.
     inputBinding:
       position: 102
       prefix: --samples
@@ -167,6 +168,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --skip-legend
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -174,7 +181,9 @@ outputs:
       - File
     doc: 'Optional: Output file [stdout]. Disables colors.'
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pileuppy:1.2.0--pyhdfd78af_0

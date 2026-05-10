@@ -37,6 +37,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --rename
+  - id: header_file_path
+    type: string
+    doc: Output or path parameter `header_file_path`
+    inputBinding:
+      position: 103
+      prefix: --header-file
 outputs:
   - id: header_file
     type:
@@ -44,7 +50,9 @@ outputs:
       - File
     doc: Write BAM header to file
     outputBinding:
-      glob: $(inputs.header_file)
+      glob: $(inputs.header_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bamkit:16.07.26--py_0

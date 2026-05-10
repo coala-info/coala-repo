@@ -20,7 +20,7 @@ inputs:
       - 'null'
       - string
     doc: (Tax bar and FT dist). Color for the bar fill. The color vector in R is
-      c("dodgerblue", "darkorange", "yellow2", "red2", "darkviolet", "black"),  
+      c("dodgerblue", "darkorange", "yellow2", "red2", "darkviolet", "black"), 
       so providing a 1 will give the "dodgerblue" color. These same colors are 
       also used in the  heatmap and PCA plot, so the colors can be tweaked to 
       match.
@@ -235,19 +235,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --width
+  - id: img_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `img_path`
+    inputBinding:
+      position: 102
+      prefix: --img
+  - id: tabfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `tabfile_path`
+    inputBinding:
+      position: 103
+      prefix: --tabfile
 outputs:
   - id: img
     type: File
     doc: Path to the PNG image file (must end in ".png").
     outputBinding:
-      glob: $(inputs.img)
+      glob: $(inputs.img_path)
   - id: tabfile
     type:
       - 'null'
       - File
     doc: Optional. File to write plot table to.
     outputBinding:
-      glob: $(inputs.tabfile)
+      glob: $(inputs.tabfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaquantome:2.0.2--pyhdfd78af_0

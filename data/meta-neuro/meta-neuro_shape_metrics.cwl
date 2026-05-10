@@ -29,12 +29,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tractogram
+  - id: output_path
+    type: string
+    doc: Path to the output binary mask file
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: Output directory to save features
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meta-neuro:2.0.1--py313h47f2c4e_0

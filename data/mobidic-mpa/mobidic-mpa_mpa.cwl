@@ -43,12 +43,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --no-refseq-version
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: 'The output vcf file with annotation (format : VCF)'
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mobidic-mpa:1.3.0--pyh5e36f6f_0

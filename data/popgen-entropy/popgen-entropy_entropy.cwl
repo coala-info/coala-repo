@@ -148,6 +148,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -155,7 +161,9 @@ outputs:
       - File
     doc: HDF5 format outfile with .hdf5 suffix
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/popgen-entropy:2.0--h60038e2_5

@@ -212,6 +212,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: -t
+  - id: output_bam_index_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_bam_index_path`
+    inputBinding:
+      position: 103
+      prefix: --output-bam-index
 outputs:
   - id: output_file
     type:
@@ -226,7 +234,9 @@ outputs:
       - File
     doc: Output Bam index when bam input(file.gzi)
     outputBinding:
-      glob: $(inputs.output_bam_index)
+      glob: $(inputs.output_bam_index_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/staden-io-lib-utils:v1.14.11-6-deb_cv1

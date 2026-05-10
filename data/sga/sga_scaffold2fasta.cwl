@@ -121,6 +121,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --write-unplaced
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 103
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -128,7 +134,9 @@ outputs:
       - File
     doc: 'write the scaffolds to FILE (default: scaffolds.fa)'
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sga:v0.10.15-4-deb_cv1

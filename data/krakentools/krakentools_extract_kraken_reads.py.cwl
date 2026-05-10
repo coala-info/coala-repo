@@ -73,19 +73,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --taxid
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
+  - id: output_file2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file2_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file2
 outputs:
   - id: output_file
     type: File
     doc: Output file for extracted reads
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_file2
     type:
       - 'null'
       - File
     doc: Output file for second set of paired-end reads
     outputBinding:
-      glob: $(inputs.output_file2)
+      glob: $(inputs.output_file2_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/krakentools:1.2.1--pyh7e72e81_0

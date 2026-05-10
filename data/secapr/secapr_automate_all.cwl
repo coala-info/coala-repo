@@ -47,13 +47,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --setting
+  - id: output_path
+    type: string
+    doc: The output directory where quality-test results will be
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: The output directory where all intermediate and final data files will 
       be stored
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/secapr:2.2.8--pyh5e36f6f_0

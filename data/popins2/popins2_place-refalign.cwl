@@ -78,6 +78,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --reference
+  - id: insertions_path
+    type: string
+    doc: Output or path parameter `insertions_path`
+    inputBinding:
+      position: 102
+      prefix: --insertions
 outputs:
   - id: insertions
     type:
@@ -85,7 +91,9 @@ outputs:
       - File
     doc: 'Name of VCF output file. Valid filetype is: vcf.'
     outputBinding:
-      glob: $(inputs.insertions)
+      glob: $(inputs.insertions_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/popins2:0.13.0--h077b44d_0

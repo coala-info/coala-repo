@@ -45,12 +45,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --low-ram
+  - id: database_path
+    type: string
+    doc: Output or path parameter `database_path`
+    inputBinding:
+      position: 102
+      prefix: --database
 outputs:
   - id: database
     type: File
     doc: name for the output database
     outputBinding:
-      glob: $(inputs.database)
+      glob: $(inputs.database_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/agouti:1.0.3--pyhdfd78af_0

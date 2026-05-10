@@ -195,6 +195,46 @@ inputs:
     inputBinding:
       position: 102
       prefix: --worst-permissible-score
+  - id: export_css_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `export_css_file_path`
+    inputBinding:
+      position: 103
+      prefix: --export-css-file
+  - id: hits_text_to_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `hits_text_to_file_path`
+    inputBinding:
+      position: 104
+      prefix: --hits-text-to-file
+  - id: html_output_to_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `html_output_to_file_path`
+    inputBinding:
+      position: 105
+      prefix: --html-output-to-file
+  - id: json_output_to_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `json_output_to_file_path`
+    inputBinding:
+      position: 106
+      prefix: --json-output-to-file
+  - id: summarise_to_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `summarise_to_file_path`
+    inputBinding:
+      position: 107
+      prefix: --summarise-to-file
 outputs:
   - id: hits_text_to_file
     type:
@@ -202,7 +242,7 @@ outputs:
       - File
     doc: Write the resolved hits in plain text to file <file>
     outputBinding:
-      glob: $(inputs.hits_text_to_file)
+      glob: $(inputs.hits_text_to_file_path)
   - id: summarise_to_file
     type:
       - 'null'
@@ -210,28 +250,30 @@ outputs:
     doc: Write a brief text summary of the input data to file <file> (or '-' for
       stdout)
     outputBinding:
-      glob: $(inputs.summarise_to_file)
+      glob: $(inputs.summarise_to_file_path)
   - id: html_output_to_file
     type:
       - 'null'
       - File
     doc: Write the results as HTML to file <file> (or '-' for stdout)
     outputBinding:
-      glob: $(inputs.html_output_to_file)
+      glob: $(inputs.html_output_to_file_path)
   - id: json_output_to_file
     type:
       - 'null'
       - File
     doc: Write the results as JSON to file <file> (or '-' for stdout)
     outputBinding:
-      glob: $(inputs.json_output_to_file)
+      glob: $(inputs.json_output_to_file_path)
   - id: export_css_file
     type:
       - 'null'
       - File
     doc: Export the CSS used in the HTML output to <file> (or '-' for stdout)
     outputBinding:
-      glob: $(inputs.export_css_file)
+      glob: $(inputs.export_css_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cath-tools:0.16.5--h78a066a_0

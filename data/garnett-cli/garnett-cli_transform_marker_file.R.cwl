@@ -54,6 +54,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --pval-threshold
+  - id: garnett_marker_file_path
+    type: string
+    doc: Output or path parameter `garnett_marker_file_path`
+    inputBinding:
+      position: 102
+      prefix: --garnett-marker-file
 outputs:
   - id: garnett_marker_file
     type:
@@ -61,7 +67,9 @@ outputs:
       - File
     doc: Path to the garnett format marker gene file in .txt format
     outputBinding:
-      glob: $(inputs.garnett_marker_file)
+      glob: $(inputs.garnett_marker_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/garnett-cli:0.0.5--hdfd78af_1

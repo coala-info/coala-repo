@@ -220,6 +220,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ymax
+  - id: output_path
+    type: string
+    doc: 'Output data file (default: ribobampath[:-4]+'
+    inputBinding:
+      position: 102
+      prefix: -o
 outputs:
   - id: output
     type:
@@ -227,7 +233,9 @@ outputs:
       - File
     doc: Output pdf figure file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ribotish:0.2.8--pyhdfd78af_0

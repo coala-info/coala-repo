@@ -141,6 +141,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --screen-terminal-bases
+  - id: output_fasta_path
+    type:
+      - 'null'
+      - string
+    doc: Extended FASTA output file
+    inputBinding:
+      position: 104
+      prefix: --output-fasta
+  - id: stats_report_path
+    type:
+      - 'null'
+      - string
+    doc: Statistics report output file
+    inputBinding:
+      position: 105
+      prefix: --stats-report
 outputs:
   - id: output_fasta
     type:
@@ -148,14 +164,16 @@ outputs:
       - File
     doc: Extended FASTA output file
     outputBinding:
-      glob: $(inputs.output_fasta)
+      glob: $(inputs.output_fasta_path)
   - id: stats_report
     type:
       - 'null'
       - File
     doc: Statistics report output file
     outputBinding:
-      glob: $(inputs.stats_report)
+      glob: $(inputs.stats_report_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/teloclip:0.3.4--pyhdfd78af_0

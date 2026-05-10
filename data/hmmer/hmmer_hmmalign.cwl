@@ -70,6 +70,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --trim
+  - id: output_alignment_path
+    type: string
+    doc: Output or path parameter `output_alignment_path`
+    inputBinding:
+      position: 104
+      prefix: --output-alignment
 outputs:
   - id: output_alignment
     type:
@@ -77,7 +83,9 @@ outputs:
       - File
     doc: output alignment to file <f>, not stdout
     outputBinding:
-      glob: $(inputs.output_alignment)
+      glob: $(inputs.output_alignment_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmmer:3.4--hb6cb901_4

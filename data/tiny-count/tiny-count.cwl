@@ -39,6 +39,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --strand
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -46,7 +52,9 @@ outputs:
       - File
     doc: Output file to write counts to
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tiny-count:1.5.0--py39h9948957_2

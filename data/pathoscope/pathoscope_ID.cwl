@@ -93,6 +93,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -thetaPrior
+  - id: out_dir_path
+    type: Directory
+    doc: Output or path parameter `out_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --out-dir
 outputs:
   - id: out_dir
     type:
@@ -100,7 +106,9 @@ outputs:
       - Directory
     doc: Output Directory
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pathoscope:2.0.7--pyhdfd78af_2

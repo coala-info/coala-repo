@@ -52,6 +52,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: out_csv_path
+    type: string
+    doc: Output or path parameter `out_csv_path`
+    inputBinding:
+      position: 102
+      prefix: --out-csv
 outputs:
   - id: out_csv
     type:
@@ -59,7 +65,9 @@ outputs:
       - File
     doc: Output CSV file containing the classification results.
     outputBinding:
-      glob: $(inputs.out_csv)
+      glob: $(inputs.out_csv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scorpio:0.3.19--pyhdfd78af_0

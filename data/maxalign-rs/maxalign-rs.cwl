@@ -79,6 +79,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbosity
+  - id: excluded_sequences_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `excluded_sequences_path`
+    inputBinding:
+      position: 103
+      prefix: --excluded-sequences
+  - id: retained_sequences_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `retained_sequences_path`
+    inputBinding:
+      position: 104
+      prefix: --retained-sequences
 outputs:
   - id: output
     type:
@@ -93,14 +109,16 @@ outputs:
       - File
     doc: Write a list of retained sequences to file
     outputBinding:
-      glob: $(inputs.retained_sequences)
+      glob: $(inputs.retained_sequences_path)
   - id: excluded_sequences
     type:
       - 'null'
       - File
     doc: Write a list of excluded sequences to file
     outputBinding:
-      glob: $(inputs.excluded_sequences)
+      glob: $(inputs.excluded_sequences_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/maxalign-rs:0.1.0--h4349ce8_0

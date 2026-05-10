@@ -16,12 +16,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --fasta
+  - id: output_dir_path
+    type:
+      - 'null'
+      - Directory
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output_dir
     type: Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
   - id: inter_chr_tsv
     type:
       - 'null'
@@ -36,6 +43,8 @@ outputs:
     doc: Fasta file with chromosomal level sequences.
     outputBinding:
       glob: '*.out'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vgp-processcuration:1.1--pyhdfd78af_0

@@ -251,7 +251,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Override options for Trimmomatic
+    doc: Override options for Trimmomatic 
       ILLUMINACLIP:/usr/local/lib/python2.7/site-packages/CRISPResso/data/NexteraPE-PE.fa:0:90:10:0:true
       MINLEN:40
     inputBinding:
@@ -268,6 +268,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window_around_sgrna
+  - id: output_folder_path
+    type: Directory
+    doc: Output or path parameter `output_folder_path`
+    inputBinding:
+      position: 102
+      prefix: --output-folder
 outputs:
   - id: output_folder
     type:
@@ -275,7 +281,9 @@ outputs:
       - Directory
     doc: Output folder
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crispresso:1.0.13--py27h470a237_1

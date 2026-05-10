@@ -26,7 +26,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum number of iterations without improvement after entering blind mode.
+    doc: Maximum number of iterations without improvement after entering blind 
+      mode.
     inputBinding:
       position: 102
       prefix: --after-blind-iter-without-imp-limit
@@ -42,7 +43,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Maximum time (seconds) since last improvement after entering blind mode.
+    doc: Maximum time (seconds) since last improvement after entering blind 
+      mode.
     inputBinding:
       position: 102
       prefix: --after-blind-time-without-imp-limit
@@ -50,8 +52,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: If used, then the input file be will treated as aligned for the purposes
-      of the first round of tree inference
+    doc: If used, then the input file be will treated as aligned for the 
+      purposes of the first round of tree inference
     inputBinding:
       position: 102
       prefix: --aligned
@@ -75,8 +77,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Automatically identify default values for max_subproblem_size, number of
-      cpus, tools, breaking strategy, masking criteria, and stopping criteria.
+    doc: Automatically identify default values for max_subproblem_size, number 
+      of cpus, tools, breaking strategy, masking criteria, and stopping 
+      criteria.
     inputBinding:
       position: 102
       prefix: --auto
@@ -84,8 +87,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum number of iterations without an improvement before switching to blind
-      mode.
+    doc: Maximum number of iterations without an improvement before switching to
+      blind mode.
     inputBinding:
       position: 102
       prefix: --blind-after-iter-without-imp
@@ -93,7 +96,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Maximum time (seconds) without an improvement before switching to blind mode.
+    doc: Maximum time (seconds) without an improvement before switching to blind
+      mode.
     inputBinding:
       position: 102
       prefix: --blind-after-time-without-imp
@@ -117,7 +121,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: The method for choosing an edge when bisecting the tree during decomposition
+    doc: The method for choosing an edge when bisecting the tree during 
+      decomposition
     inputBinding:
       position: 102
       prefix: --break-strategy
@@ -133,7 +138,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specify DNA, RNA, or Protein to indicate what type of data is specified.
+    doc: Specify DNA, RNA, or Protein to indicate what type of data is 
+      specified.
     inputBinding:
       position: 102
       prefix: --datatype
@@ -187,8 +193,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: The minimum number of non-gap characters required in each column passed to
-      tree estimation.
+    doc: The minimum number of non-gap characters required in each column passed
+      to tree estimation.
     inputBinding:
       position: 102
       prefix: --mask-gappy-sites
@@ -276,8 +282,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Return the best likelihood tree and alignment pair instead of those from
-      the last iteration.
+    doc: Return the best likelihood tree and alignment pair instead of those 
+      from the last iteration.
     inputBinding:
       position: 102
       prefix: --no-return-final-tree-and-alignment
@@ -293,8 +299,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Perform a tree search using RAxML on the masked alignment after PASTA algorithm
-      completion.
+    doc: Perform a tree search using RAxML on the masked alignment after PASTA 
+      algorithm completion.
     inputBinding:
       position: 102
       prefix: --raxml-search-after
@@ -302,8 +308,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use the tree from the previous iteration as a starting tree for the search
-      tool.
+    doc: Use the tree from the previous iteration as a starting tree for the 
+      search tool.
     inputBinding:
       position: 102
       prefix: --start-tree-search-from-current
@@ -319,7 +325,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Maximum time (seconds) that PASTA will continue starting new iterations.
+    doc: Maximum time (seconds) that PASTA will continue starting new 
+      iterations.
     inputBinding:
       position: 102
       prefix: --time-limit
@@ -335,7 +342,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: The name of the tree inference program to use to find trees on fixed alignments.
+    doc: The name of the tree inference program to use to find trees on fixed 
+      alignments.
     inputBinding:
       position: 102
       prefix: --tree-estimator
@@ -359,8 +367,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Simply call the sequence aligner then the tree estimator without the PASTA
-      algorithm.
+    doc: Simply call the sequence aligner then the tree estimator without the 
+      PASTA algorithm.
     inputBinding:
       position: 102
       prefix: --two-phase
@@ -372,6 +380,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --untrusted
+  - id: exportconfig_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `exportconfig_path`
+    inputBinding:
+      position: 103
+      prefix: --exportconfig
+  - id: output_directory_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 104
+      prefix: --output-directory
+  - id: timesfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `timesfile_path`
+    inputBinding:
+      position: 105
+      prefix: --timesfile
 outputs:
   - id: exportconfig
     type:
@@ -379,21 +411,23 @@ outputs:
       - File
     doc: Export the configuration to the specified file and exit.
     outputBinding:
-      glob: $(inputs.exportconfig)
+      glob: $(inputs.exportconfig_path)
   - id: timesfile
     type:
       - 'null'
       - File
     doc: optional file that will store the times of events during the PASTA run
     outputBinding:
-      glob: $(inputs.timesfile)
+      glob: $(inputs.timesfile_path)
   - id: output_directory
     type:
       - 'null'
       - Directory
     doc: directory for output files
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pasta:1.9.3--py312hccd54bf_0

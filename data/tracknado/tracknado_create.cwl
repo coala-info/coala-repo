@@ -164,6 +164,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --url-prefix
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: template_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `template_path`
+    inputBinding:
+      position: 103
+      prefix: --template
 outputs:
   - id: output
     type:
@@ -172,14 +188,16 @@ outputs:
     doc: The directory where the staged hub and tracknado_config.json will be 
       created.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: template
     type:
       - 'null'
       - File
     doc: Create a template metadata file at the specified path and exit.
     outputBinding:
-      glob: $(inputs.template)
+      glob: $(inputs.template_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tracknado:0.3.1--pyhdfd78af_0

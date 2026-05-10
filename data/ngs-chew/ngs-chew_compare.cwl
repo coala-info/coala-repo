@@ -46,6 +46,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --no-by-path
+  - id: output_prefix_path
+    type: string
+    doc: Path to comparison file.
+    inputBinding:
+      position: 103
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -53,7 +59,9 @@ outputs:
       - File
     doc: Path to comparison file.
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngs-chew:0.9.4--pyhdfd78af_0

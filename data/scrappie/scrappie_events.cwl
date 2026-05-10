@@ -187,6 +187,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --slip
+  - id: dump_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `dump_file_path`
+    inputBinding:
+      position: 103
+      prefix: --dump-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: dump_file
     type:
@@ -194,14 +210,16 @@ outputs:
       - File
     doc: Dump annotated events to HDF5 file
     outputBinding:
-      glob: $(inputs.dump_file)
+      glob: $(inputs.dump_file_path)
   - id: output_file
     type:
       - 'null'
       - File
     doc: Write to file rather than stdout
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scrappie:1.4.2--py310pl5321h9a1f509_7

@@ -34,12 +34,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input_structure_path
+  - id: output_structure_path_path
+    type: string
+    doc: Output or path parameter `output_structure_path_path`
+    inputBinding:
+      position: 102
+      prefix: --output-structure-path
 outputs:
   - id: output_structure_path
     type: File
     doc: Path to the output structure file
     outputBinding:
-      glob: $(inputs.output_structure_path)
+      glob: $(inputs.output_structure_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biobb_gromacs:5.2.0--pyhdfd78af_0

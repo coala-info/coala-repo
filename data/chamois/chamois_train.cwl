@@ -96,19 +96,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --variance
+  - id: metrics_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `metrics_path`
+    inputBinding:
+      position: 102
+      prefix: --metrics
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: The path where to write the sequence annotations in
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: The path where to write the trained model in JSON format.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: metrics
     type:
       - 'null'
       - File
     doc: The path to an optional metrics file to write in DVC/JSON format.
     outputBinding:
-      glob: $(inputs.metrics)
+      glob: $(inputs.metrics_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chamois:0.2.2--pyhdfd78af_0

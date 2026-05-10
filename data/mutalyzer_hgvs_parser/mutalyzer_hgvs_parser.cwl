@@ -50,6 +50,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -v
+  - id: save_parse_tree_as_png_path
+    type: string
+    doc: Output or path parameter `save_parse_tree_as_png_path`
+    inputBinding:
+      position: 103
+      prefix: --save-parse-tree-as-png
 outputs:
   - id: save_parse_tree_as_png
     type:
@@ -57,7 +63,9 @@ outputs:
       - File
     doc: save the parse tree as a PNG image (pydot required!)
     outputBinding:
-      glob: $(inputs.save_parse_tree_as_png)
+      glob: $(inputs.save_parse_tree_as_png_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mutalyzer_hgvs_parser:0.3.9--pyh7e72e81_0

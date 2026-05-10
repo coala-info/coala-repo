@@ -36,6 +36,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -t
+  - id: stdout_path
+    type: string
+    doc: Output or path parameter `stdout_path`
+    inputBinding:
+      position: 103
+      prefix: --stdout
 outputs:
   - id: stdout
     type:
@@ -43,7 +49,9 @@ outputs:
       - File
     doc: Write to stdout
     outputBinding:
-      glob: $(inputs.stdout)
+      glob: $(inputs.stdout_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ptgaul:1.0.5--pyhdfd78af_1

@@ -5,8 +5,8 @@ baseCommand:
   - c_curve
 label: preseq_c_curve
 doc: "The c_curve command in preseq computes the expected complexity curve (number
-  of distinct reads vs. total number of reads) for a genomic sequencing library.\n
-  \nTool homepage: https://github.com/smithlabcode/preseq"
+  of distinct reads vs. total number of reads) for a genomic sequencing library.\n\
+  \ \nTool homepage: https://github.com/smithlabcode/preseq"
 inputs:
   - id: input_file
     type: File
@@ -53,6 +53,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -v
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -60,7 +66,9 @@ outputs:
       - File
     doc: Output file name
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/preseq:3.2.0--hdcf5f25_6

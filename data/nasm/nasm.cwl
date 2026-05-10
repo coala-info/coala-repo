@@ -334,6 +334,12 @@ inputs:
     doc: '%warning directives'
     inputBinding:
       position: 102
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 103
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -341,7 +347,9 @@ outputs:
       - File
     doc: write output to an outfile
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nasm:2.11.08--0

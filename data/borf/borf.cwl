@@ -58,6 +58,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --upstream_incomplete_length
+  - id: output_path_path
+    type: string
+    doc: Output or path parameter `output_path_path`
+    inputBinding:
+      position: 103
+      prefix: --output-path
 outputs:
   - id: output_path
     type:
@@ -65,7 +71,9 @@ outputs:
       - File
     doc: path to write output files. [OUTPUT_PATH].pep and [OUTPUT_PATH].txt
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/borf:1.2--py_0

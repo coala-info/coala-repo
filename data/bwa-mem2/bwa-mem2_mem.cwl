@@ -303,6 +303,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: -v
+  - id: output_sam_path
+    type: string
+    doc: Output or path parameter `output_sam_path`
+    inputBinding:
+      position: 105
+      prefix: --output-sam
 outputs:
   - id: output_sam
     type:
@@ -310,7 +316,9 @@ outputs:
       - File
     doc: Output SAM file name
     outputBinding:
-      glob: $(inputs.output_sam)
+      glob: $(inputs.output_sam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bwa-mem2:2.3--he70b90d_0

@@ -33,7 +33,8 @@ inputs:
       prefix: --exclude-samples
   - id: genome
     type: string
-    doc: Desired genome build. Choose between GRCh37/HG19 (hg19) and GRCh38/HG38 (hg38)
+    doc: Desired genome build. Choose between GRCh37/HG19 (hg19) and GRCh38/HG38
+      (hg38)
     inputBinding:
       position: 101
       prefix: --genome
@@ -42,8 +43,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Space-delimited list of region names to include. Regions not specified will
-      be excluded.
+    doc: Space-delimited list of region names to include. Regions not specified 
+      will be excluded.
     inputBinding:
       position: 101
       prefix: --include-only-regions
@@ -52,8 +53,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Space-delimited list of sample IDs to include. Samples not specified will
-      be excluded.
+    doc: Space-delimited list of sample IDs to include. Samples not specified 
+      will be excluded.
     inputBinding:
       position: 101
       prefix: --include-only-samples
@@ -77,8 +78,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to GATK-format PED file containing pedigree information - unrepresented
-      samples will be excluded.
+    doc: Path to GATK-format PED file containing pedigree information - 
+      unrepresented samples will be excluded.
     inputBinding:
       position: 101
       prefix: --pedigree
@@ -98,12 +99,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: outdir_path
+    type: string
+    doc: Path to output directory - should not already exist
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type: Directory
     doc: Path to output directory - should not already exist
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/paraviewer:0.1.0--pyhdfd78af_0

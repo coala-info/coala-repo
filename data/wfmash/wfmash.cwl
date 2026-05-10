@@ -384,6 +384,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --write-index
+  - id: scaffold_out_path
+    type: string
+    doc: Output or path parameter `scaffold_out_path`
+    inputBinding:
+      position: 104
+      prefix: --scaffold-out
 outputs:
   - id: scaffold_out
     type:
@@ -391,7 +397,9 @@ outputs:
       - File
     doc: output scaffold mappings to FILE
     outputBinding:
-      glob: $(inputs.scaffold_out)
+      glob: $(inputs.scaffold_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wfmash:0.24.2--h27bdcc9_0

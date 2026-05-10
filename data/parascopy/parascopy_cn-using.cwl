@@ -28,8 +28,8 @@ inputs:
     type:
       type: array
       items: File
-    doc: Input files / directories with background read depth. Should be created using
-      "parascopy depth".
+    doc: Input files / directories with background read depth. Should be created
+      using "parascopy depth".
     inputBinding:
       position: 102
       prefix: --depth
@@ -52,8 +52,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Input indexed BAM/CRAM files. All entries should follow the format "filename[::sample]".
-      Mutually exclusive with --input-list.
+    doc: Input indexed BAM/CRAM files. All entries should follow the format 
+      "filename[::sample]". Mutually exclusive with --input-list.
     inputBinding:
       position: 102
       prefix: --input
@@ -61,8 +61,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: A file containing a list of input BAM/CRAM files. Mutually exclusive with
-      --input.
+    doc: A file containing a list of input BAM/CRAM files. Mutually exclusive 
+      with --input.
     inputBinding:
       position: 102
       prefix: --input-list
@@ -97,9 +97,9 @@ inputs:
       - 'null'
       - type: array
         items: float
-    doc: PSV-reliability thresholds (reliable PSV has all f-values over the threshold).
-      First value is used for gene conversion detection, second value is used to estimate
-      paralog-specific CN.
+    doc: PSV-reliability thresholds (reliable PSV has all f-values over the 
+      threshold). First value is used for gene conversion detection, second 
+      value is used to estimate paralog-specific CN.
     inputBinding:
       position: 102
       prefix: --reliable-threshold
@@ -123,8 +123,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not calculate agCN and psCN profiles. If this option is set, Parascopy
-      still calculates read depth for duplicated windows and PSV-allelic read depth.
+    doc: Do not calculate agCN and psCN profiles. If this option is set, 
+      Parascopy still calculates read depth for duplicated windows and 
+      PSV-allelic read depth.
     inputBinding:
       position: 102
       prefix: --skip-cn
@@ -187,7 +188,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Update agCN using psCN probabilities when agCN quality is less than <float>.
+    doc: Update agCN using psCN probabilities when agCN quality is less than 
+      <float>.
     inputBinding:
       position: 102
       prefix: --update-agcn
@@ -195,17 +197,26 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Sort samples by variance-mean ratio, and only use samples with smallest values.
-      Value should be either <float> (ratio threshold), or <float>% (use this percentile).
+    doc: Sort samples by variance-mean ratio, and only use samples with smallest
+      values. Value should be either <float> (ratio threshold), or <float>% (use
+      this percentile).
     inputBinding:
       position: 102
       prefix: --vmr
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: Output directory.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parascopy:1.19.0--py312hc576ae5_0

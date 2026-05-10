@@ -252,6 +252,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --VERBOSITY
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
+  - id: output_report_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_report_path`
+    inputBinding:
+      position: 103
+      prefix: --output-report
+  - id: output_summary_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_summary_path`
+    inputBinding:
+      position: 104
+      prefix: --output-summary
 outputs:
   - id: output_file
     type:
@@ -259,7 +283,7 @@ outputs:
       - File
     doc: Output BAM file with cell barcodes collapsed.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_report
     type:
       - 'null'
@@ -268,7 +292,7 @@ outputs:
       position of the substitution and intended/changed bases were for each pair
       of barcordes merged.
     outputBinding:
-      glob: $(inputs.output_report)
+      glob: $(inputs.output_report_path)
   - id: output_summary
     type:
       - 'null'
@@ -276,7 +300,9 @@ outputs:
     doc: Output the number of substitutions found at each base, from intended 
       sequence to neighbor sequence.
     outputBinding:
-      glob: $(inputs.output_summary)
+      glob: $(inputs.output_summary_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dropseq_tools:3.0.2--hdfd78af_0

@@ -38,6 +38,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --outputs
+  - id: output_folder_path
+    type: Directory
+    doc: Output or path parameter `output_folder_path`
+    inputBinding:
+      position: 102
+      prefix: --output-folder
 outputs:
   - id: output_folder
     type:
@@ -45,7 +51,9 @@ outputs:
       - Directory
     doc: Folder where the aggregated results will be written.
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/crispresso2:2.3.3--py39hff726c5_0

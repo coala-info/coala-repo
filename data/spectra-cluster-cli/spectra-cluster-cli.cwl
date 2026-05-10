@@ -68,12 +68,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: -threshold
+  - id: output_path_path
+    type: string
+    doc: Output or path parameter `output_path_path`
+    inputBinding:
+      position: 103
+      prefix: --output-path
 outputs:
   - id: output_path
     type: Directory
     doc: Path to the output directory where results will be stored
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spectra-cluster-cli:1.1.2--0

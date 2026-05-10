@@ -95,6 +95,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: -b
+  - id: output_filename_path
+    type: string
+    doc: Output or path parameter `output_filename_path`
+    inputBinding:
+      position: 104
+      prefix: --output-filename
 outputs:
   - id: output_filename
     type:
@@ -102,7 +108,9 @@ outputs:
       - File
     doc: ONEfile name; default is stdout
     outputBinding:
-      glob: $(inputs.output_filename)
+      glob: $(inputs.output_filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phynder:1.0--h566b1c6_5

@@ -72,6 +72,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_directory_path
+    type: Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 102
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type:
@@ -80,7 +86,9 @@ outputs:
     doc: Output directory to create Kaiju files. Default is directory of input 
       file.
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bioprov:0.1.23--pyh5e36f6f_0

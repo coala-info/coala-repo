@@ -123,8 +123,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: sample-fastq (filtered) profile ID. when using --sample-fastq, profile is
-      stored. when not using --sample-fastq, profile is re-used.
+    doc: sample-fastq (filtered) profile ID. when using --sample-fastq, profile 
+      is stored. when not using --sample-fastq, profile is re-used.
     inputBinding:
       position: 102
       prefix: --sample-profile-id
@@ -136,6 +136,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --seed
+  - id: prefix_path
+    type: string
+    doc: Output or path parameter `prefix_path`
+    inputBinding:
+      position: 103
+      prefix: --prefix
 outputs:
   - id: prefix
     type:
@@ -143,7 +149,9 @@ outputs:
       - File
     doc: prefix of output files
     outputBinding:
-      glob: $(inputs.prefix)
+      glob: $(inputs.prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/pbsim:v1.0.3-2-deb_cv1

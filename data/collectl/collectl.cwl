@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: collectl
 label: collectl
-doc: "A performance monitoring tool that collects data for various system subsystems.\n
-  \nTool homepage: https://github.com/sharkcz/collectl"
+doc: "A performance monitoring tool that collects data for various system subsystems.\n\
+  \ \nTool homepage: https://github.com/sharkcz/collectl"
 inputs:
   - id: count
     type:
@@ -25,7 +25,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: misc formatting options (e.g., d|D for date, T for time, z for no compression)
+    doc: misc formatting options (e.g., d|D for date, T for time, z for no 
+      compression)
     inputBinding:
       position: 101
       prefix: --options
@@ -133,6 +134,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: filename_path
+    type: string
+    doc: Output or path parameter `filename_path`
+    inputBinding:
+      position: 102
+      prefix: --filename
 outputs:
   - id: filename
     type:
@@ -140,7 +147,9 @@ outputs:
       - File
     doc: name of directory/file to write to
     outputBinding:
-      glob: $(inputs.filename)
+      glob: $(inputs.filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/collectl:4.3.20.2--pl5321h05cac1d_0

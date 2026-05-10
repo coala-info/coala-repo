@@ -238,6 +238,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --trim_polyN
+  - id: output_consensus_path
+    type: string
+    doc: Output or path parameter `output_consensus_path`
+    inputBinding:
+      position: 102
+      prefix: --output-consensus
 outputs:
   - id: output_consensus
     type:
@@ -245,7 +251,9 @@ outputs:
       - File
     doc: Path to write consensus sequence to (as FASTA)
     outputBinding:
-      glob: $(inputs.output_consensus)
+      glob: $(inputs.output_consensus_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/b2b-utils:0.020--pl5321h9ee0642_0

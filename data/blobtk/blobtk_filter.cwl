@@ -76,6 +76,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --suffix
+  - id: read_list_output_path
+    type: string
+    doc: Output or path parameter `read_list_output_path`
+    inputBinding:
+      position: 102
+      prefix: --read-list-output
 outputs:
   - id: read_list_output
     type:
@@ -83,7 +89,9 @@ outputs:
       - File
     doc: Path to output list of read IDs
     outputBinding:
-      glob: $(inputs.read_list_output)
+      glob: $(inputs.read_list_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blobtk:0.7.1--py39hf6b2c50_0

@@ -53,6 +53,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --workdir
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -61,7 +67,9 @@ outputs:
     doc: user-specified output directory name. Unless a full path, is given, the
       directory will be created in the working directory.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/snpgenie:1.0--hdfd78af_1

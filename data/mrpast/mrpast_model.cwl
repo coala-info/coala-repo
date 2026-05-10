@@ -17,6 +17,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --debug
+  - id: to_demes_path
+    type: string
+    doc: Output or path parameter `to_demes_path`
+    inputBinding:
+      position: 103
+      prefix: --to-demes
 outputs:
   - id: to_demes
     type:
@@ -24,7 +30,9 @@ outputs:
       - File
     doc: Write a Demes YAML file representing the model.
     outputBinding:
-      glob: $(inputs.to_demes)
+      glob: $(inputs.to_demes_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mrpast:0.2--py312h8f4af18_0

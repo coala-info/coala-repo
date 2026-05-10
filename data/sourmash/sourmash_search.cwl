@@ -265,6 +265,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threshold
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
+  - id: save_matches_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `save_matches_path`
+    inputBinding:
+      position: 105
+      prefix: --save-matches
 outputs:
   - id: save_matches
     type:
@@ -272,14 +288,16 @@ outputs:
       - File
     doc: output matching signatures to the specified file
     outputBinding:
-      glob: $(inputs.save_matches)
+      glob: $(inputs.save_matches_path)
   - id: output
     type:
       - 'null'
       - File
     doc: output CSV containing matches to this file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sourmash:4.9.4--hdfd78af_0

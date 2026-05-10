@@ -80,6 +80,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: -strand
+  - id: dropped_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `dropped_path`
+    inputBinding:
+      position: 104
+      prefix: --dropped
+  - id: stats_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_path`
+    inputBinding:
+      position: 105
+      prefix: --stats
 outputs:
   - id: out_file
     type: File
@@ -92,14 +108,16 @@ outputs:
       - File
     doc: Write statistics to specified file.
     outputBinding:
-      glob: $(inputs.stats)
+      glob: $(inputs.stats_path)
   - id: dropped
     type:
       - 'null'
       - File
     doc: Write records that were not selected to specified file.
     outputBinding:
-      glob: $(inputs.dropped)
+      glob: $(inputs.dropped_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-overlapselect:482--h0b57e2e_0

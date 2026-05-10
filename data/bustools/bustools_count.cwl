@@ -57,8 +57,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Split output matrix in two (plus ambiguous) based on transcripts supplied
-      in this file
+    doc: Split output matrix in two (plus ambiguous) based on transcripts 
+      supplied in this file
     inputBinding:
       position: 102
       prefix: --split
@@ -78,6 +78,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --umi-gene
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -85,7 +91,9 @@ outputs:
       - Directory
     doc: Output directory gene matrix files
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bustools:0.45.1--h6f0a7f7_0

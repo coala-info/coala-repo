@@ -25,6 +25,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: counts_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `counts_path`
+    inputBinding:
+      position: 103
+      prefix: --counts
+  - id: plotout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `plotout_path`
+    inputBinding:
+      position: 104
+      prefix: --plotout
 outputs:
   - id: plotout
     type:
@@ -32,14 +48,16 @@ outputs:
       - File
     doc: output file to write figure to
     outputBinding:
-      glob: $(inputs.plotout)
+      glob: $(inputs.plotout_path)
   - id: counts
     type:
       - 'null'
       - File
     doc: output file to write counts to
     outputBinding:
-      glob: $(inputs.counts)
+      glob: $(inputs.counts_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/surpyvor:0.15.0--pyhdfd78af_0

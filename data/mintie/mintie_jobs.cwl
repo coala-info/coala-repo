@@ -153,6 +153,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: --yes
+  - id: report_filename_path
+    type: string
+    doc: Output or path parameter `report_filename_path`
+    inputBinding:
+      position: 105
+      prefix: --report-filename
 outputs:
   - id: report_filename
     type:
@@ -160,7 +166,9 @@ outputs:
       - File
     doc: output file name of report
     outputBinding:
-      glob: $(inputs.report_filename)
+      glob: $(inputs.report_filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mintie:0.4.3--hdfd78af_0

@@ -161,6 +161,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbosity
+  - id: output_directory_path
+    type: Directory
+    inputBinding:
+      position: 103
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type:
@@ -168,7 +173,9 @@ outputs:
       - Directory
     doc: path to directory where output is written to
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/htsinfer:1.0.0_rc.1--pyhdfd78af_0

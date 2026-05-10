@@ -165,6 +165,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --WindowSize
+  - id: output_dir_name_path
+    type: Directory
+    doc: Output or path parameter `output_dir_name_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir-name
 outputs:
   - id: output_dir_name
     type:
@@ -172,7 +178,9 @@ outputs:
       - Directory
     doc: Output directory name, used to define the project name
     outputBinding:
-      glob: $(inputs.output_dir_name)
+      glob: $(inputs.output_dir_name_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/netsyn:1.0.0--pyh7e72e81_0

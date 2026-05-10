@@ -8,8 +8,9 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Pre-calculated alignment file (BLAST6 or PAF format). When provided, alignments
-      from this file will be plotted instead of performing k-mer matching.
+    doc: Pre-calculated alignment file (BLAST6 or PAF format). When provided, 
+      alignments from this file will be plotted instead of performing k-mer 
+      matching.
     inputBinding:
       position: 101
       prefix: --alignment_file
@@ -43,8 +44,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: GFF3 files for markup in self-dotplots. Provide a space-delimited list of
-      GFF files.
+    doc: GFF3 files for markup in self-dotplots. Provide a space-delimited list 
+      of GFF files.
     inputBinding:
       position: 101
       prefix: --gff
@@ -100,8 +101,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Shade subdotplots based on LCS 0 = forward [default] 1 = reverse, or 2 =
-      both strands
+    doc: Shade subdotplots based on LCS 0 = forward [default] 1 = reverse, or 2 
+      = both strands
     inputBinding:
       position: 101
       prefix: --lcs_shading_ori
@@ -109,8 +110,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Reference for LCS shading. 0 = maximal LCS length [default] 1 = maximally
-      possible length 2 = given interval sizes
+    doc: Reference for LCS shading. 0 = maximal LCS length [default] 1 = 
+      maximally possible length 2 = given interval sizes
     inputBinding:
       position: 101
       prefix: --lcs_shading_ref
@@ -158,8 +159,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum percentage of Ns allowed in a kmer window. Applies only if --wobble_conversion
-      is set, else kmers with Ns are skipped.
+    doc: Maximum percentage of Ns allowed in a kmer window. Applies only if 
+      --wobble_conversion is set, else kmers with Ns are skipped.
     inputBinding:
       position: 101
       prefix: --max_n
@@ -191,8 +192,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Mode of FlexiDot dotplotting. 0 = self [default], 1 = paired, 2 = poly (matrix
-      with all-against-all dotplots). Call -m multiple times to run multiple modes.
+    doc: Mode of FlexiDot dotplotting. 0 = self [default], 1 = paired, 2 = poly 
+      (matrix with all-against-all dotplots). Call -m multiple times to run 
+      multiple modes.
     inputBinding:
       position: 101
       prefix: --mode
@@ -216,7 +218,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not calculate reverse complementary matches (only for nucleotide sequences.)
+    doc: Do not calculate reverse complementary matches (only for nucleotide 
+      sequences.)
     inputBinding:
       position: 101
       prefix: --norev
@@ -224,7 +227,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Limit pairwise comparisons to the 1st sequence only (if plotting mode=1 paired.)
+    doc: Limit pairwise comparisons to the 1st sequence only (if plotting mode=1
+      paired.)
     inputBinding:
       position: 101
       prefix: --only_vs_first_seq
@@ -326,6 +330,29 @@ inputs:
     inputBinding:
       position: 101
       prefix: --x_label_pos
+  - id: logfile_path
+    type:
+      - 'null'
+      - string
+    doc: 'Name of log file (default: None)'
+    inputBinding:
+      position: 102
+      prefix: --logfile
+  - id: outdir_path
+    type:
+      - 'null'
+      - string
+    doc: 'Output directory. Default: current directory.'
+    inputBinding:
+      position: 103
+      prefix: --outdir
+  - id: output_prefix_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --output_prefix
 outputs:
   - id: output_prefix
     type:
@@ -333,21 +360,23 @@ outputs:
       - File
     doc: File prefix to be added to the generated filenames.
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
   - id: outdir
     type:
       - 'null'
       - Directory
     doc: 'Output directory. Default: current directory.'
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
   - id: logfile
     type:
       - 'null'
       - File
     doc: Name of log file
     outputBinding:
-      glob: $(inputs.logfile)
+      glob: $(inputs.logfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flexidot:2.1.0--pyhdfd78af_0

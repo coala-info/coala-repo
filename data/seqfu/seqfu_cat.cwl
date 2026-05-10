@@ -318,6 +318,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --zero-pad
+  - id: report_path
+    type: string
+    doc: Output or path parameter `report_path`
+    inputBinding:
+      position: 103
+      prefix: --report
 outputs:
   - id: report
     type:
@@ -325,7 +331,9 @@ outputs:
       - File
     doc: Save a report to FILE (original name, new name)
     outputBinding:
-      glob: $(inputs.report)
+      glob: $(inputs.report_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqfu:1.23.0--hfd12232_0

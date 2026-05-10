@@ -159,12 +159,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --visualize
+  - id: output_dir_path
+    type: Directory
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type: Directory
     doc: Path to directory to store results.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqforge:2.0.0--pyh7e72e81_0

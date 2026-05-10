@@ -6,15 +6,15 @@ baseCommand:
   - -jar
   - pepquery.jar
 label: pepquery
-doc: "A tool for peptide-centric identification and validation of proteomics data.\n
-  \nTool homepage: https://github.com/bzhanglab/PepQuery"
+doc: "A tool for peptide-centric identification and validation of proteomics data.\n\
+  \ \nTool homepage: https://github.com/bzhanglab/PepQuery"
 inputs:
   - id: aa_substitution
     type:
       - 'null'
       - boolean
-    doc: Whether or not to consider aa substitution modifications when perform modification
-      filtering.
+    doc: Whether or not to consider aa substitution modifications when perform 
+      modification filtering.
     inputBinding:
       position: 101
       prefix: -aa
@@ -46,8 +46,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: MS/MS dataset ID(s) from PepQueryDB or public repositories (PRIDE, MassIVE,
-      etc.).
+    doc: MS/MS dataset ID(s) from PepQueryDB or public repositories (PRIDE, 
+      MassIVE, etc.).
     inputBinding:
       position: 101
       prefix: -b
@@ -55,8 +55,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: In known protein identification mode, try to identity the decoy version of
-      the selected target protein.
+    doc: In known protein identification mode, try to identity the decoy version
+      of the selected target protein.
     inputBinding:
       position: 101
       prefix: -decoy
@@ -216,7 +216,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: MS/MS data used for identification (MGF, mzML, mzXML, raw, etc. or USI).
+    doc: MS/MS data used for identification (MGF, mzML, mzXML, raw, etc. or 
+      USI).
     inputBinding:
       position: 101
       prefix: -ms
@@ -248,8 +249,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Protein reference database in FASTA format or online database string (e.g.,
-      swissprot:human).
+    doc: Protein reference database in FASTA format or online database string 
+      (e.g., swissprot:human).
     inputBinding:
       position: 101
       prefix: -db
@@ -298,8 +299,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: When perform validation with unrestricted modification searching (UMS), whether
-      or not to use more stringent criterion.
+    doc: When perform validation with unrestricted modification searching (UMS),
+      whether or not to use more stringent criterion.
     inputBinding:
       position: 101
       prefix: -hc
@@ -311,6 +312,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -varMod
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -318,7 +325,9 @@ outputs:
       - Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pepquery:2.0.2--hdfd78af_0

@@ -28,12 +28,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --nt-genes
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: Output directory (will be created if non-existent)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gmgc-mapper:0.2.0--pyh864c0ab_1

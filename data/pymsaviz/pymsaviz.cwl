@@ -122,6 +122,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --wrap_space_size
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -129,7 +135,9 @@ outputs:
       - File
     doc: Output MSA visualization file (*.png|*.jpg|*.svg|*.pdf)
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pymsaviz:0.5.0--pyhdfd78af_0

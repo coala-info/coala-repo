@@ -51,12 +51,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: save_path_path
+    type: string
+    doc: Output or path parameter `save_path_path`
+    inputBinding:
+      position: 102
+      prefix: --save-path
 outputs:
   - id: save_path
     type: Directory
     doc: Path to directory to save multi-read fast5 files
     outputBinding:
-      glob: $(inputs.save_path)
+      glob: $(inputs.save_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ont-fast5-api:4.1.3--pyhdfd78af_0

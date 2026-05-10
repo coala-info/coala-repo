@@ -47,6 +47,14 @@ inputs:
     inputBinding:
       position: 106
       prefix: --seed
+  - id: fragments_filename_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `fragments_filename_path`
+    inputBinding:
+      position: 107
+      prefix: --fragments-filename
 outputs:
   - id: outfile
     type: File
@@ -60,7 +68,9 @@ outputs:
     doc: Write FASTA sequences of fragments (i.e. read pairs plus sequences in 
       between them) to the given filename
     outputBinding:
-      glob: $(inputs.fragments_filename)
+      glob: $(inputs.fragments_filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/fastaq:v3.17.0-2-deb_cv1

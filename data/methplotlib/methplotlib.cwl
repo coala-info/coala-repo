@@ -114,6 +114,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile
+  - id: qcfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `qcfile_path`
+    inputBinding:
+      position: 103
+      prefix: --qcfile
 outputs:
   - id: outfile
     type:
@@ -123,7 +139,7 @@ outputs:
       Use {region} as a shorthand for {chr}_{start}_{end} in the filename. Missing
       paths will be created.'
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
   - id: qcfile
     type:
       - 'null'
@@ -133,7 +149,9 @@ outputs:
       {region} as a shorthand for {chr}_{start}_{end} in the filename. Missing paths
       will be created.'
     outputBinding:
-      glob: $(inputs.qcfile)
+      glob: $(inputs.qcfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methplotlib:0.21.2--pyhdfd78af_0

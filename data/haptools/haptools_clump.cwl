@@ -121,12 +121,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbosity
+  - id: out_path
+    type: string
+    doc: Output filename  [required]
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type: File
     doc: Output filename
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haptools:0.6.2--pyhdfd78af_0

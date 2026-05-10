@@ -74,6 +74,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: report_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_path`
+    inputBinding:
+      position: 103
+      prefix: --report
+  - id: stats_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_path`
+    inputBinding:
+      position: 104
+      prefix: --stats
+  - id: unclassified_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `unclassified_path`
+    inputBinding:
+      position: 105
+      prefix: --unclassified
 outputs:
   - id: output_fastx
     type: File
@@ -86,21 +110,23 @@ outputs:
       - File
     doc: Output file for unclassified reads
     outputBinding:
-      glob: $(inputs.unclassified)
+      glob: $(inputs.unclassified_path)
   - id: report
     type:
       - 'null'
       - File
     doc: PDF report file
     outputBinding:
-      glob: $(inputs.report)
+      glob: $(inputs.report_path)
   - id: stats
     type:
       - 'null'
       - File
     doc: Output statistics file
     outputBinding:
-      glob: $(inputs.stats)
+      glob: $(inputs.stats_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pychopper:2.7.10--pyhdfd78af_0

@@ -89,6 +89,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --transpose
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -96,7 +102,9 @@ outputs:
       - File
     doc: Output file/stream, i.e. a table of TF-target genes (CSV).
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyscenic:0.12.1--pyhdfd78af_1

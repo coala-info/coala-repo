@@ -307,6 +307,46 @@ inputs:
     inputBinding:
       position: 102
       prefix: --yaml
+  - id: output_bytile_stats_path
+    type:
+      - 'null'
+      - string
+    doc: output file for duplicate statistics. Note
+    inputBinding:
+      position: 103
+      prefix: --output-bytile-stats
+  - id: output_dups_path
+    type:
+      - 'null'
+      - string
+    doc: output file for duplicated pairs.  If the
+    inputBinding:
+      position: 104
+      prefix: --output-dups
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 105
+      prefix: --output-file
+  - id: output_stats_path
+    type:
+      - 'null'
+      - string
+    doc: output file for duplicate statistics. If
+    inputBinding:
+      position: 106
+      prefix: --output-stats
+  - id: output_unmapped_path
+    type:
+      - 'null'
+      - string
+    doc: output file for unmapped pairs. If the path
+    inputBinding:
+      position: 107
+      prefix: --output-unmapped
 outputs:
   - id: output_file
     type:
@@ -316,7 +356,7 @@ outputs:
       .gz or .lz4, the output is bgzip-/lz4c-compressed. By default, the output 
       is printed into stdout.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_dups
     type:
       - 'null'
@@ -326,7 +366,7 @@ outputs:
       --output or -, output duplicates together with deduped pairs. By default, 
       duplicates are dropped.
     outputBinding:
-      glob: $(inputs.output_dups)
+      glob: $(inputs.output_dups_path)
   - id: output_unmapped
     type:
       - 'null'
@@ -337,7 +377,7 @@ outputs:
       the same as --output-dups, output unmapped reads together with dups. By 
       default, unmapped pairs are dropped.
     outputBinding:
-      glob: $(inputs.output_unmapped)
+      glob: $(inputs.output_unmapped_path)
   - id: output_stats
     type:
       - 'null'
@@ -346,7 +386,7 @@ outputs:
       in the append mode. If the path ends with .gz or .lz4, the output is 
       bgzip-/lz4c-compressed. By default, statistics are not printed.
     outputBinding:
-      glob: $(inputs.output_stats)
+      glob: $(inputs.output_stats_path)
   - id: output_bytile_stats
     type:
       - 'null'
@@ -359,7 +399,9 @@ outputs:
       printed. If file exists, it will be open in the append mode. If the path 
       ends with .gz or .lz4, the output is bgzip-/lz4c-compressed.
     outputBinding:
-      glob: $(inputs.output_bytile_stats)
+      glob: $(inputs.output_bytile_stats_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pairtools:1.1.3--py310h4e61836_0

@@ -193,6 +193,27 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: out_filtered_bam_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --out_filtered_bam
+  - id: out_original_junctions_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --out_original_junctions
+  - id: out_removed_junctions_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --out_removed_junctions
 outputs:
   - id: out_original_junctions
     type:
@@ -200,7 +221,7 @@ outputs:
       - File
     doc: Write original junctions to the OUT file or directory
     outputBinding:
-      glob: $(inputs.out_original_junctions)
+      glob: $(inputs.out_original_junctions_path)
   - id: out_removed_junctions
     type:
       - 'null'
@@ -208,14 +229,16 @@ outputs:
     doc: Write removed junctions to OUT file or directory; the default output is
       to terminal
     outputBinding:
-      glob: $(inputs.out_removed_junctions)
+      glob: $(inputs.out_removed_junctions_path)
   - id: out_filtered_bam
     type:
       - 'null'
       - Directory
     doc: Write filtered bams to OUT file or directory
     outputBinding:
-      glob: $(inputs.out_filtered_bam)
+      glob: $(inputs.out_filtered_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/eastr:1.1.2--py311h2de2dd3_1

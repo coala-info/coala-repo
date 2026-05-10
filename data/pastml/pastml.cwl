@@ -344,6 +344,44 @@ inputs:
     inputBinding:
       position: 101
       prefix: --work_dir
+  - id: html_path
+    type:
+      - 'null'
+      - string
+    doc: path to the output full tree visualisation file
+    inputBinding:
+      position: 102
+      prefix: --html
+  - id: html_compressed_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --html_compressed
+  - id: html_mixed_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --html_mixed
+  - id: out_data_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_data_path`
+    inputBinding:
+      position: 105
+      prefix: --out-data
+  - id: pajek_path
+    type:
+      - 'null'
+      - string
+    doc: path to the output vertically compressed visualisation
+    inputBinding:
+      position: 106
+      prefix: --pajek
 outputs:
   - id: out_data
     type:
@@ -352,14 +390,14 @@ outputs:
     doc: path to the output annotation file with the reconstructed ancestral 
       character states.
     outputBinding:
-      glob: $(inputs.out_data)
+      glob: $(inputs.out_data_path)
   - id: html_compressed
     type:
       - 'null'
       - File
     doc: path to the output compressed map visualisation file (html).
     outputBinding:
-      glob: $(inputs.html_compressed)
+      glob: $(inputs.html_compressed_path)
   - id: pajek
     type:
       - 'null'
@@ -367,14 +405,14 @@ outputs:
     doc: path to the output vertically compressed visualisation file (Pajek NET 
       Format). Prooduced only if --html_compressed is specified.
     outputBinding:
-      glob: $(inputs.pajek)
+      glob: $(inputs.pajek_path)
   - id: html
     type:
       - 'null'
       - File
     doc: path to the output full tree visualisation file (html).
     outputBinding:
-      glob: $(inputs.html)
+      glob: $(inputs.html_path)
   - id: html_mixed
     type:
       - 'null'
@@ -382,7 +420,9 @@ outputs:
     doc: path to the output mostly compressed map visualisation file (html), 
       where the nodes in states specified with --focus are uncompressed.
     outputBinding:
-      glob: $(inputs.html_mixed)
+      glob: $(inputs.html_mixed_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pastml:1.9.51--pyhdfd78af_0

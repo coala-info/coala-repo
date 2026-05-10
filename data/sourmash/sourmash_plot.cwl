@@ -124,6 +124,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --vmin
+  - id: csv_output_path
+    type: string
+    doc: Output or path parameter `csv_output_path`
+    inputBinding:
+      position: 103
+      prefix: --csv-output
 outputs:
   - id: csv_output
     type:
@@ -132,7 +138,9 @@ outputs:
     doc: write clustered matrix and labels out in CSV format (with column 
       headers) to this file
     outputBinding:
-      glob: $(inputs.csv_output)
+      glob: $(inputs.csv_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sourmash:4.9.4--hdfd78af_0

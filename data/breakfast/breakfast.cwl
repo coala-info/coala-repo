@@ -146,6 +146,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --var-type
+  - id: output_cache_path
+    type: string
+    doc: Path to Output cached pickle file
+    inputBinding:
+      position: 102
+      prefix: --output-cache
 outputs:
   - id: output_cache
     type:
@@ -153,7 +159,9 @@ outputs:
       - File
     doc: Path to Output cached pickle file
     outputBinding:
-      glob: $(inputs.output_cache)
+      glob: $(inputs.output_cache_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/breakfast:0.4.6--pyhdfd78af_0

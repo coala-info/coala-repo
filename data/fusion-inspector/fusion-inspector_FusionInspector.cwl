@@ -111,7 +111,7 @@ inputs:
     type:
       - 'null'
       - Directory
-    doc: genome lib directory - see http://FusionFilter.github.io for details.  
+    doc: genome lib directory - see http://FusionFilter.github.io for details. 
       Uses env var CTAT_GENOME_LIB as default
     inputBinding:
       position: 101
@@ -362,6 +362,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write_intermediate_results
+  - id: output_dir_path
+    type: Directory
+    inputBinding:
+      position: 102
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type:
@@ -369,7 +374,9 @@ outputs:
       - Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 

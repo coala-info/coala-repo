@@ -47,6 +47,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --motif
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
+  - id: stats_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_out_path`
+    inputBinding:
+      position: 103
+      prefix: --stats-out
 outputs:
   - id: out
     type:
@@ -54,7 +70,7 @@ outputs:
       - Directory
     doc: Output results folder, to store motif hit regions in BED files
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: stats_out
     type:
       - 'null'
@@ -63,7 +79,9 @@ outputs:
       (requires --data-id to be set). If table exists, append results row to 
       table
     outputBinding:
-      glob: $(inputs.stats_out)
+      glob: $(inputs.stats_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/clipcontext:0.7--py_0

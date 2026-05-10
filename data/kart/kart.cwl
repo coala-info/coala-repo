@@ -67,6 +67,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t
+  - id: output_bam_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_bam_path`
+    inputBinding:
+      position: 102
+      prefix: --output-bam
+  - id: output_sam_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_sam_path`
+    inputBinding:
+      position: 103
+      prefix: --output-sam
 outputs:
   - id: output_sam
     type:
@@ -74,14 +90,16 @@ outputs:
       - File
     doc: alignment filename in SAM format
     outputBinding:
-      glob: $(inputs.output_sam)
+      glob: $(inputs.output_sam_path)
   - id: output_bam
     type:
       - 'null'
       - File
     doc: alignment filename in BAM format
     outputBinding:
-      glob: $(inputs.output_bam)
+      glob: $(inputs.output_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kart:2.5.6--h13024bc_6

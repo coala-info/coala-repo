@@ -77,7 +77,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: drop chains shorter than FLOAT fraction of the longest overlapping chain
+    doc: drop chains shorter than FLOAT fraction of the longest overlapping 
+      chain
     inputBinding:
       position: 103
       prefix: -D
@@ -125,8 +126,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: treat ALT contigs as part of the primary assembly (i.e. ignore <idxbase>.alt
-      file)
+    doc: treat ALT contigs as part of the primary assembly (i.e. ignore 
+      <idxbase>.alt file)
     inputBinding:
       position: 103
       prefix: -j
@@ -134,7 +135,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: specify the mean, standard deviation, max and min of the insert size distribution
+    doc: specify the mean, standard deviation, max and min of the insert size 
+      distribution
     inputBinding:
       position: 103
       prefix: -I
@@ -166,7 +168,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: score for a sequence match, which scales options -TdBOELU unless overridden
+    doc: score for a sequence match, which scales options -TdBOELU unless 
+      overridden
     inputBinding:
       position: 103
       prefix: -A
@@ -222,7 +225,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: do not adjust minimum ORF length (constant value) for shorter read lengths
+    doc: do not adjust minimum ORF length (constant value) for shorter read 
+      lengths
     inputBinding:
       position: 103
       prefix: -J
@@ -270,8 +274,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: read type (pacbio, ont2d, or intractg). Setting -x changes multiple parameters
-      unless overriden
+    doc: read type (pacbio, ont2d, or intractg). Setting -x changes multiple 
+      parameters unless overriden
     inputBinding:
       position: 103
       prefix: -x
@@ -336,10 +340,17 @@ inputs:
     type:
       - 'null'
       - string
-    doc: if there are <INT hits with score >80% of the max score, output all in XA
+    doc: if there are <INT hits with score >80% of the max score, output all in 
+      XA
     inputBinding:
       position: 103
       prefix: -h
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 104
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -347,7 +358,9 @@ outputs:
       - File
     doc: activate PALADIN reporting using STR as an output file prefix
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/paladin:1.6.0--h44aa6d8_0

@@ -44,6 +44,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --summary-col
+  - id: updated_marker_file_path
+    type: string
+    doc: Output or path parameter `updated_marker_file_path`
+    inputBinding:
+      position: 102
+      prefix: --updated-marker-file
 outputs:
   - id: updated_marker_file
     type:
@@ -51,7 +57,9 @@ outputs:
       - File
     doc: Path to the updated marker file
     outputBinding:
-      glob: $(inputs.updated_marker_file)
+      glob: $(inputs.updated_marker_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/garnett-cli:0.0.5--hdfd78af_1

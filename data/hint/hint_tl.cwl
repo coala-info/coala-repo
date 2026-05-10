@@ -97,6 +97,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -105,7 +111,9 @@ outputs:
     doc: Path to the output directory, where you want to store all the output 
       files, if not set, the current directory will be used
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hint:2.2.8--py_1

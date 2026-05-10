@@ -38,12 +38,28 @@ inputs:
     inputBinding:
       position: 101
       prefix: --overwrite
+  - id: output_entity_by_gene_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_entity_by_gene_path`
+    inputBinding:
+      position: 102
+      prefix: --output-entity-by-gene
+  - id: output_transcripts_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_transcripts_path`
+    inputBinding:
+      position: 103
+      prefix: --output-transcripts
 outputs:
   - id: output_entity_by_gene
     type: File
     doc: Path to output the Entity by gene matrix csv file.
     outputBinding:
-      glob: $(inputs.output_entity_by_gene)
+      glob: $(inputs.output_entity_by_gene_path)
   - id: output_transcripts
     type:
       - 'null'
@@ -53,7 +69,9 @@ outputs:
       other Entity that contains each transcript (or -1 if the transcript is not
       contained by any Entity).
     outputBinding:
-      glob: $(inputs.output_transcripts)
+      glob: $(inputs.output_transcripts_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0

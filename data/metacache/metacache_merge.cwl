@@ -20,6 +20,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -taxonomy
+  - id: result_path
+    type: string
+    doc: Output or path parameter `result_path`
+    inputBinding:
+      position: 103
+      prefix: --result
 outputs:
   - id: result
     type:
@@ -27,7 +33,9 @@ outputs:
       - File
     doc: Output file for the merge result
     outputBinding:
-      glob: $(inputs.result)
+      glob: $(inputs.result_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metacache:2.6.0--h077b44d_0

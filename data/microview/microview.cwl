@@ -23,6 +23,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --taxonomy
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -30,7 +36,9 @@ outputs:
       - File
     doc: Report file name
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/microview:0.11.0--py312h031d066_0

@@ -52,13 +52,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --skip_info_data
+  - id: out_tsv_path
+    type: string
+    doc: Output TSV file with one line per non-rejected sample genotype 
+      (variant, genotype and annotation data as tab-separated values)
+    inputBinding:
+      position: 102
+      prefix: --out_tsv
 outputs:
   - id: out_tsv
     type: File
     doc: Output TSV file with one line per non-rejected sample genotype 
       (variant, genotype and annotation data as tab-separated values)
     outputBinding:
-      glob: $(inputs.out_tsv)
+      glob: $(inputs.out_tsv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vcf2tsvpy:0.6.1--pyhda70652_0

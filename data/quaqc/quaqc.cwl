@@ -507,6 +507,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: json_path
+    type:
+      - 'null'
+      - string
+    doc: Save combined QC as a JSON file. Use '-' for stdout.
+    inputBinding:
+      position: 103
+      prefix: --json
+  - id: output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to save QC report if not that of input.
+    inputBinding:
+      position: 104
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -514,14 +530,16 @@ outputs:
       - Directory
     doc: Directory to save QC report if not that of input.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
   - id: json
     type:
       - 'null'
       - File
     doc: Save combined QC as a JSON file. Use '-' for stdout.
     outputBinding:
-      glob: $(inputs.json)
+      glob: $(inputs.json_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/quaqc:1.5--h577a1d6_0

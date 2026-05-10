@@ -280,6 +280,54 @@ inputs:
     inputBinding:
       position: 101
       prefix: -VERBOSE
+  - id: out_bad_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_bad_path`
+    inputBinding:
+      position: 102
+      prefix: --out-bad
+  - id: out_bad2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_bad2_path`
+    inputBinding:
+      position: 103
+      prefix: --out-bad2
+  - id: out_good_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_good_path`
+    inputBinding:
+      position: 104
+      prefix: --out-good
+  - id: out_good2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_good2_path`
+    inputBinding:
+      position: 105
+      prefix: --out-good2
+  - id: out_single_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_single_path`
+    inputBinding:
+      position: 106
+      prefix: --out-single
+  - id: out_single2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_single2_path`
+    inputBinding:
+      position: 107
+      prefix: --out-single2
 outputs:
   - id: out_good
     type:
@@ -289,7 +337,7 @@ outputs:
       -out_name only for the selected files. File extension won't be added automatically.
       (TIP: if you don't need a file, set its name to /dev/null)"
     outputBinding:
-      glob: $(inputs.out_good)
+      glob: $(inputs.out_good_path)
   - id: out_single
     type:
       - 'null'
@@ -298,7 +346,7 @@ outputs:
       -out_name only for the selected files. File extension won't be added automatically.
       (TIP: if you don't need a file, set its name to /dev/null)"
     outputBinding:
-      glob: $(inputs.out_single)
+      glob: $(inputs.out_single_path)
   - id: out_bad
     type:
       - 'null'
@@ -307,7 +355,7 @@ outputs:
       -out_name only for the selected files. File extension won't be added automatically.
       (TIP: if you don't need a file, set its name to /dev/null)"
     outputBinding:
-      glob: $(inputs.out_bad)
+      glob: $(inputs.out_bad_path)
   - id: out_good2
     type:
       - 'null'
@@ -316,7 +364,7 @@ outputs:
       -out_name only for the selected files. File extension won't be added automatically.
       (TIP: if you don't need a file, set its name to /dev/null)"
     outputBinding:
-      glob: $(inputs.out_good2)
+      glob: $(inputs.out_good2_path)
   - id: out_single2
     type:
       - 'null'
@@ -325,7 +373,7 @@ outputs:
       -out_name only for the selected files. File extension won't be added automatically.
       (TIP: if you don't need a file, set its name to /dev/null)"
     outputBinding:
-      glob: $(inputs.out_single2)
+      glob: $(inputs.out_single2_path)
   - id: out_bad2
     type:
       - 'null'
@@ -334,7 +382,9 @@ outputs:
       -out_name only for the selected files. File extension won't be added automatically.
       (TIP: if you don't need a file, set its name to /dev/null)"
     outputBinding:
-      glob: $(inputs.out_bad2)
+      glob: $(inputs.out_bad2_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/prinseq-plus-plus:1.2.4--h7ff8a90_1

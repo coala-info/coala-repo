@@ -58,6 +58,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --region
+  - id: output_hmnfusion_json_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --output-hmnfusion-json
+  - id: output_hmnfusion_vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_hmnfusion_vcf_path`
+    inputBinding:
+      position: 103
+      prefix: --output-hmnfusion-vcf
 outputs:
   - id: output_hmnfusion_vcf
     type:
@@ -65,14 +80,16 @@ outputs:
       - File
     doc: Vcf file output
     outputBinding:
-      glob: $(inputs.output_hmnfusion_vcf)
+      glob: $(inputs.output_hmnfusion_vcf_path)
   - id: output_hmnfusion_json
     type:
       - 'null'
       - File
     doc: Json file output
     outputBinding:
-      glob: $(inputs.output_hmnfusion_json)
+      glob: $(inputs.output_hmnfusion_json_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmnfusion:1.5.1--pyh7e72e81_0

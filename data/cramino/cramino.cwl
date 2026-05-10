@@ -55,7 +55,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Scale histogram bins by total basepairs in each bin (not just read count)
+    doc: Scale histogram bins by total basepairs in each bin (not just read 
+      count)
     inputBinding:
       position: 102
       prefix: --scaled
@@ -83,6 +84,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --ubam
+  - id: arrow_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `arrow_path`
+    inputBinding:
+      position: 103
+      prefix: --arrow
+  - id: hist_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `hist_path`
+    inputBinding:
+      position: 104
+      prefix: --hist
+  - id: hist_count_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `hist_count_path`
+    inputBinding:
+      position: 105
+      prefix: --hist-count
 outputs:
   - id: hist
     type:
@@ -90,21 +115,24 @@ outputs:
       - File
     doc: If histograms have to be generated (optionally specify output file)
     outputBinding:
-      glob: $(inputs.hist)
+      glob: $(inputs.hist_path)
   - id: arrow
     type:
       - 'null'
       - File
     doc: Write data to an arrow format file
     outputBinding:
-      glob: $(inputs.arrow)
+      glob: $(inputs.arrow_path)
   - id: hist_count
     type:
       - 'null'
       - File
-    doc: Output histogram bin counts in TSV format (optionally specify output file)
+    doc: Output histogram bin counts in TSV format (optionally specify output 
+      file)
     outputBinding:
-      glob: $(inputs.hist_count)
+      glob: $(inputs.hist_count_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cramino:1.3.0--h3dc2dae_0

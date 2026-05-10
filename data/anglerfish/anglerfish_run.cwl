@@ -18,8 +18,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Force reverse complementing the I5 and/or I7 indices. If set to anything
-      other than 'original' this will disregard lenient mode.
+    doc: Force reverse complementing the I5 and/or I7 indices. If set to 
+      anything other than 'original' this will disregard lenient mode.
     inputBinding:
       position: 101
       prefix: --force_rc
@@ -27,8 +27,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Will try reverse complementing the I5 and/or I7 indices and choose the best
-      match.
+    doc: Will try reverse complementing the I5 and/or I7 indices and choose the 
+      best match.
     inputBinding:
       position: 101
       prefix: --lenient
@@ -36,8 +36,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: If lenient is set, this is the minimum factor of additional matches required
-      to reverse complement the index
+    doc: If lenient is set, this is the minimum factor of additional matches 
+      required to reverse complement the index
     inputBinding:
       position: 101
       prefix: --lenient_factor
@@ -45,9 +45,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Manually set maximum allowed edit distance for index matching,by default
-      this is set to 0, 1 or 2 based on the minimum detectedindex distance in the
-      samplesheet.
+    doc: Manually set maximum allowed edit distance for index matching,by 
+      default this is set to 0, 1 or 2 based on the minimum detectedindex 
+      distance in the samplesheet.
     inputBinding:
       position: 101
       prefix: --max-distance
@@ -55,8 +55,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum number of unknown indices to show in the output. default is length
-      of samplesheet + 10
+    doc: Maximum number of unknown indices to show in the output. default is 
+      length of samplesheet + 10
     inputBinding:
       position: 101
       prefix: --max-unknowns
@@ -64,8 +64,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Will assume the samplesheet refers to a single ONT run prepped with a barcoding
-      kit. And will treat each barcode separately
+    doc: Will assume the samplesheet refers to a single ONT run prepped with a 
+      barcoding kit. And will treat each barcode separately
     inputBinding:
       position: 101
       prefix: --ont_barcodes
@@ -99,6 +99,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: out_fastq_path
+    type: string
+    doc: Output or path parameter `out_fastq_path`
+    inputBinding:
+      position: 102
+      prefix: --out-fastq
 outputs:
   - id: out_fastq
     type:
@@ -106,7 +112,9 @@ outputs:
       - Directory
     doc: Analysis output folder
     outputBinding:
-      glob: $(inputs.out_fastq)
+      glob: $(inputs.out_fastq_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/anglerfish:0.7.0--pyhdfd78af_0

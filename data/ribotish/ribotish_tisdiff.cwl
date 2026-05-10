@@ -269,26 +269,52 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: 'Output data file (default: ribobampath[:-4]+'
+    inputBinding:
+      position: 102
+      prefix: -o
+  - id: plot_ma_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `plot_ma_path`
+    inputBinding:
+      position: 103
+      prefix: --plot-ma
+  - id: plot_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `plot_output_path`
+    inputBinding:
+      position: 104
+      prefix: --plot-output
 outputs:
   - id: output
     type: File
     doc: Output result file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: plot_output
     type:
       - 'null'
       - File
     doc: Scatter plot output pdf file
     outputBinding:
-      glob: $(inputs.plot_output)
+      glob: $(inputs.plot_output_path)
   - id: plot_ma
     type:
       - 'null'
       - File
     doc: TIS normalization MA plot output pdf file
     outputBinding:
-      glob: $(inputs.plot_ma)
+      glob: $(inputs.plot_ma_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ribotish:0.2.8--pyhdfd78af_0

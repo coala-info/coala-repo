@@ -30,12 +30,20 @@ inputs:
     doc: Write output to stdout instead of a file
     inputBinding:
       position: 101
+  - id: output_fasta_path
+    type: string
+    doc: Output or path parameter `output_fasta_path`
+    inputBinding:
+      position: 102
+      prefix: --output-fasta
 outputs:
   - id: output_fasta
     type: File
     doc: Output FASTA file
     outputBinding:
-      glob: $(inputs.output_fasta)
+      glob: $(inputs.output_fasta_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0

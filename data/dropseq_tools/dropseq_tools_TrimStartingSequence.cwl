@@ -207,19 +207,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --VERBOSITY
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
+  - id: output_summary_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_summary_path`
+    inputBinding:
+      position: 103
+      prefix: --output-summary
 outputs:
   - id: output_file
     type: File
     doc: The output BAM file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_summary
     type:
       - 'null'
       - File
     doc: The output summary statistics
     outputBinding:
-      glob: $(inputs.output_summary)
+      glob: $(inputs.output_summary_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dropseq_tools:3.0.2--hdfd78af_0

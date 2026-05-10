@@ -48,6 +48,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbosity
+  - id: ref_seq_bias_path
+    type: string
+    doc: Output or path parameter `ref_seq_bias_path`
+    inputBinding:
+      position: 102
+      prefix: --ref-seq-bias
 outputs:
   - id: ref_seq_bias
     type:
@@ -55,7 +61,9 @@ outputs:
       - File
     doc: Output reference sequence bias to file (tsv format; - for stdout)
     outputBinding:
-      glob: $(inputs.ref_seq_bias)
+      glob: $(inputs.ref_seq_bias_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/reseq:1.1--py310hfb68e69_5

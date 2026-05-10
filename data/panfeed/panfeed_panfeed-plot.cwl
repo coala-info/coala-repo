@@ -8,7 +8,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Opacity for non-passing k-mers (between 0 and 1, 0 indicates full transparency)
+    doc: Opacity for non-passing k-mers (between 0 and 1, 0 indicates full 
+      transparency)
     inputBinding:
       position: 101
       prefix: --alpha
@@ -77,7 +78,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Column in phenotype TSV file for sorting (default is sorting by p-values)
+    doc: Column in phenotype TSV file for sorting (default is sorting by 
+      p-values)
     inputBinding:
       position: 101
       prefix: --phenotype-column
@@ -85,8 +87,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Only show a randomly picked set of sample (a value between 0 and 1 indicating
-      the proportion to show, default all)
+    doc: Only show a randomly picked set of sample (a value between 0 and 1 
+      indicating the proportion to show, default all)
     inputBinding:
       position: 101
       prefix: --sample
@@ -138,6 +140,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --xticks
+  - id: output_directory_path
+    type: Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 102
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type:
@@ -145,7 +153,9 @@ outputs:
       - Directory
     doc: Output directory for the plots
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panfeed:1.7.2--pyhdfd78af_0

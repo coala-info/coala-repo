@@ -50,12 +50,8 @@ inputs:
       - 'null'
       - type: array
         items: int
-    doc: Add option to display lines at these depths (provide depths as a list of
-      integers)
-      - 5
-      - 10
-      - 20
-      - 50
+    doc: Add option to display lines at these depths (provide depths as a list 
+      of integers) - 5 - 10 - 20 - 50
     inputBinding:
       position: 101
       prefix: --depth_lines
@@ -99,6 +95,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --refID
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -106,7 +108,9 @@ outputs:
       - Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amplicon_coverage_plot:0.3.4--pyhdfd78af_0

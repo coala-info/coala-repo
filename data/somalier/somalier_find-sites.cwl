@@ -76,6 +76,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --snp-dist
+  - id: output_vcf_path
+    type: string
+    doc: Output or path parameter `output_vcf_path`
+    inputBinding:
+      position: 103
+      prefix: --output-vcf
 outputs:
   - id: output_vcf
     type:
@@ -83,7 +89,9 @@ outputs:
       - File
     doc: path to output vcf containing sites
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/somalier:0.3.1--hc78c8e0_0

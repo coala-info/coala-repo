@@ -114,6 +114,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --thread
+  - id: output_location_path
+    type: string
+    doc: Output or path parameter `output_location_path`
+    inputBinding:
+      position: 102
+      prefix: --output-location
 outputs:
   - id: output_location
     type:
@@ -121,7 +127,9 @@ outputs:
       - File
     doc: the output location
     outputBinding:
-      glob: $(inputs.output_location)
+      glob: $(inputs.output_location_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/peakranger:1.18--hdcf5f25_9

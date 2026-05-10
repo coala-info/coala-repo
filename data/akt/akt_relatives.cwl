@@ -27,6 +27,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --kmin
+  - id: graph_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `graph_out_path`
+    inputBinding:
+      position: 103
+      prefix: --graph-out
+  - id: prefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `prefix_path`
+    inputBinding:
+      position: 104
+      prefix: --prefix
 outputs:
   - id: graph_out
     type:
@@ -34,14 +50,16 @@ outputs:
       - File
     doc: if present output pedigree graph files
     outputBinding:
-      glob: $(inputs.graph_out)
+      glob: $(inputs.graph_out_path)
   - id: prefix
     type:
       - 'null'
       - File
     doc: output file prefix
     outputBinding:
-      glob: $(inputs.prefix)
+      glob: $(inputs.prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/akt:0.3.3--h5ca1c30_7

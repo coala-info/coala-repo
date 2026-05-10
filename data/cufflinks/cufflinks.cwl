@@ -93,6 +93,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --num-threads
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -100,7 +106,9 @@ outputs:
       - Directory
     doc: Write all output files to this directory.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cufflinks:2.2.1--py35_2

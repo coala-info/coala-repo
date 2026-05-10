@@ -10,17 +10,18 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Input files which should be from the same movie (movie.1.bax.h5 movie.2.bax.h5
-      ...)
+    doc: Input files which should be from the same movie (movie.1.bax.h5 
+      movie.2.bax.h5 ...)
     inputBinding:
       position: 1
   - id: allow_unrecognized_chemistry_triple
     type:
       - 'null'
       - boolean
-    doc: By default, bax2bam only allows the conversion of files with chemistries
-      that are supported in SMRT Analysis 3. Set this flag to disable the strict check
-      and allow generation of BAM files containing legacy chemistries.
+    doc: By default, bax2bam only allows the conversion of files with 
+      chemistries that are supported in SMRT Analysis 3. Set this flag to 
+      disable the strict check and allow generation of BAM files containing 
+      legacy chemistries.
     inputBinding:
       position: 102
       prefix: --allowUnrecognizedChemistryTriple
@@ -52,8 +53,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Output BAMs in internal mode. Currently this indicates that non-sequencing
-      ZMWs should be included in the output scraps BAM file, if applicable.
+    doc: Output BAMs in internal mode. Currently this indicates that 
+      non-sequencing ZMWs should be included in the output scraps BAM file, if 
+      applicable.
     inputBinding:
       position: 102
       prefix: --internal
@@ -61,8 +63,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Store full, 16-bit IPD/PulseWidth data, instead of (default) downsampled,
-      8-bit encoding.
+    doc: Store full, 16-bit IPD/PulseWidth data, instead of (default) 
+      downsampled, 8-bit encoding.
     inputBinding:
       position: 102
       prefix: --losslessframes
@@ -78,8 +80,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Comma-separated list of desired pulse features (DeletionQV, DeletionTag,
-      InsertionQV, IPD, PulseWidth, MergeQV, SubstitutionQV, SubstitutionTag)
+    doc: Comma-separated list of desired pulse features (DeletionQV, 
+      DeletionTag, InsertionQV, IPD, PulseWidth, MergeQV, SubstitutionQV, 
+      SubstitutionTag)
     inputBinding:
       position: 102
       prefix: --pulsefeatures
@@ -99,23 +102,42 @@ inputs:
     inputBinding:
       position: 102
       prefix: --xml
+  - id: output_prefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 103
+      prefix: --output-prefix
+  - id: output_xml_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_xml_path`
+    inputBinding:
+      position: 104
+      prefix: --output-xml
 outputs:
   - id: output_prefix
     type:
       - 'null'
       - File
-    doc: Prefix of output filenames. Movie name will be used if no prefix provided
+    doc: Prefix of output filenames. Movie name will be used if no prefix 
+      provided
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
   - id: output_xml
     type:
       - 'null'
       - File
-    doc: Explicit output XML name. If none provided via this arg, bax2bam will use
-      -o prefix (<prefix>.dataset.xml). If that is not specified either, the output
-      XML filename will be <moviename>.dataset.xml
+    doc: Explicit output XML name. If none provided via this arg, bax2bam will 
+      use -o prefix (<prefix>.dataset.xml). If that is not specified either, the
+      output XML filename will be <moviename>.dataset.xml
     outputBinding:
-      glob: $(inputs.output_xml)
+      glob: $(inputs.output_xml_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bax2bam:0.0.11--0

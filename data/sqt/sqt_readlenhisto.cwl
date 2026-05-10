@@ -65,6 +65,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --outliers
+  - id: plot_file_path
+    type: string
+    doc: Output or path parameter `plot_file_path`
+    inputBinding:
+      position: 103
+      prefix: --plot-file
 outputs:
   - id: plot_file
     type:
@@ -73,7 +79,9 @@ outputs:
     doc: Plot to this file (.pdf or .png). If multiple sequence files given, 
       plot only total.
     outputBinding:
-      glob: $(inputs.plot_file)
+      glob: $(inputs.plot_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sqt:v0.8.0-3-deb-py3_cv1

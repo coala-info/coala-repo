@@ -179,6 +179,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --usearch-abundance
+  - id: output_file_path
+    type: string
+    doc: output result to file (stdout)
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -186,7 +192,9 @@ outputs:
       - File
     doc: output result to file (stdout)
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/swarm:3.1.6--h9948957_0

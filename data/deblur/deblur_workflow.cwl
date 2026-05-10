@@ -12,8 +12,7 @@ inputs:
       - string
     doc: A comma separated list of error probabilities for each Hamming 
       distance. The length of the list determines the number of Hamming 
-      distances taken into account.
-      0.001, 0.0005
+      distances taken into account. 0.001, 0.0005
     inputBinding:
       position: 101
       prefix: --error-dist
@@ -197,13 +196,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --trim-length
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type: Directory
     doc: "Directory path to store output including\n                             \
       \     BIOM table"
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deblur:1.1.1--pyhdfd78af_0

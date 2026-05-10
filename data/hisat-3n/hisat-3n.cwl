@@ -803,6 +803,22 @@ inputs:
     doc: 'Same as: --bowtie2-dp 2 -k 50 --score-min L,0,-1'
     inputBinding:
       position: 102
+  - id: novel_splicesite_outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `novel_splicesite_outfile_path`
+    inputBinding:
+      position: 103
+      prefix: --novel-splicesite-outfile
+  - id: sam_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sam_output_path`
+    inputBinding:
+      position: 104
+      prefix: --sam-output
 outputs:
   - id: sam_output
     type:
@@ -810,14 +826,16 @@ outputs:
       - File
     doc: 'File for SAM output (default: stdout)'
     outputBinding:
-      glob: $(inputs.sam_output)
+      glob: $(inputs.sam_output_path)
   - id: novel_splicesite_outfile
     type:
       - 'null'
       - File
     doc: report a list of splice sites
     outputBinding:
-      glob: $(inputs.novel_splicesite_outfile)
+      glob: $(inputs.novel_splicesite_outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hisat-3n:0.0.3--h503566f_0

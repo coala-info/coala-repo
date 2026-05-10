@@ -47,6 +47,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --word-size
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 104
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -54,7 +60,9 @@ outputs:
       - File
     doc: Redirect output to file instead of stdout
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/rdp-alignment:v1.2.0-5-deb_cv1

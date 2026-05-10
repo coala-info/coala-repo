@@ -94,6 +94,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --strand-ambiguous
+  - id: dot_output_file_path
+    type: string
+    doc: Output or path parameter `dot_output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --dot-output-file
 outputs:
   - id: dot_output_file
     type:
@@ -101,7 +107,9 @@ outputs:
       - File
     doc: output file for the partial order graph in DOT format
     outputBinding:
-      glob: $(inputs.dot_output_file)
+      glob: $(inputs.dot_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spoa:4.1.5--h077b44d_0

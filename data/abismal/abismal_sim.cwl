@@ -148,19 +148,37 @@ inputs:
     inputBinding:
       position: 102
       prefix: -verbose
+  - id: output_prefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 103
+      prefix: --output-prefix
+  - id: write_locations_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_locations_path`
+    inputBinding:
+      position: 104
+      prefix: --write-locations
 outputs:
   - id: output_prefix
     type: File
     doc: output file prefix
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
   - id: write_locations
     type:
       - 'null'
       - File
     doc: write locations here
     outputBinding:
-      glob: $(inputs.write_locations)
+      glob: $(inputs.write_locations_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/abismal:3.3.0--h077b44d_0

@@ -84,6 +84,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --seq_type
+  - id: output_dir_path
+    type: Directory
+    inputBinding:
+      position: 102
+      prefix: --output_dir
 outputs:
   - id: output_dir
     type:
@@ -91,7 +96,9 @@ outputs:
       - Directory
     doc: Directory to save prediction results.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/viral-host-hunter:0.2.0--pyhdfd78af_1

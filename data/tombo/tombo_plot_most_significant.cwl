@@ -139,6 +139,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tombo-model-filename
+  - id: pdf_filename_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pdf_filename_path`
+    inputBinding:
+      position: 102
+      prefix: --pdf-filename
+  - id: sequences_filename_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sequences_filename_path`
+    inputBinding:
+      position: 103
+      prefix: --sequences-filename
 outputs:
   - id: pdf_filename
     type:
@@ -146,7 +162,7 @@ outputs:
       - File
     doc: PDF filename to store plot(s).
     outputBinding:
-      glob: $(inputs.pdf_filename)
+      glob: $(inputs.pdf_filename_path)
   - id: sequences_filename
     type:
       - 'null'
@@ -154,7 +170,9 @@ outputs:
     doc: File for sequences from selected regions. Sequences will be stored in 
       FASTA format.
     outputBinding:
-      glob: $(inputs.sequences_filename)
+      glob: $(inputs.sequences_filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tombo:1.0--py27_0

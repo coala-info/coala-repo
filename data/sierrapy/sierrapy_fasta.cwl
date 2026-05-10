@@ -86,6 +86,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --virus
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -93,7 +99,9 @@ outputs:
       - File
     doc: File path to store the JSON result.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sierrapy:0.4.3--pyh7cba7a3_0

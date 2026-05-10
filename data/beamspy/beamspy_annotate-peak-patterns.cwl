@@ -105,6 +105,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ppm
+  - id: db_path
+    type: string
+    doc: Output or path parameter `db_path`
+    inputBinding:
+      position: 102
+      prefix: --db
 outputs:
   - id: db
     type:
@@ -112,7 +118,9 @@ outputs:
       - File
     doc: Sqlite database to write results.
     outputBinding:
-      glob: $(inputs.db)
+      glob: $(inputs.db_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/beamspy:1.2.0--pyhdfd78af_0

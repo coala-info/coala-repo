@@ -155,6 +155,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --width
+  - id: outputdir_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outputdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outputdir
+  - id: outputdirc_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outputdirc_path`
+    inputBinding:
+      position: 103
+      prefix: --outputdirc
 outputs:
   - id: outputdir
     type:
@@ -162,14 +178,16 @@ outputs:
       - Directory
     doc: The output directory. Causes error if the directory already exists.
     outputBinding:
-      glob: $(inputs.outputdir)
+      glob: $(inputs.outputdir_path)
   - id: outputdirc
     type:
       - 'null'
       - Directory
     doc: The output directory. Will overwrite if directory already exists.
     outputBinding:
-      glob: $(inputs.outputdirc)
+      glob: $(inputs.outputdirc_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/yamda:0.1.00e9c9d--py_0

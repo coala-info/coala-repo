@@ -49,6 +49,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: -v
+  - id: clustal_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `clustal_output_path`
+    inputBinding:
+      position: 103
+      prefix: --clustal-output
+  - id: pir_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pir_output_path`
+    inputBinding:
+      position: 104
+      prefix: --pir-output
 outputs:
   - id: clustal_output
     type:
@@ -56,14 +72,16 @@ outputs:
       - File
     doc: Write out MSA in Clustal format
     outputBinding:
-      glob: $(inputs.clustal_output)
+      glob: $(inputs.clustal_output_path)
   - id: pir_output
     type:
       - 'null'
       - File
     doc: Write out MSA in PIR format
     outputBinding:
-      glob: $(inputs.pir_output)
+      glob: $(inputs.pir_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/poa:v2.020060928-7-deb_cv1

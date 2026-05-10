@@ -38,12 +38,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -r
+  - id: output_filename_path
+    type: string
+    doc: Output or path parameter `output_filename_path`
+    inputBinding:
+      position: 102
+      prefix: --output-filename
 outputs:
   - id: output_filename
     type: File
     doc: Output filename
     outputBinding:
-      glob: $(inputs.output_filename)
+      glob: $(inputs.output_filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/clove:0.17--hdfd78af_2

@@ -95,6 +95,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --score
+  - id: outfile_path
+    type: string
+    doc: Output file [default outdir/SEQUENCE_FILE.sanntis.gff]
+    inputBinding:
+      position: 103
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -102,7 +108,9 @@ outputs:
       - File
     doc: Output file
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sanntis:0.9.4.1--pyhdfd78af_0

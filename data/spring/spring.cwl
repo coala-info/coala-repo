@@ -145,6 +145,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --working-dir
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -155,7 +161,9 @@ outputs:
       files will be created by suffixing\n                                  .1 and
       .2.)"
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spring:1.1.1--h4ac6f70_3

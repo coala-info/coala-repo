@@ -86,6 +86,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --umi
+  - id: out_r1_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_r1_path`
+    inputBinding:
+      position: 102
+      prefix: --out-r1
+  - id: out_r2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_r2_path`
+    inputBinding:
+      position: 103
+      prefix: --out-r2
 outputs:
   - id: out_r1
     type:
@@ -93,14 +109,16 @@ outputs:
       - File
     doc: Path to FastQ output file for R1.
     outputBinding:
-      glob: $(inputs.out_r1)
+      glob: $(inputs.out_r1_path)
   - id: out_r2
     type:
       - 'null'
       - File
     doc: Path to FastQ output file for R2.
     outputBinding:
-      glob: $(inputs.out_r2)
+      glob: $(inputs.out_r2_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/umi-transfer:1.6.0--hc1c3326_0

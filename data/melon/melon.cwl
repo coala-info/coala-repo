@@ -128,12 +128,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: output_path
+    type: string
+    doc: 'Output folder. (default: None)'
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: Output folder.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/melon:0.3.0--pyhdfd78af_0

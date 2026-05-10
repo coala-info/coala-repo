@@ -4,16 +4,16 @@ baseCommand:
   - bamtools
   - revert
 label: bamtools_revert
-doc: "removes duplicate marks and restores original (non-recalibrated) base qualities.\n
-  \nTool homepage: https://github.com/pezmaster31/bamtools"
+doc: "removes duplicate marks and restores original (non-recalibrated) base qualities.\n\
+  \ \nTool homepage: https://github.com/pezmaster31/bamtools"
 inputs:
   - id: force_compression
     type:
       - 'null'
       - boolean
-    doc: if results are sent to stdout (like when piping to another tool), default
-      behavior is to leave output uncompressed. Use this flag to override and force
-      compression
+    doc: if results are sent to stdout (like when piping to another tool), 
+      default behavior is to leave output uncompressed. Use this flag to 
+      override and force compression
     inputBinding:
       position: 101
       prefix: -forceCompression
@@ -42,6 +42,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -keepQualities
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -49,7 +55,9 @@ outputs:
       - File
     doc: the output BAM file [stdout]
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bamtools:2.5.3--he132191_0

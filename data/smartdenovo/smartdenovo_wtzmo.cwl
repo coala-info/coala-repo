@@ -330,12 +330,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -y
+  - id: output_alignments_file_path
+    type: string
+    doc: Output or path parameter `output_alignments_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-alignments-file
 outputs:
   - id: output_alignments_file
     type: File
     doc: Output file of alignments
     outputBinding:
-      glob: $(inputs.output_alignments_file)
+      glob: $(inputs.output_alignments_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smartdenovo:1.0.0--h7b50bb2_8

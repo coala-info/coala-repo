@@ -173,6 +173,21 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: file_output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --file-output
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: path to the output directory
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -180,14 +195,16 @@ outputs:
       - Directory
     doc: path to the output directory
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: file_output
     type:
       - 'null'
       - File
     doc: path to the output file
     outputBinding:
-      glob: $(inputs.file_output)
+      glob: $(inputs.file_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macrel:1.6.0--pyh7e72e81_1

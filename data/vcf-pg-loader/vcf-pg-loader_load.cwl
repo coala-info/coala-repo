@@ -179,6 +179,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --workers
+  - id: log_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_path`
+    inputBinding:
+      position: 103
+      prefix: --log
+  - id: report_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_path`
+    inputBinding:
+      position: 104
+      prefix: --report
 outputs:
   - id: report
     type:
@@ -186,14 +202,16 @@ outputs:
       - File
     doc: Write JSON report to file
     outputBinding:
-      glob: $(inputs.report)
+      glob: $(inputs.report_path)
   - id: log
     type:
       - 'null'
       - File
     doc: Write log to file
     outputBinding:
-      glob: $(inputs.log)
+      glob: $(inputs.log_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vcf-pg-loader:0.5.4--pyhdfd78af_0

@@ -32,8 +32,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Clip sequence head or tail as long as it has at least one N per this long
-      window
+    doc: Clip sequence head or tail as long as it has at least one N per this 
+      long window
     inputBinding:
       position: 101
       prefix: --clip-N-win
@@ -41,7 +41,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Clip sequence head or tail with quality lower then this (for fastq input)
+    doc: Clip sequence head or tail with quality lower then this (for fastq 
+      input)
     inputBinding:
       position: 101
       prefix: --clip-quality
@@ -57,7 +58,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Set watermarks for matched word count for long sequences, int % of good words
+    doc: Set watermarks for matched word count for long sequences, int % of good
+      words
     inputBinding:
       position: 101
       prefix: --heur-count-long-pct
@@ -65,8 +67,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Set watermarks for matched word count for short sequences, int % of good
-      words
+    doc: Set watermarks for matched word count for short sequences, int % of 
+      good words
     inputBinding:
       position: 101
       prefix: --heur-count-short-pct
@@ -90,8 +92,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Set cutoff for sequences to consider - these and shorter (after clipping)
-      will be marked as foreign
+    doc: Set cutoff for sequences to consider - these and shorter (after 
+      clipping) will be marked as foreign
     inputBinding:
       position: 101
       prefix: --heur-negligible-length
@@ -99,7 +101,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Set watermarks for longest match run for long sequences, int % of good words
+    doc: Set watermarks for longest match run for long sequences, int % of good 
+      words
     inputBinding:
       position: 101
       prefix: --heur-run-long-pct
@@ -107,7 +110,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Set watermarks for longest match run for short sequences, int % of good words
+    doc: Set watermarks for longest match run for short sequences, int % of good
+      words
     inputBinding:
       position: 101
       prefix: --heur-run-short-pct
@@ -181,8 +185,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Fasta or fastq (for -q1) file with read pair mates, if used should be repeated
-      as many times as -1 is
+    doc: Fasta or fastq (for -q1) file with read pair mates, if used should be 
+      repeated as many times as -1 is
     inputBinding:
       position: 101
       prefix: --read-2
@@ -214,7 +218,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use mmap for word bitmask (slow unless used for few reads; intended for debug)
+    doc: Use mmap for word bitmask (slow unless used for few reads; intended for
+      debug)
     inputBinding:
       position: 101
       prefix: --use-mmap
@@ -227,6 +232,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --word-bitmask
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -234,7 +245,9 @@ outputs:
       - File
     doc: Output base name (suffixes will be added to it)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bmfilter:3.101--hfc679d8_2

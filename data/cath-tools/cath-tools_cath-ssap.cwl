@@ -274,6 +274,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --xmlsup
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 104
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -281,7 +287,9 @@ outputs:
       - File
     doc: '[DEPRECATED] Output scores to <file> rather than to stdout'
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cath-tools:0.16.5--h78a066a_0

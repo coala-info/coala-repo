@@ -35,12 +35,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -mdist
+  - id: output_clustering_file_path
+    type: string
+    doc: Output or path parameter `output_clustering_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-clustering-file
 outputs:
   - id: output_clustering_file
     type: File
     doc: output clustering file
     outputBinding:
-      glob: $(inputs.output_clustering_file)
+      glob: $(inputs.output_clustering_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spclust:28.5.19--h425c490_1

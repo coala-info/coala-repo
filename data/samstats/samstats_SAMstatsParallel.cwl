@@ -28,6 +28,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: outf_path
+    type: string
+    doc: Output file name to store alignment statistics. The
+    inputBinding:
+      position: 102
+      prefix: --outf
 outputs:
   - id: outf
     type:
@@ -36,7 +42,9 @@ outputs:
     doc: Output file name to store alignment statistics. The statistics will be 
       printed to stdout if no file is provided
     outputBinding:
-      glob: $(inputs.outf)
+      glob: $(inputs.outf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/samstats:0.2.2--py_0

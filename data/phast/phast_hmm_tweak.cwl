@@ -47,6 +47,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: output_hmm_file_path
+    type: string
+    doc: Output or path parameter `output_hmm_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-hmm-file
 outputs:
   - id: output_hmm_file
     type:
@@ -54,7 +60,9 @@ outputs:
       - File
     doc: 'Output HMM file (default: overwrite input)'
     outputBinding:
-      glob: $(inputs.output_hmm_file)
+      glob: $(inputs.output_hmm_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phast:1.9.7--h7eac25e_0

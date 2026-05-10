@@ -128,12 +128,36 @@ inputs:
     inputBinding:
       position: 101
       prefix: --volume-filter-threshold
+  - id: output_clustering_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_clustering_path`
+    inputBinding:
+      position: 102
+      prefix: --output-clustering
+  - id: output_csv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_csv_path`
+    inputBinding:
+      position: 103
+      prefix: --output-csv
+  - id: output_report_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_report_path`
+    inputBinding:
+      position: 104
+      prefix: --output-report
 outputs:
   - id: output_csv
     type: File
     doc: Path to the csv file where segmentation metrics will be stored.
     outputBinding:
-      glob: $(inputs.output_csv)
+      glob: $(inputs.output_csv_path)
   - id: output_report
     type:
       - 'null'
@@ -141,7 +165,7 @@ outputs:
     doc: Path to the output HTML file, will append .html to the end if not 
       included in file name.
     outputBinding:
-      glob: $(inputs.output_report)
+      glob: $(inputs.output_report_path)
   - id: output_clustering
     type:
       - 'null'
@@ -149,7 +173,9 @@ outputs:
     doc: Path where the Cell categories Parquet files with clustering results 
       will be saved.
     outputBinding:
-      glob: $(inputs.output_clustering)
+      glob: $(inputs.output_clustering_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vpt:1.3.0--pyhdfd78af_0

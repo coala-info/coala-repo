@@ -37,6 +37,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --seq-path
+  - id: export_path_path
+    type: string
+    doc: Output or path parameter `export_path_path`
+    inputBinding:
+      position: 102
+      prefix: --export-path
 outputs:
   - id: export_path
     type:
@@ -44,7 +50,9 @@ outputs:
       - Directory
     doc: Optional export directory override
     outputBinding:
-      glob: $(inputs.export_path)
+      glob: $(inputs.export_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/evofr:0.2.0--pyhdfd78af_0

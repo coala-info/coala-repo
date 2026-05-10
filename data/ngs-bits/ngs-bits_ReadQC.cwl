@@ -64,6 +64,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: -txt
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
+  - id: out1_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out1_path`
+    inputBinding:
+      position: 103
+      prefix: --out1
+  - id: out2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out2_path`
+    inputBinding:
+      position: 104
+      prefix: --out2
 outputs:
   - id: out
     type:
@@ -71,21 +95,23 @@ outputs:
       - File
     doc: Output qcML file. If unset, writes to STDOUT.
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: out1
     type:
       - 'null'
       - File
     doc: If set, writes merged forward FASTQs to this file (gzipped).
     outputBinding:
-      glob: $(inputs.out1)
+      glob: $(inputs.out1_path)
   - id: out2
     type:
       - 'null'
       - File
     doc: If set, writes merged reverse FASTQs to this file (gzipped)
     outputBinding:
-      glob: $(inputs.out2)
+      glob: $(inputs.out2_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngs-bits:2025_12--py314h40a1aea_0

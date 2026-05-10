@@ -147,6 +147,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: alignment_out_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `alignment_out_file_path`
+    inputBinding:
+      position: 104
+      prefix: --alignment-out-file
+  - id: translation_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `translation_file_path`
+    inputBinding:
+      position: 105
+      prefix: --translation-file
 outputs:
   - id: augmented_graph_vg_file
     type:
@@ -161,14 +177,16 @@ outputs:
       - File
     doc: save translations from augmented back to base graph
     outputBinding:
-      glob: $(inputs.translation_file)
+      glob: $(inputs.translation_file_path)
   - id: alignment_out_file
     type:
       - 'null'
       - File
     doc: save augmented GAM reads
     outputBinding:
-      glob: $(inputs.alignment_out_file)
+      glob: $(inputs.alignment_out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vg:1.70.0--h9ee0642_0

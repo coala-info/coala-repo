@@ -2,14 +2,15 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: ctyper
 label: ctyper
-doc: "A tool for genotyping and estimating NGS read depth using a matrix database.\n
-  \nTool homepage: https://github.com/ChaissonLab/Ctyper"
+doc: "A tool for genotyping and estimating NGS read depth using a matrix database.\n\
+  \ \nTool homepage: https://github.com/ChaissonLab/Ctyper"
 inputs:
   - id: background
     type:
       - 'null'
       - File
-    doc: Background k-mer file to estimate NGS coverage (incompatible with -d/-D).
+    doc: Background k-mer file to estimate NGS coverage (incompatible with 
+      -d/-D).
     inputBinding:
       position: 101
       prefix: --background
@@ -41,7 +42,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: File of depth values corresponding to each input (incompatible with -b/--background).
+    doc: File of depth values corresponding to each input (incompatible with 
+      -b/--background).
     inputBinding:
       position: 101
       prefix: --Depth
@@ -50,8 +52,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Target gene name, prefix (ending with '*'), or matrix (starting with '#').
-      Can be specified multiple times.
+    doc: Target gene name, prefix (ending with '*'), or matrix (starting with 
+      '#'). Can be specified multiple times.
     inputBinding:
       position: 101
       prefix: --gene
@@ -67,7 +69,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Input NGS file; supports CRAM, BAM, SAM, FASTA, FASTQ, or Jellyfish formats.
+    doc: Input NGS file; supports CRAM, BAM, SAM, FASTA, FASTQ, or Jellyfish 
+      formats.
     inputBinding:
       position: 101
       prefix: --input
@@ -81,8 +84,8 @@ inputs:
       prefix: --Inputs
   - id: matrix
     type: File
-    doc: Path to the matrix database (requires <file>.index). If not provided, the
-      tool runs in dry-run mode to only estimate NGS read depth.
+    doc: Path to the matrix database (requires <file>.index). If not provided, 
+      the tool runs in dry-run mode to only estimate NGS read depth.
     inputBinding:
       position: 101
       prefix: --matrix
@@ -123,8 +126,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Add a specific region for analysis (chr:start-end) or special keys ('gene',
-      'Unmap', 'HLA').
+    doc: Add a specific region for analysis (chr:start-end) or special keys 
+      ('gene', 'Unmap', 'HLA').
     inputBinding:
       position: 101
       prefix: -r
@@ -152,6 +155,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: outputs_list_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outputs_list_path`
+    inputBinding:
+      position: 103
+      prefix: --outputs-list
 outputs:
   - id: output
     type:
@@ -159,14 +178,16 @@ outputs:
       - File
     doc: 'Output file (append if file exits, default: stdout)'
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: outputs_list
     type:
       - 'null'
       - File
     doc: Path to a file listing output files corresponding to each input file.
     outputBinding:
-      glob: $(inputs.outputs_list)
+      glob: $(inputs.outputs_list_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ctyper:1.0.5--h5ca1c30_0

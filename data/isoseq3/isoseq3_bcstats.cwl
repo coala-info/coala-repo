@@ -98,6 +98,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_json_report_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_json_report_path`
+    inputBinding:
+      position: 103
+      prefix: --output-json-report
+  - id: output_tsv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_tsv_path`
+    inputBinding:
+      position: 104
+      prefix: --output-tsv
 outputs:
   - id: output_tsv
     type:
@@ -105,14 +121,16 @@ outputs:
       - File
     doc: Output tsv of stats for input BAM files.
     outputBinding:
-      glob: $(inputs.output_tsv)
+      glob: $(inputs.output_tsv_path)
   - id: output_json_report
     type:
       - 'null'
       - File
     doc: Path to emit output JSON report.
     outputBinding:
-      glob: $(inputs.output_json_report)
+      glob: $(inputs.output_json_report_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/isoseq3:4.0.0--h9ee0642_0

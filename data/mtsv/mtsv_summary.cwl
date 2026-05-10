@@ -58,6 +58,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --wd
+  - id: signature_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `signature_file_path`
+    inputBinding:
+      position: 102
+      prefix: --signature-file
+  - id: summary_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `summary_file_path`
+    inputBinding:
+      position: 103
+      prefix: --summary-file
 outputs:
   - id: signature_file
     type:
@@ -65,7 +81,7 @@ outputs:
       - File
     doc: File to place signature hits output.
     outputBinding:
-      glob: $(inputs.signature_file)
+      glob: $(inputs.signature_file_path)
   - id: summary_file
     type:
       - 'null'
@@ -74,7 +90,9 @@ outputs:
       original directory, downstream processes rely on metadata (.params file) 
       stored in directory.
     outputBinding:
-      glob: $(inputs.summary_file)
+      glob: $(inputs.summary_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mtsv:1.0.6--py36hf1ae8f4_2

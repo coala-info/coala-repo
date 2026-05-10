@@ -39,12 +39,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threshold
+  - id: output_folder_path
+    type: Directory
+    inputBinding:
+      position: 102
+      prefix: --output_folder
 outputs:
   - id: output_folder
     type: Directory
     doc: Output folder
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bionetcomp:1.1--pyhfa5458b_0

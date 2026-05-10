@@ -11,6 +11,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input-object-file
+  - id: output_object_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_object_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-object-file
+  - id: output_text_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_text_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-text-file
 outputs:
   - id: output_text_file
     type:
@@ -19,7 +35,7 @@ outputs:
     doc: Text file name in which to store clusters, one column for every k 
       value.
     outputBinding:
-      glob: $(inputs.output_text_file)
+      glob: $(inputs.output_text_file_path)
   - id: output_object_file
     type:
       - 'null'
@@ -27,7 +43,9 @@ outputs:
     doc: File name for R object of type 'SingleCellExperiment' from SC3 in which
       to store the consensus matrix.
     outputBinding:
-      glob: $(inputs.output_object_file)
+      glob: $(inputs.output_object_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sc3-scripts:0.0.6--r351_0

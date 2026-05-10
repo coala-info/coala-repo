@@ -26,6 +26,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --warnings
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 103
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -33,7 +39,9 @@ outputs:
       - File
     doc: optional new output file path
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hic2cool:1.0.1--pyh7cba7a3_0

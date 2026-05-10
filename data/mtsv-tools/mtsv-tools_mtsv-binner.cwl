@@ -129,6 +129,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: results_path_path
+    type: string
+    doc: Output or path parameter `results_path_path`
+    inputBinding:
+      position: 102
+      prefix: --results-path
 outputs:
   - id: results_path
     type:
@@ -136,7 +142,9 @@ outputs:
       - File
     doc: Path to write results file.
     outputBinding:
-      glob: $(inputs.results_path)
+      glob: $(inputs.results_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mtsv-tools:2.1.0--h54198d6_0

@@ -3,15 +3,15 @@ class: CommandLineTool
 baseCommand: anise
 label: anise_basil_anise
 doc: "Assembly of Novel Inserted SEquence. ANISE will try to assemble the inserted
-  sequences at the sites in IN.vcf and write the assembled sequences to OUT.vcf.\n
-  \nTool homepage: https://github.com/seqan/anise_basil"
+  sequences at the sites in IN.vcf and write the assembled sequences to OUT.vcf.\n\
+  \ \nTool homepage: https://github.com/seqan/anise_basil"
 inputs:
   - id: assembly_site_fringe_radius
     type:
       - 'null'
       - int
-    doc: Radius around insert site to cut for collecting clippings. Set to -1 to consider
-      all records with >= 15 clipped bases. In range [-1..inf].
+    doc: Radius around insert site to cut for collecting clippings. Set to -1 to
+      consider all records with >= 15 clipped bases. In range [-1..inf].
     inputBinding:
       position: 101
       prefix: --assembly-site-fringe-radius
@@ -19,7 +19,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Radius around insert site to cut for initial contigs. In range [100..inf].
+    doc: Radius around insert site to cut for initial contigs. In range 
+      [100..inf].
     inputBinding:
       position: 101
       prefix: --assembly-site-window-radius
@@ -27,8 +28,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of records to use for automatic library evaluation. Set to 0 to evaluate
-      all. In range [0..inf].
+    doc: Number of records to use for automatic library evaluation. Set to 0 to 
+      evaluate all. In range [0..inf].
     inputBinding:
       position: 101
       prefix: --auto-library-num-records
@@ -84,8 +85,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Factor to multiple fragment size stddev with to get allowed error. In range
-      [0..inf].
+    doc: Factor to multiple fragment size stddev with to get allowed error. In 
+      range [0..inf].
     inputBinding:
       position: 101
       prefix: --fragment-size-factor
@@ -215,7 +216,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Overlapper min overlap rate in percent of the longer read. In range [0..inf].
+    doc: Overlapper min overlap rate in percent of the longer read. In range 
+      [0..inf].
     inputBinding:
       position: 101
       prefix: --overlapper-min-overlap-ratio
@@ -255,7 +257,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The border from the profile to extract around alignments. In range [0..inf].
+    doc: The border from the profile to extract around alignments. In range 
+      [0..inf].
     inputBinding:
       position: 101
       prefix: --realignment-border
@@ -287,7 +290,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Repeat separation per-base error for simple Tammi method. In range [0.0..1.0].
+    doc: Repeat separation per-base error for simple Tammi method. In range 
+      [0.0..1.0].
     inputBinding:
       position: 101
       prefix: --repsep-p-err
@@ -319,8 +323,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Variant of the Tammi method to use for repeat separation (simple or phred).
-      One of phred and simple.
+    doc: Variant of the Tammi method to use for repeat separation (simple or 
+      phred). One of phred and simple.
     inputBinding:
       position: 101
       prefix: --repsep-tammi-method
@@ -336,9 +340,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: If the length sum of all reads for a site divided by the length sum of its
-      contigs is higher than this value before assembly then the site is deactivated.
-      In range [0..inf].
+    doc: If the length sum of all reads for a site divided by the length sum of 
+      its contigs is higher than this value before assembly then the site is 
+      deactivated. In range [0..inf].
     inputBinding:
       position: 101
       prefix: --stop-coverage
@@ -346,8 +350,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: If there are more than this number of reads for a site in the initial round
-      then no assembly is performed. In range [0..inf].
+    doc: If there are more than this number of reads for a site in the initial 
+      round then no assembly is performed. In range [0..inf].
     inputBinding:
       position: 101
       prefix: --stop-initial-read-count
@@ -355,8 +359,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: If there are more than this number of reads for a site in a later round then
-      no assembly is performed. In range [0..inf].
+    doc: If there are more than this number of reads for a site in a later round
+      then no assembly is performed. In range [0..inf].
     inputBinding:
       position: 101
       prefix: --stop-read-count
@@ -364,8 +368,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: If there are more than this number of reads for a site in a later round then
-      no triplet library extension is performed. In range [0..inf].
+    doc: If there are more than this number of reads for a site in a later round
+      then no triplet library extension is performed. In range [0..inf].
     inputBinding:
       position: 101
       prefix: --stop-tex-read-count
@@ -385,12 +389,35 @@ inputs:
     inputBinding:
       position: 101
       prefix: --very-verbose
+  - id: output_debug_dir_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --output-debug-dir
+  - id: output_fasta_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_fasta_path`
+    inputBinding:
+      position: 103
+      prefix: --output-fasta
+  - id: output_mapping_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_mapping_path`
+    inputBinding:
+      position: 104
+      prefix: --output-mapping
 outputs:
   - id: output_fasta
     type: File
     doc: 'Output FASTA with contigs Valid filetypes are: fa and fasta.'
     outputBinding:
-      glob: $(inputs.output_fasta)
+      glob: $(inputs.output_fasta_path)
   - id: output_mapping
     type:
       - 'null'
@@ -398,14 +425,16 @@ outputs:
     doc: 'Output SAM/BAM file with mapping fo reads to contigs in --output-fasta.
       Valid filetypes are: sam and bam.'
     outputBinding:
-      glob: $(inputs.output_mapping)
+      glob: $(inputs.output_mapping_path)
   - id: output_debug_dir
     type:
       - 'null'
       - Directory
     doc: Directory for debug output. Leave empty for no such output.
     outputBinding:
-      glob: $(inputs.output_debug_dir)
+      glob: $(inputs.output_debug_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/anise_basil:1.2.0--py312hdcc493e_9

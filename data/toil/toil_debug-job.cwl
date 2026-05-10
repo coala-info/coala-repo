@@ -111,6 +111,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --tempDirRoot
+  - id: log_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 104
+      prefix: --log-file
+  - id: retrieve_task_directory_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `retrieve_task_directory_path`
+    inputBinding:
+      position: 105
+      prefix: --retrieve-task-directory
 outputs:
   - id: retrieve_task_directory
     type:
@@ -118,14 +134,16 @@ outputs:
       - Directory
     doc: Download CWL or WDL task inputs to the given directory and stop.
     outputBinding:
-      glob: $(inputs.retrieve_task_directory)
+      glob: $(inputs.retrieve_task_directory_path)
   - id: log_file
     type:
       - 'null'
       - File
     doc: File to log in.
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/toil:7.0.0--pyhdfd78af_0

@@ -94,6 +94,12 @@ inputs:
     inputBinding:
       position: 106
       prefix: --translation_table
+  - id: output_filename_path
+    type: string
+    doc: Output or path parameter `output_filename_path`
+    inputBinding:
+      position: 107
+      prefix: --output-filename
 outputs:
   - id: output_filename
     type:
@@ -101,7 +107,9 @@ outputs:
       - File
     doc: Output filename
     outputBinding:
-      glob: $(inputs.output_filename)
+      glob: $(inputs.output_filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gff3toembl:1.1.4--pyh864c0ab_2

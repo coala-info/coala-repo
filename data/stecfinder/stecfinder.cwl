@@ -138,6 +138,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t
+  - id: output_path
+    type: string
+    doc: output file to write to (if not used writes to stdout
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -146,7 +152,9 @@ outputs:
     doc: output file to write to (if not used writes to stdout and tmp folder in
       current dir)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/stecfinder:1.1.2--pyhdfd78af_0

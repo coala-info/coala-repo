@@ -18,6 +18,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --name
+  - id: output_fasta_path
+    type: string
+    doc: Output or path parameter `output_fasta_path`
+    inputBinding:
+      position: 103
+      prefix: --output-fasta
 outputs:
   - id: output_fasta
     type:
@@ -25,7 +31,9 @@ outputs:
       - File
     doc: The name of the output FASTA file with renamed sequences.
     outputBinding:
-      glob: $(inputs.output_fasta)
+      glob: $(inputs.output_fasta_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mothur:1.48.5--h11ba690_0

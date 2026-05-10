@@ -23,8 +23,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Prints individual taxa moves for each branches in the log file (only with
-      -S & -a tbe)
+    doc: Prints individual taxa moves for each branches in the log file (only 
+      with -S & -a tbe)
     inputBinding:
       position: 101
       prefix: --count-per-branch
@@ -32,8 +32,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Distance cutoff to consider a branch for taxa transfer index computation
-      (-a tbe only)
+    doc: Distance cutoff to consider a branch for taxa transfer index 
+      computation (-a tbe only)
     inputBinding:
       position: 101
       prefix: --dist-cutoff
@@ -59,6 +59,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --quiet
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
+  - id: output_raw_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_raw_path`
+    inputBinding:
+      position: 103
+      prefix: --output-raw
+  - id: stat_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stat_file_path`
+    inputBinding:
+      position: 104
+      prefix: --stat-file
 outputs:
   - id: output_file
     type:
@@ -66,21 +90,23 @@ outputs:
       - File
     doc: Output file with normalized support values
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: output_raw
     type:
       - 'null'
       - File
     doc: Output file with raw support values in the form of id|avgdist|depth
     outputBinding:
-      glob: $(inputs.output_raw)
+      glob: $(inputs.output_raw_path)
   - id: stat_file
     type:
       - 'null'
       - File
     doc: Prints output statistics for each branch in the given output file
     outputBinding:
-      glob: $(inputs.stat_file)
+      glob: $(inputs.stat_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/booster:0.1.2--hec16e2b_4

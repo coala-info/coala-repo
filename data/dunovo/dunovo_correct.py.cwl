@@ -192,6 +192,22 @@ inputs:
     inputBinding:
       position: 104
       prefix: --viz-format
+  - id: log_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_path`
+    inputBinding:
+      position: 105
+      prefix: --log
+  - id: visualize_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `visualize_path`
+    inputBinding:
+      position: 106
+      prefix: --visualize
 outputs:
   - id: visualize
     type:
@@ -200,7 +216,7 @@ outputs:
     doc: Produce a visualization of the unique structures and write the image to
       this file. If you omit a filename, it will be displayed in a window.
     outputBinding:
-      glob: $(inputs.visualize)
+      glob: $(inputs.visualize_path)
   - id: log
     type:
       - 'null'
@@ -208,7 +224,9 @@ outputs:
     doc: 'Print log messages to this file instead of to stderr. Warning: Will overwrite
       the file.'
     outputBinding:
-      glob: $(inputs.log)
+      glob: $(inputs.log_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dunovo:3.0.2--h7b50bb2_4

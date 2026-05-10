@@ -78,6 +78,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -87,7 +93,9 @@ outputs:
       extension. Flag can be used multiple times. An output must be given for 
       each input.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastq-filter:0.3.0--py312h0fa9677_4

@@ -17,7 +17,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of chunks to extract from the query sequence when searching for parents.
+    doc: Number of chunks to extract from the query sequence when searching for 
+      parents.
     inputBinding:
       position: 101
       prefix: --chunks
@@ -25,8 +26,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Reference database in FASTA format. If not specified, uchime uses de novo
-      mode.
+    doc: Reference database in FASTA format. If not specified, uchime uses de 
+      novo mode.
     inputBinding:
       position: 101
       prefix: --db
@@ -128,8 +129,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum fraction of the query sequence that must be covered by a local-X
-      alignment.
+    doc: Minimum fraction of the query sequence that must be covered by a 
+      local-X alignment.
     inputBinding:
       position: 101
       prefix: --queryfract
@@ -145,8 +146,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: In reference database mode, exclude a reference sequence if it has the same
-      label as the query.
+    doc: In reference database mode, exclude a reference sequence if it has the 
+      same label as the query.
     inputBinding:
       position: 101
       prefix: --self
@@ -190,6 +191,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --xn
+  - id: log_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_path`
+    inputBinding:
+      position: 102
+      prefix: --log
+  - id: uchimealns_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `uchimealns_path`
+    inputBinding:
+      position: 103
+      prefix: --uchimealns
+  - id: uchimeout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `uchimeout_path`
+    inputBinding:
+      position: 104
+      prefix: --uchimeout
 outputs:
   - id: uchimeout
     type:
@@ -197,21 +222,24 @@ outputs:
       - File
     doc: Output in tabbed format with one record per query sequence.
     outputBinding:
-      glob: $(inputs.uchimeout)
+      glob: $(inputs.uchimeout_path)
   - id: uchimealns
     type:
       - 'null'
       - File
-    doc: Multiple alignments of query sequences to parents in human-readable format.
+    doc: Multiple alignments of query sequences to parents in human-readable 
+      format.
     outputBinding:
-      glob: $(inputs.uchimealns)
+      glob: $(inputs.uchimealns_path)
   - id: log
     type:
       - 'null'
       - File
     doc: Write miscellaneous information to the log file.
     outputBinding:
-      glob: $(inputs.log)
+      glob: $(inputs.log_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/uchime:4.2--h9948957_0

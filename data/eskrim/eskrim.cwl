@@ -70,6 +70,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --tmp-dir
+  - id: output_fastq_file_path
+    type:
+      - 'null'
+      - string
+    doc: OUTPUT_FASTQ_FILE with the randomly selected reads
+    inputBinding:
+      position: 103
+      prefix: -o
+  - id: output_stats_file_path
+    type:
+      - 'null'
+      - string
+    doc: OUTPUT_STATS_FILE with kmer richness estimates
+    inputBinding:
+      position: 104
+      prefix: -s
 outputs:
   - id: output_fastq_file
     type:
@@ -77,12 +93,14 @@ outputs:
       - File
     doc: OUTPUT_FASTQ_FILE with the randomly selected reads
     outputBinding:
-      glob: $(inputs.output_fastq_file)
+      glob: $(inputs.output_fastq_file_path)
   - id: output_stats_file
     type: File
     doc: OUTPUT_STATS_FILE with kmer richness estimates
     outputBinding:
-      glob: $(inputs.output_stats_file)
+      glob: $(inputs.output_stats_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/eskrim:1.0.9--pyhdfd78af_1

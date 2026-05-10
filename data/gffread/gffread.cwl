@@ -58,6 +58,38 @@ inputs:
     inputBinding:
       position: 102
       prefix: -E
+  - id: cds_fasta_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `cds_fasta_path`
+    inputBinding:
+      position: 103
+      prefix: --cds-fasta
+  - id: exon_fasta_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `exon_fasta_path`
+    inputBinding:
+      position: 104
+      prefix: --exon-fasta
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 105
+      prefix: --output-file
+  - id: protein_fasta_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `protein_fasta_path`
+    inputBinding:
+      position: 106
+      prefix: --protein-fasta
 outputs:
   - id: output_file
     type:
@@ -65,28 +97,30 @@ outputs:
       - File
     doc: Write the output records into <outfile> instead of stdout
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: cds_fasta
     type:
       - 'null'
       - File
     doc: Write a fasta file with spliced CDS for each GFF transcript
     outputBinding:
-      glob: $(inputs.cds_fasta)
+      glob: $(inputs.cds_fasta_path)
   - id: protein_fasta
     type:
       - 'null'
       - File
     doc: Write a fasta file with the protein sequences
     outputBinding:
-      glob: $(inputs.protein_fasta)
+      glob: $(inputs.protein_fasta_path)
   - id: exon_fasta
     type:
       - 'null'
       - File
     doc: Write a fasta file with the exon sequences
     outputBinding:
-      glob: $(inputs.exon_fasta)
+      glob: $(inputs.exon_fasta_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gffread:0.12.7--h077b44d_6

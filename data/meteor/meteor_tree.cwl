@@ -77,12 +77,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -w
+  - id: tree_dir_path
+    type: string
+    doc: Output or path parameter `tree_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --tree-dir
 outputs:
   - id: tree_dir
     type: Directory
     doc: Path to output directory.
     outputBinding:
-      glob: $(inputs.tree_dir)
+      glob: $(inputs.tree_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meteor:2.0.22--pyhdfd78af_0

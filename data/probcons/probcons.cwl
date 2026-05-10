@@ -86,6 +86,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -viterbi
+  - id: train_path
+    type: string
+    doc: Output or path parameter `train_path`
+    inputBinding:
+      position: 103
+      prefix: --train
 outputs:
   - id: train
     type:
@@ -93,7 +99,9 @@ outputs:
       - File
     doc: Compute EM transition probabilities, store in FILENAME
     outputBinding:
-      glob: $(inputs.train)
+      glob: $(inputs.train_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/probcons:v1.12-12-deb_cv1

@@ -802,6 +802,78 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_a3m_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_a3m_path`
+    inputBinding:
+      position: 102
+      prefix: --output-a3m
+  - id: output_alis_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_alis_path`
+    inputBinding:
+      position: 103
+      prefix: --output-alis
+  - id: output_blasttab_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_blasttab_path`
+    inputBinding:
+      position: 104
+      prefix: --output-blasttab
+  - id: output_fasta_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_fasta_path`
+    inputBinding:
+      position: 105
+      prefix: --output-fasta
+  - id: output_hhm_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_hhm_path`
+    inputBinding:
+      position: 106
+      prefix: --output-hhm
+  - id: output_psi_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_psi_path`
+    inputBinding:
+      position: 107
+      prefix: --output-psi
+  - id: output_standard_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_standard_path`
+    inputBinding:
+      position: 108
+      prefix: --output-standard
+  - id: output_tabular_alignments_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_tabular_alignments_path`
+    inputBinding:
+      position: 109
+      prefix: --output-tabular-alignments
+  - id: scores_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `scores_file_path`
+    inputBinding:
+      position: 110
+      prefix: --scores-file
 outputs:
   - id: output_standard
     type:
@@ -809,35 +881,35 @@ outputs:
       - File
     doc: write results in standard format to file (default=<infile.hhr>)
     outputBinding:
-      glob: $(inputs.output_standard)
+      glob: $(inputs.output_standard_path)
   - id: output_a3m
     type:
       - 'null'
       - File
     doc: write result MSA with significant matches in a3m format
     outputBinding:
-      glob: $(inputs.output_a3m)
+      glob: $(inputs.output_a3m_path)
   - id: output_psi
     type:
       - 'null'
       - File
     doc: write result MSA of significant matches in PSI-BLAST format
     outputBinding:
-      glob: $(inputs.output_psi)
+      glob: $(inputs.output_psi_path)
   - id: output_hhm
     type:
       - 'null'
       - File
     doc: write HHM file for result MSA of significant matches
     outputBinding:
-      glob: $(inputs.output_hhm)
+      glob: $(inputs.output_hhm_path)
   - id: output_alis
     type:
       - 'null'
       - File
     doc: write MSAs in A3M format after each iteration
     outputBinding:
-      glob: $(inputs.output_alis)
+      glob: $(inputs.output_alis_path)
   - id: output_blasttab
     type:
       - 'null'
@@ -847,7 +919,7 @@ outputs:
       \ 9      10   11   12\n                  'query target #match/tLen #mismatch
       #gapOpen qstart qend tstart tend eval score'"
     outputBinding:
-      glob: $(inputs.output_blasttab)
+      glob: $(inputs.output_blasttab_path)
   - id: output_fasta
     type:
       - 'null'
@@ -855,21 +927,23 @@ outputs:
     doc: write pairwise alignments in FASTA xor A2M (-Oa2m) xor A3M (-Oa3m) 
       format
     outputBinding:
-      glob: $(inputs.output_fasta)
+      glob: $(inputs.output_fasta_path)
   - id: scores_file
     type:
       - 'null'
       - File
     doc: write scores for all pairwise comparisons to file
     outputBinding:
-      glob: $(inputs.scores_file)
+      glob: $(inputs.scores_file_path)
   - id: output_tabular_alignments
     type:
       - 'null'
       - File
     doc: write all alignments in tabular layout to file
     outputBinding:
-      glob: $(inputs.output_tabular_alignments)
+      glob: $(inputs.output_tabular_alignments_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hhsuite:3.3.0--h503566f_15

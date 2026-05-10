@@ -84,6 +84,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --score
+  - id: outfile_path
+    type: string
+    doc: output file [default outdir/SEQUENCE_FILE.emerald.gff]
+    inputBinding:
+      position: 103
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -91,7 +97,9 @@ outputs:
       - File
     doc: output file
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/emeraldbgc:0.2.4.1--pyhdfd78af_0

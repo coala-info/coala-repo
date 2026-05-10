@@ -194,19 +194,37 @@ inputs:
     inputBinding:
       position: 106
       prefix: --yes
+  - id: archive_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `archive_file_path`
+    inputBinding:
+      position: 107
+      prefix: --archive-file
+  - id: report_filename_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_filename_path`
+    inputBinding:
+      position: 108
+      prefix: --report-filename
 outputs:
   - id: archive_file
     type: File
     doc: Path to the archive file
     outputBinding:
-      glob: $(inputs.archive_file)
+      glob: $(inputs.archive_file_path)
   - id: report_filename
     type:
       - 'null'
       - File
     doc: Output file name of report
     outputBinding:
-      glob: $(inputs.report_filename)
+      glob: $(inputs.report_filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mintie:0.4.3--hdfd78af_0

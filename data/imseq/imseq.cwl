@@ -319,6 +319,61 @@ inputs:
     inputBinding:
       position: 104
       prefix: --with-alleles
+  - id: barcode_stats_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `barcode_stats_path`
+    inputBinding:
+      position: 105
+      prefix: --barcode-stats
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: --out
+  - id: out_amino_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_amino_path`
+    inputBinding:
+      position: 107
+      prefix: --out-amino
+  - id: out_amino_bc_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_amino_bc_path`
+    inputBinding:
+      position: 108
+      prefix: --out-amino-bc
+  - id: out_nuc_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_nuc_path`
+    inputBinding:
+      position: 109
+      prefix: --out-nuc
+  - id: out_nuc_bc_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_nuc_bc_path`
+    inputBinding:
+      position: 110
+      prefix: --out-nuc-bc
+  - id: reject_log_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `reject_log_path`
+    inputBinding:
+      position: 111
+      prefix: --reject-log
 outputs:
   - id: out_amino
     type:
@@ -326,28 +381,28 @@ outputs:
       - File
     doc: Output file path for translated clonotypes.
     outputBinding:
-      glob: $(inputs.out_amino)
+      glob: $(inputs.out_amino_path)
   - id: out_nuc
     type:
       - 'null'
       - File
     doc: Output file path for untranslated clonotypes.
     outputBinding:
-      glob: $(inputs.out_nuc)
+      glob: $(inputs.out_nuc_path)
   - id: out
     type:
       - 'null'
       - File
     doc: Output file path for verbose output per analyzed read.
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: reject_log
     type:
       - 'null'
       - File
     doc: Log file for rejected reads. If empty, no log file is written.
     outputBinding:
-      glob: $(inputs.reject_log)
+      glob: $(inputs.reject_log_path)
   - id: barcode_stats
     type:
       - 'null'
@@ -355,7 +410,7 @@ outputs:
     doc: "Path to barcode stats output file. If empty, no file is written.\n     \
       \     Ignored if -bcl is 0."
     outputBinding:
-      glob: $(inputs.barcode_stats)
+      glob: $(inputs.barcode_stats_path)
   - id: out_amino_bc
     type:
       - 'null'
@@ -363,7 +418,7 @@ outputs:
     doc: "Output file path for translated clonotypes with barcode corrected\n    \
       \      counts. Ignored if -bcl is 0."
     outputBinding:
-      glob: $(inputs.out_amino_bc)
+      glob: $(inputs.out_amino_bc_path)
   - id: out_nuc_bc
     type:
       - 'null'
@@ -371,7 +426,9 @@ outputs:
     doc: "Output file path for untranslated clonotypes with barcode corrected\n  \
       \        counts. Ignored if -bcl is 0."
     outputBinding:
-      glob: $(inputs.out_nuc_bc)
+      glob: $(inputs.out_nuc_bc_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/imseq:1.1.0--h077b44d_8

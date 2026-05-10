@@ -77,8 +77,7 @@ inputs:
       - type: array
         items: int
     doc: K-mer size(s). K needs to be <=64. Multiple values are supported, e.g.,
-      "-k 21,31" or "-k 21 -k 31"
-      - 21
+      "-k 21,31" or "-k 21 -k 31" - 21
     inputBinding:
       position: 102
       prefix: --kmer
@@ -186,12 +185,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: out_dir_path
+    type: Directory
+    doc: Output or path parameter `out_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --out-dir
 outputs:
   - id: out_dir
     type: Directory
     doc: Output directory.
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kmcp:0.9.4--h9ee0642_1

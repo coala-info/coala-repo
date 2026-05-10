@@ -223,9 +223,7 @@ inputs:
         items: float
     doc: FRR (Family Relatedness Relationship) cutoff values for similarity 
       assessment. min_gfrr = shared_families / min(families1, families2), 
-      max_gfrr = shared_families / max(families1, families2)
-      - 0.5
-      - 0.8
+      max_gfrr = shared_families / max(families1, families2) - 0.5 - 0.8
     inputBinding:
       position: 101
       prefix: --gfrr_cutoff
@@ -292,12 +290,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: Output directory where result files will be written
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panorama:1.0.0--pyhdfd78af_0

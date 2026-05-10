@@ -293,6 +293,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: outputfile_path
+    type: string
+    doc: Output or path parameter `outputfile_path`
+    inputBinding:
+      position: 103
+      prefix: --outputfile
 outputs:
   - id: outputfile
     type:
@@ -300,7 +306,9 @@ outputs:
       - File
     doc: The ARACNE output filename. This is a binary file for "plot.r".
     outputBinding:
-      glob: $(inputs.outputfile)
+      glob: $(inputs.outputfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spydrpick:1.2.0--h78a066a_0

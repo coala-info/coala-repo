@@ -11,8 +11,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Input bed[.gz] file containing windows (tab-separated, 0-based semi-exclusive),
-      which will be used to calculate read depth.
+    doc: Input bed[.gz] file containing windows (tab-separated, 0-based 
+      semi-exclusive), which will be used to calculate read depth.
     inputBinding:
       position: 101
       prefix: --bed-regions
@@ -44,7 +44,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Input indexed BAM/CRAM files. All entries should follow the format "filename[::sample]"
+    doc: Input indexed BAM/CRAM files. All entries should follow the format 
+      "filename[::sample]"
     inputBinding:
       position: 101
       prefix: --input
@@ -93,7 +94,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Insert size (~ distance between read mates) is expected to be under <int>
+    doc: Insert size (~ distance between read mates) is expected to be under 
+      <int>
     inputBinding:
       position: 101
       prefix: --mate-dist
@@ -101,8 +103,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Discard <int> neighbouring windows to the left and to the right of a skipped
-      window
+    doc: Discard <int> neighbouring windows to the left and to the right of a 
+      skipped window
     inputBinding:
       position: 101
       prefix: --neighbours
@@ -126,8 +128,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Do not use GC-content if it lies in the left or right tail with less than
-      <int> windows
+    doc: Do not use GC-content if it lies in the left or right tail with less 
+      than <int> windows
     inputBinding:
       position: 101
       prefix: --tail-windows
@@ -147,12 +149,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --unpaired-perc
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: Output directory.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parascopy:1.19.0--py312hc576ae5_0

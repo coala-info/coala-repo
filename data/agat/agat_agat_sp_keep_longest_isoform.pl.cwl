@@ -11,15 +11,23 @@ inputs:
     inputBinding:
       position: 101
       prefix: --gff
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
       - 'null'
       - File
-    doc: Output GFF file. If no output file is specified, the result will be written
-      to stdout.
+    doc: Output GFF file. If no output file is specified, the result will be 
+      written to stdout.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/agat:1.6.1--pl5321hdfd78af_1

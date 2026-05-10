@@ -57,17 +57,33 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sequences
+  - id: output_metadata_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --output-metadata
+  - id: output_sequences_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --output-sequences
 outputs:
   - id: output_sequences
     type: File
     doc: output sequences file
     outputBinding:
-      glob: $(inputs.output_sequences)
+      glob: $(inputs.output_sequences_path)
   - id: output_metadata
     type: File
     doc: output metadata file
     outputBinding:
-      glob: $(inputs.output_metadata)
+      glob: $(inputs.output_metadata_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0

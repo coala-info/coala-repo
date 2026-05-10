@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: transIndel_call.py
 label: transindel_transIndel_call.py
-doc: "Call transcript-supported insertions and deletions (indels) from RNA-seq data.\n
-  \nTool homepage: https://github.com/cauyrd/transIndel"
+doc: "Call transcript-supported insertions and deletions (indels) from RNA-seq data.\n\
+  \ \nTool homepage: https://github.com/cauyrd/transIndel"
 inputs:
   - id: input_bam
     type: File
@@ -41,12 +41,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -r
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type: File
     doc: Prefix for output files
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/transindel:2.0--hdfd78af_0

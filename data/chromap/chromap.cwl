@@ -146,9 +146,7 @@ inputs:
       - 'null'
       - type: array
         items: int
-    doc: Max seed frequencies for a seed to be selected
-      - 500
-      - 1000
+    doc: Max seed frequencies for a seed to be selected - 500 - 1000
     inputBinding:
       position: 101
       prefix: --max-seed-frequencies
@@ -322,6 +320,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window
+  - id: output_path
+    type: string
+    doc: Output file
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -329,7 +333,9 @@ outputs:
       - File
     doc: Output file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/chromap:0.3.2--h077b44d_0

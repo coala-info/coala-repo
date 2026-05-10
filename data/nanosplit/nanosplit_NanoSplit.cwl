@@ -18,6 +18,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --quality
+  - id: outdir_path
+    type: string
+    doc: Specify directory in which output has to be created.
+    inputBinding:
+      position: 103
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -25,7 +31,9 @@ outputs:
       - Directory
     doc: Specify directory in which output has to be created.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nanosplit:0.1.4--py35_0

@@ -153,13 +153,21 @@ inputs:
     inputBinding:
       position: 102
       prefix: --window
+  - id: out_dir_path
+    type: Directory
+    doc: Output or path parameter `out_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --out-dir
 outputs:
   - id: out_dir
     type: Directory
     doc: Output directory. The files will be named out_dir/chr.png. One picture 
       is drawn per chromosome.
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rhocall:0.5.1--py312h0fa9677_5

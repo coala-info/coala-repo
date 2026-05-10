@@ -104,12 +104,20 @@ inputs:
     inputBinding:
       position: 103
       prefix: -v
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 104
+      prefix: --out-file
 outputs:
   - id: out_file
     type: File
     doc: Output file's name
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nthits:1.0.3--h4ac6f70_1

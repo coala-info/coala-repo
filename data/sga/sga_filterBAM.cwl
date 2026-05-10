@@ -86,6 +86,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: out_bam_path
+    type: string
+    doc: Output or path parameter `out_bam_path`
+    inputBinding:
+      position: 104
+      prefix: --out-bam
 outputs:
   - id: out_bam
     type:
@@ -93,7 +99,9 @@ outputs:
       - File
     doc: write the filtered reads to FILE
     outputBinding:
-      glob: $(inputs.out_bam)
+      glob: $(inputs.out_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sga:v0.10.15-4-deb_cv1

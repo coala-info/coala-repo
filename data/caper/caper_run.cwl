@@ -588,6 +588,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --womtool
+  - id: aws_out_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `aws_out_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --aws-out-dir
+  - id: gcp_out_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `gcp_out_dir_path`
+    inputBinding:
+      position: 104
+      prefix: --gcp-out-dir
 outputs:
   - id: gcp_out_dir
     type:
@@ -595,7 +611,7 @@ outputs:
       - Directory
     doc: Output directory path for GCP backend. e.g. gs://my- bucket/my-output.
     outputBinding:
-      glob: $(inputs.gcp_out_dir)
+      glob: $(inputs.gcp_out_dir_path)
   - id: aws_out_dir
     type:
       - 'null'
@@ -603,7 +619,9 @@ outputs:
     doc: Output path on S3 bucket for AWS backend. e.g. 
       s3://my-bucket/my-output.
     outputBinding:
-      glob: $(inputs.aws_out_dir)
+      glob: $(inputs.aws_out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/caper:1.1.0--py_0

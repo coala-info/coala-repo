@@ -68,12 +68,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: out_path
+    type: string
+    doc: Combined output in fastq.gz
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type: File
     doc: Combined output in fastq.gz
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/atol-qc-raw-ont:0.1.12--pyhdfd78af_0

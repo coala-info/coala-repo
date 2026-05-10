@@ -25,8 +25,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Annotate nodes of the input PanMAN based on the list provided in the input-file
-      (TSV)
+    doc: Annotate nodes of the input PanMAN based on the list provided in the 
+      input-file (TSV)
     inputBinding:
       position: 101
       prefix: --annotate
@@ -35,7 +35,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Create PanMAN with network of trees from single or multiple PanMAN files
+    doc: Create PanMAN with network of trees from single or multiple PanMAN 
+      files
     inputBinding:
       position: 101
       prefix: --create-network
@@ -91,7 +92,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to the input file, required for --subnet, --annotate, and --create-network
+    doc: Path to the input file, required for --subnet, --annotate, and 
+      --create-network
     inputBinding:
       position: 101
       prefix: --input-file
@@ -187,8 +189,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Identifier of reference sequence for PanMAN construction (optional), VCF
-      extract (required), or reroot (required)
+    doc: Identifier of reference sequence for PanMAN construction (optional), 
+      VCF extract (required), or reroot (required)
     inputBinding:
       position: 101
       prefix: --reference
@@ -196,7 +198,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Reroot a PanMAT in a PanMAN based on the input sequence id (--reference)
+    doc: Reroot a PanMAT in a PanMAN based on the input sequence id 
+      (--reference)
     inputBinding:
       position: 101
       prefix: --reroot
@@ -212,8 +215,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Extract subnet of given PanMAN to a new PanMAN file based on the list of
-      nodes provided in the input-file
+    doc: Extract subnet of given PanMAN to a new PanMAN file based on the list 
+      of nodes provided in the input-file
     inputBinding:
       position: 101
       prefix: --subnet
@@ -253,10 +256,17 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Print variations of all sequences from any PanMAT in a PanMAN (VCF format)
+    doc: Print variations of all sequences from any PanMAT in a PanMAN (VCF 
+      format)
     inputBinding:
       position: 101
       prefix: --vcf
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -264,7 +274,9 @@ outputs:
       - File
     doc: Prefix of the output file name
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panman:0.1.4--hac847a2_0

@@ -14,8 +14,8 @@ inputs:
       position: 1
   - id: query_idx
     type: File
-    doc: A tab-delimited file where each line is a sample identifier followed by the
-      path to the fast{a,q} of reads for that sample
+    doc: A tab-delimited file where each line is a sample identifier followed by
+      the path to the fast{a,q} of reads for that sample
     inputBinding:
       position: 2
   - id: binomial_model
@@ -46,7 +46,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Positions with coverage less than this will be tagged for variant discovery
+    doc: Positions with coverage less than this will be tagged for variant 
+      discovery
     inputBinding:
       position: 103
       prefix: --covg-threshold
@@ -70,8 +71,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Estimated length of the genome - used for coverage estimation. Can pass string
-      such as 4.4m, 100k etc.
+    doc: Estimated length of the genome - used for coverage estimation. Can pass
+      string such as 4.4m, 100k etc.
     inputBinding:
       position: 103
       prefix: --genome-size
@@ -79,7 +80,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Reads are from Illumina. Alters error rate used and adjusts for shorter reads
+    doc: Reads are from Illumina. Alters error rate used and adjusts for shorter
+      reads
     inputBinding:
       position: 103
       prefix: --illumina
@@ -87,8 +89,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum number of kmers to average over when selecting the maximum likelihood
-      path
+    doc: Maximum number of kmers to average over when selecting the maximum 
+      likelihood path
     inputBinding:
       position: 103
       prefix: --kmer-avg
@@ -104,7 +106,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Save a fasta file for each loci containing read parts which overlapped it
+    doc: Save a fasta file for each loci containing read parts which overlapped 
+      it
     inputBinding:
       position: 103
       prefix: --mapped-reads
@@ -145,8 +148,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Max. length of consecutive positions below coverage threshold to trigger
-      variant discovery
+    doc: Max. length of consecutive positions below coverage threshold to 
+      trigger variant discovery
     inputBinding:
       position: 103
       prefix: -L
@@ -162,8 +165,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum size of a cluster of hits between a read and a loci to consider the
-      loci present
+    doc: Minimum size of a cluster of hits between a read and a loci to consider
+      the loci present
     inputBinding:
       position: 103
       prefix: --min-cluster-size
@@ -171,7 +174,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum node/kmer depth in the de Bruijn graph used for discovering variants
+    doc: Minimum node/kmer depth in the de Bruijn graph used for discovering 
+      variants
     inputBinding:
       position: 103
       prefix: --min-dbg-dp
@@ -179,8 +183,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Min. length of consecutive positions below coverage threshold to trigger
-      variant discovery
+    doc: Min. length of consecutive positions below coverage threshold to 
+      trigger variant discovery
     inputBinding:
       position: 103
       prefix: -l
@@ -188,8 +192,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Save kmer graphs with forward and reverse coverage annotations for found
-      loci
+    doc: Save kmer graphs with forward and reverse coverage annotations for 
+      found loci
     inputBinding:
       position: 103
       prefix: --kg
@@ -218,6 +222,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: -w
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 104
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -225,7 +235,9 @@ outputs:
       - Directory
     doc: Directory to write output files to
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pandora:0.9.2--h4ac6f70_0

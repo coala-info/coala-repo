@@ -25,17 +25,35 @@ inputs:
     inputBinding:
       position: 102
       prefix: --format
+  - id: failed_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `failed_path`
+    inputBinding:
+      position: 103
+      prefix: --failed
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: GFF3/GTF output path (unsorted)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: failed
     type: File
     doc: Failed to liftOver GFF3/GTF output path
     outputBinding:
-      glob: $(inputs.failed)
+      glob: $(inputs.failed_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/transanno:0.4.5--h4349ce8_0

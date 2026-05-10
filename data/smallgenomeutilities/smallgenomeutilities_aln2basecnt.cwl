@@ -39,6 +39,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --name
+  - id: basecnt_tsv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `basecnt_tsv_path`
+    inputBinding:
+      position: 103
+      prefix: --basecnt-tsv
+  - id: coverage_tsv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `coverage_tsv_path`
+    inputBinding:
+      position: 104
+      prefix: --coverage-tsv
+  - id: stats_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `stats_path`
+    inputBinding:
+      position: 105
+      prefix: --stats
 outputs:
   - id: basecnt_tsv
     type:
@@ -46,21 +70,23 @@ outputs:
       - File
     doc: bases count table output file
     outputBinding:
-      glob: $(inputs.basecnt_tsv)
+      glob: $(inputs.basecnt_tsv_path)
   - id: coverage_tsv
     type:
       - 'null'
       - File
     doc: coverage table output file
     outputBinding:
-      glob: $(inputs.coverage_tsv)
+      glob: $(inputs.coverage_tsv_path)
   - id: stats
     type:
       - 'null'
       - File
     doc: file to write stats to
     outputBinding:
-      glob: $(inputs.stats)
+      glob: $(inputs.stats_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smallgenomeutilities:0.5.2--pyhdfd78af_0

@@ -129,6 +129,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --useSymlinks
+  - id: fetch_entire_job_store_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `fetch_entire_job_store_path`
+    inputBinding:
+      position: 103
+      prefix: --fetch-entire-job-store
+  - id: log_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 104
+      prefix: --log-file
 outputs:
   - id: fetch_entire_job_store
     type:
@@ -136,14 +152,16 @@ outputs:
       - Directory
     doc: Copy all job store files into a local directory.
     outputBinding:
-      glob: $(inputs.fetch_entire_job_store)
+      glob: $(inputs.fetch_entire_job_store_path)
   - id: log_file
     type:
       - 'null'
       - File
     doc: File to log in.
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/toil:7.0.0--pyhdfd78af_0

@@ -311,6 +311,38 @@ inputs:
     inputBinding:
       position: 103
       prefix: --ydrop
+  - id: axt_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `axt_path`
+    inputBinding:
+      position: 104
+      prefix: --axt
+  - id: maf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `maf_path`
+    inputBinding:
+      position: 105
+      prefix: --maf
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 106
+      prefix: --output
+  - id: rdotplot_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `rdotplot_path`
+    inputBinding:
+      position: 107
+      prefix: --rdotplot
 outputs:
   - id: output
     type:
@@ -319,28 +351,30 @@ outputs:
     doc: specify output alignment file; otherwise alignments are written to 
       stdout
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: rdotplot
     type:
       - 'null'
       - File
     doc: create an output file suitable for plotting in R.
     outputBinding:
-      glob: $(inputs.rdotplot)
+      glob: $(inputs.rdotplot_path)
   - id: axt
     type:
       - 'null'
       - File
     doc: create an output file in AXT format.
     outputBinding:
-      glob: $(inputs.axt)
+      glob: $(inputs.axt_path)
   - id: maf
     type:
       - 'null'
       - File
     doc: create an output file in MAF format.
     outputBinding:
-      glob: $(inputs.maf)
+      glob: $(inputs.maf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lastz:1.04.52--h7b50bb2_1

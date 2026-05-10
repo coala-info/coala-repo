@@ -72,6 +72,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --v-shm-threshold
+  - id: members_file_path
+    type: string
+    doc: Output or path parameter `members_file_path`
+    inputBinding:
+      position: 103
+      prefix: --members-file
 outputs:
   - id: members_file
     type:
@@ -79,7 +85,9 @@ outputs:
       - File
     doc: Write member table to FILE
     outputBinding:
-      glob: $(inputs.members_file)
+      glob: $(inputs.members_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/igdiscover:0.15.1--pyhdfd78af_2

@@ -83,6 +83,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: --txt
+  - id: atcgmap_outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `atcgmap_outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --atcgmap-outfile
+  - id: cgmap_outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `cgmap_outfile_path`
+    inputBinding:
+      position: 103
+      prefix: --cgmap-outfile
+  - id: output_prefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 104
+      prefix: --output-prefix
+  - id: wig_outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `wig_outfile_path`
+    inputBinding:
+      position: 105
+      prefix: --wig-outfile
 outputs:
   - id: output_prefix
     type:
@@ -92,7 +124,7 @@ outputs:
       (ATCGmap, CGmap, wig) will be generated if specified. Omit this if only to
       generate specific format.
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
   - id: wig_outfile
     type:
       - 'null'
@@ -100,7 +132,7 @@ outputs:
     doc: 'Filename for wig file. Ex: output.wig, or output.wig.gz. Can be overwritten
       by "-o".'
     outputBinding:
-      glob: $(inputs.wig_outfile)
+      glob: $(inputs.wig_outfile_path)
   - id: cgmap_outfile
     type:
       - 'null'
@@ -108,7 +140,7 @@ outputs:
     doc: 'Filename for CGmap file. Ex: output.CGmap, or output.CGmap.gz. Can be overwritten
       by "-o".'
     outputBinding:
-      glob: $(inputs.cgmap_outfile)
+      glob: $(inputs.cgmap_outfile_path)
   - id: atcgmap_outfile
     type:
       - 'null'
@@ -116,7 +148,9 @@ outputs:
     doc: 'Filename for ATCGmap file. Ex: output.ATCGmap, or output.ATCGmap.gz. Can
       be overwritten by "-o".'
     outputBinding:
-      glob: $(inputs.atcgmap_outfile)
+      glob: $(inputs.atcgmap_outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bs-seeker2:2.1.7--0

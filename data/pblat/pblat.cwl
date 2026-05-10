@@ -2,8 +2,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: pblat
 label: pblat
-doc: "BLAT with parallel supports v. 36x2 fast sequence search command line tool\n
-  \nTool homepage: https://github.com/icebert/pblat"
+doc: "BLAT with parallel supports v. 36x2 fast sequence search command line tool\n\
+  \ \nTool homepage: https://github.com/icebert/pblat"
 inputs:
   - id: database
     type: File
@@ -43,7 +43,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Run for fast DNA/DNA remapping - not allowing introns, requiring high %ID.
+    doc: Run for fast DNA/DNA remapping - not allowing introns, requiring high 
+      %ID.
     inputBinding:
       position: 103
       prefix: -fastMap
@@ -51,7 +52,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: For high quality mRNAs look harder for small initial and terminal exons.
+    doc: For high quality mRNAs look harder for small initial and terminal 
+      exons.
     inputBinding:
       position: 103
       prefix: -fine
@@ -83,8 +85,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Sets minimum sequence identity (in percent). Default is 90 for nucleotide,
-      25 for protein.
+    doc: Sets minimum sequence identity (in percent). Default is 90 for 
+      nucleotide, 25 for protein.
     inputBinding:
       position: 103
       prefix: -minIdentity
@@ -92,7 +94,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Sets the number of tile matches. Default is 2 for nucleotide, 1 for protein.
+    doc: Sets the number of tile matches. Default is 2 for nucleotide, 1 for 
+      protein.
     inputBinding:
       position: 103
       prefix: -minMatch
@@ -132,7 +135,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: If set to 1, this allows one mismatch in tile and still triggers an alignments.
+    doc: If set to 1, this allows one mismatch in tile and still triggers an 
+      alignments.
     inputBinding:
       position: 103
       prefix: -oneOff
@@ -148,8 +152,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Controls output file format (psl, pslx, axt, maf, sim4, wublast, blast, blast8,
-      blast9).
+    doc: Controls output file format (psl, pslx, axt, maf, sim4, wublast, blast,
+      blast8, blast9).
     inputBinding:
       position: 103
       prefix: -out
@@ -181,7 +185,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Sets the number of repetitions of a tile allowed before it is marked as overused.
+    doc: Sets the number of repetitions of a tile allowed before it is marked as
+      overused.
     inputBinding:
       position: 103
       prefix: -repMatch
@@ -213,8 +218,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Sets the size of match that triggers an alignment. Default is 11 for DNA
-      and 5 for protein.
+    doc: Sets the size of match that triggers an alignment. Default is 11 for 
+      DNA and 5 for protein.
     inputBinding:
       position: 103
       prefix: -tileSize
@@ -234,6 +239,14 @@ inputs:
     inputBinding:
       position: 103
       prefix: -trimT
+  - id: make_ooc_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `make_ooc_path`
+    inputBinding:
+      position: 104
+      prefix: --make-ooc
 outputs:
   - id: output
     type: File
@@ -246,7 +259,9 @@ outputs:
       - File
     doc: Make overused tile file. Target needs to be complete genome.
     outputBinding:
-      glob: $(inputs.make_ooc)
+      glob: $(inputs.make_ooc_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pblat:2.5.1--h41f7678_4

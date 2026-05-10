@@ -10,6 +10,12 @@ inputs:
     doc: Input sequence file
     inputBinding:
       position: 1
+  - id: save_ambiguous_path
+    type: string
+    doc: Output or path parameter `save_ambiguous_path`
+    inputBinding:
+      position: 101
+      prefix: --save-ambiguous
 outputs:
   - id: save_ambiguous
     type:
@@ -17,7 +23,9 @@ outputs:
       - File
     doc: save ambiguous sequences to this file
     outputBinding:
-      glob: $(inputs.save_ambiguous)
+      glob: $(inputs.save_ambiguous_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/conus:1.0--h7b50bb2_6

@@ -98,16 +98,25 @@ inputs:
       - 'null'
       - type: array
         items: boolean
-    doc: Specify multiple times to increase verbosity level (e.g., -vv for more verbosity)
+    doc: Specify multiple times to increase verbosity level (e.g., -vv for more 
+      verbosity)
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: image_path
+    type: string
+    doc: Output or path parameter `image_path`
+    inputBinding:
+      position: 102
+      prefix: --image
 outputs:
   - id: image
     type: File
     doc: Output image path
     outputBinding:
-      glob: $(inputs.image)
+      glob: $(inputs.image_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/trgt:5.0.0--h9ee0642_0

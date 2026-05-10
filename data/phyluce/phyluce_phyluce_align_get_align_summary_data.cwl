@@ -51,6 +51,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbosity
+  - id: output_stats_path
+    type: string
+    doc: Output or path parameter `output_stats_path`
+    inputBinding:
+      position: 102
+      prefix: --output-stats
 outputs:
   - id: output_stats
     type:
@@ -58,7 +64,9 @@ outputs:
       - File
     doc: Output a CSV-formatted file of stats, by locus
     outputBinding:
-      glob: $(inputs.output_stats)
+      glob: $(inputs.output_stats_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyluce:1.6.8--py_0

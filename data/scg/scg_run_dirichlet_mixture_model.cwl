@@ -41,6 +41,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --seed
+  - id: lower_bound_file_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --lower_bound_file
+  - id: out_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Path where output files will be written.
+    inputBinding:
+      position: 103
+      prefix: --out_dir
 outputs:
   - id: lower_bound_file
     type:
@@ -48,14 +63,16 @@ outputs:
       - File
     doc: Path of file where lower bound will be written.
     outputBinding:
-      glob: $(inputs.lower_bound_file)
+      glob: $(inputs.lower_bound_file_path)
   - id: out_dir
     type:
       - 'null'
       - Directory
     doc: Path where output files will be written.
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scg:0.3.1--py27_0

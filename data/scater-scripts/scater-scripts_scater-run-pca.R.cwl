@@ -91,6 +91,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use-coldata
+  - id: output_object_file_path
+    type: string
+    doc: Output or path parameter `output_object_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-object-file
 outputs:
   - id: output_object_file
     type:
@@ -99,7 +105,9 @@ outputs:
     doc: file name in which to store serialized R object of type 
       'SingleCellExperiment'.
     outputBinding:
-      glob: $(inputs.output_object_file)
+      glob: $(inputs.output_object_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scater-scripts:0.0.5--0

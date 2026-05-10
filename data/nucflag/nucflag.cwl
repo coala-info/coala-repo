@@ -113,6 +113,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ylim
+  - id: output_misasm_path
+    type: string
+    doc: Output or path parameter `output_misasm_path`
+    inputBinding:
+      position: 102
+      prefix: --output-misasm
 outputs:
   - id: output_misasm
     type:
@@ -120,7 +126,9 @@ outputs:
       - File
     doc: Output bed file with misassembled regions.
     outputBinding:
-      glob: $(inputs.output_misasm)
+      glob: $(inputs.output_misasm_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nucflag:0.3.8--pyhdfd78af_0

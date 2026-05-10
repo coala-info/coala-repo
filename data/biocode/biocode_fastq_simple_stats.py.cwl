@@ -28,6 +28,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --progress_interval
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -35,7 +41,9 @@ outputs:
       - File
     doc: Optional path to an output file to be created, else prints on STDOUT
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biocode:0.12.1--pyhdfd78af_0

@@ -89,6 +89,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --tag-peripherial
+  - id: old_contacts_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `old_contacts_output_path`
+    inputBinding:
+      position: 103
+      prefix: --old-contacts-output
+  - id: volumes_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `volumes_output_path`
+    inputBinding:
+      position: 104
+      prefix: --volumes-output
 outputs:
   - id: old_contacts_output
     type:
@@ -96,14 +112,16 @@ outputs:
       - File
     doc: file path to output spherical contacts
     outputBinding:
-      glob: $(inputs.old_contacts_output)
+      glob: $(inputs.old_contacts_output_path)
   - id: volumes_output
     type:
       - 'null'
       - File
     doc: file path to output constrained cells volumes
     outputBinding:
-      glob: $(inputs.volumes_output)
+      glob: $(inputs.volumes_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/voronota:1.29.4602--h5755088_0

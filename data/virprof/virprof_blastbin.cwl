@@ -146,6 +146,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --prefilter-hits
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output CSV file containing final calls (one row
+    inputBinding:
+      position: 102
+      prefix: --out
+  - id: out_features_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_features_path`
+    inputBinding:
+      position: 103
+      prefix: --out-features
+  - id: out_hits_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_hits_path`
+    inputBinding:
+      position: 104
+      prefix: --out-hits
 outputs:
   - id: out
     type:
@@ -153,12 +177,12 @@ outputs:
       - File
     doc: Output CSV file containing final calls (one row per bin)
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: out_hits
     type: File
     doc: Output CSV file containining contig details (one row per hit)
     outputBinding:
-      glob: $(inputs.out_hits)
+      glob: $(inputs.out_hits_path)
   - id: out_features
     type:
       - 'null'
@@ -166,7 +190,9 @@ outputs:
     doc: Output CSV file containing reference feature annotation (one row per 
       feature)
     outputBinding:
-      glob: $(inputs.out_features)
+      glob: $(inputs.out_features_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/virprof:0.9.2--pyhdfd78af_0

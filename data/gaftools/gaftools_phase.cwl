@@ -18,6 +18,12 @@ inputs:
       https://whatshap.readthedocs.io/en/latest/guide.html#whatshap-haplotag
     inputBinding:
       position: 2
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 101
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -26,7 +32,9 @@ outputs:
     doc: Output GAF file (bgzipped if the file ends with .gz). If omitted, 
       output is directed to stdout.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gaftools:1.3.1--pyhdfd78af_0

@@ -267,6 +267,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --top-n-genomes
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -274,7 +280,9 @@ outputs:
       - File
     doc: Out file, supports a ".gz" suffix ("-" for stdout).
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lexicmap:0.8.1--h9ee0642_1

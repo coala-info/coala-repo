@@ -203,6 +203,38 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbatim
+  - id: perc_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `perc_out_path`
+    inputBinding:
+      position: 103
+      prefix: --perc-out
+  - id: pval_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pval_out_path`
+    inputBinding:
+      position: 104
+      prefix: --pval-out
+  - id: pvec_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pvec_out_path`
+    inputBinding:
+      position: 105
+      prefix: --pvec-out
+  - id: spec_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `spec_out_path`
+    inputBinding:
+      position: 106
+      prefix: --spec-out
 outputs:
   - id: spec_out
     type:
@@ -211,21 +243,21 @@ outputs:
     doc: Output file for the consensus spectra. Can be in any format supported 
       by ProteoWizard (e.g. ms2, mzML).
     outputBinding:
-      glob: $(inputs.spec_out)
+      glob: $(inputs.spec_out_path)
   - id: pvec_out
     type:
       - 'null'
       - File
     doc: Output file basename for p-values vectors.
     outputBinding:
-      glob: $(inputs.pvec_out)
+      glob: $(inputs.pvec_out_path)
   - id: pval_out
     type:
       - 'null'
       - File
     doc: File where p-values will be written to.
     outputBinding:
-      glob: $(inputs.pval_out)
+      glob: $(inputs.pval_out_path)
   - id: perc_out
     type:
       - 'null'
@@ -233,7 +265,9 @@ outputs:
     doc: Tab delimited percolator output file containing peptides and qvalues. 
       This is meant for annotation of the clusterfile.
     outputBinding:
-      glob: $(inputs.perc_out)
+      glob: $(inputs.perc_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/maracluster:1.02.1_cv1

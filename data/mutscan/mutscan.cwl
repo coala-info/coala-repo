@@ -51,6 +51,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --thread
+  - id: html_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `html_path`
+    inputBinding:
+      position: 102
+      prefix: --html
+  - id: json_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `json_path`
+    inputBinding:
+      position: 103
+      prefix: --json
 outputs:
   - id: html
     type:
@@ -58,14 +74,16 @@ outputs:
       - File
     doc: The HTML report file name.
     outputBinding:
-      glob: $(inputs.html)
+      glob: $(inputs.html_path)
   - id: json
     type:
       - 'null'
       - File
     doc: The JSON report file name.
     outputBinding:
-      glob: $(inputs.json)
+      glob: $(inputs.json_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mutscan:1.14.1--h5ca1c30_0

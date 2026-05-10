@@ -116,6 +116,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tole
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -123,7 +129,9 @@ outputs:
       - File
     doc: Prefix output name
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/emu-pca:1.5.0--py310h20b60a1_0

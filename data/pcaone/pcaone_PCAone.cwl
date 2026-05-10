@@ -323,7 +323,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: feature counts for each sample are normalized and multiplied by this value
+    doc: feature counts for each sample are normalized and multiplied by this 
+      value
     inputBinding:
       position: 101
       prefix: --scale-factor
@@ -392,6 +393,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -399,7 +406,9 @@ outputs:
       - File
     doc: prefix of output files
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pcaone:0.6.0--ha628be3_0

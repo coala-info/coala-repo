@@ -326,6 +326,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: -translate
+  - id: align_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `align_output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --align-output-file
+  - id: build_tree_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `build_tree_output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --build-tree-output-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 105
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -334,7 +358,7 @@ outputs:
     doc: use fname as name of the converted alignment (default is built from 
       input filename)
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: align_output_file
     type:
       - 'null'
@@ -342,7 +366,7 @@ outputs:
     doc: use fname as name of the concatenated alignment (default is built from 
       input filename)
     outputBinding:
-      glob: $(inputs.align_output_file)
+      glob: $(inputs.align_output_file_path)
   - id: align_output_file
     type:
       - 'null'
@@ -350,14 +374,16 @@ outputs:
     doc: use fname as name of the output alignment (default is built from input 
       filename)
     outputBinding:
-      glob: $(inputs.align_output_file)
+      glob: $(inputs.align_output_file_path)
   - id: build_tree_output_file
     type:
       - 'null'
       - File
     doc: use fname as name of the output tree
     outputBinding:
-      glob: $(inputs.build_tree_output_file)
+      glob: $(inputs.build_tree_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/seaview:v1-4.7-1-deb_cv1

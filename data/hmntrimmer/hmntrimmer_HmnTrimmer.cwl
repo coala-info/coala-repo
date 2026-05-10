@@ -106,6 +106,44 @@ inputs:
     inputBinding:
       position: 101
       prefix: --version-check
+  - id: output_fastq_discard_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --output-fastq-discard
+  - id: output_fastq_forward_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_fastq_forward_path`
+    inputBinding:
+      position: 103
+      prefix: --output-fastq-forward
+  - id: output_fastq_interleaved_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_fastq_interleaved_path`
+    inputBinding:
+      position: 104
+      prefix: --output-fastq-interleaved
+  - id: output_fastq_reverse_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_fastq_reverse_path`
+    inputBinding:
+      position: 105
+      prefix: --output-fastq-reverse
+  - id: output_report_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: --output-report
 outputs:
   - id: output_fastq_forward
     type:
@@ -113,35 +151,37 @@ outputs:
       - File
     doc: 'File with write forward trimmed. Valid filetypes are: .fq[.*] and .fastq[.*]'
     outputBinding:
-      glob: $(inputs.output_fastq_forward)
+      glob: $(inputs.output_fastq_forward_path)
   - id: output_fastq_reverse
     type:
       - 'null'
       - File
     doc: 'File with write reverse trimmed. Valid filetypes are: .fq[.*] and .fastq[.*]'
     outputBinding:
-      glob: $(inputs.output_fastq_reverse)
+      glob: $(inputs.output_fastq_reverse_path)
   - id: output_fastq_interleaved
     type:
       - 'null'
       - File
     doc: 'File with write reverse trimmed. Valid filetypes are: .fq[.*] and .fastq[.*]'
     outputBinding:
-      glob: $(inputs.output_fastq_interleaved)
+      glob: $(inputs.output_fastq_interleaved_path)
   - id: output_fastq_discard
     type:
       - 'null'
       - File
     doc: 'File with discard sequences. Valid filetypes are: .fq[.*] and .fastq[.*]'
     outputBinding:
-      glob: $(inputs.output_fastq_discard)
+      glob: $(inputs.output_fastq_discard_path)
   - id: output_report
     type:
       - 'null'
       - File
     doc: 'File output report Valid filetype is: .json.'
     outputBinding:
-      glob: $(inputs.output_report)
+      glob: $(inputs.output_report_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmntrimmer:0.6.5--he93f0d0_1

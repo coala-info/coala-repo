@@ -26,12 +26,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --parameter-cut-off
+  - id: output_hmnqc_xlsx_path
+    type: string
+    doc: Output or path parameter `output_hmnqc_xlsx_path`
+    inputBinding:
+      position: 102
+      prefix: --output-hmnqc-xlsx
 outputs:
   - id: output_hmnqc_xlsx
     type: File
     doc: Excel output
     outputBinding:
-      glob: $(inputs.output_hmnqc_xlsx)
+      glob: $(inputs.output_hmnqc_xlsx_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmnqc:0.5.1--pyhdfd78af_0

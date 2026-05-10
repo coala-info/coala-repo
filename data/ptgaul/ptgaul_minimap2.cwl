@@ -284,6 +284,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: -z
+  - id: dump_index_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `dump_index_path`
+    inputBinding:
+      position: 104
+      prefix: --dump-index
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 105
+      prefix: --output-file
 outputs:
   - id: dump_index
     type:
@@ -291,14 +307,16 @@ outputs:
       - File
     doc: dump index to FILE
     outputBinding:
-      glob: $(inputs.dump_index)
+      glob: $(inputs.dump_index_path)
   - id: output_file
     type:
       - 'null'
       - File
     doc: output alignments to FILE
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ptgaul:1.0.5--pyhdfd78af_1

@@ -101,6 +101,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -z
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -109,7 +115,9 @@ outputs:
     doc: output file for results. Ignored when input is from stdin, in which 
       case output will be stdout.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/telseq:0.0.2--h06902ac_8

@@ -73,6 +73,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t
+  - id: log_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 102
+      prefix: --log-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -80,14 +96,16 @@ outputs:
       - File
     doc: The output file containing the calculated rates.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: log_file
     type:
       - 'null'
       - File
     doc: The log file name.
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/rate4site:v3.0.0-6-deb_cv1

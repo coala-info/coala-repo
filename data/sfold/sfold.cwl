@@ -69,6 +69,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -i
+  - id: output_directory_path
+    type: Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 103
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type:
@@ -77,7 +83,9 @@ outputs:
     doc: Name of directory to which output files are written. Directory will be 
       created if it does not already exist. Existing files will be overwritten.
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sfold:2.2--pl5321r44h7b50bb2_4

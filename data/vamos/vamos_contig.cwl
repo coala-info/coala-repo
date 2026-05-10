@@ -168,6 +168,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -Z
+  - id: output_vcf_path
+    type: string
+    doc: Output or path parameter `output_vcf_path`
+    inputBinding:
+      position: 103
+      prefix: --output-vcf
 outputs:
   - id: output_vcf
     type:
@@ -175,7 +181,9 @@ outputs:
       - File
     doc: Output vcf file.
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vamos:3.0.6--h7f5d12c_0

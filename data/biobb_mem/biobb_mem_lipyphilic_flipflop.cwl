@@ -33,12 +33,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input_traj_path
+  - id: output_csv_path_path
+    type: string
+    doc: Output or path parameter `output_csv_path_path`
+    inputBinding:
+      position: 102
+      prefix: --output-csv-path
 outputs:
   - id: output_csv_path
     type: File
     doc: Path to the output CSV file
     outputBinding:
-      glob: $(inputs.output_csv_path)
+      glob: $(inputs.output_csv_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biobb_mem:5.2.1--pyh7e72e81_0

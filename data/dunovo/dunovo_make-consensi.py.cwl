@@ -170,6 +170,46 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: duplexes_1_fa_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `duplexes_1_fa_path`
+    inputBinding:
+      position: 103
+      prefix: --duplexes-1-fa
+  - id: duplexes_2_fa_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `duplexes_2_fa_path`
+    inputBinding:
+      position: 104
+      prefix: --duplexes-2-fa
+  - id: log_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_path`
+    inputBinding:
+      position: 105
+      prefix: --log
+  - id: sscs1_fa_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sscs1_fa_path`
+    inputBinding:
+      position: 106
+      prefix: --sscs1-fa
+  - id: sscs2_fa_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sscs2_fa_path`
+    inputBinding:
+      position: 107
+      prefix: --sscs2-fa
 outputs:
   - id: duplexes_1_fa
     type:
@@ -178,14 +218,14 @@ outputs:
     doc: 'The file to output the first mates of the duplex consensus sequences into.
       Warning: This will be overwritten if it exists!'
     outputBinding:
-      glob: $(inputs.duplexes_1_fa)
+      glob: $(inputs.duplexes_1_fa_path)
   - id: duplexes_2_fa
     type:
       - 'null'
       - File
     doc: 'Same, but for mate 2. Warning: This will be overwritten if it exists!'
     outputBinding:
-      glob: $(inputs.duplexes_2_fa)
+      glob: $(inputs.duplexes_2_fa_path)
   - id: sscs1_fa
     type:
       - 'null'
@@ -193,7 +233,7 @@ outputs:
     doc: 'Save the single-strand consensus sequences (mate 1) in this file (FASTA
       format). Warning: This will be overwritten if it exists!'
     outputBinding:
-      glob: $(inputs.sscs1_fa)
+      glob: $(inputs.sscs1_fa_path)
   - id: sscs2_fa
     type:
       - 'null'
@@ -201,7 +241,7 @@ outputs:
     doc: 'Save the single-strand consensus sequences (mate 2) in this file (FASTA
       format). Warning: This will be overwritten if it exists!'
     outputBinding:
-      glob: $(inputs.sscs2_fa)
+      glob: $(inputs.sscs2_fa_path)
   - id: log
     type:
       - 'null'
@@ -209,7 +249,9 @@ outputs:
     doc: 'Print log messages to this file instead of to stderr. Warning: Will overwrite
       the file.'
     outputBinding:
-      glob: $(inputs.log)
+      glob: $(inputs.log_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dunovo:3.0.2--h7b50bb2_4

@@ -515,6 +515,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --version-check-days
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -522,7 +528,9 @@ outputs:
       - File
     doc: Destination for results (String)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/aspera-cli:4.20.0--hdfd78af_0

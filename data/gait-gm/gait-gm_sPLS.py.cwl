@@ -233,38 +233,80 @@ inputs:
     inputBinding:
       position: 101
       prefix: --thres
+  - id: figure1_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `figure1_path`
+    inputBinding:
+      position: 102
+      prefix: --figure1
+  - id: figure2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `figure2_path`
+    inputBinding:
+      position: 103
+      prefix: --figure2
+  - id: mmc_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `mmc_out_path`
+    inputBinding:
+      position: 104
+      prefix: --mmc-out
+  - id: pana_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pana_out_path`
+    inputBinding:
+      position: 105
+      prefix: --pana-out
+  - id: spls_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `spls_out_path`
+    inputBinding:
+      position: 106
+      prefix: --spls-out
 outputs:
   - id: figure1
     type: File
     doc: sPLS heatmaps
     outputBinding:
-      glob: $(inputs.figure1)
+      glob: $(inputs.figure1_path)
   - id: spls_out
     type: File
     doc: Output Table.
     outputBinding:
-      glob: $(inputs.spls_out)
+      glob: $(inputs.spls_out_path)
   - id: figure2
     type:
       - 'null'
       - File
     doc: MMC Heatmaps (Only if MMC Option)
     outputBinding:
-      glob: $(inputs.figure2)
+      glob: $(inputs.figure2_path)
   - id: mmc_out
     type:
       - 'null'
       - File
     doc: MMC Output TSV name (Only if MMC Option)
     outputBinding:
-      glob: $(inputs.mmc_out)
+      glob: $(inputs.mmc_out_path)
   - id: pana_out
     type:
       - 'null'
       - File
     doc: PANA Output TSV name (Only if PANA Option)
     outputBinding:
-      glob: $(inputs.pana_out)
+      glob: $(inputs.pana_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gait-gm:21.7.22--pyhdfd78af_0

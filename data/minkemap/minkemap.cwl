@@ -156,6 +156,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: outdir_path
+    type:
+      - 'null'
+      - string
+    doc: Directory to save all output files
+    inputBinding:
+      position: 102
+      prefix: --outdir
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -163,14 +179,16 @@ outputs:
       - File
     doc: Output filename
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: outdir
     type:
       - 'null'
       - Directory
     doc: Directory to save all output files
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/minkemap:0.1.0--pyhdfd78af_0

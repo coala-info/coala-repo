@@ -50,12 +50,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --Stepper
+  - id: bedfile_path
+    type: string
+    doc: Output or path parameter `bedfile_path`
+    inputBinding:
+      position: 102
+      prefix: --bedfile
 outputs:
   - id: bedfile
     type: File
     doc: Path to the output bed file
     outputBinding:
-      glob: $(inputs.bedfile)
+      glob: $(inputs.bedfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/debarcer:2.1.4--pyhdfd78af_2

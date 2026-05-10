@@ -23,8 +23,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Table name to merge into (ancientmetagenome-environmental, ancientmetagenome-hostassociated,
-      ancientsinglegenome-hostassociated, or test)
+    doc: Table name to merge into (ancientmetagenome-environmental, 
+      ancientmetagenome-hostassociated, ancientsinglegenome-hostassociated, or 
+      test)
     inputBinding:
       position: 102
       prefix: --table_name
@@ -36,6 +37,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --table_type
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 103
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -43,7 +50,9 @@ outputs:
       - Directory
     doc: path to sample output table file
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amdirt:1.7.0--pyhdfd78af_0

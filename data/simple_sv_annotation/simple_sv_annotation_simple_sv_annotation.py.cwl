@@ -43,6 +43,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --known_fusion_promiscuous
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -51,7 +57,9 @@ outputs:
     doc: "Output file name (must not exist). Does not support\nbgzipped output. Use
       \"-\" for stdout."
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/simple_sv_annotation:2019.02.18--py_0

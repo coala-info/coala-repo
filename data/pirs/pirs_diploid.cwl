@@ -101,6 +101,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --transition-to-transversion-ratio
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -109,7 +115,9 @@ outputs:
     doc: Use FILE as the name of the output file. Use '-' for standard output; 
       this also moves the informational messages from stdout to stderr.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pirs:2.0.2--pl5.22.0_1

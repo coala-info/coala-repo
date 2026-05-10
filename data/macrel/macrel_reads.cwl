@@ -181,6 +181,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_file_path
+    type: string
+    inputBinding:
+      position: 103
+      prefix: --file-output
 outputs:
   - id: output_file
     type:
@@ -188,7 +193,9 @@ outputs:
       - File
     doc: path to the output file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macrel:1.6.0--pyh7e72e81_1

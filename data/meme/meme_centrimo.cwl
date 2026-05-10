@@ -38,8 +38,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: name of the file containing a custom alphabet, which specifies that motifs
-      should be converted
+    doc: name of the file containing a custom alphabet, which specifies that 
+      motifs should be converted
     inputBinding:
       position: 103
       prefix: --xalph
@@ -133,8 +133,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: plot motif distributions in this set as well in the <sequence file> (positive
-      sequences) and compute the relative enrichment
+    doc: plot motif distributions in this set as well in the <sequence file> 
+      (positive sequences) and compute the relative enrichment
     inputBinding:
       position: 103
       prefix: --neg
@@ -158,7 +158,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: search for optimized score above the threshold given by '--score' argument
+    doc: search for optimized score above the threshold given by '--score' 
+      argument
     inputBinding:
       position: 103
       prefix: --optimize-score
@@ -166,8 +167,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: score threshold for PWMs, in bits; sequences without a site with score >=
-      <S> are ignored
+    doc: score threshold for PWMs, in bits; sequences without a site with score 
+      >= <S> are ignored
     inputBinding:
       position: 103
       prefix: --score
@@ -212,6 +213,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbosity
+  - id: output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 104
+      prefix: --output-dir
+  - id: output_dir_overwrite_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_dir_overwrite_path`
+    inputBinding:
+      position: 105
+      prefix: --output-dir-overwrite
 outputs:
   - id: output_dir
     type:
@@ -219,14 +236,16 @@ outputs:
       - Directory
     doc: output directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
   - id: output_dir_overwrite
     type:
       - 'null'
       - Directory
     doc: allow overwriting output directory
     outputBinding:
-      glob: $(inputs.output_dir_overwrite)
+      glob: $(inputs.output_dir_overwrite_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/meme:5.5.9--pl5321h1ca524f_0

@@ -88,19 +88,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t
+  - id: output_fasta_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_fasta_path`
+    inputBinding:
+      position: 102
+      prefix: --output-fasta
+  - id: output_vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_vcf_path`
+    inputBinding:
+      position: 103
+      prefix: --output-vcf
 outputs:
   - id: output_fasta
     type: File
     doc: 'output FASTA file name (example: -o out.fasta)'
     outputBinding:
-      glob: $(inputs.output_fasta)
+      glob: $(inputs.output_fasta_path)
   - id: output_vcf
     type:
       - 'null'
       - File
     doc: 'output VCF file name (coordinates from -r genome, example: -f out.vcf)'
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/alloshp:2025.09.12--h7b50bb2_0

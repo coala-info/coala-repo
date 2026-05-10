@@ -59,27 +59,61 @@ inputs:
     doc: Set the input variable metadata file
     inputBinding:
       position: 101
+  - id: data_matrix_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `data_matrix_out_path`
+    inputBinding:
+      position: 102
+      prefix: --data-matrix-out
+  - id: graph_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `graph_output_path`
+    inputBinding:
+      position: 103
+      prefix: --graph-output
+  - id: rdata_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `rdata_output_path`
+    inputBinding:
+      position: 104
+      prefix: --rdata-output
+  - id: variable_metadata_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `variable_metadata_out_path`
+    inputBinding:
+      position: 105
+      prefix: --variable-metadata-out
 outputs:
   - id: data_matrix_out
     type: File
     doc: Set the output data matrix file
     outputBinding:
-      glob: $(inputs.data_matrix_out)
+      glob: $(inputs.data_matrix_out_path)
   - id: variable_metadata_out
     type: File
     doc: Set the output variable metadata file
     outputBinding:
-      glob: $(inputs.variable_metadata_out)
+      glob: $(inputs.variable_metadata_out_path)
   - id: graph_output
     type: File
     doc: Set the output graph file
     outputBinding:
-      glob: $(inputs.graph_output)
+      glob: $(inputs.graph_output_path)
   - id: rdata_output
     type: File
     doc: Set the output Rdata file
     outputBinding:
-      glob: $(inputs.rdata_output)
+      glob: $(inputs.rdata_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 

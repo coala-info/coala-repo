@@ -80,6 +80,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --updatedb
+  - id: printseq_path
+    type: string
+    doc: specify filename to save allele sequences to
+    inputBinding:
+      position: 103
+      prefix: --printseq
 outputs:
   - id: printseq
     type:
@@ -87,7 +93,9 @@ outputs:
       - File
     doc: specify filename to save allele sequences to
     outputBinding:
-      glob: $(inputs.printseq)
+      glob: $(inputs.printseq_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ngmaster:1.1.1--pyhdfd78af_1

@@ -24,8 +24,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Set output language to one of the supported formats (e.g., pdf, svg, png,
-      ps)
+    doc: Set output language to one of the supported formats (e.g., pdf, svg, 
+      png, ps)
     inputBinding:
       position: 102
       prefix: -T
@@ -37,6 +37,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -44,7 +50,9 @@ outputs:
       - File
     doc: Write output to FILE
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-graphviz:2.26--pl5321h46c88eb_0

@@ -138,6 +138,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --tmpdir
+  - id: output_path
+    type: string
+    doc: output file for pairs after duplicate
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -147,7 +153,9 @@ outputs:
       compressed by bgzip or lz4, correspondingly. By default, the output is 
       printed into stdout.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pairtools:1.1.3--py310h4e61836_0

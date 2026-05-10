@@ -411,6 +411,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -419,7 +425,9 @@ outputs:
     doc: dump the database present in the register to the specified file (which 
       will be given extension .KPopCounter)
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kpop:1.1.1--h9ee0642_1

@@ -91,6 +91,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_graph_path
+    type: string
+    doc: Output or path parameter `output_graph_path`
+    inputBinding:
+      position: 103
+      prefix: --output-graph
 outputs:
   - id: output_graph
     type:
@@ -98,7 +104,9 @@ outputs:
       - File
     doc: Path to save the output graph file.
     outputBinding:
-      glob: $(inputs.output_graph)
+      glob: $(inputs.output_graph_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/lyner:0.4.3--py_0

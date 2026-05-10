@@ -80,26 +80,52 @@ inputs:
     inputBinding:
       position: 101
       prefix: --seqtype
+  - id: summary_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `summary_path`
+    inputBinding:
+      position: 102
+      prefix: --summary
+  - id: trim1_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `trim1_path`
+    inputBinding:
+      position: 103
+      prefix: --trim1
+  - id: trim2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `trim2_path`
+    inputBinding:
+      position: 104
+      prefix: --trim2
 outputs:
   - id: trim1
     type: File
     doc: the trimmed read1 of fastq file
     outputBinding:
-      glob: $(inputs.trim1)
+      glob: $(inputs.trim1_path)
   - id: trim2
     type:
       - 'null'
       - File
     doc: the trimmed read2 of fastq file (paired-end seqtype)
     outputBinding:
-      glob: $(inputs.trim2)
+      glob: $(inputs.trim2_path)
   - id: summary
     type:
       - 'null'
       - File
     doc: the trimming information of each amplicon
     outputBinding:
-      glob: $(inputs.summary)
+      glob: $(inputs.summary_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ptrimmer:1.4.0--h96c455f_1

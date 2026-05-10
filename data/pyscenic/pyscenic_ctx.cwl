@@ -185,9 +185,7 @@ inputs:
       - type: array
         items: float
     doc: The first method to create the TF-modules based on the best targets for
-      each transcription factor
-      - 0.75
-      - 0.9
+      each transcription factor - 0.75 - 0.9
     inputBinding:
       position: 103
       prefix: --thresholds
@@ -197,10 +195,7 @@ inputs:
       - type: array
         items: int
     doc: The alternative way to create the TF-modules is to select the best 
-      regulators for each gene.
-      - 5
-      - 10
-      - 50
+      regulators for each gene. - 5 - 10 - 50
     inputBinding:
       position: 103
       prefix: --top_n_regulators
@@ -209,8 +204,7 @@ inputs:
       - 'null'
       - type: array
         items: int
-    doc: The second method is to select the top targets for a given TF.
-      - 50
+    doc: The second method is to select the top targets for a given TF. - 50
     inputBinding:
       position: 103
       prefix: --top_n_targets
@@ -222,6 +216,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --transpose
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -230,7 +230,9 @@ outputs:
     doc: Output file/stream, i.e. a table of enriched motifs and target genes 
       (csv, tsv) or collection of regulons (yaml, gmt, dat, json).
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pyscenic:0.12.1--pyhdfd78af_1

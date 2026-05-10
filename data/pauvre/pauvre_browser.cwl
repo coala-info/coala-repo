@@ -11,8 +11,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: The fasta sequence to observe. Use the header name of the fasta file without
-      the '>' character
+    doc: The fasta sequence to observe. Use the header name of the fasta file 
+      without the '>' character
     inputBinding:
       position: 101
       prefix: --chromosomeid
@@ -99,28 +99,46 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Specify this option if you DON'T want a transparent background. Default is
-      on.
+    doc: Specify this option if you DON'T want a transparent background. Default
+      is on.
     inputBinding:
       position: 101
       prefix: --transparent
+  - id: output_base_name_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_base_name_path`
+    inputBinding:
+      position: 102
+      prefix: --output-base-name
+  - id: path_path
+    type:
+      - 'null'
+      - string
+    doc: Set an explicit filepath for the output. Only do this
+    inputBinding:
+      position: 103
+      prefix: --path
 outputs:
   - id: output_base_name
     type:
       - 'null'
       - File
-    doc: Specify a base name for the output file( s). The input file base name is
-      the default.
+    doc: Specify a base name for the output file( s). The input file base name 
+      is the default.
     outputBinding:
-      glob: $(inputs.output_base_name)
+      glob: $(inputs.output_base_name_path)
   - id: path
     type:
       - 'null'
       - File
-    doc: Set an explicit filepath for the output. Only do this if you have selected
-      one output type.
+    doc: Set an explicit filepath for the output. Only do this if you have 
+      selected one output type.
     outputBinding:
-      glob: $(inputs.path)
+      glob: $(inputs.path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pauvre:0.1924--py_0

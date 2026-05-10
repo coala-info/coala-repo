@@ -43,6 +43,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --seqfile
+  - id: output_rgfa_path
+    type: string
+    doc: Output or path parameter `output_rgfa_path`
+    inputBinding:
+      position: 103
+      prefix: --output-rgfa
 outputs:
   - id: output_rgfa
     type:
@@ -51,7 +57,9 @@ outputs:
     doc: Output rGFA (bgzipped if the file ends with .gz). If omitted, use 
       standard output.
     outputBinding:
-      glob: $(inputs.output_rgfa)
+      glob: $(inputs.output_rgfa_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gaftools:1.3.1--pyhdfd78af_0

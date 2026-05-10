@@ -25,13 +25,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --overwrite
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: Path to the cache file for storing new summary results. Will be created
       if it doesn't exist.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/varpubs:0.5.0--pyhdfd78af_0

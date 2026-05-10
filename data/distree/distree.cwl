@@ -42,6 +42,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --topology
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -49,7 +55,9 @@ outputs:
       - File
     doc: Path to write the TSV output file (defaults to stdout)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/distree:1.0.0--h4349ce8_0

@@ -109,6 +109,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: json_file_path
+    type: string
+    doc: Output or path parameter `json_file_path`
+    inputBinding:
+      position: 103
+      prefix: --json-file
 outputs:
   - id: json_file
     type:
@@ -116,7 +122,9 @@ outputs:
       - File
     doc: Save dereplication metadata to JSON file
     outputBinding:
-      glob: $(inputs.json_file)
+      glob: $(inputs.json_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqfu:1.23.0--hfd12232_0

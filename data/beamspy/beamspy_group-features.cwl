@@ -65,12 +65,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --pvalue-threshold
+  - id: gml_file_path
+    type: string
+    doc: Output or path parameter `gml_file_path`
+    inputBinding:
+      position: 102
+      prefix: --gml-file
 outputs:
   - id: gml_file
     type: File
     doc: Write graph to GraphML format.
     outputBinding:
-      glob: $(inputs.gml_file)
+      glob: $(inputs.gml_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/beamspy:1.2.0--pyhdfd78af_0

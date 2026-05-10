@@ -18,7 +18,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Append the barcode pattern to search for. The order of these options matters.
+    doc: Append the barcode pattern to search for. The order of these options 
+      matters.
     inputBinding:
       position: 102
       prefix: -b
@@ -35,7 +36,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Append flanking sequence to search for. The order of these options matters.
+    doc: Append flanking sequence to search for. The order of these options 
+      matters.
     inputBinding:
       position: 102
       prefix: -x
@@ -43,9 +45,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Either 1) a text file of expected barcodes in the first column, one row per
-      barcode, or 2) a comma separate string of barcodes. Without this option, flexiplex
-      will search and report possible barcodes.
+    doc: Either 1) a text file of expected barcodes in the first column, one row
+      per barcode, or 2) a comma separate string of barcodes. Without this 
+      option, flexiplex will search and report possible barcodes.
     inputBinding:
       position: 102
       prefix: -k
@@ -77,8 +79,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Replace read ID with barcodes+UMI, remove search strings including flanking
-      sequenence and split read if multiple barcodes found.
+    doc: Replace read ID with barcodes+UMI, remove search strings including 
+      flanking sequenence and split read if multiple barcodes found.
     inputBinding:
       position: 102
       prefix: -i
@@ -103,10 +105,17 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Append the UMI pattern to search for. The order of these options matters.
+    doc: Append the UMI pattern to search for. The order of these options 
+      matters.
     inputBinding:
       position: 102
       prefix: -u
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 103
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -114,7 +123,9 @@ outputs:
       - File
     doc: Prefix for output filenames.
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flexiplex:1.02.5--py313h9948957_1

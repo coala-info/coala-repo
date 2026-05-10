@@ -297,6 +297,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --zip-data-dir
+  - id: outdir_path
+    type: string
+    doc: Create report in the specified output
+    inputBinding:
+      position: 103
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -304,7 +310,9 @@ outputs:
       - Directory
     doc: Create report in the specified output directory.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/zavolan-multiqc-plugins:1.3--pyh5e36f6f_0

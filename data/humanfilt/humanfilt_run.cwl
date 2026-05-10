@@ -72,17 +72,35 @@ inputs:
     inputBinding:
       position: 101
       prefix: --trim-quality
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: report_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_path`
+    inputBinding:
+      position: 103
+      prefix: --report
 outputs:
   - id: output
     type: File
     doc: Output file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: report
     type: File
     doc: Report file
     outputBinding:
-      glob: $(inputs.report)
+      glob: $(inputs.report_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/humanfilt:1.0.0--pyhdfd78af_0

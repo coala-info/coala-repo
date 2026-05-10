@@ -67,12 +67,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: out_tree_path
+    type: string
+    doc: Output or path parameter `out_tree_path`
+    inputBinding:
+      position: 102
+      prefix: --out-tree
 outputs:
   - id: out_tree
     type: File
     doc: Path to save the output tree file.
     outputBinding:
-      glob: $(inputs.out_tree)
+      glob: $(inputs.out_tree_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picrust2:2.6.3--pyhdfd78af_1

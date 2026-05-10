@@ -116,12 +116,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -b
+  - id: output_path_path
+    type: string
+    doc: Output or path parameter `output_path_path`
+    inputBinding:
+      position: 102
+      prefix: --output-path
 outputs:
   - id: output_path
     type: Directory
     doc: output path (Ending with a slash is not allowed.)
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msisensor-pro:1.3.0--hd979922_1

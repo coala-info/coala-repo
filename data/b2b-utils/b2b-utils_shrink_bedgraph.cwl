@@ -33,12 +33,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --operation
+  - id: out_bedgraph_path
+    type: string
+    doc: Output or path parameter `out_bedgraph_path`
+    inputBinding:
+      position: 102
+      prefix: --out-bedgraph
 outputs:
   - id: out_bedgraph
     type: File
     doc: Path to which to write the output bedgraph file
     outputBinding:
-      glob: $(inputs.out_bedgraph)
+      glob: $(inputs.out_bedgraph_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/b2b-utils:0.020--pl5321h9ee0642_0

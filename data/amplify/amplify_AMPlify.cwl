@@ -46,6 +46,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sub_model
+  - id: out_dir_path
+    type: Directory
+    doc: Output or path parameter `out_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --out-dir
 outputs:
   - id: out_dir
     type:
@@ -53,7 +59,9 @@ outputs:
       - Directory
     doc: Output directory (optional)
     outputBinding:
-      glob: $(inputs.out_dir)
+      glob: $(inputs.out_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amplify:2.0.1--py36hdfd78af_0

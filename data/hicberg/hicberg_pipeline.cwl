@@ -159,6 +159,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: --rate
+  - id: output_folder_path
+    type: Directory
+    doc: Output or path parameter `output_folder_path`
+    inputBinding:
+      position: 105
+      prefix: --output-folder
 outputs:
   - id: output_folder
     type:
@@ -166,7 +172,9 @@ outputs:
       - Directory
     doc: Output folder to save results.
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hicberg:1.0.1--py312hcf36b3e_0

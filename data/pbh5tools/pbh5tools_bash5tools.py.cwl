@@ -73,6 +73,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: out_file_prefix_path
+    type: string
+    doc: Output or path parameter `out_file_prefix_path`
+    inputBinding:
+      position: 103
+      prefix: --out-file-prefix
 outputs:
   - id: out_file_prefix
     type:
@@ -80,7 +86,9 @@ outputs:
       - File
     doc: output filename prefix
     outputBinding:
-      glob: $(inputs.out_file_prefix)
+      glob: $(inputs.out_file_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbh5tools:0.8.0--py27h470a237_1

@@ -19,7 +19,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: (multiple) .fasta output of GENOME (if set, start and stop will be ignored)
+    doc: (multiple) .fasta output of GENOME (if set, start and stop will be 
+      ignored)
     inputBinding:
       position: 101
       prefix: --genome
@@ -53,6 +54,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -stop
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -60,7 +67,9 @@ outputs:
       - File
     doc: file to which .fasta output will be written (DEFAULT = STDOUT)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pancake:1.1.2--py35_0

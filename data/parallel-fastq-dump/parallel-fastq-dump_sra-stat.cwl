@@ -29,8 +29,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Logging level as number or enum string. One of (fatal|sys|int|err|warn|info|debug)
-      or (0-6)
+    doc: Logging level as number or enum string. One of 
+      (fatal|sys|int|err|warn|info|debug) or (0-6)
     inputBinding:
       position: 102
       prefix: --log-level
@@ -119,8 +119,8 @@ inputs:
       - 'null'
       - type: array
         items: boolean
-    doc: Increase the verbosity of the program status messages. Use multiple times
-      for more verbosity.
+    doc: Increase the verbosity of the program status messages. Use multiple 
+      times for more verbosity.
     inputBinding:
       position: 102
       prefix: --verbose
@@ -132,6 +132,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --xml
+  - id: xml_log_path
+    type: string
+    doc: Output or path parameter `xml_log_path`
+    inputBinding:
+      position: 103
+      prefix: --xml-log
 outputs:
   - id: xml_log
     type:
@@ -139,7 +145,9 @@ outputs:
       - File
     doc: produce XML-formatted log file
     outputBinding:
-      glob: $(inputs.xml_log)
+      glob: $(inputs.xml_log_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parallel-fastq-dump:0.6.7--pyhdfd78af_0

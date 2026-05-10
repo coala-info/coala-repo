@@ -18,6 +18,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --repset_fp
+  - id: repset_out_fp_path
+    type: string
+    doc: Output or path parameter `repset_out_fp_path`
+    inputBinding:
+      position: 102
+      prefix: --repset-out-fp
 outputs:
   - id: repset_out_fp
     type:
@@ -25,7 +31,9 @@ outputs:
       - File
     doc: Path to the new restricted repset file
     outputBinding:
-      glob: $(inputs.repset_out_fp)
+      glob: $(inputs.repset_out_fp_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylotoast:1.4.0rc2--py27_0

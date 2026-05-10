@@ -73,6 +73,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --subset-row
+  - id: output_sce_object_path
+    type: string
+    doc: Output or path parameter `output_sce_object_path`
+    inputBinding:
+      position: 102
+      prefix: --output-sce-object
 outputs:
   - id: output_sce_object
     type:
@@ -81,7 +87,9 @@ outputs:
     doc: Path to the output SCE object containing the vector of size factors in 
       sizeFactors(x).
     outputBinding:
-      glob: $(inputs.output_sce_object)
+      glob: $(inputs.output_sce_object_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scran-cli:v0.0.1--hdfd78af_1

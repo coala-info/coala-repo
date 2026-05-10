@@ -47,12 +47,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threshold
+  - id: output_tree_path
+    type: string
+    doc: Output or path parameter `output_tree_path`
+    inputBinding:
+      position: 102
+      prefix: --output-tree
 outputs:
   - id: output_tree
     type: File
     doc: The output file
     outputBinding:
-      glob: $(inputs.output_tree)
+      glob: $(inputs.output_tree_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/clusterfunk:0.0.2--pyh3252c3a_0

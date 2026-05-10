@@ -10,7 +10,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Sets a VCF index to select to always get selected in the event of conflict
+    doc: Sets a VCF index to select to always get selected in the event of 
+      conflict
     inputBinding:
       position: 101
       prefix: --conflict-select
@@ -50,8 +51,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum branch factor in the query optimizer; limits work on dense variant
-      regions
+    doc: Maximum branch factor in the query optimizer; limits work on dense 
+      variant regions
     inputBinding:
       position: 101
       prefix: --max-branch-factor
@@ -59,8 +60,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Selects pre-set merge strategy for inclusion of a variant (exact, no_conflict,
-      majority, all)
+    doc: Selects pre-set merge strategy for inclusion of a variant (exact, 
+      no_conflict, majority, all)
     inputBinding:
       position: 101
       prefix: --merge-strategy
@@ -68,7 +69,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The minimum gap (bp) between variants to split into separate sub-regions
+    doc: The minimum gap (bp) between variants to split into separate 
+      sub-regions
     inputBinding:
       position: 101
       prefix: --min-variant-gap
@@ -119,26 +121,52 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_debug_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_debug_path`
+    inputBinding:
+      position: 102
+      prefix: --output-debug
+  - id: output_summary_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_summary_path`
+    inputBinding:
+      position: 103
+      prefix: --output-summary
+  - id: output_vcfs_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_vcfs_path`
+    inputBinding:
+      position: 104
+      prefix: --output-vcfs
 outputs:
   - id: output_vcfs
     type: Directory
     doc: Output VCF folder
     outputBinding:
-      glob: $(inputs.output_vcfs)
+      glob: $(inputs.output_vcfs_path)
   - id: output_summary
     type:
       - 'null'
       - File
     doc: Output summary file (CSV/TSV)
     outputBinding:
-      glob: $(inputs.output_summary)
+      glob: $(inputs.output_summary_path)
   - id: output_debug
     type:
       - 'null'
       - Directory
     doc: Optional output debug folder
     outputBinding:
-      glob: $(inputs.output_debug)
+      glob: $(inputs.output_debug_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/aardvark:0.10.4--h4349ce8_0

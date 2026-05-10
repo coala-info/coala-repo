@@ -10,8 +10,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: To summarize results we uses "buckets", such that matches 100 and 103 from
-      the start end up in the same bucket
+    doc: To summarize results we uses "buckets", such that matches 100 and 103 
+      from the start end up in the same bucket
     inputBinding:
       position: 101
       prefix: --bucket-size
@@ -29,6 +29,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --top-n
+  - id: read_pattern_out_path
+    type: string
+    doc: Output or path parameter `read_pattern_out_path`
+    inputBinding:
+      position: 102
+      prefix: --read-pattern-out
 outputs:
   - id: read_pattern_out
     type:
@@ -36,7 +42,9 @@ outputs:
       - File
     doc: Write pattern for each read to this file (optional)
     outputBinding:
-      glob: $(inputs.read_pattern_out)
+      glob: $(inputs.read_pattern_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/barbell:0.3.1--hc1c3326_0

@@ -123,6 +123,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --udqual
+  - id: outputfolder_path
+    type: string
+    doc: Output or path parameter `outputfolder_path`
+    inputBinding:
+      position: 102
+      prefix: --outputfolder
 outputs:
   - id: outputfolder
     type:
@@ -130,7 +136,9 @@ outputs:
       - Directory
     doc: The output folder.
     outputBinding:
-      glob: $(inputs.outputfolder)
+      glob: $(inputs.outputfolder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/longreadsum:1.3.1--py310h16889fc_2

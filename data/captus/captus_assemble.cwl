@@ -245,6 +245,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --tmp_dir
+  - id: out_path
+    type: string
+    doc: 'Output directory name (default: ./01_clean_reads)'
+    inputBinding:
+      position: 103
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -253,7 +259,9 @@ outputs:
     doc: Output directory name. Inside this directory the output for each sample
       will be stored in a subdirectory named as 'Sample_name__captus-asm'
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/captus:1.6.3--pyh05cac1d_0

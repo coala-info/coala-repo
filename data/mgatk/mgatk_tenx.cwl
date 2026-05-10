@@ -245,6 +245,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --umi-barcode
+  - id: output_path
+    type: string
+    doc: Output directory for analysis required for
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -252,7 +258,9 @@ outputs:
       - Directory
     doc: Output directory for analysis required for `call` and `bcall`.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mgatk:0.7.0--pyhdfd78af_2

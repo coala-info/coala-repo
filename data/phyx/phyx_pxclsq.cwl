@@ -18,8 +18,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: examine sequences by codon rather than site (requires all sequences be in
-      frame and of correct length)
+    doc: examine sequences by codon rather than site (requires all sequences be 
+      in frame and of correct length)
     inputBinding:
       position: 101
       prefix: --codon
@@ -63,6 +63,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: outf_path
+    type: string
+    doc: Output or path parameter `outf_path`
+    inputBinding:
+      position: 102
+      prefix: --outf
 outputs:
   - id: outf
     type:
@@ -70,7 +76,9 @@ outputs:
       - File
     doc: output fasta file, STOUT otherwise
     outputBinding:
-      glob: $(inputs.outf)
+      glob: $(inputs.outf_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyx:1.1--hc0837bd_5

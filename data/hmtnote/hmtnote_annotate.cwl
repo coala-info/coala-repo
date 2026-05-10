@@ -54,6 +54,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --variab
+  - id: csv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `csv_path`
+    inputBinding:
+      position: 103
+      prefix: --csv
 outputs:
   - id: output_vcf
     type: File
@@ -66,7 +74,9 @@ outputs:
       - File
     doc: Produce an additional annotated CSV file
     outputBinding:
-      glob: $(inputs.csv)
+      glob: $(inputs.csv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmtnote:0.7.2--pyhdfd78af_1

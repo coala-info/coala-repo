@@ -33,6 +33,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 103
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -40,7 +46,9 @@ outputs:
       - Directory
     doc: path for recovered k-mer files.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kssd:2.21--h577a1d6_3

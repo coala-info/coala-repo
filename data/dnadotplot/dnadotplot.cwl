@@ -66,12 +66,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: Path to the output file (PNG or SVG based on extension)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dnadotplot:0.1.4--hc1c3326_0

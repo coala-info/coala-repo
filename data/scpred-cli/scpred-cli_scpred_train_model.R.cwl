@@ -131,6 +131,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tune-length
+  - id: output_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path_path`
+    inputBinding:
+      position: 102
+      prefix: --output-path
+  - id: train_probs_plot_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `train_probs_plot_path`
+    inputBinding:
+      position: 103
+      prefix: --train-probs-plot
 outputs:
   - id: output_path
     type:
@@ -138,14 +154,16 @@ outputs:
       - File
     doc: Path for the output scPred object in .rds format
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
   - id: train_probs_plot
     type:
       - 'null'
       - File
     doc: Path for training probabilities plot in .png format
     outputBinding:
-      glob: $(inputs.train_probs_plot)
+      glob: $(inputs.train_probs_plot_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scpred-cli:0.1.0--hdfd78af_2

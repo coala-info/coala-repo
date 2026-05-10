@@ -105,6 +105,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --gpu
+  - id: csv_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `csv_output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --csv-output-file
+  - id: output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: A path to output the results as a CSV.
+    inputBinding:
+      position: 103
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -112,7 +128,7 @@ outputs:
       - Directory
     doc: A path to output the results as a CSV.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
   - id: csv_output_file
     type:
       - 'null'
@@ -120,7 +136,9 @@ outputs:
     doc: A path to output the results as a CSV. If not given then a default name
       is chosen inside the output directory.
     outputBinding:
-      glob: $(inputs.csv_output_file)
+      glob: $(inputs.csv_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/corgi:0.4.3--pyhdfd78af_0

@@ -12,7 +12,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: URL to FUNGuild db.
+    doc: URL to FUNGuild db. 
       https://mycoportal.org/fdex/services/api/db_return.php?dbReturn=Yes&pp=1
     inputBinding:
       position: 101
@@ -25,6 +25,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input
+  - id: output_otu_table_path
+    type: string
+    doc: Output or path parameter `output_otu_table_path`
+    inputBinding:
+      position: 102
+      prefix: --output-otu-table
 outputs:
   - id: output_otu_table
     type:
@@ -32,7 +38,9 @@ outputs:
       - File
     doc: Output OTU table with Guild annotations
     outputBinding:
-      glob: $(inputs.output_otu_table)
+      glob: $(inputs.output_otu_table_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amptk:1.6.0--pyhdfd78af_0

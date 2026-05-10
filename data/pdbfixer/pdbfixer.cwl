@@ -51,6 +51,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --replace-nonstandard
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -58,7 +64,9 @@ outputs:
       - File
     doc: The name of the file to write the fixed PDB to.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pdbfixer:1.8.1

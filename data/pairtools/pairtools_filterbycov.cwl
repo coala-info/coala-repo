@@ -169,6 +169,38 @@ inputs:
     inputBinding:
       position: 102
       prefix: --unmapped-chrom
+  - id: output_highcov_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_highcov_path`
+    inputBinding:
+      position: 103
+      prefix: --output-highcov
+  - id: output_lowcov_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_lowcov_path`
+    inputBinding:
+      position: 104
+      prefix: --output-lowcov
+  - id: output_stats_path
+    type:
+      - 'null'
+      - string
+    doc: output file for duplicate statistics. If
+    inputBinding:
+      position: 105
+      prefix: --output-stats
+  - id: output_unmapped_path
+    type:
+      - 'null'
+      - string
+    doc: output file for unmapped pairs. If the path
+    inputBinding:
+      position: 106
+      prefix: --output-unmapped
 outputs:
   - id: output_lowcov
     type:
@@ -178,7 +210,7 @@ outputs:
       .gz or .lz4, the output is bgzip-/lz4c-compressed. By default, the output 
       is printed into stdout.
     outputBinding:
-      glob: $(inputs.output_lowcov)
+      glob: $(inputs.output_lowcov_path)
   - id: output_highcov
     type:
       - 'null'
@@ -188,7 +220,7 @@ outputs:
       as in --output or -, output duplicates together with deduped pairs. By 
       default, duplicates are dropped.
     outputBinding:
-      glob: $(inputs.output_highcov)
+      glob: $(inputs.output_highcov_path)
   - id: output_unmapped
     type:
       - 'null'
@@ -199,7 +231,7 @@ outputs:
       the same as --output-highcov, output unmapped reads together. By default, 
       unmapped pairs are dropped.
     outputBinding:
-      glob: $(inputs.output_unmapped)
+      glob: $(inputs.output_unmapped_path)
   - id: output_stats
     type:
       - 'null'
@@ -208,7 +240,9 @@ outputs:
       will be open in the append mode. If the path ends with .gz or .lz4, the 
       output is bgzip-/lz4c-compressed. By default, statistics are not printed.
     outputBinding:
-      glob: $(inputs.output_stats)
+      glob: $(inputs.output_stats_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pairtools:1.1.3--py310h4e61836_0

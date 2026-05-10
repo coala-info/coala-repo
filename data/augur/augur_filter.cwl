@@ -162,9 +162,7 @@ inputs:
       - type: array
         items: string
     doc: delimiters to accept when reading a metadata file. Only one delimiter 
-      will be inferred.
-      - ','
-      - "\t"
+      will be inferred. - ',' - "\t"
     inputBinding:
       position: 101
       prefix: --metadata-delimiters
@@ -174,9 +172,7 @@ inputs:
       - type: array
         items: string
     doc: names of possible metadata columns containing identifier information, 
-      ordered by priority. Only one ID column will be inferred.
-      - strain
-      - name
+      ordered by priority. Only one ID column will be inferred. - strain - name
     inputBinding:
       position: 101
       prefix: --metadata-id-columns
@@ -329,6 +325,52 @@ inputs:
     inputBinding:
       position: 101
       prefix: --subsample-seed
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: output_group_by_sizes_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_group_by_sizes_path`
+    inputBinding:
+      position: 103
+      prefix: --output-group-by-sizes
+  - id: output_log_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_log_path`
+    inputBinding:
+      position: 104
+      prefix: --output-log
+  - id: output_metadata_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 105
+      prefix: --output-metadata
+  - id: output_sequences_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: --output-sequences
+  - id: output_strains_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_strains_path`
+    inputBinding:
+      position: 107
+      prefix: --output-strains
 outputs:
   - id: output_sequences
     type:
@@ -336,21 +378,21 @@ outputs:
       - File
     doc: filtered sequences in FASTA format
     outputBinding:
-      glob: $(inputs.output_sequences)
+      glob: $(inputs.output_sequences_path)
   - id: output_metadata
     type:
       - 'null'
       - File
     doc: metadata for strains that passed filters
     outputBinding:
-      glob: $(inputs.output_metadata)
+      glob: $(inputs.output_metadata_path)
   - id: output_strains
     type:
       - 'null'
       - File
     doc: list of strains that passed filters (no header)
     outputBinding:
-      glob: $(inputs.output_strains)
+      glob: $(inputs.output_strains_path)
   - id: output_log
     type:
       - 'null'
@@ -359,21 +401,23 @@ outputs:
       it was filtered. Keyword arguments used for a given filter are reported in
       JSON format in a `kwargs` column.
     outputBinding:
-      glob: $(inputs.output_log)
+      glob: $(inputs.output_log_path)
   - id: output_group_by_sizes
     type:
       - 'null'
       - File
     doc: tab-delimited file one row per group with target size.
     outputBinding:
-      glob: $(inputs.output_group_by_sizes)
+      glob: $(inputs.output_group_by_sizes_path)
   - id: output
     type:
       - 'null'
       - File
     doc: alias to --output-sequences
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/augur:33.0.0--pyhdfd78af_0

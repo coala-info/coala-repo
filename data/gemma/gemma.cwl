@@ -102,6 +102,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -p
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -109,7 +115,9 @@ outputs:
       - File
     doc: Specify output file prefix.
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gemma:0.98.5--ha36d3ea_0

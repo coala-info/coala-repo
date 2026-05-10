@@ -209,6 +209,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --umi-barcode
+  - id: output_directory_path
+    type: Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 103
+      prefix: --output-directory
 outputs:
   - id: output_directory
     type:
@@ -216,7 +222,9 @@ outputs:
       - Directory
     doc: Output directory for genotypes.
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/maegatk:0.2.0--pyhdfd78af_2

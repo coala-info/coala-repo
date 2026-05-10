@@ -118,6 +118,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf
+  - id: out_path
+    type: string
+    doc: output file (default = the prefix of the input vcf)
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -125,7 +131,9 @@ outputs:
       - File
     doc: output file (default = the prefix of the input vcf)
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vcf2cytosure:0.9.3--pyh7e72e81_0

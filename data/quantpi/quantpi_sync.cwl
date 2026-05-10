@@ -56,12 +56,20 @@ inputs:
     inputBinding:
       position: 103
       prefix: --workdir
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 104
+      prefix: --outdir
 outputs:
   - id: outdir
     type: Directory
     doc: sync to a directory
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/quantpi:1.0.0--pyh7e72e81_0

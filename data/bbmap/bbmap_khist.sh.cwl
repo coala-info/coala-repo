@@ -93,6 +93,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: prefilter
+  - id: hist_path
+    type: string
+    doc: Output or path parameter `hist_path`
+    inputBinding:
+      position: 102
+      prefix: --hist
 outputs:
   - id: hist
     type:
@@ -100,7 +106,9 @@ outputs:
       - File
     doc: Output kmer histogram file
     outputBinding:
-      glob: $(inputs.hist)
+      glob: $(inputs.hist_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bbmap:39.52--he5f24ec_0

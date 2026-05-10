@@ -62,26 +62,52 @@ inputs:
     inputBinding:
       position: 101
       prefix: --window
+  - id: bedgraph_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `bedgraph_file_path`
+    inputBinding:
+      position: 102
+      prefix: --bedgraph-file
+  - id: consensus_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `consensus_file_path`
+    inputBinding:
+      position: 103
+      prefix: --consensus-file
+  - id: table_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `table_file_path`
+    inputBinding:
+      position: 104
+      prefix: --table-file
 outputs:
   - id: consensus_file
     type: File
     doc: Path to write consensus sequence to (as FASTA)
     outputBinding:
-      glob: $(inputs.consensus_file)
+      glob: $(inputs.consensus_file_path)
   - id: bedgraph_file
     type:
       - 'null'
       - File
     doc: Path to write coverage file to (as bedgraph)
     outputBinding:
-      glob: $(inputs.bedgraph_file)
+      glob: $(inputs.bedgraph_file_path)
   - id: table_file
     type:
       - 'null'
       - File
     doc: Path to write coverage file to (as tab-separated table)
     outputBinding:
-      glob: $(inputs.table_file)
+      glob: $(inputs.table_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/b2b-utils:0.020--pl5321h9ee0642_0

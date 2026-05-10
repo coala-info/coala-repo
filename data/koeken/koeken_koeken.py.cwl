@@ -130,13 +130,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --subject
+  - id: outputdir_path
+    type: string
+    doc: Output or path parameter `outputdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outputdir
 outputs:
   - id: outputdir
     type: Directory
     doc: Location of the folder to place all resulting files. If folder does not
       exist, the program will create it.
     outputBinding:
-      glob: $(inputs.outputdir)
+      glob: $(inputs.outputdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/koeken:0.2.6--py27h24bf2e0_1

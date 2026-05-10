@@ -181,6 +181,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tip_clip
+  - id: dump_binary_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `dump_binary_path`
+    inputBinding:
+      position: 102
+      prefix: --dump-binary
+  - id: ouput_contigs_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `ouput_contigs_path`
+    inputBinding:
+      position: 103
+      prefix: --ouput-contigs
+  - id: ouput_supernodes_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `ouput_supernodes_path`
+    inputBinding:
+      position: 104
+      prefix: --ouput-supernodes
+  - id: output_contigs_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_contigs_path`
+    inputBinding:
+      position: 105
+      prefix: --output-contigs
 outputs:
   - id: dump_binary
     type:
@@ -189,7 +221,7 @@ outputs:
     doc: Dump binary for graph in file (after applying all specified actions on 
       graph)
     outputBinding:
-      glob: $(inputs.dump_binary)
+      glob: $(inputs.dump_binary_path)
   - id: output_contigs
     type:
       - 'null'
@@ -197,7 +229,7 @@ outputs:
     doc: Fasta file with all the contigs (after applying all specified actions 
       on graph)
     outputBinding:
-      glob: $(inputs.output_contigs)
+      glob: $(inputs.output_contigs_path)
   - id: ouput_contigs
     type:
       - 'null'
@@ -205,7 +237,7 @@ outputs:
     doc: Fasta file with all the contigs (after applying all specified actions 
       on graph)
     outputBinding:
-      glob: $(inputs.ouput_contigs)
+      glob: $(inputs.ouput_contigs_path)
   - id: ouput_supernodes
     type:
       - 'null'
@@ -213,7 +245,9 @@ outputs:
     doc: Fasta file with all the supernodes (after applying all specified 
       actions on graph)
     outputBinding:
-      glob: $(inputs.ouput_supernodes)
+      glob: $(inputs.ouput_supernodes_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metacortex:0.5.1--h7b50bb2_3

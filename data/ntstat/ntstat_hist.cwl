@@ -83,6 +83,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --y-log
+  - id: fit_gif_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `fit_gif_path`
+    inputBinding:
+      position: 103
+      prefix: --fit-gif
+  - id: plot_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `plot_path`
+    inputBinding:
+      position: 104
+      prefix: --plot
+  - id: probs_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `probs_path`
+    inputBinding:
+      position: 105
+      prefix: --probs
 outputs:
   - id: plot
     type:
@@ -90,21 +114,23 @@ outputs:
       - File
     doc: path to output plot
     outputBinding:
-      glob: $(inputs.plot)
+      glob: $(inputs.plot_path)
   - id: probs
     type:
       - 'null'
       - File
     doc: path to output probabilities in csv format
     outputBinding:
-      glob: $(inputs.probs)
+      glob: $(inputs.probs_path)
   - id: fit_gif
     type:
       - 'null'
       - File
     doc: path to output model fit history animation
     outputBinding:
-      glob: $(inputs.fit_gif)
+      glob: $(inputs.fit_gif_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ntstat:1.0.1--py311he264feb_2

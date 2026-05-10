@@ -137,6 +137,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: -s
+  - id: fasta_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `fasta_output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --fasta-output-file
+  - id: otu_map_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `otu_map_output_path`
+    inputBinding:
+      position: 104
+      prefix: --otu-map-output
+  - id: otu_table_biom_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `otu_table_biom_output_path`
+    inputBinding:
+      position: 105
+      prefix: --otu-table-biom-output
 outputs:
   - id: otu_table_biom_output
     type:
@@ -145,7 +169,7 @@ outputs:
     doc: 'Output of the OTU table in BIOM format is activated, and written to file
       ###.'
     outputBinding:
-      glob: $(inputs.otu_table_biom_output)
+      glob: $(inputs.otu_table_biom_output_path)
   - id: otu_map_output
     type:
       - 'null'
@@ -153,14 +177,16 @@ outputs:
     doc: 'Output of the OTU map (observation map) is activated, and written to file
       ###.'
     outputBinding:
-      glob: $(inputs.otu_map_output)
+      glob: $(inputs.otu_map_output_path)
   - id: fasta_output_file
     type:
       - 'null'
       - File
     doc: 'Output in FASTA format is written to file ### instead of standard output.'
     outputBinding:
-      glob: $(inputs.fasta_output_file)
+      glob: $(inputs.fasta_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sumaclust:v1.0.31-2-deb_cv1

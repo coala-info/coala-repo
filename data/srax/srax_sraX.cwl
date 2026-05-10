@@ -102,6 +102,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --user_sq
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -110,7 +116,9 @@ outputs:
     doc: "Directory to store obtained results. While not provided, the following default
       name will be taken: 'input_directory'_'sraX'_'id'_'aln_cov'_'seqal'"
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/srax:1.5--pl5321h05cac1d_4

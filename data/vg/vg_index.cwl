@@ -146,6 +146,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --xg-name
+  - id: gcsa_out_path
+    type: string
+    doc: Output or path parameter `gcsa_out_path`
+    inputBinding:
+      position: 103
+      prefix: --gcsa-out
 outputs:
   - id: gcsa_out
     type:
@@ -153,7 +159,9 @@ outputs:
       - File
     doc: output GCSA2 (FILE) & LCP (FILE.lcp) indexes
     outputBinding:
-      glob: $(inputs.gcsa_out)
+      glob: $(inputs.gcsa_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vg:1.70.0--h9ee0642_0

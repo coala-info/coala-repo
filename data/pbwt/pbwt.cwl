@@ -34,8 +34,8 @@ inputs:
       - 'null'
       - type: array
         items: float
-    doc: make M new samples copied from current haplotypes with mean switch length
-      len (expects <M> <len>)
+    doc: make M new samples copied from current haplotypes with mean switch 
+      length len (expects <M> <len>)
     inputBinding:
       position: 101
       prefix: -copySamples
@@ -44,8 +44,8 @@ inputs:
       - 'null'
       - type: array
         items: float
-    doc: randomise fraction q of positions for fraction p of samples (expects <p>
-      <q>)
+    doc: randomise fraction q of positions for fraction p of samples (expects 
+      <p> <q>)
     inputBinding:
       position: 101
       prefix: -corruptSamples
@@ -54,7 +54,8 @@ inputs:
       - 'null'
       - type: array
         items: float
-    doc: randomise fraction q of positions at fraction p of sites (expects <p> <q>)
+    doc: randomise fraction q of positions at fraction p of sites (expects <p> 
+      <q>)
     inputBinding:
       position: 101
       prefix: -corruptSites
@@ -78,7 +79,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: compare genotypes with those from reference whose root name is the argument
+    doc: compare genotypes with those from reference whose root name is the 
+      argument
     inputBinding:
       position: 101
       prefix: -genotypeCompare
@@ -169,8 +171,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: output painting co-ancestry matrix to fileroot, optionally specififying the
-      number per region (expects <fileNameRoot> [n])
+    doc: output painting co-ancestry matrix to fileroot, optionally specififying
+      the number per region (expects <fileNameRoot> [n])
     inputBinding:
       position: 101
       prefix: -paint
@@ -179,8 +181,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: output sparse painting to fileroot, optionally specififying the number per
-      region (expects <fileNameRoot> [n])
+    doc: output sparse painting to fileroot, optionally specififying the number 
+      per region (expects <fileNameRoot> [n])
     inputBinding:
       position: 101
       prefix: -paintSparse
@@ -213,8 +215,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: read .pbwt and if present .sites, .samples, .missing - note not by default
-      dosage
+    doc: read .pbwt and if present .sites, .samples, .missing - note not by 
+      default dosage
     inputBinding:
       position: 101
       prefix: -readAll
@@ -257,8 +259,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: read impute2 hap and legend file - must set chrom (expects <hap_file> <legend_file>
-      <chrom>)
+    doc: read impute2 hap and legend file - must set chrom (expects <hap_file> 
+      <legend_file> <chrom>)
     inputBinding:
       position: 101
       prefix: -readHapLegend
@@ -314,8 +316,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: read GTs from vcf or bcf file; '-' for stdin vcf only ; biallelic sites only
-      - require diploid!
+    doc: read GTs from vcf or bcf file; '-' for stdin vcf only ; biallelic sites
+      only - require diploid!
     inputBinding:
       position: 101
       prefix: -readVcfGT
@@ -323,8 +325,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: read PLs from vcf or bcf file; '-' for stdin vcf only ; biallelic sites only
-      - require diploid!
+    doc: read PLs from vcf or bcf file; '-' for stdin vcf only ; biallelic sites
+      only - require diploid!
     inputBinding:
       position: 101
       prefix: -readVcfPL
@@ -357,8 +359,9 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: impute current pbwt into reference whose root name is the first argument;
-      optional nSparse > 1 and fSparse (expects <root> [nSparse] [fSparse])
+    doc: impute current pbwt into reference whose root name is the first 
+      argument; optional nSparse > 1 and fSparse (expects <root> [nSparse] 
+      [fSparse])
     inputBinding:
       position: 101
       prefix: -referenceImpute
@@ -407,8 +410,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: export PBWT information at sites with allele count kmin <= k < kmax (expects
-      <file> <kmin> <kmax>)
+    doc: export PBWT information at sites with allele count kmin <= k < kmax 
+      (expects <file> <kmin> <kmax>)
     inputBinding:
       position: 101
       prefix: -siteInfo
@@ -447,6 +450,142 @@ inputs:
     inputBinding:
       position: 101
       prefix: -subsites
+  - id: haps_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `haps_path`
+    inputBinding:
+      position: 102
+      prefix: --haps
+  - id: write_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_path`
+    inputBinding:
+      position: 103
+      prefix: --write
+  - id: write_all_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_all_path`
+    inputBinding:
+      position: 104
+      prefix: --write-all
+  - id: write_bcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_bcf_path`
+    inputBinding:
+      position: 105
+      prefix: --write-bcf
+  - id: write_bcf_gz_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_bcf_gz_path`
+    inputBinding:
+      position: 106
+      prefix: --write-bcf-gz
+  - id: write_dosage_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_dosage_path`
+    inputBinding:
+      position: 107
+      prefix: --write-dosage
+  - id: write_gen_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_gen_path`
+    inputBinding:
+      position: 108
+      prefix: --write-gen
+  - id: write_impute_haps_g_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_impute_haps_g_path`
+    inputBinding:
+      position: 109
+      prefix: --write-impute-haps-g
+  - id: write_impute_ref_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_impute_ref_path`
+    inputBinding:
+      position: 110
+      prefix: --write-impute-ref
+  - id: write_missing_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_missing_path`
+    inputBinding:
+      position: 111
+      prefix: --write-missing
+  - id: write_phase_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_phase_path`
+    inputBinding:
+      position: 112
+      prefix: --write-phase
+  - id: write_reverse_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_reverse_path`
+    inputBinding:
+      position: 113
+      prefix: --write-reverse
+  - id: write_samples_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_samples_path`
+    inputBinding:
+      position: 114
+      prefix: --write-samples
+  - id: write_sites_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_sites_path`
+    inputBinding:
+      position: 115
+      prefix: --write-sites
+  - id: write_transpose_haplotypes_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_transpose_haplotypes_path`
+    inputBinding:
+      position: 116
+      prefix: --write-transpose-haplotypes
+  - id: write_vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_vcf_path`
+    inputBinding:
+      position: 117
+      prefix: --write-vcf
+  - id: write_vcf_gz_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_vcf_gz_path`
+    inputBinding:
+      position: 118
+      prefix: --write-vcf-gz
 outputs:
   - id: write
     type:
@@ -454,120 +593,122 @@ outputs:
       - File
     doc: write pbwt file; '-' for stdout
     outputBinding:
-      glob: $(inputs.write)
+      glob: $(inputs.write_path)
   - id: write_sites
     type:
       - 'null'
       - File
     doc: write sites file; '-' for stdout
     outputBinding:
-      glob: $(inputs.write_sites)
+      glob: $(inputs.write_sites_path)
   - id: write_samples
     type:
       - 'null'
       - File
     doc: write samples file; '-' for stdout
     outputBinding:
-      glob: $(inputs.write_samples)
+      glob: $(inputs.write_samples_path)
   - id: write_missing
     type:
       - 'null'
       - File
     doc: write missing file; '-' for stdout
     outputBinding:
-      glob: $(inputs.write_missing)
+      glob: $(inputs.write_missing_path)
   - id: write_dosage
     type:
       - 'null'
       - File
     doc: write missing file; '-' for stdout
     outputBinding:
-      glob: $(inputs.write_dosage)
+      glob: $(inputs.write_dosage_path)
   - id: write_reverse
     type:
       - 'null'
       - File
     doc: write reverse file; '-' for stdout
     outputBinding:
-      glob: $(inputs.write_reverse)
+      glob: $(inputs.write_reverse_path)
   - id: write_all
     type:
       - 'null'
       - File
     doc: write .pbwt and if present .sites, .samples, .missing, .dosage
     outputBinding:
-      glob: $(inputs.write_all)
+      glob: $(inputs.write_all_path)
   - id: write_impute_ref
     type:
       - 'null'
       - File
     doc: write .imputeHaps and .imputeLegend
     outputBinding:
-      glob: $(inputs.write_impute_ref)
+      glob: $(inputs.write_impute_ref_path)
   - id: write_impute_haps_g
     type:
       - 'null'
       - File
     doc: write haplotype file for IMPUTE -known_haps_g
     outputBinding:
-      glob: $(inputs.write_impute_haps_g)
+      glob: $(inputs.write_impute_haps_g_path)
   - id: write_phase
     type:
       - 'null'
       - File
-    doc: write FineSTRUCTURE/ChromoPainter input format (Impute/ShapeIT output format)
-      phase file
+    doc: write FineSTRUCTURE/ChromoPainter input format (Impute/ShapeIT output 
+      format) phase file
     outputBinding:
-      glob: $(inputs.write_phase)
+      glob: $(inputs.write_phase_path)
   - id: write_transpose_haplotypes
     type:
       - 'null'
       - File
     doc: write transposed haplotype file (one hap per row); '-' for stdout
     outputBinding:
-      glob: $(inputs.write_transpose_haplotypes)
+      glob: $(inputs.write_transpose_haplotypes_path)
   - id: haps
     type:
       - 'null'
       - File
     doc: write haplotype file; '-' for stdout
     outputBinding:
-      glob: $(inputs.haps)
+      glob: $(inputs.haps_path)
   - id: write_gen
     type:
       - 'null'
       - File
     doc: write impute2 gen file; '-' for stdout
     outputBinding:
-      glob: $(inputs.write_gen)
+      glob: $(inputs.write_gen_path)
   - id: write_vcf
     type:
       - 'null'
       - File
     doc: write VCF; uncompressed; '-' for stdout
     outputBinding:
-      glob: $(inputs.write_vcf)
+      glob: $(inputs.write_vcf_path)
   - id: write_vcf_gz
     type:
       - 'null'
       - File
     doc: write VCF; bgzip compressed file
     outputBinding:
-      glob: $(inputs.write_vcf_gz)
+      glob: $(inputs.write_vcf_gz_path)
   - id: write_bcf
     type:
       - 'null'
       - File
     doc: write BCF; uncompressed
     outputBinding:
-      glob: $(inputs.write_bcf)
+      glob: $(inputs.write_bcf_path)
   - id: write_bcf_gz
     type:
       - 'null'
       - File
     doc: write BCF; bgzip compressed file
     outputBinding:
-      glob: $(inputs.write_bcf_gz)
+      glob: $(inputs.write_bcf_gz_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pbwt:3.0--hed50d52_1

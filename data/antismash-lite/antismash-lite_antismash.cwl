@@ -216,6 +216,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --tta-threshold
+  - id: output_basename_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --output-basename
+  - id: output_dir_path
+    type:
+      - 'null'
+      - Directory
+    inputBinding:
+      position: 104
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -223,14 +237,16 @@ outputs:
       - Directory
     doc: Directory to write results to.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
   - id: output_basename
     type:
       - 'null'
       - File
     doc: Base filename to use for output files within the output directory.
     outputBinding:
-      glob: $(inputs.output_basename)
+      glob: $(inputs.output_basename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/antismash-lite:8.0.1--pyhdfd78af_0

@@ -175,6 +175,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_assembled_otu_table_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_assembled_otu_table_path`
+    inputBinding:
+      position: 102
+      prefix: --output-assembled-otu-table
+  - id: output_binned_otu_table_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_binned_otu_table_path`
+    inputBinding:
+      position: 103
+      prefix: --output-binned-otu-table
+  - id: output_unaccounted_for_otu_table_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_unaccounted_for_otu_table_path`
+    inputBinding:
+      position: 104
+      prefix: --output-unaccounted-for-otu-table
+  - id: output_unbinned_otu_table_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_unbinned_otu_table_path`
+    inputBinding:
+      position: 105
+      prefix: --output-unbinned-otu-table
 outputs:
   - id: output_binned_otu_table
     type:
@@ -182,28 +214,30 @@ outputs:
       - File
     doc: output OTU table of binned populations
     outputBinding:
-      glob: $(inputs.output_binned_otu_table)
+      glob: $(inputs.output_binned_otu_table_path)
   - id: output_unbinned_otu_table
     type:
       - 'null'
       - File
     doc: "output OTU table of assembled but not binned\npopulations"
     outputBinding:
-      glob: $(inputs.output_unbinned_otu_table)
+      glob: $(inputs.output_unbinned_otu_table_path)
   - id: output_assembled_otu_table
     type:
       - 'null'
       - File
     doc: output OTU table of all assembled populations
     outputBinding:
-      glob: $(inputs.output_assembled_otu_table)
+      glob: $(inputs.output_assembled_otu_table_path)
   - id: output_unaccounted_for_otu_table
     type:
       - 'null'
       - File
     doc: Output OTU table of populations not accounted for
     outputBinding:
-      glob: $(inputs.output_unaccounted_for_otu_table)
+      glob: $(inputs.output_unaccounted_for_otu_table_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/singlem:0.20.3--pyhdfd78af_2

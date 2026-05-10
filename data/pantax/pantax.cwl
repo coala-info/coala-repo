@@ -326,6 +326,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --zstd
+  - id: abundance_output_prefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `abundance_output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --abundance-output-prefix
+  - id: classified_output_prefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `classified_output_prefix_path`
+    inputBinding:
+      position: 103
+      prefix: --classified-output-prefix
+  - id: report_output_prefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_output_prefix_path`
+    inputBinding:
+      position: 104
+      prefix: --report-output-prefix
 outputs:
   - id: classified_output_prefix
     type:
@@ -333,21 +357,23 @@ outputs:
       - File
     doc: File for alignment output(prefix).
     outputBinding:
-      glob: $(inputs.classified_output_prefix)
+      glob: $(inputs.classified_output_prefix_path)
   - id: report_output_prefix
     type:
       - 'null'
       - File
     doc: File for read classification(binning) output(prefix).
     outputBinding:
-      glob: $(inputs.report_output_prefix)
+      glob: $(inputs.report_output_prefix_path)
   - id: abundance_output_prefix
     type:
       - 'null'
       - File
     doc: File for abundance output(prefix).
     outputBinding:
-      glob: $(inputs.abundance_output_prefix)
+      glob: $(inputs.abundance_output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pantax:2.0.1--py310h3e1df6f_1

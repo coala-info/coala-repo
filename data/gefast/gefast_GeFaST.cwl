@@ -197,6 +197,46 @@ inputs:
     inputBinding:
       position: 104
       prefix: --threshold
+  - id: output_internal_path
+    type:
+      - 'null'
+      - string
+    doc: 'output links underlying the cluster to file (default: not created)'
+    inputBinding:
+      position: 105
+      prefix: --output_internal
+  - id: output_otus_path
+    type:
+      - 'null'
+      - string
+    doc: 'output clusters to file (default: not created)'
+    inputBinding:
+      position: 106
+      prefix: --output_otus
+  - id: output_seeds_path
+    type:
+      - 'null'
+      - string
+    doc: 'output seeds to file (default: not created)'
+    inputBinding:
+      position: 107
+      prefix: --output_seeds
+  - id: output_statistics_path
+    type:
+      - 'null'
+      - string
+    doc: 'output statistics to file (defaut: not created)'
+    inputBinding:
+      position: 108
+      prefix: --output_statistics
+  - id: output_uclust_path
+    type:
+      - 'null'
+      - string
+    doc: 'create UCLUST-like output file (default: not created)'
+    inputBinding:
+      position: 109
+      prefix: --output_uclust
 outputs:
   - id: output_internal
     type:
@@ -204,35 +244,37 @@ outputs:
       - File
     doc: output links underlying the cluster to file
     outputBinding:
-      glob: $(inputs.output_internal)
+      glob: $(inputs.output_internal_path)
   - id: output_otus
     type:
       - 'null'
       - File
     doc: output clusters to file
     outputBinding:
-      glob: $(inputs.output_otus)
+      glob: $(inputs.output_otus_path)
   - id: output_statistics
     type:
       - 'null'
       - File
     doc: output statistics to file
     outputBinding:
-      glob: $(inputs.output_statistics)
+      glob: $(inputs.output_statistics_path)
   - id: output_seeds
     type:
       - 'null'
       - File
     doc: output seeds to file
     outputBinding:
-      glob: $(inputs.output_seeds)
+      glob: $(inputs.output_seeds_path)
   - id: output_uclust
     type:
       - 'null'
       - File
     doc: create UCLUST-like output file
     outputBinding:
-      glob: $(inputs.output_uclust)
+      glob: $(inputs.output_uclust_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gefast:2.0.1--h4ac6f70_3

@@ -150,8 +150,7 @@ inputs:
       - type: array
         items: string
     doc: list of library IDs (in the same order as the files list) indiciating 
-      which libraries each set of fastq files belong to.
-      - libA
+      which libraries each set of fastq files belong to. - libA
     inputBinding:
       position: 101
       prefix: --libraries
@@ -402,6 +401,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --zero-cap
+  - id: path_to_output_path
+    type: string
+    doc: Output or path parameter `path_to_output_path`
+    inputBinding:
+      position: 102
+      prefix: --path-to-output
 outputs:
   - id: path_to_output
     type:
@@ -409,7 +414,9 @@ outputs:
       - Directory
     doc: Path to a directory where you would like the output to be stored.
     outputBinding:
-      glob: $(inputs.path_to_output)
+      glob: $(inputs.path_to_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methylpy:1.4.7--py39h0ae133c_0

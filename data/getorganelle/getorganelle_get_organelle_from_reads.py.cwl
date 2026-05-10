@@ -618,12 +618,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --zip-files
+  - id: output_base_path
+    type: string
+    doc: Output or path parameter `output_base_path`
+    inputBinding:
+      position: 102
+      prefix: --output-base
 outputs:
   - id: output_base
     type: Directory
     doc: Output directory. Overwriting files if directory exists.
     outputBinding:
-      glob: $(inputs.output_base)
+      glob: $(inputs.output_base_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/getorganelle:1.7.7.1--pyhdfd78af_0

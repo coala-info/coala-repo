@@ -6,8 +6,8 @@ doc: "MI-ARACNE genome-wide co-evolution analysis.\n\nTool homepage: https://git
 inputs:
   - id: alignment_file_positional
     type: File
-    doc: The input alignment filename(s). When two filenames are specified, only inter-alignment
-      links will be probed for.
+    doc: The input alignment filename(s). When two filenames are specified, only
+      inter-alignment links will be probed for.
     inputBinding:
       position: 1
   - id: alignment_file
@@ -15,8 +15,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: The input alignment filename(s). When two filenames are specified, only inter-alignment
-      links will be probed for.
+    doc: The input alignment filename(s). When two filenames are specified, only
+      inter-alignment links will be probed for.
     inputBinding:
       position: 102
       prefix: --alignmentfile
@@ -32,8 +32,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Equality tolerance threshold. Edges differing by less than this value are
-      considered equal in strength.
+    doc: Equality tolerance threshold. Edges differing by less than this value 
+      are considered equal in strength.
     inputBinding:
       position: 102
       prefix: --aracne-edge-threshold
@@ -57,7 +57,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The last locus index to work on (-1=end of input). Used to define a range.
+    doc: The last locus index to work on (-1=end of input). Used to define a 
+      range.
     inputBinding:
       position: 102
       prefix: --end
@@ -73,8 +74,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Gap frequency threshold. Positions with a gap frequency above the threshold
-      are excluded from the pair-analysis.
+    doc: Gap frequency threshold. Positions with a gap frequency above the 
+      threshold are excluded from the pair-analysis.
     inputBinding:
       position: 102
       prefix: --gap-threshold
@@ -122,8 +123,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minor state frequency threshold. Loci with less than 2 states above threshold
-      are removed from alignment.
+    doc: Minor state frequency threshold. Loci with less than 2 states above 
+      threshold are removed from alignment.
     inputBinding:
       position: 102
       prefix: --maf-threshold
@@ -147,9 +148,9 @@ inputs:
     type:
       - 'null'
       - float
-    doc: The MI threshold value. Experience suggests that a value of 0.11 is often
-      reasonable. Zero indicates no threshold and negative values will trigger auto-define
-      heuristics.
+    doc: The MI threshold value. Experience suggests that a value of 0.11 is 
+      often reasonable. Zero indicates no threshold and negative values will 
+      trigger auto-define heuristics.
     inputBinding:
       position: 102
       prefix: --mi-threshold
@@ -165,7 +166,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of sampled pairs for estimating saving threshold (0=determine automatically).
+    doc: Number of sampled pairs for estimating saving threshold (0=determine 
+      automatically).
     inputBinding:
       position: 102
       prefix: --mi-threshold-pairs
@@ -173,7 +175,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Approximate number of MI values to calculate from data (default=#samples*100).
+    doc: Approximate number of MI values to calculate from data 
+      (default=#samples*100).
     inputBinding:
       position: 102
       prefix: --mi-values
@@ -197,7 +200,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Turn sample reweighting off, i.e. do not try to correct for population structure.
+    doc: Turn sample reweighting off, i.e. do not try to correct for population 
+      structure.
     inputBinding:
       position: 102
       prefix: --no-sample-reweighting
@@ -229,8 +233,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Fraction of identical positions required for two samples to be considered
-      identical.
+    doc: Fraction of identical positions required for two samples to be 
+      considered identical.
     inputBinding:
       position: 102
       prefix: --sample-reweighting-threshold
@@ -246,8 +250,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of threads per MPI/shared memory node (-1=use all hardware threads
-      that the OS/environment exposes).
+    doc: Number of threads per MPI/shared memory node (-1=use all hardware 
+      threads that the OS/environment exposes).
     inputBinding:
       position: 102
       prefix: --threads
@@ -259,6 +263,54 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: aracne_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `aracne_output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --aracne-output-file
+  - id: output_alignment_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_alignment_path`
+    inputBinding:
+      position: 104
+      prefix: --output-alignment
+  - id: output_filtered_alignment_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_filtered_alignment_path`
+    inputBinding:
+      position: 105
+      prefix: --output-filtered-alignment
+  - id: output_sample_distance_matrix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_sample_distance_matrix_path`
+    inputBinding:
+      position: 106
+      prefix: --output-sample-distance-matrix
+  - id: output_sample_weights_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_sample_weights_path`
+    inputBinding:
+      position: 107
+      prefix: --output-sample-weights
+  - id: output_state_frequencies_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_state_frequencies_path`
+    inputBinding:
+      position: 108
+      prefix: --output-state-frequencies
 outputs:
   - id: output_state_frequencies
     type:
@@ -266,42 +318,44 @@ outputs:
       - File
     doc: Write column-wise state frequencies to file.
     outputBinding:
-      glob: $(inputs.output_state_frequencies)
+      glob: $(inputs.output_state_frequencies_path)
   - id: output_sample_weights
     type:
       - 'null'
       - File
     doc: Output sample weights.
     outputBinding:
-      glob: $(inputs.output_sample_weights)
+      glob: $(inputs.output_sample_weights_path)
   - id: output_sample_distance_matrix
     type:
       - 'null'
       - File
     doc: Output triangular sample-sample Hamming distance matrix.
     outputBinding:
-      glob: $(inputs.output_sample_distance_matrix)
+      glob: $(inputs.output_sample_distance_matrix_path)
   - id: output_alignment
     type:
       - 'null'
       - File
     doc: Write alignment to file.
     outputBinding:
-      glob: $(inputs.output_alignment)
+      glob: $(inputs.output_alignment_path)
   - id: output_filtered_alignment
     type:
       - 'null'
       - File
     doc: Write filtered alignment to file.
     outputBinding:
-      glob: $(inputs.output_filtered_alignment)
+      glob: $(inputs.output_filtered_alignment_path)
   - id: aracne_output_file
     type:
       - 'null'
       - File
     doc: The ARACNE output filename. This is a binary file for "plot.r".
     outputBinding:
-      glob: $(inputs.aracne_output_file)
+      glob: $(inputs.aracne_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pangwes:0.3.0_alpha--h9948957_1

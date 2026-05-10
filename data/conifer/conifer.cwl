@@ -49,6 +49,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --rtl
+  - id: summary_path
+    type: string
+    doc: Output or path parameter `summary_path`
+    inputBinding:
+      position: 102
+      prefix: --summary
 outputs:
   - id: summary
     type:
@@ -56,7 +62,9 @@ outputs:
       - File
     doc: output summary statistics for each taxonomy
     outputBinding:
-      glob: $(inputs.summary)
+      glob: $(inputs.summary_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/conifer:1.0.3--h577a1d6_0

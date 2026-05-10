@@ -55,6 +55,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_sam_bam_path
+    type: string
+    doc: Output or path parameter `output_sam_bam_path`
+    inputBinding:
+      position: 102
+      prefix: --output-sam-bam
 outputs:
   - id: output_sam_bam
     type:
@@ -62,7 +68,9 @@ outputs:
       - File
     doc: Output SAM/BAM file
     outputBinding:
-      glob: $(inputs.output_sam_bam)
+      glob: $(inputs.output_sam_bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smallgenomeutilities:0.5.2--pyhdfd78af_0

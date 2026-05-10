@@ -18,12 +18,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input_tree
+  - id: output_tree_path
+    type: string
+    doc: Output or path parameter `output_tree_path`
+    inputBinding:
+      position: 102
+      prefix: --output-tree
 outputs:
   - id: output_tree
     type: File
     doc: path to output the tree
     outputBinding:
-      glob: $(inputs.output_tree)
+      glob: $(inputs.output_tree_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gtdbtk:2.6.1--pyh1f0d9b5_2

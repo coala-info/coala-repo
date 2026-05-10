@@ -77,6 +77,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: cds_output_obj_path
+    type: string
+    doc: Output or path parameter `cds_output_obj_path`
+    inputBinding:
+      position: 102
+      prefix: --cds-output-obj
 outputs:
   - id: cds_output_obj
     type:
@@ -84,7 +90,9 @@ outputs:
       - File
     doc: Output path for cds object holding predicted labels on query data
     outputBinding:
-      glob: $(inputs.cds_output_obj)
+      glob: $(inputs.cds_output_obj_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/garnett-cli:0.0.5--hdfd78af_1

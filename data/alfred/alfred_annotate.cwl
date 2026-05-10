@@ -91,6 +91,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --reference
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 103
+      prefix: --outfile
+  - id: outgene_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outgene_path`
+    inputBinding:
+      position: 104
+      prefix: --outgene
+  - id: position_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `position_output_path`
+    inputBinding:
+      position: 105
+      prefix: --position-output
 outputs:
   - id: outgene
     type:
@@ -98,21 +122,23 @@ outputs:
       - File
     doc: gene/motif-level output
     outputBinding:
-      glob: $(inputs.outgene)
+      glob: $(inputs.outgene_path)
   - id: outfile
     type:
       - 'null'
       - File
     doc: annotated peaks output
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
   - id: position_output
     type:
       - 'null'
       - File
     doc: gzipped output file of motif hits
     outputBinding:
-      glob: $(inputs.position_output)
+      glob: $(inputs.position_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/alfred:0.5.1--h4d20210_0

@@ -117,6 +117,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --view_url
+  - id: file_path
+    type: string
+    doc: Output or path parameter `file_path`
+    inputBinding:
+      position: 102
+      prefix: --file
 outputs:
   - id: file
     type:
@@ -124,7 +130,9 @@ outputs:
       - File
     doc: (Optional) File to export the entry content
     outputBinding:
-      glob: $(inputs.file)
+      glob: $(inputs.file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ebisearch:0.0.3--py27_1

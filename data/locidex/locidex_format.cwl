@@ -68,12 +68,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --translation_table
+  - id: outdir_path
+    type: string
+    doc: Output directory to put results
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type: Directory
     doc: Output directory to put results
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/locidex:0.4.0--pyhdfd78af_0

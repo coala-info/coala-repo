@@ -293,6 +293,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -s
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type: File
@@ -300,7 +306,9 @@ outputs:
       file will be named 'Sample_A.summary.txt.' The file containing gene counts
       will be named 'Sample_A.exon.txt', 'Sample_A.intron.txt', etc.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/verse:0.1.5--h577a1d6_9

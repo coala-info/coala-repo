@@ -19,12 +19,28 @@ inputs:
     inputBinding:
       position: 101
       prefix: --top-trees
+  - id: out_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 102
+      prefix: --out-file
+  - id: topologies_archive_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `topologies_archive_path`
+    inputBinding:
+      position: 103
+      prefix: --topologies-archive
 outputs:
   - id: out_file
     type: File
     doc: Path/filename to where topology report will be written in .tsv format
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
   - id: topologies_archive
     type:
       - 'null'
@@ -33,7 +49,9 @@ outputs:
       sampled topology in the report, provide a path to where the archive file 
       will be written in tar.gz compressed format.
     outputBinding:
-      glob: $(inputs.topologies_archive)
+      glob: $(inputs.topologies_archive_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyclone:0.8.0--pyhdfd78af_0

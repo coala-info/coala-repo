@@ -191,6 +191,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --save-sbml
+  - id: output_dir_path
+    type: Directory
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -199,7 +204,9 @@ outputs:
     doc: the output directory to store results (default is the current working 
       directory)
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pycomo:0.2.9--pyhdfd78af_0

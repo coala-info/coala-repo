@@ -144,6 +144,22 @@ inputs:
     inputBinding:
       position: 104
       prefix: -v
+  - id: output_r1_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_r1_path`
+    inputBinding:
+      position: 105
+      prefix: --output-r1
+  - id: output_r2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_r2_path`
+    inputBinding:
+      position: 106
+      prefix: --output-r2
 outputs:
   - id: output_r1
     type:
@@ -151,14 +167,16 @@ outputs:
       - File
     doc: Output file for read 1 (must contain '%')
     outputBinding:
-      glob: $(inputs.output_r1)
+      glob: $(inputs.output_r1_path)
   - id: output_r2
     type:
       - 'null'
       - File
     doc: Output file for read 2 (must contain '%')
     outputBinding:
-      glob: $(inputs.output_r2)
+      glob: $(inputs.output_r2_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ea-utils:1.1.2.779--h9dd4a16_0

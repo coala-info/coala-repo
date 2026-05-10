@@ -34,8 +34,7 @@ inputs:
       - type: array
         items: int
     doc: Expected genome size range. Defaults 11.4-14.6 Mb are based on 150 NCBI
-      genomes and take mash genome size overestimation into account.
-      - 11400000
+      genomes and take mash genome size overestimation into account. - 11400000 
       - 14900000
     inputBinding:
       position: 102
@@ -138,6 +137,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_report_path_path
+    type: string
+    doc: Output or path parameter `output_report_path_path`
+    inputBinding:
+      position: 103
+      prefix: --output-report-path
 outputs:
   - id: output_report_path
     type:
@@ -145,7 +150,9 @@ outputs:
       - File
     doc: Path to output report
     outputBinding:
-      glob: $(inputs.output_report_path)
+      glob: $(inputs.output_report_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/auriclass:0.5.4--pyhdfd78af_0

@@ -159,6 +159,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --xlsx
+  - id: outdir_path
+    type: string
+    doc: Directory to store the output files and (if
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -167,7 +173,9 @@ outputs:
     doc: Directory to store the output files and (if `--plot-results` is set) 
       figures. Default to the current working directory.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/celltypist:1.7.1--pyhdfd78af_0

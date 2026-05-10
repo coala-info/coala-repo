@@ -32,8 +32,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: How many alignments before writing output (0 to calculate based on memory
-      budget)
+    doc: How many alignments before writing output (0 to calculate based on 
+      memory budget)
     inputBinding:
       position: 101
       prefix: -b
@@ -187,6 +187,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -V
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -194,7 +200,9 @@ outputs:
       - File
     doc: Output file name
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parasail:2.6.2--h5ca1c30_1

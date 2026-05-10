@@ -18,12 +18,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sample
+  - id: output_file_prefix_path
+    type: string
+    doc: Output or path parameter `output_file_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file-prefix
 outputs:
   - id: output_file_prefix
     type: File
     doc: Output file name Prefix
     outputBinding:
-      glob: $(inputs.output_file_prefix)
+      glob: $(inputs.output_file_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kcftools:0.4.0--hdfd78af_0

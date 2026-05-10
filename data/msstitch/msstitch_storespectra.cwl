@@ -42,6 +42,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --spectra
+  - id: outfile_path
+    type: string
+    doc: Output file
+    inputBinding:
+      position: 102
+      prefix: -o
 outputs:
   - id: outfile
     type:
@@ -49,7 +55,9 @@ outputs:
       - File
     doc: Output file
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msstitch:3.19--pyhdfd78af_0

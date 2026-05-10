@@ -93,13 +93,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --type_loss
+  - id: output_path
+    type: string
+    doc: Path to the directory to store all the output files.
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: Path to the output file where the predictions will be saved. Output is 
       a tab-separated file with the sequence, header, and the predicted score.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/parm:0.1.44--pyh7e72e81_0

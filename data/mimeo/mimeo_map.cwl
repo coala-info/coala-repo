@@ -214,6 +214,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --writeTRF
+  - id: gffout_path
+    type: string
+    doc: Name of GFF3 annotation file.
+    inputBinding:
+      position: 102
+      prefix: --gffout
 outputs:
   - id: gffout
     type:
@@ -221,7 +227,9 @@ outputs:
       - File
     doc: Name of GFF3 annotation file. If not set, suppress output.
     outputBinding:
-      glob: $(inputs.gffout)
+      glob: $(inputs.gffout_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mimeo:1.2.1--pyhdfd78af_0

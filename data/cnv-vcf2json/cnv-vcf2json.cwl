@@ -59,12 +59,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --sequence
+  - id: output_path
+    type: string
+    doc: Output JSON file name
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: Output JSON file name
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cnv-vcf2json:2.0.0

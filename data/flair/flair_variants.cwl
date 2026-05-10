@@ -35,11 +35,17 @@ inputs:
       prefix: --isoforms
   - id: manifest
     type: File
-    doc: path to manifest files that points to sample names + bam files aligned to
-      transcriptome. Each line of file should be tab separated.
+    doc: path to manifest files that points to sample names + bam files aligned 
+      to transcriptome. Each line of file should be tab separated.
     inputBinding:
       position: 101
       prefix: --manifest
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -47,7 +53,9 @@ outputs:
       - File
     doc: "path to collapsed_output.bed file. default: 'flair'"
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flair:3.0.0--pyhdfd78af_0

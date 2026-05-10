@@ -103,6 +103,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --use-tf-idf
+  - id: marker_output_path_path
+    type: string
+    doc: Output or path parameter `marker_output_path_path`
+    inputBinding:
+      position: 102
+      prefix: --marker-output-path
 outputs:
   - id: marker_output_path
     type:
@@ -110,7 +116,9 @@ outputs:
       - File
     doc: Path to the output file with marker scores
     outputBinding:
-      glob: $(inputs.marker_output_path)
+      glob: $(inputs.marker_output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/garnett-cli:0.0.5--hdfd78af_1

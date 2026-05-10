@@ -106,6 +106,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --undercluster-boundary
+  - id: optimisation_plots_output_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --optimisation-plots-output
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -113,14 +128,16 @@ outputs:
       - File
     doc: Path for output file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: optimisation_plots_output
     type:
       - 'null'
       - File
     doc: PDF file output path for all optimisation plots.
     outputBinding:
-      glob: $(inputs.optimisation_plots_output)
+      glob: $(inputs.optimisation_plots_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sccaf:0.0.10--py_0

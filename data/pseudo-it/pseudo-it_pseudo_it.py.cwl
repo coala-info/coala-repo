@@ -307,6 +307,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -vcf
+  - id: out_dest_path
+    type: string
+    doc: Desired output directory. This will be created for you
+    inputBinding:
+      position: 102
+      prefix: -o
 outputs:
   - id: out_dest
     type:
@@ -315,7 +321,9 @@ outputs:
     doc: "Desired output directory. This will be created for you if it doesn't exist.
       Default: pseudoit-[date]-[time]"
     outputBinding:
-      glob: $(inputs.out_dest)
+      glob: $(inputs.out_dest_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pseudo-it:3.1.1--pyhdfd78af_0

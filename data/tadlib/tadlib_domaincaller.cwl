@@ -17,9 +17,7 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: List of chromosomes to exclude.
-      - chrY
-      - chrM
+    doc: List of chromosomes to exclude. - chrY - chrM
     inputBinding:
       position: 101
       prefix: --exclude
@@ -54,19 +52,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --weight-col
+  - id: di_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `di_output_path`
+    inputBinding:
+      position: 102
+      prefix: --di-output
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type: File
     doc: Output file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: di_output
     type:
       - 'null'
       - File
     doc: DI output file
     outputBinding:
-      glob: $(inputs.di_output)
+      glob: $(inputs.di_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tadlib:0.4.5.post1--pyhdfd78af_1

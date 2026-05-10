@@ -47,6 +47,12 @@ inputs:
     inputBinding:
       position: 105
       prefix: -v
+  - id: log_file_path
+    type: string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 106
+      prefix: --log-file
 outputs:
   - id: log_file
     type:
@@ -54,7 +60,9 @@ outputs:
       - File
     doc: Output log to specified file.
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastga:1.3.1--h577a1d6_0

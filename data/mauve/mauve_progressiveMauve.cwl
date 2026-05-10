@@ -320,6 +320,30 @@ inputs:
     inputBinding:
       position: 103
       prefix: --weight
+  - id: backbone_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `backbone_output_path`
+    inputBinding:
+      position: 104
+      prefix: --backbone-output
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 105
+      prefix: --output
+  - id: output_guide_tree_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_guide_tree_path`
+    inputBinding:
+      position: 106
+      prefix: --output-guide-tree
 outputs:
   - id: output
     type:
@@ -327,21 +351,23 @@ outputs:
       - File
     doc: Output file name. Prints to screen by default
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: backbone_output
     type:
       - 'null'
       - File
     doc: Backbone output file name (optional)
     outputBinding:
-      glob: $(inputs.backbone_output)
+      glob: $(inputs.backbone_output_path)
   - id: output_guide_tree
     type:
       - 'null'
       - File
     doc: Write out the guide tree used for alignment to a file
     outputBinding:
-      glob: $(inputs.output_guide_tree)
+      glob: $(inputs.output_guide_tree_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 

@@ -37,12 +37,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --exclude
+  - id: new_metadata_csv_path
+    type: string
+    doc: Output or path parameter `new_metadata_csv_path`
+    inputBinding:
+      position: 102
+      prefix: --new-metadata-csv
 outputs:
   - id: new_metadata_csv
     type: File
     doc: New csv file to write
     outputBinding:
-      glob: $(inputs.new_metadata_csv)
+      glob: $(inputs.new_metadata_csv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/datafunk:0.1.0--pyh5e36f6f_0

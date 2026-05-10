@@ -382,6 +382,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --VERBOSITY
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type: File
@@ -389,7 +395,9 @@ outputs:
       first column contains the gene name. This supports zipped formats like gz 
       and bz2.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dropseq_tools:3.0.2--hdfd78af_0

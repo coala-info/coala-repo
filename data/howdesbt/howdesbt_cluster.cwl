@@ -108,6 +108,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --bits
+  - id: output_tree_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_tree_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-tree-file
+  - id: tree_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `tree_file_path`
+    inputBinding:
+      position: 105
+      prefix: --tree-file
 outputs:
   - id: output_tree_file
     type:
@@ -116,14 +132,16 @@ outputs:
     doc: "name for tree toplogy file\n                    (by default this is derived
       from the list filename)"
     outputBinding:
-      glob: $(inputs.output_tree_file)
+      glob: $(inputs.output_tree_file_path)
   - id: tree_file
     type:
       - 'null'
       - File
     doc: same as --out=<filename>
     outputBinding:
-      glob: $(inputs.tree_file)
+      glob: $(inputs.tree_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/howdesbt:2.00.15--h9948957_2

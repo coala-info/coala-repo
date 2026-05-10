@@ -88,19 +88,37 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sample_descriptions
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
+  - id: target_reads_bams_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `target_reads_bams_path`
+    inputBinding:
+      position: 103
+      prefix: --target-reads-bams
 outputs:
   - id: output_file
     type: File
     doc: File to store classification results
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: target_reads_bams
     type:
       - 'null'
       - Directory
     doc: Directory to which to write reads classified as target organism
     outputBinding:
-      glob: $(inputs.target_reads_bams)
+      glob: $(inputs.target_reads_bams_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/handyreadgenotyper:0.1.24--pyhdfd78af_0

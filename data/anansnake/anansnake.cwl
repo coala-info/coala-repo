@@ -240,6 +240,38 @@ inputs:
     inputBinding:
       position: 102
       prefix: --use-singularity
+  - id: archive_path
+    type:
+      - 'null'
+      - string
+    doc: Archive the workflow into the given tar archive FILE.
+    inputBinding:
+      position: 103
+      prefix: --archive
+  - id: export_cwl_path
+    type:
+      - 'null'
+      - string
+    doc: Compile workflow to CWL and store it in given FILE.
+    inputBinding:
+      position: 104
+      prefix: --export-cwl
+  - id: report_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `report_path`
+    inputBinding:
+      position: 105
+      prefix: --report
+  - id: stats_path
+    type:
+      - 'null'
+      - string
+    doc: Write stats about Snakefile execution in JSON format
+    inputBinding:
+      position: 106
+      prefix: --stats
 outputs:
   - id: report
     type:
@@ -247,28 +279,30 @@ outputs:
       - File
     doc: Create an HTML report with results and statistics.
     outputBinding:
-      glob: $(inputs.report)
+      glob: $(inputs.report_path)
   - id: export_cwl
     type:
       - 'null'
       - File
     doc: Compile workflow to CWL and store it in given FILE.
     outputBinding:
-      glob: $(inputs.export_cwl)
+      glob: $(inputs.export_cwl_path)
   - id: archive
     type:
       - 'null'
       - File
     doc: Archive the workflow into the given tar archive FILE.
     outputBinding:
-      glob: $(inputs.archive)
+      glob: $(inputs.archive_path)
   - id: stats
     type:
       - 'null'
       - File
     doc: Write stats about Snakefile execution in JSON format to the given file.
     outputBinding:
-      glob: $(inputs.stats)
+      glob: $(inputs.stats_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/anansnake:0.1.0--pyh7cba7a3_0

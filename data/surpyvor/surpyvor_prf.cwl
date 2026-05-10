@@ -82,6 +82,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: keepmerged_path
+    type: string
+    doc: Output or path parameter `keepmerged_path`
+    inputBinding:
+      position: 102
+      prefix: --keepmerged
 outputs:
   - id: keepmerged
     type:
@@ -89,7 +95,9 @@ outputs:
       - File
     doc: Save merged vcf file.
     outputBinding:
-      glob: $(inputs.keepmerged)
+      glob: $(inputs.keepmerged_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/surpyvor:0.15.0--pyhdfd78af_0

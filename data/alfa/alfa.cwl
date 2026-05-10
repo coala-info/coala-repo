@@ -120,6 +120,39 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threshold
+  - id: output_dir_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory for all files created by ALFA (current dir by 
+      default).
+    inputBinding:
+      position: 102
+      prefix: -o
+  - id: pdf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pdf_path`
+    inputBinding:
+      position: 103
+      prefix: --pdf
+  - id: png_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `png_path`
+    inputBinding:
+      position: 104
+      prefix: --png
+  - id: svg_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `svg_path`
+    inputBinding:
+      position: 105
+      prefix: --svg
 outputs:
   - id: pdf
     type:
@@ -128,7 +161,7 @@ outputs:
     doc: Save produced plots in PDF format at the specified path 
       ('categories_plots.pdf' if no argument provided).
     outputBinding:
-      glob: $(inputs.pdf)
+      glob: $(inputs.pdf_path)
   - id: png
     type:
       - 'null'
@@ -136,7 +169,7 @@ outputs:
     doc: Save produced plots in PNG format with the provided argument as 
       basename ('categories.png' and 'biotypes.png' if no argument provided).
     outputBinding:
-      glob: $(inputs.png)
+      glob: $(inputs.png_path)
   - id: svg
     type:
       - 'null'
@@ -144,7 +177,7 @@ outputs:
     doc: Save produced plots in SVG format with the provided argument as 
       basename or 'categories.svg' and 'biotypes.svg' if no argument provided.
     outputBinding:
-      glob: $(inputs.svg)
+      glob: $(inputs.svg_path)
   - id: output_dir
     type:
       - 'null'
@@ -152,7 +185,9 @@ outputs:
     doc: Output directory for all files created by ALFA (current dir by 
       default).
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/alfa:1.1.1--pyh5e36f6f_0

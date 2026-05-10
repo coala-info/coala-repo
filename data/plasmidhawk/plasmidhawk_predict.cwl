@@ -70,6 +70,12 @@ inputs:
     inputBinding:
       position: 105
       prefix: --work-dir
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 106
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -77,7 +83,9 @@ outputs:
       - File
     doc: output lab-of-origin prediction
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plasmidhawk:1.0.3--hdfd78af_0

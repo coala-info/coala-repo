@@ -29,6 +29,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --seq-counts
+  - id: output_cases_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --output-cases
+  - id: output_seq_counts_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 103
+      prefix: --output-seq-counts
 outputs:
   - id: output_seq_counts
     type:
@@ -36,14 +50,16 @@ outputs:
       - File
     doc: 'Optional override: output sequence counts TSV'
     outputBinding:
-      glob: $(inputs.output_seq_counts)
+      glob: $(inputs.output_seq_counts_path)
   - id: output_cases
     type:
       - 'null'
       - File
     doc: 'Optional override: output case counts TSV (optional)'
     outputBinding:
-      glob: $(inputs.output_cases)
+      glob: $(inputs.output_cases_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/evofr:0.2.0--pyhdfd78af_0

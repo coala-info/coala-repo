@@ -100,6 +100,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --variables_file
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -107,7 +113,9 @@ outputs:
       - Directory
     doc: Directory to save the collated results.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tb-profiler:6.6.6--pyhdfd78af_0

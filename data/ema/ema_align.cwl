@@ -93,6 +93,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -t
+  - id: output_sam_file_path
+    type: string
+    doc: Output or path parameter `output_sam_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-sam-file
 outputs:
   - id: output_sam_file
     type:
@@ -100,7 +106,9 @@ outputs:
       - File
     doc: output SAM file
     outputBinding:
-      glob: $(inputs.output_sam_file)
+      glob: $(inputs.output_sam_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ema:0.7.0--h5ca1c30_2

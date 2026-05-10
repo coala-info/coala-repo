@@ -23,12 +23,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tree_file
+  - id: outputfile_png_path
+    type: string
+    doc: Output or path parameter `outputfile_png_path`
+    inputBinding:
+      position: 102
+      prefix: --outputfile-png
 outputs:
   - id: outputfile_png
     type: File
     doc: The name of the output file (in png format).
     outputBinding:
-      glob: $(inputs.outputfile_png)
+      glob: $(inputs.outputfile_png_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylodeep:0.9--pyhdfd78af_0

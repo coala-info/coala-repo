@@ -48,6 +48,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input-dir
+  - id: output_dict_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_dict_path_path`
+    inputBinding:
+      position: 102
+      prefix: --output-dict-path
+  - id: output_text_path_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_text_path_path`
+    inputBinding:
+      position: 103
+      prefix: --output-text-path
 outputs:
   - id: output_dict_path
     type:
@@ -55,14 +71,16 @@ outputs:
       - File
     doc: Output path for serialised object containing the dictionary
     outputBinding:
-      glob: $(inputs.output_dict_path)
+      glob: $(inputs.output_dict_path_path)
   - id: output_text_path
     type:
       - 'null'
       - File
     doc: Output path for txt version of label - term mapping
     outputBinding:
-      glob: $(inputs.output_text_path)
+      glob: $(inputs.output_text_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cell-types-analysis:0.1.11--hdfd78af_1

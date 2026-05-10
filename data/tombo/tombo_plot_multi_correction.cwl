@@ -13,8 +13,7 @@ inputs:
       - type: array
         items: string
     doc: FAST5 subgroup(s) (under Analyses/[corrected-group]) containing 
-      basecalls.
-      - BaseCalled_template
+      basecalls. - BaseCalled_template
     inputBinding:
       position: 101
       prefix: --basecall-subgroups
@@ -84,6 +83,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --quiet
+  - id: pdf_filename_path
+    type: string
+    doc: Output or path parameter `pdf_filename_path`
+    inputBinding:
+      position: 102
+      prefix: --pdf-filename
 outputs:
   - id: pdf_filename
     type:
@@ -91,7 +96,9 @@ outputs:
       - File
     doc: PDF filename to store plot(s).
     outputBinding:
-      glob: $(inputs.pdf_filename)
+      glob: $(inputs.pdf_filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tombo:1.0--py27_0

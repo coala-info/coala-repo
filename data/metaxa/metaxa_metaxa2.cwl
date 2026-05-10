@@ -327,12 +327,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --usearch
+  - id: output_base_path
+    type: string
+    doc: Output or path parameter `output_base_path`
+    inputBinding:
+      position: 102
+      prefix: --output-base
 outputs:
   - id: output_base
     type: File
     doc: Base for the names of output file(s)
     outputBinding:
-      glob: $(inputs.output_base)
+      glob: $(inputs.output_base_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaxa:2.2.3--pl5321hdfd78af_2

@@ -102,6 +102,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_directory_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 102
+      prefix: --output-directory
+  - id: output_prediction_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_prediction_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-prediction-file
 outputs:
   - id: output_prediction_file
     type:
@@ -109,14 +125,16 @@ outputs:
       - File
     doc: output file name to store prediction results
     outputBinding:
-      glob: $(inputs.output_prediction_file)
+      glob: $(inputs.output_prediction_file_path)
   - id: output_directory
     type:
       - 'null'
       - Directory
     doc: output directory name to store all results
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plncpro:1.2.2--py37hc9558a2_0

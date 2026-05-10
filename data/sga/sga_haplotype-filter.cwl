@@ -55,6 +55,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: out_prefix_path
+    type: string
+    doc: Output or path parameter `out_prefix_path`
+    inputBinding:
+      position: 104
+      prefix: --out-prefix
 outputs:
   - id: out_prefix
     type:
@@ -62,7 +68,9 @@ outputs:
       - File
     doc: write the passed haplotypes and variants to STR.vcf and STR.fa
     outputBinding:
-      glob: $(inputs.out_prefix)
+      glob: $(inputs.out_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/sga:v0.10.15-4-deb_cv1

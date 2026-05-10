@@ -72,6 +72,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --sketchDir
+  - id: log_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_path`
+    inputBinding:
+      position: 102
+      prefix: --log
+  - id: out_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 103
+      prefix: --out-file
 outputs:
   - id: log
     type:
@@ -79,14 +95,16 @@ outputs:
       - File
     doc: filename for log file, if omitted then STDOUT used by default
     outputBinding:
-      glob: $(inputs.log)
+      glob: $(inputs.log_path)
   - id: out_file
     type:
       - 'null'
       - File
     doc: directory and basename for saving the outfile(s)
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hulk:1.0.0--h375a9b1_0

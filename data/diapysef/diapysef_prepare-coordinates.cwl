@@ -93,6 +93,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: out_file_path
+    type: string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 102
+      prefix: --out-file
 outputs:
   - id: out_file
     type:
@@ -100,7 +106,9 @@ outputs:
       - File
     doc: Filename to save pickle of peptide coordinates.
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/diapysef:1.0.10--pyh7cba7a3_0

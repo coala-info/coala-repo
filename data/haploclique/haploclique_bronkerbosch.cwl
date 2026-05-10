@@ -184,6 +184,22 @@ inputs:
     inputBinding:
       position: 104
       prefix: --significance
+  - id: bam_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `bam_path`
+    inputBinding:
+      position: 105
+      prefix: --bam
+  - id: gff_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `gff_path`
+    inputBinding:
+      position: 106
+      prefix: --gff
 outputs:
   - id: gff
     type:
@@ -191,14 +207,16 @@ outputs:
       - File
     doc: Option to create GFF File from output. <output> is used as prefix.
     outputBinding:
-      glob: $(inputs.gff)
+      glob: $(inputs.gff_path)
   - id: bam
     type:
       - 'null'
       - File
     doc: Option to create BAM File from output. <output> is used as prefix.
     outputBinding:
-      glob: $(inputs.bam)
+      glob: $(inputs.bam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haploclique:1.3.1--h2b6358e_4

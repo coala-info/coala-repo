@@ -28,6 +28,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --strand
+  - id: saveto_path
+    type: string
+    doc: Path to write bedgraph output
+    inputBinding:
+      position: 102
+      prefix: --saveto
 outputs:
   - id: saveto
     type:
@@ -35,7 +41,9 @@ outputs:
       - File
     doc: Path to write bedgraph output
     outputBinding:
-      glob: $(inputs.saveto)
+      glob: $(inputs.saveto_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/riboraptor:0.2.2--py36_0

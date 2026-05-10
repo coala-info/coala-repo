@@ -46,6 +46,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --list
+  - id: output_bed_file_path
+    type: string
+    doc: Output or path parameter `output_bed_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-bed-file
 outputs:
   - id: output_bed_file
     type:
@@ -53,7 +59,9 @@ outputs:
       - File
     doc: Output bed file name
     outputBinding:
-      glob: $(inputs.output_bed_file)
+      glob: $(inputs.output_bed_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/blobtk:0.7.1--py39hf6b2c50_0

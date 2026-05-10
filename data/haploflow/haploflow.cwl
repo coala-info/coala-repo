@@ -119,6 +119,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --two-strain
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -127,7 +133,9 @@ outputs:
     doc: 'folder for output, will be created if not present. WARNING: Old results
       will get overwritten'
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/haploflow:1.0--h9948957_5

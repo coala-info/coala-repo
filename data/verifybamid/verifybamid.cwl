@@ -3,8 +3,8 @@ class: CommandLineTool
 baseCommand: verifybamid
 label: verifybamid
 doc: "VerifyBamID is a software tool to verify whether the reads in a BAM file match
-  a known genotype call set, and/or to estimate the level of DNA contamination.\n\n
-  Tool homepage: https://github.com/Griffan/VerifyBamID"
+  a known genotype call set, and/or to estimate the level of DNA contamination.\n\n\
+  \ Tool homepage: https://github.com/Griffan/VerifyBamID"
 inputs:
   - id: bam
     type: File
@@ -106,12 +106,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type: File
     doc: Output file prefix
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/verifybamid:1.1.3--h5b5514e_6

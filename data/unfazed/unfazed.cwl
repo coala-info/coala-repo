@@ -230,6 +230,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: outfile_path
+    type: string
+    doc: 'name for output file. Defaults to stdout (default:'
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -237,7 +243,9 @@ outputs:
       - File
     doc: name for output file. Defaults to stdout
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/unfazed:1.0.2--pyh3252c3a_0

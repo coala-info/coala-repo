@@ -52,6 +52,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: -use
+  - id: xml_path_path
+    type: string
+    doc: Output or path parameter `xml_path_path`
+    inputBinding:
+      position: 104
+      prefix: --xml-path
 outputs:
   - id: xml_path
     type:
@@ -59,7 +65,9 @@ outputs:
       - File
     doc: Path to xml file where result should be saved
     outputBinding:
-      glob: $(inputs.xml_path)
+      glob: $(inputs.xml_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 

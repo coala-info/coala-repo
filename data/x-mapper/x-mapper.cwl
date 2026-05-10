@@ -448,6 +448,54 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbosity-auto
+  - id: out_ancestor_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_ancestor_path`
+    inputBinding:
+      position: 102
+      prefix: --out-ancestor
+  - id: out_mutations_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_mutations_path`
+    inputBinding:
+      position: 103
+      prefix: --out-mutations
+  - id: out_refs_map_count_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_refs_map_count_path`
+    inputBinding:
+      position: 104
+      prefix: --out-refs-map-count
+  - id: out_sam_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_sam_path`
+    inputBinding:
+      position: 105
+      prefix: --out-sam
+  - id: out_unaligned_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_unaligned_path`
+    inputBinding:
+      position: 106
+      prefix: --out-unaligned
+  - id: out_vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_vcf_path`
+    inputBinding:
+      position: 107
+      prefix: --out-vcf
 outputs:
   - id: out_mutations
     type:
@@ -456,7 +504,7 @@ outputs:
     doc: output file to generate listing the mutations of the queries compared 
       to the reference genome
     outputBinding:
-      glob: $(inputs.out_mutations)
+      glob: $(inputs.out_mutations_path)
   - id: out_vcf
     type:
       - 'null'
@@ -464,14 +512,14 @@ outputs:
     doc: output file to generate containing a description of mutation counts by 
       position
     outputBinding:
-      glob: $(inputs.out_vcf)
+      glob: $(inputs.out_vcf_path)
   - id: out_sam
     type:
       - 'null'
       - File
     doc: the output file in SAM format
     outputBinding:
-      glob: $(inputs.out_sam)
+      glob: $(inputs.out_sam_path)
   - id: out_refs_map_count
     type:
       - 'null'
@@ -479,7 +527,7 @@ outputs:
     doc: the output file to summarize the number of reads mapped to each 
       combination of references
     outputBinding:
-      glob: $(inputs.out_refs_map_count)
+      glob: $(inputs.out_refs_map_count_path)
   - id: out_unaligned
     type:
       - 'null'
@@ -487,14 +535,16 @@ outputs:
     doc: output file containing unaligned reads. Must have a .fasta or .fastq 
       extension
     outputBinding:
-      glob: $(inputs.out_unaligned)
+      glob: $(inputs.out_unaligned_path)
   - id: out_ancestor
     type:
       - 'null'
       - File
     doc: file to write our inferred ancestors. See also --no-infer-ancestors
     outputBinding:
-      glob: $(inputs.out_ancestor)
+      glob: $(inputs.out_ancestor_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/x-mapper:1.2.0--hdfd78af_0

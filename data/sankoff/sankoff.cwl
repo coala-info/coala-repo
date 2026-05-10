@@ -90,6 +90,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tree
+  - id: out_as_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_as_path`
+    inputBinding:
+      position: 102
+      prefix: --out-as
+  - id: out_tree_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_tree_path`
+    inputBinding:
+      position: 103
+      prefix: --out-tree
 outputs:
   - id: out_as
     type:
@@ -97,7 +113,7 @@ outputs:
       - File
     doc: print sequences of ancestral and leaf nodes to this file.
     outputBinding:
-      glob: $(inputs.out_as)
+      glob: $(inputs.out_as_path)
   - id: out_tree
     type:
       - 'null'
@@ -105,7 +121,9 @@ outputs:
     doc: The tree to this file. Some times it is useful, for example when to 
       internal nodes of the input tree no label is assigned.
     outputBinding:
-      glob: $(inputs.out_tree)
+      glob: $(inputs.out_tree_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sankoff:0.2--h9948957_5

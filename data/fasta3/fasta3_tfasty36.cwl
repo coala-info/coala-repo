@@ -346,6 +346,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: -t
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 105
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -353,7 +359,9 @@ outputs:
       - File
     doc: write results to file
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fasta3:36.3.8--0

@@ -9,8 +9,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: A region to access specified as <sequence name>[:<start inclusive>[-[<stop
-      inclusive>]]
+    doc: A region to access specified as <sequence name>[:<start 
+      inclusive>[-[<stop inclusive>]]
     inputBinding:
       position: 1
   - id: calculate_md_tag
@@ -49,9 +49,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Use this quality score (decimal representation of ASCII symbol) as a default
-      value when the original quality score was lost due to compression. Minimum is
-      33.
+    doc: Use this quality score (decimal representation of ASCII symbol) as a 
+      default value when the original quality score was lost due to compression.
+      Minimum is 33.
     inputBinding:
       position: 102
       prefix: --default-quality-score
@@ -75,8 +75,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Issue a warning on sequence MD5 mismatch and continue. This does not garantee
-      the data will be read succesfully.
+    doc: Issue a warning on sequence MD5 mismatch and continue. This does not 
+      garantee the data will be read succesfully.
     inputBinding:
       position: 102
       prefix: --ignore-md5-mismatch
@@ -84,7 +84,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Inject or change the @SQ:UR header fields to point to ENA reference service.
+    doc: Inject or change the @SQ:UR header fields to point to ENA reference 
+      service.
     inputBinding:
       position: 102
       prefix: --inject-sq-uri
@@ -92,8 +93,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: The path or FTP URL to the CRAM file to uncompress. Omit if standard input
-      (pipe).
+    doc: The path or FTP URL to the CRAM file to uncompress. Omit if standard 
+      input (pipe).
     inputBinding:
       position: 102
       prefix: --input-cram-file
@@ -133,8 +134,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to the reference fasta file, it must be uncompressed and indexed (use
-      'samtools faidx' for example).
+    doc: Path to the reference fasta file, it must be uncompressed and indexed 
+      (use 'samtools faidx' for example).
     inputBinding:
       position: 102
       prefix: --reference-fasta-file
@@ -162,6 +163,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --sync-bam-output
+  - id: output_bam_file_path
+    type: string
+    doc: Output or path parameter `output_bam_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-bam-file
 outputs:
   - id: output_bam_file
     type:
@@ -169,7 +176,9 @@ outputs:
       - File
     doc: The path to the output BAM file.
     outputBinding:
-      glob: $(inputs.output_bam_file)
+      glob: $(inputs.output_bam_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cramtools:3.0.b127--0

@@ -189,6 +189,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: support_output_path
+    type: string
+    doc: Output or path parameter `support_output_path`
+    inputBinding:
+      position: 102
+      prefix: --support-output
 outputs:
   - id: support_output
     type:
@@ -196,7 +202,9 @@ outputs:
       - File
     doc: Optional BED file capturing the entities that span the refined region
     outputBinding:
-      glob: $(inputs.support_output)
+      glob: $(inputs.support_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/impg:0.3.3--hdb3fbb7_0

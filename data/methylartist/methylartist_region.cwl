@@ -538,6 +538,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ymin
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile
+  - id: segment_csv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `segment_csv_path`
+    inputBinding:
+      position: 103
+      prefix: --segment-csv
 outputs:
   - id: outfile
     type:
@@ -545,7 +561,7 @@ outputs:
       - File
     doc: 'output file name (default: generated from input)'
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
   - id: segment_csv
     type:
       - 'null'
@@ -553,7 +569,9 @@ outputs:
     doc: output values from smoothed segment plot to specified filename in CSV 
       format
     outputBinding:
-      glob: $(inputs.segment_csv)
+      glob: $(inputs.segment_csv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/methylartist:1.5.3--pyhdfd78af_0

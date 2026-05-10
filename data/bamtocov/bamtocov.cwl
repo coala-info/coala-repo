@@ -156,6 +156,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --op
+  - id: report_file_path
+    type: string
+    doc: Output or path parameter `report_file_path`
+    inputBinding:
+      position: 103
+      prefix: --report-file
 outputs:
   - id: report_file
     type:
@@ -163,7 +169,9 @@ outputs:
       - File
     doc: Output coverage report
     outputBinding:
-      glob: $(inputs.report_file)
+      glob: $(inputs.report_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bamtocov:2.8.0--h1104d80_0

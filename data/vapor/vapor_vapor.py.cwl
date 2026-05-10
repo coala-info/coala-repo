@@ -117,6 +117,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --top_seed_frac
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -124,7 +130,9 @@ outputs:
       - File
     doc: Prefix to write full output to, stout by default
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vapor:1.0.3--pyhdfd78af_0

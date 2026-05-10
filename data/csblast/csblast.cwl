@@ -143,6 +143,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --weight-decay
+  - id: alignhits_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `alignhits_path`
+    inputBinding:
+      position: 102
+      prefix: --alignhits
+  - id: outfile_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 103
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -150,14 +166,16 @@ outputs:
       - File
     doc: Output file with search results (def=stdout)
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
   - id: alignhits
     type:
       - 'null'
       - File
     doc: Write multiple alignment of hits in PSI format to file
     outputBinding:
-      glob: $(inputs.alignhits)
+      glob: $(inputs.alignhits_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/csblast:2.2.3--h9948957_4

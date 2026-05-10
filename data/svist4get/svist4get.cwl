@@ -375,6 +375,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -xs
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -384,7 +390,9 @@ outputs:
       on the provided extension. Both png and pdf will be generated if the 
       extension is not specified.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svist4get:1.3.1.1--pyhdfd78af_0

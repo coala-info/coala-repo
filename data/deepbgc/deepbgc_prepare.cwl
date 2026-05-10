@@ -42,6 +42,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --protein
+  - id: output_gbk_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_gbk_path`
+    inputBinding:
+      position: 103
+      prefix: --output-gbk
+  - id: output_tsv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_tsv_path`
+    inputBinding:
+      position: 104
+      prefix: --output-tsv
 outputs:
   - id: output_gbk
     type:
@@ -49,14 +65,16 @@ outputs:
       - File
     doc: Output GenBank file path
     outputBinding:
-      glob: $(inputs.output_gbk)
+      glob: $(inputs.output_gbk_path)
   - id: output_tsv
     type:
       - 'null'
       - File
     doc: Output TSV file path
     outputBinding:
-      glob: $(inputs.output_tsv)
+      glob: $(inputs.output_tsv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/deepbgc:0.1.31--pyhca03a8a_0

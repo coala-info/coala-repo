@@ -102,6 +102,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --temperature
+  - id: graphml_file_path
+    type: string
+    doc: Output or path parameter `graphml_file_path`
+    inputBinding:
+      position: 102
+      prefix: --graphml-file
 outputs:
   - id: graphml_file
     type:
@@ -109,7 +115,9 @@ outputs:
       - File
     doc: Write a graphml file with the given filename.
     outputBinding:
-      glob: $(inputs.graphml_file)
+      glob: $(inputs.graphml_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnasketch:1.5--py27_1

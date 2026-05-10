@@ -674,6 +674,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --view
+  - id: plot_output_file_path
+    type: string
+    doc: Output or path parameter `plot_output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --plot-output-file
 outputs:
   - id: plot_output_file
     type:
@@ -681,7 +687,9 @@ outputs:
       - File
     doc: output filename prefix and extension
     outputBinding:
-      glob: $(inputs.plot_output_file)
+      glob: $(inputs.plot_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cnvpytor:1.3.2--pyhdfd78af_0

@@ -47,6 +47,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --log-level
+  - id: destination_file_path
+    type: string
+    doc: Output or path parameter `destination_file_path`
+    inputBinding:
+      position: 102
+      prefix: --destination-file
 outputs:
   - id: destination_file
     type:
@@ -54,7 +60,9 @@ outputs:
       - File
     doc: Destination file.
     outputBinding:
-      glob: $(inputs.destination_file)
+      glob: $(inputs.destination_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cramtools:3.0.b127--0

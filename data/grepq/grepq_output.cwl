@@ -108,6 +108,30 @@ inputs:
     inputBinding:
       position: 104
       prefix: --read-zstd
+  - id: write_gzip_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_gzip_path`
+    inputBinding:
+      position: 105
+      prefix: --write-gzip
+  - id: write_sql_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_sql_path`
+    inputBinding:
+      position: 106
+      prefix: --write-sql
+  - id: write_zstd_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `write_zstd_path`
+    inputBinding:
+      position: 107
+      prefix: --write-zstd
 outputs:
   - id: write_gzip
     type:
@@ -115,14 +139,14 @@ outputs:
       - File
     doc: Write the output in gzip compressed format
     outputBinding:
-      glob: $(inputs.write_gzip)
+      glob: $(inputs.write_gzip_path)
   - id: write_zstd
     type:
       - 'null'
       - File
     doc: Write the output in zstd compressed format
     outputBinding:
-      glob: $(inputs.write_zstd)
+      glob: $(inputs.write_zstd_path)
   - id: write_sql
     type:
       - 'null'
@@ -133,7 +157,9 @@ outputs:
       percent tetranucleotide frequency within the sequence (TNF), and average 
       quality score for the sequence field (average_quality)
     outputBinding:
-      glob: $(inputs.write_sql)
+      glob: $(inputs.write_sql_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/grepq:1.5.4--h6ce8773_0

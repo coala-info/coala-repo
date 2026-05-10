@@ -197,6 +197,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -vf
+  - id: out_base_name_path
+    type: string
+    doc: Output or path parameter `out_base_name_path`
+    inputBinding:
+      position: 103
+      prefix: --out-base-name
 outputs:
   - id: out_base_name
     type:
@@ -204,7 +210,9 @@ outputs:
       - File
     doc: set a base name for decode output files
     outputBinding:
-      glob: $(inputs.out_base_name)
+      glob: $(inputs.out_base_name_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/pvrg-jpeg:v1.2.1dfsg1-6-deb_cv1

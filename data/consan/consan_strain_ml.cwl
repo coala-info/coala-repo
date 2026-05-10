@@ -71,8 +71,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Setup Tying Type [No tying = 0; NT counts = 1; Gap Open/Extend counts = 2;
-      Gap Open/Extend probs = 3; LR Symmetry 4 (default)]
+    doc: Setup Tying Type [No tying = 0; NT counts = 1; Gap Open/Extend counts =
+      2; Gap Open/Extend probs = 3; LR Symmetry 4 (default)]
     inputBinding:
       position: 102
       prefix: -T
@@ -92,6 +92,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -V
+  - id: save_model_path
+    type: string
+    doc: Output or path parameter `save_model_path`
+    inputBinding:
+      position: 103
+      prefix: --save-model
 outputs:
   - id: save_model
     type:
@@ -99,7 +105,9 @@ outputs:
       - File
     doc: save model file to <file>
     outputBinding:
-      glob: $(inputs.save_model)
+      glob: $(inputs.save_model_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/consan:1.2--h7b50bb2_7

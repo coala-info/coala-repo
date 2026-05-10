@@ -29,13 +29,21 @@ inputs:
     inputBinding:
       position: 101
       prefix: --evanno
+  - id: out_path
+    type: string
+    doc: The out directory. If it does not exist, it will be
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type: Directory
     doc: The out directory. If it does not exist, it will be created. Output 
       written to summary.txt
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/structureharvester:0.6.94--py27_0

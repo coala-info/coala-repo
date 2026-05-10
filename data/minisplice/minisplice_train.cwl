@@ -97,6 +97,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -t
+  - id: output_model_path
+    type: string
+    doc: Output or path parameter `output_model_path`
+    inputBinding:
+      position: 103
+      prefix: --output-model
 outputs:
   - id: output_model
     type:
@@ -104,7 +110,9 @@ outputs:
       - File
     doc: output model
     outputBinding:
-      glob: $(inputs.output_model)
+      glob: $(inputs.output_model_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/minisplice:0.4--h577a1d6_0

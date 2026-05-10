@@ -30,8 +30,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: reference annotation, only used if --remove_internal_priming is specified,
-      recommended if so
+    doc: reference annotation, only used if --remove_internal_priming is 
+      specified, recommended if so
     inputBinding:
       position: 101
       prefix: --gtf
@@ -39,8 +39,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: number of bases that are at least 75% As required to call read as internal
-      priming
+    doc: number of bases that are at least 75% As required to call read as 
+      internal priming
     inputBinding:
       position: 101
       prefix: --intprimingfracAs
@@ -48,8 +48,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: number of bases that are at leas 75% As required to call read as internal
-      priming
+    doc: number of bases that are at leas 75% As required to call read as 
+      internal priming
     inputBinding:
       position: 101
       prefix: --intprimingthreshold
@@ -57,8 +57,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: annotated isoforms/junctions bed file for splice site-guided minimap2 genomic
-      alignment
+    doc: annotated isoforms/junctions bed file for splice site-guided minimap2 
+      genomic alignment
     inputBinding:
       position: 101
       prefix: --junction_bed
@@ -82,8 +82,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Set level to case-insensitive symbolic value, one of CRITICAL, DEBUG, ERROR,
-      FATAL, INFO, NOTSET, WARN, WARNING
+    doc: Set level to case-insensitive symbolic value, one of CRITICAL, DEBUG, 
+      ERROR, FATAL, INFO, NOTSET, WARN, WARNING
     inputBinding:
       position: 101
       prefix: --log-level
@@ -99,8 +99,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: maximum intron length in genomic alignment. Longer can help recover more
-      novel isoforms with long introns
+    doc: maximum intron length in genomic alignment. Longer can help recover 
+      more novel isoforms with long introns
     inputBinding:
       position: 101
       prefix: --maxintronlen
@@ -108,8 +108,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: minimum size of alignment kept, used in minimap -s. More important when doing
-      downstream fusion detection
+    doc: minimum size of alignment kept, used in minimap -s. More important when
+      doing downstream fusion detection
     inputBinding:
       position: 101
       prefix: --minfragmentsize
@@ -125,7 +125,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: specify this flag to use native-RNA specific alignment parameters for minimap2
+    doc: specify this flag to use native-RNA specific alignment parameters for 
+      minimap2
     inputBinding:
       position: 101
       prefix: --nvrna
@@ -177,6 +178,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -184,7 +191,9 @@ outputs:
       - File
     doc: output file name base
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flair:3.0.0--pyhdfd78af_0

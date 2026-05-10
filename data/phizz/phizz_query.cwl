@@ -61,6 +61,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --to_json
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 102
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -68,7 +74,9 @@ outputs:
       - File
     doc: Specify path to outfile
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phizz:0.2.3--py_0

@@ -41,6 +41,14 @@ inputs:
     inputBinding:
       position: 103
       prefix: --ignore_unc_rank
+  - id: orf_tax_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `orf_tax_out_path`
+    inputBinding:
+      position: 104
+      prefix: --orf-tax-out
 outputs:
   - id: contig_taxonomy
     type: File
@@ -53,7 +61,9 @@ outputs:
       - File
     doc: Also transfer taxonomy back to ORFs and output to file
     outputBinding:
-      glob: $(inputs.orf_tax_out)
+      glob: $(inputs.orf_tax_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/contigtax:0.5.10--pyhdfd78af_0

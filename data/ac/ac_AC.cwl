@@ -82,6 +82,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -v
+  - id: create_iae_file_path
+    type: string
+    doc: Output or path parameter `create_iae_file_path`
+    inputBinding:
+      position: 103
+      prefix: --create-iae-file
 outputs:
   - id: create_iae_file
     type:
@@ -90,7 +96,9 @@ outputs:
     doc: it creates a file with the extension ".iae" with the respective 
       information content.
     outputBinding:
-      glob: $(inputs.create_iae_file)
+      glob: $(inputs.create_iae_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ac:1.1--h503566f_6

@@ -602,6 +602,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --useQualityScores
+  - id: output_file1_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file1_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file1
+  - id: output_file2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file2_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file2
 outputs:
   - id: output_file1
     type:
@@ -609,14 +625,16 @@ outputs:
       - File
     doc: output fastq name 1
     outputBinding:
-      glob: $(inputs.output_file1)
+      glob: $(inputs.output_file1_path)
   - id: output_file2
     type:
       - 'null'
       - File
     doc: output fastq name 2
     outputBinding:
-      glob: $(inputs.output_file2)
+      glob: $(inputs.output_file2_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rabbitqcplus:2.3.0--h5ca1c30_1

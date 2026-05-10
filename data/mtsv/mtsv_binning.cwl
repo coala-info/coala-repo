@@ -100,6 +100,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --working_dir
+  - id: binning_outpath_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `binning_outpath_path`
+    inputBinding:
+      position: 102
+      prefix: --binning-outpath
+  - id: merge_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `merge_file_path`
+    inputBinding:
+      position: 103
+      prefix: --merge-file
 outputs:
   - id: binning_outpath
     type:
@@ -107,7 +123,7 @@ outputs:
       - Directory
     doc: Path to write binning files to.
     outputBinding:
-      glob: $(inputs.binning_outpath)
+      glob: $(inputs.binning_outpath_path)
   - id: merge_file
     type:
       - 'null'
@@ -116,7 +132,9 @@ outputs:
       their original directory, downstream processes rely on meta data (.params 
       file) in directory)
     outputBinding:
-      glob: $(inputs.merge_file)
+      glob: $(inputs.merge_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mtsv:1.0.6--py36hf1ae8f4_2

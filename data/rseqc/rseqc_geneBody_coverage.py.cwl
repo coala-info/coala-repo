@@ -10,7 +10,8 @@ inputs:
     type:
       type: array
       items: File
-    doc: Input file(s) in BAM or SAM format. Multiple files can be separated by comma.
+    doc: Input file(s) in BAM or SAM format. Multiple files can be separated by 
+      comma.
     inputBinding:
       position: 101
       prefix: --input-file
@@ -18,7 +19,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum mRNA length (bp). mRNA that are shorter than this value will be skipped.
+    doc: Minimum mRNA length (bp). mRNA that are shorter than this value will be
+      skipped.
     inputBinding:
       position: 101
       prefix: --minimum-length
@@ -28,12 +30,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --refgene
+  - id: out_prefix_path
+    type: string
+    doc: Output or path parameter `out_prefix_path`
+    inputBinding:
+      position: 102
+      prefix: --out-prefix
 outputs:
   - id: out_prefix
     type: File
     doc: Prefix of output files.
     outputBinding:
-      glob: $(inputs.out_prefix)
+      glob: $(inputs.out_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rseqc:5.0.4--pyhdfd78af_1

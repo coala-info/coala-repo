@@ -40,7 +40,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Compress the output files directly with zlib, using the gzip container format.
+    doc: Compress the output files directly with zlib, using the gzip container 
+      format.
     inputBinding:
       position: 103
       prefix: --compress
@@ -56,7 +57,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: A string of additional arguments that will be passed to the compression program.
+    doc: A string of additional arguments that will be passed to the compression
+      program.
     inputBinding:
       position: 103
       prefix: --compress-prog-args
@@ -80,7 +82,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Equivalent to specifying both --interleaved-input and --interleaved-output.
+    doc: Equivalent to specifying both --interleaved-input and 
+      --interleaved-output.
     inputBinding:
       position: 103
       prefix: --interleaved
@@ -88,7 +91,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Allow a single file MATES.FASTQ that has the paired-end reads interleaved.
+    doc: Allow a single file MATES.FASTQ that has the paired-end reads 
+      interleaved.
     inputBinding:
       position: 103
       prefix: --interleaved-input
@@ -104,8 +108,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Maximum allowed ratio between the number of mismatched base pairs and the
-      overlap length.
+    doc: Maximum allowed ratio between the number of mismatched base pairs and 
+      the overlap length.
     inputBinding:
       position: 103
       prefix: --max-mismatch-density
@@ -121,8 +125,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The minimum required overlap length between two reads to provide a confident
-      overlap.
+    doc: The minimum required overlap length between two reads to provide a 
+      confident overlap.
     inputBinding:
       position: 103
       prefix: --min-overlap
@@ -130,8 +134,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The smallest ASCII value of the characters used to represent quality values
-      of bases in FASTQ files (33 or 64).
+    doc: The smallest ASCII value of the characters used to represent quality 
+      values of bases in FASTQ files (33 or 64).
     inputBinding:
       position: 103
       prefix: --phred-offset
@@ -191,6 +195,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --to-stdout
+  - id: output_directory_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `output_directory_path`
+    inputBinding:
+      position: 104
+      prefix: --output-directory
+  - id: output_prefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 105
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -198,14 +218,16 @@ outputs:
       - File
     doc: Prefix of output files.
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
   - id: output_directory
     type:
       - 'null'
       - Directory
     doc: Path to directory for output files.
     outputBinding:
-      glob: $(inputs.output_directory)
+      glob: $(inputs.output_directory_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/flash:1.2.11--ha92aebf_2

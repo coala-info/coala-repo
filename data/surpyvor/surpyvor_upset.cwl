@@ -61,6 +61,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: plotout_path
+    type: string
+    doc: Output or path parameter `plotout_path`
+    inputBinding:
+      position: 102
+      prefix: --plotout
 outputs:
   - id: plotout
     type:
@@ -68,7 +74,9 @@ outputs:
       - File
     doc: Name of output plot
     outputBinding:
-      glob: $(inputs.plotout)
+      glob: $(inputs.plotout_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/surpyvor:0.15.0--pyhdfd78af_0

@@ -10,8 +10,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specify the adapter sequences used for these reads; can be a fasta file or
-      literal sequence.
+    doc: Specify the adapter sequences used for these reads; can be a fasta file
+      or literal sequence.
     inputBinding:
       position: 101
       prefix: adapter
@@ -36,7 +36,8 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: A file or comma-delimited list of files of reads to use for kmer counting.
+    doc: A file or comma-delimited list of files of reads to use for kmer 
+      counting.
     inputBinding:
       position: 101
       prefix: extra
@@ -74,8 +75,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: May be set to true or false to override autodetection of whether the input
-      file as interleaved.
+    doc: May be set to true or false to override autodetection of whether the 
+      input file as interleaved.
     inputBinding:
       position: 101
       prefix: interleaved
@@ -91,8 +92,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: If positive, reads with more combined expected errors than this will not
-      be attempted to be merged.
+    doc: If positive, reads with more combined expected errors than this will 
+      not be attempted to be merged.
     inputBinding:
       position: 101
       prefix: maxexpectederrors
@@ -116,7 +117,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Reads with average quality below this will not be attempted to be merged.
+    doc: Reads with average quality below this will not be attempted to be 
+      merged.
     inputBinding:
       position: 101
       prefix: minavgquality
@@ -148,8 +150,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Output both the merged (or mergable) and unmerged reads in the same file
-      (out=).
+    doc: Output both the merged (or mergable) and unmerged reads in the same 
+      file (out=).
     inputBinding:
       position: 101
       prefix: mix
@@ -214,7 +216,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Trim overlapping reads to remove rightmost (3') non-overlapping portion.
+    doc: Trim overlapping reads to remove rightmost (3') non-overlapping 
+      portion.
     inputBinding:
       position: 101
       prefix: tbo
@@ -234,6 +237,70 @@ inputs:
     inputBinding:
       position: 101
       prefix: ziplevel
+  - id: ihist_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `ihist_path`
+    inputBinding:
+      position: 102
+      prefix: --ihist
+  - id: out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 103
+      prefix: --out
+  - id: out2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out2_path`
+    inputBinding:
+      position: 104
+      prefix: --out2
+  - id: outadapter_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outadapter_path`
+    inputBinding:
+      position: 105
+      prefix: --outadapter
+  - id: outc_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outc_path`
+    inputBinding:
+      position: 106
+      prefix: --outc
+  - id: outinsert_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outinsert_path`
+    inputBinding:
+      position: 107
+      prefix: --outinsert
+  - id: outu_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outu_path`
+    inputBinding:
+      position: 108
+      prefix: --outu
+  - id: outu2_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outu2_path`
+    inputBinding:
+      position: 109
+      prefix: --outu2
 outputs:
   - id: out
     type:
@@ -241,56 +308,58 @@ outputs:
       - File
     doc: File for merged reads. 'out2' will specify a second file.
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
   - id: out2
     type:
       - 'null'
       - File
     doc: Second file for merged reads.
     outputBinding:
-      glob: $(inputs.out2)
+      glob: $(inputs.out2_path)
   - id: outu
     type:
       - 'null'
       - File
     doc: File for unmerged reads. 'outu2' will specify a second file.
     outputBinding:
-      glob: $(inputs.outu)
+      glob: $(inputs.outu_path)
   - id: outu2
     type:
       - 'null'
       - File
     doc: Second file for unmerged reads.
     outputBinding:
-      glob: $(inputs.outu2)
+      glob: $(inputs.outu2_path)
   - id: outinsert
     type:
       - 'null'
       - File
     doc: File to write read names and insert sizes.
     outputBinding:
-      glob: $(inputs.outinsert)
+      glob: $(inputs.outinsert_path)
   - id: outadapter
     type:
       - 'null'
       - File
     doc: File to write consensus adapter sequences.
     outputBinding:
-      glob: $(inputs.outadapter)
+      glob: $(inputs.outadapter_path)
   - id: outc
     type:
       - 'null'
       - File
     doc: File to write input read kmer cardinality estimate.
     outputBinding:
-      glob: $(inputs.outc)
+      glob: $(inputs.outc_path)
   - id: ihist
     type:
       - 'null'
       - File
     doc: Insert length histogram output file.
     outputBinding:
-      glob: $(inputs.ihist)
+      glob: $(inputs.ihist_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bbmap:39.52--he5f24ec_0

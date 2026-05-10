@@ -18,12 +18,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -f
+  - id: output_sam_path
+    type: string
+    doc: Output or path parameter `output_sam_path`
+    inputBinding:
+      position: 102
+      prefix: --output-sam
 outputs:
   - id: output_sam
     type: File
     doc: Output SAM file
     outputBinding:
-      glob: $(inputs.output_sam)
+      glob: $(inputs.output_sam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panaln:2.09--h5ca1c30_0

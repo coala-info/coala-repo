@@ -105,6 +105,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --winsize
+  - id: plot_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `plot_output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --plot-output-file
+  - id: sequence_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `sequence_output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --sequence-output-file
 outputs:
   - id: sequence_output_file
     type:
@@ -112,14 +128,16 @@ outputs:
       - File
     doc: sequence output file [optional]
     outputBinding:
-      glob: $(inputs.sequence_output_file)
+      glob: $(inputs.sequence_output_file_path)
   - id: plot_output_file
     type:
       - 'null'
       - File
     doc: plot output file
     outputBinding:
-      glob: $(inputs.plot_output_file)
+      glob: $(inputs.plot_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wally:0.7.1--h4d20210_1

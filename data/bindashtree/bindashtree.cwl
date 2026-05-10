@@ -68,6 +68,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tree
+  - id: output_matrix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_matrix_path`
+    inputBinding:
+      position: 102
+      prefix: --output-matrix
+  - id: output_tree_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_tree_path`
+    inputBinding:
+      position: 103
+      prefix: --output-tree
 outputs:
   - id: output_matrix
     type:
@@ -75,12 +91,14 @@ outputs:
       - File
     doc: Output the phylip distance matrix to a file
     outputBinding:
-      glob: $(inputs.output_matrix)
+      glob: $(inputs.output_matrix_path)
   - id: output_tree
     type: File
     doc: Output the resulting tree in Newick format to a file
     outputBinding:
-      glob: $(inputs.output_tree)
+      glob: $(inputs.output_tree_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bindashtree:0.1.1--h3ab6199_0

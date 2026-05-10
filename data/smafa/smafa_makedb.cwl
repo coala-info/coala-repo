@@ -26,12 +26,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: database_file_path
+    type: string
+    doc: Output or path parameter `database_file_path`
+    inputBinding:
+      position: 102
+      prefix: --database-file
 outputs:
   - id: database_file
     type: File
     doc: Output DB filename
     outputBinding:
-      glob: $(inputs.database_file)
+      glob: $(inputs.database_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/smafa:0.8.0--hc1c3326_1

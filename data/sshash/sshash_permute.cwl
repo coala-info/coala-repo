@@ -25,6 +25,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: output_fasta_path
+    type: string
+    doc: Output or path parameter `output_fasta_path`
+    inputBinding:
+      position: 103
+      prefix: --output-fasta
 outputs:
   - id: output_fasta
     type:
@@ -32,7 +38,9 @@ outputs:
       - File
     doc: Output FASTA file. If not specified, output to stdout.
     outputBinding:
-      glob: $(inputs.output_fasta)
+      glob: $(inputs.output_fasta_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sshash:5.0.0--haf24da9_0

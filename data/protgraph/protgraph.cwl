@@ -236,6 +236,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verify_graph
+  - id: export_output_folder_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `export_output_folder_path`
+    inputBinding:
+      position: 103
+      prefix: --export-output-folder
+  - id: output_csv_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_csv_path`
+    inputBinding:
+      position: 104
+      prefix: --output-csv
+  - id: pep_fasta_out_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pep_fasta_out_path`
+    inputBinding:
+      position: 105
+      prefix: --pep-fasta-out
 outputs:
   - id: output_csv
     type:
@@ -243,21 +267,23 @@ outputs:
       - File
     doc: Output CSV file
     outputBinding:
-      glob: $(inputs.output_csv)
+      glob: $(inputs.output_csv_path)
   - id: export_output_folder
     type:
       - 'null'
       - Directory
     doc: Folder for exported graphs
     outputBinding:
-      glob: $(inputs.export_output_folder)
+      glob: $(inputs.export_output_folder_path)
   - id: pep_fasta_out
     type:
       - 'null'
       - File
     doc: Output FASTA file for peptides
     outputBinding:
-      glob: $(inputs.pep_fasta_out)
+      glob: $(inputs.pep_fasta_out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/protgraph:0.3.12--pyhdfd78af_0

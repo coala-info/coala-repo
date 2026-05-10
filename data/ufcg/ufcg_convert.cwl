@@ -73,12 +73,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: fasta_path
+    type: string
+    doc: Output or path parameter `fasta_path`
+    inputBinding:
+      position: 102
+      prefix: --fasta
 outputs:
   - id: fasta
     type: File
     doc: Output FASTA file
     outputBinding:
-      glob: $(inputs.fasta)
+      glob: $(inputs.fasta_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ufcg:1.0.6--hdfd78af_0

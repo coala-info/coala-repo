@@ -275,6 +275,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --write-assignment-probs
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -282,7 +288,9 @@ outputs:
       - File
     doc: location where output quantification file should be written
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/oarfish:0.9.3--h5ca1c30_0

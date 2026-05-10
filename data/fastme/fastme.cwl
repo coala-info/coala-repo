@@ -196,6 +196,38 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_bootstrap_trees_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_bootstrap_trees_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-bootstrap-trees-file
+  - id: output_information_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_information_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-information-file
+  - id: output_matrix_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_matrix_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-matrix-file
+  - id: output_tree_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_tree_file_path`
+    inputBinding:
+      position: 105
+      prefix: --output-tree-file
 outputs:
   - id: output_tree_file
     type:
@@ -203,7 +235,7 @@ outputs:
       - File
     doc: FastME will write the infered tree into the output tree file.
     outputBinding:
-      glob: $(inputs.output_tree_file)
+      glob: $(inputs.output_tree_file_path)
   - id: output_matrix_file
     type:
       - 'null'
@@ -211,7 +243,7 @@ outputs:
     doc: Use this option if you want FastME to write the distances matrix 
       computed from the input alignment in the output matrix file.
     outputBinding:
-      glob: $(inputs.output_matrix_file)
+      glob: $(inputs.output_matrix_file_path)
   - id: output_information_file
     type:
       - 'null'
@@ -219,7 +251,7 @@ outputs:
     doc: Use this option if you want FastME to write information about its 
       execution in the output information file.
     outputBinding:
-      glob: $(inputs.output_information_file)
+      glob: $(inputs.output_information_file_path)
   - id: output_bootstrap_trees_file
     type:
       - 'null'
@@ -227,7 +259,9 @@ outputs:
     doc: Use this option if you want FastME to write bootstrap trees in the 
       bootstrap trees file.
     outputBinding:
-      glob: $(inputs.output_bootstrap_trees_file)
+      glob: $(inputs.output_bootstrap_trees_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fastme:2.1.6.3--h7b50bb2_1

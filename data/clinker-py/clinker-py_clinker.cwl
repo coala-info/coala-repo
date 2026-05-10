@@ -166,6 +166,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --use_file_order
+  - id: output_path
+    type: string
+    doc: Save alignments to file
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -173,7 +179,9 @@ outputs:
       - File
     doc: Save alignments to file
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/clinker-py:0.0.32--pyhdfd78af_0

@@ -274,7 +274,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: simulate relative abundance using tsv file [transcript name, count]  
+    doc: simulate relative abundance using tsv file [transcript name, count] 
       (for direct-rna & cDNA)
     inputBinding:
       position: 102
@@ -295,6 +295,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: out_signal_blow5
     type: File
@@ -307,7 +315,9 @@ outputs:
       - File
     doc: SLOW5/BLOW5 file to write
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/squigulator:0.4.0--h5ca1c30_2

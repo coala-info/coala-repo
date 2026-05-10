@@ -88,6 +88,35 @@ inputs:
     inputBinding:
       position: 102
       prefix: --write_spectrum_quants
+  - id: out_file_path
+    type:
+      - 'null'
+      - string
+    doc: Path to output file (writing in TSV format). N.B. if
+    inputBinding:
+      position: 103
+      prefix: --out_file
+  - id: write_fold_change_posteriors_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --write_fold_change_posteriors
+  - id: write_group_posteriors_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 105
+      prefix: --write_group_posteriors
+  - id: write_protein_posteriors_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 106
+      prefix: --write_protein_posteriors
 outputs:
   - id: out_file
     type:
@@ -97,7 +126,7 @@ outputs:
       treatment groups are present, suffixes will be added before the file 
       extension.
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
   - id: write_protein_posteriors
     type:
       - 'null'
@@ -105,7 +134,7 @@ outputs:
     doc: Write raw data of protein posteriors to the specified file in TSV 
       format.
     outputBinding:
-      glob: $(inputs.write_protein_posteriors)
+      glob: $(inputs.write_protein_posteriors_path)
   - id: write_group_posteriors
     type:
       - 'null'
@@ -113,7 +142,7 @@ outputs:
     doc: Write raw data of treatment group posteriors to the specified file in 
       TSV format.
     outputBinding:
-      glob: $(inputs.write_group_posteriors)
+      glob: $(inputs.write_group_posteriors_path)
   - id: write_fold_change_posteriors
     type:
       - 'null'
@@ -121,7 +150,9 @@ outputs:
     doc: Write raw data of fold change posteriors to the specified file in TSV 
       format.
     outputBinding:
-      glob: $(inputs.write_fold_change_posteriors)
+      glob: $(inputs.write_fold_change_posteriors_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/triqler:0.9.1--pyhdfd78af_0

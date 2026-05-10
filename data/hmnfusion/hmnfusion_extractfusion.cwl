@@ -45,6 +45,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --input-lumpy-vcf
+  - id: output_hmnfusion_json_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --output-hmnfusion-json
 outputs:
   - id: output_hmnfusion_json
     type:
@@ -52,7 +57,9 @@ outputs:
       - File
     doc: Json file output
     outputBinding:
-      glob: $(inputs.output_hmnfusion_json)
+      glob: $(inputs.output_hmnfusion_json_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmnfusion:1.5.1--pyh7e72e81_0

@@ -146,6 +146,22 @@ inputs:
     inputBinding:
       position: 103
       prefix: --tag-supplementary
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
+  - id: output_haplotag_list_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_haplotag_list_path`
+    inputBinding:
+      position: 105
+      prefix: --output-haplotag-list
 outputs:
   - id: output
     type:
@@ -153,7 +169,7 @@ outputs:
       - File
     doc: Output file. If omitted, use standard output.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: output_haplotag_list
     type:
       - 'null'
@@ -161,7 +177,9 @@ outputs:
     doc: Write assignments of read names to haplotypes (tab separated) to given 
       output file. If filename ends in .gz, then output is gzipped.
     outputBinding:
-      glob: $(inputs.output_haplotag_list)
+      glob: $(inputs.output_haplotag_list_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/whatshap:2.8--py39h2de1943_0

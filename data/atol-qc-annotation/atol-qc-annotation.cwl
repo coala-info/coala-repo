@@ -90,12 +90,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: outdir_path
+    type: string
+    doc: Output directory
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type: Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/atol-qc-annotation:0.1.4--pyhdfd78af_0

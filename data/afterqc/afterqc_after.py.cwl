@@ -297,6 +297,46 @@ inputs:
     inputBinding:
       position: 101
       prefix: --unqualified_base_limit
+  - id: bad_output_folder_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `bad_output_folder_path`
+    inputBinding:
+      position: 102
+      prefix: --bad-output-folder
+  - id: debubble_dir_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `debubble_dir_path`
+    inputBinding:
+      position: 103
+      prefix: --debubble-dir
+  - id: good_output_folder_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `good_output_folder_path`
+    inputBinding:
+      position: 104
+      prefix: --good-output-folder
+  - id: overlap_output_folder_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `overlap_output_folder_path`
+    inputBinding:
+      position: 105
+      prefix: --overlap-output-folder
+  - id: report_output_folder_path
+    type:
+      - 'null'
+      - Directory
+    doc: Output or path parameter `report_output_folder_path`
+    inputBinding:
+      position: 106
+      prefix: --report-output-folder
 outputs:
   - id: good_output_folder
     type:
@@ -305,7 +345,7 @@ outputs:
     doc: the folder to store good reads, by default it is named 'good', in the 
       current directory
     outputBinding:
-      glob: $(inputs.good_output_folder)
+      glob: $(inputs.good_output_folder_path)
   - id: bad_output_folder
     type:
       - 'null'
@@ -313,7 +353,7 @@ outputs:
     doc: the folder to store bad reads, by default it is named 'bad', in the 
       same folder as good_output_folder
     outputBinding:
-      glob: $(inputs.bad_output_folder)
+      glob: $(inputs.bad_output_folder_path)
   - id: report_output_folder
     type:
       - 'null'
@@ -321,7 +361,7 @@ outputs:
     doc: the folder to store QC reports, by default it is named 'QC', in the 
       same folder as good_output_folder
     outputBinding:
-      glob: $(inputs.report_output_folder)
+      glob: $(inputs.report_output_folder_path)
   - id: debubble_dir
     type:
       - 'null'
@@ -329,14 +369,16 @@ outputs:
     doc: specify the folder to store output of debubble algorithm, default is 
       debubble
     outputBinding:
-      glob: $(inputs.debubble_dir)
+      glob: $(inputs.debubble_dir_path)
   - id: overlap_output_folder
     type:
       - 'null'
       - Directory
     doc: the folder to store only overlapped bases of the good reads
     outputBinding:
-      glob: $(inputs.overlap_output_folder)
+      glob: $(inputs.overlap_output_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/afterqc:0.9.7--py27_0

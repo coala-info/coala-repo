@@ -3,8 +3,8 @@ class: CommandLineTool
 baseCommand: pigz
 label: pigz_unpigz
 doc: "pigz does what gzip does, but spreads the work over multiple processors and
-  cores when compressing. It will compress files in place, adding the suffix '.gz'.\n
-  \nTool homepage: https://github.com/madler/pigz"
+  cores when compressing. It will compress files in place, adding the suffix '.gz'.\n\
+  \ \nTool homepage: https://github.com/madler/pigz"
 inputs:
   - id: files
     type:
@@ -270,6 +270,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --zlib
+  - id: stdout_path
+    type: string
+    doc: Output or path parameter `stdout_path`
+    inputBinding:
+      position: 103
+      prefix: --stdout
 outputs:
   - id: stdout
     type:
@@ -277,7 +283,9 @@ outputs:
       - File
     doc: Write all processed output to stdout (won't delete)
     outputBinding:
-      glob: $(inputs.stdout)
+      glob: $(inputs.stdout_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pigz:2.8

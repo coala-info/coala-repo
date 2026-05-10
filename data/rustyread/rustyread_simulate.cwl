@@ -142,6 +142,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --start_adapter_seq
+  - id: output_path_path
+    type: string
+    doc: Output or path parameter `output_path_path`
+    inputBinding:
+      position: 102
+      prefix: --output-path
 outputs:
   - id: output_path
     type:
@@ -149,7 +155,9 @@ outputs:
       - File
     doc: Path where read is write
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rustyread:0.4.1--heebf65f_4

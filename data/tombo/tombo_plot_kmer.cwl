@@ -90,6 +90,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --upstream-bases
+  - id: pdf_filename_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pdf_filename_path`
+    inputBinding:
+      position: 102
+      prefix: --pdf-filename
+  - id: r_data_filename_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `r_data_filename_path`
+    inputBinding:
+      position: 103
+      prefix: --r-data-filename
 outputs:
   - id: pdf_filename
     type:
@@ -97,14 +113,16 @@ outputs:
       - File
     doc: PDF filename to store plot(s).
     outputBinding:
-      glob: $(inputs.pdf_filename)
+      glob: $(inputs.pdf_filename_path)
   - id: r_data_filename
     type:
       - 'null'
       - File
     doc: Filename to save R data structure.
     outputBinding:
-      glob: $(inputs.r_data_filename)
+      glob: $(inputs.r_data_filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tombo:1.0--py27_0

@@ -45,6 +45,14 @@ inputs:
     inputBinding:
       position: 106
       prefix: --verbose
+  - id: output_vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_vcf_path`
+    inputBinding:
+      position: 107
+      prefix: --output-vcf
 outputs:
   - id: output_vcf
     type:
@@ -52,12 +60,14 @@ outputs:
       - File
     doc: File to output variants called when running CAGe
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf_path)
   - id: cage_output_file
     type: File
     doc: File to output the changepoints determined by CAGe
     outputBinding:
       glob: '*.out'
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cage:2016.05.13--he8c0b07_8

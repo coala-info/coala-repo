@@ -158,6 +158,38 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threads
+  - id: html_path
+    type:
+      - 'null'
+      - string
+    doc: "HTML output file. default: '<input>.html'."
+    inputBinding:
+      position: 104
+      prefix: --html
+  - id: images_zip_path
+    type:
+      - 'null'
+      - string
+    doc: If supplied, will create a zip file with the images at
+    inputBinding:
+      position: 105
+      prefix: --images-zip
+  - id: json_path
+    type:
+      - 'null'
+      - string
+    doc: "JSON output file. default: '<input>.json'."
+    inputBinding:
+      position: 106
+      prefix: --json
+  - id: outdir_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 107
+      prefix: --outdir
 outputs:
   - id: json
     type:
@@ -165,21 +197,21 @@ outputs:
       - File
     doc: JSON output file.
     outputBinding:
-      glob: $(inputs.json)
+      glob: $(inputs.json_path)
   - id: html
     type:
       - 'null'
       - File
     doc: HTML output file.
     outputBinding:
-      glob: $(inputs.html)
+      glob: $(inputs.html_path)
   - id: outdir
     type:
       - 'null'
       - Directory
     doc: Output directory for the report files.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
   - id: images_zip
     type:
       - 'null'
@@ -187,7 +219,9 @@ outputs:
     doc: If supplied, will create a zip file with the images at the supplied 
       location.
     outputBinding:
-      glob: $(inputs.images_zip)
+      glob: $(inputs.images_zip_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sequali:1.0.2--py310h1fe012e_0

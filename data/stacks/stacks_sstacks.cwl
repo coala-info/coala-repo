@@ -54,6 +54,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: out_path_path
+    type: string
+    doc: Output or path parameter `out_path_path`
+    inputBinding:
+      position: 102
+      prefix: --out-path
 outputs:
   - id: out_path
     type:
@@ -61,7 +67,9 @@ outputs:
       - Directory
     doc: output path to write results.
     outputBinding:
-      glob: $(inputs.out_path)
+      glob: $(inputs.out_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/stacks:2.68--h077b44d_3

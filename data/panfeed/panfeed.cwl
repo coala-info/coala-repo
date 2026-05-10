@@ -43,7 +43,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Center the --downstream argument at the start codon (default is stop codon)
+    doc: Center the --downstream argument at the start codon (default is stop 
+      codon)
     inputBinding:
       position: 101
       prefix: --downstream-start-codon
@@ -51,9 +52,10 @@ inputs:
     type:
       - 'null'
       - Directory
-    doc: Directory containing all samples' nucleotide fasta files, or a file listing
-      the relative path to each fasta file, one per line (extension either .fasta
-      or .fna, samples should be named in the same way as in the panaroo header)
+    doc: Directory containing all samples' nucleotide fasta files, or a file 
+      listing the relative path to each fasta file, one per line (extension 
+      either .fasta or .fna, samples should be named in the same way as in the 
+      panaroo header)
     inputBinding:
       position: 101
       prefix: --fasta
@@ -68,10 +70,10 @@ inputs:
       prefix: --genes
   - id: gff
     type: Directory
-    doc: Directory containing all samples' GFF files, or a file listing the relative
-      path to each GFF file, one per line (must contain nucleotide sequence as well
-      unless -f is used, and samples should be named in the same way as in the panaroo
-      header)
+    doc: Directory containing all samples' GFF files, or a file listing the 
+      relative path to each GFF file, one per line (must contain nucleotide 
+      sequence as well unless -f is used, and samples should be named in the 
+      same way as in the panaroo header)
     inputBinding:
       position: 101
       prefix: --gff
@@ -105,8 +107,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not filter out k-mers with the same presence absence pattern as the gene
-      cluster itself
+    doc: Do not filter out k-mers with the same presence absence pattern as the 
+      gene cluster itself
     inputBinding:
       position: 101
       prefix: --no-filter
@@ -168,14 +170,23 @@ inputs:
     inputBinding:
       position: 101
       prefix: -v
+  - id: output_path
+    type: string
+    doc: Output directory to store outputs (will cause an error
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
       - 'null'
       - Directory
-    doc: Output directory to store outputs (will cause an error if already present)
+    doc: Output directory to store outputs (will cause an error if already 
+      present)
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panfeed:1.7.2--pyhdfd78af_0

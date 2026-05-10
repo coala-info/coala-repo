@@ -85,6 +85,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --tmp_dir
+  - id: output_path_path
+    type: string
+    doc: Output or path parameter `output_path_path`
+    inputBinding:
+      position: 103
+      prefix: --output-path
 outputs:
   - id: output_path
     type:
@@ -92,7 +98,9 @@ outputs:
       - Directory
     doc: Path to blast output
     outputBinding:
-      glob: $(inputs.output_path)
+      glob: $(inputs.output_path_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/plasmidfinder:2.1.6--hdfd78af_0

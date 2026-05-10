@@ -122,12 +122,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: -threads
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 103
+      prefix: --outdir
 outputs:
   - id: outdir
     type: Directory
     doc: Folder to output result to.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/perl-pcap:3.5.2--pl526h14c3975_0

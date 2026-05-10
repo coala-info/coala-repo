@@ -35,12 +35,20 @@ inputs:
     inputBinding:
       position: 102
       prefix: --gtf
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 103
+      prefix: --out
 outputs:
   - id: out
     type: File
     doc: Output file path for FPKM values.
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnanorm:2.2.0--pyhdfd78af_1

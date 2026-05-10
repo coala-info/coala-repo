@@ -46,6 +46,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --vcf
+  - id: output_prefix_path
+    type: string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 103
+      prefix: --output-prefix
 outputs:
   - id: output_prefix
     type:
@@ -53,7 +59,9 @@ outputs:
       - File
     doc: Prefix for the output files
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/authentict:1.0.1--py311h9f5acd7_0

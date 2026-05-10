@@ -11,8 +11,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: BLAST output (-outfmt "6 qseqid sseqid pident length qlen slen evalue bitscore"),
-      if given then skip BLAST.
+    doc: BLAST output (-outfmt "6 qseqid sseqid pident length qlen slen evalue 
+      bitscore"), if given then skip BLAST.
     inputBinding:
       position: 101
       prefix: --blastout
@@ -42,8 +42,8 @@ inputs:
       prefix: --id
   - id: indir
     type: Directory
-    doc: Input folder. Should be the output folder of stage_one (containing <metadata.txt>
-      and <extracted.fa>).
+    doc: Input folder. Should be the output folder of stage_one (containing 
+      <metadata.txt> and <extracted.fa>).
     inputBinding:
       position: 101
       prefix: --indir
@@ -95,6 +95,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --thread
+  - id: outdir_path
+    type: string
+    doc: Output or path parameter `outdir_path`
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -102,7 +108,9 @@ outputs:
       - Directory
     doc: Output folder, if not given then same as input folder (--indir).
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/args_oap:3.2.4--pyhdfd78af_0

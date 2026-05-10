@@ -90,8 +90,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Compute the surface for an internal cavity for which at least one atom is
-      specified
+    doc: Compute the surface for an internal cavity for which at least one atom 
+      is specified
     inputBinding:
       position: 101
       prefix: -one_cavity
@@ -143,6 +143,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -xdr
+  - id: area_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `area_file_path`
+    inputBinding:
+      position: 102
+      prefix: --area-file
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 103
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -150,14 +166,16 @@ outputs:
       - File
     doc: output for triangulated surface
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: area_file
     type:
       - 'null'
       - File
     doc: area file
     outputBinding:
-      glob: $(inputs.area_file)
+      glob: $(inputs.area_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/scripps-msms:2.6.1--h9ee0642_0

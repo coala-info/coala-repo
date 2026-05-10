@@ -69,8 +69,8 @@ inputs:
       - 'null'
       - type: array
         items: float
-    doc: print output for the AMAP Display Java based GUI; takes optional START weight
-      and STEP size
+    doc: print output for the AMAP Display Java based GUI; takes optional START 
+      weight and STEP size
     inputBinding:
       position: 102
       prefix: -gui
@@ -153,10 +153,26 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: use Viterbi algorithm to generate all pairs (automatically enables -pairs)
+    doc: use Viterbi algorithm to generate all pairs (automatically enables 
+      -pairs)
     inputBinding:
       position: 102
       prefix: -viterbi
+  - id: annotation_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `annotation_file_path`
+    inputBinding:
+      position: 103
+      prefix: --annotation-file
+  - id: train_path
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 104
+      prefix: --train
 outputs:
   - id: annotation_file
     type:
@@ -164,14 +180,16 @@ outputs:
       - File
     doc: write annotation for multiple alignment to FILENAME
     outputBinding:
-      glob: $(inputs.annotation_file)
+      glob: $(inputs.annotation_file_path)
   - id: train
     type:
       - 'null'
       - File
     doc: 'compute EM transition probabilities, store in FILENAME (default: no training)'
     outputBinding:
-      glob: $(inputs.train)
+      glob: $(inputs.train_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/amap:2.2--h6bb024c_0

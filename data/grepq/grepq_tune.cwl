@@ -54,6 +54,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --variants
+  - id: json_matches_path
+    type: string
+    doc: Output or path parameter `json_matches_path`
+    inputBinding:
+      position: 104
+      prefix: --json-matches
 outputs:
   - id: json_matches
     type:
@@ -61,7 +67,9 @@ outputs:
       - File
     doc: Write the output to a JSON file called matches.json
     outputBinding:
-      glob: $(inputs.json_matches)
+      glob: $(inputs.json_matches_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/grepq:1.5.4--h6ce8773_0

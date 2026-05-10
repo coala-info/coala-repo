@@ -333,6 +333,46 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbosity
+  - id: output_all_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_all_path`
+    inputBinding:
+      position: 103
+      prefix: --output-all
+  - id: output_errors_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_errors_path`
+    inputBinding:
+      position: 104
+      prefix: --output-errors
+  - id: output_fasta_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_fasta_path`
+    inputBinding:
+      position: 105
+      prefix: --output-fasta
+  - id: output_insertions_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_insertions_path`
+    inputBinding:
+      position: 106
+      prefix: --output-insertions
+  - id: output_translations_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_translations_path`
+    inputBinding:
+      position: 107
+      prefix: --output-translations
 outputs:
   - id: output_all
     type:
@@ -350,7 +390,7 @@ outputs:
       `--output-insertions`, `--output-errors`\n\nIf the required directory tree does
       not exist, it will be created."
     outputBinding:
-      glob: $(inputs.output_all)
+      glob: $(inputs.output_all_path)
   - id: output_fasta
     type:
       - 'null'
@@ -362,7 +402,7 @@ outputs:
       \"-\" to write the uncompressed to\nstandard output (stdout).\n\nIf the required
       directory tree does not exist, it will be created."
     outputBinding:
-      glob: $(inputs.output_fasta)
+      glob: $(inputs.output_fasta_path)
   - id: output_translations
     type:
       - 'null'
@@ -379,7 +419,7 @@ outputs:
       (stdout).\n\nIf the required directory tree does not exist, it will be created.\n\
       \nExample for bash shell:\n\n--output-translations='output_dir/gene_{gene}.translation.fasta'"
     outputBinding:
-      glob: $(inputs.output_translations)
+      glob: $(inputs.output_translations_path)
   - id: output_insertions
     type:
       - 'null'
@@ -391,7 +431,7 @@ outputs:
       be written compressed. Use \"-\" to write the uncompressed to\nstandard output
       (stdout).\n\nIf the required directory tree does not exist, it will be created."
     outputBinding:
-      glob: $(inputs.output_insertions)
+      glob: $(inputs.output_insertions_path)
   - id: output_errors
     type:
       - 'null'
@@ -403,7 +443,9 @@ outputs:
       be written compressed. Use \"-\" to write the uncompressed to\nstandard output
       (stdout).\n\nIf the required directory tree does not exist, it will be created."
     outputBinding:
-      glob: $(inputs.output_errors)
+      glob: $(inputs.output_errors_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/nextalign:2.14.0--h9ee0642_1

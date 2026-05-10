@@ -43,12 +43,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threshold
+  - id: output_location_path
+    type: string
+    doc: Output or path parameter `output_location_path`
+    inputBinding:
+      position: 102
+      prefix: --output-location
 outputs:
   - id: output_location
     type: Directory
     doc: Output files location
     outputBinding:
-      glob: $(inputs.output_location)
+      glob: $(inputs.output_location_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kin:3.1.4--pyhdfd78af_0

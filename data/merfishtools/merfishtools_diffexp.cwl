@@ -42,6 +42,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threads
+  - id: cdf_file_path
+    type: string
+    doc: Output or path parameter `cdf_file_path`
+    inputBinding:
+      position: 104
+      prefix: --cdf-file
 outputs:
   - id: cdf_file
     type:
@@ -49,7 +55,9 @@ outputs:
       - File
     doc: Path to write CDFs of log2 fold changes to.
     outputBinding:
-      glob: $(inputs.cdf_file)
+      glob: $(inputs.cdf_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/merfishtools:1.5.0--py312h9d36253_3

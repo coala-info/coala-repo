@@ -34,6 +34,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: output_folder_path
+    type: Directory
+    doc: Output or path parameter `output_folder_path`
+    inputBinding:
+      position: 102
+      prefix: --output-folder
 outputs:
   - id: output_folder
     type:
@@ -41,7 +47,9 @@ outputs:
       - Directory
     doc: Output Folder. Default is ~/dehost_output/dehost_2026-02-25
     outputBinding:
-      glob: $(inputs.output_folder)
+      glob: $(inputs.output_folder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sanitizeme:1.1--hdfd78af_2

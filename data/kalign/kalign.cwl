@@ -61,6 +61,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --termgapext
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -68,7 +74,9 @@ outputs:
       - File
     doc: Output file for the alignment.
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/kalign:v1-2.0320110620-5-deb_cv1

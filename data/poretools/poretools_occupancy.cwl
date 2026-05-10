@@ -27,6 +27,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --quiet
+  - id: saveas_path
+    type: string
+    doc: Output or path parameter `saveas_path`
+    inputBinding:
+      position: 103
+      prefix: --saveas
 outputs:
   - id: saveas
     type:
@@ -34,7 +40,9 @@ outputs:
       - File
     doc: Save the plot to a file. Extension (.pdf or .png) drives type.
     outputBinding:
-      glob: $(inputs.saveas)
+      glob: $(inputs.saveas_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/poretools:0.6.1a0--py27_0

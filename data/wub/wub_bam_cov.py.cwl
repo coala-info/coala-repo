@@ -39,6 +39,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -c
+  - id: output_tsv_path
+    type: string
+    doc: Output or path parameter `output_tsv_path`
+    inputBinding:
+      position: 103
+      prefix: --output-tsv
 outputs:
   - id: output_tsv
     type:
@@ -46,7 +52,9 @@ outputs:
       - File
     doc: Output TSV
     outputBinding:
-      glob: $(inputs.output_tsv)
+      glob: $(inputs.output_tsv_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/wub:0.5.1--pyh3252c3a_0

@@ -39,7 +39,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: The maximum error rate allowed for a sequence to be included in the consensus.
+    doc: The maximum error rate allowed for a sequence to be included in the 
+      consensus.
     inputBinding:
       position: 101
       prefix: --maxerror
@@ -47,7 +48,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: The maximum gap fraction allowed for a position to be included in the consensus.
+    doc: The maximum gap fraction allowed for a position to be included in the 
+      consensus.
     inputBinding:
       position: 101
       prefix: --maxgap
@@ -63,7 +65,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: The minimum frequency for a character to be considered for the consensus.
+    doc: The minimum frequency for a character to be considered for the 
+      consensus.
     inputBinding:
       position: 101
       prefix: -p
@@ -71,10 +74,27 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The minimum quality score for a position to be included in the consensus.
+    doc: The minimum quality score for a position to be included in the 
+      consensus.
     inputBinding:
       position: 101
       prefix: -q
+  - id: log_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_file_path`
+    inputBinding:
+      position: 102
+      prefix: --log-file
+  - id: out_name_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_name_path`
+    inputBinding:
+      position: 103
+      prefix: --out-name
 outputs:
   - id: out_name
     type:
@@ -82,14 +102,16 @@ outputs:
       - File
     doc: The prefix for the output file name.
     outputBinding:
-      glob: $(inputs.out_name)
+      glob: $(inputs.out_name_path)
   - id: log_file
     type:
       - 'null'
       - File
     doc: The name of the log file.
     outputBinding:
-      glob: $(inputs.log_file)
+      glob: $(inputs.log_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/presto:0.7.8--pyhdfd78af_0

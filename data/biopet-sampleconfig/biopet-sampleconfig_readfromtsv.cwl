@@ -10,9 +10,9 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: Input must be a tsv file, first line is seen as header and must at least
-      have a 'sample' column, 'library' column is optional, multiple files can be
-      specified by using multiple flags.
+    doc: Input must be a tsv file, first line is seen as header and must at 
+      least have a 'sample' column, 'library' column is optional, multiple files
+      can be specified by using multiple flags.
     inputBinding:
       position: 101
       prefix: --inputFiles
@@ -30,20 +30,29 @@ inputs:
       - 'null'
       - type: array
         items: File
-    doc: This works the same as for a normal input file. Difference is that it placed
-      in a sub key 'tags' in the config file
+    doc: This works the same as for a normal input file. Difference is that it 
+      placed in a sub key 'tags' in the config file
     inputBinding:
       position: 101
       prefix: --tagFiles
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 102
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
       - 'null'
       - File
-    doc: When the extension is .yml or .yaml the output is in yaml format, otherwise
-      it is in json. When no file is given the output goes to stdout as yaml.
+    doc: When the extension is .yml or .yaml the output is in yaml format, 
+      otherwise it is in json. When no file is given the output goes to stdout 
+      as yaml.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/biopet-sampleconfig:0.3--0

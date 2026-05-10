@@ -101,6 +101,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --threads
+  - id: not_visited_tsv_file_path
+    type: string
+    doc: Output or path parameter `not_visited_tsv_file_path`
+    inputBinding:
+      position: 102
+      prefix: --not-visited-tsv-file
 outputs:
   - id: not_visited_tsv_file
     type:
@@ -108,7 +114,9 @@ outputs:
       - File
     doc: Write target path(s) that do not visit the query path(s) to this FILE.
     outputBinding:
-      glob: $(inputs.not_visited_tsv_file)
+      glob: $(inputs.not_visited_tsv_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/odgi:0.9.4--h077b44d_0

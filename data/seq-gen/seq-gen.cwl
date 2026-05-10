@@ -67,8 +67,8 @@ inputs:
       - 'null'
       - type: array
         items: float
-    doc: Shape (alpha) for gamma rate heterogeneity (can be one value or three for
-      codon positions)
+    doc: Shape (alpha) for gamma rate heterogeneity (can be one value or three 
+      for codon positions)
     inputBinding:
       position: 102
       prefix: -a
@@ -160,7 +160,8 @@ inputs:
       - 'null'
       - type: array
         items: float
-    doc: Transition-transversion ratio (can be one value or three for codon positions)
+    doc: Transition-transversion ratio (can be one value or three for codon 
+      positions)
     inputBinding:
       position: 102
       prefix: -t
@@ -173,6 +174,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: -w
+  - id: output_filename_path
+    type: string
+    doc: Output or path parameter `output_filename_path`
+    inputBinding:
+      position: 103
+      prefix: --output-filename
 outputs:
   - id: output_filename
     type:
@@ -180,7 +187,9 @@ outputs:
       - File
     doc: Name of output file [default = to stdout, required for FASTA]
     outputBinding:
-      glob: $(inputs.output_filename)
+      glob: $(inputs.output_filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seq-gen:1.3.5--h7b50bb2_0

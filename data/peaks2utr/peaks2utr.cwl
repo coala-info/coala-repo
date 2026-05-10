@@ -130,6 +130,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --skip-validation
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -137,7 +143,9 @@ outputs:
       - File
     doc: output filename. Defaults to <GFF_IN basename>.new.<ext>
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/peaks2utr:1.4.1--pyhdfd78af_0

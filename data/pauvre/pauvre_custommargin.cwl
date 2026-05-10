@@ -52,8 +52,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Specify this option if you don't want a transparent background. Default is
-      on.
+    doc: Specify this option if you don't want a transparent background. Default
+      is on.
     inputBinding:
       position: 101
       prefix: --no_transparent
@@ -77,7 +77,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Sets the minimum viewing area in the quality dimension. Default value = 0
+    doc: Sets the minimum viewing area in the quality dimension. Default value =
+      0
     inputBinding:
       position: 101
       prefix: --plot_min_x
@@ -85,7 +86,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Sets the minimum viewing area in the length dimension. Default value = 0
+    doc: Sets the minimum viewing area in the length dimension. Default value = 
+      0
     inputBinding:
       position: 101
       prefix: --plot_min_y
@@ -109,8 +111,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: This sets the title for the whole plot. Use --title "Crustacean's DNA read
-      quality" if you need single quote or apostrophe inside title.
+    doc: This sets the title for the whole plot. Use --title "Crustacean's DNA 
+      read quality" if you need single quote or apostrophe inside title.
     inputBinding:
       position: 101
       prefix: --title
@@ -146,15 +148,23 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ycol
+  - id: output_base_name_path
+    type: string
+    doc: Output or path parameter `output_base_name_path`
+    inputBinding:
+      position: 102
+      prefix: --output-base-name
 outputs:
   - id: output_base_name
     type:
       - 'null'
       - File
-    doc: Specify a base name for the output file(s). The input file base name is the
-      default.
+    doc: Specify a base name for the output file(s). The input file base name is
+      the default.
     outputBinding:
-      glob: $(inputs.output_base_name)
+      glob: $(inputs.output_base_name_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pauvre:0.1924--py_0

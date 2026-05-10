@@ -4,8 +4,8 @@ baseCommand:
   - bwa-meme
   - mem
 label: bwa-meme_mem
-doc: "BWA-MEME (bwa-mem2) alignment tool using learned or ERT indexes for seeding.\n
-  \nTool homepage: https://github.com/kaist-ina/BWA-MEME"
+doc: "BWA-MEME (bwa-mem2) alignment tool using learned or ERT indexes for seeding.\n\
+  \ \nTool homepage: https://github.com/kaist-ina/BWA-MEME"
 inputs:
   - id: idxbase
     type: File
@@ -52,7 +52,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: drop chains shorter than FLOAT fraction of the longest overlapping chain
+    doc: drop chains shorter than FLOAT fraction of the longest overlapping 
+      chain
     inputBinding:
       position: 104
       prefix: -D
@@ -92,7 +93,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: specify the mean, standard deviation, max and min of the insert size distribution
+    doc: specify the mean, standard deviation, max and min of the insert size 
+      distribution
     inputBinding:
       position: 104
       prefix: -I
@@ -236,7 +238,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: for split alignment, take the alignment with the smallest coordinate as primary
+    doc: for split alignment, take the alignment with the smallest coordinate as
+      primary
     inputBinding:
       position: 104
       prefix: '-5'
@@ -308,10 +311,17 @@ inputs:
     type:
       - 'null'
       - string
-    doc: if there are <INT hits with score >80% of the max score, output all in XA
+    doc: if there are <INT hits with score >80% of the max score, output all in 
+      XA
     inputBinding:
       position: 104
       prefix: -h
+  - id: output_sam_path
+    type: string
+    doc: Output or path parameter `output_sam_path`
+    inputBinding:
+      position: 105
+      prefix: --output-sam
 outputs:
   - id: output_sam
     type:
@@ -319,7 +329,9 @@ outputs:
       - File
     doc: Output SAM file name
     outputBinding:
-      glob: $(inputs.output_sam)
+      glob: $(inputs.output_sam_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bwa-meme:1.0.6--hdcf5f25_2

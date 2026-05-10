@@ -174,6 +174,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --umi_prefix
+  - id: html_report_path
+    type: string
+    doc: Output or path parameter `html_report_path`
+    inputBinding:
+      position: 102
+      prefix: --html-report
 outputs:
   - id: html_report
     type:
@@ -181,7 +187,9 @@ outputs:
       - File
     doc: the html format report file name
     outputBinding:
-      glob: $(inputs.html_report)
+      glob: $(inputs.html_report_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gencore:0.17.2--he5ce664_4

@@ -60,6 +60,12 @@ inputs:
     inputBinding:
       position: 102
       prefix: --verbose
+  - id: output_filename_path
+    type: string
+    doc: Output or path parameter `output_filename_path`
+    inputBinding:
+      position: 103
+      prefix: --output-filename
 outputs:
   - id: output_filename
     type:
@@ -67,7 +73,9 @@ outputs:
       - File
     doc: Specify the path to a file for storing the phenomizer output.
     outputBinding:
-      glob: $(inputs.output_filename)
+      glob: $(inputs.output_filename_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/query_phenomizer:1.2.1--pyh7cba7a3_0

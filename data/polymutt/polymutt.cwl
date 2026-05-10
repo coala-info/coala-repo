@@ -213,6 +213,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tstv_denovo
+  - id: out_vcf_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_vcf_path`
+    inputBinding:
+      position: 102
+      prefix: --out-vcf
+  - id: pos_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `pos_path`
+    inputBinding:
+      position: 103
+      prefix: --pos
 outputs:
   - id: out_vcf
     type:
@@ -220,14 +236,16 @@ outputs:
       - File
     doc: Output VCF file
     outputBinding:
-      glob: $(inputs.out_vcf)
+      glob: $(inputs.out_vcf_path)
   - id: pos
     type:
       - 'null'
       - File
     doc: Output positions file
     outputBinding:
-      glob: $(inputs.pos)
+      glob: $(inputs.pos_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/polymutt:0.18--0

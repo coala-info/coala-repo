@@ -8,16 +8,16 @@ doc: "argNorm normalizes ARG annotation results from different tools and databas
 inputs:
   - id: tool
     type: string
-    doc: The bioinformatics tool used for ARG annotation (argsoap, abricate, deeparg,
-      resfinder, amrfinderplus, groot, or hamronization).
+    doc: The bioinformatics tool used for ARG annotation (argsoap, abricate, 
+      deeparg, resfinder, amrfinderplus, groot, or hamronization).
     inputBinding:
       position: 1
   - id: db
     type:
       - 'null'
       - string
-    doc: The database used alongside the ARG annotation tool. This is only required
-      if abricate or groot is used as a tool.
+    doc: The database used alongside the ARG annotation tool. This is only 
+      required if abricate or groot is used as a tool.
     inputBinding:
       position: 102
       prefix: --db
@@ -25,9 +25,9 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: skip rows with unsupported tools for hamronization outputs. argNorm be default
-      will raise an exception if unsupported tool is found in hamronization. Use this
-      if you only want argNorm to raise a warning.
+    doc: skip rows with unsupported tools for hamronization outputs. argNorm be 
+      default will raise an exception if unsupported tool is found in 
+      hamronization. Use this if you only want argNorm to raise a warning.
     inputBinding:
       position: 102
       prefix: --hamronization_skip_unsupported_tool
@@ -37,12 +37,21 @@ inputs:
     inputBinding:
       position: 102
       prefix: --input
+  - id: output_path
+    type: string
+    doc: '-o (required): The path to the output file where you'
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: output
     type: File
-    doc: The path to the output file where you would like to store argNorm's results
+    doc: The path to the output file where you would like to store argNorm's 
+      results
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/argnorm:1.1.0--pyhdfd78af_0

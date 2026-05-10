@@ -119,26 +119,52 @@ inputs:
     inputBinding:
       position: 101
       prefix: --vcf
+  - id: germline_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `germline_output_path`
+    inputBinding:
+      position: 102
+      prefix: --germline-output
+  - id: output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 103
+      prefix: --output
+  - id: somatic_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `somatic_output_path`
+    inputBinding:
+      position: 104
+      prefix: --somatic-output
 outputs:
   - id: output
     type: File
     doc: Output VCF with PASS columns and CLASS added to INFO
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
   - id: somatic_output
     type:
       - 'null'
       - File
     doc: Output VCF containing only PASS somatic variants
     outputBinding:
-      glob: $(inputs.somatic_output)
+      glob: $(inputs.somatic_output_path)
   - id: germline_output
     type:
       - 'null'
       - File
     doc: Output VCF containing only PASS germline variants
     outputBinding:
-      glob: $(inputs.germline_output)
+      glob: $(inputs.germline_output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/savana:1.3.6--pyhdfd78af_0

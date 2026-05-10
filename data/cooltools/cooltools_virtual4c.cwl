@@ -45,13 +45,21 @@ inputs:
     inputBinding:
       position: 103
       prefix: --nproc
+  - id: out_prefix_path
+    type: string
+    doc: Output or path parameter `out_prefix_path`
+    inputBinding:
+      position: 104
+      prefix: --out-prefix
 outputs:
   - id: out_prefix
     type: File
     doc: Save virtual 4C track as a BED-like file. Contact frequency is stored 
       in out_prefix.v4C.tsv
     outputBinding:
-      glob: $(inputs.out_prefix)
+      glob: $(inputs.out_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cooltools:0.7.1--py311h93dcfea_3

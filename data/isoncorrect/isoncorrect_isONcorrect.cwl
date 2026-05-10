@@ -165,6 +165,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --xmin
+  - id: outfolder_path
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --outfolder
 outputs:
   - id: outfolder
     type:
@@ -173,7 +178,9 @@ outputs:
     doc: A fasta file with transcripts that are shared between samples and have 
       perfect illumina support.
     outputBinding:
-      glob: $(inputs.outfolder)
+      glob: $(inputs.outfolder_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/isoncorrect:0.1.3.5--pyhdfd78af_0

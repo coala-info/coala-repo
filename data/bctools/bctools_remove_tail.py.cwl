@@ -31,6 +31,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --verbose
+  - id: outfile_path
+    type: string
+    doc: Output or path parameter `outfile_path`
+    inputBinding:
+      position: 104
+      prefix: --outfile
 outputs:
   - id: outfile
     type:
@@ -38,7 +44,9 @@ outputs:
       - File
     doc: Write results to this file.
     outputBinding:
-      glob: $(inputs.outfile)
+      glob: $(inputs.outfile_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bctools:0.2.2--pl5.22.0_0

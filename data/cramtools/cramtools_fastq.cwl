@@ -8,9 +8,9 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Use this quality score (decimal representation of ASCII symbol) as a default
-      value when the original quality score was lost due to compression. Minimum is
-      33.
+    doc: Use this quality score (decimal representation of ASCII symbol) as a 
+      default value when the original quality score was lost due to compression.
+      Minimum is 33.
     inputBinding:
       position: 101
       prefix: --default-quality-score
@@ -18,8 +18,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Append read names with read index (/1 for first in pair, /2 for second in
-      pair).
+    doc: Append read names with read index (/1 for first in pair, /2 for second 
+      in pair).
     inputBinding:
       position: 101
       prefix: --enumerate
@@ -35,8 +35,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Issue a warning on sequence MD5 mismatch and continue. This does not garantee
-      the data will be read succesfully.
+    doc: Issue a warning on sequence MD5 mismatch and continue. This does not 
+      garantee the data will be read succesfully.
     inputBinding:
       position: 101
       prefix: --ignore-md5-mismatch
@@ -76,8 +76,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Path to the reference fasta file, it must be uncompressed and indexed (use
-      'samtools faidx' for example).
+    doc: Path to the reference fasta file, it must be uncompressed and indexed 
+      (use 'samtools faidx' for example).
     inputBinding:
       position: 101
       prefix: --reference-fasta-file
@@ -97,6 +97,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --skip-md5-check
+  - id: fastq_base_name_path
+    type: string
+    doc: Output or path parameter `fastq_base_name_path`
+    inputBinding:
+      position: 102
+      prefix: --fastq-base-name
 outputs:
   - id: fastq_base_name
     type:
@@ -106,7 +112,9 @@ outputs:
       file name. If this parameter is omitted then all reads are printed with no garanteed
       order."
     outputBinding:
-      glob: $(inputs.fastq_base_name)
+      glob: $(inputs.fastq_base_name_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cramtools:3.0.b127--0

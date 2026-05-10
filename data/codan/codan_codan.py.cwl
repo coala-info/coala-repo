@@ -51,6 +51,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --transcripts
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type:
@@ -59,7 +65,9 @@ outputs:
     doc: Optional - path to output folder, /path/to/output/folder/ if not 
       declared, it will be created at the transcripts input folder
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/codan:1.2--hdfd78af_1

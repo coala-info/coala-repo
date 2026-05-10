@@ -315,6 +315,38 @@ inputs:
     inputBinding:
       position: 103
       prefix: -d
+  - id: output_aligned_residue_distances_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_aligned_residue_distances_path`
+    inputBinding:
+      position: 104
+      prefix: --output-aligned-residue-distances
+  - id: output_superposed_structure1_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_superposed_structure1_path`
+    inputBinding:
+      position: 105
+      prefix: --output-superposed-structure1
+  - id: output_superposed_structure1_chimerax_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_superposed_structure1_chimerax_path`
+    inputBinding:
+      position: 106
+      prefix: --output-superposed-structure1-chimerax
+  - id: output_superposed_structure1_rasmol_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_superposed_structure1_rasmol_path`
+    inputBinding:
+      position: 107
+      prefix: --output-superposed-structure1-rasmol
 outputs:
   - id: output_superposed_structure1
     type:
@@ -322,28 +354,30 @@ outputs:
       - File
     doc: Output superposed structure1 to sup.* for PyMOL viewing.
     outputBinding:
-      glob: $(inputs.output_superposed_structure1)
+      glob: $(inputs.output_superposed_structure1_path)
   - id: output_superposed_structure1_rasmol
     type:
       - 'null'
       - File
     doc: Output superposed structure1 to sup.* for RasMol viewing.
     outputBinding:
-      glob: $(inputs.output_superposed_structure1_rasmol)
+      glob: $(inputs.output_superposed_structure1_rasmol_path)
   - id: output_superposed_structure1_chimerax
     type:
       - 'null'
       - File
     doc: Output superposed structure1 to sup.* for ChimeraX viewing.
     outputBinding:
-      glob: $(inputs.output_superposed_structure1_chimerax)
+      glob: $(inputs.output_superposed_structure1_chimerax_path)
   - id: output_aligned_residue_distances
     type:
       - 'null'
       - File
     doc: Output distance of aligned residue pairs
     outputBinding:
-      glob: $(inputs.output_aligned_residue_distances)
+      glob: $(inputs.output_aligned_residue_distances_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/usalign:20241201--h503566f_0

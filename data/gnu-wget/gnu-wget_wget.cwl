@@ -1153,6 +1153,30 @@ inputs:
     inputBinding:
       position: 102
       prefix: --warc-tempdir
+  - id: output_document_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_document_path`
+    inputBinding:
+      position: 103
+      prefix: --output-document
+  - id: save_cookies_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `save_cookies_path`
+    inputBinding:
+      position: 104
+      prefix: --save-cookies
+  - id: warc_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `warc_file_path`
+    inputBinding:
+      position: 105
+      prefix: --warc-file
 outputs:
   - id: output_document
     type:
@@ -1160,21 +1184,23 @@ outputs:
       - File
     doc: write documents to FILE
     outputBinding:
-      glob: $(inputs.output_document)
+      glob: $(inputs.output_document_path)
   - id: save_cookies
     type:
       - 'null'
       - File
     doc: save cookies to FILE after session
     outputBinding:
-      glob: $(inputs.save_cookies)
+      glob: $(inputs.save_cookies_path)
   - id: warc_file
     type:
       - 'null'
       - File
     doc: save request/response data to a .warc.gz file
     outputBinding:
-      glob: $(inputs.warc_file)
+      glob: $(inputs.warc_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gnu-wget:1.18--hb829ee6_10

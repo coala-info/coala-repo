@@ -530,6 +530,22 @@ inputs:
     inputBinding:
       position: 107
       prefix: -Xk
+  - id: output_file_dir_prefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_dir_prefix_path`
+    inputBinding:
+      position: 108
+      prefix: --output-file-dir-prefix
+  - id: output_prefix_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_prefix_path`
+    inputBinding:
+      position: 109
+      prefix: --output-prefix
 outputs:
   - id: output_file_dir_prefix
     type:
@@ -537,14 +553,16 @@ outputs:
       - File
     doc: File/directory/prefix where results are written
     outputBinding:
-      glob: $(inputs.output_file_dir_prefix)
+      glob: $(inputs.output_file_dir_prefix_path)
   - id: output_prefix
     type:
       - 'null'
       - File
     doc: Prefix for output files/directories
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: $(inputs.output_prefix_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spaln:3.0.7--pl5321h077b44d_1

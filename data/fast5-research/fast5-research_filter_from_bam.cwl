@@ -46,12 +46,20 @@ inputs:
     inputBinding:
       position: 103
       prefix: --threads
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 104
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type: Directory
     doc: Directory where the filtered FAST5 files will be saved.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/fast5-research:1.2.22--pyh864c0ab_0

@@ -509,6 +509,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --xdrop_ungap
+  - id: out_path
+    type: string
+    doc: Output or path parameter `out_path`
+    inputBinding:
+      position: 102
+      prefix: --out
 outputs:
   - id: out
     type:
@@ -516,7 +522,9 @@ outputs:
       - File
     doc: Output file name
     outputBinding:
-      glob: $(inputs.out)
+      glob: $(inputs.out_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/trinotate:4.0.2--pl5321hdfd78af_0

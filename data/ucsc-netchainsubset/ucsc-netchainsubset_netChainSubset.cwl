@@ -49,6 +49,14 @@ inputs:
     inputBinding:
       position: 103
       prefix: -wholeChains
+  - id: gap_output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `gap_output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --gap-output-file
 outputs:
   - id: output_chain
     type: File
@@ -61,7 +69,9 @@ outputs:
       - File
     doc: Output gap sizes to file
     outputBinding:
-      glob: $(inputs.gap_output_file)
+      glob: $(inputs.gap_output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-netchainsubset:482--h0b57e2e_0

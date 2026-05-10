@@ -72,8 +72,7 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Visualization output format customization.
-      - html
+    doc: Visualization output format customization. - html
     inputBinding:
       position: 101
       prefix: --output_formats
@@ -140,12 +139,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --verbose
+  - id: output_path
+    type: string
+    doc: Output or path parameter `output_path`
+    inputBinding:
+      position: 102
+      prefix: --output
 outputs:
   - id: output
     type: Directory
     doc: Output directory
     outputBinding:
-      glob: $(inputs.output)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/panorama:1.0.0--pyhdfd78af_0

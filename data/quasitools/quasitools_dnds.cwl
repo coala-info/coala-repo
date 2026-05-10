@@ -53,6 +53,12 @@ inputs:
     inputBinding:
       position: 104
       prefix: --verbose
+  - id: output_dir_path
+    type: Directory
+    doc: Output or path parameter `output_dir_path`
+    inputBinding:
+      position: 105
+      prefix: --output-dir
 outputs:
   - id: output_dir
     type:
@@ -60,7 +66,9 @@ outputs:
       - Directory
     doc: Directory to save output files.
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: $(inputs.output_dir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/quasitools:0.7.0--py_0

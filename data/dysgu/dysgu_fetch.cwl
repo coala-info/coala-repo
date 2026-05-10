@@ -122,6 +122,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: --write_all
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -129,7 +135,9 @@ outputs:
       - File
     doc: Output reads, discordant, supplementary and soft-clipped reads to file.
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/dysgu:1.8.7--py311h8ddd9a4_0

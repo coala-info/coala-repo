@@ -245,15 +245,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Prefixes of taxon name in certain ranks, used with --metaphlan-report.
-      - k__
-      - p__
-      - c__
-      - o__
-      - f__
-      - g__
-      - s__
-      - t__
+    doc: Prefixes of taxon name in certain ranks, used with --metaphlan-report. 
+      - k__ - p__ - c__ - o__ - f__ - g__ - s__ - t__
     inputBinding:
       position: 102
       prefix: --rank-prefix
@@ -278,15 +271,8 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Only show TaxIds and names of these ranks.
-      - superkingdom
-      - phylum
-      - class
-      - order
-      - family
-      - genus
-      - species
-      - strain
+    doc: Only show TaxIds and names of these ranks. - superkingdom - phylum - 
+      class - order - family - genus - species - strain
     inputBinding:
       position: 102
       prefix: --show-rank
@@ -324,6 +310,54 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: binning_result_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `binning_result_path`
+    inputBinding:
+      position: 103
+      prefix: --binning-result
+  - id: cami_report_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `cami_report_path`
+    inputBinding:
+      position: 104
+      prefix: --cami-report
+  - id: debug_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `debug_path`
+    inputBinding:
+      position: 105
+      prefix: --debug
+  - id: log_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `log_path`
+    inputBinding:
+      position: 106
+      prefix: --log
+  - id: metaphlan_report_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `metaphlan_report_path`
+    inputBinding:
+      position: 107
+      prefix: --metaphlan-report
+  - id: out_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `out_file_path`
+    inputBinding:
+      position: 108
+      prefix: --out-file
 outputs:
   - id: binning_result
     type:
@@ -331,42 +365,44 @@ outputs:
       - File
     doc: Save extra binning result in CAMI report.
     outputBinding:
-      glob: $(inputs.binning_result)
+      glob: $(inputs.binning_result_path)
   - id: cami_report
     type:
       - 'null'
       - File
     doc: Save extra CAMI-like report.
     outputBinding:
-      glob: $(inputs.cami_report)
+      glob: $(inputs.cami_report_path)
   - id: debug
     type:
       - 'null'
       - File
     doc: Debug output file.
     outputBinding:
-      glob: $(inputs.debug)
+      glob: $(inputs.debug_path)
   - id: metaphlan_report
     type:
       - 'null'
       - File
     doc: Save extra metaphlan-like report.
     outputBinding:
-      glob: $(inputs.metaphlan_report)
+      glob: $(inputs.metaphlan_report_path)
   - id: out_file
     type:
       - 'null'
       - File
     doc: Out file, supports a ".gz" suffix ("-" for stdout).
     outputBinding:
-      glob: $(inputs.out_file)
+      glob: $(inputs.out_file_path)
   - id: log
     type:
       - 'null'
       - File
     doc: Log file.
     outputBinding:
-      glob: $(inputs.log)
+      glob: $(inputs.log_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kmcp:0.9.4--h9ee0642_1

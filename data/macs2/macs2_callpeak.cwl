@@ -167,9 +167,7 @@ inputs:
       - type: array
         items: int
     doc: Select the regions within MFOLD range of high-confidence enrichment 
-      ratio to build model.
-      - 5
-      - 50
+      ratio to build model. - 5 - 50
     inputBinding:
       position: 101
       prefix: --mfold
@@ -299,6 +297,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tsize
+  - id: outdir_path
+    type: string
+    doc: If specified all output files will be written to that
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: outdir
     type:
@@ -306,7 +310,9 @@ outputs:
       - Directory
     doc: If specified all output files will be written to that directory.
     outputBinding:
-      glob: $(inputs.outdir)
+      glob: $(inputs.outdir_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macs2:2.2.9.1--py310h1fe012e_5

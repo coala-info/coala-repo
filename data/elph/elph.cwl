@@ -163,6 +163,12 @@ inputs:
     inputBinding:
       position: 103
       prefix: -t
+  - id: output_file_path
+    type: string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 104
+      prefix: --output-file
 outputs:
   - id: output_file
     type:
@@ -170,7 +176,9 @@ outputs:
       - File
     doc: write output in <out_file> instead of stdout
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/elph:v1.0.1-2-deb_cv1

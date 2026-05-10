@@ -211,7 +211,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: force query to be read as individual sequences, even if in an msa format
+    doc: force query to be read as individual sequences, even if in an msa 
+      format
     inputBinding:
       position: 103
       prefix: --qsingle_seqs
@@ -351,6 +352,54 @@ inputs:
     inputBinding:
       position: 103
       prefix: --watson
+  - id: alignment_output_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `alignment_output_path`
+    inputBinding:
+      position: 104
+      prefix: --alignment-output
+  - id: aliscoresout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `aliscoresout_path`
+    inputBinding:
+      position: 105
+      prefix: --aliscoresout
+  - id: dfamtblout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `dfamtblout_path`
+    inputBinding:
+      position: 106
+      prefix: --dfamtblout
+  - id: hmmout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `hmmout_path`
+    inputBinding:
+      position: 107
+      prefix: --hmmout
+  - id: output_file_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `output_file_path`
+    inputBinding:
+      position: 108
+      prefix: --output-file
+  - id: tblout_path
+    type:
+      - 'null'
+      - string
+    doc: Output or path parameter `tblout_path`
+    inputBinding:
+      position: 109
+      prefix: --tblout
 outputs:
   - id: output_file
     type:
@@ -358,42 +407,44 @@ outputs:
       - File
     doc: direct output to file, not stdout
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output_file_path)
   - id: alignment_output
     type:
       - 'null'
       - File
     doc: save multiple alignment of all hits to file
     outputBinding:
-      glob: $(inputs.alignment_output)
+      glob: $(inputs.alignment_output_path)
   - id: tblout
     type:
       - 'null'
       - File
     doc: save parseable table of hits to file
     outputBinding:
-      glob: $(inputs.tblout)
+      glob: $(inputs.tblout_path)
   - id: dfamtblout
     type:
       - 'null'
       - File
     doc: save table of hits to file, in Dfam format
     outputBinding:
-      glob: $(inputs.dfamtblout)
+      glob: $(inputs.dfamtblout_path)
   - id: aliscoresout
     type:
       - 'null'
       - File
     doc: save scores for each position in each alignment to file
     outputBinding:
-      glob: $(inputs.aliscoresout)
+      glob: $(inputs.aliscoresout_path)
   - id: hmmout
     type:
       - 'null'
       - File
     doc: if input is alignment(s), write produced hmms to file
     outputBinding:
-      glob: $(inputs.hmmout)
+      glob: $(inputs.hmmout_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmmer:3.4--hb6cb901_4
